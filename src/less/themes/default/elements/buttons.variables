@@ -1,0 +1,122 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// REI-CEDAR BUTTON THEME VARIABLES
+//
+// TOC:
+//
+// :Disabled
+// :Default
+// :Primary
+// :Explore Primary
+// :High Contrast Primary
+// :Outline Primary (ghost)
+// :Outlet Primary
+// :Outlet Default
+// :Off Price Primary
+// :Off Price Default
+// :Size
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// COLOR PALETTES
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//----------------------------------------------------------------------------------------------------------------------
+// Disabled
+//----------------------------------------------------------------------------------------------------------------------
+@disabled-color:                                    #ccc;
+@btn-disabled-color:                                @disabled-color;
+@btn-link-disabled-color:                           @disabled-color;
+@btn-disabled-bg:                                   @core-architectural-5;
+@btn-disabled-border:                               @core-architectural-4;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Default
+//----------------------------------------------------------------------------------------------------------------------
+@btn-default-color:                                @text-color;
+@btn-default-bg:                                   @core-architectural-5;
+@btn-default-border:                               @core-architectural-1;
+@btn-default-active-bg:                            darken( @btn-default-bg, 5% );
+@btn-default-active-border:                        mix( @core-architectural-1, @core-architectural-5, 50% );
+@btn-default-active-color:                         @text-color;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Primary
+//----------------------------------------------------------------------------------------------------------------------
+@btn-primary-color:                                @text-color;
+@btn-primary-bg:                                   @core-action-1;
+@btn-primary-border:                               @btn-primary-bg;
+@btn-primary-active-bg:                            @core-action-3;
+@btn-primary-active-border:                        @btn-primary-active-bg;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Explore Primary
+//----------------------------------------------------------------------------------------------------------------------
+@btn-explore-color:                               @explore-action-2;
+@btn-explore-bg:                                  @explore-action-1;
+@btn-explore-border:                              @btn-explore-bg;
+@btn-explore-active-bg:                           @explore-action-3;
+@btn-explore-active-border:                       @btn-explore-active-bg;
+
+//----------------------------------------------------------------------------------------------------------------------
+// High Contrast Primary
+//----------------------------------------------------------------------------------------------------------------------
+@btn-high-contrast-color:                        @core-architectural-5;
+@btn-high-contrast-bg:                           @core-architectural-1;
+@btn-high-contrast-border:                       @core-architectural-1;
+@btn-high-contrast-active-bg:                    lighten( @core-architectural-1, 20% );
+@btn-high-contrast-active-border:                @btn-high-contrast-active-bg;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Outline Primary (ghost)
+//----------------------------------------------------------------------------------------------------------------------
+@btn-outline-color:                              @core-architectural-5;
+@btn-outline-bg:                                 transparent;
+@btn-outline-border:                             @core-architectural-5;
+@btn-outline-active-bg:                          @core-architectural-5;
+@btn-outline-active-border:                      @core-architectural-5;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Outlet Primary
+//----------------------------------------------------------------------------------------------------------------------
+@btn-outlet-color:                               @core-architectural-5;
+@btn-outlet-bg:                                  @outlet-action-1;
+@btn-outlet-border:                              @outlet-action-1;
+@btn-outlet-active-bg:                           @outlet-action-2;
+@btn-outlet-active-border:                       @outlet-action-2;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Outlet Default
+//----------------------------------------------------------------------------------------------------------------------
+@btn-outlet-default-color:                       @outlet-action-1;
+@btn-outlet-default-bg:                          @core-architectural-5;
+@btn-outlet-default-border:                      @outlet-action-1;
+@btn-outlet-default-active-bg:                   @btn-default-active-bg;
+@btn-outlet-default-active-border:               @outlet-action-1;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Off Price Primary
+//----------------------------------------------------------------------------------------------------------------------
+@btn-off-price-color:                               @core-architectural-5;
+@btn-off-price-bg:                                  @off-price-action-1;
+@btn-off-price-border:                              @off-price-action-1;
+@btn-off-price-active-bg:                           @off-price-action-2;
+@btn-off-price-active-border:                       @off-price-action-2;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Off Price Default
+//----------------------------------------------------------------------------------------------------------------------
+@btn-off-price-default-color:                       @off-price-action-1;
+@btn-off-price-default-bg:                          @core-architectural-5;
+@btn-off-price-default-border:                      @off-price-action-1;
+@btn-off-price-default-active-bg:                   @btn-default-active-bg;
+@btn-off-price-default-active-border:               @off-price-action-1;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// SIZE AND SHAPE
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@btn-font-size:                                    @font-size-large;
+@btn-font-size-lg:                                 @font-size-h3;
+@btn-font-weight:                                  normal;
+@btn-line-height:                                  1;

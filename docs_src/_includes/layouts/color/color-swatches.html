@@ -1,0 +1,527 @@
+<section class="color-swatches vertical-push-3">
+  <h2 id="color-swatches-title" class="page-header">Color Palettes <small><a class="link_stag" href="/css/#less-variables-colors">docs</a></small></h2>
+
+  <h3 id="color-swatches-core">Core Palette</h3>
+  <p>These core styles are used most frequently throughout REI.com. They have been adapted form our Brand Standards
+    palette for interactive use.
+    <strong>Be sure to check any undocumented background/foreground combinations for accessibility.</strong></p>
+  <div class="well">
+      <div class="row">
+          <div class="col-sm-12">
+              <h4 id="color-swatches-core-arch" class="status status-good">Architectural</h4>
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <div class="color-swatch core-architectural-5"></div>
+                      <h4>White</h4>
+                      <dl class="dl-horizontal">
+                        <dt>Color formula</dt>
+                        <dd><code>lighten( @core-architectural-1, 100% ); // #fff</code></dd>
+                        <dt>LESS variable</dt>
+                        <dd><code>@core-architectural-5;</code></dd>
+                        <dt><code>@background-white-ruleset();</code></dt>
+                        <dd>used by <code>overlay-light-1</code> class to set background container color</dd>
+                        <dt><code>@body-bg</code></dt>
+                        <dd>Background.</dd>
+                        <dt><code>@btn-default-bg;</code></dt>
+                        <dd>Background color of default button.</dd>
+                        <dt><code>@btn-disabled-bg;</code></dt>
+                        <dd>Background color of disabled button.</dd>
+                        <dt><code>@input-group-addon-bg;</code></dt>
+                        <dd>Background color of input group addons</dd>
+                        <dt>Helper variable</dt>
+                        <dd>
+                          This variable is mixed with several primary brand colors to create active, hover, and focus states.
+                        </dd>
+                        <dt>Usage</dt>
+                        <dd>Default background, typographic use on dark or photographic backgrounds, default buttons.</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <div class="color-swatch core-architectural-1"></div>
+                      <h4>Black</h4>
+                      <dl class="dl-horizontal">
+                        <dt>Color formula</dt>
+                        <dd><code>@gray-base; // #000</code></dd>
+                        <dt>LESS variable</dt>
+                        <dd><code>@core-architectural-1;</code></dd>
+                        <dt><code>@background-black-ruleset();</code></dt>
+                        <dd>used by <code>overlay-dark-1</code> class to set background container color</dd>
+                        <dt><code>@btn-default-border</code></dt>
+                        <dd>Default button border color.</dd>
+                        <dt><code>@btn-high-contrast-bg;, @btn-high-contrast-border;</code></dt>
+                        <dd>High Contrast button color.</dd>
+                        <dt><code>@input-border;</code></dt>
+                        <dd>Sets inputs border color.</dd>
+                        <dt>Helper variable</dt>
+                        <dd>
+                          This variable is mixed with several variables to create active, hover, and focus states.
+                        </dd>
+                        <dt>Usage</dt>
+                        <dd>Limited typographic and structural elements, background fields, high contrast primary button.</dd>
+                        <dt>Note:</dt>
+                        <dd>the <code>@background-black-ruleset();</code> is used by the <code>overlay-dark-1</code>  class to set background container color. The ruleset also turns text white.</dd>
+                      </dl>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <div class="color-swatch core-architectural-6"></div>
+                      <h4>Dusty White</h4>
+                      <dl class="dl-horizontal">
+                        <dt>Hex value</dt>
+                        <dd><code>#efeee2;</code></dd>
+                        <dt>LESS variable</dt>
+                        <dd><code>@core-architectural-6;</code></dd>
+                        <dt><code>@background-dusty-white-ruleset();</code></dt>
+                        <dd>used by <code>overlay-light-3</code> class to set background container color</dd>
+                        <dt>Usage</dt>
+                        <dd>Brand color, for use with background fields.</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <div class="color-swatch overlay-light-2"></div>
+                      <h4>Background Gray 1</h4>
+                      <dl class="dl-horizontal">
+                        <dt>Hex value</dt>
+                        <dd><code>#F2F2F2;</code></dd>
+                        <dt>LESS variable</dt>
+                        <dd><code>@background-grey-1-ruleset();</code></dd>
+                        <dt>Usage</dt>
+                        <dd>Background fields.</dd>
+                        <dt>Note:</dt>
+                        <dd>the <code>@background-grey-1-ruleset();</code> is used by the <code>overlay-light-2</code>  class to set background container color.</dd>
+                      </dl>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <div class="color-swatch core-architectural-4"></div>
+                      <h4>Architectural Gray 1</h4>
+                      <dl class="dl-horizontal">
+                        <dt>Color formula</dt>
+                        <dd><code>lighten( @core-architectural-1, 79% ); // #ccc</code></dd>
+                        <dt>LESS variable</dt>
+                        <dd><code>@core-architectural-4;</code></dd>
+                        <dt>Variable usage</dt>
+                        <dd>
+                          <code>
+                            @btn-disabled-color;
+                            @btn-disabled-border;
+                          </code>
+                        </dd>
+                        <dt>Usage</dt>
+                        <dd>Line work, graphic elements.</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <div class="color-swatch overlay-medium-2"></div>
+                      <h4>Background Gray 2</h4>
+                      <dl class="dl-horizontal">
+                        <dt>Hex value</dt>
+                        <dd><code>#e5e5e5</code></dd>
+                        <dt>LESS variable</dt>
+                        <dd><code>@background-grey-2-ruleset();</code></dd>
+                        <dt>Usage</dt>
+                        <dd>Background fields.</dd>
+                        <dt>Note:</dt>
+                        <dd>the <code>@background-grey-2-ruleset();</code> is used by the <code>overlay-medium-2</code> class to set background container color.</dd>
+                      </dl>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <div class="color-swatch core-architectural-3"></div>
+                      <h4>Architectural Gray 2</h4>
+                      <dl class="dl-horizontal">
+                        <dt>Color formula</dt>
+                        <dd><code>lighten( @core-architectural-1, 37.46% ); // #666</code></dd>
+                        <dt>LESS variable</dt>
+                        <dd><code>@core-architectural-3;</code></dd>
+                        <dt><code>@navigation-menu-2;</code></dt>
+                        <dd>Secondary background color for list-group-menu</dd>
+                        <dt>Usage</dt>
+                        <dd>Line work, graphic elements, limited text use.</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <div class="color-swatch core-architectural-3"></div>
+                      <h4>Background Gray 3</h4>
+                      <dl class="dl-horizontal">
+                        <dt>Color inheritance</dt>
+                        <dd><code>@core-architectural-3; //#666</code></dd>
+                        <dt>LESS variable</dt>
+                        <dd><code>@background-grey-3-ruleset();</code></dd>
+                        <dt>Usage</dt>
+                        <dd>Backgrounf fields.</dd>
+                        <dt>Note:</dt>
+                        <dd>the <code>@background-grey-3-ruleset();</code> is used by the <code>overlay-medium-1</code> class to set background container color. The ruleset also turns text white.</dd>
+                      </dl>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="well">
+                      <div class="color-swatch core-architectural-2"></div>
+                      <h4>Architectural Gray 3 </h4>
+                      <dl class="dl-horizontal">
+                        <dt>Color formula</dt>
+                        <dd><code>lighten( @gray-base, 13.5% ); // #222</code></dd>
+                        <dt>LESS variable</dt>
+                        <dd><code>@core-architectural-2;</code></dd>
+                        <dt><code>@text-color</code></dt>
+                        <dd>Default text color</dd>
+                        <dt><code>@link-contrast-color</code></dt>
+                        <dd>Navigation link definitions</dd>
+                        <dt><code>@navigation-menu-1</code></dt>
+                        <dd>Primary background color for list-group-menu</dd>
+                        <dt>Navigation list - tabs</dt>
+                        <dd>
+                          <code>
+                            @nav-tabs-border-color;
+                            @nav-tabs-active-link-hover-border-color;
+                            @nav-tabs-justified-link-border-color
+                          </code>
+                        </dd>
+                        <dt><code>@brand-info;</code></dt>
+                        <dd></dd>
+                        <dt>Usage</dt>
+                        <dd>Primary typographic color on light background fields, site header, footer.</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                  <div class="well">
+                    <div class="color-swatch core-architectural-2"></div>
+                    <h4>Background Gray 4</h4>
+                    <dl class="dl-horizontal">
+                      <dt>Color inheritance</dt>
+                      <dd><code>@core-architectural-2;</code></dd>
+                      <dt>LESS variable</dt>
+                      <dd><code>@background-grey-4-ruleset();</code></dd>
+                      <dt>Usage</dt>
+                      <dd>Background fields.</dd>
+                      <dt>Note:</dt>
+                      <dd>the <code>@background-grey-3-ruleset();</code> is used by the <code>overlay-medium-1</code> class to set background container color. The ruleset also turns text white.</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+            <h4 id="color-swatches-core-action" class="status status-good">Action</h4>
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="well">
+                    <div class="color-swatch core-action-1"></div>
+                    <h4>Core Action 1</h4>
+                    <dl class="dl-horizontal">
+                      <dt>Hex value</dt>
+                      <dd><code>#4eaaff;</code></dd>
+                      <dt>LESS variable</dt>
+                      <dd><code>@core-action-1;</code></dd>
+                      <dt><code>@btn-primary-bg;</code></dt>
+                      <dd>Primary Core button background color.</dd>
+                      <dt><code>@link-color-overlay;</code></dt>
+                      <dd>Core link color on dark backgrounds.</dd>
+                      <dt>Usage</dt>
+                      <dd></dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="well">
+                    <div class="color-swatch core-action-2"></div>
+                    <h4>Core Action 2</h4>
+                    <dl class="dl-horizontal">
+                      <dt>Hex value</dt>
+                      <dd><code>#0066cc;</code></dd>
+                      <dt>LESS variable</dt>
+                      <dd><code>@core-action-2;</code></dd>
+                      <dt><code>@link-color;</code></dt>
+                      <dd>Text links - used to ensure accessibility on light backgrounds.</dd>
+                      <dt><code>@input-border-focus;</code></dt>
+                      <dd>Core focus state color.</dd>
+                      <dt>Usage</dt>
+                      <dd>See Links reference for more details</dd>
+                    </dl>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <h3 id="color-swatches-explore">Explore Palette</h3>
+  <div class="well">
+    <div class="row">
+      <div class="col-sm-12">
+        <h4 id="color-swatches-explore-arch" class="status status-good">Architectural</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch explore-architectural-1"></div>
+              <h4>New Growth</h4>
+              <dl class="dl-horizontal">
+                <dt>HEX value</dt>
+                <dd><code>#a1c900;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@explore-architectural-1; //root @new-growth;</code></dd>
+                <dt>Usage</dt>
+                <dd>Background fields, graphic elements, additional TBD.</dd>
+                <dt>Note</dt>
+                <dd>This color <strong>is not</strong> accessible for use on a white background. However it is
+                  accessible on Old Growth and other dark fields of color.
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch explore-architectural-2"></div>
+              <h4>Old Growth</h4>
+              <dl class="dl-horizontal">
+                <dt>HEX value</dt>
+                <dd><code>#004e00;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@explore-architectural-2; //root @old-growth;</code></dd>
+                <dt>Usage</dt>
+                <dd>Background fields, graphic elements, additional TBD.</dd>
+                <dt>Note</dt>
+                <dd>For accessibility and contrast reasons, this color is not to be used for inline text links.</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <h4 id="color-swatches-explore-action" class="status status-good">Action</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch explore-active-1"></div>
+              <h4>Explore Action 1</h4>
+              <dl class="dl-horizontal">
+                <dt>HEX value</dt>
+                <dd><code>#a1c900;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@explore-action-1; //root @new-growth;</code></dd>
+                <dt><code>@explore-link-color-overlay;</code></dt>
+                <dd> Explore links on dark backgrounds.</dd>
+                <dt><code>@btn-explore-bg;</code></dt>
+                <dd>Explore primary button background color.</dd>
+                <dt><code>@list-group-bg-2;</code></dt>
+                <dd>Hover color for list-group-menu.</dd>
+                <dt>Usage</dt>
+                <dd></dd>
+              </dl>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch explore-active-2"></div>
+              <h4>Explore Action 2</h4>
+              <dl class="dl-horizontal">
+                <dt>HEX value</dt>
+                <dd><code>#004e00;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@explore-action-2; //root old-growth;</code></dd>
+                <dt><code>@btn-explore-color;</code></dt>
+                <dd>Explore button color.</dd>
+                <dt>Usage</dt>
+                <dd>See Link Reference for more details.</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch explore-active-5"></div>
+              <h4>Explore Action 5</h4>
+              <dl class="dl-horizontal">
+                <dt>HEX value</dt>
+                <dd><code>#5B8200;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@explore-action-5;</code></dd>
+                <dt><code>@explore-link-color;</code></dt>
+                <dd> Explore links on light backgrounds.</dd>
+                <dt>Usage</dt>
+                <dd>See Link Reference for more details.</dd>
+              </dl>
+            </div>
+          </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <h3 id="color-swatches-Outlet" class="status status-good">Outlet Palette</h3>
+  <div class="well">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch utility-off-price"></div>
+              <h4>Outlet Action</h4>
+              <dl class="dl-horizontal">
+                <dt>Hex value</dt>
+                <dd><code>#cc0000;</code></dd>
+                <dt>LESS variable</dt>
+                <dd>
+                  <code>@outlet-action-1;</code>
+                  </dd>
+                <dt>Variable usage</dt>
+                <dd>
+                  <code>@outlet-link-color;</code>
+                </dd>
+                <dt>Usage</dt>
+                <dd>Buttons, links</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch utility-error"></div>
+              <h4>Outlet Architectural 1</h4>
+              <dl class="dl-horizontal">
+                <dt>Hex value</dt>
+                <dd><code>#cc0000;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@utility-error;</code></dd>
+                <dt>class usage</dt>
+                <dd>
+                  <code>overlay-outlet-dark-1</code>
+                </dd>
+                <dt>Usage</dt>
+                <dd>background fill and line work.</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 id="color-swatches-utility" class="status status-good">Utility Palette</h3>
+  <div class="well">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch utility-off-price"></div>
+              <h4>Off-price</h4>
+              <dl class="dl-horizontal">
+                <dt>Hex value</dt>
+                <dd><code>#cc0000;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@utility-off-price;</code></dd>
+                <dt>Usage</dt>
+                <dd>Sale, Clearance, Outlet price displays</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch utility-error"></div>
+              <h4>Error</h4>
+              <dl class="dl-horizontal">
+                <dt>Hex value</dt>
+                <dd><code>#cc0000;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@utility-error;</code></dd>
+                <dt>Variable usage</dt>
+                <dd>
+                  <code>@input-border-error; @state-danger-text; @state-danger-border; @state-danger-decoration;</code>
+                </dd>
+                <dt>Usage</dt>
+                <dd>Error alert messaging; icon & copy</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch utility-success"></div>
+              <h4>Success</h4>
+              <dl class="dl-horizontal">
+                <dt>HEX value</dt>
+                <dd><code>#a1c900;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@brand-success // root @new-growth;</code></dd>
+                <dt>Variable usage</dt>
+                <dd>
+                  <code>@state-success-border;@state-success-decoration;@panel-success-text;</code>
+                </dd>
+                <dt>Usage</dt>
+                <dd>Success alert message icon.</dd>
+                <dt>Note</dt>
+                <dd>This color is not accessible on a light background, do not use for text of other elements that need to stand on their own.</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch utility-success"></div>
+              <h4>Available</h4>
+              <dl class="dl-horizontal">
+                <dt>HEX value</dt>
+                <dd><code>#a1c900;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@utility-available; // root @new-growth;</code></dd>
+                <dt>Usage</dt>
+                <dd>Available alert message icon.</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="color-swatch utility-warning"></div>
+              <h4>Warning</h4>
+              <dl class="dl-horizontal">
+                <dt>Hex value</dt>
+                <dd><code>#e4ac00;</code></dd>
+                <dt>LESS variable</dt>
+                <dd><code>@brand-warning</code></dd>
+                <dt>Variable usage</dt>
+                <dd>
+                  <code>@label-warning-bg;
+                    @state-warning-border;
+                    @state-warning-decoration;</code>
+                </dd>
+                <dt>Usage</dt>
+                <dd>Warning alert messaging icon</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

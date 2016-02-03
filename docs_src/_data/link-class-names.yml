@@ -1,0 +1,83 @@
+# Manually-generated file
+# Values below are the "name" property for each theme class
+
+- type:  inline
+  class: link-body
+
+# element
+- type:  singleton-body
+  class:
+- type:  singleton
+  class: link_stag
+- type:  navigation
+  class: link_navigation
+
+# modifier
+- type:  explore-inline
+  class: link-explore
+- type:  explore-inline-overlay
+  class: link-explore-overlay
+- type:  overlay
+  class: link-overlay
+- type:  overlay-contrast
+  class: link-contrast-overlay
+- type:  utility
+  class: link-utility
+
+  #BEM
+- type:  explore-singleton
+  class: link_stag-explore
+- type:  explore-singleton-overlay
+  class: link_stag-explore-overlay
+- type:  overlay-singleton
+  class: link_stag-overlay
+- type:  overlay-singleton-body
+  class: link_stag-overlay-body
+- type:  navigation-overlay
+  class: link_navigation-overlay
+- type:  utility-overlay
+  class: link-utility-overlay
+- type:  singleton-title
+  class: link_stag-title
+- type:  overlay-singleton-title
+  class: link_stag-title-overlay
+- type:  navigation-title
+  class: link_navigation-title
+- type:  navigation-title-overlay
+  class: link_navigation-title-overlay
+
+- type:  off-price
+  class: link-off-price
+- type:  off-price-overlay
+  class: link-off-price-overlay
+- type:  off-price-standalone
+  class: link-off-price-standalone
+- type:  off-price-standalone-overlay
+  class: link-off-price-standalone-overlay
+
+- type:  outlet
+  class: link-outlet
+- type:  outlet-overlay
+  class: link-outlet-overlay
+- type:  outlet-standalone
+  class: link-outlet-standalone
+- type:  outlet-standalone-overlay
+  class: link-outlet-standalone-overlay
+
+- type:   core-header
+  class:  link_header
+  family: core
+- type:   overlay-header
+  class:  link_header-overlay
+  family: overlay
+- type:   explore-header
+  class:  link_header-explore
+  family: explore
+- type:   outlet-header
+  class:  link_header-outlet
+- type:   off-price-header
+  class:  link_header-off-price
+  family: outlet
+- type:   navigation-sub
+  class:  link-sub-navigation
+  family: overlay

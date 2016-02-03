@@ -1,0 +1,193 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'element';
+@element : 'anchors';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// UI Framework Anchors
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+a {
+    .link-variant( @link-color; @link-hover-decoration; );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Core inline
+.link-body {
+    .link-variant( @link-color; @link-hover-decoration-alt; );
+}
+
+// Core standalone
+.link_stag {
+    &:extend( .text-sub-heading );
+    .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
+}
+.link_stag-title {
+    &:extend( .text-capitalize );
+    &:extend( .link_stag all );
+}
+
+// Core header link
+.link_header {
+    .link-variant( inherit; @link-hover-decoration; @link-hover-decoration; @link-color; );
+}
+
+// Core navigation
+.link_navigation {
+    &:extend( .text-capitalize );
+    .link-variant( @link-contrast-color; @link-hover-decoration; @link-hover-decoration-alt );
+}
+.link_navigation-subtitle {
+    &:extend( .text-capitalize );
+    &:extend( .text-sub-heading );
+    .link-variant( @link-contrast-color; @link-hover-decoration; @link-hover-decoration-alt );
+}
+.link_navigation-title {
+    &:extend( .text-title );
+    &:extend( .link_navigation all );
+}
+.link_navigation-title-overlay {
+    &:extend( .text-title );
+    .link-variant( @link-contrast-color-overlay; @link-hover-decoration; @link-hover-decoration-alt; );
+}
+.link-utility {
+    font-size: @font-size-smaller;
+    &:extend( .link_navigation all );
+}
+.link-utility-overlay {
+    font-size: @font-size-smaller;
+    &:extend( .link_navigation-overlay all );
+}
+
+// Core overlay
+.link-overlay {
+    .link-variant( @link-color-overlay; @link-hover-decoration-alt; );
+}
+.link-contrast-overlay {
+    .link-variant( @link-contrast-color-overlay; @link-hover-decoration-alt; );
+}
+
+.link_stag-overlay-body {
+    .link-variant( @link-color-overlay; @link-hover-decoration; @link-hover-decoration-alt;);
+}
+.link_stag-overlay {
+    &:extend( .text-sub-heading );
+    &:extend( .link_stag-overlay-body all);
+}
+.link_stag-title-overlay {
+    &:extend( .link_stag-overlay all);
+    &:extend( .text-capitalize );
+}
+
+.link_navigation-overlay {
+    &:extend( .text-capitalize );
+    .link-variant( @link-contrast-color-overlay; @link-hover-decoration; @link-hover-decoration-alt; );
+}
+.link_navigation-subtitle-overlay {
+    &:extend( .text-sub-heading );
+    .link-variant( @link-contrast-color-overlay; @link-hover-decoration; @link-hover-decoration-alt; );
+}
+
+// overlay header link
+.link_header-overlay {
+    .link-variant( inherit; @link-hover-decoration; @link-hover-decoration; @overlay-link-color-active; );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Explore
+.link-explore {
+    .link-variant( @explore-link-color;  @link-hover-decoration-alt; );
+}
+.link-explore-overlay {
+    .link-variant( @explore-link-color-overlay;  @link-hover-decoration-alt; );
+}
+.link_stag-explore {
+    &:extend( .text-sub-heading );
+    .link-variant( @explore-link-color; @link-hover-decoration; @link-hover-decoration-alt;);
+    @text-with-icon-rei-tree-arrow-ruleset();
+}
+.use_link-stag-explore {
+    a {
+        &:extend( .link_stag-explore all );
+    }
+}
+.link_stag-explore-overlay {
+    &:extend( .text-sub-heading );
+    .link-variant( @explore-link-color-overlay; @link-hover-decoration; @link-hover-decoration-alt; );
+    @text-with-icon-rei-tree-arrow-ruleset();
+}
+
+// Explore header link
+.link_header-explore {
+    .link-variant( inherit; @link-hover-decoration; @link-hover-decoration; @explore-link-color; );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Off Price
+.link-off-price {
+    .link-variant( @off-price-link-color;  @link-hover-decoration-alt; );
+};
+.link-off-price-overlay {
+    .link-variant( @off-price-link-color-overlay; @link-hover-decoration-alt; );
+};
+.link-off-price-standalone {
+    &:extend( .text-sub-heading );;
+    .link-variant( @off-price-link-color; );
+}
+.link-off-price-standalone-overlay {
+    &:extend( .text-sub-heading );
+    .link-variant( @off-price-link-color-overlay; @link-hover-decoration; );
+}
+
+//off-price header link
+.link_header-off-price {
+    .link-variant( inherit; @link-hover-decoration; @link-hover-decoration; @off-price-link-color; );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Outlet
+.link-outlet {
+    .link-variant( @outlet-link-color;  @link-hover-decoration-alt; );
+}
+.link-outlet-overlay {
+    .link-variant( @outlet-link-color-overlay; @link-hover-decoration-alt; );
+}
+.link-outlet-standalone {
+    &:extend( .text-sub-heading );
+    .link-variant( @outlet-link-color; );
+}
+.link-outlet-standalone-overlay {
+    &:extend( .text-sub-heading );
+    .link-variant( @outlet-link-color-overlay; @link-hover-decoration; );
+}
+
+// Outlet header link
+.link_header-outlet {
+    .link-variant( inherit; @link-hover-decoration; @link-hover-decoration; @outlet-link-color; );
+}
+.link-sub-navigation {
+    &:extend( .link-utility-overlay all );
+    .link-variant( @link-color-overlay-2; @link-hover-decoration; @link-hover-decoration; @link-contrast-color-overlay; );
+}
+
+// Crumb
+.link_crumb {
+    font: normal normal @font-size-smaller @font-family-sans-serif;
+    .link-variant( @link-color; @link-hover-decoration; );
+}
+.link-explore-crumb {
+    &:extend( .link_crumb all );
+    .link-variant( @explore-link-color;  @link-hover-decoration; );
+}
+.link-outlet-crumb {
+    &:extend( .link_crumb all );
+    .link-variant( @outlet-link-color;  @link-hover-decoration; );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

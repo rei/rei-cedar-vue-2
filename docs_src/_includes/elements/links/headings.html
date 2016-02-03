@@ -1,0 +1,58 @@
+<section class="vertical-push-3">
+    <h2 id="headings" class="status status-good">Heading Links</h2>
+    <p>Use when an H1, H2, or H3 Header is presented as a link (Primarily used on Hub or Campaign-related pages).</p>
+    <p>Default state: Follows text color, and the class sets the color attribute to inherit.</p>
+    <p>Hover state: No underline, color set to light grey with the  <code>@overlay-link-color-active</code> variable.</p>
+    <p>The <code>icon-rei-right-arrow</code> icon is set to 0.5em of the headings font size, this allows the icon to scale to the heading rather that adhering to a strict px value. This icon is set to the text baseline</p>
+    <p class="bs-callout bs-callout-warning">
+        Please note the lack of whitespace between heading text and icon span, this is intentional and necessary for correct spacing.
+    </p>
+    <div class="well">
+        {% include /markup-templates/typography/header-links.html param="core-header" %}
+    </div>
+    {% highlight html %}
+    <h1>
+        <a href="#" class="link_header text-icon-right-arrow">
+            H1 Header Link<span class="icon icon-rei-right-arrow"></span>
+        </a>
+    </h1>
+    {% endhighlight %}
+
+    <h3>Explore  Header Links</h3>
+    <div class="well">
+        {% include /markup-templates/typography/header-links.html param="explore-header" %}
+    </div>
+    {% highlight html %}
+    <h1>
+        <a href="#" class="link_header-explore text-icon-right-arrow">
+            H1 Header Link<span class="icon icon-rei-right-arrow"></span>
+        </a>
+    </h1>
+    {% endhighlight %}
+
+    <h3>Off Price  Header Links</h3>
+    <div class="well">
+        {% include /markup-templates/typography/header-links.html param="off-price-header" %}
+    </div>
+    {% highlight html %}
+    <h1>
+        <a href="#off-price-links-header" class="link_header-off-price text-icon-right-arrow">
+            H1 Header Link<span class="icon icon-rei-right-arrow"></span>
+        </a>
+    </h1>
+    {% endhighlight %}
+
+    <h3 id="overlay-links-header">Overlay Header Links</h3>
+    <div class="well overlay-dark-1">
+        {% include /markup-templates/typography/header-links.html param="overlay-header" %}
+    </div>
+    {% highlight html %}
+    <h1>
+        <a href="#" class="link_header-overlay text-icon-right-arrow">
+            H1 Header Link<span class="icon icon-rei-right-arrow"></span>
+        </a>
+    </h1>
+    {% endhighlight %}
+
+
+</section>

@@ -1,0 +1,21 @@
+# Manually-generated file
+# Values below are the "name" property for each theme class
+
+- type:  alert
+  class: text-danger
+  text:   <span class="icon icon-rei-error" aria-hidden="true"></span><span class="sr-only">Error:</span> This is an error message. Displayed to a user due to user or system error.
+- type:  alert
+  class: text-warning
+  text:   <span class="icon icon-rei-warning" aria-hidden="true"></span><span class="sr-only">Warning:</span> This is an alert message. Used to provide visual weight for key transactional messaging. Limited usage.
+- type:  alert
+  class: text-info
+  text:  <span class="icon icon-rei-info" aria-hidden="true"></span> This is an informational message. Used to provide lower-level visual contrast for transactional messaging.
+- type:  alert
+  class: text-success
+  text:  <span class="icon icon-rei-success" aria-hidden="true"></span><span class="sr-only">Success:</span> This is an availability message. Used to indicate that a product is available.
+- type:  helper
+  class: text-muted
+  text:  This is the display of the text-muted class.
+- type:  helper
+  class: text-primary
+  text:  This is the display of the text-primary class.

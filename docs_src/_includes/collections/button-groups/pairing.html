@@ -1,0 +1,24 @@
+<section class="vertical-push-3">
+    <h3 id="button-pairing-centering">Button group alignment</h3>
+    <p>By default a group of buttons will align left. If your design requires buttons to align center, right,
+        or to be justified, apply a <code>text-(alignment)</code> class to the parent element.</p>
+    <p class="text-note"> NOTE: this will only work if the buttons fit correctly within there parents.</p>
+
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-offset-3 col-xs-6">
+                <div class="btn-group inline-group text-center">
+                    <button type="button" class="btn btn-primary">Button with a large CTA</button>
+                    <button type="button" class="btn btn-default">Secondary</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% highlight html %}
+    <div class="btn-group inline-group text-center">
+        <button type="button" class="btn btn-primary">Button with a large CTA</button>
+        <button type="button" class="btn btn-default">Secondary</button>
+    </div>
+    {% endhighlight %}
+
+</section>

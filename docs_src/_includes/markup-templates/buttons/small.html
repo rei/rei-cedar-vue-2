@@ -1,0 +1,7 @@
+
+{% for items in site.data.theme-class-names %}
+    {% if items.theme == include.param %}
+        <button type="button" class="btn {{ items.buttonClass }} btn-primary btn-sm">Primary {{ items.theme }} button</button>
+        <button type="button" class="btn {{ items.buttonClass }} btn-default btn-sm">Default {{ items.theme }} button</button>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,27 @@
+<section class="vertical-push-3">
+    <h2 id="list-breadcrumbs" class="status status-good">Breadcrumbs</h2>
+    <p class="lead">Indicate the current page's location within a navigational hierarchy.</p>
+    <p>Separators are automatically added in CSS through <code>:before</code> and <code>content</code>.</p>
+    <div class="well" data-example-id="list-breadcrumbs">
+        {% include markup-templates/lists/breadcrumb.html param="breadcrumbs" %}
+    </div>
+    {% highlight html %}
+    {% include markup-templates/lists/breadcrumb.html param="breadcrumbs" %}
+    {% endhighlight %}
+    <h4 class="status status-warning"> Explore Breadcrumb</h4>
+    <div class="well">
+        {% include markup-templates/lists/breadcrumb.html param="breadcrumbs-explore" %}
+    </div>
+    {% highlight html %}
+    {% include markup-templates/lists/breadcrumb.html param="breadcrumbs-explore" %}
+    {% endhighlight %}
+
+    <h4 class="status status-warning"> Outlet Breadcrumb</h4>
+    <div class="well">
+        {% include markup-templates/lists/breadcrumb.html param="breadcrumbs-outlet" %}
+    </div>
+    {% highlight html %}
+    {% include markup-templates/lists/breadcrumb.html param="breadcrumbs-outlet" %}
+    {% endhighlight %}
+
+</section>

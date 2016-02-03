@@ -1,0 +1,16 @@
+<div class="row">
+    {% for item in site.data.theme-class-names %}
+        {% if item.theme == include.param %}
+        <div class="col-sm-6 vertical-push-md">
+          <h5>{{item.header}}</h5>
+                 <button
+                   type="button"
+                   class="btn {{ item.buttonClass }}  {% if item.state == "active"%} active {% endif %}"
+                   {% if item.state == "disabled"%} disabled="disabled" {% endif %}>
+                   {{ item.theme }} {% if item.theme contains "Explore"%} <span class="icon icon-rei-tree-arrow" aria-hidden="true"></span> {% endif %}
+                 </button>
+
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
