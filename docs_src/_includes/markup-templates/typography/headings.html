@@ -1,0 +1,20 @@
+{% for item in site.data.header-theme-class-names %}
+    {% if item.theme == include.param %}
+        {% case item.theme %}
+            {% when 'hero' %}
+            <h1 class="{{ item.headerClass }}"> H1 {{ item.theme }} </h1>
+            {% when 'announce' %}
+            <h1 class="{{ item.headerClass }}"> H1 {{ item.theme }} </h1>
+            <h2 class="{{ item.headerClass }}"> H2 {{ item.theme }} </h2>
+        {% else %}
+            <h1 class="{{ item.headerClass }}"> H1 {{ item.theme }} </h1>
+            <h2 class="{{ item.headerClass }}"> H2 {{ item.theme }} </h2>
+            <h3 class="{{ item.headerClass }}"> H3 {{ item.theme }} </h3>
+            <h4 class="{{ item.headerClass }}"> H4 {{ item.theme }} </h4>
+            <h5 class="{{ item.headerClass }}"> H5 {{ item.theme }} </h5>
+            <h6 class="{{ item.headerClass }}"> H6 {{ item.theme }} </h6>
+        {% endcase %}
+    {% endif %}
+{% endfor %}
+
+

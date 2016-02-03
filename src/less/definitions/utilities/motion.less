@@ -1,0 +1,27 @@
+// Collapsible list is a control that provides css only open and close functionality.
+// Note: Toggles for this control can be found checkbox-and-radio.less.
+// Usage : Combining a control + toggle + list with a checkbox element in each parent list item = complete component.
+
+.collapsibleList {
+  & > [type="checkbox"]:focus + label:before {
+    box-shadow: none;
+  }
+  & > [type="checkbox"] ~ .nest {
+    display: none;
+  }
+
+  & > [type="checkbox"]:checked ~ .nest {
+    display: block;
+  }
+
+  & > [type="checkbox"] {
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  & > label {
+    cursor: pointer;
+  }
+}

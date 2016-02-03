@@ -1,0 +1,210 @@
+<section class="vertical-push-3">
+
+    <h2 class="page-header" id="overview">Button Groups</h2>
+
+    <h3> Making groupings of buttons flow correctly</h3>
+
+    <p> A singleton button possesses no margin</p>
+
+    <p> Buttons which have a previous sibling which is also a button receive a left margin of 8px, this accounts for
+        the fact that buttons are <code> display: inline-block </code> which adds an additional 4px of space
+        totaling 12px.</p>
+
+    <p>If your buttons will wrap prior to displaying block you will have an undesirable staircase. To rectify this place
+        buttons in a
+        container with the <code> btn-group inline-group </code> classes.</p>
+
+    <div class="well" data-example-id="btn-tags">
+        {% include markup-templates/buttons/styled-as-button.html %}
+    </div>
+    {% highlight html %}
+    {% include markup-templates/buttons/styled-as-button.html %}
+    {% endhighlight %}
+
+    <div class="bs-callout bs-callout-warning" id="callout-btn-group-tooltips">
+        <h5>Tooltips &amp; popovers in button groups require special setting</h5>
+
+        <p>When using tooltips or popovers on elements within a <code>.btn-group</code>, you'll have to specify the
+            option <code>container: 'body'</code> to avoid unwanted side effects (such as the element growing wider
+            and/or losing its rounded corners when the tooltip or popover is triggered).</p>
+    </div>
+
+    <div class="bs-callout bs-callout-warning" id="callout-btn-group-accessibility">
+        <h5>Ensure correct <code>role</code> and provide a label</h5>
+
+        <p>In order for assistive technologies – such as screen readers – to convey that a series of buttons is grouped,
+            an appropriate <code>role</code> attribute needs to be provided. For button groups, this would be <code>role="group"</code>,
+            while toolbars should have a <code>role="toolbar"</code>.</p>
+
+        <p>One exception are groups which only contain a single control (for instance the <a
+            href="#btn-groups-justified">justified button groups</a> with <code>&lt;button&gt;</code> elements).</p>
+
+        <p>In addition, groups and toolbars should be given an explicit label, as most assistive technologies will
+            otherwise not announce them, despite the presence of the correct <code>role</code> attribute. In the
+            examples provided here, we use <code>aria-label</code>, but alternatives such as
+            <code>aria-labelledby</code> can also be used.</p>
+    </div>
+
+    <h3 id="btn-groups-single" class="status status-chat">Basic example</h3>
+
+    <p>Wrap a series of buttons with <code>.btn</code> in <code>.btn-group</code>.</p>
+
+    <div class="well" data-example-id="simple-button-group">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+            <button type="button" class="btn btn-default">3</button>
+            <button type="button" class="btn btn-default">4</button>
+        </div>
+    </div>
+    {% highlight html %}
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">1</button>
+        <button type="button" class="btn btn-default">2</button>
+        <button type="button" class="btn btn-default">3</button>
+        <button type="button" class="btn btn-default">4</button>
+    </div>
+    {% endhighlight %}
+
+    <h3 id="inli">Non collapsed Button Groups</h3>
+
+    <p>By default button groups have no margin. When using a button group on buttons that should display with margin
+        after the first sibling add the class <code>inline-group</code> to the <code>btn-group</code>
+        container.</p>
+
+    <div class="well" data-example-id="simple-button-group">
+        <div class="btn-group inline-group" role="group">
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+            <button type="button" class="btn btn-default">3</button>
+            <button type="button" class="btn btn-default">4</button>
+        </div>
+    </div>
+    {% highlight html %}
+    <div class="btn-group inline-group" role="group">
+        <button type="button" class="btn btn-default">1</button>
+        <button type="button" class="btn btn-default">2</button>
+        <button type="button" class="btn btn-default">3</button>
+        <button type="button" class="btn btn-default">4</button>
+    </div>
+    {% endhighlight %}
+
+    Button group alignment
+
+    By default a group of buttons will align left. If your design requires buttons to align center, right, or to be
+    justified, apply a text-(alignment) class to the parent element.
+
+    NOTE: this will only work if the buttons fit correctly within there parents.
+
+    <h3 id="btn-groups-sizing" class="status status-chat">Sizing</h3>
+
+    <p>Instead of applying button sizing classes to every button in a group, just add <code>.btn-group-*</code> to each
+        <code>.btn-group</code>, including when nesting multiple groups.</p>
+
+    <div class="well" data-example-id="button-group-sizing">
+        <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+            <button type="button" class="btn btn-default">Left</button>
+            <button type="button" class="btn btn-default">Middle</button>
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+        <br>
+
+        <div class="btn-group" role="group" aria-label="Default button group">
+            <button type="button" class="btn btn-default">Left</button>
+            <button type="button" class="btn btn-default">Middle</button>
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+        <br>
+
+        <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+            <button type="button" class="btn btn-default">Left</button>
+            <button type="button" class="btn btn-default">Middle</button>
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+        <br>
+
+        <div class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
+            <button type="button" class="btn btn-default">Left</button>
+            <button type="button" class="btn btn-default">Middle</button>
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+    </div>
+    {% highlight html %}
+    <div class="btn-group btn-group-lg" role="group" aria-label="...">...</div>
+    <div class="btn-group" role="group" aria-label="...">...</div>
+    <div class="btn-group btn-group-sm" role="group" aria-label="...">...</div>
+    <div class="btn-group btn-group-xs" role="group" aria-label="...">...</div>
+    {% endhighlight %}
+
+    <h3 id="btn-groups-justified" class="status status-chat">Justified button groups</h3>
+
+    <p>Make a group of buttons stretch at equal sizes to span the entire width of its parent.</p>
+
+    <div class="bs-callout bs-callout-warning" id="callout-btn-group-justified-dbl-border">
+        <h5>Handling borders</h5>
+
+        <p>Due to the specific HTML and CSS used to justify buttons (namely <code>display: table-cell</code>), the
+            borders between them are doubled. In regular button groups, <code>margin-left: -1px</code> is used to stack
+            the borders instead of removing them. However, <code>margin</code> doesn't work with <code>display:
+                table-cell</code>. As a result, depending on your customizations to Bootstrap, you may wish to remove or
+            re-color the borders.</p>
+    </div>
+
+    <h5>With <code>&lt;a&gt;</code> elements</h5>
+
+    <p>Just wrap a series of <code>.btn</code>s in <code>.btn-group.btn-group-justified</code>.</p>
+
+    <div class="well" data-example-id="simple-justified-button-group">
+        <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+            <a href="#" class="btn btn-default" role="button">Left</a>
+            <a href="#" class="btn btn-default" role="button">Middle</a>
+            <a href="#" class="btn btn-default" role="button">Right</a>
+        </div>
+    </div>
+    {% highlight html %}
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        ...
+    </div>
+    {% endhighlight %}
+
+    <div class="bs-callout bs-callout-warning" id="callout-btn-group-anchor-btn">
+        <h5>Links acting as buttons</h5>
+
+        <p>If the <code>&lt;a&gt;</code> elements are used to act as buttons – triggering in-page functionality, rather
+            than navigating to another document or section within the current page – they should also be given an
+            appropriate <code>role="button"</code>.</p>
+    </div>
+
+    <h5>With <code>&lt;button&gt;</code> elements</h5>
+
+    <p>To use justified button groups with <code>&lt;button&gt;</code> elements, <strong class="text-danger">you must
+        wrap each button in a button group</strong>. Most browsers don't properly apply our CSS for justification to
+        <code>&lt;button&gt;</code> elements.</p>
+
+    <div class="well" data-example-id="button-tag-button-group-justified">
+        <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">Left</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">Middle</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">Right</button>
+            </div>
+        </div>
+    </div>
+    {% highlight html %}
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Left</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Middle</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+    </div>
+    {% endhighlight %}
+</section>

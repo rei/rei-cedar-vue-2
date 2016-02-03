@@ -1,0 +1,32 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Link
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// link-variant
+//
+// Quickly create a new link style.
+// TODO: add additional parameters for focus and active, allowing to defenestrate from hover.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.link-variant( @color: @link-color; @decoration: @link-hover-decoration; @hover-decoration: @link-hover-decoration-alt; @hover-color: @color ) {
+    color: @color;
+    text-decoration: @decoration;
+    outline: none;
+    &:hover,
+    &:active,
+    &:focus {
+        color: @hover-color;
+        text-decoration: @hover-decoration;
+    }
+    &:focus{
+        .utility-focus-state();
+    }
+    .icon {
+        display: inline-block;
+        text-decoration: none;
+    }
+    ~ .icon {
+        color: @color;
+    }
+}

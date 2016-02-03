@@ -1,0 +1,42 @@
+<form action="form-with-errors.html" method="get" class="required-form form-inline">
+    <fieldset>
+        <legend class="sr-only">Expanded form</legend>
+
+        <div class="form-group  required has-error">
+            <label class="control-label" for="field1">Field 1 </label>
+            <input class="form-control" type="text" name="field1" id="field1" spellcheck="false" autocorrect="off"
+                   required/>
+                <span class="field-msg_error">
+                    <span class="icon icon-rei-error" aria-hidden="true"></span>
+                    <span class="alert-text">
+                        <span class="sr-only">Error:</span>
+                        This field is required
+                    </span>
+                </span>
+        </div>
+        <div class="form-group  required has-error">
+            <label class="control-label" for="field2">Field 2 </label>
+            <input class="form-control" type="text" name="field2" id="field2" spellcheck="false" autocorrect="off"
+                   required/>
+                <span class="field-msg_error">
+                    <span class="icon icon-rei-error" aria-hidden="true"></span>
+                    <span class="alert-text">
+                        <span class="sr-only">Error:</span>
+                        This field is required
+                    </span>
+                </span>
+        </div>
+
+
+        <div class="form-group required">
+            <label class="control-label" for="field3">Field 3</label>
+            <input class="form-control" type="text" name="field3" id="field3" spellcheck="false" autocorrect="off"
+                   required/>
+        </div>
+        <div class="form-group non-label">
+            <button class="btn btn-primary">Submit form</button>
+            <button class="btn btn-contrast btn-default">Cancel</button>
+        </div>
+
+    </fieldset>
+</form>

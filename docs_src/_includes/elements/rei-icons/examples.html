@@ -1,0 +1,74 @@
+<h3 id="icons-msgs-with-inline-icons" class="status status-warning">Messages with Inline Icons <small><a class="link_stag" href="../elements/typography/#alerts">link</a></small></h3>
+<div class="well">
+  {% include /markup-templates/typography/type-helpers.html param="alert" %}
+</div>
+{% highlight html %}
+<p class="text-danger"><span class="icon icon-rei-error" aria-hidden="true"></span><span class="sr-only">Error:</span> This is an error message. Displayed to a user due to user or system error.</p>
+{% endhighlight %}
+
+<h3 id="icons-error-text" class="status status-chat">Error text</h3>
+<div class="well overlay-dark-2" data-example-id="simple-help-text">
+  {% include /markup-templates/forms/messaging-error.html %}
+</div>
+{% highlight html %}
+{% include /markup-templates/forms/messaging-error.html %}
+{% endhighlight %}
+
+<h3 id="icons-buttons-with-icons" class="status status-warning">Buttons with icons</h3>
+<div class="well">
+  {% include /markup-templates/buttons/icon.html %}
+</div>
+{% highlight html %}
+{% include /markup-templates/buttons/icon.html %}
+{% endhighlight %}
+
+<h3 id="icons-checkbox-radio-toggles" class="status status-chat">Checkbox & Radio as toggle controls</h3>
+<p>This example moves away from the straight forward implementation of an
+  icon within a span tag and nests the  the <code>icon</code>  and appropriate icon variables
+  within the checkbox and radio controls.
+</p>
+<p class="bs-callout bs-callout-danger" >While REI-icons are available as both icon varaibles and ECMA
+  code these should only be used on a limited basis for performance
+  and maintainability concerns</p>
+<div class="well">
+  {% include /markup-templates/forms/toggle.html %}
+</div>
+{% highlight html %}
+<div class="checkbox toggle-rating">
+  <input type="checkbox" value="" id="check-rating">
+  <label for="check-rating"> Option one is this and that&mdash;be sure to include why it's great</label>
+</div>
+<div class="radio toggle-rating">
+  <input type="radio" value="" id="radio-rating">
+  <label for="radio-rating">Option one is this and that&mdash;be sure to include why it's great</label>
+</div>
+{% endhighlight %}
+
+<p>An icon used in an <a href="typography/#alerts">alert</a> to convey that it's an error message, with additional <code>.sr-only</code> text to convey this hint to users of assistive technologies.</p>
+<div class="well" data-example-id="glyphicons-accessibility">
+  <div class="alert alert-danger" role="alert">
+    <span class="icon icon-rei-error" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    Enter a valid email address
+  </div>
+</div>
+{% highlight html %}
+<div class="alert alert-danger" role="alert">
+  <span class="icon icon-cross-circle" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  Enter a valid email address
+</div>
+{% endhighlight %}
+<p>Use them in buttons, button groups for a toolbar, navigation, or prepended form inputs.</p>
+<div class="well" data-example-id="glyphicons-general">
+
+</div>
+{% highlight html %}
+<button type="button" class="btn btn-default" aria-label="Left Align">
+  <span class="icon icon-reply" aria-hidden="true"></span>
+</button>
+
+<button type="button" class="btn btn-default btn-lg">
+  <span class="icon icon-star" aria-hidden="true"></span> Star
+</button>
+{% endhighlight %}

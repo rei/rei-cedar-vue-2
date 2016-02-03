@@ -1,0 +1,25 @@
+<section class="vertical-push-3">
+    <h2 id="helper-classes-floats">Quick floats</h2>
+    <p>Float an element to the left or right with a class. <code>!important</code> is included to avoid specificity issues. Classes can also be used as mixins.</p>
+    {% highlight html %}
+    <div class="pull-left">...</div>
+    <div class="pull-right">...</div>
+    {% endhighlight %}
+    {% highlight scss %}
+    // Classes
+    .pull-left {
+    float: left !important;
+    }
+    .pull-right {
+    float: right !important;
+    }
+
+    // Usage as mixins
+    .element {
+    .pull-left();
+    }
+    .another-element {
+    .pull-right();
+    }
+    {% endhighlight %}
+</section>
