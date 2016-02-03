@@ -1,0 +1,68 @@
+<section class="vertical-push-3">
+
+    <h2 class="status status-good" id="inline">Inline</h2>
+
+    <p>
+        Links that occur within body copy in articles. Link examples: <strong>Hub Cards, Footer, Recommendations</strong>
+    </p>
+    <div class="well">
+        {% include /markup-templates/typography/link.html param="inline" %}
+    </div>
+    {% highlight html %}
+    <a class="link-body" href="#">...</a>
+    or
+    <div class="text-body">
+        <a href="#">...</a>
+    </div>
+    {% endhighlight %}
+    <h4> Explore </h4>
+    <div class="well">
+        {% include /markup-templates/typography/link.html param="explore-inline" %}
+    </div>
+    {% highlight html %}
+    <a class="link-explore" href="#">...</a>
+    {% endhighlight %}
+
+    <h4>Off Price</h4>
+    <div class="well">
+        {% include /markup-templates/typography/link.html param="off-price" %}
+    </div>
+    {% highlight html %}
+    <a class="link-off-price" href="#">...</a>
+    {% endhighlight %}
+
+
+    <h3 >Overlay</h3>
+    <div class="well overlay-dark-1">
+        {% include /markup-templates/typography/link.html param="overlay" %}
+    </div>
+    {% highlight html %}
+    <a class="link-overlay" href="#">...</a>
+    {% endhighlight %}
+
+    <h4>Overlay -Contrast</h4>
+    <div class="well overlay-dark-1">
+        {% include /markup-templates/typography/link.html param="overlay-contrast" %}
+    </div>
+    {% highlight html %}
+    <a class="link-contrast-overlay" href="#">...</a>
+    {% endhighlight %}
+
+    <h4 >Overlay -Explore</h4>
+    <div class="well overlay-dark-1">
+        {% include /markup-templates/typography/link.html param="explore-inline-overlay" %}
+    </div>
+    {% highlight html %}
+    <a class="link-explore-overlay" href="#">...</a>
+    {% endhighlight %}
+
+
+    <h4>Overlay -Off Price</h4>
+    <div class="well overlay-off-price">
+        {% include /markup-templates/typography/link.html param="off-price-overlay" %}
+    </div>
+    {% highlight html %}
+    <a class="link-off-price-overlay" href="#">...</a>
+    {% endhighlight %}
+
+</section>

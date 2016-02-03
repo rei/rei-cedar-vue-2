@@ -1,0 +1,6 @@
+
+{% for item in site.data.text-utilities %}
+{% if item.type == include.param %}
+<p class="{{ item.class }}"> {{ item.class }}.</p>
+{% endif %}
+{% endfor %}

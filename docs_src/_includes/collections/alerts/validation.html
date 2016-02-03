@@ -1,0 +1,68 @@
+<section class="vertical-push-3">
+    <h2 id="forms-control-validation" class="status status-good">Validation States</h2>
+
+    <p>Validation styles for error, warning, and success states on form controls. To use, add <code>.has-warning</code>,
+        <code>.has-error</code>, or <code>.has-success</code> to the parent element. Any <code>.control-label</code>,
+        <code>.form-control</code>, and <code>.help-block</code> within that element will receive the validation styles.
+    </p>
+
+    <h4 id="forms-help-text"> Helper Text</h4>
+
+    <p>Block level helper text for form controls.</p>
+
+    <div class="bs-callout bs-callout-info" id="callout-help-text-accessibility">
+        <h5>Associating helper text with form controls</h5>
+
+        <p>Helper text should be explicitly associated with the form control it relates to using the <code>aria-describedby</code>
+            attribute. This will ensure that assistive technologies – such as screen readers – will announce this help
+            text when the user focuses or enters the control.</p>
+    </div>
+
+    <h5 class="status status-warning">Error text (ie. for required fields)</h5>
+
+    <div class="well overlay-dark-2" data-example-id="simple-help-text">
+        {% include markup-templates/forms/messaging-error.html %}
+    </div>
+    <!-- /.well -->
+    {% highlight html %}
+    {% include markup-templates/forms/messaging-error.html %}
+    {% endhighlight %}
+
+    <h6>Other form elements</h6>
+    <div class="well">
+        {% include markup-templates/forms/checkbox-error.html %}
+    </div>
+    <div class="well">
+        {% include markup-templates/forms/radio-error.html %}
+    </div>
+
+    <h5>Warning text</h5>
+
+    <div class="well overlay-dark-2" data-example-id="simple-help-text">
+        {% include markup-templates/forms/messaging-warning.html %}
+    </div>
+    <!-- /.well -->
+    {% highlight html %}
+    {% include markup-templates/forms/messaging-warning.html %}
+    {% endhighlight %}
+
+    <h5>Information text</h5>
+
+    <div class="well overlay-dark-2" data-example-id="simple-help-text">
+        {% include markup-templates/forms/messaging-info.html %}
+    </div>
+    <!-- /.well -->
+    {% highlight html %}
+    {% include markup-templates/forms/messaging-info.html %}
+    {% endhighlight %}
+
+    <h5>Help text</h5>
+
+    <div class="well overlay-dark-2" data-example-id="simple-help-text">
+        {% include markup-templates/forms/messaging-help.html %}
+    </div>
+    <!-- /.well -->
+    {% highlight html %}
+    {% include markup-templates/forms/messaging-help.html %}
+    {% endhighlight %}
+</section>

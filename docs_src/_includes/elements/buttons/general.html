@@ -1,0 +1,57 @@
+<section class="vertical-push-3">
+    <h2 id="buttons-tags-title" class="page-header status status-base-class">How to use Buttons</h2>
+
+    <p class="lead">Use the button classes on an <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, or <code>&lt;input&gt;</code>
+        element.</p>
+
+    <div class="well" data-example-id="btn-tags">
+        {% include /markup-templates/buttons/styled-as-button.html %}
+    </div>
+    {% highlight html %}
+    {% include /markup-templates/buttons/styled-as-button.html %}
+    {% endhighlight %}
+
+    <h3 id="buttons-sizes-title">Sizes</h3>
+    <h4>Fancy smaller buttons?</h4>
+
+    <p>Add <code>.btn-sm</code> or <code>.btn-xs</code> for additional sizes.</p>
+
+    <p class="note">Note: inline form and input-groups use the <code>.btn-sm</code> class by default.</p>
+
+    <h3 id="buttons-sizes-block-level">Block-level</h3>
+
+    <p>Create block level buttons&mdash;those that span the full width of a parent&mdash; by adding
+        <code>.btn-block</code>.</p>
+
+    <h3> Making groupings of buttons flow correctly</h3>
+
+    <p> A singleton button possesses no margin</p>
+
+    <p> Buttons which have a previous sibling which is also a button receive a left margin of 8px, this accounts for
+        the fact that buttons are <code> display: inline-block </code> which adds an additional 4px of space
+        totaling 12px.</p>
+
+    <p>If your buttons will wrap prior to displaying block you will have an undesirable staircase. To rectify this place
+        buttons in a
+        container with the <code> btn-group inline-group </code> classes.</p>
+
+    <div class="bs-callout bs-callout-warning" id="callout-buttons-anchor-accessibility">
+
+        <h3 id="buttons-tags-links">Links acting as buttons</h3>
+
+        <p>If the <code>&lt;a&gt;</code> elements are used to act as buttons – triggering in-page functionality, rather
+            than navigating to another document or section within the current page – they should also be given an
+            appropriate <code>role="button"</code>.</p>
+    </div>
+    <div class="bs-callout bs-callout-warning" id="callout-buttons-ff-height">
+
+        <h3 id="buttons-tags-cross-browser">Cross-browser rendering</h3>
+
+        <p>As a best practice, <strong>we highly recommend using the <code>&lt;button&gt;</code> element whenever
+            possible</strong> to ensure matching cross-browser rendering.</p>
+
+        <p>Among other things, there's <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=697451">a bug in Firefox
+            &lt;30</a> that prevents us from setting the <code>line-height</code> of <code>&lt;input&gt;</code>-based
+            buttons, causing them to not exactly match the height of other buttons on Firefox.</p>
+    </div>
+</section>

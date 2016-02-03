@@ -1,0 +1,56 @@
+<section class="vertical-push-3">
+    <h2 id="button-pairing-title" class="page-header">Button Pairing</h2>
+    <p>
+        Use buttons in these combinations to communicate hierarchy of user action. The family (Core, Explore, Outlet,
+        ect)
+        color tone represents the intended primary call(s) to action.
+    </p>
+    <div class="bs-callout bs-callout-danger">
+        <h3> Making groupings of buttons flow correctly</h3>
+        <p> A singleton button possesses no margin</p>
+        <p> Buttons which have a previous sibling which is also a button receive a left margin of 8px, this accounts for
+            the fact that buttons are <code> display: inline-block </code> which adds an additional 4px of space
+            totaling 12px.</p>
+        <p>If your buttons will wrap prior to displaying block you will have an undesirable staircase. To rectify this place buttons in a
+            container with the <code> btn-group inline-group </code> classes.</p>
+    </div>
+    <h3 id="button-pairing-same-importance" class="status status-good">Primary with Secondary Button Theme</h3>
+    <p>
+        This pairing presents two actions of similar importance. Assign these roles to button pairings with the <code>btn-primary</code>class
+        for primary buttons and <code>btn-default</code> for secondary buttons.
+    </p>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="btn-group inline-group">
+                <button type="button" class="btn btn-primary btn-block">Primary call to action</button>
+                <button type="button" class="btn btn-default btn-block">Secondary call to action</button>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="btn-group inline-group">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-default">Secondary</button>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="button-pairing-diff-importance" class="status status-chat">Primary with Secondary Button Link</h3>
+    <p>
+        Use when less emphasis is desired for the secondary CTA (Example: "Cancel"). Standalone link style (<strong>see
+        Links Reference for more details</strong>) renders using all the same spacing rules as a normal button.
+    </p>
+    <div class="row">
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-primary btn-block">Primary call to action</button>
+            <button type="button" class="btn btn-block btn-link">Secondary call to action</button>
+        </div>
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-link">Secondary</button>
+        </div>
+    </div>
+
+
+
+</section>

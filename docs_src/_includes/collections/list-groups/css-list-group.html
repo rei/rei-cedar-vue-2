@@ -1,0 +1,45 @@
+<section class ="vertical-push-3" data-ui="list-group">
+
+  <h3 id="list-group-basic" class="status status-base-class">Simple List Group</h3>
+  <p>The most basic list group is simply an unordered list with list items, and the proper classes. Build upon it with the options that follow, or your own CSS as needed.</p>
+  <p>Notice that this example is nothing more that an unordered list</p>
+  <div class="well" data-example-id="simple-list-group">
+  {% include /markup-templates/list-group/list-group.html%}
+  </div>
+  {% highlight html %}
+  {% include /markup-templates/list-group/list-group.html param="default"%}
+  {% endhighlight %}
+
+  <h3 id="list-group-sort" class="status status-warning">Sorting example</h3>
+  <p>
+    This example demonstrates a sort list using radio buttons.
+    To accomplish this we add a few more atomic parts to our list-group items.
+    We change the markup within the parent list items to match that of the radio markup from our radio example and add the <strong>radio</strong> class to the list-group-item.
+    Then, to style the radio as a sort checkmark we add the appropriate <strong>toggle</strong> class of <code>toggle-sort</code>.
+  </p>
+  <div class="well" data-example-id="sorting-list-group">
+      {% include /markup-templates/list-group/list-group-sort.html%}
+  </div>
+{% highlight html %}
+   {% include /markup-templates/list-group/list-group-sort.html param="default"%}
+{% endhighlight %}
+
+<h3 id="list-group-filter" class="status status-warning">Filter Menu</h3>
+<p>Taking what we have built in the sort example we can add one more class: <code>collapsibleList</code>
+  to have our <strong>radio</strong> or <strong>checkbox</strong> work as a control to expand and collapse our list groups. for this example we have used checkboxes and have changed the <code>toggle-sort</code> to <code>toggle-expand-collapse</code>. </p>
+  <div class="well" data-example-id="filter-list-group">
+      {% include /markup-templates/list-group/list-group-filter.html %}
+  </div>
+{% highlight html %}
+   {% include /markup-templates/list-group/list-group-filter.html %}
+{% endhighlight %}
+
+<h3 id="list-group-menu" class="status status-warning">Menu</h3>
+  <div class="well" data-example-id="menu-list-group">
+      {% include /markup-templates/list-group/list-group-menu.html%}
+  </div>
+{% highlight html %}
+   {% include /markup-templates/list-group/list-group-menu.html%}
+{% endhighlight %}
+
+</section>

@@ -1,0 +1,9 @@
+{% for item in site.data.list-names %}
+{% if item.type == include.param %}
+<ol class="{{item.class}}">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+</ol>
+{% endif %}
+{% endfor %}

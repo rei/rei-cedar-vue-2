@@ -1,0 +1,501 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Image Mixins
+//
+// TOC:
+//
+// :Responsive Image
+// :Retina Image
+// :Twin Mountain Peaks Shape
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Responsive image
+//
+// Allow browsers to determine video or slideshow dimensions based on the width of
+// their containing block by creating an intrinsic ratio that will properly scale
+// on any device.
+// Rules are directly applied to <iframe>, <embed>, <video>, and <object> elements;
+// optionally use anexplicit descendant class .embed-responsive-item when you want
+// to match the styling for other attributes.
+//
+// Pro-Tip! You don't need to include frameborder="0" in your <iframe>s as we override
+// that for you.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.img-responsive(@display: block) {
+  display: @display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Retina image
+//
+// Specify two image paths and the @1x image dimensions, this mixin will provide an
+// @2x media query. If you have many
+// images to serve, consider writing your retina image CSS manually in a single media query.
+//----------------------------------------------------------------------------------------------------------------------
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: url("@{file-1x}");
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Image sharpening
+//
+// Improves sharpness of images when scaled down
+//
+//----------------------------------------------------------------------------------------------------------------------
+.img-sharpen {
+  image-rendering: optimizeSpeed;             /* Legal fallback */
+  image-rendering: -moz-crisp-edges;          /* Firefox        */
+  image-rendering: -o-crisp-edges;            /* Opera          */
+  image-rendering: -webkit-optimize-contrast; /* Safari         */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed  */
+  image-rendering: crisp-edges;               /* CSS4 Proposed  */
+  image-rendering: pixelated;                 /* CSS4 Proposed  */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+           */
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Image frame
+//
+// Highly configurable and efficient image scale, crop, and anchor images in a container
+//
+//----------------------------------------------------------------------------------------------------------------------
+
+.img-anchor ( @aspect: landscape; @crop: crop; @anchor: center ) {
+
+  & when ( @anchor = center ) {
+    .utility-position( center );
+  }
+
+  & when ( @aspect = portrait )
+    and  ( @anchor = end )
+    and  ( @crop   = crop ) {
+    .utility-position( bottom );
+  }
+
+  & when ( @aspect = portrait )
+    and  ( @anchor = start )
+    and  ( @crop   = crop ) {
+    .utility-position( top );
+  }
+
+  & when ( @aspect = landscape )
+    and  ( @anchor = start )
+    and  ( @crop   = crop ) {
+    .utility-position( left );
+  }
+
+  & when ( @aspect = landscape )
+    and  ( @anchor = end )
+    and  ( @crop   = crop ) {
+    .utility-position( right )
+  }
+}
+
+.img-scale ( @crop: crop; @aspect: landscape; @sharpen: true ) {
+  height: auto;
+  width: auto;
+
+  & when ( @sharpen = true ) {
+    .img-sharpen;
+  }
+
+  & when ( @crop = crop ) {
+
+    min-height: 100%;
+    min-width: 100%;
+
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  & when ( @aspect = landscape )
+    and ( @crop = crop ) {
+    height: 100%;
+  }
+
+  & when ( @aspect = portrait )
+     and ( @crop = crop ) {
+    width: 100%;
+  }
+
+  & when not ( @crop = crop ) {
+    top: 50%;
+    left: 50%;
+
+    height: auto;
+    width: auto;
+
+    max-height: 100%;
+    max-width: 100%;
+
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+
+.img-frame ( @aspect: landscape; @crop: crop; @anchor: center; @ratio: null ) {
+  position: relative;
+  overflow: hidden;
+
+  & when ( @ratio ) {
+    .utility-aspect-ratio( @ratio );
+  }
+
+  & when ( ispixel( @ratio ) ) {
+    padding-bottom: @ratio;
+  }
+
+  > img,
+  > video {
+    .img-anchor( @aspect; @crop; @anchor );
+    .img-scale( @crop; @aspect );
+
+    & when not ( @crop = crop )
+      and ( ispixel( @crop ) ) {
+      padding: @crop;
+    }
+  }
+}
+
+
+/* Application Classes */
+.img-frame {
+  &:not( .left ):not( .right ):not( .top ):not( .bottom ):not( .center ),
+  &.nocrop {
+
+    .img-frame( landscape; null );
+
+    &.ratio {
+
+      &-square {
+        .img-frame( landscape; null; center; 1 );
+      }
+
+      &-2-3 {
+        .img-frame( landscape; null; center; 2/3 );
+      }
+
+      &-3-2 {
+        .img-frame( landscape; null; center; 3/2 );
+      }
+
+      &-1-2 {
+        .img-frame( landscape; null; center; 1/2 );
+      }
+
+      &-2-1 {
+        .img-frame( landscape; null; center; 2 );
+      }
+
+      &-3-4 {
+        .img-frame( landscape; null; center; 3/4 );
+      }
+
+      &-4-3 {
+        .img-frame( landscape; null; center; 4/3 );
+      }
+
+      &-9-16 {
+        .img-frame( landscape; null; center; 9/16 );
+      }
+
+      &-16-9 {
+        .img-frame( landscape; null; center; 16/9 );
+      }
+    }
+  }
+
+  &.center {
+    .img-frame( landscape; crop; center );
+
+    &.portrait {
+      .img-frame( portrait; crop; center );
+    }
+  }
+
+  &.ratio {
+    &-square {
+      .img-frame( landscape; crop; center; 1 );
+    }
+
+    &-2-3 {
+      .img-frame( landscape; crop; center; 2/3 );
+    }
+
+    &-3-2 {
+      .img-frame( landscape; crop; center; 3/2 );
+    }
+
+    &-1-2 {
+      .img-frame( landscape; crop; center; 1/2 );
+    }
+
+    &-2-1 {
+      .img-frame( landscape; crop; center; 2 );
+    }
+
+    &-3-4 {
+      .img-frame( landscape; crop; center; 3/4 );
+    }
+
+    &-4-3 {
+      .img-frame( landscape; crop; center; 4/3 );
+    }
+
+    &-9-16 {
+      .img-frame( landscape; crop; center; 9/16 );
+    }
+
+    &-16-9 {
+      .img-frame( landscape; crop; center; 16/9 );
+    }
+  }
+
+  &.left {
+    .img-frame( landscape; crop; start );
+
+    &.ratio {
+      &-square {
+        .img-frame( landscape; crop; start; 1 );
+      }
+
+      &-2-3 {
+        .img-frame( landscape; crop; start; 2/3 );
+      }
+
+      &-3-2 {
+        .img-frame( landscape; crop; start; 3/2 );
+      }
+
+      &-1-2 {
+        .img-frame( landscape; crop; start; 1/2 );
+      }
+
+      &-2-1 {
+        .img-frame( landscape; crop; start; 2 );
+      }
+
+      &-3-4 {
+        .img-frame( landscape; crop; start; 3/4 );
+      }
+
+      &-4-3 {
+        .img-frame( landscape; crop; start; 4/3 );
+      }
+
+      &-9-16 {
+        .img-frame( landscape; crop; start; 9/16 );
+      }
+
+      &-16-9 {
+        .img-frame( landscape; crop; start; 16/9 );
+      }
+    }
+  }
+
+  &.right {
+    .img-frame( landscape; crop; end );
+
+    &.ratio {
+      &-square {
+        .img-frame( landscape; crop; end; 1 );
+      }
+
+      &-2-3 {
+        .img-frame( landscape; crop; end; 2/3 );
+      }
+
+      &-3-2 {
+        .img-frame( landscape; crop; end; 3/2 );
+      }
+
+      &-1-2 {
+        .img-frame( landscape; crop; end; 1/2 );
+      }
+
+      &-2-1 {
+        .img-frame( landscape; crop; end; 2 );
+      }
+
+      &-3-4 {
+        .img-frame( landscape; crop; end; 3/4 );
+      }
+
+      &-4-3 {
+        .img-frame( landscape; crop; end; 4/3 );
+      }
+
+      &-9-16 {
+        .img-frame( landscape; crop; end; 9/16 );
+      }
+
+      &-16-9 {
+        .img-frame( landscape; crop; end; 16/9 );
+      }
+    }
+  }
+
+  &.top {
+    .img-frame( portrait; crop; start );
+
+    &.ratio {
+      &-square {
+        .img-frame( portrait; crop; start; 1 );
+      }
+
+      &-2-3 {
+        .img-frame( portrait; crop; start; 2/3 );
+      }
+
+      &-3-2 {
+        .img-frame( portrait; crop; start; 3/2 );
+      }
+
+      &-1-2 {
+        .img-frame( portrait; crop; start; 1/2 );
+      }
+
+      &-2-1 {
+        .img-frame( portrait; crop; start; 2 );
+      }
+
+      &-3-4 {
+        .img-frame( portrait; crop; start; 3/4 );
+      }
+
+      &-4-3 {
+        .img-frame( portrait; crop; start; 4/3 );
+      }
+
+      &-9-16 {
+        .img-frame( portrait; crop; start; 9/16 );
+      }
+
+      &-16-9 {
+        .img-frame( portrait; crop; start; 16/9 );
+      }
+    }
+  }
+
+  &.bottom {
+    .img-frame( portrait; crop; end );
+
+    &.ratio {
+      &-square {
+        .img-frame( portrait; crop; end; 1 );
+      }
+
+      &-2-3 {
+        .img-frame( portrait; crop; end; 2/3 );
+      }
+
+      &-3-2 {
+        .img-frame( portrait; crop; end; 3/2 );
+      }
+
+      &-1-2 {
+        .img-frame( portrait; crop; end; 1/2 );
+      }
+
+      &-2-1 {
+        .img-frame( portrait; crop; end; 2 );
+      }
+
+      &-3-4 {
+        .img-frame( portrait; crop; end; 3/4 );
+      }
+
+      &-4-3 {
+        .img-frame( portrait; crop; end; 4/3 );
+      }
+
+      &-9-16 {
+        .img-frame( portrait; crop; end; 9/16 );
+      }
+
+      &-16-9 {
+        .img-frame( portrait; crop; end; 16/9 );
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Twin Mountain Peaks Shape
+//
+// @mountain-color: by default this is set to inherit; when placed within a well with an overlay class applied it will
+// inert the container color. If this is not desired specify the necessary color.
+// @first-mountain-size: default is 20px. This is the mobile view of the left shape.
+// @second-mountain-size: default is 15px. This is the mobile view of the right shape.
+// @first-sm-mountain-size: default is 30px. This is the non-mobile view of the right shape.
+// @second-sm-mountain-size: default is 20px. This is the non-mobile view of the right shape.
+//----------------------------------------------------------------------------------------------------------------------
+.twin-mountain-peaks
+( @mountain-color: inherit;
+@first-mountain-size: 20px;
+@second-mountain-size: 15px;
+@first-sm-mountain-size: 30px;
+@second-sm-mountain-size: 20px; ) {
+    border-color: inherit; // if @mountain-color is inherit it will inherit it's color from an overlay class defined in the parent container.
+    display: inline-block;
+    height: @first-mountain-size;
+    &:before {
+        content: "";
+        position: absolute;
+        border-left: @first-mountain-size solid transparent;
+        border-right: @first-mountain-size solid transparent;
+        border-bottom: @first-mountain-size solid;
+        border-bottom-color: @mountain-color;
+
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        .translate(22px; 5px );
+        width: 0;
+        height: 0;
+        border-left: @second-mountain-size solid transparent;
+        border-right: @second-mountain-size solid transparent;
+        border-bottom: @second-mountain-size solid;
+        border-bottom-color: @mountain-color;
+
+    }
+    @media (min-width: @screen-sm-min) {
+        height: @first-sm-mountain-size;
+        width: auto;
+        &:before {
+            border-left: @first-sm-mountain-size solid transparent;
+            border-right: @first-sm-mountain-size solid transparent;
+            border-bottom: @first-sm-mountain-size solid;
+            border-bottom-color: @mountain-color;
+        }
+        &:after {
+            .translate(36px; 10px );
+            border-left: @second-sm-mountain-size solid transparent;
+            border-right: @second-sm-mountain-size solid transparent;
+            border-bottom: @second-sm-mountain-size solid;
+            border-bottom-color: @mountain-color;
+        }
+
+    }
+}

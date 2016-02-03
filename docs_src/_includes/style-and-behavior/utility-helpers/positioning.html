@@ -1,0 +1,98 @@
+<h2 id="utility-position">Positioning</h2>
+<p>Utilize either through mixin <code>.utility-position();</code> or by class <code>.position</code> along with <code>.left</code>, <code>.right</code>, <code>.top</code>, <code>.bottom</code>, <code>.top.left</code>, <code>.top.right</code>, <code>.bottom.left</code>, <code>.bottom.right</code>, or using modifiers following the same schema ( ex. <code>.position--top-left</code> ).</p>
+<h5>Note: This is intended to be used on elements inside of a relatively positioned container</h5>
+<br>
+<div class="row">
+    <div class="col-xs-12" style="background:#eee;height:300px;border:4px solid #fff">
+        <div class="position top right">Top Right</div>
+        <div class="position top">Top</div>
+        <div class="position top left">Top Left</div>
+        <div class="position left">Left</div>
+        <div class="position center">Center</div>
+        <div class="position right">Right</div>
+        <div class="position--bottom-right">Bottom Right</div>
+        <div class="position bottom">Bottom</div>
+        <div class="position--bottom-left">Bottom Left</div>
+    </div>
+    <div class="col-xs-8" style="background:#eee;height:700px;border:4px solid #fff">
+        <div class="position top right">Top Right</div>
+        <div class="position top">Top</div>
+        <div class="position top left">Top Left</div>
+        <div class="position left">Left</div>
+        <div class="position center">Center</div>
+        <div class="position right">Right</div>
+        <div class="position--bottom-right">Bottom Right</div>
+        <div class="position bottom">Bottom</div>
+        <div class="position--bottom-left">Bottom Left</div>
+    </div>
+    <div class="col-xs-4" style="background:#eee;height:150px;border:4px solid #fff">
+        <div class="position top right">Top Right</div>
+        <div class="position top">Top</div>
+        <div class="position top left">Top Left</div>
+        <div class="position left">Left</div>
+        <div class="position center">Center</div>
+        <div class="position right">Right</div>
+        <div class="position--bottom-right">Bottom Right</div>
+        <div class="position bottom">Bottom</div>
+        <div class="position--bottom-left">Bottom Left</div>
+    </div>
+    <div class="col-xs-2" style="background:#eee;height:80px;border:4px solid #fff">
+        <div class="position top right">TR</div>
+        <div class="position top">Top</div>
+        <div class="position top left">TL</div>
+        <div class="position left">Left</div>
+        <div class="position center">Center</div>
+        <div class="position right">Right</div>
+        <div class="position--bottom-right">BR</div>
+        <div class="position bottom">Bottom</div>
+        <div class="position--bottom-left">BL</div>
+    </div>
+    <div class="col-xs-1" style="background:#eee;height:80px;border:4px solid #fff">
+        <div class="position top right">TR</div>
+        <div class="position top">T</div>
+        <div class="position top left">TL</div>
+        <div class="position left">L</div>
+        <div class="position center">C</div>
+        <div class="position right">R</div>
+        <div class="position--bottom-right">BR</div>
+        <div class="position bottom">B</div>
+        <div class="position--bottom-left">BL</div>
+    </div>
+    <div class="col-xs-1" style="background:#eee;height:200px;border:4px solid #fff">
+        <div class="position top right">TR</div>
+        <div class="position top">T</div>
+        <div class="position top left">TL</div>
+        <div class="position left">L</div>
+        <div class="position center">C</div>
+        <div class="position right">R</div>
+        <div class="position--bottom-right">BR</div>
+        <div class="position bottom">B</div>
+        <div class="position--bottom-left">BL</div>
+    </div>
+</div>
+<br>
+{% highlight html %}
+    <div class="position bottom left"></div>
+    <div class="position--bottom-left"></div>
+
+{% endhighlight %}
+
+{% highlight scss %}
+    // Usage as a mixin
+    #div1 {
+        .position( center );
+    }
+    #div2 {
+        .position( bottom-left );
+    }
+    #div3 {
+        .position( 33% );
+    }
+    #div4 {
+        .position( 20px );
+    }
+    #div5 {
+        .position( 20px, 50% );
+    }
+
+{% endhighlight %}
