@@ -113,18 +113,6 @@ We would like to thank the creators and contributors of the following tools that
 
 The following frameworks have been used / referenced thus far
 
-## TODO
-
-- Remove generated files from git
-
-## See Also
-REI Cedar is a living, working project and will continue to grow, and change. Just like any healthy tree, this one will
-lose limbs and may change direction at times.
-
-We would like to thank the creators and contributors of the following tools that we have pulled inspiration from.
-
-The following frameworks have been used / referenced thus far
-
  - [Bootstrap](http://getbootstrap.com/),
  - [Semantic-ui](http://semantic-ui.com/),
  - [Pattern lab](http://patternlab.io/about.html)
@@ -143,3 +131,7 @@ The following tools have been used / referenced thus far
 # Icons
 
  - [Vecteezy](http://creativecommons.org/licenses/by/3.0/deed.en_US)
+
+## TODO
+
+- Remove generated files from git
