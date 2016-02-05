@@ -10,8 +10,7 @@
        \:\__\        \:\__\        \::/__/        /:/  /       |:|  |
         \/__/         \/__/         ~~            \/__/         \|__|
 
-REI Cedar Style Framework!
---------------------------
+# REI Cedar Style Framework!
 
 Welcome to REI's style framework! The overall goals of this project are to provide a common scaffolding for UI elements,
 and a set of themes that build on this scaffolding. We started this project in 2015 as a fork of
