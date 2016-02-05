@@ -119,16 +119,16 @@ The following frameworks have been used / referenced thus far
 
 The following tools have been used / referenced thus far
 
-# UI testing:
+### UI testing:
 
  - [PhantomCSS](https://github.com/Huddle/PhantomCSS/blob/master/README.md)
 
-# Accessibility testing:
+### Accessibility testing:
 
  - [Pa11y](http://pa11y.org/)
  - [A11y](https://addyosmani.com/a11y/)
 
-# Icons
+### Icons
 
  - [Vecteezy](http://creativecommons.org/licenses/by/3.0/deed.en_US)
 
