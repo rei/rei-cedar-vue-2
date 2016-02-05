@@ -1,0 +1,45 @@
+/*
+* Page headers
+*/
+
+
+.bs-docs-header {
+    padding-top: @vertical-push;
+    padding-bottom: @vertical-push;
+    background: #333;
+    background-size: cover;
+}
+.bs-docs-header h1 {
+    .text-center();
+    .h1();
+    color: #fff;
+    margin: 0;
+}
+
+.bs-docs-header p {
+    .text-center();
+    margin-bottom: 0;
+    color: #fff;
+    line-height: 1.4;
+}
+.bs-docs-header .container {
+    position: relative;
+}
+
+@media( min-width: @screen-md-min ) {
+    .bs-docs-header h1,
+    .bs-docs-header p {
+        .text-left();
+    }
+}
+
+
+
+// Page header
+// -------------------------
+
+.page-header {
+    padding-bottom: ( ( @line-height-computed / 2 ) - 1 );
+    margin: ( @line-height-computed * 2 ) 0 @line-height-computed;
+    border-bottom: 1px solid @core-architectural-3;
+}

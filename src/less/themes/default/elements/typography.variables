@@ -1,0 +1,72 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// REI-CEDAR TYPOGRAPHY THEME VARIABLES
+//
+// Font, line-height, and color for body text, headings, and more.
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// COLOR PALETTES
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@text-color:                                          @core-architectural-2;
+@text-muted:                                          @core-architectural-3;
+@text-overlay:                                        @core-architectural-5;
+@headings-color:                                      inherit;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// SIZE AND SHAPE
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Family
+//----------------------------------------------------------------------------------------------------------------------
+//Brand map
+@font-family-sans-serif:                           "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:                                Georgia, "Times New Roman", Times, serif;
+@brand-font:                                       "Anderson 1938", @font-family-sans-serif;
+@brand-font-secondary:                             "Interstate Bold Condensed", @font-family-sans-serif;
+@font-family-monospace:                            Menlo, Monaco, Consolas, "Courier New", monospace;
+
+//Implementation
+@font-family-base:                                 @font-family-sans-serif;
+@headings-font-family:                             @brand-font;
+@headings-font-family-secondary:                   @brand-font-secondary;
+
+// Line-height
+//----------------------------------------------------------------------------------------------------------------------
+// Unit-less `line-height` for use in components like buttons.
+@line-height-base:                                  1.5; // 24/16
+
+@headings-line-height-xs:                           64 / 56; //~1.14xxxxx
+@headings-line-height-sm:                           1.2;
+@headings-line-height:                              1.25;
+@headings-line-height-alt:                          1.75;
+
+// Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:                             floor((@font-size-base * @line-height-base)); // ~24px
+
+// Size
+//----------------------------------------------------------------------------------------------------------------------
+// Body copy
+@font-size-base:                                    16px;
+@font-size-large:                                   18px;
+@font-size-smaller:                                 14px;
+@font-size-small:                                   12px;
+
+// Headings
+// These are the mobile-first font-sizes for headers.
+// Non-mobile font adjustments are done in type.less
+@font-size-h1:                                      36px;
+@font-size-h1-lg:                                   56px;
+@font-size-h2:                                      30px;
+@font-size-h2-lg:                                   40px;
+@font-size-h3:                                      24px;
+
+// Weight
+//----------------------------------------------------------------------------------------------------------------------
+@headings-font-weight:                              normal; // Matches font family definition
+
+// Path
+//----------------------------------------------------------------------------------------------------------------------
+@headings-font-path:                                "/font/";

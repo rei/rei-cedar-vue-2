@@ -1,0 +1,106 @@
+
+/*
+* Scaffolding
+*
+* Update the basics of our documents to prep for docs content.
+*/
+
+body {
+    position: relative; /* For scrollspy */
+}
+
+/* Keep code small in tables on account of limited space */
+.table code {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+/* Inline code within headings retain the heading's background-color */
+h2 code,
+h3 code,
+h4 code {
+    background-color: inherit;
+}
+
+/* Outline button for use within the docs */
+.btn-outline {
+    color: #fff;
+    background-color: @docs-primary;
+    border-color: @docs-primary;
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+    color: #fff;
+    background-color: @docs-primary-dark;
+    border-color: @docs-primary;
+}
+
+/* Inverted outline button (white on dark) */
+.btn-outline-inverse {
+    color: #fff;
+    background-color: transparent;
+    border-color: @docs-primary-lightest;
+}
+.btn-outline-inverse:hover,
+.btn-outline-inverse:focus,
+.btn-outline-inverse:active {
+    color: @docs-primary;
+    text-shadow: none;
+    background-color: #fff;
+    border-color: #fff;
+}
+.vertical-push-1 {
+  margin-bottom: 10px;
+  @media( min-width: @screen-sm-min ) {
+    margin-bottom: 20px;
+  }
+  @media( min-width: @screen-md-min ) {
+    margin-bottom: 30px;
+  }
+}
+.vertical-push-2 {
+  margin-bottom: 20px;
+  @media( min-width: @screen-sm-min ) {
+    margin-bottom: 40px;
+  }
+  @media( min-width: @screen-md-min ) {
+    margin-bottom: 60px;
+  }
+}
+.vertical-push-3 {
+  margin-bottom: 30px;
+  @media( min-width: @screen-sm-min ) {
+    margin-bottom: 60px;
+  }
+  @media( min-width: @screen-md-min ) {
+    margin-bottom: 90px;
+  }
+}
+.vertical-pull-1 {
+  margin-top: 10px;
+  @media( min-width: @screen-sm-min ) {
+    margin-top: 20px;
+  }
+  @media( min-width: @screen-md-min ) {
+    margin-top: 30px;
+  }
+}
+.vertical-pull-2 {
+  margin-top: 20px;
+  @media( min-width: @screen-sm-min ) {
+    margin-top: 40px;
+  }
+  @media( min-width: @screen-md-min ) {
+    margin-top: 60px;
+  }
+}
+.vertical-pull-3 {
+  margin-top: 30px;
+  @media( min-width: @screen-sm-min ) {
+    margin-top: 60px;
+  }
+  @media( min-width: @screen-md-min ) {
+    margin-top: 90px;
+  }
+}

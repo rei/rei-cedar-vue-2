@@ -1,0 +1,26 @@
+<section class="vertical-push-3">
+    <h2 id="helper-classes-clearfix">Clearfix</h2>
+    <p>Easily clear <code>float</code>s by adding <code>.clearfix</code> <strong>to the parent element</strong>. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher. Can also be used as a mixin.</p>
+    {% highlight html %}
+    <!-- Usage as a class -->
+    <div class="clearfix">...</div>
+    {% endhighlight %}
+    {% highlight scss %}
+    // Mixin itself
+    .clearfix() {
+    &:before,
+    &:after {
+    content: " ";
+    display: table;
+    }
+    &:after {
+    clear: both;
+    }
+    }
+
+    // Usage as a mixin
+    .element {
+    .clearfix();
+    }
+    {% endhighlight %}
+</section>
