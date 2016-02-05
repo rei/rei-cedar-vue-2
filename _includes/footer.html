@@ -7,10 +7,10 @@
               {% for item in site.data.navigation.items %}
               <div class="col-md-2 col-sm-6">
                   <ul class="list-text">
-                      <li><a class="h3 link_header-overlay" href="{{ item.href }}">{{ item.label }}</a></li>
+                      <li><a class="h3 link_header-overlay" href="{{ site.github.url }}/{{ item.href }}">{{ item.label }}</a></li>
                       {% for nested in item.subCats %}
                       <li>
-                          <a class="nested" href="{{ nested.href }}">{{ nested.label }}</a>
+                          <a class="nested" href="{{ site.github.url }}/{{ nested.href }}">{{ nested.label }}</a>
                       </li>
                       {% endfor %}
                   </ul>
