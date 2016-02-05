@@ -33,6 +33,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="{{ site.github.url }}/assets/js/rei-cedar.js"></script>
 <script src="{{ site.github.url }}/assets/js/vendor/particles.min.js"></script>
+
+{% if site.github %}
+    <script type="text/javascript">window.sitename = '{{ site.github.url }}';</script>
+{% else %}
+    <script type="text/javascript">window.sitename = '';</script>
+{% endif %}
+
 <script src="{{ site.github.url }}/assets/js/main.js"></script>
 
 {% if site.github %}
