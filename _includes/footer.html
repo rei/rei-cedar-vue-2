@@ -30,9 +30,9 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="{{ site.github.url }}/assets/js/rei-cedar.js"></script>
-<script src="{{ site.github.url }}/assets/js/vendor/particles.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{ site.github.url }}/assets/js/rei-cedar.js"></script>
+<script type="text/javascript" src="{{ site.github.url }}/assets/js/vendor/particles.min.js"></script>
 
 {% if site.github %}
     <script type="text/javascript">window.sitename = '{{ site.github.url }}';</script>
@@ -40,12 +40,13 @@
     <script type="text/javascript">window.sitename = '';</script>
 {% endif %}
 
-<script src="{{ site.github.url }}/assets/js/main.js"></script>
+<script type="text/javascript" src="{{ site.github.url }}/assets/js/main.js"></script>
 
 
-{% for file in site.data.configBridge.paths.docsJs %}
-<script src="{{ site.github.url }}/{{ file }}"></script>
-{% endfor %}
+<script type="text/javascript" src="{{ site.github.url }}/assets/js/vendor/holder.js"></script>
+<script type="text/javascript" src="{{ site.github.url }}/assets/js/vendor/ZeroClipboard.min.js"></script>
+<script type="text/javascript" src="{{ site.github.url }}/assets/js/vendor/anchor.js"></script>
+<script type="text/javascript" src="{{ site.github.url }}/assets/js/src/application.js"></script>
 
 
 
