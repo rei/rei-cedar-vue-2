@@ -6,8 +6,6 @@ highlighter:      rouge
 permalink:        pretty
 
 # Server
-source:           ./docs_src
-destination:      ./docs_dist
 host:             0.0.0.0
 port:             9002
 url:              http://rei.github.io/rei-cedar/

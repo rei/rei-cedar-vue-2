@@ -1,0 +1,3830 @@
+/*
+* Bootstrap Documentation
+* Special styles for presenting Bootstrap's documentation and code examples.
+*/
+.overlay-dark {
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+}
+.overlay-medium {
+  background-color: #222;
+  border-color: #222;
+  color: #fff;
+}
+.overlay-light {
+  background-color: #fff;
+  border-color: #fff;
+  color: #222;
+}
+.overlay-dusty {
+  background-color: #efeee2;
+  border-color: #efeee2;
+  color: #222;
+}
+.container-fluid {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 768px) {
+  .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.alert,
+.field-msg,
+.field-msg_success,
+.field-msg_error,
+.field-msg_warning,
+.field-msg_info,
+.field-msg_help {
+  margin-top: 15px;
+}
+.alert:first-child,
+.field-msg:first-child,
+.field-msg_success:first-child,
+.field-msg_error:first-child,
+.field-msg_warning:first-child,
+.field-msg_info:first-child,
+.field-msg_help:first-child {
+  margin-top: 0;
+}
+.alert,
+.alert .alert-text,
+.field-msg,
+.field-msg .alert-text,
+.field-msg_success,
+.field-msg_success .alert-text,
+.field-msg_error,
+.field-msg_error .alert-text,
+.field-msg_warning,
+.field-msg_warning .alert-text,
+.field-msg_info,
+.field-msg_info .alert-text,
+.field-msg_help,
+.field-msg_help .alert-text {
+  zoom: 1;
+  overflow: hidden;
+}
+.alert .alert-text,
+.field-msg .alert-text,
+.field-msg_success .alert-text,
+.field-msg_error .alert-text,
+.field-msg_warning .alert-text,
+.field-msg_info .alert-text,
+.field-msg_help .alert-text {
+  width: 10000px;
+}
+.alert > .pull-right,
+.field-msg > .pull-right,
+.field-msg_success > .pull-right,
+.field-msg_error > .pull-right,
+.field-msg_warning > .pull-right,
+.field-msg_info > .pull-right,
+.field-msg_help > .pull-right {
+  padding-left: 10px;
+}
+.alert > .pull-left,
+.alert > .icon:first-of-type,
+.field-msg > .pull-left,
+.field-msg > .icon:first-of-type,
+.field-msg_success > .pull-left,
+.field-msg_success > .icon:first-of-type,
+.field-msg_error > .pull-left,
+.field-msg_error > .icon:first-of-type,
+.field-msg_warning > .pull-left,
+.field-msg_warning > .icon:first-of-type,
+.field-msg_info > .pull-left,
+.field-msg_info > .icon:first-of-type,
+.field-msg_help > .pull-left,
+.field-msg_help > .icon:first-of-type {
+  padding-right: 10px;
+}
+.alert > .icon:first-of-type,
+.alert .alert-text,
+.field-msg > .icon:first-of-type,
+.field-msg .alert-text,
+.field-msg_success > .icon:first-of-type,
+.field-msg_success .alert-text,
+.field-msg_error > .icon:first-of-type,
+.field-msg_error .alert-text,
+.field-msg_warning > .icon:first-of-type,
+.field-msg_warning .alert-text,
+.field-msg_info > .icon:first-of-type,
+.field-msg_info .alert-text,
+.field-msg_help > .icon:first-of-type,
+.field-msg_help .alert-text {
+  display: table-cell;
+  vertical-align: top;
+}
+.well-mountain-group .well:not(:last-of-type) {
+  margin-bottom: 0;
+}
+.label-classification,
+.required-form:before {
+  font-size: 18px;
+}
+.label-classification,
+.required-form:before {
+  font-family: "Anderson 1938", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.label-classification,
+.required-form:before {
+  font-family: "Interstate Bold Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.label-classification,
+.required-form:before {
+  line-height: 1.44444444;
+}
+.label-classification {
+  line-height: .9;
+  text-transform: uppercase;
+}
+.link_navigation-title,
+.link_navigation-title-overlay,
+.list-nav > li > a,
+.list-group-menu li.list-group-item > a,
+.list-group-menu li.list-group-item label,
+.list-nav > li > ul > li > a,
+.nav-tabs > li > a,
+.list-menu > li > a,
+.nav-tabs > li > ul > li > a,
+.list-menu > li > ul > li > a,
+.doc_head-navigation > li > a,
+.doc_head-navigation ul > li > a,
+.doc_head-navigation > li > ul > li > a,
+.doc_head-navigation ul > li > ul > li > a {
+  font: normal normal 24px "Anderson 1938", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.25;
+}
+.link_stag,
+.link_navigation-subtitle,
+.link_stag-overlay,
+.link_navigation-subtitle-overlay,
+.link_stag-explore,
+.link_stag-explore-overlay,
+.link-off-price-standalone,
+.link-off-price-standalone-overlay,
+.link-outlet-standalone,
+.link-outlet-standalone-overlay,
+.list-group li.list-group-item > a,
+.list-group-filter li.list-group-item > a,
+.list-group-filter li.list-group-item > label,
+.list-group-menu li.item-secondary > a,
+.list-group-menu li.list-group-item > a,
+.list-group-menu li.list-group-item > label,
+.nav-tabs,
+.explore .btn-link,
+.overlay-dark-1 .explore .btn-link,
+.link_stag-title,
+.link_stag-title-overlay,
+.use_link-stag-explore a,
+.btn-link,
+.overlay-dark .btn-link,
+.btn-link-explore,
+.overlay-dark .btn-link-explore,
+.btn-link-off-price,
+.overlay-dark .btn-link-off-price,
+.btn-link-outlet,
+.overlay-dark .btn-link-outlet,
+.list-menu > li > a,
+.doc_head-navigation > li > a,
+.doc_head-navigation ul > li > a {
+  font-family: "Interstate Bold Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+.link_stag-title,
+.link_navigation,
+.link_navigation-subtitle,
+.link_stag-title-overlay,
+.link_navigation-overlay,
+.list-group li.item-secondary > a,
+.list-group li.list-group-item > a,
+.list-group-filter li.list-group-item > a,
+.list-group-filter li.list-group-item > label,
+.list-group-menu li.list-group-item > a,
+.list-group-menu li.list-group-item > label,
+.link_navigation-title,
+.link-utility,
+.link-utility-overlay,
+.list-nav > li > a,
+.list-nav > li > ul > li > a,
+.list-menu > li > a,
+.link-sub-navigation,
+.list-nav > li > ul > li > a,
+.list-nav > li > ul > li > ul > li > a,
+.nav-tabs > li > a,
+.nav-tabs > li > ul > li > a,
+.list-menu > li > a,
+.list-menu > li > ul > li > a,
+.doc_head-navigation > li > a,
+.doc_head-navigation ul > li > a,
+.nav-tabs > li > ul > li > a,
+.nav-tabs > li > ul > li > ul > li > a,
+.list-menu > li > ul > li > a,
+.list-menu > li > ul > li > ul > li > a,
+.doc_head-navigation > li > a,
+.doc_head-navigation > li > ul > li > a,
+.doc_head-navigation ul > li > a,
+.doc_head-navigation ul > li > ul > li > a,
+.bs-docs-footer .list-text .nested,
+.bs-docs-footer .footer-inline-list .nested,
+.bs-docs-footer .list-text > li > ul .nested,
+.bs-docs-footer .list-decoration .nested,
+.doc_head-navigation > li > ul > li > a,
+.doc_head-navigation > li > ul > li > ul > li > a,
+.doc_head-navigation ul > li > ul > li > a,
+.doc_head-navigation ul > li > ul > li > ul > li > a,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested {
+  text-transform: capitalize;
+}
+.text-info,
+.text-warning,
+.alert-success .alert-text,
+.alert-info .alert-text,
+.alert-warning .alert-text,
+.field-msg_success .alert-text,
+.field-msg_warning .alert-text,
+.field-msg_info .alert-text,
+.field-msg_help .alert-text {
+  color: inherit;
+}
+.alert-danger .alert-text,
+.field-msg_error .alert-text {
+  color: #cc0000;
+}
+.text-body a,
+.underline-body-text a {
+  color: #0066cc;
+  text-decoration: underline;
+  outline: none;
+}
+.text-body a:hover,
+.text-body a:active,
+.text-body a:focus,
+.underline-body-text a:hover,
+.underline-body-text a:active,
+.underline-body-text a:focus {
+  color: #0066cc;
+  text-decoration: underline;
+}
+.text-body a:focus,
+.underline-body-text a:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.text-body a .icon,
+.underline-body-text a .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.text-body a ~ .icon,
+.underline-body-text a ~ .icon {
+  color: #0066cc;
+}
+.link_stag-title,
+.btn-link {
+  color: #0066cc;
+  text-decoration: none;
+  outline: none;
+}
+.link_stag-title:hover,
+.link_stag-title:active,
+.link_stag-title:focus,
+.btn-link:hover,
+.btn-link:active,
+.btn-link:focus {
+  color: #0066cc;
+  text-decoration: underline;
+}
+.link_stag-title:focus,
+.btn-link:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.link_stag-title .icon,
+.btn-link .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.link_stag-title ~ .icon,
+.btn-link ~ .icon {
+  color: #0066cc;
+}
+.link_navigation-title,
+.link-utility,
+.list-nav > li > a,
+.list-nav > li > ul > li > a,
+.list-nav > li > ul > li > a,
+.list-nav > li > ul > li > ul > li > a,
+.nav-tabs > li > a,
+.nav-tabs > li > ul > li > a,
+.list-menu > li > a,
+.list-menu > li > ul > li > a,
+.nav-tabs > li > ul > li > a,
+.nav-tabs > li > ul > li > ul > li > a,
+.list-menu > li > ul > li > a,
+.list-menu > li > ul > li > ul > li > a,
+.doc_head-navigation > li > a,
+.doc_head-navigation > li > ul > li > a,
+.doc_head-navigation ul > li > a,
+.doc_head-navigation ul > li > ul > li > a,
+.doc_head-navigation > li > ul > li > a,
+.doc_head-navigation > li > ul > li > ul > li > a,
+.doc_head-navigation ul > li > ul > li > a,
+.doc_head-navigation ul > li > ul > li > ul > li > a {
+  color: #222;
+  text-decoration: none;
+  outline: none;
+}
+.link_navigation-title:hover,
+.link_navigation-title:active,
+.link_navigation-title:focus,
+.link-utility:hover,
+.link-utility:active,
+.link-utility:focus {
+  color: #222;
+  text-decoration: underline;
+}
+.link_navigation-title:focus,
+.link-utility:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.link_navigation-title .icon,
+.link-utility .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.link_navigation-title ~ .icon,
+.link-utility ~ .icon {
+  color: #222;
+}
+.list-menu > li > a,
+.doc_head-navigation > li > a,
+.doc_head-navigation ul > li > a {
+  color: #222;
+  text-decoration: none;
+  outline: none;
+}
+.list-menu > li > a:hover,
+.list-menu > li > a:active,
+.list-menu > li > a:focus,
+.doc_head-navigation > li > a:hover,
+.doc_head-navigation > li > a:active,
+.doc_head-navigation > li > a:focus,
+.doc_head-navigation ul > li > a:hover,
+.doc_head-navigation ul > li > a:active,
+.doc_head-navigation ul > li > a:focus {
+  color: #222;
+  text-decoration: underline;
+}
+.list-menu > li > a:focus,
+.doc_head-navigation > li > a:focus,
+.doc_head-navigation ul > li > a:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.list-menu > li > a .icon,
+.doc_head-navigation > li > a .icon,
+.doc_head-navigation ul > li > a .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.list-menu > li > a ~ .icon,
+.doc_head-navigation > li > a ~ .icon,
+.doc_head-navigation ul > li > a ~ .icon {
+  color: #222;
+}
+.list-group-menu li.list-group-item > a,
+.list-group-menu li.list-group-item label {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+.list-group-menu li.list-group-item > a:hover,
+.list-group-menu li.list-group-item > a:active,
+.list-group-menu li.list-group-item > a:focus,
+.list-group-menu li.list-group-item label:hover,
+.list-group-menu li.list-group-item label:active,
+.list-group-menu li.list-group-item label:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+.list-group-menu li.list-group-item > a:focus,
+.list-group-menu li.list-group-item label:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.list-group-menu li.list-group-item > a .icon,
+.list-group-menu li.list-group-item label .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.list-group-menu li.list-group-item > a ~ .icon,
+.list-group-menu li.list-group-item label ~ .icon {
+  color: #fff;
+}
+.link-sub-navigation,
+.bs-docs-footer .list-text .nested,
+.bs-docs-footer .footer-inline-list .nested,
+.bs-docs-footer .list-text > li > ul .nested,
+.bs-docs-footer .list-decoration .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested {
+  font-size: 14px;
+}
+.link_stag-overlay,
+.link_stag-title-overlay,
+.overlay-dark .btn-link {
+  color: #4eaaff;
+  text-decoration: none;
+  outline: none;
+}
+.link_stag-overlay:hover,
+.link_stag-overlay:active,
+.link_stag-overlay:focus,
+.link_stag-title-overlay:hover,
+.link_stag-title-overlay:active,
+.link_stag-title-overlay:focus,
+.overlay-dark .btn-link:hover,
+.overlay-dark .btn-link:active,
+.overlay-dark .btn-link:focus {
+  color: #4eaaff;
+  text-decoration: underline;
+}
+.link_stag-overlay:focus,
+.link_stag-title-overlay:focus,
+.overlay-dark .btn-link:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.link_stag-overlay .icon,
+.link_stag-title-overlay .icon,
+.overlay-dark .btn-link .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.link_stag-overlay ~ .icon,
+.link_stag-title-overlay ~ .icon,
+.overlay-dark .btn-link ~ .icon {
+  color: #4eaaff;
+}
+.link-utility-overlay,
+.link-sub-navigation,
+.bs-docs-footer .list-text .nested,
+.bs-docs-footer .footer-inline-list .nested,
+.bs-docs-footer .list-text > li > ul .nested,
+.bs-docs-footer .list-decoration .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+.link-utility-overlay:hover,
+.link-utility-overlay:active,
+.link-utility-overlay:focus,
+.link-sub-navigation:hover,
+.link-sub-navigation:active,
+.link-sub-navigation:focus,
+.bs-docs-footer .list-text .nested:hover,
+.bs-docs-footer .list-text .nested:active,
+.bs-docs-footer .list-text .nested:focus,
+.bs-docs-footer .footer-inline-list .nested:hover,
+.bs-docs-footer .footer-inline-list .nested:active,
+.bs-docs-footer .footer-inline-list .nested:focus,
+.bs-docs-footer .list-text > li > ul .nested:hover,
+.bs-docs-footer .list-text > li > ul .nested:active,
+.bs-docs-footer .list-text > li > ul .nested:focus,
+.bs-docs-footer .list-decoration .nested:hover,
+.bs-docs-footer .list-decoration .nested:active,
+.bs-docs-footer .list-decoration .nested:focus,
+.bs-docs-footer .list-decoration > li > ul .nested:hover,
+.bs-docs-footer .list-decoration > li > ul .nested:active,
+.bs-docs-footer .list-decoration > li > ul .nested:focus,
+.bs-docs-footer .list-decoration > li > ul .nested:hover,
+.bs-docs-footer .list-decoration > li > ul .nested:active,
+.bs-docs-footer .list-decoration > li > ul .nested:focus,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested:hover,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested:active,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+.link-utility-overlay:focus,
+.link-sub-navigation:focus,
+.bs-docs-footer .list-text .nested:focus,
+.bs-docs-footer .footer-inline-list .nested:focus,
+.bs-docs-footer .list-text > li > ul .nested:focus,
+.bs-docs-footer .list-decoration .nested:focus,
+.bs-docs-footer .list-decoration > li > ul .nested:focus,
+.bs-docs-footer .list-decoration > li > ul .nested:focus,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.link-utility-overlay .icon,
+.link-sub-navigation .icon,
+.bs-docs-footer .list-text .nested .icon,
+.bs-docs-footer .footer-inline-list .nested .icon,
+.bs-docs-footer .list-text > li > ul .nested .icon,
+.bs-docs-footer .list-decoration .nested .icon,
+.bs-docs-footer .list-decoration > li > ul .nested .icon,
+.bs-docs-footer .list-decoration > li > ul .nested .icon,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.link-utility-overlay ~ .icon,
+.link-sub-navigation ~ .icon,
+.bs-docs-footer .list-text .nested ~ .icon,
+.bs-docs-footer .footer-inline-list .nested ~ .icon,
+.bs-docs-footer .list-text > li > ul .nested ~ .icon,
+.bs-docs-footer .list-decoration .nested ~ .icon,
+.bs-docs-footer .list-decoration > li > ul .nested ~ .icon,
+.bs-docs-footer .list-decoration > li > ul .nested ~ .icon,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested ~ .icon {
+  color: #fff;
+}
+.explore .link-body,
+.explore .text-body a,
+.explore .underline-body-text a {
+  color: #004e00;
+  text-decoration: underline;
+  outline: none;
+}
+.explore .link-body:hover,
+.explore .link-body:active,
+.explore .link-body:focus,
+.explore .text-body a:hover,
+.explore .text-body a:active,
+.explore .text-body a:focus,
+.explore .underline-body-text a:hover,
+.explore .underline-body-text a:active,
+.explore .underline-body-text a:focus {
+  color: #004e00;
+  text-decoration: underline;
+}
+.explore .link-body:focus,
+.explore .text-body a:focus,
+.explore .underline-body-text a:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.explore .link-body .icon,
+.explore .text-body a .icon,
+.explore .underline-body-text a .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.explore .link-body ~ .icon,
+.explore .text-body a ~ .icon,
+.explore .underline-body-text a ~ .icon {
+  color: #004e00;
+}
+.overlay-dark-1 .explore .link-body,
+.overlay-dark-1 .explore .text-body a,
+.overlay-dark-1 .explore .underline-body-text a {
+  color: #a1c900;
+  text-decoration: underline;
+  outline: none;
+}
+.overlay-dark-1 .explore .link-body:hover,
+.overlay-dark-1 .explore .link-body:active,
+.overlay-dark-1 .explore .link-body:focus,
+.overlay-dark-1 .explore .text-body a:hover,
+.overlay-dark-1 .explore .text-body a:active,
+.overlay-dark-1 .explore .text-body a:focus,
+.overlay-dark-1 .explore .underline-body-text a:hover,
+.overlay-dark-1 .explore .underline-body-text a:active,
+.overlay-dark-1 .explore .underline-body-text a:focus {
+  color: #a1c900;
+  text-decoration: underline;
+}
+.overlay-dark-1 .explore .link-body:focus,
+.overlay-dark-1 .explore .text-body a:focus,
+.overlay-dark-1 .explore .underline-body-text a:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.overlay-dark-1 .explore .link-body .icon,
+.overlay-dark-1 .explore .text-body a .icon,
+.overlay-dark-1 .explore .underline-body-text a .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.overlay-dark-1 .explore .link-body ~ .icon,
+.overlay-dark-1 .explore .text-body a ~ .icon,
+.overlay-dark-1 .explore .underline-body-text a ~ .icon {
+  color: #a1c900;
+}
+.explore .btn-link,
+.use_link-stag-explore a,
+.btn-link-explore {
+  color: #004e00;
+  text-decoration: none;
+  outline: none;
+}
+.explore .btn-link:hover,
+.explore .btn-link:active,
+.explore .btn-link:focus,
+.use_link-stag-explore a:hover,
+.use_link-stag-explore a:active,
+.use_link-stag-explore a:focus,
+.btn-link-explore:hover,
+.btn-link-explore:active,
+.btn-link-explore:focus {
+  color: #004e00;
+  text-decoration: underline;
+}
+.explore .btn-link:focus,
+.use_link-stag-explore a:focus,
+.btn-link-explore:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.explore .btn-link .icon,
+.use_link-stag-explore a .icon,
+.btn-link-explore .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.explore .btn-link ~ .icon,
+.use_link-stag-explore a ~ .icon,
+.btn-link-explore ~ .icon {
+  color: #004e00;
+}
+.explore .btn-link .icon-rei-tree-arrow,
+.use_link-stag-explore a .icon-rei-tree-arrow,
+.btn-link-explore .icon-rei-tree-arrow {
+  padding-left: 10px;
+  vertical-align: text-bottom;
+}
+.overlay-dark-1 .explore .btn-link,
+.overlay-dark .btn-link-explore,
+.overlay-dark .btn-link-off-price,
+.overlay-dark .btn-link-outlet {
+  color: #a1c900;
+  text-decoration: none;
+  outline: none;
+}
+.overlay-dark-1 .explore .btn-link:hover,
+.overlay-dark-1 .explore .btn-link:active,
+.overlay-dark-1 .explore .btn-link:focus,
+.overlay-dark .btn-link-explore:hover,
+.overlay-dark .btn-link-explore:active,
+.overlay-dark .btn-link-explore:focus,
+.overlay-dark .btn-link-off-price:hover,
+.overlay-dark .btn-link-off-price:active,
+.overlay-dark .btn-link-off-price:focus,
+.overlay-dark .btn-link-outlet:hover,
+.overlay-dark .btn-link-outlet:active,
+.overlay-dark .btn-link-outlet:focus {
+  color: #a1c900;
+  text-decoration: underline;
+}
+.overlay-dark-1 .explore .btn-link:focus,
+.overlay-dark .btn-link-explore:focus,
+.overlay-dark .btn-link-off-price:focus,
+.overlay-dark .btn-link-outlet:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.overlay-dark-1 .explore .btn-link .icon,
+.overlay-dark .btn-link-explore .icon,
+.overlay-dark .btn-link-off-price .icon,
+.overlay-dark .btn-link-outlet .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.overlay-dark-1 .explore .btn-link ~ .icon,
+.overlay-dark .btn-link-explore ~ .icon,
+.overlay-dark .btn-link-off-price ~ .icon,
+.overlay-dark .btn-link-outlet ~ .icon {
+  color: #a1c900;
+}
+.overlay-dark-1 .explore .btn-link .icon-rei-tree-arrow,
+.overlay-dark .btn-link-explore .icon-rei-tree-arrow,
+.overlay-dark .btn-link-off-price .icon-rei-tree-arrow,
+.overlay-dark .btn-link-outlet .icon-rei-tree-arrow {
+  padding-left: 10px;
+  vertical-align: text-bottom;
+}
+.btn-link-off-price {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+.btn-link-off-price:hover,
+.btn-link-off-price:active,
+.btn-link-off-price:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+.btn-link-off-price:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.btn-link-off-price .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-link-off-price ~ .icon {
+  color: #fff;
+}
+.btn-link-outlet {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+.btn-link-outlet:hover,
+.btn-link-outlet:active,
+.btn-link-outlet:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+.btn-link-outlet:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.btn-link-outlet .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-link-outlet ~ .icon {
+  color: #fff;
+}
+.bs-docs-footer .list-text .nested,
+.bs-docs-footer .footer-inline-list .nested,
+.bs-docs-footer .list-text > li > ul .nested,
+.bs-docs-footer .list-decoration .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul .nested,
+.bs-docs-footer .list-decoration > li > ul > li > ul .nested {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+.link-explore-crumb,
+.link-outlet-crumb,
+.explore .breadcrumb > li a,
+.explore-crumb.breadcrumb > li a,
+.outlet-crumb.breadcrumb > li a {
+  font: normal normal 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #0066cc;
+  text-decoration: none;
+  outline: none;
+}
+.link-explore-crumb:hover,
+.link-explore-crumb:active,
+.link-explore-crumb:focus,
+.link-outlet-crumb:hover,
+.link-outlet-crumb:active,
+.link-outlet-crumb:focus,
+.explore .breadcrumb > li a:hover,
+.explore .breadcrumb > li a:active,
+.explore .breadcrumb > li a:focus,
+.explore-crumb.breadcrumb > li a:hover,
+.explore-crumb.breadcrumb > li a:active,
+.explore-crumb.breadcrumb > li a:focus,
+.outlet-crumb.breadcrumb > li a:hover,
+.outlet-crumb.breadcrumb > li a:active,
+.outlet-crumb.breadcrumb > li a:focus {
+  color: #0066cc;
+  text-decoration: underline;
+}
+.link-explore-crumb:focus,
+.link-outlet-crumb:focus,
+.explore .breadcrumb > li a:focus,
+.explore-crumb.breadcrumb > li a:focus,
+.outlet-crumb.breadcrumb > li a:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.link-explore-crumb .icon,
+.link-outlet-crumb .icon,
+.explore .breadcrumb > li a .icon,
+.explore-crumb.breadcrumb > li a .icon,
+.outlet-crumb.breadcrumb > li a .icon {
+  display: inline-block;
+  text-decoration: none;
+}
+.link-explore-crumb ~ .icon,
+.link-outlet-crumb ~ .icon,
+.explore .breadcrumb > li a ~ .icon,
+.explore-crumb.breadcrumb > li a ~ .icon,
+.outlet-crumb.breadcrumb > li a ~ .icon {
+  color: #0066cc;
+}
+.explore .breadcrumb > li a,
+.explore-crumb.breadcrumb > li a {
+  color: #004e00;
+  text-decoration: none;
+  outline: none;
+}
+.outlet-crumb.breadcrumb > li a {
+  color: #cc0000;
+  text-decoration: none;
+  outline: none;
+}
+.explore .btn-primary.btn-primary {
+  color: #004e00;
+  background-color: #a1c900;
+  border-color: #a1c900;
+  outline: none;
+}
+.explore .btn-primary.btn-primary:hover,
+.explore .btn-primary.btn-primary:active,
+.explore .btn-primary.btn-primary.active,
+.explore .btn-primary.btn-primary:focus,
+.explore .btn-primary.btn-primary.focus {
+  color: #004e00;
+  background-color: #bdd94d;
+  border-color: #bdd94d;
+}
+.explore .btn-primary.btn-primary:focus {
+  outline: thin dotted;
+  outline: 5px auto;
+  outline-color: #4eaaff;
+  outline-offset: -2px;
+}
+.explore .btn-primary.btn-primary:active,
+.explore .btn-primary.btn-primary.active {
+  background-image: none;
+  outline: none;
+}
+.explore .btn-primary.btn-primary.disabled,
+.explore .btn-primary.btn-primary[disabled],
+fieldset[disabled] .explore .btn-primary.btn-primary,
+.explore .btn-primary.btn-primary.disabled:hover,
+.explore .btn-primary.btn-primary[disabled]:hover,
+fieldset[disabled] .explore .btn-primary.btn-primary:hover,
+.explore .btn-primary.btn-primary.disabled:focus,
+.explore .btn-primary.btn-primary[disabled]:focus,
+fieldset[disabled] .explore .btn-primary.btn-primary:focus,
+.explore .btn-primary.btn-primary.disabled.focus,
+.explore .btn-primary.btn-primary[disabled].focus,
+fieldset[disabled] .explore .btn-primary.btn-primary.focus,
+.explore .btn-primary.btn-primary.disabled:active,
+.explore .btn-primary.btn-primary[disabled]:active,
+fieldset[disabled] .explore .btn-primary.btn-primary:active,
+.explore .btn-primary.btn-primary.disabled.active,
+.explore .btn-primary.btn-primary[disabled].active,
+fieldset[disabled] .explore .btn-primary.btn-primary.active {
+  background-color: transparent;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: #ccc;
+  border-color: #ccc;
+  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.remove-toggle.remove-right .icon-rei-close-small {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+  outline: none;
+}
+.btn-group-lg > .btn {
+  padding: 13px 32px;
+  font-family: "Anderson 1938", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1;
+}
+.btn-group-sm > .btn {
+  padding: 6px 24px;
+  font-family: "Interstate Bold Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.btn-group-xs > .btn {
+  padding: 3px 16px;
+  font-family: "Interstate Bold Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.list-text,
+.list-inline,
+.list-responsive-sm,
+.list-responsive-md,
+.list-nav,
+.list-text > li > ul,
+.list-decoration,
+.list-crumb,
+.list-nav > li > ul,
+.nav-tabs,
+.list-menu,
+.list-decoration > li > ul,
+.list-decoration > li > ul,
+.breadcrumb,
+.nav-tabs > li > ul,
+.list-menu > li > ul,
+.doc_head-navigation,
+.doc_head-navigation ul,
+.list-decoration > li > ul > li > ul,
+.doc_head-navigation > li > ul,
+.doc_head-navigation ul > li > ul {
+  padding-left: 0;
+  list-style: none;
+}
+.list-text > li > ul > li,
+.list-decoration > li,
+.list-decoration > li > ul > li,
+.list-decoration > li > ul > li,
+.list-decoration > li > ul > li > ul > li {
+  padding-bottom: 12px;
+}
+.list-text > li > ul > li:last-of-type,
+.list-decoration > li:last-of-type,
+.list-decoration > li > ul > li:last-of-type,
+.list-decoration > li > ul > li:last-of-type,
+.list-decoration > li > ul > li > ul > li:last-of-type {
+  padding-bottom: 0;
+}
+.list-decoration > li > ul,
+.list-decoration > li > ul > li > ul {
+  padding-top: 12px;
+}
+.list-decoration > li > ul {
+  padding-left: 12px;
+}
+.list-decoration > li > ul > li:before {
+  background: #222;
+  border-radius: 100%;
+  content: "";
+  height: 4px;
+  display: block;
+  position: relative;
+  top: 4px;
+  left: -12px;
+  margin: 0 6px 0 0;
+  -webkit-transform: translate(0, 245%);
+  -moz-transform: translate(0, 245%);
+  -ms-transform: translate(0, 245%);
+  -o-transform: translate(0, 245%);
+  transform: translate(0, 245%);
+  width: 4px;
+}
+.list-crumb > li,
+.breadcrumb > li {
+  display: inline-block;
+  padding: 0;
+}
+.list-crumb > li:first-of-type,
+.breadcrumb > li:first-of-type {
+  padding-left: 0;
+}
+.list-crumb > li:last-of-type,
+.breadcrumb > li:last-of-type {
+  padding-right: 0;
+}
+.list-crumb.list-inline-md > li,
+.breadcrumb.list-inline-md > li {
+  padding: 0 16px;
+}
+.list-crumb.list-inline-md > li:first-of-type,
+.breadcrumb.list-inline-md > li:first-of-type {
+  padding-left: 0;
+}
+.list-crumb.list-inline-md > li:last-of-type,
+.breadcrumb.list-inline-md > li:last-of-type {
+  padding-right: 0;
+}
+.list-crumb.list-inline-lg > li,
+.breadcrumb.list-inline-lg > li {
+  padding-right: 29px;
+}
+.input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
+  height: 32px;
+  padding: 6px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
+  height: 52px;
+  padding: 13px 32px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.field-msg,
+.field-msg_success,
+.field-msg_error,
+.field-msg_warning,
+.field-msg_info,
+.field-msg_help {
+  margin: 0 0 12px 0;
+  padding: 6px 0 6px 20px;
+}
+.overlay-dark-1 .field-msg,
+.overlay-dark-2 .field-msg,
+.overlay-medium-1 .field-msg,
+.overlay-outlet-dark-1 .field-msg,
+.overlay-explore-dark .field-msg,
+.field-msg .overlay-explore-light,
+.overlay-dark-1 .field-msg_success,
+.overlay-dark-2 .field-msg_success,
+.overlay-medium-1 .field-msg_success,
+.overlay-outlet-dark-1 .field-msg_success,
+.overlay-explore-dark .field-msg_success,
+.field-msg_success .overlay-explore-light,
+.overlay-dark-1 .field-msg_error,
+.overlay-dark-2 .field-msg_error,
+.overlay-medium-1 .field-msg_error,
+.overlay-outlet-dark-1 .field-msg_error,
+.overlay-explore-dark .field-msg_error,
+.field-msg_error .overlay-explore-light,
+.overlay-dark-1 .field-msg_warning,
+.overlay-dark-2 .field-msg_warning,
+.overlay-medium-1 .field-msg_warning,
+.overlay-outlet-dark-1 .field-msg_warning,
+.overlay-explore-dark .field-msg_warning,
+.field-msg_warning .overlay-explore-light,
+.overlay-dark-1 .field-msg_info,
+.overlay-dark-2 .field-msg_info,
+.overlay-medium-1 .field-msg_info,
+.overlay-outlet-dark-1 .field-msg_info,
+.overlay-explore-dark .field-msg_info,
+.field-msg_info .overlay-explore-light,
+.overlay-dark-1 .field-msg_help,
+.overlay-dark-2 .field-msg_help,
+.overlay-medium-1 .field-msg_help,
+.overlay-outlet-dark-1 .field-msg_help,
+.overlay-explore-dark .field-msg_help,
+.field-msg_help .overlay-explore-light {
+  background-color: #fff;
+  color: #222;
+}
+.overlay-dark-1 .field-msg:focus,
+.overlay-dark-2 .field-msg:focus,
+.overlay-medium-1 .field-msg:focus,
+.overlay-outlet-dark-1 .field-msg:focus,
+.overlay-explore-dark .field-msg:focus,
+.field-msg .overlay-explore-light:focus,
+.overlay-dark-1 .field-msg:active,
+.overlay-dark-2 .field-msg:active,
+.overlay-medium-1 .field-msg:active,
+.overlay-outlet-dark-1 .field-msg:active,
+.overlay-explore-dark .field-msg:active,
+.field-msg .overlay-explore-light:active,
+.overlay-dark-1 .field-msg_success:focus,
+.overlay-dark-2 .field-msg_success:focus,
+.overlay-medium-1 .field-msg_success:focus,
+.overlay-outlet-dark-1 .field-msg_success:focus,
+.overlay-explore-dark .field-msg_success:focus,
+.field-msg_success .overlay-explore-light:focus,
+.overlay-dark-1 .field-msg_success:active,
+.overlay-dark-2 .field-msg_success:active,
+.overlay-medium-1 .field-msg_success:active,
+.overlay-outlet-dark-1 .field-msg_success:active,
+.overlay-explore-dark .field-msg_success:active,
+.field-msg_success .overlay-explore-light:active,
+.overlay-dark-1 .field-msg_error:focus,
+.overlay-dark-2 .field-msg_error:focus,
+.overlay-medium-1 .field-msg_error:focus,
+.overlay-outlet-dark-1 .field-msg_error:focus,
+.overlay-explore-dark .field-msg_error:focus,
+.field-msg_error .overlay-explore-light:focus,
+.overlay-dark-1 .field-msg_error:active,
+.overlay-dark-2 .field-msg_error:active,
+.overlay-medium-1 .field-msg_error:active,
+.overlay-outlet-dark-1 .field-msg_error:active,
+.overlay-explore-dark .field-msg_error:active,
+.field-msg_error .overlay-explore-light:active,
+.overlay-dark-1 .field-msg_warning:focus,
+.overlay-dark-2 .field-msg_warning:focus,
+.overlay-medium-1 .field-msg_warning:focus,
+.overlay-outlet-dark-1 .field-msg_warning:focus,
+.overlay-explore-dark .field-msg_warning:focus,
+.field-msg_warning .overlay-explore-light:focus,
+.overlay-dark-1 .field-msg_warning:active,
+.overlay-dark-2 .field-msg_warning:active,
+.overlay-medium-1 .field-msg_warning:active,
+.overlay-outlet-dark-1 .field-msg_warning:active,
+.overlay-explore-dark .field-msg_warning:active,
+.field-msg_warning .overlay-explore-light:active,
+.overlay-dark-1 .field-msg_info:focus,
+.overlay-dark-2 .field-msg_info:focus,
+.overlay-medium-1 .field-msg_info:focus,
+.overlay-outlet-dark-1 .field-msg_info:focus,
+.overlay-explore-dark .field-msg_info:focus,
+.field-msg_info .overlay-explore-light:focus,
+.overlay-dark-1 .field-msg_info:active,
+.overlay-dark-2 .field-msg_info:active,
+.overlay-medium-1 .field-msg_info:active,
+.overlay-outlet-dark-1 .field-msg_info:active,
+.overlay-explore-dark .field-msg_info:active,
+.field-msg_info .overlay-explore-light:active,
+.overlay-dark-1 .field-msg_help:focus,
+.overlay-dark-2 .field-msg_help:focus,
+.overlay-medium-1 .field-msg_help:focus,
+.overlay-outlet-dark-1 .field-msg_help:focus,
+.overlay-explore-dark .field-msg_help:focus,
+.field-msg_help .overlay-explore-light:focus,
+.overlay-dark-1 .field-msg_help:active,
+.overlay-dark-2 .field-msg_help:active,
+.overlay-medium-1 .field-msg_help:active,
+.overlay-outlet-dark-1 .field-msg_help:active,
+.overlay-explore-dark .field-msg_help:active,
+.field-msg_help .overlay-explore-light:active {
+  border-color: #fff;
+}
+.form-inline .field-msg .alert-text,
+.form-inline .field-msg_success .alert-text,
+.form-inline .field-msg_error .alert-text,
+.form-inline .field-msg_warning .alert-text,
+.form-inline .field-msg_info .alert-text,
+.form-inline .field-msg_help .alert-text {
+  width: auto;
+}
+.breadcrumb > li {
+  padding-right: 0;
+}
+.breadcrumb > li:not(:last-of-type):after {
+  background: transparent url("//satchel.rei.com/media/img/ico/icon-rei-right-arrow.svg") no-repeat 0 0;
+  vertical-align: text-bottom;
+  content: "";
+  display: inline-block;
+  fill: #222;
+  height: 12px;
+  width: 9px;
+  margin-left: 4px;
+}
+.radio label,
+.checkbox label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+.field-msg_success,
+.field-msg_error,
+.field-msg_warning,
+.field-msg_info,
+.field-msg_help {
+  display: block;
+}
+.list-nav > li > ul > li > a,
+.nav-tabs > li > a,
+.list-menu > li > a,
+.nav-tabs > li > ul > li > a,
+.list-menu > li > ul > li > a,
+.doc_head-navigation > li > a,
+.doc_head-navigation ul > li > a,
+.doc_head-navigation > li > ul > li > a,
+.doc_head-navigation ul > li > ul > li > a {
+  display: block;
+  padding: 11px 16px;
+  font-family: "Interstate Bold Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+}
+.list-nav > li > ul > li > a:hover,
+.list-nav > li > ul > li > a:focus,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus,
+.list-menu > li > a:hover,
+.list-menu > li > a:focus,
+.nav-tabs > li > ul > li > a:hover,
+.nav-tabs > li > ul > li > a:focus,
+.list-menu > li > ul > li > a:hover,
+.list-menu > li > ul > li > a:focus,
+.doc_head-navigation > li > a:hover,
+.doc_head-navigation > li > a:focus,
+.doc_head-navigation ul > li > a:hover,
+.doc_head-navigation ul > li > a:focus,
+.doc_head-navigation > li > ul > li > a:hover,
+.doc_head-navigation > li > ul > li > a:focus,
+.doc_head-navigation ul > li > ul > li > a:hover,
+.doc_head-navigation ul > li > ul > li > a:focus {
+  background-color: #f2f2f2;
+  text-decoration: none;
+}
+.list-nav > li > ul > li.disabled > a,
+.nav-tabs > li.disabled > a,
+.list-menu > li.disabled > a,
+.nav-tabs > li > ul > li.disabled > a,
+.list-menu > li > ul > li.disabled > a,
+.doc_head-navigation > li.disabled > a,
+.doc_head-navigation ul > li.disabled > a,
+.doc_head-navigation > li > ul > li.disabled > a,
+.doc_head-navigation ul > li > ul > li.disabled > a {
+  color: #f2f2f2;
+}
+.list-nav > li > ul > li.disabled > a:hover,
+.list-nav > li > ul > li.disabled > a:focus,
+.nav-tabs > li.disabled > a:hover,
+.nav-tabs > li.disabled > a:focus,
+.list-menu > li.disabled > a:hover,
+.list-menu > li.disabled > a:focus,
+.nav-tabs > li > ul > li.disabled > a:hover,
+.nav-tabs > li > ul > li.disabled > a:focus,
+.list-menu > li > ul > li.disabled > a:hover,
+.list-menu > li > ul > li.disabled > a:focus,
+.doc_head-navigation > li.disabled > a:hover,
+.doc_head-navigation > li.disabled > a:focus,
+.doc_head-navigation ul > li.disabled > a:hover,
+.doc_head-navigation ul > li.disabled > a:focus,
+.doc_head-navigation > li > ul > li.disabled > a:hover,
+.doc_head-navigation > li > ul > li.disabled > a:focus,
+.doc_head-navigation ul > li > ul > li.disabled > a:hover,
+.doc_head-navigation ul > li > ul > li.disabled > a:focus {
+  background-color: transparent;
+  color: #f2f2f2;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+.list-nav > li > ul > li > ul > li > a,
+.nav-tabs > li > ul > li > a,
+.list-menu > li > ul > li > a,
+.nav-tabs > li > ul > li > ul > li > a,
+.list-menu > li > ul > li > ul > li > a,
+.doc_head-navigation > li > ul > li > a,
+.doc_head-navigation ul > li > ul > li > a,
+.doc_head-navigation > li > ul > li > ul > li > a,
+.doc_head-navigation ul > li > ul > li > ul > li > a {
+  padding: 11px 16px;
+  font-family: 4px;
+  font-size: 16px;
+  line-height: 1;
+}
+.doc_head-navigation > li > a,
+.doc_head-navigation ul > li > a {
+  border-bottom: 1px solid #ccc;
+  line-height: 1.5;
+}
+.doc_head-navigation > li > a:hover,
+.doc_head-navigation > li > a:focus,
+.doc_head-navigation ul > li > a:hover,
+.doc_head-navigation ul > li > a:focus {
+  background-color: #f2f2f2;
+  text-decoration: none;
+}
+.doc_head-navigation.right,
+.doc_head-navigation ul.right {
+  text-align: right;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img,
+.thumbnail > img,
+.thumbnail a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.pager:before,
+.pager:after,
+.panel-body:before,
+.panel-body:after,
+.container:before,
+.container:after,
+.row:before,
+.row:after,
+.well:before,
+.well:after,
+.btn-group-vertical > .btn-group:before,
+.btn-group-vertical > .btn-group:after,
+.form-horizontal .form-group:before,
+.form-horizontal .form-group:after,
+.modal-footer:before,
+.modal-footer:after,
+.list-nav:before,
+.list-nav:after,
+.rei-container:before,
+.rei-container:after,
+.rei-content-full:before,
+.rei-content-full:after,
+.dl-horizontal dd:before,
+.dl-horizontal dd:after,
+.container-fluid:before,
+.container-fluid:after,
+.list-nav > li > ul:before,
+.list-nav > li > ul:after,
+.nav-tabs:before,
+.nav-tabs:after,
+.list-menu:before,
+.list-menu:after,
+.nav-tabs > li > ul:before,
+.nav-tabs > li > ul:after,
+.list-menu > li > ul:before,
+.list-menu > li > ul:after,
+.doc_head-navigation:before,
+.doc_head-navigation:after,
+.doc_head-navigation ul:before,
+.doc_head-navigation ul:after,
+.doc_head-navigation > li > ul:before,
+.doc_head-navigation > li > ul:after,
+.doc_head-navigation ul > li > ul:before,
+.doc_head-navigation ul > li > ul:after {
+  content: " ";
+  display: table;
+}
+.pager:after,
+.panel-body:after,
+.container:after,
+.row:after,
+.well:after,
+.btn-group-vertical > .btn-group:after,
+.form-horizontal .form-group:after,
+.modal-footer:after,
+.list-nav:after,
+.rei-container:after,
+.rei-content-full:after,
+.dl-horizontal dd:after,
+.container-fluid:after,
+.list-nav > li > ul:after,
+.nav-tabs:after,
+.list-menu:after,
+.nav-tabs > li > ul:after,
+.list-menu > li > ul:after,
+.doc_head-navigation:after,
+.doc_head-navigation ul:after,
+.doc_head-navigation > li > ul:after,
+.doc_head-navigation ul > li > ul:after {
+  clear: both;
+}
+.inline-group.btn-group.center-block .btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*
+* Variables
+*
+* Ain't nobody got time for hexadecimals
+*/
+/* Default Bootstrap docs colors */
+/* REI doc theme colors */
+/*
+* Scaffolding
+*
+* Update the basics of our documents to prep for docs content.
+*/
+body {
+  position: relative;
+  /* For scrollspy */
+}
+/* Keep code small in tables on account of limited space */
+.table code {
+  font-size: 13px;
+  font-weight: normal;
+}
+/* Inline code within headings retain the heading's background-color */
+h2 code,
+h3 code,
+h4 code {
+  background-color: inherit;
+}
+/* Outline button for use within the docs */
+.btn-outline {
+  color: #fff;
+  background-color: #a1c900;
+  border-color: #a1c900;
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+  color: #fff;
+  background-color: #789600;
+  border-color: #a1c900;
+}
+/* Inverted outline button (white on dark) */
+.btn-outline-inverse {
+  color: #fff;
+  background-color: transparent;
+  border-color: #d1ff17;
+}
+.btn-outline-inverse:hover,
+.btn-outline-inverse:focus,
+.btn-outline-inverse:active {
+  color: #a1c900;
+  text-shadow: none;
+  background-color: #fff;
+  border-color: #fff;
+}
+.vertical-push-1 {
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .vertical-push-1 {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .vertical-push-1 {
+    margin-bottom: 30px;
+  }
+}
+.vertical-push-2 {
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .vertical-push-2 {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 992px) {
+  .vertical-push-2 {
+    margin-bottom: 60px;
+  }
+}
+.vertical-push-3 {
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .vertical-push-3 {
+    margin-bottom: 60px;
+  }
+}
+@media (min-width: 992px) {
+  .vertical-push-3 {
+    margin-bottom: 90px;
+  }
+}
+.vertical-pull-1 {
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .vertical-pull-1 {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .vertical-pull-1 {
+    margin-top: 30px;
+  }
+}
+.vertical-pull-2 {
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .vertical-pull-2 {
+    margin-top: 40px;
+  }
+}
+@media (min-width: 992px) {
+  .vertical-pull-2 {
+    margin-top: 60px;
+  }
+}
+.vertical-pull-3 {
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  .vertical-pull-3 {
+    margin-top: 60px;
+  }
+}
+@media (min-width: 992px) {
+  .vertical-pull-3 {
+    margin-top: 90px;
+  }
+}
+/*
+* Fancy skip link
+*
+* Make it look a bit less "bare bones"
+* Also includes focus suppression for the Chrome tabindex="-1" workaround
+*/
+.skip-nav-link {
+  display: block;
+  padding: 1em;
+  color: #fff;
+  background-color: #789600;
+  outline: 0;
+}
+.skip-nav-link .skiplink-text {
+  padding: .5em;
+  outline: 1px dotted;
+}
+.bs-docs-content:focus {
+  outline: none;
+}
+/*
+* Main navigation
+*
+* Turn the `.navbar` at the top of the docs purple.
+*/
+.bs-navbar-collapse,
+.bs-list-nav {
+  width: 100%;
+}
+.rei-logo {
+  fill: #fff;
+  stroke: none;
+  width: 200px;
+  height: auto;
+}
+.rei-logo.secondary {
+  width: 100px;
+  height: auto;
+}
+.ui-navigation .btn {
+  margin-bottom: 0;
+}
+/*NAV*/
+.doc_head-navigation-item {
+  background: #fff;
+}
+.doc_head-navigation-item a:hover,
+.doc_head-navigation-item a:focus,
+.doc_head-navigation-item.active a {
+  background: #a1c900 !important;
+  color: #004e00 !important;
+}
+.doc_head-navigation-item.home a {
+  color: #a1c900;
+  background: #000;
+}
+.doc_head-navigation-item.home a:hover {
+  background: #000;
+}
+.doc_head-navigation-item.active .nested-item a,
+.doc_head-navigation-item .nested-item a {
+  font-size: 14px;
+  background: #f2f2f2 !important;
+  color: #000 !important;
+}
+.doc_head-navigation-item.active .nested-item a:hover,
+.doc_head-navigation-item .nested-item a:hover {
+  background: #000 !important;
+  color: #fff !important;
+}
+@media (min-width: 992px) {
+  #pattern_navigation {
+    background-color: #000;
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+  }
+  #pattern_navigation .collapse {
+    display: block !important;
+  }
+  .doc_head-navigation {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .doc_head-navigation-nested-list {
+    font-size: 14px;
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    width: 200px;
+  }
+  .doc_head-navigation-item > a {
+    border: none;
+  }
+  .doc_head-navigation-item.home a {
+    background-color: #000;
+    color: #a1c900;
+  }
+  .doc_head-navigation-item.home a:hover {
+    background: #000;
+  }
+  .doc_head-navigation-item,
+  .nested-item {
+    background: inherit;
+  }
+  .doc_head-navigation-item {
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .doc_head-navigation-item a {
+    padding: 13px 32px;
+    font-family: "Anderson 1938", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    color: #fff !important;
+    text-decoration: none;
+    transition: all linear 0.1s;
+    width: auto;
+  }
+  .doc_head-navigation-item > a:hover,
+  .doc_head-navigation-item > a:focus,
+  .doc_head-navigation-item:focus > a,
+  .doc_head-navigation-item:hover > a {
+    background: #8db000;
+    outline: 0;
+  }
+  .doc_head-navigation-item > a:hover + .doc_head-navigation-nested-list,
+  .doc_head-navigation-item > a:focus + .doc_head-navigation-nested-list,
+  .doc_head-navigation-item:focus > a + .doc_head-navigation-nested-list,
+  .doc_head-navigation-item:hover > a + .doc_head-navigation-nested-list {
+    left: 0;
+    opacity: 0.99;
+  }
+  .nested-item a {
+    color: #000;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+/*
+* Footer
+*
+* Separated section of content at the bottom of all pages, save the homepage.
+*/
+.bs-docs-footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 60px;
+  border-top: 1px solid #e5e5e5;
+}
+.bs-docs-footer .well {
+  border: none !important;
+}
+.bs-docs-footer .footer-inline-list {
+  position: relative;
+  border-top: 1px solid #333;
+  padding-top: 40px;
+  margin-top: 40px;
+}
+.bs-docs-footer .footer-inline-list > li {
+  display: block;
+}
+.bs-docs-footer .footer-inline-list:after {
+  position: absolute;
+  top: -35px;
+  right: 17px;
+  content: "";
+  background: url(http://www.rei.com/img/footer/trees.svg) 73% 12.5% no-repeat;
+  height: 50px;
+  width: 100px;
+}
+@media (min-width: 768px) {
+  .bs-docs-footer .footer-inline-list > li {
+    display: inline-block;
+    padding: 0;
+  }
+  .bs-docs-footer .footer-inline-list > li:first-of-type {
+    padding-left: 0;
+  }
+  .bs-docs-footer .footer-inline-list > li:last-of-type {
+    padding-right: 0;
+  }
+  .bs-docs-footer .footer-inline-list.list-inline-md > li {
+    padding: 0 16px;
+  }
+  .bs-docs-footer .footer-inline-list.list-inline-md > li:first-of-type {
+    padding-left: 0;
+  }
+  .bs-docs-footer .footer-inline-list.list-inline-md > li:last-of-type {
+    padding-right: 0;
+  }
+  .bs-docs-footer .footer-inline-list.list-inline-lg > li {
+    padding-right: 29px;
+  }
+  .bs-docs-footer .footer-inline-list > li {
+    padding: 0 16px;
+  }
+  .bs-docs-footer .footer-inline-list > li:first-of-type {
+    padding-left: 0;
+  }
+  .bs-docs-footer .footer-inline-list > li:last-of-type {
+    padding-right: 0;
+  }
+  .bs-docs-footer .footer-inline-list > li {
+    border-right: 1px solid #666;
+  }
+  .bs-docs-footer .footer-inline-list > li:last-child {
+    border: none;
+  }
+}
+.bs-docs-footer-links {
+  padding-left: 0;
+  margin-top: 20px;
+}
+.bs-docs-footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+.bs-docs-footer-links li:first-child {
+  padding-left: 0;
+}
+@media (min-width: 768px) {
+  .bs-docs-footer p {
+    margin-bottom: 0;
+  }
+}
+/*
+* Side navigation
+*
+* Scrollspy and affixed enhanced navigation to highlight sections and secondary
+* sections of docs content.
+*/
+/* By default it's not affixed in mobile views, so undo that */
+.bs-docs-sidebar.affix {
+  position: static;
+}
+@media (min-width: 768px) {
+  .bs-docs-sidebar {
+    padding-left: 20px;
+  }
+}
+/* First level of nav */
+.bs-docs-sidenav {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .bs-docs-sidenav {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .bs-docs-sidenav {
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .bs-docs-sidenav {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .bs-docs-sidenav {
+    margin-top: 30px;
+  }
+}
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .list-nav .nav,
+.bs-docs-sidebar .list-nav > li > ul .nav,
+.bs-docs-sidebar .nav-tabs .nav,
+.bs-docs-sidebar .list-menu .nav,
+.bs-docs-sidebar .nav-tabs > li > ul .nav,
+.bs-docs-sidebar .list-menu > li > ul .nav,
+.bs-docs-sidebar .doc_head-navigation .nav,
+.bs-docs-sidebar .doc_head-navigation ul .nav,
+.bs-docs-sidebar .doc_head-navigation > li > ul .nav,
+.bs-docs-sidebar .doc_head-navigation ul > li > ul .nav {
+  display: none;
+  /* Hide by default, but at >768px, show it */
+  padding-bottom: 10px;
+}
+/* Back to top (hidden on mobile) */
+.back-to-top,
+.bs-docs-theme-toggle {
+  display: none;
+  padding: 4px 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+}
+.back-to-top:hover,
+.bs-docs-theme-toggle:hover {
+  color: #a1c900;
+  text-decoration: none;
+}
+.bs-docs-theme-toggle {
+  margin-top: 0;
+}
+@media (min-width: 768px) {
+  .back-to-top,
+  .bs-docs-theme-toggle {
+    display: block;
+  }
+}
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+  .bs-docs-sidebar .list-nav > .active > ul,
+  .bs-docs-sidebar .list-nav > li > ul > .active > ul,
+  .bs-docs-sidebar .nav-tabs > .active > ul,
+  .bs-docs-sidebar .list-menu > .active > ul,
+  .bs-docs-sidebar .nav-tabs > li > ul > .active > ul,
+  .bs-docs-sidebar .list-menu > li > ul > .active > ul,
+  .bs-docs-sidebar .doc_head-navigation > .active > ul,
+  .bs-docs-sidebar .doc_head-navigation ul > .active > ul,
+  .bs-docs-sidebar .doc_head-navigation > li > ul > .active > ul,
+  .bs-docs-sidebar .doc_head-navigation ul > li > ul > .active > ul {
+    display: block;
+  }
+  /* Widen the fixed sidebar */
+  .bs-docs-sidebar.affix,
+  .bs-docs-sidebar.affix-bottom {
+    width: 213px;
+  }
+  .bs-docs-sidebar.affix {
+    position: fixed;
+    /* Undo the static from mobile first approach */
+    top: 20px;
+  }
+  .bs-docs-sidebar.affix-bottom {
+    position: absolute;
+    /* Undo the static from mobile first approach */
+  }
+  .bs-docs-sidebar.affix-bottom .bs-docs-sidenav,
+  .bs-docs-sidebar.affix .bs-docs-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  .bs-docs-sidebar.affix-bottom,
+  .bs-docs-sidebar.affix {
+    width: 263px;
+  }
+}
+/*
+* Homepage
+*/
+/* Share masthead with page headers */
+.bs-docs-masthead {
+  background-color: #111;
+  background-size: 100%;
+}
+.bs-docs-masthead .bs-docs-header {
+  position: relative;
+  padding: 30px 15px;
+  color: #d1ff17;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #789600;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a1c900), to(#789600));
+  background-image: -webkit-linear-gradient(top, #a1c900 0%, #789600 100%);
+  background-image: -o-linear-gradient(top, #a1c900 0%, #789600 100%);
+  background-image: linear-gradient(to bottom, #a1c900 0%, #789600 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@docs-primary', endColorstr='@docs-primary-dark', GradientType=0);
+  background-repeat: repeat-x;
+}
+/* Masthead (headings and download button) */
+.bs-docs-masthead .bs-docs-booticon {
+  margin: 0 auto 30px;
+}
+.bs-docs-masthead h1 {
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+}
+.bs-docs-masthead .lead {
+  margin: 0 0 30px;
+  font-size: 20px;
+  color: #fff;
+}
+.bs-docs-masthead .version {
+  margin-top: -15px;
+  margin-bottom: 30px;
+  color: #cafc00;
+}
+.bs-docs-masthead .btn {
+  width: 100%;
+}
+@media (min-width: 480px) {
+  .bs-docs-masthead .btn {
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
+  .bs-docs-masthead {
+    padding: 80px 0;
+  }
+  .bs-docs-masthead h1 {
+    font-size: 60px;
+  }
+  .bs-docs-masthead .lead {
+    font-size: 24px;
+  }
+}
+@media (min-width: 992px) {
+  .bs-docs-masthead .lead {
+    width: 80%;
+    font-size: 30px;
+  }
+}
+/*
+* Homepage featurettes
+*
+* Reasons to use Bootstrap, entries from the Expo, and more.
+*/
+.bs-docs-featurette {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+.bs-docs-featurette + .bs-docs-footer {
+  margin-top: 0;
+  border-top: 0;
+}
+.bs-docs-featurette-title {
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: normal;
+  color: #333;
+}
+.half-rule {
+  width: 100px;
+  margin: 40px auto;
+}
+.bs-docs-featurette h3 {
+  margin-bottom: 5px;
+  font-weight: normal;
+  color: #333;
+}
+.bs-docs-featurette-img {
+  display: block;
+  margin-bottom: 20px;
+  color: #333;
+}
+.bs-docs-featurette-img:hover {
+  color: #337ab7;
+  text-decoration: none;
+}
+.bs-docs-featurette-img img {
+  display: block;
+  margin-bottom: 15px;
+}
+@media (min-width: 480px) {
+  .bs-docs-featurette .img-responsive {
+    margin-top: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .bs-docs-featurette {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .bs-docs-featurette-title {
+    font-size: 40px;
+  }
+  .bs-docs-featurette .lead {
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .bs-docs-featurette .img-responsive {
+    margin-top: 0;
+  }
+}
+/*
+* Page headers
+*/
+.bs-docs-header {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: #333;
+  background-size: cover;
+}
+.bs-docs-header h1 {
+  text-align: center;
+  font-size: 36px;
+  font-family: "Anderson 1938", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.166;
+  color: #fff;
+  margin: 0;
+}
+.bs-docs-header h1 + h1,
+.bs-docs-header h1 + h2,
+.bs-docs-header h1 + h3,
+.bs-docs-header h1 + h4,
+.bs-docs-header h1 + h5,
+.bs-docs-header h1 + h6 {
+  margin-top: 16px;
+}
+@media (min-width: 1200px) {
+  .bs-docs-header h1 {
+    font-size: 56px;
+    line-height: 1.0714;
+  }
+}
+.bs-docs-header h1.heading-announce {
+  font-size: 70px;
+  letter-spacing: 2px;
+}
+@media (min-width: 768px) {
+  .bs-docs-header h1.heading-announce {
+    font-size: 120px;
+    letter-spacing: 4px;
+    line-height: 0.91666667;
+  }
+}
+@media (min-width: 1200px) {
+  .bs-docs-header h1.heading-announce {
+    font-size: 170px;
+    letter-spacing: 8px;
+    line-height: 0.94117647;
+  }
+}
+.bs-docs-header p {
+  text-align: center;
+  margin-bottom: 0;
+  color: #fff;
+  line-height: 1.4;
+}
+.bs-docs-header .container,
+.bs-docs-header .container-fluid {
+  position: relative;
+}
+@media (min-width: 992px) {
+  .bs-docs-header h1,
+  .bs-docs-header p {
+    text-align: left;
+  }
+}
+.page-header {
+  padding-bottom: 11px;
+  margin: 48px 0 24px;
+  border-bottom: 1px solid #666;
+}
+/*
+* Docs sections
+*
+* Content blocks for each component or feature.
+*/
+.note {
+  color: #cc0000;
+}
+/* Space things out */
+.bs-docs-section {
+  margin-bottom: 60px;
+}
+.bs-docs-section:last-child {
+  margin-bottom: 0;
+}
+h1[id] {
+  padding-top: 0;
+  margin-top: 0;
+}
+.bs-list-nav > li > a {
+  line-height: 1.6;
+}
+/*
+* Callouts
+*
+* Not quite alerts, but custom and helpful notes for folks reading the docs.
+* Requires a base and modifier class.
+*/
+/* Common styles for all types */
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code {
+  border-radius: 3px;
+}
+/* Tighten up space between multiple callouts */
+.bs-callout + .bs-callout {
+  margin-top: -5px;
+}
+/* Variations */
+.bs-callout-danger {
+  border-left-color: #ce4844;
+}
+.bs-callout-danger h4 {
+  color: #ce4844;
+}
+.bs-callout-warning {
+  border-left-color: #aa6708;
+}
+.bs-callout-warning h4 {
+  color: #aa6708;
+}
+.bs-callout-info {
+  border-left-color: #1b809e;
+}
+.bs-callout-info h4 {
+  color: #1b809e;
+}
+/*
+* Grid examples
+*
+* Highlight the grid columns within the docs so folks can see their padding,
+* alignment, sizing, etc.
+*/
+.show-grid {
+  margin-bottom: 15px;
+}
+.show-grid [class^="col-"] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #eee;
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86, 61, 124, 0.2);
+}
+/*
+* Examples
+*
+* Isolated sections of example content for each component or feature. Usually
+* followed by a code snippet.
+*/
+.bs-example {
+  position: relative;
+  padding: 12px 16px;
+  margin: 0 0 22px;
+  border: 1px solid #ccc;
+}
+.overlay-img {
+  background: transparent url(http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg) 0 0;
+}
+.bs-header-well {
+  padding: 16px 0;
+}
+.well {
+  border: 1px solid #f5f5f5;
+}
+.well .well {
+  border: none;
+}
+.media-state.well:before {
+  content: "Extra small breakpoint";
+  border: 1px solid #f5f5f5;
+  border-left: none;
+  border-top: none;
+  color: #ccc;
+  position: relative;
+  padding: 2px;
+  left: -16px;
+  top: -13px;
+}
+@media (min-width: 768px) {
+  .media-state.well:before {
+    content: "Small breakpoint";
+  }
+}
+@media (min-width: 992px) {
+  .media-state.well:before {
+    content: "Medium breakpoint";
+  }
+}
+@media (min-width: 1200px) {
+  .media-state.well:before {
+    content: "Large breakpoint";
+  }
+}
+.status a {
+  color: #222;
+}
+.status-icon-danger:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e748";
+}
+.status-icon-warning:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e757";
+}
+.status-icon-help:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e736";
+}
+.status-icon-info:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e74c";
+}
+.status-icon-good:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e755";
+}
+.status-icon-chat:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e742";
+}
+.status-icon-builder-class:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e63b";
+}
+.status-danger:after {
+  color: #cc0000;
+  display: inline-block;
+  margin-left: 12px;
+  position: relative;
+  top: 3px;
+}
+h1.status-danger:after,
+h2.status-danger:after {
+  font-size: 36px;
+}
+h3.status-danger:after,
+h4.status-danger:after {
+  font-size: 24px;
+}
+.status-danger:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e748";
+}
+.status-warning:after {
+  color: #e4ac00;
+  display: inline-block;
+  margin-left: 12px;
+  position: relative;
+  top: 3px;
+}
+h1.status-warning:after,
+h2.status-warning:after {
+  font-size: 36px;
+}
+h3.status-warning:after,
+h4.status-warning:after {
+  font-size: 24px;
+}
+.status-warning:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e757";
+}
+.status-chat:after {
+  color: #808080;
+  display: inline-block;
+  margin-left: 12px;
+  position: relative;
+  top: 3px;
+}
+h1.status-chat:after,
+h2.status-chat:after {
+  font-size: 36px;
+}
+h3.status-chat:after,
+h4.status-chat:after {
+  font-size: 24px;
+}
+.status-chat:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e742";
+}
+.status-base-class:after {
+  color: #808080;
+  display: inline-block;
+  margin-left: 12px;
+  position: relative;
+  top: 3px;
+}
+h1.status-base-class:after,
+h2.status-base-class:after {
+  font-size: 36px;
+}
+h3.status-base-class:after,
+h4.status-base-class:after {
+  font-size: 24px;
+}
+.status-base-class:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e742";
+}
+.status-base-class:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e63b";
+}
+.status-info:after {
+  color: #222;
+  display: inline-block;
+  margin-left: 12px;
+  position: relative;
+  top: 3px;
+}
+h1.status-info:after,
+h2.status-info:after {
+  font-size: 36px;
+}
+h3.status-info:after,
+h4.status-info:after {
+  font-size: 24px;
+}
+.status-info:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e74c";
+}
+.status-good:after {
+  color: #a1c900;
+  display: inline-block;
+  margin-left: 12px;
+  position: relative;
+  top: 3px;
+}
+h1.status-good:after,
+h2.status-good:after {
+  font-size: 36px;
+}
+h3.status-good:after,
+h4.status-good:after {
+  font-size: 24px;
+}
+.status-good:after {
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
+  font: normal normal normal 12px/1 'rei-icons';
+  speak: none;
+  transform: translate(0, 0);
+  text-transform: none;
+  text-rendering: auto;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e755";
+}
+.bs-example-padded-bottom {
+  padding-bottom: 24px;
+}
+/* Tweak display of the code snippets when following an example */
+.well + .highlight,
+.well + .zero-clipboard + .highlight,
+.well-group + .highlight,
+.well-group + .zero-clipboard + .highlight {
+  margin: -22px -15px 22px;
+  border-width: 0 0 1px;
+  border-radius: 0;
+}
+/* Make the examples and snippets not full-width */
+@media (min-width: 768px) {
+  .well + .highlight,
+  .well + .zero-clipboard + .highlight,
+  .well-group + .highlight,
+  .well-group + .zero-clipboard + .highlight {
+    margin-top: -22px;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-top: none;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .bs-example-standalone {
+    border-radius: 4px;
+  }
+}
+/* Undo width of container */
+.bs-example .container,
+.bs-example .container-fluid {
+  width: auto;
+}
+.bs-example > p > .close {
+  float: none;
+}
+/* Typography */
+.bs-example-type .table .type-info {
+  color: #767676;
+  vertical-align: middle;
+}
+.bs-example-type .table td {
+  padding: 15px 0;
+  border-color: #eee;
+}
+.bs-example-type .table tr:first-child td {
+  border-top: 0;
+}
+/* Contextual background colors */
+.bs-example-bg-classes p {
+  padding: 15px;
+}
+/* Images */
+.bs-example > .img-circle,
+.bs-example > .img-rounded,
+.bs-example > .img-thumbnail {
+  margin: 5px;
+}
+/* Tables */
+.bs-example > .table-responsive > .table {
+  background-color: #fff;
+}
+/* Buttons */
+.bs-example > .btn,
+.bs-example > .btn-group {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/* Forms */
+.bs-example-control-sizing select,
+.bs-example-control-sizing input[type="text"] + input[type="text"] {
+  margin-top: 10px;
+}
+.bs-example-form .input-group {
+  margin-bottom: 10px;
+}
+.bs-example > textarea.form-control {
+  resize: vertical;
+}
+/* List groups */
+.bs-example > .list-group {
+  max-width: 400px;
+}
+/* Navbars */
+.bs-example .navbar:last-child {
+  margin-bottom: 0;
+}
+.bs-navbar-top-example,
+.bs-navbar-bottom-example {
+  z-index: 1;
+  padding: 0;
+  overflow: hidden;
+  /* cut the drop shadows off */
+}
+.bs-navbar-top-example .navbar-header,
+.bs-navbar-bottom-example .navbar-header {
+  margin-left: 0;
+}
+.bs-navbar-top-example .navbar-fixed-top,
+.bs-navbar-bottom-example .navbar-fixed-bottom {
+  position: relative;
+  margin-right: 0;
+  margin-left: 0;
+}
+.bs-navbar-top-example {
+  padding-bottom: 45px;
+}
+.bs-navbar-top-example:after {
+  top: auto;
+  bottom: 15px;
+}
+.bs-navbar-top-example .navbar-fixed-top {
+  top: -1px;
+}
+.bs-navbar-bottom-example {
+  padding-top: 45px;
+}
+.bs-navbar-bottom-example .navbar-fixed-bottom {
+  bottom: -1px;
+}
+.bs-navbar-bottom-example .navbar {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .bs-navbar-top-example .navbar-fixed-top,
+  .bs-navbar-bottom-example .navbar-fixed-bottom {
+    position: absolute;
+  }
+}
+/* Pagination */
+.bs-example .pagination {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* Pager */
+.bs-example > .pager {
+  margin-top: 0;
+}
+/* Example modals */
+.bs-example-modal {
+  background-color: #f5f5f5;
+}
+.bs-example-modal .modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}
+.bs-example-modal .modal-dialog {
+  left: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* Example dropdowns */
+/* Example tabbable tabs */
+.bs-example-tabs .nav-tabs {
+  margin-bottom: 15px;
+}
+/* Tooltips */
+.bs-example-tooltips {
+  text-align: center;
+}
+.bs-example-tooltips > .btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.bs-example-tooltip .tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 10px 20px;
+  opacity: 1;
+}
+/* Popovers */
+.bs-example-popover {
+  padding-bottom: 24px;
+  background-color: #f9f9f9;
+}
+.bs-example-popover .popover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 260px;
+  margin: 20px;
+}
+/* Scrollspy demo on fixed height div */
+.scrollspy-example {
+  position: relative;
+  height: 200px;
+  margin-top: 10px;
+  overflow: auto;
+}
+/* Simple collapse example */
+#collapseExample .well {
+  margin-bottom: 0;
+}
+/* Don't wrap event names in Events tables in JS plugin docs */
+.bs-events-table > thead > tr > th:first-child,
+.bs-events-table > tbody > tr > td:first-child {
+  white-space: nowrap;
+}
+.bs-events-table > thead > tr > th:first-child {
+  width: 150px;
+}
+.js-options-table > thead > tr > th:nth-child(1),
+.js-options-table > thead > tr > th:nth-child(2) {
+  width: 100px;
+}
+.js-options-table > thead > tr > th:nth-child(3) {
+  width: 50px;
+}
+.btn-clipboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: block;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: #767676;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #e1e1e8;
+  border-radius: 0 4px 0 4px;
+}
+/*
+* Miscellaneous
+*
+* Odds and ends for optimum docs display.
+*/
+/* Pseudo :focus state for showing how it looks in the docs */
+#focusedInput {
+  border: 1px solid #0066cc;
+  /* Restate unfocused value to make CSSLint happy that there's a pre-CSS3 fallback*/
+}
+dl {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+dt,
+dd {
+  line-height: 1.5;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+.icon-doc {
+  height: 250px;
+  width: 100%;
+}
+/*
+* Color swatches
+*
+* Color swatches and associated values for our grayscale and brand colors.
+*/
+.color-swatches,
+.documentation {
+  overflow: hidden;
+  /* clearfix */
+}
+.color-swatches .dl-horizontal dt,
+.documentation .dl-horizontal dt {
+  text-align: left;
+}
+.color-swatch {
+  display: inline-table;
+  width: 100%;
+  height: 55px;
+  margin: 0;
+  border: solid 1px #ccc;
+}
+/*
+/* Brand colors */
+.core-action-1 {
+  background-color: #4eaaff;
+}
+.core-action-2 {
+  background-color: #0066cc;
+}
+.core-action-3 {
+  background-color: #83c4ff;
+}
+.core-architectural-1 {
+  background-color: #000;
+}
+.core-architectural-2,
+.utility-info {
+  background-color: #222;
+}
+.core-architectural-3 {
+  background-color: #666;
+}
+.core-architectural-4 {
+  background-color: #ccc;
+}
+.core-architectural-5 {
+  background-color: #fff;
+}
+.core-architectural-6 {
+  background-color: #efeee2;
+}
+.explore-active-1 {
+  background-color: #a1c900;
+}
+.explore-active-2 {
+  background-color: #004e00;
+}
+.explore-active-3 {
+  background-color: #bdd94d;
+}
+.explore-active-4 {
+  background-color: #4d834d;
+}
+.explore-active-5 {
+  background-color: #004e00;
+}
+.explore-architectural-1 {
+  background-color: #a1c900;
+}
+.explore-architectural-2 {
+  background-color: #004e00;
+}
+.utility-off-price,
+.outlet-action-1,
+.outlet-architectural-1 {
+  background-color: #cc0000;
+}
+.outlet-action-2 {
+  background-color: #db4d4d;
+}
+.utility-error {
+  background-color: #cc0000;
+}
+.utility-warning {
+  background-color: #e4ac00;
+}
+.utility-success,
+.utility-available {
+  background-color: #a1c900;
+}
+/* Docs colors */
+.color-swatches .bs-purple {
+  background-color: #a1c900;
+}
+.color-swatches .bs-purple-light {
+  background-color: #b5e300;
+}
+.color-swatches .bs-purple-lighter {
+  background-color: #cafc00;
+}
+.color-swatches .bs-gray {
+  background-color: #f9f9f9;
+}
+/*
+* Code snippets
+*
+* Generated via Pygments and Jekyll, these are snippets of HTML, CSS, and JS.
+*/
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+}
+.highlight pre {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  word-break: normal;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+.highlight pre code {
+  font-size: inherit;
+  color: #333;
+  /* Effectively the base text color */
+}
+.highlight pre code:first-child {
+  display: inline-block;
+  padding-right: 45px;
+}
+/**
+* Store the link icon as a base64 embedded icon font.
+*/
+@font-face {
+  font-family: 'anchorjs-link';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg6v8yoAAAC8AAAAYGNtYXDL8RqdAAABHAAAADxnYXNwAAAAEAAAAVgAAAAIZ2x5Zkm2oNUAAAFgAAABWGhlYWQAHd4cAAACuAAAADZoaGVhB3sECwAAAvAAAAAkaG10eAYAAEcAAAMUAAAADGxvY2EACgCsAAADIAAAAAhtYXhwAAYAcAAAAygAAAAgbmFtZUQXtNYAAANIAAABOXBvc3QAAwAAAAAEhAAAACAAAwQAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAACDmAAPA/8D/wAPAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACgAAAAGAAQAAQACACDmAP//AAAAIOYA////4RoCAAEAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAIARwAHA7kDeQA2AG0AAAEnLgEiBg8BDgEUFh8BHgMXNy4DLwEuATQ2PwE+ATIWHwEeARQGDwEeAxU3PgE0JicBLgMnBx4DHwEeARQGDwEOASImLwEuATQ2PwEuAzUHDgEUFh8BHgEyNj8BPgE0Ji8BA7kEI1ldWiPaIyQkIwQDBgYGBFAEBwYHAwQTExMT2xMwMjETBBMTExNjBwkGA5gkIyMk/r4DBgYGBFAEBwYHAwQTExMT2xMwMjETBBMTExNjBwkGA5gkIyMkBCNZXVoj2iMkJCMEA3UEJCMjJNojWV1aIwQDBgUFA1ACBQUFAwQUMDIxE9oTExMTBBMxMjATYxAhISIRmSNaXVkj/sYDBgUFA1ACBQUFAwQUMDIxE9oTExMTBBMxMjATYxAhISIRmSNaXVkjBCQjIyTaI1ldWiMEAAEAAAABAABR/4xQXw889QALBAAAAAAAzqNM0wAAAADOo0zTAAAAAAO5A3kAAAAIAAIAAAAAAAAAAQAAA8D/wAAABAAAAABHA7kAAQAAAAAAAAAAAAAAAAAAAAMAAAAAAgAAAAQAAEcAAAAAAAoArAABAAAAAwBuAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADgAAAAEAAAAAAAIADgBHAAEAAAAAAAMADgAkAAEAAAAAAAQADgBVAAEAAAAAAAUAFgAOAAEAAAAAAAYABwAyAAEAAAAAAAoAKABjAAMAAQQJAAEADgAAAAMAAQQJAAIADgBHAAMAAQQJAAMADgAkAAMAAQQJAAQADgBVAAMAAQQJAAUAFgAOAAMAAQQJAAYADgA5AAMAAQQJAAoAKABjAGkAYwBvAG0AbwBvAG4AVgBlAHIAcwBpAG8AbgAgADAALgAwAGkAYwBvAG0AbwBvAG5pY29tb29uAGkAYwBvAG0AbwBvAG4AUgBlAGcAdQBsAGEAcgBpAGMAbwBtAG8AbwBuAEcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format('truetype'), url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAATwAAsAAAAABKQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABCAAAAGAAAABgDq/zKmNtYXAAAAFoAAAAPAAAADzL8RqdZ2FzcAAAAaQAAAAIAAAACAAAABBnbHlmAAABrAAAAVgAAAFYSbag1WhlYWQAAAMEAAAANgAAADYAHd4caGhlYQAAAzwAAAAkAAAAJAd7BAtobXR4AAADYAAAAAwAAAAMBgAAR2xvY2EAAANsAAAACAAAAAgACgCsbWF4cAAAA3QAAAAgAAAAIAAGAHBuYW1lAAADlAAAATkAAAE5RBe01nBvc3QAAATQAAAAIAAAACAAAwAAAAMEAAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAg5gADwP/A/8ADwABAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAMAAAAUAAMAAQAAABQABAAoAAAABgAEAAEAAgAg5gD//wAAACDmAP///+EaAgABAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAACAEcABwO5A3kANgBtAAABJy4BIgYPAQ4BFBYfAR4DFzcuAy8BLgE0Nj8BPgEyFh8BHgEUBg8BHgMVNz4BNCYnAS4DJwceAx8BHgEUBg8BDgEiJi8BLgE0Nj8BLgM1Bw4BFBYfAR4BMjY/AT4BNCYvAQO5BCNZXVoj2iMkJCMEAwYGBgRQBAcGBwMEExMTE9sTMDIxEwQTExMTYwcJBgOYJCMjJP6+AwYGBgRQBAcGBwMEExMTE9sTMDIxEwQTExMTYwcJBgOYJCMjJAQjWV1aI9ojJCQjBAN1BCQjIyTaI1ldWiMEAwYFBQNQAgUFBQMEFDAyMRPaExMTEwQTMTIwE2MQISEiEZkjWl1ZI/7GAwYFBQNQAgUFBQMEFDAyMRPaExMTEwQTMTIwE2MQISEiEZkjWl1ZIwQkIyMk2iNZXVojBAABAAAAAQAAUf+MUF8PPPUACwQAAAAAAM6jTNMAAAAAzqNM0wAAAAADuQN5AAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAARwO5AAEAAAAAAAAAAAAAAAAAAAADAAAAAAIAAAAEAABHAAAAAAAKAKwAAQAAAAMAbgACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAA4AAAABAAAAAAACAA4ARwABAAAAAAADAA4AJAABAAAAAAAEAA4AVQABAAAAAAAFABYADgABAAAAAAAGAAcAMgABAAAAAAAKACgAYwADAAEECQABAA4AAAADAAEECQACAA4ARwADAAEECQADAA4AJAADAAEECQAEAA4AVQADAAEECQAFABYADgADAAEECQAGAA4AOQADAAEECQAKACgAYwBpAGMAbwBtAG8AbwBuAFYAZQByAHMAaQBvAG4AIAAwAC4AMABpAGMAbwBtAG8AbwBuaWNvbW9vbgBpAGMAbwBtAG8AbwBuAFIAZQBnAHUAbABhAHIAaQBjAG8AbQBvAG8AbgBHAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.anchorjs-icon {
+  font-family: 'anchorjs-link';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Icon Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/**
+* Link placement and hover behavior.
+*/
+.anchorjs-link {
+  float: left;
+  width: 1em;
+  height: 1em;
+  margin-left: -1.2em;
+  opacity: 0;
+  color: inherit;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .anchorjs-link {
+    display: none;
+  }
+}
+*:hover > .anchorjs-link,
+.anchorjs-link:focus {
+  opacity: .75;
+  transition: color .16s linear;
+}
+*:hover > .anchorjs-link:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+.anchorjs-icon {
+  font-size: 60%;
+  vertical-align: .2em;
+}
+.anchorjs-icon:before {
+  content: "\e600";
+}
+.hll {
+  background-color: #ffffcc;
+}
+/*{ background: #f0f3f3; }*/
+.c {
+  color: #999;
+}
+/* Comment */
+.err {
+  color: #AA0000;
+  background-color: #FFAAAA;
+}
+/* Error */
+.k {
+  color: #006699;
+}
+/* Keyword */
+.o {
+  color: #555555;
+}
+/* Operator */
+.cm {
+  color: #999;
+}
+/* Comment.Multiline */
+/* Edited to remove italics and make into comment */
+.cp {
+  color: #009999;
+}
+/* Comment.Preproc */
+.c1 {
+  color: #999;
+}
+/* Comment.Single */
+.cs {
+  color: #999;
+}
+/* Comment.Special */
+.gd {
+  background-color: #FFCCCC;
+  border: 1px solid #CC0000;
+}
+/* Generic.Deleted */
+.ge {
+  font-style: italic;
+}
+/* Generic.Emph */
+.gr {
+  color: #FF0000;
+}
+/* Generic.Error */
+.gh {
+  color: #003300;
+}
+/* Generic.Heading */
+.gi {
+  background-color: #CCFFCC;
+  border: 1px solid #00CC00;
+}
+/* Generic.Inserted */
+.go {
+  color: #AAAAAA;
+}
+/* Generic.Output */
+.gp {
+  color: #000099;
+}
+/* Generic.Prompt */
+/* Generic.Strong */
+.gu {
+  color: #003300;
+}
+/* Generic.Subheading */
+.gt {
+  color: #99CC66;
+}
+/* Generic.Traceback */
+.kc {
+  color: #006699;
+}
+/* Keyword.Constant */
+.kd {
+  color: #006699;
+}
+/* Keyword.Declaration */
+.kn {
+  color: #006699;
+}
+/* Keyword.Namespace */
+.kp {
+  color: #006699;
+}
+/* Keyword.Pseudo */
+.kr {
+  color: #006699;
+}
+/* Keyword.Reserved */
+.kt {
+  color: #007788;
+}
+/* Keyword.Type */
+.m {
+  color: #FF6600;
+}
+/* Literal.Number */
+.s {
+  color: #d44950;
+}
+/* Literal.String */
+.na {
+  color: #4f9fcf;
+}
+/* Name.Attribute */
+.nb {
+  color: #336666;
+}
+/* Name.Builtin */
+.nc {
+  color: #00AA88;
+}
+/* Name.Class */
+.no {
+  color: #336600;
+}
+/* Name.Constant */
+.nd {
+  color: #9999FF;
+}
+/* Name.Decorator */
+.ni {
+  color: #999999;
+}
+/* Name.Entity */
+.ne {
+  color: #CC0000;
+}
+/* Name.Exception */
+.nf {
+  color: #CC00FF;
+}
+/* Name.Function */
+.nl {
+  color: #9999FF;
+}
+/* Name.Label */
+.nn {
+  color: #00CCFF;
+}
+/* Name.Namespace */
+.nt {
+  color: #2f6f9f;
+}
+/* Name.Tag */
+.nv {
+  color: #003333;
+}
+/* Name.Variable */
+.ow {
+  color: #000000;
+}
+/* Operator.Word */
+.w {
+  color: #bbbbbb;
+}
+/* Text.Whitespace */
+.mf {
+  color: #FF6600;
+}
+/* Literal.Number.Float */
+.mh {
+  color: #FF6600;
+}
+/* Literal.Number.Hex */
+.mi {
+  color: #FF6600;
+}
+/* Literal.Number.Integer */
+.mo {
+  color: #FF6600;
+}
+/* Literal.Number.Oct */
+.sb {
+  color: #CC3300;
+}
+/* Literal.String.Backtick */
+.sc {
+  color: #CC3300;
+}
+/* Literal.String.Char */
+.sd {
+  color: #CC3300;
+  font-style: italic;
+}
+/* Literal.String.Doc */
+.s2 {
+  color: #CC3300;
+}
+/* Literal.String.Double */
+.se {
+  color: #CC3300;
+}
+/* Literal.String.Escape */
+.sh {
+  color: #CC3300;
+}
+/* Literal.String.Heredoc */
+.si {
+  color: #AA0000;
+}
+/* Literal.String.Interpol */
+.sx {
+  color: #CC3300;
+}
+/* Literal.String.Other */
+.sr {
+  color: #33AAAA;
+}
+/* Literal.String.Regex */
+.s1 {
+  color: #CC3300;
+}
+/* Literal.String.Single */
+.ss {
+  color: #FFCC33;
+}
+/* Literal.String.Symbol */
+.bp {
+  color: #336666;
+}
+/* Name.Builtin.Pseudo */
+.vc {
+  color: #003333;
+}
+/* Name.Variable.Class */
+.vg {
+  color: #003333;
+}
+/* Name.Variable.Global */
+.vi {
+  color: #003333;
+}
+/* Name.Variable.Instance */
+.il {
+  color: #FF6600;
+}
+/* Literal.Number.Integer.Long */
+.css .o,
+.css .o + .nt,
+.css .nt + .nt {
+  color: #999;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+kbd kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+  box-shadow: none;
+}
+pre {
+  display: block;
+  padding: 11.5px;
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+/*
+* Responsive tests
+*
+* Generate a set of tests to show the responsive utilities in action.
+*/
+/* Responsive (scrollable) doc tables */
+.table-responsive .highlight pre {
+  white-space: normal;
+}
+/* Utility classes table  */
+.bs-table th small,
+.responsive-utilities th small {
+  display: block;
+  font-weight: normal;
+  color: #999;
+}
+.responsive-utilities tbody th {
+  font-weight: normal;
+}
+.responsive-utilities td {
+  text-align: center;
+}
+.responsive-utilities td.is-visible {
+  color: #468847;
+  background-color: #dff0d8 !important;
+}
+.responsive-utilities td.is-hidden {
+  color: #ccc;
+  background-color: #f9f9f9 !important;
+}
+/* Responsive tests */
+.responsive-utilities-test {
+  margin-top: 5px;
+}
+.responsive-utilities-test .col-xs-6 {
+  margin-bottom: 10px;
+}
+.responsive-utilities-test span {
+  display: block;
+  padding: 15px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: center;
+  border-radius: 4px;
+}
+.visible-on .col-xs-6 .hidden-xs,
+.visible-on .col-xs-6 .hidden-sm,
+.visible-on .col-xs-6 .hidden-md,
+.visible-on .col-xs-6 .hidden-lg,
+.hidden-on .col-xs-6 .hidden-xs,
+.hidden-on .col-xs-6 .hidden-sm,
+.hidden-on .col-xs-6 .hidden-md,
+.hidden-on .col-xs-6 .hidden-lg {
+  color: #999;
+  border: 1px solid #ddd;
+}
+.visible-on .col-xs-6 .visible-xs-block,
+.visible-on .col-xs-6 .visible-sm-block,
+.visible-on .col-xs-6 .visible-md-block,
+.visible-on .col-xs-6 .visible-lg-block,
+.hidden-on .col-xs-6 .visible-xs-block,
+.hidden-on .col-xs-6 .visible-sm-block,
+.hidden-on .col-xs-6 .visible-md-block,
+.hidden-on .col-xs-6 .visible-lg-block {
+  color: #468847;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+}
+/*
+ * Glyphicons
+ *
+ * Special styles for displaying the icons and their classes in the docs.
+ */
+.bs-icons:before,
+.bs-icons:after {
+  content: " ";
+  display: table;
+}
+.bs-icons:after {
+  clear: both;
+}
+.bs-icons:before,
+.bs-icons:after {
+  content: " ";
+  display: table;
+}
+.bs-icons:after {
+  clear: both;
+}
+.bs-icons .bs-icons-list {
+  padding-left: 0;
+  list-style: none;
+}
+.bs-icons .bs-icons-list .bs-icons-item {
+  position: relative;
+  float: left;
+  width: 50%;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 768px) {
+  .bs-icons .bs-icons-list .bs-icons-item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .bs-icons .bs-icons-list .bs-icons-item {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.bs-icons .bs-icons-list .bs-icons-item .media:before,
+.bs-icons .bs-icons-list .bs-icons-item .media:after,
+.bs-icons .bs-icons-list .bs-icons-item .alert:before,
+.bs-icons .bs-icons-list .bs-icons-item .alert:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_success:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_success:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_error:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_error:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_warning:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_warning:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_info:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_info:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_help:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_help:after {
+  content: " ";
+  display: table;
+}
+.bs-icons .bs-icons-list .bs-icons-item .media:after,
+.bs-icons .bs-icons-list .bs-icons-item .alert:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_success:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_error:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_warning:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_info:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_help:after {
+  clear: both;
+}
+.bs-icons .bs-icons-list .bs-icons-item .media:before,
+.bs-icons .bs-icons-list .bs-icons-item .media:after,
+.bs-icons .bs-icons-list .bs-icons-item .alert:before,
+.bs-icons .bs-icons-list .bs-icons-item .alert:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_success:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_success:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_error:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_error:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_warning:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_warning:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_info:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_info:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_help:before,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_help:after {
+  content: " ";
+  display: table;
+}
+.bs-icons .bs-icons-list .bs-icons-item .media:after,
+.bs-icons .bs-icons-list .bs-icons-item .alert:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_success:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_error:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_warning:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_info:after,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_help:after {
+  clear: both;
+}
+.bs-icons .bs-icons-list .bs-icons-item .media-left,
+.bs-icons .bs-icons-list .bs-icons-item .alert > .icon:first-of-type,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg > .icon:first-of-type,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_success > .icon:first-of-type,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_error > .icon:first-of-type,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_warning > .icon:first-of-type,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_info > .icon:first-of-type,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_help > .icon:first-of-type {
+  display: block !important;
+  padding: 16px;
+}
+.bs-icons .bs-icons-list .bs-icons-item .media-body,
+.bs-icons .bs-icons-list .bs-icons-item .alert .alert-text,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg .alert-text,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_success .alert-text,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_error .alert-text,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_warning .alert-text,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_info .alert-text,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_help .alert-text {
+  width: auto;
+}
+.bs-icons .bs-icons-list .bs-icons-item .media-body.pull-right,
+.bs-icons .bs-icons-list .bs-icons-item .alert .alert-text.pull-right,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg .alert-text.pull-right,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_success .alert-text.pull-right,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_error .alert-text.pull-right,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_warning .alert-text.pull-right,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_info .alert-text.pull-right,
+.bs-icons .bs-icons-list .bs-icons-item .field-msg_help .alert-text.pull-right {
+  float: none !important;
+  padding-left: 0;
+}
+@media (min-width: 700px) {
+  .bs-icons .bs-icons-list .bs-icons-item {
+    position: relative;
+    float: left;
+    width: 33.33333333%;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .bs-icons .bs-icons-list .bs-icons-item .media-left,
+  .bs-icons .bs-icons-list .bs-icons-item .alert > .icon:first-of-type,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg > .icon:first-of-type,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_success > .icon:first-of-type,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_error > .icon:first-of-type,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_warning > .icon:first-of-type,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_info > .icon:first-of-type,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_help > .icon:first-of-type {
+    display: table-cell !important;
+  }
+  .bs-icons .bs-icons-list .bs-icons-item .media-body.pull-right,
+  .bs-icons .bs-icons-list .bs-icons-item .alert .alert-text.pull-right,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg .alert-text.pull-right,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_success .alert-text.pull-right,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_error .alert-text.pull-right,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_warning .alert-text.pull-right,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_info .alert-text.pull-right,
+  .bs-icons .bs-icons-list .bs-icons-item .field-msg_help .alert-text.pull-right {
+    padding-left: 12px;
+  }
+}
+@media (min-width: 700px) and (min-width: 768px) {
+  .bs-icons .bs-icons-list .bs-icons-item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (min-width: 700px) and (min-width: 992px) {
+  .bs-icons .bs-icons-list .bs-icons-item {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.bs-icons .bs-icons-list .bs-icons-item .icon {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+.bs-icons .bs-icons-list .well {
+  height: 400px;
+}
+@media (min-width: 700px) {
+  .bs-icons .bs-icons-list .well {
+    height: 350px;
+  }
+}
+.social .bs-icons .bs-icons-list .well {
+  height: 200px;
+}
+.bs-icons.rating {
+  color: #ccc;
+}
+.bs-icons.rating .icon {
+  font-size: 64px;
+  display: inline-block;
+}
+.bs-icons.rating .icon:nth-child(2) {
+  content: "\e72e";
+  color: #a1c900;
+}
+.bs-icons.rating .icon:first-child,
+.bs-icons.rating .icon:hover:before,
+.bs-icons.rating .icon:hover ~ .bs-icons.rating .icon:before {
+  content: "\e731";
+  color: #a1c900;
+}
+.mountain-example {
+  border-color: inherit;
+  display: inline-block;
+  height: 20px;
+}
+.mountain-example:before {
+  content: "";
+  position: absolute;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid;
+  border-bottom-color: #000;
+}
+.mountain-example:after {
+  content: "";
+  position: absolute;
+  -webkit-transform: translate(22px, 5px);
+  -moz-transform: translate(22px, 5px);
+  -ms-transform: translate(22px, 5px);
+  -o-transform: translate(22px, 5px);
+  transform: translate(22px, 5px);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid;
+  border-bottom-color: #000;
+}
+@media (min-width: 768px) {
+  .mountain-example {
+    height: 30px;
+    width: auto;
+  }
+  .mountain-example:before {
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid;
+    border-bottom-color: #000;
+  }
+  .mountain-example:after {
+    -webkit-transform: translate(36px, 10px);
+    -moz-transform: translate(36px, 10px);
+    -ms-transform: translate(36px, 10px);
+    -o-transform: translate(36px, 10px);
+    transform: translate(36px, 10px);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid;
+    border-bottom-color: #000;
+  }
+}
+/*
+   /$$$$$$$             /$$     /$$                                         /$$       /$$ /$$                                                     /$$$$$$                        /$$                             /$$                       /$$     /$$                              
+  | $$__  $$           | $$    | $$                                        | $$      |__/| $$                                                    /$$__  $$                      | $$                            |__/                      | $$    |__/                              
+  | $$  \ $$ /$$$$$$  /$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$  /$$$$$$$       | $$       /$$| $$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$  /$$   /$$      | $$  \__/ /$$   /$$  /$$$$$$$ /$$$$$$    /$$$$$$  /$$$$$$/$$$$  /$$ /$$$$$$$$  /$$$$$$  /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
+  | $$$$$$$/|____  $$|_  $$_/|_  $$_/   /$$__  $$ /$$__  $$| $$__  $$      | $$      | $$| $$__  $$ /$$__  $$|____  $$ /$$__  $$| $$  | $$      | $$      | $$  | $$ /$$_____/|_  $$_/   /$$__  $$| $$_  $$_  $$| $$|____ /$$/ |____  $$|_  $$_/  | $$ /$$__  $$| $$__  $$ /$$_____/
+  | $$____/  /$$$$$$$  | $$    | $$    | $$$$$$$$| $$  \__/| $$  \ $$      | $$      | $$| $$  \ $$| $$  \__/ /$$$$$$$| $$  \__/| $$  | $$      | $$      | $$  | $$|  $$$$$$   | $$    | $$  \ $$| $$ \ $$ \ $$| $$   /$$$$/   /$$$$$$$  | $$    | $$| $$  \ $$| $$  \ $$|  $$$$$$ 
+  | $$      /$$__  $$  | $$ /$$| $$ /$$| $$_____/| $$      | $$  | $$      | $$      | $$| $$  | $$| $$      /$$__  $$| $$      | $$  | $$      | $$    $$| $$  | $$ \____  $$  | $$ /$$| $$  | $$| $$ | $$ | $$| $$  /$$__/   /$$__  $$  | $$ /$$| $$| $$  | $$| $$  | $$ \____  $$
+  | $$     |  $$$$$$$  |  $$$$/|  $$$$/|  $$$$$$$| $$      | $$  | $$      | $$$$$$$$| $$| $$$$$$$/| $$     |  $$$$$$$| $$      |  $$$$$$$      |  $$$$$$/|  $$$$$$/ /$$$$$$$/  |  $$$$/|  $$$$$$/| $$ | $$ | $$| $$ /$$$$$$$$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$ /$$$$$$$/
+  |__/      \_______/   \___/   \___/   \_______/|__/      |__/  |__/      |________/|__/|_______/ |__/      \_______/|__/       \____  $$       \______/  \______/ |_______/    \___/   \______/ |__/ |__/ |__/|__/|________/ \_______/   \___/  |__/ \______/ |__/  |__/|_______/ 
+                                                                                                                                 /$$  | $$                                                                                                                                          
+                                                                                                                                |  $$$$$$/                                                                                                                                          
+                                                                                                                                 \______/                                                                                                                                           
+*/
+/* OMG the original green is hideous */
+.btn-explore.btn-primary.pl-hamburger,
+.explore .btn-primary.btn-primary.pl-hamburger {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+.btn-explore.btn-primary.pl-hamburger .icon-rei-hamburger-menu,
+.explore .btn-primary.btn-primary.pl-hamburger .icon-rei-hamburger-menu {
+  margin-top: 3px;
+  display: inline-block;
+}
+/* particles-js */
+.bs-docs-masthead {
+  position: relative;
+}
+#particles-js {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
