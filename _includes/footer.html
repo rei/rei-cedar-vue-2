@@ -42,13 +42,11 @@
 
 <script src="{{ site.github.url }}/assets/js/main.js"></script>
 
-{% if site.github %}
-  <script src="{{ site.github.url }}/assets/js/docs.min.js"></script>
-{% else %}
-  {% for file in site.data.configBridge.paths.docsJs %}
-  <script src="{{ file }}"></script>
-  {% endfor %}
-{% endif %}
+
+{% for file in site.data.configBridge.paths.docsJs %}
+<script src="{{ site.github.url }}/{{ file }}"></script>
+{% endfor %}
+
 
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
