@@ -10,8 +10,7 @@
        \:\__\        \:\__\        \::/__/        /:/  /       |:|  |
         \/__/         \/__/         ~~            \/__/         \|__|
 
-REI Cedar Style Framework!
---------------------------
+# REI Cedar Style Framework!
 
 Welcome to REI's style framework! The overall goals of this project are to provide a common scaffolding for UI elements,
 and a set of themes that build on this scaffolding. We started this project in 2015 as a fork of
@@ -27,15 +26,12 @@ This project will work in conjunction with an upcoming component framework that 
 
 ## Build
 
-To build the CSS bundle, run `npm run build`. The built bundle(s) will appear in
-`target/*.css`
+To build the CSS bundle, run `gulp`. The built bundle(s) will appear in
+`dist/*.css`
 
 ## Docs
 
 To generate the documentation site locally, follow these steps:
-(We are looking to move away from Jekyll as a documentation generator in the future.)
-
-### Installation
 
 1. Install [Jekyll](http://jekyllrb.com/docs/installation) 2.5.x with
    `sudo gem install jekyll -v '>= 2.5'`
@@ -47,7 +43,7 @@ To generate the documentation site locally, follow these steps:
 
 ### Usage
 
-1. From the project root directory, run `npm run build-docs` to build the site
+1. From the project root directory, run `gulp` to build the site
 1. Run `jekyll serve` to start a local dev server
 1. Open http://localhost:9002 in your browser, and voilà!
 
@@ -108,11 +104,6 @@ components-panel-with-heading_138.png
 
 *The initial test run will not actually test anything, and will only create baseline images.
 
-## TODO
-
-- Remove generated files from git
-- Port all Grunt tasks to gulp
-
 ## See Also
 REI Cedar is a living, working project and will continue to grow, and change. Just like any healthy tree, this one will
 lose limbs and may change direction at times.
@@ -120,12 +111,27 @@ lose limbs and may change direction at times.
 We would like to thank the creators and contributors of the following tools that we have pulled inspiration from.
 
 The following frameworks have been used / referenced thus far
+
  - [Bootstrap](http://getbootstrap.com/),
  - [Semantic-ui](http://semantic-ui.com/),
  - [Pattern lab](http://patternlab.io/about.html)
+
 The following tools have been used / referenced thus far
-UI testing:
+
+### UI testing:
+
  - [PhantomCSS](https://github.com/Huddle/PhantomCSS/blob/master/README.md)
-Accessibility testing:
+
+### Accessibility testing:
+
  - [Pa11y](http://pa11y.org/)
  - [A11y](https://addyosmani.com/a11y/)
+
+### Icons
+
+ - [Vecteezy](http://creativecommons.org/licenses/by/3.0/deed.en_US)
+
+## TODO
+
+- Remove generated files from git
+
