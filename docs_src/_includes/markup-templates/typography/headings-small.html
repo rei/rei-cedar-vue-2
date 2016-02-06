@@ -1,8 +1,0 @@
-
-{% for item in site.data.header-theme-class-names %}
-    {% if item.theme == include.param %}
-        <h1 class="{{ item.headerClass }}"> H1 {{ item.theme }} <small>Secondary text</small></h1>
-        <h2 class="{{ item.headerClass }}"> H2 {{ item.theme }} <small>Secondary text</small></h2>
-        <h3 class="{{ item.headerClass }}"> H3 {{ item.theme }} <small>Secondary text</small></h3>
-    {% endif %}
-{% endfor %}
