@@ -1,5 +1,5 @@
-{% for item in site.data.list-names %}
-{% if item.type == include.param %}
+{% for item in site.data.list-names %}{%
+if item.type == include.param %}
 <ol class="{{item.class}}" itemscope itemtype="http://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope
         itemtype="http://schema.org/ListItem">
@@ -19,6 +19,6 @@
             <span itemprop="name">Item 3</span></a>
         <meta itemprop="position" content="3" />
     </li>
-</ol>
-{% endif %}
-{% endfor %}
+</ol>{%
+endif %}{%
+endfor %}
