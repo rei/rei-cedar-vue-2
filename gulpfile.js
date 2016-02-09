@@ -136,12 +136,12 @@ var PATHS = {
 };
 
 /**
- * Options for [a11y](https://github.com/addyosmani/a11y)
+ * Options for [ a11y ]( https://github.com/addyosmani/a11y )
  */
 var A11Y_OPTIONS = pkg.a11y;
 
 /**
- * Options for [pa11y](https://github.com/nature/pa11y#available-options)
+ * Options for [ pa11y ]( https://github.com/nature/pa11y#available-options )
  */
 var PA11Y_OPTIONS = pkg.pa11y;
 
@@ -193,7 +193,7 @@ gulp.task( 'js', [
     'js:test:post-clean',
     'js:clean',
     'js:build'
-]);
+] );
 
 
 // --[ Docs ]-------------------------------------------------------------------
@@ -202,7 +202,7 @@ gulp.task( 'docs:clean', [
     'docs:clean-copied-from-src',
     'docs:clean-copied-package',
     'docs:clean-copied-less'
-]);
+] );
 
 
 gulp.task( 'docs:copy-all', [
@@ -210,7 +210,7 @@ gulp.task( 'docs:copy-all', [
     'docs:copy-js',
     'docs:copy-package',
     'docs:copy-less'
-]);
+] );
 
 
 gulp.task( 'docs', [
@@ -270,8 +270,8 @@ gulp.task( 'accessibility:audit-exp', [
 
 // CSS:Clean
 gulp.task( 'css:clean', function() {
-    return del( [ PATHS.DIST + '**/*.css'] );
-});
+    return del( [ PATHS.DIST + '**/*.css' ] );
+} );
 
 // Compile the UI framework's Less --> ./dist.
 gulp.task( 'css:build', [ 'css:clean' ], function () {
@@ -290,13 +290,13 @@ gulp.task( 'css:build', [ 'css:clean' ], function () {
 
     var lintLessReporter = cssLintLessReporter();
 
-    lintLessReporter.on('error', function (err) {
+    lintLessReporter.on( 'error', function ( err ) {
 
       // TODO: decide whether to throw the error
       if ( SHOULD_STOP_FOR_LINT_FAILURE ) {
         throw err;
       }
-    });
+    } );
 
     return gulp.src( PATHS.SRC + '/less/main.less' )
         .pipe( sourcemaps.init() )
@@ -312,7 +312,7 @@ gulp.task( 'css:build', [ 'css:clean' ], function () {
         .pipe( postcss( [ autoprefixer( { browsers: [ 'last 2 versions' ] } ) ] ) )
         .pipe( sourcemaps.write() )
         .pipe( gulp.dest( PATHS.DIST ) );
-});
+} );
 
 // minify the css
 gulp.task( 'css:minify', [ 'css:build' ], function(){
@@ -322,7 +322,7 @@ gulp.task( 'css:minify', [ 'css:build' ], function(){
         .pipe( rename( { suffix: '.min' } ) )
         .pipe( minifyCss() )
         .pipe( gulp.dest( PATHS.DIST ) );
-});
+} );
 
 
 
@@ -342,15 +342,15 @@ gulp.task( 'css:minify', [ 'css:build' ], function(){
 
 // js:clean
 // Before clean/deletion, qunit is run to ensure new files will be written.
-gulp.task( 'js:clean', [ 'js:test:qunit' ], function() { return del( [ PATHS.DIST + '**/*.js' ] ); });
+gulp.task( 'js:clean', [ 'js:test:qunit' ], function() { return del( [ PATHS.DIST + '**/*.js' ] ); } );
 
 
 // js:pre-clean-test
-gulp.task( 'js:test:pre-clean', function() { return del( [ PATHS.TEST + '/tmp/js/*' ] ); });
+gulp.task( 'js:test:pre-clean', function() { return del( [ PATHS.TEST + '/tmp/js/*' ] ); } );
 
 
 // js:post-clean-test
-gulp.task( 'js:test:post-clean', [ 'js:test:qunit' ], function() { return del( [ PATHS.TEST + '/tmp/js/*' ] ); });
+gulp.task( 'js:test:post-clean', [ 'js:test:qunit' ], function() { return del( [ PATHS.TEST + '/tmp/js/*' ] ); } );
 
 
 // Copy JS for testing
@@ -362,7 +362,7 @@ gulp.task( 'js:test:copy', [ 'js:test:pre-clean' ], function() {
 
 // Compile the UI framework's Javascript --> ./dist. Include the minified version.
 gulp.task( 'js:build', [ 'js:test:post-clean' ], function() {
-    var bundleStream = browserify( PATHS.SRC + '/js/main.js').bundle();
+    var bundleStream = browserify( PATHS.SRC + '/js/main.js' ).bundle();
     return bundleStream
         .pipe( source( PATHS.SRC + '/js/main.js' ) )
         .pipe( streamify( sourcemaps.init() ) )
@@ -378,7 +378,7 @@ gulp.task( 'js:build', [ 'js:test:post-clean' ], function() {
 // Browserify individual components for test
 gulp.task( 'js:test:browserify-single-components', [ 'js:test:copy' ], function( done ) {
 
-    gulp.src( [ PATHS.TEST + '/tmp/js/tests/*.js', PATHS.TEST + '/tmp/js/tests/unit/*.js' ], function( err, files ) {
+    return gulp.src( [ PATHS.TEST + '/tmp/js/tests/*.js', PATHS.TEST + '/tmp/js/tests/unit/*.js' ], function( err, files ) {
 
         if( err ) done( err );
 
@@ -389,22 +389,22 @@ gulp.task( 'js:test:browserify-single-components', [ 'js:test:copy' ], function(
                 .pipe( source( entry ) )
                 .pipe( gulp.dest( '' ) );
 
-            });
+            } );
 
         // Merge the streams
         es.merge( tasks ).on( 'end', done );
-    });
-});
+    } );
+} );
 
 
 // Inject files into js/tests/index.html for testing
 
 gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], function () {
-    gulp.src( PATHS.TEST + '/tmp/js/tests/index.html' )
+    return gulp.src( PATHS.TEST + '/tmp/js/tests/index.html' )
         // Get all test files and inject into index.html
-        .pipe( inject( gulp.src( [ PATHS.TEST + '/tmp/js/tests/unit/*.js'], { read: false } ), { name: 'tests', relative: true } ) )
+        .pipe( inject( gulp.src( [ PATHS.TEST + '/tmp/js/tests/unit/*.js' ], { read: false } ), { name: 'tests', relative: true } ) )
         .pipe( gulp.dest( PATHS.TEST + '/tmp/js/tests' ) );
-});
+} );
 
 
 // Qunit test the components
@@ -415,7 +415,7 @@ gulp.task( 'js:test:qunit', [ 'js:test:inject' ], function () {
         .pipe( qunit( {
             'timeout': 20
         } ) );
-});
+} );
 
 
 
@@ -433,16 +433,16 @@ gulp.task( 'js:test:qunit', [ 'js:test:inject' ], function () {
 //
 
 // docs:clean-dist: deletes everything in the docs_dist folder
-gulp.task( 'docs:clean-dist', function() { return del( [ PATHS.DOCS_DIST + '/*' ] ); });
+gulp.task( 'docs:clean-dist', function() { return del( [ PATHS.DOCS_DIST + '/*' ] ); } );
 
 // docs:clean-copied-from-src: deletes the copied REI-Cedar.* from docs_src
-gulp.task( 'docs:clean-copied-from-src', function() { return del( [ PATHS.DOCS_SRC + '/rei-cedar*' ] ); });
+gulp.task( 'docs:clean-copied-from-src', function() { return del( [ PATHS.DOCS_SRC + '/rei-cedar*' ] ); } );
 
 // docs:clean-copied-package: deletes `/less/variables.less` from docs_src
-gulp.task( 'docs:clean-copied-package', function() { return del( [ PATHS.DOCS_SRC + '/_data/package.json' ] ); });
+gulp.task( 'docs:clean-copied-package', function() { return del( [ PATHS.DOCS_SRC + '/_data/package.json' ] ); } );
 
 // docs:clean-copied-variables: deletes `/less/variables.less` from docs_src
-gulp.task( 'docs:clean-copied-less', function() { return del( [ PATHS.DOCS_SRC + '/_includes/less/*' ] ); });
+gulp.task( 'docs:clean-copied-less', function() { return del( [ PATHS.DOCS_SRC + '/_includes/less/*' ] ); } );
 
 
 
@@ -475,13 +475,13 @@ gulp.task( 'docs:copy-less', [ 'docs:clean-copied-less' ], function () {
 
 // --[ docs:autoprefixer ]----------------------------------------------------------
 
-gulp.task('docs:autoprefixer-css', [ 'docs:clean', 'docs:copy-all' ], function () {
+gulp.task( 'docs:autoprefixer-css', [ 'docs:clean', 'docs:copy-all' ], function () {
     return gulp.src( [ 'docs/assets/css/anchor.css', 'docs/assets/css/src/docs.css' ] )
         .pipe( sourcemaps.init() )
         .pipe( postcss( [ autoprefixer( { browsers: [ 'last 2 versions' ] } ) ] ) )
         .pipe( sourcemaps.write( '.' ) )
         .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) );
-});
+} );
 
 gulp.task( 'docs:autoprefixer-examples', [ 'docs:clean', 'docs:copy-all' ], function () {
     return gulp.src( PATHS.DOCS_SRC + 'docs/examples/**/*.css' )
@@ -496,11 +496,11 @@ gulp.task( 'docs:autoprefixer-examples', [ 'docs:clean', 'docs:copy-all' ], func
 // --[ docs:csscomb ]----------------------------------------------------------
 
 gulp.task( 'docs:csscomb-css', [ 'docs:clean', 'docs:copy-all' ], function () {
-    return gulp.src( ['docs/assets/css/anchor.css', 'docs/assets/css/src/docs.css'] )
+    return gulp.src( [ 'docs/assets/css/anchor.css', 'docs/assets/css/src/docs.css' ] )
         .pipe( csscomb( {
             expand: true,
             cwd: 'dist/css/',
-            src: ['*.css', '!*.min.css'],
+            src: [ '*.css', '!*.min.css' ],
             dest: 'dist/css/'
         } ) )
         .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) );
@@ -512,7 +512,7 @@ gulp.task( 'docs:csscomb-examples', [ 'docs:clean', 'docs:copy-all' ], function 
         .pipe( csscomb( {
             expand: true,
             cwd: 'dist/css/',
-            src: ['*.css', '!*.min.css'],
+            src: [ '*.css', '!*.min.css' ],
             dest: 'dist/css/'
         } ) )
         .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'docs/examples/' ) ) );
@@ -544,7 +544,7 @@ gulp.task( 'docs:less:compile', [ 'docs:clean', 'docs:copy-all' ], function () {
     return gulp.src( path.join( PATHS.DOCS_SRC, '/assets/less/docs.less' ) )
         .pipe( lessc )
         .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '/assets/css/src' ) ) );
-});
+} );
 
 
 gulp.task( 'docs:jekyll', [ 'docs:clean', 'docs:copy-all' ], function ( gulpCallBack ){
@@ -553,8 +553,8 @@ gulp.task( 'docs:jekyll', [ 'docs:clean', 'docs:copy-all' ], function ( gulpCall
 
     jekyll.on( 'exit', function( code ) {
         gulpCallBack( code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code );
-    });
-});
+    } );
+} );
 
 
 
