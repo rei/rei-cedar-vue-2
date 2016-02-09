@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "description": "REI's mobile-first, responsive UI framework",
   "author": "REI Software Engineering",
-  "homepage": "http://patterns.rei.com",
+  "homepage": "https://rei.github.io/rei-cedar/",
   "scripts": {
     "build": "gulp",
     "build-docs": "gulp docs",
@@ -14,10 +14,7 @@
     "test-ui": "casperjs test test/test-ui/main.js"
   },
   "urls": {
-    "repo": "https://github.com/rei/rei-cedar",
-    "fed_docs": "https://github.com/reidev/fed-docs/wiki",
-    "styleguide": "file:///ahqnas1.reicorpnet.com/Groups/Online Shared/IxD/Redesign",
-    "erl": "file:///ahqnas1.reicorpnet.com/Groups/Online Shared/IxD/Redesign/ERLs"
+    "repo": "https://github.com/rei/rei-cedar"
   },
   "less": "less/bootstrap.less",
   "repository": {
@@ -76,7 +73,7 @@
     "verbose": true
   },
   "pa11y": {
-    "url": "http://patterns.rei.com",
+    "url": "https://rei.github.io/rei-cedar/",
     "standard": "WCAG2AA"
   }
 }
