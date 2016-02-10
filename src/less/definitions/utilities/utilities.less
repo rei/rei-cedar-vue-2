@@ -94,159 +94,151 @@
     margin-top: @vertical-push-xlarge;
 }
 
+
 // Position element - vertical and horizontal alignment
 // -------------------------------------------------------------------
+
 .utility-position ( @anchor: center; @x: null ) {
     position: absolute;
+}
 
-    & when ( ispercentage( @anchor ) ),
-           ( isnumber( @anchor ) ),
-           ( ispixel( @anchor ) ) {
-        @top: @anchor;
+.utility-position ( @anchor: center ) when ( @anchor = center ),
+                                           ( @anchor = top ),
+                                           ( @anchor = top-left ),
+                                           ( @anchor = left ) {
+    right: auto;
+    bottom: auto;
+}
 
-        & when ( @x = null ) {
-            @left : @top;
+.utility-position ( @anchor ) when ( @anchor = top-right ),
+                                   ( @anchor = right ) {
+    bottom: auto;
+    left: auto;
+}
 
-            top: @top;
-            right: auto;
-            bottom: auto;
-            left: @left;
+.utility-position( @anchor ) when ( @anchor = bottom ),
+                                  ( @anchor = bottom-left ) {
+    top: auto;
+    right: auto;
+}
 
-            -o-object-position: @top @left;
-               object-position: @top @left;
+.utility-position( @anchor ) when ( @anchor = top-left ) {
+    top: 0;
+    left: 0;
+}
 
-            -webkit-transform: translate( -@top, -@left );
-                    transform: translate( -@top, -@left );
-        }
+.utility-position( @anchor ) when ( @anchor = top ) {
+    top: 0;
+    left: 50%;
+}
 
-        & when not ( @x = null ) {
-            @left: @x;
+.utility-position( @anchor ) when ( @anchor = top-right ) {
+    top: 0;
+    right: 0;
+}
 
-            top: @top;
-            right: auto;
-            bottom: auto;
-            left: @left;
+.utility-position( @anchor ) when ( @anchor = left ) {
+    top: 50%;
+    left: 0;
+}
 
-            -o-object-position: @top @left;
-               object-position: @top @left;
+.utility-position ( @anchor: center ) when ( @anchor = center ) {
+    top: 50%;
+    left: 50%;
 
-            -webkit-transform: translate( -@top, -@left );
-                    transform: translate( -@top, -@left );
-        }
-    }
+    transform: translate( -50%, -50% );
+}
 
+.utility-position( @anchor ) when ( @anchor = right ) {
+    top: 50%;
+    right: 0;
+}
 
-    & when ( @anchor = center ) {
-        top: 50%;
-        right: auto;
-        bottom: auto;
-        left: 50%;
+.utility-position( @anchor ) when ( @anchor = bottom ) {
+    bottom: 0;
+    left: 50%;
+}
 
-        text-align: @anchor;
+.utility-position( @anchor ) when ( @anchor = bottom-left ) {
+    bottom: 0;
+    left: 0;
+}
 
-        -webkit-transform: translate( -50%, -50% );
-                transform: translate( -50%, -50% );
-    }
+.utility-position( @anchor ) when ( @anchor = bottom-right ) {
+    right: 0;
+    bottom: 0;
+}
 
-    & when ( @anchor = left ) {
-        top: 50%;
-        right: auto;
-        bottom: auto;
-        left: 0;
+.utility-position( @anchor ) when ( @anchor = left ),
+                                  ( @anchor = right ) {
+    transform: translate( 0, -50% );
+}
+.utility-position( @anchor ) when ( @anchor = top ),
+                                  ( @anchor = bottom ) {
+    transform: translate( -50%, 0 );
+}
+.utility-position( @anchor: center ) when ( @anchor = top ),
+                                          ( @anchor = bottom ),
+                                          ( @anchor = center ) {
+    text-align: center;
+}
+.utility-position ( @anchor ) when ( @anchor = top-left ),
+                                   ( @anchor = left ),
+                                   ( @anchor = bottom-left ) {
+    text-align: left;
+}
+.utility-position ( @anchor ) when ( @anchor = top-right ),
+                                   ( @anchor = right ),
+                                   ( @anchor = bottom-right ) {
+    text-align: right;
+}
 
-        text-align: @anchor;
+.utility-position( @anchor ) when ( @anchor = top-left ),
+                                  ( @anchor = top-right ),
+                                  ( @anchor = bottom-left ),
+                                  ( @anchor = bottom-right ) {
+    transform: translate( 0, 0 );
+}
 
-        -webkit-transform: translate( 0, -50% );
-                transform: translate( 0, -50% );
-    }
+.utility-position ( @anchor: center ) when ( ispercentage( @anchor ) ),
+                                           ( isnumber( @anchor ) ),
+                                           ( ispixel( @anchor ) ) {
+  right: auto;
+  bottom: auto;
+}
 
-    & when ( @anchor = right ) {
-        top: 50%;
-        right: 0;
-        bottom: auto;
-        left: auto;
+.utility-position ( @anchor ) when ( ispercentage( @anchor ) ),
+                                   ( isnumber( @anchor ) ),
+                                   ( ispixel( @anchor ) ) {
+        top: @anchor;
+        left: @anchor;
 
-        text-align: @anchor;
+        object-position: @anchor @anchor;
+        transform: translate( -@anchor, -@anchor );
+}
 
-        -webkit-transform: translate( 0, -50% );
-                transform: translate( 0, -50% );
-    }
+.utility-position ( @anchor; @x ) when ( ispercentage( @anchor ) ),
+                                       ( isnumber( @anchor ) ),
+                                       ( ispixel( @anchor ) ) {
 
-    & when ( @anchor = top ) {
-        top: 0;
-        right: auto;
-        bottom: auto;
-        left: 50%;
+  & when ( ispercentage( @x ) ),
+         ( isnumber( @x ) ),
+         ( ispixel( @x ) ) {
+    top: @anchor;
+    left: @x;
 
-        text-align: center;
-
-        -webkit-transform: translate( -50%, 0 );
-                transform: translate( -50%, 0 );
-    }
-
-    & when ( @anchor = top-left ) {
-        top: 0;
-        right: auto;
-        bottom: auto;
-        left: 0;
-
-        text-align: left;
-
-        -webkit-transform: translate( 0, 0 );
-                transform: translate( 0, 0 );
-    }
-
-    & when ( @anchor = top-right ) {
-        top: 0;
-        right: 0;
-        bottom: auto;
-        left: auto;
-
-        text-align: right;
-
-        -webkit-transform: translate( 0, 0 );
-                transform: translate( 0, 0 );
-    }
-
-    & when ( @anchor = bottom ) {
-        top: auto;
-        right: auto;
-        bottom: 0;
-        left: 50%;
-
-        text-align: center;
-
-        -webkit-transform: translate( -50%, 0 );
-                transform: translate( -50%, 0 );
-    }
-
-    & when ( @anchor = bottom-left ) {
-        top: auto;
-        right: auto;
-        bottom: 0;
-        left: 0;
-
-        text-align: left;
-
-        -webkit-transform: translate( 0, 0 );
-                transform: translate( 0, 0 );
-    }
-
-    & when ( @anchor = bottom-right ) {
-        top: auto;
-        right: 0;
-        bottom: 0;
-        left: auto;
-
-        text-align: right;
-
-        -webkit-transform: translate( 0, 0 );
-                transform: translate( 0, 0 );
-    }
+    object-position: @anchor @x;
+    transform: translate( -@anchor, -@x );
+  }
 }
 
 /* Application Classes */
 .position {
+  &,
+  &--center,
+  &.center {
+    .utility-position();
+  }
 
   &--left,
   &.left {
@@ -270,11 +262,6 @@
     &.right {
       .utility-position( top-right );
     }
-  }
-
-  &--center,
-  &.center {
-    .utility-position();
   }
 
   &--bottom,
