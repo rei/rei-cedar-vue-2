@@ -1787,7 +1787,8 @@
           "dependencies": {
             "minimist": {
               "version": "1.2.0",
-              "from": "minimist@>=1.1.3 <2.0.0"
+              "from": "minimist@1.2.0",
+              "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz"
             }
           }
         },
@@ -1878,7 +1879,8 @@
           "dependencies": {
             "graceful-fs": {
               "version": "4.1.3",
-              "from": "graceful-fs@>=4.1.2 <5.0.0"
+              "from": "graceful-fs@4.1.3",
+              "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.1.3.tgz"
             }
           }
         },
@@ -2121,7 +2123,8 @@
           "dependencies": {
             "source-map": {
               "version": "0.5.3",
-              "from": "source-map@>=0.5.1 <0.6.0"
+              "from": "source-map@0.5.3",
+              "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.5.3.tgz"
             }
           }
         },
@@ -3263,7 +3266,8 @@
         },
         "phantomjs-prebuilt": {
           "version": "2.1.3",
-          "from": "phantomjs-prebuilt@>=2.1.3 <3.0.0"
+          "from": "phantomjs-prebuilt@2.1.3",
+          "resolved": "https://registry.npmjs.org/phantomjs-prebuilt/-/phantomjs-prebuilt-2.1.3.tgz"
         },
         "qs": {
           "version": "5.2.0",
