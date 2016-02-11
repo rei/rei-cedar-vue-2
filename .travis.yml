@@ -1,8 +1,12 @@
 language: node_js
 node_js:
-  - "4.0"
-  - "4.3"
-  - "5.6"
+- '4.0'
+- '4.3'
+- '5.6'
 before_script:
-  - npm install -g gulp
+- gem install jekyll
+- npm install -g gulp
 script: gulp
+notifications:
+  slack:
+    secure: h5LlGjjfJWuxc2oHl9RFvFKOhnAm3KwoOAtJoJAa0s51o6QHDympj6072CKiDjNdRKiJRMdkYzIpaNZy8DP9Ngd6JkyiOwdj6fsPr0KDibuB2Usycx/Al+dh0t//KMt9nG8WDNIXP9cXjiCQYmcnwKHsNRlPsbRBMYBKWERd5AFMsOOnxyuqBIjgAiAOhBDqPPga4+ewNc0wwC5xDMhgqpTfxuMCZOVkGHCnjXwJ8IWVV9BRR6S70Q/YtxNJLhWYdnL2b7+VOX/3ornHn1qIS24AObSKlZ/UsWGElHUja81ubQLsP7tNCwKJWarkaWlMFih0aoLu1WqyKlJefLo1kEf9IAZq+Zs1MZPv+HLe0XzrZPcp4iDzNWRQEhoBG3oVVXp1wI6Wvkns1BX6ogC4zXqnik0CnBW3dYPwB4RX4DzOOYKT7jMAgez37fhKieIm6N2+oKRoVMFHWloX97Bw+WyLc9TUbgaY4hUxpZYoM0wZJZM1iehij7ofOineLofu9XMj5AW9/zrkdwXyBUIwp+6IgzwLFUXIxSqVkoXLszufGAYpudjkEOnYdo8w5Ux7cPFsbrQJvDueKvdJKK5Emcl9X8iztaDaUc+FvJ3ovoSir+/Nznu8grT4Be1owN1YG9htRpsLq6Rhx55bkuWp/fRq/cLtXGwHS5sl2ZeuiV4=
