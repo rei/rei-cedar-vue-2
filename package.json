@@ -32,7 +32,7 @@
     "del": "^2.0.2",
     "event-stream": "^3.3.2",
     "glob": "^5.0.15",
-    "gulp": "^3.8.6",
+    "gulp": "^3.9.1",
     "gulp-a11y": "^0.1.1",
     "gulp-csscomb": "^3.0.6",
     "gulp-csslint": "^0.2.0",
