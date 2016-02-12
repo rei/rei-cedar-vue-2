@@ -393,8 +393,9 @@ gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], functio
 // Qunit test the components
 
 gulp.task( 'js:test:qunit', [ 'js:test:inject' ], function () {
+    console.log( PATHS.TEST )
     // Test that bad boy!
-    return gulp.src( PATHS.TEST + '/tmp/js/tests/index.html' )
+    return gulp.src( path.join( PATHS.TEST, '/tmp/js/tests/index.html' ) )
         .pipe( qunit( {
             'timeout': 20
         } ) );
