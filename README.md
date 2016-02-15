@@ -1,14 +1,20 @@
-         ___           ___           ___           ___           ___
-        /\  \         /\  \         /\  \         /\  \         /\  \
-       /::\  \       /::\  \       /::\  \       /::\  \       /::\  \
-      /:/\:\  \     /:/\:\  \     /:/\:\  \     /:/\:\  \     /:/\:\  \
-     /:/  \:\  \   /::\~\:\  \   /:/  \:\__\   /::\~\:\  \   /::\~\:\  \
-    /:/__/ \:\__\ /:/\:\ \:\__\ /:/__/ \:|__| /:/\:\ \:\__\ /:/\:\ \:\__\
-    \:\  \  \/__/ \:\~\:\ \/__/ \:\  \ /:/  / \/__\:\/:/  / \/_|::\/:/  /
-     \:\  \        \:\ \:\__\    \:\  /:/  /       \::/  /     |:|::/  /
-      \:\  \        \:\ \/__/     \:\/:/  /        /:/  /      |:|\/__/
-       \:\__\        \:\__\        \::/__/        /:/  /       |:|  |
-        \/__/         \/__/         ~~            \/__/         \|__|
+         ~==,
+     ~NMMMMMMMMZ    MMMMMMMMMMM   NMMMMMMMMMMD       ~MMMMMM       MMMMMMMMMMM+
+    ~MMMMMMMMMMMN   MMMMMMMMMMM   NMMMMMMMMMMMD      DMMMMMM~      MMMMMMMMMMMMD
+    NMMMI    MMMO   MMMM,         NMMM,    MMMM,     MMMMMMMO      MMMM    DMMMM
+    MMMM            MMMM,         NMMM,    ZMMMI    ,MMM8MMMM      MMMM     NMMM
+    MMMM            MMMM,         NMMM,    ?MMMO    ZMMM~NMMM,     MMMM     ZMMM
+    MMMM            MMMM,         NMMM,    ~MMMO    MMMM =MMM7     MMMM     MMMM
+    MMMM            MMMMMMMM8     NMMM,    ~MMMN    MMMN  MMMM     MMMM    NMMMM
+    MMMM            MMMMMMMM8     NMMM,    ~MMMN   =MMM?  MMMM     MMMMMMMMMMMM+
+    MMMM            MMMM,         NMMM,    ~MMMN   ZMMM   $MMM?    MMMMMMMMMMZ
+    MMMM            MMMM,         NMMM,    =MMMO   DMMM   :MMMN    MMMM  ,MMMM
+    MMMM            MMMM,         NMMM,    ?MMMO   MMMMMMMMMMMM    MMMM   MMMM,
+    MMMM      ,     MMMM,         NMMM,    OMMM=  ,MMMMMMMMMMMM    MMMM   NMMMD
+    NMMM$    MMMM   MMMM          NMMM,    MMMM,  ?MMMMMMMMMMMM    MMMM   ?MMMM
+    ,MMMMMMMMMMMN   MMMMMMMMMMM   NMMMMMMMMMMM$   NMMM      MMM+   MMMM    MMMM7
+      MMMMMMMMM     MMMMMMMMMMM   NMMMMMMMMMM:    MMMM      MMMN   MMMM    OMMMM
+         ~==
 
 # REI Cedar Style Framework!
 [![Build Status](https://travis-ci.org/rei/rei-cedar.svg?branch=master)](https://travis-ci.org/rei/rei-cedar)
@@ -135,4 +141,3 @@ The following tools have been used / referenced thus far
 ## TODO
 
 - Remove generated files from git
-
