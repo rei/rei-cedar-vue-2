@@ -49,7 +49,7 @@
 // Size
 //----------------------------------------------------------------------------------------------------------------------
 // Body copy
-@font-size-root:                                    10px;
+@font-size-root:                                    62.5%;
 @font-size-base:                                    1.6rem;
 @font-size-large:                                   1.8rem;
 @font-size-smaller:                                 1.4rem;
