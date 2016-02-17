@@ -23,7 +23,7 @@ var path                = require( 'path' );
 var gulp                = require( 'gulp' );
 var less                = require( 'gulp-less' );
 var rename              = require( 'gulp-rename' );
-var minifyCss           = require( 'gulp-minify-css' );
+var minifyCss           = require( 'gulp-cssnano' );
 var a11y                = require( 'gulp-a11y' );
 var pa11y               = require( 'gulp-pa11y' );
 var csscomb             = require( 'gulp-csscomb' );
@@ -393,8 +393,9 @@ gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], functio
 // Qunit test the components
 
 gulp.task( 'js:test:qunit', [ 'js:test:inject' ], function () {
+    console.log( PATHS.TEST )
     // Test that bad boy!
-    return gulp.src( PATHS.TEST + '/tmp/js/tests/index.html' )
+    return gulp.src( path.join( PATHS.TEST, '/tmp/js/tests/index.html' ) )
         .pipe( qunit( {
             'timeout': 20
         } ) );
