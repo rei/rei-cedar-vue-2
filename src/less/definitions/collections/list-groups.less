@@ -33,7 +33,7 @@
 & > label {
     .text-capitalize();
     .text-sub-heading();
-    padding: 14px 16px;
+    padding: 1.4rem 1.6rem;
     &:hover,
     &:focus,
     &.active {
@@ -53,13 +53,13 @@
 @default-item-ruleset: {
     margin: 0;
     @toggle-sort-ruleset();
-    .place-toggle-variant( @icon-size-md; 21px; 2px; );
+    .place-toggle-variant( @icon-size-md; 2.1rem; 0.2rem; );
     @list-group-toggle-ruleset();
-    border-bottom: 1px solid @list-group-border;
+    border-bottom: 0.1rem solid @list-group-border;
     //sort option
     > a {
         .link_navigation-subtitle();
-        padding: 11px @padding-base-horizontal;
+        padding: 1.1rem @padding-base-horizontal;
         &:hover, &:focus, &.active  {
             text-decoration: none;
             background-color: @list-group-bg;
@@ -69,8 +69,8 @@
 
 //list-group-item-secondary
 @default-item-secondary-ruleset: {
-    border-top: 1px solid @list-group-border;
-    padding: 1px @padding-base-horizontal 7px  (@padding-base-horizontal + 8px);
+    border-top: 0.1rem solid @list-group-border;
+    padding: 0.1rem @padding-base-horizontal 0.7rem  ( @padding-base-horizontal + 0.8 );
     > a {
         .link_navigation();
     }
@@ -97,13 +97,13 @@
 };
 //list-group-item
 @menu-filter-item-ruleset: {
-    border-bottom: 1px solid @list-group-border;
-    .place-toggle-variant( @icon-size-sm; 21px; 2px; );
+    border-bottom: 0.1rem solid @list-group-border;
+    .place-toggle-variant( @icon-size-sm; 2.1rem; 0.2rem; );
     @list-group-toggle-ruleset();
     & > a,
     & > label {
         .link_navigation-subtitle();
-        padding: 15px 16px;
+        padding: 1.5rem 1.6rem;
         &.active,
         &:hover,
         &:focus {
@@ -129,7 +129,7 @@
 //list-group-item
 @menu-navigation-item-ruleset: {
     @menu-filter-item-ruleset();
-    border-bottom: 1px solid @list-group-border;
+    border-bottom: 0.1rem solid @list-group-border;
     background-color: @navigation-menu-1;
     > a,
     & label {
@@ -147,11 +147,11 @@
 };
 //list-group-item-secondary
 @menu-navigation-item-secondary-ruleset: {
-    border-top: 1px solid @list-group-border;
+    border-top: 0.1rem solid @list-group-border;
     background-color: @navigation-menu-2;
     > a {
         .link_navigation-subtitle-overlay();
-        padding: 11px @padding-base-horizontal;
+        padding: 1.1rem @padding-base-horizontal;
         background-color: @navigation-menu-2;
         border-bottom-color: #333;
         &:hover, &:focus, &.active  {

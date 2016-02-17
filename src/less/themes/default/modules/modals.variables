@@ -4,13 +4,13 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //** Padding applied to the modal body
-@modal-inner-padding:                                15px;
+@modal-inner-padding:                                1.5rem;
 
 //** Padding applied to the modal title
-@modal-title-padding:                                15px;
+@modal-title-padding:                                1.5rem;
 //** Modal title line-height
 @modal-title-line-height:                            @line-height-base;
 
-@modal-lg:                                           900px;
-@modal-md:                                           600px;
-@modal-sm:                                           300px;
+@modal-lg:                                           90rem;
+@modal-md:                                           60rem;
+@modal-sm:                                           30rem;

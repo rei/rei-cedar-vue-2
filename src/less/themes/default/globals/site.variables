@@ -224,32 +224,32 @@
 // Define common padding sizes and more.
 //
 //----------------------------------------------------------------------------------------------------------------------
-@padding-base-vertical:                               (40px - 18px) / 2;
-@padding-base-horizontal:                             16px;
+@padding-base-vertical:                                1.1rem;
+@padding-base-horizontal:                              1.6rem;
 
-@padding-xlarge:                                      30px;
+@padding-xlarge:                                       3rem;
 
-@padding-large-vertical:                              (50px - 24px) / 2;
-@padding-large-horizontal:                            (@padding-base-horizontal * 2);
+@padding-large-vertical:                               1.3rem;
+@padding-large-horizontal:                             3.2rem;
 
-@padding-small-vertical:                               6px;
-@padding-small-horizontal:                             ( @padding-base-horizontal + 8 );
+@padding-small-vertical:                               0.6rem;
+@padding-small-horizontal:                             2.4rem;
 
-@padding-xs-vertical:                                  3px;
+@padding-xs-vertical:                                  0.3rem;
 @padding-xs-horizontal:                                @padding-base-horizontal;
 
-@vertical-push-small:                                  @vertical-push - 4;          //~8px
-@vertical-push:                                        @line-height-computed / 2;   //~12px
-@vertical-push-medium:                                 @padding-base-horizontal;    // 16px
-@vertical-push-large:                                  26px;
-@vertical-push-xlarge:                                 @padding-xlarge;             // 30px
+@vertical-push-small:                                  0.8rem;
+@vertical-push:                                        1.2rem;
+@vertical-push-medium:                                 1.6rem;
+@vertical-push-large:                                  2.6rem;
+@vertical-push-xlarge:                                 @padding-xlarge;
 @group-push:                                           @padding-base-horizontal;
 @form-group-margin-bottom:                             @vertical-push-large;
 
 //** Spacing between bottom of header and top of content (breadcrumbs are included in content).
-@header-spacing:                                       40px;
+@header-spacing:                                       4rem;
 //** Spacing between bottom of breadcrumbs and top of the rest of the content.
-@breadcrumb-spacing:                                   30px;
+@breadcrumb-spacing:                                   3rem;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -260,7 +260,7 @@
 //** Number of columns in the grid.
 @grid-columns:                                      12;
 //** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:                                 20px; // Mobile gutters
+@grid-gutter-width:                                 2rem; // Mobile gutters
 @grid-gutter-width-sm:                              @grid-gutter-width * 2; // Tablet gutters
 @grid-gutter-width-md:                              @grid-gutter-width * 3; // Desktop+ gutters
 
