@@ -43,6 +43,7 @@ var browserify          = require( 'browserify' );
 var glob                = require( 'glob' );
 var del                 = require( 'del' );
 var es                  = require( 'event-stream' );
+var runSequence         = require( 'run-sequence' );
 
 var pkg                 = require( './package.json' );
 
@@ -161,9 +162,7 @@ var PA11Y_OPTIONS = pkg.pa11y;
 
 // --[ Default ]----------------------------------------------------------------
 gulp.task( 'default', [
-    'css',
-    'js',
-    'docs'
+    'master'
 ] );
 
 
@@ -244,6 +243,26 @@ gulp.task( 'accessibility:audit-exp', [
 
 
 
+
+//      /$$      /$$                       /$$                        
+//     | $$$    /$$$                      | $$                        
+//     | $$$$  /$$$$  /$$$$$$   /$$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$ 
+//     | $$ $$/$$ $$ |____  $$ /$$_____/|_  $$_/   /$$__  $$ /$$__  $$
+//     | $$  $$$| $$  /$$$$$$$|  $$$$$$   | $$    | $$$$$$$$| $$  \__/
+//     | $$\  $ | $$ /$$__  $$ \____  $$  | $$ /$$| $$_____/| $$      
+//     | $$ \/  | $$|  $$$$$$$ /$$$$$$$/  |  $$$$/|  $$$$$$$| $$      
+//     |__/     |__/ \_______/|_______/    \___/   \_______/|__/      
+//   
+//   
+//   
+
+// This will run in this order: 
+// * js and css in parallel 
+// * docs 
+// * Finally call the callback function 
+gulp.task( 'master', function( callback ) {
+  runSequence( [ 'js', 'css' ], 'docs', callback );
+});
 
 
 
@@ -393,7 +412,7 @@ gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], functio
 // Qunit test the components
 
 gulp.task( 'js:test:qunit', [ 'js:test:inject' ], function () {
-    console.log( PATHS.TEST )
+    console.log( PATHS.TEST );
     // Test that bad boy!
     return gulp.src( path.join( PATHS.TEST, '/tmp/js/tests/index.html' ) )
         .pipe( qunit( {
@@ -431,13 +450,13 @@ gulp.task( 'docs:clean-copied-less', function() { return del( [ PATHS.DOCS_SRC +
 
 
 // Build REI-Cedar CSS and copy into docs_src directory
-gulp.task( 'docs:copy-css', [ 'docs:clean-copied-from-src', 'css' ], function () {
+gulp.task( 'docs:copy-css', [ 'docs:clean-copied-from-src' ], function () {
     return gulp.src( path.join( PATHS.DIST, '*.css' ) )
         .pipe( gulp.dest( path.join( PATHS.DOCS_SRC ) ) );
 } );
 
 // Build old Bootstrap JS and copy into the docs_src directory
-gulp.task( 'docs:copy-js', [ 'docs:clean-copied-from-src', 'js' ], function () {
+gulp.task( 'docs:copy-js', [ 'docs:clean-copied-from-src' ], function () {
     return gulp.src( path.join( PATHS.DIST, '*.js' ) )
         .pipe( gulp.dest( path.join( PATHS.DOCS_SRC ) ) );
 } );
