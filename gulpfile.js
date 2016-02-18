@@ -402,7 +402,7 @@ gulp.task( 'js:test:browserify-single-components', [ 'js:test:copy' ], function(
 // Inject files into js/tests/index.html for testing
 
 gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], function () {
-    gulp.src( PATHS.TEST + '/tmp/js/tests/index.html' )
+    return gulp.src( PATHS.TEST + '/tmp/js/tests/index.html' )
         // Get all test files and inject into index.html
         .pipe( inject( gulp.src( [ PATHS.TEST + '/tmp/js/tests/unit/*.js'], { read: false } ), { name: 'tests', relative: true } ) )
         .pipe( gulp.dest( PATHS.TEST + '/tmp/js/tests' ) );
@@ -412,7 +412,6 @@ gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], functio
 // Qunit test the components
 
 gulp.task( 'js:test:qunit', [ 'js:test:inject' ], function () {
-    console.log( PATHS.TEST );
     // Test that bad boy!
     return gulp.src( path.join( PATHS.TEST, '/tmp/js/tests/index.html' ) )
         .pipe( qunit( {
