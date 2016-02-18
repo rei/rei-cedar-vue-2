@@ -1,0 +1,20 @@
+approve_by_comment: true
+approve_regex: ^Approved
+reject_regex: ^Rejected
+reset_on_push: false
+reviewers:
+  members:
+  - agats
+  - bonpixel
+  - codetothepoint
+  - kellykeene
+  - mhewson
+  - OwlbearMedia
+  - panganibanpj
+  - peripateticus
+  - petersgrandadventure
+  - rhuded
+  - robinsr
+  - wjramos
+  name: default
+  required: 1
