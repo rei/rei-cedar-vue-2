@@ -55,11 +55,8 @@
     "node": ">=0.10.1"
   },
   "files": [
-    "dist",
-    "fonts",
-    "js/*.js",
-    "less/**/*.less",
-    "Gruntfile.js",
+    "src",
+    "gulpfile.js",
     "LICENSE"
   ],
   "a11y": {
