@@ -30,7 +30,7 @@
 .radio,
 .checkbox {
     &:extend( .label-narrow all );
-    margin: 0 0 @vertical-push ( @padding-base-horizontal + 0.425rem );
+    margin: 0 0 @vertical-push ( @padding-base-horizontal + 0.425 );
     .form-inline & {
         display: inline-block;
     }
@@ -144,7 +144,7 @@
         }
     }
     > [type="radio"]:checked + label:before {
-       background: @text-color;
+        background: @text-color;
         outline: none;
     }
     > [type="radio"]:focus + label:before {

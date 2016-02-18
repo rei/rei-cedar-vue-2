@@ -68,9 +68,14 @@
     right: auto;
   }
 }
-.calc-grid-column(@index, @class, @type) when (@type = offset) {
+.calc-grid-column(@index, @class, @type) when (@type = offset) and (@index > 0) {
   .col-@{class}-offset-@{index} {
     margin-left: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = offset) and (@index = 0) {
+  .col-@{class}-offset-@{index} {
+    margin-left: 0;
   }
 }
 

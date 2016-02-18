@@ -79,100 +79,88 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 
-.img-anchor ( @aspect: landscape; @crop: crop; @anchor: center ) {
-
-  & when ( @anchor = center ) {
-    .utility-position( center );
-  }
-
-  & when ( @aspect = portrait )
-    and  ( @anchor = end )
-    and  ( @crop   = crop ) {
-    .utility-position( bottom );
-  }
-
-  & when ( @aspect = portrait )
-    and  ( @anchor = start )
-    and  ( @crop   = crop ) {
-    .utility-position( top );
-  }
-
-  & when ( @aspect = landscape )
-    and  ( @anchor = start )
-    and  ( @crop   = crop ) {
-    .utility-position( left );
-  }
-
-  & when ( @aspect = landscape )
-    and  ( @anchor = end )
-    and  ( @crop   = crop ) {
-    .utility-position( right )
-  }
+.img-anchor ( @aspect; @crop; @anchor: center ) when ( @anchor = center ) {
+  .utility-position( center );
 }
 
-.img-scale ( @crop: crop; @aspect: landscape; @sharpen: true ) {
+.img-anchor ( @aspect; @crop: crop; @anchor )
+  when ( @aspect = portrait )
+  and  ( @crop   = crop )
+  and  ( @anchor = end ) {
+  .utility-position( bottom );
+}
+
+.img-anchor ( @aspect; @crop: crop; @anchor )
+  when ( @aspect = portrait )
+  and  ( @crop   = crop )
+  and  ( @anchor = start ) {
+  .utility-position( top );
+}
+.img-anchor ( @aspect: landscape; @crop: crop; @anchor )
+  when ( @aspect = landscape )
+  and  ( @crop   = crop )
+  and  ( @anchor = start ) {
+  .utility-position( left );
+}
+.img-anchor ( @aspect: landscape; @crop: crop; @anchor )
+  when ( @aspect = landscape )
+  and  ( @crop   = crop )
+  and  ( @anchor = end ) {
+  .utility-position( right );
+}
+
+.img-scale ( @crop: crop ) when not ( @crop = crop ){
   height: auto;
   width: auto;
 
-  & when ( @sharpen = true ) {
-    .img-sharpen;
-  }
+  top: 50%;
+  left: 50%;
 
-  & when ( @crop = crop ) {
+  max-height: 100%;
+  max-width: 100%;
 
-    min-height: 100%;
-    min-width: 100%;
+  object-fit: contain;
+}
+.img-scale ( @crop: crop ) when ( @crop = crop ) {
+  min-height: 100%;
+  min-width: 100%;
 
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-
-  & when ( @aspect = landscape )
-    and ( @crop = crop ) {
-    height: 100%;
-  }
-
-  & when ( @aspect = portrait )
-     and ( @crop = crop ) {
-    width: 100%;
-  }
-
-  & when not ( @crop = crop ) {
-    top: 50%;
-    left: 50%;
-
-    height: auto;
-    width: auto;
-
-    max-height: 100%;
-    max-width: 100%;
-
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
+  object-fit: cover;
+}
+.img-scale ( @crop: crop; @aspect: landscape ) when ( @crop = crop )
+                                                and ( @aspect = landscape ){
+  height: 100%;
+}
+.img-scale ( @crop: crop; @aspect ) when ( @crop = crop )
+                                     and ( @aspect = portrait ){
+  width: 100%;
+}
+.img-scale ( @crop; @aspect; @anchor; @sharpen: true ) when ( @sharpen = true ) {
+  &:extend( .img-sharpen );
 }
 
-.img-frame ( @aspect: landscape; @crop: crop; @anchor: center; @ratio: null ) {
+.img-frame ( @aspect: landscape; @crop: crop; @anchor: center ) {
   position: relative;
   overflow: hidden;
-
-  & when ( @ratio ) {
-    .utility-aspect-ratio( @ratio );
-  }
-
-  & when ( ispixel( @ratio ) ) {
-    padding-bottom: @ratio;
-  }
 
   > img,
   > video {
     .img-anchor( @aspect; @crop; @anchor );
     .img-scale( @crop; @aspect );
+  }
+}
+.img-frame ( @aspect; @crop: crop ) when ( ispixel( @crop ) ){
 
-    & when not ( @crop = crop )
-      and ( ispixel( @crop ) ) {
-      padding: @crop;
-    }
+  > img,
+  > video {
+    padding: @crop;
+  }
+}
+.img-frame ( @aspect; @crop; @anchor; @ratio ) when ( @ratio ) {
+  .utility-aspect-ratio( @ratio );
+
+  & when ( ispixel( @ratio ) ) {
+    padding-bottom: @ratio;
   }
 }
 
