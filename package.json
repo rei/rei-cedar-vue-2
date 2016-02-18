@@ -1,7 +1,7 @@
 {
   "name": "rei-cedar",
   "longName": "REI Cedar Style Framework",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "REI's mobile-first, responsive UI framework",
   "author": "REI Software Engineering",
   "homepage": "https://rei.github.io/rei-cedar/",
@@ -55,11 +55,8 @@
     "node": ">=0.10.1"
   },
   "files": [
-    "dist",
-    "fonts",
-    "js/*.js",
-    "less/**/*.less",
-    "Gruntfile.js",
+    "src",
+    "gulpfile.js",
     "LICENSE"
   ],
   "a11y": {
