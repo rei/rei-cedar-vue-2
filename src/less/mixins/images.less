@@ -143,6 +143,10 @@
   position: relative;
   overflow: hidden;
 
+  > video {
+    min-width: 100%;
+  }
+
   > img,
   > video {
     .img-anchor( @aspect; @crop; @anchor );
@@ -167,7 +171,7 @@
 
 /* Application Classes */
 .img-frame {
-  &:not( .left ):not( .right ):not( .top ):not( .bottom ):not( .center ),
+  &,
   &.nocrop {
 
     .img-frame( landscape; null );
