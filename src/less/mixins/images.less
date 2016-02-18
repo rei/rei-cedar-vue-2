@@ -145,6 +145,8 @@
 
   > img,
   > video {
+    min-width: 100%;
+
     .img-anchor( @aspect; @crop; @anchor );
     .img-scale( @crop; @aspect );
   }
@@ -167,7 +169,7 @@
 
 /* Application Classes */
 .img-frame {
-  &:not( .left ):not( .right ):not( .top ):not( .bottom ):not( .center ),
+  &,
   &.nocrop {
 
     .img-frame( landscape; null );
