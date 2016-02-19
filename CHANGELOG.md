@@ -10,7 +10,7 @@ Features:
  - Documentation directory structure and navigation now following atomic design.
  - All site navigation contained within navigation.yml, removed nav dir.
  - Visual regression tests updated to flow through new site order.
-Bugfixes:x
+Bugfixes:
  - Filter button bug fix
  - Adding margin-top: 0 to all default headers
  - Fixed hardcoded protocol for icon font path
