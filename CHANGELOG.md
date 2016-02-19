@@ -12,10 +12,11 @@ Features:
  - Visual regression tests updated to flow through new site order.
 Bugfixes:x
  - Filter button bug fix
- - adding margin-top: 0 to all default headers
- - fixed hardcoded protocol for icon font path
- - moved reset.override to reset.less,
+ - Adding margin-top: 0 to all default headers
+ - Fixed hardcoded protocol for icon font path
+ - Moved reset.override to reset.less,
+ - Refactored image utility mixins
 Removals:
- - variables.less
+ - Variables.less
  - .overrides are adding multiple iterations of themselves and have been removed for the moment.
- - gliphcons
+ - Gliphcons
