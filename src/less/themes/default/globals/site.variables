@@ -171,7 +171,7 @@
 @utility-off-price:                             @brand-danger;
 @utility-error:                                 @brand-danger;
 @utility-available:                             @brand-success;
-//** rating
+// rating
 @star-rating-filled:                            @explore-action-1;
 @star-rating-empty:                             @core-background-2;
 
@@ -197,20 +197,20 @@
 // Modals
 //
 //----------------------------------------------------------------------------------------------------------------------
-//** Background color of modal content area
+// Background color of modal content area
 @modal-content-bg:                                @core-architectural-5;
-//** Modal content border color
+// Modal content border color
 @modal-content-border-color:                      rgba(0,0,0,.2);
-//** Modal content border color **for IE8**
+// Modal content border color **for IE8**
 @modal-content-fallback-border-color:             #999;
 
-//** Modal backdrop background color
+// Modal backdrop background color
 @modal-backdrop-bg:                               @core-architectural-1;
-//** Modal backdrop opacity
+// Modal backdrop opacity
 @modal-backdrop-opacity:                          .5;
-//** Modal header border color
+// Modal header border color
 @modal-header-border-color:                       @core-background-2;
-//** Modal footer border color
+// Modal footer border color
 @modal-footer-border-color:                       @modal-header-border-color;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -246,9 +246,9 @@
 @group-push:                                           @padding-base-horizontal;
 @form-group-margin-bottom:                             @vertical-push-large;
 
-//** Spacing between bottom of header and top of content (breadcrumbs are included in content).
+// Spacing between bottom of header and top of content (breadcrumbs are included in content).
 @header-spacing:                                       40px;
-//** Spacing between bottom of breadcrumbs and top of the rest of the content.
+// Spacing between bottom of breadcrumbs and top of the rest of the content.
 @breadcrumb-spacing:                                   30px;
 
 
@@ -257,9 +257,9 @@
 // Grid system
 //
 //----------------------------------------------------------------------------------------------------------------------
-//** Number of columns in the grid.
+// Number of columns in the grid.
 @grid-columns:                                      12;
-//** Padding between columns. Gets divided in half for the left and right.
+// Padding between columns. Gets divided in half for the left and right.
 @grid-gutter-width:                                 20px; // Mobile gutters
 @grid-gutter-width-sm:                              @grid-gutter-width * 2; // Tablet gutters
 @grid-gutter-width-md:                              @grid-gutter-width * 3; // Desktop+ gutters
@@ -277,32 +277,32 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 // Extra small screen / phone
-//** Deprecated `@screen-xs` as of v3.0.1
+// Deprecated `@screen-xs` as of v3.0.1
 @screen-xs:                                        480px;
-//** Deprecated `@screen-xs-min` as of v3.2.0
+// Deprecated `@screen-xs-min` as of v3.2.0
 @screen-xs-min:                                    @screen-xs;
-//** Deprecated `@screen-phone` as of v3.0.1
+// Deprecated `@screen-phone` as of v3.0.1
 @screen-phone:                                     @screen-xs-min;
 
 // Small screen / tablet
-//** Deprecated `@screen-sm` as of v3.0.1
+// Deprecated `@screen-sm` as of v3.0.1
 @screen-sm:                                        768px;
 @screen-sm-min:                                    @screen-sm;
-//** Deprecated `@screen-tablet` as of v3.0.1
+// Deprecated `@screen-tablet` as of v3.0.1
 @screen-tablet:                                    @screen-sm-min;
 
 // Medium screen / desktop
-//** Deprecated `@screen-md` as of v3.0.1
+// Deprecated `@screen-md` as of v3.0.1
 @screen-md:                                        992px;
 @screen-md-min:                                    @screen-md;
-//** Deprecated `@screen-desktop` as of v3.0.1
+// Deprecated `@screen-desktop` as of v3.0.1
 @screen-desktop:                                   @screen-md-min;
 
 // Large screen / wide desktop
-//** Deprecated `@screen-lg` as of v3.0.1
+// Deprecated `@screen-lg` as of v3.0.1
 @screen-lg:                                         1200px;
 @screen-lg-min:                                     @screen-lg;
-//** Deprecated `@screen-lg-desktop` as of v3.0.1
+// Deprecated `@screen-lg-desktop` as of v3.0.1
 @screen-lg-desktop:                                 @screen-lg-min;
 
 // So media queries don't overlap when required, provide a maximum
