@@ -16,6 +16,6 @@
 //----------------------------------------------------------------------------------------------------------------------
 // Input addon
 //----------------------------------------------------------------------------------------------------------------------
-@input-group-addon-bg:                            @input-bg; //** Background color for textual input addons
-@input-group-addon-border-color:                  @input-border;//** Border color for textual input addons
+@input-group-addon-bg:                            @input-bg; //Background color for textual input addons
+@input-group-addon-border-color:                  @input-border; //Border color for textual input addons
 

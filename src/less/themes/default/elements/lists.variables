@@ -7,8 +7,8 @@
 // SIZE AND SHAPE
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//** Horizontal offset for forms and lists. TODO: this is not part of ERL spec look to incorporate or remove
+// Horizontal offset for forms and lists. TODO: this is not part of ERL spec look to incorporate or remove
 @component-offset-horizontal: 180px;
 
-//** Width of horizontal description list titles TODO: this is not part of ERL spec look to incorporate or remove
+// Width of horizontal description list titles TODO: this is not part of ERL spec look to incorporate or remove
 @dl-horizontal-offset:        @component-offset-horizontal;
