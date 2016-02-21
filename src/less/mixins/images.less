@@ -79,34 +79,35 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 
-.img-anchor ( @aspect; @crop; @anchor: center ) when ( @anchor = center ) {
-  .utility-position( center );
-}
+.img-anchor ( @aspect: landscape; @crop: crop; @anchor: center ) {
 
-.img-anchor ( @aspect; @crop: crop; @anchor )
-  when ( @aspect = portrait )
-  and  ( @crop   = crop )
-  and  ( @anchor = end ) {
-  .utility-position( bottom );
-}
+  & when ( @anchor = center ) {
+    .utility-position( center );
+  }
 
-.img-anchor ( @aspect; @crop: crop; @anchor )
-  when ( @aspect = portrait )
-  and  ( @crop   = crop )
-  and  ( @anchor = start ) {
-  .utility-position( top );
-}
-.img-anchor ( @aspect: landscape; @crop: crop; @anchor )
-  when ( @aspect = landscape )
-  and  ( @crop   = crop )
-  and  ( @anchor = start ) {
-  .utility-position( left );
-}
-.img-anchor ( @aspect: landscape; @crop: crop; @anchor )
-  when ( @aspect = landscape )
-  and  ( @crop   = crop )
-  and  ( @anchor = end ) {
-  .utility-position( right );
+  & when ( @aspect = portrait )
+    and  ( @anchor = end )
+    and  ( @crop   = crop ) {
+    .utility-position( bottom );
+  }
+
+  & when ( @aspect = portrait )
+    and  ( @anchor = start )
+    and  ( @crop   = crop ) {
+    .utility-position( top );
+  }
+
+  & when ( @aspect = landscape )
+    and  ( @anchor = start )
+    and  ( @crop   = crop ) {
+    .utility-position( left );
+  }
+
+  & when ( @aspect = landscape )
+    and  ( @anchor = end )
+    and  ( @crop   = crop ) {
+    .utility-position( right )
+  }
 }
 
 .img-scale ( @crop: crop ) when not ( @crop = crop ){
@@ -135,14 +136,15 @@
                                      and ( @aspect = portrait ){
   width: 100%;
 }
-.img-scale ( @crop; @aspect; @anchor; @sharpen: true ) when ( @sharpen = true ) {
+.img-scale ( @crop: crop; @aspect: landscape; @sharpen: true ) when ( @sharpen = true ) {
   &:extend( .img-sharpen );
 }
 
-.img-frame ( @aspect: landscape; @crop: crop; @anchor: center ) {
+.img-frame ( @aspect: landscape; @crop: crop; @anchor: center; @ratio: null ) {
   position: relative;
   overflow: hidden;
 
+<<<<<<< HEAD
   > video {
     min-width: 100%;
   }
@@ -151,20 +153,25 @@
   > video {
     .img-anchor( @aspect; @crop; @anchor );
     .img-scale( @crop; @aspect );
+=======
+  & when ( @ratio ) {
+    .utility-aspect-ratio( @ratio );
   }
-}
-.img-frame ( @aspect; @crop: crop ) when ( ispixel( @crop ) ){
-
-  > img,
-  > video {
-    padding: @crop;
-  }
-}
-.img-frame ( @aspect; @crop; @anchor; @ratio ) when ( @ratio ) {
-  .utility-aspect-ratio( @ratio );
 
   & when ( ispixel( @ratio ) ) {
     padding-bottom: @ratio;
+>>>>>>> parent of db14d76... Remove duplication in image-scale
+  }
+
+  > img,
+  > video {
+    .img-anchor( @aspect; @crop; @anchor );
+    .img-scale( @crop; @aspect );
+
+    & when not ( @crop = crop )
+      and ( ispixel( @crop ) ) {
+      padding: @crop;
+    }
   }
 }
 
