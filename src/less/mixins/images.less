@@ -79,363 +79,129 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 
-.img-anchor ( @aspect: landscape; @crop: crop; @anchor: center ) {
-
-  & when ( @anchor = center ) {
-    .utility-position( center );
-  }
-
-  & when ( @aspect = portrait )
-    and  ( @anchor = end )
-    and  ( @crop   = crop ) {
-    .utility-position( bottom );
-  }
-
-  & when ( @aspect = portrait )
-    and  ( @anchor = start )
-    and  ( @crop   = crop ) {
-    .utility-position( top );
-  }
-
-  & when ( @aspect = landscape )
-    and  ( @anchor = start )
-    and  ( @crop   = crop ) {
-    .utility-position( left );
-  }
-
-  & when ( @aspect = landscape )
-    and  ( @anchor = end )
-    and  ( @crop   = crop ) {
-    .utility-position( right )
-  }
+.img-anchor ( @aspect; @anchor: center ) when ( @anchor = center ) {
+  &:extend( .position.center );
 }
 
-.img-scale ( @crop: crop; @aspect: landscape; @sharpen: true ) {
+.img-anchor ( @aspect; @anchor )
+  when ( @aspect = portrait )
+  and  ( @anchor = start ) {
+  &:extend( .position.top );
+}
+
+.img-anchor ( @aspect: landscape; @anchor )
+  when ( @aspect = landscape )
+  and  ( @anchor = start ) {
+  &:extend( .position.left );
+}
+
+.img-anchor ( @aspect; @anchor )
+  when ( @aspect = portrait )
+  and  ( @anchor = end ) {
+  &:extend( .position.bottom );
+}
+
+.img-anchor ( @aspect: landscape; @anchor )
+  when ( @aspect = landscape )
+  and  ( @anchor = end ) {
+  &:extend( .position.right );
+}
+
+.img-scale ( @crop: true; @aspect ) when ( @crop ) {
+  min-height: 100%;
+  min-width: 100%;
+
+  object-fit: cover;
+}
+
+.img-scale ( @crop; @aspect ) when ( @crop = false ){
   height: auto;
   width: auto;
 
-  & when ( @sharpen = true ) {
-    .img-sharpen;
-  }
+  top: 50%;
+  left: 50%;
 
-  & when ( @crop = crop ) {
+  max-height: 100%;
+  max-width: 100%;
 
-    min-height: 100%;
-    min-width: 100%;
-
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-
-  & when ( @aspect = landscape )
-    and ( @crop = crop ) {
-    height: 100%;
-  }
-
-  & when ( @aspect = portrait )
-     and ( @crop = crop ) {
-    width: 100%;
-  }
-
-  & when not ( @crop = crop ) {
-    top: 50%;
-    left: 50%;
-
-    height: auto;
-    width: auto;
-
-    max-height: 100%;
-    max-width: 100%;
-
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
+  object-fit: contain;
 }
 
-.img-frame ( @aspect: landscape; @crop: crop; @anchor: center; @ratio: null ) {
-  position: relative;
-  overflow: hidden;
 
-  & when ( @ratio ) {
-    .utility-aspect-ratio( @ratio );
-  }
 
-  & when ( ispixel( @ratio ) ) {
-    padding-bottom: @ratio;
-  }
+.img-scale ( @crop: true; @aspect: landscape ) when ( @crop )
+                                               and ( @aspect = landscape ){
+  height: 100%;
+}
 
+.img-scale ( @crop: true; @aspect ) when ( @crop )
+                                    and ( @aspect = portrait ){
+  width: 100%;
+}
+
+.img-scale ( @crop; @aspect; @sharpen: true ) when ( @sharpen ) {
+  &:extend( .img-sharpen );
+}
+
+
+
+.img-frame ( @aspect; @crop; @anchor ) {
+    &:extend( .utility-aspect-ratio );
+}
+
+.img-frame ( @aspect; @crop: true; @anchor ) when ( ispixel( @crop ) ){
   > img,
   > video {
-    .img-anchor( @aspect; @crop; @anchor );
-    .img-scale( @crop; @aspect );
-
-    & when not ( @crop = crop )
-      and ( ispixel( @crop ) ) {
-      padding: @crop;
-    }
+    padding: @crop;
   }
 }
+
+.img-frame ( @aspect: landscape; @crop: true; @anchor ){
+  > img,
+  > video {
+    .img-scale( @crop; @aspect );
+  }
+}
+
+.img-frame ( @aspect: landscape; @crop; @anchor: center ) {
+  > img,
+  > video {
+    .img-anchor( @aspect; @anchor );
+  }
+}
+
 
 
 // Application Classes
 .img-frame {
-  &:not( .left ):not( .right ):not( .top ):not( .bottom ):not( .center ),
+
+  &:not( .center ):not( .top ):not( .right ):not( .bottom ):not( .left ),
   &.nocrop {
-
-    .img-frame( landscape; null );
-
-    &.ratio {
-
-      &-square {
-        .img-frame( landscape; null; center; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( landscape; null; center; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( landscape; null; center; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( landscape; null; center; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( landscape; null; center; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( landscape; null; center; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( landscape; null; center; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( landscape; null; center; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( landscape; null; center; 16/9 );
-      }
-    }
+    .img-frame( landscape; false; center );
   }
 
   &.center {
-    .img-frame( landscape; crop; center );
+    .img-frame( landscape; true; center );
 
     &.portrait {
-      .img-frame( portrait; crop; center );
-    }
-  }
-
-  &.ratio {
-    &-square {
-      .img-frame( landscape; crop; center; 1 );
-    }
-
-    &-2-3 {
-      .img-frame( landscape; crop; center; 2/3 );
-    }
-
-    &-3-2 {
-      .img-frame( landscape; crop; center; 3/2 );
-    }
-
-    &-1-2 {
-      .img-frame( landscape; crop; center; 1/2 );
-    }
-
-    &-2-1 {
-      .img-frame( landscape; crop; center; 2 );
-    }
-
-    &-3-4 {
-      .img-frame( landscape; crop; center; 3/4 );
-    }
-
-    &-4-3 {
-      .img-frame( landscape; crop; center; 4/3 );
-    }
-
-    &-9-16 {
-      .img-frame( landscape; crop; center; 9/16 );
-    }
-
-    &-16-9 {
-      .img-frame( landscape; crop; center; 16/9 );
+      .img-frame( portrait; true; center );
     }
   }
 
   &.left {
-    .img-frame( landscape; crop; start );
-
-    &.ratio {
-      &-square {
-        .img-frame( landscape; crop; start; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( landscape; crop; start; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( landscape; crop; start; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( landscape; crop; start; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( landscape; crop; start; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( landscape; crop; start; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( landscape; crop; start; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( landscape; crop; start; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( landscape; crop; start; 16/9 );
-      }
-    }
+    .img-frame( landscape; true; start );
   }
 
   &.right {
-    .img-frame( landscape; crop; end );
-
-    &.ratio {
-      &-square {
-        .img-frame( landscape; crop; end; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( landscape; crop; end; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( landscape; crop; end; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( landscape; crop; end; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( landscape; crop; end; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( landscape; crop; end; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( landscape; crop; end; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( landscape; crop; end; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( landscape; crop; end; 16/9 );
-      }
-    }
+    .img-frame( landscape; true; end );
   }
 
   &.top {
-    .img-frame( portrait; crop; start );
-
-    &.ratio {
-      &-square {
-        .img-frame( portrait; crop; start; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( portrait; crop; start; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( portrait; crop; start; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( portrait; crop; start; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( portrait; crop; start; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( portrait; crop; start; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( portrait; crop; start; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( portrait; crop; start; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( portrait; crop; start; 16/9 );
-      }
-    }
+    .img-frame( portrait; true; start );
   }
 
   &.bottom {
-    .img-frame( portrait; crop; end );
-
-    &.ratio {
-      &-square {
-        .img-frame( portrait; crop; end; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( portrait; crop; end; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( portrait; crop; end; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( portrait; crop; end; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( portrait; crop; end; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( portrait; crop; end; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( portrait; crop; end; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( portrait; crop; end; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( portrait; crop; end; 16/9 );
-      }
-    }
+    .img-frame( portrait; true; end );
   }
 }
 
