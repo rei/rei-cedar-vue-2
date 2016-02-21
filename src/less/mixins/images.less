@@ -145,14 +145,24 @@
   overflow: hidden;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   > video {
     min-width: 100%;
+=======
+  & when ( @ratio ) {
+    .utility-aspect-ratio( @ratio );
+  }
+
+  & when ( ispixel( @ratio ) ) {
+    padding-bottom: @ratio;
+>>>>>>> parent of db14d76... Remove duplication in image-scale
   }
 
   > img,
   > video {
     .img-anchor( @aspect; @crop; @anchor );
     .img-scale( @crop; @aspect );
+<<<<<<< HEAD
 =======
   & when ( @ratio ) {
     .utility-aspect-ratio( @ratio );
@@ -168,6 +178,9 @@
     .img-anchor( @aspect; @crop; @anchor );
     .img-scale( @crop; @aspect );
 
+=======
+
+>>>>>>> parent of db14d76... Remove duplication in image-scale
     & when not ( @crop = crop )
       and ( ispixel( @crop ) ) {
       padding: @crop;
