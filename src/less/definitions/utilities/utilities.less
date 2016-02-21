@@ -98,7 +98,7 @@
 // Position element - vertical and horizontal alignment
 // -------------------------------------------------------------------
 
-.utility-position ( ) {
+.utility-position ( @anchor: center; @x: null ) {
     position: absolute;
 }
 
@@ -200,45 +200,36 @@
     transform: translate( 0, 0 );
 }
 
-.utility-position ( @anchor ) when ( ispercentage( @anchor ) ),
-                                   ( isnumber( @anchor ) ),
-                                   ( ispixel( @anchor ) ) {
+.utility-position ( @anchor: center ) when ( ispercentage( @anchor ) ),
+                                           ( isnumber( @anchor ) ),
+                                           ( ispixel( @anchor ) ) {
   right: auto;
   bottom: auto;
-  top: @anchor;
-  left: @anchor;
-
-  object-position: @anchor @anchor;
-  transform: translate( -@anchor, -@anchor );
 }
 
 .utility-position ( @anchor ) when ( ispercentage( @anchor ) ),
                                    ( isnumber( @anchor ) ),
                                    ( ispixel( @anchor ) ) {
-  right: auto;
-  bottom: auto;
-  top: @anchor;
+        top: @anchor;
+        left: @anchor;
+
+        object-position: @anchor @anchor;
+        transform: translate( -@anchor, -@anchor );
 }
 
-.utility-position ( @anchor; @left ) when ( ispercentage( @anchor ) ),
-                                          ( isnumber( @anchor ) ),
-                                          ( ispixel( @anchor ) ) {
-  & when ( ispercentage( @left ) ),
-         ( isnumber( @left ) ),
-         ( ispixel( @left ) ) {
-    left: @left;
+.utility-position ( @anchor; @x ) when ( ispercentage( @anchor ) ),
+                                       ( isnumber( @anchor ) ),
+                                       ( ispixel( @anchor ) ) {
 
-    object-position: @anchor @left;
-    transform: translate( -@anchor, -@left );
+  & when ( ispercentage( @x ) ),
+         ( isnumber( @x ) ),
+         ( ispixel( @x ) ) {
+    top: @anchor;
+    left: @x;
+
+    object-position: @anchor @x;
+    transform: translate( -@anchor, -@x );
   }
-  & when not ( ispercentage( @left ) ),
-             ( isnumber( @left ) ),
-             ( ispixel( @left ) ) {
-    left: @anchor;
-
-    object-position: @anchor @anchor;
-    transform: translate( -@anchor, -@anchor );
-  } 
 }
 
 /* Application Classes */
@@ -482,3 +473,4 @@
     }
   }
 }
+
