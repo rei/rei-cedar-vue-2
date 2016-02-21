@@ -143,12 +143,10 @@
   position: relative;
   overflow: hidden;
 
-  > video {
-    min-width: 100%;
-  }
-
   > img,
   > video {
+    min-width: 100%;
+
     .img-anchor( @aspect; @crop; @anchor );
     .img-scale( @crop; @aspect );
   }
