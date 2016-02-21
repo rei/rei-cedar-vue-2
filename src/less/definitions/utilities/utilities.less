@@ -105,97 +105,124 @@
 .utility-position ( @anchor: center ) when ( @anchor = center ),
                                            ( @anchor = top ),
                                            ( @anchor = top-left ),
-                                           ( @anchor = left ),
-                                           ( ispercentage( @anchor ) ),
-                                           ( isnumber( @anchor ) ),
-                                           ( ispixel( @anchor ) ) {
-  right: auto;
-  bottom: auto;
+                                           ( @anchor = left ) {
+    right: auto;
+    bottom: auto;
 }
+
 .utility-position ( @anchor ) when ( @anchor = top-right ),
                                    ( @anchor = right ) {
-  bottom: auto;
-  left: auto;
+    bottom: auto;
+    left: auto;
 }
+
 .utility-position( @anchor ) when ( @anchor = bottom ),
                                   ( @anchor = bottom-left ) {
-  top: auto;
-  right: auto;
-}
-.utility-position( @anchor ) when ( @anchor = top-left ),
-                                  ( @anchor = top ),
-                                  ( @anchor = top-right ) {
-  top: 0;
-}
-.utility-position( @anchor ) when ( @anchor = top-left ),
-                                  ( @anchor = left ),
-                                  ( @anchor = bottom-left ) {
-  left: 0;
+    top: auto;
+    right: auto;
 }
 
-.utility-position( @anchor: center ) when ( @anchor = center ),
-                                          ( @anchor = top ),
-                                          ( @anchor = bottom ) {
-  left: 50%;
+.utility-position( @anchor ) when ( @anchor = top-left ) {
+    top: 0;
+    left: 0;
 }
 
-.utility-position( @anchor ) when ( @anchor = top-right ),
-                                  ( @anchor = right ),
-                                  ( @anchor = bottom-right ) {
-  right: 0;
+.utility-position( @anchor ) when ( @anchor = top ) {
+    top: 0;
+    left: 50%;
 }
 
-.utility-position ( @anchor: center ) when ( @anchor = center ),
-                                           ( @anchor = left ),
-                                           ( @anchor = right ) {
-  top: 50%;
+.utility-position( @anchor ) when ( @anchor = top-right ) {
+    top: 0;
+    right: 0;
 }
-.utility-position( @anchor ) when ( @anchor = bottom-left ),
-                                  ( @anchor = bottom ),
-                                  ( @anchor = bottom-right ) {
-  bottom: 0;
+
+.utility-position( @anchor ) when ( @anchor = left ) {
+    top: 50%;
+    left: 0;
+}
+
+.utility-position ( @anchor: center ) when ( @anchor = center ) {
+    top: 50%;
+    left: 50%;
+
+    transform: translate( -50%, -50% );
+}
+
+.utility-position( @anchor ) when ( @anchor = right ) {
+    top: 50%;
+    right: 0;
+}
+
+.utility-position( @anchor ) when ( @anchor = bottom ) {
+    bottom: 0;
+    left: 50%;
+}
+
+.utility-position( @anchor ) when ( @anchor = bottom-left ) {
+    bottom: 0;
+    left: 0;
+}
+
+.utility-position( @anchor ) when ( @anchor = bottom-right ) {
+    right: 0;
+    bottom: 0;
+}
+
+.utility-position( @anchor ) when ( @anchor = left ),
+                                  ( @anchor = right ) {
+    transform: translate( 0, -50% );
+}
+.utility-position( @anchor ) when ( @anchor = top ),
+                                  ( @anchor = bottom ) {
+    transform: translate( -50%, 0 );
+}
+.utility-position( @anchor: center ) when ( @anchor = top ),
+                                          ( @anchor = bottom ),
+                                          ( @anchor = center ) {
+    text-align: center;
+}
+.utility-position ( @anchor ) when ( @anchor = top-left ),
+                                   ( @anchor = left ),
+                                   ( @anchor = bottom-left ) {
+    text-align: left;
+}
+.utility-position ( @anchor ) when ( @anchor = top-right ),
+                                   ( @anchor = right ),
+                                   ( @anchor = bottom-right ) {
+    text-align: right;
 }
 
 .utility-position( @anchor ) when ( @anchor = top-left ),
                                   ( @anchor = top-right ),
                                   ( @anchor = bottom-left ),
                                   ( @anchor = bottom-right ) {
-  transform: translate( 0, 0 );
+    transform: translate( 0, 0 );
 }
-.utility-position ( @anchor: center ) when ( @anchor = center ) {
-  transform: translate( -50%, -50% );
+
+.utility-position ( @anchor ) when ( ispercentage( @anchor ) ),
+                                   ( isnumber( @anchor ) ),
+                                   ( ispixel( @anchor ) ) {
+  right: auto;
+  bottom: auto;
+  top: @anchor;
+  left: @anchor;
+
+  object-position: @anchor @anchor;
+  transform: translate( -@anchor, -@anchor );
 }
-.utility-position( @anchor ) when ( @anchor = left ),
-                                  ( @anchor = right ) {
-  transform: translate( 0, -50% );
-}
-.utility-position( @anchor ) when ( @anchor = top ),
-                                  ( @anchor = bottom ) {
-  transform: translate( -50%, 0 );
-}
-.utility-position( @anchor: center ) when ( @anchor = top ),
-                                          ( @anchor = bottom ),
-                                          ( @anchor = center ) {
-  text-align: center;
-}
-.utility-position ( @anchor ) when ( @anchor = top-left ),
-                                   ( @anchor = left ),
-                                   ( @anchor = bottom-left ) {
-  text-align: left;
-}
-.utility-position ( @anchor ) when ( @anchor = top-right ),
-                                   ( @anchor = right ),
-                                   ( @anchor = bottom-right ) {
-  text-align: right;
+
+.utility-position ( @anchor ) when ( ispercentage( @anchor ) ),
+                                   ( isnumber( @anchor ) ),
+                                   ( ispixel( @anchor ) ) {
+  right: auto;
+  bottom: auto;
+  top: @anchor;
 }
 
 .utility-position ( @anchor; @left ) when ( ispercentage( @anchor ) ),
                                           ( isnumber( @anchor ) ),
                                           ( ispixel( @anchor ) ) {
-  right: auto;
-  bottom: auto;
-  top: @anchor;
-
   & when ( ispercentage( @left ) ),
          ( isnumber( @left ) ),
          ( ispixel( @left ) ) {
@@ -204,7 +231,6 @@
     object-position: @anchor @left;
     transform: translate( -@anchor, -@left );
   }
-  
   & when not ( ispercentage( @left ) ),
              ( isnumber( @left ) ),
              ( ispixel( @left ) ) {
@@ -212,7 +238,7 @@
 
     object-position: @anchor @anchor;
     transform: translate( -@anchor, -@anchor );
-  }
+  } 
 }
 
 /* Application Classes */
