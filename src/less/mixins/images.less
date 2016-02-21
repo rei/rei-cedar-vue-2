@@ -110,67 +110,58 @@
   }
 }
 
-.img-scale ( @crop: crop ) when not ( @crop = crop ){
+.img-scale ( @crop: crop; @aspect: landscape; @sharpen: true ) {
   height: auto;
   width: auto;
 
-  top: 50%;
-  left: 50%;
+  & when ( @sharpen = true ) {
+    .img-sharpen;
+  }
 
-  max-height: 100%;
-  max-width: 100%;
+  & when ( @crop = crop ) {
 
-  object-fit: contain;
-}
-.img-scale ( @crop: crop ) when ( @crop = crop ) {
-  min-height: 100%;
-  min-width: 100%;
+    min-height: 100%;
+    min-width: 100%;
 
-  object-fit: cover;
-}
-.img-scale ( @crop: crop; @aspect: landscape ) when ( @crop = crop )
-                                                and ( @aspect = landscape ){
-  height: 100%;
-}
-.img-scale ( @crop: crop; @aspect ) when ( @crop = crop )
-                                     and ( @aspect = portrait ){
-  width: 100%;
-}
-.img-scale ( @crop: crop; @aspect: landscape; @sharpen: true ) when ( @sharpen = true ) {
-  &:extend( .img-sharpen );
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  & when ( @aspect = landscape )
+    and ( @crop = crop ) {
+    height: 100%;
+  }
+
+  & when ( @aspect = portrait )
+     and ( @crop = crop ) {
+    width: 100%;
+  }
+
+  & when not ( @crop = crop ) {
+    top: 50%;
+    left: 50%;
+
+    height: auto;
+    width: auto;
+
+    max-height: 100%;
+    max-width: 100%;
+
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
 }
 
 .img-frame ( @aspect: landscape; @crop: crop; @anchor: center; @ratio: null ) {
   position: relative;
   overflow: hidden;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  > video {
-    min-width: 100%;
-=======
   & when ( @ratio ) {
     .utility-aspect-ratio( @ratio );
   }
 
   & when ( ispixel( @ratio ) ) {
     padding-bottom: @ratio;
->>>>>>> parent of db14d76... Remove duplication in image-scale
-  }
-
-  > img,
-  > video {
-    .img-anchor( @aspect; @crop; @anchor );
-    .img-scale( @crop; @aspect );
-<<<<<<< HEAD
-=======
-  & when ( @ratio ) {
-    .utility-aspect-ratio( @ratio );
-  }
-
-  & when ( ispixel( @ratio ) ) {
-    padding-bottom: @ratio;
->>>>>>> parent of db14d76... Remove duplication in image-scale
   }
 
   > img,
@@ -178,9 +169,6 @@
     .img-anchor( @aspect; @crop; @anchor );
     .img-scale( @crop; @aspect );
 
-=======
-
->>>>>>> parent of db14d76... Remove duplication in image-scale
     & when not ( @crop = crop )
       and ( ispixel( @crop ) ) {
       padding: @crop;
@@ -191,7 +179,7 @@
 
 // Application Classes
 .img-frame {
-  &,
+  &:not( .left ):not( .right ):not( .top ):not( .bottom ):not( .center ),
   &.nocrop {
 
     .img-frame( landscape; null );
