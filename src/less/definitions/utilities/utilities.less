@@ -98,7 +98,7 @@
 // Position element - vertical and horizontal alignment
 // -------------------------------------------------------------------
 
-.utility-position ( ) {
+.utility-position ( @anchor: center; @x: null ) {
     position: absolute;
 }
 
@@ -109,131 +109,117 @@
                                            ( ispercentage( @anchor ) ),
                                            ( isnumber( @anchor ) ),
                                            ( ispixel( @anchor ) ) {
-  right: auto;
-  bottom: auto;
+    right: auto;
+    bottom: auto;
 }
-.utility-position ( @anchor ) when ( @anchor = top-right ),
-                                   ( @anchor = right ) {
-  bottom: auto;
-  left: auto;
-}
+
 .utility-position( @anchor ) when ( @anchor = bottom ),
                                   ( @anchor = bottom-left ) {
-  top: auto;
-  right: auto;
+    top: auto;
+    right: auto;
 }
-.utility-position( @anchor ) when ( @anchor = top-left ),
-                                  ( @anchor = top ),
+
+.utility-position( @anchor ) when ( @anchor = top ),
+                                  ( @anchor = top-left ),
                                   ( @anchor = top-right ) {
-  top: 0;
+    top: 0;
+    bottom: auto;
 }
-.utility-position( @anchor ) when ( @anchor = top-left ),
-                                  ( @anchor = left ),
+.utility-position( @anchor ) when ( @anchor = left ),
+                                  ( @anchor = top-left ),
                                   ( @anchor = bottom-left ) {
-  left: 0;
+    right: auto;
+    left: 0;
+    text-align: left;
 }
-
-.utility-position( @anchor: center ) when ( @anchor = center ),
-                                          ( @anchor = top ),
+.utility-position( @anchor ) when ( @anchor = bottom ),
+                                  ( @anchor = bottom-left ),
+                                  ( @anchor = bottom-right ) {
+    top: auto;
+    bottom: 0;
+}
+.utility-position( @anchor ) when ( @anchor = right ),
+                                  ( @anchor = top-right ),
+                                  ( @anchor = bottom-right ) {
+    left: auto;
+    right: 0;
+    text-align: right;
+}
+.utility-position( @anchor: center ) when ( @anchor = top ),
+                                          ( @anchor = center ),
                                           ( @anchor = bottom ) {
-  left: 50%;
+    left: 50%;
+    right: auto;
+    text-align: center;
+}
+.utility-position( @anchor: center ) when ( @anchor = left ),
+                                          ( @anchor = center ),
+                                          ( @anchor = right ) {
+    top: 50%;
+    bottom: auto;
 }
 
-.utility-position( @anchor ) when ( @anchor = top-right ),
-                                  ( @anchor = right ),
-                                  ( @anchor = bottom-right ) {
-  right: 0;
+.utility-position ( @anchor: center ) when ( @anchor = center ) {
+    transform: translate( -50%, -50% );
 }
 
-.utility-position ( @anchor: center ) when ( @anchor = center ),
-                                           ( @anchor = left ),
-                                           ( @anchor = right ) {
-  top: 50%;
+.utility-position( @anchor ) when ( @anchor = left ),
+                                  ( @anchor = right ) {
+    transform: translate( 0, -50% );
 }
-.utility-position( @anchor ) when ( @anchor = bottom-left ),
-                                  ( @anchor = bottom ),
-                                  ( @anchor = bottom-right ) {
-  bottom: 0;
+
+.utility-position( @anchor ) when ( @anchor = top ),
+                                  ( @anchor = bottom ) {
+    transform: translate( -50%, 0 );
 }
 
 .utility-position( @anchor ) when ( @anchor = top-left ),
                                   ( @anchor = top-right ),
                                   ( @anchor = bottom-left ),
                                   ( @anchor = bottom-right ) {
-  transform: translate( 0, 0 );
-}
-.utility-position ( @anchor: center ) when ( @anchor = center ) {
-  transform: translate( -50%, -50% );
-}
-.utility-position( @anchor ) when ( @anchor = left ),
-                                  ( @anchor = right ) {
-  transform: translate( 0, -50% );
-}
-.utility-position( @anchor ) when ( @anchor = top ),
-                                  ( @anchor = bottom ) {
-  transform: translate( -50%, 0 );
-}
-.utility-position( @anchor: center ) when ( @anchor = top ),
-                                          ( @anchor = bottom ),
-                                          ( @anchor = center ) {
-  text-align: center;
-}
-.utility-position ( @anchor ) when ( @anchor = top-left ),
-                                   ( @anchor = left ),
-                                   ( @anchor = bottom-left ) {
-  text-align: left;
-}
-.utility-position ( @anchor ) when ( @anchor = top-right ),
-                                   ( @anchor = right ),
-                                   ( @anchor = bottom-right ) {
-  text-align: right;
+    transform: translate( 0, 0 );
 }
 
-.utility-position ( @anchor; @left ) when ( ispercentage( @anchor ) ),
-                                          ( isnumber( @anchor ) ),
-                                          ( ispixel( @anchor ) ) {
-  right: auto;
-  bottom: auto;
-  top: @anchor;
+.utility-position ( @anchor ) when ( ispercentage( @anchor ) ),
+                                   ( isnumber( @anchor ) ),
+                                   ( ispixel( @anchor ) ) {
+        top: @anchor;
+        left: @anchor;
 
-  & when ( ispercentage( @left ) ),
-         ( isnumber( @left ) ),
-         ( ispixel( @left ) ) {
-    left: @left;
+        object-position: @anchor @anchor;
+        transform: translate( -@anchor, -@anchor );
+}
 
-    object-position: @anchor @left;
-    transform: translate( -@anchor, -@left );
-  }
-  
-  & when not ( ispercentage( @left ) ),
-             ( isnumber( @left ) ),
-             ( ispixel( @left ) ) {
-    left: @anchor;
+.utility-position ( @anchor; @x ) when ( ispercentage( @anchor ) ),
+                                       ( isnumber( @anchor ) ),
+                                       ( ispixel( @anchor ) ) {
 
-    object-position: @anchor @anchor;
-    transform: translate( -@anchor, -@anchor );
+  & when ( ispercentage( @x ) ),
+         ( isnumber( @x ) ),
+         ( ispixel( @x ) ) {
+    top: @anchor;
+    left: @x;
+
+    object-position: @anchor @x;
+    transform: translate( -@anchor, -@x );
   }
 }
 
 /* Application Classes */
 .position {
   &,
-  &--center,
   &.center {
     .utility-position();
   }
 
-  &--left,
   &.left {
     .utility-position( left );
   }
 
-  &--right,
   &.right {
     .utility-position( right );
   }
 
-  &--top,
   &.top {
     .utility-position( top );
 
@@ -247,7 +233,6 @@
     }
   }
 
-  &--bottom,
   &.bottom {
     .utility-position( bottom );
 
@@ -272,187 +257,145 @@
  *
  ********************************************************************/
 
-.utility-aspect-ratio ( @ratio: 1; @align-contents: center ) {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 100% * @ratio;
-
-  > div {
-    .utility-position( @align-contents );
-  }
-}
-
-/* Application Classes */
-
-.ratio {
-  &-square {
-    .utility-aspect-ratio( 1 );
-
-    &.content,
-    &--content{
-      &-top {
-        .utility-aspect-ratio( 1, top );
-      }
-
-      &-center {
-        .utility-aspect-ratio( 1, center );
-      }
-
-      &-bottom {
-        .utility-aspect-ratio( 1, bottom );
-      }
-    }
-  }
-
-  &-2-3 {
-    .utility-aspect-ratio( 2/3 );
-
-    &.content,
-    &--content{
-      &-top {
-        .utility-aspect-ratio( 2/3, top );
-      }
-
-      &-center {
-        .utility-aspect-ratio( 2/3, center );
-      }
-
-      &-bottom {
-        .utility-aspect-ratio( 2/3, bottom );
-      }
-    }
-  }
-
-  &-3-2 {
-    .utility-aspect-ratio( 3/2 );
-
-    &.content,
-    &--content{
-      &-top {
-        .utility-aspect-ratio( 3/2, top );
-      }
-
-      &-center {
-        .utility-aspect-ratio( 3/2, center );
-      }
-
-      &-bottom {
-        .utility-aspect-ratio( 3/2, bottom );
-      }
-    }
-  }
-
-  &-1-2 {
-    .utility-aspect-ratio( 1/2 );
-
-    &.content,
-    &--content{
-      &-top {
-        .utility-aspect-ratio( 1/2, top );
-      }
-
-      &-center {
-        .utility-aspect-ratio( 1/2, center );
-      }
-
-      &-bottom {
-        .utility-aspect-ratio( 1/2, bottom );
-      }
-    }
-  }
-
-  &-2-1 {
-    .utility-aspect-ratio( 2 );
-
-    &.content,
-    &--content{
-      &-top {
-        .utility-aspect-ratio( 2, top );
-      }
-
-      &-center {
-        .utility-aspect-ratio( 2, center );
-      }
-
-      &-bottom {
-        .utility-aspect-ratio( 2, bottom );
-      }
-    }
-  }
-
-  &-3-4 {
-    .utility-aspect-ratio( 3/4 );
-
-    &.content,
-    &--content{
-      &-top {
-        .utility-aspect-ratio( 3/4, top );
-      }
-
-      &-center {
-        .utility-aspect-ratio( 3/4, center );
-      }
-
-      &-bottom {
-        .utility-aspect-ratio( 3/4, bottom );
-      }
-    }
-  }
-
-  &-4-3 {
-    .utility-aspect-ratio( 4/3 );
-
-    &.content,
-    &--content{
-      &-top {
-        .utility-aspect-ratio( 4/3, top );
-      }
-
-      &-center {
-        .utility-aspect-ratio( 4/3, center );
-      }
-
-      &-bottom {
-        .utility-aspect-ratio( 4/3, bottom );
-      }
-    }
-  }
-
-  &-9-16 {
-    .utility-aspect-ratio( 9/16 );
-
-    &.content,
-    &--content{
-      &-top {
-        .utility-aspect-ratio( 9/16, top );
-      }
-
-      &-center {
-        .utility-aspect-ratio( 9/16, center );
-      }
-
-      &-bottom {
-        .utility-aspect-ratio( 9/16, bottom );
-      }
-    }
-  }
-
-  &-16-9 {
-    .utility-aspect-ratio( 16/9 );
-
-    &.content,
-    &--content{
-      &-top {
-        .utility-aspect-ratio( 16/9, top );
-      }
-
-      &-center {
-        .utility-aspect-ratio( 16/9, center );
-      }
-
-      &-bottom {
-        .utility-aspect-ratio( 16/9, bottom );
-      }
-    }
-  }
-}
+ .utility-aspect-ratio {
+     position: relative;
+     overflow: hidden;
+ }
+ .utility-aspect-ratio ( @ratio: 1 ) {
+     &:extend( .utility-aspect-ratio );
+     padding-bottom: 100% * @ratio;
+ }
+ .utility-aspect-ratio ( @ratio; @align-contents: center ) {
+     > div {
+         .utility-position( @align-contents );
+     }
+ }
+ /* Application Classes */
+ .ratio {
+     &-square {
+         .utility-aspect-ratio( 1 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 1, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 1, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 1, bottom );
+             }
+         }
+     }
+     &-2-3 {
+         .utility-aspect-ratio( 2/3 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 2/3, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 2/3, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 2/3, bottom );
+             }
+         }
+     }
+     &-3-2 {
+         .utility-aspect-ratio( 3/2 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 3/2, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 3/2, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 3/2, bottom );
+             }
+         }
+     }
+     &-1-2 {
+         .utility-aspect-ratio( 1/2 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 1/2, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 1/2, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 1/2, bottom );
+             }
+         }
+     }
+     &-2-1 {
+         .utility-aspect-ratio( 2 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 2, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 2, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 2, bottom );
+             }
+         }
+     }
+     &-3-4 {
+         .utility-aspect-ratio( 3/4 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 3/4, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 3/4, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 3/4, bottom );
+             }
+         }
+     }
+     &-4-3 {
+         .utility-aspect-ratio( 4/3 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 4/3, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 4/3, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 4/3, bottom );
+             }
+         }
+     }
+     &-9-16 {
+         .utility-aspect-ratio( 9/16 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 9/16, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 9/16, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 9/16, bottom );
+             }
+         }
+     }
+     &-16-9 {
+         .utility-aspect-ratio( 16/9 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 16/9, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 16/9, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 16/9, bottom );
+             }
+         }
+     }
+ }
