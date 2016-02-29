@@ -9,26 +9,6 @@
 // :Twin Mountain Peaks Shape
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Responsive image
-//
-// Allow browsers to determine video or slideshow dimensions based on the width of
-// their containing block by creating an intrinsic ratio that will properly scale
-// on any device.
-// Rules are directly applied to <iframe>, <embed>, <video>, and <object> elements;
-// optionally use anexplicit descendant class .embed-responsive-item when you want
-// to match the styling for other attributes.
-//
-// Pro-Tip! You don't need to include frameborder="0" in your <iframe>s as we override
-// that for you.
-//
-//----------------------------------------------------------------------------------------------------------------------
-.img-responsive(@display: block) {
-  display: @display;
-  max-width: 100%; // Part 1: Set a maximum relative to the parent
-  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -144,14 +124,20 @@
 
 .media-frame ( @aspect; @crop: true; @anchor ) when ( ispixel( @crop ) ){
   > img,
-  > video {
+  > video,
+  > iframe,
+  > embed,
+  > object {
     padding: @crop;
   }
 }
 
 .media-frame ( @aspect: landscape; @crop: true; @anchor ){
   > img,
-  > video {
+  > video,
+  > iframe,
+  > embed,
+  > object {
     .img-scale( @crop; @aspect );
   }
 
@@ -168,7 +154,10 @@
 
 .media-frame ( @aspect: landscape; @crop; @anchor: center ) {
   > img,
-  > video {
+  > video,
+  > iframe,
+  > embed,
+  > object {
     .media-anchor( @aspect; @anchor );
   }
 }
@@ -177,6 +166,8 @@
 
 // Application Classes
 .media-frame,
+.responsive-embed,
+.img-responsive,
 .img-frame {
 
   &:not( .center ):not( .top ):not( .right ):not( .bottom ):not( .left ),
