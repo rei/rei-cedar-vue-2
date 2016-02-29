@@ -61,14 +61,14 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .img-sharpen {
-  image-rendering: optimizeSpeed;             /* Legal fallback */
-  image-rendering: -moz-crisp-edges;          /* Firefox        */
-  image-rendering: -o-crisp-edges;            /* Opera          */
-  image-rendering: -webkit-optimize-contrast; /* Safari         */
-  image-rendering: optimize-contrast;         /* CSS3 Proposed  */
-  image-rendering: crisp-edges;               /* CSS4 Proposed  */
-  image-rendering: pixelated;                 /* CSS4 Proposed  */
-  -ms-interpolation-mode: nearest-neighbor;   /* IE8+           */
+  image-rendering: optimizeSpeed;             // Legal fallback
+  image-rendering: -moz-crisp-edges;          // Firefox
+  image-rendering: -o-crisp-edges;            // Opera
+  image-rendering: -webkit-optimize-contrast; // Safari
+  image-rendering: optimize-contrast;         // CSS3 Proposed
+  image-rendering: crisp-edges;               // CSS4 Proposed
+  image-rendering: pixelated;                 // CSS4 Proposed
+  -ms-interpolation-mode: nearest-neighbor;   // IE8+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -79,37 +79,42 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 
-.img-anchor ( @aspect; @crop; @anchor: center ) when ( @anchor = center ) {
-  .utility-position( center );
+.img-anchor ( @aspect; @anchor: center ) when ( @anchor = center ) {
+  &:extend( .position.center );
 }
 
-.img-anchor ( @aspect; @crop: crop; @anchor )
+.img-anchor ( @aspect; @anchor )
   when ( @aspect = portrait )
-  and  ( @crop   = crop )
-  and  ( @anchor = end ) {
-  .utility-position( bottom );
+  and  ( @anchor = start ) {
+  &:extend( .position.top );
 }
 
-.img-anchor ( @aspect; @crop: crop; @anchor )
+.img-anchor ( @aspect: landscape; @anchor )
+  when ( @aspect = landscape )
+  and  ( @anchor = start ) {
+  &:extend( .position.left );
+}
+
+.img-anchor ( @aspect; @anchor )
   when ( @aspect = portrait )
-  and  ( @crop   = crop )
-  and  ( @anchor = start ) {
-  .utility-position( top );
-}
-.img-anchor ( @aspect: landscape; @crop: crop; @anchor )
-  when ( @aspect = landscape )
-  and  ( @crop   = crop )
-  and  ( @anchor = start ) {
-  .utility-position( left );
-}
-.img-anchor ( @aspect: landscape; @crop: crop; @anchor )
-  when ( @aspect = landscape )
-  and  ( @crop   = crop )
   and  ( @anchor = end ) {
-  .utility-position( right );
+  &:extend( .position.bottom );
 }
 
-.img-scale ( @crop: crop ) when not ( @crop = crop ){
+.img-anchor ( @aspect: landscape; @anchor )
+  when ( @aspect = landscape )
+  and  ( @anchor = end ) {
+  &:extend( .position.right );
+}
+
+.img-scale ( @crop: true; @aspect ) when ( @crop ) {
+  min-height: 100%;
+  min-width: 100%;
+
+  object-fit: cover;
+}
+
+.img-scale ( @crop; @aspect ) when ( @crop = false ){
   height: auto;
   width: auto;
 
@@ -121,313 +126,82 @@
 
   object-fit: contain;
 }
-.img-scale ( @crop: crop ) when ( @crop = crop ) {
-  min-height: 100%;
-  min-width: 100%;
 
-  object-fit: cover;
-}
-.img-scale ( @crop: crop; @aspect: landscape ) when ( @crop = crop )
-                                                and ( @aspect = landscape ){
+
+
+.img-scale ( @crop: true; @aspect: landscape ) when ( @crop )
+                                               and ( @aspect = landscape ){
   height: 100%;
 }
-.img-scale ( @crop: crop; @aspect ) when ( @crop = crop )
-                                     and ( @aspect = portrait ){
+
+.img-scale ( @crop: true; @aspect ) when ( @crop )
+                                    and ( @aspect = portrait ){
   width: 100%;
 }
-.img-scale ( @crop; @aspect; @anchor; @sharpen: true ) when ( @sharpen = true ) {
+
+.img-scale ( @crop; @aspect; @sharpen: true ) when ( @sharpen ) {
   &:extend( .img-sharpen );
 }
 
-.img-frame ( @aspect: landscape; @crop: crop; @anchor: center ) {
-  position: relative;
-  overflow: hidden;
 
-  > video {
-    min-width: 100%;
-  }
 
-  > img,
-  > video {
-    .img-anchor( @aspect; @crop; @anchor );
-    .img-scale( @crop; @aspect );
-  }
+.img-frame ( @aspect; @crop; @anchor ) {
+    &:extend( .utility-aspect-ratio );
 }
-.img-frame ( @aspect; @crop: crop ) when ( ispixel( @crop ) ){
 
+.img-frame ( @aspect; @crop: true; @anchor ) when ( ispixel( @crop ) ){
   > img,
   > video {
     padding: @crop;
   }
 }
-.img-frame ( @aspect; @crop; @anchor; @ratio ) when ( @ratio ) {
-  .utility-aspect-ratio( @ratio );
 
-  & when ( ispixel( @ratio ) ) {
-    padding-bottom: @ratio;
+.img-frame ( @aspect: landscape; @crop: true; @anchor ){
+  > img,
+  > video {
+    .img-scale( @crop; @aspect );
+  }
+}
+
+.img-frame ( @aspect: landscape; @crop; @anchor: center ) {
+  > img,
+  > video {
+    .img-anchor( @aspect; @anchor );
   }
 }
 
 
-/* Application Classes */
+
+// Application Classes
 .img-frame {
-  &,
+
+  &:not( .center ):not( .top ):not( .right ):not( .bottom ):not( .left ),
   &.nocrop {
-
-    .img-frame( landscape; null );
-
-    &.ratio {
-
-      &-square {
-        .img-frame( landscape; null; center; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( landscape; null; center; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( landscape; null; center; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( landscape; null; center; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( landscape; null; center; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( landscape; null; center; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( landscape; null; center; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( landscape; null; center; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( landscape; null; center; 16/9 );
-      }
-    }
+    .img-frame( landscape; false; center );
   }
 
   &.center {
-    .img-frame( landscape; crop; center );
+    .img-frame( landscape; true; center );
 
     &.portrait {
-      .img-frame( portrait; crop; center );
-    }
-  }
-
-  &.ratio {
-    &-square {
-      .img-frame( landscape; crop; center; 1 );
-    }
-
-    &-2-3 {
-      .img-frame( landscape; crop; center; 2/3 );
-    }
-
-    &-3-2 {
-      .img-frame( landscape; crop; center; 3/2 );
-    }
-
-    &-1-2 {
-      .img-frame( landscape; crop; center; 1/2 );
-    }
-
-    &-2-1 {
-      .img-frame( landscape; crop; center; 2 );
-    }
-
-    &-3-4 {
-      .img-frame( landscape; crop; center; 3/4 );
-    }
-
-    &-4-3 {
-      .img-frame( landscape; crop; center; 4/3 );
-    }
-
-    &-9-16 {
-      .img-frame( landscape; crop; center; 9/16 );
-    }
-
-    &-16-9 {
-      .img-frame( landscape; crop; center; 16/9 );
+      .img-frame( portrait; true; center );
     }
   }
 
   &.left {
-    .img-frame( landscape; crop; start );
-
-    &.ratio {
-      &-square {
-        .img-frame( landscape; crop; start; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( landscape; crop; start; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( landscape; crop; start; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( landscape; crop; start; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( landscape; crop; start; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( landscape; crop; start; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( landscape; crop; start; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( landscape; crop; start; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( landscape; crop; start; 16/9 );
-      }
-    }
+    .img-frame( landscape; true; start );
   }
 
   &.right {
-    .img-frame( landscape; crop; end );
-
-    &.ratio {
-      &-square {
-        .img-frame( landscape; crop; end; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( landscape; crop; end; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( landscape; crop; end; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( landscape; crop; end; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( landscape; crop; end; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( landscape; crop; end; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( landscape; crop; end; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( landscape; crop; end; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( landscape; crop; end; 16/9 );
-      }
-    }
+    .img-frame( landscape; true; end );
   }
 
   &.top {
-    .img-frame( portrait; crop; start );
-
-    &.ratio {
-      &-square {
-        .img-frame( portrait; crop; start; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( portrait; crop; start; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( portrait; crop; start; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( portrait; crop; start; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( portrait; crop; start; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( portrait; crop; start; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( portrait; crop; start; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( portrait; crop; start; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( portrait; crop; start; 16/9 );
-      }
-    }
+    .img-frame( portrait; true; start );
   }
 
   &.bottom {
-    .img-frame( portrait; crop; end );
-
-    &.ratio {
-      &-square {
-        .img-frame( portrait; crop; end; 1 );
-      }
-
-      &-2-3 {
-        .img-frame( portrait; crop; end; 2/3 );
-      }
-
-      &-3-2 {
-        .img-frame( portrait; crop; end; 3/2 );
-      }
-
-      &-1-2 {
-        .img-frame( portrait; crop; end; 1/2 );
-      }
-
-      &-2-1 {
-        .img-frame( portrait; crop; end; 2 );
-      }
-
-      &-3-4 {
-        .img-frame( portrait; crop; end; 3/4 );
-      }
-
-      &-4-3 {
-        .img-frame( portrait; crop; end; 4/3 );
-      }
-
-      &-9-16 {
-        .img-frame( portrait; crop; end; 9/16 );
-      }
-
-      &-16-9 {
-        .img-frame( portrait; crop; end; 16/9 );
-      }
-    }
+    .img-frame( portrait; true; end );
   }
 }
 

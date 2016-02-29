@@ -3,12 +3,13 @@
 // REI-CEDAR MODALS VARIABLES
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//** Padding applied to the modal body
+// Padding applied to the modal body
 @modal-inner-padding:                                1.5rem;
 
-//** Padding applied to the modal title
+// Padding applied to the modal title
 @modal-title-padding:                                1.5rem;
-//** Modal title line-height
+
+// Modal title line-height
 @modal-title-line-height:                            @line-height-base;
 
 @modal-lg:                                           90rem;
