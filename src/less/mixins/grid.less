@@ -44,7 +44,11 @@
     margin-left: auto;
     padding-left:  (@gutter / 2);
     padding-right: (@gutter / 2);
-    &:extend(.clearfix all);
+}
+.container-fluid(@gutter: @grid-gutter-width) {
+    width: 100%;
+    padding-left:  (@gutter / 2);
+    padding-right: (@gutter / 2);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -55,6 +59,8 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .make-row(@gutter: @grid-gutter-width; @gutter-sm: @grid-gutter-width-sm; @gutter-md: @grid-gutter-width-md ) {
+    display: flex;
+    flex-direction: row;
     margin-left:  (@gutter/ -2);
     margin-right: (@gutter/ -2);
     @media( min-width: @screen-sm-min ) {
@@ -65,7 +71,6 @@
         margin-left:  (@gutter-md / -2);
         margin-right: (@gutter-md / -2);
     }
-    &:extend(.clearfix all);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,10 +83,9 @@
 //----------------------------------------------------------------------------------------------------------------------
 .make-xs-column( @columns; @gutter: @grid-gutter-width; @gutter-sm: @grid-gutter-width-sm; @gutter-md: @grid-gutter-width-md ) {
     position: relative;
-    float: left;
     width: percentage( ( @columns / @grid-columns ) );
     min-height: 1px;
-    padding-left:  ( @gutter / 2 );
+    padding-left: ( @gutter / 2 );
     padding-right: ( @gutter / 2 );
     @media( min-width: @screen-sm-min ) {
         padding-left:  ( @gutter-sm / 2 );
@@ -130,7 +134,6 @@
     }
     // Calculate width based on number of columns available
     @media ( min-width: @screen-sm-min ) {
-        float: left;
         width: percentage( ( @columns / @grid-columns ) );
     }
 }
@@ -176,7 +179,6 @@
     }
     // Calculate width based on number of columns available
     @media ( min-width: @screen-md-min ) {
-        float: left;
         width: percentage( ( @columns / @grid-columns ) );
     }
 }
@@ -222,7 +224,6 @@
     }
     // Calculate width based on number of columns available
     @media ( min-width: @screen-lg-min ) {
-        float: left;
         width: percentage( ( @columns / @grid-columns ) );
     }
 }
