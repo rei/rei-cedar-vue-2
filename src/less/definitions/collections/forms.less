@@ -49,7 +49,7 @@ legend {
     line-height: inherit;
     color: @legend-color;
     border: 0;
-    border-bottom: 1px solid @legend-border-color;
+    border-bottom: 0.1rem solid @legend-border-color;
 }
 
 label {
@@ -94,7 +94,7 @@ label {
     color: @input-color;
     background-color: @input-bg;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    border: 1px solid @input-border;
+    border: 0.1rem solid @input-border;
 
     // Placeholder
     .placeholder();
@@ -180,7 +180,7 @@ label {
 }
 
 .has-feedback label ~ .form-control-feedback {
-    top: 30px;
+    top: 3rem;
 }
 
 .has-feedback .form-control-feedback {
@@ -203,7 +203,7 @@ label {
         content: " * Required ";
         display: inline-block;
         line-height: @headings-line-height;
-        margin-bottom: 30px;
+        margin-bottom: 3rem;
         max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
     }
 }
@@ -230,8 +230,8 @@ label {
 //----------------------------------------------------------------------------------------------------------------------
 .form-control-static {
     // Size it appropriately next to real form controls
-    padding-top: (@padding-small-vertical + 1);
-    padding-bottom: (@padding-small-vertical + 1);
+    padding-top: (@padding-small-vertical + 0.1);
+    padding-bottom: (@padding-small-vertical + 0.1);
     // Remove default margin from `p`
     margin-bottom: 0;
     min-height: (@line-height-computed + @font-size-base);
@@ -329,7 +329,7 @@ label {
 .has-feedback label {
 
     & ~ .form-control-feedback {
-        top: (@line-height-computed + 5); // Height of the `label` and its margin
+        top: (@line-height-computed + 0.5); // Height of the `label` and its margin
     }
     &.sr-only ~ .form-control-feedback {
         top: 0;
@@ -346,8 +346,8 @@ label {
 //----------------------------------------------------------------------------------------------------------------------
 .help-block {
     display: block; // account for any element using help-block
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
     color: lighten(@text-color, 25%); // lighten the text some for contrast
 }
 
@@ -376,7 +376,7 @@ label {
             }
         }
         .has-feedback .form-control-feedback {
-            top: 36px;
+            top: 3.6rem;
         }
 
     // Kick in the inline
@@ -388,7 +388,7 @@ label {
             vertical-align: top;
             .vertical-push-md();
             &.non-label {
-                margin-top: 30px;
+                margin-top: 3rem;
             }
         }
 

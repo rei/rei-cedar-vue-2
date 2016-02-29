@@ -218,10 +218,10 @@
 //----------------------------------------------------------------------------------------------------------------------
 .twin-mountain-peaks
 ( @mountain-color: inherit;
-@first-mountain-size: 20px;
-@second-mountain-size: 15px;
-@first-sm-mountain-size: 30px;
-@second-sm-mountain-size: 20px; ) {
+@first-mountain-size: 2rem;
+@second-mountain-size: 1.5rem;
+@first-sm-mountain-size: 3rem;
+@second-sm-mountain-size: 2rem; ) {
     border-color: inherit; // if @mountain-color is inherit it will inherit it's color from an overlay class defined in the parent container.
     display: inline-block;
     height: @first-mountain-size;
@@ -237,7 +237,7 @@
     &:after {
         content: "";
         position: absolute;
-        .translate(22px; 5px );
+        .translate(2.2rem; 0.5rem );
         width: 0;
         height: 0;
         border-left: @second-mountain-size solid transparent;
@@ -256,7 +256,7 @@
             border-bottom-color: @mountain-color;
         }
         &:after {
-            .translate(36px; 10px );
+            .translate(3.6rem; 1rem );
             border-left: @second-sm-mountain-size solid transparent;
             border-right: @second-sm-mountain-size solid transparent;
             border-bottom: @second-sm-mountain-size solid;

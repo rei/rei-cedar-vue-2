@@ -13,7 +13,7 @@
 .alert {
     &:extend( .media all );
     margin: 0 0 @vertical-push 0;
-    padding: 6px 0 6px 20px;
+    padding: 0.6rem 0 0.6rem 2rem;
     >.icon:first-of-type {
         &:extend( .media-left all );
     }
@@ -78,13 +78,13 @@
 //----------------------------------------------------------------------------------------------------------------------
 .alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
 .alert-dismissible {
-    padding-right: (@alert-padding + 20);
+    padding-right: (@alert-padding + 2);
 
     // Adjust close link position
     .close {
         position: relative;
-        top: -2px;
-        right: -21px;
+        top: -0.2rem;
+        right: -2.1rem;
         color: inherit;
     }
 }
@@ -101,12 +101,12 @@
   font-size: @line-height-base;
   display: block;
   line-height: @line-height-computed;
-  padding: 9px 0 0 22px; //this is 22px so that the space is 6px between the icon and the first letter
+  padding: 0.9rem 0 0 2.2rem; //this is 22px so that the space is 6px between the icon and the first letter
 
   &:before {
     font-size: @line-height-computed; // match line height of copy
-    margin-top: -1px;
-    margin-left: -22px;
+    margin-top: -0.1rem;
+    margin-left: -2.2rem;
     display: block;
     float: left;
   }
