@@ -26,23 +26,6 @@
   .col(1); // kickstart it
 }
 
-.float-grid-columns(@class) {
-  .col(@index) { // initial
-    @item: ~".col-@{class}-@{index}";
-    .col((@index + 1), @item);
-  }
-  .col(@index, @list) when (@index =< @grid-columns) { // general
-    @item: ~".col-@{class}-@{index}";
-    .col((@index + 1), ~"@{list}, @{item}");
-  }
-  .col(@index, @list) when (@index > @grid-columns) { // terminal
-    @{list} {
-      float: left;
-    }
-  }
-  .col(1); // kickstart it
-}
-
 .calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
   .col-@{class}-@{index} {
     width: percentage((@index / @grid-columns));
@@ -88,7 +71,6 @@
 
 // Create grid for specific class
 .make-grid(@class) {
-  .float-grid-columns(@class);
   .loop-grid-columns(@grid-columns, @class, width);
   .loop-grid-columns(@grid-columns, @class, pull);
   .loop-grid-columns(@grid-columns, @class, push);
