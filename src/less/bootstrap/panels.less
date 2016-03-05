@@ -7,8 +7,8 @@
 .panel {
   margin-bottom: @line-height-computed;
   background-color: @panel-bg;
-  border: 1px solid transparent;
-  .box-shadow(0 1px 1px rgba(0,0,0,.05));
+  border: 0.1rem solid transparent;
+  .box-shadow(0 0.1rem 0.1rem rgba(0,0,0,.05));
 }
 
 // Panel contents
@@ -20,7 +20,7 @@
 // Optional heading
 .panel-heading {
   padding: @panel-heading-padding;
-  border-bottom: 1px solid transparent;
+  border-bottom: 0.1rem solid transparent;
 }
 
 // Within heading, strip any `h*` tag of its default margins for spacing.
@@ -43,7 +43,7 @@
 .panel-footer {
   padding: @panel-footer-padding;
   background-color: @panel-footer-bg;
-  border-top: 1px solid @panel-inner-border;
+  border-top: 0.1rem solid @panel-inner-border;
 }
 
 // Tables in panels
@@ -67,7 +67,7 @@
   > .panel-body + .table-responsive,
   > .table + .panel-body,
   > .table-responsive + .panel-body {
-    border-top: 1px solid @table-border-color;
+    border-top: 0.1rem solid @table-border-color;
   }
   > .table > tbody:first-child > tr:first-child th,
   > .table > tbody:first-child > tr:first-child td {
@@ -128,7 +128,7 @@
   .panel {
     margin-bottom: 0;
     + .panel {
-      margin-top: 5px;
+      margin-top: 0.5rem;
     }
   }
 
@@ -137,14 +137,14 @@
 
     + .panel-collapse > .panel-body,
     + .panel-collapse > .list-group {
-      border-top: 1px solid @panel-inner-border;
+      border-top: 0.1rem solid @panel-inner-border;
     }
   }
 
   .panel-footer {
     border-top: 0;
     + .panel-collapse .panel-body {
-      border-bottom: 1px solid @panel-inner-border;
+      border-bottom: 0.1rem solid @panel-inner-border;
     }
   }
 }

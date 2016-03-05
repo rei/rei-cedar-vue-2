@@ -80,7 +80,7 @@
     position: relative;
     float: left;
     width: percentage( ( @columns / @grid-columns ) );
-    min-height: 1px;
+    min-height: 0.1rem;
     padding-left:  ( @gutter / 2 );
     padding-right: ( @gutter / 2 );
     @media( min-width: @screen-sm-min ) {
@@ -116,7 +116,7 @@
 .make-sm-column( @columns; @gutter: @grid-gutter-width; @gutter-sm: @grid-gutter-width-sm; @gutter-md: @grid-gutter-width-md ) {
     position: relative;
     // Prevent columns from collapsing when empty
-    min-height: 1px;
+    min-height: 0.1rem;
     // Inner gutter via padding
     padding-left:  ( @gutter / 2 );
     padding-right: ( @gutter / 2 );
@@ -163,7 +163,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 .make-md-column( @columns; @gutter: @grid-gutter-width; @gutter-sm: @grid-gutter-width-sm; @gutter-md: @grid-gutter-width-md ) {
     position: relative;
-    min-height: 1px;
+    min-height: 0.1rem;
     padding-left:  ( @gutter / 2 );
     padding-right: ( @gutter / 2 );
     @media( min-width: @screen-sm-min ) {
@@ -209,7 +209,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 .make-lg-column( @columns; @gutter: @grid-gutter-width; @gutter-sm: @grid-gutter-width-sm; @gutter-md: @grid-gutter-width-md ) {
     position: relative;
-    min-height: 1px;
+    min-height: 0.1rem;
     padding-left:  ( @gutter / 2 );
     padding-right: ( @gutter / 2 );
     @media( min-width: @screen-sm-min ) {

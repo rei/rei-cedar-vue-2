@@ -56,20 +56,20 @@ ol {
 
 .list-decoration {
     &:extend( .list-text all );
-    padding-left: 12px;
+    padding-left: 1.2rem;
     > li {
         &:before {
             background: #222;
             border-radius: 100%;
             content: "";
-            height: 4px;
+            height: 0.4rem;
             display: block;
             position: relative;
-            top: 4px;
-            left: -12px;
-            margin: 0 6px 0 0;
+            top: 0.4rem;
+            left: -1.2rem;
+            margin: 0 0.6rem 0 0;
             .translate(0,245%);
-            width: 4px;
+            width: 0.4rem;
         }
     }
 }
@@ -110,7 +110,7 @@ ol {
 
 .list-inline-pipe {
     > li {
-        border-right: 1px solid @core-architectural-3;
+        border-right: 0.1rem solid @core-architectural-3;
         &:last-child {
             border: none;
         }

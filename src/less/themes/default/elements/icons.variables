@@ -10,7 +10,7 @@
 // SIZE AND SHAPE
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@icon-size-sm:                                       12px;
-@icon-size-md:                                       14px;
-@icon-size-lg:                                       20px;
-@icon-size-xl:                                       60px;
+@icon-size-sm:                                       1.2rem;
+@icon-size-md:                                       1.4rem;
+@icon-size-lg:                                       2rem;
+@icon-size-xl:                                       6rem;
