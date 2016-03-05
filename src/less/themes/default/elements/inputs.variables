@@ -24,9 +24,8 @@
 // Default `.form-control` height
 @input-height-base:              ( (@btn-font-size * @btn-line-height) + (@padding-base-vertical * 2) );
 // Large `.form-control` height
-@input-height-large:             (ceil(@btn-font-size-lg * @btn-line-height) + (@padding-large-vertical * 2) + 2);
+@input-height-large:             (ceil(@btn-font-size-lg * @btn-line-height) + (@padding-large-vertical * 2) + .2);
 // Small `.form-control` height
-@input-height-small:             (floor(@font-size-small * @line-height-base) + (@padding-small-vertical * 2) + 2);
-
+@input-height-small:             (floor(@font-size-small * @line-height-base) + (@padding-small-vertical * 2) + .2);
 // Disabled cursor for form controls and buttons.
 @cursor-disabled:                                     not-allowed;

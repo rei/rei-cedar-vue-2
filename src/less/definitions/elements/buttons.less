@@ -33,7 +33,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 .btn {
     .btn-lg();
-    border: 1px solid transparent;
+    border: 0.1rem solid transparent;
     cursor: pointer;
     display: inline-block;
     margin-bottom: 0;
@@ -42,7 +42,7 @@
     vertical-align: middle;
     user-select: none;
     white-space: nowrap;
-    @media all and ( min-width: 600px ) {
+    @media all and ( min-width: 60rem ) {
         & + & {
             margin-left: ( @group-push / 2 );
         }
@@ -246,7 +246,7 @@
 .btn-block {
     display: block;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     & + & {
         margin-left: 0;
     }
@@ -262,18 +262,18 @@
 .remove-toggle {
     position: relative;
     & .icon-rei-close-small {
-        border-right: solid 1px @core-architectural-5;
+        border-right: solid 0.1rem @core-architectural-5;
         height: 108%;
         left: 0;
-        padding: 7px 8px 0 7px;
+        padding: 0.7rem 0.8rem 0 0.7rem;
         position: absolute;
         overflow-y: hidden;
-        top: -1px;
+        top: -0.1rem;
 
     }
 
     & span:last-of-type {
-        margin-left: 27px; // for text
+        margin-left: 2.7rem; // for text
     }
 
     &.remove-right {
@@ -281,13 +281,13 @@
             &:extend( .btn-contrast.btn-primary );
             height: 100%;
             left: auto;
-            right: -1px;
-            padding: 7px 6px 0 7px;
+            right: -0.1rem;
+            padding: 0.7rem 0.6rem 0 0.7rem;
             top: 0;
         }
         & span:last-of-type {
             margin-left: 0;
-            margin-right: 20px;
+            margin-right: 2rem;
         }
     }
 }
