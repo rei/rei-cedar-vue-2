@@ -352,21 +352,21 @@ gulp.task( 'js:test:pre-clean', function() { return del( [ PATHS.TEST + '/tmp/js
 
 
 // js:post-clean-test
-gulp.task( 'js:test:post-clean', [ 'js:test:qunit' ], function() { return del( [ `${ PATHS.TEST }/tmp/js/*` ] ); });
+gulp.task( 'js:test:post-clean', [ 'js:test:qunit' ], function() { return del( [ PATHS.TEST + '/tmp/js/*' ] ); });
 
 
 // Copy JS for testing
 gulp.task( 'js:test:copy', [ 'js:test:pre-clean' ], function() {
-    return gulp.src( [ `${ PATHS.SRC }/js/**/*` ] )
-        .pipe( gulp.dest( `${ PATHS.TEST }/tmp/js` ) );
+    return gulp.src( [ PATHS.SRC + '/js/**/*' ] )
+        .pipe( gulp.dest( PATHS.TEST + '/tmp/js' ) );
 });
 
 
 // Compile the UI framework's Javascript --> ./dist. Include the minified version.
 gulp.task( 'js:build', [ 'js:test:post-clean' ], function() {
-    var bundleStream = browserify( `${ PATHS.SRC }/js/main.js` ).bundle();
+    var bundleStream = browserify( PATHS.SRC + '/js/main.js' ).bundle();
     return bundleStream
-        .pipe( source( `${ PATHS.SRC }/js/main.js` ) )
+        .pipe( source( PATHS.SRC + '/js/main.js' ) )
         .pipe( streamify( sourcemaps.init() ) )
         .pipe( rename( { dirname: '/', basename: 'rei-cedar' } ) )
         .pipe( streamify( sourcemaps.write() ) )
@@ -380,7 +380,7 @@ gulp.task( 'js:build', [ 'js:test:post-clean' ], function() {
 // Browserify individual components for test
 gulp.task( 'js:test:browserify-single-components', [ 'js:test:copy' ], function( done ) {
 
-    gulp.src( [ `PATHS.TEST/tmp/js/tests/*.js`, `${ PATHS.TEST }/tmp/js/tests/unit/*.js` ], function( err, files ) {
+    gulp.src( [ PATHS.TEST + '/tmp/js/tests/*.js', PATHS.TEST + '/tmp/js/tests/unit/*.js' ], function( err, files ) {
 
         if( err ) done( err );
 
@@ -402,10 +402,10 @@ gulp.task( 'js:test:browserify-single-components', [ 'js:test:copy' ], function(
 // Inject files into js/tests/index.html for testing
 
 gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], function () {
-    return gulp.src( `${ PATHS.TEST }/tmp/js/tests/index.html` )
+    return gulp.src( PATHS.TEST + '/tmp/js/tests/index.html' )
         // Get all test files and inject into index.html
-        .pipe( inject( gulp.src( [ `${ PATHS.TEST }/tmp/js/tests/unit/*.js` ], { read: false } ), { name: 'tests', relative: true } ) )
-        .pipe( gulp.dest( `${ PATHS.TEST }/tmp/js/tests` ) );
+        .pipe( inject( gulp.src( [ PATHS.TEST + '/tmp/js/tests/unit/*.js' ], { read: false } ), { name: 'tests', relative: true } ) )
+        .pipe( gulp.dest( PATHS.TEST + '/tmp/js/tests' ) );
 });
 
 
@@ -413,7 +413,7 @@ gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], functio
 
 gulp.task( 'js:test:qunit', [ 'js:test:inject' ], function () {
     // Test that bad boy!
-    return gulp.src( `${ PATHS.TEST }/qunit/test-runner.html` )
+    return gulp.src( PATHS.TEST + '/qunit/test-runner.html' )
                .pipe( qunit( { 'binPath' : require( 'phantomjs2' ).path } ) );
 });
 
