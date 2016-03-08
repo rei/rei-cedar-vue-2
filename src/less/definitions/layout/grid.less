@@ -4,11 +4,9 @@
 
 // Container widths
 //
-// Set the container width, and override it for fixed navbars in media queries.
+// Set the container width
 .container {
-    max-width: @screen-lg;
     .container-fixed(@grid-gutter-width);
-
     @media( min-width: @screen-sm-min ) {
         .container-fixed(@grid-gutter-width-sm);
     }
@@ -21,7 +19,15 @@
 //
 // Utilizes the mixin meant for fixed width containers, but without any defined
 // width for fluid, full width layouts.
-.container-fluid:extend(.container all){}
+.container-fluid{
+    .container-fluid();
+    @media( min-width: @screen-sm-min ) {
+        .container-fluid(@grid-gutter-width-sm);
+    }
+    @media( min-width: @screen-md-min ) {
+        .container-fluid(@grid-gutter-width-md);
+    }
+}
 
 // Row
 //
