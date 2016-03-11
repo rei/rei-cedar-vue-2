@@ -49,7 +49,7 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 2.4rem;
+  margin-bottom: @line-height-computed;
   // Cells
   > thead,
   > tbody,
@@ -194,7 +194,7 @@ table {
 
   @media screen and (max-width: @screen-xs-max) {
     width: 100%;
-    margin-bottom: (@line-height-computed * 0.75);
+    margin-bottom: (@line-height-computed * 0.75rem);
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 0.1rem solid @table-border-color;
