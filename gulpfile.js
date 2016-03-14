@@ -551,7 +551,9 @@ gulp.task( 'docs:less:compile', [ 'docs:clean', 'docs:copy-all' ], function () {
 
 gulp.task( 'docs:jekyll', [ 'docs:clean', 'docs:copy-all' ], function ( gulpCallBack ){
     var spawn = require( 'child_process' ).spawn;
-    var jekyll = spawn( 'jekyll', [ 'build' ], { stdio: 'inherit' } );
+    // on win need to pass spawn .bat file
+    var jekyllCommand = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+    var jekyll = spawn( jekyllCommand, [ 'build' ], { stdio: 'inherit' } );
 
     jekyll.on( 'exit', function( code ) {
         gulpCallBack( code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code );
