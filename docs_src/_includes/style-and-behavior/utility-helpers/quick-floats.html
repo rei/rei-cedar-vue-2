@@ -8,18 +8,18 @@
     {% highlight scss %}
     // Classes
     .pull-left {
-    float: left !important;
+        align-self: flex-start !important;
     }
     .pull-right {
-    float: right !important;
+        align-self: flex-end !important
     }
 
     // Usage as mixins
     .element {
-    .pull-left();
+        .pull-left();
     }
     .another-element {
-    .pull-right();
+        .pull-right();
     }
     {% endhighlight %}
 </section>
