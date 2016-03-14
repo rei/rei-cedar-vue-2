@@ -244,22 +244,22 @@ gulp.task( 'accessibility:audit-exp', [
 
 
 
-//      /$$      /$$                       /$$                        
-//     | $$$    /$$$                      | $$                        
-//     | $$$$  /$$$$  /$$$$$$   /$$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$ 
+//      /$$      /$$                       /$$
+//     | $$$    /$$$                      | $$
+//     | $$$$  /$$$$  /$$$$$$   /$$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$
 //     | $$ $$/$$ $$ |____  $$ /$$_____/|_  $$_/   /$$__  $$ /$$__  $$
 //     | $$  $$$| $$  /$$$$$$$|  $$$$$$   | $$    | $$$$$$$$| $$  \__/
-//     | $$\  $ | $$ /$$__  $$ \____  $$  | $$ /$$| $$_____/| $$      
-//     | $$ \/  | $$|  $$$$$$$ /$$$$$$$/  |  $$$$/|  $$$$$$$| $$      
-//     |__/     |__/ \_______/|_______/    \___/   \_______/|__/      
-//   
-//   
-//   
+//     | $$\  $ | $$ /$$__  $$ \____  $$  | $$ /$$| $$_____/| $$
+//     | $$ \/  | $$|  $$$$$$$ /$$$$$$$/  |  $$$$/|  $$$$$$$| $$
+//     |__/     |__/ \_______/|_______/    \___/   \_______/|__/
+//
+//
+//
 
-// This will run in this order: 
-// * js and css in parallel 
-// * docs 
-// * Finally call the callback function 
+// This will run in this order:
+// * js and css in parallel
+// * docs
+// * Finally call the callback function
 gulp.task( 'master', function( callback ) {
   runSequence( [ 'js', 'css' ], 'docs', callback );
 });
@@ -364,7 +364,7 @@ gulp.task( 'js:test:copy', [ 'js:test:pre-clean' ], function() {
 
 // Compile the UI framework's Javascript --> ./dist. Include the minified version.
 gulp.task( 'js:build', [ 'js:test:post-clean' ], function() {
-    var bundleStream = browserify( PATHS.SRC + '/js/main.js').bundle();
+    var bundleStream = browserify( PATHS.SRC + '/js/main.js' ).bundle();
     return bundleStream
         .pipe( source( PATHS.SRC + '/js/main.js' ) )
         .pipe( streamify( sourcemaps.init() ) )
@@ -404,7 +404,7 @@ gulp.task( 'js:test:browserify-single-components', [ 'js:test:copy' ], function(
 gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], function () {
     return gulp.src( PATHS.TEST + '/tmp/js/tests/index.html' )
         // Get all test files and inject into index.html
-        .pipe( inject( gulp.src( [ PATHS.TEST + '/tmp/js/tests/unit/*.js'], { read: false } ), { name: 'tests', relative: true } ) )
+        .pipe( inject( gulp.src( [ PATHS.TEST + '/tmp/js/tests/unit/*.js' ], { read: false } ), { name: 'tests', relative: true } ) )
         .pipe( gulp.dest( PATHS.TEST + '/tmp/js/tests' ) );
 });
 
@@ -413,10 +413,8 @@ gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], functio
 
 gulp.task( 'js:test:qunit', [ 'js:test:inject' ], function () {
     // Test that bad boy!
-    return gulp.src( path.join( PATHS.TEST, '/tmp/js/tests/index.html' ) )
-        .pipe( qunit( {
-            'timeout': 20
-        } ) );
+    return gulp.src( PATHS.TEST + '/qunit/test-runner.html' )
+               .pipe( qunit( { 'binPath' : require( 'phantomjs2' ).path } ) );
 });
 
 
