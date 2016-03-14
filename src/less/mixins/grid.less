@@ -43,14 +43,10 @@
     max-width: @screen-lg;
     margin-right: auto;
     margin-left: auto;
-    padding-left:  (@gutter / 2);
-    padding-right: (@gutter / 2);
+
 }
 .container-fluid( @gutter: @grid-gutter-width; ) {
     width: 100%;
-    padding-left:  (@gutter / 2);
-    padding-right: (@gutter / 2);
-
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -62,16 +58,6 @@
 .make-row( @gutter: @grid-gutter-width; @gutter-sm: @grid-gutter-width-sm; @gutter-md: @grid-gutter-width-md; ) {
     display: flex;
     flex-flow: row wrap;
-    margin-left:  (@gutter/ -2);
-    margin-right: (@gutter/ -2);
-    @media( min-width: @screen-sm-min ) {
-        margin-left:  (@gutter-sm / -2);
-        margin-right: (@gutter-sm / -2);
-    }
-    @media( min-width: @screen-md-min ) {
-        margin-left:  (@gutter-md / -2);
-        margin-right: (@gutter-md / -2);
-    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
