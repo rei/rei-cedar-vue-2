@@ -306,7 +306,7 @@ gulp.task( 'css:build', [ 'css:clean' ], function () {
       }
     });
 
-    return gulp.src( PATHS.SRC + '/less/main.less' )
+    return gulp.src( [ 'node_modules/normalize.less/normalize.less', `${ PATHS.SRC }/less/main.less` ] )
         .pipe( sourcemaps.init() )
         .pipe( rename( { basename: pkg.name } ) )   // Rename the bundle basename to $PROJECT_NAME-$VERSION
         .pipe( lessc )                              // Build the dev bundle
@@ -322,7 +322,13 @@ gulp.task( 'css:build', [ 'css:clean' ], function () {
 gulp.task( 'css:minify', [ 'css:build' ], function(){
     return gulp.src( PATHS.DIST + '/rei-cedar.css' )
         .pipe( rename( { suffix: '.min' } ) )       // Build the minified bundle
-        .pipe( minifyCss() )
+        .pipe(
+            minifyCss( {
+                discardComments: {
+                    removeAll: true
+                },
+            } )
+        )
         .pipe( gulp.dest( PATHS.DIST ) );
 });
 
