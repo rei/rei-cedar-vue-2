@@ -468,6 +468,9 @@ items:
                 - label: Center Content Blocks
                   href: helper-classes-center
 
+                - label: Clearfix
+                  href: helper-classes-clearfix
+
                 - label: Positioning
                   href: utility-position
 
