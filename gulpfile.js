@@ -306,7 +306,7 @@ gulp.task( 'css:build', [ 'css:clean' ], function () {
       }
     });
 
-    return gulp.src( [ 'node_modules/normalize.less/normalize.less', `${ PATHS.SRC }/less/main.less` ] )
+    return gulp.src( [ 'node_modules/normalize.less/normalize.less', path.join( PATHS.SRC, '/less/main.less' ) ] )
         .pipe( sourcemaps.init() )
         .pipe( rename( { basename: pkg.name } ) )   // Rename the bundle basename to $PROJECT_NAME-$VERSION
         .pipe( lessc )                              // Build the dev bundle
