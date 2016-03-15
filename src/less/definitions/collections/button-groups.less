@@ -13,15 +13,11 @@
 // Make the div behave like a button
 .btn-group,
 .btn-group-vertical {
-    position: relative;
-    display: inline;
-    @media( min-width: @screen-sm-min ) {
-        display: inline-block;
-    }
+    display: flex;
+    flex-flow: row wrap;
     vertical-align: middle; // match .btn alignment given font-size hack above
     > .btn {
-        position: relative;
-        float: left;
+        flex: 0 1 auto;
         // Bring the "active" button to the front
         &:hover,
         &:focus,
@@ -49,7 +45,7 @@
 
 // Custom edits for including btn-groups within btn-groups (useful for including dropdown buttons within a btn-group)
 .btn-group > .btn-group {
-    float: left;
+    flex: 0 1 auto;
 }
 
 // Sizing
@@ -69,18 +65,10 @@
     > .btn-group,
     > .btn-group > .btn {
         display: block;
-        float: none;
         width: 100%;
         max-width: 100%;
     }
 
-    // Clear floats so dropdown menus can be properly placed
-    > .btn-group {
-        &:extend(.clearfix all);
-        > .btn {
-            float: none;
-        }
-    }
 
     > .btn + .btn,
     > .btn + .btn-group,
@@ -150,13 +138,12 @@
     }
     .btn {
         margin: 0 0 2rem;
-        float: left;
+        flex: 0 1 auto;
         &.btn-fixed {
             margin: 0 ( @group-push / 2 ) 2rem;
         }
         @media( min-width: @screen-sm-min ) {
             margin: 0 ( @group-push / 2 ) 2rem;
-            float: none;
         }
     }
     &.ig-sm.btn-group {
