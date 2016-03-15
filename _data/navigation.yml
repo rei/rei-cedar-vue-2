@@ -63,9 +63,6 @@ items:
                 - label: Column wrapping
                   href: grid-example-wrapping
 
-                - label: Responsive column resets
-                  href: grid-responsive-resets
-
                 - label: Offsetting columns
                   href: grid-offsetting
 
