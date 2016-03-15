@@ -63,9 +63,6 @@ items:
                 - label: Column wrapping
                   href: grid-example-wrapping
 
-                - label: Responsive column resets
-                  href: grid-responsive-resets
-
                 - label: Offsetting columns
                   href: grid-offsetting
 
@@ -470,9 +467,6 @@ items:
 
                 - label: Center Content Blocks
                   href: helper-classes-center
-
-                - label: Clearfix
-                  href: helper-classes-clearfix
 
                 - label: Positioning
                   href: utility-position
