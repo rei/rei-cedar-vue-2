@@ -93,16 +93,16 @@ h1 {
         line-height: 1.0714;
     }
     &.heading-announce {
-        font-size: 70px;
-        letter-spacing: 2px;
+        font-size: 7rem;
+        letter-spacing: 0.2rem;
         @media ( min-width: @screen-sm-min ) {
-            font-size: 120px;
-            letter-spacing: 4px;
+            font-size: 12rem;
+            letter-spacing: 0.4rem;
             line-height: ( 110 / 120 );
         }
         @media ( min-width: @screen-lg-min ) {
-            font-size: 170px;
-            letter-spacing: 8px;
+            font-size: 17rem;
+            letter-spacing: 0.8rem;
             line-height: ( 160 / 170 );
         }
     }
@@ -118,17 +118,17 @@ h2 {
         line-height: 1.2;
     }
     &.heading-announce {
-        font-size: 60px;
-        letter-spacing: 1px;
+        font-size: 6rem;
+        letter-spacing: 0.1rem;
         line-height: ( 55 / 60 );
         @media ( min-width: @screen-sm-min ) {
-            font-size: 80px;
-            letter-spacing: 3px;
+            font-size: 8rem;
+            letter-spacing: 0.3rem;
             line-height: ( 75 / 80 );
         }
         @media ( min-width: @screen-lg-min ) {
-            font-size: 120px;
-            letter-spacing: 6px;
+            font-size: 12rem;
+            letter-spacing: 0.6rem;
             line-height: ( 110 / 120 );
         }
     }
@@ -150,14 +150,14 @@ h4 {
 // Hero Headings
 .heading-hero {
     .text-architectural-5();
-    font-size: 45px;
+    font-size: 4.5rem;
     line-height: .8;
     text-transform: uppercase;
     @media ( min-width: @screen-sm-min ) {
-        font-size: 70px;
+        font-size: 7rem;
     }
     @media ( min-width: @screen-lg-min ) {
-        font-size: 80px;
+        font-size: 8rem;
     }
 }
 
@@ -174,15 +174,19 @@ h4 {
 .label-classification {
     &:extend( .h4 );
     &:extend( .heading-editorial );
-    border-bottom: 3px solid;
+    border-bottom: 0.3rem solid;
     display: inline-block;
-    margin-bottom: 20px;
-    padding-bottom: 6px;
+    margin-bottom: 2rem;
+    padding-bottom: 0.6rem;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Copy
 //----------------------------------------------------------------------------------------------------------------------
+.container {
+    font-size: @font-size-base;
+}
+
 p {
     margin: 0 0 @vertical-push;
 }
@@ -334,7 +338,7 @@ small,
 }
 // NOTE: Deprecated us .text-space-lg
 .spaced-body-text {
-    line-height: 24px;
+    line-height: 2.4;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -346,41 +350,41 @@ small,
 
 @text-with-right-icon-rei-external-link-ruleset: {
     & .icon-rei-external-link {
-        font-size: 0.7em;
-        padding-left: 8px;
+        font-size: 0.7rem;
+        padding-left: 0.8rem;
     }
 };.text-icon-external { @text-with-right-icon-rei-external-link-ruleset(); }
 
 @text-with-left-icon-rei-play-small-ruleset: {
     & .icon-rei-play-small {
-        font-size: 0.7em;
-        padding-right: 5px;
+        font-size: 0.7rem;
+        padding-right: 0.5rem;
     }
 };.text-icon-play { @text-with-left-icon-rei-play-small-ruleset(); }
 
 @text-with-icon-rei-right-arrow-ruleset: {
     & .icon-rei-right-arrow {
-        font-size: 0.5em;
-        padding-left: 2px;
+        font-size: 0.5rem;
+        padding-left: 0.2rem;
     }
 };.text-icon-right-arrow { @text-with-icon-rei-right-arrow-ruleset(); }
 
 @text-with-icon-rei-tree-arrow-ruleset: {
     & .icon-rei-tree-arrow {
-        padding-left: 10px;
+        padding-left: 1rem;
         vertical-align: text-bottom;
     }
 };.text-icon-tree-arrow { @text-with-icon-rei-tree-arrow-ruleset(); }
 
 @text-with-icon-rei-tree-arrow-button-ruleset: {
     & .icon-rei-tree-arrow {
-        padding-left: 3px;
+        padding-left: 0.3rem;
         vertical-align: text-bottom;
     }
 };
 @text-with-icon-rei-tree-arrow-button-sm-ruleset: {
     & .icon-rei-tree-arrow {
-        font-size: 20px;
+        font-size: 2rem;
         padding-left: 0;
     }
 };
@@ -394,7 +398,7 @@ abbr[title],
     // Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[data-original-title] {
     cursor: help;
-    border-bottom: 1px dotted @core-architectural-4;
+    border-bottom: 0.1rem dotted @core-architectural-4;
 }
 .initialism {
     font-size: 90%;
@@ -418,7 +422,7 @@ blockquote {
 // Opposite alignment of blockquote
 .blockquote-reverse,
 blockquote.pull-right {
-    padding-right: 15px;
+    padding-right: 1.5rem;
     padding-left: 0;
     text-align: right;
 }

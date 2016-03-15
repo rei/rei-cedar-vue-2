@@ -50,6 +50,6 @@
 // SIZE AND SHAPE
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@alert-padding:                                     15px;
+@alert-padding:                                     1.5rem;
 @alert-border-radius:                               0;
 @alert-link-font-weight:                            bold;

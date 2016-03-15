@@ -49,11 +49,11 @@
         line-height: ( @input-height-base );
         padding: 0 @padding-base-horizontal;
         .input-group-lg& {
-            height: ( @input-height-base + 10px );
-            line-height: ( @input-height-base + 10px );
+            height: ( @input-height-base + 1 );
+            line-height: ( @input-height-base + 1 );
         }
         & .icon {
-            line-height: ( @input-height-base - 2px ) ;
+            line-height: ( @input-height-base - 0.2 ) ;
         }
     }
 }
@@ -68,7 +68,7 @@
     text-align: center;
     border: solid 1px @input-border;
     & .icon {
-        line-height: ( @input-height-base - 2px ) ;
+        line-height: ( @input-height-base - 0.2 ) ;
     }
     &.input-sm {
         font-size: @font-size-small;
@@ -76,7 +76,7 @@
     }
     .input-group-lg &,
     &.input-lg {
-        height: ( @input-height-base + 10px );
+        height: ( @input-height-base + 1 );
         font-size: @font-size-large;
         padding: @padding-large-vertical @padding-large-horizontal;
     }
@@ -124,7 +124,7 @@
     > .btn {
         position: relative;
         + .btn {
-            margin-left: -1px;
+            margin-left: -0.1rem;
         }
         // Bring the "active" button to the front
         &:hover,
@@ -138,13 +138,13 @@
     &:first-child {
         > .btn,
         > .btn-group {
-            margin-right: -2px;
+            margin-right: -0.2rem;
         }
     }
     &:last-child {
         > .btn,
         > .btn-group {
-            margin-left: -1px;
+            margin-left: -0.1rem;
         }
     }
 }
