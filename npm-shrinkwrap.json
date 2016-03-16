@@ -1,6 +1,6 @@
 {
   "name": "rei-cedar",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "dependencies": {
     "a11y": {
       "version": "0.2.6",
