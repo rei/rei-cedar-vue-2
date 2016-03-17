@@ -1,3 +1,13 @@
+## 1.2.0  2016-03-19 Michael Hewson  <mhewson@rei.com.com>
+Features:
+- Move from bootstrap 3.6 float based grid to flex grid.
+Bugfixes:
+- Reset hamburger text size from 1.8rem to 2.4 rem.
+
+## 1.1.0  2016-03-9 Michael Hewson  <mhewson@rei.com.com>
+Features:
+- Move from px to rem.
+
 ## 1.0.0  2016-02-19 Michael Hewson  <mhewson@rei.com.com>
 Features:
  - Moves former ui-framework project to Github <https://github.com/rei/rei-cedar>
