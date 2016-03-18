@@ -210,6 +210,12 @@ gulp.task( 'accessibility:audit-exp', [
 ] );
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> master
 //      /$$      /$$                       /$$
 //     | $$$    /$$$                      | $$
 //     | $$$$  /$$$$  /$$$$$$   /$$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$
@@ -221,6 +227,17 @@ gulp.task( 'accessibility:audit-exp', [
 //
 //
 //
+<<<<<<< HEAD
+=======
+
+// This will run in this order:
+// * js and css in parallel
+// * docs
+// * Finally call the callback function
+gulp.task( 'master', function( callback ) {
+  runSequence( [ 'js', 'css' ], 'docs', callback );
+});
+>>>>>>> master
 
 // This will run in this order:
 // * js and css in parallel
@@ -257,6 +274,7 @@ gulp.task( 'css:build', [ 'css:clean' ], () => {
 
     lessc.on( 'error', err => {
         console.log( 'There was a problem compiling the LESS files...' );
+<<<<<<< HEAD
         throw new Error( err );
     } ); // Break on less compile errors
 
@@ -295,6 +313,50 @@ gulp.task( 'css:minify', [ 'css:build' ], () =>
         .pipe( minifyCss() )
         .pipe( gulp.dest( PATHS.DIST ) )
 );
+=======
+        var errObj = new Error( err );
+        console.log( errObj );
+        throw errObj;
+    } );  // Break on less compile errors
+
+    var lintLessReporter = cssLintLessReporter();
+
+    lintLessReporter.on('error', function (err) {
+
+      // TODO: decide whether to throw the error
+      if (SHOULD_STOP_FOR_LINT_FAILURE) {
+        throw err;
+      }
+    });
+
+    return gulp.src( [ path.join( PATHS.SRC, '/less/main.less' ) ] )
+        .pipe( sourcemaps.init() )
+        .pipe( rename( { basename: pkg.name } ) )   // Rename the bundle basename to $PROJECT_NAME-$VERSION
+        .pipe( lessc )                              // Build the dev bundle
+        .pipe( csslint() )
+        .pipe( lintLessReporter )
+        .pipe( csscomb() )
+        .pipe( postcss( [ autoprefixer( { browsers: [ 'last 2 versions' ] } ) ] ) )
+        .pipe( sourcemaps.write() )
+        .pipe( gulp.dest( PATHS.DIST ) );
+});
+
+// minify the css
+gulp.task( 'css:minify', [ 'css:build' ], function(){
+    return gulp.src( PATHS.DIST + '/rei-cedar.css' )
+        .pipe( rename( { suffix: '.min' } ) )       // Build the minified bundle
+        .pipe(
+            minifyCss( {
+                discardComments: {
+                    removeAll: true
+                },
+            } )
+        )
+        .pipe( gulp.dest( PATHS.DIST ) );
+});
+
+
+>>>>>>> master
 
 
 //         /$$$$$                                                             /$$             /$$
@@ -314,10 +376,32 @@ gulp.task( 'js:test:pre-clean', () => del( [ path.join( PATHS.TEST, '/tmp/js/*' 
 
 
 // Copy JS for testing
+<<<<<<< HEAD
 gulp.task( 'js:test:copy', [ 'js:test:pre-clean' ], () =>
     gulp.src( [ path.join( PATHS.SRC, '/js/**/*' ) ] )
         .pipe( gulp.dest( path.join( PATHS.TEST, '/tmp/js' ) ) )
 );
+=======
+gulp.task( 'js:test:copy', [ 'js:test:pre-clean' ], function() {
+    return gulp.src( [ PATHS.SRC + '/js/**/*' ] )
+        .pipe( gulp.dest( PATHS.TEST + '/tmp/js' ) );
+});
+
+
+// Compile the UI framework's Javascript --> ./dist. Include the minified version.
+gulp.task( 'js:build', [ 'js:test:post-clean' ], function() {
+    var bundleStream = browserify( PATHS.SRC + '/js/main.js' ).bundle();
+    return bundleStream
+        .pipe( source( PATHS.SRC + '/js/main.js' ) )
+        .pipe( streamify( sourcemaps.init() ) )
+        .pipe( rename( { dirname: '/', basename: 'rei-cedar' } ) )
+        .pipe( streamify( sourcemaps.write() ) )
+        .pipe( gulp.dest( PATHS.DIST ) )
+        .pipe( rename( { dirname: '/', basename: 'rei-cedar', suffix: '.min' } ) )
+        .pipe( streamify( uglify() ) )
+        .pipe( gulp.dest( PATHS.DIST ) );
+});
+>>>>>>> master
 
 
 // Browserify individual components for test
@@ -346,6 +430,7 @@ gulp.task( 'js:test:browserify-single-components', [ 'js:test:copy' ], done => {
 gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], () =>
     gulp.src( path.join( PATHS.TEST, '/tmp/js/tests/index.html' ) )
         // Get all test files and inject into index.html
+<<<<<<< HEAD
         .pipe( inject( gulp.src( [ path.join( PATHS.TEST, '/tmp/js/tests/unit/*.js' ) ], {
             read: false
         } ), {
@@ -368,6 +453,20 @@ gulp.task( 'js:test:qunit', [ 'js:test:inject' ], () =>
 // js:clean
 // Before clean/deletion, qunit is run to ensure new files will be written.
 gulp.task( 'js:clean', [ 'js:test:qunit' ], () => del( [ path.join( PATHS.DIST, '**/*.js' ) ] ) );
+=======
+        .pipe( inject( gulp.src( [ PATHS.TEST + '/tmp/js/tests/unit/*.js' ], { read: false } ), { name: 'tests', relative: true } ) )
+        .pipe( gulp.dest( PATHS.TEST + '/tmp/js/tests' ) );
+});
+
+
+// Qunit test the components
+
+gulp.task( 'js:test:qunit', [ 'js:test:inject' ], function () {
+    // Test that bad boy!
+    return gulp.src( PATHS.TEST + '/qunit/test-runner.html' )
+               .pipe( qunit( { 'binPath' : require( 'phantomjs2' ).path } ) );
+});
+>>>>>>> master
 
 
 // js:post-clean-test
