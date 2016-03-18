@@ -25,7 +25,7 @@
 
 .calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
     .col-@{class}-@{index} {
-        max-width: percentage((@index / @grid-columns));
+        width: percentage((@index / @grid-columns));
         flex: 0 0 percentage((@index / @grid-columns));
     }
 }
