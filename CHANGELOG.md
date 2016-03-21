@@ -1,3 +1,7 @@
+## 1.2.4  2016-03-18 Michael Hewson  <mhewson@rei.com.com>
+Features:
+- Toggle between float and flex grid by adding the row-flex class to existing rows
+
 ## 1.2.2  2016-03-18 Michael Hewson  <mhewson@rei.com.com>
 Bugfixes:
 - adding padding to container and -margin to row
