@@ -60,9 +60,6 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .make-row( @gutter: @grid-gutter-width; @gutter-sm: @grid-gutter-width-sm; @gutter-md: @grid-gutter-width-md; ) {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
     margin-left:  (@gutter/ -2);
     margin-right: (@gutter/ -2);
     @media( min-width: @screen-sm-min ) {
@@ -74,7 +71,11 @@
         margin-right: (@gutter-md / -2);
     }
 }
-
+.make-row-flex {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Extra Small Columns

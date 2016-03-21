@@ -34,6 +34,10 @@
 // Rows contain and clear the floats of your columns.
 .row {
     .make-row();
+    &:extend(.clearfix all);
+}
+.row-flex {
+    .make-row-flex();
 }
 
 // Columns
@@ -47,6 +51,7 @@
     position: relative;
     max-width: 100%;
     display: inline-block;
+    float: left;
 
     @media( min-width: @screen-sm-min ) {
         padding-left: @grid-gutter-width-sm / 2;
@@ -58,6 +63,10 @@
     }
 }
 
+.row.row-flex [class^=col-],
+.row.row-flex [class*=col-] {
+    float: none;
+}
 // Extra small grid
 //
 // Columns, offsets, pushes, and pulls for extra small devices like
