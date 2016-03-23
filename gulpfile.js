@@ -28,6 +28,7 @@ var csscomb             = require( 'gulp-csscomb' );
 var inject              = require( 'gulp-inject' );
 var uglify              = require( 'gulp-uglify' );
 var streamify           = require( 'gulp-streamify' );
+var cssmin              = require( 'gulp-cssmin' );
 var csslint             = require( 'gulp-csslint' );
 var qunit               = require( 'gulp-qunit' );
 var sourcemaps          = require( 'gulp-sourcemaps' );
@@ -42,7 +43,7 @@ var del                 = require( 'del' );
 var es                  = require( 'event-stream' );
 var runSequence         = require( 'run-sequence' );
 var spawn               = require( 'child_process' ).spawn;
-var npmImport        = require('less-plugin-npm-import');
+
 var pkg                 = require( './package.json' );
 
 
@@ -250,7 +251,7 @@ gulp.task( 'css:clean', () => del( [ path.join( PATHS.DIST, '**/*.css' ) ] ) );
 // Compile the UI framework's Less --> ./dist.
 gulp.task( 'css:build', [ 'css:clean' ], () => {
 
-    const lessc = less( { paths: [ PATHS.LESS ], plugins:[new npmImport()]} ).on( 'error', err => {
+    const lessc = less( { paths: [ PATHS.LESS ] } ).on( 'error', err => {
         console.log( 'There was a problem compiling the LESS files...' );
         throw new Error( err );
     } ); // Break on less compile errors
@@ -502,7 +503,7 @@ gulp.task( 'docs:csscomb-examples', [ 'docs:clean', 'docs:copy-all' ], () =>
 
 gulp.task( 'docs:cssmin-css', [ 'docs:clean', 'docs:copy-all' ], () =>
     gulp.src( PATHS.DOCS_DIST + '/assets/css/src/*.css' )
-        .pipe( minifyCss() )
+        .pipe( cssmin() )
         .pipe( rename( {
             dirname: '/',
             suffix: '.min'
@@ -512,7 +513,7 @@ gulp.task( 'docs:cssmin-css', [ 'docs:clean', 'docs:copy-all' ], () =>
 
 // Build docs CSS and copy into docs src directory
 gulp.task( 'docs:less:compile', [ 'docs:clean', 'docs:copy-all' ], () => {
-    const lessc = less( { paths: [ PATHS.LESS ], plugins:[new npmImport()]} ).on( 'error', err => {
+    const lessc = less( { paths: [ PATHS.LESS ] } ).on( 'error', err => {
         console.log( 'There was a problem compiling the LESS files...' );
         throw new Error( err );
     } ); // Break on less compile errors

@@ -1703,23 +1703,6 @@
         }
       }
     },
-    "less-plugin-npm-import": {
-      "version": "2.1.0",
-      "from": "less-plugin-npm-import@latest",
-      "resolved": "https://registry.npmjs.org/less-plugin-npm-import/-/less-plugin-npm-import-2.1.0.tgz",
-      "dependencies": {
-        "asap": {
-          "version": "2.0.3",
-          "from": "asap@>=2.0.3 <2.1.0",
-          "resolved": "https://registry.npmjs.org/asap/-/asap-2.0.3.tgz"
-        },
-        "promise": {
-          "version": "7.0.4",
-          "from": "promise@>=7.0.1 <7.1.0",
-          "resolved": "https://registry.npmjs.org/promise/-/promise-7.0.4.tgz"
-        }
-      }
-    },
     "lexical-scope": {
       "version": "1.2.0",
       "from": "lexical-scope@>=1.2.0 <2.0.0",
@@ -2061,11 +2044,6 @@
       "version": "1.4.0",
       "from": "normalize-url@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/normalize-url/-/normalize-url-1.4.0.tgz"
-    },
-    "normalize.css": {
-      "version": "4.0.0",
-      "from": "normalize.css@latest",
-      "resolved": "https://registry.npmjs.org/normalize.css/-/normalize.css-4.0.0.tgz"
     },
     "npmconf": {
       "version": "2.1.1",
