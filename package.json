@@ -23,8 +23,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "jquery2": "2.0.3",
-    "normalize.css": "^4.0.0"
+    "jquery2": "2.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
