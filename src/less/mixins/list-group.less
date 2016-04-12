@@ -10,7 +10,7 @@
     @list-group-item-scaffolding:           @default-item-ruleset;
     @list-group-item-secondary-scaffolding: @default-item-secondary-ruleset;
 ) {
-    .list-unstyled();
+    &:extend( .list-unstyled );
     @list-group-scaffolding();
     li {
         list-style: none;

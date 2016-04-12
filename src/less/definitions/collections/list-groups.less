@@ -30,21 +30,23 @@
 };
 
 @list-group-toggle-ruleset: {
-& > label {
-    .text-capitalize();
-    .text-sub-heading();
-    padding: 1.4rem 1.6rem;
-    &:hover,
-    &:focus,
-    &.active {
-    text-decoration: none;
-    background-color: @list-group-bg;
+  & > label {
+      &:extend( .text-capitalize );
+      &:extend( .text-sub-heading );
+      padding: 1.4rem 1.6rem;
+      &:hover,
+      &:focus,
+      &.active {
+      text-decoration: none;
+      background-color: @list-group-bg;
+    }
   }
-}
-& > [type="checkbox"]:focus + label:before,
-& > [type="radio"]:focus + label:before {
-  box-shadow: none;
-}
+  & > [type="checkbox"],
+  & > [type="radio"]{
+    &:focus + label:before {
+      box-shadow: none;
+    }
+  }
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // list-group: default rulesets
@@ -58,7 +60,7 @@
     border-bottom: 0.1rem solid @list-group-border;
     //sort option
     > a {
-        .link_navigation-subtitle();
+        &:extend( .link_navigation-subtitle );
         padding: 1.1rem @padding-base-horizontal;
         &:hover, &:focus, &.active  {
             text-decoration: none;
@@ -72,7 +74,7 @@
     border-top: 0.1rem solid @list-group-border;
     padding: 0.1rem @padding-base-horizontal 0.7rem  ( @padding-base-horizontal + 0.8 );
     > a {
-        .link_navigation();
+        &:extend( .link_navigation );
     }
     &:last-of-type{
         padding-bottom: @padding-large-horizontal;
@@ -150,7 +152,7 @@
     border-top: 0.1rem solid @list-group-border;
     background-color: @navigation-menu-2;
     > a {
-        .link_navigation-subtitle-overlay();
+        &:extend( .link_navigation-subtitle-overlay );
         padding: 1.1rem @padding-base-horizontal;
         background-color: @navigation-menu-2;
         border-bottom-color: #333;
@@ -167,23 +169,24 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // list-group
 .list-group {
-    .list-group-variant();
-}
-// Filter menu
-.list-group-filter {
-    .list-group-variant (
-        @menu-filter-list-group-wrapper-ruleset;
-        @menu-filter-item-ruleset;
-        @menu-filter-item-secondary-ruleset;
-    );
-}
-// Navigation menu
-.list-group-menu {
-    .list-group-variant (
-        @menu-navigation-list-group-wrapper-ruleset;
-        @menu-navigation-item-ruleset;
-        @menu-navigation-item-secondary-ruleset;
-    );
+    &:extend( .list-group-variant all );
+
+  // Filter menu
+  &-filter {
+      .list-group-variant (
+          @menu-filter-list-group-wrapper-ruleset;
+          @menu-filter-item-ruleset;
+          @menu-filter-item-secondary-ruleset;
+      );
+  }
+  // Navigation menu
+  &-menu {
+      .list-group-variant (
+          @menu-navigation-list-group-wrapper-ruleset;
+          @menu-navigation-item-ruleset;
+          @menu-navigation-item-secondary-ruleset;
+      );
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

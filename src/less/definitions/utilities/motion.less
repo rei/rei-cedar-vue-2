@@ -3,24 +3,24 @@
 // Usage : Combining a control + toggle + list with a checkbox element in each parent list item = complete component.
 
 .collapsibleList {
-  & > [type="checkbox"]:focus + label:before {
-    box-shadow: none;
-  }
-  & > [type="checkbox"] ~ .nest {
-    display: none;
-  }
-
-  & > [type="checkbox"]:checked ~ .nest {
-    display: block;
-  }
-
   & > [type="checkbox"] {
     height: 0;
     position: absolute;
     right: 0;
     top: 0;
-  }
 
+    &:focus + label:before {
+      box-shadow: none;
+    }
+
+    ~ .nest {
+      display: none;
+    }
+
+    &:checked ~ .nest {
+      display: block;
+    }
+  }
   & > label {
     cursor: pointer;
   }

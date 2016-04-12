@@ -1,6 +1,9 @@
 .rei-container,
 .rei-content-full {
-  .container();
+  &,
+  &-full {
+    &:extend( .container );
+  }
 }
 
 // TODO Remove when bootstrap is removed from REI.com

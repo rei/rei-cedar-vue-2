@@ -32,7 +32,6 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .btn {
-    .btn-lg();
     border: 0.1rem solid transparent;
     cursor: pointer;
     display: inline-block;
@@ -42,6 +41,7 @@
     vertical-align: middle;
     user-select: none;
     white-space: nowrap;
+    &:extend( btn-lg );
     @media all and ( min-width: 60rem ) {
         & + & {
             margin-left: ( @group-push / 2 );
@@ -49,19 +49,19 @@
     }
     @media ( max-width: @screen-xs-max ) {
         &:not( .btn-fixed ) {
-           .btn-block();
+           &:extend( .btn-block );
         }
     }
     .input-group-btn &,
-    .form-inline &{
+    .form-inline & {
         // modified if contained within this parent class
-        .btn-sm();
+        &:extend( .btn-sm );
     }
     .form-inline & {
         // modified if contained within this parent class
         vertical-align: bottom;
         @media ( max-width: @screen-xs-max ) {
-            .btn-lg();
+            &:extend( .btn-lg );
             vertical-align: inherit;
         }
     }
@@ -77,178 +77,196 @@
         background-image: none;
     }
     @text-with-icon-rei-tree-arrow-button-ruleset();
-}
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Theme
-//
-// define primary and default color for in-active, active, hover, and focus
-//
-//----------------------------------------------------------------------------------------------------------------------
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Core
-// ---------------------------------------------------------------------------------------------------------------------
-.btn-primary {
-    .button-variant( @btn-primary-color; @btn-primary-bg; @btn-primary-border; @btn-primary-active-bg; @btn-primary-active-border; );
-}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Button Link
+    //
+    // Make a button look and behave like a link
+    // ---------------------------------------------------------------------------------------------------------------------
+    &-link {
+        &:extend( .link_stag all);
+        .overlay-dark & {
+            &:extend( .link_stag-overlay all);
+        }
+        &,
+        &:active,
+        &.active,
+        &[disabled],
+        fieldset[disabled] & {
+            background-color: transparent;
+        }
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: transparent;
+        }
+        &:hover,
+        &:focus {
+            background-color: transparent;
+        }
+        &[disabled],
+        fieldset[disabled] & {
+            &:hover,
+            &:focus {
 
-.btn-default {
-    .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-active-border; @btn-default-active-color; );
-    .input-group-btn & {
-        .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-border; @btn-default-active-color; );
+                color: @btn-link-disabled-color;
+                text-decoration: none;
+            }
+        }
     }
-}
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Explore
-// ---------------------------------------------------------------------------------------------------------------------
-.btn-explore {
-    &.btn-primary {
-        .button-variant( @btn-explore-color; @btn-explore-bg; @btn-explore-border; @btn-explore-active-bg; @btn-explore-active-border; );
-    }
-}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Theme
+    //
+    // define primary and default color for in-active, active, hover, and focus
+    //
+    //----------------------------------------------------------------------------------------------------------------------
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// High Contrast
-// ---------------------------------------------------------------------------------------------------------------------
-.btn-contrast {
-    &.btn-primary {
-        .button-variant( @btn-high-contrast-color; @btn-high-contrast-bg; @btn-high-contrast-border; @btn-high-contrast-active-bg; @btn-high-contrast-active-border; );
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Core
+    // ---------------------------------------------------------------------------------------------------------------------
+    &-primary {
+        .button-variant( @btn-primary-color; @btn-primary-bg; @btn-primary-border; @btn-primary-active-bg; @btn-primary-active-border; );
     }
-    &.btn-default {
-        .button-variant( @btn-default-color; @btn-default-bg; @btn-default-bg; @btn-default-active-bg; @btn-default-bg; @btn-default-active-color; );
+
+    &-default {
+        .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-active-border; @btn-default-active-color; );
         .input-group-btn & {
             .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-border; @btn-default-active-color; );
         }
     }
-}
-
-.btn-outline-alternate {
-    &.btn-primary {
-        .button-variant( @btn-outline-color; @btn-outline-bg; @btn-outline-border; @btn-outline-active-bg; @btn-outline-active-border; );
-        &:hover,
-        &:active,
-        &.active,
-        &:focus,
-        &.focus {
-            @alpha-ruleset();
-        }
-        &.disabled,
-        &[disabled] {
-            display: none;
-        }
-    }
-}
-
-.btn-outlet {
-    &.btn-primary {
-        .button-variant( @btn-outlet-color; @btn-outlet-bg; @btn-outlet-border; @btn-outlet-active-bg; @btn-outlet-active-border; );
-    }
-    &.btn-default {
-        .button-variant( @btn-outlet-default-color; @btn-outlet-default-bg; @btn-outlet-default-border; @btn-outlet-default-active-bg; @btn-outlet-default-active-border; );
-    }
-}
-
-.btn-off-price {
-    &.btn-primary {
-        .button-variant( @btn-off-price-color; @btn-off-price-bg; @btn-off-price-border; @btn-off-price-active-bg; @btn-off-price-active-border; );
-    }
-    &.btn-default {
-        .button-variant( @btn-off-price-default-color; @btn-off-price-default-bg; @btn-off-price-default-border; @btn-off-price-default-active-bg; @btn-off-price-default-active-border; );
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Button Link
-// Make a button look and behave like a link
-// ---------------------------------------------------------------------------------------------------------------------
-// TODO: refactor, move into base and theme selectors above
-.btn-link {
-    &:extend( .link_stag all);
-    .overlay-dark & {
-        &:extend( .link_stag-overlay all);
-    }
-    &,
-    &:active,
-    &.active,
-    &[disabled],
-    fieldset[disabled] & {
-        background-color: transparent;
-    }
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-        border-color: transparent;
-    }
-    &:hover,
-    &:focus {
-        background-color: transparent;
-    }
-    &[disabled],
-    fieldset[disabled] & {
-        &:hover,
-        &:focus {
-
-            color: @btn-link-disabled-color;
-            text-decoration: none;
-        }
-    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Explore
+    // ---------------------------------------------------------------------------------------------------------------------
     &-explore {
+        &.btn-primary {
+            .button-variant( @btn-explore-color; @btn-explore-bg; @btn-explore-border; @btn-explore-active-bg; @btn-explore-active-border; );
+        }
+    }
+    &-link-explore {
         background-color: inherit;
         &:extend( .link_stag-explore all);
         .overlay-dark & {
             &:extend( .link_stag-explore-overlay all);
         }
     }
-    &-off-price {
-        background-color: inherit;
-        &:extend( .link-off-price-standalone-overlay all);
-        .overlay-dark & {
-             &:extend( .link_stag-explore-overlay all);
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Outlet
+    // ---------------------------------------------------------------------------------------------------------------------
+    &-outlet {
+        &.btn-primary {
+            .button-variant( @btn-outlet-color; @btn-outlet-bg; @btn-outlet-border; @btn-outlet-active-bg; @btn-outlet-active-border; );
+        }
+        &.btn-default {
+            .button-variant( @btn-outlet-default-color; @btn-outlet-default-bg; @btn-outlet-default-border; @btn-outlet-default-active-bg; @btn-outlet-default-active-border; );
         }
     }
-    &-outlet {
+    &-link-outlet {
         background-color: inherit;
         &:extend( .link-outlet-standalone-overlay all);
         .overlay-dark & {
             &:extend( .link_stag-explore-overlay all);
         }
     }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Off-price
+    // ---------------------------------------------------------------------------------------------------------------------
+    &-off-price {
+        &.btn-primary {
+            .button-variant( @btn-off-price-color; @btn-off-price-bg; @btn-off-price-border; @btn-off-price-active-bg; @btn-off-price-active-border; );
+        }
+        &.btn-default {
+            .button-variant( @btn-off-price-default-color; @btn-off-price-default-bg; @btn-off-price-default-border; @btn-off-price-default-active-bg; @btn-off-price-default-active-border; );
+        }
+    }
+    &-link-off-price {
+        background-color: inherit;
+        &:extend( .link-off-price-standalone-overlay all);
+        .overlay-dark & {
+             &:extend( .link_stag-explore-overlay all);
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // High Contrast
+    // ---------------------------------------------------------------------------------------------------------------------
+    &-contrast {
+        &.btn-primary {
+            .button-variant( @btn-high-contrast-color; @btn-high-contrast-bg; @btn-high-contrast-border; @btn-high-contrast-active-bg; @btn-high-contrast-active-border; );
+        }
+        &.btn-default {
+            .button-variant( @btn-default-color; @btn-default-bg; @btn-default-bg; @btn-default-active-bg; @btn-default-bg; @btn-default-active-color; );
+            .input-group-btn & {
+                .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-border; @btn-default-active-color; );
+            }
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Outline
+    // ---------------------------------------------------------------------------------------------------------------------
+    &-outline-alternate {
+        &.btn-primary {
+            .button-variant( @btn-outline-color; @btn-outline-bg; @btn-outline-border; @btn-outline-active-bg; @btn-outline-active-border; );
+            &:hover,
+            &:active,
+            &.active,
+            &:focus,
+            &.focus {
+                @alpha-ruleset();
+            }
+            &.disabled,
+            &[disabled] {
+                display: none;
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Size and Font
+    //
+    // define btn-lg, btn-sm, btn-xs, Block button
+    //
+    //----------------------------------------------------------------------------------------------------------------------
+    &-lg {
+        // line-height: ensure even-numbered height of button next to large input
+        .button-size( @padding-large-vertical; @padding-large-horizontal; @btn-font-size-lg; @btn-line-height; @headings-font-family; );
+    }
+
+    &-sm {
+        // line-height: ensure proper height of button next to small input
+        .button-size( @padding-small-vertical; @padding-small-horizontal; @font-size-large; @line-height-small; );
+        @text-with-icon-rei-tree-arrow-button-sm-ruleset();
+    }
+
+    &-xs {
+        .button-size( @padding-xs-vertical; @padding-xs-horizontal; @font-size-smaller; @line-height-small; );
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Block button
+    // ---------------------------------------------------------------------------------------------------------------------
+    &-block {
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+        & + & {
+            margin-left: 0;
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Size and Font
-//
-// define btn-lg, btn-sm, btn-xs, Block button
-//
-//----------------------------------------------------------------------------------------------------------------------
-.btn-lg {
-    // line-height: ensure even-numbered height of button next to large input
-    .button-size( @padding-large-vertical; @padding-large-horizontal; @btn-font-size-lg; @btn-line-height; @headings-font-family; );
-}
-
-.btn-sm {
-    // line-height: ensure proper height of button next to small input
-    .button-size( @padding-small-vertical; @padding-small-horizontal; @font-size-large; @line-height-small; );
-    @text-with-icon-rei-tree-arrow-button-sm-ruleset();
-}
-
-.btn-xs {
-    .button-size( @padding-xs-vertical; @padding-xs-horizontal; @font-size-smaller; @line-height-small; );
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Block button
+// Specificity Overrides
 // ---------------------------------------------------------------------------------------------------------------------
-.btn-block {
-    display: block;
-    width: 100%;
-    margin-bottom: 2rem;
-    & + & {
-        margin-left: 0;
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block {
+        width: 100%;
     }
 }
 
@@ -289,17 +307,6 @@
             margin-left: 0;
             margin-right: 2rem;
         }
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Specificity Overrides
-// ---------------------------------------------------------------------------------------------------------------------
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-    &.btn-block {
-        width: 100%;
     }
 }
 
