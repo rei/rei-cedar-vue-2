@@ -146,7 +146,8 @@
 
 
 .img-frame ( @aspect; @crop; @anchor ) {
-    &:extend( .utility-aspect-ratio );
+    position: relative;
+    overflow: hidden;
 }
 
 .img-frame ( @aspect; @crop: true; @anchor ) when ( ispixel( @crop ) ){
