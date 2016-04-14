@@ -25,7 +25,15 @@
     <div class="overlay-dark-1 ui-navigation">
         <div class="container">
             <div class="row">
-                <a class="btn btn-block btn-contrast btn-primary hidden-md hidden-lg" data-toggle="collapse" data-target="#pattern_navigation"><span class="icon icon-rei-hamburger-menu"></span></a>
+                <a class="btn btn-block btn-contrast btn-primary hidden-md hidden-lg"
+                   data-toggle="collapse"
+                   data-target="#pattern_navigation"
+                   aria-label="Menu"
+                   role="button"
+                   aria-controls="navigation" >
+                    <span class="icon icon-rei-hamburger-menu"></span>
+                    <span class="sr-only">Menu</span>
+                </a>
                 <nav id="pattern_navigation" role="navigation" class="col-md-offset-1 col-md-11 collapse">
                     {% include markup-templates/navigation/main.html %}
                 </nav>
