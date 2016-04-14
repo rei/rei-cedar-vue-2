@@ -63,10 +63,13 @@
     }
 }
 
-.row.row-flex [class^=col-],
-.row.row-flex [class*=col-] {
-    float: none;
+.row.row-flex {
+    [class^=col-],
+    [class*=col-] {
+        float: none;
+    }
 }
+
 // Extra small grid
 //
 // Columns, offsets, pushes, and pulls for extra small devices like
