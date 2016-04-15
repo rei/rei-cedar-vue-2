@@ -27,6 +27,7 @@
     .col-@{class}-@{index} {
         width: percentage((@index / @grid-columns));
         flex: 0 1 auto;
+        min-width: 0;
     }
 }
 .calc-grid-column(@index, @class, @type) when (@type = push) and (@index > 0) {
