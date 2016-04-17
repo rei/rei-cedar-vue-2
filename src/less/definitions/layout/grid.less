@@ -34,7 +34,9 @@
 // Rows contain and clear the floats of your columns.
 .row {
     .make-row();
-    &:extend(.clearfix all);
+    &:not(.row-flex) {
+        &:extend(.clearfix all);
+    }
 }
 .row-flex {
     .make-row-flex();
@@ -49,7 +51,7 @@
 [class^=col-],
 [class*=col-] {
     position: relative;
-    max-width: 100%;
+    width: 100%;
     display: inline-block;
     float: left;
 
