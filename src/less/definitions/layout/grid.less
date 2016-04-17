@@ -34,7 +34,9 @@
 // Rows contain and clear the floats of your columns.
 .row {
     .make-row();
-    &:extend(.clearfix all);
+    &:not(.row-flex) {
+        &:extend(.clearfix all);
+    }
 }
 .row-flex {
     .make-row-flex();
