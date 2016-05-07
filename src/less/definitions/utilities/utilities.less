@@ -307,34 +307,6 @@
             }
         }
     }
-    &-2-3 {
-        .utility-aspect-ratio( 2/3 );
-        &.content {
-            &-top {
-                .utility-aspect-ratio( 2/3, top );
-            }
-            &-center {
-                .utility-aspect-ratio( 2/3, center );
-            }
-            &-bottom {
-                .utility-aspect-ratio( 2/3, bottom );
-            }
-        }
-    }
-    &-3-2 {
-        .utility-aspect-ratio( 3/2 );
-        &.content {
-            &-top {
-                .utility-aspect-ratio( 3/2, top );
-            }
-            &-center {
-                .utility-aspect-ratio( 3/2, center );
-            }
-            &-bottom {
-                .utility-aspect-ratio( 3/2, bottom );
-            }
-        }
-    }
     &-1-2 {
         .utility-aspect-ratio( 1/2 );
         &.content {
@@ -360,6 +332,34 @@
             }
             &-bottom {
                 .utility-aspect-ratio( 2, bottom );
+            }
+        }
+    }
+    &-2-3 {
+        .utility-aspect-ratio( 2/3 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 2/3, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 2/3, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 2/3, bottom );
+            }
+        }
+    }
+    &-3-2 {
+        .utility-aspect-ratio( 3/2 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 3/2, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 3/2, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 3/2, bottom );
             }
         }
     }
@@ -424,24 +424,26 @@
   /* Application Classes */
 .ratio {
 
-    &,
-    &-xs {
-       @ratio-rules( );
-    }
+  &,
+  &-xs {
+     @ratio-rules( );
+  }
 
-    &-sm {
-      @media ( min-width: @screen-sm-min ) {
-        @ratio-rules( );
-      }
+  &-sm {
+    @media ( min-width: @screen-sm-min ) {
+      @ratio-rules( );
     }
-    &-md {
-      @media ( min-width: @screen-md-min ) {
-        @ratio-rules( );
-      }
+  }
+
+  &-md {
+    @media ( min-width: @screen-md-min ) {
+      @ratio-rules( );
     }
-    &-lg {
-      @media ( min-width: @screen-lg-min ) {
-        @ratio-rules( );
-      }
+  }
+  
+  &-lg {
+    @media ( min-width: @screen-lg-min ) {
+      @ratio-rules( );
     }
+  }
 }
