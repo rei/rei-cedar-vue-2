@@ -125,10 +125,12 @@
 .media-scale ( @crop: true; @aspect: landscape ) when ( @crop )
                                                and ( @aspect = landscape ){
   height: 100%;
+  width: auto;
 }
 
 .media-scale ( @crop: true; @aspect ) when ( @crop )
                                     and ( @aspect = portrait ){
+  height: auto;
   width: 100%;
 }
 
