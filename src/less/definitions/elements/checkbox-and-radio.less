@@ -30,7 +30,7 @@
 .radio,
 .checkbox {
     &:extend( .label-narrow all );
-    margin: 0 0 @vertical-push ( @padding-base-horizontal + 4.25px );
+    margin: 0 0 @vertical-push ( @padding-base-horizontal + 0.425rem );
     .form-inline & {
         display: inline-block;
     }
@@ -41,18 +41,18 @@
 @control-standard: {
     border: none;
     clip: rect( 0 0 0 0 );
-    height: 1px;
-    margin: -1px;
+    height: 0.1rem;
+    margin: -0.1rem;
     overflow: hidden;
     padding: 0;
     position: absolute;
-    width: 1px;
+    width: 0.1rem;
     &[ disabled ] {
         + label {
             color: @disabled-color;
             cursor: @cursor-disabled;
             &:before {
-                box-shadow: 0 0 0 1px @disabled-color;
+                box-shadow: 0 0 0 0.1rem @disabled-color;
             }
         }
     }
@@ -61,7 +61,7 @@
     cursor: pointer;
     display: block;
     margin-bottom: 0;
-    min-height: 16px;
+    min-height: 1.6rem;
     padding-left: 0;
 };
 @control-standard-element-and-label: {
@@ -69,37 +69,37 @@
     color: inherit;
     position: relative;
     .required & {
-        left: 35px;
+        left: 3.5rem;
         position: relative;
         &:after {
-            left: -14px;
+            left: -1.4rem;
             position: absolute;
         }
         &:before {
-            left: -35px;
+            left: -3.5rem;
             position: absolute;
-            top: 5px
+            top: 0.5rem
         }
     }
 };
 @control-standard-element-and-label-before: {
     content: '';
-    border: 2px solid @core-architectural-5;
-    box-shadow: 0 0 0 1px @text-color;
+    border: 0.2rem solid @core-architectural-5;
+    box-shadow: 0 0 0 0.1rem @text-color;
     display: inline-block;
-    height: 12px;
-    left: -( @padding-base-horizontal + 4.25px );
+    height: 1.2rem;
+    left: -( @padding-base-horizontal + 0.425rem );
     margin-right: @padding-large-horizontal/ 2 ;
     position: absolute;
-    top: 4px;
-    width: 12px;
+    top: 0.4rem;
+    width: 1.2rem;
     .has-error & {
-        color: @utility-error;
+        box-shadow: 0 0 0 0.1rem @utility-error;
         background: @alert-danger-bg;
     }
     .disabled&,
     fieldset[disabled] & {
-        color: @disabled-color;
+        box-shadow: 0 0 0 0.1rem @disabled-color;
     }
 };
 @control-standard-element-and-label-empty-before: {
@@ -108,7 +108,7 @@
 
 .radio,
 .checkbox {
-    margin: 0 0 @vertical-push ( @padding-base-horizontal + 7px );
+    margin: 0 0 @vertical-push ( @padding-base-horizontal + 0.7rem );
     .form-inline & {
         display: inline-block;
     }
@@ -135,9 +135,9 @@
         @control-standard-element-and-label();
         &:before {
             @control-standard-element-and-label-before();
-            border-radius: 16px;
-            box-shadow: 0 0 0 1.25px @text-color;
-            vertical-align: -2px;
+            border-radius: 1.6rem;
+            box-shadow: 0 0 0 0.125rem @text-color;
+            vertical-align: -0.2rem;
         }
         &:empty:before {
             @control-standard-element-and-label-empty-before();
@@ -149,11 +149,11 @@
     }
     > [type="radio"]:focus + label:before {
         .utility-focus-state();
-        border: 1px solid @core-action-2;
+        border: 0.1rem solid @core-action-2;
     }
     [type="radio"]:active + label:before {
         outline: none;
-        border: 1px solid @core-action-2;
+        border: 0.1rem solid @core-action-2;
     }
 }
 
@@ -174,6 +174,7 @@
         @control-standard-element-and-label();
         &:before {
             @control-standard-element-and-label-before();
+            box-shadow: 0 0 0 0.1rem @text-color;
         }
         &:empty:before {
             @control-standard-element-and-label-empty-before();
@@ -185,11 +186,11 @@
     }
     [type="checkbox"]:focus + label:before {
         .utility-focus-state();
-        border: 1px solid @core-action-2;
+        border: 0.1rem solid @core-action-2;
     }
     [type="checkbox"]:active + label:before {
         outline: none;
-        border: 1px solid @core-action-2;
+        border: 0.1rem solid @core-action-2;
     }
 }
 
@@ -203,8 +204,8 @@
     > [ type="radio" ] + label:before {
         border: none;
         box-shadow: none;
-        height: 18px;
-        width: 18px;
+        height: 1.8rem;
+        width: 1.8rem;
         font-family: 'rei-icons';
         speak: none;
         font-style: normal;

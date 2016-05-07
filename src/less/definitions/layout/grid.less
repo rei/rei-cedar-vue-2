@@ -4,11 +4,9 @@
 
 // Container widths
 //
-// Set the container width, and override it for fixed navbars in media queries.
+// Set the container width
 .container {
-    max-width: @screen-lg;
     .container-fixed(@grid-gutter-width);
-
     @media( min-width: @screen-sm-min ) {
         .container-fixed(@grid-gutter-width-sm);
     }
@@ -21,13 +19,27 @@
 //
 // Utilizes the mixin meant for fixed width containers, but without any defined
 // width for fluid, full width layouts.
-.container-fluid:extend(.container all){}
+.container-fluid{
+    .container-fluid();
+    @media( min-width: @screen-sm-min ) {
+        .container-fluid(@grid-gutter-width-sm);
+    }
+    @media( min-width: @screen-md-min ) {
+        .container-fluid(@grid-gutter-width-md);
+    }
+}
 
 // Row
 //
 // Rows contain and clear the floats of your columns.
 .row {
     .make-row();
+    &:not(.row-flex) {
+        &:extend(.clearfix all);
+    }
+}
+.row-flex {
+    .make-row-flex();
 }
 
 // Columns
@@ -38,6 +50,11 @@
 // Breakpoint-specific padding
 [class^=col-],
 [class*=col-] {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    float: left;
+
     @media( min-width: @screen-sm-min ) {
         padding-left: @grid-gutter-width-sm / 2;
         padding-right: @grid-gutter-width-sm / 2;
@@ -48,6 +65,10 @@
     }
 }
 
+.row.row-flex [class^=col-],
+.row.row-flex [class*=col-] {
+    float: none;
+}
 // Extra small grid
 //
 // Columns, offsets, pushes, and pulls for extra small devices like
@@ -75,4 +96,3 @@
 @media (min-width: @screen-lg-min) {
     .make-grid(lg);
 }
-

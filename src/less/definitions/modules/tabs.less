@@ -57,7 +57,7 @@
 .nav-tabs {
     &:extend( .list-nav all );
     &:extend( .text-sub-heading );
-    border-bottom: 1px solid @nav-tabs-border-color;
+    border-bottom: 0.1rem solid @nav-tabs-border-color;
     padding-left: @padding-base-horizontal;
     > li {
         display: inline-block;
@@ -69,12 +69,12 @@
             .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration; );
         }
         &.active {
-            bottom: -1px;
+            bottom: -0.1rem;
             position: relative;
             > a {
                 &, &:hover, &:focus {
                     background-color: @nav-tabs-active-link-hover-bg;
-                    border: 1px solid @nav-tabs-active-link-hover-border-color;
+                    border: 0.1rem solid @nav-tabs-active-link-hover-border-color;
                     border-bottom-color: transparent;
                     border-bottom-style: initial;
                     color: @text-color;
@@ -104,7 +104,7 @@
     > li {
         > a {
             &:extend( .link_navigation-subtitle all );
-            border-bottom: 1px solid @list-group-border;
+            border-bottom: 0.1rem solid @list-group-border;
             line-height: @line-height-base;
             &:hover, &:focus {
                 background-color: @nav-link-hover-bg;

@@ -8,10 +8,10 @@
     .well {
         border: none !important;
     }
-    padding-top: 60px;
-    padding-bottom: 60px;
-    margin-top: 60px;
-    border-top: 1px solid #e5e5e5;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-top: 6rem;
+    border-top: 0.1rem solid #e5e5e5;
     .list-text {
         .nested {
             &:extend( .link-sub-navigation );
@@ -20,20 +20,20 @@
     .footer-inline-list {
         .list-text();
         position: relative;
-        border-top: 1px solid #333;
-        padding-top: 40px;
-        margin-top: 40px;
+        border-top: 0.1rem solid #333;
+        padding-top: 4rem;
+        margin-top: 4rem;
         > li {
             display: block;
         }
         &:after {
             position: absolute;
-            top: -35px;
-            right: 17px;
+            top: -3.5rem;
+            right: 1.7rem;
             content:"";
             background: url(http://www.rei.com/img/footer/trees.svg) 73% 100%/8em no-repeat;
-            height: 50px;
-            width: 100px;
+            height: 5rem;
+            width: 10rem;
         }
         @media ( min-width: @screen-sm-min ) {
             .list-inline();
@@ -45,17 +45,17 @@
 }
 .bs-docs-footer-links {
     padding-left: 0;
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 .bs-docs-footer-links li {
     display: inline;
-    padding: 0 2px;
+    padding: 0 0.2rem;
 }
 .bs-docs-footer-links li:first-child {
     padding-left: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: @screen-sm-min) {
     .bs-docs-footer p {
         margin-bottom: 0;
     }

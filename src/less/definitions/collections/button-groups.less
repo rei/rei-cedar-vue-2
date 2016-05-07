@@ -38,7 +38,7 @@
     .btn + .btn-group,
     .btn-group + .btn,
     .btn-group + .btn-group {
-        margin-left: -1px;
+        margin-left: -0.1rem;
     }
 }
 
@@ -86,7 +86,7 @@
     > .btn + .btn-group,
     > .btn-group + .btn,
     > .btn-group + .btn-group {
-        margin-top: -1px;
+        margin-top: -0.1rem;
         margin-left: 0;
     }
 }
@@ -149,30 +149,29 @@
         margin: 0 -( @group-push / 2 );
     }
     .btn {
-        margin: 0 0 20px;
+        margin: 0 0 2rem;
         float: left;
         &.btn-fixed {
-            margin: 0 ( @group-push / 2 ) 20px;
+            margin: 0 ( @group-push / 2 ) 2rem;
         }
         @media( min-width: @screen-sm-min ) {
-            margin: 0 ( @group-push / 2 ) 20px;
+            margin: 0 ( @group-push / 2 ) 2rem;
             float: none;
         }
     }
     &.ig-sm.btn-group {
-            & .btn {
-                &.btn-fixed {
-                    margin: 0 ( @group-push / 2 ) 10px;
-                }
-                @media( min-width: @screen-sm-min ) {
-                    margin: 0 ( @group-push / 2 ) 10px;
-                }
+        & .btn {
+            &.btn-fixed {
+                margin: 0 ( @group-push / 2 ) 1rem;
+            }
+            @media( min-width: @screen-sm-min ) {
+                margin: 0 ( @group-push / 2 ) 1rem;
             }
         }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            OVERRIDES
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .loadUIOverrides();
-

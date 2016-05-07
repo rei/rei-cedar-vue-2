@@ -25,6 +25,6 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Padding for `<th>`s and `<td>`s.
-@table-cell-padding:                                 8px;
+@table-cell-padding:                                 0.8rem;
 // Padding for cells in `.table-condensed`.
-@table-condensed-cell-padding:                       5px;
+@table-condensed-cell-padding:                       0.5rem;
