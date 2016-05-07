@@ -121,16 +121,16 @@ label {
         cursor: @cursor-disabled;
     }
     // Reset height for `textarea`s
-    textarea & {
+    textarea& {
         height: auto;
     }
 
-    .input-lg + .form-control-feedback {
+    .input-lg + &-feedback {
         width: @input-height-large;
         height: @input-height-large;
         line-height: @input-height-large;
     }
-    .input-sm + .form-control-feedback {
+    .input-sm + &-feedback {
         width: @input-height-small;
         height: @input-height-small;
         line-height: @input-height-small;
@@ -390,17 +390,19 @@ label {
         // inputs and labels within a `.form-group`.
         //
         //------------------------------------------------------------------------------------------------------------------
-        .form-group-lg {
-            @media (min-width: @screen-sm-min) {
-                .control-label {
-                    padding-top: ((@padding-large-vertical * @line-height-large) + 1);
+        .form-group {
+            &-lg {
+                @media (min-width: @screen-sm-min) {
+                    .control-label {
+                        padding-top: ((@padding-large-vertical * @line-height-large) + 1);
+                    }
                 }
             }
-        }
-        .form-group-sm {
-            @media (min-width: @screen-sm-min) {
-                .control-label {
-                    padding-top: (@padding-small-vertical + 1);
+            &-sm {
+                @media (min-width: @screen-sm-min) {
+                    .control-label {
+                        padding-top: (@padding-small-vertical + 1);
+                    }
                 }
             }
         }
