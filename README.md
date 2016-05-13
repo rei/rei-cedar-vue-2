@@ -138,6 +138,3 @@ The following tools have been used / referenced thus far
 
  - [Vecteezy](http://creativecommons.org/licenses/by/3.0/deed.en_US)
 
-## TODO
-
-- Remove generated files from git
