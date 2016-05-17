@@ -29,17 +29,6 @@
     }
 }
 
-// Row
-//
-// Rows contain and clear the floats of your columns.
-.row {
-    .make-row();
-    &:extend(.clearfix all);
-}
-.row-flex {
-    .make-row-flex();
-}
-
 // Columns
 //
 // Common styles for small and large grid columns
@@ -51,7 +40,6 @@
     position: relative;
     width: 100%;
     display: inline-block;
-    float: left;
 
     @media( min-width: @screen-sm-min ) {
         padding-left: @grid-gutter-width-sm / 2;
@@ -63,12 +51,82 @@
     }
 }
 
-.row.row-flex {
-    [class^=col-],
-    [class*=col-] {
-        display: inline-flex;
-        flex-flow: column nowrap;
-        float: none;
+// Row
+//
+// Rows contain and clear the floats of floated columns or naturally wrap flex displays.
+.row {
+    .make-row();
+
+    // Floated -- Default
+    &:not( &-flex ) {
+        &:extend( .clearfix all );
+
+        [class^=col-],
+        [class*=col-] {
+            float: left;
+        }
+    }
+
+    // Flex
+    &&-flex {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: row wrap;
+
+        &.fixed {
+            align-items: stretch;
+        }
+
+        &.tile {
+            [class*=col-],
+            [class^=col-] {
+                padding: 0;
+            }
+
+            &.masonry {
+                padding: 0;
+                min-width: 100%;
+                margin: 0 auto;
+            }
+
+            .card {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+
+        &.overflow {
+            overflow: auto;
+            flex-wrap: nowrap;
+            align-items: center;
+
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+
+            cursor: pointer;
+
+            padding-right: 25%;
+
+            /* Scroll-snapping */
+            scroll-snap-type: mandatory;
+            scroll-snap-align: left;
+
+            /* Older spec implementation  -- Remove when polyfill updated */
+            scroll-snap-destination: 0% 75%;
+            scroll-snap-points-x: repeat( 100% );
+
+            &.tile,
+            &.fixed {
+                align-items: stretch
+            }
+        }
+
+        [class^=col-],
+        [class*=col-] {
+            display: inline-flex;
+            flex-flow: column nowrap;
+            float: none;
+        }
     }
 }
 

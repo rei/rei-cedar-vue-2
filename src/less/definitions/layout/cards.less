@@ -4,17 +4,17 @@
     flex-flow: column nowrap;
     position: relative;
     overflow: hidden;
-
-    /* Contents should contain padding, etc. */
-    margin: 20px;
+    margin: 2rem;
     width: 100%;
     flex-grow: 0;
+    background-color: @core-architectural-5;
 
     a& {
         cursor: pointer;
         transition: .25s ease;
 
         &[ href ] {
+            cursor: pointer;
             backface-visibility: hidden;
             transform: translateY( 0 );
             box-shadow: none;
@@ -25,60 +25,17 @@
                 border: none;
                 box-shadow: 0 @card-hover-offset 3px -1px rgba( 0, 0, 0, 0.35 );
                 transform: translateY( -@card-hover-offset );
+                text-decoration: none;
             }
         }
     }
 
     &.rounded {
-        border-radius: 10px;
-    }
-}
-
-
-.row-flex {
-
-    &.fixed {
-        align-items: stretch;
+        border-radius: 1rem;
     }
 
-    &.tile {
-        padding: 0 20px;
-
-        &.masonry {
-            padding: 0;
-            min-width: 100%;
-            margin: 0 auto;
-
-            .card {
-                margin: 0;
-                border-radius: 0;
-            }
-        }
-    }
-
-    &.overflow {
-        overflow: auto;
-        flex-wrap: nowrap;
-        align-items: center;
-
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-
-        cursor: pointer;
-
-        padding-right: 25%;
-
-        /* Scroll-snapping */
-        scroll-snap-type: mandatory;
-        scroll-snap-align: left;
-
-        /* Older spec implementation  -- Remove when polyfill updated */
-        scroll-snap-destination: 0% 75%;
-        scroll-snap-points-x: repeat( 100% );
-
-        &.tile,
-        &.fixed {
-            align-items: stretch
-        }
+    .well {
+        position: relative;
+        width: fit-content;
     }
 }

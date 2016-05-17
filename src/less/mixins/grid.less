@@ -51,6 +51,10 @@
     width: 100%;
     padding-left:  (@gutter / 2);
     padding-right: (@gutter / 2);
+    
+    & > .row {
+        margin: auto;
+    }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -70,12 +74,6 @@
         margin-left:  (@gutter-md / -2);
         margin-right: (@gutter-md / -2);
     }
-}
-.make-row-flex {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
