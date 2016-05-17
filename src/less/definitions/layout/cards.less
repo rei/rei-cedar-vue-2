@@ -1,20 +1,27 @@
+@card-margin: 2rem;
 
 .card {
     display: inline-flex;
     flex-flow: column nowrap;
     position: relative;
     overflow: hidden;
-    margin: 2rem;
     width: 100%;
     flex-grow: 0;
     background-color: @core-architectural-5;
+    margin: @card-margin;
+    max-width: ~"calc( 100vw - "( 2 * @card-margin )~")";
 
+    // No margins allowed
+    & > * {
+        margin: 0;
+    }
+
+    // Clickable cards
     a& {
         cursor: pointer;
         transition: .25s ease;
 
         &[ href ] {
-            cursor: pointer;
             backface-visibility: hidden;
             transform: translateY( 0 );
             box-shadow: none;
@@ -22,11 +29,14 @@
             &:hover,
             &:focus {
                 z-index: 5;
-                border: none;
-                box-shadow: 0 @card-hover-offset 3px -1px rgba( 0, 0, 0, 0.35 );
+                box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
                 transform: translateY( -@card-hover-offset );
-                text-decoration: none;
             }
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
         }
     }
 
