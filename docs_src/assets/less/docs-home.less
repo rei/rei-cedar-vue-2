@@ -15,10 +15,9 @@
     text-align: center;
     text-shadow: 0 0.1rem 0 rgba(0,0,0,.1);
     background-color: @docs-primary-dark;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(@docs-primary), to(@docs-primary-dark));
-    background-image: -webkit-linear-gradient(top, @docs-primary 0%, @docs-primary-dark 100%);
-    background-image:      -o-linear-gradient(top, @docs-primary 0%, @docs-primary-dark 100%);
-    background-image:         linear-gradient(to bottom, @docs-primary 0%, @docs-primary-dark 100%);
+    background-image: linear-gradient(to bottom, @docs-primary 0%, @docs-primary-dark 100%);
+
+    /* IE6-9 gradient polyfill */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@docs-primary', endColorstr='@docs-primary-dark', GradientType=0);
     background-repeat: repeat-x;
 }
