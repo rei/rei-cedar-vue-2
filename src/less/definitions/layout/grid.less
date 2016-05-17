@@ -61,8 +61,8 @@
     &:not( &-flex ) {
         &:extend( .clearfix all );
 
-        [class^=col-],
-        [class*=col-] {
+        & > [class^=col-],
+        & > [class*=col-] {
             float: left;
         }
     }
@@ -78,8 +78,8 @@
         }
 
         &.tile {
-            [class*=col-],
-            [class^=col-] {
+            & > [class*=col-],
+            & > [class^=col-] {
                 padding: 0;
             }
 
@@ -89,9 +89,13 @@
                 margin: 0 auto;
             }
 
-            .card {
-                margin: 0;
-                border-radius: 0;
+            & > [class*=col-],
+            & > [class^=col-] {
+
+                & > .card {
+                    margin: 0;
+                    border-radius: 0;
+                }
             }
         }
 
@@ -121,8 +125,8 @@
             }
         }
 
-        [class^=col-],
-        [class*=col-] {
+        & > [class^=col-],
+        & > [class*=col-] {
             display: inline-flex;
             flex-flow: column nowrap;
             float: none;
