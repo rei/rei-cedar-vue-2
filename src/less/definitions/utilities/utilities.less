@@ -257,13 +257,13 @@
  *
  ********************************************************************/
 
- .utility-aspect-ratio {
-     position: relative;
-     overflow: hidden;
- }
  .utility-aspect-ratio ( @ratio: 1 ) {
-     &:extend( .utility-aspect-ratio );
-     padding-bottom: 100% * @ratio;
+     &:before {
+       content: '';
+       display: block;
+       height: 0;
+       padding-bottom: 100% * @ratio;
+    }
  }
  .utility-aspect-ratio ( @ratio; @align-contents: center ) {
      > div {
