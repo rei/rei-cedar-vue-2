@@ -42,12 +42,8 @@
   background-image: url("@{file-1x}");
 
   @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
+    only screen and ( min-resolution: 192dpi ),
+    only screen and ( min-resolution: 2dppx ) {
     background-image: url("@{file-2x}");
     background-size: @width-1x @height-1x;
   }
@@ -73,7 +69,9 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 
-.media-anchor ( @aspect; @anchor: center ) when ( @anchor = center ) {
+
+.media-anchor ( @aspect; @anchor: center )
+  when ( @anchor = center ) {
   &:extend( .position.center );
 }
 
@@ -101,14 +99,17 @@
   &:extend( .position.right );
 }
 
-.media-scale ( @crop: true; @aspect ) when ( @crop ) {
+
+.media-scale ( @crop: true; @aspect )
+  when ( @crop ) {
   min-height: 100%;
   min-width: 100%;
 
   object-fit: cover;
 }
 
-.media-scale ( @crop; @aspect ) when ( @crop = false ){
+.media-scale ( @crop; @aspect )
+  when ( @crop = false ){
   height: auto;
   width: auto;
 
@@ -121,16 +122,16 @@
   object-fit: contain;
 }
 
-
-
-.media-scale ( @crop: true; @aspect: landscape ) when ( @crop )
-                                               and ( @aspect = landscape ){
+.media-scale ( @crop: true; @aspect: landscape )
+  when ( @crop )
+  and ( @aspect = landscape ){
   height: 100%;
   width: auto;
 }
 
-.media-scale ( @crop: true; @aspect ) when ( @crop )
-                                    and ( @aspect = portrait ){
+.media-scale ( @crop: true; @aspect )
+  when ( @crop )
+  and ( @aspect = portrait ){
   height: auto;
   width: 100%;
 }
@@ -146,7 +147,8 @@
     overflow: hidden;
 }
 
-.media-frame ( @aspect; @crop: true; @anchor ) when ( ispixel( @crop ) ){
+.media-frame ( @aspect; @crop: true; @anchor )
+  when ( ispixel( @crop ) ){
   > img,
   > video {
     padding: @crop;
@@ -181,12 +183,12 @@
 }
 
 
-
 // Application Classes
 .media-frame,
 .responsive-embed,
 .img-frame {
 
+  // Default as non-cropping
   &:not( .center ):not( .top ):not( .right ):not( .bottom ):not( .left ),
   &.nocrop {
     .media-frame( landscape; false; center );
@@ -228,52 +230,49 @@
 // @first-sm-mountain-size: default is 30px. This is the non-mobile view of the right shape.
 // @second-sm-mountain-size: default is 20px. This is the non-mobile view of the right shape.
 //----------------------------------------------------------------------------------------------------------------------
-.twin-mountain-peaks
-( @mountain-color: inherit;
-@first-mountain-size: 2rem;
-@second-mountain-size: 1.5rem;
-@first-sm-mountain-size: 3rem;
-@second-sm-mountain-size: 2rem; ) {
-    border-color: inherit; // if @mountain-color is inherit it will inherit it's color from an overlay class defined in the parent container.
-    display: inline-block;
-    height: @first-mountain-size;
-    &:before {
-        content: "";
-        position: absolute;
-        border-left: @first-mountain-size solid transparent;
-        border-right: @first-mountain-size solid transparent;
-        border-bottom: @first-mountain-size solid;
-        border-bottom-color: @mountain-color;
+.twin-mountain-peaks(
+  @mountain-color:          inherit;
+  @first-mountain-size:     2rem;
+  @second-mountain-size:    1.5rem;
+  @first-sm-mountain-size:  3rem;
+  @second-sm-mountain-size: 2rem; ) {
+    // if @mountain-color is inherit it will inherit it's color from an overlay class defined in the parent container.
+    border-color: inherit;
+    display:      inline-block;
+    height:       @first-mountain-size;
 
-    }
+    &:before,
     &:after {
-        content: "";
+        content:  "";
         position: absolute;
-        .translate(2.2rem; 0.5rem );
-        width: 0;
-        height: 0;
-        border-left: @second-mountain-size solid transparent;
-        border-right: @second-mountain-size solid transparent;
-        border-bottom: @second-mountain-size solid;
+
+        border-top-width:    0 !important;
+        border-style:        solid;
+        border-color:        transparent;
         border-bottom-color: @mountain-color;
-
     }
-    @media (min-width: @screen-sm-min) {
+
+    /* Primary Mountain Peak */
+    &:before {
+        border-width: @first-mountain-size;
+    }
+
+    /* Secondary Mountain Peak */
+    &:after {
+        border-width: @second-mountain-size;
+        transform: translate( 2.2rem, 0.5rem );
+    }
+
+    @media ( min-width: @screen-sm-min ) {
         height: @first-sm-mountain-size;
-        width: auto;
+
         &:before {
-            border-left: @first-sm-mountain-size solid transparent;
-            border-right: @first-sm-mountain-size solid transparent;
-            border-bottom: @first-sm-mountain-size solid;
-            border-bottom-color: @mountain-color;
-        }
-        &:after {
-            .translate(3.6rem; 1rem );
-            border-left: @second-sm-mountain-size solid transparent;
-            border-right: @second-sm-mountain-size solid transparent;
-            border-bottom: @second-sm-mountain-size solid;
-            border-bottom-color: @mountain-color;
+            border-width: @first-sm-mountain-size;
         }
 
+        &:after {
+            border-width: @second-sm-mountain-size;
+            transform: translate( 3.6rem, 1rem );
+        }
     }
 }
