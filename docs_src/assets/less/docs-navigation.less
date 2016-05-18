@@ -56,9 +56,11 @@
 
 /*NAV*/
 
-.doc_head-navigation,
+ul.doc_head-navigation,
 .doc_head-navigation ul {
-    &:extend(.list-menu all);
+    .list-menu();
+    padding-left: 0;
+    list-style: none;
 }
 
 .doc_head-navigation-item {
@@ -141,6 +143,7 @@
         a {
             .button-size(@padding-large-vertical; @padding-large-horizontal; 1.6rem; @btn-line-height; @headings-font-family;);
             color: #fff !important;
+            display: block;
             text-decoration: none;
             transition: all linear 0.1s;
             width: auto;
