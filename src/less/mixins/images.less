@@ -60,7 +60,8 @@
 // Improves sharpness of images and media when scaled down
 //
 //----------------------------------------------------------------------------------------------------------------------
-.sharpen {
+.img-sharpen,
+.media-sharpen {
   image-rendering: pixelated;
 }
 
@@ -134,8 +135,9 @@
   width: 100%;
 }
 
-.media-scale ( @crop; @aspect; @sharpen: true ) when ( @sharpen ) {
-  &:extend( .sharpen );
+.media-scale ( @crop; @aspect; @sharpen: false )
+  when ( @sharpen ) {
+  &:extend( .media-sharpen );
 }
 
 
