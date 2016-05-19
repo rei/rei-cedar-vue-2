@@ -51,7 +51,7 @@
     width: 100%;
     padding-left:  (@gutter / 2);
     padding-right: (@gutter / 2);
-    
+
     & > .row {
         margin: auto;
     }
@@ -85,6 +85,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 .make-xs-column( @columns; @gutter: @grid-gutter-width; @gutter-sm: @grid-gutter-width-sm; @gutter-md: @grid-gutter-width-md ) {
     width: percentage( ( @columns / @grid-columns ) );
+    min-width: percentage( ( @columns / @grid-columns ) );
     padding-left:  ( @gutter / 2 );
     padding-right: ( @gutter / 2 );
     @media( min-width: @screen-sm-min ) {
@@ -132,6 +133,7 @@
     // Calculate width based on number of columns available
     @media ( min-width: @screen-sm-min ) {
         width: percentage( ( @columns / @grid-columns ) );
+        min-width: percentage( ( @columns / @grid-columns ) );
     }
 }
 //----------------------------------------------------------------------------------------------------------------------
@@ -175,6 +177,7 @@
     // Calculate width based on number of columns available
     @media ( min-width: @screen-md-min ) {
         width: percentage( ( @columns / @grid-columns ) );
+        min-width: percentage( ( @columns / @grid-columns ) );
     }
 }
 //----------------------------------------------------------------------------------------------------------------------
@@ -218,6 +221,7 @@
     // Calculate width based on number of columns available
     @media ( min-width: @screen-lg-min ) {
         width: percentage( ( @columns / @grid-columns ) );
+        min-width: percentage( ( @columns / @grid-columns ) );
     }
 }
 //----------------------------------------------------------------------------------------------------------------------
