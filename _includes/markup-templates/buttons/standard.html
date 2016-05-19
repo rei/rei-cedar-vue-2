@@ -2,7 +2,7 @@
     {% for item in site.data.theme-class-names %}
         {% if item.theme == include.param %}
         <div class="col-sm-6 vertical-push-md">
-          <h5>{{item.header}}</h5>
+          <h4>{{item.header}}</h4>
                  <button
                    type="button"
                    class="btn {{ item.buttonClass }}  {% if item.state == "active"%} active {% endif %}"
