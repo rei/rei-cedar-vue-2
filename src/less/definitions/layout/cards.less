@@ -1,47 +1,34 @@
-@card-margin: 2rem;
-
 .card {
     display: inline-flex;
     flex-flow: column nowrap;
     position: relative;
     overflow: hidden;
-    width: 100%;
+    background-color: #fff;
     flex-grow: 0;
-    background-color: @core-architectural-5;
-    margin: @card-margin;
-    max-width: ~"calc( 100vw - "( 2 * @card-margin )~")";
+    border-radius: .2rem;
+    margin: 1rem;
 
-    // No margins allowed
-    & > * {
-        margin: 0;
+    @media ( min-width: @screen-md-min ) {
+        margin: 1.6rem;
     }
 
-    // Clickable cards
     a& {
         cursor: pointer;
-        transition: .25s ease;
-
+        transition: 0.25s ease;
         &[ href ] {
             backface-visibility: hidden;
             transform: translateY( 0 );
             box-shadow: none;
-
-            &:hover,
-            &:focus {
+            &:focus,
+            &:hover {
+                cursor: pointer;
                 z-index: 5;
-                box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
+                border: none;
+                box-shadow: 0 @card-hover-offset 3px -1px rgba( 0, 0, 0, 0.35 );
+                text-decoration: none;
                 transform: translateY( -@card-hover-offset );
             }
         }
-
-        &:hover,
-        &:focus {
-            text-decoration: none;
-        }
-    }
-
-    &.rounded {
-        border-radius: 1rem;
     }
 
     .well {

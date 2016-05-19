@@ -72,29 +72,34 @@
         align-items: flex-start;
         display: flex;
         flex-flow: row wrap;
+        padding: 0 .6rem;
+
+        @media ( min-width: @screen-sm-min ) {
+            padding: 0 1rem;
+        }
+
+        @media ( min-width: @screen-md-min ) {
+            padding: 0 1.6rem;
+        }
 
         &.fixed {
             align-items: stretch;
         }
 
         &.tile {
-            & > [class*=col-],
-            & > [class^=col-] {
-                padding: 0;
-            }
+            padding: 0;
 
             &.masonry {
-                padding: 0;
                 min-width: 100%;
                 margin: 0 auto;
             }
 
             & > [class*=col-],
             & > [class^=col-] {
-
                 & > .card {
                     margin: 0;
                     border-radius: 0;
+                    flex-grow: 1;
                 }
             }
         }
@@ -130,9 +135,11 @@
             display: inline-flex;
             flex-flow: column nowrap;
             float: none;
+            padding: 0;
         }
     }
 }
+
 
 // Extra small grid
 //
