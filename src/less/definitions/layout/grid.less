@@ -123,6 +123,10 @@
             /* Older spec implementation  -- Remove when polyfill updated */
             scroll-snap-destination: 0% 75%;
             scroll-snap-points-x: repeat( 100% );
+
+            &.fixed {
+                align-items: stretch
+            }
         }
 
         & > [class^=col-],
