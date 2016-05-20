@@ -1,4 +1,4 @@
-<ul class="doc_head-navigation" role="menubar">
+<ul class="doc_head-navigation" role="menubar" aria-hidden="false">
 {% unless page.slug =="main" %}
     <li class="doc_head-navigation-item home" role="menuitem">
         <a href="{{ site.github.url }}" class="link_stag-explore-overlay">REI Pattern Library
@@ -6,15 +6,16 @@
     </li>
 {% endunless %}
 {% for item in site.data.navigation.items %}
+    {% assign itemId = item.href| replace: '/', '-' %}
         <li class="doc_head-navigation-item  {% if page.url == item.href or page.url == item.subCats.href %}active{% endif %}" role="menuitem" aria-haspopup="true" >
-            <a href="{{ site.github.url }}/{{item.href}}">
+            <a href="{{ site.github.url }}/{{item.href}}" id="{{itemId  | append: 'header'}}">
                {{item.label}}
             </a>
             {% if item.subCats %}
                 <ul class="doc_head-navigation-nested-list" role="menu">
                     {% for nested in item.subCats %}
                     <li class=" nested-item " role="menuitem">
-                        <a href="{{ site.github.url }}/{{ nested.href }}">{{ nested.label }}</a>
+                        <a href="{{ site.github.url }}/{{ nested.href }}" aria-describedby="{{itemId  | append: 'header'}}">{{ nested.label }}</a>
                     </li>
                     {% endfor %}
                 </ul>
