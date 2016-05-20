@@ -2,7 +2,7 @@
 <p>Images can be scaled (cropped or constrained) to a container element by applying to the parent an <code>.img-frame</code> class. This applies <code>position: relative;</code>, <code>overflow: hidden;</code> and <code>padding-bottom: [ Variable ];</code> to maintain the proportions of a flexible-width element. Applying a secondary class of <code>.ratio-[ square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9 ]</code> will set it to a desired aspect ratio. When the mixin is invoked directly, it allows for a set pixel height.</p>
 <p>Images contained within a parent container with class <code>.img-frame</code> will be set to apply <code>position: absolute;</code>, <code>width: auto;</code>, <code>height: auto;</code>.</p>
 <p>With an additional class of <code>.center</code>, <code>.top</code>, <code>.right</code>, <code>.bottom</code>, or <code>.left</code>, the image will be achored to its respective side. <code>min-height: 100%;</code>, <code>min-width: 100%;</code>, <code>object-fit: cover;</code>, and either <code>height: 100%;</code> (<code>.left</code>, <code>.right</code>, or <code>.center</code>) or <code>width: 100%;</code> (<code>.top</code>, <code>.bottom</code>, or <code>.portrait.center</code>). When the mixin is invoked directly, percent and pixel values can be applied for more fine-tuned image anchoring.</p>
-<div class="bs-callout bs-callout-warning" id="callout-images-ie-svg">
+<div class="bs-callout bs-callout-warning" id="callout-aspect-agnostic">
     <h4>Note: Center-anchored frames are not aspect-agnostic:</h4>
     <p>Please see above: If you are centering a portrait image, it will require an additional class <code>.portrait</code> to ensure it is correctly anchored.</p>
 </div>
