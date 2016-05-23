@@ -44,31 +44,22 @@
 </div>
 {% endhighlight %}
 
-<p>An icon used in an <a href="typography/#alerts">alert</a> to convey that it's an error message, with additional <code>.sr-only</code> text to convey this hint to users of assistive technologies.</p>
+<p>An icon used in an <a href="/collections/alerts/">alert</a> to convey that it's an error message, with additional <code>.sr-only</code> text to convey this hint to users of assistive technologies.</p>
 <div class="well" data-example-id="glyphicons-accessibility">
-  <div class="alert alert-danger" role="alert">
-    <span class="icon icon-rei-error" aria-hidden="true"></span>
-    <span class="sr-only">Error:</span>
-    Enter a valid email address
-  </div>
+    <div class="alert alert-danger" role="alert">
+        <span class="icon icon-rei-error" aria-hidden="true"></span>
+            <span class="alert-text">
+                 <span class="sr-only">Error:</span>
+                This is an error message. Displayed to a user due to user or system error.
+            </span>
+    </div>
 </div>
 {% highlight html %}
 <div class="alert alert-danger" role="alert">
-  <span class="icon icon-cross-circle" aria-hidden="true"></span>
-  <span class="sr-only">Error:</span>
-  Enter a valid email address
+    <span class="icon icon-rei-error" aria-hidden="true"></span>
+            <span class="alert-text">
+                 <span class="sr-only">Error:</span>
+                This is an error message. Displayed to a user due to user or system error.
+            </span>
 </div>
-{% endhighlight %}
-<p>Use them in buttons, button groups for a toolbar, navigation, or prepended form inputs.</p>
-<div class="well" data-example-id="glyphicons-general">
-
-</div>
-{% highlight html %}
-<button type="button" class="btn btn-default" aria-label="Left Align">
-  <span class="icon icon-reply" aria-hidden="true"></span>
-</button>
-
-<button type="button" class="btn btn-default btn-lg">
-  <span class="icon icon-star" aria-hidden="true"></span> Star
-</button>
 {% endhighlight %}

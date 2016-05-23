@@ -8,9 +8,11 @@
                         <div class="media-left media-bottom {% if item.type contains 'site-navigation' %} overlay-medium {% endif %}">
                             <span class="icon {{ item.name }}" aria-hidden="true"></span>
                         </div>
+                        {% if item.title %}
                         <div class="media-body media-middle {% if item.type != 'content' %} pull-right {% endif %}">
                             <h5 class="media-heading">{{ item.title }}</h5>
                         </div>
+                        {% endif %}
                     </div>
                   <dl>
                     <dt>icon {{ item.name }}</dt>
