@@ -6,11 +6,11 @@
   <h3 id="forms-inline" class="status status-good">Inline form</h3>
   <p>Add <code>.form-inline</code> to your form (which doesn't have to be a <code>&lt;form&gt;</code>) for left-aligned and inline-block controls. <strong>Within viewports less than 768px wide inline and basic forms share the same styles.</strong></p>
   <div class="bs-callout bs-callout-danger" id="callout-inline-form-width">
-    <h5>May require custom widths</h5>
+    <h4>May require custom widths</h4>
     <p>Inputs and selects have <code>width: 100%;</code> applied by default in Bootstrap. Within inline forms, we reset that to <code>width: auto;</code> so multiple controls can reside on the same line. Depending on your layout, additional custom widths may be required.</p>
   </div>
   <div class="bs-callout bs-callout-warning" id="callout-inline-form-labels">
-    <h5>Always add labels</h5>
+    <h4>Always add labels</h4>
     <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class. There are further alternative methods of providing a label for assistive technologies, such as the <code>aria-label</code>, <code>aria-labelledby</code> or <code>title</code> attribute. If none of these is present, screen readers may resort to using the <code>placeholder</code> attribute, if present, but note that use of <code>placeholder</code> as a replacement for other labelling methods is not advised.</p>
   </div>
   <div class="well" data-example-id="simple-form-inline">
@@ -28,9 +28,6 @@
   {% endhighlight %}
 
   <div class="well" data-example-id="form-inline-with-input-group">
-    {% include /markup-templates/forms/inline-addons.html %}
-  </div>
-  <div class="well overlay-dark-1" data-example-id="form-inline-with-input-group-on-dark-background">
     {% include /markup-templates/forms/inline-addons.html %}
   </div>
   {% highlight html %}
