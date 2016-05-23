@@ -11,7 +11,7 @@
     </div>
 
     <div class="bs-callout bs-callout-warning" id="callout-form-validation-state-accessibility">
-        <h5>Conveying validation state to assistive technologies and colorblind users</h5>
+        <h3>Conveying validation state to assistive technologies and colorblind users</h3>
 
         <p>Using these validation styles to denote the state of a form control only provides a visual, color-based
             indication, which will not be conveyed to users of assistive technologies - such as screen readers - or to
@@ -20,8 +20,7 @@
         <p>Ensure that an alternative indication of state is also provided. For instance, you can include a hint about
             state in the form control's <code>&lt;label&gt;</code> text itself (as is the case in the following code
             example), include a Glyphicon (with appropriate alternative text
-            using the <code>.sr-only</code> class - see the Glyphicon examples), or by providing an additional
-            <a href="#help-text">help text</a> block.
+            using the <code>.sr-only</code> class), or by providing an additional help text block.
             Specifically for assistive technologies, invalid form controls can also be assigned an <code>aria-invalid="true"</code>
             attribute.</p>
     </div>
@@ -43,8 +42,7 @@
     <div class="bs-callout bs-callout-warning" id="callout-has-feedback-icon-positioning">
         <h5>Icons, labels, and input groups</h5>
 
-        <p>Manual positioning of feedback icons is required for inputs without a label and for <a
-            href="#input-groups-title">input groups</a> with an add-on on the right. You are strongly encouraged
+        <p>Manual positioning of feedback icons is required for inputs without a label and for input groups with an add-on on the right. You are strongly encouraged
             to provide labels for all inputs for accessibility reasons. If you wish to prevent labels from being
             displayed, hide them with the <code>.sr-only</code> class. If you must do without labels, adjust the <code>top</code>
             value of the feedback icon. For input groups, adjust the <code>right</code> value to an appropriate pixel
@@ -78,13 +76,6 @@
     </div>
     {% highlight html %}
     {% include /markup-templates/forms/horizontal-form-validation-state-with-icon.html %}
-    {% endhighlight %}
-
-    <div class="well" data-example-id="inline-form-validation-state-with-icon">
-        {% include /markup-templates/forms/inline-form-validation-state-with-icon.html %}
-    </div>
-    {% highlight html %}
-    {% include /markup-templates/forms/inline-form-validation-state-with-icon.html %}
     {% endhighlight %}
 
     <h5>Optional icons with hidden <code>.sr-only</code> labels</h5>

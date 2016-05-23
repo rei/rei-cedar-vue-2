@@ -235,9 +235,6 @@ items:
                 - label: Validation
                   href: forms-control-validation
 
-                - label: Selects
-                  href: selects
-
                 - label: Textarea
                   href: textarea
 
@@ -382,9 +379,6 @@ items:
 
                 - label: Disabled
                   href: forms-disabled-fieldsets
-
-                - label: Static
-                  href: forms-controls-static
 
                 - label: Sizing
                   href: forms-control-sizes
