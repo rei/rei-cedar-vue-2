@@ -55,7 +55,8 @@
 // Vertical rhythm helper classes
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-.vertical-push {
+.vertical {
+  &-push {
     margin-bottom: @vertical-push;
     & + h1,
     & + h2,
@@ -65,34 +66,39 @@
     & + h6 {
         .vertical-pull-md();
     }
-}
-.vertical-push-sm {
-    margin-bottom: @vertical-push-small;
-}
-.vertical-push-md {
-    margin-bottom: @vertical-push-medium;
-}
-.vertical-push-lg {
-    margin-bottom: @vertical-push-large;
-}
-.vertical-push-xl {
-    margin-bottom: @vertical-push-xlarge;
-}
-.vertical-pull {
+
+    &-sm {
+        margin-bottom: @vertical-push-small;
+    }
+    &-md {
+        margin-bottom: @vertical-push-medium;
+    }
+    &-lg {
+        margin-bottom: @vertical-push-large;
+    }
+    &-xl {
+        margin-bottom: @vertical-push-xlarge;
+    }
+  }
+
+  &-pull {
     margin-top: @vertical-push;
+
+    &-sm {
+        margin-top: @vertical-push-small;
+    }
+    &-md {
+        margin-top: @vertical-push-medium;
+    }
+    &-lg {
+        margin-top: @vertical-push-large;
+    }
+    &-xl {
+        margin-top: @vertical-push-xlarge;
+    }
+  }
 }
-.vertical-pull-sm {
-    margin-top: @vertical-push-small;
-}
-.vertical-pull-md {
-    margin-top: @vertical-push-medium;
-}
-.vertical-pull-lg {
-    margin-top: @vertical-push-large;
-}
-.vertical-pull-xl {
-    margin-top: @vertical-push-xlarge;
-}
+
 
 
 // Position element - vertical and horizontal alignment
