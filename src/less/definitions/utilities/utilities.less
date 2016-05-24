@@ -32,27 +32,32 @@
 // -------------------------
 
 .hidden {
-    display: none !important;
-    &-xs {
-      @media (max-width: @screen-xs-max) {
-        .responsive-invisibility();
-      }
+  display: none !important;
+  &-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-invisibility();
     }
-    &-sm {
-      @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-        .responsive-invisibility();
-      }
+  }
+  &-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-invisibility();
     }
-    &-md {
-      @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-        .responsive-invisibility();
-      }
+  }
+  &-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-invisibility();
     }
-    &-lg {
-      @media (min-width: @screen-lg-min) {
-        .responsive-invisibility();
-      }
+  }
+  &-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-invisibility();
     }
+  }
+  &-print {
+    @media print {
+      .responsive-invisibility();
+    }
+  }
 }
 .show {
   display: block !important;
