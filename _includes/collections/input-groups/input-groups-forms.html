@@ -4,74 +4,82 @@
 
     <p>At times you may want to visually place a button or icon within an input </p>
 
-    <h3>Merge left</h3>
-
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <input type="text" class="form-control input-group-merge-left" placeholder="Username"
-                   aria-describedby="basic-addon1">
-            <span class="input-group-addon" id="locaton-example">
-              <span class="text-danger">
-                  <span class="icon icon-rei-error" aria-hidden="true"></span>
-                  <span class="sr-only">Error</span>
-              </span>
-            </span>
-        </div>
-    </form>
+    <label for="merge-left-input">Merge left</label>
+    <div class="input-group">
+        <input aria-describedby="merge-left-message"
+               class="form-control input-group-merge-left"
+               id="merge-left-input"
+               placeholder="Merge left"
+               type="text" />
+        <span class="input-group-addon" id="merge-left-message">
+          <span class="text-danger">
+              <span class="icon icon-rei-error" aria-hidden="true"></span>
+              <span class="sr-only">Error</span>
+          </span>
+        </span>
+    </div>
     {% highlight html %}
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <input type="text" class="form-control input-group-merge-left" placeholder="Username"
-                   aria-describedby="basic-addon1">
-            <span class="input-group-addon" id="locaton-example">
-              <span class="text-danger">
-                  <span class="icon icon-rei-error" aria-hidden="true"></span>
-                  <span class="sr-only">Error</span>
-              </span>
-            </span>
-        </div>
-    </form>
+    <label for="merge-left-input-example">Merge left</label>
+    <div class="input-group">
+        <input aria-describedby="merge-left-message-example"
+               class="form-control input-group-merge-left"
+               id="merge-left-input-example"
+               placeholder="Merge left"
+               type="text" />
+        <span class="input-group-addon" id="merge-left-message-example">
+          <span class="text-danger">
+              <span class="icon icon-rei-error" aria-hidden="true"></span>
+              <span class="sr-only">Error</span>
+          </span>
+        </span>
+    </div>
     {% endhighlight %}
-    <h3>Merge right</h3>
 
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <span class="input-group-addon input-group-merge-left" id="warning-example">
-              <span class="text-danger">
-                  <span class="icon icon-rei-warning" aria-hidden="true"></span>
-                  <span class="sr-only">Warning</span>
-              </span>
-            </span>
-            <input type="text" class="form-control input-group-merge-right" placeholder="Username"
-                   aria-describedby="basic-addon1">
-        </div>
-    </form>
-    <h3>Merge right with button on left</h3>
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <span class="input-group-addon input-group-merge-left" id="success-example">
-              <span class="text-danger">
-                  <span class="icon icon-rei-success" aria-hidden="true"></span>
-                  <span class="sr-only">Success</span>
-              </span>
-            </span>
-            <input type="text" class="form-control input-group-merge-right input-group-merge-left" placeholder="Username"
-                   aria-describedby="basic-addon1">
-            <span class="input-group-btn" id="success-and-button-example">
-              <button class="btn btn-default btn-sm">Submit</button>
-            </span>
-        </div>
-    </form>
-    <h3> button link on left</h3>
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <input type="text" class="form-control " placeholder="Username"
-                   aria-describedby="basic-addon1">
-            <span class="input-group-btn" id="success-and-button-example">
-              <button class="btn btn-default btn-sm">
-                  <span class="icon icon-rei-target"></span>
-              </button>
-            </span>
-        </div>
-    </form>
+    <label for="merge-right-input">Merge right</label>
+    <div class="input-group">
+        <span class="input-group-addon input-group-merge-left" id="merge-right-message-example">
+          <span class="text-danger">
+              <span class="icon icon-rei-warning" aria-hidden="true"></span>
+              <span class="sr-only">Warning</span>
+          </span>
+        </span>
+        <input aria-describedby="merge-right-message-example"
+               class="form-control input-group-merge-right"
+               id="merge-right-input"
+               placeholder="merge-right"
+               type="text" />
+    </div>
+
+    <label for="merge-right-button-left">Merge right with button on left</label>
+    <div class="input-group">
+        <span class="input-group-addon input-group-merge-left" id="merge-right-button-left-message">
+          <span class="text-danger">
+              <span class="icon icon-rei-success" aria-hidden="true"></span>
+              <span class="sr-only">Success</span>
+          </span>
+        </span>
+        <input aria-describedby="merge-right-button-left-message"
+               class="form-control input-group-merge-right input-group-merge-left"
+               id="merge-right-button-left"
+               placeholder="Merge right with button on left"
+               type="text" />
+        <span class="input-group-btn" >
+            <button class="btn btn-default btn-sm" type="submit" id="merge-right-button-left-button">Submit</button>
+        </span>
+    </div>
+
+    <label for="merge-left-button">button on left</label>
+    <div class="input-group">
+        <input aria-describedby="merge-addon-left-button-text"
+               class="form-control"
+               id="merge-left-button"
+               placeholder="Username"
+               type="text" />
+        <span class="input-group-btn">
+          <button class="btn btn-default btn-sm" type="button">
+              <span class="icon icon-rei-target"></span>
+              <span class="sr-only" id="merge-addon-left-button-text">allow the browser to detect your location</span>
+          </button>
+        </span>
+    </div>
 </section>
