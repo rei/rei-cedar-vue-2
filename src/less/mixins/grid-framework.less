@@ -26,7 +26,8 @@
 .calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
     .col-@{class}-@{index} {
         width: percentage((@index / @grid-columns));
-        flex: 0 0 percentage((@index / @grid-columns));
+        flex: 0 1 auto;
+        min-width: 0; // fix for firefox image size containment within display flex containers.
     }
 }
 .calc-grid-column(@index, @class, @type) when (@type = push) and (@index > 0) {

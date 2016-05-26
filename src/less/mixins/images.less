@@ -42,12 +42,8 @@
   background-image: url("@{file-1x}");
 
   @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
+    only screen and ( min-resolution: 192dpi ),
+    only screen and ( min-resolution: 2dppx ) {
     background-image: url("@{file-2x}");
     background-size: @width-1x @height-1x;
   }
@@ -55,66 +51,65 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-// Image sharpening
+// Media sharpening
 //
-// Improves sharpness of images when scaled down
+// Improves sharpness of images and media when scaled down
 //
 //----------------------------------------------------------------------------------------------------------------------
-.img-sharpen {
-  image-rendering: optimizeSpeed;             // Legal fallback
-  image-rendering: -moz-crisp-edges;          // Firefox
-  image-rendering: -o-crisp-edges;            // Opera
-  image-rendering: -webkit-optimize-contrast; // Safari
-  image-rendering: optimize-contrast;         // CSS3 Proposed
-  image-rendering: crisp-edges;               // CSS4 Proposed
-  image-rendering: pixelated;                 // CSS4 Proposed
-  -ms-interpolation-mode: nearest-neighbor;   // IE8+
+.img-sharpen,
+.media-sharpen {
+  image-rendering: pixelated;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-// Image frame
+// Media frame
 //
-// Highly configurable and efficient image scale, crop, and anchor images in a container
+// Highly configurable and efficient media scale, crop, and anchor media in a container
 //
 //----------------------------------------------------------------------------------------------------------------------
 
-.img-anchor ( @aspect; @anchor: center ) when ( @anchor = center ) {
+
+.media-anchor ( @aspect; @anchor: center )
+  when ( @anchor = center ) {
   &:extend( .position.center );
 }
 
-.img-anchor ( @aspect; @anchor )
+.media-anchor ( @aspect; @anchor )
   when ( @aspect = portrait )
   and  ( @anchor = start ) {
   &:extend( .position.top );
 }
 
-.img-anchor ( @aspect: landscape; @anchor )
+.media-anchor ( @aspect: landscape; @anchor )
   when ( @aspect = landscape )
   and  ( @anchor = start ) {
   &:extend( .position.left );
 }
 
-.img-anchor ( @aspect; @anchor )
+.media-anchor ( @aspect; @anchor )
   when ( @aspect = portrait )
   and  ( @anchor = end ) {
   &:extend( .position.bottom );
 }
 
-.img-anchor ( @aspect: landscape; @anchor )
+.media-anchor ( @aspect: landscape; @anchor )
   when ( @aspect = landscape )
   and  ( @anchor = end ) {
   &:extend( .position.right );
 }
 
-.img-scale ( @crop: true; @aspect ) when ( @crop ) {
+
+.media-scale ( @crop: true; @aspect )
+  when ( @crop ) {
   min-height: 100%;
   min-width: 100%;
 
   object-fit: cover;
 }
 
-.img-scale ( @crop; @aspect ) when ( @crop = false ){
+.media-scale ( @crop; @aspect )
+  when ( @crop = false ){
   height: auto;
   width: auto;
 
@@ -127,81 +122,100 @@
   object-fit: contain;
 }
 
-
-
-.img-scale ( @crop: true; @aspect: landscape ) when ( @crop )
-                                               and ( @aspect = landscape ){
+.media-scale ( @crop: true; @aspect: landscape )
+  when ( @crop )
+  and ( @aspect = landscape ){
   height: 100%;
+  width: auto;
 }
 
-.img-scale ( @crop: true; @aspect ) when ( @crop )
-                                    and ( @aspect = portrait ){
+.media-scale ( @crop: true; @aspect )
+  when ( @crop )
+  and ( @aspect = portrait ){
+  height: auto;
   width: 100%;
 }
 
-.img-scale ( @crop; @aspect; @sharpen: true ) when ( @sharpen ) {
-  &:extend( .img-sharpen );
+.media-scale ( @crop; @aspect; @sharpen: false )
+  when ( @sharpen ) {
+  &:extend( .media-sharpen );
 }
 
 
-
-.img-frame ( @aspect; @crop; @anchor ) {
-    &:extend( .utility-aspect-ratio );
+.media-frame ( @aspect; @crop; @anchor ) {
+    position: relative;
+    overflow: hidden;
 }
 
-.img-frame ( @aspect; @crop: true; @anchor ) when ( ispixel( @crop ) ){
+.media-frame ( @aspect; @crop: true; @anchor )
+  when ( ispixel( @crop ) ){
   > img,
   > video {
     padding: @crop;
   }
 }
 
-.img-frame ( @aspect: landscape; @crop: true; @anchor ){
+.media-frame ( @aspect: landscape; @crop: true; @anchor ){
   > img,
+  > video,
+  > iframe,
+  > embed,
+  > object {
+    .media-scale( @crop; @aspect );
+  }
+
   > video {
-    .img-scale( @crop; @aspect );
+    &::-webkit-media-controls {
+      max-width: 100%;
+    }
+
+    &:not( [ controls ] )::-webkit-media-controls {
+      display: none;
+    }
   }
 }
 
-.img-frame ( @aspect: landscape; @crop; @anchor: center ) {
+.media-frame ( @aspect: landscape; @crop; @anchor: center ) {
   > img,
   > video {
-    .img-anchor( @aspect; @anchor );
+    .media-anchor( @aspect; @anchor );
   }
 }
-
 
 
 // Application Classes
+.media-frame,
+.responsive-embed,
 .img-frame {
 
+  // Default as non-cropping
   &:not( .center ):not( .top ):not( .right ):not( .bottom ):not( .left ),
   &.nocrop {
-    .img-frame( landscape; false; center );
+    .media-frame( landscape; false; center );
   }
 
   &.center {
-    .img-frame( landscape; true; center );
+    .media-frame( landscape; true; center );
 
     &.portrait {
-      .img-frame( portrait; true; center );
+      .media-frame( portrait; true; center );
     }
   }
 
   &.left {
-    .img-frame( landscape; true; start );
+    .media-frame( landscape; true; start );
   }
 
   &.right {
-    .img-frame( landscape; true; end );
+    .media-frame( landscape; true; end );
   }
 
   &.top {
-    .img-frame( portrait; true; start );
+    .media-frame( portrait; true; start );
   }
 
   &.bottom {
-    .img-frame( portrait; true; end );
+    .media-frame( portrait; true; end );
   }
 }
 
@@ -216,52 +230,49 @@
 // @first-sm-mountain-size: default is 30px. This is the non-mobile view of the right shape.
 // @second-sm-mountain-size: default is 20px. This is the non-mobile view of the right shape.
 //----------------------------------------------------------------------------------------------------------------------
-.twin-mountain-peaks
-( @mountain-color: inherit;
-@first-mountain-size: 2rem;
-@second-mountain-size: 1.5rem;
-@first-sm-mountain-size: 3rem;
-@second-sm-mountain-size: 2rem; ) {
-    border-color: inherit; // if @mountain-color is inherit it will inherit it's color from an overlay class defined in the parent container.
-    display: inline-block;
-    height: @first-mountain-size;
-    &:before {
-        content: "";
-        position: absolute;
-        border-left: @first-mountain-size solid transparent;
-        border-right: @first-mountain-size solid transparent;
-        border-bottom: @first-mountain-size solid;
-        border-bottom-color: @mountain-color;
+.twin-mountain-peaks(
+  @mountain-color:          inherit;
+  @first-mountain-size:     2rem;
+  @second-mountain-size:    1.5rem;
+  @first-sm-mountain-size:  3rem;
+  @second-sm-mountain-size: 2rem; ) {
+    // if @mountain-color is inherit it will inherit it's color from an overlay class defined in the parent container.
+    border-color: inherit;
+    display:      inline-block;
+    height:       @first-mountain-size;
 
-    }
+    &:before,
     &:after {
-        content: "";
+        content:  "";
         position: absolute;
-        .translate(2.2rem; 0.5rem );
-        width: 0;
-        height: 0;
-        border-left: @second-mountain-size solid transparent;
-        border-right: @second-mountain-size solid transparent;
-        border-bottom: @second-mountain-size solid;
+
+        border-top-width:    0 !important;
+        border-style:        solid;
+        border-color:        transparent;
         border-bottom-color: @mountain-color;
-
     }
-    @media (min-width: @screen-sm-min) {
+
+    /* Primary Mountain Peak */
+    &:before {
+        border-width: @first-mountain-size;
+    }
+
+    /* Secondary Mountain Peak */
+    &:after {
+        border-width: @second-mountain-size;
+        transform: translate( 2.2rem, 0.5rem );
+    }
+
+    @media ( min-width: @screen-sm-min ) {
         height: @first-sm-mountain-size;
-        width: auto;
+
         &:before {
-            border-left: @first-sm-mountain-size solid transparent;
-            border-right: @first-sm-mountain-size solid transparent;
-            border-bottom: @first-sm-mountain-size solid;
-            border-bottom-color: @mountain-color;
-        }
-        &:after {
-            .translate(3.6rem; 1rem );
-            border-left: @second-sm-mountain-size solid transparent;
-            border-right: @second-sm-mountain-size solid transparent;
-            border-bottom: @second-sm-mountain-size solid;
-            border-bottom-color: @mountain-color;
+            border-width: @first-sm-mountain-size;
         }
 
+        &:after {
+            border-width: @second-sm-mountain-size;
+            transform: translate( 3.6rem, 1rem );
+        }
     }
 }
