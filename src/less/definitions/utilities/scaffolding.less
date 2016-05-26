@@ -57,6 +57,9 @@ img {
 }
 
 // Responsive images (ensure images don't scale beyond their parents)
+//
+// NOTE: Deprecated -- Use .img-frame / .media-frame
+//
 .img-responsive {
   .img-responsive();
 }
@@ -69,6 +72,9 @@ img {
 // Image thumbnails
 //
 // Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
+//
+// NOTE: Deprecated -- Use .img-frame / .media-frame
+//
 .img-thumbnail {
   padding: @thumbnail-padding;
   line-height: @line-height-base;
@@ -110,24 +116,22 @@ hr {
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
-}
 
-// Use in conjunction with .sr-only to only display content when it's focused.
-// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
-// Credit: HTML5 Boilerplate
-
-.sr-only-focusable {
-  &:active,
-  &:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
+  // Use in conjunction with .sr-only to only display content when it's focused.
+  // Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+  // Credit: HTML5 Boilerplate
+  &-focusable {
+    &:active,
+    &:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+    }
   }
 }
-
 
 // iOS "clickable elements" fix for role="button"
 //

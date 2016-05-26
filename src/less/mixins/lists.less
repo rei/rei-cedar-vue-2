@@ -11,9 +11,9 @@
 .make-list-responsive( @class ) {
     .list-responsive-@{class} {
         @screen-class-min: "screen-@{class}-min";
-        .list-text();
+        &:extend( .list-text all );
         @media ( min-width: @@screen-class-min ) {
-            .list-inline();
+            &:extend( .list-inline all );
         }
     }
 }

@@ -20,6 +20,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
+// TODO: Confirm if latest normalize makes this file obsolete
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
 // Normalize form controls
 //
 // While most of our form styles require extra classes, some basic normalization
@@ -27,26 +32,30 @@
 // address browser inconsistencies.
 //
 //----------------------------------------------------------------------------------------------------------------------
-// Override content-box in Normalize (* isn't specific enough)
-input[type="search"] {
-    .box-sizing(border-box);
-}
+input {
+    // Override content-box in Normalize (* isn't specific enough)
+    [type="search"] {
+        box-sizing: border-box;
+    }
 
-// Set the height of file controls to match text inputs
-input[type="file"] {
-    display: block;
-}
+    // Set the height of file controls to match text inputs
+    [type="file"],
+    [type="range"] {
+        display: block;
+    }
 
-// Make range inputs behave like textual form controls
-input[type="range"] {
-    display: block;
-    width: 100%;
+    // Make range inputs behave like textual form controls
+    [type="range"] {
+        width: 100%;
+    }
 }
 
 // Make multiple select elements height not fixed
-select[multiple],
-select[size] {
-    height: auto;
+select {
+    [multiple],
+    [size] {
+        height: auto;
+    }
 }
 
 // Adjust output element
@@ -83,20 +92,23 @@ input[type="search"] {
 //
 //----------------------------------------------------------------------------------------------------------------------
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    input[type="date"],
-    input[type="time"],
-    input[type="datetime-local"],
-    input[type="month"] {
-        line-height: @input-height-base;
+    input {
+        [type="date"],
+        [type="time"],
+        [type="datetime-local"],
+        [type="month"] {
+            line-height: @input-height-base;
+            &.input {
+                &-sm,
+                &-group-sm & {
+                    line-height: @input-height-small;
+                }
 
-        &.input-sm,
-        .input-group-sm & {
-            line-height: @input-height-small;
-        }
-
-        &.input-lg,
-        .input-group-lg & {
-            line-height: @input-height-large;
+                &-lg,
+                &-group-lg & {
+                    line-height: @input-height-large;
+                }
+            }
         }
     }
 }
@@ -109,11 +121,13 @@ input[type="search"] {
 // height and font-size of form controls.
 //
 //----------------------------------------------------------------------------------------------------------------------
-.input-sm {
-    .input-size(@input-height-small; @padding-small-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small;);
-}
-.input-lg {
-    .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large;);
+.input {
+    &-sm {
+        .input-size(@input-height-small; @padding-small-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small;);
+    }
+    &-lg {
+        .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large;);
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

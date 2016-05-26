@@ -28,6 +28,17 @@
                 text-decoration: none;
             }
         }
+
+        > ul {
+            &:extend( .list-nav all );
+            > li {
+                > a {
+                    .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @btn-line-height; @border-radius-base);
+                    &:extend( .link_navigation );
+                }
+            }
+        }
+
         // Disabled state sets text to gray and nukes hover/tab effects
         &.disabled > a {
             color: @nav-disabled-link-color;
@@ -37,15 +48,6 @@
                 cursor: @cursor-disabled;
                 text-decoration: none;
             }
-        }
-    }
-}
-.list-nav > li > ul {
-    &:extend( .list-nav all );
-    > li {
-        > a {
-            .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @btn-line-height; @border-radius-base);
-            &:extend( .link_navigation );
         }
     }
 }

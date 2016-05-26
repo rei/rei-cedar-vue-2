@@ -1,7 +1,8 @@
 //
 // Utility classes
 // --------------------------------------------------
-
+// TODO: Determine if this is still needed
+//
 .utility-focus-state {
     // Default
     outline: thin dotted;
@@ -15,11 +16,16 @@
 // -------------------------
 
 .clearfix {
-  .clearfix();
+  &:extend( .clearfix );
 }
+
+// Center-align a block level element
 .center-block {
-  .center-block();
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .pull {
   &-right {
     float: right !important;
@@ -66,9 +72,6 @@
 .invisible {
   visibility: hidden;
 }
-.text-hide {
-  .text-hide();
-}
 
 // For Affix plugin
 // -------------------------
@@ -81,17 +84,55 @@
 // Vertical rhythm helper classes
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
+.vertical-pull {
+    margin-top: @vertical-push;
+
+    &-sm {
+        margin-top: @vertical-push-small;
+    }
+    &-md {
+        margin-top: @vertical-push-medium;
+    }
+    &-lg {
+        margin-top: @vertical-push-large;
+    }
+    &-xl {
+        margin-top: @vertical-push-xlarge;
+    }
+}
+
+.vertical-push {
+=======
 .vertical {
   &-push {
+>>>>>>> 874097675923679761c45f7ab7a61cb866d3bc67
     margin-bottom: @vertical-push;
+
+    &-sm {
+        margin-bottom: @vertical-push-small;
+    }
+    &-md {
+        margin-bottom: @vertical-push-medium;
+    }
+    &-lg {
+        margin-bottom: @vertical-push-large;
+    }
+    &-xl {
+        margin-bottom: @vertical-push-xlarge;
+    }
+
     & + h1,
     & + h2,
     & + h3,
     & + h4,
     & + h5,
     & + h6 {
-        .vertical-pull-md();
+        &:extend( .vertical-pull-md );
     }
+<<<<<<< HEAD
+}
+=======
 
     &-sm {
         margin-bottom: @vertical-push-small;
@@ -126,6 +167,7 @@
 }
 
 
+>>>>>>> 874097675923679761c45f7ab7a61cb866d3bc67
 
 // Position element - vertical and horizontal alignment
 // -------------------------------------------------------------------
