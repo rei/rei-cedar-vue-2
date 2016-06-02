@@ -20,7 +20,6 @@
         {
             "label": "REI-Cedar Layouts Color",
             "url": "http://localhost:9002/layouts/color/",
-            "ReferenceUrl": "",
             "selectors": [
                 ".core-architectural-5",
                 ".core-architectural-1",

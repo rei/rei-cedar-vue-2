@@ -71,31 +71,32 @@ coverage, but with some limitation. pa11y offers a lot more coverage, but does n
 errors. And it cannot audit local static files.
 
 - `gulp accessibility:audit-pa11y`
+## Visual Regression Audits
 
-## Experimental automated visual regression testing
+Our visual regressions audits can be performed against all patterns documented within the patterns site.
+to do so, follow the steps below:
 
-This testing currently uses [PhantomCSS](https://github.com/Huddle/PhantomCSS) and [CasperJS](http://casperjs.org/).
-Together these tools allows us to catch visual regressions. Currently there will only a few pages that tag their
-examples with data attributes (`[data-example-id]`). To run these tests, follow the steps below:
-
-1. [Install CasperJS](http://docs.casperjs.org/en/latest/installation.html)
 1. Build docs and start your jekyll server
-1. From the project root directory, run `npm run test-ui` in the command line*
-1. Make a change to the markup or css and re-run `npm run test-ui`
+1. navigate to the node_modules/backstopjs directory
+1. `npm run reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
+1. Make a change to the markup or css and re-run `npm run test`.
+
+### Reports
+
+ `npm run test` will spin up a local server at port 3001 that will auto render once tests in console have completed.
+ if sever stops running after 15min and
 
 ### Folder Structure
 
 ```bash
-├── main.js        # Test runner for all the docs
-├── failures       # Contains screenshots of failed test
-└── screenshots    # Contains baseline screenshots; last good state
+├── backstop.json        # Test runner for all the docs
+├── failures       # If sever is not auto generated run 'npm run openReport'
 ```
 
 ### Screenshot Files
 
 Screenshots are all named with the value from the example's data attribute, `data-example-id`. They are also prefixed
 with the section it came from.
-
 ```bash
 components-panel-with-heading_138.png
 # Page: /components
@@ -104,12 +105,9 @@ components-panel-with-heading_138.png
 
 ### Road Map
 
-* Make it faster; the entire suite currently takes 11 minutes to complete.
-* Add more documentation pages that have examples with `[data-example-id]`.
-* Update test runner to also test mobile breakpoints.
-* Allow these tests to be run without a web server (jekyll).
+* convert from backstop.json to npm dependency that auto loops through site structure capturing patterns via the `[data-example-id]` identifier.
+* move reference screen captures to satchel and update Travis to generate new reference on commit to master.
 
-*The initial test run will not actually test anything, and will only create baseline images.
 
 ## See Also
 REI Cedar is a living, working project and will continue to grow, and change. Just like any healthy tree, this one will
