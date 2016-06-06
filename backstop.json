@@ -1,0 +1,153 @@
+{
+    "viewports": [
+        {
+            "name": "phone",
+            "width": 320,
+            "height": 480
+        },
+        {
+            "name": "tablet_v",
+            "width": 568,
+            "height": 1024
+        },
+        {
+            "name": "tablet_h",
+            "width": 1024,
+            "height": 768
+        }
+    ],
+    "scenarios": [
+        {
+            "label": "REI-Cedar Layouts Color",
+            "url": "http://localhost:9002/layouts/color/",
+            "selectors": [
+                ".core-architectural-5",
+                ".core-architectural-1",
+                ".core-architectural-6",
+                ".overlay-light-2",
+                ".core-architectural-4",
+                ".overlay-medium-2",
+                ".core-architectural-3",
+                ".core-architectural-2",
+                ".core-action-1",
+                ".core-action-2",
+                ".explore-architectural-1",
+                ".explore-architectural-2",
+                ".explore-active-1",
+                ".explore-architectural-2",
+                ".utility-off-price",
+                ".utility-error",
+                ".utility-success",
+                ".utility-available",
+                ".utility-warning"
+            ],
+            "misMatchThreshold": 0.1
+        },
+        {
+            "label": "REI-Cedar Layouts Grid",
+            "url": "http://localhost:9002/layouts/grid/",
+            "selectors": [
+                "div[data-example-id='stacked-to-horizontal']",
+                "div[data-example-id='mobile-and-desktop']",
+                "div[data-example-id='mobile-tablet-desktop']",
+                "div[data-example-id='column-wrapping']",
+                "div[data-example-id='responsive-column-resets']",
+                "div[data-example-id='offsetting-columns']",
+                "div[data-example-id='nesting-columns']",
+                "div[data-example-id='column-ordering']"
+            ],
+            "readyEvent": null,
+            "delay": 500,
+            "misMatchThreshold": 0.1
+        },
+        {
+            "label": "REI-Cedar Layouts Containers",
+            "url": "http://localhost:9002/layouts/containers/",
+            "selectors": [
+                "div[data-example-id='default-well']",
+                "div[data-example-id='large-well']",
+                "div[data-example-id='small-well']",
+                ".well-group.well-mountain-group:nth-of-type(1)",
+                ".well-group.well-mountain-group:nth-of-type(2)",
+                "div[data-example-id='simple-thumbnails']",
+                "div[data-example-id='thumbnails-with-custom-content']",
+                "div[data-example-id='default-media']",
+                "div[data-example-id='media-alignment']",
+                "div[data-example-id='media-list']",
+                "div[data-example-id='simple-panel']",
+                "div[data-example-id='panel-with-heading']",
+                "div[data-example-id='panel-with-footer']"
+
+            ],
+            "readyEvent": null,
+            "delay": 500,
+            "misMatchThreshold": 0.5
+        },
+        {
+            "label": "REI-Cedar Elements Butotns",
+            "url": "http://localhost:9002/elements/buttons/",
+            "selectors": [
+                ".btn-group.inline-group:nth-of-type(1)",
+                ".btn-group.inline-group:nth-of-type(2)",
+                ".btn-group.inline-group:nth-of-type(3)"
+            ],
+            "readyEvent": null,
+            "delay": 500,
+            "misMatchThreshold": 0.1,
+            "onBeforeScript": "onBefore.js",
+            "onReadyScript": "onReady.js"
+        },
+        {
+            "label": "REI-Cedar Elements Typography",
+            "url": "http://localhost:9002/elements/typography/",
+            "selectors": [
+                "div[data-example-id='core-headings']",
+                "div[data-example-id='explore-headings']",
+                "div[data-example-id='hero-headings']",
+                "div[data-example-id='announcement-headings']",
+                "div[data-example-id='Content-label']",
+                "div[data-example-id='copy']",
+                "div[data-example-id='alignment']",
+                "div[data-example-id='transformation']",
+                "div[data-example-id='color']",
+                "div[data-example-id='visibility']",
+                "div[data-example-id='weight-size']",
+                "div[data-example-id='heading-copy-spacing']",
+                "div[data-example-id='rule']"
+            ],
+            "readyEvent": null,
+            "delay": 500,
+            "misMatchThreshold": 0.1,
+            "onBeforeScript": "onBefore.js",
+            "onReadyScript": "onReady.js"
+        },
+        {
+            "label": "REI-Cedar Elements Inputs",
+            "url": "http://localhost:9002/elements/inputs/",
+            "selectors": [
+                "body .well:nth-of-type(1)",
+                "body .well:nth-of-type(2)"
+            ],
+            "readyEvent": null,
+            "delay": 500,
+            "misMatchThreshold": 0.1,
+            "onBeforeScript": "onBefore.js",
+            "onReadyScript": "onReady.js"
+        }
+    ],
+    "paths": {
+        "bitmaps_reference": "../../backstop_data/bitmaps_reference",
+        "bitmaps_test": "../../backstop_data/bitmaps_test",
+        "compare_data": "../../backstop_data/bitmaps_test/compare.json",
+        "casper_scripts": "../../backstop_data/casper_scripts"
+    },
+    "engine": "phantomjs",
+    "report": [
+        "CLI",
+        "browser"
+    ],
+    "cliExitOnFail": false,
+    "casperFlags": [],
+    "debug": false,
+    "port": 3001
+}
