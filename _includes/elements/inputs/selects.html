@@ -1,16 +1,20 @@
 <section class="vertical-push-3">
     <h2>Selects</h2>
     <p>Note that many native select menus—namely in Safari and Chrome—have rounded corners that cannot be modified via <code>border-radius</code> properties.</p>
-    <div class="well" data-example-ids="select-form-control">
-        {% include /markup-templates/forms/select.html %}
+    <div data-example-id="select-form-control">
+        <div class="well" data-example-id="select-form-control">
+            {% include /markup-templates/forms/select.html %}
+        </div>
     </div><!-- /.well -->
     {% highlight html %}
     {% include /markup-templates/forms/select.html %}
     {% endhighlight %}
 
     <p>For <code>&lt;select&gt;</code> controls with the <code>multiple</code> attribute, multiple options are shown by default.</p>
-    <div class="well" data-example-ids="select-multiple-form-control">
-        {% include /markup-templates/forms/select-multi.html %}
+    <div data-example-id="select-multiple-form-control">
+        <div class="well">
+            {% include /markup-templates/forms/select-multi.html %}
+        </div>
     </div><!-- /.well -->
     {% highlight html %}
     {% include /markup-templates/forms/select-multi.html %}
