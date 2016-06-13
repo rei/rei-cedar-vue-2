@@ -29,19 +29,6 @@
     }
 }
 
-// Row
-//
-// Rows contain and clear the floats of your columns.
-.row {
-    .make-row();
-    &:not(.row-flex) {
-        &:extend(.clearfix all);
-    }
-}
-.row-flex {
-    .make-row-flex();
-}
-
 // Columns
 //
 // Common styles for small and large grid columns
@@ -53,7 +40,6 @@
     position: relative;
     width: 100%;
     display: inline-block;
-    float: left;
 
     @media( min-width: @screen-sm-min ) {
         padding-left: @grid-gutter-width-sm / 2;
@@ -65,9 +51,32 @@
     }
 }
 
-.row.row-flex [class^=col-],
-.row.row-flex [class*=col-] {
-    float: none;
+// Row
+//
+// Rows contain and clear the floats of floated columns or naturally wrap flex displays.
+.row {
+    .make-row();
+
+    // Floated -- Default
+    &:not( &-flex ) {
+        &:extend( .clearfix all );
+
+        [class^=col-],
+        [class*=col-] {
+            float: left;
+        }
+    }
+
+    // Flex
+    &&-flex {
+        display: flex;
+        flex-flow: row wrap;
+
+        [class^=col-],
+        [class*=col-] {
+            float: none;
+        }
+    }
 }
 // Extra small grid
 //
