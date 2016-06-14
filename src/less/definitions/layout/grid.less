@@ -61,8 +61,8 @@
     &:not( &-flex ) {
         &:extend( .clearfix all );
 
-        [class^=col-],
-        [class*=col-] {
+        > [class^=col-],
+        > [class*=col-] {
             float: left;
         }
     }
@@ -72,8 +72,8 @@
         display: flex;
         flex-flow: row wrap;
 
-        [class^=col-],
-        [class*=col-] {
+        > [class^=col-],
+        > [class*=col-] {
             float: none;
         }
     }
