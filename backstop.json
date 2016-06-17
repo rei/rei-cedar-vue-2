@@ -292,7 +292,66 @@
             "[data-example-id='btn-tags']",
             "[data-example-id='simple-button-group']",
             "[data-example-id='button-pairing']",
-            "[data-example-id='filters']",
+            "[data-example-id='filters']"
+        ],
+        "readyEvent": null,
+        "delay": 500,
+        "misMatchThreshold": 0.1
+    }, {
+        "label": "REI-Cedar Collections Input Groups",
+        "url": "http://localhost:9002/collections/input-groups/",
+        "selectors": [
+            "[data-example-id='simple-input-groups']",
+            "[data-example-id='input-group-sizing']",
+            "[data-example-id='merge-addon-left']"
+        ],
+        "readyEvent": null,
+        "delay": 500,
+        "misMatchThreshold": 0.1
+    }, {
+        "label": "REI-Cedar Collections Forms",
+        "url": "http://localhost:9002/collections/forms/",
+        "selectors": [
+            "[data-example-id='basic-forms']",
+            "[data-example-id='simple-form-inline']",
+            "[data-example-id='form-inline-with-input-group']",
+            "[data-example-id='simple-horizontal-form']",
+            "[data-example-id='disabled-fieldset']",
+            "[data-example-id='form-control-height-sizes']",
+            "[data-example-id='form-group-height-sizes']",
+            "[data-example-id='form-control-column-sizing']",
+            "[data-example-id='simple-help-text']",
+            "[data-example-id='form-validation-states']",
+            "[data-example-id='form-validation-states-with-icons']",
+            "[data-example-id='horizontal-form-validation-state-with-icon']",
+            "[data-example-id='inline-form-validation-state-with-icon']",
+            "[data-example-id='form-validation-state-with-icon-without-label']"
+        ],
+        "readyEvent": null,
+        "delay": 500,
+        "misMatchThreshold": 0.1
+    }, {
+        "label": "REI-Cedar Collections Tables",
+        "url": "http://localhost:9002/collections/tables/",
+        "selectors": [
+            "[data-example-id='simple-table']",
+            "[data-example-id='striped-table']",
+            "[data-example-id='bordered-table']",
+            "[data-example-id='hoverable-table']",
+            "[data-example-id='condensed-table']",
+            "[data-example-id='simple-responsive-table']",
+            "[data-example-id='table-within-panel']",
+            "[data-example-id='panel-without-body-with-table']"
+        ],
+        "readyEvent": null,
+        "delay": 500,
+        "misMatchThreshold": 0.1
+    }, {
+        "label": "REI-Cedar Modules ",
+        "url": "http://localhost:9002/modules/tabs/",
+        "selectors": [
+            "[data-example-id='simple-nav-tabs']",
+            "[data-example-id='togglable-tabs']"
         ],
         "readyEvent": null,
         "delay": 500,
