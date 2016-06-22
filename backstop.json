@@ -161,7 +161,7 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Elements icons",
-        "url": "http://localhost:9002/elements/lists/",
+        "url": "http://localhost:9002/elements/rei-icons/",
         "selectors": [
             ".icon-rei-hamburger-menu",
             ".icon-rei-cart-empty",
@@ -266,8 +266,6 @@
         "label": "REI-Cedar Collections List Groups",
         "url": "http://localhost:9002/collections/list-groups/",
         "selectors": [
-            "[data-example-id='navigation']",
-            "[data-example-id='list-group']",
             "[data-example-id='sorting-list-group']",
             "[data-example-id='filter-list-group']",
             "[data-example-id='menu-list-group']"
