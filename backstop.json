@@ -14,7 +14,8 @@
     } ],
     "scenarios": [ {
         "label": "REI-Cedar Layouts Color",
-        "url": "http://rei.github.io/rei-cedar/layouts/color/",
+        "url": "http://localhost:9002/layouts/color/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/layouts/color/",
         "selectors": [
             "[data-example-id='white']",
             "[data-example-id='dusty-white']",
@@ -41,7 +42,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Layouts Grid",
-        "url": "http://rei.github.io/rei-cedar/layouts/grid/",
+        "url": "http://localhost:9002/layouts/grid/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/layouts/grid/",
         "selectors": [
             "[data-example-id='stacked-to-horizontal']",
             "[data-example-id='mobile-and-desktop']",
@@ -57,7 +59,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Layouts Containers",
-        "url": "http://rei.github.io/rei-cedar/layouts/containers/",
+        "url": "http://localhost:9002/layouts/containers/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/layouts/containers/",
         "selectors": [
             "[data-example-id='default-well']",
             "[data-example-id='large-well']",
@@ -78,7 +81,8 @@
         "misMatchThreshold": 0.5
     }, {
         "label": "REI-Cedar Elements Butotns",
-        "url": "http://rei.github.io/rei-cedar/elements/buttons/",
+        "url": "http://localhost:9002/elements/buttons/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/elements/buttons/",
         "selectors": [
             "[data-example-id='button-primary-core']",
             "[data-example-id='button-secondary-core']",
@@ -102,7 +106,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Elements Links",
-        "url": "http://rei.github.io/rei-cedar/elements/links/",
+        "url": "http://localhost:9002/rei-cedar/elements/links/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/elements/links/",
         "selectors": [
             "[data-example-id='links-core-inline']",
             "[data-example-id='links-explore-inline']",
@@ -146,7 +151,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Elements Lists",
-        "url": "http://rei.github.io/rei-cedar/elements/lists/",
+        "url": "http://localhost:9002/rei-cedar/elements/lists/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/elements/links/",
         "selectors": [
             "[data-example-id='text-list']",
             "[data-example-id='text-list-decoration']",
@@ -161,7 +167,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Elements icons",
-        "url": "http://rei.github.io/rei-cedar/elements/rei-icons/",
+        "url": "http://localhost:9002/rei-cedar/elements/rei-icons/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/elements/rei-icons/",
         "selectors": [
             ".icon-rei-hamburger-menu",
             ".icon-rei-cart-empty",
@@ -211,7 +218,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Elements Checkboxs and radios",
-        "url": "http://rei.github.io/rei-cedar/elements/checkboxes-and-radios/",
+        "url": "http://localhost:9002/rei-cedar/elements/checkboxes-and-radios/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/elements/checkboxes-and-radios/",
         "selectors": [
             "[data-example-id='block-checkboxes-radios']",
             "[data-example-id='control-toggles']"
@@ -221,7 +229,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Elements Typography",
-        "url": "http://rei.github.io/rei-cedar/elements/typography/",
+        "url": "http://localhost:9002/rei-cedar/elements/typography/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/elements/typography/",
         "selectors": [
             "[data-example-id='core-headings']",
             "[data-example-id='explore-headings']",
@@ -242,7 +251,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Elements Inputs",
-        "url": "http://rei.github.io/rei-cedar/elements/inputs/",
+        "url": "http://localhost:9002/rei-cedar/elements/inputs/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/elements/inputs/",
         "selectors": [
             "[data-example-id='text-form-control']",
             "[data-example-id='select-form-control']",
@@ -255,7 +265,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Collections Alerts",
-        "url": "http://rei.github.io/rei-cedar/collections/alerts/",
+        "url": "http://localhost:9002/rei-cedar/collections/alerts/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/collections/alerts/",
         "selectors": [
             "[data-example-id='simple-alerts']"
         ],
@@ -264,7 +275,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Collections List Groups",
-        "url": "http://rei.github.io/rei-cedar/collections/list-groups/",
+        "url": "http://localhost:9002/rei-cedar/collections/list-groups/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/collections/list-groups/",
         "selectors": [
             "[data-example-id='sorting-list-group']",
             "[data-example-id='filter-list-group']",
@@ -275,7 +287,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Collections Breadcrumbs",
-        "url": "http://rei.github.io/rei-cedar/collections/breadcrumbs/",
+        "url": "http://localhost:9002/rei-cedar/collections/breadcrumbs/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/collections/breadcrumbs/",
         "selectors": [
             "[data-example-id='list-breadcrumbs']",
             "[data-example-id='list-breadcrumbs-explore']"
@@ -285,7 +298,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Collections Button Groups",
-        "url": "http://rei.github.io/rei-cedar/collections/button-groups/",
+        "url": "http://localhost:9002/rei-cedar/collections/button-groups/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/collections/button-groups/",
         "selectors": [
             "[data-example-id='btn-tags']",
             "[data-example-id='simple-button-group']",
@@ -297,7 +311,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Collections Input Groups",
-        "url": "http://rei.github.io/rei-cedar/collections/input-groups/",
+        "url": "http://localhost:9002/rei-cedar/collections/input-groups/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/collections/input-groups/",
         "selectors": [
             "[data-example-id='simple-input-groups']",
             "[data-example-id='input-group-sizing']",
@@ -308,7 +323,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Collections Forms",
-        "url": "http://rei.github.io/rei-cedar/collections/forms/",
+        "url": "http://localhost:9002/rei-cedar/collections/forms/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/collections/forms/",
         "selectors": [
             "[data-example-id='basic-forms']",
             "[data-example-id='simple-form-inline']",
@@ -330,7 +346,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Collections Tables",
-        "url": "http://rei.github.io/rei-cedar/collections/tables/",
+        "url": "http://localhost:9002/rei-cedar/collections/tables/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/collections/tables/",
         "selectors": [
             "[data-example-id='simple-table']",
             "[data-example-id='striped-table']",
@@ -346,7 +363,8 @@
         "misMatchThreshold": 0.1
     }, {
         "label": "REI-Cedar Modules ",
-        "url": "http://rei.github.io/rei-cedar/modules/tabs/",
+        "url": "http://localhost:9002/rei-cedar/modules/tabs/",
+        "referenceUrl": "http://rei.github.io/rei-cedar/modules/tabs/",
         "selectors": [
             "[data-example-id='simple-nav-tabs']",
             "[data-example-id='togglable-tabs']"
