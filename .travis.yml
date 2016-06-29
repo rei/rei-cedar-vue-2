@@ -9,7 +9,7 @@ script:
   - gulp
   - jekyll serve --detach
   - cd node_modules/backstopjs && npm run reference
-  - cd node_modules/backstopjs && npm run test
+  - npm run test
   - kill -9 $(ps aux | grep jekyll)
 notifications:
   slack:
