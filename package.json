@@ -23,10 +23,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "jquery2": "2.0.3"
+    "bootstrap": "^3.3.6",
+    "jquery2": "2.0.3",
+    "normalize.css": "^3.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
+    "backstopjs": "^1.2.1",
     "browserify": "^13.0.0",
     "del": "^2.0.2",
     "event-stream": "^3.3.2",
@@ -55,7 +58,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "engines": {
-    "node": ">=0.10.1"
+    "node": ">=4.0"
   },
   "files": [
     "src",
