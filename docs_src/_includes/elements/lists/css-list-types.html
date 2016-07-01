@@ -1,37 +1,10 @@
 <section class="vertical-push-3" data-ui="list">
     <!-- Lists -->
 
-    <p class="lead">For typographic text lists, follow <a href="/typography/#type-lists">this link</a>.</p>
-
-    <h2 id="list-unordered" class="status status-base-class">Unordered</h2>
-    <p class="bs-callout bs-callout-info"> This is not an example of a usable pattern, this is a proto pattern and is used to set base helper styles and should not be used on its own.</p>
-    <div class="well" data-example-id="simple-ul">
-        {% include /markup-templates/lists/unordered.html param="default" %}
-    </div>
-    {% highlight html %}
-    <ul>
-        <li>...</li>
-    </ul>
-    {% endhighlight %}
-
-    <h2 id="list-unstyled" class="status status-base-class">Unstyled</h2>
-    <p class="bs-callout bs-callout-info"> This is a base class, inherited and used in conjunction with other classes to create ERL patterns. This should not be used on its own.</p>
-
-    <p>Remove the default <code>list-style</code> and left margin on list items (immediate children only). <strong>This
-        only applies to immediate children list items</strong>, meaning you will need to add the class for any nested
-        lists as well.</p>
-
-    <div class="well" data-example-id="unstyled-list">
-        {% include /markup-templates/lists/unordered.html param="unstyled" %}
-    </div>
-    {% highlight html %}
-    {% include /markup-templates/lists/unordered.html param="unstyled" %}
-    {% endhighlight %}
-
     <h2 id="list-text" class="status status-good">Text List - Unstyled (Unordered)</h2>
     <p>For lists of standard text and/or standard text links.</p>
 
-    <div class="well" data-example-id="unstyled-list">
+    <div class="well" data-example-id="text-list">
         {% include /markup-templates/lists/unordered.html param="text-unstyled" %}
     </div>
     {% highlight html %}
@@ -41,7 +14,7 @@
     <h2 id="list-decoration" class="status status-good">Text List - With Bullets (Unordered)</h2>
     <p>For lists of standard text and/or standard text links with bullets.</p>
 
-    <div class="well" data-example-id="unstyled-list">
+    <div class="well" data-example-id="text-list-decoration">
         {% include /markup-templates/lists/unordered.html param="bullet" %}
     </div>
     {% highlight html %}
@@ -76,7 +49,7 @@
 
     <h3 class="status status-base-class">Inline List With Left and Right Padding</h3>
 
-    <div class="well">
+    <div class="well" data-example-id="list-inline-l-r-padding">
         {% include /markup-templates/lists/inline.html param="inline-md" %}
     </div>
     {% highlight html %}
@@ -85,7 +58,7 @@
 
     <h3 class="status status-base-class">Inline List With Large Right Padding</h3>
 
-    <div class="well">
+    <div class="well" data-example-id="list-inline-r-padding">
         {% include /markup-templates/lists/inline.html param="inline-lg" %}
     </div>
     {% highlight html %}
@@ -94,85 +67,21 @@
 
     <h3 id="list-inline-pipe" class="status status-chat">Inline List With Pipe</h3>
 
-    <div class="well">
+    <div class="well" data-example-id="list-inline-pipe">
         {% include /markup-templates/lists/ordered.html param="inline-pipe" %}
     </div>
     {% highlight html %}
     {% include /markup-templates/lists/ordered.html param="inline-pipe" %}
     {% endhighlight %}
 
-
     <h2 id="list-inline-featured" class="status status-good">Featured Inline Link List</h2>
     Use for related, cross-promotional links, Primarily located at the top of Hub pages and within the categorical
     mega-menus.
-    <div class="well">
+    <div class="well" data-example-id="list-inline-featured">
         {% include /markup-templates/lists/inline.html param="inline-featured" %}
     </div>
     {% highlight html %}
     {% include /markup-templates/lists/inline.html param="inline-featured" %}
     {% endhighlight %}
 
-
-    <h2 id="list-crumb" class="status status-base-class">Crumbs</h2>
-
-    <div class="well">
-        {% include /markup-templates/lists/ordered.html param="crumb" %}
-    </div>
-    {% highlight html %}
-    {% include /markup-templates/lists/ordered.html param="crumb" %}
-    {% endhighlight %}
-
-    <h2 id="list-dscrptn" class="status status-chat">Description</h2>
-
-    <p>A list of terms with their associated descriptions.</p>
-
-    <div class="well" data-example-id="simple-dl">
-        <dl>
-            <dt>Description lists</dt>
-            <dd>A description list is perfect for defining terms.</dd>
-            <dt>Euismod</dt>
-            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-            <dt>Malesuada porta</dt>
-            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-        </dl>
-    </div>
-    {% highlight html %}
-    <dl>
-        <dt>...</dt>
-        <dd>...</dd>
-    </dl>
-    {% endhighlight %}
-    <h3 class="status status-chat">Horizontal description</h3>
-
-    <p>Make terms and descriptions in <code>&lt;dl&gt;</code> line up side-by-side. Starts off stacked like default
-        <code>&lt;dl&gt;</code>s, but when the navbar expands, so do these.</p>
-
-    <div class="well" data-example-id="horizontal-dl">
-        <dl class="dl-horizontal">
-            <dt>Description lists</dt>
-            <dd>A description list is perfect for defining terms.</dd>
-            <dt>Euismod</dt>
-            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-            <dt>Malesuada porta</dt>
-            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-            <dt>Felis euismod semper eget lacinia</dt>
-            <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                amet risus.
-            </dd>
-        </dl>
-    </div>
-    {% highlight html %}
-    <dl class="dl-horizontal">
-        <dt>...</dt>
-        <dd>...</dd>
-    </dl>
-    {% endhighlight %}
-    <div class="bs-callout bs-callout-info" id="callout-type-dl-truncate">
-        <h4>Auto-truncating</h4>
-
-        <p>Horizontal description lists will truncate terms that are too long to fit in the left column with <code>text-overflow</code>.
-            In narrower viewports, they will change to the default stacked layout.</p>
-    </div>
 </section>

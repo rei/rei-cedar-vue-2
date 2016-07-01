@@ -2,6 +2,7 @@
 _gh_pages
 _site
 .ruby-version
+backstop_data
 
 # Numerous always-ignore extensions
 *.diff
