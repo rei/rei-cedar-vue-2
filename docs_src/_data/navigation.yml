@@ -73,7 +73,10 @@ items:
                   href: grid-nesting
 
                 - label: Column ordering
-                  href: grid-column-ordering
+                  href: grid-column-
+
+                - label: Flex grid
+                  href: grid-example-basic-flex
 
                 - label: Less mixins and variables
                   href: grid-less
