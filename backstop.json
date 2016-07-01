@@ -50,7 +50,9 @@
             "[data-example-id='responsive-column-resets']",
             "[data-example-id='offsetting-columns']",
             "[data-example-id='nesting-columns']",
-            "[data-example-id='column-ordering']"
+            "[data-example-id='column-ordering']",
+            "[data-example-id='flex-grid']",
+            "[data-example-id='flex-float-grid']"
         ],
         "readyEvent": null,
         "delay": 500,
