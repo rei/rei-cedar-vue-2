@@ -25,37 +25,38 @@
                     padding-left: 0;
                 }
             }
-            @media( min-width: 70rem ) {
+            @media( min-width: 700px ) {
                 .make-xs-column(4);
                 & .media-left {
                     display: table-cell !important;
                 }
                 & .media-body {
                     &.pull-right {
-                        padding-left: 1.2rem;
+                        padding-left: 12px;
                     }
                 }
             }
             & .icon {
-                margin-top: 0.5rem;
-                margin-bottom: 1rem;
+                margin-top: 5px;
+                margin-bottom: 10px;
+               // font-size: 32px;
                 vertical-align: middle;
             }
         }
         & .well {
-            height: 40rem;
-            @media( min-width: 70rem ) {
-                height: 35rem;
+            height: 400px;
+            @media( min-width: 700px ) {
+                height: 350px;
             }
             .social & {
-              height: 20rem;
+              height: 200px;
             }
         }
     }
     &.rating {
       color: @core-architectural-4;
       & .icon {
-        font-size: 3.2rem * 2;
+        font-size: 32px * 2;
         display: inline-block;
         &:nth-child(2){
           content: "\e72e";

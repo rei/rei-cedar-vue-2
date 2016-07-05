@@ -7,43 +7,54 @@
     background-color: #111;
     background-size: 100%;
 }
-
+.bs-docs-masthead
+.bs-docs-header {
+    position: relative;
+    padding: 30px 15px;
+    color: @docs-primary-lightest;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    background-color: @docs-primary-dark;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@docs-primary), to(@docs-primary-dark));
+    background-image: -webkit-linear-gradient(top, @docs-primary 0%, @docs-primary-dark 100%);
+    background-image:      -o-linear-gradient(top, @docs-primary 0%, @docs-primary-dark 100%);
+    background-image:         linear-gradient(to bottom, @docs-primary 0%, @docs-primary-dark 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@docs-primary', endColorstr='@docs-primary-dark', GradientType=0);
+    background-repeat: repeat-x;
+}
 
 /* Masthead (headings and download button) */
 .bs-docs-masthead .bs-docs-booticon {
-    margin: 0 auto 3rem;
+    margin: 0 auto 30px;
 }
-
+.bs-docs-masthead h1 {
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+}
 .bs-docs-masthead .lead {
     position: relative;
 }
 .bs-docs-masthead .version {
-    margin-top: -1.5rem;
-    margin-bottom: 3rem;
+    margin-top: -15px;
+    margin-bottom: 30px;
     color: @docs-primary-lighter;
 }
 .bs-docs-masthead .btn {
     width: 100%;
 }
 
-@media (min-width: @screen-xs-min) {
+@media (min-width: 480px) {
     .bs-docs-masthead .btn {
         width: auto;
     }
 }
 
-@media (min-width: @screen-sm-min) {
+@media (min-width: 768px) {
     .bs-docs-masthead {
-        padding: 8rem 0;
+        padding: 80px 0;
     }
-    .bs-docs-masthead .lead {
-        font-size: 2.4rem;
-    }
-}
-
-@media (min-width: @screen-md-min) {
-    .bs-docs-masthead .lead {
-        width: 80%;
-        font-size: 3rem;
+    .bs-docs-masthead h1 {
+        font-size: 60px;
     }
 }
