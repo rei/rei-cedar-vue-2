@@ -7,14 +7,10 @@ reviewers:
   - agats
   - bonpixel
   - codetothepoint
-  - kellykeene
   - mhewson
   - OwlbearMedia
-  - panganibanpj
   - peripateticus
   - petersgrandadventure
   - rhuded
-  - robinsr
-  - wjramos
   name: default
   required: 1
