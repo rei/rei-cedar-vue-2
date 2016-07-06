@@ -10,11 +10,11 @@ reviewers:
       - bonpixel
       - codetothepoint
       - mhewson
-    - OwlbearMedia
-    - panganibanpj
-    - peripateticus
-    - petersgrandadventure
-    - rhuded
+      - OwlbearMedia
+      - panganibanpj
+      - peripateticus
+      - petersgrandadventure
+      - rhuded
     conditions:
       branches:
         - master  # only need to approve if merging to master
