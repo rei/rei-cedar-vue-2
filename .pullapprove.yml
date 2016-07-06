@@ -1,12 +1,13 @@
+--- 
 approve_by_comment: true
 approve_regex: "\\b[aA][pP]+[rR][oO][vV][eE][dD]?\\b"
 reject_regex: "\\b[rR][eE][jJ][eE][cC][tT]([eE][dD])?\\b"
 reset_on_push: true
 reviewers: 
   - 
-    branches: 
-      - master
-    conditions: ~
+    conditions: 
+      branches: 
+        - master
     members: 
       - bonpixel
       - codetothepoint
