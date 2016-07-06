@@ -8,7 +8,7 @@ before_script:
 script:
   - gulp
   - jekyll serve --detach
-  - pa11y http://localhost:9002 -c pa11y.js
+  - pa11y http://localhost:9002
   - cd node_modules/backstopjs && npm run reference
   - npm run test
   - kill -9 $(ps aux | grep jekyll)
