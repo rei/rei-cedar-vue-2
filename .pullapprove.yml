@@ -1,12 +1,13 @@
 approve_by_comment: true
-approve_regex: \b[aA][pP]+[rR][oO][vV][eE][dD]?\b
-reject_regex: \b[rR][eE][jJ][eE][cC][tT]([eE][dD])?\b
+approve_regex: "\\b[aA][pP]+[rR][oO][vV][eE][dD]?\\b"
+reject_regex: "\\b[rR][eE][jJ][eE][cC][tT]([eE][dD])?\\b"
 reset_on_push: true
-reviewers:
-  -
-    name: default
-    required: 1
-    members:
+reviewers: 
+  - 
+    branches: 
+      - master
+    conditions: ~
+    members: 
       - bonpixel
       - codetothepoint
       - mhewson
@@ -15,6 +16,5 @@ reviewers:
       - peripateticus
       - petersgrandadventure
       - rhuded
-    conditions:
-      branches:
-        - master  # only need to approve if merging to master
+    name: default
+    required: 1
