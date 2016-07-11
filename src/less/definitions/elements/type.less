@@ -217,42 +217,45 @@ p {
 //----------------------------------------------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Alignment
-.text-center {
-    text-align: center;
-}
-.text-justify {
-    text-align: justify;
-}
-.text-left {
-    text-align: left;
-}
-.text-nowrap {
-    white-space: nowrap;
-}
-.text-right {
-    text-align: right;
+.text {
+    &-center {
+        text-align: center;
+    }
+    &-justify {
+        text-align: justify;
+    }
+    &-left {
+        text-align: left;
+    }
+    &-nowrap {
+        white-space: nowrap;
+    }
+    &-right {
+        text-align: right;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Character Transformation
-.text-capitalize {
-    text-transform: capitalize;
-}
-.text-lowercase {
-    text-transform: lowercase;
-}
-.text-sentence {
-    &::first-letter {
-        .text-uppercase();
+.text {
+    &-capitalize {
+        text-transform: capitalize;
+    }
+    &-lowercase {
+        text-transform: lowercase;
+    }
+    &-sentence {
+        &::first-letter {
+            &:extend( .text-uppercase );
+        }
+    }
+    &-uppercase {
+        text-transform: uppercase;
+    }
+    &-strikethrough {
+        text-decoration: line-through;
     }
 }
-.text-uppercase {
-    text-transform: uppercase;
-}
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Color
 
