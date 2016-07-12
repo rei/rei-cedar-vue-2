@@ -1,4 +1,4 @@
-/*
+    /*
 * Fancy skip link
 *
 * Make it look a bit less "bare bones"
@@ -7,19 +7,10 @@
 
 .skip-nav-link {
     display: block;
-    padding: 1em;
-    color: #fff;
-    background-color: @docs-primary-dark;
+    padding: 1rem;
+    color: #004e00 !important;
+    background-color: #a1c900;
     outline: 0;
-}
-
-.skip-nav-link .skiplink-text {
-    padding: .5em;
-    outline: 1px dotted;
-}
-
-.bs-docs-content:focus {
-    outline: none;
 }
 
 /*
@@ -28,7 +19,7 @@
 * Turn the `.navbar` at the top of the docs purple.
 */
 
-@docs-logo-width: 100px;
+@docs-logo-width: 10rem;
 @docs-logo-height: auto;
 
 .bs-navbar-collapse,
@@ -39,7 +30,7 @@
 .rei-logo {
     fill: #fff;
     stroke: none;
-    width: 200px;
+    width: 20rem;
     height: auto;
     &.secondary {
         width: @docs-logo-width;
@@ -58,7 +49,9 @@
 
 .doc_head-navigation,
 .doc_head-navigation ul {
-    &:extend(.list-menu all);
+    .list-menu();
+    padding-left: 0;
+    list-style: none;
 }
 
 .doc_head-navigation-item {
@@ -83,7 +76,7 @@
     .nested-item {
 
         a {
-            font-size: 14px;
+            font-size: 1.4rem;
             background: @list-group-bg !important;
             color: #000 !important;
             &:hover {
@@ -114,9 +107,9 @@
     .doc_head-navigation-nested-list {
         font-size: @font-size-smaller;
         position: absolute;
-        left: -9999px;
+        left: -999.9rem;
         opacity: 0;
-        width: 200px;
+        width: 20rem;
     }
     .doc_head-navigation-item > a {
         border: none;
@@ -139,7 +132,7 @@
         padding: 0;
         position: relative;
         a {
-            .button-size(@padding-large-vertical; @padding-large-horizontal; 16px; @btn-line-height; @headings-font-family;);
+            .button-size(@padding-large-vertical; @padding-large-horizontal; 1.6rem; @btn-line-height; @headings-font-family;);
             color: #fff !important;
             text-decoration: none;
             transition: all linear 0.1s;
