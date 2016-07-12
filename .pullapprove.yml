@@ -1,20 +1,21 @@
 approve_by_comment: true
-approve_regex: \b[aA][pP]+[rR][oO][vV][eE][dD]?\b
-reject_regex: \b[rR][eE][jJ][eE][cC][tT]([eE][dD])?\b
-reset_on_push: false
+approve_regex: "\\b[aA][pP]+[rR][oO][vV][eE][dD]?\\b"
+reject_regex: "\\b[rR][eE][jJ][eE][cC][tT]([eE][dD])?\\b"
+reset_on_push: true
 reviewers:
-  members:
-  - agats
-  - bonpixel
-  - codetothepoint
-  - kellykeene
-  - mhewson
-  - OwlbearMedia
-  - panganibanpj
-  - peripateticus
-  - petersgrandadventure
-  - rhuded
-  - robinsr
-  - wjramos
-  name: default
-  required: 1
+  -
+    conditions:
+      branches:
+        - master
+    members:
+      - bonpixel
+      - codetothepoint
+      - mhewson
+      - megafatsquirrel
+      - OwlbearMedia
+      - panganibanpj
+      - peripateticus
+      - petersgrandadventure
+      - rhuded
+    name: default
+    required: 1

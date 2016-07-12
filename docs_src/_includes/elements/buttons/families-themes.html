@@ -11,8 +11,7 @@
             These buttons help the user act on an informational, research or purchase path of an REI product.
         </p>
 
-        <p> Button examples: "Submit", "Checkout", "Add to cart", "See more",
-            "Continue shopping".
+        <p> Button examples: "Submit", "Checkout", "Add to cart", "See more", "Continue shopping".
         </p>
 
         <h4>Core Specifications</h4>
@@ -21,7 +20,7 @@
 
         <div class="row">
             <div class="col-sm-6 ">
-                <button type="button" class="btn btn-primary btn-block">Block button</button>
+                <button type="button" class="btn btn-primary btn-block" data-example-id="button-primary-core-block">Block button</button>
             </div>
             <div class="col-sm-6">
                 <p class="note">Use the full breakpoint width in XS grid</p>
@@ -52,7 +51,7 @@
 
             <p> When grouped, it is used for the primary action of the grouping.</p>
 
-            <div class="well">
+            <div class="well" data-example-id="button-primary-core">
                 {% include /markup-templates/buttons/standard.html param="Primary Core" %}
             </div>
             {% highlight html %}
@@ -67,7 +66,7 @@
 
             <p>Examples: Cancel, Find in store</p>
 
-            <div class="well">
+            <div class="well" data-example-id="button-secondary-core">
                 {% include /markup-templates/buttons/standard.html param="Secondary Core" %}
             </div>
 
@@ -76,7 +75,7 @@
             <p>Use this as the alternate choice when the Core Primary Blue button will clash with a photographic or
                 colored background.</p>
 
-            <div class="well">
+            <div class="well" data-example-id="button-primary-contrast">
                 {% include /markup-templates/buttons/standard.html param="Primary Contrast" %}
             </div>
             {% highlight html %}
@@ -88,7 +87,7 @@
             <p>For use on dark backgrounds where the border of the CORE Secondary button would become lost and effect
                 the visual alignment of a button parring. </p>
 
-            <div class="well overlay-dark-2">
+            <div class="well overlay-dark-2" data-example-id="button-secondary-contrast">
                 {% include /markup-templates/buttons/standard.html param="Secondary Contrast" %}
             </div>
             {% highlight html %}
@@ -102,7 +101,7 @@
                 in a list such as "Register" on a classes and Events page. <strong>Hover / Active / Focus states match
                     "Large" styling definition.</strong></p>
 
-            <div class="well overlay-medium-2">
+            <div class="well overlay-medium-2" data-example-id="button-small">
                 {% include /markup-templates/buttons/standard.html param="Core Small" %}
             </div>
             {% highlight html %}
@@ -115,7 +114,7 @@
                 search results.
                 <strong>Hover / Active / Focus states match "Large" styling definition</strong>.</p>
 
-            <div class="well overlay-medium-2">
+            <div class="well overlay-medium-2" data-example-id="button-extra-small">
                 {% include /markup-templates/buttons/standard.html param="Core Extra Small" %}
             </div>
             {% highlight html %}
@@ -151,7 +150,7 @@
         <h5 class="vertical-pull-lg">Button at XS breakpoint with full-width override</h5>
         <div class="row">
             <div class="col-sm-6 ">
-                <button type="button" class="btn btn-explore btn-primary btn-fixed">Fixed state button</button>
+                <button type="button" class="btn btn-explore btn-primary btn-fixed" data-example-id="button-explore-fixed">Fixed state button</button>
             </div>
             <div class="col-sm-6">
                 <p class="note">In specific cases (recommended for hub or campaign pages only)</p>
@@ -166,7 +165,7 @@
 
         <p>Used for a single high-focus exploratory action.</p>
 
-        <div class="well">
+        <div class="well" data-example-id="button-primary-explore">
             {% include /markup-templates/buttons/standard.html param="Primary Explore" %}
         </div>
         {% highlight html %}
@@ -178,7 +177,7 @@
         <p>Pair this button with the Explore Primary button. When grouped, it is the second choice button, placed second
             in line.</p>
 
-        <div class="well">
+        <div class="well" data-example-id="button-secondary-explore">
             {% include /markup-templates/buttons/standard.html param="Secondary Explore" %}
         </div>
         {% highlight html %}
@@ -190,7 +189,7 @@
         <p>Use this as the alternate choice when the Explore Primary Blue button will clash with a photographic or
             colored background.</p>
 
-        <div class="well">
+        <div class="well" data-example-id="button-primary-explore-contrast">
             {% include /markup-templates/buttons/standard.html param="Explore Primary Contrast" %}
         </div>
         {% highlight html %}
@@ -202,7 +201,7 @@
         <p>For use on dark backgrounds where the border of the Explore Secondary button would become lost and effect the
             visual alignment of a button parring. </p>
 
-        <div class="well overlay-dark-2">
+        <div class="well overlay-dark-2" data-example-id="button-secondary-explore-contrast">
             {% include /markup-templates/buttons/standard.html param="Explore Secondary Contrast" %}
         </div>
         {% highlight html %}
@@ -214,7 +213,7 @@
         <p>Used when it's desired to have the background revealed through the button shape. Most often in the Hero area
             of a Hub page.</p>
 
-        <div class="well overlay-dark-2 overlay-img">
+        <div class="well overlay-dark-2 overlay-img" data-example-id="button-primary-outline">
             {% include /markup-templates/buttons/standard.html param="Explore Outline" %}
         </div>
         {% highlight html %}

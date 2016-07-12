@@ -7,15 +7,15 @@
 
 .skip-nav-link {
     display: block;
-    padding: 1rem;
+    padding: 1em;
     color: #fff;
     background-color: @docs-primary-dark;
     outline: 0;
 }
 
 .skip-nav-link .skiplink-text {
-    padding: 0.5rem;
-    outline: 0.1rem dotted;
+    padding: .5em;
+    outline: 1px dotted;
 }
 
 .bs-docs-content:focus {
@@ -28,7 +28,7 @@
 * Turn the `.navbar` at the top of the docs purple.
 */
 
-@docs-logo-width: 10rem;
+@docs-logo-width: 100px;
 @docs-logo-height: auto;
 
 .bs-navbar-collapse,
@@ -39,7 +39,7 @@
 .rei-logo {
     fill: #fff;
     stroke: none;
-    width: 20rem;
+    width: 200px;
     height: auto;
     &.secondary {
         width: @docs-logo-width;
@@ -58,9 +58,7 @@
 
 .doc_head-navigation,
 .doc_head-navigation ul {
-    .list-menu();
-    padding-left: 0;
-    list-style: none;
+    &:extend(.list-menu all);
 }
 
 .doc_head-navigation-item {
@@ -85,7 +83,7 @@
     .nested-item {
 
         a {
-            font-size: 1.4rem;
+            font-size: 14px;
             background: @list-group-bg !important;
             color: #000 !important;
             &:hover {
@@ -116,9 +114,9 @@
     .doc_head-navigation-nested-list {
         font-size: @font-size-smaller;
         position: absolute;
-        left: -999.9rem;
+        left: -9999px;
         opacity: 0;
-        width: 20rem;
+        width: 200px;
     }
     .doc_head-navigation-item > a {
         border: none;
@@ -141,7 +139,7 @@
         padding: 0;
         position: relative;
         a {
-            .button-size(@padding-large-vertical; @padding-large-horizontal; 1.6rem; @btn-line-height; @headings-font-family;);
+            .button-size(@padding-large-vertical; @padding-large-horizontal; 16px; @btn-line-height; @headings-font-family;);
             color: #fff !important;
             text-decoration: none;
             transition: all linear 0.1s;

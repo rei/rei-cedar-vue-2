@@ -125,22 +125,16 @@
 .media-scale ( @crop: true; @aspect: landscape )
   when ( @crop )
   and ( @aspect = landscape ){
-  height: 100%;
-  width: auto;
+  max-height: 100%;
+  max-width: none;
 }
 
 .media-scale ( @crop: true; @aspect )
   when ( @crop )
   and ( @aspect = portrait ){
-  height: auto;
-  width: 100%;
+  max-height: none;
+  max-width: 100%;
 }
-
-.media-scale ( @crop; @aspect; @sharpen: false )
-  when ( @sharpen ) {
-  &:extend( .media-sharpen );
-}
-
 
 .media-frame ( @aspect; @crop; @anchor ) {
     position: relative;
@@ -148,11 +142,14 @@
 }
 
 .media-frame ( @aspect; @crop: true; @anchor )
-  when ( ispixel( @crop ) ){
-  > img,
-  > video {
-    padding: @crop;
-  }
+  when ( ispixel( @crop ) ) {
+    > img,
+    > video,
+    > iframe,
+    > embed,
+    > object {
+      padding: @crop;
+    }
 }
 
 .media-frame ( @aspect: landscape; @crop: true; @anchor ){
@@ -189,8 +186,7 @@
 .img-frame {
 
   // Default as non-cropping
-  &:not( .center ):not( .top ):not( .right ):not( .bottom ):not( .left ),
-  &.nocrop {
+  & {
     .media-frame( landscape; false; center );
   }
 
