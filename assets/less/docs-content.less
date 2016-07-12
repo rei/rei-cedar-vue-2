@@ -8,7 +8,7 @@
 }
 /* Space things out */
 .bs-docs-section {
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 .bs-docs-section:last-child {
     margin-bottom: 0;
@@ -35,26 +35,26 @@ h1[id] {
 
 /* Common styles for all types */
 .bs-callout {
-    padding: 20px;
-    margin: 20px 0;
-    border: 1px solid #eee;
-    border-left-width: 5px;
-    border-radius: 3px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 0.1rem solid #eee;
+    border-left-width: 0.5rem;
+    border-radius: 0.3rem;
 }
 .bs-callout h4 {
     margin-top: 0;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 }
 .bs-callout p:last-child {
     margin-bottom: 0;
 }
 .bs-callout code {
-    border-radius: 3px;
+    border-radius: 0.3rem;
 }
 
 /* Tighten up space between multiple callouts */
 .bs-callout + .bs-callout {
-    margin-top: -5px;
+    margin-top: -0.5rem;
 }
 
 /* Variations */
@@ -85,23 +85,18 @@ h1[id] {
 */
 
 .show-grid {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 .show-grid [class^="col-"] {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #ccc;
-    background-color: rgba( 204, 204, 204, .4 )
-    border: 1px solid #ddd;
-    border: 1px solid rgba( 86,61,124,.2 );
-    height: 150px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #eee;
+    background-color: rgba(86,61,124,.15);
+    border: 0.1rem solid #ddd;
+    border: 0.1rem solid rgba(86,61,124,.2);
 }
 
-.show-grid [class^="col-"] * {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-}
+
 /*
 * Examples
 *
@@ -111,9 +106,9 @@ h1[id] {
 
 .bs-example {
     position: relative;
-    padding: 12px 16px;
-    margin: 0 0 22px;
-    border: 1px solid #ccc;
+    padding: 1.2rem 1.6rem;
+    margin: 0 0 2.2rem;
+    border: 0.1rem solid #ccc;
 }
 
 .overlay-img {
@@ -121,11 +116,11 @@ h1[id] {
 }
 
 .bs-header-well {
-    padding: 16px 0;
+    padding: 1.6rem 0;
 }
 
 .well {
-  border: 1px solid #f5f5f5;
+  border: 0.1rem solid #f5f5f5;
   .well{
     border: none;
   }
@@ -141,14 +136,14 @@ h1[id] {
       @media( min-width: @screen-lg-min ) {
         content: "Large breakpoint";
       }
-      border: 1px solid #f5f5f5;
+      border: 0.1rem solid #f5f5f5;
       border-left: none;
       border-top: none;
       color: @core-architectural-4;
       position: relative;
-      padding: 2px;
-      left: -16px;
-      top: -13px;
+      padding: 0.2rem;
+      left: -1.6rem;
+      top: -1.3rem;
     }
   }
 }
@@ -161,17 +156,15 @@ h1[id] {
   &:after {
     color: @color;
     display: inline-block;
-    margin-left: 12px;
+    margin-left: 1.2rem;
     position: relative;
-    top: 3px;
+    top: 0.3rem;
     h1&,
-    h2&,
-    &.primary-heading{
+    h2& {
         font-size: @font-size-h1;
     }
     h3&,
-    h4&,
-    &.secondary-heading{
+    h4& {
         font-size: @font-size-h3;
     }
   }
@@ -249,7 +242,7 @@ h1[id] {
 }
 
 .bs-example-padded-bottom {
-    padding-bottom: 24px;
+    padding-bottom: 2.4rem;
 }
 
 /* Tweak display of the code snippets when following an example */
@@ -257,27 +250,27 @@ h1[id] {
 .well + .zero-clipboard + .highlight,
 .well-group + .highlight,
 .well-group + .zero-clipboard + .highlight {
-    margin: -22px -15px 22px;
-    border-width: 0 0 1px;
+    margin: -2.2rem -1.5rem 2.2rem;
+    border-width: 0 0 0.1rem;
     border-radius: 0;
 }
 
 /* Make the examples and snippets not full-width */
-@media (min-width: 768px) {
+@media (min-width: @screen-sm-min) {
     .well + .highlight,
     .well + .zero-clipboard + .highlight,
     .well-group + .highlight,
     .well-group + .zero-clipboard + .highlight {
-        margin-top: -22px;
+        margin-top: -2.2rem;
         margin-right: 0;
         margin-left: 0;
-        border-width: 1px;
+        border-width: 0.1rem;
         border-top: none;
-        border-bottom-right-radius: 4px;
-        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
     }
     .bs-example-standalone {
-        border-radius: 4px;
+        border-radius: 0.4rem;
     }
 }
 
@@ -296,7 +289,7 @@ h1[id] {
     vertical-align: middle;
 }
 .bs-example-type .table td {
-    padding: 15px 0;
+    padding: 1.5rem 0;
     border-color: #eee;
 }
 .bs-example-type .table tr:first-child td {
@@ -305,14 +298,14 @@ h1[id] {
 
 /* Contextual background colors */
 .bs-example-bg-classes p {
-    padding: 15px;
+    padding: 1.5rem;
 }
 
 /* Images */
 .bs-example > .img-circle,
 .bs-example > .img-rounded,
 .bs-example > .img-thumbnail {
-    margin: 5px;
+    margin: 0.5rem;
 }
 
 /* Tables */
@@ -323,17 +316,17 @@ h1[id] {
 /* Buttons */
 .bs-example > .btn,
 .bs-example > .btn-group {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Forms */
 .bs-example-control-sizing select,
 .bs-example-control-sizing input[type="text"] + input[type="text"] {
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 .bs-example-form .input-group {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 .bs-example > textarea.form-control {
     resize: vertical;
@@ -341,7 +334,7 @@ h1[id] {
 
 /* List groups */
 .bs-example > .list-group {
-    max-width: 400px;
+    max-width: 40rem;
 }
 
 /* Navbars */
@@ -365,25 +358,25 @@ h1[id] {
     margin-left: 0;
 }
 .bs-navbar-top-example {
-    padding-bottom: 45px;
+    padding-bottom: 4.5rem;
 }
 .bs-navbar-top-example:after {
     top: auto;
-    bottom: 15px;
+    bottom: 1.5rem;
 }
 .bs-navbar-top-example .navbar-fixed-top {
-    top: -1px;
+    top: -0.1rem;
 }
 .bs-navbar-bottom-example {
-    padding-top: 45px;
+    padding-top: 4.5rem;
 }
 .bs-navbar-bottom-example .navbar-fixed-bottom {
-    bottom: -1px;
+    bottom: -0.1rem;
 }
 .bs-navbar-bottom-example .navbar {
     margin-bottom: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: @screen-sm-min) {
     .bs-navbar-top-example .navbar-fixed-top,
     .bs-navbar-bottom-example .navbar-fixed-bottom {
         position: absolute;
@@ -392,8 +385,8 @@ h1[id] {
 
 /* Pagination */
 .bs-example .pagination {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Pager */
@@ -424,7 +417,7 @@ h1[id] {
 
 /* Example tabbable tabs */
 .bs-example-tabs .nav-tabs {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
 /* Tooltips */
@@ -432,34 +425,34 @@ h1[id] {
     text-align: center;
 }
 .bs-example-tooltips > .btn {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .bs-example-tooltip .tooltip {
     position: relative;
     display: inline-block;
-    margin: 10px 20px;
+    margin: 1rem 2rem;
     opacity: 1;
 }
 
 /* Popovers */
 .bs-example-popover {
-    padding-bottom: 24px;
+    padding-bottom: 2.4rem;
     background-color: @docs-gray-lightest;
 }
 .bs-example-popover .popover {
     position: relative;
     display: block;
     float: left;
-    width: 260px;
-    margin: 20px;
+    width: 26rem;
+    margin: 2rem;
 }
 
 /* Scrollspy demo on fixed height div */
 .scrollspy-example {
     position: relative;
-    height: 200px;
-    margin-top: 10px;
+    height: 20rem;
+    margin-top: 1rem;
     overflow: auto;
 }
 
@@ -475,16 +468,16 @@ h1[id] {
 }
 
 .bs-events-table > thead > tr > th:first-child {
-    width: 150px;
+    width: 15rem;
 }
 
 .js-options-table > thead > tr > th:nth-child(1),
 .js-options-table > thead > tr > th:nth-child(2) {
-    width: 100px;
+    width: 10rem;
 }
 
 .js-options-table > thead > tr > th:nth-child(3) {
-    width: 50px;
+    width: 5rem;
 }
 
 .btn-clipboard {
@@ -493,13 +486,13 @@ h1[id] {
   right: 0;
   z-index: 10;
   display: block;
-  padding: 5px 8px;
-  font-size: 12px;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.2rem;
   color: #767676;
   cursor: pointer;
   background-color: #fff;
-  border: 1px solid #e1e1e8;
-  border-radius: 0 4px 0 4px;
+  border: 0.1rem solid #e1e1e8;
+  border-radius: 0 0.4rem 0 0.4rem;
 }
 
 
@@ -511,7 +504,7 @@ h1[id] {
 
 /* Pseudo :focus state for showing how it looks in the docs */
 #focusedInput {
-    border: 1px solid @core-action-2; /* Restate unfocused value to make CSSLint happy that there's a pre-CSS3 fallback*/
+    border: 0.1rem solid @core-action-2; /* Restate unfocused value to make CSSLint happy that there's a pre-CSS3 fallback*/
 
 }
 
@@ -519,7 +512,7 @@ h1[id] {
 // Description Lists
 dl {
     margin-top: 0; // Remove browser default
-    margin-bottom: @line-height-computed;
+    margin-bottom: 2.4rem;
 }
 dt,
 dd {
@@ -545,18 +538,13 @@ dd {
     @media ( min-width: @screen-sm-min ) {
         dt {
             float: left;
-            width: ( @dl-horizontal-offset - 20 );
+            width: ( @dl-horizontal-offset - 0.2 );
             clear: left;
             text-align: right;
             .text-overflow();
         }
         dd {
-            margin-left: @dl-horizontal-offset;
+            margin-left: (@dl-horizontal-offset);
         }
     }
-}
-
-.icon-doc {
-    height: 250px;
-    width: 100%;
 }
