@@ -1407,7 +1407,7 @@
     },
     "gulp-pa11y": {
       "version": "0.0.4",
-      "from": "gulp-pa11y@0.0.4",
+        "from": "gulp-pa11y@0.0.4",
       "resolved": "https://registry.npmjs.org/gulp-pa11y/-/gulp-pa11y-0.0.4.tgz",
       "dependencies": {
         "commander": {
