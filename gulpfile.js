@@ -17,34 +17,34 @@
  * Build script for the REI Cedar Framework
  */
 
-var path                = require( 'path' );
-var gulp                = require( 'gulp' );
-var less                = require( 'gulp-less' );
-var rename              = require( 'gulp-rename' );
-var minifyCss           = require( 'gulp-cssnano' );
-var a11y                = require( 'gulp-a11y' );
-var pa11y               = require( 'gulp-pa11y' );
-var csscomb             = require( 'gulp-csscomb' );
-var inject              = require( 'gulp-inject' );
-var uglify              = require( 'gulp-uglify' );
-var streamify           = require( 'gulp-streamify' );
-var cssmin              = require( 'gulp-cssmin' );
-var csslint             = require( 'gulp-csslint' );
-var qunit               = require( 'gulp-qunit' );
-var sourcemaps          = require( 'gulp-sourcemaps' );
+var path = require( 'path' );
+var gulp = require( 'gulp' );
+var less = require( 'gulp-less' );
+var rename = require( 'gulp-rename' );
+var minifyCss = require( 'gulp-cssnano' );
+var a11y = require( 'gulp-a11y' );
+var pa11y = require( 'gulp-pa11y' );
+var csscomb = require( 'gulp-csscomb' );
+var inject = require( 'gulp-inject' );
+var uglify = require( 'gulp-uglify' );
+var streamify = require( 'gulp-streamify' );
+var cssmin = require( 'gulp-cssmin' );
+var csslint = require( 'gulp-csslint' );
+var qunit = require( 'gulp-qunit' );
+var sourcemaps = require( 'gulp-sourcemaps' );
 var cssLintLessReporter = require( 'gulp-csslint-less-reporter' );
-var postcss             = require( 'gulp-postcss' );
+var postcss = require( 'gulp-postcss' );
 
-var autoprefixer        = require( 'autoprefixer' );
-var source              = require( 'vinyl-source-stream' );
-var browserify          = require( 'browserify' );
-var glob                = require( 'glob' );
-var del                 = require( 'del' );
-var es                  = require( 'event-stream' );
-var runSequence         = require( 'run-sequence' );
-var spawn               = require( 'child_process' ).spawn;
+var autoprefixer = require( 'autoprefixer' );
+var source = require( 'vinyl-source-stream' );
+var browserify = require( 'browserify' );
+var glob = require( 'glob' );
+var del = require( 'del' );
+var es = require( 'event-stream' );
+var runSequence = require( 'run-sequence' );
+var spawn = require( 'child_process' ).spawn;
 
-var pkg                 = require( './package.json' );
+var pkg = require( './package.json' );
 
 
 //       /$$$$$$                       /$$$$$$  /$$
@@ -251,7 +251,9 @@ gulp.task( 'css:clean', () => del( [ path.join( PATHS.DIST, '**/*.css' ) ] ) );
 // Compile the UI framework's Less --> ./dist.
 gulp.task( 'css:build', [ 'css:clean' ], () => {
 
-    const lessc = less( { paths: [ PATHS.LESS ] } ).on( 'error', err => {
+    const lessc = less( {
+        paths: [ PATHS.LESS ]
+    } ).on( 'error', err => {
         console.log( 'There was a problem compiling the LESS files...' );
         throw new Error( err );
     } ); // Break on less compile errors
@@ -264,29 +266,29 @@ gulp.task( 'css:build', [ 'css:clean' ], () => {
     } );
 
     return gulp.src( path.join( PATHS.SRC, '/less/main.less' ) )
-            .pipe( sourcemaps.init() )
-            .pipe( rename( {
-                basename: pkg.name
-            } ) ) // Rename the bundle basename to $PROJECT_NAME-$VERSION
-            .pipe( lessc ) // Build the dev bundle
-            .pipe( csslint() )
-            .pipe( lintLessReporter )
-            .pipe( csscomb() )
-            .pipe( postcss( [ autoprefixer( {
-                browsers: [ 'last 2 versions' ]
-            } ) ] ) )
-            .pipe( sourcemaps.write() )
-            .pipe( gulp.dest( PATHS.DIST ) );
+        .pipe( sourcemaps.init() )
+        .pipe( rename( {
+            basename: pkg.name
+        } ) ) // Rename the bundle basename to $PROJECT_NAME-$VERSION
+        .pipe( lessc ) // Build the dev bundle
+        .pipe( csslint() )
+        .pipe( lintLessReporter )
+        .pipe( csscomb() )
+        .pipe( postcss( [ autoprefixer( {
+            browsers: [ 'last 2 versions' ]
+        } ) ] ) )
+        .pipe( sourcemaps.write() )
+        .pipe( gulp.dest( PATHS.DIST ) );
 } );
 
 // minify the css
 gulp.task( 'css:minify', [ 'css:build' ], () =>
     gulp.src( path.join( PATHS.DIST, '/rei-cedar.css' ) )
-        .pipe( rename( {
-            suffix: '.min'
-        } ) ) // Build the minified bundle
-        .pipe( minifyCss() )
-        .pipe( gulp.dest( PATHS.DIST ) )
+    .pipe( rename( {
+        suffix: '.min'
+    } ) ) // Build the minified bundle
+    .pipe( minifyCss() )
+    .pipe( gulp.dest( PATHS.DIST ) )
 );
 
 
@@ -309,20 +311,27 @@ gulp.task( 'js:test:pre-clean', () => del( [ path.join( PATHS.TEST, '/tmp/js/*' 
 // Copy JS for testing
 gulp.task( 'js:test:copy', [ 'js:test:pre-clean' ], () =>
     gulp.src( [ path.join( PATHS.SRC, '/js/**/*' ) ] )
-        .pipe( gulp.dest( path.join( PATHS.TEST, '/tmp/js' ) ) )
+    .pipe( gulp.dest( path.join( PATHS.TEST, '/tmp/js' ) ) )
 );
 
 // Compile the UI framework's Javascript --> ./dist. Include the minified version.
 gulp.task( 'js:build', [ 'js:test:post-clean' ], () =>
     browserify( PATHS.SRC + '/js/main.js' ).bundle()
-        .pipe( source( PATHS.SRC + '/js/main.js' ) )
-        .pipe( streamify( sourcemaps.init() ) )
-        .pipe( rename( { dirname: '/', basename: 'rei-cedar' } ) )
-        .pipe( streamify( sourcemaps.write() ) )
-        .pipe( gulp.dest( PATHS.DIST ) )
-        .pipe( rename( { dirname: '/', basename: 'rei-cedar', suffix: '.min' } ) )
-        .pipe( streamify( uglify() ) )
-        .pipe( gulp.dest( PATHS.DIST ) )
+    .pipe( source( PATHS.SRC + '/js/main.js' ) )
+    .pipe( streamify( sourcemaps.init() ) )
+    .pipe( rename( {
+        dirname: '/',
+        basename: 'rei-cedar'
+    } ) )
+    .pipe( streamify( sourcemaps.write() ) )
+    .pipe( gulp.dest( PATHS.DIST ) )
+    .pipe( rename( {
+        dirname: '/',
+        basename: 'rei-cedar',
+        suffix: '.min'
+    } ) )
+    .pipe( streamify( uglify() ) )
+    .pipe( gulp.dest( PATHS.DIST ) )
 );
 
 // Browserify individual components for test
@@ -342,7 +351,7 @@ gulp.task( 'js:test:browserify-single-components', [ 'js:test:copy' ], done => {
 
         // Merge the streams
         es.merge( tasks )
-          .on( 'end', done );
+            .on( 'end', done );
     } )
 } );
 
@@ -350,23 +359,23 @@ gulp.task( 'js:test:browserify-single-components', [ 'js:test:copy' ], done => {
 // Inject files into js/tests/index.html for testing
 gulp.task( 'js:test:inject', [ 'js:test:browserify-single-components' ], () =>
     gulp.src( path.join( PATHS.TEST, '/tmp/js/tests/index.html' ) )
-        // Get all test files and inject into index.html
-        .pipe( inject( gulp.src( [ path.join( PATHS.TEST, '/tmp/js/tests/unit/*.js' ) ], {
-            read: false
-        } ), {
-            name: 'tests',
-            relative: true
-        } ) )
-        .pipe( gulp.dest( path.join( PATHS.TEST, '/tmp/js/tests' ) ) )
+    // Get all test files and inject into index.html
+    .pipe( inject( gulp.src( [ path.join( PATHS.TEST, '/tmp/js/tests/unit/*.js' ) ], {
+        read: false
+    } ), {
+        name: 'tests',
+        relative: true
+    } ) )
+    .pipe( gulp.dest( path.join( PATHS.TEST, '/tmp/js/tests' ) ) )
 );
 
 
 // Qunit test the components
 gulp.task( 'js:test:qunit', [ 'js:test:inject' ], () =>
     gulp.src( path.join( PATHS.TEST, '/tmp/js/tests/index.html' ) )
-        .pipe( qunit( {
-            'timeout': 20
-        } ) )
+    .pipe( qunit( {
+        'timeout': 20
+    } ) )
 );
 
 
@@ -382,21 +391,21 @@ gulp.task( 'js:test:post-clean', [ 'js:test:qunit' ], () => del( [ path.join( PA
 // Compile the UI framework's Javascript --> ./dist. Include the minified version.
 gulp.task( 'js:build', [ 'js:test:post-clean' ], () =>
     browserify( path.join( PATHS.SRC, '/js/main.js' ) ).bundle()
-        .pipe( source( path.join( PATHS.SRC, '/js/main.js' ) ) )
-        .pipe( streamify( sourcemaps.init() ) )
-        .pipe( rename( {
-            dirname: '/',
-            basename: 'rei-cedar'
-        } ) )
-        .pipe( streamify( sourcemaps.write() ) )
-        .pipe( gulp.dest( PATHS.DIST ) )
-        .pipe( rename( {
-            dirname: '/',
-            basename: 'rei-cedar',
-            suffix: '.min'
-        } ) )
-        .pipe( streamify( uglify() ) )
-        .pipe( gulp.dest( PATHS.DIST ) )
+    .pipe( source( path.join( PATHS.SRC, '/js/main.js' ) ) )
+    .pipe( streamify( sourcemaps.init() ) )
+    .pipe( rename( {
+        dirname: '/',
+        basename: 'rei-cedar'
+    } ) )
+    .pipe( streamify( sourcemaps.write() ) )
+    .pipe( gulp.dest( PATHS.DIST ) )
+    .pipe( rename( {
+        dirname: '/',
+        basename: 'rei-cedar',
+        suffix: '.min'
+    } ) )
+    .pipe( streamify( uglify() ) )
+    .pipe( gulp.dest( PATHS.DIST ) )
 );
 
 
@@ -428,25 +437,25 @@ gulp.task( 'docs:clean-copied-less', () => del( [ path.join( PATHS.DOCS_SRC, '/_
 // Build REI-Cedar CSS and copy into docs_src directory
 gulp.task( 'docs:copy-css', [ 'docs:clean-copied-from-src' ], () =>
     gulp.src( path.join( PATHS.DIST, '*.css' ) )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_SRC ) ) )
+    .pipe( gulp.dest( path.join( PATHS.DOCS_SRC ) ) )
 );
 
 // Build old Bootstrap JS and copy into the docs_src directory
 gulp.task( 'docs:copy-js', [ 'docs:clean-copied-from-src' ], () =>
     gulp.src( path.join( PATHS.DIST, '*.js' ) )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_SRC ) ) )
+    .pipe( gulp.dest( path.join( PATHS.DOCS_SRC ) ) )
 );
 
 // Copy packages to docs_src directory
 gulp.task( 'docs:copy-package', [ 'docs:clean-copied-package' ], () =>
     gulp.src( './package.json' )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '_data' ) ) )
+    .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '_data' ) ) )
 );
 
 // Copy variables to docs_src directory
 gulp.task( 'docs:copy-less', [ 'docs:clean-copied-less' ], () =>
     gulp.src( path.join( path.join( PATHS.SRC, '/less/**/*' ) ) )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '_includes/less' ) ) )
+    .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '_includes/less' ) ) )
 );
 
 
@@ -454,22 +463,22 @@ gulp.task( 'docs:copy-less', [ 'docs:clean-copied-less' ], () =>
 
 gulp.task( 'docs:autoprefixer-css', [ 'docs:clean', 'docs:copy-all' ], () =>
     gulp.src( [ 'docs/assets/css/anchor.css', 'docs/assets/css/src/docs.css' ] )
-        .pipe( sourcemaps.init() )
-        .pipe( postcss( [ autoprefixer( {
-            browsers: [ 'last 2 versions' ]
-        } ) ] ) )
-        .pipe( sourcemaps.write( '.' ) )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) )
+    .pipe( sourcemaps.init() )
+    .pipe( postcss( [ autoprefixer( {
+        browsers: [ 'last 2 versions' ]
+    } ) ] ) )
+    .pipe( sourcemaps.write( '.' ) )
+    .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) )
 );
 
 gulp.task( 'docs:autoprefixer-examples', [ 'docs:clean', 'docs:copy-all' ], () =>
     gulp.src( path.join( PATHS.DOCS_SRC, 'docs/examples/**/*.css' ) )
-        .pipe( sourcemaps.init() )
-        .pipe( postcss( [ autoprefixer( {
-            browsers: [ 'last 2 versions' ]
-        } ) ] ) )
-        .pipe( sourcemaps.write( '.' ) )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'docs/examples/' ) ) )
+    .pipe( sourcemaps.init() )
+    .pipe( postcss( [ autoprefixer( {
+        browsers: [ 'last 2 versions' ]
+    } ) ] ) )
+    .pipe( sourcemaps.write( '.' ) )
+    .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'docs/examples/' ) ) )
 );
 
 
@@ -477,25 +486,25 @@ gulp.task( 'docs:autoprefixer-examples', [ 'docs:clean', 'docs:copy-all' ], () =
 
 gulp.task( 'docs:csscomb-css', [ 'docs:clean', 'docs:copy-all' ], () =>
     gulp.src( [ 'docs/assets/css/anchor.css', 'docs/assets/css/src/docs.css' ] )
-        .pipe( csscomb( {
-            expand: true,
-            cwd: 'dist/css/',
-            src: [ '*.css', '!*.min.css' ],
-            dest: 'dist/css/'
-        } ) )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) )
+    .pipe( csscomb( {
+        expand: true,
+        cwd: 'dist/css/',
+        src: [ '*.css', '!*.min.css' ],
+        dest: 'dist/css/'
+    } ) )
+    .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) )
 );
 
 
 gulp.task( 'docs:csscomb-examples', [ 'docs:clean', 'docs:copy-all' ], () =>
     gulp.src( path.join( PATHS.DOCS_SRC, 'docs/examples/**/*.css' ) )
-        .pipe( csscomb( {
-            expand: true,
-            cwd: 'dist/css/',
-            src: [ '*.css', '!*.min.css' ],
-            dest: 'dist/css/'
-        } ) )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'docs/examples/' ) ) )
+    .pipe( csscomb( {
+        expand: true,
+        cwd: 'dist/css/',
+        src: [ '*.css', '!*.min.css' ],
+        dest: 'dist/css/'
+    } ) )
+    .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'docs/examples/' ) ) )
 );
 
 
@@ -503,17 +512,19 @@ gulp.task( 'docs:csscomb-examples', [ 'docs:clean', 'docs:copy-all' ], () =>
 
 gulp.task( 'docs:cssmin-css', [ 'docs:clean', 'docs:copy-all' ], () =>
     gulp.src( PATHS.DOCS_DIST + '/assets/css/src/*.css' )
-        .pipe( cssmin() )
-        .pipe( rename( {
-            dirname: '/',
-            suffix: '.min'
-        } ) )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) )
+    .pipe( cssmin() )
+    .pipe( rename( {
+        dirname: '/',
+        suffix: '.min'
+    } ) )
+    .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) )
 );
 
 // Build docs CSS and copy into docs src directory
 gulp.task( 'docs:less:compile', [ 'docs:clean', 'docs:copy-all' ], () => {
-    const lessc = less( { paths: [ PATHS.LESS ] } ).on( 'error', err => {
+    const lessc = less( {
+        paths: [ PATHS.LESS ]
+    } ).on( 'error', err => {
         console.log( 'There was a problem compiling the LESS files...' );
         throw new Error( err );
     } ); // Break on less compile errors
@@ -521,8 +532,7 @@ gulp.task( 'docs:less:compile', [ 'docs:clean', 'docs:copy-all' ], () => {
     return gulp.src( path.join( PATHS.DOCS_SRC, '/assets/less/docs.less' ) )
         .pipe( lessc )
         .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '/assets/css/src' ) ) );
-    }
-);
+} );
 
 gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack =>
     spawn( 'jekyll', [ 'build' ], {
@@ -549,16 +559,16 @@ gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack =>
 // loop
 gulp.task( 'accessibility:audit-templates', () =>
     gulp.src( path.join( PATHS.DOCS_TEMPLATES, '**', '*.html' ) )
-        .pipe( a11y( A11Y_OPTIONS ) )
-        .pipe( a11y.reporter() )
+    .pipe( a11y( A11Y_OPTIONS ) )
+    .pipe( a11y.reporter() )
 );
 
 // Audit compiled docs. This task is slower, but will cover more. It can give
 // color recommendations.
 gulp.task( 'accessibility:audit-docs', [ 'docs' ], () =>
     gulp.src( path.join( PATHS.DOCS_DIST, 'components', 'index.html' ) )
-        .pipe( a11y( A11Y_OPTIONS ) )
-        .pipe( a11y.reporter() )
+    .pipe( a11y( A11Y_OPTIONS ) )
+    .pipe( a11y.reporter() )
 );
 
 
