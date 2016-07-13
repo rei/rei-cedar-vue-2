@@ -46,7 +46,10 @@ dist
 target
 
 # docs_src ignores
+docs_src/assets/css/*.min.css
 docs_src/assets/js/*.min.js
+docs_src/_includes/less
+docs_src/_includes/**/*.less
 docs_src/_data/package.json
 
 # Compiled files added to docs_src
