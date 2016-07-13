@@ -5,11 +5,14 @@ before_install: rvm install 2.1.5
 before_script:
   - gem install jekyll
   - npm install -g gulp
+  - npm install -g casperjs
 script: 
   - gulp
   - jekyll serve --detach
   - cd node_modules/backstopjs && npm run reference
+  - npm run start
   - npm run test
+  - npm run stop
   - kill -9 $(ps aux | grep jekyll)
 notifications:
   slack:
