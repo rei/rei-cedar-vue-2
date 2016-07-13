@@ -1,0 +1,27 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// List Groups
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.list-group-variant
+(
+    @list-group-scaffolding:                @list-group-default-wrapper-ruleset;
+    @list-group-item-scaffolding:           @default-item-ruleset;
+    @list-group-item-secondary-scaffolding: @default-item-secondary-ruleset;
+) {
+    .list-unstyled();
+    @list-group-scaffolding();
+    li {
+        list-style: none;
+        // Nested List Items
+        // -----------------
+        &.item-secondary {
+            @list-group-item-secondary-scaffolding();
+        }
+        &.list-group-item {
+            position: relative;
+            @list-group-item-scaffolding();
+        }
+    }
+}

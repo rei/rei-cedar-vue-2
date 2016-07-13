@@ -1,0 +1,138 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'collection';
+@element : 'alerts';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Alerts and messages
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.alert {
+    &:extend( .media all );
+    margin: 0 0 @vertical-push 0;
+    padding: 0.6rem 0 0.6rem 2rem;
+    >.icon:first-of-type {
+        &:extend( .media-left all );
+    }
+    .overlay-dark-1 &,
+    .overlay-dark-2 &,
+    .overlay-medium-1 &,
+    .overlay-outlet-dark-1 &,
+    .overlay-explore-dark &,
+    .overlay-explore-light {
+        background-color: @core-architectural-5;
+        color: @text-color;
+        &:focus,
+        &:active {
+            border-color: @core-architectural-5;
+        }
+    }
+    .alert-text {
+        &:extend( .media-body all );
+        .form-inline & {
+            width: auto;
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Alert states
+//
+// Generate contextual modifier classes for colorizing the alert.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.alert-success {
+    .alert-text {
+        &:extend( .text-success all );
+    }
+}
+
+.alert-info {
+    .alert-text {
+         &:extend( .text-info all );
+    }
+}
+
+.alert-warning {
+    .alert-text {
+         &:extend( .text-warning all );
+    }
+}
+
+.alert-danger {
+    .alert-text {
+        &:extend( .text-danger all );
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
+.alert-dismissible {
+    padding-right: (@alert-padding + 2);
+
+    // Adjust close link position
+    .close {
+        position: relative;
+        top: -0.2rem;
+        right: -2.1rem;
+        color: inherit;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// alert icon support || Deprecated this supports some old functionality from the
+//shoelace frameowrk and needs to be removed once that has been updated
+//----------------------------------------------------------------------------------------------------------------------
+@import (reference) "../../icon-font/icon-font";
+
+.alert-icon-base(@color) {
+  color: @color;
+  font-weight: normal;
+  font-size: @line-height-base;
+  display: block;
+  line-height: @line-height-computed;
+  padding: 0.9rem 0 0 2.2rem; //this is 22px so that the space is 6px between the icon and the first letter
+
+  &:before {
+    font-size: @line-height-computed; // match line height of copy
+    margin-top: -0.1rem;
+    margin-left: -2.2rem;
+    display: block;
+    float: left;
+  }
+}
+
+.alert-page-error {
+  .alert-icon-base(@brand-danger);
+  .rei-icon-danger;
+}
+
+.alert-page-warning {
+  .alert-icon-base(@brand-warning);
+  .rei-icon-warning;
+}
+
+.alert-page-info {
+  .alert-icon-base(@text-color);
+  .rei-icon-info;
+}
+
+.alert-page-help {
+  .alert-icon-base(@text-color);
+  .rei-icon-help;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

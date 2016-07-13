@@ -1,0 +1,192 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'collection';
+@element : 'list-groups';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// List groups
+//
+//  list groups are designed to work as menus, css is included for toggleable navigation
+//  of parent list items
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//scaffolding
+@list-group-default-wrapper-ruleset: {
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        a {
+            display: block;
+        }
+    }
+};
+
+@list-group-toggle-ruleset: {
+& > label {
+    .text-capitalize();
+    .text-sub-heading();
+    padding: 1.4rem 1.6rem;
+    &:hover,
+    &:focus,
+    &.active {
+    text-decoration: none;
+    background-color: @list-group-bg;
+  }
+}
+& > [type="checkbox"]:focus + label:before,
+& > [type="radio"]:focus + label:before {
+  box-shadow: none;
+}
+};
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// list-group: default rulesets
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//list-group-item
+@default-item-ruleset: {
+    margin: 0;
+    @toggle-sort-ruleset();
+    .place-toggle-variant( @icon-size-md; 2.1rem; 0.2rem; );
+    @list-group-toggle-ruleset();
+    border-bottom: 0.1rem solid @list-group-border;
+    //sort option
+    > a {
+        .link_navigation-subtitle();
+        padding: 1.1rem @padding-base-horizontal;
+        &:hover, &:focus, &.active  {
+            text-decoration: none;
+            background-color: @list-group-bg;
+        }
+    }
+};
+
+//list-group-item-secondary
+@default-item-secondary-ruleset: {
+    border-top: 0.1rem solid @list-group-border;
+    padding: 0.1rem @padding-base-horizontal 0.7rem  ( @padding-base-horizontal + 0.8 );
+    > a {
+        .link_navigation();
+    }
+    &:last-of-type{
+        padding-bottom: @padding-large-horizontal;
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// list-group: Filter menu rulesets
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@menu-filter-list-group-wrapper-ruleset: {
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        a {
+            display: table;
+            position: relative;
+            width: 100%;
+        }
+    }
+};
+//list-group-item
+@menu-filter-item-ruleset: {
+    border-bottom: 0.1rem solid @list-group-border;
+    .place-toggle-variant( @icon-size-sm; 2.1rem; 0.2rem; );
+    @list-group-toggle-ruleset();
+    & > a,
+    & > label {
+        &:extend( .link_navigation-subtitle );
+        padding: 1.5rem 1.6rem;
+        &.active,
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            background-color: @list-group-bg;
+        }
+    }
+};
+//list-group-item-secondary
+@menu-filter-item-secondary-ruleset: {
+  padding: 0 @padding-large-horizontal @padding-xs-horizontal;
+  &:last-of-type {
+      padding-bottom: 0;
+  }
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// list-group: menu rulesets
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@menu-navigation-list-group-wrapper-ruleset: {
+    @menu-filter-list-group-wrapper-ruleset();
+};
+//list-group-item
+@menu-navigation-item-ruleset: {
+    .place-toggle-variant( @icon-size-sm; 2.1rem; 0.2rem; );
+    border-bottom: 0.1rem solid @list-group-border;
+    background-color: @navigation-menu-1;
+    > a,
+    & label {
+        color: #fff;
+        &:extend( .link_navigation-title-overlay );
+        padding: @padding-base-horizontal;
+        width: 100%;
+        margin-bottom: 0;
+        &:hover, &:focus, &.active {
+          color: #222;
+          text-decoration: none;
+          background-color: @list-group-bg-2;
+        }
+    }
+};
+//list-group-item-secondary
+@menu-navigation-item-secondary-ruleset: {
+    border-top: 0.1rem solid @list-group-border;
+    background-color: @navigation-menu-2;
+    > a {
+        .link_navigation-subtitle-overlay();
+        padding: 1.1rem @padding-base-horizontal;
+        background-color: @navigation-menu-2;
+        border-bottom-color: #333;
+        &:hover, &:focus, &.active  {
+          color: #222;
+            text-decoration: none;
+            background-color: @list-group-bg-2;
+        }
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// list-group: rulesets defined within list-group-variant mixin
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// list-group
+.list-group {
+    .list-group-variant();
+}
+// Filter menu
+.list-group-filter {
+    .list-group-variant (
+        @menu-filter-list-group-wrapper-ruleset;
+        @menu-filter-item-ruleset;
+        @menu-filter-item-secondary-ruleset;
+    );
+}
+// Navigation menu
+.list-group-menu {
+    .list-group-variant (
+        @menu-navigation-list-group-wrapper-ruleset;
+        @menu-navigation-item-ruleset;
+        @menu-navigation-item-secondary-ruleset;
+    );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

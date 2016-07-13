@@ -1,0 +1,298 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'element';
+@element : 'checkbox-and-radio';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Checkbox and Radio
+//
+// TOC:
+//
+// :Standard Shared Controls
+// :Standard Radio Control
+// :Standard Checkbox Control
+// :Toggle Controls
+// :Toggle Controls --expand collapse
+// :Toggle Controls --rating
+// :Toggle Controls --remove
+// :Toggle Controls --sort
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Standard Shared Controls
+//
+//----------------------------------------------------------------------------------------------------------------------
+.radio,
+.checkbox {
+    &:extend( .label-narrow all );
+    margin: 0 0 @vertical-push ( @padding-base-horizontal + 0.425rem );
+    .form-inline & {
+        display: inline-block;
+    }
+    &.disabled {
+        color: @disabled-color;
+    }
+}
+@control-standard: {
+    border: none;
+    clip: rect( 0 0 0 0 );
+    height: 0.1rem;
+    margin: -0.1rem;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0.1rem;
+    &[ disabled ] {
+        + label {
+            color: @disabled-color;
+            cursor: @cursor-disabled;
+            &:before {
+                box-shadow: 0 0 0 0.1rem @disabled-color;
+            }
+        }
+    }
+};
+@control-standard-label: {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 0;
+    min-height: 1.6rem;
+    padding-left: 0;
+};
+@control-standard-element-and-label: {
+    display: block;
+    color: inherit;
+    position: relative;
+    .required & {
+        left: 3.5rem;
+        position: relative;
+        &:after {
+            left: -1.4rem;
+            position: absolute;
+        }
+        &:before {
+            left: -3.5rem;
+            position: absolute;
+            top: 0.5rem
+        }
+    }
+};
+@control-standard-element-and-label-before: {
+    content: '';
+    border: 0.2rem solid @core-architectural-5;
+    box-shadow: 0 0 0 0.1rem @text-color;
+    display: inline-block;
+    height: 1.2rem;
+    left: -( @padding-base-horizontal + 0.425rem );
+    margin-right: @padding-large-horizontal/ 2 ;
+    position: absolute;
+    top: 0.4rem;
+    width: 1.2rem;
+    .has-error & {
+        box-shadow: 0 0 0 0.1rem @utility-error;
+        background: @alert-danger-bg;
+    }
+    .disabled&,
+    fieldset[disabled] & {
+        box-shadow: 0 0 0 0.1rem @disabled-color;
+    }
+};
+@control-standard-element-and-label-empty-before: {
+    margin-right: 0;
+};
+
+.radio,
+.checkbox {
+    margin: 0 0 @vertical-push ( @padding-base-horizontal + 0.7rem );
+    .form-inline & {
+        display: inline-block;
+    }
+    &.disabled,
+    fieldset[disabled] & {
+        color: @disabled-color;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Standard Radio Control
+//
+//----------------------------------------------------------------------------------------------------------------------
+.radio,
+.input-group-addon {
+    > [type="radio"] {
+        @control-standard();
+    }
+    > label {
+        @control-standard-label();
+    }
+    > [type="radio"] + label {
+        @control-standard-element-and-label();
+        &:before {
+            @control-standard-element-and-label-before();
+            border-radius: 1.6rem;
+            box-shadow: 0 0 0 0.125rem @text-color;
+            vertical-align: -0.2rem;
+        }
+        &:empty:before {
+            @control-standard-element-and-label-empty-before();
+        }
+    }
+    > [type="radio"]:checked + label:before {
+        background: @text-color;
+        outline: none;
+    }
+    > [type="radio"]:focus + label:before {
+        .utility-focus-state();
+        border: 0.1rem solid @core-action-2;
+    }
+    [type="radio"]:active + label:before {
+        outline: none;
+        border: 0.1rem solid @core-action-2;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Standard Checkbox Control
+//
+//----------------------------------------------------------------------------------------------------------------------
+.checkbox,
+.input-group-addon {
+    > [type="checkbox"] {
+        @control-standard();
+    }
+    > label {
+        @control-standard-label();
+    }
+    > [type="checkbox"] + label {
+        @control-standard-element-and-label();
+        &:before {
+            @control-standard-element-and-label-before();
+            box-shadow: 0 0 0 0.1rem @text-color;
+        }
+        &:empty:before {
+            @control-standard-element-and-label-empty-before();
+        }
+    }
+    > [type="checkbox"]:checked + label:before {
+       background: @text-color;
+        outline: none;
+    }
+    [type="checkbox"]:focus + label:before {
+        .utility-focus-state();
+        border: 0.1rem solid @core-action-2;
+    }
+    [type="checkbox"]:active + label:before {
+        outline: none;
+        border: 0.1rem solid @core-action-2;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Toggle Controls
+//
+//----------------------------------------------------------------------------------------------------------------------
+@toggle-ruleset: {
+    > [ type="checkbox" ] + label:before,
+    > [ type="radio" ] + label:before {
+        border: none;
+        box-shadow: none;
+        height: 1.8rem;
+        width: 1.8rem;
+        font-family: 'rei-icons';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        background: none;
+    }
+    > [type="checkbox"]:focus + label:before,
+    > [type="radio"]:focus + label:before {
+        outline: none;
+        border: none;
+    }
+    > [type="checkbox"]:active + label:before,
+    > [type="radio"]:active + label:before {
+        border: none;
+    }
+    > [ type="checkbox" ]:checked + label:before,
+    > [ type="radio" ]:checked + label:before {
+        background: none;
+    }
+};
+
+// expand collapse
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@toggle-expand-collapse-ruleset: {
+> [ type="checkbox" ] + label:before,
+> [ type="radio" ] + label:before {
+    content:"\e739";
+}
+> [ type="checkbox" ]:checked + label:before,
+> [ type="radio" ]:checked + label:before {
+    content:"\e738";
+}
+};.toggle-expand-collapse {
+      @toggle-ruleset();
+      @toggle-expand-collapse-ruleset();
+  }
+
+// rating
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@toggle-rating-ruleset: {
+    > [ type="checkbox" ] + label:before,
+    > [ type="radio" ] + label:before {
+        content:"\e731";
+        color: @star-rating-empty;
+    }
+    > [ type="checkbox" ]:checked + label:before,
+    > [ type="radio" ]:checked + label:before {
+        content:"\e731";
+        color: @star-rating-filled;
+    }
+};.toggle-rating {
+    @toggle-ruleset();
+    @toggle-rating-ruleset();
+  }
+
+// remove
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@toggle-remove-ruleset: {
+> [ type="checkbox" ]+ label:before,
+> [ type="radio" ]+ label:before {
+    content:"\e600";
+}
+> [type="checkbox"]:checked + label:before,
+> [type="radio"]:checked + label:before {
+    content:"";
+}
+};.toggle-remove {
+      @toggle-ruleset();
+      @toggle-remove-ruleset();
+  }
+
+// sort
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@toggle-sort-ruleset: {
+    > [ type="checkbox" ]:checked + label:before,
+    > [ type="radio" ]:checked + label:before {
+        content:"\e688";
+    }
+};.toggle-sort {
+    @toggle-ruleset();
+    @toggle-sort-ruleset();
+  }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

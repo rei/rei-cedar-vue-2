@@ -1,0 +1,501 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'collection';
+@element : 'forms';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// FORMS
+//
+//TOC:
+//
+// :Normalize non-controls
+// :Common form controls
+// :Common form controls --Disabled and read-only inputs
+// :Validation messages
+// :Form groups
+// :Static form control text
+// :Form control sizing
+// :Help text
+// :Inline forms
+// :Horizontal forms
+// :Horizontal forms --Validation states
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Normalize non-controls
+//
+// Restyle and baseline non-control form elements.
+//
+//----------------------------------------------------------------------------------------------------------------------
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: @line-height-computed;
+    font-size: (@font-size-base * 1.5);
+    line-height: inherit;
+    color: @legend-color;
+    border: 0;
+    border-bottom: 0.1rem solid @legend-border-color;
+}
+
+label {
+    font-family: @headings-font-family-secondary;
+    font-size:  @font-size-large ;
+    line-height: @headings-line-height;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: @vertical-push-small;
+    .form-inline & {
+        display: block;
+    }
+    .required & {
+        &:after {
+            content: '*';
+        }
+    }
+}
+
+.label-narrow {
+    label {
+        font-family: @font-family-sans-serif;
+        font-size:  @font-size-base ;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Common form controls
+//
+// Shared size and type resets for form controls. Apply `.form-control` to any
+// of the following form controls:
+//
+//----------------------------------------------------------------------------------------------------------------------
+.form-control {
+    display: block;
+    width: 100%;
+    height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+    padding: @padding-small-vertical @padding-xs-horizontal;
+    font-size: @font-size-base;
+    line-height: @btn-line-height;
+    color: @input-color;
+    background-color: @input-bg;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 0.1rem solid @input-border;
+
+    // Placeholder
+    .placeholder();
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty, we
+    // don't honor that edge case; we style them as disabled anyway.
+    //
+    //----------------------------------------------------------------------------------------------------------------------
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        background-color: @input-bg-disabled;
+        opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: @cursor-disabled;
+    }
+
+    // Reset height for `textarea`s
+    textarea& {
+        height: auto;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Validation messages
+//
+// extends alert
+//
+//----------------------------------------------------------------------------------------------------------------------
+.form-control {
+    .rei-form-control-focus();
+    outline: none;
+    .has-error & {
+        background-color: @input-background-error;
+        border-color: @input-border-error;
+        .rei-form-control-focus( @input-border-error );
+        }
+    }
+
+.field-msg {
+    &:extend(.alert all);
+    display: block;
+}
+.field-msg_success{
+    &:extend( .field-msg );
+    &:extend(.alert-success all);
+}
+.field-msg_error {
+     &:extend( .field-msg );
+    &:extend(.alert-danger all);
+}
+.field-msg_warning  {
+     &:extend( .field-msg );
+    &:extend(.alert-warning all);
+}
+.field-msg_info  {
+     &:extend( .field-msg );
+    &:extend(.alert-info all);
+}
+.field-msg_help {
+     &:extend( .field-msg );
+    &:extend(.alert-info all);
+}
+
+//Notifications
+.field-note {
+    display: inline-block;
+}
+
+.help-block {
+    .has-error & {
+        color: lighten(@text-color, 25%); //base on what bootstrap uses
+    }
+}
+
+.has-feedback label ~ .form-control-feedback {
+    top: 3rem;
+}
+
+.has-feedback .form-control-feedback {
+    &.icon {
+        line-height: @input-height-base;
+        .input-lg &,
+        .form-group-lg & {
+            line-height: @input-height-large;
+        }
+        .input-sm &,
+        .form-group-sm & {
+            line-height: @input-height-small;
+        }
+    }
+}
+
+.required-form {
+    &:before {
+        &:extend( .h4 );
+        content: " * Required ";
+        display: inline-block;
+        line-height: @headings-line-height;
+        margin-bottom: 3rem;
+        max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.form-group {
+    margin-bottom: @form-group-margin-bottom;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Static form control text
+//
+// Apply class to a `p` element to make any string of text align with labels in
+// a horizontal form layout.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.form-control-static {
+    // Size it appropriately next to real form controls
+    padding-top: (@padding-small-vertical + 0.1);
+    padding-bottom: (@padding-small-vertical + 0.1);
+    // Remove default margin from `p`
+    margin-bottom: 0;
+    min-height: (@line-height-computed + @font-size-base);
+
+    &.input-lg,
+    &.input-sm {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Form control sizing
+//
+// Build on `.form-control` with modifier classes to decrease or increase the
+// height and font-size of form controls.
+//
+// The `.form-group-* form-control` variations are sadly duplicated to avoid the
+// issue documented in https://github.com/twbs/bootstrap/issues/15074.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.form-group-sm {
+    .form-control {
+        .input-size(@input-height-small; @padding-small-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small;);
+    }
+    .form-control-static {
+        height: @input-height-small;
+        padding: @padding-small-vertical @padding-xs-horizontal;
+        font-size: @font-size-small;
+        line-height: @line-height-small;
+        min-height: (@line-height-computed + @font-size-small);
+    }
+}
+
+
+.form-group-lg {
+    .form-control {
+        .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large;);
+    }
+    .form-control-static {
+        height: @input-height-large;
+        padding: @padding-large-vertical @padding-large-horizontal; //should match btn-lg
+        font-size: @font-size-large;
+        line-height: @line-height-large;
+        min-height: (@line-height-computed + @font-size-large);
+    }
+}
+
+.has-feedback {
+    // Enable absolute positioning
+    position: relative;
+
+    // Ensure icons don't overlap text
+    .form-control {
+        padding-right: (@input-height-base * 1.25);
+    }
+}
+// Feedback icon (requires .icon classes)
+.form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2; // Ensure icon is above input groups
+    display: block;
+    width: @input-height-base;
+    height: @input-height-base;
+    line-height: @input-height-base;
+    text-align: center;
+    pointer-events: none;
+}
+.input-lg + .form-control-feedback {
+    width: @input-height-large;
+    height: @input-height-large;
+    line-height: @input-height-large;
+}
+.input-sm + .form-control-feedback {
+    width: @input-height-small;
+    height: @input-height-small;
+    line-height: @input-height-small;
+}
+
+// Feedback states
+.has-success {
+    .form-control-validation(@text-color; @state-success-text; @state-success-bg);
+}
+.has-warning {
+    .form-control-validation(@text-color; @state-warning-text; @state-warning-bg);
+}
+.has-error {
+    .form-control-validation(@text-color; @state-danger-text; @state-danger-bg);
+}
+
+// Reposition feedback icon if input has visible label above
+.has-feedback label {
+
+    & ~ .form-control-feedback {
+        top: (@line-height-computed + 0.5); // Height of the `label` and its margin
+    }
+    &.sr-only ~ .form-control-feedback {
+        top: 0;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Help text
+//
+// Apply to any element you wish to create light text for placement immediately
+// below a form control. Use for general help, formatting, or instructional text.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.help-block {
+    display: block; // account for any element using help-block
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: lighten(@text-color, 25%); // lighten the text some for contrast
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Inline forms
+//
+// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+// forms begin stacked on extra small (mobile) devices and then go inline when
+// viewports reach <768px.
+//
+// Requires wrapping inputs and labels with `.form-group` for proper display of
+// default HTML form controls and our custom form controls (e.g., input groups).
+//
+//----------------------------------------------------------------------------------------------------------------------
+.form-inline {
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        .form-group {
+            @media( min-width: @screen-sm-min ) {
+                margin-right: @group-push;
+            }
+        }
+        .has-feedback .form-control-feedback {
+            top: 3.6rem;
+        }
+
+    // Kick in the inline
+    @media (min-width: @screen-sm-min) {
+        // Inline-block all the things for "inline"
+        .form-group {
+            display: inline-block;
+            margin-bottom: 0;
+            vertical-align: top;
+            .vertical-push-md();
+            &.non-label {
+                margin-top: 3rem;
+            }
+        }
+
+        // In navbar-form, allow folks to *not* use `.form-group`
+        .form-control {
+            display: inline-block;
+            width: auto; // Prevent labels from stacking above inputs in `.form-group`
+            vertical-align: middle;
+        }
+
+        // Make static controls behave like regular ones
+        .form-control-static {
+            display: inline-block;
+        }
+
+        .input-group {
+            display: inline-table;
+            vertical-align: middle;
+
+            .input-group-addon,
+            .input-group-btn,
+            .form-control {
+                width: auto;
+            }
+        }
+
+        // Input groups need that 100% width though
+        .input-group > .form-control {
+            width: 100%;
+        }
+
+        // Re-override the feedback icon.
+        .has-feedback .form-control-feedback {
+            top: 0;
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Horizontal forms
+//
+// Horizontal forms are built on grid classes and allow you to create forms with
+// labels on the left and inputs on the right.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.form-horizontal {
+
+    // Make form groups behave like rows
+    .form-group {
+        .make-row();
+    }
+
+    // Reset spacing and right align labels, but scope to media queries so that
+    // labels on narrow viewports stack the same as a default form example.
+    @media (min-width: @screen-sm-min) {
+        .control-label {
+            text-align: right;
+            margin-bottom: 0;
+            padding-top: (@padding-base-vertical + 1); // Default padding plus a border
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Validation states
+    //
+    // Reposition the icon because it's now within a grid column and columns have
+    // `position: relative;` on them. Also accounts for the grid gutter padding.
+    //
+    //----------------------------------------------------------------------------------------------------------------------
+    .has-feedback .form-control-feedback {
+        right: (@grid-gutter-width / 2); //TODO mediaquery for multiple GGW's
+        //top: @font-size-base;
+        @media( min-width: @screen-sm-min ) {
+            right: (@grid-gutter-width-sm / 2);
+        }
+        @media( min-width: @screen-md-min ) {
+            right: ( @grid-gutter-width-md / 2);
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Form group sizes
+    //
+    // Quick utility class for applying `.input-lg` and `.input-sm` styles to the
+    // inputs and labels within a `.form-group`.
+    //
+    //------------------------------------------------------------------------------------------------------------------
+    .form-group-lg {
+        @media (min-width: @screen-sm-min) {
+            .control-label {
+                padding-top: ((@padding-large-vertical * @line-height-large) + 1);
+            }
+        }
+    }
+    .form-group-sm {
+        @media (min-width: @screen-sm-min) {
+            .control-label {
+                padding-top: (@padding-small-vertical + 1);
+            }
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

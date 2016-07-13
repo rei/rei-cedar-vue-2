@@ -1,0 +1,401 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+.utility-focus-state {
+    // Default
+    outline: thin dotted;
+    // WebKit
+    outline: 0.5rem auto;
+    outline-color: @core-action-1;
+    outline-offset: -0.2rem;
+}
+
+// Floats
+// -------------------------
+
+.clearfix {
+  .clearfix();
+}
+.center-block {
+  .center-block();
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+.hidden {
+    display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  .text-hide();
+}
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Vertical rhythm helper classes
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.vertical-push {
+    margin-bottom: @vertical-push;
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+        .vertical-pull-md();
+    }
+}
+.vertical-push-sm {
+    margin-bottom: @vertical-push-small;
+}
+.vertical-push-md {
+    margin-bottom: @vertical-push-medium;
+}
+.vertical-push-lg {
+    margin-bottom: @vertical-push-large;
+}
+.vertical-push-xl {
+    margin-bottom: @vertical-push-xlarge;
+}
+.vertical-pull {
+    margin-top: @vertical-push;
+}
+.vertical-pull-sm {
+    margin-top: @vertical-push-small;
+}
+.vertical-pull-md {
+    margin-top: @vertical-push-medium;
+}
+.vertical-pull-lg {
+    margin-top: @vertical-push-large;
+}
+.vertical-pull-xl {
+    margin-top: @vertical-push-xlarge;
+}
+
+
+// Position element - vertical and horizontal alignment
+// -------------------------------------------------------------------
+
+.utility-position ( @anchor: center; @x: null ) {
+    position: absolute;
+}
+
+.utility-position ( @anchor: center ) when ( @anchor = center ),
+                                           ( @anchor = top ),
+                                           ( @anchor = top-left ),
+                                           ( @anchor = left ),
+                                           ( ispercentage( @anchor ) ),
+                                           ( isnumber( @anchor ) ),
+                                           ( ispixel( @anchor ) ) {
+    right: auto;
+    bottom: auto;
+}
+
+.utility-position( @anchor ) when ( @anchor = bottom ),
+                                  ( @anchor = bottom-left ) {
+    top: auto;
+    right: auto;
+}
+
+.utility-position( @anchor ) when ( @anchor = top ),
+                                  ( @anchor = top-left ),
+                                  ( @anchor = top-right ) {
+    top: 0;
+    bottom: auto;
+}
+.utility-position( @anchor ) when ( @anchor = left ),
+                                  ( @anchor = top-left ),
+                                  ( @anchor = bottom-left ) {
+    right: auto;
+    left: 0;
+    text-align: left;
+}
+.utility-position( @anchor ) when ( @anchor = bottom ),
+                                  ( @anchor = bottom-left ),
+                                  ( @anchor = bottom-right ) {
+    top: auto;
+    bottom: 0;
+}
+.utility-position( @anchor ) when ( @anchor = right ),
+                                  ( @anchor = top-right ),
+                                  ( @anchor = bottom-right ) {
+    left: auto;
+    right: 0;
+    text-align: right;
+}
+.utility-position( @anchor: center ) when ( @anchor = top ),
+                                          ( @anchor = center ),
+                                          ( @anchor = bottom ) {
+    left: 50%;
+    right: auto;
+    text-align: center;
+}
+.utility-position( @anchor: center ) when ( @anchor = left ),
+                                          ( @anchor = center ),
+                                          ( @anchor = right ) {
+    top: 50%;
+    bottom: auto;
+}
+
+.utility-position ( @anchor: center ) when ( @anchor = center ) {
+    transform: translate( -50%, -50% );
+}
+
+.utility-position( @anchor ) when ( @anchor = left ),
+                                  ( @anchor = right ) {
+    transform: translate( 0, -50% );
+}
+
+.utility-position( @anchor ) when ( @anchor = top ),
+                                  ( @anchor = bottom ) {
+    transform: translate( -50%, 0 );
+}
+
+.utility-position( @anchor ) when ( @anchor = top-left ),
+                                  ( @anchor = top-right ),
+                                  ( @anchor = bottom-left ),
+                                  ( @anchor = bottom-right ) {
+    transform: translate( 0, 0 );
+}
+
+.utility-position ( @anchor ) when ( ispercentage( @anchor ) ),
+                                   ( isnumber( @anchor ) ),
+                                   ( ispixel( @anchor ) ) {
+        top: @anchor;
+        left: @anchor;
+
+        object-position: @anchor @anchor;
+        transform: translate( -@anchor, -@anchor );
+}
+
+.utility-position ( @anchor; @x ) when ( ispercentage( @anchor ) ),
+                                       ( isnumber( @anchor ) ),
+                                       ( ispixel( @anchor ) ) {
+
+  & when ( ispercentage( @x ) ),
+         ( isnumber( @x ) ),
+         ( ispixel( @x ) ) {
+    top: @anchor;
+    left: @x;
+
+    object-position: @anchor @x;
+    transform: translate( -@anchor, -@x );
+  }
+}
+
+/* Application Classes */
+.position {
+  &,
+  &.center {
+    .utility-position();
+  }
+
+  &.left {
+    .utility-position( left );
+  }
+
+  &.right {
+    .utility-position( right );
+  }
+
+  &.top {
+    .utility-position( top );
+
+    &-left,
+    &.left {
+      .utility-position( top-left );
+    }
+    &-right,
+    &.right {
+      .utility-position( top-right );
+    }
+  }
+
+  &.bottom {
+    .utility-position( bottom );
+
+    &-left,
+    &.left {
+      .utility-position( bottom-left );
+    }
+
+    &-right,
+    &.right {
+      .utility-position( bottom-right );
+    }
+  }
+}
+
+
+// Aspect Ratio
+// -------------------------------------------------------------------
+/*
+ * Sets the height of an element ( without an implicit height )
+ * to a percentage of its own width.
+ *
+ ********************************************************************/
+
+ .utility-aspect-ratio ( @ratio: 1 ) {
+     &:before {
+       content: '';
+       display: block;
+       height: 0;
+       padding-bottom: 100% * @ratio;
+    }
+ }
+ .utility-aspect-ratio ( @ratio; @align-contents: center ) {
+     > div {
+         .utility-position( @align-contents );
+     }
+ }
+ /* Application Classes */
+ .ratio {
+     &-square {
+         .utility-aspect-ratio( 1 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 1, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 1, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 1, bottom );
+             }
+         }
+     }
+     &-2-3 {
+         .utility-aspect-ratio( 2/3 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 2/3, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 2/3, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 2/3, bottom );
+             }
+         }
+     }
+     &-3-2 {
+         .utility-aspect-ratio( 3/2 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 3/2, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 3/2, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 3/2, bottom );
+             }
+         }
+     }
+     &-1-2 {
+         .utility-aspect-ratio( 1/2 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 1/2, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 1/2, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 1/2, bottom );
+             }
+         }
+     }
+     &-2-1 {
+         .utility-aspect-ratio( 2 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 2, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 2, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 2, bottom );
+             }
+         }
+     }
+     &-3-4 {
+         .utility-aspect-ratio( 3/4 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 3/4, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 3/4, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 3/4, bottom );
+             }
+         }
+     }
+     &-4-3 {
+         .utility-aspect-ratio( 4/3 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 4/3, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 4/3, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 4/3, bottom );
+             }
+         }
+     }
+     &-9-16 {
+         .utility-aspect-ratio( 9/16 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 9/16, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 9/16, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 9/16, bottom );
+             }
+         }
+     }
+     &-16-9 {
+         .utility-aspect-ratio( 16/9 );
+         &.content {
+             &-top {
+                 .utility-aspect-ratio( 16/9, top );
+             }
+             &-center {
+                 .utility-aspect-ratio( 16/9, center );
+             }
+             &-bottom {
+                 .utility-aspect-ratio( 16/9, bottom );
+             }
+         }
+     }
+ }

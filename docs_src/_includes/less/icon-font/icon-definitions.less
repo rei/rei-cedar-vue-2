@@ -1,0 +1,183 @@
+// Icon fonts have their size baked in.
+// This is because the design font is inconsistent and is intended to always display at set px units.
+// When implementing via the font variables the developer will need to also account for adjusting
+// the icon to its correct size.
+
+.icon-rei {
+
+    &-logo {
+        .icon-variant( @icon-var-rei-logo );
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 12px
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    &-call {
+        .icon-variant( @icon-var-rei-call; @icon-size-sm; );
+    }
+    &-collapse {
+       .icon-variant( @icon-var-rei-collapse; @icon-size-sm; );
+    }
+    &-expand {
+        .icon-variant( @icon-var-rei-expand; @icon-size-sm; );
+    }
+    &-left-arrow {
+        .icon-variant( @icon-var-rei-left-arrow; @icon-size-sm; );
+    }
+    &-play-small {
+        .icon-variant( @icon-var-rei-play-small; @icon-size-sm; );
+    }
+    &-right-arrow {
+        .icon-variant( @icon-var-rei-right-arrow; @icon-size-sm; );
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 14px
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    &-close-small {
+        .icon-variant( @icon-rei-close-small; @icon-size-md; );
+    }
+    &-down-arrow {
+        .icon-variant( @icon-var-rei-down-arrow; @icon-size-md; );
+    }
+    &-external-link {
+        .icon-variant( @icon-var-rei-external-link; @icon-size-md; );
+    }
+    &-up-arrow {
+        .icon-variant( @icon-rei-up-arrow; @icon-size-md; );
+    }
+    &-star-75 {
+        .icon-variant( @icon-var-rei-star-75; @icon-size-md; );
+    }
+    &-star-50 {
+        .icon-variant( @icon-var-rei-star-50; @icon-size-md; );
+    }
+    &-star-25 {
+        .icon-variant( @icon-var-rei-star-25; @icon-size-md; );
+    }
+    &-star-100 {
+        .icon-variant( @icon-var-rei-star-100; @icon-size-md; );
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 16px
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    &-chat {
+        .icon-variant( @icon-var-rei-chat; ( @icon-size-md + 0.2rem ); );
+    }
+    &-check {
+      .icon-variant( @icon-var-rei-check; ( @icon-size-md + 0.2rem ); );
+    }
+    &-email {
+        .icon-variant( @icon-var-rei-email; ( @icon-size-md + 0.2rem ); );
+    }
+    &-inline-search {
+        .icon-variant( @icon-var-rei-inline-search; ( @icon-size-md + 0.2rem ); );
+    }
+    &-size-chart {
+        .icon-variant( @icon-var-rei-size-chart; ( @icon-size-md + 0.2rem ); );
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 20px
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    &-add {
+        .icon-variant( @icon-var-rei-add; @icon-size-lg; );
+    }
+    &-backorder {
+        .icon-variant( @icon-var-rei-backorder; @icon-size-lg; );
+    }
+    &-close {
+        .icon-variant( @icon-var-rei-close; @icon-size-lg; );
+    }
+    &-error {
+        .icon-variant( @icon-var-rei-error; @icon-size-lg; @utility-error; );
+    }
+    &-help {
+      .icon-variant( @icon-var-rei-help; @icon-size-lg; );
+    }
+    &-info {
+        .icon-variant( @icon-var-rei-info; @icon-size-lg; );
+    }
+    &-location {
+        .icon-variant( @icon-var-rei-location; @icon-size-lg; );
+    }
+    &-profile {
+        .icon-variant( @icon-var-rei-profile; @icon-size-lg; );
+    }
+    &-search {
+        .icon-variant( @icon-var-rei-search; @icon-size-lg; );
+    }
+    &-success {
+        .icon-variant( @icon-var-rei-success; @icon-size-lg; @brand-success; );
+    }
+    &-warning {
+        .icon-variant( @icon-var-rei-warning; @icon-size-lg; @brand-warning; );
+    }
+    &-zoom {
+      .icon-variant( @icon-var-rei-zoom; @icon-size-lg; );
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 22px
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    &-social-instagram {
+        .icon-variant( @icon-var-rei-social-instagram; ( @icon-size-lg + 0.2rem ); );
+    }
+    &-print {
+        .icon-variant( @icon-var-rei-print; ( @icon-size-lg + 0.2rem ); );
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // 23px
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    &-cart {
+        .icon-variant( @icon-var-rei-cart; ( @icon-size-lg + 0.3rem ); );
+        vertical-align: bottom;
+    }
+    &-cart-empty {
+        .icon-variant( @icon-var-rei-cart-empty; ( @icon-size-lg + 0.3rem ); );
+        vertical-align: bottom;
+    }
+    &-hamburger-menu {
+        .icon-variant( @icon-var-rei-hamburger-menu; ( @icon-size-lg + 0.3rem ); );
+    }
+    &-tree-arrow {
+        .icon-variant( @icon-var-rei-tree-arrow; ( @icon-size-lg + 0.3rem ); );
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 26px
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    &-social-facebook {
+        .icon-variant( @icon-var-rei-social-facebook; ( @icon-size-lg + 0.6rem ); );
+    }
+    &-social-pinterest {
+        .icon-variant( @icon-var-rei-social-pinterest; ( @icon-size-lg + 0.6rem ); );
+    }
+    &-social-twitter {
+        .icon-variant( @icon-var-rei-social-twitter; ( @icon-size-lg + 0.6rem ); );
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 28px
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    &-shipping {
+      .icon-variant( @icon-var-rei-shipping; ( @icon-size-lg + 0.8rem ); );
+    }
+    &-social-youtube {
+        .icon-variant( @icon-var-rei-social-youtube; ( @icon-size-lg + 0.8rem ); );
+    }
+    &-target {
+        .icon-variant( @icon-var-rei-target; ( @icon-size-lg + 0.8rem ); );
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 60px
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    &-devices {
+        .icon-variant( @icon-var-rei-devices; @icon-size-xl; );
+    }
+    &-play-large {
+      .icon-variant( @icon-var-rei-play-large; @icon-size-xl; );
+    }
+}
