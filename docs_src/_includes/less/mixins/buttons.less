@@ -1,0 +1,96 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Buttons
+//
+// TOC
+//
+// :Button Variants
+// :Button Size
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+/// Button Variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+//
+// accepts six parameters
+// @color: Used to set the foreground color.
+// @background: Used to set the button background color.
+// @border: This defaults to inherit the background color of the button.
+// @active-background: Active state for button background color, defaults to darken the @background value by 10%.
+// @active-border: Active border color, defaults to darken the @border value by 12%.
+// @active-color: Active foreground color.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.button-variant( @color; @background; @border: @background; @active-background: darken(@background, 10%); @active-border: darken(@border, 12%); @active-color: @color ) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  outline: none;
+  &:hover,
+  &:active,
+  &.active,
+  &:focus,
+  &.focus {
+    color: @active-color;
+    background-color: @active-background;
+    border-color: @active-border;
+  }
+    &:focus{
+        // Default
+        outline: thin dotted;
+        // WebKit
+        outline: 0.5rem auto;
+        outline-color: @core-action-1;
+        outline-offset: -0.2rem;
+    }
+    &:active,
+    &.active {
+        background-image: none;
+        outline: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &.focus,
+        &:active,
+        &.active {
+          cursor: @cursor-disabled;
+          pointer-events: none;
+          // Future-proof disabling of clicks
+          color: @btn-disabled-color;
+          border-color: @btn-disabled-border;
+          @alpha-ruleset();
+        }
+  }
+}
+ // TODO: assess if we want to remove this -
+@alpha-ruleset: {
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.2);
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Button Size
+//
+// extend past btn-xs, btn-sm, and btn-lg
+//
+// accepts five parameters
+// @padding-y.
+// @padding-x.
+// @font-size.
+// @line-height.
+// @font-family: defaults to @headings-font-family-secondary;.
+//
+//----------------------------------------------------------------------------------------------------------------------
+.button-size( @padding-y; @padding-x; @font-size; @line-height; @font-family: @headings-font-family-secondary;) {
+  padding: @padding-y @padding-x;
+  font-family: @font-family;
+  font-size: @font-size;
+  line-height: @line-height;
+}

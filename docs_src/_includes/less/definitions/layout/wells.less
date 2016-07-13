@@ -1,0 +1,57 @@
+//
+// Wells
+// --------------------------------------------------
+
+// Base class
+.well {
+  padding: @vertical-push @padding-base-horizontal;
+  margin-bottom: 2rem;
+  & *:last-child {
+    margin-bottom: 0;
+  }
+  &:extend(.clearfix all);
+}
+
+// Well shapes and shape groups
+.well-mountain-group {
+    .well {
+        &:not(:last-of-type) {
+            padding-bottom: (2rem + @vertical-push);
+            &:extend(.well-collapse);
+            @media (min-width: @screen-sm-min) {
+                padding-bottom: (4rem + @vertical-push);
+            }
+        }
+        &.text-center,
+        &.text-right{
+            .shape-mountain {
+                transform: translate(-4.2rem, -3.2rem);
+                @media (min-width: @screen-sm-min) {
+                    transform: translate(-7.2rem, -4.2rem);
+                }
+            }
+        }
+        .shape-mountain {
+            transform: translate(0, -3.2rem);
+            @media (min-width: @screen-sm-min) {
+                transform: translate(0, -4.2rem);
+            }
+        }
+    }
+}
+
+// Sizes
+.well-lg {
+  padding: @padding-xlarge;
+}
+.well-sm {
+  padding: 0.9rem;
+}
+.well-collapse {
+  margin-bottom: 0;
+}
+
+// shapes
+.shape-mountain {
+    .twin-mountain-peaks();
+}

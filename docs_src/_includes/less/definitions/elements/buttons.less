@@ -1,0 +1,309 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'element';
+@element : 'buttons';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// UI FRAMEWORK BUTTON
+//
+// TOC:
+//
+// :Base Styles
+// :Theme
+// :Theme --Core
+// :Theme --Explore
+// :Theme --High Contrast
+// :Theme --Button Link
+// :Size and Font
+// :Controls
+// :Specificity Overrides
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Base Styles
+//
+// define generic, non-sized, non-themed button experience
+//
+//----------------------------------------------------------------------------------------------------------------------
+.btn {
+    .btn-lg();
+    border: 0.1rem solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    touch-action: manipulation;
+    vertical-align: middle;
+    user-select: none;
+    white-space: nowrap;
+    @media all and ( min-width: 60rem ) {
+        & + & {
+            margin-left: ( @group-push / 2 );
+        }
+    }
+    @media ( max-width: @screen-xs-max ) {
+        &:not( .btn-fixed ) {
+           .btn-block();
+        }
+    }
+    .input-group-btn &,
+    .form-inline &{
+        // modified if contained within this parent class
+        .btn-sm();
+    }
+    .form-inline & {
+        // modified if contained within this parent class
+        vertical-align: bottom;
+        @media ( max-width: @screen-xs-max ) {
+            .btn-lg();
+            vertical-align: inherit;
+        }
+    }
+    &:hover,
+    &:focus,
+    &.focus {
+        color: @btn-default-color;
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+    }
+    @text-with-icon-rei-tree-arrow-button-ruleset();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Theme
+//
+// define primary and default color for in-active, active, hover, and focus
+//
+//----------------------------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Core
+// ---------------------------------------------------------------------------------------------------------------------
+.btn-primary {
+    .button-variant( @btn-primary-color; @btn-primary-bg; @btn-primary-border; @btn-primary-active-bg; @btn-primary-active-border; );
+}
+
+.btn-default {
+    .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-active-border; @btn-default-active-color; );
+    .input-group-btn & {
+        .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-border; @btn-default-active-color; );
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Explore
+// ---------------------------------------------------------------------------------------------------------------------
+.btn-explore {
+    &.btn-primary {
+        .button-variant( @btn-explore-color; @btn-explore-bg; @btn-explore-border; @btn-explore-active-bg; @btn-explore-active-border; );
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// High Contrast
+// ---------------------------------------------------------------------------------------------------------------------
+.btn-contrast {
+    &.btn-primary {
+        .button-variant( @btn-high-contrast-color; @btn-high-contrast-bg; @btn-high-contrast-border; @btn-high-contrast-active-bg; @btn-high-contrast-active-border; );
+    }
+    &.btn-default {
+        .button-variant( @btn-default-color; @btn-default-bg; @btn-default-bg; @btn-default-active-bg; @btn-default-bg; @btn-default-active-color; );
+        .input-group-btn & {
+            .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-border; @btn-default-active-color; );
+        }
+    }
+}
+
+.btn-outline-alternate {
+    &.btn-primary {
+        .button-variant( @btn-outline-color; @btn-outline-bg; @btn-outline-border; @btn-outline-active-bg; @btn-outline-active-border; );
+        &:hover,
+        &:active,
+        &.active,
+        &:focus,
+        &.focus {
+            @alpha-ruleset();
+        }
+        &.disabled,
+        &[disabled] {
+            display: none;
+        }
+    }
+}
+
+.btn-outlet {
+    &.btn-primary {
+        .button-variant( @btn-outlet-color; @btn-outlet-bg; @btn-outlet-border; @btn-outlet-active-bg; @btn-outlet-active-border; );
+    }
+    &.btn-default {
+        .button-variant( @btn-outlet-default-color; @btn-outlet-default-bg; @btn-outlet-default-border; @btn-outlet-default-active-bg; @btn-outlet-default-active-border; );
+    }
+}
+
+.btn-off-price {
+    &.btn-primary {
+        .button-variant( @btn-off-price-color; @btn-off-price-bg; @btn-off-price-border; @btn-off-price-active-bg; @btn-off-price-active-border; );
+    }
+    &.btn-default {
+        .button-variant( @btn-off-price-default-color; @btn-off-price-default-bg; @btn-off-price-default-border; @btn-off-price-default-active-bg; @btn-off-price-default-active-border; );
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Button Link
+// Make a button look and behave like a link
+// ---------------------------------------------------------------------------------------------------------------------
+// TODO: refactor, move into base and theme selectors above
+.btn-link {
+    &:extend( .link_stag all);
+    .overlay-dark & {
+        &:extend( .link_stag-overlay all);
+    }
+    &,
+    &:active,
+    &.active,
+    &[disabled],
+    fieldset[disabled] & {
+        background-color: transparent;
+    }
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: transparent;
+    }
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus {
+
+            color: @btn-link-disabled-color;
+            text-decoration: none;
+        }
+    }
+    &-explore {
+        background-color: inherit;
+        &:extend( .link_stag-explore all);
+        .overlay-dark & {
+            &:extend( .link_stag-explore-overlay all);
+        }
+    }
+    &-off-price {
+        background-color: inherit;
+        &:extend( .link-off-price-standalone-overlay all);
+        .overlay-dark & {
+             &:extend( .link_stag-explore-overlay all);
+        }
+    }
+    &-outlet {
+        background-color: inherit;
+        &:extend( .link-outlet-standalone-overlay all);
+        .overlay-dark & {
+            &:extend( .link_stag-explore-overlay all);
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Size and Font
+//
+// define btn-lg, btn-sm, btn-xs, Block button
+//
+//----------------------------------------------------------------------------------------------------------------------
+.btn-lg {
+    // line-height: ensure even-numbered height of button next to large input
+    .button-size( @padding-large-vertical; @padding-large-horizontal; @btn-font-size-lg; @btn-line-height; @headings-font-family; );
+}
+
+.btn-sm {
+    // line-height: ensure proper height of button next to small input
+    .button-size( @padding-small-vertical; @padding-small-horizontal; @font-size-large; @line-height-small; );
+    @text-with-icon-rei-tree-arrow-button-sm-ruleset();
+}
+
+.btn-xs {
+    .button-size( @padding-xs-vertical; @padding-xs-horizontal; @font-size-smaller; @line-height-small; );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Block button
+// ---------------------------------------------------------------------------------------------------------------------
+.btn-block {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    & + & {
+        margin-left: 0;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Controls
+//
+// define .remove-toggle (filter)
+//
+//----------------------------------------------------------------------------------------------------------------------
+.remove-toggle {
+    position: relative;
+    & .icon-rei-close-small {
+        border-right: solid 0.1rem @core-architectural-5;
+        height: 108%;
+        left: 0;
+        padding: 0.7rem 0.8rem 0 0.7rem;
+        position: absolute;
+        overflow-y: hidden;
+        top: -0.1rem;
+
+    }
+
+    & span:last-of-type {
+        margin-left: 2.7rem; // for text
+    }
+
+    &.remove-right {
+        & .icon-rei-close-small {
+            &:extend( .btn-contrast.btn-primary );
+            height: 100%;
+            left: auto;
+            right: -0.1rem;
+            padding: 0.7rem 0.6rem 0 0.7rem;
+            top: 0;
+        }
+        & span:last-of-type {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Specificity Overrides
+// ---------------------------------------------------------------------------------------------------------------------
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block {
+        width: 100%;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

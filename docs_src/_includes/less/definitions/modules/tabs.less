@@ -1,0 +1,123 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//          THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'module';
+@element : 'tabs';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Tabs
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Base class TODO: refactor into tab
+// --------------------------------------------------
+.list-nav {
+    &:extend( .list-unstyled all );
+    &:extend( .clearfix all );
+    > li {
+        > a {
+            display: block;
+            .button-size( @padding-base-vertical; @padding-base-horizontal; @font-size-large; @btn-line-height; );
+            &:extend( .text-title );
+            &:extend( .link_navigation );
+            &:hover,
+            &:focus {
+                background-color: @nav-link-hover-bg;
+                text-decoration: none;
+            }
+        }
+        // Disabled state sets text to gray and nukes hover/tab effects
+        &.disabled > a {
+            color: @nav-disabled-link-color;
+            &:hover, &:focus {
+                background-color: transparent;
+                color: @nav-disabled-link-hover-color;
+                cursor: @cursor-disabled;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.list-nav > li > ul {
+    &:extend( .list-nav all );
+    > li {
+        > a {
+            .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @btn-line-height; @border-radius-base);
+            &:extend( .link_navigation );
+        }
+    }
+}
+
+// Tabs
+// -------------------------
+
+// Give the tabs something to sit on
+.nav-tabs {
+    &:extend( .list-nav all );
+    &:extend( .text-sub-heading );
+    border-bottom: 0.1rem solid @nav-tabs-border-color;
+    padding-left: @padding-base-horizontal;
+    > li {
+        display: inline-block;
+        margin: 0 0 0 (@padding-base-horizontal / 2);
+        &:first-of-type {
+            margin-left: 0;
+        }
+        > a:first-of-type {
+            .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration; );
+        }
+        &.active {
+            bottom: -0.1rem;
+            position: relative;
+            > a {
+                &, &:hover, &:focus {
+                    background-color: @nav-tabs-active-link-hover-bg;
+                    border: 0.1rem solid @nav-tabs-active-link-hover-border-color;
+                    border-bottom-color: transparent;
+                    border-bottom-style: initial;
+                    color: @text-color;
+                    cursor: default;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+    > .tab-pane {
+        display: none;
+    }
+    > .active {
+        display: block;
+    }
+}
+
+.list-menu {
+    &:extend( .list-nav all );
+    > li {
+        > a {
+            &:extend( .link_navigation-subtitle all );
+            border-bottom: 0.1rem solid @list-group-border;
+            line-height: @line-height-base;
+            &:hover, &:focus {
+                background-color: @nav-link-hover-bg;
+                text-decoration: none;
+            }
+        }
+    }
+    &.right {
+        text-align: right;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();

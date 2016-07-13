@@ -1,0 +1,326 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// REI-CEDAR VARIABLES
+//
+// TOC:
+// :color
+// ::Brand Color Map
+// ::Core Palette
+// :::action
+// :::architecture
+// :::background fill and color helpers
+// ::Explore palette
+// :::action
+// :::architecture
+// :::background fill and color helpers
+// ::Outlet palette
+// ::Off Price palette
+// :::action
+// :::architecture
+// :::background fill and color helpers
+// ::Utility palette
+// ::Applied color
+// :::Horizontal line color
+//
+// :SIZE AND SHAPE
+// ::Global type and helpers
+// :::Horizontal and vertical rhythm
+// :::Grid system
+// :::Media query breakpoints
+// :::Z-index master list
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// COLOR PALETTES
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Brand Color Map
+//
+// These variables define the current brand scheme, these are not intended for implementation outside of this file.
+//
+//----------------------------------------------------------------------------------------------------------------------
+@old-growth:                             #004e00;
+@new-growth:                             #a1c900;
+@dusty-white:                            #efeee2;
+@brand-success:                          @new-growth;
+@brand-info:                             @core-architectural-2;
+@brand-warning:                          #e4ac00;
+@brand-danger:                           #cc0000;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Core palette
+//
+// Default palette for rei.com, intended for transactional flow.
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//action -- these variables are intended for actionable elements such as links and buttons
+@core-action-1:                          #4eaaff;
+@core-action-2:                          #0066cc;
+@core-action-3:                          mix(@core-action-1, @core-architectural-5, 70%);
+
+//core architecture  - dark to light -- used for page scaffolding
+@core-architectural-1:                   #000;
+@core-architectural-2:                   #222;
+@core-architectural-3:                   #666;
+@core-architectural-4:                   #ccc;
+@core-architectural-5:                   #fff;
+@core-architectural-6:                   @dusty-white;
+@core-background-1:                      #f2f2f2;
+@core-background-2:                      #e5e5e5;
+
+// Core background fill and color helpers
+
+//Light
+//----------------------------------------------------------------------------------------------------------------------
+@background-white-ruleset: {
+  .bg-variant( @core-architectural-5 );
+};//#fff
+
+@background-dusty-white-ruleset: {
+  .bg-variant( @core-architectural-6 );
+};// @dusty-white;
+
+//Medium
+//----------------------------------------------------------------------------------------------------------------------
+@background-grey-1-ruleset: {
+  .bg-variant( @core-background-1; );
+};//#f2f2f2
+@background-grey-2-ruleset: {
+  .bg-variant( @core-background-2; );
+};//#e5e5e5;
+@background-grey-3-ruleset: {
+  .bg-variant( @core-architectural-3; @core-architectural-5; );
+};//#666
+
+//Dark
+//----------------------------------------------------------------------------------------------------------------------
+@background-grey-4-ruleset: {
+  .bg-variant( @core-architectural-2; @core-architectural-5; );
+};//#222
+@background-black-ruleset: {
+    .bg-variant( @core-architectural-1; @core-architectural-5; );
+};//black
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Explore palette
+//
+// Used to educate and inspire the customer.
+//
+//----------------------------------------------------------------------------------------------------------------------
+// Explore action, like Core, the action vars are for elements that have action such as links and buttons
+@explore-action-1:                          @new-growth;
+@explore-action-2:                          @old-growth;
+@explore-action-3:                          mix(@new-growth, @core-architectural-5, 70%);
+@explore-action-4:                          mix(@old-growth, @core-architectural-5, 70%);
+@explore-action-5:                          @old-growth;
+
+// Explore architectural, used to create scaffolding
+@explore-architectural-1:                    @new-growth;
+@explore-architectural-2:                    @old-growth;
+
+// Explore background fill and color helpers
+@bg-explore-1-ruleset: {
+  .bg-variant( @explore-architectural-1; );
+};
+@bg-explore-2-ruleset: {
+  .bg-variant( @explore-architectural-2; @core-architectural-5 );
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Outlet palette
+//
+//----------------------------------------------------------------------------------------------------------------------
+// Outlet action
+@outlet-action-1:                              @brand-danger; //#cc0000;
+@outlet-action-2:                              mix(@brand-danger, @core-architectural-5, 70%); //#db4d4d;
+
+// Outlet architecture
+@outlet-architectural-1:                       @outlet-action-1; //#cc0000;
+
+// outlet background fill and color helpers
+// Off Price background fill and color helpers
+@bg-brand-danger-background-dark-ruleset: {
+  .bg-variant( @brand-danger; @core-architectural-5; );
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Off Price palette
+//
+//----------------------------------------------------------------------------------------------------------------------
+// Off Price action
+@off-price-action-1:                              @brand-danger; //#cc0000;
+@off-price-action-2:                              mix(@brand-danger, @core-architectural-5, 70%); //#db4d4d;
+
+// Off Price architecture
+@off-price-architectural-1:                       @outlet-action-1; //#cc0000;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Utility palette
+//
+// error, off price, ratings
+//
+//----------------------------------------------------------------------------------------------------------------------
+@rating-value:                                  @new-growth; //TODO dupe of star-rating-filled?
+@utility-off-price:                             @brand-danger;
+@utility-error:                                 @brand-danger;
+@utility-available:                             @brand-success;
+// rating
+@star-rating-filled:                            @explore-action-1;
+@star-rating-empty:                             @core-background-2;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Applied color
+//
+// Applying theme variables to element specific variables, providing the ability to change one without impacting the other.
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@body-bg:                                         @core-architectural-5;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Horizontal line color
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@hr-border:                                       @core-background-2;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Modals
+//
+//----------------------------------------------------------------------------------------------------------------------
+// Background color of modal content area
+@modal-content-bg:                                @core-architectural-5;
+// Modal content border color
+@modal-content-border-color:                      rgba(0,0,0,.2);
+// Modal content border color **for IE8**
+@modal-content-fallback-border-color:             #999;
+
+// Modal backdrop background color
+@modal-backdrop-bg:                               @core-architectural-1;
+// Modal backdrop opacity
+@modal-backdrop-opacity:                          .5;
+// Modal header border color
+@modal-header-border-color:                       @core-background-2;
+// Modal footer border color
+@modal-footer-border-color:                       @modal-header-border-color;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// SIZE AND SHAPE
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Horizontal and vertical rhythm
+//
+// Define common padding sizes and more.
+//
+//----------------------------------------------------------------------------------------------------------------------
+@padding-base-vertical:                                1.1rem;
+@padding-base-horizontal:                              1.6rem;
+
+@padding-xlarge:                                       3rem;
+
+@padding-large-vertical:                               1.3rem;
+@padding-large-horizontal:                             3.2rem;
+
+@padding-small-vertical:                               0.6rem;
+@padding-small-horizontal:                             2.4rem;
+
+@padding-xs-vertical:                                  0.3rem;
+@padding-xs-horizontal:                                @padding-base-horizontal;
+
+@vertical-push-small:                                  0.8rem;
+@vertical-push:                                        1.2rem;
+@vertical-push-medium:                                 1.6rem;
+@vertical-push-large:                                  2.6rem;
+@vertical-push-xlarge:                                 @padding-xlarge;
+@group-push:                                           @padding-base-horizontal;
+@form-group-margin-bottom:                             @vertical-push-large;
+
+// Spacing between bottom of header and top of content (breadcrumbs are included in content).
+@header-spacing:                                       4rem;
+// Spacing between bottom of breadcrumbs and top of the rest of the content.
+@breadcrumb-spacing:                                   3rem;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Grid system
+//
+//----------------------------------------------------------------------------------------------------------------------
+// Number of columns in the grid.
+@grid-columns:                                      12;
+
+// Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:                                 2rem; // Mobile gutters
+@grid-gutter-width-sm:                              @grid-gutter-width * 2; // Tablet gutters
+@grid-gutter-width-md:                              @grid-gutter-width * 3; // Desktop+ gutters
+
+// Path
+//----------------------------------------------------------------------------------------------------------------------
+@font-path:                                          ~"//satchel.rei.com/media/font/";
+@satchel:                                            "//satchel.rei.com/media/img/ico/";
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Media query breakpoints
+//
+// Define the breakpoints at which your layout will change, adapting to different screen sizes.
+//
+//----------------------------------------------------------------------------------------------------------------------
+// Extra small screen / phone
+// Deprecated `@screen-xs` as of v3.0.1
+@screen-xs:                                        480px;
+// Deprecated `@screen-xs-min` as of v3.2.0
+@screen-xs-min:                                    @screen-xs;
+// Deprecated `@screen-phone` as of v3.0.1
+@screen-phone:                                     @screen-xs-min;
+
+// Small screen / tablet
+// Deprecated `@screen-sm` as of v3.0.1
+@screen-sm:                                        768px;
+@screen-sm-min:                                    @screen-sm;
+// Deprecated `@screen-tablet` as of v3.0.1
+@screen-tablet:                                    @screen-sm-min;
+
+// Medium screen / desktop
+// Deprecated `@screen-md` as of v3.0.1
+@screen-md:                                        992px;
+@screen-md-min:                                    @screen-md;
+// Deprecated `@screen-desktop` as of v3.0.1
+@screen-desktop:                                   @screen-md-min;
+
+// Large screen / wide desktop
+// Deprecated `@screen-lg` as of v3.0.1
+@screen-lg:                                         1200px;
+@screen-lg-min:                                     @screen-lg;
+// Deprecated `@screen-lg-desktop` as of v3.0.1
+@screen-lg-desktop:                                 @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:                                     (@screen-sm-min - 1);
+@screen-sm-max:                                     (@screen-md-min - 1);
+@screen-md-max:                                     (@screen-lg-min - 1);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+//
+//----------------------------------------------------------------------------------------------------------------------
+@zindex-popover:                                     1060;
+@zindex-tooltip:                                     1070;
+@zindex-modal-background:                            1040;
+@zindex-modal:                                       1050;
+

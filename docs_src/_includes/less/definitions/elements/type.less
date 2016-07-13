@@ -1,0 +1,441 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'element';
+@element : 'typography';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// REI-CEDAR TYPOGRAPHY VARIABLES
+//
+// TOC:
+//
+// :Web Fonts
+// :Headings
+// ::Editorial Headings
+// ::Hero Headings
+// ::Announce Headings
+// :Classification Label
+// :Copy
+// :Typography Helpers
+// ::Alignment
+// ::Character Transformation
+// ::Color
+// ::Visibility
+// ::Weight and Size
+// :Icon and Text Helper Rulesets
+// :Misc
+// ::abbr
+// ::blockquote
+// ::address
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Web Fonts
+//----------------------------------------------------------------------------------------------------------------------
+@font-face {
+    font-family: "Anderson 1938";
+    src: url('@{font-path}anderson_1938-webfont.eot');
+    src: url('@{font-path}anderson_1938-webfont.eot?#iefix') format('embedded-opentype'),
+    url('@{font-path}anderson_1938-webfont.woff') format('woff'),
+    url('@{font-path}anderson_1938-webfont.ttf') format('truetype'),
+    url('@{font-path}anderson_1938-webfont.svg#webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Interstate Bold Condensed";
+    src: ~"url('@{font-path}interstateBoldCondensed.eot?#iefix') format('eot')",
+    ~"url('@{font-path}interstateBoldCondensed.woff') format('woff')",
+    ~"url('@{font-path}interstateBoldCondensed.ttf') format('truetype')",
+    ~"url('@{font-path}interstateBoldCondensed.svg') format('svg')";
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Headings
+//----------------------------------------------------------------------------------------------------------------------
+h1, .h1 { font-size: @font-size-h1; }
+h2, .h2 { font-size: @font-size-h2; }
+h3, .h3 { font-size: @font-size-h3; }
+h4, .h4 { font-size: @font-size-large; }
+h5, .h5 { font-size: @font-size-large; }
+h6, .h6 { font-size: @font-size-large; }
+
+.h1, h1,
+.h2, h2,
+.h3, h3,
+.h4, h4,
+.h5, h5,
+.h6, h6 {
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+    margin-top: 0;
+    .vertical-push();
+}
+
+.h4, h4,
+.h5, h5,
+.h6, h6 {
+    font-family: @headings-font-family-secondary;
+}
+
+// overrides
+.h1,
+h1 {
+    line-height: 1.166;
+    @media ( min-width: @screen-lg-min ) {
+        font-size: @font-size-h1-lg;
+        line-height: 1.0714;
+    }
+    &.heading-announce {
+        font-size: 7rem;
+        letter-spacing: 0.2rem;
+        @media ( min-width: @screen-sm-min ) {
+            font-size: 12rem;
+            letter-spacing: 0.4rem;
+            line-height: ( 110 / 120 );
+        }
+        @media ( min-width: @screen-lg-min ) {
+            font-size: 17rem;
+            letter-spacing: 0.8rem;
+            line-height: ( 160 / 170 );
+        }
+    }
+}
+
+.h2,
+h2 {
+    @media (min-width: @screen-sm-min) {
+        line-height: @headings-line-height-sm;
+    }
+    @media ( min-width: @screen-lg-min ) {
+        font-size: @font-size-h2-lg;
+        line-height: 1.2;
+    }
+    &.heading-announce {
+        font-size: 6rem;
+        letter-spacing: 0.1rem;
+        line-height: ( 55 / 60 );
+        @media ( min-width: @screen-sm-min ) {
+            font-size: 8rem;
+            letter-spacing: 0.3rem;
+            line-height: ( 75 / 80 );
+        }
+        @media ( min-width: @screen-lg-min ) {
+            font-size: 12rem;
+            letter-spacing: 0.6rem;
+            line-height: ( 110 / 120 );
+        }
+    }
+}
+
+.h4,
+h4 {
+    line-height: ( 26 / 18 );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Editorial Headings
+.heading-editorial {
+    line-height: .9;
+    text-transform: uppercase;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Hero Headings
+.heading-hero {
+    .text-architectural-5();
+    font-size: 4.5rem;
+    line-height: .8;
+    text-transform: uppercase;
+    @media ( min-width: @screen-sm-min ) {
+        font-size: 7rem;
+    }
+    @media ( min-width: @screen-lg-min ) {
+        font-size: 8rem;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Announce Headings
+.heading-announce {
+    color: inherit;
+    line-height: ( 65 / 70 );
+    text-transform: uppercase;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Classification Label
+.label-classification {
+    &:extend( .h4 );
+    &:extend( .heading-editorial );
+    border-bottom: 0.3rem solid;
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding-bottom: 0.6rem;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Copy
+//----------------------------------------------------------------------------------------------------------------------
+.container {
+    font-size: @font-size-base;
+}
+
+p {
+    margin: 0 0 @vertical-push;
+}
+.text-stag {
+    margin: 0;
+}
+.text-body {
+    a {
+        &:extend( .link-body all );
+    }
+}
+// NOTE: Deprecated us .text-body
+.underline-body-text {
+    .text-body();
+}
+
+.text-title {
+    font: normal normal @font-size-h3 @headings-font-family;
+    line-height: @headings-line-height;
+}
+
+.text-sub-heading {
+    font-family: @headings-font-family-secondary;
+    font-size: @font-size-large;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Typography Helpers
+//----------------------------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Alignment
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-left {
+    text-align: left;
+}
+.text-nowrap {
+    white-space: nowrap;
+}
+.text-right {
+    text-align: right;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Character Transformation
+.text-capitalize {
+    text-transform: capitalize;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-sentence {
+    &::first-letter {
+        .text-uppercase();
+    }
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-strikethrough {
+    text-decoration: line-through;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Color
+
+.text-success {
+    color: inherit;
+}
+.text-info {
+    &:extend( .text-success all );
+}
+.text-warning {
+    &:extend( .text-success all );
+}
+.text-danger {
+    color: @utility-error;
+}
+mark,
+.text-mark {
+    background-color: @state-warning-bg;
+    padding: .2em;
+}
+
+.text-architectural-1 {
+    color: @core-architectural-1;
+}
+.text-explore-architectural-1 {
+    color: @explore-architectural-1;
+}
+.text-explore-architectural-2 {
+    color: @explore-architectural-2;
+}
+.text-architectural-2 {
+    color: @text-color;
+}
+.text-architectural-3 {
+    color: @core-architectural-3;
+}
+.text-architectural-5 {
+    color: @core-architectural-5;
+}
+.text-off-price {
+    color: @utility-off-price;
+}
+.text-muted {
+    color: @text-muted;
+}
+
+//deprecated
+.text-overlay
+{
+    .text-architectural-5();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Visibility
+.text-hide {
+    font: ~"0/0" a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Weight and Size
+small,
+.text-small {
+    font-size: @font-size-small;
+}
+.text-descriptive {
+    font-size: @font-size-small;
+    line-height: @line-height-computed;
+}
+.text-lead {
+    font-size: @font-size-large;
+    line-height: @headings-line-height;
+    .vertical-push();
+    @media ( min-width: @screen-sm-min ) {
+        font-size: @font-size-large;
+    }
+}
+.text-space-lg {
+    .spaced-body-text();
+}
+// NOTE: Deprecated us .text-space-lg
+.spaced-body-text {
+    line-height: 2.4;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Icon and Text Helper Rulesets
+//----------------------------------------------------------------------------------------------------------------------
+.icon-align-variant( @align: left;) {
+    float:  @align;
+}
+
+@text-with-right-icon-rei-external-link-ruleset: {
+    & .icon-rei-external-link {
+        font-size: 0.7rem;
+        padding-left: 0.8rem;
+    }
+};.text-icon-external { @text-with-right-icon-rei-external-link-ruleset(); }
+
+@text-with-left-icon-rei-play-small-ruleset: {
+    & .icon-rei-play-small {
+        font-size: 0.7rem;
+        padding-right: 0.5rem;
+    }
+};.text-icon-play { @text-with-left-icon-rei-play-small-ruleset(); }
+
+@text-with-icon-rei-right-arrow-ruleset: {
+    & .icon-rei-right-arrow {
+        font-size: 0.5rem;
+        padding-left: 0.2rem;
+    }
+};.text-icon-right-arrow { @text-with-icon-rei-right-arrow-ruleset(); }
+
+@text-with-icon-rei-tree-arrow-ruleset: {
+    & .icon-rei-tree-arrow {
+        padding-left: 1rem;
+        vertical-align: text-bottom;
+    }
+};.text-icon-tree-arrow { @text-with-icon-rei-tree-arrow-ruleset(); }
+
+@text-with-icon-rei-tree-arrow-button-ruleset: {
+    & .icon-rei-tree-arrow {
+        padding-left: 0.3rem;
+        vertical-align: text-bottom;
+    }
+};
+@text-with-icon-rei-tree-arrow-button-sm-ruleset: {
+    & .icon-rei-tree-arrow {
+        font-size: 2rem;
+        padding-left: 0;
+    }
+};
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Misc
+//----------------------------------------------------------------------------------------------------------------------
+// Abbreviations and acronyms
+abbr[title],
+    // Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
+abbr[data-original-title] {
+    cursor: help;
+    border-bottom: 0.1rem dotted @core-architectural-4;
+}
+.initialism {
+    font-size: 90%;
+    .text-uppercase();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Blockquotes
+blockquote {
+    padding: ( @line-height-computed / 2 ) @line-height-computed;
+    margin: 0 0 @line-height-computed;
+    p,
+    ul,
+    ol {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Opposite alignment of blockquote
+.blockquote-reverse,
+blockquote.pull-right {
+    padding-right: 1.5rem;
+    padding-left: 0;
+    text-align: right;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Addresses
+address {
+    margin-bottom: @line-height-computed;
+    font-style: normal;
+    line-height: @line-height-base;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            OVERRIDES
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loadUIOverrides();
