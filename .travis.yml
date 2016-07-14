@@ -5,9 +5,14 @@ before_install: rvm install 2.1.5
 before_script:
   - gem install jekyll
   - npm install -g gulp
-script: 
+script:
   - gulp
   - jekyll serve --detach
+  - pa11y http://localhost:9002/layouts/grid/
+  - pa11y http://localhost:9002/elements/typography/
+  - pa11y http://localhost:9002/elements/buttons/
+  - pa11y http://localhost:9002/elements/inputs/
+  - pa11y http://localhost:9002/elements/images/
   - cd node_modules/backstopjs && npm run reference
   - npm run test
   - kill -9 $(ps aux | grep jekyll)
