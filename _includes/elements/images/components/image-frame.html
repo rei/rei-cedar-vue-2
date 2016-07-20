@@ -1,71 +1,113 @@
-<h3 id="image-frame" class="">Image Frame</h3>
+<h2 id="image-frame" class="">Image / Media Frame</h2>
 <p>Images can be scaled (cropped or constrained) to a container element by applying to the parent an <code>.img-frame</code> class. This applies <code>position: relative;</code>, <code>overflow: hidden;</code> and <code>padding-bottom: [ Variable ];</code> to maintain the proportions of a flexible-width element. Applying a secondary class of <code>.ratio-[ square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9 ]</code> will set it to a desired aspect ratio. When the mixin is invoked directly, it allows for a set pixel height.</p>
-<p>Images contained within a parent container with class <code>.img-frame</code> will be set to apply <code>position: absolute;</code>, <code>width: auto;</code>, <code>height: auto;</code>.</p>
+<p>Images contained within a parent container with class <code>.media-frame</code><strong>( Preferred )</strong> or <code>.img-frame</code> will be set to apply <code>position: absolute;</code>, <code>width: auto;</code>, <code>height: auto;</code>.</p>
 <p>With an additional class of <code>.center</code>, <code>.top</code>, <code>.right</code>, <code>.bottom</code>, or <code>.left</code>, the image will be achored to its respective side. <code>min-height: 100%;</code>, <code>min-width: 100%;</code>, <code>object-fit: cover;</code>, and either <code>height: 100%;</code> (<code>.left</code>, <code>.right</code>, or <code>.center</code>) or <code>width: 100%;</code> (<code>.top</code>, <code>.bottom</code>, or <code>.portrait.center</code>). When the mixin is invoked directly, percent and pixel values can be applied for more fine-tuned image anchoring.</p>
 <div class="bs-callout bs-callout-warning" id="callout-aspect-agnostic">
-    <h4>Note: Center-anchored frames are not aspect-agnostic:</h4>
+    <h5>Note: Center-anchored frames are not aspect-agnostic:</h5>
     <p>Please see above: If you are centering a portrait image, it will require an additional class <code>.portrait</code> to ensure it is correctly anchored.</p>
 </div>
 <p>With no positioning classes set (or with optional class <code>.nocrop</code> set), it will apply a <code>max-width: 100%;</code>, <code>max-height: 100%;</code>, <code>object-fit: contain;</code> and use <code>.utility-position</code> to center within the container. Wells or padding can be applied to the container to add space between the edges and the image.</p>
 
 <div class="row">
     <div class="col-xs-3">
-        <div class="img-frame ratio-square">
-            <img src="//lorempixel.com/300/160/sports" alt="example alt text"/>
+        <div class="media-frame ratio-square">
+            <img src="//lorempixel.com/300/160/sports" alt="Example image media-frame ratio-square"/>
         </div>
     </div>
     <div class="col-xs-3">
-        <div class="img-frame center ratio-square">
-            <img src="//lorempixel.com/300/160/sports" alt="example alt text"/>
+        <div class="media-frame center ratio-square">
+            <img src="//lorempixel.com/300/160/sports" alt="Example image media-frame center ratio-square" />
         </div>
     </div>
     <div class="col-xs-3">
-        <div class="img-frame left ratio-square">
-            <img src="//lorempixel.com/300/160/sports" alt="example alt text"/>
+        <div class="media-frame left ratio-square">
+            <img src="//lorempixel.com/300/160/sports" alt="Example image media-frame left ratio-square"/>
         </div>
     </div>
     <div class="col-xs-3">
-        <div class="img-frame right ratio-square">
-            <img src="//lorempixel.com/300/160/sports" alt="example alt text"/>
+        <div class="media-frame right ratio-square">
+            <img src="//lorempixel.com/300/160/sports" alt="Example image media-frame right ratio-square"/>
         </div>
     </div>
 </div>
 <br>
 <div class="row">
     <div class="col-xs-3">
-        <div class="img-frame ratio-square">
-            <img src="//lorempixel.com/160/300/sports" alt="example alt text"/>
+        <div class="media-frame ratio-square">
+            <img src="//lorempixel.com/160/300/sports" alt="Example image media-frame ratio-square"/>
         </div>
     </div>
     <div class="col-xs-3">
-        <div class="img-frame center portrait ratio-square">
-            <img src="//lorempixel.com/160/300/sports" alt="example alt text"/>
+        <div class="media-frame center portrait ratio-square">
+            <img src="//lorempixel.com/160/300/sports" alt="Example image media-frame center portrait ratio-square" />
         </div>
     </div>
     <div class="col-xs-3">
-        <div class="img-frame top ratio-square">
-            <img src="//lorempixel.com/160/300/sports" alt="example alt text"/>
+        <div class="media-frame top ratio-square">
+            <img src="//lorempixel.com/160/300/sports" alt="Example image media-frame top ratio-square"/>
         </div>
     </div>
     <div class="col-xs-3">
-        <div class="img-frame bottom ratio-square">
-            <img src="//lorempixel.com/160/300/sports" alt="example alt text"/>
+        <div class="media-frame bottom ratio-square">
+            <img src="//lorempixel.com/160/300/sports" alt="Example image media-frame bottom ratio-square"/>
         </div>
     </div>
 </div>
 <br>
-
+<div class="row">
+    <div class="col-xs-3">
+        <div class="media-frame ratio-square">
+            <video poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif" >
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4">
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv" type="video/ogg">
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm" type="video/webm">
+              Your browser doesn't support HTML5 video tag.
+            </video>
+        </div>
+    </div>
+    <div class="col-xs-3">
+        <div class="media-frame center ratio-square">
+            <video poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif" >
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4">
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv" type="video/ogg">
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm" type="video/webm">
+              Your browser doesn't support HTML5 video tag.
+            </video>
+        </div>
+    </div>
+    <div class="col-xs-3">
+        <div class="media-frame left ratio-square">
+            <video poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif" >
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4">
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv" type="video/ogg">
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm" type="video/webm">
+              Your browser doesn't support HTML5 video tag.
+            </video>
+        </div>
+    </div>
+    <div class="col-xs-3">
+        <div class="media-frame right ratio-square">
+            <video poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif" >
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4">
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv" type="video/ogg">
+              <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm" type="video/webm">
+              Your browser doesn't support HTML5 video tag.
+            </video>
+        </div>
+    </div>
+</div>
+<br>
 {% highlight html %}
 <div class="img-frame">
-    <img src="..." alt="example alt text"/>
+    <img src="..." alt="" />
 </div>
 
 <div class="img-frame nocrop">
-    <img src="..." alt="example alt text"/>
+    <img src="..." alt="" />
 </div>
 
 <div class="img-frame ratio-9-16 portrait center">
-    <img src="..." alt="example alt text"/>
+    <img src="..." alt="" />
 </div>
 
 {% endhighlight %}
