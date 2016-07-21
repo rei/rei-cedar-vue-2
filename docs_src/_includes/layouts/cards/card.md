@@ -7,12 +7,12 @@ If you're familiar with Bootstrap 3, cards replace our old panels, wells, and th
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## Example
+## Root Example
 
 Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease. For example, if your card has no flush content like images, feel free to put the `.card-block` class on the `.card` element to consolidate your markup.
 <div class="cedar-example">
-    <div class="card">
-        <div class="card-img-top img-frame ratio-9-16 portrait center vertical-push">
+    <div class="card card-block card-center">
+        <div class="img-frame ratio-9-16 portrait center vertical-push">
             <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
         </div>
         <h4>Card title</h4>
@@ -22,7 +22,7 @@ Cards require a small amount of markup and classes to provide you with as much c
 </div>
 
 {% highlight html %}
-<div class="card">
+<div class="card card-block card-center">
     <div class="img-frame ratio-9-16 portrait center vertical-push">
         <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
     </div>
@@ -31,6 +31,13 @@ Cards require a small amount of markup and classes to provide you with as much c
     <a href="#" class="btn btn-primary">Button</a>
 </div>
 {% endhighlight %}
+
+
+## Card Types
+
+### Card Content
+
+By adding the `.card-content` class to `.card` you can update the skin of the basic card to account for content cards, which are intended to display one complete thought in a grouping.
 
 <div class="cedar-example">
     <div class="card card-content">
@@ -57,107 +64,100 @@ Cards require a small amount of markup and classes to provide you with as much c
     </div>
 </div>
 {% endhighlight %}
-<!-- ## Content types
+
+### Card Tile
+By adding the `.card-tile` class to `.card` you can update the skin of the basic card to account for tile cards, which are intended to display one part of a group.
+<div class="cedar-example">
+    <div class="card card-tile">
+        <div class="card-img-top img-frame ratio-9-16 portrait center">
+            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        </div>
+        <div class="card-block">
+            <h4>Card title</h4>
+            <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+        </div>
+    </div>
+</div>
+{% highlight html %}
+<div class="card card-tile">
+  <ul class="list-group">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+</div>
+{% endhighlight %}
+## Content within cards
 
 Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.
 
+<div class="cedar-example">
+    <div class="card card-content">
+        <div class="card-img-top img-frame ratio-9-16 portrait center">
+            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        </div>
+        {% include /markup-templates/list-group/list-group-filter.html %}
+        <div class="card-block card-center">
+            {% include /markup-templates/lists/inline.html param="inline-featured" %}
+        </div>
+    </div>
+</div>
 {% highlight html %}
-<div class="card">
-  <img class="card-img-top" data-src="holder.js/100px180/?text=Image cap" alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-  <div class="card-block">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+<div class="card card-content">
+    <div class="card-img-top img-frame ratio-9-16 portrait center">
+        <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+    </div>
+    <p>Content out of card-block</p>
+    <div class="card-block card-center">
+    <p>Content in card-block and centered</p>
+    </div>
 </div>
 {% endhighlight %}
 
-{% highlight html %}
-<div class="card">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-</div>
-{% endhighlight %}
-
-{% highlight html %}
-<div class="card">
-  <img class="card-img-top" data-src="holder.js/100px180/?text=Image cap" alt="Card image cap">
-  <div class="card-block">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-{% endhighlight %}
-
-{% highlight html %}
-<div class="card card-block">
-  <h4 class="card-title">Card title</h4>
-  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  <a href="#" class="card-link">Card link</a>
-  <a href="#" class="card-link">Another link</a>
-</div>
-{% endhighlight %}
-
-{% highlight html %}
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-  </div>
-  <img data-src="holder.js/100px180/?text=Image" alt="Card image">
-  <div class="card-block">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-{% endhighlight %}
 
 ## Sizing
 
 Constrain the width of cards via custom CSS, our predefined grid classes, or with custom styles using our grid mixins.
 
 Using the grid:
-
-{% highlight html %}
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card card-block">
-      <h3 class="card-title">Special title treatment</h3>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="cedar-example">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card card-content card-block">
+          <h3>Special title treatment</h3>
+          <p>With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card card-content card-block">
+          <h3>Special title treatment</h3>
+          <p>With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card card-block">
-      <h3 class="card-title">Special title treatment</h3>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+    {% highlight html %}
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card card-content card-block">
+          <h3>Special title treatment</h3>
+          <p>With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card card-content card-block">
+          <h3>Special title treatment</h3>
+          <p>With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
 {% endhighlight %}
-
-Using custom widths:
-
-{% highlight html %}
-<div class="card card-block" style="width: 18rem;">
-  <h3 class="card-title">Special title treatment</h3>
-  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  <a href="#" class="btn btn-primary">Go somewhere</a>
-</div>
-{% endhighlight %}
-
+<!--
 ## Text alignment
 
 You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{ site.baseurl }}/components/utilities/#text-alignment).
@@ -181,49 +181,80 @@ You can quickly change the text alignment of any card—in its entirety or speci
   <a href="#" class="btn btn-primary">Go somewhere</a>
 </div>
 {% endhighlight %}
-
+ -->
 ## Header and footer
 
 Add an optional header and/or footer within a card.
-
+<div class="cedar-example">
+    <div class="card card-content">
+      <div class="card-header card-block">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="//lorempixel.com/50/50/nature" alt="Card image cap" class="img-circle">
+                </a>
+            </div>
+            <div class="media-body">
+                <h5 class="media-heading">Title</h5>
+                <p>ancillary text</p>
+            </div>
+        </div>
+      </div>
+      <div class="card-block">
+        <h4 class="card-title">Special title treatment</h4>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+</div>
 {% highlight html %}
-<div class="card">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Special title treatment</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+<div class="card card-content">
+    <div class="card-header card-block">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="//lorempixel.com/50/50/nature" alt="Card image cap" class="img-circle">
+                </a>
+            </div>
+            <div class="media-body">
+                <h5 class="media-heading">Title</h5>
+                <p>ancillary text</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-block">
+        <h4 class="card-title">Special title treatment</h4>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
 </div>
 {% endhighlight %}
 
-{% highlight html %}
-<div class="card">
-  <h3 class="card-header">Featured</h3>
-  <div class="card-block">
-    <h4 class="card-title">Special title treatment</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+<div class="cedar-example">
+    <div class="card card-content">
+        <div class="card-header card-block">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img src="//lorempixel.com/50/50/nature" alt="Card image cap" class="img-circle">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h5 class="media-heading">Title</h5>
+                    <p>ancillary text</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-block">
+            <h4 class="card-title">Special title treatment</h4>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div>
 </div>
-{% endhighlight %}
-
-{% highlight html %}
-<div class="card">
-  <div class="card-header">
-    Quote
-  </div>
-  <div class="card-block">
-    <blockquote class="card-blockquote">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
-{% endhighlight %}
-
 {% highlight html %}
 <div class="card text-xs-center">
   <div class="card-header">
@@ -243,26 +274,69 @@ Add an optional header and/or footer within a card.
 ## Image caps
 
 Similar to headers and footers, cards include top and bottom image caps.
+<div class="cedar-example">
+<div class="row">
+<div class="col-sm-6">
+    <div class="card card-tile">
+        <div class="card-img-top img-frame ratio-9-16 portrait center">
+            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        </div>
+        <div class="card-block">
+            <h4>Card title</h4>
+            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card card-tile">
+        <div class="card-block">
+            <h4>Card title</h4>
+            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <div class="icard-img-bottom img-frame ratio-9-16 portrait center">
+            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        </div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <div class="card card-content">
+        <div class="card-img-top img-frame ratio-9-16 portrait center">
+            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        </div>
+        <div class="card-block">
+            <h4>Card title</h4>
+            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card card-content">
+        <div class="card-block">
+            <h4>Card title</h4>
+            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <div class="card-img-bottom img-frame ratio-9-16 landscape center">
+            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        </div>
+    </div>
+</div>
+</div>
 
+</div>
 {% highlight html %}
-<div class="card">
-  <img class="card-img-top" data-src="holder.js/100px180/" alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+...
+  <div class="card-img-top img-frame ratio-9-16 portrait center">
+     <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
   </div>
-</div>
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-  <img class="card-img-bottom" data-src="holder.js/100px180/" alt="Card image cap">
-</div>
-{% endhighlight %}
+...
 
+...
+    <div class="card-img-bottom img-frame ratio-9-16 landscape center">
+        <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+    </div>
+...
+{% endhighlight %}
+<!--
 ## Image overlays
 
 Turn an image into a card background and overlay your card's text. Depending on the image, you may or may not need `.card-inverse` (see below).

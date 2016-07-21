@@ -17,12 +17,14 @@
 .card {
   position: relative;
   display: block;
-  margin-bottom: @card-spacer-outer-x;
   background-color: @card-bg;
-
   &.card-content {
-    border: @card-border-width solid @card-border-color;
     .border-radius(@card-border-radius);
+    box-shadow: 0 .1rem .6rem 0 rgba( 0, 0, 0, .30 );
+    margin-bottom: @card-spacer-outer-x;
+  }
+  &.card-tile {
+    border: @card-border-width solid @card-border-color;
   }
 }
 
@@ -30,6 +32,9 @@
   padding: @card-spacer-inner-x @card-spacer-inner-y;
 }
 
+.card-center {
+    &:extend(.text-center all);
+}
 //
 // Optional textual caps
 //
@@ -54,21 +59,6 @@
   }
 }
 
-
-//
-// Background variations
-//
-
-
-//
-// Blockquote
-//
-
-.card-blockquote {
-  padding: 0;
-  margin-bottom: 0;
-  border-left: 0;
-}
 
 // Card image
 .card-img {
