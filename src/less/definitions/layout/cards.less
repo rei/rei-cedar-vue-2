@@ -1,0 +1,42 @@
+@card-hover-offset: .3rem;
+.cards {
+    .card {
+        display: inline-flex;
+        flex-flow: column nowrap;
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 .1rem .6rem 0 rgba( 0, 0, 0, .30 );
+        flex-grow: 0;
+        border-radius: .3rem;
+        margin: 1rem;
+
+        @media ( min-width: @screen-md-min ) {
+            margin: 1.6rem;
+        }
+
+        a& {
+            cursor: pointer;
+            transition: 0.25s ease;
+            &[ href ] {
+                backface-visibility: hidden;
+                transform: translateY( 0 );
+                box-shadow: none;
+                &:focus,
+                &:hover {
+                    cursor: pointer;
+                    z-index: 5;
+                    box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
+                    text-decoration: none;
+                    transform: translateY( -@card-hover-offset );
+                }
+            }
+        }
+
+        .well {
+            position: relative;
+            width: fit-content;
+        }
+    }
+}
+
