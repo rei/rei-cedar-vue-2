@@ -10,27 +10,53 @@ If you're familiar with Bootstrap 3, cards replace our old panels, wells, and th
 ## Example
 
 Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease. For example, if your card has no flush content like images, feel free to put the `.card-block` class on the `.card` element to consolidate your markup.
-
-<div class="card">
-  <img class="card-img-top" data-src="holder.js/100px180/" alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Button</a>
-  </div>
+<div class="cedar-example">
+    <div class="card">
+        <div class="card-img-top img-frame ratio-9-16 portrait center vertical-push">
+            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        </div>
+        <h4>Card title</h4>
+        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Button</a>
+    </div>
 </div>
 
 {% highlight html %}
 <div class="card">
-  <img class="card-img-top" data-src="holder.js/100px180/" alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="img-frame ratio-9-16 portrait center vertical-push">
+        <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+    </div>
+    <h4>Card title</h4>
+    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="btn btn-primary">Button</a>
-  </div>
 </div>
 {% endhighlight %}
 
+<div class="cedar-example">
+    <div class="card card-content">
+        <div class="card-img-top img-frame ratio-9-16 portrait center">
+            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        </div>
+      <div class="card-block">
+        <h4>Card title</h4>
+        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Button</a>
+      </div>
+    </div>
+</div>
+
+{% highlight html %}
+<div class="card card-content">
+    <div class="card-img-top img-frame ratio-9-16 portrait center">
+        <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+    </div>
+    <div class="card-block">
+        <h4>Card title</h4>
+        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Button</a>
+    </div>
+</div>
+{% endhighlight %}
 <!-- ## Content types
 
 Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.

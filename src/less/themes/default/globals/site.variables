@@ -250,6 +250,8 @@
 // Spacing between bottom of breadcrumbs and top of the rest of the content.
 @breadcrumb-spacing:                                   3rem;
 
+@border-radius:                                               0.3rem;
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Grid system
