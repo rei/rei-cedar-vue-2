@@ -315,7 +315,7 @@ Similar to headers and footers, cards include top and bottom image caps.
             <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             <p><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <div class="card-img-bottom img-frame ratio-9-16 landscape center">
+        <div class="card-img img-frame ratio-9-16 landscape center">
             <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
         </div>
     </div>
@@ -336,11 +336,22 @@ Similar to headers and footers, cards include top and bottom image caps.
     </div>
 ...
 {% endhighlight %}
-<!--
+
 ## Image overlays
 
 Turn an image into a card background and overlay your card's text. Depending on the image, you may or may not need `.card-inverse` (see below).
-
+<div class="cedar-example">
+    <div class="card card-content card-inverse">
+        <div class="card-img img-frame ratio-3-4 portrait center">
+            <img src="//lorempixel.com/output/abstract-q-g-318-160-6.jpg" alt="Card image cap">
+        </div>
+        <div class="card-img-overlay">
+            <h4>Card title</h4>
+            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+</div>
 {% highlight html %}
 <div class="card card-inverse">
   <img class="card-img" data-src="holder.js/100px270/#55595c:#373a3c/text:Card image" alt="Card image">
@@ -351,7 +362,7 @@ Turn an image into a card background and overlay your card's text. Depending on 
   </div>
 </div>
 {% endhighlight %}
-
+<!--
 ## Inverted text
 
 Cards include a class for quickly toggling **the text color**. By default, cards use dark text and assume a light background. **Add `.card-inverse` for white text** and specify the `background-color` and `border-color` to go with it.

@@ -1,0 +1,9 @@
+.text-color (@a) when (saturation(@a) =< 5%) and (lightness(@a) =< 40% ) {
+    color: @text-overlay;
+}
+.text-color (@a) when (saturation(@a) =< 5%) and (lightness(@a) > 40% ) {
+    color: @text-color;
+}
+.text-color (@a) when (saturation(@a) > 5%) {
+    color: contrast(@base-color, @text-color, @text-overlay, 45%);
+}

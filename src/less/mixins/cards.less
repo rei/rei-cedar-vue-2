@@ -1,8 +1,14 @@
 // Card variants
 
-.card-variant(@background, @border) {
-  background-color: @background;
-  border-color: @border;
+.card-variant( @background, @border ) {
+    background-color: @background;
+    color: contrast( @background, @text-color, @text-overlay );
+    &.card-content {
+        box-shadow: 0 .1rem .6rem 0 rgba( 0, 0, 0, .30 );
+    }
+    &.card-tile {
+        border: @card-border-width solid @border;
+    }
 }
 
 .card-outline-variant(@color) {
@@ -15,24 +21,9 @@
 //
 
 .card-inverse {
-  .card-header,
-  .card-footer {
+    .overlay-dark-1();
+    .card-header,
+    .card-footer {
     border-bottom: @card-border-width solid rgba(255,255,255,.2);
-  }
-  .card-header,
-  .card-footer,
-  .card-title,
-  .card-blockquote {
-    color: #fff;
-  }
-  .card-link,
-  .card-text,
-  .card-blockquote > footer {
-    color: rgba(255,255,255,.65);
-  }
-  .card-link {
-   .hover-focus {
-      color: @card-link-hover-color;
     }
-  }
 }

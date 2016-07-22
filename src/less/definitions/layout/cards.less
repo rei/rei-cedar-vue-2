@@ -1,4 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            THEME
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -11,56 +11,52 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // REI Cedar Card
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@card-hover-offset: .3rem;
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            Card Scaffolding
+//----------------------------------------------------------------------------------------------------------------------
 .card {
-  position: relative;
-  display: block;
-  background-color: @card-bg;
-  &.card-content {
-    .border-radius(@card-border-radius);
-    box-shadow: 0 .1rem .6rem 0 rgba( 0, 0, 0, .30 );
-    margin-bottom: @card-spacer-outer-x;
-  }
-  &.card-tile {
-    border: @card-border-width solid @card-border-color;
-  }
+    display: block;
+    position: relative;
+    &.card-content {
+        .border-radius(@card-border-radius);
+        margin-bottom: @card-spacer-outer-x;
+    }
 }
 
 .card-block {
-  padding: @card-spacer-inner-x @card-spacer-inner-y;
+    padding: @card-spacer-inner-x @card-spacer-inner-y;
 }
 
 .card-center {
     &:extend(.text-center all);
 }
-//
-// Optional textual caps
-//
+//----------------------------------------------------------------------------------------------------------------------
+//            Card header and footer
+//----------------------------------------------------------------------------------------------------------------------
 
 .card-header {
-  padding: @card-spacer-inner-y @card-spacer-inner-x;
-  background-color: @card-cap-bg;
-  border-bottom: @card-border-width solid @card-border-color;
-
-  &:first-child {
-    .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
-  }
+      background-color: @card-cap-bg;
+      border-bottom: @card-border-width solid @card-border-color;
+      padding: @card-spacer-inner-y @card-spacer-inner-x;
+      &:first-child {
+        .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
+      }
 }
 
 .card-footer {
-  padding: @card-spacer-inner-y @card-spacer-inner-x;
-  background-color: @card-cap-bg;
-  border-top: @card-border-width solid @card-border-color;
-
-  &:last-child {
-    .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
-  }
+      background-color: @card-cap-bg;
+      border-top: @card-border-width solid @card-border-color;
+      padding: @card-spacer-inner-y @card-spacer-inner-x;
+      &:last-child {
+        .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
+      }
 }
 
-
-// Card image
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            CARD IMAGES
+//----------------------------------------------------------------------------------------------------------------------
 .card-img {
   // margin: -1.325rem;
  .border-radius(.25rem);
@@ -74,17 +70,84 @@
   padding: 1.25rem;
 }
 
-
-
 // Card image caps
 .card-content {
-    .card-img-top {
-        .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
-    }
-    .card-img-bottom {
-        .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
+    .card-img {
+        .border-radius( @card-border-radius-inner @card-border-radius-inner );
+
+        &-top {
+            .border-radius( @card-border-radius-inner @card-border-radius-inner 0 0 );
+        }
+        &-bottom {
+            .border-radius( 0 0 @card-border-radius-inner @card-border-radius-inner );
+        }
     }
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Color variations
+//----------------------------------------------------------------------------------------------------------------------
+.card {
+    .card-variant( @card-bg, @card-border-color );
+    &-light {
+        &-1 {
+            .card-variant(@brand-info, @brand-info);
+        }
+        &-2 {
+            .card-variant(@brand-warning, @brand-warning);
+        }
+    }
+    &-medium{
+        &-1 {
+            .card-variant(@brand-info, @brand-info);
+        }
+        &-2 {
+            .card-variant(@brand-warning, @brand-warning);
+        }
+        &-3 {
+            .card-variant(@brand-danger, @brand-danger);
+        }
+    }
+    &-dark {
+        &-1 {
+            .card-variant(@brand-primary, @brand-primary);
+        }
+        &-2 {
+            .card-variant(@brand-success, @brand-success);
+        }
+    }
+}
+
+
+// Remove all backgrounds
+.card-primary-outline {
+    .card-outline-variant(@brand-success);
+}
+.card-secondary-outline {
+    .card-outline-variant(@brand-success);
+}
+.card-info-outline {
+    .card-outline-variant(@brand-success);
+}
+.card-success-outline {
+    .card-outline-variant(@brand-success);
+}
+.card-warning-outline {
+    .card-outline-variant(@brand-success);
+}
+.card-danger-outline {
+    .card-outline-variant(@brand-success);
+}
+
+//
+// Inverse text within a card for use with dark backgrounds
+//
+
+.card-inverse {
+  .card-inverse;
+}
+
 
 .cards {
     .card {
