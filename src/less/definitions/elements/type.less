@@ -217,22 +217,44 @@ p {
 //----------------------------------------------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Alignment
-.text-center {
-    text-align: center;
-}
-.text-justify {
-    text-align: justify;
-}
-.text-left {
-    text-align: left;
-}
 .text-nowrap {
     white-space: nowrap;
 }
-.text-right {
-    text-align: right;
+/*
+ * Responsive text aligning
+ * http://ohryan.ca/2014/08/14/set-responsive-text-alignment-bootstrap-3/
+ */
+.text-xs-left, { text-align: left; }
+.text-xs-right { text-align: right; }
+.text-xs-center { text-align: center; }
+.text-xs-justify { text-align: justify; }
+
+@media (min-width: @screen-sm-min) {
+  .text-sm-left { text-align: left; }
+  .text-sm-right { text-align: right; }
+  .text-sm-center { text-align: center; }
+  .text-sm-justify { text-align: justify; }
 }
 
+@media (min-width: @screen-md-min) {
+  .text-md-left { text-align: left; }
+  .text-md-right { text-align: right; }
+  .text-md-center { text-align: center; }
+  .text-md-justify { text-align: justify; }
+}
+
+@media (min-width: @screen-lg-min) {
+  .text-lg-left { text-align: left; }
+  .text-lg-right { text-align: right; }
+  .text-lg-center { text-align: center; }
+  .text-lg-justify { text-align: justify; }
+}
+
+// Deprecated
+.text-left { &:extend( .text-xs-left );}
+.text-right { &:extend( .text-xs-right );}
+.text-center { &:extend( .text-xs-center );}
+.text-justify { &:extend( .text-xs-justify );}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Character Transformation
 .text-capitalize {

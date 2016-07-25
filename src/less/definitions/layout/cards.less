@@ -19,39 +19,62 @@
 .card {
     display: block;
     position: relative;
+    a& {
+        cursor: pointer;
+
+       &[ href ] {
+                backface-visibility: hidden;
+
+                &:focus,
+                &:hover {
+                    cursor: pointer;
+                    z-index: 5;
+                    text-decoration: none;
+
+                }
+            }
+    }
     &.card-content {
         .border-radius(@card-border-radius);
         margin-bottom: @card-spacer-outer-x;
+         a& {
+             transition: 0.25s ease;
+       &[ href ] {
+         transform: translateY( 0 );
+                box-shadow: none;
+                &:focus,
+                &:hover {
+                    transform: translateY( -@card-hover-offset );
+                    box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
+                }
+            }
+    }
     }
 }
-
 .card-block {
     padding: @card-spacer-inner-x @card-spacer-inner-y;
 }
 
-.card-center {
-    &:extend(.text-center all);
-}
 //----------------------------------------------------------------------------------------------------------------------
 //            Card header and footer
 //----------------------------------------------------------------------------------------------------------------------
-
-.card-header {
-      background-color: @card-cap-bg;
-      border-bottom: @card-border-width solid @card-border-color;
-      padding: @card-spacer-inner-y @card-spacer-inner-x;
-      &:first-child {
-        .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
-      }
-}
-
-.card-footer {
-      background-color: @card-cap-bg;
-      border-top: @card-border-width solid @card-border-color;
-      padding: @card-spacer-inner-y @card-spacer-inner-x;
-      &:last-child {
-        .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
-      }
+.card {
+    &-header {
+        background-color: @card-cap-bg;
+        border-bottom: @card-border-width solid @card-border-color;
+        padding: @card-spacer-inner-y @card-spacer-inner-x;
+        &:first-child {
+            .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
+        }
+    }
+    &-footer {
+        background-color: @card-cap-bg;
+        border-top: @card-border-width solid @card-border-color;
+        padding: @card-spacer-inner-y @card-spacer-inner-x;
+        &:last-child {
+            .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,20 +83,9 @@
 .card-img {
   // margin: -1.325rem;
  .border-radius(.25rem);
-}
-.card-img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-// Card image caps
-.card-content {
-    .card-img {
+ // Card image caps
+    .card-content & {
         .border-radius( @card-border-radius-inner @card-border-radius-inner );
-
         &-top {
             .border-radius( @card-border-radius-inner @card-border-radius-inner 0 0 );
         }
@@ -82,8 +94,13 @@
         }
     }
 }
-
-
+.card-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Color variations
 //----------------------------------------------------------------------------------------------------------------------
@@ -107,7 +124,7 @@
     }
     &-dark {
         &-1 {
-            .card-variant( @core-architectural-2 );
+            .card-variant( @core-architectural-2, rgba(255,255,255,.2) );
         }
         &-2 {
             .card-variant( @core-architectural-1 );
@@ -115,38 +132,9 @@
     }
 }
 
-
-// Remove all backgrounds
-.card-primary-outline {
-    .card-outline-variant(@brand-success);
-}
-.card-secondary-outline {
-    .card-outline-variant(@brand-success);
-}
-.card-info-outline {
-    .card-outline-variant(@brand-success);
-}
-.card-success-outline {
-    .card-outline-variant(@brand-success);
-}
-.card-warning-outline {
-    .card-outline-variant(@brand-success);
-}
-.card-danger-outline {
-    .card-outline-variant(@brand-success);
-}
-
-//
-// Inverse text within a card for use with dark backgrounds
-//
-
-.card-inverse {
-    .card-variant( @core-architectural-2, rgba(255,255,255,.2) );
-    .text-muted {
-        color: @text-overlay;
-    }
-}
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Groups
+//----------------------------------------------------------------------------------------------------------------------
 
 .cards {
     .card {

@@ -11,24 +11,20 @@ If you're familiar with Bootstrap 3, cards replace our old panels, wells, and th
 
 Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease. For example, if your card has no flush content like images, feel free to put the `.card-block` class on the `.card` element to consolidate your markup.
 <div class="cedar-example">
-    <div class="card card-block card-center">
+    <div class="card card-block text-xs-center">
         <div class="img-frame ratio-9-16 portrait center vertical-push">
             <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
         </div>
-        <h4>Card title</h4>
+        <h4>Card</h4>
         <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Button</a>
     </div>
 </div>
 
 {% highlight html %}
-<div class="card card-block card-center">
-    <div class="img-frame ratio-9-16 portrait center vertical-push">
-        <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
-    </div>
-    <h4>Card title</h4>
-    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Button</a>
+<div class="card card-block text-xs-center">
+    <div class="img-frame ratio-9-16 portrait center vertical-push"><img src="..." alt="example img"></div>
+    <p>Content.</p>
 </div>
 {% endhighlight %}
 
@@ -45,9 +41,9 @@ By adding the `.card-content` class to `.card` you can update the skin of the ba
             <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
         </div>
       <div class="card-block">
-        <h4>Card title</h4>
+        <h4>Card content</h4>
         <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Button</a>
+        <button class="btn btn-primary">Button</button>
       </div>
     </div>
 </div>
@@ -55,15 +51,43 @@ By adding the `.card-content` class to `.card` you can update the skin of the ba
 {% highlight html %}
 <div class="card card-content">
     <div class="card-img-top img-frame ratio-9-16 portrait center">
-        <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        <img src="..." alt="example image">
     </div>
     <div class="card-block">
-        <h4>Card title</h4>
-        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Button</a>
+        <p>Content in card block.</p>
     </div>
 </div>
 {% endhighlight %}
+
+### Linked Card
+
+When linking an entire card, be sure no other actionable items are nested within the parent structure.
+<div class="cedar-example" id="this-example">
+    <div class="row">
+        <div class="col-sm-6">
+            <a class="card card-content" href="#this-example" >
+                <div class="card-img-top img-frame ratio-9-16 portrait center">
+                    <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+                </div>
+                <div class="card-block">
+                    <h4>Card Content</h4>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <a class="card card-tile" href="#this-example" >
+                <div class="card-img-top img-frame ratio-9-16 portrait center">
+                    <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+                </div>
+                <div class="card-block">
+                    <h4>Card tile</h4>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
 
 ### Card Tile
 By adding the `.card-tile` class to `.card` you can update the skin of the basic card to account for tile cards, which are intended to display one part of a group.
@@ -75,7 +99,7 @@ By adding the `.card-tile` class to `.card` you can update the skin of the basic
         <div class="card-block">
             <h4>Card title</h4>
             <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Button</a>
+            <button class="btn btn-primary">Button</button>
         </div>
     </div>
 </div>
@@ -88,6 +112,7 @@ By adding the `.card-tile` class to `.card` you can update the skin of the basic
   </ul>
 </div>
 {% endhighlight %}
+
 ## Content within cards
 
 Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.
@@ -98,7 +123,7 @@ Cards support a wide variety of content, including images, text, list groups, li
             <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
         </div>
         {% include /markup-templates/list-group/list-group-filter.html %}
-        <div class="card-block card-center">
+        <div class="card-block text-xs-center">
             {% include /markup-templates/lists/inline.html param="inline-featured" %}
         </div>
     </div>
@@ -109,7 +134,7 @@ Cards support a wide variety of content, including images, text, list groups, li
         <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
     </div>
     <p>Content out of card-block</p>
-    <div class="card-block card-center">
+    <div class="card-block text-xs-center">
     <p>Content in card-block and centered</p>
     </div>
 </div>
@@ -118,45 +143,35 @@ Cards support a wide variety of content, including images, text, list groups, li
 
 ## Sizing
 
-Constrain the width of cards via custom CSS, our predefined grid classes, or with custom styles using our grid mixins.
+Constrain the width of a card via grid classes.
 
-Using the grid:
 <div class="cedar-example">
     <div class="row">
       <div class="col-sm-6">
         <div class="card card-content card-block">
           <h3>Special title treatment</h3>
           <p>With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <button class="btn btn-primary">Button</button>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="card card-content card-block">
           <h3>Special title treatment</h3>
           <p>With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    {% highlight html %}
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card card-content card-block">
-          <h3>Special title treatment</h3>
-          <p>With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card card-content card-block">
-          <h3>Special title treatment</h3>
-          <p>With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <button class="btn btn-primary">Button</button>
         </div>
       </div>
     </div>
 </div>
+{% highlight html %}
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+        </div>
+      </div>
+    </div>
 {% endhighlight %}
+
 <!--
 ## Text alignment
 
@@ -182,54 +197,10 @@ You can quickly change the text alignment of any card—in its entirety or speci
 </div>
 {% endhighlight %}
  -->
+
 ## Header and footer
 
 Add an optional header and/or footer within a card.
-<div class="cedar-example">
-    <div class="card card-content">
-      <div class="card-header card-block">
-        <div class="media">
-            <div class="media-left">
-                <a href="#">
-                    <img src="//lorempixel.com/50/50/nature" alt="Card image cap" class="img-circle">
-                </a>
-            </div>
-            <div class="media-body">
-                <h5 class="media-heading">Title</h5>
-                <p>ancillary text</p>
-            </div>
-        </div>
-      </div>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-</div>
-{% highlight html %}
-<div class="card card-content">
-    <div class="card-header card-block">
-        <div class="media">
-            <div class="media-left">
-                <a href="#">
-                    <img src="//lorempixel.com/50/50/nature" alt="Card image cap" class="img-circle">
-                </a>
-            </div>
-            <div class="media-body">
-                <h5 class="media-heading">Title</h5>
-                <p>ancillary text</p>
-            </div>
-        </div>
-    </div>
-    <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-{% endhighlight %}
-
 <div class="cedar-example">
     <div class="card card-content">
         <div class="card-header card-block">
@@ -248,7 +219,7 @@ Add an optional header and/or footer within a card.
         <div class="card-block">
             <h4 class="card-title">Special title treatment</h4>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <button class="btn btn-primary">Button</button>
         </div>
         <div class="card-footer card-block text-muted">
             2 days ago
@@ -257,15 +228,21 @@ Add an optional header and/or footer within a card.
 </div>
 {% highlight html %}
 <div class="card card-content">
-  <div class="card-header card-block"></div>
-  <div class="card-block"></div>
-  <div class="card-footer card-block text-muted"></div>
+    <div class="card-header card-block">
+    <p>content in header block</p>
+    </div>
+    <div class="card-block">
+    <p>content in block</p>
+    </div>
+    <div class="card-footer card-block text-muted">
+        <p>content in footer block</p>
+    </div>
 </div>
 {% endhighlight %}
 
 ## Image caps
 
-Similar to headers and footers, cards include top and bottom image caps.
+Similar to headers and footers, cards include top and bottom image caps. when using the `.card-content` variant be sure to add the extra class of `.card-img` , `.card-img-top` , or `.card-img-bottom` to apply proper border radious dispaly.
 <div class="cedar-example">
 <div class="row">
 <div class="col-sm-6">
@@ -331,9 +308,9 @@ Similar to headers and footers, cards include top and bottom image caps.
 
 ## Image overlays
 
-Turn an image into a card background and overlay your card's text. Depending on the image, you may or may not need `.card-inverse` (see below).
+Turn an image into a card background and overlay your card's text. To achive an accessible result, be sure to also add a background variant that is in line with the image color.
 <div class="cedar-example">
-    <div class="card card-content card-inverse">
+    <div class="card card-content card-dark-1">
         <div class="card-img img-frame ratio-3-4 portrait center">
             <img src="//lorempixel.com/output/abstract-q-g-318-160-6.jpg" alt="Card image cap">
         </div>
@@ -345,7 +322,7 @@ Turn an image into a card background and overlay your card's text. Depending on 
     </div>
 </div>
 {% highlight html %}
-<div class="card card-content card-inverse">
+<div class="card card-content card-dark-1">
     <div class="card-img img-frame ratio-3-4 portrait center"> <img src="..." alt="example"> </div>
     <div class="card-img-overlay card-block"></div>
 </div>
@@ -362,7 +339,7 @@ You can also use `.card-inverse` with the [contextual backgrounds variants](#bac
   <div class="card-block">
     <h3 class="card-title">Special title treatment</h3>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Button</a>
+    <button class="btn btn-primary">Button</button>
   </div>
 </div>
 {% endhighlight %}
