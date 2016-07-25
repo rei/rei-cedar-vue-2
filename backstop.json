@@ -58,6 +58,30 @@
         "delay": 500,
         "misMatchThreshold": 0.1
     }, {
+        "label": "REI-Cedar Layouts Card",
+        "url": "http://localhost:9002/layouts/cards/",
+        "selectors": [
+            "[data-example-id='basic-card']",
+            "[data-example-id='basic-content-card']",
+            "[data-example-id='basic-tile-card']",
+            "[data-example-id='link-contnet-card']",
+            "[data-example-id='link-tile-card']",
+            "[data-example-id='content-in-content-card']",
+            "[data-example-id='card-in-grid']",
+            "[data-example-id='card-text-xs-center']",
+            "[data-example-id='card-text-xs-right']",
+            "[data-example-id='card-header-and-footer']",
+            "[data-example-id='card-tile-img-caps-top']",
+            "[data-example-id='card-tile-img-caps-bottom']",
+            "[data-example-id='card-content-img-caps-top']",
+            "[data-example-id='card-content-img-caps-bottom']",
+            "[data-example-id='card-img-overlay']",
+            "[data-example-id='card-background-variants']"
+        ],
+        "readyEvent": null,
+        "delay": 500,
+        "misMatchThreshold": 0.1
+    }, {
         "label": "REI-Cedar Layouts Containers",
         "url": "http://localhost:9002/layouts/containers/",
         "selectors": [
