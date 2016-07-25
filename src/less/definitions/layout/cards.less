@@ -67,7 +67,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1.25rem;
 }
 
 // Card image caps
@@ -89,32 +88,29 @@
 //  Color variations
 //----------------------------------------------------------------------------------------------------------------------
 .card {
-    .card-variant( @card-bg, @card-border-color );
+    .card-variant();
     &-light {
         &-1 {
-            .card-variant(@brand-info, @brand-info);
+            .card-variant( @core-background-1 );
         }
         &-2 {
-            .card-variant(@brand-warning, @brand-warning);
+            .card-variant( @core-architectural-6 );
         }
     }
     &-medium{
         &-1 {
-            .card-variant(@brand-info, @brand-info);
+            .card-variant( @core-architectural-3 );
         }
         &-2 {
-            .card-variant(@brand-warning, @brand-warning);
-        }
-        &-3 {
-            .card-variant(@brand-danger, @brand-danger);
+            .card-variant( @core-background-2 );
         }
     }
     &-dark {
         &-1 {
-            .card-variant(@brand-primary, @brand-primary);
+            .card-variant( @core-architectural-2 );
         }
         &-2 {
-            .card-variant(@brand-success, @brand-success);
+            .card-variant( @core-architectural-1 );
         }
     }
 }
@@ -145,7 +141,10 @@
 //
 
 .card-inverse {
-  .card-inverse;
+    .card-variant( @core-architectural-2, rgba(255,255,255,.2) );
+    .text-muted {
+        color: @text-overlay;
+    }
 }
 
 

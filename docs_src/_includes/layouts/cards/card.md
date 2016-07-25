@@ -250,24 +250,16 @@ Add an optional header and/or footer within a card.
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-        <div class="card-footer text-muted">
+        <div class="card-footer card-block text-muted">
             2 days ago
         </div>
     </div>
 </div>
 {% highlight html %}
-<div class="card text-xs-center">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-block">
-    <h4 class="card-title">Special title treatment</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
+<div class="card card-content">
+  <div class="card-header card-block"></div>
+  <div class="card-block"></div>
+  <div class="card-footer card-block text-muted"></div>
 </div>
 {% endhighlight %}
 
@@ -326,13 +318,13 @@ Similar to headers and footers, cards include top and bottom image caps.
 {% highlight html %}
 ...
   <div class="card-img-top img-frame ratio-9-16 portrait center">
-     <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+     <img src="..." alt="Card image cap">
   </div>
 ...
 
 ...
     <div class="card-img-bottom img-frame ratio-9-16 landscape center">
-        <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        <img src="..." alt="Card image cap">
     </div>
 ...
 {% endhighlight %}
@@ -345,7 +337,7 @@ Turn an image into a card background and overlay your card's text. Depending on 
         <div class="card-img img-frame ratio-3-4 portrait center">
             <img src="//lorempixel.com/output/abstract-q-g-318-160-6.jpg" alt="Card image cap">
         </div>
-        <div class="card-img-overlay">
+        <div class="card-img-overlay card-block">
             <h4>Card title</h4>
             <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             <p><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -353,16 +345,12 @@ Turn an image into a card background and overlay your card's text. Depending on 
     </div>
 </div>
 {% highlight html %}
-<div class="card card-inverse">
-  <img class="card-img" data-src="holder.js/100px270/#55595c:#373a3c/text:Card image" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
+<div class="card card-content card-inverse">
+    <div class="card-img img-frame ratio-3-4 portrait center"> <img src="..." alt="example"> </div>
+    <div class="card-img-overlay card-block"></div>
 </div>
 {% endhighlight %}
-<!--
+
 ## Inverted text
 
 Cards include a class for quickly toggling **the text color**. By default, cards use dark text and assume a light background. **Add `.card-inverse` for white text** and specify the `background-color` and `border-color` to go with it.
@@ -382,7 +370,60 @@ You can also use `.card-inverse` with the [contextual backgrounds variants](#bac
 ## Background variants
 
 Cards include their own variant classes for quickly changing the `background-color` and `border-color` of a card. **Darker colors require the use of `.card-inverse`.**
+<div class="cedar-example">
+<div class="row">
+<div class="col-sm-3">
+  <div class="card card-content card-light-1">
+      <div class="card-block">
+        <p>card background options</p>
+      </div>
+    </div>
+</div>
+<div class="col-sm-3">
+  <div class="card card-content card-light-2">
+      <div class="card-block">
+        <p>card background options</p>
+      </div>
+    </div>
+</div>
+<div class="col-sm-3">
+  <div class="card card-content card-medium-1">
+      <div class="card-block">
+        <p>card background options</p>
+      </div>
+    </div>
+</div>
+<div class="col-sm-3">
+  <div class="card card-content card-medium-2">
+      <div class="card-block">
+        <p>card background options</p>
+      </div>
+    </div>
+</div>
+<div class="col-sm-3">
+  <div class="card card-content card-medium-3">
+      <div class="card-block">
+        <p>card background options</p>
+      </div>
+    </div>
+</div>
+<div class="col-sm-3">
+  <div class="card card-content card-dark-1">
+      <div class="card-block">
+        <p>card background options</p>
+      </div>
+    </div>
+</div>
+<div class="col-sm-3">
+  <div class="card card-content card-dark-2">
+      <div class="card-block">
+        <p>card background options</p>
+      </div>
+    </div>
+</div>
+</div>
 
+</div>
 {% highlight html %}
 <div class="card card-inverse card-primary text-xs-center">
   <div class="card-block">
@@ -425,7 +466,7 @@ Cards include their own variant classes for quickly changing the `background-col
   </div>
 </div>
 {% endhighlight %}
-
+<!--
 ## Groups
 
 Use card groups to render cards as a single, attached element with equal width and height columns. By default, card groups use `display: table;` and `table-layout: fixed;` to achieve their uniform sizing. However, enabling [flexbox mode]({{ site.baseurl }}/getting-started/flexbox) can switch that to use `display: flex;` and provide the same effect.
