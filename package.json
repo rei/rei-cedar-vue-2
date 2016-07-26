@@ -25,7 +25,8 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "jquery2": "2.0.3",
-    "normalize.css": "^3.0.3"
+    "normalize.css": "^3.0.3",
+    "ucss": "^0.4.8"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
