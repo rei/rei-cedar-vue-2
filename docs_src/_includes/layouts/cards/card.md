@@ -344,49 +344,49 @@ Cards include their own variant classes for quickly changing the `background-col
 <div class="col-sm-3">
   <div class="card card-content card-light-1" >
       <div class="card-block">
-        <p>card background options</p>
+        <p>card-light-1</p>
       </div>
     </div>
 </div>
 <div class="col-sm-3">
   <div class="card card-content card-light-2">
       <div class="card-block">
-        <p>card background options</p>
+        <p>card-light-2</p>
       </div>
     </div>
 </div>
 <div class="col-sm-3">
   <div class="card card-content card-medium-1">
       <div class="card-block">
-        <p>card background options</p>
+        <p>card-medium-1</p>
       </div>
     </div>
 </div>
 <div class="col-sm-3">
   <div class="card card-content card-medium-2">
       <div class="card-block">
-        <p>card background options</p>
+        <p>card-medium-2</p>
       </div>
     </div>
 </div>
 <div class="col-sm-3">
   <div class="card card-content card-medium-3">
       <div class="card-block">
-        <p>card background options</p>
+        <p>card-medium-3</p>
       </div>
     </div>
 </div>
 <div class="col-sm-3">
   <div class="card card-content card-dark-1">
       <div class="card-block">
-        <p>card background options</p>
+        <p>card-dark-1</p>
       </div>
     </div>
 </div>
 <div class="col-sm-3">
   <div class="card card-content card-dark-2">
       <div class="card-block">
-        <p>card background options</p>
+        <p>card-dark-2</p>
       </div>
     </div>
 </div>
@@ -394,47 +394,20 @@ Cards include their own variant classes for quickly changing the `background-col
 
 </div>
 {% highlight html %}
-<div class="card card-inverse card-primary text-xs-center">
-  <div class="card-block">
-    <blockquote class="card-blockquote">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
-<div class="card card-inverse card-success text-xs-center">
-  <div class="card-block">
-    <blockquote class="card-blockquote">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
-<div class="card card-inverse card-info text-xs-center">
-  <div class="card-block">
-    <blockquote class="card-blockquote">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
-<div class="card card-inverse card-warning text-xs-center">
-  <div class="card-block">
-    <blockquote class="card-blockquote">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
-<div class="card card-inverse card-danger text-xs-center">
-  <div class="card-block">
-    <blockquote class="card-blockquote">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
+<div class="card card-content card-light-1" >
+    <div class="card-block">
+        <p>card-light-1</p>
+    </div>
 </div>
 {% endhighlight %}
+
+
+<card></card>
+<script src="/assets/js/src/card.js"></script>
+<script>riot.mount('card')</script>
+
+
+
 <!--
 ## Groups
 
