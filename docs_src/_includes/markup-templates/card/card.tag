@@ -1,25 +1,26 @@
-<card>
-   <card-image />
-   <card-block copy={ copy } />
+<cedar-card class="{ card: true, card-block: isCardBlock }{ ' ' + mydata}">
+    <cedar-card__image />
+    <cedar-card__block />
+    <yield />
 
-   this.copy = []
-</card>
+    <script>
+    this.mydata = opts.c
 
-<card-image>
+    this.isCardBlock = opts.isCardBlock;
+    </script>
+</cedar-card>
+
+<cedar-card__image>
     <div class="card-img-top img-frame ratio-9-16 portrait center">
         <img src="http://placehold.it/350x150" alt="Card image cap">
     </div>
-</card-image>
+</cedar-card__image>
 
-<card-block>
-  <copy each={ opts.copy } />
-</card-block>
-
-<copy>
-   <h4>Card Component</h4>
-   <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<cedar-card__block>
+  <h4>Card Component</h4>
    <button class="btn btn-primary">Button</button>
-</copy>
+</cedar-card__block>
+
 
 
 

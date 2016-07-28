@@ -13,7 +13,7 @@ Cards require a small amount of markup and classes to provide you with as much c
 <div class="cedar-example">
     <div class="card card-block text-xs-center" data-example-id="basic-card" >
         <div class="img-frame ratio-9-16 portrait center vertical-push">
-            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+            <img src="http://placehold.it/320x150" alt="Card image cap">
         </div>
         <h4>Card</h4>
         <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -38,7 +38,7 @@ By adding the `.card-content` class to `.card` you can update the skin of the ba
 <div class="cedar-example">
     <div class="card card-content" data-example-id="basic-content-card" >
         <div class="card-img-top img-frame ratio-9-16 portrait center">
-            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+            <img src="http://placehold.it/320x150" alt="Card image cap">
         </div>
       <div class="card-block">
         <h4>Card content</h4>
@@ -67,7 +67,7 @@ When linking an entire card, be sure no other actionable items are nested within
         <div class="col-sm-6">
             <a class="card card-content" href="#this-example" data-example-id="link-contnet-card">
                 <div class="card-img-top img-frame ratio-9-16 portrait center">
-                    <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+                    <img src="http://placehold.it/320x150" alt="Card image cap">
                 </div>
                 <div class="card-block">
                     <h4>Card Content</h4>
@@ -78,7 +78,7 @@ When linking an entire card, be sure no other actionable items are nested within
         <div class="col-sm-6">
             <a class="card card-tile" href="#this-example" data-example-id="link-tile-card">
                 <div class="card-img-top img-frame ratio-9-16 portrait center">
-                    <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+                    <img src="http://placehold.it/320x150" alt="Card image cap">
                 </div>
                 <div class="card-block">
                     <h4>Card tile</h4>
@@ -94,7 +94,7 @@ By adding the `.card-tile` class to `.card` you can update the skin of the basic
 <div class="cedar-example">
     <div class="card card-tile" data-example-id="basic-tile-card">
         <div class="card-img-top img-frame ratio-9-16 portrait center">
-            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+            <img src="http://placehold.it/320x150" alt="Card image cap">
         </div>
         <div class="card-block">
             <h4>Card title</h4>
@@ -120,7 +120,7 @@ Cards support a wide variety of content, including images, text, list groups, li
 <div class="cedar-example">
     <div class="card card-content" data-example-id="content-in-content-card">
         <div class="card-img-top img-frame ratio-9-16 portrait center">
-            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+            <img src="http://placehold.it/320x150" alt="Card image cap">
         </div>
         {% include /markup-templates/list-group/list-group-filter.html %}
         <div class="card-block text-xs-center">
@@ -131,7 +131,7 @@ Cards support a wide variety of content, including images, text, list groups, li
 {% highlight html %}
 <div class="card card-content">
     <div class="card-img-top img-frame ratio-9-16 portrait center">
-        <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+        <img src="http://placehold.it/320x150" alt="Card image cap">
     </div>
     <p>Content out of card-block</p>
     <div class="card-block text-xs-center">
@@ -214,9 +214,7 @@ Add an optional header and/or footer within a card.
         <div class="card-header card-block">
             <div class="media">
                 <div class="media-left">
-                    <a href="#">
-                        <img src="//lorempixel.com/50/50/nature" alt="Card image cap" class="img-circle">
-                    </a>
+                    <img src="http://placehold.it/50x50" alt="Card image cap" class="img-circle">
                 </div>
                 <div class="media-body">
                     <h5 class="media-heading">Title</h5>
@@ -256,7 +254,7 @@ Similar to headers and footers, cards include top and bottom image caps. when us
 <div class="col-sm-6">
     <div class="card card-tile" data-example-id="card-tile-img-caps-top">
         <div class="card-img-top img-frame ratio-9-16 portrait center">
-            <img src="//lorempixel.com/300/160/nature" alt="Card image cap">
+            <img src="http://placehold.it/320x150" alt="Card image cap">
         </div>
         <div class="card-block">
             <h4>Card title</h4>
@@ -402,10 +400,18 @@ Cards include their own variant classes for quickly changing the `background-col
 {% endhighlight %}
 
 
-<card></card>
-<script src="/assets/js/src/card.js"></script>
-<script>riot.mount('card')</script>
+<cedar-card isCardBlock="true"></cedar-card>
+<cedar-card></cedar-card>
+<cedar-card></cedar-card>
+<cedar-card></cedar-card>
 
+<script src="/assets/js/src/card.js"></script>
+<script>
+riot.mount('cedar-card')
+</script>
+<script>
+riot.mount('cedar-card', { c: 'card-tile'})
+</script>
 
 
 <!--
