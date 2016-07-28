@@ -405,12 +405,10 @@ Cards include their own variant classes for quickly changing the `background-col
 <cedar-card></cedar-card>
 <cedar-card></cedar-card>
 
-<script src="/assets/js/src/card.js"></script>
+
+
 <script>
-riot.mount('cedar-card')
-</script>
-<script>
-riot.mount('cedar-card', { c: 'card-tile'})
+//riot.mount('cedar-card', { c: 'card-tile'})
 </script>
 
 
