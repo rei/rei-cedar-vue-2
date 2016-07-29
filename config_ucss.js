@@ -1,5 +1,5 @@
-var createFile = require('create-file');
-var del = require('delete');
+var createFile = require("create-file");
+var del = require("delete");
 var open = require("open");
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
             console.log("Visited: ", originalUrl);
         },
         "result": function(result) { 
-
+            console.log(result);
             // result object
             // selectors
             //     table ( this is the css style name )
@@ -35,28 +35,35 @@ module.exports = {
             // total_ignored
             // load_errors   
 
-            var mainPageContent = "<html><head><title>uCSS REPORT!!!</title><link href='rei-cedar.css' rel='stylesheet'></head><body>";
-            var mainPageContent2 = "</body></html>";
-            for (var s in result.selectors) {
+            var mainPageContent = "<html><head><title>uCSS REPORT!!!</title><link href='rei-cedar.css' rel='stylesheet'></head><body><div class='container'><div class='row'><p>Note: Printing non-html matching, not ignored, non-whitelisted classes</p>";
+            var mainPageContent2 = "</div></div></body></html>";
+            var middleContent = "";
+            for ( var s in result.selectors ) {
                 
-                var tempName = "<div class='row'>" + s;
-                var itemName = "";
-                for (var i in s) {
-                    itemName += " " + i;
-                }
-
-                tempName += " " + itemName + "</div>";
-
                 // Only unused rules:
-                // if (result.selectors[s].matches_html === 0) {
-                //     // Print position(s), given it's only one CSS file:
-                //     var pos_css = result.selectors[s].pos_css;
-                //     var key = Object.keys(pos_css)[0];
-                //     console.log(s + ": " + pos_css[key]);
-                // }
+                if ( result.selectors[s].matches_html === 0 
+                    && !result.selectors[s].ignored 
+                    && !result.selectors[s].whitelisted ) {
+
+                    var tempName = "<div class='col-xs-12'><strong>SELECTOR:</strong><p> " + s;
+                    middleContent += " " + tempName + "</p></div>";
+                }
             }
 
-            mainPageContent += tempName + mainPageContent2;
+            middleContent += " <div class='col-xs-12'><strong>TOTAL:</strong> " + result.total + "</div>";
+            middleContent += " <div class='col-xs-12'><strong>TOTAL USED:</strong> " + result.total_used + "</div>";
+            middleContent += " <div class='col-xs-12'><strong>TOTAL NOT USED:</strong> " + result.total_unused + "</div>";
+            middleContent += " <div class='col-xs-12'><strong>TOTAL DUPLICATES:</strong> " + result.total_duplicates + "</div>";
+            middleContent += " <div class='col-xs-12'><strong>TOTAL IGNORED:</strong> " + result.total_ignored + "</div>";
+
+            var errors = "";
+            for (var e in result.load_errors) {
+                errors += "<p><strong>URI:</strong> " + result.load_errors[e].uri + " <br/><strong>ERROR:</strong>" + result.load_errors[e].error + "</p>";
+            }
+
+            middleContent += " <div class='col-xs-12'><strong>LOAD ERRORS:</strong> " + errors + "</div>";
+
+            mainPageContent += middleContent + mainPageContent2;
 
             del('./docs_dist/ucssreport.html', function(err) {
               if (err) throw err;
