@@ -400,23 +400,12 @@ Cards include their own variant classes for quickly changing the `background-col
 {% endhighlight %}
 
 
-<cedar-card variant="card-dark-1" isCardBlock="true">
-    <cedar-card-block>
-     <h4> cedar-card component </h4>
-        <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </cedar-card-block>
-    <cedar-card-image>
-    </cedar-card-image>
-</cedar-card>
+<cedar-card isCardBlock="true"></cedar-card>
+<cedar-card></cedar-card>
+<cedar-card></cedar-card>
+<cedar-card></cedar-card>
 
-<cedar-card hasVariant="card-dark-1" isCardBlock="true">
-    <cedar-card-block>
-     <h4> cedar-card component </h4>
-        <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </cedar-card-block>
-    <cedar-card-image>
-    </cedar-card-image>
-</cedar-card>
+
 
 <script>
 //riot.mount('cedar-card', { c: 'card-tile'})

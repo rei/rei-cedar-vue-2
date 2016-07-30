@@ -96,9 +96,14 @@ items:
 
                 - label: Panels
                   href: panels
+
             - label: Cards
               slug: cards
               href: /layouts/cards/
+
+            - label: Tiles
+              slug: tiles
+              href: /layouts/tiles/
 
     - label: Elements
       slug: elements

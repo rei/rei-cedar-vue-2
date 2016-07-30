@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @type    : 'layout';
-@element : 'cards';
+@element : 'tiles';
 
 @import (multiple) '../../theme.config';
 
@@ -16,51 +16,63 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            Card Scaffolding
 //----------------------------------------------------------------------------------------------------------------------
-.card {
-    .border-radius(@card-border-radius);
+.tile {
     display: block;
     position: relative;
-    margin-bottom: @card-spacer-outer-x;
     a& {
         cursor: pointer;
-        transition: 0.25s ease;
-        &[ href ] {
-            backface-visibility: hidden;
-            transform: translateY( 0 );
-            box-shadow: none;
-            &:focus,
-            &:hover {
-                box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
-                cursor: pointer;
-                z-index: 5;
-                text-decoration: none;
-                transform: translateY( -@card-hover-offset );
+
+       &[ href ] {
+                backface-visibility: hidden;
+
+                &:focus,
+                &:hover {
+                    cursor: pointer;
+                    z-index: 5;
+                    text-decoration: none;
+
+                }
             }
-        }
+    }
+    &.tile-content {
+        .border-radius(@tile-border-radius);
+        margin-bottom: @tile-spacer-outer-x;
+         a& {
+             transition: 0.25s ease;
+       &[ href ] {
+         transform: translateY( 0 );
+                box-shadow: none;
+                &:focus,
+                &:hover {
+                    transform: translateY( -@tile-hover-offset );
+                    box-shadow: 0 @tile-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
+                }
+            }
+    }
     }
 }
-.card-block {
-    padding: @card-spacer-inner-x @card-spacer-inner-y;
+.tile-block {
+    padding: @tile-spacer-inner-x @tile-spacer-inner-y;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 //            Card header and footer
 //----------------------------------------------------------------------------------------------------------------------
-.card {
+.tile {
     &-header {
-        background-color: @card-cap-bg;
-        border-bottom: @card-border-width solid @card-border-color;
-        padding: @card-spacer-inner-y @card-spacer-inner-x;
+        background-color: @tile-cap-bg;
+        border-bottom: @tile-border-width solid @tile-border-color;
+        padding: @tile-spacer-inner-y @tile-spacer-inner-x;
         &:first-child {
-            .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
+            .border-radius(@tile-border-radius-inner @tile-border-radius-inner 0 0);
         }
     }
     &-footer {
-        background-color: @card-cap-bg;
-        border-top: @card-border-width solid @card-border-color;
-        padding: @card-spacer-inner-y @card-spacer-inner-x;
+        background-color: @tile-cap-bg;
+        border-top: @tile-border-width solid @tile-border-color;
+        padding: @tile-spacer-inner-y @tile-spacer-inner-x;
         &:last-child {
-            .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
+            .border-radius(0 0 @tile-border-radius-inner @tile-border-radius-inner);
         }
     }
 }
@@ -68,34 +80,21 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            CARD IMAGES
 //----------------------------------------------------------------------------------------------------------------------
-> img,
-a > img {
-    &:extend(.img-responsive);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.card-media {
-     &:not( .img-frame ),
-     &:not( .media-frame ) {
-        &:extend(.img-responsive);
-        margin-left: auto;
-        margin-right: auto;
-    }
+.tile-media {
   // margin: -1.325rem;
  .border-radius(.25rem);
  // Card image caps
-    .card-content & {
-        .border-radius( @card-border-radius-inner @card-border-radius-inner );
+    .tile-content & {
+        .border-radius( @tile-border-radius-inner @tile-border-radius-inner );
         &-top {
-            .border-radius( @card-border-radius-inner @card-border-radius-inner 0 0 );
+            .border-radius( @tile-border-radius-inner @tile-border-radius-inner 0 0 );
         }
         &-bottom {
-            .border-radius( 0 0 @card-border-radius-inner @card-border-radius-inner );
+            .border-radius( 0 0 @tile-border-radius-inner @tile-border-radius-inner );
         }
     }
 }
-.card-media-overlay {
+.tile-media-overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -105,30 +104,30 @@ a > img {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Color variations
 //----------------------------------------------------------------------------------------------------------------------
-.card {
-    .card-variant();
+.tile {
+    .tile-variant();
     &-light {
         &-1 {
-            .card-variant( @core-background-1 );
+            .tile-variant( @core-background-1 );
         }
         &-2 {
-            .card-variant( @core-architectural-6 );
+            .tile-variant( @core-architectural-6 );
         }
     }
     &-medium{
         &-1 {
-            .card-variant( @core-architectural-3 );
+            .tile-variant( @core-architectural-3 );
         }
         &-2 {
-            .card-variant( @core-background-2 );
+            .tile-variant( @core-background-2 );
         }
     }
     &-dark {
         &-1 {
-            .card-variant( @core-architectural-2, rgba(255,255,255,.2) );
+            .tile-variant( @core-architectural-2, rgba(255,255,255,.2) );
         }
         &-2 {
-            .card-variant( @core-architectural-1 );
+            .tile-variant( @core-architectural-1 );
         }
     }
 }
@@ -138,7 +137,7 @@ a > img {
 //----------------------------------------------------------------------------------------------------------------------
 
 .cards {
-    .card {
+    .tile {
         display: inline-flex;
         flex-flow: column nowrap;
         position: relative;
@@ -146,7 +145,7 @@ a > img {
         background-color: #fff;
         box-shadow: 0 .1rem .6rem 0 rgba( 0, 0, 0, .30 );
         flex-grow: 0;
-        .border-radius( @card-border-radius );
+        .border-radius( @tile-border-radius );
         margin: 1rem;
 
         @media ( min-width: @screen-md-min ) {
@@ -164,9 +163,9 @@ a > img {
                 &:hover {
                     cursor: pointer;
                     z-index: 5;
-                    box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
+                    box-shadow: 0 @tile-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
                     text-decoration: none;
-                    transform: translateY( -@card-hover-offset );
+                    transform: translateY( -@tile-hover-offset );
                 }
             }
         }

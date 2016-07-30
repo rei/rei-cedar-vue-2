@@ -2,16 +2,7 @@
 
 .card-variant( @background: @card-bg; @border: @card-border-color; ) {
     background-color: @background;
+    box-shadow: 0 .1rem .6rem 0 contrast( @background, rgba( 0, 0, 0, .30 ), rgba( 0, 0, 0, .80 ) );
     color: contrast( @background, @text-color, @text-overlay );
-    &.card-content {
-        box-shadow: 0 .1rem .6rem 0 contrast( @background, rgba( 0, 0, 0, .30 ), rgba( 0, 0, 0, .80 ) );
-    }
-    &.card-tile {
-        border: @card-border-width solid @border;
-    }
 }
 
-.card-outline-variant(@color) {
-  background-color: transparent;
-  border-color: @color;
-}
