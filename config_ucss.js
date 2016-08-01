@@ -71,8 +71,6 @@ module.exports = {
             });
 
             createFile('./docs_dist/ucssreport.html', mainPageContent, function (err) {
-                // TODO
-                // Open browser to created file
                 open("http://localhost:9002/ucssreport.html");
             });
             
