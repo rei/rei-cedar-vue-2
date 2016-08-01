@@ -11,7 +11,8 @@
     "accessibility:audit-templates": "gulp accessibility:audit-templates",
     "accessibility:audit-docs": "gulp accessibility:audit-docs",
     "accessibility:audit-pa11y": "gulp accessibility:audit-pa11y",
-    "test-ui": "casperjs test test/test-ui/main.js"
+    "test-ui": "casperjs test test/test-ui/main.js",
+    "ucss": "ucss"
   },
   "urls": {
     "repo": "https://github.com/rei/rei-cedar"
@@ -55,7 +56,11 @@
     "pa11y": "^3.5.1",
     "phantomjs-prebuilt": "^2.1.7",
     "run-sequence": "^1.1.5",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "ucss": "^0.4.8",
+    "create-file": "^1.0.1",
+    "delete": "^0.3.2",
+    "open": "0.0.5"
   },
   "engines": {
     "node": ">=4.0"
