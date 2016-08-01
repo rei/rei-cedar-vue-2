@@ -1,15 +1,13 @@
 <cedar-card
-    class="{card: true}{ isCardBlock }"
-    data-={ opts.option }
+    class="{card: true}{ ' ' + spacing }{ ' ' + align}"
     data-variant={ hasVariant }
     data-size={ size }
-    data-text-align={ align }
     href={opts.href}
     >
     <yield/>
 
     <script>
-    this.isCardBlock = opts.isCardBlock
+    this.spacing = opts.spacing
     this.hasVariant = opts.hasVariant
     this.size = opts.size
     this.align = opts.align

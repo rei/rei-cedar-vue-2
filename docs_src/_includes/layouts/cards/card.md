@@ -1,7 +1,5 @@
 A **card** is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
 
-If you're familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
@@ -9,137 +7,107 @@ If you're familiar with Bootstrap 3, cards replace our old panels, wells, and th
 
 ## Root Example
 
-Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease. For example, if your card has no flush content like images, feel free to put the `.card-block` class on the `.card` element to consolidate your markup.
+Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease.
+
 <div class="cedar-example">
-    <div class="card card-block text-xs-center" data-example-id="basic-card" >
-        <div class="img-frame ratio-9-16 portrait center vertical-push">
-            <img src="http://placehold.it/320x150" alt="Card image cap">
-        </div>
+    <cedar-card>
+        <cedar-card-image-cap-top path='http://placehold.it/320x150' alt="Example image"></cedar-card-image-cap-top>
+        <cedar-card-block>
+            <h4> cedar-card component </h4>
+            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </cedar-card-block>
+    </cedar-card>
+</div>
+
+{% highlight html %}
+<cedar-card>
+    <cedar-card-image-cap-top path='img-path' alt="context"></cedar-card-image-cap-top>
+    <cedar-card-block>
+        <h4> Heading </h4>
+        <p>Copy.</p>
+    </cedar-card-block>
+</cedar-card>
+{% endhighlight %}
+
+
+ For example, if your card has no flush content like images, feel free to put the `.card-block` class on the `.card` element to consolidate your markup.
+<div class="cedar-example">
+    <cedar-card spacing='card-block'>
         <h4>Card</h4>
         <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Button</a>
-    </div>
-</div>
-
-{% highlight html %}
-<div class="card card-block text-xs-center">
-    <div class="img-frame ratio-9-16 portrait center vertical-push"><img src="..." alt="example img"></div>
-    <p>Content.</p>
-</div>
-{% endhighlight %}
-
-
-## Card Types
-
-### Card Content
-
-By adding the `.card-content` class to `.card` you can update the skin of the basic card to account for content cards, which are intended to display one complete thought in a grouping.
-
-<div class="cedar-example">
-    <div class="card card-content" data-example-id="basic-content-card" >
-        <div class="card-img-top img-frame ratio-9-16 portrait center">
-            <img src="http://placehold.it/320x150" alt="Card image cap">
-        </div>
-      <div class="card-block">
-        <h4>Card content</h4>
-        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <button class="btn btn-primary">Button</button>
-      </div>
-    </div>
+    </cedar-card>
 </div>
 
 {% highlight html %}
-<div class="card card-content">
-    <div class="card-img-top img-frame ratio-9-16 portrait center">
-        <img src="..." alt="example image">
-    </div>
-    <div class="card-block">
-        <p>Content in card block.</p>
-    </div>
-</div>
+ <cedar-card spacing='card-block'>
+ </cedar-card>
 {% endhighlight %}
+
 
 ### Linked Card
 
 When linking an entire card, be sure no other actionable items are nested within the parent structure.
-<div class="cedar-example" id="this-example">
-    <div class="row">
-        <div class="col-sm-6">
-            <a class="card card-content" href="#this-example" data-example-id="link-contnet-card">
-                <div class="card-img-top img-frame ratio-9-16 portrait center">
-                    <img src="http://placehold.it/320x150" alt="Card image cap">
-                </div>
-                <div class="card-block">
-                    <h4>Card Content</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-6">
-            <a class="card card-tile" href="#this-example" data-example-id="link-tile-card">
-                <div class="card-img-top img-frame ratio-9-16 portrait center">
-                    <img src="http://placehold.it/320x150" alt="Card image cap">
-                </div>
-                <div class="card-block">
-                    <h4>Card tile</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
 
-### Card Tile
-By adding the `.card-tile` class to `.card` you can update the skin of the basic card to account for tile cards, which are intended to display one part of a group.
-<div class="cedar-example">
-    <div class="card card-tile" data-example-id="basic-tile-card">
-        <div class="card-img-top img-frame ratio-9-16 portrait center">
-            <img src="http://placehold.it/320x150" alt="Card image cap">
-        </div>
-        <div class="card-block">
-            <h4>Card title</h4>
-            <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button class="btn btn-primary">Button</button>
-        </div>
-    </div>
+<div class="cedar-example" id="this-example">
+<a href="#this-example" class ="card" riot-tag="cedar-card" data-example-id="link-contnet-card" >
+    <cedar-card-image-cap-top
+    type="card-media-top"
+    position='center'
+    orientation='portrait'
+    ratio='media-frame ratio-9-16'
+    alt="Example image"
+    path='http://placehold.it/320x150'
+    >
+    </cedar-card-image-cap-top>
+    <cedar-card-block>
+        <h4> Heading </h4>
+        <p>Copy.</p>
+    </cedar-card-block>
+</a>
 </div>
 {% highlight html %}
-<div class="card card-tile">
-  <ul class="list-group">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-</div>
+ <a href="#this-example" riot-tag="cedar-card">
+</a>
 {% endhighlight %}
-
 ## Content within cards
 
 Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.
 
-<div class="cedar-example">
-    <div class="card card-content" data-example-id="content-in-content-card">
-        <div class="card-img-top img-frame ratio-9-16 portrait center">
-            <img src="http://placehold.it/320x150" alt="Card image cap">
-        </div>
+<div class="cedar-example" data-example-id="content-in-content-card">
+    <cedar-card>
+        <cedar-card-image-cap-top
+        type="card-media-top"
+        position='center'
+        orientation='portrait'
+        ratio='media-frame ratio-9-16'
+        alt="Example image"
+        path='http://placehold.it/320x150'
+        >
+        </cedar-card-image-cap-top>
         {% include /markup-templates/list-group/list-group-filter.html %}
-        <div class="card-block text-xs-center">
+        <cedar-card-block align='text-xs-center'>
             {% include /markup-templates/lists/inline.html param="inline-featured" %}
-        </div>
-    </div>
+        </cedar-card-block>
+    </cedar-card>
 </div>
 {% highlight html %}
-<div class="card card-content">
-    <div class="card-img-top img-frame ratio-9-16 portrait center">
-        <img src="http://placehold.it/320x150" alt="Card image cap">
-    </div>
-    <p>Content out of card-block</p>
-    <div class="card-block text-xs-center">
-    <p>Content in card-block and centered</p>
-    </div>
-</div>
+<cedar-card>
+    <cedar-card-image-cap-top
+        type="card-media-top"
+        position='center'
+        orientation='portrait'
+        ratio='media-frame ratio-9-16'
+        alt="Example image"
+        path='http://placehold.it/320x150'
+    >
+    </cedar-card-image-cap-top>
+    content not in card-block
+    <cedar-card-block align='text-xs-center'>
+        content within card-block and centered
+    </cedar-card-block>
+</cedar-card>
 {% endhighlight %}
-
 
 ## Sizing
 
@@ -147,62 +115,82 @@ Constrain the width of a card via grid classes.
 
 <div class="cedar-example">
     <div class="row" data-example-id="card-in-grid">
-      <div class="col-sm-6">
-        <div class="card card-content card-block">
-          <h3>Special title treatment</h3>
-          <p>With supporting text below as a natural lead-in to additional content.</p>
-          <button class="btn btn-primary">Button</button>
+        <div class="col-sm-6">
+            <cedar-card>
+                <cedar-card-image-cap-top
+                type="card-media-top"
+                position='center'
+                orientation='portrait'
+                ratio='media-frame ratio-9-16'
+                alt="Example image"
+                path='http://placehold.it/320x150'
+                >
+                </cedar-card-image-cap-top>
+                <cedar-card-block>
+                    <h4> cedar-card component </h4>
+                    <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </cedar-card-block>
+            </cedar-card>
         </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card card-content card-block">
-          <h3>Special title treatment</h3>
-          <p>With supporting text below as a natural lead-in to additional content.</p>
-          <button class="btn btn-primary">Button</button>
-        </div>
+        <div class="col-sm-6">
+            <cedar-card>
+                <cedar-card-image-cap-top
+                type="card-media-top"
+                position='center'
+                orientation='portrait'
+                ratio='media-frame ratio-9-16'
+                alt="Example image"
+                path='http://placehold.it/320x150'
+                >
+                </cedar-card-image-cap-top>
+                <cedar-card-block>
+                    <h4> cedar-card component </h4>
+                    <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </cedar-card-block>
+            </cedar-card>
       </div>
     </div>
 </div>
 {% highlight html %}
     <div class="row">
       <div class="col-sm-12">
-        <div class="card">
-        </div>
+        <cedar-card></cedar-card>
       </div>
     </div>
 {% endhighlight %}
-
 
 ## Text alignment
 
 You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{ site.baseurl }}/components/utilities/#text-alignment).
 <div class="cedar-example">
-
-<div class="card card-tile card-block text-xs-center" data-example-id="card-text-xs-center" >
-  <h4>Heading</h4>
-  <p>Copy.</p>
-  <button class="btn btn-primary">Button</button>
-</div>
-
-<div class="card card-tile card-block text-xs-right" data-example-id="card-text-xs-right">
-  <h4>Heading</h4>
-  <p>Copy.</p>
-  <button class="btn btn-primary">Button</button>
-</div>
+    <div class="row">
+        <div class="col-xs-6">
+            <cedar-card spacing='card-block' align="text-xs-center" data-example-id="card-text-xs-center">
+                <h4> cedar-card component </h4>
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </cedar-card>
+        </div>
+         <div class="col-xs-6">
+             <cedar-card spacing='card-block' align="text-xs-right" data-example-id="card-text-xs-right">
+                <h4> cedar-card component </h4>
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </cedar-card>
+        </div>
+    </div>
 </div>
 
 {% highlight html %}
-<div class="card card-tile card-block text-xs-center">
+<cedar-card spacing='card-block' align="text-xs-center">
   <h4>Heading</h4>
   <p>Copy.</p>
   <button class="btn btn-primary">Button</button>
-</div>
+</cedar-card>
 
-<div class="card card-tile card-block text-xs-right">
+<cedar-card spacing='card-block' align="text-xs-right">
   <h4>Heading</h4>
   <p>Copy.</p>
   <button class="btn btn-primary">Button</button>
-</div>
+</cedar-card>
 {% endhighlight %}
 
 
@@ -210,8 +198,8 @@ You can quickly change the text alignment of any card—in its entirety or speci
 
 Add an optional header and/or footer within a card.
 <div class="cedar-example">
-    <div class="card card-content" data-example-id="card-header-and-footer">
-        <div class="card-header card-block">
+    <cedar-card>
+        <cedar-card-header >
             <div class="media">
                 <div class="media-left">
                     <img src="http://placehold.it/50x50" alt="Card image cap" class="img-circle">
@@ -221,31 +209,24 @@ Add an optional header and/or footer within a card.
                     <p>ancillary text</p>
                 </div>
             </div>
-        </div>
-        <div class="card-block">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        </cedar-card-header>
+        <cedar-card-block>
+            <h4> cedar-card component </h4>
+            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             <button class="btn btn-primary">Button</button>
-        </div>
-        <div class="card-footer card-block text-muted">
+        </cedar-card-block>
+        <cedar-card-footer>
             2 days ago
-        </div>
-    </div>
+        </cedar-card-footer>
+    </cedar-card>
 </div>
 {% highlight html %}
-<div class="card card-content">
-    <div class="card-header card-block">
-    <p>content in header block</p>
-    </div>
-    <div class="card-block">
-    <p>content in block</p>
-    </div>
-    <div class="card-footer card-block text-muted">
-        <p>content in footer block</p>
-    </div>
-</div>
+<cedar-card>
+        <cedar-card-header ></cedar-card-header>
+        <cedar-card-block></cedar-card-block>
+        <cedar-card-footer></cedar-card-footer>
+</cedar-card>
 {% endhighlight %}
-
 ## Image caps
 
 Similar to headers and footers, cards include top and bottom image caps. when using the `.card-content` variant be sure to add the extra class of `.card-img` , `.card-img-top` , or `.card-img-bottom` to apply proper border radious dispaly.
@@ -400,13 +381,20 @@ Cards include their own variant classes for quickly changing the `background-col
 {% endhighlight %}
 
 
-<cedar-card variant="card-dark-1" isCardBlock="true">
+<cedar-card>
+    <cedar-card-image-cap-top
+    type="card-media-top"
+    position='center'
+    orientation='portrait'
+    ratio='media-frame ratio-9-16'
+    alt="Example image"
+    path='http://placehold.it/320x150'
+    >
+    </cedar-card-image-cap-top>
     <cedar-card-block>
      <h4> cedar-card component </h4>
         <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </cedar-card-block>
-    <cedar-card-image>
-    </cedar-card-image>
 </cedar-card>
 
 <cedar-card hasVariant="card-dark-1" isCardBlock="true">
@@ -414,8 +402,8 @@ Cards include their own variant classes for quickly changing the `background-col
      <h4> cedar-card component </h4>
         <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </cedar-card-block>
-    <cedar-card-image>
-    </cedar-card-image>
+    <cedar-card-image-cap-top>
+    </cedar-card-image-cap-top>
 </cedar-card>
 
 <script>

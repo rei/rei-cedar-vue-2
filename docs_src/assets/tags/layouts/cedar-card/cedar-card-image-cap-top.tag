@@ -1,19 +1,17 @@
-<cedar-card-image
+<cedar-card-image-cap-top
     class="
-    { card-media: true }
+    { card-media-top: true }
     { ratio }
     { orientation }
     { position }
     ">
-       <img src={ path } alt={ alt } />
+       <img src={ opts.path } alt={ opts.alt } />
         <script>
             this.ratio = opts.ratio || 'media-frame ratio-3-4'
-            this.orientation = opts.orientation || portrait
+            this.orientation = opts.orientation || 'portrait'
             this.position = opts.position || 'center'
-            this.path = opts.path
-            this.alt = opts.alt
         </script>
         <style scoped>
             :scope { display: block; }
         </style>
-</cedar-card-image>
+</cedar-card-image-cap-top>

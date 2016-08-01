@@ -48,6 +48,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 .card {
     &-header {
+        .card-block();
         background-color: @card-cap-bg;
         border-bottom: @card-border-width solid @card-border-color;
         padding: @card-spacer-inner-y @card-spacer-inner-x;
@@ -56,6 +57,7 @@
         }
     }
     &-footer {
+        .card-block();
         background-color: @card-cap-bg;
         border-top: @card-border-width solid @card-border-color;
         padding: @card-spacer-inner-y @card-spacer-inner-x;
@@ -68,31 +70,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            CARD IMAGES
 //----------------------------------------------------------------------------------------------------------------------
-> img,
-a > img {
-    &:extend(.img-responsive);
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .card-media {
-     &:not( .img-frame ),
-     &:not( .media-frame ) {
-        &:extend(.img-responsive);
-        margin-left: auto;
-        margin-right: auto;
-    }
   // margin: -1.325rem;
- .border-radius(.25rem);
- // Card image caps
-    .card-content & {
-        .border-radius( @card-border-radius-inner @card-border-radius-inner );
-        &-top {
-            .border-radius( @card-border-radius-inner @card-border-radius-inner 0 0 );
-        }
-        &-bottom {
-            .border-radius( 0 0 @card-border-radius-inner @card-border-radius-inner );
-        }
+    .border-radius( @card-border-radius-inner @card-border-radius-inner );
+    &-top {
+        .border-radius( @card-border-radius-inner @card-border-radius-inner 0 0 );
+    }
+    &-bottom {
+        .border-radius( 0 0 @card-border-radius-inner @card-border-radius-inner );
     }
 }
 .card-media-overlay {
