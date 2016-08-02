@@ -2,6 +2,7 @@
     <yield/>
     <script>
         this.align = opts.align
+        this.theme = opts.theme
     </script>
     <style scoped>
         :scope { display: block; }

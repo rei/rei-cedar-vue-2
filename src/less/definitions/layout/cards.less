@@ -21,6 +21,7 @@
     display: block;
     position: relative;
     margin-bottom: @card-spacer-outer-x;
+    .card-variant();
     a& {
         cursor: pointer;
         transition: 0.25s ease;
@@ -81,7 +82,8 @@
         .border-radius( 0 0 @card-border-radius-inner @card-border-radius-inner );
     }
 }
-.card-media-overlay {
+
+[data-overlay="media"] {
     position: absolute;
     top: 0;
     right: 0;
@@ -91,32 +93,26 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Color variations
 //----------------------------------------------------------------------------------------------------------------------
-.card {
-    .card-variant();
-    &-light {
-        &-1 {
-            .card-variant( @core-background-1 );
-        }
-        &-2 {
-            .card-variant( @core-architectural-6 );
-        }
-    }
-    &-medium{
-        &-1 {
-            .card-variant( @core-architectural-3 );
-        }
-        &-2 {
-            .card-variant( @core-background-2 );
-        }
-    }
-    &-dark {
-        &-1 {
-            .card-variant( @core-architectural-2, rgba(255,255,255,.2) );
-        }
-        &-2 {
-            .card-variant( @core-architectural-1 );
-        }
-    }
+[data-theme="card-light-1"]{
+    .card-variant( @core-background-1 );
+}
+[data-theme="card-light-2"]{
+    .card-variant( @core-architectural-5 );
+}
+[data-theme="card-light-3"]{
+    .card-variant( @core-architectural-6 );
+}
+[data-theme="card-medium-1"]{
+    .card-variant( @core-architectural-3 );
+}
+[data-theme="card-medium-2"]{
+        .card-variant( @core-background-2 );
+}
+[data-theme="card-dark-1"]{
+        .card-variant( @core-architectural-2, rgba(255,255,255,.2) );
+}
+[data-theme="card-dark-2"]{
+        .card-variant( @core-architectural-1 );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

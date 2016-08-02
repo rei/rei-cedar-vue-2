@@ -1,6 +1,6 @@
-<cedar-card-image-cap-top
+<cedar-card-image-cap
     class="
-    { card-media-top: true, media-frame: true }
+    { card-media: true, media-frame: true }
     { ratio }
     { orientation }
     { position }
@@ -14,4 +14,4 @@
         <style scoped>
             :scope { display: block; }
         </style>
-</cedar-card-image-cap-top>
+</cedar-card-image-cap>
