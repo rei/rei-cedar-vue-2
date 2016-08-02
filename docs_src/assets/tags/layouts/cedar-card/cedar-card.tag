@@ -12,12 +12,4 @@
     this.align = opts.align
     this.theme = opts.theme
     </script>
-    <style type="less" scoped>
-    @import "../../../../../src/less/mixins";
-    @text-color: red;
-    @text-overlay: black;
-    :scope {.card-variant(#000)}
-
-    </style>
-
 </cedar-card>
