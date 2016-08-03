@@ -18,10 +18,11 @@
 //----------------------------------------------------------------------------------------------------------------------
 .card {
     .border-radius(@card-border-radius);
+    box-shadow: 0 .1rem .3rem 0 rgba( 0, 0, 0, .30 );
+    .color-variant();
     display: block;
     position: relative;
     margin-bottom: @card-spacer-outer-x;
-    .card-variant();
     a& {
         cursor: pointer;
         transition: 0.25s ease;
@@ -31,7 +32,7 @@
             box-shadow: none;
             &:focus,
             &:hover {
-                box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
+                box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.3 );
                 cursor: pointer;
                 z-index: 5;
                 text-decoration: none;
@@ -52,7 +53,6 @@
         .card-block();
         background-color: @card-cap-bg;
         border-bottom: @card-border-width solid @card-border-color;
-        padding: @card-spacer-inner-y @card-spacer-inner-x;
         &:first-child {
             .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
         }
@@ -61,7 +61,6 @@
         .card-block();
         background-color: @card-cap-bg;
         border-top: @card-border-width solid @card-border-color;
-        padding: @card-spacer-inner-y @card-spacer-inner-x;
         &:last-child {
             .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
         }
@@ -89,30 +88,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  Color variations
-//----------------------------------------------------------------------------------------------------------------------
-[data-theme="card-light-1"]{
-    .card-variant( @core-background-1 );
-}
-[data-theme="card-light-2"]{
-    .card-variant( @core-architectural-5 );
-}
-[data-theme="card-light-3"]{
-    .card-variant( @core-architectural-6 );
-}
-[data-theme="card-medium-1"]{
-    .card-variant( @core-architectural-3 );
-}
-[data-theme="card-medium-2"]{
-        .card-variant( @core-background-2 );
-}
-[data-theme="card-dark-1"]{
-        .card-variant( @core-architectural-2, rgba(255,255,255,.2) );
-}
-[data-theme="card-dark-2"]{
-        .card-variant( @core-architectural-1 );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

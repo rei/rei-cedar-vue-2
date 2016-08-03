@@ -1,5 +1,5 @@
 <cedar-card-block
-class={ card-block: true}{ ' ' + opts.align }
+class= {card-block: true} if opts.align{ ' ' + opts.align }
 data-overlay= { overlay ? 'media' : 'no-overlay' }
 data-theme={ theme }
 >

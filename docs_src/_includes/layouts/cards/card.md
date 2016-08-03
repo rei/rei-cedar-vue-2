@@ -246,9 +246,9 @@ to reset any of these defaults pass the new value with the tag
 
 ## Image overlays
 
-Turn an image into a card background and overlay your card's text. To achive an accessible result, be sure to also add a background variant that is in line with the image color.
+Turn an image into a card background and overlay your card's text. To achive an accessible result, be sure to pass a`theme` value that is in line with the image color.
 <div class="cedar-example">
-    <cedar-card theme='card-dark-1'>
+    <cedar-card theme='dark-1'>
         <cedar-card-image-cap path="http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg" alt="Text overlay cedar-card-image-cap component example" ></cedar-card-image-cap>
         <cedar-card-block overlay="true">
             <h4> cedar-card component </h4>
@@ -258,15 +258,15 @@ Turn an image into a card background and overlay your card's text. To achive an 
     </cedar-card>
 </div>
 {% highlight html %}
-<div class="card card-content card-dark-1">
-    <div class="card-img img-frame ratio-3-4 portrait center"> <img src="..." alt="example"> </div>
-    <div class="card-img-overlay card-block"></div>
-</div>
+    <cedar-card theme='dark-1'>
+        <cedar-card-image-cap></cedar-card-image-cap>
+        <cedar-card-block overlay="true"></cedar-card-block>
+    </cedar-card>
 {% endhighlight %}
 
-## Background variants
+## Themes
 
-Cards include their own variant data attributes for quickly changing the `background-color` and `border-color` of a card. **The card variant uses contrast to determine if the foreground color should be black or white .**
+Cards  can include a theme data attribute for quickly changing the `background-color` and `color` of a card. **The theme uses the color-variant mixin which utilizes contrast to determine if the foreground color should be black or white.**
 pass any of the following to the `theme` attribute
 {% highlight html %}
 <cedar-card theme='card-light-1'>
@@ -274,38 +274,38 @@ pass any of the following to the `theme` attribute
 <div class="cedar-example">
     <div class="row" data-example-id="card-background-variants">
         <div class="col-sm-3">
-            <cedar-card theme='card-light-1'>
-                <cedar-card-block><p>card-light-1</p></cedar-card-block>
+            <cedar-card theme='light-1'>
+                <cedar-card-block><p>light-1</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="card-light-2">
-                <cedar-card-block><p>card-light-2</p></cedar-card-block>
+            <cedar-card theme="light-2">
+                <cedar-card-block><p>light-2</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-              <cedar-card theme="card-medium-1">
-                <cedar-card-block><p>card-medium-1</p></cedar-card-block>
+              <cedar-card theme="medium-1">
+                <cedar-card-block><p>medium-1</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="card-medium-2">
-                <cedar-card-block><p>card-medium-2</p></cedar-card-block>
+            <cedar-card theme="medium-2">
+                <cedar-card-block><p>medium-2</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="card-light-3">
-                <cedar-card-block><p>card-light-3</p></cedar-card-block>
+            <cedar-card theme="light-3">
+                <cedar-card-block><p>light-3</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="card-dark-1">
-                <cedar-card-block><p>card-dark-1</p></cedar-card-block>
+            <cedar-card theme="dark-1">
+                <cedar-card-block><p>dark-1</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="card-dark-2">
-                <cedar-card-block><p>card-dark-2</p></cedar-card-block>
+            <cedar-card theme="dark-2">
+                <cedar-card-block><p>dark-2</p></cedar-card-block>
             </cedar-card>
         </div>
     </div>
