@@ -1,18 +1,18 @@
 <cedar-card-block
-class= {card-block: true} if opts.align{ ' ' + opts.align }
-data-overlay= { overlay ? 'media' : 'no-overlay' }
-data-theme={ theme }
+class="card-block {delimiter} {opts.align}"
+data-overlay= { overlay }
+data-theme={ opts.theme }
 >
     <yield/>
     <script>
-        this.align = opts.align
-        this.overlay = opts.hasOwnProperty('overlay')
-        ? opts.overlay === '' || opts.overlay === 'active' || opts.overlay === 'true'
-        : false
-
-        this.theme = opts.theme
+        if (opts.delimiter === 'top' ) {
+            this.delimiter = 'card-block--top'
+        }
+        else if (opts.delimiter === 'bottom' ) {
+            this.delimiter = 'card-block--bottom'
+        }
+        if(opts.overlay === 'true') {
+            this.overlay = 'media'
+        }
     </script>
-    <style scoped>
-        :scope { display: block; }
-    </style>
 </cedar-card-block>

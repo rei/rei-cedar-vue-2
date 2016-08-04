@@ -142,12 +142,12 @@ You can quickly change the text alignment of any card—in its entirety or speci
 {% endhighlight %}
 
 
-## Header and footer
+## Delimiter
 
-Add an optional header and/or footer within a card.
+Use the delimiter attribure within card-block to assign it a border to the top or bottom.
 <div class="cedar-example">
     <cedar-card>
-        <cedar-card-header >
+        <cedar-card-block delimiter="top" theme="medium-10">
             <div class="media">
                 <div class="media-left">
                     <img src="http://placehold.it/50x50" alt="Card image cap" class="img-circle">
@@ -157,22 +157,22 @@ Add an optional header and/or footer within a card.
                     <p>ancillary text</p>
                 </div>
             </div>
-        </cedar-card-header>
+        </cedar-card-block>
         <cedar-card-block>
             <h4> cedar-card component </h4>
             <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             <button class="btn btn-primary">Button</button>
         </cedar-card-block>
-        <cedar-card-footer>
+        <cedar-card-block delimiter="bottom" align="text-xs-center">
             2 days ago
-        </cedar-card-footer>
+        </cedar-card-block>
     </cedar-card>
 </div>
 {% highlight html %}
 <cedar-card>
-        <cedar-card-header ></cedar-card-header>
+        <cedar-card-block delimiter="top"></cedar-card-block>
         <cedar-card-block></cedar-card-block>
-        <cedar-card-footer></cedar-card-footer>
+        <cedar-card-block delimiter="bottom"></cedar-card-block>
 </cedar-card>
 {% endhighlight %}
 ## Image caps
@@ -220,7 +220,7 @@ to reset any of these defaults pass the new value with the tag
         </div>
          <div class="col-sm-6">
              <cedar-card>
-                <cedar-card-block>
+                <cedar-card-block delimiter="top">
                     <h4> cedar-card component </h4>
                     <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 </cedar-card-block>
@@ -248,7 +248,7 @@ to reset any of these defaults pass the new value with the tag
 
 Turn an image into a card background and overlay your card's text. To achive an accessible result, be sure to pass a`theme` value that is in line with the image color.
 <div class="cedar-example">
-    <cedar-card theme='dark-1'>
+    <cedar-card theme='dark-10'>
         <cedar-card-image-cap path="http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg" alt="Text overlay cedar-card-image-cap component example" ></cedar-card-image-cap>
         <cedar-card-block overlay="true">
             <h4> cedar-card component </h4>
@@ -258,7 +258,7 @@ Turn an image into a card background and overlay your card's text. To achive an 
     </cedar-card>
 </div>
 {% highlight html %}
-    <cedar-card theme='dark-1'>
+    <cedar-card theme='dark-10'>
         <cedar-card-image-cap></cedar-card-image-cap>
         <cedar-card-block overlay="true"></cedar-card-block>
     </cedar-card>
@@ -266,46 +266,48 @@ Turn an image into a card background and overlay your card's text. To achive an 
 
 ## Themes
 
-Cards  can include a theme data attribute for quickly changing the `background-color` and `color` of a card. **The theme uses the color-variant mixin which utilizes contrast to determine if the foreground color should be black or white.**
-pass any of the following to the `theme` attribute
+Cards  can include a theme data attribute for quickly changing the `background-color` and `color` of a card or a card-block.
+
+**The theme uses the color-variant mixin which utilizes contrast to determine if the foreground color should be black or white.**
 {% highlight html %}
-<cedar-card theme='card-light-1'>
+<cedar-card theme='light-10'>
+<cedar-card-block theme='medium-20'>
 {% endhighlight %}
 <div class="cedar-example">
     <div class="row" data-example-id="card-background-variants">
         <div class="col-sm-3">
-            <cedar-card theme='light-1'>
-                <cedar-card-block><p>light-1</p></cedar-card-block>
+            <cedar-card theme='light-10'>
+                <cedar-card-block><p>light-10</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="light-2">
-                <cedar-card-block><p>light-2</p></cedar-card-block>
+            <cedar-card theme="light-20">
+                <cedar-card-block><p>light-20</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-              <cedar-card theme="medium-1">
-                <cedar-card-block><p>medium-1</p></cedar-card-block>
+            <cedar-card theme="light-30">
+                <cedar-card-block><p>light-30</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="medium-2">
-                <cedar-card-block><p>medium-2</p></cedar-card-block>
+              <cedar-card theme="medium-10">
+                <cedar-card-block><p>medium-10</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="light-3">
-                <cedar-card-block><p>light-3</p></cedar-card-block>
+            <cedar-card theme="medium-20">
+                <cedar-card-block><p>medium-20</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="dark-1">
-                <cedar-card-block><p>dark-1</p></cedar-card-block>
+            <cedar-card theme="dark-10">
+                <cedar-card-block><p>dark-10</p></cedar-card-block>
             </cedar-card>
         </div>
         <div class="col-sm-3">
-            <cedar-card theme="dark-2">
-                <cedar-card-block><p>dark-2</p></cedar-card-block>
+            <cedar-card theme="dark-20">
+                <cedar-card-block><p>dark-20</p></cedar-card-block>
             </cedar-card>
         </div>
     </div>

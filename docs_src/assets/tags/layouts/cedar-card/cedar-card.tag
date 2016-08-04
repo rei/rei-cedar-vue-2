@@ -1,15 +1,6 @@
 <cedar-card
-    class="{card: true}{ ' ' + spacing }{ ' ' + align}"
-    data-size={ size }
-    data-theme={ theme }
-    href={opts.href}
+    class="card {opts.spacing} {opts.align}"
+    data-theme={ opts.theme }
     >
     <yield/>
-
-    <script>
-    this.spacing = opts.spacing
-    this.size = opts.size
-    this.align = opts.align
-    this.theme = opts.theme
-    </script>
 </cedar-card>

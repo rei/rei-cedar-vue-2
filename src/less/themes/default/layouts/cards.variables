@@ -23,7 +23,7 @@
 @card-spacer-inner-y:                                            1.6rem;
 @card-border-width:                                              0.01rem;
 @card-border-radius:                                             @border-radius;
-@card-border-color:                                              #e5e5e5;
+@card-border-color:                                              @core-background-2;
 @card-border-radius-inner:                                       @card-border-radius;
 @card-cap-bg:                                                    #f5f5f5;
 @card-bg:                                                        #fff;

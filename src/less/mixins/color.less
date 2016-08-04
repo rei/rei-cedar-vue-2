@@ -1,5 +1,6 @@
-.color-variant ( @background: inherit ) {
+.color-variant ( @background: inherit; @border: inherit ) {
     background-color: @background;
+    border-color: @border;
     color: contrast( @background, @text-color, @text-overlay );
 }
 

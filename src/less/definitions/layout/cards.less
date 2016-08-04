@@ -42,6 +42,7 @@
     }
 }
 .card-block {
+    display: block;
     padding: @card-spacer-inner-x @card-spacer-inner-y;
 }
 
@@ -49,17 +50,13 @@
 //            Card header and footer
 //----------------------------------------------------------------------------------------------------------------------
 .card {
-    &-header {
-        .card-block();
-        background-color: @card-cap-bg;
+    &-block--top {
         border-bottom: @card-border-width solid @card-border-color;
         &:first-child {
             .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
         }
     }
-    &-footer {
-        .card-block();
-        background-color: @card-cap-bg;
+    &-block--bottom {
         border-top: @card-border-width solid @card-border-color;
         &:last-child {
             .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
@@ -72,13 +69,15 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 .card-media {
-  // margin: -1.325rem;
     .border-radius( @card-border-radius-inner @card-border-radius-inner );
+    display: block;
     &-top {
         .border-radius( @card-border-radius-inner @card-border-radius-inner 0 0 );
+        display: block;
     }
     &-bottom {
         .border-radius( 0 0 @card-border-radius-inner @card-border-radius-inner );
+        display: block;
     }
 }
 
