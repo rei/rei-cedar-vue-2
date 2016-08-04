@@ -108,6 +108,11 @@ components-panel-with-heading_138.png
 * convert from backstop.json to npm dependency that auto loops through site structure capturing patterns via the `[data-example-id]` identifier.
 * move reference screen captures to satchel and update Travis to generate new reference on commit to master.
 
+### uCSS Testing - testing css rule usage
+To run uCSS
+* Note: `npm install` should have been run along with having the jekyll server running 
+* From the project root run `npm run ucss`
+* The test will print to the console as it runs and upon completion a html report will open in your default browser
 
 ## See Also
 REI Cedar is a living, working project and will continue to grow, and change. Just like any healthy tree, this one will
