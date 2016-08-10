@@ -48,17 +48,17 @@ To generate the documentation site locally, follow these steps:
 1. From the project root directory, run `npm install` to install the project's
    Node dependencies
 
-## Contribution
-1. Pull master.
-1. Create a branch and when you are finished open a PR.
-1. Once it builds and is successful, all you need is one approver from the REI dev team.
-1. Someone from the REI cedar team will merge the PR.
-
 ### Usage
 
 1. From the project root directory, run `gulp` to build the site
 1. Run `jekyll serve` to start a local dev server
 1. Open http://localhost:9002 in your browser, and voilà!
+
+## Contribution
+1. Pull master.
+1. Create a branch and when you are finished open a PR.
+1. Once it builds and is successful, all you need is one approver from the REI dev team.
+1. Someone from the REI cedar team will merge the PR.
 
 ## Accessibility Audits and Testing
 
