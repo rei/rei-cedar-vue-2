@@ -7,7 +7,7 @@
  * ======================================================================== */
 
 
-var jquery = require( 'jquery2' );
+var jquery = require( 'jquery' );
 module.exports = ( function ( $ ) {
   'use strict';
 
