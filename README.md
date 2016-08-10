@@ -48,6 +48,12 @@ To generate the documentation site locally, follow these steps:
 1. From the project root directory, run `npm install` to install the project's
    Node dependencies
 
+## Contribution
+1.) Pull master.
+2.) Create a branch and when you are finished open a PR.
+3.) Once it builds and is successful, all you need is one approver from the REI dev team.
+4.) Someone from the REI cedar team will merge the PR.
+
 ### Usage
 
 1. From the project root directory, run `gulp` to build the site
