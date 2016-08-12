@@ -77,7 +77,8 @@ coverage, but with some limitation. pa11y offers a lot more coverage, but does n
 errors. And it cannot audit local static files.
 
 - `gulp accessibility:audit-pa11y`
-## Visual Regression Audits
+
+### Visual Regression Audits
 
 Our visual regressions audits can be performed against all patterns documented within the patterns site.
 to do so, follow the steps below:
