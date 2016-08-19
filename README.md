@@ -54,6 +54,12 @@ To generate the documentation site locally, follow these steps:
 1. Run `jekyll serve` to start a local dev server
 1. Open http://localhost:9002 in your browser, and voilà!
 
+## Contribution
+1. Pull master.
+1. Create a branch and when you are finished open a PR.
+1. Once it builds and is successful, all you need is one approver from the REI dev team.
+1. Someone from the REI cedar team will merge the PR.
+
 ## Accessibility Audits and Testing
 
 ** Note: The following in currently in development.**
@@ -71,7 +77,8 @@ coverage, but with some limitation. pa11y offers a lot more coverage, but does n
 errors. And it cannot audit local static files.
 
 - `gulp accessibility:audit-pa11y`
-## Visual Regression Audits
+
+### Visual Regression Audits
 
 Our visual regressions audits can be performed against all patterns documented within the patterns site.
 to do so, follow the steps below:
@@ -108,6 +115,11 @@ components-panel-with-heading_138.png
 * convert from backstop.json to npm dependency that auto loops through site structure capturing patterns via the `[data-example-id]` identifier.
 * move reference screen captures to satchel and update Travis to generate new reference on commit to master.
 
+### uCSS Testing - testing css rule usage
+To run uCSS
+* Note: `npm install` should have been run along with having the jekyll server running 
+* From the project root run `npm run ucss`
+* The test will print to the console as it runs and upon completion a html report will open in your default browser
 
 ## See Also
 REI Cedar is a living, working project and will continue to grow, and change. Just like any healthy tree, this one will
