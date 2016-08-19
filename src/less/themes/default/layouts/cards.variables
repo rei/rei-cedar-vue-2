@@ -28,4 +28,4 @@
 @card-cap-bg:                                                    #f5f5f5;
 @card-bg:                                                        #fff;
 @card-link-hover-color:                                          #fff;
-@card-hover-offset:                                              0.3rem;
+@card-hover-offset:                                              0.2rem;

@@ -104,15 +104,30 @@ h1[id] {
 * followed by a code snippet.
 */
 
-.bs-example,
-.cedar-example {
+.bs-example {
     position: relative;
     margin: 0 0 2.2rem;
 }
 
 .cedar-example > .card {
     width: 100%;
-    max-width: 32rem;
+    max-width: 40%;
+    min-width: 32rem;
+    .center-block();
+}
+.code-toggle {
+    position: relative;
+    display: block;
+}
+.code-toggle--controle {
+    position: relative;
+    display: block;
+    padding: 1.2rem 3.6rem 1.2rem 1.6rem;
+    .place-toggle-variant( @icon-size-md; 0.5rem; -4rem; );
+}
+.code-toggle--document {
+    border-top: 1px solid @core-architectural-3;
+    position: relative;
 }
 .overlay-img {
   background: transparent url(http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg) 0 0 ;

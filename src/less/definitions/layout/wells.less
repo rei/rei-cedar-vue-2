@@ -29,13 +29,13 @@
     padding: @well-spacer-inner-y @well-spacer-inner-x;
     margin-bottom: @well-spacer-outer-y;
 
-    &-lg {
+    .well-lg {
         padding: @well-spacer-inner-lg-x;
     }
-    &-sm {
+    .well-sm {
         padding: @well-spacer-inner-sm-x;
     }
-    &-collapse {
+    .well-collapse {
         margin-bottom: 0;
     }
     & *:last-child {
@@ -62,7 +62,7 @@
 .overlay-dark-1 {
     .color-variant( @core-architectural-2; @core-architectural-2 );
 }
-.overlay-dark--2 {
+.overlay-dark-2 {
     .color-variant( @core-architectural-1; @core-architectural-1 );
 }
 
@@ -96,7 +96,7 @@
     .well {
         &:not(:last-of-type) {
             padding-bottom: (2rem + @vertical-push);
-            &:extend(.well-collapse);
+           margin-bottom: 0;
             @media (min-width: @screen-sm-min) {
                 padding-bottom: (4rem + @vertical-push);
             }

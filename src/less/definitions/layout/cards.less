@@ -18,7 +18,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 .card {
     .border-radius(@card-border-radius);
-    box-shadow: 0 .1rem .3rem 0 rgba( 0, 0, 0, .30 );
+    box-shadow: 0 .1rem .3rem 0 rgba( 0, 0, 0, 0.3 );
     .color-variant();
     display: block;
     position: relative;
@@ -29,10 +29,9 @@
         &[ href ] {
             backface-visibility: hidden;
             transform: translateY( 0 );
-            box-shadow: none;
             &:focus,
             &:hover {
-                box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.3 );
+                box-shadow: 0 @card-hover-offset 0.3rem 0 rgba( 0, 0, 0, 0.3 );
                 cursor: pointer;
                 z-index: 5;
                 text-decoration: none;
@@ -44,20 +43,23 @@
 .card-block {
     display: block;
     padding: @card-spacer-inner-x @card-spacer-inner-y;
+    & *:last-child {
+    margin-bottom: 0;
+    }
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-//            Card header and footer
+//            Card delimiter
 //----------------------------------------------------------------------------------------------------------------------
 .card {
     &-block--top {
-        border-bottom: @card-border-width solid @card-border-color;
+        border-top: @card-border-width solid @card-border-color;
         &:first-child {
             .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
         }
     }
     &-block--bottom {
-        border-top: @card-border-width solid @card-border-color;
+        border-bottom: @card-border-width solid @card-border-color;
         &:last-child {
             .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
         }

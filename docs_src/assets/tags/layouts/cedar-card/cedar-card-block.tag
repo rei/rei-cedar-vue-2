@@ -1,5 +1,5 @@
 <cedar-card-block
-class="card-block {delimiter} {opts.align}"
+class="card-block {delimiter} {opts.align} {opts.additional}"
 data-overlay= { overlay }
 data-theme={ opts.theme }
 >
