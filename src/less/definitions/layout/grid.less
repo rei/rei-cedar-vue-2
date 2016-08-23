@@ -60,87 +60,24 @@
     // Floated -- Default
     &:not( &-flex ) {
         &:extend( .clearfix all );
-        & > [class^=col-],
-        & > [class*=col-] {
+
+        > [class^=col-],
+        > [class*=col-] {
             float: left;
         }
     }
 
     // Flex
     &&-flex {
-        align-items: flex-start;
         display: flex;
         flex-flow: row wrap;
-        padding: 0 .6rem;
 
-        @media ( min-width: @screen-sm-min ) {
-            padding: 0 1rem;
-        }
-
-        @media ( min-width: @screen-md-min ) {
-            padding: 0 1.6rem;
-        }
-
-        &.fixed {
-            align-items: stretch;
-        }
-
-        &.tile {
-            padding: 0;
-
-            &.masonry {
-                min-width: 100%;
-                margin: 0 auto;
-            }
-
-            & > [class*=col-],
-            & > [class^=col-] {
-                & > .card {
-                    margin: 0;
-                    border: 0;
-                    border-radius: 0;
-                    box-shadow: none;
-                    flex-grow: 1;
-                }
-            }
-        }
-
-        &.overflow {
-            overflow: auto;
-            flex-wrap: nowrap;
-            align-items: center;
-
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-
-            cursor: pointer;
-
-            padding-right: 25%;
-
-            /* Scroll-snapping */
-            scroll-snap-type: mandatory;
-            scroll-snap-align: left;
-
-            /* Older spec implementation  -- Remove when polyfill updated */
-            scroll-snap-destination: 0% 75%;
-            scroll-snap-points-x: repeat( 100% );
-
-            &.fixed {
-                align-items: stretch
-            }
-        }
-
-        & > [class^=col-],
-        & > [class*=col-] {
-            display: inline-flex;
-            flex-flow: column nowrap;
+        > [class^=col-],
+        > [class*=col-] {
             float: none;
-            padding: 0;
         }
     }
 }
-
-
 // Extra small grid
 //
 // Columns, offsets, pushes, and pulls for extra small devices like
