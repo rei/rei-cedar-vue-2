@@ -101,10 +101,6 @@ items:
               slug: cards
               href: /layouts/cards/
 
-            - label: Tiles
-              slug: tiles
-              href: /layouts/tiles/
-
     - label: Elements
       slug: elements
       href: /elements/

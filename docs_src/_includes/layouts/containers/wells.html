@@ -2,47 +2,77 @@
 
 <h2> Wells </h2>
 <p>Wells are flexible and extensible wrappers for content which separate our gird structures from content.</p>
-<div class="cedar-example card">
-    <div class="card-header">
+<cedar-card>
+    <cedar-card-block delimiter="top" theme="light-20">
     <h3> Simple well </h3>
-    </div>
-    <div class="card-block">
-        <p>Wells require a small amount of markup and classes to provide you with as much control as possible.</p>
-    </div>
-    <div class="well" data-example-id="well">
-        <div class="img-frame ratio-9-16 portrait center">
-            <img src="http://placehold.it/320x150" alt="container image cap">
+    </cedar-card-block>
+    <cedar-card-block>
+    <p>Wells require a small amount of markup and classes to provide you with as much control as possible.</p>
+    </cedar-card-block>
+    <cedar-card-block additional="cedar-example">
+        <div class="well" data-example-id="well">
+            <div class="img-frame ratio-9-16 portrait center">
+                <img src="http://placehold.it/320x150" alt="container image cap">
+            </div>
+            {% include /markup-templates/list-group/list-group-filter.html %}
+            {% include /markup-templates/lists/inline.html param="inline-featured" %}
         </div>
-        {% include /markup-templates/list-group/list-group-filter.html %}
-        {% include /markup-templates/lists/inline.html param="inline-featured" %}
-    </div>
-    <div class="card-footer">
-        {% highlight html %}
-        <div class="well"></div>
-        {% endhighlight %}
-    </div>
-</div>
-
+    </cedar-card-block>
+    <cedar-code-toggle
+    name="view code"
+    identifier="root-example"
+    type="toggle-show-hide"
+    align="text-xs-right"
+    >
+{% highlight html %}
+     <div class="well"></div>
+{% endhighlight %}
+    </cedar-code-toggle>
+</cedar-card>
 
 <h3 >Appearance Modifications</h3>
-  <p>Control padding with two <strong>optional modifier classes</strong>.</p>
-  <div class="well" data-example-id="large-well">
-    <div class="well well-lg">
-      Look, I'm in a large well!
-    </div>
-  </div>
+ <p>Control padding with two <strong>optional modifier classes</strong>.</p>
+<cedar-card>
+    <cedar-card-block delimiter="top" theme="light-20">
+   <h4>Large well</h4>
+    </cedar-card-block>
+    <cedar-card-block additional="cedar-example">
+        <div class="well well-lg" data-example-id="large-well">
+            Look, I'm in a large well!
+        </div>
+    </cedar-card-block>
+    <cedar-code-toggle
+    name="view code"
+    identifier="lg-well-example"
+    type="toggle-show-hide"
+    align="text-xs-right"
+    >
 {% highlight html %}
-<div class="well well-lg">...</div>
+    <div class="well well-lg">...</div>
 {% endhighlight %}
+    </cedar-code-toggle>
+</cedar-card>
+<cedar-card>
+    <cedar-card-block delimiter="top" theme="light-20">
+   <h4>Small well</h4>
+    </cedar-card-block>
+    <cedar-card-block additional="cedar-example">
+        <div class="well well-sm">
+            Look, I'm in a small well!
+        </div>
+    </cedar-card-block>
+    <cedar-code-toggle
+    name="view code"
+    identifier="sm-well-example"
+    type="toggle-show-hide"
+    align="text-xs-right"
+    >
+{% highlight html %}
+    <div class="well well-sm">...</div>
+{% endhighlight %}
+    </cedar-code-toggle>
+</cedar-card>
 
-  <div class="well" data-example-id="small-well">
-    <div class="well well-sm">
-      Look, I'm in a small well!
-    </div>
-  </div>
-{% highlight html %}
-<div class="well well-sm">...</div>
-{% endhighlight %}
 
 <p>Constrain the width of a well via grid classes.</p>
 
