@@ -1,4 +1,14 @@
-## 1.2.4  2016-05-31 Michael Hewson  <mhewson@rei.com.com>
+## 1.2.10  2016-05-31 Michael Hewson  <mhewson@rei.com.com>
+Features:
+- BackstopJs visual regression
+- Bootstrap removed from project and imported to main less file.
+- first pass of css-usage-report 
+
+## 1.2.9
+Features:
+- Set image sharpening to be an opt-in by assigning .img-sharpen class rather than being a built in feature of .img-frame
+
+## 1.2.5  2016-05-31 Michael Hewson  <mhewson@rei.com.com>
 Features:
 - BackstopJs visual regression first pass
 
