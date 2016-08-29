@@ -24,7 +24,7 @@ items:
       subCats:
             - label: Color
               slug: color
-              href: layouts/color/
+              href: color/
               nav:
                 - label: Core
                   href: color-swatches-core
@@ -40,7 +40,7 @@ items:
 
             - label: Grid
               slug: grid
-              href: layouts/grid/
+              href: grid/
               nav:
                 - label: Introduction
                   href: grid-intro
@@ -77,7 +77,7 @@ items:
 
             - label: Containers
               slug: containers
-              href: layouts/containers/
+              href: containers/
               nav:
                 - label: Wells
                   href: wells
@@ -97,7 +97,7 @@ items:
       subCats:
             - label: Typography
               slug: typography
-              href: elements/typography/
+              href: typography/
               nav:
                 - label: Headings
                   href: type-title
@@ -131,7 +131,7 @@ items:
 
             - label: Buttons
               slug: buttons
-              href: elements/buttons/
+              href: buttons/
               nav:
                 - label: Core
                   href: buttons-fam-theme-core
@@ -180,7 +180,7 @@ items:
 
             - label: Links
               slug: links
-              href: elements/links/
+              href: links/
               nav:
                 - label: Inline
                   href: inline
@@ -205,7 +205,7 @@ items:
 
             - label: Lists
               slug: lists
-              href: elements/lists/
+              href: lists/
               nav:
                 - label: Text List Unstyled
                   href: list-text
@@ -221,7 +221,7 @@ items:
 
             - label: Inputs
               slug: inputs
-              href: elements/inputs/
+              href: inputs/
               nav:
                 - label: Focus
                   href: forms-control-focus
@@ -240,14 +240,14 @@ items:
 
             - label: Checkboxes and Radios
               slug: checkboxes-radios
-              href: elements/checkboxes-and-radios/
+              href: checkboxes-and-radios/
               nav:
                 - label: Toggles and Controls
                   href: checkbox-and-radio-as-toggle-controls
 
             - label: Images
               slug: images
-              href: elements/images/
+              href: images/
               nav:
                 - label: Responsive Images
                   href: images-responsive
@@ -266,7 +266,7 @@ items:
 
             - label: Icons
               slug: icons
-              href: elements/rei-icons/
+              href: rei-icons/
               nav:
                 - label: Header / Primary Navigation Icons
                   href: icons-header-primary-nav
@@ -298,7 +298,7 @@ items:
       subCats:
             - label: Alerts
               slug: alerts
-              href: collections/alerts/
+              href: alerts/
               nav:
                 - label: Alerts
                   href: alerts
@@ -314,7 +314,7 @@ items:
 
             - label: List Groups
               slug: list-groups
-              href: collections/list-groups/
+              href: list-groups/
               nav:
                 - label: Navigation list
                   href: list-navs
@@ -333,11 +333,11 @@ items:
 
             - label: Breadcrumbs
               slug: breadcrumbs
-              href: collections/breadcrumbs/
+              href: breadcrumbs/
 
             - label: Button Groups
               slug: button-groups
-              href: collections/button-groups/
+              href: button-groups/
               nav:
                 - label: Overview
                   href: overview
@@ -356,7 +356,7 @@ items:
 
             - label: Input Groups
               slug: input-groups
-              href: collections/input-groups/
+              href: input-groups/
               nav:
                 - label: Basic Example
                   href: input-groups-basic
@@ -366,7 +366,7 @@ items:
 
             - label: Forms
               slug: forms
-              href: collections/forms/
+              href: forms/
               nav:
                 - label: Basic
                   href: forms-examples-basic
@@ -388,7 +388,7 @@ items:
 
             - label: Tables
               slug: tables
-              href: collections/tables/
+              href: tables/
               nav:
                 - label: Basic example
                   href: tables-example
@@ -420,11 +420,11 @@ items:
       subCats:
             - label: Tabs
               slug: tabs
-              href: modules/tabs/
+              href: tabs/
 
             - label: Tool Tips
               slug: tool-tips
-              href: modules/tool-tips/
+              href: tool-tips/
               nav:
                 - label: Tool Tips
                   href: tooltips
@@ -434,19 +434,19 @@ items:
 
             - label: Accordion
               slug: accordion
-              href: modules/accordion/
+              href: accordion/
 
             - label: Modals
               slug: modals
-              href: modules/modals/
+              href: modals/
 
             - label: Pagination
               slug: pagination
-              href: modules/pagination/
+              href: pagination/
 
             - label: Carousel
               slug: carousel
-              href: modules/carousel/
+              href: carousel/
 
     - label: Style and Behavior
       slug: style-and-behavior
@@ -454,7 +454,7 @@ items:
       subCats:
             - label: Utility Helpers
               slug: utility-helpers
-              href: style-and-behavior/utility-helpers/
+              href: utility-helpers/
               nav:
                 - label: Quick Floats
                   href: helper-classes-floats
@@ -476,15 +476,15 @@ items:
 
             - label: Responsive Utilities
               slug: utility-responsive
-              href: style-and-behavior/utility-responsive/
+              href: utility-responsive/
 
             - label: Less Variables
               slug: less-variables
-              href: style-and-behavior/less-variables/
+              href: less-variables/
 
             - label: Less Mixins
               slug: less-mixins
-              href: style-and-behavior/less-mixins/
+              href: less-mixins/
               nav:
                 - label: Animations
                   href: less-variables-animations
@@ -539,4 +539,4 @@ items:
 
             - label: Javascript Documentation
               slug: javascript
-              href: style-and-behavior/javascript/
+              href: javascript/
