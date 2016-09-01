@@ -7,7 +7,7 @@
  * ======================================================================== */
 
 
-var jquery = require( 'jquery2' );
+var jquery = require( 'jquery' );
 var Tooltip = require( './tooltip' );
 
 module.exports = ( function ( $ ) {
