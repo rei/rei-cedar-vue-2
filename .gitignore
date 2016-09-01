@@ -39,6 +39,7 @@ Thumbs.db
 # Folders to ignore
 bower_components
 node_modules
+backstop_data
 
 # Build directories and files
 dist

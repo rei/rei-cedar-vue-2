@@ -539,4 +539,4 @@ items:
 
             - label: Javascript Documentation
               slug: javascript
-              href: style-and-behavior/javascript/
+              href: javascript/
