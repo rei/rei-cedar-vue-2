@@ -1,6 +1,6 @@
 {
   "name": "rei-cedar",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "dependencies": {
     "a11y": {
       "version": "0.2.6",
@@ -1407,7 +1407,7 @@
     },
     "gulp-pa11y": {
       "version": "0.0.4",
-        "from": "gulp-pa11y@0.0.4",
+      "from": "gulp-pa11y@0.0.4",
       "resolved": "https://registry.npmjs.org/gulp-pa11y/-/gulp-pa11y-0.0.4.tgz",
       "dependencies": {
         "commander": {
@@ -1842,10 +1842,10 @@
       "from": "jodid25519@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/jodid25519/-/jodid25519-1.0.2.tgz"
     },
-    "jquery2": {
-      "version": "2.0.3",
-      "from": "jquery2@2.0.3",
-      "resolved": "https://registry.npmjs.org/jquery2/-/jquery2-2.0.3.tgz"
+    "jquery": {
+      "version": "2.2.4",
+      "from": "jquery@2.2.4",
+      "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz"
     },
     "js-base64": {
       "version": "2.1.9",

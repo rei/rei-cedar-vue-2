@@ -402,7 +402,7 @@ items:
                 - label: Validation
                   href: forms-control-validation
 
-            - label: Tabels
+            - label: Tables
               slug: tables
               href: /collections/tables/
               nav:
