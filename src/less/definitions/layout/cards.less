@@ -1,0 +1,138 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'layout';
+@element : 'cards';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// REI Cedar Card
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            Card Scaffolding
+//----------------------------------------------------------------------------------------------------------------------
+.card {
+    .border-radius(@card-border-radius);
+    box-shadow: 0 .1rem .3rem 0 rgba( 0, 0, 0, 0.3 );
+    .color-variant();
+    display: block;
+    position: relative;
+    margin-bottom: @card-spacer-outer-x;
+    a& {
+        cursor: pointer;
+        transition: 0.25s ease;
+        &[ href ] {
+            backface-visibility: hidden;
+            transform: translateY( 0 );
+            &:focus,
+            &:hover {
+                box-shadow: 0 @card-hover-offset 0.3rem 0 rgba( 0, 0, 0, 0.3 );
+                cursor: pointer;
+                z-index: 5;
+                text-decoration: none;
+                transform: translateY( -@card-hover-offset );
+            }
+        }
+    }
+}
+.card-block {
+    display: block;
+    padding: @card-spacer-inner-x @card-spacer-inner-y;
+    & *:last-child {
+    margin-bottom: 0;
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+//            Card delimiter
+//----------------------------------------------------------------------------------------------------------------------
+.card {
+    &-block--top {
+        border-top: @card-border-width solid @card-border-color;
+        &:first-child {
+            .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
+        }
+    }
+    &-block--bottom {
+        border-bottom: @card-border-width solid @card-border-color;
+        &:last-child {
+            .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            CARD IMAGES
+//----------------------------------------------------------------------------------------------------------------------
+
+.card-media {
+    .border-radius( @card-border-radius-inner @card-border-radius-inner );
+    display: block;
+    &-top {
+        .border-radius( @card-border-radius-inner @card-border-radius-inner 0 0 );
+        display: block;
+    }
+    &-bottom {
+        .border-radius( 0 0 @card-border-radius-inner @card-border-radius-inner );
+        display: block;
+    }
+}
+
+[data-overlay="media"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Groups
+//----------------------------------------------------------------------------------------------------------------------
+
+.cards {
+    .card {
+        display: inline-flex;
+        flex-flow: column nowrap;
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 .1rem .6rem 0 rgba( 0, 0, 0, .30 );
+        flex-grow: 0;
+        .border-radius( @card-border-radius );
+        margin: 1rem;
+
+        @media ( min-width: @screen-md-min ) {
+            margin: 1.6rem;
+        }
+
+        a& {
+            cursor: pointer;
+            transition: 0.25s ease;
+            &[ href ] {
+                backface-visibility: hidden;
+                transform: translateY( 0 );
+                box-shadow: none;
+                &:focus,
+                &:hover {
+                    cursor: pointer;
+                    z-index: 5;
+                    box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
+                    text-decoration: none;
+                    transform: translateY( -@card-hover-offset );
+                }
+            }
+        }
+
+        .well {
+            position: relative;
+            width: fit-content;
+        }
+    }
+}
+

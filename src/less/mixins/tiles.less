@@ -1,0 +1,12 @@
+// Card variants
+
+.tile-variant( @background: @tile-bg; @border: @tile-border-color; ) {
+    background-color: @background;
+    border: @tile-border-width solid @border;
+    color: contrast( @background, @text-color, @text-overlay );
+}
+
+.tile-outline-variant(@color) {
+  background-color: transparent;
+  border-color: @color;
+}

@@ -106,11 +106,29 @@ h1[id] {
 
 .bs-example {
     position: relative;
-    padding: 1.2rem 1.6rem;
     margin: 0 0 2.2rem;
-    border: 0.1rem solid #ccc;
 }
 
+.cedar-example > .card {
+    width: 100%;
+    max-width: 40%;
+    min-width: 32rem;
+    .center-block();
+}
+.code-toggle {
+    position: relative;
+    display: block;
+}
+.code-toggle--control {
+    position: relative;
+    display: block;
+    padding: 1.2rem 3.6rem 1.2rem 1.6rem;
+    .place-toggle-variant( @icon-size-md; 0.5rem; -4rem; );
+}
+.code-toggle--document {
+    border-top: 1px solid @core-architectural-3;
+    position: relative;
+}
 .overlay-img {
   background: transparent url(http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg) 0 0 ;
 }
@@ -120,32 +138,28 @@ h1[id] {
 }
 
 .well {
-  border: 0.1rem solid #f5f5f5;
-  .well{
-    border: none;
-  }
-  .media-state& {
-    &:before {
-      content: "Extra small breakpoint";
-      @media( min-width: @screen-sm-min ) {
-        content: "Small breakpoint";
-      }
-      @media( min-width: @screen-md-min ) {
-        content: "Medium breakpoint";
-      }
-      @media( min-width: @screen-lg-min ) {
-        content: "Large breakpoint";
-      }
-      border: 0.1rem solid #f5f5f5;
-      border-left: none;
-      border-top: none;
-      color: @core-architectural-4;
-      position: relative;
-      padding: 0.2rem;
-      left: -1.6rem;
-      top: -1.3rem;
+    .media-state& {
+        &:before {
+            content: "Extra small breakpoint";
+            @media( min-width: @screen-sm-min ) {
+                content: "Small breakpoint";
+            }
+            @media( min-width: @screen-md-min ) {
+                content: "Medium breakpoint";
+            }
+            @media( min-width: @screen-lg-min ) {
+                content: "Large breakpoint";
+            }
+            border: 0.1rem solid #f5f5f5;
+            border-left: none;
+            border-top: none;
+            color: @core-architectural-4;
+            position: relative;
+            padding: 0.2rem;
+            left: -1.6rem;
+            top: -1.3rem;
+        }
     }
-  }
 }
 .status {
     a {

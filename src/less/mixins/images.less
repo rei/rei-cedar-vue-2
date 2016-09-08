@@ -184,7 +184,12 @@
 .media-frame,
 .responsive-embed,
 .img-frame {
-
+    &:before {
+       content: '';
+       display: block;
+       height: 0;
+       padding-bottom: 100%;
+    }
   // Default as non-cropping
   & {
     .media-frame( landscape; false; center );

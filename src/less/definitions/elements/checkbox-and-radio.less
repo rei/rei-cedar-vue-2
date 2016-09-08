@@ -246,6 +246,23 @@
       @toggle-expand-collapse-ruleset();
   }
 
+// expand collapse 2
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@toggle-show-hide-ruleset: {
+> [ type="checkbox" ] + label:before,
+> [ type="radio" ] + label:before {
+    content:"\e602";
+}
+> [ type="checkbox" ]:checked + label:before,
+> [ type="radio" ]:checked + label:before {
+    content:"\e746";
+}
+};.toggle-show-hide {
+      @toggle-ruleset();
+      @toggle-show-hide-ruleset();
+  }
+
+
 // rating
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @toggle-rating-ruleset: {

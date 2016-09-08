@@ -1,11 +1,43 @@
 - type:  copy
   class: text-body
+- type: alignment
+  class: text-xs-center
+- type: alignment
+  class: text-sm-center
+- type: alignment
+  class: text-md-center
+- type: alignment
+  class: text-lg-center
 - type:  alignment
   class: text-center
+- type: alignment
+  class: text-xs-justify
+- type: alignment
+  class: text-sm-justify
+- type: alignment
+  class: text-md-justify
+- type: alignment
+  class: text-lg-justify
 - type:  alignment
   class: text-justify
+- type: alignment
+  class: text-xs-left
+- type: alignment
+  class: text-sm-left
+- type: alignment
+  class: text-md-left
+- type: alignment
+  class: text-lg-left
 - type:  alignment
   class: text-left
+- type: alignment
+  class: text-xs-right
+- type: alignment
+  class: text-sm-right
+- type: alignment
+  class: text-md-right
+- type: alignment
+  class: text-lg-right
 - type:  alignment
   class: text-right
 - type:  transformation
