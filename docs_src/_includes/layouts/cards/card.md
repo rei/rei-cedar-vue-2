@@ -2,40 +2,46 @@
 <p>Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease.</p>
 <p>Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.</p>
 <h2>Examples</h2>
-<cedar-card>
-    <cedar-card-block delimiter="top" theme="light-20">
-    Card orginization example
-    </cedar-card-block>
-    <cedar-card-block>
-    <p> A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p>
-    </cedar-card-block>
-    <cedar-card-block additional="cedar-example">
-        <cedar-card>
-            <cedar-card-image-cap-top alt="Example image" path="http://placehold.it/320x150" ></cedar-card-image-cap-top>
-                {% include /markup-templates/list-group/list-group-filter.html %}
-            <cedar-card-block align="text-xs-center">
-                {% include /markup-templates/lists/inline.html param="inline-featured" %}
-            </cedar-card-block>
-        </cedar-card>
-    </cedar-card-block>
-    <cedar-code-toggle
-    name="view code"
-    identifier="root-example"
-    type="toggle-show-hide"
-    align="text-xs-right"
-    >
-{% highlight html %}
-    <cedar-card>
-        <cedar-card-image-cap-top path="img-path" alt="context">
-        </cedar-card-image-cap-top>
-        content not in card-block
-        <cedar-card-block align="text-xs-center">
-            content within card-block and centered
-        </cedar-card-block>
-    </cedar-card>
-{% endhighlight %}
-    </cedar-code-toggle>
-</cedar-card>
+
+<div class="card">
+    <div class="card-block card-block--top" data-theme="light-20">Card orginization example</div>
+    <div class="card-block"><p>A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p></div>
+    
+    <div class="card-block cedar-example">
+        <div class="card">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+            {% include /markup-templates/list-group/list-group-filter.html %}
+                <div class="card-block text-xs-center">
+            {% include /markup-templates/lists/inline.html param="inline-featured" %}
+                </div>
+        </div>
+    </div>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkboxroot-example"
+            data-toggle="collapse"
+            data-target="#root-example"
+        >
+        <label for="checkboxroot-example">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
+        {% highlight html %}
+            <div class="card">
+                <div class="card-media-top media-frame ratio-3-4 portrait center">
+                    <img src="img-path" alt="context">
+                </div>
+                content not in card-block
+                <div class="card-block text-xs-center">
+                    content within card-block and centered
+                </div>
+            </div>
+        {% endhighlight %}
+    </div>
+</div>
 
 <!-- <cedar-card>
  <cedar-card-block delimiter="top" theme="light-20">
