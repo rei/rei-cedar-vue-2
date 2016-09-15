@@ -4,7 +4,7 @@
 <h2>Examples</h2>
 
 <div class="card">
-    <div class="card-block card-block--top" data-theme="light-20">Card orginization example</div>
+    <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Card orginization example</h3></div>
     <div class="card-block"><p>A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p></div>
     
     <div class="card-block cedar-example">
@@ -43,106 +43,37 @@
     </div>
 </div>
 
-<!-- <cedar-card>
- <cedar-card-block delimiter="top" theme="light-20">
-    <h3 class="h4">Adding space to card</h3>
-    </cedar-card-block>
-    <cedar-card-block>
-     <p> For example, if your card has no flush content like images, feel free to put the <strong>.card-block</strong> class on the <strong>.card</strong> element to consolidate your markup.</p>
-    </cedar-card-block>
-    <cedar-card-block additional="cedar-example">
-       <cedar-card spacing="true">
-            <h4>Card</h4>
-            <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button class="btn btn-primary">Button</button>
-        </cedar-card>
-    </cedar-card-block>
-    <cedar-code-toggle
-    name="view code"
-    identifier="card-spacing-example"
-    type="toggle-show-hide"
-    align="text-xs-right"
-    >
-{% highlight html %}
-    <cedar-card spacing="card-block"></cedar-card>
-{% endhighlight %}
-    </cedar-code-toggle>
-</cedar-card> -->
-
-<cedar-card>
- <cedar-card-block delimiter="top" theme="light-20">
-    <h3 class="h4">Linked Card</h3>
-    </cedar-card-block>
-    <cedar-card-block>
-     <p> When linking an entire card, be sure no other actionable items are nested within the parent structure.</p>
-    </cedar-card-block>
-    <cedar-card-block additional="cedar-example">
-       <a href="#this-example" class ="card" riot-tag="cedar-card"
-       data-example-id="link-contnet-card" >
-            <cedar-card-image-cap-top alt="Example image" path="http://placehold.it/320x150" ></cedar-card-image-cap-top>
-            <cedar-card-block>
-                <h4> Heading </h4>
-                <p>Copy.</p>
-            </cedar-card-block>
-        </a>
-    </cedar-card-block>
-    <cedar-code-toggle
-    name="view code"
-    identifier="card-link-example"
-    type="toggle-show-hide"
-    align="text-xs-right"
-    >
-{% highlight html %}
-     <a href="#this-example" riot-tag="cedar-card"></a>
-{% endhighlight %}
-    </cedar-code-toggle>
-</cedar-card>
-
-<cedar-card>
- <cedar-card-block delimiter="top" theme="light-20">
-    <h3 class="h4">Card Delimiters</h3>
-    </cedar-card-block>
-    <cedar-card-block>
-     <p> Use the delimiter attribure within card-block to assign it a border to the top or bottom.</p>
-    </cedar-card-block>
-    <cedar-card-block additional="cedar-example">
-      <cedar-card>
-        <cedar-card-block delimiter="top" theme="medium-10">
-            <div class="media">
-                <div class="media-left">
-                    <img src="http://placehold.it/50x50" alt="Card image cap" class="img-circle">
-                </div>
-                <div class="media-body">
-                    <h5 class="media-heading">Title</h5>
-                    <p>ancillary text</p>
-                </div>
+<div class="card">
+    <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Linked Card</h3></div>
+    <div class="card-block"><p>When linking an entire card, be sure no other actionable items are nested within the parent structure.</p></div>
+    
+    <div class="card-block cedar-example">
+        <a href="#this-example" class="card">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
             </div>
-        </cedar-card-block>
-        <cedar-card-block>
-            <h4> cedar-card component </h4>
-            <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button class="btn btn-primary">Button</button>
-        </cedar-card-block>
-        <cedar-card-block delimiter="bottom" align="text-xs-center">
-            2 days ago
-        </cedar-card-block>
-    </cedar-card>
-    </cedar-card-block>
-    <cedar-code-toggle
-    name="view code"
-    identifier="card-delimiter-example"
-    type="toggle-show-hide"
-    align="text-xs-right"
-    >
-{% highlight html %}
-    <cedar-card>
-        <cedar-card-block delimiter="top"></cedar-card-block>
-        <cedar-card-block></cedar-card-block>
-        <cedar-card-block delimiter="bottom"></cedar-card-block>
-    </cedar-card>
-{% endhighlight %}
-    </cedar-code-toggle>
-</cedar-card>
+            <div class="card-block">
+                <h4>Heading</h4>
+                <p>Copy.</p>
+            </div>
+        </a>
+    </div>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkboxcard-link-example"
+            data-toggle="collapse"
+            data-target="#card-link-example"
+        >
+        <label for="checkboxcard-link-example">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="card-link-example" data-theme="light-20">
+        {% highlight html %}
+            <a href="#this-example"></a>
+        {% endhighlight %}
+    </div>
+</div>
 
 <cedar-card>
  <cedar-card-block delimiter="top" theme="light-20">
