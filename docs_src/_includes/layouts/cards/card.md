@@ -75,6 +75,49 @@
     </div>
 </div>
 
+<div class="card">
+    <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Card Image Caps</h3></div>
+    <div class="card-block"><p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media. See <a href="#cedar-card-img">the table</a> below for more information on options.</p></div>
+    
+    <div class="card-block cedar-example">
+        <div class="card">
+            <div class="card-media-top media-frame ratio-9-16 landscape left">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+            <div class="card-block">
+                <h4>Cedar-card component</h4>
+            </div>
+            <div class="card-media-bottom media-frame ratio-4-3 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+        </div>
+    </div>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkboxcard-img-cap-example"
+            data-toggle="collapse"
+            data-target="#card-img-cap-example"
+        >
+        <label for="checkboxcard-img-cap-example">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="card-link-example" data-theme="light-20">
+        {% highlight html %}
+            ...
+            <div class="card-media-top media-frame ratio-9-16 landscape left">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+            ...
+            ...
+            <div class="card-media-bottom media-frame ratio-4-3 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+            ...
+        {% endhighlight %}
+    </div>
+</div>
+
 <cedar-card>
  <cedar-card-block delimiter="top" theme="light-20">
     <h3 class="h4">Card Image Caps</h3>
