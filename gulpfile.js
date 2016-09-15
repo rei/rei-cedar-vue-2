@@ -43,7 +43,6 @@ var spawn = require( 'child_process' ).spawn;
 var pkg = require( './package.json' );
 var globify = require( 'require-globify' );
 var bourbon = require( 'node-bourbon' );
-var riotify = require( 'riotify' );
 var browserSync = require( 'browser-sync' ).create();
 
 
@@ -513,34 +512,6 @@ gulp.task( 'accessibility:audit-docs', [ 'docs' ], () =>
 // Audit using pa11y.
 gulp.task( 'accessibility:audit-pa11y', () => pa11y( PA11Y_OPTIONS )() );
 
-gulp.task( 'compile-riot', () => {
-    return browserify( {
-            entries: [ path.join( PATHS.DOCS_SRC, 'assets/js/main.js' ) ]
-        } )
-        .transform( riotify, {
-            compact: true,
-            parserOptions: {
-                style: {
-                    includePaths: bourbon.includePaths
-                }
-            }
-
-        } )
-        .transform( globify )
-        .bundle()
-        .pipe( source( 'main.js' ) )
-        .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'assets/js' ) ) );
-} );
-
 gulp.task( 'browserSync-watch', [ 'compile-riot' ], () => {
     browserSync.reload();
-} );
-
-gulp.task( 'riot-watch', [ 'compile-riot' ], () => {
-
-    browserSync.init( {
-        proxy: "localhost:9002"
-    } );
-
-    return gulp.watch( path.join( PATHS.DOCS_SRC, 'assets/tags/**/*.tag' ), [ 'riot-watch' ] );
 } );
