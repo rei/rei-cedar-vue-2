@@ -118,79 +118,44 @@
     </div>
 </div>
 
-<cedar-card>
- <cedar-card-block delimiter="top" theme="light-20">
-    <h3 class="h4">Card Image Caps</h3>
-    </cedar-card-block>
-    <cedar-card-block>
-    <p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media. See <a href="#cedar-card-img">the table</a> below for more information on options.</p>
-    </cedar-card-block>
-    <cedar-card-block additional="cedar-example">
-        <cedar-card>
-                <cedar-card-image-cap-top
-                position="left"
-                orientation="landscape"
-                ratio="ratio-9-16"
-                alt="Example image"
-                path="http://placehold.it/320x150"
-                >
-                </cedar-card-image-cap-top>
-                <cedar-card-block>
-                    <h4> cedar-card component </h4>
-                </cedar-card-block>
-                 <cedar-card-image-cap-bottom
-                ratio="ratio-4-3"
-                alt="Example image"
-                path='http://placehold.it/320x150'
-                >
-                </cedar-card-image-cap-bottom>
-            </cedar-card>
-    </cedar-card-block>
-    <cedar-code-toggle name="view code" identifier="card-img-cap-example" type="toggle-show-hide" align="text-xs-right">
-{% highlight html %}
-    ...
-    <cedar-card-image-cap-top></cedar-card-image-cap-top>
-    ...
-    ...
-    <cedar-card-image-cap-bottom></cedar-card-image-cap-bottom>
-    ...
-
-{% endhighlight %}
-    </cedar-code-toggle>
-</cedar-card>
-
-<cedar-card>
-    <cedar-card-block delimiter="top" theme="light-20">
-    Image overlays
-    </cedar-card-block>
-    <cedar-card-block>
-    <p> Turn an image into a card background and overlay your card's text. To achive an accessible result, be sure to pass a <strong>theme</strong> value that is in line with the image color.</p>
-    </cedar-card-block>
-    <cedar-card-block additional="cedar-example">
-        <cedar-card theme='dark-10'>
-            <cedar-card-image-cap path="http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg" alt="Text overlay cedar-card-image-cap component example" ></cedar-card-image-cap>
-            <cedar-card-block overlay="true">
-                <h4> cedar-card component </h4>
+<div class="card">
+    <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Image overlays</h3></div>
+    <div class="card-block"><p>Turn an image into a card background and overlay your card's text. To achive an accessible result, be sure to pass a <strong>theme</strong> value that is in line with the image color.</p></div>
+    
+    <div class="card-block cedar-example">
+        <div class="card" data-theme="dark-10">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg" alt="Text overlay cedar-card-image-cap component example">
+            </div>
+            <div class="card-block" data-overlay="media">
+                <h4>Cedar-card component</h4>
                 <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <button class="btn btn-primary">Button</button>
-            </cedar-card-block>
-        </cedar-card>
-    </cedar-card-block>
-    <cedar-code-toggle
-    name="view code"
-    identifier="image-overlay-example"
-    type="toggle-show-hide"
-    align="text-xs-right"
-    >
-{% highlight html %}
-   <cedar-card theme='dark-10'>
-        <cedar-card-image-cap></cedar-card-image-cap>
-        <cedar-card-block overlay="true"></cedar-card-block>
-    </cedar-card>
-
-{% endhighlight %}
-    </cedar-code-toggle>
-</cedar-card>
+            </div>
+        </div>
+    </div>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkboximage-overlay-example"
+            data-toggle="collapse"
+            data-target="#image-overlay-example"
+        >
+        <label for="checkboximage-overlay-example">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="image-overlay-example" data-theme="light-20">
+        {% highlight html %}
+            <div class="card" data-theme="dark-10">
+                <div class="card-media-top media-frame ratio-3-4 portrait center">
+                    <img src="img-path" alt="context">
+                </div>
+                <div class="card-block" data-overlay="media">
+                </div>
+            </div>
+        {% endhighlight %}
+    </div>
+</div>
 
 <cedar-card>
     <cedar-card-block delimiter="top" theme="light-20">
