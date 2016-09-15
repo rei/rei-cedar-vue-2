@@ -68,7 +68,8 @@ src:url("@{font-path}Plak/Plak-Black/c52d8e32-c82b-48a0-a0ac-9d61ef2c73b9.eot?#i
 // Headings
 //----------------------------------------------------------------------------------------------------------------------
 h1, .h1 {
-    font+: normal @headings-font-weight @font-size-h1 @headings-font-family;
+    font: @font-size-h1 @headings-font-family;
+    font-weight: @headings-font-weight;
     line-height: @line-height-h1;
     color: inherit;
     @media @breakpoint-sm {
@@ -119,7 +120,8 @@ h1, .h1 {
      }
 }
 h2, .h2 {
-    font+: normal @headings-font-weight @font-size-h2 @headings-font-family;
+    font: @font-size-h2 @headings-font-family;
+    font-weight: @headings-font-weight;
     line-height: @line-height-h2;
     @media @breakpoint-sm {
         font-size: @font-size-h2-sm;
@@ -169,7 +171,8 @@ h2, .h2 {
     }
 }
 h3, .h3 {
-    font+: normal @headings-font-weight @font-size-h3 @headings-font-family;
+    font: @font-size-h3 @headings-font-family;
+    font-weight: @headings-font-weight;
     line-height: @line-height-h3;
     &.heading-impact,
         //deprecated
@@ -179,7 +182,8 @@ h3, .h3 {
     }
 }
 h4, .h4 {
-    font+: normal @headings-font-weight @font-size-h4 @headings-font-family;
+    font: @font-size-h4 @headings-font-family;
+    font-weight: @headings-font-weight;
     line-height: @line-height-h4;
     &.heading-impact,
         //deprecated
@@ -189,7 +193,8 @@ h4, .h4 {
     }
 }
 h5, .h5 {
-    font+: normal @headings-font-weight @font-size-h5 @headings-font-family-secondary;
+    font: @font-size-h5 @headings-font-family-secondary;
+    font-weight: @headings-font-weight;
     line-height: @line-height-h5;
     &.heading-impact,
         //deprecated
@@ -199,7 +204,8 @@ h5, .h5 {
     }
 }
 h6, .h6 {
-    font+: normal @headings-font-weight @font-size-h6 @headings-font-family-secondary;
+    font: @font-size-h6 @headings-font-family-secondary;
+    font-weight: @headings-font-weight;
     line-height: @line-height-h6;
     &.heading-impact,
         //deprecated
@@ -227,7 +233,8 @@ h6 .h6 { margin-top: 0; .vertical-push(); }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Announce Headings
 .heading-announce {
-    font+: normal @headings-font-weight @font-size-hero-primary @brand-font-tertiary;
+    font: @font-size-hero-primary @brand-font-tertiary;
+    font-weight: @headings-font-weight;
     line-height: @line-height-hero-primary;
     @media @breakpoint-sm {
         font-size: @font-size-hero-primary-sm;
@@ -246,7 +253,8 @@ h6 .h6 { margin-top: 0; .vertical-push(); }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Hero Headings
 .heading-hero {
-    font+: normal @headings-font-weight @font-size-hero-primary @brand-font-tertiary;
+    font: @font-size-hero-primary @brand-font-tertiary;
+    font-weight: @headings-font-weight;
     line-height: @line-height-hero-primary;
     @media @breakpoint-sm {
         font-size: @font-size-hero-primary-sm;

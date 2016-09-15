@@ -53,17 +53,17 @@
 @line-height-computed:                              (@font-size-base * @line-height-base); //rem * line-height ~2.4rem
 
 // core headings
-@line-height-h1:                                    1.166;
+@line-height-h1:                                    calc( 42/36 );
 @line-height-h1-sm:                                 @line-height-h1;
 @line-height-h1-md:                                 @line-height-h1;
-@line-height-h1-lg:                                 1.0714;
+@line-height-h1-lg:                                 calc( 60/56 );
 
-@line-height-h2:                                    1.2;
+@line-height-h2:                                    calc( 36/30 );
 @line-height-h2-sm:                                 @line-height-h2;
 @line-height-h2-md:                                 @line-height-h2;
-@line-height-h2-lg:                                 @line-height-h2;
+@line-height-h2-lg:                                 calc( 44/40 );
 
-@line-height-h3:                                    24 / 30;
+@line-height-h3:                                    calc( 30/24 );
 @line-height-h4:                                    @line-height-heading;
 @line-height-h5:                                    @line-height-heading;
 @line-height-h6:                                    @line-height-heading;
@@ -86,17 +86,17 @@
 @line-height-hero-primary-lg:                       90/100;
 
 // Impact headings
-@line-height-impact-h1:                             38 / 42;
+@line-height-impact-h1:                             1;
 @line-height-impact-h1-sm:                          @line-height-impact-h1;
 @line-height-impact-h1-md:                          @line-height-impact-h1;
-@line-height-impact-h1-lg:                          52 / 58;
+@line-height-impact-h1-lg:                          @line-height-impact-h1;
 
-@line-height-impact-h2:                             28 / 32;
+@line-height-impact-h2:                             1;
 @line-height-impact-h2-sm:                          @line-height-impact-h2;
-@line-height-impact-h2-md:                          28 / 42;
-@line-height-impact-h2-lg:                          38 / 42;
+@line-height-impact-h2-md:                          @line-height-impact-h2;
+@line-height-impact-h2-lg:                          @line-height-impact-h2;
 
-@line-height-impact-h3:                             @line-height-h3;
+@line-height-impact-h3:                             1;
 @line-height-impact-h4:                             1;
 @line-height-impact-h5:                             1;
 @line-height-impact-h6:                             1;
@@ -145,17 +145,21 @@
 @font-size-hero-primary-lg:                         9rem;
 
 // Impact
-@font-size-impact-h1:                               3.8rem;
+@font-size-impact-h1:                               4rem;
 @font-size-impact-h1-sm:                            @font-size-impact-h1;
 @font-size-impact-h1-md:                            @font-size-impact-h1;
-@font-size-impact-h1-lg:                            5.2rem;
+@font-size-impact-h1-lg:                            5.6rem;
 
-@font-size-impact-h2:                               @font-size-h2;
-@font-size-impact-h2-sm:                            @font-size-h2;
-@font-size-impact-h2-md:                            @font-size-h2;
-@font-size-impact-h2-lg:                            @font-size-h2-lg;
+@font-size-impact-h2:                               3rem;
+@font-size-impact-h2-sm:                            @font-size-impact-h2;
+@font-size-impact-h2-md:                            @font-size-impact-h2;
+@font-size-impact-h2-lg:                            4rem;
 
-@font-size-impact-h3:                               @font-size-h3;
+@font-size-impact-h3:                               3rem;
+@font-size-impact-h3-sm:                            @font-size-impact-h2;
+@font-size-impact-h3-md:                            @font-size-impact-h2;
+@font-size-impact-h3-lg:                            4rem;
+
 @font-size-impact-h4:                               @font-size-h4;
 @font-size-impact-h5:                               @font-size-h5;
 @font-size-impact-h6:                               @font-size-h6;
