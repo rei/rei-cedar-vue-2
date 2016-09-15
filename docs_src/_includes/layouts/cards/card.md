@@ -157,67 +157,81 @@
     </div>
 </div>
 
-<cedar-card>
-    <cedar-card-block delimiter="top" theme="light-20">
-   Theming a card
-    </cedar-card-block>
-    <cedar-card-block>
-    <p> Cards  can include a theme data attribute for quickly changing the <strong>background-color</strong> and <strong>color</strong> of a card or a card-block.</p>
-    <p class="bs-callout bs-callout-info">The theme uses the color-variant mixin which utilizes contrast to determine if the foreground color should be black or white.</p>
-    </cedar-card-block>
-    <cedar-card-block additional="cedar-example">
-      <div class="row" data-example-id="card-background-variants">
-        <div class="col-sm-3">
-            <cedar-card theme='light-10'>
-                <cedar-card-block><p>light-10</p></cedar-card-block>
-            </cedar-card>
-        </div>
-        <div class="col-sm-3">
-            <cedar-card theme="light-20">
-                <cedar-card-block><p>light-20</p></cedar-card-block>
-            </cedar-card>
-        </div>
-        <div class="col-sm-3">
-            <cedar-card theme="light-30">
-                <cedar-card-block><p>light-30</p></cedar-card-block>
-            </cedar-card>
-        </div>
-        <div class="col-sm-3">
-              <cedar-card theme="medium-10">
-                <cedar-card-block><p>medium-10</p></cedar-card-block>
-            </cedar-card>
-        </div>
-        <div class="col-sm-3">
-            <cedar-card theme="medium-20">
-                <cedar-card-block><p>medium-20</p></cedar-card-block>
-            </cedar-card>
-        </div>
-        <div class="col-sm-3">
-            <cedar-card theme="dark-10">
-                <cedar-card-block><p>dark-10</p></cedar-card-block>
-            </cedar-card>
-        </div>
-        <div class="col-sm-3">
-            <cedar-card theme="dark-20">
-                <cedar-card-block><p>dark-20</p></cedar-card-block>
-            </cedar-card>
+<div class="card">
+    <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Theming a card</h3></div>
+    <div class="card-block"><p>Cards can include a theme data attribute for quickly changing the <strong>background-color</strong> and <strong>color</strong> of a card or a card-block.</p></div>
+    <div class="card-block cedar-example">
+        <div class="row" data-example-id="card-background-variants">
+            <div class="col-sm-3">
+                <div class="card" data-theme='light-10'>
+                    <div class="card-block">
+                        <p>light-10</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" data-theme='light-20'>
+                    <div class="card-block">
+                        <p>light-20</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" data-theme='light-30'>
+                    <div class="card-block">
+                        <p>light-30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" data-theme='medium-10'>
+                    <div class="card-block">
+                        <p>medium-10</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" data-theme='medium-20'>
+                    <div class="card-block">
+                        <p>medium-20</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" data-theme='dark-10'>
+                    <div class="card-block">
+                        <p>dark-10</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" data-theme='dark-20'>
+                    <div class="card-block">
+                        <p>dark-20</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    </cedar-card-block>
-    <cedar-code-toggle
-    name="view code"
-    identifier="image-theme-example"
-    type="toggle-show-hide"
-    align="text-xs-right"
-    >
-{% highlight html %}
-   <cedar-card theme='light-10'>
-    <cedar-card-block theme='medium-20'>
-{% endhighlight %}
-    </cedar-code-toggle>
-</cedar-card>
-
-
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkboximage-theme-example"
+            data-toggle="collapse"
+            data-target="#image-theme-example"
+        >
+        <label for="checkboximage-theme-example">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="image-theme-example" data-theme="light-20">
+        {% highlight html %}
+            <div class="card" data-theme='light-20'>
+                <div class="card-block"></div>
+            </div>
+            <div class="card-block" data-theme="medium-20"></div>
+        {% endhighlight %}
+    </div>
+</div>
 
 <table class="table">
     <caption>Card properties</caption>
