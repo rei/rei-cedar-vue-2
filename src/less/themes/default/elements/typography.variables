@@ -26,7 +26,7 @@
 @font-family-serif:                                Georgia, "Times New Roman", Times, serif;
 
 @brand-font-primary-name:                          "Anderson 1938";
-@brand-font-primary-file:                          "Anderson 1938";
+@brand-font-primary-file:                          "anderson_1938-webfont";
 @brand-font:                                       @brand-font-primary-name, @font-family-sans-serif;
 
 @brand-font-secondary-name:                        "Interstate Bold Condensed";

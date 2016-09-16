@@ -182,7 +182,7 @@ h3, .h3 {
     }
 }
 h4, .h4 {
-    font: @font-size-h4 @headings-font-family;
+    font: @font-size-h4 @headings-font-family-secondary;
     font-weight: @headings-font-weight;
     line-height: @line-height-h4;
     &.heading-impact,
@@ -274,6 +274,7 @@ h6 .h6 { margin-top: 0; .vertical-push(); }
 .label-classification {
     &:extend( .h4 );
     &:extend( .heading-editorial );
+    line-height: .9;
     border-bottom: 0.3rem solid;
     display: inline-block;
     margin-bottom: 2rem;
