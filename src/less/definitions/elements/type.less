@@ -37,143 +37,245 @@
 // Web Fonts
 //----------------------------------------------------------------------------------------------------------------------
 @font-face {
-    font-family: "Anderson 1938";
-    src: url('@{font-path}anderson_1938-webfont.eot');
-    src: url('@{font-path}anderson_1938-webfont.eot?#iefix') format('embedded-opentype'),
-    url('@{font-path}anderson_1938-webfont.woff') format('woff'),
-    url('@{font-path}anderson_1938-webfont.ttf') format('truetype'),
-    url('@{font-path}anderson_1938-webfont.svg#webfont') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    font-family: @brand-font-primary-name;
+    src: ~"url('@{font-path}@{brand-font-primary-file}.eot?#iefix') format('eot')",
+    ~"url('@{font-path}@{brand-font-primary-file}.woff') format('woff')",
+    ~"url('@{font-path}@{brand-font-primary-file}.otf') format('opentype')",
+    ~"url('@{font-path}@{brand-font-primary-file}.svg') format('svg')";
+}
+@font-face {
+    font-family: @brand-font-secondary-name;
+    src: ~"url('@{font-path}@{brand-font-secondary-file}.eot?#iefix') format('eot')",
+    ~"url('@{font-path}@{brand-font-secondary-file}.woff') format('woff')",
+    ~"url('@{font-path}@{brand-font-secondary-file}.ttf') format('truetype')",
+    ~"url('@{font-path}@{brand-font-secondary-file}.svg') format('svg')";
 }
 
-@font-face {
-    font-family: "Interstate Bold Condensed";
-    src: ~"url('@{font-path}interstateBoldCondensed.eot?#iefix') format('eot')",
-    ~"url('@{font-path}interstateBoldCondensed.woff') format('woff')",
-    ~"url('@{font-path}interstateBoldCondensed.ttf') format('truetype')",
-    ~"url('@{font-path}interstateBoldCondensed.svg') format('svg')";
+@font-face{
+font-family: @brand-font-tertiary-name;
+src:url("@{font-path}Plak/Plak-Black-Condensed/8c16f587-8b27-4027-95c9-370d762ce60e.eot?#iefix");
+src:url("@{font-path}Plak/Plak-Black-Condensed/8c16f587-8b27-4027-95c9-370d762ce60e.eot?#iefix") format("eot"),url("@{font-path}Plak/Plak-Black-Condensed/38acf610-7c61-46ba-9ab9-affaffc8cfd1.woff2") format("woff2"),url("@{font-path}Plak/Plak-Black-Condensed/f36a1df4-214c-40d1-8807-bf06fe25b515.woff") format("woff"),url("@{font-path}Plak/Plak-Black-Condensed/7531ce02-d0e7-48f6-ada8-94c68a7a4a1b.ttf") format("truetype"),url("@{font-path}Plak/Plak-Black-Condensed/766de397-1752-4e8d-b946-0c51548da328.svg#766de397-1752-4e8d-b946-0c51548da328") format("svg");
 }
+
+@font-face{
+font-family:"Plak Black";
+src:url("@{font-path}Plak/Plak-Black/c52d8e32-c82b-48a0-a0ac-9d61ef2c73b9.eot?#iefix");
+src:url("@{font-path}Plak/Plak-Black/c52d8e32-c82b-48a0-a0ac-9d61ef2c73b9.eot?#iefix") format("eot"),url("@{font-path}Plak/Plak-Black/c72d960b-e25d-4860-b9cc-996a5bbcfcc7.woff2") format("woff2"),url("@{font-path}Plak/Plak-Black/8777901b-91b9-477b-b762-daa2152b880c.woff") format("woff"),url("@{font-path}Plak/Plak-Black/36505657-53ca-4d60-983c-f11d733872f5.ttf") format("truetype"),url("@{font-path}Plak/Plak-Black/0c19efb3-410a-48fc-bafd-8dfbe1bb98de.svg#0c19efb3-410a-48fc-bafd-8dfbe1bb98de") format("svg");
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Headings
 //----------------------------------------------------------------------------------------------------------------------
-h1, .h1 { font-size: @font-size-h1; }
-h2, .h2 { font-size: @font-size-h2; }
-h3, .h3 { font-size: @font-size-h3; }
-h4, .h4 { font-size: @font-size-large; }
-h5, .h5 { font-size: @font-size-large; }
-h6, .h6 { font-size: @font-size-large; }
-
-.h1, h1,
-.h2, h2,
-.h3, h3,
-.h4, h4,
-.h5, h5,
-.h6, h6 {
-    font-family: @headings-font-family;
+h1, .h1 {
+    font: @font-size-h1 @headings-font-family;
     font-weight: @headings-font-weight;
-    line-height: @headings-line-height;
-    margin-top: 0;
-    .vertical-push();
-}
-
-.h4, h4,
-.h5, h5,
-.h6, h6 {
-    font-family: @headings-font-family-secondary;
-}
-
-// overrides
-.h1,
-h1 {
-    line-height: 1.166;
-    @media ( min-width: @screen-lg-min ) {
+    line-height: @line-height-h1;
+    color: inherit;
+    @media @breakpoint-sm {
+        font-size: @font-size-h1-sm;
+        line-height: @line-height-h1-sm;
+    }
+    @media @breakpoint-md {
+        font-size: @font-size-h1-md;
+        line-height: @line-height-h1-md;
+    }
+    @media @breakpoint-lg {
         font-size: @font-size-h1-lg;
-        line-height: 1.0714;
+        line-height: @line-height-h1-lg;
     }
     &.heading-announce {
-        font-size: 7rem;
-        letter-spacing: 0.2rem;
-        @media ( min-width: @screen-sm-min ) {
-            font-size: 12rem;
-            letter-spacing: 0.4rem;
-            line-height: ( 110 / 120 );
+        font-size: @font-size-announce-primary;
+        line-height: @line-height-announce-primary;
+        @media @breakpoint-sm {
+            font-size: @font-size-announce-primary-sm;
+            line-height: @line-height-announce-primary-sm;
         }
-        @media ( min-width: @screen-lg-min ) {
-            font-size: 17rem;
-            letter-spacing: 0.8rem;
-            line-height: ( 160 / 170 );
+        @media @breakpoint-md {
+            font-size: @font-size-announce-primary-md;
+            line-height: @line-height-announce-primary-md;
+        }
+        @media @breakpoint-lg {
+            font-size: @font-size-announce-primary-lg;
+            line-height: @line-height-announce-primary-lg;
         }
     }
+    &.heading-impact,
+    //deprecated
+    &.heading-editorial {
+         font-size: @font-size-impact-h1;
+         line-height: @line-height-impact-h1;
+         @media @breakpoint-sm {
+             font-size: @font-size-impact-h1-sm;
+             line-height: @line-height-impact-h1-sm;
+         }
+         @media @breakpoint-md {
+             font-size: @font-size-impact-h1-md;
+             line-height: @line-height-impact-h1-md;
+         }
+         @media @breakpoint-lg {
+             font-size: @font-size-impact-h1-lg;
+             line-height: @line-height-impact-h1-lg;
+         }
+     }
 }
-
-.h2,
-h2 {
-    @media (min-width: @screen-sm-min) {
-        line-height: @headings-line-height-sm;
+h2, .h2 {
+    font-family: @headings-font-family;
+    font-size: @font-size-h2;
+    font-weight: @headings-font-weight;
+    line-height: @line-height-h2;
+    @media @breakpoint-sm {
+        font-size: @font-size-h2-sm;
+        line-height: @line-height-h2-sm;
     }
-    @media ( min-width: @screen-lg-min ) {
+    @media @breakpoint-md {
+        font-size: @font-size-h2-md;
+        line-height: @line-height-h2-md;
+    }
+    @media @breakpoint-lg {
         font-size: @font-size-h2-lg;
-        line-height: 1.2;
+        line-height: @line-height-h2-lg;
     }
     &.heading-announce {
-        font-size: 6rem;
-        letter-spacing: 0.1rem;
-        line-height: ( 55 / 60 );
-        @media ( min-width: @screen-sm-min ) {
-            font-size: 8rem;
-            letter-spacing: 0.3rem;
-            line-height: ( 75 / 80 );
+        font-size: @font-size-announce-secondary;
+        line-height: @line-height-announce-secondary;
+        @media @breakpoint-sm {
+            font-size: @font-size-announce-secondary-sm;
+            line-height: @line-height-announce-secondary-sm;
         }
-        @media ( min-width: @screen-lg-min ) {
-            font-size: 12rem;
-            letter-spacing: 0.6rem;
-            line-height: ( 110 / 120 );
+        @media @breakpoint-md {
+            font-size: @font-size-announce-secondary-md;
+            line-height: @line-height-announce-secondary-md;
+        }
+        @media @breakpoint-lg {
+            font-size: @font-size-announce-secondary-lg;
+            line-height: @line-height-announce-secondary-lg;
+        }
+    }
+    &.heading-impact,
+        //deprecated
+    &.heading-editorial {
+        font-size: @font-size-impact-h2;
+        line-height: @line-height-impact-h2;
+        @media @breakpoint-sm {
+            font-size: @font-size-impact-h2-sm;
+            line-height: @line-height-impact-h2-sm;
+        }
+        @media @breakpoint-md {
+            font-size: @font-size-impact-h2-md;
+            line-height: @line-height-impact-h2-md;
+        }
+        @media @breakpoint-lg {
+            font-size: @font-size-impact-h2-lg;
+            line-height: @line-height-impact-h2-lg;
         }
     }
 }
-
-.h4,
-h4 {
-    line-height: ( 26 / 18 );
+h3, .h3 {
+    font: @font-size-h3 @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @line-height-h3;
+    &.heading-impact,
+        //deprecated
+    &.heading-editorial {
+        font-size: @font-size-impact-h3;
+        line-height: @line-height-impact-h3;
+    }
+}
+h4, .h4 {
+    font: @font-size-h4 @headings-font-family-secondary;
+    font-weight: @headings-font-weight;
+    line-height: @line-height-h4;
+    &.heading-impact,
+        //deprecated
+    &.heading-editorial {
+        font-size: @font-size-impact-h4;
+        line-height: @line-height-impact-h4;
+    }
+}
+h5, .h5 {
+    font: @font-size-h5 @headings-font-family-secondary;
+    font-weight: @headings-font-weight;
+    line-height: @line-height-h5;
+    &.heading-impact,
+        //deprecated
+    &.heading-editorial {
+        font-size: @font-size-impact-h5;
+        line-height: @line-height-impact-h5;
+    }
+}
+h6, .h6 {
+    font: @font-size-h6 @headings-font-family-secondary;
+    font-weight: @headings-font-weight;
+    line-height: @line-height-h6;
+    &.heading-impact,
+        //deprecated
+    &.heading-editorial {
+        font-size: @font-size-impact-h6;
+        line-height: @line-height-impact-h6;
+    }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Editorial Headings
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6 .h6 { margin-top: 0; .vertical-push(); }
+
+.heading-announce,
+.heading-hero,
+.heading-impact,
+// deprecated
 .heading-editorial {
-    line-height: .9;
     text-transform: uppercase;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Hero Headings
-.heading-hero {
-    .text-architectural-5();
-    font-size: 4.5rem;
-    line-height: .8;
-    text-transform: uppercase;
-    @media ( min-width: @screen-sm-min ) {
-        font-size: 7rem;
-    }
-    @media ( min-width: @screen-lg-min ) {
-        font-size: 8rem;
-    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Announce Headings
 .heading-announce {
-    color: inherit;
-    line-height: ( 65 / 70 );
-    text-transform: uppercase;
+    font: @font-size-hero-primary @brand-font-tertiary;
+    font-weight: @headings-font-weight;
+    line-height: @line-height-hero-primary;
+    @media @breakpoint-sm {
+        font-size: @font-size-hero-primary-sm;
+        line-height: @line-height-hero-primary-sm;
+    }
+    @media @breakpoint-md {
+        font-size: @font-size-hero-primary-md;
+        line-height: @line-height-hero-primary-md;
+    }
+    @media @breakpoint-lg {
+        font-size: @font-size-hero-primary-lg;
+        line-height: @line-height-hero-primary-lg;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Hero Headings
+.heading-hero {
+    font: @font-size-hero-primary @brand-font-tertiary;
+    font-weight: @headings-font-weight;
+    line-height: @line-height-hero-primary;
+    @media @breakpoint-sm {
+        font-size: @font-size-hero-primary-sm;
+        line-height: @line-height-hero-primary-sm;
+    }
+    @media @breakpoint-md {
+        font-size: @font-size-hero-primary-md;
+        line-height: @line-height-hero-primary-md;
+    }
+    @media @breakpoint-lg {
+        font-size: @font-size-hero-primary-lg;
+        line-height: @line-height-hero-primary-lg;
+    }
+}
+
 // Classification Label
 .label-classification {
     &:extend( .h4 );
     &:extend( .heading-editorial );
+    line-height: .9;
     border-bottom: 0.3rem solid;
     display: inline-block;
     margin-bottom: 2rem;
@@ -204,12 +306,12 @@ p {
 }
 
 .text-title {
-    font: normal normal @font-size-h3 @headings-font-family;
-    line-height: @headings-line-height;
+    font: normal normal @font-size-h3 @brand-font;
+    line-height: @line-height-heading;
 }
 
 .text-sub-heading {
-    font-family: @headings-font-family-secondary;
+    font-family: @brand-font-secondary;
     font-size: @font-size-large;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -327,7 +429,7 @@ small,
 }
 .text-lead {
     font-size: @font-size-large;
-    line-height: @headings-line-height;
+    line-height: @line-height-heading;
     .vertical-push();
     @media ( min-width: @screen-sm-min ) {
         font-size: @font-size-large;
@@ -433,6 +535,21 @@ address {
     margin-bottom: @line-height-computed;
     font-style: normal;
     line-height: @line-height-base;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Forms
+label {
+    font-family: @headings-font-family-secondary;
+    font-size:  @font-size-large ;
+    line-height: @line-height-heading;
+}
+
+.label-narrow {
+    label {
+        font-family: @font-family-sans-serif;
+        font-size:  @font-size-base ;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
