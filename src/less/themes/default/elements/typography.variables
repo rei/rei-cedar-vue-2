@@ -64,7 +64,7 @@
 @line-height-h2-lg:                                 calc( 44/40 );
 
 @line-height-h3:                                    calc( 30/24 );
-@line-height-h4:                                    @line-height-heading;
+@line-height-h4:                                    1.44444444;
 @line-height-h5:                                    @line-height-heading;
 @line-height-h6:                                    @line-height-heading;
 
