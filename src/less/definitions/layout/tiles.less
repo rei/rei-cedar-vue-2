@@ -1,0 +1,179 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'layout';
+@element : 'tiles';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// REI Cedar Card
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            Card Scaffolding
+//----------------------------------------------------------------------------------------------------------------------
+.tile {
+    display: block;
+    position: relative;
+    a& {
+        cursor: pointer;
+
+       &[ href ] {
+                backface-visibility: hidden;
+
+                &:focus,
+                &:hover {
+                    cursor: pointer;
+                    z-index: 5;
+                    text-decoration: none;
+
+                }
+            }
+    }
+    &.tile-content {
+        .border-radius(@tile-border-radius);
+        margin-bottom: @tile-spacer-outer-x;
+         a& {
+             transition: 0.25s ease;
+       &[ href ] {
+         transform: translateY( 0 );
+                box-shadow: none;
+                &:focus,
+                &:hover {
+                    transform: translateY( -@tile-hover-offset );
+                    box-shadow: 0 @tile-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
+                }
+            }
+    }
+    }
+}
+.tile-block {
+    padding: @tile-spacer-inner-x @tile-spacer-inner-y;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+//            Card header and footer
+//----------------------------------------------------------------------------------------------------------------------
+.tile {
+    &-header {
+        background-color: @tile-cap-bg;
+        border-bottom: @tile-border-width solid @tile-border-color;
+        padding: @tile-spacer-inner-y @tile-spacer-inner-x;
+        &:first-child {
+            .border-radius(@tile-border-radius-inner @tile-border-radius-inner 0 0);
+        }
+    }
+    &-footer {
+        background-color: @tile-cap-bg;
+        border-top: @tile-border-width solid @tile-border-color;
+        padding: @tile-spacer-inner-y @tile-spacer-inner-x;
+        &:last-child {
+            .border-radius(0 0 @tile-border-radius-inner @tile-border-radius-inner);
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            CARD IMAGES
+//----------------------------------------------------------------------------------------------------------------------
+.tile-media {
+  // margin: -1.325rem;
+ .border-radius(.25rem);
+ // Card image caps
+    .tile-content & {
+        .border-radius( @tile-border-radius-inner @tile-border-radius-inner );
+        &-top {
+            .border-radius( @tile-border-radius-inner @tile-border-radius-inner 0 0 );
+        }
+        &-bottom {
+            .border-radius( 0 0 @tile-border-radius-inner @tile-border-radius-inner );
+        }
+    }
+}
+.tile-media-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Color variations
+//----------------------------------------------------------------------------------------------------------------------
+.tile {
+    .tile-variant();
+    &-light {
+        &-1 {
+            .tile-variant( @core-background-1 );
+        }
+        &-2 {
+            .tile-variant( @core-architectural-6 );
+        }
+    }
+    &-medium{
+        &-1 {
+            .tile-variant( @core-architectural-3 );
+        }
+        &-2 {
+            .tile-variant( @core-background-2 );
+        }
+    }
+    &-dark {
+        &-1 {
+            .tile-variant( @core-architectural-2, rgba(255,255,255,.2) );
+        }
+        &-2 {
+            .tile-variant( @core-architectural-1 );
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Groups
+//----------------------------------------------------------------------------------------------------------------------
+
+.cards {
+    .tile {
+        display: inline-flex;
+        flex-flow: column nowrap;
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 .1rem .6rem 0 rgba( 0, 0, 0, .30 );
+        flex-grow: 0;
+        .border-radius( @tile-border-radius );
+        margin: 1rem;
+
+        @media ( min-width: @screen-md-min ) {
+            margin: 1.6rem;
+        }
+
+        a& {
+            cursor: pointer;
+            transition: 0.25s ease;
+            &[ href ] {
+                backface-visibility: hidden;
+                transform: translateY( 0 );
+                box-shadow: none;
+                &:focus,
+                &:hover {
+                    cursor: pointer;
+                    z-index: 5;
+                    box-shadow: 0 @tile-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
+                    text-decoration: none;
+                    transform: translateY( -@tile-hover-offset );
+                }
+            }
+        }
+
+        .well {
+            position: relative;
+            width: fit-content;
+        }
+    }
+}
+

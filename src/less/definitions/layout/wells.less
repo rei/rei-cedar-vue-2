@@ -1,15 +1,94 @@
-//
-// Wells
-// --------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Base class
+@type    : 'layout';
+@element : 'wells';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// REI Cedar Well
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            Well Scaffolding
+//----------------------------------------------------------------------------------------------------------------------
 .well {
-  padding: @vertical-push @padding-base-horizontal;
-  margin-bottom: 2rem;
-  & *:last-child {
+    display: block;
+    position: relative;
+    &:extend(.clearfix all);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Size variations
+//----------------------------------------------------------------------------------------------------------------------
+.well {
+    padding: @well-spacer-inner-y @well-spacer-inner-x;
+    margin-bottom: @well-spacer-outer-y;
+
+    .well-lg {
+        padding: @well-spacer-inner-lg-x;
+    }
+    .well-sm {
+        padding: @well-spacer-inner-sm-x;
+    }
+    .well-collapse {
+        margin-bottom: 0;
+    }
+    & *:last-child {
     margin-bottom: 0;
-  }
-  &:extend(.clearfix all);
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Color variations
+//----------------------------------------------------------------------------------------------------------------------
+// depricated
+.overlay-light-1 {
+    .color-variant( @core-background-1; @core-background-1 );
+}
+.overlay-light-2 {
+    .color-variant( @core-architectural-6; @core-architectural-6 );
+}
+.overlay-medium-1 {
+    .color-variant( @core-architectural-3; @core-architectural-3 );
+}
+.overlay-medium-2 {
+    .color-variant( @core-background-2; @core-background-2 );
+}
+.overlay-dark-1 {
+    .color-variant( @core-architectural-2; @core-architectural-2 );
+}
+.overlay-dark-2 {
+    .color-variant( @core-architectural-1; @core-architectural-1 );
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Deprecated Background color / text color classes
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.overlay-dark{ &:extend( .overlay-dark-1 ); }
+.overlay-medium{ &:extend( .overlay-dark-2 ); }
+.overlay-light{ &:extend( .overlay-light-1 ); }
+.overlay-dusty{ &:extend( .overlay-light-3 ); }
+// Explore
+.overlay-explore-dark,
+.well.overlay-explore-dark {
+    &:extend( .explore );
+    @bg-explore-2-ruleset();
+    .checkbox-radio-color-variant( @core-architectural-1; );
+}
+.overlay-explore-light,
+.well.overlay-explore-light {
+    @bg-explore-1-ruleset();
+}
+
+.overlay-outlet-dark-1,
+.well.overlay-outlet-dark-1 {
+    @bg-brand-danger-background-dark-ruleset();
+    .checkbox-radio-color-variant( @core-architectural-1; );
 }
 
 // Well shapes and shape groups
@@ -17,7 +96,7 @@
     .well {
         &:not(:last-of-type) {
             padding-bottom: (2rem + @vertical-push);
-            &:extend(.well-collapse);
+           margin-bottom: 0;
             @media (min-width: @screen-sm-min) {
                 padding-bottom: (4rem + @vertical-push);
             }
@@ -38,17 +117,6 @@
             }
         }
     }
-}
-
-// Sizes
-.well-lg {
-  padding: @padding-xlarge;
-}
-.well-sm {
-  padding: 0.9rem;
-}
-.well-collapse {
-  margin-bottom: 0;
 }
 
 // shapes

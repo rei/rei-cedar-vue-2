@@ -1,35 +1,223 @@
 <section class="vertical-push-3">
-  <h2 id="wells" class="page-header">Wells</h2>
-    <p class="bs-callout bs-callout-info">By default singleton wells have a bottom margin of <code>22px</code> to remove this simple add the <code>well-collapse</code> class to your well.</p>
-  <h3 class="status status-chat">Default well</h3>
-  <p>Use the well as a simple effect on an element to give it an inset effect.</p>
-  <div class="well" data-example-id="default-well">
-    <div class="well">
-      Look, I'm in a well!
-    </div>
-  </div>
-{% highlight html %}
-<div class="well">...</div>
-{% endhighlight %}
-  <h3 class="status status-chat">Appearance Modifications</h3>
-  <p>Control padding with two <strong>optional modifier classes</strong>.</p>
-  <div class="well" data-example-id="large-well">
-    <div class="well well-lg">
-      Look, I'm in a large well!
-    </div>
-  </div>
-{% highlight html %}
-<div class="well well-lg">...</div>
-{% endhighlight %}
 
-  <div class="well" data-example-id="small-well">
-    <div class="well well-sm">
-      Look, I'm in a small well!
-    </div>
-  </div>
+<h2> Wells </h2>
+<p>Wells are flexible and extensible wrappers for content which separate our gird structures from content.</p>
+<cedar-card>
+    <cedar-card-block delimiter="bottom" theme="light-20">
+    <h3> Simple well </h3>
+    </cedar-card-block>
+    <cedar-card-block>
+    <p>Wells require a small amount of markup and classes to provide you with as much control as possible.</p>
+
+    </cedar-card-block>
+    <cedar-card-block additional="cedar-example">
+        <div class="well" data-example-id="well">
+            <div class="img-frame ratio-9-16 portrait center">
+                <img src="http://placehold.it/320x150" alt="container image cap">
+            </div>
+            {% include /markup-templates/list-group/list-group-filter.html %}
+            {% include /markup-templates/lists/inline.html param="inline-featured" %}
+        </div>
+    </cedar-card-block>
+    <cedar-code-toggle
+    name="view code"
+    identifier="root-example"
+    type="toggle-show-hide"
+    align="text-xs-right"
+    >
 {% highlight html %}
-<div class="well well-sm">...</div>
+     <div class="well"></div>
 {% endhighlight %}
+    </cedar-code-toggle>
+</cedar-card>
+
+<h3 >Appearance Modifications</h3>
+ <p class="bs-callout bs-callout-info">By default a well has a bottom margin of <code>22px</code> to remove this add the <code>well-collapse</code> class to your well.</p>
+ <p>Control padding with two <strong>optional modifier classes</strong>.</p>
+<cedar-card>
+    <cedar-card-block delimiter="bottom" theme="light-20">
+   <h4>Large well</h4>
+    </cedar-card-block>
+    <cedar-card-block additional="cedar-example">
+        <div class="well well-lg" data-example-id="large-well">
+            Look, I'm in a large well!
+        </div>
+    </cedar-card-block>
+    <cedar-code-toggle
+    name="view code"
+    identifier="lg-well-example"
+    type="toggle-show-hide"
+    align="text-xs-right"
+    >
+{% highlight html %}
+    <div class="well well-lg">...</div>
+{% endhighlight %}
+    </cedar-code-toggle>
+</cedar-card>
+
+<cedar-card>
+    <cedar-card-block delimiter="bottom" theme="light-20">
+   <h4>Small well</h4>
+    </cedar-card-block>
+    <cedar-card-block additional="cedar-example">
+        <div class="well well-sm">
+            Look, I'm in a small well!
+        </div>
+    </cedar-card-block>
+    <cedar-code-toggle
+    name="view code"
+    identifier="sm-well-example"
+    type="toggle-show-hide"
+    align="text-xs-right"
+    >
+{% highlight html %}
+    <div class="well well-sm">...</div>
+{% endhighlight %}
+    </cedar-code-toggle>
+</cedar-card>
+
+
+<cedar-card>
+    <cedar-card-block>
+        <p>Constrain the width of a well via grid classes.</p>
+    </cedar-card-block>
+    <cedar-card-block additional="cedar-example">
+        <div class="row" data-example-id="container-in-grid">
+          <div class="col-sm-6">
+            <div class="well">
+              <h3>Vestibulum ante</h3>
+              <p>Proin quis tempus ligula. Sed turpis tortor, fermentum non risus non, tempus cursus nunc. Suspendisse sit amet enim sit amet nisl aliquet blandit non et tellus.</p>
+              <button class="btn btn-primary">amet nisl</button>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+              <h3>Vestibulum ante</h3>
+              <p>Proin quis tempus ligula. Sed turpis tortor, fermentum non risus non, tempus cursus nunc. Suspendisse sit amet enim sit amet nisl aliquet blandit non et tellus.</p>
+              <button class="btn btn-primary">Sed turpis tortor</button>
+            </div>
+          </div>
+        </div>
+    </cedar-card-block>
+    <cedar-code-toggle
+    name="view code"
+    identifier="grid-well-example"
+    type="toggle-show-hide"
+    align="text-xs-right"
+    >
+{% highlight html %}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="well"></div>
+        </div>
+    </div>
+{% endhighlight %}
+    </cedar-code-toggle>
+</cedar-card>
+
+<cedar-card>
+    <cedar-card-block delimiter="bottom" theme="light-20">
+   <h3>Text alignment</h3>
+    </cedar-card-block>
+    <cedar-card-block>
+        <p>You can quickly change the text alignment of any container—in its entirety or specific parts—with our text align classes.</p>
+    </cedar-card-block>
+    <cedar-card-block additional="cedar-example">
+        <div class="well text-xs-center" data-example-id="well-text-xs-center" >
+            <h4>Heading</h4>
+            <p>Copy.</p>
+            <button class="btn btn-primary">Button</button>
+        </div>
+        <div class="well text-xs-right" data-example-id="well-text-xs-right">
+            <h4>Heading</h4>
+            <p>Copy.</p>
+            <button class="btn btn-primary">Button</button>
+        </div>
+    </cedar-card-block>
+    <cedar-code-toggle
+    name="view code"
+    identifier="align-well-example"
+    type="toggle-show-hide"
+    align="text-xs-right"
+    >
+{% highlight html %}
+    <div class="well text-xs-center">
+    <h4>Heading</h4>
+    <p>Copy.</p>
+    <button class="btn btn-primary">Button</button>
+</div>
+
+<div class="well text-xs-right">
+    <h4>Heading</h4>
+    <p>Copy.</p>
+    <button class="btn btn-primary">Button</button>
+</div>
+{% endhighlight %}
+    </cedar-code-toggle>
+</cedar-card>
+
+<cedar-card>
+    <cedar-card-block delimiter="bottom" theme="light-20">
+        <h3> Background variants</h3>
+    </cedar-card-block>
+    <cedar-card-block>
+        <p>wells use the overlay variant classes for quickly changing their background-color and foreground-color.</p>
+    </cedar-card-block>
+    <cedar-card-block additional="cedar-example">
+       <div class="row" data-example-id="well-background-variants">
+            <div class="col-sm-3">
+                <div class="well overlay-light-1" >
+                    <p>container-light-1</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well overlay-light-2">
+                    <p>container-light-2</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well overlay-medium-1">
+                    <p>container-medium-1</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well overlay-medium-2">
+                    <p>container-medium-2</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well overlay-medium-3">
+                    <p>container-medium-3</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well overlay-dark-1">
+                    <p>container-dark-1</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well overlay-dark-2">
+                    <p>container-dark-2</p>
+                </div>
+            </div>
+        </div>
+    </cedar-card-block>
+    <cedar-code-toggle
+    name="view code"
+    identifier="theme-well-example"
+    type="toggle-show-hide"
+    align="text-xs-right"
+    >
+{% highlight html %}
+    <div class="well overlay-light-1" >
+    </div>
+    ...
+    <div class="well overlay-dark-2" >
+    </div>
+{% endhighlight %}
+    </cedar-code-toggle>
+</cedar-card>
+
 
 <h2 class="page-header">Well Groups</h2>
     {% include /elements/images/shapes/twin-mountain-peak-wells.html %}

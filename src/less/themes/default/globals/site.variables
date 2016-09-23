@@ -71,38 +71,6 @@
 @core-background-1:                      #f2f2f2;
 @core-background-2:                      #e5e5e5;
 
-// Core background fill and color helpers
-
-//Light
-//----------------------------------------------------------------------------------------------------------------------
-@background-white-ruleset: {
-  .bg-variant( @core-architectural-5 );
-};//#fff
-
-@background-dusty-white-ruleset: {
-  .bg-variant( @core-architectural-6 );
-};// @dusty-white;
-
-//Medium
-//----------------------------------------------------------------------------------------------------------------------
-@background-grey-1-ruleset: {
-  .bg-variant( @core-background-1; );
-};//#f2f2f2
-@background-grey-2-ruleset: {
-  .bg-variant( @core-background-2; );
-};//#e5e5e5;
-@background-grey-3-ruleset: {
-  .bg-variant( @core-architectural-3; @core-architectural-5; );
-};//#666
-
-//Dark
-//----------------------------------------------------------------------------------------------------------------------
-@background-grey-4-ruleset: {
-  .bg-variant( @core-architectural-2; @core-architectural-5; );
-};//#222
-@background-black-ruleset: {
-    .bg-variant( @core-architectural-1; @core-architectural-5; );
-};//black
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -249,6 +217,8 @@
 @header-spacing:                                       4rem;
 // Spacing between bottom of breadcrumbs and top of the rest of the content.
 @breadcrumb-spacing:                                   3rem;
+
+@border-radius:                                               0.3rem;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
