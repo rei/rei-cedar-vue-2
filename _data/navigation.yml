@@ -92,10 +92,7 @@ items:
                   href: panels
             - label: Cards
               slug: cards
-              href: layouts/cards/
-              nav:
-                - label: Cards
-                  href: cards
+              href: /layouts/cards/
 
     - label: Elements
       slug: elements
