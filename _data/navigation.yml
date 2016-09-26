@@ -90,6 +90,12 @@ items:
 
                 - label: Panels
                   href: panels
+            - label: Cards
+              slug: cards
+              href: layouts/cards/
+              nav:
+                - label: Cards
+                  href: cards
 
     - label: Elements
       slug: elements
