@@ -28,18 +28,20 @@
         >
         <label for="checkboxroot-example">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
-        {% highlight html %}
-            <div class="card">
-                <div class="card-media-top media-frame ratio-3-4 portrait center">
-                    <img src="img-path" alt="context">
+    <div class="card-block">
+        <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
+            {% highlight html %}
+                <div class="card">
+                    <div class="card-media-top media-frame ratio-3-4 portrait center">
+                        <img src="img-path" alt="context">
+                    </div>
+                    content not in card-block
+                    <div class="card-block text-xs-center">
+                        content within card-block and centered
+                    </div>
                 </div>
-                content not in card-block
-                <div class="card-block text-xs-center">
-                    content within card-block and centered
-                </div>
-            </div>
-        {% endhighlight %}
+            {% endhighlight %}
+        </div>
     </div>
 </div>
 
