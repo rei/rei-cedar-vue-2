@@ -4,7 +4,7 @@
 <h2>Examples</h2>
 
 <div class="card">
-    <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Card orginization example</h3></div>
+    <div class="card-block card-block--bottom" data-theme="light-20"><h3 class="h4">Card orginization example</h3></div>
     <div class="card-block"><p>A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p></div>
 
     <div class="card-block cedar-example">
@@ -18,7 +18,7 @@
                 </div>
         </div>
     </div>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="card-block--top code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
         <input
             type="checkbox"
             value=""
@@ -28,20 +28,18 @@
         >
         <label for="checkboxroot-example">View code</label>
     </div>
-    <div class="card-block">
-        <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
-            {% highlight html %}
-                <div class="card">
-                    <div class="card-media-top media-frame ratio-3-4 portrait center">
-                        <img src="img-path" alt="context">
-                    </div>
-                    content not in card-block
-                    <div class="card-block text-xs-center">
-                        content within card-block and centered
-                    </div>
+    <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
+        {% highlight html %}
+            <div class="card">
+                <div class="card-media-top media-frame ratio-3-4 portrait center">
+                    <img src="img-path" alt="context">
                 </div>
-            {% endhighlight %}
-        </div>
+                content not in card-block
+                <div class="card-block text-xs-center">
+                    content within card-block and centered
+                </div>
+            </div>
+        {% endhighlight %}
     </div>
 </div>
 
