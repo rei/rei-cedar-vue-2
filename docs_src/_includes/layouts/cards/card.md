@@ -29,17 +29,17 @@
         <label for="checkboxroot-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
-        {% highlight html %}
-            <div class="card">
-                <div class="card-media-top media-frame ratio-3-4 portrait center">
-                    <img src="img-path" alt="context">
-                </div>
-                content not in card-block
-                <div class="card-block text-xs-center">
-                    content within card-block and centered
-                </div>
+    {% highlight html %}
+        <div class="card">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="img-path" alt="context">
             </div>
-        {% endhighlight %}
+            content not in card-block
+            <div class="card-block text-xs-center">
+                content within card-block and centered
+            </div>
+        </div>
+    {% endhighlight %}
     </div>
 </div>
 
@@ -70,6 +70,7 @@
     </div>
     <div class="collapse code-toggle--document" id="card-link-example" data-theme="light-20">
 {% highlight html %}
+<<<<<<< Updated upstream
 <a href="#anchor-card-example" class="card">
     <div class="card-media-top media-frame ratio-3-4 portrait center">
         <img src="http://placehold.it/320x150" alt="Example image">
@@ -79,13 +80,24 @@
         <p>Copy.</p>
     </div>
 </a>
+=======
+    <a href="#this-example" class="card">
+        <div class="card-media-top media-frame ratio-3-4 portrait center">
+            <img src="http://placehold.it/320x150" alt="Example image">
+        </div>
+        <div class="card-block">
+            <h4>Heading</h4>
+            <p>Copy.</p>
+        </div>
+    </a>
+>>>>>>> Stashed changes
 {% endhighlight %}
     </div>
 </div>
 
 <div class="card">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Card Image Caps</h3></div>
-    <div class="card-block"><p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media. See <a href="#cedar-card-img">the table</a> below for more information on options.</p></div>
+    <div class="card-block"><p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media.</div>
 
     <div class="card-block cedar-example">
         <div class="card">
@@ -111,18 +123,18 @@
         <label for="checkboxcard-img-cap-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="card-img-cap-example" data-theme="light-20">
-{% highlight html %}
-    ...
-    <div class="card-media-top media-frame ratio-9-16 landscape left">
-        <img src="http://placehold.it/320x150" alt="Example image">
-    </div>
-    ...
-    ...
-    <div class="card-media-bottom media-frame ratio-4-3 portrait center">
-        <img src="http://placehold.it/320x150" alt="Example image">
-    </div>
-    ...
-{% endhighlight %}
+    {% highlight html %}
+        ...
+        <div class="card-media-top media-frame ratio-9-16 landscape left">
+            <img src="http://placehold.it/320x150" alt="Example image">
+        </div>
+        ...
+        ...
+        <div class="card-media-bottom media-frame ratio-4-3 portrait center">
+            <img src="http://placehold.it/320x150" alt="Example image">
+        </div>
+        ...
+    {% endhighlight %}
     </div>
 </div>
 
@@ -153,15 +165,15 @@
         <label for="checkboximage-overlay-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="image-overlay-example" data-theme="light-20">
-        {% highlight html %}
-            <div class="card" data-theme="dark-10">
-                <div class="card-media-top media-frame ratio-3-4 portrait center">
-                    <img src="img-path" alt="context">
-                </div>
-                <div class="card-block" data-overlay="media">
-                </div>
+    {% highlight html %}
+        <div class="card" data-theme="dark-10">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="img-path" alt="context">
             </div>
-        {% endhighlight %}
+            <div class="card-block" data-overlay="media">
+            </div>
+        </div>
+    {% endhighlight %}
     </div>
 </div>
 
@@ -232,12 +244,12 @@
         <label for="checkboximage-theme-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="image-theme-example" data-theme="light-20">
-        {% highlight html %}
-            <div class="card" data-theme='light-20'>
-                <div class="card-block"></div>
-            </div>
-            <div class="card-block" data-theme="medium-20"></div>
-        {% endhighlight %}
+    {% highlight html %}
+        <div class="card" data-theme='light-20'>
+            <div class="card-block"></div>
+        </div>
+        <div class="card-block" data-theme="medium-20"></div>
+    {% endhighlight %}
     </div>
 </div>
 
