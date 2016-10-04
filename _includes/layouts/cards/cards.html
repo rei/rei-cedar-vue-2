@@ -48,7 +48,7 @@
     <div class="card-block"><p>When linking an entire card, be sure no other actionable items are nested within the parent structure.</p></div>
 
     <div class="card-block cedar-example">
-        <a href="#this-example" class="card">
+        <a href="#anchor-card-example" class="card" id="anchor-card-example">
             <div class="card-media-top media-frame ratio-3-4 portrait center">
                 <img src="http://placehold.it/320x150" alt="Example image">
             </div>
@@ -70,7 +70,7 @@
     </div>
     <div class="collapse code-toggle--document" id="card-link-example" data-theme="light-20">
 {% highlight html %}
-<a href="#this-example" class="card">
+<a href="#anchor-card-example" class="card">
     <div class="card-media-top media-frame ratio-3-4 portrait center">
         <img src="http://placehold.it/320x150" alt="Example image">
     </div>
