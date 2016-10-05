@@ -43,9 +43,6 @@
 .card-block {
     display: block;
     padding: @card-spacer-inner-x @card-spacer-inner-y;
-    & *:last-child {
-    margin-bottom: 0;
-    }
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -53,13 +50,13 @@
 //----------------------------------------------------------------------------------------------------------------------
 .card {
     &-block--top {
-        border-top: @card-border-width solid @card-border-color;
+        border-bottom: @card-border-width solid @card-border-color;
         &:first-child {
             .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
         }
     }
     &-block--bottom {
-        border-bottom: @card-border-width solid @card-border-color;
+        border-top: @card-border-width solid @card-border-color;
         &:last-child {
             .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
         }

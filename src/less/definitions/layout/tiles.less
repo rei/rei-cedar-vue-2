@@ -21,86 +21,21 @@
     position: relative;
     a& {
         cursor: pointer;
-
-       &[ href ] {
-                backface-visibility: hidden;
-
-                &:focus,
-                &:hover {
-                    cursor: pointer;
-                    z-index: 5;
-                    text-decoration: none;
-
-                }
+        &[ href ] {
+            backface-visibility: hidden;
+            &:focus,
+            &:hover {
+                cursor: pointer;
+                z-index: 5;
+                text-decoration: none;
             }
-    }
-    &.tile-content {
-        .border-radius(@tile-border-radius);
-        margin-bottom: @tile-spacer-outer-x;
-         a& {
-             transition: 0.25s ease;
-       &[ href ] {
-         transform: translateY( 0 );
-                box-shadow: none;
-                &:focus,
-                &:hover {
-                    transform: translateY( -@tile-hover-offset );
-                    box-shadow: 0 @tile-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
-                }
-            }
-    }
+        }
     }
 }
 .tile-block {
     padding: @tile-spacer-inner-x @tile-spacer-inner-y;
 }
 
-//----------------------------------------------------------------------------------------------------------------------
-//            Card header and footer
-//----------------------------------------------------------------------------------------------------------------------
-.tile {
-    &-header {
-        background-color: @tile-cap-bg;
-        border-bottom: @tile-border-width solid @tile-border-color;
-        padding: @tile-spacer-inner-y @tile-spacer-inner-x;
-        &:first-child {
-            .border-radius(@tile-border-radius-inner @tile-border-radius-inner 0 0);
-        }
-    }
-    &-footer {
-        background-color: @tile-cap-bg;
-        border-top: @tile-border-width solid @tile-border-color;
-        padding: @tile-spacer-inner-y @tile-spacer-inner-x;
-        &:last-child {
-            .border-radius(0 0 @tile-border-radius-inner @tile-border-radius-inner);
-        }
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//            CARD IMAGES
-//----------------------------------------------------------------------------------------------------------------------
-.tile-media {
-  // margin: -1.325rem;
- .border-radius(.25rem);
- // Card image caps
-    .tile-content & {
-        .border-radius( @tile-border-radius-inner @tile-border-radius-inner );
-        &-top {
-            .border-radius( @tile-border-radius-inner @tile-border-radius-inner 0 0 );
-        }
-        &-bottom {
-            .border-radius( 0 0 @tile-border-radius-inner @tile-border-radius-inner );
-        }
-    }
-}
-.tile-media-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Color variations
 //----------------------------------------------------------------------------------------------------------------------

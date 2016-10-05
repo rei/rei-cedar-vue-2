@@ -1,4 +1,4 @@
-<p>A <strong>card</strong> is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
+<p>A <strong>card</strong> is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, theme colors, and powerful display options.</p>
 <p>Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease.</p>
 <p>Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.</p>
 <h2>Examples</h2>
@@ -29,17 +29,17 @@
         <label for="checkboxroot-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
-        {% highlight html %}
-            <div class="card">
-                <div class="card-media-top media-frame ratio-3-4 portrait center">
-                    <img src="img-path" alt="context">
-                </div>
-                content not in card-block
-                <div class="card-block text-xs-center">
-                    content within card-block and centered
-                </div>
-            </div>
-        {% endhighlight %}
+    {% highlight html %}
+    <div class="card">
+        <div class="card-media-top media-frame ratio-3-4 portrait center">
+            <img src="img-path" alt="context">
+        </div>
+        content not in card-block
+        <div class="card-block text-xs-center">
+            content within card-block and centered
+        </div>
+    </div>
+    {% endhighlight %}
     </div>
 </div>
 
@@ -69,17 +69,17 @@
         <label for="checkboxcard-link-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="card-link-example" data-theme="light-20">
-{% highlight html %}
-<a href="#this-example" class="card">
-    <div class="card-media-top media-frame ratio-3-4 portrait center">
-        <img src="http://placehold.it/320x150" alt="Example image">
-    </div>
-    <div class="card-block">
-        <h4>Heading</h4>
-        <p>Copy.</p>
-    </div>
-</a>
-{% endhighlight %}
+    {% highlight html %}
+    <a href="#this-example" class="card">
+        <div class="card-media-top media-frame ratio-3-4 portrait center">
+            <img src="http://placehold.it/320x150" alt="Example image">
+        </div>
+        <div class="card-block">
+            <h4>Heading</h4>
+            <p>Copy.</p>
+        </div>
+    </a>
+    {% endhighlight %}
     </div>
 </div>
 
@@ -111,7 +111,7 @@
         <label for="checkboxcard-img-cap-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="card-img-cap-example" data-theme="light-20">
-{% highlight html %}
+    {% highlight html %}
     ...
     <div class="card-media-top media-frame ratio-9-16 landscape left">
         <img src="http://placehold.it/320x150" alt="Example image">
@@ -122,7 +122,7 @@
         <img src="http://placehold.it/320x150" alt="Example image">
     </div>
     ...
-{% endhighlight %}
+    {% endhighlight %}
     </div>
 </div>
 
@@ -153,15 +153,15 @@
         <label for="checkboximage-overlay-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="image-overlay-example" data-theme="light-20">
-        {% highlight html %}
-            <div class="card" data-theme="dark-10">
-                <div class="card-media-top media-frame ratio-3-4 portrait center">
-                    <img src="img-path" alt="context">
-                </div>
-                <div class="card-block" data-overlay="media">
-                </div>
-            </div>
-        {% endhighlight %}
+    {% highlight html %}
+    <div class="card" data-theme="dark-10">
+        <div class="card-media-top media-frame ratio-3-4 portrait center">
+            <img src="img-path" alt="context">
+        </div>
+        <div class="card-block" data-overlay="media">
+        </div>
+    </div>
+    {% endhighlight %}
     </div>
 </div>
 
@@ -232,12 +232,11 @@
         <label for="checkboximage-theme-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="image-theme-example" data-theme="light-20">
-        {% highlight html %}
-            <div class="card" data-theme='light-20'>
-                <div class="card-block"></div>
-            </div>
-            <div class="card-block" data-theme="medium-20"></div>
-        {% endhighlight %}
+    {% highlight html %}
+    <div class="card" data-theme='light-20'>
+        <div class="card-block"></div>
+    </div>
+    {% endhighlight %}
     </div>
 </div>
 
