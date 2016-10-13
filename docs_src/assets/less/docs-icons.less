@@ -9,8 +9,12 @@
     .bs-icons-list {
         padding-left: 0;
         list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
         & .bs-icons-item {
-            .make-xs-column(6);
+            .make-xs-column(12);
             & .media {
                 .clearfix();
             }
@@ -24,6 +28,9 @@
                     float: none !important;
                     padding-left: 0;
                 }
+            }
+            @media( min-width: 35rem ) {
+                .make-xs-column(6);
             }
             @media( min-width: 70rem ) {
                 .make-xs-column(4);
@@ -40,15 +47,6 @@
                 margin-top: 0.5rem;
                 margin-bottom: 1rem;
                 vertical-align: middle;
-            }
-        }
-        & .well {
-            height: 40rem;
-            @media( min-width: 70rem ) {
-                height: 35rem;
-            }
-            .social & {
-              height: 20rem;
             }
         }
     }
@@ -70,5 +68,3 @@
       }
     }
 }
-
-
