@@ -250,6 +250,15 @@
   note: 28px allows for this icon to render at correct size of 20px
 
 - type: content
+  name: icon-rei-calendar
+  title: Calendar
+  description: Bring up date picker.
+  size: ( @icon-size-lg + 6px)
+  designSize: 26px
+  note: 28px allows for this icon to render at correct size of 20px
+
+
+- type: content
   name: icon-rei-error
   title: Error
   size: icon-size-lg
@@ -327,6 +336,14 @@
   description:
   size: icon-size-md
   designSize: 14px
+  note:
+
+- type: social
+  name: icon-rei-social-share
+  title: Share
+  description: General socail share icon.
+  size: ( @icon-size-lg )
+  designSize: 20px
   note:
 
 - type: social
