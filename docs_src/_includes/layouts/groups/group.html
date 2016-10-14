@@ -1,0 +1,238 @@
+<p>Card groups provide card elements flex layout options</p>
+
+<h2>Card group flex options</h2>
+
+<div class="card">
+    <div class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Defaut group of cards</h3></div>
+    <div class="card-block cedar-example">
+    <div class="group">
+        <div class="tile">
+            <div class="media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+                <div class="tile-block">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                </div>
+        </div>
+        <div class="tile">
+            <div class="media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+                <div class="tile-block">
+                <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                </div>
+        </div>
+        <div class="tile">
+            <div class="media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+                <div class="tile-block">
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                </div>
+        </div>
+    </div>
+    </div>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkboxroot-example"
+            data-toggle="collapse"
+            data-target="#root-example"
+        >
+        <label for="checkboxroot-example">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
+        {% highlight html %}
+           <div class="card-group">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+        {% endhighlight %}
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Fixed group of cards set to overflow</h3></div>
+    <div class="card-block"><p>A default group will put cards into a flex layout.</p></div>
+    <div class="card-block cedar-example">
+        <div class="group group-disply-fixed card-group-overflow">
+            <div class="tile">
+                <div class="media-frame ratio-3-4 portrait center">
+                    <img src="http://placehold.it/320x150" alt="Example image">
+                </div>
+                    <div class="tile-block">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                    </div>
+            </div>
+            <div class="tile">
+                <div class="media-frame ratio-3-4 portrait center">
+                    <img src="http://placehold.it/320x150" alt="Example image">
+                </div>
+                <div class="tile-block">
+                    <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="media-frame ratio-3-4 portrait center">
+                    <img src="http://placehold.it/320x150" alt="Example image">
+                </div>
+                <div class="tile-block">
+                    <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                </div>
+                <div class="tile-block">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                </div>
+                <div class="tile-block" >
+                    <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkboxroot-example"
+            data-toggle="collapse"
+            data-target="#group-overflow-fixed-example"
+        >
+        <label for="checkboxroot-example">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="group-overflow-fixed-example" data-theme="light-20">
+        {% highlight html %}
+            <div class="card">
+                <div class="card-media-top media-frame ratio-3-4 portrait center">
+                    <img src="img-path" alt="context">
+                </div>
+                content not in card-block
+                <div class="card-block text-xs-center">
+                    content within card-block and centered
+                </div>
+            </div>
+        {% endhighlight %}
+    </div>
+</div>
+
+<h2>Card group spacing options</h2>
+<h3>Card-group</h3>
+<p>Use card groups to render cards as a single, attached element with equal width and height columns.</p>
+<div class="card">
+    <div class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Default card group spacing</h3></div>
+    <div class="card-block"><p>A default group will put cards into a flex layout.</p></div>
+
+    <div class="card-block cedar-example">
+    <div class="group group-display-fixed" data-theme="light-20">
+        <div class="card">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+                <div class="card-block">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                </div>
+        </div>
+        <div class="card">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+                <div class="card-block">
+                <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                </div>
+        </div>
+        <div class="card">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+                <div class="card-block">
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                </div>
+        </div>
+    </div>
+    </div>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkboxroot-example"
+            data-toggle="collapse"
+            data-target="#group-fixed-example"
+        >
+        <label for="checkboxroot-example">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="group-fixed-example" data-theme="light-20">
+        {% highlight html %}
+            <div class="card">
+                <div class="card-media-top media-frame ratio-3-4 portrait center">
+                    <img src="img-path" alt="context">
+                </div>
+                content not in card-block
+                <div class="card-block text-xs-center">
+                    content within card-block and centered
+                </div>
+            </div>
+        {% endhighlight %}
+    </div>
+</div>
+
+<h3>Card-group card-group-primary</h3>
+<p>Need a set of equal width and height cards that aren’t attached to one another? Use card decks.</p>
+<div class="card">
+    <div class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Default card group spacing</h3></div>
+    <div class="card-block"><p>A default group will put cards into a flex layout.</p></div>
+
+    <div class="card-block cedar-example">
+    <div class="group group-gutter-primary group-display-fixed" data-theme="light-20">
+        <div class="card">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+                <div class="card-block">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                </div>
+        </div>
+        <div class="card">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+                <div class="card-block">
+                <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                </div>
+        </div>
+        <div class="card">
+            <div class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+            </div>
+                <div class="card-block">
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                </div>
+        </div>
+    </div>
+    </div>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkboxroot-example"
+            data-toggle="collapse"
+            data-target="#group-fixed-example"
+        >
+        <label for="checkboxroot-example">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="group-fixed-example" data-theme="light-20">
+        {% highlight html %}
+            <div class="card">
+                <div class="card-media-top media-frame ratio-3-4 portrait center">
+                    <img src="img-path" alt="context">
+                </div>
+                content not in card-block
+                <div class="card-block text-xs-center">
+                    content within card-block and centered
+                </div>
+            </div>
+        {% endhighlight %}
+    </div>
+</div>

@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            THEME
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -47,18 +47,17 @@
     margin-bottom: 0;
     }
 }
-
 //----------------------------------------------------------------------------------------------------------------------
 //            Card delimiter
 //----------------------------------------------------------------------------------------------------------------------
-.card {
-    &-block--top {
+.card-block {
+    &-top {
         border-top: @card-border-width solid @card-border-color;
         &:first-child {
             .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
         }
     }
-    &-block--bottom {
+    &-bottom {
         border-bottom: @card-border-width solid @card-border-color;
         &:last-child {
             .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
@@ -69,7 +68,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            CARD IMAGES
 //----------------------------------------------------------------------------------------------------------------------
-
 .card-media {
     .border-radius( @card-border-radius-inner @card-border-radius-inner );
     display: block;
@@ -95,44 +93,43 @@
 //  Groups
 //----------------------------------------------------------------------------------------------------------------------
 
-.cards {
-    .card {
-        display: inline-flex;
-        flex-flow: column nowrap;
+.group {
+    @media( min-width: @screen-sm-min ) {
         position: relative;
-        overflow: hidden;
-        background-color: #fff;
-        box-shadow: 0 .1rem .6rem 0 rgba( 0, 0, 0, .30 );
-        flex-grow: 0;
-        .border-radius( @card-border-radius );
-        margin: 1rem;
+        scroll-behavior: smooth;
+        user-select: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
 
-        @media ( min-width: @screen-md-min ) {
-            margin: 1.6rem;
-        }
-
-        a& {
+        &.group-disply-overflow {
+            overflow: auto;
+            flex-wrap: nowrap;
             cursor: pointer;
-            transition: 0.25s ease;
-            &[ href ] {
-                backface-visibility: hidden;
-                transform: translateY( 0 );
-                box-shadow: none;
-                &:focus,
-                &:hover {
-                    cursor: pointer;
-                    z-index: 5;
-                    box-shadow: 0 @card-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
-                    text-decoration: none;
-                    transform: translateY( -@card-hover-offset );
-                }
+            align-items: center;
+            padding-right: 25%;
+            &.card-group-disply-fixed {
+                align-items: stretch;
+            }
+        > .card{
+            min-width: 30rem;
             }
         }
+    }
+    &.group-fixed {
+        align-items: stretch;
+    }
+    > .card {
+        flex: 1 0 0;
+    }
+}
 
-        .well {
-            position: relative;
-            width: fit-content;
-        }
+.group-gutter-primary {
+    margin: -1rem;
+    margin: -1rem;
+    > .card {
+        margin: 1rem;
     }
 }
 

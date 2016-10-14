@@ -180,13 +180,13 @@
     .card-deck {
       display: flex;
       flex-flow: row wrap;
-      margin-right: -.625rem;
-      margin-left: -.625rem;
+      margin-right: -1rem;
+      margin-left: -1rem;
 
       .card {
         flex: 1 0 0;
-        margin-right: .625rem;
-        margin-left: .625rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
       }
     }
   }
