@@ -25,6 +25,7 @@
 @card-border-radius:                                             @border-radius;
 @card-border-color:                                              @core-background-2;
 @card-border-radius-inner:                                       @card-border-radius;
+@card-box-shadow:                                     0 0.2rem 0.3rem 0 rgba( 0, 0, 0, 0.3 );
 @card-cap-bg:                                                    #f5f5f5;
 @card-bg:                                                        #fff;
 @card-link-hover-color:                                          #fff;

@@ -18,6 +18,8 @@
 //----------------------------------------------------------------------------------------------------------------------
 .tile {
     display: block;
+    box-shadow: @tile-box-shadow;
+    .color-variant( @core-architectural-5 );
     position: relative;
     a& {
         cursor: pointer;
@@ -31,84 +33,17 @@
             }
         }
     }
-}
-.tile-block {
-    padding: @tile-spacer-inner-x @tile-spacer-inner-y;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  Color variations
-//----------------------------------------------------------------------------------------------------------------------
-.tile {
-    .tile-variant();
-    &-light {
-        &-1 {
-            .tile-variant( @core-background-1 );
-        }
-        &-2 {
-            .tile-variant( @core-architectural-6 );
-        }
+    .tile-block {
+        padding: @tile-spacer-inner-x @tile-spacer-inner-y;
+   }
+    &[data-theme="medium-10"]{
+        box-shadow: @tile-box-shadow-medium-10;
     }
-    &-medium{
-        &-1 {
-            .tile-variant( @core-architectural-3 );
-        }
-        &-2 {
-            .tile-variant( @core-background-2 );
-        }
+    &[data-theme="dark-10"]{
+        box-shadow: @tile-box-shadow-dark-10;
     }
-    &-dark {
-        &-1 {
-            .tile-variant( @core-architectural-2, rgba(255,255,255,.2) );
-        }
-        &-2 {
-            .tile-variant( @core-architectural-1 );
-        }
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  Groups
-//----------------------------------------------------------------------------------------------------------------------
-
-.cards {
-    .tile {
-        display: inline-flex;
-        flex-flow: column nowrap;
-        position: relative;
-        overflow: hidden;
-        background-color: #fff;
-        box-shadow: 0 .1rem .6rem 0 rgba( 0, 0, 0, .30 );
-        flex-grow: 0;
-        .border-radius( @tile-border-radius );
-        margin: 1rem;
-
-        @media ( min-width: @screen-md-min ) {
-            margin: 1.6rem;
-        }
-
-        a& {
-            cursor: pointer;
-            transition: 0.25s ease;
-            &[ href ] {
-                backface-visibility: hidden;
-                transform: translateY( 0 );
-                box-shadow: none;
-                &:focus,
-                &:hover {
-                    cursor: pointer;
-                    z-index: 5;
-                    box-shadow: 0 @tile-hover-offset .3rem -.1rem rgba( 0, 0, 0, 0.35 );
-                    text-decoration: none;
-                    transform: translateY( -@tile-hover-offset );
-                }
-            }
-        }
-
-        .well {
-            position: relative;
-            width: fit-content;
-        }
+    &[data-theme="dark-20"]{
+        box-shadow: @tile-box-shadow-dark-20;
     }
 }
 

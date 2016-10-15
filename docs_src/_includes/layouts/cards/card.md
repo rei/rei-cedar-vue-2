@@ -48,7 +48,7 @@
     <div class="card-block"><p>When linking an entire card, be sure no other actionable items are nested within the parent structure.</p></div>
 
     <div class="card-block cedar-example">
-        <a href="#this-example" class="card">
+        <a href="#anchored-card-example" class="card" id="anchored-card-example">
             <div class="card-media-top media-frame ratio-3-4 portrait center">
                 <img src="http://placehold.it/320x150" alt="Example image">
             </div>
@@ -70,7 +70,7 @@
     </div>
     <div class="collapse code-toggle--document" id="card-link-example" data-theme="light-20">
     {% highlight html %}
-    <a href="#this-example" class="card">
+    <a href="#anchored-card-example" class="card">
         <div class="card-media-top media-frame ratio-3-4 portrait center">
             <img src="http://placehold.it/320x150" alt="Example image">
         </div>
@@ -85,7 +85,7 @@
 
 <div class="card">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Card Image Caps</h3></div>
-    <div class="card-block"><p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media. See <a href="#cedar-card-img">the table</a> below for more information on options.</p></div>
+    <div class="card-block"><p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media.</div>
 
     <div class="card-block cedar-example">
         <div class="card">
@@ -239,4 +239,3 @@
     {% endhighlight %}
     </div>
 </div>
-
