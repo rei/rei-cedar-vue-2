@@ -1,9 +1,9 @@
-<p>A <strong>card</strong> is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
+<p>A <strong>card</strong> is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, theme colors, and powerful display options.</p>
 <p>Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease.</p>
 <p>Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.</p>
 <h2>Examples</h2>
 
-<div class="card">
+<div class="card vertical-push-lg">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Card orginization example</h3></div>
     <div class="card-block"><p>A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p></div>
 
@@ -30,20 +30,20 @@
     </div>
     <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
     {% highlight html %}
-        <div class="card">
-            <div class="card-media-top media-frame ratio-3-4 portrait center">
-                <img src="img-path" alt="context">
-            </div>
-            content not in card-block
-            <div class="card-block text-xs-center">
-                content within card-block and centered
-            </div>
+    <div class="card">
+        <div class="card-media-top media-frame ratio-3-4 portrait center">
+            <img src="img-path" alt="context">
         </div>
+        content not in card-block
+        <div class="card-block text-xs-center">
+            content within card-block and centered
+        </div>
+    </div>
     {% endhighlight %}
     </div>
 </div>
 
-<div class="card">
+<div class="card vertical-push-lg">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Linked Card</h3></div>
     <div class="card-block"><p>When linking an entire card, be sure no other actionable items are nested within the parent structure.</p></div>
 
@@ -69,7 +69,7 @@
         <label for="checkboxcard-link-example">View code</label>
     </div>
     <div class="collapse code-toggle--document" id="card-link-example" data-theme="light-20">
-{% highlight html %}
+    {% highlight html %}
     <a href="#anchored-card-example" class="card">
         <div class="card-media-top media-frame ratio-3-4 portrait center">
             <img src="http://placehold.it/320x150" alt="Example image">
@@ -79,14 +79,17 @@
             <p>Copy.</p>
         </div>
     </a>
-{% endhighlight %}
+    {% endhighlight %}
     </div>
 </div>
 
-<div class="card">
-    <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Card Image Caps</h3></div>
-    <div class="card-block"><p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media.</div>
-
+<div class="card vertical-push-lg">
+    <div class="card-block card-block--top" data-theme="light-20">
+        <h3 class="h4">Card Image Caps</h3>
+    </div>
+    <div class="card-block">
+        <p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media.</p>
+    </div>
     <div class="card-block cedar-example">
         <div class="card">
             <div class="card-media-top media-frame ratio-9-16 landscape left">
@@ -112,21 +115,21 @@
     </div>
     <div class="collapse code-toggle--document" id="card-img-cap-example" data-theme="light-20">
     {% highlight html %}
-        ...
-        <div class="card-media-top media-frame ratio-9-16 landscape left">
-            <img src="http://placehold.it/320x150" alt="Example image">
-        </div>
-        ...
-        ...
-        <div class="card-media-bottom media-frame ratio-4-3 portrait center">
-            <img src="http://placehold.it/320x150" alt="Example image">
-        </div>
-        ...
+    ...
+    <div class="card-media-top media-frame ratio-9-16 landscape left">
+        <img src="http://placehold.it/320x150" alt="Example image">
+    </div>
+    ...
+    ...
+    <div class="card-media-bottom media-frame ratio-4-3 portrait center">
+        <img src="http://placehold.it/320x150" alt="Example image">
+    </div>
+    ...
     {% endhighlight %}
     </div>
 </div>
 
-<div class="card">
+<div class="card vertical-push-lg">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Image overlays</h3></div>
     <div class="card-block"><p>Turn an image into a card background and overlay your card's text. To achive an accessible result, be sure to pass a <strong>theme</strong> value that is in line with the image color.</p></div>
 
@@ -154,18 +157,18 @@
     </div>
     <div class="collapse code-toggle--document" id="image-overlay-example" data-theme="light-20">
     {% highlight html %}
-        <div class="card" data-theme="dark-10">
-            <div class="card-media-top media-frame ratio-3-4 portrait center">
-                <img src="img-path" alt="context">
-            </div>
-            <div class="card-block" data-overlay="media">
-            </div>
+    <div class="card" data-theme="dark-10">
+        <div class="card-media-top media-frame ratio-3-4 portrait center">
+            <img src="img-path" alt="context">
         </div>
+        <div class="card-block" data-overlay="media">
+        </div>
+    </div>
     {% endhighlight %}
     </div>
 </div>
 
-<div class="card">
+<div class="card vertical-push-lg">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Theming a card</h3></div>
     <div class="card-block"><p>Cards can include a theme data attribute for quickly changing the <strong>background-color</strong> and <strong>color</strong> of a card or a card-block.</p></div>
     <div class="card-block cedar-example">
@@ -233,11 +236,9 @@
     </div>
     <div class="collapse code-toggle--document" id="image-theme-example" data-theme="light-20">
     {% highlight html %}
-        <div class="card" data-theme='light-20'>
-            <div class="card-block"></div>
-        </div>
-        <div class="card-block" data-theme="medium-20"></div>
+    <div class="card" data-theme='light-20'>
+        <div class="card-block"></div>
+    </div>
     {% endhighlight %}
     </div>
 </div>
-
