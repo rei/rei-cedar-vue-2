@@ -3,7 +3,7 @@
 <p>Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.</p>
 <h2>Examples</h2>
 
-<div class="card">
+<div class="card vertical-push-lg">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Card orginization example</h3></div>
     <div class="card-block"><p>A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p></div>
 
@@ -43,7 +43,7 @@
     </div>
 </div>
 
-<div class="card">
+<div class="card vertical-push-lg">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Linked Card</h3></div>
     <div class="card-block"><p>When linking an entire card, be sure no other actionable items are nested within the parent structure.</p></div>
 
@@ -83,10 +83,13 @@
     </div>
 </div>
 
-<div class="card">
-    <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Card Image Caps</h3></div>
-    <div class="card-block"><p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media.</div>
-
+<div class="card vertical-push-lg">
+    <div class="card-block card-block--top" data-theme="light-20">
+        <h3 class="h4">Card Image Caps</h3>
+    </div>
+    <div class="card-block">
+        <p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media.</p>
+    </div>
     <div class="card-block cedar-example">
         <div class="card">
             <div class="card-media-top media-frame ratio-9-16 landscape left">
@@ -126,7 +129,7 @@
     </div>
 </div>
 
-<div class="card">
+<div class="card vertical-push-lg">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Image overlays</h3></div>
     <div class="card-block"><p>Turn an image into a card background and overlay your card's text. To achive an accessible result, be sure to pass a <strong>theme</strong> value that is in line with the image color.</p></div>
 
@@ -165,7 +168,7 @@
     </div>
 </div>
 
-<div class="card">
+<div class="card vertical-push-lg">
     <div class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Theming a card</h3></div>
     <div class="card-block"><p>Cards can include a theme data attribute for quickly changing the <strong>background-color</strong> and <strong>color</strong> of a card or a card-block.</p></div>
     <div class="card-block cedar-example">
