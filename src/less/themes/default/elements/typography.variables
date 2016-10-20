@@ -69,21 +69,21 @@
 @line-height-h6:                                    @sentinel-line-height;
 
 // announce headings
-@line-height-announce-primary:                      70 / 76;
-@line-height-announce-primary-sm:                   120 / 146;
-@line-height-announce-primary-md:                   @line-height-announce-primary-sm;
-@line-height-announce-primary-lg:                   @line-height-announce-primary-sm;
+@line-height-announce-primary:                      1.125;
+@line-height-announce-primary-sm:                   @line-height-announce-primary;
+@line-height-announce-primary-md:                   @line-height-announce-primary;
+@line-height-announce-primary-lg:                   @line-height-announce-primary;
 
-@line-height-announce-secondary:                    60 / 55;
-@line-height-announce-secondary-sm:                 80 / 75;
-@line-height-announce-secondary-md:                 @line-height-announce-secondary-sm;
-@line-height-announce-secondary-lg:                 100 /120;
+@line-height-announce-secondary:                    @line-height-announce-primary;
+@line-height-announce-secondary-sm:                 @line-height-announce-primary;
+@line-height-announce-secondary-md:                 @line-height-announce-primary;
+@line-height-announce-secondary-lg:                 @line-height-announce-primary;
 
 // Hero
-@line-height-hero-primary:                          48 /58;
-@line-height-hero-primary-sm:                       68 /76;
-@line-height-hero-primary-md:                       @line-height-hero-primary-sm;
-@line-height-hero-primary-lg:                       90/100;
+@line-height-hero-primary:                          @line-height-announce-primary;
+@line-height-hero-primary-sm:                       @line-height-announce-primary;
+@line-height-hero-primary-md:                       @line-height-announce-primary;
+@line-height-hero-primary-lg:                       @line-height-announce-primary;
 
 // Impact headings
 @line-height-impact-h1:                             @sentinel-line-height;
@@ -112,53 +112,55 @@
 
 // Headings
 // Core
-@font-size-h1:                                      5.052rem;
-@font-size-h1-sm:                                   @font-size-h1;
-@font-size-h1-md:                                   @font-size-h1;
-@font-size-h1-lg:                                   @font-size-h1;
+@font-size-h1:                                      2.843rem;
+@font-size-h1-sm:                                   3.79rem;
+@font-size-h1-md:                                   @font-size-h1-sm;
+@font-size-h1-lg:                                   5.025rem;
 
-@font-size-h2:                                      3.79rem;
-@font-size-h2-sm:                                   @font-size-h2;
-@font-size-h2-md:                                   @font-size-h2;
-@font-size-h2-lg:                                   @font-size-h2;
+@font-size-h2:                                      @font-size-h1;
+@font-size-h2-sm:                                   @font-size-h1;
+@font-size-h2-md:                                   @font-size-h1;
+@font-size-h2-lg:                                   @font-size-h1-sm;
 
-@font-size-h3:                                      2.843rem;
-@font-size-h4:                                      2.133rem;
-@font-size-h5:                                      1.6rem;
-@font-size-h6:                                      1.2rem;
+@font-size-h3:                                      2.133rem;
+
+
+@font-size-h4:                                      1.6rem;
+@font-size-h5:                                      @font-size-h4;
+@font-size-h6:                                      @font-size-h4;
 
 // Announce
-@font-size-announce-primary:                        6.75rem;
-@font-size-announce-primary-sm:                     9rem;
-@font-size-announce-primary-md:                     12rem;
-@font-size-announce-primary-lg:                     16rem;
+@font-size-announce-primary:                        6.734rem;
+@font-size-announce-primary-sm:                     8.976rem;
+@font-size-announce-primary-md:                     11.965rem;
+@font-size-announce-primary-lg:                     15.949rem;
 
-@font-size-announce-secondary:                      5.06rem;
-@font-size-announce-secondary-sm:                   6.75rem;
-@font-size-announce-secondary-md:                   9rem;
-@font-size-announce-secondary-lg:                   12rem;
+@font-size-announce-secondary:                      @font-size-announce-primary;
+@font-size-announce-secondary-sm:                   @font-size-announce-primary-sm;
+@font-size-announce-secondary-md:                   @font-size-announce-primary-sm;
+@font-size-announce-secondary-lg:                   @font-size-announce-primary-md;
 
 // Hero
-@font-size-hero-primary:                            @font-size-hero-primary-md;
-@font-size-hero-primary-sm:                         @font-size-hero-primary-md;
-@font-size-hero-primary-md:                         6.75rem;
-@font-size-hero-primary-lg:                         9rem;
+@font-size-hero-primary:                            5.052rem;
+@font-size-hero-primary-sm:                         6.734rem;
+@font-size-hero-primary-md:                         @font-size-hero-primary-sm;
+@font-size-hero-primary-lg:                         @font-size-announce-primary-sm;
 
-// Impact
+// Explore - Impact
 @font-size-impact-h1:                               @font-size-h1;
-@font-size-impact-h1-sm:                            @font-size-impact-h1;
-@font-size-impact-h1-md:                            @font-size-impact-h1;
-@font-size-impact-h1-lg:                            @font-size-impact-h1;
+@font-size-impact-h1-sm:                            @font-size-h1-sm;
+@font-size-impact-h1-md:                            @font-size-h1-md;
+@font-size-impact-h1-lg:                            @font-size-h1-lg;
 
 @font-size-impact-h2:                               @font-size-h2;
-@font-size-impact-h2-sm:                            @font-size-impact-h2;
-@font-size-impact-h2-md:                            @font-size-impact-h2;
-@font-size-impact-h2-lg:                            @font-size-impact-h2;
+@font-size-impact-h2-sm:                            @font-size-h2-sm;
+@font-size-impact-h2-md:                            @font-size-h2-md;
+@font-size-impact-h2-lg:                            @font-size-h2-lg;
 
 @font-size-impact-h3:                               @font-size-h3;
-@font-size-impact-h3-sm:                            @font-size-impact-h3;
-@font-size-impact-h3-md:                            @font-size-impact-h3;
-@font-size-impact-h3-lg:                            @font-size-impact-h3;
+@font-size-impact-h3-sm:                            @font-size-h3;
+@font-size-impact-h3-md:                            @font-size-h3;
+@font-size-impact-h3-lg:                            @font-size-h3;
 
 @font-size-impact-h4:                               @font-size-h4;
 @font-size-impact-h5:                               @font-size-h5;
