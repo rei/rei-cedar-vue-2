@@ -19,6 +19,7 @@
     > li {
         > a {
             display: block;
+            // looking for a problem with fonts? it's in the button-size mixin as a default parameter
             .button-size( @padding-base-vertical; @padding-base-horizontal; @font-size-large; @btn-line-height; );
             &:extend( .text-title );
             &:extend( .link_navigation );
