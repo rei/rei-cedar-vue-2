@@ -8,7 +8,7 @@
         <h3 class="h4">Tile orginization example</h3>
     </section>
     <section class="card-block cedar-example">
-        <section class="tile">
+        <section class="tile" data-example-id="tile-orginization">
             <div class="media-frame ratio-3-4 portrait center">
                 <img src="http://placehold.it/320x150" alt="Example image">
             </div>
@@ -22,13 +22,13 @@
         <input
             type="checkbox"
             value=""
-            id="checkboxroot-example"
+            id="checkbox-tile-orginization"
             data-toggle="collapse"
-            data-target="#root-example"
+            data-target="#tile-orginization"
         >
-        <label for="checkboxroot-example">View code</label>
+        <label for="checkbox-tile-orginization">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="root-example" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="tile-orginization" data-theme="light-20">
     {% highlight html %}
     <section class="tile">
         <div class="media-frame ratio-3-4 portrait center">
@@ -49,7 +49,7 @@
     </section>
     <section class="card-block">Placeing a group of wells within a tile.</section>
     <section class="card-block cedar-example">
-        <section class="tile">
+        <section class="tile" data-example-id="groups-within-tiles">
             <section class="media-frame ratio-3-4 portrait center">
                 <img src="http://placehold.it/320x150" alt="Example image">
             </section>
@@ -82,13 +82,13 @@
         <input
             type="checkbox"
             value=""
-            id="checkboxcard-group-example"
+            id="checkbox-groups-within-tiles"
             data-toggle="collapse"
-            data-target="#tile-group-example"
+            data-target="#groups-within-tiles"
         >
-        <label for="checkboxcard-group-example">View code</label>
+        <label for="checkbox-groups-within-tiles">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="tile-group-example" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="groups-within-tiles" data-theme="light-20">
     {% highlight html %}
     <section class="tile">
             <section class="media-frame"></section>
@@ -114,7 +114,7 @@
     </section>
     <section class="card-block"><p>When linking an entire tile, be sure no other actionable items are nested within the parent structure.</p></section>
     <section class="card-block cedar-example">
-        <a href="#tile-as-an-anchor" class="tile" id="tile-as-an-anchor">
+        <a href="#tile-as-an-anchor" class="tile" id="tile-as-an-anchor" data-example-id="linked-tile">
             <div class="media-frame ratio-3-4 portrait center">
                 <img src="http://placehold.it/320x150" alt="Example image">
             </div>
@@ -128,13 +128,13 @@
         <input
             type="checkbox"
             value=""
-            id="checkboxcard-link-example"
+            id="checkbox-linked-tile"
             data-toggle="collapse"
-            data-target="#tile-link-example"
+            data-target="#linked-tile"
         >
-        <label for="checkboxcard-link-example">View code</label>
+        <label for="checkbox-linked-tile">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="tile-link-example" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="linked-tile" data-theme="light-20">
     {% highlight html %}
     <a href="#tile-as-an-anchor" class="tile" id="tile-as-an-anchor">
         <div class="media-frame ratio-3-4 portrait center">
@@ -157,7 +157,7 @@
         <p>Turn an image into a card background and overlay your card's text. To achive an accessible result, be sure to pass a <strong>theme</strong> value that is in line with the image color.</p>
     </section>
     <section class="card-block cedar-example">
-        <section class="tile" data-theme="dark-10">
+        <section class="tile" data-theme="dark-10" data-example-id="image-overlays">
             <div class="media-frame ratio-3-4 portrait center">
                 <img src="http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg" alt="Text overlay cedar-card-image-cap component example">
             </div>
@@ -172,13 +172,13 @@
         <input
             type="checkbox"
             value=""
-            id="checkboximage-overlay-example"
+            id="checkbox-image-overlays"
             data-toggle="collapse"
-            data-target="#image-overlay-example"
+            data-target="#image-overlays"
         >
-        <label for="checkboximage-overlay-example">View code</label>
+        <label for="checkbox-image-overlays">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="image-overlay-example" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="image-overlays" data-theme="light-20">
     {% highlight html %}
     <section class="tile" data-theme="dark-10">
         <div class="media-frame ratio-3-4 portrait center">
@@ -192,10 +192,10 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Theming a card</h3></section>
+    <section class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Theming a tile</h3></section>
     <section class="card-block"><p>Tiles can include a theme data attribute for quickly changing the <strong>background-color</strong> and <strong>color</strong>.</p></section>
     <section class="card-block cedar-example">
-        <div class="group group-display-fixed" data-example-id="card-background-variants">
+        <div class="group group-display-fixed" data-example-id="card-background-variants" data-example-id="theming-a-tile">
             <div class="col-sm-3">
                 <section class="tile" data-theme='light-10'>
                     <div class="tile-block">
@@ -251,13 +251,13 @@
         <input
             type="checkbox"
             value=""
-            id="checkboximage-theme-example"
+            id="checkbox-theming-a-tile"
             data-toggle="collapse"
-            data-target="#image-theme-example"
+            data-target="#theming-a-tile"
         >
-        <label for="checkboximage-theme-example">View code</label>
+        <label for="checkbox-theming-a-tile">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="image-theme-example" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="theming-a-tile" data-theme="light-20">
     {% highlight html %}
     <section class="tile" data-theme='light-20'>
         <div class="tile-block"></div>

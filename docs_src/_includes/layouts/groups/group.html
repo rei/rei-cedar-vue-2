@@ -7,7 +7,7 @@
         <h3 class="h4">Grid Colunms changing display at breakpoints</h3>
     </section>
     <section class="card-block cedar-example">
-        <div class="group group-display-fixed" data-theme="light-20">
+        <div class="group group-display-fixed" data-theme="light-20" data-example-id="group-grid">
             <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                 <section class="tile">
                     <div class="media-frame ratio-3-4 portrait center">
@@ -134,13 +134,13 @@
         <input
             type="checkbox"
             value=""
-            id="group-col-default-example"
+            id="checkbox-group-grid"
             data-toggle="collapse"
-            data-target="#gutter-col-example"
+            data-target="#group-grid"
         >
-        <label for="group-col-default-example">View code</label>
+        <label for="checkbox-group-grid">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="gutter-col-example" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="group-grid" data-theme="light-20">
     {% highlight html %}
     <div class="group group-display-fixed" data-theme="light-20">
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
@@ -195,7 +195,7 @@
     </section>
     <section class="card-block cedar-example">
         <h4> Group with tiles</h4>
-        <div class="group group-display-fixed" data-theme="light-20">
+        <div class="group group-display-fixed" data-theme="light-20" data-example-id="collapsed-group-gutter">
             <div class="col-xs-4">
                 <section class="tile">
                     <div class="media-frame ratio-3-4 portrait center">
@@ -233,13 +233,13 @@
         <input
             type="checkbox"
             value=""
-            id="group-gutter-default-example"
+            id="checkbox-collapsed-group-gutter"
             data-toggle="collapse"
-            data-target="#gutter-default-example"
+            data-target="#collapsed-group-gutter"
         >
-        <label for="group-gutter-default-example">View code</label>
+        <label for="checkbox-collapsed-group-gutter">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="gutter-default-example" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="collapsed-group-gutter" data-theme="light-20">
     {% highlight html %}
     <div class="group group-display-fixed" data-theme="light-20">
         <div class="col-xs-4">
@@ -262,7 +262,7 @@
 
     <div class="card-block cedar-example">
         <h4> Group with Cards</h4>
-        <div class="group group-display-fixed group-gutter-open-10" data-theme="light-20">
+        <div class="group group-display-fixed group-gutter-open-10" data-theme="light-20" data-example-id="open-group-gutter">
             <div class="col-xs-4">
                 <article class="card">
                     <div class="card-media-top media-frame ratio-3-4 portrait center">
@@ -300,13 +300,13 @@
         <input
             type="checkbox"
             value=""
-            id="group-gutter-open-10-example"
+            id="checkbox-open-group-gutter"
             data-toggle="collapse"
-            data-target="#gutter-open-10-example"
+            data-target="#open-group-gutter"
         >
-        <label for="group-gutter-open-10-example">View code</label>
+        <label for="checkbox-open-group-gutter">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="gutter-open-10-example" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="open-group-gutter" data-theme="light-20">
     {% highlight html %}
     <div class="group group-display-fixed group-gutter-open-10" data-theme="light-20">
         <div class="col-xs-4">
@@ -328,7 +328,7 @@
 <article class="card vertical-push-lg">
     <div class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Well</h3></div>
     <div class="card-block cedar-example">
-        <div class="group group-display-fixed" data-theme="light-20">
+        <div class="group group-display-fixed" data-theme="light-20" data-example-id="content-containers-well">
             <div class="col-xs-4">
                 <div class="well">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
@@ -376,7 +376,7 @@
 <article class="card vertical-push-lg">
     <section class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Tile</h3></section>
     <section class="card-block cedar-example">
-        <div class="group group-display-fixed" data-theme="light-20">
+        <div class="group group-display-fixed" data-theme="light-20" data-example-id="content-containers-tile">
             <div class="col-xs-4">
                 <section class="tile">
                     <div class="tile-block">
@@ -430,7 +430,7 @@
 <article class="card vertical-push-lg">
     <section class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Card</h3></section>
     <section class="card-block cedar-example">
-        <div class="group group-display-fixed group-gutter-open-10" data-theme="light-20">
+        <div class="group group-display-fixed group-gutter-open-10" data-theme="light-20" data-example-id="content-containers-card">
             <div class="col-xs-4">
                 <article class="card">
                     <section class="card-block">
@@ -491,7 +491,7 @@
         <p> Without providing any <code>.group-display-*</code> classes to your Group, you will have a display type that is consistent with the float display provided by the defalt page grid.
     </section>
     <section class="card-block cedar-example">
-        <div class="group">
+        <div class="group" data-example-id="defaut-flex-display">
             <div class="col-xs-12 col-sm-4">
                  <section class="tile">
                       <div class="media-frame ratio-3-4 portrait center">
@@ -551,13 +551,13 @@
 
 <article class="card vertical-push-lg">
     <section class="card-block card-block-top" data-theme="light-20">
-        <h3 class="h4">group-display-fixed</h3>
+        <h3 class="h4">Fixed group display</h3>
     </section>
     <section class="card-block">
         <p>Add the <code>.group-display-fixed</code> class to groups to force all containers to stretch to the same height.</p>
     </section>
     <section class="card-block cedar-example">
-        <div class="group group-gutter-open-10 group-display-fixed" data-theme="light-20">
+        <div class="group group-gutter-open-10 group-display-fixed" data-theme="light-20" data-example-id="fixed-group-display">
             <div class="col-xs-4">
                 <article class="card">
                     <section class="card-media-top media-frame ratio-3-4 portrait center">
@@ -617,11 +617,11 @@
 
 <article class="card vertical-push-lg">
     <section class="card-block card-block-top" data-theme="light-20">
-        <h3 class="h4">Fixed group of cards set to overflow</h3>
+        <h3 class="h4">overflow group display</h3>
     </section>
     <section class="card-block"><p>Overflow changes the wrapping proporty to no wrap and allows for a horizontal scroll. This is available for the fixed or default group-display settings.</p></section>
     <section class="card-block cedar-example">
-        <div class="group group-display-fixed group-gutter-open-10 group-display-overflow">
+        <div class="group group-display-fixed group-gutter-open-10 group-display-overflow" data-example-id="overflow-group-display">
             <div class="col-xs-6">
                 <article class="card">
                     <section class="media-frame ratio-3-4 portrait center">
