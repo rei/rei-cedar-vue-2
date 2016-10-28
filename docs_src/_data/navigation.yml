@@ -97,6 +97,10 @@ items:
                 - label: Panels
                   href: panels
 
+            - label: Groups
+              slug: groups
+              href: /layouts/groups/
+
             - label: Cards
               slug: cards
               href: /layouts/cards/
