@@ -564,3 +564,10 @@ items:
             - label: Javascript Documentation
               slug: javascript
               href: /style-and-behavior/javascript/
+    - label: UI Component Examples
+      slug: ui-component-examples
+      href: /ui-component-examples/
+      subCats: 
+            - label: Riot JS Examples
+              slug: riot-js-examples
+              href: /ui-component-examples/riot-js-examples/
