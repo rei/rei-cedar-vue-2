@@ -28,15 +28,17 @@ $('#myModal').on('shown.bs.modal', function () {
 <p>A rendered modal with header, body, and set of actions in the footer.</p>
 
 <div class="well well-modal" data-example-id="static-modal">
-    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myTitle" aria-describedby="myDesc">
+      <span class="sr-only">Begin dialog</span>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="close icon icon-rei-close" aria-label="Close"></div>
+                    <h6 class="modal-title" id="myTitle">Modal title</h6>
                 </div>
                 <div class="modal-body">
                     <div class="modal-body-content">
-                        <p>One fine body&hellip;</p>
+                        <p id="myDesc">One fine body&hellip;</p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -45,18 +47,21 @@ $('#myModal').on('shown.bs.modal', function () {
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
+        <span class="sr-only">End dialog</span>
     </div><!-- /.modal -->
 </div><!-- /example -->
 {% highlight html %}
-<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myTitle" aria-describedby="myDesc">
+    <span class="sr-only">Begin dialog</span>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="close icon icon-rei-close" aria-label="Close"></div>
+                <h6 class="modal-title" id="myTitle">Modal title</h6>
             </div>
             <div class="modal-body">
                 <div class="modal-body-content">
-                    <p>One fine body&hellip;</p>
+                    <p id="myDesc">One fine body&hellip;</p>
                 </div>
             </div>
             <div class="modal-footer">
@@ -65,6 +70,7 @@ $('#myModal').on('shown.bs.modal', function () {
             </div>
         </div>
     </div>
+    <span class="sr-only">End dialog</span>
 </div>
 {% endhighlight %}
 
@@ -72,11 +78,12 @@ $('#myModal').on('shown.bs.modal', function () {
 <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
 <!-- sample modal content -->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <span class="sr-only">Begin dialog</span>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="close close-dialog icon icon-rei-close" aria-label="Close" data-dismiss="modal"></div>
-                <h6 class="modal-title" id="myModalLabel">Modal title</h6>
+                <h6 class="modal-title" id="myModalLabel">Demo Modal title</h6>
             </div>
             <div class="modal-body">
                 <div class="modal-body-content">
@@ -110,26 +117,30 @@ $('#myModal').on('shown.bs.modal', function () {
 
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
+    <span class="sr-only">End dialog</span>
 </div><!-- /.modal -->
 
 <div class="well well-padded-bottom">
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Launch demo modal
+        <span class="visually-hidden">Opens dialog</span>
     </button>
 </div><!-- /example -->
 {% highlight html %}
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
     Launch demo modal
+    <span class="visually-hidden">Opens dialog</span>
 </button>
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <span class="sr-only">Begin dialog</span>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="close icon icon-rei-close" aria-label="Close"></div>
-                <h6 class="modal-title">Modal title</h6>
+                <h6 class="modal-title" id="myModalLabel">Modal title</h6>
             </div>
             <div class="modal-body">
                 <div class="modal-body-content">
@@ -143,6 +154,7 @@ $('#myModal').on('shown.bs.modal', function () {
 
         </div>
     </div>
+    <span class="sr-only">End dialog</span>
 </div>
 {% endhighlight %}
 
@@ -168,27 +180,34 @@ $('#myModal').on('shown.bs.modal', function () {
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".well-modal-lg">Large modal</button>
 
 <div class="modal fade well-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <span class="sr-only">Begin dialog</span>
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
+            <h6 class="modal-title" id="myLargeModalLabel">Large Modal</h6>
             ...
         </div>
     </div>
+    <span class="sr-only">End dialog</span>
 </div>
 
 <!-- Small modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".well-modal-sm">Small modal</button>
 
 <div class="modal fade well-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <span class="sr-only">Begin dialog</span>
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
+            <h6 class="modal-title" id="mySmallModalLabel">Small Modal</h6>
             ...
         </div>
     </div>
+    <span class="sr-only">End dialog</span>
 </div>
 {% endhighlight %}
 
 <!--  Modal content for the above example -->
 <div class="modal fade well-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <span class="sr-only">Begin dialog</span>
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -202,8 +221,10 @@ $('#myModal').on('shown.bs.modal', function () {
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
+    <span class="sr-only">End dialog</span>
 </div><!-- /.modal -->
 <div class="modal fade well-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <span class="sr-only">Begin dialog</span>
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
@@ -217,13 +238,16 @@ $('#myModal').on('shown.bs.modal', function () {
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
+    <span class="sr-only">End dialog</span>
 </div><!-- /.modal -->
 
 <h4 id="modals-remove-animation">Remove animation</h4>
 <p>For modals that simply appear rather than fade in to view, remove the <code>.fade</code> class from your modal markup.</p>
 {% highlight html %}
 <div class="modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <span class="sr-only">Begin dialog</span>
     ...
+    <span class="sr-only">End dialog</span>
 </div>
 {% endhighlight %}
 
@@ -231,6 +255,7 @@ $('#myModal').on('shown.bs.modal', function () {
 <p>To take advantage of the Bootstrap grid system within a modal, just nest <code>.container-fluid</code> within the <code>.modal-body</code> and then use the normal grid system classes within this container.</p>
 <!-- sample modal content -->
 <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
+    <span class="sr-only">Begin dialog</span>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -273,19 +298,22 @@ $('#myModal').on('shown.bs.modal', function () {
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
+    <span class="sr-only">End dialog</span>
 </div><!-- /.modal -->
 <div class="well well-padded-bottom">
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gridSystemModal">
         Launch demo modal
+        <span class="visually-hidden">Opens dialog</span>
     </button>
 </div><!-- /example -->
 {% highlight html %}
 <div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    <span class="sr-only">Begin dialog</span>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="close icon icon-rei-close" aria-label="Close"></div>
-                <h6 class="modal-title" id="gridModalLabel">Modal title</h6>
+                <h6 class="modal-title" id="gridSystemModalLabel">Modal title</h6>
             </div>
             <div class="modal-body">
                 <div class="modal-body-content">
@@ -323,6 +351,7 @@ $('#myModal').on('shown.bs.modal', function () {
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
+    <span class="sr-only">End dialog</span>
 </div><!-- /.modal -->
 
 {% endhighlight %}
@@ -415,7 +444,9 @@ myModal.hide();
                 <a data-toggle="modal" data-url="/content/remote.html" data-selector="#myContent" data-target="#modal">Click me</a>
 
                 <div id="modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                    <span class="sr-only">Begin dialog</span>
                     ...
+                    <span class="sr-only">End dialog</span>
                 </div>
                 {% endhighlight %}
             </td>
