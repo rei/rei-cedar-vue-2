@@ -1,0 +1,75 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'layout';
+@element : 'groups';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  display
+//----------------------------------------------------------------------------------------------------------------------
+.group {
+    display: @group-display;
+    @group-display-flex-ruleset();
+    position: @group-position;
+    &.group-display-overflow {
+        @group-overflow-display-flex-ruleset();
+        cursor: @group-overflow-cursor;
+        overflow: @group-overflow;
+        &.group-disply-fixed {
+            @group-fixed-display-flex-ruleset();
+        }
+    }
+    &.group-display-fixed {
+        @group-fixed-display-flex-ruleset();
+    }
+    .card,
+    .tile,
+    .well {
+        @group-display-grandchild-flex-ruleset();
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  gutter
+//----------------------------------------------------------------------------------------------------------------------
+.group {
+    > [class^=col-],
+    > [class*=col-] {
+        display: @group-display-child-container;
+        padding: @group-gutter-width;
+    }
+    &.group-gutter-open-10 {
+        padding: @group-gutter-width-primary;
+        > [class^=col-],
+        > [class*=col-] {
+            padding: @group-gutter-width-primary;
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  grid
+//----------------------------------------------------------------------------------------------------------------------
+.group {
+     >.col-xs-auto {
+        min-width: @group-grid-auto-width;
+        @group-grid-auto-flex-ruleset();
+    }
+
+    .group-col-variant( 12; xs );
+
+    @media (min-width: @screen-sm-min) {
+         .group-col-variant( 12; sm );
+    }
+    @media (min-width: @screen-md-min) {
+         .group-col-variant( 12; md );
+    }
+    @media (min-width: @screen-lg-min) {
+         .group-col-variant( 12; lg );
+    }
+}

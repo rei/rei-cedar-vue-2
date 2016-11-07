@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            THEME
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -19,9 +19,12 @@
 .card {
     .border-radius(@card-border-radius);
     box-shadow: @card-box-shadow;
-    .color-variant();
+    .color-variant( @core-architectural-5 );
     display: block;
     position: relative;
+    > .img-responsive {
+        width: 100%;
+    }
     a& {
         cursor: pointer;
         transition: 0.25s ease;
@@ -43,18 +46,17 @@
     display: block;
     padding: @card-spacer-inner-x @card-spacer-inner-y;
 }
-
 //----------------------------------------------------------------------------------------------------------------------
 //            Card delimiter
 //----------------------------------------------------------------------------------------------------------------------
-.card {
-    &-block-top {
+.card-block {
+    &-top {
         border-bottom: @card-border-width solid @card-border-color;
         &:first-child {
             .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
         }
     }
-    &-block-bottom {
+    &-bottom {
         border-top: @card-border-width solid @card-border-color;
         &:last-child {
             .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);
@@ -65,25 +67,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            CARD IMAGES
 //----------------------------------------------------------------------------------------------------------------------
-
 .card-media {
     .border-radius( @card-border-radius-inner @card-border-radius-inner );
     display: block;
-    &-top {
+    &-top,
+    &-top > img {
         .border-radius( @card-border-radius-inner @card-border-radius-inner 0 0 );
         display: block;
     }
-    &-bottom {
+    &-bottom,
+    &-bottom > img {
         .border-radius( 0 0 @card-border-radius-inner @card-border-radius-inner );
         display: block;
     }
 }
-
-[data-overlay="media"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-

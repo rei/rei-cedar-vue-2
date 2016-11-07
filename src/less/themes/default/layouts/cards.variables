@@ -30,3 +30,5 @@
 @card-bg:                                                        #fff;
 @card-link-hover-color:                                          #fff;
 @card-hover-offset:                                              0.2rem;
+@card-tile-border-width:                                         0.01rem;
+@card-tile-border-color:                                         #e5e5e5;

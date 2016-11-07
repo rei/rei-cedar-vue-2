@@ -1,0 +1,42 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// REI-CEDAR GROUPS THEME VARIABLES
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  display
+//----------------------------------------------------------------------------------------------------------------------
+@group-display-flex-ruleset: {
+    align-items: flex-start;
+    flex-flow: row wrap;
+    justify-content: space-between;
+};
+@group-position:                                                relative;
+@group-display:                                                 flex;
+@group-display-child-container:                                 inline-flex;
+@group-display-grandchild-flex-ruleset: {
+    flex: 1 0 0;
+};
+//overflow
+@group-overflow-display-flex-ruleset: {
+    align-items: center;
+    flex-flow: nowrap;
+};
+@group-overflow:                                                auto;
+@group-overflow-cursor:                                         pointer;
+//fixed
+@group-fixed-display-flex-ruleset: {
+  align-items: stretch;
+};
+
+//  gutter
+//-------------------------------------------------------------------------
+@group-gutter-width:                                             0;
+@group-gutter-width-primary:                                     1rem;
+
+//  grid
+//-------------------------------------------------------------------------
+@group-grid-auto-width:                                               0;
+@group-grid-auto-flex-ruleset: {
+    flex-grow: 1;
+};
+
