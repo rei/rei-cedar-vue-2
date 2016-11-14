@@ -88,9 +88,6 @@ items:
                 - label: Wells
                   href: wells
 
-                - label: Thumbnails
-                  href: thumbnails
-
                 - label: Media object
                   href: media
 

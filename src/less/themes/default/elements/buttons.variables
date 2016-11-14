@@ -118,5 +118,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @btn-font-size:                                    @font-size-large;
 @btn-font-size-lg:                                 @font-size-h3;
-@btn-font-weight:                                  normal;
+@btn-font-weight:                                  bold;
 @btn-line-height:                                  1;
