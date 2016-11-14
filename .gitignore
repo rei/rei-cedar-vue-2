@@ -51,6 +51,7 @@ docs_src/assets/js/*.min.js
 docs_src/_includes/less
 docs_src/_includes/**/*.less
 docs_src/_data/package.json
+docs_src/riot/compiled-tags/*
 
 # Compiled files added to docs_src
 /docs_src/.jekyll-metadata
