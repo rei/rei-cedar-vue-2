@@ -19,29 +19,19 @@
             </section>
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-card-orginization"
-            data-toggle="collapse"
-            data-target="#card-orginization"
-        >
-        <label for="checkbox-card-orginization">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="card-orginization" data-theme="light-20">
-    {% highlight html %}
-        <article class="card">
-            <section class="card-media-top media-frame ratio-3-4 portrait center">
-                <img src="http://placehold.it/320x150" alt="Example image">
-            </section>
-            content out of card-block
-            <section class="card-block text-xs-center">
-                content within card-block
-            </section>
-        </article>
-    {% endhighlight %}
-    </div>
+    
+    <cedar-code-toggle></cedar-code-toggle>
+    <script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
+    <script>
+        var opts = {
+            dataTarget : '#card-orginization',
+            id : 'checkbox-card-orginization',
+            targetId : 'card-orginization',
+            labelFor : 'checkbox-card-orginization'
+        };
+        riot.mount('*', opts )
+    </script>
+
 </article>
 
 <article class="card vertical-push-lg">
