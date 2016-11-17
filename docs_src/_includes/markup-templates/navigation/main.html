@@ -1,23 +1,20 @@
 <div id="current" class="hidden">current page</div>
 <ul class="doc_head-navigation" role="menubar">
     {% unless page.slug =="main" %}
-    <li class="doc_head-navigation-item home" role="menuitem">
-        <a href="/" class="link_stag-explore-overlay">REI Pattern Library
-        </a>
+    <li class="doc_head-navigation-item home" role="presentation">
+        <a href="/" class="link_stag-explore-overlay" role="menuitem">REI Pattern Library</a>
     </li>
     {% endunless %}
     {% for item in site.data.navigation.items %}
     <li class="doc_head-navigation-item {% if page.url == item.href or page.url == item.subCats.href %}active{% endif %}"
-        role="menuitem"
-        {% if item.subCats %}aria-haspopup="true"{% endif %}>
-        <a href="{{item.href}}">
-            {{item.label}}
-        </a>
+      role="menuitem"
+      {% if item.subCats %}aria-haspopup="true"{% endif %}>
+        <a href="{{item.href}}">{{item.label}}</a>
         {% if item.subCats %}
         <ul class="doc_head-navigation-nested-list" role="menu">
             {% for nested in item.subCats %}
-            <li class=" nested-item " role="menuitem">
-                <a href="{{ nested.href }}">{{ nested.label }}</a>
+            <li class=" nested-item " role="presentation">
+                <a href="{{ nested.href }}" role="menuitem">{{ nested.label }}</a>
             </li>
             {% endfor %}
         </ul>
