@@ -7,9 +7,9 @@
     {% endunless %}
     {% for item in site.data.navigation.items %}
     <li class="doc_head-navigation-item {% if page.url == item.href or page.url == item.subCats.href %}active{% endif %}"
-      role="menuitem"
+      role="presentation"
       {% if item.subCats %}aria-haspopup="true"{% endif %}>
-        <a href="{{item.href}}">{{item.label}}</a>
+        <a href="{{item.href}}" role="menuitem">{{item.label}}</a>
         {% if item.subCats %}
         <ul class="doc_head-navigation-nested-list" role="menu">
             {% for nested in item.subCats %}
