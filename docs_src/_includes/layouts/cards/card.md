@@ -23,11 +23,22 @@
     <cedar-code-toggle></cedar-code-toggle>
     <script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
     <script>
+        var codeSampleString = '<article class="card">\n' +
+            '<section class="card-media-top media-frame ratio-3-4 portrait center">\n' +
+                '<img src="http://placehold.it/320x150" alt="Example image">\n' +
+            '</section>\n' +
+            'content out of card-block\n' +
+            '<section class="card-block text-xs-center">\n' +
+                'content within card-block\n' +
+            '</section>\n' +
+        '</article>';
+
         var opts = {
             dataTarget : '#card-orginization',
             id : 'checkbox-card-orginization',
             targetId : 'card-orginization',
-            labelFor : 'checkbox-card-orginization'
+            labelFor : 'checkbox-card-orginization',
+            codeExample : codeSampleString
         };
         riot.mount('*', opts )
     </script>
