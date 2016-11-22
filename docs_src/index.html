@@ -28,9 +28,15 @@ slug: main
 <div class="overlay-dark-2 ui-navigation">
     <div class="container">
         <div class="row">
-            <a class="btn btn-block btn-contrast btn-primary hidden-md hidden-lg" data-toggle="collapse" data-target="#pattern_navigation"><span class="icon icon-rei-hamburger-menu"></span></a>
-            <nav id="pattern_navigation" role="navigation" class=" col-md-12 collapse">
-
+            <button type="button" class="btn btn-block btn-contrast btn-primary hidden-md hidden-lg"
+              data-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="pattern_navigation"
+              data-target="#pattern_navigation"
+              aria-label="Navigation Toggle">
+                <span class="icon icon-rei-hamburger-menu" aria-hidden="true"></span>
+            </button>
+            <nav id="pattern_navigation" aria-label="Primary Navigation" role="navigation" class="col-md-12 collapse">
                 {% include markup-templates/navigation/main.html %}
             </nav>
         </div>
