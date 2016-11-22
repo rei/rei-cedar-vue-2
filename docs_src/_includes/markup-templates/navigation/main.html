@@ -9,12 +9,20 @@
     <li class="doc_head-navigation-item {% if page.url == item.href or page.url == item.subCats.href %}active{% endif %}"
       role="presentation"
       {% if item.subCats %}aria-haspopup="true"{% endif %}>
-        <a href="{{item.href}}" role="menuitem">{{item.label}}</a>
+        <a href="{{item.href}}"
+            role="menuitem"
+            {% if page.url == item.href %}aria-describedby="current"{% endif %}>
+                {{item.label}}
+            </a>
         {% if item.subCats %}
         <ul class="doc_head-navigation-nested-list" role="menu">
             {% for nested in item.subCats %}
             <li class=" nested-item " role="presentation">
-                <a href="{{ nested.href }}" role="menuitem">{{ nested.label }}</a>
+                <a href="{{ nested.href }}"
+                    role="menuitem"
+                    {% if page.url == nested.href %}aria-describedby="current"{% endif %}>
+                        {{ nested.label }}
+                    </a>
             </li>
             {% endfor %}
         </ul>
