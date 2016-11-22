@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en-us">
+  <header role="banner">
     <!-- Meta, title, CSS, favicons, etc. -->
     {% include /header.html %}
-  </head>
+  </header>
   <body>
     <div>
       <a id="skippy" class="skip-nav-link sr-only sr-only-focusable" href="#content">
@@ -40,7 +40,7 @@
               </div>
           </div>
       </div>
-      <div class="container vertical-pull-2">
+      <div class="container vertical-pull-2" role="main">
         <div class="row">
             {% unless page.fullwidth == true %}
             <div class="col-md-3 pull-right" role="complementary">
