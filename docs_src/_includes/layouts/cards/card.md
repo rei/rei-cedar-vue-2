@@ -9,7 +9,7 @@
     </section>
     <section class="card-block"><p>A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p></section>
     <section class="card-block cedar-example">
-        <article class="card" data-example-id="card-orginization">
+        <article class="card" data-example-id="card-organization">
             <section class="card-media-top media-frame ratio-3-4 portrait center">
                 <img src="http://placehold.it/320x150" alt="Example image">
             </section>
@@ -19,30 +19,25 @@
             </section>
         </article>
     </section>
-    
-    <cedar-code-toggle></cedar-code-toggle>
-    <script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
     <script>
-        var codeSampleString = '<article class="card">\n' +
-            '<section class="card-media-top media-frame ratio-3-4 portrait center">\n' +
-                '<img src="http://placehold.it/320x150" alt="Example image">\n' +
-            '</section>\n' +
-            'content out of card-block\n' +
-            '<section class="card-block text-xs-center">\n' +
-                'content within card-block\n' +
-            '</section>\n' +
+        var codeSampleString1 = '<article class="card">\n' +
+        '<section class="card-media-top media-frame ratio-3-4 portrait center">\n' +
+            '<img src="http://placehold.it/320x150" alt="Example image">\n' +
+        '</section>\n' +
+        'content out of card-block\n' +
+        '<section class="card-block text-xs-center">\n' +
+            'content within card-block\n' +
+        '</section>\n' +
         '</article>';
-
-        var opts = {
-            dataTarget : '#card-orginization',
-            id : 'checkbox-card-orginization',
-            targetId : 'card-orginization',
-            labelFor : 'checkbox-card-orginization',
-            codeExample : codeSampleString
-        };
-        riot.mount('*', opts )
     </script>
-
+    <cedar-code-toggle
+        data-target="#card-organization"
+        id="checkbox-card-organization"
+        targetId="card-organization"
+        labelFor="checkbox-card-organization"
+        codeExample="{codeSampleString1}"
+    ></cedar-code-toggle>
+    <script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
 </article>
 
 <article class="card vertical-push-lg">
@@ -80,34 +75,32 @@
             </div>
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-groups-within-cards"
-            data-toggle="collapse"
-            data-target="#groups-within-cards"
-        >
-        <label for="checkbox-groups-within-cardse">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="groups-within-cards" data-theme="light-20">
-    {% highlight html %}
-    <article class="card">
-        <section class="card-media-top"></section>
-        <div class="group group-display-fixed">
-            <div class="col-xs-4">
-                <section class="tile"></section>
-            </div>
-            <div class="col-xs-4">
-                <section class="tile"></section>
-            </div>
-            <div class="col-xs-4">
-                <section class="tile"></section>
-            </div>
-        </div>
-    </article>
-    {% endhighlight %}
-    </div>
+    <script>
+        var codeSampleString2 = '<article class="card">\n' +
+            '<section class="card-media-top"></section>\n' +
+            '<div class="group group-display-fixed">\n' +
+                '<div class="col-xs-4">\n' +
+                    '<section class="tile"></section>\n' +
+                '</div>\n' +
+                '<div class="col-xs-4">\n' +
+                    '<section class="tile"></section>\n' +
+                '</div>\n' +
+                '<div class="col-xs-4">\n' +
+                    '<section class="tile"></section>\n' +
+                '</div>\n' +
+            '</div>\n' +
+            '</article>';
+    </script>
+    <cedar-code-toggle
+        dataTarget='#groups-within-cards'
+        id='checkbox-groups-within-cards'
+        targetId='groups-within-cards'
+        labelFor='checkbox-groups-within-cards'
+        codeExample='{codeSampleString2}'
+    ></cedar-code-toggle>
+    <script type="text/javascript">
+        riot.mount('*');
+    </script>
 </article>
 
 <article class="card vertical-push-lg">
