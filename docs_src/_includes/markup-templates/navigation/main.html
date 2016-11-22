@@ -7,10 +7,10 @@
     {% endunless %}
     {% for item in site.data.navigation.items %}
     <li class="doc_head-navigation-item {% if page.url == item.href or page.url == item.subCats.href %}active{% endif %}"
-      role="presentation"
-      {% if item.subCats %}aria-haspopup="true"{% endif %}>
+      role="presentation">
         <a href="{{item.href}}"
           role="menuitem"
+          {% if item.subCats %}aria-haspopup="true"{% endif %}
           {% if page.url == item.href %}aria-describedby="current"{% endif %}>
             {{item.label}}
         </a>

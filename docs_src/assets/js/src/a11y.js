@@ -34,10 +34,10 @@ $.fn.setup_navigation = function(settings) {
 		.attr('tabIndex',-1);
 
 	// Adding aria-haspopup for appropriate items
-	$(top_level_links).each(function(){
-		if($(this).next('ul').length > 0)
-			$(this).parent('li').attr('aria-haspopup', 'true');
-	});
+	// $(top_level_links).each(function(){
+	// 	if($(this).next('ul').length > 0)
+	// 		$(this).parent('li').attr('aria-haspopup', 'true');
+	// });
 
 	$(top_level_links).hover(function(){
 		$(this).closest('ul')
