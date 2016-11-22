@@ -2,86 +2,62 @@
   theme: core
   size: Default
   class: btn-primary
-  font: 24px Anderson
+  font: 2.1rem Roboto Condensed
   heading: Large
-  padding: 32px
+  padding: 3.2rem
 
 - type: primary core
   theme: core
   size: Small
   class: btn-primary btn-sm
-  font: 18px Interstate Bld Cnd
+  font: 1.8rem Roboto Condensed
   heading: Small
-  padding: 24px
+  padding: 2.4rem
 
 - type: primary core
   theme: core
   size: Extra small
   class: btn-primary btn-xs
-  font: 14px Interstate Bld Cnd
+  font: 1.4rem Roboto Condensed
   heading: Extra small
-  padding: 16px
+  padding: 1.6rem
 
 - type: primary explore
   theme: core
   size: Default
   class: btn-explore btn-primary
-  font: 24px Anderson
+  font: 2.1rem Roboto Condensed
   heading: Large
-  padding: 32px
+  padding: 3.2rem
 
 - type: primary explore
   theme: core
   size: Small
   class: btn-explore btn-primary btn-sm
-  font: 18px Interstate Bld Cnd
+  font: 1.8rem Roboto Condensed
   heading: Small
-  padding: 24px
-
-- type: primary outlet
-  theme: outlet
-  size: Default
-  class: btn-outlet btn-primary
-  font: 24px Anderson
-  heading: Large
-  padding: 32px
-
-- type: primary outlet
-  theme: outlet
-  size: Small
-  class: btn-outlet btn-primary btn-sm
-  font: 18px Interstate Bld Cnd
-  heading: Small
-  padding: 24px
-
-- type: primary outlet
-  theme: outlet
-  size: Extra small
-  class: btn-outlet btn-primary btn-xs
-  font: 14px Interstate Bld Cnd
-  heading: Extra small
-  padding: 16px
+  padding: 2.4rem
 
 - type: primary off-price
   theme: off-price
   size: Default
   class: btn-off-price btn-primary
-  font: 24px Anderson
+  font: 2.1rem Roboto Condensed
   heading: Large
-  padding: 32px
+  padding: 3.2rem
 
 - type: primary off-price
   theme: off-price
   size: Small
   class: btn-off-price btn-primary btn-sm
-  font: 18px Interstate Bld Cnd
+  font: 1.8rem Roboto Condensed
   heading: Small
-  padding: 24px
+  padding: 2.4rem
 
 - type: primary off-price
   theme: off-price
   size: Extra small
   class: btn-off-price btn-primary btn-xs
-  font: 14px Interstate Bld Cnd
+  font: 1.4rem Roboto Condensed
   heading: Extra small
-  padding: 16px
+  padding: 1.6rem
