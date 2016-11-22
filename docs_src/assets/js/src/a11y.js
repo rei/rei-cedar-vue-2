@@ -33,6 +33,7 @@ $.fn.setup_navigation = function(settings) {
 		.find('a')
 		.attr('tabIndex',-1);
 
+	// We already do this in the HTML
 	// Adding aria-haspopup for appropriate items
 	// $(top_level_links).each(function(){
 	// 	if($(this).next('ul').length > 0)
