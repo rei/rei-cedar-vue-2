@@ -19,8 +19,9 @@
             </section>
         </article>
     </section>
-    <cedar-code-toggle>
-    </cedar-code-toggle>
+    <div id='code-example-1'>
+        <cedar-code-toggle></cedar-code-toggle>
+    </div>
     <script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
     <script>
         var codeSampleString = '<article class="card">\n' +
@@ -39,7 +40,7 @@
             labelFor : 'checkbox-card-organization',
             codeExample : codeSampleString
         };
-        riot.mount('cedar-code-toggle', data);
+        riot.mount('#code-example-1', 'cedar-code-toggle', data);
     </script>
 </article>
 
@@ -78,7 +79,9 @@
             </div>
         </article>
     </section>
-    <!--
+    <div id='code-example-2'>
+        <cedar-code-toggle></cedar-code-toggle>
+    </div>
     <script>
         var codeSampleString2 = '<article class="card">\n' +
             '<section class="card-media-top"></section>\n' +
@@ -94,18 +97,15 @@
                 '</div>\n' +
             '</div>\n' +
             '</article>';
+        var data2 = {
+            dataTarget : '#groups-within-cards',
+            elementId : 'checkbox-groups-within-cards',
+            targetId : 'groups-within-cards',
+            labelFor : 'checkbox-groups-within-cards',
+            codeExample : codeSampleString2
+        };
+        riot.mount('#code-example-2', 'cedar-code-toggle', data2);
     </script>
-    <cedar-code-toggle
-        dataTarget='#groups-within-cards'
-        id='checkbox-groups-within-cards'
-        targetId='groups-within-cards'
-        labelFor='checkbox-groups-within-cards'
-        codeExample='{codeSampleString2}'
-    ></cedar-code-toggle>
-    <script type="text/javascript">
-        
-    </script>
-    -->
 </article>
 <article class="card vertical-push-lg">
     <section class="card-block card-block--top" data-theme="light-20">
