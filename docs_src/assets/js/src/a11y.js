@@ -37,6 +37,7 @@ $.fn.setup_navigation = function() {
 			.attr('aria-hidden', 'false')
 			.find('.'+menuHoverClass)
 			.hideMenu();
+
 		$(this).next('ul')
 			.showMenu();
 	});
@@ -174,23 +175,16 @@ $.fn.setup_navigation = function() {
 }
 
 $.fn.showMenu = function() {
-	$(this)
-		.attr('aria-hidden', 'false')
+	return this.attr('aria-hidden', 'false')
 		.addClass(menuHoverClass)
 		.css({ left:0, opacity:0.99 })
-		.find('a')
-		.attr('tabIndex',0);
-
-	return $(this)
+		.find('a').attr('tabIndex',0);
 }
 
 $.fn.hideMenu = function() {
-	$(this)
-		.attr('aria-hidden', 'true')
+	return this.attr('aria-hidden', 'true')
 		.removeClass(menuHoverClass)
 		.css({ left: '-999.9rem', opacity: 0 })
 		.find('a')
 		.attr('tabIndex',-1);
-
-	return $(this)
 }
