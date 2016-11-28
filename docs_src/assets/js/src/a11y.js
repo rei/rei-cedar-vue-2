@@ -12,6 +12,59 @@ var keyCodeMap = {
 
 var menuHoverClass = 'js-show-menu';
 
+$.fn.showMenu = function() {
+	return this.attr('aria-hidden', 'false')
+		.addClass(menuHoverClass)
+		.css({ left:0, opacity:0.99 })
+		.find('a').attr('tabIndex',0);
+}
+
+$.fn.hideMenu = function() {
+	return this.attr('aria-hidden', 'true')
+		.removeClass(menuHoverClass)
+		.css({ left: '-999.9rem', opacity: 0 })
+		.find('a')
+		.attr('tabIndex',-1);
+}
+
+function openAndFocus(el, direction) {
+	var menu = $(el).parent('li').find('ul')
+
+	if(menu.length > 0) {
+		if (direction === 'up') {
+			menu.showMenu().last().focus();
+		} else if (direction === 'down') {
+			menu.showMenu().first().focus();
+		}
+	}
+}
+
+function linkFocus(el, direction) {
+	var menu = $(el).parent('li');
+
+	if (direction === 'left' || direction === 'up') {
+		if(menu.prev('li').length == 0) {
+			if (direction === 'left') {
+				$(el).parents('ul').find('> li').last().find('a').first().focus();
+			} else if (direction === 'up') {
+				$(el).parents('ul').parents('li').find('a').first().focus();
+			}
+		} else {
+			menu.prev('li').find('a').first().focus();
+		}
+	} else if (direction === 'right' || direction === 'down') {
+		if(menu.next('li').length == 0) {
+			if (direction === 'right') {
+				$(el).parents('ul').find('> li').first().find('a').first().focus();
+			} else if (direction === 'down') {
+				$(el).parents('ul').parents('li').find('a').first().focus();
+			}
+		} else {
+			menu.next('li').find('a').first().focus();
+		}
+	}
+}
+
 $.fn.setup_navigation = function() {
 
 	// Add ARIA role to menubar and menu items
@@ -55,46 +108,26 @@ $.fn.setup_navigation = function() {
 	$(top_level_links).keydown(function(e){
 		if(e.keyCode == 37) {
 			e.preventDefault();
-			// This is the first item
-			if($(this).parent('li').prev('li').length == 0) {
-				$(this).parents('ul').find('> li').last().find('a').first().focus();
-			} else {
-				$(this).parent('li').prev('li').find('a').first().focus();
-			}
-		} else if(e.keyCode == 38) {
-			e.preventDefault();
-			if($(this).parent('li').find('ul').length > 0) {
-				$(this).parent('li').find('ul')
-					.showMenu()
-					.last().focus();
-			}
+			linkFocus($(this), 'left');
 		} else if(e.keyCode == 39) {
 			e.preventDefault();
-			// This is the last item
-			if($(this).parent('li').next('li').length == 0) {
-				$(this).parents('ul').find('> li').first().find('a').first().focus();
-			} else {
-				$(this).parent('li').next('li').find('a').first().focus();
-			}
+			linkFocus($(this), 'right');
+		} else if(e.keyCode == 38) {
+			e.preventDefault();
+			openAndFocus($(this), 'up');
 		} else if(e.keyCode == 40) {
 			e.preventDefault();
-			if($(this).parent('li').find('ul').length > 0) {
-				$(this).parent('li').find('ul')
-					.showMenu()
-					.first().focus();
-			}
+			openAndFocus($(this), 'down');
 		}
 		else if(e.keyCode == 32) {
 			// If submenu is hidden, open it
 			e.preventDefault();
 			$(this).parent('li').find('ul[aria-hidden=true]')
-				.showMenu()
-				.first().focus();
+				.showMenu().first().focus();
 		}
 		else if(e.keyCode == 27) {
 			e.preventDefault();
-			$('.'+menuHoverClass)
-				.hideMenu();
+			$('.'+menuHoverClass).hideMenu();
 		} else {
 			$(this).parent('li').find('ul[aria-hidden=false] a').each(function(){
 				if($(this).text().substring(0,1).toLowerCase() == keyCodeMap[e.keyCode]) {
@@ -110,19 +143,10 @@ $.fn.setup_navigation = function() {
 	$(links).keydown(function(e){
 		if(e.keyCode == 38) {
 			e.preventDefault();
-			// This is the first item
-			if($(this).parent('li').prev('li').length == 0) {
-				$(this).parents('ul').parents('li').find('a').first().focus();
-			} else {
-				$(this).parent('li').prev('li').find('a').first().focus();
-			}
+			linkFocus($(this), 'up');
 		} else if(e.keyCode == 40) {
 			e.preventDefault();
-			if($(this).parent('li').next('li').length == 0) {
-				$(this).parents('ul').parents('li').find('a').first().focus();
-			} else {
-				$(this).parent('li').next('li').find('a').first().focus();
-			}
+			linkFocus($(this), 'down');
 		} else if(e.keyCode == 27 || e.keyCode == 37) {
 			e.preventDefault();
 			$(this)
@@ -172,19 +196,4 @@ $.fn.setup_navigation = function() {
 	$(this).click(function(e){
 		e.stopPropagation();
 	});
-}
-
-$.fn.showMenu = function() {
-	return this.attr('aria-hidden', 'false')
-		.addClass(menuHoverClass)
-		.css({ left:0, opacity:0.99 })
-		.find('a').attr('tabIndex',0);
-}
-
-$.fn.hideMenu = function() {
-	return this.attr('aria-hidden', 'true')
-		.removeClass(menuHoverClass)
-		.css({ left: '-999.9rem', opacity: 0 })
-		.find('a')
-		.attr('tabIndex',-1);
 }
