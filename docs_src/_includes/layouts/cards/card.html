@@ -19,8 +19,11 @@
             </section>
         </article>
     </section>
+    <cedar-code-toggle>
+    </cedar-code-toggle>
+    <script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
     <script>
-        var codeSampleString1 = '<article class="card">\n' +
+        var codeSampleString = '<article class="card">\n' +
         '<section class="card-media-top media-frame ratio-3-4 portrait center">\n' +
             '<img src="http://placehold.it/320x150" alt="Example image">\n' +
         '</section>\n' +
@@ -29,15 +32,15 @@
             'content within card-block\n' +
         '</section>\n' +
         '</article>';
+        var data = {
+            dataTarget : '#card-organization',
+            elementId : 'checkbox-card-organization',
+            targetId : 'card-organization',
+            labelFor : 'checkbox-card-organization',
+            codeExample : codeSampleString
+        };
+        riot.mount('cedar-code-toggle', data);
     </script>
-    <cedar-code-toggle
-        data-target="#card-organization"
-        id="checkbox-card-organization"
-        targetId="card-organization"
-        labelFor="checkbox-card-organization"
-        codeExample="{codeSampleString1}"
-    ></cedar-code-toggle>
-    <script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
 </article>
 
 <article class="card vertical-push-lg">
@@ -75,6 +78,7 @@
             </div>
         </article>
     </section>
+    <!--
     <script>
         var codeSampleString2 = '<article class="card">\n' +
             '<section class="card-media-top"></section>\n' +
@@ -99,10 +103,10 @@
         codeExample='{codeSampleString2}'
     ></cedar-code-toggle>
     <script type="text/javascript">
-        riot.mount('*');
+        
     </script>
+    -->
 </article>
-
 <article class="card vertical-push-lg">
     <section class="card-block card-block--top" data-theme="light-20">
         <h3 class="h4">Linked Card</h3>

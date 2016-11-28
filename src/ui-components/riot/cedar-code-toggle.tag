@@ -3,18 +3,22 @@
         <input
             type="checkbox"
             value=""
-            id={ opts.id }
+            id={ elementId }
             data-toggle="collapse"
-            data-target={ opts.dataTarget }
+            data-target={ dataTarget }
         >
-        <label for={ opts.labelFor }>View code</label>
+        <label for={ labelFor }>View code</label>
     </div>
-    <div class="collapse code-toggle--document" id={ opts.targetId } data-theme="light-20">
-    <!-- TODO: Will this work? Can I highlight in another way for the code snippet
-		% symbol will break riot
-     -->
+    <div class="collapse code-toggle--document" id={ targetId } data-theme="light-20">
 	    <pre>
-{ opts.codeExample }
+{ codeExample }
 		</pre>
     </div>
+    <script>
+        this.elementId = opts.elementId;
+        this.dataTarget = opts.dataTarget;
+        this.labelFor = opts.labelFor;
+        this.targetId = opts.targetId;
+        this.codeExample = opts.codeExample;
+    </script>
 </cedar-code-toggle>
