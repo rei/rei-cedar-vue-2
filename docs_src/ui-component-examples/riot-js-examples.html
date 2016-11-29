@@ -3,19 +3,36 @@ layout: default
 title: riot-js-examples
 slug: riot-js-examples
 ---
-
-
-<section class="vertical-push-3" data-ui="nav-list">
-    <h2>Riot JS Examples</h2>
-    
-    <cedar-button></cedar-button>
-    <cedar-image></cedar-image>
-    <cedar-product-tile></cedar-product-tile>
-    <script src="/riot/compiled-tags/cedar-button.js" type="riot/tag"></script>
-    <script src="/riot/compiled-tags/cedar-image.js" type="riot/tag"></script>
-    <script src="/riot/compiled-tags/cedar-product-tile.js" type="riot/tag"></script>
-</section>
-
-<script>
-	riot.mount('*')
-</script>
+<p>How to use RiotJS to make UI Components</p>
+<h2>Riot Usage Examples</h2>
+<script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
+<script src="/riot/compiled-tags/cedar-button.js" type="riot/tag"></script>
+<article class="card vertical-push-lg">
+    <section class="card-block card-block--top" data-theme="light-20">
+        <h3>Basic Riot Example</h3>
+    </section>
+    <section class="card-block">
+    	<cedar-button></cedar-button>
+    	<script>
+    		var buttonData = {
+    			classes : '',
+    			content : 'Riot Button'
+    		};
+    		riot.mount('cedar-button', buttonData);
+    	</script>
+    </section>
+    <div id='code-example-1'>
+        <cedar-code-toggle></cedar-code-toggle>
+    </div>
+    <script>
+        var codeSampleString = 'riot-example-1';
+        var data = {
+            dataTarget : '#riot-example-1',
+            elementId : 'checkbox-riot-example-1',
+            targetId : 'riot-example-1',
+            labelFor : 'checkbox-riot-example-1',
+            codeExample : codeSampleString
+        };
+        riot.mount('#code-example-1', 'cedar-code-toggle', data);
+    </script>
+</article>
