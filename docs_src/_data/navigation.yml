@@ -142,9 +142,6 @@ items:
                 - label: Off Price
                   href: buttons-fam-theme-off-price
 
-                - label: Outlet
-                  href: buttons-fam-theme-outlet
-
                 - label: Overview
                   href: buttons-tags-title
 
