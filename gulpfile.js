@@ -300,7 +300,7 @@ gulp.task( 'js:build', [], () =>
 );
 
 gulp.task( 'riot', () =>
-    gulp.src( path.join( PATHS.SRC, '/ui-components/riot/cedar-button.tag' ) )
+    gulp.src( path.join( PATHS.SRC, '/ui-components/riot/*.tag' ) )
     .pipe( shell( [
         'riot src/ui-components/riot/ docs_src/riot/compiled-tags'
     ] ) )
