@@ -15,14 +15,12 @@ var menuHoverClass = 'js-show-menu';
 $.fn.showMenu = function() {
 	return this.attr('aria-hidden', 'false')
 		.addClass(menuHoverClass)
-		.css({ left:0, opacity:0.99 })
 		.find('a').attr('tabIndex',0);
 }
 
 $.fn.hideMenu = function() {
 	return this.attr('aria-hidden', 'true')
 		.removeClass(menuHoverClass)
-		.css({ left: '-999.9rem', opacity: 0 })
 		.find('a')
 		.attr('tabIndex',-1);
 }

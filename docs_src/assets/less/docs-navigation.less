@@ -110,9 +110,14 @@
     .doc_head-navigation-nested-list {
         font-size: @font-size-smaller;
         position: absolute;
-        left: -999.9rem;
-        opacity: 0;
+        left: 0;
+        display: none;
         width: 20rem;
+
+        &.js-show-menu {
+            display: block;
+            opacity: 0.99;
+        }
     }
     .doc_head-navigation-item > a {
         border: none;
@@ -148,10 +153,6 @@
     .doc_head-navigation-item:hover > a {
         background: darken(@new-growth, 5%);
         outline: 0;
-        + .doc_head-navigation-nested-list {
-            left: 0;
-            opacity: 0.99;
-        }
     }
     .nested-item a {
         color: #000;
