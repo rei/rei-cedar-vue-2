@@ -134,7 +134,9 @@
       htmlBridge
         .data('placement', 'top')
         .attr('title', 'Copy to clipboard')
-        .tooltip()
+        .tooltip();
+
+      htmlBridge.find('object').text("flash object for zero clipboard");
     })
 
     // Copy to clipboard
