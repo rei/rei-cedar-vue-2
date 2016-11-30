@@ -51,7 +51,7 @@ var keyCodeMap = {
     103: "7",
     104: "8",
     105: "9"
-}
+};
 
 var menuHoverClass = 'js-show-menu';
 
@@ -59,17 +59,17 @@ $.fn.showMenu = function () {
     return this.attr( 'aria-hidden', 'false' )
         .addClass( menuHoverClass )
         .find( 'a' ).attr( 'tabIndex', 0 );
-}
+};
 
 $.fn.hideMenu = function () {
     return this.attr( 'aria-hidden', 'true' )
         .removeClass( menuHoverClass )
         .find( 'a' )
         .attr( 'tabIndex', -1 );
-}
+};
 
 function openAndFocus( el, direction ) {
-    var menu = $( el ).parent( 'li' ).find( 'ul' )
+    var menu = $( el ).parent( 'li' ).find( 'ul' );
 
     if ( menu.length > 0 ) {
         if ( direction === 'up' ) {
@@ -84,7 +84,7 @@ function linkFocus( el, direction ) {
     var menu = $( el ).parent( 'li' );
 
     if ( direction === 'left' || direction === 'up' ) {
-        if ( menu.prev( 'li' ).length == 0 ) {
+        if ( menu.prev( 'li' ).length === 0 ) {
             if ( direction === 'left' ) {
                 $( el ).parents( 'ul' ).find( '> li' ).last().find( 'a' ).first().focus();
             } else if ( direction === 'up' ) {
@@ -94,7 +94,7 @@ function linkFocus( el, direction ) {
             menu.prev( 'li' ).find( 'a' ).first().focus();
         }
     } else if ( direction === 'right' || direction === 'down' ) {
-        if ( menu.next( 'li' ).length == 0 ) {
+        if ( menu.next( 'li' ).length === 0 ) {
             if ( direction === 'right' ) {
                 $( el ).parents( 'ul' ).find( '> li' ).first().find( 'a' ).first().focus();
             } else if ( direction === 'down' ) {
@@ -238,4 +238,4 @@ $.fn.setup_navigation = function () {
     $( this ).click( function ( e ) {
         e.stopPropagation();
     } );
-}
+};
