@@ -1,6 +1,7 @@
 <cedar-button>
-	<button type="button" class="btn { classes }">{ content }</button>
+	<img src="{ imageSrc }" class="img-responsive { classes }" alt="Responsive image">
     <script>
+        this.imageSrc = opts.imageSrc
         this.classes = opts.classes
         this.content = opts.content
     </script>
