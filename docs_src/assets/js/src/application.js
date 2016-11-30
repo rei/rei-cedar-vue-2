@@ -136,7 +136,7 @@
         .attr('title', 'Copy to clipboard')
         .tooltip();
 
-        htmlBridge.find('object').append("Hello").css('font-size', '0px');
+        htmlBridge.find('object').append("Copy to clipboard widget").css('font-size', '0px');
     })
 
     // Copy to clipboard
