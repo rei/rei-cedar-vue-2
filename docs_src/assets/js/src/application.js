@@ -136,7 +136,7 @@
         .attr('title', 'Copy to clipboard')
         .tooltip();
 
-      htmlBridge.find('object').text("flash object for zero clipboard");
+        htmlBridge.find('object').append("Hello").css('font-size', '0px');
     })
 
     // Copy to clipboard
