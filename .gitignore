@@ -42,7 +42,6 @@ bower_components
 node_modules
 
 # Build directories and files
-dist
 target
 
 # docs_src ignores
