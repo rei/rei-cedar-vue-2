@@ -30,7 +30,7 @@
 @brand-font-primary-name:                          "HCo Sentinel";
 @brand-font:                                       @brand-font-primary-name, @font-family-sans-serif;
 
-@brand-font-secondary-name:                        "Roboto Condensed", sans-serif;
+@brand-font-secondary-name:                        "Roboto Condensed";
 @brand-font-secondary:                             @brand-font-secondary-name , @font-family-sans-serif;
 
 @brand-font-tertiary-name:                         "Plak Black Condensed";
