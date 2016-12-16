@@ -7,32 +7,19 @@ slug: riot-js-examples
 <h2>Riot Usage Examples</h2>
 <script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
 <script src="/riot/compiled-tags/cedar-button.js" type="riot/tag"></script>
+<script src="/riot/compiled-tags/cedar-modal.js" type="riot/tag"></script>
 <article class="card vertical-push-lg">
     <section class="card-block card-block--top" data-theme="light-20">
-        <h3>Basic Riot Example</h3>
+        <h3>Modal Example</h3>
     </section>
     <section class="card-block">
-    	<cedar-button></cedar-button>
-    	<script>
-    		var buttonData = {
-    			classes : 'btn-primary',
-    			content : 'Riot Button'
-    		};
-    		riot.mount('cedar-button', buttonData);
-    	</script>
+        <cedar-modal>
+            <h1>MODAL</h1>
+            <p><a href="">focus 1</a></p>
+            <p><a href="">focus 2</a></p>
+        </cedar-modal>
+        <script>
+            riot.mount('cedar-modal');
+        </script>
     </section>
-    <div id='code-example-1'>
-        <cedar-code-toggle></cedar-code-toggle>
-    </div>
-    <script>
-        var codeSampleString = 'riot-example-1';
-        var data = {
-            dataTarget : '#riot-example-1',
-            elementId : 'checkbox-riot-example-1',
-            targetId : 'riot-example-1',
-            labelFor : 'checkbox-riot-example-1',
-            codeExample : codeSampleString
-        };
-        riot.mount('#code-example-1', 'cedar-code-toggle', data);
-    </script>
 </article>
