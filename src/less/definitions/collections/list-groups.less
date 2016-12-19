@@ -134,7 +134,7 @@
     > a,
     & label {
         color: #fff;
-        // removed extend/added code for sentinel/roboto update
+        // removed extend/added code to target menu for sentinel/roboto update
         // &:extend( .link_navigation-title-overlay );
         font-family: @brand-font-secondary;
         font-size: @font-size-h3;
@@ -156,7 +156,12 @@
     border-top: 0.1rem solid @list-group-border;
     background-color: @navigation-menu-2;
     > a {
-        .link_navigation-subtitle-overlay();
+        // removed extend/added code to target menu for sentinel/roboto update
+        // .link_navigation-subtitle-overlay();
+        font-family: @brand-font-secondary;
+    		font-weight: @brand-font-secondary-bold;
+        font-size: @font-size-large;
+        //
         padding: 1.1rem @padding-base-horizontal;
         background-color: @navigation-menu-2;
         border-bottom-color: #333;
