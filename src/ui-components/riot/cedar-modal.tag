@@ -11,6 +11,7 @@
         <button class="btn btn-primary" onclick={ this.showModal } id="modalOpen">Show Modal</button>
     </div>
     <script>
+        var focusableItems = new Array();
         this.on( 'mount', function() {
             setupModal();
         } );
@@ -23,25 +24,43 @@
                     keyHideModal();
                 }
             });
+
             var modal = document.getElementById('modal');
+            var modalIndex = 0;
+            var modalContent = document.querySelector('.modal-content');
+            var modalContentChildren = modalContent.children;
+            for ( var i = 0; i < modalContentChildren.length; i++ ) {
+                if ( modalContentChildren[ i ].tagName === 'A' || modalContentChildren[ i ].tagName === 'BUTTON' ) {
+                    focusableItems.push( modalContentChildren[ i ] );
+                }
+                
+                if ( modalContentChildren[ i ].children.length > 0 ) {
+                    for ( var j = 0; j <  modalContentChildren[ i ].children.length; j++ ) {
+                        var node = modalContentChildren[ i ].children[ j ]
+                        if ( node.tagName === 'A' || node.tagName === 'BUTTON' ) { 
+                            focusableItems.push( node );
+                        }
+                    }
+                }
+            }
             modal.addEventListener('keydown', function(e) {
                 if (e.keyCode === 9) {
-                    console.log('Key 9');
-                    //- var children = $($el).find('*');
-                    //- var focusableElementsString = "a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]";
-                    //- var focusableItems = children.filter(focusableElementsString).filter(':visible');
-                    //- var focusedItem = $(document.activeElement);
-                    //- var numberOfFocusableItems = focusableItems.length;
-                    //- var focusedItemIndex = focusableItems.index(focusedItem);
-                    
-                    //- if ( !e.shiftKey && (focusedItemIndex == numberOfFocusableItems - 1) ){
-                    //-     focusableItems.get(0).focus();
-                    //-     event.preventDefault();
-                    //- }
-                    //- else if ( e.shiftKey && focusedItemIndex === 0 || e.shiftKey && focusedItemIndex == -1 ){
-                    //-     focusableItems.get(numberOfFocusableItems - 1).focus();
-                    //-     event.preventDefault();
-                    //- }
+                    if ( !e.shiftKey ) {
+                        if ( modalIndex < ( focusableItems.length - 1 ) ) {
+                            modalIndex++;
+                        } else {
+                            modalIndex = 0;
+                        }
+                    } else if ( e.shiftKey ) {
+                        if ( modalIndex > 0 ) {
+                            modalIndex--;
+                        } else {
+                            modalIndex = (focusableItems.length - 1);
+                        }
+                    }
+
+                    focusableItems[modalIndex].focus();
+                    event.preventDefault()
                 }
             } );
         }
@@ -57,6 +76,8 @@
             body.classList.add('modal-open');  // prevent body scrolling
             modal.classList.add('show');
             modal.focus();
+            modalIndex = 0;
+            focusableItems[modalIndex].focus();
         }
 
         hideModal() {
