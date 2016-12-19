@@ -1,25 +1,28 @@
-<ul class="doc_head-navigation" role="menubar">
-{% unless page.slug =="main" %}
-    <li class="doc_head-navigation-item home" role="menuitem">
-        <a href="/" class="link_stag-explore-overlay">REI Pattern Library
-        </a>
+<div id="current" class="hidden">current page</div>
+<ul id="js-a11ynav" class="doc_head-navigation">
+    {% unless page.slug == "main" %}
+    <li class="doc_head-navigation-item home">
+        <a href="/" class="link_stag-explore-overlay">REI Pattern Library</a>
     </li>
-{% endunless %}
-{% for item in site.data.navigation.items %}
-        <li class="doc_head-navigation-item  {% if page.url == item.href or page.url == item.subCats.href %}active{% endif %}" role="menuitem" aria-haspopup="true" >
-            <a href="{{item.href}}">
-               {{item.label}}
-            </a>
-            {% if item.subCats %}
-                <ul class="doc_head-navigation-nested-list" role="menu">
-                    {% for nested in item.subCats %}
-                    <li class=" nested-item " role="menuitem">
-                        <a href="{{ nested.href }}">{{ nested.label }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </li>
-{% endfor %}
+    {% endunless %}
+    {% for item in site.data.navigation.items %}
+    <li class="doc_head-navigation-item {% if page.url == item.href or page.url == item.subCats.href %}active{% endif %}">
+        <a href="{{item.href}}"
+          {% if page.url == item.href %}aria-describedby="current"{% endif %}>
+            {{item.label}}
+        </a>
+        {% if item.subCats %}
+        <ul class="doc_head-navigation-nested-list">
+            {% for nested in item.subCats %}
+            <li class="nested-item">
+                <a href="{{ nested.href }}"
+                  {% if page.url == nested.href %}aria-describedby="current"{% endif %}>
+                    {{ nested.label }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+    {% endfor %}
 </ul>
-

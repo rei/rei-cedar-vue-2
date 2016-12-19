@@ -2,21 +2,6 @@ items:
     - label: Getting Started
       slug: getting-started
       href: /getting-started/
-      subCats:
-            - label: Getting Started
-              slug: getting-started
-              nav:
-                - label: Introduction
-                  href: intro-title
-
-                - label: Examples
-                  href: examples
-
-                - label: Browser and device support
-                  href: support
-
-                - label: Accessibility
-                  href: accessibility
 
     - label: Layouts
       slug: layouts
@@ -156,9 +141,6 @@ items:
 
                 - label: Off Price
                   href: buttons-fam-theme-off-price
-
-                - label: Outlet
-                  href: buttons-fam-theme-outlet
 
                 - label: Overview
                   href: buttons-tags-title

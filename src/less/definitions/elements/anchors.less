@@ -22,12 +22,14 @@ a {
 
 // Core standalone
 .link_stag {
-    &:extend( .text-sub-heading );
+    font-family: @font-family-sans-serif;
+    font-size: @font-size-base;
+    font-weight: bold;
     .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
 }
 .link_stag-title {
     &:extend( .text-capitalize );
-    &:extend( .link_stag all );
+    &:extend( .link_stag );
 }
 
 // Core header link
@@ -74,7 +76,7 @@ a {
     .link-variant( @link-color-overlay; @link-hover-decoration; @link-hover-decoration-alt;);
 }
 .link_stag-overlay {
-    &:extend( .text-sub-heading );
+    &:extend( .link_stag);
     &:extend( .link_stag-overlay-body all);
 }
 .link_stag-title-overlay {
@@ -105,7 +107,7 @@ a {
     .link-variant( @explore-link-color-overlay;  @link-hover-decoration-alt; );
 }
 .link_stag-explore {
-    &:extend( .text-sub-heading );
+    &:extend( .link_stag );
     .link-variant( @explore-link-color; @link-hover-decoration; @link-hover-decoration-alt;);
     @text-with-icon-rei-tree-arrow-ruleset();
 }
@@ -115,7 +117,7 @@ a {
     }
 }
 .link_stag-explore-overlay {
-    &:extend( .text-sub-heading );
+    &:extend( .link_stag );
     .link-variant( @explore-link-color-overlay; @link-hover-decoration; @link-hover-decoration-alt; );
     @text-with-icon-rei-tree-arrow-ruleset();
 }
@@ -134,11 +136,11 @@ a {
     .link-variant( @off-price-link-color-overlay; @link-hover-decoration-alt; );
 };
 .link-off-price-standalone {
-    &:extend( .text-sub-heading );;
+    &:extend( .link_stag);
     .link-variant( @off-price-link-color; );
 }
 .link-off-price-standalone-overlay {
-    &:extend( .text-sub-heading );
+    &:extend( .link_stag );
     .link-variant( @off-price-link-color-overlay; @link-hover-decoration; );
 }
 
@@ -156,11 +158,11 @@ a {
     .link-variant( @outlet-link-color-overlay; @link-hover-decoration-alt; );
 }
 .link-outlet-standalone {
-    &:extend( .text-sub-heading );
+    &:extend( .link_stag );
     .link-variant( @outlet-link-color; );
 }
 .link-outlet-standalone-overlay {
-    &:extend( .text-sub-heading );
+    &:extend( .link_stag );
     .link-variant( @outlet-link-color-overlay; @link-hover-decoration; );
 }
 

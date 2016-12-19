@@ -141,15 +141,6 @@
     }
 }
 
-.btn-outlet {
-    &.btn-primary {
-        .button-variant( @btn-outlet-color; @btn-outlet-bg; @btn-outlet-border; @btn-outlet-active-bg; @btn-outlet-active-border; );
-    }
-    &.btn-default {
-        .button-variant( @btn-outlet-default-color; @btn-outlet-default-bg; @btn-outlet-default-border; @btn-outlet-default-active-bg; @btn-outlet-default-active-border; );
-    }
-}
-
 .btn-off-price {
     &.btn-primary {
         .button-variant( @btn-off-price-color; @btn-off-price-bg; @btn-off-price-border; @btn-off-price-active-bg; @btn-off-price-active-border; );
@@ -207,13 +198,6 @@
         &:extend( .link-off-price-standalone-overlay all);
         .overlay-dark & {
              &:extend( .link_stag-explore-overlay all);
-        }
-    }
-    &-outlet {
-        background-color: inherit;
-        &:extend( .link-outlet-standalone-overlay all);
-        .overlay-dark & {
-            &:extend( .link_stag-explore-overlay all);
         }
     }
 }
