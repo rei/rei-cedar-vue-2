@@ -206,7 +206,7 @@ gulp.task( 'accessibility:audit-exp', [
 // * docs
 // * Finally call the callback function
 gulp.task( 'master', callback =>
-    runSequence( [ 'js', 'css', 'riot' ], 'docs', callback )
+    runSequence( [ 'js', 'css', 'riot-copy' ], 'docs', callback )
 );
 
 //       /$$$$$$   /$$$$$$   /$$$$$$
@@ -302,8 +302,13 @@ gulp.task( 'js:build', [], () =>
 gulp.task( 'riot', () =>
     gulp.src( path.join( PATHS.SRC, '/ui-components/riot/' ) )
     .pipe( shell( [
-        'riot src/ui-components/riot/ docs_src/riot/compiled-tags'
+        'riot src/ui-components/riot/ dist/riot/compiled-tags'
     ] ) )
+);
+
+gulp.task( 'riot-copy', [ 'riot' ], () => 
+    gulp.src( 'dist/riot/compiled-tags/*.js' )
+    .pipe( gulp.dest( 'docs_src/riot/compiled-tags' ) )
 );
 
 //      /$$$$$$$
