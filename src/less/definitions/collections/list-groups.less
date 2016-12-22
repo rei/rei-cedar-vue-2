@@ -134,7 +134,12 @@
     > a,
     & label {
         color: #fff;
-        &:extend( .link_navigation-title-overlay );
+        // &:extend( .link_navigation-title-overlay );
+        font-family: @brand-font-secondary;
+        font-size: @font-size-h3;
+        font-weight: @brand-font-secondary-bold;
+        line-height: @line-height-heading;
+        //
         padding: @padding-base-horizontal;
         width: 100%;
         margin-bottom: 0;
@@ -150,7 +155,12 @@
     border-top: 0.1rem solid @list-group-border;
     background-color: @navigation-menu-2;
     > a {
-        .link_navigation-subtitle-overlay();
+        // .link_navigation-subtitle-overlay();
+        font-family: @font-family-sans-serif;
+        font-size: @font-size-base;
+        line-height: @line-height-heading;
+        .link-variant( @link-contrast-color-overlay; @link-hover-decoration; @link-hover-decoration-alt; );
+        //
         padding: 1.1rem @padding-base-horizontal;
         background-color: @navigation-menu-2;
         border-bottom-color: #333;
