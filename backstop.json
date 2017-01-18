@@ -283,6 +283,7 @@
             "[data-example-id='visibility']",
             "[data-example-id='weight-size']",
             "[data-example-id='heading-copy-spacing']",
+            "[data-example-id='line-height-utility']",
             "[data-example-id='rule']"
         ],
         "readyEvent": null,

@@ -332,7 +332,7 @@ p {
 
 .text-title {
     font: normal normal @font-size-h3 @brand-font;
-    line-height: @line-height-heading;
+    line-height: @line-height-closed;
 }
 
 .text-sub-heading {
@@ -477,7 +477,7 @@ small,
 }
 .text-lead {
     font-size: @font-size-large;
-    line-height: @line-height-heading;
+    line-height: @line-height-closed;
     .vertical-push();
     @media ( min-width: @screen-sm-min ) {
         font-size: @font-size-large;
@@ -489,6 +489,18 @@ small,
 // NOTE: Deprecated us .text-space-lg
 .spaced-body-text {
     line-height: 2.4;
+}
+
+.u-line-height-open {
+	line-height: @line-height-open !important;
+}
+
+.u-line-height-neutral {
+	line-height: @line-height-neutral !important;
+}
+
+.u-line-height-closed {
+	line-height: @line-height-closed !important;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -582,7 +594,7 @@ blockquote.pull-right {
 address {
     margin-bottom: @line-height-computed;
     font-style: normal;
-    line-height: @line-height-base;
+    line-height: @line-height-open;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -590,7 +602,7 @@ address {
 label {
     font-family: @headings-font-family-secondary;
     font-size:  @font-size-large ;
-    line-height: @line-height-heading;
+    line-height: @line-height-closed;
 }
 
 .label-narrow {
