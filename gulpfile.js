@@ -17,6 +17,7 @@
  */
 var path = require( 'path' );
 var gulp = require( 'gulp' );
+var shell = require('gulp-shell')
 var less = require( 'gulp-less' );
 var rename = require( 'gulp-rename' );
 var minifyCss = require( 'gulp-cssnano' );
@@ -205,7 +206,7 @@ gulp.task( 'accessibility:audit-exp', [
 // * docs
 // * Finally call the callback function
 gulp.task( 'master', callback =>
-    runSequence( [ 'js', 'css' ], 'docs', callback )
+    runSequence( [ 'js', 'css', 'riot-copy' ], 'docs', callback )
 );
 
 //       /$$$$$$   /$$$$$$   /$$$$$$
@@ -296,6 +297,18 @@ gulp.task( 'js:build', [], () =>
     } ) )
     .pipe( streamify( uglify() ) )
     .pipe( gulp.dest( PATHS.DIST ) )
+);
+
+gulp.task( 'riot', () =>
+    gulp.src( path.join( PATHS.SRC, '/ui-components/riot/' ) )
+    .pipe( shell( [
+        'riot src/ui-components/riot/ dist/riot/compiled-tags'
+    ] ) )
+);
+
+gulp.task( 'riot-copy', [ 'riot' ], () => 
+    gulp.src( 'dist/riot/compiled-tags/*.js' )
+    .pipe( gulp.dest( 'docs_src/riot/compiled-tags' ) )
 );
 
 //      /$$$$$$$

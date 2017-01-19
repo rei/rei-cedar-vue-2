@@ -1,0 +1,23 @@
+---
+layout: default
+title: riot-js-examples
+slug: riot-js-examples
+---
+<p>How to use RiotJS to make UI Components</p>
+<h2>Riot Usage Examples</h2>
+<script src="/riot/compiled-tags/cedar-modal.js"></script>
+<article class="card vertical-push-lg">
+    <section class="card-block card-block--top" data-theme="light-20">
+        <h3>Modal Example</h3>
+    </section>
+    <section class="card-block">
+        <cedar-modal>
+            <h1>MODAL</h1>
+            <p><a href="">focus 1</a></p>
+            <p><a href="">focus 2</a></p>
+        </cedar-modal>
+        <script>
+            riot.mount('cedar-modal');
+        </script>
+    </section>
+</article>

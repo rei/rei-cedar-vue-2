@@ -2,14 +2,14 @@
 <p>Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease.</p>
 <p>Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.</p>
 <h2>Examples</h2>
-
+<script src="/riot/compiled-tags/cedar-code-toggle.js" type="riot/tag"></script>
 <article class="card vertical-push-lg">
     <section class="card-block card-block--top" data-theme="light-20">
         <h3 class="h4">Card orginization</h3>
     </section>
     <section class="card-block"><p>A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p></section>
     <section class="card-block cedar-example">
-        <article class="card" data-example-id="card-orginization">
+        <article class="card" data-example-id="card-organization">
             <section class="card-media-top media-frame ratio-3-4 portrait center">
                 <img src="http://placehold.it/320x150" alt="Example image">
             </section>
@@ -19,29 +19,29 @@
             </section>
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-card-orginization"
-            data-toggle="collapse"
-            data-target="#card-orginization"
-        >
-        <label for="checkbox-card-orginization">View code</label>
+
+    <div id='code-example-1'>
+        <cedar-code-toggle></cedar-code-toggle>
     </div>
-    <div class="collapse code-toggle--document" id="card-orginization" data-theme="light-20">
-    {% highlight html %}
-        <article class="card">
-            <section class="card-media-top media-frame ratio-3-4 portrait center">
-                <img src="http://placehold.it/320x150" alt="Example image">
-            </section>
-            content out of card-block
-            <section class="card-block text-xs-center">
-                content within card-block
-            </section>
-        </article>
-    {% endhighlight %}
-    </div>
+    <script>
+        var codeSampleString = '<article class="card">\n' +
+        '<section class="card-media-top media-frame ratio-3-4 portrait center">\n' +
+            '<img src="http://placehold.it/320x150" alt="Example image">\n' +
+        '</section>\n' +
+        'content out of card-block\n' +
+        '<section class="card-block text-xs-center">\n' +
+            'content within card-block\n' +
+        '</section>\n' +
+        '</article>';
+        var data = {
+            dataTarget : '#card-organization',
+            elementId : 'checkbox-card-organization',
+            targetId : 'card-organization',
+            labelFor : 'checkbox-card-organization',
+            codeExample : codeSampleString
+        };
+        riot.mount('#code-example-1', 'cedar-code-toggle', data);
+    </script>
 </article>
 
 <article class="card vertical-push-lg">
@@ -79,36 +79,34 @@
             </div>
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-groups-within-cards"
-            data-toggle="collapse"
-            data-target="#groups-within-cards"
-        >
-        <label for="checkbox-groups-within-cardse">View code</label>
+    <div id='code-example-2'>
+        <cedar-code-toggle></cedar-code-toggle>
     </div>
-    <div class="collapse code-toggle--document" id="groups-within-cards" data-theme="light-20">
-    {% highlight html %}
-    <article class="card">
-        <section class="card-media-top"></section>
-        <div class="group group-display-fixed">
-            <div class="col-xs-4">
-                <section class="tile"></section>
-            </div>
-            <div class="col-xs-4">
-                <section class="tile"></section>
-            </div>
-            <div class="col-xs-4">
-                <section class="tile"></section>
-            </div>
-        </div>
-    </article>
-    {% endhighlight %}
-    </div>
+    <script>
+        var codeSampleString2 = '<article class="card">\n' +
+            '<section class="card-media-top"></section>\n' +
+            '<div class="group group-display-fixed">\n' +
+                '<div class="col-xs-4">\n' +
+                    '<section class="tile"></section>\n' +
+                '</div>\n' +
+                '<div class="col-xs-4">\n' +
+                    '<section class="tile"></section>\n' +
+                '</div>\n' +
+                '<div class="col-xs-4">\n' +
+                    '<section class="tile"></section>\n' +
+                '</div>\n' +
+            '</div>\n' +
+            '</article>';
+        var data2 = {
+            dataTarget : '#groups-within-cards',
+            elementId : 'checkbox-groups-within-cards',
+            targetId : 'groups-within-cards',
+            labelFor : 'checkbox-groups-within-cards',
+            codeExample : codeSampleString2
+        };
+        riot.mount('#code-example-2', 'cedar-code-toggle', data2);
+    </script>
 </article>
-
 <article class="card vertical-push-lg">
     <section class="card-block card-block--top" data-theme="light-20">
         <h3 class="h4">Linked Card</h3>
@@ -127,29 +125,28 @@
             </section>
         </a>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-linked-card"
-            data-toggle="collapse"
-            data-target="#linked-card"
-        >
-        <label for="checkbox-linked-card">View code</label>
+    <div id='code-example-3'>
+        <cedar-code-toggle></cedar-code-toggle>
     </div>
-    <div class="collapse code-toggle--document" id="linked-card" data-theme="light-20">
-    {% highlight html %}
-    <a href="#anchored-card-example" class="card">
-        <section class="card-media-top media-frame ratio-3-4 portrait center">
-            <img src="http://placehold.it/320x150" alt="Example image">
-        </section>
-        <section class="card-block">
-            <h4>Heading</h4>
-            <p>Copy.</p>
-        </section>
-    </a>
-    {% endhighlight %}
-    </div>
+    <script>
+        var codeSampleString3 = '<a href="#anchored-card-example" class="card">\n' +
+            '<section class="card-media-top media-frame ratio-3-4 portrait center">\n' +
+            '<img src="http://placehold.it/320x150" alt="Example image">\n' +
+            '</section>\n' +
+            '<section class="card-block">\n' +
+            '<h4>Heading</h4>\n' +
+            '<p>Copy.</p>\n' +
+            '</section>' +
+            '</a>';
+        var data3 = {
+            dataTarget : '#linked-card',
+            elementId : 'checkbox-linked-card',
+            targetId : 'linked-card',
+            labelFor : 'checkbox-linked-card',
+            codeExample : codeSampleString3
+        };
+        riot.mount('#code-example-3', 'cedar-code-toggle', data3);
+    </script>
 </article>
 
 <article class="card vertical-push-lg">
@@ -168,25 +165,24 @@
             <img class="card-media-bottom img-responsive" src="http://placehold.it/320x150" alt="Example image">
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-card-img-cap"
-            data-toggle="collapse"
-            data-target="#card-img-cap"
-        >
-        <label for="checkbox-card-img-cap">View code</label>
+    <div id='code-example-4'>
+        <cedar-code-toggle></cedar-code-toggle>
     </div>
-    <div class="collapse code-toggle--document" id="card-img-cap" data-theme="light-20">
-    {% highlight html %}
-    <article class="card">
-        <img class="card-media-top img-responsive" />
-        <section class="card-block"></section>
-        <img class="card-media-bottom img-responsive" />
-    </article>
-    {% endhighlight %}
-    </div>
+    <script>
+        var codeSampleString4 = '<article class="card">\n' +
+            '<img class="card-media-top img-responsive" />\n' +
+            '<section class="card-block"></section>\n' +
+            '<img class="card-media-bottom img-responsive" />\n' +
+            '</article>';
+        var data4 = {
+            dataTarget : '#card-img-cap',
+            elementId : 'checkbox-card-img-cap',
+            targetId : 'card-img-cap',
+            labelFor : 'checkbox-card-img-cap',
+            codeExample : codeSampleString4
+        };
+        riot.mount('#code-example-4', 'cedar-code-toggle', data4);
+    </script>
 </article>
 
 <article class="card vertical-push-lg">
@@ -205,26 +201,25 @@
             </section>
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-image-overlay"
-            data-toggle="collapse"
-            data-target="#image-overlay"
-        >
-        <label for="checkbox-image-overlay">View code</label>
+    <div id='code-example-5'>
+        <cedar-code-toggle></cedar-code-toggle>
     </div>
-    <div class="collapse code-toggle--document" id="image-overlay" data-theme="light-20">
-    {% highlight html %}
-    <article class="card" data-theme="dark-10">
-        <section class="card-media media-frame ratio-3-4 portrait center">
-        </section>
-        <section class="card-block media-overlay">
-        </section>
-    </article>
-    {% endhighlight %}
-    </div>
+    <script>
+        var codeSampleString5 = '<article class="card" data-theme="dark-10">\n' +
+            '<section class="card-media media-frame ratio-3-4 portrait center">\n' +
+            '</section>\n' +
+            '<section class="card-block media-overlay">\n' +
+            '</section>\n' +
+            '</article>';
+        var data5 = {
+            dataTarget : '#image-overlay',
+            elementId : 'checkbox-image-overlay',
+            targetId : 'image-overlay',
+            labelFor : 'checkbox-image-overlay',
+            codeExample : codeSampleString5
+        };
+        riot.mount('#code-example-5', 'cedar-code-toggle', data5);
+    </script>
 </article>
 
 <article class="card vertical-push-lg">
@@ -288,21 +283,20 @@
     <section class="card-block bs-callout bs-callout-info">
         <p>For additional accessibility and contrast, our darker themes add text shadow to <code> h1-h6 and p </code> tags </p>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-theming-a-card"
-            data-toggle="collapse"
-            data-target="#theming-a-card"
-        >
-        <label for="checkbox-theming-a-card">View code</label>
+    <div id='code-example-6'>
+        <cedar-code-toggle></cedar-code-toggle>
     </div>
-    <div class="collapse code-toggle--document" id="theming-a-card" data-theme="light-20">
-    {% highlight html %}
-    <article class="card" data-theme='light-20'>
-        <section class="card-block"></section>
-    </article>
-    {% endhighlight %}
-    </div>
+    <script>
+        var codeSampleString6 = '<article class="card" data-theme="light-20">\n' +
+            '<section class="card-block"></section>\n' +
+            '</article>';
+        var data6 = {
+            dataTarget : '#theming-a-card',
+            elementId : 'checkbox-theming-a-card',
+            targetId : 'theming-a-card',
+            labelFor : 'checkbox-theming-a-card',
+            codeExample : codeSampleString6
+        };
+        riot.mount('#code-example-6', 'cedar-code-toggle', data6);
+    </script>
 </article>
