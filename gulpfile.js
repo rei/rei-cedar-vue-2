@@ -523,6 +523,7 @@ gulp.task( 'compile-riot2', done => {
         // Merge the streams
         es.merge( tasks )
             .pipe( concat( 'rei-cedar-components.js' ) )
+            .pipe( transormFileContents() )
             .pipe( gulp.dest( destinationFolder ) );
     } )
 } );
@@ -547,7 +548,23 @@ function compileTagFile() {
     // Vinyl files as chunks
     function transform(file, cb) {
         // read and modify file contents
-        file.contents = new Buffer( String( 'module.exports = ' + riotCompiler.compile( file.contents.toString() ) ) );
+        file.contents = new Buffer( String( riotCompiler.compile( file.contents.toString() ) ) );
+        cb( null, file );
+    }
+
+    // returning the map will cause your transform function to be called
+    // for each one of the chunks (files) you receive. And when this stream
+    // receives a 'end' signal, it will end as well.
+    return es.map( transform );
+}
+
+// Custom stream transformation
+function transormFileContents() {
+    // Vinyl files as chunks
+    function transform(file, cb) {
+        // read and modify file contents
+        const preamble = "var riot = require('riot');\n";
+        file.contents = new Buffer( String( `${ preamble }${ file.contents.toString() }` ) );
         cb( null, file );
     }
 
