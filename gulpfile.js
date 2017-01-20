@@ -46,6 +46,11 @@ var bourbon = require( 'node-bourbon' );
 var browserSync = require( 'browser-sync' ).create();
 
 
+var buffer = require( 'vinyl-buffer' );
+var babelify = require( 'babelify' );
+var globify = require( 'require-globify' );
+
+
 //       /$$$$$$                       /$$$$$$  /$$
 //      /$$__  $$                     /$$__  $$|__/
 //     | $$  \__/  /$$$$$$  /$$$$$$$ | $$  \__/ /$$  /$$$$$$
@@ -205,7 +210,7 @@ gulp.task( 'accessibility:audit-exp', [
 // * docs
 // * Finally call the callback function
 gulp.task( 'master', callback =>
-    runSequence( [ 'js', 'css' ], 'docs', callback )
+    runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
 );
 
 //       /$$$$$$   /$$$$$$   /$$$$$$
@@ -454,6 +459,57 @@ gulp.task( 'accessibility:audit-docs', [ 'docs' ], () =>
 // Audit using pa11y.
 gulp.task( 'accessibility:audit-pa11y', () => pa11y( PA11Y_OPTIONS )() );
 
+
+
+//      /$$$$$$                                                                              /$$
+//     /$$__  $$                                                                            | $$
+//    | $$  \__/  /$$$$$$  /$$$$$$/$$$$   /$$$$$$   /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$  /$$$$$$   /$$$$$$$
+//    | $$       /$$__  $$| $$_  $$_  $$ /$$__  $$ /$$__  $$| $$__  $$ /$$__  $$| $$__  $$|_  $$_/  /$$_____/
+//    | $$      | $$  \ $$| $$ \ $$ \ $$| $$  \ $$| $$  \ $$| $$  \ $$| $$$$$$$$| $$  \ $$  | $$   |  $$$$$$
+//    | $$    $$| $$  | $$| $$ | $$ | $$| $$  | $$| $$  | $$| $$  | $$| $$_____/| $$  | $$  | $$ /$$\____  $$
+//    |  $$$$$$/|  $$$$$$/| $$ | $$ | $$| $$$$$$$/|  $$$$$$/| $$  | $$|  $$$$$$$| $$  | $$  |  $$$$//$$$$$$$/
+//     \______/  \______/ |__/ |__/ |__/| $$____/  \______/ |__/  |__/ \_______/|__/  |__/   \___/ |_______/
+//                                      | $$
+//                                      | $$
+//                                      |__/
+
+
+const destinationFolder = __dirname + '/dist';
+
+gulp.task( 'compile-riot', () => {
+
+    let riotify = require( 'riotify' );
+    
+    let b = browserify( {
+        entries: [ './src/components/index.js' ],
+        debug: true
+    } );
+
+    return b
+        .transform( riotify, { compact: true, type: 'es6' } )
+        .transform( globify )
+        .transform( babelify )
+        .bundle()
+        .pipe( source( 'rei-cedar-components.js' ) )
+        .pipe( buffer() )
+        .pipe(  sourcemaps.init( { 
+            loadMaps: true
+        } ) ) 
+        .pipe( uglify() )
+        .pipe(  sourcemaps.write( './' ) ) 
+        .pipe( gulp.dest( destinationFolder ) );
+} );
+
+
 gulp.task( 'browserSync-watch', [ 'compile-riot' ], () => {
     browserSync.reload();
+} );
+
+gulp.task( 'serve', [ 'compile-riot' ], () => {
+
+    browserSync.init( {
+        proxy: "https://localhost:8443"
+    } );
+
+    return gulp.watch( __dirname + './src/components/**/*.*', [ 'browserSync-watch' ] );
 } );
