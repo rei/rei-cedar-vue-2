@@ -1,3 +1,16 @@
 {
-    "node": true
+	"browser": true,
+	"browserify": true,
+	"devel": true,
+	"esnext": true,
+	"node": true
+	"globals"   : {
+		/* MOCHA */
+		"describe"   : false,
+		"it"         : false,
+		"before"     : false,
+		"beforeEach" : false,
+		"after"      : false,
+		"afterEach"  : false
+	}
 }

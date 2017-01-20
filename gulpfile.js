@@ -48,7 +48,6 @@ var browserSync = require( 'browser-sync' ).create();
 
 var buffer = require( 'vinyl-buffer' );
 var babelify = require( 'babelify' );
-var globify = require( 'require-globify' );
 
 
 //       /$$$$$$                       /$$$$$$  /$$
@@ -210,7 +209,7 @@ gulp.task( 'accessibility:audit-exp', [
 // * docs
 // * Finally call the callback function
 gulp.task( 'master', callback =>
-    runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
+    runSequence( [ 'js', 'css' ], 'docs', 'compile-riot2', callback )
 );
 
 //       /$$$$$$   /$$$$$$   /$$$$$$
@@ -475,6 +474,8 @@ gulp.task( 'accessibility:audit-pa11y', () => pa11y( PA11Y_OPTIONS )() );
 
 
 const destinationFolder = __dirname + '/dist';
+const riotCompiler = require( 'riot-compiler' );
+const concat = require('gulp-concat');
 
 gulp.task( 'compile-riot', () => {
 
@@ -486,18 +487,44 @@ gulp.task( 'compile-riot', () => {
     } );
 
     return b
-        .transform( riotify, { compact: true, type: 'es6' } )
+        .transform( makeChange2, {
+            compact: true,
+            type: 'es6',
+            parserOptions: {
+                style: {
+                    includePaths: require( 'node-bourbon' ).includePaths
+                }
+            }
+        } )
         .transform( globify )
         .transform( babelify )
         .bundle()
         .pipe( source( 'rei-cedar-components.js' ) )
         .pipe( buffer() )
-        .pipe(  sourcemaps.init( { 
+        .pipe( sourcemaps.init( { 
             loadMaps: true
         } ) ) 
-        .pipe( uglify() )
-        .pipe(  sourcemaps.write( './' ) ) 
+        // .pipe( uglify() )
+        .pipe( sourcemaps.write( './' ) ) 
         .pipe( gulp.dest( destinationFolder ) );
+} );
+
+gulp.task( 'compile-riot2', done => {
+
+    // gather all the tag files
+    return gulp.src( [ './src/components/**/*.tag' ], ( err, files ) => {
+        if ( err ) done( err );
+
+        let tasks = files.map( file => {
+            return gulp.src( [ file ] )
+                .pipe( compileTagFile() );
+        } );
+
+        // Merge the streams
+        es.merge( tasks )
+            .pipe( concat( 'rei-cedar-components.js' ) )
+            .pipe( gulp.dest( destinationFolder ) );
+    } )
 } );
 
 
@@ -513,3 +540,19 @@ gulp.task( 'serve', [ 'compile-riot' ], () => {
 
     return gulp.watch( __dirname + './src/components/**/*.*', [ 'browserSync-watch' ] );
 } );
+
+
+// Custom stream transformation
+function compileTagFile() {
+    // Vinyl files as chunks
+    function transform(file, cb) {
+        // read and modify file contents
+        file.contents = new Buffer( String( 'module.exports = ' + riotCompiler.compile( file.contents.toString() ) ) );
+        cb( null, file );
+    }
+
+    // returning the map will cause your transform function to be called
+    // for each one of the chunks (files) you receive. And when this stream
+    // receives a 'end' signal, it will end as well.
+    return es.map( transform );
+}
