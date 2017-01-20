@@ -23,7 +23,7 @@
     "url": "git@github.com:rei/rei-cedar.git"
   },
   "license": "MIT",
-  "main": "lib/server/index.js",
+  "main": "dist/rei-cedar-components.js",
   "dependencies": {
     "bootstrap": "^3.3.6",
     "jquery": "2.2.4",
