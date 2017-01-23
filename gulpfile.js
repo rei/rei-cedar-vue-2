@@ -46,6 +46,10 @@ var bourbon = require( 'node-bourbon' );
 var browserSync = require( 'browser-sync' ).create();
 
 
+var buffer = require( 'vinyl-buffer' );
+var babelify = require( 'babelify' );
+
+
 //       /$$$$$$                       /$$$$$$  /$$
 //      /$$__  $$                     /$$__  $$|__/
 //     | $$  \__/  /$$$$$$  /$$$$$$$ | $$  \__/ /$$  /$$$$$$
@@ -205,7 +209,7 @@ gulp.task( 'accessibility:audit-exp', [
 // * docs
 // * Finally call the callback function
 gulp.task( 'master', callback =>
-    runSequence( [ 'js', 'css' ], 'docs', callback )
+    runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
 );
 
 //       /$$$$$$   /$$$$$$   /$$$$$$
@@ -454,6 +458,82 @@ gulp.task( 'accessibility:audit-docs', [ 'docs' ], () =>
 // Audit using pa11y.
 gulp.task( 'accessibility:audit-pa11y', () => pa11y( PA11Y_OPTIONS )() );
 
+
+
+//      /$$$$$$                                                                              /$$
+//     /$$__  $$                                                                            | $$
+//    | $$  \__/  /$$$$$$  /$$$$$$/$$$$   /$$$$$$   /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$  /$$$$$$   /$$$$$$$
+//    | $$       /$$__  $$| $$_  $$_  $$ /$$__  $$ /$$__  $$| $$__  $$ /$$__  $$| $$__  $$|_  $$_/  /$$_____/
+//    | $$      | $$  \ $$| $$ \ $$ \ $$| $$  \ $$| $$  \ $$| $$  \ $$| $$$$$$$$| $$  \ $$  | $$   |  $$$$$$
+//    | $$    $$| $$  | $$| $$ | $$ | $$| $$  | $$| $$  | $$| $$  | $$| $$_____/| $$  | $$  | $$ /$$\____  $$
+//    |  $$$$$$/|  $$$$$$/| $$ | $$ | $$| $$$$$$$/|  $$$$$$/| $$  | $$|  $$$$$$$| $$  | $$  |  $$$$//$$$$$$$/
+//     \______/  \______/ |__/ |__/ |__/| $$____/  \______/ |__/  |__/ \_______/|__/  |__/   \___/ |_______/
+//                                      | $$
+//                                      | $$
+//                                      |__/
+
+
+const destinationFolder = __dirname + '/dist';
+const riotCompiler = require( 'riot-compiler' );
+const concat = require('gulp-concat');
+
+// Custom stream transformation
+function compileTagFile() {
+    // Vinyl files as chunks
+    function transform(file, cb) {
+        // read and modify file contents
+        file.contents = new Buffer( String( riotCompiler.compile( file.contents.toString() ) ) );
+        cb( null, file );
+    }
+
+    // returning the map will cause your transform function to be called
+    // for each one of the chunks (files) you receive. And when this stream
+    // receives a 'end' signal, it will end as well.
+    return es.map( transform );
+}
+
+// Custom stream transformation
+// Add the preamble to the bundle
+function transormFileContents() {
+    function transform(file, cb) {
+        const preamble = "var riot = require('riot');\n";
+        file.contents = new Buffer( String( `${ preamble }${ file.contents.toString() }` ) );
+        cb( null, file );
+    }
+    return es.map( transform );
+}
+
+
+
+
+gulp.task( 'compile-riot', done => {
+
+    // gather all the tag files
+    return gulp.src( [ './src/components/**/*.tag' ], ( err, files ) => {
+        if ( err ) done( err );
+
+        let tasks = files.map( file => {
+            return gulp.src( [ file ] )
+                .pipe( compileTagFile() );
+        } );
+
+        // Merge the streams
+        es.merge( tasks )
+            .pipe( concat( 'rei-cedar-components.js' ) )
+            .pipe( transormFileContents() )
+            .pipe( gulp.dest( destinationFolder ) );
+    } )
+} );
+
 gulp.task( 'browserSync-watch', [ 'compile-riot' ], () => {
     browserSync.reload();
+} );
+
+gulp.task( 'serve', [ 'compile-riot' ], () => {
+
+    browserSync.init( {
+        proxy: "https://localhost:8443"
+    } );
+
+    return gulp.watch( __dirname + './src/components/**/*.*', [ 'browserSync-watch' ] );
 } );
