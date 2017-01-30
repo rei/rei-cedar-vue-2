@@ -10,7 +10,7 @@
 @modal-title-padding:                                1.5rem;
 
 // Modal title line-height
-@modal-title-line-height:                            @line-height-base;
+@modal-title-line-height:                            @line-height-open;
 
 @modal-lg:                                           90rem;
 @modal-md:                                           60rem;

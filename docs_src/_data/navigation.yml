@@ -126,6 +126,9 @@ items:
                 - label: Groupings
                   href: groupings
 
+                - label: Line Heights
+                  href: line-heights
+
                 - label: Rule Line
                   href: text-supplements-rule-line
 
