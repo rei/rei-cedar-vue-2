@@ -22,6 +22,11 @@
         &.list-group-item {
             position: relative;
             @list-group-item-scaffolding();
+
+            input:focus + label, a:focus {
+                outline: .5rem auto;
+                outline-color: #4eaaff;
+            }
         }
     }
 }
