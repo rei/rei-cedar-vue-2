@@ -1,6 +1,39 @@
-riot.tag2('another-test', '<h4>Here is another test tag!</h4>', '', '', function(opts) {
-});
-riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts.label || opts.nolabel}">{opts.label} <span if="{opts.required}">&nbsp;*</span> </label> <div class="input-wrap"> <input id="{opts.el_id}" aria-label="{opts.label}" type="{opts.type || \'text\'}" name="{opts.name}" maxlength="{opts.maxlength}" placeholder="{opts.placeholder}" required="{opts.required}" disabled="{opts.disabled}" onkeypress="{delayedValidate}" onchange="{setDirty}" onpaste="{immediateValidate}" onkeydown="{checkDelete}" onblur="{setBlurred}" onfocus="{setFocused}" riot-value="{opts.riotValue}"> <div class="validation-icon"> <i class="icon"></i> </div> <div class="validation-block"> <div class="validation-block-inner"> <span>{validationMsg}</span> </div> </div> </div>', '', 'class="{\'has-error\': hasError(), \'has-warning\': hasWarning()}"', function(opts) {
+<cdr-textinput class="{ 'has-error': hasError(), 'has-warning': hasWarning() }">
+	
+	<!-- PRESENTATION -->
+	<label for="{ opts.el_id }" class="{ 'sr-only': !opts.label || opts.nolabel }">{ opts.label }
+		<span if="{ opts.required }">&nbsp;*</span>
+	</label>
+	<div class="input-wrap">
+		<input 
+			id="{ opts.el_id }"
+			aria-label="{ opts.label }"
+			type="{ opts.type || 'text' }"
+			name="{ opts.name }"
+			maxlength="{ opts.maxlength }"
+			placeholder="{ opts.placeholder }"
+			required="{ opts.required }" 
+			disabled="{ opts.disabled }" 
+			onkeypress="{ delayedValidate }"
+			onchange="{ setDirty }"
+			onpaste="{ immediateValidate }"
+			onkeydown="{ checkDelete }"
+			onblur="{ setBlurred }"
+			onfocus="{ setFocused }"
+			value="{ opts.riotValue }" />
+		<div class="validation-icon">
+			<i class="icon"></i>
+		</div>
+		<div class="validation-block">
+			<div class="validation-block-inner">
+				<span>{ validationMsg }</span>
+			</div>
+		</div>
+	</div>
+
+	
+	<!-- LOGIC -->
+	<script>
 		var _this = this;
 
 		this.mixin( 'validationAnimations' );
@@ -36,28 +69,52 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 			_this.validationBlock.hide();
 		} );
 
+		/**
+		 * event handler for 'blur' event
+		 * @param  {Event} e event object
+		 * 
+		 * @return {null}   no return
+		 */
 		this.setBlurred = ( e ) => {
 			e.preventUpdate = true;
 			this.isFocused = false;
 
+			// don't re-validate if there is already an error showing
 			if ( this.validationBlockOn || !this.isDirty ) return;
 			this.immediateValidate( e );
 		}
 
+		/**
+		 * Event handler for 'focus' event
+		 * @param  {Event} e event object
+		 * 
+		 * @return {null}   no return
+		 */
 		this.setFocused = ( e ) => {
 			this.isFocused = true;
 			this.isDirty = true;
 		}
 
+		/**
+		 * Set the field to dirty state
+		 * @param  {Event} e The triggering DOM event
+		 * @return {null}   no return
+		 */
 		this.setDirty = ( e ) => {
 			e.preventUpdate = true;
 			this.isDirty = true;
 
-			this.execProperValidation( e );
+			this.execProperValidation( e );			
 		};
 
-		this.execProperValidation = ( e ) => {
 
+		/**
+		 * Choose the correct way to run validation against the event (delayed or immediate)
+		 * @param  {Event} e The triggering DOM event
+		 * @return {null}   no return
+		 */
+		this.execProperValidation = ( e ) => {
+			// if the block is not on, delay validation as normal
 			if ( !_this.validationBlockOn ) {
 				debounced.cancel();
 				debounced( e );
@@ -69,6 +126,14 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 			}
 		}
 
+		/**
+		 * Validation handler. Takes in the current value of the
+		 * field and runs validation against the field and
+		 * any validation requirements like pattern or required.
+		 * 
+		 * @param  {Event} e the event of the 'keypress'
+		 * @return {Promise} returns a promise for when the validation is complete
+		 */
 		this.validate = ( e ) => {
 			debounced.cancel();
 			clearTimeout(timerId);
@@ -77,6 +142,7 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 				let isValid = _target.checkValidity();
 				let currentValidityState = _target.validity;
 
+				// External Error
 				if ( _this.shouldShowExternalError ) {
 					_this.update( { validationBlockOn: true, validationType: 'error', validationMsg: opts.external_error.errorText, isDirty: false } );
 					_this.validationBlock.show();
@@ -84,18 +150,21 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 					resolve( 'invalid' );
 				}
 
+				// check validityState
 				else {
 
+					// valid
 					if ( isValid ) {
 						_this.update( { validationType: null, validationBlockOn: false, isDirty: false } );
 						_this.validationBlock.hide();
 						resolve( 'valid' );
 					}
 
+					// Not valid
 					else {
 
 						if( currentValidityState.typeMismatch ){
-
+							// invalid email
 							if( _target.type === "email" ){
 								_this.update( { validationBlockOn: true, validationType: 'error', validationMsg: 'Please enter a valid email.' } );
 								_this.validationBlock.show();
@@ -106,9 +175,10 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 							}
 						} else {
 
+							// Does not match the pattern
 							if( currentValidityState.patternMismatch ){
 								if( _target.type === "email" ){
-
+									// invalid email pattern
 									_this.update( { validationBlockOn: true, validationType: 'error', validationMsg: 'Please enter a valid email.' } );
 									_this.validationBlock.show();
 								} else {
@@ -116,12 +186,14 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 									_this.validationBlock.show();
 								}
 							}
-
+						
+							// Is not present and is required and not focused
 							else if( opts.required && currentValidityState.valueMissing && !this.isFocused ){
 								_this.update( { validationBlockOn: true, validationType: 'error', validationMsg: 'This field is required' });
 								_this.validationBlock.show();
-							}
+							} 
 
+							// clear error (used for delete/backspace)
 							else {
 								_this.update( { validationType: null, validationBlockOn: false, hasValidationError: true } );
 								_this.validationBlock.hide();
@@ -136,15 +208,35 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 			} );
 		}
 
+		/**
+		 * A debounced version of the callback for the 'keypress'
+		 * event so that we "wait" 750 ms before firing the callback
+		 * and provides an easy hook to cancel the debounce if
+		 * the key is pressed a second time before the callback is fired
+		 * 
+		 * @type {Function}
+		 */
 		let debounced = _.debounce( () => { this.validate().catch( _this.handleErr ); }, 750, { 'leading': false } );
 
 		let timerId;
 
+
+		/**
+		 * Event handler for the 'keypress' event. This is the raw handler
+		 * that determines which callback to fire (debounced or immediate)
+		 * and also cancels previous calls if they exist.
+		 * 
+		 * @param  {Event} e event object
+		 * @return {boolean}   returns true so that the event continues to propagate instead of being killed by Riot
+		 */
 		this.delayedValidate = ( e ) => {
 			e.preventUpdate = true;
+			// this.isDirty = true;
 
 			if ( _this.validationBlockOn ) {
-
+				// Need to defer this so that the keypress event has propagated
+				// the input field with the value (so that the validate runs against the
+				// actual input as opposed to empty)
 				timerId = _.defer( ( e ) => {
 					_this.validate( e )
 						.catch( _this.handleErr );
@@ -155,6 +247,12 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 			}
 		};
 
+		/**
+		 * Immediately (defers to the stack) validates the input of the field
+		 * 
+		 * @param  {Event} e event object
+		 * @return {Boolean}   returns true so that the event continues to propagate instead of being killed by Riot
+		 */
 		this.immediateValidate = ( e ) => {
 			e.preventUpdate = true;
 			debounced.cancel();
@@ -164,6 +262,15 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 			} );
 		};
 
+		/**
+		 * Event handler to check to see if the delete/backspace
+		 * key was pressed. When the user shows that they are 
+		 * in the act of clearing an error by deleting erroneous
+		 * input data we want to clear the error for them.
+		 * 
+		 * @param  {Event} e event object
+		 * @return {Boolean}   returns true so that the event continues to propagate instead of being killed by Riot
+		 */
 		this.checkDelete = ( e ) => {
 			e.preventUpdate = true;
 			if ( e.which == 8 || e.which == 46 ) {
@@ -175,10 +282,31 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 			return true;
 		}
 
+		/**
+		 * Error handler for promises.
+		 * 
+		 * @param  {Event} e event object
+		 * @return {null}   no return
+		 */
 		this.handleErr = ( e ) => {
 			console.log( e, 'debug' );
 		}
 
+
+		/**
+		 * Control Object for validation states
+		 * there are 4 possibles states that the validation block can be in
+		 * 
+		 * - validation block hidden
+		 * - validation animating in
+		 * - validation block shown
+		 * - validation animating out
+		 *
+		 * This is designed to help keep everything straight and to avoid
+		 * calling show or hide at unnecessary times. 
+		 * 
+		 * @type {Object}
+		 */
 		this.validationBlock = {
 			isHidden: true,
 			isShown: false,
@@ -192,8 +320,8 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 
 		Object.defineProperty(this.validationBlock, 'show', {
 			value: function() {
-				if( this.isAnimatingIn || this.isShown && this.currentMsg === _this.validationMsg ) return
-
+				if( this.isAnimatingIn || this.isShown && this.currentMsg === _this.validationMsg ) return // do nothing
+				
 				this.isShown = false;
 				this.isHidden = false;
 				this.isAnimatingIn = true;
@@ -220,8 +348,8 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 
 		Object.defineProperty(this.validationBlock, 'hide', {
 			value: function() {
-				if( this.isAnimatingOut || this.isHidden ) return
-
+				if( this.isAnimatingOut || this.isHidden ) return // do nothing
+				
 				this.isShown = false;
 				this.isHidden = false;
 				this.isAnimatingIn = false;
@@ -245,59 +373,6 @@ riot.tag2('cdr-textinput', '<label for="{opts.el_id}" class="{\'sr-only\': !opts
 			}
 		} );
 
-});
-riot.tag2('test-tag', '<span>Hello Component!</span>', '', '', function(opts) {
-});
-/////////////////////////////////
-// Validation Animations Mixin //
-/////////////////////////////////
+	</script>
 
-
-
-	var validationAnimations = {
-		/**
-		 * event handler that opens the drawer below an 
-		 * input field to display a validation error.
-		 * 
-		 * @return {null} no return
-		 */
-		showValidationBlock: ( element, opts, cb ) => {
-			let $el = $( element );
-			let _opts = _.extend( opts, {} );
-			let prevHeight = $el[ 0 ].offsetHeight || 0;
-			let padding = _.get( _opts, 'padding' ) ? _.get( _opts, 'padding' ) : 0;
-			let fullHeight = $el.css( { 'display': 'block', 'height': 'auto' } ).height() + padding;
-			$el.css( { 'display': ' block', 'height': prevHeight } );
-			$el
-				.velocity( "stop" )
-				.velocity( { height: fullHeight }, { 
-					duration: 350, 
-					easing: 'easeOutQuint',
-					complete: () => {
-						if( _.isFunction( cb ) ) cb.call();
-					} } );
-		},
-
-		/**
-		 * Event handler to hide the validation block whenever
-		 * the validation state is valid or has been cleared for 
-		 * other circumstances.
-		 * 
-		 * @return {null} no return
-		 */
-		hideValidationBlock: ( element, opts, cb ) => {
-			let $el = $( element );
-			$el
-				.velocity( "stop" )
-				.velocity( { height: 0 }, {
-					duration: 350,
-					easing: 'easeOutQuint',
-					complete: () => {
-						$el.css( { 'display': 'none' } );
-						if( _.isFunction( cb ) ) cb.call();
-					}
-				} );
-		}
-	};
-
-	riot.mixin( 'validationAnimations', validationAnimations );
+</cdr-textinput>

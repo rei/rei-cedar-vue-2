@@ -11,7 +11,7 @@
 
 /*  addAnchors */
 
-! function ( $ ) {
+! function ( $, riot ) {
     'use strict';
 
     $( function () {
@@ -118,7 +118,14 @@
 
     } );
 
-}( jQuery )
+
+
+    // Mount Components
+    console.log( 'Welcome to REI Cedar :: Mounting all Riot Components' );
+    var components = riot.mount( '*' );
+    console.log( components );
+
+}( jQuery, riot )
 
 ;
 ( function () {
