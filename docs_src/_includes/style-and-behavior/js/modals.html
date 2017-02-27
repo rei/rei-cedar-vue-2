@@ -531,8 +531,17 @@ $('#myModal').modal({
         </tbody>
     </table>
 </div><!-- /.table-responsive -->
+
 {% highlight js %}
 $('#myModal').on('hidden.bs.modal', function (e) {
     // do something...
 })
 {% endhighlight %}
+
+<h4 id="modals-riot-component">Modal as a Riot component</h4>
+<!-- Modal button component -->
+<cdr-modal-button hashtag="openVideoModal" buttontext="Watch video" cedarbutton="{ 8 }"></cdr-modal-button>
+<!-- Video Modal component -->
+<cdr-video-modal opentrigger="openVideoModal" dismisstrigger="closeVideoModal">
+    <iframe width="900" height="506" src="https://www.youtube.com/embed/IdeaKaG92MY" frameborder="0" allowfullscreen></iframe>
+</cdr-video-modal>

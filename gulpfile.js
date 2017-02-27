@@ -1,4 +1,4 @@
-'use strict'; 
+'use strict';
 
 //      /$$$$$$$                                /$$
 //     | $$__  $$                              |__/
@@ -496,16 +496,13 @@ function compileTagFile() {
 }
 
 // Custom stream transformation
-// Add the preamble to the bundle
 function transormFileContents() {
     function transform(file, cb) {
-        const preamble = "var riot = require('riot');\n";
-        file.contents = new Buffer( String( `${ preamble }${ file.contents.toString() }` ) );
+        file.contents = new Buffer( String( `${ file.contents.toString() }` ) );
         cb( null, file );
     }
     return es.map( transform );
 }
-
 
 
 
