@@ -149,6 +149,9 @@ gulp.task( 'css', [ 'css:minify' ] );
 // --[ Javascript ]-------------------------------------------------------------
 gulp.task( 'js', [ 'js:build' ] );
 
+// --[ Components ]-------------------------------------------------------------
+gulp.task( 'components', [ 'components:compile-riot-styles' ] );
+
 // --[ Docs ]-------------------------------------------------------------------
 gulp.task( 'docs:clean', [
     'docs:clean-dist',
@@ -209,7 +212,7 @@ gulp.task( 'accessibility:audit-exp', [
 // * docs
 // * Finally call the callback function
 gulp.task( 'master', callback =>
-    runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
+    runSequence( [ 'js', 'css', 'components' ], 'docs', callback )
 );
 
 //       /$$$$$$   /$$$$$$   /$$$$$$
@@ -501,7 +504,9 @@ function transormFileContents() {
     return es.map( transform );
 }
 
-gulp.task( 'compile-riot', done => {
+
+
+gulp.task( 'components:compile-riot', done => {
 
     // gather all the tag files
     return gulp.src( [ './src/components/**/*.tag' ], ( err, files ) => {
@@ -512,13 +517,76 @@ gulp.task( 'compile-riot', done => {
                 .pipe( compileTagFile() );
         } );
 
+        let otherFiles = gulp.src( [ './src/components/**/*.js' ], ( err, files ) => {
+            if ( err ) done( err );
+            return files;
+        } );
+
+        tasks.push( otherFiles );
+
         // Merge the streams
         es.merge( tasks )
             .pipe( concat( 'rei-cedar-components.js' ) )
-            .pipe( transormFileContents() )
+            // .pipe( transormFileContents() )
             .pipe( gulp.dest( destinationFolder ) );
+    } );
+} );
+
+
+gulp.task( 'components:compile-riot-styles', [ 'components:compile-riot' ], done => {
+
+    const lessc = less( {
+        paths: [ PATHS.LESS ]
+    } ).on( 'error', err => {
+        console.log( 'There was a problem compiling the component LESS files...' );
+        throw new Error( err );
+    } ); // Break on less compile errors
+
+    const lintLessReporter = cssLintLessReporter().on( 'error', err => {
+        // TODO: decide whether to throw the error
+        if ( SHOULD_STOP_FOR_LINT_FAILURE ) {
+            throw new Error( err );
+        }
+    } );
+
+    // gather all the tag files
+    return gulp.src( [ './src/components/**/*.less' ], ( err, files ) => {
+        if ( err ) done( err );
+
+        let tasks = files.map( file => {
+            return gulp.src( [ file ] )
+                .pipe( sourcemaps.init() )
+                .pipe( lessc ) // Build the dev bundle
+                .pipe( csslint() )
+                .pipe( lintLessReporter )
+                .pipe( csscomb() )
+                .pipe( postcss( [ autoprefixer( {
+                    browsers: [ 'last 2 versions' ]
+                } ) ] ) )
+                .pipe( sourcemaps.write() )
+                
+        } );
+
+        // Merge the streams
+        es.merge( tasks )
+            .pipe( concat( 'rei-cedar-components-styles.css' ) )
+            .pipe( gulp.dest( PATHS.DIST ) );
     } )
 } );
+
+
+// minify the css
+gulp.task( 'components:minify-riot-styles', [ 'components:compile-riot-styles' ], () =>
+    gulp.src( path.join( PATHS.DIST, '/rei-cedar-components-styles.css' ) )
+    .pipe( rename( {
+        suffix: '.min'
+    } ) ) // Build the minified bundle
+    .pipe( minifyCss() )
+    .pipe( gulp.dest( PATHS.DIST ) )
+);
+
+
+
 
 gulp.task( 'browserSync-watch', [ 'compile-riot' ], () => {
     browserSync.reload();

@@ -27,6 +27,7 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "jquery": "2.2.4",
+    "lodash": "^4.17.4",
     "normalize.css": "^3.0.3"
   },
   "devDependencies": {
