@@ -1,3 +1,12 @@
+## 1.5
+Features:
+- Riot modals.
+- Open and closed type classes for lineheight.
+
+## 1.5
+Features:
+- Typograpgy updates.
+
 ## 1.2.11  2016-08-25 Michael Hewson  <mhewson@rei.com.com>
 Bugfixes:
 - Bootstrap added to project and import removed.
