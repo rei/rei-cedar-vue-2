@@ -1,3 +1,4 @@
+// vim: syntax=JSX
 <cdr-video-modal>
     <div class="modal" tabindex="-1" keyup="{}" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
         <span class="sr-only">Begin dialog</span>
