@@ -1,10 +1,10 @@
 // vim: syntax=JSX
 <cdr-video-modal>
-    <div class="modal" tabindex="-1" keyup="{}" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <div if={opened} ref="modal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
         <span class="sr-only">Begin dialog</span>
         <div class="modal__content">
             <div class="text-right">
-                <button id="{opts.dismisstrigger}" class="close icon icon-rei-close img-circle" aria-label="Close"><span class="sr-only sr-only-focusable">Close</span></button>
+                <button data-cdr-modal-close="{opts.dismisstrigger}" class="close icon icon-rei-close img-circle" aria-label="Close"></button>
             </div>
             <div class="modal__content--inner">
                 <div class="embed-responsive embed-responsive-16by9">
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <button class="modal__video--end--dialog sr-only sr-only-focusable">End dialog</button>
+        <span class="sr-only">End dialog</span>
     </div>
 
     <style type="less" scoped>
@@ -54,13 +54,12 @@
                 }
             }
             
-            &.show {
-                &.in {
-                    opacity: 1;
-                
-                    .modal__content {
-                        transform: translate(0,0);
-                    }
+            &.in {
+                display: block;
+                opacity: 1;
+            
+                .modal__content {
+                    transform: translate(0,0);
                 }
             }
         }
@@ -80,140 +79,111 @@
                 transform: translate(-50%, -50%);
             }
         }
-
-        .modal__video--end--dialog {
-            background-color: transparent;
-            color: #fff;
-        }
     </style>
 
     <script>
-        /*
-        * Keeps focus inside a jQ element. On tab keypress it will move
-        * focus form the last elem to the first. On shift-tab keypress it
-        * will move focus from first elem to last.
-        *
-        * @param  {Object} elem element to keep focus in
-        * @param  {Object} evt  event object
-        */
-        var focusableElements = [
-            'a',
-            'area[href]',
-            'input:not([disabled])',
-            'select:not([disabled])',
-            'textarea:not([disabled])',
-            'button:not([disabled])',
-            'iframe',
-            'object',
-            'embed',
-            '*[tabindex]',
-            '*[contenteditable]'
-        ].join(',');
+        //properties
+        const tag = this;
+        const $el = tag.root;
+        tag.opened = false;
+        tag.opener; // Will hold element clicked to open modal for returning focus 
+        //methods
+        tag.on( 'mount', onMount );
+        tag.showModal = showModal;
+        tag.hideModal = hideModal;
+        tag.tabTrap = tabTrap;
 
-        var tabTrap = function (elem, evt) {
-            var $elem = $(elem);
-
-            // get visible elements
-            var focusableItems = $(focusableElements, modal).filter(':visible');
-
-            // get currently focused item
-            var focusedItem = $(':focus');
-
-            // get the number of focusable items
-            var numberOfFocusableItems = focusableItems.length;
-
-            // get last focusable item
-            var lastFocusableItem = numberOfFocusableItems - 1;
-
-            // get the index of the currently focused item
-            var focusedItemIndex = focusableItems.index(focusedItem);
-
-            if (evt.shiftKey) {
-                // back tab
-                // if focused on first item and user preses back-tab, go to the last focusable item
-                if (focusedItemIndex <= 0) {
-                    focusableItems.get(lastFocusableItem).focus();
-                    evt.preventDefault();
-                }
-            } else {
-                // forward tab
-                // if focused on the last item and user preses tab, go to the first focusable item
-                if (focusedItemIndex >= lastFocusableItem) {
-                    focusableItems.get(0).focus();
-                    evt.preventDefault();
-                }
-            }
-        };
-
-        var modal;
-
-        this.on('mount', function () {
-            modal = this.root.querySelector('.modal');
-
-            // Function to show modal
-            function showModal() {
-                var body = document.querySelector('body');
-                var modalBackdrop = document.createElement('div');
-                modalBackdrop.id = 'modalBackdrop';
-                // IE workaround, list out each classList item
-                modalBackdrop.classList.add('modal-backdrop');
-                modalBackdrop.classList.add('opaque');
-                modalBackdrop.classList.add('fade');
-                modalBackdrop.tabindex = -1;
-                body.appendChild(modalBackdrop);
-                body.classList.add('modal-open');
-                body.classList.add('modal__gutter--right');
-                modal.classList.add('show');
-                setTimeout(function () {
-                    modal.classList.add('in');
-                    modalBackdrop.classList.add('in');
-                }, 100);
-                modal.focus();
-            }
-
-            // Function to hide modal
-            function hideModal() {
-                var body = document.querySelector('body');
-                var modalBackdrop = document.querySelector('#modalBackdrop');
-                var modalLaunchId = document.getElementById(opts.opentrigger);
-                var videoSrc = $('iframe').attr('src');
-                $('iframe').attr('src', videoSrc);
-                modal.classList.remove('in');
-                modalBackdrop.classList.remove('in');
-                setTimeout(function () {
-                    modal.classList.remove('show');
-                    body.classList.remove('modal-open');
-                    body.classList.remove('modal__gutter--right');
-                    body.removeChild(modalBackdrop);
-                }, 200);
-                modalLaunchId.focus();
-            }
-
-            // Adding trigger for opening modal
-            var trigger = document.getElementById(opts.opentrigger);
-            trigger.addEventListener('click', function (e) {
-                showModal();
-            });
-
-            // Close modal on click
-            var dismissTrigger = document.getElementById(opts.dismisstrigger);
-            dismissTrigger.addEventListener('click', function (e) {
-                hideModal();
-            });
+        // MOUNT
+        // -----------------------------------------
+        function onMount() {            
+            // Set up open triggers            
+            let triggerArr = document.querySelectorAll( `[data-cdr-modal-open="${tag.opts.opentrigger}"]` );   
+            triggerArr.forEach( ( trigger ) => {
+                trigger.addEventListener( 'click', ( e ) => {
+                    tag.opener = e.target;
+                    tag.showModal();
+                }, true );
+            } );
 
             // Close modal on esc key
-            this.root.addEventListener('keyup', function (e) {
-                if (e.keyCode === 27) {
-                    hideModal();
+            $el.addEventListener( 'keyup', ( e ) => {
+                if ( e.keyCode === 27 ) {                  
+                    tag.hideModal( tag.opener );
                 }
-            });
+            } );
+        }
 
-            // Call tab trap
-            modal.addEventListener('keydown', function (e) {
-                if (e.keyCode === 9) {
-                    tabTrap(modal, e);
+        // METHODS
+        // ----------------------------------
+
+        // Function to show modal
+        function showModal() {
+            tag.opened = true; // Add modal to DOM 
+            tag.update(); // Because riot isn't fully reactive
+
+            // Add backdrop, classes, set aria
+            let body = document.querySelector( 'body' );
+            let modalBackdrop = document.createElement( 'div' );
+            modalBackdrop.id = 'modalBackdrop';
+                // IE workaround, list out each classList item
+            modalBackdrop.classList.add( 'modal-backdrop' );
+            modalBackdrop.classList.add( 'opaque' );
+            modalBackdrop.classList.add( 'fade' );
+            modalBackdrop.tabindex = -1;
+            body.appendChild( modalBackdrop );
+            body.classList.add( 'modal-open' );
+            body.classList.add( 'modal__gutter--right' );
+            tag.refs.modal.setAttribute('aria-hidden', 'false');
+            tag.refs.modal.classList.add( 'in' );
+            modalBackdrop.classList.add( 'in' );
+
+            // Set up dismiss triggers
+            let dismissTriggerArr = document.querySelectorAll( `[data-cdr-modal-close="${tag.opts.dismisstrigger}"]` );         
+            dismissTriggerArr.forEach( ( dismissTrigger ) => {
+                dismissTrigger.addEventListener( 'click', ( e ) => {
+                    tag.hideModal( tag.opener );
+                } );
+            } );
+
+            // Trap tabs
+            tag.refs.modal.addEventListener( 'keydown', function ( e ) {
+                if ( e.keyCode === 9 ) {
+                   document.addEventListener( 'focus', tag.tabTrap, true );
                 }
-            });
-        });
-  </script>
+            } );
+
+            tag.refs.modal.focus(); // Set focus into modal
+        }
+
+
+        // Function to hide modal
+        function hideModal( focusAfter ) {   
+            // remove classes     
+            let body = document.querySelector( 'body' );
+            let modalBackdrop = document.querySelector( '#modalBackdrop' );
+            tag.refs.modal.classList.remove( 'in' );
+            tag.refs.modal.setAttribute('aria-hidden', 'true');
+            modalBackdrop.classList.remove( 'in' );
+            body.classList.remove( 'modal-open' );
+            body.classList.remove( 'modal__gutter--right' );
+            body.removeChild( modalBackdrop );
+
+            document.removeEventListener( 'focus', tag.tabTrap, true ); //remove tab trapping event listener
+
+            tag.opened = false; // Remove modal from DOM
+            tag.update(); // Because riot isn't fully reactive
+
+            focusAfter.focus();// return focus to element that launched the modal
+        }
+
+
+        // tab trapping event handler
+        function tabTrap(evt) {                    
+            if ( !tag.refs.modal.contains( evt.target ) ) {
+                evt.stopPropagation();
+                tag.refs.modal.focus();
+            }
+        }
+
+    </script>
 </cdr-video-modal>
