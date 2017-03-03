@@ -1,9 +1,4 @@
 # Ignore docs files
-_gh_pages
-_site
-.ruby-version
-backstop_data
-
 # Numerous always-ignore extensions
 *.diff
 *.err
@@ -33,35 +28,9 @@ backstop_data
 nbproject
 Thumbs.db
 
-# Komodo
-.komodotools
-*.komodoproject
+
 
 # Folders to ignore
-bower_components
 node_modules
 
-# Build directories and files
-target
 
-# docs_src ignores
-docs_src/assets/css/*.min.css
-docs_src/assets/js/*.min.js
-docs_src/_includes/less
-docs_src/_includes/**/*.less
-docs_src/_data/package.json
-
-# Compiled files added to docs_src
-/docs_src/.jekyll-metadata
-/docs_src/rei-cedar*
-docs_src/assets/css/src/docs.css
-
-# Build and transitional directories
-docs_dist
-test/tmp/
-deprecated/
-
-
-# PhantomCSS test reference images
-test/test-ui/screenshots
-test/test-ui/failures
