@@ -1,6 +1,0 @@
-
-{% for item in site.data.theme-class-names %}
-    {% if item.theme == include.param %}
-        <button type="button" class="btn {{ item.buttonClass }} btn-primary btn-block ">Block {{ item.theme }} button</button>
-    {% endif %}
-{% endfor %}
