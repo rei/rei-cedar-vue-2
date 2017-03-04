@@ -44,16 +44,70 @@
         padding: @group-gutter-width;
     }
     &.group-gutter-open-10 {
-        padding: @group-gutter-width-primary;
-        > [class^=col-],
-        > [class*=col-] {
-            padding: @group-gutter-width-primary;
+        @group-gutter-open-10-ruleset();
+    }
+    @media (min-width: @screen-sm-min) {
+        &.group-gutter-sm-open-10 {
+            @group-gutter-open-10-ruleset();
+        }
+    }
+    @media (min-width: @screen-sm-min) {
+        &.group-gutter-md-open-10 {
+            @group-gutter-open-10-ruleset();
+        }
+    }
+    @media (min-width: @screen-lg-min) {
+        &.group-gutter-lg-open-10 {
+            @group-gutter-open-10-ruleset();
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  list
+//----------------------------------------------------------------------------------------------------------------------
+.group {
+    &.group-list-xs .tile {
+        @group-list-tile-ruleset();
+    }
+    @media (min-width: @screen-xs-max) {
+        &.group-list-sm .tile {
+            @group-list-tile-ruleset();
+        }
+        &.end-group-list-sm .tile {
+            @group-end-list-tile-ruleset();
+        }
+    }
+    @media (min-width: @screen-sm-max) {
+        &.group-list-md .tile {
+            @group-list-tile-ruleset();
+        }
+        &.end-group-list-md .tile {
+            @group-end-list-tile-ruleset();
+        }
+    }
+    @media (min-width: @screen-md-max) {
+        &.group-list-lg .tile {
+            @group-list-tile-ruleset();
+        }
+        &.end-group-list-lg .tile {
+            @group-end-list-tile-ruleset();
         }
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  grid
+//  squshed and streched
+//-------------------------------------------------------------------------
+.container-squished {
+    display: block;
+    padding: @card-spacer-inner-x @card-spacer-inner-y;
+}
+.container-streched {
+    padding: 0;
+}
+
 //----------------------------------------------------------------------------------------------------------------------
 .group {
      >.col-xs-auto {

@@ -42,10 +42,37 @@
         }
     }
 }
-.card-block {
-    display: block;
-    padding: @card-spacer-inner-x @card-spacer-inner-y;
+.card-block,
+.card-block-xs-squished {
+   .container-squished;
 }
+.card-block-xs-stretched {
+    .container-streched;
+}
+    @media (min-width: @screen-xs-max) {
+        .card-block-sm-squished {
+            .container-squished;
+        }
+        .card-block-sm-stretched {
+            .container-streched;
+        }
+    }
+    @media (min-width: @screen-sm-max) {
+        .card-block-md-squished {
+            .container-squished;
+        }
+        .card-block-md-stretched {
+            .container-streched;
+        }
+    }
+    @media (min-width: @screen-md-max) {
+        .card-block-lg-squished {
+            .container-squished;
+        }
+        .card-block-lg-stretched {
+            .container-streched;
+        }
+    }
 //----------------------------------------------------------------------------------------------------------------------
 //            Card delimiter
 //----------------------------------------------------------------------------------------------------------------------
