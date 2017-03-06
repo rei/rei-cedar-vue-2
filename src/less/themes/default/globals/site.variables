@@ -245,6 +245,11 @@
 @group-push:                                           @padding-base-horizontal;
 @form-group-margin-bottom:                             @vertical-push-large;
 
+
+@container-spacer-inner-x:                                            1.2rem;
+@container-spacer-outer-x:                                            @vertical-push-large;
+@container-spacer-inner-y:                                            1.6rem;
+
 // Spacing between bottom of header and top of content (breadcrumbs are included in content).
 @header-spacing:                                       4rem;
 // Spacing between bottom of breadcrumbs and top of the rest of the content.
