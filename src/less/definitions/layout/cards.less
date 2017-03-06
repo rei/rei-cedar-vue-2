@@ -42,48 +42,48 @@
         }
     }
 }
-.card-block,
-.card-block-xs-squished {
-   .container-squished;
+.card-block, //Deprecated
+.card-block-xs-open-default {
+   .container-open-default();
 }
-.card-block-xs-stretched {
-    .container-streched;
+.card-block-xs-closed {
+    .container-closed;
 }
     @media (min-width: @screen-xs-max) {
-        .card-block-sm-squished {
-            .container-squished;
+        .card-block-sm-open-default {
+            .container-open-default();
         }
-        .card-block-sm-stretched {
-            .container-streched;
+        .card-block-sm-closed {
+            .container-closed;
         }
     }
     @media (min-width: @screen-sm-max) {
-        .card-block-md-squished {
-            .container-squished;
+        .card-block-md-open-default {
+            .container-open-default();
         }
-        .card-block-md-stretched {
-            .container-streched;
+        .card-block-md-closed {
+            .container-closed;
         }
     }
     @media (min-width: @screen-md-max) {
-        .card-block-lg-squished {
-            .container-squished;
+        .card-block-lg-open-default {
+            .container-open-default();
         }
-        .card-block-lg-stretched {
-            .container-streched;
+        .card-block-lg-closed {
+            .container-closed;
         }
     }
 //----------------------------------------------------------------------------------------------------------------------
 //            Card delimiter
 //----------------------------------------------------------------------------------------------------------------------
-.card-block {
-    &-top {
+.card {
+    .card-block-top {
         border-bottom: @card-border-width solid @card-border-color;
         &:first-child {
             .border-radius(@card-border-radius-inner @card-border-radius-inner 0 0);
         }
     }
-    &-bottom {
+    .card-block-bottom {
         border-top: @card-border-width solid @card-border-color;
         &:last-child {
             .border-radius(0 0 @card-border-radius-inner @card-border-radius-inner);

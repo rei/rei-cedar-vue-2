@@ -35,6 +35,39 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  list
+//----------------------------------------------------------------------------------------------------------------------
+.group {
+    &.group-display-list-xs .tile {
+        @group-list-tile-ruleset();
+    }
+    @media (min-width: @screen-xs-max) {
+        &.group-display-list-sm .tile {
+            @group-list-tile-ruleset();
+        }
+        &.end-group-display-list-sm .tile {
+            @group-end-list-tile-ruleset();
+        }
+    }
+    @media (min-width: @screen-sm-max) {
+        &.group-display-list-md .tile {
+            @group-list-tile-ruleset();
+        }
+        &.end-group-display-list-md .tile {
+            @group-end-list-tile-ruleset();
+        }
+    }
+    @media (min-width: @screen-md-max) {
+        &.group-display-list-lg .tile {
+            @group-list-tile-ruleset();
+        }
+        &.end-group-display-list-lg .tile {
+            @group-end-list-tile-ruleset();
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  gutter
 //----------------------------------------------------------------------------------------------------------------------
 .group {
@@ -64,47 +97,14 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  list
-//----------------------------------------------------------------------------------------------------------------------
-.group {
-    &.group-list-xs .tile {
-        @group-list-tile-ruleset();
-    }
-    @media (min-width: @screen-xs-max) {
-        &.group-list-sm .tile {
-            @group-list-tile-ruleset();
-        }
-        &.end-group-list-sm .tile {
-            @group-end-list-tile-ruleset();
-        }
-    }
-    @media (min-width: @screen-sm-max) {
-        &.group-list-md .tile {
-            @group-list-tile-ruleset();
-        }
-        &.end-group-list-md .tile {
-            @group-end-list-tile-ruleset();
-        }
-    }
-    @media (min-width: @screen-md-max) {
-        &.group-list-lg .tile {
-            @group-list-tile-ruleset();
-        }
-        &.end-group-list-lg .tile {
-            @group-end-list-tile-ruleset();
-        }
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  grid
-//  squshed and streched
+//  open and closed container spacing
 //-------------------------------------------------------------------------
-.container-squished {
+.container-open-default {
     display: block;
     padding: @card-spacer-inner-x @card-spacer-inner-y;
 }
-.container-streched {
+.container-closed {
     padding: 0;
 }
 
@@ -114,7 +114,6 @@
         min-width: @group-grid-auto-width;
         @group-grid-auto-flex-ruleset();
     }
-
     .group-col-variant( 12; xs );
 
     @media (min-width: @screen-sm-min) {
