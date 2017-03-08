@@ -1,6 +1,6 @@
 <cdr-tile-event-aggregator>
     <section class="tile">
-        <div class="hidden-sm-down media-frame ratio-3-4 portrait center">
+        <div class="hidden-xs hidden-sm media-frame ratio-3-4 portrait center">
             <img src="{ opts.imgPath }" alt="{ opts.imgPathAlt }">
         </div>
         <div class="group group-display-fixed event-wrapper">
