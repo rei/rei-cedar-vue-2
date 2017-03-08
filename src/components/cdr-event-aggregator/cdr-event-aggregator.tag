@@ -1,4 +1,4 @@
-<cdr-tile-event-aggregator >
+<cdr-tile-event-aggregator>
     <section class="tile">
         <div class="hidden-sm-down media-frame ratio-3-4 portrait center">
             <img src="{ opts.imgPath }" alt="{ opts.imgPathAlt }">
@@ -12,7 +12,8 @@
             </div>
             <div class="col-xs-8">
                 <div class="well">
-                    <h2 class="h4" class="description"> { opts.title } </h2> <!--the heading value needs to be conditional so we can be sure to deliver an accessible component-->
+                <!--the heading value needs to be conditional so we can be sure to deliver an accessible component-->
+                    <h2 class="h4" class="description"> { opts.title } </h2>
                     <span class="location text-muted">{ opts.location }</span>
                 </div>
             </div>
