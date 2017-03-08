@@ -266,3 +266,13 @@
     </div>
 </article>
 
+<cdr-tile-event-aggregator
+img-path=" http://placehold.it/320x150 "
+img-path-alt=" an image "
+date-day-of-week=" Sat "
+date-month-and-day-of-month=" Oct 26 "
+title-heading= 4
+title=" This is the event you have been waiting for "
+location=" Seattle 9:30AM "
+>
+</cdr-tile-event-aggregator>
