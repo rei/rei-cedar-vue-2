@@ -94,6 +94,15 @@
             @group-gutter-open-10-ruleset();
         }
     }
+    @media (min-width: @screen-sm-min) {
+        &.flex-grow-none {
+            > [class^=col-],
+            > [class*=col-] {
+                @group-grid-no-flex-ruleset();
+            }
+        }
+    }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

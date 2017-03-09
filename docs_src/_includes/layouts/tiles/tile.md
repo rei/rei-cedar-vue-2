@@ -266,12 +266,78 @@
     </div>
 </article>
 
-<cdr-tile-event-aggregator
-img-path=" http://placehold.it/320x150 "
-img-path-alt=" an image "
-date-day-of-week=" Sat "
-date-month-and-day-of-month=" Oct 26 "
-title=" This is the event you have been waiting for "
-location=" Seattle 9:30AM "
->
-</cdr-tile-event-aggregator>
+<cdr-card-docs example-title="Event date tile cards" element-id="dateTileCard">
+    <yield to="example-description">Date event tiles that will display as list view in mobile and as cards in Desktop.</yield>
+    <yield to="example">
+        <section class="group group-display-fixed flex-grow-none group-gutter-sm-open-10"> 
+            <cdr-tile-event-aggregator
+                img-path="http://placehold.it/320x150"
+                img-path-alt="an image"
+                date-day-of-week="Sat"
+                date-month-and-day-of-month="Oct 26"
+                title="This is the event you have been waiting for"
+                location="Seattle &mdash; 9:30AM"
+                class="col-sm-4 col-md-4 col-lg-3"
+            ></cdr-tile-event-aggregator>
+            <cdr-tile-event-aggregator
+                img-path="http://placehold.it/320x150"
+                img-path-alt="an image"
+                date-day-of-week="Sat"
+                date-month-and-day-of-month="Oct 26"
+                title="This is the event you have been waiting for"
+                location="Seattle &mdash; 9:30AM"
+                class="col-sm-4 col-md-4 col-lg-3"
+            ></cdr-tile-event-aggregator>
+            <cdr-tile-event-aggregator
+                img-path="http://placehold.it/320x150"
+                img-path-alt="an image"
+                date-day-of-week="Sat"
+                date-month-and-day-of-month="Oct 26"
+                title="This is the event you have been waiting for"
+                location="Seattle &mdash; 9:30AM"
+                class="col-sm-4 col-md-4 col-lg-3"
+            ></cdr-tile-event-aggregator>
+            <cdr-tile-event-aggregator
+                img-path="http://placehold.it/320x150"
+                img-path-alt="an image"
+                date-day-of-week="Sat"
+                date-month-and-day-of-month="Oct 26"
+                title="This is the event you have been waiting for"
+                location="Seattle &mdash; 9:30AM"
+                class="col-sm-4 col-md-4 col-lg-3"
+            ></cdr-tile-event-aggregator>
+        </section>
+    </yield>
+    <yield to="codeblock">
+        {% highlight html %}
+        <cdr-tile-event-aggregator
+            img-path=""
+            img-path-alt=""
+            date-day-of-week=""
+            date-month-and-day-of-month=""
+            title=""
+            location=""
+            class=""
+        >
+            <section class="tile">
+                <div class="hidden-xs media-frame ratio-3-4 portrait center">
+                    <img src="{ opts.imgPath }" alt="{ opts.imgPathAlt }">
+                </div>
+                <div class="group group-display-fixed event_wrapper">
+                    <div class="event__date text-uppercase">
+                        <div class="h2 event__date--title">{ opts.dateDayOfWeek }</div>
+                        <div class="text-muted">{ opts.dateMonthAndDayOfMonth }</div>
+                    </div>
+                    <div class="col-xs-8 col-sm-7">
+                        <div class="event__content">
+                            <!--the heading value needs to be conditional so we can be sure to deliver an accessible component-->
+                            <h2 class="h4 event__date--title">{ opts.title }</h2>
+                            <div class="location text-muted">{ opts.location }</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </cdr-tile-event-aggregator>
+        {% endhighlight %}
+    </yield>
+</cdr-card-docs>

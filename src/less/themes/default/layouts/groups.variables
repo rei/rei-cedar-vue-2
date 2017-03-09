@@ -14,7 +14,7 @@
 @group-display:                                                 flex;
 @group-display-child-container:                                 inline-flex;
 @group-display-grandchild-flex-ruleset: {
-    flex: 1 0 0;
+    flex: 1 0;
 };
 //overflow
 @group-overflow-display-flex-ruleset: {
@@ -45,6 +45,9 @@
 @group-grid-auto-width:                                               0;
 @group-grid-auto-flex-ruleset: {
     flex-grow: 1;
+};
+@group-grid-no-flex-ruleset: {
+    flex-grow: 0;
 };
 
 //  list chrome
