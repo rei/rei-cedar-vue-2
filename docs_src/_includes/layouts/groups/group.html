@@ -2,12 +2,9 @@
 
 <h2>Group grid</h2>
 <p>Like our Page Grid, Groups make use of columns for container separation and any gutter spacing requierments. These work in the same manner as the page grid columns and support display variation at the breakpoint level.</p>
-<article class="card vertical-push-lg">
-    <section class="card-block card-block-top" data-theme="light-20">
-        <h3 class="h4">Grid Colunms changing display at breakpoints</h3>
-    </section>
-    <section class="card-block cedar-example">
-        <div class="group group-display-fixed" data-theme="light-20" data-example-id="group-grid">
+<cdr-card-docs example-title="Grid Colunms changing display at breakpoints" element-id="group-grid">
+    <yield to="example">
+        <div class="group group-display-fixed" data-theme="light-20">
             <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                 <section class="tile">
                     <div class="media-frame ratio-3-4 portrait center">
@@ -129,73 +126,26 @@
                 </section>
             </div>
         </div>
-    </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-group-grid"
-            data-toggle="collapse"
-            data-target="#group-grid"
-        >
-        <label for="checkbox-group-grid">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="group-grid" data-theme="light-20">
+    </yield>
+    <yield to="codeblock">
     {% highlight html %}
     <div class="group group-display-fixed" data-theme="light-20">
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
             <section class="tile"></section>
         </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <section class="tile"></section>
-        </div>
     </div>
     {% endhighlight %}
-    </div>
-</article>
+    </yield>
+</cdr-card-docs>
 
 <h2>Group gutters</h2>
 <p>Groups also make use of gutters for container separation, however unlike our Page Grid, Group gutters can be collapsed or open and their delimiter remains constant across breakpoints.</p>
-<article class="card vertical-push-lg">
-    <section class="card-block card-block-top" data-theme="light-20">
-        <h3 class="h4">Collapsed Group gutter</h3>
-    </section>
-    <section class="card-block">
+<cdr-card-docs example-title="Collapsed Group gutter" element-id="collapsed-group-gutter">
+    <yield to="example-description">
         <p>By default, Grid gutters are in a collapsed state. This is intended for usage where all content containers are related to a larger context and would be appropriate for wells or tiles.</p>
-    </section>
-    <section class="card-block cedar-example">
-        <h4> Group with tiles</h4>
-        <div class="group group-display-fixed" data-theme="light-20" data-example-id="collapsed-group-gutter">
+    </yield>
+    <yield to="example">
+        <div class="group group-display-fixed" data-theme="light-20">
             <div class="col-xs-4">
                 <section class="tile">
                     <div class="media-frame ratio-3-4 portrait center">
@@ -228,47 +178,30 @@
                 </section>
             </div>
         </div>
-    </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-collapsed-group-gutter"
-            data-toggle="collapse"
-            data-target="#collapsed-group-gutter"
-        >
-        <label for="checkbox-collapsed-group-gutter">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="collapsed-group-gutter" data-theme="light-20">
+    </yield>
+    <yield to="codeblock">
     {% highlight html %}
     <div class="group group-display-fixed" data-theme="light-20">
         <div class="col-xs-4">
             <section class="tile"></section>
         </div>
-        <div class="col-xs-4">
-            <section class="tile"></section>
-        </div>
-        <div class="col-xs-4">
-            <section class="tile"></section>
-        </div>
     </div>
     {% endhighlight %}
-    </div>
-</article>
+    </yield>
+</cdr-card-docs>
 
-<article class="card vertical-push-lg">
-    <div class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Open Group gutter</h3></div>
-    <div class="card-block"><p>By adding the <code>.group-gutter-open-10</code> class, Grid gutters create a separation between content containers. This is intended for usage where all content containers are self contained pieces of content and are appropriate for wells or cards.</p></div>
-
-    <div class="card-block cedar-example">
-        <h4> Group with Cards</h4>
-        <div class="group group-display-fixed group-gutter-open-10" data-theme="light-20" data-example-id="open-group-gutter">
+<cdr-card-docs example-title="Open Group gutter" element-id="open-group-gutter">
+    <yield to="example-description">
+        <p>By adding the <code>.group-gutter-xs-open-10</code> class, Grid gutters create a separation between content containers. This is intended for usage where all content containers are self contained pieces of content and are appropriate for wells or cards.</p>
+    </yield>
+    <yield to="example">
+        <div class="group group-display-fixed group-gutter-xs-open-10" data-theme="light-20">
             <div class="col-xs-4">
                 <article class="card">
                     <div class="card-media-top media-frame ratio-3-4 portrait center">
                         <img src="http://placehold.it/320x150" alt="Example image">
                     </div>
-                    <div class="card-block">
+                    <div class="card-block-xs-open-default">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                     </div>
                 </article>
@@ -278,7 +211,7 @@
                     <div class="card-media-top media-frame ratio-3-4 portrait center">
                         <img src="http://placehold.it/320x150" alt="Example image">
                     </div>
-                    <div class="card-block">
+                    <div class="card-block-xs-open-default">
                         <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
                     </div>
                 </article>
@@ -288,47 +221,362 @@
                     <div class="card-media-top media-frame ratio-3-4 portrait center">
                         <img src="http://placehold.it/320x150" alt="Example image">
                     </div>
-                    <div class="card-block">
+                    <div class="card-block-xs-open-default">
                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                         <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
                     </div>
                 </article>
             </div>
         </div>
-    </div>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkbox-open-group-gutter"
-            data-toggle="collapse"
-            data-target="#open-group-gutter"
-        >
-        <label for="checkbox-open-group-gutter">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="open-group-gutter" data-theme="light-20">
+    </yield>
+    <yield to="codeblock">
     {% highlight html %}
     <div class="group group-display-fixed group-gutter-open-10" data-theme="light-20">
         <div class="col-xs-4">
             <article class="card"></article>
         </div>
-        <div class="col-xs-4">
-            <article class="card"></article>
+    </div>
+    {% endhighlight %}
+    </yield>
+</cdr-card-docs>
+
+<cdr-card-docs example-title="Grid gutters change spacing at breakpoints" element-id="open-and-closed-group-gutter">
+    <yield to="example-description">
+        <p>In the previous example, we see how we can change the spacing of the group to create an open layout. In some scenarios, we will want to be able to change between an open and closed display - here is how we do that.</p>
+    </yield>
+    <yield to="example">
+        <div class="group group-display-fixed group-gutter-sm-open-10" data-theme="light-20">
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <article class="card">
+                    <div class="card-media-top media-frame ratio-3-4 portrait center">
+                        <img src="http://placehold.it/320x150" alt="Example image">
+                    </div>
+                    <div class="card-block-xs-open-default">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <article class="card">
+                    <div class="card-media-top media-frame ratio-3-4 portrait center">
+                        <img src="http://placehold.it/320x150" alt="Example image">
+                    </div>
+                    <div class="card-block-xs-open-default">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <article class="card">
+                    <div class="card-media-top media-frame ratio-3-4 portrait center">
+                        <img src="http://placehold.it/320x150" alt="Example image">
+                    </div>
+                    <div class="card-block-xs-open-default">
+                        <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <article class="card">
+                    <div class="card-media-top media-frame ratio-3-4 portrait center">
+                        <img src="http://placehold.it/320x150" alt="Example image">
+                    </div>
+                    <div class="card-block-xs-open-default">
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                        <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
+                    </div>
+                </article>
+            </div>
         </div>
-        <div class="col-xs-4">
+    </yield>
+    <yield to="codeblock">
+        <section class="card-block-xs-open-default">
+            <table class="table table-bordered table-striped">
+                <caption>The classes available to alter the group spacing are:</caption>
+                <colgroup>
+                    <col class="col-xs-3">
+                    <col class="col-xs-7">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <code>.group-gutter-xs-open-10</code>
+                        </th>
+                        <td>This creates a 1rem gutter surrounding our containers at the <strong>extra small</strong> breakpoint.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.group-gutter-sm-open-10</code>
+                        </th>
+                        <td>This creates a 1rem gutter surrounding our containers at the <strong>small</strong> breakpoint.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.group-gutter-md-open-10</code>
+                        </th>
+                        <td>This creates a 1rem gutter surrounding our containers at the <strong>medium</strong> breakpoint.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.group-gutter-lg-open-10</code>
+                        </th>
+                        <td>This creates a 1rem gutter surrounding our containers at the <strong>large</strong> breakpoint.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    {% highlight html %}
+    <div class="group group-display-fixed group-gutter-sm-open-10" data-theme="light-20" data-example-id="open-group-gutter">
+        <div class="col-xs-12 col-md-6 col-lg-3">
             <article class="card"></article>
         </div>
     </div>
     {% endhighlight %}
-    </div>
-</article>
+    </yield>
+</cdr-card-docs>
+
+<cdr-card-docs example-title="Combining breakpoint specific group gutters and container chrome" element-id="list-group" exampleStyle="card-block-sm-open-default">
+    <yield to="example-description">
+        <p>
+            In the example above we demonstrate that a group gutter model can be updated with the addition of breakpoint specific <code>group-gutter-*</code> classes. Now let’s add onto that example by modifying the chrome of our containers. In this example, we will change from a list view at extra small and flow into an open tile display at larger breakpoints.
+        </p>
+    </yield>
+    <yield to="example">
+        <div class="group group-display-fixed group-display-list-xs end-group-display-list-sm group-gutter-sm-open-10" data-theme="light-20">
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <a href="#checkbox-list-group" class="tile">
+                            <div class="tile-block-xs-open-default">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <a href="#checkbox-list-group" class="tile">
+                            <div class="tile-block-xs-open-default">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <a href="#checkbox-list-group" class="tile">
+                            <div class="tile-block-xs-open-default ">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <a href="#checkbox-list-group" class="tile">
+                            <div class="tile-block-xs-open-default ">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+    </yield>
+    <yield to="codeblock">
+        <section class="card-block-xs-open-default">
+            <table class="table table-bordered table-striped">
+                <caption>The classes available to alter container chrome are:</caption>
+                <colgroup>
+                    <col class="col-xs-3">
+                    <col class="col-xs-7">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <code>.group-list-xs</code>
+                        </th>
+                        <td>Removes the default chrome of a container at the <strong>extra small</strong> breakpoint and adds a bottom border in its place.</td>
+                    </tr>
+                        <tr>
+                        <th scope="row">
+                            <code>.group-list-sm</code>
+                        </th>
+                        <td>Removes the default chrome of a container at the <strong>small</strong> breakpoint and adds a bottom border in its place.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.group-list-md</code>
+                        </th>
+                        <td>Removes the default chrome of a container at the <strong>medium</strong> breakpoint and adds a bottom border in its place.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.group-list-lg</code>
+                        </th>
+                        <td>Removes the default chrome of a container at the <strong>large</strong> breakpoint and adds a bottom border in its place.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.end-group-list-sm</code>
+                        </th>
+                        <td>Reinstates the default chrome at the <strong>small</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.end-group-list-md</code>
+                        </th>
+                        <td>Reinstates the default chrome at the <strong>medium</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.end-group-list-lg</code>
+                        </th>
+                        <td>Reinstates the default chrome at the <strong>large</strong> breakpoint</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered table-striped">
+                <caption>The classes available to alter container spacing are:</caption>
+                <colgroup>
+                    <col class="col-xs-3">
+                    <col class="col-xs-7">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <code>.card-block-xs-open-default</code>
+                        </th>
+                        <td>This is the standard spacing for elements within a card </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.card-block-sm-open-default</code>
+                        </th>
+                        <td>This updates the spacing of the card block to the default spacing at the <strong>small</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.card-block-md-open-default</code>
+                        </th>
+                        <td>This updates the spacing of the card block to the default spacing at the <strong>medium</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.card-block-lg-open-default</code>
+                        </th>
+                        <td>This updates the spacing of the card block to the default spacing at the <strong>large</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.card-block-xs-closed</code>
+                        </th>
+                        <td>This removes padding from a card block at the <strong>extra small</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.card-block-sm-closed</code>
+                        </th>
+                        <td>This removes padding from a card block at the <strong>small</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.card-block-md-closed</code>
+                        </th>
+                        <td>This removes padding from a card block at the <strong>medium</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.card-block-lg-closed</code>
+                        </th>
+                        <td>This removes padding from a card block at the <strong>large</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.tile-block-xs-open-default</code>
+                        </th>
+                        <td>This is the standard spacing for elements within a tile </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.tile-block-sm-open-default</code>
+                        </th>
+                        <td>This updates the spacing of the tile block to the default spacing at the <strong>small</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.tile-block-md-open-default</code>
+                        </th>
+                        <td>This updates the spacing of the tile block to the default spacing at the <strong>medium</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.tile-block-lg-open-default</code>
+                        </th>
+                        <td>This updates the spacing of the tile block to the default spacing at the <strong>large</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.tile-block-xs-closed</code>
+                        </th>
+                        <td>This removes padding from a tile block at the <strong>extra small</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.tile-block-sm-closed</code>
+                        </th>
+                        <td>This removes padding from a tile block at the <strong>small</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.tile-block-md-closed</code>
+                        </th>
+                        <td>This removes padding from a tile block at the <strong>medium</strong> breakpoint</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>.tile-block-lg-closed</code>
+                        </th>
+                        <td>This removes padding from a tile block at the <strong>large</strong> breakpoint</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    {% highlight html %}
+    <article class="card" id="chrome-example">
+        <div class="card-block-xs-closed card-block-sm-open-default">
+            <div class="group
+                        group-display-fixed
+                        group-list-xs
+                        end-group-list-sm
+                        group-gutter-sm-open-10"
+                 data-theme="light-20"
+                 data-example-id="open-group-gutter">
+                <div class="col-xs-12 col-sm-6 col-lg-3">
+                    <a href="#chrome-example" class="tile">
+                        <div class="tile-block-xs-open-default"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    {% endhighlight %}
+    </yield>
+</cdr-card-docs>
 
 <h2>Content containers options</h2>
 <p>Content containers are wrappers for unique collections of content, they come in three unique variations.</p>
-<article class="card vertical-push-lg">
-    <div class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Well</h3></div>
-    <div class="card-block cedar-example">
-        <div class="group group-display-fixed" data-theme="light-20" data-example-id="content-containers-well">
+<cdr-card-docs example-title="Well" element-id="content-containers-well">
+    <yield to="example">
+        <div class="group group-display-fixed" data-theme="light-20" data-example-id="">
             <div class="col-xs-4">
                 <div class="well">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
@@ -345,18 +593,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="group-well-example"
-            data-toggle="collapse"
-            data-target="#gutter-container-well-example"
-        >
-        <label for="group-well-example">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="gutter-container-well-example" data-theme="light-20">
+    </yield>
+    <yield to="codeblock">
     {% highlight html %}
     <div class="group group-display-fixed" data-theme="light-20">
         <div class="col-xs-4">
@@ -370,47 +608,36 @@
         </div>
     </div>
     {% endhighlight %}
-    </div>
-</article>
+    </yield>
+</cdr-card-docs>
 
-<article class="card vertical-push-lg">
-    <section class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Tile</h3></section>
-    <section class="card-block cedar-example">
-        <div class="group group-display-fixed" data-theme="light-20" data-example-id="content-containers-tile">
+<cdr-card-docs example-title="Tile" element-id="content-containers-tile">
+    <yield to="example">
+         <div class="group group-display-fixed" data-theme="light-20">
             <div class="col-xs-4">
                 <section class="tile">
-                    <div class="tile-block">
+                    <div class="tile-block-xs-open-default">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                     </div>
                 </section>
             </div>
             <div class="col-xs-4">
                 <section class="tile">
-                    <div class="tile-block">
+                    <div class="tile-block-xs-open-default">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                     </div>
                 </section>
             </div>
             <div class="col-xs-4">
                 <section class="tile">
-                    <div class="tile-block">
+                    <div class="tile-block-xs-open-default">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                     </div>
                 </section>
             </div>
         </div>
-    </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="group-tile-example"
-            data-toggle="collapse"
-            data-target="#gutter-tile-container-example"
-        >
-        <label for="group-tile-example">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="gutter-tile-container-example" data-theme="light-20">
+    </yield>
+    <yield to="codeblock">
     {% highlight html %}
     <div class="group group-display-fixed" data-theme="light-20">
         <div class="col-xs-4">
@@ -424,49 +651,38 @@
         </div>
     </div>
     {% endhighlight %}
-    </div>
-</article>
+    </yield>
+</cdr-card-docs>
 
-<article class="card vertical-push-lg">
-    <section class="card-block card-block-top" data-theme="light-20"><h3 class="h4">Card</h3></section>
-    <section class="card-block cedar-example">
-        <div class="group group-display-fixed group-gutter-open-10" data-theme="light-20" data-example-id="content-containers-card">
+<cdr-card-docs example-title="Card" element-id="content-containers-card">
+    <yield to="example">
+        <div class="group group-display-fixed group-gutter-xs-open-10" data-theme="light-20">
             <div class="col-xs-4">
                 <article class="card">
-                    <section class="card-block">
+                    <section class="card-block-xs-open-default">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                     </section>
                 </article>
             </div>
             <div class="col-xs-4">
                 <article class="card">
-                    <section class="card-block">
+                    <section class="card-block-xs-open-default">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                     </section>
                 </article>
             </div>
             <div class="col-xs-4">
                 <article class="card">
-                    <section class="card-block">
+                    <section class="card-block-xs-open-default">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                     </section>
                 </article>
             </div>
         </div>
-    </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="group-card-example"
-            data-toggle="collapse"
-            data-target="#gutter-card-container-example"
-        >
-        <label for="group-card-example">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="gutter-card-container-example" data-theme="light-20">
+    </yield>
+    <yield to="codeblock">
     {% highlight html %}
-    <div class="group group-display-fixed group-gutter-open-10" data-theme="light-20">
+    <div class="group group-display-fixed group-gutter-xs-open-10" data-theme="light-20">
         <div class="col-xs-4">
             <article class="card"></article>
         </div>
@@ -478,20 +694,16 @@
         </div>
     </div>
     {% endhighlight %}
-    </div>
-</article>
+    </yield>
+</cdr-card-docs>
 
 <h2>Flex display options</h2>
-
-<article class="card vertical-push-lg">
-    <section class="card-block card-block-top" data-theme="light-20">
-        <h3 class="h4">Defaut flex display</h3>
-    </section>
-    <section class="card-block">
-        <p> Without providing any <code>.group-display-*</code> classes to your Group, you will have a display type that is consistent with the float display provided by the defalt page grid.
-    </section>
-    <section class="card-block cedar-example">
-        <div class="group" data-example-id="defaut-flex-display">
+<cdr-card-docs example-title="Defaut flex display" element-id="defaut-flex-display">
+    <yield to="example-description">
+    <p> Without providing any <code>.group-display-*</code> classes to your Group, you will have a display type that is consistent with the float display provided by the defalt page grid.</p>
+    </yield>
+    <yield to="example">
+        <div class="group">
             <div class="col-xs-12 col-sm-4">
                  <section class="tile">
                       <div class="media-frame ratio-3-4 portrait center">
@@ -521,49 +733,30 @@
                 </section>
             </div>
         </div>
-    </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="dipslay-root-example"
-            data-toggle="collapse"
-            data-target="#dipslay-default-example"
-        >
-        <label for="dipslay-root-example">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="dipslay-default-example" data-theme="light-20">
-        {% highlight html %}
+    </yield>
+    <yield to="codeblock">
+    {% highlight html %}
         <div class="group">
             <div class="col-xs-12 col-sm-4">
                  <section class="tile"></section>
             </div>
-            <div class="col-xs-12 col-sm-4">
-                <section class="tile"></section>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <section class="tile"></section>
-            </div>
         </div>
-        {% endhighlight %}
-    </div>
-</article>
+    {% endhighlight %}
+    </yield>
+</cdr-card-docs>
 
-<article class="card vertical-push-lg">
-    <section class="card-block card-block-top" data-theme="light-20">
-        <h3 class="h4">Fixed group display</h3>
-    </section>
-    <section class="card-block">
+<cdr-card-docs example-title="Fixed group display" element-id="fixed-group-display">
+    <yield to="example-description">
         <p>Add the <code>.group-display-fixed</code> class to groups to force all containers to stretch to the same height.</p>
-    </section>
-    <section class="card-block cedar-example">
-        <div class="group group-gutter-open-10 group-display-fixed" data-theme="light-20" data-example-id="fixed-group-display">
+    </yield>
+    <yield to="example">
+        <div class="group group-gutter-xs-open-10 group-display-fixed" data-theme="light-20" data-example-id="fixed-group-display">
             <div class="col-xs-4">
                 <article class="card">
                     <section class="card-media-top media-frame ratio-3-4 portrait center">
                         <img src="http://placehold.it/320x150" alt="Example image">
                     </section>
-                    <section class="card-block">
+                    <section class="card-block-xs-open-default">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                     </section>
                 </article>
@@ -580,48 +773,37 @@
                     <section class="card-media-top media-frame ratio-3-4 portrait center">
                         <img src="http://placehold.it/320x150" alt="Example image">
                     </section>
-                    <section class="card-block">
+                    <section class="card-block-xs-open-default">
                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque condimentum, ex eget finibus tristique, erat augue scelerisque mauris, cursus efficitur dui ligula efficitur nibh.</p>
                         <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
                     </section>
                 </article>
             </div>
         </div>
-    </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="checkboxroot-example"
-            data-toggle="collapse"
-            data-target="#group-fixed-example"
-        >
-        <label for="checkboxroot-example">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="group-fixed-example" data-theme="light-20">
-        {% highlight html %}
-        <div class="group group-gutter-open-10 group-display-fixed" data-theme="light-20">
-            <div class="col-xs-4">
-                <article class="card"></article>
-            </div>
-            <div class="col-xs-4">
-                <article class="card"></article>
-            </div>
-            <div class="col-xs-4">
-                <article class="card"></article>
-            </div>
+    </yield>
+    <yield to="codeblock">
+    {% highlight html %}
+    <div class="group group-gutter-xs-open-10 group-display-fixed" data-theme="light-20">
+        <div class="col-xs-4">
+            <article class="card"></article>
         </div>
-        {% endhighlight %}
+        <div class="col-xs-4">
+            <article class="card"></article>
+        </div>
+        <div class="col-xs-4">
+            <article class="card"></article>
+        </div>
     </div>
-</article>
+    {% endhighlight %}
+    </yield>
+</cdr-card-docs>
 
-<article class="card vertical-push-lg">
-    <section class="card-block card-block-top" data-theme="light-20">
-        <h3 class="h4">overflow group display</h3>
-    </section>
-    <section class="card-block"><p>Overflow changes the wrapping proporty to no wrap and allows for a horizontal scroll. This is available for the fixed or default group-display settings.</p></section>
-    <section class="card-block cedar-example">
-        <div class="group group-display-fixed group-gutter-open-10 group-display-overflow" data-example-id="overflow-group-display">
+<cdr-card-docs example-title="Overflow group display" element-id="overflow-group-display">
+    <yield to="example-description">
+        <p>Overflow changes the wrapping proporty to no wrap and allows for a horizontal scroll. This is available for the fixed or default group-display settings.</p>
+    </yield>
+    <yield to="example">
+        <div class="group group-display-fixed group-gutter-xs-open-10 group-display-overflow">
             <div class="col-xs-6">
                 <article class="card">
                     <section class="media-frame ratio-3-4 portrait center">
@@ -657,7 +839,7 @@
                     <section class="media-frame ratio-3-4 portrait center">
                         <img src="http://placehold.it/320x150" alt="Example image">
                     </section>
-                    <section class="card-block">
+                    <section class="card-block-xs-open-default">
                         <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
                     </section>
                 </article>
@@ -667,52 +849,42 @@
                     <section class="media-frame ratio-3-4 portrait center">
                         <img src="http://placehold.it/320x150" alt="Example image">
                     </section>
-                    <section class="card-block">
+                    <section class="card-block-xs-open-default">
                         <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
                     </section>
-                    <section class="card-block" >
+                    <section class="card-block-xs-open-default" >
                         <p>Mauris ut orci eleifend, posuere ex sed, feugiat tellus. Donec quis nisl eget sapien ultrices viverra at eget nisi.</p>
                     </section>
                 </article>
             </div>
         </div>
-    </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-        <input
-            type="checkbox"
-            value=""
-            id="group-overflow"
-            data-toggle="collapse"
-            data-target="#group-overflow-fixed-example"
-        >
-        <label for="group-overflow">View code</label>
-    </div>
-    <div class="collapse code-toggle--document" id="group-overflow-fixed-example" data-theme="light-20">
-        {% highlight html %}
-        <div class="group group-display-fixed group-display-overflow">
-            <div class="col-xs-6">
-                <section class="tile">
-                    <div class="group group-display-fixed">
-                        <div class="col-xs-4">
-                            <section class="tile"></section>
-                        </div>
-                        <div class="col-xs-4">
-                            <section class="tile"></section>
-                        </div>
-                        <div class="col-xs-4">
-                            <section class="tile"></section>
-                        </div>
+    </yield>
+    <yield to="codeblock">
+    {% highlight html %}
+    <div class="group group-display-fixed group-display-overflow">
+        <div class="col-xs-6">
+            <section class="tile">
+                <div class="group group-display-fixed">
+                    <div class="col-xs-4">
+                        <section class="tile"></section>
                     </div>
-                </section>
-            </div>
-            <div class="col-xs-6">
-                <section class="tile"></section>
-            </div>
-            <div class="col-xs-6">
-                <section class="tile"></section>
-            </div>
+                    <div class="col-xs-4">
+                        <section class="tile"></section>
+                    </div>
+                    <div class="col-xs-4">
+                        <section class="tile"></section>
+                    </div>
+                </div>
+            </section>
         </div>
-        {% endhighlight %}
+        <div class="col-xs-6">
+            <section class="tile"></section>
+        </div>
+        <div class="col-xs-6">
+            <section class="tile"></section>
+        </div>
     </div>
-</article>
+    {% endhighlight %}
+    </yield>
+</cdr-card-docs>
 
