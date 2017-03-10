@@ -1,18 +1,23 @@
 // vim: syntax=JSX
-<cdr-video-modal>
-    <div if={opened} ref="modal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <span class="sr-only">Begin dialog</span>
-        <div class="modal__content">
-            <div class="text-right">
-                <button data-cdr-modal-close="{opts.dismisstrigger}" class="close icon icon-rei-close img-circle" aria-label="Close"></button>
-            </div>
-            <div class="modal__content--inner">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <yield />
+<cdr-modal-video>
+    <div>
+        <button type="button" class="btn btn-play" onclick="{showModal}">
+            <span class="icon icon-rei-play-small" aria-hidden="true"></span>{opts.buttonText}
+        </button>
+        <aside if={opened} ref="modal" class="modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="dialog1Title">
+            <span class="sr-only">Begin dialog</span>
+            <s class="modal__content">
+                <div class="text-right">
+                    <button onclick={hideModal} class="close icon icon-rei-close img-circle" aria-label="Close"></button>
                 </div>
+                <section class="modal__content--inner">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe id="dialog1Title" title="{opts.videoTitle}" width="900" height="506" src="https://www.youtube.com/embed/{opts.videoId}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </section>
             </div>
-        </div>
-        <span class="sr-only">End dialog</span>
+            <span class="sr-only">End dialog</span>
+        </aside>
     </div>
 
     <style type="less" scoped>
@@ -96,15 +101,6 @@
         // MOUNT
         // -----------------------------------------
         function onMount() {            
-            // Set up open triggers            
-            let triggerArr = document.querySelectorAll( `[data-cdr-modal-open="${tag.opts.opentrigger}"]` );   
-            triggerArr.forEach( ( trigger ) => {
-                trigger.addEventListener( 'click', ( e ) => {
-                    tag.opener = e.target;
-                    tag.showModal();
-                }, true );
-            } );
-
             // Close modal on esc key
             $el.addEventListener( 'keyup', ( e ) => {
                 if ( e.keyCode === 27 ) {                  
@@ -117,7 +113,8 @@
         // ----------------------------------
 
         // Function to show modal
-        function showModal() {
+        function showModal(e) {
+            tag.opener = e.target;
             tag.opened = true; // Add modal to DOM 
             tag.update(); // Because riot isn't fully reactive
 
@@ -137,14 +134,6 @@
             tag.refs.modal.classList.add( 'in' );
             modalBackdrop.classList.add( 'in' );
 
-            // Set up dismiss triggers
-            let dismissTriggerArr = document.querySelectorAll( `[data-cdr-modal-close="${tag.opts.dismisstrigger}"]` );         
-            dismissTriggerArr.forEach( ( dismissTrigger ) => {
-                dismissTrigger.addEventListener( 'click', ( e ) => {
-                    tag.hideModal( tag.opener );
-                } );
-            } );
-
             // Trap tabs
             tag.refs.modal.addEventListener( 'keydown', function ( e ) {
                 if ( e.keyCode === 9 ) {
@@ -157,7 +146,7 @@
 
 
         // Function to hide modal
-        function hideModal( focusAfter ) {   
+        function hideModal( ) {   
             // remove classes     
             let body = document.querySelector( 'body' );
             let modalBackdrop = document.querySelector( '#modalBackdrop' );
@@ -173,7 +162,7 @@
             tag.opened = false; // Remove modal from DOM
             tag.update(); // Because riot isn't fully reactive
 
-            focusAfter.focus();// return focus to element that launched the modal
+            tag.opener.focus();// return focus to element that launched the modal
         }
 
 
@@ -186,4 +175,4 @@
         }
 
     </script>
-</cdr-video-modal>
+</cdr-modal-video>

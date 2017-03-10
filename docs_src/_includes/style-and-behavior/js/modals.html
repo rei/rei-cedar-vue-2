@@ -539,9 +539,11 @@ $('#myModal').on('hidden.bs.modal', function (e) {
 {% endhighlight %}
 
 <h4 id="modals-riot-component">Modal as a Riot component</h4>
-<!-- Button to launch modal component -->
-<button type="button" class="btn btn-primary" data-cdr-modal-open="openVideoModal">Watch Video</button>
 <!-- Video Modal component -->
-<cdr-video-modal opentrigger="openVideoModal" dismisstrigger="closeVideoModal">
-    <iframe width="900" height="506" src="https://www.youtube.com/embed/IdeaKaG92MY" frameborder="0" allowfullscreen></iframe>
-</cdr-video-modal>
+<cdr-modal-video button-text="Watch Video" video-id="IdeaKaG92MY" video-title="Title goes here">
+</cdr-modal-video>
+
+{% highlight html %}
+<cdr-modal-video button-text="Watch Video" video-id="IdeaKaG92MY" video-title="Title goes here">
+</cdr-modal-video>
+ {% endhighlight %}
