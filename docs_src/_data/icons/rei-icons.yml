@@ -386,10 +386,17 @@
   designSize: 22px
   note:
 
-
 - type: Brand
   name: icon-rei-logo
   title: REI
   designSize:
   description:
+  note:
+
+- type: content
+  name: icon-rei-video
+  title: Video camera
+  description: For use on an image to show it has a video available.
+  size: icon-size-lg
+  designSize: 20px
   note:

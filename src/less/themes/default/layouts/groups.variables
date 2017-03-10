@@ -32,6 +32,13 @@
 //-------------------------------------------------------------------------
 @group-gutter-width:                                             0;
 @group-gutter-width-primary:                                     1rem;
+@group-gutter-open-10-ruleset: {
+    padding: @group-gutter-width-primary;
+        > [class^=col-],
+        > [class*=col-] {
+        padding: @group-gutter-width-primary;
+    }
+};
 
 //  grid
 //-------------------------------------------------------------------------
@@ -40,3 +47,13 @@
     flex-grow: 1;
 };
 
+//  list chrome
+//-------------------------------------------------------------------------
+@group-list-tile-ruleset: {
+    box-shadow: @tile-list-box-shadow;
+    border-bottom: @tile-list-border;
+};
+@group-end-list-tile-ruleset: {
+    box-shadow: @tile-box-shadow;
+    border-bottom: none;
+};

@@ -35,6 +35,39 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  list
+//----------------------------------------------------------------------------------------------------------------------
+.group {
+    &.group-display-list-xs .tile {
+        @group-list-tile-ruleset();
+    }
+    @media (min-width: @screen-xs-max) {
+        &.group-display-list-sm .tile {
+            @group-list-tile-ruleset();
+        }
+        &.end-group-display-list-sm .tile {
+            @group-end-list-tile-ruleset();
+        }
+    }
+    @media (min-width: @screen-sm-max) {
+        &.group-display-list-md .tile {
+            @group-list-tile-ruleset();
+        }
+        &.end-group-display-list-md .tile {
+            @group-end-list-tile-ruleset();
+        }
+    }
+    @media (min-width: @screen-md-max) {
+        &.group-display-list-lg .tile {
+            @group-list-tile-ruleset();
+        }
+        &.end-group-display-list-lg .tile {
+            @group-end-list-tile-ruleset();
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  gutter
 //----------------------------------------------------------------------------------------------------------------------
 .group {
@@ -43,24 +76,44 @@
         display: @group-display-child-container;
         padding: @group-gutter-width;
     }
-    &.group-gutter-open-10 {
-        padding: @group-gutter-width-primary;
-        > [class^=col-],
-        > [class*=col-] {
-            padding: @group-gutter-width-primary;
+    &.group-gutter-xs-open-10 {
+        @group-gutter-open-10-ruleset();
+    }
+    @media (min-width: @screen-sm-min) {
+        &.group-gutter-sm-open-10 {
+            @group-gutter-open-10-ruleset();
+        }
+    }
+    @media (min-width: @screen-sm-min) {
+        &.group-gutter-md-open-10 {
+            @group-gutter-open-10-ruleset();
+        }
+    }
+    @media (min-width: @screen-lg-min) {
+        &.group-gutter-lg-open-10 {
+            @group-gutter-open-10-ruleset();
         }
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  grid
+//  open and closed container spacing
+//-------------------------------------------------------------------------
+.container-open-default {
+    display: block;
+    padding: @card-spacer-inner-x @card-spacer-inner-y;
+}
+.container-closed {
+    padding: 0;
+}
+
 //----------------------------------------------------------------------------------------------------------------------
 .group {
      >.col-xs-auto {
         min-width: @group-grid-auto-width;
         @group-grid-auto-flex-ruleset();
     }
-
     .group-col-variant( 12; xs );
 
     @media (min-width: @screen-sm-min) {
