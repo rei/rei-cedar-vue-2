@@ -77,6 +77,9 @@
         background-image: none;
     }
     @text-with-icon-rei-tree-arrow-button-ruleset();
+    &.btn-play {
+        border-radius: .5rem;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -198,6 +201,93 @@
         &:extend( .link-off-price-standalone-overlay all);
         .overlay-dark & {
              &:extend( .link_stag-explore-overlay all);
+        }
+    }
+}
+
+.btn__link-inline-play {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    padding: 0;
+    
+    span.icon {
+        font-size: 1.8rem;
+        padding-right: 1.6rem;
+        vertical-align: text-bottom;
+    }
+    
+    &:extend( .link_stag all);
+    .overlay-dark & {
+        &:extend( .link_stag-overlay all);
+    }
+    
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: transparent;
+        .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
+    }
+    
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &.focus,
+        &:active,
+        &.active {
+            cursor: @cursor-disabled;
+            pointer-events: none;
+            // Future-proof disabling of clicks
+            color: @btn-disabled-color;
+            @alpha-ruleset();
+        }
+    }
+}
+
+.btn-play {
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: .5rem;
+    color: @btn-high-contrast-color;
+    background-color: rgba(0,0,0,.9);
+    
+    span.icon {
+        font-size: 1.8rem;
+        padding-right: 1.6rem;
+        vertical-align: text-bottom;
+    }
+    
+    &:hover,
+    &:active,
+    &:focus {
+        color: @btn-high-contrast-color;
+        background-color: rgba(0,0,0,.8);
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &.focus,
+        &:active,
+        &.active {
+            cursor: @cursor-disabled;
+            pointer-events: none;
+            // Future-proof disabling of clicks
+            color: @btn-disabled-color;
+            border-color: @btn-disabled-border;
+            @alpha-ruleset();
         }
     }
 }
