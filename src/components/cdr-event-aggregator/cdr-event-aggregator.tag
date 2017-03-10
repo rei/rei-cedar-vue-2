@@ -5,13 +5,13 @@
         </div>
         <div class="group group-display-fixed event_wrapper">
             <div class="event__date text-uppercase">
-                <div class="h2 event__date--title">{ opts.dateDayOfWeek }</div>
+                <div class="h2 event__title">{ opts.dateDayOfWeek }</div>
                 <div class="text-muted">{ opts.dateMonthAndDayOfMonth }</div>
             </div>
             <div class="col-xs-8 col-sm-7">
                 <div class="event__content">
                 <!--the heading value needs to be conditional so we can be sure to deliver an accessible component-->
-                    <h2 class="h4 event__date--title">{ opts.title }</h2>
+                    <h4 class="event__title">{ opts.title }</h4>
                     <div class="location text-muted">{ opts.location }</div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
             padding: 1.2rem;
         }
 
-        .event__date--title {
+        .event__title {
             font-family: inherit;
 
             &.h2 {
@@ -37,6 +37,7 @@
             padding-left: 1.2rem;
             padding-right: 1.2rem;
             margin: 1.2rem 0;
+            flex: 0 1 auto;
         }
 
         .location {

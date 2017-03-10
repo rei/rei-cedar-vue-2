@@ -37,35 +37,35 @@
     background-color: @active-background;
     border-color: @active-border;
   }
-    &:focus{
-        // Default
-        outline: thin dotted;
-        // WebKit
-        outline: 0.5rem auto;
-        outline-color: @core-action-1;
-        outline-offset: -0.2rem;
-    }
+  &:focus{
+      // Default
+      outline: thin dotted;
+      // WebKit
+      outline: 0.5rem auto;
+      outline-color: @core-action-1;
+      outline-offset: -0.2rem;
+  }
+  &:active,
+  &.active {
+      background-image: none;
+      outline: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
     &:active,
     &.active {
-        background-image: none;
-        outline: none;
+      cursor: @cursor-disabled;
+      pointer-events: none;
+      // Future-proof disabling of clicks
+      color: @btn-disabled-color;
+      border-color: @btn-disabled-border;
+      @alpha-ruleset();
     }
-    &.disabled,
-    &[disabled],
-    fieldset[disabled] & {
-        &,
-        &:hover,
-        &:focus,
-        &.focus,
-        &:active,
-        &.active {
-          cursor: @cursor-disabled;
-          pointer-events: none;
-          // Future-proof disabling of clicks
-          color: @btn-disabled-color;
-          border-color: @btn-disabled-border;
-          @alpha-ruleset();
-        }
   }
 }
  // TODO: assess if we want to remove this -

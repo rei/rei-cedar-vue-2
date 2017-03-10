@@ -15,44 +15,20 @@
 
         <div class="well">
             <div class="row">
-                <div class="col-sm-4">
-                    <h3>Large</h3>
-                    <button type="button" class="btn btn-primary text-icon-play">
-                        <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video
-                    </button>
-                    <ul class="list-unstyled vertical-pull-lg">
-                        <li class="note">Text: 24px Anderson Bold, sentence case</li>
-                        <li class="note">Icon size: Default + 4px this is implemented as a relative .7 of the font
-                            size
-                        </li>
-                    </ul>
+                <div class="col-sm-6">
+                    <h3>Text link</h3>
+                    <button type="button" class="btn btn__link-inline-play">
+                    <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video text link</button>
                 </div>
-                <div class="col-sm-4">
-                    <h3>Large Block and XS breakpoint</h3>
-                    <button type="button" class="btn btn-primary btn-block text-icon-play">
-                        <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video
-                    </button>
-                    <ul class="list-unstyled vertical-pull-lg">
-                        <li class="note">Text: 24px Anderson Bold, sentence case</li>
-                        <li class="note">Icon size: Default + 4px: this is implemented as a relative .7 of the font
-                            size
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-4">
-                    <h3>Small</h3>
-                    <button type="button" class="btn btn-primary btn-sm text-icon-play">
-                        <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video
-                    </button>
-                    <ul class="list-unstyled vertical-pull-lg">
-                        <li class="note">Text: 18px Interstate BD CD, sentence case</li>
-                        <li class="note">Icon size: Default: this is implemented as a relative .7 of the font size</li>
-                    </ul>
+                <div class="col-sm-6">
+                    <h3>Button with slight transparency</h3>
+                    <button type="button" class="btn btn-play">
+                    <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video</button>
                 </div>
             </div>
         </div>
         {% highlight html %}
-        <button type="button" class="btn btn-primary btn-block text-icon-play">
+        <button type="button" class="btn btn__link-inline-play">
             <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video
         </button>
         {% endhighlight %}

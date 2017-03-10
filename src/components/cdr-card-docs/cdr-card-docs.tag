@@ -6,7 +6,8 @@
         <section class="card-block-xs-open-default">
            <yield from="example-description" />
         </section>
-        <section if="{ opts.exampleStyle == null }" class="card-block-xs-open-default cedar-example" data-example-id="{ opts.elementId }">   <yield from="example" />
+        <section if="{ opts.exampleStyle == null }" class="card-block-xs-open-default cedar-example" data-example-id="{ opts.elementId }">
+            <yield from="example" />
         </section>
         <section if="{ opts.exampleStyle }" class="{ opts.exampleStyle + ' cedar-example'}" data-example-id="{ opts.elementId }">
             <yield from="example" />

@@ -5,7 +5,13 @@
   >.col-@{class}-@{index} {
     min-width: ( @index * 100% / @number );
     width: ( @index * 100% / @number );
-    flex-grow: @index;
+    .group-flex-default( @index; @group-flex-shrink-default; @group-flex-basis-auto; );
   }
   .group-col-variant( @number; @class; (@index + 1) );
+}
+
+.group-flex-default( @flex-grow; @flex-shrink; @flex-basis; ) {
+	flex-grow: @flex-grow;
+	flex-shrink: @flex-shrink;
+	flex-basis: @flex-basis;
 }
