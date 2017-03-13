@@ -5,14 +5,14 @@
             <span class="icon icon-rei-play-small" aria-hidden="true"></span>{opts.buttonText}
         </button>
         <aside if={opened} ref="modal" class="modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="dialog1Title">
-            <span class="sr-only">Begin dialog</span>
+            <span id="dialog1Title" class="sr-only">{'Begin dialog' + opts.videoTitle}</span>
             <s class="modal__content">
                 <div class="text-right">
                     <button onclick={hideModal} class="close icon icon-rei-close img-circle" aria-label="Close"></button>
                 </div>
                 <section class="modal__content--inner">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe id="dialog1Title" title="{opts.videoTitle}" width="900" height="506" src="https://www.youtube.com/embed/{opts.videoId}" frameborder="0" allowfullscreen></iframe>
+                        <iframe title="{opts.videoTitle}" width="900" height="506" src="https://www.youtube.com/embed/{opts.videoId}" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </section>
             </div>
@@ -45,7 +45,7 @@
         .modal {
             opacity: 0;
             transition: opacity .15s linear;
-                
+
             .modal__content {
                 transition: transform .3s ease-out;
                 transform: translate(0, -25%);
@@ -58,11 +58,11 @@
                     right: 0;
                 }
             }
-            
+
             &.in {
                 display: block;
                 opacity: 1;
-            
+
                 .modal__content {
                     transform: translate(0,0);
                 }
@@ -91,7 +91,7 @@
         const tag = this;
         const $el = tag.root;
         tag.opened = false;
-        tag.opener; // Will hold element clicked to open modal for returning focus 
+        tag.opener; // Will hold element clicked to open modal for returning focus
         //methods
         tag.on( 'mount', onMount );
         tag.showModal = showModal;
@@ -100,10 +100,10 @@
 
         // MOUNT
         // -----------------------------------------
-        function onMount() {            
+        function onMount() {
             // Close modal on esc key
             $el.addEventListener( 'keyup', ( e ) => {
-                if ( e.keyCode === 27 ) {                  
+                if ( e.keyCode === 27 ) {
                     tag.hideModal( tag.opener );
                 }
             } );
@@ -115,7 +115,7 @@
         // Function to show modal
         function showModal(e) {
             tag.opener = e.target;
-            tag.opened = true; // Add modal to DOM 
+            tag.opened = true; // Add modal to DOM
             tag.update(); // Because riot isn't fully reactive
 
             // Add backdrop, classes, set aria
@@ -146,8 +146,8 @@
 
 
         // Function to hide modal
-        function hideModal( ) {   
-            // remove classes     
+        function hideModal( ) {
+            // remove classes
             let body = document.querySelector( 'body' );
             let modalBackdrop = document.querySelector( '#modalBackdrop' );
             tag.refs.modal.classList.remove( 'in' );
@@ -167,7 +167,7 @@
 
 
         // tab trapping event handler
-        function tabTrap(evt) {                    
+        function tabTrap(evt) {
             if ( !tag.refs.modal.contains( evt.target ) ) {
                 evt.stopPropagation();
                 tag.refs.modal.focus();
