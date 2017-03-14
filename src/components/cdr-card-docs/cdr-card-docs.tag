@@ -6,16 +6,18 @@
         <section class="card-block-xs-open-default">
            <yield from="example-description" />
         </section>
-        <section if="{ opts.example == null }" class="card-block-xs-open-default cedar-example" data-example-id="{ opts.elementId }"><yield from="example" /></section>
-        <section if="{ opts.example-style }" class="{ opts.example-style } cedar-example" data-example-id="{ opts.elementId }"><yield from="example" /></section>
-
+        <section if="{ opts.exampleStyle == null }" class="card-block-xs-open-default cedar-example" data-example-id="{ opts.elementId }">
+            <yield from="example" />
+        </section>
+        <section if="{ opts.exampleStyle }" class="{ opts.exampleStyle + ' cedar-example'}" data-example-id="{ opts.elementId }">
+            <yield from="example" />
+        </section>
         <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
-            <input type="checkbox" value="" id={ opts.elementId } data-toggle="collapse" data-target={ '#'+opts.elementId+'-example' } />
-            <label for={ opts.elementId }>View code</label>
+            <input type="checkbox" value="" id="{ 'checkbox-' + opts.elementId }" data-toggle="collapse" data-target="{ '#' + opts.elementId }" />
+            <label for="{ 'checkbox-' + opts.elementId }">View code</label>
         </div>
-        <div class="collapse code-toggle--document" id={ opts.elementId+'-example' } data-theme="light-20">
-                <yield from="codeblock" />
+        <div class="collapse code-toggle--document" id="{ opts.elementId }" data-theme="light-20">
+            <yield from="codeblock" />
         </div>
     </article>
 </cdr-card-docs>
-

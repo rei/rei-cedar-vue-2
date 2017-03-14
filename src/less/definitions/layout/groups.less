@@ -29,7 +29,7 @@
     .card,
     .tile,
     .well {
-        @group-display-grandchild-flex-ruleset();
+        .group-flex-default( @flex-grow: 1; @flex-shrink: 0; @flex-basis: 0; );
     }
 
 }
@@ -94,6 +94,15 @@
             @group-gutter-open-10-ruleset();
         }
     }
+    @media (min-width: @screen-sm-min) {
+        &.flex-grow-none {
+            > [class^=col-],
+            > [class*=col-] {
+                .group-flex-default( @group-flex-grow-default; @group-flex-shrink-default; @group-flex-basis-auto; );
+            }
+        }
+    }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -112,7 +121,7 @@
 .group {
      >.col-xs-auto {
         min-width: @group-grid-auto-width;
-        @group-grid-auto-flex-ruleset();
+        .group-flex-default( @flex-grow: 1; @group-flex-shrink-default; @group-flex-basis-auto; );
     }
     .group-col-variant( 12; xs );
 
