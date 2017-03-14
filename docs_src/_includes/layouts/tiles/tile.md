@@ -266,78 +266,73 @@
     </div>
 </article>
 
-<cdr-card-docs example-title="Event date tile cards" element-id="dateTileCard">
-    <yield to="example-description">Date event tiles that will display as list view in mobile and as cards in Desktop.</yield>
+<cdr-card-docs example-title="Event date tile cards as a Riot Component - Example" element-id="dateTileCard">
+    <yield to="example-description">
+        <p>Date event tiles that will display as list view in mobile and as cards in Desktop.</p>
+        <p>To create a new component, create a new folder within the components folder ( src/components ) and create a '.tag' file within that new folder with the same name.</p>
+        <p>Style a component leveraging PL classes. Adding a style block in the tag file will scope the css to the component for component specific styling.</p>
+    </yield>
     <yield to="example">
-        <section class="group group-display-fixed flex-grow-none group-gutter-sm-open-10"> 
-            <cdr-tile-event-aggregator
-                img-path="http://placehold.it/320x150"
-                img-path-alt="an image"
-                date-day-of-week="Sat"
-                date-month-and-day-of-month="Oct 26"
-                title="This is the event you have been waiting for"
-                location="Seattle &mdash; 9:30AM"
-                class="col-sm-4 col-md-4 col-lg-3"
-            ></cdr-tile-event-aggregator>
-            <cdr-tile-event-aggregator
-                img-path="http://placehold.it/320x150"
-                img-path-alt="an image"
-                date-day-of-week="Sat"
-                date-month-and-day-of-month="Oct 26"
-                title="This is the event you have been waiting for"
-                location="Seattle &mdash; 9:30AM"
-                class="col-sm-4 col-md-4 col-lg-3"
-            ></cdr-tile-event-aggregator>
-            <cdr-tile-event-aggregator
-                img-path="http://placehold.it/320x150"
-                img-path-alt="an image"
-                date-day-of-week="Sat"
-                date-month-and-day-of-month="Oct 26"
-                title="This is the event you have been waiting for"
-                location="Seattle &mdash; 9:30AM"
-                class="col-sm-4 col-md-4 col-lg-3"
-            ></cdr-tile-event-aggregator>
-            <cdr-tile-event-aggregator
-                img-path="http://placehold.it/320x150"
-                img-path-alt="an image"
-                date-day-of-week="Sat"
-                date-month-and-day-of-month="Oct 26"
-                title="This is the event you have been waiting for"
-                location="Seattle &mdash; 9:30AM"
-                class="col-sm-4 col-md-4 col-lg-3"
-            ></cdr-tile-event-aggregator>
-        </section>
+        <cdr-event-aggregator items="{ items }" />
+        <script>
+            const tag = this;
+            tag.items = [
+                { 
+                    imgPath: 'http://placehold.it/320x150',
+                    imgPathAlt: 'an image',
+                    dateDayOfWeek: 'Sat',
+                    dateMonthAndDayOfMonth: 'Oct 26',
+                    title: 'This is the event you have been waiting for',
+                    location: 'Seattle — 9:30AM'
+                },
+                { 
+                    imgPath: 'http://placehold.it/320x150',
+                    imgPathAlt: 'an image',
+                    dateDayOfWeek: 'Sun',
+                    dateMonthAndDayOfMonth: 'Oct 26',
+                    title: 'This is the event you have been waiting for',
+                    location: 'Seattle — 9:30AM'
+                },
+                { 
+                    imgPath: 'http://placehold.it/320x150',
+                    imgPathAlt: 'an image',
+                    dateDayOfWeek: 'Mon',
+                    dateMonthAndDayOfMonth: 'Oct 26',
+                    title: 'This is the event you have been waiting for',
+                    location: 'Seattle — 9:30AM'
+                },
+                { 
+                    imgPath: 'http://placehold.it/320x150',
+                    imgPathAlt: 'an image',
+                    dateDayOfWeek: 'Tues',
+                    dateMonthAndDayOfMonth: 'Oct 26',
+                    title: 'This is the event you have been waiting for',
+                    location: 'Seattle — 9:30AM'
+                }
+            ]
+        </script>
     </yield>
     <yield to="codeblock">
         {% highlight html %}
-        <cdr-tile-event-aggregator
-            img-path=""
-            img-path-alt=""
-            date-day-of-week=""
-            date-month-and-day-of-month=""
-            title=""
-            location=""
-            class=""
-        >
+        <cdr-list-to-grid>
             <section class="tile">
                 <div class="hidden-xs media-frame ratio-3-4 portrait center">
-                    <img src="{ opts.imgPath }" alt="{ opts.imgPathAlt }">
+                    <img src="" alt="">
                 </div>
-                <div class="group group-display-fixed event_wrapper">
-                    <div class="event__date text-uppercase">
-                        <div class="h2 event__date--title">{ opts.dateDayOfWeek }</div>
-                        <div class="text-muted">{ opts.dateMonthAndDayOfMonth }</div>
-                    </div>
-                    <div class="col-xs-8 col-sm-7">
-                        <div class="event__content">
-                            <!--the heading value needs to be conditional so we can be sure to deliver an accessible component-->
-                            <h2 class="h4 event__date--title">{ opts.title }</h2>
-                            <div class="location text-muted">{ opts.location }</div>
+                <div class="tile-block">
+                    <section class="event">
+                        <div class="event__date text-uppercase">
+                            <div class="h2 event__title"></div>
+                            <div class="text-muted"></div>
                         </div>
-                    </div>
+                        <div class="event__content">
+                            <h4 class="event__title"></h4>
+                            <div class="event__location text-muted"></div>
+                        </div>
+                    </section>
                 </div>
             </section>
-        </cdr-tile-event-aggregator>
+        </cdr-list-to-grid>
         {% endhighlight %}
     </yield>
 </cdr-card-docs>

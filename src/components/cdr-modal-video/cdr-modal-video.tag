@@ -1,4 +1,3 @@
-// vim: syntax=JSX
 <cdr-modal-video>
     <div>
         <button ref="button" type="button" class="btn btn-play" onclick="{showModal}">
@@ -105,7 +104,6 @@
             tag.refs.modal.focus(); // Set focus into modal
         }
 
-
         // Function to hide modal
         function hideModal( ) {
             // remove classes
@@ -125,7 +123,6 @@
             tag.opener.focus();// return focus to element that launched the modal
         }
 
-
         // tab trapping event handler
         function tabTrap(evt) {
             if ( !tag.refs.modal.contains( evt.target ) ) {
@@ -133,6 +130,5 @@
                 tag.refs.modal.focus();
             }
         }
-
     </script>
 </cdr-modal-video>
