@@ -6,7 +6,7 @@
         </button>
         <aside if={opened} ref="modal" class="modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="dialog1Title">
             <span id="dialog1Title" class="sr-only">{'Begin dialog for' + opts.videoTitle}</span>
-            <s class="modal__content">
+            <div class="modal__content">
                 <div class="text-right">
                     <button onclick={hideModal} class="close icon icon-rei-close img-circle" aria-label="Close"></button>
                 </div>
