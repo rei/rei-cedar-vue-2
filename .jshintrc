@@ -3,7 +3,7 @@
 	"browserify": true,
 	"devel": true,
 	"esnext": true,
-	"node": true
+	"node": true,
 	"globals"   : {
 		/* MOCHA */
 		"describe"   : false,
