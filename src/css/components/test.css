@@ -1,0 +1,10 @@
+.test {
+    color: var(--mainColor);
+    background-color: var(--thirdColor);
+}
+
+.test2 {
+    display: flex;
+    justify-content: center;
+    color: var(--otherColor);
+}

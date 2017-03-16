@@ -27,10 +27,13 @@
 *.sublime-workspace
 nbproject
 Thumbs.db
+.vscode
 
 
 
 # Folders to ignore
 node_modules
 
-
+# Test results
+test/e2e/reports
+test/unit/coverage
