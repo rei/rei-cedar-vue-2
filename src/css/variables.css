@@ -1,0 +1,6 @@
+:root {
+    --btn-color: black;
+    --btn-bgcolor: gray;
+    --btn-border: 1px solid black;
+    --btn-padding: 6px;
+}

@@ -1,0 +1,6 @@
+:root {
+    --btn-color: purple;
+    --btn-bgcolor: red;
+    --btn-border: 4px solid purple;
+    --btn-padding: 4px;
+}
