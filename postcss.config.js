@@ -3,4 +3,4 @@ module.exports = {
         require('postcss-import')({ /* ...options */ }),
         require('postcss-cssnext')({ /* ...options */ }),
     ]
-}
+};

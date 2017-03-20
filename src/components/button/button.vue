@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'test',
+        name: 'cdr-button',
         props: ['theme'],
         data() {
             return {
@@ -22,11 +22,11 @@
 </script>
 
 <style module="red">
-    @import '../css/themes/red.css';
-    @import '../css/components/button.css';
+    @import '../../css/themes/red.css';
+    @import '../../css/components/button.css';
 </style>
  
 <style module="blue"> 
-    @import '../css/themes/blue.css';
-    @import '../css/components/button.css';
+    @import '../../css/themes/blue.css';
+    @import '../../css/components/button.css';
 </style>
