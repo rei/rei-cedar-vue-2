@@ -1,15 +1,26 @@
 import './css/main.postcss';
 
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
+import Components from './components/_index'
+// import Directives from './directives/_index'
 
-Vue.config.productionTip = false
+const defaults = {
+  componentPrefix: 'cdr-',
+  directivePrefix: ''
+}
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: { App }
-})
+function install (Vue, options) {
+    options = Object.assign(defaults, (options || {}))
+
+    Object.keys(Components).forEach(key => {
+      let tag = `${options.componentPrefix}${key}`.toLowerCase();
+      Vue.component(tag, Components[key])
+    })
+};
+
+export default {
+  install
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  Vue.use({ install })
+}

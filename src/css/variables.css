@@ -1,6 +1,13 @@
+/*Buttons*/
 :root {
     --btn-color: black;
-    --btn-bgcolor: gray;
+    --btn-bgcolor: green;
     --btn-border: 1px solid black;
     --btn-padding: 6px;
+}
+
+/*Cards*/
+:root {
+    --card-padding: 8px;
+    --card-border: 1px solid lightgray;
 }

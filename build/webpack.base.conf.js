@@ -2,6 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var isDev = process.env.NODE_ENV === 'development'
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -9,7 +10,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: isDev ? './src/dev.js' : './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
