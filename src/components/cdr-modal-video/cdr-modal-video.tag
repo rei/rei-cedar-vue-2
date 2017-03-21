@@ -1,16 +1,16 @@
 // vim: syntax=JSX
 <cdr-modal-video>
     <div>
-        <button type="button" class="btn btn-play" onclick="{showModal}">
-            <span class="icon icon-rei-play-small" aria-hidden="true"></span>{opts.buttonText}
+        <button ref="button" type="button" class="btn btn-play" onclick="{showModal}">
+            <span class="icon icon-rei-play-small" aria-hidden="true"></span><span>{opts.buttonText}</span>
         </button>
-        <aside if={opened} ref="modal" class="modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="dialog1Title">
+        <aside if={opened} ref="modal" class="cdr-modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="dialog1Title">
             <span id="dialog1Title" class="sr-only">{'Begin dialog for' + opts.videoTitle}</span>
-            <div class="modal__content">
+            <div class="cdr-modal__content">
                 <div class="text-right">
                     <button onclick={hideModal} class="close icon icon-rei-close img-circle" aria-label="Close"></button>
                 </div>
-                <section class="modal__content--inner">
+                <section class="cdr-modal__content--inner">
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe title="{opts.videoTitle}" width="900" height="506" src="https://www.youtube.com/embed/{opts.videoId}" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -41,49 +41,6 @@
                 }
             }
         }
-
-        .modal {
-            opacity: 0;
-            transition: opacity .15s linear;
-
-            .modal__content {
-                transition: transform .3s ease-out;
-                transform: translate(0, -25%);
-
-                @media screen and (max-width: 768px) {
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                }
-            }
-
-            &.in {
-                display: block;
-                opacity: 1;
-
-                .modal__content {
-                    transform: translate(0,0);
-                }
-            }
-        }
-
-        .modal__content--inner {
-            max-width: 90rem;
-            margin: 0 auto;
-
-            @media screen and (max-width: 768px) {
-                width: 100%;
-                position: absolute;
-                top: 50%;
-                right: auto;
-                bottom: auto;
-                left: 50%;
-                text-align: center;
-                transform: translate(-50%, -50%);
-            }
-        }
     </style>
 
     <script>
@@ -107,6 +64,11 @@
                     tag.hideModal( tag.opener );
                 }
             } );
+
+            // Change modal button display
+            if ( opts.cedarButton == "text" ) {
+                tag.refs.button.className = 'btn btn__link-inline-play';
+            }
         }
 
         // METHODS
@@ -123,13 +85,12 @@
             let modalBackdrop = document.createElement( 'div' );
             modalBackdrop.id = 'modalBackdrop';
                 // IE workaround, list out each classList item
-            modalBackdrop.classList.add( 'modal-backdrop' );
+            modalBackdrop.classList.add( 'cdr-modal__backdrop' );
             modalBackdrop.classList.add( 'opaque' );
             modalBackdrop.classList.add( 'fade' );
             modalBackdrop.tabindex = -1;
             body.appendChild( modalBackdrop );
-            body.classList.add( 'modal-open' );
-            body.classList.add( 'modal__gutter--right' );
+            body.classList.add( 'cdr-modal--open' );
             tag.refs.modal.setAttribute('aria-hidden', 'false');
             tag.refs.modal.classList.add( 'in' );
             modalBackdrop.classList.add( 'in' );
@@ -153,8 +114,7 @@
             tag.refs.modal.classList.remove( 'in' );
             tag.refs.modal.setAttribute('aria-hidden', 'true');
             modalBackdrop.classList.remove( 'in' );
-            body.classList.remove( 'modal-open' );
-            body.classList.remove( 'modal__gutter--right' );
+            body.classList.remove( 'cdr-modal--open' );
             body.removeChild( modalBackdrop );
 
             document.removeEventListener( 'focus', tag.tabTrap, true ); //remove tab trapping event listener

@@ -538,12 +538,57 @@ $('#myModal').on('hidden.bs.modal', function (e) {
 })
 {% endhighlight %}
 
-<h4 id="modals-riot-component">Modal as a Riot component</h4>
-<!-- Video Modal component -->
-<cdr-modal-video button-text="Watch Video" video-id="IdeaKaG92MY" video-title="Title of the video goes here">
-</cdr-modal-video>
 
-{% highlight html %}
-<cdr-modal-video button-text="Watch Video" video-id="IdeaKaG92MY" video-title="Title of the video goes here">
-</cdr-modal-video>
- {% endhighlight %}
+<cdr-card-docs example-title="Modal as a Riot component" element-id="modals-riot-component">
+    <yield to="example-description">
+        Cedar video modal as a Riot component.
+    </yield>
+    <yield to="example">
+        <!-- Video Modal component -->
+        <cdr-modal-video cedar-button="text" button-text="Watch Video" video-id="IdeaKaG92MY" video-title="Title of the video goes here"></cdr-modal-video>
+    </yield>
+    <yield to="codeblock">
+        <section class="card-block-xs-open-default">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <code>cedar-button=""</code>
+                        </th>
+                        <td>For button that displays as a text link with play icon enter: <strong><em>text</em></strong><br />
+                        Otherwise more standard button with play icon will display as default.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>button-text=""</code>
+                        </th>
+                        <td>Enter desired button text.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>video-id=""</code>
+                        </th>
+                        <td>Enter the video url ID; i.e. https:// www.youtube.com/ embed/ <strong><em>videoUrlID</em></strong></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <code>video-title=""</code>
+                        </th>
+                        <td>Enter video title.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    {% highlight html %}
+    <cdr-modal-video cedar-button="text" button-text="Watch Video" video-id="IdeaKaG92MY" video-title="Title of the video goes here"></cdr-modal-video>
+    {% endhighlight %}
+    </yield>
+</cdr-card-docs>
+
+
