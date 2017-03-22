@@ -1,4 +1,5 @@
 .card {
-    padding: var(--card-padding);
-    border: var(--card-border);
+  padding: var(--card-padding);
+  border: var(--card-border);
+  display: flex;
 }

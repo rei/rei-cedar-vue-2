@@ -1,16 +1,18 @@
 .button {
-    color: var(--btn-color);
-    background-color: var(--btn-bgcolor);
-    border: var(--btn-border);
-    padding: var(--btn-padding);
+  color: var(--btn-color);
+  background-color: var(--btn-bgcolor);
+  border: var(--btn-border);
+  padding: var(--btn-padding);
 
-    &:hover, &:active, &:focus {
-        color: white;
-        background-color: black;
-    }
+  &:hover,
+  &:active,
+  &:focus {
+    color: white;
+    background-color: black;
+  }
 
-    &[disabled] {
-        color:black;
-        background-color: lightgray;
-    }
+  &[disabled] {
+    color: black;
+    background-color: lightgray;
+  }
 }
