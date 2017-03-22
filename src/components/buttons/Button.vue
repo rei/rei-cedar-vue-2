@@ -10,7 +10,7 @@
         props: ['theme'],
         data() {
             return {
-                className: 'button'
+                className: 'cdr-button'
             }
         },
         created() {
