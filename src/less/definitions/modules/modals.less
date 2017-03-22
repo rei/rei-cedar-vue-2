@@ -159,13 +159,87 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Video modal
+// Cedar video modal
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-.modal__gutter--right {
-  padding-right: 16px;
+.cdr-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  opacity: 0;
+  transition: opacity .15s linear;
+
+  .cdr-modal__content {
+    transition: transform .3s ease-out;
+    transform: translate(0, -25%);
+
+    @media (max-width: @screen-sm-min) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &.in {
+    display: block;
+    opacity: 1;
+
+    .cdr-modal__content {
+        transform: translate(0,0);
+    }
+  }
 }
 
-.modal-backdrop {
+.cdr-modal__content--inner {
+  max-width: 90rem;
+  margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.cdr-modal--open {
+  overflow: hidden;
+
+  .cdr-modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+.cdr-modal__backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+
+  &.fade {
+    opacity: 0;
+  }
+
+  &.in {
+    opacity: .5;
+  }
+
   &.opaque {
     &.fade {
       &.in {
