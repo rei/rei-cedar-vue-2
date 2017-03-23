@@ -96,7 +96,7 @@
             "[data-example-id='content-containers-well']",
             "[data-example-id='content-containers-tile']",
             "[data-example-id='content-containers-card']",
-            "[data-example-id='defaut-flex-display']",
+            "[data-example-id='default-flex-display']",
             "[data-example-id='fixed-group-display']",
             "[data-example-id='overflow-group-display']"
         ],
