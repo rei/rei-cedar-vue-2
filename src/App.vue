@@ -12,12 +12,12 @@
 </template>
 
 <script>
-  import Components from './components/_index';
-  const prefix = `cdr`;
+  import Components from './components/_index'
+  const prefix = `cdr`
   Object.keys(Components).forEach(key => {
-    Components[key].name = `${prefix}-${Components[key].name}`;
-    Components[`${prefix}${key}`] = Components[key];
-    delete Components[key];
+    Components[key].name = `${prefix}-${Components[key].name}`
+    Components[`${prefix}${key}`] = Components[key]
+    delete Components[key]
   })
 
   export default {
