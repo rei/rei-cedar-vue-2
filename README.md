@@ -63,7 +63,7 @@ Our visual regressions audits can be performed against all patterns documented w
 
 1. Run the project locally with `npm run dev`
 2. `npm run reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
-3. `npm run compare` after making changes to the markup or css. This will create another set of test images and compare them agains those generated in the previous step.
+3. `npm run compare` after making changes to the markup or css. This will create another set of test images and compare them against those generated in the previous step.
 4. Review the generated report that should open in your browser. Make sure all changes are what you expect.
 5. `npm run approve` if everything looks good. This will promote the latest test images to be the new reference images that future tests will be compared against.
 
@@ -151,7 +151,7 @@ config                      #Configuration files used in the webpack build steps
 |-- prod.env.js             #Setting NODE_ENV for prod
 |-- release.env.js          #Setting NODE_ENV for release
 |-- test.env.js             #Setting NODE_ENV for test
-%dist                       #Results from `npm run build` end up here
+%dist/                      #Results from `npm run build` end up here
 %release/                   #Results from `npm run release end up here
 src/                        #Source files
 |-- assets/                 #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
