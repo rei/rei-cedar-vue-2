@@ -14,12 +14,10 @@ files.forEach((file) => {
 
 
 function createSelectorObj(def, selector, onReadyScript) {
-  const rObj = {};
+  let rObj = {};
   _.forOwn(def, (value, key) => {
     if (key === 'selectors') {
       rObj[key] = [selector];
-    } else if (key === 'onReadyScripts') {
-      
     } else {
       rObj[key] = value;
     }
@@ -32,16 +30,16 @@ function createSelectorObj(def, selector, onReadyScript) {
 }
 
 defs.forEach((def) => {
-  def.url = 'http://localhost:8080/';
-  def.selectors.forEach((selector, i) => {
-    if (_.has(def, 'onReadyScripts')) {
+  def.url = 'http://localhost:8080';
+  if (_.has(def, 'onReadyScripts')) {
+    def.selectors.forEach((selector) => {
       def.onReadyScripts.forEach((script) => {
         scenarios.push(createSelectorObj(def, selector, script));
       });
-    } else {
-      scenarios.push(createSelectorObj(def, selector));
-    }
-  });
+    })
+  } else {
+    scenarios.push(def);
+  }
 });
 
 module.exports = {
