@@ -78,27 +78,43 @@ errors. And it cannot audit local static files.
 
 - `gulp accessibility:audit-pa11y`
 
-### Visual Regression Audits
+### Visual Regression Testing
 
-Our visual regressions audits can be performed against all patterns documented within the patterns site.
-to do so, follow the steps below:
+Check [backstop](https://github.com/garris/BackstopJS) for general configuration questions. 
+
+Our visual regressions audits can be performed against all patterns documented within the patterns site. To do so, follow the steps below:
 
 1. Build docs and start your jekyll server
-1. navigate to the node_modules/backstopjs directory
-1. `npm run reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
-1. Make a change to the markup or css and re-run `npm run test`.
+2. `npm run reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
+3. `npm run compare` after making changes to the markup or css. This will create another set of test images and compare them against those generated in the previous step.
+4. Review the generated report that should open in your browser. Make sure all changes are what you expect.
+5. `npm run approve` if everything looks good. This will promote the latest test images to be the new reference images that future tests will be compared against.
 
-### Reports
+#### Notes about our backstop configuration
 
- `npm run test` will spin up a local server at port 3001 that will auto render once tests in console have completed.
- if sever stops running after 15min and
+We’re aliasing the backstop commands to use `npm run <command>` just to abstract away supplying the config option since we are using a javascript version of the backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
 
-### Folder Structure
+The config (__backstop.js__) looks through `docs_src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector_ in the array as well as each _onReadyScript_ if any are supplied to the _onReadyScripts_ array. Those scripts allow us to do things like hover or set the element to a disabled state for testing those. Each selector/onReadyScript will generate it’s own scenario because you can only do things like hover for one element at a time via casper.
 
-```bash
-├── backstop.json        # Test runner for all the docs
-├── failures       # If sever is not auto generated run 'npm run openReport'
+Casper scripts live in `backstop_data > casper_scripts`
+
+__*.backstop.js__ files will export an array of objects that are standard backstop scenario objects and support all the same options noted in the docs with the following exceptions:
+
+1. `onReadyScripts` is something we’ve added to auto generate a scenario for each script.
+
+if supplying an `onReadyScripts` array __AND__ you want a screenshot of the element in its normal state, one of the states will be false (examples below)
+
+```javascript
+"onReadyScripts": [false, "hover.js", "disabled.js"]
 ```
+
+This will take normal, hover, and disabled screenshots.
+
+```javascript
+"onReadyScripts": ["hover.js", "disabled.js"]
+```
+
+This will take ONLY hover and disabled screenshots.
 
 ### Screenshot Files
 
@@ -109,17 +125,6 @@ components-panel-with-heading_138.png
 # Page: /components
 # data-example-id: panel-with-heading
 ```
-
-### Road Map
-
-* convert from backstop.json to npm dependency that auto loops through site structure capturing patterns via the `[data-example-id]` identifier.
-* move reference screen captures to satchel and update Travis to generate new reference on commit to master.
-
-### uCSS Testing - testing css rule usage
-To run uCSS
-* Note: `npm install` should have been run along with having the jekyll server running 
-* From the project root run `npm run ucss`
-* The test will print to the console as it runs and upon completion a html report will open in your default browser
 
 ## See Also
 REI Cedar is a living, working project and will continue to grow, and change. Just like any healthy tree, this one will
