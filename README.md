@@ -102,6 +102,12 @@ __TODO:__ Notes about js, eslint
 - Aim to have 0 dependencies, don’t use jquery.
 - Eslint using [airbnb config](https://github.com/airbnb/javascript)
 
+## Design system Integration
+
+__TODO:__ Notes about DDS, design tokens, integrations
+
+- `npm run get-tokens` fetch css variables from Brand.ai
+
 ## CSS
 
 __TODO:__ Notes about css, postcss, stylelint, css-modules?
