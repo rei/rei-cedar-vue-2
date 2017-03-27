@@ -8,17 +8,17 @@
   export default {
     name: 'button',
     props: ['theme'],
-    data () {
+    data() {
       return {
-        className: 'cdr-button'
+        className: 'cdr-button',
+      };
+    },
+    created() {
+      if (this.theme) {
+        this.className = this[this.theme][this.className];
       }
     },
-    created () {
-      if (this.theme) {
-        this.className = this[this.theme][this.className]
-      }
-    }
-  }
+  };
 </script>
 
 <style module="red">

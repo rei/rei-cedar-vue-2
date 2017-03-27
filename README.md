@@ -59,7 +59,7 @@ Runs [Nightwatch](http://nightwatchjs.org/) end-to-end tests.
 
 Check [backstop](https://github.com/garris/BackstopJS) for general configuration questions. 
 
-Our visual regressions audits can be performed against all patterns documented within the patterns site. to do so, follow the steps below:
+Our visual regressions audits can be performed against all patterns documented within the patterns site. To do so, follow the steps below:
 
 1. Run the project locally with `npm run dev`
 2. `npm run reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
@@ -71,7 +71,7 @@ Our visual regressions audits can be performed against all patterns documented w
 
 We’re aliasing the backstop commands to use `npm run <command>` just to abstract away supplying the config option since we are using a javascript version of the backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
 
-The config (__backstop.js__) looks through `src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector in the array as well as each _onReadyScript_ if any are supplied to the _onReadyScripts_ array. Those scripts allow us to do things like hover or set the element to a disabled state for testing those. Each selector/onReadyScript will generate it’s own scenario because you can only do things like hover for one element at a time via casper.
+The config (__backstop.js__) looks through `src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector_ in the array as well as each _onReadyScript_ if any are supplied to the _onReadyScripts_ array. Those scripts allow us to do things like hover or set the element to a disabled state for testing those. Each selector/onReadyScript will generate it’s own scenario because you can only do things like hover for one element at a time via casper.
 
 Casper scripts live in `backstop_data > casper_scripts`
 
@@ -100,6 +100,7 @@ __TODO:__ Notes about js, eslint
 
 - Babel for transpiling js so use es6.
 - Aim to have 0 dependencies, don’t use jquery.
+- Eslint using [airbnb config](https://github.com/airbnb/javascript)
 
 ## CSS
 

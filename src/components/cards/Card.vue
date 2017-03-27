@@ -6,8 +6,8 @@
 
 <script>
   export default {
-    name: 'card'
-  }
+    name: 'card',
+  };
 </script>
 
 <style>

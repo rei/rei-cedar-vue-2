@@ -1,5 +1,5 @@
-import Card from './Card.vue'
+import Card from './Card';
 
 export default {
-  Card
-}
+  Card,
+};

@@ -12,16 +12,17 @@
 </template>
 
 <script>
-  import Components from './components/_index'
-  const prefix = `cdr`
-  Object.keys(Components).forEach(key => {
-    Components[key].name = `${prefix}-${Components[key].name}`
-    Components[`${prefix}${key}`] = Components[key]
-    delete Components[key]
-  })
+  import Components from './components/_index';
+
+  const prefix = 'cdr';
+  Object.keys(Components).forEach((key) => {
+    Components[key].name = `${prefix}-${Components[key].name}`;
+    Components[`${prefix}${key}`] = Components[key];
+    delete Components[key];
+  });
 
   export default {
     name: 'app',
-    components: Components
-  }
+    components: Components,
+  };
 </script>
