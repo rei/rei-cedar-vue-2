@@ -266,3 +266,73 @@
     </div>
 </article>
 
+<cdr-card-docs example-title="Event date tile cards as a Riot Component - Example" element-id="dateTileCard">
+    <yield to="example-description">
+        <p>Date event tiles that will display as list view in mobile and as cards in Desktop.</p>
+        <p>To create a new component, create a new folder within the components folder ( src/components ) and create a '.tag' file within that new folder with the same name.</p>
+        <p>Style a component leveraging PL classes. Adding a style block in the tag file will scope the css to the component for component specific styling.</p>
+    </yield>
+    <yield to="example">
+        <cdr-event-aggregator items="{ items }" />
+        <script>
+            const tag = this;
+            tag.items = [
+                { 
+                    imgPath: 'http://placehold.it/320x150',
+                    imgPathAlt: 'an image',
+                    dateDayOfWeek: 'Sat',
+                    dateMonthAndDayOfMonth: 'Oct 26',
+                    title: 'This is the event you have been waiting for',
+                    location: 'Seattle — 9:30AM'
+                },
+                { 
+                    imgPath: 'http://placehold.it/320x150',
+                    imgPathAlt: 'an image',
+                    dateDayOfWeek: 'Sun',
+                    dateMonthAndDayOfMonth: 'Oct 26',
+                    title: 'This is the event you have been waiting for',
+                    location: 'Seattle — 9:30AM'
+                },
+                { 
+                    imgPath: 'http://placehold.it/320x150',
+                    imgPathAlt: 'an image',
+                    dateDayOfWeek: 'Mon',
+                    dateMonthAndDayOfMonth: 'Oct 26',
+                    title: 'This is the event you have been waiting for',
+                    location: 'Seattle — 9:30AM'
+                },
+                { 
+                    imgPath: 'http://placehold.it/320x150',
+                    imgPathAlt: 'an image',
+                    dateDayOfWeek: 'Tues',
+                    dateMonthAndDayOfMonth: 'Oct 26',
+                    title: 'This is the event you have been waiting for',
+                    location: 'Seattle — 9:30AM'
+                }
+            ]
+        </script>
+    </yield>
+    <yield to="codeblock">
+        {% highlight html %}
+        <cdr-list-to-grid>
+            <section class="tile">
+                <div class="hidden-xs media-frame ratio-3-4 portrait center">
+                    <img src="" alt="">
+                </div>
+                <div class="tile-block">
+                    <section class="event">
+                        <div class="event__date text-uppercase">
+                            <div class="h2 event__title"></div>
+                            <div class="text-muted"></div>
+                        </div>
+                        <div class="event__content">
+                            <h4 class="event__title"></h4>
+                            <div class="event__location text-muted"></div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </cdr-list-to-grid>
+        {% endhighlight %}
+    </yield>
+</cdr-card-docs>
