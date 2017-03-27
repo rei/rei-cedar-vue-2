@@ -167,6 +167,8 @@ static/                     #For static assets -- check the vue webpack template
 test/                       #All things testing for both unit and e2e
 |-- e2e/                    #Everything for nightwatch testing
 |-- unit/                   #Everything for karma testing
+utils/                      #Utility node scripts
+|-- brandai.js              #Fetches values from brand.ai for use in css
 .babelrc                    #Babel es6 transpiling config
 .gitignore                  #Self explanatory
 .pullapprove.yml            #Config for github PR approval

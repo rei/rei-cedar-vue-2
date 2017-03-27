@@ -1,0 +1,13 @@
+/*Buttons*/
+:root {
+  --btn-color: var(--color-architectural-1);
+  --btn-bgcolor: var(--color-core);
+  --btn-border: 1px solid var(--color-core);
+  --btn-padding: 6px;
+}
+
+/*Cards*/
+:root {
+  --card-padding: 8px;
+  --card-border: 1px solid lightgray;
+}
