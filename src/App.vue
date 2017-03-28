@@ -8,11 +8,14 @@
     <cdr-button theme="red" data-backstop="button-red">A red button</cdr-button>
     <cdr-button theme="blue" data-backstop="button-blue">A blue button</cdr-button>
 
+    <grid></grid>
+
   </div>
 </template>
 
 <script>
   import Components from './components/_index';
+  import grid from './examples/Grid';
 
   const prefix = 'cdr';
   Object.keys(Components).forEach((key) => {
@@ -20,6 +23,8 @@
     Components[`${prefix}${key}`] = Components[key];
     delete Components[key];
   });
+
+  Components.grid = grid;
 
   export default {
     name: 'app',

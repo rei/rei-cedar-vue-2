@@ -22,11 +22,11 @@
 </script>
 
 <style module="red">
-  @import '../../css/themes/red.css';
-  @import '../../css/components/button.css';
+  @import '../../css/themes/red.pcss';
+  @import '../../css/components/button.pcss';
 </style>
  
 <style module="blue"> 
-  @import '../../css/themes/blue.css';
-  @import '../../css/components/button.css';
+  @import '../../css/themes/blue.pcss';
+  @import '../../css/components/button.pcss';
 </style>

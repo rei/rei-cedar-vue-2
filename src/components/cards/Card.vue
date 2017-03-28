@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="cdr-card">
     <slot></slot>
   </div>
 </template>
