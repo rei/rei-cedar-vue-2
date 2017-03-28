@@ -31,3 +31,9 @@
     components: Components,
   };
 </script>
+
+<style>
+  #app {
+    padding: 0;
+  }
+</style>
