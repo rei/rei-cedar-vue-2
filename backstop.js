@@ -14,7 +14,7 @@ files.forEach((file) => {
 
 
 function createSelectorObj(def, selector, onReadyScript) {
-  let rObj = {};
+  const rObj = {};
   _.forOwn(def, (value, key) => {
     if (key === 'selectors') {
       rObj[key] = [selector];
@@ -23,7 +23,7 @@ function createSelectorObj(def, selector, onReadyScript) {
     }
   });
   if (onReadyScript) {
-    rObj.label = `${def.label }_${onReadyScript}`;
+    rObj.label = `${def.label}_${onReadyScript}`;
     rObj.onReadyScript = onReadyScript;
   }
   return rObj;
@@ -36,7 +36,7 @@ defs.forEach((def) => {
       def.onReadyScripts.forEach((script) => {
         scenarios.push(createSelectorObj(def, selector, script));
       });
-    })
+    });
   } else {
     scenarios.push(def);
   }
