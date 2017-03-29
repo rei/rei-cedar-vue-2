@@ -34,6 +34,6 @@
 
 <style>
   #app {
-    padding: 0;
+    padding: 15px;
   }
 </style>
