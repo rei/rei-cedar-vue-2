@@ -44,8 +44,8 @@
 
     <script>
         //properties
-        const tag = this;
-        const $el = tag.root;
+        var tag = this;
+        var $el = tag.root;
         tag.opened = false;
         tag.opener; // Will hold element clicked to open modal for returning focus
         //methods
@@ -58,7 +58,7 @@
         // -----------------------------------------
         function onMount() {
             // Close modal on esc key
-            $el.addEventListener( 'keyup', ( e ) => {
+            $el.addEventListener( 'keyup', function (e) {
                 if ( e.keyCode === 27 ) {
                     tag.hideModal( tag.opener );
                 }
@@ -80,8 +80,8 @@
             tag.update(); // Because riot isn't fully reactive
 
             // Add backdrop, classes, set aria
-            let body = document.querySelector( 'body' );
-            let modalBackdrop = document.createElement( 'div' );
+            var body = document.querySelector( 'body' );
+            var modalBackdrop = document.createElement( 'div' );
             modalBackdrop.id = 'modalBackdrop';
                 // IE workaround, list out each classList item
             modalBackdrop.classList.add( 'cdr-modal__backdrop' );
@@ -107,8 +107,8 @@
         // Function to hide modal
         function hideModal( ) {
             // remove classes
-            let body = document.querySelector( 'body' );
-            let modalBackdrop = document.querySelector( '#modalBackdrop' );
+            var body = document.querySelector( 'body' );
+            var modalBackdrop = document.querySelector( '#modalBackdrop' );
             tag.refs.modal.classList.remove( 'in' );
             tag.refs.modal.setAttribute('aria-hidden', 'true');
             modalBackdrop.classList.remove( 'in' );
