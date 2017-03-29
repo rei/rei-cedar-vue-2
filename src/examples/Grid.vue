@@ -553,7 +553,6 @@
       </div>
     </div>
 
-    
     <h4>cdr-col -colTop, -colMiddle, -colBottom</h4>
     <div class="cdr-grid _grid4" style="height: 300px">
       <div class="cdr-col -colTop">
@@ -567,6 +566,130 @@
       </div>
       <div class="cdr-col">
         <div class="grid-demo">auto</div>
+      </div>
+    </div>
+
+    <h4>cdr-col -colLeft#</h4>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft0">
+        <div class="grid-demo">-colLeft0</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft1">
+        <div class="grid-demo">-colLeft1</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft2">
+        <div class="grid-demo">-colLeft2</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft3">
+        <div class="grid-demo">-colLeft3</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft4">
+        <div class="grid-demo">-colLeft4</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft5">
+        <div class="grid-demo">-colLeft5</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft6">
+        <div class="grid-demo">-colLeft6</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft7">
+        <div class="grid-demo">-colLeft7</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft8">
+        <div class="grid-demo">-colLeft8</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft9">
+        <div class="grid-demo">-colLeft9</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft10">
+        <div class="grid-demo">-colLeft10</div>
+      </div>
+    </div>
+    <div class="cdr-grid">
+      <div class="cdr-col _col1 -colLeft11">
+        <div class="grid-demo">-colLeft11</div>
+      </div>
+    </div>
+
+    <h4>cdr-col -colRight# (with -gridRight)</h4>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight0">
+        <div class="grid-demo">-colRight0</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight1">
+        <div class="grid-demo">-colRight1</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight2">
+        <div class="grid-demo">-colRight2</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight3">
+        <div class="grid-demo">-colRight3</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight4">
+        <div class="grid-demo">-colRight4</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight5">
+        <div class="grid-demo">-colRight5</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight6">
+        <div class="grid-demo">-colRight6</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight7">
+        <div class="grid-demo">-colRight7</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight8">
+        <div class="grid-demo">-colRight8</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight9">
+        <div class="grid-demo">-colRight9</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight10">
+        <div class="grid-demo">-colRight10</div>
+      </div>
+    </div>
+    <div class="cdr-grid -gridRight">
+      <div class="cdr-col _col1 -colRight11">
+        <div class="grid-demo">-colRight11</div>
       </div>
     </div>
 
