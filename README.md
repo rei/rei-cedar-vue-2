@@ -114,7 +114,10 @@ __TODO:__ Notes about css, postcss, stylelint, css-modules?
 
 - Main.postcss (.postcss so webpack uses the correct loader - others can be .css or whatever, just need to be imported here to be processed)
 - Imported into entry files (dev.js and main.js so webpack processes the css since we aren’t using a css loader for our files)
-- cssnext, auto namespace prefix (don’t write css prefixed, but use the prefix in markup)
+- CSS needs to be written with cdr- namespace prefix (tried automating it but had too many gotchas and wasn't intuitive)
+- [cssnext](http://cssnext.io/) (autoprefixer built in)
+- Auto prefixer settings is in packag.json under "browserslist"
+- safari >= 4 used for backstop (phantomjs engine) issues with flexbox [issue here](https://github.com/ariya/phantomjs/issues/14365)
 - Build with variable configs for theming (want to hook these into theo/sketch/something for theming).
 - css-modules in components turn into abstracted javascript classes (better here or components?)
 - Stylelint using `stylelint-config-standard` for base but we have customizations on top of it. Not following stylelint guidelines will throw errors in build (need to lock down rules still).
