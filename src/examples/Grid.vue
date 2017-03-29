@@ -642,6 +642,19 @@
       </div>
     </div>
 
+    <h4>cdr-col -colRight#</h4>
+    <div class="cdr-grid">
+      <div class="cdr-col _col2 -colRight2">
+        <div class="grid-demo">-colRight2</div>
+      </div>
+      <div class="cdr-col _col2 -colRight2">
+        <div class="grid-demo">-colRight2</div>
+      </div>
+      <div class="cdr-col _col2 -colRight2">
+        <div class="grid-demo">-colRight2</div>
+      </div>
+    </div>
+
     <h4>cdr-col -colRight# (with -gridRight)</h4>
     <div class="cdr-grid -gridRight">
       <div class="cdr-col _col1 -colRight0">
@@ -701,17 +714,6 @@
     <div class="cdr-grid -gridRight">
       <div class="cdr-col _col1 -colRight11">
         <div class="grid-demo">-colRight11</div>
-      </div>
-    </div>
-    <div class="cdr-grid">
-      <div class="cdr-col _col2 -colRight2">
-        <div class="grid-demo">-colRight2</div>
-      </div>
-      <div class="cdr-col _col2 -colRight2">
-        <div class="grid-demo">-colRight2</div>
-      </div>
-      <div class="cdr-col _col2 -colRight2">
-        <div class="grid-demo">-colRight2</div>
       </div>
     </div>
 
