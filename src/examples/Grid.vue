@@ -1,6 +1,10 @@
 <template>
   <div data-backstop="grid">
-    <h2 class="grid-title">cdr-grid _grid#</h2>
+    <h2>The Grid</h2>
+
+    <h3>.cdr-grid usage</h3>
+
+    <h4>cdr-grid _grid#</h4>
     <div class="cdr-grid _grid1">
       <div class="cdr-col">
         <div class="grid-demo">1</div>
@@ -286,8 +290,24 @@
       </div>
     </div>
 
-    <h2 class="grid-title">cdr-grid -noGutter</h2>
-    <div class="cdr-grid _grid3 -noGutter">
+    <h4>cdr-grid auto</h4>
+    <div class="cdr-grid">
+      <div class="cdr-col">
+        <div class="grid-demo">auto</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">auto</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">auto</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">auto</div>
+      </div>
+    </div>
+
+    <h4>cdr-grid -gridNoGutter</h4>
+    <div class="cdr-grid _grid3 -gridNoGutter">
       <div class="cdr-col">
         <div class="grid-demo">3</div>
       </div>
@@ -299,9 +319,9 @@
       </div>
     </div>
 
-    <h2 class="grid-title">cdr-grid -noWrap</h2>
+    <h4>cdr-grid -gridNoWrap</h4>
     <div class="cdr-grid _grid2">
-      <div class="grid-demo cdr-col cdr-grid _grid3 -noWrap">
+      <div class="grid-demo cdr-col cdr-grid _grid3 -gridNoWrap">
           <div class="cdr-col">
             <div class="grid-demo">3</div>
           </div>
@@ -317,22 +337,22 @@
       </div>
     </div>
 
-    <h2 class="grid-title">cdr-grid -center</h2>
-    <div class="cdr-grid _grid3 -center">
+    <h4>cdr-grid -gridCenter</h4>
+    <div class="cdr-grid _grid3 -gridCenter">
       <div class="cdr-col">
         <div class="grid-demo">3</div>
       </div>
     </div>
 
-    <h2 class="grid-title">cdr-grid -right</h2>
-    <div class="cdr-grid _grid3 -right">
+    <h4>cdr-grid -gridRight</h4>
+    <div class="cdr-grid _grid3 -gridRight">
       <div class="cdr-col">
         <div class="grid-demo">3</div>
       </div>
     </div>
 
-    <h2 class="grid-title">cdr-grid -top</h2>
-    <div class="cdr-grid _grid3 -top">
+    <h4>cdr-grid -gridTop</h4>
+    <div class="cdr-grid _grid3 -gridTop">
       <div class="cdr-col">
         <div class="grid-demo">3</div>
       </div>
@@ -347,8 +367,8 @@
       </div>
     </div>
 
-    <h2 class="grid-title">cdr-grid -middle</h2>
-    <div class="cdr-grid _grid3 -middle">
+    <h4>cdr-grid -gridMiddle</h4>
+    <div class="cdr-grid _grid3 -gridMiddle">
       <div class="cdr-col">
         <div class="grid-demo">3</div>
       </div>
@@ -363,8 +383,8 @@
       </div>
     </div>
 
-    <h2 class="grid-title">cdr-grid -bottom</h2>
-    <div class="cdr-grid _grid3 -bottom">
+    <h4>cdr-grid -gridBottom</h4>
+    <div class="cdr-grid _grid3 -gridBottom">
       <div class="cdr-col">
         <div class="grid-demo">3</div>
       </div>
@@ -373,6 +393,32 @@
         3
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</p>
         </div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+    </div>
+
+    <h4>cdr-grid -gridSpaceBetween</h4>
+    <div class="cdr-grid _grid4 -gridSpaceBetween">
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+    </div>
+
+    <h4>cdr-grid -gridSpaceAround</h4>
+    <div class="cdr-grid _grid4 -gridSpaceAround">
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
       </div>
       <div class="cdr-col">
         <div class="grid-demo">3</div>
@@ -380,7 +426,7 @@
     </div>
 
     <!--
-    <h2 class="grid-title">cdr-grid -reverse</h2>
+    <h4>cdr-grid -reverse</h4>
     <div class="cdr-grid _grid3 -reverse">
       <div class="cdr-col">
         <div class="grid-demo">1</div>
@@ -394,8 +440,8 @@
     </div>
     -->
 
-    <h2 class="grid-title">cdr-grid -column</h2>
-    <div class="cdr-grid _grid3 -column">
+    <h4>cdr-grid -gridColumn</h4>
+    <div class="cdr-grid _grid3 -gridColumn">
       <div class="cdr-col">
         <div class="grid-demo">3</div>
       </div>
@@ -403,104 +449,127 @@
         <div class="grid-demo">3</div>
       </div>
       <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col _col3">
         <div class="grid-demo">3</div>
       </div>
     </div>
 
-    <h2 class="grid-title">cdr-col _col#</h2>
+    <h3>.cdr-col usage</h3>
+
+    <h4>cdr-col _col#</h4>
     <div class="cdr-grid">
       <div class="cdr-col _col12">
-        <div class="grid-demo">_12</div>
+        <div class="grid-demo">_col12</div>
       </div>
       <div class="cdr-col _col11">
-        <div class="grid-demo">_11</div>
+        <div class="grid-demo">_col11</div>
       </div>
       <div class="cdr-col _col1">
-        <div class="grid-demo">_1</div>
+        <div class="grid-demo">_col1</div>
       </div>
       <div class="cdr-col _col10">
-        <div class="grid-demo">_10</div>
+        <div class="grid-demo">_col10</div>
       </div>
       <div class="cdr-col _col2">
-        <div class="grid-demo">_2</div>
+        <div class="grid-demo">_col2</div>
       </div>
       <div class="cdr-col _col9">
-        <div class="grid-demo">_9</div>
+        <div class="grid-demo">_col9</div>
       </div>
       <div class="cdr-col _col3">
-        <div class="grid-demo">_3</div>
+        <div class="grid-demo">_col3</div>
       </div>
       <div class="cdr-col _col8">
-        <div class="grid-demo">_8</div>
+        <div class="grid-demo">_col8</div>
       </div>
       <div class="cdr-col _col4">
-        <div class="grid-demo">_4</div>
+        <div class="grid-demo">_col4</div>
       </div>
       <div class="cdr-col _col7">
-        <div class="grid-demo">_7</div>
+        <div class="grid-demo">_col7</div>
       </div>
       <div class="cdr-col _col5">
-        <div class="grid-demo">_5</div>
+        <div class="grid-demo">_col5</div>
       </div>
       <div class="cdr-col _col6">
-        <div class="grid-demo">_6</div>
+        <div class="grid-demo">_col6</div>
       </div>
       <div class="cdr-col _col6">
-        <div class="grid-demo">_6</div>
+        <div class="grid-demo">_col6</div>
       </div>
     </div>
 
-    <h2 class="grid-title">mixing cdr-grid _grid# and cdr-col _col#</h2>
+    <h4>mixing cdr-grid _grid# and cdr-col _col#</h4>
     <div class="cdr-grid _grid3">
       <div class="cdr-col">
-        <div class="grid-demo">auto</div>
+        <div class="grid-demo">3</div>
       </div>
       <div class="cdr-col">
-        <div class="grid-demo">auto</div>
+        <div class="grid-demo">3</div>
       </div>
       <div class="cdr-col">
-        <div class="grid-demo">auto</div>
+        <div class="grid-demo">3</div>
       </div>
       <div class="cdr-col _col12">
-        <div class="grid-demo">_12</div>
+        <div class="grid-demo">_col12</div>
       </div>
       <div class="cdr-col _col11">
-        <div class="grid-demo">_11</div>
+        <div class="grid-demo">_col11</div>
       </div>
       <div class="cdr-col _col1">
-        <div class="grid-demo">_1</div>
+        <div class="grid-demo">_col1</div>
       </div>
       <div class="cdr-col _col10">
-        <div class="grid-demo">_10</div>
+        <div class="grid-demo">_col10</div>
       </div>
       <div class="cdr-col _col2">
-        <div class="grid-demo">_2</div>
+        <div class="grid-demo">_col2</div>
       </div>
       <div class="cdr-col _col9">
-        <div class="grid-demo">_9</div>
+        <div class="grid-demo">_col9</div>
       </div>
       <div class="cdr-col _col3">
-        <div class="grid-demo">_3</div>
+        <div class="grid-demo">_col3</div>
       </div>
       <div class="cdr-col _col8">
-        <div class="grid-demo">_8</div>
+        <div class="grid-demo">_col8</div>
       </div>
       <div class="cdr-col _col4">
-        <div class="grid-demo">_4</div>
+        <div class="grid-demo">_col4</div>
       </div>
       <div class="cdr-col _col7">
-        <div class="grid-demo">_7</div>
+        <div class="grid-demo">_col7</div>
       </div>
       <div class="cdr-col _col5">
-        <div class="grid-demo">_5</div>
+        <div class="grid-demo">_col5</div>
       </div>
       <div class="cdr-col _col6">
-        <div class="grid-demo">_6</div>
+        <div class="grid-demo">_col6</div>
       </div>
       <div class="cdr-col _col6">
-        <div class="grid-demo">_6</div>
+        <div class="grid-demo">_col6</div>
       </div>
     </div>
+
+    
+    <h4>cdr-col -colTop, -colMiddle, -colBottom</h4>
+    <div class="cdr-grid _grid4" style="height: 300px">
+      <div class="cdr-col -colTop">
+        <div class="grid-demo">-colTop</div>
+      </div>
+      <div class="cdr-col -colMiddle">
+        <div class="grid-demo">-colMiddle</div>
+      </div>
+      <div class="cdr-col -colBottom">
+        <div class="grid-demo">-colBottom</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">auto</div>
+      </div>
+    </div>
+
 
   </div>
 </template>
@@ -512,10 +581,6 @@
 </script>
 
 <style scoped>
-  .grid-title {
-    text-align: center;
-  }
-
   .grid-demo {
     background-color: gray;
     text-align: center;

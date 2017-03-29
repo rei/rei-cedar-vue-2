@@ -20,84 +20,84 @@
   /* grid by number */
 
   &._grid1 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 100%;
       max-width: 100%;
     }
   }
 
   &._grid2 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 50%;
       max-width: 50%;
     }
   }
 
   &._grid3 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 33.33333333%;
       max-width: 33.33333333%;
     }
   }
 
   &._grid4 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 25%;
       max-width: 25%;
     }
   }
 
   &._grid5 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 20%;
       max-width: 20%;
     }
   }
 
   &._grid6 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 16.66666667%;
       max-width: 16.66666667%;
     }
   }
 
   &._grid7 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 14.28571429%;
       max-width: 14.28571429%;
     }
   }
 
   &._grid8 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 12.5%;
       max-width: 12.5%;
     }
   }
 
   &._grid9 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 11.11111111%;
       max-width: 11.11111111%;
     }
   }
 
   &._grid10 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 10%;
       max-width: 10%;
     }
   }
 
   &._grid11 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 9.09090909%;
       max-width: 9.09090909%;
     }
   }
 
   &._grid12 {
-    & > .cdr-col:not([class*="_col"]) {
+    &:not([class*="-gridColumn"]) > .cdr-col:not([class*="_col"]) {
       flex-basis: 8.33333333%;
       max-width: 8.33333333%;
     }
@@ -105,7 +105,7 @@
 
   /* grid modifiers # */
 
-  &.-noGutter {
+  &.-gridNoGutter {
     margin: 0;
 
     & > .cdr-col {
@@ -113,54 +113,55 @@
     }
   }
 
-  &.-noWrap {
+  &.-gridNoWrap {
     flex-wrap: nowrap;
   }
 
-  &.-center {
+  &.-gridCenter {
     justify-content: center;
   }
 
-  &.-right {
+  &.-gridRight {
     justify-content: flex-end;
     align-self: flex-end;
     margin-left: auto;
   }
 
-  &.-top {
+  &.-gridTop {
     align-items: flex-start;
   }
 
-  &.-middle {
+  &.-gridMiddle {
     align-items: center;
   }
 
-  &.-bottom {
+  &.-gridBottom {
     align-items: flex-end;
   }
 
   /* TODO: do we want this? http://tink.uk/flexbox-the-keyboard-navigation-disconnect/
-  &.-reverse {
+  &.-gridReverse {
     flex-direction: row-reverse;
   }
-  &.-columnReverse {
+  &.-gridColumnReverse {
     flex-direction: column-reverse;
   }
   */
 
-  &.-column {
+  &.-gridColumn {
     flex-direction: column;
 
-    & > .cdr-col {
+    & > .cdr-col,
+    & > .cdr-col[class*="_col"] {
       flex-basis: auto;
     }
   }
 
-  &.-spaceBetween {
+  &.-gridSpaceBetween {
     justify-content: space-between;
   }
 
-  &.-spaceAround {
+  &.-gridSpaceAround {
     justify-content: space-around;
   }
 }
@@ -245,15 +246,15 @@
 
   /* col modifiers */
 
-  &.-top {
+  &.-colTop {
     align-self: flex-start;
   }
   
-  &.-middle {
+  &.-colMiddle {
     align-self: center;
   }
   
-  &.-bottom {
+  &.-colBottom {
     align-self: flex-end;
   }
   
@@ -267,7 +268,3 @@
   }
   */
 }
-
-// .cdr-col {
-//   flex: 1 1 0%;
-// }
