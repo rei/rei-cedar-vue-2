@@ -1,3 +1,7 @@
+## 1.6.3
+Features:
+- Adding event riot components
+
 ## 1.6.2
 Features:
 - removing jQuery from video modal ui-component
