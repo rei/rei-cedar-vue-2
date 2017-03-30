@@ -290,7 +290,7 @@
       </div>
     </div>
 
-    <h4>cdr-grid auto</h4>
+    <h4>cdr-grid (auto sizes)</h4>
     <div class="cdr-grid">
       <div class="cdr-col">
         <div class="grid-demo">auto</div>
@@ -451,8 +451,8 @@
       <div class="cdr-col">
         <div class="grid-demo">3</div>
       </div>
-      <div class="cdr-col _col3">
-        <div class="grid-demo">3</div>
+      <div class="cdr-col _col5">
+        <div class="grid-demo">5</div>
       </div>
     </div>
 
@@ -717,7 +717,8 @@
       </div>
     </div>
 
-    <h4>cdr-grid responsive</h4>
+    <h4>cdr-grid responsive grid classes</h4>
+    <h5>Medium breakpoint</h5>
     <p>_grid2 _grid4-md</p>
     <div class="cdr-grid _grid2 _grid4-md">
       <div class="cdr-col">
@@ -748,6 +749,104 @@
         <div class="grid-demo">6-md</div>
       </div>
     </div>
+    <p>-gridNoGutter-md</p>
+    <div class="cdr-grid _grid6 -gridNoGutter-md">
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+    </div>
+    <p>-gridCenter-md</p>
+    <div class="cdr-grid _grid6 -gridCenter-md">
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+    </div>
+    <p>-gridRight-md</p>
+    <div class="cdr-grid _grid6 -gridRight-md">
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+    </div>
+    <p>-gridTop-md</p>
+    <div class="cdr-grid _grid3 -gridTop-md">
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+    </div>
+    <p>-gridMiddle-md</p>
+    <div class="cdr-grid _grid3 -gridMiddle-md">
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+    </div>
+    <p>-gridBottom-md</p>
+    <div class="cdr-grid _grid3 -gridBottom-md">
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+    </div>
+    <p>-gridSpaceBetween-md</p>
+    <div class="cdr-grid _grid6 -gridSpaceBetween-md">
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+    </div>
+    <p>-gridSpaceAround-md</p>
+    <div class="cdr-grid _grid6 -gridSpaceAround-md">
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">6</div>
+      </div>
+    </div>
+    <p>-gridColumn-md</p>
+    <div class="cdr-grid _grid3 -gridColumn-md">
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col _col3">
+        <div class="grid-demo">3</div>
+      </div>
+    </div>
+
+    <h5>Large breakpoint</h5>
     <p>_grid2 _grid4-lg</p>
     <div class="cdr-grid _grid2 _grid4-lg">
       <div class="cdr-col">
@@ -778,6 +877,7 @@
         <div class="grid-demo">3-lg</div>
       </div>
     </div>
+    <h5>XLarge breakpoint</h5>
     <p>_grid2 _grid4-xl</p>
     <div class="cdr-grid _grid2 _grid4-xl">
       <div class="cdr-col">
@@ -808,6 +908,7 @@
         <div class="grid-demo">3-xl</div>
       </div>
     </div>
+    <h5>XXLarge breakpoint</h5>
     <p>_grid2 _grid4-xxl</p>
     <div class="cdr-grid _grid2 _grid4-xxl">
       <div class="cdr-col">
@@ -838,6 +939,9 @@
         <div class="grid-demo">3-xxl</div>
       </div>
     </div>
+
+  <h4>cdr-grid responsive col classes</h4>
+
 
 
   </div>
