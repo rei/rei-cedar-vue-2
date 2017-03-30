@@ -1276,7 +1276,146 @@
 
 
     <h4>cdr-grid responsive col classes</h4>
+    
+    <h5>Medium breakpoint</h5>
+    <p>_col#</p>
+    <div class="cdr-grid">
+      <div class="cdr-col _col3-md">
+        <div class="grid-demo">auto > 3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+    </div>
+    <p>_colRight _colLeft</p>
+    <div class="cdr-grid">
+      <div class="cdr-col -colRight1-md">
+        <div class="grid-demo">-colRight1-md</div>
+      </div>
+      <div class="cdr-col -colLeft1-md">
+        <div class="grid-demo">-colLeft1-md</div>
+      </div>
+    </div>
+    <p>-colTop -colMiddle -colBottom</p>
+    <div class="cdr-grid">
+      <div class="cdr-col -colTop-md">
+        <div class="grid-demo">-top</div>
+      </div>
+      <div class="cdr-col -colMiddle-md">
+        <div class="grid-demo">-mid</div>
+      </div>
+      <div class="cdr-col -colBottom-md">
+        <div class="grid-demo">-bot</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!</div>
+      </div>
+    </div>
 
+    <h5>Large breakpoint</h5>
+    <p>_col#</p>
+    <div class="cdr-grid">
+      <div class="cdr-col _col3-lg">
+        <div class="grid-demo">auto > 3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+    </div>
+    <p>_colRight _colLeft</p>
+    <div class="cdr-grid">
+      <div class="cdr-col -colRight1-lg">
+        <div class="grid-demo">-colRight1-lg</div>
+      </div>
+      <div class="cdr-col -colLeft1-lg">
+        <div class="grid-demo">-colLeft1-lg</div>
+      </div>
+    </div>
+    <p>-colTop -colMiddle -colBottom</p>
+    <div class="cdr-grid">
+      <div class="cdr-col -colTop-lg">
+        <div class="grid-demo">-top</div>
+      </div>
+      <div class="cdr-col -colMiddle-lg">
+        <div class="grid-demo">-mid</div>
+      </div>
+      <div class="cdr-col -colBottom-lg">
+        <div class="grid-demo">-bot</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!</div>
+      </div>
+    </div>
+
+    <h5>XLarge breakpoint</h5>
+    <p>_col#</p>
+    <div class="cdr-grid">
+      <div class="cdr-col _col3-xl">
+        <div class="grid-demo">auto > 3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+    </div>
+    <p>_colRight _colLeft</p>
+    <div class="cdr-grid">
+      <div class="cdr-col -colRight1-xl">
+        <div class="grid-demo">-colRight1-xl</div>
+      </div>
+      <div class="cdr-col -colLeft1-xl">
+        <div class="grid-demo">-colLeft1-xl</div>
+      </div>
+    </div>
+    <p>-colTop -colMiddle -colBottom</p>
+    <div class="cdr-grid">
+      <div class="cdr-col -colTop-xl">
+        <div class="grid-demo">-top</div>
+      </div>
+      <div class="cdr-col -colMiddle-xl">
+        <div class="grid-demo">-mid</div>
+      </div>
+      <div class="cdr-col -colBottom-xl">
+        <div class="grid-demo">-bot</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!</div>
+      </div>
+    </div>
+
+    <h5>XXLarge breakpoint</h5>
+    <p>_col#</p>
+    <div class="cdr-grid">
+      <div class="cdr-col _col3-xxl">
+        <div class="grid-demo">auto > 3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+    </div>
+    <p>_colRight _colLeft</p>
+    <div class="cdr-grid">
+      <div class="cdr-col -colRight1-xxl">
+        <div class="grid-demo">-colRight1-xxl</div>
+      </div>
+      <div class="cdr-col -colLeft1-xxl">
+        <div class="grid-demo">-colLeft1-xxl</div>
+      </div>
+    </div>
+    <p>-colTop -colMiddle -colBottom</p>
+    <div class="cdr-grid">
+      <div class="cdr-col -colTop-xxl">
+        <div class="grid-demo">-top</div>
+      </div>
+      <div class="cdr-col -colMiddle-xxl">
+        <div class="grid-demo">-mid</div>
+      </div>
+      <div class="cdr-col -colBottom-xxl">
+        <div class="grid-demo">-bot</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!</div>
+      </div>
+    </div>
 
 
   </div>
