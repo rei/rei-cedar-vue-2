@@ -1230,7 +1230,52 @@
       </div>
     </div>
 
-  <h4>cdr-grid responsive col classes</h4>
+    <h4>Mix and match responsive grid classes</h4>
+    <p>1 > 2-md > 3-lg > 4-xl > 6-xxl</p>
+    <div class="cdr-grid _grid1 _grid2-md _grid3-lg _grid4-xl _grid6-xxl">
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+    </div>
+    <p>normal > center > right > spaceAround > spaceBetween</p>
+    <div class="cdr-grid _grid6 -gridCenter-md -gridRight-lg -gridSpaceAround-xl -gridSpaceBetween-xxl">
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo"></div>
+      </div>
+    </div>
+    <p>normal > top > middle > bottom > column</p>
+    <div class="cdr-grid _grid3 -gridTop-md -gridMiddle-lg -gridBottom-xl -gridColumn-xxl">
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolores culpa, sit iste, modi, cupiditate veritatis ratione aut omnis libero quae quas placeat eligendi voluptatibus asperiores totam numquam inventore accusamus!</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3</div>
+      </div>
+    </div>
+
+
+    <h4>cdr-grid responsive col classes</h4>
 
 
 
