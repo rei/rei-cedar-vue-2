@@ -1418,6 +1418,25 @@
     </div>
 
 
+    <h4>hiding columns</h4>
+    <div class="cdr-grid _grid5">
+      <div class="cdr-col _col0">
+        <div class="grid-demo">hidden @ sm</div>
+      </div>
+      <div class="cdr-col _col0-md">
+        <div class="grid-demo">hidden @ md</div>
+      </div>
+      <div class="cdr-col _col0-lg">
+        <div class="grid-demo">hidden @ lg</div>
+      </div>
+      <div class="cdr-col _col0-xl">
+        <div class="grid-demo">hidden @ xl</div>
+      </div>
+      <div class="cdr-col _col0-xxl">
+        <div class="grid-demo">hidden @ xxl</div>
+      </div>
+    </div>
+
   </div>
 </template>
 
