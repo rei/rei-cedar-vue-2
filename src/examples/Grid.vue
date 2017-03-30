@@ -1,6 +1,35 @@
 <template>
   <div data-backstop="grid">
     <h2>The Grid</h2>
+    <h3>grid classes</h3>
+    <ul>
+      <li>cdr-grid</li>
+      <ul>
+        <li>=-=-=- These are all responsive also by adding [-md, -lg, -xl, -xxl] (i.e. -gridTop-md) -=-=-=</li>
+        <li>_grid# (# = 1-12 for how many columns you want the grid to have)</li>
+        <li>-gridNoGutter</li>
+        <li>-gridNoWrap</li>
+        <li>-gridCenter</li>
+        <li>-gridRight</li>
+        <li>-gridTop</li>
+        <li>-gridMiddle</li>
+        <li>-gridBottom</li>
+        <li>-gridSpaceBetween</li>
+        <li>-gridSpaceAround</li>
+        <li>-gridColumn</li>
+      </ul>
+      <li>cdr-col</li>
+      <ul>
+        <li>=-=-=- These are all responsive also by adding [-md, -lg, -xl, -xxl] (i.e. -colTop-md) -=-=-=</li>
+        <li>_col# (# = 0-12 for how many columns it should take up*)</li>
+        <li>-colLeft# (# = number of columns to push over from left)</li>
+        <li>-colRight# (# = number of columns to push over from right)</li>
+        <li>-colRight# (# = number of columns to push over from right)</li>
+        <li>-colTop</li>
+        <li>-colMiddle</li>
+        <li>-colBottom</li>
+      </ul>
+    </ul>
 
     <h3>.cdr-grid usage</h3>
 
