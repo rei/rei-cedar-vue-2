@@ -717,6 +717,128 @@
       </div>
     </div>
 
+    <h4>cdr-grid responsive</h4>
+    <p>_grid2 _grid4-md</p>
+    <div class="cdr-grid _grid2 _grid4-md">
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-md</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-md</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-md</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-md</div>
+      </div>
+    </div>
+    <p>auto _grid6-md</p>
+    <div class="cdr-grid _grid6-md">
+      <div class="cdr-col">
+        <div class="grid-demo">6-md</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">6-md</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">6-md</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">6-md</div>
+      </div>
+    </div>
+    <p>_grid2 _grid4-lg</p>
+    <div class="cdr-grid _grid2 _grid4-lg">
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-lg</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-lg</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-lg</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-lg</div>
+      </div>
+    </div>
+    <p>auto _grid3-lg</p>
+    <div class="cdr-grid _grid3-lg">
+      <div class="cdr-col">
+        <div class="grid-demo">3-lg</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3-lg</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3-lg</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3-lg</div>
+      </div>
+    </div>
+    <p>_grid2 _grid4-xl</p>
+    <div class="cdr-grid _grid2 _grid4-xl">
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-xl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-xl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-xl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-xl</div>
+      </div>
+    </div>
+    <p>auto _grid3-xl</p>
+    <div class="cdr-grid _grid3-xl">
+      <div class="cdr-col">
+        <div class="grid-demo">3-xl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3-xl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3-xl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3-xl</div>
+      </div>
+    </div>
+    <p>_grid2 _grid4-xxl</p>
+    <div class="cdr-grid _grid2 _grid4-xxl">
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-xxl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-xxl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-xxl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">2, 4-xxl</div>
+      </div>
+    </div>
+    <p>auto _grid3-xxl</p>
+    <div class="cdr-grid _grid3-xxl">
+      <div class="cdr-col">
+        <div class="grid-demo">3-xxl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3-xxl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3-xxl</div>
+      </div>
+      <div class="cdr-col">
+        <div class="grid-demo">3-xxl</div>
+      </div>
+    </div>
+
 
   </div>
 </template>
