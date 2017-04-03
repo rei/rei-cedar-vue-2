@@ -129,7 +129,7 @@
   &.-gridRight {
     justify-content: flex-end;
     align-self: flex-end;
-    // TODO: does removing this mess up nesting or something?
+    // TODO does removing this mess up nesting or something?
     // margin-left: auto;
   }
 
@@ -167,7 +167,7 @@
 
     & > .cdr-col,
     & > .cdr-col[class*="_col"] {
-      flex-basis: auto!important;
+      flex-basis: auto !important;
     }
   }
 
@@ -275,7 +275,7 @@
     &.-gridRight-md {
       justify-content: flex-end;
       align-self: flex-end;
-      // TODO: does removing this mess up nesting or something?
+      // TODO does removing this mess up nesting or something?
       // margin-left: auto;
     }
 
@@ -296,7 +296,7 @@
 
       & > .cdr-col,
       & > .cdr-col[class*="_col"] {
-        flex-basis: auto!important;
+        flex-basis: auto !important;
       }
     }
 
@@ -413,7 +413,7 @@
     &.-gridRight-lg {
       justify-content: flex-end;
       align-self: flex-end;
-      // TODO: does removing this mess up nesting or something?
+      // TODO does removing this mess up nesting or something?
       // margin-left: auto;
     }
 
@@ -434,7 +434,7 @@
 
       & > .cdr-col,
       & > .cdr-col[class*="_col"] {
-        flex-basis: auto!important;
+        flex-basis: auto !important;
       }
     }
 
@@ -551,7 +551,7 @@
     &.-gridRight-xl {
       justify-content: flex-end;
       align-self: flex-end;
-      // TODO: does removing this mess up nesting or something?
+      // TODO does removing this mess up nesting or something?
       // margin-left: auto;
     }
 
@@ -572,7 +572,7 @@
 
       & > .cdr-col,
       & > .cdr-col[class*="_col"] {
-        flex-basis: auto!important;
+        flex-basis: auto !important;
       }
     }
 
@@ -584,6 +584,7 @@
       justify-content: space-around;
     }
   }
+
   @media (--xxlarge) {
     &._grid1-xxl {
       & > .cdr-col:not([class*="_col"]) {
@@ -688,7 +689,7 @@
     &.-gridRight-xxl {
       justify-content: flex-end;
       align-self: flex-end;
-      // TODO: does removing this mess up nesting or something?
+      // TODO does removing this mess up nesting or something?
       // margin-left: auto;
     }
 
@@ -709,7 +710,7 @@
 
       & > .cdr-col,
       & > .cdr-col[class*="_col"] {
-        flex-basis: auto!important;
+        flex-basis: auto !important;
       }
     }
 
@@ -735,9 +736,11 @@
     display: block;
   }
 
-  // &[class*="_col"] {
-  //   flex: 0 0 auto;
-  // }
+  /*
+  &[class*="_col"] {
+    flex: 0 0 auto;
+  }
+  */
 
   /* col by number */
 
@@ -916,15 +919,15 @@
   &.-colTop {
     align-self: flex-start;
   }
-  
+
   &.-colMiddle {
     align-self: center;
   }
-  
+
   &.-colBottom {
     align-self: flex-end;
   }
-  
+
   /* TODO: do we want this? http://tink.uk/flexbox-the-keyboard-navigation-disconnect/
   &.-first {
     order: -1;
@@ -1115,11 +1118,11 @@
     &.-colTop-md {
       align-self: flex-start;
     }
-    
+
     &.-colMiddle-md {
       align-self: center;
     }
-    
+
     &.-colBottom-md {
       align-self: flex-end;
     }
@@ -1305,11 +1308,11 @@
     &.-colTop-lg {
       align-self: flex-start;
     }
-    
+
     &.-colMiddle-lg {
       align-self: center;
     }
-    
+
     &.-colBottom-lg {
       align-self: flex-end;
     }
@@ -1495,11 +1498,11 @@
     &.-colTop-xl {
       align-self: flex-start;
     }
-    
+
     &.-colMiddle-xl {
       align-self: center;
     }
-    
+
     &.-colBottom-xl {
       align-self: flex-end;
     }
@@ -1685,11 +1688,11 @@
     &.-colTop-xxl {
       align-self: flex-start;
     }
-    
+
     &.-colMiddle-xxl {
       align-self: center;
     }
-    
+
     &.-colBottom-xxl {
       align-self: flex-end;
     }
@@ -1700,5 +1703,4 @@
       display: none;
     }
   }
-
 }

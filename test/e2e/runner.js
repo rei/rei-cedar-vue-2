@@ -1,6 +1,7 @@
 // 1. start the dev server using production config
 process.env.NODE_ENV = 'testing';
-let server = require('../../build/dev-server.js');
+const server = require('../../build/dev-server.js');
+const spawn = require('cross-spawn');
 
 server.ready.then(() => {
   // 2. run the nightwatch test suite against it
@@ -18,8 +19,7 @@ server.ready.then(() => {
     opts = opts.concat(['--env', 'chrome']);
   }
 
-  let spawn = require('cross-spawn');
-  let runner = spawn('./node_modules/.bin/nightwatch', opts, { stdio: 'inherit' });
+  const runner = spawn('./node_modules/.bin/nightwatch', opts, { stdio: 'inherit' });
 
   runner.on('exit', (code) => {
     server.close();

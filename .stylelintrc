@@ -3,8 +3,9 @@
     "extends": "stylelint-config-standard",
     "rules": {
         "no-empty-source": null,
+        "no-invalid-double-slash-comments": null,
         "no-eol-whitespace": [ true, {
-            "ignore": "empty-lines"
-        } ]
+            "ignore": "empty-lines",
+        } ],
     }
 }
