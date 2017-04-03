@@ -1448,139 +1448,94 @@
 
 
     <h4>hiding columns</h4>
-    <p>_col0 (hidden sm and up -- always)</p>
+    <p>-colHide (hidden sm and up -- always)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0">
+      <div class="cdr-col -colHide">
         <div class="grid-demo">hide >= sm</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-sm-down (hidden sm and below)</p>
+    <p>-colHide-sm-down (hidden sm and below)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-sm-down">
+      <div class="cdr-col -colHide-sm-down">
         <div class="grid-demo">hide <= sm</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-sm-only (hidden only at sm)</p>
+    <p>-colHide-sm-only (hidden only at sm)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-sm-only">
+      <div class="cdr-col -colHide-sm-only">
         <div class="grid-demo">hide @ sm</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-md (hidden md and up)</p>
+    <p>-colHide-md (hidden md and up)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-md">
+      <div class="cdr-col -colHide-md">
         <div class="grid-demo">hide >= md</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-md-down (hidden md and below)</p>
+    <p>-colHide-md-down (hidden md and below)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-md-down">
+      <div class="cdr-col -colHide-md-down">
         <div class="grid-demo">hide <= md</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-md-only (hidden only at md)</p>
+    <p>-colHide-md-only (hidden only at md)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-md-only">
+      <div class="cdr-col -colHide-md-only">
         <div class="grid-demo">hide @ md</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-lg (hidden lg and up)</p>
+    <p>-colHide-lg (hidden lg and up)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-lg">
+      <div class="cdr-col -colHide-lg">
         <div class="grid-demo">hide >= lg</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-lg-down (hidden lg and below)</p>
+    <p>-colHide-lg-down (hidden lg and below)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-lg-down">
+      <div class="cdr-col -colHide-lg-down">
         <div class="grid-demo">hide <= lg</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-lg-only (hidden only at lg)</p>
+    <p>-colHide-lg-only (hidden only at lg)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-lg-only">
+      <div class="cdr-col -colHide-lg-only">
         <div class="grid-demo">hide @ lg</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-xl (hidden xl and up)</p>
+    <p>-colHide-xl (hidden xl and up)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-xl">
+      <div class="cdr-col -colHide-xl">
         <div class="grid-demo">hide >= xl</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-xl-down (hidden xl and below)</p>
+    <p>-colHide-xl-down (hidden xl and below)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-xl-down">
+      <div class="cdr-col -colHide-xl-down">
         <div class="grid-demo">hide <= xl</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-xl-only (hidden only at xl)</p>
+    <p>-colHide-xl-only (hidden only at xl)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-xl-only">
+      <div class="cdr-col -colHide-xl-only">
         <div class="grid-demo">hide @ xl</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-xxl (hidden xxl and up)</p>
+    <p>-colHide-xxl (hidden xxl and up)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-xxl">
+      <div class="cdr-col -colHide-xxl">
         <div class="grid-demo">hide >= xxl</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-xxl-down (hidden xxl and below -- always)</p>
+    <p>-colHide-xxl-down (hidden xxl and below -- always)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-xxl-down">
+      <div class="cdr-col -colHide-xxl-down">
         <div class="grid-demo">hide <= xxl</div>
       </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
-      </div>
     </div>
-    <p>_col0-xxl-only (hidden only at xxl)</p>
+    <p>-colHide-xxl-only (hidden only at xxl)</p>
     <div class="cdr-grid _grid2">
-      <div class="cdr-col _col0-xxl-only">
+      <div class="cdr-col -colHide-xxl-only">
         <div class="grid-demo">hide @ xxl</div>
-      </div>
-      <div class="cdr-col">
-        <div class="grid-demo">always visible</div>
       </div>
     </div>
 
