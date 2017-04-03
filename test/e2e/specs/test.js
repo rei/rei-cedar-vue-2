@@ -6,14 +6,13 @@ module.exports = {
     // automatically uses dev Server port from /config.index.js
     // default: http://localhost:8080
     // see nightwatch.conf.js
-    const devServer = browser.globals.devServerURL
+    const devServer = browser.globals.devServerURL;
 
     browser
       .url(devServer)
       .waitForElementVisible('#app', 5000)
-      .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js App')
-      .assert.elementCount('img', 1)
-      .end()
-  }
-}
+      .assert.elementPresent('.karma-test')
+      .assert.containsText('h1', 'Testing 1 2 3')
+      .end();
+  },
+};

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <test></test>
     <cdr-card>
       <div data-backstop="test">This is a test!</div>
     </cdr-card>
@@ -15,7 +16,8 @@
 
 <script>
   import Components from './components/_index';
-  import grid from './examples/Grid';
+  import grid from './examples/grid/Grid';
+  import test from './examples/testing/Test';
 
   const prefix = 'cdr';
   Object.keys(Components).forEach((key) => {
@@ -25,6 +27,7 @@
   });
 
   Components.grid = grid;
+  Components.test = test;
 
   export default {
     name: 'app',
