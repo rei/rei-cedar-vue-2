@@ -21,7 +21,8 @@
       <li>cdr-col</li>
       <ul>
         <li>=-=-=- These are all responsive also by adding [-md, -lg, -xl, -xxl] (i.e. -colTop-md) -=-=-=</li>
-        <li>_col# (# = 0-12 for how many columns it should take up*)</li>
+        <li>_col# (# = 1-12 for how many columns it should take up*)</li>
+        <li>-colHide (-&gt;breakpoint&lt; default is up can also add -down, -only)</li>
         <li>-colLeft# (# = number of columns to push over from left)</li>
         <li>-colRight# (# = number of columns to push over from right)</li>
         <li>-colRight# (# = number of columns to push over from right)</li>
