@@ -1,4 +1,3 @@
-/* Media Queries */
 /*
 NOTE: Custom properties can't be used in the custom media query definition since they rely on the DOM
 These currently are only for reference/possible future use elsewhere
@@ -11,16 +10,19 @@ These currently are only for reference/possible future use elsewhere
   --xxlarge-bp: 1440px;
 }
 
+/* Media Queries */
+
 @custom-media --small (width >= 0);
-@custom-media --small-only (width >= 0) and (width <= 768px);
+@custom-media --small-only (width >= 0) and (width < 768px);
 
 @custom-media --medium (width >= 768px);
-@custom-media --medium-only (width >= 768px) and (width <= 992px);
+@custom-media --medium-only (width >= 768px) and (width < 992px);
 
 @custom-media --large (width >= 992px);
-@custom-media --large-only (width >= 992px) and (width <= 1200px);
+@custom-media --large-only (width >= 992px) and (width < 1200px);
 
 @custom-media --xlarge (width >= 1200px);
-@custom-media --xlarge-only (width >= 1200px) and (width <= 1440px);
+@custom-media --xlarge-only (width >= 1200px) and (width < 1440px);
 
 @custom-media --xxlarge (width >= 1440px);
+@custom-media --xxlarge-only (width >= 1440px);
