@@ -114,9 +114,10 @@ __TODO:__ Notes about css, postcss, stylelint, css-modules?
 
 - Main.postcss (.postcss so webpack uses the correct loader - others can be .css or whatever, just need to be imported here to be processed)
 - Imported into entry files (dev.js and main.js so webpack processes the css since we aren’t using a css loader for our files)
+- [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) inspired file structure.
 - CSS needs to be written with cdr- namespace prefix (tried automating it but had too many gotchas and wasn't intuitive)
 - [cssnext](http://cssnext.io/) (autoprefixer built in)
-- Auto prefixer settings is in packag.json under "browserslist"
+- Auto prefixer settings is in package.json under "browserslist"
 - safari >= 4 used for backstop (phantomjs engine) issues with flexbox [issue here](https://github.com/ariya/phantomjs/issues/14365)
 - Build with variable configs for theming (want to hook these into theo/sketch/something for theming).
 - css-modules in components turn into abstracted javascript classes (better here or components?)
@@ -128,7 +129,7 @@ __TODO:__ Notes about Vue, components, css-modules?
 
 - Using [Vue.js](https://vuejs.org/) single file components. They have excellent docs.
 - Import them into the local  _index.js. 
-- Don’t write the component name prefixed/namespaced, this will happen automatically for both dev/build and release.
+- Don’t write the component name prefixed/namespaced, this will happen automatically for both dev/build and release (for dev in App.vue, for release in main.js).
 - Horizontal theming with css-modules, dynamically binding classes based on theme
 - css-modules in components turn into abstracted javascript classes (better here or CSS?)
 
@@ -162,7 +163,7 @@ config                      #Configuration files used in the webpack build steps
 |-- release.env.js          #Setting NODE_ENV for release
 |-- test.env.js             #Setting NODE_ENV for test
 %dist/                      #Results from `npm run build` end up here
-%release/                   #Results from `npm run release end up here
+%release/                   #Results from `npm run release` end up here
 src/                        #Source files
 |-- assets/                 #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
 |-- components/             #All things components
