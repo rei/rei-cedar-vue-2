@@ -1,6 +1,114 @@
 :root {
   --gridGutter: 20px;
   --colBottom: 10px;
+  --1-col-pct: 8.33333333%;
+  --2-col-pct: 16.66666667%;
+  --3-col-pct: 25%;
+  --4-col-pct: 33.33333333%;
+  --5-col-pct: 41.66666667%;
+  --6-col-pct: 50%;
+  --7-col-pct: 58.33333333%;
+  --8-col-pct: 66.66666667%;
+  --9-col-pct: 75%;
+  --10-col-pct: 83.33333333%;
+  --11-col-pct: 91.66666667%;
+  --12-col-pct: 100%;
+  --grid-1: {
+    flex-basis: var(--12-col-pct);
+    max-width: var(--12-col-pct);
+  };
+  --grid-2: {
+    flex-basis: var(--6-col-pct);
+    max-width: var(--6-col-pct);
+  };
+  --grid-3: {
+    flex-basis: var(--4-col-pct);
+    max-width: var(--4-col-pct);
+  };
+  --grid-4: {
+    flex-basis: var(--3-col-pct);
+    max-width: var(--3-col-pct);
+  };
+  --grid-5: {
+    flex-basis: 20%;
+    max-width: 20%;
+  };
+  --grid-6: {
+    flex-basis: var(--2-col-pct);
+    max-width: var(--2-col-pct);
+  };
+  --grid-7: {
+    flex-basis: 14.28571429%;
+    max-width: 14.28571429%;
+  };
+  --grid-8: {
+    flex-basis: 12.5%;
+    max-width: 12.5%;
+  };
+  --grid-9: {
+    flex-basis: 11.11111111%;
+    max-width: 11.11111111%;
+  };
+  --grid-10: {
+    flex-basis: 10%;
+    max-width: 10%;
+  };
+  --grid-11: {
+    flex-basis: 9.09090909%;
+    max-width: 9.09090909%;
+  };
+  --grid-12: {
+    flex-basis: var(--1-col-pct);
+    max-width: var(--1-col-pct);
+  };
+  --col-1: {
+    flex-basis: var(--1-col-pct);
+    max-width: var(--1-col-pct);
+  }
+  --col-2: {
+    flex-basis: var(--2-col-pct);
+    max-width: var(--2-col-pct);
+  }
+  --col-3: {
+    flex-basis: var(--3-col-pct);
+    max-width: var(--3-col-pct);
+  }
+  --col-4: {
+    flex-basis: var(--4-col-pct);
+    max-width: var(--4-col-pct);
+  }
+  --col-5: {
+    flex-basis: var(--5-col-pct);
+    max-width: var(--5-col-pct);
+  }
+  --col-6: {
+    flex-basis: var(--6-col-pct);
+    max-width: var(--6-col-pct);
+  }
+  --col-7: {
+    flex-basis: var(--7-col-pct);
+    max-width: var(--7-col-pct);
+  }
+  --col-8: {
+    flex-basis: var(--8-col-pct);
+    max-width: var(--8-col-pct);
+  }
+  --col-9: {
+    flex-basis: var(--9-col-pct);
+    max-width: var(--9-col-pct);
+  }
+  --col-10: {
+    flex-basis: var(--10-col-pct);
+    max-width: var(--10-col-pct);
+  }
+  --col-11: {
+    flex-basis: var(--11-col-pct);
+    max-width: var(--11-col-pct);
+  }
+  --col-12: {
+    flex-basis: var(--12-col-pct);
+    max-width: var(--12-col-pct);
+  }
 }
 
 /*******************
@@ -26,85 +134,73 @@
 
   &._grid1 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 100%;
-      max-width: 100%;
+      @apply --grid-1;
     }
   }
 
   &._grid2 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 50%;
-      max-width: 50%;
+      @apply --grid-2;
     }
   }
 
   &._grid3 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 33.33333333%;
-      max-width: 33.33333333%;
+      @apply --grid-3;
     }
   }
 
   &._grid4 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 25%;
-      max-width: 25%;
+      @apply --grid-4;
     }
   }
 
   &._grid5 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 20%;
-      max-width: 20%;
+      @apply --grid-5;
     }
   }
 
   &._grid6 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 16.66666667%;
-      max-width: 16.66666667%;
+      @apply --grid-6;
     }
   }
 
   &._grid7 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 14.28571429%;
-      max-width: 14.28571429%;
+      @apply --grid-7;
     }
   }
 
   &._grid8 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 12.5%;
-      max-width: 12.5%;
+      @apply --grid-8;
     }
   }
 
   &._grid9 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 11.11111111%;
-      max-width: 11.11111111%;
+      @apply --grid-9;
     }
   }
 
   &._grid10 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 10%;
-      max-width: 10%;
+      @apply --grid-10;
     }
   }
 
   &._grid11 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 9.09090909%;
-      max-width: 9.09090909%;
+      @apply --grid-11;
     }
   }
 
   &._grid12 {
     & > .cdr-col:not([class*="_col"]) {
-      flex-basis: 8.33333333%;
-      max-width: 8.33333333%;
+      @apply --grid-12;
     }
   }
 
@@ -178,85 +274,73 @@
   @media (--medium) {
     &._grid1-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 100%;
-        max-width: 100%;
+        @apply --grid-1;
       }
     }
 
     &._grid2-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 50%;
-        max-width: 50%;
+        @apply --grid-2;
       }
     }
 
     &._grid3-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 33.33333333%;
-        max-width: 33.33333333%;
+        @apply --grid-3;
       }
     }
 
     &._grid4-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 25%;
-        max-width: 25%;
+        @apply --grid-4;
       }
     }
 
     &._grid5-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 20%;
-        max-width: 20%;
+        @apply --grid-5;
       }
     }
 
     &._grid6-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 16.66666667%;
-        max-width: 16.66666667%;
+        @apply --grid-6
       }
     }
 
     &._grid7-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 14.28571429%;
-        max-width: 14.28571429%;
+        @apply --grid-7;
       }
     }
 
     &._grid8-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 12.5%;
-        max-width: 12.5%;
+        @apply --grid-8;
       }
     }
 
     &._grid9-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 11.11111111%;
-        max-width: 11.11111111%;
+        @apply --grid-9;
       }
     }
 
     &._grid10-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 10%;
-        max-width: 10%;
+        @apply --grid-10;
       }
     }
 
     &._grid11-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 9.09090909%;
-        max-width: 9.09090909%;
+        @apply --grid-11;
       }
     }
 
     &._grid12-md {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 8.33333333%;
-        max-width: 8.33333333%;
+        @apply --grid-12;
       }
     }
 
@@ -314,85 +398,73 @@
   @media (--large) {
     &._grid1-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 100%;
-        max-width: 100%;
+        @apply --grid-1;
       }
     }
 
     &._grid2-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 50%;
-        max-width: 50%;
+        @apply --grid-2;
       }
     }
 
     &._grid3-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 33.33333333%;
-        max-width: 33.33333333%;
+        @apply --grid-3;
       }
     }
 
     &._grid4-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 25%;
-        max-width: 25%;
+        @apply --grid-4;
       }
     }
 
     &._grid5-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 20%;
-        max-width: 20%;
+        @apply --grid-5;
       }
     }
 
     &._grid6-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 16.66666667%;
-        max-width: 16.66666667%;
+        @apply --grid-6
       }
     }
 
     &._grid7-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 14.28571429%;
-        max-width: 14.28571429%;
+        @apply --grid-7;
       }
     }
 
     &._grid8-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 12.5%;
-        max-width: 12.5%;
+        @apply --grid-8;
       }
     }
 
     &._grid9-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 11.11111111%;
-        max-width: 11.11111111%;
+        @apply --grid-9;
       }
     }
 
     &._grid10-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 10%;
-        max-width: 10%;
+        @apply --grid-10;
       }
     }
 
     &._grid11-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 9.09090909%;
-        max-width: 9.09090909%;
+        @apply --grid-11;
       }
     }
 
     &._grid12-lg {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 8.33333333%;
-        max-width: 8.33333333%;
+        @apply --grid-12;
       }
     }
 
@@ -450,85 +522,73 @@
   @media (--xlarge) {
     &._grid1-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 100%;
-        max-width: 100%;
+        @apply --grid-1;
       }
     }
 
     &._grid2-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 50%;
-        max-width: 50%;
+        @apply --grid-2;
       }
     }
 
     &._grid3-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 33.33333333%;
-        max-width: 33.33333333%;
+        @apply --grid-3;
       }
     }
 
     &._grid4-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 25%;
-        max-width: 25%;
+        @apply --grid-4;
       }
     }
 
     &._grid5-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 20%;
-        max-width: 20%;
+        @apply --grid-5;
       }
     }
 
     &._grid6-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 16.66666667%;
-        max-width: 16.66666667%;
+        @apply --grid-6
       }
     }
 
     &._grid7-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 14.28571429%;
-        max-width: 14.28571429%;
+        @apply --grid-7;
       }
     }
 
     &._grid8-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 12.5%;
-        max-width: 12.5%;
+        @apply --grid-8;
       }
     }
 
     &._grid9-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 11.11111111%;
-        max-width: 11.11111111%;
+        @apply --grid-9;
       }
     }
 
     &._grid10-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 10%;
-        max-width: 10%;
+        @apply --grid-10;
       }
     }
 
     &._grid11-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 9.09090909%;
-        max-width: 9.09090909%;
+        @apply --grid-11;
       }
     }
 
     &._grid12-xl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 8.33333333%;
-        max-width: 8.33333333%;
+        @apply --grid-12;
       }
     }
 
@@ -586,85 +646,73 @@
   @media (--xxlarge) {
     &._grid1-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 100%;
-        max-width: 100%;
+        @apply --grid-1;
       }
     }
 
     &._grid2-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 50%;
-        max-width: 50%;
+        @apply --grid-2;
       }
     }
 
     &._grid3-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 33.33333333%;
-        max-width: 33.33333333%;
+        @apply --grid-3;
       }
     }
 
     &._grid4-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 25%;
-        max-width: 25%;
+        @apply --grid-4;
       }
     }
 
     &._grid5-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 20%;
-        max-width: 20%;
+        @apply --grid-5;
       }
     }
 
     &._grid6-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 16.66666667%;
-        max-width: 16.66666667%;
+        @apply --grid-6
       }
     }
 
     &._grid7-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 14.28571429%;
-        max-width: 14.28571429%;
+        @apply --grid-7;
       }
     }
 
     &._grid8-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 12.5%;
-        max-width: 12.5%;
+        @apply --grid-8;
       }
     }
 
     &._grid9-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 11.11111111%;
-        max-width: 11.11111111%;
+        @apply --grid-9;
       }
     }
 
     &._grid10-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 10%;
-        max-width: 10%;
+        @apply --grid-10;
       }
     }
 
     &._grid11-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 9.09090909%;
-        max-width: 9.09090909%;
+        @apply --grid-11;
       }
     }
 
     &._grid12-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        flex-basis: 8.33333333%;
-        max-width: 8.33333333%;
+        @apply --grid-12;
       }
     }
 
@@ -735,63 +783,51 @@
   /* col by number */
 
   &._col1 {
-    flex-basis: 8.33333333%;
-    max-width: 8.33333333%;
+    @apply --col-1;
   }
 
   &._col2 {
-    flex-basis: 16.66666667%;
-    max-width: 16.66666667%;
+    @apply --col-2;
   }
 
   &._col3 {
-    flex-basis: 25%;
-    max-width: 25%;
+    @apply --col-3;
   }
 
   &._col4 {
-    flex-basis: 33.33333333%;
-    max-width: 33.33333333%;
+    @apply --col-4;
   }
 
   &._col5 {
-    flex-basis: 41.66666667%;
-    max-width: 41.66666667%;
+    @apply --col-5;
   }
 
   &._col6 {
-    flex-basis: 50%;
-    max-width: 50%;
+    @apply --col-6;
   }
 
   &._col7 {
-    flex-basis: 58.33333333%;
-    max-width: 58.33333333%;
+    @apply --col-7;
   }
 
   &._col8 {
-    flex-basis: 66.66666667%;
-    max-width: 66.66666667%;
+    @apply --col-8;
   }
 
   &._col9 {
-    flex-basis: 75%;
-    max-width: 75%;
+    @apply --col-9;
   }
 
   &._col10 {
-    flex-basis: 83.33333333%;
-    max-width: 83.33333333%;
+    @apply --col-10;
   }
 
   &._col11 {
-    flex-basis: 91.66666667%;
-    max-width: 91.66666667%;
+    @apply --col-11;
   }
 
   &._col12 {
-    flex-basis: 100%;
-    max-width: 100%;
+    @apply --col-12;
   }
 
   /* col offsets */
@@ -801,47 +837,47 @@
   }
 
   &.-colLeft1 {
-    margin-left: 8.33333333%;
+    margin-left: var(--1-col-pct);
   }
 
   &.-colLeft2 {
-    margin-left: 16.66666667%;
+    margin-left: var(--2-col-pct);
   }
 
   &.-colLeft3 {
-    margin-left: 25%;
+    margin-left: var(--3-col-pct);
   }
 
   &.-colLeft4 {
-    margin-left: 33.33333333%;
+    margin-left: var(--4-col-pct);
   }
 
   &.-colLeft5 {
-    margin-left: 41.66666667%;
+    margin-left: var(--5-col-pct);
   }
 
   &.-colLeft6 {
-    margin-left: 50%;
+    margin-left: var(--6-col-pct);
   }
 
   &.-colLeft7 {
-    margin-left: 58.33333333%;
+    margin-left: var(--7-col-pct);
   }
 
   &.-colLeft8 {
-    margin-left: 66.66666667%;
+    margin-left: var(--8-col-pct);
   }
 
   &.-colLeft9 {
-    margin-left: 75%;
+    margin-left: var(--9-col-pct);
   }
 
   &.-colLeft10 {
-    margin-left: 83.33333333%;
+    margin-left: var(--10-col-pct);
   }
 
   &.-colLeft11 {
-    margin-left: 91.66666667%;
+    margin-left: var(--11-col-pct);
   }
 
   &.-colRight0 {
@@ -849,47 +885,47 @@
   }
 
   &.-colRight1 {
-    margin-right: 8.33333333%;
+    margin-right: var(--1-col-pct);
   }
 
   &.-colRight2 {
-    margin-right: 16.66666667%;
+    margin-right: var(--2-col-pct);
   }
 
   &.-colRight3 {
-    margin-right: 25%;
+    margin-right: var(--3-col-pct);
   }
 
   &.-colRight4 {
-    margin-right: 33.33333333%;
+    margin-right: var(--4-col-pct);
   }
 
   &.-colRight5 {
-    margin-right: 41.66666667%;
+    margin-right: var(--5-col-pct);
   }
 
   &.-colRight6 {
-    margin-right: 50%;
+    margin-right: var(--6-col-pct);
   }
 
   &.-colRight7 {
-    margin-right: 58.33333333%;
+    margin-right: var(--7-col-pct);
   }
 
   &.-colRight8 {
-    margin-right: 66.66666667%;
+    margin-right: var(--8-col-pct);
   }
 
   &.-colRight9 {
-    margin-right: 75%;
+    margin-right: var(--9-col-pct);
   }
 
   &.-colRight10 {
-    margin-right: 83.33333333%;
+    margin-right: var(--10-col-pct);
   }
 
   &.-colRight11 {
-    margin-right: 91.66666667%;
+    margin-right: var(--11-col-pct);
   }
 
   /* col modifiers */
@@ -938,63 +974,51 @@
     /* col by number */
 
     &._col1-md {
-      flex-basis: 8.33333333%;
-      max-width: 8.33333333%;
+      @apply --col-1;
     }
 
     &._col2-md {
-      flex-basis: 16.66666667%;
-      max-width: 16.66666667%;
+      @apply --col-2;
     }
 
     &._col3-md {
-      flex-basis: 25%;
-      max-width: 25%;
+      @apply --col-3;
     }
 
     &._col4-md {
-      flex-basis: 33.33333333%;
-      max-width: 33.33333333%;
+      @apply --col-4;
     }
 
     &._col5-md {
-      flex-basis: 41.66666667%;
-      max-width: 41.66666667%;
+      @apply --col-5;
     }
 
     &._col6-md {
-      flex-basis: 50%;
-      max-width: 50%;
+      @apply --col-6;
     }
 
     &._col7-md {
-      flex-basis: 58.33333333%;
-      max-width: 58.33333333%;
+      @apply --col-7;
     }
 
     &._col8-md {
-      flex-basis: 66.66666667%;
-      max-width: 66.66666667%;
+      @apply --col-8;
     }
 
     &._col9-md {
-      flex-basis: 75%;
-      max-width: 75%;
+      @apply --col-9;
     }
 
     &._col10-md {
-      flex-basis: 83.33333333%;
-      max-width: 83.33333333%;
+      @apply --col-10;
     }
 
     &._col11-md {
-      flex-basis: 91.66666667%;
-      max-width: 91.66666667%;
+      @apply --col-11;
     }
 
     &._col12-md {
-      flex-basis: 100%;
-      max-width: 100%;
+      @apply --col-12;
     }
 
     /* col offsets */
@@ -1004,47 +1028,47 @@
     }
 
     &.-colLeft1-md {
-      margin-left: 8.33333333%;
+      margin-left: var(--1-col-pct);
     }
 
     &.-colLeft2-md {
-      margin-left: 16.66666667%;
+      margin-left: var(--2-col-pct);
     }
 
     &.-colLeft3-md {
-      margin-left: 25%;
+      margin-left: var(--3-col-pct);
     }
 
     &.-colLeft4-md {
-      margin-left: 33.33333333%;
+      margin-left: var(--4-col-pct);
     }
 
     &.-colLeft5-md {
-      margin-left: 41.66666667%;
+      margin-left: var(--5-col-pct);
     }
 
     &.-colLeft6-md {
-      margin-left: 50%;
+      margin-left: var(--6-col-pct);
     }
 
     &.-colLeft7-md {
-      margin-left: 58.33333333%;
+      margin-left: var(--7-col-pct);
     }
 
     &.-colLeft8-md {
-      margin-left: 66.66666667%;
+      margin-left: var(--8-col-pct);
     }
 
     &.-colLeft9-md {
-      margin-left: 75%;
+      margin-left: var(--9-col-pct);
     }
 
     &.-colLeft10-md {
-      margin-left: 83.33333333%;
+      margin-left: var(--10-col-pct);
     }
 
     &.-colLeft11-md {
-      margin-left: 91.66666667%;
+      margin-left: var(--11-col-pct);
     }
 
     &.-colRight0-md {
@@ -1052,47 +1076,47 @@
     }
 
     &.-colRight1-md {
-      margin-right: 8.33333333%;
+      margin-right: var(--1-col-pct);
     }
 
     &.-colRight2-md {
-      margin-right: 16.66666667%;
+      margin-right: var(--2-col-pct);
     }
 
     &.-colRight3-md {
-      margin-right: 25%;
+      margin-right: var(--3-col-pct);
     }
 
     &.-colRight4-md {
-      margin-right: 33.33333333%;
+      margin-right: var(--4-col-pct);
     }
 
     &.-colRight5-md {
-      margin-right: 41.66666667%;
+      margin-right: var(--5-col-pct);
     }
 
     &.-colRight6-md {
-      margin-right: 50%;
+      margin-right: var(--6-col-pct);
     }
 
     &.-colRight7-md {
-      margin-right: 58.33333333%;
+      margin-right: var(--7-col-pct);
     }
 
     &.-colRight8-md {
-      margin-right: 66.66666667%;
+      margin-right: var(--8-col-pct);
     }
 
     &.-colRight9-md {
-      margin-right: 75%;
+      margin-right: var(--9-col-pct);
     }
 
     &.-colRight10-md {
-      margin-right: 83.33333333%;
+      margin-right: var(--10-col-pct);
     }
 
     &.-colRight11-md {
-      margin-right: 91.66666667%;
+      margin-right: var(--11-col-pct);
     }
 
     /* col modifiers */
@@ -1128,63 +1152,51 @@
     /* col by number */
 
     &._col1-lg {
-      flex-basis: 8.33333333%;
-      max-width: 8.33333333%;
+      @apply --col-1;
     }
 
     &._col2-lg {
-      flex-basis: 16.66666667%;
-      max-width: 16.66666667%;
+      @apply --col-2;
     }
 
     &._col3-lg {
-      flex-basis: 25%;
-      max-width: 25%;
+      @apply --col-3;
     }
 
     &._col4-lg {
-      flex-basis: 33.33333333%;
-      max-width: 33.33333333%;
+      @apply --col-4;
     }
 
     &._col5-lg {
-      flex-basis: 41.66666667%;
-      max-width: 41.66666667%;
+      @apply --col-5;
     }
 
     &._col6-lg {
-      flex-basis: 50%;
-      max-width: 50%;
+      @apply --col-6;
     }
 
     &._col7-lg {
-      flex-basis: 58.33333333%;
-      max-width: 58.33333333%;
+      @apply --col-7;
     }
 
     &._col8-lg {
-      flex-basis: 66.66666667%;
-      max-width: 66.66666667%;
+      @apply --col-8;
     }
 
     &._col9-lg {
-      flex-basis: 75%;
-      max-width: 75%;
+      @apply --col-9;
     }
 
     &._col10-lg {
-      flex-basis: 83.33333333%;
-      max-width: 83.33333333%;
+      @apply --col-10;
     }
 
     &._col11-lg {
-      flex-basis: 91.66666667%;
-      max-width: 91.66666667%;
+      @apply --col-11;
     }
 
     &._col12-lg {
-      flex-basis: 100%;
-      max-width: 100%;
+      @apply --col-12;
     }
 
     /* col offsets */
@@ -1194,47 +1206,47 @@
     }
 
     &.-colLeft1-lg {
-      margin-left: 8.33333333%;
+      margin-left: var(--1-col-pct);
     }
 
     &.-colLeft2-lg {
-      margin-left: 16.66666667%;
+      margin-left: var(--2-col-pct);
     }
 
     &.-colLeft3-lg {
-      margin-left: 25%;
+      margin-left: var(--3-col-pct);
     }
 
     &.-colLeft4-lg {
-      margin-left: 33.33333333%;
+      margin-left: var(--4-col-pct);
     }
 
     &.-colLeft5-lg {
-      margin-left: 41.66666667%;
+      margin-left: var(--5-col-pct);
     }
 
     &.-colLeft6-lg {
-      margin-left: 50%;
+      margin-left: var(--6-col-pct);
     }
 
     &.-colLeft7-lg {
-      margin-left: 58.33333333%;
+      margin-left: var(--7-col-pct);
     }
 
     &.-colLeft8-lg {
-      margin-left: 66.66666667%;
+      margin-left: var(--8-col-pct);
     }
 
     &.-colLeft9-lg {
-      margin-left: 75%;
+      margin-left: var(--9-col-pct);
     }
 
     &.-colLeft10-lg {
-      margin-left: 83.33333333%;
+      margin-left: var(--10-col-pct);
     }
 
     &.-colLeft11-lg {
-      margin-left: 91.66666667%;
+      margin-left: var(--11-col-pct);
     }
 
     &.-colRight0-lg {
@@ -1242,47 +1254,47 @@
     }
 
     &.-colRight1-lg {
-      margin-right: 8.33333333%;
+      margin-right: var(--1-col-pct);
     }
 
     &.-colRight2-lg {
-      margin-right: 16.66666667%;
+      margin-right: var(--2-col-pct);
     }
 
     &.-colRight3-lg {
-      margin-right: 25%;
+      margin-right: var(--3-col-pct);
     }
 
     &.-colRight4-lg {
-      margin-right: 33.33333333%;
+      margin-right: var(--4-col-pct);
     }
 
     &.-colRight5-lg {
-      margin-right: 41.66666667%;
+      margin-right: var(--5-col-pct);
     }
 
     &.-colRight6-lg {
-      margin-right: 50%;
+      margin-right: var(--6-col-pct);
     }
 
     &.-colRight7-lg {
-      margin-right: 58.33333333%;
+      margin-right: var(--7-col-pct);
     }
 
     &.-colRight8-lg {
-      margin-right: 66.66666667%;
+      margin-right: var(--8-col-pct);
     }
 
     &.-colRight9-lg {
-      margin-right: 75%;
+      margin-right: var(--9-col-pct);
     }
 
     &.-colRight10-lg {
-      margin-right: 83.33333333%;
+      margin-right: var(--10-col-pct);
     }
 
     &.-colRight11-lg {
-      margin-right: 91.66666667%;
+      margin-right: var(--11-col-pct);
     }
 
     /* col modifiers */
@@ -1318,63 +1330,51 @@
     /* col by number */
 
     &._col1-xl {
-      flex-basis: 8.33333333%;
-      max-width: 8.33333333%;
+      @apply --col-1;
     }
 
     &._col2-xl {
-      flex-basis: 16.66666667%;
-      max-width: 16.66666667%;
+      @apply --col-2;
     }
 
     &._col3-xl {
-      flex-basis: 25%;
-      max-width: 25%;
+      @apply --col-3;
     }
 
     &._col4-xl {
-      flex-basis: 33.33333333%;
-      max-width: 33.33333333%;
+      @apply --col-4;
     }
 
     &._col5-xl {
-      flex-basis: 41.66666667%;
-      max-width: 41.66666667%;
+      @apply --col-5;
     }
 
     &._col6-xl {
-      flex-basis: 50%;
-      max-width: 50%;
+      @apply --col-6;
     }
 
     &._col7-xl {
-      flex-basis: 58.33333333%;
-      max-width: 58.33333333%;
+      @apply --col-7;
     }
 
     &._col8-xl {
-      flex-basis: 66.66666667%;
-      max-width: 66.66666667%;
+      @apply --col-8;
     }
 
     &._col9-xl {
-      flex-basis: 75%;
-      max-width: 75%;
+      @apply --col-9;
     }
 
     &._col10-xl {
-      flex-basis: 83.33333333%;
-      max-width: 83.33333333%;
+      @apply --col-10;
     }
 
     &._col11-xl {
-      flex-basis: 91.66666667%;
-      max-width: 91.66666667%;
+      @apply --col-11;
     }
 
     &._col12-xl {
-      flex-basis: 100%;
-      max-width: 100%;
+      @apply --col-12;
     }
 
     /* col offsets */
@@ -1384,47 +1384,47 @@
     }
 
     &.-colLeft1-xl {
-      margin-left: 8.33333333%;
+      margin-left: var(--1-col-pct);
     }
 
     &.-colLeft2-xl {
-      margin-left: 16.66666667%;
+      margin-left: var(--2-col-pct);
     }
 
     &.-colLeft3-xl {
-      margin-left: 25%;
+      margin-left: var(--3-col-pct);
     }
 
     &.-colLeft4-xl {
-      margin-left: 33.33333333%;
+      margin-left: var(--4-col-pct);
     }
 
     &.-colLeft5-xl {
-      margin-left: 41.66666667%;
+      margin-left: var(--5-col-pct);
     }
 
     &.-colLeft6-xl {
-      margin-left: 50%;
+      margin-left: var(--6-col-pct);
     }
 
     &.-colLeft7-xl {
-      margin-left: 58.33333333%;
+      margin-left: var(--7-col-pct);
     }
 
     &.-colLeft8-xl {
-      margin-left: 66.66666667%;
+      margin-left: var(--8-col-pct);
     }
 
     &.-colLeft9-xl {
-      margin-left: 75%;
+      margin-left: var(--9-col-pct);
     }
 
     &.-colLeft10-xl {
-      margin-left: 83.33333333%;
+      margin-left: var(--10-col-pct);
     }
 
     &.-colLeft11-xl {
-      margin-left: 91.66666667%;
+      margin-left: var(--11-col-pct);
     }
 
     &.-colRight0-xl {
@@ -1432,47 +1432,47 @@
     }
 
     &.-colRight1-xl {
-      margin-right: 8.33333333%;
+      margin-right: var(--1-col-pct);
     }
 
     &.-colRight2-xl {
-      margin-right: 16.66666667%;
+      margin-right: var(--2-col-pct);
     }
 
     &.-colRight3-xl {
-      margin-right: 25%;
+      margin-right: var(--3-col-pct);
     }
 
     &.-colRight4-xl {
-      margin-right: 33.33333333%;
+      margin-right: var(--4-col-pct);
     }
 
     &.-colRight5-xl {
-      margin-right: 41.66666667%;
+      margin-right: var(--5-col-pct);
     }
 
     &.-colRight6-xl {
-      margin-right: 50%;
+      margin-right: var(--6-col-pct);
     }
 
     &.-colRight7-xl {
-      margin-right: 58.33333333%;
+      margin-right: var(--7-col-pct);
     }
 
     &.-colRight8-xl {
-      margin-right: 66.66666667%;
+      margin-right: var(--8-col-pct);
     }
 
     &.-colRight9-xl {
-      margin-right: 75%;
+      margin-right: var(--9-col-pct);
     }
 
     &.-colRight10-xl {
-      margin-right: 83.33333333%;
+      margin-right: var(--10-col-pct);
     }
 
     &.-colRight11-xl {
-      margin-right: 91.66666667%;
+      margin-right: var(--11-col-pct);
     }
 
     /* col modifiers */
@@ -1508,63 +1508,51 @@
     /* col by number */
 
     &._col1-xxl {
-      flex-basis: 8.33333333%;
-      max-width: 8.33333333%;
+      @apply --col-1;
     }
 
     &._col2-xxl {
-      flex-basis: 16.66666667%;
-      max-width: 16.66666667%;
+      @apply --col-2;
     }
 
     &._col3-xxl {
-      flex-basis: 25%;
-      max-width: 25%;
+      @apply --col-3;
     }
 
     &._col4-xxl {
-      flex-basis: 33.33333333%;
-      max-width: 33.33333333%;
+      @apply --col-4;
     }
 
     &._col5-xxl {
-      flex-basis: 41.66666667%;
-      max-width: 41.66666667%;
+      @apply --col-5;
     }
 
     &._col6-xxl {
-      flex-basis: 50%;
-      max-width: 50%;
+      @apply --col-6;
     }
 
     &._col7-xxl {
-      flex-basis: 58.33333333%;
-      max-width: 58.33333333%;
+      @apply --col-7;
     }
 
     &._col8-xxl {
-      flex-basis: 66.66666667%;
-      max-width: 66.66666667%;
+      @apply --col-8;
     }
 
     &._col9-xxl {
-      flex-basis: 75%;
-      max-width: 75%;
+      @apply --col-9;
     }
 
     &._col10-xxl {
-      flex-basis: 83.33333333%;
-      max-width: 83.33333333%;
+      @apply --col-10;
     }
 
     &._col11-xxl {
-      flex-basis: 91.66666667%;
-      max-width: 91.66666667%;
+      @apply --col-11;
     }
 
     &._col12-xxl {
-      flex-basis: 100%;
-      max-width: 100%;
+      @apply --col-12;
     }
 
     /* col offsets */
@@ -1574,47 +1562,47 @@
     }
 
     &.-colLeft1-xxl {
-      margin-left: 8.33333333%;
+      margin-left: var(--1-col-pct);
     }
 
     &.-colLeft2-xxl {
-      margin-left: 16.66666667%;
+      margin-left: var(--2-col-pct);
     }
 
     &.-colLeft3-xxl {
-      margin-left: 25%;
+      margin-left: var(--3-col-pct);
     }
 
     &.-colLeft4-xxl {
-      margin-left: 33.33333333%;
+      margin-left: var(--4-col-pct);
     }
 
     &.-colLeft5-xxl {
-      margin-left: 41.66666667%;
+      margin-left: var(--5-col-pct);
     }
 
     &.-colLeft6-xxl {
-      margin-left: 50%;
+      margin-left: var(--6-col-pct);
     }
 
     &.-colLeft7-xxl {
-      margin-left: 58.33333333%;
+      margin-left: var(--7-col-pct);
     }
 
     &.-colLeft8-xxl {
-      margin-left: 66.66666667%;
+      margin-left: var(--8-col-pct);
     }
 
     &.-colLeft9-xxl {
-      margin-left: 75%;
+      margin-left: var(--9-col-pct);
     }
 
     &.-colLeft10-xxl {
-      margin-left: 83.33333333%;
+      margin-left: var(--10-col-pct);
     }
 
     &.-colLeft11-xxl {
-      margin-left: 91.66666667%;
+      margin-left: var(--11-col-pct);
     }
 
     &.-colRight0-xxl {
@@ -1622,47 +1610,47 @@
     }
 
     &.-colRight1-xxl {
-      margin-right: 8.33333333%;
+      margin-right: var(--1-col-pct);
     }
 
     &.-colRight2-xxl {
-      margin-right: 16.66666667%;
+      margin-right: var(--2-col-pct);
     }
 
     &.-colRight3-xxl {
-      margin-right: 25%;
+      margin-right: var(--3-col-pct);
     }
 
     &.-colRight4-xxl {
-      margin-right: 33.33333333%;
+      margin-right: var(--4-col-pct);
     }
 
     &.-colRight5-xxl {
-      margin-right: 41.66666667%;
+      margin-right: var(--5-col-pct);
     }
 
     &.-colRight6-xxl {
-      margin-right: 50%;
+      margin-right: var(--6-col-pct);
     }
 
     &.-colRight7-xxl {
-      margin-right: 58.33333333%;
+      margin-right: var(--7-col-pct);
     }
 
     &.-colRight8-xxl {
-      margin-right: 66.66666667%;
+      margin-right: var(--8-col-pct);
     }
 
     &.-colRight9-xxl {
-      margin-right: 75%;
+      margin-right: var(--9-col-pct);
     }
 
     &.-colRight10-xxl {
-      margin-right: 83.33333333%;
+      margin-right: var(--10-col-pct);
     }
 
     &.-colRight11-xxl {
-      margin-right: 91.66666667%;
+      margin-right: var(--11-col-pct);
     }
 
     /* col modifiers */
