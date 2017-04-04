@@ -1,9 +1,9 @@
 <cdr-modal-video>
     <div>
-        <button ref="button" type="button" class="btn btn-play" onclick="{showModal}">
+        <button type="button" class="btn btn-play" onclick="{showModal}">
             <span class="icon icon-rei-play-small" aria-hidden="true"></span><span>{opts.buttonText}</span>
         </button>
-        <aside if={opened} ref="modal" class="cdr-modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="dialog1Title">
+        <aside if={opened} class="cdr-modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="dialog1Title">
             <span id="dialog1Title" class="sr-only">{'Begin dialog for' + opts.videoTitle}</span>
             <div class="cdr-modal__content">
                 <div class="text-right">
@@ -54,6 +54,9 @@
         tag.hideModal = hideModal;
         tag.tabTrap = tabTrap;
 
+        //global vars
+        var cdrModal;
+
         // MOUNT
         // -----------------------------------------
         function onMount() {
@@ -65,8 +68,9 @@
             } );
 
             // Change modal button display
+            var modalLaunchBtn = $el.querySelector('.btn-play');
             if ( opts.cedarButton == "text" ) {
-                tag.refs.button.className = 'btn btn__link-inline-play';
+                modalLaunchBtn.className = 'btn btn__link-inline-play';
             }
         }
 
@@ -83,25 +87,26 @@
             var body = document.querySelector( 'body' );
             var modalBackdrop = document.createElement( 'div' );
             modalBackdrop.id = 'modalBackdrop';
-                // IE workaround, list out each classList item
+            cdrModal = $el.querySelector('.cdr-modal');
+            // IE workaround, list out each classList item
             modalBackdrop.classList.add( 'cdr-modal__backdrop' );
             modalBackdrop.classList.add( 'opaque' );
             modalBackdrop.classList.add( 'fade' );
             modalBackdrop.tabindex = -1;
             body.appendChild( modalBackdrop );
             body.classList.add( 'cdr-modal--open' );
-            tag.refs.modal.setAttribute('aria-hidden', 'false');
-            tag.refs.modal.classList.add( 'in' );
+            cdrModal.setAttribute('aria-hidden', 'false');
+            cdrModal.classList.add( 'in' );
             modalBackdrop.classList.add( 'in' );
 
             // Trap tabs
-            tag.refs.modal.addEventListener( 'keydown', function ( e ) {
+            cdrModal.addEventListener( 'keydown', function ( e ) {
                 if ( e.keyCode === 9 ) {
                    document.addEventListener( 'focus', tag.tabTrap, true );
                 }
             } );
 
-            tag.refs.modal.focus(); // Set focus into modal
+            cdrModal.focus(); // Set focus into modal
         }
 
         // Function to hide modal
@@ -109,8 +114,8 @@
             // remove classes
             var body = document.querySelector( 'body' );
             var modalBackdrop = document.querySelector( '#modalBackdrop' );
-            tag.refs.modal.classList.remove( 'in' );
-            tag.refs.modal.setAttribute('aria-hidden', 'true');
+            cdrModal.classList.remove( 'in' );
+            cdrModal.setAttribute('aria-hidden', 'true');
             modalBackdrop.classList.remove( 'in' );
             body.classList.remove( 'cdr-modal--open' );
             body.removeChild( modalBackdrop );
@@ -125,9 +130,9 @@
 
         // tab trapping event handler
         function tabTrap(evt) {
-            if ( !tag.refs.modal.contains( evt.target ) ) {
+            if ( !cdrModal.contains( evt.target ) ) {
                 evt.stopPropagation();
-                tag.refs.modal.focus();
+                cdrModal.focus();
             }
         }
     </script>
