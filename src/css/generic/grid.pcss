@@ -135,8 +135,6 @@
   &.-gridRight {
     justify-content: flex-end;
     align-self: flex-end;
-    // TODO does removing this mess up nesting or something?
-    // margin-left: auto;
   }
 
   &.-gridTop {
@@ -159,7 +157,7 @@
     justify-content: space-around;
   }
 
-  /* TODO: do we want this? http://tink.uk/flexbox-the-keyboard-navigation-disconnect/
+  /* TODO: do we want to support this? http://tink.uk/flexbox-the-keyboard-navigation-disconnect/
   &.-gridReverse {
     flex-direction: row-reverse;
   }
@@ -281,8 +279,6 @@
     &.-gridRight-md {
       justify-content: flex-end;
       align-self: flex-end;
-      // TODO does removing this mess up nesting or something?
-      // margin-left: auto;
     }
 
     &.-gridTop-md {
@@ -419,8 +415,6 @@
     &.-gridRight-lg {
       justify-content: flex-end;
       align-self: flex-end;
-      // TODO does removing this mess up nesting or something?
-      // margin-left: auto;
     }
 
     &.-gridTop-lg {
@@ -557,8 +551,6 @@
     &.-gridRight-xl {
       justify-content: flex-end;
       align-self: flex-end;
-      // TODO does removing this mess up nesting or something?
-      // margin-left: auto;
     }
 
     &.-gridTop-xl {
@@ -695,8 +687,6 @@
     &.-gridRight-xxl {
       justify-content: flex-end;
       align-self: flex-end;
-      // TODO does removing this mess up nesting or something?
-      // margin-left: auto;
     }
 
     &.-gridTop-xxl {
@@ -741,12 +731,6 @@
   &:not([class*="-colHide"]) {
     display: block;
   }
-
-  /*
-  &[class*="_col"] {
-    flex: 0 0 auto;
-  }
-  */
 
   /* col by number */
 
@@ -934,7 +918,7 @@
     align-self: flex-end;
   }
 
-  /* TODO: do we want this? http://tink.uk/flexbox-the-keyboard-navigation-disconnect/
+  /* TODO: do we want to support this? http://tink.uk/flexbox-the-keyboard-navigation-disconnect/
   &.-first {
     order: -1;
   }

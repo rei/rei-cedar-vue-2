@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container-fluid">
     <test data-backstop="test"></test>
     <cdr-card>
       <cdr-button data-backstop="button">A default button</cdr-button>
@@ -34,7 +34,5 @@
 </script>
 
 <style>
-  #app {
-    padding: 15px;
-  }
+
 </style>
