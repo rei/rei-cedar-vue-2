@@ -1,66 +1,80 @@
 :root {
   --gridGutter: 20px;
   --colBottom: 10px;
-  --1-col-pct: 8.33333333%;
-  --2-col-pct: 16.66666667%;
-  --3-col-pct: 25%;
-  --4-col-pct: 33.33333333%;
-  --5-col-pct: 41.66666667%;
-  --6-col-pct: 50%;
-  --7-col-pct: 58.33333333%;
-  --8-col-pct: 66.66666667%;
-  --9-col-pct: 75%;
-  --10-col-pct: 83.33333333%;
-  --11-col-pct: 91.66666667%;
-  --12-col-pct: 100%;
+  --gridColumns: 12;
+  --1-grid-pct: calc(var(--gridColumns) / 1 / var(--gridColumns) * 100%);
+  --2-grid-pct: calc(var(--gridColumns) / 2 / var(--gridColumns) * 100%);
+  --3-grid-pct: calc(var(--gridColumns) / 3 / var(--gridColumns) * 100%);
+  --4-grid-pct: calc(var(--gridColumns) / 4 / var(--gridColumns) * 100%);
+  --5-grid-pct: calc(var(--gridColumns) / 5 / var(--gridColumns) * 100%);
+  --6-grid-pct: calc(var(--gridColumns) / 6 / var(--gridColumns) * 100%);
+  --7-grid-pct: calc(var(--gridColumns) / 7 / var(--gridColumns) * 100%);
+  --8-grid-pct: calc(var(--gridColumns) / 8 / var(--gridColumns) * 100%);
+  --9-grid-pct: calc(var(--gridColumns) / 9 / var(--gridColumns) * 100%);
+  --10-grid-pct: calc(var(--gridColumns) / 10 / var(--gridColumns) * 100%);
+  --11-grid-pct: calc(var(--gridColumns) / 11 / var(--gridColumns) * 100%);
+  --12-grid-pct: calc(var(--gridColumns) / 12 / var(--gridColumns) * 100%);
   --grid-1: {
-    flex-basis: var(--12-col-pct);
-    max-width: var(--12-col-pct);
-  };
+    flex-basis: var(--1-grid-pct);
+    max-width: var(--1-grid-pct);
+  }
   --grid-2: {
-    flex-basis: var(--6-col-pct);
-    max-width: var(--6-col-pct);
-  };
+    flex-basis: var(--2-grid-pct);
+    max-width: var(--2-grid-pct);
+  }
   --grid-3: {
-    flex-basis: var(--4-col-pct);
-    max-width: var(--4-col-pct);
-  };
+    flex-basis: var(--3-grid-pct);
+    max-width: var(--3-grid-pct);
+  }
   --grid-4: {
-    flex-basis: var(--3-col-pct);
-    max-width: var(--3-col-pct);
-  };
+    flex-basis: var(--4-grid-pct);
+    max-width: var(--4-grid-pct);
+  }
   --grid-5: {
-    flex-basis: 20%;
-    max-width: 20%;
-  };
+    flex-basis: var(--5-grid-pct);
+    max-width: var(--5-grid-pct);
+  }
   --grid-6: {
-    flex-basis: var(--2-col-pct);
-    max-width: var(--2-col-pct);
-  };
+    flex-basis: var(--6-grid-pct);
+    max-width: var(--6-grid-pct);
+  }
   --grid-7: {
-    flex-basis: 14.28571429%;
-    max-width: 14.28571429%;
-  };
+    flex-basis: var(--7-grid-pct);
+    max-width: var(--7-grid-pct);
+  }
   --grid-8: {
-    flex-basis: 12.5%;
-    max-width: 12.5%;
-  };
+    flex-basis: var(--8-grid-pct);
+    max-width: var(--8-grid-pct);
+  }
   --grid-9: {
-    flex-basis: 11.11111111%;
-    max-width: 11.11111111%;
-  };
+    flex-basis: var(--9-grid-pct);
+    max-width: var(--9-grid-pct);
+  }
   --grid-10: {
-    flex-basis: 10%;
-    max-width: 10%;
-  };
+    flex-basis: var(--10-grid-pct);
+    max-width: var(--10-grid-pct);
+  }
   --grid-11: {
-    flex-basis: 9.09090909%;
-    max-width: 9.09090909%;
-  };
+    flex-basis: var(--11-grid-pct);
+    max-width: var(--11-grid-pct);
+  }
   --grid-12: {
-    flex-basis: var(--1-col-pct);
-    max-width: var(--1-col-pct);
-  };
+    flex-basis: var(--12-grid-pct);
+    max-width: var(--12-grid-pct);
+  }
+
+  --1-col-pct: calc(1 / var(--gridColumns) * 100%);
+  --2-col-pct: calc(2 / var(--gridColumns) * 100%);
+  --3-col-pct: calc(3 / var(--gridColumns) * 100%);
+  --4-col-pct: calc(4 / var(--gridColumns) * 100%);
+  --5-col-pct: calc(5 / var(--gridColumns) * 100%);
+  --6-col-pct: calc(6 / var(--gridColumns) * 100%);
+  --7-col-pct: calc(7 / var(--gridColumns) * 100%);
+  --8-col-pct: calc(8 / var(--gridColumns) * 100%);
+  --9-col-pct: calc(9 / var(--gridColumns) * 100%);
+  --10-col-pct: calc(10 / var(--gridColumns) * 100%);
+  --11-col-pct: calc(11 / var(--gridColumns) * 100%);
+  --12-col-pct: calc(12 / var(--gridColumns) * 100%);
   --col-1: {
     flex-basis: var(--1-col-pct);
     max-width: var(--1-col-pct);
@@ -304,7 +318,7 @@
 
     &._grid6-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-6
+        @apply --grid-6;
       }
     }
 
@@ -428,7 +442,7 @@
 
     &._grid6-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-6
+        @apply --grid-6;
       }
     }
 
@@ -552,7 +566,7 @@
 
     &._grid6-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-6
+        @apply --grid-6;
       }
     }
 
@@ -676,7 +690,7 @@
 
     &._grid6-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-6
+        @apply --grid-6;
       }
     }
 
