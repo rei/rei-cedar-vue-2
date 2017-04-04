@@ -1605,13 +1605,13 @@
       <p>-colHide (hidden sm and up -- always)</p>
         <div class="cdr-grid _grid2">
           <div class="cdr-col -colHide">
-            <div class="grid-demo">hide >= sm</div>
+            <div class="grid-demo">hide &ge; sm</div>
           </div>
         </div>
       <p>-colHide-sm-down (hidden sm and below)</p>
       <div class="cdr-grid _grid2">
         <div class="cdr-col -colHide-sm-down">
-          <div class="grid-demo">hide <= sm</div>
+          <div class="grid-demo">hide &le; sm</div>
         </div>
       </div>
       <p>-colHide-sm-only (hidden only at sm)</p>
@@ -1625,13 +1625,13 @@
       <p>-colHide-md (hidden md and up)</p>
       <div class="cdr-grid _grid2">
         <div class="cdr-col -colHide-md">
-          <div class="grid-demo">hide >= md</div>
+          <div class="grid-demo">hide &ge; md</div>
         </div>
       </div>
       <p>-colHide-md-down (hidden md and below)</p>
       <div class="cdr-grid _grid2">
         <div class="cdr-col -colHide-md-down">
-          <div class="grid-demo">hide <= md</div>
+          <div class="grid-demo">hide &le; md</div>
         </div>
       </div>
       <p>-colHide-md-only (hidden only at md)</p>
@@ -1645,13 +1645,13 @@
       <p>-colHide-lg (hidden lg and up)</p>
       <div class="cdr-grid _grid2">
         <div class="cdr-col -colHide-lg">
-          <div class="grid-demo">hide >= lg</div>
+          <div class="grid-demo">hide &ge; lg</div>
         </div>
       </div>
       <p>-colHide-lg-down (hidden lg and below)</p>
       <div class="cdr-grid _grid2">
         <div class="cdr-col -colHide-lg-down">
-          <div class="grid-demo">hide <= lg</div>
+          <div class="grid-demo">hide &le; lg</div>
         </div>
       </div>
       <p>-colHide-lg-only (hidden only at lg)</p>
@@ -1665,13 +1665,13 @@
       <p>-colHide-xl (hidden xl and up)</p>
       <div class="cdr-grid _grid2">
         <div class="cdr-col -colHide-xl">
-          <div class="grid-demo">hide >= xl</div>
+          <div class="grid-demo">hide &ge; xl</div>
         </div>
       </div>
       <p>-colHide-xl-down (hidden xl and below)</p>
       <div class="cdr-grid _grid2">
         <div class="cdr-col -colHide-xl-down">
-          <div class="grid-demo">hide <= xl</div>
+          <div class="grid-demo">hide &le; xl</div>
         </div>
       </div>
       <p>-colHide-xl-only (hidden only at xl)</p>
@@ -1685,13 +1685,13 @@
       <p>-colHide-xxl (hidden xxl and up)</p>
       <div class="cdr-grid _grid2">
         <div class="cdr-col -colHide-xxl">
-          <div class="grid-demo">hide >= xxl</div>
+          <div class="grid-demo">hide &ge; xxl</div>
         </div>
       </div>
       <p>-colHide-xxl-down (hidden xxl and below -- always)</p>
       <div class="cdr-grid _grid2">
         <div class="cdr-col -colHide-xxl-down">
-          <div class="grid-demo">hide <= xxl</div>
+          <div class="grid-demo">hide &le; xxl</div>
         </div>
       </div>
       <p>-colHide-xxl-only (hidden only at xxl)</p>
