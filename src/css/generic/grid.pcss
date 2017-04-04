@@ -120,6 +120,12 @@
 
   &.-gridNoWrap {
     flex-wrap: nowrap;
+    overflow: auto;
+
+    & > .cdr-col {
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
   }
 
   &.-gridCenter {
