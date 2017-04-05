@@ -1689,6 +1689,79 @@
       </div>
     </div>
 
+    <p>Complex Mosaic Demo</p>
+    <div class="cdr-row _row1 _row4-md">
+      <div class="cdr-col">
+        <div class="row-demo">One</div>
+      </div>
+      <div class="cdr-col">
+        <div class="row-demo">Two</div>
+      </div>
+      <div class="cdr-col">
+        <div class="row-demo">Three</div>
+      </div>
+      <div class="cdr-col">
+        <div class="row-demo">Four</div>
+      </div>
+      <div class="cdr-col _col12 cdr-row">
+        <div class="cdr-col _col12 _col9-md cdr-row">
+          <div class="cdr-col _col12 _col4-md">
+            <div class="row-demo">
+              Five
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque veritatis reiciendis iste cum eveniet ad aut atque provident odit velit consequatur ipsa, placeat quisquam repudiandae quo error ipsam, nobis est.</p>
+            </div>
+          </div>
+          <div class="cdr-col _col12 _col8-md cdr-row _row1 _row2-md">
+            <div class="cdr-col">
+              <div class="row-demo">Six</div>
+            </div>
+            <div class="cdr-col">
+              <div class="row-demo">Seven</div>
+            </div>
+            <div class="cdr-col _col12">
+              <div class="row-demo">Eight</div>
+            </div>
+          </div>
+          <div class="cdr-col _col12 _col9-md">
+            <div class="row-demo">
+              Nine
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At nisi labore laboriosam possimus eaque suscipit voluptate soluta, omnis nesciunt, necessitatibus maiores? Consectetur reiciendis libero sapiente possimus aspernatur repellendus recusandae delectus.</p>
+            </div>
+          </div>
+          <div class="cdr-col">
+            <div class="row-demo">
+              Ten
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cdr-col">
+          <div class="row-demo">
+            Eleven
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quibusdam labore impedit rem nam, voluptate magnam architecto, odit dolores, excepturi, et animi. Sapiente expedita ipsam perspiciatis, similique minima illo in.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cdr-col">
+        <div class="row-demo">
+          Twelve
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <div class="cdr-col _col6-md">
+        <div class="row-demo">
+          Thirteen
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque suscipit cum nemo aperiam esse, error ipsam, at aliquam similique optio est quaerat impedit id hic asperiores veritatis unde quod voluptatibus.</p>
+        </div>
+      </div>
+      <div class="cdr-col">
+        <div class="row-demo">
+          Fourteen
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
