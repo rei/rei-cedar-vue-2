@@ -7,14 +7,14 @@
       <cdr-button theme="blue" data-backstop="button-blue">A blue button</cdr-button>
     </cdr-card>
     
-    <grid></grid>
+    <row></row>
 
   </div>
 </template>
 
 <script>
   import Components from './components/_index';
-  import grid from './examples/grid/Grid';
+  import row from './examples/grid/Row';
   import test from './examples/testing/Test';
 
   const prefix = 'cdr';
@@ -24,7 +24,7 @@
     delete Components[key];
   });
 
-  Components.grid = grid;
+  Components.row = row;
   Components.test = test;
 
   export default {

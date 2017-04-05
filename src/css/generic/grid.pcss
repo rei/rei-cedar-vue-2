@@ -1,80 +1,80 @@
 :root {
-  --gridGutter: 20px;
+  --rowGutter: 20px;
   --colBottom: 10px;
-  --gridColumns: 12;
-  --1-grid-pct: calc(var(--gridColumns) / 1 / var(--gridColumns) * 100%);
-  --2-grid-pct: calc(var(--gridColumns) / 2 / var(--gridColumns) * 100%);
-  --3-grid-pct: calc(var(--gridColumns) / 3 / var(--gridColumns) * 100%);
-  --4-grid-pct: calc(var(--gridColumns) / 4 / var(--gridColumns) * 100%);
-  --5-grid-pct: calc(var(--gridColumns) / 5 / var(--gridColumns) * 100%);
-  --6-grid-pct: calc(var(--gridColumns) / 6 / var(--gridColumns) * 100%);
-  --7-grid-pct: calc(var(--gridColumns) / 7 / var(--gridColumns) * 100%);
-  --8-grid-pct: calc(var(--gridColumns) / 8 / var(--gridColumns) * 100%);
-  --9-grid-pct: calc(var(--gridColumns) / 9 / var(--gridColumns) * 100%);
-  --10-grid-pct: calc(var(--gridColumns) / 10 / var(--gridColumns) * 100%);
-  --11-grid-pct: calc(var(--gridColumns) / 11 / var(--gridColumns) * 100%);
-  --12-grid-pct: calc(var(--gridColumns) / 12 / var(--gridColumns) * 100%);
-  --grid-1: {
-    flex-basis: var(--1-grid-pct);
-    max-width: var(--1-grid-pct);
+  --rowColumns: 12;
+  --1-row-pct: calc(var(--rowColumns) / 1 / var(--rowColumns) * 100%);
+  --2-row-pct: calc(var(--rowColumns) / 2 / var(--rowColumns) * 100%);
+  --3-row-pct: calc(var(--rowColumns) / 3 / var(--rowColumns) * 100%);
+  --4-row-pct: calc(var(--rowColumns) / 4 / var(--rowColumns) * 100%);
+  --5-row-pct: calc(var(--rowColumns) / 5 / var(--rowColumns) * 100%);
+  --6-row-pct: calc(var(--rowColumns) / 6 / var(--rowColumns) * 100%);
+  --7-row-pct: calc(var(--rowColumns) / 7 / var(--rowColumns) * 100%);
+  --8-row-pct: calc(var(--rowColumns) / 8 / var(--rowColumns) * 100%);
+  --9-row-pct: calc(var(--rowColumns) / 9 / var(--rowColumns) * 100%);
+  --10-row-pct: calc(var(--rowColumns) / 10 / var(--rowColumns) * 100%);
+  --11-row-pct: calc(var(--rowColumns) / 11 / var(--rowColumns) * 100%);
+  --12-row-pct: calc(var(--rowColumns) / 12 / var(--rowColumns) * 100%);
+  --row-1: {
+    flex-basis: var(--1-row-pct);
+    max-width: var(--1-row-pct);
   }
-  --grid-2: {
-    flex-basis: var(--2-grid-pct);
-    max-width: var(--2-grid-pct);
+  --row-2: {
+    flex-basis: var(--2-row-pct);
+    max-width: var(--2-row-pct);
   }
-  --grid-3: {
-    flex-basis: var(--3-grid-pct);
-    max-width: var(--3-grid-pct);
+  --row-3: {
+    flex-basis: var(--3-row-pct);
+    max-width: var(--3-row-pct);
   }
-  --grid-4: {
-    flex-basis: var(--4-grid-pct);
-    max-width: var(--4-grid-pct);
+  --row-4: {
+    flex-basis: var(--4-row-pct);
+    max-width: var(--4-row-pct);
   }
-  --grid-5: {
-    flex-basis: var(--5-grid-pct);
-    max-width: var(--5-grid-pct);
+  --row-5: {
+    flex-basis: var(--5-row-pct);
+    max-width: var(--5-row-pct);
   }
-  --grid-6: {
-    flex-basis: var(--6-grid-pct);
-    max-width: var(--6-grid-pct);
+  --row-6: {
+    flex-basis: var(--6-row-pct);
+    max-width: var(--6-row-pct);
   }
-  --grid-7: {
-    flex-basis: var(--7-grid-pct);
-    max-width: var(--7-grid-pct);
+  --row-7: {
+    flex-basis: var(--7-row-pct);
+    max-width: var(--7-row-pct);
   }
-  --grid-8: {
-    flex-basis: var(--8-grid-pct);
-    max-width: var(--8-grid-pct);
+  --row-8: {
+    flex-basis: var(--8-row-pct);
+    max-width: var(--8-row-pct);
   }
-  --grid-9: {
-    flex-basis: var(--9-grid-pct);
-    max-width: var(--9-grid-pct);
+  --row-9: {
+    flex-basis: var(--9-row-pct);
+    max-width: var(--9-row-pct);
   }
-  --grid-10: {
-    flex-basis: var(--10-grid-pct);
-    max-width: var(--10-grid-pct);
+  --row-10: {
+    flex-basis: var(--10-row-pct);
+    max-width: var(--10-row-pct);
   }
-  --grid-11: {
-    flex-basis: var(--11-grid-pct);
-    max-width: var(--11-grid-pct);
+  --row-11: {
+    flex-basis: var(--11-row-pct);
+    max-width: var(--11-row-pct);
   }
-  --grid-12: {
-    flex-basis: var(--12-grid-pct);
-    max-width: var(--12-grid-pct);
+  --row-12: {
+    flex-basis: var(--12-row-pct);
+    max-width: var(--12-row-pct);
   }
 
-  --1-col-pct: calc(1 / var(--gridColumns) * 100%);
-  --2-col-pct: calc(2 / var(--gridColumns) * 100%);
-  --3-col-pct: calc(3 / var(--gridColumns) * 100%);
-  --4-col-pct: calc(4 / var(--gridColumns) * 100%);
-  --5-col-pct: calc(5 / var(--gridColumns) * 100%);
-  --6-col-pct: calc(6 / var(--gridColumns) * 100%);
-  --7-col-pct: calc(7 / var(--gridColumns) * 100%);
-  --8-col-pct: calc(8 / var(--gridColumns) * 100%);
-  --9-col-pct: calc(9 / var(--gridColumns) * 100%);
-  --10-col-pct: calc(10 / var(--gridColumns) * 100%);
-  --11-col-pct: calc(11 / var(--gridColumns) * 100%);
-  --12-col-pct: calc(12 / var(--gridColumns) * 100%);
+  --1-col-pct: calc(1 / var(--rowColumns) * 100%);
+  --2-col-pct: calc(2 / var(--rowColumns) * 100%);
+  --3-col-pct: calc(3 / var(--rowColumns) * 100%);
+  --4-col-pct: calc(4 / var(--rowColumns) * 100%);
+  --5-col-pct: calc(5 / var(--rowColumns) * 100%);
+  --6-col-pct: calc(6 / var(--rowColumns) * 100%);
+  --7-col-pct: calc(7 / var(--rowColumns) * 100%);
+  --8-col-pct: calc(8 / var(--rowColumns) * 100%);
+  --9-col-pct: calc(9 / var(--rowColumns) * 100%);
+  --10-col-pct: calc(10 / var(--rowColumns) * 100%);
+  --11-col-pct: calc(11 / var(--rowColumns) * 100%);
+  --12-col-pct: calc(12 / var(--rowColumns) * 100%);
   --col-1: {
     flex-basis: var(--1-col-pct);
     max-width: var(--1-col-pct);
@@ -126,15 +126,15 @@
 }
 
 /*******************
-  grid classes
+  row classes
 ********************/
 
-.cdr-grid {
+.cdr-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: calc(var(--gridGutter) * -1 / 2);
-  margin-right: calc(var(--gridGutter) * -1 / 2);
+  margin-left: calc(var(--rowGutter) * -1 / 2);
+  margin-right: calc(var(--rowGutter) * -1 / 2);
 
   &.cdr-col {
     margin: 0;
@@ -145,83 +145,83 @@
     }
   }
 
-  /* grid by number */
+  /* row by number */
 
-  &._grid1 {
+  &._row1 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-1;
+      @apply --row-1;
     }
   }
 
-  &._grid2 {
+  &._row2 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-2;
+      @apply --row-2;
     }
   }
 
-  &._grid3 {
+  &._row3 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-3;
+      @apply --row-3;
     }
   }
 
-  &._grid4 {
+  &._row4 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-4;
+      @apply --row-4;
     }
   }
 
-  &._grid5 {
+  &._row5 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-5;
+      @apply --row-5;
     }
   }
 
-  &._grid6 {
+  &._row6 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-6;
+      @apply --row-6;
     }
   }
 
-  &._grid7 {
+  &._row7 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-7;
+      @apply --row-7;
     }
   }
 
-  &._grid8 {
+  &._row8 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-8;
+      @apply --row-8;
     }
   }
 
-  &._grid9 {
+  &._row9 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-9;
+      @apply --row-9;
     }
   }
 
-  &._grid10 {
+  &._row10 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-10;
+      @apply --row-10;
     }
   }
 
-  &._grid11 {
+  &._row11 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-11;
+      @apply --row-11;
     }
   }
 
-  &._grid12 {
+  &._row12 {
     & > .cdr-col:not([class*="_col"]) {
-      @apply --grid-12;
+      @apply --row-12;
     }
   }
 
-  /* grid modifiers # */
+  /* row modifiers # */
 
-  &.-gridNoGutter {
+  &.-rowNoGutter {
     margin: 0;
 
     & > .cdr-col {
@@ -229,7 +229,7 @@
     }
   }
 
-  &.-gridNoWrap {
+  &.-rowNoWrap {
     flex-wrap: nowrap;
     overflow: auto;
 
@@ -239,45 +239,45 @@
     }
   }
 
-  &.-gridCenter {
+  &.-rowCenter {
     justify-content: center;
   }
 
-  &.-gridRight {
+  &.-rowRight {
     justify-content: flex-end;
     align-self: flex-end;
   }
 
-  &.-gridTop {
+  &.-rowTop {
     align-items: flex-start;
   }
 
-  &.-gridMiddle {
+  &.-rowMiddle {
     align-items: center;
   }
 
-  &.-gridBottom {
+  &.-rowBottom {
     align-items: flex-end;
   }
 
-  &.-gridSpaceBetween {
+  &.-rowSpaceBetween {
     justify-content: space-between;
   }
 
-  &.-gridSpaceAround {
+  &.-rowSpaceAround {
     justify-content: space-around;
   }
 
   /* TODO: do we want to support this? http://tink.uk/flexbox-the-keyboard-navigation-disconnect/
-  &.-gridReverse {
+  &.-rowReverse {
     flex-direction: row-reverse;
   }
-  &.-gridColumnReverse {
+  &.-rowColumnReverse {
     flex-direction: column-reverse;
   }
   */
 
-  &.-gridColumn {
+  &.-rowColumn {
     flex-direction: column;
 
     & > .cdr-col,
@@ -287,79 +287,79 @@
   }
 
   @media (--medium) {
-    &._grid1-md {
+    &._row1-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-1;
+        @apply --row-1;
       }
     }
 
-    &._grid2-md {
+    &._row2-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-2;
+        @apply --row-2;
       }
     }
 
-    &._grid3-md {
+    &._row3-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-3;
+        @apply --row-3;
       }
     }
 
-    &._grid4-md {
+    &._row4-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-4;
+        @apply --row-4;
       }
     }
 
-    &._grid5-md {
+    &._row5-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-5;
+        @apply --row-5;
       }
     }
 
-    &._grid6-md {
+    &._row6-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-6;
+        @apply --row-6;
       }
     }
 
-    &._grid7-md {
+    &._row7-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-7;
+        @apply --row-7;
       }
     }
 
-    &._grid8-md {
+    &._row8-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-8;
+        @apply --row-8;
       }
     }
 
-    &._grid9-md {
+    &._row9-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-9;
+        @apply --row-9;
       }
     }
 
-    &._grid10-md {
+    &._row10-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-10;
+        @apply --row-10;
       }
     }
 
-    &._grid11-md {
+    &._row11-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-11;
+        @apply --row-11;
       }
     }
 
-    &._grid12-md {
+    &._row12-md {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-12;
+        @apply --row-12;
       }
     }
 
-    &.-gridNoGutter-md {
+    &.-rowNoGutter-md {
       margin: 0;
 
       & > .cdr-col {
@@ -367,32 +367,32 @@
       }
     }
 
-    &.-gridNoWrap-md {
+    &.-rowNoWrap-md {
       flex-wrap: nowrap;
     }
 
-    &.-gridCenter-md {
+    &.-rowCenter-md {
       justify-content: center;
     }
 
-    &.-gridRight-md {
+    &.-rowRight-md {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &.-gridTop-md {
+    &.-rowTop-md {
       align-items: flex-start;
     }
 
-    &.-gridMiddle-md {
+    &.-rowMiddle-md {
       align-items: center;
     }
 
-    &.-gridBottom-md {
+    &.-rowBottom-md {
       align-items: flex-end;
     }
 
-    &.-gridColumn-md {
+    &.-rowColumn-md {
       flex-direction: column;
 
       & > .cdr-col,
@@ -401,89 +401,89 @@
       }
     }
 
-    &.-gridSpaceBetween-md {
+    &.-rowSpaceBetween-md {
       justify-content: space-between;
     }
 
-    &.-gridSpaceAround-md {
+    &.-rowSpaceAround-md {
       justify-content: space-around;
     }
   }
 
   @media (--large) {
-    &._grid1-lg {
+    &._row1-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-1;
+        @apply --row-1;
       }
     }
 
-    &._grid2-lg {
+    &._row2-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-2;
+        @apply --row-2;
       }
     }
 
-    &._grid3-lg {
+    &._row3-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-3;
+        @apply --row-3;
       }
     }
 
-    &._grid4-lg {
+    &._row4-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-4;
+        @apply --row-4;
       }
     }
 
-    &._grid5-lg {
+    &._row5-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-5;
+        @apply --row-5;
       }
     }
 
-    &._grid6-lg {
+    &._row6-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-6;
+        @apply --row-6;
       }
     }
 
-    &._grid7-lg {
+    &._row7-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-7;
+        @apply --row-7;
       }
     }
 
-    &._grid8-lg {
+    &._row8-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-8;
+        @apply --row-8;
       }
     }
 
-    &._grid9-lg {
+    &._row9-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-9;
+        @apply --row-9;
       }
     }
 
-    &._grid10-lg {
+    &._row10-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-10;
+        @apply --row-10;
       }
     }
 
-    &._grid11-lg {
+    &._row11-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-11;
+        @apply --row-11;
       }
     }
 
-    &._grid12-lg {
+    &._row12-lg {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-12;
+        @apply --row-12;
       }
     }
 
-    &.-gridNoGutter-lg {
+    &.-rowNoGutter-lg {
       margin: 0;
 
       & > .cdr-col {
@@ -491,32 +491,32 @@
       }
     }
 
-    &.-gridNoWrap-lg {
+    &.-rowNoWrap-lg {
       flex-wrap: nowrap;
     }
 
-    &.-gridCenter-lg {
+    &.-rowCenter-lg {
       justify-content: center;
     }
 
-    &.-gridRight-lg {
+    &.-rowRight-lg {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &.-gridTop-lg {
+    &.-rowTop-lg {
       align-items: flex-start;
     }
 
-    &.-gridMiddle-lg {
+    &.-rowMiddle-lg {
       align-items: center;
     }
 
-    &.-gridBottom-lg {
+    &.-rowBottom-lg {
       align-items: flex-end;
     }
 
-    &.-gridColumn-lg {
+    &.-rowColumn-lg {
       flex-direction: column;
 
       & > .cdr-col,
@@ -525,89 +525,89 @@
       }
     }
 
-    &.-gridSpaceBetween-lg {
+    &.-rowSpaceBetween-lg {
       justify-content: space-between;
     }
 
-    &.-gridSpaceAround-lg {
+    &.-rowSpaceAround-lg {
       justify-content: space-around;
     }
   }
 
   @media (--xlarge) {
-    &._grid1-xl {
+    &._row1-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-1;
+        @apply --row-1;
       }
     }
 
-    &._grid2-xl {
+    &._row2-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-2;
+        @apply --row-2;
       }
     }
 
-    &._grid3-xl {
+    &._row3-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-3;
+        @apply --row-3;
       }
     }
 
-    &._grid4-xl {
+    &._row4-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-4;
+        @apply --row-4;
       }
     }
 
-    &._grid5-xl {
+    &._row5-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-5;
+        @apply --row-5;
       }
     }
 
-    &._grid6-xl {
+    &._row6-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-6;
+        @apply --row-6;
       }
     }
 
-    &._grid7-xl {
+    &._row7-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-7;
+        @apply --row-7;
       }
     }
 
-    &._grid8-xl {
+    &._row8-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-8;
+        @apply --row-8;
       }
     }
 
-    &._grid9-xl {
+    &._row9-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-9;
+        @apply --row-9;
       }
     }
 
-    &._grid10-xl {
+    &._row10-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-10;
+        @apply --row-10;
       }
     }
 
-    &._grid11-xl {
+    &._row11-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-11;
+        @apply --row-11;
       }
     }
 
-    &._grid12-xl {
+    &._row12-xl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-12;
+        @apply --row-12;
       }
     }
 
-    &.-gridNoGutter-xl {
+    &.-rowNoGutter-xl {
       margin: 0;
 
       & > .cdr-col {
@@ -615,32 +615,32 @@
       }
     }
 
-    &.-gridNoWrap-xl {
+    &.-rowNoWrap-xl {
       flex-wrap: nowrap;
     }
 
-    &.-gridCenter-xl {
+    &.-rowCenter-xl {
       justify-content: center;
     }
 
-    &.-gridRight-xl {
+    &.-rowRight-xl {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &.-gridTop-xl {
+    &.-rowTop-xl {
       align-items: flex-start;
     }
 
-    &.-gridMiddle-xl {
+    &.-rowMiddle-xl {
       align-items: center;
     }
 
-    &.-gridBottom-xl {
+    &.-rowBottom-xl {
       align-items: flex-end;
     }
 
-    &.-gridColumn-xl {
+    &.-rowColumn-xl {
       flex-direction: column;
 
       & > .cdr-col,
@@ -649,89 +649,89 @@
       }
     }
 
-    &.-gridSpaceBetween-xl {
+    &.-rowSpaceBetween-xl {
       justify-content: space-between;
     }
 
-    &.-gridSpaceAround-xl {
+    &.-rowSpaceAround-xl {
       justify-content: space-around;
     }
   }
 
   @media (--xxlarge) {
-    &._grid1-xxl {
+    &._row1-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-1;
+        @apply --row-1;
       }
     }
 
-    &._grid2-xxl {
+    &._row2-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-2;
+        @apply --row-2;
       }
     }
 
-    &._grid3-xxl {
+    &._row3-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-3;
+        @apply --row-3;
       }
     }
 
-    &._grid4-xxl {
+    &._row4-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-4;
+        @apply --row-4;
       }
     }
 
-    &._grid5-xxl {
+    &._row5-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-5;
+        @apply --row-5;
       }
     }
 
-    &._grid6-xxl {
+    &._row6-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-6;
+        @apply --row-6;
       }
     }
 
-    &._grid7-xxl {
+    &._row7-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-7;
+        @apply --row-7;
       }
     }
 
-    &._grid8-xxl {
+    &._row8-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-8;
+        @apply --row-8;
       }
     }
 
-    &._grid9-xxl {
+    &._row9-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-9;
+        @apply --row-9;
       }
     }
 
-    &._grid10-xxl {
+    &._row10-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-10;
+        @apply --row-10;
       }
     }
 
-    &._grid11-xxl {
+    &._row11-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-11;
+        @apply --row-11;
       }
     }
 
-    &._grid12-xxl {
+    &._row12-xxl {
       & > .cdr-col:not([class*="_col"]) {
-        @apply --grid-12;
+        @apply --row-12;
       }
     }
 
-    &.-gridNoGutter-xxl {
+    &.-rowNoGutter-xxl {
       margin: 0;
 
       & > .cdr-col {
@@ -739,32 +739,32 @@
       }
     }
 
-    &.-gridNoWrap-xxl {
+    &.-rowNoWrap-xxl {
       flex-wrap: nowrap;
     }
 
-    &.-gridCenter-xxl {
+    &.-rowCenter-xxl {
       justify-content: center;
     }
 
-    &.-gridRight-xxl {
+    &.-rowRight-xxl {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &.-gridTop-xxl {
+    &.-rowTop-xxl {
       align-items: flex-start;
     }
 
-    &.-gridMiddle-xxl {
+    &.-rowMiddle-xxl {
       align-items: center;
     }
 
-    &.-gridBottom-xxl {
+    &.-rowBottom-xxl {
       align-items: flex-end;
     }
 
-    &.-gridColumn-xxl {
+    &.-rowColumn-xxl {
       flex-direction: column;
 
       & > .cdr-col,
@@ -773,11 +773,11 @@
       }
     }
 
-    &.-gridSpaceBetween-xxl {
+    &.-rowSpaceBetween-xxl {
       justify-content: space-between;
     }
 
-    &.-gridSpaceAround-xxl {
+    &.-rowSpaceAround-xxl {
       justify-content: space-around;
     }
   }
@@ -789,8 +789,8 @@
 
 .cdr-col {
   flex: 1 1 0%;
-  padding-left: calc(var(--gridGutter) / 2);
-  padding-right: calc(var(--gridGutter) / 2);
+  padding-left: calc(var(--rowGutter) / 2);
+  padding-right: calc(var(--rowGutter) / 2);
   padding-bottom: var(--colBottom);
 
   &:not([class*="-colHide"]) {
