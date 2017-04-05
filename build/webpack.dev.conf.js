@@ -6,6 +6,7 @@ var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 var StyleLintPlugin = require('stylelint-webpack-plugin')
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -35,5 +36,18 @@ module.exports = merge(baseWebpackConfig, {
       files: ['src/**/main.postcss', 'src/**/*.vue']
     }),
     new FriendlyErrorsPlugin(),
+    new BrowserSyncPlugin(
+      {
+        // browse to http://localhost:3000/ during development 
+        host: 'localhost',
+        port: 3000,
+        // proxy the dev server endpoint through BrowserSync 
+        proxy: 'http://localhost:8080/'
+      },
+      {
+        // prevent BrowserSync from reloading the page and let the dev server take care of this 
+        reload: false
+      }
+    ),
   ]
 })
