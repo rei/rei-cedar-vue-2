@@ -283,7 +283,9 @@
                     dateDayOfWeek: 'Sat',
                     dateMonthAndDayOfMonth: 'Oct 26',
                     title: 'This is the event you have been waiting for',
-                    location: 'Seattle — 9:30AM'
+                    location: 'Seattle — 9:30AM',
+                    waitListUrl: '',
+                    spots: '5'
                 },
                 { 
                     imgPath: 'http://placehold.it/320x150',
@@ -291,7 +293,9 @@
                     dateDayOfWeek: 'Sun',
                     dateMonthAndDayOfMonth: 'Oct 26',
                     title: 'This is the event you have been waiting for',
-                    location: 'Seattle — 9:30AM'
+                    location: 'Seattle — 9:30AM',
+                    waitListUrl: '/join',
+                    spots: '0'
                 },
                 { 
                     imgPath: 'http://placehold.it/320x150',
@@ -299,15 +303,18 @@
                     dateDayOfWeek: 'Mon',
                     dateMonthAndDayOfMonth: 'Oct 26',
                     title: 'This is the event you have been waiting for',
-                    location: 'Seattle — 9:30AM'
+                    location: 'Seattle — 9:30AM',
+                    waitListUrl: ''
                 },
                 { 
                     imgPath: 'http://placehold.it/320x150',
                     imgPathAlt: 'an image',
-                    dateDayOfWeek: 'Tues',
+                    dateDayOfWeek: 'Tue',
                     dateMonthAndDayOfMonth: 'Oct 26',
                     title: 'This is the event you have been waiting for',
-                    location: 'Seattle — 9:30AM'
+                    location: 'Seattle — 9:30AM',
+                    waitListUrl: '',
+                    spots: '12'
                 }
             ]
         </script>
@@ -322,12 +329,16 @@
                 <div class="tile-block">
                     <section class="event">
                         <div class="event__date text-uppercase">
-                            <div class="h2 event__title"></div>
-                            <div class="text-muted"></div>
+                            <div class="h2 event__title">{ opts.item.dateDayOfWeek }</div>
+                            <div class="text-muted">{ opts.item.dateMonthAndDayOfMonth }</div>
                         </div>
                         <div class="event__content">
-                            <h4 class="event__title"></h4>
-                            <div class="event__location text-muted"></div>
+                            <h4 class="event__title">{ opts.item.title }</h4>
+                            <p class="event__location">{ opts.item.location }</p>
+                            <div if={ opts.item.spots > 0 || opts.item.spots == 0 } class="event__availability">
+                                <div if={ opts.item.spots > 0 } class="text-muted">{ opts.item.spots } spots available</div>
+                                <div class="event__waitList" if={ opts.item.spots == 0 }><span class="text-off-price">Event is full.</span> <a href="#" class="link_navigation text-nowrap">Join wait list</a></div>
+                            </div>
                         </div>
                     </section>
                 </div>
