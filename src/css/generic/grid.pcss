@@ -133,7 +133,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 calc(var(--gridGutter) * -1 / 2);
+  margin-left: calc(var(--gridGutter) * -1 / 2);
+  margin-right: calc(var(--gridGutter) * -1 / 2);
 
   &.cdr-col {
     margin: 0;
@@ -788,7 +789,9 @@
 
 .cdr-col {
   flex: 1 1 0%;
-  padding: 0 calc(var(--gridGutter) / 2) var(--colBottom);
+  padding-left: calc(var(--gridGutter) / 2);
+  padding-right: calc(var(--gridGutter) / 2);
+  padding-bottom: var(--colBottom);
 
   &:not([class*="-colHide"]) {
     display: block;
