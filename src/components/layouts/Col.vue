@@ -1,6 +1,6 @@
 <template>
   <div class="cdr-col" :class="[spanClass]">
-    <div class="cdr-colContent">
+    <div class="cdr-col _content">
       <slot></slot>
     </div>
   </div>
