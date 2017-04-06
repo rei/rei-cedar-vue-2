@@ -18,19 +18,22 @@
     },
   ];
 
+  function createPropObj(obj) {
+    const propObj = {};
+
+    if (obj.type) { propObj.type = obj.type; }
+    if (obj.validator) { propObj.validator = obj.validator; }
+
+    return propObj;
+  }
+
   // Make a valid props object
   propDefs.forEach((p) => {
-    finalProps[`${p.name}`] = {
-      type: p.type,
-      validator: p.validator,
-    };
+    finalProps[`${p.name}`] = createPropObj(p);
 
     if (p.responsive) {
       bpArr.forEach((bp) => {
-        finalProps[`${p.name}${bp}`] = {
-          type: p.type,
-          validator: p.validator,
-        };
+        finalProps[`${p.name}${bp}`] = createPropObj(p);
       });
     }
   });

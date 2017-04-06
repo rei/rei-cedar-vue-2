@@ -1,5 +1,5 @@
 <template>
-  <div class="cdr-row" :class="[colsClass, justifyClass, alignClass]">
+  <div class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass]">
     <slot></slot>
   </div>
 </template>
@@ -26,21 +26,34 @@
       type: String,
       validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value >= 0)) || false,
     },
+    {
+      name: 'vertical',
+      responsive: true,
+      type: Boolean,
+    },
+    {
+      name: 'wrap',
+      responsive: true,
+      type: Boolean,
+    },
   ];
+
+  function createPropObj(obj) {
+    const propObj = {};
+
+    if (obj.type) { propObj.type = obj.type; }
+    if (obj.validator) { propObj.validator = obj.validator; }
+
+    return propObj;
+  }
 
   // Make a valid props object
   propDefs.forEach((p) => {
-    finalProps[`${p.name}`] = {
-      type: p.type,
-      validator: p.validator,
-    };
+    finalProps[`${p.name}`] = createPropObj(p);
 
     if (p.responsive) {
       bpArr.forEach((bp) => {
-        finalProps[`${p.name}${bp}`] = {
-          type: p.type,
-          validator: p.validator,
-        };
+        finalProps[`${p.name}${bp}`] = createPropObj(p);
       });
     }
   });
@@ -75,6 +88,24 @@
         if (this.alignXl) { alignClass += `${this.getAlign(`${this.alignXl}`)}-xl `; }
         if (this.alignXxl) { alignClass += `${this.getAlign(`${this.alignXxl}`)}-xxl `; }
         return alignClass;
+      },
+      directionClass() {
+        let directionClass = '';
+        if (this.vertical) { directionClass += '-rowColumn '; }
+        if (this.verticalMd) { directionClass += '-rowColumn-md '; }
+        if (this.verticalLg) { directionClass += '-rowColumn-lg '; }
+        if (this.verticalXl) { directionClass += '-rowColumn-xl '; }
+        if (this.verticalXxl) { directionClass += '-rowColumn-xxl '; }
+        return directionClass;
+      },
+      wrapClass() {
+        let wrapClass = '';
+        if (!this.wrap) { wrapClass += '-rowNoWrap '; }
+        if (!this.wrapMd) { wrapClass += '-rowNoWrap-md '; }
+        if (!this.wrapLg) { wrapClass += '-rowNoWrap-lg '; }
+        if (!this.wrapXl) { wrapClass += '-rowNoWrap-xl '; }
+        if (!this.wrapXxl) { wrapClass += '-rowNoWrap-xxl '; }
+        return wrapClass;
       },
     },
     methods: {

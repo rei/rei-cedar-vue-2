@@ -17,10 +17,10 @@
           <li>-rowMiddle</li>
           <li>-rowBottom</li>
           <li>-rowStretch</li>
+          <li>-rowColumn</li>
+          <li>-rowNoWrap</li>
 
           <li>-rowNoGutter</li>
-          <li>-rowNoWrap</li>
-          <li>-rowColumn</li>
         </ul>
         <li>cdr-col</li>
         <ul>
