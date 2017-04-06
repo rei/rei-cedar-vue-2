@@ -30,11 +30,13 @@
       name: 'vertical',
       responsive: true,
       type: Boolean,
+      default: false,
     },
     {
       name: 'wrap',
       responsive: true,
       type: Boolean,
+      default: true,
     },
   ];
 
@@ -42,6 +44,7 @@
     const propObj = {};
 
     if (obj.type) { propObj.type = obj.type; }
+    if (obj.default) { propObj.default = obj.default; }
     if (obj.validator) { propObj.validator = obj.validator; }
 
     return propObj;
