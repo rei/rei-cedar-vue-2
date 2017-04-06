@@ -8,21 +8,25 @@
         <ul>
           <li>=-=-=- These are all responsive also by adding [-md, -lg, -xl, -xxl] (i.e. -rowTop-md) -=-=-=</li>
           <li>_row# (# = 1-12 for how many columns you want the row to have)</li>
-          <li>-rowNoGutter</li>
-          <li>-rowNoWrap</li>
+          <li>-rowLeft</li>
           <li>-rowCenter</li>
           <li>-rowRight</li>
+          <li>-rowSpaceBetween</li>
+          <li>-rowSpaceAround</li>
           <li>-rowTop</li>
           <li>-rowMiddle</li>
           <li>-rowBottom</li>
-          <li>-rowSpaceBetween</li>
-          <li>-rowSpaceAround</li>
+          <li>-rowStretch</li>
+
+          <li>-rowNoGutter</li>
+          <li>-rowNoWrap</li>
           <li>-rowColumn</li>
         </ul>
         <li>cdr-col</li>
         <ul>
           <li>=-=-=- These are all responsive also by adding [-md, -lg, -xl, -xxl] (i.e. -colTop-md) -=-=-=</li>
           <li>_col# (# = 1-12 for how many columns it should take up*)</li>
+          
           <li>-colHide (-&lt;breakpoint&gt; default is up can also add -&lt;breakpoint&gt;-down, -&lt;breakpoint&gt;-only)</li>
           <li>-colLeft# (# = number of columns to push over from left)</li>
           <li>-colRight# (# = number of columns to push over from right)</li>
@@ -1778,7 +1782,6 @@
     background-color: gray;
     text-align: center;
     padding: 10px;
-    height: 100%;
     width: 100%;
   }
   

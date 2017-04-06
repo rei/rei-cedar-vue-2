@@ -41,7 +41,7 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     port: 8080,
-    autoOpenBrowser: true,
+    autoOpenBrowser: false, // Set to false because using BrowserSync
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},

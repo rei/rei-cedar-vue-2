@@ -7,14 +7,26 @@
       <cdr-button theme="blue" data-backstop="button-blue">A blue button</cdr-button>
     </cdr-card>
     
-    <row></row>
+    <cdr-row :cols="4">
+      <cdr-col>
+        <cdr-card>Testing</cdr-card>
+      </cdr-col>
+      <cdr-col>
+        <cdr-card>Testing 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut sapiente, reprehenderit sint quod laudantium optio voluptatum soluta similique nihil molestias, pariatur qui a, nisi veritatis excepturi incidunt, accusantium exercitationem non.</cdr-card>
+      </cdr-col>
+      <cdr-col>
+        <cdr-card>Testing 3</cdr-card>
+      </cdr-col>
+      <cdr-col>
+        <cdr-card>Testing 4</cdr-card>
+      </cdr-col>
+    </cdr-row>
 
   </div>
 </template>
 
 <script>
   import Components from './components/_index';
-  import row from './examples/grid/Row';
   import test from './examples/testing/Test';
 
   const prefix = 'cdr';
@@ -24,7 +36,6 @@
     delete Components[key];
   });
 
-  Components.row = row;
   Components.test = test;
 
   export default {

@@ -263,6 +263,11 @@
     }
   }
 
+  &.-rowLeft {
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
   &.-rowCenter {
     justify-content: center;
   }
@@ -270,6 +275,10 @@
   &.-rowRight {
     justify-content: flex-end;
     align-self: flex-end;
+  }
+
+  &.-rowStretch {
+    align-items: stretch;
   }
 
   &.-rowTop {
@@ -395,6 +404,11 @@
       flex-wrap: nowrap;
     }
 
+    &.-rowLeft-md {
+      justify-content: flex-start;
+      align-self: flex-start;
+    }
+
     &.-rowCenter-md {
       justify-content: center;
     }
@@ -402,6 +416,10 @@
     &.-rowRight-md {
       justify-content: flex-end;
       align-self: flex-end;
+    }
+
+    &.-rowStretch-md {
+      align-items: stretch;
     }
 
     &.-rowTop-md {
@@ -519,6 +537,11 @@
       flex-wrap: nowrap;
     }
 
+    &.-rowLeft-lg {
+      justify-content: flex-start;
+      align-self: flex-start;
+    }
+
     &.-rowCenter-lg {
       justify-content: center;
     }
@@ -526,6 +549,10 @@
     &.-rowRight-lg {
       justify-content: flex-end;
       align-self: flex-end;
+    }
+
+    &.-rowStretch-lg {
+      align-items: stretch;
     }
 
     &.-rowTop-lg {
@@ -643,6 +670,11 @@
       flex-wrap: nowrap;
     }
 
+    &.-rowLeft-xl {
+      justify-content: flex-start;
+      align-self: flex-start;
+    }
+
     &.-rowCenter-xl {
       justify-content: center;
     }
@@ -650,6 +682,10 @@
     &.-rowRight-xl {
       justify-content: flex-end;
       align-self: flex-end;
+    }
+
+    &.-rowStretch-xl {
+      align-items: stretch;
     }
 
     &.-rowTop-xl {
@@ -767,6 +803,11 @@
       flex-wrap: nowrap;
     }
 
+    &.-rowLeft-xxl {
+      justify-content: flex-start;
+      align-self: flex-start;
+    }
+
     &.-rowCenter-xxl {
       justify-content: center;
     }
@@ -774,6 +815,10 @@
     &.-rowRight-xxl {
       justify-content: flex-end;
       align-self: flex-end;
+    }
+
+    &.-rowStretch-xxl {
+      align-items: stretch;
     }
 
     &.-rowTop-xxl {
@@ -812,13 +857,15 @@
 ********************/
 
 .cdr-col {
-  flex: 1 1 0%;
+  flex: 1 1 auto;
   padding-left: calc(var(--rowGutter) / 2);
   padding-right: calc(var(--rowGutter) / 2);
-  padding-bottom: var(--colBottom);
+  margin-bottom: var(--colBottom);
+  display: flex;
 
-  &:not([class*="-colHide"]) {
-    display: block;
+  &Content {
+    width: 100%;
+    height: 100%;
   }
 
   /* col by number */
