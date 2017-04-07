@@ -105,9 +105,13 @@
         let wrapClass = '';
         if (!this.wrap) { wrapClass += '-rowNoWrap '; }
         if (!this.wrapMd) { wrapClass += '-rowNoWrap-md '; }
+        if (this.wrapMd) { wrapClass += '-rowWrap-md '; }
         if (!this.wrapLg) { wrapClass += '-rowNoWrap-lg '; }
+        if (this.wrapLg) { wrapClass += '-rowWrap-lg '; }
         if (!this.wrapXl) { wrapClass += '-rowNoWrap-xl '; }
+        if (this.wrapXl) { wrapClass += '-rowWrap-xl '; }
         if (!this.wrapXxl) { wrapClass += '-rowNoWrap-xxl '; }
+        if (this.wrapXxl) { wrapClass += '-rowWrap-xxl '; }
         return wrapClass;
       },
     },
