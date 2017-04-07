@@ -32,6 +32,11 @@
     :wrapLg="wrapLg"
     :wrapXl="wrapXl"
     :wrapXxl="wrapXxl"
+    :gutter="gutter"
+    :gutterMd="gutterMd"
+    :gutterLg="gutterLg"
+    :gutterXl="gutterXl"
+    :gutterXxl="gutterXxl"
     >
     <slot></slot>
   </row>
@@ -81,34 +86,26 @@
     {
       name: 'cols',
       responsive: true,
-      type: Number,
-      validator: () => (this.isRow) || false,
     },
     {
       name: 'justify',
       responsive: true,
-      type: String,
-      validator: () => (this.isRow) || false,
     },
     {
       name: 'align',
       responsive: true,
-      type: String,
-      validator: () => (this.isRow) || false,
     },
     {
       name: 'vertical',
       responsive: true,
-      type: Boolean,
-      default: false,
-      // validator: () => (this.isRow) || false,
     },
     {
       name: 'wrap',
       responsive: true,
-      type: Boolean,
-      default: true,
-      // validator: () => (this.isRow) || false,
+    },
+    {
+      name: 'gutter',
+      responsive: true,
     },
   ];
 

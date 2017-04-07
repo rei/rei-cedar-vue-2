@@ -245,7 +245,7 @@
 
   /* row modifiers # */
 
-  &.-rowNoGutter {
+  &.-rowGutter0 {
     margin: 0;
 
     & > .cdr-col {
@@ -392,7 +392,7 @@
       }
     }
 
-    &.-rowNoGutter-md {
+    &.-rowGutter0-md {
       margin: 0;
 
       & > .cdr-col {
@@ -540,7 +540,7 @@
       }
     }
 
-    &.-rowNoGutter-lg {
+    &.-rowGutter0-lg {
       margin: 0;
 
       & > .cdr-col {
@@ -688,7 +688,7 @@
       }
     }
 
-    &.-rowNoGutter-xl {
+    &.-rowGutter0-xl {
       margin: 0;
 
       & > .cdr-col {
@@ -836,7 +836,7 @@
       }
     }
 
-    &.-rowNoGutter-xxl {
+    &.-rowGutter0-xxl {
       margin: 0;
 
       & > .cdr-col {
@@ -920,7 +920,7 @@
   flex: 1 1 auto;
   padding-left: calc(var(--rowGutter) / 2);
   padding-right: calc(var(--rowGutter) / 2);
-  margin-bottom: var(--colBottom);
+  padding-bottom: var(--colBottom);
   display: flex;
 
   &__content {

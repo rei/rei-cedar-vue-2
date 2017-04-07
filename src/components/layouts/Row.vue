@@ -1,5 +1,5 @@
 <template>
-  <div class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass]">
+  <div class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass, gutterClass]">
     <slot></slot>
   </div>
 </template>
@@ -25,6 +25,12 @@
       responsive: true,
       type: String,
       validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value >= 0)) || false,
+    },
+    {
+      name: 'gutter',
+      responsive: true,
+      type: Number,
+      validator: value => ([0].indexOf(value >= 0)) || false,
     },
     {
       name: 'vertical',
@@ -101,6 +107,15 @@
         if (this.verticalXxl) { directionClass += '-rowColumn-xxl '; }
         return directionClass;
       },
+      gutterClass() {
+        let gutterClass = '';
+        if (this.gutter >= 0) { gutterClass += `${this.getGutter(`${this.gutter}`)} `; }
+        if (this.gutterMd >= 0) { gutterClass += `${this.getGutter(`${this.gutterMd}`)}-md `; }
+        if (this.gutterLg >= 0) { gutterClass += `${this.getGutter(`${this.gutterLg}`)}-lg `; }
+        if (this.gutterXl >= 0) { gutterClass += `${this.getGutter(`${this.gutterXl}`)}-xl `; }
+        if (this.gutterXxl >= 0) { gutterClass += `${this.getGutter(`${this.gutterXxl}`)}-xxl `; }
+        return gutterClass;
+      },
       wrapClass() {
         let wrapClass = '';
         if (!this.wrap) { wrapClass += '-rowNoWrap '; }
@@ -132,6 +147,12 @@
           case 'middle': return '-rowMiddle';
           case 'bottom': return '-rowBottom';
           case 'stretch': return '-rowStretch';
+          default: return '';
+        }
+      },
+      getGutter(test) {
+        switch (test) {
+          case '0': return '-rowGutter0';
           default: return '';
         }
       },

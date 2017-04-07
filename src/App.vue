@@ -9,11 +9,11 @@
     
     <h2>Complex grid example</h2>
     
-    <cdr-row :cols="1" :cols-md="4">
+    <cdr-row :cols="1" :cols-md="4" :gutter="0">
       <cdr-col>
         <cdr-card>One</cdr-card>
       </cdr-col>
-      <cdr-col>
+      <cdr-col :cols="7">
         <cdr-card>Two</cdr-card>
       </cdr-col>
       <cdr-col>
@@ -83,7 +83,7 @@
 
     <h2>Grid Playground</h2>
 
-    <cdr-row :cols="3" :cols-md="4">
+    <cdr-row :cols="3" :cols-md="4" :gutter="0">
       <cdr-col>
         <cdr-card>demo</cdr-card>
       </cdr-col>
