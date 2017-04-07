@@ -85,10 +85,14 @@
 
     <cdr-row :cols="3" :cols-md="4" :gutter="0">
       <cdr-col>
-        <cdr-card>demo</cdr-card>
+        <p>(1) I need a</p>
+        <p>(2) wrapping element</p>
       </cdr-col>
       <cdr-col>
-        <cdr-card>demo</cdr-card>
+        <div>
+          <p>(1) I have a</p>
+          <p>(2) wrapping element</p>
+        </div>
       </cdr-col>
       <cdr-col>
         <cdr-card>demo</cdr-card>
