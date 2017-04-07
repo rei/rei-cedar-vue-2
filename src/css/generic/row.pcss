@@ -926,7 +926,12 @@
   &__content {
     display: flex;
     flex: 1 1 1px;
-    width: 100%; 
+    width: 100%;
+
+    & > .cdr-row {
+      margin: 0;
+      padding: 0;
+    }
 
     & > * {
       height: auto !important;
@@ -1084,7 +1089,9 @@
   /* col modifiers */
 
   &.-colHide {
-    display: none;
+    &-up {
+      display: none;
+    }
 
     &-sm-down,
     &-md-down,
@@ -1107,6 +1114,10 @@
     align-self: flex-end;
   }
 
+  &.-colStretch {
+    align-self: stretch;
+  }
+
   /* TODO: do we want to support this? http://tink.uk/flexbox-the-keyboard-navigation-disconnect/
   &.-first {
     order: -1;
@@ -1118,7 +1129,7 @@
   */
 
   @media (--small-only) {
-    &.-colHide-sm-only {
+    &.-colHide-only {
       display: none;
     }
   }
@@ -1278,7 +1289,7 @@
       display: block;
     }
 
-    &.-colHide-md {
+    &.-colHide-md-up {
       display: none;
     }
 
@@ -1292,6 +1303,10 @@
 
     &.-colBottom-md {
       align-self: flex-end;
+    }
+
+    &.-colStretch-md {
+      align-self: stretch;
     }
   }
 
@@ -1456,7 +1471,7 @@
       display: block;
     }
 
-    &.-colHide-lg {
+    &.-colHide-lg-up {
       display: none;
     }
 
@@ -1470,6 +1485,10 @@
 
     &.-colBottom-lg {
       align-self: flex-end;
+    }
+
+    &.-colStretch-lg {
+      align-self: stretch;
     }
   }
 
@@ -1634,7 +1653,7 @@
       display: block;
     }
 
-    &.-colHide-xl {
+    &.-colHide-xl-up {
       display: none;
     }
 
@@ -1648,6 +1667,10 @@
 
     &.-colBottom-xl {
       align-self: flex-end;
+    }
+
+    &.-colStretch-xl {
+      align-self: stretch;
     }
   }
 
@@ -1812,7 +1835,7 @@
       display: block;
     }
 
-    &.-colHide-xxl {
+    &.-colHide-xxl-up {
       display: none;
     }
 
@@ -1826,6 +1849,10 @@
 
     &.-colBottom-xxl {
       align-self: flex-end;
+    }
+
+    &.-colStretch-xxl {
+      align-self: stretch;
     }
   }
 
