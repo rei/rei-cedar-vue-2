@@ -45,6 +45,7 @@
 <script>
   import Row from './Row';
 
+  const blockName = 'cdr-col';
   const bpArr = ['Md', 'Lg', 'Xl', 'Xxl'];
   const finalProps = {};
   const propDefs = [
@@ -104,6 +105,10 @@
       responsive: true,
     },
     {
+      name: 'noWrap',
+      responsive: true,
+    },
+    {
       name: 'gutter',
       responsive: true,
     },
@@ -137,53 +142,53 @@
     computed: {
       spanClass() {
         let spanClass = '';
-        if (this.span) { spanClass += `_col${this.span} `; }
-        if (this.spanMd) { spanClass += `_col${this.spanMd}-md `; }
-        if (this.spanLg) { spanClass += `_col${this.spanLg}-lg `; }
-        if (this.spanXl) { spanClass += `_col${this.spanXl}-xl `; }
-        if (this.spanXxl) { spanClass += `_col${this.spanXxl}-xxl `; }
+        if (this.span) { spanClass += `${blockName}_col${this.span} `; }
+        if (this.spanMd) { spanClass += `${blockName}_col${this.spanMd}-md `; }
+        if (this.spanLg) { spanClass += `${blockName}_col${this.spanLg}-lg `; }
+        if (this.spanXl) { spanClass += `${blockName}_col${this.spanXl}-xl `; }
+        if (this.spanXxl) { spanClass += `${blockName}_col${this.spanXxl}-xxl `; }
         return spanClass;
       },
       hideClass() {
         let hideClass = '';
-        if (this.hide) { hideClass += `-colHide-${this.hide} `; }
-        if (this.hideMd) { hideClass += `-colHide-md-${this.hideMd} `; }
-        if (this.hideLg) { hideClass += `-colHide-lg-${this.hideLg} `; }
-        if (this.hideXl) { hideClass += `-colHide-xl-${this.hideXl} `; }
-        if (this.hideXxl) { hideClass += `-colHide-xxl-${this.hideXxl} `; }
+        if (this.hide) { hideClass += `${blockName}--hide-${this.hide} `; }
+        if (this.hideMd) { hideClass += `${blockName}--hide-md-${this.hideMd} `; }
+        if (this.hideLg) { hideClass += `${blockName}--hide-lg-${this.hideLg} `; }
+        if (this.hideXl) { hideClass += `${blockName}--hide-xl-${this.hideXl} `; }
+        if (this.hideXxl) { hideClass += `${blockName}--hide-xxl-${this.hideXxl} `; }
         return hideClass;
       },
       offsetClass() {
         let spanClass = '';
-        if (this.offsetLeft) { spanClass += `-colLeft${this.offsetLeft} `; }
-        if (this.offsetRight) { spanClass += `-colRight${this.offsetRight} `; }
-        if (this.offsetLeftMd) { spanClass += `-colLeft${this.offsetLeftMd}-md `; }
-        if (this.offsetRightMd) { spanClass += `-colRight${this.offsetRightMd}-md `; }
-        if (this.offsetLeftLg) { spanClass += `-colLeft${this.offsetLeftLg}-lg `; }
-        if (this.offsetRightLg) { spanClass += `-colRight${this.offsetRightLg}-lg `; }
-        if (this.offsetLeftXl) { spanClass += `-colLeft${this.offsetLeftXl}-xl `; }
-        if (this.offsetRightXl) { spanClass += `-colRight${this.offsetRightXl}-xl `; }
-        if (this.offsetLeftXxl) { spanClass += `-colLeft${this.offsetLeftXxl}-xxl `; }
-        if (this.offsetRightXxl) { spanClass += `-colRight${this.offsetRightXxl}-xxl `; }
+        if (this.offsetLeft) { spanClass += `${blockName}--offsetLeft${this.offsetLeft} `; }
+        if (this.offsetRight) { spanClass += `${blockName}--offsetRight${this.offsetRight} `; }
+        if (this.offsetLeftMd) { spanClass += `${blockName}--offsetLeft${this.offsetLeftMd}-md `; }
+        if (this.offsetRightMd) { spanClass += `${blockName}--offsetRight${this.offsetRightMd}-md `; }
+        if (this.offsetLeftLg) { spanClass += `${blockName}--offsetLeft${this.offsetLeftLg}-lg `; }
+        if (this.offsetRightLg) { spanClass += `${blockName}--offsetRight${this.offsetRightLg}-lg `; }
+        if (this.offsetLeftXl) { spanClass += `${blockName}--offsetLeft${this.offsetLeftXl}-xl `; }
+        if (this.offsetRightXl) { spanClass += `${blockName}--offsetRight${this.offsetRightXl}-xl `; }
+        if (this.offsetLeftXxl) { spanClass += `${blockName}--offsetLeft${this.offsetLeftXxl}-xxl `; }
+        if (this.offsetRightXxl) { spanClass += `${blockName}--offsetRight${this.offsetRightXxl}-xxl `; }
         return spanClass;
       },
       alignClass() {
         let alignClass = '';
-        if (this.alignSelf) { alignClass += `${this.getAlign(`${this.alignSelf}`)} `; }
-        if (this.alignSelfMd) { alignClass += `${this.getAlign(`${this.alignSelfMd}`)}-md `; }
-        if (this.alignSelfLg) { alignClass += `${this.getAlign(`${this.alignSelfLg}`)}-lg `; }
-        if (this.alignSelfXl) { alignClass += `${this.getAlign(`${this.alignSelfXl}`)}-xl `; }
-        if (this.alignSelfXxl) { alignClass += `${this.getAlign(`${this.alignSelfXxl}`)}-xxl `; }
+        if (this.alignSelf) { alignClass += `${blockName}${this.getAlign(`${this.alignSelf}`)} `; }
+        if (this.alignSelfMd) { alignClass += `${blockName}${this.getAlign(`${this.alignSelfMd}`)}-md `; }
+        if (this.alignSelfLg) { alignClass += `${blockName}${this.getAlign(`${this.alignSelfLg}`)}-lg `; }
+        if (this.alignSelfXl) { alignClass += `${blockName}${this.getAlign(`${this.alignSelfXl}`)}-xl `; }
+        if (this.alignSelfXxl) { alignClass += `${blockName}${this.getAlign(`${this.alignSelfXxl}`)}-xxl `; }
         return alignClass;
       },
     },
     methods: {
       getAlign(test) {
         switch (test) {
-          case 'top': return '-colTop';
-          case 'middle': return '-colMiddle';
-          case 'bottom': return '-colBottom';
-          case 'stretch': return '-colStretch';
+          case 'top': return '--top';
+          case 'middle': return '--middle';
+          case 'bottom': return '--bottom';
+          case 'stretch': return '--stretch';
           default: return '';
         }
       },

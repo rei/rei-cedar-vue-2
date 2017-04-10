@@ -1,5 +1,5 @@
 <template>
-  <div class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass, gutterClass]">
+  <div class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass, noWrapClass, gutterClass]">
     <slot></slot>
   </div>
 </template>
@@ -7,6 +7,7 @@
 <script>
   const bpArr = ['Md', 'Lg', 'Xl', 'Xxl'];
   const finalProps = {};
+  const blockName = 'cdr-row';
   const propDefs = [
     {
       name: 'cols',
@@ -42,7 +43,13 @@
       name: 'wrap',
       responsive: true,
       type: Boolean,
-      default: true,
+      default: false,
+    },
+    {
+      name: 'noWrap',
+      responsive: true,
+      type: Boolean,
+      default: false,
     },
   ];
 
@@ -73,86 +80,90 @@
     computed: {
       colsClass() {
         let colClass = '';
-        if (this.cols) { colClass += `_row${this.cols} `; }
-        if (this.colsMd) { colClass += `_row${this.colsMd}-md `; }
-        if (this.colsLg) { colClass += `_row${this.colsLg}-lg `; }
-        if (this.colsXl) { colClass += `_row${this.colsXl}-xl `; }
-        if (this.colsXxl) { colClass += `_row${this.colsXxl}-xxl `; }
+        if (this.cols) { colClass += `${blockName}_row${this.cols} `; }
+        if (this.colsMd) { colClass += `${blockName}_row${this.colsMd}-md `; }
+        if (this.colsLg) { colClass += `${blockName}_row${this.colsLg}-lg `; }
+        if (this.colsXl) { colClass += `${blockName}_row${this.colsXl}-xl `; }
+        if (this.colsXxl) { colClass += `${blockName}_row${this.colsXxl}-xxl `; }
         return colClass;
       },
       justifyClass() {
         let justifyClass = '';
-        if (this.justify) { justifyClass += `${this.getJustify(`${this.justify}`)} `; }
-        if (this.justifyMd) { justifyClass += `${this.getJustify(`${this.justifyMd}`)}-md `; }
-        if (this.justifyLg) { justifyClass += `${this.getJustify(`${this.justifyLg}`)}-lg `; }
-        if (this.justifyXl) { justifyClass += `${this.getJustify(`${this.justifyXl}`)}-xl `; }
-        if (this.justifyXxl) { justifyClass += `${this.getJustify(`${this.justifyXxl}`)}-xxl `; }
+        if (this.justify) { justifyClass += `${blockName}${this.getJustify(`${this.justify}`)} `; }
+        if (this.justifyMd) { justifyClass += `${blockName}${this.getJustify(`${this.justifyMd}`)}-md `; }
+        if (this.justifyLg) { justifyClass += `${blockName}${this.getJustify(`${this.justifyLg}`)}-lg `; }
+        if (this.justifyXl) { justifyClass += `${blockName}${this.getJustify(`${this.justifyXl}`)}-xl `; }
+        if (this.justifyXxl) { justifyClass += `${blockName}${this.getJustify(`${this.justifyXxl}`)}-xxl `; }
         return justifyClass;
       },
       alignClass() {
         let alignClass = '';
-        if (this.align) { alignClass += `${this.getAlign(`${this.align}`)} `; }
-        if (this.alignMd) { alignClass += `${this.getAlign(`${this.alignMd}`)}-md `; }
-        if (this.alignLg) { alignClass += `${this.getAlign(`${this.alignLg}`)}-lg `; }
-        if (this.alignXl) { alignClass += `${this.getAlign(`${this.alignXl}`)}-xl `; }
-        if (this.alignXxl) { alignClass += `${this.getAlign(`${this.alignXxl}`)}-xxl `; }
+        if (this.align) { alignClass += `${blockName}${this.getAlign(`${this.align}`)} `; }
+        if (this.alignMd) { alignClass += `${blockName}${this.getAlign(`${this.alignMd}`)}-md `; }
+        if (this.alignLg) { alignClass += `${blockName}${this.getAlign(`${this.alignLg}`)}-lg `; }
+        if (this.alignXl) { alignClass += `${blockName}${this.getAlign(`${this.alignXl}`)}-xl `; }
+        if (this.alignXxl) { alignClass += `${blockName}${this.getAlign(`${this.alignXxl}`)}-xxl `; }
         return alignClass;
       },
       directionClass() {
         let directionClass = '';
-        if (this.vertical) { directionClass += '-rowColumn '; }
-        if (this.verticalMd) { directionClass += '-rowColumn-md '; }
-        if (this.verticalLg) { directionClass += '-rowColumn-lg '; }
-        if (this.verticalXl) { directionClass += '-rowColumn-xl '; }
-        if (this.verticalXxl) { directionClass += '-rowColumn-xxl '; }
+        if (this.vertical) { directionClass += `${blockName}--column `; }
+        if (this.verticalMd) { directionClass += `${blockName}--column-md `; }
+        if (this.verticalLg) { directionClass += `${blockName}--column-lg `; }
+        if (this.verticalXl) { directionClass += `${blockName}--column-xl `; }
+        if (this.verticalXxl) { directionClass += `${blockName}--column-xxl `; }
         return directionClass;
       },
       gutterClass() {
         let gutterClass = '';
-        if (this.gutter >= 0) { gutterClass += `${this.getGutter(`${this.gutter}`)} `; }
-        if (this.gutterMd >= 0) { gutterClass += `${this.getGutter(`${this.gutterMd}`)}-md `; }
-        if (this.gutterLg >= 0) { gutterClass += `${this.getGutter(`${this.gutterLg}`)}-lg `; }
-        if (this.gutterXl >= 0) { gutterClass += `${this.getGutter(`${this.gutterXl}`)}-xl `; }
-        if (this.gutterXxl >= 0) { gutterClass += `${this.getGutter(`${this.gutterXxl}`)}-xxl `; }
+        if (this.gutter >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutter}`)} `; }
+        if (this.gutterMd >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutterMd}`)}-md `; }
+        if (this.gutterLg >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutterLg}`)}-lg `; }
+        if (this.gutterXl >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutterXl}`)}-xl `; }
+        if (this.gutterXxl >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutterXxl}`)}-xxl `; }
         return gutterClass;
       },
       wrapClass() {
         let wrapClass = '';
-        if (!this.wrap) { wrapClass += '-rowNoWrap '; }
-        if (!this.wrapMd) { wrapClass += '-rowNoWrap-md '; }
-        if (this.wrapMd) { wrapClass += '-rowWrap-md '; }
-        if (!this.wrapLg) { wrapClass += '-rowNoWrap-lg '; }
-        if (this.wrapLg) { wrapClass += '-rowWrap-lg '; }
-        if (!this.wrapXl) { wrapClass += '-rowNoWrap-xl '; }
-        if (this.wrapXl) { wrapClass += '-rowWrap-xl '; }
-        if (!this.wrapXxl) { wrapClass += '-rowNoWrap-xxl '; }
-        if (this.wrapXxl) { wrapClass += '-rowWrap-xxl '; }
+        if (this.wrapXxl) { wrapClass += `${blockName}--wrap-xxl `; }
+        if (this.wrapXl) { wrapClass += `${blockName}--wrap-xl `; }
+        if (this.wrapLg) { wrapClass += `${blockName}--wrap-lg `; }
+        if (this.wrapMd) { wrapClass += `${blockName}--wrap-md `; }
+        return wrapClass;
+      },
+      noWrapClass() {
+        let wrapClass = '';
+        if (this.noWrap) { wrapClass += `${blockName}--noWrap `; }
+        if (this.noWrapMd) { wrapClass += `${blockName}--noWrap-md `; }
+        if (this.noWrapLg) { wrapClass += `${blockName}--noWrap-lg `; }
+        if (this.noWrapXl) { wrapClass += `${blockName}--noWrap-xl `; }
+        if (this.noWrapXxl) { wrapClass += `${blockName}--noWrap-xxl `; }
         return wrapClass;
       },
     },
     methods: {
       getJustify(test) {
         switch (test) {
-          case 'left': return '-rowLeft';
-          case 'center': return '-rowCenter';
-          case 'right': return '-rowRight';
-          case 'around': return '-rowSpaceAround';
-          case 'between': return '-rowSpaceBetween';
+          case 'left': return '--left';
+          case 'center': return '--center';
+          case 'right': return '--right';
+          case 'around': return '--spaceAround';
+          case 'between': return '--spaceBetween';
           default: return '';
         }
       },
       getAlign(test) {
         switch (test) {
-          case 'top': return '-rowTop';
-          case 'middle': return '-rowMiddle';
-          case 'bottom': return '-rowBottom';
-          case 'stretch': return '-rowStretch';
+          case 'top': return '--top';
+          case 'middle': return '--middle';
+          case 'bottom': return '--bottom';
+          case 'stretch': return '--stretch';
           default: return '';
         }
       },
       getGutter(test) {
         switch (test) {
-          case '0': return '-rowGutter0';
+          case '0': return '--gutter0';
           default: return '';
         }
       },

@@ -19,6 +19,7 @@
           <li>-rowStretch</li>
           <li>-rowColumn</li>
           <li>-rowNoWrap</li>
+          <li>-rowWrap</li>
 
           <li>-rowNoGutter</li>
         </ul>
@@ -26,14 +27,12 @@
         <ul>
           <li>=-=-=- These are all responsive also by adding [-md, -lg, -xl, -xxl] (i.e. -colTop-md) -=-=-=</li>
           <li>_col# (# = 1-12 for how many columns it should take up*)</li>
-          
-          <li>-colHide (-&lt;breakpoint&gt; default is up can also add -&lt;breakpoint&gt;-down, -&lt;breakpoint&gt;-only)</li>
-          <li>-colLeft# (# = number of columns to push over from left)</li>
-          <li>-colRight# (# = number of columns to push over from right)</li>
-          <li>-colRight# (# = number of columns to push over from right)</li>
           <li>-colTop</li>
           <li>-colMiddle</li>
           <li>-colBottom</li>
+          <li>-colHide (-&lt;breakpoint&gt; default is up can also add -&lt;breakpoint&gt;-down, -&lt;breakpoint&gt;-only)</li>
+          <li>-colLeft# (# = number of columns to push over from left)</li>
+          <li>-colRight# (# = number of columns to push over from right)</li>
         </ul>
       </ul>
     </div>
