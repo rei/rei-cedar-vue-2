@@ -1,1778 +1,1771 @@
 <template>
   <div>
     <h2>The row</h2>
-    <div class="container">
-      <h3>row classes</h3>
-      <ul>
-        <li>cdr-row</li>
-        <ul>
-          <li>=-=-=- These are all responsive also by adding [-md, -lg, -xl, -xxl] (i.e. -rowTop-md) -=-=-=</li>
-          <li>_row# (# = 1-12 for how many columns you want the row to have)</li>
-          <li>-rowLeft</li>
-          <li>-rowCenter</li>
-          <li>-rowRight</li>
-          <li>-rowSpaceBetween</li>
-          <li>-rowSpaceAround</li>
-          <li>-rowTop</li>
-          <li>-rowMiddle</li>
-          <li>-rowBottom</li>
-          <li>-rowStretch</li>
-          <li>-rowColumn</li>
-          <li>-rowNoWrap</li>
-          <li>-rowWrap</li>
 
-          <li>-rowNoGutter</li>
-        </ul>
-        <li>cdr-col</li>
-        <ul>
-          <li>=-=-=- These are all responsive also by adding [-md, -lg, -xl, -xxl] (i.e. -colTop-md) -=-=-=</li>
-          <li>_col# (# = 1-12 for how many columns it should take up*)</li>
-          <li>-colTop</li>
-          <li>-colMiddle</li>
-          <li>-colBottom</li>
-          <li>-colHide (-&lt;breakpoint&gt; default is up can also add -&lt;breakpoint&gt;-down, -&lt;breakpoint&gt;-only)</li>
-          <li>-colLeft# (# = number of columns to push over from left)</li>
-          <li>-colRight# (# = number of columns to push over from right)</li>
-        </ul>
-      </ul>
-    </div>
+    <h3>cdr-row usage</h3>
 
-    <h3>.cdr-row usage</h3>
-
-    <h4>cdr-row _row#</h4>
+    <h4>:cols="#"</h4>
     <div data-backstop="row-basic">
-      <div class="cdr-row _row1">
-        <div class="cdr-col">
+      <cdr-row :cols="1">
+        <cdr-col>
           <div class="row-demo">1</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row2">
-        <div class="cdr-col">
+      <cdr-row :cols="2">
+        <cdr-col>
           <div class="row-demo">2</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row3">
-        <div class="cdr-col">
+      <cdr-row :cols="3">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row4">
-        <div class="cdr-col">
+      <cdr-row :cols="4">
+        <cdr-col>
           <div class="row-demo">4</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">4</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">4</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">4</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row5">
-        <div class="cdr-col">
+      <cdr-row :cols="5">
+        <cdr-col>
           <div class="row-demo">5</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">5</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">5</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">5</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">5</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row6">
-        <div class="cdr-col">
+      <cdr-row :cols="6">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row7">
-        <div class="cdr-col">
+      <cdr-row :cols="7">
+        <cdr-col>
           <div class="row-demo">7</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">7</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">7</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">7</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">7</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">7</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">7</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row8">
-        <div class="cdr-col">
+      <cdr-row :cols="8">
+        <cdr-col>
           <div class="row-demo">8</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">8</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">8</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">8</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">8</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">8</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">8</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">8</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row9">
-        <div class="cdr-col">
+      <cdr-row :cols="9">
+        <cdr-col>
           <div class="row-demo">9</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">9</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">9</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">9</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">9</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">9</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">9</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">9</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">9</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row10">
-        <div class="cdr-col">
+      <cdr-row :cols="10">
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">10</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row11">
-        <div class="cdr-col">
+      <cdr-row :cols="11">
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">11</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row12">
-        <div class="cdr-col">
+      <cdr-row :cols="12">
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">12</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
 
-      <div class="cdr-row _row2">
-        <div class="cdr-col">
+      <cdr-row :cols="2">
+        <cdr-col>
           <div class="row-demo">2</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-row (auto sizes)</h4>
+    <h4>(auto sizes)</h4>
     <div data-backstop="row-auto">
-      <div class="cdr-row">
-        <div class="cdr-col">
+      <cdr-row>
+        <cdr-col>
+          <div class="row-demo">auto auto auto auto auto auto auto auto</div>
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">auto</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">auto</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">auto</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">auto</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-row -rowNoGutter</h4>
+    <h4>:gutter="0"</h4>
     <div data-backstop="row-noGutter">
-      <div class="cdr-row _row3 -rowNoGutter">
-        <div class="cdr-col">
+      <cdr-row :cols="3" :gutter="0">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-row -rowNoWrap</h4>
+    <h4>:noWrap="true"</h4>
     <div data-backstop="row-noWrap">
-      <div class="cdr-row _row3 -rowNoWrap">
-          <div class="cdr-col">
-            <div class="row-demo">3</div>
-          </div>
-          <div class="cdr-col _col6">
-            <div class="row-demo">3</div>
-          </div>
-          <div class="cdr-col">
-            <div class="row-demo">3</div>
-          </div>
-          <div class="cdr-col">
-            <div class="row-demo">3</div>
-          </div>
-      </div>
+      <cdr-row :cols="3" :noWrap="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-row -rowCenter</h4>
+    <h4>:justify="'left'"</h4>
+    <div data-backstop="row-left">
+      <cdr-row :cols="3" :justify="'left'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <h4>:justify="'center'"</h4>
     <div data-backstop="row-center">
-      <div class="cdr-row _row3 -rowCenter">
-        <div class="cdr-col">
+      <cdr-row :cols="3" :justify="'center'">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-row -rowRight</h4>
+    <h4>:justify="'right'"</h4>
     <div data-backstop="row-right">
-      <div class="cdr-row _row3 -rowRight">
-        <div class="cdr-col">
+      <cdr-row :cols="3" :justify="'right'">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-row -rowTop</h4>
-    <div data-backstop="row-top">
-      <div class="cdr-row _row3 -rowTop">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">
-          3
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</p>
-          </div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-
-    <h4>cdr-row -rowMiddle</h4>
-    <div data-backstop="row-middle">
-      <div class="cdr-row _row3 -rowMiddle">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">
-          3
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</p>
-          </div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-
-    <h4>cdr-row -rowBottom</h4>
-    <div data-backstop="row-bottom">
-      <div class="cdr-row _row3 -rowBottom">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">
-          3
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</p>
-          </div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-
-    <h4>cdr-row -rowSpaceBetween</h4>
+    <h4>:justify="'between'"</h4>
     <div data-backstop="row-rowSpaceBetween">
-      <div class="cdr-row _row4 -rowSpaceBetween">
-        <div class="cdr-col">
+      <cdr-row :cols="4" :justify="'between'">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-row -rowSpaceAround</h4>
-    <div data-backstop="row-SpaceAround">
-      <div class="cdr-row _row4 -rowSpaceAround">
-        <div class="cdr-col">
+    <h4>:justify="'around'"</h4>
+    <div data-backstop="row-rowSpaceAround">
+      <cdr-row :cols="4" :justify="'around'">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-row -rowColumn</h4>
+    <h4>:align="'top'"</h4>
+    <div data-backstop="row-top">
+      <cdr-row :cols="3" :align="'top'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">
+          3
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</p>
+          </div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <h4>:align="'middle'"</h4>
+    <div data-backstop="row-middle">
+      <cdr-row :cols="3" :align="'middle'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">
+          3
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</p>
+          </div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <h4>:align="'bottom'"</h4>
+    <div data-backstop="row-bottom">
+      <cdr-row :cols="3" :align="'bottom'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">
+          3
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</p>
+          </div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <h4>:vertical="true"</h4>
     <div data-backstop="row-column">
-      <div class="cdr-row _row3 -rowColumn">
-        <div class="cdr-col">
+      <cdr-row :cols="3" :vertical="true">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col _col5">
+        </cdr-col>
+        <cdr-col :span="5">
           <div class="row-demo">5</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h3>.cdr-col usage</h3>
+    <h3>cdr-col usage</h3>
 
-    <h4>cdr-col _col#</h4>
+    <h4>:span="#"</h4>
     <div data-backstop="col-basic">
-      <div class="cdr-row">
-        <div class="cdr-col _col12">
-          <div class="row-demo">_col12</div>
-        </div>
-        <div class="cdr-col _col11">
-          <div class="row-demo">_col11</div>
-        </div>
-        <div class="cdr-col _col1">
-          <div class="row-demo">_col1</div>
-        </div>
-        <div class="cdr-col _col10">
-          <div class="row-demo">_col10</div>
-        </div>
-        <div class="cdr-col _col2">
-          <div class="row-demo">_col2</div>
-        </div>
-        <div class="cdr-col _col9">
-          <div class="row-demo">_col9</div>
-        </div>
-        <div class="cdr-col _col3">
-          <div class="row-demo">_col3</div>
-        </div>
-        <div class="cdr-col _col8">
-          <div class="row-demo">_col8</div>
-        </div>
-        <div class="cdr-col _col4">
-          <div class="row-demo">_col4</div>
-        </div>
-        <div class="cdr-col _col7">
-          <div class="row-demo">_col7</div>
-        </div>
-        <div class="cdr-col _col5">
-          <div class="row-demo">_col5</div>
-        </div>
-        <div class="cdr-col _col6">
-          <div class="row-demo">_col6</div>
-        </div>
-        <div class="cdr-col _col6">
-          <div class="row-demo">_col6</div>
-        </div>
-      </div>
+      <cdr-row>
+        <cdr-col :span="12">
+          <div class="row-demo">12</div>
+        </cdr-col>
+        <cdr-col :span="11">
+          <div class="row-demo">11</div>
+        </cdr-col>
+        <cdr-col :span="1">
+          <div class="row-demo">1</div>
+        </cdr-col>
+        <cdr-col :span="10">
+          <div class="row-demo">10</div>
+        </cdr-col>
+        <cdr-col :span="2">
+          <div class="row-demo">2</div>
+        </cdr-col>
+        <cdr-col :span="9">
+          <div class="row-demo">9</div>
+        </cdr-col>
+        <cdr-col :span="3">
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="8">
+          <div class="row-demo">8</div>
+        </cdr-col>
+        <cdr-col :span="4">
+          <div class="row-demo">4</div>
+        </cdr-col>
+        <cdr-col :span="7">
+          <div class="row-demo">7</div>
+        </cdr-col>
+        <cdr-col :span="5">
+          <div class="row-demo">5</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">6</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">6</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>mixing cdr-row _row# and cdr-col _col#</h4>
+    <h4>mixing cdr-row :cols="#" and cdr-col :span="#"</h4>
     <div data-backstop="row-col-mix">
-      <div class="cdr-row _row3">
-        <div class="cdr-col">
+      <cdr-row :cols="3">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col _col12">
-          <div class="row-demo">_col12</div>
-        </div>
-        <div class="cdr-col _col11">
-          <div class="row-demo">_col11</div>
-        </div>
-        <div class="cdr-col _col1">
-          <div class="row-demo">_col1</div>
-        </div>
-        <div class="cdr-col _col10">
-          <div class="row-demo">_col10</div>
-        </div>
-        <div class="cdr-col _col2">
-          <div class="row-demo">_col2</div>
-        </div>
-        <div class="cdr-col _col9">
-          <div class="row-demo">_col9</div>
-        </div>
-        <div class="cdr-col _col3">
-          <div class="row-demo">_col3</div>
-        </div>
-        <div class="cdr-col _col8">
-          <div class="row-demo">_col8</div>
-        </div>
-        <div class="cdr-col _col4">
-          <div class="row-demo">_col4</div>
-        </div>
-        <div class="cdr-col _col7">
-          <div class="row-demo">_col7</div>
-        </div>
-        <div class="cdr-col _col5">
-          <div class="row-demo">_col5</div>
-        </div>
-        <div class="cdr-col _col6">
-          <div class="row-demo">_col6</div>
-        </div>
-        <div class="cdr-col _col6">
-          <div class="row-demo">_col6</div>
-        </div>
-      </div>
+        </cdr-col>
+        <cdr-col :span="12">
+          <div class="row-demo">12</div>
+        </cdr-col>
+        <cdr-col :span="11">
+          <div class="row-demo">11</div>
+        </cdr-col>
+        <cdr-col :span="1">
+          <div class="row-demo">1</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-col -colTop, -colMiddle, -colBottom</h4>
+    <h4>:align-self</h4>
     <div data-backstop="col-alignment">
-      <div class="cdr-row _row4" style="height: 300px">
-        <div class="cdr-col -colTop">
-          <div class="row-demo">-colTop</div>
-        </div>
-        <div class="cdr-col -colMiddle">
-          <div class="row-demo">-colMiddle</div>
-        </div>
-        <div class="cdr-col -colBottom">
-          <div class="row-demo">-colBottom</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">auto</div>
-        </div>
-      </div>
+      <cdr-row :cols="4" style="height: 300px">
+        <cdr-col :align-self="'top'">
+          <div class="row-demo">:align-self="'top'"</div>
+        </cdr-col>
+        <cdr-col :align-self="'middle'">
+          <div class="row-demo">:align-self="'middle'"</div>
+        </cdr-col>
+        <cdr-col :align-self="'bottom'">
+          <div class="row-demo">:align-self="'bottom'"</div>
+        </cdr-col>
+        <cdr-col :align-self="'stretch'">
+          <div class="row-demo">:align-self="'stretch'" (default)</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-col -colLeft#</h4>
+    <h4>:offset-left="#"</h4>
     <div data-backstop="col-offset-left">
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft0">
-          <div class="row-demo">-colLeft0</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft1">
-          <div class="row-demo">-colLeft1</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft2">
-          <div class="row-demo">-colLeft2</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft3">
-          <div class="row-demo">-colLeft3</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft4">
-          <div class="row-demo">-colLeft4</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft5">
-          <div class="row-demo">-colLeft5</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft6">
-          <div class="row-demo">-colLeft6</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft7">
-          <div class="row-demo">-colLeft7</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft8">
-          <div class="row-demo">-colLeft8</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft9">
-          <div class="row-demo">-colLeft9</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft10">
-          <div class="row-demo">-colLeft10</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col1 -colLeft11">
-          <div class="row-demo">-colLeft11</div>
-        </div>
-      </div>
-      <div class="cdr-row">
-        <div class="cdr-col _col2 -colLeft2">
-          <div class="row-demo">-colLeft2</div>
-        </div>
-        <div class="cdr-col _col2 -colLeft2">
-          <div class="row-demo">-colLeft2</div>
-        </div>
-        <div class="cdr-col _col2 -colLeft2">
-          <div class="row-demo">-colLeft2</div>
-        </div>
-      </div>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="0">
+          <div class="row-demo">0</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="1">
+          <div class="row-demo">1</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="2">
+          <div class="row-demo">2</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="3">
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="4">
+          <div class="row-demo">4</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="5">
+          <div class="row-demo">5</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="6">
+          <div class="row-demo">6</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="7">
+          <div class="row-demo">7</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="8">
+          <div class="row-demo">8</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="9">
+          <div class="row-demo">9</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="10">
+          <div class="row-demo">10</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="1" :offset-left="11">
+          <div class="row-demo">11</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row>
+        <cdr-col :span="2" :offset-left="2">
+          <div class="row-demo">2</div>
+        </cdr-col>
+        <cdr-col :span="2" :offset-left="2">
+          <div class="row-demo">2</div>
+        </cdr-col>
+        <cdr-col :span="2" :offset-left="2">
+          <div class="row-demo">2</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-col -colRight#</h4>
+    <h4>:offset-right="#"</h4>
     <div data-backstop="col-offset-right">
-      <div class="cdr-row">
-        <div class="cdr-col _col2 -colRight2">
-          <div class="row-demo">-colRight2</div>
-        </div>
-        <div class="cdr-col _col2 -colRight2">
-          <div class="row-demo">-colRight2</div>
-        </div>
-        <div class="cdr-col _col2 -colRight2">
-          <div class="row-demo">-colRight2</div>
-        </div>
-      </div>
+      <cdr-row>
+        <cdr-col :span="2" :offset-right="2">
+          <div class="row-demo">2</div>
+        </cdr-col>
+        <cdr-col :span="2" :offset-right="2">
+          <div class="row-demo">2</div>
+        </cdr-col>
+        <cdr-col :span="2" :offset-right="2">
+          <div class="row-demo">2</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-col -colRight# (with -rowRight)</h4>
+    <h4>:offset-right="#" (with cdr-row :justify="'right'")</h4>
     <div data-backstop="col-right-row-right">
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight0">
-          <div class="row-demo">-colRight0</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight1">
-          <div class="row-demo">-colRight1</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight2">
-          <div class="row-demo">-colRight2</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight3">
-          <div class="row-demo">-colRight3</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight4">
-          <div class="row-demo">-colRight4</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight5">
-          <div class="row-demo">-colRight5</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight6">
-          <div class="row-demo">-colRight6</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight7">
-          <div class="row-demo">-colRight7</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight8">
-          <div class="row-demo">-colRight8</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight9">
-          <div class="row-demo">-colRight9</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight10">
-          <div class="row-demo">-colRight10</div>
-        </div>
-      </div>
-      <div class="cdr-row -rowRight">
-        <div class="cdr-col _col1 -colRight11">
-          <div class="row-demo">-colRight11</div>
-        </div>
-      </div>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="0">
+          <div class="row-demo">0</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="1">
+          <div class="row-demo">1</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="2">
+          <div class="row-demo">2</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="3">
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="4">
+          <div class="row-demo">4</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="5">
+          <div class="row-demo">5</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="6">
+          <div class="row-demo">6</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="7">
+          <div class="row-demo">7</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="8">
+          <div class="row-demo">8</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="9">
+          <div class="row-demo">9</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="10">
+          <div class="row-demo">10</div>
+        </cdr-col>
+      </cdr-row>
+      <cdr-row :justify="'right'">
+        <cdr-col :span="1" :offset-right="11">
+          <div class="row-demo">11</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h4>cdr-row responsive row classes</h4>
+    <h4>cdr-row responsive options</h4>
+
     <h5>Medium breakpoint</h5>
-    <p>_row2 _row4-md</p>
+
+    <p>:cols="2" :cols-md="4"</p>
     <div data-backstop="row-md-sized">
-      <div class="cdr-row _row2 _row4-md">
-        <div class="cdr-col">
+      <cdr-row :cols="2" :cols-md="4">
+        <cdr-col>
           <div class="row-demo">2, 4-md</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-md</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-md</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-md</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>auto _row6-md</p>
+
+    <p>:cols-md="6"</p>
     <div data-backstop="row-md-auto">
-      <div class="cdr-row _row6-md">
-        <div class="cdr-col">
-          <div class="row-demo">6-md</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">6-md</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">6-md</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">6-md</div>
-        </div>
-      </div>
+      <cdr-row :cols-md="6">
+        <cdr-col>
+          <div class="row-demo">auto, 6-md</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-md</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-md</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-md</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowNoGutter-md</p>
+
+    <p>:gutter-md="0"</p>
     <div data-backstop="row-md-noGutter">
-      <div class="cdr-row _row6 -rowNoGutter-md">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :gutter-md="0">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowCenter-md</p>
+
+    <p>:justify-md="'center'"</p>
     <div data-backstop="row-md-center">
-      <div class="cdr-row _row6 -rowCenter-md">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-md="'center'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowRight-md</p>
+
+    <p>:justify-md="'right'"</p>
     <div data-backstop="row-md-right">
-      <div class="cdr-row _row6 -rowRight-md">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-md="'right'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowTop-md</p>
-    <div data-backstop="row-md-top">
-      <div class="cdr-row _row3 -rowTop-md">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowMiddle-md</p>
-    <div data-backstop="row-md-middle">
-      <div class="cdr-row _row3 -rowMiddle-md">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowBottom-md</p>
-    <div data-backstop="row-md-bottom">
-      <div class="cdr-row _row3 -rowBottom-md">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowSpaceBetween-md</p>
+
+    <p>:justify-md="'between'"</p>
     <div data-backstop="row-md-spaceBetween">
-      <div class="cdr-row _row6 -rowSpaceBetween-md">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-md="'between'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowSpaceAround-md</p>
+
+    <p>:justify-md="'around'"</p>
     <div data-backstop="row-md-spaceAround">
-      <div class="cdr-row _row6 -rowSpaceAround-md">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-md="'around'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowColumn-md</p>
+
+    <p>:align-md="'top'"</p>
+    <div data-backstop="row-md-top">
+      <cdr-row :cols="3" :align-md="'top'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:align-md="'middle'"</p>
+    <div data-backstop="row-md-middle">
+      <cdr-row :cols="3" :align-md="'middle'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:align-md="'bottom'"</p>
+    <div data-backstop="row-md-bottom">
+      <cdr-row :cols="3" :align-md="'bottom'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:vertical-md="true"</p>
     <div data-backstop="row-md-column">
-      <div class="cdr-row _row3 -rowColumn-md">
-        <div class="cdr-col">
+      <cdr-row :cols="3" :vertical-md="true">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col _col3">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+        <cdr-col :span="3">
+          <div class="row-demo">span 3</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
     <h5>Large breakpoint</h5>
-    <p>_row2 _row4-lg</p>
+
+    <p>:cols="2" :cols-lg="4"</p>
     <div data-backstop="row-lg-sized">
-      <div class="cdr-row _row2 _row4-lg">
-        <div class="cdr-col">
+      <cdr-row :cols="2" :cols-lg="4">
+        <cdr-col>
           <div class="row-demo">2, 4-lg</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-lg</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-lg</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-lg</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>auto _row3-lg</p>
+
+    <p>:cols-lg="6"</p>
     <div data-backstop="row-lg-auto">
-      <div class="cdr-row _row3-lg">
-        <div class="cdr-col">
-          <div class="row-demo">3-lg</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3-lg</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3-lg</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3-lg</div>
-        </div>
-      </div>
+      <cdr-row :cols-lg="6">
+        <cdr-col>
+          <div class="row-demo">auto, 6-lg</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-lg</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-lg</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-lg</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowNoGutter-lg</p>
+
+    <p>:gutter-lg="0"</p>
     <div data-backstop="row-lg-noGutter">
-      <div class="cdr-row _row6 -rowNoGutter-lg">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :gutter-lg="0">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowCenter-lg</p>
+
+    <p>:justify-lg="'center'"</p>
     <div data-backstop="row-lg-center">
-      <div class="cdr-row _row6 -rowCenter-lg">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-lg="'center'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowRight-lg</p>
+
+    <p>:justify-lg="'right'"</p>
     <div data-backstop="row-lg-right">
-      <div class="cdr-row _row6 -rowRight-lg">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-lg="'right'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowTop-lg</p>
-    <div data-backstop="row-lg-top">
-      <div class="cdr-row _row3 -rowTop-lg">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowMiddle-lg</p>
-    <div data-backstop="row-lg-middle">
-      <div class="cdr-row _row3 -rowMiddle-lg">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowBottom-lg</p>
-    <div data-backstop="row-lg-bottom">
-      <div class="cdr-row _row3 -rowBottom-lg">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowSpaceBetween-lg</p>
+
+    <p>:justify-lg="'between'"</p>
     <div data-backstop="row-lg-spaceBetween">
-      <div class="cdr-row _row6 -rowSpaceBetween-lg">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-lg="'between'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowSpaceAround-lg</p>
+
+    <p>:justify-lg="'around'"</p>
     <div data-backstop="row-lg-spaceAround">
-      <div class="cdr-row _row6 -rowSpaceAround-lg">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-lg="'around'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowColumn-lg</p>
+
+    <p>:align-lg="'top'"</p>
+    <div data-backstop="row-lg-top">
+      <cdr-row :cols="3" :align-lg="'top'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:align-lg="'middle'"</p>
+    <div data-backstop="row-lg-middle">
+      <cdr-row :cols="3" :align-lg="'middle'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:align-lg="'bottom'"</p>
+    <div data-backstop="row-lg-bottom">
+      <cdr-row :cols="3" :align-lg="'bottom'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:vertical-lg="true"</p>
     <div data-backstop="row-lg-column">
-      <div class="cdr-row _row3 -rowColumn-lg">
-        <div class="cdr-col">
+      <cdr-row :cols="3" :vertical-lg="true">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col _col3">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+        <cdr-col :span="3">
+          <div class="row-demo">span 3</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
     <h5>XLarge breakpoint</h5>
-    <p>_row2 _row4-xl</p>
+
+    <p>:cols="2" :cols-xl="4"</p>
     <div data-backstop="row-xl-sized">
-      <div class="cdr-row _row2 _row4-xl">
-        <div class="cdr-col">
+      <cdr-row :cols="2" :cols-xl="4">
+        <cdr-col>
           <div class="row-demo">2, 4-xl</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-xl</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-xl</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-xl</div>
-        </div>
-      </div>
-    </div>
-    <p>auto _row3-xl</p>
-    <div data-backstop="row-xl-auto">
-      <div class="cdr-row _row3-xl">
-        <div class="cdr-col">
-          <div class="row-demo">3-xl</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3-xl</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3-xl</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3-xl</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowNoGutter-xl</p>
-    <div data-backstop="row-xl-noGutter">
-      <div class="cdr-row _row6 -rowNoGutter-xl">
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowCenter-xl</p>
-    <div data-backstop="row-xl-center">
-      <div class="cdr-row _row6 -rowCenter-xl">
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowRight-xl</p>
-    <div data-backstop="row-xl-right">
-      <div class="cdr-row _row6 -rowRight-xl">
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowTop-xl</p>
-    <div data-backstop="row-xl-top">
-      <div class="cdr-row _row3 -rowTop-xl">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowMiddle-xl</p>
-    <div data-backstop="row-xl-middle">
-      <div class="cdr-row _row3 -rowMiddle-xl">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowBottom-xl</p>
-    <div data-backstop="row-xl-bottom">
-      <div class="cdr-row _row3 -rowBottom-xl">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowSpaceBetween-xl</p>
-    <div data-backstop="row-xl-spaceBetween">
-      <div class="cdr-row _row6 -rowSpaceBetween-xl">
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowSpaceAround-xl</p>
-    <div data-backstop="row-xl-spaceAround">
-      <div class="cdr-row _row6 -rowSpaceAround-xl">
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">6</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowColumn-xl</p>
-    <div data-backstop="row-xl-column">
-      <div class="cdr-row _row3 -rowColumn-xl">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col _col3">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
-    <h5>XXLarge breakpoint</h5>
-    <p>_row2 _row4-xxl</p>
+    <p>:cols-xl="6"</p>
+    <div data-backstop="row-xl-auto">
+      <cdr-row :cols-xl="6">
+        <cdr-col>
+          <div class="row-demo">auto, 6-xl</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-xl</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-xl</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-xl</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:gutter-xl="0"</p>
+    <div data-backstop="row-xl-noGutter">
+      <cdr-row :cols="6" :gutter-xl="0">
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:justify-xl="'center'"</p>
+    <div data-backstop="row-xl-center">
+      <cdr-row :cols="6" :justify-xl="'center'">
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:justify-xl="'right'"</p>
+    <div data-backstop="row-xl-right">
+      <cdr-row :cols="6" :justify-xl="'right'">
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:justify-xl="'between'"</p>
+    <div data-backstop="row-xl-spaceBetween">
+      <cdr-row :cols="6" :justify-xl="'between'">
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:justify-xl="'around'"</p>
+    <div data-backstop="row-xl-spaceAround">
+      <cdr-row :cols="6" :justify-xl="'around'">
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">6</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:align-xl="'top'"</p>
+    <div data-backstop="row-xl-top">
+      <cdr-row :cols="3" :align-xl="'top'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:align-xl="'middle'"</p>
+    <div data-backstop="row-xl-middle">
+      <cdr-row :cols="3" :align-xl="'middle'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:align-xl="'bottom'"</p>
+    <div data-backstop="row-xl-bottom">
+      <cdr-row :cols="3" :align-xl="'bottom'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:vertical-xl="true"</p>
+    <div data-backstop="row-xl-column">
+      <cdr-row :cols="3" :vertical-xl="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="3">
+          <div class="row-demo">span 3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <h5>Xxl breakpoint</h5>
+
+    <p>:cols="2" :cols-xxl="4"</p>
     <div data-backstop="row-xxl-sized">
-      <div class="cdr-row _row2 _row4-xxl">
-        <div class="cdr-col">
+      <cdr-row :cols="2" :cols-xxl="4">
+        <cdr-col>
           <div class="row-demo">2, 4-xxl</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-xxl</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-xxl</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">2, 4-xxl</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>auto _row3-xxl</p>
+
+    <p>:cols-xxl="6"</p>
     <div data-backstop="row-xxl-auto">
-      <div class="cdr-row _row3-xxl">
-        <div class="cdr-col">
-          <div class="row-demo">3-xxl</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3-xxl</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3-xxl</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3-xxl</div>
-        </div>
-      </div>
+      <cdr-row :cols-xxl="6">
+        <cdr-col>
+          <div class="row-demo">auto, 6-xxl</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-xxl</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-xxl</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto, 6-xxl</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowNoGutter-xxl</p>
+
+    <p>:gutter-xxl="0"</p>
     <div data-backstop="row-xxl-noGutter">
-      <div class="cdr-row _row6 -rowNoGutter-xxl">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :gutter-xxl="0">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowCenter-xxl</p>
+
+    <p>:justify-xxl="'center'"</p>
     <div data-backstop="row-xxl-center">
-      <div class="cdr-row _row6 -rowCenter-xxl">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-xxl="'center'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowRight-xxl</p>
+
+    <p>:justify-xxl="'right'"</p>
     <div data-backstop="row-xxl-right">
-      <div class="cdr-row _row6 -rowRight-xxl">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-xxl="'right'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowTop-xxl</p>
-    <div data-backstop="row-xxl-top">
-      <div class="cdr-row _row3 -rowTop-xxl">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowMiddle-xxl</p>
-    <div data-backstop="row-xxl-middle">
-      <div class="cdr-row _row3 -rowMiddle-xxl">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowBottom-xxl</p>
-    <div data-backstop="row-xxl-bottom">
-      <div class="cdr-row _row3 -rowBottom-xxl">
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
-    </div>
-    <p>-rowSpaceBetween-xxl</p>
+
+    <p>:justify-xxl="'between'"</p>
     <div data-backstop="row-xxl-spaceBetween">
-      <div class="cdr-row _row6 -rowSpaceBetween-xxl">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-xxl="'between'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowSpaceAround-xxl</p>
-    <div data-backstop="row-xxl-SpaceAround">
-      <div class="cdr-row _row6 -rowSpaceAround-xxl">
-        <div class="cdr-col">
+
+    <p>:justify-xxl="'around'"</p>
+    <div data-backstop="row-xxl-spaceAround">
+      <cdr-row :cols="6" :justify-xxl="'around'">
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">6</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-rowColumn-xxl</p>
+
+    <p>:align-xxl="'top'"</p>
+    <div data-backstop="row-xxl-top">
+      <cdr-row :cols="3" :align-xxl="'top'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:align-xxl="'middle'"</p>
+    <div data-backstop="row-xxl-middle">
+      <cdr-row :cols="3" :align-xxl="'middle'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:align-xxl="'bottom'"</p>
+    <div data-backstop="row-xxl-bottom">
+      <cdr-row :cols="3" :align-xxl="'bottom'">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:vertical-xxl="true"</p>
     <div data-backstop="row-xxl-column">
-      <div class="cdr-row _row3 -rowColumn-xxl">
-        <div class="cdr-col">
+      <cdr-row :cols="3" :vertical-xxl="true">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col _col3">
-          <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+        <cdr-col :span="3">
+          <div class="row-demo">span 3</div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
     <h4>Mix and match responsive row classes</h4>
     <p>1 > 2-md > 3-lg > 4-xl > 6-xxl</p>
     <div data-backstop="row-full-responsive">
-      <div class="cdr-row _row1 _row2-md _row3-lg _row4-xl _row6-xxl">
-        <div class="cdr-col">
+      <cdr-row :cols="1" :cols-md="2" :cols-lg="3" :cols-xl="4" :cols-xxl="6">
+        <cdr-col>
           <div class="row-demo"></div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo"></div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo"></div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo"></div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo"></div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo"></div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>normal > center > right > spaceAround > spaceBetween</p>
+    <p>:justify (default > center > right > spaceAround > spaceBetween)</p>
     <div data-backstop="row-justify-responsive">
-      <div class="cdr-row _row6 -rowCenter-md -rowRight-lg -rowSpaceAround-xl -rowSpaceBetween-xxl">
-        <div class="cdr-col">
+      <cdr-row :cols="6" :justify-md="'center'" :justify-lg="'right'" :justify-xl="'around'" :justify-xxl="'between'">
+        <cdr-col>
           <div class="row-demo"></div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo"></div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>normal > top > middle > bottom > column</p>
+    <p>:align (default > top > middle > bottom) > :vertical</p>
     <div data-backstop="row-alignment-responsive">
-      <div class="cdr-row _row3 -rowTop-md -rowMiddle-lg -rowBottom-xl -rowColumn-xxl">
-        <div class="cdr-col">
+      <cdr-row :cols="3" :align-md="'top'" :align-lg="'middle'" :align-xl="'bottom'" :vertical-xxl="true">
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolores culpa, sit iste, modi, cupiditate veritatis ratione aut omnis libero quae quas placeat eligendi voluptatibus asperiores totam numquam inventore accusamus!</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">3</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
 
-    <h4>cdr-row responsive col classes</h4>
+    <h4>cdr-col responsive options</h4>
     
     <h5>Medium breakpoint</h5>
-    <p>_col#</p>
+    <p>:span-md="#"</p>
     <div data-backstop="col-md-sized">
-      <div class="cdr-row">
-        <div class="cdr-col _col3-md">
-          <div class="row-demo">auto > 3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo"></div>
-        </div>
-      </div>
+      <cdr-row>
+        <cdr-col :span-md="3">
+          <div class="row-demo">auto, 3-md</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>_colRight _colLeft</p>
+    <p>:offset-right-md="1" :offset-left-md="1"</p>
     <div data-backstop="row-md-offset">
-      <div class="cdr-row">
-        <div class="cdr-col -colRight1-md">
-          <div class="row-demo">-colRight1-md</div>
-        </div>
-        <div class="cdr-col -colLeft1-md">
-          <div class="row-demo">-colLeft1-md</div>
-        </div>
-      </div>
+      <cdr-row>
+        <cdr-col :offset-right-md="1">
+          <div class="row-demo">right 1</div>
+        </cdr-col>
+        <cdr-col :offset-left-md="1">
+          <div class="row-demo">left 1</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-colTop -colMiddle -colBottom</p>
+    <p>:align-self-md</p>
     <div data-backstop="col-md-alignment">
-      <div class="cdr-row">
-        <div class="cdr-col -colTop-md">
-          <div class="row-demo">-top</div>
-        </div>
-        <div class="cdr-col -colMiddle-md">
-          <div class="row-demo">-mid</div>
-        </div>
-        <div class="cdr-col -colBottom-md">
-          <div class="row-demo">-bot</div>
-        </div>
-        <div class="cdr-col">
+      <cdr-row>
+        <cdr-col :align-self-md="'top'">
+          <div class="row-demo">top</div>
+        </cdr-col>
+        <cdr-col :align-self-md="'middle'">
+          <div class="row-demo">middle</div>
+        </cdr-col>
+        <cdr-col :align-self-md="'bottom'">
+          <div class="row-demo">bottom</div>
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
     <h5>Large breakpoint</h5>
-    <p>_col#</p>
+    <p>:span-lg="#"</p>
     <div data-backstop="col-lg-sized">
-      <div class="cdr-row">
-        <div class="cdr-col _col3-lg">
-          <div class="row-demo">auto > 3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo"></div>
-        </div>
-      </div>
+      <cdr-row>
+        <cdr-col :span-lg="3">
+          <div class="row-demo">auto, 3-lg</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>_colRight _colLeft</p>
-    <div data-backstop="col-lg-offset">
-      <div class="cdr-row">
-        <div class="cdr-col -colRight1-lg">
-          <div class="row-demo">-colRight1-lg</div>
-        </div>
-        <div class="cdr-col -colLeft1-lg">
-          <div class="row-demo">-colLeft1-lg</div>
-        </div>
-      </div>
+    <p>:offset-right-lg="1" :offset-left-lg="1"</p>
+    <div data-backstop="row-lg-offset">
+      <cdr-row>
+        <cdr-col :offset-right-lg="1">
+          <div class="row-demo">right 1</div>
+        </cdr-col>
+        <cdr-col :offset-left-lg="1">
+          <div class="row-demo">left 1</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-colTop -colMiddle -colBottom</p>
+    <p>:align-self-lg</p>
     <div data-backstop="col-lg-alignment">
-      <div class="cdr-row">
-        <div class="cdr-col -colTop-lg">
-          <div class="row-demo">-top</div>
-        </div>
-        <div class="cdr-col -colMiddle-lg">
-          <div class="row-demo">-mid</div>
-        </div>
-        <div class="cdr-col -colBottom-lg">
-          <div class="row-demo">-bot</div>
-        </div>
-        <div class="cdr-col">
+      <cdr-row>
+        <cdr-col :align-self-lg="'top'">
+          <div class="row-demo">top</div>
+        </cdr-col>
+        <cdr-col :align-self-lg="'middle'">
+          <div class="row-demo">middle</div>
+        </cdr-col>
+        <cdr-col :align-self-lg="'bottom'">
+          <div class="row-demo">bottom</div>
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
     <h5>XLarge breakpoint</h5>
-    <p>_col#</p>
+    <p>:span-xl="#"</p>
     <div data-backstop="col-xl-sized">
-      <div class="cdr-row">
-        <div class="cdr-col _col3-xl">
-          <div class="row-demo">auto > 3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo"></div>
-        </div>
-      </div>
+      <cdr-row>
+        <cdr-col :span-xl="3">
+          <div class="row-demo">auto, 3-xl</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>_colRight _colLeft</p>
-    <div data-backstop="col-xl-offset">
-      <div class="cdr-row">
-        <div class="cdr-col -colRight1-xl">
-          <div class="row-demo">-colRight1-xl</div>
-        </div>
-        <div class="cdr-col -colLeft1-xl">
-          <div class="row-demo">-colLeft1-xl</div>
-        </div>
-      </div>
+    <p>:offset-right-xl="1" :offset-left-xl="1"</p>
+    <div data-backstop="row-xl-offset">
+      <cdr-row>
+        <cdr-col :offset-right-xl="1">
+          <div class="row-demo">right 1</div>
+        </cdr-col>
+        <cdr-col :offset-left-xl="1">
+          <div class="row-demo">left 1</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-colTop -colMiddle -colBottom</p>
+    <p>:align-self-xl</p>
     <div data-backstop="col-xl-alignment">
-      <div class="cdr-row">
-        <div class="cdr-col -colTop-xl">
-          <div class="row-demo">-top</div>
-        </div>
-        <div class="cdr-col -colMiddle-xl">
-          <div class="row-demo">-mid</div>
-        </div>
-        <div class="cdr-col -colBottom-xl">
-          <div class="row-demo">-bot</div>
-        </div>
-        <div class="cdr-col">
+      <cdr-row>
+        <cdr-col :align-self-xl="'top'">
+          <div class="row-demo">top</div>
+        </cdr-col>
+        <cdr-col :align-self-xl="'middle'">
+          <div class="row-demo">middle</div>
+        </cdr-col>
+        <cdr-col :align-self-xl="'bottom'">
+          <div class="row-demo">bottom</div>
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
     <h5>XXLarge breakpoint</h5>
-    <p>_col#</p>
+    <p>:span-xxl="#"</p>
     <div data-backstop="col-xxl-sized">
-      <div class="cdr-row">
-        <div class="cdr-col _col3-xxl">
-          <div class="row-demo">auto > 3</div>
-        </div>
-        <div class="cdr-col">
-          <div class="row-demo"></div>
-        </div>
-      </div>
+      <cdr-row>
+        <cdr-col :span-xxl="3">
+          <div class="row-demo">auto, 3-xxl</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">auto</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>_colRight _colLeft</p>
-    <div data-backstop="col-xxl-offset">
-      <div class="cdr-row">
-        <div class="cdr-col -colRight1-xxl">
-          <div class="row-demo">-colRight1-xxl</div>
-        </div>
-        <div class="cdr-col -colLeft1-xxl">
-          <div class="row-demo">-colLeft1-xxl</div>
-        </div>
-      </div>
+    <p>:offset-right-xxl="1" :offset-left-xxl="1"</p>
+    <div data-backstop="row-xxl-offset">
+      <cdr-row>
+        <cdr-col :offset-right-xxl="1">
+          <div class="row-demo">right 1</div>
+        </cdr-col>
+        <cdr-col :offset-left-xxl="1">
+          <div class="row-demo">left 1</div>
+        </cdr-col>
+      </cdr-row>
     </div>
-    <p>-colTop -colMiddle -colBottom</p>
+    <p>:align-self-xxl</p>
     <div data-backstop="col-xxl-alignment">
-      <div class="cdr-row">
-        <div class="cdr-col -colTop-xxl">
-          <div class="row-demo">-top</div>
-        </div>
-        <div class="cdr-col -colMiddle-xxl">
-          <div class="row-demo">-mid</div>
-        </div>
-        <div class="cdr-col -colBottom-xxl">
-          <div class="row-demo">-bot</div>
-        </div>
-        <div class="cdr-col">
+      <cdr-row>
+        <cdr-col :align-self-xxl="'top'">
+          <div class="row-demo">top</div>
+        </cdr-col>
+        <cdr-col :align-self-xxl="'middle'">
+          <div class="row-demo">middle</div>
+        </cdr-col>
+        <cdr-col :align-self-xxl="'bottom'">
+          <div class="row-demo">bottom</div>
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
 
     <h4>hiding columns</h4>
     <div data-backstop="col-sm-hide">
-      <p>-colHide (hidden sm and up -- always)</p>
-        <div class="cdr-row _row2">
-          <div class="cdr-col -colHide">
-            <div class="row-demo">hide &ge; sm</div>
-          </div>
-        </div>
-      <p>-colHide-sm-down (hidden sm and below)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-sm-down">
+      <p>:hide="'up'" (hidden sm and up -- always)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide="'up'">
+          <div class="row-demo">hide &ge; sm</div>
+        </cdr-col>
+      </cdr-row>
+      <p>:hide="'down'" (hidden sm and below)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide="'down'">
           <div class="row-demo">hide &le; sm</div>
-        </div>
-      </div>
-      <p>-colHide-sm-only (hidden only at sm)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-sm-only">
+        </cdr-col>
+      </cdr-row>
+      <p>:hide="'only'" (hidden only at sm)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide="'only'">
           <div class="row-demo">hide @ sm</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
     <div data-backstop="col-md-hide">
-      <p>-colHide-md (hidden md and up)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-md">
+      <p>:hide-md="'up'" (hidden md and up)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-md="'up'">
           <div class="row-demo">hide &ge; md</div>
-        </div>
-      </div>
-      <p>-colHide-md-down (hidden md and below)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-md-down">
+        </cdr-col>
+      </cdr-row>
+      <p>:hide-md="'down'" (hidden md and below)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-md="'down'">
           <div class="row-demo">hide &le; md</div>
-        </div>
-      </div>
-      <p>-colHide-md-only (hidden only at md)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-md-only">
+        </cdr-col>
+      </cdr-row>
+      <p>:hide-md="'only'" (hidden only at md)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-md="'only'">
           <div class="row-demo">hide @ md</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
     <div data-backstop="col-lg-hide">
-      <p>-colHide-lg (hidden lg and up)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-lg">
+       <p>:hide-lg="'up'" (hidden lg and up)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-lg="'up'">
           <div class="row-demo">hide &ge; lg</div>
-        </div>
-      </div>
-      <p>-colHide-lg-down (hidden lg and below)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-lg-down">
+        </cdr-col>
+      </cdr-row>
+      <p>:hide-lg="'down'" (hidden lg and below)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-lg="'down'">
           <div class="row-demo">hide &le; lg</div>
-        </div>
-      </div>
-      <p>-colHide-lg-only (hidden only at lg)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-lg-only">
+        </cdr-col>
+      </cdr-row>
+      <p>:hide-lg="'only'" (hidden only at lg)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-lg="'only'">
           <div class="row-demo">hide @ lg</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
     <div data-backstop="col-xl-hide">
-      <p>-colHide-xl (hidden xl and up)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-xl">
+       <p>:hide-xl="'up'" (hidden xl and up)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-xl="'up'">
           <div class="row-demo">hide &ge; xl</div>
-        </div>
-      </div>
-      <p>-colHide-xl-down (hidden xl and below)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-xl-down">
+        </cdr-col>
+      </cdr-row>
+      <p>:hide-xl="'down'" (hidden xl and below)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-xl="'down'">
           <div class="row-demo">hide &le; xl</div>
-        </div>
-      </div>
-      <p>-colHide-xl-only (hidden only at xl)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-xl-only">
+        </cdr-col>
+      </cdr-row>
+      <p>:hide-xl="'only'" (hidden only at xl)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-xl="'only'">
           <div class="row-demo">hide @ xl</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
     <div data-backstop="col-xxl-hide">
-      <p>-colHide-xxl (hidden xxl and up)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-xxl">
+       <p>:hide-xxl="'up'" (hidden xxl and up)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-xxl="'up'">
           <div class="row-demo">hide &ge; xxl</div>
-        </div>
-      </div>
-      <p>-colHide-xxl-down (hidden xxl and below -- always)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-xxl-down">
+        </cdr-col>
+      </cdr-row>
+      <p>:hide-xxl="'down'" (hidden xxl and below -- always)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-xxl="'down'">
           <div class="row-demo">hide &le; xxl</div>
-        </div>
-      </div>
-      <p>-colHide-xxl-only (hidden only at xxl)</p>
-      <div class="cdr-row _row2">
-        <div class="cdr-col -colHide-xxl-only">
+        </cdr-col>
+      </cdr-row>
+      <p>:hide-xxl="'only'" (hidden only at xxl)</p>
+      <cdr-row :cols="2">
+        <cdr-col :hide-xxl="'only'">
           <div class="row-demo">hide @ xxl</div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
     <p>Complex Mosaic/Metro/Masonry-ish Demo</p>
     <div data-backstop="row-mosaic">
-      <div class="cdr-row _row1 _row4-md">
-        <div class="cdr-col">
+      <cdr-row :cols="1" :cols-md="4">
+        <cdr-col>
           <div class="row-demo">One</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col :cols="7">
           <div class="row-demo">Two</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">Three</div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">Four</div>
-        </div>
-        <div class="cdr-col _col12 cdr-row">
-          <div class="cdr-col _col12 _col9-md cdr-row">
-            <div class="cdr-col _col12 _col4-md">
+        </cdr-col>
+        <cdr-col :span="12" :isRow="true">
+          <cdr-col :span="12" :span-md="9" :isRow="true">
+            <cdr-col :span="12" :span-md="4">
               <div class="row-demo">
                 Five
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque veritatis reiciendis iste cum eveniet ad aut atque provident odit velit consequatur ipsa, placeat quisquam repudiandae quo error ipsam, nobis est.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, labore. Quos dolor tempore accusamus eius, voluptas, ipsum nulla. At fugiat quas est modi autem quam dolores maxime, provident commodi alias.</p>
               </div>
-            </div>
-            <div class="cdr-col _col12 _col8-md cdr-row _row1 _row2-md">
-              <div class="cdr-col">
+            </cdr-col>
+            <cdr-col :span="12" :span-md="8" :isRow="true" :cols="1" :cols-md="2">
+              <cdr-col>
                 <div class="row-demo">Six</div>
-              </div>
-              <div class="cdr-col">
+              </cdr-col>
+              <cdr-col>
                 <div class="row-demo">Seven</div>
-              </div>
-              <div class="cdr-col _col12">
+              </cdr-col>
+              <cdr-col :span="12">
                 <div class="row-demo">Eight</div>
-              </div>
-            </div>
-            <div class="cdr-col _col12 _col9-md">
+              </cdr-col>
+            </cdr-col>
+            <cdr-col :span="12" :span-md="9">
               <div class="row-demo">
                 Nine
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At nisi labore laboriosam possimus eaque suscipit voluptate soluta, omnis nesciunt, necessitatibus maiores? Consectetur reiciendis libero sapiente possimus aspernatur repellendus recusandae delectus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima aliquam reprehenderit iusto ratione nihil ipsum, perferendis quasi nulla ad quis. Consequuntur odio blanditiis aliquid voluptatem, veniam porro, ad assumenda!</p>
               </div>
-            </div>
-            <div class="cdr-col">
+            </cdr-col>
+            <cdr-col :span="12" :span-md="3">
               <div class="row-demo">
                 Ten
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
               </div>
-            </div>
-          </div>
-          <div class="cdr-col">
+            </cdr-col>
+          </cdr-col>
+          <cdr-col :span="12" :span-md="3">
             <div class="row-demo">
               Eleven
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quibusdam labore impedit rem nam, voluptate magnam architecto, odit dolores, excepturi, et animi. Sapiente expedita ipsam perspiciatis, similique minima illo in.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis deserunt, at, illum, earum quibusdam temporibus, molestiae doloremque iure ad est pariatur? Minima, fugit, accusantium. Aspernatur consectetur, labore enim ratione ducimus.</p>
             </div>
-          </div>
-        </div>
-        <div class="cdr-col">
+          </cdr-col>
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">
             Twelve
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
-        </div>
-        <div class="cdr-col _col6-md">
+        </cdr-col>
+        <cdr-col :span="12" :span-md="6">
           <div class="row-demo">
             Thirteen
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque suscipit cum nemo aperiam esse, error ipsam, at aliquam similique optio est quaerat impedit id hic asperiores veritatis unde quod voluptatibus.</p>
           </div>
-        </div>
-        <div class="cdr-col">
+        </cdr-col>
+        <cdr-col>
           <div class="row-demo">
             Fourteen
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           </div>
-        </div>
-      </div>
+        </cdr-col>
+      </cdr-row>
     </div>
 
   </div>
 </template>
 
 <script>
+  import cdrRow from '../../components/layouts/Row';
+  import cdrCol from '../../components/layouts/Col';
+
   export default {
-    name: 'row',
+    name: 'grid',
+    components: { cdrRow, cdrCol },
   };
 </script>
 
