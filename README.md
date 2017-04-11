@@ -43,6 +43,18 @@ Export the component library to a umd js bundle and compiled css in the `release
 
 The [webpack](https://webpack.github.io/) build system is taken largely from the [Vue webpack template](https://github.com/vuejs-templates/webpack) which has its own set of docs that are a good reference.
 
+## Vue-play
+
+We're using [vue-play](https://github.com/vue-play/vue-play) to demo components. Configs live with the component files as `*.play.js`.
+
+`yarn play`
+
+Runs the webpack config for vue-play and starts a local server.
+
+`yarn build:play`
+
+Outputs a standalone app to `dist-play` that can be hosted somewhere (like gh-pages).
+
 ## Testing
 
 ### Code Tests
@@ -148,6 +160,7 @@ build                       #Contains scripts and configs for the webpack build 
 |-- check-versions.js       #Checks node/npm versions (this came with the vue webpack template so I’m not sure if it’s super useful)
 |-- dev-client.js           #For hot module reloading in dev
 |-- dev-server.js           #Config for express dev server
+|-- play.config.js          #Config for vue-play
 |-- release.js              #Release build script - the entry point for `npm run release`
 |-- utils.js                #From vue webpack template to mostly automate which loaders need to be used since vue supports scss, stylus, postcss, etc.
 |-- vue-loader.conf.js      #Config object for vue webpack loader (vue-loader)
@@ -163,11 +176,17 @@ config                      #Configuration files used in the webpack build steps
 |-- release.env.js          #Setting NODE_ENV for release
 |-- test.env.js             #Setting NODE_ENV for test
 %dist/                      #Results from `npm run build` end up here
+%dist-play/                 #Results from `yarn build:play` end up here
+play/                       #Stores files for use with vue-play
+|-- %app.js                 #Used for initializing vue-play (probably don't need to change anything here)
+|-- index.js                #Setting up vue-play scenarios (currently just loads all *.play.js files from src/components)
+|-- %preview.js             #Used for creating the preview for vue-play (probably don't need to change anything here)
 %release/                   #Results from `npm run release` end up here
 src/                        #Source files
 |-- assets/                 #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
 |-- components/             #All things components
 |-- css/                    #All things css
+|-- examples/               #Extra components just for testing 
 |-- app.vue                 #The playground for testing components
 |-- dev.js                  #Webpack entry point for everything !release
 |-- main.js                 #Webpack entry point for release that builds delivery assets
@@ -180,6 +199,8 @@ test/                       #All things testing for both unit and e2e
 utils/                      #Utility node scripts
 |-- brandai.js              #Fetches values from brand.ai for use in css
 .babelrc                    #Babel es6 transpiling config
+.eslintignore               #Self explanatory
+.eslintrc.js                #Config for eslint
 .gitignore                  #Self explanatory
 .pullapprove.yml            #Config for github PR approval
 .stylelintrc                #Config for stylelint
