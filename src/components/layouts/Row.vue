@@ -75,7 +75,7 @@
   });
 
   export default {
-    name: 'row',
+    name: 'cdr-row',
     props: finalProps,
     computed: {
       colsClass() {

@@ -141,7 +141,7 @@ __TODO:__ Notes about Vue, components, css-modules?
 
 - Using [Vue.js](https://vuejs.org/) single file components. They have excellent docs.
 - Import them into the local  _index.js. 
-- Don’t write the component name prefixed/namespaced, this will happen automatically for both dev/build and release (for dev in App.vue, for release in main.js).
+- Do write the component name prefixed/namespaced (considered automating, a little too black box/too many gotchas).
 - Horizontal theming with css-modules, dynamically binding classes based on theme
 - css-modules in components turn into abstracted javascript classes (better here or CSS?)
 

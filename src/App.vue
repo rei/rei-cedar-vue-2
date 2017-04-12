@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="container-fluid">
+    <cdr-heading :level="2">Test</cdr-heading>
     <test data-backstop="test"></test>
     <cdr-card>
       <cdr-button data-backstop="button">A default button</cdr-button>
@@ -8,7 +9,6 @@
     </cdr-card>
 
     <grid></grid>
-
   </div>
 </template>
 
@@ -17,21 +17,11 @@
   // extra stuff for testing
   import test from './examples/testing/Test';
   import grid from './examples/grid/Grid';
-  // end extra
 
-
-  // add prefix to components
-  const prefix = 'cdr';
-  Object.keys(Components).forEach((key) => {
-    Components[key].name = `${prefix}-${Components[key].name}`;
-    Components[`${prefix}${key}`] = Components[key];
-    delete Components[key];
-  });
-
-// add the extra things for testing
   Components.test = test;
   Components.grid = grid;
-// end add extra
+  // end extra
+
 
   export default {
     name: 'app',

@@ -136,7 +136,7 @@
   });
 
   export default {
-    name: 'col',
+    name: 'cdr-col',
     props: finalProps,
     components: { Row },
     computed: {

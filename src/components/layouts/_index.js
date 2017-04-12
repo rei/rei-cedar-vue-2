@@ -1,7 +1,7 @@
-import Row from './Row';
-import Col from './Col';
+import cdrRow from './Row';
+import cdrCol from './Col';
 
 export default {
-  Row,
-  Col,
+  cdrRow,
+  cdrCol,
 };

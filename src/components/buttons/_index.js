@@ -1,5 +1,5 @@
-import Button from './Button';
+import cdrButton from './Button';
 
 export default {
-  Button,
+  cdrButton,
 };

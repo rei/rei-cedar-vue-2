@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'button',
+    name: 'cdr-button',
     props: ['theme'],
     data() {
       return {

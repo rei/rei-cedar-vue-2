@@ -1,5 +1,5 @@
-import Card from './Card';
+import cdrCard from './Card';
 
 export default {
-  Card,
+  cdrCard,
 };
