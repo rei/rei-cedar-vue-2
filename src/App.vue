@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container-fluid">
-    <cdr-heading :level="2">Test</cdr-heading>
+    <cdr-heading :level="3">Heading</cdr-heading>
     <test data-backstop="test"></test>
     <cdr-card>
       <cdr-button data-backstop="button">A default button</cdr-button>

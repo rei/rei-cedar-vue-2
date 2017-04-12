@@ -12,6 +12,7 @@ export default {
     level: {
       type: Number,
       required: true,
+      validator: value => (value > 0 && value <= 6) || false,
     },
   },
 };
