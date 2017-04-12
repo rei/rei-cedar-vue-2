@@ -1,5 +1,5 @@
 <template>
-  <div class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass, noWrapClass, gutterClass]">
+  <div class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass, nowrapClass, gutterClass]">
     <slot></slot>
   </div>
 </template>
@@ -30,8 +30,8 @@
     {
       name: 'gutter',
       responsive: true,
-      type: Number,
-      validator: value => ([0].indexOf(value >= 0)) || false,
+      type: String,
+      validator: value => (['none'].indexOf(value >= 0)) || false,
     },
     {
       name: 'vertical',
@@ -46,7 +46,7 @@
       default: false,
     },
     {
-      name: 'noWrap',
+      name: 'nowrap',
       responsive: true,
       type: Boolean,
       default: false,
@@ -81,91 +81,59 @@
       colsClass() {
         let colClass = '';
         if (this.cols) { colClass += `${blockName}_row${this.cols} `; }
-        if (this.colsMd) { colClass += `${blockName}_row${this.colsMd}-md `; }
-        if (this.colsLg) { colClass += `${blockName}_row${this.colsLg}-lg `; }
-        if (this.colsXl) { colClass += `${blockName}_row${this.colsXl}-xl `; }
-        if (this.colsXxl) { colClass += `${blockName}_row${this.colsXxl}-xxl `; }
+        bpArr.forEach((bp) => {
+          if (this[`cols${bp}`]) { colClass += `${blockName}_row${this[`cols${bp}`]}-${bp.toLowerCase()} `; }
+        });
         return colClass;
       },
       justifyClass() {
         let justifyClass = '';
-        if (this.justify) { justifyClass += `${blockName}${this.getJustify(`${this.justify}`)} `; }
-        if (this.justifyMd) { justifyClass += `${blockName}${this.getJustify(`${this.justifyMd}`)}-md `; }
-        if (this.justifyLg) { justifyClass += `${blockName}${this.getJustify(`${this.justifyLg}`)}-lg `; }
-        if (this.justifyXl) { justifyClass += `${blockName}${this.getJustify(`${this.justifyXl}`)}-xl `; }
-        if (this.justifyXxl) { justifyClass += `${blockName}${this.getJustify(`${this.justifyXxl}`)}-xxl `; }
+        if (this.justify) { justifyClass += `${blockName}--${this.justify} `; }
+        bpArr.forEach((bp) => {
+          if (this[`justify${bp}`]) {
+            justifyClass += `${blockName}--${this[`justify${bp}`]}-${bp.toLowerCase()} `;
+          }
+        });
         return justifyClass;
       },
       alignClass() {
         let alignClass = '';
-        if (this.align) { alignClass += `${blockName}${this.getAlign(`${this.align}`)} `; }
-        if (this.alignMd) { alignClass += `${blockName}${this.getAlign(`${this.alignMd}`)}-md `; }
-        if (this.alignLg) { alignClass += `${blockName}${this.getAlign(`${this.alignLg}`)}-lg `; }
-        if (this.alignXl) { alignClass += `${blockName}${this.getAlign(`${this.alignXl}`)}-xl `; }
-        if (this.alignXxl) { alignClass += `${blockName}${this.getAlign(`${this.alignXxl}`)}-xxl `; }
+        if (this.align) { alignClass += `${blockName}--${this.align}`; }
+        bpArr.forEach((bp) => {
+          if (this[`align${bp}`]) { alignClass += `${blockName}--${this[`align${bp}`]}-${bp.toLowerCase()} `; }
+        });
         return alignClass;
       },
       directionClass() {
         let directionClass = '';
         if (this.vertical) { directionClass += `${blockName}--column `; }
-        if (this.verticalMd) { directionClass += `${blockName}--column-md `; }
-        if (this.verticalLg) { directionClass += `${blockName}--column-lg `; }
-        if (this.verticalXl) { directionClass += `${blockName}--column-xl `; }
-        if (this.verticalXxl) { directionClass += `${blockName}--column-xxl `; }
+        bpArr.forEach((bp) => {
+          if (this[`vertical${bp}`]) { directionClass += `${blockName}--column-${bp.toLowerCase()} `; }
+        });
         return directionClass;
       },
       gutterClass() {
         let gutterClass = '';
-        if (this.gutter >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutter}`)} `; }
-        if (this.gutterMd >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutterMd}`)}-md `; }
-        if (this.gutterLg >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutterLg}`)}-lg `; }
-        if (this.gutterXl >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutterXl}`)}-xl `; }
-        if (this.gutterXxl >= 0) { gutterClass += `${blockName}${this.getGutter(`${this.gutterXxl}`)}-xxl `; }
+        if (this.gutter) { gutterClass += `${blockName}--gutter-${this.gutter} `; }
+        bpArr.forEach((bp) => {
+          if (this[`gutter${bp}`]) { gutterClass += `${blockName}--gutter-${this[`gutter${bp}`]}-${bp.toLowerCase()} `; }
+        });
         return gutterClass;
       },
       wrapClass() {
         let wrapClass = '';
-        if (this.wrapXxl) { wrapClass += `${blockName}--wrap-xxl `; }
-        if (this.wrapXl) { wrapClass += `${blockName}--wrap-xl `; }
-        if (this.wrapLg) { wrapClass += `${blockName}--wrap-lg `; }
-        if (this.wrapMd) { wrapClass += `${blockName}--wrap-md `; }
+        bpArr.forEach((bp) => {
+          if (this[`wrap${bp}`]) { wrapClass += `${blockName}--wrap-${bp.toLowerCase()} `; }
+        });
         return wrapClass;
       },
-      noWrapClass() {
+      nowrapClass() {
         let wrapClass = '';
-        if (this.noWrap) { wrapClass += `${blockName}--noWrap `; }
-        if (this.noWrapMd) { wrapClass += `${blockName}--noWrap-md `; }
-        if (this.noWrapLg) { wrapClass += `${blockName}--noWrap-lg `; }
-        if (this.noWrapXl) { wrapClass += `${blockName}--noWrap-xl `; }
-        if (this.noWrapXxl) { wrapClass += `${blockName}--noWrap-xxl `; }
+        if (this.nowrap) { wrapClass += `${blockName}--noWrap `; }
+        bpArr.forEach((bp) => {
+          if (this[`nowrap${bp}`]) { wrapClass += `${blockName}--noWrap-${bp.toLowerCase()} `; }
+        });
         return wrapClass;
-      },
-    },
-    methods: {
-      getJustify(test) {
-        switch (test) {
-          case 'left': return '--left';
-          case 'center': return '--center';
-          case 'right': return '--right';
-          case 'around': return '--spaceAround';
-          case 'between': return '--spaceBetween';
-          default: return '';
-        }
-      },
-      getAlign(test) {
-        switch (test) {
-          case 'top': return '--top';
-          case 'middle': return '--middle';
-          case 'bottom': return '--bottom';
-          case 'stretch': return '--stretch';
-          default: return '';
-        }
-      },
-      getGutter(test) {
-        switch (test) {
-          case '0': return '--gutter0';
-          default: return '';
-        }
       },
     },
   };

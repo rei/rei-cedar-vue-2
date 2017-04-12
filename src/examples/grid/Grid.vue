@@ -310,9 +310,9 @@
       </cdr-row>
     </div>
 
-    <h4>:gutter="0"</h4>
+    <h4>:gutter="'none'"</h4>
     <div data-backstop="row-noGutter">
-      <cdr-row :cols="3" :gutter="0">
+      <cdr-row :cols="3" :gutter="'none'">
         <cdr-col>
           <div class="row-demo">3</div>
         </cdr-col>
@@ -325,9 +325,9 @@
       </cdr-row>
     </div>
 
-    <h4>:noWrap="true"</h4>
-    <div data-backstop="row-noWrap">
-      <cdr-row :cols="3" :noWrap="true">
+    <h4>:nowrap="true"</h4>
+    <div data-backstop="row-nowrap">
+      <cdr-row :cols="3" :nowrap="true">
         <cdr-col>
           <div class="row-demo">3</div>
         </cdr-col>
@@ -371,7 +371,7 @@
     </div>
 
     <h4>:justify="'between'"</h4>
-    <div data-backstop="row-rowSpaceBetween">
+    <div data-backstop="row-between">
       <cdr-row :cols="4" :justify="'between'">
         <cdr-col>
           <div class="row-demo">3</div>
@@ -386,7 +386,7 @@
     </div>
 
     <h4>:justify="'around'"</h4>
-    <div data-backstop="row-rowSpaceAround">
+    <div data-backstop="row-around">
       <cdr-row :cols="4" :justify="'around'">
         <cdr-col>
           <div class="row-demo">3</div>
@@ -755,9 +755,9 @@
       </cdr-row>
     </div>
 
-    <p>:gutter-md="0"</p>
+    <p>:gutter-md="'none'"</p>
     <div data-backstop="row-md-noGutter">
-      <cdr-row :cols="6" :gutter-md="0">
+      <cdr-row :cols="6" :gutter-md="'none'">
         <cdr-col>
           <div class="row-demo">6</div>
         </cdr-col>
@@ -792,7 +792,7 @@
     </div>
 
     <p>:justify-md="'between'"</p>
-    <div data-backstop="row-md-spaceBetween">
+    <div data-backstop="row-md-between">
       <cdr-row :cols="6" :justify-md="'between'">
         <cdr-col>
           <div class="row-demo">6</div>
@@ -804,7 +804,7 @@
     </div>
 
     <p>:justify-md="'around'"</p>
-    <div data-backstop="row-md-spaceAround">
+    <div data-backstop="row-md-around">
       <cdr-row :cols="6" :justify-md="'around'">
         <cdr-col>
           <div class="row-demo">6</div>
@@ -878,6 +878,42 @@
       </cdr-row>
     </div>
 
+    <p>:wrap-md="true"</p>
+    <div data-backstop="row-md-wrap">
+      <cdr-row :cols="3" :nowrap="true" :wrap-md="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">span 6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:nowrap-md="true"</p>
+    <div data-backstop="row-md-nowrap">
+      <cdr-row :cols="3" :nowrap-md="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">span 6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
     <h5>Large breakpoint</h5>
 
     <p>:cols="2" :cols-lg="4"</p>
@@ -916,9 +952,9 @@
       </cdr-row>
     </div>
 
-    <p>:gutter-lg="0"</p>
+    <p>:gutter-lg="'none'"</p>
     <div data-backstop="row-lg-noGutter">
-      <cdr-row :cols="6" :gutter-lg="0">
+      <cdr-row :cols="6" :gutter-lg="'none'">
         <cdr-col>
           <div class="row-demo">6</div>
         </cdr-col>
@@ -953,7 +989,7 @@
     </div>
 
     <p>:justify-lg="'between'"</p>
-    <div data-backstop="row-lg-spaceBetween">
+    <div data-backstop="row-lg-between">
       <cdr-row :cols="6" :justify-lg="'between'">
         <cdr-col>
           <div class="row-demo">6</div>
@@ -965,7 +1001,7 @@
     </div>
 
     <p>:justify-lg="'around'"</p>
-    <div data-backstop="row-lg-spaceAround">
+    <div data-backstop="row-lg-around">
       <cdr-row :cols="6" :justify-lg="'around'">
         <cdr-col>
           <div class="row-demo">6</div>
@@ -1039,6 +1075,42 @@
       </cdr-row>
     </div>
 
+    <p>:wrap-lg="true"</p>
+    <div data-backstop="row-lg-wrap">
+      <cdr-row :cols="3" :nowrap="true" :wrap-lg="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">span 6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:nowrap-lg="true"</p>
+    <div data-backstop="row-lg-nowrap">
+      <cdr-row :cols="3" :nowrap-lg="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">span 6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
     <h5>XLarge breakpoint</h5>
 
     <p>:cols="2" :cols-xl="4"</p>
@@ -1077,9 +1149,9 @@
       </cdr-row>
     </div>
 
-    <p>:gutter-xl="0"</p>
+    <p>:gutter-xl="'none'"</p>
     <div data-backstop="row-xl-noGutter">
-      <cdr-row :cols="6" :gutter-xl="0">
+      <cdr-row :cols="6" :gutter-xl="'none'">
         <cdr-col>
           <div class="row-demo">6</div>
         </cdr-col>
@@ -1114,7 +1186,7 @@
     </div>
 
     <p>:justify-xl="'between'"</p>
-    <div data-backstop="row-xl-spaceBetween">
+    <div data-backstop="row-xl-between">
       <cdr-row :cols="6" :justify-xl="'between'">
         <cdr-col>
           <div class="row-demo">6</div>
@@ -1126,7 +1198,7 @@
     </div>
 
     <p>:justify-xl="'around'"</p>
-    <div data-backstop="row-xl-spaceAround">
+    <div data-backstop="row-xl-around">
       <cdr-row :cols="6" :justify-xl="'around'">
         <cdr-col>
           <div class="row-demo">6</div>
@@ -1200,6 +1272,42 @@
       </cdr-row>
     </div>
 
+    <p>:wrap-xl="true"</p>
+    <div data-backstop="row-xl-wrap">
+      <cdr-row :cols="3" :nowrap="true" :wrap-xl="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">span 6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:nowrap-xl="true"</p>
+    <div data-backstop="row-xl-nowrap">
+      <cdr-row :cols="3" :nowrap-xl="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">span 6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
     <h5>Xxl breakpoint</h5>
 
     <p>:cols="2" :cols-xxl="4"</p>
@@ -1238,9 +1346,9 @@
       </cdr-row>
     </div>
 
-    <p>:gutter-xxl="0"</p>
+    <p>:gutter-xxl="'none'"</p>
     <div data-backstop="row-xxl-noGutter">
-      <cdr-row :cols="6" :gutter-xxl="0">
+      <cdr-row :cols="6" :gutter-xxl="'none'">
         <cdr-col>
           <div class="row-demo">6</div>
         </cdr-col>
@@ -1275,7 +1383,7 @@
     </div>
 
     <p>:justify-xxl="'between'"</p>
-    <div data-backstop="row-xxl-spaceBetween">
+    <div data-backstop="row-xxl-between">
       <cdr-row :cols="6" :justify-xxl="'between'">
         <cdr-col>
           <div class="row-demo">6</div>
@@ -1287,7 +1395,7 @@
     </div>
 
     <p>:justify-xxl="'around'"</p>
-    <div data-backstop="row-xxl-spaceAround">
+    <div data-backstop="row-xxl-around">
       <cdr-row :cols="6" :justify-xxl="'around'">
         <cdr-col>
           <div class="row-demo">6</div>
@@ -1361,6 +1469,42 @@
       </cdr-row>
     </div>
 
+    <p>:wrap-xxl="true"</p>
+    <div data-backstop="row-xxl-wrap">
+      <cdr-row :cols="3" :nowrap="true" :wrap-xxl="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">span 6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <p>:nowrap-xxl="true"</p>
+    <div data-backstop="row-xxl-nowrap">
+      <cdr-row :cols="3" :nowrap-xxl="true">
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col :span="6">
+          <div class="row-demo">span 6</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
     <h4>Mix and match responsive row classes</h4>
     <p>1 > 2-md > 3-lg > 4-xl > 6-xxl</p>
     <div data-backstop="row-full-responsive">
@@ -1385,7 +1529,7 @@
         </cdr-col>
       </cdr-row>
     </div>
-    <p>:justify (default > center > right > spaceAround > spaceBetween)</p>
+    <p>:justify (default > center > right > around > between)</p>
     <div data-backstop="row-justify-responsive">
       <cdr-row :cols="6" :justify-md="'center'" :justify-lg="'right'" :justify-xl="'around'" :justify-xxl="'between'">
         <cdr-col>
@@ -1427,7 +1571,7 @@
       </cdr-row>
     </div>
     <p>:offset-right-md="1" :offset-left-md="1"</p>
-    <div data-backstop="row-md-offset">
+    <div data-backstop="col-md-offset">
       <cdr-row>
         <cdr-col :offset-right-md="1">
           <div class="row-demo">right 1</div>
@@ -1468,7 +1612,7 @@
       </cdr-row>
     </div>
     <p>:offset-right-lg="1" :offset-left-lg="1"</p>
-    <div data-backstop="row-lg-offset">
+    <div data-backstop="col-lg-offset">
       <cdr-row>
         <cdr-col :offset-right-lg="1">
           <div class="row-demo">right 1</div>
@@ -1509,7 +1653,7 @@
       </cdr-row>
     </div>
     <p>:offset-right-xl="1" :offset-left-xl="1"</p>
-    <div data-backstop="row-xl-offset">
+    <div data-backstop="col-xl-offset">
       <cdr-row>
         <cdr-col :offset-right-xl="1">
           <div class="row-demo">right 1</div>
@@ -1550,7 +1694,7 @@
       </cdr-row>
     </div>
     <p>:offset-right-xxl="1" :offset-left-xxl="1"</p>
-    <div data-backstop="row-xxl-offset">
+    <div data-backstop="col-xxl-offset">
       <cdr-row>
         <cdr-col :offset-right-xxl="1">
           <div class="row-demo">right 1</div>
