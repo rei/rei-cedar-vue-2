@@ -1,8 +1,7 @@
 <cdr-modal-video>
     <div>
         <button type="button" class="btn btn-play" onclick="{showModal}">
-            <span class="icon icon-rei-play-small" aria-hidden="true"></span><span>{opts.buttonText}</span>
-        </button>
+            <span class="icon icon-rei-play-small" aria-hidden="true"></span>{opts.buttonText}</button>
         <aside if={opened} class="cdr-modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="dialog1Title">
             <span id="dialog1Title" class="sr-only">{'Begin dialog for' + opts.videoTitle}</span>
             <div class="cdr-modal__content">
@@ -19,23 +18,25 @@
         </aside>
     </div>
 
-    <style type="less" scoped>
-        .icon {
-            &.icon-rei-close {
-                &.img-circle {
-                    background: rgba( 0,0,0,.5 );
-                    color: #fff;
-                    padding: 2rem;
-                    margin: 1.6rem;
-                    float: none;
+    <style type="less">
+        .cdr-modal__content {
+            .icon {
+                &.icon-rei-close {
+                    &.img-circle {
+                        background: rgba( 0,0,0,.5 );
+                        color: #fff;
+                        padding: 2rem;
+                        margin: 1.6rem;
+                        float: none;
 
-                    @media screen and (max-width: 768px) {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        bottom: auto;
-                        left: auto;
-                        z-index: 1;
+                        @media screen and (max-width: 768px) {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: auto;
+                            left: auto;
+                            z-index: 1;
+                        }
                     }
                 }
             }
@@ -60,13 +61,6 @@
         // MOUNT
         // -----------------------------------------
         function onMount() {
-            // Close modal on esc key
-            $el.addEventListener( 'keyup', function (e) {
-                if ( e.keyCode === 27 ) {
-                    tag.hideModal( tag.opener );
-                }
-            } );
-
             // Change modal button display
             var modalLaunchBtn = $el.querySelector('.btn-play');
             if ( opts.cedarButton == "text" ) {
@@ -78,7 +72,7 @@
         // ----------------------------------
 
         // Function to show modal
-        function showModal(e) {
+        function showModal( e ) {
             tag.opener = e.target;
             tag.opened = true; // Add modal to DOM
             tag.update(); // Because riot isn't fully reactive
@@ -87,7 +81,6 @@
             var body = document.querySelector( 'body' );
             var modalBackdrop = document.createElement( 'div' );
             modalBackdrop.id = 'modalBackdrop';
-            cdrModal = $el.querySelector('.cdr-modal');
             // IE workaround, list out each classList item
             modalBackdrop.classList.add( 'cdr-modal__backdrop' );
             modalBackdrop.classList.add( 'opaque' );
@@ -95,14 +88,24 @@
             modalBackdrop.tabindex = -1;
             body.appendChild( modalBackdrop );
             body.classList.add( 'cdr-modal--open' );
-            cdrModal.setAttribute('aria-hidden', 'false');
+            // Add modal content
+            cdrModal = body.querySelector( '.cdr-modal' );
+            body.appendChild( cdrModal );
+            cdrModal.setAttribute( 'aria-hidden', 'false' );
             cdrModal.classList.add( 'in' );
             modalBackdrop.classList.add( 'in' );
 
             // Trap tabs
             cdrModal.addEventListener( 'keydown', function ( e ) {
                 if ( e.keyCode === 9 ) {
-                   document.addEventListener( 'focus', tag.tabTrap, true );
+                    document.addEventListener( 'focus', tag.tabTrap, true );
+                }
+            } );
+
+            // Close modal on esc key
+            cdrModal.addEventListener( 'keyup', function ( e ) {
+                if ( e.keyCode === 27 ) {
+                    tag.hideModal( tag.opener );
                 }
             } );
 
@@ -111,25 +114,28 @@
 
         // Function to hide modal
         function hideModal( ) {
-            // remove classes
-            var body = document.querySelector( 'body' );
-            var modalBackdrop = document.querySelector( '#modalBackdrop' );
-            cdrModal.classList.remove( 'in' );
-            cdrModal.setAttribute('aria-hidden', 'true');
-            modalBackdrop.classList.remove( 'in' );
-            body.classList.remove( 'cdr-modal--open' );
-            body.removeChild( modalBackdrop );
+            // Check if modal open
+            if (tag.opened) {
+                // remove classes
+                var body = document.querySelector( 'body' );
+                var modalBackdrop = document.querySelector( '#modalBackdrop' );
+                cdrModal.classList.remove( 'in' );
+                cdrModal.setAttribute( 'aria-hidden', 'true' );
+                modalBackdrop.classList.remove( 'in' );
+                body.classList.remove( 'cdr-modal--open' );
+                body.removeChild( modalBackdrop );
 
-            document.removeEventListener( 'focus', tag.tabTrap, true ); //remove tab trapping event listener
+                document.removeEventListener( 'focus', tag.tabTrap, true ); //remove tab trapping event listener
 
-            tag.opened = false; // Remove modal from DOM
-            tag.update(); // Because riot isn't fully reactive
+                tag.opened = false; // Remove modal from DOM
+                tag.update(); // Because riot isn't fully reactive
 
-            tag.opener.focus();// return focus to element that launched the modal
+                tag.opener.focus(); // return focus to element that launched the modal
+            }
         }
 
         // tab trapping event handler
-        function tabTrap(evt) {
+        function tabTrap( evt ) {
             if ( !cdrModal.contains( evt.target ) ) {
                 evt.stopPropagation();
                 cdrModal.focus();
