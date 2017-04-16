@@ -1,0 +1,22 @@
+.cdr-link{
+    color: var(--anchor-color);
+    text-decoration: var(--anchor-decoration-active);
+    outline: var(--anchor-outline);
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited{
+      color: var(--anchor-color);
+      text-decoration: var(--anchor-decoration-active);
+    }
+    &:focus{
+      outline: var(--anchor-focus-outline);
+    }
+    &--standalone {
+      text-decoration: var(--anchor-decoration-passive);
+    }
+}
+
+
+
+
