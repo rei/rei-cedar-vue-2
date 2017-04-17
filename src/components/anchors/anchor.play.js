@@ -1,12 +1,24 @@
 import {play} from 'vue-play';
 import Anchor from './Anchor';
+import basicContrastAnchor from '../../examples/Anchor/BasicContrastAnchor';
+import basicOverlayAnchor from '../../examples/Anchor/BasicOverlayAnchor';
 
 
 play(Anchor)
-  .name( 'cdr-anchor' )
+  .name( 'cdr-a' )
   .displayName( 'Anchor' )
-  .add( 'cdr-link', '<cdr-anchor hypertextReference="#" className="cdr-link">Sample link</cdr-anchor>' )
-  .add( 'cdr-link--contrast', '<cdr-anchor hypertextReference="#" className="cdr-link cdr-link--contrast cdr-bg--dark-20">Sample overlay link</cdr-anchor>' )
-  .add( 'cdr-link--overlay', '<cdr-anchor hypertextReference="#" className="cdr-link cdr-link--overlay cdr-bg--dark-20">Sample overlay link</cdr-anchor>' )
-  .add( 'cdr-link--standalone', '<cdr-anchor hypertextReference="#" className="cdr-link cdr-link--standalone">Sample standalone link</cdr-anchor>' )
+  .add('default', {
+    template: `<cdr-a href="#example-a">Sample link</cdr-a>`,
+    readme: 'This is the default inline link for the REI theme. It is intended for Links that occur within body copy.'
+  })
+  .add( 'contrast', {
+    ...basicContrastAnchor,
+    template: `<cdr-a :modifierName="['contrast']" href="#example-a">Sample contrast link</cdr-a>`,
+    readme: 'This is the contrast variant of the inline link for the REI theme. Intended for non-editorial CTAs. Link examples: Sign-in, Footer'
+  })
+  .add( 'overlay', {
+    ...basicOverlayAnchor,
+    template: `<cdr-a :modifierName="['overlay']" href="#example-a">Sample contrast link</cdr-a>`
+  })
+  .add( 'standalone', `<cdr-a :modifierName="['standalone']" href="#example-a">Sample standalone link</cdr-a>` )
   ;

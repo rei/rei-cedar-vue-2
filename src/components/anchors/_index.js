@@ -1,5 +1,5 @@
-import cdrAnchor from './Anchor';
+import cdrA from './Anchor';
 
 export default {
-  cdrAnchor,
+  cdrA,
 };

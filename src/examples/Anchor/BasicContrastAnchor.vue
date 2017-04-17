@@ -1,0 +1,19 @@
+<template>
+  <div id="example-a" class="cdr-stretch cdr-bg--dark-20">
+    <cdr-a :modifierName="['contrast']" href="#example-a"> An example contrast link</cdr-a>
+  </div>
+</template>
+
+<script>
+  import cdrA from '../../components/anchors/Anchor';
+
+  export default {
+    name: 'basic-anchor-example',
+    components: { cdrA },
+  };
+</script>
+<style scoped>
+  .cdr-stretch {
+    padding: 20px;
+  }
+</style>

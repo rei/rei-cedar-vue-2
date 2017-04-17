@@ -1,37 +1,38 @@
-.cdr-link{
-    background-color: var(--anchor-background-color);
+.cdr-link {
+  background-color: var(--anchor-background-color);
+  color: var(--anchor-color);
+  text-decoration: var(--anchor-decoration-active);
+  outline: var(--anchor-outline);
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
     color: var(--anchor-color);
     text-decoration: var(--anchor-decoration-active);
-    outline: var(--anchor-outline);
-    &:hover,
-    &:active,
-    &:focus,
-    &:visited{
-      color: var(--anchor-color);
-      text-decoration: var(--anchor-decoration-active);
-    }
-    &:focus{
-      outline: var(--anchor-focus-outline);
-    }
-    &--contrast,
-    &--contrast:hover,
-    &--contrast:active,
-    &--contrast:focus,
-    &--contrast:visited {
-      color: var(--anchor-color-contrast);
-    }
-    &--overlay,
-    &--overlay:hover,
-    &--overlay:active,
-    &--overlay:focus,
-    &--overlay:visited {
-      color: var(--anchor-color-overlay);
-    }
-    &--standalone {
-      text-decoration: var(--anchor-decoration-passive);
-    }
+  }
+
+  &:focus {
+    outline: var(--anchor-focus-outline);
+  }
+
+  &--contrast,
+  &--contrast:hover,
+  &--contrast:active,
+  &--contrast:focus,
+  &--contrast:visited {
+    color: var(--anchor-color-contrast);
+  }
+
+  &--overlay,
+  &--overlay:hover,
+  &--overlay:active,
+  &--overlay:focus,
+  &--overlay:visited {
+    color: var(--anchor-color-overlay);
+  }
+
+  &--standalone {
+    text-decoration: var(--anchor-decoration-passive);
+  }
 }
-
-
-
-

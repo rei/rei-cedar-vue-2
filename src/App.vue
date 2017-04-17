@@ -15,24 +15,24 @@
     <test data-backstop="test"></test>
 
     <cdr-card className="cdr-card">
-      <cdr-anchor data-backstop="cdr-link" hypertextReference="#" className="cdr-link">
+      <cdr-a data-backstop="cdr-link">
           An example link
-      </cdr-anchor>
+      </cdr-a>
     </cdr-card>
     <cdr-card className="cdr-card cdr-bg--dark-20">
-      <cdr-anchor data-backstop="cdr-link" hypertextReference="#" className="cdr-link cdr-link--contrast">
+      <cdr-a data-backstop="cdr-link--contrast" :modifierName="['contrast']">
           An example contrast link
-      </cdr-anchor>
+      </cdr-a>
     </cdr-card>
     <cdr-card className="cdr-card cdr-bg--dark-20">
-      <cdr-anchor data-backstop="cdr-link--standalone" hypertextReference="#" className="cdr-link cdr-link--overlay">
+      <cdr-a data-backstop="cdr-link--overlay" :modifierName="['overlay']">
           An example overlay link
-      </cdr-anchor>
+      </cdr-a>
     </cdr-card>
     <cdr-card className="cdr-card">
-      <cdr-anchor data-backstop="cdr-link--standalone" hypertextReference="#" className="cdr-link cdr-link--standalone">
+      <cdr-a data-backstop="cdr-link--standalone"  :modifierName="['standalone']">
           An example standalone link
-      </cdr-anchor>
+      </cdr-a>
     </cdr-card>
 
     <cdr-card className="cdr-card">

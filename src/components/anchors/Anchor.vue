@@ -1,25 +1,28 @@
 <template>
-  <a :href="hypertextReference" :class="className">
+  <a class="cdr-link" :class="modifiers">
     <slot></slot>
   </a>
 </template>
 
 <script>
   export default {
-    name: 'cdr-anchor',
+    name: 'cdr-a',
     props: {
-      hypertextReference: {
-        type: String,
-        required: true,
+      modifierName: {
+        required: false,
+        default: [],
       },
-      className: {
-        type: String,
-        required: true,
+    },
+    computed: {
+      modifiers() {
+        let final = '';
+        this.modifierName.forEach((mod) => {
+          final += `cdr-link--${mod}`;
+        });
+
+        return final;
       },
     },
   };
 </script>
-
-<style>
-</style>
 

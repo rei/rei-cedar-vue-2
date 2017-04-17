@@ -2,6 +2,8 @@ module.exports = [ {
   label: 'Anchor',
   selectors: [
     "[data-backstop='cdr-link']",
+    "[data-backstop='cdr-link--contrast']",
+    "[data-backstop='cdr-link--overlay']",
     "[data-backstop='cdr-link--standalone']",
   ],
   readyEvent: null,
