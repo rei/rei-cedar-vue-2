@@ -12,7 +12,7 @@ module.exports = {
       .url(devServer)
       .waitForElementVisible('#app', 5000)
       .assert.elementPresent('.karma-test')
-      .assert.containsText('h1', 'Testing 1 2 3')
+      .assert.containsText('.test-head', 'Testing 1 2 3')
       .end();
   },
 };
