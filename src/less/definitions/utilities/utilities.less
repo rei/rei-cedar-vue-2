@@ -270,132 +270,159 @@
          .utility-position( @align-contents );
      }
  }
- /* Application Classes */
- .ratio {
-     &-square {
-         .utility-aspect-ratio( 1 );
-         &.content {
-             &-top {
-                 .utility-aspect-ratio( 1, top );
-             }
-             &-center {
-                 .utility-aspect-ratio( 1, center );
-             }
-             &-bottom {
-                 .utility-aspect-ratio( 1, bottom );
-             }
-         }
-     }
-     &-2-3 {
-         .utility-aspect-ratio( 2/3 );
-         &.content {
-             &-top {
-                 .utility-aspect-ratio( 2/3, top );
-             }
-             &-center {
-                 .utility-aspect-ratio( 2/3, center );
-             }
-             &-bottom {
-                 .utility-aspect-ratio( 2/3, bottom );
-             }
-         }
-     }
-     &-3-2 {
-         .utility-aspect-ratio( 3/2 );
-         &.content {
-             &-top {
-                 .utility-aspect-ratio( 3/2, top );
-             }
-             &-center {
-                 .utility-aspect-ratio( 3/2, center );
-             }
-             &-bottom {
-                 .utility-aspect-ratio( 3/2, bottom );
-             }
-         }
-     }
-     &-1-2 {
-         .utility-aspect-ratio( 1/2 );
-         &.content {
-             &-top {
-                 .utility-aspect-ratio( 1/2, top );
-             }
-             &-center {
-                 .utility-aspect-ratio( 1/2, center );
-             }
-             &-bottom {
-                 .utility-aspect-ratio( 1/2, bottom );
-             }
-         }
-     }
-     &-2-1 {
-         .utility-aspect-ratio( 2 );
-         &.content {
-             &-top {
-                 .utility-aspect-ratio( 2, top );
-             }
-             &-center {
-                 .utility-aspect-ratio( 2, center );
-             }
-             &-bottom {
-                 .utility-aspect-ratio( 2, bottom );
-             }
-         }
-     }
-     &-3-4 {
-         .utility-aspect-ratio( 3/4 );
-         &.content {
-             &-top {
-                 .utility-aspect-ratio( 3/4, top );
-             }
-             &-center {
-                 .utility-aspect-ratio( 3/4, center );
-             }
-             &-bottom {
-                 .utility-aspect-ratio( 3/4, bottom );
-             }
-         }
-     }
-     &-4-3 {
-         .utility-aspect-ratio( 4/3 );
-         &.content {
-             &-top {
-                 .utility-aspect-ratio( 4/3, top );
-             }
-             &-center {
-                 .utility-aspect-ratio( 4/3, center );
-             }
-             &-bottom {
-                 .utility-aspect-ratio( 4/3, bottom );
-             }
-         }
-     }
-     &-9-16 {
-         .utility-aspect-ratio( 9/16 );
-         &.content {
-             &-top {
-                 .utility-aspect-ratio( 9/16, top );
-             }
-             &-center {
-                 .utility-aspect-ratio( 9/16, center );
-             }
-             &-bottom {
-                 .utility-aspect-ratio( 9/16, bottom );
-             }
-         }
-     }
-     &-16-9 {
-         .utility-aspect-ratio( 16/9 );
-         &.content {
-             &-top {
-                 .utility-aspect-ratio( 16/9, top );
-             }
-             &-center {
-                 .utility-aspect-ratio( 16/9, center );
-             }
-             &-bottom {
-                 .utility-aspect-ratio( 16/9, bottom );
-             }
-         }
-     }
- }
+
+@ratio-rules: {
+    &-square {
+        .utility-aspect-ratio( 1 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 1, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 1, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 1, bottom );
+            }
+        }
+    }
+    &-1-2 {
+        .utility-aspect-ratio( 1/2 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 1/2, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 1/2, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 1/2, bottom );
+            }
+        }
+    }
+    &-2-1 {
+        .utility-aspect-ratio( 2 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 2, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 2, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 2, bottom );
+            }
+        }
+    }
+    &-2-3 {
+        .utility-aspect-ratio( 2/3 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 2/3, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 2/3, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 2/3, bottom );
+            }
+        }
+    }
+    &-3-2 {
+        .utility-aspect-ratio( 3/2 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 3/2, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 3/2, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 3/2, bottom );
+            }
+        }
+    }
+    &-3-4 {
+        .utility-aspect-ratio( 3/4 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 3/4, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 3/4, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 3/4, bottom );
+            }
+        }
+    }
+    &-4-3 {
+        .utility-aspect-ratio( 4/3 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 4/3, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 4/3, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 4/3, bottom );
+            }
+        }
+    }
+    &-9-16 {
+        .utility-aspect-ratio( 9/16 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 9/16, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 9/16, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 9/16, bottom );
+            }
+        }
+    }
+    &-16-9 {
+        .utility-aspect-ratio( 16/9 );
+        &.content {
+            &-top {
+                .utility-aspect-ratio( 16/9, top );
+            }
+            &-center {
+                .utility-aspect-ratio( 16/9, center );
+            }
+            &-bottom {
+                .utility-aspect-ratio( 16/9, bottom );
+            }
+        }
+    }
+};
+
+  /* Application Classes */
+.ratio {
+
+  &,
+  &-xs {
+     @ratio-rules( );
+  }
+
+  &-sm {
+    @media ( min-width: @screen-sm-min ) {
+      @ratio-rules( );
+    }
+  }
+
+  &-md {
+    @media ( min-width: @screen-md-min ) {
+      @ratio-rules( );
+    }
+  }
+
+  &-lg {
+    @media ( min-width: @screen-lg-min ) {
+      @ratio-rules( );
+    }
+  }
+}
