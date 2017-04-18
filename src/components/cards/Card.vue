@@ -1,12 +1,18 @@
 <template>
-  <div class="cdr-card">
+  <section :class="className">
     <slot></slot>
-  </div>
+  </section>
 </template>
 
 <script>
   export default {
     name: 'cdr-card',
+    props: {
+      className: {
+        type: String,
+        required: true,
+      },
+    },
   };
 </script>
 
