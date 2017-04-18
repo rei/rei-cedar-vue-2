@@ -5,6 +5,20 @@ module.exports = {
     preview: 'play/preview.js'
   },
   dist: 'dist-play',
+  webpack: {
+    module: {
+      rules: [
+        {
+          test: /\.postcss$/,
+          use: [
+            'style-loader',
+            'css-loader?importLoaders=1',
+            'postcss-loader?parser=postcss-scss'
+          ]
+        }
+      ]
+    }
+  },
   port: 5000,
   // compile Vue template
   templateCompiler: true,
@@ -13,7 +27,7 @@ module.exports = {
   vendor: false,
   html: [{
     chunks: ['app'],
-    filename: 'index.html'
+    filename: 'index.html',
   }, {
     chunks: ['preview'],
     filename: 'preview.html'
