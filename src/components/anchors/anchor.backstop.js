@@ -1,4 +1,4 @@
-module.exports = [ {
+module.exports = [{
   label: 'Anchor',
   selectors: [
     "[data-backstop='cdr-link']",
@@ -9,5 +9,5 @@ module.exports = [ {
   readyEvent: null,
   delay: 500,
   misMatchThreshold: 0.1,
-  onReadyScripts: [ false, 'hover.js' ],
-}, ];
+  onReadyScripts: [false, 'hover.js'],
+}];

@@ -13,7 +13,7 @@
         required: true,
       },
     },
-  };
+};
 </script>
 
 <style>

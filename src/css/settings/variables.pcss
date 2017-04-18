@@ -17,6 +17,9 @@
     font-family: "Plak Black Condensed", var(--font-family-sans-serif);
     font-weight: normal !important;
   }
+
+  /* Font size */
+  --font-size-default: 1.6rem;
 }
 
 /* Color */
@@ -30,10 +33,53 @@
 
 /* Buttons */
 :root {
-  --btn-color: var(--color-architectural-1);
   --btn-bgcolor: var(--color-core);
-  --btn-border: 1px solid var(--color-core);
-  --btn-padding: 6px;
+  --btn-bgcolor-hover: #83c4ff;
+  --btn-bgcolor-disabled: var(--color-architectural-5);
+  --btn-bgcolor-secondary: var(--color-architectural-5);
+  --btn-bgcolor-secondary-hover: var(--color-background-1);
+  --btn-bgcolor-blackAlternate: var(--color-architectural-1);
+  --btn-bgcolor-blackAlternate-hover: var(--color-architectural-2);
+  --btn-bgcolor-whiteAlternate: var(--color-architectural-5);
+  --btn-bgcolor-whiteAlternate-hover: var(--color-background-1);
+  --btn-border-width: 0.2rem;
+  --btn-border-style: solid;
+  --btn-border: {
+       border: var(--btn-border-width) var(--btn-border-style) var(--color-core);
+  }
+  --btn-border-secondary: var(--color-architectural-1);
+  --btn-border-blackAlternate: var(--color-architectural-1);
+  --btn-border-whiteAlternate: var(--color-architectural-5);
+  --btn-border-disabled: var(--color-architectural-4);
+  --btn-border-link: none;
+  --btn-color: var(--color-architectural-1);
+  --btn-color-blackAlternate: var(--color-architectural-5);
+  --btn-color-disabled: var(--color-architectural-4);
+  --btn-cursor: pointer;
+  --btn-font-size : 2.1rem;
+  --btn-font-size-small : 1.8rem;
+  --btn-font-size-extra-small : var(--font-paragraph-font-size);
+  --btn-font-weight: var(--font-headline-font-weight);
+  --btn-large-line-height: 1;
+  --btn-small-line-height: 1.5;
+  --btn-padding-large: 1.3rem 3.2rem;
+  --btn-padding-small: 0.6rem 2.4rem;
+  --btn-padding-extra-small: 0.3rem 1.6rem;
+  --btn-padding-link: 0;
+  --btn-group-children: {
+    width: 100%;
+    display: block;
+    margin: 0 0 2rem 0;
+
+    @media (--medium) {
+      width: auto;
+      display: inline;
+      margin: 0 0 2rem 1.6rem;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }
 
 /* Anchors */
@@ -50,6 +96,6 @@
 
 /* Cards */
 :root {
-  --card-padding: 8px;
-  --card-border: 1px solid lightgray;
+  --card-padding: 0.8rem;
+  --card-border: 0.1rem solid lightgray;
 }
