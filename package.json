@@ -97,6 +97,7 @@
     "stylelint-config-standard": "^16.0.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.7.0",
+    "tenon-node": "^0.4.0",
     "url-loader": "^0.5.7",
     "vbuild": "^6.24.14",
     "vue-loader": "^11.3.4",
