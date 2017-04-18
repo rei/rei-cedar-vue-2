@@ -1,6 +1,6 @@
 <template>
   <div id="example-a" class="cdr-stretch cdr-bg--dark-20">
-    <cdr-a :modifierName="['contrast']" href="#example-a"> An example contrast link</cdr-a>
+    <cdr-a :modifier="['contrast']" href="#example-a"> An example contrast link</cdr-a>
   </div>
 </template>
 

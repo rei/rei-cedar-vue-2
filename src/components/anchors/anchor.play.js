@@ -13,12 +13,12 @@ play(Anchor)
   })
   .add( 'contrast', {
     ...basicContrastAnchor,
-    template: `<cdr-a :modifierName="['contrast']" href="#example-a">Sample contrast link</cdr-a>`,
+    template: `<cdr-a :modifier="['contrast']" href="#example-a">Sample contrast link</cdr-a>`,
     readme: 'This is the contrast variant of the inline link for the REI theme. Intended for non-editorial CTAs. Link examples: Sign-in, Footer'
   })
   .add( 'overlay', {
     ...basicOverlayAnchor,
-    template: `<cdr-a :modifierName="['overlay']" href="#example-a">Sample contrast link</cdr-a>`
+    template: `<cdr-a :modifier="['overlay']" href="#example-a">Sample contrast link</cdr-a>`
   })
-  .add( 'standalone', `<cdr-a :modifierName="['standalone']" href="#example-a">Sample standalone link</cdr-a>` )
+  .add( 'standalone', `<cdr-a :modifier="['standalone']" href="#example-a">Sample standalone link</cdr-a>` )
   ;

@@ -1,5 +1,5 @@
 <template>
-  <a class="cdr-link" :class="modifiers">
+  <a class="cdr-link" :class="modifierClass">
     <slot></slot>
   </a>
 </template>
@@ -8,15 +8,15 @@
   export default {
     name: 'cdr-a',
     props: {
-      modifierName: {
+      modifier: {
         required: false,
         default: [],
       },
     },
     computed: {
-      modifiers() {
+      modifierClass() {
         let final = '';
-        this.modifierName.forEach((mod) => {
+        this.modifier.forEach((mod) => {
           final += `cdr-link--${mod}`;
         });
 

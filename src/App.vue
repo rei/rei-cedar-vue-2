@@ -20,17 +20,17 @@
       </cdr-a>
     </cdr-card>
     <cdr-card className="cdr-card cdr-bg--dark-20">
-      <cdr-a data-backstop="cdr-link--contrast" :modifierName="['contrast']">
+      <cdr-a data-backstop="cdr-link--contrast" :modifier="['contrast']">
           An example contrast link
       </cdr-a>
     </cdr-card>
     <cdr-card className="cdr-card cdr-bg--dark-20">
-      <cdr-a data-backstop="cdr-link--overlay" :modifierName="['overlay']">
+      <cdr-a data-backstop="cdr-link--overlay" :modifier="['overlay']">
           An example overlay link
       </cdr-a>
     </cdr-card>
     <cdr-card className="cdr-card">
-      <cdr-a data-backstop="cdr-link--standalone"  :modifierName="['standalone']">
+      <cdr-a data-backstop="cdr-link--standalone"  :modifier="['standalone']">
           An example standalone link
       </cdr-a>
     </cdr-card>
