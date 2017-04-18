@@ -10,7 +10,7 @@
     props: {
       modifier: {
         required: false,
-        default: [],
+        default: () => [],
       },
     },
     computed: {
