@@ -1,9 +1,8 @@
 language: node_js
 node_js:
   - '6'
-  - '7'
-install: 
-  - yarn
+before_script:
+  - npm run test
 script: 
   - npm run release
 notifications:
