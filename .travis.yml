@@ -5,7 +5,6 @@ env:
   - NODE_VERSION=6.10.2
 install:
   - nvm install $NODE_VERSION
-  - yarn install
 before_script:
   - npm run test
 script: 
