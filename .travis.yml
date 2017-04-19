@@ -18,7 +18,6 @@ before_install:
 before_script:
   - npm run test
 script: 
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then jdk_switcher use oraclejdk8; fi
   - npm run release
 notifications:
   slack:
