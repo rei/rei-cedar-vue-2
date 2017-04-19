@@ -15,16 +15,16 @@
     <test data-backstop="test"></test>
 
     <cdr-card className="cdr-card">
-      <cdr-a data-backstop="cdr-link" href="#">An example link</cdr-a>
+      <cdr-a data-backstop="cdr-link" href="https://www.google.com/">An example link</cdr-a>
     </cdr-card>
     <cdr-card className="cdr-card cdr-bg--dark-20">
-      <cdr-a data-backstop="cdr-link--contrast" href="#" :modifier="['contrast']">An example contrast link</cdr-a>
+      <cdr-a data-backstop="cdr-link--contrast" href="https://www.google.com/" :modifier="['contrast']">An example contrast link</cdr-a>
     </cdr-card>
     <cdr-card className="cdr-card cdr-bg--dark-20">
-      <cdr-a data-backstop="cdr-link--overlay" href="#" :modifier="['overlay']">An example overlay link</cdr-a>
+      <cdr-a data-backstop="cdr-link--overlay" href="https://www.google.com/" :modifier="['overlay']">An example overlay link</cdr-a>
     </cdr-card>
     <cdr-card className="cdr-card">
-      <cdr-a data-backstop="cdr-link--standalone" href="#" :modifier="['standalone']">An example standalone link</cdr-a>
+      <cdr-a data-backstop="cdr-link--standalone" href="https://www.google.com/" :modifier="['standalone']">An example standalone link</cdr-a>
     </cdr-card>
 
     <cdr-card className="cdr-card">
