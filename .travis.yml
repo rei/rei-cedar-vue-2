@@ -1,3 +1,5 @@
+dist: trusty
+sudo: required
 language: java
 jdk:
   - oraclejdk8
@@ -6,7 +8,8 @@ env:
 install:
   - nvm install $NODE_VERSION
 before_script:
-  - node --version
+  - nvm -version
+  - node -version
   - npm run test
 script: 
   - npm run release
