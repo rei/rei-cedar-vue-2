@@ -6,7 +6,7 @@ env:
 install:
   - nvm install $NODE_VERSION
 before_script:
-  - node -version
+  - node --version
   - npm run test
 script: 
   - npm run release
