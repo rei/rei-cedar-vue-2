@@ -15,7 +15,14 @@ module.exports = {
             'css-loader?importLoaders=1',
             'postcss-loader?parser=postcss-scss'
           ]
-        }
+        },
+        {
+          test: /\.md$/,
+          use: [
+            'html-loader',
+            'markdown-loader',
+          ]
+        },
       ]
     }
   },
