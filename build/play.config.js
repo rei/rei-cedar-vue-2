@@ -32,6 +32,7 @@ module.exports = {
   hmrEntry: ['preview'],
   // no code split for 3rd party libraries
   vendor: false,
+  copy: false,
   html: [{
     chunks: ['app'],
     filename: 'index.html',

@@ -3,6 +3,19 @@
   --outline: none;
   --focus-outline: thin dotted;
   --background-color: inherit;
+
+  /* Fonts */
+  --fallback-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-sans-serif: "Roboto", var(--fallback-sans-serif);
+  --font-primary: {
+    font-family: "HCo Sentinel", var(--font-family-sans-serif);
+  }
+  --font-secondary: {
+    font-family: "Roboto Condensed", var(--font-family-sans-serif);
+  }
+  --font-tertiary: {
+    font-family: "Plak Black Condensed", var(--font-family-sans-serif);
+  }
 }
 
 /* Color */
@@ -22,7 +35,7 @@
   --btn-padding: 6px;
 }
 
-/*Anchors */
+/* Anchors */
 :root {
   --anchor-background-color: var(--background-color);
   --anchor-color: var(--color-core-contrast);
