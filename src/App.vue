@@ -27,28 +27,28 @@
       <cdr-a data-backstop="cdr-link--standalone" href="https://www.google.com/" :modifier="['standalone']">An example standalone link</cdr-a>
     </cdr-card>
 
-    <cdr-card className="cdr-card">      
+    <cdr-card className="cdr-card">
       <cdr-button disabled data-backstop="cdr-button disabled">Disabled</cdr-button>
     </cdr-card>
     <cdr-card className="cdr-card">
       <cdr-button data-backstop="cdr-button">Primary large</cdr-button>
       <cdr-button data-backstop="cdr-button--small" :modifier="['small']">Primary small</cdr-button>
-      <cdr-button  data-backstop="cdr-button--extraSmall" :modifier="['extraSmall']">Primary extra small</cdr-button>
+      <cdr-button  data-backstop="cdr-button--extra-small" :modifier="['extra-small']">Primary extra small</cdr-button>
     </cdr-card>
     <cdr-card className="cdr-card">
       <cdr-button data-backstop="cdr-button--secondary" :type="['submit']" :modifier="['secondary']">Secondary large</cdr-button>
       <cdr-button data-backstop="cdr-button--secondary--small" :modifier="['secondary', 'small']">Secondary small</cdr-button>
-      <cdr-button  data-backstop="cdr-button--secondary--extraSmall" :modifier="['secondary', 'extraSmall']">Secondary extra small</cdr-button>
+      <cdr-button  data-backstop="cdr-button--secondary--extra-small" :modifier="['secondary', 'extra-small']">Secondary extra small</cdr-button>
     </cdr-card>
     <cdr-card className="cdr-card">
-      <cdr-button data-backstop="cdr-button--blackAlternate" :modifier="['blackAlternate']">Black alternate large</cdr-button>
-      <cdr-button data-backstop="cdr-button--blackAlternate--small" :modifier="['blackAlternate', 'small']">Black alternate small</cdr-button>
-      <cdr-button data-backstop="cdr-button--blackAlternate--extraSmall" :modifier="['blackAlternate', 'extraSmall']">Black alternate extra small</cdr-button>
+      <cdr-button data-backstop="cdr-button--alternate" :modifier="['alternate']">Black alternate large</cdr-button>
+      <cdr-button data-backstop="cdr-button--alternate--small" :modifier="['alternate', 'small']">Black alternate small</cdr-button>
+      <cdr-button data-backstop="cdr-button--alternate--extra-small" :modifier="['alternate', 'extra-small']">Black alternate extra small</cdr-button>
     </cdr-card>
     <cdr-card className="cdr-card cdr-bg--dark-20">
-      <cdr-button data-backstop="cdr-button--whiteAlternate" :modifier="['whiteAlternate']">White alternate large</cdr-button>
-      <cdr-button data-backstop="cdr-button--whiteAlternate--small" :modifier="['whiteAlternate', 'small']">White alternate small</cdr-button>
-      <cdr-button data-backstop="cdr-button--whiteAlternate--extraSmall" :modifier="['whiteAlternate', 'extraSmall']">White alternate extra small</cdr-button>
+      <cdr-button data-backstop="cdr-button--secondary-alternate" :modifier="['secondary-alternate']">White alternate large</cdr-button>
+      <cdr-button data-backstop="cdr-button--secondary-alternate--small" :modifier="['secondary-alternate', 'small']">White alternate small</cdr-button>
+      <cdr-button data-backstop="cdr-button--secondary-alternate--extra-small" :modifier="['secondary-alternate', 'extra-small']">White alternate extra small</cdr-button>
     </cdr-card>
     <cdr-card className="cdr-card cdr-btnGroup">
       <cdr-button data-backstop="cdr-btnGroup cdr-button">Primary large</cdr-button>

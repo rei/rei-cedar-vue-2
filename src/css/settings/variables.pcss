@@ -17,6 +17,46 @@
     font-family: "Plak Black Condensed", var(--font-family-sans-serif);
     font-weight: normal !important;
   }
+
+  /* size */
+
+  /* Line Height */
+  --line-height-closed: 1;
+  --line-height-neutral: 1.5;
+  --line-height-open: 2;
+
+  /* color */
+  --text-color: var(--color-architectural-2);
+  --text-muted: var(--color-architectural-3);
+  --text-disabled: var(--color-architectural-4);
+  --text-contrast: var(--color-architectural-5);
+  --headings-color: inherit;
+
+  /* action size and space */
+  --action-type-and-size: {
+    font-size: 2.1rem;
+    font-weight: 700;
+    padding: 1.3rem 3.2rem;
+    line-height: var(--line-height-closed);
+
+    @apply --font-secondary;
+  }
+  --action-type-and-size-small: {
+    font-size: 1.8rem;
+    font-weight: var(--font-headline-font-weight);
+    line-height: var(--line-height-neutral);
+    padding: 0.6rem 2.4rem;
+
+    @apply --font-secondary;
+  }
+  --action-type-and-size-extra-small: {
+    font-size: var(--font-paragraph-font-size);
+    font-weight: var(--font-headline-font-weight);
+    line-height: var(--line-height-neutral);
+    padding: 0.3rem 1.6rem;
+
+    @apply --font-secondary;
+  }
 }
 
 /* Color */
@@ -30,50 +70,70 @@
 
 /* Buttons */
 :root {
-  --btn-bgcolor: var(--color-core);
-  --btn-bgcolor-hover: #83c4ff;
-  --btn-bgcolor-disabled: var(--color-architectural-5);
-  --btn-bgcolor-secondary: var(--color-architectural-5);
-  --btn-bgcolor-secondary-hover: var(--color-background-1);
-  --btn-bgcolor-blackAlternate: var(--color-architectural-1);
-  --btn-bgcolor-blackAlternate-hover: var(--color-architectural-2);
-  --btn-bgcolor-whiteAlternate: var(--color-architectural-5);
-  --btn-bgcolor-whiteAlternate-hover: var(--color-background-1);
-  --btn-border-width: 0.2rem;
-  --btn-border-style: solid;
-  --btn-border: {
-       border: var(--btn-border-width) var(--btn-border-style) var(--color-core);
-  }
-  --btn-border-secondary: var(--color-architectural-1);
-  --btn-border-blackAlternate: var(--color-architectural-1);
-  --btn-border-whiteAlternate: var(--color-architectural-5);
-  --btn-border-disabled: var(--color-architectural-4);
-  --btn-color: var(--color-architectural-1);
-  --btn-color-blackAlternate: var(--color-architectural-5);
-  --btn-color-disabled: var(--color-architectural-4);
-  --btn-cursor: pointer;
-  --btn-font-size : 2.1rem;
-  --btn-font-size-small : 1.8rem;
-  --btn-font-size-extra-small : var(--font-paragraph-font-size);
-  --btn-font-weight: var(--font-headline-font-weight);
-  --btn-large-line-height: 1;
-  --btn-small-line-height: 1.5;
-  --btn-padding-large: 1.3rem 3.2rem;
-  --btn-padding-small: 0.6rem 2.4rem;
-  --btn-padding-extra-small: 0.3rem 1.6rem;
-  --btn-group-children: {
-    width: 100%;
-    display: block;
-    margin: 0 0 2rem 0;
+  /* button themes */
 
-    @media (--medium) {
-      width: auto;
-      display: inline;
-      margin: 0 0 2rem 1.6rem;
+  --button-theme: {
+    background-color: var(--color-core);
+    border-color: var(--color-core);
+    color: var(--text-color);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #83c4ff;
+      border-color: #83c4ff;
     }
-    &:first-child {
-      margin-left: 0;
+  }
+  --button-secondary-theme: {
+    background-color: var(--color-architectural-5);
+    border-color: var(--color-architectural-1);
+    color: var(--text-color);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: var(--color-background-1);
+      border-color: var(--color-architectural-1);
     }
+  }
+  --button-alternate-theme: {
+    background-color: var(--color-architectural-1);
+    border-color: var(--color-architectural-1);
+    color: var(--text-contrast);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: var(--color-architectural-2);
+      border-color: var(--color-architectural-2);
+    }
+  }
+  --button-secondary-alternate-theme: {
+    background-color: var(--color-architectural-5);
+    border-color: var(--color-architectural-5);
+    color: var(--text-color);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: var(--color-background-1);
+      border-color: var(--color-architectural-5);
+    }
+  }
+
+  /* button size */
+
+  --btn-border-width: 0.1rem;
+  --btn-border-style: solid;
+  --btn-cursor: pointer;
+
+
+  /* button states */
+
+  --button-button-disabled-theme: {
+    background-color: var(--color-architectural-5);
+    border-color: var(--color-architectural-4);
+    color: var(--text-disabled);
   }
 }
 

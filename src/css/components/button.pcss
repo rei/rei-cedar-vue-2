@@ -1,74 +1,54 @@
 .cdr-btnGroup * {
-  @apply --btn-group-children;
-}
-  
-.cdr-button {
-  background-color: var(--btn-bgcolor);
-  @apply --btn-border;
-  color: var(--btn-color);
-  cursor: var(--btn-cursor);
-  @apply --font-secondary;
-  font-size: var(--btn-font-size);
-  font-weight: var(--btn-font-weight);
-  line-height: var(--btn-large-line-height);  
-  padding: var(--btn-padding-large);
+  width: 100%;
+  display: block;
+  margin-bottom: 2rem;
 
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: var(--btn-bgcolor-hover);
+  &:first-child {
+    margin-left: 0;
   }
 
-  &[disabled] {
-    background-color: var(--btn-bgcolor-disabled);
-    border-color: var(--btn-border-disabled);
-    color: var(--btn-color-disabled);
+  @media (--medium) {
+    width: auto;
+    display: inline;
+    margin: 0 0 2rem 1.6rem;
+  }
+}
+
+.cdr-button {
+  border-width: var(--btn-border-width);
+  border-style: var(--btn-border-style);
+  cursor: var(--btn-cursor);
+
+  @apply --button-theme;
+  @apply --action-type-and-size;
+
+  /* button themes */
+
+  &--alternate {
+    @apply --button-alternate-theme;
   }
 
   &--secondary {
-    background-color: var(--btn-bgcolor-secondary);
-    border-color: var(--btn-border-secondary);
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: var(--btn-bgcolor-secondary-hover);
-    }
+    @apply --button-secondary-theme;
   }
 
-  &--blackAlternate {
-    background-color: var(--btn-bgcolor-blackAlternate);
-    border-color: var(--btn-border-blackAlternate);
-    color: var(--btn-color-blackAlternate);
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: var(--btn-bgcolor-blackAlternate-hover);
-    }
+  &--secondary-alternate {
+    @apply --button-secondary-alternate-theme;
   }
 
-  &--whiteAlternate {
-    background-color: var(--btn-bgcolor-whiteAlternate);
-    border-color: var(--btn-border-whiteAlternate);
-    color: var(--btn-color);
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: var(--btn-bgcolor-whiteAlternate-hover);
-    }
-  }
+  /* button sizes */
 
   &--small {
-    font-size: var(--btn-font-size-small);
-    line-height: var(--btn-small-line-height);
-    padding: var(--btn-padding-small);
+    @apply --action-type-and-size-small;
   }
 
-  &--extraSmall {
-    font-size: var(--btn-font-size-extra-small);
-    line-height: var(--btn-small-line-height);
-    padding: var(--btn-padding-extra-small);
+  &--extra-small {
+    @apply --action-type-and-size-extra-small;
+  }
+
+  /* button states */
+
+  &[disabled] {
+    @apply --button-disabled-theme;
   }
 }
