@@ -17,6 +17,8 @@ module.exports = [
       "[data-backstop='cdr-button--whiteAlternate--extraSmall']",
       "[data-backstop='cdr-btnGroup cdr-button']",
       "[data-backstop='cdr-btnGroup cdr-button--secondary']",
+      "[data-backstop='cdr-button--link']",
+      "[data-backstop='cdr-button--link-standalone']",
     ],
     readyEvent: null,
     delay: 500,

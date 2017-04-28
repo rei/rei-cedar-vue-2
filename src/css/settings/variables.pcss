@@ -1,152 +1,70 @@
-/* Globals */
 :root {
   --outline: none;
   --focus-outline: thin dotted;
-  --background-color: inherit;
-
-  /* Fonts */
-  --fallback-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-sans-serif: "Roboto", var(--fallback-sans-serif);
-  --font-primary: {
-    font-family: "HCo Sentinel", var(--font-family-sans-serif);
-  }
-  --font-secondary: {
-    font-family: "Roboto Condensed", var(--font-family-sans-serif);
-  }
-  --font-tertiary: {
-    font-family: "Plak Black Condensed", var(--font-family-sans-serif);
-    font-weight: normal !important;
-  }
-
-  /* size */
-
-  /* Line Height */
-  --line-height-closed: 1;
-  --line-height-neutral: 1.5;
-  --line-height-open: 2;
-
-  /* color */
-  --text-color: var(--color-architectural-2);
-  --text-muted: var(--color-architectural-3);
-  --text-disabled: var(--color-architectural-4);
-  --text-contrast: var(--color-architectural-5);
-  --headings-color: inherit;
-
-  /* action size and space */
-  --action-type-and-size: {
-    font-size: 2.1rem;
-    font-weight: 700;
-    padding: 1.3rem 3.2rem;
-    line-height: var(--line-height-closed);
-
-    @apply --font-secondary;
-  }
-  --action-type-and-size-small: {
-    font-size: 1.8rem;
-    font-weight: var(--font-headline-font-weight);
-    line-height: var(--line-height-neutral);
-    padding: 0.6rem 2.4rem;
-
-    @apply --font-secondary;
-  }
-  --action-type-and-size-extra-small: {
-    font-size: var(--font-paragraph-font-size);
-    font-weight: var(--font-headline-font-weight);
-    line-height: var(--line-height-neutral);
-    padding: 0.3rem 1.6rem;
-
-    @apply --font-secondary;
-  }
 }
 
-/* Color */
+/* ELEMENTS */
+
+/* Anchors */
 :root {
-  --light-10: var(--color-architectural-5);
-  --light-30: var(--color-architectural-6);
-  --medium-10: var(--color-architectural-3);
-  --dark-10: var(--color-architectural-2);
-  --dark-20: var(--color-architectural-1);
+  --link-theme: { @apply --action-transparent-theme; }
+  --link-type: { @apply --action-link-type; }
+  --link-standalone-type: { @apply --action-link-standalone-type; }
+
+  --link-background-color: var(--background-color);
+  --link-color: var(--color-core-contrast);
+  --link-color-contrast: var(--color-core);
+  --link-color-overlay: var(--color-architectural-5);
+  --link-decoration-passive: none;
+  --link-decoration-active: underline;
+  --link-outline: var(--outline);
+  --link-focus-outline: var(--focus-outline);
 }
 
 /* Buttons */
 :root {
   /* button themes */
-
-  --button-theme: {
-    background-color: var(--color-core);
-    border-color: var(--color-core);
-    color: var(--text-color);
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: #83c4ff;
-      border-color: #83c4ff;
-    }
-  }
+  --button-theme: { @apply --action-core-theme; }
   --button-secondary-theme: {
-    background-color: var(--color-architectural-5);
-    border-color: var(--color-architectural-1);
-    color: var(--text-color);
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: var(--color-background-1);
-      border-color: var(--color-architectural-1);
-    }
+    @apply --action-light-10-theme;
+    @apply --action-light-10-alternate-theme;
   }
-  --button-alternate-theme: {
-    background-color: var(--color-architectural-1);
-    border-color: var(--color-architectural-1);
-    color: var(--text-contrast);
+  --button-alternate-theme: { @apply --action-dark-10-theme; }
+  --button-secondary-alternate-theme: { @apply --action-light-10-theme; }
+  --button-link-theme: { @apply --action-transparent-theme; }
 
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: var(--color-architectural-2);
-      border-color: var(--color-architectural-2);
-    }
-  }
-  --button-secondary-alternate-theme: {
-    background-color: var(--color-architectural-5);
-    border-color: var(--color-architectural-5);
-    color: var(--text-color);
+  /* button size, shape, and type */
+  --button-size: { @apply --action-type-and-size-emphasis; }
+  --button-size-small: { @apply --action-type-and-size-small-emphasis; }
+  --button-size-extra-small: { @apply --action-type-and-size-extra-small-emphasis; }
+  --button-link-type: { @apply --action-link-type; }
+  --button-link-standalone-type: { @apply --action-link-standalone-type; }
 
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: var(--color-background-1);
-      border-color: var(--color-architectural-5);
-    }
-  }
-
-  /* button size */
-
+  /* button chrome */
   --btn-border-width: 0.1rem;
   --btn-border-style: solid;
   --btn-cursor: pointer;
-
+  --btn-outline: var(--outline);
+  --btn-focus-outline: var(--focus-outline);
 
   /* button states */
+  --button-disabled-theme: { @apply --action-disabled-theme; }
 
-  --button-button-disabled-theme: {
-    background-color: var(--color-architectural-5);
-    border-color: var(--color-architectural-4);
-    color: var(--text-disabled);
+  --btn-border-link: none;
+  --button-block: {
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
-}
-
-/* Anchors */
-:root {
-  --anchor-background-color: var(--background-color);
-  --anchor-color: var(--color-core-contrast);
-  --anchor-color-contrast: var(--color-core);
-  --anchor-color-overlay: var(--color-architectural-5);
-  --anchor-decoration-passive: none;
-  --anchor-decoration-active: underline;
-  --anchor-outline: var(--outline);
-  --anchor-focus-outline: var(--focus-outline);
+  --button-fixed: {
+    width: auto;
+    display: inline;
+    margin: 0 0 2rem 1.6rem;
+  }
 }
 
 /* Cards */

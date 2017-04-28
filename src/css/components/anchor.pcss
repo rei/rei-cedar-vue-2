@@ -1,27 +1,13 @@
 .cdr-link {
-  background-color: var(--anchor-background-color);
-  color: var(--anchor-color);
-  text-decoration: var(--anchor-decoration-active);
-  outline: var(--anchor-outline);
-
-  &:hover,
-  &:active,
-  &:focus,
-  &:visited {
-    color: var(--anchor-color);
-    text-decoration: var(--anchor-decoration-active);
-  }
-
-  &:focus {
-    outline: var(--anchor-focus-outline);
-  }
+  @apply --link-theme;
+  @apply --link-type;
 
   &--contrast,
   &--contrast:hover,
   &--contrast:active,
   &--contrast:focus,
   &--contrast:visited {
-    color: var(--anchor-color-contrast);
+    color: var(--link-color-contrast);
   }
 
   &--overlay,
@@ -29,10 +15,10 @@
   &--overlay:active,
   &--overlay:focus,
   &--overlay:visited {
-    color: var(--anchor-color-overlay);
+    color: var(--link-color-overlay);
   }
 
   &--standalone {
-    text-decoration: var(--anchor-decoration-passive);
+    @apply --link-standalone-type;
   }
 }

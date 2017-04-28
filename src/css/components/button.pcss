@@ -1,29 +1,12 @@
-.cdr-btnGroup * {
-  width: 100%;
-  display: block;
-  margin-bottom: 2rem;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  @media (--medium) {
-    width: auto;
-    display: inline;
-    margin: 0 0 2rem 1.6rem;
-  }
-}
-
 .cdr-button {
   border-width: var(--btn-border-width);
   border-style: var(--btn-border-style);
   cursor: var(--btn-cursor);
 
   @apply --button-theme;
-  @apply --action-type-and-size;
+  @apply --button-size;
 
   /* button themes */
-
   &--alternate {
     @apply --button-alternate-theme;
   }
@@ -37,18 +20,46 @@
   }
 
   /* button sizes */
-
   &--small {
-    @apply --action-type-and-size-small;
+    @apply --button-size-small;
   }
 
   &--extra-small {
-    @apply --action-type-and-size-extra-small;
+    @apply --button-size-extra-small;
   }
 
   /* button states */
-
   &[disabled] {
     @apply --button-disabled-theme;
+  }
+
+  &--link {
+    border: var(--btn-border-link);
+
+    @apply --button-link-theme;
+    @apply --button-link-type;
+  }
+
+  &--standalone {
+    border: var(--btn-border-link);
+
+    @apply --button-link-theme;
+    @apply --button-link-standalone-type;
+  }
+}
+
+.cdr-button--block {
+  @apply: --button-block;
+}
+
+.cdr-button--fixed {
+  @apply: ----button-fixed;
+}
+
+.cdr-button-group * {
+  @apply: --button-block;
+
+  @media (--medium) {
+    @apply: ----button-fixed;
   }
 }

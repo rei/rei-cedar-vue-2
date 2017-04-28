@@ -1,6 +1,6 @@
 <template>
   <div class="cdr-stretch cdr-bg--dark-20">
-    <cdr-button :modifier="['whiteAlternate', 'small']">White alternate large</cdr-button>
+    <cdr-button :modifier="['secondary-alternate', 'small']">White alternate small</cdr-button>
   </div>
 </template>
 
