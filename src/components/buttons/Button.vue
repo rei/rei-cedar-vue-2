@@ -1,10 +1,9 @@
 <template>
-  <button class="cdr-button" :class="modifierClass" :type="type" @click="handleClick" v-if="!href">
-
+  <button :class="[buildClass]" :type="type" @click="handleClick" v-if="!href">
     <slot></slot>
   </button>
 
-  <a class="cdr-link" :class="modifierClass" :href="href" :target="target" :rel="newRel" v-else>
+  <a :class="[buildClass]" :href="href" :target="target" :rel="newRel" v-else>
     <slot></slot>
   </a>
 </template>
@@ -13,6 +12,7 @@
   export default {
     name: 'cdr-button',
     props: {
+      theme: String,
       href: String,
       target: String,
       rel: String,
@@ -31,15 +31,24 @@
       },
     },
     computed: {
-      modifierClass() {
+      buildClass() {
+        const baseClass = this.href ? 'cdr-link' : 'cdr-button';
         let final = '';
-        this.modifier.forEach((mod) => {
-          if (this.href) {
-            final += `cdr-link--${mod}`;
-          } else {
-            final += `cdr-button--${mod} `;
-          }
-        });
+
+        if (this.theme) {
+          final += `${this[this.theme][baseClass]} `;
+
+          this.modifier.forEach((mod) => {
+            final += `${this[this.theme][`${baseClass}--${mod}`]} `;
+          });
+        } else {
+          final += `${baseClass} `;
+
+          this.modifier.forEach((mod) => {
+            final += `${baseClass}--${mod} `;
+          });
+        }
+
         return final;
       },
       newRel() {
@@ -51,3 +60,8 @@
     },
   };
 </script>
+
+<style module="red">
+  @import '../../css/themes/red.pcss';
+  @import '../../css/components/button.pcss';
+</style>

@@ -30,6 +30,8 @@
     <cdr-card className="cdr-card">
        <cdr-button disabled data-backstop="cdr-button disabled">Disabled</cdr-button>
     </cdr-card>
+    <cdr-button theme="red">Red Theme</cdr-button>
+    <cdr-button theme="red" :modifier="['small']">Red Theme (small)</cdr-button>
     <cdr-card className="cdr-button-group">
       <cdr-button data-backstop="cdr-button" type="submit">Primary large</cdr-button>
       <cdr-button data-backstop="cdr-button--small" :type="'submit'" :modifier="['small']">Primary small</cdr-button>
