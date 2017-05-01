@@ -19,19 +19,19 @@
       name: 'justify',
       responsive: true,
       type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value >= 0)) || false,
+      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
     },
     {
       name: 'align',
       responsive: true,
       type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value >= 0)) || false,
+      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
     {
       name: 'gutter',
       responsive: true,
       type: String,
-      validator: value => (['none'].indexOf(value >= 0)) || false,
+      validator: value => (['none'].indexOf(value) >= 0) || false,
     },
     {
       name: 'vertical',

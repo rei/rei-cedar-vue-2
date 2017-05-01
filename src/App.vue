@@ -31,12 +31,12 @@
        <cdr-button disabled data-backstop="cdr-button disabled">Disabled</cdr-button>
     </cdr-card>
     <cdr-card className="cdr-button-group">
-      <cdr-button data-backstop="cdr-button">Primary large</cdr-button>
-      <cdr-button data-backstop="cdr-button--small" :modifier="['small']">Primary small</cdr-button>
+      <cdr-button data-backstop="cdr-button" type="submit">Primary large</cdr-button>
+      <cdr-button data-backstop="cdr-button--small" :type="'submit'" :modifier="['small']">Primary small</cdr-button>
       <cdr-button  data-backstop="cdr-button--extra-small" :modifier="['extra-small']">Primary extra small</cdr-button>
     </cdr-card>
     <cdr-card className="cdr-button-group">
-      <cdr-button data-backstop="cdr-button--secondary" :type="['submit']" :modifier="['secondary']">Secondary large</cdr-button>
+      <cdr-button data-backstop="cdr-button--secondary" :modifier="['secondary']">Secondary large</cdr-button>
       <cdr-button data-backstop="cdr-button--secondary--small" :modifier="['secondary', 'small']">Secondary small</cdr-button>
       <cdr-button  data-backstop="cdr-button--secondary--extra-small" :modifier="['secondary', 'extra-small']">Secondary extra small</cdr-button>
     </cdr-card>

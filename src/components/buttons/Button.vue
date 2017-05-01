@@ -1,5 +1,5 @@
 <template>
-  <button class="cdr-button" :class="modifierClass" :type="modifierType" @click="handleClick" v-if="!href">
+  <button class="cdr-button" :class="modifierClass" :type="type" @click="handleClick" v-if="!href">
 
     <slot></slot>
   </button>
@@ -21,8 +21,10 @@
         default: () => [],
       },
       type: {
+        type: String,
         required: false,
-        default: () => [],
+        default: 'button',
+        validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
       },
       handleClick: {
         default: () => () => null,
@@ -37,13 +39,6 @@
           } else {
             final += `cdr-button--${mod} `;
           }
-        });
-        return final;
-      },
-      modifierType() {
-        let final = 'button';
-        this.type.forEach((mod) => {
-          final = `${mod}`;
         });
         return final;
       },
