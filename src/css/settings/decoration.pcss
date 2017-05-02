@@ -9,10 +9,10 @@
 * Border
 ** border off
 * Outline
-* Text Deccoration
+* Text Decoration
 ** on
 ** off - on
-*
+* List style types
 */
 :root {
   /*
@@ -25,6 +25,11 @@
   --decoration-border-off: {
     border: none;
   }
+  --decoration-border-bottom: {
+    border-bottom-width: 0.1rem;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-medium-20);
+}
 
   /*
   * Outline
@@ -76,5 +81,10 @@
       text-decoration: underline;
     }
   }
+
+  /* List style types */
+  --list-style-default: none;
+  --list-style-bulleted: disc;
+  --list-style-numbered: decimal;
 }
 

@@ -1,0 +1,39 @@
+.cdr-list {
+  list-style-type: var(--list-style-default);
+  margin-bottom: 0;
+  padding-left: 0;
+
+  & > ul {
+    padding-left: var(--list-padding-left);
+  }
+
+  & > li {
+    padding-bottom: var(--list-padding-bottom);
+  }
+
+  &--bulleted {
+    list-style-type: var(--list-style-bulleted);
+    padding-left: var(--list-padding-left);
+  }
+
+  &--numbered {
+    list-style-type: var(--list-style-numbered);
+    padding-left: var(--list-padding-left);
+  }
+
+  &--menu {
+
+    & > li {
+      @apply --appearance-menu-list;
+      @apply --decoration-border-bottom;
+      
+      &:hover {
+        background-color: var(--color-background-1);
+      }
+
+      & > a {
+        color: var(--color-light-10-color);
+      }
+    }
+  }
+}

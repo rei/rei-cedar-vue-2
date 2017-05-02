@@ -1,20 +1,20 @@
 /*
 *
-* REI Cedar apperance
-* applying apperance from the following variables
+* REI Cedar appearance
+* applying appearance from the following variables
 * enables consistant shared default typography,
 * sizing, and shape combinations across unique REI-Cedar elements
 *
 * TOC
-* copy aappearance
-* standalone link aappearance
+* copy appearance
+* standalone link appearance
 * emphasis appearance
-* non breakpoint emphasis small aappearance
-* non breakpoint emphasis extra small aappearance
+* non breakpoint emphasis small appearance
+* non breakpoint emphasis extra small appearance
 *
 */
 :root {
-  /* copy aappearance */
+  /* copy appearance */
   --appearance-copy: {
     @apply --font-copy;
 
@@ -23,7 +23,7 @@
     padding: 0;
   }
 
-  /* standalone link aappearance */
+  /* standalone link appearance */
   --appearance-link-standalone: {
     @apply --font-copy-secondary;
 
@@ -31,7 +31,7 @@
     padding: 0;
   }
 
-  /* emphasis aappearance */
+  /* emphasis appearance */
   --appearance-emphasis: {
     @apply --font-copy-secondary;
 
@@ -40,7 +40,7 @@
     padding: 1.3rem 3.2rem;
   }
 
-  /* non breakpoint emphasis small aappearance */
+  /* non breakpoint emphasis small appearance */
   --appearance-emphasis-small: {
     @apply --font-copy-secondary;
 
@@ -49,12 +49,20 @@
     padding: 0.6rem 2.4rem;
   }
 
-  /* non breakpoint emphasis extra small aappearance */
+  /* non breakpoint emphasis extra small appearance */
   --appearance-emphasis-extra-small: {
     @apply --font-copy-secondary;
 
     font-size: var(--font-size-body-copy);
     line-height: var(--line-height-neutral);
     padding: 0.3rem 1.6rem;
+  }
+
+ /* filter menu list appearance */
+  --appearance-menu-list: {
+    @apply --font-copy-secondary;
+
+    font-size: var(--font-size-navigation);
+    padding: 1.1rem 1.6rem;
   }
 }
