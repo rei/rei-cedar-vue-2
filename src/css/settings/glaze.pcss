@@ -1,0 +1,133 @@
+/*
+* REI-Cedar skin
+* applying glazes from the following variables enables consistant shared default color
+* combinations across unique REI-Cedar elements
+*
+* TOC
+* Neutral
+** Glaze-Transparnent
+* Lights
+* Glaze-Light-10
+**Glaze-Light-10 actions
+* Darks
+* Glaze-Dark-10
+**Glaze-Dark-10 actions
+*
+*/
+:root {
+  /*
+  * Neutral
+  */
+  --glaze-outline: {
+    &:focus {
+      outline-color: var(--color-outline-focus);
+    }
+  }
+  --glaze-transparent: {
+    background-color: var(--color-transparent-background-color);
+    border-color: var(--color-transparent-border-color);
+    color: var(--color-transparent-color);
+  }
+  --glaze-transparent-actions: {
+    @apply --glaze-transparent;
+    @apply --glaze-outline;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      background-color: var(--color-transparent-background-color);
+      color: var(--color-transparent-color);
+    }
+  }
+  --glaze-disabled: {
+    background-color: var(--color-disabled-background-color);
+    border-color: var(--color-disabled-border-color);
+    color: var(--color-disabled-color);
+  }
+
+  --glaze-core: {
+    background-color: var(--color-core-background);
+    border-color: var(--color-core-border);
+    color: var(--color-core-text);
+  }
+  --glaze-core-actions: {
+    @apply --glaze-core;
+    @apply --glaze-outline;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      background-color: var(--color-core-background-active);
+      border-color: var(--color-core-background-active);
+    }
+  }
+
+  /*
+  * Lights
+  */
+
+  /* Light-10 */
+  --glaze-light-10: {
+    background-color: var(--color-light-10-background-color);
+    border-color: var(--color-light-10-border-color);
+    color: var(--color-light-10-color);
+  }
+  --glaze-light-10-actions: {
+    @apply --glaze-light-10;
+    @apply --glaze-outline;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      background-color: var(--color-light-10-background-color-active);
+      border-color: var(--color-light-10-border-color);
+    }
+  }
+
+  /* Light-10-alternate */
+  --glaze-light-10-alternate: {
+    background-color: var(--color-light-10-background-color);
+    border-color: var(--color-dark-10-border-color);
+    color: var(--color-light-10-color);
+  }
+  --glaze-light-10-alternate-actions: {
+    @apply --glaze-light-10-alternate;
+    @apply --glaze-outline;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      background-color: var(--color-light-10-background-color-active);
+      border-color: var(--color-dark-10-border-color);
+    }
+  }
+
+  /*
+  * Darks
+  */
+
+  /* Dark-10 */
+  --glaze-dark-10: {
+    background-color: var(--color-dark-10-background-color);
+    border-color: var(--color-dark-10-border-color);
+    color: var(--color-dark-10-color);
+  }
+  --glaze-dark-10-actions: {
+    @apply --glaze-dark-10;
+    @apply --glaze-outline;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      background-color: var(--color-dark-10-background-color-active);
+      border-color: var(--color-dark-10-background-color-active);
+    }
+  }
+
+  /* Dark-20 */
+}

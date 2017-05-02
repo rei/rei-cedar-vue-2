@@ -1,18 +1,66 @@
 .cdr-button {
-  color: var(--btn-color);
-  background-color: var(--btn-bgcolor);
-  border: var(--btn-border);
-  padding: var(--btn-padding);
+  cursor: var(--button-cursor);
 
-  &:hover,
-  &:active,
-  &:focus {
-    color: white;
-    background-color: black;
+  @apply --appearance-emphasis;
+  @apply --decoration-border;
+  @apply --decoration-outline;
+  @apply --glaze-core-actions;
+
+  /* button themes */
+  &--alternate {
+    @apply --glaze-dark-10-actions;
   }
 
+  &--secondary {
+    @apply --glaze-light-10-alternate-actions;
+  }
+
+  &--secondary-alternate {
+    @apply --glaze-light-10-actions;
+  }
+
+  /* button sizes */
+  &--small {
+    @apply --appearance-emphasis-small;
+  }
+
+  &--extra-small {
+    @apply --appearance-emphasis-small;
+  }
+
+  /* button states */
   &[disabled] {
-    color: black;
-    background-color: lightgray;
+    @apply --glaze-disabled;
+  }
+
+  &--link {
+    border: none;
+
+    @apply --appearance-copy;
+    @apply --decoration-text-on;
+    @apply --glaze-transparent-actions;
+  }
+
+  &--standalone {
+    @apply --appearance-link-standalone;
+    @apply --decoration-border-off;
+    @apply --decoration-text-off-on;
+    @apply --glaze-transparent-actions;
+  }
+
+  &--block {
+    @apply button-block;
+  }
+
+  &--fixed {
+    @apply button-fixed;
+  }
+}
+
+.cdr-button-group * {
+  @apply: --button-block;
+
+  @media (--medium) {
+    @apply: ----button-fixed;
   }
 }

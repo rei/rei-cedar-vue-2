@@ -1,16 +1,16 @@
 <template>
-  <section :class="className">
+  <section class="cdr-button-group" :class="className">
     <slot></slot>
   </section>
 </template>
 
 <script>
   export default {
-    name: 'cdr-card',
+    name: 'cdr-button-group',
     props: {
       className: {
+        required: false,
         type: String,
-        required: true,
       },
     },
 };

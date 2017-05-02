@@ -1,5 +1,5 @@
 <template>
-  <div id="example-a"class="cdr-stretch cdr-bg--dark-20">
+  <div id="example-a" class="cdr-stretch cdr-bg--dark-20">
     <cdr-a :modifier="['overlay']" href="#example-a"> An example overlay link</cdr-a>
   </div>
 </template>

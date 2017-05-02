@@ -1,55 +1,30 @@
-/* Globals */
+/* Anchors */
 :root {
-  --outline: none;
-  --focus-outline: thin dotted;
-  --background-color: inherit;
-
-  /* Fonts */
-  --fallback-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-sans-serif: "Roboto", var(--fallback-sans-serif);
-  --font-primary: {
-    font-family: "HCo Sentinel", var(--font-family-sans-serif);
-  }
-  --font-secondary: {
-    font-family: "Roboto Condensed", var(--font-family-sans-serif);
-  }
-  --font-tertiary: {
-    font-family: "Plak Black Condensed", var(--font-family-sans-serif);
-    font-weight: normal !important;
-  }
-}
-
-/* Color */
-:root {
-  --light-10: var(--color-architectural-5);
-  --light-30: var(--color-architectural-6);
-  --medium-10: var(--color-architectural-3);
-  --dark-10: var(--color-architectural-2);
-  --dark-20: var(--color-architectural-1);
+  --link-color-contrast: var(--color-core);
+  --link-color-overlay: var(--color-architectural-5);
 }
 
 /* Buttons */
 :root {
-  --btn-color: var(--color-architectural-1);
-  --btn-bgcolor: var(--color-core);
-  --btn-border: 1px solid var(--color-core);
-  --btn-padding: 6px;
-}
+  --button-cursor: pointer;
+  --button-block: {
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
 
-/* Anchors */
-:root {
-  --anchor-background-color: var(--background-color);
-  --anchor-color: var(--color-core-contrast);
-  --anchor-color-contrast: var(--color-core);
-  --anchor-color-overlay: var(--color-architectural-5);
-  --anchor-decoration-passive: none;
-  --anchor-decoration-active: underline;
-  --anchor-outline: var(--outline);
-  --anchor-focus-outline: var(--focus-outline);
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  --button-fixed: {
+    width: auto;
+    display: inline;
+    margin: 0 0 2rem 1.6rem;
+  }
 }
 
 /* Cards */
 :root {
-  --card-padding: 8px;
-  --card-border: 1px solid lightgray;
+  --card-padding: 0.8rem;
+  --card-border: 0.1rem solid lightgray;
 }
