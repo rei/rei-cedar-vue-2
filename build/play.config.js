@@ -1,8 +1,8 @@
 
 module.exports = {
   entry: {
-    app: 'play/app.js',
-    preview: 'play/preview.js'
+    app: './play/app.js',
+    preview: './play/preview.js',
   },
   dist: 'dist-play',
   webpack: {
@@ -13,18 +13,18 @@ module.exports = {
           use: [
             'style-loader',
             'css-loader?importLoaders=1',
-            'postcss-loader?parser=postcss-scss'
-          ]
+            'postcss-loader?parser=postcss-scss',
+          ],
         },
         {
           test: /\.md$/,
           use: [
             'html-loader',
             'markdown-loader',
-          ]
+          ],
         },
-      ]
-    }
+      ],
+    },
   },
   port: 5000,
   // compile Vue template
@@ -38,6 +38,6 @@ module.exports = {
     filename: 'index.html',
   }, {
     chunks: ['preview'],
-    filename: 'preview.html'
-  }]
-}
+    filename: 'preview.html',
+  }],
+};
