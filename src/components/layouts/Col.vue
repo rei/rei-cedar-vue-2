@@ -76,13 +76,13 @@
       name: 'alignSelf',
       responsive: true,
       type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value >= 0)) || false,
+      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
     {
       name: 'hide',
       responsive: true,
       type: String,
-      validator: value => (['up', 'down', 'only'].indexOf(value >= 0)) || false,
+      validator: value => (['up', 'down', 'only'].indexOf(value) >= 0) || false,
     },
     {
       name: 'isRow',
