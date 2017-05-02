@@ -1,17 +1,17 @@
 <template>
   <div id="app" class="container-fluid">
-    <cdr-heading :level="1" class="test">Heading</cdr-heading>
-    <cdr-heading :level="1" :appearance="2">Heading</cdr-heading>
-    <cdr-heading :level="1" :appearance="3">Heading</cdr-heading>
-    <cdr-heading :level="1" :appearance="4">Heading</cdr-heading>
-    <cdr-heading :level="1" :appearance="5">Heading</cdr-heading>
-    <cdr-heading :level="1" :appearance="6">Heading</cdr-heading>
-    <cdr-heading :level="2" :appearance="1">Heading 2</cdr-heading>
-    <cdr-heading :level="2" :appearance="2">Heading 2</cdr-heading>
-    <cdr-heading :level="2" :appearance="3">Heading 2</cdr-heading>
-    <cdr-heading :level="2" :appearance="4">Heading 2</cdr-heading>
-    <cdr-heading :level="2" :appearance="5">Heading 2</cdr-heading>
-    <cdr-heading :level="2" :appearance="6">Heading 2</cdr-heading>
+    <cdr-heading :level="1">Heading</cdr-heading>
+    <cdr-heading :level="1">Heading</cdr-heading>
+    <cdr-heading :level="1">Heading</cdr-heading>
+    <cdr-heading :level="1">Heading</cdr-heading>
+    <cdr-heading :level="1">Heading</cdr-heading>
+    <cdr-heading :level="1">Heading</cdr-heading>
+    <cdr-heading :level="2">Heading 2</cdr-heading>
+    <cdr-heading :level="2">Heading 2</cdr-heading>
+    <cdr-heading :level="2">Heading 2</cdr-heading>
+    <cdr-heading :level="2">Heading 2</cdr-heading>
+    <cdr-heading :level="2">Heading 2</cdr-heading>
+    <cdr-heading :level="2">Heading 2</cdr-heading>
     <test data-backstop="test"></test>
 
     <cdr-card className="cdr-card">
