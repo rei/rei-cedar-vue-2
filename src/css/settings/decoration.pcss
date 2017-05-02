@@ -1,0 +1,80 @@
+/*
+*
+* REI Cedar decoration
+* applying decorations from the following variables
+* enables consistant shared default displays for our global decorations such as
+* outlines and text decorations
+*
+* TOC
+* Border
+** border off
+* Outline
+* Text Deccoration
+** on
+** off - on
+*
+*/
+:root {
+  /*
+  * Border
+  */
+  --decoration-border: {
+    border-width: 0.1rem;
+    border-style: solid;
+  }
+  --decoration-border-off: {
+    border: none;
+  }
+
+  /*
+  * Outline
+  */
+  --outline-default-width: thin;
+  --outline-default-style: dotted;
+  --outline-width: 0.5rem;
+  --outline-style: auto;
+  --outline-offset: -0.2rem;
+  --decoration-outline: {
+    outline: none;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      outline: none;
+    }
+
+    &:focus {
+      /* Default */
+      outline: var(--outline-default-width) var(--outline-default-style);
+
+      /* WebKit */
+      outline-width: var(--outline-width);
+      outline-style: var(--outline-style);
+      outline-offset: var(--outline-offset);
+    }
+  }
+
+  /* Text Decoration */
+  --decoration-text-on: {
+    text-decoration: underline;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      text-decoration: underline;
+    }
+  }
+  --decoration-text-off-on: {
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      text-decoration: underline;
+    }
+  }
+}
+

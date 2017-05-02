@@ -1,6 +1,9 @@
 .cdr-link {
-  @apply --link-theme;
-  @apply --link-type;
+  @apply --appearance-copy;
+  @apply --decoration-text-on;
+  @apply --decoration-outline;
+  @apply --glaze-transparent-actions;
+  @apply --glaze-outline;
 
   &--contrast,
   &--contrast:hover,
@@ -19,6 +22,7 @@
   }
 
   &--standalone {
-    @apply --link-standalone-type;
+    @apply --appearance-link-standalone;
+    @apply --decoration-text-off-on;
   }
 }

@@ -1,56 +1,12 @@
-:root {
-  --outline: none;
-  --focus-outline: thin dotted;
-}
-
-/* ELEMENTS */
-
 /* Anchors */
 :root {
-  --link-theme: { @apply --action-transparent-theme; }
-  --link-type: { @apply --action-link-type; }
-  --link-standalone-type: { @apply --action-link-standalone-type; }
-
-  --link-background-color: var(--background-color);
-  --link-color: var(--color-core-contrast);
   --link-color-contrast: var(--color-core);
   --link-color-overlay: var(--color-architectural-5);
-  --link-decoration-passive: none;
-  --link-decoration-active: underline;
-  --link-outline: var(--outline);
-  --link-focus-outline: var(--focus-outline);
 }
 
 /* Buttons */
 :root {
-  /* button themes */
-  --button-theme: { @apply --action-core-theme; }
-  --button-secondary-theme: {
-    @apply --action-light-10-theme;
-    @apply --action-light-10-alternate-theme;
-  }
-  --button-alternate-theme: { @apply --action-dark-10-theme; }
-  --button-secondary-alternate-theme: { @apply --action-light-10-theme; }
-  --button-link-theme: { @apply --action-transparent-theme; }
-
-  /* button size, shape, and type */
-  --button-size: { @apply --action-type-and-size-emphasis; }
-  --button-size-small: { @apply --action-type-and-size-small-emphasis; }
-  --button-size-extra-small: { @apply --action-type-and-size-extra-small-emphasis; }
-  --button-link-type: { @apply --action-link-type; }
-  --button-link-standalone-type: { @apply --action-link-standalone-type; }
-
-  /* button chrome */
-  --btn-border-width: 0.1rem;
-  --btn-border-style: solid;
-  --btn-cursor: pointer;
-  --btn-outline: var(--outline);
-  --btn-focus-outline: var(--focus-outline);
-
-  /* button states */
-  --button-disabled-theme: { @apply --action-disabled-theme; }
-
-  --btn-border-link: none;
+  --button-cursor: pointer;
   --button-block: {
     width: 100%;
     display: block;

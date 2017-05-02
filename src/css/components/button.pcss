@@ -1,59 +1,63 @@
 .cdr-button {
-  border-width: var(--btn-border-width);
-  border-style: var(--btn-border-style);
-  cursor: var(--btn-cursor);
+  cursor: var(--button-cursor);
 
-  @apply --button-theme;
-  @apply --button-size;
+  @apply --appearance-emphasis;
+  @apply --decoration-border;
+  @apply --decoration-outline;
+  @apply --glaze-core-actions;
+  @apply --glaze-outline;
 
   /* button themes */
   &--alternate {
-    @apply --button-alternate-theme;
+    @apply --glaze-dark-10-actions;
   }
 
   &--secondary {
-    @apply --button-secondary-theme;
+    @apply --glaze-light-10-alternate-actions;
   }
 
   &--secondary-alternate {
-    @apply --button-secondary-alternate-theme;
+    @apply --glaze-light-10-actions;
   }
 
   /* button sizes */
   &--small {
-    @apply --button-size-small;
+    @apply --appearance-emphasis-small;
   }
 
   &--extra-small {
-    @apply --button-size-extra-small;
+    @apply --appearance-emphasis-small;
   }
 
   /* button states */
   &[disabled] {
-    @apply --button-disabled-theme;
+    @apply --glaze-disabled;
   }
 
   &--link {
-    border: var(--btn-border-link);
+    border: none;
 
-    @apply --button-link-theme;
-    @apply --button-link-type;
+    @apply --appearance-copy;
+    @apply --decoration-text-on;
+    @apply --decoration-outline;
+    @apply --glaze-transparent-actions;
   }
 
   &--standalone {
-    border: var(--btn-border-link);
-
-    @apply --button-link-theme;
-    @apply --button-link-standalone-type;
+    @apply --appearance-link-standalone;
+    @apply --decoration-border-off;
+    @apply --decoration-outline;
+    @apply --decoration-text-off-on;
+    @apply --glaze-transparent-actions;
   }
-}
 
-.cdr-button--block {
-  @apply: --button-block;
-}
+  &--block {
+    @apply button-block;
+  }
 
-.cdr-button--fixed {
-  @apply: ----button-fixed;
+  &--fixed {
+    @apply button-fixed;
+  }
 }
 
 .cdr-button-group * {
