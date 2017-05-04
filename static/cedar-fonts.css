@@ -1,10 +1,10 @@
 /*
-* This is the unminified version of fonts.min.css
+* This is the unminified version of cedar-fonts.min.css
 * TODO: keep this somewhere else
 */
 
 @font-face {
-  font-family: "HCo Sentinel";
+  font-family: "Sentinel";
   src: url('//satchel.rei.com/media/font/Sentinel/7AEA62E6AAEE27A58.eot');
   src:
     local('?'),
@@ -16,7 +16,7 @@
 }
 
 @font-face {
-  font-family: "HCo Sentinel";
+  font-family: "Sentinel";
   src: url('//satchel.rei.com/media/font/Sentinel/D6F877A79290D8BBC.eot');
   src:
     local('?'),
@@ -28,7 +28,7 @@
 }
 
 @font-face {
-  font-family: "HCo Sentinel";
+  font-family: "Sentinel";
   src: url('//satchel.rei.com/media/font/Sentinel/68C535B10E6A8EE39.eot');
   src:
     local('?'),
