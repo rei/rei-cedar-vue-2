@@ -29,12 +29,12 @@ export default {
       if (this.theme) {
         final += `${this[this.theme][baseClass]} `;
         this.modifier.forEach((mod) => {
-          final += `${this[this.theme][`${baseClass}--${mod}`]} `;
+          final += `${this[this.theme][`cdr-${mod}`]} `;
         });
       } else {
         final += `${baseClass} `;
         this.modifier.forEach((mod) => {
-          final += `${baseClass}--${mod} `;
+          final += `cdr-${mod} `;
         });
       }
       return final;

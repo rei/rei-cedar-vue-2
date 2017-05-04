@@ -1,17 +1,8 @@
 <template>
   <div id="app" class="container-fluid">
-    <cdr-heading :level="1">Heading</cdr-heading>
-    <cdr-heading :level="1">Heading</cdr-heading>
-    <cdr-heading :level="1">Heading</cdr-heading>
-    <cdr-heading :level="1">Heading</cdr-heading>
-    <cdr-heading :level="1">Heading</cdr-heading>
-    <cdr-heading :level="1">Heading</cdr-heading>
-    <cdr-heading :level="2">Heading 2</cdr-heading>
-    <cdr-heading :level="2">Heading 2</cdr-heading>
-    <cdr-heading :level="2">Heading 2</cdr-heading>
-    <cdr-heading :level="2">Heading 2</cdr-heading>
-    <cdr-heading :level="2">Heading 2</cdr-heading>
-    <cdr-heading :level="2">Heading 2</cdr-heading>
+
+    <headings></headings>
+    
     <test data-backstop="test"></test>
 
     <cdr-card className="cdr-card">
@@ -70,9 +61,11 @@
   // extra stuff for testing
   import test from './examples/testing/Test';
   import grid from './examples/grid/Grid';
+  import headings from './examples/headings/Headings';
 
   Components.test = test;
   Components.grid = grid;
+  Components.headings = headings;
   // end extra
 
   export default {
