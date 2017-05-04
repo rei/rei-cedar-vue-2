@@ -13,154 +13,445 @@
 */
 
 // Brand Colors
---color-old-growth: #004e00;
---color-new-growth: #a1c900;
---color-dusty-white: #efeee2;
---color-core: #4a90e2;
---color-core-contrast: #0066cc;
+--sys-color-old-growth: #004e00;
+--sys-color-new-growth: #a1c900;
+--sys-color-dusty-white: #efeee2;
+--sys-color-core: #4a90e2;
+--sys-color-core-contrast: #0066cc;
 
 // Architectural Colors
---color-architectural-1: #000000;
---color-architectural-2: #222222;
---color-architectural-3: #666666;
---color-architectural-4: #cccccc;
---color-architectural-5: #ffffff;
---color-architectural-6: #efeee2;
---color-background-1: #f2f2f2;
---color-background-2: #e5e5e5;
+--sys-color-architectural-1: #000000;
+--sys-color-architectural-2: #222222;
+--sys-color-architectural-3: #666666;
+--sys-color-architectural-4: #cccccc;
+--sys-color-architectural-5: #ffffff;
+--sys-color-architectural-6: #efeee2;
+--sys-color-background-1: #f2f2f2;
+--sys-color-background-2: #e5e5e5;
 
 // Messaging Colors
---color-success: #a1c900;
---color-warning: #e4ac00;
---color-error: #cc0000;
---color-info: #222222;
+--sys-color-success: #a1c900;
+--sys-color-warning: #e4ac00;
+--sys-color-error: #cc0000;
+--sys-color-info: #222222;
+
+// Other Colors
 
 /*
     Font Styles:
 */
 
-// Headline lg font style
---font-headline-lg-font-size: 51px;
---font-headline-lg-line-height: 67px;
---font-headline-lg-text-align: start;
---font-headline-lg-color: #222222;
---font-headline-lg-font-style: normal;
---font-headline-lg-font-weight: 400;
---font-headline-lg-font-family: Sentinel;
+// Headline LG font style
+--sys-font-headline-lg-font-size: 56px;
+--sys-font-headline-lg-line-height: 64px;
+--sys-font-headline-lg-text-align: start;
+--sys-font-headline-lg-color: #000000;
+--sys-font-headline-lg-letter-spacing: 0.2px;
+--sys-font-headline-lg-font-style: normal;
+--sys-font-headline-lg-font-weight: 600;
+--sys-font-headline-lg-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
---font-headline-lg: {
-  font-size: var(--font-headline-lg-font-size);
-  line-height: var(--font-headline-lg-line-height);
-  text-align: var(--font-headline-lg-text-align);
-  color: var(--font-headline-lg-color);
-  font-style: var(--font-headline-lg-font-style);
-  font-weight: var(--font-headline-lg-font-weight);
-  font-family: var(--font-headline-lg-font-family);
+--sys-font-headline-lg: {
+  font-size: var(--sys-font-headline-lg-font-size);
+  line-height: var(--sys-font-headline-lg-line-height);
+  text-align: var(--sys-font-headline-lg-text-align);
+  color: var(--sys-font-headline-lg-color);
+  letter-spacing: var(--sys-font-headline-lg-letter-spacing);
+  font-style: var(--sys-font-headline-lg-font-style);
+  font-weight: var(--sys-font-headline-lg-font-weight);
+  font-family: var(--sys-font-headline-lg-font-family);
 };
 
-// Headline sm font style
---font-headline-sm-font-size: 38px;
---font-headline-sm-line-height: 51px;
---font-headline-sm-color: #000000;
---font-headline-sm-font-style: normal;
---font-headline-sm-font-weight: 400;
---font-headline-sm-font-family: Sentinel;
+// Headline MD font style
+--sys-font-headline-md-font-size: 44px;
+--sys-font-headline-md-line-height: 52px;
+--sys-font-headline-md-text-align: start;
+--sys-font-headline-md-color: #2a2a2a;
+--sys-font-headline-md-letter-spacing: 0.1955556px;
+--sys-font-headline-md-font-style: normal;
+--sys-font-headline-md-font-weight: 600;
+--sys-font-headline-md-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
---font-headline-sm: {
-  font-size: var(--font-headline-sm-font-size);
-  line-height: var(--font-headline-sm-line-height);
-  color: var(--font-headline-sm-color);
-  font-style: var(--font-headline-sm-font-style);
-  font-weight: var(--font-headline-sm-font-weight);
-  font-family: var(--font-headline-sm-font-family);
+--sys-font-headline-md: {
+  font-size: var(--sys-font-headline-md-font-size);
+  line-height: var(--sys-font-headline-md-line-height);
+  text-align: var(--sys-font-headline-md-text-align);
+  color: var(--sys-font-headline-md-color);
+  letter-spacing: var(--sys-font-headline-md-letter-spacing);
+  font-style: var(--sys-font-headline-md-font-style);
+  font-weight: var(--sys-font-headline-md-font-weight);
+  font-family: var(--sys-font-headline-md-font-family);
 };
 
-// Headline font style
---font-headline-font-size: 28px;
---font-headline-line-height: 38px;
---font-headline-color: #000000;
---font-headline-font-style: normal;
---font-headline-font-weight: bold;
---font-headline-font-family: Roboto;
+// Headline SM font style
+--sys-font-headline-sm-font-size: 32px;
+--sys-font-headline-sm-line-height: 40px;
+--sys-font-headline-sm-text-align: left;
+--sys-font-headline-sm-color: #2a2a2a;
+--sys-font-headline-sm-letter-spacing: 0.1882353px;
+--sys-font-headline-sm-font-style: normal;
+--sys-font-headline-sm-font-weight: 600;
+--sys-font-headline-sm-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
---font-headline: {
-  font-size: var(--font-headline-font-size);
-  line-height: var(--font-headline-line-height);
-  color: var(--font-headline-color);
-  font-style: var(--font-headline-font-style);
-  font-weight: var(--font-headline-font-weight);
-  font-family: var(--font-headline-font-family);
+--sys-font-headline-sm: {
+  font-size: var(--sys-font-headline-sm-font-size);
+  line-height: var(--sys-font-headline-sm-line-height);
+  text-align: var(--sys-font-headline-sm-text-align);
+  color: var(--sys-font-headline-sm-color);
+  letter-spacing: var(--sys-font-headline-sm-letter-spacing);
+  font-style: var(--sys-font-headline-sm-font-style);
+  font-weight: var(--sys-font-headline-sm-font-weight);
+  font-family: var(--sys-font-headline-sm-font-family);
 };
 
-// Large: Hero Heading font style
---font-large-hero-heading-font-size: 90px;
---font-large-hero-heading-line-height: 101px;
---font-large-hero-heading-color: #000000;
---font-large-hero-heading-font-style: normal;
---font-large-hero-heading-font-weight: 400;
---font-large-hero-heading-font-family: Plak;
+// Title LG font style
+--sys-font-title-lg-font-size: 32px;
+--sys-font-title-lg-line-height: 40px;
+--sys-font-title-lg-text-align: left;
+--sys-font-title-lg-color: #2a2a2a;
+--sys-font-title-lg-letter-spacing: 0.1882353px;
+--sys-font-title-lg-font-style: normal;
+--sys-font-title-lg-font-weight: 600;
+--sys-font-title-lg-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
---font-large-hero-heading: {
-  font-size: var(--font-large-hero-heading-font-size);
-  line-height: var(--font-large-hero-heading-line-height);
-  color: var(--font-large-hero-heading-color);
-  font-style: var(--font-large-hero-heading-font-style);
-  font-weight: var(--font-large-hero-heading-font-weight);
-  font-family: var(--font-large-hero-heading-font-family);
+--sys-font-title-lg: {
+  font-size: var(--sys-font-title-lg-font-size);
+  line-height: var(--sys-font-title-lg-line-height);
+  text-align: var(--sys-font-title-lg-text-align);
+  color: var(--sys-font-title-lg-color);
+  letter-spacing: var(--sys-font-title-lg-letter-spacing);
+  font-style: var(--sys-font-title-lg-font-style);
+  font-weight: var(--sys-font-title-lg-font-weight);
+  font-family: var(--sys-font-title-lg-font-family);
 };
 
-// Small / Medium: Hero Heading font style
---font-small-medium-hero-heading-font-size: 67px;
---font-small-medium-hero-heading-line-height: 76px;
---font-small-medium-hero-heading-color: #000000;
---font-small-medium-hero-heading-font-style: normal;
---font-small-medium-hero-heading-font-weight: 400;
---font-small-medium-hero-heading-font-family: Plak;
+// Title SM font style
+--sys-font-title-sm-font-size: 24px;
+--sys-font-title-sm-line-height: 32px;
+--sys-font-title-sm-text-align: left;
+--sys-font-title-sm-color: #2a2a2a;
+--sys-font-title-sm-letter-spacing: 0.2000000029802322px;
+--sys-font-title-sm-font-style: normal;
+--sys-font-title-sm-font-weight: 600;
+--sys-font-title-sm-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
---font-small-medium-hero-heading: {
-  font-size: var(--font-small-medium-hero-heading-font-size);
-  line-height: var(--font-small-medium-hero-heading-line-height);
-  color: var(--font-small-medium-hero-heading-color);
-  font-style: var(--font-small-medium-hero-heading-font-style);
-  font-weight: var(--font-small-medium-hero-heading-font-weight);
-  font-family: var(--font-small-medium-hero-heading-font-family);
+--sys-font-title-sm: {
+  font-size: var(--sys-font-title-sm-font-size);
+  line-height: var(--sys-font-title-sm-line-height);
+  text-align: var(--sys-font-title-sm-text-align);
+  color: var(--sys-font-title-sm-color);
+  letter-spacing: var(--sys-font-title-sm-letter-spacing);
+  font-style: var(--sys-font-title-sm-font-style);
+  font-weight: var(--sys-font-title-sm-font-weight);
+  font-family: var(--sys-font-title-sm-font-family);
 };
 
-// Extra small: Hero Heading font style
---font-extra-small-hero-heading-font-size: 51px;
---font-extra-small-hero-heading-line-height: 57px;
---font-extra-small-hero-heading-color: #000000;
---font-extra-small-hero-heading-font-style: normal;
---font-extra-small-hero-heading-font-weight: 400;
---font-extra-small-hero-heading-font-family: Plak;
+// Subtitle LG font style
+--sys-font-subtitle-lg-font-size: 28px;
+--sys-font-subtitle-lg-line-height: 36px;
+--sys-font-subtitle-lg-text-align: left;
+--sys-font-subtitle-lg-color: #6a6a6a;
+--sys-font-subtitle-lg-letter-spacing: 0.2px;
+--sys-font-subtitle-lg-font-style: normal;
+--sys-font-subtitle-lg-font-weight: 500;
+--sys-font-subtitle-lg-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
---font-extra-small-hero-heading: {
-  font-size: var(--font-extra-small-hero-heading-font-size);
-  line-height: var(--font-extra-small-hero-heading-line-height);
-  color: var(--font-extra-small-hero-heading-color);
-  font-style: var(--font-extra-small-hero-heading-font-style);
-  font-weight: var(--font-extra-small-hero-heading-font-weight);
-  font-family: var(--font-extra-small-hero-heading-font-family);
+--sys-font-subtitle-lg: {
+  font-size: var(--sys-font-subtitle-lg-font-size);
+  line-height: var(--sys-font-subtitle-lg-line-height);
+  text-align: var(--sys-font-subtitle-lg-text-align);
+  color: var(--sys-font-subtitle-lg-color);
+  letter-spacing: var(--sys-font-subtitle-lg-letter-spacing);
+  font-style: var(--sys-font-subtitle-lg-font-style);
+  font-weight: var(--sys-font-subtitle-lg-font-weight);
+  font-family: var(--sys-font-subtitle-lg-font-family);
 };
 
-// Paragraph font style
---font-paragraph-font-size: 14px;
---font-paragraph-line-height: normal;
---font-paragraph-font-style: normal;
---font-paragraph-font-weight: 400;
---font-paragraph-font-family: Roboto;
+// Section Title LG font style
+--sys-font-section-title-lg-font-size: 24px;
+--sys-font-section-title-lg-line-height: 32px;
+--sys-font-section-title-lg-text-align: left;
+--sys-font-section-title-lg-color: #2a2a2a;
+--sys-font-section-title-lg-letter-spacing: 0.2000000029802322px;
+--sys-font-section-title-lg-font-style: normal;
+--sys-font-section-title-lg-font-weight: 600;
+--sys-font-section-title-lg-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
---font-paragraph: {
-  font-size: var(--font-paragraph-font-size);
-  line-height: var(--font-paragraph-line-height);
-  font-style: var(--font-paragraph-font-style);
-  font-weight: var(--font-paragraph-font-weight);
-  font-family: var(--font-paragraph-font-family);
+--sys-font-section-title-lg: {
+  font-size: var(--sys-font-section-title-lg-font-size);
+  line-height: var(--sys-font-section-title-lg-line-height);
+  text-align: var(--sys-font-section-title-lg-text-align);
+  color: var(--sys-font-section-title-lg-color);
+  letter-spacing: var(--sys-font-section-title-lg-letter-spacing);
+  font-style: var(--sys-font-section-title-lg-font-style);
+  font-weight: var(--sys-font-section-title-lg-font-weight);
+  font-family: var(--sys-font-section-title-lg-font-family);
+};
+
+// Body Copy LG font style
+--sys-font-body-copy-lg-font-size: 18px;
+--sys-font-body-copy-lg-line-height: 28px;
+--sys-font-body-copy-lg-text-align: left;
+--sys-font-body-copy-lg-color: #2a2a2a;
+--sys-font-body-copy-lg-letter-spacing: 0.2000000029802322px;
+--sys-font-body-copy-lg-font-style: normal;
+--sys-font-body-copy-lg-font-weight: 500;
+--sys-font-body-copy-lg-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+--sys-font-body-copy-lg: {
+  font-size: var(--sys-font-body-copy-lg-font-size);
+  line-height: var(--sys-font-body-copy-lg-line-height);
+  text-align: var(--sys-font-body-copy-lg-text-align);
+  color: var(--sys-font-body-copy-lg-color);
+  letter-spacing: var(--sys-font-body-copy-lg-letter-spacing);
+  font-style: var(--sys-font-body-copy-lg-font-style);
+  font-weight: var(--sys-font-body-copy-lg-font-weight);
+  font-family: var(--sys-font-body-copy-lg-font-family);
+};
+
+// Pullquote LG font style
+--sys-font-pullquote-lg-font-size: 28px;
+--sys-font-pullquote-lg-line-height: 36px;
+--sys-font-pullquote-lg-text-align: left;
+--sys-font-pullquote-lg-color: #6a6a6a;
+--sys-font-pullquote-lg-letter-spacing: 0.2000000029802322px;
+--sys-font-pullquote-lg-font-style: italic;
+--sys-font-pullquote-lg-font-weight: 500;
+--sys-font-pullquote-lg-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+--sys-font-pullquote-lg: {
+  font-size: var(--sys-font-pullquote-lg-font-size);
+  line-height: var(--sys-font-pullquote-lg-line-height);
+  text-align: var(--sys-font-pullquote-lg-text-align);
+  color: var(--sys-font-pullquote-lg-color);
+  letter-spacing: var(--sys-font-pullquote-lg-letter-spacing);
+  font-style: var(--sys-font-pullquote-lg-font-style);
+  font-weight: var(--sys-font-pullquote-lg-font-weight);
+  font-family: var(--sys-font-pullquote-lg-font-family);
+};
+
+// Sub-Section font style
+--sys-font-sub-section-font-size: 18px;
+--sys-font-sub-section-line-height: 28px;
+--sys-font-sub-section-text-align: left;
+--sys-font-sub-section-color: #2a2a2a;
+--sys-font-sub-section-letter-spacing: 0.2000000029802322px;
+--sys-font-sub-section-font-style: normal;
+--sys-font-sub-section-font-weight: 600;
+--sys-font-sub-section-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+--sys-font-sub-section: {
+  font-size: var(--sys-font-sub-section-font-size);
+  line-height: var(--sys-font-sub-section-line-height);
+  text-align: var(--sys-font-sub-section-text-align);
+  color: var(--sys-font-sub-section-color);
+  letter-spacing: var(--sys-font-sub-section-letter-spacing);
+  font-style: var(--sys-font-sub-section-font-style);
+  font-weight: var(--sys-font-sub-section-font-weight);
+  font-family: var(--sys-font-sub-section-font-family);
+};
+
+// Information LG font style
+--sys-font-information-lg-font-size: 18px;
+--sys-font-information-lg-line-height: 28px;
+--sys-font-information-lg-text-align: left;
+--sys-font-information-lg-color: #2a2a2a;
+--sys-font-information-lg-font-style: normal;
+--sys-font-information-lg-font-weight: 400;
+--sys-font-information-lg-font-family: Roboto;
+
+--sys-font-information-lg: {
+  font-size: var(--sys-font-information-lg-font-size);
+  line-height: var(--sys-font-information-lg-line-height);
+  text-align: var(--sys-font-information-lg-text-align);
+  color: var(--sys-font-information-lg-color);
+  font-style: var(--sys-font-information-lg-font-style);
+  font-weight: var(--sys-font-information-lg-font-weight);
+  font-family: var(--sys-font-information-lg-font-family);
+};
+
+// Description LG font style
+--sys-font-description-lg-font-size: 16px;
+--sys-font-description-lg-line-height: 24px;
+--sys-font-description-lg-text-align: left;
+--sys-font-description-lg-color: #222222;
+--sys-font-description-lg-font-style: normal;
+--sys-font-description-lg-font-weight: 400;
+--sys-font-description-lg-font-family: Roboto;
+
+--sys-font-description-lg: {
+  font-size: var(--sys-font-description-lg-font-size);
+  line-height: var(--sys-font-description-lg-line-height);
+  text-align: var(--sys-font-description-lg-text-align);
+  color: var(--sys-font-description-lg-color);
+  font-style: var(--sys-font-description-lg-font-style);
+  font-weight: var(--sys-font-description-lg-font-weight);
+  font-family: var(--sys-font-description-lg-font-family);
+};
+
+// Detail LG font style
+--sys-font-detail-lg-font-size: 14px;
+--sys-font-detail-lg-line-height: 20px;
+--sys-font-detail-lg-text-align: left;
+--sys-font-detail-lg-color: #2a2a2a;
+--sys-font-detail-lg-font-style: normal;
+--sys-font-detail-lg-font-weight: 400;
+--sys-font-detail-lg-font-family: Roboto;
+
+--sys-font-detail-lg: {
+  font-size: var(--sys-font-detail-lg-font-size);
+  line-height: var(--sys-font-detail-lg-line-height);
+  text-align: var(--sys-font-detail-lg-text-align);
+  color: var(--sys-font-detail-lg-color);
+  font-style: var(--sys-font-detail-lg-font-style);
+  font-weight: var(--sys-font-detail-lg-font-weight);
+  font-family: var(--sys-font-detail-lg-font-family);
+};
+
+// Disclaimer font style
+--sys-font-disclaimer-font-size: 12px;
+--sys-font-disclaimer-line-height: 16px;
+--sys-font-disclaimer-text-align: left;
+--sys-font-disclaimer-color: #2a2a2a;
+--sys-font-disclaimer-font-style: normal;
+--sys-font-disclaimer-font-weight: 400;
+--sys-font-disclaimer-font-family: Roboto;
+
+--sys-font-disclaimer: {
+  font-size: var(--sys-font-disclaimer-font-size);
+  line-height: var(--sys-font-disclaimer-line-height);
+  text-align: var(--sys-font-disclaimer-text-align);
+  color: var(--sys-font-disclaimer-color);
+  font-style: var(--sys-font-disclaimer-font-style);
+  font-weight: var(--sys-font-disclaimer-font-weight);
+  font-family: var(--sys-font-disclaimer-font-family);
+};
+
+// Subtitle SM font style
+--sys-font-subtitle-sm-font-size: 20px;
+--sys-font-subtitle-sm-line-height: 28px;
+--sys-font-subtitle-sm-text-align: left;
+--sys-font-subtitle-sm-color: #6a6a6a;
+--sys-font-subtitle-sm-font-style: normal;
+--sys-font-subtitle-sm-font-weight: 300;
+--sys-font-subtitle-sm-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+--sys-font-subtitle-sm: {
+  font-size: var(--sys-font-subtitle-sm-font-size);
+  line-height: var(--sys-font-subtitle-sm-line-height);
+  text-align: var(--sys-font-subtitle-sm-text-align);
+  color: var(--sys-font-subtitle-sm-color);
+  font-style: var(--sys-font-subtitle-sm-font-style);
+  font-weight: var(--sys-font-subtitle-sm-font-weight);
+  font-family: var(--sys-font-subtitle-sm-font-family);
+};
+
+// Section Title SM font style
+--sys-font-section-title-sm-font-size: 20px;
+--sys-font-section-title-sm-line-height: 28px;
+--sys-font-section-title-sm-text-align: left;
+--sys-font-section-title-sm-color: #2a2a2a;
+--sys-font-section-title-sm-font-style: normal;
+--sys-font-section-title-sm-font-weight: 600;
+--sys-font-section-title-sm-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+--sys-font-section-title-sm: {
+  font-size: var(--sys-font-section-title-sm-font-size);
+  line-height: var(--sys-font-section-title-sm-line-height);
+  text-align: var(--sys-font-section-title-sm-text-align);
+  color: var(--sys-font-section-title-sm-color);
+  font-style: var(--sys-font-section-title-sm-font-style);
+  font-weight: var(--sys-font-section-title-sm-font-weight);
+  font-family: var(--sys-font-section-title-sm-font-family);
+};
+
+// Body Copy font style
+--sys-font-body-copy-font-size: 16px;
+--sys-font-body-copy-line-height: 24px;
+--sys-font-body-copy-text-align: left;
+--sys-font-body-copy-color: #222222;
+--sys-font-body-copy-font-style: normal;
+--sys-font-body-copy-font-weight: 500;
+--sys-font-body-copy-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+--sys-font-body-copy: {
+  font-size: var(--sys-font-body-copy-font-size);
+  line-height: var(--sys-font-body-copy-line-height);
+  text-align: var(--sys-font-body-copy-text-align);
+  color: var(--sys-font-body-copy-color);
+  font-style: var(--sys-font-body-copy-font-style);
+  font-weight: var(--sys-font-body-copy-font-weight);
+  font-family: var(--sys-font-body-copy-font-family);
+};
+
+// Pullquote SM font style
+--sys-font-pullquote-sm-font-size: 24px;
+--sys-font-pullquote-sm-line-height: 32px;
+--sys-font-pullquote-sm-text-align: left;
+--sys-font-pullquote-sm-color: #6a6a6a;
+--sys-font-pullquote-sm-letter-spacing: 0.2000000029802322px;
+--sys-font-pullquote-sm-font-style: italic;
+--sys-font-pullquote-sm-font-weight: 500;
+--sys-font-pullquote-sm-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+--sys-font-pullquote-sm: {
+  font-size: var(--sys-font-pullquote-sm-font-size);
+  line-height: var(--sys-font-pullquote-sm-line-height);
+  text-align: var(--sys-font-pullquote-sm-text-align);
+  color: var(--sys-font-pullquote-sm-color);
+  letter-spacing: var(--sys-font-pullquote-sm-letter-spacing);
+  font-style: var(--sys-font-pullquote-sm-font-style);
+  font-weight: var(--sys-font-pullquote-sm-font-weight);
+  font-family: var(--sys-font-pullquote-sm-font-family);
+};
+
+// Information SM font style
+--sys-font-information-sm-font-size: 16px;
+--sys-font-information-sm-line-height: 24px;
+--sys-font-information-sm-text-align: left;
+--sys-font-information-sm-color: #222222;
+--sys-font-information-sm-font-style: normal;
+--sys-font-information-sm-font-weight: 400;
+--sys-font-information-sm-font-family: Roboto;
+
+--sys-font-information-sm: {
+  font-size: var(--sys-font-information-sm-font-size);
+  line-height: var(--sys-font-information-sm-line-height);
+  text-align: var(--sys-font-information-sm-text-align);
+  color: var(--sys-font-information-sm-color);
+  font-style: var(--sys-font-information-sm-font-style);
+  font-weight: var(--sys-font-information-sm-font-weight);
+  font-family: var(--sys-font-information-sm-font-family);
+};
+
+// Detail SM font style
+--sys-font-detail-sm-font-size: 12px;
+--sys-font-detail-sm-line-height: 16px;
+--sys-font-detail-sm-text-align: left;
+--sys-font-detail-sm-color: #2a2a2a;
+--sys-font-detail-sm-font-style: normal;
+--sys-font-detail-sm-font-weight: 400;
+--sys-font-detail-sm-font-family: Roboto;
+
+--sys-font-detail-sm: {
+  font-size: var(--sys-font-detail-sm-font-size);
+  line-height: var(--sys-font-detail-sm-line-height);
+  text-align: var(--sys-font-detail-sm-text-align);
+  color: var(--sys-font-detail-sm-color);
+  font-style: var(--sys-font-detail-sm-font-style);
+  font-weight: var(--sys-font-detail-sm-font-weight);
+  font-family: var(--sys-font-detail-sm-font-family);
 };
 
 /*
     Measurements:
 */
 
+// Spacing
+--spacing-stretch: 0.2rem;
+
+// Radius
+--radius-emphasis: 0.3rem;
+--radius-default: 0;
 
 }
