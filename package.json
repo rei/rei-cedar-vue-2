@@ -18,7 +18,7 @@
     "reference": "backstop reference --configPath=backstop.js",
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
-    "play": "vbuild -c build/play.config.js -d",
+    "play": "vbuild dev -c build/play.config.js",
     "build:play": "vbuild -c build/play.config.js"
   },
   "dependencies": {
@@ -89,6 +89,8 @@
     "postcss-cssnext": "^2.10.0",
     "postcss-import": "^9.1.0",
     "postcss-loader": "^1.3.3",
+    "postcss-pxtorem": "^4.0.1",
+    "postcss-responsive-type": "^0.5.1",
     "postcss-scss": "^0.4.1",
     "rimraf": "^2.6.0",
     "selenium-server": "^3.0.1",
@@ -102,7 +104,7 @@
     "stylelint-webpack-plugin": "^0.7.0",
     "tenon-node": "^0.4.0",
     "url-loader": "^0.5.7",
-    "vbuild": "^6.24.2",
+    "vbuild": "^7.2.4",
     "vue-loader": "^12.0.2",
     "vue-play": "^3.2.1",
     "vue-style-loader": "^3.0.1",
