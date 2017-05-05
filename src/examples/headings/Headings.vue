@@ -1,7 +1,7 @@
 <template>
   <div>
-    <cdr-heading data-backstop="heading-headline-1" :level="2" :modifier="['headline']">headline</cdr-heading>
-    <cdr-heading data-backstop="heading-headline-2" :level="1" :modifier="['headline']">headline</cdr-heading>
+    <cdr-heading data-backstop="heading-headline-1" :level="1" :modifier="['headline']">headline</cdr-heading>
+    <cdr-heading data-backstop="heading-headline-2" :level="2" :modifier="['headline']">headline</cdr-heading>
     <cdr-heading data-backstop="heading-headline-3" :level="3" :modifier="['headline']">headline</cdr-heading>
     <cdr-heading data-backstop="heading-headline-4" :level="4" :modifier="['headline']">headline</cdr-heading>
     <cdr-heading data-backstop="heading-headline-5" :level="5" :modifier="['headline']">headline</cdr-heading>
