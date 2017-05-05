@@ -1,38 +1,50 @@
 .cdr-list {
-  list-style-type: var(--list-style-default);
-  margin-bottom: 0;
-  padding-left: 0;
-
-  & > ul {
-    padding-left: var(--list-padding-left);
-  }
+  padding-left: var(--list-padding-left);
+  list-style-type: var(--list-style-bulleted);
 
   & > li {
     padding-bottom: var(--list-padding-bottom);
+
+    & > ul,
+    & > ol {
+      padding-top: var(--list-padding-bottom);
+      padding-left: var(--list-padding-left);
+
+      & > li:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+
+  &--unstyled {
+    list-style-type: var(--list-style-unstyled);
+    padding-left: 0;
   }
 
   &--bulleted {
     list-style-type: var(--list-style-bulleted);
-    padding-left: var(--list-padding-left);
   }
 
   &--numbered {
     list-style-type: var(--list-style-numbered);
-    padding-left: var(--list-padding-left);
   }
 
   &--menu {
+    list-style-type: var(--list-style-unstyled);
+    padding-left: 0;
 
     & > li {
-      @apply --appearance-menu-list;
       @apply --decoration-border-bottom;
-      
-      &:hover {
-        background-color: var(--color-background-1);
-      }
+      padding: 0;
 
       & > a {
+        @apply --appearance-menu-list;
         color: var(--color-light-10-color);
+        display: inline-block;
       }
     }
   }
