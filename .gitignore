@@ -1,6 +1,8 @@
 .DS_Store
-node_modules
-backstop_data
+node_modules/
+backstop_data/
 test
 static
 selenium-debug.log
+src
+backstop_data
