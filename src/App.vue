@@ -1,7 +1,9 @@
 <template>
   <div id="app" class="container-fluid">
 
-    <cdr-icon name="add"></cdr-icon>
+    <cdr-icon name="icon-rei-add"></cdr-icon>
+    <cdr-icon name="icon-rei-backorder"></cdr-icon>
+    <cdr-icon name="icon-rei-calendar"></cdr-icon>
 
     <headings></headings>
     

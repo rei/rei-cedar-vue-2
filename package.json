@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "get-tokens": "node utils/brandai.js",
-    "get-icons": "node utils/sprite.js",
+    "get-icons": "node utils/icons.js",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "release": "node build/release.js",
@@ -103,6 +103,7 @@
     "stylelint-config-standard": "^16.0.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.7.0",
+    "svg-inline-loader": "^0.7.1",
     "tenon-node": "^0.4.0",
     "url-loader": "^0.5.7",
     "vbuild": "^7.2.4",
