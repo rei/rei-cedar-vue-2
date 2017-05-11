@@ -1,10 +1,7 @@
 <template>
   <div id="app" class="container-fluid">
 
-    <img src="./assets/icon-sprite/icon-sprite-6a17adfb.svg" alt="">
-    <img src="./assets/logo.png" alt="">
-
-    <span class="svg-icon-rei-add"></span>
+    <cdr-icon name="add"></cdr-icon>
 
     <headings></headings>
     
