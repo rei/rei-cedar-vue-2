@@ -1,5 +1,5 @@
 <template>
-  <svg class="cdr-icon">
+  <svg class="cdr-icon" aria-hidden="true">
     <use :xlink:href="url"></use>
   </svg>
 </template>
