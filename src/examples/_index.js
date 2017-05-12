@@ -5,6 +5,7 @@ import icons from './icons/Icons';
 import lists from './lists/Lists';
 import anchors from './anchors/Anchors';
 import buttons from './buttons/Buttons';
+import forms from './forms/Form';
 
 export default {
   test,
@@ -14,4 +15,5 @@ export default {
   lists,
   anchors,
   buttons,
+  forms,
 };

@@ -1,0 +1,342 @@
+.cdr-input-group {
+  margin-bottom: 1.6rem;
+
+  &--inline {
+    display: inline-block;
+    margin-right: 1.6rem;
+  }
+    
+  & label, input {
+    display: block;
+  }
+}
+
+.cdr-input, .cdr-select {
+  border-width: .12rem;
+  border-style: solid;
+  border-color: #e5e5e5;
+  border-radius: .4rem;
+  display: block;
+  padding: .6rem;
+  line-height: 1;
+
+  &--large {
+    height: 6rem;
+    padding-bottom: 3.2rem!important;
+  }
+
+  &--inline {
+    display: inline-block;
+  }
+  
+  &::placeholder {
+    font-style: italic;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: #f2f2f2;
+
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+}
+
+.cdr-label {
+  font-weight: bold;
+}
+
+.field-validation {
+  position: relative;
+
+  & .icon-validation {
+    display: none;
+    fill: #c00;
+    height: 1.8rem;
+    width: 1.8rem;
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+    
+    &.icon-error {
+      fill: #c00;
+    }
+
+    &.icon-warning {
+      fill: #e4ac00;
+    }
+
+    &.icon-success {
+      fill: #a1c900;
+    }
+  }
+
+  &.validation-msg {
+    border-width: .12rem;
+    border-style: solid;
+    border-top-right-radius: .4rem;
+    border-top-left-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    border-bottom-left-radius: .4rem;
+    display: block;
+    padding: 0 .02rem;
+    line-height: 1;
+
+    & input {
+      border-top-right-radius: .4rem;
+      border-top-left-radius: 4px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-style: solid;
+      border-left-width: 0;
+      border-right-width: 0;
+      border-top-width: 0;
+      border-bottom-width: .12rem;
+      width: 100%;
+    }
+
+    &.has-error {
+      background-color: #f2dede;
+      border-color: #c00;
+
+      & input {
+        border-bottom-color: #c00;
+      }
+
+      & .icon-validation {
+        display: inline-block;
+      }
+    }
+
+    &.has-warning {
+      background-color: #fff4d1;
+      border-color: #e4ac00;
+
+      & input {
+        border-bottom-color: #e4ac00;
+      }
+
+      & .icon-validation {
+        display: inline-block;
+      }
+    }
+
+    & .field-msg_error {
+      padding: .6rem;
+    }
+  }
+
+  &.has-success {
+    & .icon-validation {
+      display: inline-block;
+    }
+  }
+}
+
+.cdr-checkbox {
+  margin-left: 0;
+  position: relative;
+
+  & > [type="checkbox"] {
+    position: absolute;
+    width: .1rem;
+    height: .1rem;
+    padding: 0;
+    margin: -.1rem;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: none;
+
+    & + label {
+      padding: 1.2rem 1.2rem 1.2rem 3.2rem;
+      line-height: 2rem;
+      cursor: pointer;
+
+      & svg {
+        display: none;
+      }
+
+      &:before {
+        position: absolute;
+        top: 1.2rem;
+        left: 0;
+        display: inline-block;
+        width: 1.8rem;
+        height: 1.8rem;
+        content: '';
+        border-radius: .2rem;
+        border: none;
+        box-shadow: 0 0 0 0.1rem #999;
+      }
+    }
+
+    &[disabled] {
+      & + label {
+        cursor: not-allowed;
+
+        &:before {
+          background-color: #f2f2f2;
+          box-shadow: 0 0 0 0.1rem #ccc;
+          text-shadow: none;
+        }
+        
+        &:after {
+          text-shadow: none;
+        }
+      }
+    }
+
+    &:checked {
+      & + label {
+
+        & svg {
+          display: block;
+          position: absolute;
+          left: 0;
+          fill: #fff;
+          height: 1.8rem;
+          width: 1.8rem;
+          padding: .2rem;
+        }
+
+        &:before {
+          background-color: #000;
+          box-shadow: 0 0 0 0.1rem #000;
+          outline: none;
+        }
+
+        &:after {
+          position: absolute;
+          top: 1.2rem;
+          left: 0;
+          padding: .28rem;
+          width: 1.8rem;
+          height: 1.8rem;
+          font: normal normal normal 1.2rem/1 'rei-icons';
+          font-size: 1.4rem;
+          color: #fff;
+          content: '';
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+          text-transform: none;
+          transform: translate(0, 0);
+          speak: none;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+    }
+
+    &:focus + label:before, &:active + label:before {
+        border: 0.1rem solid #4eaaff;
+    }
+  }
+
+  & > [type="checkbox"]:checked[disabled] {
+    & + label {
+      cursor: not-allowed;
+
+      &:before {
+        background-color: #f2f2f2;
+        box-shadow: 0 0 0 0.1rem #ccc;
+        text-shadow: none;
+      }
+      &:after {
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+.cdr-radio {
+  margin: 0;
+
+  & > [type="radio"] {
+    position: absolute;
+    width: .1rem;
+    height: .1rem;
+    padding: 0;
+    margin: -.1rem;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: none;
+
+    & + label {
+      position: relative;
+      display: inline-block;
+      font-size: initial;
+      font-weight: initial;
+      color: inherit;
+      padding: 1.2rem 1.2rem 1.2rem 2.8rem;
+      margin-bottom: 0;
+      line-height: 2rem;
+      cursor: pointer;
+
+      &:before {
+        position: absolute;
+        background-color: #fff;
+        top: 1rem;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0;
+        content: '';
+        border-radius: 50%;
+        box-shadow: 0 0 0 0.1rem #999;
+      }
+    }
+    
+    &:focus + label:before, &:active + label:before {
+      border: 0.1rem solid #4eaaff;
+    }
+  }
+
+  & > [type="radio"] {
+    &:checked {
+      & + label {
+        &:before {
+          background-color: #4eaaff;
+          border: none;
+          outline: none;
+        }
+
+        &:after {
+          content: " ";
+          background-color: #fff;
+          position: absolute;
+          top: 1.55rem;
+          left: .65rem;
+          width: .8rem;
+          height: .8rem;
+          border-radius: 50%;
+          box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, .2);
+        }
+      }
+
+      &[disabled] + label {
+        &:before {
+          background-color: #f2f2f2;
+          border: none;
+          box-shadow: 0 0 0 0.1rem #ccc;
+        }
+
+        &:after {
+          box-shadow: 0 0 0.1rem 0.1rem #ccc;
+        }
+      }
+    }
+
+    &[disabled] {
+      & + label {
+        cursor: not-allowed;
+
+        &:before { 
+          background-color: #f2f2f2;
+          border: none;
+          box-shadow: 0 0 0 0.1rem #ccc;
+        }
+      }
+    }
+  }
+}

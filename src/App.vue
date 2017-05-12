@@ -6,6 +6,7 @@
     <anchors></anchors>
     <buttons></buttons>
     <lists></lists>
+    <forms></forms>
     <grid></grid>
     <test data-backstop="test"></test>
 

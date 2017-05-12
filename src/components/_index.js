@@ -5,6 +5,7 @@ import Layouts from './layouts/_index';
 import Lists from './lists/_index';
 import Headings from './headings/_index';
 import Icons from './icons/_index';
+import Forms from './forms/_index';
 
 export default Object.assign({},
   Anchors,
@@ -14,4 +15,5 @@ export default Object.assign({},
   Lists,
   Headings,
   Icons,
+  Forms,
 );
