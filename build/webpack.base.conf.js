@@ -57,11 +57,6 @@ module.exports = {
         }
       },
       {
-        test: /\.svg$/,
-        include: [resolve('src/assets/icons/')],
-        loader: 'svg-inline-loader'
-      },
-      {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         query: {

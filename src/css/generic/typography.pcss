@@ -1,6 +1,6 @@
 /*
 * Typography utility classes
-* 
+*
 * TOC:
 * headline
 * title
@@ -19,10 +19,12 @@
   width: 32px;
   height: 32px;
 
-  &:hover {
-    & path {
-      fill: var(--sys-color-core);
-    }
+  &:hover > use {
+    fill: var(--sys-color-core);
+  }
+
+  & path {
+    all: inherit;
   }
 }
 
@@ -31,7 +33,7 @@
     @apply --sys-font-headline-lg;
   }
 
-  &-title{
+  &-title {
     @apply --sys-font-title-lg;
   }
 

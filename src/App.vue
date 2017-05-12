@@ -1,9 +1,8 @@
 <template>
   <div id="app" class="container-fluid">
 
-    <cdr-icon name="icon-rei-add"></cdr-icon>
-    <cdr-icon name="icon-rei-backorder"></cdr-icon>
-    <cdr-icon name="icon-rei-calendar"></cdr-icon>
+    <cdr-icon url="/static/icon-sprite.svg#icon-rei-add"></cdr-icon>
+    <cdr-icon url="/static/icon-sprite.svg#icon-rei-backorder"></cdr-icon>
 
     <headings></headings>
     
@@ -61,6 +60,8 @@
 </template>
 
 <script>
+  import 'svgxuse';
+
   import Components from './components/_index';
   // extra stuff for testing
   import test from './examples/testing/Test';
