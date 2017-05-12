@@ -60,8 +60,6 @@
 </template>
 
 <script>
-  import 'svgxuse';
-
   import Components from './components/_index';
   // extra stuff for testing
   import test from './examples/testing/Test';

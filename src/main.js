@@ -1,3 +1,4 @@
+import 'svgxuse';
 import './css/main.postcss';
 
 import Components from './components/_index';
