@@ -73,7 +73,7 @@
   import cdrHeading from '../../components/headings/Heading';
 
   export default {
-    name: 'grid',
+    name: 'headings',
     components: { cdrHeading },
   };
 </script>

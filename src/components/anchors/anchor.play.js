@@ -1,7 +1,7 @@
 import { play } from 'vue-play';
 import Anchor from './Anchor';
-import basicContrastAnchor from '../../examples/Anchor/BasicContrastAnchor';
-import basicOverlayAnchor from '../../examples/Anchor/BasicOverlayAnchor';
+import basicContrastAnchor from '../../examples/anchors/BasicContrastAnchor';
+import basicOverlayAnchor from '../../examples/anchors/BasicOverlayAnchor';
 
 
 play(Anchor)

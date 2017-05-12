@@ -1,0 +1,28 @@
+module.exports = [
+  {
+    label: 'Button',
+    selectors: [
+      "[data-backstop='cdr-button-disabled']",
+      "[data-backstop='cdr-button']",
+      "[data-backstop='cdr-button-small']",
+      "[data-backstop='cdr-button-extra-small']",
+      "[data-backstop='cdr-button--secondary']",
+      "[data-backstop='cdr-button--secondary-small']",
+      "[data-backstop='cdr-button--secondary-extra-small']",
+      "[data-backstop='cdr-button--alternate']",
+      "[data-backstop='cdr-button--alternate-small']",
+      "[data-backstop='cdr-button--alternate-extra-small']",
+      "[data-backstop='cdr-button--secondary-alternate']",
+      "[data-backstop='cdr-button--secondary-alternate-small']",
+      "[data-backstop='cdr-button--secondary-alternate-extra-small']",
+      "[data-backstop='cdr-button--link-href']",
+      "[data-backstop='cdr-button--link-standalone-href']",
+      "[data-backstop='cdr-button--link']",
+      "[data-backstop='cdr-button--link-standalone']",
+    ],
+    readyEvent: null,
+    delay: 500,
+    misMatchThreshold: 0.1,
+    onReadyScripts: [false, 'hover.js', 'disabled.js'],
+  },
+];

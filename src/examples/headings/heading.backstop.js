@@ -1,6 +1,6 @@
 module.exports = [
   {
-    label: 'Button',
+    label: 'Heading',
     selectors: [
       "[data-backstop='headline-1']",
       "[data-backstop='headline-2']",
