@@ -27,7 +27,7 @@ play(Button, ButtonGroup)
     readme: 'This is the default small button in the REI theme.',
   })
   .add('Default extra small', {
-    template: '<cdr-button :modifier="[\'extraSmall\']">Default extra small</cdr-button>',
+    template: '<cdr-button :modifier="[\'extra-small\']">Default extra small</cdr-button>',
     readme: 'This is the default extra small button in the REI theme.',
   })
   .add('Alternate default large', {
@@ -39,7 +39,7 @@ play(Button, ButtonGroup)
     readme: 'This is the alternate default small button in the REI theme.',
   })
   .add('Alternate default extra small', {
-    template: '<cdr-button :modifier="[\'alternate\', \'extraSmall\']">Alternate default extra small</cdr-button>',
+    template: '<cdr-button :modifier="[\'alternate\', \'extra-small\']">Alternate default extra small</cdr-button>',
     readme: 'This is the alternate default extra small button in the REI theme.',
   })
   .add('Secondary large', {
@@ -56,7 +56,7 @@ play(Button, ButtonGroup)
     readme: 'This is the secondary small button in the REI theme.',
   })
   .add('Secondary extra small', {
-    template: '<cdr-button :modifier="[\'secondary\', \'extraSmall\']">Secondary extra small</cdr-button>',
+    template: '<cdr-button :modifier="[\'secondary\', \'extra-small\']">Secondary extra small</cdr-button>',
     readme: 'This is the secondary extra small button in the REI theme.',
   })
   .add('Alternate secondary large', {
@@ -71,7 +71,7 @@ play(Button, ButtonGroup)
   })
   .add('Alternate secondary extra small', {
     ...whiteAlternateButtonExtraSmall,
-    template: '<cdr-button :modifier="[\'secondary-alternate\', \'extraSmall\']">Alternate secondary extra small</cdr-button>',
+    template: '<cdr-button :modifier="[\'secondary-alternate\', \'extra-small\']">Alternate secondary extra small</cdr-button>',
     readme: 'This is the alternate secondary extra small button in the REI theme.',
   })
   .add('Grouping', {

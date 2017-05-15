@@ -5,11 +5,11 @@
 </template>
 
 <script>
-  import cdrButtonExtraSmall from '../../components/buttons/Button';
+  import cdrButton from '../../components/buttons/Button';
 
   export default {
     name: 'white-alternate-example-extra-small',
-    components: { cdrButtonExtraSmall },
+    components: { cdrButton },
   };
 </script>
 <style scoped>
