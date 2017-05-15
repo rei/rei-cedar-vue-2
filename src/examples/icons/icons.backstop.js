@@ -52,7 +52,7 @@ module.exports = [
       "[data-backstop='cdr-icon-zoom']",
     ],
     readyEvent: null,
-    delay: 500,
+    delay: 100,
     misMatchThreshold: 0.1,
     onReadyScripts: [false, 'hover.js'],
   },

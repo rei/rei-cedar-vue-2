@@ -7,7 +7,7 @@ module.exports = [{
     "[data-backstop='cdr-link--standalone']",
   ],
   readyEvent: null,
-  delay: 500,
+  delay: 100,
   misMatchThreshold: 0.1,
   onReadyScripts: [false, 'hover.js'],
 }];

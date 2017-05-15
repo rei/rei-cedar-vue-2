@@ -70,7 +70,7 @@ module.exports = [
       "[data-backstop='heading-disclaimer-6']",
     ],
     readyEvent: null,
-    delay: 500,
+    delay: 100,
     misMatchThreshold: 0.1,
   },
 ];
