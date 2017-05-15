@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "get-tokens": "node utils/brandai.js",
+    "get-icons": "node utils/icons.js",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "release": "node build/release.js",
@@ -76,7 +77,6 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "^0.0.31",
     "karma-webpack": "^2.0.2",
-    "lodash": "^4.17.4",
     "lolex": "^1.5.2",
     "markdown-loader": "^2.0.0",
     "mocha": "^3.2.0",
@@ -102,6 +102,8 @@
     "stylelint-config-standard": "^16.0.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.7.0",
+    "svg-sprite": "^1.3.6",
+    "svgxuse": "^1.2.4",
     "tenon-node": "^0.4.0",
     "url-loader": "^0.5.7",
     "vbuild": "^7.2.4",
@@ -110,7 +112,7 @@
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.2.6",
     "webpack": "^2.3.2",
-    "webpack-bundle-analyzer": "^2.2.1",
+    "webpack-bundle-analyzer": "^2.8.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-merge": "^4.1.0"

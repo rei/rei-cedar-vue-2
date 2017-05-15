@@ -1,6 +1,6 @@
 /*
 * Typography utility classes
-* 
+*
 * TOC:
 * headline
 * title
@@ -15,12 +15,25 @@
 * disclaimer
 */
 
+.cdr-icon {
+  width: 32px;
+  height: 32px;
+
+  &:hover > use {
+    fill: var(--sys-color-core);
+  }
+
+  & path {
+    all: inherit;
+  }
+}
+
 .cdr {
   &-headline {
     @apply --sys-font-headline-lg;
   }
 
-  &-title{
+  &-title {
     @apply --sys-font-title-lg;
   }
 

@@ -1,9 +1,9 @@
 import { play } from 'vue-play';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
-import whiteAlternateButton from '../../examples/Button/whiteAlternateButton';
-import whiteAlternateButtonSmall from '../../examples/Button/whiteAlternateButtonSmall';
-import whiteAlternateButtonExtraSmall from '../../examples/Button/whiteAlternateButtonExtraSmall';
+import whiteAlternateButton from '../../examples/buttons/whiteAlternateButton';
+import whiteAlternateButtonSmall from '../../examples/buttons/whiteAlternateButtonSmall';
+import whiteAlternateButtonExtraSmall from '../../examples/buttons/whiteAlternateButtonExtraSmall';
 
 
 play(Button, ButtonGroup)
