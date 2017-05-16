@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Anchors</h2>
     <p>
       <cdr-a data-backstop="cdr-link" href="https://www.rei.com/">An example link</cdr-a>
     </p>
@@ -11,6 +12,9 @@
     </p>
     <p>
       <cdr-a data-backstop="cdr-link--standalone" href="https://www.rei.com/" :modifier="['standalone']">An example standalone link</cdr-a>
+    </p>
+    <p>
+      <cdr-a data-backstop="cdr-link--button" href="https://www.rei.com/" :modifier="['button']">Link as button</cdr-a>
     </p>
   </div>
 </template>

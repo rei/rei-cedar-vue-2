@@ -1,11 +1,7 @@
 <template>
-  <button :class="[buildClass]" :type="type" @click="handleClick" v-if="!href">
+  <button :class="[buildClass]" :type="type" @click="handleClick">
     <slot></slot>
   </button>
-
-  <a :class="[buildClass]" :href="href" :target="target" :rel="newRel" v-else>
-    <slot></slot>
-  </a>
 </template>
 
 <script>
@@ -13,9 +9,6 @@
     name: 'cdr-button',
     props: {
       theme: String,
-      href: String,
-      target: String,
-      rel: String,
       modifier: {
         required: false,
         default: () => [],
@@ -32,7 +25,7 @@
     },
     computed: {
       buildClass() {
-        const baseClass = this.href ? 'cdr-link' : 'cdr-button';
+        const baseClass = this.modifier.indexOf('link') >= 0 ? 'cdr-link' : 'cdr-button';
         let final = '';
 
         if (this.theme) {
