@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h2>Buttons</h2>
+    <section>
     <cdr-button disabled data-backstop="cdr-button-disabled">Disabled</cdr-button>
     <cdr-button-group class="button-example">
       <cdr-button data-backstop="cdr-button" type="submit">Primary large</cdr-button>
@@ -21,14 +23,13 @@
       <cdr-button data-backstop="cdr-button--secondary-alternate-small" :modifier="['secondary-alternate', 'small']">White alternate small</cdr-button>
       <cdr-button data-backstop="cdr-button--secondary-alternate-extra-small" :modifier="['secondary-alternate', 'extra-small']">White alternate extra small</cdr-button>
     </cdr-button-group>
-    <div>
-      <p>Buttons with hrefs (turned into anchor)</p>
-      <cdr-button data-backstop="cdr-button--link-href" href="https://www.google.com/" target="_blank">Link Button component - link option</cdr-button>
-      <cdr-button data-backstop="cdr-button--link-standalone-href" href="https://www.google.com/" target="_blank" :modifier="['standalone']" >Button component - standalone link option</cdr-button>
-      <p>Buttons without hrefs (link styling)</p>
-      <cdr-button data-backstop="cdr-button--link" :modifier="['link']">Link Button component - link option</cdr-button>
-      <cdr-button data-backstop="cdr-button--link-standalone" :modifier="['standalone']" >Button component - standalone link option</cdr-button>
-    </div>
+    </section>
+
+    <section>
+      <h3>Buttons without hrefs (link styling)</h3>
+      <p><cdr-button data-backstop="cdr-button--link" :modifier="['link']">Button as link</cdr-button></p>
+      <p><cdr-button data-backstop="cdr-button--link-standalone" :modifier="['link', 'standalone']">Button as link--standalone</cdr-button></p>
+    </section>
   </div>
 </template>
 
