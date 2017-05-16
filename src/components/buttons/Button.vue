@@ -32,7 +32,7 @@
     },
     computed: {
       buildClass() {
-        const baseClass = this.href ? 'cdr-link' : 'cdr-button';
+        const baseClass = 'cdr-button';
         let final = '';
 
         if (this.theme) {
