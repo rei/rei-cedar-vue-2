@@ -15,8 +15,6 @@ module.exports = [
       "[data-backstop='cdr-button--secondary-alternate']",
       "[data-backstop='cdr-button--secondary-alternate-small']",
       "[data-backstop='cdr-button--secondary-alternate-extra-small']",
-      "[data-backstop='cdr-button--link-href']",
-      "[data-backstop='cdr-button--link-standalone-href']",
       "[data-backstop='cdr-button--link']",
       "[data-backstop='cdr-button--link-standalone']",
     ],

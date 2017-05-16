@@ -1,6 +1,6 @@
 .cdr-button {
-  cursor: var(--button-cursor);
-
+  @apply --button-resets;
+  @apply --decoration-text-off;
   @apply --appearance-emphasis;
   @apply --decoration-border;
   @apply --decoration-outline;
@@ -31,21 +31,6 @@
   /* button states */
   &[disabled] {
     @apply --glaze-disabled;
-  }
-
-  &--link {
-    border: none;
-
-    @apply --appearance-copy;
-    @apply --decoration-text-on;
-    @apply --glaze-transparent-actions;
-  }
-
-  &--standalone {
-    @apply --appearance-link-standalone;
-    @apply --decoration-border-off;
-    @apply --decoration-text-off-on;
-    @apply --glaze-transparent-actions;
   }
 
   &--block {

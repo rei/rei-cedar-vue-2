@@ -2,16 +2,20 @@
 :root {
   --link-color-contrast: var(--sys-color-core);
   --link-color-overlay: var(--sys-color-architectural-5);
+  --link-resets: {
+    cursor: pointer;
+    display: inline;
+    border: none;
+  }
 }
 
-/* Anchor */
-:root {
-  --link-btn-dsp: inline-block;
-  --link-btn-ws: nowrap;
-}
 /* Buttons */
 :root {
-  --button-cursor: pointer;
+  --button-resets: {
+    display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+  }
   --button-block: {
     width: 100%;
     display: block;

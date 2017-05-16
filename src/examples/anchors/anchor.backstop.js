@@ -5,6 +5,7 @@ module.exports = [{
     "[data-backstop='cdr-link--contrast']",
     "[data-backstop='cdr-link--overlay']",
     "[data-backstop='cdr-link--standalone']",
+    "[data-backstop='cdr-link--button']",
   ],
   readyEvent: null,
   delay: 100,
