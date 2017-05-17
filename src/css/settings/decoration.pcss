@@ -8,11 +8,14 @@
 * TOC
 * Border
 ** border off
+* List style types
+** Default
+** Bullet
+** Numbered
 * Outline
-* Text Deccoration
+* Text Decoration
 ** on
 ** off - on
-*
 */
 :root {
   /*
@@ -24,6 +27,23 @@
   }
   --decoration-border-off: {
     border: none;
+  }
+  --decoration-border-bottom: {
+    border-bottom-width: 0.1rem;
+    border-bottom-style: solid;
+  }
+
+  /*
+  * List style types
+  */
+  --decoration-list-default: {
+    list-style-type: none;
+  }
+  --decoration-list-bulleted: {
+    list-style-type: disc;
+  }
+  --decoration-list-numbered: {
+    list-style-type: decimal;
   }
 
   /*
@@ -87,4 +107,3 @@
     }
   }
 }
-
