@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Headings</h2>
     <div data-backstop="heading-headline">
       <cdr-heading :level="1" :modifier="['headline']">headline</cdr-heading>
       <cdr-heading :level="2" :modifier="['headline']">headline</cdr-heading>
