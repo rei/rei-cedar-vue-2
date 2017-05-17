@@ -30,12 +30,12 @@
           <cdr-col :span="12" :span-md="6" :isRow="true" :cols="1" :cols-md="2">
            <cdr-col>
             <cdr-card>
-              <cdr-heading :level="2" :modifier="['title']">Backpacking Tents: How to Choose</cdr-heading>
+              <cdr-heading :level="2"  :modifier="['section-title']">Backpacking Tents: How to Choose</cdr-heading>
             </cdr-card>
             </cdr-col>
               <cdr-col>
                 <cdr-card>
-              <cdr-heading :level="2" :modifier="['title']">Kids and Camping</cdr-heading>
+              <cdr-heading :level="2"  :modifier="['section-title']">Kids and Camping</cdr-heading>
             </cdr-card>
               </cdr-col>
           </cdr-col>
@@ -46,12 +46,12 @@
           <cdr-col :span="12" :span-md="6" :isRow="true" :cols="1" :cols-md="2">
            <cdr-col>
             <cdr-card>
-              <cdr-heading :level="2" :modifier="['title']">Food Storage and Handling for Campers and Backpackers</cdr-heading>
+              <cdr-heading :level="2"  :modifier="['section-title']">Food Storage and Handling for Campers and Backpackers</cdr-heading>
             </cdr-card>
             </cdr-col>
               <cdr-col>
                 <cdr-card>
-              <cdr-heading :level="2" :modifier="['title']">Yellowstone National Park Kayaking and Canoeing Gear List</cdr-heading>
+              <cdr-heading :level="2"  :modifier="['section-title']">Yellowstone National Park Kayaking and Canoeing Gear List</cdr-heading>
             </cdr-card>
               </cdr-col>
           </cdr-col>
