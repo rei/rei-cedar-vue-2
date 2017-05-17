@@ -94,8 +94,4 @@ play(Button, ButtonGroup)
     template: '<cdr-button href="https://www.google.com/" target="_blank">Button component - link option</cdr-button>',
     readme: 'By adding an href with a url value on cdr-button component markup, will output link markup.',
   })
-  .add('Default large link', {
-    template: '<cdr-button href="https://www.google.com/" target="_blank">Default large</cdr-button>',
-    readme: 'This is the default large button in the REI theme but using the anchor element rather than the button.',
-  })
   ;
