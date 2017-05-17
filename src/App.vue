@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="container-fluid">
 
-    <icons></icons>
+    <icons data-backstop="icons"></icons>
     <headings></headings>
-    <anchors></anchors>
-    <buttons></buttons>
+    <anchors data-backstop="anchors"></anchors>
+    <buttons data-backstop="buttons"></buttons>
     <grid></grid>
     <test data-backstop="test"></test>
 
