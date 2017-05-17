@@ -1,6 +1,6 @@
 <template>
   <div>
-    <cdr-list data-backstop="cdr-list--bulleted">
+    <cdr-list>
       <li>List default</li>
       <li>List default
         <cdr-list>
@@ -15,7 +15,7 @@
       </li>
     </cdr-list>
 
-    <cdr-list type="ol" data-backstop="cdr-list--numbered">
+    <cdr-list type="ol">
       <li>List ordered - default</li>
       <li>List ordered - default
         <cdr-list type="ol" :modifier="['unstyled']">
@@ -30,7 +30,7 @@
         </li>
     </cdr-list>
 
-    <cdr-list :modifier="['unstyled']" data-backstop="cdr-list--unstyled">
+    <cdr-list :modifier="['unstyled']">
       <li>List unstyled</li>
       <li>List unstyled</li>
     </cdr-list>

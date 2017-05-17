@@ -1,11 +1,11 @@
 <template>
   <div id="app" class="container-fluid">
-
-    <icons></icons>
+    <h1>Cedar Proving grounds</h1>
+    <icons data-backstop="icons"></icons>
     <headings></headings>
-    <anchors></anchors>
-    <buttons></buttons>
-    <lists></lists>
+    <anchors data-backstop="anchors"></anchors>
+    <buttons data-backstop="buttons"></buttons>
+    <lists data-backstop="lists"></lists>
     <grid></grid>
     <test data-backstop="test"></test>
 
