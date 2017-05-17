@@ -5,6 +5,7 @@
     <headings></headings>
     <anchors></anchors>
     <buttons></buttons>
+    <lists></lists>
     <grid></grid>
     <test data-backstop="test"></test>
 
