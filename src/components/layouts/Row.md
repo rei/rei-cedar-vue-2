@@ -11,6 +11,7 @@
 | `:nowrap` [-md, -lg, -xl, -xxl] | Boolean | false | | Turns off row wrapping and sets up overflow scrolling (see flexbox -> flex-wrap: nowrap) |
 | `:wrap` [-md, -lg, -xl, -xxl] | Boolean | true | | Turns on row wrapping. Only needs to be changed if overriding `:nowrap` (see flexbox -> flex-wrap: wrap) |
 | `:gutter` [-md, -lg, -xl, -xxl] | Number | | 0 | 0 turns off gutters for that row |
+| `:type` | String | 'normal' | 'list', 'normal' | Changes grid to use ul and li instead of divs |
 
 ### Col
 
