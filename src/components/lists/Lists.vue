@@ -1,15 +1,22 @@
 <template>
-  <a :class="buildClass" :target="target">
+  <ul :class="buildClass" v-if="type === 'ul'">
     <slot></slot>
-  </a>
+  </ul>
+
+  <ol :class="buildClass" v-else-if="type === 'ol'">
+    <slot></slot>
+  </ol>
 </template>
 
 <script>
   export default {
-    name: 'cdr-a',
+    name: 'cdr-list',
     props: {
-      target: String,
-      rel: String,
+      type: {
+        type: String,
+        default: 'ul',
+        validator: value => (['ul', 'ol'].indexOf(value) >= 0) || false,
+      },
       modifier: {
         required: false,
         default: () => [],
@@ -17,7 +24,7 @@
     },
     computed: {
       buildClass() {
-        const baseClass = this.modifier.indexOf('button') >= 0 ? 'cdr-button' : 'cdr-link';
+        const baseClass = 'cdr-list';
         let final = '';
 
         if (this.theme) {
@@ -25,6 +32,12 @@
 
           this.modifier.forEach((mod) => {
             final += `${this[this.theme][`${baseClass}--${mod}`]} `;
+          });
+        } else if (this.type === 'ol') {
+          final += `${baseClass} ${baseClass}--numbered `;
+
+          this.modifier.forEach((mod) => {
+            final = `${baseClass} ${baseClass}--${mod} `;
           });
         } else {
           final += `${baseClass} `;
@@ -35,12 +48,6 @@
         }
 
         return final;
-      },
-      newRel() {
-        if (this.target === '_blank') {
-          return this.rel || 'noopener';
-        }
-        return this.rel;
       },
     },
   };

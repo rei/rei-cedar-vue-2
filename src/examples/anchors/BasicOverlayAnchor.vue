@@ -1,6 +1,6 @@
 <template>
-  <div id="example-a" class="cdr-stretch cdr-bg--dark-20">
-    <cdr-a :modifier="['overlay']" href="#example-a"> An example overlay link</cdr-a>
+  <div id="example-overlay" class="cdr-stretch cdr-bg--dark-20">
+    <cdr-a :modifier="['overlay']" href="#example-overlay"> An example overlay link</cdr-a>
   </div>
 </template>
 

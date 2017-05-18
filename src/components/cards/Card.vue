@@ -1,5 +1,5 @@
 <template>
-  <section :class="className">
+  <section class="cdr-card">
     <slot></slot>
   </section>
 </template>
@@ -7,12 +7,6 @@
 <script>
   export default {
     name: 'cdr-card',
-    props: {
-      className: {
-        type: String,
-        required: true,
-      },
-    },
 };
 </script>
 

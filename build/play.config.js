@@ -13,7 +13,7 @@ module.exports = {
           use: [
             'style-loader',
             'css-loader?importLoaders=1',
-            'postcss-loader?parser=postcss-scss',
+            'postcss-loader',
           ],
         },
         {

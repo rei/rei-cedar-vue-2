@@ -1,0 +1,57 @@
+.cdr-list {
+  @apply --decoration-list-bulleted;
+
+  padding-left: var(--list-pl);
+
+  & > li {
+    padding-bottom: var(--list-pb);
+
+    & > ul,
+    & > ol {
+      padding-top: var(--list-pt);
+      padding-left: var(--list-pl);
+
+      & > li:last-of-type {
+        padding-bottom: var(--list-pn);
+      }
+    }
+
+    &:last-of-type {
+      padding-bottom: var(--list-pn);
+    }
+  }
+
+  &--unstyled {
+    @apply --decoration-list-default;
+
+    padding-left: var(--list-pn);
+  }
+
+  &--bulleted {
+    @apply --decoration-list-bulleted;
+  }
+
+  &--numbered {
+    @apply --decoration-list-numbered;
+  }
+
+  &--menu {
+    @apply --decoration-list-default;
+
+    padding-left: var(--list-pn);
+
+    & > li {
+      @apply --decoration-border-bottom;
+
+      border-color: var(--color-medium-20);
+      padding: var(--list-pn);
+
+      & > a {
+        @apply --appearance-menu-list;
+
+        color: var(--color-dark-10);
+        display: inline-block;
+      }
+    }
+  }
+}

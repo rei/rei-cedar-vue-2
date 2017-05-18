@@ -24,9 +24,9 @@
     }
   }
   --glaze-transparent: {
-    background-color: var(--color-transparent-background-color);
-    border-color: var(--color-transparent-border-color);
-    color: var(--color-transparent-color);
+    background-color: var(--color-transparent-background);
+    border-color: var(--color-transparent-border);
+    color: var(--color-transparent);
   }
   --glaze-transparent-actions: {
     @apply --glaze-transparent;
@@ -34,10 +34,9 @@
 
     &:hover,
     &:active,
-    &:focus,
-    &:visited {
-      background-color: var(--color-transparent-background-color);
-      color: var(--color-transparent-color);
+    &:focus {
+      background-color: var(--color-transparent-background);
+      color: var(--color-transparent);
     }
   }
   --glaze-disabled: {
@@ -57,10 +56,10 @@
 
     &:hover,
     &:active,
-    &:focus,
-    &:visited {
+    &:focus {
       background-color: var(--color-core-background-active);
       border-color: var(--color-core-background-active);
+      color: var(--color-core-text);
     }
   }
 
@@ -70,8 +69,8 @@
 
   /* Light-10 */
   --glaze-light-10: {
-    background-color: var(--color-light-10-background-color);
-    border-color: var(--color-light-10-border-color);
+    background-color: var(--color-light-10-background);
+    border-color: var(--color-light-10-border);
     color: var(--color-light-10-color);
   }
   --glaze-light-10-actions: {
@@ -80,17 +79,18 @@
 
     &:hover,
     &:active,
-    &:focus,
-    &:visited {
+    &:focus {
       background-color: var(--color-light-10-background-color-active);
-      border-color: var(--color-light-10-border-color);
+      border-color: var(--color-light-10-border);
+      color: var(--color-light-10-color);
+
     }
   }
 
   /* Light-10-alternate */
   --glaze-light-10-alternate: {
-    background-color: var(--color-light-10-background-color);
-    border-color: var(--color-dark-10-border-color);
+    background-color: var(--color-light-10-background);
+    border-color: var(--color-dark-10-border);
     color: var(--color-light-10-color);
   }
   --glaze-light-10-alternate-actions: {
@@ -99,10 +99,10 @@
 
     &:hover,
     &:active,
-    &:focus,
-    &:visited {
+    &:focus {
       background-color: var(--color-light-10-background-color-active);
-      border-color: var(--color-dark-10-border-color);
+      border-color: var(--color-dark-10-border);
+      color: var(--color-light-10-color);
     }
   }
 
@@ -113,7 +113,7 @@
   /* Dark-10 */
   --glaze-dark-10: {
     background-color: var(--color-dark-10-background-color);
-    border-color: var(--color-dark-10-border-color);
+    border-color: var(--color-dark-10-border);
     color: var(--color-dark-10-color);
   }
   --glaze-dark-10-actions: {
@@ -122,10 +122,10 @@
 
     &:hover,
     &:active,
-    &:focus,
-    &:visited {
+    &:focus {
       background-color: var(--color-dark-10-background-color-active);
       border-color: var(--color-dark-10-background-color-active);
+      color: var(--color-dark-10-color);
     }
   }
 
