@@ -14,6 +14,7 @@ module.exports = [
       "[data-backstop='col-xxl']",
       "[data-backstop='col-hide']",
       "[data-backstop='row-mosaic']",
+      "[data-backstop='row-mosaic-list']",
     ],
     readyEvent: null,
     delay: 100,
