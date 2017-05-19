@@ -1,20 +1,124 @@
 <template>
   <div>
+    <h2>Images</h2>
+    <h3>Aspect Ratios (with landscape images)</h3>
     <cdr-row :cols="4">
       <cdr-col>
-        <cdr-img src="http://placehold.it/350x150"></cdr-img>
+        <div>
+          <p>Square</p>
+          <cdr-img ratio="square" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
       </cdr-col>
       <cdr-col>
-        <cdr-img src="http://placehold.it/350x150"></cdr-img>
+        <div>
+          <p>1-2</p>
+          <cdr-img ratio="1-2" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
       </cdr-col>
       <cdr-col>
-        <cdr-img src="http://placehold.it/350x150"></cdr-img>
+        <div>
+          <p>2-3</p>
+          <cdr-img ratio="2-3" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
       </cdr-col>
       <cdr-col>
-        <cdr-img src="http://placehold.it/350x150"></cdr-img>
+        <div>
+          <p>3-4</p>
+          <cdr-img ratio="3-4" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>9-16</p>
+          <cdr-img ratio="9-16" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>2-1</p>
+          <cdr-img ratio="2-1" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>3-2</p>
+          <cdr-img ratio="3-2" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>4-3</p>
+          <cdr-img ratio="4-3" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>16-9</p>
+          <cdr-img ratio="16-9" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
       </cdr-col>
     </cdr-row>
+    <h3>Aspect Ratios (with portrait images)</h3>
+    <cdr-row :cols="4">
+      <cdr-col>
+        <div>
+          <p>Square</p>
+          <cdr-img ratio="square" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>1-2</p>
+          <cdr-img ratio="1-2" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>2-3</p>
+          <cdr-img ratio="2-3" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>3-4</p>
+          <cdr-img ratio="3-4" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>9-16</p>
+          <cdr-img ratio="9-16" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>2-1</p>
+          <cdr-img ratio="2-1" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>3-2</p>
+          <cdr-img ratio="3-2" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>4-3</p>
+          <cdr-img ratio="4-3" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>16-9</p>
+          <cdr-img ratio="16-9" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+    </cdr-row>
+
+    <h3>Standard image</h3>
     <cdr-img src="http://placehold.it/350x150"></cdr-img>
+    <cdr-img src="http://placehold.it/150x350"></cdr-img>
   </div>
 </template>
 
@@ -26,3 +130,10 @@
     components: Components,
   };
 </script>
+
+<style scoped>
+  .cdr-media-frame {
+    background-color: lightblue;
+  }
+</style>
+
