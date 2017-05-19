@@ -26,7 +26,7 @@ export default {
     },
     crop: {
       type: String,
-      validator: value => (['center', 'left', 'right'].indexOf(value) >= 0) || false,
+      validator: value => (['x-center', 'y-center', 'left', 'right', 'top', 'bottom'].indexOf(value) >= 0) || false,
     },
   },
   computed: {
