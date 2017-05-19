@@ -58,6 +58,7 @@
         </div>
       </cdr-col>
     </cdr-row>
+
     <h3>Aspect Ratios (with portrait images)</h3>
     <cdr-row :cols="4">
       <cdr-col>
@@ -112,6 +113,28 @@
         <div>
           <p>16-9</p>
           <cdr-img ratio="16-9" src="http://placehold.it/1080x1920"></cdr-img>
+        </div>
+      </cdr-col>
+    </cdr-row>
+
+    <h3>Cropping (with landscape images)</h3>
+    <cdr-row :cols="3">
+      <cdr-col>
+        <div>
+          <p>Left</p>
+          <cdr-img ratio="square" crop="left" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>Center</p>
+          <cdr-img ratio="square" crop="center" src="http://placehold.it/1920x1080"></cdr-img>
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <p>Right</p>
+          <cdr-img ratio="square" crop="right" src="http://placehold.it/1920x1080"></cdr-img>
         </div>
       </cdr-col>
     </cdr-row>

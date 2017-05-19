@@ -8,6 +8,8 @@
     display: block;
   }
 
+  /* Aspect Ratios */
+
   &--square {
     &::before {
       padding-bottom: 100%;
@@ -60,6 +62,26 @@
     &::before {
       padding-bottom: 56.25%;
     }
+  }
+
+  /* Cropping */
+
+  &--center > &__image {
+    max-width: none;
+  }
+
+  &--left > &__image {
+    max-width: none;
+    left: 0;
+    right: auto;
+    transform: translate(0, -50%);
+  }
+
+  &--right > &__image {
+    max-width: none;
+    right: 0;
+    left: auto;
+    transform: translate(0, -50%);
   }
 
   &__image {
