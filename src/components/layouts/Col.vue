@@ -1,9 +1,55 @@
 <template>
-  <div v-if="!isRow" class="cdr-col" :class="[spanClass, alignClass, offsetClass, hideClass]">
+  <div v-if="!isRow && !isList" class="cdr-col" :class="[spanClass, alignClass, offsetClass, hideClass]">
     <div class="cdr-col__content">
       <slot></slot>
     </div>
   </div>
+  <li v-else-if="!isRow && isList" class="cdr-col" :class="[spanClass, alignClass, offsetClass, hideClass]">
+    <div class="cdr-col__content">
+      <slot></slot>
+    </div>
+  </li>
+  <li v-else-if="isRow && isList" class="cdr-row cdr-col" :class="[spanClass, alignClass, offsetClass, hideClass]">
+    <row class="cdr-col" 
+      :cols="cols"
+      :colsMd="colsMd"
+      :colsLg="colsLg"
+      :colsXl="colsXl"
+      :colsXxl="colsXxl"
+      :justify="justify"
+      :justifyMd="justifyMd"
+      :justifyLg="justifyLg"
+      :justifyXl="justifyXl"
+      :justifyXxl="justifyXxl"
+      :align="align"
+      :alignMd="alignMd"
+      :alignLg="alignLg"
+      :alignXl="alignXl"
+      :alignXxl="alignXxl"
+      :gutter="gutter"
+      :gutterMd="gutterMd"
+      :gutterLg="gutterLg"
+      :gutterXl="gutterXl"
+      :gutterXxl="gutterXxl"
+      :vertical="vertical"
+      :verticalMd="verticalMd"
+      :verticalLg="verticalLg"
+      :verticalXl="verticalXl"
+      :verticalXxl="verticalXxl"
+      :wrap="wrap"
+      :wrapMd="wrapMd"
+      :wrapLg="wrapLg"
+      :wrapXl="wrapXl"
+      :wrapXxl="wrapXxl"
+      :nowrap="nowrap"
+      :nowrapMd="nowrapMd"
+      :nowrapLg="nowrapLg"
+      :nowrapXl="nowrapXl"
+      :nowrapXxl="nowrapXxl"
+      :type="type">
+      <slot></slot>
+    </row>
+  </li>
   <row v-else 
     class="cdr-col" 
     :class="[spanClass, alignClass, offsetClass, hideClass]" 
@@ -42,7 +88,7 @@
     :nowrapLg="nowrapLg"
     :nowrapXl="nowrapXl"
     :nowrapXxl="nowrapXxl"
-    >
+    :type="type">
     <slot></slot>
   </row>
 </template>
@@ -117,6 +163,9 @@
       name: 'nowrap',
       responsive: true,
     },
+    {
+      name: 'type',
+    },
   ];
 
   function createPropObj(obj) {
@@ -145,6 +194,9 @@
     props: finalProps,
     components: { Row },
     computed: {
+      isList() {
+        return this.$parent.type === 'list';
+      },
       spanClass() {
         let spanClass = '';
         if (this.span) { spanClass += `${blockName}_col${this.span} `; }
