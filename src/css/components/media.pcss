@@ -106,7 +106,7 @@
   &--right&--bottom > &__image,
   &--left&--top > &__image,
   &--right&--top > &__image {
-    transform: translate(0);
+    transform: none;
   }
 
   &__image {
@@ -114,13 +114,38 @@
     top: 50%;
     left: 50%;
     width: auto;
-    max-width: 100%;
     height: auto;
     max-height: 100%;
     transform: translate(-50%, -50%);
+
+    /* reset responsive so it doesn't break stuff */
+    &.cdr-image--responsive {
+      width: auto;
+      display: inline;
+    }
   }
 }
 
 .cdr-image {
   max-width: 100%;
+
+  &--responsive {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &--rounded {
+    border-radius: 6px;
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--thumbnail {
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
 }

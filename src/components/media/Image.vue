@@ -1,8 +1,8 @@
 <template>
   <div v-if="ratio" class="cdr-media-frame" :class="[ratioClass, cropClass]">
-    <img class="cdr-media-frame__image" :src="src" :alt="alt">
+    <img class="cdr-media-frame__image" :class="[modClass]" :src="src" :alt="alt">
   </div>
-  <img v-else class="cdr-image" :src="src" :alt="alt">
+  <img v-else :class="[modClass]" :src="src" :alt="alt">
 </template>
 
 <script>
@@ -27,6 +27,10 @@ export default {
     crop: {
       default: () => [],
     },
+    modifier: {
+      required: false,
+      default: () => [],
+    },
   },
   computed: {
     ratioClass() {
@@ -39,6 +43,18 @@ export default {
       this.crop.forEach((crop) => {
         final += `${base}--${crop} `;
       });
+      return final;
+    },
+    modClass() {
+      const baseClass = 'cdr-image';
+      let final = '';
+
+      final += `${baseClass} `;
+
+      this.modifier.forEach((mod) => {
+        final += `${baseClass}--${mod} `;
+      });
+
       return final;
     },
   },
