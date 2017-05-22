@@ -231,8 +231,46 @@
       </cdr-row>
     </div>
 
+    <div data-backstop="image-mods">
+      <h3>Image modifiers</h3>
+      <cdr-row :cols="2" :colsMd="4">
+        <cdr-col>
+          <div>
+            <p>Responsive</p>
+            <cdr-img ratio="4-3" :modifier="['responsive']" src="http://placehold.it/200x200"></cdr-img>
+            <cdr-img :modifier="['responsive']" src="http://placehold.it/200x200"></cdr-img>
+          </div>
+        </cdr-col>
+        <cdr-col>
+          <div>
+            <p>Rounded</p>
+            <cdr-img ratio="4-3" :modifier="['rounded']" src="http://placehold.it/200x200"></cdr-img>
+            <cdr-img :modifier="['rounded']" src="http://placehold.it/350x150"></cdr-img>
+            <cdr-img :modifier="['rounded']" src="http://placehold.it/200x200"></cdr-img>
+          </div>
+        </cdr-col>
+        <cdr-col>
+          <div>
+            <p>circle</p>
+            <cdr-img ratio="4-3" :modifier="['circle']" src="http://placehold.it/200x200"></cdr-img>
+            <cdr-img :modifier="['circle']" src="http://placehold.it/350x150"></cdr-img>
+            <cdr-img :modifier="['circle']" src="http://placehold.it/200x200"></cdr-img>
+          </div>
+        </cdr-col>
+        <cdr-col>
+          <div>
+            <p>thumbnail</p>
+            <cdr-img ratio="4-3" :modifier="['thumbnail']" src="http://placehold.it/200x200"></cdr-img>
+            <cdr-img :modifier="['thumbnail']" src="http://placehold.it/350x150"></cdr-img>
+            <cdr-img :modifier="['thumbnail']" src="http://placehold.it/200x200"></cdr-img>
+          </div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
     <div data-backstop="image-standard">
       <h3>Standard image</h3>
+      <cdr-img ratio="16-9" src="http://placehold.it/200x200"></cdr-img>
       <cdr-img src="http://placehold.it/350x150"></cdr-img>
       <cdr-img src="http://placehold.it/150x350"></cdr-img>
     </div>
