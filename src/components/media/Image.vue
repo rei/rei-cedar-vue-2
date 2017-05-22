@@ -9,8 +9,14 @@
 export default {
   name: 'cdr-img',
   props: {
-    src: String,
-    alt: String,
+    src: {
+      type: String,
+      required: true,
+    },
+    alt: {
+      type: String,
+      required: true,
+    },
     ratio: {
       type: String,
       validator: value => ([
