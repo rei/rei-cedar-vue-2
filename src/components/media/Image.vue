@@ -25,8 +25,7 @@ export default {
         '16-9'].indexOf(value) >= 0) || false,
     },
     crop: {
-      type: String,
-      validator: value => (['x-center', 'y-center', 'left', 'right', 'top', 'bottom'].indexOf(value) >= 0) || false,
+      default: () => [],
     },
   },
   computed: {
@@ -34,7 +33,13 @@ export default {
       return `cdr-media-frame--${this.ratio}`;
     },
     cropClass() {
-      return `cdr-media-frame--${this.crop}`;
+      const base = 'cdr-media-frame';
+      let final = '';
+
+      this.crop.forEach((crop) => {
+        final += `${base}--${crop} `;
+      });
+      return final;
     },
   },
 };

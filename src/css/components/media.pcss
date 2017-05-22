@@ -102,6 +102,13 @@
     transform: translate(-50%, 0);
   }
 
+  &--left&--bottom > &__image,
+  &--right&--bottom > &__image,
+  &--left&--top > &__image,
+  &--right&--top > &__image {
+    transform: translate(0);
+  }
+
   &__image {
     position: absolute;
     top: 50%;
