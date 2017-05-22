@@ -136,7 +136,7 @@
   }
 
   &--rounded {
-    border-radius: 6px;
+    border-radius: var(--image-rounded-rad);
   }
 
   &--circle {
@@ -144,8 +144,9 @@
   }
 
   &--thumbnail {
-    padding: 4px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: var(--image-thumbnail-p);
+    border-radius: var(--image-thumbnail-rad);
+    border: var(--image-thumbnail-border);
+    border-color: var(--image-thumbnail-bc);
   }
 }
