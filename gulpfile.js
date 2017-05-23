@@ -430,7 +430,7 @@ gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack => {
 
     if ( USE_DOCKER ) {
         console.log('Using docker for jekyll build')
-        process.exec( `docker run --rm -v "${__dirname}:/data" reicoop/jekyll:3.4.3 build`, (err, stdout, stderr) => {
+        process.exec( `docker run --rm -v "${__dirname}:/data" reicoop/jekyll:2.5.3 build`, (err, stdout, stderr) => {
             console.log(stdout);
         } ).on( 'exit', code => gulpCallBack( code === 0 ? null : 'ERROR: Docker process failed: ' + code ) )
     } else {
