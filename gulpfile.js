@@ -39,7 +39,7 @@ var glob = require( 'glob' );
 var del = require( 'del' );
 var es = require( 'event-stream' );
 var runSequence = require( 'run-sequence' );
-var spawn = require( 'child_process' ).spawn;
+var process = require( 'child_process' );
 var pkg = require( './package.json' );
 var globify = require( 'require-globify' );
 var bourbon = require( 'node-bourbon' );
@@ -117,6 +117,8 @@ var PATHS = {
 };
 
 var SHOULD_STOP_FOR_LINT_FAILURE = false;
+
+var USE_DOCKER = false;
 
 /**
  * Options for [a11y](https://github.com/addyosmani/a11y)
@@ -211,6 +213,11 @@ gulp.task( 'accessibility:audit-exp', [
 gulp.task( 'master', callback =>
     runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
 );
+
+gulp.task( 'build-docker', callback => {
+    USE_DOCKER = true;
+    runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
+});
 
 //       /$$$$$$   /$$$$$$   /$$$$$$
 //      /$$__  $$ /$$__  $$ /$$__  $$
@@ -419,12 +426,24 @@ gulp.task( 'docs:less:compile', [ 'docs:clean', 'docs:copy-all' ], () => {
         .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '/assets/css/src' ) ) );
 } );
 
-gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack =>
-    spawn( 'jekyll', [ 'build' ], {
-        stdio: 'inherit'
-    } )
-    .on( 'exit', code => gulpCallBack( code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code ) )
-);
+gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack => {
+gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack => {
+
+    if ( USE_DOCKER ) {
+        console.log('Using docker for jekyll build')
+        process.exec( `docker run --rm -v "${__dirname}:/data" reicoop/jekyll:3.4.3 build`, (err, stdout, stderr) => {
+            console.log(stdout);
+        } ).on( 'exit', code => gulpCallBack( code === 0 ? null : 'ERROR: Docker process failed: ' + code ) )
+    } else {
+        console.log("Building docs natively with Jekyll")
+        process.spawn( 'jekyll', [ 'build' ], {
+            stdio: 'inherit'
+        } ).on( 'exit', code => gulpCallBack( code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code ) )
+    }
+
+});
+
+
 
 //       /$$$$$$                                                   /$$ /$$       /$$ /$$ /$$   /$$
 //      /$$__  $$                                                 |__/| $$      |__/| $$|__/  | $$
