@@ -427,7 +427,6 @@ gulp.task( 'docs:less:compile', [ 'docs:clean', 'docs:copy-all' ], () => {
 } );
 
 gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack => {
-gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack => {
 
     if ( USE_DOCKER ) {
         console.log('Using docker for jekyll build')
