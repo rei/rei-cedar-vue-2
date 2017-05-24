@@ -1,0 +1,79 @@
+:root {
+  --big-mountain: 3;
+  --big-mountain-rem: 3rem;
+  --big-mountain-side: calc(var(--big-mountain-rem) * 2);
+  --small-mountain: 2;
+  --small-mountain-rem: 2rem;
+  --small-mountain-side: calc(var(--small-mountain-rem) * 2);
+}
+
+.mountain-shape {
+  position: absolute;
+  border-color: inherit;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-bottom-color: inherit;
+  }
+
+  &::before {
+    border-left-width: var(--big-mountain-rem);
+    border-right-width: var(--big-mountain-rem);
+    border-bottom-width: var(--big-mountain-rem);
+  }
+
+  &::after {
+    border-left-width: var(--small-mountain-rem);
+    border-right-width: var(--small-mountain-rem);
+    border-bottom-width: var(--small-mountain-rem);
+  }
+
+  &--top {
+    top: 0;
+    bottom: auto;
+  }
+
+  &--bottom {
+    top: auto;
+    bottom: 0;
+  }
+
+  &--left {
+    left: 0;
+    right: auto;
+
+    &::after {
+      transform: translateX(calc(var(--big-mountain-side) - (var(--small-mountain-side) * 0.6)));
+    }
+  }
+
+  &--right {
+    left: auto;
+    right: 0;
+
+    &::before {
+      transform: translateX(calc(var(--small-mountain-side) * -0.4));
+    }
+
+    &::before,
+    &::after {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &--center {
+    left: calc(50% - (var(--big-mountain-side) + var(--small-mountain-side) * 0.4)/2);
+
+    &::after {
+      transform: translateX(calc(var(--big-mountain-side) - (var(--small-mountain-side) * 0.6)));
+    }
+  }
+}
