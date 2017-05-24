@@ -1,6 +1,35 @@
 .cdr-card {
-  padding: var(--card-padding);
-  border: var(--card-border);
-  height: 100%;
+  @apply --glaze-light-10;
+  @apply --decoration-radius-emphasis;
+  @apply --decoration-shadow-emphasis;
+
+  display: block;
+  position: relative;
   width: 100%;
+
+  &__block {
+    padding: 16px;
+  }
+  &--dark-10 {
+    @apply --glaze-dark-10;
+  }
+
+  a & {
+    cursor: pointer;
+    transition: 0.25s ease;
+
+    &[href] {
+      backface-visibility: hidden;
+      transform: translateY(0);
+
+      &:focus,
+      &:hover {
+        box-shadow: var(--card-box-shadow);
+        cursor: pointer;
+        z-index: 5;
+        text-decoration: none;
+        transform: translateY(var(--card-hover-offset));
+      }
+    }
+  }
 }
