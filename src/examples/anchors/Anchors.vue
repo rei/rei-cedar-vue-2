@@ -1,36 +1,30 @@
 <template>
   <div>
     <h2>Anchors</h2>
-    <p>
-      <cdr-a data-backstop="cdr-link" href="https://www.rei.com/">An example link</cdr-a>
-    </p>
-    <p class="link-example cdr-bg--dark-20">
-      <cdr-a href="https://www.rei.com/" :modifier="['contrast']">An example contrast link</cdr-a>
-    </p>
-    <p class="link-example cdr-bg--dark-20">
-      <cdr-a href="https://www.rei.com/" :modifier="['overlay']">An example overlay link</cdr-a>
-    </p>
-    <p>
-      <cdr-a data-backstop="cdr-link--standalone" href="https://www.rei.com/" :modifier="['standalone']">An example standalone link</cdr-a>
-    </p>
-    <p>
-      <cdr-a data-backstop="cdr-link--button" href="https://www.rei.com/" :modifier="['button']">Link as button</cdr-a>
-    </p>
+    <default-anchor></default-anchor>
+    <constrast-anchor></constrast-anchor>
+    <overlay-anchor></overlay-anchor>
+    <standalone-anchor></standalone-anchor>
+    <button-anchor></button-anchor>
   </div>
 </template>
 
 <script>
-import cdrA from '../../components/anchors/Anchor';
+import defaultAnchor from './demo/Default';
+import constrastAnchor from './demo/Contrast';
+import overlayAnchor from './demo/Overlay';
+import standaloneAnchor from './demo/Standalone';
+import buttonAnchor from './demo/Button';
 
 export default {
   name: 'anchors',
-  components: { cdrA },
+  components: {
+    defaultAnchor,
+    constrastAnchor,
+    overlayAnchor,
+    standaloneAnchor,
+    buttonAnchor,
+  },
 };
 </script>
-
-<style>
-  .link-example {
-    padding: 10px;
-  }
-</style>
 
