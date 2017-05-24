@@ -10,12 +10,14 @@
     <lists data-backstop="lists"></lists>
     <grid></grid>
     <test data-backstop="test"></test>
+    <mountains></mountains>
 
   </div>
 </template>
 
 <script>
   import Components from './components/_index';
+  import Directives from './directives/_index';
   // add examples
   import examples from './examples/_index';
 
@@ -27,9 +29,10 @@
   export default {
     name: 'app',
     components: Components,
+    directives: Directives,
   };
 </script>
 
-<style>
-
+<style scoped>
+  
 </style>
