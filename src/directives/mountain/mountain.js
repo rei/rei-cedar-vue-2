@@ -6,6 +6,7 @@ export default {
     const el = element;
     const mods = binding.modifiers;
     shape.classList.add(base);
+    shape.setAttribute('aria-hidden', 'true');
     el.style.position = 'relative';
 
     if (mods.top) { shape.classList.add(`${base}--top`); }

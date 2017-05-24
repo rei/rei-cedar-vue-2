@@ -10,9 +10,8 @@ function install(Vue, options) {// eslint-disable-line
     Vue.component(Components[key].name, Components[key]);
   });
 
-  // TODO output directives correctly
   Object.keys(Directives).forEach((key) => {
-    Vue.directive(Directives[key].name, Directives[key]);
+    Vue.directive(key, Directives[key]);
   });
 }
 
