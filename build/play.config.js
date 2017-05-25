@@ -1,3 +1,4 @@
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -5,6 +6,7 @@ module.exports = {
     preview: './play/preview.js',
   },
   dist: 'dist-play',
+  // autoprefixer: false,
   webpack: {
     output: {
       publicPath: '',
@@ -28,6 +30,11 @@ module.exports = {
         },
       ],
     },
+    plugins: [
+      new CopyWebpackPlugin([
+        { from: './static', to: 'static' }
+      ])
+    ]
   },
   port: 5000,
   // compile Vue template
@@ -36,10 +43,11 @@ module.exports = {
   // no code split for 3rd party libraries
   vendor: false,
   copy: false,
-  copy: true,
   html: [{
     chunks: ['app'],
     filename: 'index.html',
+    title: 'REI Cedar Playground',
+    template: './play/my-index.ejs', // to hard code inclusion of cedar fonts
   }, {
     chunks: ['preview'],
     filename: 'preview.html',
