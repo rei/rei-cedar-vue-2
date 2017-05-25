@@ -6,6 +6,9 @@ module.exports = {
   },
   dist: 'dist-play',
   webpack: {
+    output: {
+      publicPath: '',
+    },
     module: {
       rules: [
         {
@@ -33,6 +36,7 @@ module.exports = {
   // no code split for 3rd party libraries
   vendor: false,
   copy: false,
+  copy: true,
   html: [{
     chunks: ['app'],
     filename: 'index.html',

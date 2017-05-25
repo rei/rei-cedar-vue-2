@@ -9,8 +9,6 @@ import modsExample from '!raw-loader!./demos/Mods';
 
 import readMe from './images.md';
 
-console.log(ratios);
-
 play(Image)
   .name('cdr-img')
   .displayName('Images')
