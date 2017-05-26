@@ -5,30 +5,32 @@
     display: inline-block;
     margin-right: 1.6rem;
   }
-    
-  & label, input {
+
+  & label,
+  input {
     display: block;
   }
 }
 
-.cdr-input, .cdr-select {
-  border-width: .12rem;
+.cdr-input,
+.cdr-select {
+  border-width: 0.12rem;
   border-style: solid;
   border-color: #e5e5e5;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   display: block;
-  padding: .6rem;
+  padding: 0.6rem;
   line-height: 1;
 
   &--large {
     height: 6rem;
-    padding-bottom: 3.2rem!important;
+    padding-bottom: 3.2rem !important;
   }
 
   &--inline {
     display: inline-block;
   }
-  
+
   &::placeholder {
     font-style: italic;
   }
@@ -56,9 +58,9 @@
     height: 1.8rem;
     width: 1.8rem;
     position: absolute;
-    top: .6rem;
-    right: .6rem;
-    
+    top: 0.6rem;
+    right: 0.6rem;
+
     &.icon-error {
       fill: #c00;
     }
@@ -73,18 +75,15 @@
   }
 
   &.validation-msg {
-    border-width: .12rem;
+    border-width: 0.12rem;
     border-style: solid;
-    border-top-right-radius: .4rem;
-    border-top-left-radius: .4rem;
-    border-bottom-right-radius: .4rem;
-    border-bottom-left-radius: .4rem;
+    border-radius: 0.4rem;
     display: block;
-    padding: 0 .02rem;
+    padding: 0 0.02rem;
     line-height: 1;
 
     & input {
-      border-top-right-radius: .4rem;
+      border-top-right-radius: 0.4rem;
       border-top-left-radius: 4px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
@@ -92,7 +91,7 @@
       border-left-width: 0;
       border-right-width: 0;
       border-top-width: 0;
-      border-bottom-width: .12rem;
+      border-bottom-width: 0.12rem;
       width: 100%;
     }
 
@@ -123,7 +122,7 @@
     }
 
     & .field-msg_error {
-      padding: .6rem;
+      padding: 0.6rem;
     }
   }
 
@@ -140,10 +139,10 @@
 
   & > [type="checkbox"] {
     position: absolute;
-    width: .1rem;
-    height: .1rem;
+    width: 0.1rem;
+    height: 0.1rem;
     padding: 0;
-    margin: -.1rem;
+    margin: -0.1rem;
     overflow: hidden;
     clip: rect(0 0 0 0);
     border: none;
@@ -157,7 +156,7 @@
         display: none;
       }
 
-      &:before {
+      &::before {
         position: absolute;
         top: 1.2rem;
         left: 0;
@@ -165,7 +164,7 @@
         width: 1.8rem;
         height: 1.8rem;
         content: '';
-        border-radius: .2rem;
+        border-radius: 0.2rem;
         border: none;
         box-shadow: 0 0 0 0.1rem #999;
       }
@@ -175,13 +174,13 @@
       & + label {
         cursor: not-allowed;
 
-        &:before {
+        &::before {
           background-color: #f2f2f2;
           box-shadow: 0 0 0 0.1rem #ccc;
           text-shadow: none;
         }
-        
-        &:after {
+
+        &::after {
           text-shadow: none;
         }
       }
@@ -189,7 +188,6 @@
 
     &:checked {
       & + label {
-
         & svg {
           display: block;
           position: absolute;
@@ -197,20 +195,20 @@
           fill: #fff;
           height: 1.8rem;
           width: 1.8rem;
-          padding: .2rem;
+          padding: 0.2rem;
         }
 
-        &:before {
+        &::before {
           background-color: #000;
           box-shadow: 0 0 0 0.1rem #000;
           outline: none;
         }
 
-        &:after {
+        &::after {
           position: absolute;
           top: 1.2rem;
           left: 0;
-          padding: .28rem;
+          padding: 0.28rem;
           width: 1.8rem;
           height: 1.8rem;
           font: normal normal normal 1.2rem/1 'rei-icons';
@@ -228,8 +226,9 @@
       }
     }
 
-    &:focus + label:before, &:active + label:before {
-        border: 0.1rem solid #4eaaff;
+    &:focus + label::before,
+    &:active + label::before {
+      border: 0.1rem solid #4eaaff;
     }
   }
 
@@ -237,12 +236,13 @@
     & + label {
       cursor: not-allowed;
 
-      &:before {
+      &::before {
         background-color: #f2f2f2;
         box-shadow: 0 0 0 0.1rem #ccc;
         text-shadow: none;
       }
-      &:after {
+
+      &::after {
         text-shadow: none;
       }
     }
@@ -254,10 +254,10 @@
 
   & > [type="radio"] {
     position: absolute;
-    width: .1rem;
-    height: .1rem;
+    width: 0.1rem;
+    height: 0.1rem;
     padding: 0;
-    margin: -.1rem;
+    margin: -0.1rem;
     overflow: hidden;
     clip: rect(0 0 0 0);
     border: none;
@@ -273,7 +273,7 @@
       line-height: 2rem;
       cursor: pointer;
 
-      &:before {
+      &::before {
         position: absolute;
         background-color: #fff;
         top: 1rem;
@@ -286,8 +286,9 @@
         box-shadow: 0 0 0 0.1rem #999;
       }
     }
-    
-    &:focus + label:before, &:active + label:before {
+
+    &:focus + label::before,
+    &:active + label::before {
       border: 0.1rem solid #4eaaff;
     }
   }
@@ -295,33 +296,33 @@
   & > [type="radio"] {
     &:checked {
       & + label {
-        &:before {
+        &::before {
           background-color: #4eaaff;
           border: none;
           outline: none;
         }
 
-        &:after {
+        &::after {
           content: " ";
           background-color: #fff;
           position: absolute;
           top: 1.55rem;
-          left: .65rem;
-          width: .8rem;
-          height: .8rem;
+          left: 0.65rem;
+          width: 0.8rem;
+          height: 0.8rem;
           border-radius: 50%;
-          box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, .2);
+          box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
         }
       }
 
       &[disabled] + label {
-        &:before {
+        &::before {
           background-color: #f2f2f2;
           border: none;
           box-shadow: 0 0 0 0.1rem #ccc;
         }
 
-        &:after {
+        &::after {
           box-shadow: 0 0 0.1rem 0.1rem #ccc;
         }
       }
@@ -331,7 +332,7 @@
       & + label {
         cursor: not-allowed;
 
-        &:before { 
+        &::before {
           background-color: #f2f2f2;
           border: none;
           box-shadow: 0 0 0 0.1rem #ccc;
