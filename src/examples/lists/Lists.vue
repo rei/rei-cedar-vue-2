@@ -1,52 +1,26 @@
 <template>
   <div>
-    <cdr-list data-backstop="cdr-list--bulleted">
-      <li>List default</li>
-      <li>List default
-        <cdr-list>
-          <li>List default - nested</li>
-          <li>List default - nested
-            <cdr-list :modifier="['numbered']">
-              <li>List default - nested - numbered</li>
-              <li>List default - nested - numbered</li>
-            </cdr-list>
-          </li>
-        </cdr-list>
-      </li>
-    </cdr-list>
-
-    <cdr-list type="ol" data-backstop="cdr-list--numbered">
-      <li>List ordered - default</li>
-      <li>List ordered - default
-        <cdr-list type="ol" :modifier="['unstyled']">
-          <li>List ordered - nested - unstyled</li>
-          <li>List ordered - nested - unstyled
-            <cdr-list type="ol" :modifier="['bulleted']">
-              <li>List ordered - nested - bulleted</li>
-              <li>List ordered - nested - bulleted</li>
-            </cdr-list>
-          </li>
-        </cdr-list>
-        </li>
-    </cdr-list>
-
-    <cdr-list :modifier="['unstyled']" data-backstop="cdr-list--unstyled">
-      <li>List unstyled</li>
-      <li>List unstyled</li>
-    </cdr-list>
-
-    <cdr-list :modifier="['menu']" data-backstop="cdr-list--menu">
-      <li><a href="/">List menu</a></li>
-      <li><a href="/">List menu</a></li>
-    </cdr-list>
+    <h2>Lists</h2>
+    <default-list></default-list>
+    <ordered-list></ordered-list>
+    <unstyled-list></unstyled-list>
+    <menu-list></menu-list>
   </div>
 </template>
 
 <script>
-  import cdrList from '../../components/lists/Lists';
+  import defaultList from './demo/Default';
+  import orderedList from './demo/Ordered';
+  import unstyledList from './demo/Unstyled';
+  import menuList from './demo/Menu';
 
   export default {
     name: 'lists',
-    components: { cdrList },
+    components: {
+      defaultList,
+      orderedList,
+      unstyledList,
+      menuList,
+    },
   };
 </script>

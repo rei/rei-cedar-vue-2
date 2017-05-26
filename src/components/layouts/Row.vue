@@ -1,7 +1,10 @@
 <template>
-  <div class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass, nowrapClass, gutterClass]">
+  <div v-if="type === 'normal'" class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass, nowrapClass, gutterClass]">
     <slot></slot>
   </div>
+  <ul v-else-if="type === 'list'" class="cdr-row" :class="[colsClass, justifyClass, alignClass, directionClass, wrapClass, nowrapClass, gutterClass]">
+    <slot></slot>
+  </ul>
 </template>
 
 <script>
@@ -50,6 +53,12 @@
       responsive: true,
       type: Boolean,
       default: false,
+    },
+    {
+      name: 'type',
+      type: String,
+      default: 'normal',
+      validator: value => (['normal', 'list'].indexOf(value) >= 0) || false,
     },
   ];
 

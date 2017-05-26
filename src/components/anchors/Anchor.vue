@@ -1,5 +1,5 @@
 <template>
-  <a :class="buildClass" :target="target">
+  <a :class="buildClass" :target="target" :rel="rel">
     <slot></slot>
   </a>
 </template>

@@ -4,33 +4,49 @@ const glob = require('glob');
 const path = require('path');
 const SVGSpriter = require('svg-sprite');
 
-const iconPath = 'src/assets/icons';
-const config = {
-  dest: './static/',
-  mode: {
-    symbol: {
-      dest: '.',
-      sprite: './icon-sprite.svg',
-    },
+const iconConfig = [
+  {
+    prefix: 'rei',
+    url: 'https://assets.brand.ai/rei-digital-experience-team/digital-rei-brand/icons.zip?key=SyQifqFje',
   },
-};
+  {
+    prefix: 'ea',
+    url: 'https://assets.brand.ai/rei-digital-experience-team/expert-advice/icons.zip?key=HJlWEovslW',
+  },
+];
 
+const basePath = 'src/assets/icons';
 // clean directory
-fs.emptyDirSync(iconPath);
+fs.emptyDirSync(basePath);
 
-// fetch icons and create sprite
-download('https://assets.brand.ai/rei-digital-experience-team/digital-rei-brand/icons.zip?key=SyQifqFje', iconPath, { extract: true }).then(() => {
-  const spriter = new SVGSpriter(config);
-  const files = glob.sync('./src/assets/icons/*.svg');
-  files.forEach((file) => {
-    spriter.add(path.resolve(file), null, fs.readFileSync(file), { encoding: 'utf-8' });
-  });
+// fetch icon/build sprite for each iconConfig definition
+iconConfig.forEach((iconObj) => {
+  const iconPath = `${basePath}/${iconObj.prefix}`;
+  const spriterConfig = {
+    dest: './static/',
+    mode: {
+      symbol: {
+        dest: '.',
+        sprite: `./${iconObj.prefix}-icons.svg`,
+      },
+    },
+  };
 
-  spriter.compile((error, result) => {
-    Object.keys(result).forEach((mode) => {
-      Object.keys(result[mode]).forEach((resource) => {
-        fs.outputFileSync(result[mode][resource].path, result[mode][resource].contents);
+  // fetch icons and create sprite
+  download(iconObj.url, iconPath, { extract: true }).then(() => {
+    const spriter = new SVGSpriter(spriterConfig);
+    const files = glob.sync(`./${basePath}/${iconObj.prefix}/*.svg`);
+    files.forEach((file) => {
+      spriter.add(path.resolve(file), null, fs.readFileSync(file), { encoding: 'utf-8' });
+    });
+
+    spriter.compile((error, result) => {
+      Object.keys(result).forEach((mode) => {
+        Object.keys(result[mode]).forEach((resource) => {
+          fs.outputFileSync(result[mode][resource].path, result[mode][resource].contents);
+        });
       });
     });
   });
 });
+
