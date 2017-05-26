@@ -37,10 +37,10 @@
 </template>
 
 <script>
-  const check = require('!raw-loader!../../assets/icons/icon-rei-check.svg');//eslint-disable-line
-  const error = require('!raw-loader!../../assets/icons/icon-rei-error.svg');//eslint-disable-line
-  const warning = require('!raw-loader!../../assets/icons/icon-rei-warning.svg');//eslint-disable-line
-  const success = require('!raw-loader!../../assets/icons/icon-rei-success.svg');//eslint-disable-line
+  const check = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');//eslint-disable-line
+  const error = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');//eslint-disable-line
+  const warning = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');//eslint-disable-line
+  const success = require('!raw-loader!../../assets/icons/rei/icon-rei-success.svg');//eslint-disable-line
 
   export default {
     name: 'cdr-input',
