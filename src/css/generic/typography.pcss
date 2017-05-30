@@ -28,7 +28,43 @@
   }
 }
 
+--typography-spruce-bdy: {
+  @apply --sys-font-spruce-bdy-15;
+
+  @media (--small) {
+    @apply --sys-font-spruce-bdy-10;
+  }
+
+  @media (--medium) {
+    @apply --sys-font-spruce-bdy-20;
+  }
+
+  @media (--large) {
+    @apply --sys-font-spruce-bdy-25;
+  }
+}
+
 .cdr {
+  &-spruce-body {
+    @apply --typography-spruce-bdy;
+  }
+
+  &-spruce-sub-heading {
+    @apply --sys-font-spruce-sbh-15;
+
+    @media (--small) {
+      @apply --sys-font-spruce-sbh-10;
+    }
+
+    @media (--medium) {
+      @apply --sys-font-spruce-sbh-20;
+    }
+
+    @media (--large) {
+      @apply --sys-font-spruce-sbh-25;
+    }
+  }
+
   &-headline {
     @apply --sys-font-headline-lg;
   }

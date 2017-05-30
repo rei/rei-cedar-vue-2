@@ -6,6 +6,9 @@ module.exports = {
   },
   dist: 'dist-play',
   webpack: {
+    output: {
+      publicPath: '',
+    },
     module: {
       rules: [
         {
@@ -24,7 +27,7 @@ module.exports = {
           ],
         },
       ],
-    },
+    }
   },
   port: 5000,
   // compile Vue template
@@ -36,6 +39,8 @@ module.exports = {
   html: [{
     chunks: ['app'],
     filename: 'index.html',
+    title: 'REI Cedar Playground',
+    template: './play/my-index.ejs', // to hard code font size reset
   }, {
     chunks: ['preview'],
     filename: 'preview.html',

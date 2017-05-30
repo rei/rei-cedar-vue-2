@@ -103,17 +103,23 @@
       <cdr-col :span="12" :span-md="12" :isRow="true">
         <cdr-col :span="12" :span-md="6" :isRow="true" :cols="1" :cols-md="2">
           <cdr-col>
-            <cdr-card glaze="dark-20">
-              <cdr-heading :level="3"  :modifier="['section-title']">
-              Food Storage and Handling for Campers and   Backpackers
-              </cdr-heading>
+            <cdr-card
+            :level="3"
+            card-title="Food Storage and Handling for Campers and   Backpackers">
             </cdr-card>
             </cdr-col>
-              <cdr-col>
-                <cdr-card href="https://rei.com">
-              <cdr-heading :level="3"  :modifier="['section-title']">Yellowstone National Park Kayaking and Canoeing Gear List</cdr-heading>
-            </cdr-card>
-              </cdr-col>
+            <cdr-col>
+              <cdr-card
+              :level="3"
+              card-title="Yellowstone National Park Kayaking and Canoeing Gear List"
+              card-link="http://rei.com"
+              >
+                <p slot="body">
+                  <p>some body copy goes in here along with list info</p>
+                  <a href="http://google.com">google</a>
+                </p>
+              </cdr-card>
+            </cdr-col>
           </cdr-col>
            <cdr-col :span="12" :span-md="6">
             <cdr-card :modifier="['dark-10']">

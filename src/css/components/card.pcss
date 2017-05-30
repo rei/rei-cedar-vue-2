@@ -10,11 +10,43 @@
   &__block {
     padding: 16px;
   }
+
   &--dark-10 {
     @apply --glaze-dark-10;
   }
 
-  a & {
+  &__link {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+
+    &__link {
+      position: static;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: red 0.1s ease-out;
+        background-color: trasparent;
+      }
+    }
+  }
+
+  &__body {
+    @apply --typography-spruce-bdy;
+  }
+}
+
+/*
+&--link {
     cursor: pointer;
     transition: 0.25s ease;
 
@@ -32,4 +64,5 @@
       }
     }
   }
-}
+  */
+
