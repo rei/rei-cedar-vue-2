@@ -79,22 +79,21 @@
     </cdr-col>
     <cdr-col :span="12" :span-md="12" :isRow="true">
       <cdr-col :span="12" :span-md="6">
-        <cdr-card>
-          <cdr-heading :level="3" :modifier="['title']">
-          Glacier National Park Backpacking Packing List
-          </cdr-heading>
+        <cdr-card :level="3" card-title="Glacier National Park Backpacking Packing List" card-link="http://rei.com"
+        card-img="http://placehold.it/350x150" card-img-alt="">
         </cdr-card>
       </cdr-col>
       <cdr-col :span="12" :span-md="6" :isRow="true" :cols="1" :cols-md="2">
         <cdr-col>
-          <cdr-card>
-            <img src=""
-            <cdr-heading :level="3"  :modifier="['section-title']">Backpacking Tents: How to Choose</cdr-heading>
+          <cdr-card :level="3" card-title="Backpacking Tents: How to Choose"
+          card-link="http://rei.com"
+          card-img="http://placehold.it/350x150" card-img-alt="">
           </cdr-card>
         </cdr-col>
         <cdr-col>
-          <cdr-card>
-            <cdr-heading :level="3"  :modifier="['section-title']">Kids and Camping</cdr-heading>
+          <cdr-card :level="3" card-title="Kids and Camping"
+          card-link="http://rei.com"
+          card-img="http://placehold.it/350x150" card-img-alt="">
           </cdr-card>
         </cdr-col>
       </cdr-col>
@@ -105,7 +104,10 @@
           <cdr-col>
             <cdr-card
             :level="3"
-            card-title="Food Storage and Handling for Campers and   Backpackers">
+            card-title="Food Storage and Handling for Campers and Backpackers"
+            card-link="http://rei.com"
+            card-img="http://placehold.it/350x150" card-img-alt=""
+            >
             </cdr-card>
             </cdr-col>
             <cdr-col>
@@ -113,6 +115,7 @@
               :level="3"
               card-title="Yellowstone National Park Kayaking and Canoeing Gear List"
               card-link="http://rei.com"
+              card-img="http://placehold.it/350x150" card-img-alt=""
               >
                 <p slot="body">
                   <p>some body copy goes in here along with list info</p>
@@ -122,8 +125,12 @@
             </cdr-col>
           </cdr-col>
            <cdr-col :span="12" :span-md="6">
-            <cdr-card :modifier="['dark-10']">
-             <cdr-heading :level="3" :modifier="['title']">Zion National Park Visitor Guide</cdr-heading>
+            <cdr-card
+              :level="3"
+              card-title="Zion National Park Visitor Guide"
+              card-link="http://rei.com"
+              card-img="http://placehold.it/350x150"
+              card-img-alt="">
             </cdr-card>
           </cdr-col>
         </cdr-col>
@@ -140,24 +147,20 @@
       </div>
       </cdr-col>
       <cdr-col :span="4">
-        <cdr-card>
-          <cdr-heading :level="3" :modifier="['title']">
-            Zion National Park Visitor Guide
-          </cdr-heading>
+        <cdr-card :level="3" card-title="Zion National Park Visitor Guide" card-link="http://rei.com" card-img="http://placehold.it/350x150" card-img-alt="">
+
         </cdr-card>
       </cdr-col>
       <cdr-col :span="4">
-        <cdr-card>
-          <cdr-heading :level="3" :modifier="['title']">
-            Zion National Park Visitor Guide
-          </cdr-heading>
+        <cdr-card
+        :level="3"
+        card-title="Zion National Park Visitor Guide"
+        card-link="http://rei.com"
+        card-img="http://placehold.it/350x150" card-img-alt="">
         </cdr-card>
       </cdr-col>
       <cdr-col :span="4">
-        <cdr-card>
-          <cdr-heading :level="3" :modifier="['title']">
-            Zion National Park Visitor Guide
-          </cdr-heading>
+        <cdr-card :level="3" card-title="Zion National Park Visitor Guide" card-link="http://rei.com" card-img="http://placehold.it/350x150" card-img-alt="">
         </cdr-card>
       </cdr-col>
     </cdr-row>

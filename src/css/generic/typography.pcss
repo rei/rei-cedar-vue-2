@@ -14,7 +14,6 @@
 * detail
 * disclaimer
 */
-
 .cdr-icon {
   width: 32px;
   height: 32px;
@@ -28,41 +27,9 @@
   }
 }
 
---typography-spruce-bdy: {
-  @apply --sys-font-spruce-bdy-15;
-
-  @media (--small) {
-    @apply --sys-font-spruce-bdy-10;
-  }
-
-  @media (--medium) {
-    @apply --sys-font-spruce-bdy-20;
-  }
-
-  @media (--large) {
-    @apply --sys-font-spruce-bdy-25;
-  }
-}
-
 .cdr {
-  &-spruce-body {
-    @apply --typography-spruce-bdy;
-  }
-
   &-spruce-sub-heading {
-    @apply --sys-font-spruce-sbh-15;
-
-    @media (--small) {
-      @apply --sys-font-spruce-sbh-10;
-    }
-
-    @media (--medium) {
-      @apply --sys-font-spruce-sbh-20;
-    }
-
-    @media (--large) {
-      @apply --sys-font-spruce-sbh-25;
-    }
+    @apply --font-spruce-sub-heading;
   }
 
   &-headline {
@@ -74,7 +41,7 @@
   }
 
   &-subtitle {
-    @apply --sys-font-subtitle-lg;
+    @apply --font-spruce-sub-heading;
   }
 
   &-section-title {
@@ -82,7 +49,7 @@
   }
 
   &-body-copy {
-    @apply --sys-font-body-copy-lg;
+    @apply --font-spruce-bdy;
   }
 
   &-pull-quote {

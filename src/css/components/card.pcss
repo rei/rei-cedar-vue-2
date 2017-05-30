@@ -21,11 +21,22 @@
   }
 
   &__title {
+    @apply --sys-font-spruce-dsp-40;
+
+    @media (--medium) {
+      font-size: responsive;
+      min-font-size: var(--sys-font-spruce-dsp-40-font-size);
+      max-font-size: var(--sys-font-spruce-dsp-50-font-size);
+      min-line-height: var(--sys-font-spruce-dsp-40-line-height);
+      max-line-height: var(--sys-font-spruce-dsp-50-line-height);
+      lower-font-range: 978px;
+      upper-font-range: 1200px;
+    }
 
     &__link {
       position: static;
 
-      &:before {
+      &::before {
         content: "";
         display: block;
         position: absolute;
@@ -44,25 +55,4 @@
     @apply --typography-spruce-bdy;
   }
 }
-
-/*
-&--link {
-    cursor: pointer;
-    transition: 0.25s ease;
-
-    &[href] {
-      backface-visibility: hidden;
-      transform: translateY(0);
-
-      &:focus,
-      &:hover {
-        box-shadow: var(--card-box-shadow);
-        cursor: pointer;
-        z-index: 5;
-        text-decoration: none;
-        transform: translateY(var(--card-hover-offset));
-      }
-    }
-  }
-  */
 

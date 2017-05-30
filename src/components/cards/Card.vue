@@ -1,20 +1,15 @@
 <template>
   <section :class="[buildClass]">
     <!-- Card Image Slot-->
-    <slot name="img" ref="img">
-        <img v-if="img" :src="img" :alt="imgAlt" class="cdr-card__img">
-    </slot>
-
-
-
+      <cdr-img ratio="2-1" :alt="cardImgeAlt" :src="cardImg"></cdr-img>
     <!--Show custom block when no-block prop is set-->
     <template v-if="noBlock">
         <slot></slot>
     </template>
     <!-- Card Standard Blocks-->
     <div :class="blockClass" v-else>
-        <cdr-heading :level="level" :modifier="['section-title']">
-          <slot name="title"  class="cdr-card__title" v-if="!cardLink">{{cardTitle}}</slot>
+        <cdr-heading :level="level">
+          <slot name="title" v-if="!cardLink"><span class="cdr-card__title">{{cardTitle}}</span></slot>
           <slot name="title" v-else><a class="cdr-card__title cdr-card__title__link" :href="cardLink">{{cardTitle}}</a></slot>
         </cdr-heading>
         <div class="cdr-card__body">
@@ -26,11 +21,13 @@
 
 <script>
 import cdrHeading from '../headings/Heading';
+import cdrImg from '../media/Image';
 
 export default {
   name: 'cdr-card',
   components: {
     cdrHeading,
+    cdrImg,
   },
   props: {
     theme: String,
@@ -49,11 +46,10 @@ export default {
       type: Number,
       default: 2,
     },
-    img: {
+    cardImg: {
       type: String,
-      default: null,
     },
-    imgAlt: {
+    cardImgAlt: {
       type: String,
       default: null,
     },
