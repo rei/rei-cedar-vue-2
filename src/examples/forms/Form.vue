@@ -1,5 +1,15 @@
 <template>
   <div>
+    <h2>validation</h2>
+    <cdr-text v-model="test" :validation="validateFn"></cdr-text>
+    <p>{{test}}</p>
+    <h2>no validation</h2>
+    <cdr-text v-model="test2"></cdr-text>
+    <p>{{test2}}</p>
+    <div class="cdr-input-group cdr-input-group--inline">
+      <cdr-input type="text" forvalue="thisOne" placeholder="Input label" required success>Input validation success</cdr-input>
+    </div>
+    <!--
     <div class="cdr-input-group cdr-input-group--inline">
       <cdr-input type="text" labelID="thisOne" placeholder="Input label">Input label</cdr-input>
     </div>
@@ -25,9 +35,6 @@
       </cdr-select>
     </div>
     <div class="cdr-input-group cdr-input-group--inline">
-      <cdr-input type="text" forvalue="thisOne" placeholder="Input label" required success>Input validation success</cdr-input>
-    </div>
-    <div class="cdr-input-group cdr-input-group--inline">
       <cdr-input type="text" forvalue="thisOne" placeholder="Input label" required warning>Input validation warning</cdr-input>
     </div>
     <div class="cdr-input-group cdr-input-group--inline">
@@ -51,6 +58,7 @@
       <cdr-input type="radio" :class="['cdr-radio']" disabled>Radio disabled</cdr-input>
       <cdr-input type="radio" :class="['cdr-radio']" disabled checked>Radio disabled checked</cdr-input>
     </div>
+    -->
   </div>
 </template>
 
@@ -60,9 +68,26 @@
   export default {
     name: 'forms',
     components: Components,
+    data() {
+      return {
+        test: '',
+        test2: '',
+      };
+    },
     methods: {
-      validate(inputText) {
-        return inputText === 'hi';
+      validateFn(inputText) {
+        const obj = {
+          state: '',
+          message: '',
+        };
+        if (inputText === 'hi') {
+          obj.state = 'valid';
+        } else if (typeof inputText !== 'string') {
+          obj.state = 'error';
+        } else {
+          obj.state = 'warn';
+        }
+        return obj;
       },
     },
   };

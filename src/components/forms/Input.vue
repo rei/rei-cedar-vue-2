@@ -1,5 +1,5 @@
 <template>
-<div :class="className" v-if="type === 'checkbox' || type === 'radio'">
+  <div v-if="type === 'checkbox' || type === 'radio'">
     <input :type="type" :name="name" :value="forvalue" :id="forvalue" :disabled="disabled" :required="required" :checked="checked"/>
     <label :for="forvalue">
       <span v-html="iconCheck" v-if="type === 'checkbox'"></span>
@@ -77,11 +77,6 @@
         required: false,
         default: '',
       },
-      class: {
-        type: String,
-        required: false,
-        default: '',
-      },
       name: {
         type: String,
         required: false,
@@ -93,7 +88,7 @@
       },
       required: {
         type: Boolean,
-        required: true,
+        required: false,
       },
       checked: {
         type: Boolean,
