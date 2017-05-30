@@ -1,11 +1,15 @@
 <template>
   <div>
-    <h2>validation</h2>
-    <cdr-text v-model="test" :validation="validateFn"></cdr-text>
+    <h2>Forms</h2>
+
+    <h3>validation</h3>
+    <cdr-text v-model="test" label-text="Enter hi" :validation="validateFn" :is-required="true"></cdr-text>
     <p>{{test}}</p>
-    <h2>no validation</h2>
+
+    <h3>no validation</h3>
     <cdr-text v-model="test2"></cdr-text>
     <p>{{test2}}</p>
+
     <div class="cdr-input-group cdr-input-group--inline">
       <cdr-input type="text" forvalue="thisOne" placeholder="Input label" required success>Input validation success</cdr-input>
     </div>
@@ -82,10 +86,11 @@
         };
         if (inputText === 'hi') {
           obj.state = 'valid';
-        } else if (typeof inputText !== 'string') {
+        } else if (!isNaN(inputText)) {
           obj.state = 'error';
         } else {
           obj.state = 'warn';
+          obj.message = 'This is a warning message';
         }
         return obj;
       },
