@@ -1,7 +1,7 @@
 <template>
   <section :class="[buildClass]">
     <!-- Card Image Slot-->
-      <cdr-img ratio="2-1" :alt="cardImgeAlt" :src="cardImg"></cdr-img>
+      <cdr-img class="cdr-card__media cdr-image--responsive" :alt="cardImgeAlt" :src="cardImg"></cdr-img>
     <!--Show custom block when no-block prop is set-->
     <template v-if="noBlock">
         <slot></slot>
