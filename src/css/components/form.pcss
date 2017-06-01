@@ -1,26 +1,41 @@
 .cdr-input-group {
-  margin-bottom: 1.6rem;
+  margin-bottom: var(--input-group-margin);
 
   &--inline {
     display: inline-block;
-    margin-right: 1.6rem;
-  }
-
-  & label,
-  input {
-    display: block;
+    margin-right: var(--input-group-margin);
   }
 }
 
 .cdr-input-validation {
   position: relative;
 
+  &--valid {
+    fill: var(--input-valid-color);
+  }
+
+  &--warn {
+    fill: var(--input-warning-color);
+  }
+
+  &--error {
+    fill: var(--input-error-color);
+
+    & > .cdr-input {
+      border-color: var(--input-error-color);
+    }
+  }
+
   &__icon {
     position: absolute;
-    top: 0;
-    right: 0;
-    height: 32px;
-    width: 32px;
+    top: var(--input-icon-t);
+    right: var(--input-icon-r);
+    height: var(--input-icon-h);
+    width: var(--input-icon-w);
+
+    & > svg {
+      fill: inherit;
+    }
   }
 
   &__message {
@@ -33,10 +48,10 @@
   width: 100%;
   border-width: 0.12rem;
   border-style: solid;
-  border-color: #e5e5e5;
-  border-radius: 0.4rem;
+  border-color: var(--input-bc);
+  border-radius: var(--input-br);
   display: block;
-  padding: 0.6rem;
+  padding: var(--input-p);
   line-height: 1;
 
   &--large {
@@ -65,6 +80,8 @@
 .cdr-label {
   font-weight: bold;
 }
+
+/* --------REPLACING---------- */
 
 .field-validation {
   position: relative;

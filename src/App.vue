@@ -4,11 +4,11 @@
     
     <images></images>
     <icons data-backstop="icons"></icons>
-    <headings></headings>
+    <headings data-backstop="headings"></headings>
     <anchors data-backstop="anchors"></anchors>
     <buttons data-backstop="buttons"></buttons>
     <lists data-backstop="lists"></lists>
-    <forms></forms>
+    <forms data-backstop="forms"></forms>
     <grid></grid>
     <test data-backstop="test"></test>
     <mountains></mountains>

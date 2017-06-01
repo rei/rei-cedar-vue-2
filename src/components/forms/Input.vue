@@ -1,129 +1,216 @@
-<template>
-  <div v-if="type === 'checkbox' || type === 'radio'">
-    <input :type="type" :name="name" :value="forvalue" :id="forvalue" :disabled="disabled" :required="required" :checked="checked"/>
-    <label :for="forvalue">
-      <span v-html="iconCheck" v-if="type === 'checkbox'"></span>
-      <slot></slot>
-    </label>
-  </div>
-
-  <div v-else>
-    <label class="cdr-label" :for="forvalue">
-      <slot></slot>
-    </label>
-    <div class="field-validation has-success" :success="success" v-if="success == true">
-      <input :type="type" :class="buildClass" :id="forvalue" :placeholder="placeholder" :disabled="disabled" :required="required"/>
-      <span class="icon-validation icon-success" v-html="iconSuccess"></span>
-    </div>
-    <div class="field-validation validation-msg has-error" :error="error" v-else-if="error == true">
-      <input :type="type" :class="buildClass" :id="forvalue" :placeholder="placeholder" :disabled="disabled" :required="required"/>
-      <span class="icon-validation icon-error" v-html="iconError"></span>
-      <div class="field-msg_error">
-        <span>Caution support information.</span>
-      </div>
-    </div>
-    <div class="field-validation validation-msg has-warning" :warning="warning" v-else-if="warning == true">
-      <input :type="type" :class="buildClass" :id="forvalue" :placeholder="placeholder" :disabled="disabled" :required="required"/>
-      <span class="icon-validation icon-warning" v-html="iconWarning"></span>
-      <div class="field-msg_error">
-        <span class="" aria-hidden="true"></span>
-        <span>Error support information.</span>
-      </div>
-    </div>
-    <div v-else>
-      <input :type="type" :class="buildClass" :id="forvalue" :placeholder="placeholder" :disabled="disabled" :required="required"/>
-    </div>
-  </div>
-</template>
-
 <script>
-  const check = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');//eslint-disable-line
-  const error = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');//eslint-disable-line
-  const warning = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');//eslint-disable-line
-  const success = require('!raw-loader!../../assets/icons/rei/icon-rei-success.svg');//eslint-disable-line
+import Input from '../../mixins/Input';
 
-  export default {
-    name: 'cdr-input',
-    data() {
+export default {
+  name: 'cdr-input',
+
+  mixins: [Input],
+
+  data() {
+    return {
+      hasFocused: false,
+      inputHeight: null,
+    };
+  },
+
+  props: {
+    autofocus: Boolean,
+    autoGrow: Boolean,
+    counter: Boolean,
+    fullWidth: Boolean,
+    id: String,
+    name: String,
+    maxlength: [Number, String],
+    max: [Number, String],
+    min: [Number, String],
+    step: [Number, String],
+    multiLine: Boolean,
+    prefix: String,
+    readonly: Boolean,
+    rows: {
+      default: 5,
+    },
+    singleLine: Boolean,
+    suffix: String,
+    type: {
+      type: String,
+      default: 'text',
+    },
+  },
+
+  computed: {
+    classes() {
       return {
-        iconCheck: check,
-        iconError: error,
-        iconWarning: warning,
-        iconSuccess: success,
+        'input-group--single-line': this.singleLine,
+        'input-group--multi-line': this.multiLine,
+        'input-group--full-width': this.fullWidth,
       };
     },
-    props: {
-      theme: String,
-      modifier: {
-        required: false,
-        default: () => [],
-      },
-      validation: {
-        required: false,
-        default: () => null,
-      },
-      type: {
-        type: String,
-        required: false,
-        default: '',
-      },
-      placeholder: {
-        type: String,
-        required: false,
-        default: '',
-      },
-      forvalue: {
-        type: String,
-        required: false,
-        default: '',
-      },
-      name: {
-        type: String,
-        required: false,
-        default: '',
-      },
-      disabled: {
-        type: Boolean,
-        required: false,
-      },
-      required: {
-        type: Boolean,
-        required: false,
-      },
-      checked: {
-        type: Boolean,
-        required: false,
-      },
-      success: {
-        type: Boolean,
-        required: false,
-      },
-      error: {
-        type: Boolean,
-        required: false,
-      },
-      warning: {
-        type: Boolean,
-        required: false,
-      },
+    hasError() {
+      return this.errors.length !== 0 ||
+        !this.counterIsValid() ||
+        !this.validateIsValid();
     },
-    computed: {
-      buildClass() {
-        const baseClass = 'cdr-input';
-        let final = '';
-        if (this.theme) {
-          final += `${this[this.theme][baseClass]} `;
-          this.modifier.forEach((mod) => {
-            final += `${this[this.theme][`cdr-input--${mod}`]} `;
-          });
-        } else {
-          final += `${baseClass} `;
-          this.modifier.forEach((mod) => {
-            final += `cdr-input--${mod} `;
-          });
+    count() {
+      const inputLength = ((this.inputValue && this.inputValue.toString()) || '').length;
+      let min = inputLength;
+
+      if (this.counterMin !== 0 && inputLength < this.counterMin) {
+        min = this.counterMin;
+      }
+
+      return `${min} / ${this.counterMax}`;
+    },
+    counterMin() {
+      const parsedMin = Number.parseInt(this.min, 10);
+      return Number.isNaN(parsedMin) ? 0 : parsedMin;
+    },
+    counterMax() {
+      const parsedMax = Number.parseInt(this.max, 10);
+      return Number.isNaN(parsedMax) ? 25 : parsedMax;
+    },
+    inputValue: {
+      get() {
+        return this.value;
+      },
+      set(valArg) {
+        let val = valArg;
+        if (this.modifiers.trim) {
+          val = val.trim();
         }
-        return final;
+
+        if (this.modifiers.number) {
+          val = Number(val);
+        }
+
+        if (!this.modifiers.lazy) {
+          this.$emit('input', val);
+        }
+
+        this.lazyValue = val;
       },
     },
-  };
+    isDirty() {
+      return this.lazyValue !== null &&
+        typeof this.lazyValue !== 'undefined' &&
+        this.lazyValue.toString().length > 0;
+    },
+  },
+
+  watch: {
+    focused(val) {
+      this.hasFocused = true;
+
+      !val && this.$emit('change', this.lazyValue);// eslint-disable-line
+    },
+    value() {
+      this.lazyValue = this.value;
+      this.validate();
+      this.multiLine && this.autoGrow && this.calculateInputHeight();// eslint-disable-line
+    },
+  },
+
+  mounted() {
+    console.log('mount vue');
+    // this.$vuetify.load(() => {
+    //   this.multiLine && this.autoGrow && this.calculateInputHeight();// eslint-disable-line
+    //   this.autofocus && this.focus();// eslint-disable-line
+    // });
+  },
+
+  methods: {
+    calculateInputHeight() {
+      const height = this.$refs.input.scrollHeight;
+      const minHeight = this.rows * 24;
+      this.inputHeight = height < minHeight ? minHeight : height;
+    },
+    onInput(e) {
+      this.inputValue = e.target.value;
+      this.multiLine && this.autoGrow && this.calculateInputHeight();// eslint-disable-line
+    },
+    blur(e) {
+      this.validate();
+      this.$nextTick(() => (this.focused = false));
+      this.$emit('blur', e);
+    },
+    focus(e) {
+      this.focused = true;
+      this.$refs.input.focus();
+      this.$emit('focus', e);
+    },
+    genInput() {
+      const tag = this.multiLine ? 'textarea' : 'input';
+
+      const data = {
+        style: {
+          height: this.inputHeight && `${this.inputHeight}px`,
+        },
+        class: 'cdr-input',
+        domProps: {
+          disabled: this.disabled,
+          required: this.required,
+          value: this.lazyValue,
+          autofucus: this.autofocus,
+        },
+        attrs: {
+          tabindex: this.tabindex,
+          readonly: this.readonly,
+        },
+        on: {
+          blur: this.blur,
+          input: this.onInput,
+          focus: this.focus,
+        },
+        ref: 'input',
+      };
+
+      if (this.placeholder) data.domProps.placeholder = this.placeholder;
+      if (this.autocomplete) data.domProps.autocomplete = true;
+      if (this.name) data.attrs.name = this.name;
+      if (this.maxlength) data.attrs.maxlength = this.maxlength;
+      if (this.id) data.domProps.id = this.id;
+      if (this.step) data.attrs.step = this.step;
+      if (!this.counter) {
+        if (this.max) data.attrs.max = this.max;
+        if (this.min) data.attrs.min = this.min;
+      }
+
+      if (this.multiLine) {
+        data.domProps.rows = this.rows;
+      } else {
+        data.domProps.type = this.type;
+      }
+
+      const children = [this.$createElement(tag, data)];
+
+      this.prefix && children.unshift(this.genFix('prefix'));// eslint-disable-line
+      this.suffix && children.push(this.genFix('suffix'));// eslint-disable-line
+
+      return children;
+    },
+    genFix(type) {
+      return this.$createElement('span', {
+        class: `input-group--text-field__${type}`,
+      }, this[type]);
+    },
+    counterIsValid: function counterIsValid() {
+      const val = (this.inputValue && this.inputValue.toString() || '');// eslint-disable-line
+
+      return (!this.counter ||
+        (val.length >= this.counterMin && val.length <= this.counterMax)
+      );
+    },
+    validateIsValid() {
+      return (!this.required ||
+        (this.required && this.isDirty) ||
+        !this.hasFocused ||
+        (this.hasFocused && this.focused));
+    },
+  },
+
+  render() {
+    return this.genInputGroup(this.genInput(), { attrs: { tabindex: -1 } });
+  },
+};
 </script>
+

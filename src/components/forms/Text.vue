@@ -82,13 +82,13 @@ export default {
       // Emit the value through the input event
       this.$emit('input', formattedValue);
     },
-    getIcon(obj) {
+    getIcon(state) {
       let icon;
-      if (obj === 'valid') {
+      if (state === 'valid') {
         icon = this.iconSuccess;
-      } else if (obj === 'warn') {
+      } else if (state === 'warn') {
         icon = this.iconWarning;
-      } else if (obj === 'error') {
+      } else if (state === 'error') {
         icon = this.iconError;
       }
       return icon;
