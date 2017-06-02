@@ -1,73 +1,100 @@
 <script>
-import Input from '../../mixins/Input';
+const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');//eslint-disable-line
+const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');//eslint-disable-line
+const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');//eslint-disable-line
+const successIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-success.svg');//eslint-disable-line
 
 export default {
   name: 'cdr-input',
-
-  mixins: [Input],
-
+  render() {
+    return this.genInputGroup(this.genInput(), { attrs: { tabindex: -1 } });
+  },
   data() {
     return {
-      hasFocused: false,
-      inputHeight: null,
+      errors: [],
+      lazyValue: this.value,
+      pristine: true,
+      touched: false,
+      valid: false,
+      focused: false,
+      state: '',
     };
   },
-
   props: {
+    label: String,
+    disabled: Boolean,
+    required: Boolean,
+    placeholder: String,
     autofocus: Boolean,
-    autoGrow: Boolean,
-    counter: Boolean,
-    fullWidth: Boolean,
     id: String,
     name: String,
-    maxlength: [Number, String],
-    max: [Number, String],
-    min: [Number, String],
-    step: [Number, String],
-    multiLine: Boolean,
-    prefix: String,
     readonly: Boolean,
+    multiLine: Boolean,
     rows: {
       default: 5,
     },
-    singleLine: Boolean,
-    suffix: String,
+    feedback: Boolean,
     type: {
       type: String,
       default: 'text',
     },
+    rules: {
+      type: Array,
+      default: () => [],
+    },
+    tabindex: {
+      default: 0,
+    },
+    value: {
+      required: false,
+    },
   },
-
   computed: {
-    classes() {
-      return {
-        'input-group--single-line': this.singleLine,
-        'input-group--multi-line': this.multiLine,
-        'input-group--full-width': this.fullWidth,
-      };
+    // Use given id or generate one
+    inputId() {
+      return this.id ? this.id : this._uid; //eslint-disable-line
+    },
+    isErr() {
+      return this.state === 'error';
+    },
+    isWarn() {
+      return this.state === 'warn';
+    },
+    isValid() {
+      return this.state === 'valid';
     },
     hasError() {
-      return this.errors.length !== 0 ||
-        !this.counterIsValid() ||
-        !this.validateIsValid();
+      if (this.pristine && !this.touched) {
+        return false;
+      } else if (this.required && this.pristine && this.touched) {
+        return true;
+      }
+      return this.errors.length > 0;
     },
-    count() {
-      const inputLength = ((this.inputValue && this.inputValue.toString()) || '').length;
-      let min = inputLength;
+    isDirty() {
+      return this.touched ||
+        (this.lazyValue !== null &&
+        typeof this.lazyValue !== 'undefined' &&
+        this.lazyValue.toString().length !== 0);
+    },
+    modifiers() {
+      const modifiers = {
+        lazy: false,
+        number: false,
+        trim: false,
+      };
 
-      if (this.counterMin !== 0 && inputLength < this.counterMin) {
-        min = this.counterMin;
+      if (!this.$vnode.data.directives) {
+        return modifiers;
       }
 
-      return `${min} / ${this.counterMax}`;
-    },
-    counterMin() {
-      const parsedMin = Number.parseInt(this.min, 10);
-      return Number.isNaN(parsedMin) ? 0 : parsedMin;
-    },
-    counterMax() {
-      const parsedMax = Number.parseInt(this.max, 10);
-      return Number.isNaN(parsedMax) ? 25 : parsedMax;
+      const model = this.$vnode.data.directives.find(i => i.name === 'model');
+
+      if (!model) {
+        return modifiers;
+      }
+
+      return Object.assign(modifiers, model.modifiers);
     },
     inputValue: {
       get() {
@@ -90,43 +117,24 @@ export default {
         this.lazyValue = val;
       },
     },
-    isDirty() {
-      return this.lazyValue !== null &&
-        typeof this.lazyValue !== 'undefined' &&
-        this.lazyValue.toString().length > 0;
-    },
   },
-
   watch: {
     focused(val) {
-      this.hasFocused = true;
+      this.touched = true;
 
-      !val && this.$emit('change', this.lazyValue);// eslint-disable-line
+      if (val) {
+        this.$emit('change', this.lazyValue);
+      }
     },
     value() {
       this.lazyValue = this.value;
       this.validate();
-      this.multiLine && this.autoGrow && this.calculateInputHeight();// eslint-disable-line
     },
   },
-
-  mounted() {
-    console.log('mount vue');
-    // this.$vuetify.load(() => {
-    //   this.multiLine && this.autoGrow && this.calculateInputHeight();// eslint-disable-line
-    //   this.autofocus && this.focus();// eslint-disable-line
-    // });
-  },
-
   methods: {
-    calculateInputHeight() {
-      const height = this.$refs.input.scrollHeight;
-      const minHeight = this.rows * 24;
-      this.inputHeight = height < minHeight ? minHeight : height;
-    },
     onInput(e) {
+      this.pristine = false;
       this.inputValue = e.target.value;
-      this.multiLine && this.autoGrow && this.calculateInputHeight();// eslint-disable-line
     },
     blur(e) {
       this.validate();
@@ -142,9 +150,6 @@ export default {
       const tag = this.multiLine ? 'textarea' : 'input';
 
       const data = {
-        style: {
-          height: this.inputHeight && `${this.inputHeight}px`,
-        },
         class: 'cdr-input',
         domProps: {
           disabled: this.disabled,
@@ -164,16 +169,9 @@ export default {
         ref: 'input',
       };
 
+      data.domProps.id = this.inputId;
       if (this.placeholder) data.domProps.placeholder = this.placeholder;
-      if (this.autocomplete) data.domProps.autocomplete = true;
       if (this.name) data.attrs.name = this.name;
-      if (this.maxlength) data.attrs.maxlength = this.maxlength;
-      if (this.id) data.domProps.id = this.id;
-      if (this.step) data.attrs.step = this.step;
-      if (!this.counter) {
-        if (this.max) data.attrs.max = this.max;
-        if (this.min) data.attrs.min = this.min;
-      }
 
       if (this.multiLine) {
         data.domProps.rows = this.rows;
@@ -183,34 +181,133 @@ export default {
 
       const children = [this.$createElement(tag, data)];
 
-      this.prefix && children.unshift(this.genFix('prefix'));// eslint-disable-line
-      this.suffix && children.push(this.genFix('suffix'));// eslint-disable-line
-
       return children;
     },
-    genFix(type) {
-      return this.$createElement('span', {
-        class: `input-group--text-field__${type}`,
-      }, this[type]);
-    },
-    counterIsValid: function counterIsValid() {
-      const val = (this.inputValue && this.inputValue.toString() || '');// eslint-disable-line
+    genLabel() {
+      const data = {};
 
-      return (!this.counter ||
-        (val.length >= this.counterMin && val.length <= this.counterMax)
+      data.class = 'cdr-label';
+      data.attrs = { for: this.inputId };
+
+      return this.$createElement('label', data, this.label);
+    },
+    genFeedbackIcon() {
+      let icon = '';
+
+      if (this.isErr) {
+        icon = errorIcon;
+      } else if (this.isValid) {
+        icon = successIcon;
+      } else if (this.isWarn) {
+        icon = warningIcon;
+      }
+
+      return this.$createElement('span', {
+        class: 'cdr-input-validation__icon',
+        domProps: {
+          innerHTML: icon,
+        },
+      });
+    },
+    genMessages() {
+      let messages = [];
+
+      if (((this.hint && this.focused) || (this.hint && this.persistentHint)) &&
+          this.errors.length === 0
+      ) {
+        messages = [this.genHint()];
+      } else if (this.errors.length) {
+        messages = this.errors.map(i => this.genError(i));
+      }
+
+      return this.$createElement(
+        'div',
+        {
+          class: 'cdr-input-messages',
+        },
+        messages,
       );
     },
-    validateIsValid() {
-      return (!this.required ||
-        (this.required && this.isDirty) ||
-        !this.hasFocused ||
-        (this.hasFocused && this.focused));
+    genHint() {
+      return this.$createElement('div',
+        {
+          class: 'cdr-input-messages__hint',
+          key: this.hint,
+        }, this.hint);
     },
-  },
+    genError(error) {
+      return this.$createElement('div',
+        {
+          class: 'cdr-input-messages__error',
+          key: error,
+        },
+        error,
+      );
+    },
+    genInputGroup(input, dataArg = {}) {
+      const children = [];
+      const wrapperChildren = [];
+      let data = dataArg;
 
-  render() {
-    return this.genInputGroup(this.genInput(), { attrs: { tabindex: -1 } });
+      const inputGroupClasses = Object.assign({
+        'cdr-input-group': true,
+        'is-pristine': this.pristine,
+        'is-touched': this.touched,
+      });
+
+      data = Object.assign({}, {
+        class: inputGroupClasses,
+      }, data);
+
+      // Add the label
+      if (this.label) {
+        children.push(this.genLabel());
+      }
+
+      // Add the input
+      wrapperChildren.push(input);
+
+      // Add validation feedback icons
+      if (this.feedback) {
+        wrapperChildren.push(this.genFeedbackIcon());
+      }
+
+      const validationClasses = Object.assign({
+        'cdr-input-validation': true,
+        'cdr-input-validation--error': this.isErr,
+        'cdr-input-validation--warn': this.isWarn,
+        'cdr-input-validation--valid': this.isValid,
+      });
+
+      children.push(
+        this.$createElement('div', {
+          class: validationClasses,
+        }, wrapperChildren),
+      );
+
+      // Add error and hint messages
+      children.push(this.genMessages());
+
+      return this.$createElement('div', data, children);
+    },
+    validate() {
+      this.errors = [];
+      this.valid = false;
+
+      this.rules.forEach((rule) => {
+        const validObj = typeof rule === 'function' ? rule(this.value) : rule;
+
+        if (validObj.state === 'valid') {
+          this.state = validObj.state;
+        } else if (validObj.state === 'warn') {
+          this.state = validObj.state;
+          this.errors.push(validObj.message);
+        } else {
+          this.state = validObj.state;
+          this.errors.push(validObj.message);
+        }
+      });
+    },
   },
 };
 </script>
-
