@@ -60,7 +60,7 @@
           obj.message = 'Error: needs to be string';
         } else {
           obj.state = 'error';
-          obj.message = 'WRONG';
+          obj.message = 'Error: WRONG';
         }
         return obj;
       },

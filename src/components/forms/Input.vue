@@ -1,8 +1,9 @@
 <script>
+import debounce from '../../utils/debounce';
+
 const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');//eslint-disable-line
 const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');//eslint-disable-line
 const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');//eslint-disable-line
-const successIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-success.svg');//eslint-disable-line
 
 export default {
   name: 'cdr-input',
@@ -42,6 +43,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    debounce: {
+      required: false,
+      default: false,
+    },
     tabindex: {
       default: 0,
     },
@@ -52,7 +57,15 @@ export default {
   computed: {
     // Use given id or generate one
     inputId() {
-      return this.id ? this.id : this._uid; //eslint-disable-line
+      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
+    },
+    debounceVal() {
+      if (this.debounce === false) {
+        return 0;
+      } else if (!isNaN(this.debounce) && this.debounce !== '') {
+        return this.debounce;
+      }
+      return 500;
     },
     isErr() {
       return this.state === 'error';
@@ -62,20 +75,6 @@ export default {
     },
     isValid() {
       return this.state === 'valid';
-    },
-    hasError() {
-      if (this.pristine && !this.touched) {
-        return false;
-      } else if (this.required && this.pristine && this.touched) {
-        return true;
-      }
-      return this.errors.length > 0;
-    },
-    isDirty() {
-      return this.touched ||
-        (this.lazyValue !== null &&
-        typeof this.lazyValue !== 'undefined' &&
-        this.lazyValue.toString().length !== 0);
     },
     modifiers() {
       const modifiers = {
@@ -197,7 +196,7 @@ export default {
       if (this.isErr) {
         icon = errorIcon;
       } else if (this.isValid) {
-        icon = successIcon;
+        icon = checkIcon;
       } else if (this.isWarn) {
         icon = warningIcon;
       }
@@ -232,6 +231,9 @@ export default {
       return this.$createElement('div',
         {
           class: 'cdr-input-messages__hint',
+          domProps: {
+            id: `hint${this._uid}`,//eslint-disable-line
+          },
           key: this.hint,
         }, this.hint);
     },
@@ -239,6 +241,9 @@ export default {
       return this.$createElement('div',
         {
           class: 'cdr-input-messages__error',
+          domProps: {
+            id: `err${this._uid}`,//eslint-disable-line
+          },
           key: error,
         },
         error,
@@ -259,12 +264,16 @@ export default {
         class: inputGroupClasses,
       }, data);
 
-      // Add the label
+      // Add label
       if (this.label) {
         children.push(this.genLabel());
       }
 
-      // Add the input
+      // Add input/textarea
+      if (this.hint || this.errors.length) {
+        input[0].data.attrs['aria-describedby'] = `hint${this._uid} err${this._uid}`;//eslint-disable-line
+      }
+
       wrapperChildren.push(input);
 
       // Add validation feedback icons
@@ -291,22 +300,25 @@ export default {
       return this.$createElement('div', data, children);
     },
     validate() {
-      this.errors = [];
-      this.valid = false;
+      console.log(this.debounceVal); // eslint-disable-line
+      (debounce(() => {
+        this.errors = [];
+        this.valid = false;
 
-      this.rules.forEach((rule) => {
-        const validObj = typeof rule === 'function' ? rule(this.value) : rule;
+        this.rules.forEach((rule) => {
+          const validObj = rule(this.value);
 
-        if (validObj.state === 'valid') {
-          this.state = validObj.state;
-        } else if (validObj.state === 'warn') {
-          this.state = validObj.state;
-          this.errors.push(validObj.message);
-        } else {
-          this.state = validObj.state;
-          this.errors.push(validObj.message);
-        }
-      });
+          if (validObj.state === 'valid') {
+            this.state = validObj.state;
+          } else if (validObj.state === 'warn') {
+            this.state = validObj.state;
+            this.errors.push(validObj.message);
+          } else {
+            this.state = validObj.state;
+            this.errors.push(validObj.message);
+          }
+        });
+      }, this.debounceVal))();
     },
   },
 };
