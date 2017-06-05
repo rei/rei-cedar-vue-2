@@ -10,22 +10,6 @@
 .cdr-input-validation {
   position: relative;
 
-  &--valid {
-    fill: var(--input-valid-color);
-  }
-
-  &--warn {
-    fill: var(--input-warning-color);
-  }
-
-  &--error {
-    fill: var(--input-error-color);
-
-    & > .cdr-input {
-      border-color: var(--input-error-color);
-    }
-  }
-
   &__icon {
     position: absolute;
     top: var(--input-icon-t);
@@ -33,14 +17,43 @@
     height: var(--input-icon-h);
     width: var(--input-icon-w);
 
-    & > svg {
-      fill: inherit;
+    &--valid > svg {
+      fill: var(--input-valid-color);
+    }
+
+    &--warn > svg {
+      fill: var(--input-warn-color);
+    }
+
+    &--error > svg {
+      fill: var(--input-error-color);
     }
   }
 }
 
 .cdr-input-messages {
-  
+  @apply --sys-font-spruce-cpt-10;
+
+  &__hint {}
+
+  &__notification {
+    padding: var(--input-messages-p);
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+    border-bottom-right-radius: var(--input-br);
+    border-bottom-left-radius: var(--input-br);
+
+    &--error {
+      border-color: var(--input-messages-error-border-color);
+      background-color: var(--input-messages-error-background);
+    }
+
+    &--warn {
+      border-color: var(--input-messages-warn-border-color);
+      background-color: var(--input-messages-warn-background);
+    }
+  }
 }
 
 .cdr-input,
@@ -63,6 +76,18 @@
     display: inline-block;
   }
 
+  &--error {
+    border-color: var(--input-error-color);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &--warn {
+    border-color: var(--input-warn-color);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
   &::placeholder {
     font-style: italic;
   }
@@ -79,6 +104,10 @@
 
 .cdr-label {
   font-weight: bold;
+
+  &--error {
+    color: var(--label-error-color);
+  }
 }
 
 /* --------REPLACING---------- */

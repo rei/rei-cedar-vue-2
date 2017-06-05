@@ -149,7 +149,11 @@ export default {
       const tag = this.multiLine ? 'textarea' : 'input';
 
       const data = {
-        class: 'cdr-input',
+        class: {
+          'cdr-input': true,
+          'cdr-input--error': this.isErr,
+          'cdr-input--warn': this.isWarn,
+        },
         domProps: {
           disabled: this.disabled,
           required: this.required,
@@ -185,7 +189,10 @@ export default {
     genLabel() {
       const data = {};
 
-      data.class = 'cdr-label';
+      data.class = {
+        'cdr-label': true,
+        'cdr-label--error': this.isErr,
+      };
       data.attrs = { for: this.inputId };
 
       return this.$createElement('label', data, this.label);
@@ -202,7 +209,12 @@ export default {
       }
 
       return this.$createElement('span', {
-        class: 'cdr-input-validation__icon',
+        class: {
+          'cdr-input-validation__icon': true,
+          'cdr-input-validation__icon--error': this.isErr,
+          'cdr-input-validation__icon--warn': this.isWarn,
+          'cdr-input-validation__icon--valid': this.isValid,
+        },
         domProps: {
           innerHTML: icon,
         },
@@ -240,7 +252,11 @@ export default {
     genError(error) {
       return this.$createElement('div',
         {
-          class: 'cdr-input-messages__error',
+          class: {
+            'cdr-input-messages__notification': true,
+            'cdr-input-messages__notification--error': this.isErr,
+            'cdr-input-messages__notification--warn': this.isWarn,
+          },
           domProps: {
             id: `err${this._uid}`,//eslint-disable-line
           },
@@ -281,16 +297,11 @@ export default {
         wrapperChildren.push(this.genFeedbackIcon());
       }
 
-      const validationClasses = Object.assign({
-        'cdr-input-validation': true,
-        'cdr-input-validation--error': this.isErr,
-        'cdr-input-validation--warn': this.isWarn,
-        'cdr-input-validation--valid': this.isValid,
-      });
-
       children.push(
         this.$createElement('div', {
-          class: validationClasses,
+          class: {
+            'cdr-input-validation': true,
+          },
         }, wrapperChildren),
       );
 
@@ -300,7 +311,6 @@ export default {
       return this.$createElement('div', data, children);
     },
     validate() {
-      console.log(this.debounceVal); // eslint-disable-line
       (debounce(() => {
         this.errors = [];
         this.valid = false;
