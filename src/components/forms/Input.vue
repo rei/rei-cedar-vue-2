@@ -62,6 +62,7 @@ export default {
     inputId() {
       return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
     },
+    // Check if debounce is enabled, defined, or default
     debounceVal() {
       if (this.debounce === false) {
         return 0;
@@ -139,7 +140,7 @@ export default {
       this.inputValue = e.target.value;
     },
     blur(e) {
-      this.validate();
+      this.validate(true);
       this.$nextTick(() => (this.focused = false));
       this.$emit('blur', e);
     },
@@ -198,14 +199,18 @@ export default {
     },
     genLabel() {
       const data = {};
+      let labelText = this.label;
+
+      if (this.required) labelText += '*';
 
       data.class = {
         'cdr-label': true,
         'cdr-label--error': this.isErr,
       };
       data.attrs = { for: this.inputId };
+      data.ref = 'label';
 
-      return this.$createElement('label', data, this.label);
+      return this.$createElement('label', data, labelText);
     },
     genFeedbackIcon() {
       let icon = '';
@@ -321,25 +326,28 @@ export default {
       return this.$createElement('div', data, children);
     },
     validate(immediate = false) {
-      const delay = immediate ? 0 : this.debounceVal;
-      (debounce(() => {
-        this.errors = [];
-        this.valid = false;
+      // only validate when rules are defined
+      if (this.rules.length > 0) {
+        const delay = immediate ? 0 : this.debounceVal;
+        (debounce(() => {
+          this.errors = [];
+          this.valid = false;
 
-        this.rules.forEach((rule) => {
-          const validObj = rule(this.value);
+          this.rules.forEach((rule) => {
+            const validObj = rule(this.value);
 
-          if (validObj.state === 'valid') {
-            this.state = validObj.state;
-          } else if (validObj.state === 'warn') {
-            this.state = validObj.state;
-            this.errors.push(validObj.message);
-          } else {
-            this.state = validObj.state;
-            this.errors.push(validObj.message);
-          }
-        });
-      }, delay))();
+            if (validObj.state === 'valid') {
+              this.state = validObj.state;
+            } else if (validObj.state === 'warn') {
+              this.state = validObj.state;
+              this.errors.push(validObj.message);
+            } else {
+              this.state = validObj.state;
+              this.errors.push(validObj.message);
+            }
+          });
+        }, delay))();
+      }
     },
   },
 };
