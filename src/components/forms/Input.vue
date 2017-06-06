@@ -22,15 +22,18 @@ export default {
     };
   },
   props: {
+    id: String,
     label: String,
+    name: String,
     disabled: Boolean,
     required: Boolean,
     placeholder: String,
     autofocus: Boolean,
-    id: String,
-    name: String,
     readonly: Boolean,
     multiLine: Boolean,
+    maxlength: {
+      required: false,
+    },
     rows: {
       default: 5,
     },
@@ -145,6 +148,10 @@ export default {
       this.$refs.input.focus();
       this.$emit('focus', e);
     },
+    onPaste(e) {
+      this.validate(true);
+      this.$emit('paste', e);
+    },
     genInput() {
       const tag = this.multiLine ? 'textarea' : 'input';
 
@@ -155,6 +162,7 @@ export default {
           'cdr-input--warn': this.isWarn,
         },
         domProps: {
+          id: this.inputId,
           disabled: this.disabled,
           required: this.required,
           value: this.lazyValue,
@@ -168,13 +176,15 @@ export default {
           blur: this.blur,
           input: this.onInput,
           focus: this.focus,
+          paste: this.onPaste,
         },
         ref: 'input',
       };
 
-      data.domProps.id = this.inputId;
+      // conditional domProps
       if (this.placeholder) data.domProps.placeholder = this.placeholder;
       if (this.name) data.attrs.name = this.name;
+      if (this.maxlength) data.domProps.maxlength = this.maxlength;
 
       if (this.multiLine) {
         data.domProps.rows = this.rows;
@@ -310,7 +320,8 @@ export default {
 
       return this.$createElement('div', data, children);
     },
-    validate() {
+    validate(immediate = false) {
+      const delay = immediate ? 0 : this.debounceVal;
       (debounce(() => {
         this.errors = [];
         this.valid = false;
@@ -328,7 +339,7 @@ export default {
             this.errors.push(validObj.message);
           }
         });
-      }, this.debounceVal))();
+      }, delay))();
     },
   },
 };
