@@ -302,6 +302,13 @@ autoprefixer@^7.1.0:
     postcss "^6.0.1"
     postcss-value-parser "^3.2.3"
 
+avoriaz@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/avoriaz/-/avoriaz-1.15.0.tgz#a86a988a9063b4d651a72c04ed2429b4cce237f0"
+  dependencies:
+    sizzle "^2.3.3"
+    vue-add-globals "^1.0.1"
+
 aws-sign2@~0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.6.0.tgz#14342dd38dbcc94d0e5b87d763cd63612c0e794f"
@@ -7128,6 +7135,10 @@ sinon@^2.1.0:
     text-encoding "0.6.4"
     type-detect "^4.0.0"
 
+sizzle@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/sizzle/-/sizzle-2.3.3.tgz#4eb078c37231a56b52e4193f701e7ef8937e606b"
+
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
@@ -8155,6 +8166,10 @@ vm-browserify@0.0.4:
 void-elements@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
+
+vue-add-globals@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-add-globals/-/vue-add-globals-1.0.1.tgz#151f241426e70cbc790a1f31bb0f4435d7575efc"
 
 vue-hot-reload-api@^2.1.0:
   version "2.1.0"
