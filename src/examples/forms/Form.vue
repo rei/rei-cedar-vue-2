@@ -2,33 +2,52 @@
   <div>
     <h2>Forms</h2>
 
-    <cdr-input v-model="test" 
-      name="input-1"
-      label="Feedback + not required"
+    <cdr-input v-model="debounce"
+      label="Validation with debounce"
       id="testing"
-      placeholder="hi"
+      placeholder="Enter hi"
       feedback
       :rules="[validateFn]"
+      debounce
       ></cdr-input>
 
-    <cdr-input v-model="test2" 
-      name="input-2"
-      label="Feedback + required"
+    <cdr-input v-model="required"
+      label="Required"
       feedback
       :rules="[validateFn]"
       required
       ></cdr-input>
 
-    <cdr-input v-model="test3" 
-      name="input-3"
-      label="No validation"
+    <cdr-input v-model="valid"
+      label="Success"
       feedback
+      :rules="[validateFn]"
+      immediate-validate
       ></cdr-input>
 
-    <cdr-input v-model="test4" 
-      name="input-4"
-      label="Textarea"
+    <cdr-input v-model="warning"
+      label="Warning"
+      feedback
+      :rules="[validateFn]"
+      immediate-validate
+      ></cdr-input>
+
+    <cdr-input v-model="error" 
+      label="Error"
+      feedback
+      :rules="[validateFn]"
+      immediate-validate
+      ></cdr-input>
+
+    <cdr-input v-model="multi"
+      label="Multiline"
       multi-line
+      ></cdr-input>
+
+    <cdr-input v-model="multi2"
+      label="Multiline 10 rows"
+      multi-line
+      rows="10"
       ></cdr-input>
   </div>
 </template>
@@ -41,10 +60,14 @@
     components: Components,
     data() {
       return {
-        test: '',
-        test2: '',
-        test3: '',
-        test4: '',
+        debounce: '',
+        required: '',
+        empty: '',
+        valid: 'hi',
+        warning: '',
+        error: 1,
+        multi: '',
+        multi2: '',
       };
     },
     methods: {
@@ -54,13 +77,13 @@
           obj.state = 'valid';
         } else if (inputText === '') {
           obj.state = 'warn';
-          obj.message = 'Warning: empty';
+          obj.message = 'Warning Message';
         } else if (!isNaN(inputText) && inputText !== '') {
           obj.state = 'error';
           obj.message = 'Error: needs to be string';
         } else {
           obj.state = 'error';
-          obj.message = 'Error: WRONG';
+          obj.message = 'Error Message';
         }
         return obj;
       },

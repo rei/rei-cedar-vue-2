@@ -56,6 +56,12 @@ export default {
     value: {
       required: false,
     },
+    immediateValidate: Boolean,
+  },
+  mounted() {
+    if (this.immediateValidate) {
+      this.validate(true);
+    }
   },
   computed: {
     // Use given id or generate one
@@ -66,7 +72,7 @@ export default {
     debounceVal() {
       if (this.debounce === false) {
         return 0;
-      } else if (!isNaN(this.debounce) && this.debounce !== '') {
+      } else if (!isNaN(this.debounce) && this.debounce !== '' && this.debounce !== true) {
         return this.debounce;
       }
       return 500;
@@ -167,7 +173,7 @@ export default {
           disabled: this.disabled,
           required: this.required,
           value: this.lazyValue,
-          autofucus: this.autofocus,
+          autofocus: this.autofocus,
         },
         attrs: {
           tabindex: this.tabindex,
@@ -182,10 +188,10 @@ export default {
         ref: 'input',
       };
 
-      // conditional domProps
+      // conditional domProps and attrs
       if (this.placeholder) data.domProps.placeholder = this.placeholder;
       if (this.name) data.attrs.name = this.name;
-      if (this.maxlength) data.domProps.maxlength = this.maxlength;
+      if (this.maxlength) data.attrs.maxlength = this.maxlength;
 
       if (this.multiLine) {
         data.domProps.rows = this.rows;
@@ -262,6 +268,7 @@ export default {
             id: `hint${this._uid}`,//eslint-disable-line
           },
           key: this.hint,
+          ref: 'hint',
         }, this.hint);
     },
     genError(error) {
@@ -276,6 +283,7 @@ export default {
             id: `err${this._uid}`,//eslint-disable-line
           },
           key: error,
+          ref: 'error',
         },
         error,
       );
@@ -287,8 +295,6 @@ export default {
 
       const inputGroupClasses = Object.assign({
         'cdr-input-group': true,
-        'is-pristine': this.pristine,
-        'is-touched': this.touched,
       });
 
       data = Object.assign({}, {
