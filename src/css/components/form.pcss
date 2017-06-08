@@ -26,12 +26,32 @@
   }
 }
 
-.cdr-input-messages {
-  @apply --sys-font-spruce-cpt-10;
-
-  &__hint {
-    /* TODO: possibly add this */
+.cdr-animated-errors {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 350ms ease, transform 350ms ease;
+    transform-origin: top;
   }
+
+  &-leave-active + &-enter-active {
+    transition-delay: 350ms;
+    position: absolute;
+    width: 100%;
+  }
+
+  &-enter-active + &-leave-active {
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+.cdr-input-messages {
+  position: relative;
+  @apply --sys-font-spruce-cpt-10;
 
   &__notification {
     padding: var(--input-messages-p);
