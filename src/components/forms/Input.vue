@@ -245,32 +245,21 @@ export default {
     genMessages() {
       let messages = [];
 
-      if (((this.hint && this.focused) || (this.hint && this.persistentHint)) &&
-          this.errors.length === 0
-      ) {
-        messages = [this.genHint()];
-      } else if (this.errors.length) {
+      if (this.errors.length) {
         messages = this.errors.map(i => this.genError(i));
       }
 
       return this.$createElement(
-        'div',
+        'transition-group',
         {
           class: 'cdr-input-messages',
+          props: {
+            tag: 'div',
+            name: 'cdr-animated-errors',
+          },
         },
         messages,
       );
-    },
-    genHint() {
-      return this.$createElement('div',
-        {
-          class: 'cdr-input-messages__hint',
-          domProps: {
-            id: `hint${this._uid}`,//eslint-disable-line
-          },
-          key: this.hint,
-          ref: 'hint',
-        }, this.hint);
     },
     genError(error) {
       return this.$createElement('div',
