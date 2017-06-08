@@ -212,6 +212,7 @@ export default {
       data.class = {
         'cdr-label': true,
         'cdr-label--error': this.isErr,
+        'cdr-label--disabled': this.disabled,
       };
       data.attrs = { for: this.inputId };
       data.ref = 'label';

@@ -1,10 +1,5 @@
 .cdr-input-group {
   margin-bottom: var(--input-group-margin);
-
-  &--inline {
-    display: inline-block;
-    margin-right: var(--input-group-margin);
-  }
 }
 
 .cdr-input-validation {
@@ -12,10 +7,10 @@
 
   &__icon {
     position: absolute;
-    top: var(--input-icon-t);
-    right: var(--input-icon-r);
-    height: var(--input-icon-h);
-    width: var(--input-icon-w);
+    top: var(--input-icon-top);
+    right: var(--input-icon-right);
+    height: var(--input-icon-height);
+    width: var(--input-icon-width);
 
     &--valid > svg {
       fill: var(--input-valid-color);
@@ -34,12 +29,14 @@
 .cdr-input-messages {
   @apply --sys-font-spruce-cpt-10;
 
-  &__hint {}
+  &__hint {
+    /* TODO: possibly add this */
+  }
 
   &__notification {
     padding: var(--input-messages-p);
     border-style: solid;
-    border-width: 1px;
+    border-width: var(--input-border-width);
     border-top: none;
     border-bottom-right-radius: var(--input-br);
     border-bottom-left-radius: var(--input-br);
@@ -58,23 +55,15 @@
 
 .cdr-input,
 .cdr-select {
+  @apply --sys-font-spruce-bdy-25;
+
   width: 100%;
-  border-width: 0.12rem;
-  border-style: solid;
-  border-color: var(--input-bc);
-  border-radius: var(--input-br);
   display: block;
+  border-width: var(--input-border-width);
+  border-style: solid;
+  border-color: var(--input-border-color);
+  border-radius: var(--input-br);
   padding: var(--input-p);
-  line-height: 1;
-
-  &--large {
-    height: 6rem;
-    padding-bottom: 3.2rem !important;
-  }
-
-  &--inline {
-    display: inline-block;
-  }
 
   &--error {
     border-color: var(--input-error-color);
@@ -89,21 +78,24 @@
   }
 
   &::placeholder {
-    font-style: italic;
+    @apply --input-placeholder;
   }
 
   &[disabled] {
-    cursor: not-allowed;
-    background-color: #f2f2f2;
+    background-color: var(--input-disabled-background-color);
 
     &::placeholder {
-      color: #ccc;
+      color: var(--input-disabled-placholder-color);
     }
   }
 }
 
 .cdr-label {
   font-weight: bold;
+
+  &--disabled {
+    color: var(--label-disabled-color);
+  }
 
   &--error {
     color: var(--label-error-color);

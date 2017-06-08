@@ -18,6 +18,12 @@
       required
       ></cdr-input>
 
+    <cdr-input v-model="empty"
+      label="Disabled"
+      placeholder="I am disabled"
+      disabled
+      ></cdr-input>
+
     <cdr-input v-model="valid"
       label="Success"
       feedback
@@ -42,6 +48,30 @@
     <cdr-input v-model="multi"
       label="Multiline"
       multi-line
+      ></cdr-input>
+
+    <cdr-input v-model="valid"
+      label="Multiline Success"
+      feedback
+      :rules="[validateFn]"
+      multi-line
+      immediate-validate
+      ></cdr-input>
+
+    <cdr-input v-model="warning"
+      label="Multiline Warning"
+      feedback
+      :rules="[validateFn]"
+      multi-line
+      immediate-validate
+      ></cdr-input>
+
+    <cdr-input v-model="error" 
+      label="Multiline Error"
+      feedback
+      :rules="[validateFn]"
+      multi-line
+      immediate-validate
       ></cdr-input>
 
     <cdr-input v-model="multi2"
@@ -80,7 +110,7 @@
           obj.message = 'Warning Message';
         } else if (!isNaN(inputText) && inputText !== '') {
           obj.state = 'error';
-          obj.message = 'Error: needs to be string';
+          obj.message = 'Error: needs to be letters';
         } else {
           obj.state = 'error';
           obj.message = 'Error Message';
