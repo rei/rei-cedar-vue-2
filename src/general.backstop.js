@@ -6,6 +6,7 @@ module.exports = [
       "[data-backstop='anchors']",
       "[data-backstop='buttons']",
       "[data-backstop='lists']",
+      "[data-backstop='forms']",
       "[data-backstop='test']",
     ],
     readyEvent: null,

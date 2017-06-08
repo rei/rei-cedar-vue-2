@@ -31,6 +31,8 @@ export default {
     autofocus: Boolean,
     readonly: Boolean,
     multiLine: Boolean,
+    pattern: String,
+    patternError: String,
     maxlength: {
       required: false,
     },
@@ -61,6 +63,32 @@ export default {
   mounted() {
     if (this.immediateValidate) {
       this.validate(true);
+    }
+    // Convert pattern to a rule for testing
+    if (this.pattern) {
+      const regPattern = new RegExp(this.pattern);
+      this.rules.push((text) => {
+        const obj = {};
+        if (regPattern.test(text)) {
+          obj.state = 'valid';
+        } else {
+          obj.state = 'error';
+          obj.message = this.patternError || '';
+        }
+        return obj;
+      });
+    }
+    // Provide some default validation for required
+    if (this.required) {
+      this.rules.push((text) => {
+        const obj = {};
+        // interacted with, not currently focsed, and empty
+        if (this.touched && !this.focused && text === '') {
+          obj.state = 'warn';
+          obj.message = 'This field is required';
+        }
+        return obj;
+      });
     }
   },
   computed: {
@@ -270,9 +298,9 @@ export default {
             'cdr-input-messages__notification--warn': this.isWarn,
           },
           domProps: {
-            id: `err${this._uid}`,//eslint-disable-line
+            id: `err${this._uid}`, // eslint-disable-line no-underscore-dangle
           },
-          key: error,
+          key: `errKey${this._uid}`, // eslint-disable-line no-underscore-dangle
           ref: 'error',
         },
         error,
@@ -322,7 +350,7 @@ export default {
       return this.$createElement('div', data, children);
     },
     validate(immediate = false) {
-      // only validate when rules are defined
+      // only validate rules if there are any
       if (this.rules.length > 0) {
         const delay = immediate ? 0 : this.debounceVal;
         (debounce(() => {
@@ -331,6 +359,7 @@ export default {
 
           this.rules.forEach((rule) => {
             const validObj = rule(this.value);
+            validObj.state = validObj.state ? validObj.state : this.state;
 
             if (validObj.state === 'valid') {
               this.state = validObj.state;
@@ -339,7 +368,9 @@ export default {
               this.errors.push(validObj.message);
             } else {
               this.state = validObj.state;
-              this.errors.push(validObj.message);
+              if (validObj.message) {
+                this.errors.push(validObj.message);
+              }
             }
           });
         }, delay))();

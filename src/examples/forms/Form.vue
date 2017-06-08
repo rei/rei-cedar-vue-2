@@ -11,11 +11,27 @@
       debounce
       ></cdr-input>
 
-    <cdr-input v-model="required"
+    <cdr-input v-model="requiredValidated"
       label="Required"
       feedback
       :rules="[validateFn]"
       required
+      ></cdr-input>
+
+    <cdr-input v-model="required"
+      label="Default required validation"
+      required
+      ></cdr-input>
+
+    <cdr-input v-model="nothing"
+      label="Nothing"
+      ></cdr-input>
+
+    <cdr-input v-model="pattern"
+      label="Pattern validation"
+      required
+      pattern="[a-zA-Z0-9\-\s'/@#+&%]+"
+      pattern-error="Only letters, numbers, spaces, dashes, apostrophes, /, @, #, +, &amp; or % are allowed."
       ></cdr-input>
 
     <cdr-input v-model="empty"
@@ -91,7 +107,10 @@
     data() {
       return {
         debounce: '',
+        requiredValidated: '',
         required: '',
+        nothing: '',
+        pattern: '',
         empty: '',
         valid: 'hi',
         warning: '',
