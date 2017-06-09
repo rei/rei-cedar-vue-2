@@ -30,15 +30,15 @@ export default {
     placeholder: String,
     autofocus: Boolean,
     readonly: Boolean,
-    multiLine: Boolean,
-    pattern: String,
-    patternError: String,
     maxlength: {
       required: false,
     },
+    multiLine: Boolean,
     rows: {
       default: 5,
     },
+    pattern: String,
+    patternError: String,
     feedback: Boolean,
     type: {
       type: String,
