@@ -61,9 +61,6 @@ export default {
     immediateValidate: Boolean,
   },
   mounted() {
-    if (this.immediateValidate) {
-      this.validate(true);
-    }
     // Convert pattern to a rule for testing
     if (this.pattern) {
       const regPattern = new RegExp(this.pattern);
@@ -89,6 +86,9 @@ export default {
         }
         return obj;
       });
+    }
+    if (this.immediateValidate) {
+      this.validate(true);
     }
   },
   computed: {

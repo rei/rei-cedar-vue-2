@@ -176,7 +176,7 @@ describe('Input.vue', () => {
       .to.equal(wrapper.vm._uid); // eslint-disable-line no-underscore-dangle
   });
 
-  it('validates errors', () => {
+  it('validates errors', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
         value: 4,
@@ -186,10 +186,11 @@ describe('Input.vue', () => {
     wrapper.vm.validate(true);
     setTimeout(() => {
       expect(wrapper.vm.isErr).to.equal(true);
+      done();
     }, 0);
   });
 
-  it('renders error messages correctly', () => {
+  it('renders error messages correctly', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
         value: 4,
@@ -199,10 +200,11 @@ describe('Input.vue', () => {
     wrapper.vm.validate(true);
     setTimeout(() => {
       expect(wrapper.vm.$refs.error.textContent).to.equal('Error Message');
+      done();
     }, 0);
   });
 
-  it('validates warnings', () => {
+  it('validates warnings', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
         value: '',
@@ -212,10 +214,11 @@ describe('Input.vue', () => {
     wrapper.vm.validate(true);
     setTimeout(() => {
       expect(wrapper.vm.isWarn).to.equal(true);
+      done();
     }, 0);
   });
 
-  it('renders warning messages correctly', () => {
+  it('renders warning messages correctly', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
         value: '',
@@ -225,10 +228,11 @@ describe('Input.vue', () => {
     wrapper.vm.validate(true);
     setTimeout(() => {
       expect(wrapper.vm.$refs.error.textContent).to.equal('Warning Message');
+      done();
     }, 0);
   });
 
-  it('validates successfully', () => {
+  it('validates successfully', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
         value: 'hi',
@@ -238,46 +242,50 @@ describe('Input.vue', () => {
     wrapper.vm.validate(true);
     setTimeout(() => {
       expect(wrapper.vm.isValid).to.equal(true);
+      done();
     }, 0);
   });
 
-  it('validates pattern successfully', () => {
+  it('validates pattern successfully', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
-        value: 'hi-2\'@#+%&',
-        pattern: '[a-zA-Z0-9-s\'/@#+&%]+',
+        value: 'hi2',
+        pattern: '[a-zA-Z0-9]+',
       },
     });
     wrapper.vm.validate(true);
     setTimeout(() => {
       expect(wrapper.vm.isValid).to.equal(true);
+      done();
     }, 0);
   });
 
-  it('errors on pattern correctly', () => {
+  it('errors on pattern correctly', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
-        value: 'hi-2;',
-        pattern: '[a-zA-Z0-9-s\'/@#+&%]+',
+        value: '!',
+        pattern: '[a-zA-Z0-9]+',
       },
     });
     wrapper.vm.validate(true);
     setTimeout(() => {
       expect(wrapper.vm.isErr).to.equal(true);
+      done();
     }, 0);
   });
 
-  it('displays pattern errors correctly', () => {
+  it('displays pattern errors correctly', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
-        value: 'hi-2;',
-        pattern: '[a-zA-Z0-9-s\'/@#+&%]+',
+        value: '!',
+        pattern: '[a-zA-Z0-9]+',
         patternError: 'pattern error',
       },
     });
     wrapper.vm.validate(true);
     setTimeout(() => {
       expect(wrapper.vm.$refs.error.textContent).to.equal('pattern error');
+      done();
     }, 0);
   });
 });
