@@ -1,19 +1,14 @@
 import { play } from 'vue-play';
-import Input from './Input';
+import Form from './Form';
+import FormExample from '!raw-loader!./Form';
 
-play(Input)
-  .name('cdr-input')
+import TextDoc from './Input.md';
+
+play(Form)
   .displayName('Forms')
-  .add('Disabled', {
-    template: '<cdr-input placeholder="Disabled" disabled>Disabled</cdr-input>',
-    readme: 'Form example input disabled.',
-  })
-  .add('Input single line', {
-    template: '<cdr-input type="text" placeholder="Input label">Input single line</cdr-input>',
-    readme: 'Form example of single line input.',
-  })
-  .add('Input multi-line', {
-    template: '<cdr-input type="text" placeholder="Multi-line label" :modifier="[\'large\']">Input multi-line</cdr-input>',
-    readme: 'Form example of multi-line input.',
+  .add('Text Field', {
+    ...Form,
+    example: FormExample,
+    readme: TextDoc,
   })
   ;

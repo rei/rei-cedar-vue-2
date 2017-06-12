@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-example">
     <h2>Forms</h2>
 
     <cdr-input v-model="debounce"
@@ -139,3 +139,10 @@
     },
   };
 </script>
+
+<style>
+  .form-example {
+    padding: 10px;
+  }
+</style>
+
