@@ -240,4 +240,44 @@ describe('Input.vue', () => {
       expect(wrapper.vm.isValid).to.equal(true);
     }, 0);
   });
+
+  it('validates pattern successfully', () => {
+    const wrapper = mount(inputComp, {
+      propsData: {
+        value: 'hi-2\'@#+%&',
+        pattern: '[a-zA-Z0-9-s\'/@#+&%]+',
+      },
+    });
+    wrapper.vm.validate(true);
+    setTimeout(() => {
+      expect(wrapper.vm.isValid).to.equal(true);
+    }, 0);
+  });
+
+  it('errors on pattern correctly', () => {
+    const wrapper = mount(inputComp, {
+      propsData: {
+        value: 'hi-2;',
+        pattern: '[a-zA-Z0-9-s\'/@#+&%]+',
+      },
+    });
+    wrapper.vm.validate(true);
+    setTimeout(() => {
+      expect(wrapper.vm.isErr).to.equal(true);
+    }, 0);
+  });
+
+  it('displays pattern errors correctly', () => {
+    const wrapper = mount(inputComp, {
+      propsData: {
+        value: 'hi-2;',
+        pattern: '[a-zA-Z0-9-s\'/@#+&%]+',
+        patternError: 'pattern error',
+      },
+    });
+    wrapper.vm.validate(true);
+    setTimeout(() => {
+      expect(wrapper.vm.$refs.error.textContent).to.equal('pattern error');
+    }, 0);
+  });
 });
