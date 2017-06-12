@@ -39,9 +39,6 @@
     width: 100%;
   }
 
-  &-enter-active + &-leave-active {
-  }
-
   &-enter,
   &-leave-to {
     opacity: 0;
@@ -50,8 +47,9 @@
 }
 
 .cdr-input-messages {
-  position: relative;
   @apply --sys-font-spruce-cpt-10;
+
+  position: relative;
 
   &__notification {
     padding: var(--input-messages-p);
@@ -111,6 +109,7 @@
 }
 
 .cdr-label {
+  /* TODO: update with new typography value */
   font-weight: bold;
 
   &--disabled {
