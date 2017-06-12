@@ -27,15 +27,15 @@ Clone the project.
 
 ### Run
 
-`npm run dev`
+`yarn dev`
 
 Runs locally for development. Has hot reloading, linting, browsersync, and other nice things related to development.
 
-`npm run build`
+`yarn build`
 
 Creates an exported bundle (index.html, compiled .js, and compiled .css) that reflects the state of dev to the `dist/` directory for something like gh-pages.
 
-`npm run release`
+`yarn release`
 
 Export the component library to a umd js bundle and compiled css in the `release/` directory for use in other projects. This creates the delivery bundle.
 
@@ -45,7 +45,7 @@ The [webpack](https://webpack.github.io/) build system is taken largely from the
 
 ## Vue-play
 
-We're using [vue-play](https://github.com/vue-play/vue-play) to demo components. Configs live with the component files as `*.play.js`.
+We're using [vue-play](https://github.com/vue-play/vue-play) to demo components. Configs live in the examples directory for each component as `*.play.js`.
 
 `yarn play`
 
@@ -59,11 +59,11 @@ Outputs a standalone app to `dist-play` that can be hosted somewhere (like gh-pa
 
 ### Code Tests
 
-`npm run test`
+`yarn test`
 
-Runs [karma](https://karma-runner.github.io/1.0/index.html) unit tests.
+Runs [karma](https://karma-runner.github.io/1.0/index.html) unit tests. We're using [avoriaz](https://github.com/eddyerburgh/avoriaz) to help with Vue component testing (Vue is adopting this as the official testing utility library).
 
-`npm run e2e`
+`yarn e2e`
 
 Runs [Nightwatch](http://nightwatchjs.org/) end-to-end tests.
 
@@ -73,38 +73,26 @@ Check [backstop](https://github.com/garris/BackstopJS) for general configuration
 
 Our visual regressions audits can be performed against all patterns documented within the patterns site. To do so, follow the steps below:
 
-1. Run the project locally with `npm run dev`
-2. `npm run reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
-3. `npm run compare` after making changes to the markup or css. This will create another set of test images and compare them against those generated in the previous step.
+1. Run the project locally with `yarn dev`
+2. `yarn reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
+3. `yarn compare` after making changes to the markup or css. This will create another set of test images and compare them against those generated in the previous step.
 4. Review the generated report that should open in your browser. Make sure all changes are what you expect.
-5. `npm run approve` if everything looks good. This will promote the latest test images to be the new reference images that future tests will be compared against.
+5. `yarn approve` if everything looks good. This will promote the latest test images to be the new reference images that future tests will be compared against.
 
 #### Notes about our backstop configuration
 
-We’re aliasing the backstop commands to use `npm run <command>` just to abstract away supplying the config option since we are using a javascript version of the backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
+We’re aliasing the backstop commands to use `yarn <command>` just to abstract away supplying the config option since we are using a javascript version of the backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
 
-The config (__backstop.js__) looks through `src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector_ in the array as well as each _onReadyScript_ if any are supplied to the _onReadyScripts_ array. Those scripts allow us to do things like hover or set the element to a disabled state for testing those. Each selector/onReadyScript will generate it’s own scenario because you can only do things like hover for one element at a time via casper.
+The config (__backstop.js__) looks through `src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector_ in the array.
+
+If you want to test states (i.e. hover) you can create another backstop file that has an `onReadyScript`. These scripts use [casperjs] (http://docs.casperjs.org/en/latest/).
 
 Casper scripts live in `backstop_data > casper_scripts`
 
 __*.backstop.js__ files will export an array of objects that are standard backstop scenario objects and support all the same options noted in the docs with the following exceptions:
 
 1. `url` is assumed to be `localhost:8080` (running the project locally) and you don’t need to define that for each object.
-2. `onReadyScripts` is something we’ve added to auto generate a scenario for each script.
-
-if supplying an `onReadyScripts` array __AND__ you want a screenshot of the element in its normal state, one of the states will be false (examples below)
-
-```javascript
-"onReadyScripts": [false, "hover.js", "disabled.js"]
-```
-
-This will take normal, hover, and disabled screenshots.
-
-```javascript
-"onReadyScripts": ["hover.js", "disabled.js"]
-```
-
-This will take ONLY hover and disabled screenshots.
+2. `readyEvent` is set to null for each scenario.
 
 ## Javascript
 
@@ -118,13 +106,15 @@ __TODO:__ Notes about js, eslint
 
 __TODO:__ Notes about DDS, design tokens, integrations
 
-- `npm run get-tokens` fetch css variables from Brand.ai
+- `yarn get-tokens` fetch css variables from Brand.ai.
+- `yarn get-icons` fetch icons and build an svg sprite of them.
 
 ## CSS
 
 __TODO:__ Notes about css, postcss, stylelint, css-modules?
 
-- Main.postcss (.postcss so webpack uses the correct loader - others can be .css or whatever, just need to be imported here to be processed)
+- Using postcss. Config for it lives in `postcss.config.js`
+- main.postcss (.postcss so webpack uses the correct loader - others are .pcss and just need to be imported here to be processed)
 - Imported into entry files (dev.js and main.js so webpack processes the css since we aren’t using a css loader for our files)
 - [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) inspired file structure.
 - CSS needs to be written with cdr- namespace prefix (tried automating it but had too many gotchas and wasn't intuitive)
@@ -150,64 +140,77 @@ __TODO:__ Notes about Vue, components, css-modules?
 %`<file or directory>` = generated by a process (so don't worry too much about them/what's in them)
 
 ```
-backstop_data               #Files related to visual regression testing. Mostly generated by backstop.
-|-- %bitmaps_reference      #Generated by backstop reference - contains reference backstop images
-|-- %bitmaps_test           #Generated by backstop test - contains images that are tested against reference images
-|-- casper_scripts          #Contains scripts that will be used by backstop for doing things like clicks, hovers, etc.
-|-- %html_report            #Generated report for backstop test results
-build                       #Contains scripts and configs for the webpack build system (most of this is from the vue webpack template)
-|-- build.js                #Prod build script - the entry point for `npm run build`
-|-- check-versions.js       #Checks node/npm versions (this came with the vue webpack template so I’m not sure if it’s super useful)
-|-- dev-client.js           #For hot module reloading in dev
-|-- dev-server.js           #Config for express dev server
-|-- play.config.js          #Config for vue-play
-|-- release.js              #Release build script - the entry point for `npm run release`
-|-- utils.js                #From vue webpack template to mostly automate which loaders need to be used since vue supports scss, stylus, postcss, etc.
-|-- vue-loader.conf.js      #Config object for vue webpack loader (vue-loader)
-|-- webpack.base.conf.js    #Webpack config that the others all use as a foundation - mostly just defines the loaders and entry
-|-- webpack.dev.conf.js     #Webpack config options specific to dev
-|-- webpack.prod.conf.js    #Webpack config options specific to build/prod
-|-- webpack.release.conf.js #Webpack config options specific to release
-|-- webpack.test.conf.js    #Webpack config options specific to unit/e2e test
-config                      #Configuration files used in the webpack build steps (most of this is from the vue webpack template)
-|-- dev.env.js              #Setting NODE_ENV for dev
-|-- index.js                #Used in build steps for configuration options specific to each build type
-|-- prod.env.js             #Setting NODE_ENV for prod
-|-- release.env.js          #Setting NODE_ENV for release
-|-- test.env.js             #Setting NODE_ENV for test
-%dist/                      #Results from `npm run build` end up here
-%dist-play/                 #Results from `yarn build:play` end up here
-play/                       #Stores files for use with vue-play
-|-- %app.js                 #Used for initializing vue-play (probably don't need to change anything here)
-|-- index.js                #Setting up vue-play scenarios (currently just loads all *.play.js files from src/components)
-|-- %preview.js             #Used for creating the preview for vue-play (probably don't need to change anything here)
-%release/                   #Results from `npm run release` end up here
-src/                        #Source files
-|-- assets/                 #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
-|-- components/             #All things components
-|-- css/                    #All things css
-|-- examples/               #Extra components just for testing 
-|-- app.vue                 #The playground for testing components
-|-- dev.js                  #Webpack entry point for everything !release
-|-- main.js                 #Webpack entry point for release that builds delivery assets
-|-- **/*.backstop.js        #Config files for backstop visual regression testing
-|-- */_index.js             #For maintaining imports of components for use between release and dev/build
-static/                     #For static assets -- check the vue webpack template docs
-test/                       #All things testing for both unit and e2e
-|-- e2e/                    #Everything for nightwatch testing
-|-- unit/                   #Everything for karma testing
-utils/                      #Utility node scripts
-|-- brandai.js              #Fetches values from brand.ai for use in css
-.babelrc                    #Babel es6 transpiling config
-.eslintignore               #Self explanatory
-.eslintrc.js                #Config for eslint
-.gitignore                  #Self explanatory
-.pullapprove.yml            #Config for github PR approval
-.stylelintrc                #Config for stylelint
-.travis.yml                 #Holding onto it from v1, will need to be updated
-backstop.js                 #Main config for backstop. Global settings like viewport sizes and paths are set here. 
-index.html                  #app.vue is bootstrapped here and is used for both dev and build -- all css and js files will be injected as needed for each environment
-package.json                #Everything for npm
-postcss.config.js           #Config for postcss -- add new postcss plugins here
-yarn.lock                   #We’re using yarn -- go read the docs
+backstop_data                   #Files related to visual regression testing. Mostly generated by backstop.
+|-- %bitmaps_reference          #Generated by backstop reference - contains reference backstop images
+|-- %bitmaps_test               #Generated by backstop test - contains images that are tested against reference images
+|-- casper_scripts              #Contains scripts that will be used by backstop for doing things like clicks, hovers, etc.
+|-- %html_report                #Generated report for backstop test results
+build                           #Contains scripts and configs for the webpack build system (most of this is from the vue webpack template)
+|-- build.js                    #Prod build script - the entry point for `yarn build`
+|-- check-versions.js           #Checks node/npm versions (this came with the vue webpack template so I’m not sure if it’s super useful)
+|-- dev-client.js               #For hot module reloading in dev
+|-- dev-server.js               #Config for express dev server
+|-- play.config.js              #Webpack config for vue-play
+|-- release.js                  #Release build script - the entry point for `yarn release`
+|-- utils.js                    #From vue webpack template to mostly automate which loaders need to be used since vue supports scss, stylus, postcss, etc.
+|-- vue-loader.conf.js          #Config object for vue webpack loader (vue-loader)
+|-- webpack.base.conf.js        #Webpack config that the others all use as a foundation - mostly just defines the loaders and entry
+|-- webpack.dev.conf.js         #Webpack config options specific to dev
+|-- webpack.prod.conf.js        #Webpack config options specific to build/prod
+|-- webpack.release.conf.js     #Webpack config options specific to release
+|-- webpack.test.conf.js        #Webpack config options specific to unit/e2e test
+config                          #Configuration files used in the webpack build steps (most of this is from the vue webpack template)
+|-- dev.env.js                  #Setting NODE_ENV for dev
+|-- index.js                    #Used in build steps for configuration options specific to each build type
+|-- prod.env.js                 #Setting NODE_ENV for prod
+|-- release.env.js              #Setting NODE_ENV for release
+|-- test.env.js                 #Setting NODE_ENV for test
+%dist/                          #Results from `yarn build` end up here
+%dist-play/                     #Results from `yarn build:play` end up here
+play/                           #Stores files for use with vue-play
+|-- %app.js                     #Used for initializing vue-play (probably don't need to change anything here)
+|-- index.js                    #Setting up vue-play scenarios (currently just loads all *.play.js files from src/components)
+|-- my-index.ejs                #Custom page template for vue-play
+|-- %preview.js                 #Used for creating the preview for vue-play (probably don't need to change anything here)
+%release/                       #Results from `yarn release` end up here
+src/                            #Source files
+|-- assets/                     #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
+|-- components/                 #All things components
+|-- css/                        #All things css
+    |-- components/             #CSS files for component styles
+    |-- directives/             #CSS files for directives
+    |-- generic/                #Reset and normalize styles. Also general styles that are related to large layout.
+    |-- settings/               #Values and variables that are consumed in other files.
+      |-- component-variables/  #Values and variables that are consumed in component css.
+    |-- themes/                 #Might be used for vertical and/or horizontal themes in the future.
+|-- directives/                 #All things directives
+|-- examples/                   #Everything for demos/docs/testing of components and directives
+  |-- **/*.backstop.js          #Config files for backstop visual regression testing
+  |-- **/*.play.js              #Config files for vue-play testing
+  |-- **/*.md                   #Component and directive docs that are imported into *.play.js for readme support
+|-- utils/                      #Helper js files for things like debounce
+|-- app.vue                     #The component/directive catalog for building and regression testing
+|-- dev.js                      #Webpack entry point for everything !release
+|-- main.js                     #Webpack entry point for release that builds delivery assets
+|-- */_index.js                 #For maintaining imports of components for use between release and dev/build
+static/                         #For static assets. These get included in dist/ and release/ exactly as is -- check the vue webpack template docs
+test/                           #All things testing for both unit and e2e
+|-- e2e/                        #Everything for nightwatch testing
+|-- unit/                       #Everything for karma testing
+utils/                          #Utility node scripts
+|-- brandai.js                  #Fetches values from brand.ai for use in css
+|-- icons.js                    #Fetches icons from brand.ai and outputs a sprite of all of them
+.babelrc                        #Babel es6 transpiling config
+.eslintignore                   #Self explanatory
+.eslintrc.js                    #Config for eslint
+.gitignore                      #Self explanatory
+.pullapprove.yml                #Config for github PR approval
+.stylelintignore                #Directories that won't be linted by stylelint
+.stylelintrc                    #Config for stylelint
+.travis.yml                     #Holding onto it from v1, will need to be updated
+backstop.js                     #Main config for backstop. Global settings like viewport sizes and paths are set here. 
+index.html                      #app.vue is bootstrapped here and is used for both dev and build -- all css and js files will be injected automatically
+package.json                    #Everything for npm
+postcss.config.js               #Config for postcss -- add new postcss plugins here
+yarn.lock                       #We’re using yarn -- go read the docs
 ```
