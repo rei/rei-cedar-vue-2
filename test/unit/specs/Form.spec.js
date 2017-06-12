@@ -257,6 +257,21 @@ describe('Input.vue', () => {
     }, 0);
   });
 
+  it('sets a11y for error messages correctly', (done) => {
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        value: 4,
+        rules: [validateFn],
+      },
+    });
+    wrapper.vm.validate(true);
+    setTimeout(() => {
+      expect(wrapper.vm.$refs.messages.$el.getAttribute('id')).to.equal(wrapper.vm.$refs.input.getAttribute('aria-describedby'));
+      done();
+    }, 0);
+  });
+
   it('validates warnings', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {

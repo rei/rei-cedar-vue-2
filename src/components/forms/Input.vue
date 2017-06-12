@@ -293,6 +293,7 @@ export default {
           domProps: {
             id: `err${this._uid}`, // eslint-disable-line no-underscore-dangle
           },
+          ref: 'messages',
         },
         messages,
       );
