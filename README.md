@@ -85,7 +85,7 @@ We’re aliasing the backstop commands to use `yarn <command>` just to abstract 
 
 The config (__backstop.js__) looks through `src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector_ in the array.
 
-If you want to test states (i.e. hover) you can create another backstop file that has an `onReadyScript`. These scripts use [casperjs] (http://docs.casperjs.org/en/latest/).
+If you want to test states (i.e. hover) you can create another backstop file that has an `onReadyScript`. These scripts use [casperjs](http://docs.casperjs.org/en/latest/).
 
 Casper scripts live in `backstop_data > casper_scripts`
 
