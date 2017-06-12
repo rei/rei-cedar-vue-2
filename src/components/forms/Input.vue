@@ -23,7 +23,11 @@ export default {
   },
   props: {
     id: String,
-    label: String,
+    label: {
+      type: String,
+      required: true,
+    },
+    hideLabel: Boolean,
     name: String,
     disabled: Boolean,
     required: Boolean,
@@ -218,6 +222,7 @@ export default {
 
       // conditional domProps and attrs
       if (this.placeholder) data.domProps.placeholder = this.placeholder;
+      if (this.hideLabel) data.attrs['aria-label'] = this.label;
       if (this.name) data.attrs.name = this.name;
       if (this.maxlength) data.attrs.maxlength = this.maxlength;
 
@@ -320,7 +325,7 @@ export default {
       }, data);
 
       // Add label
-      if (this.label) {
+      if (!this.hideLabel) {
         children.push(this.genLabel());
       }
 

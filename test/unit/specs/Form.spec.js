@@ -20,36 +20,40 @@ function validateFn(inputText) {
 
 describe('Input.vue', () => {
   it('renders label correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      label: 'Label Test',
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'Label Test',
+      },
     });
     expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test');
   });
 
   it('renders required label correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      label: 'Label Test',
-      required: true,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'Label Test',
+        required: true,
+      },
     });
     expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test*');
   });
 
   it('maps input id to label for correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      label: 'testing',
-      id: 'test',
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'testing',
+        id: 'test',
+      },
     });
     expect(wrapper.vm.$refs.input.id).to.equal(wrapper.vm.$refs.label.htmlFor);
   });
 
   it('sets input name attribute correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      label: 'Label Test',
-      name: 'testing',
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'Label Test',
+        name: 'testing',
+      },
     });
     expect(wrapper.vm.$refs.input.name).to.equal('testing');
   });
@@ -57,6 +61,7 @@ describe('Input.vue', () => {
   it('renders input value correctly', () => {
     const wrapper = mount(inputComp, {
       propsData: {
+        label: 'test',
         value: 'testing',
       },
     });
@@ -64,114 +69,160 @@ describe('Input.vue', () => {
   });
 
   it('sets input disabled attribute correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      disabled: true,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        disabled: true,
+      },
     });
     expect(wrapper.vm.$refs.input.getAttribute('disabled')).to.equal('');
   });
 
   it('sets input readonly attribute correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      readonly: true,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        readonly: true,
+      },
     });
     expect(wrapper.vm.$refs.input.getAttribute('readonly')).to.equal('readonly');
   });
 
   it('sets input required attribute correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      required: true,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        required: true,
+      },
     });
     expect(wrapper.vm.$refs.input.getAttribute('required')).to.equal('');
   });
 
   it('sets input autofocus attribute correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      autofocus: true,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        autofocus: true,
+      },
     });
     expect(wrapper.vm.$refs.input.getAttribute('autofocus')).to.equal('');
   });
 
   it('sets input maxlength attribute correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      maxlength: 20,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        maxlength: 20,
+      },
     });
     expect(wrapper.vm.$refs.input.getAttribute('maxlength')).to.equal('20');
   });
 
   it('sets input placeholder correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      placeholder: 'test placeholder',
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        placeholder: 'test placeholder',
+      },
     });
     expect(wrapper.vm.$refs.input.getAttribute('placeholder')).to.equal('test placeholder');
   });
 
   it('sets multiline to textarea correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      multiLine: true,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        multiLine: true,
+      },
     });
     expect(wrapper.vm.$refs.input.tagName).to.equal('TEXTAREA');
   });
 
   it('sets multiline rows correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      multiLine: true,
-      rows: 10,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        multiLine: true,
+        rows: 10,
+      },
     });
     expect(wrapper.vm.$refs.input.getAttribute('rows')).to.equal('10');
   });
 
   it('sets default input type correctly', () => {
-    const wrapper = mount(inputComp);
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+    });
     expect(wrapper.vm.$refs.input.getAttribute('type')).to.equal('text');
   });
 
   it('overrides input type correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      type: 'url',
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        type: 'url',
+      },
     });
     expect(wrapper.vm.$refs.input.getAttribute('type')).to.equal('url');
   });
 
   it('sets input tabindex correctly', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      tabindex: 2,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        tabindex: 2,
+      },
     });
     expect(wrapper.vm.$refs.input.getAttribute('tabindex')).to.equal('2');
   });
 
+  it('hide-label sets aria-label correctly', () => {
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        hideLabel: true,
+      },
+    });
+    expect(wrapper.vm.$refs.input.getAttribute('aria-label')).to.equal('test');
+  });
+
   it('debounce 0 when not defined', () => {
-    const wrapper = mount(inputComp);
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+    });
     expect(wrapper.vm.debounceVal).to.equal(0);
   });
 
   it('sets default debounce', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      debounce: true,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        debounce: true,
+      },
     });
     expect(wrapper.vm.debounceVal).to.equal(500);
   });
 
   it('sets override debounce', () => {
-    const wrapper = mount(inputComp);
-    wrapper.setProps({
-      debounce: 1000,
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+        debounce: 1000,
+      },
     });
     expect(wrapper.vm.debounceVal).to.equal(1000);
   });
 
   it('auto generates an id', () => {
-    const wrapper = mount(inputComp);
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+    });
     expect(wrapper.vm.inputId)
       .to.equal(wrapper.vm._uid); // eslint-disable-line no-underscore-dangle
   });
@@ -179,6 +230,7 @@ describe('Input.vue', () => {
   it('validates errors', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
+        label: 'test',
         value: 4,
         rules: [validateFn],
       },
@@ -193,6 +245,7 @@ describe('Input.vue', () => {
   it('renders error messages correctly', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
+        label: 'test',
         value: 4,
         rules: [validateFn],
       },
@@ -207,6 +260,7 @@ describe('Input.vue', () => {
   it('validates warnings', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
+        label: 'test',
         value: '',
         rules: [validateFn],
       },
@@ -221,6 +275,7 @@ describe('Input.vue', () => {
   it('renders warning messages correctly', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
+        label: 'test',
         value: '',
         rules: [validateFn],
       },
@@ -235,6 +290,7 @@ describe('Input.vue', () => {
   it('validates successfully', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
+        label: 'test',
         value: 'hi',
         rules: [validateFn],
       },
@@ -249,6 +305,7 @@ describe('Input.vue', () => {
   it('validates pattern successfully', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
+        label: 'test',
         value: 'hi2',
         pattern: '[a-zA-Z0-9]+',
       },
@@ -263,6 +320,7 @@ describe('Input.vue', () => {
   it('errors on pattern correctly', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
+        label: 'test',
         value: '!',
         pattern: '[a-zA-Z0-9]+',
       },
@@ -277,6 +335,7 @@ describe('Input.vue', () => {
   it('displays pattern errors correctly', (done) => {
     const wrapper = mount(inputComp, {
       propsData: {
+        label: 'test',
         value: '!',
         pattern: '[a-zA-Z0-9]+',
         patternError: 'pattern error',

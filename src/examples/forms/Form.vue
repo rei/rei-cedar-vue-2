@@ -28,6 +28,12 @@
       label="Nothing"
       ></cdr-input>
 
+    <cdr-input v-model="nothing"
+      label="This has no label"
+      hide-label
+      placeholder="hide-label"
+      ></cdr-input>
+
     <cdr-input v-model="pattern"
       label="Pattern validation"
       required

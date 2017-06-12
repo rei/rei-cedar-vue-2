@@ -13,6 +13,7 @@
 | --- | --- | --- | --- | --- | --- |
 | `id` | String |  |  |  | Assigns an id to the input and also the for attribute of the label for a11y. One will be generated if none is supplied. |
 | `label` | String |  | * |  | Label text. Required for a11y |
+| `hide-label` | Boolean | false |  |  | Doesn't create a label element and sets aria-label on the input instead. Label is still required. |
 | `name` | String |  |  |  | Sets a name attribute on the input |
 | `disabled` | Boolean | false |  |  | Sets the disabled attribute on the input |
 | `required` | Boolean | false |  |  | Sets the required attribute on the input. Also adds a validation rule to validated that the input is not empty. |
