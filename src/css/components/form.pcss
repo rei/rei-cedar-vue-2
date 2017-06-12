@@ -56,8 +56,11 @@
     border-style: solid;
     border-width: var(--input-border-width);
     border-top: none;
-    border-bottom-right-radius: var(--input-br);
-    border-bottom-left-radius: var(--input-br);
+
+    &:last-of-type {
+      border-bottom-right-radius: var(--input-br);
+      border-bottom-left-radius: var(--input-br);
+    }
 
     &--error {
       border-color: var(--input-messages-error-border-color);

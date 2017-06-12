@@ -31,7 +31,7 @@
     <cdr-input v-model="nothing"
       label="This has no label"
       hide-label
-      placeholder="hide-label"
+      placeholder="hidden-label"
       ></cdr-input>
 
     <cdr-input v-model="pattern"
