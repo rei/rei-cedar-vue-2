@@ -3,6 +3,7 @@
     <cdr-button data-backstop="cdr-button--secondary-alternate" :modifier="['secondary-alternate']">White alternate large</cdr-button>
     <cdr-button :modifier="['secondary-alternate', 'small']">White alternate small</cdr-button>
     <cdr-button :modifier="['secondary-alternate', 'extra-small']">White alternate extra small</cdr-button>
+    <cdr-button :modifier="['secondary-alternate']" disabled>Disabled</cdr-button>
   </cdr-button-group>
 </template>
 

@@ -4,8 +4,7 @@ module.exports = [
     selectors: [
       "[data-backstop='forms']",
     ],
-    readyEvent: null,
-    delay: 100,
+    delay: 0,
     misMatchThreshold: 0.1,
   },
 ];

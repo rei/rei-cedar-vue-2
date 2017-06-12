@@ -9,6 +9,7 @@
       feedback
       :rules="[validateFn]"
       debounce
+      data-backstop="text-input"
       ></cdr-input>
 
     <cdr-input v-model="requiredValidated"
@@ -64,6 +65,7 @@
     <cdr-input v-model="multi"
       label="Multiline"
       multi-line
+      data-backstop="form-textarea"
       ></cdr-input>
 
     <cdr-input v-model="valid"

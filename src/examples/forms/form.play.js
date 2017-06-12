@@ -6,7 +6,7 @@ import TextDoc from './Input.md';
 
 play(Form)
   .displayName('Forms')
-  .add('Text Field', {
+  .add('Input', {
     ...Form,
     example: FormExample,
     readme: TextDoc,
