@@ -290,6 +290,9 @@ export default {
             tag: 'div',
             name: 'cdr-animated-errors',
           },
+          domProps: {
+            id: `err${this._uid}`, // eslint-disable-line no-underscore-dangle
+          },
         },
         messages,
       );
@@ -301,9 +304,6 @@ export default {
             'cdr-input-messages__notification': true,
             'cdr-input-messages__notification--error': this.isErr,
             'cdr-input-messages__notification--warn': this.isWarn,
-          },
-          domProps: {
-            id: `err${this._uid}`, // eslint-disable-line no-underscore-dangle
           },
           key: `errKey${this._uid}`, // eslint-disable-line no-underscore-dangle
           ref: 'error',
@@ -330,8 +330,8 @@ export default {
       }
 
       // Add input/textarea
-      if (this.hint || this.errors.length) {
-        input[0].data.attrs['aria-describedby'] = `hint${this._uid} err${this._uid}`;//eslint-disable-line
+      if (this.errors.length) {
+        input[0].data.attrs['aria-describedby'] = `err${this._uid}`;//eslint-disable-line
       }
 
       wrapperChildren.push(input);
@@ -349,7 +349,7 @@ export default {
         }, wrapperChildren),
       );
 
-      // Add error and hint messages
+      // Add error messages
       children.push(this.genMessages());
 
       return this.$createElement('div', data, children);
