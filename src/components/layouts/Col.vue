@@ -94,7 +94,7 @@
 </template>
 
 <script>
-  import Row from './Row';
+  import Row from './Row.vue'; // eslint-disable-line
 
   const blockName = 'cdr-col';
   const bpArr = ['Md', 'Lg', 'Xl', 'Xxl'];

@@ -5,8 +5,11 @@
 </template>
 
 <script>
+  /**
+   * Cedar Links
+   */
   export default {
-    name: 'cdr-a',
+    name: 'cdrA',
     props: {
       target: String,
       rel: String,
