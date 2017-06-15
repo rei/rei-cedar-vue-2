@@ -1,3 +1,7 @@
 Button Example:
 
-    <cdr-button data-backstop="cdr-button" type="submit" :handle-click="log">Default with click</cdr-button>
+    function log(){
+        console.log('example')
+    }
+
+    <Button data-backstop="cdr-button" type="submit" :handle-click="log">Default with click</Button>
