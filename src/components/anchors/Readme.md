@@ -16,6 +16,9 @@ You can use multiple components, in an example
     const name_secret = 'default button';
     const href_custom = 'https://www.google.com';
     let another_text = 'Hello Vue!'
+    function log(){
+        console.log('example11')
+    }
 
     <section>
         <Button data-backstop="cdr-button" type="submit" :handle-click="log">{{ name_secret }}</Button>
@@ -32,7 +35,10 @@ Be creative :D
 
     new Vue({
         data: {
-            textRandom: ''
+            textRandom: '',
+            log: () => {
+                console.log('-')
+            }
         },
         watch: {
             textRandom(value) {
