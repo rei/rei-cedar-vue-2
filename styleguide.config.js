@@ -1,14 +1,31 @@
 const baseConfig = require('./build/webpack.base.conf.js');
-// const config = require('./config');
-// const merge = require('webpack-merge');
-// const utils = require('./build/utils');
+const merge = require('webpack-merge');
+const path = require('path');
 
 module.exports = {
   components: './src/components/**/*.vue',
-  // webpackConfig: merge(baseConfig, {
-  //   module: {
-  //     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap }),
-  //   },
-  // }),
-  webpackConfig: baseConfig,
+  require: [
+    './src/css/main.postcss',
+  ],
+  assetsDir: './static',
+  webpackConfig: merge(baseConfig, {
+    module: {
+      rules: [
+        {
+          test: /\.postcss$/,
+          use: [
+            'style-loader',
+            'css-loader?importLoaders=1',
+            'postcss-loader',
+          ],
+        },
+      ],
+    },
+  }),
+  propsParser(filePath, source) { // eslint-disable-line
+    const props = require('vue-docgen-api').parse(filePath); // eslint-disable-line
+    // Set component displayName as component folder name
+    props.displayName = path.basename(filePath, path.extname(filePath));
+    return props;
+  },
 };
