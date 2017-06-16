@@ -55,12 +55,10 @@
 </template>
 
 <script>
-  import cdrIcon from '../../components/icons/Icon';
-  import cdrRow from '../../components/layouts/Row';
-  import cdrCol from '../../components/layouts/Col';
+  import Components from '../../components/_index';
 
   export default {
     name: 'icons',
-    components: { cdrIcon, cdrCol, cdrRow },
+    components: Components,
   };
 </script>
