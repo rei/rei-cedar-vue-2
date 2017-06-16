@@ -1,4 +1,4 @@
-import cdrIcon from './Icon';
+import cdrIcon from './cdrIcon';
 
 export default {
   cdrIcon,
