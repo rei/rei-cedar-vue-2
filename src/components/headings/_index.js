@@ -1,4 +1,4 @@
-import cdrHeading from './Heading';
+import cdrHeading from './cdrHeading';
 
 export default {
   cdrHeading,
