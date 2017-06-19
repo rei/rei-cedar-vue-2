@@ -1,4 +1,4 @@
-import cdrImg from './Image';
+import cdrImg from './cdrImg';
 
 export default {
   cdrImg,
