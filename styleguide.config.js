@@ -1,6 +1,5 @@
 const baseConfig = require('./build/webpack.base.conf.js');
 const merge = require('webpack-merge');
-const path = require('path');
 
 module.exports = {
   components: './src/components/**/*.vue',
@@ -8,6 +7,11 @@ module.exports = {
     './src/css/main.postcss',
   ],
   assetsDir: './static',
+  mixins: [
+    './src/mixins/modifier.js',
+    './src/mixins/theme.js',
+  ],
+  highlightTheme: 'monokai',
   webpackConfig: merge(baseConfig, {
     module: {
       rules: [
@@ -22,10 +26,4 @@ module.exports = {
       ],
     },
   }),
-  propsParser(filePath, source) { // eslint-disable-line
-    const props = require('vue-docgen-api').parse(filePath); // eslint-disable-line
-    // Set component displayName as component folder name
-    props.displayName = path.basename(filePath, path.extname(filePath));
-    return props;
-  },
 };
