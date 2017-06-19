@@ -1,93 +1,157 @@
 <template>
   <div>
     <h2>Headings</h2>
-    <div data-backstop="heading-headline">
-      <cdr-heading :level="1" :modifier="['headline']">headline</cdr-heading>
-      <cdr-heading :level="2" :modifier="['headline']">headline</cdr-heading>
-      <cdr-heading :level="3" :modifier="['headline']">headline</cdr-heading>
-      <cdr-heading :level="4" :modifier="['headline']">headline</cdr-heading>
-      <cdr-heading :level="5" :modifier="['headline']">headline</cdr-heading>
-      <cdr-heading :level="6" :modifier="['headline']">headline</cdr-heading>
+    <div data-backstop="heading-spruce-dsp-90">
+      <cdr-heading :level="1" :modifier="['spruce-dsp-90']">spruce-dsp-90</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-dsp-90']">spruce-dsp-90</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-dsp-90']">spruce-dsp-90</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-dsp-90']">spruce-dsp-90</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-dsp-90']">spruce-dsp-90</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-dsp-90']">spruce-dsp-90</cdr-heading>
     </div>
-    <div data-backstop="heading-title">
-      <cdr-heading :level="1" :modifier="['title']">title</cdr-heading>
-      <cdr-heading :level="2" :modifier="['title']">title</cdr-heading>
-      <cdr-heading :level="3" :modifier="['title']">title</cdr-heading>
-      <cdr-heading :level="4" :modifier="['title']">title</cdr-heading>
-      <cdr-heading :level="5" :modifier="['title']">title</cdr-heading>
-      <cdr-heading :level="6" :modifier="['title']">title</cdr-heading>
+    <div data-backstop="heading-spruce-dsp-80">
+      <cdr-heading :level="1" :modifier="['spruce-dsp-80']">spruce-dsp-80</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-dsp-80']">spruce-dsp-80</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-dsp-80']">spruce-dsp-80</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-dsp-80']">spruce-dsp-80</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-dsp-80']">spruce-dsp-80</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-dsp-80']">spruce-dsp-80</cdr-heading>
     </div>
-    <div data-backstop="heading-subtitle">
-      <cdr-heading :level="1" :modifier="['subtitle']">subtitle</cdr-heading>
-      <cdr-heading :level="2" :modifier="['subtitle']">subtitle</cdr-heading>
-      <cdr-heading :level="3" :modifier="['subtitle']">subtitle</cdr-heading>
-      <cdr-heading :level="4" :modifier="['subtitle']">subtitle</cdr-heading>
-      <cdr-heading :level="5" :modifier="['subtitle']">subtitle</cdr-heading>
-      <cdr-heading :level="6" :modifier="['subtitle']">subtitle</cdr-heading>
+    <div data-backstop="heading-spruce-dsp-70">
+      <cdr-heading :level="1" :modifier="['spruce-dsp-70']">spruce-dsp-70</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-dsp-70']">spruce-dsp-70</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-dsp-70']">spruce-dsp-70</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-dsp-70']">spruce-dsp-70</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-dsp-70']">spruce-dsp-70</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-dsp-70']">spruce-dsp-70</cdr-heading>
     </div>
-    <div data-backstop="heading-section-title">
-      <cdr-heading :level="1" :modifier="['section-title']">section-title</cdr-heading>
-      <cdr-heading :level="2" :modifier="['section-title']">section-title</cdr-heading>
-      <cdr-heading :level="3" :modifier="['section-title']">section-title</cdr-heading>
-      <cdr-heading :level="4" :modifier="['section-title']">section-title</cdr-heading>
-      <cdr-heading :level="5" :modifier="['section-title']">section-title</cdr-heading>
-      <cdr-heading :level="6" :modifier="['section-title']">section-title</cdr-heading>
+    <div data-backstop="heading-spruce-dsp-60">
+      <cdr-heading :level="1" :modifier="['spruce-dsp-60']">spruce-dsp-60</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-dsp-60']">spruce-dsp-60</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-dsp-60']">spruce-dsp-60</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-dsp-60']">spruce-dsp-60</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-dsp-60']">spruce-dsp-60</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-dsp-60']">spruce-dsp-60</cdr-heading>
     </div>
-    <div data-backstop="heading-body-copy">
-      <cdr-heading :level="1" :modifier="['body-copy']">body-copy</cdr-heading>
-      <cdr-heading :level="2" :modifier="['body-copy']">body-copy</cdr-heading>
-      <cdr-heading :level="3" :modifier="['body-copy']">body-copy</cdr-heading>
-      <cdr-heading :level="4" :modifier="['body-copy']">body-copy</cdr-heading>
-      <cdr-heading :level="5" :modifier="['body-copy']">body-copy</cdr-heading>
-      <cdr-heading :level="6" :modifier="['body-copy']">body-copy</cdr-heading>
+    <div data-backstop="heading-spruce-dsp-50">
+      <cdr-heading :level="1" :modifier="['spruce-dsp-50']">spruce-dsp-50</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-dsp-50']">spruce-dsp-50</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-dsp-50']">spruce-dsp-50</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-dsp-50']">spruce-dsp-50</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-dsp-50']">spruce-dsp-50</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-dsp-50']">spruce-dsp-50</cdr-heading>
     </div>
-    <div data-backstop="heading-pull-quote">
-      <cdr-heading :level="1" :modifier="['pull-quote']">pull-quote</cdr-heading>
-      <cdr-heading :level="2" :modifier="['pull-quote']">pull-quote</cdr-heading>
-      <cdr-heading :level="3" :modifier="['pull-quote']">pull-quote</cdr-heading>
-      <cdr-heading :level="4" :modifier="['pull-quote']">pull-quote</cdr-heading>
-      <cdr-heading :level="5" :modifier="['pull-quote']">pull-quote</cdr-heading>
-      <cdr-heading :level="6" :modifier="['pull-quote']">pull-quote</cdr-heading>
+    <div data-backstop="heading-spruce-dsp-40">
+      <cdr-heading :level="1" :modifier="['spruce-dsp-40']">spruce-dsp-40</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-dsp-40']">spruce-dsp-40</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-dsp-40']">spruce-dsp-40</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-dsp-40']">spruce-dsp-40</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-dsp-40']">spruce-dsp-40</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-dsp-40']">spruce-dsp-40</cdr-heading>
     </div>
-    <div data-backstop="heading-sub-section">
-      <cdr-heading :level="1" :modifier="['sub-section']">sub-section</cdr-heading>
-      <cdr-heading :level="2" :modifier="['sub-section']">sub-section</cdr-heading>
-      <cdr-heading :level="3" :modifier="['sub-section']">sub-section</cdr-heading>
-      <cdr-heading :level="4" :modifier="['sub-section']">sub-section</cdr-heading>
-      <cdr-heading :level="5" :modifier="['sub-section']">sub-section</cdr-heading>
-      <cdr-heading :level="6" :modifier="['sub-section']">sub-section</cdr-heading>
+    <div data-backstop="heading-spruce-dsp-30">
+      <cdr-heading :level="1" :modifier="['spruce-dsp-30']">spruce-dsp-30</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-dsp-30']">spruce-dsp-30</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-dsp-30']">spruce-dsp-30</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-dsp-30']">spruce-dsp-30</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-dsp-30']">spruce-dsp-30</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-dsp-30']">spruce-dsp-30</cdr-heading>
     </div>
-    <div data-backstop="heading-information">
-      <cdr-heading :level="1" :modifier="['information']">information</cdr-heading>
-      <cdr-heading :level="2" :modifier="['information']">information</cdr-heading>
-      <cdr-heading :level="3" :modifier="['information']">information</cdr-heading>
-      <cdr-heading :level="4" :modifier="['information']">information</cdr-heading>
-      <cdr-heading :level="5" :modifier="['information']">information</cdr-heading>
-      <cdr-heading :level="6" :modifier="['information']">information</cdr-heading>
+    <div data-backstop="heading-spruce-dsp-20">
+      <cdr-heading :level="1" :modifier="['spruce-dsp-20']">spruce-dsp-20</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-dsp-20']">spruce-dsp-20</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-dsp-20']">spruce-dsp-20</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-dsp-20']">spruce-dsp-20</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-dsp-20']">spruce-dsp-20</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-dsp-20']">spruce-dsp-20</cdr-heading>
     </div>
-    <div data-backstop="heading-description">
-      <cdr-heading :level="1" :modifier="['description']">description</cdr-heading>
-      <cdr-heading :level="2" :modifier="['description']">description</cdr-heading>
-      <cdr-heading :level="3" :modifier="['description']">description</cdr-heading>
-      <cdr-heading :level="4" :modifier="['description']">description</cdr-heading>
-      <cdr-heading :level="5" :modifier="['description']">description</cdr-heading>
-      <cdr-heading :level="6" :modifier="['description']">description</cdr-heading>
+    <div data-backstop="heading-spruce-dsp-10">
+      <cdr-heading :level="1" :modifier="['spruce-dsp-10']">spruce-dsp-10</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-dsp-10']">spruce-dsp-10</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-dsp-10']">spruce-dsp-10</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-dsp-10']">spruce-dsp-10</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-dsp-10']">spruce-dsp-10</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-dsp-10']">spruce-dsp-10</cdr-heading>
     </div>
-    <div data-backstop="heading-detail">
-      <cdr-heading :level="1" :modifier="['detail']">detail</cdr-heading>
-      <cdr-heading :level="2" :modifier="['detail']">detail</cdr-heading>
-      <cdr-heading :level="3" :modifier="['detail']">detail</cdr-heading>
-      <cdr-heading :level="4" :modifier="['detail']">detail</cdr-heading>
-      <cdr-heading :level="5" :modifier="['detail']">detail</cdr-heading>
-      <cdr-heading :level="6" :modifier="['detail']">detail</cdr-heading>
+    <div data-backstop="heading-spruce-sbh-20">
+      <cdr-heading :level="1" :modifier="['spruce-sbh-20']">spruce-sbh-20</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-sbh-20']">spruce-sbh-20</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-sbh-20']">spruce-sbh-20</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-sbh-20']">spruce-sbh-20</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-sbh-20']">spruce-sbh-20</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-sbh-20']">spruce-sbh-20</cdr-heading>
     </div>
-    <div data-backstop="heading-disclaimer">
-      <cdr-heading :level="1" :modifier="['disclaimer']">disclaimer</cdr-heading>
-      <cdr-heading :level="2" :modifier="['disclaimer']">disclaimer</cdr-heading>
-      <cdr-heading :level="3" :modifier="['disclaimer']">disclaimer</cdr-heading>
-      <cdr-heading :level="4" :modifier="['disclaimer']">disclaimer</cdr-heading>
-      <cdr-heading :level="5" :modifier="['disclaimer']">disclaimer</cdr-heading>
-      <cdr-heading :level="6" :modifier="['disclaimer']">disclaimer</cdr-heading>
+    <div data-backstop="heading-spruce-sbh-25">
+      <cdr-heading :level="1" :modifier="['spruce-sbh-25']">spruce-sbh-25</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-sbh-25']">spruce-sbh-25</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-sbh-25']">spruce-sbh-25</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-sbh-25']">spruce-sbh-25</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-sbh-25']">spruce-sbh-25</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-sbh-25']">spruce-sbh-25</cdr-heading>
+    </div>
+    <div data-backstop="heading-spruce-sbh-10">
+      <cdr-heading :level="1" :modifier="['spruce-sbh-10']">spruce-sbh-10</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-sbh-10']">spruce-sbh-10</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-sbh-10']">spruce-sbh-10</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-sbh-10']">spruce-sbh-10</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-sbh-10']">spruce-sbh-10</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-sbh-10']">spruce-sbh-10</cdr-heading>
+    </div>
+    <div data-backstop="heading-spruce-sbh-15">
+      <cdr-heading :level="1" :modifier="['spruce-sbh-15']">spruce-sbh-15</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-sbh-15']">spruce-sbh-15</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-sbh-15']">spruce-sbh-15</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-sbh-15']">spruce-sbh-15</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-sbh-15']">spruce-sbh-15</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-sbh-15']">spruce-sbh-15</cdr-heading>
+    </div>
+    <div data-backstop="heading-spruce-bdy-20">
+      <cdr-heading :level="1" :modifier="['spruce-bdy-20']">spruce-bdy-20</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-bdy-20']">spruce-bdy-20</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-bdy-20']">spruce-bdy-20</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-bdy-20']">spruce-bdy-20</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-bdy-20']">spruce-bdy-20</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-bdy-20']">spruce-bdy-20</cdr-heading>
+    </div>
+    <div data-backstop="heading-spruce-bdy-25">
+      <cdr-heading :level="1" :modifier="['spruce-bdy-25']">spruce-bdy-25</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-bdy-25']">spruce-bdy-25</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-bdy-25']">spruce-bdy-25</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-bdy-25']">spruce-bdy-25</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-bdy-25']">spruce-bdy-25</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-bdy-25']">spruce-bdy-25</cdr-heading>
+    </div>
+    <div data-backstop="heading-spruce-bdy-10">
+      <cdr-heading :level="1" :modifier="['spruce-bdy-10']">spruce-bdy-10</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-bdy-10']">spruce-bdy-10</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-bdy-10']">spruce-bdy-10</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-bdy-10']">spruce-bdy-10</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-bdy-10']">spruce-bdy-10</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-bdy-10']">spruce-bdy-10</cdr-heading>
+    </div>
+    <div data-backstop="heading-spruce-bdy-15">
+      <cdr-heading :level="1" :modifier="['spruce-bdy-15']">spruce-bdy-15</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-bdy-15']">spruce-bdy-15</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-bdy-15']">spruce-bdy-15</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-bdy-15']">spruce-bdy-15</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-bdy-15']">spruce-bdy-15</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-bdy-15']">spruce-bdy-15</cdr-heading>
+    </div>
+    <div data-backstop="heading-spruce-cpt-10">
+      <cdr-heading :level="1" :modifier="['spruce-cpt-10']">spruce-cpt-10</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-cpt-10']">spruce-cpt-10</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-cpt-10']">spruce-cpt-10</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-cpt-10']">spruce-cpt-10</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-cpt-10']">spruce-cpt-10</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-cpt-10']">spruce-cpt-10</cdr-heading>
+    </div>
+    <div data-backstop="heading-spruce-ftn-10">
+      <cdr-heading :level="1" :modifier="['spruce-ftn-10']">spruce-ftn-10</cdr-heading>
+      <cdr-heading :level="2" :modifier="['spruce-ftn-10']">spruce-ftn-10</cdr-heading>
+      <cdr-heading :level="3" :modifier="['spruce-ftn-10']">spruce-ftn-10</cdr-heading>
+      <cdr-heading :level="4" :modifier="['spruce-ftn-10']">spruce-ftn-10</cdr-heading>
+      <cdr-heading :level="5" :modifier="['spruce-ftn-10']">spruce-ftn-10</cdr-heading>
+      <cdr-heading :level="6" :modifier="['spruce-ftn-10']">spruce-ftn-10</cdr-heading>
     </div>
   </div>
 </template>
