@@ -3,6 +3,7 @@ module.exports = {
   plugins: {
     'postcss-import': {},
     'postcss-cssnext': {},
+    'postcss-responsive-type': {},
     'postcss-pxtorem': {
       rootValue: 10,
     },
