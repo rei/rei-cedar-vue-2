@@ -7,10 +7,6 @@ module.exports = {
     './src/css/main.postcss',
   ],
   assetsDir: './static',
-  mixins: [
-    './src/mixins/modifier.js',
-    './src/mixins/theme.js',
-  ],
   highlightTheme: 'monokai',
   webpackConfig: merge(baseConfig, {
     module: {

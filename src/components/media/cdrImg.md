@@ -7,7 +7,7 @@
 ```
 <div>
   <h4>Cropping (with landscape images)</h4>
-  <cdr-row :cols="1" :colsMd="3">
+  <cdr-row cols="1" cols-md="3">
     <cdr-col>
       <div>
         <p>Left</p>
@@ -29,7 +29,7 @@
   </cdr-row>
 
   <h4>Cropping (with portrait images)</h4>
-  <cdr-row :cols="1" :colsMd="3">
+  <cdr-row cols="1" cols-md="3">
     <cdr-col>
       <div>
         <p>Top</p>
@@ -51,15 +51,15 @@
   </cdr-row>
 
   <h4>Cropping (combinations)</h4>
-  <cdr-row :justify="'center'">
-    <cdr-col :span="9">
+  <cdr-row justify="center">
+    <cdr-col span="9">
       <div>
         <p>Reference Image</p>
         <cdr-img alt="reference image" src="http://lorempixel.com/960/540/sports/9"></cdr-img>
       </div>
     </cdr-col>
   </cdr-row>
-  <cdr-row :cols="1" :colsMd="3">
+  <cdr-row cols="1" cols-md="3">
     <cdr-col>
       <div>
         <p>top left</p>
@@ -117,7 +117,7 @@
   </cdr-row>
 
   <h4>Ratios</h4>
-  <cdr-row :cols="2" :colsMd="4">
+  <cdr-row cols="2" cols-md="4">
     <cdr-col>
       <div>
         <p>Square</p>
@@ -175,7 +175,7 @@
   </cdr-row>
 
   <h4>Image modifiers</h4>
-  <cdr-row :cols="2" :colsMd="4">
+  <cdr-row cols="2" cols-md="4">
     <cdr-col>
       <div>
         <p>Responsive</p>

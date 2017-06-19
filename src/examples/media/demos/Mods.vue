@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>Image modifiers</h3>
-    <cdr-row :cols="2" :colsMd="4">
+    <cdr-row cols="2" cols-md="4">
       <cdr-col>
         <div>
           <p>Responsive</p>

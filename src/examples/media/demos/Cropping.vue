@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>Cropping (with landscape images)</h3>
-    <cdr-row :cols="1" :colsMd="3">
+    <cdr-row cols="1" cols-md="3">
       <cdr-col>
         <div>
           <p>Left</p>
@@ -23,7 +23,7 @@
     </cdr-row>
 
     <h3>Cropping (with portrait images)</h3>
-    <cdr-row :cols="1" :colsMd="3">
+    <cdr-row cols="1" cols-md="3">
       <cdr-col>
         <div>
           <p>Top</p>
@@ -45,15 +45,15 @@
     </cdr-row>
 
     <h3>Cropping (combinations)</h3>
-    <cdr-row :justify="'center'">
-      <cdr-col :span="9">
+    <cdr-row justify="center">
+      <cdr-col span="9">
         <div>
           <p>Reference Image</p>
           <cdr-img alt="reference image" src="http://lorempixel.com/960/540/sports/9"></cdr-img>
         </div>
       </cdr-col>
     </cdr-row>
-    <cdr-row :cols="1" :colsMd="3">
+    <cdr-row cols="1" cols-md="3">
       <cdr-col>
         <div>
           <p>top, left</p>

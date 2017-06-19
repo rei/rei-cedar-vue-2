@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Icons</h2>
-    <cdr-row :cols="3" :cols-md="6" :cols-lg="12">
+    <cdr-row cols="3" cols-md="6" cols-lg="12">
       <cdr-col> <cdr-icon data-backstop="cdr-icon-add" url="/static/rei-icons.svg#icon-rei-add"></cdr-icon> </cdr-col>
       <cdr-col> <cdr-icon url="/static/rei-icons.svg#icon-rei-backorder"></cdr-icon> </cdr-col>
       <cdr-col> <cdr-icon url="/static/rei-icons.svg#icon-rei-calendar"></cdr-icon> </cdr-col>
