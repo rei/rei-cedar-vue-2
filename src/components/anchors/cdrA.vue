@@ -8,7 +8,7 @@
   import modifier from '../../mixins/modifier';
   
   export default {
-    name: 'cdrA',
+    name: 'cdr-a',
     mixins: [modifier],
     props: {
       target: String,

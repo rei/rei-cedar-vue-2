@@ -1,5 +1,5 @@
 <template>
-  <cdr-list :modifier="['unstyled']">
+  <cdr-list modifier="unstyled">
     <li>List unstyled</li>
     <li>List unstyled</li>
   </cdr-list>
