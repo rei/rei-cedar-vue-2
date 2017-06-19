@@ -1,6 +1,16 @@
 .cdr-card {
-  padding: var(--card-padding);
-  border: var(--card-border);
-  height: 100%;
+  @apply --glaze-light-10;
+  @apply --decoration-radius-emphasis;
+
+  box-shadow: 0 0.2rem 0.3rem 0 rgba(0, 0, 0, 0.3);
   width: 100%;
+
+  &__block {
+    padding: 1.6rem;
+
+    & + .cdr-card__block {
+      padding-top: 0;
+    }
+  }
 }
+
