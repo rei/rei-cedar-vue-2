@@ -147,7 +147,7 @@
         },
       },
       /**
-       * Number of offset columns (1-12) the column should have to the left.
+       * Number of columns (1-12) of empty space to add left of this column.
        */
       offsetLeft: {
         type: String,
@@ -189,7 +189,7 @@
         },
       },
       /**
-       * Number of offset columns (1-12) the column should have to the right.
+       * Number of columns (1-12) of empty space to add right of this column.
        */
       offsetRight: {
         type: String,

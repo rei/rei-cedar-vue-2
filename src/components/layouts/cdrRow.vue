@@ -57,8 +57,8 @@
         },
       },
       /**
-       * How columns should be justified.
-       * {top, middle, bottom, stretch}.
+       * How columns should be justified within empty space of the row.
+       * {left, center, right, around, between}.
        * See CSS flexbox justify-content.
        */
       justify: {
@@ -86,7 +86,7 @@
         validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
       },
       /**
-       * How columns should align.
+       * How columns of different heights should align.
        * {top, middle, bottom, stretch}.
        * See CSS flexbox align-items.
        */
@@ -143,7 +143,7 @@
         validator: value => (['none'].indexOf(value) >= 0) || false,
       },
       /**
-       * Sets the row to display vertically.
+       * Changes row to a column layout.
        * See CSS flexbox flex-direction.
        */
       vertical: {
@@ -171,7 +171,7 @@
         default: false,
       },
       /**
-       * Enables row wrapping.
+       * Enables row wrapping. Only needs to be changed if overriding `nowrap`
        * See CSS flexbox flex-wrap.
        */
       wrap: {
@@ -199,7 +199,7 @@
         default: false,
       },
       /**
-       * Disables row wrapping.
+       * Disables row wrapping and enables overflow scrolling.
        * See CSS flexbox flex-wrap.
        */
       nowrap: {
@@ -227,7 +227,7 @@
         default: false,
       },
       /**
-       * Sets the type. Useful for menus that need to be lists but layed out in a grid.
+       * Changes grid to built with ul>li rather than divs.
        * {normal, list}
        */
       type: {
