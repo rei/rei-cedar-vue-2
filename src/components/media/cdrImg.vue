@@ -24,7 +24,7 @@ export default {
      */
     alt: {
       type: String,
-      required: true,
+      default: ' ',
     },
     /**
      * Ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}

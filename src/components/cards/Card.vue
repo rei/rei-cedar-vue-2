@@ -1,5 +1,5 @@
 <template>
-  <article :class="[buildClass]">
+  <article :class="[modifierClass]">
     <template v-if="header">
         <header :class="headerClass">
         <slot name="header"></slot>
@@ -27,8 +27,11 @@
 </template>
 
 <script>
+import modifier from '../../mixins/modifier';
+
 export default {
   name: 'cdr-card',
+  mixins: [modifier],
   props: {
     contentWrapperClassA: String,
     contentWrapperClassB: String,
@@ -43,30 +46,10 @@ export default {
       default: false,
     },
     headerClass: String,
-    modifier: {
-      required: false,
-      default: () => [],
-    },
   },
   computed: {
-    buildClass() {
-      const baseClass = 'cdr-card';
-      let final = '';
-
-      if (this.theme) {
-        final += `${this[this.theme][baseClass]} `;
-
-        this.modifier.forEach((mod) => {
-          final += `${this[this.theme][`${baseClass}--${mod}`]} `;
-        });
-      } else {
-        final += `${baseClass} `;
-
-        this.modifier.forEach((mod) => {
-          final += `${baseClass}--${mod} `;
-        });
-      }
-      return final;
+    baseClass() {
+      return 'cdr-card';
     },
   },
 };
