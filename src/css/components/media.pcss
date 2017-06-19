@@ -118,9 +118,9 @@
     max-height: 100%;
     transform: translate(-50%, -50%);
 
-    /* reset responsive so it doesn't break stuff */
+    /* overriding here to not distort images within a media frame */
     &.cdr-image--responsive {
-      width: 100%;
+      width: auto;
       display: inline;
     }
   }
@@ -219,7 +219,7 @@
 
   &--reverse > .cdr-media-object__figure {
     margin-right: 0;
-      margin-left: calc(16px);
+    margin-left: calc(16px);
   }
 }
 

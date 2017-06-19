@@ -1,16 +1,15 @@
 <template>
   <cdr-card
-  :modifier="['content']"
-  :content-wrapper-class-a="['cdr-card__block cdr-card__block--media']"
-  :content-wrapper-class-b="['cdr-card__block']"
+  modifier="content"
+  content-wrapper-class-a="cdr-card__block cdr-card__block--media"
+  content-wrapper-class-b="cdr-card__block"
   :header="attribution"
-  :headerClass="['cdr-card__block']"
-  >
+  headerClass="cdr-card__block">
 
     <cdr-media-object
     slot="header"
     :media-figure="profile"
-    :media-img-shape="['circle']"
+    media-img-shape="circle"
     :level="authorHeading"
     :media-title="author">
       <p>{{creationTime}}</p>
@@ -19,15 +18,16 @@
     <cdr-media-object
     :media-figure="media"
     :media-figure-alt="mediaAlt"
-    :media-img-shape="['responsive']"
-     media-extend-style="cdr-card__media"
-    :media-variant="['top','stretch']"
-    >
+    media-img-shape="responsive"
+    media-extend-style="cdr-card__media"
+    modifier="top stretch">
+
       <cdr-heading :level="level" class="cdr-sub-heading">
-         <slot name="label"><p class="cdr-card__label">{{label}}</p></slot>
-          <slot name="title" v-if="!headingUrl"><span class="cdr-card__title">{{heading}}</span></slot>
-          <slot name="title" v-else><a class="cdr-card__title cdr-card__title__action" :href="headingUrl">{{heading}}</a></slot>
+        <slot name="label"><p class="cdr-card__label">{{label}}</p></slot>
+        <slot name="title" v-if="!headingUrl"><span class="cdr-card__title">{{heading}}</span></slot>
+        <slot name="title" v-else><a class="cdr-card__title cdr-card__title__action" :href="headingUrl">{{heading}}</a></slot>
       </cdr-heading>
+
       <slot name="snapshot" class="cdr-card__snapshot">{{snapshot}}</slot>
       <slot name="summary" class="cdr-card__summary">{{summary}}</slot>
       <slot name="messaging">{{messaging}}</slot>
@@ -49,11 +49,11 @@
 
 <script>
 import cdrCard from './Card';
-import cdrCol from '../layouts/Col';
-import cdrHeading from '../headings/Heading';
-import cdrImg from '../media/Image';
+import cdrCol from '../layouts/cdrCol';
+import cdrHeading from '../headings/cdrHeading';
+import cdrImg from '../media/cdrImg';
 import cdrMediaObject from '../media/MediaObject';
-import cdrRow from '../layouts/Row';
+import cdrRow from '../layouts/cdrRow';
 
 export default {
   name: 'cdr-card-component',
@@ -70,7 +70,7 @@ export default {
     actions: String,
     author: String,
     authorHeading: {
-      type: Number,
+      type: String,
       required: false,
     },
     attribution: {
@@ -93,8 +93,8 @@ export default {
     headingUrl: String,
     label: String,
     level: {
-      type: Number,
-      default: 2,
+      type: String,
+      default: '2',
     },
     media: String,
     mediaAlt: {
@@ -102,35 +102,9 @@ export default {
       default: ' ',
     },
     messaging: String,
-    modifier: {
-      required: false,
-      default: () => [],
-    },
     profile: String,
     snapshot: String,
     summary: String,
-    theme: String,
-  },
-  computed: {
-    buildClass() {
-      const baseClass = 'cdr-card';
-      let final = '';
-
-      if (this.theme) {
-        final += `${this[this.theme][baseClass]} `;
-
-        this.modifier.forEach((mod) => {
-          final += `${this[this.theme][`${baseClass}--${mod}`]} `;
-        });
-      } else {
-        final += `${baseClass} `;
-
-        this.modifier.forEach((mod) => {
-          final += `${baseClass}--${mod} `;
-        });
-      }
-      return final;
-    },
   },
 };
 </script>

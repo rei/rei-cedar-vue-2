@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container-fluid">
     <h1>Cedar Proving grounds</h1>
-    
+        
     <images></images>
     <icons data-backstop="icons"></icons>
     <headings></headings>

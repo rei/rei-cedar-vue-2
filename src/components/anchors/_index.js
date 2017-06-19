@@ -1,4 +1,4 @@
-import cdrA from './Anchor';
+import cdrA from './cdrA';
 
 export default {
   cdrA,

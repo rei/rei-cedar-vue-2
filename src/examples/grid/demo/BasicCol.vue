@@ -1,19 +1,19 @@
 <template>
   <div class="container-fluid">
     <cdr-row>
-      <cdr-col :span="3">
+      <cdr-col span="3">
         <div class="row-demo"></div>
       </cdr-col>
-      <cdr-col :span="3">
+      <cdr-col span="3">
         <div class="row-demo"></div>
       </cdr-col>
-      <cdr-col :span="3">
+      <cdr-col span="3">
         <div class="row-demo"></div>
       </cdr-col>
-      <cdr-col :span="3">
+      <cdr-col span="3">
         <div class="row-demo"></div>
       </cdr-col>
-      <cdr-col :span="3">
+      <cdr-col span="3">
         <div class="row-demo"></div>
       </cdr-col>
     </cdr-row>
@@ -21,8 +21,8 @@
 </template>
 
 <script>
-  import cdrRow from '../../../components/layouts/Row';
-  import cdrCol from '../../../components/layouts/Col';
+  import cdrRow from '../../../components/layouts/cdrRow';
+  import cdrCol from '../../../components/layouts/cdrCol';
 
   export default {
     name: 'basic-row-example',

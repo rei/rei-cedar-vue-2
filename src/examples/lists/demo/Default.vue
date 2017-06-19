@@ -5,7 +5,7 @@
       <cdr-list>
         <li>List default - nested</li>
         <li>List default - nested
-          <cdr-list :modifier="['numbered']">
+          <cdr-list modifier="numbered">
             <li>List default - nested - numbered</li>
             <li>List default - nested - numbered</li>
           </cdr-list>

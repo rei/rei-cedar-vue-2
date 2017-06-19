@@ -1,6 +1,6 @@
 <template>
   <div class="anchor-example">
-    <cdr-a data-backstop="cdr-link--button" href="https://www.rei.com/" :modifier="['button']">Link as button</cdr-a>
+    <cdr-a data-backstop="cdr-link--button" href="https://www.rei.com/" modifier="button">Link as button</cdr-a>
   </div>
 </template>
 
