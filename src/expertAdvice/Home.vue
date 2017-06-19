@@ -73,28 +73,72 @@
         </cdr-col>
     </cdr-col>
     <cdr-col>
-      <cdr-heading :level="2"  :modifier="['section-title']">
+      <cdr-heading :level="2"  variant="cdr-header-section-title">
         Editor's Picks
       </cdr-heading>
     </cdr-col>
     <cdr-col :span="12" :span-md="12" :isRow="true">
-      <cdr-col :span="12" :span-md="6">
-        <cdr-card :level="3" card-title="Glacier National Park Backpacking Packing List" card-link="http://rei.com"
-        card-img="http://placehold.it/350x150" card-img-alt="">
-        </cdr-card>
+      <cdr-col class="cdr-col--enlarge" :span="12" :span-md="6">
+        <cdr-card-content
+        :modifier="['cta']"
+        profile="http://placehold.it/50x50"
+        author="Harald Hardrada"
+        :author-heading="3"
+        creation-time="Issaquah Alps, WA"
+        :level="2"
+        label="MTB Project"
+        heading="Tiger Mountain Loop"
+        heading-url="http://rei.com"
+        media="http://placehold.it/350x150"
+        :attribution="true">
+          <cdr-list :modifier="['bulleted']" slot="snapshot">
+            <li>17.3 mi away</li>
+            <li>Issaquah, WA</li>
+            <li>34 min drive</li>
+          </cdr-list>
+          <div slot="summary">
+            <p>Tiger Mountain is a multi-use recreation area near Seattle. In recent years, new trails and the continued work of Evergreen Mountain…</p>
+             <cdr-list :modifier="['bulleted']">
+              <li>2,913’ ascent</li>
+              <li>2,992’ high</li>
+              <li>1,451 low</li>
+            </cdr-list>
+            <section>
+            <span>$25</span> member / $50 non-member
+            </section>
+          </div>
+          <div slot="messaging"></div>
+          <cdr-button-group slot="actions">
+            <cdr-button >B1</cdr-button>
+          <cdr-button class="cdr-card__action" :modifier="['Secondary']">B2</cdr-button>
+          </cdr-button-group>
+        </cdr-card-content>
       </cdr-col>
       <cdr-col :span="12" :span-md="6" :isRow="true" :cols="1" :cols-md="2">
         <cdr-col>
-          <cdr-card :level="3" card-title="Backpacking Tents: How to Choose"
-          card-link="http://rei.com"
-          card-img="http://placehold.it/350x150" card-img-alt="">
+          <cdr-card>
+
+            <cdr-media-object
+            :level="3"
+            media-url="http://rei.com"
+            media-title="Backpacking Tents: How to Choose"
+            media-figure="http://placehold.it/350x150"
+            media-extend-style="cdr-card__media"
+            :media-img-shape="['responsive']"
+            :media-variant="['top', 'block']">
+            </cdr-media-object>
+
+          <cdr-button-group slot="actions">
+            <cdr-button >B1</cdr-button>
+          <cdr-button class="cdr-card__action" :modifier="['Secondary']">B2</cdr-button>
+          </cdr-button-group>
           </cdr-card>
         </cdr-col>
         <cdr-col>
-          <cdr-card :level="3" card-title="Kids and Camping"
-          card-link="http://rei.com"
-          card-img="http://placehold.it/350x150" card-img-alt="">
-          </cdr-card>
+          <cdr-card-content :level="3" heading="Kids and Camping"
+          heading-url="http://rei.com"
+          media="http://placehold.it/350x150">
+          </cdr-card-content>
         </cdr-col>
       </cdr-col>
     </cdr-col>
@@ -102,36 +146,35 @@
       <cdr-col :span="12" :span-md="12" :isRow="true">
         <cdr-col :span="12" :span-md="6" :isRow="true" :cols="1" :cols-md="2">
           <cdr-col>
-            <cdr-card
+            <cdr-card-content
             :level="3"
-            card-title="Food Storage and Handling for Campers and Backpackers"
-            card-link="http://rei.com"
-            card-img="http://placehold.it/350x150" card-img-alt=""
-            >
-            </cdr-card>
+            heading="Food Storage and Handling for Campers and Backpackers"
+            heading-url="http://rei.com"
+            media="http://placehold.it/350x150">
+            </cdr-card-content>
             </cdr-col>
             <cdr-col>
-              <cdr-card
+              <cdr-card-content
               :level="3"
-              card-title="Yellowstone National Park Kayaking and Canoeing Gear List"
-              card-link="http://rei.com"
-              card-img="http://placehold.it/350x150" card-img-alt=""
-              >
-                <p slot="body">
-                  <p>some body copy goes in here along with list info</p>
+              heading="Yellowstone National Park Kayaking and Canoeing Gear List"
+              heading-url="http://rei.com"
+              media="http://placehold.it/350x150">
+                <p slot="summary">
+                  <p>some summary copy goes in here along with list info</p>
                   <a href="http://google.com">google</a>
                 </p>
-              </cdr-card>
+              </cdr-card-content>
             </cdr-col>
           </cdr-col>
            <cdr-col :span="12" :span-md="6">
-            <cdr-card
+            <cdr-card-content
+              :modifier="['cta']"
               :level="3"
-              card-title="Zion National Park Visitor Guide"
-              card-link="http://rei.com"
-              card-img="http://placehold.it/350x150"
-              card-img-alt="">
-            </cdr-card>
+              heading="Zion National Park Visitor Guide"
+              heading-url="http://rei.com"
+              media="http://placehold.it/350x150"
+              media-alt="">
+            </cdr-card-content>
           </cdr-col>
         </cdr-col>
       </cdr-col>
@@ -147,21 +190,21 @@
       </div>
       </cdr-col>
       <cdr-col :span="4">
-        <cdr-card :level="3" card-title="Zion National Park Visitor Guide" card-link="http://rei.com" card-img="http://placehold.it/350x150" card-img-alt="">
+        <cdr-card-content :level="3" heading="Zion National Park Visitor Guide" heading-url="http://rei.com" media="http://placehold.it/350x150">
 
-        </cdr-card>
+        </cdr-card-content>
       </cdr-col>
       <cdr-col :span="4">
-        <cdr-card
+        <cdr-card-content
         :level="3"
-        card-title="Zion National Park Visitor Guide"
-        card-link="http://rei.com"
-        card-img="http://placehold.it/350x150" card-img-alt="">
-        </cdr-card>
+        heading="Zion National Park Visitor Guide"
+        heading-url="http://rei.com"
+        media="http://placehold.it/350x150">
+        </cdr-card-content>
       </cdr-col>
       <cdr-col :span="4">
-        <cdr-card :level="3" card-title="Zion National Park Visitor Guide" card-link="http://rei.com" card-img="http://placehold.it/350x150" card-img-alt="">
-        </cdr-card>
+        <cdr-card-content :level="3" heading="Zion National Park Visitor Guide" heading-url="http://rei.com" media="http://placehold.it/350x150">
+        </cdr-card-content>
       </cdr-col>
     </cdr-row>
 
