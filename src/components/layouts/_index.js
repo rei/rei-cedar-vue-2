@@ -1,5 +1,5 @@
-import cdrRow from './Row';
-import cdrCol from './Col';
+import cdrRow from './cdrRow';
+import cdrCol from './cdrCol';
 
 export default {
   cdrRow,

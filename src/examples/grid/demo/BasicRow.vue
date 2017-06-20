@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <cdr-row :cols="3">
+    <cdr-row cols="3">
       <cdr-col>
         <div class="row-demo"></div>
       </cdr-col>
@@ -18,8 +18,8 @@
 </template>
 
 <script>
-  import cdrRow from '../../../components/layouts/Row';
-  import cdrCol from '../../../components/layouts/Col';
+  import cdrRow from '../../../components/layouts/cdrRow';
+  import cdrCol from '../../../components/layouts/cdrCol';
 
   export default {
     name: 'basic-row-example',

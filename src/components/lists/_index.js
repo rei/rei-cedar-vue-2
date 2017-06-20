@@ -1,4 +1,4 @@
-import cdrList from './Lists';
+import cdrList from './cdrList';
 
 export default {
   cdrList,
