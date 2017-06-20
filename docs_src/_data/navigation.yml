@@ -219,6 +219,9 @@ items:
                 - label: Featured
                   href: list-inline-featured
 
+                - label: Flex
+                  href: list-flex-featured
+
             - label: Inputs
               slug: inputs
               href: /elements/inputs/
