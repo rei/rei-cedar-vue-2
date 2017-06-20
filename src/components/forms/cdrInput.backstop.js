@@ -1,8 +1,8 @@
 module.exports = [
   {
-    label: 'Form',
+    label: 'Input',
     selectors: [
-      "[data-backstop='forms']",
+      "[data-backstop='inputs']",
     ],
     delay: 0,
     misMatchThreshold: 0.1,

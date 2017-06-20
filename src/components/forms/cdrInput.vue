@@ -1,9 +1,9 @@
 <script>
 import debounce from '../../utils/debounce';
 
-const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');//eslint-disable-line
-const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');//eslint-disable-line
-const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');//eslint-disable-line
+const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');// eslint-disable-line import/no-webpack-loader-syntax
+const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');// eslint-disable-line import/no-webpack-loader-syntax
+const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');// eslint-disable-line import/no-webpack-loader-syntax
 
 export default {
   name: 'cdr-input',
@@ -22,47 +22,114 @@ export default {
     };
   },
   props: {
+    /**
+     * id for the input that is mapped to the label 'for' attribute.
+     * If one is not provided, it will be generated
+    */
     id: String,
+    /**
+     * Label text. This is required for a11y even if hiding the label with `hideLabel`.
+    */
     label: {
       type: String,
       required: true,
     },
+    /**
+     * Removes the label element but sets the input 'aria-label' to `label` text for a11y.
+    */
     hideLabel: Boolean,
+    /**
+     * Sets the name attribute of the input.
+    */
     name: String,
+    /**
+     * Sets disabled attribute on the input.
+    */
     disabled: Boolean,
+    /**
+     * Sets required attribute on the input.
+    */
     required: Boolean,
+    /**
+     * Placeholder text of the input.
+    */
     placeholder: String,
+    /**
+     * Sets autofocus attribute on the input.
+    */
     autofocus: Boolean,
+    /**
+     * Sets readonly attribute on the input.
+    */
     readonly: Boolean,
-    maxlength: {
-      required: false,
-    },
+    /**
+     * Sets maxlength attribute on the input.
+    */
+    maxlength: String,
+    /**
+     * Changes the input to a textarea.
+    */
     multiLine: Boolean,
+    /**
+     * Used with `multiLine`. Sets the number of rows in the textarea.
+    */
     rows: {
-      default: 5,
+      type: String,
+      default: '5',
     },
+    /**
+     * Regex validation pattern. Useful for simple validation.
+    */
     pattern: String,
+    /**
+     * Error message to be displayed when `pattern` validation fails.
+    */
     patternError: String,
+    /**
+     * Enables icon feedback as part of validation
+     * for valid, warn, and error states.
+    */
     feedback: Boolean,
+    /**
+     * Input type. NOTE: This component is meant for text style inputs.
+     * Other input types (checkbox, radio) have their own components.
+    */
     type: {
       type: String,
       default: 'text',
     },
+    /**
+     * Array of functions. Provide your own validation function(s).
+     * Takes the input string and outputs an object with a state and message.
+     * State is a String with value `valid`, `warning`, or `error`.
+     * Message is any String.
+    */
     rules: {
       type: Array,
       default: () => [],
     },
+    /**
+     * Boolean or Number.
+     * true has a default of 500ms.
+     * Providing a number will set debounce to that (in ms).
+     * false is no debounce.
+    */
     debounce: {
       required: false,
       default: false,
     },
+    /**
+     * Sets the tabindex of the input.
+     */
     tabindex: {
       default: 0,
     },
+    /** @ignore */
+    immediateValidate: Boolean,
+    /** @ignore */
     value: {
       required: false,
     },
-    immediateValidate: Boolean,
   },
   mounted() {
     // Convert pattern to a rule for testing
@@ -295,8 +362,7 @@ export default {
           },
           ref: 'messages',
         },
-        messages,
-      );
+        messages);
     },
     genError(error) {
       return this.$createElement('div',
@@ -309,12 +375,12 @@ export default {
           key: `errKey${this._uid}`, // eslint-disable-line no-underscore-dangle
           ref: 'error',
         },
-        error,
-      );
+        error);
     },
-    genInputGroup(input, dataArg = {}) {
+    genInputGroup(inputArg, dataArg = {}) {
       const children = [];
       const wrapperChildren = [];
+      const input = inputArg;
       let data = dataArg;
 
       const inputGroupClasses = Object.assign({
@@ -332,7 +398,7 @@ export default {
 
       // Add input/textarea
       if (this.errors.length) {
-        input[0].data.attrs['aria-describedby'] = `err${this._uid}`;//eslint-disable-line
+        input[0].data.attrs['aria-describedby'] = `err${this._uid}`;// eslint-disable-line no-underscore-dangle
       }
 
       wrapperChildren.push(input);
@@ -347,8 +413,7 @@ export default {
           class: {
             'cdr-input-validation': true,
           },
-        }, wrapperChildren),
-      );
+        }, wrapperChildren));
 
       // Add error messages
       children.push(this.genMessages());

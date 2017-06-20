@@ -7,7 +7,7 @@ import anchors from './anchors/Anchors';
 import buttons from './buttons/Buttons';
 import images from './media/Images';
 import mountains from './mountain/Mountains';
-import forms from './forms/Form';
+import inputs from './forms/Inputs';
 
 export default {
   test,
@@ -19,5 +19,5 @@ export default {
   buttons,
   images,
   mountains,
-  forms,
+  inputs,
 };

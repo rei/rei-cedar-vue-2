@@ -108,7 +108,6 @@
     "svgxuse": "^1.2.4",
     "tenon-node": "^0.4.0",
     "url-loader": "^0.5.9",
-    "vbuild": "^7.2.4",
     "vue-loader": "^12.2.1",
     "vue-router": "^2.5.3",
     "vue-style-loader": "^3.0.1",

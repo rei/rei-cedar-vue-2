@@ -2,5 +2,8 @@
 dist/
 dist-play/
 release/
+backstop_data/
+
+node_modules/
 
 src/css/settings/brandai.pcss

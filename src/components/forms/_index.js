@@ -1,4 +1,4 @@
-import cdrInput from './Input';
+import cdrInput from './cdrInput';
 import cdrSelect from './Select';
 
 export default {
