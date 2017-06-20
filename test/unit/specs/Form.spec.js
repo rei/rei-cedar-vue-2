@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import inputComp from '@/components/forms/Input';
+import inputComp from '@/components/forms/cdrInput';
 
 function validateFn(inputText) {
   const obj = {};
