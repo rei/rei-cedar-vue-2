@@ -1,8 +1,8 @@
 module.exports = [
   {
-    label: 'Lists',
+    label: 'Icon',
     selectors: [
-      "[data-backstop='lists']",
+      "[data-backstop='icons']",
     ],
     delay: 0,
     misMatchThreshold: 0.1,

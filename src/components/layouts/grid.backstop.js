@@ -16,8 +16,7 @@ module.exports = [
       "[data-backstop='row-mosaic']",
       "[data-backstop='row-mosaic-list']",
     ],
-    readyEvent: null,
-    delay: 100,
+    delay: 0,
     misMatchThreshold: 0.1,
   },
 ];

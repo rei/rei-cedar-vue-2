@@ -1,12 +1,11 @@
 module.exports = [
   {
-    label: 'Icon',
+    label: 'Icon Hover',
     selectors: [
       "[data-backstop='cdr-icon-add']",
     ],
-    readyEvent: null,
-    delay: 100,
+    delay: 0,
     misMatchThreshold: 0.1,
-    onReadyScripts: [false, 'hover.js'],
+    onReadyScript: 'hover.js',
   },
 ];
