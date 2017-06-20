@@ -1,6 +1,6 @@
 **NOTE:** `v-model` is required.
 
-## Events
+### Events
 | Name | Type | Description | |
 | --- | --- | --- |
 | `input` | String | Current input value. Fires while typing. |
@@ -8,3 +8,45 @@
 | `blur` | Event | Fires when input loses focus. |
 | `focus` | Event | Fires when input gains focus. |
 | `paste` | Event | Fires when text is pasted into input. |
+
+### Examples
+
+```
+// Stuff for demo
+var debounce, multi;
+function validateFn(inputText) {
+  const obj = {};
+  if (inputText === 'hi') {
+    obj.state = 'valid';
+  } else if (inputText === '') {
+    obj.state = 'warn';
+    obj.message = 'Warning Empty';
+  } else if (!isNaN(inputText) && inputText !== '') {
+    obj.state = 'error';
+    obj.message = 'Error: needs to be letters';
+  } else {
+    obj.state = 'error';
+    obj.message = 'Error Message';
+  }
+  return obj;
+}
+
+//Component usages
+<div>
+  <cdr-input v-model="debounce"
+    label="Validation + feedback with debounce"
+    id="testing"
+    placeholder="Enter hi"
+    feedback
+    :rules="[validateFn]"
+    debounce
+    data-backstop="text-input"
+    ></cdr-input>
+
+    <cdr-input v-model="multi"
+      label="Multiline"
+      multi-line
+      ></cdr-input>
+</div>
+
+```
