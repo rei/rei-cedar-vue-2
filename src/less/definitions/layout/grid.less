@@ -51,6 +51,12 @@
     }
 }
 
+// Flex
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
 // Row
 //
 // Rows contain and clear the floats of floated columns or naturally wrap flex displays.
@@ -104,4 +110,25 @@
 // Columns, offsets, pushes, and pulls for the large desktop device range.
 @media (min-width: @screen-lg-min) {
     .make-grid(lg);
+}
+
+// Gutters 
+//
+// Helper to remove gutters
+.row {
+    .no-gutters  {
+        [class*=" col-"],
+        [class^=col-],
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+[class*=" col-"],
+[class^=col-] {
+    &.no-gutter {
+        padding-right: 0;
+        padding-left: 0
+    }     
 }
