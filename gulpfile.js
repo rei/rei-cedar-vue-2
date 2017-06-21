@@ -270,12 +270,6 @@ gulp.task('css:build', ['css:clean'], () => {
         .pipe(gulp.dest(PATHS.DIST));
 });
 
-gulp.task('get-tokens', function(){
-  return download(brandAiURL)
-    .pipe(rename('brandai.variables'))
-    .pipe(gulp.dest('src/less/themes/default/settings/'));
-});
-
 // minify the css
 gulp.task('css:minify', ['css:build'], () =>
     gulp.src(path.join(PATHS.DIST, '/rei-cedar.css'))
