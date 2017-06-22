@@ -1,3 +1,6 @@
+/**
+ * @mixin
+ */
 export default {
   props: {
     /**

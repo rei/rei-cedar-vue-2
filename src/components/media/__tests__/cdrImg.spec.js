@@ -5,7 +5,7 @@ describe('cdrImg.vue', () => {
   it('renders an img', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
       }
     });
     expect(wrapper.is('img')).to.equal(true);
@@ -14,7 +14,7 @@ describe('cdrImg.vue', () => {
   it('renders the media frame correctly', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
       }
     });
@@ -24,35 +24,35 @@ describe('cdrImg.vue', () => {
   it('sets src prop correctly', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
       }
     });
-    expect(wrapper.vm.$props.src).to.equal('test');
+    expect(wrapper.vm.$props.src).to.equal('http://via.placeholder.com/350x150');
   });
 
   it('sets the src attr correctly', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
       }
     });
-    expect(wrapper.hasAttribute('src', 'test')).to.equal(true);
+    expect(wrapper.hasAttribute('src', 'http://via.placeholder.com/350x150')).to.equal(true);
   });
 
   it('sets the src attr correctly in a media frame', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
       }
     });
-    expect(wrapper.find('.cdr-media-frame__image')[0].hasAttribute('src', 'test')).to.equal(true);
+    expect(wrapper.find('.cdr-media-frame__image')[0].hasAttribute('src', 'http://via.placeholder.com/350x150')).to.equal(true);
   });
 
   it('sets the alt attr correctly', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
         alt: 'test alt',
       }
     });
@@ -62,7 +62,7 @@ describe('cdrImg.vue', () => {
   it('sets the alt attr correctly in a media frame', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
         alt: 'test alt',
       }
@@ -73,7 +73,7 @@ describe('cdrImg.vue', () => {
   it('sets the ratio prop correctly', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
       }
     });
@@ -83,7 +83,7 @@ describe('cdrImg.vue', () => {
   it('sets the ratio class correctly', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
       }
     });
@@ -93,7 +93,7 @@ describe('cdrImg.vue', () => {
   it('sets the crop prop correctly', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
         crop: 'top',
       }
@@ -104,7 +104,7 @@ describe('cdrImg.vue', () => {
   it('sets the crop class correctly', () => {
     const wrapper = mount(cdrImg, {
       propsData: {
-        src: 'test',
+        src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
         crop: 'top',
       }

@@ -2,6 +2,9 @@
  * Use of this mixin requires adding either a data value or computed property
  * of 'baseClass' that is a string of the base class value
  */
+/**
+ * @mixin
+ */
 export default {
   props: {
     /**

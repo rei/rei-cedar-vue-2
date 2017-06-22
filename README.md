@@ -43,17 +43,17 @@ Export the component library to a umd js bundle and compiled css in the `release
 
 The [webpack](https://webpack.github.io/) build system is taken largely from the [Vue webpack template](https://github.com/vuejs-templates/webpack) which has its own set of docs that are a good reference.
 
-## Vue-play
+## Vue-styleguidist
 
-We're using [vue-play](https://github.com/vue-play/vue-play) to demo components. Configs live in the examples directory for each component as `*.play.js`.
+We're using [vue-styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) to document and demo components.
 
-`yarn play`
+`yarn docs`
 
-Runs the webpack config for vue-play and starts a local server.
+Runs the local server for docs.
 
-`yarn build:play`
+`yarn build:docs`
 
-Outputs a standalone app to `dist-play` that can be hosted somewhere (like gh-pages).
+Outputs a standalone app to `styleguide/build` that can be hosted somewhere (like gh-pages).
 
 ## Testing
 
@@ -150,7 +150,6 @@ build                           #Contains scripts and configs for the webpack bu
 |-- check-versions.js           #Checks node/npm versions (this came with the vue webpack template so I’m not sure if it’s super useful)
 |-- dev-client.js               #For hot module reloading in dev
 |-- dev-server.js               #Config for express dev server
-|-- play.config.js              #Webpack config for vue-play
 |-- release.js                  #Release build script - the entry point for `yarn release`
 |-- utils.js                    #From vue webpack template to mostly automate which loaders need to be used since vue supports scss, stylus, postcss, etc.
 |-- vue-loader.conf.js          #Config object for vue webpack loader (vue-loader)
@@ -166,16 +165,13 @@ config                          #Configuration files used in the webpack build s
 |-- release.env.js              #Setting NODE_ENV for release
 |-- test.env.js                 #Setting NODE_ENV for test
 %dist/                          #Results from `yarn build` end up here
-%dist-play/                     #Results from `yarn build:play` end up here
-play/                           #Stores files for use with vue-play
-|-- %app.js                     #Used for initializing vue-play (probably don't need to change anything here)
-|-- index.js                    #Setting up vue-play scenarios (currently just loads all *.play.js files from src/components)
-|-- my-index.ejs                #Custom page template for vue-play
-|-- %preview.js                 #Used for creating the preview for vue-play (probably don't need to change anything here)
 %release/                       #Results from `yarn release` end up here
 src/                            #Source files
 |-- assets/                     #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
 |-- components/                 #All things components
+  |-- __tests__/                #Unit tests for components
+    |-- *.spec.js               #Unit test files -- karma looks for them with this pattern
+  |-- **/*.backstop.js          #Config files for backstop visual regression testing
 |-- css/                        #All things css
     |-- components/             #CSS files for component styles
     |-- directives/             #CSS files for directives
@@ -185,15 +181,13 @@ src/                            #Source files
     |-- themes/                 #Might be used for vertical and/or horizontal themes in the future.
 |-- directives/                 #All things directives
 |-- examples/                   #Everything for demos/docs/testing of components and directives
-  |-- **/*.backstop.js          #Config files for backstop visual regression testing
-  |-- **/*.play.js              #Config files for vue-play testing
-  |-- **/*.md                   #Component and directive docs that are imported into *.play.js for readme support
 |-- utils/                      #Helper js files for things like debounce
 |-- app.vue                     #The component/directive catalog for building and regression testing
 |-- dev.js                      #Webpack entry point for everything !release
 |-- main.js                     #Webpack entry point for release that builds delivery assets
 |-- */_index.js                 #For maintaining imports of components for use between release and dev/build
 static/                         #For static assets. These get included in dist/ and release/ exactly as is -- check the vue webpack template docs
+%styleguide/                     #Output for vue-styleguidist
 test/                           #All things testing for both unit and e2e
 |-- e2e/                        #Everything for nightwatch testing
 |-- unit/                       #Everything for karma testing
@@ -212,5 +206,6 @@ backstop.js                     #Main config for backstop. Global settings like 
 index.html                      #app.vue is bootstrapped here and is used for both dev and build -- all css and js files will be injected automatically
 package.json                    #Everything for npm
 postcss.config.js               #Config for postcss -- add new postcss plugins here
+styleguide.config.js            #Configuration for vue-styleguidist
 yarn.lock                       #We’re using yarn -- go read the docs
 ```
