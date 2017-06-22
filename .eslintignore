@@ -1,3 +1,5 @@
 build/*.js
 config/*.js
 release/*.js
+
+src/**/__tests__/*.spec.js

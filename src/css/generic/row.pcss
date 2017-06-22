@@ -150,7 +150,7 @@
 }
 
 /*******************
-  NOTE: BEM naming except for _row and _col (instead of --row and --col)
+  NOTE: BEM naming except for _row and _span (instead of --row and --col)
    which are used for doing simpler :not() filtering
 ********************/
 
@@ -179,73 +179,73 @@
   /* row by number */
 
   &_row1 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-1;
     }
   }
 
   &_row2 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-2;
     }
   }
 
   &_row3 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-3;
     }
   }
 
   &_row4 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-4;
     }
   }
 
   &_row5 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-5;
     }
   }
 
   &_row6 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-6;
     }
   }
 
   &_row7 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-7;
     }
   }
 
   &_row8 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-8;
     }
   }
 
   &_row9 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-9;
     }
   }
 
   &_row10 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-10;
     }
   }
 
   &_row11 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-11;
     }
   }
 
   &_row12 {
-    & > .cdr-col:not([class*="cdr-col_col"]) {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
       @apply --row-12;
     }
   }
@@ -321,85 +321,85 @@
     flex-direction: column;
 
     & > .cdr-col,
-    & > .cdr-col[class*="cdr-col_col"] {
+    & > .cdr-col[class*="cdr-col_span"] {
       flex-basis: auto !important;
     }
   }
 
   @media (--medium) {
-    &_row1-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row1\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-1;
       }
     }
 
-    &_row2-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row2\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-2;
       }
     }
 
-    &_row3-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row3\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-3;
       }
     }
 
-    &_row4-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row4\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-4;
       }
     }
 
-    &_row5-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row5\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-5;
       }
     }
 
-    &_row6-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row6\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-6;
       }
     }
 
-    &_row7-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row7\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-7;
       }
     }
 
-    &_row8-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row8\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-8;
       }
     }
 
-    &_row9-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row9\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-9;
       }
     }
 
-    &_row10-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row10\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-10;
       }
     }
 
-    &_row11-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row11\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-11;
       }
     }
 
-    &_row12-md {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row12\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-12;
       }
     }
 
-    &--gutter-none-md {
+    &--gutter-none\@md {
       margin: 0;
 
       & > .cdr-col {
@@ -407,7 +407,7 @@
       }
     }
 
-    &--noWrap-md {
+    &--noWrap\@md {
       flex-wrap: nowrap;
       overflow: auto;
 
@@ -417,7 +417,7 @@
       }
     }
 
-    &--wrap-md {
+    &--wrap\@md {
       flex-wrap: wrap;
 
       & > .cdr-col {
@@ -426,128 +426,128 @@
       }
     }
 
-    &--left-md {
+    &--left\@md {
       justify-content: flex-start;
       align-self: flex-start;
     }
 
-    &--center-md {
+    &--center\@md {
       justify-content: center;
     }
 
-    &--right-md {
+    &--right\@md {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &--stretch-md {
+    &--stretch\@md {
       align-items: stretch;
     }
 
-    &--top-md {
+    &--top\@md {
       align-items: flex-start;
     }
 
-    &--middle-md {
+    &--middle\@md {
       align-items: center;
     }
 
-    &--bottom-md {
+    &--bottom\@md {
       align-items: flex-end;
     }
 
-    &--column-md {
+    &--column\@md {
       flex-direction: column;
 
       & > .cdr-col,
-      & > .cdr-col[class*="cdr-col_col"] {
+      & > .cdr-col[class*="cdr-col_span"] {
         flex-basis: auto !important;
       }
     }
 
-    &--between-md {
+    &--between\@md {
       justify-content: space-between;
     }
 
-    &--around-md {
+    &--around\@md {
       justify-content: space-around;
     }
   }
 
   @media (--large) {
-    &_row1-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row1\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-1;
       }
     }
 
-    &_row2-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row2\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-2;
       }
     }
 
-    &_row3-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row3\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-3;
       }
     }
 
-    &_row4-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row4\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-4;
       }
     }
 
-    &_row5-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row5\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-5;
       }
     }
 
-    &_row6-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row6\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-6;
       }
     }
 
-    &_row7-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row7\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-7;
       }
     }
 
-    &_row8-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row8\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-8;
       }
     }
 
-    &_row9-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row9\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-9;
       }
     }
 
-    &_row10-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row10\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-10;
       }
     }
 
-    &_row11-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row11\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-11;
       }
     }
 
-    &_row12-lg {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row12\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-12;
       }
     }
 
-    &--gutter-none-lg {
+    &--gutter-none\@lg {
       margin: 0;
 
       & > .cdr-col {
@@ -555,7 +555,7 @@
       }
     }
 
-    &--noWrap-lg {
+    &--noWrap\@lg {
       flex-wrap: nowrap;
       overflow: auto;
 
@@ -565,7 +565,7 @@
       }
     }
 
-    &--wrap-lg {
+    &--wrap\@lg {
       flex-wrap: wrap;
 
       & > .cdr-col {
@@ -574,128 +574,128 @@
       }
     }
 
-    &--left-lg {
+    &--left\@lg {
       justify-content: flex-start;
       align-self: flex-start;
     }
 
-    &--center-lg {
+    &--center\@lg {
       justify-content: center;
     }
 
-    &--right-lg {
+    &--right\@lg {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &--stretch-lg {
+    &--stretch\@lg {
       align-items: stretch;
     }
 
-    &--top-lg {
+    &--top\@lg {
       align-items: flex-start;
     }
 
-    &--middle-lg {
+    &--middle\@lg {
       align-items: center;
     }
 
-    &--bottom-lg {
+    &--bottom\@lg {
       align-items: flex-end;
     }
 
-    &--column-lg {
+    &--column\@lg {
       flex-direction: column;
 
       & > .cdr-col,
-      & > .cdr-col[class*="cdr-col_col"] {
+      & > .cdr-col[class*="cdr-col_span"] {
         flex-basis: auto !important;
       }
     }
 
-    &--between-lg {
+    &--between\@lg {
       justify-content: space-between;
     }
 
-    &--around-lg {
+    &--around\@lg {
       justify-content: space-around;
     }
   }
 
   @media (--xlarge) {
-    &_row1-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row1\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-1;
       }
     }
 
-    &_row2-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row2\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-2;
       }
     }
 
-    &_row3-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row3\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-3;
       }
     }
 
-    &_row4-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row4\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-4;
       }
     }
 
-    &_row5-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row5\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-5;
       }
     }
 
-    &_row6-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row6\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-6;
       }
     }
 
-    &_row7-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row7\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-7;
       }
     }
 
-    &_row8-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row8\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-8;
       }
     }
 
-    &_row9-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row9\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-9;
       }
     }
 
-    &_row10-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row10\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-10;
       }
     }
 
-    &_row11-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row11\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-11;
       }
     }
 
-    &_row12-xl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row12\@xl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-12;
       }
     }
 
-    &--gutter-none-xl {
+    &--gutter-none\@xl {
       margin: 0;
 
       & > .cdr-col {
@@ -703,7 +703,7 @@
       }
     }
 
-    &--noWrap-xl {
+    &--noWrap\@xl {
       flex-wrap: nowrap;
       overflow: auto;
 
@@ -713,7 +713,7 @@
       }
     }
 
-    &--wrap-xl {
+    &--wrap\@xl {
       flex-wrap: wrap;
 
       & > .cdr-col {
@@ -722,128 +722,128 @@
       }
     }
 
-    &--left-xl {
+    &--left\@xl {
       justify-content: flex-start;
       align-self: flex-start;
     }
 
-    &--center-xl {
+    &--center\@xl {
       justify-content: center;
     }
 
-    &--right-xl {
+    &--right\@xl {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &--stretch-xl {
+    &--stretch\@xl {
       align-items: stretch;
     }
 
-    &--top-xl {
+    &--top\@xl {
       align-items: flex-start;
     }
 
-    &--middle-xl {
+    &--middle\@xl {
       align-items: center;
     }
 
-    &--bottom-xl {
+    &--bottom\@xl {
       align-items: flex-end;
     }
 
-    &--column-xl {
+    &--column\@xl {
       flex-direction: column;
 
       & > .cdr-col,
-      & > .cdr-col[class*="cdr-col_col"] {
+      & > .cdr-col[class*="cdr-col_span"] {
         flex-basis: auto !important;
       }
     }
 
-    &--between-xl {
+    &--between\@xl {
       justify-content: space-between;
     }
 
-    &--around-xl {
+    &--around\@xl {
       justify-content: space-around;
     }
   }
 
   @media (--xxlarge) {
-    &_row1-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row1\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-1;
       }
     }
 
-    &_row2-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row2\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-2;
       }
     }
 
-    &_row3-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row3\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-3;
       }
     }
 
-    &_row4-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row4\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-4;
       }
     }
 
-    &_row5-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row5\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-5;
       }
     }
 
-    &_row6-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row6\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-6;
       }
     }
 
-    &_row7-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row7\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-7;
       }
     }
 
-    &_row8-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row8\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-8;
       }
     }
 
-    &_row9-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row9\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-9;
       }
     }
 
-    &_row10-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row10\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-10;
       }
     }
 
-    &_row11-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row11\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-11;
       }
     }
 
-    &_row12-xxl {
-      & > .cdr-col:not([class*="cdr-col_col"]) {
+    &_row12\@xxl {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
         @apply --row-12;
       }
     }
 
-    &--gutter-none-xxl {
+    &--gutter-none\@xxl {
       margin: 0;
 
       & > .cdr-col {
@@ -851,7 +851,7 @@
       }
     }
 
-    &--noWrap-xxl {
+    &--noWrap\@xxl {
       flex-wrap: nowrap;
       overflow: auto;
 
@@ -861,7 +861,7 @@
       }
     }
 
-    &--wrap-xxl {
+    &--wrap\@xxl {
       flex-wrap: wrap;
 
       & > .cdr-col {
@@ -870,50 +870,50 @@
       }
     }
 
-    &--left-xxl {
+    &--left\@xxl {
       justify-content: flex-start;
       align-self: flex-start;
     }
 
-    &--center-xxl {
+    &--center\@xxl {
       justify-content: center;
     }
 
-    &--right-xxl {
+    &--right\@xxl {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &--stretch-xxl {
+    &--stretch\@xxl {
       align-items: stretch;
     }
 
-    &--top-xxl {
+    &--top\@xxl {
       align-items: flex-start;
     }
 
-    &--middle-xxl {
+    &--middle\@xxl {
       align-items: center;
     }
 
-    &--bottom-xxl {
+    &--bottom\@xxl {
       align-items: flex-end;
     }
 
-    &--column-xxl {
+    &--column\@xxl {
       flex-direction: column;
 
       & > .cdr-col,
-      & > .cdr-col[class*="cdr-col_col"] {
+      & > .cdr-col[class*="cdr-col_span"] {
         flex-basis: auto !important;
       }
     }
 
-    &--between-xxl {
+    &--between\@xxl {
       justify-content: space-between;
     }
 
-    &--around-xxl {
+    &--around\@xxl {
       justify-content: space-around;
     }
   }
@@ -948,51 +948,51 @@
 
   /* col by number */
 
-  &_col1 {
+  &_span1 {
     @apply --col-1;
   }
 
-  &_col2 {
+  &_span2 {
     @apply --col-2;
   }
 
-  &_col3 {
+  &_span3 {
     @apply --col-3;
   }
 
-  &_col4 {
+  &_span4 {
     @apply --col-4;
   }
 
-  &_col5 {
+  &_span5 {
     @apply --col-5;
   }
 
-  &_col6 {
+  &_span6 {
     @apply --col-6;
   }
 
-  &_col7 {
+  &_span7 {
     @apply --col-7;
   }
 
-  &_col8 {
+  &_span8 {
     @apply --col-8;
   }
 
-  &_col9 {
+  &_span9 {
     @apply --col-9;
   }
 
-  &_col10 {
+  &_span10 {
     @apply --col-10;
   }
 
-  &_col11 {
+  &_span11 {
     @apply --col-11;
   }
 
-  &_col12 {
+  &_span12 {
     @apply --col-12;
   }
 
@@ -1102,10 +1102,10 @@
     }
 
     &-down,
-    &-md-down,
-    &-lg-down,
-    &-xl-down,
-    &-xxl-down {
+    &\@md-down,
+    &\@lg-down,
+    &\@xl-down,
+    &\@xxl-down {
       display: none;
     }
   }
@@ -1145,149 +1145,149 @@
   @media (--medium) {
     /* col by number */
 
-    &_col1-md {
+    &_span1\@md {
       @apply --col-1;
     }
 
-    &_col2-md {
+    &_span2\@md {
       @apply --col-2;
     }
 
-    &_col3-md {
+    &_span3\@md {
       @apply --col-3;
     }
 
-    &_col4-md {
+    &_span4\@md {
       @apply --col-4;
     }
 
-    &_col5-md {
+    &_span5\@md {
       @apply --col-5;
     }
 
-    &_col6-md {
+    &_span6\@md {
       @apply --col-6;
     }
 
-    &_col7-md {
+    &_span7\@md {
       @apply --col-7;
     }
 
-    &_col8-md {
+    &_span8\@md {
       @apply --col-8;
     }
 
-    &_col9-md {
+    &_span9\@md {
       @apply --col-9;
     }
 
-    &_col10-md {
+    &_span10\@md {
       @apply --col-10;
     }
 
-    &_col11-md {
+    &_span11\@md {
       @apply --col-11;
     }
 
-    &_col12-md {
+    &_span12\@md {
       @apply --col-12;
     }
 
     /* col offsets */
 
-    &--offsetLeft0-md {
+    &--offsetLeft0\@md {
       margin-left: 0;
     }
 
-    &--offsetLeft1-md {
+    &--offsetLeft1\@md {
       margin-left: var(--1-col-pct);
     }
 
-    &--offsetLeft2-md {
+    &--offsetLeft2\@md {
       margin-left: var(--2-col-pct);
     }
 
-    &--offsetLeft3-md {
+    &--offsetLeft3\@md {
       margin-left: var(--3-col-pct);
     }
 
-    &--offsetLeft4-md {
+    &--offsetLeft4\@md {
       margin-left: var(--4-col-pct);
     }
 
-    &--offsetLeft5-md {
+    &--offsetLeft5\@md {
       margin-left: var(--5-col-pct);
     }
 
-    &--offsetLeft6-md {
+    &--offsetLeft6\@md {
       margin-left: var(--6-col-pct);
     }
 
-    &--offsetLeft7-md {
+    &--offsetLeft7\@md {
       margin-left: var(--7-col-pct);
     }
 
-    &--offsetLeft8-md {
+    &--offsetLeft8\@md {
       margin-left: var(--8-col-pct);
     }
 
-    &--offsetLeft9-md {
+    &--offsetLeft9\@md {
       margin-left: var(--9-col-pct);
     }
 
-    &--offsetLeft10-md {
+    &--offsetLeft10\@md {
       margin-left: var(--10-col-pct);
     }
 
-    &--offsetLeft11-md {
+    &--offsetLeft11\@md {
       margin-left: var(--11-col-pct);
     }
 
-    &--offsetRight0-md {
+    &--offsetRight0\@md {
       margin-right: 0;
     }
 
-    &--offsetRight1-md {
+    &--offsetRight1\@md {
       margin-right: var(--1-col-pct);
     }
 
-    &--offsetRight2-md {
+    &--offsetRight2\@md {
       margin-right: var(--2-col-pct);
     }
 
-    &--offsetRight3-md {
+    &--offsetRight3\@md {
       margin-right: var(--3-col-pct);
     }
 
-    &--offsetRight4-md {
+    &--offsetRight4\@md {
       margin-right: var(--4-col-pct);
     }
 
-    &--offsetRight5-md {
+    &--offsetRight5\@md {
       margin-right: var(--5-col-pct);
     }
 
-    &--offsetRight6-md {
+    &--offsetRight6\@md {
       margin-right: var(--6-col-pct);
     }
 
-    &--offsetRight7-md {
+    &--offsetRight7\@md {
       margin-right: var(--7-col-pct);
     }
 
-    &--offsetRight8-md {
+    &--offsetRight8\@md {
       margin-right: var(--8-col-pct);
     }
 
-    &--offsetRight9-md {
+    &--offsetRight9\@md {
       margin-right: var(--9-col-pct);
     }
 
-    &--offsetRight10-md {
+    &--offsetRight10\@md {
       margin-right: var(--10-col-pct);
     }
 
-    &--offsetRight11-md {
+    &--offsetRight11\@md {
       margin-right: var(--11-col-pct);
     }
 
@@ -1297,29 +1297,29 @@
       display: block;
     }
 
-    &--hide-md-up {
+    &--hide\@md-up {
       display: none;
     }
 
-    &--top-md {
+    &--top\@md {
       align-self: flex-start;
     }
 
-    &--middle-md {
+    &--middle\@md {
       align-self: center;
     }
 
-    &--bottom-md {
+    &--bottom\@md {
       align-self: flex-end;
     }
 
-    &--stretch-md {
+    &--stretch\@md {
       align-self: stretch;
     }
   }
 
   @media (--medium-only) {
-    &--hide-md-only {
+    &--hide\@md-only {
       display: none;
     }
   }
@@ -1327,181 +1327,181 @@
   @media (--large) {
     /* col by number */
 
-    &_col1-lg {
+    &_span1\@lg {
       @apply --col-1;
     }
 
-    &_col2-lg {
+    &_span2\@lg {
       @apply --col-2;
     }
 
-    &_col3-lg {
+    &_span3\@lg {
       @apply --col-3;
     }
 
-    &_col4-lg {
+    &_span4\@lg {
       @apply --col-4;
     }
 
-    &_col5-lg {
+    &_span5\@lg {
       @apply --col-5;
     }
 
-    &_col6-lg {
+    &_span6\@lg {
       @apply --col-6;
     }
 
-    &_col7-lg {
+    &_span7\@lg {
       @apply --col-7;
     }
 
-    &_col8-lg {
+    &_span8\@lg {
       @apply --col-8;
     }
 
-    &_col9-lg {
+    &_span9\@lg {
       @apply --col-9;
     }
 
-    &_col10-lg {
+    &_span10\@lg {
       @apply --col-10;
     }
 
-    &_col11-lg {
+    &_span11\@lg {
       @apply --col-11;
     }
 
-    &_col12-lg {
+    &_span12\@lg {
       @apply --col-12;
     }
 
     /* col offsets */
 
-    &--offsetLeft0-lg {
+    &--offsetLeft0\@lg {
       margin-left: 0;
     }
 
-    &--offsetLeft1-lg {
+    &--offsetLeft1\@lg {
       margin-left: var(--1-col-pct);
     }
 
-    &--offsetLeft2-lg {
+    &--offsetLeft2\@lg {
       margin-left: var(--2-col-pct);
     }
 
-    &--offsetLeft3-lg {
+    &--offsetLeft3\@lg {
       margin-left: var(--3-col-pct);
     }
 
-    &--offsetLeft4-lg {
+    &--offsetLeft4\@lg {
       margin-left: var(--4-col-pct);
     }
 
-    &--offsetLeft5-lg {
+    &--offsetLeft5\@lg {
       margin-left: var(--5-col-pct);
     }
 
-    &--offsetLeft6-lg {
+    &--offsetLeft6\@lg {
       margin-left: var(--6-col-pct);
     }
 
-    &--offsetLeft7-lg {
+    &--offsetLeft7\@lg {
       margin-left: var(--7-col-pct);
     }
 
-    &--offsetLeft8-lg {
+    &--offsetLeft8\@lg {
       margin-left: var(--8-col-pct);
     }
 
-    &--offsetLeft9-lg {
+    &--offsetLeft9\@lg {
       margin-left: var(--9-col-pct);
     }
 
-    &--offsetLeft10-lg {
+    &--offsetLeft10\@lg {
       margin-left: var(--10-col-pct);
     }
 
-    &--offsetLeft11-lg {
+    &--offsetLeft11\@lg {
       margin-left: var(--11-col-pct);
     }
 
-    &--offsetRight0-lg {
+    &--offsetRight0\@lg {
       margin-right: 0;
     }
 
-    &--offsetRight1-lg {
+    &--offsetRight1\@lg {
       margin-right: var(--1-col-pct);
     }
 
-    &--offsetRight2-lg {
+    &--offsetRight2\@lg {
       margin-right: var(--2-col-pct);
     }
 
-    &--offsetRight3-lg {
+    &--offsetRight3\@lg {
       margin-right: var(--3-col-pct);
     }
 
-    &--offsetRight4-lg {
+    &--offsetRight4\@lg {
       margin-right: var(--4-col-pct);
     }
 
-    &--offsetRight5-lg {
+    &--offsetRight5\@lg {
       margin-right: var(--5-col-pct);
     }
 
-    &--offsetRight6-lg {
+    &--offsetRight6\@lg {
       margin-right: var(--6-col-pct);
     }
 
-    &--offsetRight7-lg {
+    &--offsetRight7\@lg {
       margin-right: var(--7-col-pct);
     }
 
-    &--offsetRight8-lg {
+    &--offsetRight8\@lg {
       margin-right: var(--8-col-pct);
     }
 
-    &--offsetRight9-lg {
+    &--offsetRight9\@lg {
       margin-right: var(--9-col-pct);
     }
 
-    &--offsetRight10-lg {
+    &--offsetRight10\@lg {
       margin-right: var(--10-col-pct);
     }
 
-    &--offsetRight11-lg {
+    &--offsetRight11\@lg {
       margin-right: var(--11-col-pct);
     }
 
     /* col modifiers */
 
-    &--hide-md-down {
+    &--hide\@md-down {
       display: block;
     }
 
-    &--hide-lg-up {
+    &--hide\@lg-up {
       display: none;
     }
 
-    &--top-lg {
+    &--top\@lg {
       align-self: flex-start;
     }
 
-    &--middle-lg {
+    &--middle\@lg {
       align-self: center;
     }
 
-    &--bottom-lg {
+    &--bottom\@lg {
       align-self: flex-end;
     }
 
-    &--stretch-lg {
+    &--stretch\@lg {
       align-self: stretch;
     }
   }
 
   @media (--large-only) {
-    &--hide-lg-only {
+    &--hide\@lg-only {
       display: none;
     }
   }
@@ -1509,181 +1509,181 @@
   @media (--xlarge) {
     /* col by number */
 
-    &_col1-xl {
+    &_span1\@xl {
       @apply --col-1;
     }
 
-    &_col2-xl {
+    &_span2\@xl {
       @apply --col-2;
     }
 
-    &_col3-xl {
+    &_span3\@xl {
       @apply --col-3;
     }
 
-    &_col4-xl {
+    &_span4\@xl {
       @apply --col-4;
     }
 
-    &_col5-xl {
+    &_span5\@xl {
       @apply --col-5;
     }
 
-    &_col6-xl {
+    &_span6\@xl {
       @apply --col-6;
     }
 
-    &_col7-xl {
+    &_span7\@xl {
       @apply --col-7;
     }
 
-    &_col8-xl {
+    &_span8\@xl {
       @apply --col-8;
     }
 
-    &_col9-xl {
+    &_span9\@xl {
       @apply --col-9;
     }
 
-    &_col10-xl {
+    &_span10\@xl {
       @apply --col-10;
     }
 
-    &_col11-xl {
+    &_span11\@xl {
       @apply --col-11;
     }
 
-    &_col12-xl {
+    &_span12\@xl {
       @apply --col-12;
     }
 
     /* col offsets */
 
-    &--offsetLeft0-xl {
+    &--offsetLeft0\@xl {
       margin-left: 0;
     }
 
-    &--offsetLeft1-xl {
+    &--offsetLeft1\@xl {
       margin-left: var(--1-col-pct);
     }
 
-    &--offsetLeft2-xl {
+    &--offsetLeft2\@xl {
       margin-left: var(--2-col-pct);
     }
 
-    &--offsetLeft3-xl {
+    &--offsetLeft3\@xl {
       margin-left: var(--3-col-pct);
     }
 
-    &--offsetLeft4-xl {
+    &--offsetLeft4\@xl {
       margin-left: var(--4-col-pct);
     }
 
-    &--offsetLeft5-xl {
+    &--offsetLeft5\@xl {
       margin-left: var(--5-col-pct);
     }
 
-    &--offsetLeft6-xl {
+    &--offsetLeft6\@xl {
       margin-left: var(--6-col-pct);
     }
 
-    &--offsetLeft7-xl {
+    &--offsetLeft7\@xl {
       margin-left: var(--7-col-pct);
     }
 
-    &--offsetLeft8-xl {
+    &--offsetLeft8\@xl {
       margin-left: var(--8-col-pct);
     }
 
-    &--offsetLeft9-xl {
+    &--offsetLeft9\@xl {
       margin-left: var(--9-col-pct);
     }
 
-    &--offsetLeft10-xl {
+    &--offsetLeft10\@xl {
       margin-left: var(--10-col-pct);
     }
 
-    &--offsetLeft11-xl {
+    &--offsetLeft11\@xl {
       margin-left: var(--11-col-pct);
     }
 
-    &--offsetRight0-xl {
+    &--offsetRight0\@xl {
       margin-right: 0;
     }
 
-    &--offsetRight1-xl {
+    &--offsetRight1\@xl {
       margin-right: var(--1-col-pct);
     }
 
-    &--offsetRight2-xl {
+    &--offsetRight2\@xl {
       margin-right: var(--2-col-pct);
     }
 
-    &--offsetRight3-xl {
+    &--offsetRight3\@xl {
       margin-right: var(--3-col-pct);
     }
 
-    &--offsetRight4-xl {
+    &--offsetRight4\@xl {
       margin-right: var(--4-col-pct);
     }
 
-    &--offsetRight5-xl {
+    &--offsetRight5\@xl {
       margin-right: var(--5-col-pct);
     }
 
-    &--offsetRight6-xl {
+    &--offsetRight6\@xl {
       margin-right: var(--6-col-pct);
     }
 
-    &--offsetRight7-xl {
+    &--offsetRight7\@xl {
       margin-right: var(--7-col-pct);
     }
 
-    &--offsetRight8-xl {
+    &--offsetRight8\@xl {
       margin-right: var(--8-col-pct);
     }
 
-    &--offsetRight9-xl {
+    &--offsetRight9\@xl {
       margin-right: var(--9-col-pct);
     }
 
-    &--offsetRight10-xl {
+    &--offsetRight10\@xl {
       margin-right: var(--10-col-pct);
     }
 
-    &--offsetRight11-xl {
+    &--offsetRight11\@xl {
       margin-right: var(--11-col-pct);
     }
 
     /* col modifiers */
 
-    &--hide-lg-down {
+    &--hide\@lg-down {
       display: block;
     }
 
-    &--hide-xl-up {
+    &--hide\@xl-up {
       display: none;
     }
 
-    &--top-xl {
+    &--top\@xl {
       align-self: flex-start;
     }
 
-    &--middle-xl {
+    &--middle\@xl {
       align-self: center;
     }
 
-    &--bottom-xl {
+    &--bottom\@xl {
       align-self: flex-end;
     }
 
-    &--stretch-xl {
+    &--stretch\@xl {
       align-self: stretch;
     }
   }
 
   @media (--xlarge-only) {
-    &--hide-xl-only {
+    &--hide\@xl-only {
       display: none;
     }
   }
@@ -1691,181 +1691,181 @@
   @media (--xxlarge) {
     /* col by number */
 
-    &_col1-xxl {
+    &_span1\@xxl {
       @apply --col-1;
     }
 
-    &_col2-xxl {
+    &_span2\@xxl {
       @apply --col-2;
     }
 
-    &_col3-xxl {
+    &_span3\@xxl {
       @apply --col-3;
     }
 
-    &_col4-xxl {
+    &_span4\@xxl {
       @apply --col-4;
     }
 
-    &_col5-xxl {
+    &_span5\@xxl {
       @apply --col-5;
     }
 
-    &_col6-xxl {
+    &_span6\@xxl {
       @apply --col-6;
     }
 
-    &_col7-xxl {
+    &_span7\@xxl {
       @apply --col-7;
     }
 
-    &_col8-xxl {
+    &_span8\@xxl {
       @apply --col-8;
     }
 
-    &_col9-xxl {
+    &_span9\@xxl {
       @apply --col-9;
     }
 
-    &_col10-xxl {
+    &_span10\@xxl {
       @apply --col-10;
     }
 
-    &_col11-xxl {
+    &_span11\@xxl {
       @apply --col-11;
     }
 
-    &_col12-xxl {
+    &_span12\@xxl {
       @apply --col-12;
     }
 
     /* col offsets */
 
-    &--offsetLeft0-xxl {
+    &--offsetLeft0\@xxl {
       margin-left: 0;
     }
 
-    &--offsetLeft1-xxl {
+    &--offsetLeft1\@xxl {
       margin-left: var(--1-col-pct);
     }
 
-    &--offsetLeft2-xxl {
+    &--offsetLeft2\@xxl {
       margin-left: var(--2-col-pct);
     }
 
-    &--offsetLeft3-xxl {
+    &--offsetLeft3\@xxl {
       margin-left: var(--3-col-pct);
     }
 
-    &--offsetLeft4-xxl {
+    &--offsetLeft4\@xxl {
       margin-left: var(--4-col-pct);
     }
 
-    &--offsetLeft5-xxl {
+    &--offsetLeft5\@xxl {
       margin-left: var(--5-col-pct);
     }
 
-    &--offsetLeft6-xxl {
+    &--offsetLeft6\@xxl {
       margin-left: var(--6-col-pct);
     }
 
-    &--offsetLeft7-xxl {
+    &--offsetLeft7\@xxl {
       margin-left: var(--7-col-pct);
     }
 
-    &--offsetLeft8-xxl {
+    &--offsetLeft8\@xxl {
       margin-left: var(--8-col-pct);
     }
 
-    &--offsetLeft9-xxl {
+    &--offsetLeft9\@xxl {
       margin-left: var(--9-col-pct);
     }
 
-    &--offsetLeft10-xxl {
+    &--offsetLeft10\@xxl {
       margin-left: var(--10-col-pct);
     }
 
-    &--offsetLeft11-xxl {
+    &--offsetLeft11\@xxl {
       margin-left: var(--11-col-pct);
     }
 
-    &--offsetRight0-xxl {
+    &--offsetRight0\@xxl {
       margin-right: 0;
     }
 
-    &--offsetRight1-xxl {
+    &--offsetRight1\@xxl {
       margin-right: var(--1-col-pct);
     }
 
-    &--offsetRight2-xxl {
+    &--offsetRight2\@xxl {
       margin-right: var(--2-col-pct);
     }
 
-    &--offsetRight3-xxl {
+    &--offsetRight3\@xxl {
       margin-right: var(--3-col-pct);
     }
 
-    &--offsetRight4-xxl {
+    &--offsetRight4\@xxl {
       margin-right: var(--4-col-pct);
     }
 
-    &--offsetRight5-xxl {
+    &--offsetRight5\@xxl {
       margin-right: var(--5-col-pct);
     }
 
-    &--offsetRight6-xxl {
+    &--offsetRight6\@xxl {
       margin-right: var(--6-col-pct);
     }
 
-    &--offsetRight7-xxl {
+    &--offsetRight7\@xxl {
       margin-right: var(--7-col-pct);
     }
 
-    &--offsetRight8-xxl {
+    &--offsetRight8\@xxl {
       margin-right: var(--8-col-pct);
     }
 
-    &--offsetRight9-xxl {
+    &--offsetRight9\@xxl {
       margin-right: var(--9-col-pct);
     }
 
-    &--offsetRight10-xxl {
+    &--offsetRight10\@xxl {
       margin-right: var(--10-col-pct);
     }
 
-    &--offsetRight11-xxl {
+    &--offsetRight11\@xxl {
       margin-right: var(--11-col-pct);
     }
 
     /* col modifiers */
 
-    &--hide-xl-down {
+    &--hide\@xl-down {
       display: block;
     }
 
-    &--hide-xxl-up {
+    &--hide\@xxl-up {
       display: none;
     }
 
-    &--top-xxl {
+    &--top\@xxl {
       align-self: flex-start;
     }
 
-    &--middle-xxl {
+    &--middle\@xxl {
       align-self: center;
     }
 
-    &--bottom-xxl {
+    &--bottom\@xxl {
       align-self: flex-end;
     }
 
-    &--stretch-xxl {
+    &--stretch\@xxl {
       align-self: stretch;
     }
   }
 
   @media (--xxlarge-only) {
-    &--hide-xxl-only {
+    &--hide\@xxl-only {
       display: none;
     }
   }
