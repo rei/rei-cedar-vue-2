@@ -1,5 +1,5 @@
-import cdrCard from './Card';
-import cdrCardContent from './CardContent';
+import cdrCard from './cdrCard';
+import cdrCardContent from './cdrCardContent';
 
 export default {
   cdrCard,
