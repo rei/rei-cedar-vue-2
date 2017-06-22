@@ -18,7 +18,16 @@ function validateFn(inputText) {
   return obj;
 }
 
-describe('Input.vue', () => {
+describe('cdrInput.vue', () => {
+  it('renders a label element', () => {
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'Label Test',
+      },
+    });
+    expect(wrapper.vm.$refs.label.tagName).to.equal('LABEL');
+  });
+
   it('renders label correctly', () => {
     const wrapper = mount(inputComp, {
       propsData: {
@@ -46,6 +55,15 @@ describe('Input.vue', () => {
       },
     });
     expect(wrapper.vm.$refs.input.id).to.equal(wrapper.vm.$refs.label.htmlFor);
+  });
+
+  it('renders an input element', () => {
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'Label Test',
+      },
+    });
+    expect(wrapper.vm.$refs.input.tagName).to.equal('INPUT');
   });
 
   it('sets input name attribute correctly', () => {
@@ -112,7 +130,7 @@ describe('Input.vue', () => {
     const wrapper = mount(inputComp, {
       propsData: {
         label: 'test',
-        maxlength: 20,
+        maxlength: '20',
       },
     });
     expect(wrapper.vm.$refs.input.getAttribute('maxlength')).to.equal('20');
@@ -143,7 +161,7 @@ describe('Input.vue', () => {
       propsData: {
         label: 'test',
         multiLine: true,
-        rows: 10,
+        rows: '10',
       },
     });
     expect(wrapper.vm.$refs.input.getAttribute('rows')).to.equal('10');

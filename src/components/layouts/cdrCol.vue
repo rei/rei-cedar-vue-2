@@ -371,15 +371,16 @@
       /** @ignore */
       type: String,
     },
+    inject: ['rowType'],
     computed: {
       isList() {
-        return this.$parent.type === 'list';
+        return this.rowType === 'list';
       },
       spanClass() {
         let spanClass = '';
-        if (this.span) { spanClass += `${blockName}_col${this.span} `; }
+        if (this.span) { spanClass += `${blockName}_span${this.span} `; }
         bpArr.forEach((bp) => {
-          if (this[`span${bp}`]) { spanClass += `${blockName}_col${this[`span${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`span${bp}`]) { spanClass += `${blockName}_span${this[`span${bp}`]}@${bp.toLowerCase()} `; }
         });
         return spanClass;
       },
@@ -387,7 +388,7 @@
         let hideClass = '';
         if (this.hide) { hideClass += `${blockName}--hide-${this.hide} `; }
         bpArr.forEach((bp) => {
-          if (this[`hide${bp}`]) { hideClass += `${blockName}--hide-${bp.toLowerCase()}-${this[`hide${bp}`]} `; }
+          if (this[`hide${bp}`]) { hideClass += `${blockName}--hide@${bp.toLowerCase()}-${this[`hide${bp}`]} `; }
         });
         return hideClass;
       },
@@ -395,11 +396,11 @@
         let offClass = '';
         if (this.offsetLeft) { offClass += `${blockName}--offsetLeft${this.offsetLeft} `; }
         bpArr.forEach((bp) => {
-          if (this[`offsetLeft${bp}`]) { offClass += `${blockName}--offsetLeft${this[`offsetLeft${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`offsetLeft${bp}`]) { offClass += `${blockName}--offsetLeft${this[`offsetLeft${bp}`]}@${bp.toLowerCase()} `; }
         });
         if (this.offsetRight) { offClass += `${blockName}--offsetRight${this.offsetRight} `; }
         bpArr.forEach((bp) => {
-          if (this[`offsetRight${bp}`]) { offClass += `${blockName}--offsetRight${this[`offsetRight${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`offsetRight${bp}`]) { offClass += `${blockName}--offsetRight${this[`offsetRight${bp}`]}@${bp.toLowerCase()} `; }
         });
         return offClass;
       },
@@ -407,7 +408,7 @@
         let alignClass = '';
         if (this.alignSelf) { alignClass += `${blockName}--${this.alignSelf}`; }
         bpArr.forEach((bp) => {
-          if (this[`alignSelf${bp}`]) { alignClass += `${blockName}--${this[`alignSelf${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`alignSelf${bp}`]) { alignClass += `${blockName}--${this[`alignSelf${bp}`]}@${bp.toLowerCase()} `; }
         });
         return alignClass;
       },

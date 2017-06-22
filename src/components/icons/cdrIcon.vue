@@ -6,6 +6,9 @@
 
 
 <script>
+/**
+ * **NOTE:** Can only be used with an SVG symbol sprite.
+ */
 export default {
   name: 'cdr-icon',
   props: {

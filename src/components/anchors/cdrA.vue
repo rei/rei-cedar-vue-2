@@ -1,5 +1,5 @@
 <template>
-  <a :class="modifierClass" :target="target" :rel="rel">
+  <a :class="modifierClass" :target="target" :rel="newRel">
     <slot></slot>
   </a>
 </template>
@@ -21,7 +21,7 @@
       },
       newRel() {
         if (this.target === '_blank') {
-          return this.rel || 'noopener';
+          return this.rel || 'noopener noreferrer';
         }
         return this.rel;
       },
