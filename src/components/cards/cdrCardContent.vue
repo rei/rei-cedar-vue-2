@@ -48,11 +48,11 @@
 </template>
 
 <script>
-import cdrCard from './Card';
+import cdrCard from './cdrCard';
 import cdrCol from '../layouts/cdrCol';
 import cdrHeading from '../headings/cdrHeading';
 import cdrImg from '../media/cdrImg';
-import cdrMediaObject from '../media/MediaObject';
+import cdrMediaObject from '../media/cdrMediaObject';
 import cdrRow from '../layouts/cdrRow';
 
 export default {

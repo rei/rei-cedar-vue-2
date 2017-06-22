@@ -1,5 +1,5 @@
 import cdrImg from './cdrImg';
-import cdrMediaObject from './MediaObject';
+import cdrMediaObject from './cdrMediaObject';
 
 export default {
   cdrImg,

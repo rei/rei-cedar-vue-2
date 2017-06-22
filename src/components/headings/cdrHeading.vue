@@ -10,6 +10,12 @@
 <script>
 import modifier from '../../mixins/modifier';
 
+/**
+ * Component is described here.
+ *
+ * @example ./typography.md
+ */
+
 export default {
   name: 'cdr-heading',
   mixins: [modifier],
