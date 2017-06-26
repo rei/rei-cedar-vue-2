@@ -7,7 +7,7 @@
     :crop="crop"
     class="cdr-media-object__figure"
     :modifier="mediaImgShape"></cdr-img>
-    <div class="cdr-media-object__body">
+    <div class="cdr-media-object__body" :class="alignClass">
       <cdr-heading :level="level">
           <slot name="title" v-if="!mediaUrl"><span class="cdr-card__title">{{mediaTitle}}</span></slot>
           <slot name="title" v-else><a class="cdr-card__title cdr-card__title__link" :href="mediaUrl">{{mediaTitle}}</a></slot>
@@ -45,6 +45,18 @@ export default {
     * Replaces the default slot with the body copy for your Media Object
     **/
     mediaBody: String,
+    /**
+    * Allows you to align your text
+    **/
+    mediaAlign: {
+      type: String,
+      validator: value => ([
+        'right',
+        'left',
+        'top',
+        'bottom',
+        'center'].indexOf(value) >= 0) || false,
+    },
     /**
     * Image path
     **/
@@ -88,6 +100,9 @@ export default {
   computed: {
     baseClass() {
       return 'cdr-media-object';
+    },
+    alignClass() {
+      return `cdr-media-object__body--${this.mediaAlign}`;
     },
     ratioClass() {
       return `cdr-media-frame--${this.ratio}`;

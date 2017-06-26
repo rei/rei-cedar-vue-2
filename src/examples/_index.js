@@ -6,6 +6,7 @@ import lists from './lists/Lists';
 import anchors from './anchors/Anchors';
 import buttons from './buttons/Buttons';
 import images from './media/Images';
+import mediaObject from './media/mediaObject';
 import mountains from './mountain/Mountains';
 
 export default {
@@ -17,5 +18,6 @@ export default {
   anchors,
   buttons,
   images,
+  mediaObject,
   mountains,
 };

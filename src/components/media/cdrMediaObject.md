@@ -103,7 +103,7 @@ add
 #### Media Object overlay
 ```
   <cdr-media-object
-    media-figure="http://placehold.it/350x150"
+    media-figure="http://placehold.it/350x150/212121/222222"
     media-url="http://rei.com"
     media-title="Backpacking Tents: How to Choose"
     level="2"
