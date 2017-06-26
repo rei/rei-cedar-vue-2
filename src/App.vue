@@ -4,11 +4,12 @@
 
     <images></images>
     <icons data-backstop="icons"></icons>
-    <headings></headings>
+    <headings data-backstop="headings"></headings>
     <anchors data-backstop="anchors"></anchors>
     <buttons data-backstop="buttons"></buttons>
     <lists data-backstop="lists"></lists>
     <mediaObject></mediaObject>
+    <inputs data-backstop="inputs"></inputs>
     <grid></grid>
     <test data-backstop="test"></test>
     <mountains></mountains>

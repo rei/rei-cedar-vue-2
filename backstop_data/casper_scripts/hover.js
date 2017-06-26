@@ -1,3 +1,3 @@
 module.exports = function (casper, scenario, vp) {
-    casper.mouse.move(scenario.selectors[0]);
+  casper.mouse.move(scenario.selectors[0]);
 };

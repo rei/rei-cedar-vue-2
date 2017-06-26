@@ -299,87 +299,160 @@
       },
 // ROW PROPS EXPOSED HERE -- they are ignored in the docs for cdr-col
       /** @ignore */
-      cols: String,
+      cols: {
+        type: String,
+      },
       /** @ignore */
-      colsMd: String,
+      colsMd: {
+        type: String,
+      },
       /** @ignore */
-      colsLg: String,
+      colsLg: {
+        type: String,
+      },
       /** @ignore */
-      colsXl: String,
+      colsXl: {
+        type: String,
+      },
       /** @ignore */
-      colsXxl: String,
+      colsXxl: {
+        type: String,
+      },
       /** @ignore */
-      justify: String,
+      justify: {
+        type: String,
+      },
       /** @ignore */
-      justifyMd: String,
+      justifyMd: {
+        type: String,
+      },
       /** @ignore */
-      justifyLg: String,
+      justifyLg: {
+        type: String,
+      },
       /** @ignore */
-      justifyXl: String,
+      justifyXl: {
+        type: String,
+      },
       /** @ignore */
-      justifyXxl: String,
+      justifyXxl: {
+        type: String,
+      },
       /** @ignore */
-      align: String,
+      align: {
+        type: String,
+      },
       /** @ignore */
-      alignMd: String,
+      alignMd: {
+        type: String,
+      },
       /** @ignore */
-      alignLg: String,
+      alignLg: {
+        type: String,
+      },
       /** @ignore */
-      alignXl: String,
+      alignXl: {
+        type: String,
+      },
       /** @ignore */
-      alignXxl: String,
+      alignXxl: {
+        type: String,
+      },
       /** @ignore */
-      gutter: String,
+      gutter: {
+        type: String,
+      },
       /** @ignore */
-      gutterMd: String,
+      gutterMd: {
+        type: String,
+      },
       /** @ignore */
-      gutterLg: String,
+      gutterLg: {
+        type: String,
+      },
       /** @ignore */
-      gutterXl: String,
+      gutterXl: {
+        type: String,
+      },
       /** @ignore */
-      gutterXxl: String,
+      gutterXxl: {
+        type: String,
+      },
       /** @ignore */
-      vertical: Boolean,
+      vertical: {
+        type: Boolean,
+      },
       /** @ignore */
-      verticalMd: Boolean,
+      verticalMd: {
+        type: Boolean,
+      },
       /** @ignore */
-      verticalLg: Boolean,
+      verticalLg: {
+        type: Boolean,
+      },
       /** @ignore */
-      verticalXl: Boolean,
+      verticalXl: {
+        type: Boolean,
+      },
       /** @ignore */
-      verticalXxl: Boolean,
+      verticalXxl: {
+        type: Boolean,
+      },
       /** @ignore */
-      wrap: Boolean,
+      wrap: {
+        type: Boolean,
+      },
       /** @ignore */
-      wrapMd: Boolean,
+      wrapMd: {
+        type: Boolean,
+      },
       /** @ignore */
-      wrapLg: Boolean,
+      wrapLg: {
+        type: Boolean,
+      },
       /** @ignore */
-      wrapXl: Boolean,
+      wrapXl: {
+        type: Boolean,
+      },
       /** @ignore */
-      wrapXxl: Boolean,
+      wrapXxl: {
+        type: Boolean,
+      },
       /** @ignore */
-      nowrap: Boolean,
+      nowrap: {
+        type: Boolean,
+      },
       /** @ignore */
-      nowrapMd: Boolean,
+      nowrapMd: {
+        type: Boolean,
+      },
       /** @ignore */
-      nowrapLg: Boolean,
+      nowrapLg: {
+        type: Boolean,
+      },
       /** @ignore */
-      nowrapXl: Boolean,
+      nowrapXl: {
+        type: Boolean,
+      },
       /** @ignore */
-      nowrapXxl: Boolean,
+      nowrapXxl: {
+        type: Boolean,
+      },
       /** @ignore */
-      type: String,
+      type: {
+        type: String,
+      },
     },
+    inject: ['rowType'],
     computed: {
       isList() {
-        return this.$parent.type === 'list';
+        return this.rowType === 'list';
       },
       spanClass() {
         let spanClass = '';
-        if (this.span) { spanClass += `${blockName}_col${this.span} `; }
+        if (this.span) { spanClass += `${blockName}_span${this.span} `; }
         bpArr.forEach((bp) => {
-          if (this[`span${bp}`]) { spanClass += `${blockName}_col${this[`span${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`span${bp}`]) { spanClass += `${blockName}_span${this[`span${bp}`]}@${bp.toLowerCase()} `; }
         });
         return spanClass;
       },
@@ -387,7 +460,7 @@
         let hideClass = '';
         if (this.hide) { hideClass += `${blockName}--hide-${this.hide} `; }
         bpArr.forEach((bp) => {
-          if (this[`hide${bp}`]) { hideClass += `${blockName}--hide-${bp.toLowerCase()}-${this[`hide${bp}`]} `; }
+          if (this[`hide${bp}`]) { hideClass += `${blockName}--hide@${bp.toLowerCase()}-${this[`hide${bp}`]} `; }
         });
         return hideClass;
       },
@@ -395,11 +468,11 @@
         let offClass = '';
         if (this.offsetLeft) { offClass += `${blockName}--offsetLeft${this.offsetLeft} `; }
         bpArr.forEach((bp) => {
-          if (this[`offsetLeft${bp}`]) { offClass += `${blockName}--offsetLeft${this[`offsetLeft${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`offsetLeft${bp}`]) { offClass += `${blockName}--offsetLeft${this[`offsetLeft${bp}`]}@${bp.toLowerCase()} `; }
         });
         if (this.offsetRight) { offClass += `${blockName}--offsetRight${this.offsetRight} `; }
         bpArr.forEach((bp) => {
-          if (this[`offsetRight${bp}`]) { offClass += `${blockName}--offsetRight${this[`offsetRight${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`offsetRight${bp}`]) { offClass += `${blockName}--offsetRight${this[`offsetRight${bp}`]}@${bp.toLowerCase()} `; }
         });
         return offClass;
       },
@@ -407,7 +480,7 @@
         let alignClass = '';
         if (this.alignSelf) { alignClass += `${blockName}--${this.alignSelf}`; }
         bpArr.forEach((bp) => {
-          if (this[`alignSelf${bp}`]) { alignClass += `${blockName}--${this[`alignSelf${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`alignSelf${bp}`]) { alignClass += `${blockName}--${this[`alignSelf${bp}`]}@${bp.toLowerCase()} `; }
         });
         return alignClass;
       },

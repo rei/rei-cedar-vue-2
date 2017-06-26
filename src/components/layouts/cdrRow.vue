@@ -236,12 +236,17 @@
         validator: value => (['normal', 'list'].indexOf(value) >= 0) || false,
       },
     },
+    provide() {
+      return {
+        rowType: this.type,
+      };
+    },
     computed: {
       colsClass() {
         let colClass = '';
         if (this.cols) { colClass += `${blockName}_row${this.cols} `; }
         bpArr.forEach((bp) => {
-          if (this[`cols${bp}`]) { colClass += `${blockName}_row${this[`cols${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`cols${bp}`]) { colClass += `${blockName}_row${this[`cols${bp}`]}@${bp.toLowerCase()} `; }
         });
         return colClass;
       },
@@ -250,7 +255,7 @@
         if (this.justify) { justifyClass += `${blockName}--${this.justify} `; }
         bpArr.forEach((bp) => {
           if (this[`justify${bp}`]) {
-            justifyClass += `${blockName}--${this[`justify${bp}`]}-${bp.toLowerCase()} `;
+            justifyClass += `${blockName}--${this[`justify${bp}`]}@${bp.toLowerCase()} `;
           }
         });
         return justifyClass;
@@ -259,7 +264,7 @@
         let alignClass = '';
         if (this.align) { alignClass += `${blockName}--${this.align}`; }
         bpArr.forEach((bp) => {
-          if (this[`align${bp}`]) { alignClass += `${blockName}--${this[`align${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`align${bp}`]) { alignClass += `${blockName}--${this[`align${bp}`]}@${bp.toLowerCase()} `; }
         });
         return alignClass;
       },
@@ -267,7 +272,7 @@
         let directionClass = '';
         if (this.vertical) { directionClass += `${blockName}--column `; }
         bpArr.forEach((bp) => {
-          if (this[`vertical${bp}`]) { directionClass += `${blockName}--column-${bp.toLowerCase()} `; }
+          if (this[`vertical${bp}`]) { directionClass += `${blockName}--column@${bp.toLowerCase()} `; }
         });
         return directionClass;
       },
@@ -275,14 +280,14 @@
         let gutterClass = '';
         if (this.gutter) { gutterClass += `${blockName}--gutter-${this.gutter} `; }
         bpArr.forEach((bp) => {
-          if (this[`gutter${bp}`]) { gutterClass += `${blockName}--gutter-${this[`gutter${bp}`]}-${bp.toLowerCase()} `; }
+          if (this[`gutter${bp}`]) { gutterClass += `${blockName}--gutter-${this[`gutter${bp}`]}@${bp.toLowerCase()} `; }
         });
         return gutterClass;
       },
       wrapClass() {
         let wrapClass = '';
         bpArr.forEach((bp) => {
-          if (this[`wrap${bp}`]) { wrapClass += `${blockName}--wrap-${bp.toLowerCase()} `; }
+          if (this[`wrap${bp}`]) { wrapClass += `${blockName}--wrap@${bp.toLowerCase()} `; }
         });
         return wrapClass;
       },
@@ -290,7 +295,7 @@
         let wrapClass = '';
         if (this.nowrap) { wrapClass += `${blockName}--noWrap `; }
         bpArr.forEach((bp) => {
-          if (this[`nowrap${bp}`]) { wrapClass += `${blockName}--noWrap-${bp.toLowerCase()} `; }
+          if (this[`nowrap${bp}`]) { wrapClass += `${blockName}--noWrap@${bp.toLowerCase()} `; }
         });
         return wrapClass;
       },

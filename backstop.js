@@ -12,34 +12,11 @@ files.forEach((file) => {
   defs = defs.concat(require(file));
 });
 
-
-function createSelectorObj(def, selector, onReadyScript) {
-  const rObj = {};
-  _.forOwn(def, (value, key) => {
-    if (key === 'selectors') {
-      rObj[key] = [selector];
-    } else {
-      rObj[key] = value;
-    }
-  });
-  if (onReadyScript) {
-    rObj.label = `${def.label}_${onReadyScript}`;
-    rObj.onReadyScript = onReadyScript;
-  }
-  return rObj;
-}
-
 defs.forEach((def) => {
-  def.url = 'http://localhost:8080';
-  if (_.has(def, 'onReadyScripts')) {
-    def.selectors.forEach((selector) => {
-      def.onReadyScripts.forEach((script) => {
-        scenarios.push(createSelectorObj(def, selector, script));
-      });
-    });
-  } else {
-    scenarios.push(def);
-  }
+  const locDef = def;
+  locDef.url = 'http://localhost:8080';
+  locDef.readyEvent = null;
+  scenarios.push(locDef);
 });
 
 module.exports = {

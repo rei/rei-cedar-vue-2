@@ -33,12 +33,6 @@
         const modifiers = this.modifier ? this.modifier.split(' ') : [];
         return modifiers.indexOf('link') >= 0 ? 'cdr-link' : 'cdr-button';
       },
-      newRel() {
-        if (this.target === '_blank') {
-          return this.rel || 'noopener';
-        }
-        return this.rel;
-      },
     },
   };
 </script>

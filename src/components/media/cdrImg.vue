@@ -43,7 +43,8 @@ export default {
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**
-     * Area to crop the image overflow to (can be combined with ratio).
+     * Requires ratio.
+     * Area to crop the image overflow to.
      * {top, y-center, bottom} {left, x-center, right}
      */
     crop: {

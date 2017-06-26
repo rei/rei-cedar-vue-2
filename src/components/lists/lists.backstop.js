@@ -2,10 +2,9 @@ module.exports = [
   {
     label: 'Lists',
     selectors: [
-      "[data-backstop='cdr-list--menu']",
+      "[data-backstop='lists']",
     ],
-    readyEvent: null,
-    delay: 100,
+    delay: 0,
     misMatchThreshold: 0.1,
   },
 ];
