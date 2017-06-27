@@ -1,25 +1,75 @@
-const baseConfig = require('./build/webpack.base.conf.js');
-const merge = require('webpack-merge');
+const ReplacePlugin = require('replace-bundle-webpack-plugin');
+
+// Webpack configs
+const devConfig = require('./build/webpack.dev.conf.js');
+const prodConfig = require('./build/webpack.prod.conf.js');
+// Index templates
+const devIndex = './styleguide/dev-index.ejs';
+const prodIndex = './styleguide/prod-index.ejs';
+
+let webpConfig;
+let indexTemplate;
+
+// Set the correct values for dev vs prod environemnt
+if (process.env.NODE_ENV === 'development') {
+  delete devConfig.plugins;
+  devConfig.plugins = [];
+  // for replacing urls that are different between dev and gh-pages
+  const rename = new ReplacePlugin([{
+    partten: /\/static\//g,
+    replacement() {
+      return '/';
+    },
+  }]);
+  devConfig.plugins.push(rename);
+  webpConfig = devConfig;
+
+  indexTemplate = devIndex;// dev index.html
+} else if (process.env.NODE_ENV === 'production') {
+  // for replacing urls that are different between dev and gh-pages
+  const rename = new ReplacePlugin([{
+    partten: /\/static\//g,
+    replacement() {
+      return '/rei-cedar/static/';
+    },
+  }]);
+  prodConfig.plugins.push(rename);
+  webpConfig = prodConfig;
+
+  indexTemplate = prodIndex; // prod index.html
+}
 
 module.exports = {
-  components: './src/components/**/*.vue',
+  webpackConfig: webpConfig,
   require: [
     './src/css/main.postcss',
   ],
   assetsDir: './static',
   highlightTheme: 'monokai',
-  webpackConfig: merge(baseConfig, {
-    module: {
-      rules: [
+  styleguideDir: './dist-docs',
+  template: indexTemplate,
+  sections: [
+    {
+      name: 'Introduction',
+      content: 'docs/Introduction.md',
+    },
+    {
+      name: 'Documentation',
+      sections: [
         {
-          test: /\.postcss$/,
-          use: [
-            'style-loader',
-            'css-loader?importLoaders=1',
-            'postcss-loader',
-          ],
+          name: 'Installation',
+          content: 'docs/Installation.md',
+        },
+        {
+          name: 'Configuration',
+          content: 'docs/Configuration.md',
         },
       ],
     },
-  }),
+    {
+      name: 'Components',
+      content: 'docs/Components.md',
+      components: 'src/components/**/*.vue',
+    },
+  ],
 };
