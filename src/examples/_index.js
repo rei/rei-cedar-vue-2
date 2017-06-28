@@ -8,6 +8,7 @@ import buttons from './buttons/Buttons';
 import images from './media/Images';
 import mountains from './mountain/Mountains';
 import inputs from './forms/Inputs';
+import selects from './forms/Selects';
 
 export default {
   test,
@@ -20,4 +21,5 @@ export default {
   images,
   mountains,
   inputs,
+  selects,
 };
