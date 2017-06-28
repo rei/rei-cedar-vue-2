@@ -21,23 +21,22 @@
           <p>Issaquah Alps, WA</p>
         </cdr-media-object>
        </cdr-col>
-      </cdr-col>
-      <cdr-col span="2">
-        <cdr-media-object
-          media-figure="http://placehold.it/250x50"
-          media-img-shape="circle responsive"
-          modifier="top"
-          media-align="center"
-          level="3"
-          media-title="Rounded image shape">
-          <p>Issaquah Alps, WA</p>
-        </cdr-media-object>
+    </cdr-col>
+    <cdr-col span="2">
+      <cdr-media-object
+        media-figure="http://placehold.it/250x50"
+        media-img-shape="circle responsive"
+        modifier="top center"
+        level="3"
+        media-title="Rounded image shape">
+        <p>Issaquah Alps, WA</p>
+      </cdr-media-object>
       </cdr-col>
       <cdr-col span="2">
         <cdr-media-object
           media-figure="http://placehold.it/250x50"
           media-img-shape="rounded responsive"
-          modifier="top"
+          modifier="top right"
           media-align="right"
           level="3"
           media-title="Rounded image shape">

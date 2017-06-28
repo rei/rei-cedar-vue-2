@@ -22,20 +22,19 @@
 </template>
 
 <script>
-  import Components from '../../components/_index';
   import figurePlacement from './demos/figurePlacement';
   import mediaObjectFlux from './demos/mediaObjectFlux';
   import mediaOverlay from './demos/mediaOverlay';
   import mediaShapeAlign from './demos/mediaShapeAlign';
 
 
-  Components.figurePlacement = figurePlacement;
-  Components.mediaObjectFlux = mediaObjectFlux;
-  Components.mediaOverlay = mediaOverlay;
-  Components.mediaShapeAlign = mediaShapeAlign;
-
   export default {
     name: 'mediaObject',
-    components: Components,
+    components: {
+      figurePlacement,
+      mediaObjectFlux,
+      mediaOverlay,
+      mediaShapeAlign,
+    },
   };
 </script>
