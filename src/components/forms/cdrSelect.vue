@@ -10,16 +10,44 @@
       };
     },
     props: {
+      /** @ignore */
       value: {
         required: false,
       },
+      /**
+       * Label text.
+      */
       label: String,
+      /**
+       * id for the select that is mapped to the label 'for' attribute.
+       * If one is not provided, it will be generated.
+      */
       id: String,
+      /**
+       * Sets disabled attribute on the select.
+      */
       disabled: Boolean,
+      /**
+       * Sets required attribute on the select.
+      */
       required: Boolean,
+      /**
+       * Sets autofocus attribute on the select.
+      */
       autofocus: Boolean,
+      /**
+       * Sets multiple attribute on the select.
+      */
       multiple: Boolean,
+      /**
+       * Removes the label element but sets the select 'aria-label' to `label` text for a11y.
+      */
       hideLabel: Boolean,
+      /**
+       * Adds an option that is disabled and selected by default to serve as a 'placeholder'
+      */
+      prompt: String,
+
     },
     computed: {
       // Use given id or generate one
@@ -30,10 +58,12 @@
     methods: {
       onChange(e) {
         this.val = e.target.value;
+        console.log(e);
         this.$emit('input', e.target.value);
       },
       genSelect() {
         const tag = 'select';
+        const options = [];
 
         const data = {
           class: {
@@ -63,7 +93,18 @@
         if (this.name) data.attrs.name = this.name;
         if (this.form) data.attrs.form = this.form;
 
-        const children = [this.$createElement(tag, data, this.$slots.default)];
+        if (this.prompt) {
+          options.push(this.$createElement('option', {
+            domProps: {
+              selected: true,
+              disabled: true,
+            },
+          }, this.prompt));
+        }
+
+        options.push(this.$slots.default);
+
+        const children = [this.$createElement(tag, data, options)];
 
         return children;
       },
