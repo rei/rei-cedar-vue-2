@@ -397,6 +397,6 @@
   name: icon-rei-video
   title: Video camera
   description: For use on an image to show it has a video available.
-  size: icon-size-lg
-  designSize: 20px
+  size: icon-size-md
+  designSize: 14px
   note:
