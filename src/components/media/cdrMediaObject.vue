@@ -6,8 +6,9 @@
     :ratio="ratio"
     :crop="crop"
     class="cdr-media-object__figure"
-    :modifier="mediaImgShape"></cdr-img>
-    <div class="cdr-media-object__body">
+    :modifier="mediaImgShape"
+    :style="mediaWidth"></cdr-img>
+    <div class="cdr-media-object__body" :class="alignClass">
       <cdr-heading :level="level">
           <slot name="title" v-if="!mediaUrl"><span class="cdr-card__title">{{mediaTitle}}</span></slot>
           <slot name="title" v-else><a class="cdr-card__title cdr-card__title__link" :href="mediaUrl">{{mediaTitle}}</a></slot>
@@ -45,6 +46,17 @@ export default {
     * Replaces the default slot with the body copy for your Media Object
     **/
     mediaBody: String,
+    width: String,
+    /**
+    * Allows you to align your text
+    **/
+    mediaAlign: {
+      type: String,
+      validator: value => ([
+        'right',
+        'left',
+        'center'].indexOf(value) >= 0) || false,
+    },
     /**
     * Image path
     **/
@@ -55,19 +67,7 @@ export default {
     /**
     * Ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
     **/
-    ratio: {
-      type: String,
-      validator: value => ([
-        'square',
-        '1-2',
-        '2-3',
-        '3-4',
-        '9-16',
-        '2-1',
-        '3-2',
-        '4-3',
-        '16-9'].indexOf(value) >= 0) || false,
-    },
+    ratio: String,
     /**
     * crop  string
     * Area to crop the image overflow to (can be combined with ratio).
@@ -89,19 +89,14 @@ export default {
     baseClass() {
       return 'cdr-media-object';
     },
-    ratioClass() {
-      return `cdr-media-frame--${this.ratio}`;
+    alignClass() {
+      if (this.mediaAlign) {
+        return `cdr-media-object__body--${this.mediaAlign}`;
+      }
+      return '';
     },
-    cropClass() {
-      const base = 'cdr-media-frame';
-      const cropArr = this.crop ? this.crop.split(' ') : [];
-
-      let final = '';
-
-      cropArr.forEach((crop) => {
-        final += `${base}--${crop} `;
-      });
-      return final;
+    mediaWidth() {
+      return `width: ${this.width};`;
     },
   },
 };

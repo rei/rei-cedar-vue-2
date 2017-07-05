@@ -1,13 +1,14 @@
 <template>
   <div id="app" class="container-fluid">
     <h1>Cedar Proving grounds</h1>
-        
+
     <images></images>
     <icons data-backstop="icons"></icons>
     <headings data-backstop="headings"></headings>
     <anchors data-backstop="anchors"></anchors>
     <buttons data-backstop="buttons"></buttons>
     <lists data-backstop="lists"></lists>
+    <mediaObject></mediaObject>
     <selects data-backstop="selects"></selects>
     <inputs data-backstop="inputs"></inputs>
     <grid></grid>
@@ -36,5 +37,5 @@
 </script>
 
 <style scoped>
-  
+
 </style>

@@ -2,7 +2,7 @@ Used for grouping buttons. Buttons are full width at smallest breakpoint.
 
 ### Modifiers
 add 
-{top, right,bottom, overlay, block, stretch}
+{top, right, bottom, center, overlay, block, stretch}
 <table class="table-0-31">
 <thead class="tableHead-0-32">
 <tr>
@@ -27,6 +27,12 @@ add
 <td class="cell-0-33"><span class="name-0-42"><code class="code-0-44">bottom</code></span></td>
 <td class="cell-0-33 cellDesc-0-35">
 <div><p class="p-0-55 para-0-47">Media figure displays below the Media body</p></div>
+</td>
+</tr>
+<tr>
+<td class="cell-0-33"><span class="name-0-42"><code class="code-0-44">Center</code></span></td>
+<td class="cell-0-33 cellDesc-0-35">
+<div><p class="p-0-55 para-0-47">Can be stacked with other alignment modifiers and will center the Media figure.</p></div>
 </td>
 </tr>
 <tr>
@@ -103,7 +109,7 @@ add
 #### Media Object overlay
 ```
   <cdr-media-object
-    media-figure="http://placehold.it/350x150"
+    media-figure="http://placehold.it/350x150/212121/222222"
     media-url="http://rei.com"
     media-title="Backpacking Tents: How to Choose"
     level="2"
