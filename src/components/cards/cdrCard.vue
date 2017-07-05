@@ -7,7 +7,7 @@
     </template>
 
     <!-- Card Standard Blocks-->
-    <section :class="contentWrapperClassA">
+    <section class="cdr-card__body":class="contentWrapperClassA">
         <slot></slot>
     </section>
     <section :class="contentWrapperClassB">
@@ -33,18 +33,45 @@ export default {
   name: 'cdr-card',
   mixins: [modifier],
   props: {
+    /**
+    * Use this property to asign a wrapper class
+    * (empty, cdr-card__block, cdr-card__block--media)
+    * to the parent wrapper of the default slot
+    **/
     contentWrapperClassA: String,
+    /**
+    *  Use this property to asign a wrapper class
+    * to the bodyB slot parent
+    **/
     contentWrapperClassB: String,
+    /**
+    *  Use this property to asign a wrapper
+    * class to the bodyC slot parent
+    **/
     contentWrapperClassC: String,
+    /**
+    *  set to true if you need a footer element on your card
+    **/
     footer: {
       type: Boolean,
       default: false,
     },
+    /**
+    *  Use this property to asign it a wrapper
+    * class to the footer slot parent
+    **/
     footerClass: String,
+    /**
+    *  set to true if you need a header element on your card
+    **/
     header: {
       type: Boolean,
       default: false,
     },
+    /**
+    *  Use this property to asign it a wrapper
+    * class to the header slot parent
+    **/
     headerClass: String,
   },
   computed: {
