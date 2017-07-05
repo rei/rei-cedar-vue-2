@@ -55,7 +55,8 @@
       */
       hideLabel: Boolean,
       /**
-       * Adds an option that is disabled and selected by default to serve as a 'placeholder'
+       * Adds an option that is disabled and selected by default to serve
+       * as a 'placeholder' for the select.
       */
       prompt: String,
       /**
