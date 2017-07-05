@@ -17,7 +17,10 @@
       /**
        * Label text.
       */
-      label: String,
+      label: {
+        type: String,
+        required: true,
+      },
       /**
        * id for the select that is mapped to the label 'for' attribute.
        * If one is not provided, it will be generated.
@@ -55,6 +58,14 @@
        * Adds an option that is disabled and selected by default to serve as a 'placeholder'
       */
       prompt: String,
+      /**
+       * Build options programatically with data.
+       * Array of objects [{ text: String, value: String}] to give greater control.
+       * Array of strings ['String'] for simpler setup (value and text will be the same).
+      */
+      options: {
+        type: Array,
+      },
 
     },
     computed: {
@@ -89,7 +100,7 @@
       },
       genSelect() {
         const tag = 'select';
-        const options = [];
+        const selectOptions = [];
 
         const data = {
           class: {
@@ -123,7 +134,7 @@
         if (this.form) data.attrs.form = this.form;
 
         if (this.prompt) {
-          options.push(this.$createElement('option', {
+          selectOptions.push(this.$createElement('option', {
             domProps: {
               disabled: true,
               hidden: !this.multiple,
@@ -132,9 +143,28 @@
           }, this.prompt || ''));
         }
 
-        options.push(this.$slots.default);
+        if (this.options) {
+          this.options.forEach((o) => {
+            let text = '';
+            let val = '';
+            if (typeof o === 'string') {
+              text = o;
+              val = o;
+            } else {
+              text = o.text;
+              val = o.value;
+            }
+            selectOptions.push(this.$createElement('option', {
+              domProps: {
+                value: val,
+              },
+            }, text));
+          });
+        }
 
-        const children = [this.$createElement(tag, data, options)];
+        selectOptions.push(this.$slots.default);
+
+        const children = [this.$createElement(tag, data, selectOptions)];
 
         return children;
       },

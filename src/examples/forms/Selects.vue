@@ -1,6 +1,14 @@
 <template>
   <div>
-    <cdr-select label="Prompt" v-model="selected" @input="inputMethod" prompt="Choose one" name="test1">
+    <cdr-select label="Prompt" v-model="selected" @input="inputMethod" prompt="Choose one">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </cdr-select>
+    <p>Selected: {{selected}}</p>
+
+    <cdr-select label="Hidden label text" hideLabel v-model="selected" @input="inputMethod" prompt="Hidden label">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -45,7 +53,7 @@ export default {
       selected: '',
       selected2: '1',
       multiple: ['1', '2'],
-      multiple2: ['3', '4'],
+      multiple2: [],
     };
   },
   methods: {
