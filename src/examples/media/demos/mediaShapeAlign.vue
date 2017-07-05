@@ -59,7 +59,6 @@
           media-figure="http://placehold.it/50x50"
           media-img-shape="circle"
           modifier="bottom"
-          media-align="bottom"
           level="3"
           media-title="Thumbnail image shape">
           <p>Issaquah Alps, WA</p>
