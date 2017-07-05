@@ -299,149 +299,77 @@
       },
 // ROW PROPS EXPOSED HERE -- they are ignored in the docs for cdr-col
       /** @ignore */
-      cols: {
-        type: String,
-      },
+      cols: String,
       /** @ignore */
-      colsMd: {
-        type: String,
-      },
+      colsMd: String,
       /** @ignore */
-      colsLg: {
-        type: String,
-      },
+      colsLg: String,
       /** @ignore */
-      colsXl: {
-        type: String,
-      },
+      colsXl: String,
       /** @ignore */
-      colsXxl: {
-        type: String,
-      },
+      colsXxl: String,
       /** @ignore */
-      justify: {
-        type: String,
-      },
+      justify: String,
       /** @ignore */
-      justifyMd: {
-        type: String,
-      },
+      justifyMd: String,
       /** @ignore */
-      justifyLg: {
-        type: String,
-      },
+      justifyLg: String,
       /** @ignore */
-      justifyXl: {
-        type: String,
-      },
+      justifyXl: String,
       /** @ignore */
-      justifyXxl: {
-        type: String,
-      },
+      justifyXxl: String,
       /** @ignore */
-      align: {
-        type: String,
-      },
+      align: String,
       /** @ignore */
-      alignMd: {
-        type: String,
-      },
+      alignMd: String,
       /** @ignore */
-      alignLg: {
-        type: String,
-      },
+      alignLg: String,
       /** @ignore */
-      alignXl: {
-        type: String,
-      },
+      alignXl: String,
       /** @ignore */
-      alignXxl: {
-        type: String,
-      },
+      alignXxl: String,
       /** @ignore */
-      gutter: {
-        type: String,
-      },
+      gutter: String,
       /** @ignore */
-      gutterMd: {
-        type: String,
-      },
+      gutterMd: String,
       /** @ignore */
-      gutterLg: {
-        type: String,
-      },
+      gutterLg: String,
       /** @ignore */
-      gutterXl: {
-        type: String,
-      },
+      gutterXl: String,
       /** @ignore */
-      gutterXxl: {
-        type: String,
-      },
+      gutterXxl: String,
       /** @ignore */
-      vertical: {
-        type: Boolean,
-      },
+      vertical: Boolean,
       /** @ignore */
-      verticalMd: {
-        type: Boolean,
-      },
+      verticalMd: Boolean,
       /** @ignore */
-      verticalLg: {
-        type: Boolean,
-      },
+      verticalLg: Boolean,
       /** @ignore */
-      verticalXl: {
-        type: Boolean,
-      },
+      verticalXl: Boolean,
       /** @ignore */
-      verticalXxl: {
-        type: Boolean,
-      },
+      verticalXxl: Boolean,
       /** @ignore */
-      wrap: {
-        type: Boolean,
-      },
+      wrap: Boolean,
       /** @ignore */
-      wrapMd: {
-        type: Boolean,
-      },
+      wrapMd: Boolean,
       /** @ignore */
-      wrapLg: {
-        type: Boolean,
-      },
+      wrapLg: Boolean,
       /** @ignore */
-      wrapXl: {
-        type: Boolean,
-      },
+      wrapXl: Boolean,
       /** @ignore */
-      wrapXxl: {
-        type: Boolean,
-      },
+      wrapXxl: Boolean,
       /** @ignore */
-      nowrap: {
-        type: Boolean,
-      },
+      nowrap: Boolean,
       /** @ignore */
-      nowrapMd: {
-        type: Boolean,
-      },
+      nowrapMd: Boolean,
       /** @ignore */
-      nowrapLg: {
-        type: Boolean,
-      },
+      nowrapLg: Boolean,
       /** @ignore */
-      nowrapXl: {
-        type: Boolean,
-      },
+      nowrapXl: Boolean,
       /** @ignore */
-      nowrapXxl: {
-        type: Boolean,
-      },
+      nowrapXxl: Boolean,
       /** @ignore */
-      type: {
-        type: String,
-      },
+      type: String,
     },
     inject: ['rowType'],
     computed: {

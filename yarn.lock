@@ -970,9 +970,9 @@ backo2@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/backo2/-/backo2-1.0.2.tgz#31ab1ac8b129363463e35b3ebb69f4dfcfba7947"
 
-backstopjs@^2.7.3:
-  version "2.7.5"
-  resolved "https://registry.yarnpkg.com/backstopjs/-/backstopjs-2.7.5.tgz#b5e706119d2b51a773b353b84556aa0e61c0253b"
+backstopjs@2.7.3:
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/backstopjs/-/backstopjs-2.7.3.tgz#4a977ab0cdddc02595718706572db34b24c7ee39"
   dependencies:
     casperjs "^1.1.0-beta5"
     chalk "^1.1.3"
@@ -5247,13 +5247,6 @@ markdown-escapes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.0.tgz#c8ca19f1d94d682459e0a93c86db27a7ef716b23"
 
-markdown-loader@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/markdown-loader/-/markdown-loader-2.0.0.tgz#421862d38c4224fd3615eb648017ea385b562d78"
-  dependencies:
-    loader-utils "^0.2.16"
-    marked "^0.3.6"
-
 markdown-table@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.0.tgz#1f5ae61659ced8808d882554c32e8b3f38dd1143"
@@ -5267,7 +5260,7 @@ markdown-to-jsx@^5.3.3:
     remark-parse "^3.0.0"
     unified "^6.1.2"
 
-marked@^0.3.6, marked@~0.3.6:
+marked@~0.3.6:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
 
@@ -8804,9 +8797,9 @@ vue-add-globals@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/vue-add-globals/-/vue-add-globals-1.0.1.tgz#151f241426e70cbc790a1f31bb0f4435d7575efc"
 
-vue-docgen-api@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-2.0.2.tgz#2afc5b3cd88ef4c24fac3e4a9c31f20a74b8f394"
+vue-docgen-api@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/vue-docgen-api/-/vue-docgen-api-2.0.4.tgz#2f390c1c1380633bfb6b0856f97a3468151c2c9f"
   dependencies:
     babel-core "^6.25.0"
     babel-plugin-transform-object-rest-spread "^6.23.0"
@@ -8814,6 +8807,7 @@ vue-docgen-api@^2.0.2:
     babel-preset-env "^1.5.2"
     babel-preset-es2015 "^6.24.1"
     babel-preset-flow "^6.23.0"
+    babel-preset-stage-2 "^6.24.1"
     doctrine "^2.0.0"
     enhanced-require "^0.5.0-beta6"
     hash-sum "^1.0.2"
@@ -8855,9 +8849,9 @@ vue-style-loader@^3.0.0, vue-style-loader@^3.0.1:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-styleguidist@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-1.1.5.tgz#cd24190201e757e264c4f0f793914ac06803e6ae"
+vue-styleguidist@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/vue-styleguidist/-/vue-styleguidist-1.1.6.tgz#9e9494f2fc7e97eca58d0d7878a9167074c02d25"
   dependencies:
     ast-types "^0.9.11"
     buble "^0.15.2"
@@ -8907,7 +8901,7 @@ vue-styleguidist@^1.1.5:
     type-detect "^4.0.3"
     unist-util-visit "^1.1.1"
     vue "^2.3.4"
-    vue-docgen-api "^2.0.2"
+    vue-docgen-api "^2.0.4"
     vue-webpack-loaders "^1.0.4"
     vuex "^2.3.1"
     webpack-dev-server "^1.16.3"
