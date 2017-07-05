@@ -28,6 +28,10 @@
       */
       disabled: Boolean,
       /**
+       * Sets name attribute of the select.
+      */
+      name: String,
+      /**
        * Sets required attribute on the select.
       */
       required: Boolean,
@@ -39,6 +43,10 @@
        * Sets multiple attribute on the select.
       */
       multiple: Boolean,
+      /**
+       * The number of options to show.
+      */
+      size: String,
       /**
        * Removes the label element but sets the select 'aria-label' to `label` text for a11y.
       */
@@ -55,11 +63,29 @@
         return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
       },
     },
+    mounted() {
+      // initialize options as selected if multiple
+      if (this.multiple) {
+        const opts = Array.from(this.$refs.select.options);
+        opts.forEach((opt) => {
+          const o = opt;
+          if (this.val.indexOf(o.value) !== -1) {
+            o.selected = true;
+          }
+        });
+      }
+    },
     methods: {
       onChange(e) {
-        this.val = e.target.value;
-        console.log(e);
-        this.$emit('input', e.target.value);
+        if (this.multiple) {
+          const optArr = Array.from(e.target.options);
+          const selected = optArr.filter(o => o.selected === true).map(o => o.value);
+          this.val = e.target.value;
+          this.$emit('input', selected);
+        } else {
+          this.val = e.target.value;
+          this.$emit('input', e.target.value);
+        }
       },
       genSelect() {
         const tag = 'select';
@@ -68,6 +94,7 @@
         const data = {
           class: {
             'cdr-select': true,
+            'cdr-select--size': parseInt(this.size, 10) > 0,
           },
           domProps: {
             id: this.selectId,
@@ -76,6 +103,8 @@
             value: this.val,
             autofocus: this.autofocus,
             multiple: this.multiple,
+            size: this.size,
+            name: this.name,
           },
           attrs: {
             tabindex: this.tabindex,
@@ -96,10 +125,11 @@
         if (this.prompt) {
           options.push(this.$createElement('option', {
             domProps: {
-              selected: true,
               disabled: true,
+              hidden: !this.multiple,
+              value: '',
             },
-          }, this.prompt));
+          }, this.prompt || ''));
         }
 
         options.push(this.$slots.default);
@@ -128,15 +158,12 @@
       },
       genInputGroup(select, dataArg = {}) {
         const children = [];
-        // const wrapperChildren = [];
         let data = dataArg;
 
-        const inputGroupClasses = Object.assign({
-          'cdr-input-group': true,
-        });
-
         data = Object.assign({}, {
-          class: inputGroupClasses,
+          class: {
+            'cdr-input-group': true,
+          },
         }, data);
 
         // Add label
@@ -144,16 +171,8 @@
           children.push(this.genLabel());
         }
 
+        // add select
         children.push(select);
-        // wrapperChildren.push(input);
-
-        // children.push(
-        //   this.$createElement('div', {
-        //     class: {
-        //       'cdr-input-validation': true,
-        //     },
-        //   }, wrapperChildren),
-        // );
 
         return this.$createElement('div', data, children);
       },

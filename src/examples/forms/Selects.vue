@@ -1,19 +1,36 @@
 <template>
   <div>
-    <cdr-select v-model="selected" @input="inputMethod" prompt="Choose one">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
+    <cdr-select label="Prompt" v-model="selected" @input="inputMethod" prompt="Choose one" name="test1">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
     </cdr-select>
     <p>Selected: {{selected}}</p>
-    <cdr-select v-model="multiple" multiple @input="inputMethod" prompt="Choose one">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
+
+    <cdr-select label="No Prompt" v-model="selected2" @input="inputMethod">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
     </cdr-select>
-    <p>multiple: {{multiple}}</p>
+    <p>Selected: {{selected2}}</p>
+
+    <cdr-select label="Multiple Prompt" v-model="multiple" multiple size="4" @input="inputMethod" prompt="Choose two">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </cdr-select>
+    <p>selected: {{multiple}}</p>
+
+    <cdr-select label="Multiple No Prompt" v-model="multiple2" multiple size="4" @input="inputMethod">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </cdr-select>
+    <p>selected: {{multiple2}}</p>
   </div>
 </template>
 
@@ -26,12 +43,14 @@ export default {
   data() {
     return {
       selected: '',
-      multiple: [],
+      selected2: '1',
+      multiple: ['1', '2'],
+      multiple2: ['3', '4'],
     };
   },
   methods: {
-    inputMethod(e) {
-      console.log('input event', e);
+    inputMethod(v) {
+      console.log('input', v);
     },
   },
 };
