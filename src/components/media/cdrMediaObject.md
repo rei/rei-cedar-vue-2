@@ -1,4 +1,4 @@
-Used for grouping buttons. Buttons are full width at smallest breakpoint.
+The Media Object allows you to group small amounts of like content is a small amount of markup. The examples below show some of the may visual displays available to this component.
 
 ### Modifiers
 add 
