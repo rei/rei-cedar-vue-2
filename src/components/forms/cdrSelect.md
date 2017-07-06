@@ -8,6 +8,8 @@
 ### Examples
 
 ```
+const selected = '';
+const multiple = [];
 const multipleData = ['a', 'b', 'c', 'd'];
 
 <div>
