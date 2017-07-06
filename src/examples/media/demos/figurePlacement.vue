@@ -37,7 +37,6 @@
         media-title="Media Figure on bottom"
         level="2"
         modifier="bottom"
-        media-align="bottom"
         media-body="Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia nostra.">
       </cdr-media-object>
     </cdr-col>

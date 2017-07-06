@@ -9,6 +9,7 @@ import images from './media/Images';
 import mediaObject from './media/mediaObject';
 import mountains from './mountain/Mountains';
 import inputs from './forms/Inputs';
+import selects from './forms/Selects';
 
 export default {
   test,
@@ -22,4 +23,5 @@ export default {
   mediaObject,
   mountains,
   inputs,
+  selects,
 };
