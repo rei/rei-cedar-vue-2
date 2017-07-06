@@ -56,6 +56,15 @@ describe('cdrInput.vue', () => {
     });
     expect(wrapper.vm.$refs.input.id).to.equal(wrapper.vm.$refs.label.htmlFor);
   });
+  
+  it('generates an id correctly', () => {
+    const wrapper = mount(inputComp, {
+      propsData: {
+        label: 'testing',
+      },
+    });
+    expect(wrapper.vm.$refs.input.id).to.equal(wrapper.vm._uid.toString());
+  });
 
   it('renders an input element', () => {
     const wrapper = mount(inputComp, {
