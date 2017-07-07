@@ -26,5 +26,5 @@ export default {
   mediaObject,
   mountains,
   selects,
-  test,
+  test, // only used as example for e2e test
 };
