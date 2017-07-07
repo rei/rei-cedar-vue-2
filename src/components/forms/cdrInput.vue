@@ -125,9 +125,7 @@ export default {
       default: 0,
     },
     /** @ignore */
-    immediateValidate: {
-      type: Boolean,
-    },
+    immediateValidate: Boolean,
     /** @ignore */
     value: {
       required: false,
