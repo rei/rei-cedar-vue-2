@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import selectComp from '@/components/forms/cdrSelect';
+import selectComp from '@/components/select/cdrSelect';
 
 describe('cdrSelect.vue', () => {
   it('renders a label element', () => {

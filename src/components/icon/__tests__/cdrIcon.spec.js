@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import cdrIcon from '@/components/icons/cdrIcon';
+import cdrIcon from '@/components/icon/cdrIcon';
 
 describe('cdrIcon.vue', () => {
   it('renders an svg', () => {

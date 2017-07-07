@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import cdrImg from '@/components/media/cdrImg';
+import cdrImg from '@/components/image/cdrImg';
 
 describe('cdrImg.vue', () => {
   it('renders an img', () => {
