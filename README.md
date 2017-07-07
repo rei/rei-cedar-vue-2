@@ -169,18 +169,21 @@ config                          #Configuration files used in the webpack build s
 src/                            #Source files
 |-- assets/                     #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
 |-- components/                 #All things components
-  |-- __tests__/                #Unit tests for components
-    |-- *.spec.js               #Unit test files -- karma looks for them with this pattern
-  |-- **/*.backstop.js          #Config files for backstop visual regression testing
+  |-- <component>               #Any component
+    |-- __tests__/              #Unit tests for components
+      |-- *.spec.js             #Unit test files -- karma looks for them with this pattern
+    |-- examples/               #Examples of the component used in the proving grounds for backstop testing
+    |-- **/*.backstop.js        #Config files for backstop visual regression testing
 |-- css/                        #All things css
-    |-- components/             #CSS files for component styles
-    |-- directives/             #CSS files for directives
-    |-- generic/                #Reset and normalize styles. Also general styles that are related to large layout.
-    |-- settings/               #Values and variables that are consumed in other files.
-      |-- component-variables/  #Values and variables that are consumed in component css.
-    |-- themes/                 #Might be used for vertical and/or horizontal themes in the future.
+  |-- components/               #CSS files for component styles
+  |-- directives/               #CSS files for directives
+  |-- generic/                  #Reset and normalize styles. Also general styles that are related to large layout.
+  |-- settings/                 #Values and variables that are consumed in other files.
+    |-- component-variables/    #Values and variables that are consumed in component css.
+  |-- themes/                   #Might be used for vertical and/or horizontal themes in the future.
 |-- directives/                 #All things directives
-|-- examples/                   #Everything for demos/docs/testing of components and directives
+  |-- <directive>               #Any directive directory
+    |-- examples/               #Examples of the directive used in the proving grounds for backstop testing
 |-- utils/                      #Helper js files for things like debounce
 |-- app.vue                     #The component/directive catalog for building and regression testing
 |-- dev.js                      #Webpack entry point for everything !release

@@ -22,7 +22,7 @@
   import Components from './components/_index';
   import Directives from './directives/_index';
   // add examples
-  import examples from './examples/_index';
+  import examples from './components/examples';
 
   Object.keys(examples).forEach((key) => {
     Components[key] = examples[key];
