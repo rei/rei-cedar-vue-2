@@ -5,6 +5,7 @@
     :src="mediaFigure"
     :ratio="ratio"
     :crop="crop"
+    :utiliy-radius="utiliyRadius"
     class="cdr-media-object__figure"
     :modifier="mediaImgShape"
     :style="mediaWidth"></cdr-img>
@@ -68,6 +69,7 @@ export default {
     * Ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
     **/
     ratio: String,
+    utiliyRadius: String,
     /**
     * crop  string
     * Area to crop the image overflow to (can be combined with ratio).

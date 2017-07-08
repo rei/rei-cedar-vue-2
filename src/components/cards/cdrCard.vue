@@ -7,14 +7,29 @@
     </template>
 
     <!-- Card Standard Blocks-->
-    <section class="cdr-card__body":class="contentWrapperClassA">
+    <template v-if="contentAGutter">
+    <section :class="[wrapperA, gutterAClass]">
         <slot></slot>
     </section>
-    <section :class="contentWrapperClassB">
+    </template>
+    <section v-else :class="wrapperA">
+        <slot></slot>
+    </section>
+     <template v-if="contentBGutter">
+    <section :class="[wrapperB, gutterAClass]">
         <slot name="bodyB"></slot>
     </section>
-    <section :class="contentWrapperClassC">
+    </template>
+    <section v-else :class="wrapperB">
+        <slot></slot>
+    </section>
+     <template v-if="contentCGutter">
+    <section :class="[wrapperC, gutterAClass]">
         <slot name="bodyC"></slot>
+    </section>
+    </template>
+    <section v-else :class="wrapperC">
+        <slot></slot>
     </section>
 
     <template v-if="footer">
@@ -38,17 +53,41 @@ export default {
     * (empty, cdr-card__block, cdr-card__block--media)
     * to the parent wrapper of the default slot
     **/
-    contentWrapperClassA: String,
+    wrapperA: String,
+    contentAGutter: {
+      type: String,
+      validator: value => ([
+        'top',
+        'right',
+        'bottom',
+        'left'].indexOf(value) >= 0) || false,
+    },
     /**
     *  Use this property to asign a wrapper class
     * to the bodyB slot parent
     **/
-    contentWrapperClassB: String,
+    wrapperB: String,
+    contentBGutter: {
+      type: String,
+      validator: value => ([
+        'top',
+        'right',
+        'bottom',
+        'left'].indexOf(value) >= 0) || false,
+    },
     /**
     *  Use this property to asign a wrapper
     * class to the bodyC slot parent
     **/
-    contentWrapperClassC: String,
+    wrapperC: String,
+    contentCGutter: {
+      type: String,
+      validator: value => ([
+        'top',
+        'right',
+        'bottom',
+        'left'].indexOf(value) >= 0) || false,
+    },
     /**
     *  set to true if you need a footer element on your card
     **/
@@ -77,6 +116,15 @@ export default {
   computed: {
     baseClass() {
       return 'cdr-card';
+    },
+    gutterAClass() {
+      return `cdr-card__block--remove-gutter--${this.contentAGutter}`;
+    },
+    gutterBClass() {
+      return `cdr-card__block--remove-gutter--${this.contentBGutter}`;
+    },
+    gutterCClass() {
+      return `cdr-card__block--remove-gutter--${this.contentCGutter}`;
     },
   },
 };

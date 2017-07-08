@@ -1,21 +1,72 @@
+.cdr-add-radius--top {
+  border-radius: var(--radius-emphasis) var(--radius-emphasis) 0 0;
+}
+
+
+
 .cdr-card {
-  @apply --glaze-light-10;
-  @apply --decoration-radius-emphasis;
-
+  background-color: var(--color-light-10-background);
+  border-color: var(--color-light-10-border);
+  border-radius: var(--radius-emphasis);
   box-shadow: 0 0.2rem 0.3rem 0 rgba(0, 0, 0, 0.3);
+  color: var(--color-light-10-color);
   width: 100%;
-
-  &__body > .cdr-image {
-    border-radius: var(--radius-emphasis) var(--radius-emphasis) 0 0;
-  }
 
   &__block {
     padding: 1.6rem;
     display: block;
 
+    &--remove-gutter {
+      &--top {
+        padding-top: 0;
+      }
+
+      &--right {
+        padding-right: 0;
+      }
+
+      &--bottom {
+        padding-bottom: 0;
+      }
+
+      &--left {
+        padding-left: 0;
+      }
+    }
+
     & + .cdr-card__block {
       padding-top: 0;
     }
   }
-}
 
+  /* Content card */
+  & .cdr-card--content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__action {
+      position: relative;
+      z-index: 1;
+    }
+
+    &__title {
+      &__action {
+        position: static;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          z-index: 0;
+          height: 100%;
+          left: 0;
+          top: 0;
+          transition: trasparent 0.1s ease-out;
+          background-color: trasparent;
+        }
+      }
+    }
+  }
+}

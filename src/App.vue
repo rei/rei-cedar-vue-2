@@ -9,6 +9,7 @@
     <buttons data-backstop="buttons"></buttons>
     <lists data-backstop="lists"></lists>
     <mediaObject></mediaObject>
+    <cards></cards>
     <selects data-backstop="selects"></selects>
     <inputs data-backstop="inputs"></inputs>
     <grid></grid>

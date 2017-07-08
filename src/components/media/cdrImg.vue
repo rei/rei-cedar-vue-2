@@ -1,8 +1,8 @@
 <template>
   <div v-if="ratio" class="cdr-media-frame" :class="[ratioClass, cropClass]">
-    <img class="cdr-media-frame__image" :class="[modifierClass]" :src="src" :alt="alt">
+    <img class="cdr-media-frame__image" :class="[modifierClass, utilityRadiusClass]" :src="src" :alt="alt">
   </div>
-  <img v-else :class="[modifierClass]" :src="src" :alt="alt">
+  <img v-else :class="[modifierClass, utilityRadiusClass]" :src="src" :alt="alt">
 </template>
 
 <script>
@@ -43,6 +43,18 @@ export default {
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**
+     * Sets a border radius to an element {square, top, right, bottom, left}
+     */
+    utiliyRadius: {
+      type: String,
+      validator: value => ([
+        'square',
+        'top',
+        'right',
+        'bottom',
+        'left'].indexOf(value) >= 0) || false,
+    },
+    /**
      * Requires ratio.
      * Area to crop the image overflow to.
      * {top, y-center, bottom} {left, x-center, right}
@@ -55,8 +67,8 @@ export default {
     baseClass() {
       return 'cdr-image';
     },
-    ratioClass() {
-      return `cdr-media-frame--${this.ratio}`;
+    utilityRadiusClass() {
+      return `cdr-add-radius--${this.utiliyRadius}`;
     },
     cropClass() {
       const base = 'cdr-media-frame';
