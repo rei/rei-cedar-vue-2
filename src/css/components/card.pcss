@@ -2,8 +2,6 @@
   border-radius: var(--radius-emphasis) var(--radius-emphasis) 0 0;
 }
 
-
-
 .cdr-card {
   background-color: var(--color-light-10-background);
   border-color: var(--color-light-10-border);
@@ -38,34 +36,37 @@
       padding-top: 0;
     }
   }
+}
 
-  /* Content card */
-  & .cdr-card--content {
-    display: flex;
-    flex-direction: column;
+.cdr-card--content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &--media {
+    flex-grow: 1;
+  }
+
+  &__action {
     position: relative;
+    z-index: 1;
+  }
 
+  &__title {
     &__action {
-      position: relative;
-      z-index: 1;
-    }
+      position: static;
 
-    &__title {
-      &__action {
-        position: static;
-
-        &::before {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 100%;
-          z-index: 0;
-          height: 100%;
-          left: 0;
-          top: 0;
-          transition: trasparent 0.1s ease-out;
-          background-color: trasparent;
-        }
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: trasparent 0.1s ease-out;
+        background-color: trasparent;
       }
     }
   }

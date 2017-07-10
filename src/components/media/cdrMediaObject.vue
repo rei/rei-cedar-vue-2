@@ -5,15 +5,21 @@
     :src="mediaFigure"
     :ratio="ratio"
     :crop="crop"
-    :utiliy-radius="utiliyRadius"
+    :utiliy-radius="mediaFigureRadius"
     class="cdr-media-object__figure"
     :modifier="mediaImgShape"
     :style="mediaWidth"></cdr-img>
     <div class="cdr-media-object__body" :class="alignClass">
+      <slot v-if="mediaSuperTitle" name="mediaSuperTitle">{{mediaSuperTitle}}</slot>
       <cdr-heading :level="level">
-          <slot name="title" v-if="!mediaUrl"><span class="cdr-card__title">{{mediaTitle}}</span></slot>
-          <slot name="title" v-else><a class="cdr-card__title cdr-card__title__link" :href="mediaUrl">{{mediaTitle}}</a></slot>
+          <slot name="title" v-if="!mediaUrl"><span :class="mediaTitleClass">{{mediaTitle}}</span></slot>
+          <slot name="title" v-else>
+          <a :class="mediaTitleClass" :href="mediaUrl">{{mediaTitle}}
+            <slot v-if="mediaSubTitle" name="mediaSubTitle">{{mediaSubTitle}}</slot>
+          </a>
+          </slot>
       </cdr-heading>
+      <slot
       <slot v-html>{{mediaBody}}</slot>
     </div>
   </div>
@@ -43,6 +49,9 @@ export default {
       type: String,
       default: '2',
     },
+    mediaSuperTitle: String,
+    mediaSubTitle: String,
+    mediaTitleClass: String,
     /**
     * Replaces the default slot with the body copy for your Media Object
     **/
@@ -65,6 +74,7 @@ export default {
       type: String,
       required: true,
     },
+    mediaFigureRadius: String,
     /**
     * Ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
     **/

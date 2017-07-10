@@ -70,6 +70,9 @@ export default {
     utilityRadiusClass() {
       return `cdr-add-radius--${this.utiliyRadius}`;
     },
+    ratioClass() {
+      return `cdr-media-frame--${this.ratio}`;
+    },
     cropClass() {
       const base = 'cdr-media-frame';
       const cropArr = this.crop ? this.crop.split(' ') : [];

@@ -7,31 +7,28 @@
     </template>
 
     <!-- Card Standard Blocks-->
-    <template v-if="contentAGutter">
-    <section :class="[wrapperA, gutterAClass]">
+    <section v-if="contentAGutter" :class="[wrapperA, gutterAClass]">
         <slot></slot>
     </section>
-    </template>
     <section v-else :class="wrapperA">
         <slot></slot>
     </section>
-     <template v-if="contentBGutter">
-    <section :class="[wrapperB, gutterAClass]">
-        <slot name="bodyB"></slot>
-    </section>
-    </template>
-    <section v-else :class="wrapperB">
-        <slot></slot>
-    </section>
-     <template v-if="contentCGutter">
-    <section :class="[wrapperC, gutterAClass]">
-        <slot name="bodyC"></slot>
-    </section>
-    </template>
-    <section v-else :class="wrapperC">
-        <slot></slot>
-    </section>
 
+    <template v-if="extendContent">
+      <section v-if="contentBGutter" :class="[wrapperB, gutterBClass]">
+          <slot name="bodyB"></slot>
+      </section>
+      <section v-else :class="wrapperB">
+          <slot name="bodyB"></slot>
+      </section>
+
+      <section v-if="contentCGutter" :class="[wrapperC, gutterCClass]">
+          <slot name="bodyC"></slot>
+      </section>
+      <section v-else :class="wrapperC">
+          <slot name="bodyC"></slot>
+      </section>
+    </template>
     <template v-if="footer">
       <footer :class="footerClass">
       <slot name="footer"></slot>
@@ -61,6 +58,10 @@ export default {
         'right',
         'bottom',
         'left'].indexOf(value) >= 0) || false,
+    },
+    extendContent: {
+      type: Boolean,
+      default: false,
     },
     /**
     *  Use this property to asign a wrapper class

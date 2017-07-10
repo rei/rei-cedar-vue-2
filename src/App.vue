@@ -10,6 +10,7 @@
     <lists data-backstop="lists"></lists>
     <mediaObject></mediaObject>
     <cards></cards>
+    <contentCards></contentCards>
     <selects data-backstop="selects"></selects>
     <inputs data-backstop="inputs"></inputs>
     <grid></grid>

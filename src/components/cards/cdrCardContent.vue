@@ -1,70 +1,124 @@
 <template>
   <cdr-card
   modifier="content"
-  wrapper-a="cdr-card__block cdr-card__block--media"
-  :content-a-gutter="contentAGutter"
-  wrapper-b="cdr-card__block"
+  wrapper-a="cdr-card__block"
+  :content-a-gutter="mediaGutter"
   :header="attribution"
+  :footer="footer"
+  :extendContent="extendContent"
+  footerClass="cdr-card__block"
   headerClass="cdr-card__block">
-   <template v-if="header">
-      <cdr-media-object
-      slot="header"
-      :media-figure="profile"
-      media-img-shape="circle"
-      :level="authorHeading"
-      :media-title="author">
-        <p>{{creationTime}}</p>
-      </cdr-media-object>
 
-      <cdr-media-object
+    <template v-if="attribution">
+        <cdr-media-object
+        slot="header"
+        :media-figure="profile"
+        media-img-shape="circle"
+        :level="authorTitle"
+        :media-title="author">
+          <p>{{creationTime}}</p>
+        </cdr-media-object>
+
+        <cdr-media-object
+        :media-figure="media"
+        :media-figure-alt="mediaAlt"
+        :media-figure-radius="radius"
+        media-img-shape="responsive"
+        media-extend-style="cdr-card--content__media"
+        modifier="top stretch"
+        :level="level"
+        :mediaSuperTitle="label"
+        :mediaUrl="titleUrl"
+        :media-title="title"
+        :mediaSubTitle="subTitle"
+        media-title-class="cdr-card--content__title cdr-card--content__title__action"
+        >
+          <template v-if="snapshot">
+            <cdr-list class="cdr-card--content__snapshot" modifier="bulleted">
+              <li v-if="snapshotLocation">{{snapshotLocation}}</li>
+              <li v-if="snapshotDistance">{{snapshotDistance}}</li>
+              <li v-if="snapshotDifficulty">{{snapshotDifficulty}}</li>
+              <li v-if="snapshotActivityLvl">{{snapshotActivityLvl}}</li>
+              <li v-if="snapshotDuration">{{snapshotDuration}}</li>
+            </cdr-list>
+          </template>
+          <div>rating slot</div>
+        </cdr-media-object>
+    </template>
+    <cdr-media-object
+      v-else
       :media-figure="media"
       :media-figure-alt="mediaAlt"
-      :media-has-radius="radius"
+      media-figure-radius="top"
       media-img-shape="responsive"
-      media-extend-style="cdr-card__media"
       modifier="top stretch"
-      >
-        <cdr-heading :level="level" class="cdr-sub-heading">
-          <slot name="label"><p class="cdr-card__label">{{label}}</p></slot>
-          <slot name="title" v-if="!headingUrl"><span class="cdr-card__title">{{heading}}</span></slot>
-          <slot name="title" v-else><a class="cdr-card__title cdr-card__title__action" :href="headingUrl">{{heading}}</a></slot>
-        </cdr-heading>
-
-        <slot name="snapshot" class="cdr-card__snapshot">{{snapshot}}</slot>
-        <slot name="summary" class="cdr-card__summary">{{summary}}</slot>
-        <slot name="messaging">{{messaging}}</slot>
-      </cdr-media-object>
-    </template>
-
-   <cdr-media-object
-    v-else
-    :media-figure="media"
-    :media-figure-alt="mediaAlt"
-    utiliy-radius="top"
-    media-img-shape="responsive"
-    modifier="top stretch"
+      :level="level"
+      :mediaSuperTitle="label"
+      :mediaUrl="titleUrl"
+      :media-title="title"
+      :mediaSubTitle="subTitle"
+      media-title-class="cdr-card--content__title cdr-card--content__title__action"
     >
-      <cdr-heading :level="level" class="cdr-sub-heading">
-        <slot name="label"><p class="cdr-card__label">{{label}}</p></slot>
-        <slot name="title" v-if="!headingUrl"><span class="cdr-card__title">{{heading}}</span></slot>
-        <slot name="title" v-else><a class="cdr-card__title cdr-card__title__action" :href="headingUrl">{{heading}}</a></slot>
-      </cdr-heading>
-
-      <slot name="snapshot" class="cdr-card__snapshot">{{snapshot}}</slot>
-      <slot name="summary" class="cdr-card__summary">{{summary}}</slot>
-      <slot name="messaging">{{messaging}}</slot>
+      <template v-if="snapshot">
+        <cdr-list class="cdr-card--content__snapshot" modifier="bulleted">
+          <li v-if="snapshotLocation">{{snapshotLocation}}</li>
+          <li v-if="snapshotDistance">{{snapshotDistance}}</li>
+          <li v-if="snapshotDifficulty">{{snapshotDifficulty}}</li>
+          <li v-if="snapshotActivtyLvl">{{snapshotActivtyLvl}}</li>
+          <li v-if="snapshotDuration">{{snapshotDuration}}</li>
+        </cdr-list>
+      </template>
+      <div>rating slot</div>
     </cdr-media-object>
 
-    <span class="cdr-card__action" slot="bodyB">
-      <slot name="actions">
-        <div v-html="actions"></div>
-      </slot>
-    </span>
-
-    <template v-if="footerActions">
-      <section slot="footer">
-        <slot name="footerActions"></slot>
-      </section>
+    <template slot="bodyB">
+      <template v-if="summary">
+        <div class="cdr-card__block cdr-card--content__summary">
+          <slot name="summary">{{summaryContent}}</slot>
+        </div>
+      </template>
+      <template v-if="price">
+        <div class="cdr-card__block cdr-card--content__price">
+          <slot name="price">{{priceContent}}</slot>
+        </div>
+      </template>
+      <template v-if="messaging">
+        <div class="cdr-card__block cdr-card--content__messaging">
+          <slot name="messaging">{{messagingContent}}</slot>
+        </div>
+      </template>
+      <template v-if="actions">
+        <cdr-button-group
+          slot="actions"
+          class="cdr-card__block cdr-card--content__action">
+          <cdr-button
+          v-if="actionOneCopy"
+          :modifier="actionOneModifier">
+            {{actionOneCopy}}
+          </cdr-button>
+          <cdr-button
+          v-if="actionTwoCopy"
+          :modifier="actionTwoModifier">
+            {{actionTwoCopy}}
+          </cdr-button>
+        </cdr-button-group>
+      </template>
+    </template>
+     <template v-if="footer">
+       <cdr-button-group
+          slot="footer"
+          class="cdr-card--content__action">
+          <cdr-button
+          v-if="footerActionOneCopy"
+          :modifier="footerActionOneModifier">
+            {{footerActionOneCopy}}
+          </cdr-button>
+          <cdr-button
+          v-if="footerActionTwoCopy"
+          :modifier="footerActionTwoModifier">
+            {{footerActionTwoCopy}}
+          </cdr-button>
+        </cdr-button-group>
     </template>
   </cdr-card>
 </template>
@@ -89,46 +143,95 @@ export default {
   },
   extends: cdrCard,
   props: {
-    actions: String,
-    author: String,
-    authorHeading: {
-      type: String,
-      required: false,
-    },
+    radius: String,
     attribution: {
       type: Boolean,
       default: false,
     },
-    utiliyRadius: String,
-    contentAGutter: String,
-    creationTime: {
-      type: String,
-      required: false,
-    },
-    footer: {
-      type: Boolean,
-      default: false,
-    },
-    footerActions: {
-      type: Boolean,
-      default: false,
-    },
-    heading: String,
-    headingUrl: String,
-    label: String,
-    level: {
-      type: String,
-      default: '2',
-    },
+    author: String,
+    authorTitle: String,
+    profile: String,
+    creationTime: String,
     media: String,
+    mediaGutter: String,
+    mediaRadius: String,
     mediaAlt: {
       type: String,
       default: ' ',
     },
-    messaging: String,
-    profile: String,
-    snapshot: String,
-    summary: String,
+    label: String,
+    title: String,
+    titleUrl: String,
+    level: String,
+    subTitle: String,
+    /**
+    * Snapshot (location, distance, difficulty, activty level, duration)
+    **/
+    snapshot: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+    * use this to pass snapshot markup as a property rather than inline
+    **/
+    snapshotLocation: String,
+    snapshotDistance: String,
+    snapshotDifficulty: String,
+    snapshotActivityLvl: String,
+    snapshotDuration: String,
+    price: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+    * use this to pass price markup as a property rather than inline
+    **/
+    priceContent: String,
+    summary: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+    * use this to pass summary markup as a property rather than inline
+    **/
+    summaryContent: String,
+    messaging: {
+      type: Boolean,
+      defalt: false,
+    },
+    /**
+    * use this to pass messaging markup as a property rather than inline
+    **/
+    messagingContent: String,
+    actions: {
+      type: Boolean,
+      default: false,
+    },
+    actionOneModifier: {
+      type: String,
+      required: false,
+    },
+    actionOneCopy: String,
+    actionTwoModifier: {
+      type: String,
+      required: false,
+    },
+    actionTwoCopy: String,
+    footer: {
+      type: Boolean,
+      default: false,
+    },
+    footerClass: String,
+    footerActionOneModifier: {
+      type: String,
+      required: false,
+    },
+    footerActionOneCopy: String,
+    footerActionTwoModifier: {
+      type: String,
+      required: false,
+    },
+    footerActionTwoCopy: String,
   },
 };
 </script>

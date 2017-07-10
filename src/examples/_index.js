@@ -8,6 +8,7 @@ import buttons from './buttons/Buttons';
 import images from './media/Images';
 import mediaObject from './media/mediaObject';
 import cards from './cards/Cards';
+import contentCards from './cards/ContentCards';
 import mountains from './mountain/Mountains';
 import inputs from './forms/Inputs';
 import selects from './forms/Selects';
@@ -23,6 +24,7 @@ export default {
   images,
   mediaObject,
   cards,
+  contentCards,
   mountains,
   inputs,
   selects,
