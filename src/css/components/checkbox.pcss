@@ -1,0 +1,24 @@
+.cdr-checkbox {
+  position: absolute;
+  opacity: 0;
+
+  &:checked + &__label::before {
+    background-color: red;
+  }
+
+  &__label {
+    position: relative;
+
+    &::before {
+      content: '';
+      width: var(--cb-width);
+      height: var(--cb-height);
+      border: 1px solid gray;
+      border-radius: 2px;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      background-color: white;
+    }
+  }
+}

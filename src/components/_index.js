@@ -3,6 +3,7 @@ import cdrButton from './button/cdrButton';
 import cdrButtonGroup from './buttonGroup/cdrButtonGroup';
 import cdrCard from './card/cdrCard';
 import cdrCardContent from './cardContent/cdrCardContent';
+import cdrCheckbox from './checkbox/cdrCheckbox';
 import cdrCol from './grid/cdrCol';
 import cdrRow from './grid/cdrRow';
 import cdrHeading from './heading/cdrHeading';
@@ -19,6 +20,7 @@ export default {
   cdrButtonGroup,
   cdrCard,
   cdrCardContent,
+  cdrCheckbox,
   cdrCol,
   cdrRow,
   cdrHeading,
