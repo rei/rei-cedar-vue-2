@@ -27,15 +27,15 @@ Clone the project.
 
 ### Run
 
-`yarn dev`
+`npm run dev`
 
 Runs locally for development. Has hot reloading, linting, browsersync, and other nice things related to development.
 
-`yarn build`
+`npm run build`
 
 Creates an exported bundle (index.html, compiled .js, and compiled .css) that reflects the state of dev to the `dist/` directory for something like gh-pages.
 
-`yarn release`
+`npm run release`
 
 Export the component library to a umd js bundle and compiled css in the `release/` directory for use in other projects. This creates the delivery bundle.
 
@@ -47,11 +47,11 @@ The [webpack](https://webpack.github.io/) build system is taken largely from the
 
 We're using [vue-styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) to document and demo components.
 
-`yarn docs`
+`npm run docs`
 
 Runs the local server for docs.
 
-`yarn build:docs`
+`npm run build:docs`
 
 Outputs a standalone app to `styleguide/build` that can be hosted somewhere (like gh-pages).
 
@@ -59,11 +59,11 @@ Outputs a standalone app to `styleguide/build` that can be hosted somewhere (lik
 
 ### Code Tests
 
-`yarn test`
+`npm run test`
 
 Runs [karma](https://karma-runner.github.io/1.0/index.html) unit tests. We're using [avoriaz](https://github.com/eddyerburgh/avoriaz) to help with Vue component testing (Vue is adopting this as the official testing utility library).
 
-`yarn e2e`
+`npm run e2e`
 
 Runs [Nightwatch](http://nightwatchjs.org/) end-to-end tests.
 
@@ -73,15 +73,15 @@ Check [backstop](https://github.com/garris/BackstopJS) for general configuration
 
 Our visual regressions audits can be performed against all patterns documented within the patterns site. To do so, follow the steps below:
 
-1. Run the project locally with `yarn dev`
-2. `yarn reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
-3. `yarn compare` after making changes to the markup or css. This will create another set of test images and compare them against those generated in the previous step.
+1. Run the project locally with `npm run dev`
+2. `npm run reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
+3. `npm run compare` after making changes to the markup or css. This will create another set of test images and compare them against those generated in the previous step.
 4. Review the generated report that should open in your browser. Make sure all changes are what you expect.
-5. `yarn approve` if everything looks good. This will promote the latest test images to be the new reference images that future tests will be compared against.
+5. `npm run approve` if everything looks good. This will promote the latest test images to be the new reference images that future tests will be compared against.
 
 #### Notes about our backstop configuration
 
-We’re aliasing the backstop commands to use `yarn <command>` just to abstract away supplying the config option since we are using a javascript version of the backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
+We’re aliasing the backstop commands to use `npm run <command>` just to abstract away supplying the config option since we are using a javascript version of the backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
 
 The config (__backstop.js__) looks through `src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector_ in the array.
 
@@ -106,8 +106,8 @@ __TODO:__ Notes about js, eslint
 
 __TODO:__ Notes about DDS, design tokens, integrations
 
-- `yarn get-tokens` fetch css variables from Brand.ai.
-- `yarn get-icons` fetch icons and build an svg sprite of them.
+- `npm run get-tokens` fetch css variables from Brand.ai.
+- `npm run get-icons` fetch icons and build an svg sprite of them.
 
 ## CSS
 
@@ -146,11 +146,11 @@ backstop_data                   #Files related to visual regression testing. Mos
 |-- casper_scripts              #Contains scripts that will be used by backstop for doing things like clicks, hovers, etc.
 |-- %html_report                #Generated report for backstop test results
 build                           #Contains scripts and configs for the webpack build system (most of this is from the vue webpack template)
-|-- build.js                    #Prod build script - the entry point for `yarn build`
+|-- build.js                    #Prod build script - the entry point for `npm run build`
 |-- check-versions.js           #Checks node/npm versions (this came with the vue webpack template so I’m not sure if it’s super useful)
 |-- dev-client.js               #For hot module reloading in dev
 |-- dev-server.js               #Config for express dev server
-|-- release.js                  #Release build script - the entry point for `yarn release`
+|-- release.js                  #Release build script - the entry point for `npm run release`
 |-- utils.js                    #From vue webpack template to mostly automate which loaders need to be used since vue supports scss, stylus, postcss, etc.
 |-- vue-loader.conf.js          #Config object for vue webpack loader (vue-loader)
 |-- webpack.base.conf.js        #Webpack config that the others all use as a foundation - mostly just defines the loaders and entry
@@ -164,23 +164,26 @@ config                          #Configuration files used in the webpack build s
 |-- prod.env.js                 #Setting NODE_ENV for prod
 |-- release.env.js              #Setting NODE_ENV for release
 |-- test.env.js                 #Setting NODE_ENV for test
-%dist/                          #Results from `yarn build` end up here
-%release/                       #Results from `yarn release` end up here
+%dist/                          #Results from `npm run build` end up here
+%release/                       #Results from `npm run release` end up here
 src/                            #Source files
 |-- assets/                     #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
 |-- components/                 #All things components
-  |-- __tests__/                #Unit tests for components
-    |-- *.spec.js               #Unit test files -- karma looks for them with this pattern
-  |-- **/*.backstop.js          #Config files for backstop visual regression testing
+  |-- <component>               #Any component
+    |-- __tests__/              #Unit tests for components
+      |-- *.spec.js             #Unit test files -- karma looks for them with this pattern
+    |-- examples/               #Examples of the component used in the proving grounds for backstop testing
+    |-- **/*.backstop.js        #Config files for backstop visual regression testing
 |-- css/                        #All things css
-    |-- components/             #CSS files for component styles
-    |-- directives/             #CSS files for directives
-    |-- generic/                #Reset and normalize styles. Also general styles that are related to large layout.
-    |-- settings/               #Values and variables that are consumed in other files.
-      |-- component-variables/  #Values and variables that are consumed in component css.
-    |-- themes/                 #Might be used for vertical and/or horizontal themes in the future.
+  |-- components/               #CSS files for component styles
+  |-- directives/               #CSS files for directives
+  |-- generic/                  #Reset and normalize styles. Also general styles that are related to large layout.
+  |-- settings/                 #Values and variables that are consumed in other files.
+    |-- component-variables/    #Values and variables that are consumed in component css.
+  |-- themes/                   #Might be used for vertical and/or horizontal themes in the future.
 |-- directives/                 #All things directives
-|-- examples/                   #Everything for demos/docs/testing of components and directives
+  |-- <directive>               #Any directive directory
+    |-- examples/               #Examples of the directive used in the proving grounds for backstop testing
 |-- utils/                      #Helper js files for things like debounce
 |-- app.vue                     #The component/directive catalog for building and regression testing
 |-- dev.js                      #Webpack entry point for everything !release

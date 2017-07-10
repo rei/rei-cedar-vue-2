@@ -8,9 +8,9 @@
     <anchors data-backstop="anchors"></anchors>
     <buttons data-backstop="buttons"></buttons>
     <lists data-backstop="lists"></lists>
-    <mediaObject></mediaObject>
+    <media-object></media-object>
     <cards></cards>
-    <contentCards></contentCards>
+    <card-content></card-content>
     <selects data-backstop="selects"></selects>
     <inputs data-backstop="inputs"></inputs>
     <grid></grid>
@@ -24,7 +24,7 @@
   import Components from './components/_index';
   import Directives from './directives/_index';
   // add examples
-  import examples from './examples/_index';
+  import examples from './components/examples';
 
   Object.keys(examples).forEach((key) => {
     Components[key] = examples[key];
