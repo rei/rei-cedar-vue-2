@@ -1,6 +1,6 @@
 <template>
   <article :class="[modifierClass]">
-    <template v-if="header">
+    <template v-if="$slots.header">
         <header :class="headerClass">
         <slot name="header"></slot>
         </header>
@@ -15,14 +15,15 @@
         <slot></slot>
     </section>
 
-    <template v-if="extendContent">
+    <template v-if="$slots.bodyB">
       <section v-if="contentBGutter" :class="[wrapperB, gutterBClass]">
           <slot name="bodyB"></slot>
       </section>
       <section v-else :class="wrapperB">
           <slot name="bodyB"></slot>
       </section>
-
+     </template>
+     <template v-if="$slots.bodyC">
       <section v-if="contentCGutter" :class="[wrapperC, gutterCClass]">
           <slot name="bodyC"></slot>
       </section>
@@ -59,10 +60,6 @@ export default {
         'right',
         'bottom',
         'left'].indexOf(value) >= 0) || false,
-    },
-    extendContent: {
-      type: Boolean,
-      default: false,
     },
     /**
     *  Use this property to asign a wrapper class
@@ -102,13 +99,6 @@ export default {
     * class to the footer slot parent
     **/
     footerClass: String,
-    /**
-    *  set to true if you need a header element on your card
-    **/
-    header: {
-      type: Boolean,
-      default: false,
-    },
     /**
     *  Use this property to asign it a wrapper
     * class to the header slot parent

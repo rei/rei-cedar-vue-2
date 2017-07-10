@@ -1,15 +1,14 @@
 <template>
   <cdr-card
   modifier="content"
-  wrapper-a="cdr-card__block"
   :content-a-gutter="mediaGutter"
-  :header="attribution"
-  :footer="footer"
+  :footer="userSettings"
   :extendContent="extendContent"
   footerClass="cdr-card__block"
-  headerClass="cdr-card__block">
+  headerClass="cdr-card__block"
+  :wrapper-a= "mediaGutterClass" >
 
-    <template v-if="attribution">
+    <template v-if="this.authorTitle != null">
         <cdr-media-object
         slot="header"
         :media-figure="profile"
@@ -18,38 +17,11 @@
         :media-title="author">
           <p>{{creationTime}}</p>
         </cdr-media-object>
-
-        <cdr-media-object
-        :media-figure="media"
-        :media-figure-alt="mediaAlt"
-        :media-figure-radius="radius"
-        media-img-shape="responsive"
-        media-extend-style="cdr-card--content__media"
-        modifier="top stretch"
-        :level="level"
-        :mediaSuperTitle="label"
-        :mediaUrl="titleUrl"
-        :media-title="title"
-        :mediaSubTitle="subTitle"
-        media-title-class="cdr-card--content__title cdr-card--content__title__action"
-        >
-          <template v-if="snapshot">
-            <cdr-list class="cdr-card--content__snapshot" modifier="bulleted">
-              <li v-if="snapshotLocation">{{snapshotLocation}}</li>
-              <li v-if="snapshotDistance">{{snapshotDistance}}</li>
-              <li v-if="snapshotDifficulty">{{snapshotDifficulty}}</li>
-              <li v-if="snapshotActivityLvl">{{snapshotActivityLvl}}</li>
-              <li v-if="snapshotDuration">{{snapshotDuration}}</li>
-            </cdr-list>
-          </template>
-          <div>rating slot</div>
-        </cdr-media-object>
     </template>
+
     <cdr-media-object
-      v-else
       :media-figure="media"
       :media-figure-alt="mediaAlt"
-      media-figure-radius="top"
       media-img-shape="responsive"
       modifier="top stretch"
       :level="level"
@@ -58,36 +30,29 @@
       :media-title="title"
       :mediaSubTitle="subTitle"
       media-title-class="cdr-card--content__title cdr-card--content__title__action"
-    >
+      :media-figure-radius= "mediaFigureRadiusClass" >
       <template v-if="snapshot">
         <cdr-list class="cdr-card--content__snapshot" modifier="bulleted">
           <li v-if="snapshotLocation">{{snapshotLocation}}</li>
           <li v-if="snapshotDistance">{{snapshotDistance}}</li>
           <li v-if="snapshotDifficulty">{{snapshotDifficulty}}</li>
-          <li v-if="snapshotActivtyLvl">{{snapshotActivtyLvl}}</li>
+          <li v-if="snapshotActivityLvl">{{snapshotActivityLvl}}</li>
           <li v-if="snapshotDuration">{{snapshotDuration}}</li>
         </cdr-list>
       </template>
-      <div>rating slot</div>
     </cdr-media-object>
 
     <template slot="bodyB">
-      <template v-if="summary">
-        <div class="cdr-card__block cdr-card--content__summary">
-          <slot name="summary">{{summaryContent}}</slot>
-        </div>
-      </template>
-      <template v-if="price">
-        <div class="cdr-card__block cdr-card--content__price">
-          <slot name="price">{{priceContent}}</slot>
-        </div>
-      </template>
-      <template v-if="messaging">
-        <div class="cdr-card__block cdr-card--content__messaging">
-          <slot name="messaging">{{messagingContent}}</slot>
-        </div>
-      </template>
-      <template v-if="actions">
+      <div v-if="$slots.summary" class="cdr-card__block cdr-card--content__summary">
+        <slot name="summary">{{summary}}</slot>
+      </div>
+      <div v-if="$slots.price" class="cdr-card__block cdr-card--content__price">
+        <slot name="price">{{price}}</slot>
+      </div>
+      <div v-if="$slots.messaging" class="cdr-card__block cdr-card--content__messaging">
+        <slot name="messaging">{{messaging}}</slot>
+      </div>
+      <template v-if="$slots.actions">
         <cdr-button-group
           slot="actions"
           class="cdr-card__block cdr-card--content__action">
@@ -104,19 +69,19 @@
         </cdr-button-group>
       </template>
     </template>
-     <template v-if="footer">
+     <template v-if="$slots.footer">
        <cdr-button-group
           slot="footer"
           class="cdr-card--content__action">
           <cdr-button
-          v-if="footerActionOneCopy"
-          :modifier="footerActionOneModifier">
-            {{footerActionOneCopy}}
+          v-if="userSettingsActionOneCopy"
+          :modifier="userSettingsActionOneModifier">
+            {{userSettingsActionOneCopy}}
           </cdr-button>
           <cdr-button
-          v-if="footerActionTwoCopy"
-          :modifier="footerActionTwoModifier">
-            {{footerActionTwoCopy}}
+          v-if="userSettingsActionTwoCopy"
+          :modifier="userSettingsActionTwoModifier">
+            {{userSettingsActionTwoCopy}}
           </cdr-button>
         </cdr-button-group>
     </template>
@@ -143,17 +108,21 @@ export default {
   },
   extends: cdrCard,
   props: {
-    radius: String,
-    attribution: {
-      type: Boolean,
-      default: false,
-    },
     author: String,
     authorTitle: String,
     profile: String,
     creationTime: String,
+    /**
+    * Path to primary image
+    **/
     media: String,
+    /**
+    * set this to top when there is no attribution
+    **/
     mediaGutter: String,
+    /**
+    * this is set to top when there is no attribution
+    **/
     mediaRadius: String,
     mediaAlt: {
       type: String,
@@ -165,73 +134,75 @@ export default {
     level: String,
     subTitle: String,
     /**
-    * Snapshot (location, distance, difficulty, activty level, duration)
+    * use this to pass snapshot markup as a property rather than inline
     **/
     snapshot: {
       type: Boolean,
       default: false,
     },
-    /**
-    * use this to pass snapshot markup as a property rather than inline
-    **/
     snapshotLocation: String,
     snapshotDistance: String,
     snapshotDifficulty: String,
     snapshotActivityLvl: String,
     snapshotDuration: String,
-    price: {
-      type: Boolean,
-      default: false,
-    },
-    /**
-    * use this to pass price markup as a property rather than inline
-    **/
-    priceContent: String,
-    summary: {
-      type: Boolean,
-      default: false,
-    },
-    /**
-    * use this to pass summary markup as a property rather than inline
-    **/
-    summaryContent: String,
-    messaging: {
-      type: Boolean,
-      defalt: false,
-    },
+    price: String,
+    summary: String,
     /**
     * use this to pass messaging markup as a property rather than inline
     **/
-    messagingContent: String,
-    actions: {
-      type: Boolean,
-      default: false,
-    },
+    messaging: String,
+    /**
+    * action button modifiers (primary, secondary, ...)
+    **/
     actionOneModifier: {
       type: String,
       required: false,
     },
     actionOneCopy: String,
+    /**
+    * action button modifiers (primary, secondary, ...)
+    **/
     actionTwoModifier: {
       type: String,
       required: false,
     },
     actionTwoCopy: String,
-    footer: {
-      type: Boolean,
-      default: false,
-    },
-    footerClass: String,
-    footerActionOneModifier: {
+    /**
+    * User settings button modifiers (temp to be replaced with icon selections)
+    **/
+    userSettingsActionOneModifier: {
       type: String,
       required: false,
     },
-    footerActionOneCopy: String,
-    footerActionTwoModifier: {
+    /**
+    * any needed copy
+    **/
+    userSettingsActionOneCopy: String,
+    /**
+    * User settings button modifiers (temp to be replaced with icon selections)
+    **/
+    userSettingsActionTwoModifier: {
       type: String,
       required: false,
     },
-    footerActionTwoCopy: String,
+    /**
+    * any needed copy
+    **/
+    userSettingsActionTwoCopy: String,
+  },
+  computed: {
+    mediaGutterClass() {
+      if (this.authorTitle == null) {
+        return 'cdr-card__block cdr-card__block--remove-gutter--top';
+      }
+      return 'cdr-card__block';
+    },
+    mediaFigureRadiusClass() {
+      if (this.authorTitle == null) {
+        return 'top';
+      }
+      return 'none';
+    },
   },
 };
 </script>
