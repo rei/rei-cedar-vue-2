@@ -44,6 +44,10 @@ module.exports = {
   require: [
     './src/css/main.postcss',
   ],
+  ignore: [
+    '**/examples/**',
+    '**/testing/**', // ignore e2e testing example
+  ],
   assetsDir: './static',
   highlightTheme: 'monokai',
   styleguideDir: './dist-docs',
