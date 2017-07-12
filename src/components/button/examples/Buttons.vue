@@ -12,8 +12,6 @@
 <script>
 import defaultButtons from './demo/Default';
 import secondaryButtons from './demo/Secondary';
-import blackButtons from './demo/Black';
-import whiteButtons from './demo/White';
 import linkButtons from './demo/Link';
 
 export default {
@@ -21,8 +19,6 @@ export default {
   components: {
     defaultButtons,
     secondaryButtons,
-    blackButtons,
-    whiteButtons,
     linkButtons,
   },
 };
