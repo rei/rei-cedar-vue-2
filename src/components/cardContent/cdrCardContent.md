@@ -73,7 +73,7 @@ This Component enhances the behavior of specific presentation parts that are imp
   </cdr-button-group>
 </cdr-card-content>
 ```
-#### Content card with attribution, snapshot, summary, and actions 
+#### Content card with price
 ``` 
 <cdr-card-content
   media="http://placehold.it/350x150"
@@ -121,18 +121,30 @@ This Component enhances the behavior of specific presentation parts that are imp
 ``` 
 #### Content card with attribution, snapshot, price, summary, actions, and user settings 
 ``` 
+var snapshotData = ['bill', 'bib'];
+
+var cardData = {
+  profile: 'http://placehold.it/50x50',
+  author: 'Harald Hardrada',
+  creationTime: 'Issaquah Alps, WA',
+  media: 'http://placehold.it/350x150',
+  label: 'MTB Project',
+  title: 'Tiger Mountain Loop',
+  level: '2',
+  titleUrl: 'http://rei.com'
+}
+
 <cdr-card-content 
-  profile="http://placehold.it/50x50" 
-  author="Harald Hardrada" 
+  :profile="cardData.profile" 
+  :author="cardData.author" 
   author-title="3" 
-  creation-time="Issaquah Alps, WA" 
-  media="http://placehold.it/350x150"
-  label="MTB Project" 
-  title="Tiger Mountain Loop" 
-  level="2" 
-  title-url="http://rei.com"
-  snapshot
-  snapshot-location="17.3 mi away"  
+  :creation-time="cardData.creationTime" 
+  :media="cardData.media"
+  :label="cardData.lable" 
+  :title="cardData.title" 
+  :level="cardData.level" 
+  :title-url="cardData.titleUrl"
+  :snapshot="snapshotData"
   action-one-modifier="secondary" 
   action-one-copy="B1" 
   action-two-modifier="secondary" 
@@ -154,8 +166,6 @@ This Component enhances the behavior of specific presentation parts that are imp
   </div> 
    <p slot="messaging"> 11 spots availible</p> 
   <cdr-button-group slot="actions"> 
-    <cdr-button>B1</cdr-button> 
-  <cdr-button modifier="secondary">B2</cdr-button> 
   </cdr-button-group> 
 </cdr-card-content> 
 ``` 

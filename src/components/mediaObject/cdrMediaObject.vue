@@ -1,6 +1,12 @@
 <template>
   <div :class="[modifierClass]">
+  <template v-if="iconFigure">
+    <cdr-icon
+    :url="iconFigure"
+     class="cdr-media-object__figure"></cdr-icon>
+  </template>
     <cdr-img
+    v-else
     :alt="mediaFigureAlt"
     :src="mediaFigure"
     :ratio="ratio"
@@ -28,6 +34,7 @@
 <script>
 import cdrHeading from '../heading/cdrHeading';
 import cdrImg from '../image/cdrImg';
+import cdrIcon from '../icon/cdrIcon';
 import modifier from '../../mixins/modifier';
 
 export default {
@@ -36,6 +43,7 @@ export default {
   components: {
     cdrHeading,
     cdrImg,
+    cdrIcon,
   },
   extends: {
     cdrImg,
@@ -48,6 +56,10 @@ export default {
     level: {
       type: String,
       default: '2',
+    },
+    icon: {
+      type: Boolean,
+      default: false,
     },
     mediaSuperTitle: String,
     mediaSubTitle: String,
@@ -68,12 +80,13 @@ export default {
         'center'].indexOf(value) >= 0) || false,
     },
     /**
+    * icon svg path
+    **/
+    iconFigure: String,
+    /**
     * Image path
     **/
-    mediaFigure: {
-      type: String,
-      required: true,
-    },
+    mediaFigure: String,
     mediaFigureRadius: String,
     /**
     * Ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}

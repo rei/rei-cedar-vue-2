@@ -31,19 +31,18 @@
       :mediaSubTitle="subTitle"
       media-title-class="cdr-card--content__title cdr-card--content__title__action"
       :media-figure-radius= "mediaFigureRadiusClass" >
-      <template v-if="snapshot">
-        <cdr-list class="cdr-card--content__snapshot" modifier="bulleted">
-          <li v-if="snapshotLocation">{{snapshotLocation}}</li>
-          <li v-if="snapshotDistance">{{snapshotDistance}}</li>
-          <li v-if="snapshotDifficulty">{{snapshotDifficulty}}</li>
-          <li v-if="snapshotActivityLvl">{{snapshotActivityLvl}}</li>
-          <li v-if="snapshotDuration">{{snapshotDuration}}</li>
-        </cdr-list>
-      </template>
+
+
+
     </cdr-media-object>
 
     <template slot="bodyB">
       <div v-if="$slots.summary" class="cdr-card__block cdr-card--content__summary">
+      <ul class="cdr-card--content__snapshot">
+           <li v-for="item in snapshot">
+            {{ item }}
+          </li>
+        </ul>
         <slot name="summary">{{summary}}</slot>
       </div>
       <div v-if="$slots.price" class="cdr-card__block cdr-card--content__price">
@@ -90,6 +89,8 @@
 
 <script>
 import cdrCard from '../card/cdrCard';
+import cdrButton from '../button/cdrButton';
+import cdrButtonGroup from '../buttonGroup/cdrButtonGroup';
 import cdrCol from '../grid/cdrCol';
 import cdrRow from '../grid/cdrRow';
 import cdrHeading from '../heading/cdrHeading';
@@ -100,6 +101,8 @@ export default {
   name: 'cdr-card-content',
   components: {
     cdrCard,
+    cdrButton,
+    cdrButtonGroup,
     cdrCol,
     cdrHeading,
     cdrImg,
@@ -133,13 +136,6 @@ export default {
     titleUrl: String,
     level: String,
     subTitle: String,
-    /**
-    * use this to pass snapshot markup as a property rather than inline
-    **/
-    snapshot: {
-      type: Boolean,
-      default: false,
-    },
     snapshotLocation: String,
     snapshotDistance: String,
     snapshotDifficulty: String,
@@ -189,6 +185,9 @@ export default {
     * any needed copy
     **/
     userSettingsActionTwoCopy: String,
+    snapshot: {
+      required: false,
+    },
   },
   computed: {
     mediaGutterClass() {
