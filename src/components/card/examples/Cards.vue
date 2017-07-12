@@ -1,20 +1,17 @@
 <template>
-  <div>
-    <default-card></default-card>
+  <div data-backstop="simple-card">
+    <simple-card></simple-card>
   </div>
 </template>
 
 <script>
-import defaultCard from './demo/Default';
+import simpleCard from './demo/simpleCard';
 
 export default {
   name: 'cards',
   components: {
-    defaultCard,
+    simpleCard,
   },
 };
 </script>
 
-<style>
-
-</style>
