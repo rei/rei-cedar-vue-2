@@ -3,8 +3,6 @@
     <h2>Buttons</h2>
     <default-buttons></default-buttons>
     <secondary-buttons></secondary-buttons>
-    <black-buttons></black-buttons>
-    <white-buttons></white-buttons>
     <link-buttons></link-buttons>
   </div>
 </template>
