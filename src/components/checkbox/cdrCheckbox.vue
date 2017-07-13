@@ -10,8 +10,9 @@
       :checked="isChecked"
       @change="onChange"
       :value="value"
+      ref="checkbox"
       >
-    <label class="cdr-checkbox__label" :for="checkboxId">{{text}}</label>
+    <label class="cdr-checkbox__label" :for="checkboxId" ref="label">{{text}}</label>
   </div>
 </template>
 
