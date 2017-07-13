@@ -1,0 +1,58 @@
+.cdr-radio {
+  position: absolute;
+  opacity: 0;
+
+  &:checked + &__label {
+    &::before {
+      background-color: black;
+    }
+
+    &::after {
+      background-color: white;
+    }
+  }
+
+  &[disabled] + &__label {
+    color: gray;
+
+    &::before {
+      background-color: lightgray;
+    }
+  }
+
+  &:focus + &__label::before {
+    box-shadow: 0 0 3px 3px #83c4ff;
+  }
+
+  &__label {
+    position: relative;
+    margin-bottom: 0;
+    line-height: 1;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::before {
+      content: '';
+      width: var(--cb-width);
+      height: var(--cb-height);
+      border: 1px solid gray;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      background-color: white;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: calc(var(--cb-width) / 4);
+      top: calc(var(--cb-width) / 4);
+      width: calc(var(--cb-width) / 2);
+      height: calc(var(--cb-height) / 2);
+      border-radius: 50%;
+    }
+  }
+}

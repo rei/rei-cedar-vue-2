@@ -59,7 +59,9 @@ export default {
       required: false,
     },
     /** @ignore */
-    modelValue: null,
+    modelValue: {
+      required: false,
+    },
   },
   computed: {
     checkboxId() {
