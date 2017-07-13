@@ -7,5 +7,6 @@ module.exports = {
     'postcss-pxtorem': {
       rootValue: 10,
     },
+    'postcss-inline-svg': {},
   },
 };

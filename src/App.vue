@@ -2,21 +2,21 @@
   <div id="app" class="container-fluid">
     <h1>Cedar Proving grounds</h1>
 
-    <images></images>
-    <icons data-backstop="icons"></icons>
-    <headings data-backstop="headings"></headings>
     <anchors data-backstop="anchors"></anchors>
     <buttons data-backstop="buttons"></buttons>
-    <lists data-backstop="lists"></lists>
-    <media-object></media-object>
     <cards></cards>
     <card-content></card-content>
-    <selects data-backstop="selects"></selects>
-    <inputs data-backstop="inputs"></inputs>
+    <checkboxes data-backstop="checkboxes"></checkboxes>
     <grid></grid>
-    <test data-backstop="test"></test>
+    <headings data-backstop="headings"></headings>
+    <icons data-backstop="icons"></icons>
+    <images></images>
+    <inputs data-backstop="inputs"></inputs>
+    <lists data-backstop="lists"></lists>
+    <mediaObject></mediaObject>
     <mountains></mountains>
-
+    <selects data-backstop="selects"></selects>
+    <test data-backstop="test"></test>
   </div>
 </template>
 
