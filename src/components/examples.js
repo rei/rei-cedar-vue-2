@@ -1,6 +1,7 @@
 import anchors from './anchor/examples/Anchors';
 import buttons from './button/examples/Buttons';
 import cards from './card/examples/Cards';
+import checkboxes from './checkbox/examples/checkboxes';
 import grid from './grid/examples/Grid';
 import headings from './heading/examples/Headings';
 import icons from './icon/examples/Icons';
@@ -17,6 +18,7 @@ export default {
   anchors,
   buttons,
   cards,
+  checkboxes,
   grid,
   headings,
   icons,
