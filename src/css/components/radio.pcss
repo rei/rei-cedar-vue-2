@@ -14,6 +14,7 @@
 
   &[disabled] + &__label {
     color: gray;
+    cursor: default;
 
     &::before {
       background-color: lightgray;
@@ -48,10 +49,10 @@
     &::after {
       content: '';
       position: absolute;
-      left: calc(var(--cb-width) / 4);
-      top: calc(var(--cb-width) / 4);
-      width: calc(var(--cb-width) / 2);
-      height: calc(var(--cb-height) / 2);
+      left: calc(var(--cb-width) / 3);
+      top: calc(var(--cb-width) / 3);
+      width: calc(var(--cb-width) / 3);
+      height: calc(var(--cb-height) / 3);
       border-radius: 50%;
     }
   }

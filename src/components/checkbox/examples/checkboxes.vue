@@ -10,9 +10,9 @@
     <cdr-checkbox text="E" :value="testVal" v-model="exGroup"></cdr-checkbox>
     <cdr-checkbox text="F" :value="testVal2" v-model="exGroup"></cdr-checkbox>
     <p>group: {{exGroup}}</p>
-    <!-- <cdr-checkbox text="autofocus" autofocus></cdr-checkbox>
+    <cdr-checkbox text="autofocus" autofocus></cdr-checkbox>
     <cdr-checkbox text="disabled" disabled></cdr-checkbox>
-    <cdr-checkbox text="required" required></cdr-checkbox> -->
+    <cdr-checkbox text="required" required></cdr-checkbox>
  </div>
 </template>
 
