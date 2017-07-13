@@ -3,7 +3,7 @@
     <cdr-col>
       <cdr-card-content
         level="2"
-        heading="Tiger Mountain Loop"
+        title="Tiger Mountain Loop"
         media="http://placehold.it/350x150"
         content-a-gutter="top"
         >
@@ -12,16 +12,22 @@
     </cdr-col>
     <cdr-col>
       <cdr-card-content
-        profile="http://placehold.it/50x50"
-        author="Harald Hardrada"
-        author-heading="3"
-        creation-time="Issaquah Alps, WA"
-        level="2"
-        label="MTB Project"
-        heading="Tiger Mountain Loop"
-        heading-url="http://rei.com"
         media="http://placehold.it/350x150"
-        attribution >
+        label="MTB Project"
+        title="Tiger Mountain Loop"
+        title-url="http://rei.com">
+        <div slot="summary">
+          <p>Tiger Mountain is a multi-use recreation area near Seattle. In recent years, new trails and the continued work of Evergreen Mountain…</p>
+           <cdr-list modifier="bulleted">
+            <li>2,913’ ascent</li>
+            <li>2,992’ high</li>
+            <li>1,451 low</li>
+          </cdr-list>
+        </div>
+        <cdr-button-group slot="actions">
+          <cdr-button>B1</cdr-button>
+        <cdr-button modifier="secondary">B2</cdr-button>
+        </cdr-button-group>
       </cdr-card-content>
     </cdr-col>
   </cdr-row>
