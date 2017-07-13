@@ -1,12 +1,18 @@
 .cdr-button {
   @apply --decoration-outline;
-  @apply --font-spruce-bdy;
+  @apply --sys-font-spruce-bdy-15;
+
+  @media (--large) {
+    @apply --sys-font-spruce-bdy-25;
+
+    color: var(--sys-color-system-10);
+  }
 
   background-color: var(--sys-color-loretan-base);
   border-color: var(--sys-color-loretan-base);
   border-width: 0.1rem;
   border-style: solid;
-  border-radius: var(--radius-emphasis);
+  border-radius: var(--radius-button);
   color: #fff;
   cursor: pointer;
   display: inline-block;

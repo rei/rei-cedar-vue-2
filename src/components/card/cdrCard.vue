@@ -49,7 +49,7 @@ export default {
   props: {
     /**
     * Use this property to asign a wrapper class
-    * (empty, cdr-card__block, cdr-card__block--media)
+    * (empty, cdr-box, cdr-box--media)
     * to the parent wrapper of the default slot
     **/
     wrapperA: String,
@@ -110,13 +110,13 @@ export default {
       return 'cdr-card';
     },
     gutterAClass() {
-      return `cdr-card__block--remove-gutter--${this.contentAGutter}`;
+      return `cdr-box--no-${this.contentAGutter}`;
     },
     gutterBClass() {
-      return `cdr-card__block--remove-gutter--${this.contentBGutter}`;
+      return `cdr-box--no-${this.contentBGutter}`;
     },
     gutterCClass() {
-      return `cdr-card__block--remove-gutter--${this.contentCGutter}`;
+      return `cdr-box--no-${this.contentCGutter}`;
     },
   },
 };

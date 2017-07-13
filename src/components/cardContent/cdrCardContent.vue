@@ -4,8 +4,8 @@
   :content-a-gutter="mediaGutter"
   :footer="userSettings"
   :extendContent="extendContent"
-  footerClass="cdr-card__block"
-  headerClass="cdr-card__block"
+  footerClass="cdr-box"
+  headerClass="cdr-box"
   :wrapper-a= "mediaGutterClass" >
 
     <template v-if="this.authorTitle != null">
@@ -37,7 +37,7 @@
     </cdr-media-object>
 
     <template slot="bodyB">
-      <div v-if="$slots.summary" class="cdr-card__block cdr-card--content__summary">
+      <div v-if="$slots.summary" class="cdr-box cdr-card--content__summary">
       <ul class="cdr-card--content__snapshot">
            <li v-for="item in snapshot">
             {{ item }}
@@ -45,16 +45,16 @@
         </ul>
         <slot name="summary">{{summary}}</slot>
       </div>
-      <div v-if="$slots.price" class="cdr-card__block cdr-card--content__price">
+      <div v-if="$slots.price" class="cdr-box cdr-card--content__price">
         <slot name="price">{{price}}</slot>
       </div>
-      <div v-if="$slots.messaging" class="cdr-card__block cdr-card--content__messaging">
+      <div v-if="$slots.messaging" class="cdr-box cdr-card--content__messaging">
         <slot name="messaging">{{messaging}}</slot>
       </div>
       <template v-if="$slots.actions">
         <cdr-button-group
           slot="actions"
-          class="cdr-card__block cdr-card--content__action">
+          class="cdr-box cdr-card--content__action">
           <cdr-button
           v-if="actionOneCopy"
           :modifier="actionOneModifier">
@@ -192,9 +192,9 @@ export default {
   computed: {
     mediaGutterClass() {
       if (this.authorTitle == null) {
-        return 'cdr-card__block cdr-card__block--remove-gutter--top';
+        return 'cdr-box cdr-box--no-top';
       }
-      return 'cdr-card__block';
+      return 'cdr-box';
     },
     mediaFigureRadiusClass() {
       if (this.authorTitle == null) {
