@@ -1,22 +1,36 @@
 <template>
   <article :class="[modifierClass]">
-    <template v-if="header">
+    <template v-if="$slots.header">
         <header :class="headerClass">
         <slot name="header"></slot>
         </header>
     </template>
 
     <!-- Card Standard Blocks-->
-    <section class="cdr-card__body" :class="contentWrapperClassA">
+
+    <section v-if="contentAGutter" :class="[wrapperA, gutterAClass]">
         <slot></slot>
     </section>
-    <section :class="contentWrapperClassB">
-        <slot name="bodyB"></slot>
-    </section>
-    <section :class="contentWrapperClassC">
-        <slot name="bodyC"></slot>
+    <section v-else :class="wrapperA">
+        <slot></slot>
     </section>
 
+    <template v-if="$slots.bodyB">
+      <section v-if="contentBGutter" :class="[wrapperB, gutterBClass]">
+          <slot name="bodyB"></slot>
+      </section>
+      <section v-else :class="wrapperB">
+          <slot name="bodyB"></slot>
+      </section>
+     </template>
+     <template v-if="$slots.bodyC">
+      <section v-if="contentCGutter" :class="[wrapperC, gutterCClass]">
+          <slot name="bodyC"></slot>
+      </section>
+      <section v-else :class="wrapperC">
+          <slot name="bodyC"></slot>
+      </section>
+    </template>
     <template v-if="footer">
       <footer :class="footerClass">
       <slot name="footer"></slot>
@@ -35,20 +49,44 @@ export default {
   props: {
     /**
     * Use this property to asign a wrapper class
-    * (empty, cdr-card__block, cdr-card__block--media)
+    * (empty, cdr-box, cdr-box--media)
     * to the parent wrapper of the default slot
     **/
-    contentWrapperClassA: String,
+    wrapperA: String,
+    contentAGutter: {
+      type: String,
+      validator: value => ([
+        'top',
+        'right',
+        'bottom',
+        'left'].indexOf(value) >= 0) || false,
+    },
     /**
     *  Use this property to asign a wrapper class
     * to the bodyB slot parent
     **/
-    contentWrapperClassB: String,
+    wrapperB: String,
+    contentBGutter: {
+      type: String,
+      validator: value => ([
+        'top',
+        'right',
+        'bottom',
+        'left'].indexOf(value) >= 0) || false,
+    },
     /**
     *  Use this property to asign a wrapper
     * class to the bodyC slot parent
     **/
-    contentWrapperClassC: String,
+    wrapperC: String,
+    contentCGutter: {
+      type: String,
+      validator: value => ([
+        'top',
+        'right',
+        'bottom',
+        'left'].indexOf(value) >= 0) || false,
+    },
     /**
     *  set to true if you need a footer element on your card
     **/
@@ -62,13 +100,6 @@ export default {
     **/
     footerClass: String,
     /**
-    *  set to true if you need a header element on your card
-    **/
-    header: {
-      type: Boolean,
-      default: false,
-    },
-    /**
     *  Use this property to asign it a wrapper
     * class to the header slot parent
     **/
@@ -77,6 +108,15 @@ export default {
   computed: {
     baseClass() {
       return 'cdr-card';
+    },
+    gutterAClass() {
+      return `cdr-box--no-${this.contentAGutter}`;
+    },
+    gutterBClass() {
+      return `cdr-box--no-${this.contentBGutter}`;
+    },
+    gutterCClass() {
+      return `cdr-box--no-${this.contentCGutter}`;
     },
   },
 };

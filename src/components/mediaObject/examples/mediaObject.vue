@@ -5,7 +5,7 @@
       <h3>Media Object Figure Placement</h3>
       <figurePlacement></figurePlacement>
     </div>
-     <div data-backstop="media-shape-align">
+     <div data-backstop="media-object-flux">
       <h3>Media Object Flux</h3>
       <mediaObjectFlux></mediaObjectFlux>
     </div>
@@ -17,7 +17,6 @@
       <h3>Media Object Overlay</h3>
       <mediaOverlay></mediaOverlay>
     </div>
-
   </section>
 </template>
 
