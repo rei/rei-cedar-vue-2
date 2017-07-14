@@ -15,6 +15,7 @@
     <lists data-backstop="lists"></lists>
     <mediaObject></mediaObject>
     <mountains></mountains>
+    <radios data-backstop="radios"></radios>
     <selects data-backstop="selects"></selects>
     <test data-backstop="test"></test>
   </div>

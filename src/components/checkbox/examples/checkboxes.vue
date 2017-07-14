@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Checkboxes</h2>
     <cdr-checkbox text="single" @change="change" v-model="ex1"></cdr-checkbox>
     <cdr-checkbox text="checked" @change="change" v-model="ex2"></cdr-checkbox>
     <p>single: {{ex1}}</p>
@@ -10,9 +11,9 @@
     <cdr-checkbox text="E" :value="testVal" v-model="exGroup"></cdr-checkbox>
     <cdr-checkbox text="F" :value="testVal2" v-model="exGroup"></cdr-checkbox>
     <p>group: {{exGroup}}</p>
-    <!-- <cdr-checkbox text="autofocus" autofocus></cdr-checkbox>
+    <cdr-checkbox text="autofocus" autofocus></cdr-checkbox>
     <cdr-checkbox text="disabled" disabled></cdr-checkbox>
-    <cdr-checkbox text="required" required></cdr-checkbox> -->
+    <cdr-checkbox text="required" required></cdr-checkbox>
  </div>
 </template>
 

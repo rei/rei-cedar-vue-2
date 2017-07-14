@@ -1,6 +1,6 @@
 <template>
   <div class="form-example">
-    <h2>Forms</h2>
+    <h2>Text Inputs</h2>
 
     <cdr-input v-model="debounce"
       label="Validation with debounce"
@@ -61,7 +61,7 @@
       immediate-validate
       ></cdr-input>
 
-    <cdr-input v-model="error" 
+    <cdr-input v-model="error"
       label="Error"
       feedback
       :rules="[validateFn]"
@@ -90,7 +90,7 @@
       immediate-validate
       ></cdr-input>
 
-    <cdr-input v-model="error" 
+    <cdr-input v-model="error"
       label="Multiline Error"
       feedback
       :rules="[validateFn]"
@@ -153,4 +153,3 @@
     padding: 10px;
   }
 </style>
-

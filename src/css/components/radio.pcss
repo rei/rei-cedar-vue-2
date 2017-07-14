@@ -1,4 +1,4 @@
-.cdr-checkbox {
+.cdr-radio {
   position: absolute;
   opacity: 0;
 
@@ -8,8 +8,7 @@
     }
 
     &::after {
-      background-image: svg-load('../../assets/icons/rei/icon-rei-check.svg', fill=#fff);
-      background-repeat: no-repeat;
+      background-color: white;
     }
   }
 
@@ -40,7 +39,7 @@
       width: var(--cb-width);
       height: var(--cb-height);
       border: 1px solid gray;
-      border-radius: 2px;
+      border-radius: 50%;
       margin-right: 10px;
       display: inline-block;
       vertical-align: text-top;
@@ -50,10 +49,11 @@
     &::after {
       content: '';
       position: absolute;
-      left: 2px;
-      top: 2px;
-      width: calc(var(--cb-width) - 4px);
-      height: calc(var(--cb-height) - 4px);
+      left: calc(var(--cb-width) / 3);
+      top: calc(var(--cb-width) / 3);
+      width: calc(var(--cb-width) / 3);
+      height: calc(var(--cb-height) / 3);
+      border-radius: 50%;
     }
   }
 }

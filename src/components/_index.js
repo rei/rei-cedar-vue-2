@@ -12,6 +12,7 @@ import cdrImg from './image/cdrImg';
 import cdrInput from './input/cdrInput';
 import cdrList from './list/cdrList';
 import cdrMediaObject from './mediaObject/cdrMediaObject';
+import cdrRadio from './radio/cdrRadio';
 import cdrSelect from './select/cdrSelect';
 
 export default {
@@ -30,4 +31,5 @@ export default {
   cdrList,
   cdrMediaObject,
   cdrSelect,
+  cdrRadio,
 };

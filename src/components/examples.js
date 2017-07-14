@@ -11,6 +11,7 @@ import inputs from './input/examples/Inputs';
 import lists from './list/examples/Lists';
 import mediaObject from './mediaObject/examples/mediaObject';
 import mountains from '../directives/mountain/examples/Mountains';
+import radios from './radio/examples/Radios';
 import selects from './select/examples/Selects';
 
 import test from './testing/Test'; // only used as example for e2e test
@@ -29,6 +30,7 @@ export default {
   lists,
   mediaObject,
   mountains,
+  radios,
   selects,
   test, // only used as example for e2e test
 };
