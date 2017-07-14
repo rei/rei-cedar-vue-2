@@ -6,17 +6,17 @@
       </cdr-card>
     </cdr-col>
     <cdr-col>
-      <cdr-card content-wrapper-class-a="cdr-box">
+      <cdr-card content-wrapper-class-a="cdr-inset">
         <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
       </cdr-card>
     </cdr-col>
     <cdr-col>
       <cdr-card
-      content-wrapper-class-b="cdr-box"
+      content-wrapper-class-b="cdr-inset"
       header
-      headerClass="cdr-box"
+      headerClass="cdr-inset"
       footer
-      footerClass="cdr-box"
+      footerClass="cdr-inset"
       >
         <cdr-media-object
         level="3"

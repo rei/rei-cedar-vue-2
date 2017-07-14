@@ -8,10 +8,10 @@ The basic card is intended as a container for grouping like content.
   <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
 </cdr-card>
 ```
-#### Simple card with a card block to provide internal spacing
+#### Simple card with an inset to provide internal spacing
 ```
 <cdr-card 
-  wrapper-a="cdr-card__block"
+  wrapper-a="cdr-inset"
 >
  <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
 </cdr-card>
@@ -19,11 +19,11 @@ The basic card is intended as a container for grouping like content.
 #### placing content in multiple slots
 ```
 <cdr-card
- wrapper-b="cdr-card__block"
+ wrapper-b="cdr-inset"
  header
- headerClass="cdr-card__block"
+ headerClass="cdr-inset"
  footer
- footerClass="cdr-card__block"
+ footerClass="cdr-inset"
 >
   <cdr-media-object
   level="3"
