@@ -116,6 +116,8 @@
           label="MTB Project"
           title="Tiger Mountain Loop"
           title-url="http://rei.com"
+          :snapshot="['17.3 mi away', ' Issaquah, WA', ' 34 min drive']"
+          actions
           action-one-copy="action 1"
           action-two-copy="action 2"
           >

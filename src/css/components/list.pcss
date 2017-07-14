@@ -3,12 +3,6 @@
 
   padding-left: var(--list-pl);
 
-  &--inline {
-    & > li {
-      display: inline-block;
-    }
-  }
-
   & > li {
     padding-bottom: var(--list-pb);
 
@@ -35,6 +29,30 @@
 
   &--bulleted {
     @apply --decoration-list-bulleted;
+  }
+
+  &--inline {
+    @apply --decoration-list-default;
+    padding: 0;
+
+    & > li {
+      display: inline-block;
+    }
+  }
+
+  &--inline.cdr-list--bulleted {
+    & > li {
+      padding-right: 0;
+
+      &:not(:last-of-type)::after {
+        vertical-align: text-center;
+        content: "\2022";
+        display: inline-block;
+        color: inherit;
+        margin-left: 0;
+        width: 0.8rem;
+      }
+    }
   }
 
   &--numbered {

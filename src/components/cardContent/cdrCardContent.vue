@@ -31,6 +31,13 @@
       :mediaSubTitle="subTitle"
       media-title-class="cdr-card--content__title cdr-card--content__title__action"
       :media-figure-radius= "mediaFigureRadiusClass" >
+      <template v-if="snapshot">
+        <ul class="cdr-card--content__snapshot cdr-list cdr-list--inline cdr-list--bulleted">
+           <li v-for="item in snapshot">
+            {{ item }}
+          </li>
+        </ul>
+      </template>
 
 
 
@@ -38,11 +45,6 @@
 
     <template slot="bodyB">
       <div v-if="$slots.summary" class="cdr-inset cdr-inset--remove-top cdr-card--content__summary">
-      <ul class="cdr-card--content__snapshot">
-           <li v-for="item in snapshot">
-            {{ item }}
-          </li>
-        </ul>
         <slot name="summary">{{summary}}</slot>
       </div>
       <div v-if="$slots.price" class="cdr-inset cdr-inset--remove-top cdr-card--content__price">
@@ -51,9 +53,8 @@
       <div v-if="$slots.messaging" class="cdr-inset cdr-inset--remove-top cdr-card--content__messaging">
         <slot name="messaging">{{messaging}}</slot>
       </div>
-      <template v-if="$slots.actions">
+      <template v-if="actions">
         <cdr-button-group
-          slot="actions"
           class="cdr-inset cdr-inset--remove-top cdr-card--content__action">
           <cdr-button
           v-if="actionOneCopy"
@@ -68,7 +69,7 @@
         </cdr-button-group>
       </template>
     </template>
-     <template v-if="$slots.footer">
+     <template v-if="userSettings">
        <cdr-button-group
           slot="footer"
           class="cdr-card--content__action">
@@ -147,6 +148,10 @@ export default {
     * use this to pass messaging markup as a property rather than inline
     **/
     messaging: String,
+    actions: {
+      type: Boolean,
+      default: false,
+    },
     /**
     * action button modifiers (primary, secondary, ...)
     **/
@@ -163,6 +168,10 @@ export default {
       required: false,
     },
     actionTwoCopy: String,
+    userSettings: {
+      type: Boolean,
+      default: false,
+    },
     /**
     * User settings button modifiers (temp to be replaced with icon selections)
     **/
