@@ -1,5 +1,7 @@
-import { mount } from 'avoriaz';
+import { mount, shallow } from 'avoriaz';
+import testText from '../examples/testText.vue';
 import cdrCheckbox from '@/components/checkbox/cdrCheckbox';
+
 
 describe('cdrCheckbox.vue', () => {
   it('renders an input', () => {
@@ -19,8 +21,8 @@ describe('cdrCheckbox.vue', () => {
 
   it('renders label text correctly', () => {
     const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        text: 'Label Test',
+      slots: {
+        default: testText,
       },
     });
     expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test');

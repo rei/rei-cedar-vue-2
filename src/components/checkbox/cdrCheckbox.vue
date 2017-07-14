@@ -12,7 +12,9 @@
       :value="value"
       ref="checkbox"
       >
-    <label class="cdr-checkbox__label" :for="checkboxId" ref="label">{{text}}</label>
+    <label class="cdr-checkbox__label" :for="checkboxId" ref="label">
+      <slot></slot>
+    </label>
   </div>
 </template>
 
@@ -31,10 +33,6 @@ export default {
      * If one is not provided, it will be generated.
     */
     id: String,
-    /**
-     * Text for the checkbox.
-    */
-    text: String,
     /**
      * Sets the name attribute for the checkbox.
     */

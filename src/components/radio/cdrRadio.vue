@@ -12,7 +12,9 @@
       :value="value"
       ref="radio"
       >
-    <label class="cdr-radio__label" :for="radioId" ref="label">{{text}}</label>
+    <label class="cdr-radio__label" :for="radioId" ref="label">
+      <slot></slot>
+    </label>
   </div>
 </template>
 
@@ -31,10 +33,6 @@ export default {
      * If one is not provided, it will be generated.
     */
     id: String,
-    /**
-     * Text for the radio.
-    */
-    text: String,
     /**
      * Sets the name attribute for the radio.
     */

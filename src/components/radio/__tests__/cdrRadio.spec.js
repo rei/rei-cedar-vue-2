@@ -1,4 +1,5 @@
 import { mount } from 'avoriaz';
+import testText from '../examples/testText.vue';
 import cdrRadio from '@/components/radio/cdrRadio';
 
 describe('cdrRadio.vue', () => {
@@ -33,8 +34,10 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
-        text: 'Label Test',
       },
+      slots: {
+        default: testText,
+      }
     });
     expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test');
   });
