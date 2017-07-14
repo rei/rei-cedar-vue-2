@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Checkboxes</h2>
     <cdr-checkbox text="single" @change="change" v-model="ex1"></cdr-checkbox>
     <cdr-checkbox text="checked" @change="change" v-model="ex2"></cdr-checkbox>
     <p>single: {{ex1}}</p>

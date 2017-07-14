@@ -1,11 +1,16 @@
 <template>
-  <div class="">
-    <cdr-radio text="A" name="example" value="A" v-model="ex1"></cdr-radio>
-    <cdr-radio text="B" name="example" value="B" v-model="ex1"></cdr-radio>
-    <cdr-radio text="C" name="example" :value="{val:'C'}" v-model="ex1"></cdr-radio>
-    <cdr-radio text="D" name="example" value="D" v-model="ex1" disabled></cdr-radio>
-    <cdr-radio text="E" name="example" value="E" v-model="ex1" autofocus></cdr-radio>
-    <p>Picked: {{ex1}}</p>
+  <div>
+    <h2>Radios</h2>
+    <cdr-radio text="A1" name="example" value="a1" v-model="ex1"></cdr-radio>
+    <cdr-radio text="A2" name="example" value="a2" v-model="ex1"></cdr-radio>
+    <cdr-radio text="A3" name="example" :value="{val:'a3'}" v-model="ex1"></cdr-radio>
+    <cdr-radio text="A4" name="example" value="a4" v-model="ex1" disabled></cdr-radio>
+    <cdr-radio text="A5" name="example" value="a5" v-model="ex1" autofocus></cdr-radio>
+    <p>Group A Picked: {{ex1}}</p>
+
+    <cdr-radio text="B1" name="example2" value="b1" v-model="ex2"></cdr-radio>
+    <cdr-radio text="B2" name="example2" value="b2" v-model="ex2"></cdr-radio>
+    <p>Group B Picked: {{ex2}}</p>
   </div>
 </template>
 
@@ -18,6 +23,7 @@ export default {
   data() {
     return {
       ex1: '',
+      ex2: 'b2',
     };
   },
 };
