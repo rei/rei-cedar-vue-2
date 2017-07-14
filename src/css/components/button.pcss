@@ -1,44 +1,82 @@
 .cdr-button {
-  @apply --button-resets;
-  @apply --decoration-text-off;
-  @apply --appearance-emphasis;
-  @apply --decoration-border;
   @apply --decoration-outline;
-  @apply --glaze-core-actions;
+  @apply --sys-font-spruce-bdy-15;
+
+  @media (--large) {
+    @apply --sys-font-spruce-bdy-25;
+
+    color: var(--sys-color-system-10);
+  }
+
+  background-color: var(--sys-color-loretan-base);
+  border-color: var(--sys-color-loretan-base);
+  border-width: 0.1rem;
+  border-style: solid;
+  border-radius: var(--radius-button);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  line-height: var(--line-height-closed);
+  padding: var(--spacing-space-sm) var(--spacing-space-lg);
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover,
+  &:active,
+  &:visited {
+    background-color: var(--sys-color-loretan-darken-20);
+    border-color: var(--sys-color-loretan-darken-20);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline-color: var(--color-outline-focus);
+  }
 
   /* button themes */
-  &--alternate {
-    @apply --glaze-dark-10-actions;
-  }
-
   &--secondary {
-    @apply --glaze-light-10-alternate-actions;
+    background-color: #fff;
+    border-color: var(--sys-color-hillary-darken-20);
+    color: var(--sys-color-hillary-darken-30);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #fff;
+      border-color: var(--sys-color-hillary-darken-20);
+      color: var(--sys-color-hillary-darken-30);
+    }
   }
 
-  &--secondary-alternate {
-    @apply --glaze-light-10-actions;
-  }
-
-  /* button sizes */
-  &--small {
-    @apply --appearance-emphasis-small;
-  }
-
-  &--extra-small {
-    @apply --appearance-emphasis-extra-small;
+  &--compact {
+    font-size: var(--sys-font-spruce-cpt-10-font-size);
+    line-height: var(--line-height-neutral);
+    padding: var(--spacing-space-xs) var(--spacing-space-md);
   }
 
   /* button states */
   &[disabled] {
-    @apply --glaze-disabled;
+    background-color: var(--sys-color-gray-lighten-20);
+    border-color: var(--sys-color-gray-lighten-20);
+    color: #fff;
+    cursor: not-allowed;
   }
 
   &--block {
-    @apply --button-block;
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   &--fixed {
-    @apply --button-fixed;
+    width: auto;
+    display: inline;
+    margin: 0 0 2rem 1.6rem;
   }
 }
 

@@ -8,20 +8,22 @@ The basic card is intended as a container for grouping like content.
   <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
 </cdr-card>
 ```
-#### Simple card with a card block to provide internal spacing
+#### Simple card with an inset to provide internal spacing
 ```
-<cdr-card content-wrapper-class-a="cdr-card__block cdr-card__block--media">
+<cdr-card 
+  wrapper-a="cdr-inset"
+>
  <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
 </cdr-card>
 ```
 #### placing content in multiple slots
 ```
 <cdr-card
- content-wrapper-class-b="cdr-card__block"
- header=true
- headerClass="cdr-card__block"
- footer=true
- footerClass="cdr-card__block"
+ wrapper-b="cdr-inset"
+ header
+ headerClass="cdr-inset"
+ footer
+ footerClass="cdr-inset"
 >
   <cdr-media-object
   level="3"
@@ -33,7 +35,7 @@ The basic card is intended as a container for grouping like content.
   modifier="center"
   slot="header">
   </cdr-media-object>
-  <secton slot="bodyB">
+  <section slot="bodyB">
     <cdr-row cols="3" gutter="none">
      <cdr-col>
        <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
@@ -53,9 +55,9 @@ The basic card is intended as a container for grouping like content.
     <cdr-col>
       <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
     </cdr-col>
-  <cdr-row>
-</secton>
-<secton slot="bodyC">
+  </cdr-row>
+</section>
+<section slot="bodyC">
     <cdr-row cols="3" gutter="none">
      <cdr-col>
        <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
@@ -75,8 +77,8 @@ The basic card is intended as a container for grouping like content.
     <cdr-col>
       <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
     </cdr-col>
-  <cdr-row>
-</secton>
+  </cdr-row>
+</section>
 <cdr-media-object
   level="3"
   media-url="http://rei.com"
@@ -90,6 +92,5 @@ The basic card is intended as a container for grouping like content.
     <cdr-button >B1</cdr-button>
     <cdr-button class="cdr-card__action" modifier="secondary">B2</cdr-button>
   </cdr-button-group>
-  
 </cdr-card>
 ```

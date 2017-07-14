@@ -4,7 +4,10 @@
 
     <anchors data-backstop="anchors"></anchors>
     <buttons data-backstop="buttons"></buttons>
+    <cards></cards>
+    <card-content></card-content>
     <checkboxes data-backstop="checkboxes"></checkboxes>
+    <grid></grid>
     <headings data-backstop="headings"></headings>
     <icons data-backstop="icons"></icons>
     <images></images>
@@ -14,9 +17,7 @@
     <mountains></mountains>
     <radios data-backstop="radios"></radios>
     <selects data-backstop="selects"></selects>
-    <grid></grid>
     <test data-backstop="test"></test>
-
   </div>
 </template>
 

@@ -4,45 +4,19 @@
 * Base values inherited from brandai.pcss
 *
 * TOC:
-* Theme: color
-** Background
-** Forground
 *  Global generics
 ** Disabled
 ** Outline
-* Theme: palette
-** Core
-** Light-10
-** Dark-10
 ** Transparent
 */
 
 :root {
   /*
-  * Theme: color
-  */
-
-  /* background */
-  --color-background: inherit;
-  --color-light-10: var(--sys-color-architectural-5);
-  --color-light-30: var(--sys-color-architectural-6);
-  --color-medium-10: var(--sys-color-architectural-3);
-  --color-medium-20: var(--sys-color-architectural-4);
-  --color-dark-10: var(--sys-color-architectural-1);
-  --color-dark-20: var(--sys-color-architectural-2);
-
-  /* forground */
-  --color-text: var(--sys-color-architectural-2);
-  --color-text-muted: var(--sys-color-architectural-3);
-  --color-text-disabled: var(--sys-color-architectural-4);
-  --color-text-contrast: var(--sys-color-architectural-5);
-  --color-text-headings-: inherit;
-
-  /*
   * Global generics
   */
 
   /* Disabled */
+  --color-core-text: var(--sys-color-hillary-darken-40);
   --color-disabled-background-color: var(--sys-color-architectural-5);
   --color-disabled-border-color: var(--sys-color-architectural-4);
   --color-disabled-color: var(--color-text-disabled);
@@ -50,28 +24,6 @@
   /* Outline */
   --color-outline: inherit;
   --color-outline-focus: #83c4ff;
-
-  /*
-  * Theme: palette
-  */
-
-  /* Core */
-  --color-core-background: var(--sys-color-core);
-  --color-core-background-active: #83c4ff;
-  --color-core-border: var(--sys-color-core);
-  --color-core-text: var(--color-text);
-
-  /* Light-10 */
-  --color-light-10-background: var(--color-light-10);
-  --color-light-10-background-color-active: var(--sys-color-background-1);
-  --color-light-10-border: var(--color-light-10);
-  --color-light-10-color: var(--color-text);
-
-  /* Dark-10 */
-  --color-dark-10-background-color: var(--color-dark-10);
-  --color-dark-10-background-color-active: #333;
-  --color-dark-10-border: var(--color-dark-10);
-  --color-dark-10-color: var(--color-text-contrast);
 
   /* Transparent  */
   --color-transparent-background: transparent;
