@@ -1,8 +1,8 @@
 <template>
   <div>
     <h2>Checkboxes</h2>
-    <cdr-checkbox @change="change" v-model="ex1">single</cdr-checkbox>
-    <cdr-checkbox @change="change" v-model="ex2">checked</cdr-checkbox>
+    <cdr-checkbox v-model="ex1">single</cdr-checkbox>
+    <cdr-checkbox v-model="ex2">checked</cdr-checkbox>
     <p>single: {{ex1}}</p>
     <cdr-checkbox value="A" v-model="exGroup">A</cdr-checkbox>
     <cdr-checkbox value="B" v-model="exGroup">B</cdr-checkbox>
@@ -36,11 +36,6 @@ export default {
       },
       testVal2: [9, 8],
     };
-  },
-  methods: {
-    change(val) {
-      console.log('change', val);
-    },
   },
 };
 </script>
