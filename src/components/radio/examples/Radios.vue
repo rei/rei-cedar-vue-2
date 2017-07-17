@@ -5,7 +5,6 @@
     <cdr-radio name="example" value="a2" v-model="ex1">A2</cdr-radio>
     <cdr-radio name="example" :value="{val:'a3'}" v-model="ex1">A3</cdr-radio>
     <cdr-radio name="example" value="a4" v-model="ex1" disabled>A4</cdr-radio>
-    <cdr-radio name="example" value="a5" v-model="ex1" autofocus>A5</cdr-radio>
     <p>Group A Picked: {{ex1}}</p>
 
     <cdr-radio name="example2" value="b1" v-model="ex2">B1</cdr-radio>

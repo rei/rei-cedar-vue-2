@@ -11,9 +11,7 @@
     <cdr-checkbox :value="testVal" v-model="exGroup">E</cdr-checkbox>
     <cdr-checkbox :value="testVal2" v-model="exGroup">F</cdr-checkbox>
     <p>group: {{exGroup}}</p>
-    <cdr-checkbox autofocus>autofocus</cdr-checkbox>
     <cdr-checkbox disabled>disabled</cdr-checkbox>
-    <cdr-checkbox required>required</cdr-checkbox>
  </div>
 </template>
 
