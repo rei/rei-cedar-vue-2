@@ -27,7 +27,14 @@ export default {
   },
   props: {
     /**
-     * Sets the value of the radio.
+     * Sets the name of the radio. Required.
+    */
+    name: {
+      type: String,
+      required: true,
+    },
+    /**
+     * Sets the value of the radio. Required.
     */
     value: {
       required: true,
