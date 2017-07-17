@@ -1,8 +1,8 @@
 <template>
   <div v-if="ratio" class="cdr-media-frame" :class="[ratioClass, cropClass]">
-    <img class="cdr-media-frame__image" :class="[modifierClass, utilityRadiusClass]" :src="src" :alt="alt">
+    <img class="cdr-media-frame__image" :class="[modifierClass, utilityRadiusClass]" :src="src" :alt="alt" v-bind="$attrs">
   </div>
-  <img v-else :class="[modifierClass, utilityRadiusClass]" :src="src" :alt="alt">
+  <img v-else :class="[modifierClass, utilityRadiusClass]" :src="src" :alt="alt" v-bind="$attrs">
 </template>
 
 <script>
@@ -11,6 +11,7 @@ import modifier from '../../mixins/modifier';
 export default {
   name: 'cdr-img',
   mixins: [modifier],
+  inheritAttrs: false,
   props: {
     /**
      * Required. Image source url.
