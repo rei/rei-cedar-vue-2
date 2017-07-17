@@ -52,11 +52,25 @@ var model = ["A", {value: 'C'}, [1,2,3]];
 var valE = {val: 'X', otherVal: 'Y', more: [8,9]};
 
 <div>
-<cdr-checkbox value="A" v-model="model">A</cdr-checkbox>
-<cdr-checkbox value="B" v-model="model">B</cdr-checkbox>
-<cdr-checkbox :value="{value: 'C'}" v-model="model">C</cdr-checkbox>
-<cdr-checkbox :value="[1,2,3]" v-model="model">D</cdr-checkbox>
-<cdr-checkbox :value="valE" v-model="model">E</cdr-checkbox>
-<p>Value: {{model}}</p>
+  <cdr-checkbox value="A" v-model="model">A</cdr-checkbox>
+  <cdr-checkbox value="B" v-model="model">B</cdr-checkbox>
+  <cdr-checkbox :value="{value: 'C'}" v-model="model">C</cdr-checkbox>
+  <cdr-checkbox :value="[1,2,3]" v-model="model">D</cdr-checkbox>
+  <cdr-checkbox :value="valE" v-model="model">E</cdr-checkbox>
+  <p>Value: {{model}}</p>
 </div>
+```
+
+#### Event
+
+Open console to see output
+
+```
+var model = false;
+
+function eventExample(val) {
+  console.log(val + ' was selected');
+}
+
+<cdr-checkbox @change="eventExample" v-model="model">Checkbox: {{model}}</cdr-checkbox>
 ```

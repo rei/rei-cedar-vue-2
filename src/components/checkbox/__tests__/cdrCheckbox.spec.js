@@ -42,42 +42,6 @@ describe('cdrCheckbox.vue', () => {
     expect(wrapper.vm.$refs.checkbox.id).to.equal(wrapper.vm._uid.toString());
   });
 
-  it('sets checkbox name attribute correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        name: 'testing',
-      },
-    });
-    expect(wrapper.vm.$refs.checkbox.name).to.equal('testing');
-  });
-
-  it('sets input disabled attribute correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        disabled: true,
-      },
-    });
-    expect(wrapper.vm.$refs.checkbox.getAttribute('disabled')).to.equal('disabled');
-  });
-
-  it('sets checkbox required attribute correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        required: true,
-      },
-    });
-    expect(wrapper.vm.$refs.checkbox.getAttribute('required')).to.equal('required');
-  });
-
-  it('sets checkbox autofocus attribute correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        autofocus: true,
-      },
-    });
-    expect(wrapper.vm.$refs.checkbox.getAttribute('autofocus')).to.equal('autofocus');
-  });
-
   it('evaluates simple not checked state correctly', () => {
     const wrapper = mount(cdrCheckbox, {
       propsData: {
