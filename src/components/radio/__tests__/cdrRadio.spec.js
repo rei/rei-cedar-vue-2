@@ -7,6 +7,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
       }
     });
     expect(wrapper.vm.$refs.radio.tagName).to.equal('INPUT');
@@ -16,6 +17,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
       }
     });
     expect(wrapper.vm.$refs.radio.hasAttribute('type', 'radio')).to.equal(true);
@@ -25,6 +27,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
       }
     });
     expect(wrapper.vm.$refs.label.tagName).to.equal('LABEL');
@@ -34,6 +37,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
       },
       slots: {
         default: testText,
@@ -46,6 +50,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
         id: 'test',
       },
     });
@@ -56,6 +61,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
       }
     });
     expect(wrapper.vm.$refs.radio.id).to.equal(wrapper.vm._uid.toString());
@@ -65,6 +71,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
         modelValue: 'AA',
       },
     });
@@ -75,6 +82,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
         modelValue: 'A',
       },
     });
@@ -85,6 +93,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'B',
+        name: 'testName',
         modelValue: 'A',
       },
     });
@@ -95,6 +104,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
         modelValue: 'A',
       },
     });
@@ -105,6 +115,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: {test: 'B', arr: [1,2,3]},
+        name: 'testName',
         modelValue: {test: 'B'},
       },
     });
@@ -115,6 +126,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: {test: 'B', arr: [1,2,3]},
+        name: 'testName',
         modelValue: {test: 'B', arr: [1,2,3]},
       },
     });
