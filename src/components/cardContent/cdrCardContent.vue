@@ -6,7 +6,7 @@
   :extendContent="extendContent"
   footerClass="cdr-inset cdr-inset--remove-top"
   headerClass="cdr-inset"
-  wrapper-a= "cdr-inset cdr-inset--remove-top" >
+  wrapper-a= "cdr-inset cdr-inset--remove-top cdr-card--content__body" >
 
     <template v-if="this.authorTitle != null">
         <cdr-media-object
@@ -38,21 +38,21 @@
           </li>
         </ul>
       </template>
-
-
-
+      <div v-if="$slots.summary"
+      class="cdr-card--content__summary">
+        <slot name="summary">{{summary}}</slot>
+      </div>
+      <div v-if="$slots.price"
+      class="cdr-card--content__price">
+        <slot name="price">{{price}}</slot>
+      </div>
+      <div v-if="$slots.messaging"
+      class="cdr-card--content__messaging">
+        <slot name="messaging">{{messaging}}</slot>
+      </div>
     </cdr-media-object>
 
     <template slot="bodyB">
-      <div v-if="$slots.summary" class="cdr-inset cdr-inset--remove-top cdr-card--content__summary">
-        <slot name="summary">{{summary}}</slot>
-      </div>
-      <div v-if="$slots.price" class="cdr-inset cdr-inset--remove-top cdr-card--content__price">
-        <slot name="price">{{price}}</slot>
-      </div>
-      <div v-if="$slots.messaging" class="cdr-inset cdr-inset--remove-top cdr-card--content__messaging">
-        <slot name="messaging">{{messaging}}</slot>
-      </div>
       <template v-if="actions">
         <cdr-button-group
           class="cdr-inset cdr-inset--remove-top cdr-card--content__action">
