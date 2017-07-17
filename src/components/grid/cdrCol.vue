@@ -10,85 +10,11 @@
     </div>
   </li>
   <li v-else-if="isRow && isList" class="cdr-row cdr-col" :class="[spanClass, alignClass, offsetClass, hideClass]">
-    <row class="cdr-col" 
-      :cols="cols"
-      :colsMd="colsMd"
-      :colsLg="colsLg"
-      :colsXl="colsXl"
-      :colsXxl="colsXxl"
-      :justify="justify"
-      :justifyMd="justifyMd"
-      :justifyLg="justifyLg"
-      :justifyXl="justifyXl"
-      :justifyXxl="justifyXxl"
-      :align="align"
-      :alignMd="alignMd"
-      :alignLg="alignLg"
-      :alignXl="alignXl"
-      :alignXxl="alignXxl"
-      :gutter="gutter"
-      :gutterMd="gutterMd"
-      :gutterLg="gutterLg"
-      :gutterXl="gutterXl"
-      :gutterXxl="gutterXxl"
-      :vertical="vertical"
-      :verticalMd="verticalMd"
-      :verticalLg="verticalLg"
-      :verticalXl="verticalXl"
-      :verticalXxl="verticalXxl"
-      :wrap="wrap"
-      :wrapMd="wrapMd"
-      :wrapLg="wrapLg"
-      :wrapXl="wrapXl"
-      :wrapXxl="wrapXxl"
-      :nowrap="nowrap"
-      :nowrapMd="nowrapMd"
-      :nowrapLg="nowrapLg"
-      :nowrapXl="nowrapXl"
-      :nowrapXxl="nowrapXxl"
-      :type="type">
+    <row class="cdr-col" v-bind="$attrs">
       <slot></slot>
     </row>
   </li>
-  <row v-else 
-    class="cdr-col" 
-    :class="[spanClass, alignClass, offsetClass, hideClass]" 
-    :cols="cols"
-    :colsMd="colsMd"
-    :colsLg="colsLg"
-    :colsXl="colsXl"
-    :colsXxl="colsXxl"
-    :justify="justify"
-    :justifyMd="justifyMd"
-    :justifyLg="justifyLg"
-    :justifyXl="justifyXl"
-    :justifyXxl="justifyXxl"
-    :align="align"
-    :alignMd="alignMd"
-    :alignLg="alignLg"
-    :alignXl="alignXl"
-    :alignXxl="alignXxl"
-    :gutter="gutter"
-    :gutterMd="gutterMd"
-    :gutterLg="gutterLg"
-    :gutterXl="gutterXl"
-    :gutterXxl="gutterXxl"
-    :vertical="vertical"
-    :verticalMd="verticalMd"
-    :verticalLg="verticalLg"
-    :verticalXl="verticalXl"
-    :verticalXxl="verticalXxl"
-    :wrap="wrap"
-    :wrapMd="wrapMd"
-    :wrapLg="wrapLg"
-    :wrapXl="wrapXl"
-    :wrapXxl="wrapXxl"
-    :nowrap="nowrap"
-    :nowrapMd="nowrapMd"
-    :nowrapLg="nowrapLg"
-    :nowrapXl="nowrapXl"
-    :nowrapXxl="nowrapXxl"
-    :type="type">
+  <row v-else class="cdr-col" :class="[spanClass, alignClass, offsetClass, hideClass]" v-bind="$attrs">
     <slot></slot>
   </row>
 </template>
@@ -103,6 +29,7 @@
   export default {
     name: 'cdr-col',
     components: { Row },
+    inheritAttrs: false,
     props: {
       /**
        * Number of columns (1-12) the column should span.
@@ -297,79 +224,6 @@
         type: Boolean,
         default: false,
       },
-// ROW PROPS EXPOSED HERE -- they are ignored in the docs for cdr-col
-      /** @ignore */
-      cols: String,
-      /** @ignore */
-      colsMd: String,
-      /** @ignore */
-      colsLg: String,
-      /** @ignore */
-      colsXl: String,
-      /** @ignore */
-      colsXxl: String,
-      /** @ignore */
-      justify: String,
-      /** @ignore */
-      justifyMd: String,
-      /** @ignore */
-      justifyLg: String,
-      /** @ignore */
-      justifyXl: String,
-      /** @ignore */
-      justifyXxl: String,
-      /** @ignore */
-      align: String,
-      /** @ignore */
-      alignMd: String,
-      /** @ignore */
-      alignLg: String,
-      /** @ignore */
-      alignXl: String,
-      /** @ignore */
-      alignXxl: String,
-      /** @ignore */
-      gutter: String,
-      /** @ignore */
-      gutterMd: String,
-      /** @ignore */
-      gutterLg: String,
-      /** @ignore */
-      gutterXl: String,
-      /** @ignore */
-      gutterXxl: String,
-      /** @ignore */
-      vertical: Boolean,
-      /** @ignore */
-      verticalMd: Boolean,
-      /** @ignore */
-      verticalLg: Boolean,
-      /** @ignore */
-      verticalXl: Boolean,
-      /** @ignore */
-      verticalXxl: Boolean,
-      /** @ignore */
-      wrap: Boolean,
-      /** @ignore */
-      wrapMd: Boolean,
-      /** @ignore */
-      wrapLg: Boolean,
-      /** @ignore */
-      wrapXl: Boolean,
-      /** @ignore */
-      wrapXxl: Boolean,
-      /** @ignore */
-      nowrap: Boolean,
-      /** @ignore */
-      nowrapMd: Boolean,
-      /** @ignore */
-      nowrapLg: Boolean,
-      /** @ignore */
-      nowrapXl: Boolean,
-      /** @ignore */
-      nowrapXxl: Boolean,
-      /** @ignore */
-      type: String,
     },
     inject: ['rowType'],
     computed: {
