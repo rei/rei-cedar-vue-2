@@ -2,11 +2,8 @@
   <div class="">
     <input class="cdr-radio"
       type="radio"
+      v-bind="$attrs"
       :id="radioId"
-      :name="name"
-      :required="required"
-      :disabled="disabled"
-      :autofocus="autofocus"
       :checked="isChecked"
       @change="onChange"
       :value="value"
@@ -23,38 +20,20 @@ import { isEqual } from 'lodash';
 
 export default {
   name: 'cdr-radio',
+  inheritAttrs: false,
   model: {
     prop: 'modelValue',
     event: 'change',
   },
   props: {
     /**
-     * id for the radio that is mapped to the label 'for' attribute.
-     * If one is not provided, it will be generated.
-    */
-    id: String,
-    /**
-     * Sets the name attribute for the radio.
-    */
-    name: String,
-    /**
-     * Sets the required attribute.
-    */
-    required: Boolean,
-    /**
-     * Sets the disabled attribute.
-    */
-    disabled: Boolean,
-    /**
-     * Sets the autofocus attribute.
-    */
-    autofocus: Boolean,
-    /**
      * Sets the value of the radio.
     */
     value: {
       required: true,
     },
+    /** @ignore */
+    id: String,
     /** @ignore */
     modelValue: {
       required: false,

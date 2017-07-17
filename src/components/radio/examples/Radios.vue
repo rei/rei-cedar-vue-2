@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Radios</h2>
-    <cdr-radio name="example" value="a1" v-model="ex1">A1</cdr-radio>
+    <cdr-radio id="test1" name="example" value="a1" v-model="ex1">A1</cdr-radio>
     <cdr-radio name="example" value="a2" v-model="ex1">A2</cdr-radio>
     <cdr-radio name="example" :value="{val:'a3'}" v-model="ex1">A3</cdr-radio>
     <cdr-radio name="example" value="a4" v-model="ex1" disabled>A4</cdr-radio>

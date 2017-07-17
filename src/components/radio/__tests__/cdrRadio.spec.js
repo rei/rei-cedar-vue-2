@@ -61,51 +61,11 @@ describe('cdrRadio.vue', () => {
     expect(wrapper.vm.$refs.radio.id).to.equal(wrapper.vm._uid.toString());
   });
 
-  it('sets radio name attribute correctly', () => {
-    const wrapper = mount(cdrRadio, {
-      propsData: {
-        value: 'A',
-        name: 'testing',
-      },
-    });
-    expect(wrapper.vm.$refs.radio.name).to.equal('testing');
-  });
-
-  it('sets input disabled attribute correctly', () => {
-    const wrapper = mount(cdrRadio, {
-      propsData: {
-        value: 'A',
-        disabled: true,
-      },
-    });
-    expect(wrapper.vm.$refs.radio.getAttribute('disabled')).to.equal('disabled');
-  });
-
-  it('sets radio required attribute correctly', () => {
-    const wrapper = mount(cdrRadio, {
-      propsData: {
-        value: 'A',
-        required: true,
-      },
-    });
-    expect(wrapper.vm.$refs.radio.getAttribute('required')).to.equal('required');
-  });
-
-  it('sets radio autofocus attribute correctly', () => {
-    const wrapper = mount(cdrRadio, {
-      propsData: {
-        value: 'A',
-        autofocus: true,
-      },
-    });
-    expect(wrapper.vm.$refs.radio.getAttribute('autofocus')).to.equal('autofocus');
-  });
-
   it('evaluates simple not checked state correctly', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
-        modelValue: false,
+        modelValue: 'AA',
       },
     });
     expect(wrapper.vm.isChecked).to.equal(false);
