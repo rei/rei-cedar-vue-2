@@ -144,10 +144,10 @@ describe('cdrSelect.vue', () => {
     const wrapper = mount(selectComp, {
       propsData: {
         label: 'test',
-        value: '1',
         options: ['1', '2'],
       },
     });
+    wrapper.setProps({ value: '1' });
     expect(wrapper.vm.$refs.select.value).to.equal('1');
   });
 
