@@ -111,6 +111,13 @@ export default {
       return optsArr;
     },
   },
+  watch: {
+    value() {
+      if (!this.multiple) {
+        this.val = this.value;
+      }
+    },
+  },
   mounted() {
     // initialize options as selected if multiple
     if (this.multiple) {
