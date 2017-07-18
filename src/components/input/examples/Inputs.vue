@@ -7,6 +7,8 @@
       id="testing"
       placeholder="Enter hi"
       feedback
+        name="yoyo"
+
       :rules="[validateFn]"
       debounce
       data-backstop="text-input"
@@ -71,6 +73,7 @@
     <cdr-input v-model="multi"
       label="Multiline"
       multi-line
+      rows="5"
       data-backstop="form-textarea"
       ></cdr-input>
 
@@ -79,6 +82,7 @@
       feedback
       :rules="[validateFn]"
       multi-line
+      rows="5"
       immediate-validate
       ></cdr-input>
 
@@ -87,6 +91,7 @@
       feedback
       :rules="[validateFn]"
       multi-line
+      rows="5"
       immediate-validate
       ></cdr-input>
 
@@ -95,6 +100,7 @@
       feedback
       :rules="[validateFn]"
       multi-line
+      rows="5"
       immediate-validate
       ></cdr-input>
 

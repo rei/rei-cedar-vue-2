@@ -1,4 +1,4 @@
-import { mount } from 'avoriaz';
+import { mount, shallow } from 'avoriaz';
 import inputComp from '@/components/input/cdrInput';
 
 function validateFn(inputText) {
@@ -56,7 +56,7 @@ describe('cdrInput.vue', () => {
     });
     expect(wrapper.vm.$refs.input.id).to.equal(wrapper.vm.$refs.label.htmlFor);
   });
-  
+
   it('generates an id correctly', () => {
     const wrapper = mount(inputComp, {
       propsData: {
@@ -76,13 +76,15 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets input name attribute correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'Label Test',
-        name: 'testing',
       },
+      attrs: {
+        name: 'yoyo',
+      }
     });
-    expect(wrapper.vm.$refs.input.name).to.equal('testing');
+    expect(wrapper.vm.$refs.input.hasAttribute('name', 'testing')).to.equal(true);
   });
 
   it('renders input value correctly', () => {
@@ -102,13 +104,15 @@ describe('cdrInput.vue', () => {
         disabled: true,
       },
     });
-    expect(wrapper.vm.$refs.input.getAttribute('disabled')).to.equal('');
+    expect(wrapper.vm.$refs.input.hasAttribute('disabled', '')).to.equal(true);
   });
 
   it('sets input readonly attribute correctly', () => {
     const wrapper = mount(inputComp, {
       propsData: {
         label: 'test',
+      },
+      attrs: {
         readonly: true,
       },
     });
@@ -119,7 +123,9 @@ describe('cdrInput.vue', () => {
     const wrapper = mount(inputComp, {
       propsData: {
         label: 'test',
-        required: true,
+      },
+      attrs: {
+        required: '',
       },
     });
     expect(wrapper.vm.$refs.input.getAttribute('required')).to.equal('');
@@ -129,6 +135,8 @@ describe('cdrInput.vue', () => {
     const wrapper = mount(inputComp, {
       propsData: {
         label: 'test',
+      },
+      attrs: {
         autofocus: true,
       },
     });
@@ -139,6 +147,8 @@ describe('cdrInput.vue', () => {
     const wrapper = mount(inputComp, {
       propsData: {
         label: 'test',
+      },
+      attrs: {
         maxlength: '20',
       },
     });
@@ -149,6 +159,8 @@ describe('cdrInput.vue', () => {
     const wrapper = mount(inputComp, {
       propsData: {
         label: 'test',
+      },
+      attrs: {
         placeholder: 'test placeholder',
       },
     });
@@ -170,6 +182,8 @@ describe('cdrInput.vue', () => {
       propsData: {
         label: 'test',
         multiLine: true,
+      },
+      attrs: {
         rows: '10',
       },
     });
@@ -193,16 +207,6 @@ describe('cdrInput.vue', () => {
       },
     });
     expect(wrapper.vm.$refs.input.getAttribute('type')).to.equal('url');
-  });
-
-  it('sets input tabindex correctly', () => {
-    const wrapper = mount(inputComp, {
-      propsData: {
-        label: 'test',
-        tabindex: 2,
-      },
-    });
-    expect(wrapper.vm.$refs.input.getAttribute('tabindex')).to.equal('2');
   });
 
   it('hide-label sets aria-label correctly', () => {
@@ -278,6 +282,7 @@ describe('cdrInput.vue', () => {
       },
     });
     wrapper.vm.validate(true);
+    console.log(wrapper.vm.$refs.error);
     setTimeout(() => {
       expect(wrapper.vm.$refs.error.textContent).to.equal('Error Message');
       done();
