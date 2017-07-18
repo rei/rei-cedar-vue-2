@@ -8,11 +8,12 @@
       v-on="$listeners"
       @input="onChange"
       ref="select"
+      :value="val"
       :required="required"
       :multiple="multiple"
       :aria-label="hideLabel ? label : null"
     >
-      <option v-if="prompt" value="" :selected="!multiple" disabled :hidden="!multiple">{{prompt}}</option>
+      <option v-if="prompt" value="" disabled :hidden="!multiple" ref="prompt">{{prompt}}</option>
       <option v-if="options" v-for="option in computedOpts" :value="option.value">{{option.text}}</option>
       <slot></slot>
     </select>

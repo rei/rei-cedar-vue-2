@@ -19,7 +19,9 @@ const multipleData = ['a', 'b', 'c', 'd'];
     <option value="3">3</option>
     <option value="4">4</option>
   </cdr-select>
+  <p>Selected: {{selected}}</p>
 
   <cdr-select label="Multiple No Prompt" v-model="multiple" multiple size="4" :options="multipleData"></cdr-select>
+  <p>Selected: {{multiple}}</p>
 </div>
 ```
