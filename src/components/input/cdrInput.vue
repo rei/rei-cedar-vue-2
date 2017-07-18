@@ -45,9 +45,11 @@
       <span v-if="feedback" :class="validationClass" v-html="getIcon"></span>
     </div>
     <transition-group class="cdr-input-messages" :id="messagesId" ref="messages" name="cdr-animated-errors" tag="div">
-      <div :class="messageClass" ref="error" v-for="error in errors" :error="error" :key="error">
-        {{error}}
-      </div>
+      <div :class="messageClass"
+        ref="error"
+        v-for="error in errors"
+        :error="error"
+        :key="error">{{error}}</div>
     </transition-group>
   </div>
 </template>

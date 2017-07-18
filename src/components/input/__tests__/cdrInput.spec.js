@@ -123,25 +123,23 @@ describe('cdrInput.vue', () => {
     const wrapper = mount(inputComp, {
       propsData: {
         label: 'test',
-      },
-      attrs: {
-        required: '',
+        required: true,
       },
     });
-    expect(wrapper.vm.$refs.input.getAttribute('required')).to.equal('');
+    expect(wrapper.vm.$refs.input.getAttribute('required')).to.equal('required');
   });
 
-  it('sets input autofocus attribute correctly', () => {
-    const wrapper = mount(inputComp, {
-      propsData: {
-        label: 'test',
-      },
-      attrs: {
-        autofocus: true,
-      },
-    });
-    expect(wrapper.vm.$refs.input.getAttribute('autofocus')).to.equal('');
-  });
+  // it('sets input autofocus attribute correctly', () => {
+  //   const wrapper = mount(inputComp, {
+  //     propsData: {
+  //       label: 'test',
+  //     },
+  //     attrs: {
+  //       autofocus: true,
+  //     },
+  //   });
+  //   expect(wrapper.vm.$refs.input.getAttribute('autofocus')).to.equal('');
+  // });
 
   it('sets input maxlength attribute correctly', () => {
     const wrapper = mount(inputComp, {
@@ -274,7 +272,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('renders error messages correctly', (done) => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         value: 4,
@@ -282,9 +280,8 @@ describe('cdrInput.vue', () => {
       },
     });
     wrapper.vm.validate(true);
-    console.log(wrapper.vm.$refs.error);
     setTimeout(() => {
-      expect(wrapper.vm.$refs.error.textContent).to.equal('Error Message');
+      expect(wrapper.vm.$refs.error[0].textContent).to.equal('Error Message');
       done();
     }, 0);
   });
@@ -329,7 +326,7 @@ describe('cdrInput.vue', () => {
     });
     wrapper.vm.validate(true);
     setTimeout(() => {
-      expect(wrapper.vm.$refs.error.textContent).to.equal('Warning Message');
+      expect(wrapper.vm.$refs.error[0].textContent).to.equal('Warning Message');
       done();
     }, 0);
   });
@@ -390,7 +387,7 @@ describe('cdrInput.vue', () => {
     });
     wrapper.vm.validate(true);
     setTimeout(() => {
-      expect(wrapper.vm.$refs.error.textContent).to.equal('pattern error');
+      expect(wrapper.vm.$refs.error[0].textContent).to.equal('pattern error');
       done();
     }, 0);
   });
