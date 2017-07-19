@@ -233,11 +233,7 @@ export default {
       validator: value => (['normal', 'list'].indexOf(value) >= 0) || false,
     },
   },
-  provide() {
-    return {
-      rowType: this.type,
-    };
-  },
+
   computed: {
     rowClasses() {
       const classObj = {};
@@ -287,6 +283,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>
