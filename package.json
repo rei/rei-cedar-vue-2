@@ -13,7 +13,7 @@
     "build": "node build/build.js",
     "release": "node build/release.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "e2e": "node test/e2e/runner.js",
+    "e2e": "node test/e2e/runner.js",`
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "reference": "backstop reference --configPath=backstop.js",
@@ -22,9 +22,10 @@
     "docs": "vue-styleguidist server",
     "build:docs": "vue-styleguidist build"
   },
-  "dependencies": {
+  "peerDendencies": {
     "vue": "^2.3.4"
   },
+  "main": "release/cedar.js",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "avoriaz": "^2.4.2",
@@ -109,6 +110,7 @@
     "svgxuse": "^1.2.4",
     "tenon-node": "^0.4.0",
     "url-loader": "^0.5.9",
+    "vue": "^2.3.4",
     "vue-loader": "^12.2.1",
     "vue-router": "^2.7.0",
     "vue-style-loader": "^3.0.1",
