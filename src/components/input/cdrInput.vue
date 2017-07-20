@@ -42,7 +42,7 @@
         ref="input"
       >
 
-      <span v-if="feedback" :class="validationClass" v-html="getIcon"></span>
+      <span v-if="feedback" :class="validationClass" v-html="getIcon" ref="icon"></span>
     </div>
     <transition-group class="cdr-input-messages" :id="messagesId" ref="messages" name="cdr-animated-errors" tag="div">
       <div :class="messageClass"
@@ -223,11 +223,11 @@ export default {
         trim: false,
       };
 
-      if (!this.$vnode.data.directives) {
+      if (!this._vnode.data.directives) {//eslint-disable-line
         return modifiers;
       }
 
-      const model = this.$vnode.data.directives.find(i => i.name === 'model');
+      const model = this._vnode.data.directives.find(i => i.name === 'model');//eslint-disable-line
 
       if (!model) {
         return modifiers;

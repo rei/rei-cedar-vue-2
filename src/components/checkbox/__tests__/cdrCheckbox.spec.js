@@ -1,4 +1,4 @@
-import { mount, shallow } from 'avoriaz';
+import { mount } from 'avoriaz';
 import testText from '../examples/testText.vue';
 import cdrCheckbox from '@/components/checkbox/cdrCheckbox';
 
@@ -98,5 +98,47 @@ describe('cdrCheckbox.vue', () => {
       },
     });
     expect(wrapper.vm.isChecked).to.equal(true);
+  });
+
+  it('emits a change event with correct value for simple checkbox', () => {
+    const wrapper = mount(cdrCheckbox, {
+      propsData: {
+        modelValue: false,
+      },
+    });
+    const spy = sinon.spy(wrapper.vm, '$emit')
+    wrapper.vm.onChange();
+    expect(spy.args[0][0]).to.equal('change');
+    expect(spy.args[0][1]).to.equal(true);
+  });
+
+  it('emits a change event with correct value for complex checkbox', () => {
+    const wrapper = mount(cdrCheckbox, {
+      propsData: {
+        value: 'a',
+        modelValue: [],
+      },
+    });
+    const spy = sinon.spy(wrapper.vm, '$emit');
+    const cb = wrapper.find('.cdr-checkbox')[0];
+    cb.trigger('change');
+    
+    expect(spy.args[0][0]).to.equal('change');
+    expect(spy.args[0][1][0]).to.equal('a');
+  });
+  
+  it('emits a change event with correct value for complex pre-selected checkbox', () => {
+    const wrapper = mount(cdrCheckbox, {
+      propsData: {
+        value: 'a',
+        modelValue: ['a'],
+      },
+    });
+    const spy = sinon.spy(wrapper.vm, '$emit');
+    const cb = wrapper.find('.cdr-checkbox')[0];
+    cb.trigger('change');
+    
+    expect(spy.args[0][0]).to.equal('change');
+    expect(spy.args[0][1].length).to.equal(0);
   });
 });
