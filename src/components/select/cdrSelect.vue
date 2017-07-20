@@ -6,7 +6,7 @@
       :id="selectId"
       :size="size"
       v-on="$listeners"
-      @input="onChange"
+      @input="onInput"
       ref="select"
       :value="val"
       :required="required"
@@ -14,7 +14,7 @@
       :aria-label="hideLabel ? label : null"
     >
       <option v-if="prompt" value="" disabled :hidden="!multiple" ref="prompt">{{prompt}}</option>
-      <option v-if="options" v-for="option in computedOpts" :value="option.value">{{option.text}}</option>
+      <option v-if="options" v-for="option in computedOpts" :key="option.text" :value="option.value">{{option.text}}</option>
       <slot></slot>
     </select>
   </div>
@@ -131,7 +131,7 @@ export default {
     }
   },
   methods: {
-    onChange(e) {
+    onInput(e) {
       if (this.multiple) {
         const optArr = toArray(e.target.options);
         const selected = optArr.filter(o => o.selected === true).map(o => o.value);

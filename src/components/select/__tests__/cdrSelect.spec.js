@@ -1,5 +1,6 @@
 import { mount } from 'avoriaz';
 import selectComp from '@/components/select/cdrSelect';
+import { toArray } from 'lodash';
 
 describe('cdrSelect.vue', () => {
   it('renders a label element', () => {
@@ -68,6 +69,7 @@ describe('cdrSelect.vue', () => {
     expect(wrapper.vm.$refs.select.tagName).to.equal('SELECT');
   });
 
+  // TODO: revisit next update
   // it('sets select name attribute correctly', () => {
   //   const wrapper = mount(selectComp, {
   //     propsData: {
@@ -78,6 +80,7 @@ describe('cdrSelect.vue', () => {
   //   expect(wrapper.vm.$refs.select.name).to.equal('testing');
   // });
 
+  // TODO: revisit next update
   // it('sets select disabled attribute correctly', () => {
   //   const wrapper = mount(selectComp, {
   //     propsData: {
@@ -98,6 +101,7 @@ describe('cdrSelect.vue', () => {
     expect(wrapper.vm.$refs.select.getAttribute('required')).to.equal('required');
   });
 
+  // TODO: revisit next update
   // it('sets select autofocus attribute correctly', () => {
   //   const wrapper = mount(selectComp, {
   //     propsData: {
@@ -135,7 +139,7 @@ describe('cdrSelect.vue', () => {
         prompt: 'test prompt'
       },
     });
-    const opts = Array.from(wrapper.vm.$refs.select.options);
+    const opts = toArray(wrapper.vm.$refs.select.options);
     expect(opts[0].value).to.equal('');
     expect(opts[0].text).to.equal('test prompt');
   });
@@ -160,7 +164,7 @@ describe('cdrSelect.vue', () => {
         options: ['1', '2', '3'],
       },
     });
-    const optArr = Array.from(wrapper.vm.$refs.select.options);
+    const optArr = toArray(wrapper.vm.$refs.select.options);
     const selected = optArr.filter(o => o.selected === true).map(o => o.value);
     expect(selected).to.deep.equal(['1', '2']);
   });
@@ -203,8 +207,56 @@ describe('cdrSelect.vue', () => {
         }],
       },
     });
-    const optArr = Array.from(wrapper.vm.$refs.select.options);
+    const optArr = toArray(wrapper.vm.$refs.select.options);
     const selected = optArr.filter(o => o.selected === true).map(o => o.value);
     expect(selected).to.deep.equal(['1', '2']);
   });
+
+  it('emits input event with correct value', () => {
+    const wrapper = mount(selectComp, {
+      propsData: {
+        label: 'test',
+        value: '2',
+        options: ['1', '2'],
+      },
+    });
+    const spy = sinon.spy(wrapper.vm, '$emit');
+    const select = wrapper.find('.cdr-select')[0];
+    wrapper.setProps({ value: '1' });
+    select.trigger('input');
+    expect(spy.args[0][0]).to.equal('input');
+    expect(spy.args[0][1]).to.equal('1');
+  });
+
+  // TODO: revisit next update
+  // it('emits input event with correct value for multiple', () => {
+  //   const wrapper = mount(selectComp, {
+  //     propsData: {
+  //       label: 'test',
+  //       multiple: true,
+  //       value: ['1', '2'],
+  //       options: [{
+  //         value: '1',
+  //         text: 'one',
+  //       },
+  //       {
+  //         value: '2',
+  //         text: 'two',
+  //       },
+  //       {
+  //         value: '3',
+  //         text: 'three',
+  //       }],
+  //     },
+  //    attachToDocument: true,
+  //   });
+  //   const spy = sinon.spy(wrapper.vm, '$emit');
+  //   const select = wrapper.find('.cdr-select')[0];
+  //   // wrapper.setProps({ value: ['1', '3'] });
+  //   // console.log(wrapper.vm.$props.value);
+  //   select.trigger('input');
+  //   // console.log(spy.args);
+  //   expect(spy.args[0][0]).to.equal('input');
+  //   expect(spy.args[0][1]).to.deep.equal(['1', '3']);
+  // });
 });

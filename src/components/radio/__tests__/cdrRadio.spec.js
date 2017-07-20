@@ -67,6 +67,17 @@ describe('cdrRadio.vue', () => {
     expect(wrapper.vm.$refs.radio.id).to.equal(wrapper.vm._uid.toString());
   });
 
+  it('sets name attribute correctly', () => {
+    const wrapper = mount(cdrRadio, {
+      propsData: {
+        value: 'A',
+        name: 'testName',
+      }
+    });
+    const radio = wrapper.find('.cdr-radio')[0];
+    expect(radio.hasAttribute('name', 'testName')).to.equal(true);
+  });
+
   it('evaluates simple not checked state correctly', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
@@ -131,5 +142,21 @@ describe('cdrRadio.vue', () => {
       },
     });
     expect(wrapper.vm.isChecked).to.equal(true);
+  });
+
+  it('emits a change event with correct value', () => {
+    const wrapper = mount(cdrRadio, {
+      propsData: {
+        value: 'A',
+        name: 'testName',
+        modelValue: '',
+      },
+    });
+    const spy = sinon.spy(wrapper.vm, '$emit');
+    const radio = wrapper.find('.cdr-radio')[0];
+    radio.trigger('change');
+
+    expect(spy.args[0][0]).to.equal('change');
+    expect(spy.args[0][1]).to.equal('A');
   });
 });

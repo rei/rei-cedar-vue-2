@@ -106,8 +106,10 @@ describe('cdrCheckbox.vue', () => {
         modelValue: false,
       },
     });
-    const spy = sinon.spy(wrapper.vm, '$emit')
-    wrapper.vm.onChange();
+    const spy = sinon.spy(wrapper.vm, '$emit');
+    const cb = wrapper.find('.cdr-checkbox')[0];
+    cb.trigger('change');
+
     expect(spy.args[0][0]).to.equal('change');
     expect(spy.args[0][1]).to.equal(true);
   });
@@ -131,14 +133,14 @@ describe('cdrCheckbox.vue', () => {
     const wrapper = mount(cdrCheckbox, {
       propsData: {
         value: 'a',
-        modelValue: ['a'],
+        modelValue: [],
       },
     });
     const spy = sinon.spy(wrapper.vm, '$emit');
     const cb = wrapper.find('.cdr-checkbox')[0];
     cb.trigger('change');
-    
+
     expect(spy.args[0][0]).to.equal('change');
-    expect(spy.args[0][1].length).to.equal(0);
+    expect(spy.args[0][1]).to.deep.equal(['a']);
   });
 });

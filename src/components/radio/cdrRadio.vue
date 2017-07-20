@@ -4,6 +4,7 @@
       type="radio"
       v-bind="$attrs"
       :id="radioId"
+      :name="name"
       :checked="isChecked"
       @change="onChange"
       :value="value"
