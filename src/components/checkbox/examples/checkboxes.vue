@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Components from '../../_index';
+import * as Components from '../../_index';
 
 export default {
   name: 'checkboxes',
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     change(val) {
-      console.log('change', val);
+      console.log('change', val); // eslint-disable-line no-console
     },
   },
 };

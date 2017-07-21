@@ -1,35 +1,16 @@
-import cdrA from './anchor/cdrA';
-import cdrButton from './button/cdrButton';
-import cdrButtonGroup from './buttonGroup/cdrButtonGroup';
-import cdrCard from './card/cdrCard';
-import cdrCardContent from './cardContent/cdrCardContent';
-import cdrCheckbox from './checkbox/cdrCheckbox';
-import cdrCol from './grid/cdrCol';
-import cdrRow from './grid/cdrRow';
-import cdrHeading from './heading/cdrHeading';
-import cdrIcon from './icon/cdrIcon';
-import cdrImg from './image/cdrImg';
-import cdrInput from './input/cdrInput';
-import cdrList from './list/cdrList';
-import cdrMediaObject from './mediaObject/cdrMediaObject';
-import cdrRadio from './radio/cdrRadio';
-import cdrSelect from './select/cdrSelect';
-
-export default {
-  cdrA,
-  cdrButton,
-  cdrButtonGroup,
-  cdrCard,
-  cdrCardContent,
-  cdrCheckbox,
-  cdrCol,
-  cdrRow,
-  cdrHeading,
-  cdrIcon,
-  cdrImg,
-  cdrInput,
-  cdrList,
-  cdrMediaObject,
-  cdrSelect,
-  cdrRadio,
-};
+export { default as CdrA } from './anchor/cdrA';
+export { default as CdrButton } from './button/cdrButton';
+export { default as CdrButtonGroup } from './buttonGroup/cdrButtonGroup';
+export { default as CdrCard } from './card/cdrCard';
+export { default as CdrCardContent } from './cardContent/cdrCardContent';
+export { default as CdrCheckbox } from './checkbox/cdrCheckbox';
+export { default as CdrCol } from './grid/cdrCol';
+export { default as CdrRow } from './grid/cdrRow';
+export { default as CdrHeading } from './heading/cdrHeading';
+export { default as CdrIcon } from './icon/cdrIcon';
+export { default as CdrImg } from './image/cdrImg';
+export { default as CdrInput } from './input/cdrInput';
+export { default as CdrList } from './list/cdrList';
+export { default as CdrMediaObject } from './mediaObject/cdrMediaObject';
+export { default as CdrRadio } from './radio/cdrRadio';
+export { default as CdrSelect } from './select/cdrSelect';
