@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import Directives from '../../_index';
+import * as directives from '../../_index';
 
 export default {
   name: 'mountains',
-  directives: Directives,
+  directives,
 };
 </script>
 

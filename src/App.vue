@@ -22,20 +22,20 @@
 </template>
 
 <script>
-  import Components from './components/_index';
-  import Directives from './directives/_index';
+  import * as components from './components/_index';
+  import * as directives from './directives/_index';
   // add examples
   import examples from './components/examples';
 
   Object.keys(examples).forEach((key) => {
-    Components[key] = examples[key];
+    components[key] = examples[key];
   });
   // end add examples
 
   export default {
     name: 'app',
-    components: Components,
-    directives: Directives,
+    components,
+    directives,
   };
 </script>
 

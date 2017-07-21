@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import Components from '../../_index';
+import * as Components from '../../_index';
 
 export default {
   name: 'selects',
