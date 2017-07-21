@@ -1,5 +1,2 @@
-import mountainShape from './mountain/mountain';
-
-export default {
-  mountainShape,
-};
+// eslint-disable-next-line import/prefer-default-export
+export { default as mountainShape } from './mountain/mountain';
