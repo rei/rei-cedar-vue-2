@@ -2,11 +2,13 @@
   <div>
     <input class="cdr-checkbox"
       type="checkbox"
-      v-bind="$attrs"
       :id="checkboxId"
-      :checked="isChecked"
-      @change="onChange"
-      :value="value"
+      v-bind="$attrs"
+      v-model="newValue"
+      :true-value="customValue ? null : trueValue"
+      :false-value="customValue ? null : falseValue"
+      :value="customValue"
+      @change="updateValue(newValue, $event)"
       ref="checkbox"
       >
     <label class="cdr-checkbox__label" :for="checkboxId" ref="label">
@@ -16,69 +18,55 @@
 </template>
 
 <script>
-import { isEqual } from 'lodash';
-
 export default {
   name: 'cdr-checkbox',
   inheritAttrs: false,
-  model: {
-    prop: 'modelValue',
-    event: 'change',
+  data() {
+    return {
+      newValue: this.value || this.checked,
+    };
   },
   props: {
     /**
-     * Used with multiple checkboxes bound to same array in addition to `v-model`.
-     * Use `v-model` for single checkboxes. Required.
+     * The value when checked.
     */
-    value: {
-      required: false,
+    trueValue: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
+      default: true,
     },
+    /**
+     * The value when unchecked.
+    */
+    falseValue: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
+      default: false,
+    },
+    /**
+     * The value when used in a checkbox group. Replaces `trueValue` and `falseValue`.
+    */
+    customValue: [String, Number, Boolean, Object, Array, Symbol, Function],
     /** @ignore */
     id: String,
     /** @ignore */
-    modelValue: {
-      required: false,
-    },
+    value: [String, Number, Boolean, Object, Array, Symbol, Function],
   },
   computed: {
     checkboxId() {
       return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
     },
-    isChecked() {
-      if (Array.isArray(this.modelValue)) {
-        return this.findIndex(this.modelValue, this.value) !== -1;
-      }
-
-      return this.modelValue === true;
+  },
+  watch: {
+    value(val) {
+      this.newValue = val;
+    },
+    newValue(val) {
+      this.$emit('input', val);
     },
   },
   methods: {
-    onChange() {
-      let input = this.modelValue;
-
-      if (typeof (input) === 'boolean') {
-        input = !input;
-      } else if (Array.isArray(input)) {
-        const i = this.findIndex(this.modelValue, this.value);
-
-        if (i === -1) {
-          input.push(this.value);
-        } else {
-          input.splice(i, 1);
-        }
-      }
-
-      this.$emit('change', input);
-    },
-    findIndex(arr, test) {
-      let res = -1;
-      arr.forEach((item, i) => {
-        if (isEqual(test, item)) {
-          res = i;
-        }
-      });
-
-      return res;
+    updateValue(newValue, e) {
+      this.newValue = newValue;
+      this.$emit('change', newValue, e);
     },
   },
 };
