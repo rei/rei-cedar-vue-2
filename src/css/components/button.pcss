@@ -1,22 +1,19 @@
 .cdr-button {
   @apply --decoration-outline;
-  @apply --sys-font-spruce-bdy-15;
 
-  @media (--large) {
-    @apply --sys-font-spruce-bdy-25;
-
-    color: var(--sys-color-system-10);
-  }
-
-  background-color: var(--sys-color-loretan-base);
-  border-color: var(--sys-color-loretan-base);
+  background-color: var(--sys-color-btn-primary);
+  border-color: var(--sys-color-btn-primary-stroke);
   border-width: 0.1rem;
   border-style: solid;
   border-radius: var(--radius-button);
-  color: #fff;
+  color: var(--sys-color-btn-text);
   cursor: pointer;
   display: inline-block;
-  line-height: var(--line-height-closed);
+  font-family: var(--sys-font-redwood-dsp-30-font-family);
+  font-size: var(--sys-font-redwood-dsp-30-font-size);
+  font-style: var(--sys-font-redwood-dsp-30-font-style);
+  font-weight: var(--sys-font-redwood-dsp-30-font-weight);
+  line-height: var(--sys-font-redwood-dsp-30-line-height);
   padding: var(--spacing-space-sm) var(--spacing-space-lg);
   text-decoration: none;
   white-space: nowrap;
@@ -24,9 +21,9 @@
   &:hover,
   &:active,
   &:visited {
-    background-color: var(--sys-color-loretan-darken-20);
-    border-color: var(--sys-color-loretan-darken-20);
-    color: #fff;
+    background-color: var(--sys-color-btn-primary-active);
+    border-color: var(--sys-color-btn-primary-active-stroke);
+    color: var(--sys-color-btn-text-active);
     text-decoration: none;
   }
 
@@ -36,22 +33,25 @@
 
   /* button themes */
   &--secondary {
-    background-color: #fff;
-    border-color: var(--sys-color-hillary-darken-20);
+    background-color: var(--sys-color-btn-secondary);
+    border-color: var(--sys-color-btn-secondary-stroke);
     color: var(--sys-color-hillary-darken-30);
 
     &:hover,
     &:active,
     &:focus {
-      background-color: #fff;
-      border-color: var(--sys-color-hillary-darken-20);
+      background-color: var(--sys-color-btn-secondary-active);
+      border-color: var(--sys-color-btn-secondary-active-stroke);
       color: var(--sys-color-hillary-darken-30);
     }
   }
 
   &--compact {
-    font-size: var(--sys-font-spruce-cpt-10-font-size);
-    line-height: var(--line-height-neutral);
+    font-family: var(--sys-font-redwood-dsp-20-font-family);
+    font-size: var(--sys-font-redwood-dsp-20-font-size);
+    font-style: var(--sys-font-redwood-dsp-20-font-style);
+    font-weight: var(--sys-font-redwood-dsp-20-font-weight);
+    line-height: var(--sys-font-redwood-dsp-20-line-height);
     padding: var(--spacing-space-xs) var(--spacing-space-md);
   }
 
@@ -81,9 +81,17 @@
 }
 
 .cdr-button-group > * {
-  @apply --button-block;
+  width: 100%;
+  display: block;
+  margin-bottom: 2rem;
+
+  &:first-child {
+      margin-left: 0;
+  }
 
   @media (--medium) {
-    @apply --button-fixed;
+    width: auto;
+    display: inline;
+    margin: 0 0 2rem 1.6rem;
   }
 }
