@@ -3,7 +3,7 @@
 ### Events
 | Name | Type | Description | |
 | --- | --- | --- |
-| `change` | Boolean or Array | `v-model` value. Fires on check/uncheck. |
+| `change` | value, event | `v-model` value. Fires on check/uncheck. |
 
 ### Examples
 
@@ -17,20 +17,30 @@ var model = false;
 <cdr-checkbox v-model="model">Checkbox: {{model}}</cdr-checkbox>
 ```
 
+#### Standard checkbox with custom true/false values
+
+Set `true-value` and/or `false-value` to desired checked and unchecked values.
+
+```
+var model = '';
+
+<cdr-checkbox v-model="model" true-value="checked" false-value="unchecked">Checkbox: {{model}}</cdr-checkbox>
+```
+
 #### Group of checkboxes
 
-`v-model` is an Array. Checkbox value can be anything and value is set on the checkbox.
+`v-model` is an Array. Set checkbox value with `custom-value`.
 
 ```
 var model = [];
 var valE = {val: 'X', otherVal: 'Y', more: [8,9]};
 
 <div>
-  <cdr-checkbox value="A" v-model="model">A</cdr-checkbox>
-  <cdr-checkbox value="B" v-model="model">B</cdr-checkbox>
-  <cdr-checkbox :value="{value: 'C'}" v-model="model">C</cdr-checkbox>
-  <cdr-checkbox :value="[1,2,3]" v-model="model">D</cdr-checkbox>
-  <cdr-checkbox :value="valE" v-model="model">E</cdr-checkbox>
+  <cdr-checkbox custom-value="A" v-model="model">A</cdr-checkbox>
+  <cdr-checkbox custom-value="B" v-model="model">B</cdr-checkbox>
+  <cdr-checkbox :custom-value="{value: 'C'}" v-model="model">C</cdr-checkbox>
+  <cdr-checkbox :custom-value="[1,2,3]" v-model="model">D</cdr-checkbox>
+  <cdr-checkbox :custom-value="valE" v-model="model">E</cdr-checkbox>
   <p>Value: {{model}}</p>
 </div>
 ```
