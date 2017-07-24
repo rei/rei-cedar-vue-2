@@ -1,5 +1,7 @@
 import { mount } from 'avoriaz';
+import testText from '../examples/testText.vue';
 import cdrCheckbox from '@/components/checkbox/cdrCheckbox';
+
 
 describe('cdrCheckbox.vue', () => {
   it('renders an input', () => {
@@ -19,8 +21,8 @@ describe('cdrCheckbox.vue', () => {
 
   it('renders label text correctly', () => {
     const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        text: 'Label Test',
+      slots: {
+        default: testText,
       },
     });
     expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test');
@@ -38,42 +40,6 @@ describe('cdrCheckbox.vue', () => {
   it('generates an id correctly', () => {
     const wrapper = mount(cdrCheckbox);
     expect(wrapper.vm.$refs.checkbox.id).to.equal(wrapper.vm._uid.toString());
-  });
-
-  it('sets checkbox name attribute correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        name: 'testing',
-      },
-    });
-    expect(wrapper.vm.$refs.checkbox.name).to.equal('testing');
-  });
-
-  it('sets input disabled attribute correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        disabled: true,
-      },
-    });
-    expect(wrapper.vm.$refs.checkbox.getAttribute('disabled')).to.equal('disabled');
-  });
-
-  it('sets checkbox required attribute correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        required: true,
-      },
-    });
-    expect(wrapper.vm.$refs.checkbox.getAttribute('required')).to.equal('required');
-  });
-
-  it('sets checkbox autofocus attribute correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
-      propsData: {
-        autofocus: true,
-      },
-    });
-    expect(wrapper.vm.$refs.checkbox.getAttribute('autofocus')).to.equal('autofocus');
   });
 
   it('evaluates simple not checked state correctly', () => {
@@ -132,5 +98,49 @@ describe('cdrCheckbox.vue', () => {
       },
     });
     expect(wrapper.vm.isChecked).to.equal(true);
+  });
+
+  it('emits a change event with correct value for simple checkbox', () => {
+    const wrapper = mount(cdrCheckbox, {
+      propsData: {
+        modelValue: false,
+      },
+    });
+    const spy = sinon.spy(wrapper.vm, '$emit');
+    const cb = wrapper.find('.cdr-checkbox')[0];
+    cb.trigger('change');
+
+    expect(spy.args[0][0]).to.equal('change');
+    expect(spy.args[0][1]).to.equal(true);
+  });
+
+  it('emits a change event with correct value for complex checkbox', () => {
+    const wrapper = mount(cdrCheckbox, {
+      propsData: {
+        value: 'a',
+        modelValue: [],
+      },
+    });
+    const spy = sinon.spy(wrapper.vm, '$emit');
+    const cb = wrapper.find('.cdr-checkbox')[0];
+    cb.trigger('change');
+    
+    expect(spy.args[0][0]).to.equal('change');
+    expect(spy.args[0][1][0]).to.equal('a');
+  });
+  
+  it('emits a change event with correct value for complex pre-selected checkbox', () => {
+    const wrapper = mount(cdrCheckbox, {
+      propsData: {
+        value: 'a',
+        modelValue: [],
+      },
+    });
+    const spy = sinon.spy(wrapper.vm, '$emit');
+    const cb = wrapper.find('.cdr-checkbox')[0];
+    cb.trigger('change');
+
+    expect(spy.args[0][0]).to.equal('change');
+    expect(spy.args[0][1]).to.deep.equal(['a']);
   });
 });

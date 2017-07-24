@@ -13,7 +13,8 @@
 
 ```
 // Stuff for demo
-var debounce, multi;
+var debounce = '',
+    multi = '';
 function validateFn(inputText) {
   const obj = {};
   if (inputText === 'hi') {

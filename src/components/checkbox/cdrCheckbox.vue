@@ -2,17 +2,16 @@
   <div>
     <input class="cdr-checkbox"
       type="checkbox"
+      v-bind="$attrs"
       :id="checkboxId"
-      :name="name"
-      :required="required"
-      :disabled="disabled"
-      :autofocus="autofocus"
       :checked="isChecked"
       @change="onChange"
       :value="value"
       ref="checkbox"
       >
-    <label class="cdr-checkbox__label" :for="checkboxId" ref="label">{{text}}</label>
+    <label class="cdr-checkbox__label" :for="checkboxId" ref="label">
+      <slot></slot>
+    </label>
   </div>
 </template>
 
@@ -21,43 +20,21 @@ import { isEqual } from 'lodash';
 
 export default {
   name: 'cdr-checkbox',
+  inheritAttrs: false,
   model: {
     prop: 'modelValue',
     event: 'change',
   },
   props: {
     /**
-     * id for the checkbox that is mapped to the label 'for' attribute.
-     * If one is not provided, it will be generated.
-    */
-    id: String,
-    /**
-     * Text for the checkbox.
-    */
-    text: String,
-    /**
-     * Sets the name attribute for the checkbox.
-    */
-    name: String,
-    /**
-     * Sets the required attribute.
-    */
-    required: Boolean,
-    /**
-     * Sets the disabled attribute.
-    */
-    disabled: Boolean,
-    /**
-     * Sets the autofocus attribute.
-    */
-    autofocus: Boolean,
-    /**
      * Used with multiple checkboxes bound to same array in addition to `v-model`.
-     * Use `v-model` for single checkboxes.
+     * Use `v-model` for single checkboxes. Required.
     */
     value: {
       required: false,
     },
+    /** @ignore */
+    id: String,
     /** @ignore */
     modelValue: {
       required: false,

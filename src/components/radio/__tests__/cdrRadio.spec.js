@@ -1,4 +1,5 @@
 import { mount } from 'avoriaz';
+import testText from '../examples/testText.vue';
 import cdrRadio from '@/components/radio/cdrRadio';
 
 describe('cdrRadio.vue', () => {
@@ -6,6 +7,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
       }
     });
     expect(wrapper.vm.$refs.radio.tagName).to.equal('INPUT');
@@ -15,6 +17,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
       }
     });
     expect(wrapper.vm.$refs.radio.hasAttribute('type', 'radio')).to.equal(true);
@@ -24,6 +27,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
       }
     });
     expect(wrapper.vm.$refs.label.tagName).to.equal('LABEL');
@@ -33,8 +37,11 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
-        text: 'Label Test',
+        name: 'testName',
       },
+      slots: {
+        default: testText,
+      }
     });
     expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test');
   });
@@ -43,6 +50,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
         id: 'test',
       },
     });
@@ -53,56 +61,29 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
       }
     });
     expect(wrapper.vm.$refs.radio.id).to.equal(wrapper.vm._uid.toString());
   });
 
-  it('sets radio name attribute correctly', () => {
+  it('sets name attribute correctly', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
-        name: 'testing',
-      },
+        name: 'testName',
+      }
     });
-    expect(wrapper.vm.$refs.radio.name).to.equal('testing');
-  });
-
-  it('sets input disabled attribute correctly', () => {
-    const wrapper = mount(cdrRadio, {
-      propsData: {
-        value: 'A',
-        disabled: true,
-      },
-    });
-    expect(wrapper.vm.$refs.radio.getAttribute('disabled')).to.equal('disabled');
-  });
-
-  it('sets radio required attribute correctly', () => {
-    const wrapper = mount(cdrRadio, {
-      propsData: {
-        value: 'A',
-        required: true,
-      },
-    });
-    expect(wrapper.vm.$refs.radio.getAttribute('required')).to.equal('required');
-  });
-
-  it('sets radio autofocus attribute correctly', () => {
-    const wrapper = mount(cdrRadio, {
-      propsData: {
-        value: 'A',
-        autofocus: true,
-      },
-    });
-    expect(wrapper.vm.$refs.radio.getAttribute('autofocus')).to.equal('autofocus');
+    const radio = wrapper.find('.cdr-radio')[0];
+    expect(radio.hasAttribute('name', 'testName')).to.equal(true);
   });
 
   it('evaluates simple not checked state correctly', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
-        modelValue: false,
+        name: 'testName',
+        modelValue: 'AA',
       },
     });
     expect(wrapper.vm.isChecked).to.equal(false);
@@ -112,6 +93,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
         modelValue: 'A',
       },
     });
@@ -122,6 +104,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'B',
+        name: 'testName',
         modelValue: 'A',
       },
     });
@@ -132,6 +115,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: 'A',
+        name: 'testName',
         modelValue: 'A',
       },
     });
@@ -142,6 +126,7 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: {test: 'B', arr: [1,2,3]},
+        name: 'testName',
         modelValue: {test: 'B'},
       },
     });
@@ -152,9 +137,26 @@ describe('cdrRadio.vue', () => {
     const wrapper = mount(cdrRadio, {
       propsData: {
         value: {test: 'B', arr: [1,2,3]},
+        name: 'testName',
         modelValue: {test: 'B', arr: [1,2,3]},
       },
     });
     expect(wrapper.vm.isChecked).to.equal(true);
+  });
+
+  it('emits a change event with correct value', () => {
+    const wrapper = mount(cdrRadio, {
+      propsData: {
+        value: 'A',
+        name: 'testName',
+        modelValue: '',
+      },
+    });
+    const spy = sinon.spy(wrapper.vm, '$emit');
+    const radio = wrapper.find('.cdr-radio')[0];
+    radio.trigger('change');
+
+    expect(spy.args[0][0]).to.equal('change');
+    expect(spy.args[0][1]).to.equal('A');
   });
 });
