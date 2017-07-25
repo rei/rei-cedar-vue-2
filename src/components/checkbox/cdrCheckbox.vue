@@ -48,7 +48,9 @@ export default {
     /** @ignore */
     id: String,
     /** @ignore */
-    value: [String, Number, Boolean, Object, Array, Symbol, Function],
+    value: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
+    },
   },
   computed: {
     checkboxId() {

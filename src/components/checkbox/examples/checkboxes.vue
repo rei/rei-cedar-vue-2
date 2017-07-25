@@ -5,8 +5,8 @@
     <p>single: {{ex1}}</p>
     <cdr-checkbox v-model="ex2" @change="logChange" true-value="checked" false-value="unchecked">checked</cdr-checkbox>
     <p>checked: {{ex2}}</p>
-    <cdr-checkbox v-model="ex3" @change="logChange" true-value="checked">checked</cdr-checkbox>
-    <p>checked: {{ex3}}</p>
+    <cdr-checkbox v-model="ex3" @change="logChange" true-value="checked">custom true</cdr-checkbox>
+    <p>custom true: {{ex3}}</p>
     <cdr-checkbox custom-value="A" v-model="exGroup" @change="logChange">A</cdr-checkbox>
     <cdr-checkbox custom-value="B" v-model="exGroup">B</cdr-checkbox>
     <cdr-checkbox custom-value="C" v-model="exGroup">C</cdr-checkbox>
