@@ -335,12 +335,12 @@ autoprefixer@^7.1.2:
     postcss "^6.0.6"
     postcss-value-parser "^3.2.3"
 
-avoriaz@^2.4.4:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/avoriaz/-/avoriaz-2.5.0.tgz#ef9ebba161a1ec60beb578a7ce906062808752d3"
+avoriaz@^2.6.5:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/avoriaz/-/avoriaz-2.6.5.tgz#aecd90e1f464a22bed70adf813cc102b4b558489"
   dependencies:
     lodash "^4.17.4"
-    vue-add-globals "^1.0.1"
+    vue-add-globals "^2.0.0"
 
 aws-sign2@~0.6.0:
   version "0.6.0"
@@ -8933,9 +8933,9 @@ void-elements@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
-vue-add-globals@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/vue-add-globals/-/vue-add-globals-1.0.1.tgz#151f241426e70cbc790a1f31bb0f4435d7575efc"
+vue-add-globals@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vue-add-globals/-/vue-add-globals-2.0.0.tgz#eb19aae9db5126d134a1bdc16000a3b81be9450e"
 
 vue-docgen-api@^2.0.6:
   version "2.0.9"
@@ -8955,7 +8955,7 @@ vue-docgen-api@^2.0.6:
     hash-sum "^1.0.2"
     jsdoc-api "^3.0.0"
     lru-cache "^4.1.0"
-    vue-template-compiler "^2.4.2"
+    vue-template-compiler "^2.3.4"
     vue-webpack-loaders "^1.0.5"
 
 vue-hot-reload-api@^2.1.0:
@@ -9055,23 +9055,23 @@ vue-styleguidist@1.1.12:
     to-ast "^1.0.0"
     type-detect "^4.0.3"
     unist-util-visit "^1.1.1"
-    vue "^2.4.2"
+    vue "^2.4.1"
     vue-docgen-api "^2.0.6"
     vue-server-renderer "^2.4.1"
-    vue-template-compiler "^2.4.2"
+    vue-template-compiler "^2.4.1"
     vue-webpack-loaders "^1.0.4"
     vuex "^2.3.1"
     webpack-dev-server "^1.16.3"
     webpack-merge "^4.1.0"
 
-vue-template-compiler@^2.3.4, vue-template-compiler@^2.4.1:
+vue-template-compiler@^2.3.4:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.4.1.tgz#20115cf8714f222f9be4111ec75b079a1c9b8197"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
 
-vue-template-compiler@^2.4.2:
+vue-template-compiler@^2.4.1, vue-template-compiler@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.4.2.tgz#5a45d843f148b098f6c1d1e35ac20c4956d30ad1"
   dependencies:
@@ -9103,11 +9103,11 @@ vue-webpack-loaders@^1.0.4, vue-webpack-loaders@^1.0.5:
     vue-style-loader "^3.0.1"
     vue-template-compiler "^2.3.4"
 
-vue@^2.3.4, vue@^2.4.1:
+vue@^2.3.4:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.1.tgz#76e0b8eee614613532216b7bfe784e0b5695b160"
 
-vue@^2.4.2:
+vue@^2.4.1, vue@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.2.tgz#a9855261f191c978cc0dc1150531b8d08149b58c"
 
