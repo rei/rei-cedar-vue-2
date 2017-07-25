@@ -52,6 +52,7 @@ module.exports = {
   highlightTheme: 'monokai',
   styleguideDir: './dist-docs',
   template: indexTemplate,
+  showUsage: true,
   sections: [
     {
       name: 'Introduction',

@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     logChange(val, e) {
-      console.log('log', val, e);
+      console.log('log', val, e); // eslint-disable-line
     },
   },
 };

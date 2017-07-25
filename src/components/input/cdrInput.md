@@ -11,6 +11,8 @@
 
 ### Examples
 
+#### Single line with feedback icons, error messages, and a debounced validation rule
+
 ```
 // Stuff for demo
 var debounce = '',
@@ -33,21 +35,22 @@ function validateFn(inputText) {
 }
 
 //Component usages
-<div>
-  <cdr-input v-model="debounce"
-    label="Validation + feedback with debounce"
-    id="testing"
-    placeholder="Enter hi"
-    feedback
-    :rules="[validateFn]"
-    debounce
-    data-backstop="text-input"
-    ></cdr-input>
+<cdr-input v-model="debounce"
+  label="Enter hi"
+  id="testing"
+  placeholder="Enter hi"
+  feedback
+  :rules="[validateFn]"
+  debounce
+  data-backstop="text-input"
+  ></cdr-input>
+```
 
-    <cdr-input v-model="multi"
+#### Normal multiline input
+
+```
+<cdr-input v-model="multi"
       label="Multiline"
       multi-line
       ></cdr-input>
-</div>
-
 ```

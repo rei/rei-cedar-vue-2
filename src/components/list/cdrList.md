@@ -6,42 +6,52 @@ Note: type doesn't affect the modifier.
 
 ### Examples
 
+#### Default
+
 ```
-<div>
-  <p>Default:</p>
-  <cdr-list>
-    <li>List default</li>
-    <li>List default
-      <cdr-list>
-        <li>List default - nested</li>
-        <li>List default - nested</li>
-      </cdr-list>
-    </li>
-  </cdr-list>
+<cdr-list>
+  <li>List default</li>
+  <li>List default
+    <cdr-list>
+      <li>List default - nested</li>
+      <li>List default - nested</li>
+    </cdr-list>
+  </li>
+</cdr-list>
+```
 
-  <p>Unstyled:</p>
-  <cdr-list modifier="unstyled">
-    <li>List unstyled</li>
-    <li>List unstyled</li>
-  </cdr-list>
+#### Unstyled
 
-  <p>Bulleted:</p>
-  <cdr-list modifier="bulleted">
-    <li>List bulleted</li>
-    <li>List bulleted</li>
-  </cdr-list>
+```
+<cdr-list modifier="unstyled">
+  <li>List unstyled</li>
+  <li>List unstyled</li>
+</cdr-list>
+```
 
-  <p>Numbered:</p>
-  <cdr-list modifier="numbered">
+#### Bulleted
+
+```
+<cdr-list modifier="bulleted">
+  <li>List bulleted</li>
+  <li>List bulleted</li>
+</cdr-list>
+```
+
+#### Numbered
+
+```
+<cdr-list modifier="numbered">
     <li>List numbered</li>
     <li>List numbered</li>
   </cdr-list>
+```
 
-  <p>Menu:</p>
-  <cdr-list modifier="menu">
-    <li><a href="/">List menu</a></li>
-    <li><a href="/">List menu</a></li>
-  </cdr-list>
+#### Menu
 
-</div>
+```
+<cdr-list modifier="menu">
+  <li><a href="/">List menu</a></li>
+  <li><a href="/">List menu</a></li>
+</cdr-list>
 ```

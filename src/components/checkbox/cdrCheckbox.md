@@ -62,11 +62,11 @@ var model = ["A", {value: 'C'}, [1,2,3]];
 var valE = {val: 'X', otherVal: 'Y', more: [8,9]};
 
 <div>
-  <cdr-checkbox value="A" v-model="model">A</cdr-checkbox>
-  <cdr-checkbox value="B" v-model="model">B</cdr-checkbox>
-  <cdr-checkbox :value="{value: 'C'}" v-model="model">C</cdr-checkbox>
-  <cdr-checkbox :value="[1,2,3]" v-model="model">D</cdr-checkbox>
-  <cdr-checkbox :value="valE" v-model="model">E</cdr-checkbox>
+  <cdr-checkbox custom-value="A" v-model="model">A</cdr-checkbox>
+  <cdr-checkbox custom-value="B" v-model="model">B</cdr-checkbox>
+  <cdr-checkbox :custom-value="{value: 'C'}" v-model="model">C</cdr-checkbox>
+  <cdr-checkbox :custom-value="[1,2,3]" v-model="model">D</cdr-checkbox>
+  <cdr-checkbox :custom-value="valE" v-model="model">E</cdr-checkbox>
   <p>Value: {{model}}</p>
 </div>
 ```

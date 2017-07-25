@@ -8,27 +8,20 @@ A modifier list that contains 'button' exposes the same modifiers as cdrButton a
 
 ### Examples
 
+#### Basic
 ```
-<div>
-    <p>Default:</p>
-    <cdr-a href="https://www.rei.com/">An example link</cdr-a>
+<cdr-a href="https://www.rei.com/">Default link</cdr-a>
 
-    <p>Contrast:</p>
-    <div class="cdr-bg--dark-20">
-        <cdr-a modifier="contrast" href="#example-contrast"> An example contrast link</cdr-a>
-    </div>
+```
 
-    <p>Overlay:</p>
-    <div class="cdr-bg--dark-20">
-        <cdr-a modifier="overlay" href="#example-overlay"> An example overlay link</cdr-a>
-    </div>
+#### Standalone
 
-    <p>Standalone:</p>
-    <div>
-        <cdr-a modifier="standalone" href="https://www.rei.com/">An example standalone link</cdr-a>
-    </div>
+```
+<cdr-a modifier="standalone" href="https://www.rei.com/">An example standalone link</cdr-a>
+```
 
-    <p>Button:</p>
-    <cdr-a modifier="button" href="https://www.rei.com/">Link as button</cdr-a>
-</div>
+#### Button modifier
+
+```
+<cdr-a modifier="button" href="https://www.rei.com/">Link as button</cdr-a>
 ```
