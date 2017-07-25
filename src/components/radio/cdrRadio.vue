@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <input class="cdr-radio"
       type="radio"
       v-bind="$attrs"

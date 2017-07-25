@@ -23,7 +23,7 @@ export default {
   inheritAttrs: false,
   data() {
     return {
-      newValue: this.value || this.checked,
+      newValue: this.value,
     };
   },
   props: {
