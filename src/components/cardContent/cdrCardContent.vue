@@ -3,7 +3,6 @@
   modifier="content"
   :content-a-gutter="mediaGutter"
   :footer="userSettings"
-  :extendContent="extendContent"
   footerClass="cdr-inset cdr-inset--remove-top"
   headerClass="cdr-inset"
   wrapper-a= "cdr-inset cdr-inset--remove-top cdr-card--content__body" >

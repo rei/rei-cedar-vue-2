@@ -187,7 +187,6 @@
           </cdr-col>
            <cdr-col span="12" span-md="6">
             <cdr-card-content
-              :modifier="['cta']"
               level="3"
               heading="Zion National Park Visitor Guide"
               heading-url="http://rei.com"
