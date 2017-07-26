@@ -1,38 +1,37 @@
 /* Forms and inputs */
-:root {
-  /* input group */
-  --input-group-margin: 1.6rem;
 
-  /* input label */
-  --label-error-color: var(--sys-color-error);
-  --label-disabled-color: var(--sys-color-disabled-label);
+/* input group */
+$input-group-margin: 1.6rem;
 
-  /* input */
-  --input-background-color: var(--sys-color-input);
-  --input-border-color: var(--sys-color-input-stroke);
-  --input-border-width: 1px;
-  --input-br: var(--radius-input);
-  --input-p: var(--spacing-space-sm);
-  --input-valid-color: var(--sys-color-success);
-  --input-warn-color: var(--sys-color-warning);
-  --input-error-color: var(--sys-color-error);
-  --input-disabled-background-color: var(--sys-color-disabled-input);
-  --input-disabled-placholder-color: var(--sys-color-disabled-placeholder);
-  --input-placeholder: {
-    font-style: italic;
-  }
+/* input label */
+$label-error-color: $sys-color-error;
+$label-disabled-color: $sys-color-disabled-label;
 
-  /* input icon */
-  --icon-location: calc((var(--sys-font-spruce-bdy-25-line-height) - var(--sys-font-spruce-bdy-25-font-size)) / 2 + var(--input-p));
-  --input-icon-top: var(--icon-location);
-  --input-icon-right: var(--input-p);
-  --input-icon-height: var(--sys-font-spruce-bdy-25-font-size);
-  --input-icon-width: var(--sys-font-spruce-bdy-25-font-size);
-
-  /* input messages */
-  --input-messages-p: var(--spacing-space-sm);
-  --input-messages-warn-border-color: var(--sys-color-warning);
-  --input-messages-warn-background: rgba(252, 196, 25, 0.2);
-  --input-messages-error-border-color: var(--sys-color-error);
-  --input-messages-error-background: rgba(204, 0, 0, 0.1);
+/* input */
+$input-background-color: $sys-color-input;
+$input-border-color: $sys-color-input-stroke;
+$input-border-width: 1px;
+$input-br: $radius-input;
+$input-p: $spacing-space-sm;
+$input-valid-color: $sys-color-success;
+$input-warn-color: $sys-color-warning;
+$input-error-color: $sys-color-error;
+$input-disabled-background-color: $sys-color-disabled-input;
+$input-disabled-placholder-color: $sys-color-disabled-placeholder;
+@define-mixin input-placeholder {
+  font-style: italic;
 }
+
+/* input icon */
+$icon-location: calc(($sys-font-spruce-bdy-25-line-height - $sys-font-spruce-bdy-25-font-size) / 2 + $input-p);
+$input-icon-top: $icon-location;
+$input-icon-right: $input-p;
+$input-icon-height: $sys-font-spruce-bdy-25-font-size;
+$input-icon-width: $sys-font-spruce-bdy-25-font-size;
+
+/* input messages */
+$input-messages-p: $spacing-space-sm;
+$input-messages-warn-border-color: $sys-color-warning;
+$input-messages-warn-background: rgba(252, 196, 25, 0.2);
+$input-messages-error-border-color: $sys-color-error;
+$input-messages-error-background: rgba(204, 0, 0, 0.1);

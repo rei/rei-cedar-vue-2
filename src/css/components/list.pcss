@@ -1,40 +1,40 @@
 .cdr-list {
-  @apply --decoration-list-bulleted;
+  @add-mixin decoration-list-bulleted;
 
-  padding-left: var(--list-pl);
+  padding-left: $list-pl;
 
   & > li {
-    padding-bottom: var(--list-pb);
+    padding-bottom: $list-pb;
 
     & > ul,
     & > ol {
-      padding-top: var(--list-pt);
-      padding-left: var(--list-pl);
+      padding-top: $list-pt;
+      padding-left: $list-pl;
 
       & > li:last-of-type {
-        padding-bottom: var(--list-pn);
+        padding-bottom: $list-pn;
       }
     }
 
     &:last-of-type {
-      padding-bottom: var(--list-pn);
+      padding-bottom: $list-pn;
     }
   }
 
   &--unstyled {
-    @apply --decoration-list-default;
+    @add-mixin decoration-list-default;
 
-    padding-left: var(--list-pn);
+    padding-left: $list-pn;
   }
 
   &--bulleted {
-    @apply --decoration-list-bulleted;
+    @add-mixin decoration-list-bulleted;
   }
 
   &--inline {
-    @apply --decoration-list-default;
+    @add-mixin decoration-list-default;
 
-    padding: var(--list-pn);
+    padding: $list-pn;
 
     & > li {
       display: inline-block;
@@ -43,7 +43,7 @@
 
   &--inline.cdr-list--bulleted {
     & > li {
-      padding-right: var(--list-pn);
+      padding-right: $list-pn;
 
       &:not(:last-of-type)::after {
         vertical-align: text-center;
@@ -57,24 +57,24 @@
   }
 
   &--numbered {
-    @apply --decoration-list-numbered;
+    @add-mixin decoration-list-numbered;
   }
 
   &--menu {
-    @apply --decoration-list-default;
+    @add-mixin decoration-list-default;
 
-    padding-left: var(--list-pn);
+    padding-left: $list-pn;
 
     & > li {
-      @apply --decoration-border-bottom;
+      @add-mixin decoration-border-bottom;
 
-      border-color: var(--list-menu-border-color);
-      padding: var(--list-pn);
+      border-color: $list-menu-border-color;
+      padding: $list-pn;
 
       & > a {
-        @apply --appearance-menu-list;
+        @add-mixin appearance-menu-list;
 
-        color: var(--list-menu-item-color);
+        color: $list-menu-item-color;
         display: inline-block;
       }
     }

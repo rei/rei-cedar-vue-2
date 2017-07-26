@@ -36,8 +36,8 @@
 
     &::before {
       content: '';
-      width: var(--cb-width);
-      height: var(--cb-height);
+      width: $cb-width;
+      height: $cb-height;
       border: 1px solid gray;
       border-radius: 50%;
       margin-right: 10px;
@@ -49,10 +49,10 @@
     &::after {
       content: '';
       position: absolute;
-      left: calc(var(--cb-width) / 3);
-      top: calc(var(--cb-width) / 3);
-      width: calc(var(--cb-width) / 3);
-      height: calc(var(--cb-height) / 3);
+      left: calc($cb-width / 3);
+      top: calc($cb-width / 3);
+      width: calc($cb-width / 3);
+      height: calc($cb-height / 3);
       border-radius: 50%;
     }
   }

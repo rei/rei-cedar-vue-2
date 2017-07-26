@@ -1,5 +1,5 @@
 .cdr-input-group {
-  margin-bottom: var(--input-group-margin);
+  margin-bottom: $input-group-margin;
 }
 
 .cdr-input-validation {
@@ -7,21 +7,21 @@
 
   &__icon {
     position: absolute;
-    top: var(--input-icon-top);
-    right: var(--input-icon-right);
-    height: var(--input-icon-height);
-    width: var(--input-icon-width);
+    top: $input-icon-top;
+    right: $input-icon-right;
+    height: $input-icon-height;
+    width: $input-icon-width;
 
     &--valid > svg {
-      fill: var(--input-valid-color);
+      fill: $input-valid-color;
     }
 
     &--warn > svg {
-      fill: var(--input-warn-color);
+      fill: $input-warn-color;
     }
 
     &--error > svg {
-      fill: var(--input-error-color);
+      fill: $input-error-color;
     }
   }
 }
@@ -47,66 +47,68 @@
 }
 
 .cdr-input-messages {
-  @apply --sys-font-spruce-cpt-10;
+  // TODO
+  // @add-mixin $sys-font-spruce-cpt-10;
 
   position: relative;
 
   &__notification {
-    padding: var(--input-messages-p);
+    padding: $input-messages-p;
     border-style: solid;
-    border-width: var(--input-border-width);
+    border-width: $input-border-width;
     border-top: none;
 
     &:last-of-type {
-      border-bottom-right-radius: var(--input-br);
-      border-bottom-left-radius: var(--input-br);
+      border-bottom-right-radius: $input-br;
+      border-bottom-left-radius: $input-br;
     }
 
     &--error {
-      border-color: var(--input-messages-error-border-color);
-      background-color: var(--input-messages-error-background);
+      border-color: $input-messages-error-border-color;
+      background-color: $input-messages-error-background;
     }
 
     &--warn {
-      border-color: var(--input-messages-warn-border-color);
-      background-color: var(--input-messages-warn-background);
+      border-color: $input-messages-warn-border-color;
+      background-color: $input-messages-warn-background;
     }
   }
 }
 
 .cdr-input {
-  @apply --sys-font-spruce-bdy-25;
+  // TODO
+  // @add-mixin sys-font-spruce-bdy-25;
 
-  background-color: var(--input-background-color);
-  border-color: var(--input-border-color);
+  background-color: $input-background-color;
+  border-color: $input-border-color;
   border-style: solid;
-  border-radius: var(--input-br);
-  border-width: var(--input-border-width);
+  border-radius: $input-br;
+  border-width: $input-border-width;
   display: block;
-  padding: var(--input-p);
+  padding: $input-p;
   width: 100%;
 
   &--error {
-    border-color: var(--input-error-color);
+    border-color: $input-error-color;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &--warn {
-    border-color: var(--input-warn-color);
+    border-color: $input-warn-color;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &::placeholder {
-    @apply --input-placeholder;
+    @add-mixin  input-placeholder;
   }
 
   &[disabled] {
-    background-color: var(--input-disabled-background-color);
+    background-color: $input-disabled-background-color;
 
     &::placeholder {
-      color: var(--input-disabled-placholder-color);
+      color: $input-disabled-placholder-color;
     }
   }
 }
@@ -116,10 +118,10 @@
   font-weight: bold;
 
   &--disabled {
-    color: var(--label-disabled-color);
+    color: $label-disabled-color;
   }
 
   &--error {
-    color: var(--label-error-color);
+    color: $label-error-color;
   }
 }

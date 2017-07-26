@@ -1,12 +1,10 @@
 /* Select boxes */
 
-:root {
-  /* select */
-  --select-height: calc((var(--input-p) * 2) + var(--sys-font-spruce-bdy-25-line-height));
-  --select-multi-height: calc(2 * var(--select-height));
-  --select-br: var(--input-br);
-  --select-border-color: var(--input-border-color);
-  --select-border-width: var(--input-border-width);
-  --select-background-color: var(--input-background-color);
-  --select-disabled-background-color: var(--input-disabled-background-color);
-}
+/* select */
+$select-height: calc(($input-p * 2) + $sys-font-spruce-bdy-25-line-height);
+$select-multi-height: calc(2 * $select-height);
+$select-br: $input-br;
+$select-border-color: $input-border-color;
+$select-border-width: $input-border-width;
+$select-background-color: $input-background-color;
+$select-disabled-background-color: $input-disabled-background-color;

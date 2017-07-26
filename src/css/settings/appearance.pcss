@@ -13,12 +13,12 @@
 * non breakpoint emphasis extra small appearance
 * filter menu list appearance
 */
-:root {
-  /* filter menu list appearance */
-  --appearance-menu-list: {
-    @apply --font-copy-secondary;
 
-    font-size: var(--font-size-navigation);
-    padding: 1.1rem 1.6rem;
-  }
+/* filter menu list appearance */
+// TODO
+@define-mixin appearance-menu-list {
+  @add-mixin font-copy-secondary;
+
+  font-size: $font-size-navigation;
+  padding: 1.1rem 1.6rem;
 }

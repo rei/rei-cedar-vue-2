@@ -1,40 +1,38 @@
-:root {
-  --container-x-padding: 8px;
-  --container-sm-width: 540px;
-  --container-md-width: 720px;
-  --container-lg-width: 960px;
-  --container-xl-width: 1140px;
-  --container-xxl-width: 1200px;
-}
+$container-x-padding: 8px;
+$container-sm-width: 540px;
+$container-md-width: 720px;
+$container-lg-width: 960px;
+$container-xl-width: 1140px;
+$container-xxl-width: 1200px;
 
 .container-fluid {
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--container-x-padding);
-  padding-right: var(--container-x-padding);
+  padding-left: $container-x-padding;
+  padding-right: $container-x-padding;
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--container-x-padding);
-  padding-right: var(--container-x-padding);
-  width: var(--container-sm-width);
+  padding-left: $container-x-padding;
+  padding-right: $container-x-padding;
+  width: $container-sm-width;
   max-width: 100%;
 
   @media (--medium) {
-    width: var(--container-md-width);
+    width: $container-md-width;
   }
 
   @media (--large) {
-    width: var(--container-lg-width);
+    width: $container-lg-width;
   }
 
   @media (--xlarge) {
-    width: var(--container-xl-width);
+    width: $container-xl-width;
   }
 
   @media (--xxlarge) {
-    width: var(--container-xxl-width);
+    width: $container-xxl-width;
   }
 }

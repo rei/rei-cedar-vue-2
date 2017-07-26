@@ -1,18 +1,18 @@
 .cdr-link {
-  @apply --link-resets;
-  @apply --decoration-text-on;
-  @apply --decoration-outline;
-  @apply --glaze-outline;
+  @add-mixin link-resets;
+  @add-mixin decoration-text-on;
+  @add-mixin decoration-outline;
+  @add-mixin glaze-outline;
 
-  background-color: var(--color-transparent-background);
-  border-color: var(--color-transparent-border);
-  color: var(--link-color);
+  background-color: $color-transparent-background;
+  border-color: $color-transparent-border;
+  color: $link-color;
 
   &:hover,
   &:active,
   &:focus {
-    background-color: var(--color-transparent-background);
-    color: var(--link-color);
+    background-color: $color-transparent-background;
+    color: $link-color;
   }
 
   &--contrast,
@@ -20,7 +20,7 @@
   &--contrast:active,
   &--contrast:focus,
   &--contrast:visited {
-    color: var(--link-color-contrast);
+    color: $link-color-contrast;
   }
 
   &--overlay,
@@ -28,10 +28,10 @@
   &--overlay:active,
   &--overlay:focus,
   &--overlay:visited {
-    color: var(--link-color-overlay);
+    color: $link-color-overlay;
   }
 
   &--standalone {
-    @apply --decoration-text-off-on;
+    @add-mixin decoration-text-off-on;
   }
 }

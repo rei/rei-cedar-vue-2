@@ -14,19 +14,18 @@
 **Glaze-Dark-10 actions
 *
 */
-:root {
-  /*
-  * Neutral
-  */
-  --glaze-outline: {
-    &:focus {
-      outline-color: var(--color-outline-focus);
-    }
+
+/*
+* Neutral
+*/
+@define-mixin glaze-outline {
+  &:focus {
+    outline-color: $color-outline-focus;
   }
-  --glaze-disabled: {
-    background-color: var(--color-disabled-background-color);
-    border-color: var(--color-disabled-border-color);
-    color: var(--color-disabled-color);
-    cursor: not-allowed;
-  }
+}
+@define-mixin glaze-disabled {
+  // background-color: $color-disabled-background-color;
+  // border-color: $color-disabled-border-color;
+  // color: $color-disabled-color;
+  // cursor: not-allowed;
 }

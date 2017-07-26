@@ -1,11 +1,11 @@
 /* Anchors */
-:root {
-  --link-color: var(--sys-color-link);
-  --link-color-contrast: var(--sys-color-link-overlay);
-  --link-color-overlay: var(--sys-color-link-contrast-overlay);
-  --link-resets: {
-    cursor: pointer;
-    display: inline;
-    border: none;
-  }
+
+$link-color: $sys-color-link;
+$link-color-contrast: $sys-color-link-overlay;
+$link-color-overlay: $sys-color-link-contrast-overlay;
+
+@define-mixin link-resets {
+  cursor: pointer;
+  display: inline;
+  border: none;
 }
