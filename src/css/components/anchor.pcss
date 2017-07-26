@@ -1,9 +1,19 @@
 .cdr-link {
   @apply --link-resets;
-  @apply --appearance-copy;
   @apply --decoration-text-on;
   @apply --decoration-outline;
-  @apply --glaze-transparent-actions;
+  @apply --glaze-outline;
+
+  background-color: var(--color-transparent-background);
+  border-color: var(--color-transparent-border);
+  color: var(--link-color);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: var(--color-transparent-background);
+    color: var(--link-color);
+  }
 
   &--contrast,
   &--contrast:hover,
@@ -22,7 +32,6 @@
   }
 
   &--standalone {
-    @apply --appearance-link-standalone;
     @apply --decoration-text-off-on;
   }
 }
