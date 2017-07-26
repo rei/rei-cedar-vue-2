@@ -15,8 +15,7 @@
 
 ```
 // Stuff for demo
-var debounce = '',
-    multi = '';
+var debounce = '';
 function validateFn(inputText) {
   const obj = {};
   if (inputText === 'hi') {
@@ -49,6 +48,8 @@ function validateFn(inputText) {
 #### Normal multiline input
 
 ```
+var multi = '';
+
 <cdr-input v-model="multi"
       label="Multiline"
       multi-line
