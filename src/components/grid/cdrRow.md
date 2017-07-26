@@ -1,8 +1,9 @@
 ### Examples
 
+#### Basic columns
+
 ```
 <div class="container-fluid">
-  <h4>Basic</h4>
   <cdr-row cols="3">
     <cdr-col>
       <div class="row-demo">A</div>
@@ -17,8 +18,13 @@
       <div class="row-demo">D</div>
     </cdr-col>
   </cdr-row>
+</div>
+```
 
-  <h4>Complex Mosaic Demo</h4>
+#### Complex Mosaic Demo
+
+```
+<div class="container-fluid">
   <cdr-row cols="1" cols-md="4">
     <cdr-col>
       <div class="row-demo">One</div>

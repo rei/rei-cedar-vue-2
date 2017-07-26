@@ -1,6 +1,16 @@
 <template>
   <div>
+    <h2>Selects</h2>
+
     <cdr-select label="Prompt" v-model="selected" prompt="Choose one">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </cdr-select>
+    <p>Selected: {{selected}}</p>
+
+    <cdr-select label="Prompt" v-model="selected" prompt="Choose one" required>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -24,6 +34,9 @@
     </cdr-select>
     <p>Selected: {{selected2}}</p>
 
+    <cdr-select label="Dynamic" v-model="dynamic" :options="dynamicData"></cdr-select>
+    <p>Selected: {{dynamic}}</p>
+
     <cdr-select label="Multiple Prompt" v-model="multiple" multiple size="4" prompt="Choose two">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -38,7 +51,7 @@
 </template>
 
 <script>
-import Components from '../../_index';
+import * as Components from '../../_index';
 
 export default {
   name: 'selects',
@@ -47,6 +60,8 @@ export default {
     return {
       selected: '',
       selected2: '1',
+      dynamic: '',
+      dynamicData: [{ value: 'a', text: 'a' }, { value: 'b', text: 'b' }],
       multiple: ['1', '2'],
       multiple2: [],
       multiple2Data: ['a', 'b', 'c', 'd'],
@@ -56,5 +71,5 @@ export default {
 </script>
 
 <style>
-  
+
 </style>

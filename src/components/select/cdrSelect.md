@@ -7,10 +7,26 @@
 
 ### Examples
 
+#### Standard
+
 ```
 const selected = '';
-const multiple = [];
-const multipleData = ['a', 'b', 'c', 'd'];
+
+<div>
+  <cdr-select label="Normal" v-model="selected">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </cdr-select>
+  <p>Selected: {{selected}}</p>
+</div>
+```
+
+#### With prompt
+
+```
+const selected = '';
 
 <div>
   <cdr-select label="Normal with prompt" v-model="selected" prompt="Choose one">
@@ -19,7 +35,19 @@ const multipleData = ['a', 'b', 'c', 'd'];
     <option value="3">3</option>
     <option value="4">4</option>
   </cdr-select>
-
-  <cdr-select label="Multiple No Prompt" v-model="multiple" multiple size="4" :options="multipleData"></cdr-select>
+  <p>Selected: {{selected}}</p>
 </div>
+```
+
+#### Data driven options
+
+```
+const selected = '';
+const data = ['a', 'b', 'c', 'd'];
+
+<div>
+  <cdr-select label="Built with data" v-model="selected" :options="data"></cdr-select>
+  <p>Selected: {{selected}}</p>
+</div>
+
 ```

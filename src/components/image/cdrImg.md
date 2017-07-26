@@ -4,6 +4,18 @@
 
 ### Examples
 
+#### Default
+
+```
+<div>
+  <cdr-img ratio="16-9" alt="ratio standard" src="http://placehold.it/200x200"></cdr-img>
+  <cdr-img alt="standard landscape" src="http://placehold.it/350x150"></cdr-img>
+  <cdr-img alt="standard portrait" src="http://placehold.it/150x350"></cdr-img>
+</div>
+```
+
+#### Cropping
+
 ```
 <div>
   <h4>Cropping (with landscape images)</h4>
@@ -115,8 +127,13 @@
       </div>
     </cdr-col>
   </cdr-row>
+</div>
+```
 
-  <h4>Ratios</h4>
+#### Aspect Ratios
+
+```
+<div>
   <cdr-row cols="2" cols-md="4">
     <cdr-col>
       <div>
@@ -173,8 +190,13 @@
       </div>
     </cdr-col>
   </cdr-row>
+</div>
+```
 
-  <h4>Image modifiers</h4>
+#### Image modifiers
+
+```
+<div>
   <cdr-row cols="2" cols-md="4">
     <cdr-col>
       <div>
@@ -208,11 +230,5 @@
       </div>
     </cdr-col>
   </cdr-row>
-
-  <h4>Standard image:</h4>
-  <cdr-img ratio="16-9" alt="ratio standard" src="http://placehold.it/200x200"></cdr-img>
-  <cdr-img alt="standard landscape" src="http://placehold.it/350x150"></cdr-img>
-  <cdr-img alt="standard portrait" src="http://placehold.it/150x350"></cdr-img>
-
 </div>
 ```

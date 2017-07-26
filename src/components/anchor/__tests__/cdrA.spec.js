@@ -51,4 +51,23 @@ describe('cdrA.vue', () => {
     });
     expect(wrapper.hasAttribute('rel', 'noopener noreferrer')).to.equal(true);
   });
+
+  it('computes base class correctly', () => {
+    const wrapper = mount(cdrA, {
+      propsData: {
+        modifier: 'primary',
+      },
+    });
+    expect(wrapper.vm.baseClass).to.equal('cdr-link');
+  });
+
+  it('computes button base class correctly', () => {
+    const wrapper = mount(cdrA, {
+      propsData: {
+        modifier: 'primary, button',
+      },
+    });
+    expect(wrapper.vm.baseClass).to.equal('cdr-button');
+  });
+
 });

@@ -1,3 +1,59 @@
+<template>
+  <div class="cdr-input-group">
+    <label v-if="!hideLabel"
+      :class="labelClass"
+      :for="inputId"
+      ref="label"
+    >{{label}}<span v-if="required">*</span>
+    </label>
+    <div class="cdr-input-validation">
+      <textarea v-if="multiLine"
+        :class="inputClass"
+        v-bind="$attrs"
+        :id="inputId"
+        :value="lazyValue"
+        v-on="$listeners"
+        @blur="onBlur"
+        @input="onInput"
+        @focus="onFocus"
+        @paste="onPaste"
+        :required="required"
+        :disabled="disabled"
+        :aria-label="hideLabel ? label : null"
+        :aria-describedby="errors.length ? messagesId : null"
+        ref="input"
+      ></textarea>
+
+      <input v-else
+        :type="type"
+        :class="inputClass"
+        v-bind="$attrs"
+        :id="inputId"
+        :value="lazyValue"
+        v-on="$listeners"
+        @blur="onBlur"
+        @input="onInput"
+        @focus="onFocus"
+        @paste="onPaste"
+        :required="required"
+        :disabled="disabled"
+        :aria-label="hideLabel ? label : null"
+        :aria-describedby="errors.length ? messagesId : null"
+        ref="input"
+      >
+
+      <span v-if="feedback" :class="validationClass" v-html="getIcon" ref="icon"></span>
+    </div>
+    <transition-group class="cdr-input-messages" :id="messagesId" ref="messages" name="cdr-animated-errors" tag="div">
+      <div :class="messageClass"
+        ref="error"
+        v-for="error in errors"
+        :error="error"
+        :key="error">{{error}}</div>
+    </transition-group>
+  </div>
+</template>
+
 <script>
 import debounce from '../../utils/debounce';
 
@@ -7,9 +63,7 @@ const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning
 
 export default {
   name: 'cdr-input',
-  render() {
-    return this.genInputGroup(this.genInput(), { attrs: { tabindex: -1 } });
-  },
+  inheritAttrs: false,
   data() {
     return {
       errors: [],
@@ -24,7 +78,7 @@ export default {
   props: {
     /**
      * id for the input that is mapped to the label 'for' attribute.
-     * If one is not provided, it will be generated
+     * If one is not provided, it will be auto generated.
     */
     id: String,
     /**
@@ -39,44 +93,9 @@ export default {
     */
     hideLabel: Boolean,
     /**
-     * Sets the name attribute of the input.
-    */
-    name: String,
-    /**
-     * Sets disabled attribute on the input.
-    */
-    disabled: Boolean,
-    /**
-     * Sets required attribute on the input.
-    */
-    required: Boolean,
-    /**
-     * Placeholder text of the input.
-    */
-    placeholder: String,
-    /**
-     * Sets autofocus attribute on the input.
-    */
-    autofocus: Boolean,
-    /**
-     * Sets readonly attribute on the input.
-    */
-    readonly: Boolean,
-    /**
-     * Sets maxlength attribute on the input.
-    */
-    maxlength: String,
-    /**
      * Changes the input to a textarea.
     */
     multiLine: Boolean,
-    /**
-     * Used with `multiLine`. Sets the number of rows in the textarea.
-    */
-    rows: {
-      type: String,
-      default: '5',
-    },
     /**
      * Regex validation pattern. Useful for simple validation.
     */
@@ -118,17 +137,124 @@ export default {
       required: false,
       default: false,
     },
-    /**
-     * Sets the tabindex of the input.
-     */
-    tabindex: {
-      default: 0,
-    },
+    /** @ignore */
+    disabled: Boolean,
+    /** @ignore */
+    required: Boolean,
     /** @ignore */
     immediateValidate: Boolean,
     /** @ignore */
     value: {
       required: false,
+    },
+  },
+  computed: {
+    // Use given id or generate one
+    inputId() {
+      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
+    },
+    messagesId() {
+      return `err${this._uid}`; // eslint-disable-line no-underscore-dangle
+    },
+    labelClass() {
+      return {
+        'cdr-label': true,
+        'cdr-label--error': this.isErr,
+        'cdr-label--disabled': this.disabled,
+      };
+    },
+    inputClass() {
+      return {
+        'cdr-input': true,
+        'cdr-input--error': this.isErr,
+        'cdr-input--warn': this.isWarn,
+      };
+    },
+    validationClass() {
+      return {
+        'cdr-input-validation__icon': true,
+        'cdr-input-validation__icon--error': this.isErr,
+        'cdr-input-validation__icon--warn': this.isWarn,
+        'cdr-input-validation__icon--valid': this.isValid,
+      };
+    },
+    messageClass() {
+      return {
+        'cdr-input-messages__notification': true,
+        'cdr-input-messages__notification--error': this.isErr,
+        'cdr-input-messages__notification--warn': this.isWarn,
+      };
+    },
+    getIcon() {
+      let icon = '';
+
+      if (this.isErr) {
+        icon = errorIcon;
+      } else if (this.isValid) {
+        icon = checkIcon;
+      } else if (this.isWarn) {
+        icon = warningIcon;
+      }
+
+      return icon;
+    },
+    // Check if debounce is enabled, defined, or default
+    debounceVal() {
+      if (this.debounce === false) {
+        return 0;
+      } else if (!isNaN(this.debounce) && this.debounce !== '' && this.debounce !== true) {
+        return this.debounce;
+      }
+      return 500;
+    },
+    isErr() {
+      return this.state === 'error';
+    },
+    isWarn() {
+      return this.state === 'warn';
+    },
+    isValid() {
+      return this.state === 'valid';
+    },
+    modifiers() {
+      const modifiers = {
+        lazy: false,
+        number: false,
+        trim: false,
+      };
+
+      if (!this._vnode.data.directives) {//eslint-disable-line
+        return modifiers;
+      }
+
+      const model = this._vnode.data.directives.find(i => i.name === 'model');//eslint-disable-line
+
+      if (!model) {
+        return modifiers;
+      }
+
+      return Object.assign(modifiers, model.modifiers);
+    },
+    inputValue: {
+      get() {
+        return this.value;
+      },
+      set(valArg) {
+        let val = valArg;
+        if (this.modifiers.trim) {
+          val = val.trim();
+        }
+
+        if (this.modifiers.number) {
+          val = Number(val);
+        }
+
+        if (!this.modifiers.lazy) {
+          this.$emit('input', val);
+        }
+
+        this.lazyValue = val;
+      },
     },
   },
   mounted() {
@@ -162,70 +288,6 @@ export default {
       this.validate(true);
     }
   },
-  computed: {
-    // Use given id or generate one
-    inputId() {
-      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
-    },
-    // Check if debounce is enabled, defined, or default
-    debounceVal() {
-      if (this.debounce === false) {
-        return 0;
-      } else if (!isNaN(this.debounce) && this.debounce !== '' && this.debounce !== true) {
-        return this.debounce;
-      }
-      return 500;
-    },
-    isErr() {
-      return this.state === 'error';
-    },
-    isWarn() {
-      return this.state === 'warn';
-    },
-    isValid() {
-      return this.state === 'valid';
-    },
-    modifiers() {
-      const modifiers = {
-        lazy: false,
-        number: false,
-        trim: false,
-      };
-
-      if (!this.$vnode.data.directives) {
-        return modifiers;
-      }
-
-      const model = this.$vnode.data.directives.find(i => i.name === 'model');
-
-      if (!model) {
-        return modifiers;
-      }
-
-      return Object.assign(modifiers, model.modifiers);
-    },
-    inputValue: {
-      get() {
-        return this.value;
-      },
-      set(valArg) {
-        let val = valArg;
-        if (this.modifiers.trim) {
-          val = val.trim();
-        }
-
-        if (this.modifiers.number) {
-          val = Number(val);
-        }
-
-        if (!this.modifiers.lazy) {
-          this.$emit('input', val);
-        }
-
-        this.lazyValue = val;
-      },
-    },
-  },
   watch: {
     focused(val) {
       this.touched = true;
@@ -244,12 +306,12 @@ export default {
       this.pristine = false;
       this.inputValue = e.target.value;
     },
-    blur(e) {
+    onBlur(e) {
       this.validate(true);
       this.$nextTick(() => (this.focused = false));
       this.$emit('blur', e);
     },
-    focus(e) {
+    onFocus(e) {
       this.focused = true;
       this.$refs.input.focus();
       this.$emit('focus', e);
@@ -257,168 +319,6 @@ export default {
     onPaste(e) {
       this.validate(true);
       this.$emit('paste', e);
-    },
-    genInput() {
-      const tag = this.multiLine ? 'textarea' : 'input';
-
-      const data = {
-        class: {
-          'cdr-input': true,
-          'cdr-input--error': this.isErr,
-          'cdr-input--warn': this.isWarn,
-        },
-        domProps: {
-          id: this.inputId,
-          disabled: this.disabled,
-          required: this.required,
-          value: this.lazyValue,
-          autofocus: this.autofocus,
-        },
-        attrs: {
-          tabindex: this.tabindex,
-          readonly: this.readonly,
-        },
-        on: {
-          blur: this.blur,
-          input: this.onInput,
-          focus: this.focus,
-          paste: this.onPaste,
-        },
-        ref: 'input',
-      };
-
-      // conditional domProps and attrs
-      if (this.placeholder) data.domProps.placeholder = this.placeholder;
-      if (this.hideLabel) data.attrs['aria-label'] = this.label;
-      if (this.name) data.attrs.name = this.name;
-      if (this.maxlength) data.attrs.maxlength = this.maxlength;
-
-      if (this.multiLine) {
-        data.domProps.rows = this.rows;
-      } else {
-        data.domProps.type = this.type;
-      }
-
-      const children = [this.$createElement(tag, data)];
-
-      return children;
-    },
-    genLabel() {
-      const data = {};
-      let labelText = this.label;
-
-      if (this.required) labelText += '*';
-
-      data.class = {
-        'cdr-label': true,
-        'cdr-label--error': this.isErr,
-        'cdr-label--disabled': this.disabled,
-      };
-      data.attrs = { for: this.inputId };
-      data.ref = 'label';
-
-      return this.$createElement('label', data, labelText);
-    },
-    genFeedbackIcon() {
-      let icon = '';
-
-      if (this.isErr) {
-        icon = errorIcon;
-      } else if (this.isValid) {
-        icon = checkIcon;
-      } else if (this.isWarn) {
-        icon = warningIcon;
-      }
-
-      return this.$createElement('span', {
-        class: {
-          'cdr-input-validation__icon': true,
-          'cdr-input-validation__icon--error': this.isErr,
-          'cdr-input-validation__icon--warn': this.isWarn,
-          'cdr-input-validation__icon--valid': this.isValid,
-        },
-        domProps: {
-          innerHTML: icon,
-        },
-      });
-    },
-    genMessages() {
-      let messages = [];
-
-      if (this.errors.length) {
-        messages = this.errors.map(i => this.genError(i));
-      }
-
-      return this.$createElement(
-        'transition-group',
-        {
-          class: 'cdr-input-messages',
-          props: {
-            tag: 'div',
-            name: 'cdr-animated-errors',
-          },
-          domProps: {
-            id: `err${this._uid}`, // eslint-disable-line no-underscore-dangle
-          },
-          ref: 'messages',
-        },
-        messages);
-    },
-    genError(error) {
-      return this.$createElement('div',
-        {
-          class: {
-            'cdr-input-messages__notification': true,
-            'cdr-input-messages__notification--error': this.isErr,
-            'cdr-input-messages__notification--warn': this.isWarn,
-          },
-          key: `errKey${this._uid}`, // eslint-disable-line no-underscore-dangle
-          ref: 'error',
-        },
-        error);
-    },
-    genInputGroup(inputArg, dataArg = {}) {
-      const children = [];
-      const wrapperChildren = [];
-      const input = inputArg;
-      let data = dataArg;
-
-      const inputGroupClasses = Object.assign({
-        'cdr-input-group': true,
-      });
-
-      data = Object.assign({}, {
-        class: inputGroupClasses,
-      }, data);
-
-      // Add label
-      if (!this.hideLabel) {
-        children.push(this.genLabel());
-      }
-
-      // Add input/textarea
-      if (this.errors.length) {
-        input[0].data.attrs['aria-describedby'] = `err${this._uid}`;// eslint-disable-line no-underscore-dangle
-      }
-
-      wrapperChildren.push(input);
-
-      // Add validation feedback icons
-      if (this.feedback) {
-        wrapperChildren.push(this.genFeedbackIcon());
-      }
-
-      children.push(
-        this.$createElement('div', {
-          class: {
-            'cdr-input-validation': true,
-          },
-        }, wrapperChildren));
-
-      // Add error messages
-      children.push(this.genMessages());
-
-      return this.$createElement('div', data, children);
     },
     validate(immediate = false) {
       // only validate rules if there are any

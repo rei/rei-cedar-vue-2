@@ -1,24 +1,25 @@
 <template>
   <div>
     <h2>Checkboxes</h2>
-    <cdr-checkbox text="single" @change="change" v-model="ex1"></cdr-checkbox>
-    <cdr-checkbox text="checked" @change="change" v-model="ex2"></cdr-checkbox>
+    <cdr-checkbox v-model="ex1" @change="logChange">single</cdr-checkbox>
     <p>single: {{ex1}}</p>
-    <cdr-checkbox text="A" value="A" v-model="exGroup"></cdr-checkbox>
-    <cdr-checkbox text="B" value="B" v-model="exGroup"></cdr-checkbox>
-    <cdr-checkbox text="C" value="C" v-model="exGroup"></cdr-checkbox>
-    <cdr-checkbox text="D" :value="{value:'D'}" v-model="exGroup"></cdr-checkbox>
-    <cdr-checkbox text="E" :value="testVal" v-model="exGroup"></cdr-checkbox>
-    <cdr-checkbox text="F" :value="testVal2" v-model="exGroup"></cdr-checkbox>
+    <cdr-checkbox v-model="ex2" @change="logChange" true-value="checked" false-value="unchecked">checked</cdr-checkbox>
+    <p>checked: {{ex2}}</p>
+    <cdr-checkbox v-model="ex3" @change="logChange" true-value="checked">custom true</cdr-checkbox>
+    <p>custom true: {{ex3}}</p>
+    <cdr-checkbox custom-value="A" v-model="exGroup" @change="logChange">A</cdr-checkbox>
+    <cdr-checkbox custom-value="B" v-model="exGroup">B</cdr-checkbox>
+    <cdr-checkbox custom-value="C" v-model="exGroup">C</cdr-checkbox>
+    <cdr-checkbox :custom-value="{value:'D'}" v-model="exGroup">D</cdr-checkbox>
+    <cdr-checkbox :custom-value="testVal" v-model="exGroup">E</cdr-checkbox>
+    <cdr-checkbox :custom-value="testVal2" v-model="exGroup">F</cdr-checkbox>
     <p>group: {{exGroup}}</p>
-    <cdr-checkbox text="autofocus" autofocus></cdr-checkbox>
-    <cdr-checkbox text="disabled" disabled></cdr-checkbox>
-    <cdr-checkbox text="required" required></cdr-checkbox>
+    <cdr-checkbox disabled>disabled</cdr-checkbox>
  </div>
 </template>
 
 <script>
-import Components from '../../_index';
+import * as Components from '../../_index';
 
 export default {
   name: 'checkboxes',
@@ -26,7 +27,8 @@ export default {
   data() {
     return {
       ex1: false,
-      ex2: true,
+      ex2: 'checked',
+      ex3: 'checked',
       exGroup: ['A', { value: 'D' }, [9, 8]],
       testVal: {
         value: 'X',
@@ -38,8 +40,8 @@ export default {
     };
   },
   methods: {
-    change(val) {
-      console.log('change', val);
+    logChange(val, e) {
+      console.log('log', val, e); // eslint-disable-line
     },
   },
 };
