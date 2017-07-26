@@ -308,7 +308,9 @@ export default {
     },
     onBlur(e) {
       this.validate(true);
-      this.$nextTick(() => (this.focused = false));
+      this.$nextTick(() => {
+        this.focused = false;
+      });
       this.$emit('blur', e);
     },
     onFocus(e) {

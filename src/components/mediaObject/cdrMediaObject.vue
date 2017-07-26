@@ -50,9 +50,9 @@ export default {
     cdrHeading,
   },
   props: {
-      /**
-       * Assign the proper heading level 1-6
-       **/
+    /**
+     * Assign the proper heading level 1-6
+     */
     level: {
       type: String,
       default: '2',
@@ -66,12 +66,12 @@ export default {
     mediaTitleClass: String,
     /**
     * Replaces the default slot with the body copy for your Media Object
-    **/
+    */
     mediaBody: String,
     width: String,
     /**
     * Allows you to align your text
-    **/
+    */
     mediaAlign: {
       type: String,
       validator: value => ([
@@ -81,31 +81,31 @@ export default {
     },
     /**
     * icon svg path
-    **/
+    */
     iconFigure: String,
     /**
     * Image path
-    **/
+    */
     mediaFigure: String,
     mediaFigureRadius: String,
     /**
     * Ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
-    **/
+    */
     ratio: String,
     utiliyRadius: String,
     /**
     * crop  string
     * Area to crop the image overflow to (can be combined with ratio).
     * {top, y-center, bottom} {left, x-center, right}
-    **/
+    */
     crop: String,
     /**
     * Image alternitive description, defaults to blank
-    **/
+    */
     mediaFigureAlt: String,
     /**
     * {Responsive, Rounded, circle, thumbnail}
-    **/
+    */
     mediaImgShape: String,
     mediaTitle: String,
     mediaUrl: String,

@@ -117,15 +117,15 @@ export default {
     creationTime: String,
     /**
     * Path to primary image
-    **/
+    */
     media: String,
     /**
     * set this to top when there is no attribution
-    **/
+    */
     mediaGutter: String,
     /**
     * this is set to top when there is no attribution
-    **/
+    */
     mediaRadius: String,
     mediaAlt: {
       type: String,
@@ -145,7 +145,7 @@ export default {
     summary: String,
     /**
     * use this to pass messaging markup as a property rather than inline
-    **/
+    */
     messaging: String,
     actions: {
       type: Boolean,
@@ -153,7 +153,7 @@ export default {
     },
     /**
     * action button modifiers (primary, secondary, ...)
-    **/
+    */
     actionOneModifier: {
       type: String,
       required: false,
@@ -161,7 +161,7 @@ export default {
     actionOneCopy: String,
     /**
     * action button modifiers (primary, secondary, ...)
-    **/
+    */
     actionTwoModifier: {
       type: String,
       required: false,
@@ -173,25 +173,25 @@ export default {
     },
     /**
     * User settings button modifiers (temp to be replaced with icon selections)
-    **/
+    */
     userSettingsActionOneModifier: {
       type: String,
       required: false,
     },
     /**
     * any needed copy
-    **/
+    */
     userSettingsActionOneCopy: String,
     /**
     * User settings button modifiers (temp to be replaced with icon selections)
-    **/
+    */
     userSettingsActionTwoModifier: {
       type: String,
       required: false,
     },
     /**
     * any needed copy
-    **/
+    */
     userSettingsActionTwoCopy: String,
     snapshot: {
       required: false,

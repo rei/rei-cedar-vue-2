@@ -51,7 +51,7 @@ export default {
     * Use this property to asign a wrapper class
     * (empty, cdr-inset, cdr-inset--media)
     * to the parent wrapper of the default slot
-    **/
+    */
     wrapperA: String,
     contentAGutter: {
       type: String,
@@ -64,7 +64,7 @@ export default {
     /**
     *  Use this property to asign a wrapper class
     * to the bodyB slot parent
-    **/
+    */
     wrapperB: String,
     contentBGutter: {
       type: String,
@@ -77,7 +77,7 @@ export default {
     /**
     *  Use this property to asign a wrapper
     * class to the bodyC slot parent
-    **/
+    */
     wrapperC: String,
     contentCGutter: {
       type: String,
@@ -89,7 +89,7 @@ export default {
     },
     /**
     *  set to true if you need a footer element on your card
-    **/
+    */
     footer: {
       type: Boolean,
       default: false,
@@ -97,12 +97,12 @@ export default {
     /**
     *  Use this property to asign it a wrapper
     * class to the footer slot parent
-    **/
+    */
     footerClass: String,
     /**
     *  Use this property to asign it a wrapper
     * class to the header slot parent
-    **/
+    */
     headerClass: String,
   },
   computed: {
