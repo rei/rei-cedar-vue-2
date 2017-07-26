@@ -77,13 +77,14 @@
 .cdr-input {
   @apply --sys-font-spruce-bdy-25;
 
-  width: 100%;
-  display: block;
-  border-width: var(--input-border-width);
-  border-style: solid;
+  background-color: var(--input-background-color);
   border-color: var(--input-border-color);
+  border-style: solid;
   border-radius: var(--input-br);
+  border-width: var(--input-border-width);
+  display: block;
   padding: var(--input-p);
+  width: 100%;
 
   &--error {
     border-color: var(--input-error-color);
