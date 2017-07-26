@@ -14,7 +14,7 @@
     props: {
       /**
        * {button, submit, reset}. Defines the button type.
-       **/
+       */
       type: {
         type: String,
         default: 'button',
@@ -22,7 +22,7 @@
       },
       /**
        * Add custom click actions.
-       **/
+       */
       onClick: {
         type: Function,
         default: () => () => null,
