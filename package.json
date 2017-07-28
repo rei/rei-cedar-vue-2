@@ -6,6 +6,7 @@
   "author": "REI Software Engineering",
   "homepage": "https://rei.github.io/rei-cedar/",
   "scripts": {
+    "get-tokens": "node utils/brandai.js",
     "build": "gulp",
     "build-docker": "gulp build-docker",
     "build-docs": "gulp docs",
