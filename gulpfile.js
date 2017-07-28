@@ -270,7 +270,9 @@ gulp.task( 'css:build', [ 'css:clean' ], () => {
 } );
 
 gulp.task('get-tokens', function(){
-  return download(brandAiURL).pipe(gulp.dest('src/less/themes/default/settings/'));
+  return download(brandAiURL)
+    .pipe(rename('brandai.variables'))
+    .pipe(gulp.dest('src/less/themes/default/settings/'));
 });
 
 // minify the css
