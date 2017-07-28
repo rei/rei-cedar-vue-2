@@ -18,6 +18,8 @@
 var path = require( 'path' );
 var gulp = require( 'gulp' );
 var less = require( 'gulp-less' );
+var download = require('gulp-downloader');
+var brandAiURL = 'https://assets.brand.ai/rei-digital-experience-team/digital-rei-brand/style-params.less?key=rJf4Z1nS7Z';
 var rename = require( 'gulp-rename' );
 var minifyCss = require( 'gulp-cssnano' );
 var a11y = require( 'gulp-a11y' );
@@ -266,6 +268,10 @@ gulp.task( 'css:build', [ 'css:clean' ], () => {
         .pipe( sourcemaps.write() )
         .pipe( gulp.dest( PATHS.DIST ) );
 } );
+
+gulp.task('get-tokens', function(){
+  return download(brandAiURL).pipe(gulp.dest('src/less/themes/default/settings/'));
+});
 
 // minify the css
 gulp.task( 'css:minify', [ 'css:build' ], () =>

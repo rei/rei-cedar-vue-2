@@ -42,11 +42,11 @@
 //----------------------------------------------------------------------------------------------------------------------
 // Primary
 //----------------------------------------------------------------------------------------------------------------------
-@btn-primary-color:                                @text-color;
-@btn-primary-bg:                                   @core-action-1;
-@btn-primary-border:                               @btn-primary-bg;
-@btn-primary-active-bg:                            @core-action-3;
-@btn-primary-active-border:                        @btn-primary-active-bg;
+@btn-primary-color:                                @cdr-color-btn-text;
+@btn-primary-bg:                                   @cdr-color-btn-primary;
+@btn-primary-border:                               @cdr-color-btn-primary-stroke;
+@btn-primary-active-bg:                            @cdr-color-btn-primary-active;
+@btn-primary-active-border:                        @cdr-color-btn-primary-active-stroke;
 
 //----------------------------------------------------------------------------------------------------------------------
 // Explore Primary
