@@ -36,3 +36,11 @@
     },
   };
 </script>
+
+<style module="red">
+  @import '../../css/settings/brandai.pcss';
+  @import '../../css/settings/_index.pcss';
+  @import '../../css/themes/red.pcss';
+  @import '../../css/components/button.pcss';
+</style>
+

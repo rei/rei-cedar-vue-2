@@ -4,31 +4,31 @@
   text-decoration: none;
   white-space: nowrap;
   outline: none;
-  background-color: $button-background-color;
-  border-color: $button-border-color;
-  border-width: $button-border-width;
-  border-style: $button-border-style;
-  border-radius: $button-border-radius;
-  color: $button-color;
-  font-family: $button-font-family;
-  font-size: $button-font-size;
-  font-style: $button-font-style;
-  font-weight: $button-font-weight;
-  line-height: $button-line-height;
-  padding: $button-padding;
+  background-color: $sys-color-btn-primary;
+  border-color: $sys-color-btn-primary-stroke;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-radius: $radius-button;
+  color: $sys-color-btn-text;
+  font-family: $sys-font-redwood-dsp-30-font-family;
+  font-size: $sys-font-redwood-dsp-30-font-size;
+  font-style: $sys-font-redwood-dsp-30-font-style;
+  font-weight: $sys-font-redwood-dsp-30-font-weight;
+  line-height: $sys-font-redwood-dsp-30-line-height;
+  padding: $spacing-space-sm $spacing-space-lg;
 
   &:hover,
   &:active,
   &:visited {
     text-decoration: none;
     outline: none;
-    background-color: $button-active-background-color;
-    border-color: $button-active-border-color;
-    color: $button-active-color;
+    background-color: $sys-color-btn-primary-active;
+    border-color: $sys-color-btn-primary-active-stroke;
+    color: $sys-color-btn-text-active;
   }
 
   &:focus {
-    outline: $button-outline;
+    outline: $outline-default-width $outline-default-style $color-outline-focus;
   }
 
   /* button themes */

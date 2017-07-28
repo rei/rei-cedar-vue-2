@@ -92,6 +92,7 @@
     "postcss-calc": "^6.0.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^6.1.0",
+    "postcss-html": "^0.9.0",
     "postcss-import": "^10.0.0",
     "postcss-inline-svg": "^3.0.0",
     "postcss-loader": "^2.0.6",
