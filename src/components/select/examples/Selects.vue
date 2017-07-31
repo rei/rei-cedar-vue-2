@@ -2,7 +2,7 @@
   <div>
     <h2>Selects</h2>
 
-    <cdr-select label="Disabled" v-model="selected" disabled>
+    <cdr-select label="Disabled select" v-model="selected" disabled>
       <option value="1">1</option>
     </cdr-select>
     <p>Selected: {{selected}}</p>
@@ -15,7 +15,7 @@
     </cdr-select>
     <p>Selected: {{selected}}</p>
 
-    <cdr-select label="Prompt" v-model="selected" prompt="Choose one" required>
+    <cdr-select label="Prompt Required" v-model="selected" prompt="Choose one" required>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
