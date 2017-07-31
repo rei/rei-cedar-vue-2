@@ -3,17 +3,14 @@
 /* Fonts */
 $font-fallback-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-sans-serif: "Roboto", $font-fallback-sans-serif;
-@define-mixin font-brand {
-  font-family: "HCo Sentinel", $font-family-sans-serif;
-}
-@define-mixin font-brand-secondary {
-  font-family: "Plak Black Condensed", $font-family-sans-serif;
-  font-weight: normal !important;
-}
-@define-mixin font-copy {
-  font-family: $font-family-sans-serif;
-  font-weight: normal;
-}
+
+$font-brand: "HCo Sentinel", $font-family-sans-serif;
+
+$font-brand-secondary: "Plak Black Condensed", $font-family-sans-serif;
+$font-brand-secondary-weight: normal !important;
+
+$font-copy: $font-family-sans-serif;
+$font-copy-weight: normal;
 
 $font-copy-secondary: "Roboto Condensed", $font-family-sans-serif;
 $font-copy-secondary-weight: 700;

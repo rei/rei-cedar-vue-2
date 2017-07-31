@@ -6469,6 +6469,14 @@ postcss-responsive-type@^1.0.0:
   dependencies:
     postcss "^6.0.6"
 
+postcss-sassy-mixins@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-sassy-mixins/-/postcss-sassy-mixins-2.1.0.tgz#368f200946bfdef6a8b12d68c0f6379b9a222f26"
+  dependencies:
+    glob "^6.0.4"
+    postcss "^5.0.14"
+    postcss-simple-vars "^1.2.0"
+
 postcss-scss@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-1.0.2.tgz#ff45cf3354b879ee89a4eb68680f46ac9bb14f94"
@@ -6483,11 +6491,23 @@ postcss-selector-parser@^2.0.0, postcss-selector-parser@^2.2.2, postcss-selector
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
+postcss-simple-vars@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/postcss-simple-vars/-/postcss-simple-vars-1.2.0.tgz#2e6689921144b74114e765353275a3c32143f150"
+  dependencies:
+    postcss "^5.0.13"
+
 postcss-simple-vars@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/postcss-simple-vars/-/postcss-simple-vars-4.0.0.tgz#d49e082897d9a4824f2268fa91d969d943e2ea76"
   dependencies:
     postcss "^6.0.1"
+
+postcss-strip-inline-comments@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/postcss-strip-inline-comments/-/postcss-strip-inline-comments-0.1.5.tgz#7ff6bcdc14e633ed4cdfa020bae3eddad4f84b90"
+  dependencies:
+    postcss "^5.0.18"
 
 postcss-svgo@^2.1.1:
   version "2.1.6"
@@ -6518,7 +6538,7 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.10, postcss@^5.2.16:
+postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.18, postcss@^5.0.2, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.10, postcss@^5.2.16:
   version "5.2.17"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.17.tgz#cf4f597b864d65c8a492b2eabe9d706c879c388b"
   dependencies:

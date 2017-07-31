@@ -5,6 +5,8 @@ module.exports = {
     'postcss-import': {
       from: 'src/css/main.postcss',
     },
+    'postcss-strip-inline-comments': {},
+    'postcss-sassy-mixins': {},
     'postcss-simple-vars': {},
     'postcss-calc': {},
     'postcss-nested': {},
