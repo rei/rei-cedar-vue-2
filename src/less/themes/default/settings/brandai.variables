@@ -623,6 +623,7 @@
 // redwood-dsp-30 font style
 @cdr-type-redwood-dsp-30-font-size: 16px;
 @cdr-type-redwood-dsp-30-line-height: 22px;
+@cdr-type-redwood-dsp-30-text-align: start;
 @cdr-type-redwood-dsp-30-color: #000000;
 @cdr-type-redwood-dsp-30-font-style: normal;
 @cdr-type-redwood-dsp-30-font-weight: 400;
@@ -631,6 +632,7 @@
 .cdr-type-redwood-dsp-30() {
   font-size: @cdr-type-redwood-dsp-30-font-size;
   line-height: @cdr-type-redwood-dsp-30-line-height;
+  text-align: @cdr-type-redwood-dsp-30-text-align;
   color: @cdr-type-redwood-dsp-30-color;
   font-style: @cdr-type-redwood-dsp-30-font-style;
   font-weight: @cdr-type-redwood-dsp-30-font-weight;
@@ -648,6 +650,44 @@
 .cdr-type-redwood-dsp-20() {
   font-size: @cdr-type-redwood-dsp-20-font-size;
   line-height: @cdr-type-redwood-dsp-20-line-height;
+  color: @cdr-type-redwood-dsp-20-color;
+  font-style: @cdr-type-redwood-dsp-20-font-style;
+  font-weight: @cdr-type-redwood-dsp-20-font-weight;
+  font-family: @cdr-type-redwood-dsp-20-font-family;
+}
+
+// redwood-dsp-30 font style
+@cdr-type-redwood-dsp-30-font-size: 16px;
+@cdr-type-redwood-dsp-30-line-height: 22px;
+@cdr-type-redwood-dsp-30-text-align: left;
+@cdr-type-redwood-dsp-30-color: #2e2e2e;
+@cdr-type-redwood-dsp-30-font-style: normal;
+@cdr-type-redwood-dsp-30-font-weight: 400;
+@cdr-type-redwood-dsp-30-font-family: Roboto;
+
+.cdr-type-redwood-dsp-30() {
+  font-size: @cdr-type-redwood-dsp-30-font-size;
+  line-height: @cdr-type-redwood-dsp-30-line-height;
+  text-align: @cdr-type-redwood-dsp-30-text-align;
+  color: @cdr-type-redwood-dsp-30-color;
+  font-style: @cdr-type-redwood-dsp-30-font-style;
+  font-weight: @cdr-type-redwood-dsp-30-font-weight;
+  font-family: @cdr-type-redwood-dsp-30-font-family;
+}
+
+// redwood-dsp-20 font style
+@cdr-type-redwood-dsp-20-font-size: 14px;
+@cdr-type-redwood-dsp-20-line-height: 20px;
+@cdr-type-redwood-dsp-20-text-align: left;
+@cdr-type-redwood-dsp-20-color: #2e2e2e;
+@cdr-type-redwood-dsp-20-font-style: normal;
+@cdr-type-redwood-dsp-20-font-weight: 400;
+@cdr-type-redwood-dsp-20-font-family: Roboto;
+
+.cdr-type-redwood-dsp-20() {
+  font-size: @cdr-type-redwood-dsp-20-font-size;
+  line-height: @cdr-type-redwood-dsp-20-line-height;
+  text-align: @cdr-type-redwood-dsp-20-text-align;
   color: @cdr-type-redwood-dsp-20-color;
   font-style: @cdr-type-redwood-dsp-20-font-style;
   font-weight: @cdr-type-redwood-dsp-20-font-weight;

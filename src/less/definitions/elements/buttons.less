@@ -210,18 +210,18 @@
     font-size: inherit;
     background-color: transparent;
     padding: 0;
-    
+
     span.icon {
         font-size: 1.8rem;
         padding-right: 1.6rem;
         vertical-align: text-bottom;
     }
-    
+
     &:extend( .link_stag all);
     .overlay-dark & {
         &:extend( .link_stag-overlay all);
     }
-    
+
     &,
     &:hover,
     &:focus,
@@ -229,7 +229,7 @@
         border-color: transparent;
         .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
     }
-    
+
     &:hover,
     &:focus {
         background-color: transparent;
@@ -259,13 +259,13 @@
     border-radius: .5rem;
     color: @btn-high-contrast-color;
     background-color: rgba(0,0,0,.9);
-    
+
     span.icon {
         font-size: 1.8rem;
         padding-right: 1.6rem;
         vertical-align: text-bottom;
     }
-    
+
     &:hover,
     &:active,
     &:focus {
@@ -300,13 +300,12 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .btn-lg {
-    // line-height: ensure even-numbered height of button next to large input
-    .button-size( @padding-large-vertical; @padding-large-horizontal; @btn-font-size-lg; @btn-line-height; );
+    .button-size();
 }
 
 .btn-sm {
     // line-height: ensure proper height of button next to small input
-    .button-size( @padding-small-vertical; @padding-small-horizontal; @font-size-large; @line-height-small; );
+    .button-size( @spacing-space-xs; @spacing-space-md; @cdr-type-redwood-dsp-20-font-size; @cdr-type-redwood-dsp-20-line-height; );
     @text-with-icon-rei-tree-arrow-button-sm-ruleset();
 }
 

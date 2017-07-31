@@ -8,7 +8,7 @@
         </section>
         <section if="{ opts.exampleStyle == null }" class="card-block-xs-open-default cedar-example" data-example-id="{ opts.elementId }">   <yield from="example" />
         </section>
-        <section if="{ opts.exampleStyle }" class="{ opts.exampleStyle + ' cedar-example'}" data-example-id="{ opts.elementId }">
+        <section data-theme="{ opts.exampleTheme }" if="{ opts.exampleStyle }" class="{ opts.exampleStyle + ' cedar-example'}" data-example-id="{ opts.elementId }">
             <yield from="example" />
         </section>
         <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">

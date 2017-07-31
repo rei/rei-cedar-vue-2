@@ -139,20 +139,8 @@ items:
                 - label: Core
                   href: buttons-fam-theme-core
 
-                - label: Explore
-                  href: buttons-fam-theme-explore
-
-                - label: Off Price
-                  href: buttons-fam-theme-off-price
-
                 - label: Overview
                   href: buttons-tags-title
-
-                - label: Active
-                  href: buttons-active
-
-                - label: Disabled
-                  href: buttons-disabled
 
                 - label: Button Pairing
                   href: button-pairing-title

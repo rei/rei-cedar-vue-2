@@ -2,17 +2,17 @@
   theme: core
   size: Default
   class: btn-primary
-  font: 2.1rem Roboto Condensed
+  font: redwood-dsp-30
   heading: Large
-  padding: 3.2rem
+  padding: spacing-space-sm / @spacing-space-lg
 
 - type: primary core
   theme: core
   size: Small
   class: btn-primary btn-sm
-  font: 1.8rem Roboto Condensed
+  font: redwood-dsp-20
   heading: Small
-  padding: 2.4rem
+  padding: spacing-space-xs / @spacing-space-md
 
 - type: primary core
   theme: core
@@ -22,42 +22,3 @@
   heading: Extra small
   padding: 1.6rem
 
-- type: primary explore
-  theme: core
-  size: Default
-  class: btn-explore btn-primary
-  font: 2.1rem Roboto Condensed
-  heading: Large
-  padding: 3.2rem
-
-- type: primary explore
-  theme: core
-  size: Small
-  class: btn-explore btn-primary btn-sm
-  font: 1.8rem Roboto Condensed
-  heading: Small
-  padding: 2.4rem
-
-- type: primary off-price
-  theme: off-price
-  size: Default
-  class: btn-off-price btn-primary
-  font: 2.1rem Roboto Condensed
-  heading: Large
-  padding: 3.2rem
-
-- type: primary off-price
-  theme: off-price
-  size: Small
-  class: btn-off-price btn-primary btn-sm
-  font: 1.8rem Roboto Condensed
-  heading: Small
-  padding: 2.4rem
-
-- type: primary off-price
-  theme: off-price
-  size: Extra small
-  class: btn-off-price btn-primary btn-xs
-  font: 1.4rem Roboto Condensed
-  heading: Extra small
-  padding: 1.6rem
