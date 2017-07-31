@@ -7,5 +7,6 @@
         "no-eol-whitespace": [ true, {
             "ignore": "empty-lines",
         } ],
+        "at-rule-empty-line-before": null,
     }
 }

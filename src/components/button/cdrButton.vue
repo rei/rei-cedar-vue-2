@@ -37,10 +37,13 @@
   };
 </script>
 
-<style module="red">
-  @import '../../css/settings/brandai.pcss';
+<style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import '../../css/themes/red.pcss';
-  @import '../../css/components/button.pcss';
+  @import 'cdrButton.pcss';
 </style>
 
+<style theme="red">
+  @import '../../css/settings/_index.pcss';
+  @import '../../css/themes/red.pcss';
+  @import 'cdrButton.pcss';
+</style>

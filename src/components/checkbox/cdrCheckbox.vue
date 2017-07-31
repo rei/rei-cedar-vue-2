@@ -74,6 +74,7 @@ export default {
 };
 </script>
 
-<style>
-
+<style theme="default">
+  @import '../../css/settings/_index.pcss';
+  @import 'cdrCheckbox.pcss';
 </style>

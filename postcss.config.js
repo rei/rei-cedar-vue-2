@@ -5,7 +5,6 @@ module.exports = {
     'postcss-import': {
       from: 'src/css/main.postcss',
     },
-    // 'postcss-mixins': {},
     'postcss-simple-vars': {},
     'postcss-calc': {},
     'postcss-nested': {},
