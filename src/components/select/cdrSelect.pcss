@@ -1,0 +1,24 @@
+.cdr-select {
+  font-size: $sys-font-spruce-bdy-25-font-size;
+  line-height: $sys-font-spruce-bdy-25-line-height;
+  color: $sys-font-spruce-bdy-25-color;
+  font-style: $sys-font-spruce-bdy-25-font-style;
+  font-weight: $sys-font-spruce-bdy-25-font-weight;
+  font-family: $sys-font-spruce-bdy-25-font-family;
+  width: 100%;
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  height: calc(($spacing-space-sm * 2) + $sys-font-spruce-bdy-25-line-height);
+  border-color: $sys-color-input-stroke;
+  border-radius: $radius-input;
+  background-color: $sys-color-input;
+
+  &[disabled] {
+    background-color: $sys-color-disabled-input;
+  }
+
+  &--size {
+    height: auto;
+  }
+}

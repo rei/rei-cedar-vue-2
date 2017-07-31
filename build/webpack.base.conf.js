@@ -39,8 +39,18 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
+        use: [
+          {
+            loader: 'vue-loader',
+            options: vueLoaderConfig
+          },
+          {
+            loader: 'vue-theme-loader',
+            options: {
+              theme: process.env.theme,
+            }
+          }
+        ],
       },
       {
         test: /\.js$/,

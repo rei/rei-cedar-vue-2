@@ -44,7 +44,7 @@
       ></cdr-input>
 
     <cdr-input v-model="empty"
-      label="Disabled"
+      label="Disabled Input"
       placeholder="I am disabled"
       disabled
       ></cdr-input>

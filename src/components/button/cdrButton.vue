@@ -37,7 +37,13 @@
   };
 </script>
 
-<style module="red">
+<style theme="default">
+  @import '../../css/settings/_index.pcss';
+  @import 'cdrButton.pcss';
+</style>
+
+<style theme="red">
+  @import '../../css/settings/_index.pcss';
   @import '../../css/themes/red.pcss';
-  @import '../../css/components/button.pcss';
+  @import 'cdrButton.pcss';
 </style>

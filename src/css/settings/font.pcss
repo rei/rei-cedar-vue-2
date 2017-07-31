@@ -1,31 +1,28 @@
 /* shared */
-:root {
-  /* Fonts */
-  --font-fallback-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-sans-serif: "Roboto", var(--font-fallback-sans-serif);
-  --font-brand: {
-    font-family: "HCo Sentinel", var(--font-family-sans-serif);
-  }
-  --font-brand-secondary: {
-    font-family: "Plak Black Condensed", var(--font-family-sans-serif);
-    font-weight: normal !important;
-  }
-  --font-copy: {
-    font-family: var(--font-family-sans-serif);
-    font-weight: normal;
-  }
-  --font-copy-secondary: {
-    font-family: "Roboto Condensed", var(--font-family-sans-serif);
-    font-weight: 700;
-  }
 
-  /* Size */
-  --font-size-body-copy: var(--sys-font-spruce-bdy-20-font-size);
-  --font-size-navigation: var(--sys-font-spruce-bdy-20-font-size);
-
-  /* Line Height */
-  --line-height-closed: 1;
-  --line-height-neutral: 1.5;
-  --line-height-open: 2;
+/* Fonts */
+$font-fallback-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Roboto", $font-fallback-sans-serif;
+@define-mixin font-brand {
+  font-family: "HCo Sentinel", $font-family-sans-serif;
+}
+@define-mixin font-brand-secondary {
+  font-family: "Plak Black Condensed", $font-family-sans-serif;
+  font-weight: normal !important;
+}
+@define-mixin font-copy {
+  font-family: $font-family-sans-serif;
+  font-weight: normal;
 }
 
+$font-copy-secondary: "Roboto Condensed", $font-family-sans-serif;
+$font-copy-secondary-weight: 700;
+
+/* Size */
+$font-size-body-copy: $sys-font-spruce-bdy-20-font-size;
+$font-size-navigation: $sys-font-spruce-bdy-20-font-size;
+
+/* Line Height */
+$line-height-closed: 1;
+$line-height-neutral: 1.5;
+$line-height-open: 2;

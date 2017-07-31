@@ -14,7 +14,7 @@
     <cdr-checkbox :custom-value="testVal" v-model="exGroup">E</cdr-checkbox>
     <cdr-checkbox :custom-value="testVal2" v-model="exGroup">F</cdr-checkbox>
     <p>group: {{exGroup}}</p>
-    <cdr-checkbox disabled>disabled</cdr-checkbox>
+    <cdr-checkbox disabled>disabled checkbox</cdr-checkbox>
  </div>
 </template>
 

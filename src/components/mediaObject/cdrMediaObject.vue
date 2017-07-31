@@ -126,3 +126,8 @@ export default {
   },
 };
 </script>
+
+<style theme="default">
+  @import '../../css/settings/_index.pcss';
+  @import 'cdrMediaObject.pcss';
+</style>

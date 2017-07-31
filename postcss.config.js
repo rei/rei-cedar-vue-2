@@ -1,12 +1,20 @@
 module.exports = {
-  parser: 'postcss-scss', // for stripping comments from brand.ai css
+  parser: 'postcss-html',
+  syntax: 'postcss-scss',
   plugins: {
-    'postcss-import': {},
-    'postcss-cssnext': {},
+    'postcss-import': {
+      from: 'src/css/main.postcss',
+    },
+    'postcss-simple-vars': {},
+    'postcss-calc': {},
+    'postcss-nested': {},
+    'postcss-media-minmax': {},
+    'postcss-custom-media': {},
     'postcss-responsive-type': {},
     'postcss-pxtorem': {
       rootValue: 10,
     },
     'postcss-inline-svg': {},
+    autoprefixer: {},
   },
 };

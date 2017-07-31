@@ -1,0 +1,97 @@
+.cdr-button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  outline: none;
+  background-color: $sys-color-btn-primary;
+  border-color: $sys-color-btn-primary-stroke;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-radius: $radius-button;
+  color: $sys-color-btn-text;
+  font-family: $sys-font-redwood-dsp-30-font-family;
+  font-size: $sys-font-redwood-dsp-30-font-size;
+  font-style: $sys-font-redwood-dsp-30-font-style;
+  font-weight: $sys-font-redwood-dsp-30-font-weight;
+  line-height: $sys-font-redwood-dsp-30-line-height;
+  padding: $spacing-space-sm $spacing-space-lg;
+
+  &:hover,
+  &:active,
+  &:visited {
+    text-decoration: none;
+    outline: none;
+    background-color: $sys-color-btn-primary-active;
+    border-color: $sys-color-btn-primary-active-stroke;
+    color: $sys-color-btn-text-active;
+  }
+
+  &:focus {
+    outline: $outline-default-width $outline-default-style $color-outline-focus;
+  }
+
+  /* button themes */
+  &--secondary {
+    background-color: $sys-color-btn-secondary;
+    border-color: $sys-color-btn-secondary-stroke;
+    color: $sys-color-hillary-darken-30;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $sys-color-btn-secondary-active;
+      border-color: $sys-color-btn-secondary-active-stroke;
+      color: $sys-color-hillary-darken-30;
+    }
+  }
+
+  &--compact {
+    font-family: $sys-font-redwood-dsp-20-font-family;
+    font-size: $sys-font-redwood-dsp-20-font-size;
+    font-style: $sys-font-redwood-dsp-20-font-style;
+    font-weight: $sys-font-redwood-dsp-20-font-weight;
+    line-height: $sys-font-redwood-dsp-20-line-height;
+    padding: $spacing-space-xs $spacing-space-md;
+  }
+
+  /* button states */
+  &[disabled] {
+    background-color: $sys-color-disabled;
+    border-color: $sys-color-disabled-stroke;
+    color: $sys-color-disabled-text;
+    cursor: not-allowed;
+  }
+
+  &--block {
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &--fixed {
+    width: auto;
+    display: inline;
+    margin: 0 0 2rem 1.6rem;
+  }
+}
+
+.cdr-button-group > * {
+  width: 100%;
+  display: block;
+  margin-bottom: 2rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  @media (--medium) {
+    width: auto;
+    display: inline;
+    margin: 0 0 2rem 1.6rem;
+  }
+}
