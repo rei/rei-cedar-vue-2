@@ -24,6 +24,7 @@ var rename = require( 'gulp-rename' );
 var minifyCss = require( 'gulp-cssnano' );
 var a11y = require( 'gulp-a11y' );
 var pa11y = require( 'gulp-pa11y' );
+var gtenon = require('gulp-tenon-client');
 var csscomb = require( 'gulp-csscomb' );
 var inject = require( 'gulp-inject' );
 var uglify = require( 'gulp-uglify' );
@@ -126,7 +127,10 @@ var USE_DOCKER = false;
  * Options for [a11y](https://github.com/addyosmani/a11y)
  */
 var A11Y_OPTIONS = pkg.a11y;
-
+/**
+ * Options for [tenon.io](https://tenon.io/)
+ */
+var TENON_OPTIONS = pkg.tenon;
 /**
  * Options for [pa11y](https://github.com/nature/pa11y#available-options)
  */
@@ -143,7 +147,6 @@ var PA11Y_OPTIONS = pkg.pa11y;
 //
 //
 //
-
 // --[ Default ]----------------------------------------------------------------
 gulp.task( 'default', [ 'master' ] );
 
@@ -470,6 +473,7 @@ gulp.task( 'accessibility:audit-templates', () =>
     gulp.src( path.join( PATHS.DOCS_TEMPLATES, '**', '*.html' ) )
     .pipe( a11y( A11Y_OPTIONS ) )
     .pipe( a11y.reporter() )
+    .pipe( gtenon( TENON_OPTIONS ) )
 );
 
 // Audit compiled docs. This task is slower, but will cover more. It can give
