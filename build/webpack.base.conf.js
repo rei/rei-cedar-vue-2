@@ -2,6 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var mainPostConfig = require('./mainPost.conf.js')
 var isRelease = process.env.NODE_ENV === 'release'
 
 function resolve (dir) {
@@ -56,6 +57,11 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
+      },
+      {
+        test: /\.postcss$/,
+        include: [resolve('src/css')],
+        use: mainPostConfig.loaders
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
