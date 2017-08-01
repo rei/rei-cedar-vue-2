@@ -36,6 +36,8 @@ This project will work in conjunction with an upcoming component framework that 
 To build the CSS bundle, run `gulp`. The built bundle(s) will appear in
 `dist/*.css`
 
+To fetch the latest design tokens from brand.ai run `gulp get-tokens`.
+
 ## Docs
 
 To generate the documentation site locally, follow these steps:
@@ -80,7 +82,7 @@ errors. And it cannot audit local static files.
 
 ### Visual Regression Testing
 
-Check [backstop](https://github.com/garris/BackstopJS) for general configuration questions. 
+Check [backstop](https://github.com/garris/BackstopJS) for general configuration questions.
 
 Our visual regressions audits can be performed against all patterns documented within the patterns site. To do so, follow the steps below:
 

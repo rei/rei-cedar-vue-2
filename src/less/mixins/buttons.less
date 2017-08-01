@@ -88,10 +88,10 @@
 // @font-family: defaults to @headings-font-family-secondary;.
 //
 //----------------------------------------------------------------------------------------------------------------------
-.button-size( @padding-y; @padding-x; @font-size; @line-height; @font-family: @brand-font-secondary;) {
-  font-weight: @brand-font-secondary-bold; //for explicitly setting roboto condensed for safari bug...remove when changing from bold
-  padding: @padding-y @padding-x;
+.button-size( @padding-y: @spacing-space-sm; @padding-x: @spacing-space-lg; @font-size: @cdr-type-redwood-dsp-30-font-size; @line-height: @cdr-type-redwood-dsp-30-line-height; @font-family: @cdr-type-redwood-dsp-30-font-family; @font-style: @cdr-type-redwood-dsp-30-font-style;) {
   font-family: @font-family;
   font-size: @font-size;
+  font-style: @font-style;
   line-height: @line-height;
+  padding: @padding-y @padding-x;
 }
