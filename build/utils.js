@@ -47,7 +47,9 @@ exports.cssLoaders = function (options) {
   // http://vuejs.github.io/vue-loader/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
-    // postcss: generateLoaders(), *.vue is auto run through postcss, removed to avoid problems with our custom postcss loader logic
+    // *.vue is auto run through postcss, removed below to avoid problems with our 
+    // custom postcss loader logic in ./mainPost.conf.js
+    // postcss: generateLoaders(), 
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),

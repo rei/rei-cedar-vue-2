@@ -3,25 +3,19 @@
 
 Welcome to REI's style framework! The overall goals of this project are to provide a common scaffolding for UI elements,
 and a set of themes that build on this scaffolding. We started this project in 2015 as a fork of
-[Bootstrap](http://getbootstrap.com/) and have applied many of the concepts from [Semantic-ui](http://semantic-ui.com/).
+[Bootstrap](http://getbootstrap.com/).
 The project has evolved into what it is today, and will continue to grow to fit our expanding needs. Feel free to watch
 the Cedar grow and learn from what we are doing, or jump in and provide some recommendations.
-
-The goal, at this point, is to generate multiple themed CSS resources that different web properties can consume.
-In time, we will explore more atomic theming that will allow page creators to mix and match themes: essentially becoming
-a theme generator.
-
-This project will work in conjunction with an upcoming component framework that is in the works.  Stay tuned for that!
 
 ## Getting Started
 
 ### Install
 
-We’re using [Yarn](https://yarnpkg.com/en/) instead of npm for dependency management so you should install that.
+We’re using [Yarn](https://yarnpkg.com/en/) instead of npm for dependency management.
 
-Clone the project. 
+Clone the project.
 
-`yarn install` 
+`yarn install`
 
 (npm install will also work, but is not advised)
 
@@ -37,7 +31,7 @@ Creates an exported bundle (index.html, compiled .js, and compiled .css) that re
 
 `npm run release`
 
-Export the component library to a umd js bundle and compiled css in the `release/` directory for use in other projects. This creates the delivery bundle.
+Export the component library to a umd js bundle and compiled css in the `release/` directory for use in other projects. This creates the delivery bundle. Files from /static are copied here as is.
 
 ## Build System
 
@@ -61,17 +55,19 @@ Outputs a standalone app to `styleguide/build` that can be hosted somewhere (lik
 
 `npm run test`
 
-Runs [karma](https://karma-runner.github.io/1.0/index.html) unit tests. We're using [avoriaz](https://github.com/eddyerburgh/avoriaz) to help with Vue component testing (Vue is adopting this as the official testing utility library).
+Runs [karma](https://karma-runner.github.io/1.0/index.html) unit tests. We're using [avoriaz](https://github.com/eddyerburgh/avoriaz) to help with Vue component testing (Vue is working on their official testing tools with the guy who made this).
 
 `npm run e2e`
 
 Runs [Nightwatch](http://nightwatchjs.org/) end-to-end tests.
 
+This includes running [Tenon](https://tenon.io/) a11y tests.
+
 ### Visual Regression Testing
 
 Check [backstop](https://github.com/garris/BackstopJS) for general configuration questions. 
 
-Our visual regressions audits can be performed against all patterns documented within the patterns site. To do so, follow the steps below:
+Our visual regressions audits can be performed against all patterns documented within the project's component proving grounds. To do so, follow the steps below:
 
 1. Run the project locally with `npm run dev`
 2. `npm run reference` will create a base set of images providing coverage for all defined patterns. Ensure this is run against a clean build prior to any edits.
@@ -83,7 +79,7 @@ Our visual regressions audits can be performed against all patterns documented w
 
 We’re aliasing the backstop commands to use `npm run <command>` just to abstract away supplying the config option since we are using a javascript version of the backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
 
-The config (__backstop.js__) looks through `src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector_ in the array.
+The config (`backstop.js`) looks through `src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector_ in the array.
 
 If you want to test states (i.e. hover) you can create another backstop file that has an `onReadyScript`. These scripts use [casperjs](http://docs.casperjs.org/en/latest/).
 
@@ -107,33 +103,34 @@ __TODO:__ Notes about js, eslint
 __TODO:__ Notes about DDS, design tokens, integrations
 
 - `npm run get-tokens` fetch css variables from Brand.ai.
-- `npm run get-icons` fetch icons and build an svg sprite of them.
+- `npm run get-icons` fetch icons from Brand.ai and build an svg sprite of them.
 
 ## CSS
 
-__TODO:__ Notes about css, postcss, stylelint, css-modules?
+__TODO:__ Notes about css, postcss, stylelint
 
 - Using postcss. Config for it lives in `postcss.config.js`
+- SCSS style variables ($variable). Don't use mixins/other logic. Keep it simple.
+- Components styles are in the same directory and imported into style tags in the component file.
 - main.postcss (.postcss so webpack uses the correct loader - others are .pcss and just need to be imported here to be processed)
-- Imported into entry files (dev.js and main.js so webpack processes the css since we aren’t using a css loader for our files)
+- Component css is output as a file separate from main.postcss.
+- Using [vue-theme-loader](https://github.com/zephraph/vue-theme-loader) to allow for vertical themes. Every style tag in the components needs a `theme="<theme>"`.
+- Imported into entry files (dev.js and main.js so webpack processes it)
 - [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) inspired file structure.
-- CSS needs to be written with cdr- namespace prefix (tried automating it but had too many gotchas and wasn't intuitive)
-- [cssnext](http://cssnext.io/) (autoprefixer built in)
+- CSS needs to be written with `cdr-` namespace prefix.
 - Auto prefixer settings is in package.json under "browserslist"
 - safari >= 4 used for backstop (phantomjs engine) issues with flexbox [issue here](https://github.com/ariya/phantomjs/issues/14365)
 - Build with variable configs for theming (want to hook these into theo/sketch/something for theming).
-- css-modules in components turn into abstracted javascript classes (better here or components?)
 - Stylelint using `stylelint-config-standard` for base but we have customizations on top of it. Not following stylelint guidelines will throw errors in build (need to lock down rules still).
 
 ## Components
 
-__TODO:__ Notes about Vue, components, css-modules?
+__TODO:__ Notes about Vue, components
 
 - Using [Vue.js](https://vuejs.org/) single file components. They have excellent docs.
-- Import them into the local  _index.js. 
-- Do write the component name prefixed/namespaced (considered automating, a little too black box/too many gotchas).
+- Import them into the _index.js. 
+- Write the component name prefixed/namespaced with `cdr-`.
 - Horizontal theming with css-modules, dynamically binding classes based on theme
-- css-modules in components turn into abstracted javascript classes (better here or CSS?)
 
 ## Folder Structure
 
@@ -147,9 +144,11 @@ backstop_data                   #Files related to visual regression testing. Mos
 |-- %html_report                #Generated report for backstop test results
 build                           #Contains scripts and configs for the webpack build system (most of this is from the vue webpack template)
 |-- build.js                    #Prod build script - the entry point for `npm run build`
+|-- check-theme.js              #Sets the theme variable for webpack to output vertical themes
 |-- check-versions.js           #Checks node/npm versions (this came with the vue webpack template so I’m not sure if it’s super useful)
 |-- dev-client.js               #For hot module reloading in dev
 |-- dev-server.js               #Config for express dev server
+|-- mainPost.conf.js            #Webpack loader config for processing .postcss files for release vs dev
 |-- release.js                  #Release build script - the entry point for `npm run release`
 |-- utils.js                    #From vue webpack template to mostly automate which loaders need to be used since vue supports scss, stylus, postcss, etc.
 |-- vue-loader.conf.js          #Config object for vue webpack loader (vue-loader)
@@ -165,32 +164,41 @@ config                          #Configuration files used in the webpack build s
 |-- release.env.js              #Setting NODE_ENV for release
 |-- test.env.js                 #Setting NODE_ENV for test
 %dist/                          #Results from `npm run build` end up here
+%dist-docs/                     #Results from `npm run build:docs` end up here
+docs/                           #Location for general documentation guidelines that will be used in the styleguide
 %release/                       #Results from `npm run release` end up here
 src/                            #Source files
 |-- assets/                     #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
+  |-- icons/                    #`npm run get-icons` stores results here then creates the sprite from them. Also available for use individually via CSS, etc.
 |-- components/                 #All things components
-  |-- <component>               #Any component
+  |-- <comp>
     |-- __tests__/              #Unit tests for components
-      |-- *.spec.js             #Unit test files -- karma looks for them with this pattern
+      |-- <comp>.spec.js        #Unit test files -- karma looks for them with this pattern
     |-- examples/               #Examples of the component used in the proving grounds for backstop testing
-    |-- **/*.backstop.js        #Config files for backstop visual regression testing
+    |-- <comp>.backstop.js      #Config files for backstop visual regression testing
+    |-- <comp>.md               #Component documentation file displayed in styleguide -- styleguide examples are added here
+    |-- <comp>.pcss             #Styles specific to the component which are imported into the `.vue` file
+    |-- <comp>.vue              #Single file component
+  |-- _index.js                 #All components are imported/exported here
+  |-- examples.js               #All component example are imported/exported here for use in App.vue and the proving grounds
 |-- css/                        #All things css
-  |-- components/               #CSS files for component styles
   |-- directives/               #CSS files for directives
   |-- generic/                  #Reset and normalize styles. Also general styles that are related to large layout.
   |-- settings/                 #Values and variables that are consumed in other files.
-    |-- component-variables/    #Values and variables that are consumed in component css.
   |-- themes/                   #Might be used for vertical and/or horizontal themes in the future.
+  |-- main.postcss              #CSS files imported here for ordering
 |-- directives/                 #All things directives
-  |-- <directive>               #Any directive directory
+  |-- <direc>
     |-- examples/               #Examples of the directive used in the proving grounds for backstop testing
+    |-- <direc>.backstop.js     #Config files for backstop visual regression testing
+    |-- <direc>.js              #Code for the directive
+|-- mixins/                     #Mixins that are shared in components
 |-- utils/                      #Helper js files for things like debounce
-|-- app.vue                     #The component/directive catalog for building and regression testing
+|-- App.vue                     #The component/directive catalog for building and regression testing -- the proving grounds
 |-- dev.js                      #Webpack entry point for everything !release
 |-- main.js                     #Webpack entry point for release that builds delivery assets
-|-- */_index.js                 #For maintaining imports of components for use between release and dev/build
 static/                         #For static assets. These get included in dist/ and release/ exactly as is -- check the vue webpack template docs
-%styleguide/                     #Output for vue-styleguidist
+styleguide/                     #Unique config options for the styleguide
 test/                           #All things testing for both unit and e2e
 |-- e2e/                        #Everything for nightwatch testing
 |-- unit/                       #Everything for karma testing
@@ -206,6 +214,8 @@ utils/                          #Utility node scripts
 .stylelintrc                    #Config for stylelint
 .travis.yml                     #Holding onto it from v1, will need to be updated
 backstop.js                     #Main config for backstop. Global settings like viewport sizes and paths are set here. 
+components.js                   #Exposes components individually from release
+directives.js                   #Exposes directives individually from release
 index.html                      #app.vue is bootstrapped here and is used for both dev and build -- all css and js files will be injected automatically
 package.json                    #Everything for npm
 postcss.config.js               #Config for postcss -- add new postcss plugins here

@@ -1,5 +1,6 @@
 // 1. start the dev server using production config
 process.env.NODE_ENV = 'testing';
+process.env.PORT = 9090;
 const server = require('../../build/dev-server.js');
 const spawn = require('cross-spawn');
 
