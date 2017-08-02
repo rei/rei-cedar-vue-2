@@ -19,7 +19,49 @@
                <p> When grouped, it is used for the primary action of the grouping.</p>
             </yield>
             <yield to="example">
-                {% include /markup-templates/buttons/standard.html param="Primary Core" %}
+              <div class="well well-lg">
+                <button type="button" class="center-block btn btn-primary">
+                    Primary button
+                </button>
+                </div>
+                <div class="well">
+                  <h4>Button sizes</h4>
+                    <div class="group group-display-fixed">
+                        <div class="col-xs-12 col-sm-4">
+                            <section class="well well-lg">
+                                <div class="well well-lg" data-theme="light-20">
+                                    <button type="button" class="center-block btn btn-primary">
+                                        Default
+                                    </button>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <section class="well well-lg">
+                               <div class="well well-lg" data-theme="light-20">
+                                    <button type="button" class="center-block btn btn-primary btn-sm">
+                                        Small
+                                    </button>
+                                </div>
+                                <p class="vertical-pull">
+                                   These smaller transaction buttons are used in conjunction with inline form fields or when repeated in a list such as "Register" on a classes and Events page. Hover / Active / Focus states match "Large" styling definition.
+                                </p>
+                            </section>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <section class="well well-lg">
+                                <div class="well well-lg" data-theme="light-20">
+                                    <button type="button" class="center-block btn btn-primary btn-xs">
+                                        extra-Small
+                                    </button>
+                                </div>
+                                <p class="vertical-pull">
+                                    For use in very limited situations where space is at an extreme premium. Example: "Compare" buttons on search results. Hover / Active / Focus states match "Large" styling definition.
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
             </yield>
             <yield to="codeblock">
             {% highlight html %}

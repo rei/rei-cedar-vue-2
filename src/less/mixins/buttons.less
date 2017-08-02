@@ -23,10 +23,13 @@
 // @active-color: Active foreground color.
 //
 //----------------------------------------------------------------------------------------------------------------------
-.button-variant( @color; @background; @border: @background; @active-background: darken(@background, 10%); @active-border: darken(@border, 12%); @active-color: @color ) {
+.button-variant( @color; @background; @border: @background; @active-background: darken(@background, 10%); @active-border: darken(@border, 12%); @active-color: @color; @border-radius: @radius-button; ) {
   color: @color;
   background-color: @background;
   border-color: @border;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-radius: @border-radius;
   outline: none;
   &:hover,
   &:active,

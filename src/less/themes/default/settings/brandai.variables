@@ -620,38 +620,38 @@
   font-family: @cdr-type-h-3-l-font-family;
 }
 
-// redwood-sbh-30 font style
-@cdr-type-redwood-sbh-30-font-size: 16px;
-@cdr-type-redwood-sbh-30-line-height: 16px;
-@cdr-type-redwood-sbh-30-color: #000000;
-@cdr-type-redwood-sbh-30-font-style: normal;
-@cdr-type-redwood-sbh-30-font-weight: 400;
-@cdr-type-redwood-sbh-30-font-family: Roboto;
+// redwood-ui-30 font style
+@cdr-type-redwood-ui-30-font-size: 16px;
+@cdr-type-redwood-ui-30-line-height: 16px;
+@cdr-type-redwood-ui-30-color: #000000;
+@cdr-type-redwood-ui-30-font-style: normal;
+@cdr-type-redwood-ui-30-font-weight: 400;
+@cdr-type-redwood-ui-30-font-family: Roboto;
 
-.cdr-type-redwood-sbh-30() {
-  font-size: @cdr-type-redwood-sbh-30-font-size;
-  line-height: @cdr-type-redwood-sbh-30-line-height;
-  color: @cdr-type-redwood-sbh-30-color;
-  font-style: @cdr-type-redwood-sbh-30-font-style;
-  font-weight: @cdr-type-redwood-sbh-30-font-weight;
-  font-family: @cdr-type-redwood-sbh-30-font-family;
+.cdr-type-redwood-ui-30() {
+  font-size: @cdr-type-redwood-ui-30-font-size;
+  line-height: @cdr-type-redwood-ui-30-line-height;
+  color: @cdr-type-redwood-ui-30-color;
+  font-style: @cdr-type-redwood-ui-30-font-style;
+  font-weight: @cdr-type-redwood-ui-30-font-weight;
+  font-family: @cdr-type-redwood-ui-30-font-family;
 }
 
-// redwood-sbh-20 font style
-@cdr-type-redwood-sbh-20-font-size: 14px;
-@cdr-type-redwood-sbh-20-line-height: 14px;
-@cdr-type-redwood-sbh-20-color: #000000;
-@cdr-type-redwood-sbh-20-font-style: normal;
-@cdr-type-redwood-sbh-20-font-weight: 400;
-@cdr-type-redwood-sbh-20-font-family: Roboto;
+// redwood-ui-20 font style
+@cdr-type-redwood-ui-20-font-size: 14px;
+@cdr-type-redwood-ui-20-line-height: 14px;
+@cdr-type-redwood-ui-20-color: #000000;
+@cdr-type-redwood-ui-20-font-style: normal;
+@cdr-type-redwood-ui-20-font-weight: 400;
+@cdr-type-redwood-ui-20-font-family: Roboto;
 
-.cdr-type-redwood-sbh-20() {
-  font-size: @cdr-type-redwood-sbh-20-font-size;
-  line-height: @cdr-type-redwood-sbh-20-line-height;
-  color: @cdr-type-redwood-sbh-20-color;
-  font-style: @cdr-type-redwood-sbh-20-font-style;
-  font-weight: @cdr-type-redwood-sbh-20-font-weight;
-  font-family: @cdr-type-redwood-sbh-20-font-family;
+.cdr-type-redwood-ui-20() {
+  font-size: @cdr-type-redwood-ui-20-font-size;
+  line-height: @cdr-type-redwood-ui-20-line-height;
+  color: @cdr-type-redwood-ui-20-color;
+  font-style: @cdr-type-redwood-ui-20-font-style;
+  font-weight: @cdr-type-redwood-ui-20-font-weight;
+  font-family: @cdr-type-redwood-ui-20-font-family;
 }
 
 // redwood-dsp-30 font style
@@ -766,23 +766,23 @@
   font-family: @cdr-type-redwood-dsp-20-light-font-family;
 }
 
-// maple-utl-40 font style
-@cdr-type-maple-utl-40-font-size: 18px;
-@cdr-type-maple-utl-40-line-height: 24px;
-@cdr-type-maple-utl-40-text-align: center;
-@cdr-type-maple-utl-40-color: #2e2e2e;
-@cdr-type-maple-utl-40-font-style: normal;
-@cdr-type-maple-utl-40-font-weight: 400;
-@cdr-type-maple-utl-40-font-family: Roboto Condensed;
+// maple-ui-30 font style
+@cdr-type-maple-ui-30-font-size: 18px;
+@cdr-type-maple-ui-30-line-height: 21px;
+@cdr-type-maple-ui-30-text-align: center;
+@cdr-type-maple-ui-30-color: #2e2e2e;
+@cdr-type-maple-ui-30-font-style: normal;
+@cdr-type-maple-ui-30-font-weight: bold;
+@cdr-type-maple-ui-30-font-family: Roboto Condensed;
 
-.cdr-type-maple-utl-40() {
-  font-size: @cdr-type-maple-utl-40-font-size;
-  line-height: @cdr-type-maple-utl-40-line-height;
-  text-align: @cdr-type-maple-utl-40-text-align;
-  color: @cdr-type-maple-utl-40-color;
-  font-style: @cdr-type-maple-utl-40-font-style;
-  font-weight: @cdr-type-maple-utl-40-font-weight;
-  font-family: @cdr-type-maple-utl-40-font-family;
+.cdr-type-maple-ui-30() {
+  font-size: @cdr-type-maple-ui-30-font-size;
+  line-height: @cdr-type-maple-ui-30-line-height;
+  text-align: @cdr-type-maple-ui-30-text-align;
+  color: @cdr-type-maple-ui-30-color;
+  font-style: @cdr-type-maple-ui-30-font-style;
+  font-weight: @cdr-type-maple-ui-30-font-weight;
+  font-family: @cdr-type-maple-ui-30-font-family;
 }
 
 /*
