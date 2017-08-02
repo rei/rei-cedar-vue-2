@@ -150,6 +150,43 @@ High contrast button
             {% endhighlight %}
             </yield>
         </cdr-well-docs>
+
+             <cdr-well-docs example-title="Play Video" element-id="buttons-with-icons">
+            <yield to="example-description">
+            <p>
+            For use when a button activates a video player.
+            (See Links reference for a "Play Video link with icon" alternative.)
+            </p>
+            </yield>
+            <yield to="example">
+                <div class="group group-display-fixed group-gutter-xs-open-10">
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn__link-inline-play">
+                            <span class="icon icon-rei-play-small" aria-hidden="true">
+                            </span>Play video text link
+                        </button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn-play">
+                            <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video
+                        </button>
+                    </div>
+                </div>
+            </yield>
+            <yield to="codeblock">
+            {% highlight html %}
+ <button type="button" class="btn btn__link-inline-play">
+    <span class="icon icon-rei-play-small" aria-hidden="true"></span>
+    Play video
+</button>
+<button type="button" class="btn btn-play">
+    <span class="icon icon-rei-play-small" aria-hidden="true"></span>
+    Play video
+</button>
+            {% endhighlight %}
+            </yield>
+        </cdr-well-docs>
+
     </section>
     {% if page.slug == "buttons" %}
 </section>
