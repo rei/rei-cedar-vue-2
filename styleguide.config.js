@@ -1,3 +1,5 @@
+require('./build/check-theme')();
+
 const ReplacePlugin = require('replace-bundle-webpack-plugin');
 
 // Webpack configs
