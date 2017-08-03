@@ -1,10 +1,10 @@
 <section>
     <div>
-        <cdr-well-docs example-title="Button" element-id="button-primary-impl">
+    <button type="button" class="btn btn-primary">
+        cedar buttons
+    </button>
+        <cdr-well-docs element-id="button-primary-impl">
             <yield to="example-description">
-            <button type="button" class="btn btn-primary">
-                Primary button
-            </button>
             <p>
             When constructing a button you can select modifiers for state, size, and shape.
             </p>
@@ -145,76 +145,23 @@
 <button type="button" class="btn btn-primary">
 Primary button
 </button>
-            {% endhighlight %}
-            </yield>
-        </cdr-well-docs>
 
-        <cdr-well-docs example-title="Secondary button" element-id="button-secondary">
-            <yield to="example-description">
-               <p>Pair this button with the Primary CORE button when 2 CTAs are needed.</p>
-
-                <p>When grouped, it is the second-choice button, placed second in-line.</p>
-
-                <p>Examples: Cancel, Find in store</p>
-            </yield>
-            <yield to="example">
-               <div class="well well-lg">
-                    <button type="button" class="center-block btn btn-default">
-                        Secondary button
-                    </button>
-                </div>
-            </yield>
-            <yield to="codeblock">
-            {% highlight html %}
 <button type="button" class="btn btn-default">
-Secondary Core button
+    Secondary button
 </button>
-            {% endhighlight %}
-            </yield>
-        </cdr-well-docs>
 
-        <cdr-well-docs example-title="Black Alternate" element-id="black-alternate">
-            <yield to="example-description">
-               Use this as the alternate choice when the Core Primary Blue button will clash with a photographic or colored background.
-            </yield>
-            <yield to="example">
-                <div class="well well-lg">
-                    <button type="button" class="center-block btn btn-contrast btn-primary">
-                        Secondary button
-                    </button>
-                </div>
-            </yield>
-            <yield to="codeblock">
-            {% highlight html %}
-<button type="button" class="btn  btn-contrast btn-primary">
+<button type="button" class="btn btn-contrast btn-primary">
+High contrast button
+</button>
+
+<button type="button" class="btn btn-contrast btn-primary btn-xs">
 High contrast button
 </button>
             {% endhighlight %}
             </yield>
         </cdr-well-docs>
 
-        <cdr-well-docs example-title="White Alternate" example-theme="dark-20" element-id="white-alternate">
-            <yield to="example-description">
-               For use on dark backgrounds where the border of the CORE Secondary button would become lost and effect
-                the visual alignment of a button parring.
-            </yield>
-            <yield to="example">
-                <div class="well well-lg" data-theme="dark-20">
-                    <button type="button" class="center-block btn btn-contrast btn-default">
-                        Secondary button
-                    </button>
-                </div>
-            </yield>
-            <yield to="codeblock">
-            {% highlight html %}
-<button type="button" class="btn btn-contrast btn-default">
-    High contrast button
-</button>
-            {% endhighlight %}
-            </yield>
-        </cdr-well-docs>
-
-             <cdr-well-docs example-title="Play Video" element-id="buttons-with-icons">
+        <cdr-well-docs example-title="Play Video" element-id="buttons-with-icons">
             <yield to="example-description">
             <p>
             For use when a button activates a video player.
