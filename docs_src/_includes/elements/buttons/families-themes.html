@@ -1,11 +1,9 @@
 {% if page.slug == "buttons" %}
 <section class="vertical-push-3">
-    <h2 id="buttons-fam-theme-title" class="page-header">Families/Themes</h2>
+    <h2 id="buttons-fam-theme-title" class="page-header">Buttons</h2>
     {% endif %}
     <section>
-        <h3 id="buttons-fam-theme-core" class="status status-good">Core buttons</h3>
-
-        <p> CORE buttons are meant for transactional use. They can be considered the "utilitarian"
+        <p> Buttons are meant for transactional use. They can be considered the "utilitarian"
             buttons, seen within product focused areas of the site, like Search Results, Product Details, or login
             pages.
             These buttons help the user act on an informational, research or purchase path of an REI product.
@@ -13,24 +11,82 @@
         <p> Button examples: "Submit", "Checkout", "Add to cart", "See more", "Continue shopping".</p>
         <hr/>
 
-        <cdr-card-docs example-title="Core Large - Primary" element-id="button-primary-core">
+        <cdr-well-docs example-title="Primary button" element-id="button-primary">
             <yield to="example-description">
                <p> Use for a single transactional CTA; when only one action is needed.</p>
                <p> When grouped, it is used for the primary action of the grouping.</p>
             </yield>
             <yield to="example">
-                {% include /markup-templates/buttons/standard.html param="Primary Core" %}
+              <div class="well well-lg">
+                <button type="button" class="center-block btn btn-primary">
+                    Primary button
+                </button>
+                </div>
+                <div class="well">
+                  <h3 class="h4">Button sizes and shapes</h3>
+                    <div class="group group-display-fixed group-gutter-xs-open-10">
+
+                        <div class="col-xs-12 col-sm-6">
+                            <section>
+                               <div class="well well-lg" data-theme="light-20">
+                                    <button type="button" class="center-block btn btn-primary btn-sm">
+                                        Small
+                                    </button>
+                                </div>
+                                <p class="vertical-pull">
+                                   These smaller transaction buttons are used in conjunction with inline form fields or when repeated in a list such as "Register" on a classes and Events page. Hover / Active / Focus states match "Large" styling definition.
+                                </p>
+                            </section>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <section>
+                                <div class="well well-lg" data-theme="light-20">
+                                    <button type="button" class="center-block btn btn-primary btn-xs">
+                                        extra-Small
+                                    </button>
+                                </div>
+                                <p class="vertical-pull">
+                                    For use in very limited situations where space is at an extreme premium. Example: "Compare" buttons on search results. Hover / Active / Focus states match "Large" styling definition.
+                                </p>
+                            </section>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <section>
+                                <div class="well well-lg" data-theme="light-20">
+                                    <button type="button" class="btn btn-primary btn-block" data-example-id="button-primary-core-block">Block button</button>
+                                </div>
+                                <p class="vertical-pull">
+                                   Use the full breakpoint width in XS grid.
+                                   Width: mobile version extends to full breakpoint size (Minus gutter).
+                                   Text: <b>sentence case</b>(horizontally centered within button).
+                                </p>
+                            </section>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <section>
+                                <div class="well well-lg" data-theme="light-20">
+                                     <button type="button" class="center-block btn btn-primary btn-fixed">Fixed button</button>
+                                </div>
+                                <p class="vertical-pull">
+                                    In specific cases (recommended for hub or campaign pages only)
+                                    This default behavior can be overridden, resulting in a narrower style identical to larger breakpoints. Alignment should align with parent style.
+                                    Text: <b>sentence case</b>(horizontally centered within button).
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
             </yield>
             <yield to="codeblock">
             {% highlight html %}
 <button type="button" class="btn btn-primary">
-Primary Core button
+Primary button
 </button>
             {% endhighlight %}
             </yield>
-        </cdr-card-docs>
+        </cdr-well-docs>
 
-        <cdr-card-docs example-title="CORE Large - Secondary" element-id="button-secondary-core">
+        <cdr-well-docs example-title="Secondary button" element-id="button-secondary">
             <yield to="example-description">
                <p>Pair this button with the Primary CORE button when 2 CTAs are needed.</p>
 
@@ -39,7 +95,11 @@ Primary Core button
                 <p>Examples: Cancel, Find in store</p>
             </yield>
             <yield to="example">
-                {% include /markup-templates/buttons/standard.html param="Secondary Core" %}
+               <div class="well well-lg">
+                    <button type="button" class="center-block btn btn-default">
+                        Secondary button
+                    </button>
+                </div>
             </yield>
             <yield to="codeblock">
             {% highlight html %}
@@ -48,14 +108,18 @@ Secondary Core button
 </button>
             {% endhighlight %}
             </yield>
-        </cdr-card-docs>
+        </cdr-well-docs>
 
-        <cdr-card-docs example-title="Core Large - Black Alternate" element-id="core-large-black-alternate">
+        <cdr-well-docs example-title="Black Alternate" element-id="black-alternate">
             <yield to="example-description">
                Use this as the alternate choice when the Core Primary Blue button will clash with a photographic or colored background.
             </yield>
             <yield to="example">
-                {% include /markup-templates/buttons/standard.html param="Primary Contrast" %}
+                <div class="well well-lg">
+                    <button type="button" class="center-block btn btn-contrast btn-primary">
+                        Secondary button
+                    </button>
+                </div>
             </yield>
             <yield to="codeblock">
             {% highlight html %}
@@ -64,15 +128,19 @@ High contrast button
 </button>
             {% endhighlight %}
             </yield>
-        </cdr-card-docs>
+        </cdr-well-docs>
 
-        <cdr-card-docs example-title="Core Large - White Alternate" example-theme="dark-20" element-id="button-secondary-contrast">
+        <cdr-well-docs example-title="White Alternate" example-theme="dark-20" element-id="white-alternate">
             <yield to="example-description">
                For use on dark backgrounds where the border of the CORE Secondary button would become lost and effect
                 the visual alignment of a button parring.
             </yield>
             <yield to="example">
-                {% include /markup-templates/buttons/standard.html param="Secondary Contrast" %}
+                <div class="well well-lg" data-theme="dark-20">
+                    <button type="button" class="center-block btn btn-contrast btn-default">
+                        Secondary button
+                    </button>
+                </div>
             </yield>
             <yield to="codeblock">
             {% highlight html %}
@@ -81,39 +149,43 @@ High contrast button
 </button>
             {% endhighlight %}
             </yield>
-        </cdr-card-docs>
+        </cdr-well-docs>
 
-            <h3 class="status status-good">Core Small</h3>
-
-            <p>These smaller transaction buttons are used in conjunction with <strong>inline</strong> form fields or
-                when repeated
-                in a list such as "Register" on a classes and Events page. <strong>Hover / Active / Focus states match
-                    "Large" styling definition.</strong></p>
-
-            <div class="well overlay-medium-2" data-example-id="button-small">
-                {% include /markup-templates/buttons/standard.html param="Core Small" %}
-            </div>
+             <cdr-well-docs example-title="Play Video" element-id="buttons-with-icons">
+            <yield to="example-description">
+            <p>
+            For use when a button activates a video player.
+            (See Links reference for a "Play Video link with icon" alternative.)
+            </p>
+            </yield>
+            <yield to="example">
+                <div class="group group-display-fixed group-gutter-xs-open-10">
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn__link-inline-play">
+                            <span class="icon icon-rei-play-small" aria-hidden="true">
+                            </span>Play video text link
+                        </button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn-play">
+                            <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video
+                        </button>
+                    </div>
+                </div>
+            </yield>
+            <yield to="codeblock">
             {% highlight html %}
-<button type="button" class="btn btn-contrast btn-default btn-sm">
-    Small button
+ <button type="button" class="btn btn__link-inline-play">
+    <span class="icon icon-rei-play-small" aria-hidden="true"></span>
+    Play video
+</button>
+<button type="button" class="btn btn-play">
+    <span class="icon icon-rei-play-small" aria-hidden="true"></span>
+    Play video
 </button>
             {% endhighlight %}
-
-            <h3 class="status status-good ">Core Extra Small</h3>
-
-            <p>For use in very limited situations where space is at an extreme premium. Example: "Compare" buttons on
-                search results.
-                <strong>Hover / Active / Focus states match "Large" styling definition</strong>.</p>
-
-            <div class="well overlay-medium-2" data-example-id="button-extra-small">
-                {% include /markup-templates/buttons/standard.html param="Core Extra Small" %}
-            </div>
-            {% highlight html %}
-<button type="button" class="btn btn-xs btn-primary">
-    Extra small button
-</button>
-            {% endhighlight %}
-            <hr/>
+            </yield>
+        </cdr-well-docs>
 
     </section>
     {% if page.slug == "buttons" %}

@@ -23,10 +23,13 @@
 // @active-color: Active foreground color.
 //
 //----------------------------------------------------------------------------------------------------------------------
-.button-variant( @color; @background; @border: @background; @active-background: darken(@background, 10%); @active-border: darken(@border, 12%); @active-color: @color ) {
+.button-variant( @color; @background; @border: @background; @active-background: darken(@background, 10%); @active-border: darken(@border, 12%); @active-color: @color; @border-radius: @radius-button; ) {
   color: @color;
   background-color: @background;
   border-color: @border;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-radius: @border-radius;
   outline: none;
   &:hover,
   &:active,
@@ -88,7 +91,7 @@
 // @font-family: defaults to @headings-font-family-secondary;.
 //
 //----------------------------------------------------------------------------------------------------------------------
-.button-size( @padding-y: @spacing-space-sm; @padding-x: @spacing-space-lg; @font-size: @cdr-type-redwood-dsp-30-font-size; @line-height: @cdr-type-redwood-dsp-30-line-height; @font-family: @cdr-type-redwood-dsp-30-font-family; @font-style: @cdr-type-redwood-dsp-30-font-style;) {
+.button-size( @padding-y: @spacing-space-md; @padding-x: @spacing-space-lg; @font-size: @cdr-type-redwood-ui-30-font-size; @line-height: @cdr-type-redwood-ui-30-line-height; @font-family: @cdr-type-redwood-ui-30-font-family; @font-style: @cdr-type-redwood-ui-30-font-style;) {
   font-family: @font-family;
   font-size: @font-size;
   font-style: @font-style;

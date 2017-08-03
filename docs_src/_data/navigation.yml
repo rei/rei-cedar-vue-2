@@ -136,20 +136,14 @@ items:
               slug: buttons
               href: /elements/buttons/
               nav:
-                - label: Core
-                  href: buttons-fam-theme-core
-
                 - label: Overview
-                  href: buttons-tags-title
+                  href: buttons-fam-theme-title
 
-                - label: Button Pairing
-                  href: button-pairing-title
+                - label: Button Groups
+                  href: button-groups
 
                 - label: Play Video
                   href: buttons-icon-play
-
-                - label: Offsite
-                  href: buttons-icon-external
 
                 - label: Filters
                   href: buttons-icon-remove
