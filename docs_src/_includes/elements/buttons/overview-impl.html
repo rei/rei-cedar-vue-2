@@ -1,10 +1,12 @@
-<section class="vertical-push-3">
-    <h2 id="buttons-fam-theme-title" class="page-header">Buttons</h2>
+<section>
     <div>
         <cdr-well-docs example-title="Button" element-id="button-primary-impl">
             <yield to="example-description">
+            <button type="button" class="btn btn-primary">
+                Primary button
+            </button>
             <p>
-            When construction a button you can select modifiers for state, size, and shape
+            When constructing a button you can select modifiers for state, size, and shape.
             </p>
                 <table class="table table-striped">
                     <tr>
@@ -137,13 +139,6 @@
                         </td>
                     </tr>
                 </table>
-            </yield>
-            <yield to="example">
-              <div class="well well-lg">
-                <button type="button" class="center-block btn btn-primary">
-                    Primary button
-                </button>
-                </div>
             </yield>
             <yield to="codeblock">
             {% highlight html %}
