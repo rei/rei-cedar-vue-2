@@ -63,6 +63,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-streamify": "^1.0.2",
+    "gulp-tenon-client": "^0.1.1",
     "gulp-uglify": "^1.5.2",
     "jquery": "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz",
     "lodash": "^4.17.4",
@@ -96,6 +97,20 @@
     "viewportSize": "800x600",
     "delay": 0,
     "verbose": true
+  },
+  "tenon": {
+    "key": "7b63fed13dfa8c277e7fd283b51685b7",
+    "filter": [31, 54, 79],
+    "apiURL": "https://tenon.io/api/index.php",
+    "certainty":  "40",
+    "level": "AA",
+    "priority": "40",
+    "ref": "1",
+    "store": "1",
+    "snippet": true,
+    "viewPortWidth": "1280",
+    "projectID": "DEFAULT_PROJECT",
+    "saveOutputIn": "tenon-report.json"
   },
   "pa11y": {
     "url": "https://rei.github.io/rei-cedar/",
