@@ -1,0 +1,202 @@
+<section>
+    <div>
+    <button type="button" class="btn btn-primary">
+        cedar buttons
+    </button>
+        <cdr-well-docs element-id="button-primary-impl">
+            <yield to="example-description">
+            <p>
+            When constructing a button you can select modifiers for state, size, and shape.
+            </p>
+                <table class="table table-striped">
+                    <tr>
+                        <th>
+                         Type
+                        </th>
+                        <th>
+                         Name
+                        </th>
+                        <th>
+                        Default
+                        </th>
+                        <th>
+                         Description
+                        </th>
+                    </tr>
+                     <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn-primary</code>
+                        </td>
+                        <td>
+                        true
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn-default</code>
+                        </td>
+                        <td>
+                        true
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn-contrast</code>
+                        </td>
+                        <td>
+                        true
+                        </td>
+                        <td>
+                        <p>
+                        <code>btn-contrast</code> is used in conjunction with <code>btn-primary</code> to achive the black contrast button.
+                        </p>
+                        <p>
+                        <code>btn-contrast</code> is used in conjunction with <code>.btn-default</code> to achive the white contrast button.
+                        </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        size
+                        </td>
+                        <td>
+                        <code>btn-lg</code>
+                        </td>
+                        <td>
+                        true
+                        </td>
+                        <td>
+                        <code>btn-lg</code> is the default size value and is inherited into the btn element.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        size
+                        </td>
+                        <td>
+                        <code>btn-sm</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        <code>btn-sm</code> is an additive class on button and is used in conjunction with inline form fields or when repeated in a list such as "Register" on a classes and Events page.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        shape
+                        </td>
+                        <td>
+                        <code>btn-xs</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        <code>btn-xs</code> is an additive class on button and is intended for use in very limited situations where space is at an extreme premium.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        shape
+                        </td>
+                        <td>
+                        <code>btn-fixed</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        <code>btn-fixed</code> This is an additive class that prevents the button from going full-width at the xs breakpoint.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        size
+                        </td>
+                        <td>
+                        <code>btn-sm</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        <code>btn-sm</code> is an additive class on button and are used in conjunction with inline form fields or when repeated in a list such as "Register" on a classes and Events page.
+                        </td>
+                    </tr>
+                </table>
+            </yield>
+            <yield to="codeblock">
+            {% highlight html %}
+<button type="button" class="btn btn-primary">
+Primary button
+</button>
+
+<button type="button" class="btn btn-default">
+    Secondary button
+</button>
+
+<button type="button" class="btn btn-contrast btn-primary">
+High contrast button
+</button>
+
+<button type="button" class="btn btn-contrast btn-primary btn-xs">
+High contrast button
+</button>
+            {% endhighlight %}
+            </yield>
+        </cdr-well-docs>
+
+        <cdr-well-docs example-title="Play Video" element-id="buttons-with-icons">
+            <yield to="example-description">
+            <p>
+            For use when a button activates a video player.
+            (See Links reference for a "Play Video link with icon" alternative.)
+            </p>
+            </yield>
+            <yield to="example">
+                <div class="group group-display-fixed group-gutter-xs-open-10">
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn__link-inline-play">
+                            <span class="icon icon-rei-play-small" aria-hidden="true">
+                            </span>Play video text link
+                        </button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn-play">
+                            <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video
+                        </button>
+                    </div>
+                </div>
+            </yield>
+            <yield to="codeblock">
+            {% highlight html %}
+ <button type="button" class="btn btn__link-inline-play">
+    <span class="icon icon-rei-play-small" aria-hidden="true"></span>
+    Play video
+</button>
+<button type="button" class="btn btn-play">
+    <span class="icon icon-rei-play-small" aria-hidden="true"></span>
+    Play video
+</button>
+            {% endhighlight %}
+            </yield>
+        </cdr-well-docs>
+
+    </div>
+</section>
+

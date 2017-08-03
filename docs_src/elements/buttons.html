@@ -4,12 +4,26 @@ title: Buttons
 slug: buttons
 lead: "Buttons, buttons, and more buttons - all sizes, states, and statuses (and much more)!"
 ---
-<!-- css/buttons.html content -->
-
-{% include elements/buttons/families-themes.html %}
-{% include elements/buttons/pairing.html %}
-{% include elements/buttons/filters.html %}
-{% include elements/buttons/close.html %}
-{% include elements/buttons/input-groups-buttons.html %}
-<!-- javascript dir content-->
-{% include elements/buttons/javascript.html %}
+<section class="vertical-push-3">
+    <h2 id="buttons-fam-theme-title">Buttons</h2>
+    <div class="well well-tabs" role="tabpanel" data-example-id="togglable-tabs">
+        <ul id="buttons" class="nav-tabs tab-docs vertical-push-2" role="tablist">
+          <li role="presentation" class="active"><a href="#usage" id="usage-tab" role="tab" data-toggle="tab" aria-controls="usage" aria-expanded="true">Usage</a></li>
+          <li role="presentation"><a href="#implementation" role="tab" id="implementation-tab" data-toggle="tab" aria-controls="implementation">implementation</a></li>
+        </ul>
+        <div id="usageContent" class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="usage" aria-labelledBy="usage-tab">
+                {% include elements/buttons/overview-usage.html %}
+                {% include elements/buttons/pairing.html %}
+                {% include elements/buttons/filters.html %}
+                {% include elements/buttons/close.html %}
+                {% include elements/buttons/input-groups-buttons.html %}
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="implementation" aria-labelledBy="implementation-tab">
+                {% include elements/buttons/overview-impl.html %}
+                <!-- javascript dir content-->
+                {% include elements/buttons/javascript.html %}
+          </div>
+        </div>
+    </div>
+</section>
