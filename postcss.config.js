@@ -15,6 +15,7 @@ module.exports = {
     'postcss-responsive-type': {},
     'postcss-pxtorem': {
       rootValue: 10,
+      selectorBlackList: [/^html$/],
     },
     'postcss-inline-svg': {},
     autoprefixer: {},

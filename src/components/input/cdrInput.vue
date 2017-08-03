@@ -1,48 +1,52 @@
 <template>
-  <div class="cdr-input-group">
+  <div class="cdr-input-wrap">
     <label v-if="!hideLabel"
       :class="labelClass"
       :for="inputId"
       ref="label"
     >{{label}}<span v-if="required">*</span>
     </label>
-    <div class="cdr-input-validation">
-      <textarea v-if="multiLine"
-        :class="inputClass"
-        v-bind="$attrs"
-        :id="inputId"
-        :value="lazyValue"
-        v-on="$listeners"
-        @blur="onBlur"
-        @input="onInput"
-        @focus="onFocus"
-        @paste="onPaste"
-        :required="required"
-        :disabled="disabled"
-        :aria-label="hideLabel ? label : null"
-        :aria-describedby="errors.length ? messagesId : null"
-        ref="input"
-      ></textarea>
+    <div class="cdr-input-group" :class="[groupClass]">
+      <slot name="pre"></slot>
+      <div :class="[validationClass]">
+        <textarea v-if="multiLine"
+          :class="inputClass"
+          v-bind="$attrs"
+          :id="inputId"
+          :value="lazyValue"
+          v-on="$listeners"
+          @blur="onBlur"
+          @input="onInput"
+          @focus="onFocus"
+          @paste="onPaste"
+          :required="required"
+          :disabled="disabled"
+          :aria-label="hideLabel ? label : null"
+          :aria-describedby="errors.length ? messagesId : null"
+          ref="input"
+        ></textarea>
 
-      <input v-else
-        :type="type"
-        :class="inputClass"
-        v-bind="$attrs"
-        :id="inputId"
-        :value="lazyValue"
-        v-on="$listeners"
-        @blur="onBlur"
-        @input="onInput"
-        @focus="onFocus"
-        @paste="onPaste"
-        :required="required"
-        :disabled="disabled"
-        :aria-label="hideLabel ? label : null"
-        :aria-describedby="errors.length ? messagesId : null"
-        ref="input"
-      >
+        <input v-else
+          :type="type"
+          :class="inputClass"
+          v-bind="$attrs"
+          :id="inputId"
+          :value="lazyValue"
+          v-on="$listeners"
+          @blur="onBlur"
+          @input="onInput"
+          @focus="onFocus"
+          @paste="onPaste"
+          :required="required"
+          :disabled="disabled"
+          :aria-label="hideLabel ? label : null"
+          :aria-describedby="errors.length ? messagesId : null"
+          ref="input"
+        >
 
-      <span v-if="feedback" :class="validationClass" v-html="getIcon" ref="icon"></span>
+        <span v-if="feedback" :class="validationIconClass" v-html="getIcon" ref="icon"></span>
+      </div>
+      <slot name="post"></slot>
     </div>
     <transition-group class="cdr-input-messages" :id="messagesId" ref="messages" name="cdr-animated-errors" tag="div">
       <div :class="messageClass"
@@ -168,14 +172,22 @@ export default {
         'cdr-input': true,
         'cdr-input--error': this.isErr,
         'cdr-input--warn': this.isWarn,
+        'cdr-input--slots': this.$slots.pre || this.$slots.post,
       };
     },
     validationClass() {
+      return {
+        'cdr-input-validation': true,
+        'cdr-input-validation--slots': this.$slots.pre || this.$slots.post,
+      };
+    },
+    validationIconClass() {
       return {
         'cdr-input-validation__icon': true,
         'cdr-input-validation__icon--error': this.isErr,
         'cdr-input-validation__icon--warn': this.isWarn,
         'cdr-input-validation__icon--valid': this.isValid,
+        'cdr-input-validation--slots': this.$slots.pre || this.$slots.post,
       };
     },
     messageClass() {
@@ -183,6 +195,12 @@ export default {
         'cdr-input-messages__notification': true,
         'cdr-input-messages__notification--error': this.isErr,
         'cdr-input-messages__notification--warn': this.isWarn,
+      };
+    },
+    groupClass() {
+      return {
+        'cdr-input-group': true,
+        'cdr-input-group--actions': this.$slots.pre || this.$slots.post,
       };
     },
     getIcon() {
