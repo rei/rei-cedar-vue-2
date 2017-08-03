@@ -58,3 +58,22 @@
 .anchorjs-icon:before {
   content: "\e600";
 }
+.nav-tabs .tab-docs {
+    border-bottom: none;
+    border-top: 0.1rem solid #222;
+    > li {
+        &.active {
+            top: -0.1rem;
+            bottom: 0;
+            position: relative;
+            > a {
+                &, &:hover, &:focus {
+                    border-top-color: transparent;
+                    border-top-style: initial;
+                    border-bottom-color: inherit;
+                    border-bottom-style: inherit;
+                }
+            }
+        }
+    }
+}
