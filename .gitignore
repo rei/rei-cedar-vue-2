@@ -55,6 +55,7 @@ docs_src/_data/package.json
 # Compiled files added to docs_src
 /docs_src/.jekyll-metadata
 /docs_src/rei-cedar*
+docs_src/assets/css/src/docs.css
 
 # Build and transitional directories
 docs_dist
