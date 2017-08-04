@@ -174,6 +174,7 @@ export default {
         'cdr-input--warn': this.isWarn,
         'cdr-input--actions': this.$slots.pre || this.$slots.post,
         'cdr-input--action-post': this.$slots.post,
+        'cdr-input--action-pre': this.$slots.pre,
       };
     },
     validationClass() {

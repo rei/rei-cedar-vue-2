@@ -73,13 +73,6 @@
       <cdr-button slot="post" modifier="secondary">post</cdr-button>
     </cdr-input>
 
-    <cdr-input v-model="nothing"
-      label="pre and post"
-      >
-      <span slot="pre">$:</span>
-      <span slot="post">Cool</span>
-    </cdr-input>
-
     <cdr-input v-model="error"
       label="pre and post + validation"
       feedback
