@@ -21,13 +21,20 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //----------------------------------------------------------------------------------------------------------------------
+// Focus
+//----------------------------------------------------------------------------------------------------------------------
+@btn-focus-stroke-color:                                    #8DD1ED;
+//----------------------------------------------------------------------------------------------------------------------
 // Disabled
 //----------------------------------------------------------------------------------------------------------------------
 @disabled-color:                                    #ccc;
-@btn-disabled-color:                                @disabled-color;
+@btn-disabled-color:                                @cdr-color-btn-primary-disabled-text;
 @btn-link-disabled-color:                           @disabled-color;
-@btn-disabled-bg:                                   @core-architectural-5;
-@btn-disabled-border:                               @core-architectural-4;
+@btn-disabled-bg:                                   @cdr-color-btn-primary-disabled;
+@btn-disabled-border:                               @cdr-color-btn-primary-disabled-stroke;
+@btn-default-disabled-text:                         @cdr-color-btn-secondary-disabled-text;
+@btn-default-disabled-background:                   @cdr-color-btn-secondary-disabled;
+@btn-default-disabled-border:                       @cdr-color-btn-secondary-disabled-stroke;
 
 //----------------------------------------------------------------------------------------------------------------------
 // Default
