@@ -11,7 +11,7 @@
     <headings data-backstop="headings"></headings>
     <icons data-backstop="icons"></icons>
     <images></images>
-    <searchbox></searchbox>
+    <searchbox data-backstop="search"></searchbox>
     <inputs data-backstop="inputs"></inputs>
     <lists data-backstop="lists"></lists>
     <mediaObject></mediaObject>

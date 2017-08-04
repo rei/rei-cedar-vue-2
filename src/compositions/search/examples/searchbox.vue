@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     search() {
-      console.log(`Searching ${this.search1}`);
+      console.log(`Searching ${this.search1}`); // eslint-disable-line
     },
   },
 };
