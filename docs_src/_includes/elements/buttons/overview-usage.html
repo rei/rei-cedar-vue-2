@@ -19,10 +19,10 @@
                             Primary button
                         </button>
                         <button type="button" class="btn btn-primary active">
-                            Primary button
+                            Primary active
                         </button>
                         <button type="button" class="btn btn-primary" disabled>
-                            Primary button
+                            Primary disabled
                         </button>
                     </div>
                 </div>
@@ -100,9 +100,17 @@ Primary button
             </yield>
             <yield to="example">
                <div class="well well-lg">
-                    <button type="button" class="center-block btn btn-default">
+                  <div class="btn-group inline-group">
+                    <button type="button" class="btn btn-default">
                         Secondary button
                     </button>
+                    <button type="button" class="btn btn-default active">
+                        Secondary active
+                    </button>
+                    <button type="button" class="btn btn-default" disabled>
+                        Secondary disabled
+                    </button>
+                    </div>
                 </div>
             </yield>
             <yield to="codeblock">
@@ -121,7 +129,7 @@ Secondary Core button
             <yield to="example">
                 <div class="well well-lg">
                     <button type="button" class="center-block btn btn-contrast btn-primary">
-                        Secondary button
+                        High contrast button
                     </button>
                 </div>
             </yield>
@@ -142,7 +150,7 @@ High contrast button
             <yield to="example">
                 <div class="well well-lg" data-theme="dark-20">
                     <button type="button" class="center-block btn btn-contrast btn-default">
-                        Secondary button
+                        High contrast button
                     </button>
                 </div>
             </yield>

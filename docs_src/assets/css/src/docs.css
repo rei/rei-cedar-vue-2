@@ -65,7 +65,7 @@
 .doc_head-navigation > li > a:focus,
 .doc_head-navigation ul > li > a:hover,
 .doc_head-navigation ul > li > a:focus {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   text-decoration: none;
 }
 .doc_head-navigation > li.disabled > a,
@@ -279,7 +279,7 @@ h4 code {
 .doc_head-navigation ul > li > a:hover,
 .doc_head-navigation > li > a:focus,
 .doc_head-navigation ul > li > a:focus {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   text-decoration: none;
 }
 .doc_head-navigation.right,
@@ -305,7 +305,7 @@ h4 code {
 .doc_head-navigation-item.active .nested-item a,
 .doc_head-navigation-item .nested-item a {
   font-size: 1.4rem;
-  background: #f2f2f2 !important;
+  background: #ffffff !important;
   color: #000 !important;
 }
 .doc_head-navigation-item.active .nested-item a:hover,
