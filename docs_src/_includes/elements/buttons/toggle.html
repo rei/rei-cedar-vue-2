@@ -1,0 +1,124 @@
+<hr />
+<section class="vertical-push-3">
+<div class="bs-callout bs-callout-danger">
+    <p>Beware: The following patterns require your project to include the JavaScript bundle from cedar.</p>
+</div>
+<cdr-well-docs example-title="Stateful Button" element-id="Stateful-buttons">
+        <yield to="example-description">
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+           <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="center-block btn btn-primary" autocomplete="off">
+            Loading state
+          </button>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
+<button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+  Loading state
+</button>
+
+<script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    $btn.button('reset')
+  })
+</script>
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
+
+    <cdr-well-docs example-title="Single toggle" element-id="Single-toggle">
+        <yield to="example-description">
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+           <button type="button" class="center-block btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off">
+            Single toggle
+          </button>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
+<button type="button" class="btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off">
+  Single toggle
+</button>
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
+
+        </cdr-well-docs>
+
+    <cdr-well-docs example-title="Checkbox toggle" element-id="buttons-checkbox">
+        <yield to="example-description">
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default active">
+                  <input type="checkbox" checked autocomplete="off"> Checkbox 1 (pre-checked)
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" autocomplete="off"> Checkbox 2
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" autocomplete="off"> Checkbox 3
+                </label>
+            </div>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-default active">
+    <input type="checkbox" autocomplete="off" checked> Checkbox 1 (pre-checked)
+  </label>
+  <label class="btn btn-default">
+    <input type="checkbox" autocomplete="off"> Checkbox 2
+  </label>
+  <label class="btn btn-default">
+    <input type="checkbox" autocomplete="off"> Checkbox 3
+  </label>
+</div>
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
+
+    <cdr-well-docs example-title="Radio toggle" element-id="buttons-radia">
+        <yield to="example-description">
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+             <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+                </label>
+              </div>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-default active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+  </label>
+  <label class="btn btn-default">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+  </label>
+  <label class="btn btn-default">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+  </label>
+</div>
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
+
+</section>
