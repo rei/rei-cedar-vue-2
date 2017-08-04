@@ -1,5 +1,4 @@
 <section>
-    <div>
         <p> Buttons are meant for transactional use. They can be considered the "utilitarian"
             buttons, seen within product focused areas of the site, like Search Results, Product Details, or login
             pages.
@@ -148,6 +147,23 @@ High contrast button
             </yield>
         </cdr-well-docs>
 
+        <cdr-well-docs example-title="Link button" element-id="link-button">
+            <yield to="example">
+                <div class="well well-lg">
+                    <button type="button" class="center-block btn btn-link">
+                        Link button
+                    </button>
+                </div>
+            </yield>
+            <yield to="codeblock">
+            {% highlight html %}
+<button type="button" class="btn btn-contrast btn-default">
+    High contrast button
+</button>
+            {% endhighlight %}
+            </yield>
+        </cdr-well-docs>
+
              <cdr-well-docs example-title="Play Video" element-id="buttons-with-icons">
             <yield to="example-description">
             <p>
@@ -184,6 +200,46 @@ High contrast button
             </yield>
         </cdr-well-docs>
 
-    </div>
+        <cdr-well-docs example-title="Close buttons" element-id="close-buttons">
+        <yield to="example-description">
+        <p>
+            Use the generic close icon for dismissing content like modals and alerts.
+        </p>
+        </yield>
+        <yield to="example">
+            <div class="group group-display-fixed group-gutter-xs-open-10">
+                <div class="col-xs-12 col-sm-6">
+                    <div>
+                       <h4>Remove</h4>
+                        <div class="well well-lg" data-theme="light-20">
+                           <button type="button" class="center-block close" aria-label="Close">
+                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+                                <span class="sr-only">Example close button</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div>
+                        <h4>Close</h4>
+                        <div class="well well-lg" data-theme="light-20">
+                            <button type="button" class="center-block close" aria-label="Close">
+                                <span class="icon icon-rei-close" aria-hidden="true"></span>
+                                <span class="sr-only">Example close button</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
+<button type="button" class="close" aria-label="Close">
+    <span class="icon icon-rei-close" aria-hidden="true"></span>
+    <span class="sr-only">Example close button</span>
+</button>
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
 </section>
 

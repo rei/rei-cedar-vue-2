@@ -2,7 +2,7 @@
     <div class="well vertical-push-lg">
         <div class="group group-display-fixed">
             <div class="col-xs-12 col-sm-8">
-                <h2 class="h3">{ opts.exampleTitle }</h2>
+                <h2 class="h3" id="{'nav-' + opts.elementId }">{ opts.exampleTitle }</h2>
             </div>
              <div class="col-xs-12 col-sm-4">
                 <div class="code-toggle--control checkbox toggle-show-hide text-sm-right">

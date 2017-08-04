@@ -137,28 +137,25 @@ items:
               href: /elements/buttons/
               nav:
                 - label: Overview
-                  href: buttons-fam-theme-title
+                  href: nav-buttons
+
+                - label: Variant buttons
+                  href: nav-button-secondary
 
                 - label: Button Groups
-                  href: button-groups
-
-                - label: Play Video
-                  href: buttons-icon-play
+                  href: nav-button-group
 
                 - label: Filters
-                  href: buttons-icon-remove
+                  href: nav-button-filters
 
-                - label: Close
-                  href: helper-classes-close
-
-                - label: Input Groups
-                  href: input-groups-buttons
+                - label: Buttons and other elements
+                  href: nav-input-groups-buttons
 
                 - label: Stateful Buttons
-                  href: buttons-stateful
+                  href: nav-Stateful-buttons
 
                 - label: Toggle
-                  href: buttons-single-toggle
+                  href: nav-Single-toggle
 
             - label: Links
               slug: links

@@ -844,9 +844,9 @@ h1[id] {
 }
 .code-toggle--control {
   display: block;
+  width: 100%;
   padding: 1.2rem 3.6rem 1.2rem 1.6rem;
   position: relative;
-  width: 100%;
 }
 .code-toggle--control > [type="checkbox"] + label:before,
 .code-toggle--control > [type="radio"] + label:before {
@@ -870,25 +870,23 @@ h1[id] {
   border-top: 1px solid #666;
   position: relative;
 }
-
 .nav-tabs.tab-docs {
-    border-bottom: none;
-    border-top: 0.1rem solid #222;
+  border-bottom: none;
+  border-top: 0.1rem solid #222;
 }
 .nav-tabs.tab-docs > li.active {
-    top: -0.1rem;
-    bottom: 0;
-    position: relative;
+  top: -0.1rem;
+  bottom: 0;
+  position: relative;
 }
 .nav-tabs.tab-docs > li.active > a,
 .nav-tabs.tab-docs > li.active > a:hover,
 .nav-tabs.tab-docs > li.active > a:focus {
-        border-top-color: transparent;
-        border-top-style: initial;
-        border-bottom-color: #222;
-        border-bottom-style: solid;
+  border-top-color: transparent;
+  border-top-style: initial;
+  border-bottom-color: #222;
+  border-bottom-style: solid;
 }
-
 .overlay-img {
   background: transparent url(http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg) 0 0;
 }

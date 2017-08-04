@@ -1,5 +1,4 @@
 <section>
-    <div>
     <button type="button" class="btn btn-primary">
         cedar buttons
     </button>
@@ -31,7 +30,7 @@
                         <code>btn-primary</code>
                         </td>
                         <td>
-                        true
+                        false
                         </td>
                         <td>
                         </td>
@@ -44,7 +43,7 @@
                         <code>btn-default</code>
                         </td>
                         <td>
-                        true
+                        false
                         </td>
                         <td>
                         </td>
@@ -57,7 +56,7 @@
                         <code>btn-contrast</code>
                         </td>
                         <td>
-                        true
+                        false
                         </td>
                         <td>
                         <p>
@@ -70,16 +69,71 @@
                     </tr>
                     <tr>
                         <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn-link</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                         size
                         </td>
                         <td>
-                        <code>btn-lg</code>
+                        <code>btn-play</code>
                         </td>
                         <td>
                         true
                         </td>
                         <td>
-                        <code>btn-lg</code> is the default size value and is inherited into the btn element.
+                        When using this class you will also need to provide the following icon before your button text - <code>icon-rei-play-small</code>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn__link-inline-play"</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        When using this class you will also need to provide the following icon before your button text - <code>icon-rei-play-small</code>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        size
+                        </td>
+                        <td>
+                        <code>close</code>
+                        </td>
+                        <td>
+                        true
+                        </td>
+                        <td>
+                        This is the only modifier that does not extend <code>.btn</code> which should not be used in this case. As with the video examples, this button also expects an icon to be provided.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn__link-inline-play"</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        When using this class you will also need to provide the following icon before your button text - <code>icon-rei-play-small</code>.
                         </td>
                     </tr>
                     <tr>
@@ -93,7 +147,6 @@
                         false
                         </td>
                         <td>
-                        <code>btn-sm</code> is an additive class on button and is used in conjunction with inline form fields or when repeated in a list such as "Register" on a classes and Events page.
                         </td>
                     </tr>
                     <tr>
@@ -107,7 +160,6 @@
                         false
                         </td>
                         <td>
-                        <code>btn-xs</code> is an additive class on button and is intended for use in very limited situations where space is at an extreme premium.
                         </td>
                     </tr>
                     <tr>
@@ -157,46 +209,23 @@ High contrast button
 <button type="button" class="btn btn-contrast btn-primary btn-xs">
 High contrast button
 </button>
-            {% endhighlight %}
-            </yield>
-        </cdr-well-docs>
 
-        <cdr-well-docs example-title="Play Video" element-id="buttons-with-icons">
-            <yield to="example-description">
-            <p>
-            For use when a button activates a video player.
-            (See Links reference for a "Play Video link with icon" alternative.)
-            </p>
-            </yield>
-            <yield to="example">
-                <div class="group group-display-fixed group-gutter-xs-open-10">
-                    <div class="col-xs-12 col-sm-6">
-                        <button type="button" class="btn btn__link-inline-play">
-                            <span class="icon icon-rei-play-small" aria-hidden="true">
-                            </span>Play video text link
-                        </button>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <button type="button" class="btn btn-play">
-                            <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video
-                        </button>
-                    </div>
-                </div>
-            </yield>
-            <yield to="codeblock">
-            {% highlight html %}
- <button type="button" class="btn btn__link-inline-play">
+<button type="button" class="btn btn__link-inline-play">
     <span class="icon icon-rei-play-small" aria-hidden="true"></span>
     Play video
 </button>
+
 <button type="button" class="btn btn-play">
     <span class="icon icon-rei-play-small" aria-hidden="true"></span>
     Play video
 </button>
+
+<button type="button" class="close" aria-label="Close">
+    <span class="icon icon-rei-close" aria-hidden="true"></span>
+    <span class="sr-only">Example close button</span>
+</button>
             {% endhighlight %}
             </yield>
         </cdr-well-docs>
-
-    </div>
 </section>
 
