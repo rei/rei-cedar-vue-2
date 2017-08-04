@@ -35,8 +35,14 @@
   padding: $spacing-space-sm;
   width: 100%;
 
-  &--slots {
-    height: calc($sys-font-redwood-bdy-20-line-height + (2 * $spacing-space-sm));
+  &--actions {
+    height: calc($sys-font-redwood-bdy-20-line-height + 2px + (2 * $spacing-space-sm));
+  }
+
+  &--action-post {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   &--error {
@@ -67,7 +73,7 @@
 .cdr-input-validation {
   position: relative;
 
-  &--slots {
+  &--actions {
     flex-grow: 1;
   }
 

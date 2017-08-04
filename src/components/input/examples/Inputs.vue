@@ -69,8 +69,8 @@
     <cdr-input v-model="nothing"
       label="pre and post"
       >
-      <cdr-button slot="pre">pre</cdr-button>
-      <cdr-button slot="post">post</cdr-button>
+      <cdr-button slot="pre" modifier="secondary">pre</cdr-button>
+      <cdr-button slot="post" modifier="secondary">post</cdr-button>
     </cdr-input>
 
     <cdr-input v-model="nothing"

@@ -17,6 +17,13 @@
   line-height: $sys-font-redwood-dsp-30-line-height;
   padding: $spacing-space-sm $spacing-space-lg;
 
+  &[disabled] {
+    background-color: $sys-color-disabled;
+    border-color: $sys-color-disabled-stroke;
+    color: $sys-color-disabled-text;
+    cursor: not-allowed;
+  }
+
   &:hover,
   &:active,
   &:visited {
@@ -55,13 +62,51 @@
     padding: $spacing-space-xs $spacing-space-md;
   }
 
-  /* button states */
-  &[disabled] {
-    background-color: $sys-color-disabled;
-    border-color: $sys-color-disabled-stroke;
-    color: $sys-color-disabled-text;
-    cursor: not-allowed;
+  &--input-post {
+    background-color: $sys-color-input;
+    border-color: $sys-color-input-stroke;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    line-height: $sys-font-redwood-bdy-20-line-height;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $sys-color-input;
+      border-color: $sys-color-input-stroke;
+      color: initial;
+    }
+
+    & > .cdr-icon {
+      width: $sys-font-redwood-bdy-20-font-size;
+      height: $sys-font-redwood-bdy-20-font-size;
+    }
   }
+
+  &--input-pre {
+    background-color: $sys-color-input;
+    border-color: $sys-color-input-stroke;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    line-height: $sys-font-redwood-bdy-20-line-height;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $sys-color-input;
+      border-color: $sys-color-input-stroke;
+      color: initial;
+    }
+
+    & > .cdr-icon {
+      width: $sys-font-redwood-bdy-20-font-size;
+      height: $sys-font-redwood-bdy-20-font-size;
+    }
+  }
+
+  /* button states */
 
   &--block {
     width: 100%;

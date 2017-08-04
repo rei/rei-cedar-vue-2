@@ -172,13 +172,14 @@ export default {
         'cdr-input': true,
         'cdr-input--error': this.isErr,
         'cdr-input--warn': this.isWarn,
-        'cdr-input--slots': this.$slots.pre || this.$slots.post,
+        'cdr-input--actions': this.$slots.pre || this.$slots.post,
+        'cdr-input--action-post': this.$slots.post,
       };
     },
     validationClass() {
       return {
         'cdr-input-validation': true,
-        'cdr-input-validation--slots': this.$slots.pre || this.$slots.post,
+        'cdr-input-validation--actions': this.$slots.pre || this.$slots.post,
       };
     },
     validationIconClass() {
@@ -187,7 +188,7 @@ export default {
         'cdr-input-validation__icon--error': this.isErr,
         'cdr-input-validation__icon--warn': this.isWarn,
         'cdr-input-validation__icon--valid': this.isValid,
-        'cdr-input-validation--slots': this.$slots.pre || this.$slots.post,
+        'cdr-input-validation--actions': this.$slots.pre || this.$slots.post,
       };
     },
     messageClass() {

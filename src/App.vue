@@ -11,6 +11,7 @@
     <headings data-backstop="headings"></headings>
     <icons data-backstop="icons"></icons>
     <images></images>
+    <searchbox></searchbox>
     <inputs data-backstop="inputs"></inputs>
     <lists data-backstop="lists"></lists>
     <mediaObject></mediaObject>
@@ -22,20 +23,14 @@
 </template>
 
 <script>
-  import * as components from './components/_index';
-  import * as directives from './directives/_index';
-  // add examples
   import examples from './components/examples';
+  import compexamples from './compositions/examples';
 
-  Object.keys(examples).forEach((key) => {
-    components[key] = examples[key];
-  });
-  // end add examples
+  const all = Object.assign(examples, compexamples);
 
   export default {
     name: 'app',
-    components,
-    directives,
+    components: all,
   };
 </script>
 
