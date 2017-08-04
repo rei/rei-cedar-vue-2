@@ -342,6 +342,27 @@
     }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Close button
+// ---------------------------------------------------------------------------------------------------------------------
+.btn-close {
+    .button-variant( @btn-default-color;
+            @btn-default-bg;
+            @btn-default-border;
+            @btn-default-active-bg;
+            @btn-default-border;
+            @btn-default-active-color;
+            @btn-default-disabled-text;
+            @btn-default-disabled-background;
+            @btn-default-disabled-border; );
+    .button-size( @spacing-space-sm; @spacing-space-sm; @cdr-type-redwood-ui-20-font-size; @cdr-type-redwood-ui-20-line-height; @cdr-type-redwood-ui-20-font-style; );
+    .img-circle();
+    &:focus,
+    &.focus {
+        outline: none;
+    }
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Controls
