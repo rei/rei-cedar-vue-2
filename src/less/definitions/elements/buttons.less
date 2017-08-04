@@ -93,13 +93,30 @@
 // Core
 // ---------------------------------------------------------------------------------------------------------------------
 .btn-primary {
-    .button-variant( @btn-primary-color; @btn-primary-bg; @btn-primary-border; @btn-primary-active-bg; @btn-primary-active-border; );
+    .button-variant( @btn-primary-color; @btn-primary-bg; @btn-primary-border; @btn-primary-active-bg; @btn-primary-active-border; @btn-primary-active-color; );
 }
 
 .btn-default {
-    .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-active-border; @btn-default-active-color; );
+    .button-variant(
+        @btn-default-color;
+        @btn-default-bg;
+        @btn-default-border;
+        @btn-default-active-bg;
+        @btn-default-active-border;
+        @btn-default-active-color;
+        @btn-default-disabled-text;
+        @btn-default-disabled-background;
+        @btn-default-disabled-border; );
     .input-group-btn & {
-        .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-border; @btn-default-active-color; );
+        .button-variant( @btn-default-color;
+            @btn-default-bg;
+            @btn-default-border;
+            @btn-default-active-bg;
+            @btn-default-border;
+            @btn-default-active-color;
+            @btn-default-disabled-text;
+            @btn-default-disabled-background;
+            @btn-default-disabled-border; );
     }
 }
 
