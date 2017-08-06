@@ -342,6 +342,27 @@
     }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Close button
+// ---------------------------------------------------------------------------------------------------------------------
+.btn-close {
+    .button-variant( @btn-default-color;
+            @btn-default-bg;
+            @btn-default-border;
+            @btn-default-active-bg;
+            @btn-default-border;
+            @btn-default-active-color;
+            @btn-default-disabled-text;
+            @btn-default-disabled-background;
+            @btn-default-disabled-border; );
+    .button-size( @spacing-space-sm; @spacing-space-sm; @cdr-type-redwood-ui-20-font-size; @cdr-type-redwood-ui-20-line-height; @cdr-type-redwood-ui-20-font-style; );
+    .img-circle();
+    &:focus,
+    &.focus {
+        outline: none;
+    }
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Controls
@@ -369,10 +390,11 @@
     &.remove-right {
         & .icon-rei-close-small {
             &:extend( .btn-contrast.btn-primary );
+            border-radius: 0 0.3rem 0.3rem 0;
             height: 100%;
             left: auto;
             right: -0.1rem;
-            padding: 0.7rem 0.6rem 0 0.7rem;
+            padding: 0.6rem 0.6rem 0 0.7rem;
             top: 0;
         }
         & span:last-of-type {

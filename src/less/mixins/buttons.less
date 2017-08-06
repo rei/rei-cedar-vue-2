@@ -47,7 +47,8 @@
     background-color: @active-background;
     border-color: @active-border;
   }
-  &:focus{
+  &:focus,
+  &.focus{
       // Default
       color: @focus-text-color;
       outline: thin dotted;
@@ -69,7 +70,6 @@
     &,
     &:hover,
     &:focus,
-    &.focus,
     &:active,
     &.active {
       cursor: @cursor-disabled;
