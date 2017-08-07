@@ -1,0 +1,179 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// REI-CEDAR TYPOGRAPHY THEME VARIABLES
+//
+// Font, line-height, and color for body text, headings, and more.
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// COLOR PALETTES
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@text-color:                                          @core-architectural-2;
+@text-muted:                                          @core-architectural-3;
+@text-overlay:                                        @core-architectural-5;
+@headings-color:                                      inherit;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// SIZE AND SHAPE
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Family
+//----------------------------------------------------------------------------------------------------------------------
+//Brand map
+@fallback-sans-serif:                              "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:                           "Roboto", @fallback-sans-serif;
+
+@font-family-serif:                                Georgia, "Times New Roman", Times, serif;
+
+@brand-font-primary-name:                          "Sentinel";
+@brand-font:                                       @brand-font-primary-name, @font-family-sans-serif;
+
+@brand-font-secondary-name:                        "Roboto Condensed";
+@brand-font-secondary:                             @brand-font-secondary-name , @font-family-sans-serif;
+
+@brand-font-tertiary-name:                         "Plak Black Condensed";
+@brand-font-tertiary:                              @brand-font-tertiary-name , @font-family-sans-serif;
+
+@font-family-monospace:                            Menlo, Monaco, Consolas, "Courier New", monospace;
+
+
+//Implementation
+@font-family-base:                                 @font-family-sans-serif;
+@headings-font-family:                             @brand-font;
+@headings-font-family-secondary:                   @brand-font-secondary;
+
+// Line-height
+//----------------------------------------------------------------------------------------------------------------------
+// Unit-less `line-height` for use in components like buttons.
+@line-height-open:                                 1.5;
+@line-height-neutral:                              1.333;
+@line-height-closed:                               1.125;
+// Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:                              (@font-size-base * @line-height-open); //rem * line-height ~2.4rem
+
+
+// core headings
+@line-height-h1:                                    @line-height-neutral;
+@line-height-h1-sm:                                 @line-height-h1;
+@line-height-h1-md:                                 @line-height-h1;
+@line-height-h1-lg:                                 @line-height-h1;
+
+@line-height-h2:                                    @line-height-neutral;
+@line-height-h2-sm:                                 @line-height-h2;
+@line-height-h2-md:                                 @line-height-h2;
+@line-height-h2-lg:                                 @line-height-h2;
+
+@line-height-h3:                                    @line-height-neutral;
+@line-height-h4:                                    @line-height-neutral;
+@line-height-h5:                                    @line-height-neutral;
+@line-height-h6:                                    @line-height-neutral;
+
+// announce headings
+@line-height-announce-primary:                      1.125;
+@line-height-announce-primary-sm:                   @line-height-announce-primary;
+@line-height-announce-primary-md:                   @line-height-announce-primary;
+@line-height-announce-primary-lg:                   @line-height-announce-primary;
+
+@line-height-announce-secondary:                    @line-height-announce-primary;
+@line-height-announce-secondary-sm:                 @line-height-announce-primary;
+@line-height-announce-secondary-md:                 @line-height-announce-primary;
+@line-height-announce-secondary-lg:                 @line-height-announce-primary;
+
+// Hero
+@line-height-hero-primary:                          @line-height-announce-primary;
+@line-height-hero-primary-sm:                       @line-height-announce-primary;
+@line-height-hero-primary-md:                       @line-height-announce-primary;
+@line-height-hero-primary-lg:                       @line-height-announce-primary;
+
+// Impact headings
+@line-height-impact-h1:                             @line-height-neutral;
+@line-height-impact-h1-sm:                          @line-height-impact-h1;
+@line-height-impact-h1-md:                          @line-height-impact-h1;
+@line-height-impact-h1-lg:                          @line-height-impact-h1;
+
+@line-height-impact-h2:                             @line-height-neutral;
+@line-height-impact-h2-sm:                          @line-height-impact-h2;
+@line-height-impact-h2-md:                          @line-height-impact-h2;
+@line-height-impact-h2-lg:                          @line-height-impact-h2;
+
+@line-height-impact-h3:                             @line-height-neutral;
+@line-height-impact-h4:                             @line-height-neutral;
+@line-height-impact-h5:                             @line-height-neutral;
+@line-height-impact-h6:                             @line-height-neutral;
+
+// Size
+//----------------------------------------------------------------------------------------------------------------------
+// Body copy
+@font-size-root:                                    62.5%;
+@font-size-base:                                    1.6rem;
+@font-size-large:                                   1.8rem;
+@font-size-smaller:                                 1.4rem;
+@font-size-small:                                   1.2rem;
+
+// Headings
+// Core
+@font-size-h1:                                      2.843rem;
+@font-size-h1-sm:                                   3.79rem;
+@font-size-h1-md:                                   @font-size-h1-sm;
+@font-size-h1-lg:                                   5.025rem;
+
+@font-size-h2:                                      @font-size-h1;
+@font-size-h2-sm:                                   @font-size-h1;
+@font-size-h2-md:                                   @font-size-h1;
+@font-size-h2-lg:                                   @font-size-h1-sm;
+
+@font-size-h3:                                      2.133rem;
+
+
+@font-size-h4:                                      1.6rem;
+@font-size-h5:                                      @font-size-h4;
+@font-size-h6:                                      @font-size-h4;
+
+// Announce
+@font-size-announce-primary:                        6.734rem;
+@font-size-announce-primary-sm:                     8.976rem;
+@font-size-announce-primary-md:                     11.965rem;
+@font-size-announce-primary-lg:                     15.949rem;
+
+@font-size-announce-secondary:                      @font-size-announce-primary;
+@font-size-announce-secondary-sm:                   @font-size-announce-primary-sm;
+@font-size-announce-secondary-md:                   @font-size-announce-primary-sm;
+@font-size-announce-secondary-lg:                   @font-size-announce-primary-md;
+
+// Hero
+@font-size-hero-primary:                            5.052rem;
+@font-size-hero-primary-sm:                         6.734rem;
+@font-size-hero-primary-md:                         @font-size-hero-primary-sm;
+@font-size-hero-primary-lg:                         @font-size-announce-primary-sm;
+
+// Explore - Impact
+@font-size-impact-h1:                               @font-size-h1;
+@font-size-impact-h1-sm:                            @font-size-h1-sm;
+@font-size-impact-h1-md:                            @font-size-h1-md;
+@font-size-impact-h1-lg:                            @font-size-h1-lg;
+
+@font-size-impact-h2:                               @font-size-h2;
+@font-size-impact-h2-sm:                            @font-size-h2-sm;
+@font-size-impact-h2-md:                            @font-size-h2-md;
+@font-size-impact-h2-lg:                            @font-size-h2-lg;
+
+@font-size-impact-h3:                               @font-size-h3;
+@font-size-impact-h3-sm:                            @font-size-h3;
+@font-size-impact-h3-md:                            @font-size-h3;
+@font-size-impact-h3-lg:                            @font-size-h3;
+
+@font-size-impact-h4:                               @font-size-h4;
+@font-size-impact-h5:                               @font-size-h5;
+@font-size-impact-h6:                               @font-size-h6;
+
+// Weight
+//----------------------------------------------------------------------------------------------------------------------
+@headings-font-weight:                              normal; // Matches font family definition
+@semibold:                                          600; // for sentinel headings
+@brand-font-secondary-bold:                         700;
+
+// Path
+//----------------------------------------------------------------------------------------------------------------------
+@headings-font-path:                                "/font/";

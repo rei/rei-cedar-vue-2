@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="REI Cedar Style Framework, built on Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.">
+<meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
+<meta name="author" content="REI FED, IXD, UX, and the Bootstrap team">
+
+<title>
+  
+    Cards &middot; REI Cedar Style Framework
+  
+</title>
+
+<script src="https://cdn.jsdelivr.net/riot/2.4.1/riot.min.js"></script>
+
+<link href="/rei-cedar.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,700" rel="stylesheet">
+
+<!-- Documentation extras -->
+<link href="/assets/css/src/docs.css" rel="stylesheet">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-146052-10', 'getbootstrap.com');
+  ga('send', 'pageview');
+</script>
+
+  </head>
+  <body>
+    <div>
+      <a id="skippy" class="skip-nav-link sr-only sr-only-focusable" href="#content">
+          <div class="container">
+              <span class="skiplink-text">Skip to main content</span>
+          </div>
+      </a>
+    </div>
+
+      <!-- Docs master nav -->
+
+
+      <!-- Docs page layout -->
+      <div class="bs-docs-header bs-docs-content" id="content" tabindex="-1">
+        <div class="container">
+          <h1 class="heading-hero">Cards</h1>
+          <p>An overview of the REI Pattern Library's card and cards</p>
+        </div>
+      </div>
+      <div class="overlay-dark-1 ui-navigation">
+          <div class="container">
+              <div class="row">
+                    <button type="button" class="btn btn-block btn-contrast btn-primary hidden-md hidden-lg"
+                      data-toggle="collapse"
+                      aria-expanded="false"
+                      aria-controls="pattern_navigation"
+                      data-target="#pattern_navigation"
+                      aria-label="Navigation Toggle">
+                        <span class="icon icon-rei-hamburger-menu" aria-hidden="true"></span>
+                    </button>
+                    <nav id="pattern_navigation" aria-label="Primary Navigation" role="navigation" class="collapse">
+                        <div id="current" class="hidden">current page</div>
+<ul id="js-a11ynav" class="doc_head-navigation">
+    
+    <li class="doc_head-navigation-item home">
+        <a href="/" class="link_stag-explore-overlay">REI Pattern Library</a>
+    </li>
+    
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/getting-started/"
+          >
+            Getting Started
+        </a>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/layouts/"
+          >
+            Layouts
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/layouts/color/"
+                  >
+                    Color
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/grid/"
+                  >
+                    Grid
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/containers/"
+                  >
+                    Containers
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/groups/"
+                  >
+                    Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/cards/"
+                  aria-describedby="current">
+                    Cards
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/tiles"
+                  >
+                    Tiles
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/elements/"
+          >
+            Elements
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/elements/typography/"
+                  >
+                    Typography
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/buttons/"
+                  >
+                    Buttons
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/links/"
+                  >
+                    Links
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/lists/"
+                  >
+                    Lists
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/inputs/"
+                  >
+                    Inputs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/checkboxes-and-radios/"
+                  >
+                    Checkboxes and Radios
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/images/"
+                  >
+                    Images
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/rei-icons/"
+                  >
+                    Icons
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/collections/"
+          >
+            Collections
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/collections/alerts/"
+                  >
+                    Alerts
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/list-groups/"
+                  >
+                    List Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/breadcrumbs/"
+                  >
+                    Breadcrumbs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/button-groups/"
+                  >
+                    Button Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/input-groups/"
+                  >
+                    Input Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/forms/"
+                  >
+                    Forms
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/tables/"
+                  >
+                    Tables
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/modules/"
+          >
+            Modules
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/modules/tabs/"
+                  >
+                    Tabs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/tool-tips/"
+                  >
+                    Tool Tips
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/accordion/"
+                  >
+                    Accordion
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/modals/"
+                  >
+                    Modals
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/pagination/"
+                  >
+                    Pagination
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/carousel/"
+                  >
+                    Carousel
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/style-and-behavior/"
+          >
+            Style and Behavior
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/utility-helpers/"
+                  >
+                    Utility Helpers
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/utility-responsive/"
+                  >
+                    Responsive Utilities
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/less-variables/"
+                  >
+                    Less Variables
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/less-mixins/"
+                  >
+                    Less Mixins
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/javascript/"
+                  >
+                    Javascript Documentation
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+</ul>
+
+                    </nav>
+              </div>
+          </div>
+      </div>
+      <div class="container vertical-pull-2" role="main">
+        <div class="row">
+            
+            <div class="col-md-3 pull-right" role="complementary">
+                <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+                    <ul class="ui list-menu">
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="#content">Back to top</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+          <div class="col-md-9 " role="main">
+            <p>A <strong>card</strong> is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, theme colors, and powerful display options.</p>
+<p>Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease.</p>
+<p>Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match multiple content types to create the card you need.</p>
+<h2>Examples</h2>
+
+<article class="card vertical-push-lg">
+    <section class="card-block card-block--top" data-theme="light-20">
+        <h3 class="h4">Card orginization</h3>
+    </section>
+    <section class="card-block"><p>A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p></section>
+    <section class="card-block cedar-example">
+        <article class="card" data-example-id="card-orginization">
+            <section class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image" />
+            </section>
+            <ul class="list-group-filter">
+  <li class="list-group-item collapsibleList checkbox toggle-expand-collapse" data-ui="nav-level-1">
+    <input type="checkbox" value="" id="list-group-item-1" />
+    <label for="list-group-item-1">list-group-filter-item 1</label>
+    <ul class="nest">
+      <li class="item-secondary">
+        <div class="checkbox">
+          <input type="checkbox" value="" id="filter-one" />
+          <label for="filter-one">Sub-option 1</label>
+
+        </div>
+      </li>
+      <li class="item-secondary">
+        <div class="checkbox">
+          <input type="checkbox" value="" id="filter-two" />
+          <label for="filter-two">Sub-option 2 </label>
+        </div>
+      </li>
+      <li class="item-secondary">
+        <div class="checkbox">
+          <input type="checkbox" value="" id="filter-three" />
+          <label for="filter-three">Sub-option 3</label>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li class="list-group-item collapsibleList checkbox toggle-expand-collapse" data-ui="nav-level-1">
+    <input type="checkbox" value="" id="list-group-item-2" />
+    <label for="list-group-item-2">list-group-filter-item 2</label>
+    <ul class="nest">
+      <li class="item-secondary">
+        <div class="checkbox">
+          <input type="checkbox" value="" id="Sub-option-1" />
+          <label for="Sub-option-1">Sub-option 1</label>
+        </div>
+      </li>
+      <li class="item-secondary">
+        <div class="checkbox">
+          <input type="checkbox" value="" id="Sub-option-2" />
+          <label for="Sub-option-2">Sub-option 2 </label>
+        </div>
+      </li>
+      <li class="item-secondary">
+        <div class="checkbox">
+          <input type="checkbox" value="" id="Sub-option-3" />
+          <label for="Sub-option-3">Sub-option 3</label>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li class="list-group-item collapsibleList checkbox toggle-expand-collapse" data-ui="nav-level-1">
+    <input type="checkbox" value="" id="list-group-item-3" />
+    <label for="list-group-item-3">list-group-filter-item 3</label>
+    <ul class="nest">
+      <li class="item-secondary" data-ui="nav-level-2">
+        <a href="#list-group-item-3" data-ui="nav-link">
+          Sub-option 1
+        </a>
+      </li>
+      <li class="item-secondary" data-ui="nav-level-2">
+        <a href="#list-group-item-3" data-ui="nav-link">
+          Sub-option 2
+        </a>
+      </li>
+      <li class="item-secondary" data-ui="nav-level-2">
+        <a href="#list-group-item-3" data-ui="nav-link">
+          Sub-option 3
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="list-group-item collapsed" data-ui="nav-level-1">
+    <a href="#list-group-item-3" data-ui="nav-link">
+      <span>list-group-item 4</span>
+    </a>
+  </li>
+</ul>
+
+            <section class="card-block text-xs-center">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="list-inline list-inline-lg use_link-stag-explore">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+        </article>
+    </section>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input type="checkbox" value="" id="checkbox-card-orginization" data-toggle="collapse" data-target="#card-orginization" />
+        <label for="checkbox-card-orginization">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="card-orginization" data-theme="light-20">
+    
+<figure class="highlight"><pre><code class="language-html" data-lang="html">        <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card-media-top media-frame ratio-3-4 portrait center"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/320x150"</span> <span class="na">alt=</span><span class="s">"Example image"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/section&gt;</span>
+            content out of card-block
+            <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card-block text-xs-center"</span><span class="nt">&gt;</span>
+                content within card-block
+            <span class="nt">&lt;/section&gt;</span>
+        <span class="nt">&lt;/article&gt;</span>
+    </code></pre></figure>
+
+    </div>
+</article>
+
+<article class="card vertical-push-lg">
+    <section class="card-block card-block--top" data-theme="light-20">
+        <h3 class="h4">Groups within cards</h3>
+    </section>
+    <section class="card-block">Placeing a group of tiles within a card.</section>
+    <section class="card-block cedar-example">
+        <article class="card" data-example-id="groups-within-cards">
+            <section class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image" />
+            </section>
+            <div class="group group-display-fixed">
+                <div class="col-xs-4">
+                    <section class="tile">
+                        <div class="media-frame ratio-3-4 portrait center">
+                            <img src="http://placehold.it/320x150" alt="Example image" />
+                        </div>
+                    </section>
+                </div>
+                <div class="col-xs-4">
+                    <section class="tile">
+                        <div class="media-frame ratio-3-4 portrait center">
+                            <img src="http://placehold.it/320x150" alt="Example image" />
+                        </div>
+                    </section>
+                </div>
+                <div class="col-xs-4">
+                    <section class="tile">
+                        <div class="media-frame ratio-3-4 portrait center">
+                            <img src="http://placehold.it/320x150" alt="Example image" />
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </section>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input type="checkbox" value="" id="checkbox-groups-within-cards" data-toggle="collapse" data-target="#groups-within-cards" />
+        <label for="checkbox-groups-within-cardse">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="groups-within-cards" data-theme="light-20">
+    
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card-media-top"</span><span class="nt">&gt;&lt;/section&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"group group-display-fixed"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;&lt;/section&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;&lt;/section&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;&lt;/section&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/article&gt;</span>
+    </code></pre></figure>
+
+    </div>
+</article>
+
+<article class="card vertical-push-lg">
+    <section class="card-block card-block--top" data-theme="light-20">
+        <h3 class="h4">Linked Card</h3>
+    </section>
+    <section class="card-block">
+        <p>When linking an entire card, be sure no other actionable items are nested within the parent structure.</p>
+    </section>
+    <section class="card-block cedar-example">
+        <a href="#anchored-card-example" class="card" id="anchored-card-example" data-example-id="linked-card">
+            <section class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image" />
+            </section>
+            <section class="card-block">
+                <h4>Heading</h4>
+                <p>Copy.</p>
+            </section>
+        </a>
+    </section>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input type="checkbox" value="" id="checkbox-linked-card" data-toggle="collapse" data-target="#linked-card" />
+        <label for="checkbox-linked-card">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="linked-card" data-theme="light-20">
+    
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#anchored-card-example"</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card-media-top media-frame ratio-3-4 portrait center"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/320x150"</span> <span class="na">alt=</span><span class="s">"Example image"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h4&gt;</span>Heading<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Copy.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    </code></pre></figure>
+
+    </div>
+</article>
+
+<article class="card vertical-push-lg">
+    <section class="card-block card-block--top" data-theme="light-20">
+        <h3 class="h4">Card image caps</h3>
+    </section>
+    <section class="card-block">
+        <p>Using cedar-card-image-cap-top will allow a full blead media frame within a card that also provides a border-radius to the top left and right of the media.</p>
+    </section>
+    <section class="card-block cedar-example">
+        <article class="card" data-example-id="card-image-caps">
+            <img class="card-media-top img-responsive" src="http://placehold.it/320x150" alt="Example image" />
+            <section class="card-block">
+                <h4>Cedar-card component</h4>
+            </section>
+            <img class="card-media-bottom img-responsive" src="http://placehold.it/320x150" alt="Example image" />
+        </article>
+    </section>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input type="checkbox" value="" id="checkbox-card-img-cap" data-toggle="collapse" data-target="#card-img-cap" />
+        <label for="checkbox-card-img-cap">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="card-img-cap" data-theme="light-20">
+    
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"card-media-top img-responsive"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;&lt;/section&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"card-media-bottom img-responsive"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/article&gt;</span>
+    </code></pre></figure>
+
+    </div>
+</article>
+
+<article class="card vertical-push-lg">
+    <section class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Image overlays</h3></section>
+    <section class="card-block"><p>Turn an image into a card background and overlay your card’s text. when an image will encompass the entirety of this container use the <code>.card-media</code> class to ensure the image will receive a border radius to all corners To achieve an accessible result, be sure to pass a <strong>theme</strong> value that is in line with the image color.</p>
+   </section>
+    <section class="card-block cedar-example">
+        <article class="card" data-theme="dark-10" data-example-id="image-overlays">
+            <section class="card-media media-frame ratio-3-4 portrait center">
+                <img src="http://www.rei.com/content/landing-pages/lets-camp/img/mark/lead.jpg" alt="Text overlay cedar-card-image-cap component example" />
+            </section>
+            <section class="card-block media-overlay">
+                <h4>Cedar-card component</h4>
+                <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button class="btn btn-primary">Button</button>
+            </section>
+        </article>
+    </section>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input type="checkbox" value="" id="checkbox-image-overlay" data-toggle="collapse" data-target="#image-overlay" />
+        <label for="checkbox-image-overlay">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="image-overlay" data-theme="light-20">
+    
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"card"</span> <span class="na">data-theme=</span><span class="s">"dark-10"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card-media media-frame ratio-3-4 portrait center"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card-block media-overlay"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/article&gt;</span>
+    </code></pre></figure>
+
+    </div>
+</article>
+
+<article class="card vertical-push-lg">
+    <section class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Theming a card</h3></section>
+    <section class="card-block">
+        <p>Cards can include a theme data attribute for quickly changing the <strong>background-color</strong> and <strong>color</strong> of a card or a card-block.</p>
+    </section>
+    <section class="cedar-example">
+        <div class="group group-display-fixed group-gutter-open-10" data-example-id="theming-a-card" data-theme="light-20">
+            <div class="col-xs-6 col-sm-4">
+                <article class="card" data-theme="light-10">
+                    <div class="card-block">
+                        <p>light-10</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <article class="card" data-theme="light-20">
+                    <div class="card-block">
+                        <p>light-20</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <article class="card" data-theme="light-30">
+                    <div class="card-block">
+                        <p>light-30</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <article class="card" data-theme="medium-10">
+                    <div class="card-block">
+                        <p>medium-10</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <article class="card" data-theme="medium-20">
+                    <div class="card-block">
+                        <p>medium-20</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <article class="card" data-theme="dark-10">
+                    <div class="card-block">
+                        <p>dark-10</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-xs-6 col-sm-4">
+                <article class="card" data-theme="dark-20">
+                    <div class="card-block">
+                        <p>dark-20</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="card-block bs-callout bs-callout-info">
+        <p>For additional accessibility and contrast, our darker themes add text shadow to <code> h1-h6 and p </code> tags </p>
+    </section>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input type="checkbox" value="" id="checkbox-theming-a-card" data-toggle="collapse" data-target="#theming-a-card" />
+        <label for="checkbox-theming-a-card">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="theming-a-card" data-theme="light-20">
+    
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"card"</span> <span class="na">data-theme=</span><span class="s">'light-20'</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"card-block"</span><span class="nt">&gt;&lt;/section&gt;</span>
+    <span class="nt">&lt;/article&gt;</span>
+    </code></pre></figure>
+
+    </div>
+</article>
+
+
+          </div>
+        </div>
+      </div>
+      <!-- Footer
+================================================== -->
+<footer class="bs-docs-footer overlay-dark-1" role="contentinfo">
+  <div class="container">
+      <div class="row">
+          <div class="row col-sm-10 col-sm-offset-1 ">
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/getting-started/">Getting Started</a></li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/layouts/">Layouts</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/color/">Color</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/grid/">Grid</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/containers/">Containers</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/groups/">Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/cards/">Cards</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/tiles">Tiles</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/elements/">Elements</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/typography/">Typography</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/buttons/">Buttons</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/links/">Links</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/lists/">Lists</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/inputs/">Inputs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/checkboxes-and-radios/">Checkboxes and Radios</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/images/">Images</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/rei-icons/">Icons</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/collections/">Collections</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/alerts/">Alerts</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/list-groups/">List Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/breadcrumbs/">Breadcrumbs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/button-groups/">Button Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/input-groups/">Input Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/forms/">Forms</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/tables/">Tables</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/modules/">Modules</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/tabs/">Tabs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/tool-tips/">Tool Tips</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/accordion/">Accordion</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/modals/">Modals</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/pagination/">Pagination</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/carousel/">Carousel</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/style-and-behavior/">Style and Behavior</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/utility-helpers/">Utility Helpers</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/utility-responsive/">Responsive Utilities</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/less-variables/">Less Variables</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/less-mixins/">Less Mixins</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/javascript/">Javascript Documentation</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+          </div>
+      </div>
+    <ul class="footer-inline-list">
+      <li><a class="nested" href="https://github.com/rei/rei-cedar">Github</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="/rei-cedar.js"></script>
+
+<script src="/rei-cedar-components.js"></script>
+
+<script>
+  riot.mount('*');
+</script>
+
+<script src="/assets/js/vendor/particles.min.js"></script>
+
+
+  
+  <script src="/assets/js/vendor/holder.js"></script>
+  
+  <script src="/assets/js/vendor/anchor.js"></script>
+  
+  <script src="/assets/js/src/application.js"></script>
+  
+  <script src="/assets/js/src/a11y.js"></script>
+  
+
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>
