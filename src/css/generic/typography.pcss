@@ -15,6 +15,18 @@
 * disclaimer
 */
 
+.cdr-label {
+  /* TODO: update with new typography value */
+  font-weight: bold;
+
+  &--disabled {
+    color: $sys-color-disabled-label;
+  }
+
+  &--error {
+    color: $sys-color-error;
+  }
+}
 
 .cdr-type {
   &--spruce-dsp-90 {
@@ -153,5 +165,14 @@
     font-style: $sys-font-redwood-bdy-20-font-style;
     font-weight: $sys-font-redwood-bdy-20-font-weight;
     font-family: $sys-font-redwood-bdy-20-font-family;
+  }
+  
+  &--redwood-bdy-10 {
+    font-size: $sys-font-redwood-bdy-10-font-size;
+    line-height: $sys-font-redwood-bdy-10-line-height;
+    color: $sys-font-redwood-bdy-10-color;
+    font-style: $sys-font-redwood-bdy-10-font-style;
+    font-weight: $sys-font-redwood-bdy-10-font-weight;
+    font-family: $sys-font-redwood-bdy-10-font-family;
   }
 }
