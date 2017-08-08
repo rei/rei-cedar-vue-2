@@ -1,9 +1,87 @@
-.cdr-input-group {
+/*
+* TOC:
+* input-group
+* input
+* input-validation
+* animated-errors
+* input-messages
+*
+*/
+
+.cdr-input-wrap {
   margin-bottom: 1.6rem;
+}
+
+.cdr-input-group {
+  &--actions {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.cdr-input {
+  font-size: $sys-font-redwood-bdy-30-font-size;
+  line-height: $sys-font-redwood-bdy-30-line-height;
+  color: $sys-font-redwood-bdy-30-color;
+  font-style: $sys-font-redwood-bdy-30-font-style;
+  font-weight: $sys-font-redwood-bdy-30-font-weight;
+  font-family: $sys-font-redwood-bdy-30-font-family;
+  background-color: $sys-color-input;
+  border-color: $sys-color-input-stroke;
+  border-style: solid;
+  border-radius: $radius-input;
+  border-width: 1px;
+  display: block;
+  padding: $spacing-space-sm;
+  width: 100%;
+
+  &--actions {
+    height: calc($sys-font-redwood-bdy-30-line-height + 2px + (2 * $spacing-space-sm));
+  }
+
+  &--action-post {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &--action-pre {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &--error {
+    border-color: $sys-color-error;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &--warn {
+    border-color: $sys-color-warning;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &::placeholder {
+    font-style: italic;
+  }
+
+  &[disabled] {
+    background-color: $sys-color-disabled-input;
+
+    &::placeholder {
+      color: $sys-color-disabled-placeholder;
+    }
+  }
 }
 
 .cdr-input-validation {
   position: relative;
+
+  &--actions {
+    flex-grow: 1;
+  }
 
   &__icon {
     position: absolute;
@@ -75,59 +153,5 @@
       border-color: $sys-color-warning;
       background-color: rgba(252, 196, 25, 0.2);
     }
-  }
-}
-
-.cdr-input {
-  font-size: $sys-font-redwood-bdy-30-font-size;
-  line-height: $sys-font-redwood-bdy-30-line-height;
-  color: $sys-font-redwood-bdy-30-color;
-  font-style: $sys-font-redwood-bdy-30-font-style;
-  font-weight: $sys-font-redwood-bdy-30-font-weight;
-  font-family: $sys-font-redwood-bdy-30-font-family;
-  background-color: $sys-color-input;
-  border-color: $sys-color-input-stroke;
-  border-style: solid;
-  border-radius: $radius-input;
-  border-width: 1px;
-  display: block;
-  padding: $spacing-space-sm;
-  width: 100%;
-
-  &--error {
-    border-color: $sys-color-error;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  &--warn {
-    border-color: $sys-color-warning;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  &::placeholder {
-    font-style: italic;
-  }
-
-  &[disabled] {
-    background-color: $sys-color-disabled-input;
-
-    &::placeholder {
-      color: $sys-color-disabled-placeholder;
-    }
-  }
-}
-
-.cdr-label {
-  /* TODO: update with new typography value */
-  font-weight: bold;
-
-  &--disabled {
-    color: $sys-color-disabled-label;
-  }
-
-  &--error {
-    color: $sys-color-error;
   }
 }

@@ -36,6 +36,53 @@
       placeholder="hidden-label"
       ></cdr-input>
 
+    <cdr-input v-model="nothing"
+      label="pre"
+      >
+      <cdr-button slot="pre" modifier="input-pre">pre</cdr-button>
+    </cdr-input>
+
+    <cdr-input v-model="valid"
+      label="pre + validation"
+      feedback
+      :rules="[validateFn]"
+      immediate-validate
+      >
+      <cdr-button slot="pre" modifier="input-pre">pre</cdr-button>
+    </cdr-input>
+
+    <cdr-input v-model="nothing"
+      label="post"
+      >
+      <cdr-button slot="post" modifier="input-post">post</cdr-button>
+    </cdr-input>
+
+    <cdr-input v-model="warning"
+      label="post + validation"
+      feedback
+      :rules="[validateFn]"
+      immediate-validate
+      >
+      <cdr-button slot="post" modifier="input-post">post</cdr-button>
+    </cdr-input>
+
+    <cdr-input v-model="nothing"
+      label="pre and post"
+      >
+      <cdr-button slot="pre" modifier="input-pre">pre</cdr-button>
+      <cdr-button slot="post" modifier="input-post">post</cdr-button>
+    </cdr-input>
+
+    <cdr-input v-model="error"
+      label="pre and post + validation"
+      feedback
+      :rules="[validateFn]"
+      immediate-validate
+      >
+      <cdr-button slot="pre" modifier="input-pre">pre</cdr-button>
+      <cdr-button slot="post" modifier="input-post">post</cdr-button>
+      </cdr-input>
+
     <cdr-input v-model="pattern"
       label="Pattern validation"
       required

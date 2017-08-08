@@ -78,5 +78,9 @@ module.exports = {
       content: 'docs/Components.md',
       components: 'src/components/**/*.vue',
     },
+    {
+      name: 'Compositions',
+      components: 'src/compositions/**/*.vue',
+    },
   ],
 };
