@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="REI Cedar Style Framework, built on Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.">
+<meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
+<meta name="author" content="REI FED, IXD, UX, and the Bootstrap team">
+
+<title>
+  
+    Grid &middot; REI Cedar Style Framework
+  
+</title>
+
+<script src="https://cdn.jsdelivr.net/riot/2.4.1/riot.min.js"></script>
+
+<link href="/rei-cedar.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,700" rel="stylesheet">
+
+<!-- Documentation extras -->
+<link href="/assets/css/src/docs.css" rel="stylesheet">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-146052-10', 'getbootstrap.com');
+  ga('send', 'pageview');
+</script>
+
+  </head>
+  <body>
+    <div>
+      <a id="skippy" class="skip-nav-link sr-only sr-only-focusable" href="#content">
+          <div class="container">
+              <span class="skiplink-text">Skip to main content</span>
+          </div>
+      </a>
+    </div>
+
+      <!-- Docs master nav -->
+
+
+      <!-- Docs page layout -->
+      <div class="bs-docs-header bs-docs-content" id="content" tabindex="-1">
+        <div class="container">
+          <h1 class="heading-hero">Grid</h1>
+          <p>Grid and spacing tools</p>
+        </div>
+      </div>
+      <div class="overlay-dark-1 ui-navigation">
+          <div class="container">
+              <div class="row">
+                    <button type="button" class="btn btn-block btn-contrast btn-primary hidden-md hidden-lg"
+                      data-toggle="collapse"
+                      aria-expanded="false"
+                      aria-controls="pattern_navigation"
+                      data-target="#pattern_navigation"
+                      aria-label="Navigation Toggle">
+                        <span class="icon icon-rei-hamburger-menu" aria-hidden="true"></span>
+                    </button>
+                    <nav id="pattern_navigation" aria-label="Primary Navigation" role="navigation" class="collapse">
+                        <div id="current" class="hidden">current page</div>
+<ul id="js-a11ynav" class="doc_head-navigation">
+    
+    <li class="doc_head-navigation-item home">
+        <a href="/" class="link_stag-explore-overlay">REI Pattern Library</a>
+    </li>
+    
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/getting-started/"
+          >
+            Getting Started
+        </a>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/layouts/"
+          >
+            Layouts
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/layouts/color/"
+                  >
+                    Color
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/grid/"
+                  aria-describedby="current">
+                    Grid
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/containers/"
+                  >
+                    Containers
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/groups/"
+                  >
+                    Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/cards/"
+                  >
+                    Cards
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/tiles"
+                  >
+                    Tiles
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/elements/"
+          >
+            Elements
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/elements/typography/"
+                  >
+                    Typography
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/buttons/"
+                  >
+                    Buttons
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/links/"
+                  >
+                    Links
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/lists/"
+                  >
+                    Lists
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/inputs/"
+                  >
+                    Inputs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/checkboxes-and-radios/"
+                  >
+                    Checkboxes and Radios
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/images/"
+                  >
+                    Images
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/rei-icons/"
+                  >
+                    Icons
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/collections/"
+          >
+            Collections
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/collections/alerts/"
+                  >
+                    Alerts
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/list-groups/"
+                  >
+                    List Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/breadcrumbs/"
+                  >
+                    Breadcrumbs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/button-groups/"
+                  >
+                    Button Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/input-groups/"
+                  >
+                    Input Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/forms/"
+                  >
+                    Forms
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/tables/"
+                  >
+                    Tables
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/modules/"
+          >
+            Modules
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/modules/tabs/"
+                  >
+                    Tabs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/tool-tips/"
+                  >
+                    Tool Tips
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/accordion/"
+                  >
+                    Accordion
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/modals/"
+                  >
+                    Modals
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/pagination/"
+                  >
+                    Pagination
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/carousel/"
+                  >
+                    Carousel
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/style-and-behavior/"
+          >
+            Style and Behavior
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/utility-helpers/"
+                  >
+                    Utility Helpers
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/utility-responsive/"
+                  >
+                    Responsive Utilities
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/less-variables/"
+                  >
+                    Less Variables
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/less-mixins/"
+                  >
+                    Less Mixins
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/javascript/"
+                  >
+                    Javascript Documentation
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+</ul>
+
+                    </nav>
+              </div>
+          </div>
+      </div>
+      <div class="container vertical-pull-2" role="main">
+        <div class="row">
+            
+            <div class="col-md-3 pull-right" role="complementary">
+                <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+                    <ul class="ui list-menu">
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="#grid-intro">Introduction</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-media-queries">Media queries</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-options">Grid options</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-example-basic">Stacked-to-horizontal</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-example-mixed">Mobile and desktop</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-example-mixed-complete">Mobile, tablet, desktop</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-example-wrapping">Column wrapping</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-responsive-resets">Responsive column resets</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-offsetting">Offsetting columns</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-nesting">Nesting columns</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-column-">Column ordering</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-example-basic-flex">Flex grid</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#grid-less">Less mixins and variables</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="#content">Back to top</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+          <div class="col-md-9 " role="main">
+            <section class="vertical-push-3">
+    <h2 id="grid" class="page-header">Grid system</h2>
+    <p class="lead">The REi-Cedar Grid system is used to scaffold page layouts and should remain devoid of content classes. </p>
+    <h3 id="grid-intro">Anatomy</h3>
+
+ <ol class="list-decoration">
+        <li>Containers define the outer wrapper of our page templates and provide padding between the grid and the
+            browser window.</li>
+        <li>Rows must be placed within a container or parent column for proper alignment and padding. These structures
+            use negative margin, negating a container or parent column, allowing for correct gutter widths regardless
+            of level of nesting.</li>
+        <li>Use rows to create horizontal groups of columns.</li>
+        <li>Extend rows with <code>.row-flex</code> to change the display model of nested grid to flex from float.</li>
+        <li>Content should only be placed within columns, and only columns may be immediate children of rows.</li>
+        <li>Predefined grid classes like <code>.row</code> and <code>.col-xs-4</code> are available for quickly making
+            grid layouts.</li>
+        <li>Columns create gutters (gaps between column content) via <code>padding</code>. That padding is offset in
+            rows for the first and last column via negative margin on <code>.row</code>s.</li>
+        <li>Grid columns are created by specifying the number of twelve available columns you wish to span. For example,
+            three equal columns would use three <code>.col-xs-4</code>.
+        </li>
+        <li>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap
+            onto a new line.</li>
+        <li>Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override
+            grid classes targeted at smaller devices. Therefore, e.g. applying any <code>.col-md-*</code> class to an
+            element will not only affect its styling on medium devices but also on large devices if a
+            <code>.col-lg-*</code> class is not present.</li>
+    </ol>
+
+  <p>Look to the examples for applying these principles to your code.</p>
+
+ <h3 id="grid-options">Grid options</h3>
+  <p>See how aspects of the Bootstrap grid system work across multiple devices with a handy table.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            Extra small devices
+            <small>Phones (&lt;768px)</small>
+          </th>
+          <th>
+            Small devices
+            <small>Tablets (&ge;768px)</small>
+          </th>
+          <th>
+            Medium devices
+            <small>Desktops (&ge;992px)</small>
+          </th>
+          <th>
+            Large devices
+            <small>Desktops (&ge;1200px)</small>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-nowrap" scope="row">Grid behavior</th>
+          <td>Horizontal at all times</td>
+          <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Container width</th>
+          <td>None (auto)</td>
+          <td>768px</td>
+          <td>992px</td>
+          <td>1200px</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Class prefix</th>
+          <td><code>.col-xs-</code></td>
+          <td><code>.col-sm-</code></td>
+          <td><code>.col-md-</code></td>
+          <td><code>.col-lg-</code></td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row"># of columns</th>
+          <td colspan="4">12</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Column width</th>
+          <td class="text-muted">Auto</td>
+          <td>~62px</td>
+          <td>~81px</td>
+          <td>~97px</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Gutter width</th>
+          <td>20px (10px on each side of a column)</td>
+          <td>40px (20px on each side of a column)</td>
+          <td>60px (30px on each side of a column)</td>
+          <td>60px (30px on each side of a column)</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Nestable</th>
+          <td colspan="4">Yes</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Offsets</th>
+          <td colspan="4">Yes</td>
+        </tr>
+        <tr>
+          <th class="text-nowrap" scope="row">Column ordering</th>
+          <td colspan="4">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 id="grid-example-basic">Example: Stacked-to-horizontal</h3>
+  <p>Using a single set of <code>.col-md-*</code> grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any <code>.row</code>.</p>
+  <div class="bs-docs-grid" data-example-id="stacked-to-horizontal">
+    <div class="row show-grid">
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-8">.col-md-8</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-6">.col-md-6</div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>.col-md-8<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>.col-md-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>.col-md-6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+  <h3 id="grid-example-mixed">Example: Mobile and desktop</h3>
+  <p>Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid classes by adding <code>.col-xs-*</code> <code>.col-md-*</code> to your columns. See the example below for a better idea of how it all works.</p>
+  <div class="bs-docs-grid" data-example-id="mobile-and-desktop">
+    <div class="row show-grid">
+      <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-xs-6">.col-xs-6</div>
+      <div class="col-xs-6">.col-xs-6</div>
+    </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-12 col-md-8"</span><span class="nt">&gt;</span>.col-xs-12 .col-md-8<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-md-4"</span><span class="nt">&gt;</span>.col-xs-6 .col-md-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-md-4"</span><span class="nt">&gt;</span>.col-xs-6 .col-md-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-md-4"</span><span class="nt">&gt;</span>.col-xs-6 .col-md-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-md-4"</span><span class="nt">&gt;</span>.col-xs-6 .col-md-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Columns are always 50% wide, on mobile and desktop --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6"</span><span class="nt">&gt;</span>.col-xs-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6"</span><span class="nt">&gt;</span>.col-xs-6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+  <h3 id="grid-example-mixed-complete">Example: Mobile, tablet, desktop</h3>
+  <p>Build on the previous example by creating even more dynamic and powerful layouts with tablet <code>.col-sm-*</code> classes.</p>
+  <div class="bs-docs-grid" data-example-id="mobile-tablet-desktop">
+    <div class="row show-grid">
+      <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+      <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+      <!-- Optional: clear the XS cols if their content doesn't match in height -->
+      <div class="clearfix visible-xs-block"></div>
+      <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-12 col-sm-6 col-md-8"</span><span class="nt">&gt;</span>.col-xs-12 .col-sm-6 .col-md-8<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-md-4"</span><span class="nt">&gt;</span>.col-xs-6 .col-md-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-sm-4"</span><span class="nt">&gt;</span>.col-xs-6 .col-sm-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-sm-4"</span><span class="nt">&gt;</span>.col-xs-6 .col-sm-4<span class="nt">&lt;/div&gt;</span>
+  <span class="c">&lt;!-- Optional: clear the XS cols if their content doesn't match in height --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix visible-xs-block"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-sm-4"</span><span class="nt">&gt;</span>.col-xs-6 .col-sm-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+  <h3 id="grid-example-wrapping">Example: Column wrapping</h3>
+  <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
+  <div class="bs-docs-grid" data-example-id="column-wrapping">
+    <div class="row show-grid">
+      <div class="col-xs-9">.col-xs-9</div>
+      <div class="col-xs-4">.col-xs-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+      <div class="col-xs-6">.col-xs-6<br>Subsequent columns continue along the new line.</div>
+    </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-9"</span><span class="nt">&gt;</span>.col-xs-9<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>.col-xs-4<span class="nt">&lt;br&gt;</span>Since 9 + 4 = 13 <span class="ni">&amp;gt;</span> 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6"</span><span class="nt">&gt;</span>.col-xs-6<span class="nt">&lt;br&gt;</span>Subsequent columns continue along the new line.<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+  <h3 id="grid-responsive-resets">Responsive column resets</h3>
+  <p>With the four tiers of grids available you're bound to run into issues where, at certain breakpoints, your columns don't clear quite right as one is taller than the other. To fix that, use a combination of a <code>.clearfix</code> and our <a href="#responsive-utilities">responsive utility classes</a>.</p>
+  <div class="bs-docs-grid" data-example-id="responsive-column-resets">
+    <div class="row show-grid">
+      <div class="col-xs-6 col-sm-3">
+        .col-xs-6 .col-sm-3
+        <br>
+        Resize your viewport or check it out on your phone for an example.
+      </div>
+      <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+      <!-- Add the extra clearfix for only the required viewport -->
+      <div class="clearfix visible-xs-block"></div>
+
+      <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+      <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+    </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-sm-3"</span><span class="nt">&gt;</span>.col-xs-6 .col-sm-3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-sm-3"</span><span class="nt">&gt;</span>.col-xs-6 .col-sm-3<span class="nt">&lt;/div&gt;</span>
+
+  <span class="c">&lt;!-- Add the extra clearfix for only the required viewport --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix visible-xs-block"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-sm-3"</span><span class="nt">&gt;</span>.col-xs-6 .col-sm-3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6 col-sm-3"</span><span class="nt">&gt;</span>.col-xs-6 .col-sm-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+  <p>In addition to column clearing at responsive breakpoints, you may need to <strong>reset offsets, pushes, or pulls</strong>. See this in action in <a href="../examples/grid/">the grid example</a>.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-5 col-md-6"</span><span class="nt">&gt;</span>.col-sm-5 .col-md-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0"</span><span class="nt">&gt;</span>.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6 col-md-5 col-lg-6"</span><span class="nt">&gt;</span>.col-sm-6 .col-md-5 .col-lg-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"</span><span class="nt">&gt;</span>.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+
+  <h3 id="grid-offsetting">Offsetting columns</h3>
+  <p>Move columns to the right using <code>.col-md-offset-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.col-md-offset-4</code> moves <code>.col-md-4</code> over four columns.</p>
+  <div class="bs-docs-grid" data-example-id="offsetting-columns">
+    <div class="row show-grid">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+      <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+    </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 col-md-offset-4"</span><span class="nt">&gt;</span>.col-md-4 .col-md-offset-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-3 col-md-offset-3"</span><span class="nt">&gt;</span>.col-md-3 .col-md-offset-3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-3 col-md-offset-3"</span><span class="nt">&gt;</span>.col-md-3 .col-md-offset-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6 col-md-offset-3"</span><span class="nt">&gt;</span>.col-md-6 .col-md-offset-3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+
+  <h3 id="grid-nesting">Nesting columns</h3>
+  <p>To nest your content with the default grid, add a new <code>.row</code> and set of <code>.col-sm-*</code> columns within an existing <code>.col-sm-*</code> column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).</p>
+  <div class="row show-grid" data-example-id="nesting-columns">
+    <div class="col-sm-9">
+      Level 1: .col-sm-9
+      <div class="row show-grid">
+        <div class="col-xs-8 col-sm-6">
+          Level 2: .col-xs-8 .col-sm-6
+        </div>
+        <div class="col-xs-4 col-sm-6">
+          Level 2: .col-xs-4 .col-sm-6
+        </div>
+      </div>
+    </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+    Level 1: .col-sm-9
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-8 col-sm-6"</span><span class="nt">&gt;</span>
+        Level 2: .col-xs-8 .col-sm-6
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4 col-sm-6"</span><span class="nt">&gt;</span>
+        Level 2: .col-xs-4 .col-sm-6
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+  <h3 id="grid-column-ordering">Column ordering</h3>
+  <p>Easily change the order of our built-in grid columns with <code>.col-md-push-*</code> and <code>.col-md-pull-*</code> modifier classes.</p>
+  <div class="row show-grid" data-example-id="column-ordering">
+    <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
+    <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+  </div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-9 col-md-push-3"</span><span class="nt">&gt;</span>.col-md-9 .col-md-push-3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-3 col-md-pull-9"</span><span class="nt">&gt;</span>.col-md-3 .col-md-pull-9<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+
+
+
+
+<h3 id="grid-example-basic-flex">Flexbox support is available! </h3>
+<p> To change your display model add <code>row-flex</code> to an existing <code>row</code> and say goodbye to the old dispay float.</p>
+<p class="bs-callout bs-callout-danger">
+This flex layout is using the default display proporties for row and column. Unlike the float grid, using the <code>row row-flex</code> structure will allow your colums to retain the same height.
+</p>
+  <div class="bs-docs-grid" data-example-id="flex-grid">
+    <div class="row row-flex show-grid">
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+    </div>
+    <div class="row row-flex show-grid">
+      <div class="col-md-8">.col-md-8</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+    <div class="row row-flex show-grid">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+    <div class="row row-flex show-grid">
+      <div class="col-md-6">.col-md-6</div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-1"</span><span class="nt">&gt;</span>.col-md-1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>.col-md-8<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>.col-md-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>.col-md-6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+
+<h4> Mixing flex and float layouts</h4>
+<p>you can use both the flex and float grids as long as they are within their own row.</p>
+
+ <div class="row row-flex show-grid" data-example-id="flex-float-grid">
+      <div class="col-md-8">.col-md-8
+        <div class="row row-flex show-grid">
+            <div class="col-md-8">.col-md-8
+            <div class="row show-grid">
+            <div class="col-md-8">.col-md-8, in this float grid the column's height is set by the content.</div>
+            <div class="col-md-4">.col-md-4
+            </div>
+        </div>
+            </div>
+            <div class="col-md-4">.col-md-4, there is extra content in this column. see how the row this is in is still aligned?
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-flex show-grid"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>.col-md-8
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-flex show-grid"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>.col-md-8
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row show-grid"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>.col-md-8, in this float grid the column's height is set by the content.<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4, there is extra content in this column. see how the row this is in is still aligned?
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>.col-md-4<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+
+
+  <h3 id="grid-less">Less mixins and variables</h3>
+  <p>In addition to <a href="#grid-example-basic">prebuilt grid classes</a> for fast layouts, Bootstrap includes Less variables and mixins for quickly generating your own simple, semantic layouts.</p>
+
+  <h4>Variables</h4>
+  <p>Variables determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.</p>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Grid system
+//
+//----------------------------------------------------------------------------------------------------------------------
+//** Number of columns in the grid.
+</span><span class="k">@grid-columns</span><span class="nd">:</span>                                      <span class="nt">12</span><span class="p">;</span>
+<span class="c1">//** Padding between columns. Gets divided in half for the left and right.
+</span><span class="k">@grid-gutter-width</span><span class="nd">:</span>                                 <span class="nt">20px</span><span class="p">;</span> <span class="c1">// Mobile gutters
+</span><span class="k">@grid-gutter-width-sm</span><span class="nd">:</span>                              <span class="o">@</span><span class="nt">grid-gutter-width</span> <span class="o">*</span> <span class="nt">2</span><span class="p">;</span> <span class="c1">// Tablet gutters
+</span><span class="k">@grid-gutter-width-md</span><span class="nd">:</span>                              <span class="o">@</span><span class="nt">grid-gutter-width</span> <span class="o">*</span> <span class="nt">3</span><span class="p">;</span> <span class="o">//</span> <span class="nt">Desktop</span><span class="o">+</span> <span class="nt">gutters</span></code></pre></figure>
+
+  <h4>Mixins</h4>
+  <p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.</p>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Grid System
+// Generate semantic grid columns with these mixins.
+// TOC:
+//
+// :Container
+// :Row
+// :Extra Small Columns
+// ::Generate
+// ::Manipulate
+// :::Offset
+// :::Push
+// :::Pull
+// :Small Columns
+// ::Generate
+// ::Manipulate
+// :::Offset
+// :::Push
+// :::Pull
+// :Medium Columns
+// ::Generate
+// ::Manipulate
+// :::Offset
+// :::Push
+// :::Pull
+// :Large Columns
+// ::Generate
+// ::Manipulate
+// :::Offset
+// :::Push
+// :::Pull
+</span>
+<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Container
+//
+// Centered container element
+//
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="err">.</span><span class="na">container-fixed</span><span class="err">( @</span><span class="na">gutter</span><span class="p">:</span> <span class="o">@</span><span class="n">grid-gutter-width</span><span class="p">;</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="o">@</span><span class="n">screen-lg</span><span class="p">;</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span><span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span><span class="p">);</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span><span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span><span class="p">);</span>
+
+<span class="p">}</span>
+<span class="err">.</span><span class="na">container-fluid</span><span class="err">( @</span><span class="na">gutter</span><span class="p">:</span> <span class="o">@</span><span class="n">grid-gutter-width</span><span class="p">;</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span><span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span><span class="p">);</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span><span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span><span class="p">);</span>
+
+    <span class="k">&amp;</span>  <span class="o">&gt;</span> <span class="nc">.row</span> <span class="p">{</span>
+        <span class="nc">.make-row</span><span class="o">()</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Row
+//
+// Creates a wrapper for a series of columns
+//
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="err">.</span><span class="na">make-row</span><span class="err">( @</span><span class="na">gutter</span><span class="p">:</span> <span class="o">@</span><span class="n">grid-gutter-width</span><span class="p">;</span> <span class="k">@gutter-sm</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-sm</span><span class="p">;</span> <span class="k">@gutter-md</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-md</span><span class="p">;</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">margin-left</span><span class="p">:</span>  <span class="p">(</span><span class="o">@</span><span class="n">gutter</span><span class="o">/</span> <span class="m">-2</span><span class="p">);</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="p">(</span><span class="o">@</span><span class="n">gutter</span><span class="o">/</span> <span class="m">-2</span><span class="p">);</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-sm-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">margin-left</span><span class="p">:</span>  <span class="p">(</span><span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">-2</span><span class="p">);</span>
+        <span class="nl">margin-right</span><span class="p">:</span> <span class="p">(</span><span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">-2</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-md-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">margin-left</span><span class="p">:</span>  <span class="p">(</span><span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">-2</span><span class="p">);</span>
+        <span class="nl">margin-right</span><span class="p">:</span> <span class="p">(</span><span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">-2</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Extra Small Columns
+//
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+// Generate
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="nc">.make-xs-column</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span><span class="p">;</span> <span class="k">@gutter</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width</span><span class="p">;</span> <span class="k">@gutter-sm</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-sm</span><span class="p">;</span> <span class="k">@gutter-md</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-md</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="nl">min-width</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-sm-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-md-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//----------------------------------------------------------------------------------------------------------------------
+// Manipulate
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="nc">.make-xs-column-offset</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.make-xs-column-push</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.make-xs-column-pull</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Small Columns
+//
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+// Generate
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="nc">.make-sm-column</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span><span class="p">;</span> <span class="k">@gutter</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width</span><span class="p">;</span> <span class="k">@gutter-sm</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-sm</span><span class="p">;</span> <span class="k">@gutter-md</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-md</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="c1">// Inner gutter via padding
+</span>    <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-sm-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-md-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// Calculate width based on number of columns available
+</span>    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-sm-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nl">min-width</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//----------------------------------------------------------------------------------------------------------------------
+// Manipulate
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="nc">.make-sm-column-offset</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-sm-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">margin-left</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nc">.make-sm-column-push</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-sm-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">left</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nc">.make-sm-column-pull</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-sm-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">right</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Medium Columns
+//
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+// Generate
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="nc">.make-md-column</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span><span class="p">;</span> <span class="k">@gutter</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width</span><span class="p">;</span> <span class="k">@gutter-sm</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-sm</span><span class="p">;</span> <span class="k">@gutter-md</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-md</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-sm-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-md-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// Calculate width based on number of columns available
+</span>    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-md-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nl">min-width</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//----------------------------------------------------------------------------------------------------------------------
+// Manipulate
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="nc">.make-md-column-offset</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-md-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">margin-left</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nc">.make-md-column-push</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-md-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">left</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nc">.make-md-column-pull</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-md-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">right</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Large Columns
+//
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+// Generate
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="nc">.make-lg-column</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span><span class="p">;</span> <span class="k">@gutter</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width</span><span class="p">;</span> <span class="k">@gutter-sm</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-sm</span><span class="p">;</span> <span class="k">@gutter-md</span><span class="nd">:</span> <span class="o">@</span><span class="nt">grid-gutter-width-md</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-sm-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter-sm</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">@media</span><span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-md-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span>  <span class="p">(</span> <span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="p">(</span> <span class="o">@</span><span class="n">gutter-md</span> <span class="o">/</span> <span class="m">2</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// Calculate width based on number of columns available
+</span>    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-lg-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+        <span class="nl">min-width</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//----------------------------------------------------------------------------------------------------------------------
+// Manipulate
+//----------------------------------------------------------------------------------------------------------------------
+</span><span class="nc">.make-lg-column-offset</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-lg-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">margin-left</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nc">.make-lg-column-push</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-lg-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">left</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nc">.make-lg-column-pull</span><span class="o">(</span> <span class="o">@</span><span class="nt">columns</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="k">@media</span> <span class="p">(</span> <span class="n">min-width</span><span class="o">:</span> <span class="o">@</span><span class="n">screen-lg-min</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nl">right</span><span class="p">:</span> <span class="nf">percentage</span><span class="p">(</span> <span class="p">(</span> <span class="o">@</span><span class="n">columns</span> <span class="o">/</span> <span class="o">@</span><span class="n">grid-columns</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+
+  <h4>Example usage</h4>
+  <p>You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.</p>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.wrapper</span> <span class="p">{</span>
+  <span class="nc">.make-row</span><span class="o">()</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.content-main</span> <span class="p">{</span>
+  <span class="nc">.make-lg-column</span><span class="o">(</span><span class="nt">8</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.content-secondary</span> <span class="p">{</span>
+  <span class="nc">.make-lg-column</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span><span class="p">;</span>
+  <span class="nc">.make-lg-column-offset</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content-main"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content-secondary"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+      <!-- Footer
+================================================== -->
+<footer class="bs-docs-footer overlay-dark-1" role="contentinfo">
+  <div class="container">
+      <div class="row">
+          <div class="row col-sm-10 col-sm-offset-1 ">
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/getting-started/">Getting Started</a></li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/layouts/">Layouts</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/color/">Color</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/grid/">Grid</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/containers/">Containers</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/groups/">Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/cards/">Cards</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/tiles">Tiles</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/elements/">Elements</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/typography/">Typography</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/buttons/">Buttons</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/links/">Links</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/lists/">Lists</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/inputs/">Inputs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/checkboxes-and-radios/">Checkboxes and Radios</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/images/">Images</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/rei-icons/">Icons</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/collections/">Collections</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/alerts/">Alerts</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/list-groups/">List Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/breadcrumbs/">Breadcrumbs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/button-groups/">Button Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/input-groups/">Input Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/forms/">Forms</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/tables/">Tables</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/modules/">Modules</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/tabs/">Tabs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/tool-tips/">Tool Tips</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/accordion/">Accordion</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/modals/">Modals</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/pagination/">Pagination</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/carousel/">Carousel</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/style-and-behavior/">Style and Behavior</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/utility-helpers/">Utility Helpers</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/utility-responsive/">Responsive Utilities</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/less-variables/">Less Variables</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/less-mixins/">Less Mixins</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/javascript/">Javascript Documentation</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+          </div>
+      </div>
+    <ul class="footer-inline-list">
+      <li><a class="nested" href="https://github.com/rei/rei-cedar">Github</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="/rei-cedar.js"></script>
+
+<script src="/rei-cedar-components.js"></script>
+
+<script>
+  riot.mount('*');
+</script>
+
+<script src="/assets/js/vendor/particles.min.js"></script>
+
+
+  
+  <script src="/assets/js/vendor/holder.js"></script>
+  
+  <script src="/assets/js/vendor/anchor.js"></script>
+  
+  <script src="/assets/js/src/application.js"></script>
+  
+  <script src="/assets/js/src/a11y.js"></script>
+  
+
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

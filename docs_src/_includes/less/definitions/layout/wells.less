@@ -1,0 +1,193 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'layout';
+@element : 'wells';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// REI Cedar Well
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            Well Scaffolding
+//----------------------------------------------------------------------------------------------------------------------
+.well {
+    position: relative;
+    &:extend(.clearfix all);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Size variations
+//----------------------------------------------------------------------------------------------------------------------
+.well {
+    padding: @well-spacer-inner-y @well-spacer-inner-x;
+    margin-bottom: @well-spacer-outer-y;
+    &.well-lg {
+        padding: @well-spacer-inner-lg-x;
+    }
+    &.well-sm {
+        padding: @well-spacer-inner-sm-x;
+    }
+    &.well-collapse {
+        margin-bottom: 0;
+    }
+    & *:last-child {
+    margin-bottom: 0;
+    }
+}
+
+// Well shapes and shape groups
+.well-mountain-group {
+    .well {
+        &:not(:last-of-type) {
+            padding-bottom: (2rem + @vertical-push);
+           margin-bottom: 0;
+            @media (min-width: @screen-sm-min) {
+                padding-bottom: (4rem + @vertical-push);
+            }
+        }
+        &.text-center,
+        &.text-right{
+            .shape-mountain {
+                transform: translate(-4.2rem, -3.2rem);
+                @media (min-width: @screen-sm-min) {
+                    transform: translate(-7.2rem, -4.2rem);
+                }
+            }
+        }
+        .shape-mountain {
+            transform: translate(0, -3.2rem);
+            @media (min-width: @screen-sm-min) {
+                transform: translate(0, -4.2rem);
+            }
+        }
+    }
+}
+
+// shapes
+.shape-mountain {
+    .twin-mountain-peaks();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Deprecated Background color / text color classes
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.overlay-dark{ &:extend( .overlay-dark-1 ); }
+.overlay-medium{ &:extend( .overlay-dark-2 ); }
+.overlay-light{ &:extend( .overlay-light-1 ); }
+// Explore
+.overlay-explore-dark,
+.well.overlay-explore-dark {
+    &:extend( .explore );
+    @bg-explore-2-ruleset();
+    .checkbox-radio-color-variant( @core-architectural-1; );
+}
+.overlay-explore-light,
+.well.overlay-explore-light {
+    @bg-explore-1-ruleset();
+}
+
+.overlay-outlet-dark-1,
+.well.overlay-outlet-dark-1 {
+    @bg-brand-danger-background-dark-ruleset();
+    .checkbox-radio-color-variant( @core-architectural-1; );
+}
+
+// dark backgrounds
+.overlay-dark-1,
+.well.overlay-dark-1 {
+    @background-black-ruleset();
+    .checkbox-radio-color-variant( @core-architectural-1; );
+}
+.overlay-dark-2,
+.well.overlay-dark-2 {
+    @background-grey-4-ruleset();
+    .checkbox-radio-color-variant( @core-architectural-2; );
+}
+
+//Mid-tone backgrounds
+.overlay-medium-1,
+.well.overlay-medium-1 {
+    @background-grey-3-ruleset();
+    .checkbox-radio-color-variant( @core-architectural-3; );
+}
+.overlay-medium-2,
+.well.overlay-medium-2 {
+    @background-grey-2-ruleset();
+}
+
+// Light backgrounds
+.overlay-light-1,
+.well.overlay-light-1 {
+    @background-white-ruleset();
+}
+.overlay-light-2,
+.well.overlay-light-2 {
+    @background-grey-1-ruleset();
+}
+.overlay-light-3,
+.well.overlay-light-3 {
+    @background-dusty-white-ruleset();
+}
+
+.well-lg {
+    padding: @padding-xlarge;
+}
+.well-sm {
+    padding: 0.9rem;
+}
+.well-collapse {
+    margin-bottom: 0;
+}
+
+//Explore theme
+.explore {
+    .link-body {
+        &:extend( .link-explore all );
+        .overlay-dark-1 & {
+            &:extend( .link-explore-overlay all );
+        }
+    }
+    // buttons
+    .btn-primary {
+        &:extend( .btn-explore all );
+    }
+    .btn-link {
+        &:extend( .link_stag-explore all );
+        .overlay-dark-1 & {
+            &:extend( .link_stag-explore-overlay all );
+        }
+    }
+    //lists
+    .breadcrumb {
+        > li {
+            a {
+                &:extend( .link-explore-crumb );
+                font-size: @font-size-smaller;
+            }
+        }
+    }
+}
+
+.overlay-dark-1,
+.overlay-dark-2 {
+    .input-group-addon {
+        border: none;
+        padding: 0 0 0 @padding-base-horizontal;
+    }
+    .input-group {
+        .form-control {
+            background-color: inherit;
+            color: inherit;
+            &:focus,
+            &:active {
+                border-color: @core-architectural-5;
+            }
+        }
+    }
+}

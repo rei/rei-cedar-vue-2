@@ -1,0 +1,11 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            Group columns
+//----------------------------------------------------------------------------------------------------------------------
+.group-col-variant( @number; @class; @index: 1; ) when ( @index =< @number ) {
+  >.col-@{class}-@{index} {
+    min-width: ( @index * 100% / @number );
+    width: ( @index * 100% / @number );
+    flex-grow: @index;
+  }
+  .group-col-variant( @number; @class; (@index + 1) );
+}

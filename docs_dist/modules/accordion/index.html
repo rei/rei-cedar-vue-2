@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="REI Cedar Style Framework, built on Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.">
+<meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
+<meta name="author" content="REI FED, IXD, UX, and the Bootstrap team">
+
+<title>
+  
+    Accordion &middot; REI Cedar Style Framework
+  
+</title>
+
+<script src="https://cdn.jsdelivr.net/riot/2.4.1/riot.min.js"></script>
+
+<link href="/rei-cedar.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,700" rel="stylesheet">
+
+<!-- Documentation extras -->
+<link href="/assets/css/src/docs.css" rel="stylesheet">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-146052-10', 'getbootstrap.com');
+  ga('send', 'pageview');
+</script>
+
+  </head>
+  <body>
+    <div>
+      <a id="skippy" class="skip-nav-link sr-only sr-only-focusable" href="#content">
+          <div class="container">
+              <span class="skiplink-text">Skip to main content</span>
+          </div>
+      </a>
+    </div>
+
+      <!-- Docs master nav -->
+
+
+      <!-- Docs page layout -->
+      <div class="bs-docs-header bs-docs-content" id="content" tabindex="-1">
+        <div class="container">
+          <h1 class="heading-hero">Accordion</h1>
+          <p></p>
+        </div>
+      </div>
+      <div class="overlay-dark-1 ui-navigation">
+          <div class="container">
+              <div class="row">
+                    <button type="button" class="btn btn-block btn-contrast btn-primary hidden-md hidden-lg"
+                      data-toggle="collapse"
+                      aria-expanded="false"
+                      aria-controls="pattern_navigation"
+                      data-target="#pattern_navigation"
+                      aria-label="Navigation Toggle">
+                        <span class="icon icon-rei-hamburger-menu" aria-hidden="true"></span>
+                    </button>
+                    <nav id="pattern_navigation" aria-label="Primary Navigation" role="navigation" class="collapse">
+                        <div id="current" class="hidden">current page</div>
+<ul id="js-a11ynav" class="doc_head-navigation">
+    
+    <li class="doc_head-navigation-item home">
+        <a href="/" class="link_stag-explore-overlay">REI Pattern Library</a>
+    </li>
+    
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/getting-started/"
+          >
+            Getting Started
+        </a>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/layouts/"
+          >
+            Layouts
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/layouts/color/"
+                  >
+                    Color
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/grid/"
+                  >
+                    Grid
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/containers/"
+                  >
+                    Containers
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/groups/"
+                  >
+                    Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/cards/"
+                  >
+                    Cards
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/tiles"
+                  >
+                    Tiles
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/elements/"
+          >
+            Elements
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/elements/typography/"
+                  >
+                    Typography
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/buttons/"
+                  >
+                    Buttons
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/links/"
+                  >
+                    Links
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/lists/"
+                  >
+                    Lists
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/inputs/"
+                  >
+                    Inputs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/checkboxes-and-radios/"
+                  >
+                    Checkboxes and Radios
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/images/"
+                  >
+                    Images
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/rei-icons/"
+                  >
+                    Icons
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/collections/"
+          >
+            Collections
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/collections/alerts/"
+                  >
+                    Alerts
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/list-groups/"
+                  >
+                    List Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/breadcrumbs/"
+                  >
+                    Breadcrumbs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/button-groups/"
+                  >
+                    Button Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/input-groups/"
+                  >
+                    Input Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/forms/"
+                  >
+                    Forms
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/tables/"
+                  >
+                    Tables
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/modules/"
+          >
+            Modules
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/modules/tabs/"
+                  >
+                    Tabs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/tool-tips/"
+                  >
+                    Tool Tips
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/accordion/"
+                  aria-describedby="current">
+                    Accordion
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/modals/"
+                  >
+                    Modals
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/pagination/"
+                  >
+                    Pagination
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/carousel/"
+                  >
+                    Carousel
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/style-and-behavior/"
+          >
+            Style and Behavior
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/utility-helpers/"
+                  >
+                    Utility Helpers
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/utility-responsive/"
+                  >
+                    Responsive Utilities
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/less-variables/"
+                  >
+                    Less Variables
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/less-mixins/"
+                  >
+                    Less Mixins
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/javascript/"
+                  >
+                    Javascript Documentation
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+</ul>
+
+                    </nav>
+              </div>
+          </div>
+      </div>
+      <div class="container vertical-pull-2" role="main">
+        <div class="row">
+            
+            <div class="col-md-3 pull-right" role="complementary">
+                <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+                    <ul class="ui list-menu">
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="#content">Back to top</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+          <div class="col-md-9 " role="main">
+              <h2 id="collapse" class="status status-chat page-header">Collapse <small>collapse.js</small></h2>
+
+  <p class="lead">Flexible plugin that utilizes a handful of classes for easy toggle behavior.</p>
+
+  <div class="bs-callout bs-callout-danger" id="callout-collapse-dependency">
+    <h6>Plugin dependency</h6>
+    <p>Collapse requires the <a href="/forms/#transitions">transitions plugin</a> to be included in your version of Bootstrap.</p>
+  </div>
+
+  <h3 id="collapse-example">Example</h3>
+  <p>Click the buttons below to show and hide another element via class changes:</p>
+  <ul>
+    <li><code>.collapse</code> hides content</li>
+    <li><code>.collapsing</code> is applied during transitions</li>
+    <li><code>.collapse.in</code> shows content</li>
+  </ul>
+  <p>You can use a link with the <code>href</code> attribute, or a button with the <code>data-target</code> attribute. In both cases, the <code>data-toggle="collapse"</code> is required.</p>
+
+  <div class="well">
+    <p>
+      <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Link with href
+      </a>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Button with data-target
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="well">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+      </div>
+    </div>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">href=</span><span class="s">"#collapseExample"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-controls=</span><span class="s">"collapseExample"</span><span class="nt">&gt;</span>
+  Link with href
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#collapseExample"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-controls=</span><span class="s">"collapseExample"</span><span class="nt">&gt;</span>
+  Button with data-target
+<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse"</span> <span class="na">id=</span><span class="s">"collapseExample"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"well"</span><span class="nt">&gt;</span>
+    ...
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+  <h3 id="collapse-example-accordion" class="status status-chat">Accordion example</h3>
+  <p>Extend the default collapse behavior to create an accordion with the panel component.</p>
+
+  <div class="well" data-example-id="collapse-accordion">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h6 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Collapsible Group Item #1
+            </a>
+          </h6>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h6 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Collapsible Group Item #2
+            </a>
+          </h6>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h6 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Collapsible Group Item #3
+            </a>
+          </h6>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /example -->
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-group"</span> <span class="na">id=</span><span class="s">"accordion"</span> <span class="na">role=</span><span class="s">"tablist"</span> <span class="na">aria-multiselectable=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">id=</span><span class="s">"headingOne"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"panel-title"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-parent=</span><span class="s">"#accordion"</span> <span class="na">href=</span><span class="s">"#collapseOne"</span> <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-controls=</span><span class="s">"collapseOne"</span><span class="nt">&gt;</span>
+          Collapsible Group Item #1
+        <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/h6&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"collapseOne"</span> <span class="na">class=</span><span class="s">"panel-collapse collapse in"</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">aria-labelledby=</span><span class="s">"headingOne"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">id=</span><span class="s">"headingTwo"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"panel-title"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapsed"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-parent=</span><span class="s">"#accordion"</span> <span class="na">href=</span><span class="s">"#collapseTwo"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-controls=</span><span class="s">"collapseTwo"</span><span class="nt">&gt;</span>
+          Collapsible Group Item #2
+        <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/h6&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"collapseTwo"</span> <span class="na">class=</span><span class="s">"panel-collapse collapse"</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">aria-labelledby=</span><span class="s">"headingTwo"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">id=</span><span class="s">"headingThree"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"panel-title"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapsed"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-parent=</span><span class="s">"#accordion"</span> <span class="na">href=</span><span class="s">"#collapseThree"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-controls=</span><span class="s">"collapseThree"</span><span class="nt">&gt;</span>
+          Collapsible Group Item #3
+        <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/h6&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"collapseThree"</span> <span class="na">class=</span><span class="s">"panel-collapse collapse"</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">aria-labelledby=</span><span class="s">"headingThree"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+  <div class="panel-group" role="tablist">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
+        <h6 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
+            Collapsible list group
+          </a>
+        </h6>
+      </div>
+      <div id="collapseListGroup1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+        <ul class="list-group">
+          <li class="list-group-item">Bootply</li>
+          <li class="list-group-item">One itmus ac facilin</li>
+          <li class="list-group-item">Second eros</li>
+        </ul>
+        <div class="panel-footer">Footer</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-callout bs-callout-warning" id="callout-collapse-accessibility">
+    <h6>Make expand/collapse controls accessible</h6>
+    <p>Be sure to add <code>aria-expanded</code> to the control element. This attribute explicitly defines the current state of the collapsible element to screen readers and similar assistive technologies. If the collapsible element is closed by default, it should have a value of <code>aria-expanded="false"</code>. If you've set the collapsible element to be open by default using the <code>in</code> class, set <code>aria-expanded="true"</code> on the control instead. The plugin will automatically toggle this attribute based on whether or not the collapsible element has been opened or closed.</p>
+    <p>Additionally, if your control element is targetting a single collapsible element – i.e. the <code>data-target</code> attribute is pointing to an <code>id</code> selector – you may add an additional <code>aria-controls</code> attribute to the control element, containing the <code>id</code> of the collapsible element. Modern screen readers and similar assistive technologies make use of this attribute to provide users with additional shortcuts to navigate directly to the collapsible element itself.</p>
+  </div>
+
+  <h4 id="collapse-usage">Usage</h4>
+  <p>The collapse plugin utilizes a few classes to handle the heavy lifting:</p>
+  <ul>
+    <li><code>.collapse</code> hides the content</li>
+    <li><code>.collapse.in</code> shows the content</li>
+    <li><code>.collapsing</code> is added when the transition starts, and removed when it finishes</li>
+  </ul>
+  <p>These classes can be found in <code>component-animations.less</code>.</p>
+
+  <h5>Via data attributes</h5>
+  <p>Just add <code>data-toggle="collapse"</code> and a <code>data-target</code> to the element to automatically assign control of a collapsible element. The <code>data-target</code> attribute accepts a CSS selector to apply the collapse to. Be sure to add the class <code>collapse</code> to the collapsible element. If you'd like it to default open, add the additional class <code>in</code>.</p>
+  <p>To add accordion-like group management to a collapsible control, add the data attribute <code>data-parent="#selector"</code>. Refer to the demo to see this in action.</p>
+
+  <h5>Via JavaScript</h5>
+  <p>Enable manually with:</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'.collapse'</span><span class="p">).</span><span class="nx">collapse</span><span class="p">()</span></code></pre></figure>
+
+  <h5 id="collapse-options">Options</h5>
+  <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-parent=""</code>.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped js-options-table">
+      <thead>
+       <tr>
+         <th>Name</th>
+         <th>type</th>
+         <th>default</th>
+         <th>description</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>parent</td>
+         <td>selector</td>
+         <td>false</td>
+         <td>If a selector is provided, then all collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior - this is dependent on the <code>panel</code> class)</td>
+       </tr>
+       <tr>
+         <td>toggle</td>
+         <td>boolean</td>
+         <td>true</td>
+         <td>Toggles the collapsible element on invocation</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+
+  <h5 id="collapse-methods">Methods</h5>
+
+  <h6><code>.collapse(options)</code></h6>
+  <p>Activates your content as a collapsible element. Accepts an optional options <code>object</code>.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#myCollapsible'</span><span class="p">).</span><span class="nx">collapse</span><span class="p">({</span>
+  <span class="na">toggle</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">})</span></code></pre></figure>
+
+  <h6><code>.collapse('toggle')</code></h6>
+  <p>Toggles a collapsible element to shown or hidden.</p>
+
+  <h6><code>.collapse('show')</code></h6>
+  <p>Shows a collapsible element.</p>
+
+  <h6><code>.collapse('hide')</code></h6>
+  <p>Hides a collapsible element.</p>
+
+  <h5 id="collapse-events">Events</h5>
+  <p>Bootstrap's collapse class exposes a few events for hooking into collapse functionality.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped bs-events-table">
+      <thead>
+       <tr>
+         <th>Event Type</th>
+         <th>Description</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>show.bs.collapse</td>
+         <td>This event fires immediately when the <code>show</code> instance method is called.</td>
+       </tr>
+       <tr>
+         <td>shown.bs.collapse</td>
+         <td>This event is fired when a collapse element has been made visible to the user (will wait for CSS transitions to complete).</td>
+       </tr>
+       <tr>
+         <td>hide.bs.collapse</td>
+         <td>
+          This event is fired immediately when the <code>hide</code> method has been called.
+         </td>
+       </tr>
+       <tr>
+         <td>hidden.bs.collapse</td>
+         <td>This event is fired when a collapse element has been hidden from the user (will wait for CSS transitions to complete).</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#myCollapsible'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'hidden.bs.collapse'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// do something…</span>
+<span class="p">})</span></code></pre></figure>
+
+
+          </div>
+        </div>
+      </div>
+      <!-- Footer
+================================================== -->
+<footer class="bs-docs-footer overlay-dark-1" role="contentinfo">
+  <div class="container">
+      <div class="row">
+          <div class="row col-sm-10 col-sm-offset-1 ">
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/getting-started/">Getting Started</a></li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/layouts/">Layouts</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/color/">Color</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/grid/">Grid</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/containers/">Containers</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/groups/">Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/cards/">Cards</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/tiles">Tiles</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/elements/">Elements</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/typography/">Typography</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/buttons/">Buttons</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/links/">Links</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/lists/">Lists</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/inputs/">Inputs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/checkboxes-and-radios/">Checkboxes and Radios</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/images/">Images</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/rei-icons/">Icons</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/collections/">Collections</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/alerts/">Alerts</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/list-groups/">List Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/breadcrumbs/">Breadcrumbs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/button-groups/">Button Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/input-groups/">Input Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/forms/">Forms</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/tables/">Tables</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/modules/">Modules</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/tabs/">Tabs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/tool-tips/">Tool Tips</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/accordion/">Accordion</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/modals/">Modals</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/pagination/">Pagination</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/carousel/">Carousel</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/style-and-behavior/">Style and Behavior</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/utility-helpers/">Utility Helpers</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/utility-responsive/">Responsive Utilities</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/less-variables/">Less Variables</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/less-mixins/">Less Mixins</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/javascript/">Javascript Documentation</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+          </div>
+      </div>
+    <ul class="footer-inline-list">
+      <li><a class="nested" href="https://github.com/rei/rei-cedar">Github</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="/rei-cedar.js"></script>
+
+<script src="/rei-cedar-components.js"></script>
+
+<script>
+  riot.mount('*');
+</script>
+
+<script src="/assets/js/vendor/particles.min.js"></script>
+
+
+  
+  <script src="/assets/js/vendor/holder.js"></script>
+  
+  <script src="/assets/js/vendor/anchor.js"></script>
+  
+  <script src="/assets/js/src/application.js"></script>
+  
+  <script src="/assets/js/src/a11y.js"></script>
+  
+
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

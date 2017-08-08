@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="REI Cedar Style Framework, built on Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.">
+<meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
+<meta name="author" content="REI FED, IXD, UX, and the Bootstrap team">
+
+<title>
+  
+    Buttons &middot; REI Cedar Style Framework
+  
+</title>
+
+<script src="https://cdn.jsdelivr.net/riot/2.4.1/riot.min.js"></script>
+
+<link href="/rei-cedar.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,700" rel="stylesheet">
+
+<!-- Documentation extras -->
+<link href="/assets/css/src/docs.css" rel="stylesheet">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-146052-10', 'getbootstrap.com');
+  ga('send', 'pageview');
+</script>
+
+  </head>
+  <body>
+    <div>
+      <a id="skippy" class="skip-nav-link sr-only sr-only-focusable" href="#content">
+          <div class="container">
+              <span class="skiplink-text">Skip to main content</span>
+          </div>
+      </a>
+    </div>
+
+      <!-- Docs master nav -->
+
+
+      <!-- Docs page layout -->
+      <div class="bs-docs-header bs-docs-content" id="content" tabindex="-1">
+        <div class="container">
+          <h1 class="heading-hero">Buttons</h1>
+          <p>Buttons, buttons, and more buttons - all sizes, states, and statuses (and much more)!</p>
+        </div>
+      </div>
+      <div class="overlay-dark-1 ui-navigation">
+          <div class="container">
+              <div class="row">
+                    <button type="button" class="btn btn-block btn-contrast btn-primary hidden-md hidden-lg"
+                      data-toggle="collapse"
+                      aria-expanded="false"
+                      aria-controls="pattern_navigation"
+                      data-target="#pattern_navigation"
+                      aria-label="Navigation Toggle">
+                        <span class="icon icon-rei-hamburger-menu" aria-hidden="true"></span>
+                    </button>
+                    <nav id="pattern_navigation" aria-label="Primary Navigation" role="navigation" class="collapse">
+                        <div id="current" class="hidden">current page</div>
+<ul id="js-a11ynav" class="doc_head-navigation">
+    
+    <li class="doc_head-navigation-item home">
+        <a href="/" class="link_stag-explore-overlay">REI Pattern Library</a>
+    </li>
+    
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/getting-started/"
+          >
+            Getting Started
+        </a>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/layouts/"
+          >
+            Layouts
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/layouts/color/"
+                  >
+                    Color
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/grid/"
+                  >
+                    Grid
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/containers/"
+                  >
+                    Containers
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/groups/"
+                  >
+                    Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/cards/"
+                  >
+                    Cards
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/layouts/tiles"
+                  >
+                    Tiles
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/elements/"
+          >
+            Elements
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/elements/typography/"
+                  >
+                    Typography
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/buttons/"
+                  aria-describedby="current">
+                    Buttons
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/links/"
+                  >
+                    Links
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/lists/"
+                  >
+                    Lists
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/inputs/"
+                  >
+                    Inputs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/checkboxes-and-radios/"
+                  >
+                    Checkboxes and Radios
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/images/"
+                  >
+                    Images
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/elements/rei-icons/"
+                  >
+                    Icons
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/collections/"
+          >
+            Collections
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/collections/alerts/"
+                  >
+                    Alerts
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/list-groups/"
+                  >
+                    List Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/breadcrumbs/"
+                  >
+                    Breadcrumbs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/button-groups/"
+                  >
+                    Button Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/input-groups/"
+                  >
+                    Input Groups
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/forms/"
+                  >
+                    Forms
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/collections/tables/"
+                  >
+                    Tables
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/modules/"
+          >
+            Modules
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/modules/tabs/"
+                  >
+                    Tabs
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/tool-tips/"
+                  >
+                    Tool Tips
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/accordion/"
+                  >
+                    Accordion
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/modals/"
+                  >
+                    Modals
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/pagination/"
+                  >
+                    Pagination
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/modules/carousel/"
+                  >
+                    Carousel
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+    <li class="doc_head-navigation-item ">
+        <a href="/style-and-behavior/"
+          >
+            Style and Behavior
+        </a>
+        
+        <ul class="doc_head-navigation-nested-list">
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/utility-helpers/"
+                  >
+                    Utility Helpers
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/utility-responsive/"
+                  >
+                    Responsive Utilities
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/less-variables/"
+                  >
+                    Less Variables
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/less-mixins/"
+                  >
+                    Less Mixins
+                </a>
+            </li>
+            
+            <li class="nested-item">
+                <a href="/style-and-behavior/javascript/"
+                  >
+                    Javascript Documentation
+                </a>
+            </li>
+            
+        </ul>
+        
+    </li>
+    
+</ul>
+
+                    </nav>
+              </div>
+          </div>
+      </div>
+      <div class="container vertical-pull-2" role="main">
+        <div class="row">
+            
+            <div class="col-md-3 pull-right" role="complementary">
+                <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+                    <ul class="ui list-menu">
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="#nav-buttons">Overview</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#nav-button-secondary">Variant buttons</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#nav-button-group">Button Groups</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#nav-button-filters">Filters</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#nav-input-groups-buttons">Buttons and other elements</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#nav-Stateful-buttons">Stateful Buttons</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#nav-Single-toggle">Toggle</a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a href="#content">Back to top</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+          <div class="col-md-9 " role="main">
+            <section class="vertical-push-3">
+    <h2 id="nav-buttons">Buttons</h2>
+<ol class="list-inline list-inline-md list-inline-pipe text-xs-right">
+    <li>
+        <a href="https://brand.ai/rei-digital-experience-team/digital-rei-brand/?key=rJf4Z1nS7Z" target="_blank">
+          <span class="icon icon-rei-external-link" aria-hidden="true">
+          Design assets
+        </a>
+    </li>
+    <li>
+        <a href="http://rei.github.io/rei-cedar/#cdr-button" target="_blank">
+          <span class="icon icon-rei-external-link" aria-hidden="true">
+          Cedar v2 API
+        </a>
+    </li>
+</ol>
+    <div class="well well-tabs" role="tabpanel" data-example-id="togglable-tabs">
+        <ul id="buttons" class="nav-tabs tab-docs vertical-push-2" role="tablist">
+          <li role="presentation" class="active"><a href="#usage" id="usage-tab" role="tab" data-toggle="tab" aria-controls="usage" aria-expanded="true">Usage</a></li>
+          <li role="presentation"><a href="#implementation" role="tab" id="implementation-tab" data-toggle="tab" aria-controls="implementation">implementation</a></li>
+        </ul>
+        <div id="usageContent" class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="usage" aria-labelledBy="usage-tab">
+                <section>
+        <p> Buttons are meant for transactional use. They can be considered the "utilitarian"
+            buttons, seen within product focused areas of the site, like Search Results, Product Details, or login
+            pages.
+            These buttons help the user act on an informational, research or purchase path of an REI product.
+        </p>
+        <p> Button examples: "Submit", "Checkout", "Add to cart", "See more", "Continue shopping".</p>
+        <hr/>
+
+        <cdr-well-docs example-title="Primary button" element-id="button-primary">
+            <yield to="example-description">
+               <p> Use for a single transactional CTA; when only one action is needed.</p>
+               <p> When grouped, it is used for the primary action of the grouping.</p>
+            </yield>
+            <yield to="example">
+              <div class="well well-lg">
+                  <div class="btn-group inline-group">
+                        <button type="button" class="btn btn-primary">
+                            Primary button
+                        </button>
+                        <button type="button" class="btn btn-primary active">
+                            "Active"
+                        </button>
+                        <button type="button" class="btn btn-primary focus">
+                            "Focused"
+                        </button>
+                        <button type="button" class="btn btn-primary" disabled>
+                            disabled
+                        </button>
+                    </div>
+                </div>
+                <div class="well">
+                  <h3 class="h4">Button sizes and shapes</h3>
+                    <div class="group group-display-fixed group-gutter-xs-open-10">
+
+                        <div class="col-xs-12 col-sm-6">
+                            <section>
+                               <div class="well well-lg" data-theme="light-20">
+                                    <button type="button" class="center-block btn btn-primary btn-sm">
+                                        Small
+                                    </button>
+                                </div>
+                                <p class="vertical-pull">
+                                   These smaller transaction buttons are used in conjunction with inline form fields or when repeated in a list such as "Register" on a classes and Events page. Hover / Active / Focus states match "Large" styling definition.
+                                </p>
+                            </section>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <section>
+                                <div class="well well-lg" data-theme="light-20">
+                                    <button type="button" class="center-block btn btn-primary btn-xs">
+                                        extra-Small
+                                    </button>
+                                </div>
+                                <p class="vertical-pull">
+                                    For use in very limited situations where space is at an extreme premium. Example: "Compare" buttons on search results. Hover / Active / Focus states match "Large" styling definition.
+                                </p>
+                            </section>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <section>
+                                <div class="well well-lg" data-theme="light-20">
+                                    <button type="button" class="btn btn-primary btn-block" data-example-id="button-primary-core-block">Block button</button>
+                                </div>
+                                <p class="vertical-pull">
+                                   Use the full breakpoint width in XS grid.
+                                   Width: mobile version extends to full breakpoint size (Minus gutter).
+                                   Text: <b>sentence case</b>(horizontally centered within button).
+                                </p>
+                            </section>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <section>
+                                <div class="well well-lg" data-theme="light-20">
+                                     <button type="button" class="center-block btn btn-primary btn-fixed">Fixed button</button>
+                                </div>
+                                <p class="vertical-pull">
+                                    In specific cases (recommended for hub or campaign pages only)
+                                    This default behavior can be overridden, resulting in a narrower style identical to larger breakpoints. Alignment should align with parent style.
+                                    Text: <b>sentence case</b>(horizontally centered within button).
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </yield>
+            <yield to="codeblock">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>
+Primary button
+<span class="nt">&lt;/button&gt;</span>
+            </code></pre></figure>
+            </yield>
+        </cdr-well-docs>
+
+        <cdr-well-docs example-title="Secondary button" element-id="button-secondary">
+            <yield to="example-description">
+               <p>Pair this button with the Primary CORE button when 2 CTAs are needed.</p>
+
+                <p>When grouped, it is the second-choice button, placed second in-line.</p>
+
+                <p>Examples: Cancel, Find in store</p>
+            </yield>
+            <yield to="example">
+               <div class="well well-lg">
+                  <div class="btn-group inline-group">
+                    <button type="button" class="btn btn-default">
+                        Secondary button
+                    </button>
+                    <button type="button" class="btn btn-default active">
+                        "Active"
+                    </button>
+                    <button type="button" class="btn btn-default focus">
+                        "Focused"
+                        </button>
+                    <button type="button" class="btn btn-default" disabled>
+                        disabled
+                    </button>
+                    </div>
+                </div>
+            </yield>
+            <yield to="codeblock">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+Secondary Core button
+<span class="nt">&lt;/button&gt;</span>
+            </code></pre></figure>
+            </yield>
+        </cdr-well-docs>
+
+        <cdr-well-docs example-title="Black Alternate" element-id="black-alternate">
+            <yield to="example-description">
+               Use this as the alternate choice when the Core Primary Blue button will clash with a photographic or colored background.
+            </yield>
+            <yield to="example">
+                <div class="well well-lg">
+                    <button type="button" class="center-block btn btn-contrast btn-primary">
+                        High contrast button
+                    </button>
+                </div>
+            </yield>
+            <yield to="codeblock">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn  btn-contrast btn-primary"</span><span class="nt">&gt;</span>
+High contrast button
+<span class="nt">&lt;/button&gt;</span>
+            </code></pre></figure>
+            </yield>
+        </cdr-well-docs>
+
+        <cdr-well-docs example-title="White Alternate" example-theme="dark-20" element-id="white-alternate">
+            <yield to="example-description">
+               For use on dark backgrounds where the border of the CORE Secondary button would become lost and effect
+                the visual alignment of a button parring.
+            </yield>
+            <yield to="example">
+                <div class="well well-lg" data-theme="dark-20">
+                    <button type="button" class="center-block btn btn-contrast btn-default">
+                        High contrast button
+                    </button>
+                </div>
+            </yield>
+            <yield to="codeblock">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-contrast btn-default"</span><span class="nt">&gt;</span>
+    High contrast button
+<span class="nt">&lt;/button&gt;</span>
+            </code></pre></figure>
+            </yield>
+        </cdr-well-docs>
+
+        <cdr-well-docs example-title="Link button" element-id="link-button">
+            <yield to="example">
+                <div class="well well-lg">
+                    <button type="button" class="center-block btn btn-link">
+                        Link button
+                    </button>
+                </div>
+            </yield>
+            <yield to="codeblock">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-contrast btn-default"</span><span class="nt">&gt;</span>
+    High contrast button
+<span class="nt">&lt;/button&gt;</span>
+            </code></pre></figure>
+            </yield>
+        </cdr-well-docs>
+
+             <cdr-well-docs example-title="Play Video" element-id="buttons-with-icons">
+            <yield to="example-description">
+            <p>
+            For use when a button activates a video player.
+            (See Links reference for a "Play Video link with icon" alternative.)
+            </p>
+            </yield>
+            <yield to="example">
+                <div class="group group-display-fixed group-gutter-xs-open-10">
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn__link-inline-play">
+                            <span class="icon icon-rei-play-small" aria-hidden="true">
+                            </span>Play video text link
+                        </button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn-play">
+                            <span class="icon icon-rei-play-small" aria-hidden="true"></span>Play video
+                        </button>
+                    </div>
+                </div>
+            </yield>
+            <yield to="codeblock">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"> <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn__link-inline-play"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-rei-play-small"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    Play video
+<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-play"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-rei-play-small"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    Play video
+<span class="nt">&lt;/button&gt;</span>
+            </code></pre></figure>
+            </yield>
+        </cdr-well-docs>
+
+        <cdr-well-docs example-title="Close buttons" element-id="close-buttons">
+        <yield to="example-description">
+        <p>
+            Use the generic close icon for dismissing content like modals and alerts.
+        </p>
+        </yield>
+        <yield to="example">
+            <div class="group group-display-fixed group-gutter-xs-open-10">
+                <div class="col-xs-12 col-sm-4">
+                    <div>
+                       <h4>Close button</h4>
+                        <div class="well well-lg" data-theme="light-20">
+                           <button type="button" class="center-block close" aria-label="Close">
+                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+                                <span class="sr-only">Close button</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div>
+                       <h4>"Active"</h4>
+                        <div class="well well-lg" data-theme="light-20">
+                           <button type="button" class="center-block close active" aria-label="Close">
+                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+                                <span class="sr-only">"Active"</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div>
+                       <h4>"Focused"</h4>
+                        <div class="well well-lg" data-theme="light-20">
+                           <button type="button" class="center-block close focus" aria-label="Close">
+                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+                                <span class="sr-only">"focused"</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </yield>
+        <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">aria-label=</span><span class="s">"Close"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-rei-close"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Example close button<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/button&gt;</span>
+        </code></pre></figure>
+        </yield>
+    </cdr-well-docs>
+</section>
+
+
+                <section class="vertical-push-3" id="button-groups">
+    <cdr-well-docs example-title="Button Groups" example-theme="dark-20" element-id="button-group">
+        <yield to="example-description">
+           <p>
+            Use buttons in these combinations to communicate hierarchy of user action. The family (Core, Explore,
+            ect)
+            color tone represents the intended primary call(s) to action.
+           </p>
+           <p> A singleton button possesses no margin</p>
+            <p> Buttons which have a previous sibling which is also a button receive a left margin however if your buttons will wrap prior to displaying block you will have an undesirable staircase. For this reason we offer the <code> btn-group inline-group </code> classes.</p>
+        </yield>
+        <yield to="example">
+            <section class="vertical-pull center-block">
+                <div class="btn-group inline-group">
+                    <button type="button" class="btn btn-primary">Primary call to action</button>
+                    <button type="button" class="btn btn-default ">Secondary call to action</button>
+                    <button type="button" class="btn btn-link">button link</button>
+                </div>
+            </section>
+        </yield>
+        <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group inline-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+        </code></pre></figure>
+        </yield>
+    </cdr-well-docs>
+</section>
+
+                <section class="vertical-push-3">
+
+    <cdr-well-docs example-title="Filters" element-id="button-filters">
+        <yield to="example-description">
+        <p>
+            Enacting either the "X" or the button removes an applied filter selection. The scale of this button is consistent across all breakpoints.
+        </p>
+        </yield>
+        <yield to="example">
+                 <button class="center-block btn btn-primary btn-contrast btn-xs btn-fixed remove-toggle">
+                    <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+                    <span class="sr-only">Remove</span>
+                    <span>Active option 1</span>
+                </button>
+                <div class="group group-display-fixed group-gutter-xs-open-10">
+                <div class="col-xs-12 col-sm-6">
+                    <div>
+                        <h4>Active State</h4>
+                        <div class="well well-lg" data-theme="light-20">
+                            <button class="center-block btn btn-default btn-xs btn-fixed remove-toggle remove-right" data-example-id="button-filter-remove-right">
+                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+                                <span class="sr-only">Remove</span>
+                                <span>Active option 1</span>
+                            </button>
+                        </div>
+                        <div class="vertical-pull">
+                                <p>
+                                    Use when you want to show a single item in a state of being "applied" or "active" (Example: Compare button
+                                    for a single product).
+                                </p>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div>
+                        <h4>Inactive State</h4>
+                        <div class="well well-lg" data-theme="light-20">
+                            <button class="center-block btn btn-default btn-xs btn-fixed" data-example-id="button-filter-inactive">
+                                Inactive
+                            </button>
+                        </div>
+                        <div class="vertical-pull">
+                        <p>The inactive state for this button is the Core button style.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </yield>
+        <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-contrast btn-xs btn-fixed remove-toggle left"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-rei-close-small"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Remove<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;</span>Active option 1<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/button&gt;</span>
+        </code></pre></figure>
+
+<button class="btn btn-default btn-xs btn-fixed remove-toggle remove-right">
+    <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+    <span class="sr-only">Remove</span>
+    <span>Active option 1</span>
+</button>
+
+<button class="btn btn-default btn-xs btn-fixed">Inactive</button>
+
+        </yield>
+    </cdr-well-docs>
+
+</section>
+
+                <h2> Using buttons with other elements</h2>
+<section class="vertical-push-3">
+    <cdr-well-docs example-title="Button add-ons" element-id="input-groups-buttons">
+        <yield to="example-description">
+        <p class="vertical-push-3">Buttons in input groups are a bit different and require one extra level of nesting. Instead of <code>.input-group-addon</code>, you'll need to use <code>.input-group-btn</code> to wrap the buttons. This is required due to default browser styles that cannot be overridden.</p>
+        </yield>
+        <yield to="example">
+            <form>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+            Go
+            <span class="icon icon-chevron-large-right" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div><!-- /input-group -->
+</form>
+
+        </yield>
+        <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Search for..."</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-btn"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+            Go
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-chevron-large-right"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /input-group --&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+        </code></pre></figure>
+        </yield>
+    </cdr-well-docs>
+</section>
+
+                <hr />
+<section class="vertical-push-3">
+<div class="bs-callout bs-callout-danger">
+    <p>Beware: The following patterns require your project to include the JavaScript bundle from cedar.</p>
+</div>
+<cdr-well-docs example-title="Stateful Button" element-id="Stateful-buttons">
+        <yield to="example-description">
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+           <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="center-block btn btn-primary" autocomplete="off">
+            Loading state
+          </button>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"myButton"</span> <span class="na">data-loading-text=</span><span class="s">"Loading..."</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
+  Loading state
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#myButton'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">$btn</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s1">'loading'</span><span class="p">)</span>
+    <span class="c1">// business logic...</span>
+    <span class="nx">$btn</span><span class="p">.</span><span class="nx">button</span><span class="p">(</span><span class="s1">'reset'</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+        </code></pre></figure>
+        </yield>
+    </cdr-well-docs>
+
+    <cdr-well-docs example-title="Single toggle" element-id="Single-toggle">
+        <yield to="example-description">
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+           <button type="button" class="center-block btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off">
+            Single toggle
+          </button>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"button"</span> <span class="na">aria-pressed=</span><span class="s">"false"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
+  Single toggle
+<span class="nt">&lt;/button&gt;</span>
+        </code></pre></figure>
+        </yield>
+    </cdr-well-docs>
+
+        </cdr-well-docs>
+
+    <cdr-well-docs example-title="Checkbox toggle" element-id="buttons-checkbox">
+        <yield to="example-description">
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default active">
+                  <input type="checkbox" checked autocomplete="off"> Checkbox 1 (pre-checked)
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" autocomplete="off"> Checkbox 2
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" autocomplete="off"> Checkbox 3
+                </label>
+            </div>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group"</span> <span class="na">data-toggle=</span><span class="s">"buttons"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default active"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">checked</span><span class="nt">&gt;</span> Checkbox 1 (pre-checked)
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span> Checkbox 2
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span> Checkbox 3
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+        </code></pre></figure>
+        </yield>
+    </cdr-well-docs>
+
+    <cdr-well-docs example-title="Radio toggle" element-id="buttons-radia">
+        <yield to="example-description">
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+             <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+                </label>
+              </div>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group"</span> <span class="na">data-toggle=</span><span class="s">"buttons"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default active"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"option1"</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">checked</span><span class="nt">&gt;</span> Radio 1 (preselected)
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"option2"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span> Radio 2
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"option3"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span> Radio 3
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+        </code></pre></figure>
+        </yield>
+    </cdr-well-docs>
+
+</section>
+
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="implementation" aria-labelledBy="implementation-tab">
+                <section>
+<div class="bs-callout bs-callout-info">
+    <p>Looking for the component equivalent? <a href="http://rei.github.io/rei-cedar/#cdr-button" rel="external">Cedar v2 API</a></p>
+</div>
+    <button type="button" class="vertical-pull btn btn-block btn-primary">
+        cedar buttons
+    </button>
+        <cdr-well-docs element-id="button-primary-impl">
+            <yield to="example-description">
+            <p>
+            When constructing a button you can select modifiers for state, size, and shape.
+            </p>
+                <table class="table table-striped">
+                    <tr>
+                        <th>
+                         Type
+                        </th>
+                        <th>
+                         Name
+                        </th>
+                        <th>
+                        Default
+                        </th>
+                        <th>
+                         Description
+                        </th>
+                    </tr>
+                     <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn-primary</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn-default</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn-contrast</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        <p>
+                        <code>btn-contrast</code> is used in conjunction with <code>btn-primary</code> to achive the black contrast button.
+                        </p>
+                        <p>
+                        <code>btn-contrast</code> is used in conjunction with <code>.btn-default</code> to achive the white contrast button.
+                        </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn-link</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        size
+                        </td>
+                        <td>
+                        <code>btn-play</code>
+                        </td>
+                        <td>
+                        true
+                        </td>
+                        <td>
+                        When using this class you will also need to provide the following icon before your button text - <code>icon-rei-play-small</code>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn__link-inline-play"</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        When using this class you will also need to provide the following icon before your button text - <code>icon-rei-play-small</code>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        size
+                        </td>
+                        <td>
+                        <code>close</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        This is the only modifier that does not extend <code>.btn</code> which should not be used in this case. As with the video examples, this button also expects an icon to be provided.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        state
+                        </td>
+                        <td>
+                        <code>btn__link-inline-play"</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        When using this class you will also need to provide the following icon before your button text - <code>icon-rei-play-small</code>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        size
+                        </td>
+                        <td>
+                        <code>btn-sm</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        shape
+                        </td>
+                        <td>
+                        <code>btn-xs</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        shape
+                        </td>
+                        <td>
+                        <code>btn-fixed</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        <code>btn-fixed</code> This is an additive class that prevents the button from going full-width at the xs breakpoint.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        size
+                        </td>
+                        <td>
+                        <code>btn-sm</code>
+                        </td>
+                        <td>
+                        false
+                        </td>
+                        <td>
+                        <code>btn-sm</code> is an additive class on button and are used in conjunction with inline form fields or when repeated in a list such as "Register" on a classes and Events page.
+                        </td>
+                    </tr>
+                </table>
+            </yield>
+            <yield to="codeblock">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>
+Primary button
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+    Secondary button
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-contrast btn-primary"</span><span class="nt">&gt;</span>
+High contrast button
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-contrast btn-primary btn-xs"</span><span class="nt">&gt;</span>
+High contrast button
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn__link-inline-play"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-rei-play-small"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    Play video
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-play"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-rei-play-small"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    Play video
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">aria-label=</span><span class="s">"Close"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-rei-close"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Example close button<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/button&gt;</span>
+            </code></pre></figure>
+            </yield>
+        </cdr-well-docs>
+</section>
+
+
+                <!-- javascript dir content-->
+                <section class="vertical-push-3">
+  <h2 id="javascript" class="page-header">JavaScript</h2>
+  <h3 id="buttons-js" class="status status-chat">General</h3>
+
+<p class="lead">Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+
+<div class="bs-callout bs-callout-danger" id="callout-buttons-ff-autocomplete">
+  <h4>Cross-browser compatibility</h4>
+  <p><a href="https://github.com/twbs/bootstrap/issues/793">Firefox persists form control states (disabledness and checkedness) across page loads</a>. A workaround for this is to use <code>autocomplete="off"</code>. See <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=654072">Mozilla bug #654072</a>.</p>
+</div>
+
+<h4 id="buttons-stateful">Stateful</h4>
+<p>Add <code>data-loading-text="Loading..."</code> to use a loading state on a button.</p>
+<div class="bs-callout bs-callout-info" id="callout-buttons-state-names">
+  <h5>Use whichever state you like!</h5>
+  <p>For the sake of this demonstration, we are using <code>data-loading-text</code> and <code>$().button('loading')</code>, but that's not the only state you can use. <a href="#buttons-methods">See more on this below in the <code>$().button(string)</code> documentation</a>.</p>
+</div>
+<div class="well">
+  <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+    Loading state
+  </button>
+</div><!-- /example -->
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"myButton"</span> <span class="na">data-loading-text=</span><span class="s">"Loading..."</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
+  Loading state
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#myButton'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">$btn</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s1">'loading'</span><span class="p">)</span>
+    <span class="c1">// business logic...</span>
+    <span class="nx">$btn</span><span class="p">.</span><span class="nx">button</span><span class="p">(</span><span class="s1">'reset'</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+<h4 id="buttons-single-toggle">Single toggle</h4>
+<p>Add <code>data-toggle="button"</code> to activate toggling on a single button.</p>
+<div class="bs-callout bs-callout-warning" id="callout-buttons-single-pretoggled">
+  <h5>Pre-toggled buttons need <code>.active</code> and <code>aria-pressed="true"</code></h5>
+  <p>For pre-toggled buttons, you must add the <code>.active</code> class and the <code>aria-pressed="true"</code> attribute to the <code>button</code> yourself.</p>
+</div>
+<div class="well">
+  <button type="button" class="btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off">
+    Single toggle
+  </button>
+</div><!-- /example -->
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"button"</span> <span class="na">aria-pressed=</span><span class="s">"false"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
+  Single toggle
+<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+
+<h4 id="buttons-checkbox-radio">Checkbox / Radio</h4>
+<p>Add <code>data-toggle="buttons"</code> to a <code>.btn-group</code> containing checkbox or radio inputs to enable toggling in their respective styles.</p>
+<div class="bs-callout bs-callout-warning" id="callout-buttons-multi-preselected">
+  <h5>Preselected options need <code>.active</code></h5>
+  <p>For preselected options, you must add the <code>.active</code> class to the input's <code>label</code> yourself.</p>
+</div>
+<div class="bs-callout bs-callout-warning" id="callout-buttons-only-click">
+  <h6>Visual checked state only updated on click</h6>
+  <p>If the checked state of a checkbox button is updated without firing a <code>click</code> event on the button (e.g. via <code>&lt;input type="reset"&gt;</code> or via setting the <code>checked</code> property of the input), you will need to toggle the <code>.active</code> class on the input's <code>label</code> yourself.</p>
+</div>
+<div class="well" data-example-id="buttons-checkbox">
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-default active">
+      <input type="checkbox" checked autocomplete="off"> Checkbox 1 (pre-checked)
+    </label>
+    <label class="btn btn-default">
+      <input type="checkbox" autocomplete="off"> Checkbox 2
+    </label>
+    <label class="btn btn-default">
+      <input type="checkbox" autocomplete="off"> Checkbox 3
+    </label>
+  </div>
+</div><!-- /example -->
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group"</span> <span class="na">data-toggle=</span><span class="s">"buttons"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default active"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">checked</span><span class="nt">&gt;</span> Checkbox 1 (pre-checked)
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span> Checkbox 2
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span> Checkbox 3
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<div class="well" data-example-id="buttons-radio">
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-default active">
+      <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+    </label>
+    <label class="btn btn-default">
+      <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+    </label>
+    <label class="btn btn-default">
+      <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+    </label>
+  </div>
+</div><!-- /example -->
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group"</span> <span class="na">data-toggle=</span><span class="s">"buttons"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default active"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"option1"</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">checked</span><span class="nt">&gt;</span> Radio 1 (preselected)
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"option2"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span> Radio 2
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"option3"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span> Radio 3
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<h4 id="buttons-methods">Methods</h4>
+<h5><code>$().button('toggle')</code></h5>
+<p>Toggles push state. Gives the button the appearance that it has been activated.</p>
+
+<h5><code>$().button('reset')</code></h5>
+<p>Resets button state - swaps text to original text.</p>
+
+<h5><code>$().button(string)</code></h5>
+<p>Swaps text to any data defined text state.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"myStateButton"</span> <span class="na">data-complete-text=</span><span class="s">"finished!"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#myStateButton'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s1">'complete'</span><span class="p">)</span> <span class="c1">// button text will be "finished!"</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+</section>
+
+          </div>
+        </div>
+    </div>
+</section>
+
+          </div>
+        </div>
+      </div>
+      <!-- Footer
+================================================== -->
+<footer class="bs-docs-footer overlay-dark-1" role="contentinfo">
+  <div class="container">
+      <div class="row">
+          <div class="row col-sm-10 col-sm-offset-1 ">
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/getting-started/">Getting Started</a></li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/layouts/">Layouts</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/color/">Color</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/grid/">Grid</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/containers/">Containers</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/groups/">Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/cards/">Cards</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/layouts/tiles">Tiles</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/elements/">Elements</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/typography/">Typography</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/buttons/">Buttons</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/links/">Links</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/lists/">Lists</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/inputs/">Inputs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/checkboxes-and-radios/">Checkboxes and Radios</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/images/">Images</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/elements/rei-icons/">Icons</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/collections/">Collections</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/alerts/">Alerts</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/list-groups/">List Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/breadcrumbs/">Breadcrumbs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/button-groups/">Button Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/input-groups/">Input Groups</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/forms/">Forms</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/collections/tables/">Tables</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/modules/">Modules</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/tabs/">Tabs</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/tool-tips/">Tool Tips</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/accordion/">Accordion</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/modals/">Modals</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/pagination/">Pagination</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/modules/carousel/">Carousel</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="col-md-2 col-sm-6">
+                  <ul class="list-text">
+                      <li><a class="h3 link_header-overlay" href="/style-and-behavior/">Style and Behavior</a></li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/utility-helpers/">Utility Helpers</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/utility-responsive/">Responsive Utilities</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/less-variables/">Less Variables</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/less-mixins/">Less Mixins</a>
+                      </li>
+                      
+                      <li>
+                          <a class="nested" href="/style-and-behavior/javascript/">Javascript Documentation</a>
+                      </li>
+                      
+                  </ul>
+              </div>
+              
+          </div>
+      </div>
+    <ul class="footer-inline-list">
+      <li><a class="nested" href="https://github.com/rei/rei-cedar">Github</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="/rei-cedar.js"></script>
+
+<script src="/rei-cedar-components.js"></script>
+
+<script>
+  riot.mount('*');
+</script>
+
+<script src="/assets/js/vendor/particles.min.js"></script>
+
+
+  
+  <script src="/assets/js/vendor/holder.js"></script>
+  
+  <script src="/assets/js/vendor/anchor.js"></script>
+  
+  <script src="/assets/js/src/application.js"></script>
+  
+  <script src="/assets/js/src/a11y.js"></script>
+  
+
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,77 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            THEME
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@type    : 'layout';
+@element : 'tiles';
+
+@import (multiple) '../../theme.config';
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// REI Cedar Card
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            Card Scaffolding
+//----------------------------------------------------------------------------------------------------------------------
+.tile {
+    display: block;
+    box-shadow: @tile-box-shadow;
+    .color-variant( @core-architectural-5 );
+    position: relative;
+    a& {
+        cursor: pointer;
+        &[ href ] {
+            backface-visibility: hidden;
+            &:focus,
+            &:hover {
+                cursor: pointer;
+                z-index: 5;
+                text-decoration: none;
+            }
+        }
+    }
+    .tile-block, //Deprecated
+    .tile-block-xs-open-default {
+        .container-open-default();
+   }
+    .tile-block-xs-closed {
+        .container-closed();
+    }
+    @media (min-width: @screen-xs-max) {
+        .tile-block-sm-open-default {
+            .container-open-default();
+        }
+        .tile-block-sm-closed {
+            .container-closed();
+        }
+    }
+    @media (min-width: @screen-sm-max) {
+        .tile-block-md-open-default {
+            .container-open-default();
+        }
+        .tile-block-md-closed {
+            .container-closed();
+        }
+    }
+    @media (min-width: @screen-md-max) {
+        .tile-block-lg-open-default {
+            .container-open-default();
+        }
+        .tile-block-lg-closed {
+            .container-closed();
+        }
+    }
+    &[data-theme="medium-10"]{
+        box-shadow: @tile-box-shadow-medium-10;
+    }
+    &[data-theme="dark-10"]{
+        box-shadow: @tile-box-shadow-dark-10;
+    }
+    &[data-theme="dark-20"]{
+        box-shadow: @tile-box-shadow-dark-20;
+    }
+}
+
