@@ -30,10 +30,16 @@ function log() {
 <cdr-button modifier="link">Link</cdr-button>
 ```
 
-#### Compact Modifier
+#### Small Modifier
 
 ```
-<cdr-button modifier="compact">Default</cdr-button>
+<cdr-button modifier="sm">Default</cdr-button>
+```
+
+#### Extra Small Modifier
+
+```
+<cdr-button modifier="xs">Default</cdr-button>
 ```
 
 ### Block Modifier

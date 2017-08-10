@@ -1,9 +1,7 @@
 /**
   * REI Cedar Button variables:
-  * this file provides a contract of non changing variables to our patterns.
-  * In addition, it provides a flexible
-  * relationship with desing tokens,
-  * allowing for design token updates in the future.
+  * This file provides a contract between
+  * design tokens and cedar non-changing variables.
   *
   * TOC:
   * Button Themes
@@ -28,7 +26,6 @@ $btn-font-size: $sys-font-redwood-ui-30-font-size;
 $btn-font-style: $sys-font-redwood-ui-30-font-style;
 $btn-font-weight: $sys-font-redwood-ui-30-font-weight;
 $btn-line-height: $sys-font-redwood-ui-30-line-height;
-$btn-spacing: $spacing-space-md $spacing-space-lg;
 
 /* Secondary */
 $btn-secondary-bg: $sys-color-btn-secondary;
@@ -79,10 +76,16 @@ $btn-secondary-disabled-text: $sys-color-btn-secondary-disabled-text;
   * button sizes
 */
 
-/* compact */
-$btn--compact-font-family: $sys-font-redwood-ui-20-font-family;
-$btn--compact-font-size: $sys-font-redwood-ui-20-font-size;
-$btn--compact-font-style: $sys-font-redwood-ui-20-font-style;
-$btn--compact-font-weight: $sys-font-redwood-ui-20-font-weight;
-$btn--compact-line-height: $sys-font-redwood-ui-20-line-height;
-$btn--compact-spacing: $spacing-space-sm $spacing-space-md;
+/* small */
+$btn--sm-font-family: $sys-font-redwood-ui-30-font-family;
+$btn--sm-font-size: $sys-font-redwood-ui-30-font-size;
+$btn--sm-font-style: $sys-font-redwood-ui-30-font-style;
+$btn--sm-font-weight: $sys-font-redwood-ui-30-font-weight;
+$btn--sm-line-height: $sys-font-redwood-ui-30-line-height;
+
+/* extra small */
+$btn--xs-font-family: $sys-font-redwood-ui-20-font-family;
+$btn--xs-font-size: $sys-font-redwood-ui-20-font-size;
+$btn--xs-font-style: $sys-font-redwood-ui-20-font-style;
+$btn--xs-font-weight: $sys-font-redwood-ui-20-font-weight;
+$btn--xs-line-height: $sys-font-redwood-ui-20-line-height;

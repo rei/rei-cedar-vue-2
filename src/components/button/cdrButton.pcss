@@ -13,7 +13,7 @@
   font-weight: $btn-font-weight;
   line-height: $btn-line-height;
   outline: none;
-  padding: $btn-spacing;
+  padding: $inset-lg--squish;
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
@@ -82,13 +82,22 @@
     }
   }
 
-  &--compact {
-    font-family: $btn--compact-font-family;
-    font-size: $btn--compact-font-size;
-    font-style: $btn--compact-font-style;
-    font-weight: $btn--compact-font-weight;
-    line-height: $btn--compact-line-height;
-    padding: $btn--compact-spacing;
+  &--sm {
+    font-family: $btn--sm-font-family;
+    font-size: $btn--sm-font-size;
+    font-style: $btn--sm-font-style;
+    font-weight: $btn--sm-font-weight;
+    line-height: $btn--sm-line-height;
+    padding: $inset-sm--stretch;
+  }
+
+  &--xs {
+    font-family: $btn--xs-font-family;
+    font-size: $btn--xs-font-size;
+    font-style: $btn--xs-font-style;
+    font-weight: $btn--xs-font-weight;
+    line-height: $btn--xs-line-height;
+    padding: $inset-md--squish;
   }
 
   &--input-post {
@@ -119,6 +128,7 @@
       }
     }
   }
+
   /* button states */
 
   &--input-pre {
