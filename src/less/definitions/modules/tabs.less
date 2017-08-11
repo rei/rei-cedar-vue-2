@@ -55,29 +55,43 @@
 // -------------------------
 
 // Give the tabs something to sit on
+// Tabs
+// -------------------------
+
+// Give the tabs something to sit on
 .nav-tabs {
-    &:extend( .list-nav all );
-    &:extend( .text-sub-heading );
-    border-bottom: 0.1rem solid @nav-tabs-border-color;
-    padding-left: @padding-base-horizontal;
+   &:extend( .list-unstyled all );
+   &:extend( .clearfix all );
+   border-bottom: 1px solid @nav-tabs-border-color;
     > li {
         display: inline-block;
-        margin: 0 0 0 (@padding-base-horizontal / 2);
+        padding-left: @padding-base-horizontal;
+        position: relative;
         &:first-of-type {
-            margin-left: 0;
+            padding-left: 0;
         }
-        > a:first-of-type {
-            .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration; );
+        > a {
+            display: block;
+            position: relative;
+            bottom: -2px;
+            .button-size( @tab-vertical-padding; @tab-horizontal-padding; @tab-font-size; @tab-line-height; );
+            &:extend( .link_navigation );
+
+            &:hover,
+            &:focus {
+                 background-color: @nav-tabs-active-link-hover-bg;
+                 border-bottom: 4px solid @nav-tabs-active-stroke;
+                 color: @text-color;
+                 cursor: default;
+                 text-decoration: none;
+            }
         }
         &.active {
-            bottom: -0.1rem;
-            position: relative;
             > a {
                 &, &:hover, &:focus {
                     background-color: @nav-tabs-active-link-hover-bg;
-                    border: 0.1rem solid @nav-tabs-active-link-hover-border-color;
-                    border-bottom-color: transparent;
-                    border-bottom-style: initial;
+                    border-bottom: 4px solid @nav-tabs-active-stroke;
+                    bottom: -2px;
                     color: @text-color;
                     cursor: default;
                     text-decoration: none;
@@ -86,7 +100,6 @@
         }
     }
 }
-
 // Tabbable tabs
 // -------------------------
 
