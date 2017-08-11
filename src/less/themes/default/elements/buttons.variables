@@ -21,31 +21,39 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //----------------------------------------------------------------------------------------------------------------------
+// Focus
+//----------------------------------------------------------------------------------------------------------------------
+@btn-focus-stroke-color:                                    #8DD1ED;
+//----------------------------------------------------------------------------------------------------------------------
 // Disabled
 //----------------------------------------------------------------------------------------------------------------------
 @disabled-color:                                    #ccc;
-@btn-disabled-color:                                @disabled-color;
-@btn-link-disabled-color:                           @disabled-color;
-@btn-disabled-bg:                                   @core-architectural-5;
-@btn-disabled-border:                               @core-architectural-4;
+@btn-disabled-color:                                @cdr-color-btn-primary-disabled-text;
+@btn-link-disabled-color:                           #ccc;
+@btn-disabled-bg:                                   @cdr-color-btn-primary-disabled;
+@btn-disabled-border:                               @cdr-color-btn-primary-disabled-stroke;
 
 //----------------------------------------------------------------------------------------------------------------------
 // Default
 //----------------------------------------------------------------------------------------------------------------------
-@btn-default-color:                                @text-color;
-@btn-default-bg:                                   @core-architectural-5;
-@btn-default-border:                               @core-architectural-1;
-@btn-default-active-bg:                            darken( @btn-default-bg, 5% );
-@btn-default-active-border:                        mix( @core-architectural-1, @core-architectural-5, 50% );
-@btn-default-active-color:                         @text-color;
+@btn-default-color:                                @cdr-color-btn-secondary-text;
+@btn-default-active-color:                         @cdr-color-btn-secondary-text-active;
+@btn-default-disabled-text:                        @cdr-color-btn-secondary-disabled-text;
+@btn-default-bg:                                   @cdr-color-btn-secondary;
+@btn-default-active-bg:                            @cdr-color-btn-secondary-active;
+@btn-default-disabled-background:                   @cdr-color-btn-secondary-disabled;
+@btn-default-border:                               @cdr-color-btn-secondary-stroke;
+@btn-default-active-border:                        @cdr-color-btn-secondary-active-stroke;
+@btn-default-disabled-border:                       @cdr-color-btn-secondary-disabled-stroke;
 
 //----------------------------------------------------------------------------------------------------------------------
 // Primary
 //----------------------------------------------------------------------------------------------------------------------
 @btn-primary-color:                                @cdr-color-btn-text;
+@btn-primary-active-color:                         @cdr-color-btn-text-active;
 @btn-primary-bg:                                   @cdr-color-btn-primary;
-@btn-primary-border:                               @cdr-color-btn-primary-stroke;
 @btn-primary-active-bg:                            @cdr-color-btn-primary-active;
+@btn-primary-border:                               @cdr-color-btn-primary-stroke;
 @btn-primary-active-border:                        @cdr-color-btn-primary-active-stroke;
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -74,24 +82,6 @@
 @btn-outline-border:                             @core-architectural-5;
 @btn-outline-active-bg:                          @core-architectural-5;
 @btn-outline-active-border:                      @core-architectural-5;
-
-//----------------------------------------------------------------------------------------------------------------------
-// Outlet Primary
-//----------------------------------------------------------------------------------------------------------------------
-@btn-outlet-color:                               @core-architectural-5;
-@btn-outlet-bg:                                  @outlet-action-1;
-@btn-outlet-border:                              @outlet-action-1;
-@btn-outlet-active-bg:                           @outlet-action-2;
-@btn-outlet-active-border:                       @outlet-action-2;
-
-//----------------------------------------------------------------------------------------------------------------------
-// Outlet Default
-//----------------------------------------------------------------------------------------------------------------------
-@btn-outlet-default-color:                       @outlet-action-1;
-@btn-outlet-default-bg:                          @core-architectural-5;
-@btn-outlet-default-border:                      @outlet-action-1;
-@btn-outlet-default-active-bg:                   @btn-default-active-bg;
-@btn-outlet-default-active-border:               @outlet-action-1;
 
 //----------------------------------------------------------------------------------------------------------------------
 // Off Price Primary

@@ -14,9 +14,20 @@
             </yield>
             <yield to="example">
               <div class="well well-lg">
-                <button type="button" class="center-block btn btn-primary">
-                    Primary button
-                </button>
+                  <div class="btn-group inline-group">
+                        <button type="button" class="btn btn-primary">
+                            Primary button
+                        </button>
+                        <button type="button" class="btn btn-primary active">
+                            "Active"
+                        </button>
+                        <button type="button" class="btn btn-primary focus">
+                            "Focused"
+                        </button>
+                        <button type="button" class="btn btn-primary" disabled>
+                            disabled
+                        </button>
+                    </div>
                 </div>
                 <div class="well">
                   <h3 class="h4">Button sizes and shapes</h3>
@@ -92,9 +103,20 @@ Primary button
             </yield>
             <yield to="example">
                <div class="well well-lg">
-                    <button type="button" class="center-block btn btn-default">
+                  <div class="btn-group inline-group">
+                    <button type="button" class="btn btn-default">
                         Secondary button
                     </button>
+                    <button type="button" class="btn btn-default active">
+                        "Active"
+                    </button>
+                    <button type="button" class="btn btn-default focus">
+                        "Focused"
+                        </button>
+                    <button type="button" class="btn btn-default" disabled>
+                        disabled
+                    </button>
+                    </div>
                 </div>
             </yield>
             <yield to="codeblock">
@@ -113,7 +135,7 @@ Secondary Core button
             <yield to="example">
                 <div class="well well-lg">
                     <button type="button" class="center-block btn btn-contrast btn-primary">
-                        Secondary button
+                        High contrast button
                     </button>
                 </div>
             </yield>
@@ -134,7 +156,7 @@ High contrast button
             <yield to="example">
                 <div class="well well-lg" data-theme="dark-20">
                     <button type="button" class="center-block btn btn-contrast btn-default">
-                        Secondary button
+                        High contrast button
                     </button>
                 </div>
             </yield>
@@ -208,24 +230,35 @@ High contrast button
         </yield>
         <yield to="example">
             <div class="group group-display-fixed group-gutter-xs-open-10">
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-12 col-sm-4">
                     <div>
-                       <h4>Remove</h4>
+                       <h4>Close button</h4>
                         <div class="well well-lg" data-theme="light-20">
                            <button type="button" class="center-block close" aria-label="Close">
                                 <span class="icon icon-rei-close-small" aria-hidden="true"></span>
-                                <span class="sr-only">Example close button</span>
+                                <span class="sr-only">Close button</span>
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-12 col-sm-4">
                     <div>
-                        <h4>Close</h4>
+                       <h4>"Active"</h4>
                         <div class="well well-lg" data-theme="light-20">
-                            <button type="button" class="center-block close" aria-label="Close">
-                                <span class="icon icon-rei-close" aria-hidden="true"></span>
-                                <span class="sr-only">Example close button</span>
+                           <button type="button" class="center-block close active" aria-label="Close">
+                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+                                <span class="sr-only">"Active"</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div>
+                       <h4>"Focused"</h4>
+                        <div class="well well-lg" data-theme="light-20">
+                           <button type="button" class="center-block close focus" aria-label="Close">
+                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+                                <span class="sr-only">"focused"</span>
                             </button>
                         </div>
                     </div>

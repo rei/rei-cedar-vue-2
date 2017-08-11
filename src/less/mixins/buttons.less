@@ -23,7 +23,16 @@
 // @active-color: Active foreground color.
 //
 //----------------------------------------------------------------------------------------------------------------------
-.button-variant( @color; @background; @border: @background; @active-background: darken(@background, 10%); @active-border: darken(@border, 12%); @active-color: @color; @border-radius: @radius-button; ) {
+.button-variant(
+@color; @background;
+@border: @background;
+@active-background: darken(@background, 10%);
+@active-border: darken(@border, 12%);
+@active-color: @color;
+@disabled-text: @btn-disabled-color;
+@disabled-background: @btn-disabled-bg;
+@disabled-border: @btn-disabled-border;
+@focus-text-color: @color; ) {
   color: @color;
   background-color: @background;
   border-color: @border;
@@ -33,20 +42,22 @@
   outline: none;
   &:hover,
   &:active,
-  &.active,
-  &:focus,
-  &.focus {
+  &.active {
     color: @active-color;
     background-color: @active-background;
     border-color: @active-border;
   }
-  &:focus{
+  &:focus,
+  &.focus{
       // Default
+      color: @focus-text-color;
       outline: thin dotted;
       // WebKit
-      outline: 0.5rem auto;
-      outline-color: @core-action-1;
-      outline-offset: -0.2rem;
+      outline: 0.2rem auto;
+      outline-color: @btn-focus-stroke-color;
+      outline-offset: -0.1rem;
+      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+      border: 1px solid rgba(81, 203, 238, 1);
   }
   &:active,
   &.active {
@@ -59,24 +70,23 @@
     &,
     &:hover,
     &:focus,
-    &.focus,
     &:active,
     &.active {
       cursor: @cursor-disabled;
       pointer-events: none;
       // Future-proof disabling of clicks
-      color: @btn-disabled-color;
-      border-color: @btn-disabled-border;
-      @alpha-ruleset();
+      color: @disabled-text;
+      background-color: @disabled-background;
+      border-color: @disabled-border;
     }
   }
 }
+
  // TODO: assess if we want to remove this -
 @alpha-ruleset: {
     background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.2);
 };
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Button Size

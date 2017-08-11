@@ -154,6 +154,69 @@
 
 <article class="card vertical-push-lg">
     <section class="card-block card-block--top" data-theme="light-20">
+        <h3 class="h4">Card content variants</h3>
+    </section>
+    <section class="card-block">
+        <p>Card example with different content options such as; heading, reviews, description text and card label.</p>
+    </section>
+    <section class="card-block cedar-example">
+        <a href="#anchored-card-example" class="card" id="anchored-card-example" data-example-id="linked-card">
+            <section class="card-media-top media-frame ratio-3-4 portrait center">
+                <img src="http://placehold.it/320x150" alt="Example image">
+                <span class="icon icon-rei-video position bottom right well-sm hidden"></span>
+            </section>
+            <section class="card-block">
+                <h4 class="h3">Heading</h4>
+                <div class="cdr-review-rating link_stag-explore-overlay vertical-push" alt="4.5 out of 5 stars" title="4.5 out of 5 stars">
+                    <span class="icon icon-rei-star-100" aria-hidden="true"></span>
+                    <span class="icon icon-rei-star-100" aria-hidden="true"></span>
+                    <span class="icon icon-rei-star-100" aria-hidden="true"></span>
+                    <span class="icon icon-rei-star-100" aria-hidden="true"></span>
+                    <span class="icon icon-rei-star-100 inactive backfill" aria-hidden="true"></span>
+                    <span class="icon icon-rei-star-50" aria-hidden="true"></span>
+                </div>
+                <p>Add description text if desired. Lorem ipsum dolorem, ich bin trinkt wasser.</p>
+                <div class="text-descriptive text-muted">Checklist</div>
+            </section>
+        </a>
+    </section>
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+        <input
+            type="checkbox"
+            value=""
+            id="checkbox-card-options"
+            data-toggle="collapse"
+            data-target="#card-options"
+        >
+        <label for="checkbox-card-options">View code</label>
+    </div>
+    <div class="collapse code-toggle--document" id="card-options" data-theme="light-20">
+    {% highlight html %}
+    <a href="#anchored-card-example" class="card">
+        <section class="card-media-top media-frame ratio-3-4 portrait center">
+            <img src="http://placehold.it/320x150" alt="Example image">
+            <span class="icon icon-rei-video position bottom right well-sm hidden"></span>
+        </section>
+        <section class="card-block">
+            <h4 class="h3">Heading</h4>
+            <div class="cdr-review-rating link_stag-explore-overlay vertical-push" alt="4.5 out of 5 stars" title="4.5 out of 5 stars">
+                <span class="icon icon-rei-star-100" aria-hidden="true"></span>
+                <span class="icon icon-rei-star-100" aria-hidden="true"></span>
+                <span class="icon icon-rei-star-100" aria-hidden="true"></span>
+                <span class="icon icon-rei-star-100" aria-hidden="true"></span>
+                <span class="icon icon-rei-star-100 inactive backfill" aria-hidden="true"></span>
+                <span class="icon icon-rei-star-50" aria-hidden="true"></span>
+            </div>
+            <p>Add description text if desired. Lorem ipsum dolorem, ich bin trinkt wasser.</p>
+            <div class="text-descriptive text-muted">Checklist</div>
+        </section>
+    </a>
+    {% endhighlight %}
+    </div>
+</article>
+
+<article class="card vertical-push-lg">
+    <section class="card-block card-block--top" data-theme="light-20">
         <h3 class="h4">Card image caps</h3>
     </section>
     <section class="card-block">
