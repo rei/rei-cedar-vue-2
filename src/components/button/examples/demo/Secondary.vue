@@ -1,9 +1,14 @@
 <template>
+<div>
   <cdr-button-group class="button-example">
-  <cdr-button modifier="secondary compact">Secondary small</cdr-button>
-    <cdr-button data-backstop="cdr-button--secondary" modifier="secondary">Secondary</cdr-button>
+    <cdr-button modifier="secondary" data-backstop="cdr-button--secondary" type="submit" :on-click="log">Secondary with click</cdr-button>
     <cdr-button modifier="secondary" disabled>Secondary Disabled</cdr-button>
   </cdr-button-group>
+  <cdr-button-group class="button-example">
+    <cdr-button type="submit" modifier="sm secondary">Small secondary</cdr-button>
+    <cdr-button type="submit" modifier="xs secondary">Extra Small secondary</cdr-button>
+  </cdr-button-group>
+  </div>
 </template>
 
 <script>

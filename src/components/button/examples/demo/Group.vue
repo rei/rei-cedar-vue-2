@@ -1,7 +1,7 @@
 <template>
   <cdr-button-group class="button-example">
     <cdr-button>Button 1</cdr-button>
-    <cdr-button :modifier="['Secondary']">Button 2</cdr-button>
+    <cdr-button modifier="secondary">Button 2</cdr-button>
   </cdr-button-group>
 </template>
 
