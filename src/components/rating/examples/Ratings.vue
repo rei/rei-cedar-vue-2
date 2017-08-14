@@ -2,6 +2,7 @@
   <div>
     <h2>Ratings</h2>
   
+    <cdr-rating rating="0"></cdr-rating>
     <cdr-rating rating="5" count="10"></cdr-rating>
     <cdr-rating :rating="1" :count="100"></cdr-rating>
     <cdr-rating :rating="1.5" count="70"></cdr-rating>

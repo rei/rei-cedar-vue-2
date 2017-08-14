@@ -4,7 +4,7 @@
     <span class="cdr-rating__icon cdr-rating__25" v-if="remainder === '25'" aria-hidden="true"></span>
     <span class="cdr-rating__icon cdr-rating__50" v-else-if="remainder === '50'" aria-hidden="true"></span>
     <span class="cdr-rating__icon cdr-rating__75" v-else-if="remainder === '75'" aria-hidden="true"></span>
-    <span aria-hidden="true">({{count}})</span>
+    <span aria-hidden="true" v-if="count">({{count}})</span>
     <span class="u-sr-only">rated {{rating}} out of 5 with {{count}} reviews</span>
   </div>
 </template>
@@ -14,12 +14,18 @@
 export default {
   name: 'cdr-rating',
   props: {
+    /**
+     * Rating out of 5
+     */
     rating: {
       required: true,
       type: [String, Number],
     },
+    /**
+     * Number of ratings
+     */
     count: {
-      required: true,
+      required: false,
       type: [String, Number],
     },
   },
