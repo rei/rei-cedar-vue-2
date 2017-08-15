@@ -20,6 +20,7 @@ before_script:
       npm run unit;
     else
       npm run test;
+      npm run compare;
     fi
 script: 
   - npm run release
