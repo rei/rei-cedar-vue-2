@@ -9,6 +9,7 @@
     @input="updateSearch">
     <cdr-button slot="post" modifier="input-post" :on-click="click">
       <cdr-icon url="/static/rei-icons.svg#icon-rei-search"></cdr-icon>
+      <span class="u-sr-only">Search</span>
     </cdr-button>
   </cdr-input>
 </template>
