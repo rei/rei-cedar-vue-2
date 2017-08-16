@@ -22,7 +22,8 @@ before_script:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
       npm run unit;
     else
-      npm run test && npm run compare;
+      npm run dev;
+      npm run test && npm run compare:ci;
     fi
 script: 
   - npm run release

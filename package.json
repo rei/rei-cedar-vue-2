@@ -18,6 +18,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "reference": "backstop reference --configPath=backstop.js",
     "compare": "backstop test --configPath=backstop.js",
+    "compare:ci": "backstop test --configPath=backstop.ci.js",
     "approve": "backstop approve --configPath=backstop.js",
     "docs": "vue-styleguidist server",
     "build:docs": "vue-styleguidist build"
