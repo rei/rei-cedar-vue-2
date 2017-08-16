@@ -20,10 +20,10 @@ install:
   - yarn
 before_script:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-      npm run unit;
+      npm run unit
     else
-      npm run dev;
-      npm run test && npm run compare:ci;
+      npm run dev &
+      npm run test && npm run compare:ci
     fi
 script: 
   - npm run release
