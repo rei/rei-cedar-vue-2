@@ -23,7 +23,7 @@ before_script:
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
       npm run build;
       cd dist;
-      python -m SimpleHTTPServer 8000 &> /dev/null & pid=$!;
+      python -m SimpleHTTPServer 8080 &> /dev/null & pid=$!;
       sleep 1;
       cd ..;
       npm run test;
