@@ -7,7 +7,5 @@ module.exports = [
       "[data-backstop='image-mods']",
       "[data-backstop='image-standard']",
     ],
-    delay: 0,
-    misMatchThreshold: 0.1,
   },
 ];
