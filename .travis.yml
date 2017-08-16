@@ -8,6 +8,10 @@ node_js:
   - "6"
 sudo: required
 dist: trusty
+addons:
+  apt:
+    packages:
+      - xvfb
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export CHROME_BIN=/usr/bin/google-chrome; fi
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DISPLAY=:99.0; fi
