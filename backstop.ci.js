@@ -6,7 +6,7 @@ const scenariosArr = [];
 conf.defsArr.forEach((def) => {
   const locDef = def;
   locDef.url = 'http://localhost:8080'; // dev server address
-  locDef.delay = 2000;
+  locDef.delay = 0;
   locDef.misMatchThreshold = 0.1;
   locDef.readyEvent = 'mounted';
   scenariosArr.push(locDef);

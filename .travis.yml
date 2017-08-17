@@ -21,11 +21,12 @@ install:
 before_script:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; fi
       # npm run test
-      # npm run dev &> /dev/null & pid=$!;
-      # sleep 30;
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+      npm run dev &> /dev/null & pid=$!;
+      sleep 30;
       lsof -i :8080 -S;
       npm run compare:ci;
+      lsof -i :8080 -S;
     fi
 script: 
   - npm run release
