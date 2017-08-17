@@ -8,10 +8,6 @@ node_js:
   - "6"
 sudo: required
 dist: trusty
-# addons:
-#   apt:
-#     packages:
-#       - xvfb
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export CHROME_BIN=/usr/bin/google-chrome; fi
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DISPLAY=:99.0; fi
@@ -21,14 +17,14 @@ before_install:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo dpkg -i google-chrome*.deb; fi
   - npm install -g yarn --cache-min 999999999
 install:
-  # - Xvfb :99 -screen 0 1920x1080x32 > /dev/null 2>&1 &
   - yarn install
 before_script:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; fi
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-      npm run test;
+      # npm run test;
       npm run dev &> /dev/null & pid=$!;
       sleep 30;
+      lsof -i :8080 -S;
       npm run compare:ci;
     fi
 script: 

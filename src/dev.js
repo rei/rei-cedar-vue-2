@@ -24,4 +24,7 @@ Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
   router,
+  mounted() {
+    console.log('mounted'); // eslint-disable-line
+  },
 }).$mount('#main');

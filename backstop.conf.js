@@ -3,7 +3,6 @@ const _ = require('lodash');
 const glob = require('glob');
 
 // variables
-const scenariosArr = [];
 let defs = [];
 
 // get backstop definition files and concat the contents
@@ -12,17 +11,8 @@ files.forEach((file) => {
   defs = defs.concat(require(file));
 });
 
-// set def defaults and add to scenario array
-defs.forEach((def) => {
-  const locDef = def;
-  locDef.url = 'http://localhost:8080'; // dev server address
-  locDef.delay = 0;
-  locDef.misMatchThreshold = 0.1;
-  locDef.readyEvent = null;
-  scenariosArr.push(locDef);
-});
-
 module.exports = {
+  defsArr: defs,
   id: 'cedar',
   viewports: [
     {
@@ -46,7 +36,6 @@ module.exports = {
       height: 1080,
     },
   ],
-  scenarios: scenariosArr,
   paths: {
     bitmaps_reference: 'backstop_data/bitmaps_reference',
     bitmaps_test: 'backstop_data/bitmaps_test',
