@@ -4,7 +4,5 @@ module.exports = [
     selectors: [
       "[data-backstop='lists']",
     ],
-    delay: 0,
-    misMatchThreshold: 0.1,
   },
 ];
