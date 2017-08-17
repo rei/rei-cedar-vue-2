@@ -26,9 +26,9 @@ install:
 before_script:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; fi
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+      npm run test;
       npm run dev &> /dev/null & pid=$!;
       sleep 30;
-      npm run test;
       npm run compare:ci;
     fi
 script: 
