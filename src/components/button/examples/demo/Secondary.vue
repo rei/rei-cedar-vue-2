@@ -1,7 +1,7 @@
 <template>
 <div>
   <cdr-button-group class="button-example">
-    <cdr-button modifier="secondary" data-backstop="cdr-button--secondary" type="submit" :on-click="log">Secondary with click</cdr-button>
+    <cdr-button modifier="secondary" data-backstop="cdr-button--secondary" type="submit">Secondary with click</cdr-button>
     <cdr-button modifier="secondary" disabled>Secondary Disabled</cdr-button>
   </cdr-button-group>
   <cdr-button-group class="button-example">

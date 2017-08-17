@@ -1,9 +1,9 @@
 // utilities
-const _ = require('lodash');
+// const _ = require('lodash');
 const glob = require('glob');
 
 // variables
-const scenarios = [];
+const scenariosArr = [];
 let defs = [];
 
 // get backstop definition files and concat the contents
@@ -16,7 +16,7 @@ defs.forEach((def) => {
   const locDef = def;
   locDef.url = 'http://localhost:8080';
   locDef.readyEvent = null;
-  scenarios.push(locDef);
+  scenariosArr.push(locDef);
 });
 
 module.exports = {
@@ -43,16 +43,32 @@ module.exports = {
       height: 1080,
     },
   ],
-  scenarios,
+  // scenarios: scenariosArr,
+  scenarios: [
+    {
+      label: 'Anchor',
+      url: 'http://localhost:8080',
+      selectors: [
+        "[data-backstop='anchors']",
+        // '.test',
+      ],
+      delay: 0,
+      misMatchThreshold: 0.1,
+      requireSameDimensions: true,
+    },
+  ],
   paths: {
     bitmaps_reference: 'backstop_data/bitmaps_reference',
     bitmaps_test: 'backstop_data/bitmaps_test',
-    casper_scripts: 'backstop_data/casper_scripts',
+    engine_scripts: 'backstop_data/engine_scripts',
     html_report: 'backstop_data/html_report',
     ci_report: 'backstop_data/ci_report',
   },
+  asyncCaptureLimit: 10,
+  hostFlags: ['--ignore-certificate-errors'],
   casperFlags: [],
-  engine: 'phantomjs',
+  engine: 'chrome',
   report: ['browser'],
   debug: false,
+  debugWindow: false,
 };
