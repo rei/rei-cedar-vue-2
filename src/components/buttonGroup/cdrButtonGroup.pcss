@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #BUTTON GROUP
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+*/
+
+.cdr-button-group > * {
+  width: 100%;
+  display: block;
+  margin-bottom: 2rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  @media (--medium) {
+    width: auto;
+    display: inline;
+    margin: 0 0 2rem 1.6rem;
+  }
+}
