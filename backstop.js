@@ -43,20 +43,7 @@ module.exports = {
       height: 1080,
     },
   ],
-  // scenarios: scenariosArr,
-  scenarios: [
-    {
-      label: 'Anchor',
-      url: 'http://localhost:8080',
-      selectors: [
-        "[data-backstop='anchors']",
-        // '.test',
-      ],
-      delay: 0,
-      misMatchThreshold: 0.1,
-      requireSameDimensions: true,
-    },
-  ],
+  scenarios: scenariosArr,
   paths: {
     bitmaps_reference: 'backstop_data/bitmaps_reference',
     bitmaps_test: 'backstop_data/bitmaps_test',
@@ -65,7 +52,6 @@ module.exports = {
     ci_report: 'backstop_data/ci_report',
   },
   asyncCaptureLimit: 10,
-  hostFlags: ['--ignore-certificate-errors'],
   casperFlags: [],
   engine: 'chrome',
   report: ['browser'],

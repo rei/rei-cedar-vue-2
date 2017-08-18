@@ -2,7 +2,7 @@ module.exports = [
   {
     label: 'Icon Hover',
     selectors: [
-      "[data-backstop='cdr-icon-add']",
+      '[data-backstop="cdr-icon-add"]',
     ],
     delay: 0,
     misMatchThreshold: 0.1,
