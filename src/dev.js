@@ -10,6 +10,7 @@ import App from './App';
 // test pages
 import eaHome from './expertAdvice/Home';
 
+Vue.config.devtools = false;
 // routing
 Vue.use(VueRouter);
 
