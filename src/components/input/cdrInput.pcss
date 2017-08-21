@@ -65,14 +65,11 @@
 
   &::placeholder {
     font-style: italic;
+    color: $sys-color-input-placeholder-text;
   }
 
   &[disabled] {
-    background-color: $sys-color-disabled-input;
-
-    &::placeholder {
-      color: $sys-color-disabled-placeholder;
-    }
+    background-color: $sys-color-input-disabled;
   }
 }
 

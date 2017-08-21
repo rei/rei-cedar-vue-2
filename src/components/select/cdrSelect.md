@@ -10,7 +10,7 @@
 #### Standard
 
 ```
-const selected = '';
+var selected = '';
 
 <div>
   <cdr-select label="Normal" v-model="selected">
@@ -26,7 +26,7 @@ const selected = '';
 #### With prompt
 
 ```
-const selected = '';
+var selected = '';
 
 <div>
   <cdr-select label="Normal with prompt" v-model="selected" prompt="Choose one">
@@ -42,8 +42,8 @@ const selected = '';
 #### Data driven options
 
 ```
-const selected = '';
-const data = ['a', 'b', 'c', 'd'];
+var selected = '';
+var data = ['a', 'b', 'c', 'd'];
 
 <div>
   <cdr-select label="Built with data" v-model="selected" :options="data"></cdr-select>
