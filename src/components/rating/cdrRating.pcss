@@ -1,7 +1,21 @@
+/* ==========================================================================
+   #RATING
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Style variants
+*/
+
 .cdr-rating {
   display: flex;
   align-items: center;
   position: relative;
+
+  /* Component elements
+    ========================================================================== */
 
   &__icon {
     width: 16px;
@@ -41,4 +55,11 @@
     background-image: svg-load('../../assets/icons/rei/icon-rei-star-25.svg', fill=$(sys-color-rating-fill));
     background-repeat: no-repeat;
   }
+
+  /* Size variants
+    ========================================================================== */
+
+  &--large {}
+  &--medium {}
+  &--small {}
 }
