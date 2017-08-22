@@ -1,16 +1,25 @@
 /*
-* TOC:
-* input-group
-* input
-* input-validation
-* animated-errors
-* input-messages
-*
+** TOC:
+**
+** input wrap
+** input group
+** input
+** input validation
+** animated errors
+** input messages
 */
+
+/* ==========================================================================
+   # INPUT WRAP
+   ========================================================================== */
 
 .cdr-input-wrap {
   margin-bottom: 1.6rem;
 }
+
+/* ==========================================================================
+   # INPUT GROUP
+   ========================================================================== */
 
 .cdr-input-group {
   &--actions {
@@ -18,6 +27,18 @@
     align-items: center;
   }
 }
+
+/* ==========================================================================
+   # INPUT
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Style variants
+* Pseudo elements
+*/
 
 .cdr-input {
   font-size: $sys-font-redwood-bdy-30-font-size;
@@ -34,6 +55,9 @@
   display: block;
   padding: $spacing-space-sm;
   width: 100%;
+
+  /* Style variants
+    ========================================================================== */
 
   &--actions {
     height: calc($sys-font-redwood-bdy-30-line-height + 2px + (2 * $spacing-space-sm));
@@ -63,22 +87,43 @@
     border-bottom-left-radius: 0;
   }
 
+  &[disabled] {
+    background-color: $sys-color-input-disabled;
+  }
+
+  /* Pseudo elements
+    ========================================================================== */
+
   &::placeholder {
     font-style: italic;
     color: $sys-color-input-placeholder-text;
   }
-
-  &[disabled] {
-    background-color: $sys-color-input-disabled;
-  }
 }
+
+/* ==========================================================================
+   # INPUT VALIDATION
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Style variants
+* Block elements
+*/
 
 .cdr-input-validation {
   position: relative;
+  
+  /* Style variants
+    ========================================================================== */
 
   &--actions {
     flex-grow: 1;
   }
+  
+  /* Block elements
+    ========================================================================== */
 
   &__icon {
     position: absolute;
@@ -101,6 +146,10 @@
   }
 }
 
+/* ==========================================================================
+   # ANIMATED ERRORS
+   ========================================================================== */
+
 .cdr-animated-errors {
   &-enter-active,
   &-leave-active {
@@ -121,6 +170,17 @@
   }
 }
 
+/* ==========================================================================
+   # INPUT MESSAGES
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Block elements
+*/
+
 .cdr-input-messages {
   position: relative;
   font-size: $sys-font-redwood-dsp-10-font-size;
@@ -129,6 +189,9 @@
   font-style: $sys-font-redwood-dsp-10-font-style;
   font-weight: $sys-font-redwood-dsp-10-font-weight;
   font-family: $sys-font-redwood-dsp-10-font-family;
+
+  /* Block elements
+    ========================================================================== */
 
   &__notification {
     padding: $spacing-space-sm;

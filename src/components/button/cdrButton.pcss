@@ -1,3 +1,17 @@
+/* ==========================================================================
+   # BUTTON
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Style variants
+* Size variants
+* Display variants
+* Input action buttons
+*/
+
 .cdr-button {
   background-color: $btn-bg;
   border-color: $btn-stroke;
@@ -41,7 +55,8 @@
   &:focus {
     color: $btn-focus-text;
     outline: thin dotted;
-    // WebKit
+
+    /* webkit */
     outline: 0.2rem auto;
     outline-color: $btn-focus-stroke;
     outline-offset: -0.1rem;
@@ -56,7 +71,9 @@
     cursor: not-allowed;
   }
 
-  /* button themes */
+  /* Style variants
+    ========================================================================== */
+
   &--secondary {
     background-color: $btn-secondary-bg;
     border-color: $btn-secondary-stroke;
@@ -82,6 +99,9 @@
     }
   }
 
+  /* Size variants
+    ========================================================================== */
+
   &--sm {
     font-family: $btn--sm-font-family;
     font-size: $btn--sm-font-size;
@@ -99,6 +119,28 @@
     line-height: $btn--xs-line-height;
     padding: $inset-md--squish;
   }
+
+  /* Display variants
+    ========================================================================== */
+
+  &--block {
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &--fixed {
+    width: auto;
+    display: inline;
+    margin: 0 0 2rem 1.6rem;
+  }
+
+  /* Input action buttons
+    ========================================================================== */
 
   &--input-post {
     background-color: $sys-color-input;
@@ -129,8 +171,6 @@
     }
   }
 
-  /* button states */
-
   &--input-pre {
     background-color: $sys-color-input;
     border-color: $sys-color-input-stroke;
@@ -158,39 +198,5 @@
         fill: $sys-font-redwood-bdy-30-color;
       }
     }
-  }
-
-  /* button states */
-
-  &--block {
-    width: 100%;
-    display: block;
-    margin-bottom: 2rem;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  &--fixed {
-    width: auto;
-    display: inline;
-    margin: 0 0 2rem 1.6rem;
-  }
-}
-
-.cdr-button-group > * {
-  width: 100%;
-  display: block;
-  margin-bottom: 2rem;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  @media (--medium) {
-    width: auto;
-    display: inline;
-    margin: 0 0 2rem 1.6rem;
   }
 }
