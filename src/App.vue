@@ -2,7 +2,6 @@
   <div id="app" class="container-fluid">
     <h1>Cedar Proving grounds</h1>
 
-    <ratings data-backstop="ratings"></ratings>
     <anchors data-backstop="anchors"></anchors>
     <buttons data-backstop="buttons"></buttons>
     <cards></cards>
@@ -18,6 +17,7 @@
     <mediaObject></mediaObject>
     <mountains></mountains>
     <radios data-backstop="radios"></radios>
+    <ratings data-backstop="ratings"></ratings>
     <selects data-backstop="selects"></selects>
     <test data-backstop="test"></test>
   </div>

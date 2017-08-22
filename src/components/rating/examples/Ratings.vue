@@ -2,12 +2,14 @@
   <div>
     <h2>Ratings</h2>
   
-    <cdr-rating rating="0"></cdr-rating>
-    <cdr-rating rating="5" count="10"></cdr-rating>
-    <cdr-rating :rating="1" :count="100"></cdr-rating>
-    <cdr-rating :rating="1.5" count="70"></cdr-rating>
-    <cdr-rating rating="3.7" :count="55"></cdr-rating>
-    <cdr-rating rating="2.35" count="23"></cdr-rating>
+    <cdr-rating rating="0" count="10" modifier="large"></cdr-rating>
+    <cdr-rating rating="3" count="100" modifier="large" compact></cdr-rating>
+
+    <cdr-rating rating="1.2" count="77" modifier="medium"></cdr-rating>
+    <cdr-rating rating="4.8" count="4561" modifier="medium" compact></cdr-rating>
+
+    <cdr-rating rating="2" count="9" modifier="small"></cdr-rating>
+    <cdr-rating rating="3.4" count="615" modifier="small" compact></cdr-rating>
   </div>
 </template>
 

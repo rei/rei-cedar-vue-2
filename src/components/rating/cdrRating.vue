@@ -1,5 +1,5 @@
 <template>
-  <div class="cdr-rating">
+  <div class="cdr-rating" :class="[modifierClass]">
     <div class="cdr-rating__background">
       <span class="cdr-rating__icon cdr-rating__placeholder" v-for="n in 5" :key="n" aria-hidden="true"></span>
     </div>
@@ -9,15 +9,17 @@
       <span class="cdr-rating__icon cdr-rating__50" v-else-if="remainder === '50'" aria-hidden="true"></span>
       <span class="cdr-rating__icon cdr-rating__75" v-else-if="remainder === '75'" aria-hidden="true"></span>
     </div>
-    <span aria-hidden="true" v-if="count">({{count}})</span>
+    <span aria-hidden="true" v-if="count" class="cdr-rating__count">({{count}})<span v-if="!compact"> Reviews</span></span>
     <span class="u-sr-only">rated {{rating}} out of 5 with {{count}} reviews</span>
   </div>
 </template>
 
 <script>
+import modifier from '../../mixins/modifier';
 
 export default {
   name: 'cdr-rating',
+  mixins: [modifier],
   props: {
     /**
      * Rating out of 5
@@ -33,8 +35,18 @@ export default {
       required: false,
       type: [String, Number],
     },
+    /**
+     * Hides the word 'reviews' if true
+     */
+    compact: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
+    baseClass() {
+      return 'cdr-rating';
+    },
     whole() {
       return Math.floor(this.rating);
     },
