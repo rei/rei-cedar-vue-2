@@ -1,6 +1,21 @@
+/* ==========================================================================
+   # LIST
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* element styles
+* Style variants
+*/
+
 .cdr-list {
   list-style-type: disc;
   padding-left: $spacing-space-md;
+
+  /* Element Styles
+    ========================================================================== */
 
   & > li {
     padding-bottom: $spacing-space-md;
@@ -19,6 +34,9 @@
       padding-bottom: $spacing-space-closed;
     }
   }
+
+  /* Style variants
+    ========================================================================== */
 
   &--unstyled {
     list-style-type: none;
