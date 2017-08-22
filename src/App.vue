@@ -17,6 +17,7 @@
     <mediaObject></mediaObject>
     <mountains></mountains>
     <radios data-backstop="radios"></radios>
+    <ratings data-backstop="ratings"></ratings>
     <selects data-backstop="selects"></selects>
     <test data-backstop="test"></test>
   </div>

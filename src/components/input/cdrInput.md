@@ -17,7 +17,7 @@
 // Stuff for demo
 var debounce = '';
 function validateFn(inputText) {
-  const obj = {};
+  var obj = {};
   if (inputText === 'hi') {
     obj.state = 'valid';
   } else if (inputText === '') {
