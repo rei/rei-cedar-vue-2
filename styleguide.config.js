@@ -1,6 +1,7 @@
 require('./build/check-theme')();
 
 const ReplacePlugin = require('replace-bundle-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // Webpack configs
 const devConfig = require('./build/webpack.dev.conf.js');
@@ -30,12 +31,14 @@ if (process.env.NODE_ENV === 'development') {
 } else if (process.env.NODE_ENV === 'production') {
   // for replacing urls that are different between dev and gh-pages
   const rename = new ReplacePlugin([{
-    partten: /\/static\//g,
+    partten: /\/static\//g, // requires this misspelling of 'pattern'
     replacement() {
       return '/rei-cedar/static/';
     },
   }]);
   prodConfig.plugins.push(rename);
+  const clean = new CleanWebpackPlugin('dist-docs');
+  prodConfig.plugins.push(clean);
   webpConfig = prodConfig;
 
   indexTemplate = prodIndex; // prod index.html
@@ -55,6 +58,10 @@ module.exports = {
   styleguideDir: './dist-docs',
   template: indexTemplate,
   showUsage: true,
+  contextDependencies: [
+    './src/components',
+    './src/compositions',
+  ],
   sections: [
     {
       name: 'Introduction',
