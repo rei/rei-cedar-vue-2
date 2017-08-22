@@ -12,5 +12,6 @@ export { default as CdrInput } from './input/cdrInput';
 export { default as CdrList } from './list/cdrList';
 export { default as CdrMediaObject } from './mediaObject/cdrMediaObject';
 export { default as CdrRadio } from './radio/cdrRadio';
+export { default as CdrRating } from './rating/cdrRating';
 export { default as CdrRow } from './grid/cdrRow';
 export { default as CdrSelect } from './select/cdrSelect';
