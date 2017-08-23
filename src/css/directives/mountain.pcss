@@ -5,6 +5,17 @@ $small-mountain: 2;
 $small-mountain-rem: 2rem;
 $small-mountain-side: calc($small-mountain-rem * 2);
 
+/* ==========================================================================
+   # MOUNTAIN SHAPE
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Location variants
+*/
+
 .mountain-shape {
   position: absolute;
   border-color: inherit;
@@ -32,6 +43,9 @@ $small-mountain-side: calc($small-mountain-rem * 2);
     border-right-width: $small-mountain-rem;
     border-bottom-width: $small-mountain-rem;
   }
+
+  /* Location variants
+    ========================================================================== */
 
   &--top {
     top: 0;

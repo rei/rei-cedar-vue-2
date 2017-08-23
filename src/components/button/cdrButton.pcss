@@ -1,3 +1,16 @@
+/* ==========================================================================
+   # BUTTON
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Style variants
+* Size variants
+* Display variants
+*/
+
 .cdr-button {
   background-color: $btn-bg;
   border-color: $btn-stroke;
@@ -17,6 +30,7 @@
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
+
   @media (--small-only) {
     display: block;
     width: 100%;
@@ -41,7 +55,8 @@
   &:focus {
     color: $btn-focus-text;
     outline: thin dotted;
-    // WebKit
+
+    /* webkit */
     outline: 0.2rem auto;
     outline-color: $btn-focus-stroke;
     outline-offset: -0.1rem;
@@ -56,7 +71,9 @@
     cursor: not-allowed;
   }
 
-  /* button themes */
+  /* Style variants
+    ========================================================================== */
+
   &--secondary {
     background-color: $btn-secondary-bg;
     border-color: $btn-secondary-stroke;
@@ -82,6 +99,9 @@
     }
   }
 
+  /* Size variants
+    ========================================================================== */
+
   &--sm {
     font-family: $btn--sm-font-family;
     font-size: $btn--sm-font-size;
@@ -100,67 +120,8 @@
     padding: $inset-md--squish;
   }
 
-  &--input-post {
-    background-color: $sys-color-input;
-    border-color: $sys-color-input-stroke;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left: none;
-    line-height: $sys-font-redwood-bdy-30-line-height;
-    padding: $spacing-space-sm $spacing-space-md;
-    height: calc($sys-font-redwood-bdy-30-line-height + 2px + (2 * $spacing-space-sm));
-    color: $sys-font-redwood-bdy-30-color;
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: $sys-color-input;
-      border-color: $sys-color-input-stroke;
-      color: initial;
-    }
-
-    & > .cdr-icon {
-      width: $sys-font-redwood-bdy-30-font-size;
-      height: $sys-font-redwood-bdy-30-font-size;
-
-      & > use {
-        fill: $sys-font-redwood-bdy-30-color;
-      }
-    }
-  }
-
-  /* button states */
-
-  &--input-pre {
-    background-color: $sys-color-input;
-    border-color: $sys-color-input-stroke;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: none;
-    line-height: $sys-font-redwood-bdy-30-line-height;
-    padding: $spacing-space-sm $spacing-space-md;
-    height: calc($sys-font-redwood-bdy-30-line-height + 2px + (2 * $spacing-space-sm));
-    color: $sys-font-redwood-bdy-30-color;
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: $sys-color-input;
-      border-color: $sys-color-input-stroke;
-      color: initial;
-    }
-
-    & > .cdr-icon {
-      width: $sys-font-redwood-bdy-30-font-size;
-      height: $sys-font-redwood-bdy-30-font-size;
-
-      & > use {
-        fill: $sys-font-redwood-bdy-30-color;
-      }
-    }
-  }
-
-  /* button states */
+  /* Display variants
+    ========================================================================== */
 
   &--block {
     width: 100%;
@@ -173,22 +134,6 @@
   }
 
   &--fixed {
-    width: auto;
-    display: inline;
-    margin: 0 0 2rem 1.6rem;
-  }
-}
-
-.cdr-button-group > * {
-  width: 100%;
-  display: block;
-  margin-bottom: 2rem;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  @media (--medium) {
     width: auto;
     display: inline;
     margin: 0 0 2rem 1.6rem;

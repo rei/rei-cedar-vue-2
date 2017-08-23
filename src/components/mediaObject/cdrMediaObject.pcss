@@ -1,8 +1,23 @@
+/* ==========================================================================
+   # MEDIA OBJECT
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Style variants
+* Block elements
+*/
+
 .cdr-media-object {
   align-items: flex-start;
   display: flex;
   max-width: 100%;
   flex-wrap: wrap;
+
+  /* Style variants
+    ========================================================================== */
 
   &--wrap {
     flex-wrap: wrap;
@@ -18,61 +33,6 @@
     & > .cdr-media-object__body {
       flex-basis: 100%;
     }
-  }
-
-  &__figure {
-    margin-right: calc(16px);
-  }
-
-  &__link {
-    position: relative;
-    z-index: 1;
-  }
-
-  &__title {
-    &__link {
-      position: static;
-
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        z-index: 0;
-        height: 100%;
-        left: 0;
-        top: 0;
-        transition: trasparent 0.1s ease-out;
-        background-color: trasparent;
-      }
-    }
-  }
-
-  &__body {
-    flex: 1;
-    flex-basis: 35%;
-
-    &--left {
-      text-align: left;
-    }
-
-    &--right {
-      text-align: right;
-    }
-
-    &--center {
-      text-align: center;
-    }
-  }
-
-  &__link {
-    position: relative;
-    z-index: 1;
-  }
-
-  &__body,
-  &__body:last-child {
-    margin-bottom: 0;
   }
 
   &--overlay {
@@ -174,5 +134,63 @@
 
   &--center {
     align-items: center;
+  }
+
+  /* Block elements
+    ========================================================================== */
+
+  &__figure {
+    margin-right: calc(16px);
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    &__link {
+      position: static;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: trasparent 0.1s ease-out;
+        background-color: trasparent;
+      }
+    }
+  }
+
+  &__body {
+    flex: 1;
+    flex-basis: 35%;
+
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--center {
+      text-align: center;
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__body,
+  &__body:last-child {
+    margin-bottom: 0;
   }
 }
