@@ -11,17 +11,13 @@
 */
 
 .cdr-select {
-  font-size: $sys-font-redwood-ui-30-font-size;
-  line-height: $sys-font-redwood-ui-30-line-height;
-  color: $sys-font-redwood-ui-30-color;
-  font-style: $sys-font-redwood-ui-30-font-style;
-  font-weight: $sys-font-redwood-ui-30-font-weight;
-  font-family: $sys-font-redwood-ui-30-font-family;
+  @include sys-font-redwood-ui-30 ();
+  
   width: 100%;
   display: block;
   border-width: 1px;
   border-style: solid;
-  height: calc(($spacing-space-md * 2) + $sys-font-redwood-ui-30-line-height);
+  height: calc(($sizing-size-sm-stretch * 2) + $sys-font-redwood-ui-30-line-height);
   border-color: $sys-color-input-stroke;
   border-radius: $radius-input;
   background-color: $sys-color-input;
