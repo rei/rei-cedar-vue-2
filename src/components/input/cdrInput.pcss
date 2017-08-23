@@ -42,12 +42,8 @@
 */
 
 .cdr-input {
-  font-size: $sys-font-redwood-ui-30-font-size;
-  line-height: $sys-font-redwood-ui-30-line-height;
-  color: $sys-font-redwood-ui-30-color;
-  font-style: $sys-font-redwood-ui-30-font-style;
-  font-weight: $sys-font-redwood-ui-30-font-weight;
-  font-family: $sys-font-redwood-ui-30-font-family;
+  @include sys-font-redwood-ui-30 ();
+
   background-color: $sys-color-input;
   border-color: $sys-color-input-stroke;
   border-style: solid;
@@ -188,12 +184,7 @@
 
 .cdr-input-messages {
   position: relative;
-  font-size: $sys-font-redwood-dsp-10-font-size;
-  line-height: $sys-font-redwood-dsp-10-line-height;
-  color: $sys-font-redwood-dsp-10-color;
-  font-style: $sys-font-redwood-dsp-10-font-style;
-  font-weight: $sys-font-redwood-dsp-10-font-weight;
-  font-family: $sys-font-redwood-dsp-10-font-family;
+  @include sys-font-redwood-ui-20 ();
 
   /* Block elements
     ========================================================================== */
