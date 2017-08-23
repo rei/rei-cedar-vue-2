@@ -170,6 +170,7 @@ export default {
     inputClass() {
       return {
         'cdr-input': true,
+        'cdr-input--multiline': this.multiLine,
         'cdr-input--error': this.isErr,
         'cdr-input--warn': this.isWarn,
         'cdr-input--actions': this.$slots.pre || this.$slots.post,

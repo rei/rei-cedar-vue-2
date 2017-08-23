@@ -38,51 +38,41 @@
 * Base class
 * Style variants
 * Pseudo elements
+* Input actions
 */
 
 .cdr-input {
-  font-size: $sys-font-redwood-bdy-30-font-size;
-  line-height: $sys-font-redwood-bdy-30-line-height;
-  color: $sys-font-redwood-bdy-30-color;
-  font-style: $sys-font-redwood-bdy-30-font-style;
-  font-weight: $sys-font-redwood-bdy-30-font-weight;
-  font-family: $sys-font-redwood-bdy-30-font-family;
+  font-size: $sys-font-redwood-ui-30-font-size;
+  line-height: $sys-font-redwood-ui-30-line-height;
+  color: $sys-font-redwood-ui-30-color;
+  font-style: $sys-font-redwood-ui-30-font-style;
+  font-weight: $sys-font-redwood-ui-30-font-weight;
+  font-family: $sys-font-redwood-ui-30-font-family;
   background-color: $sys-color-input;
   border-color: $sys-color-input-stroke;
   border-style: solid;
   border-radius: $radius-input;
   border-width: 1px;
   display: block;
-  padding: $spacing-space-sm;
+  padding: $inset-sm--stretch;
+  height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size-sm-stretch);
   width: 100%;
 
   /* Style variants
     ========================================================================== */
 
-  &--actions {
-    height: calc($sys-font-redwood-bdy-30-line-height + 2px + (2 * $spacing-space-sm));
-  }
-
-  &--action-post {
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  &--action-pre {
-    border-left: none;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+  &--multiline {
+    height: auto;
   }
 
   &--error {
-    border-color: $sys-color-error;
+    border-color: $sys-color-input-error-stroke;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &--warn {
-    border-color: $sys-color-warning;
+    border-color: $sys-color-input-warning-stroke;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -97,6 +87,21 @@
   &::placeholder {
     font-style: italic;
     color: $sys-color-input-placeholder-text;
+  }
+
+  /* Input actions
+    ========================================================================== */
+
+  &--action-post {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &--action-pre {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 
@@ -127,21 +132,21 @@
 
   &__icon {
     position: absolute;
-    top: calc(($sys-font-redwood-bdy-30-line-height - $sys-font-redwood-bdy-30-font-size) / 2 + $spacing-space-sm);
+    top: calc(($sys-font-redwood-ui-30-line-height - $sys-font-redwood-ui-30-font-size) / 2 + $sizing-size-sm-stretch);
     right: $spacing-space-sm;
-    height: $sys-font-redwood-bdy-30-font-size;
-    width: $sys-font-redwood-bdy-30-font-size;
+    height: $sys-font-redwood-ui-30-font-size;
+    width: $sys-font-redwood-ui-30-font-size;
 
     &--valid > svg {
       fill: $sys-color-success;
     }
 
     &--warn > svg {
-      fill: $sys-color-warning;
+      fill: $sys-color-input-warning-stroke;
     }
 
     &--error > svg {
-      fill: $sys-color-error;
+      fill: $sys-color-input-error-stroke;
     }
   }
 }
@@ -205,13 +210,13 @@
     }
 
     &--error {
-      border-color: $sys-color-error;
-      background-color: rgba(204, 0, 0, 0.1);
+      border-color: $sys-color-input-error-stroke;
+      background-color: $sys-color-input-error;
     }
 
     &--warn {
-      border-color: $sys-color-warning;
-      background-color: rgba(252, 196, 25, 0.2);
+      border-color: $sys-color-input-warning-stroke;
+      background-color: $sys-color-input-warning;
     }
   }
 }
