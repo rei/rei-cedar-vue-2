@@ -4,6 +4,7 @@
 ** input wrap
 ** input group
 ** input
+** input action
 ** input validation
 ** animated errors
 ** input messages
@@ -41,6 +42,8 @@
 * Input actions
 */
 
+$input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size-sm-stretch);
+
 .cdr-input {
   @include sys-font-redwood-ui-30 ();
 
@@ -51,7 +54,7 @@
   border-width: 1px;
   display: block;
   padding: $inset-sm--stretch;
-  height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size-sm-stretch);
+  height: $input-height;
   width: 100%;
 
   /* Style variants
@@ -98,6 +101,59 @@
     border-left: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+  }
+
+  &__action {
+    border-color: $sys-color-input-stroke;
+    border-style: solid;
+    border-radius: $radius-input;
+    border-width: 1px;
+    height: $input-height;
+
+    &--error {
+      border-color: $sys-color-input-error-stroke;
+    }
+
+    &--warn {
+      border-color: $sys-color-input-warning-stroke;
+    }
+
+    &--pre {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+    }
+
+    &--post {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+    }
+  }
+}
+
+/* ==========================================================================
+   # INPUT ACTION
+   ========================================================================== */
+
+.cdr-input-action {
+  border: none;
+  background-color: $sys-color-input;
+  padding: $inset-sm--stretch;
+  height: calc($input-height - 2px);
+  @include sys-font-redwood-ui-30 ();
+
+  svg {
+    width: $sys-font-redwood-ui-30-font-size;
+    height: $sys-font-redwood-ui-30-font-size;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    border: none;
+    background-color: $sys-color-input;
+    color: initial;
   }
 }
 

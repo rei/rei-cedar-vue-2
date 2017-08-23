@@ -9,7 +9,6 @@
 * Style variants
 * Size variants
 * Display variants
-* Input action buttons
 */
 
 .cdr-button {
@@ -138,66 +137,5 @@
     width: auto;
     display: inline;
     margin: 0 0 2rem 1.6rem;
-  }
-
-  /* Input action buttons
-    ========================================================================== */
-
-  &--input-post {
-    background-color: $sys-color-input;
-    border-color: $sys-color-input-stroke;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left: none;
-    line-height: $sys-font-redwood-bdy-30-line-height;
-    padding: $spacing-space-sm $spacing-space-md;
-    height: calc($sys-font-redwood-bdy-30-line-height + 2px + (2 * $spacing-space-sm));
-    color: $sys-font-redwood-bdy-30-color;
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: $sys-color-input;
-      border-color: $sys-color-input-stroke;
-      color: initial;
-    }
-
-    & > .cdr-icon {
-      width: $sys-font-redwood-bdy-30-font-size;
-      height: $sys-font-redwood-bdy-30-font-size;
-
-      & > use {
-        fill: $sys-font-redwood-bdy-30-color;
-      }
-    }
-  }
-
-  &--input-pre {
-    background-color: $sys-color-input;
-    border-color: $sys-color-input-stroke;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: none;
-    line-height: $sys-font-redwood-bdy-30-line-height;
-    padding: $spacing-space-sm $spacing-space-md;
-    height: calc($sys-font-redwood-bdy-30-line-height + 2px + (2 * $spacing-space-sm));
-    color: $sys-font-redwood-bdy-30-color;
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: $sys-color-input;
-      border-color: $sys-color-input-stroke;
-      color: initial;
-    }
-
-    & > .cdr-icon {
-      width: $sys-font-redwood-bdy-30-font-size;
-      height: $sys-font-redwood-bdy-30-font-size;
-
-      & > use {
-        fill: $sys-font-redwood-bdy-30-color;
-      }
-    }
   }
 }
