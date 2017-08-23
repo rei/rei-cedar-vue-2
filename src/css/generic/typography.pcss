@@ -16,15 +16,17 @@
 */
 
 .cdr-label {
-  /* TODO: update with new typography value */
-  font-weight: bold;
+  @include sys-font-maple-utl-20 ();
+
+  color: $sys-color-input-label;
+  margin-bottom: $spacing-space-xxs;
 
   &--disabled {
-    color: $sys-color-input-placeholder-text;
+    color: $sys-color-input-disabled-label;
   }
 
   &--error {
-    color: $sys-color-error;
+    color: $sys-color-input-error-label;
   }
 }
 

@@ -7,7 +7,7 @@
     placeholder="Search" 
     v-model="searchValue" 
     @input="updateSearch">
-    <cdr-button slot="post" modifier="input-post" :on-click="click">
+    <cdr-button slot="post" class="cdr-input-action" :on-click="click">
       <cdr-icon url="/static/rei-icons.svg#icon-rei-search"></cdr-icon>
       <span class="u-sr-only">Search</span>
     </cdr-button>

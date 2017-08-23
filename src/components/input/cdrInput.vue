@@ -7,7 +7,9 @@
     >{{label}}<span v-if="required">*</span>
     </label>
     <div class="cdr-input-group" :class="[groupClass]">
-      <slot name="pre"></slot>
+      <div v-if="$slots.pre" :class="[actionClass, preActionClass]">
+        <slot name="pre"></slot>
+      </div>
       <div :class="[validationClass]">
         <textarea v-if="multiLine"
           :class="inputClass"
@@ -46,7 +48,9 @@
 
         <span v-if="feedback" :class="validationIconClass" v-html="getIcon" ref="icon"></span>
       </div>
-      <slot name="post"></slot>
+      <div v-if="$slots.post" :class="[actionClass, postActionClass]">
+        <slot name="post"></slot>
+      </div>
     </div>
     <transition-group class="cdr-input-messages" :id="messagesId" ref="messages" name="cdr-animated-errors" tag="div">
       <div :class="messageClass"
@@ -170,6 +174,7 @@ export default {
     inputClass() {
       return {
         'cdr-input': true,
+        'cdr-input--multiline': this.multiLine,
         'cdr-input--error': this.isErr,
         'cdr-input--warn': this.isWarn,
         'cdr-input--actions': this.$slots.pre || this.$slots.post,
@@ -203,6 +208,23 @@ export default {
       return {
         'cdr-input-group': true,
         'cdr-input-group--actions': this.$slots.pre || this.$slots.post,
+      };
+    },
+    actionClass() {
+      return {
+        'cdr-input__action': true,
+        'cdr-input__action--error': this.isErr,
+        'cdr-input__action--warn': this.isWarn,
+      };
+    },
+    preActionClass() {
+      return {
+        'cdr-input__action--pre': true,
+      };
+    },
+    postActionClass() {
+      return {
+        'cdr-input__action--post': true,
       };
     },
     getIcon() {
