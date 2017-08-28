@@ -6,6 +6,16 @@ const glob = require('glob');
 const scenariosArr = [];
 let defs = [];
 
+// functions for creating scenarios
+function createScenario(def) {
+  scenariosArr.push(def);
+}
+
+function createSelectorScriptScenario(def) {
+  // loop through selectors
+  // create scenario for each
+}
+
 // get backstop definition files and concat the contents
 const files = glob.sync('./src/**/*.backstop.js');
 files.forEach((file) => {
@@ -13,10 +23,15 @@ files.forEach((file) => {
 });
 
 defs.forEach((def) => {
-  const locDef = def;
-  locDef.url = 'http://localhost:8080';
-  locDef.readyEvent = null;
-  scenariosArr.push(locDef);
+  if (def.selectorScript) {
+    // create scenario per selector
+  } else {
+    // create scenario
+  }
+  // const locDef = def;
+  // locDef.url = 'http://localhost:8080';
+  // locDef.readyEvent = null;
+  // scenariosArr.push(locDef);
 });
 
 module.exports = {
@@ -51,8 +66,7 @@ module.exports = {
     html_report: 'backstop_data/html_report',
     ci_report: 'backstop_data/ci_report',
   },
-  asyncCaptureLimit: 10,
-  casperFlags: [],
+  asyncCaptureLimit: 5,
   engine: 'chrome',
   report: ['browser'],
   debug: false,

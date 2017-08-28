@@ -143,7 +143,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not ie <= 8",
-    "safari >=4"
+    "not ie <= 8"
   ]
 }
