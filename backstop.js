@@ -5,15 +5,35 @@ const glob = require('glob');
 // variables
 const scenariosArr = [];
 let defs = [];
+const scenarioDefaults = {
+  url: 'http://localhost:8080',
+  readyEvent: null,
+};
 
 // functions for creating scenarios
 function createScenario(def) {
-  scenariosArr.push(def);
+  const finalScenario = Object.assign({}, scenarioDefaults, def);
+  scenariosArr.push(finalScenario);
 }
 
-function createSelectorScriptScenario(def) {
-  // loop through selectors
-  // create scenario for each
+function createHoverScenario(def) {
+  // handle normal selectors
+  const normalScenario = Object.assign({}, def);
+  delete normalScenario.hoverSelectors;
+  createScenario(normalScenario);
+  // handle hover selectors
+  const hoverScenario = Object.assign({}, def);
+  hoverScenario.label = `${hoverScenario.label} Hover`;
+  hoverScenario.selectors = [];
+  hoverScenario.onReadyScript = 'hover.js';
+  const copy = Object.assign({}, hoverScenario);
+  delete copy.hoverSelectors;
+
+  hoverScenario.hoverSelectors.forEach((selector) => {
+    copy.selectors = [];
+    copy.selectors.push(selector);
+    createScenario(copy);
+  });
 }
 
 // get backstop definition files and concat the contents
@@ -23,37 +43,34 @@ files.forEach((file) => {
 });
 
 defs.forEach((def) => {
-  if (def.selectorScript) {
-    // create scenario per selector
+  console.log(Object.prototype.hasOwnProperty.call(def, 'hoverSelectors'));
+  if (Object.prototype.hasOwnProperty.call(def, 'hoverSelectors')) {
+    createHoverScenario(def);
   } else {
-    // create scenario
+    createScenario(def);
   }
-  // const locDef = def;
-  // locDef.url = 'http://localhost:8080';
-  // locDef.readyEvent = null;
-  // scenariosArr.push(locDef);
 });
 
 module.exports = {
   id: 'cedar',
   viewports: [
     {
-      name: 'phone',
+      label: 'phone',
       width: 320,
       height: 480,
     },
     {
-      name: 'tablet_v',
+      label: 'tablet_v',
       width: 568,
       height: 1024,
     },
     {
-      name: 'tablet_h',
+      label: 'tablet_h',
       width: 1024,
       height: 768,
     },
     {
-      name: 'desktop',
+      label: 'desktop',
       width: 1920,
       height: 1080,
     },

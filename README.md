@@ -81,7 +81,7 @@ We’re aliasing the backstop commands to use `npm run <command>` just to abstra
 
 The config (`backstop.js`) looks through `src/` for all __*.backstop.js__ and generates a proper backstop scenario object for each.
 
-If you want to test states (i.e. hover) you can create another backstop file (i.e. cdrButon-hover.backstop.js) that has an `selectorScript`. These scripts use [chromy](https://github.com/OnetapInc/chromy). **This is a custom config option we've added to allow for adding stateful tests for an array of selectors easily.**
+If you want to test hover statyes you can create another array of selectors `hoverSelectors`. These selectors will use an onReadyScript (`hover.js`) to simulate a mouse moving and hovering. This engine script uses [chromy](https://github.com/OnetapInc/chromy). **This is a custom config option we've added to allow for adding hover tests for an array of selectors easily.**
 
 Engine scripts live in `backstop_data > engine_scripts`
 
