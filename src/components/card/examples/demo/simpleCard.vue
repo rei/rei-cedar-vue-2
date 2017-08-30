@@ -19,14 +19,12 @@
       footerClass="cdr-inset"
       >
         <cdr-media-object
-        level="3"
         media-url="http://rei.com"
-        media-title="Article attribution"
-        media-figure="http://placehold.it/50x50"
-        media-extend-style="cdr-card__media"
-        media-img-shape="circle"
+        img-src="http://placehold.it/50x50"
+        img-modifier="circle"
         modifier="center"
         slot="header">
+        <cdr-heading level="3"><a href="https://rei.com">Article attribution</a></cdr-heading>
         </cdr-media-object>
         <section slot="bodyB">
           <cdr-row cols="3" gutter="none">
@@ -73,13 +71,10 @@
         </cdr-row>
         </section>
         <cdr-media-object
-        level="3"
-        media-url="http://rei.com"
-        media-title="Backpacking Tents: How to Choose"
-        media-figure="http://placehold.it/350x150"
-        media-extend-style="cdr-card__media"
-        media-img-shape="responsive"
+        img-src="http://placehold.it/350x150"
+        img-modifier="responsive"
         modifier="top block">
+        <cdr-heading level="3"><a href="https://rei.com">Backpacking Tents: How to Choose</a></cdr-heading>
         </cdr-media-object>
         <cdr-button-group slot="footer">
           <cdr-button >B1</cdr-button>

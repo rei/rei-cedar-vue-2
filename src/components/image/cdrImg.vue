@@ -1,8 +1,8 @@
 <template>
   <div v-if="ratio" class="cdr-media-frame" :class="[ratioClass, cropClass]">
-    <img class="cdr-media-frame__image" :class="[modifierClass, utilityRadiusClass]" :src="src" :alt="alt" v-bind="$attrs">
+    <img class="cdr-media-frame__image" :class="[modifierClass, radiusClass]" :src="src" :alt="alt" v-bind="$attrs">
   </div>
-  <img v-else :class="[modifierClass, utilityRadiusClass]" :src="src" :alt="alt" v-bind="$attrs">
+  <img v-else :class="[modifierClass, radiusClass]" :src="src" :alt="alt" v-bind="$attrs">
 </template>
 
 <script>
@@ -46,7 +46,7 @@ export default {
     /**
      * Sets a border radius to an element {square, top, right, bottom, left}
      */
-    utiliyRadius: {
+    radius: {
       type: String,
       validator: value => ([
         'square',
@@ -68,7 +68,7 @@ export default {
     baseClass() {
       return 'cdr-image';
     },
-    utilityRadiusClass() {
+    radiusClass() {
       return `cdr-add-radius--${this.utiliyRadius}`;
     },
     ratioClass() {

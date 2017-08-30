@@ -29,7 +29,7 @@ The basic card is intended as a container for grouping like content.
   level="3"
   media-url="http://rei.com"
   media-title="Article attribution"
-  media-figure="http://placehold.it/50x50"
+  img-src="http://placehold.it/50x50"
   media-extend-style="cdr-card__media"
   media-img-shape="circle"
   modifier="center"
@@ -83,7 +83,7 @@ The basic card is intended as a container for grouping like content.
   level="3"
   media-url="http://rei.com"
   media-title="Backpacking Tents: How to Choose"
-  media-figure="http://placehold.it/350x150"
+  img-src="http://placehold.it/350x150"
   media-extend-style="cdr-card__media"
   media-img-shape="responsive"
   modifier="top block">

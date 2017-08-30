@@ -10,26 +10,24 @@
     <template v-if="this.authorTitle != null">
         <cdr-media-object
         slot="header"
-        :media-figure="profile"
-        media-img-shape="circle"
-        :level="authorTitle"
-        :media-title="author">
+        :img-src="profile"
+        img-modifier="circle">
+          <cdr-heading :level="authorTitle">{{author}}</cdr-heading>
           <p>{{creationTime}}</p>
         </cdr-media-object>
     </template>
 
     <cdr-media-object
-      :media-figure="media"
-      :media-figure-alt="mediaAlt"
-      media-img-shape="responsive"
+      :img-src="media"
+      :img-src-alt="mediaAlt"
+      img-modifier="responsive"
       modifier="top stretch"
-      :level="level"
-      :mediaSuperTitle="label"
       :mediaUrl="titleUrl"
       :media-title="title"
       :mediaSubTitle="subTitle"
       media-title-class="cdr-card--content__title cdr-card--content__title__action"
-      :media-figure-radius= "mediaFigureRadiusClass" >
+      :img-src-radius= "imgSrcRadiusClass" >
+      <cdr-heading :level="level">{{title}}</cdr-heading>
       <template v-if="snapshot">
         <ul class="cdr-card--content__snapshot cdr-list cdr-list--inline cdr-list--bulleted">
            <li v-for="item in snapshot">
@@ -131,10 +129,11 @@ export default {
       type: String,
       default: ' ',
     },
-    label: String,
     title: String,
     titleUrl: String,
-    level: String,
+    level: {
+      type: [String, Number],
+    },
     subTitle: String,
     snapshotLocation: String,
     snapshotDistance: String,
@@ -198,7 +197,7 @@ export default {
     },
   },
   computed: {
-    mediaFigureRadiusClass() {
+    imgSrcRadiusClass() {
       if (this.authorTitle == null) {
         return 'top';
       }

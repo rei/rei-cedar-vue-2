@@ -61,7 +61,7 @@ add
 #### Media objects aligning media frames
 ```
   <cdr-media-object
-    media-figure="http://placehold.it/350x150"
+    img-src="http://placehold.it/350x150"
     media-url="http://rei.com"
     media-title="Backpacking Tents: How to Choose"
     level="2"
@@ -72,7 +72,7 @@ add
 ```
 ```
   <cdr-media-object
-    media-figure="http://placehold.it/350x150"
+    img-src="http://placehold.it/350x150"
     media-url="http://rei.com"
     media-title="Backpacking Tents: How to Choose"
     level="2"
@@ -82,7 +82,7 @@ add
 ```
 ```
   <cdr-media-object
-    media-figure="http://placehold.it/150x150"
+    img-src="http://placehold.it/150x150"
     level="3"
     media-title="Tiger Mountain Loop">
     <p>Tiger Mountain is a multi-use recreation area near Seattle. In recent years, new trails and the continued work of Evergreen Mountain…</p>
@@ -90,7 +90,7 @@ add
 ```
 ```
   <cdr-media-object
-    media-figure="http://placehold.it/50x50"
+    img-src="http://placehold.it/50x50"
     media-img-shape="circle"
     level="3"
     media-title="Jerry Stritzke">
@@ -99,7 +99,7 @@ add
 ```
 ```
   <cdr-media-object
-    media-figure="http://placehold.it/150x150"
+    img-src="http://placehold.it/150x150"
     level="3"
     media-title="Tiger Mountain Loop"
     modifier="right">
@@ -109,7 +109,7 @@ add
 #### Media Object overlay
 ```
   <cdr-media-object
-    media-figure="http://placehold.it/350x150/212121/222222"
+    img-src="http://placehold.it/350x150/212121/222222"
     media-url="http://rei.com"
     media-title="Backpacking Tents: How to Choose"
     level="2"
@@ -121,7 +121,7 @@ add
 #### Media Figure ratio
 ```
  <cdr-media-object
-    media-figure="http://placehold.it/350x150"
+    img-src="http://placehold.it/350x150"
     media-url="http://rei.com"
     media-title="Backpacking Tents: How to Choose"
     level="2"
