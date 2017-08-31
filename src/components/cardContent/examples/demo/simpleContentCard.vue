@@ -12,11 +12,10 @@
     </cdr-col>
     <cdr-col>
       <cdr-card-content
-        media="http://placehold.it/350x150"
-        label="MTB Project"
-        title="Tiger Mountain Loop"
-        title-url="http://rei.com">
+        media="http://placehold.it/350x150">
         <div slot="summary">
+          <span>MTB Project</span>
+          <cdr-heading level="2"><a href="http://rei.com">Tiger Mountain Loop</a></cdr-heading>
           <p>Tiger Mountain is a multi-use recreation area near Seattle. In recent years, new trails and the continued work of Evergreen Mountain…</p>
            <cdr-list modifier="bulleted">
             <li>2,913’ ascent</li>
