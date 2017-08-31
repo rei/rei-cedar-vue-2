@@ -1,55 +1,52 @@
 <template>
   <cdr-card
   modifier="content"
-  :content-a-gutter="mediaGutter"
-  :footer="userSettings"
-  footerClass="cdr-inset cdr-inset--remove-top"
-  headerClass="cdr-inset"
-  wrapper-a= "cdr-inset cdr-inset--remove-top cdr-card--content__body" >
-
+  >
     <template v-if="this.authorTitle != null">
-        <cdr-media-object
-        slot="header"
-        :img-src="profile"
-        img-modifier="circle">
-          <cdr-heading :level="authorTitle">{{author}}</cdr-heading>
-          <p>{{creationTime}}</p>
-        </cdr-media-object>
+      <header class="cdr-inset">
+          <cdr-media-object
+          :img-src="profile"
+          img-modifier="circle">
+            <cdr-heading :level="authorTitle">{{author}}</cdr-heading>
+            <p>{{creationTime}}</p>
+          </cdr-media-object>
+      </header>
     </template>
 
-    <cdr-media-object
-      :img-src="media"
-      :img-src-alt="mediaAlt"
-      img-modifier="responsive"
-      modifier="top stretch"
-      :mediaUrl="titleUrl"
-      :media-title="title"
-      :mediaSubTitle="subTitle"
-      media-title-class="cdr-card--content__title cdr-card--content__title__action"
-      :img-src-radius= "imgSrcRadiusClass" >
-      <cdr-heading :level="level">{{title}}</cdr-heading>
-      <template v-if="snapshot">
-        <ul class="cdr-card--content__snapshot cdr-list cdr-list--inline cdr-list--bulleted">
-           <li v-for="item in snapshot">
-            {{ item }}
-          </li>
-        </ul>
-      </template>
-      <div v-if="$slots.summary"
-      class="cdr-card--content__summary">
-        <slot name="summary">{{summary}}</slot>
-      </div>
-      <div v-if="$slots.price"
-      class="cdr-card--content__price">
-        <slot name="price">{{price}}</slot>
-      </div>
-      <div v-if="$slots.messaging"
-      class="cdr-card--content__messaging">
-        <slot name="messaging">{{messaging}}</slot>
-      </div>
-    </cdr-media-object>
+   <section class="cdr-inset cdr-inset--remove-top cdr-card--content__body">
+      <cdr-media-object
+        :img-src="media"
+        :img-src-alt="mediaAlt"
+        img-modifier="responsive"
+        modifier="top stretch"
+        :mediaUrl="titleUrl"
+        :media-title="title"
+        :mediaSubTitle="subTitle"
+        media-title-class="cdr-card--content__title cdr-card--content__title__action"
+        :img-src-radius= "imgSrcRadiusClass" >
+        <cdr-heading :level="level">{{title}}</cdr-heading>
+        <template v-if="snapshot">
+          <ul class="cdr-card--content__snapshot cdr-list cdr-list--inline cdr-list--bulleted">
+             <li v-for="item in snapshot">
+              {{ item }}
+            </li>
+          </ul>
+        </template>
+        <div v-if="$slots.summary"
+        class="cdr-card--content__summary">
+          <slot name="summary">{{summary}}</slot>
+        </div>
+        <div v-if="$slots.price"
+        class="cdr-card--content__price">
+          <slot name="price">{{price}}</slot>
+        </div>
+        <div v-if="$slots.messaging"
+        class="cdr-card--content__messaging">
+          <slot name="messaging">{{messaging}}</slot>
+        </div>
+      </cdr-media-object>
+    </section>
 
-    <template slot="bodyB">
       <template v-if="actions">
         <cdr-button-group
           class="cdr-inset cdr-inset--remove-top cdr-card--content__action">
@@ -65,10 +62,10 @@
           </cdr-button>
         </cdr-button-group>
       </template>
-    </template>
+
      <template v-if="userSettings">
+     <footer class="cdr-inset cdr-inset--remove-top">
        <cdr-button-group
-          slot="footer"
           class="cdr-card--content__action">
           <cdr-button
           v-if="userSettingsActionOneCopy"
@@ -81,6 +78,7 @@
             {{userSettingsActionTwoCopy}}
           </cdr-button>
         </cdr-button-group>
+      </footer>
     </template>
   </cdr-card>
 </template>

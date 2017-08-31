@@ -2,7 +2,6 @@
   <cdr-row cols="1" align="top" justify="center">
     <cdr-col>
       <cdr-card-content
-        level="2"
         title="Tiger Mountain Loop"
         media="http://placehold.it/350x150"
         content-a-gutter="top"
