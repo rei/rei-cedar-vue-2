@@ -11,6 +11,7 @@
     :src="imgSrc"
     :ratio="imgRatio"
     :crop="imgCrop"
+    :cover="imgCover"
     :radius="imgRadius"
     :modifier="imgModifier"
     :style="mediaWidth"></cdr-img>
@@ -60,6 +61,7 @@ export default {
     * Ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
     */
     imgRatio: String,
+    imgCover: Boolean,
     /**
     * crop  string
     * Area to crop the image overflow to (can be combined with ratio).
