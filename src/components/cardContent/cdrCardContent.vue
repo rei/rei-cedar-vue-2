@@ -132,7 +132,8 @@ export default {
     title: String,
     titleUrl: String,
     level: {
-      type: [String, Number],
+      type: String,
+      default: '2',
     },
     subTitle: String,
     snapshotLocation: String,
