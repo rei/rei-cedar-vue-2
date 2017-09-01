@@ -117,27 +117,27 @@ export default {
      */
     gutter: {
       type: String,
-      validator: value => (['none'].indexOf(value) >= 0) || false,
+      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
     /** md breakpoint and above */
     gutterMd: {
       type: String,
-      validator: value => (['none'].indexOf(value) >= 0) || false,
+      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
     /** lg breakpoint and above */
     gutterLg: {
       type: String,
-      validator: value => (['none'].indexOf(value) >= 0) || false,
+      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
     /** xl breakpoint and above */
     gutterXl: {
       type: String,
-      validator: value => (['none'].indexOf(value) >= 0) || false,
+      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
     /** xxl breakpoint and above */
     gutterXxl: {
       type: String,
-      validator: value => (['none'].indexOf(value) >= 0) || false,
+      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
     /**
      * Changes row to a column layout.

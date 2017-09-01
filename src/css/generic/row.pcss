@@ -175,6 +175,15 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
   }
 
+  &--gutter-xxs {
+    margin-left: calc(($spacing-space-xxs * -1) / 2);
+    margin-right: calc(($spacing-space-xxs * -1) / 2);;
+
+    & > .cdr-col {
+      padding: $spacing-space-xxs;
+    }
+  }
+
   &--noWrap {
     flex-wrap: nowrap;
     overflow: auto;
