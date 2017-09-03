@@ -69,7 +69,7 @@ export default {
       return 'cdr-image';
     },
     radiusClass() {
-      return `cdr-add-radius--${this.utiliyRadius}`;
+      return `cdr-radius--${this.radius}`;
     },
     ratioClass() {
       return `cdr-media-frame--${this.ratio}`;
