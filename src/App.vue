@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container-fluid">
+  <div id="app" class="cdr-container-fluid">
     <h1>Cedar Proving grounds</h1>
 
     <anchors data-backstop="anchors"></anchors>

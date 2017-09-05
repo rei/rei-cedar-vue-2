@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="cdr-container-fluid">
     <cdr-row cols="3">
       <cdr-col>
         <div class="row-demo"></div>

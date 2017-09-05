@@ -7,7 +7,7 @@ See cdr-row for complex example.
 #### Span
 
 ```
-<div class="container-fluid">
+<div class="cdr-container-fluid">
   <h4>Basic</h4>
   <cdr-row>
     <cdr-col span="3">

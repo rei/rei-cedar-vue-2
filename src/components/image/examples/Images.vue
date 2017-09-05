@@ -16,7 +16,7 @@
 
     <div data-backstop="image-standard">
       <h3>Standard image</h3>
-      <cdr-img ratio="16-9" alt="ratio standard" src="http://placehold.it/200x200"></cdr-img>
+      <cdr-img alt="ratio standard" src="http://placehold.it/200x200"></cdr-img>
       <cdr-img alt="standard landscape" src="http://placehold.it/350x150"></cdr-img>
       <cdr-img alt="standard portrait" src="http://placehold.it/150x350"></cdr-img>
     </div>
