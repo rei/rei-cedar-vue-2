@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="cdr-container-fluid">
     <cdr-row :cols="2" :cols-md="4" gutter="xxs">
       <cdr-col v-for="result in results" :key="result.id">
 
@@ -37,8 +37,23 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style>
 .image-tile {
+  &:hover,
+  &:focus {
+    & .image-tile__location {
+      opacity: 1;
+      transform: scaleY(1);
+      transition: opacity 300ms ease, transform 300ms ease;
+      position: static;
+    }
+
+    & .image-tile__icon {
+      opacity: 1;
+      transition: opacity 300ms ease;
+    }
+  }
+
   &__body {
     height: 100%;
     width: 100%;
@@ -46,21 +61,6 @@ export default {
     flex-direction: column;
     justify-content: flex-end;
     color: #fff;
-
-    &:hover,
-    &:focus {
-      & .image-tile__location {
-        opacity: 1;
-        transform: scaleY(1);
-        transition: opacity 200ms ease, transform 200ms ease;
-        position: static;
-      }
-
-      & .image-tile__icon {
-        opacity: 1;
-        transition: opacity 200ms ease;
-      }
-    }
   }
 
   &__info {

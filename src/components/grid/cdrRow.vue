@@ -21,7 +21,15 @@ export default {
         return (num > 0 && num <= 12) || false;
       },
     },
-    /** md breakpoint and above */
+    /** Sm breakpoint and above */
+    colsSm: {
+      type: [String, Number],
+      validator: (value) => {
+        const num = parseInt(value, 10);
+        return (num > 0 && num <= 12) || false;
+      },
+    },
+    /** Md breakpoint and above */
     colsMd: {
       type: [String, Number],
       validator: (value) => {
@@ -29,24 +37,8 @@ export default {
         return (num > 0 && num <= 12) || false;
       },
     },
-    /** lg breakpoint and above */
+    /** Lg breakpoint and above */
     colsLg: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
-      },
-    },
-    /** xl breakpoint and above */
-    colsXl: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
-      },
-    },
-    /** xxl breakpoint and above */
-    colsXxl: {
       type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
@@ -62,23 +54,18 @@ export default {
       type: String,
       validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
     },
-    /** md breakpoint and above */
+    /** Sm breakpoint and above */
+    justifySm: {
+      type: String,
+      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
+    },
+    /** Md breakpoint and above */
     justifyMd: {
       type: String,
       validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
     },
-    /** lg breakpoint and above */
+    /** Lg breakpoint and above */
     justifyLg: {
-      type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
-    },
-    /** xl breakpoint and above */
-    justifyXl: {
-      type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
-    },
-    /** xxl breakpoint and above */
-    justifyXxl: {
       type: String,
       validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
     },
@@ -91,23 +78,18 @@ export default {
       type: String,
       validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
-    /** md breakpoint and above */
+    /** Sm breakpoint and above */
+    alignSm: {
+      type: String,
+      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
+    },
+    /** Md breakpoint and above */
     alignMd: {
       type: String,
       validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
-    /** lg breakpoint and above */
+    /** Lg breakpoint and above */
     alignLg: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** xl breakpoint and above */
-    alignXl: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** xxl breakpoint and above */
-    alignXxl: {
       type: String,
       validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
@@ -119,23 +101,18 @@ export default {
       type: String,
       validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
-    /** md breakpoint and above */
+    /** Sm breakpoint and above */
+    gutterSm: {
+      type: String,
+      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
+    },
+    /** Md breakpoint and above */
     gutterMd: {
       type: String,
       validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
-    /** lg breakpoint and above */
+    /** Lg breakpoint and above */
     gutterLg: {
-      type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
-    },
-    /** xl breakpoint and above */
-    gutterXl: {
-      type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
-    },
-    /** xxl breakpoint and above */
-    gutterXxl: {
       type: String,
       validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
@@ -147,23 +124,18 @@ export default {
       type: Boolean,
       default: false,
     },
-    /** md breakpoint and above */
+    /** Sm breakpoint and above */
+    verticalSm: {
+      type: Boolean,
+      default: false,
+    },
+    /** Md breakpoint and above */
     verticalMd: {
       type: Boolean,
       default: false,
     },
-    /** lg breakpoint and above */
+    /** Lg breakpoint and above */
     verticalLg: {
-      type: Boolean,
-      default: false,
-    },
-    /** xl breakpoint and above */
-    verticalXl: {
-      type: Boolean,
-      default: false,
-    },
-    /** xxl breakpoint and above */
-    verticalXxl: {
       type: Boolean,
       default: false,
     },
@@ -175,23 +147,18 @@ export default {
       type: Boolean,
       default: false,
     },
-    /** md breakpoint and above */
+    /** Sm breakpoint and above */
+    wrapSm: {
+      type: Boolean,
+      default: false,
+    },
+    /** Md breakpoint and above */
     wrapMd: {
       type: Boolean,
       default: false,
     },
-    /** lg breakpoint and above */
+    /** Lg breakpoint and above */
     wrapLg: {
-      type: Boolean,
-      default: false,
-    },
-    /** xl breakpoint and above */
-    wrapXl: {
-      type: Boolean,
-      default: false,
-    },
-    /** xxl breakpoint and above */
-    wrapXxl: {
       type: Boolean,
       default: false,
     },
@@ -203,23 +170,18 @@ export default {
       type: Boolean,
       default: false,
     },
-    /** md breakpoint and above */
+    /** Sm breakpoint and above */
+    nowrapSm: {
+      type: Boolean,
+      default: false,
+    },
+    /** Md breakpoint and above */
     nowrapMd: {
       type: Boolean,
       default: false,
     },
-    /** lg breakpoint and above */
+    /** Lg breakpoint and above */
     nowrapLg: {
-      type: Boolean,
-      default: false,
-    },
-    /** xl breakpoint and above */
-    nowrapXl: {
-      type: Boolean,
-      default: false,
-    },
-    /** xxl breakpoint and above */
-    nowrapXxl: {
       type: Boolean,
       default: false,
     },
@@ -242,45 +204,38 @@ export default {
     rowClasses() {
       const classObj = {};
       classObj[`cdr-row_row${this.cols}`] = this.cols;
+      classObj[`cdr-row_row${this.colsSm}@sm`] = this.colsSm;
       classObj[`cdr-row_row${this.colsMd}@md`] = this.colsMd;
       classObj[`cdr-row_row${this.colsLg}@lg`] = this.colsLg;
-      classObj[`cdr-row_row${this.colsXl}@xl`] = this.colsXl;
-      classObj[`cdr-row_row${this.colsXxl}@xxl`] = this.colsXxl;
       // justify
       classObj[`cdr-row--${this.justify}`] = this.justify;
+      classObj[`cdr-row--${this.justifySm}@sm`] = this.justifySm;
       classObj[`cdr-row--${this.justifyMd}@md`] = this.justifyMd;
       classObj[`cdr-row--${this.justifyLg}@lg`] = this.justifyLg;
-      classObj[`cdr-row--${this.justifyXl}@xl`] = this.justifyXl;
-      classObj[`cdr-row--${this.justifyXxl}@xxl`] = this.justifyXxl;
       // align
       classObj[`cdr-row--${this.align}`] = this.align;
+      classObj[`cdr-row--${this.alignSm}@sm`] = this.alignSm;
       classObj[`cdr-row--${this.alignMd}@md`] = this.alignMd;
       classObj[`cdr-row--${this.alignLg}@lg`] = this.alignLg;
-      classObj[`cdr-row--${this.alignXl}@xl`] = this.alignXl;
-      classObj[`cdr-row--${this.alignXxl}@xxl`] = this.alignXxl;
       // column
       classObj['cdr-row--column'] = this.vertical;
+      classObj['cdr-row--column@sm'] = this.verticalSm;
       classObj['cdr-row--column@md'] = this.verticalMd;
       classObj['cdr-row--column@lg'] = this.verticalLg;
-      classObj['cdr-row--column@xl'] = this.verticalXl;
-      classObj['cdr-row--column@xxl'] = this.verticalXxl;
       // gutter
       classObj[`cdr-row--gutter-${this.gutter}`] = this.gutter;
+      classObj[`cdr-row--gutter-${this.gutterSm}@sm`] = this.gutterSm;
       classObj[`cdr-row--gutter-${this.gutterMd}@md`] = this.gutterMd;
       classObj[`cdr-row--gutter-${this.gutterLg}@lg`] = this.gutterLg;
-      classObj[`cdr-row--gutter-${this.gutterXl}@xl`] = this.gutterXl;
-      classObj[`cdr-row--gutter-${this.gutterXxl}@xxl`] = this.gutterXxl;
       // wrap
+      classObj['cdr-row--wrap@sm'] = this.wrapSm;
       classObj['cdr-row--wrap@md'] = this.wrapMd;
       classObj['cdr-row--wrap@lg'] = this.wrapLg;
-      classObj['cdr-row--wrap@xl'] = this.wrapXl;
-      classObj['cdr-row--wrap@xxl'] = this.wrapXxl;
       // noWrap
       classObj['cdr-row--noWrap'] = this.nowrap;
+      classObj['cdr-row--noWrap@sm'] = this.nowrapSm;
       classObj['cdr-row--noWrap@md'] = this.nowrapMd;
       classObj['cdr-row--noWrap@lg'] = this.nowrapLg;
-      classObj['cdr-row--noWrap@xl'] = this.nowrapXl;
-      classObj['cdr-row--noWrap@xxl'] = this.nowrapXxl;
 
       return classObj;
     },

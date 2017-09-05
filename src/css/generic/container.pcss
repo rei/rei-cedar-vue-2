@@ -1,9 +1,8 @@
 $container-x-padding: 8px;
-$container-sm-width: 540px;
-$container-md-width: 720px;
-$container-lg-width: 960px;
-$container-xl-width: 1140px;
-$container-xxl-width: 1200px;
+$container-xs-width: 540px;
+$container-sm-width: 720px;
+$container-md-width: 960px;
+$container-lg-width: 1140px;
 
 /*
 ** TOC:
@@ -16,7 +15,7 @@ $container-xxl-width: 1200px;
    # CONTAINER FLUID
    ========================================================================== */
 
-.container-fluid {
+.cdr-container-fluid {
   margin-left: auto;
   margin-right: auto;
   padding-left: $container-x-padding;
@@ -27,27 +26,23 @@ $container-xxl-width: 1200px;
    # CONTAINER
    ========================================================================== */
 
-.container {
+.cdr-container {
   margin-left: auto;
   margin-right: auto;
   padding-left: $container-x-padding;
   padding-right: $container-x-padding;
-  width: $container-sm-width;
+  width: $container-xs-width;
   max-width: 100%;
 
-  @media (--medium) {
+  @media (--sm-mq) {
+    width: $container-sm-width;
+  }
+
+  @media (--md-mq) {
     width: $container-md-width;
   }
 
-  @media (--large) {
+  @media (--lg-mq) {
     width: $container-lg-width;
-  }
-
-  @media (--xlarge) {
-    width: $container-xl-width;
-  }
-
-  @media (--xxlarge) {
-    width: $container-xxl-width;
   }
 }

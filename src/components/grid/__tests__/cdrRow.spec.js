@@ -31,15 +31,13 @@ describe('cdrRow.vue', () => {
         cols: '1',
         colsMd: '2',
         colsLg: '2',
-        colsXl: '2',
-        colsXxl: '2',
+        colsSm: '2',
       }
     });
     expect(wrapper.vm.$props.cols).to.equal('1');
     expect(wrapper.vm.$props.colsMd).to.equal('2');
     expect(wrapper.vm.$props.colsLg).to.equal('2');
-    expect(wrapper.vm.$props.colsXl).to.equal('2');
-    expect(wrapper.vm.$props.colsXxl).to.equal('2');
+    expect(wrapper.vm.$props.colsSm).to.equal('2');
   });
 
   it('computes cols classes correctly', () => {
@@ -48,15 +46,13 @@ describe('cdrRow.vue', () => {
         cols: '1',
         colsMd: '2',
         colsLg: '2',
-        colsXl: '2',
-        colsXxl: '2',
+        colsSm: '2',
       }
     });
     expect(wrapper.hasClass('cdr-row_row1')).to.equal(true);
     expect(wrapper.hasClass('cdr-row_row2@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-row_row2@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row_row2@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row_row2@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-row_row2@sm')).to.equal(true);
   });
 
   it('sets justify props correctly', () => {
@@ -65,15 +61,13 @@ describe('cdrRow.vue', () => {
         justify: 'center',
         justifyMd: 'center',
         justifyLg: 'center',
-        justifyXl: 'center',
-        justifyXxl: 'center',
+        justifySm: 'center',
       }
     });
     expect(wrapper.vm.$props.justify).to.equal('center');
     expect(wrapper.vm.$props.justifyMd).to.equal('center');
     expect(wrapper.vm.$props.justifyLg).to.equal('center');
-    expect(wrapper.vm.$props.justifyXl).to.equal('center');
-    expect(wrapper.vm.$props.justifyXxl).to.equal('center');
+    expect(wrapper.vm.$props.justifySm).to.equal('center');
   });
 
   it('computes justify classes correctly', () => {
@@ -82,15 +76,13 @@ describe('cdrRow.vue', () => {
         justify: 'center',
         justifyMd: 'center',
         justifyLg: 'center',
-        justifyXl: 'center',
-        justifyXxl: 'center',
+        justifySm: 'center',
       }
     });
     expect(wrapper.hasClass('cdr-row--center')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--center@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--center@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--center@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--center@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-row--center@sm')).to.equal(true);
   });
 
   it('sets align props correctly', () => {
@@ -99,15 +91,13 @@ describe('cdrRow.vue', () => {
         align: 'top',
         alignMd: 'top',
         alignLg: 'top',
-        alignXl: 'top',
-        alignXxl: 'top',
+        alignSm: 'top',
       }
     });
     expect(wrapper.vm.$props.align).to.equal('top');
     expect(wrapper.vm.$props.alignMd).to.equal('top');
     expect(wrapper.vm.$props.alignLg).to.equal('top');
-    expect(wrapper.vm.$props.alignXl).to.equal('top');
-    expect(wrapper.vm.$props.alignXxl).to.equal('top');
+    expect(wrapper.vm.$props.alignSm).to.equal('top');
   });
 
   it('computes align classes correctly', () => {
@@ -116,15 +106,13 @@ describe('cdrRow.vue', () => {
         align: 'top',
         alignMd: 'top',
         alignLg: 'top',
-        alignXl: 'top',
-        alignXxl: 'top',
+        alignSm: 'top',
       }
     });
     expect(wrapper.hasClass('cdr-row--top')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--top@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--top@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--top@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--top@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-row--top@sm')).to.equal(true);
   });
 
   it('sets gutter props correctly', () => {
@@ -133,15 +121,13 @@ describe('cdrRow.vue', () => {
         gutter: 'none',
         gutterMd: 'none',
         gutterLg: 'none',
-        gutterXl: 'none',
-        gutterXxl: 'none',
+        gutterSm: 'none',
       }
     });
     expect(wrapper.vm.$props.gutter).to.equal('none');
     expect(wrapper.vm.$props.gutterMd).to.equal('none');
     expect(wrapper.vm.$props.gutterLg).to.equal('none');
-    expect(wrapper.vm.$props.gutterXl).to.equal('none');
-    expect(wrapper.vm.$props.gutterXxl).to.equal('none');
+    expect(wrapper.vm.$props.gutterSm).to.equal('none');
   });
 
   it('computes gutter classes correctly', () => {
@@ -150,15 +136,13 @@ describe('cdrRow.vue', () => {
         gutter: 'none',
         gutterMd: 'none',
         gutterLg: 'none',
-        gutterXl: 'none',
-        gutterXxl: 'none',
+        gutterSm: 'none',
       }
     });
     expect(wrapper.hasClass('cdr-row--gutter-none')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--gutter-none@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--gutter-none@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--gutter-none@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--gutter-none@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-row--gutter-none@sm')).to.equal(true);
   });
 
   it('sets vertical props correctly', () => {
@@ -167,15 +151,13 @@ describe('cdrRow.vue', () => {
         vertical: true,
         verticalMd: true,
         verticalLg: true,
-        verticalXl: true,
-        verticalXxl: true,
+        verticalSm: true,
       }
     });
     expect(wrapper.vm.$props.vertical).to.equal(true);
     expect(wrapper.vm.$props.verticalMd).to.equal(true);
     expect(wrapper.vm.$props.verticalLg).to.equal(true);
-    expect(wrapper.vm.$props.verticalXl).to.equal(true);
-    expect(wrapper.vm.$props.verticalXxl).to.equal(true);
+    expect(wrapper.vm.$props.verticalSm).to.equal(true);
   });
 
   it('computes vertical classes correctly', () => {
@@ -184,15 +166,13 @@ describe('cdrRow.vue', () => {
         vertical: true,
         verticalMd: true,
         verticalLg: true,
-        verticalXl: true,
-        verticalXxl: true,
+        verticalSm: true,
       }
     });
     expect(wrapper.hasClass('cdr-row--column')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--column@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--column@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--column@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--column@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-row--column@sm')).to.equal(true);
   });
 
   it('sets wrap props correctly', () => {
@@ -201,15 +181,13 @@ describe('cdrRow.vue', () => {
         wrap: true,
         wrapMd: true,
         wrapLg: true,
-        wrapXl: true,
-        wrapXxl: true,
+        wrapSm: true,
       }
     });
     expect(wrapper.vm.$props.wrap).to.equal(true);
     expect(wrapper.vm.$props.wrapMd).to.equal(true);
     expect(wrapper.vm.$props.wrapLg).to.equal(true);
-    expect(wrapper.vm.$props.wrapXl).to.equal(true);
-    expect(wrapper.vm.$props.wrapXxl).to.equal(true);
+    expect(wrapper.vm.$props.wrapSm).to.equal(true);
   });
 
   it('computes wrap classes correctly', () => {
@@ -217,14 +195,12 @@ describe('cdrRow.vue', () => {
       propsData: {
         wrapMd: true,
         wrapLg: true,
-        wrapXl: true,
-        wrapXxl: true,
+        wrapSm: true,
       }
     });
     expect(wrapper.hasClass('cdr-row--wrap@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--wrap@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--wrap@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--wrap@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-row--wrap@sm')).to.equal(true);
   });
 
   it('sets nowrap props correctly', () => {
@@ -233,15 +209,13 @@ describe('cdrRow.vue', () => {
         nowrap: true,
         nowrapMd: true,
         nowrapLg: true,
-        nowrapXl: true,
-        nowrapXxl: true,
+        nowrapSm: true,
       }
     });
     expect(wrapper.vm.$props.nowrap).to.equal(true);
     expect(wrapper.vm.$props.nowrapMd).to.equal(true);
     expect(wrapper.vm.$props.nowrapLg).to.equal(true);
-    expect(wrapper.vm.$props.nowrapXl).to.equal(true);
-    expect(wrapper.vm.$props.nowrapXxl).to.equal(true);
+    expect(wrapper.vm.$props.nowrapSm).to.equal(true);
   });
 
   it('computes nowrap classes correctly', () => {
@@ -250,14 +224,12 @@ describe('cdrRow.vue', () => {
         nowrap: true,
         nowrapMd: true,
         nowrapLg: true,
-        nowrapXl: true,
-        nowrapXxl: true,
+        nowrapSm: true,
       }
     });
     expect(wrapper.hasClass('cdr-row--noWrap')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--noWrap@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-row--noWrap@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--noWrap@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-row--noWrap@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-row--noWrap@sm')).to.equal(true);
   });
 });

@@ -2,21 +2,18 @@
 NOTE: Custom properties can't be used in the custom media query definition since they rely on the DOM
 These currently are only for reference/possible future use elsewhere
 */
-$small-bp: 0;
-$medium-bp: 768px;
-$large-bp: 992px;
-$xlarge-bp: 1200px;
-$xxlarge-bp: 1440px;
+$xs-bp: 0;
+$sm-bp: 768px;
+$md-bp: 992px;
+$lg-bp: 1200px;
 
 /* Media Queries */
 
-@custom-media --small (width >= $small-bp);
-@custom-media --small-only (width >= $small-bp) and (width < $medium-bp);
-@custom-media --medium (width >= $medium-bp);
-@custom-media --medium-only (width >= $medium-bp) and (width < $large-bp);
-@custom-media --large (width >= $large-bp);
-@custom-media --large-only (width >= $large-bp) and (width < $xlarge-bp);
-@custom-media --xlarge (width >= $xlarge-bp);
-@custom-media --xlarge-only (width >= $xlarge-bp) and (width < $xxlarge-bp);
-@custom-media --xxlarge (width >= $xxlarge-bp);
-@custom-media --xxlarge-only (width >= $xxlarge-bp);
+@custom-media --xs-mq (width >= $xs-bp);
+@custom-media --xs-mq-only (width >= $xs-bp) and (width < $sm-bp);
+@custom-media --sm-mq (width >= $sm-bp);
+@custom-media --sm-mq-only (width >= $sm-bp) and (width < $md-bp);
+@custom-media --md-mq (width >= $md-bp);
+@custom-media --md-mq-only (width >= $md-bp) and (width < $lg-bp);
+@custom-media --lg-mq (width >= $lg-bp);
+@custom-media --lg-mq-only (width >= $lg-bp);
