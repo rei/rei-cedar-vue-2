@@ -3,6 +3,7 @@
     <h2>Activity Card</h2>
 
     <cdr-card-activity
+    data-backstop="activity-card"
     media="http://placehold.it/350x150"
     label="hiking"
     title="Snow Lake Trail"
