@@ -9,20 +9,11 @@
 * Style variants
 */
 
-.cdr-card {
-  background-color: $sys-color-activity-card;
-  border-color: $sys-color-activity-card-stroke;
-  border-radius: $radius-card;
-  box-shadow: $shadow-prominence-10;
-  color: $sys-color-activity-card-text;
-  width: 100%;
-}
-
 /* Style variants
     ========================================================================== */
 
 /* TODO: move this to cardContent? */
-.cdr-card--content {
+.cdr-card--activity {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -37,7 +28,14 @@
   }
 
   &__snapshot {
-    color: $sys-color-activity-card-subtext;
+    @include sys-font-redwood-dsp-20 ();
+
+    margin-top: $spacing-space-xxs;
+    margin-bottom: $spacing-space-xxs;
+
+    &__item {
+      padding: 0;
+    }
   }
 
   &__body {
@@ -48,11 +46,17 @@
   &__label,
   &__location {
     @include sys-font-redwood-dsp-10 ();
+
     color: $sys-color-activity-card-subtext;
+    margin-top: $spacing-space-xxs;
+    margin-bottom: $spacing-space-xxs;
   }
 
   &__title {
     @include sys-font-spruce-dsp-40 ();
+
+    margin-top: $spacing-space-xxs;
+    margin-bottom: $spacing-space-xxs;
 
     &__action {
       position: static;
@@ -70,5 +74,9 @@
         background-color: trasparent;
       }
     }
+  }
+
+  &__rating {
+    margin-bottom: $spacing-space-sm;
   }
 }

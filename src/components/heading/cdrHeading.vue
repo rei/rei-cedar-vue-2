@@ -29,7 +29,7 @@ export default {
      * Heading level -- 1 = h1, 2 = h2, etc.
      */
     level: {
-      type: String,
+      type: [String, Number],
       required: true,
     },
   },

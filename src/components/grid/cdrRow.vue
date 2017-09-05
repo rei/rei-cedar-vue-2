@@ -15,7 +15,7 @@ export default {
      * Number of columns in the row (1-12).
      */
     cols: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num > 0 && num <= 12) || false;
@@ -23,7 +23,7 @@ export default {
     },
     /** md breakpoint and above */
     colsMd: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num > 0 && num <= 12) || false;
@@ -31,7 +31,7 @@ export default {
     },
     /** lg breakpoint and above */
     colsLg: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num > 0 && num <= 12) || false;
@@ -39,7 +39,7 @@ export default {
     },
     /** xl breakpoint and above */
     colsXl: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num > 0 && num <= 12) || false;
@@ -47,7 +47,7 @@ export default {
     },
     /** xxl breakpoint and above */
     colsXxl: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num > 0 && num <= 12) || false;

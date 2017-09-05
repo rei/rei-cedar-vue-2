@@ -9,6 +9,7 @@ import App from './App';
 
 // test pages
 import eaHome from './expertAdvice/Home';
+import goResults from './getOutside/Results';
 
 // routing
 Vue.use(VueRouter);
@@ -16,6 +17,7 @@ Vue.use(VueRouter);
 const routes = [
   { path: '/', component: App },
   { path: '/ea', component: eaHome },
+  { path: '/go', component: goResults },
 ];
 
 const router = new VueRouter({ routes });
