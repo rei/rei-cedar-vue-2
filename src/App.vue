@@ -6,6 +6,7 @@
     <buttons data-backstop="buttons"></buttons>
     <cards></cards>
     <card-content></card-content>
+    <activity></activity>
     <checkboxes data-backstop="checkboxes"></checkboxes>
     <grid></grid>
     <headings data-backstop="headings"></headings>

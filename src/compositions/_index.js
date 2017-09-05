@@ -1,1 +1,2 @@
-export { default as CdrSearch } from './search/cdrSearch';// eslint-disable-line
+export { default as CdrCardActivity } from './cardActivity/cdrCardActivity';
+export { default as CdrSearch } from './search/cdrSearch';
