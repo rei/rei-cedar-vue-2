@@ -75,18 +75,47 @@ export default {
       type: String,
       default: ' ',
     },
+    /**
+    * Title text
+    */
     title: String,
+    /**
+    * href to turn card into a link
+    */
     titleUrl: String,
+    /**
+    * Heading level
+    */
     titleLevel: {
       default: '2',
     },
+    /**
+    * Label text
+    */
     label: String,
+    /**
+    * Location text
+    */
     location: String,
+    /**
+    * Snapshot text
+    */
     snapshot: {
+      type: Array,
       required: false,
     },
-    rating: String,
-    count: String,
+    /**
+    * Rating value
+    */
+    rating: {
+      type: [String, Number],
+    },
+    /**
+    * Number of ratings
+    */
+    count: {
+      type: [String, Number],
+    },
   },
 };
 </script>

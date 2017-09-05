@@ -34,9 +34,13 @@ export default {
     cdrIcon,
   },
   props: {
+    /**
+    * Sets the media width
+    */
     width: String,
     /**
     * Allows you to align your text
+    * {right, left, center}
     */
     mediaAlign: {
       type: String,
@@ -47,33 +51,45 @@ export default {
     },
     /**
     * icon svg path
+     * See cdr-icon
     */
     iconUrl: String,
     /**
-    * Image path
+     * Image path.
+     * See cdr-img
     */
     imgSrc: String,
     /**
-    * Image radius
+     * Image radius.
+     * See cdr-img
     */
     imgRadius: String,
     /**
-    * Ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
+     * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
+     * See cdr-img
     */
     imgRatio: String,
+    /**
+     * Requires `imgRatio`.
+     * Scale the image to be as large as possible to fill the area (background-position: cover;)
+     * See cdr-img
+     */
     imgCover: Boolean,
     /**
-    * crop  string
-    * Area to crop the image overflow to (can be combined with ratio).
-    * {top, y-center, bottom} {left, x-center, right}
-    */
+     * Requires `imgRatio`.
+     * Area to crop the image overflow to.
+     * {top, y-center, bottom} {left, x-center, right}
+     * See cdr-img
+     */
     imgCrop: String,
     /**
-    * Image alternitive description, defaults to blank
+     * Image alternitive description, defaults to blank
+     * See cdr-img
     */
     imgAlt: String,
     /**
-    * {Responsive, Rounded, circle, thumbnail}
+     * {Responsive, Rounded, circle, thumbnail}
+     * See cdr-img
     */
     imgModifier: String,
   },
