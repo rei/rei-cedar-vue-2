@@ -1,8 +1,4 @@
 $container-x-padding: 8px;
-$container-xs-width: 540px;
-$container-sm-width: 720px;
-$container-md-width: 960px;
-$container-lg-width: 1140px;
 
 /*
 ** TOC:
@@ -16,10 +12,9 @@ $container-lg-width: 1140px;
    ========================================================================== */
 
 .cdr-container-fluid {
-  margin-left: auto;
-  margin-right: auto;
   padding-left: $container-x-padding;
   padding-right: $container-x-padding;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -31,18 +26,6 @@ $container-lg-width: 1140px;
   margin-right: auto;
   padding-left: $container-x-padding;
   padding-right: $container-x-padding;
-  width: $container-xs-width;
-  max-width: 100%;
-
-  @media (--sm-mq) {
-    width: $container-sm-width;
-  }
-
-  @media (--md-mq) {
-    width: $container-md-width;
-  }
-
-  @media (--lg-mq) {
-    width: $container-lg-width;
-  }
+  width: 100%;
+  max-width: 1200px;
 }

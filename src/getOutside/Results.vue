@@ -25,12 +25,15 @@
 
 <script>
 import * as Components from '../components/_index';
+import * as Compositions from '../compositions/_index';
+
+const CedarComps = Object.assign({}, Components, Compositions);
 
 const results = require('./resultsData');
 
 export default {
   name: 'go-results',
-  components: Components,
+  components: CedarComps,
   data() {
     return results;
   },
