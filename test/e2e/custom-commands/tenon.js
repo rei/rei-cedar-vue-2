@@ -15,21 +15,21 @@ exports.command = function () {
     })
     .perform((client, done) => {
       const tenonTest = new Tenon({
-        key: 'c8a0926f7aae28afadd49e9cbddd160c',
+        key: '2f5d417c7781b957398e393c409280d5',
       });
 
       tenonTest.checkSrc(source, {
         // certainty: '0', // '0','20','40','60','80','100' Default is '0'
-        projectID: 'DEFAULT_PROJECT',
+        projectID: 'cedar',
         docID: 'CedarProvingGrounds',
         // priority: '0', // '0','20','40','60','80','100' Default is '0'
         // level: 'AAA', // 'A','AA','AAA' Default is 'AAA'
         store: 1,
         appID: 'Cedar',
         ref: 1,
-        // If you height is set, width must also be set. Default is '768'
+        // If you set height, width must also be set. Default is '768'
         // viewPortHeight: '768', 
-        // If you width is set, height must also be set. Default is '1024'
+        // If you set width, height must also be set. Default is '1024'
         // viewPortWidth: '1024', 
       }, (err, results) => {
         if (err) {
