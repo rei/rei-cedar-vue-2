@@ -157,13 +157,16 @@ export default {
   &:focus,
   &:active {
     .imageTile__image {
-      transition: transform 300ms;
       transform: scale(1.05);
     }
 
     .imageTile__title {
       text-decoration: underline;
     }
+  }
+
+  &__image {
+    transition: transform 300ms;
   }
 
   &__body {

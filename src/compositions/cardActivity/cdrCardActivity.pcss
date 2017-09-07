@@ -14,6 +14,12 @@
 
 .cdr-card--activity {
   position: relative;
+  transition: transform 500ms ease, box-shadow 500ms ease;
+
+  &:hover {
+    box-shadow: $shadow-prominence-20;
+    transform: scale(1.006);
+  }
 
   /* Style variants
     ========================================================================== */
@@ -64,15 +70,13 @@
 
     &--action {
       position: static;
+      transition: color 500ms ease;
 
       &:hover,
       &:focus,
       &:active {
-        color: $sys-color-activity-card-text;
-
-        &:before {
-          box-shadow: $shadow-prominence-20;
-        }
+        color: $sys-color-link;
+        text-decoration: none;
       }
 
       &::before {
@@ -84,7 +88,7 @@
         height: 100%;
         left: 0;
         top: 0;
-        transition: trasparent 0.1s ease-out, box-shadow 0.1s ease;
+        transition: trasparent 0.1s ease-out;
         background-color: trasparent;
       }
     }

@@ -6,6 +6,7 @@
     data-backstop="activity-card"
     media="http://placehold.it/350x150"
     label="hiking"
+    title-url="http://rei.com"
     title="Snow Lake Trail"
     :snapshot="['7.5 mi', 'out & back', '286 ft Ele Gain']"
     location="Seattle, WA"

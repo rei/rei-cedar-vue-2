@@ -7,17 +7,13 @@
       :img-crop="mediaCrop"
       :img-cover="mediaCover"
       :img-ratio="mediaRatio"
+      img-class="cdr-card--activity__image"
       img-modifier="responsive"
       modifier="top stretch"
       img-radius="top">
         <div v-if="this.label != null" class="cdr-card--activity__label">{{label}}</div>
         <cdr-heading v-if="this.title != null" :level="titleLevel">
-          <slot name="title" v-if="!titleUrl">
-            <div class="cdr-card--activity__title cdr-card--activity__title--action">{{title}}</div>
-          </slot>
-          <slot name="title" v-else>
-            <a class="cdr-card--activity__title cdr-card--activity__title--action" :href="titleUrl">{{title}}</a>
-          </slot>
+          <a class="cdr-card--activity__title cdr-card--activity__title--action" :href="titleUrl">{{title}}</a>
         </cdr-heading>
         <cdr-list v-if="snapshot" class="cdr-card--activity__snapshot" modifier="inline bulleted">
           <li v-for="item in snapshot">
@@ -94,7 +90,10 @@ export default {
     /**
     * href to turn card into a link
     */
-    titleUrl: String,
+    titleUrl: {
+      type: String,
+      required: true,
+    },
     /**
     * Heading level
     */

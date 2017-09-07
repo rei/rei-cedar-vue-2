@@ -17,18 +17,11 @@ var cardData = {
 <cdr-card-activity 
   :media="cardData.media"
   :label="cardData.label"
+  title-url="http://rei.com"
   :title="cardData.title"
   :snapshot="snapshotData"
   location="Seattle, WA"
   rating="5"
   count="138">
 </cdr-card-activity>
-``` 
-#### Linked activity card  
-``` 
-<cdr-card-activity
-  media="http://placehold.it/350x150"
-  title="Tiger Mountain Loop"
-  title-url="http://rei.com"> 
-</cdr-card-activity>  
-``` 
+```
