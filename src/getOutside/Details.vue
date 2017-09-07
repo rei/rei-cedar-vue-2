@@ -26,6 +26,7 @@
           :media="c.image"
           :label="c.activity"
           :title="c.title"
+          title-url="http://rei.com"
           :location="c.location"
           :snapshot="c.details"
           :rating="c.rating"
@@ -42,6 +43,7 @@
         <cdr-card-activity
           :media="c.image"
           :label="c.activity"
+          title-url="http://rei.com"
           :title="c.title"
           :location="c.location"
           :snapshot="c.details"
@@ -59,7 +61,13 @@
       <cdr-row gutter="xxs" cols="2" cols-sm="4">
         <cdr-col v-for="(cat, index) in moreCats" :key="index">
           <a href="http://rei.com" class="imageTile">
-            <cdr-media-object :img-src="cat.image" img-ratio="square" img-cover img-alt="Some alt text" modifier="overlay">
+            <cdr-media-object 
+              img-class="imageTile__image"
+              :img-src="cat.image" 
+              img-ratio="square" 
+              img-cover 
+              img-alt="Some alt text" 
+              modifier="overlay">
               <div class="imageTile__body">
                 <div>
                   <p class="imageTile__title">{{cat.text}}</p>
@@ -148,14 +156,9 @@ export default {
   &:hover,
   &:focus,
   &:active {
-    .imageTile__body {
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0),
-          rgba(0, 0, 0, 0.4),
-          rgba(0, 0, 0, 0)
-        );
+    .imageTile__image {
+      transition: transform 300ms;
+      transform: scale(1.05);
     }
 
     .imageTile__title {

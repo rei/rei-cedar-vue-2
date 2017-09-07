@@ -3,10 +3,12 @@
     <cdr-icon
     v-if="iconUrl"
     class="cdr-media-object__figure"
+    :class="mediaClass"
     :url="iconUrl"></cdr-icon>
     <cdr-img
     v-else
     class="cdr-media-object__figure"
+    :class="mediaClass"
     :alt="imgAlt"
     :src="imgSrc"
     :ratio="imgRatio"
@@ -50,10 +52,14 @@ export default {
         'center'].indexOf(value) >= 0) || false,
     },
     /**
-    * icon svg path
+     * icon svg path
      * See cdr-icon
     */
     iconUrl: String,
+    /**
+    * Custom class added to the image/icon
+    */
+    imgClass: String,
     /**
      * Image path.
      * See cdr-img

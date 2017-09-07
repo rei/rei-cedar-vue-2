@@ -1,6 +1,6 @@
 <template>
   <cdr-card modifier="activity">
-    <section class="cdr-inset cdr-inset--remove-top cdr-card--content__body">
+    <section class="cdr-inset cdr-inset--remove-top">
       <cdr-media-object
       :img-src="media"
       :img-alt="mediaAlt"
@@ -13,28 +13,27 @@
         <template v-if="this.title != null">
           <cdr-heading :level="titleLevel">
             <slot name="title" v-if="!titleUrl">
-              <div class="cdr-card--activity__title cdr-card--activity__title__action">{{title}}</div>
+              <div class="cdr-card--activity__title cdr-card--activity__title--action">{{title}}</div>
             </slot>
             <slot name="title" v-else>
-              <a class="cdr-card--activity__title cdr-card--activity__title__action" :href="titleUrl">{{title}}</a>
+              <a class="cdr-card--activity__title cdr-card--activity__title--action" :href="titleUrl">{{title}}</a>
             </slot>
           </cdr-heading>
         </template>
         <template v-if="snapshot">
-          <ul class="cdr-card--activity__snapshot cdr-list cdr-list--inline cdr-list--bulleted">
+          <cdr-list class="cdr-card--activity__snapshot" modifier="inline bulleted">
             <li v-for="item in snapshot">
               {{ item }}
             </li>
-          </ul>
+          </cdr-list>
         </template>
         <template v-if="location">
           <div class="cdr-card--activity__location">
-          {{location}}
+            {{location}}
           </div>
         </template>
         <template v-if="this.rating != null">
-          <cdr-rating class="cdr-card--activity__rating" :rating="rating" :count="count" modifier="medium">
-          </cdr-rating>
+          <cdr-rating class="cdr-card--activity__rating" :rating="rating" :count="count" modifier="medium"></cdr-rating>
         </template>
       </cdr-media-object>
     </section>
@@ -52,6 +51,7 @@ import cdrHeading from '@/components/heading/cdrHeading';
 import cdrImg from '@/components/image/cdrImg';
 import cdrMediaObject from '@/components/mediaObject/cdrMediaObject';
 import cdrRating from '@/components/rating/cdrRating';
+import cdrList from '@/components/list/cdrList';
 
 export default {
   name: 'cdr-card-activity',
@@ -61,6 +61,7 @@ export default {
     cdrImg,
     cdrMediaObject,
     cdrRating,
+    cdrList,
   },
   extends: cdrCard,
   props: {

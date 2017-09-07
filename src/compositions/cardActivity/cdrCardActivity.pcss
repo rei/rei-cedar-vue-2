@@ -7,20 +7,23 @@
 *
 * Base class
 * Style variants
+* Style variants
+* Block elements
 */
 
-/* Style variants
-    ========================================================================== */
 
-/* TODO: move this to cardContent? */
 .cdr-card--activity {
-  display: flex;
-  flex-direction: column;
   position: relative;
+
+  /* Style variants
+    ========================================================================== */
 
   &--media {
     flex-grow: 1;
   }
+
+  /* Block Elements
+    ========================================================================== */
 
   &__action {
     position: relative;
@@ -32,6 +35,7 @@
 
     margin-top: $spacing-space-xxs;
     margin-bottom: $spacing-space-xxs;
+    color: $sys-color-activity-card-subtext;
 
     &__item {
       padding: 0;
@@ -58,19 +62,29 @@
     margin-top: $spacing-space-xxs;
     margin-bottom: $spacing-space-xxs;
 
-    &__action {
+    &--action {
       position: static;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $sys-color-activity-card-text;
+
+        &:before {
+          box-shadow: $shadow-prominence-20;
+        }
+      }
 
       &::before {
         content: "";
         display: block;
         position: absolute;
         width: 100%;
-        z-index: 0;
+        z-index: 1;
         height: 100%;
         left: 0;
         top: 0;
-        transition: trasparent 0.1s ease-out;
+        transition: trasparent 0.1s ease-out, box-shadow 0.1s ease;
         background-color: trasparent;
       }
     }
