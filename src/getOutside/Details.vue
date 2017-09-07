@@ -43,8 +43,8 @@
         <cdr-card-activity
           :media="c.image"
           :label="c.activity"
-          title-url="http://rei.com"
           :title="c.title"
+          title-url="http://rei.com"
           :location="c.location"
           :snapshot="c.details"
           :rating="c.rating"

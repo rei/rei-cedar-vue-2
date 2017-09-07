@@ -3,12 +3,12 @@
     <cdr-icon
     v-if="iconUrl"
     class="cdr-media-object__figure"
-    :class="mediaClass"
+    :class="imgClass"
     :url="iconUrl"></cdr-icon>
     <cdr-img
     v-else
     class="cdr-media-object__figure"
-    :class="mediaClass"
+    :class="imgClass"
     :alt="imgAlt"
     :src="imgSrc"
     :ratio="imgRatio"
