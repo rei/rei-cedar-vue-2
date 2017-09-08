@@ -8,14 +8,14 @@
     v-model="searchValue" 
     @input="updateSearch">
     <cdr-button slot="post" class="cdr-input-action" :on-click="click">
-      <cdr-icon url="/static/rei-icons.svg#icon-rei-search"></cdr-icon>
+      <div class="cdr-search__icon" aria-hidden="true"></div>
       <span class="u-sr-only">Search</span>
     </cdr-button>
   </cdr-input>
 </template>
 
 <script>
-import { CdrButton, CdrInput, CdrIcon } from '../../components/_index';
+import { CdrButton, CdrInput } from '../../components/_index';
 
 export default {
   name: 'cdr-search',
@@ -23,7 +23,6 @@ export default {
   components: {
     CdrButton,
     CdrInput,
-    CdrIcon,
   },
   data() {
     return {
@@ -49,6 +48,7 @@ export default {
 };
 </script>
 
-<style>
-  
+<style theme="default">
+@import '../../css/settings/_index.pcss';
+@import 'cdrSearch.pcss';
 </style>
