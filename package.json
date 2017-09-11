@@ -7,7 +7,6 @@
   "author": "REI Software Engineering",
   "private": true,
   "scripts": {
-    // "preversion": "npm run test",
     "version": "npm run release && git add -A release",
     "postversion": "git push && git push --tags",
     "get-tokens": "node utils/brandai.js",
