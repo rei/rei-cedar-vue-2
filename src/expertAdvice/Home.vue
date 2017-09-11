@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="container-fluid">
+  <div class="cdr-container-fluid">
     <cdr-img
     src="http://patterns.rei.com/assets/img/expert-advice.jpg"
     alt="Two mountain bikers take a turn on a single track trail thrhough the woods"
@@ -8,7 +8,7 @@
     </cdr-img>
   </div>
 
-  <div class="container">
+  <div class="cdr-container">
   <cdr-row cols="1" justify="center">
     <cdr-col span="10" offset-left="1">
       <p>Your go-to source for outdoor knowledge you can trust. All the information you need to learn new skills, choose and maintain gear, prep for your trips and have amazing adventures.</p>

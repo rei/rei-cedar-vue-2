@@ -31,15 +31,13 @@ describe('cdrCol.vue', () => {
         span: '1',
         spanMd: '2',
         spanLg: '2',
-        spanXl: '2',
-        spanXxl: '2',
+        spanSm: '2',
       }
     });
     expect(wrapper.vm.$props.span).to.equal('1');
     expect(wrapper.vm.$props.spanMd).to.equal('2');
     expect(wrapper.vm.$props.spanLg).to.equal('2');
-    expect(wrapper.vm.$props.spanXl).to.equal('2');
-    expect(wrapper.vm.$props.spanXxl).to.equal('2');
+    expect(wrapper.vm.$props.spanSm).to.equal('2');
   });
 
   it('computes span classes correctly', () => {
@@ -48,15 +46,13 @@ describe('cdrCol.vue', () => {
         span: '1',
         spanMd: '2',
         spanLg: '2',
-        spanXl: '2',
-        spanXxl: '2',
+        spanSm: '2',
       }
     });
     expect(wrapper.hasClass('cdr-col_span1')).to.equal(true);
     expect(wrapper.hasClass('cdr-col_span2@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-col_span2@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col_span2@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col_span2@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-col_span2@sm')).to.equal(true);
   });
 
   it('sets offsetLeft props correctly', () => {
@@ -65,15 +61,13 @@ describe('cdrCol.vue', () => {
         offsetLeft: '1',
         offsetLeftMd: '2',
         offsetLeftLg: '2',
-        offsetLeftXl: '2',
-        offsetLeftXxl: '2',
+        offsetLeftSm: '2',
       }
     });
     expect(wrapper.vm.$props.offsetLeft).to.equal('1');
     expect(wrapper.vm.$props.offsetLeftMd).to.equal('2');
     expect(wrapper.vm.$props.offsetLeftLg).to.equal('2');
-    expect(wrapper.vm.$props.offsetLeftXl).to.equal('2');
-    expect(wrapper.vm.$props.offsetLeftXxl).to.equal('2');
+    expect(wrapper.vm.$props.offsetLeftSm).to.equal('2');
   });
 
   it('computes offsetLeft classes correctly', () => {
@@ -82,15 +76,13 @@ describe('cdrCol.vue', () => {
         offsetLeft: '1',
         offsetLeftMd: '2',
         offsetLeftLg: '2',
-        offsetLeftXl: '2',
-        offsetLeftXxl: '2',
+        offsetLeftSm: '2',
       }
     });
     expect(wrapper.hasClass('cdr-col--offsetLeft1')).to.equal(true);
     expect(wrapper.hasClass('cdr-col--offsetLeft2@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-col--offsetLeft2@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col--offsetLeft2@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col--offsetLeft2@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-col--offsetLeft2@sm')).to.equal(true);
   });
 
   it('sets offsetRight props correctly', () => {
@@ -99,15 +91,13 @@ describe('cdrCol.vue', () => {
         offsetRight: '1',
         offsetRightMd: '2',
         offsetRightLg: '2',
-        offsetRightXl: '2',
-        offsetRightXxl: '2',
+        offsetRightSm: '2',
       }
     });
     expect(wrapper.vm.$props.offsetRight).to.equal('1');
     expect(wrapper.vm.$props.offsetRightMd).to.equal('2');
     expect(wrapper.vm.$props.offsetRightLg).to.equal('2');
-    expect(wrapper.vm.$props.offsetRightXl).to.equal('2');
-    expect(wrapper.vm.$props.offsetRightXxl).to.equal('2');
+    expect(wrapper.vm.$props.offsetRightSm).to.equal('2');
   });
 
   it('computes offsetRight classes correctly', () => {
@@ -116,15 +106,13 @@ describe('cdrCol.vue', () => {
         offsetRight: '1',
         offsetRightMd: '2',
         offsetRightLg: '2',
-        offsetRightXl: '2',
-        offsetRightXxl: '2',
+        offsetRightSm: '2',
       }
     });
     expect(wrapper.hasClass('cdr-col--offsetRight1')).to.equal(true);
     expect(wrapper.hasClass('cdr-col--offsetRight2@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-col--offsetRight2@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col--offsetRight2@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col--offsetRight2@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-col--offsetRight2@sm')).to.equal(true);
   });
 
   it('sets alignSelf props correctly', () => {
@@ -133,15 +121,13 @@ describe('cdrCol.vue', () => {
         alignSelf: 'top',
         alignSelfMd: 'top',
         alignSelfLg: 'top',
-        alignSelfXl: 'top',
-        alignSelfXxl: 'top',
+        alignSelfSm: 'top',
       }
     });
     expect(wrapper.vm.$props.alignSelf).to.equal('top');
     expect(wrapper.vm.$props.alignSelfMd).to.equal('top');
     expect(wrapper.vm.$props.alignSelfLg).to.equal('top');
-    expect(wrapper.vm.$props.alignSelfXl).to.equal('top');
-    expect(wrapper.vm.$props.alignSelfXxl).to.equal('top');
+    expect(wrapper.vm.$props.alignSelfSm).to.equal('top');
   });
 
   it('computes alignSelf classes correctly', () => {
@@ -150,15 +136,13 @@ describe('cdrCol.vue', () => {
         alignSelf: 'top',
         alignSelfMd: 'top',
         alignSelfLg: 'top',
-        alignSelfXl: 'top',
-        alignSelfXxl: 'top',
+        alignSelfSm: 'top',
       }
     });
     expect(wrapper.hasClass('cdr-col--top')).to.equal(true);
     expect(wrapper.hasClass('cdr-col--top@md')).to.equal(true);
     expect(wrapper.hasClass('cdr-col--top@lg')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col--top@xl')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col--top@xxl')).to.equal(true);
+    expect(wrapper.hasClass('cdr-col--top@sm')).to.equal(true);
   });
 
   it('sets hide props correctly', () => {
@@ -167,15 +151,13 @@ describe('cdrCol.vue', () => {
         hide: 'down',
         hideMd: 'down',
         hideLg: 'down',
-        hideXl: 'down',
-        hideXxl: 'down',
+        hideSm: 'down',
       }
     });
     expect(wrapper.vm.$props.hide).to.equal('down');
     expect(wrapper.vm.$props.hideMd).to.equal('down');
     expect(wrapper.vm.$props.hideLg).to.equal('down');
-    expect(wrapper.vm.$props.hideXl).to.equal('down');
-    expect(wrapper.vm.$props.hideXxl).to.equal('down');
+    expect(wrapper.vm.$props.hideSm).to.equal('down');
   });
 
   it('computes hide classes correctly', () => {
@@ -184,15 +166,13 @@ describe('cdrCol.vue', () => {
         hide: 'down',
         hideMd: 'down',
         hideLg: 'down',
-        hideXl: 'down',
-        hideXxl: 'down',
+        hideSm: 'down',
       }
     });
     expect(wrapper.hasClass('cdr-col--hide-down')).to.equal(true);
     expect(wrapper.hasClass('cdr-col--hide@md-down')).to.equal(true);
     expect(wrapper.hasClass('cdr-col--hide@lg-down')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col--hide@xl-down')).to.equal(true);
-    expect(wrapper.hasClass('cdr-col--hide@xxl-down')).to.equal(true);
+    expect(wrapper.hasClass('cdr-col--hide@sm-down')).to.equal(true);
   });
 
   it('sets isRow prop correctly', () => {

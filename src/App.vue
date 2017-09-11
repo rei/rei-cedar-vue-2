@@ -1,11 +1,12 @@
 <template>
-  <div id="app" class="container-fluid">
+  <div id="app" class="cdr-container-fluid">
     <h1>Cedar Proving grounds</h1>
 
     <anchors data-backstop="anchors"></anchors>
     <buttons data-backstop="buttons"></buttons>
     <cards></cards>
     <card-content></card-content>
+    <activity></activity>
     <checkboxes data-backstop="checkboxes"></checkboxes>
     <grid></grid>
     <headings data-backstop="headings"></headings>

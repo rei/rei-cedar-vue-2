@@ -1,9 +1,4 @@
 $container-x-padding: 8px;
-$container-sm-width: 540px;
-$container-md-width: 720px;
-$container-lg-width: 960px;
-$container-xl-width: 1140px;
-$container-xxl-width: 1200px;
 
 /*
 ** TOC:
@@ -16,38 +11,21 @@ $container-xxl-width: 1200px;
    # CONTAINER FLUID
    ========================================================================== */
 
-.container-fluid {
-  margin-left: auto;
-  margin-right: auto;
+.cdr-container-fluid {
   padding-left: $container-x-padding;
   padding-right: $container-x-padding;
+  width: 100%;
 }
 
 /* ==========================================================================
    # CONTAINER
    ========================================================================== */
 
-.container {
+.cdr-container {
   margin-left: auto;
   margin-right: auto;
   padding-left: $container-x-padding;
   padding-right: $container-x-padding;
-  width: $container-sm-width;
-  max-width: 100%;
-
-  @media (--medium) {
-    width: $container-md-width;
-  }
-
-  @media (--large) {
-    width: $container-lg-width;
-  }
-
-  @media (--xlarge) {
-    width: $container-xl-width;
-  }
-
-  @media (--xxlarge) {
-    width: $container-xxl-width;
-  }
+  width: 100%;
+  max-width: 1200px;
 }

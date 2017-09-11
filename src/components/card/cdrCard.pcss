@@ -9,14 +9,10 @@
 * Style variants
 */
 
-/* TODO: move this to utilities? */
-
-.cdr-add-radius--top {
-  border-radius: $radius-card $radius-card 0 0;
-}
-
 .cdr-card {
   background-color: $sys-color-activity-card;
+  border-width: 1px;
+  border-style: solid;
   border-color: $sys-color-activity-card-stroke;
   border-radius: $radius-card;
   box-shadow: $shadow-prominence-10;
@@ -27,7 +23,7 @@
 /* Style variants
     ========================================================================== */
 
-/* TODO: move this to cardContent? */
+/* TODO: remove this?
 .cdr-card--content {
   display: flex;
   flex-direction: column;
@@ -43,7 +39,7 @@
   }
 
   &__snapshot {
-    color: $sys-color-gray-base;
+    color: $sys-color-activity-card-subtext;
   }
 
   &__body {
@@ -51,7 +47,15 @@
     display: block;
   }
 
+  &__label,
+  &__location {
+    @include sys-font-redwood-dsp-10 ();
+    color: $sys-color-activity-card-subtext;
+  }
+
   &__title {
+    @include sys-font-spruce-dsp-40 ();
+
     &__action {
       position: static;
 
@@ -70,3 +74,4 @@
     }
   }
 }
+*/

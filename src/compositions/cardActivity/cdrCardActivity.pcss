@@ -1,0 +1,100 @@
+/* ==========================================================================
+   # CARD
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Style variants
+* Style variants
+* Block elements
+*/
+
+
+.cdr-card--activity {
+  position: relative;
+  transition: transform 500ms ease, box-shadow 500ms ease;
+
+  &:hover {
+    box-shadow: $shadow-prominence-20;
+    transform: scale(1.006);
+  }
+
+  /* Style variants
+    ========================================================================== */
+
+  &--media {
+    flex-grow: 1;
+  }
+
+  /* Block Elements
+    ========================================================================== */
+
+  &__action {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__snapshot {
+    @include sys-font-redwood-dsp-20 ();
+
+    margin-top: $spacing-space-xxs;
+    margin-bottom: $spacing-space-xxs;
+    color: $sys-color-activity-card-subtext;
+
+    &__item {
+      padding: 0;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    display: block;
+  }
+
+  &__label,
+  &__location {
+    @include sys-font-redwood-dsp-10 ();
+
+    color: $sys-color-activity-card-subtext;
+    margin-top: $spacing-space-xxs;
+    margin-bottom: $spacing-space-xxs;
+  }
+
+  &__title {
+    @include sys-font-spruce-dsp-40 ();
+
+    margin-top: $spacing-space-xxs;
+    margin-bottom: $spacing-space-xxs;
+
+    &--action {
+      position: static;
+      transition: color 500ms ease;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $sys-color-link;
+        text-decoration: none;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: trasparent 0.1s ease-out;
+        background-color: trasparent;
+      }
+    }
+  }
+
+  &__rating {
+    margin-bottom: $spacing-space-sm;
+  }
+}

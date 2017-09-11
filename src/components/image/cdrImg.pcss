@@ -15,6 +15,9 @@
 * Base class
 * Style variants
 */
+.cdr-radius--top {
+  border-radius: $radius-card $radius-card 0 0;
+}
 
 .cdr-image {
   max-width: 100%;
@@ -38,7 +41,7 @@
 
   &--thumbnail {
     border: 1px solid;
-    border-color: $sys-color-gray-lighten-20;
+    border-color: $sys-color-hillary-lighten-20;
     border-radius: $radius-radius-10;
     padding: $spacing-space-xs;
   }
@@ -127,65 +130,58 @@
   /* Cropping variants
     ========================================================================== */
 
-  &--x-center > &__image {
-    max-width: none;
+  &--x-center > &__cover {
+    background-position-x: center;
   }
 
-  &--y-center > &__image {
-    max-height: none;
+  &--y-center > &__cover {
+    background-position-y: center;
   }
 
-  &--left > &__image {
-    max-width: none;
-    left: 0;
-    right: auto;
-    transform: translate(0, -50%);
+  &--left > &__cover {
+    background-position-x: left;
   }
 
-  &--right > &__image {
-    max-width: none;
-    right: 0;
-    left: auto;
-    transform: translate(0, -50%);
+  &--right > &__cover {
+    background-position-x: right;
   }
 
-  &--top > &__image {
-    max-height: none;
-    top: 0;
-    bottom: auto;
-    transform: translate(-50%, 0);
+  &--top > &__cover {
+    background-position-y: top;
   }
 
-  &--bottom > &__image {
-    max-height: none;
-    top: auto;
-    bottom: 0;
-    transform: translate(-50%, 0);
-  }
-
-  &--left&--bottom > &__image,
-  &--right&--bottom > &__image,
-  &--left&--top > &__image,
-  &--right&--top > &__image {
-    transform: none;
+  &--bottom > &__cover {
+    background-position-y: bottom;
   }
 
   /* Block elements
     ========================================================================== */
 
   &__image {
+    z-index: -1;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: auto;
-    max-height: 100%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-    /* overriding here to not distort images within a media frame */
-    &.cdr-image--responsive {
-      width: auto;
-      display: inline;
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--crop {
+      background-size: auto;
+    }
+
+    &--cover {
+      background-size: cover;
     }
   }
 }
