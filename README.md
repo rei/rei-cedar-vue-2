@@ -89,7 +89,7 @@ __*.backstop.js__ files will export an array of objects that are standard backst
 
 1. `url` is assumed to be `localhost:8080` (running the project locally) and you don’t need to define that for each object.
 2. `readyEvent` is set to null for each scenario.
-3. `selectorScript` is a custom option we've added (as noted above).
+3. `hoverSelectors` is a custom option we've added (as noted above).
 
 ## Javascript
 
