@@ -43,7 +43,6 @@ files.forEach((file) => {
 });
 
 defs.forEach((def) => {
-  console.log(Object.prototype.hasOwnProperty.call(def, 'hoverSelectors'));
   if (Object.prototype.hasOwnProperty.call(def, 'hoverSelectors')) {
     createHoverScenario(def);
   } else {
