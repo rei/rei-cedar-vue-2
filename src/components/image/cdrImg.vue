@@ -1,9 +1,9 @@
 <template>
   <div v-if="ratio" class="cdr-media-frame" :class="[ratioClass, cropClass]">
-    <div :class="[coverClass]" :style="styleObject" aria-hidden="true"></div>
-    <img class="cdr-media-frame__image" :class="[modifierClass, radiusClass]" :src="src" :alt="alt" v-bind="$attrs">
+    <div :class="[coverClass, lazyClass]" :style="styleObject" aria-hidden="true" v-bind="$attrs"></div>
+    <img class="cdr-media-frame__image cdr-media-frame__image--hidden" :class="[modifierClass, radiusClass]" :src="src" :alt="alt" v-bind="$attrs">
   </div>
-  <img v-else :class="[modifierClass, radiusClass]" :src="src" :alt="alt" v-bind="$attrs">
+  <img v-else :class="[modifierClass, radiusClass, lazyClass]" :src="src" :alt="alt" v-bind="$attrs">
 </template>
 
 <script>
@@ -34,6 +34,12 @@ export default {
     alt: {
       type: String,
       default: ' ',
+    },
+    /**
+     * Enable lazy loading.
+     */
+    lazy: {
+      type: Boolean,
     },
     /**
      * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
@@ -82,6 +88,11 @@ export default {
   computed: {
     baseClass() {
       return 'cdr-image';
+    },
+    lazyClass() {
+      const classObj = {};
+      classObj['lazy-image'] = this.lazy;
+      return classObj;
     },
     radiusClass() {
       const classObj = {};

@@ -8,6 +8,7 @@
     <cdr-img
     v-else
     class="cdr-media-object__figure"
+    v-bind="$attrs"
     :class="imgClass"
     :alt="imgAlt"
     :src="imgSrc"
@@ -31,6 +32,7 @@ import modifier from '../../mixins/modifier';
 export default {
   name: 'cdr-media-object',
   mixins: [modifier],
+  inheritAttrs: false,
   components: {
     cdrImg,
     cdrIcon,
