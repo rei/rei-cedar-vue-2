@@ -12,6 +12,7 @@ import eaHome from './expertAdvice/Home';
 import goResults from './getOutside/Results';
 import goDetails from './getOutside/Details';
 
+Vue.config.devtools = false;
 // routing
 Vue.use(VueRouter);
 

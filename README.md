@@ -77,18 +77,19 @@ Our visual regressions audits can be performed against all patterns documented w
 
 #### Notes about our backstop configuration
 
-We’re aliasing the backstop commands to use `npm run <command>` just to abstract away supplying the config option since we are using a javascript version of the backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
+We’re aliasing the backstop commands to use `npm run <command>` just to abstract away supplying the config option since we are using a javascript based backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
 
-The config (`backstop.js`) looks through `src/` for all __*.backstop.js__ files and turns them into the proper json format for backstop. A backstop scenario object is generated for each _selector_ in the array.
+The config (`backstop.js`) looks through `src/` for all __*.backstop.js__ and generates a proper backstop scenario object for each.
 
-If you want to test states (i.e. hover) you can create another backstop file that has an `onReadyScript`. These scripts use [casperjs](http://docs.casperjs.org/en/latest/).
+If you want to test hover statyes you can create another array of selectors `hoverSelectors`. These selectors will use an onReadyScript (`hover.js`) to simulate a mouse moving and hovering. This engine script uses [chromy](https://github.com/OnetapInc/chromy). **This is a custom config option we've added to allow for adding hover tests for an array of selectors easily.**
 
-Casper scripts live in `backstop_data > casper_scripts`
+Engine scripts live in `backstop_data > engine_scripts`
 
 __*.backstop.js__ files will export an array of objects that are standard backstop scenario objects and support all the same options noted in the docs with the following exceptions:
 
 1. `url` is assumed to be `localhost:8080` (running the project locally) and you don’t need to define that for each object.
 2. `readyEvent` is set to null for each scenario.
+3. `hoverSelectors` is a custom option we've added (as noted above).
 
 ## Javascript
 
