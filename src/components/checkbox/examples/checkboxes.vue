@@ -15,6 +15,7 @@
     <cdr-checkbox :custom-value="testVal2" v-model="exGroup">F</cdr-checkbox>
     <p>group: {{exGroup}}</p>
     <cdr-checkbox disabled>disabled checkbox</cdr-checkbox>
+    <cdr-checkbox v-model="checked" disabled>disabled and checked checkbox</cdr-checkbox>
  </div>
 </template>
 
@@ -26,6 +27,7 @@ export default {
   components: Components,
   data() {
     return {
+      checked: true,
       ex1: false,
       ex2: 'checked',
       ex3: 'checked',
