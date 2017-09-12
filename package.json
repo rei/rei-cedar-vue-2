@@ -1,13 +1,12 @@
 {
   "name": "rei-cedar",
-  "version": "4.1.1-0",
+  "version": "4.2.0-0",
   "description": "REI Cedar Style Framework",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
   "author": "REI Software Engineering",
   "private": true,
   "scripts": {
-    "preversion": "npm run test",
     "version": "npm run release && git add -A release",
     "postversion": "git push && git push --tags",
     "get-tokens": "node utils/brandai.js",
