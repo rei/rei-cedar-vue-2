@@ -67,7 +67,14 @@ export default {
   }
 
   &__info {
-    background-color: rgba(0, 0, 0, 0.6);
+    background:
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0)
+      );
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,6 +82,7 @@ export default {
 
   &__name {
     margin: 0;
+    text-shadow: 0 1px 0 black;
   }
 
   &__location {
@@ -84,6 +92,7 @@ export default {
     transform: scaleY(0);
     transform-origin: bottom;
     position: absolute;
+    text-shadow: 0 1px 0 black;
   }
 
   &__icon {

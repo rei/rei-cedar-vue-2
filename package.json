@@ -105,6 +105,7 @@
     "postcss-nested": "^2.1.0",
     "postcss-pxtorem": "^4.0.1",
     "postcss-responsive-type": "^1.0.0",
+    "postcss-safe-parser": "^3.0.1",
     "postcss-sassy-mixins": "^2.1.0",
     "postcss-scss": "^1.0.2",
     "postcss-simple-vars": "^4.0.0",
