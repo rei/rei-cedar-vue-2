@@ -6,12 +6,16 @@
 * TOC:
 *
 * Base class
+* States
 * Block elements
 */
 
 .cdr-checkbox {
   position: absolute;
   opacity: 0;
+
+  /* States
+    ========================================================================== */
 
   &:checked + &__label {
     &::before {
