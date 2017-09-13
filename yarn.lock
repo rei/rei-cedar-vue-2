@@ -3710,11 +3710,11 @@ fs-extra@^0.30.0:
     rimraf "^2.2.8"
 
 fs-extra@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.1.tgz#7fc0c6c8957f983f57f306a24e5b9ddd8d0dd880"
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.2.tgz#f91704c53d1b461f893452b0c307d9997647ab6b"
   dependencies:
     graceful-fs "^4.1.2"
-    jsonfile "^3.0.0"
+    jsonfile "^4.0.0"
     universalify "^0.1.0"
 
 fs-extra@~1.0.0:
@@ -4974,6 +4974,12 @@ jsonfile@^2.1.0:
 jsonfile@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-3.0.1.tgz#a5ecc6f65f53f662c4415c7675a0331d0992ec66"
+  optionalDependencies:
+    graceful-fs "^4.1.6"
+
+jsonfile@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
   optionalDependencies:
     graceful-fs "^4.1.6"
 
@@ -9262,9 +9268,16 @@ vue-router@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.7.0.tgz#16d424493aa51c3c8cce8b7c7210ea4c3a89aff1"
 
-vue-style-loader@^3.0.0, vue-style-loader@^3.0.1:
+vue-style-loader@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-3.0.1.tgz#c8b639bb2f24baf9d78274dc17e4f264c1deda08"
+  dependencies:
+    hash-sum "^1.0.2"
+    loader-utils "^1.0.2"
+
+vue-style-loader@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-3.0.2.tgz#eaeb299729fa3ee54717e907ce3c1e425ebae729"
   dependencies:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
@@ -9337,8 +9350,8 @@ vue-styleguidist@^1.2.3:
     webpack-merge "^4.1.0"
 
 vue-template-compiler@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.4.2.tgz#5a45d843f148b098f6c1d1e35ac20c4956d30ad1"
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.4.3.tgz#ecf25f1f076d765de55789c124321fd8db042204"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -9375,8 +9388,8 @@ vue-webpack-loaders@^1.0.5, vue-webpack-loaders@^1.0.6:
     vue-template-compiler "^2.4.2"
 
 vue@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.2.tgz#a9855261f191c978cc0dc1150531b8d08149b58c"
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.3.tgz#55fee0ec509cf2e10aa73b34b15219e92a9ab9ea"
 
 vuex@^2.3.1:
   version "2.3.1"
