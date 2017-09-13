@@ -58,6 +58,33 @@ export default {
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**
+     * sm breakpoint and above
+     */
+    ratioSm: {
+      type: String,
+      validator: value => ([
+        'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
+        '16-9'].indexOf(value) >= 0) || false,
+    },
+    /**
+     * md breakpoint and above
+     */
+    ratioMd: {
+      type: String,
+      validator: value => ([
+        'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
+        '16-9'].indexOf(value) >= 0) || false,
+    },
+    /**
+     * lg breakpoint and above
+     */
+    ratioLg: {
+      type: String,
+      validator: value => ([
+        'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
+        '16-9'].indexOf(value) >= 0) || false,
+    },
+    /**
      * Requires a `ratio`.
      * Area to crop the image overflow to.
      * {top, y-center, bottom} {left, x-center, right}
@@ -102,6 +129,9 @@ export default {
     ratioClass() {
       const classObj = {};
       classObj[`cdr-media-frame--${this.ratio}`] = this.ratio;
+      classObj[`cdr-media-frame--${this.ratioSm}@sm`] = this.ratioSm;
+      classObj[`cdr-media-frame--${this.ratioMd}@md`] = this.ratioMd;
+      classObj[`cdr-media-frame--${this.ratioLg}@lg`] = this.ratioLg;
       return classObj;
     },
     coverClass() {
