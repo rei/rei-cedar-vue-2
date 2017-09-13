@@ -11,6 +11,7 @@ import App from './App';
 import eaHome from './expertAdvice/Home';
 import goResults from './getOutside/Results';
 import goDetails from './getOutside/Details';
+import goLanding from './getOutside/Landing';
 
 Vue.config.devtools = false;
 // routing
@@ -21,6 +22,7 @@ const routes = [
   { path: '/ea', component: eaHome },
   { path: '/go-results', component: goResults },
   { path: '/go-details', component: goDetails },
+  { path: '/go-landing', component: goLanding },
 ];
 
 const router = new VueRouter({ routes });
