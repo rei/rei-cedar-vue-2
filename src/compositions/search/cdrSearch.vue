@@ -7,10 +7,7 @@
     placeholder="Search" 
     v-model="searchValue" 
     @input="updateSearch">
-    <cdr-button slot="post" class="cdr-input-action" :on-click="click">
-      <div class="cdr-search__icon" aria-hidden="true"></div>
-      <span class="u-sr-only">Search</span>
-    </cdr-button>
+    <cdr-button slot="post" modifier="sm" :on-click="click">Search</cdr-button>
   </cdr-input>
 </template>
 

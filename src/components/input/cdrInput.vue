@@ -1,5 +1,5 @@
 <template>
-  <div class="cdr-input-wrap">
+  <div class="cdr-input-container">
     <label v-if="!hideLabel"
       :class="labelClass"
       :for="inputId"
@@ -7,10 +7,10 @@
     >{{label}}<span v-if="required">*</span>
     </label>
     <div class="cdr-input-group" :class="[groupClass]">
-      <div v-if="$slots.pre" :class="[actionClass, preActionClass]">
+      <div v-if="$slots.pre" :class="[preActionClass]">
         <slot name="pre"></slot>
       </div>
-      <div :class="[validationClass]">
+      <div :class="[inputWrapClass]">
         <textarea v-if="multiLine"
           :class="inputClass"
           v-bind="$attrs"
@@ -48,7 +48,7 @@
 
         <span v-if="feedback" :class="validationIconClass" v-html="getIcon" ref="icon"></span>
       </div>
-      <div v-if="$slots.post" :class="[actionClass, postActionClass]">
+      <div v-if="$slots.post" :class="[postActionClass]">
         <slot name="post"></slot>
       </div>
     </div>
@@ -182,19 +182,19 @@ export default {
         'cdr-input--action-pre': this.$slots.pre,
       };
     },
-    validationClass() {
+    inputWrapClass() {
       return {
-        'cdr-input-validation': true,
-        'cdr-input-validation--actions': this.$slots.pre || this.$slots.post,
+        'cdr-input-wrap': true,
+        'cdr-input-wrap--actions': this.$slots.pre || this.$slots.post,
       };
     },
     validationIconClass() {
       return {
-        'cdr-input-validation__icon': true,
-        'cdr-input-validation__icon--error': this.isErr,
-        'cdr-input-validation__icon--warn': this.isWarn,
-        'cdr-input-validation__icon--valid': this.isValid,
-        'cdr-input-validation--actions': this.$slots.pre || this.$slots.post,
+        'cdr-input-wrap__icon': true,
+        'cdr-input-wrap__icon--error': this.isErr,
+        'cdr-input-wrap__icon--warn': this.isWarn,
+        'cdr-input-wrap__icon--valid': this.isValid,
+        'cdr-input-wrap--actions': this.$slots.pre || this.$slots.post,
       };
     },
     messageClass() {
@@ -208,13 +208,6 @@ export default {
       return {
         'cdr-input-group': true,
         'cdr-input-group--actions': this.$slots.pre || this.$slots.post,
-      };
-    },
-    actionClass() {
-      return {
-        'cdr-input__action': true,
-        'cdr-input__action--error': this.isErr,
-        'cdr-input__action--warn': this.isWarn,
       };
     },
     preActionClass() {
