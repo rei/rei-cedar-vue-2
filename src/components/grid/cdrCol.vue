@@ -32,7 +32,7 @@ export default {
      * Number of columns (1-12) the column should span.
      */
     span: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num > 0 && num <= 12) || false;
@@ -40,7 +40,7 @@ export default {
     },
     /** Sm breakpoint and above */
     spanSm: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num > 0 && num <= 12) || false;
@@ -48,7 +48,7 @@ export default {
     },
     /** Md breakpoint and above */
     spanMd: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num > 0 && num <= 12) || false;
@@ -56,7 +56,7 @@ export default {
     },
     /** Lg breakpoint and above */
     spanLg: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num > 0 && num <= 12) || false;
@@ -66,7 +66,7 @@ export default {
      * Number of columns (1-12) of empty space to add left of this column.
      */
     offsetLeft: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num >= 0 && num <= 12) || false;
@@ -74,7 +74,7 @@ export default {
     },
     /** Sm breakpoint and above */
     offsetLeftSm: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num >= 0 && num <= 12) || false;
@@ -82,7 +82,7 @@ export default {
     },
     /** Md breakpoint and above */
     offsetLeftMd: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num >= 0 && num <= 12) || false;
@@ -90,7 +90,7 @@ export default {
     },
     /** Lg breakpoint and above */
     offsetLeftLg: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num >= 0 && num <= 12) || false;
@@ -100,7 +100,7 @@ export default {
      * Number of columns (1-12) of empty space to add right of this column.
      */
     offsetRight: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num >= 0 && num <= 12) || false;
@@ -108,7 +108,7 @@ export default {
     },
     /** Sm breakpoint and above */
     offsetRightSm: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num >= 0 && num <= 12) || false;
@@ -116,7 +116,7 @@ export default {
     },
     /** Md breakpoint and above */
     offsetRightMd: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num >= 0 && num <= 12) || false;
@@ -124,7 +124,7 @@ export default {
     },
     /** Lg breakpoint and above */
     offsetRightLg: {
-      type: String,
+      type: [String, Number],
       validator: (value) => {
         const num = parseInt(value, 10);
         return (num >= 0 && num <= 12) || false;

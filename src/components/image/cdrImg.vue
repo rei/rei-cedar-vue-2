@@ -13,13 +13,6 @@ export default {
   name: 'cdr-img',
   mixins: [modifier],
   inheritAttrs: false,
-  data() {
-    return {
-      styleObject: {
-        backgroundImage: `url(${this.src})`,
-      },
-    };
-  },
   props: {
     /**
      * Required. Image source url.
@@ -47,6 +40,7 @@ export default {
     ratio: {
       type: String,
       validator: value => ([
+        'auto',
         'square',
         '1-2',
         '2-3',
@@ -55,6 +49,33 @@ export default {
         '2-1',
         '3-2',
         '4-3',
+        '16-9'].indexOf(value) >= 0) || false,
+    },
+    /**
+     * sm breakpoint and above
+     */
+    ratioSm: {
+      type: String,
+      validator: value => ([
+        'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
+        '16-9'].indexOf(value) >= 0) || false,
+    },
+    /**
+     * md breakpoint and above
+     */
+    ratioMd: {
+      type: String,
+      validator: value => ([
+        'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
+        '16-9'].indexOf(value) >= 0) || false,
+    },
+    /**
+     * lg breakpoint and above
+     */
+    ratioLg: {
+      type: String,
+      validator: value => ([
+        'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**
@@ -102,6 +123,9 @@ export default {
     ratioClass() {
       const classObj = {};
       classObj[`cdr-media-frame--${this.ratio}`] = this.ratio;
+      classObj[`cdr-media-frame--${this.ratioSm}@sm`] = this.ratioSm;
+      classObj[`cdr-media-frame--${this.ratioMd}@md`] = this.ratioMd;
+      classObj[`cdr-media-frame--${this.ratioLg}@lg`] = this.ratioLg;
       return classObj;
     },
     coverClass() {
@@ -121,6 +145,11 @@ export default {
         final += `${base}--${crop} `;
       });
       return final;
+    },
+    styleObject() {
+      return {
+        backgroundImage: `url(${this.src})`,
+      };
     },
   },
 };
