@@ -13,13 +13,6 @@ export default {
   name: 'cdr-img',
   mixins: [modifier],
   inheritAttrs: false,
-  data() {
-    return {
-      styleObject: {
-        backgroundImage: `url(${this.src})`,
-      },
-    };
-  },
   props: {
     /**
      * Required. Image source url.
@@ -151,6 +144,11 @@ export default {
         final += `${base}--${crop} `;
       });
       return final;
+    },
+    styleObject() {
+      return {
+        backgroundImage: `url(${this.src})`,
+      };
     },
   },
 };
