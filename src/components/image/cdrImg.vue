@@ -40,6 +40,7 @@ export default {
     ratio: {
       type: String,
       validator: value => ([
+        'auto',
         'square',
         '1-2',
         '2-3',
@@ -56,7 +57,7 @@ export default {
     ratioSm: {
       type: String,
       validator: value => ([
-        'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
+        'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**
@@ -65,7 +66,7 @@ export default {
     ratioMd: {
       type: String,
       validator: value => ([
-        'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
+        'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**
@@ -74,7 +75,7 @@ export default {
     ratioLg: {
       type: String,
       validator: value => ([
-        'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
+        'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**

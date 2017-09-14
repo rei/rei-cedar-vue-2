@@ -73,6 +73,10 @@
   /* Aspect ratios
     ========================================================================== */
 
+  &--auto::before {
+    padding-bottom: 0;
+  }
+
   &--square::before {
     padding-bottom: 100%;
   }
@@ -112,6 +116,10 @@
   /* Aspect ratios @ small
     ========================================================================== */
   @media (--sm-mq) {
+    &--auto\@sm::before {
+      padding-bottom: 0;
+    }
+
     &--square\@sm::before {
       padding-bottom: 100%;
     }
@@ -152,6 +160,10 @@
   /* Aspect ratios @ medium
     ========================================================================== */
   @media (--md-mq) {
+    &--auto\@md::before {
+      padding-bottom: 0;
+    }
+
     &--square\@md::before {
       padding-bottom: 100%;
     }
@@ -192,6 +204,10 @@
   /* Aspect ratios @ large
     ========================================================================== */
   @media (--lg-mq) {
+    &--auto\@lg::before {
+      padding-bottom: 0;
+    }
+
     &--square\@lg::before {
       padding-bottom: 100%;
     }

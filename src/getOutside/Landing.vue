@@ -107,7 +107,7 @@ export default {
       }
     },
     ratioSM(ix) {
-      return this.sizeSM(ix) === 3 ? 'square' : '2-1';
+      return this.sizeSM(ix) === 3 ? 'square' : 'auto';
     },
   },
 };
