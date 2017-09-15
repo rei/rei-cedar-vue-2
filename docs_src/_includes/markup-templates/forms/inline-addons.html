@@ -1,14 +1,104 @@
-<form class="form-inline">
+<form class="form">
+    <fieldset>
+        <legend>Input group sizes</legend>
+        <div class="form-group">
+                <label class="sr-only" for="searchInputSmall">Search Label small</label>
+                <div class="input-group input-group-sm">
+                    <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+                    <input type="text" class="form-control" id="searchInputSmall" placeholder="Find great gear">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary">
+                        Search
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="searchInput">Search Label</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+                    <input type="text" class="form-control" id="searchInput" placeholder="Find great gear">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary">
+                        Search
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="searchInputLarge">Search Label large</label>
+                <div class="input-group input-group-lg">
+                    <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+                    <input type="text" class="form-control" id="searchInputLarge" placeholder="Find great gear">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary">
+                        Search
+                        </button>
+                    </span>
+                </div>
+            </div>
+    </fieldset>
+    <fieldset>
+        <legend>
+            Mix and match elements
+        </legend>
     <div class="form-group">
-        <label class="sr-only" for="exampleInputAmount">Search Label</label>
+        <label class="sr-only" for="withoutBtn">without btn</label>
         <div class="input-group">
             <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
-            <input type="text" class="form-control" id="search-input" placeholder="Find great gear">
-            <span class="input-group-btn">
-                <button type="button" class="btn btn-default">
-                Search
-                </button>
-            </span>
-        </div>
+            <input id="withoutBtn" type="text" class="form-control" placeholder="Search for...">
+            <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+        </div><!-- /input-group -->
     </div>
+    <div class="form-group">
+        <label class="sr-only" for="withoutBtn">without btn</label>
+        <div class="input-group">
+          <input id="withoutBtn" type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">
+                Go
+                <span class="icon icon-chevron-large-right" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="withTwoActions">with two actions</label>
+        <div class="input-group">
+          <input id="withTwoActions" type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">
+                Go
+                <span class="icon icon-chevron-large-right" aria-hidden="true"></span>
+            </button>
+          </span>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                away
+                <span class="icon icon-chevron-large-right" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+    </div>
+    </fieldset>
+    <fieldset>
+        <legend>Complex groups</legend>
+        <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+                    <label class="sr-only" for="searchSpot">placeholder search</label>
+                    <input type="text" class="form-control" id="searchSpot" placeholder="Search for great gear & clothing" />
+                    <div class="input-group-addon"><span class="icon icon-rei-target" aria-hidden="true"></span></div>
+                    <label class="sr-only" for="location">location</label>
+                    <input type="text" class="form-control" id="location" placeholder="Everywhere" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary">
+                        Search
+                        </button>
+                    </span>
+                </div>
+            </div>
+    </fieldset>
 </form>
+
+

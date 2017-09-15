@@ -55,11 +55,15 @@
 .doc_head-navigation > li > a,
 .doc_head-navigation ul > li > a {
   display: block;
-  font-family: Roboto;
-  font-size: 1.8rem;
+  font-family: 16px;
+  font-size: 1.6rem;
   font-style: normal;
-  line-height: 1;
-  padding: 1.1rem 1.6rem;
+  line-height: 1.8rem;
+  padding: 1.1rem;
+}
+.doc_head-navigation > li > a > .icon,
+.doc_head-navigation ul > li > a > .icon {
+  font-size: 1.6rem !important;
 }
 .doc_head-navigation > li > a:hover,
 .doc_head-navigation > li > a:focus,
@@ -83,11 +87,15 @@
 }
 .doc_head-navigation > li > ul > li > a,
 .doc_head-navigation ul > li > ul > li > a {
-  font-family: 4px;
+  font-family: 16px;
   font-size: 1.6rem;
-  font-style: normal;
-  line-height: 1;
-  padding: 1.1rem 1.6rem;
+  font-style: 4px;
+  line-height: 1.6rem;
+  padding: 1.1rem;
+}
+.doc_head-navigation > li > ul > li > a > .icon,
+.doc_head-navigation ul > li > ul > li > a > .icon {
+  font-size: 1.6rem !important;
 }
 .dl-horizontal dd:before,
 .dl-horizontal dd:after {
@@ -365,15 +373,18 @@ h4 code {
     position: relative;
   }
   .doc_head-navigation-item a {
-    font-family: "Sentinel", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.6rem;
-    font-style: normal;
-    line-height: 1;
-    padding: 1.3rem 3.2rem;
+    font-family: 16px;
+    font-size: 3.2rem;
+    font-style: "Sentinel", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6rem;
+    padding: 1.3rem;
     color: #fff !important;
     text-decoration: none;
     transition: all linear 0.1s;
     width: auto;
+  }
+  .doc_head-navigation-item a > .icon {
+    font-size: 3.2rem !important;
   }
   .doc_head-navigation-item > a:hover,
   .doc_head-navigation-item > a:focus,

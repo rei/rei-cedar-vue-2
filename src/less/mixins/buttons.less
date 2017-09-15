@@ -101,10 +101,18 @@
 // @font-family: defaults to @headings-font-family-secondary;.
 //
 //----------------------------------------------------------------------------------------------------------------------
-.button-size( @padding-y: @spacing-space-md; @padding-x: @spacing-space-lg; @font-size: @cdr-type-redwood-ui-30-font-size; @line-height: @cdr-type-redwood-ui-30-line-height; @font-family: @cdr-type-redwood-ui-30-font-family; @font-style: @cdr-type-redwood-ui-30-font-style;) {
-  font-family: @font-family;
-  font-size: @font-size;
-  font-style: @font-style;
-  line-height: @line-height;
-  padding: @padding-y @padding-x;
+.button-size(
+    @padding: @inset-lg--squish;
+    @font-size: @cdr-type-redwood-ui-30-font-size;
+    @line-height: @cdr-type-redwood-ui-30-line-height;
+    @font-family: @cdr-type-redwood-ui-30-font-family',' @fallback-sans-serif;
+    @font-style: @cdr-type-redwood-ui-30-font-style;) {
+      font-family: @font-family;
+      font-size: @font-size;
+      font-style: @font-style;
+      line-height: @line-height;
+      padding: @padding;
+     > .icon {
+      font-size: @font-size !important;
+    }
 }
