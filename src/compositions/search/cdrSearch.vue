@@ -1,14 +1,18 @@
 <template>
-  <cdr-input 
-    v-bind="$attrs"
-    v-on="$listeners"
-    label="Search" 
-    hide-label 
-    placeholder="Search" 
-    v-model="searchValue" 
-    @input="updateSearch">
-    <cdr-button slot="post" modifier="sm" :on-click="click">Search</cdr-button>
-  </cdr-input>
+  <div class="cdr-search">
+    <cdr-input 
+      class="cdr-search__input"
+      v-bind="$attrs"
+      v-on="$listeners"
+      label="Search" 
+      hide-label 
+      placeholder="Search" 
+      v-model="searchValue" 
+      @input="updateSearch">
+      <span slot="preicon" class="cdr-search__icon"></span>
+    </cdr-input>
+    <cdr-button modifier="sm" :on-click="click">Search</cdr-button>
+  </div>
 </template>
 
 <script>

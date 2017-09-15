@@ -15,7 +15,9 @@
    ========================================================================== */
 
 .cdr-input-container {
-  margin-bottom: 1.6rem;
+  & + & {
+    margin-top: 1.6rem;
+  }
 }
 
 /* ==========================================================================
@@ -39,6 +41,7 @@
 * Base class
 * Style variants
 * Pseudo elements
+* Block elements
 * Input actions
 */
 
@@ -76,6 +79,10 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
     border-bottom-left-radius: 0;
   }
 
+  &--preicon {
+    padding-left: calc($sizing-size-sm-stretch * 2 + $sizing-size-md);
+  }
+
   &[disabled] {
     background-color: $sys-color-input-disabled;
   }
@@ -86,6 +93,16 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
   &::placeholder {
     font-style: italic;
     color: $sys-color-input-placeholder-text;
+  }
+
+  /* Block elements
+    ========================================================================== */
+
+  &__pre-icon {
+    position: absolute;
+    top: 50%;
+    left: $sizing-size-md;
+    transform: translateY(-50%);
   }
 
   /* Input actions

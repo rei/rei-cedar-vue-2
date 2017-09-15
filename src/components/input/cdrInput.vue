@@ -45,9 +45,12 @@
           :aria-describedby="errors.length ? messagesId : null"
           ref="input"
         >
-
+        <span v-if="$slots.preicon" class="cdr-input__pre-icon" aria-hidden="true">
+          <slot name="preicon"></slot>
+        </span>
         <span v-if="feedback" :class="validationIconClass" v-html="getIcon" ref="icon"></span>
       </div>
+      <!-- TODO: remove this? -->
       <div v-if="$slots.post" :class="[postActionClass]">
         <slot name="post"></slot>
       </div>
@@ -180,6 +183,7 @@ export default {
         'cdr-input--actions': this.$slots.pre || this.$slots.post,
         'cdr-input--action-post': this.$slots.post,
         'cdr-input--action-pre': this.$slots.pre,
+        'cdr-input--preicon': this.$slots.preicon,
       };
     },
     inputWrapClass() {
