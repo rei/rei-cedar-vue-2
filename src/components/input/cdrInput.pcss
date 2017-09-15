@@ -2,9 +2,7 @@
 ** TOC:
 **
 ** input container
-** input group
 ** input
-** input action
 ** input wrapper
 ** animated errors
 ** input messages
@@ -21,17 +19,6 @@
 }
 
 /* ==========================================================================
-   # INPUT GROUP
-   ========================================================================== */
-
-.cdr-input-group {
-  &--actions {
-    display: flex;
-    align-items: center;
-  }
-}
-
-/* ==========================================================================
    # INPUT
    ========================================================================== */
 
@@ -42,7 +29,6 @@
 * Style variants
 * Pseudo elements
 * Block elements
-* Input actions
 */
 
 $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size-sm-stretch);
@@ -104,46 +90,6 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
     left: $sizing-size-md;
     transform: translateY(-50%);
   }
-
-  /* Input actions
-    ========================================================================== */
-
-  &--action-post {
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  &--action-pre {
-    border-left: none;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-}
-
-/* ==========================================================================
-   # INPUT ACTION
-   ========================================================================== */
-
-.cdr-input-action {
-  border: none;
-  background-color: $sys-color-input;
-  padding: $inset-sm--stretch;
-  height: calc($input-height - 2px);
-  @include sys-font-redwood-ui-30 ();
-
-  svg {
-    width: $sys-font-redwood-ui-30-font-size;
-    height: $sys-font-redwood-ui-30-font-size;
-  }
-
-  &:focus,
-  &:active,
-  &:hover {
-    border: none;
-    background-color: $sys-color-input;
-    color: initial;
-  }
 }
 
 /* ==========================================================================
@@ -160,13 +106,6 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
 
 .cdr-input-wrap {
   position: relative;
-  
-  /* Style variants
-    ========================================================================== */
-
-  &--actions {
-    flex-grow: 1;
-  }
   
   /* Block elements
     ========================================================================== */
