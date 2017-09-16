@@ -43,7 +43,6 @@
             color: @input-color;
             display: block;
             font-size: @input-font-size;
-            height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
             line-height: @input-line-height;
             padding: 1.2rem 0.8rem;
         }
@@ -53,6 +52,7 @@
         }
         .input-group-btn > .btn {
             margin: 0;
+            height: 100%;
             &.btn-default {
                 border-color: @input-border;
             }
@@ -64,7 +64,6 @@
             }
             .input-group-addon {
                 font-size: @input-sm-font-size;
-                height: @input-height-small;
                 line-height: @input-sm-line-height;
                 padding: 0.8rem;
             }
@@ -81,7 +80,6 @@
             }
             .input-group-addon {
                 font-size: @input-lg-font-size;
-                height: @input-height-large;
                 line-height: @input-lg-line-height;
                 padding: 1.6rem 0.8rem;
             }

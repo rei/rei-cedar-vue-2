@@ -79,11 +79,8 @@ label {
     border-radius: @border-radius;
     color: @input-color;
     display: block;
-    font-size: @input-font-size;
-    height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-    line-height: @input-line-height;
-    padding: @inset-sm--stretch;
     width: 100%;
+    &:extend(.input-md);
 
     // Placeholder
     .placeholder();
@@ -184,20 +181,6 @@ label {
     top: 2.2rem;
 }
 
-.has-feedback .form-control-feedback {
-    &.icon {
-        line-height: @input-height-base;
-        .input-lg &,
-        .form-group-lg & {
-            line-height: @input-height-large;
-        }
-        .input-sm &,
-        .form-group-sm & {
-            line-height: @input-height-small;
-        }
-    }
-}
-
 .required-form {
     &:before {
         &:extend( .h4 );
@@ -257,10 +240,9 @@ label {
 //----------------------------------------------------------------------------------------------------------------------
 .form-group-sm {
     .form-control {
-        .input-size( @input-height-small; @inset-md--squish; @cdr-type-redwood-ui-20-font-size; @cdr-type-redwood-ui-20-line-height; );
+        &:extend(.input-sm);
     }
     .form-control-static {
-        height: @input-height-small;
         padding: @padding-small-vertical @padding-xs-horizontal;
         font-size: @font-size-small;
         line-height: @line-height-small;
@@ -271,10 +253,9 @@ label {
 
 .form-group-lg {
     .form-control {
-        .input-size( @input-height-large; @inset-lg--squish; @cdr-type-redwood-ui-30-font-size; @cdr-type-redwood-ui-30-line-height; );
+        &:extend(.input-lg);
     }
     .form-control-static {
-        height: @input-height-large;
         padding: @spacing-space-md @spacing-space-lg; //should match btn-lg
         font-size: @font-size-large;
         line-height: @line-height-large;
@@ -288,7 +269,7 @@ label {
 
     // Ensure icons don't overlap text
     .form-control {
-        padding-right: (@input-height-base * 1.25);
+        padding-right: (@input-line-height * 1.25);
     }
 }
 // Feedback icon (requires .icon classes)
@@ -299,19 +280,16 @@ label {
     z-index: 2; // Ensure icon is above input groups
     display: block;
     width: @input-height-base;
-    height: @input-height-base;
     line-height: @input-height-base;
     text-align: center;
     pointer-events: none;
 }
 .input-lg + .form-control-feedback {
     width: @input-height-large;
-    height: @input-height-large;
     line-height: @input-height-large;
 }
 .input-sm + .form-control-feedback {
     width: @input-height-small;
-    height: @input-height-small;
     line-height: @input-height-small;
 }
 
