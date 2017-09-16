@@ -54,8 +54,6 @@ legend {
 
 label {
     display: inline-block;
-    margin-top: 0;
-    margin-bottom: @vertical-push-small;
     .form-inline & {
         display: block;
     }
@@ -75,16 +73,14 @@ label {
 //
 //----------------------------------------------------------------------------------------------------------------------
 .form-control {
-    display: block;
-    width: 100%;
-    height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-    padding: @padding-small-vertical @padding-xs-horizontal;
-    font-size: @font-size-base;
-    line-height: @btn-line-height;
-    color: @input-color;
     background-color: @input-bg;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     border: 0.1rem solid @input-border;
+    border-radius: @border-radius;
+    color: @input-color;
+    display: block;
+    width: 100%;
+    &:extend(.input-md);
 
     // Placeholder
     .placeholder();
@@ -127,34 +123,46 @@ label {
     .rei-form-control-focus();
     outline: none;
     .has-error & {
-        background-color: @input-background-error;
         border-color: @input-border-error;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
         .rei-form-control-focus( @input-border-error );
         }
     }
 
 .field-msg {
-    &:extend(.alert all);
+    &:extend( .cdr-type-redwood-ui-20 all );
+    position: relative;
     display: block;
+    padding: @spacing-space-sm;
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+    &:last-of-type {
+        border-bottom-right-radius: @radius-input;
+        border-bottom-left-radius: @radius-input;
+    }
 }
 .field-msg_success{
-    &:extend( .field-msg );
+    &:extend( .field-msg all );
     &:extend(.alert-success all);
 }
 .field-msg_error {
-     &:extend( .field-msg );
+    &:extend( .field-msg all );
+    border-color: @input-border-error;
+    background-color: @input-background-error-alert;
     &:extend(.alert-danger all);
 }
 .field-msg_warning  {
-     &:extend( .field-msg );
+     &:extend( .field-msg all );
     &:extend(.alert-warning all);
 }
 .field-msg_info  {
-     &:extend( .field-msg );
+     &:extend( .field-msg all);
     &:extend(.alert-info all);
 }
 .field-msg_help {
-     &:extend( .field-msg );
+     &:extend( .field-msg all);
     &:extend(.alert-info all);
 }
 
@@ -170,21 +178,7 @@ label {
 }
 
 .has-feedback label ~ .form-control-feedback {
-    top: 3rem;
-}
-
-.has-feedback .form-control-feedback {
-    &.icon {
-        line-height: @input-height-base;
-        .input-lg &,
-        .form-group-lg & {
-            line-height: @input-height-large;
-        }
-        .input-sm &,
-        .form-group-sm & {
-            line-height: @input-height-small;
-        }
-    }
+    top: 2.2rem;
 }
 
 .required-form {
@@ -246,10 +240,9 @@ label {
 //----------------------------------------------------------------------------------------------------------------------
 .form-group-sm {
     .form-control {
-        .input-size(@input-height-small; @padding-small-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small;);
+        &:extend(.input-sm);
     }
     .form-control-static {
-        height: @input-height-small;
         padding: @padding-small-vertical @padding-xs-horizontal;
         font-size: @font-size-small;
         line-height: @line-height-small;
@@ -260,11 +253,10 @@ label {
 
 .form-group-lg {
     .form-control {
-        .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large;);
+        &:extend(.input-lg);
     }
     .form-control-static {
-        height: @input-height-large;
-        padding: @padding-large-vertical @padding-large-horizontal; //should match btn-lg
+        padding: @spacing-space-md @spacing-space-lg; //should match btn-lg
         font-size: @font-size-large;
         line-height: @line-height-large;
         min-height: (@line-height-computed + @font-size-large);
@@ -277,7 +269,7 @@ label {
 
     // Ensure icons don't overlap text
     .form-control {
-        padding-right: (@input-height-base * 1.25);
+        padding-right: (@input-line-height * 1.25);
     }
 }
 // Feedback icon (requires .icon classes)
@@ -288,19 +280,16 @@ label {
     z-index: 2; // Ensure icon is above input groups
     display: block;
     width: @input-height-base;
-    height: @input-height-base;
     line-height: @input-height-base;
     text-align: center;
     pointer-events: none;
 }
 .input-lg + .form-control-feedback {
     width: @input-height-large;
-    height: @input-height-large;
     line-height: @input-height-large;
 }
 .input-sm + .form-control-feedback {
     width: @input-height-small;
-    height: @input-height-small;
     line-height: @input-height-small;
 }
 
@@ -317,10 +306,6 @@ label {
 
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
-
-    & ~ .form-control-feedback {
-        top: (@line-height-computed + 0.5); // Height of the `label` and its margin
-    }
     &.sr-only ~ .form-control-feedback {
         top: 0;
     }
@@ -365,9 +350,6 @@ label {
                 margin-right: @group-push;
             }
         }
-        .has-feedback .form-control-feedback {
-            top: 3.6rem;
-        }
 
     // Kick in the inline
     @media (min-width: @screen-sm-min) {
@@ -378,7 +360,7 @@ label {
             vertical-align: top;
             .vertical-push-md();
             &.non-label {
-                margin-top: 3rem;
+                margin-top: 2rem;
             }
         }
 
@@ -393,30 +375,8 @@ label {
         .form-control-static {
             display: inline-block;
         }
-
-        .input-group {
-            display: inline-table;
-            vertical-align: middle;
-
-            .input-group-addon,
-            .input-group-btn,
-            .form-control {
-                width: auto;
-            }
-        }
-
-        // Input groups need that 100% width though
-        .input-group > .form-control {
-            width: 100%;
-        }
-
-        // Re-override the feedback icon.
-        .has-feedback .form-control-feedback {
-            top: 0;
-        }
     }
 }
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Horizontal forms

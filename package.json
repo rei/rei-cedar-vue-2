@@ -99,17 +99,17 @@
     "verbose": true
   },
   "tenon": {
-    "key": "7b63fed13dfa8c277e7fd283b51685b7",
+    "key": "2f5d417c7781b957398e393c409280d5",
     "filter": [31, 54, 79],
     "apiURL": "https://tenon.io/api/index.php",
-    "certainty":  "40",
+    "certainty":  "0",
     "level": "AA",
-    "priority": "40",
+    "priority": "0",
     "ref": "1",
     "store": "1",
     "snippet": true,
     "viewPortWidth": "1280",
-    "projectID": "DEFAULT_PROJECT",
+    "projectID": "Patterns.rei.com",
     "saveOutputIn": "tenon-report.json"
   },
   "pa11y": {

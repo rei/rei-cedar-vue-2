@@ -72,34 +72,6 @@ input[type="search"] {
     -webkit-appearance: none;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Special styles for iOS temporal inputs
-//
-// In Mobile Safari, setting `display: block` on temporal inputs causes the
-// text within the input to become vertically misaligned. As a workaround, we
-// set a pixel line-height that matches the given height of the input, but only
-// for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
-//
-//----------------------------------------------------------------------------------------------------------------------
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-    input[type="date"],
-    input[type="time"],
-    input[type="datetime-local"],
-    input[type="month"] {
-        line-height: @input-height-base;
-
-        &.input-sm,
-        .input-group-sm & {
-            line-height: @input-height-small;
-        }
-
-        &.input-lg,
-        .input-group-lg & {
-            line-height: @input-height-large;
-        }
-    }
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -110,10 +82,23 @@ input[type="search"] {
 //
 //----------------------------------------------------------------------------------------------------------------------
 .input-sm {
-    .input-size(@input-height-small; @padding-small-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small;);
+    .input-size(
+        @inset-md--squish;
+        @input-sm-font-size;
+        @input-sm-line-height;
+        @cdr-type-redwood-ui-20-font-family @fallback-sans-serif;
+        @cdr-type-redwood-ui-20-font-style; );
+}
+.input-md {
+    .input-size();
 }
 .input-lg {
-    .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large;);
+    .input-size(
+        @inset-lg--squish;
+        @input-lg-font-size;
+        @input-lg-line-height;
+        @cdr-type-redwood-ui-30-font-family @fallback-sans-serif;
+        @cdr-type-redwood-ui-30-font-style; );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -61,7 +61,6 @@
         // modified if contained within this parent class
         vertical-align: bottom;
         @media ( max-width: @screen-xs-max ) {
-            .btn-lg();
             vertical-align: inherit;
         }
     }
@@ -161,15 +160,6 @@
     }
 }
 
-.btn-off-price {
-    &.btn-primary {
-        .button-variant( @btn-off-price-color; @btn-off-price-bg; @btn-off-price-border; @btn-off-price-active-bg; @btn-off-price-active-border; );
-    }
-    &.btn-default {
-        .button-variant( @btn-off-price-default-color; @btn-off-price-default-bg; @btn-off-price-default-border; @btn-off-price-default-active-bg; @btn-off-price-default-active-border; );
-    }
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Button Link
 // Make a button look and behave like a link
@@ -211,13 +201,6 @@
         &:extend( .link_stag-explore all);
         .overlay-dark & {
             &:extend( .link_stag-explore-overlay all);
-        }
-    }
-    &-off-price {
-        background-color: inherit;
-        &:extend( .link-off-price-standalone-overlay all);
-        .overlay-dark & {
-             &:extend( .link_stag-explore-overlay all);
         }
     }
 }
@@ -322,12 +305,22 @@
 
 .btn-sm {
     // line-height: ensure proper height of button next to small input
-    .button-size( @spacing-space-sm; @spacing-space-md; @cdr-type-redwood-ui-20-font-size; @cdr-type-redwood-ui-20-line-height; @cdr-type-redwood-ui-20-font-style; );
+    .button-size(
+        @inset-sm--stretch;
+        @cdr-type-redwood-ui-20-font-size;
+        @cdr-type-redwood-ui-20-line-height;
+        @cdr-type-redwood-ui-20-font-family @fallback-sans-serif;
+        @cdr-type-redwood-ui-20-font-style; );
     @text-with-icon-rei-tree-arrow-button-sm-ruleset();
 }
 
 .btn-xs {
-    .button-size( @padding-xs-vertical; @padding-xs-horizontal; @font-size-smaller; @line-height-small; );
+    .button-size(
+        @inset-md--squish;
+        @cdr-type-redwood-ui-20-font-size;
+        @cdr-type-redwood-ui-20-line-height;
+        @cdr-type-redwood-ui-20-font-family @fallback-sans-serif;
+        @cdr-type-redwood-ui-20-font-style; );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

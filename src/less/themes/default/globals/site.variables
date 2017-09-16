@@ -256,7 +256,8 @@
 @breadcrumb-spacing:                                   3rem;
 
 @border-radius:                                               0.3rem;
-
+@border-radius-left:                                          0.3rem 0 0 0.3rem;
+@border-radius-right:                                         0 0.3rem 0.3rem 0;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Grid system

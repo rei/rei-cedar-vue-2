@@ -7,25 +7,36 @@
 // COLOR PALETTES
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@input-border:                                   @core-architectural-1;
-@input-border-error:                             @utility-error;
+@input-border:                                   @cdr-color-input-stroke;
+@input-border-error:                             @cdr-color-input-error-stroke;
 @input-border-focus:                             @core-action-2;
-@input-bg:                                       @core-architectural-5;
-@input-bg-disabled:                              @core-background-2;
-@input-background-error:                         @alert-danger-bg; //TODO should be @input-bg-error;
-@input-color:                                    @text-color;
-@input-color-placeholder:                        lighten( @core-architectural-1, 50% ); // Placeholder text color
+@input-bg:                                       @cdr-color-input;
+@input-bg-disabled:                              @cdr-color-input-disabled;
+@input-background-error:                         @cdr-color-input;
+@input-background-error-alert:                   #F5E4DF;
+@input-color:                                    @cdr-color-input-text;
+@input-color-placeholder:                        @cdr-color-input-placeholder-text;
+@input-color-disabled:                           @cdr-color-input-disabled-text;
+@input-radius:                                   0.3rem;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // SIZE AND SHAPE
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@input-font-size:                                @cdr-type-redwood-ui-30-font-size;
+@input-line-height:                              @cdr-type-redwood-ui-30-line-height;
+@input-sm-font-size:                             @cdr-type-redwood-ui-20-font-size;
+@input-sm-line-height:                           @cdr-type-redwood-ui-20-line-height;
+@input-lg-font-size:                             @cdr-type-redwood-ui-30-font-size;
+@input-lg-line-height:                           @cdr-type-redwood-ui-30-line-height;
+
 // Default `.form-control` height
-@input-height-base:              ( (@btn-font-size * @btn-line-height) + (@padding-base-vertical * 2) );
+@input-height-base:              4rem;
 // Large `.form-control` height
-@input-height-large:             (ceil(@btn-font-size-lg * @btn-line-height) + (@padding-large-vertical * 2) + .2);
+@input-height-large:             5rem;
 // Small `.form-control` height
-@input-height-small:             (floor(@font-size-small * @line-height-open) + (@padding-small-vertical * 2) + .2);
+@input-height-small:             3.2rem;
 // Disabled cursor for form controls and buttons.
 @cursor-disabled:                                     not-allowed;
