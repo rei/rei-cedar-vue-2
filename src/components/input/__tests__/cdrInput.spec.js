@@ -406,7 +406,7 @@ describe('cdrInput.vue', () => {
     });
     wrapper.vm.validate(true);
     setTimeout(() => {
-      const icon = wrapper.find('.cdr-input-validation__icon')[0];
+      const icon = wrapper.find('.cdr-input-wrap__icon')[0];
       expect(icon.contains('svg')).to.equal(true);
       done();
     }, 0);

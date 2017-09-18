@@ -92,7 +92,7 @@ import imageDetails from './components/ImageDetails';
 const CedarComps = Object.assign({}, Components, Compositions);
 
 Object.assign(CedarComps, { goImageDetails: imageDetails });
-const results = require('./resultsData').results;
+const { results } = require('./resultsData');
 const cardsData = require('./cardData').data;
 
 export default {

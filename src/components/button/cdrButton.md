@@ -2,7 +2,9 @@
 
 Modifiers can be combined 1 from each grouping.
 
-{secondary} | {compact} | {block, fixed} **OR** link
+{secondary} | {compact} | {block, fixed, responsive} **OR** link
+
+Responsive makes the button full width and block @ sm breakpoint.
 
 A modifier list that contains 'link' exposes the same modifiers as cdrA and the other modifiers shouldn't be combined with it.
 

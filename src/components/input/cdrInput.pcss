@@ -1,31 +1,20 @@
 /*
 ** TOC:
 **
-** input wrap
-** input group
+** input container
 ** input
-** input action
-** input validation
+** input wrapper
 ** animated errors
 ** input messages
 */
 
 /* ==========================================================================
-   # INPUT WRAP
+   # INPUT CONTAINER
    ========================================================================== */
 
-.cdr-input-wrap {
-  margin-bottom: 1.6rem;
-}
-
-/* ==========================================================================
-   # INPUT GROUP
-   ========================================================================== */
-
-.cdr-input-group {
-  &--actions {
-    display: flex;
-    align-items: center;
+.cdr-input-container {
+  & + & {
+    margin-top: 1.6rem;
   }
 }
 
@@ -38,8 +27,9 @@
 *
 * Base class
 * Style variants
+* Size variants
 * Pseudo elements
-* Input actions
+* Block elements
 */
 
 $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size-sm-stretch);
@@ -76,8 +66,21 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
     border-bottom-left-radius: 0;
   }
 
+  &--preicon {
+    padding-left: calc($sizing-size-sm-stretch * 2 + $sizing-size-md);
+  }
+
   &[disabled] {
     background-color: $sys-color-input-disabled;
+  }
+
+  /* Size variants
+    ========================================================================== */
+
+  &--large {
+    padding-top: $inset-md;
+    padding-bottom: $inset-md;
+    height: auto;
   }
 
   /* Pseudo elements
@@ -88,77 +91,19 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
     color: $sys-color-input-placeholder-text;
   }
 
-  /* Input actions
+  /* Block elements
     ========================================================================== */
 
-  &--action-post {
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  &--action-pre {
-    border-left: none;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  &__action {
-    border-color: $sys-color-input-stroke;
-    border-style: solid;
-    border-radius: $radius-input;
-    border-width: 1px;
-    height: $input-height;
-
-    &--error {
-      border-color: $sys-color-input-error-stroke;
-    }
-
-    &--warn {
-      border-color: $sys-color-input-warning-stroke;
-    }
-
-    &--pre {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      border-right: none;
-    }
-
-    &--post {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      border-left: none;
-    }
+  &__pre-icon {
+    position: absolute;
+    top: 50%;
+    left: $sizing-size-md;
+    transform: translateY(-50%);
   }
 }
 
 /* ==========================================================================
-   # INPUT ACTION
-   ========================================================================== */
-
-.cdr-input-action {
-  border: none;
-  background-color: $sys-color-input;
-  padding: $inset-sm--stretch;
-  height: calc($input-height - 2px);
-  @include sys-font-redwood-ui-30 ();
-
-  svg {
-    width: $sys-font-redwood-ui-30-font-size;
-    height: $sys-font-redwood-ui-30-font-size;
-  }
-
-  &:focus,
-  &:active,
-  &:hover {
-    border: none;
-    background-color: $sys-color-input;
-    color: initial;
-  }
-}
-
-/* ==========================================================================
-   # INPUT VALIDATION
+   # INPUT WRAPPER
    ========================================================================== */
 
 /*
@@ -169,15 +114,8 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
 * Block elements
 */
 
-.cdr-input-validation {
+.cdr-input-wrap {
   position: relative;
-  
-  /* Style variants
-    ========================================================================== */
-
-  &--actions {
-    flex-grow: 1;
-  }
   
   /* Block elements
     ========================================================================== */

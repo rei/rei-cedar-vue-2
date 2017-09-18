@@ -1,4 +1,4 @@
-A composition of `cdr-input`, `cdr-button`, and `cdr-icon` that gives you a simple search box. Passes all other attributes and events to `cdr-input`.
+A composition of `cdr-input` and `cdr-button`that gives you a simple search box. Passes all other attributes and events to `cdr-input`.
 
 ### Events
 | Name | Type | Description | |
@@ -7,14 +7,30 @@ A composition of `cdr-input`, `cdr-button`, and `cdr-icon` that gives you a simp
 
 ### Examples
 
+#### Standard
+
 ```
 var searchTerm = '';
 function runSearch() {
   console.log('Searching');
 }
 
-<div>
+<form>
   <cdr-search v-model="searchTerm" :click="runSearch"></cdr-search>
   <p>Entered: {{searchTerm}}</p>
-</div>
+</form>
+```
+
+#### Bare
+
+```
+var searchTerm = '';
+function runSearch() {
+  console.log('Searching');
+}
+
+<form>
+  <cdr-search v-model="searchTerm" :click="runSearch" bare></cdr-search>
+  <p>Entered: {{searchTerm}}</p>
+</form>
 ```

@@ -31,11 +31,6 @@
   text-decoration: none;
   white-space: nowrap;
 
-  @media (--xs-mq-only) {
-    display: block;
-    width: 100%;
-  }
-
   &[disabled] {
     background-color: $btn-disabled-bg;
     border-color: $btn-disabled-stroke;
@@ -101,6 +96,13 @@
 
   /* Size variants
     ========================================================================== */
+
+  &--responsive {
+    @media (--xs-mq-only) {
+      display: block;
+      width: 100%;
+    }
+  }
 
   &--sm {
     font-family: $btn--sm-font-family;

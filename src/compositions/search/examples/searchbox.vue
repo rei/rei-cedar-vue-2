@@ -4,6 +4,15 @@
 
     <cdr-search v-model="search1" :click="search"></cdr-search>
     <p>Searching: {{search1}}</p>
+
+    <cdr-search v-model="search1" :click="search" large></cdr-search>
+    <p>Searching: {{search1}}</p>
+
+    <cdr-search v-model="search2" :click="search" bare></cdr-search>
+    <p>Searching: {{search2}}</p>
+
+    <cdr-search v-model="search2" :click="search" bare large></cdr-search>
+    <p>Searching: {{search2}}</p>
   </div>
 </template>
 
@@ -16,6 +25,7 @@ export default {
   data() {
     return {
       search1: '',
+      search2: 'bare',
     };
   },
   methods: {

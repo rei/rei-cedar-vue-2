@@ -1,56 +1,50 @@
 <template>
-  <div class="cdr-input-wrap">
+  <div class="cdr-input-container">
     <label v-if="!hideLabel"
       :class="labelClass"
       :for="inputId"
       ref="label"
     >{{label}}<span v-if="required">*</span>
     </label>
-    <div class="cdr-input-group" :class="[groupClass]">
-      <div v-if="$slots.pre" :class="[actionClass, preActionClass]">
-        <slot name="pre"></slot>
-      </div>
-      <div :class="[validationClass]">
-        <textarea v-if="multiLine"
-          :class="inputClass"
-          v-bind="$attrs"
-          :id="inputId"
-          :value="lazyValue"
-          v-on="$listeners"
-          @blur="onBlur"
-          @input="onInput"
-          @focus="onFocus"
-          @paste="onPaste"
-          :required="required"
-          :disabled="disabled"
-          :aria-label="hideLabel ? label : null"
-          :aria-describedby="errors.length ? messagesId : null"
-          ref="input"
-        ></textarea>
+    <div :class="[inputWrapClass]">
+      <textarea v-if="multiLine"
+        :class="[inputClass, modifierClass]"
+        v-bind="$attrs"
+        :id="inputId"
+        :value="lazyValue"
+        v-on="$listeners"
+        @blur="onBlur"
+        @input="onInput"
+        @focus="onFocus"
+        @paste="onPaste"
+        :required="required"
+        :disabled="disabled"
+        :aria-label="hideLabel ? label : null"
+        :aria-describedby="errors.length ? messagesId : null"
+        ref="input"
+      ></textarea>
 
-        <input v-else
-          :type="type"
-          :class="inputClass"
-          v-bind="$attrs"
-          :id="inputId"
-          :value="lazyValue"
-          v-on="$listeners"
-          @blur="onBlur"
-          @input="onInput"
-          @focus="onFocus"
-          @paste="onPaste"
-          :required="required"
-          :disabled="disabled"
-          :aria-label="hideLabel ? label : null"
-          :aria-describedby="errors.length ? messagesId : null"
-          ref="input"
-        >
-
-        <span v-if="feedback" :class="validationIconClass" v-html="getIcon" ref="icon"></span>
-      </div>
-      <div v-if="$slots.post" :class="[actionClass, postActionClass]">
-        <slot name="post"></slot>
-      </div>
+      <input v-else
+        :type="type"
+        :class="[inputClass, modifierClass]"
+        v-bind="$attrs"
+        :id="inputId"
+        :value="lazyValue"
+        v-on="$listeners"
+        @blur="onBlur"
+        @input="onInput"
+        @focus="onFocus"
+        @paste="onPaste"
+        :required="required"
+        :disabled="disabled"
+        :aria-label="hideLabel ? label : null"
+        :aria-describedby="errors.length ? messagesId : null"
+        ref="input"
+      >
+      <span v-if="$slots.preicon" class="cdr-input__pre-icon" aria-hidden="true">
+        <slot name="preicon"></slot>
+      </span>
+      <span v-if="feedback" :class="validationIconClass" v-html="getIcon" ref="icon"></span>
     </div>
     <transition-group class="cdr-input-messages" :id="messagesId" ref="messages" name="cdr-animated-errors" tag="div">
       <div :class="messageClass"
@@ -64,14 +58,18 @@
 
 <script>
 import debounce from '../../utils/debounce';
+import modifier from '../../mixins/modifier';
 
-const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');// eslint-disable-line import/no-webpack-loader-syntax
-const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');// eslint-disable-line import/no-webpack-loader-syntax
-const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');// eslint-disable-line import/no-webpack-loader-syntax
+/* eslint-disable */
+const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');
+const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');
+const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');
+/* eslint-enable */
 
 export default {
   name: 'cdr-input',
   inheritAttrs: false,
+  mixins: [modifier],
   data() {
     return {
       errors: [],
@@ -164,6 +162,9 @@ export default {
     messagesId() {
       return `err${this._uid}`; // eslint-disable-line no-underscore-dangle
     },
+    baseClass() {
+      return 'cdr-input';
+    },
     labelClass() {
       return {
         'cdr-label': true,
@@ -177,24 +178,21 @@ export default {
         'cdr-input--multiline': this.multiLine,
         'cdr-input--error': this.isErr,
         'cdr-input--warn': this.isWarn,
-        'cdr-input--actions': this.$slots.pre || this.$slots.post,
-        'cdr-input--action-post': this.$slots.post,
-        'cdr-input--action-pre': this.$slots.pre,
+        'cdr-input--preicon': this.$slots.preicon,
       };
     },
-    validationClass() {
+    inputWrapClass() {
       return {
-        'cdr-input-validation': true,
-        'cdr-input-validation--actions': this.$slots.pre || this.$slots.post,
+        'cdr-input-wrap': true,
+        'cdr-input-wrap--actions': this.$slots.pre || this.$slots.post,
       };
     },
     validationIconClass() {
       return {
-        'cdr-input-validation__icon': true,
-        'cdr-input-validation__icon--error': this.isErr,
-        'cdr-input-validation__icon--warn': this.isWarn,
-        'cdr-input-validation__icon--valid': this.isValid,
-        'cdr-input-validation--actions': this.$slots.pre || this.$slots.post,
+        'cdr-input-wrap__icon': true,
+        'cdr-input-wrap__icon--error': this.isErr,
+        'cdr-input-wrap__icon--warn': this.isWarn,
+        'cdr-input-wrap__icon--valid': this.isValid,
       };
     },
     messageClass() {
@@ -202,29 +200,6 @@ export default {
         'cdr-input-messages__notification': true,
         'cdr-input-messages__notification--error': this.isErr,
         'cdr-input-messages__notification--warn': this.isWarn,
-      };
-    },
-    groupClass() {
-      return {
-        'cdr-input-group': true,
-        'cdr-input-group--actions': this.$slots.pre || this.$slots.post,
-      };
-    },
-    actionClass() {
-      return {
-        'cdr-input__action': true,
-        'cdr-input__action--error': this.isErr,
-        'cdr-input__action--warn': this.isWarn,
-      };
-    },
-    preActionClass() {
-      return {
-        'cdr-input__action--pre': true,
-      };
-    },
-    postActionClass() {
-      return {
-        'cdr-input__action--post': true,
       };
     },
     getIcon() {
@@ -244,7 +219,7 @@ export default {
     debounceVal() {
       if (this.debounce === false) {
         return 0;
-      } else if (!isNaN(this.debounce) && this.debounce !== '' && this.debounce !== true) {
+      } else if (!Number.isNaN(this.debounce) && this.debounce !== '' && this.debounce !== true) {
         return this.debounce;
       }
       return 500;

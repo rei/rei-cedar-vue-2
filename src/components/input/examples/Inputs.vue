@@ -1,5 +1,5 @@
 <template>
-  <div class="form-example">
+  <div>
     <h2>Text Inputs</h2>
 
     <cdr-input v-model="debounce"
@@ -35,53 +35,6 @@
       hide-label
       placeholder="hidden-label"
       ></cdr-input>
-
-    <cdr-input v-model="nothing"
-      label="pre"
-      >
-      <cdr-button slot="pre" class="cdr-input-action">pre</cdr-button>
-    </cdr-input>
-
-    <cdr-input v-model="valid"
-      label="pre + validation"
-      feedback
-      :rules="[validateFn]"
-      immediate-validate
-      >
-      <cdr-button slot="pre" class="cdr-input-action">pre</cdr-button>
-    </cdr-input>
-
-    <cdr-input v-model="nothing"
-      label="post"
-      >
-      <cdr-button slot="post" class="cdr-input-action">post</cdr-button>
-    </cdr-input>
-
-    <cdr-input v-model="warning"
-      label="post + validation"
-      feedback
-      :rules="[validateFn]"
-      immediate-validate
-      >
-      <cdr-button slot="post" class="cdr-input-action">post</cdr-button>
-    </cdr-input>
-
-    <cdr-input v-model="nothing"
-      label="pre and post"
-      >
-      <cdr-button slot="pre" class="cdr-input-action">pre</cdr-button>
-      <cdr-button slot="post" class="cdr-input-action">post</cdr-button>
-    </cdr-input>
-
-    <cdr-input v-model="error"
-      label="pre and post + validation"
-      feedback
-      :rules="[validateFn]"
-      immediate-validate
-      >
-      <cdr-button slot="pre" class="cdr-input-action">pre</cdr-button>
-      <cdr-button slot="post" class="cdr-input-action">post</cdr-button>
-      </cdr-input>
 
     <cdr-input v-model="pattern"
       label="Pattern validation"
@@ -188,7 +141,7 @@
         } else if (inputText === '') {
           obj.state = 'warn';
           obj.message = 'Warning Message';
-        } else if (!isNaN(inputText) && inputText !== '') {
+        } else if (!isNaN(inputText) && inputText !== '') { //eslint-disable-line
           obj.state = 'error';
           obj.message = 'Error: needs to be letters';
         } else {
@@ -200,9 +153,3 @@
     },
   };
 </script>
-
-<style>
-  .form-example {
-    padding: 10px;
-  }
-</style>

@@ -100,8 +100,9 @@ export default {
             text = o;
             val = o;
           } else {
-            text = o.text;
-            val = o.value;
+            const { text: t, value: v } = o;
+            text = t;
+            val = v;
           }
           optObj.text = text;
           optObj.value = val;
