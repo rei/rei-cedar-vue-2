@@ -55,15 +55,15 @@
 .doc_head-navigation > li > a,
 .doc_head-navigation ul > li > a {
   display: block;
-  font-family: 16px;
-  font-size: 1.6rem;
+  font-family: Roboto ',' "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
   font-style: normal;
-  line-height: 1.8rem;
-  padding: 1.1rem;
+  line-height: 16px;
+  padding: calc(1.6rem) 3.2rem;
 }
 .doc_head-navigation > li > a > .icon,
 .doc_head-navigation ul > li > a > .icon {
-  font-size: 1.6rem !important;
+  font-size: 16px !important;
 }
 .doc_head-navigation > li > a:hover,
 .doc_head-navigation > li > a:focus,
