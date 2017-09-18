@@ -141,7 +141,7 @@
         } else if (inputText === '') {
           obj.state = 'warn';
           obj.message = 'Warning Message';
-        } else if (!isNaN(inputText) && inputText !== '') {
+        } else if (!isNaN(inputText) && inputText !== '') { //eslint-disable-line
           obj.state = 'error';
           obj.message = 'Error: needs to be letters';
         } else {

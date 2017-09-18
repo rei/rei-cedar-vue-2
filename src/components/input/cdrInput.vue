@@ -60,9 +60,11 @@
 import debounce from '../../utils/debounce';
 import modifier from '../../mixins/modifier';
 
-const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');// eslint-disable-line import/no-webpack-loader-syntax
-const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');// eslint-disable-line import/no-webpack-loader-syntax
-const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');// eslint-disable-line import/no-webpack-loader-syntax
+/* eslint-disable */
+const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');
+const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');
+const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');
+/* eslint-enable */
 
 export default {
   name: 'cdr-input',
@@ -217,7 +219,7 @@ export default {
     debounceVal() {
       if (this.debounce === false) {
         return 0;
-      } else if (!isNaN(this.debounce) && this.debounce !== '' && this.debounce !== true) {
+      } else if (!Number.isNaN(this.debounce) && this.debounce !== '' && this.debounce !== true) {
         return this.debounce;
       }
       return 500;
