@@ -80,7 +80,7 @@ label {
     color: @input-color;
     display: block;
     width: 100%;
-    &:extend(.input-md);
+    &:extend( .input-md all );
 
     // Placeholder
     .placeholder();
@@ -240,7 +240,7 @@ label {
 //----------------------------------------------------------------------------------------------------------------------
 .form-group-sm {
     .form-control {
-        &:extend(.input-sm);
+        &:extend( .input-sm all );
     }
     .form-control-static {
         padding: @padding-small-vertical @padding-xs-horizontal;
@@ -253,7 +253,7 @@ label {
 
 .form-group-lg {
     .form-control {
-        &:extend(.input-lg);
+        &:extend( .input-lg all );
     }
     .form-control-static {
         padding: @spacing-space-md @spacing-space-lg; //should match btn-lg

@@ -50,11 +50,13 @@
             font-size: @input-font-size !important;
             color: @input-color-placeholder;
         }
-        .input-group-btn > .btn {
-            margin: 0;
-            height: 100%;
-            &.btn-default {
-                border-color: @input-border;
+        .input-group-btn {
+            display: flex;
+            > .btn {
+                margin: 0;
+                &.btn-default {
+                    border-color: @input-border;
+                }
             }
         }
         &.input-group-sm {

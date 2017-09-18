@@ -4,94 +4,208 @@
 
   <p class="lead">Extend form controls by adding text or buttons before, after, or on both sides of any text-based <code>&lt;input&gt;</code>. Use <code>.input-group</code> with an <code>.input-group-addon</code> to prepend or append elements to a single <code>.form-control</code>.</p>
 
-  <div class="bs-callout bs-callout-danger" id="callout-inputgroup-text-input-only">
-    <h5>Textual <code>&lt;input&gt;</code>s only</h5>
-    <p>Avoid using <code>&lt;select&gt;</code> elements here as they cannot be fully styled in WebKit browsers.</p>
-    <p>Avoid using <code>&lt;textarea&gt;</code> elements here as their <code>rows</code> attribute will not be respected in some cases.</p>
-  </div>
-  <div class="bs-callout bs-callout-warning" id="callout-inputgroup-form-labels">
-    <h5>Always add labels</h5>
-    <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these input groups, ensure that any additional label or functionality is conveyed to assistive technologies.</p>
-    <p>The exact technique to be used (<code>&lt;label&gt;</code> elements hidden using the <code>.sr-only</code> class, or use of the <code>aria-label</code>, <code>aria-labelledby</code>, <code>aria-describedby</code>, <code>title</code> or <code>placeholder</code> attribute) and what additional information will need to be conveyed will vary depending on the exact type of interface widget you're implementing. The examples in this section provide a few suggested, case-specific approaches.</p>
-  </div>
+    <cdr-well-docs example-title="Basic example" element-id="basic-examples">
+        <yield to="example-description">
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+              <form class="form">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="sr-only" for="basicExample">basic Example</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+                            <input type="text" class="form-control" id="basicExample" placeholder="Find great gear" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary">
+                                Search
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </fieldset>
+             </form>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
+<form class="form">
+<fieldset>
+    <div class="form-group">
+        <label class="sr-only" for="basicExampleSample">basic Example</label>
+        <div class="input-group">
+            <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+            <input type="text" class="form-control" id="basicExampleSample" placeholder="Find great gear">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-primary">
+                Search
+                </button>
+            </span>
+        </div>
+    </div>
+</fieldset>
+</form>
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
 
-  <div class="well" data-example-id="form-inline-with-input-group">
-    {% include /markup-templates/forms/inline-addons.html %}
-  </div>
-  {% highlight html %}
+    <cdr-well-docs example-title="Input group sizes" element-id="input-groups-sizing">
+        <yield to="example-description">
+            <p>Add the relative form sizing classes to the <code>.input-group</code> itself and contents within will automatically resize—no need for repeating the form control size classes on each element.</p>
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+            <form class="form">
+                <fieldset>
+                    <div class="form-group">
+                            <label class="sr-only" for="searchInputSmall">Search Label small</label>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+                                <input type="text" class="form-control" id="searchInputSmall" placeholder="Find great gear">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary">
+                                    Search
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="searchInputLarge">Search Label large</label>
+                            <div class="input-group input-group-lg">
+                                <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+                                <input type="text" class="form-control" id="searchInputLarge" placeholder="Find great gear">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary">
+                                    Search
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                </fieldset>
+            </form>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
+<div class="input-group input-group-sm">....</div>
+<div class="input-group input-group-lg">....</div>
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
 
-  {% endhighlight %}
-
-  <h3 id="input-groups-basic" class="status status-chat">Basic example</h3>
-  <p>Place one add-on or button on either side of an input. You may also place one on both sides of an input.</p>
-
-  <form class="well well-form" data-example-id="simple-input-groups">
+        <cdr-well-docs example-title="combinations" element-id="complex-groups">
+        <yield to="example-description">
+            <p> While none of the child classes are required, Input Groups can have multiple <code>.input-group-addon</code>,<code>input</code>, and <code>.input-group-btn</code> elements in any order you may need for your layout.</p>
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+              <fieldset>
+        <legend>
+            Mix and match elements
+        </legend>
+    <div class="form-group">
+        <label class="sr-only" for="withoutBtn">without btn</label>
+        <div class="input-group">
+            <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+            <input id="withoutBtn" type="text" class="form-control" placeholder="Search for...">
+            <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+        </div><!-- /input-group -->
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="withoutAddon">without addon</label>
+        <div class="input-group">
+          <div class="input-group-addon"><span></span></div>
+          <input id="withoutAddon" type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">
+                Go
+                <span class="icon icon-chevron-large-right" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="withTwoActions">with two actions</label>
+        <div class="input-group">
+          <input id="withTwoActions" type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">
+                Go
+                <span class="icon icon-chevron-large-right" aria-hidden="true"></span>
+            </button>
+          </span>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                away
+                <span class="icon icon-chevron-large-right" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+    </div>
+    </fieldset>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
+<div class="form-group">
+    <label class="sr-only" for="withTwoActions">with two actions</label>
     <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-    </div>
-    <br>
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-      <span class="input-group-addon" id="basic-addon2">@example.com</span>
-    </div>
-    <br>
-    <div class="input-group">
-      <span class="input-group-addon">$</span>
-      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-      <span class="input-group-addon">.00</span>
-    </div>
-  </form>
-{% highlight html %}
+      <input id="withTwoActions" type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">
+            Go
+            <span class="icon icon-chevron-large-right" aria-hidden="true"></span>
+        </button>
+      </span>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+            away
+            <span class="icon icon-chevron-large-right" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div><!-- /input-group -->
+</div>
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
+
+    <cdr-well-docs example-title="Complex input groups" element-id="complex-groups">
+        <yield to="example-description">
+
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+             <div class="input-group">
+                <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+                <label class="sr-only" for="searchSpot">placeholder search</label>
+                <input type="text" class="form-control" id="searchSpot" placeholder="Search for great gear & clothing" />
+                <div class="input-group-addon"><span class="icon icon-rei-target" aria-hidden="true"></span></div>
+                <label class="sr-only" for="location">location</label>
+                <input type="text" class="form-control" id="location" placeholder="Everywhere" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary">
+                    Search
+                    </button>
+                </span>
+            </div>
+          </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
 <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+    <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+    <label class="sr-only" for="searchSpot">placeholder search</label>
+    <input type="text" class="form-control" id="searchSpot" placeholder="Search for great gear & clothing" />
+    <div class="input-group-addon"><span class="icon icon-rei-target" aria-hidden="true"></span></div>
+    <label class="sr-only" for="location">location</label>
+    <input type="text" class="form-control" id="location" placeholder="Everywhere" />
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-primary">
+        Search
+        </button>
+    </span>
 </div>
-
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-  <span class="input-group-addon" id="basic-addon2">@example.com</span>
-</div>
-
-<div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <span class="input-group-addon">.00</span>
-</div>
-{% endhighlight %}
-
-  <h3 id="input-groups-sizing" class="status status-chat">Sizing</h3>
-  <p>Add the relative form sizing classes to the <code>.input-group</code> itself and contents within will automatically resize—no need for repeating the form control size classes on each element.</p>
-  <form class="well well-form" data-example-id="input-group-sizing">
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="sizing-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-    </div>
-    <br>
-    <div class="input-group">
-      <span class="input-group-addon" id="sizing-addon2">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
-    </div>
-    <br>
-    <div class="input-group input-group-sm">
-      <span class="input-group-addon" id="sizing-addon3">@</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
-    </div>
-  </form>
-{% highlight html %}
-<div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-</div>
-
-<div class="input-group">
-  <span class="input-group-addon" id="sizing-addon2">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
-</div>
-
-<div class="input-group input-group-sm">
-  <span class="input-group-addon" id="sizing-addon3">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3">
-</div>
-{% endhighlight %}
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
 </section>

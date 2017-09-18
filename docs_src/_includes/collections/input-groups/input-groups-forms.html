@@ -1,77 +1,12 @@
 <section class="vertical-push-3">
-
-    <h2 id="merge-addons" class="status status-warning">Merge addon and input field</h2>
-
-    <p>At times you may want to visually place a button or icon within an input </p>
-
-    <h3>Merge left</h3>
-
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <input type="text" class="form-control input-group-merge-left" placeholder="Username"
-                   aria-describedby="basic-addon1">
-            <span class="input-group-addon" id="locaton-example">
-              <span class="text-danger">
-                  <span class="icon icon-rei-error" aria-hidden="true"></span>
-                  <span class="sr-only">Error</span>
-              </span>
-            </span>
-        </div>
-    </form>
-    {% highlight html %}
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <input type="text" class="form-control input-group-merge-left" placeholder="Username"
-                   aria-describedby="basic-addon1">
-            <span class="input-group-addon" id="locaton-example">
-              <span class="text-danger">
-                  <span class="icon icon-rei-error" aria-hidden="true"></span>
-                  <span class="sr-only">Error</span>
-              </span>
-            </span>
-        </div>
-    </form>
-    {% endhighlight %}
-    <h3>Merge right</h3>
-
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <span class="input-group-addon input-group-merge-left" id="warning-example">
-              <span class="text-danger">
-                  <span class="icon icon-rei-warning" aria-hidden="true"></span>
-                  <span class="sr-only">Warning</span>
-              </span>
-            </span>
-            <input type="text" class="form-control input-group-merge-right" placeholder="Username"
-                   aria-describedby="basic-addon1">
-        </div>
-    </form>
-    <h3>Merge right with button on left</h3>
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <span class="input-group-addon input-group-merge-left" id="success-example">
-              <span class="text-danger">
-                  <span class="icon icon-rei-success" aria-hidden="true"></span>
-                  <span class="sr-only">Success</span>
-              </span>
-            </span>
-            <input type="text" class="form-control input-group-merge-right input-group-merge-left" placeholder="Username"
-                   aria-describedby="basic-addon1">
-            <span class="input-group-btn" id="success-and-button-example">
-              <button class="btn btn-default btn-sm">Submit</button>
-            </span>
-        </div>
-    </form>
-    <h3> button link on left</h3>
-    <form class="well well-form" data-example-id="merge-addon-left">
-        <div class="input-group">
-            <input type="text" class="form-control " placeholder="Username"
-                   aria-describedby="basic-addon1">
-            <span class="input-group-btn" id="success-and-button-example">
-              <button class="btn btn-default btn-sm">
-                  <span class="icon icon-rei-target"></span>
-              </button>
-            </span>
-        </div>
-    </form>
+  <div class="bs-callout bs-callout-danger" id="callout-inputgroup-text-input-only">
+    <h5>Textual <code>&lt;input&gt;</code>s only</h5>
+    <p>Avoid using <code>&lt;select&gt;</code> elements here as they cannot be fully styled in WebKit browsers.</p>
+    <p>Avoid using <code>&lt;textarea&gt;</code> elements here as their <code>rows</code> attribute will not be respected in some cases.</p>
+  </div>
+  <div class="bs-callout bs-callout-warning" id="callout-inputgroup-form-labels">
+    <h5>Always add labels</h5>
+    <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these input groups, ensure that any additional label or functionality is conveyed to assistive technologies.</p>
+    <p>The exact technique to be used (<code>&lt;label&gt;</code> elements hidden using the <code>.sr-only</code> class, or use of the <code>aria-label</code>, <code>aria-labelledby</code>, <code>aria-describedby</code>, <code>title</code> or <code>placeholder</code> attribute) and what additional information will need to be conveyed will vary depending on the exact type of interface widget you're implementing. The examples in this section provide a few suggested, case-specific approaches.</p>
+  </div>
 </section>

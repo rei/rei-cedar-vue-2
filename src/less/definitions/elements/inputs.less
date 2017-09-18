@@ -46,7 +46,7 @@ input[type="range"] {
 // Make multiple select elements height not fixed
 select[multiple],
 select[size] {
-    height: auto;
+    height: @input-height-base;
 }
 
 // Adjust output element
@@ -87,7 +87,8 @@ input[type="search"] {
         @input-sm-font-size;
         @input-sm-line-height;
         @cdr-type-redwood-ui-20-font-family @fallback-sans-serif;
-        @cdr-type-redwood-ui-20-font-style; );
+        @cdr-type-redwood-ui-20-font-style;
+        @input-height-small );
 }
 .input-md {
     .input-size();
@@ -98,7 +99,8 @@ input[type="search"] {
         @input-lg-font-size;
         @input-lg-line-height;
         @cdr-type-redwood-ui-30-font-family @fallback-sans-serif;
-        @cdr-type-redwood-ui-30-font-style; );
+        @cdr-type-redwood-ui-30-font-style;
+        @input-height-large );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
