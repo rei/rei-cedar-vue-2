@@ -8,10 +8,11 @@
       hide-label 
       placeholder="Search" 
       v-model="searchValue" 
-      @input="updateSearch">
+      @input="updateSearch"
+      :modifier="inputModifier">
       <span slot="preicon" class="cdr-search__icon"></span>
     </cdr-input>
-    <cdr-button modifier="sm" :on-click="click">Search</cdr-button>
+    <cdr-button v-if="!bare" :modifier="buttonModifier" :on-click="click">Search</cdr-button>
   </div>
 </template>
 
@@ -35,6 +36,28 @@ export default {
     value: String,
     /** The function to run when search button is clicked */
     click: Function,
+    /**
+     * Bare display variant (removes button).
+     */
+    bare: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * Large display variant.
+     */
+    large: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    buttonModifier() {
+      return this.large ? '' : 'sm';
+    },
+    inputModifier() {
+      return this.large ? 'large' : '';
+    },
   },
   watch: {
     value() {

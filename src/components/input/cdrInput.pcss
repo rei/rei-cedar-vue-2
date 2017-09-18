@@ -27,6 +27,7 @@
 *
 * Base class
 * Style variants
+* Size variants
 * Pseudo elements
 * Block elements
 */
@@ -71,6 +72,15 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
 
   &[disabled] {
     background-color: $sys-color-input-disabled;
+  }
+
+  /* Size variants
+    ========================================================================== */
+
+  &--large {
+    padding-top: $inset-md;
+    padding-bottom: $inset-md;
+    height: auto;
   }
 
   /* Pseudo elements

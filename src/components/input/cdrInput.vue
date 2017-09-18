@@ -8,7 +8,7 @@
     </label>
     <div :class="[inputWrapClass]">
       <textarea v-if="multiLine"
-        :class="inputClass"
+        :class="[inputClass, modifierClass]"
         v-bind="$attrs"
         :id="inputId"
         :value="lazyValue"
@@ -26,7 +26,7 @@
 
       <input v-else
         :type="type"
-        :class="inputClass"
+        :class="[inputClass, modifierClass]"
         v-bind="$attrs"
         :id="inputId"
         :value="lazyValue"
@@ -58,6 +58,7 @@
 
 <script>
 import debounce from '../../utils/debounce';
+import modifier from '../../mixins/modifier';
 
 const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');// eslint-disable-line import/no-webpack-loader-syntax
 const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');// eslint-disable-line import/no-webpack-loader-syntax
@@ -66,6 +67,7 @@ const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning
 export default {
   name: 'cdr-input',
   inheritAttrs: false,
+  mixins: [modifier],
   data() {
     return {
       errors: [],
@@ -157,6 +159,9 @@ export default {
     },
     messagesId() {
       return `err${this._uid}`; // eslint-disable-line no-underscore-dangle
+    },
+    baseClass() {
+      return 'cdr-input';
     },
     labelClass() {
       return {
