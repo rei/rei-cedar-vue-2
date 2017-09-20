@@ -127,14 +127,23 @@ label {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
         .rei-form-control-focus( @input-border-error );
-        }
+      > .control-label {
+        color: @input-border-error;
+      }
+     }
+    .has-warning & {
+        border-color: @input-border-warning;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        .rei-form-control-focus( @input-border-warning );
     }
+}
 
 .field-msg {
-    &:extend( .cdr-type-redwood-ui-20 all );
     position: relative;
     display: block;
     padding: @spacing-space-sm;
+    line-height: 1;
     border-style: solid;
     border-width: 1px;
     border-top: none;
@@ -142,28 +151,36 @@ label {
         border-bottom-right-radius: @radius-input;
         border-bottom-left-radius: @radius-input;
     }
+    > .alert-text {
+         font-family: @cdr-type-redwood-ui-20-font-family;
+         font-size: @cdr-type-redwood-ui-20-font-size;
+         line-height: @cdr-type-redwood-ui-20-line-height;
+         font-weight: @cdr-type-redwood-ui-20-font-weight;
+         font-style: @cdr-type-redwood-ui-20-font-style;
+    }
 }
-.field-msg_success{
-    &:extend( .field-msg all );
-    &:extend(.alert-success all);
+
+.has-error {
+      > .control-label {
+        color: @input-border-error;
+      }
 }
+
 .field-msg_error {
     &:extend( .field-msg all );
     border-color: @input-border-error;
     background-color: @input-background-error-alert;
-    &:extend(.alert-danger all);
 }
 .field-msg_warning  {
      &:extend( .field-msg all );
-    &:extend(.alert-warning all);
+     border-color: @input-border-warning;
+    background-color: @input-background-warning-alert;
 }
 .field-msg_info  {
      &:extend( .field-msg all);
-    &:extend(.alert-info all);
 }
 .field-msg_help {
      &:extend( .field-msg all);
-    &:extend(.alert-info all);
 }
 
 //Notifications
@@ -175,10 +192,6 @@ label {
     .has-error & {
         color: lighten(@text-color, 25%); //base on what bootstrap uses
     }
-}
-
-.has-feedback label ~ .form-control-feedback {
-    top: 2.2rem;
 }
 
 .required-form {
@@ -196,36 +209,13 @@ label {
 //
 // Form groups
 //
-// Designed to help with the organization and spacing of vertical forms. For
-// horizontal forms, use the predefined grid classes.
+// Designed to help with the organization and spacing of vertical forms.
 //
 //----------------------------------------------------------------------------------------------------------------------
 .form-group {
     margin-bottom: @form-group-margin-bottom;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Static form control text
-//
-// Apply class to a `p` element to make any string of text align with labels in
-// a horizontal form layout.
-//
-//----------------------------------------------------------------------------------------------------------------------
-.form-control-static {
-    // Size it appropriately next to real form controls
-    padding-top: (@padding-small-vertical + 0.1);
-    padding-bottom: (@padding-small-vertical + 0.1);
-    // Remove default margin from `p`
-    margin-bottom: 0;
-    min-height: (@line-height-computed + @font-size-base);
-
-    &.input-lg,
-    &.input-sm {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -242,24 +232,12 @@ label {
     .form-control {
         &:extend( .input-sm all );
     }
-    .form-control-static {
-        padding: @padding-small-vertical @padding-xs-horizontal;
-        font-size: @font-size-small;
-        line-height: @line-height-small;
-        min-height: (@line-height-computed + @font-size-small);
-    }
 }
 
 
 .form-group-lg {
     .form-control {
         &:extend( .input-lg all );
-    }
-    .form-control-static {
-        padding: @spacing-space-md @spacing-space-lg; //should match btn-lg
-        font-size: @font-size-large;
-        line-height: @line-height-large;
-        min-height: (@line-height-computed + @font-size-large);
     }
 }
 
@@ -269,61 +247,44 @@ label {
 
     // Ensure icons don't overlap text
     .form-control {
-        padding-right: (@input-line-height * 1.25);
+        padding-right: 4rem;
     }
 }
 // Feedback icon (requires .icon classes)
 .form-control-feedback {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 3.6rem;
+    right: 0.8rem;
     z-index: 2; // Ensure icon is above input groups
     display: block;
-    width: @input-height-base;
-    line-height: @input-height-base;
     text-align: center;
     pointer-events: none;
 }
-.input-lg + .form-control-feedback {
-    width: @input-height-large;
-    line-height: @input-height-large;
-}
-.input-sm + .form-control-feedback {
-    width: @input-height-small;
-    line-height: @input-height-small;
-}
 
-// Feedback states
-.has-success {
-    .form-control-validation(@text-color; @state-success-text; @state-success-bg);
-}
-.has-warning {
-    .form-control-validation(@text-color; @state-warning-text; @state-warning-bg);
-}
-.has-error {
-    .form-control-validation(@text-color; @state-danger-text; @state-danger-bg);
+.form-group > [class*=" col-"] > .form-control-feedback,
+.form-group > [class^=col-] > .form-control-feedback {
+    right: calc((@grid-gutter-width / 2) + 0.8rem); //TODO mediaquery for multiple GGW's
+    //top: @font-size-base;
+    @media( min-width: @screen-sm-min ) {
+        right: calc((@grid-gutter-width-sm / 2) + 0.8rem);
+    }
+    @media( min-width: @screen-md-min ) {
+        right: calc((@grid-gutter-width-md / 2) + 0.8rem);
+    }
 }
 
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
     &.sr-only ~ .form-control-feedback {
-        top: 0;
+        top: 1.2rem;
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Help text
-//
-// Apply to any element you wish to create light text for placement immediately
-// below a form control. Use for general help, formatting, or instructional text.
-//
-//----------------------------------------------------------------------------------------------------------------------
-.help-block {
-    display: block; // account for any element using help-block
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    color: lighten(@text-color, 25%); // lighten the text some for contrast
+.input-lg + .form-control-feedback {
+    top: 4rem;
+}
+.input-sm + .form-control-feedback {
+    font-size: 1.6rem;
+    top: 3.2rem;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

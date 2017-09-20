@@ -205,30 +205,23 @@ items:
               slug: inputs
               href: /elements/inputs/
               nav:
-                - label: Focus
-                  href: forms-control-focus
+                - label: Text Input
+                  href: nav-textInput
 
-                - label: Disabled
-                  href: forms-control-disabled
-
-                - label: Read-only
-                  href: forms-control-read-only
+                - label: Hidden Label
+                  href: nav-hiddenLabel
 
                 - label: Validation
-                  href: forms-control-validation
+                  href: nav-inputValidation
 
                 - label: Selects
-                  href: selects
+                  href: nav-select-form-control
+
+                - label: Checkbox and Radio
+                  href: nav-checkboxes-radios
 
                 - label: Textarea
-                  href: textarea
-
-            - label: Checkboxes and Radios
-              slug: checkboxes-radios
-              href: /elements/checkboxes-and-radios/
-              nav:
-                - label: Toggles and Controls
-                  href: checkbox-and-radio-as-toggle-controls
+                  href: nav-textarea-form-control
 
             - label: Images
               slug: images
@@ -353,26 +346,14 @@ items:
               slug: forms
               href: /collections/forms/
               nav:
-                - label: Basic
-                  href: forms-examples-basic
-
-                - label: Inline
-                  href: forms-inline
-
-                - label: Horizontal
-                  href: forms-horizontal
-
-                - label: Disabled
-                  href: forms-disabled-fieldsets
-
-                - label: Static
-                  href: forms-controls-static
-
-                - label: Sizing
-                  href: forms-control-sizes
+                - label: Basic Example
+                  href: nav-basic-forms
 
                 - label: Validation
-                  href: forms-control-validation
+                  href: nav-validation-examples
+
+                - label: Inline
+                  href: nav-simple-form-inline
 
             - label: Tables
               slug: tables

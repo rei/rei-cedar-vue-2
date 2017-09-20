@@ -20,7 +20,7 @@
         > a {
             display: block;
             // looking for a problem with fonts? it's in the button-size mixin as a default parameter
-            .button-size( @padding-base-vertical; @padding-base-horizontal; @font-size-large; @btn-line-height; );
+            .btn-lg();
             &:extend( .text-title );
             &:extend( .link_navigation );
             &:hover,
@@ -73,7 +73,12 @@
             display: block;
             position: relative;
             bottom: -2px;
-            .button-size( @tab-vertical-padding; @tab-horizontal-padding; @tab-font-size; @tab-line-height; );
+            .button-size(
+                @tab-padding;
+                @tab-font-size;
+                @tab-line-height;
+                @cdr-type-redwood-ui-30-font-family;
+                @cdr-type-redwood-ui-30-font-style; );
             &:extend( .link_navigation );
 
             &:hover,

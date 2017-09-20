@@ -81,21 +81,24 @@ input[type="search"] {
 // height and font-size of form controls.
 //
 //----------------------------------------------------------------------------------------------------------------------
+
+
+.input-md {
+    .input-size();
+}
+
 .input-sm {
     .input-size(
-        @inset-md--squish;
+        @input-sm-padding;
         @input-sm-font-size;
         @input-sm-line-height;
         @cdr-type-redwood-ui-20-font-family @fallback-sans-serif;
         @cdr-type-redwood-ui-20-font-style;
         @input-height-small );
 }
-.input-md {
-    .input-size();
-}
 .input-lg {
     .input-size(
-        @inset-lg--squish;
+        @input-lg-padding;
         @input-lg-font-size;
         @input-lg-line-height;
         @cdr-type-redwood-ui-30-font-family @fallback-sans-serif;

@@ -37,6 +37,11 @@
     &.disabled {
         color: @disabled-color;
     }
+    .has-error & {
+        .control-label {
+            color: @input-border-error;
+        }
+    }
 }
 @control-standard: {
     border: none;
@@ -123,8 +128,7 @@
 // Standard Radio Control
 //
 //----------------------------------------------------------------------------------------------------------------------
-.radio,
-.input-group-addon {
+.radio {
     > [type="radio"] {
         @control-standard();
     }
@@ -162,8 +166,7 @@
 // Standard Checkbox Control
 //
 //----------------------------------------------------------------------------------------------------------------------
-.checkbox,
-.input-group-addon {
+.checkbox {
     > [type="checkbox"] {
         @control-standard();
     }

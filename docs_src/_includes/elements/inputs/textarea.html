@@ -1,10 +1,18 @@
 <section class="vertical-push-3">
-    <h2 id="textarea" class="page-header">Textarea</h2>
-    <p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
-    <div class="well" data-example-id="textarea-form-control">
-        {% include /markup-templates/forms/type-textarea.html %}
-    </div><!-- /.well -->
-    {% highlight html %}
-    {% include /markup-templates/forms/type-textarea.html %}
-    {% endhighlight %}
+
+    <cdr-well-docs example-title="Textarea" element-id="textarea-form-control">
+        <yield to="example-description">
+
+        </yield>
+        <yield to="example">
+          <div class="well well-lg">
+              {% include /markup-templates/forms/type-textarea.html %}
+          </div>
+        </yield>
+        <yield to="codeblock">
+        {% highlight html %}
+{% include /markup-templates/forms/type-textarea.html %}
+        {% endhighlight %}
+        </yield>
+    </cdr-well-docs>
 </section>
