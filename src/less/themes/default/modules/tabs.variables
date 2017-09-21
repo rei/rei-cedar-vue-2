@@ -8,10 +8,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@tab-vertical-padding:                            @spacing-space-sm;
-@tab-horizontal-padding:                          0;
-@tab-font-size:                                   @cdr-type-redwood-ui-30-font-size;
-@tab-line-height:                                 @cdr-type-redwood-ui-30-line-height;
+@tab-padding:                                    @sizing-size-sm-squish;
+@tab-font-size:                                  @cdr-type-redwood-ui-30-font-size;
+@tab-line-height:                                @cdr-type-redwood-ui-30-line-height;
 
 @nav-tabs-active-link-hover-bg:                   @body-bg;
 @nav-tabs-active-link-hover-border-color:         @core-architectural-2;

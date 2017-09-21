@@ -9,11 +9,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @input-border:                                   @cdr-color-input-stroke;
 @input-border-error:                             @cdr-color-input-error-stroke;
+@input-border-warning:                           @cdr-color-input-warning-stroke;
 @input-border-focus:                             @core-action-2;
 @input-bg:                                       @cdr-color-input;
 @input-bg-disabled:                              @cdr-color-input-disabled;
 @input-background-error:                         @cdr-color-input;
-@input-background-error-alert:                   #F5E4DF;
+@input-background-error-alert:                   @cdr-color-input-error;
+@input-background-warning:                       @cdr-color-input;
+@input-background-warning-alert:                 @cdr-color-input-warning;
 @input-color:                                    @cdr-color-input-text;
 @input-color-placeholder:                        @cdr-color-input-placeholder-text;
 @input-color-disabled:                           @cdr-color-input-disabled-text;
@@ -32,6 +35,8 @@
 @input-lg-font-size:                             @cdr-type-redwood-ui-30-font-size;
 @input-lg-line-height:                           @cdr-type-redwood-ui-30-line-height;
 
+@input-sm-padding:                               @sizing-size-md-squish @inset-sm;
+@input-lg-padding:                               @inset-md @inset-sm;
 // Default `.form-control` height
 @input-height-base:              4rem;
 // Large `.form-control` height

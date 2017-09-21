@@ -1,24 +1,23 @@
 <form action="form-with-errors.html" method="get" class="required-form">
     <fieldset>
-        <legend class="sr-only">Expanded form</legend>
-
-        <div class="form-group row required has-error">
-            <div class="col-xs-6">
+        <legend class="sr-only">form validation example</legend>
+        <div class="form-group row required">
+            <div class="col-xs-6 has-error has-feedback">
                 <label class="control-label" for="field1">Field 1 </label>
                 <input class="form-control" type="text" name="field1" id="field1" spellcheck="false" autocorrect="off" required/>
+                <span class="icon icon-rei-error form-control-feedback" aria-hidden="true"></span>
                 <span class="field-msg_error">
-                    <span class="icon icon-rei-error" aria-hidden="true"></span>
                     <span class="alert-text">
                         <span class="sr-only">Error:</span>
                         This field is required
                     </span>
                 </span>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-6 has-warning has-feedback">
                 <label class="control-label" for="field2">Field 2 </label>
                 <input class="form-control" type="text" name="field2" id="field2" spellcheck="false" autocorrect="off" required/>
-                <span class="field-msg_error">
-                    <span class="icon icon-rei-error" aria-hidden="true"></span>
+                 <span class="icon icon-rei-warning form-control-feedback" aria-hidden="true"></span>
+                 <span class="field-msg_warning">
                     <span class="alert-text">
                         <span class="sr-only">Error:</span>
                         This field is required
@@ -26,72 +25,34 @@
                 </span>
             </div>
         </div>
-
-        <div class="form-group row">
-            <div class="col-xs-8">
-                <label class="control-label" for="field3">Field 3</label>
-                <input class="form-control" type="text" name="field3" id="field3" spellcheck="false" autocorrect="off" required/>
-            </div>
-            <div class="col-xs-4 required has-error">
-                <label class="control-label" for="field4">Field 4 </label>
-                <input class="form-control" type="text" name="field4" id="field4" spellcheck="false" autocorrect="off" required/>
-                <span class="field-msg_error">
-                    <span class="icon icon-rei-error" aria-hidden="true"></span>
-                    <span class="alert-text">
-                        <span class="sr-only">Error:</span>
-                        This field is required
-                    </span>
+        <div class="form-group required has-error">
+            <label class="control-label" for="field5">Field 5 </label>
+            <select class="form-control" name="field5" id="field5" required>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+                <option value="7">Option 7</option>
+                <option value="8">Option 8</option>
+                <option value="9">Option 9</option>
+                <option value="10">Option 10</option>
+            </select>
+            <span class="field-msg_error">
+                <span class="icon icon-rei-error" aria-hidden="true"></span>
+                <span class="alert-text">
+                    <span class="sr-only">Error:</span>
+                    This field is required
                 </span>
-            </div>
-        </div>
-
-        <div class="form-group row required has-error">
-            <div class="col-xs-6">
-                <label class="control-label" for="field5">Field 5 </label>
-                <select class="form-control" name="field5" id="field5" required>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                        <option value="4">Option 4</option>
-                        <option value="5">Option 5</option>
-                        <option value="6">Option 6</option>
-                        <option value="7">Option 7</option>
-                        <option value="8">Option 8</option>
-                        <option value="9">Option 9</option>
-                        <option value="10">Option 10</option>
-                </select>
-                <span class="field-msg_error">
-                    <span class="icon icon-rei-error" aria-hidden="true"></span>
-                    <span class="alert-text">
-                        <span class="sr-only">Error:</span>
-                        This field is required
-                    </span>
-                </span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label" for="email1">Email</label>
-            <input class="form-control" type="email" name="email1" id="email1" spellcheck="false" autocorrect="off" placeholder="Email address" />
-        </div>
-
-        <div class="form-group">
-            <label class="control-label" for="example_password">Password</label>
-            <input class="form-control" type="password" name="example_password" id="example_password" placeholder="Password" />
+            </span>
         </div>
         <div class="form-group row required has-error ">
-            <div class="col-md-5">
+            <div class="col-md-12">
                 <div class="checkbox">
                     <input type="checkbox" name="checkbox1" id="messages-checkbox1" required/>
                     <label class="control-label" for="messages-checkbox1" > Sign up for email updates</label>
                 </div>
-                <span class="field-msg_error">
-                    <span class="icon icon-rei-error" aria-hidden="true"></span>
-                    <span class="alert-text">
-                        <span class="sr-only">Error:</span>
-                        This field is required
-                    </span>
-                </span>
             </div>
         </div>
 

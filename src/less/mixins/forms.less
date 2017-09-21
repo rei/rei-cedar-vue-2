@@ -89,10 +89,11 @@
 //----------------------------------------------------------------------------------------------------------------------
 .input-size(
     @padding: @inset-sm--stretch;
-    @font-size: @cdr-type-redwood-ui-20-font-size;
-    @line-height: @cdr-type-redwood-ui-20-line-height;
-    @font-family: @cdr-type-redwood-ui-20-font-family;
-    @font-style: @cdr-type-redwood-ui-20-font-style;) {
+    @font-size: @cdr-type-redwood-ui-30-font-size;
+    @line-height: @cdr-type-redwood-ui-30-line-height;
+    @font-family: @cdr-type-redwood-ui-30-font-family;
+    @font-style: @cdr-type-redwood-ui-30-font-style;
+    @height: @input-height-base; ) {
       font-family: @font-family;
       font-size: @font-size;
       font-style: @font-style;
@@ -102,6 +103,7 @@
       font-size: @font-size !important;
     }
   select& {
+    height: @input-height-base;
     line-height: @line-height;
   }
 
