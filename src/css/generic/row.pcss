@@ -164,6 +164,14 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
   }
 
+  &_rowauto {
+    & > .cdr-col:not([class*="cdr-col_span"]) {
+      flex: 0 0 auto;
+      width: auto;
+      max-width: none;
+    }
+  }
+
   /* Row modifiers
   ========================================================================== */
 
@@ -349,6 +357,14 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
         flex-basis: $12-row-pct;
         width: $12-row-pct;
         max-width: $12-row-pct;
+      }
+    }
+
+    &_rowauto\@sm {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
       }
     }
 
@@ -541,6 +557,14 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
       }
     }
 
+    &_rowauto\@md {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+      }
+    }
+
     /* Row medium modifiers
     ========================================================================== */
 
@@ -728,6 +752,14 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
         flex-basis: $12-row-pct;
         width: $12-row-pct;
         max-width: $12-row-pct;
+      }
+    }
+
+    &_rowauto\@lg {
+      & > .cdr-col:not([class*="cdr-col_span"]) {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
       }
     }
 

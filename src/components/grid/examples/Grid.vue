@@ -290,7 +290,7 @@
         </cdr-col>
       </cdr-row>
 
-      <h4>(auto sizes)</h4>
+      <h4>default behavior</h4>
       <cdr-row>
         <cdr-col>
           <div class="row-demo">auto auto auto auto auto auto auto auto</div>
@@ -303,6 +303,22 @@
         </cdr-col>
         <cdr-col>
           <div class="row-demo">auto</div>
+        </cdr-col>
+      </cdr-row>
+
+      <h4>cols="auto"</h4>
+      <cdr-row cols="auto" justify="center" justify-sm="around" justify-md="between" justify-lg="right">
+        <cdr-col>
+          <div class="row-demo">AAAAAAAAAAAAAAAAAAAA</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">A</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">A</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">A</div>
         </cdr-col>
       </cdr-row>
 

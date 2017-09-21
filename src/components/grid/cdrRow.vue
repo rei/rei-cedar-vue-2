@@ -12,37 +12,37 @@ export default {
   name: 'cdr-row',
   props: {
     /**
-     * Number of columns in the row (1-12).
+     * Number of columns in the row (1-12, auto).
      */
     cols: {
       type: [String, Number],
       validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
+        const str = value.toString();
+        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'].indexOf(str) >= 0 || false;
       },
     },
     /** Sm breakpoint and above */
     colsSm: {
       type: [String, Number],
       validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
+        const str = value.toString();
+        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'].indexOf(str) >= 0 || false;
       },
     },
     /** Md breakpoint and above */
     colsMd: {
       type: [String, Number],
       validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
+        const str = value.toString();
+        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'].indexOf(str) >= 0 || false;
       },
     },
     /** Lg breakpoint and above */
     colsLg: {
       type: [String, Number],
       validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
+        const str = value.toString();
+        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'].indexOf(str) >= 0 || false;
       },
     },
     /**
