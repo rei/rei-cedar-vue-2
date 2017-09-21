@@ -65,7 +65,6 @@
     "gulp-streamify": "^1.0.2",
     "gulp-tenon-client": "^0.1.1",
     "gulp-uglify": "^1.5.2",
-    "jquery": "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz",
     "lodash": "^4.17.4",
     "memory-cache": "^0.1.4",
     "node-bourbon": "^4.2.8",
@@ -84,7 +83,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "engines": {
-    "node": ">=4.0"
+    "node": ">=8.0"
   },
   "files": [
     "src",
@@ -100,9 +99,13 @@
   },
   "tenon": {
     "key": "2f5d417c7781b957398e393c409280d5",
-    "filter": [31, 54, 79],
+    "filter": [
+      31,
+      54,
+      79
+    ],
     "apiURL": "https://tenon.io/api/index.php",
-    "certainty":  "0",
+    "certainty": "0",
     "level": "AA",
     "priority": "0",
     "ref": "1",
