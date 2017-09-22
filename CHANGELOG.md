@@ -1,3 +1,11 @@
+##1.7.0
+Features:
+- Button design updates
+- Input design updates
+- Input Group design updates
+- Form updates
+- Validation markup and design updates, still supports old markup contract
+
 ## 1.6.3
 Features:
 - Adding event riot components
