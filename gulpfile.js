@@ -185,7 +185,7 @@ gulp.task( 'docs', [
     'docs:cssmin-css',
 
     // Jekyll-ify docs
-    'docs:jekyll'
+    //'docs:jekyll'
 ] );
 
 // --[ Accessibility ]----------------------------------------------------------
