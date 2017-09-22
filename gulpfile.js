@@ -221,7 +221,7 @@ gulp.task( 'master', callback =>
 );
 
 gulp.task( 'build-docker', callback => {
-    USE_DOCKER = true;
+    USE_DOCKER = false;
     runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
 });
 
