@@ -26,33 +26,22 @@ var a11y = require( 'gulp-a11y' );
 var pa11y = require( 'gulp-pa11y' );
 var gtenon = require('gulp-tenon-client');
 var csscomb = require( 'gulp-csscomb' );
-var inject = require( 'gulp-inject' );
 var uglify = require( 'gulp-uglify' );
 var streamify = require( 'gulp-streamify' );
 var cssmin = require( 'gulp-cssmin' );
 var csslint = require( 'gulp-csslint' );
-var qunit = require( 'gulp-qunit' );
 var sourcemaps = require( 'gulp-sourcemaps' );
 var cssLintLessReporter = require( 'gulp-csslint-less-reporter' );
 var postcss = require( 'gulp-postcss' );
 var autoprefixer = require( 'autoprefixer' );
 var source = require( 'vinyl-source-stream' );
 var browserify = require( 'browserify' );
-var glob = require( 'glob' );
 var del = require( 'del' );
 var es = require( 'event-stream' );
 var runSequence = require( 'run-sequence' );
 var process = require( 'child_process' );
 var pkg = require( './package.json' );
-var globify = require( 'require-globify' );
-var exec = require('child_process').exec;
-var bourbon = require( 'node-bourbon' );
 var browserSync = require( 'browser-sync' ).create();
-
-
-var buffer = require( 'vinyl-buffer' );
-var babelify = require( 'babelify' );
-
 
 //       /$$$$$$                       /$$$$$$  /$$
 //      /$$__  $$                     /$$__  $$|__/
@@ -185,7 +174,7 @@ gulp.task( 'docs', [
     'docs:cssmin-css',
 
     // Jekyll-ify docs
-    //'docs:jekyll'
+    'docs:jekyll'
 ] );
 
 // --[ Accessibility ]----------------------------------------------------------
@@ -443,10 +432,15 @@ gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack => {
     if ( USE_DOCKER ) {
         console.log('Using docker for jekyll build')
         process.exec( `docker run --rm -v "${__dirname}:/data" reicoop/jekyll:3.4.3 build`, (err, stdout, stderr) => {
+            if (err) {
+              console.error(err);
+            }
 
-            console.log('--stdout--', stdout);
-            console.log('--stderr--', stderr);
-            console.log('--err--', err);
+            if (stderr) {
+              console.error(stderr);
+            }
+
+            console.log(stdout);
         } ).on( 'exit', code => gulpCallBack( code === 0 ? null : 'ERROR: Docker process failed: ' + code ) )
     } else {
         console.log("Building docs natively with Jekyll")
