@@ -1,3 +1,7 @@
+##1.7.2
+Bugfixes:
+- close button on modal was not assigned the icon font correctly
+
 ##1.7.1
 Bugfixes:
 - close button padding increase
