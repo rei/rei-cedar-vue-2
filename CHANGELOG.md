@@ -1,3 +1,10 @@
+##1.7.1
+Bugfixes:
+- close button padding increase
+- input lg padding increase
+- medium button font family to redwood-ui-40
+- update to brand.ai variables
+
 ##1.7.0
 Features:
 - Button design updates
