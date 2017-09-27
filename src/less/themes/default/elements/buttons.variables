@@ -99,4 +99,4 @@
 @btn-md-type:                                      @cdr-type-maple-ui-40-font-family,@fallback-sans-serif;
 @btn-sm-type:                                      @cdr-type-redwood-ui-30-font-family,@fallback-sans-serif;
 @btn-xs-type:                                      @cdr-type-redwood-ui-20-font-family,@fallback-sans-serif;
-@btn-close-type:                                   @cdr-type-redwood-ui-20-font-family,@fallback-sans-serif;
+@btn-close-type:                                   "rei-icons";
