@@ -11,13 +11,13 @@
 // UI Framework Anchors
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 a {
-    .link-variant( @link-color; @link-hover-decoration; );
+    .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Core inline
 .link-body {
-    .link-variant( @link-color; @link-hover-decoration-alt; );
+    .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
 }
 
 // Core standalone
@@ -130,7 +130,7 @@ a {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Off Price
 .link-off-price {
-    .link-variant( @off-price-link-color;  @link-hover-decoration-alt; );
+    .link-variant( @off-price-link-color;  @link-hover-decoration; @link-hover-decoration-alt; );
 };
 .link-off-price-overlay {
     .link-variant( @off-price-link-color-overlay; @link-hover-decoration-alt; );
@@ -149,32 +149,6 @@ a {
     .link-variant( inherit; @link-hover-decoration; @link-hover-decoration; @off-price-link-color; );
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Outlet
-.link-outlet {
-    .link-variant( @outlet-link-color;  @link-hover-decoration-alt; );
-}
-.link-outlet-overlay {
-    .link-variant( @outlet-link-color-overlay; @link-hover-decoration-alt; );
-}
-.link-outlet-standalone {
-    &:extend( .link_stag );
-    .link-variant( @outlet-link-color; );
-}
-.link-outlet-standalone-overlay {
-    &:extend( .link_stag );
-    .link-variant( @outlet-link-color-overlay; @link-hover-decoration; );
-}
-
-// Outlet header link
-.link_header-outlet {
-    .link-variant( inherit; @link-hover-decoration; @link-hover-decoration; @outlet-link-color; );
-}
-.link-sub-navigation {
-    &:extend( .link-utility-overlay all );
-    .link-variant( @link-color-overlay-2; @link-hover-decoration; @link-hover-decoration; @link-contrast-color-overlay; );
-}
-
 // Crumb
 .link_crumb {
     font: normal normal @font-size-smaller @font-family-sans-serif;
@@ -183,10 +157,6 @@ a {
 .link-explore-crumb {
     &:extend( .link_crumb all );
     .link-variant( @explore-link-color;  @link-hover-decoration; );
-}
-.link-outlet-crumb {
-    &:extend( .link_crumb all );
-    .link-variant( @outlet-link-color;  @link-hover-decoration; );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

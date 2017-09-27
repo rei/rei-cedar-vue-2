@@ -75,14 +75,10 @@
 @btn-high-contrast-active-border:                @btn-high-contrast-active-bg;
 
 //----------------------------------------------------------------------------------------------------------------------
-// Outline Primary (ghost)
+// Close
 //----------------------------------------------------------------------------------------------------------------------
-@btn-outline-color:                              @core-architectural-5;
-@btn-outline-bg:                                 transparent;
-@btn-outline-border:                             @core-architectural-5;
-@btn-outline-active-bg:                          @core-architectural-5;
-@btn-outline-active-border:                      @core-architectural-5;
-
+@btn-close-font-size:                             1.2rem;
+@btn-close-line-height:                           1;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // SIZE AND SHAPE
@@ -92,3 +88,15 @@
 @btn-font-size-lg:                                 @cdr-type-redwood-ui-30-font-size;
 @btn-font-weight:                                  normal;
 @btn-line-height:                                  @cdr-type-redwood-ui-30-line-height;
+@btn-sm-inset:                                     1.2rem 1.6rem;
+@btn-close-inset:                                  1rem;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// TYPE
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@btn-md-type:                                      @cdr-type-maple-ui-40-font-family,@fallback-sans-serif;
+@btn-sm-type:                                      @cdr-type-redwood-ui-30-font-family,@fallback-sans-serif;
+@btn-xs-type:                                      @cdr-type-redwood-ui-20-font-family,@fallback-sans-serif;
+@btn-close-type:                                   @cdr-type-redwood-ui-20-font-family,@fallback-sans-serif;

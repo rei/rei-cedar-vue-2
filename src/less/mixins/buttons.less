@@ -38,7 +38,7 @@
   border-color: @border;
   border-width: 0.1rem;
   border-style: solid;
-  border-radius: @border-radius;
+  border-radius: @radius-button;
   outline: none;
   &:hover,
   &:active,
@@ -51,13 +51,6 @@
   &.focus{
       // Default
       color: @focus-text-color;
-      outline: thin dotted;
-      // WebKit
-      outline: 0.2rem auto;
-      outline-color: @btn-focus-stroke-color;
-      outline-offset: -0.1rem;
-      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-      border: 1px solid rgba(81, 203, 238, 1);
   }
   &:active,
   &.active {
@@ -103,10 +96,10 @@
 //----------------------------------------------------------------------------------------------------------------------
 .button-size(
     @padding: @inset-lg--squish;
-    @font-size: @cdr-type-redwood-ui-30-font-size;
-    @line-height: @cdr-type-redwood-ui-30-line-height;
-    @font-family: @cdr-type-redwood-ui-30-font-family',' @fallback-sans-serif;
-    @font-style: @cdr-type-redwood-ui-30-font-style;) {
+    @font-size: @cdr-type-maple-ui-40-font-size;
+    @line-height: @cdr-type-maple-ui-40-line-height;
+    @font-family: @btn-md-type;
+    @font-style: @cdr-type-maple-ui-40-font-style;) {
       font-family: @font-family;
       font-size: @font-size;
       font-style: @font-style;

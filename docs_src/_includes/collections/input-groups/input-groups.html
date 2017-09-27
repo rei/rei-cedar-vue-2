@@ -58,36 +58,23 @@
             <form class="form">
                 <fieldset>
                     <div class="form-group">
-                            <label class="sr-only" for="searchInputSmall">Search Label small</label>
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
-                                <input type="text" class="form-control" id="searchInputSmall" placeholder="Find great gear">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-primary">
-                                    Search
-                                    </button>
-                                </span>
-                            </div>
+                        <label class="sr-only" for="searchInputLarge">Search Label large</label>
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
+                            <input type="text" class="form-control" id="searchInputLarge" placeholder="Find great gear">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary">
+                                Search
+                                </button>
+                            </span>
                         </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="searchInputLarge">Search Label large</label>
-                            <div class="input-group input-group-lg">
-                                <div class="input-group-addon"><span class="icon icon-rei-search" aria-hidden="true"></span></div>
-                                <input type="text" class="form-control" id="searchInputLarge" placeholder="Find great gear">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-primary">
-                                    Search
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
+                    </div>
                 </fieldset>
             </form>
           </div>
         </yield>
         <yield to="codeblock">
         {% highlight html %}
-<div class="input-group input-group-sm">....</div>
 <div class="input-group input-group-lg">....</div>
         {% endhighlight %}
         </yield>
@@ -114,7 +101,6 @@
     <div class="form-group">
         <label class="sr-only" for="withoutAddon">without addon</label>
         <div class="input-group">
-          <div class="input-group-addon"><span></span></div>
           <input id="withoutAddon" type="text" class="form-control" placeholder="Search for...">
           <span class="input-group-btn">
             <button class="btn btn-primary" type="button">
