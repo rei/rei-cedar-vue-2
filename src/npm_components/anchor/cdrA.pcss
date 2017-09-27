@@ -1,0 +1,64 @@
+/* ==========================================================================
+   # LINK
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Style variants
+*/
+
+.cdr-link {
+  cursor: pointer;
+  display: inline;
+  border: none;
+  text-decoration: underline;
+  outline: none;
+  background-color: $color-transparent-background;
+  border-color: $color-transparent-border;
+  color: $sys-color-link;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+    background-color: $color-transparent-background;
+    color: $sys-color-link-active;
+  }
+
+  &:focus {
+    outline: $outline-default-width $outline-default-style $color-outline-focus;
+  }
+
+  /* Style variants
+    ========================================================================== */
+
+  &--contrast,
+  &--contrast:hover,
+  &--contrast:active,
+  &--contrast:focus,
+  &--contrast:visited {
+    color: $sys-color-link-overlay;
+  }
+
+  &--overlay,
+  &--overlay:hover,
+  &--overlay:active,
+  &--overlay:focus,
+  &--overlay:visited {
+    color: $sys-color-link-contrast-overlay;
+  }
+
+  &--standalone {
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+/* ==========================================================================
+   # Radio
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* States
+* Block elements
+*/
+
+.cdr-radio {
+  position: absolute;
+  opacity: 0;
+
+  /* States
+    ========================================================================== */
+
+  &:checked + &__label {
+    &::after {
+      background-color: $sys-color-radio-selected;
+    }
+  }
+
+  &:checked&:hover + &__label::after {
+    background-color: $sys-color-radio-selected-hover;
+  }
+
+  &[disabled] + &__label {
+    color: $sys-color-control-text-disabled;
+    cursor: default;
+
+    &::before {
+      border-color: $sys-color-control-stroke-disabled;
+    }
+  }
+
+  &:checked&[disabled] + &__label {
+    &::before {
+      border-color: $sys-color-control-selected-disabled-stroke;
+    }
+
+    &::after {
+      background-color: $sys-color-radio-disabled;
+    }
+  }
+
+  &:focus + &__label::before {
+    box-shadow: 0 0 2px 2px #8dd1ed;
+  }
+
+  /* Block elements
+    ========================================================================== */
+
+  &__label {
+    @include sys-font-redwood-ui-30 ();
+
+    position: relative;
+    margin-bottom: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::before {
+      content: '';
+      width: $sizing-size-md;
+      height: $sizing-size-md;
+      border: 1px solid $sys-color-control-stroke;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: top;
+      background-color: white;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: calc($sizing-size-md / 4);
+      top: calc($sizing-size-md / 4);
+      width: calc($sizing-size-md / 2);
+      height: calc($sizing-size-md / 2);
+      border-radius: 50%;
+    }
+  }
+}

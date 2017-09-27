@@ -1,0 +1,99 @@
+/* ==========================================================================
+   # LIST
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* element styles
+* Style variants
+*/
+
+.cdr-list {
+  list-style-type: disc;
+  padding-left: $spacing-space-md;
+
+  /* Element Styles
+    ========================================================================== */
+
+  & > li {
+    padding-bottom: $spacing-space-md;
+
+    & > ul,
+    & > ol {
+      padding-top: $spacing-space-md;
+      padding-left: $spacing-space-md;
+
+      & > li:last-of-type {
+        padding-bottom: $spacing-space-closed;
+      }
+    }
+
+    &:last-of-type {
+      padding-bottom: $spacing-space-closed;
+    }
+  }
+
+  /* Style variants
+    ========================================================================== */
+
+  &--unstyled {
+    list-style-type: none;
+    padding-left: $spacing-space-closed;
+  }
+
+  &--bulleted {
+    list-style-type: disc;
+  }
+
+  &--inline {
+    list-style-type: none;
+    padding: $spacing-space-closed;
+
+    & > li {
+      display: inline-block;
+      padding-bottom: 0;
+    }
+  }
+
+  &--inline.cdr-list--bulleted {
+    & > li {
+      padding-right: $spacing-space-closed;
+
+      &:not(:last-of-type)::after {
+        vertical-align: text-center;
+        content: "\2022";
+        display: inline-block;
+        color: inherit;
+        margin-left: 0;
+        width: 0.8rem;
+      }
+    }
+  }
+
+  &--numbered {
+    list-style-type: decimal;
+  }
+
+  &--menu {
+    list-style-type: none;
+    padding-left: $spacing-space-closed;
+
+    & > li {
+      border-bottom-width: 0.1rem;
+      border-bottom-style: solid;
+      border-color: #222;
+      padding: $spacing-space-closed;
+
+      & > a {
+        font-family: $font-copy-secondary;
+        font-weight: $font-copy-secondary-weight;
+        font-size: $font-size-navigation;
+        padding: 1.1rem 1.6rem;
+        color: #000;
+        display: inline-block;
+      }
+    }
+  }
+}

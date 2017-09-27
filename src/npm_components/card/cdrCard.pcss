@@ -1,0 +1,77 @@
+/* ==========================================================================
+   # CARD
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Style variants
+*/
+
+.cdr-card {
+  background-color: $sys-color-activity-card;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $sys-color-activity-card-stroke;
+  border-radius: $radius-card;
+  box-shadow: $shadow-prominence-10;
+  color: $sys-color-activity-card-text;
+  width: 100%;
+}
+
+/* Style variants
+    ========================================================================== */
+
+/* TODO: remove this?
+.cdr-card--content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &--media {
+    flex-grow: 1;
+  }
+
+  &__action {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__snapshot {
+    color: $sys-color-activity-card-subtext;
+  }
+
+  &__body {
+    flex: 1;
+    display: block;
+  }
+
+  &__label,
+  &__location {
+    @include sys-font-redwood-dsp-10 ();
+    color: $sys-color-activity-card-subtext;
+  }
+
+  &__title {
+    @include sys-font-spruce-dsp-40 ();
+
+    &__action {
+      position: static;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: trasparent 0.1s ease-out;
+        background-color: trasparent;
+      }
+    }
+  }
+}
+*/

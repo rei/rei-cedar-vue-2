@@ -1,0 +1,116 @@
+/* ==========================================================================
+   # RATING
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* Block elements
+* Size variants
+*/
+
+.cdr-rating {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  /* Block elements
+    ========================================================================== */
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__count {
+    margin-left: 8px;
+    font-size: $sys-font-redwood-dsp-30-font-size;
+    line-height: $sys-font-redwood-dsp-30-line-height;
+    text-align: $sys-font-redwood-dsp-30-text-align;
+    font-style: $sys-font-redwood-dsp-30-font-style;
+    font-weight: $sys-font-redwood-dsp-30-font-weight;
+    font-family: $sys-font-redwood-dsp-30-font-family;
+    color: $sys-color-rating-text;
+  }
+
+  &__ratings {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+
+  &__background {
+    display: flex;
+  }
+
+  &__placeholder {
+    background-image: svg-load('../../assets/icons/rei/icon-rei-star-100.svg', fill=$(sys-color-rating-bg));
+    background-repeat: no-repeat;
+  }
+
+  &__100 {
+    background-image: svg-load('../../assets/icons/rei/icon-rei-star-100.svg', fill=$(sys-color-rating));
+    background-repeat: no-repeat;
+  }
+
+  &__75 {
+    background-image: svg-load('../../assets/icons/rei/icon-rei-star-75.svg', fill=$(sys-color-rating));
+    background-repeat: no-repeat;
+  }
+
+  &__50 {
+    background-image: svg-load('../../assets/icons/rei/icon-rei-star-50.svg', fill=$(sys-color-rating));
+    background-repeat: no-repeat;
+  }
+
+  &__25 {
+    background-image: svg-load('../../assets/icons/rei/icon-rei-star-25.svg', fill=$(sys-color-rating));
+    background-repeat: no-repeat;
+  }
+
+  /* Size variants
+    ========================================================================== */
+
+  &--large {
+    & .cdr-rating__icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &--medium {
+    & .cdr-rating__icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    & .cdr-rating__count {
+      font-size: $sys-font-redwood-dsp-20-font-size;
+      line-height: $sys-font-redwood-dsp-20-line-height;
+      text-align: $sys-font-redwood-dsp-20-text-align;
+      font-style: $sys-font-redwood-dsp-20-font-style;
+      font-weight: $sys-font-redwood-dsp-20-font-weight;
+      font-family: $sys-font-redwood-dsp-20-font-family;
+    }
+  }
+
+  &--small {
+    & .cdr-rating__icon {
+      width: 14px;
+      height: 14px;
+    }
+
+    & .cdr-rating__count {
+      color: $sys-color-rating-text-sm;
+      font-size: $sys-font-redwood-dsp-10-font-size;
+      line-height: $sys-font-redwood-dsp-10-line-height;
+      text-align: $sys-font-redwood-dsp-10-text-align;
+      font-style: $sys-font-redwood-dsp-10-font-style;
+      font-weight: $sys-font-redwood-dsp-10-font-weight;
+      font-family: $sys-font-redwood-dsp-10-font-family;
+    }
+  }
+}
