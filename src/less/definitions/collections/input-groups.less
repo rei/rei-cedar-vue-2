@@ -13,7 +13,7 @@
 
     .input-group {
          display: flex;
-         border-radius: @border-radius;
+         border-radius: @radius-input;
          position: relative;
         .form-control {
           flex: 1;
@@ -33,7 +33,7 @@
             background-color: @input-bg;
             background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
             border: 0.1rem solid @input-border;
-            border-radius: @border-radius;
+            border-radius: @radius-input;
             color: @input-color;
             display: block;
             font-size: @input-font-size;
@@ -111,10 +111,10 @@
         }
         .form-control:first-child,
         .input-group-addon:first-child {
-          padding-right: 0;
+          padding-right: 0.4rem;
         }
         .input-group-addon:last-child {
-            padding-left: 0
+            padding-left: 0.4rem;
         }
     }
 

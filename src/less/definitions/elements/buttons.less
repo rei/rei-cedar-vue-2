@@ -70,6 +70,15 @@
         color: @btn-default-color;
         text-decoration: none;
     }
+    &:focus {
+      outline: thin dotted;
+      // WebKit
+      outline: 0.2rem auto;
+      outline-color: @btn-focus-stroke-color;
+      outline-offset: -0.1rem;
+      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+      border: 1px solid rgba(81, 203, 238, 1);
+    }
     &:active,
     &.active {
         outline: 0;
@@ -119,14 +128,6 @@
     }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Explore
-// ---------------------------------------------------------------------------------------------------------------------
-.btn-explore {
-    &.btn-primary {
-        .button-variant( @btn-explore-color; @btn-explore-bg; @btn-explore-border; @btn-explore-active-bg; @btn-explore-active-border; );
-    }
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // High Contrast
@@ -143,29 +144,13 @@
     }
 }
 
-.btn-outline-alternate {
-    &.btn-primary {
-        .button-variant( @btn-outline-color; @btn-outline-bg; @btn-outline-border; @btn-outline-active-bg; @btn-outline-active-border; );
-        &:hover,
-        &:active,
-        &.active,
-        &:focus,
-        &.focus {
-            @alpha-ruleset();
-        }
-        &.disabled,
-        &[disabled] {
-            display: none;
-        }
-    }
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Button Link
 // Make a button look and behave like a link
 // ---------------------------------------------------------------------------------------------------------------------
 // TODO: refactor, move into base and theme selectors above
 .btn-link {
+    padding: 0;
     &:extend( .link_stag all);
     .overlay-dark & {
         &:extend( .link_stag-overlay all);
@@ -182,6 +167,7 @@
     &:focus,
     &:active {
         border-color: transparent;
+        .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
     }
     &:hover,
     &:focus {
@@ -306,10 +292,10 @@
 .btn-sm {
     // line-height: ensure proper height of button next to small input
     .button-size(
-        @inset-sm--stretch;
+        @btn-sm-inset;
         @cdr-type-redwood-ui-30-font-size;
         @cdr-type-redwood-ui-30-line-height;
-        @cdr-type-redwood-ui-30-font-family;
+        @btn-sm-type;
         @cdr-type-redwood-ui-30-font-style; );
     @text-with-icon-rei-tree-arrow-button-sm-ruleset();
 }
@@ -319,7 +305,7 @@
         @inset-md--squish;
         @cdr-type-redwood-ui-20-font-size;
         @cdr-type-redwood-ui-20-line-height;
-        @cdr-type-redwood-ui-20-font-family @fallback-sans-serif;
+        @btn-xs-type;
         @cdr-type-redwood-ui-20-font-style; );
 }
 
@@ -349,13 +335,19 @@
             @btn-default-disabled-text;
             @btn-default-disabled-background;
             @btn-default-disabled-border; );
-    .button-size( @spacing-space-sm; @spacing-space-sm; @cdr-type-redwood-ui-20-font-size; @cdr-type-redwood-ui-20-line-height; @cdr-type-redwood-ui-20-font-style; );
+    .button-size(
+        @btn-close-inset;
+        @btn-close-font-size;
+        @btn-close-line-height;
+        @btn-close-type;
+        @cdr-type-redwood-ui-20-font-style; );
     .img-circle();
     &:focus,
     &.focus {
         outline: none;
     }
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Controls
@@ -406,6 +398,20 @@ input[type="button"] {
     &.btn-block {
         width: 100%;
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// // Deprecated:
+// ---------------------------------------------------------------------------------------------------------------------
+//Explore
+.btn-explore {
+    &.btn-primary {
+        .button-variant( @btn-explore-color; @btn-explore-bg; @btn-explore-border; @btn-explore-active-bg; @btn-explore-active-border; );
+    }
+}
+
+.btn-outline-alternate {
+  &:extend(.btn-primary all);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

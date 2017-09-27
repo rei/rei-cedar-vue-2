@@ -20,7 +20,7 @@
 @input-color:                                    @cdr-color-input-text;
 @input-color-placeholder:                        @cdr-color-input-placeholder-text;
 @input-color-disabled:                           @cdr-color-input-disabled-text;
-@input-radius:                                   0.3rem;
+@input-radius:                                   @radius-input;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -30,10 +30,14 @@
 
 @input-font-size:                                @cdr-type-redwood-ui-30-font-size;
 @input-line-height:                              @cdr-type-redwood-ui-30-line-height;
+@input-font-family:                              @cdr-type-redwood-ui-30-font-family, @fallback-sans-serif;
+@input-font-style:                               @cdr-type-redwood-ui-30-font-style;
 @input-sm-font-size:                             @cdr-type-redwood-ui-20-font-size;
 @input-sm-line-height:                           @cdr-type-redwood-ui-20-line-height;
-@input-lg-font-size:                             @cdr-type-redwood-ui-30-font-size;
-@input-lg-line-height:                           @cdr-type-redwood-ui-30-line-height;
+@input-sm-font-family:                           @cdr-type-redwood-ui-20-font-family, @fallback-sans-serif;
+@input-lg-font-size:                             @cdr-type-redwood-ui-40-font-size;
+@input-lg-line-height:                           @cdr-type-redwood-ui-40-line-height;
+@input-lg-font-family:                           @cdr-type-redwood-ui-40-font-family, @fallback-sans-serif;
 
 @input-sm-padding:                               @sizing-size-md-squish @inset-sm;
 @input-lg-padding:                               @inset-md @inset-sm;

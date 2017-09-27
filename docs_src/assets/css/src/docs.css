@@ -39,31 +39,20 @@
 .doc_head-navigation ul > li > a ~ .icon {
   color: #222;
 }
-.bs-docs-footer .list-text .nested,
-.bs-docs-footer .footer-inline-list .nested,
-.bs-docs-footer .list-text > li > ul .nested,
-.bs-docs-footer .list-decoration .nested,
-.bs-docs-footer .list-decoration > li > ul .nested,
-.bs-docs-footer .list-decoration > li > ul .nested,
-.bs-docs-footer .list-decoration > li > ul > li > ul .nested {
-  color: #ccc;
-  text-decoration: none;
-  outline: none;
-}
 @media (min-width: 768px) {
 }
 .doc_head-navigation > li > a,
 .doc_head-navigation ul > li > a {
   display: block;
-  font-family: Roboto ',' "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: Roboto Condensed, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
   font-style: normal;
-  line-height: 16px;
+  line-height: 18px;
   padding: calc(1.6rem) 3.2rem;
 }
 .doc_head-navigation > li > a > .icon,
 .doc_head-navigation ul > li > a > .icon {
-  font-size: 16px !important;
+  font-size: 18px !important;
 }
 .doc_head-navigation > li > a:hover,
 .doc_head-navigation > li > a:focus,
