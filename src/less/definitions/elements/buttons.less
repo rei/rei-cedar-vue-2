@@ -341,6 +341,12 @@
         @btn-close-line-height;
         @btn-close-type;
         @cdr-type-redwood-ui-20-font-style; );
+    @media ( max-width: @screen-xs-max ) {
+        &:not( .btn-fixed ) {
+           width: auto;
+           margin: 0;
+        }
+    }
     .img-circle();
     &:focus,
     &.focus {
