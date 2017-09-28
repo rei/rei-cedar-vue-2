@@ -1,3 +1,7 @@
+##1.7.3
+Bugfixes:
+- restrain close button from going full width at xs breakpoint
+
 ##1.7.2
 Bugfixes:
 - close button on modal was not assigned the icon font correctly
