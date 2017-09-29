@@ -84,19 +84,35 @@
             &:hover,
             &:focus {
                  background-color: @nav-tabs-active-link-hover-bg;
-                 border-bottom: 4px solid @nav-tabs-active-stroke;
-                 color: @text-color;
+                 color: @link-color;
                  cursor: default;
                  text-decoration: none;
+            }
+            &:focus {
+              outline: thin dotted;
+              // WebKit
+              outline: 0.2rem auto;
+              outline-color: @btn-focus-stroke-color;
+              outline-offset: -0.1rem;
+              box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+              border: 1px solid rgba(81, 203, 238, 1);
             }
         }
         &.active {
             > a {
+                &:focus {
+                  outline: none;
+                  // WebKit
+                  outline: none;
+                  outline-color: transparent;
+                  border: none;
+                  box-shadow: none;
+                }
                 &, &:hover, &:focus {
                     background-color: @nav-tabs-active-link-hover-bg;
                     border-bottom: 4px solid @nav-tabs-active-stroke;
                     bottom: -2px;
-                    color: @text-color;
+                    color: @link-color;
                     cursor: default;
                     text-decoration: none;
                 }
