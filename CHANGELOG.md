@@ -1,6 +1,11 @@
+##1.7.4
+Features:
+- update to focus and hover state of tab items
+
 ##1.7.3
 Bugfixes:
 - restrain close button from going full width at xs breakpoint
+
 
 ##1.7.2
 Bugfixes:
