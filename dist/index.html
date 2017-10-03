@@ -1,1 +1,72 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><title>rei-cedar</title><meta name=description content="Welcome to the REI Digital Design System presentation framework. A home for modular components based on our evolving design patterns."><meta name=author content=REI><link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,700" rel=stylesheet><link rel=stylesheet href=/static/cedar-fonts.min.css><link href=/static/css/cedar-core.bcd962a806ac17e8fecaf9cbde03a087.css rel=stylesheet><link href=/static/css/cedar-components.940a632a03d4d7af355ac9600e434664.css rel=stylesheet></head><body><div id=main><router-view></router-view></div><script type=text/javascript src=/static/js/manifest.d50f80f32a3e79ca407d.js></script><script type=text/javascript src=/static/js/vendor.aba70004942f1bc86efc.js></script><script type=text/javascript src=/static/js/app.34070c7b2204fc204d5d.js></script></body></html>
+Html Webpack Plugin:<pre>
+  Error: Child compilation failed:
+  Entry module not found: Error: Can't resolve '/Users/alltayl/Repos/rei-cedar/src/npm_components/a  nchor/index.html' in '/Users/alltayl/Repos/rei-cedar/src/npm_components/anchor':
+  Error: Can't resolve '/Users/alltayl/Repos/rei-cedar/src/npm_components/anchor/index.html' in '/U  sers/alltayl/Repos/rei-cedar/src/npm_components/anchor'
+  
+  - compiler.js:76 
+    [rei-cedar]/[html-webpack-plugin]/lib/compiler.js:76:16
+  
+  - Compiler.js:304 compile
+    [anchor]/[webpack]/lib/Compiler.js:304:11
+  
+  - Compiler.js:514 applyPluginsAsync.err
+    [anchor]/[webpack]/lib/Compiler.js:514:14
+  
+  - Tapable.js:202 next
+    [anchor]/[webpack]/[tapable]/lib/Tapable.js:202:11
+  
+  - CachePlugin.js:78 Compiler.<anonymous>
+    [anchor]/[webpack]/lib/CachePlugin.js:78:5
+  
+  - Tapable.js:206 Compiler.applyPluginsAsyncSeries
+    [anchor]/[webpack]/[tapable]/lib/Tapable.js:206:13
+  
+  - Compiler.js:511 compilation.seal.err
+    [anchor]/[webpack]/lib/Compiler.js:511:11
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [anchor]/[webpack]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:671 self.applyPluginsAsync.err
+    [anchor]/[webpack]/lib/Compilation.js:671:19
+  
+  - Tapable.js:202 next
+    [anchor]/[webpack]/[tapable]/lib/Tapable.js:202:11
+  
+  - index.js:106 LastCallWebpackPlugin.process
+    [rei-cedar]/[last-call-webpack-plugin]/index.js:106:12
+  
+  - index.js:150 Compilation.<anonymous>
+    [rei-cedar]/[last-call-webpack-plugin]/index.js:150:12
+  
+  - Tapable.js:206 Compilation.applyPluginsAsyncSeries
+    [anchor]/[webpack]/[tapable]/lib/Tapable.js:206:13
+  
+  - Compilation.js:662 self.applyPluginsAsync.err
+    [anchor]/[webpack]/lib/Compilation.js:662:11
+  
+  - Tapable.js:202 next
+    [anchor]/[webpack]/[tapable]/lib/Tapable.js:202:11
+  
+  - index.js:106 LastCallWebpackPlugin.process
+    [rei-cedar]/[last-call-webpack-plugin]/index.js:106:12
+  
+  - index.js:147 Compilation.<anonymous>
+    [rei-cedar]/[last-call-webpack-plugin]/index.js:147:12
+  
+  - Tapable.js:204 next
+    [anchor]/[webpack]/[tapable]/lib/Tapable.js:204:14
+  
+  - index.js:244 Compilation.<anonymous>
+    [rei-cedar]/[uglifyjs-webpack-plugin]/dist/index.js:244:6
+  
+  - Tapable.js:206 Compilation.applyPluginsAsyncSeries
+    [anchor]/[webpack]/[tapable]/lib/Tapable.js:206:13
+  
+  - Compilation.js:657 self.applyPluginsAsync.err
+    [anchor]/[webpack]/lib/Compilation.js:657:10
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [anchor]/[webpack]/[tapable]/lib/Tapable.js:195:46
+  
+</anonymous></anonymous></anonymous></anonymous></pre>

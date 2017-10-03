@@ -1,5 +1,5 @@
+require('../../../../build/check-theme')();
 require('./check-versions')();
-require('../../../check-theme')();
 
 process.env.NODE_ENV = 'production';
 
@@ -9,9 +9,9 @@ const path = require('path');
 const chalk = require('chalk');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const config = require('../../../config');
+const config = require('../../../../config');
 const componentConfig = require('./comp.webpack.conf');
-let webpackConfig = require('../../../webpack.prod.conf');
+let webpackConfig = require('../../../../build/webpack.prod.conf');
 
 webpackConfig = merge(webpackConfig, componentConfig);
 
