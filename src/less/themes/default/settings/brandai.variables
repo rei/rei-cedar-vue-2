@@ -101,8 +101,8 @@
 @cdr-color-btn-primary-active-stroke: #2b455c;
 @cdr-color-btn-secondary: #ffffff;
 @cdr-color-btn-secondary-stroke: #767676;
+@cdr-color-btn-secondary-active: #f0f0f0;
 @cdr-color-btn-secondary-active-stroke: #767676;
-@cdr-color-btn-secondary-active: #ffffff;
 @cdr-color-btn-text: #ffffff;
 @cdr-color-btn-text-active: #ffffff;
 @cdr-color-btn-primary-disabled: #c5c5c5;
@@ -186,7 +186,6 @@
 @cdr-color-tab-text: #2e2e2e;
 @cdr-color-tab-active-text: #426c90;
 @cdr-color-tab-hover-text: #426c90;
-@cdr-color-tab-disabled-text: #c5c5c5;
 @cdr-color-tab-active-stroke: #426c90;
 @cdr-color-tab-stroke: #c5c5c5;
 
@@ -201,7 +200,7 @@
 @cdr-type-spruce-dsp-90-color: #2e2e2e;
 @cdr-type-spruce-dsp-90-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-90-font-style: normal;
-@cdr-type-spruce-dsp-90-font-weight: bold;
+@cdr-type-spruce-dsp-90-font-weight: 600;
 @cdr-type-spruce-dsp-90-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-90() {
@@ -222,7 +221,7 @@
 @cdr-type-spruce-dsp-80-color: #2e2e2e;
 @cdr-type-spruce-dsp-80-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-80-font-style: normal;
-@cdr-type-spruce-dsp-80-font-weight: bold;
+@cdr-type-spruce-dsp-80-font-weight: 600;
 @cdr-type-spruce-dsp-80-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-80() {
@@ -243,7 +242,7 @@
 @cdr-type-spruce-dsp-70-color: #2e2e2e;
 @cdr-type-spruce-dsp-70-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-70-font-style: normal;
-@cdr-type-spruce-dsp-70-font-weight: bold;
+@cdr-type-spruce-dsp-70-font-weight: 600;
 @cdr-type-spruce-dsp-70-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-70() {
@@ -264,7 +263,7 @@
 @cdr-type-spruce-dsp-60-color: #2e2e2e;
 @cdr-type-spruce-dsp-60-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-60-font-style: normal;
-@cdr-type-spruce-dsp-60-font-weight: bold;
+@cdr-type-spruce-dsp-60-font-weight: 600;
 @cdr-type-spruce-dsp-60-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-60() {
@@ -285,7 +284,7 @@
 @cdr-type-spruce-dsp-50-color: #2e2e2e;
 @cdr-type-spruce-dsp-50-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-50-font-style: normal;
-@cdr-type-spruce-dsp-50-font-weight: bold;
+@cdr-type-spruce-dsp-50-font-weight: 600;
 @cdr-type-spruce-dsp-50-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-50() {
@@ -306,7 +305,7 @@
 @cdr-type-spruce-dsp-40-color: #2e2e2e;
 @cdr-type-spruce-dsp-40-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-40-font-style: normal;
-@cdr-type-spruce-dsp-40-font-weight: bold;
+@cdr-type-spruce-dsp-40-font-weight: 600;
 @cdr-type-spruce-dsp-40-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-40() {
@@ -348,7 +347,7 @@
 @cdr-type-spruce-dsp-20-color: #2e2e2e;
 @cdr-type-spruce-dsp-20-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-20-font-style: normal;
-@cdr-type-spruce-dsp-20-font-weight: bold;
+@cdr-type-spruce-dsp-20-font-weight: 600;
 @cdr-type-spruce-dsp-20-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-20() {
@@ -369,7 +368,7 @@
 @cdr-type-spruce-dsp-10-color: #2e2e2e;
 @cdr-type-spruce-dsp-10-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-10-font-style: normal;
-@cdr-type-spruce-dsp-10-font-weight: bold;
+@cdr-type-spruce-dsp-10-font-weight: 600;
 @cdr-type-spruce-dsp-10-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-10() {
@@ -892,86 +891,6 @@
   font-style: @cdr-type-maple-ui-40-font-style;
   font-weight: @cdr-type-maple-ui-40-font-weight;
   font-family: @cdr-type-maple-ui-40-font-family;
-}
-
-// redwood-dsp-30 standard link: hover font style
-@cdr-type-redwood-dsp-30-standard-link-hover-font-size: 16px;
-@cdr-type-redwood-dsp-30-standard-link-hover-line-height: 22px;
-@cdr-type-redwood-dsp-30-standard-link-hover-text-align: left;
-@cdr-type-redwood-dsp-30-standard-link-hover-color: #426c90;
-@cdr-type-redwood-dsp-30-standard-link-hover-text-decoration: underline;
-@cdr-type-redwood-dsp-30-standard-link-hover-font-style: normal;
-@cdr-type-redwood-dsp-30-standard-link-hover-font-weight: 400;
-@cdr-type-redwood-dsp-30-standard-link-hover-font-family: Roboto;
-
-.cdr-type-redwood-dsp-30-standard-link-hover() {
-  font-size: @cdr-type-redwood-dsp-30-standard-link-hover-font-size;
-  line-height: @cdr-type-redwood-dsp-30-standard-link-hover-line-height;
-  text-align: @cdr-type-redwood-dsp-30-standard-link-hover-text-align;
-  color: @cdr-type-redwood-dsp-30-standard-link-hover-color;
-  text-decoration: @cdr-type-redwood-dsp-30-standard-link-hover-text-decoration;
-  font-style: @cdr-type-redwood-dsp-30-standard-link-hover-font-style;
-  font-weight: @cdr-type-redwood-dsp-30-standard-link-hover-font-weight;
-  font-family: @cdr-type-redwood-dsp-30-standard-link-hover-font-family;
-}
-
-// redwood-dsp-20 standard link: hover font style
-@cdr-type-redwood-dsp-20-standard-link-hover-font-size: 14px;
-@cdr-type-redwood-dsp-20-standard-link-hover-line-height: 20px;
-@cdr-type-redwood-dsp-20-standard-link-hover-text-align: left;
-@cdr-type-redwood-dsp-20-standard-link-hover-color: #426c90;
-@cdr-type-redwood-dsp-20-standard-link-hover-text-decoration: underline;
-@cdr-type-redwood-dsp-20-standard-link-hover-font-style: normal;
-@cdr-type-redwood-dsp-20-standard-link-hover-font-weight: 400;
-@cdr-type-redwood-dsp-20-standard-link-hover-font-family: Roboto;
-
-.cdr-type-redwood-dsp-20-standard-link-hover() {
-  font-size: @cdr-type-redwood-dsp-20-standard-link-hover-font-size;
-  line-height: @cdr-type-redwood-dsp-20-standard-link-hover-line-height;
-  text-align: @cdr-type-redwood-dsp-20-standard-link-hover-text-align;
-  color: @cdr-type-redwood-dsp-20-standard-link-hover-color;
-  text-decoration: @cdr-type-redwood-dsp-20-standard-link-hover-text-decoration;
-  font-style: @cdr-type-redwood-dsp-20-standard-link-hover-font-style;
-  font-weight: @cdr-type-redwood-dsp-20-standard-link-hover-font-weight;
-  font-family: @cdr-type-redwood-dsp-20-standard-link-hover-font-family;
-}
-
-// redwood-dsp-30 standard link font style
-@cdr-type-redwood-dsp-30-standard-link-font-size: 16px;
-@cdr-type-redwood-dsp-30-standard-link-line-height: 22px;
-@cdr-type-redwood-dsp-30-standard-link-text-align: left;
-@cdr-type-redwood-dsp-30-standard-link-color: #426c90;
-@cdr-type-redwood-dsp-30-standard-link-font-style: normal;
-@cdr-type-redwood-dsp-30-standard-link-font-weight: 400;
-@cdr-type-redwood-dsp-30-standard-link-font-family: Roboto;
-
-.cdr-type-redwood-dsp-30-standard-link() {
-  font-size: @cdr-type-redwood-dsp-30-standard-link-font-size;
-  line-height: @cdr-type-redwood-dsp-30-standard-link-line-height;
-  text-align: @cdr-type-redwood-dsp-30-standard-link-text-align;
-  color: @cdr-type-redwood-dsp-30-standard-link-color;
-  font-style: @cdr-type-redwood-dsp-30-standard-link-font-style;
-  font-weight: @cdr-type-redwood-dsp-30-standard-link-font-weight;
-  font-family: @cdr-type-redwood-dsp-30-standard-link-font-family;
-}
-
-// redwood-dsp-20 standard link font style
-@cdr-type-redwood-dsp-20-standard-link-font-size: 14px;
-@cdr-type-redwood-dsp-20-standard-link-line-height: 20px;
-@cdr-type-redwood-dsp-20-standard-link-text-align: left;
-@cdr-type-redwood-dsp-20-standard-link-color: #426c90;
-@cdr-type-redwood-dsp-20-standard-link-font-style: normal;
-@cdr-type-redwood-dsp-20-standard-link-font-weight: 400;
-@cdr-type-redwood-dsp-20-standard-link-font-family: Roboto;
-
-.cdr-type-redwood-dsp-20-standard-link() {
-  font-size: @cdr-type-redwood-dsp-20-standard-link-font-size;
-  line-height: @cdr-type-redwood-dsp-20-standard-link-line-height;
-  text-align: @cdr-type-redwood-dsp-20-standard-link-text-align;
-  color: @cdr-type-redwood-dsp-20-standard-link-color;
-  font-style: @cdr-type-redwood-dsp-20-standard-link-font-style;
-  font-weight: @cdr-type-redwood-dsp-20-standard-link-font-weight;
-  font-family: @cdr-type-redwood-dsp-20-standard-link-font-family;
 }
 
 /*
