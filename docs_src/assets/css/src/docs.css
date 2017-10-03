@@ -12,6 +12,7 @@
 .doc_head-navigation ul > li > a {
   color: #222;
   text-decoration: none;
+  text-decoration-skip: ink;
   outline: none;
 }
 .doc_head-navigation > li > a:hover,

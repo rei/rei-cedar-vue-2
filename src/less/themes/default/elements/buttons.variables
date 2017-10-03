@@ -84,19 +84,38 @@
 // SIZE AND SHAPE
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@btn-font-size:                                    @cdr-type-redwood-ui-30-font-size;
-@btn-font-size-lg:                                 @cdr-type-redwood-ui-30-font-size;
+
 @btn-font-weight:                                  normal;
-@btn-line-height:                                  @cdr-type-redwood-ui-30-line-height;
-@btn-sm-inset:                                     1.2rem 1.6rem;
+
 @btn-close-inset:                                  1rem;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-// TYPE
+// BTN VARIANT SIZE
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@btn-md-type:                                      @cdr-type-maple-ui-40-font-family,@fallback-sans-serif;
+@btn-lg-type:                                      @cdr-type-maple-ui-40-font-family,@fallback-sans-serif;
+@btn-lg-line-height:                               @cdr-type-maple-ui-40-line-height;
+@btn-lg-font-size:                                 @cdr-type-maple-ui-40-font-size;
+@btn-lg-font-style:                                @cdr-type-maple-ui-40-font-style;
+@btn-lg-inset:                                     @inset-lg--squish;
+
+@btn-type:                                         @btn-font-size;
+@btn-line-height:                                  @cdr-type-redwood-ui-30-line-height;
+@btn-font-size:                                    @cdr-type-redwood-ui-30-font-size;
+@btn-font-style:                                   @cdr-type-redwood-ui-30-font-style;
+@btn-inset:                                        @inset-lg--squish;
+
 @btn-sm-type:                                      @cdr-type-redwood-ui-30-font-family,@fallback-sans-serif;
+@btn-sm-line-height:                               @cdr-type-redwood-ui-30-line-height;
+@btn-sm-font-size:                                 @cdr-type-redwood-ui-30-font-size;
+@btn-sm-font-style:                                @cdr-type-redwood-ui-30-font-style;
+@btn-sm-inset:                                     1.2rem 1.6rem;
+
 @btn-xs-type:                                      @cdr-type-redwood-ui-20-font-family,@fallback-sans-serif;
+@btn-xs-line-height:                               @cdr-type-redwood-ui-20-line-height;
+@btn-xs-font-size:                                 @cdr-type-redwood-ui-20-font-size;
+@btn-xs-font-style:                                @cdr-type-redwood-ui-20-font-style;
+@btn-xs-inset:                                     @inset-md--squish;
+
 @btn-close-type:                                   "rei-icons";

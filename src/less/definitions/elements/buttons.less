@@ -32,7 +32,7 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .btn {
-    .btn-lg();
+    .btn-md();
     border: 0.1rem solid transparent;
     cursor: pointer;
     display: inline-block;
@@ -286,27 +286,34 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .btn-lg {
+    .button-size(
+        @btn-lg-inset;
+        @btn-lg-font-size;
+        @btn-lg-line-height;
+        @btn-lg-type;
+        @btn-lg-font-style; );
+}
+.btn-md {
     .button-size();
 }
-
 .btn-sm {
     // line-height: ensure proper height of button next to small input
     .button-size(
         @btn-sm-inset;
-        @cdr-type-redwood-ui-30-font-size;
-        @cdr-type-redwood-ui-30-line-height;
+        @btn-sm-font-size;
+        @btn-sm-line-height;
         @btn-sm-type;
-        @cdr-type-redwood-ui-30-font-style; );
+        @btn-sm-font-style; );
     @text-with-icon-rei-tree-arrow-button-sm-ruleset();
 }
 
 .btn-xs {
     .button-size(
-        @inset-md--squish;
-        @cdr-type-redwood-ui-20-font-size;
-        @cdr-type-redwood-ui-20-line-height;
+        @btn-xs-inset;
+        @btn-xs-font-size;
+        @btn-xs-line-height;
         @btn-xs-type;
-        @cdr-type-redwood-ui-20-font-style; );
+        @btn-xs-font-style; );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
