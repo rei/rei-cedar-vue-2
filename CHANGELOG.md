@@ -1,6 +1,18 @@
 ##1.7.4
 Features:
+- transparent button utility class
+- link text decoration skip
+Bugfixes:
+- secondary button hover state
+- link text decoration set to on for defualt
+- input-group addon icon spacing ajustments
+- md button font and spacing updates
+- close button sizing updates
+
+##1.7.4
+Features:
 - update to focus and hover state of tab items
+
 
 ##1.7.3
 Bugfixes:
