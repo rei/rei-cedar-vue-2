@@ -1,0 +1,11 @@
+build/*.js
+config/*.js
+release/*.js
+dist-docs/
+dist/
+
+node_modules/
+
+backstop_data/html_report/
+src/**/__tests__/*.spec.js
+
