@@ -13,7 +13,7 @@
       img-radius="top">
         <div v-if="this.label != null" class="cdr-card--activity__label">{{label}}</div>
         <cdr-heading v-if="this.title != null" :level="titleLevel">
-          <a class="cdr-card--activity__title cdr-card--activity__title--action" :href="titleUrl">{{title}}</a>
+          <cdr-a class="cdr-card--activity__title cdr-card--activity__title--action" :href="titleUrl" :target="titleTarget">{{title}}</cdr-a>
         </cdr-heading>
         <cdr-list v-if="snapshot" class="cdr-card--activity__snapshot" modifier="inline bulleted">
           <li v-for="item in snapshot">
@@ -35,6 +35,7 @@
 </style>
 
 <script>
+import cdrA from '@/components/anchor/cdrA';
 import cdrCard from '@/components/card/cdrCard';
 import cdrHeading from '@/components/heading/cdrHeading';
 import cdrImg from '@/components/image/cdrImg';
@@ -45,6 +46,7 @@ import cdrList from '@/components/list/cdrList';
 export default {
   name: 'cdr-card-activity',
   components: {
+    cdrA,
     cdrCard,
     cdrHeading,
     cdrImg,
@@ -93,6 +95,12 @@ export default {
     titleUrl: {
       type: String,
       required: true,
+    },
+    /**
+    * Title link target
+    */
+    titleTarget: {
+      type: String,
     },
     /**
     * Heading level
