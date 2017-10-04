@@ -1,6 +1,6 @@
 import CdrAnchor from './cdrA.vue';
 
-function install(Vue, options) {
+function install(Vue) {
   Vue.component('cdr-a', CdrAnchor);
 }
 

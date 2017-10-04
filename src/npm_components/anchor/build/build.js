@@ -1,6 +1,3 @@
-require('../../../../build/check-theme')();
-require('./check-versions')();
-
 process.env.NODE_ENV = 'production';
 
 const ora = require('ora');
@@ -10,10 +7,10 @@ const chalk = require('chalk');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const config = require('../../../../config');
-const componentConfig = require('./comp.webpack.conf');
-let webpackConfig = require('../../../../build/webpack.prod.conf');
+const componentWebpackConfig = require('./component.conf');
+const distWebpackConfig = require('../../../webpack.dist.conf');
 
-webpackConfig = merge(webpackConfig, componentConfig);
+const webpackConfig = merge(distWebpackConfig, componentWebpackConfig);
 
 const spinner = ora('building cdr-a for production...');
 spinner.start();
@@ -31,10 +28,6 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       chunkModules: false
     }) + '\n\n')
 
-    console.log(chalk.cyan('  Build complete.\n'))
-    console.log(chalk.yellow(
-      '  Tip: built files are meant to be served over an HTTP server.\n' +
-      '  Opening index.html over file:// won\'t work.\n'
-    ))
+    console.log(chalk.cyan('  Build of cdr-a complete.\n'))
   })
 })
