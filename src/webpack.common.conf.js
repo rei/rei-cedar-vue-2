@@ -1,8 +1,8 @@
 var path = require('path')
-var utils = require('./utils')
+var utils = require('../build/utils')
 var config = require('../config')
-var vueLoaderConfig = require('./vue-loader.conf')
-var mainPostConfig = require('./mainPost.conf.js')
+var vueLoaderConfig = require('../build/vue-loader.conf')
+var mainPostConfig = require('../build/mainPost.conf.js')
 var isRelease = process.env.NODE_ENV === 'release'
 
 function resolve (dir) {
