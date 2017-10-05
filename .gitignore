@@ -42,6 +42,8 @@ backstop_data/bitmaps_test
 backstop_data/html_report
 test/e2e/reports
 test/unit/coverage
+
+
 dist/static/js/manifest.*.js.map
 dist/static/js/manifest.*.js
 dist/static/js/rei-cdr-a.*.js
