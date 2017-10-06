@@ -8,7 +8,7 @@
   "private": true,
   "main": "dist/rei-cedar-a.js",
   "scripts": {
-    "build": "node build/build.js"
+    "build": "webpack --env.buildConfig='./webpack.dist.conf' --env.componentConfig='./npm_components/anchor/build/component.conf' --config ../../webpack.config.js"
   },
   "peerDependencies": {
     "vue": "^2.4.2"
@@ -37,12 +37,12 @@
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.4",
     "download": "^6.2.5",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb-base": "^12.0.2",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-html": "^3.2.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
@@ -91,6 +91,7 @@
     "postcss-pxtorem": "^4.0.1",
     "postcss-responsive-type": "^1.0.0",
     "postcss-safe-parser": "^3.0.1",
+    "postcss-sass": "^0.2.0",
     "postcss-sassy-mixins": "^2.1.0",
     "postcss-scss": "^1.0.2",
     "postcss-simple-vars": "^4.0.0",
