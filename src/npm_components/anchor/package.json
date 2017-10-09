@@ -8,7 +8,7 @@
   "private": true,
   "main": "dist/rei-cedar-a.js",
   "scripts": {
-    "build": "webpack --env.buildConfig='./webpack.dist.conf' --env.componentConfig='./src/npm_components/anchor/build/component.conf' --config ../../../webpack.config.js"
+    "build": "node build/build.js"
   },
   "peerDependencies": {
     "vue": "^2.4.2"

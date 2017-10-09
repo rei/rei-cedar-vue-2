@@ -15,20 +15,22 @@ const webpackConfig = merge(distWebpackConfig, componentWebpackConfig);
 const spinner = ora('building cdr-a for production...');
 spinner.start();
 
-rm(path.resolve(__dirname, path.join('../dist/', 'static')),
+rm(
+  path.resolve(__dirname, '../dist/static'),
   (err) => {
     if (err) throw err;
     webpack(webpackConfig, (err2, stats) => {
       spinner.stop();
       if (err2) throw err2;
-      process.stdout.write(stats.toString({
+      process.stdout.write(`${stats.toString({
         colors: true,
         modules: false,
         children: false,
         chunks: false,
-        chunkModules: false
-      }) + '\n\n');
+        chunkModules: false,
+      })}\n\n`);
 
       console.log(chalk.cyan('  Build of cdr-a complete.\n'));
     });
-  });
+  }
+);

@@ -43,8 +43,5 @@ backstop_data/html_report
 test/e2e/reports
 test/unit/coverage
 
-
-dist/static/js/manifest.*.js.map
-dist/static/js/manifest.*.js
-dist/static/js/rei-cdr-a.*.js
-dist/static/js/rei-cdr-a.*.js.map
+src/npm_components/dist/static/js/*.js
+src/npm_components/dist/static/js/*.js.map
