@@ -87,12 +87,16 @@ $sys-color-shade-darker-20: rgba(27, 28, 28, 0.7);
 $sys-color-shade-darker-30: rgba(27, 28, 28, 0.8);
 $sys-color-shade-darker-40: rgba(27, 28, 28, 0.9);
 
-// system
-$sys-color-system-10: #222222;
-$sys-color-system-20: #000000;
+// Utility
+$sys-color-black-base: #000000;
+$sys-color-white-base: #ffffff;
 $sys-color-error: #cc0000;
+$sys-color-error-lighten: #f9e5e5;
 $sys-color-warning: #e4ac00;
+$sys-color-warning-lighten: #fcf6e5;
 $sys-color-success: #a1c900;
+$sys-color-success-lighten: #f5f9e5;
+$sys-color-system-20: #222222;
 
 // Buttons
 $sys-color-btn-primary: #426c90;
@@ -100,9 +104,9 @@ $sys-color-btn-primary-stroke: #426c90;
 $sys-color-btn-primary-active: #2b455c;
 $sys-color-btn-primary-active-stroke: #2b455c;
 $sys-color-btn-secondary: #ffffff;
-$sys-color-btn-secondary-stroke: #808083;
-$sys-color-btn-secondary-active-stroke: #808083;
-$sys-color-btn-secondary-active: #ffffff;
+$sys-color-btn-secondary-stroke: #767676;
+$sys-color-btn-secondary-active: #f0f0f0;
+$sys-color-btn-secondary-active-stroke: #767676;
 $sys-color-btn-text: #ffffff;
 $sys-color-btn-text-active: #ffffff;
 $sys-color-btn-primary-disabled: #c5c5c5;
@@ -111,17 +115,21 @@ $sys-color-btn-primary-disabled-text: #ffffff;
 $sys-color-btn-secondary-disabled: #ffffff;
 $sys-color-btn-secondary-disabled-text: #c5c5c5;
 $sys-color-btn-secondary-disabled-stroke: #c5c5c5;
-$sys-color-btn-secondary-focus-text: #000000;
-$sys-color-btn-secondary-text: #000000;
-$sys-color-btn-secondary-text-active: #000000;
+$sys-color-btn-secondary-focus-text: #2e2e2e;
+$sys-color-btn-secondary-text: #2e2e2e;
+$sys-color-btn-secondary-text-active: #2e2e2e;
 $sys-color-btn-stroke-focus: #8dd1ed;
 $sys-color-btn-primary-focus-text: #ffffff;
+$sys-color-btn-icon: #ffffff;
+$sys-color-btn-icon-icon: #2e2e2e;
+$sys-color-btn-icon-stroke: #2e2e2e;
+$sys-color-btn-icon-hover: #f0f0f0;
 
 // Card
 $sys-color-activity-card: #ffffff;
-$sys-color-activity-card-stroke: #d7d8d8;
+$sys-color-activity-card-stroke: #e9e9e9;
 $sys-color-activity-card-text: #2e2e2e;
-$sys-color-activity-card-subtext: #6a6a6a;
+$sys-color-activity-card-subtext: #767676;
 
 // Form Controls
 $sys-color-control-text: #2e2e2e;
@@ -156,11 +164,17 @@ $sys-color-input-label: #2e2e2e;
 $sys-color-input-disabled-label: #c5c5c5;
 $sys-color-input-error-label: #cc0000;
 
-// links
+// Links
 $sys-color-link: #426c90;
-$sys-color-link-active: #426c90;
-$sys-color-link-overlay: #4eaaff;
-$sys-color-link-contrast-overlay: #ffffff;
+$sys-color-link-icon: #426c90;
+$sys-color-link-contrast: #ffffff;
+$sys-color-link-icon-contrast: #ffffff;
+
+// List
+$sys-color-list-text: #2e2e2e;
+$sys-color-list-disc: #2e2e2e;
+$sys-color-list-circle: #ffffff;
+$sys-color-list-circle-stroke: #2e2e2e;
 
 // Ratings
 $sys-color-rating: #2e2e2e;
@@ -177,7 +191,6 @@ $sys-color-search-standalone-icon: #2e2e2e;
 $sys-color-tab-text: #2e2e2e;
 $sys-color-tab-active-text: #426c90;
 $sys-color-tab-hover-text: #426c90;
-$sys-color-tab-disabled-text: #c5c5c5;
 $sys-color-tab-active-stroke: #426c90;
 $sys-color-tab-stroke: #c5c5c5;
 
@@ -192,7 +205,7 @@ $sys-font-spruce-dsp-90-text-align: start;
 $sys-font-spruce-dsp-90-color: #2e2e2e;
 $sys-font-spruce-dsp-90-letter-spacing: 0.2px;
 $sys-font-spruce-dsp-90-font-style: normal;
-$sys-font-spruce-dsp-90-font-weight: bold;
+$sys-font-spruce-dsp-90-font-weight: 600;
 $sys-font-spruce-dsp-90-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin sys-font-spruce-dsp-90 () {
@@ -213,7 +226,7 @@ $sys-font-spruce-dsp-80-text-align: start;
 $sys-font-spruce-dsp-80-color: #2e2e2e;
 $sys-font-spruce-dsp-80-letter-spacing: 0.2px;
 $sys-font-spruce-dsp-80-font-style: normal;
-$sys-font-spruce-dsp-80-font-weight: bold;
+$sys-font-spruce-dsp-80-font-weight: 600;
 $sys-font-spruce-dsp-80-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin sys-font-spruce-dsp-80 () {
@@ -234,7 +247,7 @@ $sys-font-spruce-dsp-70-text-align: start;
 $sys-font-spruce-dsp-70-color: #2e2e2e;
 $sys-font-spruce-dsp-70-letter-spacing: 0.2px;
 $sys-font-spruce-dsp-70-font-style: normal;
-$sys-font-spruce-dsp-70-font-weight: bold;
+$sys-font-spruce-dsp-70-font-weight: 600;
 $sys-font-spruce-dsp-70-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin sys-font-spruce-dsp-70 () {
@@ -255,7 +268,7 @@ $sys-font-spruce-dsp-60-text-align: start;
 $sys-font-spruce-dsp-60-color: #2e2e2e;
 $sys-font-spruce-dsp-60-letter-spacing: 0.2px;
 $sys-font-spruce-dsp-60-font-style: normal;
-$sys-font-spruce-dsp-60-font-weight: bold;
+$sys-font-spruce-dsp-60-font-weight: 600;
 $sys-font-spruce-dsp-60-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin sys-font-spruce-dsp-60 () {
@@ -276,7 +289,7 @@ $sys-font-spruce-dsp-50-text-align: start;
 $sys-font-spruce-dsp-50-color: #2e2e2e;
 $sys-font-spruce-dsp-50-letter-spacing: 0.2px;
 $sys-font-spruce-dsp-50-font-style: normal;
-$sys-font-spruce-dsp-50-font-weight: bold;
+$sys-font-spruce-dsp-50-font-weight: 600;
 $sys-font-spruce-dsp-50-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin sys-font-spruce-dsp-50 () {
@@ -339,7 +352,7 @@ $sys-font-spruce-dsp-20-text-align: start;
 $sys-font-spruce-dsp-20-color: #2e2e2e;
 $sys-font-spruce-dsp-20-letter-spacing: 0.2px;
 $sys-font-spruce-dsp-20-font-style: normal;
-$sys-font-spruce-dsp-20-font-weight: bold;
+$sys-font-spruce-dsp-20-font-weight: 600;
 $sys-font-spruce-dsp-20-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin sys-font-spruce-dsp-20 () {
@@ -360,7 +373,7 @@ $sys-font-spruce-dsp-10-text-align: start;
 $sys-font-spruce-dsp-10-color: #2e2e2e;
 $sys-font-spruce-dsp-10-letter-spacing: 0.2px;
 $sys-font-spruce-dsp-10-font-style: normal;
-$sys-font-spruce-dsp-10-font-weight: bold;
+$sys-font-spruce-dsp-10-font-weight: 600;
 $sys-font-spruce-dsp-10-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin sys-font-spruce-dsp-10 () {
@@ -529,7 +542,7 @@ $sys-font-redwood-dsp-40-font-family: Roboto;
 // redwood-dsp-30 font style
 $sys-font-redwood-dsp-30-font-size: 16px;
 $sys-font-redwood-dsp-30-line-height: 22px;
-$sys-font-redwood-dsp-30-text-align: left;
+$sys-font-redwood-dsp-30-text-align: start;
 $sys-font-redwood-dsp-30-color: #2e2e2e;
 $sys-font-redwood-dsp-30-font-style: normal;
 $sys-font-redwood-dsp-30-font-weight: 400;
@@ -657,6 +670,23 @@ $sys-font-redwood-bdy-10-font-family: Roboto;
   font-style: $sys-font-redwood-bdy-10-font-style;
   font-weight: $sys-font-redwood-bdy-10-font-weight;
   font-family: $sys-font-redwood-bdy-10-font-family;
+}
+
+// redwood-ui-40 font style
+$sys-font-redwood-ui-40-font-size: 18px;
+$sys-font-redwood-ui-40-line-height: 18px;
+$sys-font-redwood-ui-40-color: #2e2e2e;
+$sys-font-redwood-ui-40-font-style: normal;
+$sys-font-redwood-ui-40-font-weight: 400;
+$sys-font-redwood-ui-40-font-family: Roboto;
+
+@mixin sys-font-redwood-ui-40 () {
+  font-size: $sys-font-redwood-ui-40-font-size;
+  line-height: $sys-font-redwood-ui-40-line-height;
+  color: $sys-font-redwood-ui-40-color;
+  font-style: $sys-font-redwood-ui-40-font-style;
+  font-weight: $sys-font-redwood-ui-40-font-weight;
+  font-family: $sys-font-redwood-ui-40-font-family;
 }
 
 // redwood-ui-30 font style
@@ -888,7 +918,7 @@ $radius-radius-00: 0;
 $radius-button: 0.2rem;
 $radius-card: 0.2rem;
 $radius-radius-20: 3.2rem;
-$radius-input: 0.3rem;
+$radius-input: 0.2rem;
 
 // Sizing
 $sizing-size-closed: 0;

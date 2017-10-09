@@ -61,9 +61,9 @@ import debounce from '../../utils/debounce';
 import modifier from '../../mixins/modifier';
 
 /* eslint-disable */
-const checkIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-check.svg');
-const errorIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-error.svg');
-const warningIcon = require('!raw-loader!../../assets/icons/rei/icon-rei-warning.svg');
+const checkIcon = require('!raw-loader!../../assets/icons/rei/cdr-check-lg.svg');
+const errorIcon = require('!raw-loader!../../assets/icons/rei/cdr-x-circ-fill.svg');
+const warningIcon = require('!raw-loader!../../assets/icons/rei/cdr-warning-tri.svg');
 /* eslint-enable */
 
 export default {
