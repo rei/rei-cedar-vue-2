@@ -1,4 +1,4 @@
-const merge = require('webpack-merge'); //eslint-disable-line
+const merge = require('webpack-merge');
 
 function buildConfiguration(env) {
   const buildConfigLoc = `${env.buildConfig}.js`;

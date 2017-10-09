@@ -1,8 +1,8 @@
 const path = require('path');
-const utils = require('../build/utils');
+const utils = require('./build/utils');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const config = require('../config');
+const config = require('./config');
 const baseWebpackConfig = require('./webpack.common.conf');
 
 // const CopyWebpackPlugin = require('copy-webpack-plugin');

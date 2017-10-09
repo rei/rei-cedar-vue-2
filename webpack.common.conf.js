@@ -1,6 +1,6 @@
 const path = require('path');
-const utils = require('../build/utils');
-// const config = require('../config');
+const utils = require('./build/utils');
+// const config = require('./config');
 // const mainPostConfig = require('../build/mainPost.conf.js');
 
 function resolve(dir) {
@@ -21,6 +21,9 @@ module.exports = {
       vue$: 'vue/dist/vue.esm.js',
       '@': resolve('src'),
     },
+    modules: [
+      path.join(__dirname, '../node_modules')
+    ]
   },
   module: {
     rules: [

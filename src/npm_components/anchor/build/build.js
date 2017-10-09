@@ -6,16 +6,16 @@ const path = require('path');
 const chalk = require('chalk');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const config = require('../../../../config');
+// const config = require('../../../../config');
 const componentWebpackConfig = require('./component.conf');
-const distWebpackConfig = require('../../../webpack.dist.conf');
+const distWebpackConfig = require('../../../../webpack.dist.conf');
 
 const webpackConfig = merge(distWebpackConfig, componentWebpackConfig);
 
 const spinner = ora('building cdr-a for production...');
 spinner.start();
 
-rm(path.resolve(__dirname, path.join(config.build.assetsRoot, config.build.assetsSubDirectory)),
+rm(path.resolve(__dirname, path.join('../dist/', 'static')),
   (err) => {
     if (err) throw err;
     webpack(webpackConfig, (err2, stats) => {
@@ -27,7 +27,7 @@ rm(path.resolve(__dirname, path.join(config.build.assetsRoot, config.build.asset
         children: false,
         chunks: false,
         chunkModules: false
-      }) + '\n\n')
+      }) + '\n\n');
 
       console.log(chalk.cyan('  Build of cdr-a complete.\n'));
     });
