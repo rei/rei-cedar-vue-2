@@ -1,6 +1,4 @@
 const path = require('path');
-// const config = require('../../../../config');
-// const utils = require('../../../../build/utils');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 

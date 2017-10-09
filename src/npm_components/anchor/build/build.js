@@ -6,7 +6,6 @@ const path = require('path');
 const chalk = require('chalk');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-// const config = require('../../../../config');
 const componentWebpackConfig = require('./component.conf');
 const distWebpackConfig = require('../../../../webpack.dist.conf');
 
