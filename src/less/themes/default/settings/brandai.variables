@@ -87,12 +87,16 @@
 @cdr-color-shade-darker-30: rgba(27, 28, 28, 0.8);
 @cdr-color-shade-darker-40: rgba(27, 28, 28, 0.9);
 
-// system
-@cdr-color-system-10: #222222;
-@cdr-color-system-20: #000000;
+// Utility
+@cdr-color-black-base: #000000;
+@cdr-color-white-base: #ffffff;
 @cdr-color-error: #cc0000;
+@cdr-color-error-lighten: #f9e5e5;
 @cdr-color-warning: #e4ac00;
+@cdr-color-warning-lighten: #fcf6e5;
 @cdr-color-success: #a1c900;
+@cdr-color-success-lighten: #f5f9e5;
+@cdr-color-system-20: #222222;
 
 // Buttons
 @cdr-color-btn-primary: #426c90;
@@ -116,9 +120,10 @@
 @cdr-color-btn-secondary-text-active: #2e2e2e;
 @cdr-color-btn-stroke-focus: #8dd1ed;
 @cdr-color-btn-primary-focus-text: #ffffff;
-@cdr-color-btn-close: #ffffff;
-@cdr-color-btn-close-icon: #2e2e2e;
-@cdr-color-btn-close-stroke: #2e2e2e;
+@cdr-color-btn-icon: #ffffff;
+@cdr-color-btn-icon-icon: #2e2e2e;
+@cdr-color-btn-icon-stroke: #2e2e2e;
+@cdr-color-btn-icon-hover: #f0f0f0;
 
 // Card
 @cdr-color-activity-card: #ffffff;
@@ -162,8 +167,8 @@
 // Links
 @cdr-color-link: #426c90;
 @cdr-color-link-icon: #426c90;
-@cdr-color-link-contrast: #98b3c8;
-@cdr-color-link-icon-contrast: #98b3c8;
+@cdr-color-link-contrast: #ffffff;
+@cdr-color-link-icon-contrast: #ffffff;
 
 // List
 @cdr-color-list-text: #2e2e2e;
@@ -305,7 +310,7 @@
 @cdr-type-spruce-dsp-40-color: #2e2e2e;
 @cdr-type-spruce-dsp-40-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-40-font-style: normal;
-@cdr-type-spruce-dsp-40-font-weight: 600;
+@cdr-type-spruce-dsp-40-font-weight: bold;
 @cdr-type-spruce-dsp-40-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-40() {
