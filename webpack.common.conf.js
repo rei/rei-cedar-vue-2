@@ -8,13 +8,6 @@ function resolve(dir) {
 }
 
 module.exports = {
-  // output: {
-  //   path: path.resolve(__dirname, config.build.assetsRoot),
-  //   filename: '[name].js',
-  //   publicPath: path.resolve(__dirname, (process.env.NODE_ENV === 'production'
-  //     ? config.build.assetsPublicPath
-  //     : config.dev.assetsPublicPath)),
-  // },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
