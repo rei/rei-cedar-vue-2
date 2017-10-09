@@ -1,4 +1,11 @@
-##1.7.4
+##1.7.6
+Features:
+- btn-icon
+- btn-bare
+Bugfixes:
+- text-decoration turned on by default
+
+##1.7.5
 Features:
 - transparent button utility class
 - link text decoration skip
