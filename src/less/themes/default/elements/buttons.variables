@@ -73,12 +73,22 @@
 @btn-high-contrast-border:                       @core-architectural-1;
 @btn-high-contrast-active-bg:                    lighten( @core-architectural-1, 20% );
 @btn-high-contrast-active-border:                @btn-high-contrast-active-bg;
+//----------------------------------------------------------------------------------------------------------------------
+// Bare
+//----------------------------------------------------------------------------------------------------------------------
+@btn-bare-color:                        @cdr-color-btn-icon-icon;
+@btn-bare-bg:                           transparent;
+@btn-bare-border:                       transparent;
+@btn-bare-active-bg:                    rgba(0, 0, 0, 0.02);
+@btn-bare-active-border:                rgba(0, 0, 0, 0.02);
+@btn-bare-active-color:                 @cdr-color-btn-icon-icon;
 
 //----------------------------------------------------------------------------------------------------------------------
-// Close
 //----------------------------------------------------------------------------------------------------------------------
-@btn-close-font-size:                             1.2rem;
-@btn-close-line-height:                           1;
+// Icon
+//----------------------------------------------------------------------------------------------------------------------
+@btn-icon-font-size:                             1.2rem;
+@btn-icon-line-height:                           1;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // SIZE AND SHAPE
@@ -87,7 +97,7 @@
 
 @btn-font-weight:                                  normal;
 
-@btn-close-inset:                                  1rem;
+@btn-icon-inset:                                  1rem;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -118,4 +128,4 @@
 @btn-xs-font-style:                                @cdr-type-redwood-ui-20-font-style;
 @btn-xs-inset:                                     @inset-md--squish;
 
-@btn-close-type:                                   "rei-icons";
+@btn-icon-type:                                   "rei-icons";

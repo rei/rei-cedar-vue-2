@@ -10,7 +10,7 @@
                       <li><a class="h3 link_header-overlay" href="{{ item.href }}">{{ item.label }}</a></li>
                       {% for nested in item.subCats %}
                       <li>
-                          <a class="nested" href="{{ nested.href }}">{{ nested.label }}</a>
+                          <a class="link-overlay" href="{{ nested.href }}">{{ nested.label }}</a>
                       </li>
                       {% endfor %}
                   </ul>
@@ -19,7 +19,7 @@
           </div>
       </div>
     <ul class="footer-inline-list">
-      <li><a class="nested" href="{{ site.data.package.urls.repo }}">Github</a></li>
+      <li><a class="link-overlay" href="{{ site.data.package.urls.repo }}">Github</a></li>
     </ul>
   </div>
 </footer>

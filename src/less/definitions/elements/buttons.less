@@ -38,6 +38,7 @@
     display: inline-block;
     margin-bottom: 0;
     text-align: center;
+    text-decoration: none;
     touch-action: manipulation;
     vertical-align: middle;
     user-select: none;
@@ -101,7 +102,7 @@
 // Core
 // ---------------------------------------------------------------------------------------------------------------------
 .btn-primary {
-    .button-variant( @btn-primary-color; @btn-primary-bg; @btn-primary-border; @btn-primary-active-bg; @btn-primary-active-border; @btn-primary-active-color; );
+    .button-variant();
 }
 
 .btn-default {
@@ -143,6 +144,7 @@
         }
     }
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Button Link
@@ -331,7 +333,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Close button
 // ---------------------------------------------------------------------------------------------------------------------
-.btn-close {
+.btn-icon {
     .button-variant( @btn-default-color;
             @btn-default-bg;
             @btn-default-border;
@@ -341,17 +343,47 @@
             @btn-default-disabled-text;
             @btn-default-disabled-background;
             @btn-default-disabled-border; );
+    &.btn-bare {
+    .button-variant(
+        @btn-bare-color;
+        @btn-bare-bg;
+        @btn-bare-border;
+        @btn-bare-active-bg;
+        @btn-bare-active-border;
+        @btn-bare-active-color; );
+        border-radius: 50%;
+    }
     .button-size(
-        @btn-close-inset;
-        @btn-close-font-size;
-        @btn-close-line-height;
-        @btn-close-type;
+        @btn-icon-inset;
+        @btn-icon-font-size;
+        @btn-icon-line-height;
+        @btn-icon-type;
         @cdr-type-redwood-ui-20-font-style; );
     @media ( max-width: @screen-xs-max ) {
         &:not( .btn-fixed ) {
            width: auto;
            margin: 0;
         }
+    }
+    &:hover,
+    &:focus,
+    &.focus {
+        color: @btn-default-color;
+        text-decoration: none;
+    }
+    &:focus {
+      outline: thin dotted;
+      // WebKit
+      outline: 0.2rem auto;
+      outline-color: @btn-focus-stroke-color;
+      outline-offset: -0.1rem;
+      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+      border: 1px solid rgba(81, 203, 238, 1);
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
     }
     .img-circle();
     &:focus,
@@ -360,6 +392,9 @@
     }
 }
 
+.close {
+    &:extend( .btn-icon all );
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Controls
@@ -412,12 +447,7 @@ input[type="button"] {
     }
 }
 
-.btn-transparent {
-    background-color: transparent !important;
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.02) !important;
-    }
-}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // // Deprecated:
