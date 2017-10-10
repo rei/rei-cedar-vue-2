@@ -1,3 +1,7 @@
+##1.7.7
+Bugfixes:
+- link color updates
+
 ##1.7.6
 Features:
 - btn-icon
