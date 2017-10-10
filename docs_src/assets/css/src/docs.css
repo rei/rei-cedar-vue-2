@@ -352,14 +352,11 @@ h4 code {
   .doc_head-navigation-item.home a:hover {
     background: #000;
   }
-  .doc_head-navigation-item,
-  .nested-item {
-    background: inherit;
-  }
   .doc_head-navigation-item {
+    background: inherit;
     float: left;
     margin: 0;
-    padding: 0 1.6rem 0 0;
+    padding: 0;
     position: relative;
   }
   .doc_head-navigation-item a {
