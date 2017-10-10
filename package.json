@@ -1,4 +1,10 @@
 {
+	"name": "rei-cedar",
+  "version": "0.0.1",
+	"description": "REI Cedar Style Framework",
+	"homepage": "https://rei.github.io/rei-cedar/",
+	"license": "ISC",
+  "author": "REI Software Engineering",
 	"devDependencies": {
 		"babel-core": "^6.26.0",
 		"babel-eslint": "^8.0.1",
