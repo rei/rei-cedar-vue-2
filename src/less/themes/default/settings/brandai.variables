@@ -165,8 +165,8 @@
 @cdr-color-input-error-label: #cc0000;
 
 // Links
-@cdr-color-link: #426c90;
-@cdr-color-link-icon: #426c90;
+@cdr-color-link: #347cb1;
+@cdr-color-link-icon: #347cb1;
 @cdr-color-link-contrast: #ffffff;
 @cdr-color-link-icon-contrast: #ffffff;
 
