@@ -1,3 +1,9 @@
+##1.7.8
+Bugfixes:
+- star color updates
+- secondary button border color updates
+- breadcrumb text-decoration on hover
+
 ##1.7.7
 Bugfixes:
 - link color updates
