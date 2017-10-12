@@ -13,7 +13,7 @@
       img-radius="top">
         <div v-if="this.label != null" class="cdr-card--activity__label">{{label}}</div>
         <cdr-heading v-if="this.title != null" :level="titleLevel">
-          <cdr-a class="cdr-card--activity__title cdr-card--activity__title--action" :href="titleUrl" :target="titleTarget">{{title}}</cdr-a>
+          <cdr-a class="cdr-card--activity__title cdr-card--activity__title--action" :href="titleUrl" :target="titleTarget" @click="onClick">{{title}}</cdr-a>
         </cdr-heading>
         <cdr-list v-if="snapshot" class="cdr-card--activity__snapshot" modifier="inline bulleted">
           <li v-for="item in snapshot">
@@ -134,6 +134,13 @@ export default {
     */
     count: {
       type: [String, Number],
+    },
+    /**
+     * Add custom click actions to the link.
+     */
+    onClick: {
+      type: Function,
+      default: () => () => null,
     },
   },
 };
