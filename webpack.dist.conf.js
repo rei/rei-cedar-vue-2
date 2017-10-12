@@ -25,12 +25,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env,
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false,
-    //   },
-    //   sourceMap: true,
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      }
+    }),
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/cedar-components.[contenthash].css'),
     }),
@@ -39,7 +38,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new OptimizeCSSPlugin({
       cssProcessorOptions: {
         safe: true,
-      },
+      }
     }),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
