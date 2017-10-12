@@ -3,7 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <title>Webpack App</title>
+    <script src="https://unpkg.com/vue"></script>
   </head>
   <body>
-  <script type="text/javascript" src="/static/js/manifest.js"></script><script type="text/javascript" src="/static/js/rei-cdr-a.js"></script></body>
+    <div id="app">
+      <cdr-a>Testing the Link</cdr-a>
+    </div>
+  <script type="text/javascript" src="/static/js/rei-cdr-a.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: "#app"
+    });
+  </script>
+</body>
 </html>

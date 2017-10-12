@@ -14,7 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
     filename: path.posix.join('static', 'js/[name].js'),
-    chunkFilename: path.posix.join('static', 'js/[id].[chunkhash].js'),
+    // chunkFilename: path.posix.join('static', 'js/[id].[chunkhash].js'),
     libraryTarget: 'umd',
     library: 'CdrAnchor',
     umdNamedDefine: true,
