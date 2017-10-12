@@ -104,9 +104,9 @@
 @cdr-color-btn-primary-active: #2b455c;
 @cdr-color-btn-primary-active-stroke: #2b455c;
 @cdr-color-btn-secondary: #ffffff;
-@cdr-color-btn-secondary-stroke: #767676;
+@cdr-color-btn-secondary-stroke: #c5c5c5;
 @cdr-color-btn-secondary-active: #f0f0f0;
-@cdr-color-btn-secondary-active-stroke: #767676;
+@cdr-color-btn-secondary-active-stroke: #c5c5c5;
 @cdr-color-btn-text: #ffffff;
 @cdr-color-btn-text-active: #ffffff;
 @cdr-color-btn-primary-disabled: #c5c5c5;
@@ -124,6 +124,8 @@
 @cdr-color-btn-icon-icon: #2e2e2e;
 @cdr-color-btn-icon-stroke: #2e2e2e;
 @cdr-color-btn-icon-hover: #f0f0f0;
+@cdr-color-btn-link: #347cb1;
+@cdr-color-btn-link-icon: #347cb1;
 
 // Card
 @cdr-color-activity-card: #ffffff;
@@ -177,7 +179,7 @@
 @cdr-color-list-circle-stroke: #2e2e2e;
 
 // Ratings
-@cdr-color-rating: #2e2e2e;
+@cdr-color-rating: #bd5b0d;
 @cdr-color-rating-bg: #c5c5c5;
 @cdr-color-rating-text: #2e2e2e;
 @cdr-color-rating-text-sm: #767676;
