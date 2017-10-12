@@ -1,23 +1,48 @@
 <template>
   <div :class="[modifierClass]">
-    <cdr-icon
-    v-if="iconUrl"
-    class="cdr-media-object__figure"
-    :class="imgClass"
-    :url="iconUrl"></cdr-icon>
-    <cdr-img
-    v-else
-    class="cdr-media-object__figure"
-    v-bind="$attrs"
-    :class="imgClass"
-    :alt="imgAlt"
-    :src="imgSrc"
-    :ratio="imgRatio"
-    :crop="imgCrop"
-    :cover="imgCover"
-    :radius="imgRadius"
-    :modifier="imgModifier"
-    :style="mediaWidth"></cdr-img>
+    <template v-if="imgHref">
+      <cdr-a :href="imgHref" target="imgTarget">
+        <span class="u-sr-only">{{imgHrefText}}</span>
+        <cdr-icon
+        v-if="iconUrl"
+        class="cdr-media-object__figure"
+        :class="imgClass"
+        :url="iconUrl"></cdr-icon>
+        <cdr-img
+        v-else
+        class="cdr-media-object__figure"
+        v-bind="$attrs"
+        :class="imgClass"
+        :alt="imgAlt"
+        :src="imgSrc"
+        :ratio="imgRatio"
+        :crop="imgCrop"
+        :cover="imgCover"
+        :radius="imgRadius"
+        :modifier="imgModifier"
+        :style="mediaWidth"></cdr-img>
+      </cdr-a>
+    </template>
+    <template v-else>
+      <cdr-icon
+      v-if="iconUrl"
+      class="cdr-media-object__figure"
+      :class="imgClass"
+      :url="iconUrl"></cdr-icon>
+      <cdr-img
+      v-else
+      class="cdr-media-object__figure"
+      v-bind="$attrs"
+      :class="imgClass"
+      :alt="imgAlt"
+      :src="imgSrc"
+      :ratio="imgRatio"
+      :crop="imgCrop"
+      :cover="imgCover"
+      :radius="imgRadius"
+      :modifier="imgModifier"
+      :style="mediaWidth"></cdr-img>
+    </template>
     <div class="cdr-media-object__body" :class="alignClass">
       <slot></slot>
     </div>
@@ -25,6 +50,7 @@
 </template>
 
 <script>
+import cdrA from '../anchor/cdrA';
 import cdrImg from '../image/cdrImg';
 import cdrIcon from '../icon/cdrIcon';
 import modifier from '../../mixins/modifier';
@@ -34,6 +60,7 @@ export default {
   mixins: [modifier],
   inheritAttrs: false,
   components: {
+    cdrA,
     cdrImg,
     cdrIcon,
   },
@@ -100,6 +127,18 @@ export default {
      * See cdr-img
     */
     imgModifier: String,
+    /**
+     * Link the image
+    */
+    imgHref: String,
+    /**
+     * Screen reader text for the linked image
+    */
+    imgHrefText: String,
+    /**
+     * Target for the image link
+    */
+    imgTarget: String,
   },
   computed: {
     baseClass() {

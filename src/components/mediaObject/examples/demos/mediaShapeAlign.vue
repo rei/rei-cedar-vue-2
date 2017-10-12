@@ -14,7 +14,10 @@
       <cdr-col span="6">
         <cdr-media-object
           img-src="http://placehold.it/50x50"
-          img-modifier="circle">
+          img-modifier="circle"
+          img-href="https://www.google.com"
+          img-href-text="screen reader text"
+          img-target="_blank">
           <cdr-heading level="3"><a href="https://rei.com">Circle image shape</a></cdr-heading>
           <p>Issaquah Alps, WA</p>
         </cdr-media-object>
