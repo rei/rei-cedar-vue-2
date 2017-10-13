@@ -1,3 +1,8 @@
+
+##1.7.9
+Bugfixes:
+- select box text bug on safari
+
 ##1.7.8
 Bugfixes:
 - star color updates
