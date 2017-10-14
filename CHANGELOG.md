@@ -1,3 +1,8 @@
+<a name="1.7.12"></a>
+## [1.7.12](https://github.com/rei/rei-cedar/compare/1.7.11...1.7.12) (2017-10-14)
+
+
+
 <a name="1.7.11"></a>
 ## [1.7.11](https://github.com/rei/rei-cedar/compare/v1.7.10...v1.7.11) (2017-10-14)
 
