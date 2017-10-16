@@ -16,6 +16,7 @@
 		"babel-register": "^6.26.0",
 		"browser-sync": "^2.18.13",
 		"browser-sync-webpack-plugin": "^1.2.0",
+		"clean-webpack-plugin": "^0.1.17",
 		"copy-webpack-plugin": "^4.1.1",
 		"eslint-friendly-formatter": "^3.0.0",
 		"extract-css-chunks-webpack-plugin": "^2.0.17",

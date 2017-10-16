@@ -1,12 +1,12 @@
 {
-  "name": "rei-cedar-a",
-  "version": "0.0.1",
+  "name": "cedar-a",
+  "version": "1.0.3",
   "description": "REI Cedar Style Framework - Vue Component for Anchor",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-a",
   "license": "ISC",
   "author": "REI Software Engineering",
-  "private": true,
-  "main": "dist/rei-cedar-a.js",
+  "private": false,
+  "main": "dist/cdr-a.js",
   "scripts": {
     "build": "node build/build.js"
   },
@@ -30,7 +30,7 @@
     "chai": "^4.1.0",
     "chalk": "^2.0.1",
     "chromedriver": "^2.30.1",
-    "clean-webpack-plugin": "^0.1.16",
+    "clean-webpack-plugin": "^0.1.17",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.1",

@@ -15,7 +15,7 @@ const spinner = ora('building cdr-a for production...');
 spinner.start();
 
 rm(
-  path.resolve(__dirname, '../dist/static'),
+  path.resolve(__dirname, '../dist'),
   (err) => {
     if (err) throw err;
     webpack(webpackConfig, (err2, stats) => {

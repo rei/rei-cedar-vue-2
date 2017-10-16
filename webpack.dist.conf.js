@@ -5,7 +5,6 @@ const merge = require('webpack-merge');
 const config = require('./config');
 const baseWebpackConfig = require('./webpack.common.conf');
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
@@ -39,15 +38,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       cssProcessorOptions: {
         safe: true,
       }
-    }),
-    // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'static'),
-        to: config.release.assetsSubDirectory,
-        ignore: ['.*'],
-      },
-    ]),
+    })
   ],
 });
 
