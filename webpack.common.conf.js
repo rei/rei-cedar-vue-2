@@ -1,5 +1,6 @@
 const path = require('path');
 const utils = require('./build/utils');
+const vueLoaderConfig = require('./build/vue-loader.conf');
 // const config = require('./config');
 // const mainPostConfig = require('../build/mainPost.conf.js');
 
@@ -31,7 +32,18 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: 'vue-loader',
+        use: [
+          {
+            loader: 'vue-loader',
+            options: vueLoaderConfig
+          },
+          {
+            loader: 'vue-theme-loader',
+            options: {
+              theme: 'default',
+            }
+          }
+        ],
       },
       {
         test: /\.js$/,
@@ -39,8 +51,7 @@ module.exports = {
         include: [resolve('src'), resolve('test')],
       },
       {
-        test: /\.postcss$/,
-        include: [resolve('src/css')],
+        test: /\.(postcss|pcss)$/,
         use: 'postcss-loader',
       },
       {

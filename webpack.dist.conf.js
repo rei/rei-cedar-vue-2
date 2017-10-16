@@ -7,7 +7,6 @@ const baseWebpackConfig = require('./webpack.common.conf');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
-const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 
 const env = config.release.env;
 
@@ -29,9 +28,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     //     warnings: false,
     //   }
     // }),
-    // extract css into separate files
-    // new ExtractCssChunks('cedar-core.css'),
-    new ExtractTextPlugin('cedar-components.css'),
+    new ExtractTextPlugin('[name].css'),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
