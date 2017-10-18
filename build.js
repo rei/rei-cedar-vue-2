@@ -9,14 +9,15 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const compStr = String(process.argv.component);
-const capComp = compStr.charAt(0).toUpperCase() + compStr.slice(1);
 const buildConfig = require(`./${process.argv[2]}`);
-const componentFolder = `/src/npm_components/${process.argv[3]}`;
+const component = process.argv[3];
+const capComp = component.charAt(0).toUpperCase() + component.slice(1);
+const componentFolder = `/src/npm_components/${component}`;
+const tagName = process.argv[4];
 
 const componentConfig = {
   entry: {
-    ['cdr-' + process.argv[4]]: path.resolve(__dirname, `.${componentFolder}/plugin.js`),
+    ['cdr-' + tagName]: path.resolve(__dirname, `.${componentFolder}/plugin.js`),
   },
   output: {
     path: path.resolve(__dirname, `.${componentFolder}/dist`),
@@ -33,7 +34,7 @@ const componentConfig = {
       filename: 'index.html',
       inject: true,
       template: 'index.ejs',
-      tagName: `cdr-${process.argv[4]}`,
+      tagName: `cdr-${tagName}`,
       minify: {
         removeComments: true,
         collapseWhitespace: false,
@@ -57,7 +58,7 @@ const componentConfig = {
 
 const webpackConfig = merge(buildConfig, componentConfig);
 
-const spinner = ora(`building cdr-${process.argv[4]} for production...`);
+const spinner = ora(`building cdr-${tagName} for production...`);
 spinner.start();
 
 rm(
@@ -75,7 +76,7 @@ rm(
         chunkModules: false,
       })}\n\n`);
 
-      console.log(chalk.cyan(`  Build of cdr-${process.argv[4]} complete.\n`));
+      console.log(chalk.cyan(`  Build of cdr-${tagName} complete.\n`));
     });
   }
 );

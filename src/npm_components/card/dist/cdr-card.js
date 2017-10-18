@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("CdrUndefined", [], factory);
+		define("CdrCard", [], factory);
 	else if(typeof exports === 'object')
-		exports["CdrUndefined"] = factory();
+		exports["CdrCard"] = factory();
 	else
-		root["CdrUndefined"] = factory();
+		root["CdrCard"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache

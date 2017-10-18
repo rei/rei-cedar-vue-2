@@ -237,7 +237,12 @@ module.exports = function normalizeComponent (
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_modifier__ = __webpack_require__(5);
-
+//
+//
+//
+//
+//
+//
 
 
 
@@ -249,11 +254,11 @@ module.exports = function normalizeComponent (
     rel: String
   },
   computed: {
-    baseClass: function baseClass() {
-      var modifiers = this.modifier ? this.modifier.split(' ') : [];
+    baseClass() {
+      const modifiers = this.modifier ? this.modifier.split(' ') : [];
       return modifiers.indexOf('button') >= 0 ? 'cdr-button' : 'cdr-link';
     },
-    newRel: function newRel() {
+    newRel() {
       if (this.target === '_blank') {
         return this.rel || 'noopener noreferrer';
       }

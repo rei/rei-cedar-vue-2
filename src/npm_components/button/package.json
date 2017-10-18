@@ -8,7 +8,7 @@
   "private": false,
   "main": "dist/cdr-button.js",
   "scripts": {
-    "build": "node build/build.js"
+    "build": "node ../../../build.js webpack.dist.conf button button"
   },
   "peerDependencies": {
     "vue": "^2.4.2"
