@@ -1,7 +1,7 @@
-import CdrButton from './CdrButton';
+import CdrCard from './cdrCard';
 
 function install(Vue) {
-  Vue.component('cdr-button', CdrButton);
+  Vue.component('cdr-card', CdrCard);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -10,4 +10,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default install;
 
-export { CdrButton };
+export { CdrCard };

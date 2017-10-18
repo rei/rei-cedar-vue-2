@@ -79,12 +79,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrButton__ = __webpack_require__(1);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrButton", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrButton__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CdrButton__ = __webpack_require__(1);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrButton", function() { return __WEBPACK_IMPORTED_MODULE_0__CdrButton__["a"]; });
 
 
 function install(Vue) {
-  Vue.component('cdr-button', __WEBPACK_IMPORTED_MODULE_0__cdrButton__["a" /* default */]);
+  Vue.component('cdr-button', __WEBPACK_IMPORTED_MODULE_0__CdrButton__["a" /* default */]);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -101,8 +101,9 @@ if (typeof window !== 'undefined' && window.Vue) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrButton_vue__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4dc9b698_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrButton_vue__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_CdrButton_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_CdrButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_CdrButton_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_08ba5494_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_CdrButton_vue__ = __webpack_require__(5);
 function injectStyle (ssrContext) {
   __webpack_require__(2)
 }
@@ -111,6 +112,8 @@ var normalizeComponent = __webpack_require__(3)
 
 /* template */
 
+/* template functional */
+  var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
@@ -118,8 +121,9 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrButton_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4dc9b698_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrButton_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_CdrButton_vue__["default"],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_08ba5494_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_CdrButton_vue__["a" /* default */],
+  __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
@@ -140,12 +144,14 @@ var Component = normalizeComponent(
 
 /* globals __VUE_SSR_CONTEXT__ */
 
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
 
 module.exports = function normalizeComponent (
   rawScriptExports,
   compiledTemplate,
+  functionalTemplate,
   injectStyles,
   scopeId,
   moduleIdentifier /* server only */
@@ -169,6 +175,12 @@ module.exports = function normalizeComponent (
   if (compiledTemplate) {
     options.render = compiledTemplate.render
     options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
   }
 
   // scopedId
@@ -209,12 +221,16 @@ module.exports = function normalizeComponent (
     var existing = functional
       ? options.render
       : options.beforeCreate
+
     if (!functional) {
       // inject component registration as beforeCreate hook
       options.beforeCreate = existing
         ? [].concat(existing, hook)
         : [hook]
     } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
       // register for functioal component in vue file
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -233,121 +249,12 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_theme__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_modifier__ = __webpack_require__(6);
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'cdr-button',
-  mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_theme__["a" /* default */], __WEBPACK_IMPORTED_MODULE_1__mixins_modifier__["a" /* default */]],
-  props: {
-    type: {
-      type: String,
-      default: 'button',
-      validator: function validator(value) {
-        return ['button', 'submit', 'reset'].indexOf(value) >= 0 || false;
-      }
-    },
-
-    onClick: {
-      type: Function,
-      default: function _default() {
-        return function () {
-          return null;
-        };
-      }
-    }
-  },
-  computed: {
-    baseClass: function baseClass() {
-      var modifiers = this.modifier ? this.modifier.split(' ') : [];
-      return modifiers.indexOf('link') >= 0 ? 'cdr-link' : 'cdr-button';
-    }
-  }
-});
+throw new Error("Module build failed: ReferenceError: Unknown plugin \"transform-runtime\" specified in \"/Users/alltayl/Repos/rei-cedar/.babelrc\" at 0, attempted to resolve relative to \"/Users/alltayl/Repos/rei-cedar\"\n    at /Users/alltayl/Repos/rei-cedar/src/npm_components/button/node_modules/babel-core/lib/transformation/file/options/option-manager.js:180:17\n    at Array.map (<anonymous>)\n    at Function.normalisePlugins (/Users/alltayl/Repos/rei-cedar/src/npm_components/button/node_modules/babel-core/lib/transformation/file/options/option-manager.js:158:20)\n    at OptionManager.mergeOptions (/Users/alltayl/Repos/rei-cedar/src/npm_components/button/node_modules/babel-core/lib/transformation/file/options/option-manager.js:234:36)\n    at OptionManager.init (/Users/alltayl/Repos/rei-cedar/src/npm_components/button/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)\n    at File.initOptions (/Users/alltayl/Repos/rei-cedar/src/npm_components/button/node_modules/babel-core/lib/transformation/file/index.js:212:65)\n    at new File (/Users/alltayl/Repos/rei-cedar/src/npm_components/button/node_modules/babel-core/lib/transformation/file/index.js:135:24)\n    at Pipeline.transform (/Users/alltayl/Repos/rei-cedar/src/npm_components/button/node_modules/babel-core/lib/transformation/pipeline.js:46:16)\n    at transpile (/Users/alltayl/Repos/rei-cedar/src/npm_components/button/node_modules/babel-loader/lib/index.js:50:20)\n    at Object.module.exports (/Users/alltayl/Repos/rei-cedar/src/npm_components/button/node_modules/babel-loader/lib/index.js:175:20)");
 
 /***/ }),
 /* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/**
- * Use of this mixin requires adding either a data value or computed property
- * of 'baseClass' that is a string of the base class value
- */
-/**
- * @mixin
- */
-/* harmony default export */ __webpack_exports__["a"] = ({
-  props: {
-    /**
-     * Name of the css module theme
-     */
-    theme: String,
-  },
-  computed: {
-    themeClass() {
-      const base = this.baseClass;
-      const modifierArr = this.modifier ? this.modifier.split(' ') : [];
-      let final = '';
-
-      if (this.theme) {
-        final += `${this[this.theme][base]} `;
-
-        modifierArr.forEach((mod) => {
-          final += `${this[this.theme][`${base}--${mod}`]} `;
-        });
-      }
-
-      return final;
-    },
-  },
-});
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/**
- * @mixin
- */
-/* harmony default export */ __webpack_exports__["a"] = ({
-  props: {
-    /**
-     * Space separated list of modifiers. See below for possible values
-     */
-    modifier: String,
-  },
-  computed: {
-    modifierClass() {
-      const base = this.baseClass;
-      const modifierArr = this.modifier ? this.modifier.split(' ') : [];
-      let final = '';
-
-      if (!this.theme) {
-        final += `${base}`;
-
-        modifierArr.forEach((mod) => {
-          final += ` ${base}--${mod} `;
-        });
-      }
-
-      return final;
-    },
-  },
-});
-
-
-/***/ }),
-/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
