@@ -1,26 +1,40 @@
+<a name="1.7.12"></a>
+## [1.7.12](https://github.com/rei/rei-cedar/compare/1.7.11...1.7.12) (2017-10-14)
 
-##1.7.10
+
+
+<a name="1.7.11"></a>
+## [1.7.11](https://github.com/rei/rei-cedar/compare/v1.7.10...v1.7.11) (2017-10-14)
+
+
+
+<a name="1.7.10"></a>
+## [1.7.10](https://github.com/rei/rei-cedar/compare/v1.7.9...v1.7.10) (2017-10-14)
 Bugfixes:
 - select box text bug on safari
 
-##1.7.8
+<a name="1.7.8"></a>
+## [1.7.8](https://github.com/rei/rei-cedar/compare/v1.7.7...v1.7.8)
 Bugfixes:
 - star color updates
 - secondary button border color updates
 - breadcrumb text-decoration on hover
 
-##1.7.7
+<a name="1.7.7"></a>
+## [1.7.7](https://github.com/rei/rei-cedar/compare/v1.7.6...v1.7.7)
 Bugfixes:
 - link color updates
 
-##1.7.6
+<a name="1.7.6"></a>
+## [1.7.6](https://github.com/rei/rei-cedar/compare/v1.7.5...v1.7.6)
 Features:
 - btn-icon
 - btn-bare
 Bugfixes:
 - text-decoration turned on by default
 
-##1.7.5
+<a name="1.7.5"></a>
+## [1.7.5](https://github.com/rei/rei-cedar/compare/v1.7.4...v1.7.5)
 Features:
 - transparent button utility class
 - link text decoration skip
@@ -31,28 +45,33 @@ Bugfixes:
 - md button font and spacing updates
 - close button sizing updates
 
-##1.7.4
+<a name="1.7.4"></a>
+## [1.7.4](https://github.com/rei/rei-cedar/compare/v1.7.3...v1.7.4)
 Features:
 - update to focus and hover state of tab items
 
 
-##1.7.3
+<a name="1.7.3"></a>
+## [1.7.3](https://github.com/rei/rei-cedar/compare/v1.7.2...v1.7.3)
 Bugfixes:
 - restrain close button from going full width at xs breakpoint
 
 
-##1.7.2
+<a name="1.7.2"></a>
+## [1.7.2](https://github.com/rei/rei-cedar/compare/v1.7.1...v1.7.2)
 Bugfixes:
 - close button on modal was not assigned the icon font correctly
 
-##1.7.1
+<a name="1.7.1"></a>
+## [1.7.1](https://github.com/rei/rei-cedar/compare/v1.7.0...v1.7.1)
 Bugfixes:
 - close button padding increase
 - input lg padding increase
 - medium button font family to redwood-ui-40
 - update to brand.ai variables
 
-##1.7.0
+<a name="1.7.0"></a>
+## [1.7.0](https://github.com/rei/rei-cedar/compare/v1.6.3...v1.7.0)
 Features:
 - Button design updates
 - Input design updates
@@ -60,65 +79,79 @@ Features:
 - Form updates
 - Validation markup and design updates, still supports old markup contract
 
-## 1.6.3
+<a name="1.6.3"></a>
+## [1.6.3](https://github.com/rei/rei-cedar/compare/v1.6.2...v1.6.3)
 Features:
 - Adding event riot components
 
-## 1.6.2
+<a name="1.6.2"></a>
+## [1.6.2](https://github.com/rei/rei-cedar/compare/v1.6.1...v1.6.2)
 Features:
 - removing jQuery from video modal ui-component
 
-## 1.5
+<a name="1.5.1"></a>
+## [1.5.1](https://github.com/rei/rei-cedar/compare/v1.5.0...v1.5.1)
 Features:
 - Riot modals.
 - Open and closed type classes for lineheight.
 
-## 1.5
+<a name="1.5"></a>
+## [1.5](https://github.com/rei/rei-cedar/compare/v1.2.11...v1.5)
 Features:
 - Typograpgy updates.
 
-## 1.2.11  2016-08-25 Michael Hewson  <mhewson@rei.com.com>
+<a name="1.2.11"></a>
+## [1.2.11](https://github.com/rei/rei-cedar/compare/v1.2.10...v1.2.11)
 Bugfixes:
 - Bootstrap added to project and import removed.
 
-## 1.2.10  2016-08-24 Michael Hewson  <mhewson@rei.com.com>
+<a name="1.2.10"></a>
+## [1.2.10](https://github.com/rei/rei-cedar/compare/v1.2.9...v1.2.10)
 Features:
 - BackstopJs visual regression
 - Bootstrap removed from project and imported to main less file.
 - first pass of css-usage-report 
 
-## 1.2.9
+<a name="1.2.9"></a>
+## [1.2.9](https://github.com/rei/rei-cedar/compare/v1.2.5...v1.2.9)
 Features:
 - Set image sharpening to be an opt-in by assigning .img-sharpen class rather than being a built in feature of .img-frame
 
-## 1.2.5  2016-05-31 Michael Hewson  <mhewson@rei.com.com>
+<a name="1.2.5"></a>
+## [1.2.5](https://github.com/rei/rei-cedar/compare/v1.2.4...v1.2.5)
 Features:
 - BackstopJs visual regression first pass
 
-## 1.2.4  2016-03-18 Michael Hewson  <mhewson@rei.com.com>
+<a name="1.2.4"></a>
+## [1.2.4](https://github.com/rei/rei-cedar/compare/v1.2.2...v1.2.4)
 Features:
 - Toggle between float and flex grid by adding the row-flex class to existing rows
 
-## 1.2.2  2016-03-18 Michael Hewson  <mhewson@rei.com.com>
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/rei/rei-cedar/compare/v1.2.1...v1.2.2)
 Bugfixes:
 - adding padding to container and -margin to row
 
-## 1.2.1  2016-03-18 Michael Hewson  <mhewson@rei.com.com>
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/rei/rei-cedar/compare/v1.2.0...v1.2.1)
 Bugfixes:
 - adding position relative to cols
 - setting col to display inline-block
 
-## 1.2.0  2016-03-16 Michael Hewson  <mhewson@rei.com.com>
+<a name="1.2.0"></a>
+## [1.2.0](https://github.com/rei/rei-cedar/compare/v1.1.0...v1.2.0)
 Features:
 - Move from bootstrap 3.6 float based grid to flex grid.
 Bugfixes:
 - Reset hamburger text size from 1.8rem to 2.4 rem.
 
-## 1.1.0  2016-03-9 Michael Hewson  <mhewson@rei.com.com>
+<a name="1.1.0"></a>
+## [1.1.0](https://github.com/rei/rei-cedar/compare/v1.0.0...v1.1.0)(2016-03-9)
 Features:
 - Move from px to rem.
 
-## 1.0.0  2016-02-19 Michael Hewson  <mhewson@rei.com.com>
+<a name="1.0.0"></a>
+## [1.0.0](https://github.com/rei/rei-cedar/v1.0.0)(2016-02-19)
 Features:
  - Moves former ui-framework project to Github <https://github.com/rei/rei-cedar>
  - Re-brands project as rei-cedar.
