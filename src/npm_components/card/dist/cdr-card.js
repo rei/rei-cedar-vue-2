@@ -102,8 +102,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrCard_vue__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrCard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrCard_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b242f20_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrCard_vue__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b242f20_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrCard_vue__ = __webpack_require__(6);
 function injectStyle (ssrContext) {
   __webpack_require__(2)
 }
@@ -121,7 +120,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrCard_vue__["default"],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrCard_vue__["a" /* default */],
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b242f20_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrCard_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
@@ -249,12 +248,66 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: ReferenceError: Unknown plugin \"transform-runtime\" specified in \"/Users/alltayl/Repos/rei-cedar/.babelrc\" at 0, attempted to resolve relative to \"/Users/alltayl/Repos/rei-cedar\"\n    at /Users/alltayl/Repos/rei-cedar/src/npm_components/card/node_modules/babel-core/lib/transformation/file/options/option-manager.js:180:17\n    at Array.map (<anonymous>)\n    at Function.normalisePlugins (/Users/alltayl/Repos/rei-cedar/src/npm_components/card/node_modules/babel-core/lib/transformation/file/options/option-manager.js:158:20)\n    at OptionManager.mergeOptions (/Users/alltayl/Repos/rei-cedar/src/npm_components/card/node_modules/babel-core/lib/transformation/file/options/option-manager.js:234:36)\n    at OptionManager.init (/Users/alltayl/Repos/rei-cedar/src/npm_components/card/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)\n    at File.initOptions (/Users/alltayl/Repos/rei-cedar/src/npm_components/card/node_modules/babel-core/lib/transformation/file/index.js:212:65)\n    at new File (/Users/alltayl/Repos/rei-cedar/src/npm_components/card/node_modules/babel-core/lib/transformation/file/index.js:135:24)\n    at Pipeline.transform (/Users/alltayl/Repos/rei-cedar/src/npm_components/card/node_modules/babel-core/lib/transformation/pipeline.js:46:16)\n    at transpile (/Users/alltayl/Repos/rei-cedar/src/npm_components/card/node_modules/babel-loader/lib/index.js:50:20)\n    at Object.module.exports (/Users/alltayl/Repos/rei-cedar/src/npm_components/card/node_modules/babel-loader/lib/index.js:175:20)");
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_modifier__ = __webpack_require__(5);
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'cdr-card',
+  mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_modifier__["a" /* default */]],
+  computed: {
+    baseClass() {
+      return 'cdr-card';
+    }
+  }
+});
 
 /***/ }),
 /* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * @mixin
+ */
+/* harmony default export */ __webpack_exports__["a"] = ({
+  props: {
+    /**
+     * Space separated list of modifiers. See below for possible values
+     */
+    modifier: String,
+  },
+  computed: {
+    modifierClass() {
+      const base = this.baseClass;
+      const modifierArr = this.modifier ? this.modifier.split(' ') : [];
+      let final = '';
+
+      if (!this.theme) {
+        final += `${base}`;
+
+        modifierArr.forEach((mod) => {
+          final += ` ${base}--${mod} `;
+        });
+      }
+
+      return final;
+    },
+  },
+});
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

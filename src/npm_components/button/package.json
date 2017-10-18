@@ -111,7 +111,6 @@
     "svg-sprite": "^1.3.7",
     "svgxuse": "^1.2.4",
     "tenon-node": "^0.4.0",
-    "transform-runtime": "^0.0.0",
     "url-loader": "^0.5.9",
     "vue": "^2.4.4",
     "vue-loader": "^13.3.0",
