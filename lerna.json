@@ -2,7 +2,9 @@
   "lerna": "2.1.2",
   "packages": [
     "packages/*",
-    "src/npm_components/anchor"
+    "src/npm_components/anchor",
+    "src/npm_components/button",
+    "src/npm_components/checkbox"
   ],
   "npmClient": "yarn",
   "version": "independent"
