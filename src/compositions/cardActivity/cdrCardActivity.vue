@@ -2,6 +2,8 @@
   <cdr-card modifier="activity">
     <section class="cdr-inset cdr-inset--remove-top">
       <cdr-media-object
+      :lazy="lazy"
+      :lazyOpts="lazyOpts"
       :img-src="media"
       :img-alt="mediaAlt"
       :img-crop="mediaCrop"
@@ -42,9 +44,11 @@ import cdrImg from '@/components/image/cdrImg';
 import cdrMediaObject from '@/components/mediaObject/cdrMediaObject';
 import cdrRating from '@/components/rating/cdrRating';
 import cdrList from '@/components/list/cdrList';
+import lazyImage from '@/mixins/lazyImage';
 
 export default {
   name: 'cdr-card-activity',
+  mixins: [lazyImage],
   components: {
     cdrA,
     cdrCard,

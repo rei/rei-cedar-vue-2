@@ -1,9 +1,9 @@
 <template>
   <div v-if="ratio" class="cdr-media-frame" :class="[ratioClass, cropClass]">
-    <div :class="[coverClass, lazyClass]" :style="styleObject" aria-hidden="true" v-bind="$attrs"></div>
-    <img class="cdr-media-frame__image cdr-media-frame__image--hidden" :class="[modifierClass, radiusClass]" :src="src" :alt="alt" v-bind="$attrs">
+    <div :class="[coverClass, lazyClass]" :style="styleObject" aria-hidden="true" v-bind="lazyAttrs"></div>
+    <img class="cdr-media-frame__image cdr-media-frame__image--hidden" :class="[modifierClass, radiusClass]" :src="src" :alt="alt">
   </div>
-  <img v-else :class="[modifierClass, radiusClass, lazyClass]" :src="src" :alt="alt" v-bind="$attrs">
+  <img v-else :class="[modifierClass, radiusClass, lazyClass]" :src="src" :alt="alt" v-bind="lazyAttrs">
 </template>
 
 <script>
@@ -12,7 +12,6 @@ import modifier from '../../mixins/modifier';
 export default {
   name: 'cdr-img',
   mixins: [modifier],
-  inheritAttrs: false,
   props: {
     /**
      * Required. Image source url.
@@ -33,6 +32,13 @@ export default {
      */
     lazy: {
       type: Boolean,
+    },
+    /**
+     * Object of lazy options
+     */
+    lazyOpts: {
+      type: Object,
+      default: () => {},
     },
     /**
      * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
@@ -150,6 +156,15 @@ export default {
       return {
         backgroundImage: `url(${this.src})`,
       };
+    },
+    lazyAttrs() {
+      const attrObj = {};
+      if (this.lazy) {
+        Object.keys(this.lazyOpts).forEach((opt) => {
+          attrObj[`data-src-${opt}`] = this.lazyOpts[opt];
+        });
+      }
+      return attrObj;
     },
   },
 };

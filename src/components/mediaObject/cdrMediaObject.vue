@@ -11,7 +11,8 @@
         <cdr-img
         v-else
         class="cdr-media-object__figure"
-        v-bind="$attrs"
+        :lazy="lazy"
+        :lazyOpts="lazyOpts"
         :class="imgClass"
         :alt="imgAlt"
         :src="imgSrc"
@@ -32,7 +33,8 @@
       <cdr-img
       v-else
       class="cdr-media-object__figure"
-      v-bind="$attrs"
+      :lazy="lazy"
+      :lazyOpts="lazyOpts"
       :class="imgClass"
       :alt="imgAlt"
       :src="imgSrc"
@@ -50,15 +52,15 @@
 </template>
 
 <script>
-import cdrA from '../anchor/cdrA';
-import cdrImg from '../image/cdrImg';
-import cdrIcon from '../icon/cdrIcon';
-import modifier from '../../mixins/modifier';
+import cdrA from '@/components/anchor/cdrA';
+import cdrImg from '@/components/image/cdrImg';
+import cdrIcon from '@/components/icon/cdrIcon';
+import modifier from '@/mixins/modifier';
+import lazyImage from '@/mixins/lazyImage';
 
 export default {
   name: 'cdr-media-object',
-  mixins: [modifier],
-  inheritAttrs: false,
+  mixins: [modifier, lazyImage],
   components: {
     cdrA,
     cdrImg,
