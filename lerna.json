@@ -4,7 +4,11 @@
     "packages/*",
     "src/npm_components/anchor",
     "src/npm_components/button",
-    "src/npm_components/checkbox"
+    "src/npm_components/checkbox",
+    "src/npm_components/heading",
+    "src/npm_components/icon",
+    "src/npm_components/image",
+    "src/npm_components/input"
   ],
   "npmClient": "yarn",
   "version": "independent"
