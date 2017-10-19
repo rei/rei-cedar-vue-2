@@ -161,7 +161,7 @@ export default {
       const attrObj = {};
       if (this.lazy) {
         Object.keys(this.lazyOpts).forEach((opt) => {
-          attrObj[`data-src-${opt}`] = this.lazyOpts[opt];
+          attrObj[`data-${opt}`] = this.lazyOpts[opt];
         });
       }
       return attrObj;
