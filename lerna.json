@@ -4,6 +4,7 @@
     "packages/*",
     "src/npm_components/anchor",
     "src/npm_components/button",
+    "src/npm_components/card",
     "src/npm_components/checkbox",
     "src/npm_components/heading",
     "src/npm_components/icon",
