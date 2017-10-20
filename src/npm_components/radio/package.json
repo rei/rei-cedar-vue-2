@@ -1,14 +1,14 @@
 {
-  "name": "cedar-select",
+  "name": "cedar-radio",
   "version": "0.0.1",
-  "description": "REI Cedar Style Framework - Vue Component for Select",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-select",
+  "description": "REI Cedar Style Framework - Vue Component for Radio",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-radio",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
-  "main": "dist/cdr-select.js",
+  "main": "dist/cdr-radio.js",
   "scripts": {
-    "build": "node ../../../build.js webpack.dist.conf select select"
+    "build": "node ../../../build.js webpack.dist.conf radio radio"
   },
   "peerDependencies": {
     "vue": "^2.4.2"
