@@ -10,7 +10,10 @@
     "src/npm_components/icon",
     "src/npm_components/image",
     "src/npm_components/input",
-    "src/npm_components/list"
+    "src/npm_components/list",
+    "src/npm_components/radio",
+    "src/npm_components/rating",
+    "src/npm_components/select"
   ],
   "npmClient": "yarn",
   "version": "independent"
