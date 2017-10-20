@@ -9,7 +9,8 @@
     "src/npm_components/heading",
     "src/npm_components/icon",
     "src/npm_components/image",
-    "src/npm_components/input"
+    "src/npm_components/input",
+    "src/npm_components/list"
   ],
   "npmClient": "yarn",
   "version": "independent"
