@@ -1,14 +1,19 @@
 {
-  "name": "cedar-checkbox",
-  "version": "0.0.5",
+  "name": "@rei-co-op/cedar-checkbox",
+  "version": "0.0.2",
   "description": "REI Cedar Style Framework - Vue Component for Checkbox",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-checkbox",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-checkbox.js",
+  "config": {
+    "buildConfig": "webpack.dist.conf",
+    "component": "checkbox",
+    "tagName": "checkbox"
+  },
   "scripts": {
-    "build": "node ../../../build.js webpack.dist.conf checkbox checkbox"
+    "build": "node ../../../build.js"
   },
   "peerDependencies": {
     "vue": "^2.4.2"

@@ -1,14 +1,19 @@
 {
-  "name": "cedar-rating",
-  "version": "0.0.5",
+  "name": "@rei-co-op/cedar-rating",
+  "version": "0.0.2",
   "description": "REI Cedar Style Framework - Vue Component for Rating",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-rating",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-rating.js",
+  "config": {
+    "buildConfig": "webpack.dist.conf",
+    "component": "rating",
+    "tagName": "rating"
+  },
   "scripts": {
-    "build": "node ../../../build.js webpack.dist.conf rating rating"
+    "build": "node ../../../build.js"
   },
   "peerDependencies": {
     "vue": "^2.4.2"

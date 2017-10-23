@@ -1,14 +1,19 @@
 {
-  "name": "cedar-radio",
-  "version": "0.0.1",
+  "name": "@rei-co-op/cedar-radio",
+  "version": "0.0.2",
   "description": "REI Cedar Style Framework - Vue Component for Radio",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-radio",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-radio.js",
+  "config": {
+    "buildConfig": "webpack.dist.conf",
+    "component": "radio",
+    "tagName": "radio"
+  },
   "scripts": {
-    "build": "node ../../../build.js webpack.dist.conf radio radio"
+    "build": "node ../../../build.js"
   },
   "peerDependencies": {
     "vue": "^2.4.2"
