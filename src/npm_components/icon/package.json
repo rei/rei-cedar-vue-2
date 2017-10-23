@@ -1,14 +1,19 @@
 {
-  "name": "cedar-icon",
-  "version": "0.0.5",
+  "name": "@rei-co-op/cedar-icon",
+  "version": "0.0.2",
   "description": "REI Cedar Style Framework - Vue Component for Icon",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-icon",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-icon.js",
+  "config": {
+    "buildConfig": "webpack.dist.conf",
+    "component": "icon",
+    "tagName": "icon"
+  },
   "scripts": {
-    "build": "node ../../../build.js webpack.dist.conf icon icon"
+    "build": "node ../../../build.js"
   },
   "peerDependencies": {
     "vue": "^2.4.2"
