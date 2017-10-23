@@ -2,9 +2,12 @@
 # yarn lockfile v1
 
 
-"@rei-co-op/cedar-row@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-row/-/cedar-row-0.0.1.tgz#effbddebe144009f57cbd4220a4a9d67779e5d59"
+"@rei-co-op/cedar-row@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-row/-/cedar-row-0.0.2.tgz#bee8264f062d475f0fb558b79ab3c0ac30fa5fca"
+  dependencies:
+    vue-hot-reload-api "^2.1.1"
+    yarn "^1.2.1"
 
 "@types/core-js@^0.9.41":
   version "0.9.43"
