@@ -9,11 +9,16 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const buildConfig = require(`./${process.argv[2]}`);
-const component = process.argv[3];
+const buildConfig = require(`./${process.env.npm_package_config_buildConfig}`);
+const component = `${process.env.npm_package_config_component}`;
 const capComp = component.charAt(0).toUpperCase() + component.slice(1);
 const componentFolder = `/src/npm_components/${component}`;
-const tagName = process.argv[4];
+const tagName = process.env.npm_package_config_tagName;
+
+// console.log(`build config: ${buildConfig}\n`);
+// console.log(`component: ${component}\n`);
+// console.log(`tag name: ${tagName}\n`);
+// console.log(`component folder name: ${componentFolder}\n`);
 
 const componentConfig = {
   entry: {

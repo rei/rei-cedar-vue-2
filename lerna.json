@@ -13,7 +13,9 @@
     "src/npm_components/list",
     "src/npm_components/radio",
     "src/npm_components/rating",
-    "src/npm_components/select"
+    "src/npm_components/select",
+    "src/npm_components/row",
+    "src/npm_components/column"
   ],
   "npmClient": "yarn",
   "version": "independent"
