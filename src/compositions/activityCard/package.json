@@ -1,8 +1,8 @@
 {
   "name": "@rei-co-op/cedar-activity-card",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "REI Cedar Style Framework - Vue Component for Activity Card",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-activity-card",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-card-activity",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
