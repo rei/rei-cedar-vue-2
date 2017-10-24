@@ -12,7 +12,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const buildConfig = require(`./${process.env.npm_package_config_buildConfig}`);
 const component = `${process.env.npm_package_config_component}`;
 const capComp = component.charAt(0).toUpperCase() + component.slice(1);
-const componentFolder = `/src/npm_components/${component}`;
+const componentFolder = `/src/${(process.env.npm_package_config_composition) ? `compositions`:`npm_components`}/${component}`;
 const tagName = process.env.npm_package_config_tagName;
 
 // console.log(`build config: ${buildConfig}\n`);
