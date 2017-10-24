@@ -1,23 +1,50 @@
 <template>
   <div :class="[modifierClass]">
-    <cdr-icon
-    v-if="iconUrl"
-    class="cdr-media-object__figure"
-    :class="imgClass"
-    :url="iconUrl"></cdr-icon>
-    <cdr-img
-    v-else
-    class="cdr-media-object__figure"
-    v-bind="$attrs"
-    :class="imgClass"
-    :alt="imgAlt"
-    :src="imgSrc"
-    :ratio="imgRatio"
-    :crop="imgCrop"
-    :cover="imgCover"
-    :radius="imgRadius"
-    :modifier="imgModifier"
-    :style="mediaWidth"></cdr-img>
+    <template v-if="imgHref">
+      <cdr-a :href="imgHref" target="imgTarget">
+        <span class="u-sr-only">{{imgHrefText}}</span>
+        <cdr-icon
+        v-if="iconUrl"
+        class="cdr-media-object__figure"
+        :class="imgClass"
+        :url="iconUrl"></cdr-icon>
+        <cdr-img
+        v-else
+        class="cdr-media-object__figure"
+        :lazy="lazy"
+        :lazyOpts="lazyOpts"
+        :class="imgClass"
+        :alt="imgAlt"
+        :src="imgSrc"
+        :ratio="imgRatio"
+        :crop="imgCrop"
+        :cover="imgCover"
+        :radius="imgRadius"
+        :modifier="imgModifier"
+        :style="mediaWidth"></cdr-img>
+      </cdr-a>
+    </template>
+    <template v-else>
+      <cdr-icon
+      v-if="iconUrl"
+      class="cdr-media-object__figure"
+      :class="imgClass"
+      :url="iconUrl"></cdr-icon>
+      <cdr-img
+      v-else
+      class="cdr-media-object__figure"
+      :lazy="lazy"
+      :lazyOpts="lazyOpts"
+      :class="imgClass"
+      :alt="imgAlt"
+      :src="imgSrc"
+      :ratio="imgRatio"
+      :crop="imgCrop"
+      :cover="imgCover"
+      :radius="imgRadius"
+      :modifier="imgModifier"
+      :style="mediaWidth"></cdr-img>
+    </template>
     <div class="cdr-media-object__body" :class="alignClass">
       <slot></slot>
     </div>
@@ -25,15 +52,17 @@
 </template>
 
 <script>
-import cdrImg from './node_modules/@rei-co-op/cedar-image';
-import cdrIcon from './node_modules/@rei-co-op/cedar-icon';
-import modifier from '../../mixins/modifier';
+import cdrA from '@/components/anchor/cdrA';
+import cdrImg from '@/components/image/cdrImg';
+import cdrIcon from '@/components/icon/cdrIcon';
+import modifier from '@/mixins/modifier';
+import lazyImage from '@/mixins/lazyImage';
 
 export default {
   name: 'cdr-media-object',
-  mixins: [modifier],
-  inheritAttrs: false,
+  mixins: [modifier, lazyImage],
   components: {
+    cdrA,
     cdrImg,
     cdrIcon,
   },
@@ -100,6 +129,18 @@ export default {
      * See cdr-img
     */
     imgModifier: String,
+    /**
+     * Link the image
+    */
+    imgHref: String,
+    /**
+     * Screen reader text for the linked image
+    */
+    imgHrefText: String,
+    /**
+     * Target for the image link
+    */
+    imgTarget: String,
   },
   computed: {
     baseClass() {
