@@ -16,7 +16,8 @@
     "src/npm_components/select",
     "src/npm_components/row",
     "src/npm_components/column",
-    "src/npm_components/mediaObject"
+    "src/npm_components/mediaObject",
+    "src/compositions/activityCard"
   ],
   "npmClient": "yarn",
   "version": "independent"

@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@rei-co-op/cedar-card@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-card/-/cedar-card-0.0.2.tgz#45a6f0a321dc83363f608690fd1a2ccfe6e2c7a8"
+  dependencies:
+    vue-hot-reload-api "^2.1.1"
+    yarn "^1.2.1"
+
 "@rei-co-op/cedar-heading@^0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-heading/-/cedar-heading-0.0.2.tgz#fecdcc816e344a8917c534093c74bc06a7f6b6ae"

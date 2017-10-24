@@ -1,16 +1,16 @@
 {
-  "name": "@rei-co-op/cedar-card-activity",
-  "version": "0.0.1",
+  "name": "@rei-co-op/cedar-activity-card",
+  "version": "0.0.2",
   "description": "REI Cedar Style Framework - Vue Component for Activity Card",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-card-activity",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-activity-card",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
-  "main": "dist/cdr-card-activity.js",
+  "main": "dist/cdr-activity-card.js",
   "config": {
     "buildConfig": "webpack.dist.conf",
-    "component": "cardActivity",
-    "tagName": "card-activity",
+    "component": "activityCard",
+    "tagName": "activity-card",
     "composition": "true"
   },
   "scripts": {

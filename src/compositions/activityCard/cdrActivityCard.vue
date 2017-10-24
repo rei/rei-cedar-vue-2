@@ -31,19 +31,19 @@
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrCardActivity.pcss';
+  @import 'cdrActivityCard.pcss';
 </style>
 
 <script>
 import cdrCard from './node_modules/@rei-co-op/cedar-card';
-import cdrHeading from '@rei-co-op/cedar-heading';
-import cdrImg from '@rei-co-op/cedar-image';
-import cdrMediaObject from '@rei-co-op/cedar-media-object';
-import cdrRating from '@rei-co-op/cedar-rating';
-import cdrList from '@rei-co-op/cedar-list';
+import cdrHeading from './node_modules/@rei-co-op/cedar-heading';
+import cdrImg from './node_modules/@rei-co-op/cedar-image';
+import cdrMediaObject from './node_modules/@rei-co-op/cedar-media-object';
+import cdrRating from './node_modules/@rei-co-op/cedar-rating';
+import cdrList from './node_modules/@rei-co-op/cedar-list';
 
 export default {
-  name: 'cdr-card-activity',
+  name: 'cdr-activity-card',
   components: {
     cdrCard,
     cdrHeading,

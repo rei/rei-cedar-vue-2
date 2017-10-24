@@ -2,7 +2,7 @@
 <div>
     <h2>Activity Card</h2>
 
-    <cdr-card-activity
+    <cdr-activity-card
     data-backstop="activity-card"
     media="http://placehold.it/350x150"
     label="hiking"
@@ -12,17 +12,17 @@
     location="Seattle, WA"
     rating="5"
     count="138">
-  </cdr-card-activity>
+  </cdr-activity-card>
   </div>
 </template>
 
 <script>
 
-import cdrCardActivity from '../cdrCardActivity';
+import cdrActivityCard from '../cdrActivityCard';
 
 export default {
   name: 'activity',
-  components: { cdrCardActivity },
+  components: { cdrActivityCard },
 };
 </script>
 

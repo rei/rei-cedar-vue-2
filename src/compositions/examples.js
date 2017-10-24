@@ -1,5 +1,5 @@
 import searchbox from './search/examples/searchbox';
-import activity from './cardActivity/examples/activity';
+import activity from './activityCard/examples/activity';
 
 export default {
   searchbox,

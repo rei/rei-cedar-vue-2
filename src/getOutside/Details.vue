@@ -22,7 +22,7 @@
     <p>Activity cards</p>
     <cdr-row nowrap>
       <cdr-col span="11" span-sm="4" v-for="(c, index) in cData" :key="index">
-        <cdr-card-activity
+        <cdr-activity-card
           :media="c.image"
           :label="c.activity"
           :title="c.title"
@@ -31,7 +31,7 @@
           :snapshot="c.details"
           :rating="c.rating"
           :count="c.count"
-          ></cdr-card-activity>
+          ></cdr-activity-card>
       </cdr-col>
     </cdr-row>
 
@@ -40,7 +40,7 @@
     <p>EA cards</p>
     <cdr-row nowrap>
       <cdr-col span="11" span-sm="3" v-for="(c, index) in cData" :key="index">
-        <cdr-card-activity
+        <cdr-activity-card
           :media="c.image"
           :label="c.activity"
           :title="c.title"
@@ -49,7 +49,7 @@
           :snapshot="c.details"
           :rating="c.rating"
           :count="c.count"
-          ></cdr-card-activity>
+          ></cdr-activity-card>
       </cdr-col>
     </cdr-row>
   </div>

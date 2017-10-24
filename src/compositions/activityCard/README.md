@@ -14,7 +14,7 @@ var cardData = {
   title: 'Snow Lake Trail'
 };
 
-<cdr-card-activity 
+<cdr-activity-card 
   :media="cardData.media"
   :label="cardData.label"
   title-url="http://rei.com"
@@ -23,5 +23,5 @@ var cardData = {
   location="Seattle, WA"
   rating="5"
   count="138">
-</cdr-card-activity>
+</cdr-activity-card>
 ```
