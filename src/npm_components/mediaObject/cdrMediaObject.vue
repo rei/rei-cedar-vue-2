@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import cdrImg from '../image/cdrImg';
-import cdrIcon from '../icon/cdrIcon';
+import cdrImg from './node_modules/@rei-co-op/cedar-image';
+import cdrIcon from './node_modules/@rei-co-op/cedar-icon';
 import modifier from '../../mixins/modifier';
 
 export default {
