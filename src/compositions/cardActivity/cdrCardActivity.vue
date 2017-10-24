@@ -35,12 +35,12 @@
 </style>
 
 <script>
-import cdrCard from '@/components/card/cdrCard';
-import cdrHeading from '@/components/heading/cdrHeading';
-import cdrImg from '@/components/image/cdrImg';
-import cdrMediaObject from '@/components/mediaObject/cdrMediaObject';
-import cdrRating from '@/components/rating/cdrRating';
-import cdrList from '@/components/list/cdrList';
+import cdrCard from './node_modules/@rei-co-op/cedar-card';
+import cdrHeading from '@rei-co-op/cedar-heading';
+import cdrImg from '@rei-co-op/cedar-image';
+import cdrMediaObject from '@rei-co-op/cedar-media-object';
+import cdrRating from '@rei-co-op/cedar-rating';
+import cdrList from '@rei-co-op/cedar-list';
 
 export default {
   name: 'cdr-card-activity',
