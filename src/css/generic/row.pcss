@@ -166,7 +166,7 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 
   &_rowauto {
     & > .cdr-col:not([class*="cdr-col_span"]) {
-      flex: 0 0 auto;
+      flex: none;
       width: auto;
       max-width: none;
     }
@@ -875,7 +875,7 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 
   &__content {
     display: flex;
-    flex: 1 1 1px;
+    flex: 1 1 auto;
     width: 100%;
 
     & > .cdr-row {
