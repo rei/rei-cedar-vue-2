@@ -102,7 +102,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrMediaObject_vue__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_34a060a8_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrMediaObject_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_34a060a8_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrMediaObject_vue__ = __webpack_require__(10);
 function injectStyle (ssrContext) {
   __webpack_require__(2)
 }
@@ -258,7 +258,7 @@ module.exports = function normalizeComponent (
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_icon__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_icon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_icon__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_modifier__ = __webpack_require__(8);
-throw new Error("Cannot find module \"../../mixins/lazyImage\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_lazyImage__ = __webpack_require__(9);
 //
 //
 //
@@ -321,7 +321,7 @@ throw new Error("Cannot find module \"../../mixins/lazyImage\"");
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'cdr-media-object',
-  mixins: [__WEBPACK_IMPORTED_MODULE_3__mixins_modifier__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_lazyImage___default.a],
+  mixins: [__WEBPACK_IMPORTED_MODULE_3__mixins_modifier__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_lazyImage__["a" /* default */]],
   components: {
     cdrA: __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_a___default.a,
     cdrImg: __WEBPACK_IMPORTED_MODULE_1__node_modules_rei_co_op_cedar_image___default.a,
@@ -1512,6 +1512,34 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 /* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * use of this mixin requires binding lazy and lazyOpts in the component to work
+ */
+/**
+ * @mixin
+ */
+/* harmony default export */ __webpack_exports__["a"] = ({
+  props: {
+    /**
+     * Enables lazy image loading with data-src attribute options
+     */
+    lazy: Boolean,
+    /**
+     * Enables lazy image loading with data-src attribute options
+     */
+    lazyOpts: {
+      type: Object,
+      default: () => {},
+    },
+  },
+});
+
+
+/***/ }),
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
