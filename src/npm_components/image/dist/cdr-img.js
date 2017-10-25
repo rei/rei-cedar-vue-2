@@ -266,7 +266,6 @@ module.exports = function normalizeComponent (
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'cdr-img',
   mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_modifier__["a" /* default */]],
-  inheritAttrs: false,
   props: {
     /**
      * Required. Image source url.
@@ -287,6 +286,13 @@ module.exports = function normalizeComponent (
      */
     lazy: {
       type: Boolean
+    },
+    /**
+     * Object of lazy options
+     */
+    lazyOpts: {
+      type: Object,
+      default: () => {}
     },
     /**
      * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
@@ -383,6 +389,15 @@ module.exports = function normalizeComponent (
       return {
         backgroundImage: `url(${this.src})`
       };
+    },
+    lazyAttrs() {
+      const attrObj = {};
+      if (this.lazy) {
+        Object.keys(this.lazyOpts).forEach(opt => {
+          attrObj[`data-${opt}`] = this.lazyOpts[opt];
+        });
+      }
+      return attrObj;
     }
   }
 });
@@ -427,7 +442,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.ratio)?_c('div',{staticClass:"cdr-media-frame",class:[_vm.ratioClass, _vm.cropClass]},[_c('div',_vm._b({class:[_vm.coverClass, _vm.lazyClass],style:(_vm.styleObject),attrs:{"aria-hidden":"true"}},'div',_vm.$attrs,false)),_vm._v(" "),_c('img',_vm._b({staticClass:"cdr-media-frame__image cdr-media-frame__image--hidden",class:[_vm.modifierClass, _vm.radiusClass],attrs:{"src":_vm.src,"alt":_vm.alt}},'img',_vm.$attrs,false))]):_c('img',_vm._b({class:[_vm.modifierClass, _vm.radiusClass, _vm.lazyClass],attrs:{"src":_vm.src,"alt":_vm.alt}},'img',_vm.$attrs,false))}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.ratio)?_c('div',{staticClass:"cdr-media-frame",class:[_vm.ratioClass, _vm.cropClass]},[_c('div',_vm._b({class:[_vm.coverClass, _vm.lazyClass],style:(_vm.styleObject),attrs:{"aria-hidden":"true"}},'div',_vm.lazyAttrs,false)),_vm._v(" "),_c('img',{staticClass:"cdr-media-frame__image cdr-media-frame__image--hidden",class:[_vm.modifierClass, _vm.radiusClass],attrs:{"src":_vm.src,"alt":_vm.alt}})]):_c('img',_vm._b({class:[_vm.modifierClass, _vm.radiusClass, _vm.lazyClass],attrs:{"src":_vm.src,"alt":_vm.alt}},'img',_vm.lazyAttrs,false))}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
