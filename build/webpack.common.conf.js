@@ -1,6 +1,6 @@
 const path = require('path');
-const utils = require('./build/utils');
-const vueLoaderConfig = require('./build/vue-loader.conf');
+const utils = require('./utils');
+const vueLoaderConfig = require('./vue-loader.conf');
 // const config = require('./config');
 // const mainPostConfig = require('../build/mainPost.conf.js');
 
@@ -13,7 +13,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      '@': './src',
+      '@': '../src',
     },
     modules: [
       path.join(__dirname, '../node_modules')
