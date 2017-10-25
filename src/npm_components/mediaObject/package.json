@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-media-object",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "REI Cedar Style Framework - Vue Component for Media Object",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-media-object",
   "license": "ISC",
@@ -16,9 +16,9 @@
     "build": "node ../../../build.js"
   },
   "peerDependencies": {
-    "@rei-co-op/cedar-a": "^0.0.1",
-    "@rei-co-op/cedar-icon": "^0.0.2",
-    "@rei-co-op/cedar-image": "^0.0.2",
+    "@rei-co-op/cedar-a": "^0.0.2",
+    "@rei-co-op/cedar-icon": "^0.0.3",
+    "@rei-co-op/cedar-image": "^0.0.3",
     "vue": "^2.4.2"
   },
   "devDependencies": {
@@ -143,9 +143,9 @@
     "not ie <= 8"
   ],
   "dependencies": {
-    "@rei-co-op/cedar-a": "^0.0.1",
-    "@rei-co-op/cedar-icon": "^0.0.2",
-    "@rei-co-op/cedar-image": "^0.0.2",
+    "@rei-co-op/cedar-a": "^0.0.2",
+    "@rei-co-op/cedar-icon": "^0.0.3",
+    "@rei-co-op/cedar-image": "^0.0.3",
     "vue-hot-reload-api": "^2.1.1",
     "yarn": "^1.2.1"
   }

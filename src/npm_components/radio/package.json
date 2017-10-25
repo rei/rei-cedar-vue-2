@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-radio",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "REI Cedar Style Framework - Vue Component for Radio",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-radio",
   "license": "ISC",
