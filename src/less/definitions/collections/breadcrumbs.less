@@ -33,21 +33,8 @@
 .breadcrumb {
     &:extend( .list-crumb all );
     font-size: @font-size-smaller;
-    .explore-crumb& {
-        > li {
-            a {
-                &:extend( .link-explore-crumb );
-                font-size: @font-size-smaller;
-            }
-        }
-    }
-    .outlet-crumb& {
-        > li {
-            a {
-                &:extend( .link-outlet-crumb );
-                font-size: @font-size-smaller;
-            }
-        }
+    > li a {
+        &:extend( .link-crumb all);
     }
     > .active {
         color: @breadcrumb-active-color;

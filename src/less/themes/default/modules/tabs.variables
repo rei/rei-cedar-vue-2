@@ -11,12 +11,15 @@
 @tab-padding:                                    @sizing-size-sm-squish;
 @tab-font-size:                                  @cdr-type-redwood-ui-30-font-size;
 @tab-line-height:                                @cdr-type-redwood-ui-30-line-height;
+@tab-font-family:                                @cdr-type-redwood-ui-30-font-family;
+@tab-font-style:                                 @cdr-type-redwood-ui-30-font-style;
 
-@nav-tabs-active-link-hover-bg:                   @body-bg;
-@nav-tabs-active-link-hover-border-color:         @core-architectural-2;
-@nav-tabs-border-color:                           @cdr-color-tab-stroke;
-@nav-tabs-link-hover-border-color:                @btn-default-active-bg;
-@nav-tabs-active-stroke:                          @cdr-color-tab-active-stroke;
+@tab-active-link-hover-bg:                   @body-bg;
+@tab-active-text:                            @cdr-color-tab-active-text;
+@tab-active-link-hover-border-color:         @core-architectural-2;
+@tab-border-color:                           @cdr-color-tab-stroke;
+@tab-link-hover-border-color:                @btn-default-active-bg;
+@tab-active-stroke:                          @cdr-color-tab-active-stroke;
 // justified
 @nav-tabs-justified-link-border-color:            @core-architectural-2;
 @nav-tabs-justified-active-link-border-color:     @body-bg;

@@ -12,6 +12,7 @@
 .doc_head-navigation ul > li > a {
   color: #222;
   text-decoration: none;
+  text-decoration-skip: ink;
   outline: none;
 }
 .doc_head-navigation > li > a:hover,
@@ -58,7 +59,7 @@
 .doc_head-navigation > li > a:focus,
 .doc_head-navigation ul > li > a:hover,
 .doc_head-navigation ul > li > a:focus {
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   text-decoration: none;
 }
 .doc_head-navigation > li.disabled > a,
@@ -276,7 +277,7 @@ h4 code {
 .doc_head-navigation ul > li > a:hover,
 .doc_head-navigation > li > a:focus,
 .doc_head-navigation ul > li > a:focus {
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   text-decoration: none;
 }
 .doc_head-navigation.right,
@@ -302,7 +303,7 @@ h4 code {
 .doc_head-navigation-item.active .nested-item a,
 .doc_head-navigation-item .nested-item a {
   font-size: 1.4rem;
-  background: #ffffff !important;
+  background: #f0f0f0 !important;
   color: #000 !important;
 }
 .doc_head-navigation-item.active .nested-item a:hover,
@@ -351,14 +352,11 @@ h4 code {
   .doc_head-navigation-item.home a:hover {
     background: #000;
   }
-  .doc_head-navigation-item,
-  .nested-item {
-    background: inherit;
-  }
   .doc_head-navigation-item {
+    background: inherit;
     float: left;
     margin: 0;
-    padding: 0 1.6rem 0 0;
+    padding: 0;
     position: relative;
   }
   .doc_head-navigation-item a {

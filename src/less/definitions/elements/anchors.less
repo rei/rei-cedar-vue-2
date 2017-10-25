@@ -17,7 +17,7 @@ a {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Core inline
 .link-body {
-    .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt; );
+    .link-variant( @link-color; @link-hover-decoration-alt; );
 }
 
 // Core standalone
@@ -150,13 +150,9 @@ a {
 }
 
 // Crumb
-.link_crumb {
+.link-crumb {
     font: normal normal @font-size-smaller @font-family-sans-serif;
-    .link-variant( @link-color; @link-hover-decoration; );
-}
-.link-explore-crumb {
-    &:extend( .link_crumb all );
-    .link-variant( @explore-link-color;  @link-hover-decoration; );
+    .link-variant( @link-color; @link-hover-decoration; @link-hover-decoration-alt;);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

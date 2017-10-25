@@ -21,7 +21,7 @@
 // Global textual link color.
 //----------------------------------------------------------------------------------------------------------------------
 @link-color:                                          @cdr-color-link;
-@link-color-overlay:                                  @cdr-color-link-contrast;
+@link-color-overlay:                                  @core-architectural-4;
 @link-color-overlay-2:                                @core-architectural-4;
 
 //----------------------------------------------------------------------------------------------------------------------

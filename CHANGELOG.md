@@ -1,6 +1,45 @@
+
+##1.7.9
+Bugfixes:
+- select box text bug on safari
+
+##1.7.8
+Bugfixes:
+- star color updates
+- secondary button border color updates
+- breadcrumb text-decoration on hover
+
+##1.7.7
+Bugfixes:
+- link color updates
+
+##1.7.6
+Features:
+- btn-icon
+- btn-bare
+Bugfixes:
+- text-decoration turned on by default
+
+##1.7.5
+Features:
+- transparent button utility class
+- link text decoration skip
+Bugfixes:
+- secondary button hover state
+- link text decoration set to on for defualt
+- input-group addon icon spacing ajustments
+- md button font and spacing updates
+- close button sizing updates
+
+##1.7.4
+Features:
+- update to focus and hover state of tab items
+
+
 ##1.7.3
 Bugfixes:
 - restrain close button from going full width at xs breakpoint
+
 
 ##1.7.2
 Bugfixes:

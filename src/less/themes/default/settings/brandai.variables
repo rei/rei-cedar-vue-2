@@ -87,12 +87,16 @@
 @cdr-color-shade-darker-30: rgba(27, 28, 28, 0.8);
 @cdr-color-shade-darker-40: rgba(27, 28, 28, 0.9);
 
-// system
-@cdr-color-system-10: #222222;
-@cdr-color-system-20: #000000;
+// Utility
+@cdr-color-black-base: #000000;
+@cdr-color-white-base: #ffffff;
 @cdr-color-error: #cc0000;
+@cdr-color-error-lighten: #f9e5e5;
 @cdr-color-warning: #e4ac00;
+@cdr-color-warning-lighten: #fcf6e5;
 @cdr-color-success: #a1c900;
+@cdr-color-success-lighten: #f5f9e5;
+@cdr-color-system-20: #222222;
 
 // Buttons
 @cdr-color-btn-primary: #426c90;
@@ -100,9 +104,9 @@
 @cdr-color-btn-primary-active: #2b455c;
 @cdr-color-btn-primary-active-stroke: #2b455c;
 @cdr-color-btn-secondary: #ffffff;
-@cdr-color-btn-secondary-stroke: #767676;
-@cdr-color-btn-secondary-active-stroke: #767676;
-@cdr-color-btn-secondary-active: #ffffff;
+@cdr-color-btn-secondary-stroke: #c5c5c5;
+@cdr-color-btn-secondary-active: #f0f0f0;
+@cdr-color-btn-secondary-active-stroke: #c5c5c5;
 @cdr-color-btn-text: #ffffff;
 @cdr-color-btn-text-active: #ffffff;
 @cdr-color-btn-primary-disabled: #c5c5c5;
@@ -116,9 +120,12 @@
 @cdr-color-btn-secondary-text-active: #2e2e2e;
 @cdr-color-btn-stroke-focus: #8dd1ed;
 @cdr-color-btn-primary-focus-text: #ffffff;
-@cdr-color-btn-close: #ffffff;
-@cdr-color-btn-close-icon: #2e2e2e;
-@cdr-color-btn-close-stroke: #2e2e2e;
+@cdr-color-btn-icon: #ffffff;
+@cdr-color-btn-icon-icon: #2e2e2e;
+@cdr-color-btn-icon-stroke: #2e2e2e;
+@cdr-color-btn-icon-hover: #f0f0f0;
+@cdr-color-btn-link: #347cb1;
+@cdr-color-btn-link-icon: #347cb1;
 
 // Card
 @cdr-color-activity-card: #ffffff;
@@ -160,10 +167,10 @@
 @cdr-color-input-error-label: #cc0000;
 
 // Links
-@cdr-color-link: #426c90;
-@cdr-color-link-icon: #426c90;
-@cdr-color-link-contrast: #98b3c8;
-@cdr-color-link-icon-contrast: #98b3c8;
+@cdr-color-link: #347cb1;
+@cdr-color-link-icon: #347cb1;
+@cdr-color-link-contrast: #ffffff;
+@cdr-color-link-icon-contrast: #ffffff;
 
 // List
 @cdr-color-list-text: #2e2e2e;
@@ -172,7 +179,7 @@
 @cdr-color-list-circle-stroke: #2e2e2e;
 
 // Ratings
-@cdr-color-rating: #2e2e2e;
+@cdr-color-rating: #bd5b0d;
 @cdr-color-rating-bg: #c5c5c5;
 @cdr-color-rating-text: #2e2e2e;
 @cdr-color-rating-text-sm: #767676;
@@ -186,7 +193,6 @@
 @cdr-color-tab-text: #2e2e2e;
 @cdr-color-tab-active-text: #426c90;
 @cdr-color-tab-hover-text: #426c90;
-@cdr-color-tab-disabled-text: #c5c5c5;
 @cdr-color-tab-active-stroke: #426c90;
 @cdr-color-tab-stroke: #c5c5c5;
 
@@ -201,7 +207,7 @@
 @cdr-type-spruce-dsp-90-color: #2e2e2e;
 @cdr-type-spruce-dsp-90-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-90-font-style: normal;
-@cdr-type-spruce-dsp-90-font-weight: bold;
+@cdr-type-spruce-dsp-90-font-weight: 600;
 @cdr-type-spruce-dsp-90-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-90() {
@@ -222,7 +228,7 @@
 @cdr-type-spruce-dsp-80-color: #2e2e2e;
 @cdr-type-spruce-dsp-80-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-80-font-style: normal;
-@cdr-type-spruce-dsp-80-font-weight: bold;
+@cdr-type-spruce-dsp-80-font-weight: 600;
 @cdr-type-spruce-dsp-80-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-80() {
@@ -243,7 +249,7 @@
 @cdr-type-spruce-dsp-70-color: #2e2e2e;
 @cdr-type-spruce-dsp-70-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-70-font-style: normal;
-@cdr-type-spruce-dsp-70-font-weight: bold;
+@cdr-type-spruce-dsp-70-font-weight: 600;
 @cdr-type-spruce-dsp-70-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-70() {
@@ -264,7 +270,7 @@
 @cdr-type-spruce-dsp-60-color: #2e2e2e;
 @cdr-type-spruce-dsp-60-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-60-font-style: normal;
-@cdr-type-spruce-dsp-60-font-weight: bold;
+@cdr-type-spruce-dsp-60-font-weight: 600;
 @cdr-type-spruce-dsp-60-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-60() {
@@ -285,7 +291,7 @@
 @cdr-type-spruce-dsp-50-color: #2e2e2e;
 @cdr-type-spruce-dsp-50-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-50-font-style: normal;
-@cdr-type-spruce-dsp-50-font-weight: bold;
+@cdr-type-spruce-dsp-50-font-weight: 600;
 @cdr-type-spruce-dsp-50-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-50() {
@@ -348,7 +354,7 @@
 @cdr-type-spruce-dsp-20-color: #2e2e2e;
 @cdr-type-spruce-dsp-20-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-20-font-style: normal;
-@cdr-type-spruce-dsp-20-font-weight: bold;
+@cdr-type-spruce-dsp-20-font-weight: 600;
 @cdr-type-spruce-dsp-20-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-20() {
@@ -369,7 +375,7 @@
 @cdr-type-spruce-dsp-10-color: #2e2e2e;
 @cdr-type-spruce-dsp-10-letter-spacing: 0.2px;
 @cdr-type-spruce-dsp-10-font-style: normal;
-@cdr-type-spruce-dsp-10-font-weight: bold;
+@cdr-type-spruce-dsp-10-font-weight: 600;
 @cdr-type-spruce-dsp-10-font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .cdr-type-spruce-dsp-10() {
@@ -892,86 +898,6 @@
   font-style: @cdr-type-maple-ui-40-font-style;
   font-weight: @cdr-type-maple-ui-40-font-weight;
   font-family: @cdr-type-maple-ui-40-font-family;
-}
-
-// redwood-dsp-30 standard link: hover font style
-@cdr-type-redwood-dsp-30-standard-link-hover-font-size: 16px;
-@cdr-type-redwood-dsp-30-standard-link-hover-line-height: 22px;
-@cdr-type-redwood-dsp-30-standard-link-hover-text-align: left;
-@cdr-type-redwood-dsp-30-standard-link-hover-color: #426c90;
-@cdr-type-redwood-dsp-30-standard-link-hover-text-decoration: underline;
-@cdr-type-redwood-dsp-30-standard-link-hover-font-style: normal;
-@cdr-type-redwood-dsp-30-standard-link-hover-font-weight: 400;
-@cdr-type-redwood-dsp-30-standard-link-hover-font-family: Roboto;
-
-.cdr-type-redwood-dsp-30-standard-link-hover() {
-  font-size: @cdr-type-redwood-dsp-30-standard-link-hover-font-size;
-  line-height: @cdr-type-redwood-dsp-30-standard-link-hover-line-height;
-  text-align: @cdr-type-redwood-dsp-30-standard-link-hover-text-align;
-  color: @cdr-type-redwood-dsp-30-standard-link-hover-color;
-  text-decoration: @cdr-type-redwood-dsp-30-standard-link-hover-text-decoration;
-  font-style: @cdr-type-redwood-dsp-30-standard-link-hover-font-style;
-  font-weight: @cdr-type-redwood-dsp-30-standard-link-hover-font-weight;
-  font-family: @cdr-type-redwood-dsp-30-standard-link-hover-font-family;
-}
-
-// redwood-dsp-20 standard link: hover font style
-@cdr-type-redwood-dsp-20-standard-link-hover-font-size: 14px;
-@cdr-type-redwood-dsp-20-standard-link-hover-line-height: 20px;
-@cdr-type-redwood-dsp-20-standard-link-hover-text-align: left;
-@cdr-type-redwood-dsp-20-standard-link-hover-color: #426c90;
-@cdr-type-redwood-dsp-20-standard-link-hover-text-decoration: underline;
-@cdr-type-redwood-dsp-20-standard-link-hover-font-style: normal;
-@cdr-type-redwood-dsp-20-standard-link-hover-font-weight: 400;
-@cdr-type-redwood-dsp-20-standard-link-hover-font-family: Roboto;
-
-.cdr-type-redwood-dsp-20-standard-link-hover() {
-  font-size: @cdr-type-redwood-dsp-20-standard-link-hover-font-size;
-  line-height: @cdr-type-redwood-dsp-20-standard-link-hover-line-height;
-  text-align: @cdr-type-redwood-dsp-20-standard-link-hover-text-align;
-  color: @cdr-type-redwood-dsp-20-standard-link-hover-color;
-  text-decoration: @cdr-type-redwood-dsp-20-standard-link-hover-text-decoration;
-  font-style: @cdr-type-redwood-dsp-20-standard-link-hover-font-style;
-  font-weight: @cdr-type-redwood-dsp-20-standard-link-hover-font-weight;
-  font-family: @cdr-type-redwood-dsp-20-standard-link-hover-font-family;
-}
-
-// redwood-dsp-30 standard link font style
-@cdr-type-redwood-dsp-30-standard-link-font-size: 16px;
-@cdr-type-redwood-dsp-30-standard-link-line-height: 22px;
-@cdr-type-redwood-dsp-30-standard-link-text-align: left;
-@cdr-type-redwood-dsp-30-standard-link-color: #426c90;
-@cdr-type-redwood-dsp-30-standard-link-font-style: normal;
-@cdr-type-redwood-dsp-30-standard-link-font-weight: 400;
-@cdr-type-redwood-dsp-30-standard-link-font-family: Roboto;
-
-.cdr-type-redwood-dsp-30-standard-link() {
-  font-size: @cdr-type-redwood-dsp-30-standard-link-font-size;
-  line-height: @cdr-type-redwood-dsp-30-standard-link-line-height;
-  text-align: @cdr-type-redwood-dsp-30-standard-link-text-align;
-  color: @cdr-type-redwood-dsp-30-standard-link-color;
-  font-style: @cdr-type-redwood-dsp-30-standard-link-font-style;
-  font-weight: @cdr-type-redwood-dsp-30-standard-link-font-weight;
-  font-family: @cdr-type-redwood-dsp-30-standard-link-font-family;
-}
-
-// redwood-dsp-20 standard link font style
-@cdr-type-redwood-dsp-20-standard-link-font-size: 14px;
-@cdr-type-redwood-dsp-20-standard-link-line-height: 20px;
-@cdr-type-redwood-dsp-20-standard-link-text-align: left;
-@cdr-type-redwood-dsp-20-standard-link-color: #426c90;
-@cdr-type-redwood-dsp-20-standard-link-font-style: normal;
-@cdr-type-redwood-dsp-20-standard-link-font-weight: 400;
-@cdr-type-redwood-dsp-20-standard-link-font-family: Roboto;
-
-.cdr-type-redwood-dsp-20-standard-link() {
-  font-size: @cdr-type-redwood-dsp-20-standard-link-font-size;
-  line-height: @cdr-type-redwood-dsp-20-standard-link-line-height;
-  text-align: @cdr-type-redwood-dsp-20-standard-link-text-align;
-  color: @cdr-type-redwood-dsp-20-standard-link-color;
-  font-style: @cdr-type-redwood-dsp-20-standard-link-font-style;
-  font-weight: @cdr-type-redwood-dsp-20-standard-link-font-weight;
-  font-family: @cdr-type-redwood-dsp-20-standard-link-font-family;
 }
 
 /*

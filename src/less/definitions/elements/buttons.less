@@ -32,12 +32,13 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .btn {
-    .btn-lg();
+    .btn-md();
     border: 0.1rem solid transparent;
     cursor: pointer;
     display: inline-block;
     margin-bottom: 0;
     text-align: center;
+    text-decoration: none;
     touch-action: manipulation;
     vertical-align: middle;
     user-select: none;
@@ -101,7 +102,7 @@
 // Core
 // ---------------------------------------------------------------------------------------------------------------------
 .btn-primary {
-    .button-variant( @btn-primary-color; @btn-primary-bg; @btn-primary-border; @btn-primary-active-bg; @btn-primary-active-border; @btn-primary-active-color; );
+    .button-variant();
 }
 
 .btn-default {
@@ -143,6 +144,7 @@
         }
     }
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Button Link
@@ -286,27 +288,34 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .btn-lg {
+    .button-size(
+        @btn-lg-inset;
+        @btn-lg-font-size;
+        @btn-lg-line-height;
+        @btn-lg-type;
+        @btn-lg-font-style; );
+}
+.btn-md {
     .button-size();
 }
-
 .btn-sm {
     // line-height: ensure proper height of button next to small input
     .button-size(
         @btn-sm-inset;
-        @cdr-type-redwood-ui-30-font-size;
-        @cdr-type-redwood-ui-30-line-height;
+        @btn-sm-font-size;
+        @btn-sm-line-height;
         @btn-sm-type;
-        @cdr-type-redwood-ui-30-font-style; );
+        @btn-sm-font-style; );
     @text-with-icon-rei-tree-arrow-button-sm-ruleset();
 }
 
 .btn-xs {
     .button-size(
-        @inset-md--squish;
-        @cdr-type-redwood-ui-20-font-size;
-        @cdr-type-redwood-ui-20-line-height;
+        @btn-xs-inset;
+        @btn-xs-font-size;
+        @btn-xs-line-height;
         @btn-xs-type;
-        @cdr-type-redwood-ui-20-font-style; );
+        @btn-xs-font-style; );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -321,11 +330,10 @@
     }
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Close button
 // ---------------------------------------------------------------------------------------------------------------------
-.btn-close {
+.btn-icon {
     .button-variant( @btn-default-color;
             @btn-default-bg;
             @btn-default-border;
@@ -335,17 +343,47 @@
             @btn-default-disabled-text;
             @btn-default-disabled-background;
             @btn-default-disabled-border; );
+    &.btn-bare {
+    .button-variant(
+        @btn-bare-color;
+        @btn-bare-bg;
+        @btn-bare-border;
+        @btn-bare-active-bg;
+        @btn-bare-active-border;
+        @btn-bare-active-color; );
+        border-radius: 50%;
+    }
     .button-size(
-        @btn-close-inset;
-        @btn-close-font-size;
-        @btn-close-line-height;
-        @btn-close-type;
+        @btn-icon-inset;
+        @btn-icon-font-size;
+        @btn-icon-line-height;
+        @btn-icon-type;
         @cdr-type-redwood-ui-20-font-style; );
     @media ( max-width: @screen-xs-max ) {
         &:not( .btn-fixed ) {
            width: auto;
            margin: 0;
         }
+    }
+    &:hover,
+    &:focus,
+    &.focus {
+        color: @btn-default-color;
+        text-decoration: none;
+    }
+    &:focus {
+      outline: thin dotted;
+      // WebKit
+      outline: 0.2rem auto;
+      outline-color: @btn-focus-stroke-color;
+      outline-offset: -0.1rem;
+      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+      border: 1px solid rgba(81, 203, 238, 1);
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
     }
     .img-circle();
     &:focus,
@@ -354,6 +392,9 @@
     }
 }
 
+.close {
+    &:extend( .btn-icon all );
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Controls
@@ -405,6 +446,8 @@ input[type="button"] {
         width: 100%;
     }
 }
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // // Deprecated:
