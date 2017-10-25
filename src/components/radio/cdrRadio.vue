@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { isEqual } from 'lodash';
+import { isEqual } from './node_modules/lodash';
 
 export default {
   name: 'cdr-radio',

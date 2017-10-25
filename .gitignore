@@ -43,5 +43,5 @@ backstop_data/html_report
 test/e2e/reports
 test/unit/coverage
 
-src/npm_components/dist/static/js/*.js
-src/npm_components/dist/static/js/*.js.map
+src/components/dist/static/js/*.js
+src/components/dist/static/js/*.js.map

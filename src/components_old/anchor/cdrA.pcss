@@ -25,6 +25,7 @@
     outline: none;
     text-decoration: underline;
     background-color: $color-transparent-background;
+    color: $sys-color-link-active;
   }
 
   &:focus {
@@ -39,7 +40,15 @@
   &--contrast:active,
   &--contrast:focus,
   &--contrast:visited {
-    color: $sys-color-link-contrast;
+    color: $sys-color-link-overlay;
+  }
+
+  &--overlay,
+  &--overlay:hover,
+  &--overlay:active,
+  &--overlay:focus,
+  &--overlay:visited {
+    color: $sys-color-link-contrast-overlay;
   }
 
   &--standalone {

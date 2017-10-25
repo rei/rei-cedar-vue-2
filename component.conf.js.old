@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const componentFolder = `./src/npm_components/${process.env.component}`;
+const componentFolder = `./src/components/${process.env.component}`;
 
 
 function resolve(dir) {
