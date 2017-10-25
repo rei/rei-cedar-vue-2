@@ -145,7 +145,7 @@ gulp.task( 'css', [ 'css:minify' ] );
 gulp.task( 'css-fontless', [ 'css-fontless:minify' ]);
 
 // --[ Javascript ]-------------------------------------------------------------
-gulp.task( 'js', [ 'js:build', 'js-fonts:build' ] );
+gulp.task( 'js', [ 'js:build' ] );
 
 // --[ Docs ]-------------------------------------------------------------------
 gulp.task( 'docs:clean', [
@@ -157,7 +157,6 @@ gulp.task( 'docs:clean', [
 
 gulp.task( 'docs:copy-all', [
     'docs:copy-css',
-    'docs:copy-fonts',
     'docs:copy-js',
     'docs:copy-package',
     'docs:copy-less'
@@ -231,18 +230,6 @@ gulp.task( 'build-docker', callback => {
 // CSS:Clean
 gulp.task( 'css:clean', () => del( [ path.join( PATHS.DIST, '**/*.css' ) ] ) );
 
-const lessc = () => {
-}
-
-const lintLessReporter = () => {
-  cssLintLessReporter().on( 'error', err => {
-    // TODO: decide whether to throw the error
-    if ( SHOULD_STOP_FOR_LINT_FAILURE ) {
-      throw new Error( err );
-    }
-  } );
-}
-
 // Compile the UI framework's Less --> ./dist.
 gulp.task( 'css:build', [ 'css:clean' ], () => {
 
@@ -276,7 +263,6 @@ gulp.task( 'css:build', [ 'css:clean' ], () => {
         .pipe( gulp.dest( PATHS.DIST ) );
 } );
 
-// Build REI-Cedar CSS and copy into docs_src directory
 gulp.task( 'css-fonts:copy', () =>
     gulp.src( path.join( PATHS.SRC, '/fonts/*.css' ) )
     .pipe( gulp.dest( path.join( PATHS.DIST + '/fonts' ) ) )
@@ -373,25 +359,6 @@ gulp.task( 'js:build', [], () =>
     .pipe( gulp.dest( PATHS.DIST ) )
 );
 
-gulp.task( 'js-fonts:build', [], () =>
-    browserify( PATHS.SRC + '/js/font-loader.js' ).bundle()
-    .pipe( source( PATHS.SRC + '/js/font-loader.js' ) )
-    .pipe( streamify( sourcemaps.init() ) )
-    .pipe( rename( {
-        dirname: '/',
-        basename: 'rei-cedar-font-loader'
-    } ) )
-    .pipe( streamify( sourcemaps.write() ) )
-    .pipe( gulp.dest( PATHS.DIST ) )
-    .pipe( rename( {
-        dirname: '/',
-        basename: 'rei-cedar-font-loader',
-        suffix: '.min'
-    } ) )
-    .pipe( streamify( uglify() ) )
-    .pipe( gulp.dest( PATHS.DIST ) )
-);
-
 //      /$$$$$$$
 //     | $$__  $$
 //     | $$  \ $$  /$$$$$$   /$$$$$$$  /$$$$$$$
@@ -420,12 +387,6 @@ gulp.task( 'docs:clean-copied-less', () => del( [ path.join( PATHS.DOCS_SRC, '/_
 gulp.task( 'docs:copy-css', [ 'docs:clean-copied-from-src' ], () =>
     gulp.src( path.join( PATHS.DIST, '*.css' ) )
     .pipe( gulp.dest( path.join( PATHS.DOCS_SRC ) ) )
-);
-
-// Build REI-Cedar CSS and copy into docs_src directory
-gulp.task( 'docs:copy-fonts', [ 'docs:clean-copied-from-src' ], () =>
-    gulp.src( path.join( PATHS.DIST, '/fonts/*.css' ) )
-    .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '/fonts') ) )
 );
 
 // Build old Bootstrap JS and copy into the docs_src directory
