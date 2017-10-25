@@ -95,7 +95,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 
-
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -325,7 +324,7 @@ module.exports = function normalizeComponent (
     /**
      * Space separated list of modifiers. See below for possible values
      */
-    modifier: String,
+    modifier: String
   },
   computed: {
     modifierClass() {
@@ -336,16 +335,15 @@ module.exports = function normalizeComponent (
       if (!this.theme) {
         final += `${base}`;
 
-        modifierArr.forEach((mod) => {
+        modifierArr.forEach(mod => {
           final += ` ${base}--${mod} `;
         });
       }
 
       return final;
-    },
-  },
+    }
+  }
 });
-
 
 /***/ }),
 /* 6 */

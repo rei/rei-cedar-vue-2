@@ -79,12 +79,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrCheckbox_vue__ = __webpack_require__(1);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrCheckbox", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrCheckbox_vue__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrCheckbox__ = __webpack_require__(1);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrCheckbox", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrCheckbox__["a"]; });
 
 
 function install(Vue) {
-  Vue.component('cdr-checkbox', __WEBPACK_IMPORTED_MODULE_0__cdrCheckbox_vue__["a" /* default */]);
+  Vue.component('cdr-checkbox', __WEBPACK_IMPORTED_MODULE_0__cdrCheckbox__["a" /* default */]);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -92,7 +92,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (install);
-
 
 
 

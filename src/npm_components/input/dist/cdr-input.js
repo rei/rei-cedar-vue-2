@@ -95,7 +95,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 
-
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -633,13 +632,13 @@ const warningIcon = __webpack_require__(9);
 /* harmony export (immutable) */ __webpack_exports__["a"] = debounce;
 function debounce(func, wait) {
   let timeout;
-  return function (...args) { // eslint-disable-line func-names
+  return function (...args) {
+    // eslint-disable-line func-names
     const context = this;
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(context, args), wait);
   };
 }
-
 
 /***/ }),
 /* 6 */
@@ -654,7 +653,7 @@ function debounce(func, wait) {
     /**
      * Space separated list of modifiers. See below for possible values
      */
-    modifier: String,
+    modifier: String
   },
   computed: {
     modifierClass() {
@@ -665,16 +664,15 @@ function debounce(func, wait) {
       if (!this.theme) {
         final += `${base}`;
 
-        modifierArr.forEach((mod) => {
+        modifierArr.forEach(mod => {
           final += ` ${base}--${mod} `;
         });
       }
 
       return final;
-    },
-  },
+    }
+  }
 });
-
 
 /***/ }),
 /* 7 */

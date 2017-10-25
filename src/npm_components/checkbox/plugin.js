@@ -1,4 +1,4 @@
-import CdrCheckbox from './cdrCheckbox.vue';
+import CdrCheckbox from './cdrCheckbox';
 
 function install(Vue) {
   Vue.component('cdr-checkbox', CdrCheckbox);

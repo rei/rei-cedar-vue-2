@@ -13,7 +13,7 @@
     "tagName": "media-object"
   },
   "scripts": {
-    "build": "node ../../../build.js"
+    "build": "node ../../../build/build.js"
   },
   "peerDependencies": {
     "@rei-co-op/cedar-a": "^0.0.2",
