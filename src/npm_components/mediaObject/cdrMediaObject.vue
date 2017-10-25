@@ -52,11 +52,11 @@
 </template>
 
 <script>
-import cdrA from '@/components/anchor/cdrA';
-import cdrImg from '@/components/image/cdrImg';
-import cdrIcon from '@/components/icon/cdrIcon';
-import modifier from '@/mixins/modifier';
-import lazyImage from '@/mixins/lazyImage';
+import cdrA from './node_modules/@rei-co-op/cedar-a';
+import cdrImg from './node_modules/@rei-co-op/cedar-image';
+import cdrIcon from './node_modules/@rei-co-op/cedar-icon';
+import modifier from '../../mixins/modifier';
+import lazyImage from '../../mixins/lazyImage';
 
 export default {
   name: 'cdr-media-object',
