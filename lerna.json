@@ -17,7 +17,8 @@
     "src/components/row",
     "src/components/column",
     "src/components/mediaObject",
-    "src/compositions/activityCard"
+    "src/compositions/activityCard",
+    "src/compositions/search"
   ],
   "npmClient": "yarn",
   "version": "independent"
