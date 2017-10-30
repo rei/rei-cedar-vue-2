@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const buildConfig = require(`./${process.env.npm_package_config_buildConfig}`);
-const componentConfig = require('./component.conf');
+const componentConfig = require('./webpack.component.conf');
 
 const component = `${process.env.npm_package_config_component}`;
 const componentFolder = `/src/${(process.env.npm_package_config_composition) ? `compositions`:`components`}/${component}`;
