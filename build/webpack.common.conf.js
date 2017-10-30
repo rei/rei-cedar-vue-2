@@ -1,14 +1,21 @@
 const path = require('path');
 const utils = require('./utils');
 const vueLoaderConfig = require('./vue-loader.conf');
-// const config = require('./config');
-// const mainPostConfig = require('../build/mainPost.conf.js');
+const config = require('../config');
+const mainPostConfig = require('./mainPost.conf.js');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
 
 module.exports = {
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: '[name].js',
+    publicPath: process.env.NODE_ENV === 'production'
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath
+  },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
@@ -52,7 +59,8 @@ module.exports = {
       },
       {
         test: /\.(postcss|pcss)$/,
-        use: 'postcss-loader',
+        include: [resolve('src/css')],
+        use: mainPostConfig.loaders
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
