@@ -24,13 +24,13 @@
 </template>
 
 <script>
-  import * as Components from '../../_index';
+  import Components from '../../_index';
   import ratios from './demos/Ratios';
   import cropping from './demos/Cropping';
   import mods from './demos/Mods';
 
   const components = {
-    ...Components,
+    Components,
     ratios,
     cropping,
     mods,

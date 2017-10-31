@@ -1573,8 +1573,8 @@
 </template>
 
 <script>
-  import cdrRow from '../cdrRow';
-  import cdrCol from '../cdrCol';
+  import cdrRow from '../../row/cdrRow';
+  import cdrCol from '../../column/cdrCol';
   import complex from './demo/Complex';
 
   export default {

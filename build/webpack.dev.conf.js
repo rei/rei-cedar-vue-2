@@ -1,19 +1,36 @@
-var utils = require('./utils')
-var webpack = require('webpack')
-var config = require('../config')
-var merge = require('webpack-merge')
-var baseWebpackConfig = require('./webpack.common.conf')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-var StyleLintPlugin = require('stylelint-webpack-plugin')
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const utils = require('./utils')
+const webpack = require('webpack')
+const config = require('../config')
+const path = require('path');
+const merge = require('webpack-merge')
+const baseWebpackConfig = require('./webpack.common.conf')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const StyleLintPlugin = require('stylelint-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 // add hot-reload related code to entry chunks
-Object.keys(baseWebpackConfig.entry).forEach(function (name) {
-  baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-})
+// Object.keys(baseWebpackConfig.entry).forEach(function (name) {
+//   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
+// })
+
+function resolve(dir) {
+  return path.join(__dirname, '..', dir);
+}
 
 module.exports = merge(baseWebpackConfig, {
+  entry: {
+    'dev': path.resolve(__dirname, '../src/dev.js')
+  },resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      vue$: 'vue/dist/vue.esm.js',
+      '@': resolve('node_modules'),
+    },
+    modules: [
+      path.join(__dirname, '../node_modules')
+    ]
+  },
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
