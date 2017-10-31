@@ -34,7 +34,7 @@ module.exports = {
         enforce: 'pre',
         include: [resolve('src'), resolve('tests')],
         options: {
-          formatter: require('eslint-friendly-formatter'), //eslint-disable-line
+          formatter: require('../node_modules/eslint-friendly-formatter'), //eslint-disable-line
         },
       },
       {
