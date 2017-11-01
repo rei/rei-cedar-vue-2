@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import cdrHeading from '@/components/heading/cdrHeading';
+import cdrHeading from 'Components/heading/cdrHeading';
 
 describe('cdrHeading.vue', () => {
   it('renders an h1', () => {

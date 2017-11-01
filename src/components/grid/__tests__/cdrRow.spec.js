@@ -1,5 +1,5 @@
 import { mount, shallow } from 'avoriaz';
-import cdrRow from '@/components/grid/cdrRow';
+import cdrRow from 'Components/row/cdrRow';
 
 describe('cdrRow.vue', () => {
   it('sets type prop correctly', () => {

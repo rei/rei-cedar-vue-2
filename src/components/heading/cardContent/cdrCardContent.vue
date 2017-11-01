@@ -53,11 +53,11 @@
 </template>
 
 <script>
-import cdrCard from '@/components/card/cdrCard';
-import cdrHeading from '@/components/heading/cdrHeading';
-import cdrImg from '@/components/image/cdrImg';
-import cdrMediaObject from '@/components/mediaObject/cdrMediaObject';
-import cdrRating from '@/components/rating/cdrRating';
+import cdrCard from 'Components/card/cdrCard';
+import cdrHeading from 'Components/heading/cdrHeading';
+import cdrImg from 'Components/image/cdrImg';
+import cdrMediaObject from 'Components/mediaObject/cdrMediaObject';
+import cdrRating from 'Components/rating/cdrRating';
 
 export default {
   name: 'cdr-card-content',

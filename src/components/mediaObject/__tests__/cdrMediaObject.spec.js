@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import cdrMediaObject from '@/components/mediaObject/cdrMediaObject';
+import cdrMediaObject from 'Components/mediaObject/cdrMediaObject';
 
 describe('cdrMediaObject.vue', () => {
   it('renders a media Object', () => {

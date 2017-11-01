@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import cdrButton from '@/components/button/cdrButton';
+import cdrButton from 'Components/button/cdrButton';
 
 let testTotal = 1;
 function addOne() {

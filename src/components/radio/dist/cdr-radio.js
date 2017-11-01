@@ -252,24 +252,7 @@ module.exports = function normalizeComponent (
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -281,36 +264,31 @@ module.exports = function normalizeComponent (
     event: 'change'
   },
   props: {
-    /**
-     * Sets the name of the radio. Required.
-    */
     name: {
       type: String,
       required: true
     },
-    /**
-     * Sets the value of the radio. Required.
-    */
+
     value: {
       required: true
     },
-    /** @ignore */
+
     id: String,
-    /** @ignore */
+
     modelValue: {
       required: false
     }
   },
   computed: {
-    radioId() {
-      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
+    radioId: function radioId() {
+      return this.id ? this.id : this._uid;
     },
-    isChecked() {
+    isChecked: function isChecked() {
       return Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEqual"])(this.modelValue, this.value);
     }
   },
   methods: {
-    onChange() {
+    onChange: function onChange() {
       this.$emit('change', this.value);
     }
   }

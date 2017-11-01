@@ -1,6 +1,6 @@
 import { mount } from 'avoriaz';
 import testText from '../examples/testText.vue';
-import cdrCheckbox from '@/components/checkbox/cdrCheckbox';
+import cdrCheckbox from 'Components/checkbox/cdrCheckbox';
 
 
 describe('cdrCheckbox.vue', () => {

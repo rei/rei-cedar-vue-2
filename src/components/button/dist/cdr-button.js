@@ -252,12 +252,7 @@ module.exports = function normalizeComponent (
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_theme__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_modifier__ = __webpack_require__(6);
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -266,25 +261,26 @@ module.exports = function normalizeComponent (
   name: 'cdr-button',
   mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_theme__["a" /* default */], __WEBPACK_IMPORTED_MODULE_1__mixins_modifier__["a" /* default */]],
   props: {
-    /**
-     * {button, submit, reset}. Defines the button type.
-     */
     type: {
       type: String,
       default: 'button',
-      validator: value => ['button', 'submit', 'reset'].indexOf(value) >= 0 || false
+      validator: function validator(value) {
+        return ['button', 'submit', 'reset'].indexOf(value) >= 0 || false;
+      }
     },
-    /**
-     * Add custom click actions.
-     */
+
     onClick: {
       type: Function,
-      default: () => () => null
+      default: function _default() {
+        return function () {
+          return null;
+        };
+      }
     }
   },
   computed: {
-    baseClass() {
-      const modifiers = this.modifier ? this.modifier.split(' ') : [];
+    baseClass: function baseClass() {
+      var modifiers = this.modifier ? this.modifier.split(' ') : [];
       return modifiers.indexOf('link') >= 0 ? 'cdr-link' : 'cdr-button';
     }
   }
@@ -295,31 +291,24 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/**
- * Use of this mixin requires adding either a data value or computed property
- * of 'baseClass' that is a string of the base class value
- */
-/**
- * @mixin
- */
+
 /* harmony default export */ __webpack_exports__["a"] = ({
   props: {
-    /**
-     * Name of the css module theme
-     */
     theme: String
   },
   computed: {
-    themeClass() {
-      const base = this.baseClass;
-      const modifierArr = this.modifier ? this.modifier.split(' ') : [];
-      let final = '';
+    themeClass: function themeClass() {
+      var _this = this;
+
+      var base = this.baseClass;
+      var modifierArr = this.modifier ? this.modifier.split(' ') : [];
+      var final = '';
 
       if (this.theme) {
-        final += `${this[this.theme][base]} `;
+        final += this[this.theme][base] + ' ';
 
-        modifierArr.forEach(mod => {
-          final += `${this[this.theme][`${base}--${mod}`]} `;
+        modifierArr.forEach(function (mod) {
+          final += _this[_this.theme][base + '--' + mod] + ' ';
         });
       }
 
@@ -333,27 +322,22 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/**
- * @mixin
- */
+
 /* harmony default export */ __webpack_exports__["a"] = ({
   props: {
-    /**
-     * Space separated list of modifiers. See below for possible values
-     */
     modifier: String
   },
   computed: {
-    modifierClass() {
-      const base = this.baseClass;
-      const modifierArr = this.modifier ? this.modifier.split(' ') : [];
-      let final = '';
+    modifierClass: function modifierClass() {
+      var base = this.baseClass;
+      var modifierArr = this.modifier ? this.modifier.split(' ') : [];
+      var final = '';
 
       if (!this.theme) {
-        final += `${base}`;
+        final += '' + base;
 
-        modifierArr.forEach(mod => {
-          final += ` ${base}--${mod} `;
+        modifierArr.forEach(function (mod) {
+          final += ' ' + base + '--' + mod + ' ';
         });
       }
 

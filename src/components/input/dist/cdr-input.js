@@ -70,16 +70,68 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__(4)(function () {
+  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self
+  // eslint-disable-next-line no-new-func
+  : Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+var core = module.exports = { version: '2.5.1' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = function (exec) {
+  try {
+    return !!exec();
+  } catch (e) {
+    return true;
+  }
+};
+
+
+/***/ }),
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrInput__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrInput__ = __webpack_require__(6);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrInput", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrInput__["a"]; });
 
 
@@ -96,16 +148,16 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /***/ }),
-/* 1 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrInput_vue__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_784968cc_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrInput_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrInput_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_784968cc_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrInput_vue__ = __webpack_require__(28);
 function injectStyle (ssrContext) {
-  __webpack_require__(2)
+  __webpack_require__(7)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(8)
 /* script */
 
 /* template */
@@ -131,13 +183,13 @@ var Component = normalizeComponent(
 
 
 /***/ }),
-/* 2 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 3 */
+/* 8 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -246,88 +298,33 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 4 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_debounce__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mixins_modifier__ = __webpack_require__(6);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_number_is_nan__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_number_is_nan___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_number_is_nan__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_debounce__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mixins_modifier__ = __webpack_require__(24);
 
 
 
 
-/* eslint-disable */
-const checkIcon = __webpack_require__(7);
-const errorIcon = __webpack_require__(8);
-const warningIcon = __webpack_require__(9);
-/* eslint-enable */
+
+
+var checkIcon = __webpack_require__(25);
+var errorIcon = __webpack_require__(26);
+var warningIcon = __webpack_require__(27);
+
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'cdr-input',
   inheritAttrs: false,
-  mixins: [__WEBPACK_IMPORTED_MODULE_1__mixins_modifier__["a" /* default */]],
-  data() {
+  mixins: [__WEBPACK_IMPORTED_MODULE_2__mixins_modifier__["a" /* default */]],
+  data: function data() {
     return {
       errors: [],
-      lazyValue: this.value,
+      currentValue: this.value,
       pristine: true,
       touched: false,
       valid: false,
@@ -335,98 +332,70 @@ const warningIcon = __webpack_require__(9);
       state: ''
     };
   },
+
   props: {
-    /**
-     * id for the input that is mapped to the label 'for' attribute.
-     * If one is not provided, it will be auto generated.
-    */
     id: String,
-    /**
-     * Label text. This is required for a11y even if hiding the label with `hideLabel`.
-    */
+
     label: {
       type: String,
       required: true
     },
-    /**
-     * Removes the label element but sets the input 'aria-label' to `label` text for a11y.
-    */
+
     hideLabel: Boolean,
-    /**
-     * Changes the input to a textarea.
-    */
+
     multiLine: Boolean,
-    /**
-     * Regex validation pattern. Useful for simple validation.
-    */
+
     pattern: String,
-    /**
-     * Error message to be displayed when `pattern` validation fails.
-    */
+
     patternError: String,
-    /**
-     * Enables icon feedback as part of validation
-     * for valid, warn, and error states.
-    */
+
     feedback: Boolean,
-    /**
-     * Input type. NOTE: This component is meant for text style inputs.
-     * Other input types (checkbox, radio) have their own components.
-    */
+
     type: {
       type: String,
       default: 'text'
     },
-    /**
-     * Array of functions. Provide your own validation function(s).
-     * Takes the input string and outputs an object with a state and message.
-     * State is a String with value `valid`, `warning`, or `error`.
-     * Message is any String.
-    */
+
     rules: {
       type: Array,
-      default: () => []
+      default: function _default() {
+        return [];
+      }
     },
-    /**
-     * Boolean or Number.
-     * true has a default of 500ms.
-     * Providing a number will set debounce to that (in ms).
-     * false is no debounce.
-    */
+
     debounce: {
       required: false,
       default: false
     },
-    /** @ignore */
+
     disabled: Boolean,
-    /** @ignore */
+
     required: Boolean,
-    /** @ignore */
+
     immediateValidate: Boolean,
-    /** @ignore */
+
     value: {
       required: false
     }
   },
   computed: {
-    // Use given id or generate one
-    inputId() {
-      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
+    inputId: function inputId() {
+      return this.id ? this.id : this._uid;
     },
-    messagesId() {
-      return `err${this._uid}`; // eslint-disable-line no-underscore-dangle
+    messagesId: function messagesId() {
+      return 'err' + this._uid;
     },
-    baseClass() {
+    baseClass: function baseClass() {
       return 'cdr-input';
     },
-    labelClass() {
+    labelClass: function labelClass() {
       return {
         'cdr-label': true,
         'cdr-label--error': this.isErr,
         'cdr-label--disabled': this.disabled
       };
     },
-    inputClass() {
+    inputClass: function inputClass() {
       return {
         'cdr-input': true,
         'cdr-input--multiline': this.multiLine,
@@ -435,13 +404,13 @@ const warningIcon = __webpack_require__(9);
         'cdr-input--preicon': this.$slots.preicon
       };
     },
-    inputWrapClass() {
+    inputWrapClass: function inputWrapClass() {
       return {
         'cdr-input-wrap': true,
         'cdr-input-wrap--actions': this.$slots.pre || this.$slots.post
       };
     },
-    validationIconClass() {
+    validationIconClass: function validationIconClass() {
       return {
         'cdr-input-wrap__icon': true,
         'cdr-input-wrap__icon--error': this.isErr,
@@ -449,15 +418,15 @@ const warningIcon = __webpack_require__(9);
         'cdr-input-wrap__icon--valid': this.isValid
       };
     },
-    messageClass() {
+    messageClass: function messageClass() {
       return {
         'cdr-input-messages__notification': true,
         'cdr-input-messages__notification--error': this.isErr,
         'cdr-input-messages__notification--warn': this.isWarn
       };
     },
-    getIcon() {
-      let icon = '';
+    getIcon: function getIcon() {
+      var icon = '';
 
       if (this.isErr) {
         icon = errorIcon;
@@ -469,87 +438,46 @@ const warningIcon = __webpack_require__(9);
 
       return icon;
     },
-    // Check if debounce is enabled, defined, or default
-    debounceVal() {
+    debounceVal: function debounceVal() {
       if (this.debounce === false) {
         return 0;
-      } else if (!Number.isNaN(this.debounce) && this.debounce !== '' && this.debounce !== true) {
+      } else if (!__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_number_is_nan___default()(this.debounce) && this.debounce !== '' && this.debounce !== true) {
         return this.debounce;
       }
       return 500;
     },
-    isErr() {
+    isErr: function isErr() {
       return this.state === 'error';
     },
-    isWarn() {
+    isWarn: function isWarn() {
       return this.state === 'warn';
     },
-    isValid() {
+    isValid: function isValid() {
       return this.state === 'valid';
-    },
-    modifiers() {
-      const modifiers = {
-        lazy: false,
-        number: false,
-        trim: false
-      };
-
-      if (!this._vnode.data.directives) {
-        //eslint-disable-line
-        return modifiers;
-      }
-
-      const model = this._vnode.data.directives.find(i => i.name === 'model'); //eslint-disable-line
-
-      if (!model) {
-        return modifiers;
-      }
-
-      return Object.assign(modifiers, model.modifiers);
-    },
-    inputValue: {
-      get() {
-        return this.value;
-      },
-      set(valArg) {
-        let val = valArg;
-        if (this.modifiers.trim) {
-          val = val.trim();
-        }
-
-        if (this.modifiers.number) {
-          val = Number(val);
-        }
-
-        if (!this.modifiers.lazy) {
-          this.$emit('input', val);
-        }
-
-        this.lazyValue = val;
-      }
     }
   },
-  mounted() {
-    // Convert pattern to a rule for testing
+  mounted: function mounted() {
+    var _this = this;
+
     if (this.pattern) {
-      const regPattern = new RegExp(this.pattern);
-      this.rules.push(text => {
-        const obj = {};
+      var regPattern = new RegExp(this.pattern);
+      this.rules.push(function (text) {
+        var obj = {};
         if (regPattern.test(text)) {
           obj.state = 'valid';
         } else {
           obj.state = 'error';
-          obj.message = this.patternError || '';
+          obj.message = _this.patternError || '';
         }
         return obj;
       });
     }
-    // Provide some default validation for required
+
     if (this.required) {
-      this.rules.push(text => {
-        const obj = {};
-        // interacted with, not currently focsed, and empty
-        if (this.touched && !this.focused && text === '') {
+      this.rules.push(function (text) {
+        var obj = {};
+
+        if (_this.touched && !_this.focused && text === '') {
           obj.state = 'warn';
           obj.message = 'This field is required';
         }
@@ -560,61 +488,74 @@ const warningIcon = __webpack_require__(9);
       this.validate(true);
     }
   },
+
   watch: {
-    focused(val) {
+    focused: function focused(val) {
       this.touched = true;
 
       if (val) {
-        this.$emit('change', this.lazyValue);
+        this.$emit('change', val);
       }
     },
-    value() {
-      this.lazyValue = this.value;
+    value: function value(val) {
+      this.setCurrentValue(val);
       this.validate();
     }
   },
   methods: {
-    onInput(e) {
+    onInput: function onInput(e) {
       this.pristine = false;
-      this.inputValue = e.target.value;
+      var value = e.target.value;
+
+      this.$emit('input', value);
+      this.setCurrentValue(value);
     },
-    onBlur(e) {
+    onBlur: function onBlur(e) {
+      var _this2 = this;
+
       this.validate(true);
-      this.$nextTick(() => {
-        this.focused = false;
+      this.$nextTick(function () {
+        _this2.focused = false;
       });
       this.$emit('blur', e);
     },
-    onFocus(e) {
+    onFocus: function onFocus(e) {
       this.focused = true;
       this.$refs.input.focus();
       this.$emit('focus', e);
     },
-    onPaste(e) {
+    onPaste: function onPaste(e) {
       this.validate(true);
       this.$emit('paste', e);
     },
-    validate(immediate = false) {
-      // only validate rules if there are any
-      if (this.rules.length > 0) {
-        const delay = immediate ? 0 : this.debounceVal;
-        Object(__WEBPACK_IMPORTED_MODULE_0__utils_debounce__["a" /* default */])(() => {
-          this.errors = [];
-          this.valid = false;
+    setCurrentValue: function setCurrentValue(value) {
+      if (value === this.currentValue) return;
+      this.currentValue = value;
+    },
+    validate: function validate() {
+      var _this3 = this;
 
-          this.rules.forEach(rule => {
-            const validObj = rule(this.value);
-            validObj.state = validObj.state ? validObj.state : this.state;
+      var immediate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+      if (this.rules.length > 0) {
+        var delay = immediate ? 0 : this.debounceVal;
+        Object(__WEBPACK_IMPORTED_MODULE_1__utils_debounce__["a" /* default */])(function () {
+          _this3.errors = [];
+          _this3.valid = false;
+
+          _this3.rules.forEach(function (rule) {
+            var validObj = rule(_this3.currentValue);
+            validObj.state = validObj.state ? validObj.state : _this3.state;
 
             if (validObj.state === 'valid') {
-              this.state = validObj.state;
+              _this3.state = validObj.state;
             } else if (validObj.state === 'warn') {
-              this.state = validObj.state;
-              this.errors.push(validObj.message);
+              _this3.state = validObj.state;
+              _this3.errors.push(validObj.message);
             } else {
-              this.state = validObj.state;
+              _this3.state = validObj.state;
               if (validObj.message) {
-                this.errors.push(validObj.message);
+                _this3.errors.push(validObj.message);
               }
             }
           });
@@ -625,47 +566,280 @@ const warningIcon = __webpack_require__(9);
 });
 
 /***/ }),
-/* 5 */
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(11), __esModule: true };
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(12);
+module.exports = __webpack_require__(3).Number.isNaN;
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 20.1.2.4 Number.isNaN(number)
+var $export = __webpack_require__(13);
+
+$export($export.S, 'Number', {
+  isNaN: function isNaN(number) {
+    // eslint-disable-next-line no-self-compare
+    return number != number;
+  }
+});
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(2);
+var core = __webpack_require__(3);
+var ctx = __webpack_require__(14);
+var hide = __webpack_require__(16);
+var PROTOTYPE = 'prototype';
+
+var $export = function (type, name, source) {
+  var IS_FORCED = type & $export.F;
+  var IS_GLOBAL = type & $export.G;
+  var IS_STATIC = type & $export.S;
+  var IS_PROTO = type & $export.P;
+  var IS_BIND = type & $export.B;
+  var IS_WRAP = type & $export.W;
+  var exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
+  var expProto = exports[PROTOTYPE];
+  var target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE];
+  var key, own, out;
+  if (IS_GLOBAL) source = name;
+  for (key in source) {
+    // contains in native
+    own = !IS_FORCED && target && target[key] !== undefined;
+    if (own && key in exports) continue;
+    // export native or passed
+    out = own ? target[key] : source[key];
+    // prevent global pollution for namespaces
+    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+    // bind timers to global for call from export context
+    : IS_BIND && own ? ctx(out, global)
+    // wrap global constructors for prevent change them in library
+    : IS_WRAP && target[key] == out ? (function (C) {
+      var F = function (a, b, c) {
+        if (this instanceof C) {
+          switch (arguments.length) {
+            case 0: return new C();
+            case 1: return new C(a);
+            case 2: return new C(a, b);
+          } return new C(a, b, c);
+        } return C.apply(this, arguments);
+      };
+      F[PROTOTYPE] = C[PROTOTYPE];
+      return F;
+    // make static versions for prototype methods
+    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
+    if (IS_PROTO) {
+      (exports.virtual || (exports.virtual = {}))[key] = out;
+      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
+      if (type & $export.R && expProto && !expProto[key]) hide(expProto, key, out);
+    }
+  }
+};
+// type bitmap
+$export.F = 1;   // forced
+$export.G = 2;   // global
+$export.S = 4;   // static
+$export.P = 8;   // proto
+$export.B = 16;  // bind
+$export.W = 32;  // wrap
+$export.U = 64;  // safe
+$export.R = 128; // real proto method for `library`
+module.exports = $export;
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// optional / simple context binding
+var aFunction = __webpack_require__(15);
+module.exports = function (fn, that, length) {
+  aFunction(fn);
+  if (that === undefined) return fn;
+  switch (length) {
+    case 1: return function (a) {
+      return fn.call(that, a);
+    };
+    case 2: return function (a, b) {
+      return fn.call(that, a, b);
+    };
+    case 3: return function (a, b, c) {
+      return fn.call(that, a, b, c);
+    };
+  }
+  return function (/* ...args */) {
+    return fn.apply(that, arguments);
+  };
+};
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
+  return it;
+};
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__(17);
+var createDesc = __webpack_require__(22);
+module.exports = __webpack_require__(1) ? function (object, key, value) {
+  return dP.f(object, key, createDesc(1, value));
+} : function (object, key, value) {
+  object[key] = value;
+  return object;
+};
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(18);
+var IE8_DOM_DEFINE = __webpack_require__(19);
+var toPrimitive = __webpack_require__(21);
+var dP = Object.defineProperty;
+
+exports.f = __webpack_require__(1) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if (IE8_DOM_DEFINE) try {
+    return dP(O, P, Attributes);
+  } catch (e) { /* empty */ }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(0);
+module.exports = function (it) {
+  if (!isObject(it)) throw TypeError(it + ' is not an object!');
+  return it;
+};
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = !__webpack_require__(1) && !__webpack_require__(4)(function () {
+  return Object.defineProperty(__webpack_require__(20)('div'), 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(0);
+var document = __webpack_require__(2).document;
+// typeof document.createElement is 'object' in old IE
+var is = isObject(document) && isObject(document.createElement);
+module.exports = function (it) {
+  return is ? document.createElement(it) : {};
+};
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.1 ToPrimitive(input [, PreferredType])
+var isObject = __webpack_require__(0);
+// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+// and the second argument - flag - preferred type is a string
+module.exports = function (it, S) {
+  if (!isObject(it)) return it;
+  var fn, val;
+  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  throw TypeError("Can't convert object to primitive value");
+};
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+module.exports = function (bitmap, value) {
+  return {
+    enumerable: !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable: !(bitmap & 4),
+    value: value
+  };
+};
+
+
+/***/ }),
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = debounce;
 function debounce(func, wait) {
-  let timeout;
-  return function (...args) {
-    // eslint-disable-line func-names
-    const context = this;
+  var timeout = void 0;
+  return function () {
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var context = this;
     clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(context, args), wait);
+    timeout = setTimeout(function () {
+      return func.apply(context, args);
+    }, wait);
   };
 }
 
 /***/ }),
-/* 6 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/**
- * @mixin
- */
+
 /* harmony default export */ __webpack_exports__["a"] = ({
   props: {
-    /**
-     * Space separated list of modifiers. See below for possible values
-     */
     modifier: String
   },
   computed: {
-    modifierClass() {
-      const base = this.baseClass;
-      const modifierArr = this.modifier ? this.modifier.split(' ') : [];
-      let final = '';
+    modifierClass: function modifierClass() {
+      var base = this.baseClass;
+      var modifierArr = this.modifier ? this.modifier.split(' ') : [];
+      var final = '';
 
       if (!this.theme) {
-        final += `${base}`;
+        final += '' + base;
 
-        modifierArr.forEach(mod => {
-          final += ` ${base}--${mod} `;
+        modifierArr.forEach(function (mod) {
+          final += ' ' + base + '--' + mod + ' ';
         });
       }
 
@@ -675,29 +849,29 @@ function debounce(func, wait) {
 });
 
 /***/ }),
-/* 7 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg viewBox=\"0 0 16 14\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5.67 13.67l10.1-12.03c.35-.42.3-1.05-.13-1.4-.42-.36-1.05-.3-1.4.12l-9.3 11.08-3.17-3.77c-.36-.43-1-.48-1.4-.13-.44.36-.5 1-.14 1.4l3.88 4.63c.2.26.5.43.84.43.3 0 .56-.13.74-.33z\"/></svg>"
 
 /***/ }),
-/* 8 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10 20C4.48 20 0 15.52 0 10S4.48 0 10 0s10 4.48 10 10-4.48 10-10 10zm1.4-10l3.3-3.3c.4-.38.4-1 0-1.4-.4-.4-1.02-.4-1.4 0L10 8.6 6.7 5.3c-.38-.4-1.02-.4-1.4 0-.4.4-.4 1.02 0 1.4L8.58 10l-3.3 3.3c-.38.38-.38 1.02 0 1.4.4.4 1.04.4 1.43 0l3.3-3.28 3.3 3.3c.38.38 1 .38 1.4 0 .4-.4.4-1.04 0-1.43L11.4 10z\"/></svg>"
 
 /***/ }),
-/* 9 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = "<svg viewBox=\"0 0 18 18\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M9.894.558l8.002 15.995c.247.494.047 1.094-.447 1.34-.14.07-.294.107-.45.107H1c-.552 0-1-.448-1-1 0-.155.037-.308.106-.447L8.106.558c.247-.494.847-.694 1.34-.447.195.1.352.255.448.45V.557zM8.78 4.5h-.03c-.552.017-.986.477-.97 1.03l.19 6.5c.017.54.46.97 1 .97h.06c.54 0 .983-.43 1-.97l.19-6.5V5.5c0-.552-.448-1-1-1h-.44zm.22 12c.69 0 1.25-.56 1.25-1.25S9.69 14 9 14s-1.25.56-1.25 1.25S8.31 16.5 9 16.5z\"/></svg>"
 
 /***/ }),
-/* 10 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"cdr-input-container"},[(!_vm.hideLabel)?_c('label',{ref:"label",class:_vm.labelClass,attrs:{"for":_vm.inputId}},[_vm._v(_vm._s(_vm.label)),(_vm.required)?_c('span',[_vm._v("*")]):_vm._e()]):_vm._e(),_vm._v(" "),_c('div',{class:[_vm.inputWrapClass]},[(_vm.multiLine)?_c('textarea',_vm._g(_vm._b({ref:"input",class:[_vm.inputClass, _vm.modifierClass],attrs:{"id":_vm.inputId,"required":_vm.required,"disabled":_vm.disabled,"aria-label":_vm.hideLabel ? _vm.label : null,"aria-describedby":_vm.errors.length ? _vm.messagesId : null},domProps:{"value":_vm.lazyValue},on:{"blur":_vm.onBlur,"input":_vm.onInput,"focus":_vm.onFocus,"paste":_vm.onPaste}},'textarea',_vm.$attrs,false),_vm.$listeners)):_c('input',_vm._g(_vm._b({ref:"input",class:[_vm.inputClass, _vm.modifierClass],attrs:{"type":_vm.type,"id":_vm.inputId,"required":_vm.required,"disabled":_vm.disabled,"aria-label":_vm.hideLabel ? _vm.label : null,"aria-describedby":_vm.errors.length ? _vm.messagesId : null},domProps:{"value":_vm.lazyValue},on:{"blur":_vm.onBlur,"input":_vm.onInput,"focus":_vm.onFocus,"paste":_vm.onPaste}},'input',_vm.$attrs,false),_vm.$listeners)),_vm._v(" "),(_vm.$slots.preicon)?_c('span',{staticClass:"cdr-input__pre-icon",attrs:{"aria-hidden":"true"}},[_vm._t("preicon")],2):_vm._e(),_vm._v(" "),(_vm.feedback)?_c('span',{ref:"icon",class:_vm.validationIconClass,domProps:{"innerHTML":_vm._s(_vm.getIcon)}}):_vm._e()]),_vm._v(" "),_c('transition-group',{ref:"messages",staticClass:"cdr-input-messages",attrs:{"id":_vm.messagesId,"name":"cdr-animated-errors","tag":"div"}},_vm._l((_vm.errors),function(error){return _c('div',{key:error,ref:"error",refInFor:true,class:_vm.messageClass,attrs:{"error":error}},[_vm._v(_vm._s(error))])}))],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"cdr-input-container"},[(!_vm.hideLabel)?_c('label',{ref:"label",class:_vm.labelClass,attrs:{"for":_vm.inputId}},[_vm._v(_vm._s(_vm.label)),(_vm.required)?_c('span',[_vm._v("*")]):_vm._e()]):_vm._e(),_vm._v(" "),_c('div',{class:[_vm.inputWrapClass]},[(_vm.multiLine)?_c('textarea',_vm._b({ref:"input",class:[_vm.inputClass, _vm.modifierClass],attrs:{"id":_vm.inputId,"required":_vm.required,"disabled":_vm.disabled,"aria-label":_vm.hideLabel ? _vm.label : null,"aria-describedby":_vm.errors.length ? _vm.messagesId : null},domProps:{"value":_vm.currentValue},on:{"blur":_vm.onBlur,"input":_vm.onInput,"focus":_vm.onFocus,"paste":_vm.onPaste}},'textarea',_vm.$attrs,false)):_c('input',_vm._b({ref:"input",class:[_vm.inputClass, _vm.modifierClass],attrs:{"type":_vm.type,"id":_vm.inputId,"required":_vm.required,"disabled":_vm.disabled,"aria-label":_vm.hideLabel ? _vm.label : null,"aria-describedby":_vm.errors.length ? _vm.messagesId : null},domProps:{"value":_vm.currentValue},on:{"blur":_vm.onBlur,"input":_vm.onInput,"focus":_vm.onFocus,"paste":_vm.onPaste}},'input',_vm.$attrs,false)),_vm._v(" "),(_vm.$slots.preicon)?_c('span',{staticClass:"cdr-input__pre-icon",attrs:{"aria-hidden":"true"}},[_vm._t("preicon")],2):_vm._e(),_vm._v(" "),(_vm.feedback)?_c('span',{ref:"icon",class:_vm.validationIconClass,domProps:{"innerHTML":_vm._s(_vm.getIcon)}}):_vm._e()]),_vm._v(" "),_c('transition-group',{ref:"messages",staticClass:"cdr-input-messages",attrs:{"id":_vm.messagesId,"name":"cdr-animated-errors","tag":"div"}},_vm._l((_vm.errors),function(error){return _c('div',{key:error,ref:"error",refInFor:true,class:_vm.messageClass,attrs:{"error":error}},[_vm._v(_vm._s(error))])}))],1)}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

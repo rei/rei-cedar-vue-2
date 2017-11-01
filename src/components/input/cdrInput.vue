@@ -11,8 +11,7 @@
         :class="[inputClass, modifierClass]"
         v-bind="$attrs"
         :id="inputId"
-        :value="lazyValue"
-        v-on="$listeners"
+        :value="currentValue"
         @blur="onBlur"
         @input="onInput"
         @focus="onFocus"
@@ -29,8 +28,7 @@
         :class="[inputClass, modifierClass]"
         v-bind="$attrs"
         :id="inputId"
-        :value="lazyValue"
-        v-on="$listeners"
+        :value="currentValue"
         @blur="onBlur"
         @input="onInput"
         @focus="onFocus"
@@ -73,7 +71,7 @@ export default {
   data() {
     return {
       errors: [],
-      lazyValue: this.value,
+      currentValue: this.value,
       pristine: true,
       touched: false,
       valid: false,
@@ -233,46 +231,6 @@ export default {
     isValid() {
       return this.state === 'valid';
     },
-    modifiers() {
-      const modifiers = {
-        lazy: false,
-        number: false,
-        trim: false,
-      };
-
-      if (!this._vnode.data.directives) {//eslint-disable-line
-        return modifiers;
-      }
-
-      const model = this._vnode.data.directives.find(i => i.name === 'model');//eslint-disable-line
-
-      if (!model) {
-        return modifiers;
-      }
-
-      return Object.assign(modifiers, model.modifiers);
-    },
-    inputValue: {
-      get() {
-        return this.value;
-      },
-      set(valArg) {
-        let val = valArg;
-        if (this.modifiers.trim) {
-          val = val.trim();
-        }
-
-        if (this.modifiers.number) {
-          val = Number(val);
-        }
-
-        if (!this.modifiers.lazy) {
-          this.$emit('input', val);
-        }
-
-        this.lazyValue = val;
-      },
-    },
   },
   mounted() {
     // Convert pattern to a rule for testing
@@ -310,18 +268,20 @@ export default {
       this.touched = true;
 
       if (val) {
-        this.$emit('change', this.lazyValue);
+        this.$emit('change', val);
       }
     },
-    value() {
-      this.lazyValue = this.value;
+    value(val) {
+      this.setCurrentValue(val);
       this.validate();
     },
   },
   methods: {
     onInput(e) {
       this.pristine = false;
-      this.inputValue = e.target.value;
+      const { value } = e.target;
+      this.$emit('input', value);
+      this.setCurrentValue(value);
     },
     onBlur(e) {
       this.validate(true);
@@ -339,6 +299,10 @@ export default {
       this.validate(true);
       this.$emit('paste', e);
     },
+    setCurrentValue(value) {
+      if (value === this.currentValue) return;
+      this.currentValue = value;
+    },
     validate(immediate = false) {
       // only validate rules if there are any
       if (this.rules.length > 0) {
@@ -348,7 +312,7 @@ export default {
           this.valid = false;
 
           this.rules.forEach((rule) => {
-            const validObj = rule(this.value);
+            const validObj = rule(this.currentValue);
             validObj.state = validObj.state ? validObj.state : this.state;
 
             if (validObj.state === 'valid') {

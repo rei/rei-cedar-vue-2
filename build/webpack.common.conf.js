@@ -19,15 +19,11 @@ module.exports = {
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      // '@': resolve('src'),
       Src: resolve('src'),
       Css: resolve('src/css'),
       Components: resolve('src/components')
     },
     extensions: ['.js', '.vue', '.json'],
-    // modules: [
-    //   path.join(__dirname, '../node_modules')
-    // ]
   },
   module: {
     rules: [
@@ -36,8 +32,9 @@ module.exports = {
         loader: 'eslint-loader',
         enforce: 'pre',
         include: [resolve('src'), resolve('tests')],
+        exclude: /(node_modules|dist)/,
         options: {
-          // configFile: resolve('.eslintrc.js'),
+          // configFile: require(resolve('.eslintrc.js')),
           formatter: require('eslint-friendly-formatter'), //eslint-disable-line
         },
       },
@@ -59,6 +56,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: /(node_modules)/,
         include: [resolve('src'), resolve('test')],
       },
       {

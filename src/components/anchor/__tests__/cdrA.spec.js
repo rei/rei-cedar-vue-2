@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import cdrA from '@/components/anchor/cdrA';
+import cdrA from 'Components/anchor/cdrA';
 
 describe('cdrA.vue', () => {
   it('renders an anchor', () => {

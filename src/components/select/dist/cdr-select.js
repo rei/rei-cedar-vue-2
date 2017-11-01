@@ -252,109 +252,75 @@ module.exports = function normalizeComponent (
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'cdr-select',
   inheritAttrs: false,
-  data() {
+  data: function data() {
     return {
       val: this.value
     };
   },
+
   props: {
-    /**
-     * Label text.
-    */
     label: {
       type: String,
       required: true
     },
-    /**
-     * id for the select that is mapped to the label 'for' attribute.
-     * If one is not provided, it will be generated.
-    */
+
     id: String,
-    /**
-     * Removes the label element but sets the select 'aria-label' to `label` text for a11y.
-    */
+
     hideLabel: Boolean,
-    /**
-     * Adds an option that is disabled and selected by default to serve
-     * as a 'placeholder' for the select.
-    */
+
     prompt: String,
-    /**
-     * Build options programatically with data.
-     * Array of objects [{ text: String, value: String}] to give greater control.
-     * Array of strings ['String'] for simpler setup (value and text will be the same).
-    */
+
     options: {
       type: Array
     },
-    /** @ignore */
+
     value: {
       required: false
     },
-    /** @ignore */
+
     required: Boolean,
-    /** @ignore */
+
     size: String,
-    /** @ignore */
+
     multiple: Boolean
   },
   computed: {
-    // Use given id or generate one
-    selectId() {
-      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
+    selectId: function selectId() {
+      return this.id ? this.id : this._uid;
     },
-    selectClass() {
+    selectClass: function selectClass() {
       return {
         'cdr-select': true,
         'cdr-select--size': parseInt(this.size, 10) > 0
       };
     },
-    labelClass() {
+    labelClass: function labelClass() {
       return {
         'cdr-label': true,
         'cdr-label--disabled': this.disabled
       };
     },
-    computedOpts() {
-      const optsArr = [];
+    computedOpts: function computedOpts() {
+      var optsArr = [];
       if (this.options) {
-        this.options.forEach(o => {
-          const optObj = {};
-          let text = '';
-          let val = '';
+        this.options.forEach(function (o) {
+          var optObj = {};
+          var text = '';
+          var val = '';
           if (typeof o === 'string') {
             text = o;
             val = o;
           } else {
-            const { text: t, value: v } = o;
+            var t = o.text,
+                v = o.value;
+
             text = t;
             val = v;
           }
@@ -367,29 +333,35 @@ module.exports = function normalizeComponent (
     }
   },
   watch: {
-    value() {
+    value: function value() {
       if (!this.multiple) {
         this.val = this.value;
       }
     }
   },
-  mounted() {
-    // initialize options as selected if multiple
+  mounted: function mounted() {
+    var _this = this;
+
     if (this.multiple) {
-      const opts = Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["toArray"])(this.$refs.select.options);
-      opts.forEach(opt => {
-        const o = opt;
-        if (this.val.indexOf(o.value) !== -1) {
+      var opts = Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["toArray"])(this.$refs.select.options);
+      opts.forEach(function (opt) {
+        var o = opt;
+        if (_this.val.indexOf(o.value) !== -1) {
           o.selected = true;
         }
       });
     }
   },
+
   methods: {
-    onInput(e) {
+    onInput: function onInput(e) {
       if (this.multiple) {
-        const optArr = Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["toArray"])(e.target.options);
-        const selected = optArr.filter(o => o.selected === true).map(o => o.value);
+        var optArr = Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["toArray"])(e.target.options);
+        var selected = optArr.filter(function (o) {
+          return o.selected === true;
+        }).map(function (o) {
+          return o.value;
+        });
         this.val = e.target.value;
         this.$emit('input', selected);
       } else {

@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import cdrRating from '@/components/rating/cdrRating';
+import cdrRating from 'Components/rating/cdrRating';
 
 describe('cdrRating.vue', () => {
   it('computes and rounds rating stars correctly', () => {

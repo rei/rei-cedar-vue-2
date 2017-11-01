@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import cdrButtonGroup from '@/components/buttonGroup/cdrButtonGroup';
+import cdrButtonGroup from 'Components/buttonGroup/cdrButtonGroup';
 
 describe('cdrButtonGroup.vue', () => {
   it('has the right class', () => {

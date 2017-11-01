@@ -250,23 +250,10 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-//
-//
-//
-//
-//
-//
-//
 
-/**
- * **NOTE:** Can only be used with an SVG symbol sprite.
- */
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'cdr-icon',
   props: {
-    /**
-     * URL to the svg sprite and icon name. /path/to/svg.svg#icon-name
-     */
     url: {
       type: String,
       required: true

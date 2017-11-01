@@ -251,16 +251,7 @@ module.exports = function normalizeComponent (
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_modifier__ = __webpack_require__(5);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -268,17 +259,16 @@ module.exports = function normalizeComponent (
   name: 'cdr-list',
   mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_modifier__["a" /* default */]],
   props: {
-    /**
-     * List type. 'ul' = Unordered List. 'ol' = Ordered List.
-     */
     type: {
       type: String,
       default: 'ul',
-      validator: value => ['ul', 'ol'].indexOf(value) >= 0 || false
+      validator: function validator(value) {
+        return ['ul', 'ol'].indexOf(value) >= 0 || false;
+      }
     }
   },
   computed: {
-    baseClass() {
+    baseClass: function baseClass() {
       return 'cdr-list';
     }
   }
@@ -289,27 +279,22 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/**
- * @mixin
- */
+
 /* harmony default export */ __webpack_exports__["a"] = ({
   props: {
-    /**
-     * Space separated list of modifiers. See below for possible values
-     */
     modifier: String
   },
   computed: {
-    modifierClass() {
-      const base = this.baseClass;
-      const modifierArr = this.modifier ? this.modifier.split(' ') : [];
-      let final = '';
+    modifierClass: function modifierClass() {
+      var base = this.baseClass;
+      var modifierArr = this.modifier ? this.modifier.split(' ') : [];
+      var final = '';
 
       if (!this.theme) {
-        final += `${base}`;
+        final += '' + base;
 
-        modifierArr.forEach(mod => {
-          final += ` ${base}--${mod} `;
+        modifierArr.forEach(function (mod) {
+          final += ' ' + base + '--' + mod + ' ';
         });
       }
 

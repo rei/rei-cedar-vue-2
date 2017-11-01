@@ -1,6 +1,6 @@
 import { mount, shallow } from 'avoriaz';
-import cdrCol from '@/components/grid/cdrCol';
-import cdrRow from '@/components/grid/cdrRow';
+import cdrCol from 'Components/column/cdrCol';
+import cdrRow from 'Components/row/cdrRow';
 
 describe('cdrCol.vue', () => {
   it('renders as list type correctly', () => {

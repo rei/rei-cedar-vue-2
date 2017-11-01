@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import selectComp from '@/components/select/cdrSelect';
+import selectComp from 'Components/select/cdrSelect';
 import { toArray } from 'lodash';
 
 describe('cdrSelect.vue', () => {

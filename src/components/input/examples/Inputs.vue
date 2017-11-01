@@ -7,8 +7,7 @@
       id="testing"
       placeholder="Enter hi"
       feedback
-        name="yoyo"
-
+      name="yoyo"
       :rules="[validateFn]"
       debounce
       data-backstop="text-input"
@@ -113,7 +112,7 @@
 </template>
 
 <script>
-  import Components from '../../_index';
+  import Components from 'Components/_index';
 
   export default {
     name: 'forms',

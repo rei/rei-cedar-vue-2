@@ -1,6 +1,6 @@
 import { mount } from 'avoriaz';
 import testText from '../examples/testText.vue';
-import cdrRadio from '@/components/radio/cdrRadio';
+import cdrRadio from 'Components/radio/cdrRadio';
 
 describe('cdrRadio.vue', () => {
   it('renders an input', () => {

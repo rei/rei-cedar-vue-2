@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import cdrList from '@/components/list/cdrList';
+import cdrList from 'Components/list/cdrList';
 
 describe('cdrList.vue', () => {
   it('sets type prop correctly', () => {

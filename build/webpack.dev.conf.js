@@ -25,16 +25,6 @@ function resolve(dir) {
 
 module.exports = merge(baseWebpackConfig, {
   entry: entryObj,
-  resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
-      vue$: 'vue/dist/vue.esm.js',
-      // '@': resolve('node_modules'),
-    },
-    // modules: [
-    //   path.join(__dirname, '../node_modules')
-    // ]
-  },
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
