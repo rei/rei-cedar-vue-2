@@ -79,12 +79,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrCol_vue__ = __webpack_require__(1);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrColumn", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrCol_vue__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrCol__ = __webpack_require__(1);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrColumn", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrCol__["a"]; });
 
 
 function install(Vue) {
-  Vue.component('cdr-col', __WEBPACK_IMPORTED_MODULE_0__cdrCol_vue__["a" /* default */]);
+  Vue.component('cdr-col', __WEBPACK_IMPORTED_MODULE_0__cdrCol__["a" /* default */]);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -241,8 +241,8 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_row__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_row___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_row__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_row__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_row___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_row__);
 //
 //
 //
@@ -269,7 +269,7 @@ module.exports = function normalizeComponent (
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'cdr-col',
-  components: { Row: __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_row___default.a },
+  components: { Row: __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_row___default.a },
   inject: ['rowType'],
   inheritAttrs: false,
   props: {

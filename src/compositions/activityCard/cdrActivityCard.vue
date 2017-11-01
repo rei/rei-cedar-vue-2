@@ -35,24 +35,24 @@
 </style>
 
 <script>
-import cdrCard from './node_modules/@rei-co-op/cedar-card';
-import cdrHeading from './node_modules/@rei-co-op/cedar-heading';
-import cdrImg from './node_modules/@rei-co-op/cedar-image';
-import cdrMediaObject from './node_modules/@rei-co-op/cedar-media-object';
-import cdrRating from './node_modules/@rei-co-op/cedar-rating';
-import cdrList from './node_modules/@rei-co-op/cedar-list';
+import { CdrCard } from '@rei-co-op/cedar-card';
+import { CdrHeading } from '@rei-co-op/cedar-heading';
+// TODO change naming?
+import { CdrImage as cdrImg } from '@rei-co-op/cedar-image';
+import { CdrMediaObject } from '@rei-co-op/cedar-media-object';
+import { CdrRating } from '@rei-co-op/cedar-rating';
+import { CdrList } from '@rei-co-op/cedar-list';
 
 export default {
   name: 'cdr-activity-card',
   components: {
-    cdrCard,
-    cdrHeading,
+    CdrCard,
+    CdrHeading,
     cdrImg,
-    cdrMediaObject,
-    cdrRating,
-    cdrList,
+    CdrMediaObject,
+    CdrRating,
+    CdrList,
   },
-  extends: cdrCard,
   props: {
     /**
     * Path to primary image

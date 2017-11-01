@@ -1,4 +1,4 @@
-import CdrMediaObject from './cdrMediaObject.vue';
+import CdrMediaObject from './cdrMediaObject';
 
 function install(Vue) {
   Vue.component('cdr-media-object', CdrMediaObject);

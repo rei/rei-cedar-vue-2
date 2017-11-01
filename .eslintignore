@@ -8,4 +8,5 @@ node_modules/
 
 backstop_data/html_report/
 src/**/__tests__/*.spec.js
+src/**/dist/*.js
 

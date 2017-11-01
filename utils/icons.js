@@ -7,11 +7,11 @@ const SVGSpriter = require('svg-sprite');
 const iconConfig = [
   {
     prefix: 'rei',
-    url: 'https://assets.brand.ai/rei-digital-experience-team/digital-rei-brand/icons.zip?key=SyQifqFje',
+    url: 'https://assets.brand.ai/rei-digital-experience-team/digital-rei-brand/icons.zip?key=rJf4Z1nS7Z',
   },
   {
     prefix: 'ea',
-    url: 'https://assets.brand.ai/rei-digital-experience-team/expert-advice/icons.zip?key=HJlWEovslW',
+    url: 'https://assets.brand.ai/rei-digital-experience-team/expert-advice/icons.zip?key=ByGZB6RRzW',
   },
 ];
 

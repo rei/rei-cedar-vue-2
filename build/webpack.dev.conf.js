@@ -9,27 +9,31 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
+// Define entries here so we can bind hot reloading below
+const entryObj = {
+  'dev': path.resolve(__dirname, '../src/dev.js')
+}
+
 // add hot-reload related code to entry chunks
-// Object.keys(baseWebpackConfig.entry).forEach(function (name) {
-//   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-// })
+Object.keys(entryObj).forEach(function (name) {
+  entryObj[name] = ['./build/dev-client'].concat(entryObj[name])
+})
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
 
 module.exports = merge(baseWebpackConfig, {
-  entry: {
-    'dev': path.resolve(__dirname, '../src/dev.js')
-  },resolve: {
+  entry: entryObj,
+  resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      '@': resolve('node_modules'),
+      // '@': resolve('node_modules'),
     },
-    modules: [
-      path.join(__dirname, '../node_modules')
-    ]
+    // modules: [
+    //   path.join(__dirname, '../node_modules')
+    // ]
   },
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })

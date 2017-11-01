@@ -1,4 +1,4 @@
-import CdrIcon from './cdrIcon.vue';
+import CdrIcon from './cdrIcon';
 
 function install(Vue) {
   Vue.component('cdr-icon', CdrIcon);

@@ -17,14 +17,17 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      // '@': resolve('src'),
+      Src: resolve('src'),
+      Css: resolve('src/css'),
+      Components: resolve('src/components')
     },
-    modules: [
-      path.join(__dirname, '../node_modules')
-    ]
+    extensions: ['.js', '.vue', '.json'],
+    // modules: [
+    //   path.join(__dirname, '../node_modules')
+    // ]
   },
   module: {
     rules: [
@@ -34,7 +37,8 @@ module.exports = {
         enforce: 'pre',
         include: [resolve('src'), resolve('tests')],
         options: {
-          formatter: require('../node_modules/eslint-friendly-formatter'), //eslint-disable-line
+          // configFile: resolve('.eslintrc.js'),
+          formatter: require('eslint-friendly-formatter'), //eslint-disable-line
         },
       },
       {

@@ -1,4 +1,4 @@
-import CdrSelect from './cdrSelect.vue';
+import CdrSelect from './cdrSelect';
 
 function install(Vue) {
   Vue.component('cdr-select', CdrSelect);

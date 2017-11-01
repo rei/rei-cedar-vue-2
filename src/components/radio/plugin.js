@@ -1,4 +1,4 @@
-import CdrRadio from './cdrRadio.vue';
+import CdrRadio from './cdrRadio';
 
 function install(Vue) {
   Vue.component('cdr-radio', CdrRadio);

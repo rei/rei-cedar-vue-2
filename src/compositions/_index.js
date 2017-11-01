@@ -1,2 +1,7 @@
-export { default as cdrActivityCard } from './activityCard/cdrActivityCard';
-export { default as CdrSearch } from './search/cdrSearch';
+import cdrActivityCard from './activityCard/cdrActivityCard';
+import cdrSearch from './search/cdrSearch';
+
+export default {
+  cdrActivityCard,
+  cdrSearch,
+};

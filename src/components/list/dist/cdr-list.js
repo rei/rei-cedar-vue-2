@@ -79,12 +79,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrList_vue__ = __webpack_require__(1);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrList", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrList_vue__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrList__ = __webpack_require__(1);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrList", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrList__["a"]; });
 
 
 function install(Vue) {
-  Vue.component('cdr-list', __WEBPACK_IMPORTED_MODULE_0__cdrList_vue__["a" /* default */]);
+  Vue.component('cdr-list', __WEBPACK_IMPORTED_MODULE_0__cdrList__["a" /* default */]);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

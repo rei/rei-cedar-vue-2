@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import * as Components from '../components/_index';
+import Components from '../components/_index';
 import * as Compositions from '../compositions/_index';
 
 const CedarComps = Object.assign({}, Components, Compositions);

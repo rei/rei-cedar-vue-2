@@ -24,20 +24,17 @@
 </template>
 
 <script>
-  import Components from '../../_index';
+  import Components from 'Components/_index';
   import ratios from './demos/Ratios';
   import cropping from './demos/Cropping';
   import mods from './demos/Mods';
 
-  const components = {
-    Components,
-    ratios,
-    cropping,
-    mods,
-  };
+  Components.ratios = ratios;
+  Components.cropping = cropping;
+  Components.mods = mods;
 
   export default {
     name: 'images',
-    components,
+    components: Components,
   };
 </script>

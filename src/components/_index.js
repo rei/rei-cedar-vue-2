@@ -30,4 +30,4 @@ export default {
   cdrRating,
   cdrRow,
   cdrSelect,
-}
+};

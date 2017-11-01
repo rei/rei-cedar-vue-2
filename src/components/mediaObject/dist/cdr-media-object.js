@@ -79,12 +79,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrMediaObject_vue__ = __webpack_require__(1);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrMediaObject", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrMediaObject_vue__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrMediaObject__ = __webpack_require__(1);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrMediaObject", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrMediaObject__["a"]; });
 
 
 function install(Vue) {
-  Vue.component('cdr-media-object', __WEBPACK_IMPORTED_MODULE_0__cdrMediaObject_vue__["a" /* default */]);
+  Vue.component('cdr-media-object', __WEBPACK_IMPORTED_MODULE_0__cdrMediaObject__["a" /* default */]);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -250,14 +250,14 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_a__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_a___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_a__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_rei_co_op_cedar_image__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_rei_co_op_cedar_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_rei_co_op_cedar_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_icon__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_icon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_icon__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mixins_modifier__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mixins_lazyImage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_a__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_a___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_a__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rei_co_op_cedar_image__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rei_co_op_cedar_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__rei_co_op_cedar_image__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_icon__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_icon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_icon__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Src_mixins_modifier__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_Src_mixins_lazyImage__ = __webpack_require__(9);
 //
 //
 //
@@ -320,11 +320,11 @@ module.exports = function normalizeComponent (
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'cdr-media-object',
-  mixins: [__WEBPACK_IMPORTED_MODULE_3__mixins_modifier__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4__mixins_lazyImage__["a" /* default */]],
+  mixins: [__WEBPACK_IMPORTED_MODULE_3_Src_mixins_modifier__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4_Src_mixins_lazyImage__["a" /* default */]],
   components: {
-    cdrA: __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_a___default.a,
-    cdrImg: __WEBPACK_IMPORTED_MODULE_1__node_modules_rei_co_op_cedar_image___default.a,
-    cdrIcon: __WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_icon___default.a
+    cdrA: __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_a___default.a,
+    cdrImg: __WEBPACK_IMPORTED_MODULE_1__rei_co_op_cedar_image___default.a,
+    cdrIcon: __WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_icon___default.a
   },
   props: {
     /**
@@ -493,7 +493,7 @@ module.exports = function normalizeComponent (
       };
       /******/
       /******/ // __webpack_public_path__
-      /******/__webpack_require__.p = "";
+      /******/__webpack_require__.p = "/";
       /******/
       /******/ // Load entry module and return exports
       /******/return __webpack_require__(__webpack_require__.s = 0);
@@ -530,7 +530,7 @@ module.exports = function normalizeComponent (
       "use strict";
       /* harmony import */
       var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrA_vue__ = __webpack_require__(4);
-      /* harmony import */var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5c28c42c_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrA_vue__ = __webpack_require__(6);
+      /* harmony import */var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5c28c42c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrA_vue__ = __webpack_require__(6);
       function injectStyle(ssrContext) {
         __webpack_require__(2);
       }
@@ -539,13 +539,15 @@ module.exports = function normalizeComponent (
 
       /* template */
 
+      /* template functional */
+      var __vue_template_functional__ = false;
       /* styles */
       var __vue_styles__ = injectStyle;
       /* scopeId */
       var __vue_scopeId__ = null;
       /* moduleIdentifier (server only) */
       var __vue_module_identifier__ = null;
-      var Component = normalizeComponent(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrA_vue__["a" /* default */], __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5c28c42c_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrA_vue__["a" /* default */], __vue_styles__, __vue_scopeId__, __vue_module_identifier__);
+      var Component = normalizeComponent(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrA_vue__["a" /* default */], __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5c28c42c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrA_vue__["a" /* default */], __vue_template_functional__, __vue_styles__, __vue_scopeId__, __vue_module_identifier__);
 
       /* harmony default export */__webpack_exports__["a"] = Component.exports;
 
@@ -562,10 +564,11 @@ module.exports = function normalizeComponent (
 
       /* globals __VUE_SSR_CONTEXT__ */
 
-      // this module is a runtime utility for cleaner component module output and will
-      // be included in the final webpack user bundle
+      // IMPORTANT: Do NOT use ES2015 features in this file.
+      // This module is a runtime utility for cleaner component module output and will
+      // be included in the final webpack user bundle.
 
-      module.exports = function normalizeComponent(rawScriptExports, compiledTemplate, injectStyles, scopeId, moduleIdentifier /* server only */
+      module.exports = function normalizeComponent(rawScriptExports, compiledTemplate, functionalTemplate, injectStyles, scopeId, moduleIdentifier /* server only */
       ) {
         var esModule;
         var scriptExports = rawScriptExports = rawScriptExports || {};
@@ -584,6 +587,12 @@ module.exports = function normalizeComponent (
         if (compiledTemplate) {
           options.render = compiledTemplate.render;
           options.staticRenderFns = compiledTemplate.staticRenderFns;
+          options._compiled = true;
+        }
+
+        // functional template
+        if (functionalTemplate) {
+          options.functional = true;
         }
 
         // scopedId
@@ -622,10 +631,14 @@ module.exports = function normalizeComponent (
         if (hook) {
           var functional = options.functional;
           var existing = functional ? options.render : options.beforeCreate;
+
           if (!functional) {
             // inject component registration as beforeCreate hook
             options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
           } else {
+            // for template-only hot-reload because in that case the render fn doesn't
+            // go through the normalizer
+            options._injectStyles = hook;
             // register for functioal component in vue file
             options.render = function renderWithStyleInjection(h, context) {
               hook.call(context);
@@ -648,7 +661,7 @@ module.exports = function normalizeComponent (
 
       "use strict";
       /* harmony import */
-      var __WEBPACK_IMPORTED_MODULE_0__mixins_modifier__ = __webpack_require__(5);
+      var __WEBPACK_IMPORTED_MODULE_0_Src_mixins_modifier__ = __webpack_require__(5);
       //
       //
       //
@@ -659,7 +672,7 @@ module.exports = function normalizeComponent (
 
       /* harmony default export */__webpack_exports__["a"] = {
         name: 'cdr-a',
-        mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_modifier__["a" /* default */]],
+        mixins: [__WEBPACK_IMPORTED_MODULE_0_Src_mixins_modifier__["a" /* default */]],
         props: {
           target: String,
           rel: String
@@ -812,7 +825,7 @@ module.exports = function normalizeComponent (
       };
       /******/
       /******/ // __webpack_public_path__
-      /******/__webpack_require__.p = "";
+      /******/__webpack_require__.p = "/";
       /******/
       /******/ // Load entry module and return exports
       /******/return __webpack_require__(__webpack_require__.s = 0);
@@ -826,13 +839,13 @@ module.exports = function normalizeComponent (
       "use strict";
 
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-      /* harmony import */var __WEBPACK_IMPORTED_MODULE_0__cdrImg_vue__ = __webpack_require__(1);
+      /* harmony import */var __WEBPACK_IMPORTED_MODULE_0__cdrImg__ = __webpack_require__(1);
       /* harmony reexport (binding) */__webpack_require__.d(__webpack_exports__, "CdrImage", function () {
-        return __WEBPACK_IMPORTED_MODULE_0__cdrImg_vue__["a"];
+        return __WEBPACK_IMPORTED_MODULE_0__cdrImg__["a"];
       });
 
       function install(Vue) {
-        Vue.component('cdr-img', __WEBPACK_IMPORTED_MODULE_0__cdrImg_vue__["a" /* default */]);
+        Vue.component('cdr-img', __WEBPACK_IMPORTED_MODULE_0__cdrImg__["a" /* default */]);
       }
 
       if (typeof window !== 'undefined' && window.Vue) {
@@ -994,7 +1007,6 @@ module.exports = function normalizeComponent (
       /* harmony default export */__webpack_exports__["a"] = {
         name: 'cdr-img',
         mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_modifier__["a" /* default */]],
-        inheritAttrs: false,
         props: {
           /**
            * Required. Image source url.
@@ -1015,6 +1027,13 @@ module.exports = function normalizeComponent (
            */
           lazy: {
             type: Boolean
+          },
+          /**
+           * Object of lazy options
+           */
+          lazyOpts: {
+            type: Object,
+            default: () => {}
           },
           /**
            * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
@@ -1111,6 +1130,15 @@ module.exports = function normalizeComponent (
             return {
               backgroundImage: `url(${this.src})`
             };
+          },
+          lazyAttrs() {
+            const attrObj = {};
+            if (this.lazy) {
+              Object.keys(this.lazyOpts).forEach(opt => {
+                attrObj[`data-${opt}`] = this.lazyOpts[opt];
+              });
+            }
+            return attrObj;
           }
         }
       };
@@ -1159,7 +1187,7 @@ module.exports = function normalizeComponent (
       "use strict";
 
       var render = function () {
-        var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _vm.ratio ? _c('div', { staticClass: "cdr-media-frame", class: [_vm.ratioClass, _vm.cropClass] }, [_c('div', _vm._b({ class: [_vm.coverClass, _vm.lazyClass], style: _vm.styleObject, attrs: { "aria-hidden": "true" } }, 'div', _vm.$attrs, false)), _vm._v(" "), _c('img', _vm._b({ staticClass: "cdr-media-frame__image cdr-media-frame__image--hidden", class: [_vm.modifierClass, _vm.radiusClass], attrs: { "src": _vm.src, "alt": _vm.alt } }, 'img', _vm.$attrs, false))]) : _c('img', _vm._b({ class: [_vm.modifierClass, _vm.radiusClass, _vm.lazyClass], attrs: { "src": _vm.src, "alt": _vm.alt } }, 'img', _vm.$attrs, false));
+        var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _vm.ratio ? _c('div', { staticClass: "cdr-media-frame", class: [_vm.ratioClass, _vm.cropClass] }, [_c('div', _vm._b({ class: [_vm.coverClass, _vm.lazyClass], style: _vm.styleObject, attrs: { "aria-hidden": "true" } }, 'div', _vm.lazyAttrs, false)), _vm._v(" "), _c('img', { staticClass: "cdr-media-frame__image cdr-media-frame__image--hidden", class: [_vm.modifierClass, _vm.radiusClass], attrs: { "src": _vm.src, "alt": _vm.alt } })]) : _c('img', _vm._b({ class: [_vm.modifierClass, _vm.radiusClass, _vm.lazyClass], attrs: { "src": _vm.src, "alt": _vm.alt } }, 'img', _vm.lazyAttrs, false));
       };
       var staticRenderFns = [];
       var esExports = { render: render, staticRenderFns: staticRenderFns
@@ -1249,7 +1277,7 @@ module.exports = function normalizeComponent (
       };
       /******/
       /******/ // __webpack_public_path__
-      /******/__webpack_require__.p = "";
+      /******/__webpack_require__.p = "/";
       /******/
       /******/ // Load entry module and return exports
       /******/return __webpack_require__(__webpack_require__.s = 0);
@@ -1263,13 +1291,13 @@ module.exports = function normalizeComponent (
       "use strict";
 
       Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-      /* harmony import */var __WEBPACK_IMPORTED_MODULE_0__cdrIcon_vue__ = __webpack_require__(1);
+      /* harmony import */var __WEBPACK_IMPORTED_MODULE_0__cdrIcon__ = __webpack_require__(1);
       /* harmony reexport (binding) */__webpack_require__.d(__webpack_exports__, "CdrIcon", function () {
-        return __WEBPACK_IMPORTED_MODULE_0__cdrIcon_vue__["a"];
+        return __WEBPACK_IMPORTED_MODULE_0__cdrIcon__["a"];
       });
 
       function install(Vue) {
-        Vue.component('cdr-icon', __WEBPACK_IMPORTED_MODULE_0__cdrIcon_vue__["a" /* default */]);
+        Vue.component('cdr-icon', __WEBPACK_IMPORTED_MODULE_0__cdrIcon__["a" /* default */]);
       }
 
       if (typeof window !== 'undefined' && window.Vue) {

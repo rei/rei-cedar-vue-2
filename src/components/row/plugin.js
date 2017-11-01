@@ -1,4 +1,4 @@
-import CdrRow from './cdrRow.vue';
+import CdrRow from './cdrRow';
 
 function install(Vue) {
   Vue.component('cdr-row', CdrRow);

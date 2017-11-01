@@ -101,7 +101,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrActivityCard_vue__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8c908664_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrActivityCard_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8c908664_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrActivityCard_vue__ = __webpack_require__(11);
 function injectStyle (ssrContext) {
   __webpack_require__(2)
 }
@@ -110,6 +110,8 @@ var normalizeComponent = __webpack_require__(3)
 
 /* template */
 
+/* template functional */
+  var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
@@ -118,7 +120,8 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrActivityCard_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8c908664_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrActivityCard_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8c908664_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_node_modules_vue_theme_loader_index_js_ref_1_1_cdrActivityCard_vue__["a" /* default */],
+  __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
@@ -139,12 +142,14 @@ var Component = normalizeComponent(
 
 /* globals __VUE_SSR_CONTEXT__ */
 
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
 
 module.exports = function normalizeComponent (
   rawScriptExports,
   compiledTemplate,
+  functionalTemplate,
   injectStyles,
   scopeId,
   moduleIdentifier /* server only */
@@ -168,6 +173,12 @@ module.exports = function normalizeComponent (
   if (compiledTemplate) {
     options.render = compiledTemplate.render
     options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
   }
 
   // scopedId
@@ -208,12 +219,16 @@ module.exports = function normalizeComponent (
     var existing = functional
       ? options.render
       : options.beforeCreate
+
     if (!functional) {
       // inject component registration as beforeCreate hook
       options.beforeCreate = existing
         ? [].concat(existing, hook)
         : [hook]
     } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
       // register for functioal component in vue file
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -235,18 +250,18 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_card__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_card__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_rei_co_op_cedar_heading__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_rei_co_op_cedar_heading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_rei_co_op_cedar_heading__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_image__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_rei_co_op_cedar_media_object__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_rei_co_op_cedar_media_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__node_modules_rei_co_op_cedar_media_object__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__node_modules_rei_co_op_cedar_rating__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__node_modules_rei_co_op_cedar_rating___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__node_modules_rei_co_op_cedar_rating__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__node_modules_rei_co_op_cedar_list__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__node_modules_rei_co_op_cedar_list___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__node_modules_rei_co_op_cedar_list__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_card__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_card__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rei_co_op_cedar_heading__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rei_co_op_cedar_heading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__rei_co_op_cedar_heading__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_image__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_image__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rei_co_op_cedar_media_object__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rei_co_op_cedar_media_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__rei_co_op_cedar_media_object__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rei_co_op_cedar_rating__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rei_co_op_cedar_rating___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__rei_co_op_cedar_rating__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rei_co_op_cedar_list__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rei_co_op_cedar_list___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__rei_co_op_cedar_list__);
 //
 //
 //
@@ -294,14 +309,14 @@ module.exports = function normalizeComponent (
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'cdr-activity-card',
   components: {
-    cdrCard: __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_card___default.a,
-    cdrHeading: __WEBPACK_IMPORTED_MODULE_1__node_modules_rei_co_op_cedar_heading___default.a,
-    cdrImg: __WEBPACK_IMPORTED_MODULE_2__node_modules_rei_co_op_cedar_image___default.a,
-    cdrMediaObject: __WEBPACK_IMPORTED_MODULE_3__node_modules_rei_co_op_cedar_media_object___default.a,
-    cdrRating: __WEBPACK_IMPORTED_MODULE_4__node_modules_rei_co_op_cedar_rating___default.a,
-    cdrList: __WEBPACK_IMPORTED_MODULE_5__node_modules_rei_co_op_cedar_list___default.a
+    cdrCard: __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_card___default.a,
+    cdrHeading: __WEBPACK_IMPORTED_MODULE_1__rei_co_op_cedar_heading___default.a,
+    cdrImg: __WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_image___default.a,
+    cdrMediaObject: __WEBPACK_IMPORTED_MODULE_3__rei_co_op_cedar_media_object___default.a,
+    cdrRating: __WEBPACK_IMPORTED_MODULE_4__rei_co_op_cedar_rating___default.a,
+    cdrList: __WEBPACK_IMPORTED_MODULE_5__rei_co_op_cedar_list___default.a
   },
-  extends: __WEBPACK_IMPORTED_MODULE_0__node_modules_rei_co_op_cedar_card___default.a,
+  extends: __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_card___default.a,
   props: {
     /**
     * Path to primary image

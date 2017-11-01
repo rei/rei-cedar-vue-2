@@ -1,4 +1,9 @@
 // http://eslint.org/docs/user-guide/configuring
+const path = require('path');
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 
 module.exports = {
   root: true,
@@ -12,13 +17,13 @@ module.exports = {
   extends: 'airbnb-base',
   // required to lint *.vue files
   plugins: [
-    'html'
+    'html',
   ],
   // check if imports actually resolve
   'settings': {
     'import/resolver': {
       'webpack': {
-        'config': '../../webpack.common.conf.js',
+        'config': resolve('build/webpack.common.conf.js'),
       }
     }
   },
