@@ -52,11 +52,12 @@
 </template>
 
 <script>
-import cdrA from './node_modules/@rei-co-op/cedar-a';
-import cdrImg from './node_modules/@rei-co-op/cedar-image';
-import cdrIcon from './node_modules/@rei-co-op/cedar-icon';
-import modifier from '../../mixins/modifier';
-import lazyImage from '../../mixins/lazyImage';
+import { cdrA } from '@rei-co-op/cedar-a';
+// TODO fix casing/name of CdrImage
+import { CdrImage as cdrImg } from '@rei-co-op/cedar-image';
+import { cdrIcon } from '@rei-co-op/cedar-icon';
+import modifier from 'Src/mixins/modifier';
+import lazyImage from 'Src/mixins/lazyImage';
 
 export default {
   name: 'cdr-media-object',

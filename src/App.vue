@@ -5,7 +5,7 @@
     <anchors class="cpg-section" data-backstop="anchors"></anchors>
     <buttons class="cpg-section" data-backstop="buttons"></buttons>
     <cards class="cpg-section"></cards>
-    <card-content class="cpg-section"></card-content>
+    <!-- <card-content class="cpg-section"></card-content> -->
     <activity class="cpg-section"></activity>
     <checkboxes class="cpg-section" data-backstop="checkboxes"></checkboxes>
     <grid class="cpg-section"></grid>

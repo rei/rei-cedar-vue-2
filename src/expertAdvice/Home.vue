@@ -230,7 +230,7 @@
 </template>
 
 <script>
-import * as Components from '../components/_index';
+import Components from '../components/_index';
 
 export default {
   name: 'ea-home',

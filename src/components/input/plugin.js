@@ -1,4 +1,4 @@
-import CdrInput from './cdrInput.vue';
+import CdrInput from './cdrInput';
 
 function install(Vue) {
   Vue.component('cdr-input', CdrInput);

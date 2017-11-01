@@ -93,7 +93,7 @@
 </template>
 
 <script>
-  import * as Components from '../../_index';
+  import Components from '../../_index';
 
   export default {
     name: 'headings',

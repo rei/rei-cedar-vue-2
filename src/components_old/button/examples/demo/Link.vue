@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import * as Components from '../../../_index';
+import Components from 'Components/_index';
 
 export default {
   name: 'link-buttons',

@@ -1,4 +1,4 @@
-import CdrImage from './cdrImg.vue';
+import CdrImage from './cdrImg';
 
 function install(Vue) {
   Vue.component('cdr-img', CdrImage);

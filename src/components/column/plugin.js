@@ -1,4 +1,4 @@
-import CdrColumn from './cdrCol.vue';
+import CdrColumn from './cdrCol';
 
 function install(Vue) {
   Vue.component('cdr-col', CdrColumn);

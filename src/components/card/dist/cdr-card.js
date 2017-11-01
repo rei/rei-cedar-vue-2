@@ -67,7 +67,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -79,12 +79,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrCard_vue__ = __webpack_require__(1);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrCard", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrCard_vue__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cdrCard__ = __webpack_require__(1);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CdrCard", function() { return __WEBPACK_IMPORTED_MODULE_0__cdrCard__["a"]; });
 
 
 function install(Vue) {
-  Vue.component('cdr-card', __WEBPACK_IMPORTED_MODULE_0__cdrCard_vue__["a" /* default */]);
+  Vue.component('cdr-card', __WEBPACK_IMPORTED_MODULE_0__cdrCard__["a" /* default */]);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -250,7 +250,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_modifier__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Src_mixins_modifier__ = __webpack_require__(5);
 //
 //
 //
@@ -262,7 +262,7 @@ module.exports = function normalizeComponent (
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'cdr-card',
-  mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_modifier__["a" /* default */]],
+  mixins: [__WEBPACK_IMPORTED_MODULE_0_Src_mixins_modifier__["a" /* default */]],
   computed: {
     baseClass() {
       return 'cdr-card';

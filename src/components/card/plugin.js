@@ -1,4 +1,4 @@
-import CdrCard from './cdrCard.vue';
+import CdrCard from './cdrCard';
 
 function install(Vue) {
   Vue.component('cdr-card', CdrCard);

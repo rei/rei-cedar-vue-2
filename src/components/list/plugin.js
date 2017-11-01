@@ -1,4 +1,4 @@
-import CdrList from './cdrList.vue';
+import CdrList from './cdrList';
 
 function install(Vue) {
   Vue.component('cdr-list', CdrList);

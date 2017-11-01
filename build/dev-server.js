@@ -1,4 +1,4 @@
-// require('./check-versions')()
+require('./check-versions')()
 require('./check-theme')()
 
 var config = require('../config')

@@ -20,7 +20,8 @@
 </template>
 
 <script>
-import Row from './node_modules/@rei-co-op/cedar-row';
+// TODO update tags above and change import here
+import { CdrRow as Row } from '@rei-co-op/cedar-row';
 
 export default {
   name: 'cdr-col',

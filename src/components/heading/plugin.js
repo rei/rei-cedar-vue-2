@@ -1,4 +1,4 @@
-import CdrHeading from './cdrHeading.vue';
+import CdrHeading from './cdrHeading';
 
 function install(Vue) {
   Vue.component('cdr-heading', CdrHeading);

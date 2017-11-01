@@ -1,4 +1,4 @@
-import CdrRating from './cdrRating.vue';
+import CdrRating from './cdrRating';
 
 function install(Vue) {
   Vue.component('cdr-rating', CdrRating);
