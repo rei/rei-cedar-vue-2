@@ -17,9 +17,14 @@ console.log(`component: ${component}\n`);
 console.log(`tag name: ${tagName}\n`);
 console.log(`component folder name: ${componentFolder}\n`);
 
+console.log(path.join(process.cwd(), 'node_modules'));
+
 module.exports = {
   entry: {
     ['cdr-' + tagName]: path.resolve(__dirname, `..${componentFolder}/plugin.js`),
+  },
+  resolve: {
+    modules: [path.join(process.cwd(), 'node_modules'), 'node_modules'],
   },
   output: {
     path: path.resolve(__dirname, `..${componentFolder}/dist`),
