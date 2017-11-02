@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import modifier from '../../mixins/modifier';
+import modifier from 'Src/mixins/modifier';
 
 export default {
   name: 'cdr-img',
