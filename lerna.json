@@ -1,24 +1,8 @@
 {
   "lerna": "2.1.2",
   "packages": [
-    "packages/*",
-    "src/components/anchor",
-    "src/components/button",
-    "src/components/card",
-    "src/components/checkbox",
-    "src/components/heading",
-    "src/components/icon",
-    "src/components/image",
-    "src/components/input",
-    "src/components/list",
-    "src/components/radio",
-    "src/components/rating",
-    "src/components/select",
-    "src/components/row",
-    "src/components/column",
-    "src/components/mediaObject",
-    "src/compositions/activityCard",
-    "src/compositions/search"
+    "src/components/*",
+    "src/compositions/*"
   ],
   "npmClient": "yarn",
   "version": "independent"

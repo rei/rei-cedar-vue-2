@@ -52,10 +52,10 @@
 </template>
 
 <script>
-import { cdrA } from '@rei-co-op/cedar-a';
+import { CdrA } from '@rei-co-op/cedar-a';
 // TODO fix casing/name of CdrImage
 import { CdrImage as cdrImg } from '@rei-co-op/cedar-image';
-import { cdrIcon } from '@rei-co-op/cedar-icon';
+import { CdrIcon } from '@rei-co-op/cedar-icon';
 import modifier from 'Src/mixins/modifier';
 import lazyImage from 'Src/mixins/lazyImage';
 
@@ -63,9 +63,9 @@ export default {
   name: 'cdr-media-object',
   mixins: [modifier, lazyImage],
   components: {
-    cdrA,
+    CdrA,
     cdrImg,
-    cdrIcon,
+    CdrIcon,
   },
   props: {
     /**

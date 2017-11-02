@@ -931,9 +931,9 @@ module.exports = function normalizeComponent (
   name: 'cdr-media-object',
   mixins: [__WEBPACK_IMPORTED_MODULE_3_Src_mixins_modifier__["a" /* default */], __WEBPACK_IMPORTED_MODULE_4_Src_mixins_lazyImage__["a" /* default */]],
   components: {
-    cdrA: __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_a__["cdrA"],
+    CdrA: __WEBPACK_IMPORTED_MODULE_0__rei_co_op_cedar_a__["CdrA"],
     cdrImg: __WEBPACK_IMPORTED_MODULE_1__rei_co_op_cedar_image__["CdrImage"],
-    cdrIcon: __WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_icon__["cdrIcon"]
+    CdrIcon: __WEBPACK_IMPORTED_MODULE_2__rei_co_op_cedar_icon__["CdrIcon"]
   },
   props: {
     width: String,
