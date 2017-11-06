@@ -31,7 +31,7 @@ module.exports = {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
-        include: [resolve('src'), resolve('tests')],
+        include: [resolve('src'), resolve('test')],
         exclude: /(node_modules|dist)/,
         options: {
           // configFile: resolve('.eslintrc.js'),
@@ -55,6 +55,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        exclude: /(node_modules)/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')],
       },
