@@ -38,7 +38,7 @@
 import { CdrCard } from '@rei-co-op/cedar-card';
 import { CdrHeading } from '@rei-co-op/cedar-heading';
 // TODO change naming?
-import { CdrImage as cdrImg } from '@rei-co-op/cedar-image';
+import { cdrImg } from '@rei-co-op/cedar-image';
 import { CdrMediaObject } from '@rei-co-op/cedar-media-object';
 import { CdrRating } from '@rei-co-op/cedar-rating';
 import { CdrList } from '@rei-co-op/cedar-list';

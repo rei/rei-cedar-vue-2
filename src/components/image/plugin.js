@@ -1,7 +1,7 @@
-import CdrImage from './cdrImg';
+import CdrImg from './cdrImg';
 
 function install(Vue) {
-  Vue.component('cdr-img', CdrImage);
+  Vue.component('cdr-img', CdrImg);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -10,4 +10,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default install;
 
-export { CdrImage };
+export { CdrImg };
