@@ -143,6 +143,20 @@
             .button-variant( @btn-default-color; @btn-default-bg; @btn-default-border; @btn-default-active-bg; @btn-default-border; @btn-default-active-color; );
         }
     }
+    &.btn-icon {
+        &.btn-bare {
+            color: @btn-high-contrast-color;
+
+            &:hover,
+            &:focus,
+            &.focus,
+            &:active,
+            &.active {
+                color: @btn-high-contrast-color;
+                background-color: @btn-bare-contrast-active-bg;
+            }
+        }
+    }
 }
 
 
