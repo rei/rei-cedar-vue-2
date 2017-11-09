@@ -53,17 +53,18 @@
 
 <script>
 import { CdrA } from '@rei-co-op/cedar-a';
-import { cdrImg } from '@rei-co-op/cedar-image';
+import { CdrImg } from '@rei-co-op/cedar-image';
 import { CdrIcon } from '@rei-co-op/cedar-icon';
 import modifier from 'Src/mixins/modifier';
 import lazyImage from 'Src/mixins/lazyImage';
+
 
 export default {
   name: 'cdr-media-object',
   mixins: [modifier, lazyImage],
   components: {
     CdrA,
-    cdrImg,
+    CdrImg,
     CdrIcon,
   },
   props: {
