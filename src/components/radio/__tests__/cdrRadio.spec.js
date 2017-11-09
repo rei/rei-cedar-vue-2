@@ -1,40 +1,40 @@
-import { mount } from 'avoriaz';
+import { shallow } from 'vue-test-utils';
 import testText from '../examples/testText.vue';
 import cdrRadio from 'Components/radio/cdrRadio';
 
 describe('cdrRadio.vue', () => {
   it('renders an input', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
       }
     });
-    expect(wrapper.vm.$refs.radio.tagName).to.equal('INPUT');
+    expect(wrapper.vm.$refs.radio.tagName).toBe('INPUT');
   });
 
   it('is type radio', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
       }
     });
-    expect(wrapper.vm.$refs.radio.hasAttribute('type', 'radio')).to.equal(true);
+    expect(wrapper.vm.$refs.radio.hasAttribute('type', 'radio')).toBe(true);
   });
 
   it('renders a label element', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
       }
     });
-    expect(wrapper.vm.$refs.label.tagName).to.equal('LABEL');
+    expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
   });
 
   it('renders label text correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
@@ -43,120 +43,116 @@ describe('cdrRadio.vue', () => {
         default: testText,
       }
     });
-    expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test');
+    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
   });
 
   it('maps input id to label for correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
         id: 'test',
       },
     });
-    expect(wrapper.vm.$refs.radio.id).to.equal(wrapper.vm.$refs.label.htmlFor);
+    expect(wrapper.vm.$refs.radio.id).toBe(wrapper.vm.$refs.label.htmlFor);
   });
 
   it('generates an id correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
       }
     });
-    expect(wrapper.vm.$refs.radio.id).to.equal(wrapper.vm._uid.toString());
+    expect(wrapper.vm.$refs.radio.id).toBe(wrapper.vm._uid.toString());
   });
 
   it('sets name attribute correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
       }
     });
-    const radio = wrapper.find('.cdr-radio')[0];
-    expect(radio.hasAttribute('name', 'testName')).to.equal(true);
+    expect(wrapper.vm.$refs.radio.hasAttribute('name', 'testName')).toBe(true);
   });
 
   it('evaluates simple not checked state correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
         modelValue: 'AA',
       },
     });
-    expect(wrapper.vm.isChecked).to.equal(false);
+    expect(wrapper.vm.isChecked).toBe(false);
   });
 
   it('evaluates simple checked state correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
         modelValue: 'A',
       },
     });
-    expect(wrapper.vm.isChecked).to.equal(true);
+    expect(wrapper.vm.isChecked).toBe(true);
   });
 
   it('evaluates group not checked state correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'B',
         name: 'testName',
         modelValue: 'A',
       },
     });
-    expect(wrapper.vm.isChecked).to.equal(false);
+    expect(wrapper.vm.isChecked).toBe(false);
   });
 
   it('evaluates group checked state correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
         modelValue: 'A',
       },
     });
-    expect(wrapper.vm.isChecked).to.equal(true);
+    expect(wrapper.vm.isChecked).toBe(true);
   });
 
   it('evaluates complex group not checked state correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: {test: 'B', arr: [1,2,3]},
         name: 'testName',
         modelValue: {test: 'B'},
       },
     });
-    expect(wrapper.vm.isChecked).to.equal(false);
+    expect(wrapper.vm.isChecked).toBe(false);
   });
 
   it('evaluates complex group checked state correctly', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: {test: 'B', arr: [1,2,3]},
         name: 'testName',
         modelValue: {test: 'B', arr: [1,2,3]},
       },
     });
-    expect(wrapper.vm.isChecked).to.equal(true);
+    expect(wrapper.vm.isChecked).toBe(true);
   });
 
   it('emits a change event with correct value', () => {
-    const wrapper = mount(cdrRadio, {
+    const wrapper = shallow(cdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
         modelValue: '',
       },
     });
-    const spy = sinon.spy(wrapper.vm, '$emit');
-    const radio = wrapper.find('.cdr-radio')[0];
-    radio.trigger('change');
-
-    expect(spy.args[0][0]).to.equal('change');
-    expect(spy.args[0][1]).to.equal('A');
+    wrapper.setProps({ value: 'B' });
+    wrapper.vm.onChange();
+    expect(wrapper.emitted().change[0][0]).toBe('B');
   });
 });

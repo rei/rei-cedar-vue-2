@@ -5,12 +5,12 @@
 </template>
 
 <script>
-  import theme from '../../mixins/theme';
+  // import theme from '../../mixins/theme';
   import modifier from '../../mixins/modifier';
 
   export default {
     name: 'cdr-button',
-    mixins: [theme, modifier],
+    mixins: [modifier],
     props: {
       /**
        * {button, submit, reset}. Defines the button type.
@@ -18,6 +18,7 @@
       type: {
         type: String,
         default: 'button',
+        /* istanbul ignore next */
         validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
       },
       /**

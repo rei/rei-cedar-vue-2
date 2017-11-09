@@ -1,65 +1,62 @@
-import { mount } from 'avoriaz';
+import { shallow } from 'vue-test-utils';
 import cdrButton from 'Components/button/cdrButton';
 
-let testTotal = 1;
-function addOne() {
-  testTotal++;
-}
+const clickHandler = jest.fn();
 
 describe('cdrButton.vue', () => {
   it('renders a button', () => {
-    const wrapper = mount(cdrButton);
-    expect(wrapper.is('button')).to.equal(true);
+    const wrapper = shallow(cdrButton);
+    expect(wrapper.is('button')).toBe(true);
   });
 
   it('sets default type prop correctly', () => {
-    const wrapper = mount(cdrButton);
-    expect(wrapper.vm.type).to.equal('button');
+    const wrapper = shallow(cdrButton);
+    expect(wrapper.hasAttribute('type', 'button')).toBe(true);
   });
 
-  it('sets type prop correctly', () => {
-    const wrapper = mount(cdrButton, {
+  it('sets type attr correctly', () => {
+    const wrapper = shallow(cdrButton, {
       propsData: {
         type: 'reset',
       },
     });
-    expect(wrapper.vm.type).to.equal('reset');
+    expect(wrapper.hasAttribute('type', 'reset')).toBe(true);
   });
 
-  it('renders type attr correctly', () => {
-    const wrapper = mount(cdrButton, {
-      propsData: {
-        type: 'reset',
-      },
-    });
-    expect(wrapper.hasAttribute('type', 'reset')).to.equal(true);
+  it('has default click', () => {
+    const wrapper = shallow(cdrButton);
+    const defaultFunc = wrapper.vm.$props.onClick();
+    const result = defaultFunc();
+    expect(result).toBe(null)
   });
 
   it('click function triggers correctly', () => {
-    const wrapper = mount(cdrButton, {
+    const wrapper = shallow(cdrButton, {
       propsData: {
-        onClick: addOne(),
+        onClick: clickHandler
       },
     });
     wrapper.trigger('click');
-    expect(testTotal).to.equal(2);
+    expect(clickHandler).toHaveBeenCalled();
   });
 
     it('computes base class correctly', () => {
-    const wrapper = mount(cdrButton, {
+    const wrapper = shallow(cdrButton, {
       propsData: {
         modifier: 'primary',
       },
     });
-    expect(wrapper.vm.baseClass).to.equal('cdr-button');
+    expect(wrapper.hasClass('cdr-button')).toBe(true);
   });
 
-  it('computes button base class correctly', () => {
-    const wrapper = mount(cdrButton, {
+  it('computes button as link base class correctly', () => {
+    const wrapper = shallow(cdrButton, {
       propsData: {
         modifier: 'primary, link',
       },
     });
-    expect(wrapper.vm.baseClass).to.equal('cdr-link');
+    expect(wrapper.hasClass('cdr-link')).toBe(true);
   });
+
+  
 });

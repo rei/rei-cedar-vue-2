@@ -1,13 +1,13 @@
-import { mount } from 'avoriaz';
+import { shallow } from 'vue-test-utils';
 import cdrIcon from 'Components/icon/cdrIcon';
 
 describe('cdrIcon.vue', () => {
   it('renders an svg', () => {
-    const wrapper = mount(cdrIcon, {
+    const wrapper = shallow(cdrIcon, {
       propsData: {
         url: '',
       }
     });
-    expect(wrapper.element.tagName).to.equal('svg');
+    expect(wrapper.element.tagName).toBe('svg');
   });
 });
