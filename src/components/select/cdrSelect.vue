@@ -5,7 +5,6 @@
       v-bind="$attrs"
       :id="selectId"
       :size="size"
-      v-on="$listeners"
       @input="onInput"
       ref="select"
       :value="val"

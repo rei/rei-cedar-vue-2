@@ -1,70 +1,72 @@
-import { mount } from 'avoriaz';
-import testText from '../examples/testText.vue';
+import { shallow } from 'vue-test-utils';
 import cdrCheckbox from 'Components/checkbox/cdrCheckbox';
 
 
 describe('cdrCheckbox.vue', () => {
   it('renders an input', () => {
-    const wrapper = mount(cdrCheckbox);
-    expect(wrapper.vm.$refs.checkbox.tagName).to.equal('INPUT');
+    const wrapper = shallow(cdrCheckbox);
+    expect(wrapper.vm.$refs.checkbox.tagName).toBe('INPUT');
   });
 
   it('is type checkbox', () => {
-    const wrapper = mount(cdrCheckbox);
-    expect(wrapper.vm.$refs.checkbox.hasAttribute('type', 'checkbox')).to.equal(true);
+    const wrapper = shallow(cdrCheckbox);
+    expect(wrapper.vm.$refs.checkbox.hasAttribute('type', 'checkbox')).toBe(true);
   });
 
   it('renders a label element', () => {
-    const wrapper = mount(cdrCheckbox);
-    expect(wrapper.vm.$refs.label.tagName).to.equal('LABEL');
+    const wrapper = shallow(cdrCheckbox);
+    expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
   });
 
   it('renders label text correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
+    const wrapper = shallow(cdrCheckbox, {
       slots: {
-        default: testText,
+        default: `<span>Label Test</span>`,
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test');
+    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
   });
 
   it('maps input id to label for correctly', () => {
-    const wrapper = mount(cdrCheckbox, {
+    const wrapper = shallow(cdrCheckbox, {
       propsData: {
         id: 'test',
       },
     });
-    expect(wrapper.vm.$refs.checkbox.id).to.equal(wrapper.vm.$refs.label.htmlFor);
+    expect(wrapper.vm.$refs.checkbox.id).toBe(wrapper.vm.$refs.label.htmlFor);
   });
 
   it('generates an id correctly', () => {
-    const wrapper = mount(cdrCheckbox);
-    expect(wrapper.vm.$refs.checkbox.id).to.equal(wrapper.vm._uid.toString());
+    const wrapper = shallow(cdrCheckbox);
+    expect(wrapper.vm.$refs.checkbox.id).toBe(wrapper.vm._uid.toString());
   });
 
-  it('emits change events with correct values for default checkbox', () => {
-    const wrapper = mount(cdrCheckbox, {
+  it('watches values correctly', () => {
+    const wrapper = shallow(cdrCheckbox, {
       propsData: {
         value: false,
       },
-      attachToDocument: true,
     });
-    const spy = sinon.spy(wrapper.vm, '$emit');
-    const cb = wrapper.vm.$el.querySelector('.cdr-checkbox');
-    
-    cb.click();
-    expect(spy.args[0][0]).to.equal('change');
-    expect(spy.args[0][1]).to.equal(true);
-    expect(wrapper.vm.newValue).to.equal(true);
-    
-    cb.click();
-    expect(spy.args[1][0]).to.equal('change');
-    expect(spy.args[1][1]).to.equal(false);
-    expect(wrapper.vm.newValue).to.equal(false);
+    wrapper.setProps({ value: true });
+    expect(wrapper.vm.value).toBe(true);
+    expect(wrapper.vm.newValue).toBe(true);
   });
 
+  it('emits change events with correct values for default checkbox', () => {
+    const wrapper = shallow(cdrCheckbox, {
+      propsData: {
+        value: false,
+      },
+    });
+    const cb = wrapper.find('.cdr-checkbox');
+    cb.element.click();
+    expect(wrapper.emitted().change[0][0]).toBe(true);
+    cb.element.click();
+    expect(wrapper.emitted().change[1][0]).toBe(false);
+  });
+  
   it('emits change events with correct values for custom checkbox', () => {
-    const wrapper = mount(cdrCheckbox, {
+    const wrapper = shallow(cdrCheckbox, {
       propsData: {
         trueValue: 'checked',
         falseValue: 'unchecked',
@@ -72,39 +74,25 @@ describe('cdrCheckbox.vue', () => {
       },
       attachToDocument: true,
     });
-    const spy = sinon.spy(wrapper.vm, '$emit');
-    const cb = wrapper.vm.$el.querySelector('.cdr-checkbox');
-    
-    cb.click();
-    expect(spy.args[0][0]).to.equal('change');
-    expect(spy.args[0][1]).to.equal('checked');
-    expect(wrapper.vm.newValue).to.equal('checked');
-    
-    cb.click();
-    expect(spy.args[1][0]).to.equal('change');
-    expect(spy.args[1][1]).to.equal('unchecked');
-    expect(wrapper.vm.newValue).to.equal('unchecked');
+    const cb = wrapper.find('.cdr-checkbox');
+    cb.element.click();
+    expect(wrapper.emitted().change[0][0]).toBe('checked');
+    cb.element.click();
+    expect(wrapper.emitted().change[1][0]).toBe('unchecked');
   });
 
   it('emits change events with correct values for group checkbox', () => {
-    const wrapper = mount(cdrCheckbox, {
+    const wrapper = shallow(cdrCheckbox, {
       propsData: {
         customValue: 'b',
         value: ['a'],
       },
       attachToDocument: true,
     });
-    const spy = sinon.spy(wrapper.vm, '$emit');
-    const cb = wrapper.vm.$el.querySelector('.cdr-checkbox');
-    
-    cb.click();
-    expect(spy.args[0][0]).to.equal('change');
-    expect(spy.args[0][1]).to.deep.equal(['a', 'b']);
-    expect(wrapper.vm.newValue).to.deep.equal(['a', 'b']);
-    
-    cb.click();
-    expect(spy.args[1][0]).to.equal('change');
-    expect(spy.args[1][1]).to.deep.equal(['a']);
-    expect(wrapper.vm.newValue).to.deep.equal(['a']);
+    const cb = wrapper.find('.cdr-checkbox');
+    cb.element.click();
+    expect(wrapper.emitted().change[0][0]).toEqual(['a', 'b']);
+    cb.element.click();
+    expect(wrapper.emitted().change[1][0]).toEqual(['a']);
   });
 });

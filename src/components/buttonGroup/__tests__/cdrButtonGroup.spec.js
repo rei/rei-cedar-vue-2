@@ -1,4 +1,4 @@
-import { mount } from 'avoriaz';
+import { mount } from 'vue-test-utils';
 import cdrButtonGroup from 'Components/buttonGroup/cdrButtonGroup';
 
 describe('cdrButtonGroup.vue', () => {

@@ -1,73 +1,64 @@
-import { mount } from 'avoriaz';
+import { shallow } from 'vue-test-utils';
+import { createRenderer } from 'vue-server-renderer'
 import cdrA from 'Components/anchor/cdrA';
 
 describe('cdrA.vue', () => {
+  it('outputs the same HTML', () => {
+    const wrapper = shallow(cdrA);
+    const renderer = createRenderer();
+    renderer.renderToString(wrapper.vm, (err, str) => {
+      if (err) throw new Error(err)
+      expect(str).toMatchSnapshot()
+    });
+  });
+
   it('renders an anchor', () => {
-    const wrapper = mount(cdrA);
-    expect(wrapper.is('a')).to.equal(true);
+    const wrapper = shallow(cdrA);
+    expect(wrapper.is('a')).toBe(true);
   });
 
-  it('sets target prop correctly', () => {
-    const wrapper = mount(cdrA, {
+  it('sets target attr correctly', () => {
+    const wrapper = shallow(cdrA, {
       propsData: {
         target: '_self',
       },
     });
-    expect(wrapper.vm.target).to.equal('_self');
+    expect(wrapper.hasAttribute('target', '_self')).toBe(true);
   });
 
-  it('renders target attr correctly', () => {
-    const wrapper = mount(cdrA, {
-      propsData: {
-        target: '_self',
-      },
-    });
-    expect(wrapper.hasAttribute('target', '_self')).to.equal(true);
-  });
-
-  it('sets rel prop correctly', () => {
-    const wrapper = mount(cdrA, {
+  it('sets rel attr correctly', () => {
+    const wrapper = shallow(cdrA, {
       propsData: {
         rel: 'nofollow',
       },
     });
-    expect(wrapper.vm.rel).to.equal('nofollow');
-  });
-
-  it('renders rel attr correctly', () => {
-    const wrapper = mount(cdrA, {
-      propsData: {
-        rel: 'nofollow',
-      },
-    });
-    expect(wrapper.hasAttribute('rel', 'nofollow')).to.equal(true);
+    expect(wrapper.hasAttribute('rel', 'nofollow')).toBe(true);
   });
 
   it('computes target="_blank" rel attr correctly', () => {
-    const wrapper = mount(cdrA, {
+    const wrapper = shallow(cdrA, {
       propsData: {
         target: '_blank',
       },
     });
-    expect(wrapper.hasAttribute('rel', 'noopener noreferrer')).to.equal(true);
+    expect(wrapper.hasAttribute('rel', 'noopener noreferrer')).toBe(true);
   });
 
   it('computes base class correctly', () => {
-    const wrapper = mount(cdrA, {
+    const wrapper = shallow(cdrA, {
       propsData: {
         modifier: 'primary',
       },
     });
-    expect(wrapper.vm.baseClass).to.equal('cdr-link');
+    expect(wrapper.hasClass('cdr-link')).toBe(true);
   });
 
-  it('computes button base class correctly', () => {
-    const wrapper = mount(cdrA, {
+  it('computes link as button base class correctly', () => {
+    const wrapper = shallow(cdrA, {
       propsData: {
         modifier: 'primary, button',
       },
     });
-    expect(wrapper.vm.baseClass).to.equal('cdr-button');
+    expect(wrapper.hasClass('cdr-button')).toBe(true);
   });
-
 });

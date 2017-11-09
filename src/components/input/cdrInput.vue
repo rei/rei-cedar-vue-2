@@ -55,13 +55,13 @@
 </template>
 
 <script>
-import debounce from '../../utils/debounce';
-import modifier from '../../mixins/modifier';
-
+import debounce from 'Src/utils/debounce';
+import modifier from 'Src/mixins/modifier';
 /* eslint-disable */
-const checkIcon = require('!raw-loader!../../assets/icons/rei/cdr-check-lg.svg');
-const errorIcon = require('!raw-loader!../../assets/icons/rei/cdr-x-circ-fill.svg');
-const warningIcon = require('!raw-loader!../../assets/icons/rei/cdr-warning-tri.svg');
+// import/no-webpack-loader-syntax & import/no-unresolved
+import checkIcon from '!raw-loader!Assets/icons/rei/cdr-check-lg.svg';
+import errorIcon from '!raw-loader!Assets/icons/rei/cdr-x-circ-fill.svg';
+import warningIcon from '!raw-loader!Assets/icons/rei/cdr-warning-tri.svg';
 /* eslint-enable */
 
 export default {
@@ -259,6 +259,7 @@ export default {
         return obj;
       });
     }
+
     if (this.immediateValidate) {
       this.validate(true);
     }
@@ -292,7 +293,6 @@ export default {
     },
     onFocus(e) {
       this.focused = true;
-      this.$refs.input.focus();
       this.$emit('focus', e);
     },
     onPaste(e) {

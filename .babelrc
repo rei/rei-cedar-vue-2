@@ -7,8 +7,19 @@
   "comments": false,
   "env": {
     "test": {
-      "presets": ["env", "stage-2"],
-      "plugins": [ "istanbul" ]
+      "presets": [
+        "env", 
+        "stage-2"
+      ],
+      "plugins": [ 
+        ["module-resolver", {
+          "root": ["./src"],
+          "alias": {
+            "Components": "./src/components",
+            "Assets": "./src/assets"
+          }
+        }]
+      ]
     }
   }
 }
