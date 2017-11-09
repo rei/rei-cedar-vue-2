@@ -1,4 +1,4 @@
-import { mount, shallow } from 'avoriaz';
+import { shallow } from 'vue-test-utils';
 import inputComp from 'Components/input/cdrInput';
 
 function validateFn(inputText) {
@@ -20,132 +20,129 @@ function validateFn(inputText) {
 
 describe('cdrInput.vue', () => {
   it('renders a label element', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.label.tagName).to.equal('LABEL');
+    expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
   });
 
   it('renders label correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test');
+    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
   });
 
   it('renders required label correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'Label Test',
         required: true,
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).to.equal('Label Test*');
+    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test*');
   });
 
   it('maps input id to label for correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'testing',
         id: 'test',
       },
     });
-    expect(wrapper.vm.$refs.input.id).to.equal(wrapper.vm.$refs.label.htmlFor);
+    expect(wrapper.vm.$refs.input.id).toBe(wrapper.vm.$refs.label.htmlFor);
   });
 
   it('generates an id correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'testing',
       },
     });
-    expect(wrapper.vm.$refs.input.id).to.equal(wrapper.vm._uid.toString());
+    expect(wrapper.vm.$refs.input.id).toBe(wrapper.vm._uid.toString());
   });
 
   it('renders an input element', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.input.tagName).to.equal('INPUT');
+    expect(wrapper.vm.$refs.input.tagName).toBe('INPUT');
   });
 
-  // TODO: revisit next update
-  // it('sets input name attribute correctly', () => {
-  //   const wrapper = shallow(inputComp, {
-  //     propsData: {
-  //       label: 'Label Test',
-  //     },
-  //     attrs: {
-  //       name: 'yoyo',
-  //     }
-  //   });
-  //   expect(wrapper.vm.$refs.input.hasAttribute('name', 'testing')).to.equal(true);
-  // });
+  it('sets input name attribute correctly', () => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'Label Test',
+      },
+      attrs: {
+        name: 'testName',
+      }
+    });
+    expect(wrapper.vm.$refs.input.hasAttribute('name', 'testName')).toBe(true);
+  });
 
   it('renders input value correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         value: 'testing',
       },
     });
-    expect(wrapper.vm.$refs.input.value).to.equal('testing');
+    expect(wrapper.vm.$refs.input.value).toBe('testing');
   });
 
   it('sets input disabled attribute correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         disabled: true,
       },
     });
-    expect(wrapper.vm.$refs.input.hasAttribute('disabled', '')).to.equal(true);
+    expect(wrapper.vm.$refs.input.hasAttribute('disabled')).toBe(true);
   });
 
-  // TODO: revisit next update
-  // it('sets input readonly attribute correctly', () => {
-  //   const wrapper = mount(inputComp, {
-  //     propsData: {
-  //       label: 'test',
-  //     },
-  //     attrs: {
-  //       readonly: true,
-  //     },
-  //   });
-  //   expect(wrapper.vm.$refs.input.getAttribute('readonly')).to.equal('readonly');
-  // });
+  it('sets input readonly attribute correctly', () => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+      attrs: {
+        readonly: true,
+      },
+    });
+    expect(wrapper.vm.$refs.input.hasAttribute('readonly')).toBe(true);
+  });
 
   it('sets input required attribute correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         required: true,
       },
     });
-    expect(wrapper.vm.$refs.input.getAttribute('required')).to.equal('required');
+    expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
   });
 
-  // TODO: revisit next update
-  // it('sets input autofocus attribute correctly', () => {
-  //   const wrapper = mount(inputComp, {
-  //     propsData: {
-  //       label: 'test',
-  //     },
-  //     attrs: {
-  //       autofocus: true,
-  //     },
-  //   });
-  //   expect(wrapper.vm.$refs.input.getAttribute('autofocus')).to.equal('');
-  // });
+  it('sets input autofocus attribute correctly', () => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+      attrs: {
+        autofocus: true,
+      },
+    });
+    expect(wrapper.vm.$refs.input.hasAttribute('autofocus')).toBe(true);
+  });
 
   it('sets input maxlength attribute correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
       },
@@ -153,11 +150,11 @@ describe('cdrInput.vue', () => {
         maxlength: '20',
       },
     });
-    expect(wrapper.vm.$refs.input.getAttribute('maxlength')).to.equal('20');
+    expect(wrapper.vm.$refs.input.hasAttribute('maxlength', '20')).toBe(true);
   });
 
   it('sets input placeholder correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
       },
@@ -165,21 +162,21 @@ describe('cdrInput.vue', () => {
         placeholder: 'test placeholder',
       },
     });
-    expect(wrapper.vm.$refs.input.getAttribute('placeholder')).to.equal('test placeholder');
+    expect(wrapper.vm.$refs.input.hasAttribute('placeholder', 'test placeholder')).toBe(true);
   });
 
   it('sets multiline to textarea correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         multiLine: true,
       },
     });
-    expect(wrapper.vm.$refs.input.tagName).to.equal('TEXTAREA');
+    expect(wrapper.vm.$refs.input.tagName).toBe('TEXTAREA');
   });
 
   it('sets multiline rows correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         multiLine: true,
@@ -188,291 +185,335 @@ describe('cdrInput.vue', () => {
         rows: '10',
       },
     });
-    expect(wrapper.vm.$refs.input.getAttribute('rows')).to.equal('10');
+    expect(wrapper.vm.$refs.input.hasAttribute('rows', '10')).toBe(true);
   });
 
   it('sets default input type correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
       },
     });
-    expect(wrapper.vm.$refs.input.getAttribute('type')).to.equal('text');
+    expect(wrapper.vm.$refs.input.hasAttribute('type', 'text')).toBe(true);
   });
 
   it('overrides input type correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         type: 'url',
       },
     });
-    expect(wrapper.vm.$refs.input.getAttribute('type')).to.equal('url');
+    expect(wrapper.vm.$refs.input.hasAttribute('type', 'url')).toBe(true);
   });
 
   it('hide-label sets aria-label correctly', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         hideLabel: true,
       },
     });
-    expect(wrapper.vm.$refs.input.getAttribute('aria-label')).to.equal('test');
+    expect(wrapper.vm.$refs.input.hasAttribute('aria-label', 'test')).toBe(true);
   });
 
   it('debounce 0 when not defined', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
       },
     });
-    expect(wrapper.vm.debounceVal).to.equal(0);
+    expect(wrapper.vm.debounceVal).toBe(0);
   });
 
   it('sets default debounce', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         debounce: true,
       },
     });
-    expect(wrapper.vm.debounceVal).to.equal(500);
+    expect(wrapper.vm.debounceVal).toBe(500);
   });
 
   it('sets override debounce', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
         debounce: 1000,
       },
     });
-    expect(wrapper.vm.debounceVal).to.equal(1000);
+    expect(wrapper.vm.debounceVal).toBe(1000);
   });
 
   it('auto generates an id', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
       },
     });
-    expect(wrapper.vm.inputId)
-      .to.equal(wrapper.vm._uid); // eslint-disable-line no-underscore-dangle
+    expect(wrapper.vm.inputId).toBe(wrapper.vm._uid); // eslint-disable-line no-underscore-dangle
   });
 
   it('validates errors', (done) => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: 4,
         rules: [validateFn],
+        debounce: 0,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      expect(wrapper.vm.isErr).to.equal(true);
+    wrapper.setProps({ value: 4 });
+    setTimeout(() => { // for debounced validation
+      expect(wrapper.vm.isErr).toBe(true);
       done();
-    }, 0);
+    }, 100);
   });
 
   it('renders error messages correctly', (done) => {
     const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: 4,
         rules: [validateFn],
+        debounce: 0,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      expect(wrapper.vm.$refs.error[0].textContent).to.equal('Error Message');
+    wrapper.setProps({ value: 4 });
+    setTimeout(() => { // for debounced validation
+      expect(wrapper.vm.$refs.error[0].textContent).toBe('Error Message');
       done();
-    }, 0);
+    }, 100);
   });
-
+  
   it('sets a11y for error messages correctly', (done) => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: 4,
         rules: [validateFn],
+        debounce: 0,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      expect(wrapper.vm.$refs.messages.$el.getAttribute('id')).to.equal(wrapper.vm.$refs.input.getAttribute('aria-describedby'));
+    wrapper.setProps({ value: 4 });
+    setTimeout(() => { // for debounced validation
+      expect(wrapper.vm.$refs.messages.$el.getAttribute('id')).toBe(wrapper.vm.$refs.input.getAttribute('aria-describedby'));
       done();
-    }, 0);
+    }, 100);
   });
 
   it('validates warnings', (done) => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: '',
         rules: [validateFn],
+        debounce: 0,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      expect(wrapper.vm.isWarn).to.equal(true);
+    wrapper.setProps({ value: '' });
+    setTimeout(() => { // for debounced validation
+      expect(wrapper.vm.isWarn).toBe(true);
       done();
-    }, 0);
+    }, 100);
   });
 
   it('renders warning messages correctly', (done) => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: '',
         rules: [validateFn],
+        debounce: 0,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      expect(wrapper.vm.$refs.error[0].textContent).to.equal('Warning Message');
+    wrapper.setProps({ value: '' });
+    setTimeout(() => { // for debounced validation
+      expect(wrapper.vm.$refs.error[0].textContent).toBe('Warning Message');
       done();
-    }, 0);
+    }, 100);
   });
 
   it('validates successfully', (done) => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: 'hi',
         rules: [validateFn],
+        debounce: 0,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      expect(wrapper.vm.isValid).to.equal(true);
+    wrapper.setProps({ value: 'hi' });
+    setTimeout(() => { // for debounced validation
+      expect(wrapper.vm.isValid).toBe(true);
       done();
-    }, 0);
+    }, 100);
   });
 
   it('validates pattern successfully', (done) => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: 'hi2',
         pattern: '[a-zA-Z0-9]+',
+        debounce: 0,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      expect(wrapper.vm.isValid).to.equal(true);
+    wrapper.setProps({ value: 'hi2' });
+    setTimeout(() => { // for debounced validation
+      expect(wrapper.vm.isValid).toBe(true);
       done();
-    }, 0);
+    }, 100);
   });
 
   it('errors on pattern correctly', (done) => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: '!',
         pattern: '[a-zA-Z0-9]+',
+        debounce: 0,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      expect(wrapper.vm.isErr).to.equal(true);
+    wrapper.setProps({ value: '!' });
+    setTimeout(() => { // for debounced validation
+      expect(wrapper.vm.isErr).toBe(true);
       done();
-    }, 0);
+    }, 100);
   });
 
   it('displays pattern errors correctly', (done) => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: '!',
         pattern: '[a-zA-Z0-9]+',
         patternError: 'pattern error',
+        debounce: 0,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      expect(wrapper.vm.$refs.error[0].textContent).to.equal('pattern error');
+    wrapper.setProps({ value: '!' });
+    setTimeout(() => { // for debounced validation
+      expect(wrapper.vm.$refs.error[0].textContent).toBe('pattern error');
       done();
-    }, 0);
+    }, 100);
   });
 
-  it('adds feedback icon', (done) => {
-    const wrapper = mount(inputComp, {
+  it('emits an input event with correct value', () => {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: '',
-        rules: [validateFn],
-        feedback: true,
       },
     });
-    wrapper.vm.validate(true);
-    setTimeout(() => {
-      const icon = wrapper.find('.cdr-input-wrap__icon')[0];
-      expect(icon.contains('svg')).to.equal(true);
-      done();
-    }, 0);
-  });
-
-  // TODO: revisit next update
-  // it('emits an input event with correct value', () => {
-  //   const wrapper = mount(inputComp, {
-  //     propsData: {
-  //       label: 'test',
-  //       value: 'a',
-  //     },
-  //     attachToDocument: true,
-  //   });
-  //   const spy = sinon.spy(wrapper.vm, '$emit');
-  //   const input = wrapper.find('.cdr-input')[0];
-  //   input.element.value = 'b';
-  //   input.trigger('input');
-  //   expect(spy.args[0][0]).to.equal('input');
-  //   expect(spy.args[0][1]).to.equal('b');
-  // });
-  
-  it('emits a focus event with correct value', () => {
-    const wrapper = mount(inputComp, {
-      propsData: {
-        label: 'test',
-        value: 'a',
-      },
-      attachToDocument: true,
-    });
-    const spy = sinon.spy(wrapper.vm, '$emit');
-    const input = wrapper.find('.cdr-input')[0];
-    input.trigger('focus');
-    expect(spy.args[0][0]).to.equal('focus');
-    expect(spy.args[0][1].target.value).to.equal('a');
+    wrapper.vm.onInput({target: {value: 'b'}});
+    expect(wrapper.emitted().input[0][0]).toBe('b');
+    expect(wrapper.vm.currentValue).toBe('b');
   });
   
   it('emits a blur event with correct value', () => {
-    const wrapper = mount(inputComp, {
+    const wrapper = shallow(inputComp, {
       propsData: {
         label: 'test',
-        value: 'a',
       },
-      attachToDocument: true,
     });
-    const spy = sinon.spy(wrapper.vm, '$emit');
-    const input = wrapper.find('.cdr-input')[0];
-    input.trigger('blur');
-    expect(spy.args[0][0]).to.equal('blur');
-    expect(spy.args[0][1].target.value).to.equal('a');
+    wrapper.vm.onBlur(123);
+    expect(wrapper.emitted().blur[0][0]).toBe(123);
   });
   
-  // TODO: revisit next update
-  // it('emits a paste event with correct value', () => {
-  //   const wrapper = mount(inputComp, {
-  //     propsData: {
-  //       label: 'test',
-  //       value: 'a',
-  //     },
-  //     attachToDocument: true,
-  //   });
-  //   const spy = sinon.spy(wrapper.vm, '$emit');
-  //   const input = wrapper.find('.cdr-input')[0];
-  //   input.element.value = 'b';
-  //   input.trigger('paste');
-  //   expect(spy.args[0][0]).to.equal('paste');
-  //   expect(spy.args[0][1].target.value).to.equal('b');
-  // });
+  it('emits a focus event with correct value', () => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+    });
+    wrapper.vm.onFocus(123);
+    expect(wrapper.emitted().focus[0][0]).toBe(123);
+  });
+
+  it('emits a paste event with correct value', () => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+    });
+    wrapper.vm.onPaste(123);
+    expect(wrapper.emitted().paste[0][0]).toBe(123);
+  });
+
+  it('default validation when required works', (done) => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'test',
+        required: true,
+        debounce: 0,
+      }
+    });
+    expect(wrapper.vm.rules.length).toBe(1);
+    wrapper.setData({ 
+      touched: true,
+      focused: false,
+    });
+    wrapper.setProps({
+      value: '',
+    });
+    setTimeout(() => {
+      expect(wrapper.vm.state).toBe('warn');
+      expect(wrapper.vm.errors[0]).toBe('This field is required');
+      done();
+    }, 100);
+  });
+
+  it('renders feedback', () => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'test',
+        feedback: true,
+      },
+    });
+    wrapper.setData({ state: 'error' });
+    expect(wrapper.vm.$refs.icon.textContent).toBe('test-file-stub');
+  });
+
+  it('returns an icon for error', () => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+    });
+    wrapper.setData({ state: 'error' });
+    expect(wrapper.vm.getIcon).toBe('test-file-stub');
+  });
+  
+  it('returns an icon for warn', () => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+    });
+    wrapper.setData({ state: 'warn' });
+    expect(wrapper.vm.getIcon).toBe('test-file-stub');
+  });
+  
+  it('returns an icon for valid', () => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: 'test',
+      },
+    });
+    wrapper.setData({ state: 'valid' });
+    expect(wrapper.vm.getIcon).toBe('test-file-stub');
+  });
+
+  it('immediately validates', (done) => {
+    const wrapper = shallow(inputComp, {
+      propsData: {
+        label: '',
+        required: true,
+        debounce: 0,
+        immediateValidate: true,
+        value: '',
+      },
+      data: {
+        touched: true,
+        focused: false,
+      }
+    });
+    setTimeout(() => {
+      expect(wrapper.vm.state).toBe('warn');
+      expect(wrapper.vm.errors[0]).toBe('This field is required');
+      done();
+    }, 100);
+  });
 });

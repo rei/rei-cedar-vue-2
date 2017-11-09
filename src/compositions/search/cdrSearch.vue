@@ -3,7 +3,6 @@
     <cdr-input 
       class="cdr-search__input"
       v-bind="$attrs"
-      v-on="$listeners"
       label="Search" 
       hide-label 
       placeholder="Search" 
