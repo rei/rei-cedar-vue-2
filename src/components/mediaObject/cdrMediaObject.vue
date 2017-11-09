@@ -58,7 +58,6 @@ import { CdrIcon } from '@rei-co-op/cedar-icon';
 import modifier from 'Src/mixins/modifier';
 import lazyImage from 'Src/mixins/lazyImage';
 
-
 export default {
   name: 'cdr-media-object',
   mixins: [modifier, lazyImage],

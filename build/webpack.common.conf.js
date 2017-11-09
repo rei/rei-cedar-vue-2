@@ -35,7 +35,6 @@ module.exports = {
         include: [resolve('src'), resolve('test')],
         exclude: /(node_modules|dist)/,
         options: {
-          // configFile: resolve('.eslintrc.js'),
           formatter: require('eslint-friendly-formatter'), //eslint-disable-line
         },
       },
@@ -56,7 +55,10 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
+        exclude: [
+          /(node_modules)/,
+          /(dist)/
+        ],
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')],
       },

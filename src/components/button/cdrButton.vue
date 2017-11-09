@@ -1,5 +1,5 @@
 <template>
-  <button :class="[modifierClass, themeClass]" :type="type" @click="onClick">
+  <button :class="[modifierClass]" :type="type" @click="onClick">
     <slot></slot>
   </button>
 </template>
