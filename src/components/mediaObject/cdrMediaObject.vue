@@ -53,8 +53,7 @@
 
 <script>
 import { CdrA } from '@rei-co-op/cedar-a';
-// TODO fix casing/name of CdrImage
-import { CdrImage as cdrImg } from '@rei-co-op/cedar-image';
+import { cdrImg } from '@rei-co-op/cedar-image';
 import { CdrIcon } from '@rei-co-op/cedar-icon';
 import modifier from 'Src/mixins/modifier';
 import lazyImage from 'Src/mixins/lazyImage';
