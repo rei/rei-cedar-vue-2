@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-search",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "REI Cedar Style Framework - Vue Component for Search",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-search",
   "license": "ISC",
@@ -10,7 +10,7 @@
   "config": {
     "buildConfig": "webpack.dist.conf",
     "composition": "search",
-    "tagName": "search"  
+    "tagName": "search"
   },
   "scripts": {
     "build": "node ../../../build/build.js"

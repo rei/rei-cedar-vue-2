@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-list",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "REI Cedar Style Framework - Vue Component for List",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-list",
   "license": "ISC",

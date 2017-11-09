@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-radio",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "REI Cedar Style Framework - Vue Component for Radio",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-radio",
   "license": "ISC",
@@ -16,7 +16,7 @@
     "build": "node ../../../build/build.js"
   },
   "peerDependencies": {
-    "vue": "^2.4.2",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "vue": "^2.4.2"
   }
 }
