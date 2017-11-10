@@ -5,9 +5,10 @@
         <aside if={opened} class="cdr-modal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="dialog1Title">
             <span id="dialog1Title" class="sr-only">{'Begin dialog for' + opts.videoTitle}</span>
             <div class="cdr-modal__content">
-                <div class="text-right">
-                    <button onclick={hideModal} class="close icon icon-rei-close img-circle" aria-label="Close"></button>
-                </div>
+                <button onclick={hideModal} type="button" class="btn-contrast btn-icon btn-bare" aria-label="Close">
+                    <span class="icon icon-rei-close-small" aria-hidden="true"></span>
+                    <span class="sr-only">Close button</span>
+                </button>
                 <section class="cdr-modal__content--inner">
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe title="{opts.videoTitle}" width="900" height="506" src="https://www.youtube.com/embed/{opts.videoId}" frameborder="0" allowfullscreen></iframe>
@@ -17,31 +18,6 @@
             <span class="sr-only">End dialog</span>
         </aside>
     </div>
-
-    <style type="less">
-        .cdr-modal__content {
-            .icon {
-                &.icon-rei-close {
-                    &.img-circle {
-                        background: rgba( 0,0,0,.5 );
-                        color: #fff;
-                        padding: 2rem;
-                        margin: 1.6rem;
-                        float: none;
-
-                        @media screen and (max-width: 768px) {
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            bottom: auto;
-                            left: auto;
-                            z-index: 1;
-                        }
-                    }
-                }
-            }
-        }
-    </style>
 
     <script>
         //properties
