@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-column",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "REI Cedar Style Framework - Vue Component for Column",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-col",
   "license": "ISC",
@@ -19,6 +19,6 @@
     "vue": "^2.4.2"
   },
   "devDependencies": {
-    "@rei-co-op/cedar-row": "^0.0.4"
+    "@rei-co-op/cedar-row": "^0.0.5"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-card",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "REI Cedar Style Framework - Vue Component for Card",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-card",
   "license": "ISC",
