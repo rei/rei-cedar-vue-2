@@ -18,7 +18,7 @@
   "peerDependencies": {
     "vue": "^2.4.2"
   },
-  "dependencies": {
+  "devDependencies": {
     "@rei-co-op/cedar-a": "^0.0.3",
     "@rei-co-op/cedar-icon": "^0.0.4",
     "@rei-co-op/cedar-image": "^0.0.4"

@@ -2,30 +2,14 @@
 # yarn lockfile v1
 
 
-"@rei-co-op/cedar-a@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-a/-/cedar-a-0.0.2.tgz#06e01976ecd9364a3ae6f05c39ee20b8458a4113"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-
-"@rei-co-op/cedar-icon@^0.0.3":
+"@rei-co-op/cedar-a@^0.0.3":
   version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-icon/-/cedar-icon-0.0.3.tgz#9beedc3bebd96bd19c271903e019ab0a8d169d31"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-a/-/cedar-a-0.0.3.tgz#4877c70dba166ae76c2caeb96513578fa5f9c8a7"
 
-"@rei-co-op/cedar-image@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-image/-/cedar-image-0.0.3.tgz#90a58296d77e34a48b35f6ca215d0acc4f529c9a"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
+"@rei-co-op/cedar-icon@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-icon/-/cedar-icon-0.0.4.tgz#7958b0042d19090e87f05d8635a809a9ae29fee5"
 
-vue-hot-reload-api@^2.1.1:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.0.tgz#9a21b35ced3634434a43ee80efb7350ea8fb206d"
-
-yarn@^1.2.1:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.3.2.tgz#5939762581b5b4ddcd3418c0f6be42df3aee195f"
+"@rei-co-op/cedar-image@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-image/-/cedar-image-0.0.4.tgz#70460ad76823885d20e1d97e1d2b58485bf1666b"
