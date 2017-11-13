@@ -2,7 +2,6 @@ import components from './_index';
 
 function install(Vue) {
   Object.keys(components).forEach((key) => {
-    if (key === 'default') return;
     Vue.component(components[key].name, components[key]);
   });
 }
