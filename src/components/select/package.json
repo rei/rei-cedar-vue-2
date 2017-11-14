@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-select",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "REI Cedar Style Framework - Vue Component for Select",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-select",
   "license": "ISC",
