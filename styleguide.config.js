@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
   devConfig.plugins = [];
   // for replacing urls that are different between dev and gh-pages
   const rename = new ReplacePlugin([{
-    partten: /\/static\//g,
+    partten: /\/static\//g, // requires this misspelling of 'pattern'
     replacement() {
       return '/';
     },
@@ -52,6 +52,7 @@ module.exports = {
   ignore: [
     '**/examples/**',
     '**/testing/**', // ignore e2e testing example
+    '**/node_modules/**',
   ],
   assetsDir: './static',
   styleguideDir: './dist-docs',
@@ -89,4 +90,9 @@ module.exports = {
       components: 'src/compositions/**/*.vue',
     },
   ],
+  // dangerouslyUpdateWebpackConfig(webpackConfig) {
+  //   // WARNING: inspect Vue Styleguidist Webpack config before modifying it,
+  //   // otherwise you may break Styleguidist
+  //   console.log(webpackConfig);
+  // },
 };
