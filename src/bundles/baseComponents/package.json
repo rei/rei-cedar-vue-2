@@ -17,7 +17,7 @@
   "dependencies": {
     "@rei-co-op/cedar-a": "^0.0.4",
     "@rei-co-op/cedar-button": "^0.0.5",
-    "@rei-co-op/cedar-card": "^0.0.5",
+    "@rei-co-op/cedar-card": "^0.0.6",
     "@rei-co-op/cedar-checkbox": "^0.0.5",
     "@rei-co-op/cedar-column": "^0.0.5",
     "@rei-co-op/cedar-heading": "^0.0.5",
@@ -29,6 +29,7 @@
     "@rei-co-op/cedar-rating": "^0.0.6",
     "@rei-co-op/cedar-row": "^0.0.5",
     "@rei-co-op/cedar-select": "^0.0.6",
+    "vue": "^2.5.3",
     "yarn": "^1.3.2"
   },
   "peerDependencies": {
