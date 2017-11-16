@@ -46,9 +46,9 @@ if (process.env.NODE_ENV === 'development') {
 
 module.exports = {
   webpackConfig: webpConfig,
-  require: [
-    './src/css/main.postcss',
-  ],
+  // require: [
+  //   './src/css/main.postcss',
+  // ],
   ignore: [
     '**/examples/**',
     '**/testing/**', // ignore e2e testing example
@@ -90,9 +90,14 @@ module.exports = {
       components: 'src/compositions/**/*.vue',
     },
   ],
-  // dangerouslyUpdateWebpackConfig(webpackConfig) {
-  //   // WARNING: inspect Vue Styleguidist Webpack config before modifying it,
-  //   // otherwise you may break Styleguidist
-  //   console.log(webpackConfig);
-  // },
+  dangerouslyUpdateWebpackConfig(webpackConfig) {
+    // WARNING: inspect Vue Styleguidist Webpack config before modifying it,
+    // otherwise you may break Styleguidist
+    console.log(webpackConfig);
+    const newConfig = webpackConfig;
+    newConfig.output.filename = '[name].bundle.js';
+    newConfig.output.chunkFilename = 'chunk.[chunkhash:6].js';
+    newConfig.output.publicPath = '/js/chunk/';
+    return newConfig;
+  },
 };
