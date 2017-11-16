@@ -1,7 +1,7 @@
-import cdrSearch from './cdrSearch';
+import CdrSearch from './cdrSearch';
 
 function install(Vue) {
-  Vue.component('cdr-search', cdrSearch);
+  Vue.component('cdr-search', CdrSearch);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -10,4 +10,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default install;
 
-export { cdrSearch };
+export { CdrSearch };

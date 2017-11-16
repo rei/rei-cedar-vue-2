@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-search",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "REI Cedar Style Framework - Vue Component for Search",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-search",
   "license": "ISC",
