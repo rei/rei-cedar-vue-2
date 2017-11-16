@@ -1,61 +1,61 @@
-import cdrA from '@rei-co-op/cedar-a';
-import cdrButton from '@rei-co-op/cedar-button';
-import cdrCard from '@rei-co-op/cedar-card';
-import cdrCheckbox from '@rei-co-op/cedar-checkbox';
-import cdrCol from '@rei-co-op/cedar-column';
-import cdrHeading from '@rei-co-op/cedar-heading';
-import cdrIcon from '@rei-co-op/cedar-icon';
-import cdrImg from '@rei-co-op/cedar-image';
-import cdrInput from '@rei-co-op/cedar-input';
-import cdrList from '@rei-co-op/cedar-list';
-import cdrRadio from '@rei-co-op/cedar-radio';
-import cdrRating from '@rei-co-op/cedar-rating';
-import cdrRow from '@rei-co-op/cedar-row';
-import cdrSelect from '@rei-co-op/cedar-select';
+import { CdrA } from '@rei-co-op/cedar-a';
+import { CdrButton } from '@rei-co-op/cedar-button';
+import { CdrCard } from '@rei-co-op/cedar-card';
+import { CdrCheckbox } from '@rei-co-op/cedar-checkbox';
+import { CdrCol } from '@rei-co-op/cedar-column';
+import { CdrHeading } from '@rei-co-op/cedar-heading';
+import { CdrIcon } from '@rei-co-op/cedar-icon';
+import { CdrImg } from '@rei-co-op/cedar-image';
+import { CdrInput } from '@rei-co-op/cedar-input';
+import { CdrList } from '@rei-co-op/cedar-list';
+import { CdrRadio } from '@rei-co-op/cedar-radio';
+import { CdrRating } from '@rei-co-op/cedar-rating';
+import { CdrRow } from '@rei-co-op/cedar-row';
+import { CdrSelect } from '@rei-co-op/cedar-select';
 
-import cdrAStyle from '@rei-co-op/cedar-a/dist/cdr-a.css';
-import cdrButtonStyle from '@rei-co-op/cedar-button/dist/cdr-button.css';
-import cdrCardStyle from '@rei-co-op/cedar-card/dist/cdr-card.css';
-import cdrCheckboxStyle from '@rei-co-op/cedar-checkbox/dist/cdr-checkbox.css';
-import cdrHeadingStyle from '@rei-co-op/cedar-heading/dist/cdr-heading.css';
-import cdrIconStyle from '@rei-co-op/cedar-icon/dist/cdr-icon.css';
-import cdrImgStyle from '@rei-co-op/cedar-image/dist/cdr-img.css';
-import cdrInputStyle from '@rei-co-op/cedar-input/dist/cdr-input.css';
-import cdrListStyle from '@rei-co-op/cedar-list/dist/cdr-list.css';
-import cdrRadioStyle from '@rei-co-op/cedar-radio/dist/cdr-radio.css';
-import cdrRatingStyle from '@rei-co-op/cedar-rating/dist/cdr-rating.css';
-import cdrSelectStyle from '@rei-co-op/cedar-select/dist/cdr-select.css';
+import CdrAStyle from '@rei-co-op/cedar-a/dist/cdr-a.css';
+import CdrButtonStyle from '@rei-co-op/cedar-button/dist/cdr-button.css';
+import CdrCardStyle from '@rei-co-op/cedar-card/dist/cdr-card.css';
+import CdrCheckboxStyle from '@rei-co-op/cedar-checkbox/dist/cdr-checkbox.css';
+import CdrHeadingStyle from '@rei-co-op/cedar-heading/dist/cdr-heading.css';
+import CdrIconStyle from '@rei-co-op/cedar-icon/dist/cdr-icon.css';
+import CdrImgStyle from '@rei-co-op/cedar-image/dist/cdr-img.css';
+import CdrInputStyle from '@rei-co-op/cedar-input/dist/cdr-input.css';
+import CdrListStyle from '@rei-co-op/cedar-list/dist/cdr-list.css';
+import CdrRadioStyle from '@rei-co-op/cedar-radio/dist/cdr-radio.css';
+import CdrRatingStyle from '@rei-co-op/cedar-rating/dist/cdr-rating.css';
+import CdrSelectStyle from '@rei-co-op/cedar-select/dist/cdr-select.css';
 
 export default {
-  cdrA,
-  cdrButton,
-  cdrCard,
-  cdrCheckbox,
-  cdrCol,
-  cdrHeading,
-  cdrIcon,
-  cdrImg,
-  cdrInput,
-  cdrList,
-  cdrRadio,
-  cdrRating,
-  cdrRow,
-  cdrSelect,
+  CdrA,
+  CdrButton,
+  CdrCard,
+  CdrCheckbox,
+  CdrCol,
+  CdrHeading,
+  CdrIcon,
+  CdrImg,
+  CdrInput,
+  CdrList,
+  CdrRadio,
+  CdrRating,
+  CdrRow,
+  CdrSelect,
 };
 
 const styles = [
-  cdrAStyle,
-  cdrButtonStyle,
-  cdrCardStyle,
-  cdrCheckboxStyle,
-  cdrHeadingStyle,
-  cdrIconStyle,
-  cdrImgStyle,
-  cdrInputStyle,
-  cdrListStyle,
-  cdrRadioStyle,
-  cdrRatingStyle,
-  cdrSelectStyle,
+  CdrAStyle,
+  CdrButtonStyle,
+  CdrCardStyle,
+  CdrCheckboxStyle,
+  CdrHeadingStyle,
+  CdrIconStyle,
+  CdrImgStyle,
+  CdrInputStyle,
+  CdrListStyle,
+  CdrRadioStyle,
+  CdrRatingStyle,
+  CdrSelectStyle,
 ];
 
 export { styles };

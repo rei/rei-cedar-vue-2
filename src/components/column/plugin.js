@@ -1,7 +1,7 @@
-import CdrColumn from './cdrCol';
+import CdrCol from './cdrCol';
 
 function install(Vue) {
-  Vue.component('cdr-col', CdrColumn);
+  Vue.component('cdr-col', CdrCol);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -10,4 +10,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default install;
 
-export { CdrColumn };
+export { CdrCol };

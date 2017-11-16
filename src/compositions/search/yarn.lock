@@ -2,23 +2,10 @@
 # yarn lockfile v1
 
 
-"@rei-co-op/cedar-button@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-button/-/cedar-button-0.0.2.tgz#231bc5645a6b9f017a0bbb4c34e163e04e6aefad"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
+"@rei-co-op/cedar-button@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-button/-/cedar-button-0.0.4.tgz#29e11372b020db20ec6380df9b344d469a64f011"
 
-"@rei-co-op/cedar-input@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-input/-/cedar-input-0.0.2.tgz#d2deab818b018dc1618d0f2eb0e1a425e983d0bd"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
-
-vue-hot-reload-api@^2.1.1:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.0.tgz#9a21b35ced3634434a43ee80efb7350ea8fb206d"
-
-yarn@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.2.1.tgz#0d628dc01438881a1663a6f83cbf7ac5db7a75fc"
+"@rei-co-op/cedar-input@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-input/-/cedar-input-0.0.4.tgz#531eabb36787835a5870545aa655b0b677976e36"
