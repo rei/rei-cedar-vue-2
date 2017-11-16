@@ -1,7 +1,7 @@
-import cdrActivityCard from './cdrActivityCard';
+import CdrActivityCard from './cdrActivityCard';
 
 function install(Vue) {
-  Vue.component('cdr-activity-card', cdrActivityCard);
+  Vue.component('cdr-activity-card', CdrActivityCard);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -10,4 +10,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default install;
 
-export { cdrActivityCard };
+export { CdrActivityCard };

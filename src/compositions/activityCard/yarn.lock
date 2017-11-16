@@ -2,63 +2,30 @@
 # yarn lockfile v1
 
 
-"@rei-co-op/cedar-card@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-card/-/cedar-card-0.0.2.tgz#45a6f0a321dc83363f608690fd1a2ccfe6e2c7a8"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
+"@rei-co-op/cedar-card@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-card/-/cedar-card-0.0.6.tgz#0bb3ffc314fa7235ced569ddecfcefd76f0ebc5b"
 
-"@rei-co-op/cedar-heading@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-heading/-/cedar-heading-0.0.2.tgz#fecdcc816e344a8917c534093c74bc06a7f6b6ae"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
+"@rei-co-op/cedar-heading@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-heading/-/cedar-heading-0.0.5.tgz#54b1ba42699f05dd2b828eca0534ec4b6add66e0"
 
-"@rei-co-op/cedar-icon@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-icon/-/cedar-icon-0.0.2.tgz#bda5b50902cef15b8b118ad5b14e39c9db5ca042"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
+"@rei-co-op/cedar-icon@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-icon/-/cedar-icon-0.0.5.tgz#c596054dd9a246efc10b7181059ae4c342f0e83d"
 
-"@rei-co-op/cedar-image@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-image/-/cedar-image-0.0.2.tgz#efe928aade4d135bdb6b61a562dd2b69ef351aea"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
+"@rei-co-op/cedar-image@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-image/-/cedar-image-0.0.5.tgz#365d44ba194cf18a081341b8cdf301732438ea5d"
 
-"@rei-co-op/cedar-list@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-list/-/cedar-list-0.0.2.tgz#6908e070f5049e66e0f7f229a561e6e52605b209"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
+"@rei-co-op/cedar-list@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-list/-/cedar-list-0.0.6.tgz#b2b6c6dca18db0f95e9f47d197ad1b2766a8feab"
 
-"@rei-co-op/cedar-media-object@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-media-object/-/cedar-media-object-0.0.2.tgz#0ec9fc0fa015f72763ea4d6a86c653fd60038d63"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
+"@rei-co-op/cedar-media-object@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-media-object/-/cedar-media-object-0.0.5.tgz#a162b074526cc8162b1b8db7efcc3e625a045ea5"
 
-"@rei-co-op/cedar-rating@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-rating/-/cedar-rating-0.0.2.tgz#d8ec88494ae929d6532a82fbec5ea6a40f261c6c"
-  dependencies:
-    vue-hot-reload-api "^2.1.1"
-    yarn "^1.2.1"
-
-vue-hot-reload-api@^2.1.1:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.0.tgz#9a21b35ced3634434a43ee80efb7350ea8fb206d"
-
-vue@^2.5.3:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.3.tgz#e1a3b1f49b6e93e574ce040b95cbc873912fecc1"
-
-yarn@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.2.1.tgz#0d628dc01438881a1663a6f83cbf7ac5db7a75fc"
+"@rei-co-op/cedar-rating@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-rating/-/cedar-rating-0.0.6.tgz#01b8609ec2312a42a6d1741b6b1c43c24ab90d4e"
