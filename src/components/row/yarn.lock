@@ -5,7 +5,3 @@
 "@rei-co-op/cedar-core-style@^0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-core-style/-/cedar-core-style-0.0.2.tgz#dffdb5fda4eedc0d20200291374936ddf1f915ab"
-
-"@rei-co-op/cedar-row@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-row/-/cedar-row-0.0.5.tgz#6084c91d522b3c82d9470c93cdcd29de33ef096b"

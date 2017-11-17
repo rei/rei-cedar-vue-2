@@ -2,14 +2,18 @@
 # yarn lockfile v1
 
 
-"@rei-co-op/cedar-a@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-a/-/cedar-a-0.0.3.tgz#4877c70dba166ae76c2caeb96513578fa5f9c8a7"
-
-"@rei-co-op/cedar-icon@^0.0.4":
+"@rei-co-op/cedar-a@^0.0.4":
   version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-icon/-/cedar-icon-0.0.4.tgz#7958b0042d19090e87f05d8635a809a9ae29fee5"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-a/-/cedar-a-0.0.4.tgz#051200f3a439a2b988e252c0fd6ff4333db7cbbf"
 
-"@rei-co-op/cedar-image@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-image/-/cedar-image-0.0.4.tgz#70460ad76823885d20e1d97e1d2b58485bf1666b"
+"@rei-co-op/cedar-core-style@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-core-style/-/cedar-core-style-0.0.2.tgz#dffdb5fda4eedc0d20200291374936ddf1f915ab"
+
+"@rei-co-op/cedar-icon@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-icon/-/cedar-icon-0.0.5.tgz#c596054dd9a246efc10b7181059ae4c342f0e83d"
+
+"@rei-co-op/cedar-image@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-image/-/cedar-image-0.0.5.tgz#365d44ba194cf18a081341b8cdf301732438ea5d"
