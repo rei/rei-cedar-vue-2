@@ -7,15 +7,13 @@ if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'release')
 }
 
 // Used to extract main.postcss to it's own file
-var prodLoaders = ExtractCssChunks.extract({
-  use: [
+var prodLoaders =  [
     {
       loader: 'css-loader',
       options: { importLoaders: 1 },
     },
     'postcss-loader',
-  ],
-});
+  ];
 
 // Load/inject as normal
 var nonProdLoaders = [

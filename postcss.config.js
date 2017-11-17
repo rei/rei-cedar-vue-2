@@ -19,5 +19,6 @@ module.exports = {
     },
     'postcss-inline-svg': {},
     autoprefixer: {},
+    cssnano: {},
   },
 };

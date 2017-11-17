@@ -1,0 +1,18 @@
+{
+  "name": "@rei-co-op/cedar-css",
+  "version": "0.0.1",
+  "description": "REI Cedar Style Framework - Core Styles",
+  "license": "ISC",
+  "author": "REI Software Engineering",
+  "private": false,
+  "main": "dist/cedar-core.css",
+  "config": {
+    "buildConfig": "webpack.styles.conf"
+  },
+  "scripts": {
+    "build": "rm -rf dist/* && postcss ../css/main.postcss -o ./dist/cedar-core.css"
+  },
+  "devDependencies": {
+    "postcss-cli": "^4.1.1"
+  }
+}
