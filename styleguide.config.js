@@ -93,7 +93,7 @@ module.exports = {
   dangerouslyUpdateWebpackConfig(webpackConfig) {
     // WARNING: inspect Vue Styleguidist Webpack config before modifying it,
     // otherwise you may break Styleguidist
-    console.log(webpackConfig);
+    // console.log(webpackConfig);
     const newConfig = webpackConfig;
     newConfig.output.filename = '[name].bundle.js';
     newConfig.output.chunkFilename = 'chunk.[chunkhash:6].js';
