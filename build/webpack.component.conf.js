@@ -62,12 +62,12 @@ module.exports = {
     //   chunksSortMode: 'dependency',
     // }),
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: path.resolve(__dirname, `..${cedarPackageFolder}/static`),
-        ignore: ['.*'],
-      },
-    ]),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../static'),
+    //     to: path.resolve(__dirname, `..${cedarPackageFolder}/static`),
+    //     ignore: ['.*'],
+    //   },
+    // ]),
   ],
 };
