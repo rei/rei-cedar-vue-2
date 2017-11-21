@@ -1,3 +1,6 @@
+#!/usr/bin/env/ node
+
+const chalk = require('chalk');
 const fs = require('fs-extra');
 const path = require('path');
 const { exec } = require('child_process');
@@ -8,11 +11,10 @@ const staticDir = path.resolve(__dirname, '../..', 'static');
 
 // Clean out the dist file
 fs.emptyDirSync(distDir);
-console.log('Dist cleaned');
 
 // Compile css
 exec(`postcss ${cssDir}/main.postcss -o ${distDir}/cedar-core.css`, () => {
-  console.log('Compiled cedar-core.css');
+  console.log(chalk.green('Compiled cedar-core.css'));
 });
 
 // copy static files
@@ -23,7 +25,7 @@ fs.copySync(staticDir, distDir, {
     }
     const result = src.indexOf('.gitkeep') < 0;
     if (result) {
-      console.log(`Copied ${src}`);
+      console.log(chalk.green(`Copied ${src}`));
       return true;
     }
     return false;
