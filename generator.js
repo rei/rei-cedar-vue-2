@@ -35,8 +35,10 @@ const QUESTIONS = [
   {
     name: 'name',
     type: 'input',
-    message: 'What is the component name? (kebab-case without cdr prefix)',
+    message: 'What is the component name? (kebab-case without cdr/cedar prefix)',
     validate: (input) => {
+      if (_.startsWith(input, 'cdr')) return chalk.red('Name should be unprefixed (no cdr)');
+      else if (_.startsWith(input, 'cedar')) return chalk.red('Name should be unprefixed (no cedar)');
       if (/^([a-z]+(-[a-z]+)*)$/.test(input)) return true;
       return chalk.red('Component name must be kebab-case');
     },
@@ -52,7 +54,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   const compName = `Cdr${pascalName}`; // CdrTestComp
   const tagName = _.kebabCase(compName); // cdr-test-comp
   const fullName = `cedar-${name}`; // cedar-test-comp
-  const outDir = resolve(`src/${type}/${pascalName}`);
+  const outDir = resolve(`src/${type}/${camelName}`);
 
   // exit if the component already exists
   if (fs.existsSync(outDir)) {
@@ -86,6 +88,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
         .replace(/\{NAME-PASCAL\}/g, pascalName)
         .replace(/\{NAME-TAGNAME\}/g, tagName)
         .replace(/\{NAME-KEBAB\}/g, name)
+        .replace(/\{NAME-CAMEL\}/g, camelName)
         .replace(/\{NAME-FULLNAME\}/g, compName)
         .replace(/\{NAME-FULLKEBAB\}/g, fullName);
 
@@ -94,6 +97,6 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   });
 
   // Done!
-  console.log(chalk.green(`Successfuly generated files for '${name}' at ${outDir}`));
+  console.log(chalk.green(`Successfuly generated files for '${name}' in ${outDir}`));
 });
 

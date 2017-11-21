@@ -9,7 +9,7 @@
   "main": "dist/{NAME-TAGNAME}.js",
   "config": {
     "buildConfig": "webpack.dist.conf",
-    "component": "{NAME-PASCAL}",
+    "component": "{NAME-CAMEL}",
     "tagName": "{NAME-KEBAB}"
   },
   "scripts": {
