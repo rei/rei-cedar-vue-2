@@ -10,9 +10,10 @@
     "buildConfig": "webpack.styles.conf"
   },
   "scripts": {
-    "build": "rm -rf dist/* && postcss ../css/main.postcss -o ./dist/cedar-core.css"
+    "build": "node ./build.js"
   },
   "devDependencies": {
+    "fs-extra": "^4.0.2",
     "postcss-cli": "^4.1.1"
   }
 }
