@@ -42,32 +42,4 @@ module.exports = {
     library: `Cdr${capComp}`,
     umdNamedDefine: true,
   },
-  plugins: [
-    // generate dist index.html with correct asset hash for caching.
-    // you can customize output by editing /index.html
-    // see https://github.com/ampedandwired/html-webpack-plugin
-    // new HtmlWebpackPlugin({
-    //   filename: 'index.html',
-    //   inject: true,
-    //   template: 'index.ejs',
-    //   tagName: `cdr-${tagName}`,
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: false,
-    //     removeAttributeQuotes: false,
-    //     // more options:
-    //     // https://github.com/kangax/html-minifier#options-quick-reference
-    //   },
-    //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    //   chunksSortMode: 'dependency',
-    // }),
-    // copy custom static assets
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: path.resolve(__dirname, '../static'),
-    //     to: path.resolve(__dirname, `..${cedarPackageFolder}/static`),
-    //     ignore: ['.*'],
-    //   },
-    // ]),
-  ],
 };
