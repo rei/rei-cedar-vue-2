@@ -63,6 +63,11 @@ module.exports = {
         include: [resolve('src'), resolve('test')],
       },
       {
+        test: /\.(postcss|pcss)$/,
+        include: [resolve('src/css')],
+        use: mainPostConfig.loaders
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
