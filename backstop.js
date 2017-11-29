@@ -7,7 +7,8 @@ const scenariosArr = [];
 let defs = [];
 const scenarioDefaults = {
   url: 'http://localhost:8080',
-  readyEvent: null,
+  delay: 100,
+  onReadyScript: 'onReady.js',
 };
 
 // functions for creating scenarios
@@ -25,11 +26,12 @@ function createHoverScenario(def) {
   const hoverScenario = Object.assign({}, def);
   hoverScenario.label = `${hoverScenario.label} Hover`;
   hoverScenario.selectors = [];
-  hoverScenario.onReadyScript = 'hover.js';
+  hoverScenario.hoverWait = 2000;
   const copy = Object.assign({}, hoverScenario);
   delete copy.hoverSelectors;
 
   hoverScenario.hoverSelectors.forEach((selector) => {
+    copy.hoverSelector = selector;
     copy.selectors = [];
     copy.selectors.push(selector);
     createScenario(copy);
@@ -37,10 +39,13 @@ function createHoverScenario(def) {
 }
 
 // get backstop definition files and concat the contents
-const files = glob.sync('./src/**/*.backstop.js');
+// const files = glob.sync('./src/compositions/activityCard/*.backstop.js',
+// { ignore: './src/**/node_modules/**' });
+const files = glob.sync('./src/**/*.backstop.js', { ignore: './src/**/node_modules/**' });
 files.forEach((file) => {
   defs = defs.concat(require(file));
 });
+
 
 defs.forEach((def) => {
   if (Object.prototype.hasOwnProperty.call(def, 'hoverSelectors')) {
@@ -83,6 +88,7 @@ module.exports = {
     ci_report: 'backstop_data/ci_report',
   },
   asyncCaptureLimit: 5,
+  asyncCompareLimit: 10,
   engine: 'chrome',
   report: ['browser'],
   debug: false,
