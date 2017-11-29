@@ -1,16 +1,47 @@
 <template>
-  <div class="cdr-rating" :class="[modifierClass]">
+  <div
+    class="cdr-rating"
+    :class="[modifierClass]"
+  >
     <div class="cdr-rating__background">
-      <span class="cdr-rating__icon cdr-rating__placeholder" v-for="n in 5" :key="n" aria-hidden="true"></span>
+      <span
+        class="cdr-rating__icon cdr-rating__placeholder"
+        v-for="n in 5"
+        :key="n"
+        aria-hidden="true"
+      />
     </div>
     <div class="cdr-rating__ratings">
-      <span class="cdr-rating__icon cdr-rating__100" v-for="n in whole" :key="n" aria-hidden="true"></span>
-      <span class="cdr-rating__icon cdr-rating__25" v-if="remainder === '25'" aria-hidden="true"></span>
-      <span class="cdr-rating__icon cdr-rating__50" v-else-if="remainder === '50'" aria-hidden="true"></span>
-      <span class="cdr-rating__icon cdr-rating__75" v-else-if="remainder === '75'" aria-hidden="true"></span>
+      <span
+        class="cdr-rating__icon cdr-rating__100"
+        v-for="n in whole"
+        :key="n"
+        aria-hidden="true"
+      />
+      <span
+        v-if="remainder === '25'"
+        class="cdr-rating__icon cdr-rating__25"
+        aria-hidden="true"
+      />
+      <span
+        v-else-if="remainder === '50'"
+        class="cdr-rating__icon cdr-rating__50"
+        aria-hidden="true"
+      />
+      <span
+        v-else-if="remainder === '75'"
+        class="cdr-rating__icon cdr-rating__75"
+        aria-hidden="true"
+      />
     </div>
-    <span aria-hidden="true" v-if="count" class="cdr-rating__count">({{count}})<span v-if="!compact"> Reviews</span></span>
-    <span class="u-sr-only">rated {{rating}} out of 5 with {{count}} reviews</span>
+    <span
+      v-if="count"
+      aria-hidden="true"
+      class="cdr-rating__count"
+    >({{ count }})<span v-if="!compact"> Reviews</span></span>
+    <span
+      class="u-sr-only"
+    >rated {{ rating }} out of 5 with {{ count }} reviews</span>
   </div>
 </template>
 
@@ -18,7 +49,7 @@
 import modifier from '../../mixins/modifier';
 
 export default {
-  name: 'cdr-rating',
+  name: 'CdrRating',
   mixins: [modifier],
   props: {
     /**

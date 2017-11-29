@@ -1,10 +1,18 @@
 <template>
   <div class="anchor-example">
     <p>
-      <cdr-a data-backstop="cdr-link--button" href="https://www.rei.com/" modifier="button responsive">Link as button</cdr-a>
+      <cdr-a
+        data-backstop="cdr-link--button"
+        href="https://www.rei.com/"
+        modifier="button responsive"
+      >Link as button</cdr-a>
     </p>
     <p>
-      <cdr-a data-backstop="cdr-link--button" href="https://www.rei.com/" modifier="button">Link as button (not responsive)</cdr-a>
+      <cdr-a
+        data-backstop="cdr-link--button"
+        href="https://www.rei.com/"
+        modifier="button"
+      >Link as button (not responsive)</cdr-a>
     </p>
   </div>
 </template>
@@ -13,7 +21,7 @@
 import Components from 'Components/_index';
 
 export default {
-  name: 'anchor-button',
+  name: 'AnchorButton',
   components: Components,
 };
 </script>

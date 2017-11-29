@@ -2,56 +2,93 @@
   <div>
     <h2>Selects</h2>
 
-    <cdr-select label="Disabled select" v-model="selected" disabled>
+    <cdr-select
+      label="Disabled select"
+      v-model="selected"
+      disabled
+    >
       <option value="1">1</option>
     </cdr-select>
-    <p>Selected: {{selected}}</p>
+    <p>Selected: {{ selected }}</p>
 
-    <cdr-select label="Prompt" v-model="selected" prompt="Choose one">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </cdr-select>
-    <p>Selected: {{selected}}</p>
-
-    <cdr-select label="Prompt Required" v-model="selected" prompt="Choose one" required>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </cdr-select>
-    <p>Selected: {{selected}}</p>
-
-    <cdr-select label="Hidden label text" hideLabel v-model="selected" prompt="Hidden label">
+    <cdr-select
+      label="Prompt"
+      v-model="selected"
+      prompt="Choose one"
+    >
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
     </cdr-select>
-    <p>Selected: {{selected}}</p>
+    <p>Selected: {{ selected }}</p>
 
-    <cdr-select label="No Prompt" v-model="selected2">
+    <cdr-select
+      label="Prompt Required"
+      v-model="selected"
+      prompt="Choose one"
+      required
+    >
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
     </cdr-select>
-    <p>Selected: {{selected2}}</p>
+    <p>Selected: {{ selected }}</p>
 
-    <cdr-select label="Dynamic" v-model="dynamic" :options="dynamicData"></cdr-select>
-    <p>Selected: {{dynamic}}</p>
-
-    <cdr-select label="Multiple Prompt" v-model="multiple" multiple size="4" prompt="Choose two">
+    <cdr-select
+      label="Hidden label text"
+      hide-label
+      v-model="selected"
+      prompt="Hidden label"
+    >
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
     </cdr-select>
-    <p>selected: {{multiple}}</p>
+    <p>Selected: {{ selected }}</p>
 
-    <cdr-select label="Multiple No Prompt" v-model="multiple2" multiple size="4" :options="multiple2Data"></cdr-select>
-    <p>selected: {{multiple2}}</p>
+    <cdr-select
+      label="No Prompt"
+      v-model="selected2"
+    >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </cdr-select>
+    <p>Selected: {{ selected2 }}</p>
+
+    <cdr-select
+      label="Dynamic"
+      v-model="dynamic"
+      :options="dynamicData"
+    />
+    <p>Selected: {{ dynamic }}</p>
+
+    <cdr-select
+      label="Multiple Prompt"
+      v-model="multiple"
+      multiple
+      size="4"
+      prompt="Choose two"
+    >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </cdr-select>
+    <p>selected: {{ multiple }}</p>
+
+    <cdr-select
+      label="Multiple No Prompt"
+      v-model="multiple2"
+      multiple
+      size="4"
+      :options="multiple2Data"
+    />
+    <p>selected: {{ multiple2 }}</p>
   </div>
 </template>
 
@@ -59,7 +96,7 @@
 import Components from '../../_index';
 
 export default {
-  name: 'selects',
+  name: 'Selects',
   components: Components,
   data() {
     return {

@@ -1,18 +1,44 @@
 <template>
   <div :class="[modifierClass]">
     <template v-if="imgHref">
-      <cdr-a :href="imgHref" target="imgTarget">
-        <span class="u-sr-only">{{imgHrefText}}</span>
+      <cdr-a
+        :href="imgHref"
+        target="imgTarget"
+      >
+        <span class="u-sr-only">{{ imgHrefText }}</span>
         <cdr-icon
+          v-if="iconUrl"
+          class="cdr-media-object__figure"
+          :class="imgClass"
+          :url="iconUrl"
+        />
+        <cdr-img
+          v-else
+          class="cdr-media-object__figure"
+          :lazy="lazy"
+          :lazy-opts="lazyOpts"
+          :class="imgClass"
+          :alt="imgAlt"
+          :src="imgSrc"
+          :ratio="imgRatio"
+          :crop="imgCrop"
+          :cover="imgCover"
+          :radius="imgRadius"
+          :modifier="imgModifier"
+          :style="mediaWidth"/>
+      </cdr-a>
+    </template>
+    <template v-else>
+      <cdr-icon
         v-if="iconUrl"
         class="cdr-media-object__figure"
         :class="imgClass"
-        :url="iconUrl"></cdr-icon>
-        <cdr-img
+        :url="iconUrl"/>
+      <cdr-img
         v-else
         class="cdr-media-object__figure"
         :lazy="lazy"
-        :lazyOpts="lazyOpts"
+        :lazy-opts="lazyOpts"
         :class="imgClass"
         :alt="imgAlt"
         :src="imgSrc"
@@ -21,32 +47,13 @@
         :cover="imgCover"
         :radius="imgRadius"
         :modifier="imgModifier"
-        :style="mediaWidth"></cdr-img>
-      </cdr-a>
+        :style="mediaWidth"/>
     </template>
-    <template v-else>
-      <cdr-icon
-      v-if="iconUrl"
-      class="cdr-media-object__figure"
-      :class="imgClass"
-      :url="iconUrl"></cdr-icon>
-      <cdr-img
-      v-else
-      class="cdr-media-object__figure"
-      :lazy="lazy"
-      :lazyOpts="lazyOpts"
-      :class="imgClass"
-      :alt="imgAlt"
-      :src="imgSrc"
-      :ratio="imgRatio"
-      :crop="imgCrop"
-      :cover="imgCover"
-      :radius="imgRadius"
-      :modifier="imgModifier"
-      :style="mediaWidth"></cdr-img>
-    </template>
-    <div class="cdr-media-object__body" :class="alignClass">
-      <slot></slot>
+    <div
+      class="cdr-media-object__body"
+      :class="alignClass"
+    >
+      <slot/>
     </div>
   </div>
 </template>
@@ -59,13 +66,13 @@ import modifier from 'Src/mixins/modifier';
 import lazyImage from 'Src/mixins/lazyImage';
 
 export default {
-  name: 'cdr-media-object',
-  mixins: [modifier, lazyImage],
+  name: 'CdrMediaObject',
   components: {
     CdrA,
     CdrImg,
     CdrIcon,
   },
+  mixins: [modifier, lazyImage],
   props: {
     /**
     * Sets the media width

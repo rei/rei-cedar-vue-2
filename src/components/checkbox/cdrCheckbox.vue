@@ -1,6 +1,7 @@
 <template>
   <div>
-    <input class="cdr-checkbox"
+    <input
+      class="cdr-checkbox"
       type="checkbox"
       :id="checkboxId"
       v-bind="$attrs"
@@ -10,22 +11,21 @@
       :value="customValue"
       @change="updateValue(newValue, $event)"
       ref="checkbox"
-      >
-    <label class="cdr-checkbox__label" :for="checkboxId" ref="label">
-      <slot></slot>
+    >
+    <label
+      class="cdr-checkbox__label"
+      :for="checkboxId"
+      ref="label"
+    >
+      <slot/>
     </label>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'cdr-checkbox',
+  name: 'CdrCheckbox',
   inheritAttrs: false,
-  data() {
-    return {
-      newValue: this.value,
-    };
-  },
   props: {
     /**
      * The value when checked.
@@ -51,6 +51,11 @@ export default {
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
     },
+  },
+  data() {
+    return {
+      newValue: this.value,
+    };
   },
   computed: {
     checkboxId() {

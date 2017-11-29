@@ -8,5 +8,6 @@
             "ignore": "empty-lines",
         } ],
         "at-rule-empty-line-before": null,
+        "no-duplicate-at-import-rules": null,
     }
 }

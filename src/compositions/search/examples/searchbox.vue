@@ -2,17 +2,29 @@
   <div>
     <h2>Searchbox</h2>
 
-    <cdr-search v-model="search1" :click="search"></cdr-search>
-    <p>Searching: {{search1}}</p>
+    <cdr-search
+      v-model="search1"
+      :click="search"/>
+    <p>Searching: {{ search1 }}</p>
 
-    <cdr-search v-model="search1" :click="search" large></cdr-search>
-    <p>Searching: {{search1}}</p>
+    <cdr-search
+      v-model="search1"
+      :click="search"
+      large/>
+    <p>Searching: {{ search1 }}</p>
 
-    <cdr-search v-model="search2" :click="search" bare></cdr-search>
-    <p>Searching: {{search2}}</p>
+    <cdr-search
+      v-model="search2"
+      :click="search"
+      bare/>
+    <p>Searching: {{ search2 }}</p>
 
-    <cdr-search v-model="search2" :click="search" bare large></cdr-search>
-    <p>Searching: {{search2}}</p>
+    <cdr-search
+      v-model="search2"
+      :click="search"
+      bare
+      large/>
+    <p>Searching: {{ search2 }}</p>
   </div>
 </template>
 
@@ -20,7 +32,7 @@
 import cdrSearch from '../cdrSearch';
 
 export default {
-  name: 'searchbox',
+  name: 'Searchbox',
   components: { cdrSearch },
   data() {
     return {
@@ -37,5 +49,5 @@ export default {
 </script>
 
 <style>
-  
+
 </style>

@@ -19,7 +19,7 @@
 import Components from 'Components/_index';
 
 export default {
-  name: 'default-list',
+  name: 'DefaultList',
   components: Components,
 };
 </script>

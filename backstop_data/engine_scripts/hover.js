@@ -1,8 +1,14 @@
 module.exports = (chromy, scenario, vp) => {
-  chromy
-    .rect(scenario.selectors[0])
-    .result((rect) => {
-      chromy.mouseMoved(rect.left, rect.top);
-    })
-    .sleep(500);
+  const { hoverSelector } = scenario;
+  const waitTime = scenario.hoverWait || 0;
+
+  if (hoverSelector) {
+    chromy
+      .wait(hoverSelector)
+      .rect(hoverSelector)
+      .result((rect) => {
+        chromy.mouseMoved(rect.left, rect.top);
+        chromy.wait(waitTime);
+      });
+  }
 };

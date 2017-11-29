@@ -1,13 +1,15 @@
 <template>
   <div class="cdr-input-container">
-    <label v-if="!hideLabel"
+    <label
+      v-if="!hideLabel"
       :class="labelClass"
       :for="inputId"
       ref="label"
-    >{{label}}<span v-if="required">*</span>
+    >{{ label }}<span v-if="required">*</span>
     </label>
     <div :class="[inputWrapClass]">
-      <textarea v-if="multiLine"
+      <textarea
+        v-if="multiLine"
         :class="[inputClass, modifierClass]"
         v-bind="$attrs"
         :id="inputId"
@@ -21,9 +23,10 @@
         :aria-label="hideLabel ? label : null"
         :aria-describedby="errors.length ? messagesId : null"
         ref="input"
-      ></textarea>
+      />
 
-      <input v-else
+      <input
+        v-else
         :type="type"
         :class="[inputClass, modifierClass]"
         v-bind="$attrs"
@@ -39,17 +42,33 @@
         :aria-describedby="errors.length ? messagesId : null"
         ref="input"
       >
-      <span v-if="$slots.preicon" class="cdr-input__pre-icon" aria-hidden="true">
-        <slot name="preicon"></slot>
+      <span
+        v-if="$slots.preicon"
+        class="cdr-input__pre-icon"
+        aria-hidden="true"
+      >
+        <slot name="preicon"/>
       </span>
-      <span v-if="feedback" :class="validationIconClass" v-html="getIcon" ref="icon"></span>
+      <span
+        v-if="feedback"
+        :class="validationIconClass"
+        v-html="getIcon"
+        ref="icon"
+      />
     </div>
-    <transition-group class="cdr-input-messages" :id="messagesId" ref="messages" name="cdr-animated-errors" tag="div">
-      <div :class="messageClass"
+    <transition-group
+      class="cdr-input-messages"
+      :id="messagesId"
+      ref="messages"
+      name="cdr-animated-errors"
+      tag="div"
+    >
+      <div
+        :class="messageClass"
         ref="error"
         v-for="error in errors"
         :error="error"
-        :key="error">{{error}}</div>
+        :key="error">{{ error }}</div>
     </transition-group>
   </div>
 </template>
@@ -65,20 +84,9 @@ import warningIcon from '!raw-loader!Assets/icons/rei/cdr-warning-tri.svg';
 /* eslint-enable */
 
 export default {
-  name: 'cdr-input',
-  inheritAttrs: false,
+  name: 'CdrInput',
   mixins: [modifier],
-  data() {
-    return {
-      errors: [],
-      currentValue: this.value,
-      pristine: true,
-      touched: false,
-      valid: false,
-      focused: false,
-      state: '',
-    };
-  },
+  inheritAttrs: false,
   props: {
     /**
      * id for the input that is mapped to the label 'for' attribute.
@@ -138,6 +146,7 @@ export default {
      * false is no debounce.
     */
     debounce: {
+      type: Boolean,
       required: false,
       default: false,
     },
@@ -149,8 +158,20 @@ export default {
     immediateValidate: Boolean,
     /** @ignore */
     value: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: false,
     },
+  },
+  data() {
+    return {
+      errors: [],
+      currentValue: this.value,
+      pristine: true,
+      touched: false,
+      valid: false,
+      focused: false,
+      state: '',
+    };
   },
   computed: {
     // Use given id or generate one
@@ -232,6 +253,19 @@ export default {
       return this.state === 'valid';
     },
   },
+  watch: {
+    focused(val) {
+      this.touched = true;
+
+      if (val) {
+        this.$emit('change', val);
+      }
+    },
+    value(val) {
+      this.setCurrentValue(val);
+      this.validate();
+    },
+  },
   mounted() {
     // Convert pattern to a rule for testing
     if (this.pattern) {
@@ -263,19 +297,6 @@ export default {
     if (this.immediateValidate) {
       this.validate(true);
     }
-  },
-  watch: {
-    focused(val) {
-      this.touched = true;
-
-      if (val) {
-        this.$emit('change', val);
-      }
-    },
-    value(val) {
-      this.setCurrentValue(val);
-      this.validate();
-    },
   },
   methods: {
     onInput(e) {

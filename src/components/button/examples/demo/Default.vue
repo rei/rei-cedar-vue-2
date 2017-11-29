@@ -1,13 +1,23 @@
 <template>
-<div>
-  <cdr-button-group class="button-example">
-    <cdr-button data-backstop="cdr-button" type="submit" :on-click="log">Default with click</cdr-button>
-    <cdr-button disabled>Default Disabled</cdr-button>
-  </cdr-button-group>
-  <cdr-button-group class="button-example">
-    <cdr-button type="submit" modifier="sm">Small button</cdr-button>
-    <cdr-button type="submit" modifier="xs">Extra Small button</cdr-button>
-  </cdr-button-group>
+  <div>
+    <div class="button-example">
+      <cdr-button
+        data-backstop="cdr-button"
+        type="submit"
+        :on-click="log"
+      >Default with click</cdr-button>
+      <cdr-button disabled>Default Disabled</cdr-button>
+    </div>
+    <div class="button-example">
+      <cdr-button
+        type="submit"
+        modifier="sm"
+      >Small button</cdr-button>
+      <cdr-button
+        type="submit"
+        modifier="xs"
+      >Extra Small button</cdr-button>
+    </div>
   </div>
 </template>
 
@@ -15,7 +25,7 @@
 import Components from 'Components/_index';
 
 export default {
-  name: 'default',
+  name: 'Default',
   components: Components,
   methods: {
     log() {
