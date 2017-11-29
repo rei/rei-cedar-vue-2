@@ -19,6 +19,7 @@ before_install:
   - npm install -g yarn --cache-min 999999999
 install:
   - yarn install
+  - lerna bootstrap
 before_script:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; fi
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
