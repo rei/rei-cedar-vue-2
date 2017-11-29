@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div>
     <h2>Activity Card</h2>
 
     <cdr-activity-card
@@ -11,8 +11,8 @@
       :snapshot="['7.5 mi', 'out & back', '286 ft Ele Gain']"
       location="Seattle, WA"
       rating="5"
-      count="138">
-    </cdr-activity-card>
+      count="138"
+    />
   </div>
 </template>
 
@@ -20,7 +20,7 @@
 import cdrActivityCard from '../cdrActivityCard';
 
 export default {
-  name: 'activity',
+  name: 'Activity',
   components: { cdrActivityCard },
 };
 </script>

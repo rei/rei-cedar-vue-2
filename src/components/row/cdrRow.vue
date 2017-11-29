@@ -1,15 +1,23 @@
 <template>
-  <div v-if="type === 'normal'" class="cdr-row" :class="rowClasses">
-    <slot></slot>
+  <div
+    v-if="type === 'normal'"
+    class="cdr-row"
+    :class="rowClasses"
+  >
+    <slot/>
   </div>
-  <ul v-else-if="type === 'list'" class="cdr-row" :class="rowClasses">
-    <slot></slot>
+  <ul
+    v-else-if="type === 'list'"
+    class="cdr-row"
+    :class="rowClasses"
+  >
+    <slot/>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'cdr-row',
+  name: 'CdrRow',
   props: {
     /**
      * Number of columns in the row (1-12, auto).
@@ -18,7 +26,8 @@ export default {
       type: [String, Number],
       validator: (value) => {
         const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'].indexOf(str) >= 0 || false;
+        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
+          .indexOf(str) >= 0 || false;
       },
     },
     /** Sm breakpoint and above */
@@ -26,7 +35,8 @@ export default {
       type: [String, Number],
       validator: (value) => {
         const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'].indexOf(str) >= 0 || false;
+        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
+          .indexOf(str) >= 0 || false;
       },
     },
     /** Md breakpoint and above */
@@ -34,7 +44,8 @@ export default {
       type: [String, Number],
       validator: (value) => {
         const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'].indexOf(str) >= 0 || false;
+        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
+          .indexOf(str) >= 0 || false;
       },
     },
     /** Lg breakpoint and above */
@@ -42,7 +53,8 @@ export default {
       type: [String, Number],
       validator: (value) => {
         const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'].indexOf(str) >= 0 || false;
+        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
+          .indexOf(str) >= 0 || false;
       },
     },
     /**
@@ -52,22 +64,26 @@ export default {
      */
     justify: {
       type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
+      validator: value => (['left', 'center', 'right', 'around', 'between']
+        .indexOf(value) >= 0) || false,
     },
     /** Sm breakpoint and above */
     justifySm: {
       type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
+      validator: value => (['left', 'center', 'right', 'around', 'between']
+        .indexOf(value) >= 0) || false,
     },
     /** Md breakpoint and above */
     justifyMd: {
       type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
+      validator: value => (['left', 'center', 'right', 'around', 'between']
+        .indexOf(value) >= 0) || false,
     },
     /** Lg breakpoint and above */
     justifyLg: {
       type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between'].indexOf(value) >= 0) || false,
+      validator: value => (['left', 'center', 'right', 'around', 'between']
+        .indexOf(value) >= 0) || false,
     },
     /**
      * How columns of different heights should align.

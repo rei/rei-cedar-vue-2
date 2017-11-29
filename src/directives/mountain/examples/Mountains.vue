@@ -1,12 +1,24 @@
 <template>
   <div data-backstop="mountain-shapes">
     <h2>Mountain shape directive</h2>
-    <div class="mountain-test" v-mountain-shape.top.left></div>
-    <div class="mountain-test" v-mountain-shape.top.right></div>
-    <div class="mountain-test" v-mountain-shape.top.center></div>
-    <div class="mountain-test" v-mountain-shape.bottom.center></div>
-    <div class="mountain-test" v-mountain-shape.bottom.left></div>
-    <div class="mountain-test" v-mountain-shape.bottom.right></div>
+    <div
+      class="mountain-test"
+      v-mountain-shape.top.left/>
+    <div
+      class="mountain-test"
+      v-mountain-shape.top.right/>
+    <div
+      class="mountain-test"
+      v-mountain-shape.top.center/>
+    <div
+      class="mountain-test"
+      v-mountain-shape.bottom.center/>
+    <div
+      class="mountain-test"
+      v-mountain-shape.bottom.left/>
+    <div
+      class="mountain-test"
+      v-mountain-shape.bottom.right/>
   </div>
 </template>
 
@@ -14,7 +26,7 @@
 import * as directives from '../../_index';
 
 export default {
-  name: 'mountains',
+  name: 'Mountains',
   directives,
 };
 </script>

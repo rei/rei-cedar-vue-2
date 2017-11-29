@@ -1,6 +1,9 @@
 <template>
-  <svg class="cdr-icon" aria-hidden="true">
-    <use :xlink:href="url"></use>
+  <svg
+    class="cdr-icon"
+    aria-hidden="true"
+  >
+    <use :xlink:href="url"/>
   </svg>
 </template>
 
@@ -10,7 +13,7 @@
  * **NOTE:** Can only be used with an SVG symbol sprite.
  */
 export default {
-  name: 'cdr-icon',
+  name: 'CdrIcon',
   props: {
     /**
      * URL to the svg sprite and icon name. /path/to/svg.svg#icon-name

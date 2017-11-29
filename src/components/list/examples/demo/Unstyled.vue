@@ -9,7 +9,7 @@
 import Components from 'Components/_index';
 
 export default {
-  name: 'unstyled-list',
+  name: 'UnstyledList',
   components: Components,
 };
 </script>

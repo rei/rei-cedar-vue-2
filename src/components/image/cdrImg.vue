@@ -1,16 +1,35 @@
 <template>
-  <div v-if="ratio" class="cdr-media-frame" :class="[ratioClass, cropClass]">
-    <div :class="[coverClass, lazyClass]" :style="styleObject" aria-hidden="true" v-bind="lazyAttrs"></div>
-    <img class="cdr-media-frame__image cdr-media-frame__image--hidden" :class="[modifierClass, radiusClass]" :src="src" :alt="alt">
+  <div
+    v-if="ratio"
+    class="cdr-media-frame"
+    :class="[ratioClass, cropClass]"
+  >
+    <div
+      :class="[coverClass, lazyClass]"
+      :style="styleObject"
+      aria-hidden="true"
+      v-bind="lazyAttrs"/>
+    <img
+      class="cdr-media-frame__image cdr-media-frame__image--hidden"
+      :class="[modifierClass, radiusClass]"
+      :src="src"
+      :alt="alt"
+    >
   </div>
-  <img v-else :class="[modifierClass, radiusClass, lazyClass]" :src="src" :alt="alt" v-bind="lazyAttrs">
+  <img
+    v-else
+    :class="[modifierClass, radiusClass, lazyClass]"
+    :src="src"
+    :alt="alt"
+    v-bind="lazyAttrs"
+  >
 </template>
 
 <script>
 import modifier from 'Src/mixins/modifier';
 
 export default {
-  name: 'cdr-img',
+  name: 'CdrImg',
   mixins: [modifier],
   props: {
     /**

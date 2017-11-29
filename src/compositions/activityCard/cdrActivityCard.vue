@@ -2,28 +2,53 @@
   <cdr-card modifier="activity">
     <section class="cdr-inset cdr-inset--remove-top">
       <cdr-media-object
-      :img-src="media"
-      :img-alt="mediaAlt"
-      :img-crop="mediaCrop"
-      :img-cover="mediaCover"
-      :img-ratio="mediaRatio"
-      img-class="cdr-card--activity__image"
-      img-modifier="responsive"
-      modifier="top stretch"
-      img-radius="top">
-        <div v-if="this.label != null" class="cdr-card--activity__label">{{label}}</div>
-        <cdr-heading v-if="this.title != null" :level="titleLevel">
-          <a class="cdr-card--activity__title cdr-card--activity__title--action" :href="titleUrl">{{title}}</a>
+        :img-src="media"
+        :img-alt="mediaAlt"
+        :img-crop="mediaCrop"
+        :img-cover="mediaCover"
+        :img-ratio="mediaRatio"
+        img-class="cdr-card--activity__image"
+        img-modifier="responsive"
+        modifier="top stretch"
+        img-radius="top"
+      >
+        <div
+          v-if="label != null"
+          class="cdr-card--activity__label"
+        >{{ label }}</div>
+        <cdr-heading
+          v-if="title != null"
+          :level="titleLevel"
+        >
+          <a
+            class="cdr-card--activity__title cdr-card--activity__title--action"
+            :href="titleUrl"
+          >{{ title }}</a>
         </cdr-heading>
-        <cdr-list v-if="snapshot" class="cdr-card--activity__snapshot" modifier="inline bulleted">
-          <li v-for="item in snapshot">
+        <cdr-list
+          v-if="snapshot"
+          class="cdr-card--activity__snapshot"
+          modifier="inline bulleted"
+        >
+          <li
+            v-for="(item, i) in snapshot"
+            :key="i"
+          >
             {{ item }}
           </li>
         </cdr-list>
-        <div v-if="location" class="cdr-card--activity__location">
-          {{location}}
+        <div
+          v-if="location"
+          class="cdr-card--activity__location"
+        >
+          {{ location }}
         </div>
-        <cdr-rating v-if="this.rating != null" class="cdr-card--activity__rating" :rating="rating" :count="count" modifier="medium"></cdr-rating>
+        <cdr-rating
+          v-if="rating != null"
+          class="cdr-card--activity__rating"
+          :rating="rating"
+          :count="count"
+          modifier="medium"/>
       </cdr-media-object>
     </section>
   </cdr-card>
@@ -44,7 +69,7 @@ import { CdrRating } from '@rei-co-op/cedar-rating';
 import { CdrList } from '@rei-co-op/cedar-list';
 
 export default {
-  name: 'cdr-activity-card',
+  name: 'CdrActivityCard',
   components: {
     CdrCard,
     CdrHeading,
@@ -98,6 +123,7 @@ export default {
     * Heading level
     */
     titleLevel: {
+      type: [String, Number],
       default: '2',
     },
     /**

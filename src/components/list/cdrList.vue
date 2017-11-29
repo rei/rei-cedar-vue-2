@@ -1,10 +1,16 @@
 <template>
-  <ul :class="modifierClass" v-if="type === 'ul'">
-    <slot></slot>
+  <ul
+    :class="modifierClass"
+    v-if="type === 'ul'"
+  >
+    <slot/>
   </ul>
 
-  <ol :class="modifierClass" v-else-if="type === 'ol'">
-    <slot></slot>
+  <ol
+    :class="modifierClass"
+    v-else-if="type === 'ol'"
+  >
+    <slot/>
   </ol>
 </template>
 
@@ -12,7 +18,7 @@
 import modifier from '../../mixins/modifier';
 
 export default {
-  name: 'cdr-list',
+  name: 'CdrList',
   mixins: [modifier],
   props: {
     /**

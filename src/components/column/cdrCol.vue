@@ -1,30 +1,49 @@
 <template>
-  <div v-if="!isRow && !isList" class="cdr-col" :class="columnClasses">
+  <div
+    v-if="!isRow && !isList"
+    class="cdr-col"
+    :class="columnClasses"
+  >
     <div class="cdr-col__content">
-      <slot></slot>
+      <slot/>
     </div>
   </div>
-  <li v-else-if="!isRow && isList" class="cdr-col" :class="columnClasses">
+  <li
+    v-else-if="!isRow && isList"
+    class="cdr-col"
+    :class="columnClasses"
+  >
     <div class="cdr-col__content">
-      <slot></slot>
+      <slot/>
     </div>
   </li>
-  <li v-else-if="isRow && isList" class="cdr-row cdr-col" :class="columnClasses">
-    <row class="cdr-col" v-bind="$attrs">
-      <slot></slot>
+  <li
+    v-else-if="isRow && isList"
+    class="cdr-row cdr-col"
+    :class="columnClasses"
+  >
+    <row
+      class="cdr-col"
+      v-bind="$attrs"
+    >
+      <slot/>
     </row>
   </li>
-  <row v-else class="cdr-col" :class="columnClasses" v-bind="$attrs">
-    <slot></slot>
+  <row
+    v-else
+    class="cdr-col"
+    :class="columnClasses"
+    v-bind="$attrs"
+  >
+    <slot/>
   </row>
 </template>
 
 <script>
-// TODO update tags above and change import here
 import { CdrRow as Row } from '@rei-co-op/cedar-row';
 
 export default {
-  name: 'cdr-col',
+  name: 'CdrCol',
   components: { Row },
   inject: ['rowType'],
   inheritAttrs: false,

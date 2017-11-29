@@ -1,6 +1,6 @@
 <template>
   <article :class="[modifierClass]">
-   <slot></slot>
+    <slot/>
   </article>
 </template>
 
@@ -8,7 +8,7 @@
 import modifier from 'Src/mixins/modifier';
 
 export default {
-  name: 'cdr-card',
+  name: 'CdrCard',
   mixins: [modifier],
   computed: {
     baseClass() {

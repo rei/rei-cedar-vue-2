@@ -1,17 +1,25 @@
 <template>
   <div class="cdr-search">
-    <cdr-input 
+    <cdr-input
       class="cdr-search__input"
       v-bind="$attrs"
-      label="Search" 
-      hide-label 
-      placeholder="Search" 
-      v-model="searchValue" 
+      label="Search"
+      hide-label
+      placeholder="Search"
+      v-model="searchValue"
       @input="updateSearch"
-      :modifier="inputModifier">
-      <span slot="preicon" class="cdr-search__icon"></span>
+      :modifier="inputModifier"
+    >
+      <span
+        slot="preicon"
+        class="cdr-search__icon"
+      />
     </cdr-input>
-    <cdr-button v-if="!bare" :modifier="buttonModifier" :on-click="click">Search</cdr-button>
+    <cdr-button
+      v-if="!bare"
+      :modifier="buttonModifier"
+      :on-click="click"
+    >Search</cdr-button>
   </div>
 </template>
 
@@ -20,17 +28,12 @@ import { CdrButton } from '@rei-co-op/cedar-button';
 import { CdrInput } from '@rei-co-op/cedar-input';
 
 export default {
-  name: 'cdr-search',
-  inheritAttrs: false,
+  name: 'CdrSearch',
   components: {
     CdrButton,
     CdrInput,
   },
-  data() {
-    return {
-      searchValue: this.value,
-    };
-  },
+  inheritAttrs: false,
   props: {
     /** @ignore */
     value: String,
@@ -50,6 +53,11 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  data() {
+    return {
+      searchValue: this.value,
+    };
   },
   computed: {
     buttonModifier() {

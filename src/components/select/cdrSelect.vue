@@ -1,7 +1,13 @@
 <template>
   <div class="cdr-input-group">
-    <label v-if="!hideLabel" :class="labelClass" :for="selectId" ref="label">{{label}}<span v-if="required">*</span></label>
-    <select :class="selectClass"
+    <label
+      v-if="!hideLabel"
+      :class="labelClass"
+      :for="selectId"
+      ref="label"
+    >{{ label }}<span v-if="required">*</span></label>
+    <select
+      :class="selectClass"
       v-bind="$attrs"
       :id="selectId"
       :size="size"
@@ -12,9 +18,20 @@
       :multiple="multiple"
       :aria-label="hideLabel ? label : null"
     >
-      <option v-if="prompt" value="" disabled :hidden="!multiple" ref="prompt">{{prompt}}</option>
-      <option v-if="options" v-for="option in computedOpts" :key="option.text" :value="option.value">{{option.text}}</option>
-      <slot></slot>
+      <option
+        v-if="prompt"
+        value=""
+        disabled
+        :hidden="!multiple"
+        ref="prompt"
+      >{{ prompt }}</option>
+      <option
+        v-for="option in computedOpts"
+        v-if="option"
+        :key="option.text"
+        :value="option.value"
+      >{{ option.text }}</option>
+      <slot/>
     </select>
   </div>
 </template>
@@ -23,13 +40,8 @@
 import toArray from 'lodash/toArray';
 
 export default {
-  name: 'cdr-select',
+  name: 'CdrSelect',
   inheritAttrs: false,
-  data() {
-    return {
-      val: this.value,
-    };
-  },
   props: {
     /**
      * Label text.
@@ -62,6 +74,7 @@ export default {
     },
     /** @ignore */
     value: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: false,
     },
     /** @ignore */
@@ -70,6 +83,11 @@ export default {
     size: String,
     /** @ignore */
     multiple: Boolean,
+  },
+  data() {
+    return {
+      val: this.value,
+    };
   },
   computed: {
     // Use given id or generate one

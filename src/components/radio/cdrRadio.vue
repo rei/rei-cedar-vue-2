@@ -1,6 +1,7 @@
 <template>
   <div>
-    <input class="cdr-radio"
+    <input
+      class="cdr-radio"
       type="radio"
       v-bind="$attrs"
       :id="radioId"
@@ -9,9 +10,13 @@
       @change="onChange"
       :value="value"
       ref="radio"
-      >
-    <label class="cdr-radio__label" :for="radioId" ref="label">
-      <slot></slot>
+    >
+    <label
+      class="cdr-radio__label"
+      :for="radioId"
+      ref="label"
+    >
+      <slot/>
     </label>
   </div>
 </template>
@@ -20,7 +25,7 @@
 import isEqual from 'lodash/isEqual';
 
 export default {
-  name: 'cdr-radio',
+  name: 'CdrRadio',
   inheritAttrs: false,
   model: {
     prop: 'modelValue',
@@ -38,12 +43,14 @@ export default {
      * Sets the value of the radio. Required.
     */
     value: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: true,
     },
     /** @ignore */
     id: String,
     /** @ignore */
     modelValue: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: false,
     },
   },
