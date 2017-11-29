@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-rating",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "REI Cedar Style Framework - Vue Component for Rating",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-rating",
   "license": "ISC",

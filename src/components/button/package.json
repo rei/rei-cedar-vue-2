@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-button",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "REI Cedar Style Framework - Vue Component for Button",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-button",
   "license": "ISC",
