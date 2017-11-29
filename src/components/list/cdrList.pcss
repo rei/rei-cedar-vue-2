@@ -10,28 +10,46 @@
 * Style variants
 */
 
+/* Variables
+    ========================================================================== */
+
+/* Bullet colors */
+$list-disc-color: $sys-color-list-disc;
+$list-circle-fill-color: $sys-color-list-circle;
+$list-circle-border-color: $sys-color-list-circle-stroke;
+
+/* Spacing */
+$list-spacing-closed: $spacing-space-closed;
+$list-spacing-xxs: $spacing-space-xxs;
+$list-spacing-xs: $spacing-space-xs;
+$list-spacing-sm: $spacing-space-sm;
+$list-spacing-md: $spacing-space-md;
+$list-spacing-lg: $spacing-space-lg;
+$list-spacing-xl: $spacing-space-xl;
+$list-spacing-xxl: $spacing-space-xxl;
+
 .cdr-list {
   list-style-type: disc;
-  padding-left: $spacing-space-md;
+  padding-left: $list-spacing-md;
 
   /* Element Styles
     ========================================================================== */
 
   & > li {
-    padding-bottom: $spacing-space-md;
+    padding-bottom: $list-spacing-md;
 
     & > ul,
     & > ol {
-      padding-top: $spacing-space-md;
-      padding-left: $spacing-space-md;
+      padding-top: $list-spacing-md;
+      padding-left: $list-spacing-md;
 
       & > li:last-of-type {
-        padding-bottom: $spacing-space-closed;
+        padding-bottom: $list-spacing-closed;
       }
     }
 
     &:last-of-type {
-      padding-bottom: $spacing-space-closed;
+      padding-bottom: $list-spacing-closed;
     }
   }
 
@@ -40,7 +58,7 @@
 
   &--unstyled {
     list-style-type: none;
-    padding-left: $spacing-space-closed;
+    padding-left: $list-spacing-closed;
   }
 
   &--disc {
@@ -55,7 +73,7 @@
       height: 4px;
       margin: 0 6px 0 0;
       content: “”;
-      background: $sys-color-list-disc;
+      background: $list-disc-color;
       border-radius: 50%;
       transform: translate(0, 245%);
     }
@@ -73,8 +91,8 @@
       height: 10px;
       margin: 0 6px 0 0;
       content: “”;
-      background: $sys-color-list-circle;
-      border: 1px solid $sys-color-list-circle-stroke;
+      background: $list-circle-fill-color;
+      border: 1px solid $list-circle-border-color;
       border-radius: 50%;
       transform: translate(0, 125%);
     }
@@ -82,7 +100,7 @@
 
   &--inline {
     list-style-type: none;
-    padding: $spacing-space-closed;
+    padding: $list-spacing-closed;
 
     & > li {
       display: inline-block;
@@ -92,7 +110,7 @@
 
   &--inline.cdr-list--bulleted {
     & > li {
-      padding-right: $spacing-space-closed;
+      padding-right: $list-spacing-closed;
 
       &:not(:last-of-type)::after {
         vertical-align: text-center;
@@ -111,13 +129,13 @@
 
   &--menu {
     list-style-type: none;
-    padding-left: $spacing-space-closed;
+    padding-left: $list-spacing-closed;
 
     & > li {
       border-bottom-width: 0.1rem;
       border-bottom-style: solid;
       border-color: #222;
-      padding: $spacing-space-closed;
+      padding: $list-spacing-closed;
 
       & > a {
         font-family: $font-copy-secondary;
