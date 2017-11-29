@@ -7,7 +7,9 @@ module.exports = (chromy, scenario, vp) => {
       .wait(hoverSelector)
       .rect(hoverSelector)
       .result((rect) => {
-        chromy.mouseMoved(rect.left, rect.top);
+        const midX = rect.left + (rect.width / 2);
+        const midY = rect.top + (rect.height / 2);
+        chromy.mouseMoved(midX, midY);
         chromy.wait(waitTime);
       });
   }

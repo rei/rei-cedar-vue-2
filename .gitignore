@@ -36,7 +36,7 @@ jsconfig.json
 node_modules
 
 # Test results
-backstop_data/bitmaps_reference
+# backstop_data/bitmaps_reference
 backstop_data/bitmaps_backup
 backstop_data/bitmaps_test
 backstop_data/html_report

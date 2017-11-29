@@ -24,6 +24,7 @@ module.exports = {
   mapCoverage: true,
   testPathIgnorePatterns: [
     '<rootDir>/src/components/buttonGroup',
+    '<rootDir>/templates',
     '<rootDir>/test',
   ],
 };
