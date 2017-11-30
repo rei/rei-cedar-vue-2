@@ -1,18 +1,26 @@
 <template>
-  <cdr-list>
-    <li>List default</li>
-    <li>List default
-      <cdr-list>
-        <li>List default - nested</li>
-        <li>List default - nested
-          <cdr-list modifier="numbered">
-            <li>List default - nested - numbered</li>
-            <li>List default - nested - numbered</li>
-          </cdr-list>
-        </li>
-      </cdr-list>
-    </li>
-  </cdr-list>
+  <div>
+    <cdr-list>
+      <li>List default</li>
+      <li>List default
+        <cdr-list>
+          <li>List default - nested</li>
+          <li>List default - nested
+            <cdr-list modifier="numbered">
+              <li>List default - nested - numbered</li>
+              <li>List default - nested - numbered</li>
+            </cdr-list>
+          </li>
+        </cdr-list>
+      </li>
+    </cdr-list>
+    <cdr-list
+    modifier="compact">
+      <li>List default - compact</li>
+      <li>List default - compact</li>
+      <li>List default - compact</li>
+    </cdr-list>
+  </div>
 </template>
 
 <script>
