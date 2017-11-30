@@ -8,8 +8,7 @@ dist: trusty
 addons:
   chrome: stable
 before_install:
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export CHROME_BIN=/usr/bin/google-chrome;
-  fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export CHROME_BIN=/usr/bin/google-chrome; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DISPLAY=:99.0; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sh -e /etc/init.d/xvfb start; fi
 - npm install -g lerna --cache-min 999999999
@@ -19,9 +18,13 @@ install:
 - lerna bootstrap
 before_script:
 - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; fi
-- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then npm run test; npm run dev &> /dev/null
-  & pid=$!; sleep 30; npm run compare; fi
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then npm run test; fi
 script:
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+    npm run dev &> /dev/null & pid=$!; 
+    sleep 30;
+    npm run compare;
+  fi
 - lerna run build
 after_script:
 - kill "${pid}"
