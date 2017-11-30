@@ -43,22 +43,26 @@ $list-spacing-xxl: $spacing-space-xxl;
     }
   }
 
-  & li + li {
+  & > li + li {
     margin-top: $list-spacing-sm;
   }
 
   /* Style variants
     ========================================================================== */
 
+  &--compact > li + li {
+    margin-top: $list-spacing-xs;
+  }
+  
   &--unstyled {
     list-style-type: none;
     padding-left: $list-spacing-closed;
 
-    & li + li {
+    & > li + li {
       margin-top: $list-spacing-md;
     }
 
-    &.cdr-list--compact li + li {
+    &.cdr-list--compact > li + li {
       margin-top: $list-spacing-sm;
     }
   }
