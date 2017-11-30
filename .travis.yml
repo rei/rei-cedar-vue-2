@@ -35,6 +35,7 @@ after_script:
 - kill "${pid}"
 after_failure:
 - git clone git://${GH_REPO}
+- git checkout travis-result
 - cp -R /home/travis/build/rei/rei-cedar/backstop_data/bitmaps_test ${REPO}
 - cd ${REPO}
 - git commit -am "add backstop files"
