@@ -13,6 +13,8 @@
           </li>
         </cdr-list>
       </li>
+      <li>List default - nested</li>
+      <li>List default - nested</li>
     </cdr-list>
     <cdr-list
     modifier="compact">
