@@ -1,39 +1,47 @@
-# Adapted from https://github.com/abecms/abecms/blob/master/.travis.yml
-# After following this thread https://github.com/dwyl/learn-nightwatch/issues/8
-
 os:
-  - linux
+- linux
 language: node_js
 node_js:
-  - "8"
+- '8'
 sudo: required
 dist: trusty
+addons:
+  chrome: stable
 before_install:
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export CHROME_BIN=/usr/bin/google-chrome; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DISPLAY=:99.0; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sh -e /etc/init.d/xvfb start; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get update ; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo dpkg -i google-chrome*.deb; fi
-  - npm install -g lerna --cache-min 999999999
-  - npm install -g yarn --cache-min 999999999
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export CHROME_BIN=/usr/bin/google-chrome;
+  fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DISPLAY=:99.0; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then sh -e /etc/init.d/xvfb start; fi
+- npm install -g lerna --cache-min 999999999
+- npm install -g yarn --cache-min 999999999
 install:
-  - yarn install
-  - lerna bootstrap
+- yarn install
+- lerna bootstrap
 before_script:
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; fi
-  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-      npm run test;
-      npm run dev &> /dev/null & pid=$!;
-      sleep 30;
-      npm run compare;
-    fi
-script: 
-  - lerna run build
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; fi
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then npm run test; npm run dev &> /dev/null
+  & pid=$!; sleep 30; npm run compare; fi
+script:
+- lerna run build
 after_script:
-  - kill "${pid}"
+- kill "${pid}"
+- git clone git://${GH_REPO}
+- cp -R /home/travis/build/rei/rei-cedar/backstop_data/bitmaps_test ${REPO}
+- cd ${REPO}
+- git commit -am "add backstop files"
+- git push "https://${GH_TOKEN}@${GH_REPO}" travis-result > /dev/null 2>&1
 notifications:
   slack:
     secure: PUPMZ2+nU9DJ0IExfVdjXK2QuYuB6AcVIWsWc/JGKkPyhJo1fWdKF7yrBURwD2bj++99yPcnbtWtzju2w0hKm2pcx/08hcGVmsitOfdPYNc/tN8nJUAFJutqAibxLDmYh0OXlU0N6AiFAbka/ePrEa7tCEtUrF5PRcEHdJuClCTqR+URWZCp65fGpY+bMCrw5EXETxNQce4OLzEcQXi9B4CYqv/VNcXlHHaLYjojgHNCdL927AJJkQww41Myo5vqAaycwARS1+LRCzEOHGauxMJvMxDME5VykSRdVsU3vKx/070XU+QmDfVaFiBJBixFzEwwcGh7r6SwSdJRf3CNgtfm7sYUsRl28DBBhjZ5uHMZZfiGllfEdNZDW1safxZpk1Sr5oC5EKEwqcdSiqoNJgdVqf9vdliBcVu9TzhZUexyNKsi5Kaer90aWNcLksTbzvf2h3cgdAUXqSMOboRgRFlgtHc0zxz/AN4CXm3feGVLX3q+6jXXPqlXD2laBzdMquSJOXPvA7tr9qn7XZrSAEMtTUGVHzu77B1u0tAfc7SOvVRVa/YWe3QxWDQVEQvsqrxtyon/NfP5xVLkcbxrVZN6rJtyTRR9+11ZviMLE5WEcqKkyjubrekrR8CdHU8ZplqsyvQZN1YhBS/by+am758u1Zd/TZf1TsGcmFIWUpg=
     on_success: change
     on_failure: always
+# deploy:
+#   skip_cleanup: true
+#   github_token: g40S7DhdFlUL6QsMI8t7H5T18Fgpa9Wr6je5v9F6ltNXJYNA4aoDmTwxGvPnNx1uj3e0pEhu/ChSMlCHmpWBiNRFvTnkhFLXQsJkvkGOsI9IpnJ958ATCDf7l6N5qxtwlXrBrovVZcigukh0tSUs0Z15Nl8HkQQTuD87bv+b3ZP6egtLGb6QSi2tco+P6+DucGrGVlsMJ1BA5Y5EhqpwS7VIHbaf5p45EQHPeASo7Q6dMZGMRwZrw/CC6EYl+DztyoFJqynkhdOoFsrWLzQz3E1Qg2emXrqpCzoahMTDs0kCd1bLPU5sJkwSVpObnfPC849MYwX+qI26Xkyc104QX0UW36g8o1eKDQ1RRgiLQYivFa0+NvT0SIyH3F+TBNNi9wxyNfu0lrkorDtc0piIZhufDM5l01aKBdV0HSpoXF0xMtodEPgLa1rOykoIUQVm5uFVHUrIsIvpKKDjZKT8j/53aor7jOcV9bSBYg8C+FoafsbyKcPRVdCKo+zbQYm9jFjUZuTdq/dNb3+n+8uDHdTJPJ/BtpnhZyC47gyYiqcgeDkM4I7stOgr95kMoZ8P5X6RMpClnR1D1UJBU3AGZbwhscyctIpmPRhYgYYjXAc11RBgJNag6jfv3Ou8NtqeoOtT/E8awRvdaVrwPvfplNu9rbjcio6bfcIWyMdbHc4=
+#   local_dir: /home/travis/build/rei/rei-cedar/backstop_data/bitmaps_test
+#   target_branch: travis-result
+env:
+  global:
+    REPO: "rei-cedar"
+    GH_REPO: github.com/rei/rei-cedar.git
+    secure: Kr2kedyEP5liR6Ch/lc8gxd+O/ApieDrDzCfgxHYhrlC3t0ysq0ZlaG/Rgo5qtKbOLNokRIZ0D1iRRHmuvSawRi4I+kCKFxrc1NAJiHW8TJzvfifIpyI5QVyT2YpH5gQwxvqJgeOJk9UeGE8Omh7J9DnvwGFe26xE7bCNMujhNYLdxy8srmm8NxmExgYQMYNokRaEfOeod68DXamvNnSYDnt4PnzCjNIuhe4gnwSyQmBqcq9AH365jW0BD3LJPngv0UFuzAiQIGkqweXpliUC9K4Z9iI1v/pljnAX2dzjrhu5k3jF25IbFm+mu1gaimv1jlVgMn+n/lC9OTjWrTjugAydUTW9Bwb70hlBEdOsxgriw0SZVUr/xhl1o6gE86/F/GjvPFENm50P+DXvS68dKTaAEDnZayil+FjYt7xotzIuefrBQfvUyKgWij8E8FRBfN0JboQyFDv/feZx6jGJuq8FYGFmLmyspX50V6DEzqvC+L9/+vbFUy1/eH0uY1nrHOyV/sUNbXubVzwTCkM2JVI+9r9GnSshgLvW3Bwe4pAFo7lt1CSUoU2LhKUJ8psXZ8RF9o/wp7NgTrw+UN+BhXuTsYYIVygs4mQhp6rhJ6LGVYURtWv8njK8IWWhXeKeKpdeAJYwZea0m037bFmiaLyRpAk4E59HG3Wv1XV2RY=
