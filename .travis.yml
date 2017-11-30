@@ -26,9 +26,7 @@ before_script:
       npm run test;
       npm run dev &> /dev/null & pid=$!;
       sleep 30;
-      lsof -i :8080 -S;
       npm run compare;
-      lsof -i :8080 -S;
     fi
 script: 
   - lerna run build
