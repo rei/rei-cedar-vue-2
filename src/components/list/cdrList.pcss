@@ -36,21 +36,15 @@ $list-spacing-xxl: $spacing-space-xxl;
     ========================================================================== */
 
   & > li {
-    padding-bottom: $list-spacing-md;
-
     & > ul,
     & > ol {
       padding-top: $list-spacing-md;
       padding-left: $list-spacing-md;
-
-      & > li:last-of-type {
-        padding-bottom: $list-spacing-closed;
-      }
     }
+  }
 
-    &:last-of-type {
-      padding-bottom: $list-spacing-closed;
-    }
+  & > li + li {
+    margin-top: $list-spacing-sm;
   }
 
   /* Style variants
@@ -59,6 +53,14 @@ $list-spacing-xxl: $spacing-space-xxl;
   &--unstyled {
     list-style-type: none;
     padding-left: $list-spacing-closed;
+
+    & > li + li {
+      margin-top: $list-spacing-md;
+    }
+
+    &.cdr-list--compact > li + li {
+      margin-top: $list-spacing-sm;
+    }
   }
 
   &--disc {
@@ -108,21 +110,6 @@ $list-spacing-xxl: $spacing-space-xxl;
     }
   }
 
-  &--inline.cdr-list--bulleted {
-    & > li {
-      padding-right: $list-spacing-closed;
-
-      &:not(:last-of-type)::after {
-        vertical-align: text-center;
-        content: "\2022";
-        display: inline-block;
-        color: inherit;
-        margin-left: 0;
-        width: 0.8rem;
-      }
-    }
-  }
-
   &--numbered {
     list-style-type: decimal;
   }
@@ -144,6 +131,21 @@ $list-spacing-xxl: $spacing-space-xxl;
         padding: 1.1rem 1.6rem;
         color: #000;
         display: inline-block;
+      }
+    }
+  }
+  
+  &--inline.cdr-list--bulleted {
+    & > li {
+      padding-right: $list-spacing-closed;
+
+      &:not(:last-of-type)::after {
+        vertical-align: text-center;
+        content: "\2022";
+        display: inline-block;
+        color: inherit;
+        margin-left: 0;
+        width: 0.8rem;
       }
     }
   }
