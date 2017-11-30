@@ -25,6 +25,7 @@ script:
 - lerna run build
 after_script:
 - kill "${pid}"
+after_failure:
 - git clone git://${GH_REPO}
 - cp -R /home/travis/build/rei/rei-cedar/backstop_data/bitmaps_test ${REPO}
 - cd ${REPO}
