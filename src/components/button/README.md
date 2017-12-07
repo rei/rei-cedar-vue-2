@@ -26,6 +26,12 @@ function log() {
 <cdr-button modifier="secondary">Secondary</cdr-button>
 ```
 
+#### CTA Sale
+
+```
+<cdr-button modifier="cta-sale">Secondary</cdr-button>
+```
+
 #### Link Modifier
 
 ```

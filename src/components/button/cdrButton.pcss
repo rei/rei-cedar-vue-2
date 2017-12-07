@@ -94,6 +94,31 @@
     }
   }
 
+  &--cta-sale {
+    background-color: $btn-cta-sale-bg;
+    border-color: $btn-cta-sale-stroke;
+    color: $btn-cta-sale-text;
+
+    &:hover,
+    &:active {
+      background-color: $btn-cta-sale-active-bg;
+      border-color: $btn-cta-sale-active-stroke;
+      color: $btn-cta-sale-active-text;
+    }
+
+    &:focus {
+      color: $btn-cta-sale-focus-text;
+      outline-color: $btn-cta-sale-focus-stroke;
+    }
+
+    &[disabled] {
+      background-color: $btn-cta-sale-disabled-bg;
+      border-color: $btn-cta-sale-disabled-stroke;
+      color: $btn-cta-sale-disabled-text;
+      cursor: not-allowed;
+    }
+  }
+
   /* Size variants
     ========================================================================== */
 
