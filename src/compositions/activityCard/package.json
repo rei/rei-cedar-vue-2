@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-activity-card",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "REI Cedar Style Framework - Vue Component for Activity Card",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-card-activity",
   "license": "ISC",
@@ -23,7 +23,7 @@
     "@rei-co-op/cedar-heading": "^0.0.6",
     "@rei-co-op/cedar-icon": "^0.0.6",
     "@rei-co-op/cedar-image": "^0.0.6",
-    "@rei-co-op/cedar-list": "^0.0.7",
+    "@rei-co-op/cedar-list": "^0.0.8",
     "@rei-co-op/cedar-media-object": "^0.0.6",
     "@rei-co-op/cedar-rating": "^0.0.7"
   }

@@ -1,6 +1,6 @@
 {
   "name": "@rei-co-op/cedar-base-components",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "REI Cedar Style Framework - Bundle for required base components",
   "license": "ISC",
   "author": "REI Software Engineering",
@@ -24,7 +24,7 @@
     "@rei-co-op/cedar-icon": "^0.0.6",
     "@rei-co-op/cedar-image": "^0.0.6",
     "@rei-co-op/cedar-input": "^0.0.6",
-    "@rei-co-op/cedar-list": "^0.0.7",
+    "@rei-co-op/cedar-list": "^0.0.8",
     "@rei-co-op/cedar-radio": "^0.0.7",
     "@rei-co-op/cedar-rating": "^0.0.7",
     "@rei-co-op/cedar-row": "^0.0.6",
