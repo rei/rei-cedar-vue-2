@@ -32,13 +32,13 @@
     cursor: default;
 
     &::before {
-      border-color: $sys-color-control-stroke-disabled;
+      border-color: $sys-color-control-border-disabled;
     }
   }
 
   &:checked&[disabled] + &__label {
     &::before {
-      border-color: $sys-color-control-selected-disabled-stroke;
+      border-color: $sys-color-control-selected-disabled-border;
     }
 
     &::after {
@@ -67,7 +67,7 @@
       content: '';
       width: $sizing-size-md;
       height: $sizing-size-md;
-      border: 1px solid $sys-color-control-stroke;
+      border: 1px solid $sys-color-control-border;
       border-radius: 50%;
       margin-right: 10px;
       display: inline-block;
