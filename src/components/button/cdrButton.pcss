@@ -13,7 +13,7 @@
 
 .cdr-button {
   background-color: $btn-bg;
-  border-color: $btn-stroke;
+  border-color: $btn-border;
   border-width: 0.1rem;
   border-style: solid;
   border-radius: $btn-radius;
@@ -33,7 +33,7 @@
 
   &[disabled] {
     background-color: $btn-disabled-bg;
-    border-color: $btn-disabled-stroke;
+    border-color: $btn-disabled-border;
     color: $btn-disabled-text;
     cursor: not-allowed;
   }
@@ -43,17 +43,16 @@
     text-decoration: none;
     outline: none;
     background-color: $btn-active-bg;
-    border-color: $btn-active-stroke;
+    border-color: $btn-active-border;
     color: $btn-active-text;
   }
 
   &:focus {
-    color: $btn-focus-text;
     outline: thin dotted;
 
     /* webkit */
     outline: 0.2rem auto;
-    outline-color: $btn-focus-stroke;
+    outline-color: $btn-focus-border;
     outline-offset: -0.1rem;
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     border: 1px solid rgba(81, 203, 238, 1);
@@ -61,7 +60,7 @@
 
   &[disabled] {
     background-color: $btn-disabled-bg;
-    border-color: $btn-disabled-stroke;
+    border-color: $btn-disabled-border;
     color: $btn-disabled-text;
     cursor: not-allowed;
   }
@@ -71,24 +70,23 @@
 
   &--secondary {
     background-color: $btn-secondary-bg;
-    border-color: $btn-secondary-stroke;
+    border-color: $btn-secondary-border;
     color: $btn-secondary-text;
 
     &:hover,
     &:active {
       background-color: $btn-secondary-active-bg;
-      border-color: $btn-secondary-active-stroke;
+      border-color: $btn-secondary-active-border;
       color: $btn-secondary-active-text;
     }
 
     &:focus {
-      color: $btn-secondary-focus-text;
-      outline-color: $btn-secondary-focus-stroke;
+      outline-color: $btn-secondary-focus-border;
     }
 
     &[disabled] {
       background-color: $btn-secondary-disabled-bg;
-      border-color: $btn-secondary-disabled-stroke;
+      border-color: $btn-secondary-disabled-border;
       color: $btn-secondary-disabled-text;
       cursor: not-allowed;
     }
