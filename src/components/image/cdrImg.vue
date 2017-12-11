@@ -191,5 +191,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrImg.pcss';
+  @import 'styles/cdrImg.pcss';
 </style>

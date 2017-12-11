@@ -168,5 +168,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrMediaObject.pcss';
+  @import 'styles/cdrMediaObject.pcss';
 </style>

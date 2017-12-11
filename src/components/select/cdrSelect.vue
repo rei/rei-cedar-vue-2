@@ -166,5 +166,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrSelect.pcss';
+  @import 'styles/cdrSelect.pcss';
 </style>

@@ -40,5 +40,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrList.pcss';
+  @import 'styles/cdrList.pcss';
 </style>

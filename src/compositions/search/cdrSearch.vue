@@ -82,5 +82,5 @@ export default {
 
 <style theme="default">
 @import '../../css/settings/_index.pcss';
-@import 'cdrSearch.pcss';
+@import 'styles/cdrSearch.pcss';
 </style>

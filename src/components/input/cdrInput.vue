@@ -357,5 +357,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrInput.pcss';
+  @import 'styles/cdrInput.pcss';
 </style>

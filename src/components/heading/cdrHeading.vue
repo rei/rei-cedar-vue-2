@@ -73,5 +73,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrHeading.pcss';
+  @import 'styles/cdrHeading.pcss';
 </style>

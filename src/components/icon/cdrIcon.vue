@@ -28,5 +28,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrIcon.pcss';
+  @import 'styles/cdrIcon.pcss';
 </style>
