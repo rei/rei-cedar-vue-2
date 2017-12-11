@@ -42,4 +42,13 @@ module.exports = {
     library: `Cdr${capComp}`,
     umdNamedDefine: true,
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, `..${cedarPackageFolder}/styles/themes/*`),
+        to: path.resolve(__dirname, `..${cedarPackageFolder}/dist`),
+        flatten: true,
+      }
+    ])
+  ]
 };

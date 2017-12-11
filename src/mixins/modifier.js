@@ -15,11 +15,9 @@ export default {
       let final = '';
 
       if (!this.theme) {
-        final += `${base}`;
+        final += `${base} `;
 
-        modifierArr.forEach((mod) => {
-          final += ` ${base}--${mod} `;
-        });
+        final += modifierArr.map(mod => `${base}--${mod}`).join(' ');
       }
 
       return final;

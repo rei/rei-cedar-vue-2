@@ -25,5 +25,6 @@ module.exports = {
   testPathIgnorePatterns: [
     '<rootDir>/src/components/buttonGroup',
     '<rootDir>/test',
+    '<rootDir>/templates',
   ],
 };

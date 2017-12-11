@@ -15,6 +15,8 @@ const iconConfig = [
   },
 ];
 
+#!/usr/bin/env/ node
+
 const basePath = 'src/assets/icons';
 // clean directory
 fs.emptyDirSync(basePath);

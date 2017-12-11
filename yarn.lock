@@ -7977,6 +7977,12 @@ postcss-calc@^6.0.0:
     postcss-selector-parser "^2.2.2"
     reduce-css-calc "^2.0.0"
 
+postcss-class-prefix@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/postcss-class-prefix/-/postcss-class-prefix-0.3.0.tgz#d69e86d062a3403853b3f34c9476441c3ddfe7d3"
+  dependencies:
+    postcss "^5.0.4"
+
 postcss-colormin@^2.1.8:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/postcss-colormin/-/postcss-colormin-2.2.2.tgz#6631417d5f0e909a3d7ec26b24c8a8d1e4f96e4b"
