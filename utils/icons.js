@@ -1,3 +1,5 @@
+#!/usr/bin/env/ node
+
 const fs = require('fs-extra');
 const download = require('download');
 const glob = require('glob');
@@ -14,8 +16,6 @@ const iconConfig = [
     url: 'https://assets.brand.ai/rei-digital-experience-team/expert-advice/icons.zip?key=ByGZB6RRzW',
   },
 ];
-
-#!/usr/bin/env/ node
 
 const basePath = 'src/assets/icons';
 // clean directory
