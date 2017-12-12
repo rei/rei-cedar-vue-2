@@ -189,7 +189,7 @@ export default {
 };
 </script>
 
-<style theme="default">
+<style>
   @import '../../css/settings/_index.pcss';
   @import 'styles/cdrImg.pcss';
 </style>

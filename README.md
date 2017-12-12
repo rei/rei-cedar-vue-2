@@ -145,7 +145,6 @@ backstop_data                   #Files related to visual regression testing. Mos
 |-- %html_report                #Generated report for backstop test results
 build                           #Contains scripts and configs for the webpack build system (most of this is from the vue webpack template)
 |-- build.js                    #Prod build script - the entry point for `npm run build`
-|-- check-theme.js              #Sets the theme variable for webpack to output vertical themes
 |-- check-versions.js           #Checks node/npm versions (this came with the vue webpack template so I’m not sure if it’s super useful)
 |-- dev-client.js               #For hot module reloading in dev
 |-- dev-server.js               #Config for express dev server

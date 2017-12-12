@@ -54,7 +54,7 @@
   </cdr-card>
 </template>
 
-<style theme="default">
+<style>
   @import '../../css/settings/_index.pcss';
   @import 'styles/cdrActivityCard.pcss';
 </style>
