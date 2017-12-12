@@ -20,5 +20,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrCard.pcss';
+  @import 'styles/cdrCard.pcss';
 </style>

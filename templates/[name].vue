@@ -10,5 +10,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import '{NAME-FULLNAME}.pcss';
+  @import 'styles/{NAME-FULLNAME}.pcss';
 </style>

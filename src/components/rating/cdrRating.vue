@@ -92,5 +92,5 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrRating.pcss';
+  @import 'styles/cdrRating.pcss';
 </style>

@@ -26,6 +26,11 @@ module.exports = {
     },
     extensions: ['.js', '.vue', '.json'],
   },
+  resolveLoader: { 
+    alias: { 
+      'cedar-theme-loader': resolve('utils/themeLoader.js'),
+    } 
+  }, 
   module: {
     rules: [
       {
@@ -46,9 +51,9 @@ module.exports = {
             options: vueLoaderConfig
           },
           {
-            loader: 'vue-theme-loader',
+            loader: 'cedar-theme-loader',
             options: {
-              theme: 'default',
+              isDev: process.env.NODE_ENV === 'development' ? true : false,
             }
           }
         ],

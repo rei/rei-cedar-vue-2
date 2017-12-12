@@ -56,7 +56,7 @@
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrActivityCard.pcss';
+  @import 'styles/cdrActivityCard.pcss';
 </style>
 
 <script>
