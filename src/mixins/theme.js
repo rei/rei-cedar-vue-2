@@ -17,15 +17,14 @@ export default {
       const base = this.baseClass;
       const modifierArr = this.modifier ? this.modifier.split(' ') : [];
       const newBase = `theme-${this.theme}-${base}`;
-      let final = '';
+      let final = [];
 
       if (this.theme) {
-        final += `${newBase} `;
-
-        final += modifierArr.map(mod => `${newBase}--${mod}`).join(' ');
+        final.push(`${newBase}`);
+        final = final.concat(modifierArr.map(mod => `${newBase}--${mod}`));
       }
 
-      return final;
+      return final.join(' ');
     },
   },
 };

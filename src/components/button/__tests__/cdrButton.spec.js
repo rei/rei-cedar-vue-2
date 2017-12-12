@@ -4,6 +4,16 @@ import cdrButton from 'Components/button/cdrButton';
 const clickHandler = jest.fn();
 
 describe('cdrButton.vue', () => {
+  // test for theme mixin
+  it('sets theme correctly', () => {
+    const wrapper = shallow(cdrButton, {
+      propsData: {
+        theme: 'red'
+      },
+    });
+    expect(wrapper.hasClass('theme-red-cdr-button')).toBe(true);
+  });
+
   it('renders a button', () => {
     const wrapper = shallow(cdrButton);
     expect(wrapper.is('button')).toBe(true);
