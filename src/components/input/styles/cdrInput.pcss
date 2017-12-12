@@ -38,7 +38,7 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
   @include sys-font-redwood-ui-30 ();
 
   background-color: $sys-color-input;
-  border-color: $sys-color-input-stroke;
+  border-color: $sys-color-input-border;
   border-style: solid;
   border-radius: $radius-input;
   border-width: 1px;
@@ -55,13 +55,13 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
   }
 
   &--error {
-    border-color: $sys-color-input-error-stroke;
+    border-color: $sys-color-input-error-border;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &--warn {
-    border-color: $sys-color-input-warning-stroke;
+    border-color: $sys-color-input-warning-border;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -132,11 +132,11 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
     }
 
     &--warn > svg {
-      fill: $sys-color-input-warning-stroke;
+      fill: $sys-color-input-warning-border;
     }
 
     &--error > svg {
-      fill: $sys-color-input-error-stroke;
+      fill: $sys-color-input-error-border;
     }
   }
 }
@@ -195,12 +195,12 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
     }
 
     &--error {
-      border-color: $sys-color-input-error-stroke;
+      border-color: $sys-color-input-error-border;
       background-color: $sys-color-input-error;
     }
 
     &--warn {
-      border-color: $sys-color-input-warning-stroke;
+      border-color: $sys-color-input-warning-border;
       background-color: $sys-color-input-warning;
     }
   }
