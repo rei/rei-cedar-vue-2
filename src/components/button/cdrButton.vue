@@ -22,7 +22,6 @@ export default {
     type: {
       type: String,
       default: 'button',
-      /* istanbul ignore next */
       validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
