@@ -15,10 +15,6 @@
       :Size variants
         :sm
         :xs
-      :Display variants
-        :responsive
-        :block
-        :fixed
 ========================================================================== */
 
 .cdr-button {
@@ -134,40 +130,5 @@
     font-weight: $button-xs-font-weight;
     line-height: $button-xs-line-height;
     padding: $button-xs-padding;
-  }
-
-  /* Display variants
-    ========================================================================== */
-  
-  /* responsive
-    ========== */
-
-  &--responsive {
-    @media (--xs-mq-only) {
-      display: $button-responsive-display;
-      width: $button-responsive-width;
-    }
-  }
-
-  /* block
-    ========== */
-
-  &--block {
-    width: $button-block-width;
-    display: $button-block-display;
-    margin-bottom: $button-block-margin-bottom;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  /* fixed
-    ========== */
-
-  &--fixed {
-    width: $button-fixed-width;
-    display: $button-fixed-display;
-    margin: $button-fixed-margin;
   }
 }
