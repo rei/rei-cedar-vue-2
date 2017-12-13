@@ -2,13 +2,15 @@
 
 Modifiers can be combined 1 from each grouping.
 
-{secondary} | {compact} | {block, fixed, responsive} **OR** link
+{secondary} | {sm,xs} | {block, fixed, responsive} **OR** link
 
-Responsive makes the button full width and block @ sm breakpoint.
+Use of the 'link' modifier depends on including the css for cdrA.
 
 A modifier list that contains 'link' exposes the same modifiers as cdrA and the other modifiers shouldn't be combined with it.
 
-### Types
+Responsive makes the button full width and block @ sm breakpoint.
+
+### Examples
 
 #### Default
 
