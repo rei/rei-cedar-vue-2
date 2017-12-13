@@ -8,7 +8,7 @@ Responsive makes the button full width and block @ sm breakpoint.
 
 A modifier list that contains 'link' exposes the same modifiers as cdrA and the other modifiers shouldn't be combined with it.
 
-### Examples
+### Types
 
 #### Default
 
@@ -30,6 +30,12 @@ function log() {
 <cdr-button modifier="secondary" :on-click="log">Secondary</cdr-button>
 ```
 
+#### CTA Sale
+
+```
+<cdr-button modifier="cta-sale">Secondary</cdr-button>
+```
+
 #### Link Modifier
 
 ```
@@ -39,6 +45,8 @@ function log() {
 
 <cdr-button modifier="link" :on-click="log">Link</cdr-button>
 ```
+
+### Sizes and Shapes
 
 #### Small Modifier
 
