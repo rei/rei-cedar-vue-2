@@ -18,6 +18,18 @@
         modifier="xs"
       >Extra Small button</cdr-button>
     </div>
+
+    <div class="button-example">
+      <cdr-button theme="red">red</cdr-button>
+      <cdr-button
+        theme="red"
+        modifier="sm">red sm</cdr-button>
+      <cdr-button theme="green">green</cdr-button>
+      <cdr-button
+        theme="green"
+        modifier="xs">green xs</cdr-button>
+    </div>
+
   </div>
 </template>
 

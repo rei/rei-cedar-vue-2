@@ -35,6 +35,6 @@ export default {
 
 <style theme="default">
   @import '../../css/settings/_index.pcss';
-  @import 'cdrA.pcss';
+  @import 'styles/cdrA.pcss';
 </style>
 

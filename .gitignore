@@ -34,6 +34,7 @@ jsconfig.json
 
 # Folders to ignore
 node_modules
+dist-docs
 
 # Test results
 backstop_data/bitmaps_reference
@@ -45,3 +46,8 @@ test/unit/coverage
 
 src/components/dist/static/js/*.js
 src/components/dist/static/js/*.js.map
+
+# Build assets
+src/components/**/dist/*
+src/compositions/**/dist/*
+src/bundles/**/dist/*

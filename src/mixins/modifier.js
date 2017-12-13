@@ -12,17 +12,14 @@ export default {
     modifierClass() {
       const base = this.baseClass;
       const modifierArr = this.modifier ? this.modifier.split(' ') : [];
-      let final = '';
+      let final = [];
 
       if (!this.theme) {
-        final += `${base}`;
-
-        modifierArr.forEach((mod) => {
-          final += ` ${base}--${mod} `;
-        });
+        final.push(`${base}`);
+        final = final.concat(modifierArr.map(mod => `${base}--${mod}`));
       }
 
-      return final;
+      return final.join(' ');
     },
   },
 };

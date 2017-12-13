@@ -90,7 +90,7 @@ export default {
 };
 </script>
 
-<style theme="default">
+<style>
   @import '../../css/settings/_index.pcss';
-  @import 'cdrRating.pcss';
+  @import 'styles/cdrRating.pcss';
 </style>

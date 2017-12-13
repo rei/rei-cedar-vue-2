@@ -2,9 +2,7 @@ module.exports = {
   parser: 'postcss-html',
   syntax: 'postcss-scss',
   plugins: {
-    'postcss-import': {
-      from: 'src/css/main.postcss',
-    },
+    'postcss-import': {},
     'postcss-strip-inline-comments': {},
     'postcss-sassy-mixins': {},
     'postcss-simple-vars': {},

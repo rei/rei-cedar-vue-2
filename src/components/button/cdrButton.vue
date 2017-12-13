@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="[modifierClass]"
+    :class="[modifierClass, themeClass]"
     :type="type"
     @click="onClick"
   >
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-// import theme from '../../mixins/theme';
+import theme from '../../mixins/theme';
 import modifier from '../../mixins/modifier';
 
 export default {
   name: 'CdrButton',
-  mixins: [modifier],
+  mixins: [modifier, theme],
   props: {
     /**
      * {button, submit, reset}. Defines the button type.
@@ -22,7 +22,6 @@ export default {
     type: {
       type: String,
       default: 'button',
-      /* istanbul ignore next */
       validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
@@ -42,13 +41,22 @@ export default {
 };
 </script>
 
-<style theme="default">
+<style>
   @import '../../css/settings/_index.pcss';
-  @import 'cdrButton.pcss';
+  @import 'styles/vars/button.vars.pcss';
+  @import 'styles/cdrButton.pcss';
 </style>
 
-<style theme="red">
+<style cedar-theme="red">
   @import '../../css/settings/_index.pcss';
-  @import '../../css/themes/red.pcss';
-  @import 'cdrButton.pcss';
+  @import 'styles/vars/button.vars.pcss';
+  @import 'styles/vars/red.vars.pcss';
+  @import 'styles/cdrButton.pcss';
+</style>
+
+<style cedar-theme="green">
+  @import '../../css/settings/_index.pcss';
+  @import 'styles/vars/button.vars.pcss';
+  @import 'styles/vars/green.vars.pcss';
+  @import 'styles/cdrButton.pcss';
 </style>

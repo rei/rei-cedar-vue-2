@@ -8,7 +8,7 @@ export default {
 };
 </script>
 
-<style theme="default">
+<style>
   @import '../../css/settings/_index.pcss';
-  @import '{NAME-FULLNAME}.pcss';
+  @import 'styles/{NAME-FULLNAME}.pcss';
 </style>

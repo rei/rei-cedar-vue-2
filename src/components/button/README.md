@@ -23,7 +23,11 @@ function log() {
 #### Secondary
 
 ```
-<cdr-button modifier="secondary">Secondary</cdr-button>
+function log() {
+    console.log('Clicked!');
+}
+
+<cdr-button modifier="secondary" :on-click="log">Secondary</cdr-button>
 ```
 
 #### CTA Sale
@@ -35,23 +39,39 @@ function log() {
 #### Link Modifier
 
 ```
-<cdr-button modifier="link">Link</cdr-button>
+function log() {
+    console.log('Clicked!');
+}
+
+<cdr-button modifier="link" :on-click="log">Link</cdr-button>
 ```
 
 #### Small Modifier
 
 ```
-<cdr-button modifier="sm">Default</cdr-button>
+function log() {
+    console.log('Clicked!');
+}
+
+<cdr-button modifier="sm" :on-click="log">Default</cdr-button>
 ```
 
 #### Extra Small Modifier
 
 ```
-<cdr-button modifier="xs">Default</cdr-button>
+function log() {
+    console.log('Clicked!');
+}
+
+<cdr-button modifier="xs" :on-click="log">Default</cdr-button>
 ```
 
 ### Block Modifier
 
 ```
-<cdr-button modifier="block">Default</cdr-button>
+function log() {
+    console.log('Clicked!');
+}
+
+<cdr-button modifier="block"  :on-click="log">Default</cdr-button>
 ```

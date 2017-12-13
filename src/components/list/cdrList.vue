@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style theme="default">
+<style>
   @import '../../css/settings/_index.pcss';
-  @import 'cdrList.pcss';
+  @import 'styles/cdrList.pcss';
 </style>

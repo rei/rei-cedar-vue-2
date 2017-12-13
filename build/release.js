@@ -1,5 +1,4 @@
 require('./check-versions')()
-require('./check-theme')()
 
 process.env.NODE_ENV = 'release'
 
