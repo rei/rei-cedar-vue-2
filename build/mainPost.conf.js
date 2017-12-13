@@ -1,5 +1,3 @@
-var ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
-
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'release') {
   var isProduction = true;
 } else {

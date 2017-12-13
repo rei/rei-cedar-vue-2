@@ -34,6 +34,7 @@ jsconfig.json
 
 # Folders to ignore
 node_modules
+dist-docs
 
 # Test results
 backstop_data/bitmaps_reference

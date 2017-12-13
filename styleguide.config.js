@@ -45,7 +45,8 @@ if (process.env.NODE_ENV === 'development') {
 module.exports = {
   webpackConfig: webpConfig,
   require: [
-    './src/css/main.postcss',
+    './src/styles/dist/cedar-core.css',
+    // './src/css/main.postcss',
   ],
   ignore: [
     '**/examples/**',
