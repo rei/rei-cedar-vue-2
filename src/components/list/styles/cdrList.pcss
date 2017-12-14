@@ -70,7 +70,7 @@ $list-spacing-xxl: $spacing-space-xxl;
   &--disc {
     list-style-type: none;
 
-    &::before {
+    & > li::before {
       position: relative;
       top: 4px;
       left: -12px;
@@ -78,7 +78,7 @@ $list-spacing-xxl: $spacing-space-xxl;
       width: 4px;
       height: 4px;
       margin: 0 6px 0 0;
-      content: “”;
+      content: '';
       background: $list-disc-color;
       border-radius: 50%;
       transform: translate(0, 245%);
@@ -88,7 +88,7 @@ $list-spacing-xxl: $spacing-space-xxl;
   &--circle {
     list-style-type: none;
     
-    &::before {
+    & > li::before {
       position: relative;
       top: 4px;
       left: -15px;
@@ -96,7 +96,7 @@ $list-spacing-xxl: $spacing-space-xxl;
       width: 10px;
       height: 10px;
       margin: 0 6px 0 0;
-      content: “”;
+      content: '';
       background: $list-circle-fill-color;
       border: 1px solid $list-circle-border-color;
       border-radius: 50%;
@@ -139,17 +139,19 @@ $list-spacing-xxl: $spacing-space-xxl;
     }
   }
   
-  &--inline.cdr-list--bulleted {
+  &--inline.cdr-list--disc {
     & > li {
       padding-right: $list-spacing-closed;
+      list-style-type: none;
 
       &:not(:last-of-type)::after {
-        vertical-align: text-center;
-        content: "\2022";
-        display: inline-block;
-        color: inherit;
-        margin-left: 0;
-        width: 0.8rem;
+        width: 4px;
+        height: 4px;
+        margin: 0 6px 0 10px;
+        content: '';
+        background: $list-disc-color;
+        border-radius: 50%;
+        transform: translate(0, 245%);
       }
     }
   }
