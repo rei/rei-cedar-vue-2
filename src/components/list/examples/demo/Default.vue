@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3>Default List</h3>
     <cdr-list>
       <li>List default</li>
       <li>List default

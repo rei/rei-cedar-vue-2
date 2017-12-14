@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3>Ordered List</h3>
     <cdr-list type="ol">
       <li>List ordered - default</li>
       <li>List ordered - default
@@ -10,9 +11,9 @@
           <li>List ordered - nested - unstyled
             <cdr-list
               type="ol"
-              modifier="bulleted">
-              <li>List ordered - nested - bulleted</li>
-              <li>List ordered - nested - bulleted</li>
+              modifier="disc">
+              <li>List ordered - nested - disc</li>
+              <li>List ordered - nested - disc</li>
             </cdr-list>
           </li>
         </cdr-list>
