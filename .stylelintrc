@@ -9,5 +9,6 @@
         } ],
         "at-rule-empty-line-before": null,
         "no-duplicate-at-import-rules": null,
+        "no-descending-specificity": null,
     }
 }

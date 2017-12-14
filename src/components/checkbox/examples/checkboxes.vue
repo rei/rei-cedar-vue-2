@@ -6,12 +6,14 @@
       @change="logChange"
     >single</cdr-checkbox>
     <p>single: {{ ex1 }}</p>
-    <cdr-checkbox
-      v-model="ex2"
-      @change="logChange"
-      true-value="checked"
-      false-value="unchecked"
-    >checked</cdr-checkbox>
+    <span data-backstop="checkbox-checked">
+      <cdr-checkbox
+        v-model="ex2"
+        @change="logChange"
+        true-value="checked"
+        false-value="unchecked"
+      >checked</cdr-checkbox>
+    </span>
     <p>checked: {{ ex2 }}</p>
     <cdr-checkbox
       v-model="ex3"
