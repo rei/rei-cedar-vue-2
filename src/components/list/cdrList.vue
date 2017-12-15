@@ -1,14 +1,14 @@
 <template>
   <ul
     :class="modifierClass"
-    v-if="type === 'ul'"
+    v-if="listType === 'ul'"
   >
     <slot/>
   </ul>
 
   <ol
     :class="modifierClass"
-    v-else-if="type === 'ol'"
+    v-else-if="listType === 'ol'"
   >
     <slot/>
   </ol>
@@ -24,7 +24,7 @@ export default {
     /**
      * List type. 'ul' = Unordered List. 'ol' = Ordered List.
      */
-    type: {
+    listType: {
       type: String,
       default: 'ul',
       validator: value => (['ul', 'ol'].indexOf(value) >= 0) || false,
