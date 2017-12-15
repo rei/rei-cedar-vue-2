@@ -1,6 +1,6 @@
 ### Modifiers
 
-{unstyled, bulleted, numbered, menu}
+{unstyled, disc, numbered, menu, compact, circle}
 
 Note: type doesn't affect the modifier.
 
@@ -15,8 +15,18 @@ Note: type doesn't affect the modifier.
     <cdr-list>
       <li>List default - nested</li>
       <li>List default - nested</li>
+      <li>List default - nested</li>
     </cdr-list>
   </li>
+</cdr-list>
+```
+
+#### Compact
+```
+<cdr-list modifier="compact">
+  <li>List default compact</li>
+  <li>List default compact</li>
+  <li>List default compact</li>
 </cdr-list>
 ```
 
@@ -26,15 +36,26 @@ Note: type doesn't affect the modifier.
 <cdr-list modifier="unstyled">
   <li>List unstyled</li>
   <li>List unstyled</li>
+  <li>List unstyled</li>
 </cdr-list>
 ```
 
-#### Bulleted
+#### Disc
 
 ```
-<cdr-list modifier="bulleted">
-  <li>List bulleted</li>
-  <li>List bulleted</li>
+<cdr-list modifier="disc">
+  <li>List disc</li>
+  <li>List disc</li>
+  <li>List disc</li>
+</cdr-list>
+```
+
+#### Circle
+```
+<cdr-list modifier="circle">
+  <li>list circle</li>
+  <li>list circle</li>
+  <li>list circle</li>
 </cdr-list>
 ```
 
@@ -42,9 +63,10 @@ Note: type doesn't affect the modifier.
 
 ```
 <cdr-list modifier="numbered">
-    <li>List numbered</li>
-    <li>List numbered</li>
-  </cdr-list>
+  <li>List numbered</li>
+  <li>List numbered</li>
+  <li>List numbered</li>
+</cdr-list>
 ```
 
 #### Menu
@@ -53,5 +75,24 @@ Note: type doesn't affect the modifier.
 <cdr-list modifier="menu">
   <li><a href="/">List menu</a></li>
   <li><a href="/">List menu</a></li>
+  <li><a href="/">List menu</a></li>
+</cdr-list>
+```
+
+#### Inline
+```
+<cdr-list modifier="inline">
+  <li>Inline item</li>
+  <li>Inline item</li>
+  <li>Inline item</li>
+</cdr-list>
+```
+
+#### Bulleted Inline
+```
+<cdr-list modifier="inline disc">
+  <li>Inline item</li>
+  <li>Inline item</li>
+  <li>Inline item</li>
 </cdr-list>
 ```
