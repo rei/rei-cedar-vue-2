@@ -1,55 +1,70 @@
 /* ==========================================================================
-   # LINK
-   ========================================================================== */
+  # cdrA
+  
+  All values should map to variables in
+  styles/vars/cdrA.vars.pcss
+  in order to allow for theming
 
-/*
-* TOC:
-*
-* Base class
-* Style variants
-*/
+  TOC:
+
+    :Base Styles
+      :States
+    :Modifiers
+      :Style variants
+        :Contrast
+        :Standalone
+========================================================================== */
 
 .cdr-link {
-  cursor: pointer;
-  display: inline;
-  border: none;
-  text-decoration: underline;
-  outline: none;
-  background-color: $color-transparent-background;
-  border-color: $color-transparent-border;
-  color: $sys-color-link;
+  cursor: $link-cursor;
+  display: $link-display;
+  border: $link-border;
+  text-decoration: $link-text-decoration;
+  outline: $link-outline;
+  background-color: $link-background-color;
+  border-color: $link-border-color;
+  color: $link-color;
+
+  /* States
+    ---------- */
 
   &:hover,
   &:active,
   &:focus {
-    outline: none;
-    text-decoration: underline;
-    background-color: $color-transparent-background;
+    outline: $link-hover-outline;
+    text-decoration: $link-hover-text-decoration;
+    background-color: $link-hover-background-color;
   }
 
   &:focus {
-    outline: $outline-default-width $outline-default-style $color-outline-focus;
+    outline: $link-focus-outline;
   }
 
   /* Style variants
     ========================================================================== */
+
+  /* Contrast
+     ========== */
 
   &--contrast,
   &--contrast:hover,
   &--contrast:active,
   &--contrast:focus,
   &--contrast:visited {
-    color: $sys-color-link-contrast;
+    color: $link-contrast-color;
   }
 
+  /* Standalone
+     ========== */
+
   &--standalone {
-    text-decoration: none;
+    text-decoration: $link-standalone-text-decoration;
 
     &:hover,
     &:active,
     &:focus,
     &:visited {
-      text-decoration: underline;
+      text-decoration: $link-standalone-hover-text-decoration;
     }
   }
 }

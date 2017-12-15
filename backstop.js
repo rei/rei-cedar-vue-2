@@ -19,9 +19,11 @@ function createScenario(def) {
 
 function createHoverScenario(def) {
   // handle normal selectors
-  const normalScenario = Object.assign({}, def);
-  delete normalScenario.hoverSelectors;
-  createScenario(normalScenario);
+  if (Object.prototype.hasOwnProperty.call(def, 'selectors')) {
+    const normalScenario = Object.assign({}, def);
+    delete normalScenario.hoverSelectors;
+    createScenario(normalScenario);
+  }
   // handle hover selectors
   const hoverScenario = Object.assign({}, def);
   hoverScenario.label = `${hoverScenario.label} Hover`;
@@ -39,8 +41,10 @@ function createHoverScenario(def) {
 }
 
 // get backstop definition files and concat the contents
-// const files = glob.sync('./src/compositions/activityCard/*.backstop.js',
-// { ignore: './src/**/node_modules/**' });
+// const files = glob.sync(
+//   './src/components/anchor/*.backstop.js',
+//   { ignore: './src/**/node_modules/**' },
+// );
 const files = glob.sync('./src/**/*.backstop.js', { ignore: './src/**/node_modules/**' });
 files.forEach((file) => {
   defs = defs.concat(require(file));
@@ -87,7 +91,7 @@ module.exports = {
     html_report: 'backstop_data/html_report',
     ci_report: 'backstop_data/ci_report',
   },
-  asyncCaptureLimit: 5,
+  asyncCaptureLimit: 10,
   asyncCompareLimit: 10,
   engine: 'chrome',
   report: ['browser'],

@@ -1,94 +1,112 @@
 /* ==========================================================================
-   # CHECKBOX
-   ========================================================================== */
+  # cdrCheckbox
+  
+  All values should map to variables in
+  styles/vars/cdrCheckbox.vars.pcss
+  in order to allow for theming
 
-/*
-* TOC:
-*
-* Base class
-* States
-* Block elements
-*/
+  TOC:
+
+    :Base Styles
+      :States
+    :Elements
+      :Label
+        :Box
+========================================================================== */
 
 .cdr-checkbox {
-  position: absolute;
-  opacity: 0;
+  position: $checkbox-position;
+  opacity: $checkbox-opacity;
 
   /* States
-    ========================================================================== */
+    ---------- */
 
   &:checked + &__label {
     &::before {
-      background-color: $sys-color-control-selected;
-      border-color: $sys-color-control-selected-border;
+      background-color: $checkbox-checked-background-color;
+      border-color: $checkbox-checked-border-color;
     }
 
     &::after {
-      background-image: svg-load('../../../assets/icons/rei/cdr-check-lg.svg', fill=$(sys-color-control-icon));
+      background-image: svg-load('../../../assets/icons/rei/cdr-check-lg.svg', fill=$(checkbox-checked-icon-color));
       background-repeat: no-repeat;
     }
   }
 
   &:checked&:hover + &__label::before {
-    background-color: $sys-color-control-selected-hover;
-    border-color: $sys-color-control-selected-hover-border;
+    background-color: $checkbox-checked-hover-background-color;
+    border-color: $checkbox-checked-hover-border-color;
   }
 
   &[disabled] + &__label {
-    color: $sys-color-control-text-disabled;
-    cursor: default;
+    color: $checkbox-disabled-color;
+    cursor: $checkbox-disabled-cursor;
 
     &::before {
-      border-color: $sys-color-control-border-disabled;
+      border-color: $checkbox-disabled-border-color;
     }
   }
 
   &:checked&[disabled] + &__label {
-    color: $sys-color-control-text-disabled;
-    cursor: default;
+    color: $checkbox-disabled-checked-color;
+    cursor: $checkbox-disabled-checked-cursor;
 
     &::before {
-      background-color: $sys-color-control-selected-disabled;
-      border-color: $sys-color-control-selected-disabled-border;
+      background-color: $checkbox-disabled-checked-background-color;
+      border-color: $checkbox-disabled-checked-border-color;
     }
   }
 
   &:focus + &__label::before {
-    box-shadow: 0 0 2px 2px #8dd1ed;
+    box-shadow: $checkbox-focus-box-shadow;
   }
 
-  /* Block elements
+  /* Elements
     ========================================================================== */
 
-  &__label {
-    @include sys-font-redwood-ui-30 ();
+  /* Label
+    ========== */
 
-    position: relative;
-    margin-bottom: 0;
+  &__label {
+    font-size: $sys-font-redwood-ui-30-font-size;
+    line-height: $sys-font-redwood-ui-30-line-height;
+    text-align: $sys-font-redwood-ui-30-text-align;
+    color: $sys-font-redwood-ui-30-color;
+    font-style: $sys-font-redwood-ui-30-font-style;
+    font-weight: $sys-font-redwood-ui-30-font-weight;
+    font-family: $sys-font-redwood-ui-30-font-family;
+    position: $checkbox-label-position;
+    margin-bottom: $checkbox-label-margin-bottom;
+
+    /* States
+      ---------- */
 
     &:hover {
-      cursor: pointer;
+      cursor: $checkbox-label-hover-cursor;
     }
+
+    /* Box
+    ========== */
 
     &::before {
       content: '';
-      width: $sizing-size-md;
-      height: $sizing-size-md;
-      border: 1px solid $sys-color-control-border;
-      border-radius: 2px;
-      margin-right: 10px;
-      display: inline-block;
-      vertical-align: top;
-      background-color: white;
+      width: $checkbox-box-before-width;
+      height: $checkbox-box-before-height;
+      border: $checkbox-box-before-border;
+      border-radius: $checkbox-box-before-border-radius;
+      margin-right: $checkbox-box-before-margin-right;
+      display: $checkbox-box-before-display;
+      vertical-align: $checkbox-box-before-vertical-align;
+      background-color: $checkbox-box-before-background-color;
     }
 
     &::after {
       content: '';
-      position: absolute;
-      left: 2px;
-      top: 2px;
-      width: calc($sizing-size-md - 4px);
-      height: calc($sizing-size-md - 4px);
+      position: $checkbox-box-after-position;
+      left: $checkbox-box-after-left;
+      top: $checkbox-box-after-top;
+      width: $checkbox-box-after-width;
+      height: $checkbox-box-after-height;
     }
   }
 }

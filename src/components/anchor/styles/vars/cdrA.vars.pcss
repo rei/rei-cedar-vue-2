@@ -1,0 +1,53 @@
+/* ==========================================================================
+  # cdrA
+
+  REI Cedar Button variables:
+  This file provides a contract between
+  design tokens and cedar non-changing variables.
+
+  TOC:
+
+    :Base
+      :States
+    :Modifiers
+      :Style Variants
+        :Contrast
+        :Standalone
+========================================================================== */
+
+$link-cursor: pointer;
+$link-display: inline;
+$link-border: none;
+$link-text-decoration: underline;
+$link-outline: none;
+$link-background-color: $color-transparent-background;
+$link-border-color: $color-transparent-border;
+$link-color: $sys-color-link;
+
+/* States
+  ---------- */
+
+/* hover/active */
+$link-hover-outline: none;
+$link-hover-text-decoration: underline;
+$link-hover-background-color: $color-transparent-background;
+
+/* focus */
+$link-focus-outline: $outline-default-width $outline-default-style $color-outline-focus;
+
+/* Modifier style variants
+  ========================================================================== */
+
+/* Contrast
+  ========== */
+$link-contrast-color: $sys-color-link-contrast;
+
+/* Standalone
+  ========== */
+$link-standalone-text-decoration: none;
+
+/* States
+  ---------- */
+
+/* hover/active */
+$link-standalone-hover-text-decoration: underline;

@@ -23,7 +23,8 @@
     "approve": "backstop approve --configPath=backstop.js",
     "docs": "vue-styleguidist server",
     "build:docs": "vue-styleguidist build",
-    "create": "node generator.js"
+    "create": "node generator.js",
+    "start": "lerna bootstrap && lerna run build"
   },
   "peerDependencies": {
     "vue": "^2.5.10"
