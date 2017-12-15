@@ -1,23 +1,25 @@
-/*
-** TOC:
-**
-** Image
-** Media Frame
-*/
-
 /* ==========================================================================
-   # IMAGE
-   ========================================================================== */
+  # cdrImg
+  
+  All values should map to variables in
+  vars/cdrImg.vars.pcss
+  in order to allow for theming
 
-/*
-* TOC:
-*
-* Base class
-* Style variants
-*/
-.cdr-radius--top {
-  border-radius: $radius-card $radius-card 0 0;
-}
+  TOC:
+
+    :Base - Image
+      :Modifiers
+        :Style Variants
+    :Base - Media Frame
+      :Modifiers
+        :Aspect Ratios
+          :normal
+          :@small
+          :@medium
+          :@large
+        :Cropping
+      :Elements
+========================================================================== */
 
 .cdr-image {
   max-width: 100%;
@@ -25,40 +27,42 @@
   /* Style variants
     ========================================================================== */
 
+  /* responsive
+    ========== */
   &--responsive {
     display: block;
     height: auto;
     width: 100%;
   }
 
+  /* rounded
+    ========== */
+
   &--rounded {
-    border-radius: $radius-radius-10;
+    border-radius: $image-rounded;
   }
+
+  /* circle
+    ========== */
 
   &--circle {
     border-radius: 50%;
   }
 
+  /* thumbnail
+    ========== */
+
   &--thumbnail {
-    border: 1px solid;
-    border-color: $sys-color-hillary-lighten-20;
-    border-radius: $radius-radius-10;
-    padding: $spacing-space-xs;
+    border: $image-thumbnail-border;
+    border-color: $image-thumbnail-border-color;
+    border-radius: $image-thumbnail-border-radius;
+    padding: $image-thumbnail-padding;
   }
 }
 
 /* ==========================================================================
    # MEDIA FRAME
    ========================================================================== */
-
-/*
-* TOC:
-*
-* Base class
-* Aspect Ratios
-* Cropping variants
-* Block elements
-*/
 
 .cdr-media-frame {
   position: relative;
@@ -114,7 +118,7 @@
   }
 
   /* Aspect ratios @ small
-    ========================================================================== */
+    ========== */
   @media (--sm-mq) {
     &--auto\@sm::before {
       padding-bottom: 0;
@@ -158,7 +162,7 @@
   }
 
   /* Aspect ratios @ medium
-    ========================================================================== */
+    ========== */
   @media (--md-mq) {
     &--auto\@md::before {
       padding-bottom: 0;
@@ -202,7 +206,7 @@
   }
 
   /* Aspect ratios @ large
-    ========================================================================== */
+    ========== */
   @media (--lg-mq) {
     &--auto\@lg::before {
       padding-bottom: 0;
