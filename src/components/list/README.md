@@ -1,6 +1,6 @@
 ### Modifiers
 
-{unstyled, disc, numbered, menu, compact, circle}
+{unstyled, disc, numbered, menu, compact, circle, inline}
 
 Note: type doesn't affect the modifier.
 
