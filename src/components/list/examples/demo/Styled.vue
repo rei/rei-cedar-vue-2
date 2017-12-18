@@ -29,11 +29,18 @@
       <li>List item - circle compact</li>
     </cdr-list>
 
-    <cdr-list modifier="inline disc">
+    <cdr-list modifier="inline">
       <li>Inline list item</li>
       <li>Inline list item</li>
       <li>Inline list item</li>
       <li>Inline list item</li>
+    </cdr-list>
+
+    <cdr-list modifier="inline bullet">
+      <li>Bulleted Inline List Item</li>
+      <li>Bulleted Inline List Item</li>
+      <li>Bulleted Inline List Item</li>
+      <li>Bulleted Inline List Item</li>
     </cdr-list>
 
   </div>

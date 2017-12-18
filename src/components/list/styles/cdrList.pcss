@@ -139,7 +139,7 @@ $list-spacing-xxl: $spacing-space-xxl;
     }
   }
   
-  &--inline.cdr-list--disc {
+  &--inline.cdr-list--bullet {
     & > li {
       padding-right: $list-spacing-closed;
       list-style-type: none;
@@ -151,7 +151,9 @@ $list-spacing-xxl: $spacing-space-xxl;
         content: '';
         background: $list-disc-color;
         border-radius: 50%;
-        transform: translate(0, 245%);
+        display: inline-block;
+        position: relative;
+        top: -3px;
       }
     }
   }

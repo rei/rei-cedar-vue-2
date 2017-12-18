@@ -1,6 +1,6 @@
 ### Modifiers
 
-{unstyled, disc, numbered, menu, compact, circle, inline}
+{unstyled, bullet, disc, numbered, menu, compact, circle, inline}
 
 Note: type doesn't affect the modifier.
 
@@ -90,9 +90,9 @@ Note: type doesn't affect the modifier.
 
 #### Bulleted Inline
 ```
-<cdr-list modifier="inline disc">
-  <li>Inline item</li>
-  <li>Inline item</li>
-  <li>Inline item</li>
+<cdr-list modifier="inline bullet">
+  <li>Bulleted Inline Item</li>
+  <li>Bulleted Inline Item</li>
+  <li>Bulleted Inline Item</li>
 </cdr-list>
 ```
