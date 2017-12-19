@@ -1,0 +1,55 @@
+/* ==========================================================================
+  # cdrInput
+
+  This file provides a contract between
+  design tokens and cedar non-changing variables.
+
+  TOC:
+
+    :Base Image
+      :Modifiers
+        :Style Variants
+    :Base Media Frame
+========================================================================== */
+
+/* ==========================================================================
+  # INPUT CONTAINER
+  ========================================================================== */
+
+$input-container-spacing: 16px;
+
+/* ==========================================================================
+  # INPUT
+  ========================================================================== */
+
+$input-font-size: $sys-font-redwood-ui-30-font-size;
+$input-line-height: $sys-font-redwood-ui-30-line-height;
+$input-text-align: $sys-font-redwood-ui-30-text-align;
+$input-color: $sys-font-redwood-ui-30-color;
+$input-font-style: $sys-font-redwood-ui-30-font-style;
+$input-font-weight: $sys-font-redwood-ui-30-font-weight;
+$input-font-family: $sys-font-redwood-ui-30-font-family;
+$input-background-color: $sys-color-input;
+$input-border-color: $sys-color-input-border;
+$input-border-style: solid;
+$input-border-radius: $radius-input;
+$input-border-width: 1px;
+$input-padding: $inset-sm--stretch;
+$input-height: calc($input-line-height + (2 * $input-border-width) + (2 * $sizing-size-sm-stretch));
+
+/* States
+  ---------- */
+
+/* disabled */
+$input-disabled-background-color: $sys-color-input-disabled;
+
+/* Modifier style variants
+  ========================================================================== */
+
+/* Error
+  ========== */
+$input-error-border-color: $sys-color-input-error-border;
+
+/* Warning
+  ========== */
+$input-warning-border-color: $sys-color-input-warning-border;

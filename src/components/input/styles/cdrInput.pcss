@@ -1,51 +1,66 @@
-/*
-** TOC:
-**
-** input container
-** input
-** input wrapper
-** animated errors
-** input messages
-*/
+/* ==========================================================================
+  # cdrInput
+  
+  All values should map to variables in
+  vars/cdrInput.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - Input container
+    :Base - Input
+      :States
+      :Modifiers
+        :Style Variants
+    :Base - Media Frame
+      :Modifiers
+        :Aspect Ratios
+          :normal
+          :@small
+          :@medium
+          :@large
+        :Cropping
+      :Elements
+========================================================================== */
 
 /* ==========================================================================
-   # INPUT CONTAINER
-   ========================================================================== */
+  # INPUT CONTAINER
+  ========================================================================== */
 
 .cdr-input-container {
   & + & {
-    margin-top: 1.6rem;
+    margin-top: $input-container-spacing;
   }
 }
 
 /* ==========================================================================
-   # INPUT
-   ========================================================================== */
-
-/*
-* TOC:
-*
-* Base class
-* Style variants
-* Size variants
-* Pseudo elements
-* Block elements
-*/
-
-$input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size-sm-stretch);
+  # INPUT
+  ========================================================================== */
 
 .cdr-input {
-  @include sys-font-redwood-ui-30 ();
-
-  background-color: $sys-color-input;
-  border-color: $sys-color-input-border;
-  border-style: solid;
-  border-radius: $radius-input;
-  border-width: 1px;
-  display: block;
-  padding: $inset-sm--stretch;
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  text-align: $input-text-align;
+  color: $input-color;
+  font-style: $input-font-style;
+  font-weight: $input-font-weight;
+  font-family: $input-font-family;
+  background-color: $input-background-color;
+  border-color: $input-border-color;
+  border-style: $input-border-style;
+  border-radius: $input-border-radius;
+  border-width: $input-border-width;
+  padding: $input-padding;
   height: $input-height;
+  display: block;
   width: 100%;
+
+  /* States
+  ---------- */
+
+  &[disabled] {
+    background-color: $input-disabled-background-color;
+  }
 
   /* Style variants
     ========================================================================== */
@@ -55,23 +70,19 @@ $input-height: calc($sys-font-redwood-ui-30-line-height + 2px + 2 * $sizing-size
   }
 
   &--error {
-    border-color: $sys-color-input-error-border;
+    border-color: $input-error-border-color;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &--warn {
-    border-color: $sys-color-input-warning-border;
+    border-color: $input-warning-border-color;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &--preicon {
     padding-left: calc($sizing-size-sm-stretch * 2 + $sizing-size-md);
-  }
-
-  &[disabled] {
-    background-color: $sys-color-input-disabled;
   }
 
   /* Size variants
