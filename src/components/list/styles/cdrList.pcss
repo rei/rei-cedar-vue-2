@@ -1,38 +1,29 @@
 /* ==========================================================================
-   # LIST
-   ========================================================================== */
+  # cdrList
 
-/*
+  All values should map to variables in vars/cdrList.vars.pcss in order to allow
+  for theming
+
 * TOC:
 *
-* Base class
-* element styles
-* Style variants
-*/
-
-/* Variables
-    ========================================================================== */
-
-/* Bullet colors */
-$list-disc-color: $sys-color-list-disc;
-$list-circle-fill-color: $sys-color-list-circle;
-$list-circle-border-color: $sys-color-list-circle-border;
-
-/* Spacing */
-$list-spacing-closed: $spacing-space-closed;
-$list-spacing-xxs: $spacing-space-xxs;
-$list-spacing-xs: $spacing-space-xs;
-$list-spacing-sm: $spacing-space-sm;
-$list-spacing-md: $spacing-space-md;
-$list-spacing-lg: $spacing-space-lg;
-$list-spacing-xl: $spacing-space-xl;
-$list-spacing-xxl: $spacing-space-xxl;
+    :Base Styles
+    :Modifiers
+      :Style variants
+        :Compact
+        :Unstyled
+        :Disc
+        :Circle
+        :Inline
+        :Numbered
+        :Menu
+        :Inline Bullet
+========================================================================== */
 
 .cdr-list {
   list-style-type: disc;
   padding-left: $list-spacing-md;
 
-  /* Element Styles
+  /* Base Styles
     ========================================================================== */
 
   & > li {
@@ -50,10 +41,14 @@ $list-spacing-xxl: $spacing-space-xxl;
   /* Style variants
     ========================================================================== */
 
+  /* Compact
+     ========== */
   &--compact > li + li {
     margin-top: $list-spacing-xs;
   }
   
+  /* Unstyled
+     ========== */
   &--unstyled {
     list-style-type: none;
     padding-left: $list-spacing-closed;
@@ -67,6 +62,8 @@ $list-spacing-xxl: $spacing-space-xxl;
     }
   }
 
+  /* Disc
+     ========== */
   &--disc {
     list-style-type: none;
 
@@ -85,6 +82,8 @@ $list-spacing-xxl: $spacing-space-xxl;
     }
   }
 
+  /* Circle
+     ========== */
   &--circle {
     list-style-type: none;
     
@@ -104,6 +103,8 @@ $list-spacing-xxl: $spacing-space-xxl;
     }
   }
 
+  /* Inline
+     ========== */
   &--inline {
     list-style-type: none;
     padding: $list-spacing-closed;
@@ -114,10 +115,14 @@ $list-spacing-xxl: $spacing-space-xxl;
     }
   }
 
+  /* Numbered
+     ========== */
   &--numbered {
     list-style-type: decimal;
   }
 
+  /* Menu
+     ========== */
   &--menu {
     list-style-type: none;
     padding-left: $list-spacing-closed;
@@ -139,6 +144,8 @@ $list-spacing-xxl: $spacing-space-xxl;
     }
   }
   
+  /* Inline Bullet
+     ========== */
   &--inline.cdr-list--bullet {
     & > li {
       padding-right: $list-spacing-closed;

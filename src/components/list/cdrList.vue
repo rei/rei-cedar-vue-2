@@ -40,5 +40,6 @@ export default {
 
 <style>
   @import '../../css/settings/_index.pcss';
+  @import 'styles/vars/cdrList.vars.pcss';
   @import 'styles/cdrList.pcss';
 </style>
