@@ -93,14 +93,12 @@
   }
 
   &--error {
-    background-color: $input-error-background-color;
     border-color: $input-error-border-color;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &--warn {
-    background-color: $input-warning-background-color;
     border-color: $input-warning-border-color;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -160,21 +158,21 @@
 
   &__icon {
     position: absolute;
-    top: calc(($sys-font-redwood-ui-30-line-height - $sys-font-redwood-ui-30-font-size) / 2 + $sizing-size-sm-stretch);
-    right: $spacing-space-sm;
-    height: $sys-font-redwood-ui-30-font-size;
-    width: $sys-font-redwood-ui-30-font-size;
+    top: $input-icon-top;
+    right: $input-icon-right;
+    height: $input-icon-height;
+    width: $input-icon-width;
 
     &--valid > svg {
-      fill: $sys-color-success;
+      fill: $input-icon-success-fill;
     }
 
     &--warn > svg {
-      fill: $sys-color-input-warning-border;
+      fill: $input-warning-border-color;
     }
 
     &--error > svg {
-      fill: $sys-color-input-error-border;
+      fill: $input-error-border-color;
     }
   }
 }
@@ -233,13 +231,13 @@
     }
 
     &--error {
-      border-color: $sys-color-input-error-border;
-      background-color: $sys-color-input-error;
+      border-color: $input-error-border-color;
+      background-color: $input-error-background-color;
     }
 
     &--warn {
-      border-color: $sys-color-input-warning-border;
-      background-color: $sys-color-input-warning;
+      border-color: $input-warning-border-color;
+      background-color: $input-warning-background-color;
     }
   }
 }
