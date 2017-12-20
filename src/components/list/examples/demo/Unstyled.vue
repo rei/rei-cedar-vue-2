@@ -5,12 +5,10 @@
       <li>List unstyled</li>
       <li>List unstyled</li>
       <li>List unstyled</li>
-      <li>List unstyled</li>
     </cdr-list>
 
     <cdr-list
     modifier="unstyled compact">
-      <li>List unstyled - compact</li>
       <li>List unstyled - compact</li>
       <li>List unstyled - compact</li>
       <li>List unstyled - compact</li>

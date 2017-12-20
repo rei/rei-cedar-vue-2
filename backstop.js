@@ -91,7 +91,7 @@ module.exports = {
     html_report: 'backstop_data/html_report',
     ci_report: 'backstop_data/ci_report',
   },
-  asyncCaptureLimit: 10,
+  asyncCaptureLimit: 5,
   asyncCompareLimit: 10,
   engine: 'chrome',
   report: ['browser'],

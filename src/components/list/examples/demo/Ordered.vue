@@ -2,22 +2,9 @@
   <div>
     <h3>Ordered List</h3>
     <cdr-list list-type="ol">
-      <li>List ordered - default</li>
-      <li>List ordered - default
-        <cdr-list
-          list-type="ol"
-          modifier="unstyled">
-          <li>List ordered - nested - unstyled</li>
-          <li>List ordered - nested - unstyled
-            <cdr-list
-              list-type="ol"
-              modifier="disc">
-              <li>List ordered - nested - disc</li>
-              <li>List ordered - nested - disc</li>
-            </cdr-list>
-          </li>
-        </cdr-list>
-      </li>
+      <li>List ordered</li>
+      <li>List ordered</li>
+      <li>List ordered</li>
     </cdr-list>
 
     <cdr-list
@@ -26,6 +13,30 @@
       <li>List ordered - compact</li>
       <li>List ordered - compact</li>
       <li>List ordered - compact</li>
+    </cdr-list>
+
+    <cdr-list
+      list-type="ol"
+      modifier="spread">
+      <li>List ordered - spread</li>
+      <li>List ordered - spread</li>
+      <li>List ordered - spread</li>
+    </cdr-list>
+
+    <cdr-list list-type="ol">
+      <li>List ordered Nested
+        <cdr-list list-type="ol">
+          <li>List ordered - nested</li>
+          <li>List ordered - nested
+            <cdr-list
+              list-type="ol"
+              modifier="numbered">
+              <li>List ordered - nested - numbered</li>
+              <li>List ordered - nested - numbered</li>
+            </cdr-list>
+          </li>
+        </cdr-list>
+      </li>
     </cdr-list>
   </div>
 </template>

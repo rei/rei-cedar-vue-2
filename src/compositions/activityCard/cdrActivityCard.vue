@@ -28,7 +28,7 @@
         <cdr-list
           v-if="snapshot"
           class="cdr-card--activity__snapshot"
-          modifier="inline bulleted"
+          modifier="inline disc compact"
         >
           <li
             v-for="(item, i) in snapshot"
