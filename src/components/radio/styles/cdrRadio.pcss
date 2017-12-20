@@ -1,87 +1,103 @@
 /* ==========================================================================
-   # Radio
-   ========================================================================== */
+  # cdrRadio
+  
+  All values should map to variables in
+  vars/cdrRadio.vars.pcss
+  in order to allow for theming
 
-/*
-* TOC:
-*
-* Base class
-* States
-* Block elements
-*/
+  TOC:
+
+    :Base - Radio
+      :States
+      :Elements
+========================================================================== */
 
 .cdr-radio {
   position: absolute;
   opacity: 0;
 
   /* States
-    ========================================================================== */
+    ---------- */
 
   &:checked + &__label {
     &::after {
-      background-color: $sys-color-radio-selected;
+      background-color: $radio-checked-background-color;
     }
   }
 
   &:checked&:hover + &__label::after {
-    background-color: $sys-color-radio-selected-hover;
+    background-color: $radio-checked-hover-background-color;
   }
 
   &[disabled] + &__label {
-    color: $sys-color-control-text-disabled;
+    color: $radio-disabled-color;
     cursor: default;
 
     &::before {
-      border-color: $sys-color-control-border-disabled;
+      border-color: $radio-disabled-border-color;
     }
   }
 
   &:checked&[disabled] + &__label {
     &::before {
-      border-color: $sys-color-control-selected-disabled-border;
+      border-color: $radio-disabled-checked-border-color;
     }
 
     &::after {
-      background-color: $sys-color-radio-disabled;
+      background-color: $radio-disabled-checked-background-color;
     }
   }
 
   &:focus + &__label::before {
-    box-shadow: 0 0 2px 2px #8dd1ed;
+    box-shadow: $radio-focus-box-shadow;
   }
 
-  /* Block elements
+  /* Elements
     ========================================================================== */
 
-  &__label {
-    @include sys-font-redwood-ui-30 ();
+  /* Label
+    ========== */
 
+  &__label {
+    font-size: $radio-label-font-size;
+    line-height: $radio-label-line-height;
+    text-align: $radio-label-text-align;
+    color: $radio-label-color;
+    font-style: $radio-label-font-style;
+    font-weight: $radio-label-font-weight;
+    font-family: $radio-label-font-family;
     position: relative;
     margin-bottom: 0;
+
+    /* States
+      ---------- */
 
     &:hover {
       cursor: pointer;
     }
 
+    /* Radio Decoration
+    ========== */
+
     &::before {
       content: '';
-      width: $sizing-size-md;
-      height: $sizing-size-md;
-      border: 1px solid $sys-color-control-border;
+      width: $radio-decoration-before-width;
+      height: $radio-decoration-before-height;
+      border: $radio-decoration-before-border;
       border-radius: 50%;
-      margin-right: 10px;
+      background-color: $radio-decoration-before-background-color;
+      margin-right: $radio-decoration-before-margin-right;
       display: inline-block;
       vertical-align: top;
-      background-color: white;
     }
 
     &::after {
       content: '';
       position: absolute;
-      left: calc($sizing-size-md / 4);
-      top: calc($sizing-size-md / 4);
-      width: calc($sizing-size-md / 2);
-      height: calc($sizing-size-md / 2);
+      left: $radio-decoration-after-left;
+      top: $radio-decoration-after-top;
+      width: $radio-decoration-after-width;
+      height: $radio-decoration-after-height;
       border-radius: 50%;
     }
   }
