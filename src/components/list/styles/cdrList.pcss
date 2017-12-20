@@ -1,12 +1,15 @@
 /* ==========================================================================
   # cdrList
 
-  All values should map to variables in vars/cdrList.vars.pcss in order to allow
-  for theming
+  All values should map to variables in 
+  vars/cdrList.vars.pcss 
+  in order to allow for theming
 
-* TOC:
-*
+  TOC:
+
     :Base Styles
+      :Spacing
+      :Nesting
     :Modifiers
       :Style variants
         :Compact
@@ -21,45 +24,44 @@
 
 .cdr-list {
   list-style-type: disc;
-  padding-left: $list-spacing-md;
+  padding-left: $list-padding-left;
 
-  /* Base Styles
-    ========================================================================== */
+  /* spacing
+    ---------- */
+
+  & > li + li {
+    margin-top: $list-spacing-margin-top;
+  }
+
+  /* nesting
+    ---------- */
 
   & > li {
     & > ul,
     & > ol {
-      padding-top: $list-spacing-md;
-      padding-left: $list-spacing-md;
+      margin-top: $list-nesting-margin-top;
     }
-  }
-
-  & > li + li {
-    margin-top: $list-spacing-sm;
   }
 
   /* Style variants
     ========================================================================== */
 
   /* Compact
-     ========== */
+    ========== */
   &--compact > li + li {
-    margin-top: $list-spacing-xs;
+    margin-top: $list-compact-margin-top;
   }
-  
+
+  /* Spread
+    ========== */
+  &--spread > li + li {
+    margin-top: $list-spread-margin-top;
+  }
+
   /* Unstyled
      ========== */
   &--unstyled {
     list-style-type: none;
-    padding-left: $list-spacing-closed;
-
-    & > li + li {
-      margin-top: $list-spacing-md;
-    }
-
-    &.cdr-list--compact > li + li {
-      margin-top: $list-spacing-sm;
-    }
   }
 
   /* Disc
@@ -67,18 +69,21 @@
   &--disc {
     list-style-type: none;
 
-    & > li::before {
+    & > li {
       position: relative;
-      top: 4px;
-      left: -12px;
-      display: block;
-      width: 4px;
-      height: 4px;
-      margin: 0 6px 0 0;
-      content: '';
-      background: $list-disc-color;
-      border-radius: 50%;
-      transform: translate(0, 245%);
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: $list-disc-left;
+        height: $list-disc-height;
+        width: $list-disc-width;
+        background-color: $list-disc-background-color;
+        border-radius: 50%;
+      }
     }
   }
 
@@ -87,19 +92,22 @@
   &--circle {
     list-style-type: none;
     
-    & > li::before {
+    & > li {
       position: relative;
-      top: 4px;
-      left: -15px;
-      display: block;
-      width: 10px;
-      height: 10px;
-      margin: 0 6px 0 0;
-      content: '';
-      background: $list-circle-fill-color;
-      border: 1px solid $list-circle-border-color;
-      border-radius: 50%;
-      transform: translate(0, 125%);
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: $list-circle-left;
+        height: $list-circle-height;
+        width: $list-circle-width;
+        background-color: $list-circle-background-color;
+        border: $list-circle-border;
+        border-radius: 50%;
+      }
     }
   }
 
@@ -107,11 +115,59 @@
      ========== */
   &--inline {
     list-style-type: none;
-    padding: $list-spacing-closed;
+    padding: $list-inline-padding;
+    display: flex;
 
     & > li {
       display: inline-block;
       padding-bottom: 0;
+
+      & + li {
+        margin-top: 0;
+        margin-left: $list-inline-margin-left;
+      }
+
+      &:first-of-type::before {
+        display: none;
+      }
+    }
+
+    /* inline - decorated
+      ---------- */
+    &.cdr-list--disc > li::before,
+    &.cdr-list--circle > li::before {
+      left: $list-inline-decorated-left;
+      transform: translate(-50%, -50%);
+    }
+
+    /* inline - compact
+      ---------- */
+    &.cdr-list--compact {
+      & > li + li {
+        margin-left: $list-inline-compact;
+      }
+
+      /* inline - compact - decorated
+        ---------- */
+      &.cdr-list--disc > li::before,
+      &.cdr-list--circle > li::before {
+        left: $list-inline-compact-decorated-left;
+      }
+    }
+
+    /* inline - spread
+      ---------- */
+    &.cdr-list--spread {
+      & > li + li {
+        margin-left: $list-inline-spread;
+      }
+
+      /* inline - spread - decorated
+        ---------- */
+      &.cdr-list--disc > li::before,
+      &.cdr-list--circle > li::before {
+        left: $list-inline-spread-decorated-left;
+      }
     }
   }
 
@@ -125,13 +181,13 @@
      ========== */
   &--menu {
     list-style-type: none;
-    padding-left: $list-spacing-closed;
+    padding-left: $list-menu-padding-left;
 
     & > li {
       border-bottom-width: 0.1rem;
       border-bottom-style: solid;
       border-color: #222;
-      padding: $list-spacing-closed;
+      padding: $list-menu-li-padding;
 
       & > a {
         font-family: $font-copy-secondary;
@@ -140,27 +196,6 @@
         padding: 1.1rem 1.6rem;
         color: #000;
         display: inline-block;
-      }
-    }
-  }
-  
-  /* Inline Bullet
-     ========== */
-  &--inline.cdr-list--bullet {
-    & > li {
-      padding-right: $list-spacing-closed;
-      list-style-type: none;
-
-      &:not(:last-of-type)::after {
-        width: 4px;
-        height: 4px;
-        margin: 0 6px 0 10px;
-        content: '';
-        background: $list-disc-color;
-        border-radius: 50%;
-        display: inline-block;
-        position: relative;
-        top: -3px;
       }
     }
   }

@@ -6,21 +6,74 @@
 
   TOC:
 
-    :Bullet colors
-    :Spacing
+    :Base Styles
+    :Modifiers
+      :Style variants
+        :Compact
+        :Unstyled
+        :Disc
+        :Circle
+        :Inline
+        :Numbered
+        :Menu
+        :Inline Bullet
 ========================================================================== */
 
-/* Bullet colors */
-$list-disc-color: $sys-color-list-disc;
-$list-circle-fill-color: $sys-color-list-circle;
-$list-circle-border-color: $sys-color-list-circle-border;
+$list-padding-left: $spacing-space-md;
 
-/* Spacing */
-$list-spacing-closed: $spacing-space-closed;
-$list-spacing-xxs: $spacing-space-xxs;
-$list-spacing-xs: $spacing-space-xs;
-$list-spacing-sm: $spacing-space-sm;
-$list-spacing-md: $spacing-space-md;
-$list-spacing-lg: $spacing-space-lg;
-$list-spacing-xl: $spacing-space-xl;
-$list-spacing-xxl: $spacing-space-xxl;
+/* spacing */
+$list-spacing-margin-top: $spacing-space-sm;
+
+/* nesting */
+$list-nesting-margin-top: $spacing-space-sm;
+
+/* Style variants
+  ========================================================================== */
+
+/* Compact
+  ========== */
+$list-compact-margin-top: $spacing-space-xs;
+
+/* Spread
+  ========== */
+$list-spread-margin-top: $spacing-space-md;
+
+/* Disc
+  ========== */
+$list-disc-left: -$list-padding-left;
+$list-disc-height: 4px;
+$list-disc-width: 4px;
+$list-disc-background-color: $sys-color-list-disc;
+
+/* circle
+  ========== */
+$list-circle-left: -$list-padding-left;
+$list-circle-height: 10px;
+$list-circle-width: 10px;
+$list-circle-background-color: $sys-color-list-circle;
+$list-circle-border: 1px solid $sys-color-list-circle-border;
+
+/* inline
+  ========== */
+$list-inline-padding: 0;
+$list-inline-margin-left: $spacing-space-lg;
+
+/* inline - decorated */
+$list-inline-decorated-left: calc(-$list-inline-margin-left / 2);
+
+/* inline - compact */
+$list-inline-compact: $spacing-space-md;
+
+/* inline - compact - decorated */
+$list-inline-compact-decorated-left: calc(-$list-inline-compact / 2);
+
+/* inline - spread */
+$list-inline-spread: $spacing-space-xl;
+
+/* inline - spread - decorated */
+$list-inline-spread-decorated-left: calc(-$list-inline-spread / 2);
+
+/* Menu
+  ========== */
+$list-menu-padding-left: $spacing-space-closed;
+$list-menu-li-padding: $spacing-space-closed;
