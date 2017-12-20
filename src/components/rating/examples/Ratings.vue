@@ -17,12 +17,10 @@
     <cdr-rating
       rating="1.2"
       count="77"
-      modifier="medium"
     />
     <cdr-rating
       rating="4.8"
       count="4561"
-      modifier="medium"
       compact
     />
 

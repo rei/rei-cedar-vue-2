@@ -1,37 +1,45 @@
 /* ==========================================================================
-   # RATING
-   ========================================================================== */
+  # cdrRating
+  
+  All values should map to variables in
+  vars/cdrRating.vars.pcss
+  in order to allow for theming
 
-/*
-* TOC:
-*
-* Base class
-* Block elements
-* Size variants
-*/
+  TOC:
+
+    :Base - Rating
+      :Elements
+        :Icon
+        :Count
+      :Size variants
+========================================================================== */
 
 .cdr-rating {
   display: flex;
   align-items: center;
   position: relative;
 
-  /* Block elements
+  /* Elements
     ========================================================================== */
 
+  /* Icon
+    ========== */
   &__icon {
-    width: 20px;
-    height: 20px;
+    width: $ratings-icon-width;
+    height: $ratings-icon-height;
   }
 
+  /* Count
+    ========== */
   &__count {
-    margin-left: 8px;
-    font-size: $sys-font-redwood-dsp-30-font-size;
-    line-height: $sys-font-redwood-dsp-30-line-height;
-    text-align: $sys-font-redwood-dsp-30-text-align;
-    font-style: $sys-font-redwood-dsp-30-font-style;
-    font-weight: $sys-font-redwood-dsp-30-font-weight;
-    font-family: $sys-font-redwood-dsp-30-font-family;
-    color: $sys-color-rating-text;
+    margin-left: $ratings-count-margin-left;
+    font-size: $ratings-count-font-size;
+    line-height: $ratings-count-line-height;
+    text-align: $ratings-count-text-align;
+    font-style: $ratings-count-font-style;
+    font-weight: $ratings-count-font-weight;
+    font-family: $ratings-count-font-family;
+    color: $ratings-count-color;
   }
 
   &__ratings {
@@ -46,71 +54,79 @@
     display: flex;
   }
 
+  /* Placeholder
+    ========== */
+
   &__placeholder {
-    background-image: svg-load('../../../assets/icons/rei/cdr-star-100.svg', fill=$(sys-color-rating-bg));
+    background-image: svg-load('../../../assets/icons/rei/cdr-star-100.svg', fill=$(ratings-placeholder-fill));
     background-repeat: no-repeat;
   }
 
+  /* Stars
+    ========== */
+
   &__100 {
-    background-image: svg-load('../../../assets/icons/rei/cdr-star-100.svg', fill=$(sys-color-rating));
+    background-image: svg-load('../../../assets/icons/rei/cdr-star-100.svg', fill=$(ratings-star-fill));
     background-repeat: no-repeat;
   }
 
   &__75 {
-    background-image: svg-load('../../../assets/icons/rei/cdr-star-75.svg', fill=$(sys-color-rating));
+    background-image: svg-load('../../../assets/icons/rei/cdr-star-75.svg', fill=$(ratings-star-fill));
     background-repeat: no-repeat;
   }
 
   &__50 {
-    background-image: svg-load('../../../assets/icons/rei/cdr-star-50.svg', fill=$(sys-color-rating));
+    background-image: svg-load('../../../assets/icons/rei/cdr-star-50.svg', fill=$(ratings-star-fill));
     background-repeat: no-repeat;
   }
 
   &__25 {
-    background-image: svg-load('../../../assets/icons/rei/cdr-star-25.svg', fill=$(sys-color-rating));
+    background-image: svg-load('../../../assets/icons/rei/cdr-star-25.svg', fill=$(ratings-star-fill));
     background-repeat: no-repeat;
   }
 
   /* Size variants
     ========================================================================== */
 
+  /* Large
+    ========== */
+
   &--large {
     & .cdr-rating__icon {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  &--medium {
-    & .cdr-rating__icon {
-      width: 16px;
-      height: 16px;
+      width: $ratings-icon-large-width;
+      height: $ratings-icon-large-height;
     }
 
     & .cdr-rating__count {
-      font-size: $sys-font-redwood-dsp-20-font-size;
-      line-height: $sys-font-redwood-dsp-20-line-height;
-      text-align: $sys-font-redwood-dsp-20-text-align;
-      font-style: $sys-font-redwood-dsp-20-font-style;
-      font-weight: $sys-font-redwood-dsp-20-font-weight;
-      font-family: $sys-font-redwood-dsp-20-font-family;
+      margin-left: $ratings-count-large-margin-left;
+      font-size: $ratings-count-large-font-size;
+      line-height: $ratings-count-large-line-height;
+      text-align: $ratings-count-large-text-align;
+      font-style: $ratings-count-large-font-style;
+      font-weight: $ratings-count-large-font-weight;
+      font-family: $ratings-count-large-font-family;
+      color: $ratings-count-large-color;
     }
   }
+
+  /* Small
+    ========== */
 
   &--small {
     & .cdr-rating__icon {
-      width: 14px;
-      height: 14px;
+      width: $ratings-icon-small-width;
+      height: $ratings-icon-small-height;
     }
 
     & .cdr-rating__count {
-      color: $sys-color-rating-text-sm;
-      font-size: $sys-font-redwood-dsp-10-font-size;
-      line-height: $sys-font-redwood-dsp-10-line-height;
-      text-align: $sys-font-redwood-dsp-10-text-align;
-      font-style: $sys-font-redwood-dsp-10-font-style;
-      font-weight: $sys-font-redwood-dsp-10-font-weight;
-      font-family: $sys-font-redwood-dsp-10-font-family;
+      margin-left: $ratings-count-small-margin-left;
+      font-size: $ratings-count-small-font-size;
+      line-height: $ratings-count-small-line-height;
+      text-align: $ratings-count-small-text-align;
+      font-style: $ratings-count-small-font-style;
+      font-weight: $ratings-count-small-font-weight;
+      font-family: $ratings-count-small-font-family;
+      color: $ratings-count-small-color;
     }
   }
 }
