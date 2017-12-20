@@ -1,29 +1,33 @@
 /* ==========================================================================
-   # Select
-   ========================================================================== */
+  # cdrSelect
+  
+  All values should map to variables in
+  vars/cdrSelect.vars.pcss
+  in order to allow for theming
 
-/*
-* TOC:
-*
-* Base class
-* State
-* Style variants
-*/
+  TOC:
+
+    :Base - Select
+      :States
+========================================================================== */
 
 .cdr-select {
-  @include sys-font-redwood-ui-30 ();
-  
+  font-size: $select-font-size;
+  line-height: $select-line-height;
+  text-align: $select-text-align;
+  color: $select-color;
+  font-style: $select-font-style;
+  font-weight: $select-font-weight;
+  font-family: $select-font-family;
   width: 100%;
   display: block;
-  border-width: 1px;
-  border-style: solid;
-  height: calc(($sizing-size-sm-stretch * 2) + $sys-font-redwood-ui-30-line-height);
-  border-color: $sys-color-input-border;
-  border-radius: $radius-input;
-  background-color: $sys-color-input;
+  border: $select-border;
+  border-radius: $select-border-radius;
+  height: $select-height;
+  background-color: $select-background-color;
 
   /* States
-    ========================================================================== */
+    ---------- */
 
   &[disabled] {
     background-color: $sys-color-input-disabled;
