@@ -7,6 +7,7 @@
 
   TOC:
 
+    :Base - Label
     :Base - Input container
     :Base - Input
       :States
@@ -22,6 +23,26 @@
         :Cropping
       :Elements
 ========================================================================== */
+
+/* ==========================================================================
+  # INPUT LABEL
+  ========================================================================== */
+.cdr-label {
+  color: $input-label-color-text;
+  font-size: $input-label-font-size;
+  line-height: $input-label-line-height;
+  font-style: $input-label-font-style;
+  font-weight: $input-label-font-weight;
+  text-align: $input-label-text-align;
+
+  &--error {
+    color: $input-label-error-color-text;
+  }
+
+  &--disabled {
+    color: $input-label-disabled-color-text;
+  }
+}
 
 /* ==========================================================================
   # INPUT CONTAINER
@@ -41,7 +62,7 @@
   font-size: $input-font-size;
   line-height: $input-line-height;
   text-align: $input-text-align;
-  color: $input-color;
+  color: $input-color-text;
   font-style: $input-font-style;
   font-weight: $input-font-weight;
   font-family: $input-font-family;
@@ -60,6 +81,7 @@
 
   &[disabled] {
     background-color: $input-disabled-background-color;
+    color: $input-disabled-text-color;
   }
 
   /* Style variants
@@ -70,12 +92,14 @@
   }
 
   &--error {
+    background-color: $input-error-background-color;
     border-color: $input-error-border-color;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   &--warn {
+    background-color: $input-warning-background-color;
     border-color: $input-warning-border-color;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -99,7 +123,9 @@
 
   &::placeholder {
     font-style: italic;
-    color: $sys-color-input-placeholder-text;
+    font-size: $input-size-placeholder-text;
+    line-height: $input-line-height-placeholder;
+    color: $input-color-placeholder-text;
   }
 
   /* Block elements
