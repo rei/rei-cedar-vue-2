@@ -7,15 +7,12 @@
 
   TOC:
 
-    :Base
+    :Base - Checkbox
       :States
-    :Elements
-      :Label
-        :Box
+      :Elements
+        :Label
+          :Box
 ========================================================================== */
-
-$checkbox-position: absolute;
-$checkbox-opacity: 0;
 
 /* States
   ---------- */
@@ -31,12 +28,10 @@ $checkbox-checked-hover-border-color: $sys-color-control-selected-hover-border;
 
 /* disabled */
 $checkbox-disabled-color: $sys-color-control-text-disabled;
-$checkbox-disabled-cursor: default;
 $checkbox-disabled-border-color: $sys-color-control-border-disabled;
 
 /* disabled & checked */
 $checkbox-disabled-checked-color: $sys-color-control-text-disabled;
-$checkbox-disabled-checked-cursor: default;
 $checkbox-disabled-checked-background-color: $sys-color-control-selected-disabled;
 $checkbox-disabled-checked-border-color: $sys-color-control-selected-disabled-border;
 
@@ -45,12 +40,6 @@ $checkbox-focus-box-shadow: 0 0 2px 2px #8dd1ed;
 
 /* Elements
   ========================================================================== */
-
-/* States
-  ---------- */
-
-/* hover */
-$checkbox-label-hover-cursor: pointer;
 
 /* Label
   ========== */
@@ -61,10 +50,9 @@ $checkbox-label-color: $sys-font-redwood-ui-30-color;
 $checkbox-label-font-style: $sys-font-redwood-ui-30-font-style;
 $checkbox-label-font-weight: $sys-font-redwood-ui-30-font-weight;
 $checkbox-label-font-family: $sys-font-redwood-ui-30-font-family;
-$checkbox-label-position: relative;
 $checkbox-label-margin-bottom: 0;
 
-/* Box
+/* Box Decoration
   ========== */
 
 /* before */
@@ -73,13 +61,10 @@ $checkbox-box-before-height: $sizing-size-md;
 $checkbox-box-before-border: 1px solid $sys-color-control-border;
 $checkbox-box-before-border-radius: 2px;
 $checkbox-box-before-margin-right: 10px;
-$checkbox-box-before-display: inline-block;
-$checkbox-box-before-vertical-align: top;
 $checkbox-box-before-background-color: white;
 
 /* after */
-$checkbox-box-after-position: absolute;
 $checkbox-box-after-left: 2px;
 $checkbox-box-after-top: 2px;
-$checkbox-box-after-width: calc($sizing-size-md - 4px);
-$checkbox-box-after-height: calc($sizing-size-md - 4px);
+$checkbox-box-after-width: calc($checkbox-box-before-width - 4px);
+$checkbox-box-after-height: calc($checkbox-box-before-height - 4px);

@@ -10,7 +10,7 @@ describe('cdrList.vue', () => {
   it('renders an ol', () => {
     const wrapper = shallow(cdrList, {
       propsData: {
-        type: 'ol',
+        listType: 'ol',
       }
     });
     expect(wrapper.is('ol')).toBe(true);

@@ -8,6 +8,7 @@ let defs = [];
 const scenarioDefaults = {
   url: 'http://localhost:8080',
   delay: 100,
+  readyEvent: null,
   onReadyScript: 'onReady.js',
 };
 
@@ -46,6 +47,7 @@ function createHoverScenario(def) {
 //   { ignore: './src/**/node_modules/**' },
 // );
 const files = glob.sync('./src/**/*.backstop.js', { ignore: './src/**/node_modules/**' });
+
 files.forEach((file) => {
   defs = defs.concat(require(file));
 });
