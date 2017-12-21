@@ -3,7 +3,6 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var mainPostConfig = require('./mainPost.conf.js')
-var isRelease = process.env.NODE_ENV === 'release'
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)

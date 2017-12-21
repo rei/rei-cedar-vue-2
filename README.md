@@ -29,10 +29,6 @@ Runs locally for development. Has hot reloading, linting, browsersync, and other
 
 Creates an exported bundle (index.html, compiled .js, and compiled .css) that reflects the state of dev to the `dist/` directory for something like gh-pages.
 
-`npm run release`
-
-Export the component library to a umd js bundle and compiled css in the `release/` directory for use in other projects. This creates the delivery bundle. Files from /static are copied here as is.
-
 ## Build System
 
 The [webpack](https://webpack.github.io/) build system is taken largely from the [Vue webpack template](https://github.com/vuejs-templates/webpack) which has its own set of docs that are a good reference.
@@ -149,13 +145,11 @@ build                           #Contains scripts and configs for the webpack bu
 |-- dev-client.js               #For hot module reloading in dev
 |-- dev-server.js               #Config for express dev server
 |-- mainPost.conf.js            #Webpack loader config for processing .postcss files for release vs dev
-|-- release.js                  #Release build script - the entry point for `npm run release`
 |-- utils.js                    #From vue webpack template to mostly automate which loaders need to be used since vue supports scss, stylus, postcss, etc.
 |-- vue-loader.conf.js          #Config object for vue webpack loader (vue-loader)
 |-- webpack.base.conf.js        #Webpack config that the others all use as a foundation - mostly just defines the loaders and entry
 |-- webpack.dev.conf.js         #Webpack config options specific to dev
 |-- webpack.prod.conf.js        #Webpack config options specific to build/prod
-|-- webpack.release.conf.js     #Webpack config options specific to release
 |-- webpack.test.conf.js        #Webpack config options specific to unit/e2e test
 config                          #Configuration files used in the webpack build steps (most of this is from the vue webpack template)
 |-- dev.env.js                  #Setting NODE_ENV for dev
@@ -166,7 +160,6 @@ config                          #Configuration files used in the webpack build s
 %dist/                          #Results from `npm run build` end up here
 %dist-docs/                     #Results from `npm run build:docs` end up here
 docs/                           #Location for general documentation guidelines that will be used in the styleguide
-%release/                       #Results from `npm run release` end up here
 src/                            #Source files
 |-- assets/                     #For things that will be included like images, fonts, icons, etc. (check the vue webpack template docs)
   |-- icons/                    #`npm run get-icons` stores results here then creates the sprite from them. Also available for use individually via CSS, etc.
@@ -214,8 +207,6 @@ utils/                          #Utility node scripts
 .stylelintrc                    #Config for stylelint
 .travis.yml                     #Holding onto it from v1, will need to be updated
 backstop.js                     #Main config for backstop. Global settings like viewport sizes and paths are set here. 
-components.js                   #Exposes components individually from release
-directives.js                   #Exposes directives individually from release
 index.html                      #app.vue is bootstrapped here and is used for both dev and build -- all css and js files will be injected automatically
 package.json                    #Everything for npm
 postcss.config.js               #Config for postcss -- add new postcss plugins here
