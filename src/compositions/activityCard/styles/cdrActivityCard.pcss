@@ -1,81 +1,103 @@
 /* ==========================================================================
-   # CARD
-   ========================================================================== */
+  # cdrActivityCard
+  
+  All values should map to variables in
+  vars/cdrActivityCard.vars.pcss
+  in order to allow for theming
 
-/*
-* TOC:
-*
-* Base class
-* Style variants
-* Style variants
-* Block elements
-*/
+  TOC:
+
+    :Base - ActivityCard
+      :States
+    :Elements
+      :Action
+      :Snapshot
+========================================================================== */
 
 .cdr-card--activity {
   position: relative;
   transition: transform 500ms ease, box-shadow 500ms ease;
 
+  /* States
+    ---------- */
+
   &:hover {
-    box-shadow: $shadow-prominence-20;
+    box-shadow: $activity-card-hover-box-shadow;
     transform: scale(1.006);
   }
 
-  /* Style variants
+  /* Elements
     ========================================================================== */
-
-  &--media {
-    flex-grow: 1;
-  }
-
-  /* Block Elements
-    ========================================================================== */
+  
+  /* Action
+    ========== */
 
   &__action {
     position: relative;
     z-index: 1;
   }
 
+  /* Snapshot
+    ========== */
+
   &__snapshot {
-    @include sys-font-redwood-dsp-20 ();
-
-    margin-top: $spacing-space-xxs;
-    margin-bottom: $spacing-space-xxs;
-    color: $sys-color-activity-card-subtext;
-
-    &__item {
-      padding: 0;
-    }
+    font-size: $activity-card-snapshot-font-size;
+    line-height: $activity-card-snapshot-line-height;
+    text-align: $activity-card-snapshot-text-align;
+    font-style: $activity-card-snapshot-font-style;
+    font-weight: $activity-card-snapshot-font-weight;
+    font-family: $activity-card-snapshot-font-family;
+    color: $activity-card-snapshot-color;
+    margin-top: $activity-card-snapshot-margin-top;
+    margin-bottom: $activity-card-snapshot-margin-bottom;
   }
 
-  &__body {
-    flex: 1;
-    display: block;
-  }
+  /* Label, Location
+    ========== */
 
   &__label,
   &__location {
-    @include sys-font-redwood-dsp-10 ();
-
-    color: $sys-color-activity-card-subtext;
-    margin-top: $spacing-space-xxs;
-    margin-bottom: $spacing-space-xxs;
+    font-size: $activity-card-label-font-size;
+    line-height: $activity-card-label-line-height;
+    text-align: $activity-card-label-text-align;
+    font-style: $activity-card-label-font-style;
+    font-weight: $activity-card-label-font-weight;
+    font-family: $activity-card-label-font-family;
+    color: $activity-card-label-color;
+    margin-top: $activity-card-label-margin-top;
+    margin-bottom: $activity-card-label-margin-bottom;
   }
 
-  &__title {
-    @include sys-font-spruce-dsp-40 ();
+  /* Title
+    ========== */
 
-    margin-top: $spacing-space-xxs;
-    margin-bottom: $spacing-space-xxs;
+  &__title {
+    font-size: $activity-card-title-font-size;
+    line-height: $activity-card-title-line-height;
+    text-align: $activity-card-title-text-align;
+    letter-spacing: $activity-card-title-letter-spacing;
+    font-style: $activity-card-title-font-style;
+    font-weight: $activity-card-title-font-weight;
+    font-family: $activity-card-title-font-family;
+    color: $activity-card-title-color;
+    margin-top: $activity-card-title-margin-top;
+    margin-bottom: $activity-card-title-margin-bottom;
+
+    /* Action
+      ---------- */
 
     &--action {
       position: static;
       transition: color 500ms ease;
 
+      /* States
+      ---------- */
+
       &:hover,
       &:focus,
       &:active {
-        color: $sys-color-link;
-        text-decoration: none;
+        color: $activity-card-title-action-hover-color;
+        text-decoration: $activity-card-title-action-hover-text-decoration;
       }
 
       &::before {
@@ -94,6 +116,6 @@
   }
 
   &__rating {
-    margin-bottom: $spacing-space-sm;
+    margin-bottom: $activity-card-rating-margin-bottom;
   }
 }
