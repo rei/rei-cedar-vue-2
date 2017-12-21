@@ -13,7 +13,11 @@ module.exports = {
     'postcss-responsive-type': {},
     'postcss-pxtorem': {
       rootValue: 10,
+      unitPrecision: 5,
+      propList: ['*'],
       selectorBlackList: [/^html$/],
+      mediaQuery: false,
+      minPixelValue: 0,
     },
     'postcss-inline-svg': {},
     autoprefixer: {},
