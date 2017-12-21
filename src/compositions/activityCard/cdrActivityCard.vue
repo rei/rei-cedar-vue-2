@@ -54,11 +54,6 @@
   </cdr-card>
 </template>
 
-<style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/cdrActivityCard.pcss';
-</style>
-
 <script>
 import { CdrCard } from '@rei-co-op/cedar-card';
 import { CdrHeading } from '@rei-co-op/cedar-heading';
@@ -157,3 +152,8 @@ export default {
 };
 </script>
 
+<style>
+  @import '../../css/settings/_index.pcss';
+  @import 'styles/vars/cdrActivityCard.vars.pcss';
+  @import 'styles/cdrActivityCard.pcss';
+</style>
