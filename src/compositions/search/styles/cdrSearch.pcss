@@ -1,14 +1,35 @@
+/* ==========================================================================
+  # cdrSearch
+  
+  All values should map to variables in
+  vars/cdrSearch.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - Search
+    :Elements
+      :Icon
+========================================================================== */
+
 .cdr-search {
   display: flex;
+
+  /* Elements
+    ========================================================================== */
+  
 
   &__input {
     flex-grow: 1;
   }
 
+  /* Icon
+    ========== */
+
   &__icon {
     display: block;
-    height: 16px;
-    width: 16px;
-    background-image: svg-load('../../../assets/icons/rei/cdr-spyglass.svg', fill=$(sys-color-search-icon));
+    height: $search-icon-height;
+    width: $search-icon-width;
+    background-image: svg-load('../../../assets/icons/rei/cdr-spyglass.svg', fill=$(search-icon-fill));
   }
 }
