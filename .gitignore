@@ -1,4 +1,3 @@
-# Ignore docs files
 # Numerous always-ignore extensions
 *.diff
 *.err
@@ -30,8 +29,6 @@ Thumbs.db
 .vscode
 jsconfig.json
 
-
-
 # Folders to ignore
 node_modules
 dist-docs
@@ -44,10 +41,6 @@ backstop_data/html_report
 test/e2e/reports
 test/unit/coverage
 
-src/components/dist/static/js/*.js
-src/components/dist/static/js/*.js.map
-
 # Build assets
-src/components/**/dist/*
-src/compositions/**/dist/*
-src/bundles/**/dist/*
+src/**/dist/*
+src/**/styles/themes/*
