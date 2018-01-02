@@ -44,7 +44,7 @@ module.exports = merge(baseWebpackConfig, {
       inject: true
     }),
     new StyleLintPlugin({
-      files: ['src/**/main.postcss', 'src/**/*.vue']
+      files: ['**/*.postcss', '**/*.pcss', '**/*.vue'],
     }),
     new FriendlyErrorsPlugin(),
     new BrowserSyncPlugin(

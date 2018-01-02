@@ -1,7 +1,7 @@
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -43,6 +43,9 @@ module.exports = {
     umdNamedDefine: true,
   },
   plugins: [
+    new StyleLintPlugin({
+      files: ['**/*.postcss', '**/*.pcss', '**/*.vue']
+    }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, `..${cedarPackageFolder}/styles/themes/*`),

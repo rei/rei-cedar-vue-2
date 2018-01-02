@@ -14,7 +14,7 @@ fs.emptyDirSync(distDir);
 
 // Compile css
 exec(`postcss ${cssDir}/main.postcss -o ${distDir}/cedar-core.css`, () => {
-  console.log(chalk.green('Compiled cedar-core.css'));
+  console.log(chalk.green('Compiled cedar-core.css')); // eslint-disable-line no-console
 });
 
 // copy static files
@@ -25,7 +25,7 @@ fs.copySync(staticDir, distDir, {
     }
     const result = src.indexOf('.gitkeep') < 0;
     if (result) {
-      console.log(chalk.green(`Copied ${src}`));
+      console.log(chalk.green(`Copied ${src}`)); // eslint-disable-line no-console
       return true;
     }
     return false;

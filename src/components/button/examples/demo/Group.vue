@@ -9,7 +9,7 @@
 import Components from 'Components/_index';
 
 export default {
-  name: 'group',
+  name: 'Group',
   components: Components,
 };
 </script>
