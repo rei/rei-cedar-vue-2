@@ -23,7 +23,7 @@ describe('cdrA.vue', () => {
         target: '_self',
       },
     });
-    expect(wrapper.hasAttribute('target', '_self')).toBe(true);
+    expect(wrapper.attributes().target).toBe('_self');
   });
 
   it('sets rel attr correctly', () => {
@@ -32,7 +32,7 @@ describe('cdrA.vue', () => {
         rel: 'nofollow',
       },
     });
-    expect(wrapper.hasAttribute('rel', 'nofollow')).toBe(true);
+    expect(wrapper.attributes().rel).toBe('nofollow');
   });
 
   it('computes target="_blank" rel attr correctly', () => {
@@ -41,7 +41,7 @@ describe('cdrA.vue', () => {
         target: '_blank',
       },
     });
-    expect(wrapper.hasAttribute('rel', 'noopener noreferrer')).toBe(true);
+    expect(wrapper.attributes().rel).toBe('noopener noreferrer');
   });
 
   it('computes base class correctly', () => {
@@ -50,7 +50,7 @@ describe('cdrA.vue', () => {
         modifier: 'primary',
       },
     });
-    expect(wrapper.hasClass('cdr-link')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-link');
   });
 
   it('computes link as button base class correctly', () => {
@@ -59,6 +59,6 @@ describe('cdrA.vue', () => {
         modifier: 'primary, button',
       },
     });
-    expect(wrapper.hasClass('cdr-button')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-button');
   });
 });

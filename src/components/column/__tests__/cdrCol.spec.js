@@ -22,7 +22,7 @@ describe('cdrCol.vue', () => {
 
   it('has the correct block class', () => {
     const wrapper = shallow(cdrCol);
-    expect(wrapper.hasClass('cdr-col')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-col');
   });
 
   it('sets span props correctly', () => {
@@ -49,10 +49,10 @@ describe('cdrCol.vue', () => {
         spanSm: '2',
       }
     });
-    expect(wrapper.hasClass('cdr-col_span1')).toBe(true);
-    expect(wrapper.hasClass('cdr-col_span2@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-col_span2@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-col_span2@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-col_span1');
+    expect(wrapper.classes()).toContain('cdr-col_span2@md');
+    expect(wrapper.classes()).toContain('cdr-col_span2@lg');
+    expect(wrapper.classes()).toContain('cdr-col_span2@sm');
   });
 
   it('sets offsetLeft props correctly', () => {
@@ -79,10 +79,10 @@ describe('cdrCol.vue', () => {
         offsetLeftSm: '2',
       }
     });
-    expect(wrapper.hasClass('cdr-col--offsetLeft1')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--offsetLeft2@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--offsetLeft2@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--offsetLeft2@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-col--offsetLeft1');
+    expect(wrapper.classes()).toContain('cdr-col--offsetLeft2@md');
+    expect(wrapper.classes()).toContain('cdr-col--offsetLeft2@lg');
+    expect(wrapper.classes()).toContain('cdr-col--offsetLeft2@sm');
   });
 
   it('sets offsetRight props correctly', () => {
@@ -109,10 +109,10 @@ describe('cdrCol.vue', () => {
         offsetRightSm: '2',
       }
     });
-    expect(wrapper.hasClass('cdr-col--offsetRight1')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--offsetRight2@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--offsetRight2@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--offsetRight2@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-col--offsetRight1');
+    expect(wrapper.classes()).toContain('cdr-col--offsetRight2@md');
+    expect(wrapper.classes()).toContain('cdr-col--offsetRight2@lg');
+    expect(wrapper.classes()).toContain('cdr-col--offsetRight2@sm');
   });
 
   it('sets alignSelf props correctly', () => {
@@ -139,10 +139,10 @@ describe('cdrCol.vue', () => {
         alignSelfSm: 'top',
       }
     });
-    expect(wrapper.hasClass('cdr-col--top')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--top@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--top@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--top@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-col--top');
+    expect(wrapper.classes()).toContain('cdr-col--top@md');
+    expect(wrapper.classes()).toContain('cdr-col--top@lg');
+    expect(wrapper.classes()).toContain('cdr-col--top@sm');
   });
 
   it('sets hide props correctly', () => {
@@ -169,10 +169,10 @@ describe('cdrCol.vue', () => {
         hideSm: 'down',
       }
     });
-    expect(wrapper.hasClass('cdr-col--hide-down')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--hide@md-down')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--hide@lg-down')).toBe(true);
-    expect(wrapper.hasClass('cdr-col--hide@sm-down')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-col--hide-down');
+    expect(wrapper.classes()).toContain('cdr-col--hide@md-down');
+    expect(wrapper.classes()).toContain('cdr-col--hide@lg-down');
+    expect(wrapper.classes()).toContain('cdr-col--hide@sm-down');
   });
 
   it('sets isRow prop correctly', () => {
@@ -190,6 +190,6 @@ describe('cdrCol.vue', () => {
         isRow: true,
       }
     });
-    expect(wrapper.hasClass('cdr-row')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-row');
   });
 });

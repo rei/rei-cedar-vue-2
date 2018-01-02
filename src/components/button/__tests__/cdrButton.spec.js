@@ -11,7 +11,7 @@ describe('cdrButton.vue', () => {
         theme: 'red'
       },
     });
-    expect(wrapper.hasClass('theme-red-cdr-button')).toBe(true);
+    expect(wrapper.classes()).toContain('theme-red-cdr-button');
   });
 
   it('renders a button', () => {
@@ -21,7 +21,7 @@ describe('cdrButton.vue', () => {
 
   it('sets default type prop correctly', () => {
     const wrapper = shallow(cdrButton);
-    expect(wrapper.hasAttribute('type', 'button')).toBe(true);
+    expect(wrapper.attributes().type).toBe('button');
   });
 
   it('sets type attr correctly', () => {
@@ -30,7 +30,7 @@ describe('cdrButton.vue', () => {
         type: 'reset',
       },
     });
-    expect(wrapper.hasAttribute('type', 'reset')).toBe(true);
+    expect(wrapper.attributes().type).toBe('reset');
   });
 
   it('has default click', () => {
@@ -56,7 +56,7 @@ describe('cdrButton.vue', () => {
         modifier: 'primary',
       },
     });
-    expect(wrapper.hasClass('cdr-button')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-button');
   });
 
   it('computes button as link base class correctly', () => {
@@ -65,7 +65,7 @@ describe('cdrButton.vue', () => {
         modifier: 'primary, link',
       },
     });
-    expect(wrapper.hasClass('cdr-link')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-link');
   });
 
   

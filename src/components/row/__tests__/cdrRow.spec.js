@@ -34,10 +34,10 @@ describe('cdrRow.vue', () => {
         colsSm: '2',
       }
     });
-    expect(wrapper.hasClass('cdr-row_row1')).toBe(true);
-    expect(wrapper.hasClass('cdr-row_row2@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-row_row2@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-row_row2@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-row_row1');
+    expect(wrapper.classes()).toContain('cdr-row_row2@md');
+    expect(wrapper.classes()).toContain('cdr-row_row2@lg');
+    expect(wrapper.classes()).toContain('cdr-row_row2@sm');
   });
 
   it('computes justify classes correctly', () => {
@@ -49,10 +49,10 @@ describe('cdrRow.vue', () => {
         justifySm: 'center',
       }
     });
-    expect(wrapper.hasClass('cdr-row--center')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--center@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--center@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--center@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-row--center');
+    expect(wrapper.classes()).toContain('cdr-row--center@md');
+    expect(wrapper.classes()).toContain('cdr-row--center@lg');
+    expect(wrapper.classes()).toContain('cdr-row--center@sm');
   });
 
   it('computes align classes correctly', () => {
@@ -64,10 +64,10 @@ describe('cdrRow.vue', () => {
         alignSm: 'top',
       }
     });
-    expect(wrapper.hasClass('cdr-row--top')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--top@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--top@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--top@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-row--top');
+    expect(wrapper.classes()).toContain('cdr-row--top@md');
+    expect(wrapper.classes()).toContain('cdr-row--top@lg');
+    expect(wrapper.classes()).toContain('cdr-row--top@sm');
   });
 
   it('computes gutter classes correctly', () => {
@@ -79,10 +79,10 @@ describe('cdrRow.vue', () => {
         gutterSm: 'none',
       }
     });
-    expect(wrapper.hasClass('cdr-row--gutter-none')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--gutter-none@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--gutter-none@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--gutter-none@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-row--gutter-none');
+    expect(wrapper.classes()).toContain('cdr-row--gutter-none@md');
+    expect(wrapper.classes()).toContain('cdr-row--gutter-none@lg');
+    expect(wrapper.classes()).toContain('cdr-row--gutter-none@sm');
   });
 
   it('computes vertical classes correctly', () => {
@@ -94,10 +94,10 @@ describe('cdrRow.vue', () => {
         verticalSm: true,
       }
     });
-    expect(wrapper.hasClass('cdr-row--column')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--column@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--column@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--column@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-row--column');
+    expect(wrapper.classes()).toContain('cdr-row--column@md');
+    expect(wrapper.classes()).toContain('cdr-row--column@lg');
+    expect(wrapper.classes()).toContain('cdr-row--column@sm');
   });
 
   it('computes wrap classes correctly', () => {
@@ -108,9 +108,9 @@ describe('cdrRow.vue', () => {
         wrapSm: true,
       }
     });
-    expect(wrapper.hasClass('cdr-row--wrap@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--wrap@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--wrap@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-row--wrap@md');
+    expect(wrapper.classes()).toContain('cdr-row--wrap@lg');
+    expect(wrapper.classes()).toContain('cdr-row--wrap@sm');
   });
 
   it('computes nowrap classes correctly', () => {
@@ -122,9 +122,9 @@ describe('cdrRow.vue', () => {
         nowrapSm: true,
       }
     });
-    expect(wrapper.hasClass('cdr-row--noWrap')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--noWrap@md')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--noWrap@lg')).toBe(true);
-    expect(wrapper.hasClass('cdr-row--noWrap@sm')).toBe(true);
+    expect(wrapper.classes()).toContain('cdr-row--noWrap');
+    expect(wrapper.classes()).toContain('cdr-row--noWrap@md');
+    expect(wrapper.classes()).toContain('cdr-row--noWrap@lg');
+    expect(wrapper.classes()).toContain('cdr-row--noWrap@sm');
   });
 });

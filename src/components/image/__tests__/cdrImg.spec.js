@@ -21,22 +21,13 @@ describe('cdrImg.vue', () => {
     expect(wrapper.is('div')).toBe(true);
   });
 
-  // it('sets src prop correctly', () => {
-  //   const wrapper = shallow(cdrImg, {
-  //     propsData: {
-  //       src: 'http://via.placeholder.com/350x150',
-  //     }
-  //   });
-  //   expect(wrapper.vm.$props.src).toBe('http://via.placeholder.com/350x150');
-  // });
-
   it('sets the src attr correctly', () => {
     const wrapper = shallow(cdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
       }
     });
-    expect(wrapper.hasAttribute('src', 'http://via.placeholder.com/350x150')).toBe(true);
+    expect(wrapper.attributes().src).toBe('http://via.placeholder.com/350x150');
   });
 
   it('sets the src attr correctly in a media frame', () => {
@@ -46,7 +37,7 @@ describe('cdrImg.vue', () => {
         ratio: 'square',
       }
     });
-    expect(wrapper.find('.cdr-media-frame__image').hasAttribute('src', 'http://via.placeholder.com/350x150')).toBe(true);
+    expect(wrapper.find('.cdr-media-frame__image').attributes().src).toBe('http://via.placeholder.com/350x150');
   });
 
   it('sets the alt attr correctly', () => {
@@ -56,7 +47,7 @@ describe('cdrImg.vue', () => {
         alt: 'test alt',
       }
     });
-    expect(wrapper.hasAttribute('alt', 'test alt')).toBe(true);
+    expect(wrapper.attributes().alt).toBe('test alt');
   });
 
   it('sets the alt attr correctly in a media frame', () => {
@@ -67,7 +58,7 @@ describe('cdrImg.vue', () => {
         alt: 'test alt',
       }
     });
-    expect(wrapper.find('.cdr-media-frame__image').hasAttribute('alt', 'test alt')).toBe(true);
+    expect(wrapper.find('.cdr-media-frame__image').attributes().alt).toBe('test alt');
   });
 
   it('sets the ratio prop correctly', () => {
@@ -117,8 +108,8 @@ describe('cdrImg.vue', () => {
         },
       }
     });
-    expect(wrapper.hasClass('lazy-image')).toBe(true);
-    expect(wrapper.hasAttribute('data-src-lazy', 'http://via.placeholder.com/350')).toBe(true);
+    expect(wrapper.classes()).toContain('lazy-image');
+    expect(wrapper.attributes()['data-src-lazy']).toBe('http://via.placeholder.com/350');
   });
 
 });
