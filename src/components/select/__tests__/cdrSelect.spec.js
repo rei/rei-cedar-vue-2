@@ -1,6 +1,6 @@
 import { mount } from 'avoriaz';
 import selectComp from '@/components/select/cdrSelect';
-import { toArray } from 'lodash';
+import toArray from 'lodash/toArray';
 
 describe('cdrSelect.vue', () => {
   it('renders a label element', () => {

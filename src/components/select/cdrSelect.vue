@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { toArray } from 'lodash';
+import toArray from 'lodash/toArray';
 
 export default {
   name: 'cdr-select',
