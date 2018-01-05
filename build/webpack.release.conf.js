@@ -8,6 +8,7 @@ var CopyWebpackPlugin = require( 'copy-webpack-plugin' )
 var ExtractTextPlugin = require( 'extract-text-webpack-plugin' )
 var OptimizeCSSPlugin = require( 'optimize-css-assets-webpack-plugin' )
 var ExtractCssChunks = require( 'extract-css-chunks-webpack-plugin' )
+var WebpackNodeExternals = require( 'webpack-node-externals' )
 
 var env = process.env.NODE_ENV === 'testing' ?
     require( '../config/test.env' ) :
@@ -20,25 +21,16 @@ var webpackConfig = merge( baseWebpackConfig, {
             extract: true
         } )
     },
+    externals: [WebpackNodeExternals()],
     devtool: config.release.productionSourceMap ? '#source-map' : false,
     output: {
         path: config.release.assetsRoot,
         filename: 'cedar.js',
         publicPath: config.release.assetsPublicPath,
-        library: 'Cedar',
-        libraryTarget: 'umd',
+        libraryTarget: 'commonjs2',
         umdNamedDefine: true
     },
     plugins: [
-        // http://vuejs.github.io/vue-loader/en/workflow/production.html
-        new webpack.DefinePlugin( {
-            'process.env': env
-        } ),
-        new webpack.optimize.UglifyJsPlugin( {
-            compress: {
-                warnings: false
-            }
-        } ),
         // extract css into separate files
         new ExtractCssChunks('cedar-core.css'),
         new ExtractTextPlugin('cedar-components.css'),
