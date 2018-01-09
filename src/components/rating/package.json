@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-rating.js",
+  "style": "dist/cdr-rating.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "component": "rating",

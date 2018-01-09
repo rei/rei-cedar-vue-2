@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-radio.js",
+  "style": "dist/cdr-radio.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "component": "radio",

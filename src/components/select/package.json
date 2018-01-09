@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-select.js",
+  "style": "dist/cdr-select.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "component": "select",

@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-activity-card.js",
+  "style": "dist/cdr-activity-card.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "composition": "activityCard",

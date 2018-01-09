@@ -3,7 +3,8 @@
   "packages": [
     "src/components/*",
     "src/compositions/*",
-    "src/bundles/*"
+    "src/bundles/*",
+    "src/styles/*"
   ],
   "npmClient": "yarn",
   "version": "independent"

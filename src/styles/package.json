@@ -6,6 +6,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cedar-core.css",
+  "style": "dist/cedar-core.css",
   "config": {
     "buildConfig": "webpack.styles.conf"
   },

@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-card.js",
+  "style": "dist/cdr-card.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "component": "card",

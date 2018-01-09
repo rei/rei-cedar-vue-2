@@ -6,6 +6,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-base-components.js",
+  "style": "dist/cdr-base-components.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "bundle": "baseComponents",

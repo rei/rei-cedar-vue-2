@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/{NAME-TAGNAME}.js",
+  "style": "dist/{NAME-TAGNAME}.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "component": "{NAME-CAMEL}",

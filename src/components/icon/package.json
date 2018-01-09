@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-icon.js",
+  "style": "dist/cdr-icon.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "component": "icon",

@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-checkbox.js",
+  "style": "dist/cdr-checkbox.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "component": "checkbox",
