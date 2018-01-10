@@ -67,7 +67,6 @@ inquirer.prompt(QUESTIONS).then((answers) => {
 
   // go through files to update values
   const files = walk(outDir);
-  const newName = `Cdr${pascalName}`;
   files.forEach((file) => {
     if (fs.lstatSync(file.path).isDirectory()) {
       return;
@@ -76,7 +75,8 @@ inquirer.prompt(QUESTIONS).then((answers) => {
     let filePath = file.path;
     // rename files that need it
     if (file.path.indexOf('[name]') > 0) {
-      filePath = file.path.replace(/\[name\]/, newName);
+      filePath = file.path.replace(/\[name\]/, compName);
+      filePath = file.path.replace(/\[ex-name\]/, pascalName);
       fs.renameSync(file.path, filePath);
     }
 
