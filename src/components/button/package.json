@@ -18,6 +18,7 @@
     "build:theme": "node ../../../utils/extractTheme.js"
   },
   "peerDependencies": {
+    "@rei-co-op/cedar-anchor": "^0.0.6",
     "@rei-co-op/cedar-core-style": "^0.0.2",
     "vue": "^2.4.2"
   }
