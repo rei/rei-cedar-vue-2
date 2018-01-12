@@ -20,7 +20,8 @@
     "docs": "vue-styleguidist server",
     "build:docs": "vue-styleguidist build",
     "create": "node generator.js",
-    "start": "lerna bootstrap && lerna run build"
+    "start": "lerna bootstrap && lerna run build",
+    "vue-docs": "node build/vue-docs.js"
   },
   "peerDependencies": {
     "vue": "^2.5.10"
