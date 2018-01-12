@@ -67,7 +67,7 @@
 import examples from './components/examples';
 import compexamples from './compositions/examples';
 
-const all = Object.assign(examples, compexamples);
+const all = Object.assign({}, examples, compexamples);
 
 export default {
   name: 'App',
