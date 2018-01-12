@@ -76,6 +76,7 @@
     "jest-alias-preprocessor": "^1.1.1",
     "jest-serializer-vue": "^0.3.0",
     "jshint": "^2.9.4",
+    "json2md": "^1.5.11",
     "karma": "^2.0.0",
     "karma-coverage": "^1.1.1",
     "karma-phantomjs-launcher": "^1.0.2",
@@ -152,3 +153,4 @@
     "not ie <= 8"
   ]
 }
+
