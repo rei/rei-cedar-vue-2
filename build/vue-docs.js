@@ -4,9 +4,13 @@ const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
 const glob = require('glob')
 
+let vueObjs = [];
+
 glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**']}, (err, files) => {
-  files.forEach((file) => {
-    console.log(file);
+  if(err) console.log(err);
+
+  files.forEach((file, idx, arr) => {
+    vueObjs.push(vueDocgen.parse(file));
   })
 })
 
