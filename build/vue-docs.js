@@ -33,12 +33,12 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
 
 
 // auxilary function to create table from `props` property of json2md object
-function tableFromProps(propsArr) {
+function tableFromProps(propsObj) {
   const headers = ["Prop Name", "Type", "Default", "Require", "Description"]
   let rows = []
 
-  // construct rows of table from array of properties
-  for(const prop in propsArr) {
+  // construct rows of table from object of properties
+  for(const prop in propsObj) {
     let cols = []
     cols.push(`${prop}`) // property name
     cols.push(prop["type"]["name"]); // type of the property
@@ -54,7 +54,21 @@ function tableFromProps(propsArr) {
   
 // auxilary function to create table from `methods` property of json2md object
 function tableFromMethods(methodsArr) {
+  const headers = ["Method Name", "Type", "Parameters", "Description"]
+  let rows = []
 
+  // construct rows of table array of methods
+  methodsArr.forEach((method) => {
+    let cols = []
+    cols.push(method["name"]) // method name
+
+    let paramList = ''
+    method["params"].forEach((param) => {
+      paramList += `${param["name"]} - ${param["description"] || ' '}\n`
+    })
+    cols.push(paramList) // list of method parameters
+    cols.push(method["description"] || ' ') // description of the method
+  })
 }
 
 // auxilary function to create table from `events` property of json2md object
