@@ -64,11 +64,15 @@ function tableFromMethods(methodsArr) {
 
     let paramList = ''
     method["params"].forEach((param) => {
-      paramList += `${param["name"]} - ${param["description"] || ' '}\n`
+      paramList += `${param["name"]}: ${param["type"]["name"] || ''} - ${param["description"] || ' '}\n`
     })
     cols.push(paramList) // list of method parameters
     cols.push(method["description"] || ' ') // description of the method
+
+    rows.push(cols);
   })
+
+  return {header, rows}
 }
 
 // auxilary function to create table from `events` property of json2md object
