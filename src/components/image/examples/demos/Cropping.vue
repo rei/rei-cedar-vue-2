@@ -93,7 +93,7 @@
           <p>Reference Image</p>
           <cdr-img
             alt="reference image"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -109,7 +109,7 @@
             ratio="16-9"
             crop="top left"
             alt="crop top left"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -120,7 +120,7 @@
             ratio="16-9"
             crop="top x-center"
             alt="crop top x-center"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -131,7 +131,7 @@
             ratio="16-9"
             crop="top right"
             alt="crop top right"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -142,7 +142,7 @@
             ratio="16-9"
             crop="y-center left"
             alt="crop y-center left"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -153,7 +153,7 @@
             ratio="16-9"
             crop="y-center x-center"
             alt="crop y-center x-center"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -164,7 +164,7 @@
             ratio="16-9"
             crop="y-center right"
             alt="crop y-center right"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -175,7 +175,7 @@
             ratio="16-9"
             crop="bottom left"
             alt="crop bottom left"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -186,7 +186,7 @@
             ratio="16-9"
             crop="bottom x-center"
             alt="crop bottom x-center"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -197,7 +197,7 @@
             ratio="16-9"
             crop="bottom right"
             alt="crop bottom right"
-            src="http://lorempixel.com/960/540/sports/9"
+            :src="testImage"
           />
         </div>
       </cdr-col>
@@ -206,10 +206,16 @@
 </template>
 
 <script>
+import testImage from 'Assets/test-image.jpeg';
 import Components from 'Components/_index';
 
 export default {
   name: 'Cropping',
   components: Components,
+  data() {
+    return {
+      testImage,
+    };
+  },
 };
 </script>

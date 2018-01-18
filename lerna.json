@@ -1,10 +1,7 @@
 {
   "lerna": "2.6.0",
   "packages": [
-    "src/components/*",
-    "src/compositions/*",
-    "src/bundles/*",
-    "src/styles/*"
+    "src/**/*"
   ],
   "npmClient": "yarn",
   "version": "independent"

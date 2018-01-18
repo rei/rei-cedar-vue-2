@@ -6,7 +6,7 @@ const glob = require('glob');
 const scenariosArr = [];
 let defs = [];
 const scenarioDefaults = {
-  url: 'http://localhost:8080',
+  url: 'http://localhost:3000',
   delay: 100,
   readyEvent: null,
   onReadyScript: 'onReady.js',
@@ -65,24 +65,24 @@ module.exports = {
   id: 'cedar',
   viewports: [
     {
-      label: 'phone',
-      width: 320,
-      height: 480,
+      label: 'xs',
+      width: 360,
+      height: 640,
     },
     {
-      label: 'tablet_v',
-      width: 568,
+      label: 'sm',
+      width: 768,
       height: 1024,
     },
     {
-      label: 'tablet_h',
+      label: 'md',
       width: 1024,
       height: 768,
     },
     {
-      label: 'desktop',
-      width: 1920,
-      height: 1080,
+      label: 'lg',
+      width: 1366,
+      height: 768,
     },
   ],
   scenarios: scenariosArr,

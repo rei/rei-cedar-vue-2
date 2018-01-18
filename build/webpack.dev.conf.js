@@ -53,11 +53,12 @@ module.exports = merge(baseWebpackConfig, {
         host: 'localhost',
         port: 3000,
         // proxy the dev server endpoint through BrowserSync 
-        proxy: 'http://localhost:8080/'
+        proxy: 'http://localhost:8080/',
+        notify: false,
       },
       {
         // prevent BrowserSync from reloading the page and let the dev server take care of this 
-        reload: false
+        reload: false,
       }
     ),
   ]
