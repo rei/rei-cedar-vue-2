@@ -67,7 +67,7 @@ function tableFromMethods(methodsArr) {
       paramList += `${param["name"]}: ${param["type"]["name"] || ''} - ${param["description"] || ' '}\n`
     })
     cols.push(paramList) // list of method parameters
-    cols.push(method["description"] || ' ') // description of the method
+    cols.push(method["description"] || '') // description of the method
 
     rows.push(cols);
   })
@@ -76,8 +76,22 @@ function tableFromMethods(methodsArr) {
 }
 
 // auxilary function to create table from `events` property of json2md object
-function tableFromEvents(vueObj) {
+function tableFromEvents(eventsObj) {
+  const headers = ["Event Name", "Type", "Description"]
+  let rows = []
 
+  for(const evt in eventsObj) {
+    let cols = []
+
+    cols.push(`${evt}`) // event name
+    
+    let typeList = ''
+    evt["type"]["names"].forEach((type, idx, arr) => {
+      typeList += `${type`${arr[idx+1] ? `|` : ''}`}`
+    })
+    cols.push(typeList) // list of event types
+    cols.push(evt["descritpion"] || '') // description of the event
+  }
 }
 
 // auxilary function to create table from `slots` property of json2md object
