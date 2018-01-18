@@ -91,10 +91,25 @@ function tableFromEvents(eventsObj) {
     })
     cols.push(typeList) // list of event types
     cols.push(evt["descritpion"] || '') // description of the event
+
+    rows.push(cols);
   }
+
+  return {headers, rows}
 }
 
 // auxilary function to create table from `slots` property of json2md object
-function tableFromSlots(vueObj) {
+function tableFromSlots(slotsObj) {
+  const headers = ["Slot", "Description"]
+  let rows = []
 
+  for(const slot in slotsObj) {
+    let cols = []
+    cols.push(`${slot}`) // name of the slot
+    cols.push(slot["description"]) // description of the slot
+
+    rows.push(cols)
+  }
+
+  return {headers, rows}
 }
