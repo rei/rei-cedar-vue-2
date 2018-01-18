@@ -40,7 +40,7 @@
       class="cdr-rating__count"
     >({{ count }})<span v-if="!compact"> Reviews</span></span>
     <span
-      class="u-sr-only"
+      class="cdr-sr-only"
     >rated {{ rating }} out of 5 with {{ count }} reviews</span>
   </div>
 </template>

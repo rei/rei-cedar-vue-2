@@ -60,6 +60,7 @@
       class="cpg-section"
       data-backstop="test"
     />
+    <utilities class="cpg-section"/>
   </div>
 </template>
 

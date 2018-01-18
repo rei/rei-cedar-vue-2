@@ -5,7 +5,7 @@
         :href="imgHref"
         target="imgTarget"
       >
-        <span class="u-sr-only">{{ imgHrefText }}</span>
+        <span class="cdr-sr-only">{{ imgHrefText }}</span>
         <cdr-icon
           v-if="iconUrl"
           class="cdr-media-object__figure"

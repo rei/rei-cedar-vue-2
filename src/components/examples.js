@@ -14,6 +14,8 @@ import radios from './radio/examples/Radios';
 import ratings from './rating/examples/Ratings';
 import selects from './select/examples/Selects';
 
+import utilities from './Utilities/Utilities';
+
 import test from './testing/Test'; // only used as example for e2e test
 
 export default {
@@ -32,5 +34,6 @@ export default {
   radios,
   ratings,
   selects,
+  utilities,
   test, // only used as example for e2e test
 };
