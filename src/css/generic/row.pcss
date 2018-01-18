@@ -1066,19 +1066,6 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   /* Col modifiers
   ========================================================================== */
 
-  &--hide {
-    &-up {
-      display: none;
-    }
-
-    &-down,
-    &\@sm-down,
-    &\@md-down,
-    &\@lg-down {
-      display: none;
-    }
-  }
-
   &--top {
     align-self: flex-start;
   }
@@ -1104,12 +1091,6 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     order: 1;
   }
   */
-
-  @media (--xs-mq-only) {
-    &--hide-only {
-      display: none;
-    }
-  }
 
   /* COL SMALL
   ========================================================================== */
@@ -1292,14 +1273,6 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     /* Col small modifiers
     ========================================================================== */
 
-    &--hide-down {
-      display: block;
-    }
-
-    &--hide\@sm-up {
-      display: none;
-    }
-
     &--top\@sm {
       align-self: flex-start;
     }
@@ -1314,12 +1287,6 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 
     &--stretch\@sm {
       align-self: stretch;
-    }
-  }
-
-  @media (--sm-mq-only) {
-    &--hide\@sm-only {
-      display: none;
     }
   }
 
@@ -1504,14 +1471,6 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     /* Col medium modifiers
     ========================================================================== */
 
-    &--hide\@sm-down {
-      display: block;
-    }
-
-    &--hide\@md-up {
-      display: none;
-    }
-
     &--top\@md {
       align-self: flex-start;
     }
@@ -1526,12 +1485,6 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 
     &--stretch\@md {
       align-self: stretch;
-    }
-  }
-
-  @media (--md-mq-only) {
-    &--hide\@md-only {
-      display: none;
     }
   }
 
@@ -1716,14 +1669,6 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     /* Col large modifiers
     ========================================================================== */
 
-    &--hide\@md-down {
-      display: block;
-    }
-
-    &--hide\@lg-up {
-      display: none;
-    }
-
     &--top\@lg {
       align-self: flex-start;
     }
@@ -1738,12 +1683,6 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 
     &--stretch\@lg {
       align-self: stretch;
-    }
-  }
-
-  @media (--lg-mq-only) {
-    &--hide\@lg-only {
-      display: none;
     }
   }
 }

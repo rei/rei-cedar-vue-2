@@ -175,31 +175,6 @@ export default {
       validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
     /**
-     * Control when column should be hidden. {up, down, only}.
-     * 'up' hides at breakpoint and up.
-     * 'down' hides at breakpoint and down.
-     * 'only' hides only at breakpoint.
-     */
-    hide: {
-      type: String,
-      validator: value => (['up', 'down', 'only'].indexOf(value) >= 0) || false,
-    },
-    /** Sm breakpoint and above */
-    hideSm: {
-      type: String,
-      validator: value => (['up', 'down', 'only'].indexOf(value) >= 0) || false,
-    },
-    /** Md breakpoint and above */
-    hideMd: {
-      type: String,
-      validator: value => (['up', 'down', 'only'].indexOf(value) >= 0) || false,
-    },
-    /** Lg breakpoint and above */
-    hideLg: {
-      type: String,
-      validator: value => (['up', 'down', 'only'].indexOf(value) >= 0) || false,
-    },
-    /**
      * Makes the column act as a new cdr-row.
      * Setting this to true exposes the same props as cdr-row.
      */
@@ -219,11 +194,6 @@ export default {
       classObj[`cdr-col_span${this.spanSm}@sm`] = this.spanSm;
       classObj[`cdr-col_span${this.spanMd}@md`] = this.spanMd;
       classObj[`cdr-col_span${this.spanLg}@lg`] = this.spanLg;
-      // hide
-      classObj[`cdr-col--hide-${this.hide}`] = this.hide;
-      classObj[`cdr-col--hide@sm-${this.hideSm}`] = this.hideSm;
-      classObj[`cdr-col--hide@md-${this.hideMd}`] = this.hideMd;
-      classObj[`cdr-col--hide@lg-${this.hideLg}`] = this.hideLg;
       // offset left
       classObj[`cdr-col--offsetLeft${this.offsetLeft}`] = this.offsetLeft;
       classObj[`cdr-col--offsetLeft${this.offsetLeftSm}@sm`] = this.offsetLeftSm;

@@ -10,7 +10,6 @@ module.exports = [
       '[data-backstop="col-sm"]',
       '[data-backstop="col-md"]',
       '[data-backstop="col-lg"]',
-      '[data-backstop="col-hide"]',
       '[data-backstop="row-mosaic"]',
       '[data-backstop="row-mosaic-list"]',
     ],
