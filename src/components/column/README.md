@@ -2,6 +2,8 @@ Note: immediate children of `cdr-col` are treated as flex items (due to a flex h
 
 See cdr-row for complex example.
 
+NOTE: anytime a `cdr-col` is nested within another `cdr-col` the parent needs `is-row` to function correctly
+
 ### Examples
 
 #### Span
