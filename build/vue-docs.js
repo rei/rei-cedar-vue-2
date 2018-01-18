@@ -4,8 +4,6 @@ const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
 const glob = require('glob')
 
-let json2mdTemplate = [];
-
 // Add convert for markdown anchor
 json2md.converters.anchor = (anchor, json) => {
   if (!anchor.text)
@@ -20,16 +18,29 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
 
   // convert *.vue files into JSON objects then convert to *.md files
   files.forEach((file, idx) => {
-    let vueObj = vueDocgen.parse(file);
+    const vueObj = vueDocgen.parse(file);
     
-    json2mdTemplate.concat([
-      {h2: `${vueObj.displayName}`},
-      {anchor: {text: `${file}`, source: ``}},
-      {p: `${vueObj.description}`},
-      {h3: "Props, Methods, Events, Slots"}
-    ])
+    const mdTemplate = createMDTemplate(vueObj)
   })
 })
+
+// take json object returned from vue-docgen-api and create markdown template
+function createMDTemplate(vueObj) {
+  let json2mdTemplate = [];
+  
+  json2mdTemplate.concat([
+    {h2: `${vueObj.displayName}`},
+    {p: `${file}`},
+    {p: `${vueObj.description}`},
+    {h3: "Props, Methods, Events, Slots"}
+  ])
+  json2mdTemplate.push(tableFromProps(vueObj["props"]))
+  json2mdTemplate.push(tableFromMethods(vueObj["methods"]))
+  json2mdTemplate.push(tableFromEvents(vueObj["events"]))
+  json2mdTemplate.push(tableFromSlots(vueObj["slots"]))
+
+  return json2md(json2mdTemplate)
+}
 
 
 // auxilary function to create table from `props` property of json2md object
