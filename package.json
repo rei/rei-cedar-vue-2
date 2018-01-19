@@ -47,6 +47,7 @@
     "cross-env": "^5.0.3",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.4",
+    "cz-conventional-changelog": "^2.1.0",
     "download": "^6.2.5",
     "eslint": "^4.14.0",
     "eslint-config-airbnb-base": "^12.0.0",
@@ -81,7 +82,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "^0.0.32",
     "klaw-sync": "^3.0.2",
-    "lerna": "^2.6.0",
+    "lerna": "^2.8.0",
     "loader-utils": "^1.1.0",
     "lodash": "^4.17.4",
     "minimist": "^1.2.0",
@@ -149,5 +150,10 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
