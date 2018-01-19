@@ -145,36 +145,6 @@ describe('cdrCol.vue', () => {
     expect(wrapper.classes()).toContain('cdr-col--top@sm');
   });
 
-  it('sets hide props correctly', () => {
-    const wrapper = shallow(cdrCol, {
-      propsData: {
-        hide: 'down',
-        hideMd: 'down',
-        hideLg: 'down',
-        hideSm: 'down',
-      }
-    });
-    expect(wrapper.vm.$props.hide).toBe('down');
-    expect(wrapper.vm.$props.hideMd).toBe('down');
-    expect(wrapper.vm.$props.hideLg).toBe('down');
-    expect(wrapper.vm.$props.hideSm).toBe('down');
-  });
-
-  it('computes hide classes correctly', () => {
-    const wrapper = shallow(cdrCol, {
-      propsData: {
-        hide: 'down',
-        hideMd: 'down',
-        hideLg: 'down',
-        hideSm: 'down',
-      }
-    });
-    expect(wrapper.classes()).toContain('cdr-col--hide-down');
-    expect(wrapper.classes()).toContain('cdr-col--hide@md-down');
-    expect(wrapper.classes()).toContain('cdr-col--hide@lg-down');
-    expect(wrapper.classes()).toContain('cdr-col--hide@sm-down');
-  });
-
   it('sets isRow prop correctly', () => {
     const wrapper = shallow(cdrCol, {
       propsData: {
