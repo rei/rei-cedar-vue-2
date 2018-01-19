@@ -71,10 +71,10 @@ function buildTables(vueObj) {
     updatedTemplate.push(mdTable)
   }
   
-  // mdTable = tableFromSlots(vueObj["slots"])
-  // if(mdTable != null) {
-  //   updatedTemplate.push(mdTable)
-  // }
+  mdTable = tableFromSlots(vueObj["slots"])
+  if(mdTable != null) {
+    updatedTemplate.push(mdTable)
+  }
 
   return updatedTemplate.length > 1 ? updatedTemplate : []
 }
@@ -154,7 +154,7 @@ function tableFromSlots(slotsObj) {
   for(const slot in slotsObj) {
     let cols = []
     cols.push(`${slot}`) // name of the slot
-    cols.push(`${slotsObj[slot]["description"]}`) // description of the slot
+    cols.push(`${slotsObj[slot]["description"] || ''}`) // description of the slot
 
     rows.push(cols)
   }
