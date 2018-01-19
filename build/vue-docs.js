@@ -1,14 +1,8 @@
 const path = require('path')
-const util = require('util')
 const fs = require('fs')
 const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
 const glob = require('glob')
-
-const PROPS = 'props'
-const METHODS = 'methods'
-const EVENTS = 'events'
-const SLOTS = 'slots'
 
 // Add convert for markdown anchor
 json2md.converters.anchor = (anchor, json) => {
@@ -53,7 +47,7 @@ function createMarkdownTemplate(file) {
 }
 
 function buildTables(vueObj) {
-    let updatedTemplate = [{h3: "Props, Methods, Events, Slots"}], mdTable
+  let updatedTemplate = [{h3: "Props, Methods, Events, Slots"}], mdTable
   
   mdTable = tableFromProps(vueObj["props"])
   if(mdTable !== null) {
@@ -118,7 +112,7 @@ function tableFromMethods(methodsArr) {
     rows.push(cols);
   })
 
-  return {table: {headers, rows}}
+  return rows.length > 0 ? {table: {headers, rows}} : null
 }
 
 // auxilary function to create table from `events` property of json2md object
@@ -141,7 +135,7 @@ function tableFromEvents(eventsObj) {
     rows.push(cols);
   }
 
-  return {table: {headers, rows}}
+  return rows.length > 0 ? {table: {headers, rows}} : null
 }
 
 // auxilary function to create table from `slots` property of json2md object
@@ -157,5 +151,5 @@ function tableFromSlots(slotsObj) {
     rows.push(cols)
   }
 
-  return {table: {headers, rows}}
+  return rows.length > 0 ? {table: {headers, rows}} : null
 }
