@@ -20,6 +20,7 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
   // convert *.vue files into JSON objects then convert to *.md files
   files.forEach((file) => {
     const mdTemplate = createMarkdownTemplate(file)
+    console.log(mdTemplate)
 
     // const start = file.lastIndexOf('/') + 1, end = file.lastIndexOf('.')
     // const compName = file.slice(start, end)
@@ -38,14 +39,14 @@ function createMarkdownTemplate(file) {
     {p: `${vueObj.description}`}
   ])
 
-  console.log(`json2mdTemplate before buildTables():\n ${util.inspect(json2mdTemplate)}`)
+  // console.log(`json2mdTemplate before buildTables():\n ${util.inspect(json2mdTemplate)}`)
 
   mdTablesTemplate = buildTables(vueObj)
   
-  console.log(`mdTablesTemplate from buildTables():\n ${util.inspect(mdTablesTemplate)}`)
+  // console.log(`mdTablesTemplate from buildTables():\n ${util.inspect(mdTablesTemplate)}`)
   if(mdTablesTemplate.length > 0) {
     json2mdTemplate = json2mdTemplate.concat(mdTablesTemplate)
-    console.log(`json2mdTemplate + mdTablesTemplate:\n ${util.inspect(json2mdTemplate)}`)  
+    // console.log(`json2mdTemplate + mdTablesTemplate:\n ${util.inspect(json2mdTemplate)}`)  
   }
 
   return json2md(json2mdTemplate)
@@ -60,19 +61,19 @@ function buildTables(vueObj) {
     updatedTemplate.push(mdTable)
   }
   
-  // mdTable = tableFromMethods(vueObj["methods"])
-  // if(mdTable !== null) {
-  //   updatedTemplate.concat(mdTable)
-  // }
-  
-  // mdTable = tableFromEvents(vueObj["events"])
-  // if(mdTable !== null) {
-  //   updatedTemplate.concat(mdTable)
-  // }
+  mdTable = tableFromMethods(vueObj["methods"])
+  if(mdTable != null) {
+    updatedTemplate.push(mdTable)
+  }
+
+  mdTable = tableFromEvents(vueObj["events"])
+  if(mdTable != null) {
+    updatedTemplate.push(mdTable)
+  }
   
   // mdTable = tableFromSlots(vueObj["slots"])
-  // if(mdTable !== null) {
-  //   updatedTemplate.concat(mdTable)
+  // if(mdTable != null) {
+  //   updatedTemplate.push(mdTable)
   // }
 
   return updatedTemplate.length > 1 ? updatedTemplate : []
@@ -87,10 +88,10 @@ function tableFromProps(propsObj) {
   for(const prop in propsObj) {
     let cols = []
     cols.push(`${prop}`) // property name
-    cols.push(`${propsObj[prop]["type"]["name"]}`) // type of the property
-    cols.push(propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : '') // property default value
+    cols.push(propsObj[prop]["type"] ? propsObj[prop]["type"]["name"] : 'unkown') // type of the property
+    cols.push(propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a') // property default value
     cols.push(propsObj[prop]["required"] ? 'true' : 'false') // property is required
-    cols.push(propsObj[prop]["description"] || '') // description of the property
+    cols.push(`${propsObj[prop]["description"]}`) // description of the property
     
     rows.push(cols)
   }
@@ -111,14 +112,14 @@ function tableFromMethods(methodsArr) {
     cols.push(method["name"]) // method name
     let paramList = ''
     method["params"].forEach((param) => {
-      paramList += `${param["name"]}: ${param["type"]["name"] || ''} - ${param["description"] || ' '}\n`
+      paramList += `${param["name"]}: ${param["type"]["name"]} - ${param["description"]}\n`
     })
     cols.push(paramList) // list of method parameters
-    cols.push(method["description"] || '') // description of the method
+    cols.push(`${method["description"]}`) // description of the method
 
     rows.push(cols);
   })
-
+  
   return rows.length > 0 ? {table: {headers, rows}} : null
 }
 
@@ -137,7 +138,7 @@ function tableFromEvents(eventsObj) {
       typeList += `${type`${arr[idx+1] ? `|` : ''}`}`
     })
     cols.push(typeList) // list of event types
-    cols.push(eventsObj[evt]["descritpion"] || '') // description of the event
+    cols.push(`${eventsObj[evt]["descritpion"]}`) // description of the event
 
     rows.push(cols);
   }
@@ -153,7 +154,7 @@ function tableFromSlots(slotsObj) {
   for(const slot in slotsObj) {
     let cols = []
     cols.push(`${slot}`) // name of the slot
-    cols.push(slotsObj[slot]["description"]) // description of the slot
+    cols.push(`${slotsObj[slot]["description"]}`) // description of the slot
 
     rows.push(cols)
   }
