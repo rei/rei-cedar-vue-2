@@ -1,4 +1,5 @@
 const path = require('path')
+const util = require('util')
 const fs = require('fs')
 const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
@@ -19,7 +20,6 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
   // convert *.vue files into JSON objects then convert to *.md files
   files.forEach((file) => {
     const mdTemplate = createMarkdownTemplate(file)
-    console.log(mdTemplate)
 
     // const start = file.lastIndexOf('/') + 1, end = file.lastIndexOf('.')
     // const compName = file.slice(start, end)
@@ -38,36 +38,42 @@ function createMarkdownTemplate(file) {
     {p: `${vueObj.description}`}
   ])
 
+  console.log(`json2mdTemplate before buildTables():\n ${util.inspect(json2mdTemplate)}`)
+
   mdTablesTemplate = buildTables(vueObj)
+  
+  console.log(`mdTablesTemplate from buildTables():\n ${util.inspect(mdTablesTemplate)}`)
   if(mdTablesTemplate.length > 0) {
-    json2mdTemplate.concat(mdTablesTemplate)
+    json2mdTemplate = json2mdTemplate.concat(mdTablesTemplate)
+    console.log(`json2mdTemplate + mdTablesTemplate:\n ${util.inspect(json2mdTemplate)}`)  
   }
 
   return json2md(json2mdTemplate)
 }
 
 function buildTables(vueObj) {
-  let updatedTemplate = [{h3: "Props, Methods, Events, Slots"}], mdTable
+  let updatedTemplate = [{h3: "Props, Methods, Events, Slots"}]
+  let mdTable
   
   mdTable = tableFromProps(vueObj["props"])
-  if(mdTable !== null) {
-    updatedTemplate += mdTable
+  if(mdTable != null) {
+    updatedTemplate.push(mdTable)
   }
   
-  mdTable = tableFromMethods(vueObj["methods"])
-  if(mdTable !== null) {
-    updatedTemplate += mdTable
-  }
+  // mdTable = tableFromMethods(vueObj["methods"])
+  // if(mdTable !== null) {
+  //   updatedTemplate.concat(mdTable)
+  // }
   
-  mdTable = tableFromEvents(vueObj["events"])
-  if(mdTable !== null) {
-    updatedTemplate += mdTable
-  }
+  // mdTable = tableFromEvents(vueObj["events"])
+  // if(mdTable !== null) {
+  //   updatedTemplate.concat(mdTable)
+  // }
   
-  mdTable = tableFromSlots(vueObj["slots"])
-  if(mdTable !== null) {
-    updatedTemplate += mdTable
-  }
+  // mdTable = tableFromSlots(vueObj["slots"])
+  // if(mdTable !== null) {
+  //   updatedTemplate.concat(mdTable)
+  // }
 
   return updatedTemplate.length > 1 ? updatedTemplate : []
 }
@@ -85,10 +91,11 @@ function tableFromProps(propsObj) {
     cols.push(propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : '') // property default value
     cols.push(propsObj[prop]["required"] ? 'true' : 'false') // property is required
     cols.push(propsObj[prop]["description"] || '') // description of the property
-
+    
     rows.push(cols)
   }
 
+  // console.log(`Returned from tableFromProp() ${util.inspect({table: {headers, rows}})}`)
   return rows.length > 0 ? {table: {headers, rows}} : null
 }
   
