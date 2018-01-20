@@ -20,11 +20,13 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
   // convert *.vue files into JSON objects then convert to *.md files
   files.forEach((file) => {
     const mdTemplate = createMarkdownTemplate(file)
-    console.log(mdTemplate)
 
-    // const start = file.lastIndexOf('/') + 1, end = file.lastIndexOf('.')
-    // const compName = file.slice(start, end)
-    // console.log(file.slice(start));
+    const startFileName = file.lastIndexOf('/') + 1, endFileName = file.lastIndexOf('.')
+    const vueCompName = file.slice(startFileName, endFileName)
+    const vueCompDir = file.slice(0, startFileName)
+    fs.appendFile(`${vueCompDir + vueCompName}.md`, mdTemplate, (err) => {
+      if (err) throw err
+    })
   })
 })
 
@@ -39,14 +41,10 @@ function createMarkdownTemplate(file) {
     {p: `${vueObj.description}`}
   ])
 
-  // console.log(`json2mdTemplate before buildTables():\n ${util.inspect(json2mdTemplate)}`)
-
   mdTablesTemplate = buildTables(vueObj)
   
-  // console.log(`mdTablesTemplate from buildTables():\n ${util.inspect(mdTablesTemplate)}`)
   if(mdTablesTemplate.length > 0) {
     json2mdTemplate = json2mdTemplate.concat(mdTablesTemplate)
-    // console.log(`json2mdTemplate + mdTablesTemplate:\n ${util.inspect(json2mdTemplate)}`)  
   }
 
   return json2md(json2mdTemplate)
@@ -96,7 +94,6 @@ function tableFromProps(propsObj) {
     rows.push(cols)
   }
 
-  // console.log(`Returned from tableFromProp() ${util.inspect({table: {headers, rows}})}`)
   return rows.length > 0 ? {table: {headers, rows}} : null
 }
   
