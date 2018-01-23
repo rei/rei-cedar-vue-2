@@ -1,5 +1,6 @@
 const path = require('path')
-const util = require('util')
+const semverDiff = require('semver-diff')
+const semver = require('semver')
 const fs = require('fs')
 const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
@@ -14,25 +15,75 @@ json2md.converters.anchor = (anchor, json) => {
 };
 
 // pull in *.vue files from directory
-glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**']}, (err, files) => {
-  if(err) console.log(err);
+glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**']}, (compErr, files) => {
+  if(compErr)
+    throw new Error(`Error while trying to find single file components:\n${compErr}`)
 
   // convert *.vue files into JSON objects then convert to *.md files
   files.forEach((file) => {
-    const mdTemplate = createMarkdownTemplate(file)
+    const vueObj = vueDocgen.parse(file)
+    
+    // Determine version of current raw vue component
+    const currentVer = `${vueObj["tags"] && vueObj["tags"]["version"] ? vueObj["tags"]["version"]["descritpion"] : ''}`
+    
+    if (!semver.valid(currentVer)) 
+      throw new Error(`Vue component at ${file} doesn't have a valid semver @version tag specified`)
+
+    const mdTemplate = createMarkdownTemplate(file, vueObj)
 
     const startFileName = file.lastIndexOf('/') + 1, endFileName = file.lastIndexOf('.')
     const vueCompName = file.slice(startFileName, endFileName)
     const vueCompDir = file.slice(0, startFileName)
-    fs.appendFile(`${vueCompDir + vueCompName}.md`, mdTemplate, (err) => {
-      if (err) throw err
+
+    let latestMdDoc = null, latestMdVer = '0.0.0'
+    
+    // Extract the markdown documentation files and their NPM versions
+    glob(`${vueCompDir + vueCompName}-*.md`, (mdFileErr, mdFiles) => {
+      if (mdFileErr) 
+        throw new Error(`Error while trying to find markdown documentation files:\n${mdFileErr}`)
+
+      // no markdown documentation file exiists yet, create one
+      if (mdFiles.length == 0) {
+        fs.appendFile(`${vueCompDir + vueCompName}-${currentVer}.md`, mdTemplate, (createErr) => {
+          if (createErr)
+            throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + vueCompName}-${currentVer}.md:\n${createErr}`)
+        })
+      } else {
+        // find the most recent markdown documentation file based on version
+        mdFiles.forEach((mdFile) => {
+          const starMdVer = mdFile.lastIndexOf(`${vueCompName}-`) + vueCompName.length + 1, endMdVer = mdFile.lastIndexOf('.')
+          const mdFileVer = mdFile.slice(starMdVer, endMdVer)
+
+          if (semver.valid(mdFileVer) && semver.lt(latestMdVer, mdFileVer)) {
+            latestMdVer = mdFileVer
+            latestMdDoc = mdFile
+          }
+        })
+
+        // overwrite most recent markdown documentation if it's less than a patch difference away from vue component's version
+        if (semver.eq(latestMdVer, currentVer) || semverDiff(lastestMdVer, currentVer) === 'patch') {
+          fs.unlink(latestMdDoc, (delErr) => {
+            if (delErr)
+              throw new Error(`Error while trying to close the markdown documentation file ${latestMdDoc}:\n${delErr}`)
+
+            fs.appendFile(`${vueCompDir + vueCompName}-${currentVer}.md`, mdTemplate, (createErr) => {
+              if (createErr)
+                throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + vueCompName}-${currentVer}.md:\n${createErr}`)
+            })
+          })
+        }
+      }
     })
+    
+    // fs.appendFile(`${vueCompDir + vueCompName}-1.0.0.md`, mdTemplate, (err) => {
+    //   if (err) throw err
+    // })
   })
 })
 
 // take json object returned from vue-docgen-api and create markdown template
-function createMarkdownTemplate(file) {
-  const vueObj = vueDocgen.parse(file)
+function createMarkdownTemplate(file, vueObj) {
+  
   let json2mdTemplate = [], mdTablesTemplate;
   
   json2mdTemplate = json2mdTemplate.concat([
