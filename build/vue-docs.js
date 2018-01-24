@@ -21,13 +21,14 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
 
   // convert *.vue files into JSON objects then convert to *.md files
   files.forEach((file) => {
+    console.log(`Processing file: ${file}\n`)
     const vueObj = vueDocgen.parse(file)
     
     // Determine version of current raw vue component
-    const currentVer = `${vueObj["tags"] && vueObj["tags"]["version"] ? vueObj["tags"]["version"]["descritpion"] : ''}`
-    
+    const currentVer = `${vueObj["tags"] && vueObj["tags"]["version"] ? vueObj["tags"]["version"][0]["description"] : ''}`
+
     if (!semver.valid(currentVer)) 
-      throw new Error(`Vue component at ${file} doesn't have a valid semver @version tag specified`)
+      throw new Error(`Vue component at ${file} doesn't have a valid semver @version tag`)
 
     const mdTemplate = createMarkdownTemplate(file, vueObj)
 
@@ -37,7 +38,7 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
 
     let latestMdDoc = null, latestMdVer = '0.0.0'
     
-    // Extract the markdown documentation files and their NPM versions
+    // pull in the markdown documentation files and their NPM versions
     glob(`${vueCompDir + vueCompName}-*.md`, (mdFileErr, mdFiles) => {
       if (mdFileErr) 
         throw new Error(`Error while trying to find markdown documentation files:\n${mdFileErr}`)
@@ -47,9 +48,11 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
         fs.appendFile(`${vueCompDir + vueCompName}-${currentVer}.md`, mdTemplate, (createErr) => {
           if (createErr)
             throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + vueCompName}-${currentVer}.md:\n${createErr}`)
+          
+          console.log(`No existing markdown file for ${vueCompName}. Creating one at ${vueCompDir + vueCompName}-${currentVer}.md`)
         })
       } else {
-        // find the most recent markdown documentation file based on version
+        // find the most recent markdown documentation file based on NPM version
         mdFiles.forEach((mdFile) => {
           const starMdVer = mdFile.lastIndexOf(`${vueCompName}-`) + vueCompName.length + 1, endMdVer = mdFile.lastIndexOf('.')
           const mdFileVer = mdFile.slice(starMdVer, endMdVer)
@@ -59,31 +62,30 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
             latestMdDoc = mdFile
           }
         })
+        console.log(`Latest markdown documentation version for ${vueCompName}: ${latestMdVer}`)
 
         // overwrite most recent markdown documentation if it's less than a patch difference away from vue component's version
-        if (semver.eq(latestMdVer, currentVer) || semverDiff(lastestMdVer, currentVer) === 'patch') {
+        if (semver.eq(latestMdVer, currentVer) || semverDiff(latestMdVer, currentVer) === 'patch') {
           fs.unlink(latestMdDoc, (delErr) => {
             if (delErr)
-              throw new Error(`Error while trying to close the markdown documentation file ${latestMdDoc}:\n${delErr}`)
+              throw new Error(`Error while trying to delete the markdown documentation file ${latestMdDoc}:\n${delErr}`)
 
             fs.appendFile(`${vueCompDir + vueCompName}-${currentVer}.md`, mdTemplate, (createErr) => {
               if (createErr)
                 throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + vueCompName}-${currentVer}.md:\n${createErr}`)
+
+              console.log(`Overwrote documentation for ${vueCompName}. ${(semver.lt(latestMdVer, currentVer)) ? `Updated to version ${currentVer} from ${latestMdVer}` : ''}`)
             })
           })
         }
       }
     })
-    
-    // fs.appendFile(`${vueCompDir + vueCompName}-1.0.0.md`, mdTemplate, (err) => {
-    //   if (err) throw err
-    // })
   })
 })
 
 // take json object returned from vue-docgen-api and create markdown template
 function createMarkdownTemplate(file, vueObj) {
-  
+
   let json2mdTemplate = [], mdTablesTemplate;
   
   json2mdTemplate = json2mdTemplate.concat([
