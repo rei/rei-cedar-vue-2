@@ -6,5 +6,8 @@ module.exports = [
       '[data-backstop="visibility-utilities"]',
       '[data-backstop="align-utilities"]',
     ],
+    focusSelectors: [
+      '[data-backstop="a11y-skip-link"] > a',
+    ],
   },
 ];
