@@ -1,4 +1,18 @@
-/* utility classes for hiding/showing content */
+/* ==========================================================================
+  # visibility
+  
+  Utility classes for hiding/showing content
+
+  TOC:
+
+    :Hide
+      :responsive
+    :Show
+      :responsive
+    :Print
+      :Hide
+      :show
+========================================================================== */
 
 /*
 * HIDE
@@ -15,20 +29,11 @@
   }
 }
 
+/* @sm
+============ */
+
 @media (--sm-mq-only) {
   .cdr-hide\@sm-only {
-    display: none !important;
-  }
-}
-
-@media (--md-mq-only) {
-  .cdr-hide\@md-only {
-    display: none !important;
-  }
-}
-
-@media (--lg-mq-only) {
-  .cdr-hide\@lg-only {
     display: none !important;
   }
 }
@@ -39,8 +44,26 @@
   }
 }
 
+/* @md
+============ */
+
+@media (--md-mq-only) {
+  .cdr-hide\@md-only {
+    display: none !important;
+  }
+}
+
 @media (--md-mq) {
   .cdr-hide\@md {
+    display: none !important;
+  }
+}
+
+/* @lg
+============ */
+
+@media (--lg-mq-only) {
+  .cdr-hide\@lg-only {
     display: none !important;
   }
 }
@@ -60,27 +83,42 @@
   display: block !important;
 }
 
+.cdr-show-inline {
+  display: inline !important;
+}
+
+.cdr-show-inline-block {
+  display: inline-block !important;
+}
+
 @media (--xs-mq-only) {
   .cdr-show\@xs-only {
     display: block !important;
   }
+
+  .cdr-show-inline\@xs-only {
+    display: inline !important;
+  }
+
+  .cdr-show-inline-block\@xs-only {
+    display: inline-block !important;
+  }
 }
+
+/* @sm
+============ */
 
 @media (--sm-mq-only) {
   .cdr-show\@sm-only {
     display: block !important;
   }
-}
 
-@media (--md-mq-only) {
-  .cdr-show\@md-only {
-    display: block !important;
+  .cdr-show-inline\@sm-only {
+    display: inline !important;
   }
-}
 
-@media (--lg-mq-only) {
-  .cdr-show\@lg-only {
-    display: block !important;
+  .cdr-show-inline-block\@sm-only {
+    display: inline-block !important;
   }
 }
 
@@ -88,16 +126,74 @@
   .cdr-show\@sm {
     display: block !important;
   }
+
+  .cdr-show-inline\@sm {
+    display: inline !important;
+  }
+
+  .cdr-show-inline-block\@sm {
+    display: inline-block !important;
+  }
+}
+
+/* @md
+============ */
+
+@media (--md-mq-only) {
+  .cdr-show\@md-only {
+    display: block !important;
+  }
+
+  .cdr-show-inline\@md-only {
+    display: inline !important;
+  }
+
+  .cdr-show-inline-block\@md-only {
+    display: inline-block !important;
+  }
 }
 
 @media (--md-mq) {
   .cdr-show\@md {
     display: block !important;
   }
+
+  .cdr-show-inline\@md {
+    display: inline !important;
+  }
+
+  .cdr-show-inline-block\@md {
+    display: inline-block !important;
+  }
+}
+
+/* @lg
+============ */
+
+@media (--lg-mq-only) {
+  .cdr-show\@lg-only {
+    display: block !important;
+  }
+
+  .cdr-show-inline\@lg-only {
+    display: inline !important;
+  }
+
+  .cdr-show-inline-block\@lg-only {
+    display: inline-block !important;
+  }
 }
 
 @media (--lg-mq) {
   .cdr-show\@lg {
     display: block !important;
+  }
+
+  .cdr-show-inline\@lg {
+    display: inline !important;
+  }
+
+  .cdr-show-inline-block\@lg {
+    display: inline-block !important;
   }
 }
