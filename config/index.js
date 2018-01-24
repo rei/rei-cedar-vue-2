@@ -40,8 +40,8 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8080,
-    autoOpenBrowser: false, // Set to false because using BrowserSync
+    port: 3000,
+    autoOpenBrowser: true, // Set to false if using BrowserSync
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},
