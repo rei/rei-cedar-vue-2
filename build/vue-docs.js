@@ -1,6 +1,7 @@
 const path = require('path')
 const semverDiff = require('semver-diff')
 const semver = require('semver')
+const util = require('util')
 const fs = require('fs')
 const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
@@ -64,7 +65,7 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
         })
         console.log(`Latest markdown documentation version for ${vueCompName}: ${latestMdVer}`)
 
-        // overwrite most recent markdown documentation if it's less than a patch difference away from vue component's version
+        // overwrite most recent markdown documentation if the update is a patch
         if (semver.eq(latestMdVer, currentVer) || semverDiff(latestMdVer, currentVer) === 'patch') {
           fs.unlink(latestMdDoc, (delErr) => {
             if (delErr)
@@ -76,6 +77,15 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
 
               console.log(`Overwrote documentation for ${vueCompName}. ${(semver.lt(latestMdVer, currentVer)) ? `Updated to version ${currentVer} from ${latestMdVer}` : ''}`)
             })
+          })
+        }
+        // archive the previous markdown documentation if the update is a major or minor change
+        else if (semverDiff(latestMdVer, currentVer) === 'major' || semverDiff(latestMdVer, currentVer) === 'minor') {
+          fs.appendFile(`${vueCompDir + vueCompName}-${currentVer}.md`, mdTemplate, (createErr) => {
+            if (createErr)
+              throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + vueCompName}-${currentVer}.md:\n${createErr}`)
+            
+            console.log(`Archived markdown file for ${vueCompName}, version ${latestMdVer}. Updated to version ${currentVer}`)
           })
         }
       }
