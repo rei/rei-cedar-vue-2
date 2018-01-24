@@ -38,8 +38,6 @@ function splitScenario(def, type = '', selectorsArr, extraOptions = {}) {
 // get backstop definition files and concat the contents
 const files = glob.sync('./src/**/*.backstop.js', { ignore: ['./src/**/node_modules/**'] });
 
-console.log(files.length);
-
 files.forEach((file) => {
   defs = defs.concat(require(file));
 });
@@ -61,8 +59,6 @@ defs.forEach((def) => {
 
   createScenario(currDef);
 });
-
-console.log(scenariosArr);
 
 module.exports = {
   id: 'cedar',

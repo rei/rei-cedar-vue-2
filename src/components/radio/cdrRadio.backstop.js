@@ -4,5 +4,8 @@ module.exports = [
     selectors: [
       '[data-backstop="radios"]',
     ],
+    focusSelectors: [
+      '[data-backstop="radio-focus"] + label',
+    ],
   },
 ];
