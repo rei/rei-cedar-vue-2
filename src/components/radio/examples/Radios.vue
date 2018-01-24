@@ -6,6 +6,7 @@
       name="example"
       value="a1"
       v-model="ex1"
+      data-backstop="radio-focus"
     >A1</cdr-radio>
     <cdr-radio
       name="example"

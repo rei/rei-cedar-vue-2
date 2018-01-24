@@ -78,9 +78,37 @@
         </tr>
 
         <tr>
+          <td>.cdr-show-inline</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline-block</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline-block">X</div>
+          </td>
+        </tr>
+
+        <tr>
           <td>.cdr-show@xs-only</td>
           <td>
             <div class="cdr-hide cdr-show@xs-only">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline@xs-only</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline@xs-only">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline-block@xs-only</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline-block@xs-only">X</div>
           </td>
         </tr>
 
@@ -92,9 +120,37 @@
         </tr>
 
         <tr>
+          <td>.cdr-show-inline@sm</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline@sm">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline-block@sm</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline-block@sm">X</div>
+          </td>
+        </tr>
+
+        <tr>
           <td>.cdr-show@sm-only</td>
           <td>
             <div class="cdr-hide cdr-show@sm-only">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline@sm-only</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline@sm-only">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline-block@sm-only</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline-block@sm-only">X</div>
           </td>
         </tr>
 
@@ -106,9 +162,37 @@
         </tr>
 
         <tr>
+          <td>.cdr-show-inline@md</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline@md">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline-block@md</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline-block@md">X</div>
+          </td>
+        </tr>
+
+        <tr>
           <td>.cdr-show@md-only</td>
           <td>
             <div class="cdr-hide cdr-show@md-only">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline@md-only</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline@md-only">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline-block@md-only</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline-block@md-only">X</div>
           </td>
         </tr>
 
@@ -120,9 +204,37 @@
         </tr>
 
         <tr>
+          <td>.cdr-show-inline@lg</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline@lg">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline-block@lg</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline-block@lg">X</div>
+          </td>
+        </tr>
+
+        <tr>
           <td>.cdr-show@lg-only</td>
           <td>
             <div class="cdr-hide cdr-show@lg-only">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline@lg-only</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline@lg-only">X</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-show-inline-block@lg-only</td>
+          <td>
+            <div class="cdr-hide cdr-show-inline-block@lg-only">X</div>
           </td>
         </tr>
 

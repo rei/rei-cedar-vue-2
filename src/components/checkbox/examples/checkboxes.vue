@@ -4,6 +4,7 @@
     <cdr-checkbox
       v-model="ex1"
       @change="logChange"
+      data-backstop="checkbox-focus"
     >single</cdr-checkbox>
     <p>single: {{ ex1 }}</p>
     <span data-backstop="checkbox-checked">

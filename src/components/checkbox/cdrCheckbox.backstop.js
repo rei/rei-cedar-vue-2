@@ -7,7 +7,8 @@ module.exports = [
     hoverSelectors: [
       '[data-backstop="checkbox-checked"]',
     ],
-    delay: 0,
-    misMatchThreshold: 0.1,
+    focusSelectors: [
+      '[data-backstop="checkbox-focus"]+label',
+    ],
   },
 ];

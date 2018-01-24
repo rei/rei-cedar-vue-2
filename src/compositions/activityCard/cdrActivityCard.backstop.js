@@ -7,7 +7,6 @@ module.exports = [
     hoverSelectors: [
       '[data-backstop="activity-card"]',
     ],
-    delay: 0,
-    misMatchThreshold: 0.1,
+    hoverWait: 2000,
   },
 ];
