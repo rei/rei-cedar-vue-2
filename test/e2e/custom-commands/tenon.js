@@ -1,7 +1,7 @@
 const util = require('util');
 const Tenon = require('tenon-node');
 
-exports.command = function () {
+exports.command = function () { // eslint-disable-line
   const FAILURE_MSG = '%s\n Description: %s\n Location: Line %d, Column %d\n Help: %s \n';
   const PASS_MSG = '%d Tenon a11y tests passed';
   const BP_URL = 'https://tenon.io/';
@@ -20,7 +20,7 @@ exports.command = function () {
 
       tenonTest.checkSrc(source, {
         // certainty: '0', // '0','20','40','60','80','100' Default is '0'
-        projectID: 'cedar',
+        projectID: 'ebafcbf9-4a91-4abc-9f68-1a9706416ab3',
         docID: 'CedarProvingGrounds',
         // priority: '0', // '0','20','40','60','80','100' Default is '0'
         // level: 'AAA', // 'A','AA','AAA' Default is 'AAA'
@@ -28,10 +28,13 @@ exports.command = function () {
         appID: 'Cedar',
         ref: 1,
         // If you set height, width must also be set. Default is '768'
-        // viewPortHeight: '768', 
+        // viewPortHeight: '768',
         // If you set width, height must also be set. Default is '1024'
-        // viewPortWidth: '1024', 
+        // viewPortWidth: '1024',
       }, (err, results) => {
+        console.log('============error:', err);
+        console.log('------------results:', results);
+
         if (err) {
           self.verify.fail(null, null, util.format('Error with request: %s', err));
         } else if (results.resultSet.length) { // errors

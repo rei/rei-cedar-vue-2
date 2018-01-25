@@ -17,8 +17,3 @@ export default {
 };
 </script>
 
-<style>
-  .anchor-example {
-    padding: 20px;
-  }
-</style>
