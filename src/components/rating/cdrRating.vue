@@ -78,16 +78,14 @@ export default {
     baseClass() {
       return 'cdr-rating';
     },
+    rounded() {
+      return Math.round(this.rating * 4) / 4;
+    },
     whole() {
       return Math.floor(this.rating);
     },
     remainder() {
-      const full = (Math.round(this.rating * 4) / 4).toFixed(2);
-
-      return full.split('.')[1];
-    },
-    rounded() {
-      return Math.round(this.rating * 4) / 4;
+      return this.rounded.toFixed(2).split('.')[1];
     },
   },
 };
