@@ -1,5 +1,5 @@
 <template>
-  <div class="anchor-example cdr-bg--dark-20">
+  <div class="anchor-example overlay-example">
     <cdr-a
       modifier="contrast"
       href="#example-contrast"
@@ -15,9 +15,3 @@ export default {
   components: Components,
 };
 </script>
-
-<style>
-  .anchor-example {
-    padding: 20px;
-  }
-</style>

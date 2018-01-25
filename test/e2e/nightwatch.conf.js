@@ -6,7 +6,10 @@ module.exports = {
   src_folders: ['test/e2e/specs'],
   output_folder: 'test/e2e/reports',
   custom_assertions_path: ['test/e2e/custom-assertions'],
-  custom_commands_path: ['test/e2e/custom-commands'],
+  custom_commands_path: [
+    // 'test/e2e/custom-commands',
+    './node_modules/nightwatch-axe/src/commands',
+  ],
 
   selenium: {
     start_process: true,

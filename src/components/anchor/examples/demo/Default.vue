@@ -15,9 +15,3 @@ export default {
   components: Components,
 };
 </script>
-
-<style>
-  .anchor-example {
-    padding: 20px;
-  }
-</style>

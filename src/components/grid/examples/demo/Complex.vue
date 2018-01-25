@@ -122,16 +122,3 @@ export default {
   components: Components,
 };
 </script>
-
-<style scoped>
-  .row-demo {
-    background-color: gray;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-  }
-
-.row-demo-wrap {
-    background-color: lightgray;
-  }
-</style>
