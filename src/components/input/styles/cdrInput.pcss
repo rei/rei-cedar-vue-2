@@ -1,6 +1,6 @@
 /* ==========================================================================
   # cdrInput
-  
+
   All values should map to variables in
   vars/cdrInput.vars.pcss
   in order to allow for theming
@@ -105,7 +105,7 @@
   }
 
   &--preicon {
-    padding-left: calc($sizing-size-sm-stretch * 2 + $sizing-size-md);
+    padding-left: $input-preicon;
   }
 
   /* Size variants
@@ -152,7 +152,7 @@
 
 .cdr-input-wrap {
   position: relative;
-  
+
   /* Block elements
     ========================================================================== */
 
@@ -226,7 +226,7 @@
     ========================================================================== */
 
   &__notification {
-    padding: $spacing-space-sm;
+    padding: $inset-sm;
     border-style: solid;
     border-width: 1px;
     border-top: none;

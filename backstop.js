@@ -7,7 +7,7 @@ const scenariosArr = [];
 let defs = [];
 const scenarioDefaults = {
   url: 'http://localhost:3000',
-  delay: 100,
+  misMatchThreshold: 0.1,
   readyEvent: null,
   onReadyScript: 'onReady.js',
 };
@@ -18,47 +18,46 @@ function createScenario(def) {
   scenariosArr.push(finalScenario);
 }
 
-function createHoverScenario(def) {
-  // handle normal selectors
-  if (Object.prototype.hasOwnProperty.call(def, 'selectors')) {
-    const normalScenario = Object.assign({}, def);
-    delete normalScenario.hoverSelectors;
-    createScenario(normalScenario);
-  }
-  // handle hover selectors
-  const hoverScenario = Object.assign({}, def);
-  hoverScenario.label = `${hoverScenario.label} Hover`;
-  hoverScenario.selectors = [];
-  hoverScenario.hoverWait = 2000;
-  const copy = Object.assign({}, hoverScenario);
-  delete copy.hoverSelectors;
-
-  hoverScenario.hoverSelectors.forEach((selector) => {
-    copy.hoverSelector = selector;
-    copy.selectors = [];
-    copy.selectors.push(selector);
-    createScenario(copy);
+function splitScenario(def, type = '', selectorsArr, extraOptions = {}) {
+  const scenario = Object.assign({}, extraOptions, def);
+  scenario.label = `${def.label} ${type}`;
+  selectorsArr.forEach((s) => {
+    scenario[`${type}Selector`] = true;
+    scenario.selectors = [s];
+    createScenario(scenario);
   });
 }
 
-// get backstop definition files and concat the contents
+// leaving this here for testing
 // const files = glob.sync(
-//   './src/components/anchor/*.backstop.js',
+//   // './src/**/*[!{cdr}].backstop.js',
+//   './src/**/testing.backstop.js',
 //   { ignore: './src/**/node_modules/**' },
 // );
-const files = glob.sync('./src/**/*.backstop.js', { ignore: './src/**/node_modules/**' });
+
+// get backstop definition files and concat the contents
+const files = glob.sync('./src/**/*.backstop.js', { ignore: ['./src/**/node_modules/**'] });
 
 files.forEach((file) => {
   defs = defs.concat(require(file));
 });
 
-
 defs.forEach((def) => {
-  if (Object.prototype.hasOwnProperty.call(def, 'hoverSelectors')) {
-    createHoverScenario(def);
-  } else {
-    createScenario(def);
+  const currDef = def;
+
+  if (Object.prototype.hasOwnProperty.call(currDef, 'hoverSelectors')) {
+    const { hoverSelectors } = currDef;
+    delete currDef.hoverSelectors;
+    splitScenario(currDef, 'hover', hoverSelectors, { hoverWait: 1000 });
   }
+
+  if (Object.prototype.hasOwnProperty.call(currDef, 'focusSelectors')) {
+    const { focusSelectors } = currDef;
+    delete currDef.focusSelectors;
+    splitScenario(currDef, 'focus', focusSelectors, { focusWait: 1000 });
+  }
+
+  createScenario(currDef);
 });
 
 module.exports = {
@@ -99,4 +98,5 @@ module.exports = {
   report: ['browser'],
   debug: false,
   debugWindow: false,
+  startingPort: 9350,
 };
