@@ -61,7 +61,6 @@
   - Intended to be used for adding margin to the right of an element.
 
 #### Variants
-
 | Class           | property     | value     |
 |-----------------|------------ -|-----------|
 | .cdr-stack--xxs | margin-right | 2px       |
