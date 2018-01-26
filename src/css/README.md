@@ -61,7 +61,7 @@
   - Intended to be used for adding margin to the right of an element.
 
 #### Variants
---
+
 | Class           | property     | value     |
 |-----------------|------------ -|-----------|
 | .cdr-stack--xxs | margin-right | 2px       |
@@ -79,7 +79,7 @@
   - their internal spacing.
 
 #### Variants
---
+
 | Class                              | property       | value     |
 |------------------------------------|----------------|-----------|
 | .cdr-inset--xxs                    | padding        | 2px       |
@@ -110,7 +110,7 @@
   - Intended to be used to add margin to the bottom of an element.
 
 #### Variants 
---
+
 | Class           | property      | value     |
 |-----------------|---------------|-----------|
 | .cdr-stack--xxs | margin-bottom | 2px       |
