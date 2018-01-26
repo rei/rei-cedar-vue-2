@@ -30,7 +30,7 @@
       modifier="small"
     />
     <cdr-rating
-      rating="3.4"
+      rating="3.444412321"
       count="615"
       modifier="small"
       compact

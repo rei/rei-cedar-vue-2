@@ -41,7 +41,7 @@
     >({{ count }})<span v-if="!compact"> Reviews</span></span>
     <span
       class="cdr-sr-only"
-    >rated {{ rating }} out of 5 with {{ count }} reviews</span>
+    >rated {{ rounded }} out of 5 with {{ count }} reviews</span>
   </div>
 </template>
 
@@ -78,13 +78,14 @@ export default {
     baseClass() {
       return 'cdr-rating';
     },
+    rounded() {
+      return Math.round(this.rating * 4) / 4;
+    },
     whole() {
       return Math.floor(this.rating);
     },
     remainder() {
-      const full = (Math.round(this.rating * 4) / 4).toFixed(2);
-
-      return full.split('.')[1];
+      return this.rounded.toFixed(2).split('.')[1];
     },
   },
 };
