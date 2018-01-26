@@ -58,7 +58,7 @@
 ## Spacing
 
 ### Inline:
-  - Intended to be used for adding margin to the right of an element.
+Intended to be used for adding margin to the right of an element.
 
 #### Variants
 | Class           | property     | value     |
@@ -72,10 +72,7 @@
 | .cdr-stack--xxl | margin-right | 128px     |
 
 ### Insets:
-  - Used to add padding to all of our elements,
-  - it is important to be sure that elements use these variables
-  - rather than the generic space values for
-  - their internal spacing.
+Used to add padding to all of our elements, it is important to be sure that elements use these variables rather than the generic space values for their internal spacing.
 
 #### Variants
 
@@ -106,7 +103,7 @@
 | .cdr-inset--remove-left            | padding-left   | 0         |
 
 ### Stack
-  - Intended to be used to add margin to the bottom of an element.
+Intended to be used to add margin to the bottom of an element.
 
 #### Variants 
 
