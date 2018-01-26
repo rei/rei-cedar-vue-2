@@ -549,6 +549,10 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
+axe-core@^2.1.7:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-2.6.1.tgz#28772c4f76966d373acda35b9a409299dc00d1b5"
+
 axios@^0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.15.3.tgz#2c9d638b2e191a08ea1d6cc988eadd6ba5bdc053"
@@ -7802,6 +7806,12 @@ negotiator@0.6.1:
 netmask@~1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"
+
+nightwatch-axe@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/nightwatch-axe/-/nightwatch-axe-0.1.5.tgz#5619dd2f668a3f7e6e94adf254e8473b8c7e0d61"
+  dependencies:
+    axe-core "^2.1.7"
 
 nightwatch@^0.9.19:
   version "0.9.19"

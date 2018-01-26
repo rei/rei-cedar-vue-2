@@ -87,6 +87,7 @@
     "lodash": "^4.17.4",
     "minimist": "^1.2.0",
     "nightwatch": "^0.9.19",
+    "nightwatch-axe": "^0.1.5",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^3.0.0",
     "ora": "^1.1.0",

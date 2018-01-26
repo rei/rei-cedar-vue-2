@@ -1862,13 +1862,9 @@ export default {
 
 <style scoped>
   .row-demo {
-    background-color: gray;
+    background-color: lightgray;
     text-align: center;
     padding: 10px;
     width: 100%;
-  }
-
-  .row-demo-wrap {
-    background-color: lightgray;
   }
 </style>

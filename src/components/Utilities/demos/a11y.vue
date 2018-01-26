@@ -9,7 +9,7 @@
     <p data-backstop="a11y-skip-link">skip link -->
       <a
         class="cdr-sr-only cdr-sr-only-focusable"
-        href="#">Skip to main content</a>
+        href="#skip">Skip to main content</a>
     </p>
   </div>
 </template>
