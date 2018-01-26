@@ -61,15 +61,16 @@
 Intended to be used for adding margin to the right of an element.
 
 #### Variants
-| Class           | property     | value     |
-|-----------------|------------ -|-----------|
-| .cdr-stack--xxs | margin-right | 2px       |
-| .cdr-stack--xs  | margin-right | 4px       |
-| .cdr-stack--sm  | margin-right | 8px       |
-| .cdr-stack      | margin-right | 16px      |
-| .cdr-stack--lg  | margin-right | 32px      |
-| .cdr-stack--xl  | margin-right | 64px      |
-| .cdr-stack--xxl | margin-right | 128px     |
+
+| Class            | property     | value     |
+|------------------|--------------|-----------|
+| .cdr-inline--xxs | margin-right | 2px       |
+| .cdr-inline--xs  | margin-right | 4px       |
+| .cdr-inline--sm  | margin-right | 8px       |
+| .cdr-inline      | margin-right | 16px      |
+| .cdr-inline--lg  | margin-right | 32px      |
+| .cdr-inline--xl  | margin-right | 64px      |
+| .cdr-inline--xxl | margin-right | 128px     |
 
 ### Insets:
 Used to add padding to all of our elements, it is important to be sure that elements use these variables rather than the generic space values for their internal spacing.
