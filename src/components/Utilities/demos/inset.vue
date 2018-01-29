@@ -39,7 +39,7 @@
       <p class="cdr-inset--stretch">
         cdr-inline--stretch
       </p>
-      <p class="cdr-inset">
+      <p class="cdr-inset--lg">
         cdr-inset--lg
       </p>
       <p class="cdr-inset--lg cdr-inset--squish">
@@ -48,17 +48,14 @@
       <p class="cdr-inset--lg cdr-inset--stretch">
         cdr-inset--lg + cdr-inline--stretch
       </p>
-      <p class="cdr-inset">
+      <p class="cdr-inset--xl">
         cdr-inset--xl
       </p>
       <p class="cdr-inset--xl cdr-inset--squish">
         cdr-inset--xl + cdr-inset-squish
       </p>
       <p class="cdr-inset--xl cdr-inset--stretch">
-        cdr-inline--stretch
-      </p>
-      <p class="cdr-inset">
-        cdr-inset--xl + cdr-inset--xxl
+        cdr-inset--xl + cdr-inline--stretch
       </p>
       <p class="cdr-inset--squish cdr-inset--remove-top">
         cdr-inset-squish + cdr-inset--remove-top
