@@ -218,4 +218,4 @@ yarn.lock                       #We’re using yarn -- go read the docs
 This project is Commitizen friendly.
 when creating a pull request run `git cz` rather than `git commit` and follow the prompts.
 
-To generate the Changlog on tag run `standard-changelog`.
+To generate the Changelog on tag run `standard-changelog`.
