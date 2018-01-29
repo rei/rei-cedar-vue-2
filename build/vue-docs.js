@@ -1,7 +1,6 @@
 const path = require('path')
 const semverDiff = require('semver-diff')
 const semver = require('semver')
-const util = require('util')
 const fs = require('fs')
 const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
@@ -18,7 +17,7 @@ json2md.converters.anchor = (anchor, json) => {
 // pull in *.vue files from directory
 glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**']}, (compErr, files) => {
   if(compErr)
-    throw new Error(`Error while trying to find single file components:\n${compErr}`)
+    throw new Error(`Error while trying to find single file Vue components:\n${compErr}`)
 
   // convert *.vue files into JSON objects then convert to *.md files
   files.forEach((file) => {
@@ -42,7 +41,7 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
     // pull in the markdown documentation files and their NPM versions
     glob(`${vueCompDir + vueCompName}-*.md`, (mdFileErr, mdFiles) => {
       if (mdFileErr) 
-        throw new Error(`Error while trying to find markdown documentation files:\n${mdFileErr}`)
+        throw new Error(`Error while trying to find markdown documentation files in directory ${vueCompDir}:\n${mdFileErr}`)
 
       // no markdown documentation file exiists yet, create one
       if (mdFiles.length == 0) {
@@ -149,7 +148,7 @@ function tableFromProps(propsObj) {
   for(const prop in propsObj) {
     let cols = []
     cols.push(`${prop}`) // property name
-    cols.push(propsObj[prop]["type"] ? propsObj[prop]["type"]["name"] : 'unkown') // type of the property
+    cols.push(propsObj[prop]["type"] ? propsObj[prop]["type"]["name"] : 'unknown') // type of the property
     cols.push(propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a') // property default value
     cols.push(propsObj[prop]["required"] ? 'true' : 'false') // property is required
     cols.push(`${propsObj[prop]["description"]}`) // description of the property
