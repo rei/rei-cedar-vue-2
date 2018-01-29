@@ -156,5 +156,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "standard-changelog": "^1.0.8"
   }
 }
