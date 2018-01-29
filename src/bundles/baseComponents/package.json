@@ -15,6 +15,9 @@
   "scripts": {
     "build": "node ../../../build/build.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@rei-co-op/cedar-a": "^0.0.6",
     "@rei-co-op/cedar-button": "^0.0.7",
