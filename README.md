@@ -214,3 +214,8 @@ postcss.config.js               #Config for postcss -- add new postcss plugins h
 styleguide.config.js            #Configuration for vue-styleguidist
 yarn.lock                       #We’re using yarn -- go read the docs
 ```
+## Commits 
+This project is Commitizen friendly.
+when creating a pull request run `git cz` rather than `git commit` and follow the prompts.
+
+To generate the Changlog on tag run `standard-changelog`.
