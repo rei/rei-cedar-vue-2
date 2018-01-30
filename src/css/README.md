@@ -1,59 +1,74 @@
 # CSS Utility classes:
 
 ## A11y
-  - .cdr-sr-only
-  - .cdr-sr-only-focusable
+
+| Class                  | notes                                                                                                   |
+|------------------------|---------------------------------------------------------------------------------------------------------|
+| .cdr-sr-only           | Hide an element to all devices except screen readers                                                    |
+| .cdr-sr-only-focusable | Combine with `.cdr-sr-only` to show the element again when it's focused (e.g. by a keyboard-only user). |
 
 ## Alignment
 
-1. Text:
-  - .cdr-text-left
-  - .cdr-text-center
-  - .cdr-text-right
-2. Content:
-  - .cdr-center-block
+### Text:
+
+| class            | notes             |
+|------------------|-------------------|
+| .cdr-text-left   | Left align text   |
+| .cdr-text-center | Center align text |
+| .cdr-text-right  | Right align text  |
+
+### Content:
+
+| class             | notes                                                            |
+|-------------------|------------------------------------------------------------------|
+| .cdr-center-block | Sets element to block display and centers using `margin: 0 auto` |
 
 ## Visibility
 
-1. Hide:
-  - .cdr-hide
-  - .cdr-hide@xs-only
-  - .cdr-hide@sm-only
-  - .cdr-hide@sm
-  - .cdr-hide@md-only
-  - .cdr-hide@md
-  - .cdr-hide@lg-only
-  - .cdr-hide@lg
-2. Show:
-  - .cdr-show
-  - .cdr-show-inline
-  - .cdr-show-inline-block
-  - .cdr-show@xs-only
-  - .cdr-show-inline@xs-only
-  - .cdr-show-inline-block@xs-only
-  - .cdr-show@sm-only
-  - .cdr-show-inline@sm-only
-  - .cdr-show-inline-block@sm-only
-  - .cdr-show@sm
-  - .cdr-show-inline@sm
-  - .cdr-show-inline-block@sm
-  - .cdr-show@md-only
-  - .cdr-show-inline@md-only
-  - .cdr-show-inline-block@md-only
-  - .cdr-show@md
-  - .cdr-show-inline@md
-  - .cdr-show-inline-block@md
-  - .cdr-show@lg-only
-  - .cdr-show-inline@lg-only
-  - .cdr-show-inline-block@lg-only
-  - .cdr-show@lg
-  - .cdr-show-inline@lg
-  - .cdr-show-inline-block@lg
-3. Print:
-  - .cdr-hide@print
-  - .cdr-show@print
-  - .cdr-show-inline@print
-  - .cdr-show-inline-block@print
+### Hide:
+
+| Class             | Visible @ xs | Visible @ sm | Visible @ md | Visible @ lg |
+|-------------------|:------------:|:------------:|:------------:|:------------:|
+| .cdr-hide         |              |              |              |              |
+| .cdr-hide@xs-only |              |       x      |       x      |       x      |
+| .cdr-hide@sm-only |       x      |              |       x      |       x      |
+| .cdr-hide@sm      |       x      |              |              |              |
+| .cdr-hide@md-only |       x      |       x      |              |       x      |
+| .cdr-hide@md      |       x      |       x      |              |              |
+| .cdr-hide@lg-only |       x      |       x      |       x      |              |
+| .cdr-hide@lg      |       x      |       x      |       x      |              |
+
+### Show:
+
+| Class                  |             note             |
+|------------------------|------------------------------|
+| .cdr-show              | Sets display to block        |
+| .cdr-show-inline       | Sets display to inline       |
+| .cdr-show-inline-block | Sets display to inline-block |
+
+When combined with `.cdr-hide`
+
+| Class                 | Visible @ xs | Visible @ sm | Visible @ md | Visible @ lg |
+|-----------------------|:------------:|:------------:|:------------:|:------------:|
+| .cdr-show(-*)         |       x      |       x      |       x      |       x      |
+| .cdr-show(-*)@xs-only |       x      |              |              |              |
+| .cdr-show(-*)@sm-only |              |       x      |              |              |
+| .cdr-show(-*)@sm      |              |       x      |       x      |       x      |
+| .cdr-show(-*)@md-only |              |              |       x      |              |
+| .cdr-show(-*)@md      |              |              |       x      |       x      |
+| .cdr-show(-*)@lg-only |              |              |              |       x      |
+| .cdr-show(-*)@lg      |              |              |              |       x      |
+
+### Print:
+
+Within print media query.
+
+| Class                        |             note             |
+|------------------------------|------------------------------|
+| .cdr-hide@print              | Sets display to none         |
+| .cdr-show@print              | Sets display to block        |
+| .cdr-show-inline@print       | Sets display to inline       |
+| .cdr-show-inline-block@print | Sets display to inline-block |
 
 ## Spacing
 
