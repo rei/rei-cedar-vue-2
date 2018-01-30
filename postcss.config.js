@@ -4,6 +4,7 @@ module.exports = {
   plugins: {
     'postcss-import': {},
     'postcss-strip-inline-comments': {},
+    'postcss-sassy-mixins': {}, // used to strip mixins from brand.ai
     'postcss-simple-vars': {},
     'postcss-calc': {},
     'postcss-nested': {},
