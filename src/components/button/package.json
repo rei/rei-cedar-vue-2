@@ -17,6 +17,9 @@
     "build:component": "node ../../../build/build.js",
     "build:theme": "node ../../../utils/extractTheme.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@rei-co-op/cedar-anchor": "^0.0.6",
     "@rei-co-op/cedar-core-style": "^0.0.2",
