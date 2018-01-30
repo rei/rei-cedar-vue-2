@@ -24,7 +24,7 @@ Clone the project.
 
 `npm run dev`
 
-Runs locally for development. Has hot reloading, linting, browsersync, and other nice things related to development.
+Runs locally for development. Has hot reloading, linting, and other nice things related to development.
 
 `npm run build`
 

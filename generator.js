@@ -76,6 +76,9 @@ inquirer.prompt(QUESTIONS).then((answers) => {
     // rename files that need it
     if (file.path.indexOf('[name]') > 0) {
       filePath = file.path.replace(/\[name\]/, compName);
+      fs.renameSync(file.path, filePath);
+    }
+    if (file.path.indexOf('[ex-name]') > 0) {
       filePath = file.path.replace(/\[ex-name\]/, pascalName);
       fs.renameSync(file.path, filePath);
     }
