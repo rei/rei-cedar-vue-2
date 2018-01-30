@@ -60,8 +60,6 @@ defs.forEach((def) => {
   createScenario(currDef);
 });
 
-console.log(scenariosArr);
-
 module.exports = {
   id: 'cedar',
   viewports: [
