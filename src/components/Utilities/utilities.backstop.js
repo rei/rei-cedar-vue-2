@@ -8,6 +8,7 @@ module.exports = [
       '[data-backstop="inline-space-utilities"]',
       '[data-backstop="inset-space-utilities"]',
       '[data-backstop="stack-space-utilities"]',
+      '[data-backstop="utility-container"]',
     ],
     focusSelectors: [
       '[data-backstop="a11y-skip-link"] > a',

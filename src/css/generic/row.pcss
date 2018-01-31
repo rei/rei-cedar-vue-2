@@ -1,5 +1,8 @@
-$rowGutter: calc($container-x-padding * 2);
-$colBottom: 1rem;
+$rowGutter-xs: calc(16px);
+$rowGutter-sm: calc(16px);
+$rowGutter-md: calc(32px);
+$rowGutter-lg: calc(32px);
+
 $rowColumns: 12;
 
 $1-row-pct: calc($rowColumns / 1 / $rowColumns * 100%);
@@ -51,8 +54,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 .cdr-row {
   display: flex;
   flex-flow: row wrap;
-  margin-left: calc(($rowGutter * -1) / 2);
-  margin-right: calc(($rowGutter * -1) / 2);
+  margin-left: calc(($rowGutter-xs * -1) / 2);
+  margin-right: calc(($rowGutter-xs * -1) / 2);
   padding-left: 0;
   padding-right: 0;
 
@@ -176,7 +179,7 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   &--gutter-none {
-    margin: 0;
+    margin: 0 !important;
 
     & > .cdr-col {
       padding: 0;
@@ -184,8 +187,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   }
 
   &--gutter-xxs {
-    margin-left: calc(($space-xxs * -1) / 2);
-    margin-right: calc(($space-xxs * -1) / 2);
+    margin-left: calc(($space-xxs * -1) / 2) !important;
+    margin-right: calc(($space-xxs * -1) / 2) !important;
 
     & > .cdr-col {
       padding: $space-xxs;
@@ -262,6 +265,9 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--sm-mq) {
+    margin-left: calc(($rowGutter-sm * -1) / 2);
+    margin-right: calc(($rowGutter-sm * -1) / 2);
+
     /* Row small elements
     ========================================================================== */
     &_row1\@sm {
@@ -371,7 +377,7 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     /* Row small modifiers
     ========================================================================== */
     &--gutter-none\@sm {
-      margin: 0;
+      margin: 0 !important;
 
       & > .cdr-col {
         padding: 0;
@@ -379,8 +385,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--gutter-xxs\@sm {
-      margin-left: calc(($space-xxs * -1) / 2);
-      margin-right: calc(($space-xxs * -1) / 2);
+      margin-left: calc(($space-xxs * -1) / 2) !important;
+      margin-right: calc(($space-xxs * -1) / 2) !important;
 
       & > .cdr-col {
         padding: $space-xxs;
@@ -458,6 +464,9 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--md-mq) {
+    margin-left: calc(($rowGutter-md * -1) / 2);
+    margin-right: calc(($rowGutter-md * -1) / 2);
+
     /* Row medium elements
     ========================================================================== */
 
@@ -569,7 +578,7 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     ========================================================================== */
 
     &--gutter-none\@md {
-      margin: 0;
+      margin: 0 !important;
 
       & > .cdr-col {
         padding: 0;
@@ -577,8 +586,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--gutter-xxs\@md {
-      margin-left: calc(($space-xxs * -1) / 2);
-      margin-right: calc(($space-xxs * -1) / 2);
+      margin-left: calc(($space-xxs * -1) / 2) !important;
+      margin-right: calc(($space-xxs * -1) / 2) !important;
 
       & > .cdr-col {
         padding: $space-xxs;
@@ -656,6 +665,9 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--lg-mq) {
+    margin-left: calc(($rowGutter-lg * -1) / 2);
+    margin-right: calc(($rowGutter-lg * -1) / 2);
+
     /* Row large elements
     ========================================================================== */
 
@@ -767,7 +779,7 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     ========================================================================== */
 
     &--gutter-none\@lg {
-      margin: 0;
+      margin: 0 !important;
 
       & > .cdr-col {
         padding: 0;
@@ -775,8 +787,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--gutter-xxs\@lg {
-      margin-left: calc(($space-xxs * -1) / 2);
-      margin-right: calc(($space-xxs * -1) / 2);
+      margin-left: calc(($space-xxs * -1) / 2) !important;
+      margin-right: calc(($space-xxs * -1) / 2) !important;
 
       & > .cdr-col {
         padding: $space-xxs;
@@ -870,7 +882,7 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 
 .cdr-col {
   flex: 1 1 0;
-  padding: calc($rowGutter / 2);
+  padding: calc($rowGutter-xs / 2);
   display: flex;
 
   &__content {
@@ -1096,6 +1108,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--sm-mq) {
+    padding: calc($rowGutter-sm / 2);
+
     /* Col small elements
     ========================================================================== */
 
@@ -1294,6 +1308,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--md-mq) {
+    padding: calc($rowGutter-md / 2);
+
     /* Col medium elements
     ========================================================================== */
 
@@ -1492,6 +1508,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--lg-mq) {
+    padding: calc($rowGutter-lg / 2);
+
     /* Col large elements
     ========================================================================== */
 

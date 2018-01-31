@@ -1,7 +1,7 @@
 Note: immediate children of `cdr-col` are treated as flex items (due to a flex height bug in Safari). As a result, if you want to have more than one child element they should be wrapped in a single `div` element.
 
 Bad:
-```
+```html
 ...
 <cdr-col>
   <div/>
@@ -11,7 +11,7 @@ Bad:
 ...
 ```
 Good:
-```
+```html
 ...
 <cdr-col>
   <div>
@@ -23,15 +23,34 @@ Good:
 ...
 ```
 
-See cdr-row for complex example.
 
 NOTE: anytime a `cdr-col` is nested within another `cdr-col` the parent needs `is-row` to function correctly
+
+```html
+...
+<cdr-col is-row>
+  <cdr-col>
+    <div/>
+  </cdr-col>
+  <cdr-col>
+    <div/>
+  </cdr-col>
+  <cdr-col is-row cols="3">
+    <cdr-col>
+      <div/>
+    </cdr-col>
+  </cdr-col>
+</cdr-col>
+...
+```
+
+See cdr-row for complex example.
 
 ### Examples
 
 #### Span
 
-```
+```html
 <div class="cdr-container-fluid">
   <h4>Basic</h4>
   <cdr-row>

@@ -1,5 +1,7 @@
 <template>
   <div>
+    <container/>
+
     <a11y/>
 
     <align/>
@@ -11,6 +13,7 @@
     <inset />
 
     <stack />
+
   </div>
 </template>
 
@@ -21,6 +24,7 @@ import align from './demos/align';
 import inline from './demos/inline';
 import inset from './demos/inset';
 import stack from './demos/stack';
+import container from './demos/container';
 
 export default {
   name: 'Utilities',
@@ -31,6 +35,7 @@ export default {
     inline,
     inset,
     stack,
+    container,
   },
 };
 </script>
