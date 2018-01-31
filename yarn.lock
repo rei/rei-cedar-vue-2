@@ -5402,6 +5402,10 @@ indent-string@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz#4a5fd6d27cc332f37e5419a504dbb837105c9289"
 
+indento@^1.1.7:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/indento/-/indento-1.1.11.tgz#dd5cb7516b345c3a2d8085fef30b4cf37c261a31"
+
 indexes-of@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/indexes-of/-/indexes-of-1.0.1.tgz#f30f716c8e2bd346c7b67d3df3915566a7c05607"
@@ -6483,6 +6487,12 @@ json-stable-stringify@~0.0.0:
 json-stringify-safe@5.0.x, json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
+
+json2md@^1.5.11:
+  version "1.5.11"
+  resolved "https://registry.yarnpkg.com/json2md/-/json2md-1.5.11.tgz#32fdf1d39f58327a88eab97e27803d4095f98da8"
+  dependencies:
+    indento "^1.1.7"
 
 json3@3.3.2, json3@^3.3.2:
   version "3.3.2"
