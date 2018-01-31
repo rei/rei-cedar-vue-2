@@ -1860,7 +1860,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
   .row-demo {
     background-color: lightgray;
     text-align: center;
