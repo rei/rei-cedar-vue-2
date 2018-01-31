@@ -150,15 +150,15 @@
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not ie <= 8"
+    "ie >= 11"
   ],
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/cz-lerna-changelog"
     }
   },
   "dependencies": {
+    "cz-lerna-changelog": "^1.2.1",
     "standard-changelog": "^1.0.8"
   }
 }
-
