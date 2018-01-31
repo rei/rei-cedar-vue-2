@@ -158,7 +158,6 @@
     }
   },
   "dependencies": {
-    "cz-lerna-changelog": "^1.2.1",
-    "standard-changelog": "^1.0.8"
+    "cz-lerna-changelog": "^1.2.1"
   }
 }
