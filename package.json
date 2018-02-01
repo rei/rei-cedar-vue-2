@@ -20,6 +20,7 @@
     "docs": "vue-styleguidist server",
     "build:docs": "vue-styleguidist build",
     "create": "node generator.js",
+    "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
     "vue-docs": "node build/vue-docs.js",
     "changelog": "standard-changelog"
