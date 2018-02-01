@@ -165,7 +165,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "validate-commit-msg"
+      "commit-msg": "validate-commit-msg"
     }
   }
 }
