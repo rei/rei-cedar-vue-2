@@ -29,6 +29,8 @@
     "vue": "^2.5.10"
   },
   "devDependencies": {
+    "@commitlint/cli": "^6.0.5",
+    "@commitlint/config-conventional": "^6.0.4",
     "autoprefixer": "^7.2.4",
     "babel-core": "^6.25.0",
     "babel-eslint": "^8.1.2",
@@ -132,7 +134,6 @@
     "tenon-node": "^0.4.1",
     "uglifyjs-webpack-plugin": "^1.1.5",
     "url-loader": "^0.6.2",
-    "validate-commit-msg": "^2.14.0",
     "vue": "^2.5.13",
     "vue-jest": "^2.0.0",
     "vue-loader": "^13.6.2",
@@ -165,7 +166,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "validate-commit-msg"
+      "commit-msg": "commitlint -e $GIT_PARAMS"
     }
   }
 }
