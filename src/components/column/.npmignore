@@ -3,6 +3,7 @@ build/
 examples/
 static/
 dist/index.html
+styles/
 
 /*.lock
 /*.js
