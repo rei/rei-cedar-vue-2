@@ -13,6 +13,7 @@
     "tagName": "row"
   },
   "scripts": {
+    "prepublish": "npm run build",
     "build": "node ../../../build/build.js"
   },
   "publishConfig": {

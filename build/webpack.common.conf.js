@@ -22,7 +22,8 @@ module.exports = {
       Src: resolve('src'),
       Css: resolve('src/css'),
       Assets: resolve('src/assets'),
-      Components: resolve('src/components')
+      Components: resolve('src/components'),
+      Compositions: resolve('src/compositions'),
     },
     extensions: ['.js', '.vue', '.json'],
   },

@@ -11,6 +11,7 @@
     "buildConfig": "webpack.styles.conf"
   },
   "scripts": {
+    "prepublish": "npm run build",
     "build": "node ./build.js"
   },
   "devDependencies": {
