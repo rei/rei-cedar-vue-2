@@ -23,10 +23,10 @@ module.exports = {
 				'style',
 				'refactor',
 				'perf',
-				'test'
+				'test',
 				'chore',
 				'revert',
-				'WIP',
+				'WIP'
 			]
 		]
 	}

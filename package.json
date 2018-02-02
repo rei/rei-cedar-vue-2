@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": true,
   "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "get-tokens": "node utils/brandai.js",
     "get-icons": "node utils/icons.js",
     "dev": "node build/dev-server.js",
@@ -166,7 +167,7 @@
   },
   "husky": {
     "hooks": {
-      "commitmsg": "node ./test.js"
+      "commitmsg": "commitlint -e $GIT_PARAMS"
     }
   }
 }
