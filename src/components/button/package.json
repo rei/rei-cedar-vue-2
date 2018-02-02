@@ -13,7 +13,7 @@
     "tagName": "button"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && pkg-ok",
     "build": "npm run build:theme && npm run build:component",
     "build:component": "node ../../../build/build.js",
     "build:theme": "node ../../../utils/extractTheme.js"
@@ -25,5 +25,8 @@
     "@rei-co-op/cedar-anchor": "^0.0.6",
     "@rei-co-op/cedar-core-style": "^0.0.2",
     "vue": "^2.4.2"
+  },
+  "devDependencies": {
+    "pkg-ok": "^1.1.0"
   }
 }

@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
-"@rei-co-op/cedar-core-style@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-core-style/-/cedar-core-style-0.0.2.tgz#dffdb5fda4eedc0d20200291374936ddf1f915ab"
+pkg-ok@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/pkg-ok/-/pkg-ok-1.1.0.tgz#0698b66d248183f7e3f2529262eeacdff7cef371"
+
+svgxuse@^1.2.4:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/svgxuse/-/svgxuse-1.2.6.tgz#d6251edd07a75cb28618e0c23e8d4db64936d6be"

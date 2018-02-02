@@ -14,7 +14,7 @@
     "tagName": "{NAME-KEBAB}"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "peerDependencies": {

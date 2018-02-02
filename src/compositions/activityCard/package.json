@@ -14,7 +14,7 @@
     "tagName": "activity-card"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "peerDependencies": {
@@ -28,5 +28,8 @@
     "@rei-co-op/cedar-list": "^0.0.9",
     "@rei-co-op/cedar-media-object": "^0.0.7",
     "@rei-co-op/cedar-rating": "^0.0.8"
+  },
+  "devDependencies": {
+    "pkg-ok": "^1.1.0"
   }
 }

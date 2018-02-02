@@ -11,12 +11,13 @@
     "buildConfig": "webpack.styles.conf"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && pkg-ok",
     "build": "node ./build.js"
   },
   "devDependencies": {
     "chalk": "^2.0.1",
     "fs-extra": "^4.0.2",
+    "pkg-ok": "^1.1.0",
     "postcss-cli": "^4.1.1"
   }
 }

@@ -14,7 +14,7 @@
     "tagName": "select"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "publishConfig": {
@@ -24,5 +24,8 @@
     "@rei-co-op/cedar-core-style": "^0.0.2",
     "lodash": "^4.17.4",
     "vue": "^2.4.2"
+  },
+  "devDependencies": {
+    "pkg-ok": "^1.1.0"
   }
 }

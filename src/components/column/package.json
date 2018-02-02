@@ -13,7 +13,7 @@
     "tagName": "col"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "publishConfig": {
@@ -25,5 +25,8 @@
   },
   "dependencies": {
     "@rei-co-op/cedar-row": "^0.0.7"
+  },
+  "devDependencies": {
+    "pkg-ok": "^1.1.0"
   }
 }

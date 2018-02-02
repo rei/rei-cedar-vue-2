@@ -62,6 +62,114 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@commitlint/cli@^6.0.5":
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-6.0.5.tgz#c159c41434d24167c2f52c29e81cffc1959a6d0f"
+  dependencies:
+    "@commitlint/core" "^6.0.5"
+    babel-polyfill "6.26.0"
+    chalk "2.3.0"
+    get-stdin "5.0.1"
+    lodash.merge "4.6.0"
+    lodash.pick "4.4.0"
+    meow "3.7.0"
+
+"@commitlint/config-conventional@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-6.0.4.tgz#f5332c3aaf5423f2fa62287849859a9b769484f3"
+
+"@commitlint/core@^6.0.5":
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/@commitlint/core/-/core-6.0.5.tgz#a0f174f08a377eb9e5571bf31c2c9f60964a6ed9"
+  dependencies:
+    "@commitlint/execute-rule" "^6.0.4"
+    "@commitlint/is-ignored" "^6.0.4"
+    "@commitlint/parse" "^6.0.4"
+    "@commitlint/resolve-extends" "^6.0.4"
+    "@commitlint/rules" "^6.0.4"
+    "@commitlint/top-level" "^6.0.5"
+    "@marionebl/sander" "^0.6.0"
+    babel-runtime "^6.23.0"
+    chalk "^2.0.1"
+    cosmiconfig "^4.0.0"
+    git-raw-commits "^1.3.0"
+    lodash.merge "4.6.0"
+    lodash.mergewith "4.6.0"
+    lodash.pick "4.4.0"
+    lodash.topairs "4.3.0"
+    resolve-from "4.0.0"
+
+"@commitlint/ensure@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/ensure/-/ensure-6.0.4.tgz#c5ae6d0a24797e58caceee61608c6ac9ced64691"
+  dependencies:
+    lodash.camelcase "4.3.0"
+    lodash.kebabcase "4.1.1"
+    lodash.snakecase "4.1.1"
+    lodash.startcase "4.4.0"
+    lodash.upperfirst "4.3.1"
+
+"@commitlint/execute-rule@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/execute-rule/-/execute-rule-6.0.4.tgz#5db080be51b2cc057028ce24a1cd9142283774fc"
+  dependencies:
+    babel-runtime "6.26.0"
+
+"@commitlint/is-ignored@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/is-ignored/-/is-ignored-6.0.4.tgz#cc4cde7be8d101e848fa70b37381687fa837c417"
+  dependencies:
+    semver "5.5.0"
+
+"@commitlint/message@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/message/-/message-6.0.4.tgz#80fe320285cab5f0f4ab3847e8d3b98a3fd1e389"
+
+"@commitlint/parse@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/parse/-/parse-6.0.4.tgz#3d7403b024200d32d66e913ee464eaf46bbac075"
+  dependencies:
+    conventional-changelog-angular "^1.3.3"
+    conventional-commits-parser "^2.1.0"
+
+"@commitlint/resolve-extends@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/resolve-extends/-/resolve-extends-6.0.4.tgz#8cce624e856df7582d5621c882e83f69b44c18c4"
+  dependencies:
+    babel-runtime "6.26.0"
+    lodash.merge "4.6.0"
+    lodash.omit "4.5.0"
+    require-uncached "^1.0.3"
+    resolve-from "^4.0.0"
+    resolve-global "^0.1.0"
+
+"@commitlint/rules@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/rules/-/rules-6.0.4.tgz#6891d7e37908d6438dc3b382f193774ab4a36479"
+  dependencies:
+    "@commitlint/ensure" "^6.0.4"
+    "@commitlint/message" "^6.0.4"
+    "@commitlint/to-lines" "^6.0.4"
+    babel-runtime "^6.23.0"
+
+"@commitlint/to-lines@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/to-lines/-/to-lines-6.0.4.tgz#c0bb6ca0b5c5f565f18d9747de12067cb2c4cc34"
+
+"@commitlint/top-level@^6.0.5":
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/@commitlint/top-level/-/top-level-6.0.5.tgz#01cac031f7452c0bebfda75d6ef7fb79d1714f81"
+  dependencies:
+    find-up "^2.1.0"
+
+"@marionebl/sander@^0.6.0":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@marionebl/sander/-/sander-0.6.1.tgz#1958965874f24bc51be48875feb50d642fc41f7b"
+  dependencies:
+    graceful-fs "^4.1.3"
+    mkdirp "^0.5.1"
+    rimraf "^2.5.2"
+
 "@semantic-release/commit-analyzer@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-2.0.0.tgz#924d1e2c30167c6a472bed9f66ee8f8e077489b2"
@@ -1068,7 +1176,7 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
-babel-polyfill@^6.23.0:
+babel-polyfill@6.26.0, babel-polyfill@^6.23.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
   dependencies:
@@ -1191,7 +1299,7 @@ babel-register@^6.22.0, babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -1866,7 +1974,7 @@ chalk@1.1.3, chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0:
+chalk@2.3.0, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.0.tgz#b5ea48efc9c1793dccc9b4767c93914d3f2d52ba"
   dependencies:
@@ -2395,16 +2503,16 @@ content-type@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
 
-conventional-changelog-angular@^1.5.2:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-angular/-/conventional-changelog-angular-1.6.0.tgz#0a26a071f2c9fcfcf2b86ba0cfbf6e6301b75bfa"
+conventional-changelog-angular@^1.3.3, conventional-changelog-angular@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-angular/-/conventional-changelog-angular-1.6.1.tgz#e1434d017c854032b272f690424a8c0ca16dc318"
   dependencies:
     compare-func "^1.3.1"
     q "^1.4.1"
 
-conventional-changelog-angular@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-angular/-/conventional-changelog-angular-1.6.1.tgz#e1434d017c854032b272f690424a8c0ca16dc318"
+conventional-changelog-angular@^1.5.2:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-angular/-/conventional-changelog-angular-1.6.0.tgz#0a26a071f2c9fcfcf2b86ba0cfbf6e6301b75bfa"
   dependencies:
     compare-func "^1.3.1"
     q "^1.4.1"
@@ -2671,6 +2779,15 @@ cosmiconfig@^3.1.0:
     is-directory "^0.3.1"
     js-yaml "^3.9.0"
     parse-json "^3.0.0"
+    require-from-string "^2.0.1"
+
+cosmiconfig@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-4.0.0.tgz#760391549580bbd2df1e562bc177b13c290972dc"
+  dependencies:
+    is-directory "^0.3.1"
+    js-yaml "^3.9.0"
+    parse-json "^4.0.0"
     require-from-string "^2.0.1"
 
 create-ecdh@^4.0.0:
@@ -4747,7 +4864,7 @@ get-proxy@^2.0.0:
   dependencies:
     npm-conf "^1.1.0"
 
-get-stdin@*, get-stdin@^5.0.1:
+get-stdin@*, get-stdin@5.0.1, get-stdin@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
 
@@ -4900,6 +5017,12 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.0, glob@^7.1.1, glob@^7.1.2:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+global-dirs@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/global-dirs/-/global-dirs-0.1.1.tgz#b319c0dd4607f353f3be9cca4c72fc148c49f445"
+  dependencies:
+    ini "^1.3.4"
+
 global-modules@1.0.0, global-modules@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/global-modules/-/global-modules-1.0.0.tgz#6d770f0eb523ac78164d72b5e71a8877265cc3ea"
@@ -5016,7 +5139,7 @@ got@^7.0.0:
     url-parse-lax "^1.0.0"
     url-to-options "^1.0.1"
 
-graceful-fs@^4.1.10, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
+graceful-fs@^4.1.10, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.3, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
@@ -5425,6 +5548,14 @@ https-proxy-agent@1:
     agent-base "2"
     debug "2"
     extend "3"
+
+husky@^0.14.3:
+  version "0.14.3"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-0.14.3.tgz#c69ed74e2d2779769a17ba8399b54ce0b63c12c3"
+  dependencies:
+    is-ci "^1.0.10"
+    normalize-path "^1.0.0"
+    strip-indent "^2.0.0"
 
 iconv-lite@0.4.15:
   version "0.4.15"
@@ -7088,7 +7219,7 @@ lodash._topath@^3.0.0:
   dependencies:
     lodash.isarray "^3.0.0"
 
-lodash.camelcase@^4.3.0:
+lodash.camelcase@4.3.0, lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
 
@@ -7150,6 +7281,10 @@ lodash.istypedarray@^3.0.0:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/lodash.istypedarray/-/lodash.istypedarray-3.0.6.tgz#c9a477498607501d8e8494d283b87c39281cef62"
 
+lodash.kebabcase@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
+
 lodash.keys@^3.0.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
@@ -7184,15 +7319,27 @@ lodash.memoize@~3.0.3:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-3.0.4.tgz#2dcbd2c287cbc0a55cc42328bd0c736150d53e3f"
 
-lodash.mergewith@^4.0.0:
+lodash.merge@4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
+
+lodash.mergewith@4.6.0, lodash.mergewith@^4.0.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.0.tgz#150cf0a16791f5903b8891eab154609274bdea55"
+
+lodash.omit@4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
 
 lodash.pairs@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash.pairs/-/lodash.pairs-3.0.1.tgz#bbe08d5786eeeaa09a15c91ebf0dcb7d2be326a9"
   dependencies:
     lodash.keys "^3.0.0"
+
+lodash.pick@4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
 
 lodash.pluck@^3.1.2:
   version "3.1.2"
@@ -7207,9 +7354,17 @@ lodash.rest@^4.0.0:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/lodash.rest/-/lodash.rest-4.0.5.tgz#954ef75049262038c96d1fc98b28fdaf9f0772aa"
 
+lodash.snakecase@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.snakecase/-/lodash.snakecase-4.1.1.tgz#39d714a35357147837aefd64b5dcbb16becd8f8d"
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
+
+lodash.startcase@4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.startcase/-/lodash.startcase-4.4.0.tgz#9436e34ed26093ed7ffae1936144350915d9add8"
 
 lodash.template@^4.0.2, lodash.template@^4.4.0:
   version "4.4.0"
@@ -7224,9 +7379,17 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
+lodash.topairs@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/lodash.topairs/-/lodash.topairs-4.3.0.tgz#3b6deaa37d60fb116713c46c5f17ea190ec48d64"
+
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
+
+lodash.upperfirst@4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz#1365edf431480481ef0d1c68957a5ed99d49f7ce"
 
 lodash@3.7.x:
   version "3.7.0"
@@ -7485,7 +7648,7 @@ meow@*, meow@^4.0.0:
     redent "^2.0.0"
     trim-newlines "^2.0.0"
 
-meow@^3.3.0, meow@^3.7.0:
+meow@3.7.0, meow@^3.3.0, meow@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
   dependencies:
@@ -8009,6 +8172,10 @@ normalize-package-data@^2.3.0, normalize-package-data@^2.3.2, normalize-package-
     is-builtin-module "^1.0.0"
     semver "2 || 3 || 4 || 5"
     validate-npm-package-license "^3.0.1"
+
+normalize-path@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-1.0.0.tgz#32d0e472f91ff345701c15a8311018d3b0a90379"
 
 normalize-path@^2.0.0, normalize-path@^2.0.1, normalize-path@^2.1.1:
   version "2.1.1"
@@ -8607,6 +8774,10 @@ pkg-dir@^2.0.0:
   resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-2.0.0.tgz#f6d5d1109e19d63edf428e0bd57e12777615334b"
   dependencies:
     find-up "^2.1.0"
+
+pkg-ok@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/pkg-ok/-/pkg-ok-1.1.0.tgz#0698b66d248183f7e3f2529262eeacdff7cef371"
 
 pkg-up@^2.0.0:
   version "2.0.0"
@@ -9957,6 +10128,10 @@ resolve-dir@^1.0.0:
     expand-tilde "^2.0.0"
     global-modules "^1.0.0"
 
+resolve-from@4.0.0, resolve-from@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
+
 resolve-from@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-1.0.1.tgz#26cbfe935d1aeeeabb29bc3fe5aeb01e93d44226"
@@ -9965,9 +10140,11 @@ resolve-from@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
 
-resolve-from@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
+resolve-global@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/resolve-global/-/resolve-global-0.1.0.tgz#8fb02cfd5b7db20118e886311f15af95bd15fbd9"
+  dependencies:
+    global-dirs "^0.1.0"
 
 resolve-url@^0.2.1, resolve-url@~0.2.1:
   version "0.2.1"
@@ -10120,7 +10297,7 @@ semver-utils@^1.1.1:
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
 
-"semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.1.0, semver@^5.4.1, semver@^5.5.0:
+"semver@2 || 3 || 4 || 5", semver@5.5.0, semver@^5.0.1, semver@^5.1.0, semver@^5.4.1, semver@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 

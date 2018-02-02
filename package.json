@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": true,
   "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "get-tokens": "node utils/brandai.js",
     "get-icons": "node utils/icons.js",
     "dev": "node build/dev-server.js",
@@ -29,6 +30,8 @@
     "vue": "^2.5.10"
   },
   "devDependencies": {
+    "@commitlint/cli": "^6.0.5",
+    "@commitlint/config-conventional": "^6.0.4",
     "autoprefixer": "^7.2.4",
     "babel-core": "^6.25.0",
     "babel-eslint": "^8.1.2",
@@ -72,6 +75,7 @@
     "html-loader": "^0.5.0",
     "html-webpack-plugin": "^2.29.0",
     "http-proxy-middleware": "^0.17.3",
+    "husky": "^0.14.3",
     "inject-loader": "^3.0.0",
     "inquirer": "^5.0.1",
     "jest": "^22.0.4",
@@ -95,6 +99,7 @@
     "optimize-css-assets-webpack-plugin": "^3.0.0",
     "ora": "^1.1.0",
     "phantomjs-prebuilt": "^2.1.14",
+    "pkg-ok": "^1.1.0",
     "postcss": "^6.0.15",
     "postcss-apply": "^0.8.0",
     "postcss-calc": "^6.0.0",
@@ -159,6 +164,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commitmsg": "commitlint -e $GIT_PARAMS"
     }
   }
 }

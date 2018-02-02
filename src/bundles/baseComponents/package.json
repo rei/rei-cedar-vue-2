@@ -13,7 +13,7 @@
     "tagName": "base-components"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "publishConfig": {
@@ -38,5 +38,8 @@
   "peerDependencies": {
     "@rei-co-op/cedar-core-style": "^0.0.2",
     "vue": "^2.5.3"
+  },
+  "devDependencies": {
+    "pkg-ok": "^1.1.0"
   }
 }
