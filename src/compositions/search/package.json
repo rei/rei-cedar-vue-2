@@ -14,7 +14,7 @@
     "tagName": "search"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "peerDependencies": {
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@rei-co-op/cedar-button": "^0.0.7",
-    "@rei-co-op/cedar-input": "^0.0.7"
+    "@rei-co-op/cedar-input": "^0.0.7",
+    "pkg-ok": "^1.1.0"
   }
 }
