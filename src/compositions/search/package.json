@@ -13,6 +13,9 @@
     "composition": "search",
     "tagName": "search"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepublish": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"

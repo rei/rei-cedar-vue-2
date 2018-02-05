@@ -13,6 +13,9 @@
     "component": "{NAME-CAMEL}",
     "tagName": "{NAME-KEBAB}"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepublish": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
