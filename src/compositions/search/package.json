@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar-search",
-  "version": "0.0.8",
+  "version": "0.0.1",
   "description": "REI Cedar Style Framework - Vue Component for Search",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-search",
   "license": "ISC",
@@ -21,8 +21,8 @@
     "vue": "^2.4.2"
   },
   "devDependencies": {
-    "@rei/cedar-button": "^0.0.7",
-    "@rei/cedar-input": "^0.0.7",
+    "@rei/cedar-button": "^0.0.1",
+    "@rei/cedar-input": "^0.0.1",
     "pkg-ok": "^1.1.0"
   }
 }

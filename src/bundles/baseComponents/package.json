@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar-base-components",
-  "version": "0.0.10",
+  "version": "0.0.1",
   "description": "REI Cedar Style Framework - Bundle for required base components",
   "license": "ISC",
   "author": "REI Software Engineering",
@@ -20,23 +20,23 @@
     "access": "public"
   },
   "dependencies": {
-    "@rei/cedar-a": "^0.0.6",
-    "@rei/cedar-button": "^0.0.7",
-    "@rei/cedar-card": "^0.0.8",
-    "@rei/cedar-checkbox": "^0.0.7",
-    "@rei/cedar-column": "^0.0.8",
-    "@rei/cedar-heading": "^0.0.7",
-    "@rei/cedar-icon": "^0.0.7",
-    "@rei/cedar-image": "^0.0.7",
-    "@rei/cedar-input": "^0.0.7",
-    "@rei/cedar-list": "^0.0.9",
-    "@rei/cedar-radio": "^0.0.8",
-    "@rei/cedar-rating": "^0.0.8",
-    "@rei/cedar-row": "^0.0.7",
-    "@rei/cedar-select": "^0.0.8"
+    "@rei/cedar-a": "^0.0.1",
+    "@rei/cedar-button": "^0.0.1",
+    "@rei/cedar-card": "^0.0.1",
+    "@rei/cedar-checkbox": "^0.0.1",
+    "@rei/cedar-column": "^0.0.1",
+    "@rei/cedar-heading": "^0.0.1",
+    "@rei/cedar-icon": "^0.0.1",
+    "@rei/cedar-image": "^0.0.1",
+    "@rei/cedar-input": "^0.0.1",
+    "@rei/cedar-list": "^0.0.1",
+    "@rei/cedar-radio": "^0.0.1",
+    "@rei/cedar-rating": "^0.0.1",
+    "@rei/cedar-row": "^0.0.1",
+    "@rei/cedar-select": "^0.0.1"
   },
   "peerDependencies": {
-    "@rei/cedar-core-style": "^0.0.2",
+    "@rei/cedar-core-style": "^0.0.1",
     "vue": "^2.5.3"
   },
   "devDependencies": {

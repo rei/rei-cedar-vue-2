@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar-image",
-  "version": "0.0.7",
+  "version": "0.0.1",
   "description": "REI Cedar Style Framework - Vue Component for Image",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-img",
   "license": "ISC",
@@ -21,7 +21,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@rei/cedar-core-style": "^0.0.2",
+    "@rei/cedar-core-style": "^0.0.1",
     "vue": "^2.4.2"
   },
   "devDependencies": {
