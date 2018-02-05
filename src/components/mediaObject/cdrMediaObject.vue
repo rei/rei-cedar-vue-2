@@ -59,9 +59,9 @@
 </template>
 
 <script>
-import { CdrA } from '@rei-co-op/cedar-a';
-import { CdrImg } from '@rei-co-op/cedar-image';
-import { CdrIcon } from '@rei-co-op/cedar-icon';
+import { CdrA } from '@rei/cedar-a';
+import { CdrImg } from '@rei/cedar-image';
+import { CdrIcon } from '@rei/cedar-icon';
 import modifier from 'Src/mixins/modifier';
 import lazyImage from 'Src/mixins/lazyImage';
 

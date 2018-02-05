@@ -1,5 +1,5 @@
 {
-  "name": "@rei-co-op/{NAME-FULLKEBAB}",
+  "name": "@rei/{NAME-FULLKEBAB}",
   "version": "0.0.1",
   "description": "REI Cedar Style Framework - Vue Component for {NAME-PASCAL}",
   "homepage": "https://rei.github.io/rei-cedar/#{NAME-TAGNAME}",
@@ -18,7 +18,7 @@
     "build": "node ../../../build/build.js"
   },
   "peerDependencies": {
-    "@rei-co-op/cedar-core-style": "^0.0.2",
+    "@rei/cedar-core-style": "^0.0.2",
     "vue": "^2.5.3"
   }
 }

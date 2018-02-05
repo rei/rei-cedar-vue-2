@@ -1,5 +1,5 @@
 {
-  "name": "@rei-co-op/cedar-input",
+  "name": "@rei/cedar-input",
   "version": "0.0.7",
   "description": "REI Cedar Style Framework - Vue Component for Input",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-input",
@@ -21,7 +21,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@rei-co-op/cedar-core-style": "^0.0.2",
+    "@rei/cedar-core-style": "^0.0.2",
     "vue": "^2.4.2"
   },
   "devDependencies": {

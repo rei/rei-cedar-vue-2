@@ -1,5 +1,5 @@
 {
-  "name": "@rei-co-op/cedar-button",
+  "name": "@rei/cedar-button",
   "version": "0.0.7",
   "description": "REI Cedar Style Framework - Vue Component for Button",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-button",
@@ -22,8 +22,8 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@rei-co-op/cedar-anchor": "^0.0.6",
-    "@rei-co-op/cedar-core-style": "^0.0.2",
+    "@rei/cedar-anchor": "^0.0.6",
+    "@rei/cedar-core-style": "^0.0.2",
     "vue": "^2.4.2"
   },
   "devDependencies": {
