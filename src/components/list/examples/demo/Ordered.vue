@@ -24,19 +24,17 @@
     </cdr-list>
 
     <cdr-list list-type="ol">
-      <li>List ordered Nested
-        <cdr-list list-type="ol">
-          <li>List ordered - nested</li>
-          <li>List ordered - nested
-            <cdr-list
-              list-type="ol"
-              modifier="numbered">
-              <li>List ordered - nested - numbered</li>
-              <li>List ordered - nested - numbered</li>
-            </cdr-list>
-          </li>
+      <li>List ordered Nested</li>
+      <cdr-list list-type="ol">
+        <li>List ordered - nested</li>
+        <li>List ordered - nested</li>
+        <cdr-list
+          list-type="ol"
+          modifier="numbered">
+          <li>List ordered - nested - numbered</li>
+          <li>List ordered - nested - numbered</li>
         </cdr-list>
-      </li>
+      </cdr-list>
     </cdr-list>
   </div>
 </template>

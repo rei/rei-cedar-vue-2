@@ -36,11 +36,8 @@
   /* nesting
     ---------- */
 
-  & > li {
-    & > ul,
-    & > ol {
-      margin-top: $list-nesting-margin-top;
-    }
+  & > & {
+    margin-top: $list-nesting-margin-top;
   }
 
   /* Style variants
