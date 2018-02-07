@@ -125,6 +125,7 @@
     "rimraf": "^2.6.0",
     "selenium-server": "^3.0.1",
     "semver": "^5.5.0",
+    "semver-diff": "^2.1.0",
     "standard-changelog": "^1.0.8",
     "style-loader": "^0.20.1",
     "stylelint": "^8.4.0",
