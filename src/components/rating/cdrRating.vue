@@ -48,6 +48,11 @@
 <script>
 import modifier from '../../mixins/modifier';
 
+/**
+ * Cedar 2 component for rating
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrRating',
   mixins: [modifier],

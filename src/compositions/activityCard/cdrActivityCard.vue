@@ -62,6 +62,12 @@ import { CdrMediaObject } from '@rei/cdr-media-object';
 import { CdrRating } from '@rei/cdr-rating';
 import { CdrList } from '@rei/cdr-list';
 
+
+/**
+ * A composition of search.
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrActivityCard',
   components: {

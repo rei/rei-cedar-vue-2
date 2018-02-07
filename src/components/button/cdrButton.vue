@@ -12,6 +12,11 @@
 import theme from '../../mixins/theme';
 import modifier from '../../mixins/modifier';
 
+/**
+ * Cedar 2 component for button
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrButton',
   mixins: [modifier, theme],
