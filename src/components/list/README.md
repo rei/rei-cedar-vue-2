@@ -11,12 +11,13 @@ Note: type doesn't affect the modifier.
 ```
 <cdr-list>
   <li>List default</li>
-  <li>List default</li>
-  <ul is="cdr-list">
-    <li>List default - nested</li>
-    <li>List default - nested</li>
-    <li>List default - nested</li>
-  </ul>
+  <li>List default
+    <ul is="cdr-list">
+      <li>List default - nested</li>
+      <li>List default - nested</li>
+      <li>List default - nested</li>
+    </ul>
+  </li>
 </cdr-list>
 ```
 
