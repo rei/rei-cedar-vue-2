@@ -1,17 +1,17 @@
 # Cedar Base Components
 
 Components available in this bundle:
-* cedar-a
-* cedar-button
-* cedar-card
-* cedar-checkbox
-* cedar-column
-* cedar-heading
-* cedar-icon
-* cedar-image
-* cedar-input
-* cedar-list
-* cedar-radio
-* cedar-rating
-* cedar-row
-* cedar-select
+* cdr-a
+* cdr-button
+* cdr-card
+* cdr-checkbox
+* cdr-col
+* cdr-heading
+* cdr-icon
+* cdr-image
+* cdr-input
+* cdr-list
+* cdr-radio
+* cdr-rating
+* cdr-row
+* cdr-select

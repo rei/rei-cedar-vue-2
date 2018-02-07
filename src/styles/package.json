@@ -1,12 +1,12 @@
 {
-  "name": "@rei/cedar-core-style",
-  "version": "0.0.1",
+  "name": "@rei/cdr-assets",
+  "version": "0.0.2",
   "description": "REI Cedar Style Framework - Core Styles",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
-  "main": "dist/cedar-core.css",
-  "style": "dist/cedar-core.css",
+  "main": "dist/cdr-core.css",
+  "style": "dist/cdr-core.css",
   "config": {
     "buildConfig": "webpack.styles.conf"
   },
@@ -14,7 +14,7 @@
     "access": "public"
   },
   "scripts": {
-    "prepublish": "npm run build && pkg-ok",
+    "prepublishOnly": "npm run build && pkg-ok",
     "build": "node ./build.js"
   },
   "devDependencies": {

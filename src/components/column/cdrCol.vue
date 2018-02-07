@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { CdrRow as Row } from '@rei/cedar-row';
+import { CdrRow as Row } from '@rei/cdr-row';
 
 export default {
   name: 'CdrCol',

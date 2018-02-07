@@ -1,5 +1,5 @@
 {
-  "name": "@rei/cedar-media-object",
+  "name": "@rei/cdr-media-object",
   "version": "0.0.1",
   "description": "REI Cedar Style Framework - Vue Component for Media Object",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-media-object",
@@ -14,20 +14,23 @@
     "tagName": "media-object"
   },
   "scripts": {
-    "prepublish": "npm run build && pkg-ok",
+    "prepublishOnly": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "@rei/cedar-core-style": "^0.0.1",
-    "vue": "^2.4.2"
+    "@rei/cdr-assets": "^0.0.2",
+    "@rei/cdr-a": "^0.0.1",
+    "@rei/cdr-icon": "^0.0.1",
+    "@rei/cdr-img": "^0.0.1",
+    "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cedar-a": "^0.0.1",
-    "@rei/cedar-icon": "^0.0.1",
-    "@rei/cedar-image": "^0.0.1",
+    "@rei/cdr-a": "^0.0.1",
+    "@rei/cdr-icon": "^0.0.1",
+    "@rei/cdr-img": "^0.0.1",
     "pkg-ok": "^1.1.0"
   }
 }

@@ -13,8 +13,8 @@ const staticDir = path.resolve(__dirname, '../..', 'static');
 fs.emptyDirSync(distDir);
 
 // Compile css
-exec(`postcss ${cssDir}/main.postcss -o ${distDir}/cedar-core.css`, () => {
-  console.log(chalk.green('Compiled cedar-core.css')); // eslint-disable-line no-console
+exec(`postcss ${cssDir}/main.postcss -o ${distDir}/cdr-core.css`, () => {
+  console.log(chalk.green('Compiled cdr-core.css')); // eslint-disable-line no-console
 });
 
 // copy static files

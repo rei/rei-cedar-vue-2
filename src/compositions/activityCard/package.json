@@ -1,5 +1,5 @@
 {
-  "name": "@rei/cedar-activity-card",
+  "name": "@rei/cdr-activity-card",
   "version": "0.0.1",
   "description": "REI Cedar Style Framework - Vue Component for Activity Card",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-card-activity",
@@ -17,22 +17,28 @@
     "access": "public"
   },
   "scripts": {
-    "prepublish": "npm run build && pkg-ok",
+    "prepublishOnly": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "peerDependencies": {
-    "vue": "^2.4.2"
-  },
-  "dependencies": {
-    "@rei/cedar-card": "^0.0.1",
-    "@rei/cedar-heading": "^0.0.1",
-    "@rei/cedar-icon": "^0.0.1",
-    "@rei/cedar-image": "^0.0.1",
-    "@rei/cedar-list": "^0.0.1",
-    "@rei/cedar-media-object": "^0.0.1",
-    "@rei/cedar-rating": "^0.0.1"
+    "@rei/cdr-card": "^0.0.1",
+    "@rei/cdr-heading": "^0.0.1",
+    "@rei/cdr-icon": "^0.0.1",
+    "@rei/cdr-img": "^0.0.1",
+    "@rei/cdr-list": "^0.0.1",
+    "@rei/cdr-media-object": "^0.0.1",
+    "@rei/cdr-rating": "^0.0.1",
+    "svgxuse": "^1.2.4",
+    "vue": "^2.5.13"
   },
   "devDependencies": {
+    "@rei/cdr-card": "^0.0.1",
+    "@rei/cdr-heading": "^0.0.1",
+    "@rei/cdr-icon": "^0.0.1",
+    "@rei/cdr-img": "^0.0.1",
+    "@rei/cdr-list": "^0.0.1",
+    "@rei/cdr-media-object": "^0.0.1",
+    "@rei/cdr-rating": "^0.0.1",
     "pkg-ok": "^1.1.0"
   }
 }

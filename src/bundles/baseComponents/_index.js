@@ -1,30 +1,30 @@
-import { CdrA } from '@rei/cedar-a';
-import { CdrButton } from '@rei/cedar-button';
-import { CdrCard } from '@rei/cedar-card';
-import { CdrCheckbox } from '@rei/cedar-checkbox';
-import { CdrCol } from '@rei/cedar-column';
-import { CdrHeading } from '@rei/cedar-heading';
-import { CdrIcon } from '@rei/cedar-icon';
-import { CdrImg } from '@rei/cedar-image';
-import { CdrInput } from '@rei/cedar-input';
-import { CdrList } from '@rei/cedar-list';
-import { CdrRadio } from '@rei/cedar-radio';
-import { CdrRating } from '@rei/cedar-rating';
-import { CdrRow } from '@rei/cedar-row';
-import { CdrSelect } from '@rei/cedar-select';
+import { CdrA } from '@rei/cdr-a';
+import { CdrButton } from '@rei/cdr-button';
+import { CdrCard } from '@rei/cdr-card';
+import { CdrCheckbox } from '@rei/cdr-checkbox';
+import { CdrCol } from '@rei/cdr-col';
+import { CdrHeading } from '@rei/cdr-heading';
+import { CdrIcon } from '@rei/cdr-icon';
+import { CdrImg } from '@rei/cdr-img';
+import { CdrInput } from '@rei/cdr-input';
+import { CdrList } from '@rei/cdr-list';
+import { CdrRadio } from '@rei/cdr-radio';
+import { CdrRating } from '@rei/cdr-rating';
+import { CdrRow } from '@rei/cdr-row';
+import { CdrSelect } from '@rei/cdr-select';
 
-import CdrAStyle from '@rei/cedar-a/dist/cdr-a.css';
-import CdrButtonStyle from '@rei/cedar-button/dist/cdr-button.css';
-import CdrCardStyle from '@rei/cedar-card/dist/cdr-card.css';
-import CdrCheckboxStyle from '@rei/cedar-checkbox/dist/cdr-checkbox.css';
-import CdrHeadingStyle from '@rei/cedar-heading/dist/cdr-heading.css';
-import CdrIconStyle from '@rei/cedar-icon/dist/cdr-icon.css';
-import CdrImgStyle from '@rei/cedar-image/dist/cdr-img.css';
-import CdrInputStyle from '@rei/cedar-input/dist/cdr-input.css';
-import CdrListStyle from '@rei/cedar-list/dist/cdr-list.css';
-import CdrRadioStyle from '@rei/cedar-radio/dist/cdr-radio.css';
-import CdrRatingStyle from '@rei/cedar-rating/dist/cdr-rating.css';
-import CdrSelectStyle from '@rei/cedar-select/dist/cdr-select.css';
+import CdrAStyle from '@rei/cdr-a/dist/cdr-a.css';
+import CdrButtonStyle from '@rei/cdr-button/dist/cdr-button.css';
+import CdrCardStyle from '@rei/cdr-card/dist/cdr-card.css';
+import CdrCheckboxStyle from '@rei/cdr-checkbox/dist/cdr-checkbox.css';
+import CdrHeadingStyle from '@rei/cdr-heading/dist/cdr-heading.css';
+import CdrIconStyle from '@rei/cdr-icon/dist/cdr-icon.css';
+import CdrImgStyle from '@rei/cdr-img/dist/cdr-img.css';
+import CdrInputStyle from '@rei/cdr-input/dist/cdr-input.css';
+import CdrListStyle from '@rei/cdr-list/dist/cdr-list.css';
+import CdrRadioStyle from '@rei/cdr-radio/dist/cdr-radio.css';
+import CdrRatingStyle from '@rei/cdr-rating/dist/cdr-rating.css';
+import CdrSelectStyle from '@rei/cdr-select/dist/cdr-select.css';
 
 export default {
   CdrA,

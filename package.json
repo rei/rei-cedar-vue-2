@@ -27,7 +27,7 @@
     "changelog": "standard-changelog"
   },
   "peerDependencies": {
-    "vue": "^2.5.10"
+    "vue": "^2.5.13"
   },
   "devDependencies": {
     "@commitlint/cli": "^6.0.5",

@@ -1,5 +1,5 @@
 {
-  "name": "@rei/cedar-a",
+  "name": "@rei/cdr-a",
   "version": "0.0.1",
   "description": "REI Cedar Style Framework - Vue Component for Anchor",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-a",
@@ -14,16 +14,16 @@
     "tagName": "a"
   },
   "scripts": {
-    "prepublish": "npm run build && pkg-ok",
+    "prepublishOnly": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "@rei/cedar-button": "^0.0.1",
-    "@rei/cedar-core-style": "^0.0.1",
-    "vue": "^2.4.2"
+    "@rei/cdr-button": "^0.0.1",
+    "@rei/cdr-assets": "^0.0.2",
+    "vue": "^2.5.13"
   },
   "devDependencies": {
     "pkg-ok": "^1.1.0"
