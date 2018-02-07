@@ -15,7 +15,7 @@ json2md.converters.anchor = (anchor, json) => {
 };
 
 // pull in *.vue files from directory
-glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**']}, (compErr, files) => {
+glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**', '**/demos/**']}, (compErr, files) => {
   if(compErr)
     throw new Error(`Error while trying to find single file Vue components:\n${compErr}`)
 
