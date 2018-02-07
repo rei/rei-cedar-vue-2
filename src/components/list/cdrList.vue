@@ -19,9 +19,8 @@ import modifier from '../../mixins/modifier';
 
 /**
  * Note:
- * Nesting doesn't follow typical html ul/li nesting
- * @see {@link https://github.com/vuejs/vue/issues/2543} for further details.
- * @see examples for how to nest.
+ * Nesting requires using is="cdr-list"
+ * @see {@link https://vuejs.org/v2/guide/components.html#DOM-Template-Parsing-Caveats}
  */
 export default {
   name: 'CdrList',

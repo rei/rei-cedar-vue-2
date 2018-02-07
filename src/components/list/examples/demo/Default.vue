@@ -22,15 +22,19 @@
     </cdr-list>
 
     <cdr-list>
-      <li>List Nested</li>
-      <cdr-list>
-        <li>List default - nested</li>
-        <li>List default - nested</li>
-        <cdr-list modifier="numbered">
-          <li>List default - nested - numbered</li>
-          <li>List default - nested - numbered</li>
-        </cdr-list>
-      </cdr-list>
+      <li>List Nested
+        <ul is="cdr-list">
+          <li>List default - nested</li>
+          <li>List default - nested
+            <ul
+              is="cdr-list"
+              modifier="numbered">
+              <li>List default - nested - numbered</li>
+              <li>List default - nested - numbered</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </cdr-list>
   </div>
 </template>

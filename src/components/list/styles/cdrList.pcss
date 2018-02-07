@@ -36,8 +36,10 @@
   /* nesting
     ---------- */
 
-  & > & {
-    margin-top: $list-nesting-margin-top;
+  & > li {
+    & > .cdr-list {
+      margin-top: $list-nesting-margin-top;
+    }
   }
 
   /* Style variants

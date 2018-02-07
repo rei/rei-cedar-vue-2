@@ -23,7 +23,7 @@
       <li>List ordered - spread</li>
     </cdr-list>
 
-    <cdr-list list-type="ol">
+    <!-- <cdr-list list-type="ol">
       <li>List ordered Nested</li>
       <cdr-list list-type="ol">
         <li>List ordered - nested</li>
@@ -35,6 +35,25 @@
           <li>List ordered - nested - numbered</li>
         </cdr-list>
       </cdr-list>
+    </cdr-list> -->
+
+    <cdr-list list-type="ol">
+      <li>List ordered Nested
+        <ul
+          is="cdr-list"
+          list-type="ol">
+          <li>List ordered - nested</li>
+          <li>List ordered - nested
+            <ul
+              is="cdr-list"
+              list-type="ol"
+              modifier="numbered">
+              <li>List ordered - nested - numbered</li>
+              <li>List ordered - nested - numbered</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </cdr-list>
   </div>
 </template>
