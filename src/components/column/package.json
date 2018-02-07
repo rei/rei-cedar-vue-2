@@ -1,6 +1,6 @@
 {
-  "name": "@rei-co-op/cedar-column",
-  "version": "0.0.8",
+  "name": "@rei/cdr-col",
+  "version": "0.0.1",
   "description": "REI Cedar Style Framework - Vue Component for Column",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-col",
   "license": "ISC",
@@ -13,20 +13,19 @@
     "tagName": "col"
   },
   "scripts": {
-    "prepublish": "npm run build && pkg-ok",
+    "prepublishOnly": "npm run build && pkg-ok",
     "build": "node ../../../build/build.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "@rei-co-op/cedar-core-style": "^0.0.2",
-    "vue": "^2.4.2"
-  },
-  "dependencies": {
-    "@rei-co-op/cedar-row": "^0.0.7"
+    "@rei/cdr-assets": "^0.0.2",
+    "@rei/cdr-row": "^0.0.1",
+    "vue": "^2.5.13"
   },
   "devDependencies": {
+    "@rei/cdr-row": "^0.0.1",
     "pkg-ok": "^1.1.0"
   }
 }

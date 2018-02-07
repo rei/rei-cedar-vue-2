@@ -1,10 +1,10 @@
-# Cedar Core
+# Cdr Assets
 
 Things available in this package:
 
-* cedar-core.css
-* cedar-fonts.min.css
-* cedar-fonts.css
+* cdr-core.css
+* cdr-fonts.min.css
+* cdr-fonts.css
 * TODO: variables
 * rei-icons.svg
 * ea-icons.svg

@@ -55,13 +55,12 @@
 </template>
 
 <script>
-import { CdrCard } from '@rei-co-op/cedar-card';
-import { CdrHeading } from '@rei-co-op/cedar-heading';
-// TODO change naming?
-import { cdrImg } from '@rei-co-op/cedar-image';
-import { CdrMediaObject } from '@rei-co-op/cedar-media-object';
-import { CdrRating } from '@rei-co-op/cedar-rating';
-import { CdrList } from '@rei-co-op/cedar-list';
+import { CdrCard } from '@rei/cdr-card';
+import { CdrHeading } from '@rei/cdr-heading';
+import { cdrImg } from '@rei/cdr-img';
+import { CdrMediaObject } from '@rei/cdr-media-object';
+import { CdrRating } from '@rei/cdr-rating';
+import { CdrList } from '@rei/cdr-list';
 
 export default {
   name: 'CdrActivityCard',

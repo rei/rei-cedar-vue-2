@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import { CdrButton } from '@rei-co-op/cedar-button';
-import { CdrInput } from '@rei-co-op/cedar-input';
+import { CdrButton } from '@rei/cdr-button';
+import { CdrInput } from '@rei/cdr-input';
 
 export default {
   name: 'CdrSearch',

@@ -2,63 +2,61 @@
 # yarn lockfile v1
 
 
-"@rei-co-op/cedar-a@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-a/-/cedar-a-0.0.6.tgz#25b58f8de860bbd74b3c693990059f1fa7b3acb7"
+"@rei/cdr-a@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-a/-/cdr-a-0.0.1.tgz#22265a3a5f85bf0b24f60584659018d0594ec0b6"
 
-"@rei-co-op/cedar-button@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-button/-/cedar-button-0.0.7.tgz#40ea9c456eb1f97da7ac13610d1c03d244823da1"
+"@rei/cdr-button@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-button/-/cdr-button-0.0.1.tgz#7f066cf0b890e096db6a7e08e1e328926a84cb45"
 
-"@rei-co-op/cedar-card@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-card/-/cedar-card-0.0.8.tgz#1fef8bfeacb51dcc1e33e67679cecbae4c00e4c5"
+"@rei/cdr-card@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-card/-/cdr-card-0.0.1.tgz#c307195fd69feac4d544065b30c85665f388588a"
 
-"@rei-co-op/cedar-checkbox@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-checkbox/-/cedar-checkbox-0.0.7.tgz#99ee8a5d6b9fada4dad491ade0f4aba17e53ab6e"
+"@rei/cdr-checkbox@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-checkbox/-/cdr-checkbox-0.0.1.tgz#29ad23463981a60b84ff33793cba50db42fa33e3"
 
-"@rei-co-op/cedar-column@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-column/-/cedar-column-0.0.8.tgz#8c178a946eb8cfc5f499d9edb66664c6b458875f"
-  dependencies:
-    "@rei-co-op/cedar-row" "^0.0.7"
+"@rei/cdr-col@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-col/-/cdr-col-0.0.1.tgz#7779f0273faa1462076b95bfc54739eae0eebbba"
 
-"@rei-co-op/cedar-heading@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-heading/-/cedar-heading-0.0.7.tgz#d41769196debc3cd59b4dbd924773075295b0066"
+"@rei/cdr-heading@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-heading/-/cdr-heading-0.0.1.tgz#d18306f4d786db702ed3c1918d391f32ddea733d"
 
-"@rei-co-op/cedar-icon@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-icon/-/cedar-icon-0.0.7.tgz#cf703f6ba5acd03db2826a406bb65f76f2cbc354"
+"@rei/cdr-icon@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-icon/-/cdr-icon-0.0.1.tgz#089504c4261065dfbe6efb0187909473ab4499c2"
 
-"@rei-co-op/cedar-image@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-image/-/cedar-image-0.0.7.tgz#d49b20b780100bf45945370bbba341ef2db4ccbf"
+"@rei/cdr-img@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-img/-/cdr-img-0.0.1.tgz#c768e72782441e2f713edcb273e2032d2dab9a6a"
 
-"@rei-co-op/cedar-input@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-input/-/cedar-input-0.0.7.tgz#d92109b07bac87c2f4b68afa3436010f589caade"
+"@rei/cdr-input@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-input/-/cdr-input-0.0.1.tgz#3772437b6403966a4455f3fb9a591145f3aada62"
 
-"@rei-co-op/cedar-list@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-list/-/cedar-list-0.0.9.tgz#3280a29d002116f2474b4feac58576ea96c23ace"
+"@rei/cdr-list@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-list/-/cdr-list-0.0.1.tgz#2100367cc34498b7de94951183dfa2e380354031"
 
-"@rei-co-op/cedar-radio@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-radio/-/cedar-radio-0.0.8.tgz#be2e1a68e04490efd90bcb529b00924ac4d09305"
+"@rei/cdr-radio@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-radio/-/cdr-radio-0.0.1.tgz#9df47cd06360464f5e7f8a3395d9f22c34be7141"
 
-"@rei-co-op/cedar-rating@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-rating/-/cedar-rating-0.0.8.tgz#c44c59984b7ef563dec95bbb117da94f8bfb5f44"
+"@rei/cdr-rating@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-rating/-/cdr-rating-0.0.1.tgz#0dcf9ca41e5eade331f0f2892a3f3959c31f199d"
 
-"@rei-co-op/cedar-row@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-row/-/cedar-row-0.0.7.tgz#2496c679be141aa6cb05c4a5b6194923e36b3703"
+"@rei/cdr-row@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-row/-/cdr-row-0.0.1.tgz#48af7e3125f5546630338b259af6e3d3329355a8"
 
-"@rei-co-op/cedar-select@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@rei-co-op/cedar-select/-/cedar-select-0.0.8.tgz#c6a48a4ca4ace6dc197efd20f4d0ba8c983d266c"
+"@rei/cdr-select@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rei/cdr-select/-/cdr-select-0.0.1.tgz#8e42fed496fe51a2b727298c9ac93a3b4a8b3e62"
 
 pkg-ok@^1.1.0:
   version "1.1.0"
