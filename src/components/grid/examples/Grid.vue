@@ -342,6 +342,15 @@
         <cdr-col>
           <div class="row-demo">3</div>
         </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
       </cdr-row>
 
       <h4>gutter="xxs"</h4>
@@ -349,6 +358,15 @@
         cols="3"
         gutter="xxs"
       >
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
+        <cdr-col>
+          <div class="row-demo">3</div>
+        </cdr-col>
         <cdr-col>
           <div class="row-demo">3</div>
         </cdr-col>

@@ -54,8 +54,9 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 .cdr-row {
   display: flex;
   flex-flow: row wrap;
-  margin-left: calc(($rowGutter-xs * -1) / 2);
-  margin-right: calc(($rowGutter-xs * -1) / 2);
+  margin-top: calc($rowGutter-xs * -1);
+  margin-left: calc($rowGutter-xs * -1);
+  margin-bottom: $rowGutter-xs;
   padding-left: 0;
   padding-right: 0;
 
@@ -187,11 +188,13 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   }
 
   &--gutter-xxs {
-    margin-left: calc(($space-xxs * -1) / 2) !important;
-    margin-right: calc(($space-xxs * -1) / 2) !important;
+    margin-top: calc($space-xxs * -1) !important;
+    margin-left: calc($space-xxs * -1) !important;
+    margin-bottom: $space-xxs !important;
 
     & > .cdr-col {
-      padding: $space-xxs;
+      padding-top: $space-xxs;
+      padding-left: $space-xxs;
     }
   }
 
@@ -265,8 +268,9 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--sm-mq) {
-    margin-left: calc(($rowGutter-sm * -1) / 2);
-    margin-right: calc(($rowGutter-sm * -1) / 2);
+    margin-top: calc($rowGutter-sm * -1);
+    margin-left: calc($rowGutter-sm * -1);
+    margin-bottom: $rowGutter-sm;
 
     /* Row small elements
     ========================================================================== */
@@ -385,11 +389,13 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--gutter-xxs\@sm {
-      margin-left: calc(($space-xxs * -1) / 2) !important;
-      margin-right: calc(($space-xxs * -1) / 2) !important;
+      margin-top: calc($space-xxs * -1) !important;
+      margin-left: calc($space-xxs * -1) !important;
+      margin-bottom: $space-xxs !important;
 
       & > .cdr-col {
-        padding: $space-xxs;
+        padding-top: $space-xxs;
+        padding-left: $space-xxs;
       }
     }
 
@@ -464,8 +470,9 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--md-mq) {
-    margin-left: calc(($rowGutter-md * -1) / 2);
-    margin-right: calc(($rowGutter-md * -1) / 2);
+    margin-top: calc($rowGutter-md * -1);
+    margin-left: calc($rowGutter-md * -1);
+    margin-bottom: $rowGutter-md;
 
     /* Row medium elements
     ========================================================================== */
@@ -586,11 +593,13 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--gutter-xxs\@md {
-      margin-left: calc(($space-xxs * -1) / 2) !important;
-      margin-right: calc(($space-xxs * -1) / 2) !important;
+      margin-top: calc($space-xxs * -1) !important;
+      margin-left: calc($space-xxs * -1) !important;
+      margin-bottom: $space-xxs !important;
 
       & > .cdr-col {
-        padding: $space-xxs;
+        padding-top: $space-xxs;
+        padding-left: $space-xxs;
       }
     }
 
@@ -665,8 +674,9 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--lg-mq) {
-    margin-left: calc(($rowGutter-lg * -1) / 2);
-    margin-right: calc(($rowGutter-lg * -1) / 2);
+    margin-top: calc($rowGutter-lg * -1);
+    margin-left: calc($rowGutter-lg * -1);
+    margin-bottom: $rowGutter-lg;
 
     /* Row large elements
     ========================================================================== */
@@ -787,11 +797,13 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--gutter-xxs\@lg {
-      margin-left: calc(($space-xxs * -1) / 2) !important;
-      margin-right: calc(($space-xxs * -1) / 2) !important;
+      margin-top: calc($space-xxs * -1) !important;
+      margin-left: calc($space-xxs * -1) !important;
+      margin-bottom: $space-xxs !important;
 
       & > .cdr-col {
-        padding: $space-xxs;
+        padding-top: $space-xxs;
+        padding-left: $space-xxs;
       }
     }
 
@@ -882,7 +894,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 
 .cdr-col {
   flex: 1 1 0;
-  padding: calc($rowGutter-xs / 2);
+  padding-top: $rowGutter-xs;
+  padding-left: $rowGutter-xs;
   display: flex;
 
   &__content {
@@ -1108,7 +1121,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--sm-mq) {
-    padding: calc($rowGutter-sm / 2);
+    padding-top: $rowGutter-sm;
+    padding-left: $rowGutter-sm;
 
     /* Col small elements
     ========================================================================== */
@@ -1308,7 +1322,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--md-mq) {
-    padding: calc($rowGutter-md / 2);
+    padding-top: $rowGutter-md;
+    padding-left: $rowGutter-md;
 
     /* Col medium elements
     ========================================================================== */
@@ -1508,7 +1523,8 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--lg-mq) {
-    padding: calc($rowGutter-lg / 2);
+    padding-top: $rowGutter-lg;
+    padding-left: $rowGutter-lg;
 
     /* Col large elements
     ========================================================================== */
