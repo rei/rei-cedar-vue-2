@@ -34,8 +34,6 @@ glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', 
 function checkDirectory(dir, callback) {
   fs.stat(dir, (dirErr, stats) => {
     // check to see if directory doesn't exist
-    // if(dirErr) {
-    //   console.log(`Error while checking if ${dir} exists:\n ${dirErr.errno} ${errCodes.errno[dirErr.errno].code === errCodes.code.ENOENT.code ? true : false}`)
     if (dirErr && errCodes.errno[dirErr.errno].code === errCodes.code.ENOENT.code) {
       fs.mkdir(dir, () => {
         console.log(`There was a problem creating the director for ${dir}`)
