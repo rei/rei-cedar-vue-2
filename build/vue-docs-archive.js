@@ -1,7 +1,4 @@
 const path = require('path')
-const errCodes = require('errno')
-const semverDiff = require('semver-diff')
-const semever = require('semver')
 const fse = require('fs-extra')
 const glob = require('glob')
 
@@ -13,7 +10,7 @@ glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', 
     throw new Error(`Error while trying to find markdown documentation files:\n${mdErr}`)
   }
 
-  console.log(`Archiving markdown documentation files`)
+  console.log(`Archiving markdown documentation files\n`)
 
   // use Vue files to find associated markdown files
   vueFiles.forEach((file) => {
@@ -34,6 +31,7 @@ glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', 
           console.log(`Archiving ${mdFile}`)
           const starMdVer = mdFile.lastIndexOf(`${vueCompName}-`) + vueCompName.length + 1, endMdVer = mdFile.lastIndexOf('.')
           const mdFileVer = mdFile.slice(starMdVer, endMdVer)
+          
           fse.move(mdFile, `${fullDirPath + ARCHIVE}/${vueCompName}-${mdFileVer}.md`, {overwrite: true}, (mvErr) =>{
             if (mvErr) 
               throw new Error(`Error while trying to move ${vueCompName}-${mdFileVer}.md into ${ARCHIVE}`)
