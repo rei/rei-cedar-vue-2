@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": false,
   "main": "dist/cdr-button.js",
+  "style": "dist/cdr-button.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
     "component": "button",
