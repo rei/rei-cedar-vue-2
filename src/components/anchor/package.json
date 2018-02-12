@@ -21,7 +21,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@rei/cdr-button": "^0.0.1",
+    "@rei/cdr-button": "^0.0.2",
     "@rei/cdr-assets": "^0.0.2",
     "vue": "^2.5.13"
   },
