@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@rei/cdr-a": "^0.0.1",
-    "@rei/cdr-button": "^0.0.2",
+    "@rei/cdr-button": "^0.0.3",
     "@rei/cdr-card": "^0.0.1",
     "@rei/cdr-checkbox": "^0.0.1",
     "@rei/cdr-col": "^0.0.1",
