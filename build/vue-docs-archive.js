@@ -1,5 +1,6 @@
 const path = require('path')
-const fse = require('fs-extra')
+const fs = require('fs-extra')
+const semver = require('semver')
 const glob = require('glob')
 
 const ARCHIVE = 'api-archive'
@@ -20,19 +21,24 @@ glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', 
     const fullDirPath = `${path.dirname(__dirname)}/${vueCompDir}`
 
     // create 'api-archive' folder if it doesn't exist
-    fse.ensureDir(`${fullDirPath + ARCHIVE}`, (dirErr) => {
+    fs.ensureDir(`${fullDirPath + ARCHIVE}`, (dirErr) => {
       if(dirErr) {
         throw new Error(`There was a problem creating a ${ARCHIVE} folder for ${vueCompName}:\n${dirErr}`)
       }
 
       // move any markdown files into the api-archive folder
-      glob(`${fullDirPath + vueCompName}-*.md`, (mdFileErr, mdFiles) => {
+      glob(`${fullDirPath + vueCompName}*.md`, (mdFileErr, mdFiles) => {
+        if(mdFileErr) {
+          throw new Error(`Error while trying to archive markdown files for ${vueCompName}`)
+        }
+        
         mdFiles.forEach((mdFile) => {
           console.log(`Archiving ${mdFile}`)
           const starMdVer = mdFile.lastIndexOf(`${vueCompName}-`) + vueCompName.length + 1, endMdVer = mdFile.lastIndexOf('.')
           const mdFileVer = mdFile.slice(starMdVer, endMdVer)
           
-          fse.move(mdFile, `${fullDirPath + ARCHIVE}/${vueCompName}-${mdFileVer}.md`, {overwrite: true}, (mvErr) =>{
+          console.log(`Moving ${fullDirPath + ARCHIVE}/${vueCompName}${(semver.valid(mdFileVer)) ? `-${mdFileVer}` : ``}.md\n`)
+          fs.move(mdFile, `${fullDirPath + ARCHIVE}/${vueCompName}${(semver.valid(mdFileVer)) ? `-${mdFileVer}` : ``}.md`, {overwrite: true}, (mvErr) => {
             if (mvErr) 
               throw new Error(`Error while trying to move ${vueCompName}-${mdFileVer}.md into ${ARCHIVE}`)
           })
