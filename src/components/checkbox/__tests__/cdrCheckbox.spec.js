@@ -26,6 +26,18 @@ describe('cdrCheckbox.vue', () => {
     });
     expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
   });
+  
+  it('adds a custom label class correctly', () => {
+    const wrapper = shallow(cdrCheckbox, {
+      propsData: {
+        labelClass: 'custom-label-class',
+      },
+      slots: {
+        default: `<span>Label Test</span>`,
+      },
+    });
+    expect(wrapper.vm.$refs.label.classList.contains('custom-label-class')).toBe(true);
+  });
 
   it('maps input id to label for correctly', () => {
     const wrapper = shallow(cdrCheckbox, {

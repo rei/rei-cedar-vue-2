@@ -14,6 +14,7 @@
     >
     <label
       class="cdr-checkbox__label"
+      :class="labelClass"
       :for="checkboxId"
       ref="label"
     >
@@ -45,6 +46,10 @@ export default {
      * The value when used in a checkbox group. Replaces `trueValue` and `falseValue`.
     */
     customValue: [String, Number, Boolean, Object, Array, Symbol, Function],
+    /**
+     * Class that is added to the label for custom styles
+     */
+    labelClass: String,
     /** @ignore */
     id: String,
     /** @ignore */
