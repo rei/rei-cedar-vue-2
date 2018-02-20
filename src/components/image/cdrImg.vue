@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import modifier from 'Src/mixins/modifier';
+import modifier from 'Mixins/modifier';
 
 export default {
   name: 'CdrImg',

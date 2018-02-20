@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import theme from '../../mixins/theme';
-import modifier from '../../mixins/modifier';
+import theme from 'Mixins/theme';
+import modifier from 'Mixins/modifier';
 
 export default {
   name: 'CdrButton',
