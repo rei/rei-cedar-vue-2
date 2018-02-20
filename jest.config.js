@@ -18,7 +18,6 @@ module.exports = {
   ],
   collectCoverage: true,
   coverageDirectory: '<rootDir>/test/unit/coverage',
-  mapCoverage: true,
   coverageThreshold: {
     global: {
       lines: 100,
