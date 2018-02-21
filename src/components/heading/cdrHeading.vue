@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import modifier from '../../mixins/modifier';
+import modifier from 'Mixins/modifier';
 
 /**
  * Component is described here.

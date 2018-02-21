@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import Components from '../../_index';
+import Components from 'Components/_index';
 
 export default {
   name: 'Checkboxes',

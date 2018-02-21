@@ -65,8 +65,8 @@
 </template>
 
 <script>
-import examples from './components/examples';
-import compexamples from './compositions/examples';
+import examples from 'Components/examples';
+import compexamples from 'Compositions/examples';
 
 const all = Object.assign({}, examples, compexamples);
 

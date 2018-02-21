@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import modifier from '../../mixins/modifier';
+import modifier from 'Mixins/modifier';
 
 export default {
   name: 'CdrRating',
