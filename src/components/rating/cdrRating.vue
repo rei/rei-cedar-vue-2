@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrRating.vars.pcss';
-  @import 'styles/cdrRating.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrRating.vars.pcss';
+  @import './styles/cdrRating.pcss';
 </style>

@@ -190,7 +190,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrImg.vars.pcss';
-  @import 'styles/cdrImg.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrImg.vars.pcss';
+  @import './styles/cdrImg.pcss';
 </style>

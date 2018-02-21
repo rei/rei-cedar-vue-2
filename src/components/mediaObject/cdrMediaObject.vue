@@ -167,6 +167,6 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/cdrMediaObject.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/cdrMediaObject.pcss';
 </style>

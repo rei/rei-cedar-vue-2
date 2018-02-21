@@ -42,21 +42,21 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrButton.vars.pcss';
-  @import 'styles/cdrButton.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrButton.vars.pcss';
+  @import './styles/cdrButton.pcss';
 </style>
 
 <style cedar-theme="red">
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrButton.vars.pcss';
-  @import 'styles/vars/red.vars.pcss';
-  @import 'styles/cdrButton.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrButton.vars.pcss';
+  @import './styles/vars/red.vars.pcss';
+  @import './styles/cdrButton.pcss';
 </style>
 
 <style cedar-theme="green">
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrButton.vars.pcss';
-  @import 'styles/vars/green.vars.pcss';
-  @import 'styles/cdrButton.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrButton.vars.pcss';
+  @import './styles/vars/green.vars.pcss';
+  @import './styles/cdrButton.pcss';
 </style>

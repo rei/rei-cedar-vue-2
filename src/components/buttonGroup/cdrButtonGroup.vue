@@ -11,6 +11,6 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
+  @import 'Css/settings/_index.pcss';
   @import 'cdrButtonGroup.pcss';
 </style>

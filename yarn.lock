@@ -3826,7 +3826,7 @@ enhanced-resolve@0.5.x:
   dependencies:
     tapable "0.1.x"
 
-enhanced-resolve@^3.4.0:
+enhanced-resolve@^3.4.0, enhanced-resolve@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-3.4.1.tgz#0421e339fd71419b3da13d129b3979040230476e"
   dependencies:
@@ -9178,6 +9178,12 @@ postcss-html@^0.12.0:
     htmlparser2 "^3.9.2"
     remark "^8.0.0"
     unist-util-find-all-after "^1.0.1"
+
+postcss-import-webpack-resolver@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-import-webpack-resolver/-/postcss-import-webpack-resolver-1.0.1.tgz#4be0e9400b7609313e11258a17c3c4d7db186ac9"
+  dependencies:
+    enhanced-resolve "^3.4.1"
 
 postcss-import@^11.1.0:
   version "11.1.0"
