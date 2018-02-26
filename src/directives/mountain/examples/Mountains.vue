@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import * as directives from '../../_index';
+import * as directives from 'Directives/_index';
 
 export default {
   name: 'Mountains',

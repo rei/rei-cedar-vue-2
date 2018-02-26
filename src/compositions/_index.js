@@ -1,5 +1,5 @@
-import cdrActivityCard from './activityCard/cdrActivityCard';
-import cdrSearch from './search/cdrSearch';
+import cdrActivityCard from 'Compositions/activityCard/cdrActivityCard';
+import cdrSearch from 'Compositions/search/cdrSearch';
 
 export default {
   cdrActivityCard,

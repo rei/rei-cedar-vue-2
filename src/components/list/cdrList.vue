@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import modifier from '../../mixins/modifier';
+import modifier from 'Mixins/modifier';
 
 export default {
   name: 'CdrList',
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrList.vars.pcss';
-  @import 'styles/cdrList.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrList.vars.pcss';
+  @import './styles/cdrList.pcss';
 </style>

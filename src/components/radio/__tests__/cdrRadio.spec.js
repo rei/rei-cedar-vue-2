@@ -1,5 +1,4 @@
 import { shallow } from 'vue-test-utils';
-import testText from '../examples/testText.vue';
 import cdrRadio from 'Components/radio/cdrRadio';
 
 describe('cdrRadio.vue', () => {
@@ -40,8 +39,8 @@ describe('cdrRadio.vue', () => {
         name: 'testName',
       },
       slots: {
-        default: testText,
-      }
+        default: `<span>Label Test</span>`,
+      },
     });
     expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
   });

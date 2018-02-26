@@ -152,7 +152,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrActivityCard.vars.pcss';
-  @import 'styles/cdrActivityCard.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrActivityCard.vars.pcss';
+  @import './styles/cdrActivityCard.pcss';
 </style>
