@@ -25,17 +25,20 @@
 
     <cdr-list list-type="ol">
       <li>List ordered Nested
-        <cdr-list list-type="ol">
+        <ul
+          is="cdr-list"
+          list-type="ol">
           <li>List ordered - nested</li>
           <li>List ordered - nested
-            <cdr-list
+            <ul
+              is="cdr-list"
               list-type="ol"
               modifier="numbered">
               <li>List ordered - nested - numbered</li>
               <li>List ordered - nested - numbered</li>
-            </cdr-list>
+            </ul>
           </li>
-        </cdr-list>
+        </ul>
       </li>
     </cdr-list>
   </div>

@@ -17,6 +17,11 @@
 <script>
 import modifier from 'Mixins/modifier';
 
+/**
+ * Note:
+ * Nesting requires using is="cdr-list"
+ * @see {@link https://vuejs.org/v2/guide/components.html#DOM-Template-Parsing-Caveats}
+ */
 export default {
   name: 'CdrList',
   mixins: [modifier],
