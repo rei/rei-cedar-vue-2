@@ -98,5 +98,4 @@ module.exports = {
   report: ['browser'],
   debug: false,
   debugWindow: false,
-  startingPort: 9350,
 };

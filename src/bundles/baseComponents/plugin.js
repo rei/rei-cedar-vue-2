@@ -1,4 +1,4 @@
-import components from './_index';
+import components from 'Components/_index';
 
 function install(Vue) {
   Object.keys(components).forEach((key) => {

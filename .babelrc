@@ -9,18 +9,9 @@
     "test": {
       "presets": [
         "env", 
-        "stage-2"
+        "stage-2",
+        "./.babel-jest.js"
       ],
-      "plugins": [ 
-        ["module-resolver", {
-          "root": ["./src"],
-          "alias": {
-            "Compositions": "./src/compositions",
-            "Components": "./src/components",
-            "Assets": "./src/assets"
-          }
-        }]
-      ]
     }
   }
 }

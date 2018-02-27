@@ -23,7 +23,7 @@
   "peerDependencies": {
     "@rei/cdr-card": "^0.0.1",
     "@rei/cdr-heading": "^0.0.1",
-    "@rei/cdr-icon": "^0.0.1",
+    "@rei/cdr-icon": "^0.0.2",
     "@rei/cdr-img": "^0.0.1",
     "@rei/cdr-list": "^0.0.1",
     "@rei/cdr-media-object": "^0.0.1",
@@ -34,7 +34,7 @@
   "devDependencies": {
     "@rei/cdr-card": "^0.0.1",
     "@rei/cdr-heading": "^0.0.1",
-    "@rei/cdr-icon": "^0.0.1",
+    "@rei/cdr-icon": "^0.0.2",
     "@rei/cdr-img": "^0.0.1",
     "@rei/cdr-list": "^0.0.1",
     "@rei/cdr-media-object": "^0.0.1",

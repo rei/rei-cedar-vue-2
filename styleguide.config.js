@@ -52,7 +52,8 @@ module.exports = {
     '**/examples/**',
     '**/testing/**', // ignore e2e testing example
     '**/node_modules/**',
-    '**/src/components/buttonGroup/**/*.vue', // ignore buttonGroup for now
+    '**/src/components/buttonGroup/**/*.vue',
+    '**/src/components/Utilities/**/*.vue',
   ],
   assetsDir: './static',
   styleguideDir: './dist-docs',
@@ -64,21 +65,8 @@ module.exports = {
   ],
   sections: [
     {
-      name: 'Introduction',
-      content: 'docs/Introduction.md',
-    },
-    {
-      name: 'Documentation',
-      sections: [
-        {
-          name: 'Installation',
-          content: 'docs/Installation.md',
-        },
-        {
-          name: 'Configuration',
-          content: 'docs/Configuration.md',
-        },
-      ],
+      name: 'Utility Classes',
+      content: 'src/css/README.md',
     },
     {
       name: 'Components',
