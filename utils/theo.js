@@ -2,6 +2,7 @@
 
 const theo = require('theo');
 const path = require('path');
+const fs = require('fs-extra');
 
 theo.registerValueTransform(
   'typography/font',
@@ -21,9 +22,8 @@ theo.registerValueTransform(
     return `${style} ${variant} ${weight} ${size}/${lineHeight} ${family}`.trim();
   },
 );
-theo.registerTransform('cedar-web', ['color/hex', 'typography/font']);
 
-// theo.registerTransform('cedar-web', ['color/hex']);
+theo.registerTransform('cedar-web', ['color/hex', 'typography/font']);
 
 theo
   .convert({
@@ -35,8 +35,7 @@ theo
       type: 'scss',
     },
   })
-  .then((scss) => {
-    console.log(scss);
-    // $button-background: rgb(0, 112, 210);
+  .then((data) => {
+    fs.writeFileSync('src/css/settings/tokens.pcss', data);
   })
   .catch(error => console.log(`Something went wrong: ${error}`));
