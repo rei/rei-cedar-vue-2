@@ -1,4 +1,3 @@
-aliases:
 imports:
  - ./colors.yml
  - ./typography.yml

@@ -12,5 +12,4 @@ props:
 global:
   category: button
 imports:
-  - ./foundations/colors.yml
-  # - ./foundations/typography.yml
+  - ./foundations/_index.yml
