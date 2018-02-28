@@ -1,0 +1,17 @@
+aliases:
+  # FONT-FAMILIES
+  primary-font: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  secondary-font: 'Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  tertiary-font: 'Roboto Condensed'
+  # FONT SIZES
+  font-size-xl: 96px
+  font-size-lg: 76px
+  font-size-md: 65px
+  # LINE HEIGHTS
+  line-height-xl: 104px
+  line-height-lg: 84px
+  line-height-md: 60px
+  # FONT WEIGHTS
+  # FONT STYLES
+  # FONT VARIANTS
+  # LETTER SPACINGS

@@ -24,7 +24,8 @@
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
     "vue-docs": "node build/vue-docs.js",
-    "changelog": "standard-changelog"
+    "changelog": "standard-changelog",
+    "theo": "node utils/theo.js"
   },
   "peerDependencies": {
     "vue": "^2.5.13"
@@ -135,6 +136,7 @@
     "svg-sprite": "^1.3.7",
     "svgxuse": "^1.2.4",
     "tenon-node": "^0.4.1",
+    "theo": "^7.0.1",
     "uglifyjs-webpack-plugin": "^1.2.0",
     "url-loader": "^0.6.2",
     "vue": "^2.5.13",

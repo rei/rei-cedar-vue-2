@@ -1,0 +1,16 @@
+# buttons.yml
+props:
+  button-background:
+    value: "{!go-van-gogh}"
+    type: color
+  # button-typography:
+  #   value: "{!spruce-dsp-100}"
+  #   type: typography
+  # button-test:
+  #   value: "{!spruce-dsp-90}"
+  #   type: typography
+global:
+  category: button
+imports:
+  - ./foundations/colors.yml
+  # - ./foundations/typography.yml

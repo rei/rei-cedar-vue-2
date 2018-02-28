@@ -1,0 +1,70 @@
+aliases:
+  spruce-dsp-100:
+    value:
+      font-style: normal
+      font-weight: '600'
+      font-size: 96px
+      font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-90:
+    font-style: normal
+    font-weight: '600'
+    font-size: 76px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-80:
+    font-style: normal
+    font-weight: '600'
+    font-size: 56px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-70:
+    font-style: normal
+    font-weight: '600'
+    font-size: 40px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-60:
+    font-style: normal
+    font-weight: '600'
+    font-size: 32px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-50:
+    font-style: normal
+    font-weight: '600'
+    font-size: 28px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-40:
+    font-style: normal
+    font-weight: '600'
+    font-size: 24px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-30:
+    font-style: normal
+    font-weight: '600'
+    font-size: 20px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-20:
+    font-style: normal
+    font-weight: '600'
+    font-size: 18px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-10:
+    font-style: normal
+    font-weight: '600'
+    font-size: 16px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  spruce-dsp-00:
+    font-style: normal
+    font-weight: '600'
+    font-size: 14px
+    font-family: 'Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif'
+  size-xxs: 2px
+  size-xs: 4px
+  size-sm: 8px
+  size-md: 16px
+  size-lg: 32px
+  size-xl: 64px
+  size-xxl: 128px
+  radius-10: 2px
+  radius-20: 32px
+  prominence-10: '2px 2px 2px #000000'
+  prominence-20: '4px 4px 4px rgb(26, 26, 26)'
+  prominence-30: '8px 8px 8px rgb(26, 26, 26)'
+  prominence-40: '16px 16px 16px rgb(26, 26, 26)'
