@@ -20,14 +20,14 @@ theo.registerFormat('mixin', result => {
       declarations.push(`${key}: ${value};`);
     });
 
-    mixin = `@mixin ${name} () {
+    mixin = `@mixin ${name}() {
   ${declarations.join('\n  ')}
 }`;
 
     mixins.push(mixin);
   });
 
-  return mixins.join('\n\n');
+  return `${mixins.join('\n\n')}\n`;
 });
 
 
