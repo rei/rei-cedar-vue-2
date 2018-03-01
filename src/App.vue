@@ -61,8 +61,6 @@
       data-backstop="test"
     />
     <utilities class="cpg-section"/>
-
-    <cdr-heading modifier="heading-xl">I'm a heading</cdr-heading>
   </div>
 </template>
 
@@ -81,21 +79,5 @@ export default {
 <style scoped>
   .cpg-section {
     margin: 16px 0;
-  }
-
-  .cdr-heading-xl {
-    font: $spruce-dsp-100;
-
-    @media {
-      font: $spruce-dsp-80;
-    }
-  }
-
-  .spruce-dsp-100 {
-    font: size, weight, line height
-
-    @media {
-      font: size, weight, line height
-    }
   }
 </style>
