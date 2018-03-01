@@ -1,0 +1,120 @@
+aliases:
+  # Shared
+  redwood-family: "{!secondary-font}"
+  # DSP
+  dsp-style: normal
+  dsp-variant: normal
+  dsp-weight: 400
+  dsp-spacing: normal
+  dsp-70-size: 28px
+  dsp-70-height: 36px
+  dsp-60-size: 24px
+  dsp-60-height: 32px
+  dsp-50-size: 20px
+  dsp-50-height: 28px
+  dsp-40-size: 18px
+  dsp-40-height: 24px
+  dsp-30-size: 16px
+  dsp-30-height: 24px
+  dsp-20-size: 14px
+  dsp-20-height: 20px
+  dsp-10-size: 12px
+  dsp-10-height: 16px
+  # BDY
+  bdy-style: normal
+  bdy-variant: normal
+  bdy-weight: 400
+  bdy-spacing: normal
+  bdy-30-size: 20px
+  bdy-30-height: 32px
+  bdy-20-size: 18px
+  bdy-20-height: 28px
+props:
+ # DSP
+  redwood-dsp-70:
+    value:
+      font-style: "{!dsp-style}"
+      font-family: "{!redwood-family}"
+      font-variant: "{!dsp-variant}"
+      font-weight: "{!dsp-weight}"
+      font-size: "{!dsp-70-size}"
+      line-height: "{!dsp-70-height}"
+      letter-spacing: "{!dsp-spacing}"
+  redwood-dsp-60:
+    value:
+      font-style: "{!dsp-style}"
+      font-family: "{!redwood-family}"
+      font-variant: "{!dsp-variant}"
+      font-weight: "{!dsp-weight}"
+      font-size: "{!dsp-60-size}"
+      line-height: "{!dsp-60-height}"
+      letter-spacing: "{!dsp-spacing}"
+  redwood-dsp-50:
+    value:
+      font-style: "{!dsp-style}"
+      font-family: "{!redwood-family}"
+      font-variant: "{!dsp-variant}"
+      font-weight: "{!dsp-weight}"
+      font-size: "{!dsp-50-size}"
+      line-height: "{!dsp-50-height}"
+      letter-spacing: "{!dsp-spacing}"
+  redwood-dsp-40:
+    value:
+      font-style: "{!dsp-style}"
+      font-family: "{!redwood-family}"
+      font-variant: "{!dsp-variant}"
+      font-weight: "{!dsp-weight}"
+      font-size: "{!dsp-40-size}"
+      line-height: "{!dsp-40-height}"
+      letter-spacing: "{!dsp-spacing}"
+  redwood-dsp-30:
+    value:
+      font-style: "{!dsp-style}"
+      font-family: "{!redwood-family}"
+      font-variant: "{!dsp-variant}"
+      font-weight: "{!dsp-weight}"
+      font-size: "{!dsp-30-size}"
+      line-height: "{!dsp-30-height}"
+      letter-spacing: "{!dsp-spacing}"
+  redwood-dsp-20:
+    value:
+      font-style: "{!dsp-style}"
+      font-family: "{!redwood-family}"
+      font-variant: "{!dsp-variant}"
+      font-weight: "{!dsp-weight}"
+      font-size: "{!dsp-20-size}"
+      line-height: "{!dsp-20-height}"
+      letter-spacing: "{!dsp-spacing}"
+  redwood-dsp-10:
+    value:
+      font-style: "{!dsp-style}"
+      font-family: "{!redwood-family}"
+      font-variant: "{!dsp-variant}"
+      font-weight: "{!dsp-weight}"
+      font-size: "{!dsp-10-size}"
+      line-height: "{!dsp-10-height}"
+      letter-spacing: "{!dsp-spacing}"
+  # BDY
+  redwood-bdy-30:
+    value:
+      font-style: "{!bdy-style}"
+      font-variant: "{!bdy-variant}"
+      font-weight: "{!bdy-weight}"
+      font-size: "{!bdy-30-size}"
+      line-height: "{!bdy-30-height}"
+      font-family: "{!redwood-family}"
+      letter-spacing: "{!bdy-spacing}"
+  redwood-bdy-20:
+    value:
+      font-style: "{!bdy-style}"
+      font-variant: "{!bdy-variant}"
+      font-weight: "{!bdy-weight}"
+      font-size: "{!bdy-20-size}"
+      line-height: "{!bdy-20-height}"
+      font-family: "{!redwood-family}"
+      letter-spacing: "{!bdy-spacing}"
+global:
+  category: typography
+  type: typography
+imports:
+  - ./foundations/_index.yml
