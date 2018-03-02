@@ -24,6 +24,8 @@ module.exports = {
       Assets: resolve('src/assets'),
       Components: resolve('src/components'),
       Compositions: resolve('src/compositions'),
+      Directives: resolve('src/directives'),
+      Mixins: resolve('src/mixins'),
     },
     extensions: ['.js', '.vue', '.json'],
   },

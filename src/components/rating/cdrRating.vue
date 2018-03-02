@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import modifier from '../../mixins/modifier';
+import modifier from 'Mixins/modifier';
 
 /**
  * Cedar 2 component for rating
@@ -97,7 +97,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrRating.vars.pcss';
-  @import 'styles/cdrRating.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrRating.vars.pcss';
+  @import './styles/cdrRating.pcss';
 </style>

@@ -53,11 +53,51 @@
       v-model="checked"
       disabled
     >disabled and checked checkbox</cdr-checkbox>
+
+    <div class="wrap">
+      <cdr-checkbox
+        name="complex1"
+        v-model="complex1"
+        label-class="flex">
+
+        <cdr-icon
+          url="/static/rei-icons.svg#cdr-heart-fill"
+          class="cdr-inline--sm checkbox-example-icon"/>
+
+        <div>
+          <strong>
+            Easy
+          </strong>
+          <br>
+          No obstacles. Not steep.
+        </div>
+
+      </cdr-checkbox>
+
+      <cdr-checkbox
+        name="complex2"
+        v-model="complex2"
+        label-class="flex">
+
+        <cdr-icon
+          url="/static/rei-icons.svg#cdr-heart-fill"
+          class="cdr-inline--sm checkbox-example-icon"/>
+
+        <div>
+          <strong>
+            Easy
+          </strong>
+          <br>
+          This one is selected.
+        </div>
+
+      </cdr-checkbox>
+    </div>
   </div>
 </template>
 
 <script>
-import Components from '../../_index';
+import Components from 'Components/_index';
 
 export default {
   name: 'Checkboxes',
@@ -76,6 +116,8 @@ export default {
         },
       },
       testVal2: [9, 8],
+      complex1: false,
+      complex2: true,
     };
   },
   methods: {
@@ -87,5 +129,17 @@ export default {
 </script>
 
 <style>
+  .wrap {
+    width: 180px;
+  }
+
+  .checkbox-example-icon use {
+    fill: green;
+  }
+
+  .flex {
+    display: flex;
+    align-items: flex-start;
+  }
 
 </style>

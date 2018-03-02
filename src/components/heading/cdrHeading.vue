@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import modifier from '../../mixins/modifier';
+import modifier from 'Mixins/modifier';
 
 /**
  * Cedar 2 component for heading
@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrHeading.vars.pcss';
-  @import 'styles/cdrHeading.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrHeading.vars.pcss';
+  @import './styles/cdrHeading.pcss';
 </style>

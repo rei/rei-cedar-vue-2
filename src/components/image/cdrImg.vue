@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import modifier from 'Src/mixins/modifier';
+import modifier from 'Mixins/modifier';
 
 /**
  * Cedar 2 component for image
@@ -195,7 +195,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrImg.vars.pcss';
-  @import 'styles/cdrImg.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrImg.vars.pcss';
+  @import './styles/cdrImg.pcss';
 </style>

@@ -62,8 +62,8 @@
 import { CdrA } from '@rei/cdr-a';
 import { CdrImg } from '@rei/cdr-img';
 import { CdrIcon } from '@rei/cdr-icon';
-import modifier from 'Src/mixins/modifier';
-import lazyImage from 'Src/mixins/lazyImage';
+import modifier from 'Mixins/modifier';
+import lazyImage from 'Mixins/lazyImage';
 
 /**
  * Cedar 2 component for media object
@@ -172,6 +172,6 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/cdrMediaObject.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/cdrMediaObject.pcss';
 </style>

@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrIcon.vars.pcss';
-  @import 'styles/cdrIcon.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrIcon.vars.pcss';
+  @import './styles/cdrIcon.pcss';
 </style>

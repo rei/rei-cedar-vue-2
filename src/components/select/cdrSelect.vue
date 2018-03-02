@@ -170,7 +170,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrSelect.vars.pcss';
-  @import 'styles/cdrSelect.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrSelect.vars.pcss';
+  @import './styles/cdrSelect.pcss';
 </style>

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import modifier from 'Src/mixins/modifier';
+import modifier from 'Mixins/modifier';
 
 /**
  * The basic card is intended as a container for grouping like content.
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrCard.vars.pcss';
-  @import 'styles/cdrCard.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrCard.vars.pcss';
+  @import './styles/cdrCard.pcss';
 </style>

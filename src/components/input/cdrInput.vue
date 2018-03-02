@@ -75,7 +75,7 @@
 
 <script>
 import debounce from 'Src/utils/debounce';
-import modifier from 'Src/mixins/modifier';
+import modifier from 'Mixins/modifier';
 /* eslint-disable */
 // import/no-webpack-loader-syntax & import/no-unresolved
 import checkIcon from '!raw-loader!Assets/icons/rei/cdr-check-lg.svg';
@@ -361,7 +361,7 @@ export default {
 </script>
 
 <style>
-  @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/cdrInput.vars.pcss';
-  @import 'styles/cdrInput.pcss';
+  @import 'Css/settings/_index.pcss';
+  @import './styles/vars/cdrInput.vars.pcss';
+  @import './styles/cdrInput.pcss';
 </style>
