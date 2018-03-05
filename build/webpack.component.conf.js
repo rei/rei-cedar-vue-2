@@ -30,7 +30,7 @@ console.log(path.join(process.cwd(), 'node_modules'));
 
 module.exports = {
   entry: {
-    ['cdr-' + tagName]: path.resolve(__dirname, `..${cedarPackageFolder}/plugin.js`),
+    ['cdr-' + tagName]: path.resolve(__dirname, `..${cedarPackageFolder}`),
   },
   resolve: {
     modules: [path.join(process.cwd(), 'node_modules'), 'node_modules'],

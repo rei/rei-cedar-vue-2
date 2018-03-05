@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-a",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "REI Cedar Style Framework - Vue Component for Anchor",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-a",
   "license": "ISC",
@@ -21,7 +21,6 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@rei/cdr-button": "^0.0.3",
     "@rei/cdr-assets": "^0.0.2",
     "vue": "^2.5.13"
   },

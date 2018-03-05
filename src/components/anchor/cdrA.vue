@@ -38,4 +38,3 @@ export default {
   @import './styles/vars/cdrA.vars.pcss';
   @import './styles/cdrA.pcss';
 </style>
-
