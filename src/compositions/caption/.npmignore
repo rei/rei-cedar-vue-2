@@ -1,0 +1,13 @@
+__tests__/
+build/
+examples/
+static/
+dist/index.html
+styles/
+
+/*.lock
+/*.js
+/*.json
+/*.vue
+/*.pcss
+/*.ejs

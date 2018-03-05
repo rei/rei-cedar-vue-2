@@ -11,7 +11,7 @@
         "no-duplicate-at-import-rules": null,
         "no-descending-specificity": null,
         "at-rule-no-unknown": [true, {
-            ignoreAtRules: ["mixin"]
+            ignoreAtRules: ["mixin", "include"]
         } ],
     }
 }
