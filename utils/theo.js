@@ -7,17 +7,17 @@ const fs = require('fs-extra');
 theo.registerTransform('cedar-web', ['color/hex']);
 
 // MIXIN FORMATTER
-theo.registerFormat('mixin', result => {
-  let mixins = [];
+theo.registerFormat('mixin', (result) => {
+  const mixins = [];
 
-  result.get('props').map(prop => {
-    let name = prop.get('name');
-    let value = prop.get('value');
-    let declarations = [];
+  result.get('props').forEach((prop) => {
+    const name = prop.get('name');
+    const value = prop.get('value');
+    const declarations = [];
     let mixin = '';
 
-    value.map((value,key) => {
-      declarations.push(`${key}: ${value};`);
+    value.forEach((val, key) => {
+      declarations.push(`${key}: ${val};`);
     });
 
     mixin = `@mixin ${name}() {
