@@ -12,13 +12,9 @@ the Cedar grow and learn from what we are doing, or jump in and provide some rec
 
 ### Install
 
-We’re using [Yarn](https://yarnpkg.com/en/) instead of npm for dependency management.
-
 Clone the project.
 
-`yarn install`
-
-(npm install will also work, but is not advised)
+`npm install`
 
 ### Run
 
@@ -212,7 +208,6 @@ index.html                      #app.vue is bootstrapped here and is used for bo
 package.json                    #Everything for npm
 postcss.config.js               #Config for postcss -- add new postcss plugins here
 styleguide.config.js            #Configuration for vue-styleguidist
-yarn.lock                       #We’re using yarn -- go read the docs
 ```
 ## Commits 
 This project is Commitizen friendly.

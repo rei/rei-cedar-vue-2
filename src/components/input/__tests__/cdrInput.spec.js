@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import inputComp from 'Components/input/cdrInput';
 
 function validateFn(inputText) {

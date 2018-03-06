@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import cdrImg from 'Components/image/cdrImg';
 
 describe('cdrImg.vue', () => {

@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import {NAME-FULLNAME} from '{TYPE-CAPITAL}/{NAME-CAMEL}/{NAME-FULLNAME}';
 
 describe('{NAME-FULLNAME}.vue', () => {

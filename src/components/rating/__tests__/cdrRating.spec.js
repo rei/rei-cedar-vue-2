@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import cdrRating from 'Components/rating/cdrRating';
 
 describe('cdrRating.vue', () => {
