@@ -62,7 +62,10 @@
     />
     <utilities class="cpg-section"/>
 
-    <caption-example />
+    <caption-example
+      class="cpg-section"
+      data-backstop="caption"
+    />
 
   </div>
 </template>

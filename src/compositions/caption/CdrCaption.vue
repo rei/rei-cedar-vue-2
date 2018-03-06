@@ -1,9 +1,9 @@
 <template>
   <div class="cdr-caption cdr-inset--squish">
     <p
-      v-if="caption"
-      class="cdr-caption__caption">
-      {{ caption }}
+      v-if="summary"
+      class="cdr-caption__summary">
+      {{ summary }}
     </p>
     <p
       v-if="credit"
@@ -18,7 +18,9 @@
 export default {
   name: 'CdrCaption',
   props: {
-    caption: String,
+    /** Caption summary text */
+    summary: String,
+    /** Caption credit text */
     credit: String,
   },
 };

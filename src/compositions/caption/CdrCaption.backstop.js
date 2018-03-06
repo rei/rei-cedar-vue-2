@@ -1,4 +1,6 @@
 module.exports = [{
   label: 'Caption',
-  selectors: [],
+  selectors: [
+    '[data-backstop="caption"]',
+  ],
 }];
