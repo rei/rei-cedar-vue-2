@@ -4,6 +4,7 @@
     :target="target"
     :rel="newRel"
   >
+    <!-- @slot Text content on the inside of the anchor -->
     <slot/>
   </a>
 </template>
@@ -12,7 +13,9 @@
 import modifier from 'Mixins/modifier';
 
 /**
- * Cedar 2 component for anchor
+ * Cedar 2 component for anchor.
+ * Supports traditional atributes of anchor tag
+ * Modifying classes: `button, contrast, standalone`
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -20,7 +23,9 @@ export default {
   name: 'CdrA',
   mixins: [modifier],
   props: {
+    /** @ignore */
     target: String,
+    /** @ignore */
     rel: String,
   },
   computed: {

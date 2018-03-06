@@ -4,15 +4,14 @@
 src/components/anchor/cdrA.vue
 
 
-Cedar 2 component for anchor
+Cedar 2 component for anchor.
+
+Supports traditional atributes of anchor tag
+
+Modifying classes: `button, contrast, standalone`
 
 ### Props, Methods, Events, Slots
 
-Prop Name | Type | Default | Require | Description
---- | --- | --- | --- | ---
-target | string | n/a | false | 
-rel | string | n/a | false | 
-
 Slot | Description
 --- | ---
-default | 
+default | Text content on the inside of the anchor
