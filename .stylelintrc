@@ -5,13 +5,14 @@
         "no-empty-source": null,
         "no-invalid-double-slash-comments": null,
         "no-eol-whitespace": [ true, {
-            "ignore": "empty-lines",
+            "ignore": ["empty-lines"]
         } ],
         "at-rule-empty-line-before": null,
         "no-duplicate-at-import-rules": null,
         "no-descending-specificity": null,
         "at-rule-no-unknown": [true, {
-            ignoreAtRules: ["mixin"]
+            "ignoreAtRules": ["mixin", "include"]
         } ],
+        "color-hex-length": null
     }
 }

@@ -1,5 +1,7 @@
 <template>
-  
+  <div>
+    <h2>{NAME-CAMEL}</h2>
+  </div>
 </template>
 
 <script>
