@@ -1,0 +1,13 @@
+aliases:
+  # Spacing for inset, inline, and stacks
+  spacing-xxs: 2px
+  spacing-xs: 4px
+  spacing-sm: 8px
+  spacing-md: 16px
+  spacing-lg: 32px
+  spacing-xl: 64px
+  spacing-xxl: 128px
+  # Radius
+  radius-00: 0
+  radius-10: 2px
+  radius-20: 32px

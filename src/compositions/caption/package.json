@@ -1,17 +1,17 @@
 {
-  "name": "@rei/{NAME-TAGNAME}",
+  "name": "@rei/cdr-caption",
   "version": "0.0.1",
-  "description": "REI Cedar Style Framework - Vue Component for {NAME-PASCAL}",
-  "homepage": "https://rei.github.io/rei-cedar/#{NAME-TAGNAME}",
+  "description": "REI Cedar Style Framework - Vue Component for Caption",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-caption",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
-  "main": "dist/{NAME-TAGNAME}.js",
-  "style": "dist/{NAME-TAGNAME}.css",
+  "main": "dist/cdr-caption.js",
+  "style": "dist/cdr-caption.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
-    "{TYPE-SINGULAR}": "{NAME-CAMEL}",
-    "tagName": "{NAME-KEBAB}"
+    "composition": "caption",
+    "tagName": "caption"
   },
   "publishConfig": {
     "access": "public"

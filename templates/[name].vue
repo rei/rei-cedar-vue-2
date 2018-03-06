@@ -10,6 +10,5 @@ export default {
 
 <style>
   @import '../../css/settings/_index.pcss';
-  @import 'styles/vars/{NAME-FULLNAME}.vars.pcss';
-  @import 'styles/{NAME-FULLNAME}.pcss';
+  @import './styles/{NAME-FULLNAME}.pcss';
 </style>
