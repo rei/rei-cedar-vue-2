@@ -49,6 +49,7 @@ const QUESTIONS = [
 inquirer.prompt(QUESTIONS).then((answers) => {
   const { type } = answers;
   const typeCap = _.upperFirst(type);
+  const typeSingle = type.slice(0, -1);
   const { name } = answers; // test-comp
   const camelName = _.camelCase(name); // testComp
   const pascalName = _.upperFirst(camelName); // TestComp
@@ -89,6 +90,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
       if (err) throw err;
 
       const rewrite = contents
+        .replace(/\{TYPE-SINGULAR\}/g, typeSingle)
         .replace(/\{TYPE-CAPITAL\}/g, typeCap)
         .replace(/\{NAME-PASCAL\}/g, pascalName)
         .replace(/\{NAME-TAGNAME\}/g, tagName)
