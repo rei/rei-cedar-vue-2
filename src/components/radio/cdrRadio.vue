@@ -24,6 +24,11 @@
 <script>
 import isEqual from 'lodash/isEqual';
 
+/**
+ * Cedar 2 component for radio
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrRadio',
   inheritAttrs: false,

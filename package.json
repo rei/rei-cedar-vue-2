@@ -23,7 +23,8 @@
     "create": "node generator.js",
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
-    "vue-docs": "node build/vue-docs.js",
+    "vue:docs": "node build/vue-docs.js",
+    "vue:archive": "node build/vue-docs-archive.js",
     "changelog": "standard-changelog",
     "theo": "node utils/theo.js"
   },
@@ -127,6 +128,7 @@
     "rimraf": "^2.6.0",
     "selenium-server": "^3.9.1",
     "semver": "^5.5.0",
+    "semver-diff": "^2.1.0",
     "standard-changelog": "^1.0.12",
     "style-loader": "^0.20.2",
     "stylelint": "^9.1.0",

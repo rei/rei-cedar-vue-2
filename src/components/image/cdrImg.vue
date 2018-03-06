@@ -28,6 +28,11 @@
 <script>
 import modifier from 'Mixins/modifier';
 
+/**
+ * Cedar 2 component for image
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrImg',
   mixins: [modifier],
