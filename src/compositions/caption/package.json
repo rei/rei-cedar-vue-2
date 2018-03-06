@@ -10,7 +10,7 @@
   "style": "dist/cdr-caption.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
-    "component": "caption",
+    "composition": "caption",
     "tagName": "caption"
   },
   "publishConfig": {
