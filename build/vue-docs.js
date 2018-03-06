@@ -117,6 +117,7 @@ function createMarkdownTemplate(file, vueObj) {
   return json2md(json2mdTemplate)
 }
 
+// build tables for Vue props, methods, events, and slots
 function buildTables(vueObj) {
   let updatedTemplate = [{h3: "Props, Methods, Events, Slots"}]
   let mdTable
@@ -151,6 +152,11 @@ function tableFromProps(propsObj) {
 
   // construct rows of table from object of properties
   for(const prop in propsObj) {
+    // Don't document properties with `@ignore` tag
+    if (propsObj[prop].tags.ignore) {
+      continue
+    }
+    
     let cols = []
     cols.push(`${prop}`) // property name
     cols.push(propsObj[prop]["type"] ? propsObj[prop]["type"]["name"] : 'unknown') // type of the property
