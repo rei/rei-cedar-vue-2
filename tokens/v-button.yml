@@ -1,15 +1,139 @@
+#  ==========================================================================
 # buttons.yml
+#
+#   TOC:
+#
+#  Base
+#  Secondary
+#  Cta-sale
+#  Size Variants
+#    sm
+#    xs
+#  ==========================================================================
 props:
-  button-background:
+  button-background-color:
     value: "{!go-van-gogh}"
+  button-border-color:
+    value: "{!go-van-gogh}"
+  button-border-width:
+    value: 1px
+  button-border-style:
+    value: solid
+  button-border-radius:
+    value: "{!radius-10}"
+  button-color: 
+    value: ffffff
     type: color
-  # button-typography:
-  #   value: "{!spruce-dsp-100}"
-  #   type: typography
-  # button-test:
-  #   value: "{!spruce-dsp-90}"
-  #   type: typography
+  button-cursor: 
+    value: pointer
+  button-display: 
+    value: inline-block
+  button-outline: 
+    value: none
+  button-text-align: 
+    value: center
+  button-text-decoration: 
+    value: none
+  button-white-space: 
+    value: nowrap
+  # States
+  ## Hover & Active
+  button-hover-text-decoration: 
+    value: none
+  button-hover-text-outline: 
+    value: none
+  button-hover-background-color:
+    value: 2b455c
+    type: color
+  button-hover-border-color:
+    value: 2b455c
+    type: color
+  button-hover-color:
+    value: ffffff
+    type: color
+  ## Focus
+  button-focus-outline: 
+    value: 2px dotted "#8dd1ed"
+  button-focus-box-shadow: 
+    value: 0 0 5px rgba(81, 203, 238, 1)
+  button-focus-border-color: 
+    value: 8dd1ed
+    type: color
+  button-focus-border-width: 
+    value: 1px
+  button-focus-border-style: 
+    value: solid
+  button-focus-border-radius: 
+    value: 0
+  ## disabled
+  button-disabled-background-color: 
+    value: c5c5c5
+    type: color
+  button-disabled-border-color: 
+    value: c5c5c5
+    type: color
+  button-disabled-color: 
+    value: ffffff
+    type: color
+#
+# Modifier style variants
+#  ==========================================================================
+# Secondary
+#  ==========================================================================
+  button-secondary-background-color: 
+    value: ffffff
+    type: color
+  button-secondary-border-color: 
+    value: c5c5c5
+    type: color
+  button-secondary-color:
+    value: 2e2e2e
+    type: color
+  # States
+  ## Hover & Active
+  button-secondary-hover-background-color: 
+    value: f0f0f0
+    type: color
+  button-secondary-hover-border-color: 
+    value: c5c5c5
+    type: color
+  button-secondary-hover-color: 
+    value: 2e2e2e
+    type: color
+  ## disabled
+  button-secondary-disabled-background-color: 
+    value: ffffff
+    type: color
+  button-secondary-disabled-border-color: 
+    value: e9e9e9
+    type: color
+  button-secondary-disabled-color: 
+    value: c5c5c5
+    type: color
+#
+# Modifier style variants
+#  ==========================================================================
+# CTA-Sale
+#  ==========================================================================
+  button-cta-sale-background-color: 
+    value: cc0000;
+    type: color
+  button-cta-sale-border-color: 
+    value: aa0000;
+    type: color
+  button-cta-sale-color: 
+    value: ffffff;;
+    type: color
+  # States
+  ## Hover & Active
+  button-cta-sale-hover-background-color: 
+    value: aa0000;
+    type: color
+  button-cta-sale-hover-border-color: 
+    value: aa0000;
+    type: color
 global:
   category: button
+  type: token
 imports:
   - ./foundations/_index.yml
