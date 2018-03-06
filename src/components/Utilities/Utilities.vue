@@ -26,6 +26,11 @@ import inset from './demos/inset';
 import stack from './demos/stack';
 import container from './demos/container';
 
+/**
+ * Cedar 2 component for utilities
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'Utilities',
   components: {

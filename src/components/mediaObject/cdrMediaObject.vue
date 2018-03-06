@@ -65,6 +65,11 @@ import { CdrIcon } from '@rei/cdr-icon';
 import modifier from 'Mixins/modifier';
 import lazyImage from 'Mixins/lazyImage';
 
+/**
+ * Cedar 2 component for media object
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrMediaObject',
   components: {
