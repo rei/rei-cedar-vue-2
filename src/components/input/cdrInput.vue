@@ -151,7 +151,7 @@ export default {
      * false is no debounce.
     */
     debounce: {
-      type: Boolean,
+      type: [Boolean, Number],
       required: false,
       default: false,
     },

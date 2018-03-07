@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import cdrButton from 'Components/button/cdrButton';
 
 const clickHandler = jest.fn();

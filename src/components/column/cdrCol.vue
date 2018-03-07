@@ -50,7 +50,9 @@ import { CdrRow as Row } from '@rei/cdr-row';
 export default {
   name: 'CdrCol',
   components: { Row },
-  inject: ['rowType'],
+  inject: {
+    rowType: { default: 'normal' },
+  },
   inheritAttrs: false,
   props: {
     /**

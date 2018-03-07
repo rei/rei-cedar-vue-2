@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import cdrRow from 'Components/row/cdrRow';
 
 describe('cdrRow.vue', () => {

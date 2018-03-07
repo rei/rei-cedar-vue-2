@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import cdrHeading from 'Components/heading/cdrHeading';
 
 describe('cdrHeading.vue', () => {
