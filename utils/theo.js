@@ -84,6 +84,8 @@ try {
 // WRITE TO FILES
 
 // css folder (to drive component css)
-fs.writeFileSync('src/css/settings/tokens.pcss', `${mixins}${variables}`);
+fs.writeFileSync('src/css/settings/tokens.pcss', `/* File generated from DDS tokens, changes to names/values should be made there. */\n
+${mixins}${variables}`);
 // static (for cdr-assets)
-fs.writeFileSync('static/cdr-tokens.scss', `${mixins}${foundations}`);
+fs.writeFileSync('static/cdr-tokens.scss', `/* File generated from DDS tokens, changes to names/values should be made there. */\n
+${mixins}${foundations}`);
