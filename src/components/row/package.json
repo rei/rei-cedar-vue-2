@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-row",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "REI Cedar Style Framework - Vue Component for Row",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-row",
   "license": "ISC",

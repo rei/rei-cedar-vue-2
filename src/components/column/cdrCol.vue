@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { CdrRow as Row } from '@rei/cdr-row';
+import Row from '@rei/cdr-row';
 
 /**
  * Cedar 2 component for column

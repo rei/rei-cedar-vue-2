@@ -5,35 +5,40 @@
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
-  "main": "dist/cdr-base-components.js",
-  "style": "dist/cdr-base-components.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "bundle": "baseComponents",
-    "tagName": "base-components"
-  },
+  "main": "dist",
+  "module": "es",
+  "files": [
+    "dist",
+    "es",
+    "index.css"
+  ],
   "scripts": {
-    "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node ../../../build/build.js"
+    "prepare": "npm run build && pkg-ok",
+    "prebuild": "npm run clean",
+    "build": "run-p build:commonjs build:es build:style",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel index.js -d dist",
+    "build:es": "cross-env BABEL_ENV=es babel index.js -d es",
+    "build:style": "postcss index.css -u postcss-import -o dist/base-components.css",
+    "clean": "rimraf dist es"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@rei/cdr-a": "^0.0.1",
-    "@rei/cdr-button": "^0.0.3",
-    "@rei/cdr-card": "^0.0.1",
-    "@rei/cdr-checkbox": "^0.0.2",
-    "@rei/cdr-col": "^0.0.1",
-    "@rei/cdr-heading": "^0.0.1",
-    "@rei/cdr-icon": "^0.0.2",
-    "@rei/cdr-img": "^0.0.1",
-    "@rei/cdr-input": "^0.0.1",
-    "@rei/cdr-list": "^0.0.1",
-    "@rei/cdr-radio": "^0.0.1",
-    "@rei/cdr-rating": "^0.0.1",
-    "@rei/cdr-row": "^0.0.1",
-    "@rei/cdr-select": "^0.0.1"
+    "@rei/cdr-a": "^0.0.2",
+    "@rei/cdr-button": "^0.0.4",
+    "@rei/cdr-card": "^0.0.2",
+    "@rei/cdr-checkbox": "^0.0.3",
+    "@rei/cdr-col": "^0.0.2",
+    "@rei/cdr-heading": "^0.0.2",
+    "@rei/cdr-icon": "^0.0.3",
+    "@rei/cdr-img": "^0.0.2",
+    "@rei/cdr-input": "^0.0.2",
+    "@rei/cdr-list": "^0.0.2",
+    "@rei/cdr-radio": "^0.0.2",
+    "@rei/cdr-rating": "^0.0.2",
+    "@rei/cdr-row": "^0.0.2",
+    "@rei/cdr-select": "^0.0.2"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",
@@ -42,6 +47,14 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "pkg-ok": "^1.1.0"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.3",
+    "npm-run-all": "^4.1.2",
+    "pkg-ok": "^1.1.0",
+    "postcss-cli": "^5.0.0",
+    "postcss-import": "^11.1.0",
+    "rimraf": "^2.6.2"
   }
 }
