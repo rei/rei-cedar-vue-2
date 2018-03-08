@@ -205,10 +205,10 @@ function tableFromEvents(eventsObj) {
     
     let typeList = ''
     eventsObj[evt]["type"]["names"].forEach((type, idx, arr) => {
-      typeList += `${type`${arr[idx+1] ? `|` : ''}`}`
+      typeList += `${type}${arr[idx+1] ? `|` : ''}`
     })
     cols.push(typeList) // list of event types
-    cols.push(`${eventsObj[evt]["descritpion"]}`) // description of the event
+    cols.push(`${eventsObj[evt]["description"]}`) // description of the event
 
     rows.push(cols);
   }
