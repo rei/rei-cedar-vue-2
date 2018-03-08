@@ -11,6 +11,9 @@ theo.registerFormat('mixin', (result) => {
   const mixins = [];
 
   result.get('props').forEach((prop) => {
+    if (prop.get('category') === 'foundations') {
+      return;
+    }
     const name = prop.get('name');
     const value = prop.get('value');
     const declarations = [];
@@ -30,26 +33,26 @@ theo.registerFormat('mixin', (result) => {
   return `${mixins.join('\n\n')}\n`;
 });
 
-
-// OUTPUT MIXINS
-theo
-  .convert({
+// MIXINS
+let mixins = '';
+try {
+  mixins = theo.convertSync({
     transform: {
-      type: 'web',
+      type: 'cedar-web',
       file: path.join(__dirname, '..', 'tokens/m_index.yml'),
     },
     format: {
       type: 'mixin',
     },
-  })
-  .then((data) => {
-    fs.writeFileSync('src/css/settings/mixins.pcss', data);
-  })
-  .catch(error => console.log(`Something went wrong: ${error}`));
+  });
+} catch (error) {
+  console.log(`Something went wrong creating mixin output: ${error}`); // eslint-disable-line no-console
+}
 
-// OUTPUT VARIABLES
-theo
-  .convert({
+// VARIABLES
+let variables = '';
+try {
+  variables = theo.convertSync({
     transform: {
       type: 'cedar-web',
       file: path.join(__dirname, '..', 'tokens/v_index.yml'),
@@ -57,8 +60,32 @@ theo
     format: {
       type: 'scss',
     },
-  })
-  .then((data) => {
-    fs.writeFileSync('src/css/settings/tokens.pcss', data);
-  })
-  .catch(error => console.log(`Something went wrong: ${error}`));
+  });
+} catch (error) {
+  console.log(`Something went wrong creating variable output: ${error}`); // eslint-disable-line no-console
+}
+
+// FOUNDATIONS
+let foundations = '';
+try {
+  foundations = theo.convertSync({
+    transform: {
+      type: 'cedar-web',
+      file: path.join(__dirname, '..', 'tokens/foundations/_index.yml'),
+    },
+    format: {
+      type: 'scss',
+    },
+  });
+} catch (error) {
+  console.log(`Something went wrong creating foundations output: ${error}`); // eslint-disable-line no-console
+}
+
+// WRITE TO FILES
+
+// css folder (to drive component css)
+fs.writeFileSync('src/css/settings/tokens.pcss', `/* File generated from DDS tokens, changes to names/values should be made there. */\n
+${mixins}${variables}`);
+// static (for cdr-assets)
+fs.writeFileSync('static/cdr-tokens.scss', `/* File generated from DDS tokens, changes to names/values should be made there. */\n
+${mixins}${foundations}`);

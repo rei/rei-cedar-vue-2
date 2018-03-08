@@ -1,13 +1,28 @@
-aliases:
+aliases: &spacing
   # Spacing for inset, inline, and stacks
-  spacing-xxs: 2px
-  spacing-xs: 4px
-  spacing-sm: 8px
-  spacing-md: 16px
-  spacing-lg: 32px
-  spacing-xl: 64px
-  spacing-xxl: 128px
+  spacing-xxs: 
+    value: 2px
+  spacing-xs: 
+    value: 4px
+  spacing-sm: 
+    value: 8px
+  spacing-md: 
+    value: 16px
+  spacing-lg: 
+    value: 32px
+  spacing-xl: 
+    value: 64px
+  spacing-xxl: 
+    value: 128px
   # Radius
-  radius-00: 0
-  radius-10: 2px
-  radius-20: 32px
+  radius-00: 
+    value: 0
+  radius-10: 
+    value: 2px
+  radius-20: 
+    value: 32px
+
+props: *spacing
+global:
+  category: foundations
+  type: spacing
