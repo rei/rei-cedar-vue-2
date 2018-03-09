@@ -103,7 +103,7 @@ function createMarkdownTemplate(file, vueObj) {
   let json2mdTemplate = [], mdTablesTemplate;
   
   json2mdTemplate = json2mdTemplate.concat([
-    {h2: `${vueObj.displayName}`},
+    {h1: `${vueObj.displayName}`},
     {p: `${file}`},
     {p: `${vueObj.description}`}
   ])
@@ -159,7 +159,7 @@ function tableFromProps(propsObj) {
     
     let cols = []
     cols.push(`${prop}`) // property name
-    cols.push(propsObj[prop]["type"] ? propsObj[prop]["type"]["name"] : 'unknown') // type of the property
+    cols.push(propsObj[prop]["type"] ? propsObj[prop]["type"]["name"].replace(/\|/g, ',') : 'unknown') // type of the property
     cols.push(propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a') // property default value
     cols.push(propsObj[prop]["required"] ? 'true' : 'false') // property is required
     cols.push(`${propsObj[prop]["description"]}`) // description of the property
