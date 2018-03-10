@@ -9,98 +9,87 @@
 
     :Base Styles
 ========================================================================== */
-.cdr-type {
-  &--heading {
-    &-sm {
-      @include spruce-dsp-20;
-    }
-
-    &-md {
-      @include spruce-dsp-30;
-    }
-
-    &-lg {
-      @include spruce-dsp-50;
-    }
-
-    /* Break points
-    ========================================================================== */
-    
-    /* Small */
-    @media (--sm-mq) {
-      &-sm\@sm {
-        @include spruce-dsp-20;
-      }
-
-      &-md\@sm {
-        @include spruce-dsp-30;
-      }
-
-      &-lg\@sm {
-        @include spruce-dsp-50;
-      }
-    }
-
-    /* Medium */
-    @media (--md-mq) {
-      &-sm\@md {
-        @include spruce-dsp-20;
-      }
-
-      &-md\@md {
-        @include spruce-dsp-30;
-      }
-
-      &-lg\@md {
-        @include spruce-dsp-50;
-      }
-    }
-
-    /* Large */
-    @media (--lg-mq) {
-      &-sm\@lg {
-        @include spruce-dsp-20;
-      }
-
-      &-md\@lg {
-        @include spruce-dsp-30;
-      }
-
-      &-lg\@lg {
-        @include spruce-dsp-50;
-      }
-    }
-  }
+.cdr-text {
+  /* may want to move this out of this file as cdr-text will effect multiple files */
+  margin: 0;
 
   &--subheading {
-    &-sm {
-      @include spruce-dsp-00;
-    }
-
-    &-md {
-      @include spruce-dsp-10;
-    }
-
-    &-lg {
-      @include spruce-dsp-20;
-    }
+    @include spruce-dsp-20;
   }
 
   &--display {
-    &-sm {
-      @include spruce-dsp-50;
-    }
+    @include spruce-dsp-60;
+  }
 
-    &-md {
-      @include spruce-dsp-60;
-    }
+  &--heading-sm {
+    @include spruce-dsp-20;
+  }
 
-    &-lg {
+  &--heading-md {
+    @include spruce-dsp-30;
+  }
+
+  &--heading-lg {
+    @include spruce-dsp-40;
+  }
+
+  /* Break points
+  ========================================================================== */
+  
+  /* Small */
+  @media (--sm-mq) {
+    &--display {
       @include spruce-dsp-70;
     }
 
-    &-xl {
-      @include spruce-dsp-100;
+    &--heading-sm {
+      @include spruce-dsp-20;
+    }
+
+    &--heading-md {
+      @include spruce-dsp-30;
+    }
+
+    &--heading-lg {
+      @include spruce-dsp-50;
+    }
+  }
+
+  /* Medium */
+  @media (--md-mq) {
+    &--heading-sm {
+      @include spruce-dsp-20;
+    }
+
+    &--heading-md {
+      @include spruce-dsp-30;
+    }
+
+    &--heading-lg {
+      @include spruce-dsp-50;
+    }
+  }
+
+  /* Large */
+  @media (--lg-mq) {
+    &--subheading {
+      @include spruce-dsp-20;
+    }
+
+    &--display {
+      @include spruce-dsp-80;
+    }
+
+    &--heading-sm {
+      @include spruce-dsp-20;
+    }
+
+    &--heading-md {
+      @include spruce-dsp-30;
+    }
+
+    &--heading-lg {
+      @include spruce-dsp-50;
     }
   }
 }

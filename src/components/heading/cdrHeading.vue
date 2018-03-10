@@ -31,7 +31,7 @@
   </h5>
   <h6
     v-else-if="level === '6'"
-    :class="[headClass, modifierClass]"
+    :class="modifierClass"
   >
     <slot/>
   </h6>
@@ -58,14 +58,9 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      headClass: 'cdr-heading',
-    };
-  },
   computed: {
     baseClass() {
-      return 'cdr-type';
+      return 'cdr-text';
     },
   },
 };
