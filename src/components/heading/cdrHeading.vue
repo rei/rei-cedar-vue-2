@@ -1,40 +1,40 @@
 <template>
   <h1
     v-if="level === '1'"
-    :class="[{'cdr-text--non-responsive' :turnOffResponsive}, modifierClass,]"
+    :class="[{'cdr-text--disable-responsive' :disableResponsive}, modifierClass,]"
   >
     <slot/>
   </h1>
   <h2
     v-else-if="level === '2'"
-    :class="[{'cdr-text--non-responsive' :turnOffResponsive}, modifierClass]"
+    :class="[{'cdr-text--disable-responsive' :disableResponsive}, modifierClass]"
   >
     <slot/>
   </h2>
   <h3
     v-else-if="level === '3'"
-    :class="[{'cdr-text--non-responsive' :turnOffResponsive}, modifierClass]"
+    :class="[{'cdr-text--disable-responsive' :disableResponsive}, modifierClass]"
     :isResponsive="responsive"
   >
     <slot/>
   </h3>
   <h4
     v-else-if="level === '4'"
-    :class="[{'cdr-text--non-responsive' :turnOffResponsive}, modifierClass]"
+    :class="[{'cdr-text--disable-responsive' :disableResponsive}, modifierClass]"
     :isResponsive="responsive"
   >
     <slot/>
   </h4>
   <h5
     v-else-if="level === '5'"
-    :class="[{'cdr-text--non-responsive' :turnOffResponsive}, modifierClass]"
+    :class="[{'cdr-text--disable-responsive' :disableResponsive}, modifierClass]"
     :isResponsive="responsive"
   >
     <slot/>
   </h5>
   <h6
     v-else-if="level === '6'"
-    :class="[{'cdr-text--non-responsive' :turnOffResponsive}, modifierClass]"
+    :class="[{'cdr-text--disable-responsive' :disableResponsive}, modifierClass]"
     :isResponsive="responsive"
   >
     <slot/>
@@ -54,7 +54,7 @@ export default {
   name: 'CdrHeading',
   mixins: [modifier],
   props: {
-    turnOffResponsive: {
+    disableResponsive: {
       type: Boolean,
       required: false,
       default: false,
