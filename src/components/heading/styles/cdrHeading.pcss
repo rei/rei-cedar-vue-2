@@ -22,11 +22,11 @@
   }
 
   &--heading-sm {
-    @include spruce-dsp-20;
+    @include spruce-dsp-30;
   }
 
   &--heading-md {
-    @include spruce-dsp-30;
+    @include spruce-dsp-40;
   }
 
   &--heading-lg {
@@ -42,29 +42,6 @@
       @include spruce-dsp-70;
     }
 
-    &--heading-sm {
-      @include spruce-dsp-20;
-    }
-
-    &--heading-md {
-      @include spruce-dsp-30;
-    }
-
-    &--heading-lg {
-      @include spruce-dsp-50;
-    }
-  }
-
-  /* Medium */
-  @media (--md-mq) {
-    &--heading-sm {
-      @include spruce-dsp-20;
-    }
-
-    &--heading-md {
-      @include spruce-dsp-30;
-    }
-
     &--heading-lg {
       @include spruce-dsp-50;
     }
@@ -72,24 +49,38 @@
 
   /* Large */
   @media (--lg-mq) {
-    &--subheading {
-      @include spruce-dsp-20;
-    }
-
     &--display {
       @include spruce-dsp-80;
     }
 
     &--heading-sm {
-      @include spruce-dsp-20;
+      @include spruce-dsp-40;
     }
 
     &--heading-md {
-      @include spruce-dsp-30;
+      @include spruce-dsp-50;
     }
 
     &--heading-lg {
-      @include spruce-dsp-50;
+      @include spruce-dsp-70;
+    }
+  }
+
+  &--non-responsive {
+    &.cdr-text--display {
+      @include spruce-dsp-70;
+    }
+
+    &.cdr-text--heading-sm {
+      @include spruce-dsp-20;
+    }
+
+    &.cdr-text--heading-md {
+      @include spruce-dsp-30;
+    }
+
+    &.cdr-text--heading-lg {
+      @include spruce-dsp-40;
     }
   }
 }
