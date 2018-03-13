@@ -118,7 +118,7 @@ function createMarkdownTemplate(file, vueObj) {
 
 // build tables for Vue props, methods, events, and slots
 function buildTables(vueObj) {
-  let updatedTemplate = [{h3: "<div>PROPS, METHODS, EVENTS, SLOTS</div>"}]
+  let updatedTemplate = [{h3: "<button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>"}]
   let mdTable
   
   mdTable = tableFromProps(vueObj["props"])
