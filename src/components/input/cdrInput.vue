@@ -83,6 +83,11 @@ import errorIcon from '!raw-loader!Assets/icons/rei/cdr-x-circ-fill.svg';
 import warningIcon from '!raw-loader!Assets/icons/rei/cdr-warning-tri.svg';
 /* eslint-enable */
 
+/**
+ * Cedar 2 component for input
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrInput',
   mixins: [modifier],
@@ -146,7 +151,7 @@ export default {
      * false is no debounce.
     */
     debounce: {
-      type: Boolean,
+      type: [Boolean, Number],
       required: false,
       default: false,
     },

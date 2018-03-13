@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import cdrIcon from 'Components/icon/cdrIcon';
 
 describe('cdrIcon.vue', () => {

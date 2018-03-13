@@ -1,4 +1,4 @@
-import { shallow, mount } from 'vue-test-utils';
+import { shallow, mount } from '@vue/test-utils';
 import cdrCol from 'Components/column/cdrCol';
 import cdrRow from 'Components/row/cdrRow';
 

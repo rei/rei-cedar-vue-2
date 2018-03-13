@@ -24,6 +24,11 @@
 </template>
 
 <script>
+/**
+ * Cedar 2 component for checkbox
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrCheckbox',
   inheritAttrs: false,

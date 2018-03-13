@@ -23,7 +23,8 @@
     "create": "node generator.js",
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
-    "vue-docs": "node build/vue-docs.js",
+    "vue:docs": "node build/vue-docs.js",
+    "vue:archive": "node build/vue-docs-archive.js",
     "changelog": "standard-changelog",
     "theo": "node utils/theo.js"
   },
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@commitlint/cli": "^6.1.0",
     "@commitlint/config-conventional": "^6.1.0",
+    "@vue/test-utils": "^1.0.0-beta.12",
     "autoprefixer": "^8.0.0",
     "babel-core": "^6.25.0",
     "babel-eslint": "^8.2.2",
@@ -127,6 +129,7 @@
     "rimraf": "^2.6.0",
     "selenium-server": "^3.9.1",
     "semver": "^5.5.0",
+    "semver-diff": "^2.1.0",
     "standard-changelog": "^1.0.12",
     "style-loader": "^0.20.2",
     "stylelint": "^9.1.0",
@@ -147,7 +150,6 @@
     "vue-style-loader": "^4.0.2",
     "vue-styleguidist": "^1.4.8",
     "vue-template-compiler": "^2.5.13",
-    "vue-test-utils": "^1.0.0-beta.9",
     "vue-theme-loader": "^2.0.1",
     "webpack": "^3.11.0",
     "webpack-bundle-analyzer": "^2.10.0",

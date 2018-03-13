@@ -7,6 +7,11 @@
 <script>
 import modifier from 'Mixins/modifier';
 
+/**
+ * The basic card is intended as a container for grouping like content.
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrCard',
   mixins: [modifier],

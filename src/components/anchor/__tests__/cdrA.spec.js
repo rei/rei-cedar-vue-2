@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import { createRenderer } from 'vue-server-renderer'
 import cdrA from 'Components/anchor/cdrA';
 

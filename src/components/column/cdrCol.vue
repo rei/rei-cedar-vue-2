@@ -42,10 +42,17 @@
 <script>
 import { CdrRow as Row } from '@rei/cdr-row';
 
+/**
+ * Cedar 2 component for column
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrCol',
   components: { Row },
-  inject: ['rowType'],
+  inject: {
+    rowType: { default: 'normal' },
+  },
   inheritAttrs: false,
   props: {
     /**

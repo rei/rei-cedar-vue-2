@@ -11,11 +11,10 @@
 import modifier from 'Mixins/modifier';
 
 /**
- * Component is described here.
- *
- * @example ./typography.md
+ * Cedar 2 component for heading
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
-
 export default {
   name: 'CdrHeading',
   mixins: [modifier],
