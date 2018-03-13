@@ -28,9 +28,6 @@
     "changelog": "standard-changelog",
     "theo": "node utils/theo.js"
   },
-  "peerDependencies": {
-    "vue": "^2.5.13"
-  },
   "devDependencies": {
     "@commitlint/cli": "^6.1.0",
     "@commitlint/config-conventional": "^6.1.0",
@@ -175,5 +172,8 @@
     "hooks": {
       "commitmsg": "commitlint -e $GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "rei-cedar-tokens": "git+ssh://git@github.com/rei/rei-cedar-tokens.git#0.0.2"
   }
 }
