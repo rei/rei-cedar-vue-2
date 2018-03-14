@@ -1,0 +1,92 @@
+aliases: &colors
+  clean-slate: 
+    value: '#ffffff'
+  moon-shot: 
+    value: '#fafafa'
+  partly-cloudy: 
+    value: '#dadada'
+  grey-matter: 
+    value: '#b8b8b8'
+  holy-smoke: 
+    value: '#999999'
+  coal-train: 
+    value: '#7a7a7a'
+  taken-for-granite: 
+    value: '#616161'
+  burnt-to-ashes: 
+    value: '#434343'
+  heart-of-darkness: 
+    value: '#292929'
+  lost-in-space: 
+    value: '#1a1a1a'
+  moose-tooth: 
+    value: '#faf9f5'
+  hissing-llamas: 
+    value: '#f1efe4'
+  suede-shoes: 
+    value: '#5197cd'
+  easily-excited: 
+    value: '#3278ae'
+  closed-on-monday: 
+    value: '#2b6692'
+  go-van-gogh: 
+    value: '#1e4e72'
+  snap-decision: 
+    value: '#e86868'
+  attention-grabber: 
+    value: '#c83232'
+  high-stakes: 
+    value: '#b5292b'
+  quick-fixe: 
+    value: '#a12024'
+  pick-your-potion: 
+    value: '#faecec'
+  to-the-rescue: 
+    value: '#b5292b'
+  light-tension: 
+    value: '#fff5eb'
+  electric-daisy: 
+    value: '#f8b877'
+  dehydrated-lemon: 
+    value: '#c77523'
+  thin-mint: 
+    value: '#edf7ee'
+  crimp-son-and-clover: 
+    value: '#6c9f71'
+  instant-winner: 
+    value: '#367c3c'
+  ice-age: 
+    value: '#ecf2f7'
+  hunky-dory: 
+    value: '#5197cd'
+  crowd-pleaser: 
+    value: '#3278ae'
+  background-000-lightest: 
+    value: '#ffffff'
+  background-000-lighter: 
+    value: '#fafafa'
+  background-000-dark: 
+    value: '#292929'
+  background-000-darker: 
+    value: '#1a1a1a'
+  background-100-lighter: 
+    value: '#faf9f5'
+  background-100-light: 
+    value: '#f1efe4'
+  text-primary-on-light: 
+    value: '#292929'
+  text-secondary-on-light: 
+    value: '#616161'
+  text-link-on-light: 
+    value: '#3278ae'
+  text-primary-on-dark: 
+    value: '#fafafa'
+  text-secondary-on-dark: 
+    value: '#999999'
+  text-link-on-dark: 
+    value: '#5197cd'
+
+props: *colors
+global:
+  category: foundations
+  type: color

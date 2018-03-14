@@ -15,7 +15,7 @@ module.exports = {
       })
     },
     'postcss-strip-inline-comments': {},
-    'postcss-sassy-mixins': {}, // used to strip mixins from brand.ai
+    'postcss-sassy-mixins': {},
     'postcss-simple-vars': {},
     'postcss-calc': {},
     'postcss-nested': {},

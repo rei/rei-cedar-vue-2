@@ -1,4 +1,4 @@
-import { shallow } from 'vue-test-utils';
+import { shallow } from '@vue/test-utils';
 import selectComp from 'Components/select/cdrSelect';
 import { toArray } from 'lodash';
 

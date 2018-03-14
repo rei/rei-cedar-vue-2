@@ -10,7 +10,7 @@
   "style": "dist/{NAME-TAGNAME}.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
-    "component": "{NAME-CAMEL}",
+    "{TYPE-SINGULAR}": "{NAME-CAMEL}",
     "tagName": "{NAME-KEBAB}"
   },
   "publishConfig": {

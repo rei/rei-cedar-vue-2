@@ -144,7 +144,7 @@ export default {
      * Boolean or Number. `true` has a default of 500ms. Providing a number will set debounce to that (in ms). `false` is no debounce.
     */
     debounce: {
-      type: Boolean,
+      type: [Boolean, Number],
       required: false,
       default: false,
     },
