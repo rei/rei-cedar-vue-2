@@ -1,13 +1,15 @@
 /* ==========================================================================
   # cdrHeading
-  
-  All values should map to variables in
-  vars/cdrHeading.vars.pcss
-  in order to allow for theming
 
   TOC:
 
     :Base Styles
+    ::subheading
+    ::display
+    ::Heading
+    :::large
+    :::medium
+    :::small
 ========================================================================== */
 .cdr-text {
   /* may want to move this out of this file as cdr-text will effect multiple files */
@@ -21,15 +23,15 @@
     @include spruce-dsp-60;
   }
 
-  &--heading-sm {
+  &--heading-small {
     @include spruce-dsp-30;
   }
 
-  &--heading-md {
+  &--heading-medium {
     @include spruce-dsp-40;
   }
 
-  &--heading-lg {
+  &--heading-large {
     @include spruce-dsp-40;
   }
 
@@ -42,7 +44,7 @@
       @include spruce-dsp-70;
     }
 
-    &--heading-lg {
+    &--heading-large {
       @include spruce-dsp-50;
     }
   }
@@ -53,15 +55,15 @@
       @include spruce-dsp-80;
     }
 
-    &--heading-sm {
+    &--heading-small {
       @include spruce-dsp-40;
     }
 
-    &--heading-md {
+    &--heading-medium {
       @include spruce-dsp-50;
     }
 
-    &--heading-lg {
+    &--heading-large {
       @include spruce-dsp-70;
     }
   }
@@ -71,15 +73,15 @@
       @include spruce-dsp-70;
     }
 
-    &.cdr-text--heading-sm {
+    &.cdr-text--heading-small {
       @include spruce-dsp-20;
     }
 
-    &.cdr-text--heading-md {
+    &.cdr-text--heading-medium {
       @include spruce-dsp-30;
     }
 
-    &.cdr-text--heading-lg {
+    &.cdr-text--heading-large {
       @include spruce-dsp-40;
     }
   }

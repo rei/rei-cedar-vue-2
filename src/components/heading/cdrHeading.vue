@@ -17,7 +17,20 @@ import modifier from 'Mixins/modifier';
  */
 export default {
   name: 'CdrHeading',
+  /**
+  * Modifiers
+  * heading-large
+  * heading-medium
+  * heading-small
+  * display
+  * subheading
+   */
   mixins: [modifier],
+  /**
+  * disable-responsive adds the utility class of
+  * .cdr-text--disable-responsive to a heading.
+  * This allows for a consistent font across breakpoints.
+  */
   props: {
     disableResponsive: {
       type: Boolean,
@@ -43,6 +56,5 @@ export default {
 
 <style>
   @import 'Css/settings/_index.pcss';
-  @import './styles/vars/cdrHeading.vars.pcss';
   @import './styles/cdrHeading.pcss';
 </style>

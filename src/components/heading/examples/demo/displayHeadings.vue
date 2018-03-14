@@ -2,7 +2,7 @@
   <div>
     <cdr-heading
       level="2"
-      modifier="heading-lg">Display Heading</cdr-heading>
+      modifier="heading-large">Display Heading</cdr-heading>
     <div data-backstop="display-headings">
       <cdr-heading
         level="1"
@@ -25,7 +25,7 @@
     </div>
     <cdr-heading
       level="2"
-      modifier="heading-lg">Display Heading disable-responsive</cdr-heading>
+      modifier="heading-large">Display Heading disable-responsive</cdr-heading>
     <div data-backstop="display-headings-disable-responsive">
       <cdr-heading
         level="1"
