@@ -4,7 +4,7 @@
     :target="target"
     :rel="newRel"
   >
-    <!-- @slot Text content on the inside of the anchor -->
+    <!-- @slot innerHTML on the inside of the anchor component -->
     <slot/>
   </a>
 </template>
@@ -14,8 +14,13 @@ import modifier from 'Mixins/modifier';
 
 /**
  * Cedar 2 component for anchor.
- * Supports traditional atributes of anchor tag
- * Modifying classes: `button, contrast, standalone`
+ *
+ * <span class="modifiers">Modifiers</span>
+ *
+ * Modifiers can be combined 1 from each grouping.
+ * {contrast, overlay, standalone} **OR** button
+ * Use of the 'button' modifier depends on including the css for cdrButton.
+ * A modifier list that contains 'button' exposes the same modifiers as cdrButton and the other modifiers shouldn't be combined with it.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */

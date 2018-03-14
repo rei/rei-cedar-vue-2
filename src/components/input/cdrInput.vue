@@ -47,6 +47,7 @@
         class="cdr-input__pre-icon"
         aria-hidden="true"
       >
+        <!-- @slot Icon to be put in front of input -->
         <slot name="preicon"/>
       </span>
       <span
@@ -85,6 +86,7 @@ import warningIcon from '!raw-loader!Assets/icons/rei/cdr-warning-tri.svg';
 
 /**
  * Cedar 2 component for input
+ * **NOTE:** `v-model` is required.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -94,8 +96,7 @@ export default {
   inheritAttrs: false,
   props: {
     /**
-     * id for the input that is mapped to the label 'for' attribute.
-     * If one is not provided, it will be auto generated.
+     * `id` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated.
     */
     id: String,
     /**
@@ -106,7 +107,7 @@ export default {
       required: true,
     },
     /**
-     * Removes the label element but sets the input 'aria-label' to `label` text for a11y.
+     * Removes the label element but sets the input `aria-label` to `label` text for a11y.
     */
     hideLabel: Boolean,
     /**
@@ -122,33 +123,25 @@ export default {
     */
     patternError: String,
     /**
-     * Enables icon feedback as part of validation
-     * for valid, warn, and error states.
+     * Enables icon feedback as part of validation for valid, warn, and error states.
     */
     feedback: Boolean,
     /**
-     * Input type. NOTE: This component is meant for text style inputs.
-     * Other input types (checkbox, radio) have their own components.
+     * Input type. NOTE: This component is meant for text style inputs. Other input types (checkbox, radio) have their own components.
     */
     type: {
       type: String,
       default: 'text',
     },
     /**
-     * Array of functions. Provide your own validation function(s).
-     * Takes the input string and outputs an object with a state and message.
-     * State is a String with value `valid`, `warning`, or `error`.
-     * Message is any String.
+     * Array of functions. Provide your own validation function(s). Takes the input string and outputs an object with a state and message. State is a String with value `valid`, `warning`, or `error`. Message is any String.
     */
     rules: {
       type: Array,
       default: () => [],
     },
     /**
-     * Boolean or Number.
-     * true has a default of 500ms.
-     * Providing a number will set debounce to that (in ms).
-     * false is no debounce.
+     * Boolean or Number. `true` has a default of 500ms. Providing a number will set debounce to that (in ms). `false` is no debounce.
     */
     debounce: {
       type: Boolean,
@@ -262,6 +255,11 @@ export default {
     focused(val) {
       this.touched = true;
 
+      /**
+      * New input value (if changed). Fires on blur.
+      * @event change
+      * @type string
+      */
       if (val) {
         this.$emit('change', val);
       }
@@ -307,6 +305,11 @@ export default {
     onInput(e) {
       this.pristine = false;
       const { value } = e.target;
+      /**
+      * Current input value. Fires while typing.
+      * @event input
+      * @type string
+      */
       this.$emit('input', value);
       this.setCurrentValue(value);
     },
@@ -315,13 +318,27 @@ export default {
       this.$nextTick(() => {
         this.focused = false;
       });
+      /**
+      * Fires when input loses focus.
+      * @event blur
+      * @type {event}
+      */
       this.$emit('blur', e);
     },
     onFocus(e) {
+      /**
+      * Fires when input gains focus.
+      * @event focus
+      * @type {event} */
       this.focused = true;
       this.$emit('focus', e);
     },
     onPaste(e) {
+      /**
+      * Fires when text is pasted into input.
+      * @event paste
+      * @type {event}
+       */
       this.validate(true);
       this.$emit('paste', e);
     },
