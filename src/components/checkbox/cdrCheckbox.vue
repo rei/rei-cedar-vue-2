@@ -18,6 +18,7 @@
       :for="checkboxId"
       ref="label"
     >
+      <!-- @slot innerHTML inside of checkbox component -->
       <slot/>
     </label>
   </div>
@@ -26,6 +27,7 @@
 <script>
 /**
  * Cedar 2 component for checkbox
+ * **NOTE:** `v-model` is required.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -77,6 +79,11 @@ export default {
       this.newValue = val;
     },
     newValue(val) {
+      /**
+       * `v-model` value. Fires on check/uncheck.
+       * @event input
+       * @type value | event
+       * */
       this.$emit('input', val);
     },
   },
