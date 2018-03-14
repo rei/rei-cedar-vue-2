@@ -26,7 +26,8 @@
     "vue:docs": "node build/vue-docs.js",
     "vue:archive": "node build/vue-docs-archive.js",
     "vue:transfer": "node build/vue-docs-transfer.js",
-    "changelog": "standard-changelog"
+    "changelog": "standard-changelog",
+    "theo": "node utils/theo.js"
   },
   "peerDependencies": {
     "vue": "^2.5.13"
