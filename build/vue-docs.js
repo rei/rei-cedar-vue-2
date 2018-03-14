@@ -102,8 +102,8 @@ function createMarkdownTemplate(file, vueObj) {
   let json2mdTemplate = [], mdTablesTemplate;
   
   json2mdTemplate = json2mdTemplate.concat([
-    {h1: `${vueObj.displayName}`},
-    {p: `${file}`},
+    {h1: `<span class="display-name">${vueObj.displayName}</span>`},
+    {p: `<span class="file">${file}<span>`},
     {p: `${vueObj.description}`}
   ])
 
