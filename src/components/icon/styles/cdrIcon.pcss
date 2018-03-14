@@ -11,12 +11,21 @@
 ========================================================================== */
 
 .cdr-icon {
+  display: inline-block;
+  vertical-align: middle;
   width: $icon-width;
   height: $icon-height;
-  fill: $icon-fill;
   flex: 0 0 auto;
+  fill: $icon-fill;
 
-  & path {
-    all: inherit;
+  & > svg {
+    width: inherit;
+    height: inherit;
+    fill: inherit;
+  }
+
+  &--md {
+    width: 24px;
+    height: 24px;
   }
 }

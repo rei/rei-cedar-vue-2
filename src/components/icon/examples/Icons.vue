@@ -1,6 +1,118 @@
 <template>
   <div class="icon-examples">
     <h2>Icons</h2>
+    <hr>
+    <h3>Icon test</h3>
+
+    <cdr-row
+      cols="5"
+    >
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="newAccount"
+            modifier="md"
+          />
+          new account
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="newChain"
+            modifier="md"
+          />
+          new chain link
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="newChat"
+            modifier="md"
+          />
+          new chat
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="newInfo"
+            modifier="md"
+          />
+          new info
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="newLoc"
+            modifier="md"
+          />
+          new location
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="account"
+            modifier="md"
+          />
+          old account
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="chain"
+            modifier="md"
+          />
+          old chain link
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="chat"
+            modifier="md"
+          />
+          old chat
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="info"
+            modifier="md"
+          />
+          old info
+        </div>
+      </cdr-col>
+      <cdr-col>
+        <div>
+          <cdr-icon
+            name="loc"
+            modifier="md"
+          />
+          old location
+        </div>
+      </cdr-col>
+    </cdr-row>
+
+    <p>
+      <cdr-button>
+        <cdr-icon name="newAccount"/> new account
+      </cdr-button>
+    </p>
+
+    <p>
+      <cdr-button>
+        <cdr-icon name="account"/> old account
+      </cdr-button>
+    </p>
+    <hr>
+
+
     <cdr-row
       cols="3"
       cols-md="6"
@@ -279,11 +391,19 @@ export default {
 
 <style>
 .icon-examples {
-  .cdr-icon {
-    width: 32px;
-    height: 32px;
+  /* line-height: 1; */
 
-    &:hover use {
+  .cdr-button {
+    .cdr-icon {
+      fill: white;
+    }
+  }
+
+  .cdr-icon {
+    /* width: 32px;
+    height: 32px; */
+
+    &:hover {
       fill: red;
     }
   }
