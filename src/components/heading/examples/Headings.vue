@@ -1,8 +1,16 @@
 <template>
   <div>
-    <displayHeadings/>
-    <simpleHeadings/>
-    <subheading/>
+    <div data-backstop="headings">
+      <div data-backstop="heading-group-display">
+        <displayHeadings/>
+      </div>
+      <div data-backstop="heading-group-simple">
+        <simpleHeadings/>
+      </div>
+      <div data-backstop="heading-group-subhead">
+        <subheading/>
+      </div>
+    </div>
   </div>
 </template>
 

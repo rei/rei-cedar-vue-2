@@ -28,7 +28,7 @@
 import Components from 'Components/_index';
 
 export default {
-  name: 'Subheadings',
+  name: 'Headings',
   components: Components,
 };
 </script>
