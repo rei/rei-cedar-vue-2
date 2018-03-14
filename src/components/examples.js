@@ -16,8 +16,6 @@ import selects from 'Components/select/examples/Selects';
 
 import utilities from 'Components/Utilities/Utilities';
 
-import test from 'Components/testing/Test'; // only used as example for e2e test
-
 export default {
   anchors,
   buttons,
@@ -35,5 +33,4 @@ export default {
   ratings,
   selects,
   utilities,
-  test, // only used as example for e2e test
 };

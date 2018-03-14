@@ -12,7 +12,8 @@ const files = glob.sync('*.vue', { absolute: true });
 
 function getThemeBlocks(content) {
   const parts = compiler.parseComponent(content);
-  const themes = parts.styles.filter(part => Object.prototype.hasOwnProperty.call(part.attrs, 'cedar-theme'));
+  const themes = parts.styles.filter(part =>
+    Object.prototype.hasOwnProperty.call(part.attrs, 'cedar-theme'));
   return themes;
 }
 

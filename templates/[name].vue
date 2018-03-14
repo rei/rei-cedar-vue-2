@@ -1,5 +1,6 @@
 <template>
-  
+  <!-- disable lint errors on line length in template -->
+  <!-- eslint-disable max-len -->
 </template>
 
 <script>
