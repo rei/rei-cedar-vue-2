@@ -10,6 +10,7 @@
 
 <script>
 /**
+ * Cedar 2 component for icons
  * **NOTE:** Can only be used with an SVG symbol sprite.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)

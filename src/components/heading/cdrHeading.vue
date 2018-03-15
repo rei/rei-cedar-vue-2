@@ -3,6 +3,7 @@
     :is="'h'+level"
     :class="[{'cdr-text--disable-responsive' :disableResponsive}, modifierClass,]"
   >
+    <!-- @slot innerHTML inside of the heading component -->
     <slot/>
   </component>
 </template>
@@ -12,6 +13,8 @@ import modifier from 'Mixins/modifier';
 
 /**
  * Cedar 2 component for heading
+ * <span class="modifiers">Modifiers</span>
+ * Accepts typography classes.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */

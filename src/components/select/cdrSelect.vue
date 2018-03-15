@@ -41,6 +41,7 @@ import toArray from 'lodash/toArray';
 
 /**
  * Cedar 2 component for select
+ * **NOTE:** `v-model` is required.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -56,23 +57,19 @@ export default {
       required: true,
     },
     /**
-     * id for the select that is mapped to the label 'for' attribute.
-     * If one is not provided, it will be generated.
+     * `id` for the select that is mapped to the label `for` attribute. If one is not provided, it will be generated.
     */
     id: String,
     /**
-     * Removes the label element but sets the select 'aria-label' to `label` text for a11y.
+     * Removes the label element but sets the select `aria-label` to `label` text for a11y.
     */
     hideLabel: Boolean,
     /**
-     * Adds an option that is disabled and selected by default to serve
-     * as a 'placeholder' for the select.
+     * Adds an option that is disabled and selected by default to serve as a `placeholder` for the select.
     */
     prompt: String,
     /**
-     * Build options programatically with data.
-     * Array of objects [{ text: String, value: String}] to give greater control.
-     * Array of strings ['String'] for simpler setup (value and text will be the same).
+     * Build options programatically with data. Array of objects [{ text: String, value: String}] to give greater control. Array of strings ['String'] for simpler setup (value and text will be the same).
     */
     options: {
       type: Array,
@@ -155,6 +152,11 @@ export default {
   },
   methods: {
     onInput(e) {
+      /**
+       * Current input value. Fires when
+       * @event input
+       * @type string|array
+       */
       if (this.multiple) {
         const optArr = toArray(e.target.options);
         const selected = optArr.filter(o => o.selected === true).map(o => o.value);
