@@ -4,6 +4,10 @@ const theo = require('theo');
 const path = require('path');
 const fs = require('fs-extra');
 
+function getFile(file) {
+  return path.join(__dirname, '../node_modules/rei-cedar-tokens/tokens/', file);
+}
+
 theo.registerTransform('cedar-web', ['color/hex']);
 
 // MIXIN FORMATTER
@@ -39,7 +43,7 @@ try {
   mixins = theo.convertSync({
     transform: {
       type: 'cedar-web',
-      file: path.join(__dirname, '..', 'tokens/m_index.yml'),
+      file: getFile('m_index.yml'),
     },
     format: {
       type: 'mixin',
@@ -55,7 +59,7 @@ try {
   variables = theo.convertSync({
     transform: {
       type: 'cedar-web',
-      file: path.join(__dirname, '..', 'tokens/v_index.yml'),
+      file: getFile('v_index.yml'),
     },
     format: {
       type: 'scss',
@@ -71,7 +75,7 @@ try {
   foundations = theo.convertSync({
     transform: {
       type: 'cedar-web',
-      file: path.join(__dirname, '..', 'tokens/foundations/_index.yml'),
+      file: getFile('foundations/_index.yml'),
     },
     format: {
       type: 'scss',
