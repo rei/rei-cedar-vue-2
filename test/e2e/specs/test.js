@@ -11,8 +11,6 @@ module.exports = {
     browser
       .url(devServer)
       .waitForElementVisible('#app', 5000)
-      .assert.elementPresent('.karma-test')
-      .assert.containsText('.test-head', 'Testing 1 2 3')
       .end();
   },
 };

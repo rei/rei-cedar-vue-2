@@ -16,6 +16,7 @@
       :for="radioId"
       ref="label"
     >
+      <!-- @slot innerHTML inside of the radio component -->
       <slot/>
     </label>
   </div>
@@ -26,6 +27,7 @@ import isEqual from 'lodash/isEqual';
 
 /**
  * Cedar 2 component for radio
+ * **NOTE:** `v-model` is required.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -69,6 +71,11 @@ export default {
   },
   methods: {
     onChange() {
+    /**
+     * Selected radio value. Fires on section.
+     * @event change
+     * @type boolean|array
+     */
       this.$emit('change', this.value);
     },
   },

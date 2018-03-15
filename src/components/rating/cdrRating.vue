@@ -50,6 +50,11 @@ import modifier from 'Mixins/modifier';
 
 /**
  * Cedar 2 component for rating
+ * Ratings are rounded to nearest .25 for displaying stars.
+ * <span class="modifiers">Modifiers</span>
+ * Modifiers can be combined 1 from each grouping.
+ * {small, medium, large}
+ * Default is large
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */

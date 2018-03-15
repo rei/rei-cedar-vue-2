@@ -56,10 +56,6 @@
       class="cpg-section"
       data-backstop="selects"
     />
-    <test
-      class="cpg-section"
-      data-backstop="test"
-    />
     <utilities class="cpg-section"/>
 
     <caption-example

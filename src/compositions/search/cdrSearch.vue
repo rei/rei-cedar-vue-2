@@ -28,8 +28,7 @@ import { CdrButton } from '@rei/cdr-button';
 import { CdrInput } from '@rei/cdr-input';
 
 /**
- * A composition of cdr-input and cdr-buttonthat gives you a simple search box.
- * Passes all other attributes and events to cdr-input.
+ * A Cedar composition of `cdr-input` and `cdr-button` that gives you a simple search box. Passes all other attributes and events to `cdr-input`.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -80,6 +79,11 @@ export default {
   },
   methods: {
     updateSearch() {
+      /**
+       * Current input value. Fires while typing.
+       * @event input
+       * @type string
+       */
       this.$emit('input', this.searchValue);
     },
   },

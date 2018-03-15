@@ -30,6 +30,8 @@ import modifier from 'Mixins/modifier';
 
 /**
  * Cedar 2 component for image
+ * <span class="modifiers">Modifiers</span>
+ * {responsive, rounded, circle, thumbnail}
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -65,7 +67,7 @@ export default {
       default: () => {},
     },
     /**
-     * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
+     * Aspect ratio of the media container. {auto, square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
      */
     ratio: {
       type: String,
@@ -109,16 +111,13 @@ export default {
         '16-9'].indexOf(value) >= 0) || false,
     },
     /**
-     * Requires a `ratio`.
-     * Area to crop the image overflow to.
-     * {top, y-center, bottom} {left, x-center, right}
+     * Requires a `ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right}
      */
     crop: {
       type: String,
     },
     /**
-     * Requires a `ratio`.
-     * Scale the image to be as large as possible to fill the area (background-position: cover;)
+     * Requires a `ratio`. Scale the image to be as large as possible to fill the area (background-position: cover;)
      */
     cover: {
       type: Boolean,

@@ -6,6 +6,7 @@ const glob = require('glob');
 const path = require('path');
 const SVGSpriter = require('svg-sprite');
 
+/* eslint-disable */
 const iconConfig = [
   {
     prefix: 'rei',
@@ -16,6 +17,7 @@ const iconConfig = [
     url: 'https://assets.brand.ai/rei-digital-experience-team/expert-advice/icons.zip?key=ByGZB6RRzW',
   },
 ];
+/* eslint-enable */
 
 const basePath = 'src/assets/icons';
 // clean directory

@@ -16,12 +16,11 @@ glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', 
 
   // use Vue files to find associated markdown files
   vueFiles.forEach((file) => {
-    const startFileName = file.lastIndexOf('/') + 1, endFileName = file.lastIndexOf('.')
-    const vueCompName = file.slice(startFileName, endFileName)
-    const vueCompDir = file.slice(0, startFileName)
-    const fullDirPath = `${path.dirname(__dirname)}/${vueCompDir}`
+    const vueCompName = path.basename(file,'.vue')
+    const vueCompDir = path.dirname(file)
+    const fullDirPath = `${path.dirname(__dirname)}/${vueCompDir}/`
 
-    // create 'api-archive' folder if it doesn't exist
+    // create 'api-archive/versions' folder if it doesn't exist
     fs.ensureDir(`${fullDirPath + ARCHIVE}/${VERSIONS}`, (dirErr) => {
       if(dirErr) {
         throw new Error(`There was a problem creating a ${ARCHIVE}/${VERSIONS} folder for ${vueCompName}:\n${dirErr}`)
