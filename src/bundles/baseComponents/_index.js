@@ -12,6 +12,7 @@ import { CdrRadio } from '@rei/cdr-radio';
 import { CdrRating } from '@rei/cdr-rating';
 import { CdrRow } from '@rei/cdr-row';
 import { CdrSelect } from '@rei/cdr-select';
+import { CdrText } from '@rei/cdr-text';
 
 import CdrAStyle from '@rei/cdr-a/dist/cdr-a.css';
 import CdrButtonStyle from '@rei/cdr-button/dist/cdr-button.css';
@@ -40,6 +41,7 @@ export default {
   CdrRating,
   CdrRow,
   CdrSelect,
+  CdrText,
 };
 
 const styles = [
