@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import cdrMediaObject from 'Components/mediaObject/cdrMediaObject';
+import cdrMediaObject from 'componentsdir/mediaObject/cdrMediaObject';
 
 describe('cdrMediaObject.vue', () => {
   it('adds media align class', () => {

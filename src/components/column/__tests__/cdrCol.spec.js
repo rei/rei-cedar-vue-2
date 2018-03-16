@@ -1,6 +1,6 @@
 import { shallow, mount } from '@vue/test-utils';
-import cdrCol from 'Components/column/cdrCol';
-import cdrRow from 'Components/row/cdrRow';
+import cdrCol from 'componentsdir/column/cdrCol';
+import cdrRow from 'componentsdir/row/cdrRow';
 
 describe('cdrCol.vue', () => {
   it('renders as list type correctly', () => {

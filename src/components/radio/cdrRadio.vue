@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style>
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrRadio.vars.pcss';
   @import './styles/cdrRadio.pcss';
 </style>

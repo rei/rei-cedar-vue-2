@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import cdrHeading from 'Components/heading/cdrHeading';
+import cdrHeading from 'componentsdir/heading/cdrHeading';
 
 describe('cdrHeading.vue', () => {
   it('renders an h1', () => {

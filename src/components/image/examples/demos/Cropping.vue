@@ -206,8 +206,8 @@
 </template>
 
 <script>
-import testImage from 'Assets/test-image.jpeg';
-import Components from 'Components/_index';
+import testImage from 'assetsdir/test-image.jpeg';
+import Components from 'componentsdir/_index';
 
 export default {
   name: 'Cropping',
