@@ -17,7 +17,6 @@ import CdrAStyle from '@rei/cdr-a/dist/cdr-a.css';
 import CdrButtonStyle from '@rei/cdr-button/dist/cdr-button.css';
 import CdrCardStyle from '@rei/cdr-card/dist/cdr-card.css';
 import CdrCheckboxStyle from '@rei/cdr-checkbox/dist/cdr-checkbox.css';
-import CdrHeadingStyle from '@rei/cdr-heading/dist/cdr-heading.css';
 import CdrIconStyle from '@rei/cdr-icon/dist/cdr-icon.css';
 import CdrImgStyle from '@rei/cdr-img/dist/cdr-img.css';
 import CdrInputStyle from '@rei/cdr-input/dist/cdr-input.css';
@@ -48,7 +47,6 @@ const styles = [
   CdrButtonStyle,
   CdrCardStyle,
   CdrCheckboxStyle,
-  CdrHeadingStyle,
   CdrIconStyle,
   CdrImgStyle,
   CdrInputStyle,
