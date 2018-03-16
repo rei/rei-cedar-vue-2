@@ -4,9 +4,13 @@ Modifier values are any valid text styles
 
 #### Heading Styles
   * heading-large
+  * heading-large-static (non responsive)
   * heading-medium
+  * heading-medium-static (non responsive)
   * heading-small
+  * heading-small-static (non responsive)
   * display
+  * display-static (non responsive)
   * subheading
 
 #### Paragraph Styles

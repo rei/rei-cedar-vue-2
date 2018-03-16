@@ -57,6 +57,21 @@
 
   &--display {
     @include spruce-dsp-60;
+
+    /* non responsive */
+    &-static {
+      @include spruce-dsp-70;
+    }
+
+    /* @ small */
+    @media (--sm-mq) {
+      @include spruce-dsp-70;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-80;
+    }
   }
 
   /* Heading-small
@@ -64,6 +79,16 @@
 
   &--heading-small {
     @include spruce-dsp-30;
+
+    /* non responsive */
+    &-static {
+      @include spruce-dsp-30;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-40;
+    }
   }
 
   /* Heading-medium
@@ -71,6 +96,16 @@
 
   &--heading-medium {
     @include spruce-dsp-40;
+
+    /* non responsive */
+    &-static {
+      @include spruce-dsp-40;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-50;
+    }
   }
 
   /* Heading-large
@@ -78,56 +113,20 @@
 
   &--heading-large {
     @include spruce-dsp-40;
-  }
 
-  /* Break points
-  ========================================================================== */
-  
-  /* Small */
-  @media (--sm-mq) {
-    &--display {
-      @include spruce-dsp-70;
-    }
-
-    &--heading-large {
-      @include spruce-dsp-50;
-    }
-  }
-
-  /* Large */
-  @media (--lg-mq) {
-    &--display {
-      @include spruce-dsp-80;
-    }
-
-    &--heading-small {
-      @include spruce-dsp-40;
-    }
-
-    &--heading-medium {
+    /* non responsive */
+    &-static {
       @include spruce-dsp-50;
     }
 
-    &--heading-large {
-      @include spruce-dsp-70;
-    }
-  }
-
-  &--disable-responsive {
-    &.cdr-text--display {
-      @include spruce-dsp-70;
-    }
-
-    &.cdr-text--heading-small {
-      @include spruce-dsp-30;
-    }
-
-    &.cdr-text--heading-medium {
-      @include spruce-dsp-40;
-    }
-
-    &.cdr-text--heading-large {
+    /* @ small */
+    @media (--sm-mq) {
       @include spruce-dsp-50;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-70;
     }
   }
 }
