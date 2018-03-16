@@ -57,7 +57,3 @@ export default {
 };
 </script>
 
-<style>
-  @import 'Css/settings/_index.pcss';
-  @import './styles/cdrHeading.pcss';
-</style>
