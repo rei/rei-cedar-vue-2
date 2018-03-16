@@ -2,36 +2,79 @@
 * Typography utility classes
 *
 * TOC:
-* # base text styles
-* # cdr-heading
-*    :Base Styles
-*    ::subheading
-*    ::display
-*    ::Heading
-*    :::large
-*    :::medium
-*    :::small
+*   :base text styles
+*     :paragraphs
+*       :body
+*     :headings
+*       :subheading
+*       :display
+*       :simple
+*         :large
+*         :medium
+*         :small
 # cdr-label
 ========================================================================== */
 
 .cdr-text {
   margin: 0;
 
+  /* Paragraphs
+    ========================================================================== */
+
+  /* Body
+    ========== */
+
+  &--body {
+    @include spruce-bdy-20;
+
+    max-width: $body-paragraph-max-width;
+
+    & + & {
+      margin-top: $body-paragraph-stack;
+    }
+
+    @media (--sm-mq) {
+      @include spruce-bdy-30;
+
+      & + & {
+        margin-top: $body-paragraph-stack-sm;
+      }
+    }
+  }
+
+  /* Paragraphs
+    ========================================================================== */
+
+  /* Subheading
+    ========== */
+
   &--subheading {
     @include spruce-dsp-20;
   }
+
+  /* Display
+    ========== */
 
   &--display {
     @include spruce-dsp-60;
   }
 
+  /* Heading-small
+    ========== */
+
   &--heading-small {
     @include spruce-dsp-30;
   }
 
+  /* Heading-medium
+    ========== */
+
   &--heading-medium {
     @include spruce-dsp-40;
   }
+
+  /* Heading-large
+    ========== */
 
   &--heading-large {
     @include spruce-dsp-40;

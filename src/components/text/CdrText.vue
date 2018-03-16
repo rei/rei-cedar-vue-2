@@ -16,6 +16,7 @@ export default {
   name: 'CdrText',
   mixins: [modifier],
   props: {
+    /** Any valid HTML tag */
     tag: {
       type: String,
       default: 'p',

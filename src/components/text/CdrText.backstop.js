@@ -1,4 +1,7 @@
 module.exports = [{
   label: 'Text',
-  selectors: [],
+  selectors: [
+    '[data-backstop="headings"]',
+    '[data-backstop="paragraphs"]',
+  ],
 }];

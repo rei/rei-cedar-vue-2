@@ -21,10 +21,7 @@
       data-backstop="checkboxes"
     />
     <grid class="cpg-section"/>
-    <headings
-      class="cpg-section"
-      data-backstop="headings"
-    />
+    <texts class="cpg-section"/>
     <icons
       class="cpg-section"
       data-backstop="icons"
