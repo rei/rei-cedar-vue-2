@@ -2,89 +2,131 @@
 * Typography utility classes
 *
 * TOC:
-* # base text styles
-* # cdr-heading
-*    :Base Styles
-*    ::subheading
-*    ::display
-*    ::Heading
-*    :::large
-*    :::medium
-*    :::small
+*   :base text styles
+*     :paragraphs
+*       :body
+*     :headings
+*       :subheading
+*       :display
+*       :simple
+*         :large
+*         :medium
+*         :small
 # cdr-label
 ========================================================================== */
 
 .cdr-text {
   margin: 0;
 
+  /* Paragraphs
+    ========================================================================== */
+
+  /* Body
+    ========== */
+
+  &--body {
+    @include spruce-bdy-20;
+
+    max-width: $body-paragraph-max-width;
+
+    & + & {
+      margin-top: $body-paragraph-stack;
+    }
+
+    @media (--sm-mq) {
+      @include spruce-bdy-30;
+
+      & + & {
+        margin-top: $body-paragraph-stack-sm;
+      }
+    }
+  }
+
+  /* Headings
+    ========================================================================== */
+
+  /* Subheading
+    ========== */
+
   &--subheading {
     @include spruce-dsp-20;
   }
 
+  /* Display
+    ========== */
+
   &--display {
     @include spruce-dsp-60;
+
+    /* non responsive */
+    &-static {
+      @include spruce-dsp-70;
+    }
+
+    /* @ small */
+    @media (--sm-mq) {
+      @include spruce-dsp-70;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-80;
+    }
   }
+
+  /* Heading-small
+    ========== */
 
   &--heading-small {
     @include spruce-dsp-30;
-  }
 
-  &--heading-medium {
-    @include spruce-dsp-40;
-  }
-
-  &--heading-large {
-    @include spruce-dsp-40;
-  }
-
-  /* Break points
-  ========================================================================== */
-  
-  /* Small */
-  @media (--sm-mq) {
-    &--display {
-      @include spruce-dsp-70;
-    }
-
-    &--heading-large {
-      @include spruce-dsp-50;
-    }
-  }
-
-  /* Large */
-  @media (--lg-mq) {
-    &--display {
-      @include spruce-dsp-80;
-    }
-
-    &--heading-small {
-      @include spruce-dsp-40;
-    }
-
-    &--heading-medium {
-      @include spruce-dsp-50;
-    }
-
-    &--heading-large {
-      @include spruce-dsp-70;
-    }
-  }
-
-  &--disable-responsive {
-    &.cdr-text--display {
-      @include spruce-dsp-70;
-    }
-
-    &.cdr-text--heading-small {
+    /* non responsive */
+    &-static {
       @include spruce-dsp-30;
     }
 
-    &.cdr-text--heading-medium {
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-40;
+    }
+  }
+
+  /* Heading-medium
+    ========== */
+
+  &--heading-medium {
+    @include spruce-dsp-40;
+
+    /* non responsive */
+    &-static {
       @include spruce-dsp-40;
     }
 
-    &.cdr-text--heading-large {
+    /* @ large */
+    @media (--lg-mq) {
       @include spruce-dsp-50;
+    }
+  }
+
+  /* Heading-large
+    ========== */
+
+  &--heading-large {
+    @include spruce-dsp-40;
+
+    /* non responsive */
+    &-static {
+      @include spruce-dsp-50;
+    }
+
+    /* @ small */
+    @media (--sm-mq) {
+      @include spruce-dsp-50;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-70;
     }
   }
 }

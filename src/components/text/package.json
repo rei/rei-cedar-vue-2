@@ -1,0 +1,26 @@
+{
+  "name": "@rei/cdr-text",
+  "version": "0.0.1",
+  "description": "REI Cedar Style Framework - Vue Component for Text",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-text",
+  "license": "ISC",
+  "author": "REI Software Engineering",
+  "private": false,
+  "main": "dist/cdr-text.js",
+  "config": {
+    "buildConfig": "webpack.dist.conf",
+    "component": "text",
+    "tagName": "text"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build && pkg-ok",
+    "build": "node ../../../build/build.js"
+  },
+  "peerDependencies": {
+    "@rei/cdr-assets": "^0.0.2",
+    "vue": "^2.5.13"
+  }
+}

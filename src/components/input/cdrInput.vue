@@ -75,13 +75,13 @@
 </template>
 
 <script>
-import debounce from 'Src/utils/debounce';
-import modifier from 'Mixins/modifier';
+import debounce from 'srcdir/utils/debounce';
+import modifier from 'mixinsdir/modifier';
 /* eslint-disable */
 // import/no-webpack-loader-syntax & import/no-unresolved
-import checkIcon from '!raw-loader!Assets/icons/rei/cdr-check-lg.svg';
-import errorIcon from '!raw-loader!Assets/icons/rei/cdr-x-circ-fill.svg';
-import warningIcon from '!raw-loader!Assets/icons/rei/cdr-warning-tri.svg';
+import checkIcon from '!raw-loader!assetsdir/icons/rei/cdr-check-lg.svg';
+import errorIcon from '!raw-loader!assetsdir/icons/rei/cdr-x-circ-fill.svg';
+import warningIcon from '!raw-loader!assetsdir/icons/rei/cdr-warning-tri.svg';
 /* eslint-enable */
 
 /**
@@ -378,7 +378,7 @@ export default {
 </script>
 
 <style>
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrInput.vars.pcss';
   @import './styles/cdrInput.pcss';
 </style>

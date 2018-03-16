@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import theme from 'Mixins/theme';
-import modifier from 'Mixins/modifier';
+import theme from 'mixinsdir/theme';
+import modifier from 'mixinsdir/modifier';
 
 /**
  * Cedar 2 component for button
@@ -55,20 +55,20 @@ export default {
 </script>
 
 <style>
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrButton.vars.pcss';
   @import './styles/cdrButton.pcss';
 </style>
 
 <style cedar-theme="red">
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrButton.vars.pcss';
   @import './styles/vars/red.vars.pcss';
   @import './styles/cdrButton.pcss';
 </style>
 
 <style cedar-theme="green">
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrButton.vars.pcss';
   @import './styles/vars/green.vars.pcss';
   @import './styles/cdrButton.pcss';

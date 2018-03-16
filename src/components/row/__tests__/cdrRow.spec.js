@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import cdrRow from 'Components/row/cdrRow';
+import cdrRow from 'componentsdir/row/cdrRow';
 
 describe('cdrRow.vue', () => {
   it('sets type prop correctly', () => {

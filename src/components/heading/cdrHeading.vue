@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import modifier from 'Mixins/modifier';
+import modifier from 'mixinsdir/modifier';
 
 /**
  * Cedar 2 component for heading

@@ -1,20 +1,20 @@
-import anchors from 'Components/anchor/examples/Anchors';
-import buttons from 'Components/button/examples/Buttons';
-import cards from 'Components/card/examples/Cards';
-import checkboxes from 'Components/checkbox/examples/checkboxes';
-import grid from 'Components/grid/examples/Grid';
-import headings from 'Components/heading/examples/Headings';
-import icons from 'Components/icon/examples/Icons';
-import images from 'Components/image/examples/Images';
-import inputs from 'Components/input/examples/Inputs';
-import lists from 'Components/list/examples/Lists';
-import mediaObject from 'Components/mediaObject/examples/mediaObject';
-import mountains from 'Directives/mountain/examples/Mountains';
-import radios from 'Components/radio/examples/Radios';
-import ratings from 'Components/rating/examples/Ratings';
-import selects from 'Components/select/examples/Selects';
+import anchors from 'componentsdir/anchor/examples/Anchors';
+import buttons from 'componentsdir/button/examples/Buttons';
+import cards from 'componentsdir/card/examples/Cards';
+import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
+import grid from 'componentsdir/grid/examples/Grid';
+import icons from 'componentsdir/icon/examples/Icons';
+import images from 'componentsdir/image/examples/Images';
+import inputs from 'componentsdir/input/examples/Inputs';
+import lists from 'componentsdir/list/examples/Lists';
+import mediaObject from 'componentsdir/mediaObject/examples/mediaObject';
+import mountains from 'directivesdir/mountain/examples/Mountains';
+import radios from 'componentsdir/radio/examples/Radios';
+import ratings from 'componentsdir/rating/examples/Ratings';
+import selects from 'componentsdir/select/examples/Selects';
+import texts from 'componentsdir/text/examples/Text';
 
-import utilities from 'Components/Utilities/Utilities';
+import utilities from 'componentsdir/Utilities/Utilities';
 
 export default {
   anchors,
@@ -22,7 +22,6 @@ export default {
   cards,
   checkboxes,
   grid,
-  headings,
   icons,
   images,
   inputs,
@@ -32,5 +31,6 @@ export default {
   radios,
   ratings,
   selects,
+  texts,
   utilities,
 };

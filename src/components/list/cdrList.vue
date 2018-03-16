@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import modifier from 'Mixins/modifier';
+import modifier from 'mixinsdir/modifier';
 
 /**
  * Cedar 2 component for list
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style>
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrList.vars.pcss';
   @import './styles/cdrList.pcss';
 </style>

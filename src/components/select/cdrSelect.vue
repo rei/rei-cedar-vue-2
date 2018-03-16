@@ -172,7 +172,7 @@ export default {
 </script>
 
 <style>
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrSelect.vars.pcss';
   @import './styles/cdrSelect.pcss';
 </style>
