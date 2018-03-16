@@ -175,5 +175,6 @@
     "hooks": {
       "commitmsg": "commitlint -e $GIT_PARAMS"
     }
-  }
+  },
+  "dependencies": {}
 }

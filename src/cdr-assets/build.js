@@ -5,6 +5,12 @@ const fs = require('fs-extra');
 const path = require('path');
 const { exec } = require('child_process');
 
+const icons = require('require-all')({
+  dirname: path.resolve(__dirname, '..', 'assets/icons/rei'),
+});
+
+console.log(icons);
+
 const distDir = path.resolve(__dirname, 'dist');
 const cssDir = path.resolve(__dirname, '..', 'css');
 const staticDir = path.resolve(__dirname, '../..', 'static');
