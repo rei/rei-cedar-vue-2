@@ -1,19 +1,135 @@
-/*
+/* ==========================================================================/*
 * Typography utility classes
 *
 * TOC:
-* headline
-* title
-* subtitle
-* section-title
-* body-copy
-* pull-quote
-* sub-section
-* information
-* description
-* detail
-* disclaimer
-*/
+*   :base text styles
+*     :paragraphs
+*       :body
+*     :headings
+*       :subheading
+*       :display
+*       :simple
+*         :large
+*         :medium
+*         :small
+# cdr-label
+========================================================================== */
+
+.cdr-text {
+  margin: 0;
+
+  /* Paragraphs
+    ========================================================================== */
+
+  /* Body
+    ========== */
+
+  &--body {
+    @include spruce-bdy-20;
+
+    max-width: $body-paragraph-max-width;
+
+    & + & {
+      margin-top: $body-paragraph-stack;
+    }
+
+    @media (--sm-mq) {
+      @include spruce-bdy-30;
+
+      & + & {
+        margin-top: $body-paragraph-stack-sm;
+      }
+    }
+  }
+
+  /* Headings
+    ========================================================================== */
+
+  /* Subheading
+    ========== */
+
+  &--subheading {
+    @include spruce-dsp-20;
+  }
+
+  /* Display
+    ========== */
+
+  &--display {
+    @include spruce-dsp-60;
+
+    /* non responsive */
+    &-static {
+      @include spruce-dsp-70;
+    }
+
+    /* @ small */
+    @media (--sm-mq) {
+      @include spruce-dsp-70;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-80;
+    }
+  }
+
+  /* Heading-small
+    ========== */
+
+  &--heading-small {
+    @include spruce-dsp-30;
+
+    /* non responsive */
+    &-static {
+      @include spruce-dsp-30;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-40;
+    }
+  }
+
+  /* Heading-medium
+    ========== */
+
+  &--heading-medium {
+    @include spruce-dsp-40;
+
+    /* non responsive */
+    &-static {
+      @include spruce-dsp-40;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-50;
+    }
+  }
+
+  /* Heading-large
+    ========== */
+
+  &--heading-large {
+    @include spruce-dsp-40;
+
+    /* non responsive */
+    &-static {
+      @include spruce-dsp-50;
+    }
+
+    /* @ small */
+    @media (--sm-mq) {
+      @include spruce-dsp-50;
+    }
+
+    /* @ large */
+    @media (--lg-mq) {
+      @include spruce-dsp-70;
+    }
+  }
+}
 
 .cdr-label {
   font-size: $sys-font-maple-utl-20-font-size;
@@ -34,151 +150,3 @@
   }
 }
 
-.cdr-type {
-  &--spruce-dsp-90 {
-    font-size: $sys-font-spruce-dsp-90-font-size;
-    line-height: $sys-font-spruce-dsp-90-line-height;
-    text-align: $sys-font-spruce-dsp-90-text-align;
-    color: $sys-font-spruce-dsp-90-color;
-    letter-spacing: $sys-font-spruce-dsp-90-letter-spacing;
-    font-style: $sys-font-spruce-dsp-90-font-style;
-    font-weight: $sys-font-spruce-dsp-90-font-weight;
-    font-family: $sys-font-spruce-dsp-90-font-family;
-  }
-
-  &--spruce-dsp-80 {
-    font-size: $sys-font-spruce-dsp-80-font-size;
-    line-height: $sys-font-spruce-dsp-80-line-height;
-    text-align: $sys-font-spruce-dsp-80-text-align;
-    color: $sys-font-spruce-dsp-80-color;
-    letter-spacing: $sys-font-spruce-dsp-80-letter-spacing;
-    font-style: $sys-font-spruce-dsp-80-font-style;
-    font-weight: $sys-font-spruce-dsp-80-font-weight;
-    font-family: $sys-font-spruce-dsp-80-font-family;
-  }
-
-  &--spruce-dsp-70 {
-    font-size: $sys-font-spruce-dsp-70-font-size;
-    line-height: $sys-font-spruce-dsp-70-line-height;
-    text-align: $sys-font-spruce-dsp-70-text-align;
-    color: $sys-font-spruce-dsp-70-color;
-    letter-spacing: $sys-font-spruce-dsp-70-letter-spacing;
-    font-style: $sys-font-spruce-dsp-70-font-style;
-    font-weight: $sys-font-spruce-dsp-70-font-weight;
-    font-family: $sys-font-spruce-dsp-70-font-family;
-  }
-
-  &--spruce-dsp-60 {
-    font-size: $sys-font-spruce-dsp-60-font-size;
-    line-height: $sys-font-spruce-dsp-60-line-height;
-    text-align: $sys-font-spruce-dsp-60-text-align;
-    color: $sys-font-spruce-dsp-60-color;
-    letter-spacing: $sys-font-spruce-dsp-60-letter-spacing;
-    font-style: $sys-font-spruce-dsp-60-font-style;
-    font-weight: $sys-font-spruce-dsp-60-font-weight;
-    font-family: $sys-font-spruce-dsp-60-font-family;
-  }
-
-  &--spruce-dsp-50 {
-    font-size: $sys-font-spruce-dsp-50-font-size;
-    line-height: $sys-font-spruce-dsp-50-line-height;
-    text-align: $sys-font-spruce-dsp-50-text-align;
-    color: $sys-font-spruce-dsp-50-color;
-    letter-spacing: $sys-font-spruce-dsp-50-letter-spacing;
-    font-style: $sys-font-spruce-dsp-50-font-style;
-    font-weight: $sys-font-spruce-dsp-50-font-weight;
-    font-family: $sys-font-spruce-dsp-50-font-family;
-  }
-
-  &--spruce-dsp-40 {
-    font-size: $sys-font-spruce-dsp-40-font-size;
-    line-height: $sys-font-spruce-dsp-40-line-height;
-    text-align: $sys-font-spruce-dsp-40-text-align;
-    color: $sys-font-spruce-dsp-40-color;
-    letter-spacing: $sys-font-spruce-dsp-40-letter-spacing;
-    font-style: $sys-font-spruce-dsp-40-font-style;
-    font-weight: $sys-font-spruce-dsp-40-font-weight;
-    font-family: $sys-font-spruce-dsp-40-font-family;
-  }
-
-  &--spruce-dsp-30 {
-    font-size: $sys-font-spruce-dsp-30-font-size;
-    line-height: $sys-font-spruce-dsp-30-line-height;
-    text-align: $sys-font-spruce-dsp-30-text-align;
-    color: $sys-font-spruce-dsp-30-color;
-    letter-spacing: $sys-font-spruce-dsp-30-letter-spacing;
-    font-style: $sys-font-spruce-dsp-30-font-style;
-    font-weight: $sys-font-spruce-dsp-30-font-weight;
-    font-family: $sys-font-spruce-dsp-30-font-family;
-  }
-
-  &--spruce-dsp-20 {
-    font-size: $sys-font-spruce-dsp-20-font-size;
-    line-height: $sys-font-spruce-dsp-20-line-height;
-    text-align: $sys-font-spruce-dsp-20-text-align;
-    color: $sys-font-spruce-dsp-20-color;
-    letter-spacing: $sys-font-spruce-dsp-20-letter-spacing;
-    font-style: $sys-font-spruce-dsp-20-font-style;
-    font-weight: $sys-font-spruce-dsp-20-font-weight;
-    font-family: $sys-font-spruce-dsp-20-font-family;
-  }
-
-  &--spruce-dsp-10 {
-    font-size: $sys-font-spruce-dsp-10-font-size;
-    line-height: $sys-font-spruce-dsp-10-line-height;
-    text-align: $sys-font-spruce-dsp-10-text-align;
-    color: $sys-font-spruce-dsp-10-color;
-    letter-spacing: $sys-font-spruce-dsp-10-letter-spacing;
-    font-style: $sys-font-spruce-dsp-10-font-style;
-    font-weight: $sys-font-spruce-dsp-10-font-weight;
-    font-family: $sys-font-spruce-dsp-10-font-family;
-  }
-
-  &--spruce-bdy-20 {
-    font-size: $sys-font-spruce-bdy-20-font-size;
-    line-height: $sys-font-spruce-bdy-20-line-height;
-    text-align: $sys-font-spruce-bdy-20-text-align;
-    color: $sys-font-spruce-bdy-20-color;
-    font-style: $sys-font-spruce-bdy-20-font-style;
-    font-weight: $sys-font-spruce-bdy-20-font-weight;
-    font-family: $sys-font-spruce-bdy-20-font-family;
-  }
-
-  &--spruce-bdy-10 {
-    font-size: $sys-font-spruce-bdy-10-font-size;
-    line-height: $sys-font-spruce-bdy-10-line-height;
-    color: $sys-font-spruce-bdy-10-color;
-    font-style: $sys-font-spruce-bdy-10-font-style;
-    font-weight: $sys-font-spruce-bdy-10-font-weight;
-    font-family: $sys-font-spruce-bdy-10-font-family;
-  }
-
-  &--redwood-bdy-30 {
-    font-size: $sys-font-redwood-bdy-30-font-size;
-    line-height: $sys-font-redwood-bdy-30-line-height;
-    text-align: $sys-font-redwood-bdy-30-text-align;
-    color: $sys-font-redwood-bdy-30-color;
-    font-style: $sys-font-redwood-bdy-30-font-style;
-    font-weight: $sys-font-redwood-bdy-30-font-weight;
-    font-family: $sys-font-redwood-bdy-30-font-family;
-  }
-
-  &--redwood-bdy-20 {
-    font-size: $sys-font-redwood-bdy-20-font-size;
-    line-height: $sys-font-redwood-bdy-20-line-height;
-    text-align: $sys-font-redwood-bdy-20-text-align;
-    color: $sys-font-redwood-bdy-20-color;
-    font-style: $sys-font-redwood-bdy-20-font-style;
-    font-weight: $sys-font-redwood-bdy-20-font-weight;
-    font-family: $sys-font-redwood-bdy-20-font-family;
-  }
-
-  &--redwood-bdy-10 {
-    font-size: $sys-font-redwood-bdy-10-font-size;
-    line-height: $sys-font-redwood-bdy-10-line-height;
-    color: $sys-font-redwood-bdy-10-color;
-    font-style: $sys-font-redwood-bdy-10-font-style;
-    font-weight: $sys-font-redwood-bdy-10-font-weight;
-    font-family: $sys-font-redwood-bdy-10-font-family;
-  }
-}

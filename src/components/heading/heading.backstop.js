@@ -1,8 +1,10 @@
 module.exports = [
   {
-    label: 'Heading',
+    label: 'git Heading',
     selectors: [
-      '[data-backstop="headings"]',
+      '[data-backstop="heading-group-display"]',
+      '[data-backstop="heading-group-simple"]',
+      '[data-backstop="heading-group-subhead"]',
     ],
   },
 ];

@@ -1,6 +1,6 @@
 import { shallow } from '@vue/test-utils';
 import { createRenderer } from 'vue-server-renderer'
-import cdrA from 'Components/anchor/cdrA';
+import cdrA from 'componentsdir/anchor/cdrA';
 
 describe('cdrA.vue', () => {
   it('outputs the same HTML', () => {

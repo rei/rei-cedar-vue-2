@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import cdrImg from 'Components/image/cdrImg';
+import cdrImg from 'componentsdir/image/cdrImg';
 
 describe('cdrImg.vue', () => {
   it('renders an img', () => {

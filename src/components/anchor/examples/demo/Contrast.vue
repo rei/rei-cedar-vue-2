@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Components from 'Components/_index';
+import Components from 'componentsdir/_index';
 
 export default {
   name: 'AnchorContrast',

@@ -33,7 +33,8 @@
     "@rei/cdr-radio": "^0.0.1",
     "@rei/cdr-rating": "^0.0.1",
     "@rei/cdr-row": "^0.0.1",
-    "@rei/cdr-select": "^0.0.1"
+    "@rei/cdr-select": "^0.0.1",
+    "@rei/cdr-text": "^0.0.1"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",

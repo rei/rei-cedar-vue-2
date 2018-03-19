@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import cdrRadio from 'Components/radio/cdrRadio';
+import cdrRadio from 'componentsdir/radio/cdrRadio';
 
 describe('cdrRadio.vue', () => {
   it('renders an input', () => {

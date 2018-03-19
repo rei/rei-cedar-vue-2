@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import cdrIcon from 'Components/icon/cdrIcon';
+import cdrIcon from 'componentsdir/icon/cdrIcon';
 
 describe('cdrIcon.vue', () => {
   it('renders an svg', () => {

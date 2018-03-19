@@ -1,77 +1,59 @@
 <template>
-  <h1
-    v-if="level === '1'"
-    :class="[headClass, modifierClass]"
+  <component
+    :is="'h'+level"
+    :class="[{'cdr-text--disable-responsive' :disableResponsive}, modifierClass,]"
   >
+    <!-- @slot innerHTML inside of the heading component -->
     <slot/>
-  </h1>
-  <h2
-    v-else-if="level === '2'"
-    :class="[headClass, modifierClass]"
-  >
-    <slot/>
-  </h2>
-  <h3
-    v-else-if="level === '3'"
-    :class="[headClass, modifierClass]"
-  >
-    <slot/>
-  </h3>
-  <h4
-    v-else-if="level === '4'"
-    :class="[headClass, modifierClass]"
-  >
-    <slot/>
-  </h4>
-  <h5
-    v-else-if="level === '5'"
-    :class="[headClass, modifierClass]"
-  >
-    <slot/>
-  </h5>
-  <h6
-    v-else-if="level === '6'"
-    :class="[headClass, modifierClass]"
-  >
-    <slot/>
-  </h6>
+  </component>
 </template>
 
 <script>
-import modifier from 'Mixins/modifier';
+import modifier from 'mixinsdir/modifier';
 
 /**
  * Cedar 2 component for heading
+ * <span class="modifiers">Modifiers</span>
+ * Accepts typography classes.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
 export default {
   name: 'CdrHeading',
+  /**
+  * Modifiers
+  * heading-large
+  * heading-medium
+  * heading-small
+  * display
+  * subheading
+   */
   mixins: [modifier],
+  /**
+  * disable-responsive adds the utility class of
+  * .cdr-text--disable-responsive to a heading.
+  * This allows for a consistent font across breakpoints.
+  */
   props: {
+    disableResponsive: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     /**
      * Heading level -- 1 = h1, 2 = h2, etc.
      */
     level: {
       type: [String, Number],
+      default: 1,
       required: true,
     },
   },
-  data() {
-    return {
-      headClass: 'cdr-heading',
-    };
-  },
   computed: {
     baseClass() {
-      return 'cdr-type';
+      return 'cdr-text';
     },
   },
 };
 </script>
 
-<style>
-  @import 'Css/settings/_index.pcss';
-  @import './styles/vars/cdrHeading.vars.pcss';
-  @import './styles/cdrHeading.pcss';
-</style>

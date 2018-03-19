@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import selectComp from 'Components/select/cdrSelect';
+import selectComp from 'componentsdir/select/cdrSelect';
 import { toArray } from 'lodash';
 
 describe('cdrSelect.vue', () => {

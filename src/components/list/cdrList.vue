@@ -3,6 +3,7 @@
     :class="modifierClass"
     v-if="listType === 'ul'"
   >
+    <!-- @slot innerHTML inside of the list component -->
     <slot/>
   </ul>
 
@@ -10,15 +11,19 @@
     :class="modifierClass"
     v-else-if="listType === 'ol'"
   >
+    <!-- @slot innerHTML inside of the list component -->
     <slot/>
   </ol>
 </template>
 
 <script>
-import modifier from 'Mixins/modifier';
+import modifier from 'mixinsdir/modifier';
 
 /**
  * Cedar 2 component for list
+ * <span class="modifiers">Modifiers</span>
+ * {unstyled, bullet, disc, numbered, menu, compact, circle, inline}
+ * **Note**: type doesn't affect the modifier.
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -44,7 +49,7 @@ export default {
 </script>
 
 <style>
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrList.vars.pcss';
   @import './styles/cdrList.pcss';
 </style>

@@ -1,18 +1,19 @@
-import cdrA from 'Components/anchor/cdrA';
-import cdrButton from 'Components/button/cdrButton';
-import cdrCard from 'Components/card/cdrCard';
-import cdrCheckbox from 'Components/checkbox/cdrCheckbox';
-import cdrCol from 'Components/column/cdrCol';
-import cdrHeading from 'Components/heading/cdrHeading';
-import cdrIcon from 'Components/icon/cdrIcon';
-import cdrImg from 'Components/image/cdrImg';
-import cdrInput from 'Components/input/cdrInput';
-import cdrList from 'Components/list/cdrList';
-import cdrMediaObject from 'Components/mediaObject/cdrMediaObject';
-import cdrRadio from 'Components/radio/cdrRadio';
-import cdrRating from 'Components/rating/cdrRating';
-import cdrRow from 'Components/row/cdrRow';
-import cdrSelect from 'Components/select/cdrSelect';
+import cdrA from 'componentsdir/anchor/cdrA';
+import cdrButton from 'componentsdir/button/cdrButton';
+import cdrCard from 'componentsdir/card/cdrCard';
+import cdrCheckbox from 'componentsdir/checkbox/cdrCheckbox';
+import cdrCol from 'componentsdir/column/cdrCol';
+import cdrHeading from 'componentsdir/heading/cdrHeading';
+import cdrIcon from 'componentsdir/icon/cdrIcon';
+import cdrImg from 'componentsdir/image/cdrImg';
+import cdrInput from 'componentsdir/input/cdrInput';
+import cdrList from 'componentsdir/list/cdrList';
+import cdrMediaObject from 'componentsdir/mediaObject/cdrMediaObject';
+import cdrRadio from 'componentsdir/radio/cdrRadio';
+import cdrRating from 'componentsdir/rating/cdrRating';
+import cdrRow from 'componentsdir/row/cdrRow';
+import cdrSelect from 'componentsdir/select/cdrSelect';
+import cdrText from 'componentsdir/text/CdrText';
 
 export default {
   cdrA,
@@ -30,4 +31,5 @@ export default {
   cdrRating,
   cdrRow,
   cdrSelect,
+  cdrText,
 };
