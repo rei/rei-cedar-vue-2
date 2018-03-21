@@ -26,20 +26,27 @@ glob(`${searchpath}/*.md`, {ignore: ['**/node_modules/**', '**/examples/**', '**
 
     srcMdFilePaths.forEach((srcMdFilePath) => {
       const srcCurrentFileName = path.basename(srcMdFilePath)
-      if (srcCurrentFileName.startsWith('cdr')) {
+      if (srcCurrentFileName.toLowerCase().startsWith('cdr')) {
 
         const destMdFilePath =  srcMdFilePath
         .replace(SOURCE_REPO_NAME, DEST_REPO_NAME)
         .replace(SOURCE_ARCHIVE, DEST_ARCHIVE)
         .replace('/src', '')
         
-        // move most recent markdown file to API site repo
-        fs.move(srcMdFilePath, destMdFilePath, {overwrite: true}, moveErr => {
-          if (moveErr) {
-            throw new Error(`Error while trying to move ${srcCurrentFileName} \nfrom ${srcMdFilePath} to \n${destMdFilePath}: ${moveErr}`)
+        // Ensure that the component/composition folder exist in the rei-cedar-docs respository
+        fs.ensureDir(path.dirname(destMdFilePath), fileCheckErr => {
+          if (fileCheckErr) {
+            throw new Error(`Problem while trying to verify path ${path.dirname(destMdFilePath)} in API documentation site repository:\n${fileCheckErr}`)
           }
-
-          console.log(`Successfully moved ${srcCurrentFileName} \nfrom: ${srcMdFilePath} \nto ${destMdFilePath}\n`)
+          
+          // move most recent markdown file to API site repo
+          fs.move(srcMdFilePath, destMdFilePath, {overwrite: true}, moveErr => {
+            if (moveErr) {
+              throw new Error(`Error while trying to move ${srcCurrentFileName} \nfrom ${srcMdFilePath} to \n${destMdFilePath}: ${moveErr}`)
+            }
+  
+            console.log(`Successfully moved ${srcCurrentFileName} \nfrom: ${srcMdFilePath} \nto ${destMdFilePath}\n`)
+          })
         })
       }
     })
@@ -58,7 +65,7 @@ glob(transferSearchGlob, {ignore: ['**/node_modules/**', '**/examples/**', '**/d
     archMdFilePaths.forEach((archMdFilePath) => {
       const archMdFileName = path.basename(archMdFilePath)
       
-      if (archMdFileName.startsWith('cdr')) {
+      if (archMdFileName.toLowerCase().startsWith('cdr')) {
 
         let destArchMdFilePath = archMdFilePath
         .replace(SOURCE_REPO_NAME, DEST_REPO_NAME)
@@ -66,12 +73,20 @@ glob(transferSearchGlob, {ignore: ['**/node_modules/**', '**/examples/**', '**/d
         .replace(SOURCE_VERSIONS, DEST_VERSIONS)
         .replace('/src', '')
 
-        fs.move(archMdFilePath, destArchMdFilePath, {overwrite: true}, moveArchErr => {
-          if (moveArchErr) {
-            throw new Error(`Error while trying to move ${archMdFileName} \nfrom: ${archMdFilePath} \nto: ${destArchMdFilePath}: \n${moveArchErr}`)
+        // Ensure that the component/composition folder exist in the rei-cedar-docs respository
+        fs.ensureDir(path.dirname(destArchMdFilePath), fileCheckErr => {
+          if (fileCheckErr) {
+            throw new Error(`Problem while trying to verify path ${path.dirname(destArchMdFilePath)} in API documentation site repository:\n${fileCheckErr}`)
           }
-        
-          console.log(`Moved archive markdown file: ${archMdFileName} \nfrom: ${archMdFilePath} \nto: ${destArchMdFilePath}`)
+          
+          // move most recent markdown file to API site repo
+          fs.move(archMdFilePath, destArchMdFilePath, {overwrite: true}, moveArchErr => {
+            if (moveArchErr) {
+              throw new Error(`Error while trying to move ${archMdFileName} \nfrom: ${archMdFilePath} \nto: ${destArchMdFilePath}: \n${moveArchErr}`)
+            }
+          
+            console.log(`Moved archive markdown file: ${archMdFileName} \nfrom: ${archMdFilePath} \nto: ${destArchMdFilePath}`)
+          })
         })
       }
     })
