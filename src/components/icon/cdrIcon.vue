@@ -6,20 +6,9 @@
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
 
-import modifier from 'Mixins/modifier';
+import modifier from 'mixinsdir/modifier';
 
-// TODO: see size impact of including all of them
-// TODO: require-all?
-const account = require('Assets/icons/rei/cdr-account.svg');
-const newAccount = require('Assets/icons/Icon313/account-profile.svg');
-const chain = require('Assets/icons/rei/cdr-chainlink.svg');
-const newChain = require('Assets/icons/Icon313/chain-link.svg');
-const chat = require('Assets/icons/rei/cdr-chat.svg');
-const newChat = require('Assets/icons/Icon313/chat.svg');
-const info = require('Assets/icons/rei/cdr-info-circ-stroke.svg');
-const newInfo = require('Assets/icons/Icon313/information-stroke.svg');
-const loc = require('Assets/icons/rei/cdr-loc-pin.svg');
-const newLoc = require('Assets/icons/Icon313/location-pin-fill.svg');
+const icons = require('@rei/cdr-assets/dist/icons.json');
 
 export default {
   name: 'CdrIcon',
@@ -32,24 +21,22 @@ export default {
       type: String,
       required: false,
     },
+    /**
+     * Icon name from the default REI icon set
+     */
     name: {
+      type: String,
+    },
+    /**
+     * Raw SVG string for using icons outside of the REI icon set
+     */
+    raw: {
       type: String,
     },
   },
   data() {
     return {
-      icons: {
-        account,
-        newAccount,
-        chain,
-        newChain,
-        chat,
-        newChat,
-        info,
-        newInfo,
-        loc,
-        newLoc,
-      },
+      icons,
     };
   },
   computed: {
@@ -87,6 +74,16 @@ export default {
         const inlineOpts = {
           domProps: {
             innerHTML: this.icons[`${this.name}`],
+          },
+        };
+        return this.$createElement(
+          'span',
+          Object.assign(wrapperOpts, inlineOpts),
+        );
+      } else if (this.raw) {
+        const inlineOpts = {
+          domProps: {
+            innerHTML: this.raw,
           },
         };
         return this.$createElement(

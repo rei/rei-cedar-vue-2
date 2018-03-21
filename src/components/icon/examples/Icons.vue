@@ -1,119 +1,73 @@
 <template>
   <div class="icon-examples">
     <h2>Icons</h2>
+    <h3>Default icon size</h3>
+    <cdr-icon
+      name="account-profile"
+      data-backstop="cdr-icon-add"
+    />
     <hr>
-    <h3>Icon test</h3>
 
     <cdr-row
-      cols="5"
+      cols="3"
+      cols-md="6"
+      cols-lg="12"
     >
-      <cdr-col>
+      <cdr-col
+        v-for="(svg, name) in icons"
+        :key="name"
+      >
         <div>
           <cdr-icon
-            name="newAccount"
-            modifier="md"
+            :name="name"
           />
-          new account
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div>
-          <cdr-icon
-            name="newChain"
-            modifier="md"
-          />
-          new chain link
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div>
-          <cdr-icon
-            name="newChat"
-            modifier="md"
-          />
-          new chat
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div>
-          <cdr-icon
-            name="newInfo"
-            modifier="md"
-          />
-          new info
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div>
-          <cdr-icon
-            name="newLoc"
-            modifier="md"
-          />
-          new location
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div>
-          <cdr-icon
-            name="account"
-            modifier="md"
-          />
-          old account
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div>
-          <cdr-icon
-            name="chain"
-            modifier="md"
-          />
-          old chain link
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div>
-          <cdr-icon
-            name="chat"
-            modifier="md"
-          />
-          old chat
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div>
-          <cdr-icon
-            name="info"
-            modifier="md"
-          />
-          old info
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div>
-          <cdr-icon
-            name="loc"
-            modifier="md"
-          />
-          old location
+          {{ name }}
         </div>
       </cdr-col>
     </cdr-row>
 
-    <p>
-      <cdr-button>
-        <cdr-icon name="newAccount"/> new account
-      </cdr-button>
-    </p>
-
-    <p>
-      <cdr-button>
-        <cdr-icon name="account"/> old account
-      </cdr-button>
-    </p>
+    <h3>Medium icon size</h3>
     <hr>
 
+    <cdr-row
+      cols="3"
+      cols-md="6"
+      cols-lg="12"
+    >
+      <cdr-col
+        v-for="(svg, name) in icons"
+        :key="name"
+      >
+        <div>
+          <cdr-icon
+            :name="name"
+            modifier="md"
+          />
+          {{ name }}
+        </div>
+      </cdr-col>
+    </cdr-row>
+
+    <h3>External Icons</h3>
+    <hr>
 
     <cdr-row
+      cols="3"
+      cols-md="6"
+      cols-lg="12"
+    >
+      <cdr-col>
+        <div>
+          <cdr-icon
+            :raw="EAicon"
+          />
+          EA Camping
+        </div>
+      </cdr-col>
+    </cdr-row>
+
+
+    <!-- <cdr-row
       cols="3"
       cols-md="6"
       cols-lg="12"
@@ -376,33 +330,31 @@
       <cdr-col>
         <cdr-icon url="/static/rei-icons.svg#cdr-zoom-out"/>
       </cdr-col>
-    </cdr-row>
+    </cdr-row> -->
   </div>
 </template>
 
 <script>
 import Components from 'componentsdir/_index';
 
+const icons = require('@rei/cdr-assets/dist/icons.json');
+const EAicon = require('assetsdir/icons/ea/ea-camping.svg');
+
 export default {
   name: 'Icons',
   components: Components,
+  data() {
+    return {
+      icons,
+      EAicon,
+    };
+  },
 };
 </script>
 
 <style>
 .icon-examples {
-  /* line-height: 1; */
-
-  .cdr-button {
-    .cdr-icon {
-      fill: white;
-    }
-  }
-
   .cdr-icon {
-    /* width: 32px;
-    height: 32px; */
-
     &:hover {
       fill: red;
     }
