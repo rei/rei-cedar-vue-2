@@ -23,5 +23,8 @@
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",
     "vue": "^2.5.13"
+  },
+  "devDependencies": {
+    "pkg-ok": "^2.1.0"
   }
 }
