@@ -6,6 +6,9 @@
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
+  "files": [
+    "dist"
+  ],
   "main": "dist/{NAME-TAGNAME}.js",
   "style": "dist/{NAME-TAGNAME}.css",
   "config": {
