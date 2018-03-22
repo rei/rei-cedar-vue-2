@@ -16,7 +16,7 @@
 ========================================================================== */
 
 .cdr-text {
-  @include redwood-bdy-20;
+  @include redwood-body-20;
 
   margin: 0;
 
@@ -27,7 +27,7 @@
     ========== */
 
   &--body {
-    @include spruce-bdy-20;
+    @include spruce-body-20;
 
     max-width: $body-paragraph-max-width;
 
@@ -36,7 +36,7 @@
     }
 
     @media (--sm-mq) {
-      @include spruce-bdy-30;
+      @include spruce-body-30;
 
       & + & {
         margin-top: $body-paragraph-stack-sm;
@@ -51,28 +51,28 @@
     ========== */
 
   &--subheading {
-    @include spruce-dsp-20;
+    @include spruce-display-20;
   }
 
   /* Display
     ========== */
 
   &--display {
-    @include spruce-dsp-60;
+    @include spruce-display-60;
 
     /* non responsive */
     &-static {
-      @include spruce-dsp-70;
+      @include spruce-display-70;
     }
 
     /* @ small */
     @media (--sm-mq) {
-      @include spruce-dsp-70;
+      @include spruce-display-70;
     }
 
     /* @ large */
     @media (--lg-mq) {
-      @include spruce-dsp-80;
+      @include spruce-display-80;
     }
   }
 
@@ -80,16 +80,16 @@
     ========== */
 
   &--heading-small {
-    @include spruce-dsp-30;
+    @include spruce-display-30;
 
     /* non responsive */
     &-static {
-      @include spruce-dsp-30;
+      @include spruce-display-30;
     }
 
     /* @ large */
     @media (--lg-mq) {
-      @include spruce-dsp-40;
+      @include spruce-display-40;
     }
   }
 
@@ -97,16 +97,16 @@
     ========== */
 
   &--heading-medium {
-    @include spruce-dsp-40;
+    @include spruce-display-40;
 
     /* non responsive */
     &-static {
-      @include spruce-dsp-40;
+      @include spruce-display-40;
     }
 
     /* @ large */
     @media (--lg-mq) {
-      @include spruce-dsp-50;
+      @include spruce-display-50;
     }
   }
 
@@ -114,21 +114,21 @@
     ========== */
 
   &--heading-large {
-    @include spruce-dsp-40;
+    @include spruce-display-40;
 
     /* non responsive */
     &-static {
-      @include spruce-dsp-50;
+      @include spruce-display-50;
     }
 
     /* @ small */
     @media (--sm-mq) {
-      @include spruce-dsp-50;
+      @include spruce-display-50;
     }
 
     /* @ large */
     @media (--lg-mq) {
-      @include spruce-dsp-70;
+      @include spruce-display-70;
     }
   }
 }
