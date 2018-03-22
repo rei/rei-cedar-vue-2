@@ -22,6 +22,7 @@ Modifier values are any valid text styles
 ```
 <div>
   <cdr-text tag="h2" modifier="display">h2 display heading</cdr-text>
+  <cdr-text>Default paragraph</cdr-text>
   <cdr-text modifier="body">Body paragraph</cdr-text>
   <cdr-text tag="em" modifier="citation">citation</cdr-text>
 </div>
