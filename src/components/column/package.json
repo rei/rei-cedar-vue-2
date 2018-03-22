@@ -27,5 +27,6 @@
   "devDependencies": {
     "@rei/cdr-row": "^0.0.1",
     "pkg-ok": "^1.1.0"
-  }
+  },
+  "dependencies": {}
 }

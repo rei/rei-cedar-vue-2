@@ -16,6 +16,8 @@
 ========================================================================== */
 
 .cdr-text {
+  @include redwood-body-20;
+
   margin: 0;
 
   /* Paragraphs
@@ -40,6 +42,13 @@
         margin-top: $body-paragraph-stack-sm;
       }
     }
+  }
+
+  /* Caption
+    ========== */
+
+  &--citation {
+    @include redwood-display-10;
   }
 
   /* Headings

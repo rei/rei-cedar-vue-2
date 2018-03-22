@@ -22,5 +22,6 @@
     "fs-extra": "^4.0.2",
     "pkg-ok": "^1.1.0",
     "postcss-cli": "^4.1.1"
-  }
+  },
+  "dependencies": {}
 }

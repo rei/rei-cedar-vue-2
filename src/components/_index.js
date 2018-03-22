@@ -3,7 +3,6 @@ import cdrButton from 'componentsdir/button/cdrButton';
 import cdrCard from 'componentsdir/card/cdrCard';
 import cdrCheckbox from 'componentsdir/checkbox/cdrCheckbox';
 import cdrCol from 'componentsdir/column/cdrCol';
-import cdrHeading from 'componentsdir/heading/cdrHeading';
 import cdrIcon from 'componentsdir/icon/cdrIcon';
 import cdrImg from 'componentsdir/image/cdrImg';
 import cdrInput from 'componentsdir/input/cdrInput';
@@ -21,7 +20,6 @@ export default {
   cdrCard,
   cdrCheckbox,
   cdrCol,
-  cdrHeading,
   cdrIcon,
   cdrImg,
   cdrInput,
