@@ -4,10 +4,13 @@
     class="cdr-container-fluid"
   >
     <h1>Cedar Proving grounds</h1>
-
     <anchors
       class="cpg-section"
       data-backstop="anchors"
+    />
+    <blockquote
+      class="cpg-section"
+      data-backstop="blockquote"
     />
     <buttons
       class="cpg-section"

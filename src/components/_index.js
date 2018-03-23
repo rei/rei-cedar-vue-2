@@ -1,4 +1,5 @@
 import cdrA from 'componentsdir/anchor/cdrA';
+import cdrBlockquote from 'componentsdir/blockquote/CdrBlockquote';
 import cdrButton from 'componentsdir/button/cdrButton';
 import cdrCard from 'componentsdir/card/cdrCard';
 import cdrCheckbox from 'componentsdir/checkbox/cdrCheckbox';
@@ -16,6 +17,7 @@ import cdrText from 'componentsdir/text/CdrText';
 
 export default {
   cdrA,
+  cdrBlockquote,
   cdrButton,
   cdrCard,
   cdrCheckbox,

@@ -1,4 +1,5 @@
 import anchors from 'componentsdir/anchor/examples/Anchors';
+import blockquote from 'componentsdir/blockquote/examples/Blockquote';
 import buttons from 'componentsdir/button/examples/Buttons';
 import cards from 'componentsdir/card/examples/Cards';
 import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
@@ -18,6 +19,7 @@ import utilities from 'componentsdir/Utilities/Utilities';
 
 export default {
   anchors,
+  blockquote,
   buttons,
   cards,
   checkboxes,

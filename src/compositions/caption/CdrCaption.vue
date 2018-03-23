@@ -7,7 +7,7 @@
     </p>
     <p
       v-if="credit"
-      class="cdr-caption__credit">
+      class="cdr-text--citation">
       {{ credit }}
     </p>
   </div>
