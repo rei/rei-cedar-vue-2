@@ -1,11 +1,12 @@
 <template>
   <div class="icon-examples">
     <h2>Icons</h2>
-    <h3>Default icon size</h3>
     <cdr-icon
       name="account-profile"
       data-backstop="cdr-icon-add"
     />
+
+    <h3>Default icon size</h3>
     <hr>
 
     <cdr-row
@@ -17,16 +18,16 @@
         v-for="(svg, name) in icons"
         :key="name"
       >
-        <div>
+        <div class="cdr-text-center">
           <cdr-icon
             :name="name"
           />
-          {{ name }}
+          <p>{{ name }}</p>
         </div>
       </cdr-col>
     </cdr-row>
 
-    <h3>Medium icon size</h3>
+    <h3>Small icon size</h3>
     <hr>
 
     <cdr-row
@@ -38,12 +39,34 @@
         v-for="(svg, name) in icons"
         :key="name"
       >
-        <div>
+        <div class="cdr-text-center">
           <cdr-icon
             :name="name"
-            modifier="md"
+            modifier="sm"
           />
-          {{ name }}
+          <p>{{ name }}</p>
+        </div>
+      </cdr-col>
+    </cdr-row>
+
+    <h3>Large icon size</h3>
+    <hr>
+
+    <cdr-row
+      cols="3"
+      cols-md="6"
+      cols-lg="12"
+    >
+      <cdr-col
+        v-for="(svg, name) in icons"
+        :key="name"
+      >
+        <div class="cdr-text-center">
+          <cdr-icon
+            :name="name"
+            modifier="lg"
+          />
+          <p>{{ name }}</p>
         </div>
       </cdr-col>
     </cdr-row>
@@ -57,11 +80,11 @@
       cols-lg="12"
     >
       <cdr-col>
-        <div>
+        <div class="icon-example">
           <cdr-icon
             :raw="EAicon"
           />
-          EA Camping
+          <p>EA Camping</p>
         </div>
       </cdr-col>
     </cdr-row>

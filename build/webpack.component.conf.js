@@ -29,6 +29,9 @@ console.log(`component folder name: ${cedarPackageFolder}\n`);
 console.log(path.join(process.cwd(), 'node_modules'));
 
 module.exports = {
+  externals: [
+    /@rei\/cdr-assets/ // don't bundle things from cdr-assets because they all have it as peerdependencies
+  ],
   entry: {
     ['cdr-' + tagName]: path.resolve(__dirname, `..${cedarPackageFolder}/plugin.js`),
   },

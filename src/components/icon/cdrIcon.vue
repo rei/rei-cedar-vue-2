@@ -7,8 +7,7 @@
  */
 
 import modifier from 'mixinsdir/modifier';
-
-const icons = require('@rei/cdr-assets/dist/icons.json');
+import icons from '@rei/cdr-assets/dist/icons.json';
 
 export default {
   name: 'CdrIcon',
@@ -33,11 +32,6 @@ export default {
     raw: {
       type: String,
     },
-  },
-  data() {
-    return {
-      icons,
-    };
   },
   computed: {
     baseClass() {
@@ -73,7 +67,7 @@ export default {
       if (this.name) {
         const inlineOpts = {
           domProps: {
-            innerHTML: this.icons[`${this.name}`],
+            innerHTML: icons[`${this.name}`],
           },
         };
         return this.$createElement(
