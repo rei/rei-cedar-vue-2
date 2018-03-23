@@ -3,12 +3,27 @@
 const theo = require('theo');
 const path = require('path');
 const fs = require('fs-extra');
+const tinycolor = require('tinycolor2');
 
 function getFile(file) {
   return path.join(__dirname, '../node_modules/rei-cedar-tokens/tokens/', file);
 }
 
-theo.registerTransform('cedar-web', ['color/hex']);
+theo.registerValueTransform(
+  'prominence/web',
+  prop => prop.get('type') === 'prominence',
+  (prop) => {
+    const [x, y, blur, spread, color, opacity] = prop.get('value').split(' ');
+    const rgbColor = tinycolor(color);
+    rgbColor.toRgbString();
+    rgbColor.setAlpha(opacity);
+    const str = rgbColor.toRgbString();
+
+    return `${x} ${y} ${blur} ${spread} ${str}`;
+  },
+);
+
+theo.registerTransform('cedar-web', ['color/hex', 'prominence/web']);
 
 // MIXIN FORMATTER
 theo.registerFormat('mixin', (result) => {

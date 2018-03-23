@@ -77,12 +77,10 @@
 <script>
 import debounce from 'srcdir/utils/debounce';
 import modifier from 'mixinsdir/modifier';
-/* eslint-disable */
-// import/no-webpack-loader-syntax & import/no-unresolved
-import checkIcon from '!raw-loader!assetsdir/icons/rei/cdr-check-lg.svg';
-import errorIcon from '!raw-loader!assetsdir/icons/rei/cdr-x-circ-fill.svg';
-import warningIcon from '!raw-loader!assetsdir/icons/rei/cdr-warning-tri.svg';
-/* eslint-enable */
+
+const checkIcon = require('assetsdir/icons/rei/check-lg.svg');
+const errorIcon = require('assetsdir/icons/rei/x-fill.svg');
+const warningIcon = require('assetsdir/icons/rei/warning-tri.svg');
 
 /**
  * Cedar 2 component for input

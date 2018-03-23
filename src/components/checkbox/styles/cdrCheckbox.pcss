@@ -28,7 +28,8 @@
     }
 
     &::after {
-      background-image: svg-load('../../../assets/icons/rei/cdr-check-lg.svg', fill=$(checkbox-checked-icon-color));
+      /* TODO: move this into the component so it doesn't fail silently */
+      background-image: svg-load('../../../assets/icons/rei/check-lg.svg', fill=$(checkbox-checked-icon-color));
       background-repeat: no-repeat;
     }
   }
@@ -104,8 +105,8 @@
     &::after {
       content: '';
       position: absolute;
-      left: $checkbox-box-after-left;
-      top: $checkbox-box-after-top;
+      left: 0;
+      top: 0;
       width: $checkbox-box-after-width;
       height: $checkbox-box-after-height;
       flex: 0 0 auto;
