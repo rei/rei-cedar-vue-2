@@ -22,5 +22,8 @@
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",
     "vue": "^2.5.13"
+  },
+  "devDependencies": {
+    "@rei/cdr-assets": "^0.0.2"
   }
 }
