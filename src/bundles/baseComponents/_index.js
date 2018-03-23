@@ -3,7 +3,6 @@ import { CdrButton } from '@rei/cdr-button';
 import { CdrCard } from '@rei/cdr-card';
 import { CdrCheckbox } from '@rei/cdr-checkbox';
 import { CdrCol } from '@rei/cdr-col';
-import { CdrHeading } from '@rei/cdr-heading';
 import { CdrIcon } from '@rei/cdr-icon';
 import { CdrImg } from '@rei/cdr-img';
 import { CdrInput } from '@rei/cdr-input';
@@ -32,7 +31,6 @@ export default {
   CdrCard,
   CdrCheckbox,
   CdrCol,
-  CdrHeading,
   CdrIcon,
   CdrImg,
   CdrInput,

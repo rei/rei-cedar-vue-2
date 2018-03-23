@@ -16,15 +16,16 @@
           v-if="label != null"
           class="cdr-card--activity__label"
         >{{ label }}</div>
-        <cdr-heading
+        <cdr-text
           v-if="title != null"
-          :level="titleLevel"
+          :tag="'h'+titleLevel"
+          modifier="heading-small"
         >
           <a
             class="cdr-card--activity__title cdr-card--activity__title--action"
             :href="titleUrl"
           >{{ title }}</a>
-        </cdr-heading>
+        </cdr-text>
         <cdr-list
           v-if="snapshot"
           class="cdr-card--activity__snapshot"
@@ -56,7 +57,7 @@
 
 <script>
 import { CdrCard } from '@rei/cdr-card';
-import { CdrHeading } from '@rei/cdr-heading';
+import { CdrText } from '@rei/cdr-text';
 import { cdrImg } from '@rei/cdr-img';
 import { CdrMediaObject } from '@rei/cdr-media-object';
 import { CdrRating } from '@rei/cdr-rating';
@@ -73,7 +74,7 @@ export default {
   name: 'CdrActivityCard',
   components: {
     CdrCard,
-    CdrHeading,
+    CdrText,
     cdrImg,
     CdrMediaObject,
     CdrRating,

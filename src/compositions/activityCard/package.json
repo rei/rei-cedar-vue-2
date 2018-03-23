@@ -23,23 +23,23 @@
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",
     "@rei/cdr-card": "^0.0.1",
-    "@rei/cdr-heading": "^0.0.1",
     "@rei/cdr-icon": "^0.0.2",
     "@rei/cdr-img": "^0.0.1",
     "@rei/cdr-list": "^0.0.1",
     "@rei/cdr-media-object": "^0.0.1",
     "@rei/cdr-rating": "^0.0.1",
+    "@rei/cdr-text": "^0.1.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.0.2",
     "@rei/cdr-card": "^0.0.1",
-    "@rei/cdr-heading": "^0.0.1",
     "@rei/cdr-icon": "^0.0.2",
     "@rei/cdr-img": "^0.0.1",
     "@rei/cdr-list": "^0.0.1",
     "@rei/cdr-media-object": "^0.0.1",
     "@rei/cdr-rating": "^0.0.1",
+    "@rei/cdr-text": "^0.1.0",
     "pkg-ok": "^1.1.0"
   }
 }
