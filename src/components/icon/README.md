@@ -9,12 +9,44 @@ Slightly more work, but offers the best performance when lots of icons will be u
 Requires:
 
 * `cdr-icons.svg` from `@rei/cdr-assets`
-* `file-loader` (if using webpack)
-* `svgxuse` polyfill
+* `file-loader` to get url or `raw-loader` to inline (if using webpack)
+* `svgxuse` polyfill (included somewhere on page or in your bundle)
 
 #### Examples:
 
-With webpack (you can probably come up with a better way to scale this if you need to do it in a lot of places):
+Inlining the sprite (recommended)
+
+(needs to be available on any page where icons are used so it's best to do it at the base layout/index)
+```
+// Base view template (assuming .vue and vue-router)
+<template>
+  <div id="main">
+    <cdr-icon :raw="icons"/>
+
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+import icons from '@rei/cdr-assets/dist/cdr-icons.svg'; // have raw-loader handle this
+...
+data() {
+  return {
+    icons
+  }
+}
+...
+</script>
+
+
+
+// Then in any component template
+// NOTE: It's just the id of the icon and doesn't need a full url path since it's already in the page DOM
+<cdr-icon url="#caret-right" />
+
+```
+
+Within an individual component (you can probably come up with a better way to scale this if you need to do it in a lot of places):
 ```
 //  A .vue file
 

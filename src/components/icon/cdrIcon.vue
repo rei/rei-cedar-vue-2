@@ -65,28 +65,28 @@ export default {
       };
 
       if (this.name) {
-        const inlineOpts = {
+        const iconSetOpts = {
           domProps: {
             innerHTML: icons[`${this.name}`],
           },
         };
-        return this.$createElement(
+        return this.$createElement( // <span classes><svg inlined from icons/></span>
           'span',
-          Object.assign(wrapperOpts, inlineOpts),
+          Object.assign(wrapperOpts, iconSetOpts),
         );
       } else if (this.raw) {
-        const inlineOpts = {
+        const rawOpts = {
           domProps: {
             innerHTML: this.raw,
           },
         };
-        return this.$createElement(
+        return this.$createElement( // <span classes><svg inlined from raw string></span>
           'span',
-          Object.assign(wrapperOpts, inlineOpts),
+          Object.assign(wrapperOpts, rawOpts),
         );
       }
 
-      return this.$createElement(
+      return this.$createElement( // <span classes><svg><use href="url"></svg></span>
         'span',
         wrapperOpts,
         [this.genSpriteSVG()],
