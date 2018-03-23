@@ -4,20 +4,33 @@
     :type="type"
     @click="onClick"
   >
+    <!-- @slot innerHTML on the inside of the button component -->
     <slot/>
   </button>
 </template>
 
 <script>
-import theme from 'Mixins/theme';
-import modifier from 'Mixins/modifier';
+import theme from 'mixinsdir/theme';
+import modifier from 'mixinsdir/modifier';
 
+/**
+ * Cedar 2 component for button
+ *
+ * <span class="modifiers">Modifiers</span>
+ * Modifiers can be combined 1 from each grouping.
+ * {secondary} | {sm,xs} | {block, fixed, responsive} **OR** link
+ * Use of the 'link' modifier depends on including the css for cdrA.
+ * A modifier list that contains 'link' exposes the same modifiers as cdrA and the other modifiers shouldn't be combined with it.
+ * Responsive makes the button full width and block @ sm breakpoint.
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrButton',
   mixins: [modifier, theme],
   props: {
     /**
-     * {button, submit, reset}. Defines the button type.
+     * Defines the button type. Possible values: {button, submit, reset}.
      */
     type: {
       type: String,
@@ -42,20 +55,20 @@ export default {
 </script>
 
 <style>
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrButton.vars.pcss';
   @import './styles/cdrButton.pcss';
 </style>
 
 <style cedar-theme="red">
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrButton.vars.pcss';
   @import './styles/vars/red.vars.pcss';
   @import './styles/cdrButton.pcss';
 </style>
 
 <style cedar-theme="green">
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrButton.vars.pcss';
   @import './styles/vars/green.vars.pcss';
   @import './styles/cdrButton.pcss';

@@ -5,6 +5,7 @@
     :class="columnClasses"
   >
     <div class="cdr-col__content">
+      <!-- @slot innerHTML inside of the column component -->
       <slot/>
     </div>
   </div>
@@ -14,6 +15,7 @@
     :class="columnClasses"
   >
     <div class="cdr-col__content">
+      <!-- @slot innerHTML inside of the column component -->
       <slot/>
     </div>
   </li>
@@ -26,6 +28,7 @@
       class="cdr-col"
       v-bind="$attrs"
     >
+      <!-- @slot innerHTML inside of the column component -->
       <slot/>
     </row>
   </li>
@@ -35,6 +38,7 @@
     :class="columnClasses"
     v-bind="$attrs"
   >
+    <!-- @slot innerHTML inside of the column component -->
     <slot/>
   </row>
 </template>
@@ -42,10 +46,20 @@
 <script>
 import { CdrRow as Row } from '@rei/cdr-row';
 
+/**
+ * Cedar 2 component for column
+ * **Note**: immediate children of `cdr-col` are treated as flex items (due to a flex height bug in Safari). As a result, if you want to have more than one child element they should be wrapped in a single `div` element.
+ * **NOTE**: anytime a `cdr-col` is nested within another `cdr-col` the parent needs `is-row` to function correctly
+ * See cdr-row for complex example.
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrCol',
   components: { Row },
-  inject: ['rowType'],
+  inject: {
+    rowType: { default: 'normal' },
+  },
   inheritAttrs: false,
   props: {
     /**
@@ -151,9 +165,7 @@ export default {
       },
     },
     /**
-     * How the column should align (overrides cdr-row alignment).
-     * {top, middle, bottom, stretch}.
-     * See CSS flexbox align-self.
+     * How the column should align (overrides cdr-row alignment). Possible values: {top, middle, bottom, stretch}. See CSS flexbox align-self.
      */
     alignSelf: {
       type: String,
@@ -175,8 +187,7 @@ export default {
       validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
     /**
-     * Makes the column act as a new cdr-row.
-     * Setting this to true exposes the same props as cdr-row.
+     * Makes the column act as a new cdr-row. Setting this to true exposes the same props as cdr-row.
      */
     isRow: {
       type: Boolean,

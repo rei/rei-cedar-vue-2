@@ -7,7 +7,11 @@
     <cdr-col span="6">
       <cdr-media-object
       img-src="http://placehold.it/350x150">
-        <cdr-heading level="2"><a href="https://rei.com">Media Figure on left</a></cdr-heading>
+        <cdr-text
+          tag="h2"
+          modifier="heading-medium">
+          <a href="https://rei.com">Media Figure on left</a>
+        </cdr-text>
         <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis
@@ -19,7 +23,11 @@
       <cdr-media-object
         img-src="http://placehold.it/350x150"
         modifier="right">
-        <cdr-heading level="2"><a href="https://rei.com">Media Figure on Right</a></cdr-heading>
+        <cdr-text
+          tag="h2"
+          modifier="heading-medium">
+          <a href="https://rei.com">Media Figure on Right</a>
+        </cdr-text>
         <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa.
@@ -31,7 +39,11 @@
       <cdr-media-object
         img-src="http://placehold.it/350x150"
         modifier="top">
-        <cdr-heading level="2"><a href="https://rei.com">Media Figure on top</a></cdr-heading>
+        <cdr-text
+          tag="h2"
+          modifier="heading-medium">
+          <a href="https://rei.com">Media Figure on top</a>
+        </cdr-text>
         <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa.
@@ -43,7 +55,11 @@
       <cdr-media-object
         img-src="http://placehold.it/350x150"
         modifier="bottom">
-        <cdr-heading level="2"><a href="https://rei.com">Media Figure on bottom</a></cdr-heading>
+        <cdr-text
+          tag="h2"
+          modifier="heading-medium">
+          <a href="https://rei.com">Media Figure on bottom</a>
+        </cdr-text>
         <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis
@@ -55,7 +71,7 @@
 </template>
 
 <script>
-import Components from 'Components/_index';
+import Components from 'componentsdir/_index';
 
 export default {
   name: 'FigurePlacement',

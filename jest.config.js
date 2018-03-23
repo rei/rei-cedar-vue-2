@@ -11,6 +11,7 @@ module.exports = {
   moduleNameMapper: {
     // Mocking assets imported in components:
     // http://facebook.github.io/jest/docs/en/webpack.html#handling-static-assets
+    '\\icons.json$': '<rootDir>/__mocks__/icons.js',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
   },
   snapshotSerializers: [

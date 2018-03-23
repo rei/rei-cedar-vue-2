@@ -6,7 +6,6 @@ Components available in this bundle:
 * cdr-card
 * cdr-checkbox
 * cdr-col
-* cdr-heading
 * cdr-icon
 * cdr-image
 * cdr-input
@@ -15,3 +14,4 @@ Components available in this bundle:
 * cdr-rating
 * cdr-row
 * cdr-select
+* cdr-text

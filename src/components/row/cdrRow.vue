@@ -4,6 +4,7 @@
     class="cdr-row"
     :class="rowClasses"
   >
+    <!-- @slot innerHTML inside the row component -->
     <slot/>
   </div>
   <ul
@@ -11,11 +12,17 @@
     class="cdr-row"
     :class="rowClasses"
   >
+    <!-- @slot innerHTML inside the row component -->
     <slot/>
   </ul>
 </template>
 
 <script>
+/**
+ * Cedar 2 component for row
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrRow',
   props: {
@@ -58,9 +65,7 @@ export default {
       },
     },
     /**
-     * How columns should be justified within empty space of the row.
-     * {left, center, right, around, between}.
-     * See CSS flexbox justify-content.
+     * How columns should be justified within empty space of the row. Possible values: {left, center, right, around, between}. See CSS flexbox justify-content.
      */
     justify: {
       type: String,
@@ -86,9 +91,7 @@ export default {
         .indexOf(value) >= 0) || false,
     },
     /**
-     * How columns of different heights should align.
-     * {top, middle, bottom, stretch}.
-     * See CSS flexbox align-items.
+     * How columns of different heights should align. {top, middle, bottom, stretch}. See CSS flexbox align-items.
      */
     align: {
       type: String,
@@ -110,8 +113,7 @@ export default {
       validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
     /**
-     * Overrides default gutter spacing.
-     * {none}.
+     * Overrides default gutter spacing. {none}.
      */
     gutter: {
       type: String,
@@ -133,8 +135,7 @@ export default {
       validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
     /**
-     * Changes row to a column layout.
-     * See CSS flexbox flex-direction.
+     * Changes row to a column layout. See CSS flexbox flex-direction.
      */
     vertical: {
       type: Boolean,
@@ -156,8 +157,7 @@ export default {
       default: false,
     },
     /**
-     * Enables row wrapping. Only needs to be changed if overriding `nowrap`
-     * See CSS flexbox flex-wrap.
+     * Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.
      */
     wrap: {
       type: Boolean,
@@ -179,8 +179,7 @@ export default {
       default: false,
     },
     /**
-     * Disables row wrapping and enables overflow scrolling.
-     * See CSS flexbox flex-wrap.
+     * Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.
      */
     nowrap: {
       type: Boolean,
@@ -202,8 +201,7 @@ export default {
       default: false,
     },
     /**
-     * Changes grid to built with ul>li rather than divs.
-     * {normal, list}
+     * Changes grid to built with ul>li rather than divs. {normal, list}
      */
     type: {
       type: String,

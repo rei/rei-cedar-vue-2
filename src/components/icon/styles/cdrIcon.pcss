@@ -11,12 +11,30 @@
 ========================================================================== */
 
 .cdr-icon {
-  width: $icon-width;
-  height: $icon-height;
-  fill: $icon-fill;
+  display: inline-block;
+  vertical-align: middle;
   flex: 0 0 auto;
 
-  & path {
-    all: inherit;
+  /* TODO: create/add icon tokens */
+  width: 24px;
+  height: 24px;
+  fill: $icon-fill;
+
+  & > svg {
+    width: inherit;
+    height: inherit;
+    fill: inherit;
+  }
+
+  &--sm {
+    /* TODO: create/add icon tokens */
+    width: $icon-width;
+    height: $icon-height;
+  }
+
+  &--lg {
+    /* TODO: create/add icon tokens */
+    width: 32px;
+    height: 32px;
   }
 }

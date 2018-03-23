@@ -1,5 +1,5 @@
-import { shallow } from 'vue-test-utils';
-import inputComp from 'Components/input/cdrInput';
+import { shallow } from '@vue/test-utils';
+import inputComp from 'componentsdir/input/cdrInput';
 
 function validateFn(inputText) {
   const obj = {};

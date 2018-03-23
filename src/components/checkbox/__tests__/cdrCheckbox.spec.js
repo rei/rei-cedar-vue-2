@@ -1,5 +1,5 @@
-import { shallow } from 'vue-test-utils';
-import cdrCheckbox from 'Components/checkbox/cdrCheckbox';
+import { shallow } from '@vue/test-utils';
+import cdrCheckbox from 'componentsdir/checkbox/cdrCheckbox';
 
 
 describe('cdrCheckbox.vue', () => {

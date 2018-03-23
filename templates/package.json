@@ -6,11 +6,14 @@
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
+  "files": [
+    "dist"
+  ],
   "main": "dist/{NAME-TAGNAME}.js",
   "style": "dist/{NAME-TAGNAME}.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
-    "component": "{NAME-CAMEL}",
+    "{TYPE-SINGULAR}": "{NAME-CAMEL}",
     "tagName": "{NAME-KEBAB}"
   },
   "publishConfig": {
@@ -23,5 +26,9 @@
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",
     "vue": "^2.5.13"
+  },
+  "devDependencies": {
+    "@rei/cdr-assets": "^0.0.2",
+    "pkg-ok": "^2.1.0"
   }
 }

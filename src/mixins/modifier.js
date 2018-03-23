@@ -4,7 +4,7 @@
 export default {
   props: {
     /**
-     * Space separated list of modifiers. See below for possible values
+     * Space separated list of modifiers. See above for possible values
      */
     modifier: String,
   },

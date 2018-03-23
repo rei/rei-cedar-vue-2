@@ -1,5 +1,5 @@
-import { shallow } from 'vue-test-utils';
-import cdrRating from 'Components/rating/cdrRating';
+import { shallow } from '@vue/test-utils';
+import cdrRating from 'componentsdir/rating/cdrRating';
 
 describe('cdrRating.vue', () => {
   it('computes and rounds rating stars correctly', () => {

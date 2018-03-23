@@ -14,13 +14,13 @@ module.exports = {
   'plugins': [
     [require('babel-plugin-module-resolver'), {
         'alias': {
-          'Src': resolve('src'),
-          'Css': resolve('src/css'),
-          'Assets': resolve('src/assets'),
-          'Components': resolve('src/components'),
-          'Compositions': resolve('src/compositions'),
-          'Directives': resolve('src/directives'),
-          'Mixins': resolve('src/mixins'),
+          'srcdir': resolve('src'),
+          'cssdir': resolve('src/css'),
+          'assetsdir': resolve('src/assets'),
+          'componentsdir': resolve('src/components'),
+          'compositionsdir': resolve('src/compositions'),
+          'directivesdir': resolve('src/directives'),
+          'mixinsdir': resolve('src/mixins'),
       }
     }]
   ]

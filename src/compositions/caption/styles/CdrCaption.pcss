@@ -1,0 +1,32 @@
+/* ==========================================================================
+  # CdrCaption
+  
+  All values should map to variables in
+  vars/CdrCaption.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrCaption
+========================================================================== */
+
+.cdr-caption {
+  max-width: 530px;
+
+  &__summary {
+    @include redwood-display-20;
+
+    margin-bottom: 0;
+
+    & + .cdr-caption__credit {
+      /* TODO: replace with spacing token */
+      margin-top: 8px;
+    }
+  }
+
+  &__credit {
+    @include redwood-display-10;
+
+    margin-bottom: 0;
+  }
+}

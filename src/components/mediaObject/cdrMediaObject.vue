@@ -53,6 +53,7 @@
       class="cdr-media-object__body"
       :class="alignClass"
     >
+      <!-- @slot innerHTML inside of the media object component -->
       <slot/>
     </div>
   </div>
@@ -62,9 +63,24 @@
 import { CdrA } from '@rei/cdr-a';
 import { CdrImg } from '@rei/cdr-img';
 import { CdrIcon } from '@rei/cdr-icon';
-import modifier from 'Mixins/modifier';
-import lazyImage from 'Mixins/lazyImage';
+import modifier from 'mixinsdir/modifier';
+import lazyImage from 'mixinsdir/lazyImage';
 
+/**
+ * Cedar 2 component for media object
+ * The Media Object allows you to group small amounts of like content is a small amount of markup. The examples below show some of the may visual displays available to this component.
+ * <span class="modifiers">Modifiers</span>
+ * {top, right, bottom, center, overlay, block, stretch}
+ * top: Media figure displays above Media body
+ * right: Media figure displays to the right of the Media body
+ * bottom: Media figure displays below the Media body
+ * center: Can be stacked with other alignment modifiers and will center the Media figure.
+ * overlay: Media Body overlays the Media Frame
+ * stretch: The Media Frame extends 16px left and right from the parent container. This is intended to be used with the top or bottom modifier.
+ * block: The Media Frame extends 16px left and right from the parent container. And an additional 16px left and right value wraps the media object. This is intended to be used with the top or bottom modifier.
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrMediaObject',
   components: {
@@ -79,8 +95,7 @@ export default {
     */
     width: String,
     /**
-    * Allows you to align your text
-    * {right, left, center}
+    * Allows you to align your text {right, left, center}
     */
     mediaAlign: {
       type: String,
@@ -90,8 +105,7 @@ export default {
         'center'].indexOf(value) >= 0) || false,
     },
     /**
-     * icon svg path
-     * See cdr-icon
+     * icon svg path. See cdr-icon
     */
     iconUrl: String,
     /**
@@ -99,41 +113,31 @@ export default {
     */
     imgClass: String,
     /**
-     * Image path.
-     * See cdr-img
+     * Image path. See cdr-img
     */
     imgSrc: String,
     /**
-     * Image radius.
-     * See cdr-img
+     * Image radius. See cdr-img
     */
     imgRadius: String,
     /**
-     * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
-     * See cdr-img
+     * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9} See cdr-img
     */
     imgRatio: String,
     /**
-     * Requires `imgRatio`.
-     * Scale the image to be as large as possible to fill the area (background-position: cover;)
-     * See cdr-img
+     * Requires `imgRatio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img
      */
     imgCover: Boolean,
     /**
-     * Requires `imgRatio`.
-     * Area to crop the image overflow to.
-     * {top, y-center, bottom} {left, x-center, right}
-     * See cdr-img
+     * Requires `imgRatio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img
      */
     imgCrop: String,
     /**
-     * Image alternitive description, defaults to blank
-     * See cdr-img
+     * Image alternitive description, defaults to blank. See cdr-img
     */
     imgAlt: String,
     /**
-     * {Responsive, Rounded, circle, thumbnail}
-     * See cdr-img
+     * {Responsive, Rounded, circle, thumbnail}. See cdr-img
     */
     imgModifier: String,
     /**
@@ -167,6 +171,6 @@ export default {
 </script>
 
 <style>
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/cdrMediaObject.pcss';
 </style>

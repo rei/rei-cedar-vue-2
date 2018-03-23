@@ -1,5 +1,5 @@
-import { shallow } from 'vue-test-utils';
-import cdrList from 'Components/list/cdrList';
+import { shallow } from '@vue/test-utils';
+import cdrList from 'componentsdir/list/cdrList';
 
 describe('cdrList.vue', () => {
   it('renders a ul by default', () => {

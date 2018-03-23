@@ -19,13 +19,13 @@ module.exports = {
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      Src: resolve('src'),
-      Css: resolve('src/css'),
-      Assets: resolve('src/assets'),
-      Components: resolve('src/components'),
-      Compositions: resolve('src/compositions'),
-      Directives: resolve('src/directives'),
-      Mixins: resolve('src/mixins'),
+      srcdir: resolve('src'),
+      cssdir: resolve('src/css'),
+      assetsdir: resolve('src/assets'),
+      componentsdir: resolve('src/components'),
+      compositionsdir: resolve('src/compositions'),
+      directivesdir: resolve('src/directives'),
+      mixinsdir: resolve('src/mixins'),
     },
     extensions: ['.js', '.vue', '.json'],
   },
@@ -78,6 +78,7 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
+        exclude: resolve('src/assets/icons'),
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]'),
@@ -90,6 +91,11 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]'),
         },
+      },
+      {
+        test: /\.(svg)(\?.*)?$/,
+        loader: 'raw-loader',
+        include: resolve('src/assets/icons'),
       },
     ],
   },

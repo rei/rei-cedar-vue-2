@@ -1,7 +1,7 @@
 const path = require('path')
 const semverDiff = require('semver-diff')
 const semver = require('semver')
-const fs = require('fs')
+const fs = require('fs-extra')
 const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
 const glob = require('glob')
@@ -15,7 +15,7 @@ json2md.converters.anchor = (anchor, json) => {
 };
 
 // pull in *.vue files from directory
-glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**']}, (compErr, files) => {
+glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**', '**/demos/**']}, (compErr, files) => {
   if(compErr)
     throw new Error(`Error while trying to find single file Vue components:\n${compErr}`)
 
@@ -32,26 +32,26 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
 
     const mdTemplate = createMarkdownTemplate(file, vueObj)
 
-    const startFileName = file.lastIndexOf('/') + 1, endFileName = file.lastIndexOf('.')
-    const vueCompName = file.slice(startFileName, endFileName)
-    const vueCompDir = file.slice(0, startFileName)
+    const vueCompName = path.basename(file,'.vue')
+    const vueCompDir = path.dirname(file)
 
     let latestMdDoc = null, latestMdVer = '0.0.0'
     
     // pull in the markdown documentation files and their NPM versions
-    glob(`${vueCompDir + vueCompName}-*.md`, (mdFileErr, mdFiles) => {
+    glob(`${vueCompDir}/${vueCompName}*.md`, (mdFileErr, mdFiles) => {
       if (mdFileErr) 
         throw new Error(`Error while trying to find markdown documentation files in directory ${vueCompDir}:\n${mdFileErr}`)
 
-      // no markdown documentation file exiists yet, create one
+      // no markdown documentation file exists yet, create one
       if (mdFiles.length == 0) {
-        fs.appendFile(`${vueCompDir + vueCompName}-${currentVer}.md`, mdTemplate, (createErr) => {
+        fs.outputFile(`${vueCompDir}/${vueCompName}-${currentVer}.md`, mdTemplate)
+        .then(() => console.log(`No existing markdown file for ${vueCompName}. Creating one at ${vueCompDir}/${vueCompName}-${currentVer}.md`))
+        .catch((createErr) => {
           if (createErr)
-            throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + vueCompName}-${currentVer}.md:\n${createErr}`)
-          
-          console.log(`No existing markdown file for ${vueCompName}. Creating one at ${vueCompDir + vueCompName}-${currentVer}.md`)
+            throw new Error(`Error while trying to create markdown documentation file ${vueCompDir}/${vueCompName}-${currentVer}.md:\n${createErr}`)
         })
-      } else {
+      }
+      else {
         // find the most recent markdown documentation file based on NPM version
         mdFiles.forEach((mdFile) => {
           const starMdVer = mdFile.lastIndexOf(`${vueCompName}-`) + vueCompName.length + 1, endMdVer = mdFile.lastIndexOf('.')
@@ -66,28 +66,32 @@ glob('src/+(components|compositions|bundles)/**/*.vue', {ignore: ['**/node_modul
 
         // overwrite most recent markdown documentation if the update is a patch
         if (semver.eq(latestMdVer, currentVer) || semverDiff(latestMdVer, currentVer) === 'patch') {
-          fs.unlink(latestMdDoc, (delErr) => {
-            if (delErr)
-              throw new Error(`Error while trying to delete the markdown documentation file ${latestMdDoc}:\n${delErr}`)
-
-            fs.appendFile(`${vueCompDir + vueCompName}-${currentVer}.md`, mdTemplate, (createErr) => {
-              if (createErr)
-                throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + vueCompName}-${currentVer}.md:\n${createErr}`)
-
-              console.log(`Overwrote documentation for ${vueCompName}. ${(semver.lt(latestMdVer, currentVer)) ? `Updated to version ${currentVer} from ${latestMdVer}` : ''}`)
-            })
+          fs.remove(latestMdDoc)
+          .then(() => fs.outputFile(`${vueCompDir}/${vueCompName}-${currentVer}.md`, mdTemplate))
+          .then(() => console.log(`Overwrote documentation for ${vueCompName}. ${(semver.lt(latestMdVer, currentVer)) ? `Updated to version ${currentVer} from ${latestMdVer}` : ''}`))
+          .catch((createErr) => {
+            if (createErr)
+                throw new Error(`Error while trying to replace markdown documentation file ${latestMdDoc} with ${vueCompDir}/${vueCompName}-${currentVer}.md:\n${createErr}`)
           })
         }
         // archive the previous markdown documentation if the update is a major or minor change
         else if (semverDiff(latestMdVer, currentVer) === 'major' || semverDiff(latestMdVer, currentVer) === 'minor') {
-          fs.appendFile(`${vueCompDir + vueCompName}-${currentVer}.md`, mdTemplate, (createErr) => {
+          fs.outputFile(`${vueCompDir}/${vueCompName}-${currentVer}.md`, mdTemplate)
+          .then(() => console.log(`Archived markdown file for ${vueCompName}, version ${latestMdVer}. Updated to version ${currentVer}`))
+          .catch((createErr) => {
             if (createErr)
-              throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + vueCompName}-${currentVer}.md:\n${createErr}`)
-            
-            console.log(`Archived markdown file for ${vueCompName}, version ${latestMdVer}. Updated to version ${currentVer}`)
+              throw new Error(`Error while trying to create markdown documentation file ${vueCompDir}/${vueCompName}-${currentVer}.md:\n${createErr}`)
           })
         }
       }
+
+      // In all cases create the proper <component name>.md file for most recent version
+      fs.outputFile(`${vueCompDir}/${vueCompName}.md`, mdTemplate)
+      .then(() => console.log(`Successfully created ${vueCompName}.md`))
+      .catch((createErr) => {
+        if(createErr)
+          throw new Error(`Error while creating ${vueCompDir}/${vueCompName}.md:\n${createErr}`)
+      })
     })
   })
 })
@@ -98,8 +102,8 @@ function createMarkdownTemplate(file, vueObj) {
   let json2mdTemplate = [], mdTablesTemplate;
   
   json2mdTemplate = json2mdTemplate.concat([
-    {h2: `${vueObj.displayName}`},
-    {p: `${file}`},
+    {h1: `<span class="display-name">${vueObj.displayName}</span>`},
+    {p: `<span class="file">${file}<span>`},
     {p: `${vueObj.description}`}
   ])
 
@@ -112,8 +116,9 @@ function createMarkdownTemplate(file, vueObj) {
   return json2md(json2mdTemplate)
 }
 
+// build tables for Vue props, methods, events, and slots
 function buildTables(vueObj) {
-  let updatedTemplate = [{h3: "Props, Methods, Events, Slots"}]
+  let updatedTemplate = [{h3: "<button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>"}]
   let mdTable
   
   mdTable = tableFromProps(vueObj["props"])
@@ -146,9 +151,14 @@ function tableFromProps(propsObj) {
 
   // construct rows of table from object of properties
   for(const prop in propsObj) {
+    // Don't document properties with `@ignore` tag
+    if (propsObj[prop].tags.ignore) {
+      continue
+    }
+    
     let cols = []
     cols.push(`${prop}`) // property name
-    cols.push(propsObj[prop]["type"] ? propsObj[prop]["type"]["name"] : 'unknown') // type of the property
+    cols.push(propsObj[prop]["type"] ? propsObj[prop]["type"]["name"].replace(/\|/g, ',') : 'unknown') // type of the property
     cols.push(propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a') // property default value
     cols.push(propsObj[prop]["required"] ? 'true' : 'false') // property is required
     cols.push(`${propsObj[prop]["description"]}`) // description of the property
@@ -194,10 +204,10 @@ function tableFromEvents(eventsObj) {
     
     let typeList = ''
     eventsObj[evt]["type"]["names"].forEach((type, idx, arr) => {
-      typeList += `${type`${arr[idx+1] ? `|` : ''}`}`
+      typeList += `${type}${arr[idx+1] ? `|` : ''}`
     })
     cols.push(typeList) // list of event types
-    cols.push(`${eventsObj[evt]["descritpion"]}`) // description of the event
+    cols.push(`${eventsObj[evt]["description"]}`) // description of the event
 
     rows.push(cols);
   }

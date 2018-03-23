@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import Components from 'Components/_index';
+import Components from 'componentsdir/_index';
 import ratios from './demos/Ratios';
 import cropping from './demos/Cropping';
 import mods from './demos/Mods';

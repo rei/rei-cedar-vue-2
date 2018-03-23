@@ -21,10 +21,7 @@
       data-backstop="checkboxes"
     />
     <grid class="cpg-section"/>
-    <headings
-      class="cpg-section"
-      data-backstop="headings"
-    />
+    <texts class="cpg-section"/>
     <icons
       class="cpg-section"
       data-backstop="icons"
@@ -56,17 +53,19 @@
       class="cpg-section"
       data-backstop="selects"
     />
-    <test
-      class="cpg-section"
-      data-backstop="test"
-    />
     <utilities class="cpg-section"/>
+
+    <caption-example
+      class="cpg-section"
+      data-backstop="caption"
+    />
+
   </div>
 </template>
 
 <script>
-import examples from 'Components/examples';
-import compexamples from 'Compositions/examples';
+import examples from 'componentsdir/examples';
+import compexamples from 'compositionsdir/examples';
 
 const all = Object.assign({}, examples, compexamples);
 

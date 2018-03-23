@@ -29,8 +29,10 @@
   },
   "devDependencies": {
     "@rei/cdr-a": "^0.0.1",
+    "@rei/cdr-assets": "^0.0.2",
     "@rei/cdr-icon": "^0.0.2",
     "@rei/cdr-img": "^0.0.1",
     "pkg-ok": "^1.1.0"
-  }
+  },
+  "dependencies": {}
 }

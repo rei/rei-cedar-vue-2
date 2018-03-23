@@ -9,7 +9,11 @@
         img-src="http://placehold.it/350x150"
         img-modifier="responsive"
         modifier="top">
-        <cdr-heading level="2"><a href="https://rei.com">Responsive</a></cdr-heading>
+        <cdr-text
+          tag="h2"
+          modifier="heading-medium">
+          <a href="https://rei.com">Responsive</a>
+        </cdr-text>
         <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis
@@ -20,9 +24,12 @@
     <cdr-col span="4">
       <cdr-media-object
         img-src="http://placehold.it/350x150"
-        modifier="top stretch"
-      >
-        <cdr-heading level="2"><a href="https://rei.com">Stretch</a></cdr-heading>
+        modifier="top stretch">
+        <cdr-text
+          tag="h2"
+          modifier="heading-medium">
+          <a href="https://rei.com">Stretch</a>
+        </cdr-text>
         <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis
@@ -34,7 +41,11 @@
       <cdr-media-object
         img-src="http://placehold.it/350x150"
         modifier="top block">
-        <cdr-heading level="2"><a href="https://rei.com">block</a></cdr-heading>
+        <cdr-text
+          tag="h2"
+          modifier="heading-medium">
+          <a href="https://rei.com">block</a>
+        </cdr-text>
         <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis
@@ -46,7 +57,7 @@
 </template>
 
 <script>
-import Components from 'Components/_index';
+import Components from 'componentsdir/_index';
 
 export default {
   name: 'MediaObjectFlux',

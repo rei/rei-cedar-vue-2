@@ -16,15 +16,16 @@
           v-if="label != null"
           class="cdr-card--activity__label"
         >{{ label }}</div>
-        <cdr-heading
+        <cdr-text
           v-if="title != null"
-          :level="titleLevel"
+          :tag="'h'+titleLevel"
+          modifier="heading-small"
         >
           <a
             class="cdr-card--activity__title cdr-card--activity__title--action"
             :href="titleUrl"
           >{{ title }}</a>
-        </cdr-heading>
+        </cdr-text>
         <cdr-list
           v-if="snapshot"
           class="cdr-card--activity__snapshot"
@@ -56,17 +57,24 @@
 
 <script>
 import { CdrCard } from '@rei/cdr-card';
-import { CdrHeading } from '@rei/cdr-heading';
+import { CdrText } from '@rei/cdr-text';
 import { cdrImg } from '@rei/cdr-img';
 import { CdrMediaObject } from '@rei/cdr-media-object';
 import { CdrRating } from '@rei/cdr-rating';
 import { CdrList } from '@rei/cdr-list';
 
+
+/**
+ * While the simple card is a generic wrapper that does not do much more than provide a chome, the activity card is a composition of compomnents and is intended to fill a specific role as outlined.
+ * This Component enhances the behavior of specific presentation parts that are important for this use case, knotice that by providing a title url that the entire card becomes "hot". Note also that this does not alter the tab index of nested elements and remains accessible to screen readers.
+ * @version 0.0.1
+ * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+ */
 export default {
   name: 'CdrActivityCard',
   components: {
     CdrCard,
-    CdrHeading,
+    CdrText,
     cdrImg,
     CdrMediaObject,
     CdrRating,
@@ -85,21 +93,15 @@ export default {
       default: ' ',
     },
     /**
-     * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}
-     * See cdr-img
+     * Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}. See cdr-img
     */
     mediaRatio: String,
     /**
-     * Requires `mediaRatio`.
-     * Scale the image to be as large as possible to fill the area (background-position: cover;)
-     * See cdr-img
+     * Requires `mediaRatio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img
      */
     mediaCover: Boolean,
     /**
-     * Requires `mediaRatio`.
-     * Area to crop the image overflow to.
-     * {top, y-center, bottom} {left, x-center, right}
-     * See cdr-img
+     * Requires `mediaRatio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img
      */
     mediaCrop: String,
     /**
@@ -152,7 +154,7 @@ export default {
 </script>
 
 <style>
-  @import 'Css/settings/_index.pcss';
+  @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/cdrActivityCard.vars.pcss';
   @import './styles/cdrActivityCard.pcss';
 </style>
