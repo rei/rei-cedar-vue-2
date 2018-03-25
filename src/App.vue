@@ -8,7 +8,7 @@
       class="cpg-section"
       data-backstop="anchors"
     />
-    <blockquote
+    <blockquote-example
       class="cpg-section"
       data-backstop="blockquote"
     />

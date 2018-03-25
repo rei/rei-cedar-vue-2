@@ -8,7 +8,7 @@
     <cite
       v-if="citation"
       class="cdr-text--citation">
-      {{ credit }}
+      {{ citation }}
     </cite>
   </blockquote>
 </template>
@@ -17,9 +17,9 @@
 export default {
   name: 'CdrBlockquote',
   props: {
-    /** Caption summary text */
+    /** Blockquote summary text */
     summary: String,
-    /** Caption credit text */
+    /** Blockquote credit text */
     citation: String,
   },
 };
