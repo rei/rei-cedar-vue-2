@@ -1,4 +1,4 @@
-import {NAME-FULLNAME} from './{NAME-FULLNAME}';
+import {NAME-FULLNAME} from '../{NAME-FULLNAME}';
 
 function install(Vue) {
   Vue.component('{NAME-TAGNAME}', {NAME-FULLNAME});

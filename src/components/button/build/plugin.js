@@ -1,4 +1,4 @@
-import CdrButton from './cdrButton';
+import CdrButton from '../cdrButton';
 
 function install(Vue) {
   Vue.component('cdr-button', CdrButton);
@@ -9,5 +9,3 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default install;
-
-export { CdrButton };

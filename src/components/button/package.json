@@ -6,17 +6,19 @@
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
+  },
   "main": "dist/cdr-button.js",
   "style": "dist/cdr-button.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "component": "button",
-    "tagName": "button"
-  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "npm run build:theme && npm run build:component",
-    "build:component": "node ../../../build/build.js",
+    "build:component": "node build/build.js",
     "build:theme": "node ../../../utils/extractTheme.js"
   },
   "publishConfig": {
@@ -31,6 +33,5 @@
     "@rei/cdr-a": "^0.0.1",
     "@rei/cdr-assets": "^0.0.2",
     "pkg-ok": "^1.1.0"
-  },
-  "dependencies": {}
+  }
 }

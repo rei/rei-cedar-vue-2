@@ -21,7 +21,7 @@ const config = {
 };
 
 /**
- * Assumes the directory has 2 files -- main.js and main-plugin.js
+ * Assumes the directory has 2 files -- main.js and plugin.js
  * 
  * @param {String} dir -- cwd of component
  * @param {String} name -- component name (kebab-case)
@@ -33,8 +33,8 @@ function createWebpackConfig(dir, name, opts) {
   // COMPONENT WEBPACK CONFIG
   const compConfig = merge(baseConfig, {
     entry: {
-      [`${name}`]: `${dir}/main.js`,
-      plugin: `${dir}/main-plugin.js`
+      [`${name}`]: `${dir}/build/main.js`,
+      plugin: `${dir}/build/plugin.js`
     },
     output: {
       path: `${dir}/${config.outDir}`,
