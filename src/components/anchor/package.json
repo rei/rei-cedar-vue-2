@@ -8,14 +8,16 @@
   "private": false,
   "main": "dist/cdr-a.js",
   "style": "dist/cdr-a.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "component": "anchor",
-    "tagName": "a"
+  "files": [
+   "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
   },
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node ../../../build/build.js"
+    "build": "node build.js"
   },
   "publishConfig": {
     "access": "public"
@@ -29,6 +31,5 @@
     "@rei/cdr-assets": "^0.0.2",
     "@rei/cdr-button": "^0.0.3",
     "pkg-ok": "^1.1.0"
-  },
-  "dependencies": {}
+  }
 }

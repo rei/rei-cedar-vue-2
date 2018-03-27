@@ -11,17 +11,16 @@
   ],
   "main": "dist/{NAME-TAGNAME}.js",
   "style": "dist/{NAME-TAGNAME}.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "{TYPE-SINGULAR}": "{NAME-CAMEL}",
-    "tagName": "{NAME-KEBAB}"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node ../../../build/build.js"
+    "build": "node build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",

@@ -1,5 +1,5 @@
 const createResolver = require('postcss-import-webpack-resolver');
-const webpackConfig = require('./build/webpack.common.conf.js');
+const webpackConfig = require('./build/webpack.base.conf.js');
 
 module.exports = {
   parser: 'postcss-html',

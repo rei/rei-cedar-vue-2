@@ -144,7 +144,6 @@ build                           #Contains scripts and configs for the webpack bu
 |-- mainPost.conf.js            #Webpack loader config for processing .postcss files for release vs dev
 |-- utils.js                    #From vue webpack template to mostly automate which loaders need to be used since vue supports scss, stylus, postcss, etc.
 |-- vue-loader.conf.js          #Config object for vue webpack loader (vue-loader)
-|-- webpack.base.conf.js        #Webpack config that the others all use as a foundation - mostly just defines the loaders and entry
 |-- webpack.dev.conf.js         #Webpack config options specific to dev
 |-- webpack.prod.conf.js        #Webpack config options specific to build/prod
 |-- webpack.test.conf.js        #Webpack config options specific to unit/e2e test
