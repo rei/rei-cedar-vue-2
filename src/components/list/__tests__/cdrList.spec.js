@@ -1,14 +1,14 @@
 import { shallow } from '@vue/test-utils';
-import cdrList from 'componentsdir/list/cdrList';
+import CdrList from 'componentsdir/list/CdrList';
 
-describe('cdrList.vue', () => {
+describe('CdrList.vue', () => {
   it('renders a ul by default', () => {
-    const wrapper = shallow(cdrList);
+    const wrapper = shallow(CdrList);
     expect(wrapper.is('ul')).toBe(true);
   });
 
   it('renders an ol', () => {
-    const wrapper = shallow(cdrList, {
+    const wrapper = shallow(CdrList, {
       propsData: {
         listType: 'ol',
       }

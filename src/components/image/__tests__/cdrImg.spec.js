@@ -1,9 +1,9 @@
 import { shallow } from '@vue/test-utils';
-import cdrImg from 'componentsdir/image/cdrImg';
+import CdrImg from 'componentsdir/image/CdrImg';
 
-describe('cdrImg.vue', () => {
+describe('CdrImg.vue', () => {
   it('renders an img', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
       }
@@ -12,7 +12,7 @@ describe('cdrImg.vue', () => {
   });
 
   it('renders the media frame correctly', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
@@ -22,7 +22,7 @@ describe('cdrImg.vue', () => {
   });
 
   it('sets the src attr correctly', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
       }
@@ -31,7 +31,7 @@ describe('cdrImg.vue', () => {
   });
 
   it('sets the src attr correctly in a media frame', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
@@ -41,7 +41,7 @@ describe('cdrImg.vue', () => {
   });
 
   it('sets the alt attr correctly', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
         alt: 'test alt',
@@ -51,7 +51,7 @@ describe('cdrImg.vue', () => {
   });
 
   it('sets the alt attr correctly in a media frame', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
@@ -62,7 +62,7 @@ describe('cdrImg.vue', () => {
   });
 
   it('sets the ratio prop correctly', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
@@ -78,7 +78,7 @@ describe('cdrImg.vue', () => {
   });
 
   it('sets the crop prop correctly', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
         ratio: 'square',
@@ -89,7 +89,7 @@ describe('cdrImg.vue', () => {
   });
 
   it('sets the radius prop correctly', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
         radius: 'square',
@@ -99,7 +99,7 @@ describe('cdrImg.vue', () => {
   });
 
   it('adds lazy class and attrs', () => {
-    const wrapper = shallow(cdrImg, {
+    const wrapper = shallow(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
         lazy: true,

@@ -1,4 +1,4 @@
-import CdrButton from '../cdrButton';
+import CdrButton from '../CdrButton';
 
 function install(Vue) {
   Vue.component('cdr-button', CdrButton);

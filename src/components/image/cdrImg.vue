@@ -195,6 +195,6 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/cdrImg.vars.pcss';
-  @import './styles/cdrImg.pcss';
+  @import './styles/vars/CdrImg.vars.pcss';
+  @import './styles/CdrImg.pcss';
 </style>

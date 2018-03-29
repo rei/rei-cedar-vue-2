@@ -1,10 +1,10 @@
 import { shallow } from '@vue/test-utils';
 import { createRenderer } from 'vue-server-renderer'
-import cdrA from 'componentsdir/anchor/cdrA';
+import CdrA from 'componentsdir/anchor/CdrA';
 
-describe('cdrA.vue', () => {
+describe('CdrA.vue', () => {
   it('outputs the same HTML', () => {
-    const wrapper = shallow(cdrA);
+    const wrapper = shallow(CdrA);
     const renderer = createRenderer();
     renderer.renderToString(wrapper.vm, (err, str) => {
       if (err) throw new Error(err)
@@ -13,12 +13,12 @@ describe('cdrA.vue', () => {
   });
 
   it('renders an anchor', () => {
-    const wrapper = shallow(cdrA);
+    const wrapper = shallow(CdrA);
     expect(wrapper.is('a')).toBe(true);
   });
 
   it('sets target attr correctly', () => {
-    const wrapper = shallow(cdrA, {
+    const wrapper = shallow(CdrA, {
       propsData: {
         target: '_self',
       },
@@ -27,7 +27,7 @@ describe('cdrA.vue', () => {
   });
 
   it('sets rel attr correctly', () => {
-    const wrapper = shallow(cdrA, {
+    const wrapper = shallow(CdrA, {
       propsData: {
         rel: 'nofollow',
       },
@@ -36,7 +36,7 @@ describe('cdrA.vue', () => {
   });
 
   it('computes target="_blank" rel attr correctly', () => {
-    const wrapper = shallow(cdrA, {
+    const wrapper = shallow(CdrA, {
       propsData: {
         target: '_blank',
       },
@@ -45,7 +45,7 @@ describe('cdrA.vue', () => {
   });
 
   it('computes base class correctly', () => {
-    const wrapper = shallow(cdrA, {
+    const wrapper = shallow(CdrA, {
       propsData: {
         modifier: 'primary',
       },
@@ -54,7 +54,7 @@ describe('cdrA.vue', () => {
   });
 
   it('computes link as button base class correctly', () => {
-    const wrapper = shallow(cdrA, {
+    const wrapper = shallow(CdrA, {
       propsData: {
         modifier: 'primary, button',
       },

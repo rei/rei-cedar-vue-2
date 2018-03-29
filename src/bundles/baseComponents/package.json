@@ -1,23 +1,25 @@
 {
   "name": "@rei/cdr-base-components",
   "version": "0.0.2",
-  "description": "REI Cedar Style Framework - Bundle for required base components",
-  "license": "ISC",
   "author": "REI Software Engineering",
+  "description": "REI Cedar Style Framework - Bundle for required base components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
+  },
+  "license": "ISC",
   "private": false,
-  "main": "dist/cdr-base-components.js",
-  "style": "dist/cdr-base-components.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "bundle": "baseComponents",
-    "tagName": "base-components"
-  },
-  "scripts": {
-    "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node ../../../build/build.js"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/cdr-base-components.js",
+  "style": "dist/cdr-base-components.css",
+  "scripts": {
+    "prepublishOnly": "npm run build && pkg-ok",
+    "build": "node build/build.js"
   },
   "dependencies": {
     "@rei/cdr-a": "^0.0.1",

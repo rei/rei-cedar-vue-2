@@ -1,28 +1,28 @@
 {
   "name": "@rei/cdr-button",
   "version": "0.0.3",
+  "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Button",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-button",
-  "license": "ISC",
-  "author": "REI Software Engineering",
-  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/rei/rei-cedar.git"
   },
-  "main": "dist/cdr-button.js",
-  "style": "dist/cdr-button.css",
+  "license": "ISC",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist"
   ],
+  "main": "dist/cdr-button.js",
+  "style": "dist/cdr-button.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "npm run build:theme && npm run build:component",
     "build:component": "node build/build.js",
     "build:theme": "node ../../../utils/extractTheme.js"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "peerDependencies": {
     "@rei/cdr-a": "^0.0.1",

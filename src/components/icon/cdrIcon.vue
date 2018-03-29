@@ -101,6 +101,6 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/cdrIcon.vars.pcss';
-  @import './styles/cdrIcon.pcss';
+  @import './styles/vars/CdrIcon.vars.pcss';
+  @import './styles/CdrIcon.pcss';
 </style>

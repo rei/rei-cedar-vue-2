@@ -1,10 +1,10 @@
 import { shallow } from '@vue/test-utils';
-import selectComp from 'componentsdir/select/cdrSelect';
+import CdrSelect from 'componentsdir/select/CdrSelect';
 import { toArray } from 'lodash';
 
 describe('cdrSelect.vue', () => {
   it('renders a label element', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'Label Test',
       },
@@ -13,7 +13,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders label correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'Label Test',
       },
@@ -22,7 +22,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders required label correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'Label Test',
         required: true,
@@ -32,7 +32,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('hide-label sets aria-label correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         hideLabel: true,
@@ -42,7 +42,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('maps select id to label for correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'testing',
         id: 'test',
@@ -52,7 +52,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('generates an id correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'testing',
       },
@@ -61,7 +61,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders a select element', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'Label Test',
       },
@@ -70,7 +70,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select name attribute correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'Label Test',
       },
@@ -82,7 +82,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select disabled attribute correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
       },
@@ -94,7 +94,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select required attribute correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         required: true,
@@ -104,7 +104,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select autofocus attribute correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
       },
@@ -116,7 +116,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select size attribute correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         size: '4',
@@ -126,7 +126,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select multiple attribute correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'Label Test',
         multiple: true,
@@ -136,7 +136,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders prompt value correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         prompt: 'test prompt'
@@ -148,7 +148,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders select value correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         options: ['1', '2'],
@@ -159,7 +159,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders multiple select values correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         multiple: true,
@@ -173,7 +173,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders select value from object def correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         value: '1',
@@ -191,7 +191,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders multiple select values from object def correctly', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         multiple: true,
@@ -216,7 +216,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('emits input event with correct value', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         value: '2',
@@ -230,7 +230,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('emits input event with correct value for multiple', () => {
-    const wrapper = shallow(selectComp, {
+    const wrapper = shallow(CdrSelect, {
       propsData: {
         label: 'test',
         multiple: true,

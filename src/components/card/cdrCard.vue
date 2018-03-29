@@ -27,6 +27,6 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/cdrCard.vars.pcss';
-  @import './styles/cdrCard.pcss';
+  @import './styles/vars/CdrCard.vars.pcss';
+  @import './styles/CdrCard.pcss';
 </style>

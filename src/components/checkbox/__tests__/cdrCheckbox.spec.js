@@ -1,25 +1,25 @@
 import { shallow } from '@vue/test-utils';
-import cdrCheckbox from 'componentsdir/checkbox/cdrCheckbox';
+import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
 
 
-describe('cdrCheckbox.vue', () => {
+describe('CdrCheckbox.vue', () => {
   it('renders an input', () => {
-    const wrapper = shallow(cdrCheckbox);
+    const wrapper = shallow(CdrCheckbox);
     expect(wrapper.vm.$refs.checkbox.tagName).toBe('INPUT');
   });
 
   it('is type checkbox', () => {
-    const wrapper = shallow(cdrCheckbox);
+    const wrapper = shallow(CdrCheckbox);
     expect(wrapper.vm.$refs.checkbox.hasAttribute('type', 'checkbox')).toBe(true);
   });
 
   it('renders a label element', () => {
-    const wrapper = shallow(cdrCheckbox);
+    const wrapper = shallow(CdrCheckbox);
     expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
   });
 
   it('renders label text correctly', () => {
-    const wrapper = shallow(cdrCheckbox, {
+    const wrapper = shallow(CdrCheckbox, {
       slots: {
         default: `<span>Label Test</span>`,
       },
@@ -28,7 +28,7 @@ describe('cdrCheckbox.vue', () => {
   });
   
   it('adds a custom label class correctly', () => {
-    const wrapper = shallow(cdrCheckbox, {
+    const wrapper = shallow(CdrCheckbox, {
       propsData: {
         labelClass: 'custom-label-class',
       },
@@ -40,7 +40,7 @@ describe('cdrCheckbox.vue', () => {
   });
 
   it('maps input id to label for correctly', () => {
-    const wrapper = shallow(cdrCheckbox, {
+    const wrapper = shallow(CdrCheckbox, {
       propsData: {
         id: 'test',
       },
@@ -49,12 +49,12 @@ describe('cdrCheckbox.vue', () => {
   });
 
   it('generates an id correctly', () => {
-    const wrapper = shallow(cdrCheckbox);
+    const wrapper = shallow(CdrCheckbox);
     expect(wrapper.vm.$refs.checkbox.id).toBe(wrapper.vm._uid.toString());
   });
 
   it('watches values correctly', () => {
-    const wrapper = shallow(cdrCheckbox, {
+    const wrapper = shallow(CdrCheckbox, {
       propsData: {
         value: false,
       },
@@ -65,7 +65,7 @@ describe('cdrCheckbox.vue', () => {
   });
 
   it('emits change events with correct values for default checkbox', () => {
-    const wrapper = shallow(cdrCheckbox, {
+    const wrapper = shallow(CdrCheckbox, {
       propsData: {
         value: false,
       },
@@ -78,7 +78,7 @@ describe('cdrCheckbox.vue', () => {
   });
   
   it('emits change events with correct values for custom checkbox', () => {
-    const wrapper = shallow(cdrCheckbox, {
+    const wrapper = shallow(CdrCheckbox, {
       propsData: {
         trueValue: 'checked',
         falseValue: 'unchecked',
@@ -94,7 +94,7 @@ describe('cdrCheckbox.vue', () => {
   });
 
   it('emits change events with correct values for group checkbox', () => {
-    const wrapper = shallow(cdrCheckbox, {
+    const wrapper = shallow(CdrCheckbox, {
       propsData: {
         customValue: 'b',
         value: ['a'],

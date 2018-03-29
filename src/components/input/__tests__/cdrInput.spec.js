@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import inputComp from 'componentsdir/input/cdrInput';
+import CdrInput from 'componentsdir/input/CdrInput';
 
 function validateFn(inputText) {
   const obj = {};
@@ -18,9 +18,9 @@ function validateFn(inputText) {
   return obj;
 }
 
-describe('cdrInput.vue', () => {
+describe('CdrInput.vue', () => {
   it('renders a label element', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'Label Test',
       },
@@ -29,7 +29,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('renders label correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'Label Test',
       },
@@ -38,7 +38,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('renders required label correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'Label Test',
         required: true,
@@ -48,7 +48,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('maps input id to label for correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'testing',
         id: 'test',
@@ -58,7 +58,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('generates an id correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'testing',
       },
@@ -67,7 +67,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('renders an input element', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'Label Test',
       },
@@ -76,7 +76,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets input name attribute correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'Label Test',
       },
@@ -88,7 +88,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('renders input value correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         value: 'testing',
@@ -98,7 +98,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets input disabled attribute correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         disabled: true,
@@ -108,7 +108,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets input readonly attribute correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -120,7 +120,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets input required attribute correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         required: true,
@@ -130,7 +130,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets input autofocus attribute correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -142,7 +142,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets input maxlength attribute correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -154,7 +154,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets input placeholder correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -166,7 +166,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets multiline to textarea correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         multiLine: true,
@@ -176,7 +176,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets multiline rows correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         multiLine: true,
@@ -189,7 +189,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets default input type correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -198,7 +198,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('overrides input type correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         type: 'url',
@@ -208,7 +208,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('hide-label sets aria-label correctly', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         hideLabel: true,
@@ -218,7 +218,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('debounce 0 when not defined', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -227,7 +227,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets default debounce', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         debounce: true,
@@ -237,7 +237,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('sets override debounce', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         debounce: 1000,
@@ -247,7 +247,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('auto generates an id', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -256,7 +256,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('validates errors', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -271,7 +271,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('renders error messages correctly', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -286,7 +286,7 @@ describe('cdrInput.vue', () => {
   });
   
   it('sets a11y for error messages correctly', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -301,7 +301,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('validates warnings', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -316,7 +316,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('renders warning messages correctly', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -331,7 +331,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('validates successfully', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -346,7 +346,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('validates pattern successfully', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         pattern: '[a-zA-Z0-9]+',
@@ -361,7 +361,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('errors on pattern correctly', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         pattern: '[a-zA-Z0-9]+',
@@ -376,7 +376,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('displays pattern errors correctly', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         pattern: '[a-zA-Z0-9]+',
@@ -392,7 +392,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('emits an input event with correct value', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -403,7 +403,7 @@ describe('cdrInput.vue', () => {
   });
   
   it('emits a blur event with correct value', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -413,7 +413,7 @@ describe('cdrInput.vue', () => {
   });
   
   it('emits a focus event with correct value', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -423,7 +423,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('emits a paste event with correct value', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -433,7 +433,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('default validation when required works', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         required: true,
@@ -456,7 +456,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('renders feedback', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
         feedback: true,
@@ -467,7 +467,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('returns an icon for error', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -477,7 +477,7 @@ describe('cdrInput.vue', () => {
   });
   
   it('returns an icon for warn', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -487,7 +487,7 @@ describe('cdrInput.vue', () => {
   });
   
   it('returns an icon for valid', () => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -497,7 +497,7 @@ describe('cdrInput.vue', () => {
   });
 
   it('immediately validates', (done) => {
-    const wrapper = shallow(inputComp, {
+    const wrapper = shallow(CdrInput, {
       propsData: {
         label: '',
         required: true,

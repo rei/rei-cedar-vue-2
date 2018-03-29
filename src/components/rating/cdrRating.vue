@@ -103,6 +103,6 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/cdrRating.vars.pcss';
-  @import './styles/cdrRating.pcss';
+  @import './styles/vars/CdrRating.vars.pcss';
+  @import './styles/CdrRating.pcss';
 </style>

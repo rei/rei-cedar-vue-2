@@ -25,17 +25,17 @@ const config = {
  * 
  * @param {String} dir -- cwd of component
  * @param {String} name -- component name (kebab-case)
- * @param {Object} opts -- webpack config
+ * @param {Object} sharedOpts -- webpack config options for BOTH plugin/main
+ * @param {Object} compOpts -- webpack config options for main
+ * @param {Object} pluginOpts -- webpack config options for plugin
+ * 
+ * Returns array. Multiple webpack configs.
  */
-function createWebpackConfig(dir, name, opts) {
+function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
   const pascalName = _.upperFirst(_.camelCase(name));
 
-  // COMPONENT WEBPACK CONFIG
-  const compConfig = merge(baseConfig, {
-    entry: {
-      [`${name}`]: `${dir}/build/main.js`,
-      plugin: `${dir}/build/plugin.js`
-    },
+  // SHARED WEBPACK CONFIG
+  let sharedConfig = merge(baseConfig, {
     output: {
       path: `${dir}/${config.outDir}`,
       filename: '[name].js',
@@ -63,8 +63,25 @@ function createWebpackConfig(dir, name, opts) {
       })
     ]
   });
+  sharedConfig = merge(sharedConfig, sharedOpts);
 
-  return merge(compConfig, opts);
+  // COMPONENT CONFIG
+  let compConfig = merge(sharedConfig, {
+    entry: {
+      [`${name}`]: `${dir}/build/main.js`,
+    },
+  });
+  compConfig = merge(compConfig, compOpts);
+
+  // PLUGIN CONFIG
+  let pluginConfig = merge(sharedConfig, {
+    entry: {
+      plugin: `${dir}/build/plugin.js`
+    },
+  });
+  pluginConfig = merge(pluginConfig, pluginOpts);
+
+  return [compConfig, pluginConfig];
 }
 
 
@@ -73,7 +90,7 @@ function createWebpackConfig(dir, name, opts) {
  * @param {Object} info -- package.json
  * @param {Object} opts -- webpack config that will be merged in createWebpackConfig()
  */
-function build(info, opts={}) {
+function build(info, sharedOpts={}, compOpts={}, pluginOpts={}) {
   const dir = process.cwd();
   const [org, name] = info.name.split('/');
   const outputPath = `${dir}/${config.outDir}`;
@@ -84,15 +101,17 @@ function build(info, opts={}) {
     outputPath,
     (err) => {
       if (err) throw err;
-      webpack(createWebpackConfig(dir, name, opts), (err2, stats) => {
+      webpack(createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts), (err2, stats) => {
         if (err2) throw err2;
-        process.stdout.write(`${stats.toString({
-          colors: true,
-          modules: false,
-          children: false,
-          chunks: false,
-          chunkModules: false,
-        })}\n\n`);
+        stats.stats.forEach(stat => {
+          process.stdout.write(`${stat.toString({
+            colors: true,
+            modules: false,
+            children: false,
+            chunks: false,
+            chunkModules: false,
+          })}\n\n`);
+        })
         console.log(chalk.cyan(`Build of ${name} complete.\n`));
       });
     }

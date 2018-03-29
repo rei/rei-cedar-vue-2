@@ -1821,13 +1821,13 @@
 </template>
 
 <script>
-import cdrRow from 'componentsdir/row/cdrRow';
-import cdrCol from 'componentsdir/column/cdrCol';
+import CdrRow from 'componentsdir/row/CdrRow';
+import CdrCol from 'componentsdir/column/CdrCol';
 import complex from './demo/Complex';
 
 export default {
   name: 'Grid',
-  components: { cdrRow, cdrCol, complex },
+  components: { CdrRow, CdrCol, complex },
 };
 </script>
 

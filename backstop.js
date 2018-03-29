@@ -28,13 +28,6 @@ function splitScenario(def, type = '', selectorsArr, extraOptions = {}) {
   });
 }
 
-// leaving this here for testing
-// const files = glob.sync(
-//   // './src/**/*[!{cdr}].backstop.js',
-//   './src/**/testing.backstop.js',
-//   { ignore: './src/**/node_modules/**' },
-// );
-
 // get backstop definition files and concat the contents
 const files = glob.sync('./src/**/*.backstop.js', { ignore: ['./src/**/node_modules/**'] });
 

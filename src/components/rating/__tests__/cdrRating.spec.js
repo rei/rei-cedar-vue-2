@@ -1,9 +1,9 @@
 import { shallow } from '@vue/test-utils';
-import cdrRating from 'componentsdir/rating/cdrRating';
+import CdrRating from 'componentsdir/rating/CdrRating';
 
-describe('cdrRating.vue', () => {
+describe('CdrRating.vue', () => {
   it('computes and rounds rating stars correctly', () => {
-    const wrapper = shallow(cdrRating, {
+    const wrapper = shallow(CdrRating, {
       propsData: {
         rating: 3.4441231,
         count: 1,

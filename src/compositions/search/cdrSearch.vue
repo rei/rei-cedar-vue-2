@@ -92,6 +92,6 @@ export default {
 
 <style>
 @import 'cssdir/settings/_index.pcss';
-@import './styles/vars/cdrSearch.vars.pcss';
-@import './styles/cdrSearch.pcss';
+@import './styles/vars/CdrSearch.vars.pcss';
+@import './styles/CdrSearch.pcss';
 </style>

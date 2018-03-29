@@ -172,5 +172,5 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/cdrMediaObject.pcss';
+  @import './styles/CdrMediaObject.pcss';
 </style>

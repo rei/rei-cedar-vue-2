@@ -1,4 +1,4 @@
-import CdrA from '../cdrA';
+import CdrA from '../CdrA';
 
 function install(Vue) {
   Vue.component('cdr-a', CdrA);

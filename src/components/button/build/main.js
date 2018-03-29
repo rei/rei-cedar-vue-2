@@ -1,1 +1,1 @@
-export { default as CdrButton } from '../cdrButton'; // eslint-disable-line import/prefer-default-export
+export { default as CdrButton } from '../CdrButton'; // eslint-disable-line import/prefer-default-export

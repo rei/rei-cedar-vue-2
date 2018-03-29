@@ -1,33 +1,33 @@
-import cdrA from 'componentsdir/anchor/cdrA';
-import cdrButton from 'componentsdir/button/cdrButton';
-import cdrCard from 'componentsdir/card/cdrCard';
-import cdrCheckbox from 'componentsdir/checkbox/cdrCheckbox';
-import cdrCol from 'componentsdir/column/cdrCol';
-import cdrIcon from 'componentsdir/icon/cdrIcon';
-import cdrImg from 'componentsdir/image/cdrImg';
-import cdrInput from 'componentsdir/input/cdrInput';
-import cdrList from 'componentsdir/list/cdrList';
-import cdrMediaObject from 'componentsdir/mediaObject/cdrMediaObject';
-import cdrRadio from 'componentsdir/radio/cdrRadio';
-import cdrRating from 'componentsdir/rating/cdrRating';
-import cdrRow from 'componentsdir/row/cdrRow';
-import cdrSelect from 'componentsdir/select/cdrSelect';
-import cdrText from 'componentsdir/text/CdrText';
+import CdrA from 'componentsdir/anchor/CdrA';
+import CdrButton from 'componentsdir/button/CdrButton';
+import CdrCard from 'componentsdir/card/CdrCard';
+import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
+import CdrCol from 'componentsdir/column/CdrCol';
+import CdrIcon from 'componentsdir/icon/CdrIcon';
+import CdrImg from 'componentsdir/image/CdrImg';
+import CdrInput from 'componentsdir/input/CdrInput';
+import CdrList from 'componentsdir/list/CdrList';
+import CdrMediaObject from 'componentsdir/mediaObject/CdrMediaObject';
+import CdrRadio from 'componentsdir/radio/CdrRadio';
+import CdrRating from 'componentsdir/rating/CdrRating';
+import CdrRow from 'componentsdir/row/CdrRow';
+import CdrSelect from 'componentsdir/select/CdrSelect';
+import CdrText from 'componentsdir/text/CdrText';
 
 export default {
-  cdrA,
-  cdrButton,
-  cdrCard,
-  cdrCheckbox,
-  cdrCol,
-  cdrIcon,
-  cdrImg,
-  cdrInput,
-  cdrList,
-  cdrMediaObject,
-  cdrRadio,
-  cdrRating,
-  cdrRow,
-  cdrSelect,
-  cdrText,
+  CdrA,
+  CdrButton,
+  CdrCard,
+  CdrCheckbox,
+  CdrCol,
+  CdrIcon,
+  CdrImg,
+  CdrInput,
+  CdrList,
+  CdrMediaObject,
+  CdrRadio,
+  CdrRating,
+  CdrRow,
+  CdrSelect,
+  CdrText,
 };

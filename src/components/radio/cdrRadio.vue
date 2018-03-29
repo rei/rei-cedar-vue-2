@@ -84,6 +84,6 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/cdrRadio.vars.pcss';
-  @import './styles/cdrRadio.pcss';
+  @import './styles/vars/CdrRadio.vars.pcss';
+  @import './styles/CdrRadio.pcss';
 </style>

@@ -1,9 +1,9 @@
 import { shallow } from '@vue/test-utils';
-import cdrMediaObject from 'componentsdir/mediaObject/cdrMediaObject';
+import CdrMediaObject from 'componentsdir/mediaObject/CdrMediaObject';
 
-describe('cdrMediaObject.vue', () => {
+describe('CdrMediaObject.vue', () => {
   it('adds media align class', () => {
-    const wrapper = shallow(cdrMediaObject, {
+    const wrapper = shallow(CdrMediaObject, {
       propsData: {
         mediaAlign: 'right',
         imgSrc: '',
@@ -13,7 +13,7 @@ describe('cdrMediaObject.vue', () => {
   });
 
   it('defaults to no media align class', () => {
-    const wrapper = shallow(cdrMediaObject, {
+    const wrapper = shallow(CdrMediaObject, {
       propsData: {
         imgSrc: '',
       }

@@ -377,6 +377,6 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/cdrInput.vars.pcss';
-  @import './styles/cdrInput.pcss';
+  @import './styles/vars/CdrInput.vars.pcss';
+  @import './styles/CdrInput.pcss';
 </style>

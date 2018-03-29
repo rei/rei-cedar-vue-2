@@ -173,6 +173,6 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/cdrSelect.vars.pcss';
-  @import './styles/cdrSelect.pcss';
+  @import './styles/vars/CdrSelect.vars.pcss';
+  @import './styles/CdrSelect.pcss';
 </style>

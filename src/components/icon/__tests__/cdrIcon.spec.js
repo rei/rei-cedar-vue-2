@@ -1,9 +1,9 @@
 import { shallow } from '@vue/test-utils';
-import cdrIcon from 'componentsdir/icon/cdrIcon';
+import CdrIcon from 'componentsdir/icon/CdrIcon';
 
-describe('cdrIcon.vue', () => {
+describe('CdrIcon.vue', () => {
   it('renders a wrapping span', () => {
-    const wrapper = shallow(cdrIcon, {
+    const wrapper = shallow(CdrIcon, {
       propsData: {
         url: '',
       }
@@ -12,7 +12,7 @@ describe('cdrIcon.vue', () => {
   });
 
   it('renders an svg with url', () => {
-    const wrapper = shallow(cdrIcon, {
+    const wrapper = shallow(CdrIcon, {
       propsData: {
         url: '',
       }
@@ -21,7 +21,7 @@ describe('cdrIcon.vue', () => {
   });
 
   it('renders svg with name', () => {
-    const wrapper = shallow(cdrIcon, {
+    const wrapper = shallow(CdrIcon, {
       propsData: {
         name: 'test',
       }
@@ -30,7 +30,7 @@ describe('cdrIcon.vue', () => {
   });
 
   it('renders svg with raw', () => {
-    const wrapper = shallow(cdrIcon, {
+    const wrapper = shallow(CdrIcon, {
       propsData: {
         raw: '<svg><path></path></svg>',
       }

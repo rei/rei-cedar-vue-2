@@ -1,12 +1,12 @@
 import { shallow } from '@vue/test-utils';
-import cdrButton from 'componentsdir/button/cdrButton';
+import CdrButton from 'componentsdir/button/CdrButton';
 
 const clickHandler = jest.fn();
 
-describe('cdrButton.vue', () => {
+describe('CdrButton.vue', () => {
   // test for theme mixin
   it('sets theme correctly', () => {
-    const wrapper = shallow(cdrButton, {
+    const wrapper = shallow(CdrButton, {
       propsData: {
         theme: 'red'
       },
@@ -15,17 +15,17 @@ describe('cdrButton.vue', () => {
   });
 
   it('renders a button', () => {
-    const wrapper = shallow(cdrButton);
+    const wrapper = shallow(CdrButton);
     expect(wrapper.is('button')).toBe(true);
   });
 
   it('sets default type prop correctly', () => {
-    const wrapper = shallow(cdrButton);
+    const wrapper = shallow(CdrButton);
     expect(wrapper.attributes().type).toBe('button');
   });
 
   it('sets type attr correctly', () => {
-    const wrapper = shallow(cdrButton, {
+    const wrapper = shallow(CdrButton, {
       propsData: {
         type: 'reset',
       },
@@ -34,14 +34,14 @@ describe('cdrButton.vue', () => {
   });
 
   it('has default click', () => {
-    const wrapper = shallow(cdrButton);
+    const wrapper = shallow(CdrButton);
     const defaultFunc = wrapper.vm.$props.onClick();
     const result = defaultFunc();
     expect(result).toBe(null)
   });
 
   it('click function triggers correctly', () => {
-    const wrapper = shallow(cdrButton, {
+    const wrapper = shallow(CdrButton, {
       propsData: {
         onClick: clickHandler
       },
@@ -51,7 +51,7 @@ describe('cdrButton.vue', () => {
   });
 
     it('computes base class correctly', () => {
-    const wrapper = shallow(cdrButton, {
+    const wrapper = shallow(CdrButton, {
       propsData: {
         modifier: 'primary',
       },
@@ -60,7 +60,7 @@ describe('cdrButton.vue', () => {
   });
 
   it('computes button as link base class correctly', () => {
-    const wrapper = shallow(cdrButton, {
+    const wrapper = shallow(CdrButton, {
       propsData: {
         modifier: 'primary, link',
       },
