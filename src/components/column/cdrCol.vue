@@ -24,15 +24,15 @@
     class="cdr-row cdr-col"
     :class="columnClasses"
   >
-    <row
+    <cdr-row
       class="cdr-col"
       v-bind="$attrs"
     >
       <!-- @slot innerHTML inside of the column component -->
       <slot/>
-    </row>
+    </cdr-row>
   </li>
-  <row
+  <cdr-row
     v-else
     class="cdr-col"
     :class="columnClasses"
@@ -40,11 +40,11 @@
   >
     <!-- @slot innerHTML inside of the column component -->
     <slot/>
-  </row>
+  </cdr-row>
 </template>
 
 <script>
-import { CdrRow as Row } from '@rei/cdr-row';
+import { CdrRow } from '@rei/cdr-row';
 
 /**
  * Cedar 2 component for column
@@ -56,7 +56,7 @@ import { CdrRow as Row } from '@rei/cdr-row';
  */
 export default {
   name: 'CdrCol',
-  components: { Row },
+  components: { CdrRow },
   inject: {
     rowType: { default: 'normal' },
   },

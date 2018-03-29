@@ -88,7 +88,9 @@ function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
 /**
  * Component build function
  * @param {Object} info -- package.json
- * @param {Object} opts -- webpack config that will be merged in createWebpackConfig()
+ * @param {Object} sharedOpts -- webpack config for BOTH plugin/main that will be used in createWebpackConfig()
+ * @param {Object} compOpts -- webpack config for main that will be used in createWebpackConfig()
+ * @param {Object} pluginOpts -- webpack config for plugin that will be used in createWebpackConfig()
  */
 function build(info, sharedOpts={}, compOpts={}, pluginOpts={}) {
   const dir = process.cwd();
