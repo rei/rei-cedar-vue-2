@@ -96,9 +96,10 @@ __TODO:__ Notes about js, eslint
 
 __TODO:__ Notes about DDS, design tokens, integrations
 Tokens are stored in the REI-Cedar-tokens project, and new tokens will need to be created there. 
-REI-Cedar uses the THEO project for design tokens, when bringing in an update from the REI-Cedar-tokens project do the following: 
+REI-Cedar uses the THEO project for design tokens, when bringing in an update from the REI-Cedar-tokens project do the following:
+- update the package.json to the latest tag from the REI-Cedar-Tokens repo.
 - `npm i` to install the latest tag from REI-Cedar-tokens.
-- `npm run get-icons` fetch icons from Brand.ai and build an svg sprite of them.
+- `npm run theo` will run THEO in the REI-Cedar repo and convert the tokens to scss variables in `src/css/settings/tokens.pcss`.
 
 ## CSS
 
