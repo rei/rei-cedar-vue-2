@@ -8,10 +8,6 @@
       class="cpg-section"
       data-backstop="anchors"
     />
-    <blockquote-example
-      class="cpg-section"
-      data-backstop="blockquote"
-    />
     <buttons
       class="cpg-section"
       data-backstop="buttons"
@@ -47,6 +43,10 @@
     <radios
       class="cpg-section"
       data-backstop="radios"
+    />
+    <quote-example
+      class="cpg-section"
+      data-backstop="quote"
     />
     <ratings
       class="cpg-section"

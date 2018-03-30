@@ -1,5 +1,4 @@
 import cdrA from 'componentsdir/anchor/cdrA';
-import cdrBlockquote from 'componentsdir/blockquote/CdrBlockquote';
 import cdrButton from 'componentsdir/button/cdrButton';
 import cdrCard from 'componentsdir/card/cdrCard';
 import cdrCheckbox from 'componentsdir/checkbox/cdrCheckbox';
@@ -9,6 +8,7 @@ import cdrImg from 'componentsdir/image/cdrImg';
 import cdrInput from 'componentsdir/input/cdrInput';
 import cdrList from 'componentsdir/list/cdrList';
 import cdrMediaObject from 'componentsdir/mediaObject/cdrMediaObject';
+import cdrQuote from 'componentsdir/quote/CdrQuote';
 import cdrRadio from 'componentsdir/radio/cdrRadio';
 import cdrRating from 'componentsdir/rating/cdrRating';
 import cdrRow from 'componentsdir/row/cdrRow';
@@ -17,7 +17,6 @@ import cdrText from 'componentsdir/text/CdrText';
 
 export default {
   cdrA,
-  cdrBlockquote,
   cdrButton,
   cdrCard,
   cdrCheckbox,
@@ -27,6 +26,7 @@ export default {
   cdrInput,
   cdrList,
   cdrMediaObject,
+  cdrQuote,
   cdrRadio,
   cdrRating,
   cdrRow,

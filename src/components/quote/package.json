@@ -1,20 +1,20 @@
 {
-  "name": "@rei/cdr-blockquote",
-  "version": "0.0.1",
-  "description": "REI Cedar Style Framework - Vue Component for Blockquote",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-blockquote",
+  "name": "@rei/cdr-quote",
+  "version": "0.1.0",
+  "description": "REI Cedar Style Framework - Vue Component for quotes",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-quote",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
   "files": [
     "dist"
   ],
-  "main": "dist/cdr-blockquote.js",
-  "style": "dist/cdr-blockquote.css",
+  "main": "dist/cdr-quote.js",
+  "style": "dist/cdr-quote.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
-    "component": "blockquote",
-    "tagName": "blockquote"
+    "component": "quote",
+    "tagName": "quote"
   },
   "publishConfig": {
     "access": "public"
@@ -30,5 +30,8 @@
   "devDependencies": {
     "@rei/cdr-assets": "^0.0.2",
     "pkg-ok": "^2.1.0"
+  },
+  "dependencies": {
+    "@rei/cdr-text": "^0.2.0"
   }
 }

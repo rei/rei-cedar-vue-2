@@ -1,0 +1,56 @@
+/* ==========================================================================
+  # Cdrquote
+  
+  TOC:
+
+    :Base - Cdrquote
+========================================================================== */
+@import './spruceQuote.min.css';
+
+.cdr-quote {
+  &__summary {
+    font-size: 20px;
+    font-style: italic;
+    font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 28px;
+    letter-spacing: 0;
+    @media (--sm-mq) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    & + .cdr-text--citation {
+      display: block;
+      margin-top: $space-1-x;
+    }
+  }
+
+  &--block {
+    padding: $inset-1-x-squish;
+
+    .cdr-quote__summary {
+      font-weight: 400;
+    }
+  }
+
+  &--pull {
+    border-style: solid;
+    border-color: #222;
+
+    .cdr-quote__summary {
+      font-weight: 600;
+    }
+
+    @media (--xs-mq) {
+      border-width: 0 0 1px 0;
+      padding: $inset-1-x-stretch;
+      margin: 0 0 $space-1-x;
+    }
+
+    @media (--sm-mq) {
+      border-width: 0 0 0 1px;
+      padding: $space-half-x $space-1-x $space-half-x $space-2-x;
+      margin: $space-1-x 0;
+    }
+  }
+}

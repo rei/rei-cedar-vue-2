@@ -5,11 +5,11 @@
       class="cdr-caption__summary">
       {{ summary }}
     </p>
-    <p
+    <cite
       v-if="credit"
-      class="cdr-text--citation">
+      class="cdr-text cdr-text--citation">
       {{ credit }}
-    </p>
+    </cite>
   </div>
 </template>
 

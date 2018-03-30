@@ -1,4 +1,4 @@
 module.exports = [{
-  label: 'Blockquote',
+  label: 'quote',
   selectors: [],
 }];

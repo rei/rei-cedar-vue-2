@@ -1,7 +1,7 @@
-import CdrBlockquote from './CdrBlockquote';
+import CdrQuote from './CdrQuote';
 
 function install(Vue) {
-  Vue.component('cdr-blockquote', CdrBlockquote);
+  Vue.component('cdr-quote', CdrQuote);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -10,4 +10,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default install;
 
-export { CdrBlockquote };
+export { CdrQuote };
