@@ -10,11 +10,11 @@
       <cdr-quote
         tag="aside"
         modifier="pull"
-        :summary="`Aside Pullquote Summary: Nested in body paragraph.
+        summary="Aside Pullquote Summary: Nested in body paragraph.
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
       At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam
       ex aliquam. Temporibus, veritatis laudantium molestiae accusamus asperiores
-      odio fuga reiciendis blanditiis magni?`"
+      odio fuga reiciendis blanditiis magni?"
       />
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
       At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam
@@ -44,12 +44,12 @@
     <cdr-quote
       tag="aside"
       modifier="pull"
-      :summary="`Aside Pullquote Summary:
+      summary="Aside Pullquote Summary:
       Wrapped by to default paragraphs
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
       At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam
       ex aliquam. Temporibus, veritatis laudantium molestiae accusamus asperiores
-      odio fuga reiciendis blanditiis magni?`"
+      odio fuga reiciendis blanditiis magni?"
     />
     <cdr-text>
       Default paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit.
