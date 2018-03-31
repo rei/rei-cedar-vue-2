@@ -8,6 +8,8 @@
 @import './spruceQuote.min.css';
 
 .cdr-quote {
+  margin: 0;
+
   &__summary {
     font-size: 20px;
     font-style: italic;
@@ -21,12 +23,12 @@
 
     & + .cdr-text--citation {
       display: block;
-      margin-top: $space-1-x;
+      padding-top: $space-1-x;
     }
   }
 
   &--block {
-    padding: $inset-1-x-squish;
+    padding: $inset-1-x-stretch;
 
     .cdr-quote__summary {
       font-weight: 400;

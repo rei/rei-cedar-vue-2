@@ -8,6 +8,7 @@
       class="cdr-quote__summary">
       {{ summary }}
     </cdr-text>
+    <slot />
     <cdr-text
       tag="cite"
       v-if="citation"
