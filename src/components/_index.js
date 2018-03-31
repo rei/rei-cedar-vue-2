@@ -8,6 +8,7 @@ import cdrImg from 'componentsdir/image/cdrImg';
 import cdrInput from 'componentsdir/input/cdrInput';
 import cdrList from 'componentsdir/list/cdrList';
 import cdrMediaObject from 'componentsdir/mediaObject/cdrMediaObject';
+import cdrQuote from 'componentsdir/quote/CdrQuote';
 import cdrRadio from 'componentsdir/radio/cdrRadio';
 import cdrRating from 'componentsdir/rating/cdrRating';
 import cdrRow from 'componentsdir/row/cdrRow';
@@ -25,6 +26,7 @@ export default {
   cdrInput,
   cdrList,
   cdrMediaObject,
+  cdrQuote,
   cdrRadio,
   cdrRating,
   cdrRow,

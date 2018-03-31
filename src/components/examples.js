@@ -9,6 +9,7 @@ import inputs from 'componentsdir/input/examples/Inputs';
 import lists from 'componentsdir/list/examples/Lists';
 import mediaObject from 'componentsdir/mediaObject/examples/mediaObject';
 import mountains from 'directivesdir/mountain/examples/Mountains';
+import quoteExample from 'componentsdir/quote/examples/Quote';
 import radios from 'componentsdir/radio/examples/Radios';
 import ratings from 'componentsdir/rating/examples/Ratings';
 import selects from 'componentsdir/select/examples/Selects';
@@ -28,6 +29,7 @@ export default {
   lists,
   mediaObject,
   mountains,
+  quoteExample,
   radios,
   ratings,
   selects,

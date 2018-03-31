@@ -1,16 +1,20 @@
 {
-  "name": "@rei/cdr-text",
-  "version": "0.2.0",
-  "description": "REI Cedar Style Framework - Vue Component for Text",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-text",
+  "name": "@rei/cdr-quote",
+  "version": "0.1.0",
+  "description": "REI Cedar Style Framework - Vue Component for quotes",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-quote",
   "license": "ISC",
   "author": "REI Software Engineering",
   "private": false,
-  "main": "dist/cdr-text.js",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/cdr-quote.js",
+  "style": "dist/cdr-quote.css",
   "config": {
     "buildConfig": "webpack.dist.conf",
-    "component": "text",
-    "tagName": "text"
+    "component": "quote",
+    "tagName": "quote"
   },
   "publishConfig": {
     "access": "public"
@@ -26,5 +30,8 @@
   "devDependencies": {
     "@rei/cdr-assets": "^0.0.2",
     "pkg-ok": "^2.1.0"
+  },
+  "dependencies": {
+    "@rei/cdr-text": "^0.2.0"
   }
 }
