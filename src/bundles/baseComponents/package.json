@@ -29,6 +29,7 @@
     "@rei/cdr-img": "^0.0.1",
     "@rei/cdr-input": "^0.0.1",
     "@rei/cdr-list": "^0.0.1",
+    "@rei/cdr-quote": "^0.1.0",
     "@rei/cdr-radio": "^0.0.1",
     "@rei/cdr-rating": "^0.0.1",
     "@rei/cdr-row": "^0.0.1",
