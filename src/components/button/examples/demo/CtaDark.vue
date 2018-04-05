@@ -2,24 +2,24 @@
   <div>
     <div class="button-example">
       <cdr-button
-        modifier="cta sale"
-        data-backstop="cdr-button--cta-sale"
+        modifier="cta dark"
+        data-backstop="cdr-button--cta-dark"
         type="submit"
-      >CTA-sale</cdr-button>
+      >CTA-dark</cdr-button>
       <cdr-button
-        modifier="cta sale"
+        modifier="cta dark"
         disabled
-      >CTA-sale Disabled</cdr-button>
+      >CTA-dark Disabled</cdr-button>
     </div>
     <div class="button-example">
       <cdr-button
         type="submit"
-        modifier="sm cta sale"
-      >Small cta-sale</cdr-button>
+        modifier="sm cta dark"
+      >Small cta-dark</cdr-button>
       <cdr-button
         type="submit"
-        modifier="xs cta sale"
-      >Extra Small CTA-sale</cdr-button>
+        modifier="xs cta dark"
+      >Extra Small CTA-dark</cdr-button>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@
 import Components from 'componentsdir/_index';
 
 export default {
-  name: 'CtaSale',
+  name: 'CtaDark',
   components: Components,
 };
 </script>

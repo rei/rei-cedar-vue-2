@@ -18,49 +18,48 @@
 ========================================================================== */
 
 .cdr-button {
+  @include redwood-display-20;
+
   background-color: $button-background-color;
-  border-color: $button-border-color;
-  border-width: $button-border-width;
-  border-style: $button-border-style;
+  box-shadow: $button-box-shadow;
+  border: none;
   border-radius: $button-border-radius;
   color: $button-color;
   cursor: $button-cursor;
   display: $button-display;
-  font-family: $button-font-family;
-  font-size: $button-font-size;
-  font-style: $button-font-style;
-  font-weight: $button-font-weight;
-  line-height: $button-line-height;
   outline: $button-outline;
   padding: $button-padding;
   text-align: $button-text-align;
   text-decoration: $button-text-decoration;
   white-space: $button-white-space;
 
+  & > .cdr-icon {
+    display: inline;
+
+    & > svg {
+      fill: $button-color;
+    }
+  }
+
   /* States
     ---------- */
 
   &:hover,
   &:active {
+    background-color: $button-hover-background-color;
+    color: $button-hover-color;
+    box-shadow: $button-hover-box-shadow;
     text-decoration: $button-hover-text-decoration;
     outline: $button-hover-text-outline;
-    background-color: $button-hover-background-color;
-    border-color: $button-hover-border-color;
-    color: $button-hover-color;
-  }
 
-  &:focus {
-    outline: $button-focus-outline;
-    box-shadow: $button-focus-box-shadow;
-    border-color: $button-focus-border-color;
-    border-width: $button-focus-border-width;
-    border-style: $button-focus-border-style;
-    border-radius: $button-focus-border-radius;
+    & > .cdr-icon > svg {
+      fill: $button-hover-color;
+    }
   }
 
   &[disabled] {
     background-color: $button-disabled-background-color !important;
-    border-color: $button-disabled-border-color !important;
+    box-shadow: $button-disabled-box-shadow !important;
     color: $button-disabled-color !important;
     cursor: $button-disabled-cursor !important;
   }
@@ -73,8 +72,13 @@
 
   &--secondary {
     background-color: $button-secondary-background-color;
-    border-color: $button-secondary-border-color;
+    box-shadow: $button-secondary-box-shadow;
     color: $button-secondary-color;
+
+    & > .cdr-icon > svg {
+      fill: $button-secondary-background-color;
+    }
+   
 
     /* States
     ---------- */
@@ -82,53 +86,113 @@
     &:hover,
     &:active {
       background-color: $button-secondary-hover-background-color;
-      border-color: $button-secondary-hover-border-color;
+      box-shadow: $button-secondary-box-shadow;
       color: $button-secondary-hover-color;
     }
 
     &[disabled] {
       background-color: $button-secondary-disabled-background-color !important;
-      border-color: $button-secondary-disabled-border-color !important;
+      box-shadow: $button-secondary-disabled-box-shadow !important;
       color: $button-secondary-disabled-color !important;
     }
   }
 
-  &--cta-sale {
+  &--cta {
+    @include maple-utility-40;
+  }
+
+  &--brand {
+    background-color: $button-cta-brand-background-color;
+    box-shadow: $button-cta-brand-box-shadow;
+    color: $button-cta-brand-color;
+
+    &:hover,
+    &:active {
+      background-color: $button-cta-brand-hover-background-color;
+      box-shadow: $button-cta-brand-box-shadow;
+      color: $button-cta-brand-hover-color;
+    }
+  }
+
+  &--dark {
+    background-color: $button-cta-dark-background-color;
+    box-shadow: $button-cta-dark-box-shadow;
+    color: $button-cta-dark-color;
+
+    &:hover,
+    &:active {
+      background-color: $button-cta-dark-hover-background-color;
+      box-shadow: $button-cta-dark-box-shadow;
+      color: $button-cta-dark-hover-color;
+    }
+  }
+
+  &--light {
+    background-color: $button-cta-light-background-color;
+    box-shadow: $button-cta-light-box-shadow;
+    color: $button-cta-light-color;
+
+    &:hover,
+    &:active {
+      background-color: $button-cta-light-hover-background-color;
+      box-shadow: $button-cta-light-box-shadow;
+      color: $button-cta-light-hover-color;
+    }
+  }
+
+  &--sale {
     background-color: $button-cta-sale-background-color;
-    border-color: $button-cta-sale-border-color;
+    box-shadow: $button-cta-sale-box-shadow;
     color: $button-cta-sale-color;
 
     &:hover,
     &:active {
       background-color: $button-cta-sale-hover-background-color;
-      border-color: $button-cta-sale-hover-border-color;
+      box-shadow: $button-cta-sale-box-shadow;
+      color: $button-cta-sale-hover-color;
     }
   }
 
   /* Size variants
     ========================================================================== */
 
-  /* sm
+  /* md
     ========== */
+  @media (--md-mq) {
+    @include redwood-display-30;
 
-  &--sm {
-    font-family: $button-sm-font-family;
-    font-size: $button-sm-font-size;
-    font-style: $button-sm-font-style;
-    font-weight: $button-sm-font-weight;
-    line-height: $button-sm-line-height;
     padding: $button-sm-padding;
+
+    &--cta {
+      @include maple-utility-40;
+    }
   }
 
-  /* xs
+  /* lg
     ========== */
+  @media (--lg-mq) {
+    @include redwood-display-40;
+
+    padding: $button-lg-padding;
+
+    &--cta {
+      @include maple-utility-40;
+    }
+  }
 
   &--xs {
-    font-family: $button-xs-font-family;
-    font-size: $button-xs-font-size;
-    font-style: $button-xs-font-style;
-    font-weight: $button-xs-font-weight;
-    line-height: $button-xs-line-height;
-    padding: $button-xs-padding;
+    
+  }
+
+  &--sm {
+    
+  }
+
+  &--md {
+    
+  }
+
+  &--lg {
+    
   }
 }

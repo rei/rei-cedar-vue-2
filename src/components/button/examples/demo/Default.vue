@@ -5,7 +5,16 @@
         data-backstop="cdr-button"
         type="submit"
         :on-click="log"
-      >Default with click</cdr-button>
+      >
+        Default with click
+      </cdr-button>
+      <cdr-button>
+        <cdr-icon
+          url="/static/rei-icons.svg#cdr-check-lg"
+          modifier="sm"
+        />
+        Button with icon
+      </cdr-button>
       <cdr-button disabled>Default Disabled</cdr-button>
     </div>
     <div class="button-example">
@@ -50,5 +59,9 @@ export default {
 <style>
   .button-example {
     padding: 10px;
+  }
+
+  .button-icon-example > .cdr-icon {
+    fill: inherit;
   }
 </style>
