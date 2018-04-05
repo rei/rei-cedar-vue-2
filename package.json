@@ -26,6 +26,7 @@
     "vue:docs": "node build/vue-docs.js",
     "vue:archive": "node build/vue-docs-archive.js",
     "vue:transfer": "node build/vue-docs-transfer.js",
+    "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
     "changelog": "standard-changelog",
     "theo": "node utils/theo.js"
   },

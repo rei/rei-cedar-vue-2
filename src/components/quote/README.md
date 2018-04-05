@@ -1,3 +1,5 @@
+# <span class="display-name">CdrQuote</span>
+
 ### Markup Tag
 the Tag attribute of cdr-quote allows one of the following options:
 
@@ -5,7 +7,8 @@ the Tag attribute of cdr-quote allows one of the following options:
   * aside
   * q
   * div
-### Modifiers
+  
+### <span class="modifiers">Modifiers</span>
 Modifier values of cdr-quote:
 
   * block

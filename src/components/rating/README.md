@@ -1,6 +1,8 @@
+# <span class="display-name">CdrRating<span>
+
 Ratings are rounded to nearest .25 for displaying stars.
 
-### Modifiers
+### <span class="modifiers>Modifiers</span>
 
 Modifiers can be combined 1 from each grouping.
 
