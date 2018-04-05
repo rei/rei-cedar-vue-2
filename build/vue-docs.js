@@ -27,9 +27,11 @@ glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', 
     const vueObj = vueDocgen.parse(file)
     
     // Determine version of current raw vue component based on its associated package.json file
-    const currentDir = path.dirname(file)
+    const currentDir = path.resolve(__dirname, '..', `${path.dirname(file)}`) + path.sep
     let currentVer = ""
-    const pkgFilePath = path.resolve(__dirname,'..',`${currentDir + path.sep}package.json`)
+    const pkgFilePath = `${currentDir}package.json`
+    const readmeFilePath = `${currentDir}README.md`
+    const examplesFilePath = `${currentDir}EXAMPLES.md`
 
     fs.readJson(pkgFilePath, (pkgErr, pkgObj) => {
       if (pkgErr) {
@@ -42,7 +44,26 @@ glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', 
         throw new Error(`Vue component at ${path.basename(file)} doesn't have a valid semver on ${pkgFilePath} file`)
       }
 
-      const mdTemplate = createMarkdownTemplate(file, vueObj)
+      // Build the markdown template from README.md, EXAMPLES.md, and the JSON form of the Vue component files
+      let mdTemplate = ''
+      fs.readFile(readmeFilePath, 'utf8')
+      .then(data => { mdTemplate += data } )
+      .catch(err => { throw new Error(`There was an error reading ${readmeFilePath}:\n${err}`)} )
+
+      mdTemplate += createMarkdownTemplate(file, vueObj)
+
+      fs.readFile(examplesFilePath, 'utf8')
+      .then(data => { mdTemplate += data } )
+      .catch(err => { 
+        if (err) {
+          if (`${err}`.indexOf('ENOENT') > -1) {
+            console.log(`EXAMPLES.md doesn't exist for ${currentDir}`)
+          }
+          else {
+            throw new Error(err)
+          }
+        }
+      })
 
       const vueCompName = path.basename(file,'.vue')
       const vueCompDir = path.dirname(file)
@@ -50,7 +71,7 @@ glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', 
       let latestMdDoc = null, latestMdVer = '0.0.0'
       
       // pull in the markdown documentation files and their NPM versions
-      glob(`${vueCompDirvueCompName}*.md`, (mdFileErr, mdFiles) => {
+      glob(`${vueCompDir + path.sep + vueCompName}*.md`, (mdFileErr, mdFiles) => {
         if (mdFileErr) {
           throw new Error(`Error while trying to find markdown documentation files in directory ${vueCompDir}:\n${mdFileErr}`)
         }
@@ -118,12 +139,6 @@ function createMarkdownTemplate(file, vueObj) {
 
   let json2mdTemplate = [], mdTablesTemplate;
   
-  json2mdTemplate = json2mdTemplate.concat([
-    {h1: `<span class="display-name">${vueObj.displayName}</span>`},
-    {p: `<span class="file">${file}<span>`},
-    {p: `${vueObj.description}`}
-  ])
-
   mdTablesTemplate = buildTables(vueObj)
   
   if(mdTablesTemplate.length > 0) {
