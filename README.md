@@ -16,15 +16,19 @@ Clone the project.
 
 `npm install`
 
+`npm i -g lerna`
+
+Install Lerna globally. Lerna helps manage projects with multiple packages.
+
 ### Run
+
+`npm run start`
+
+Bootstraps all the seaparate component dependencies.
 
 `npm run dev`
 
 Runs locally for development. Has hot reloading, linting, and other nice things related to development.
-
-`npm run build`
-
-Creates an exported bundle (index.html, compiled .js, and compiled .css) that reflects the state of dev to the `dist/` directory for something like gh-pages.
 
 ## Build System
 
