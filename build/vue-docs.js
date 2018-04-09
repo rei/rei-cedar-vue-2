@@ -16,123 +16,158 @@ json2md.converters.anchor = (anchor, json) => {
 };
 
 // pull in *.vue files from directory
-glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**', '**/demos/**', '**/Utilities/**']}, (compErr, files) => {
-  if(compErr) {
-    throw new Error(`Error while trying to find single file Vue components:\n${compErr}`)
-  }
+glob('src/+(components|compositions)/**/*.vue', {ignore: ['**/node_modules/**', '**/examples/**', '**/demos/**', '**/Utilities/**']},
+  (compErr, files) => {
+    if(compErr) {
+      throw new Error(`Error while trying to find single file Vue components:\n${compErr}`)
+    }
 
-  // convert *.vue files into JSON objects then convert to *.md files
-  files.forEach((file) => {
-    console.log(`Processing file: ${file}\n`)
-    const vueObj = vueDocgen.parse(file)
-    
-    // Determine version of current raw vue component based on its associated package.json file
-    const currentDir = path.resolve(__dirname, '..', `${path.dirname(file)}`) + path.sep
-    let currentVer = ""
-    const pkgFilePath = `${currentDir}package.json`
-    const readmeFilePath = `${currentDir}README.md`
-    const examplesFilePath = `${currentDir}EXAMPLES.md`
-
-    fs.readJson(pkgFilePath, (pkgErr, pkgObj) => {
-      if (pkgErr) {
-        throw new Error(`Can't find package.json file for ${path.basename(file)}:\n${pkgErr}`)
-      }
-    
-      currentVer = pkgObj[`version`]
-    
-      if (!semver.valid(currentVer)) {
-        throw new Error(`Vue component at ${path.basename(file)} doesn't have a valid semver on ${pkgFilePath} file`)
-      }
-
-      // Build the markdown template from README.md, EXAMPLES.md, and the JSON form of the Vue component files
+    // convert *.vue files into JSON objects then convert to *.md files
+    files.forEach((file) => {
+      console.log(`Processing file: ${file}\n`)
+      const vueObj = vueDocgen.parse(file)
+      
+      // Determine version of current raw vue component based on its associated package.json file
+      const currentDir = path.resolve(__dirname, '..', `${path.dirname(file)}`) + path.sep
+      const pkgFilePath = `${currentDir}package.json`
+      const readmeFilePath = `${currentDir}README.md`
+      const examplesFilePath = `${currentDir}EXAMPLES.md`
+      let currentVer = ''
       let mdTemplate = ''
-      fs.readFile(readmeFilePath, 'utf8')
-      .then(data => { mdTemplate += data } )
-      .catch(err => { throw new Error(`There was an error reading ${readmeFilePath}:\n${err}`)} )
 
-      mdTemplate += createMarkdownTemplate(file, vueObj)
+      // read in package.json file to get semver version
+      const pkgProm = fs.readJson(pkgFilePath)
+        .then( pkgObj => {
+          currentVer = pkgObj[`version`]
+        
+          // make sure package.json version is semver valid
+          if (!semver.valid(currentVer)) {
+            Promise.reject(new Error(`Vue component at ${path.basename(file)} doesn't have a valid semver on ${pkgFilePath} file\n`))
+          }
+        })
+        .catch( prkError => { 
+          console.log(`${pkgError}`)
+          process.exit(1)
+        })
 
-      fs.readFile(examplesFilePath, 'utf8')
-      .then(data => { mdTemplate += data } )
-      .catch(err => { 
-        if (err) {
-          if (`${err}`.indexOf('ENOENT') > -1) {
+      // read in README markdown file
+      const readmeProm = pkgProm.then(() => { return fs.readFile(readmeFilePath, 'utf8')} )
+        .then( readmeData => {
+          mdTemplate += readmeData 
+        })
+        .catch( readmeErr => { 
+          console.log(`There was an error reading README markdown file ${readmeFilePath}:\n${readmeErr}`)
+          process.exit(1)
+        })
+        
+      // create markdown tables for component properties, events, methods, and slots
+      const tblProm = readmeProm
+        .then(() => {
+          return new Promise((resolve, reject) => { resolve(createMarkdownTemplate(file, vueObj)) }) 
+        })
+        .then( tmplTblData => { mdTemplate += tmplTblData })
+
+      // read in EXAMPLES markdown file
+      const exampleProm = tblProm
+        .then(() => { return fs.readFile(examplesFilePath, 'utf8')} )
+        .then( examplesData => { mdTemplate += examplesData })
+        .catch( examplesErr => {
+          if (`${examplesErr}`.indexOf('ENOENT') > -1) {
             console.log(`EXAMPLES.md doesn't exist for ${currentDir}`)
           }
           else {
-            throw new Error(err)
-          }
-        }
-      })
-
-      const vueCompName = path.basename(file,'.vue')
-      const vueCompDir = path.dirname(file)
-
-      let latestMdDoc = null, latestMdVer = '0.0.0'
-      
-      // pull in the markdown documentation files and their NPM versions
-      glob(`${vueCompDir + path.sep + vueCompName}*.md`, (mdFileErr, mdFiles) => {
-        if (mdFileErr) {
-          throw new Error(`Error while trying to find markdown documentation files in directory ${vueCompDir}:\n${mdFileErr}`)
-        }
-
-        // no markdown documentation file exists yet, create one
-        if (mdFiles.length == 0) {
-          fs.outputFile(`${vueCompDir + path.sep + vueCompName}-${currentVer}.md`, mdTemplate)
-          .then(() => console.log(`No existing markdown file for ${vueCompName}. Creating one at ${vueCompDir + path.sep + vueCompName}-${currentVer}.md`))
-          .catch((createErr) => {
-            if (createErr)
-              throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + path.sep + vueCompName}-${currentVer}.md:\n${createErr}`)
-          })
-        }
-        else {
-          // find the most recent markdown documentation file based on NPM version
-          mdFiles.forEach((mdFile) => {
-            const starMdVer = mdFile.lastIndexOf(`${vueCompName}-`) + vueCompName.length + 1, endMdVer = mdFile.lastIndexOf('.')
-            const mdFileVer = mdFile.slice(starMdVer, endMdVer)
-
-            if (semver.valid(mdFileVer) && semver.lt(latestMdVer, mdFileVer)) {
-              latestMdVer = mdFileVer
-              latestMdDoc = mdFile
-            }
-          })
-          console.log(`Latest markdown documentation version for ${vueCompName}: ${latestMdVer}`)
-
-          // overwrite most recent markdown documentation if the update is a patch
-          if (semver.eq(latestMdVer, currentVer) || semverDiff(latestMdVer, currentVer) === 'patch') {
-            fs.remove(latestMdDoc)
-            .then(() => fs.outputFile(`${vueCompDir + path.sep + vueCompName}-${currentVer}.md`, mdTemplate))
-            .then(() => console.log(`Overwrote documentation for ${vueCompName}. ${(semver.lt(latestMdVer, currentVer)) ? `Updated to version ${currentVer} from ${latestMdVer}` : ''}`))
-            .catch((createErr) => {
-              if (createErr) {
-                throw new Error(`Error while trying to replace markdown documentation file ${latestMdDoc} with ${vueCompDir + path.sep + vueCompName}-${currentVer}.md:\n${createErr}`)                
-              }
-            })
-          }
-          // archive the previous markdown documentation if the update is a major or minor change
-          else if (semverDiff(latestMdVer, currentVer) === 'major' || semverDiff(latestMdVer, currentVer) === 'minor') {
-            fs.outputFile(`${vueCompDir + path.sep + vueCompName}-${currentVer}.md`, mdTemplate)
-            .then(() => console.log(`Archived markdown file for ${vueCompName}, version ${latestMdVer}. Updated to version ${currentVer}`))
-            .catch((createErr) => {
-              if (createErr) {
-                throw new Error(`Error while trying to create markdown documentation file ${vueCompDir + path.sep + vueCompName}-${currentVer}.md:\n${createErr}`)
-              }
-            })
-          }
-        }
-
-        // In all cases create the proper <component name>.md file for most recent version
-        fs.outputFile(`${vueCompDir + path.sep + vueCompName}.md`, mdTemplate)
-        .then(() => console.log(`Successfully created ${vueCompName}.md`))
-        .catch((createErr) => {
-          if(createErr) {
-            throw new Error(`Error while creating ${vueCompDir + path.sep + vueCompName}.md:\n${createErr}`)
+            console.log(`${examplesErr}`)
+            process.exit(1)
           }
         })
+
+      exampleProm.then(() => {
+        const vueCompName = path.basename(file,'.vue')
+        const vueCompDir = path.dirname(file)
+        const vueCompFilePath = vueCompDir + path.sep + vueCompName
+        const BASE_VERSION = '0.0.0'
+        let latestMdDoc = null, latestMdVer = BASE_VERSION
+
+        // pull in the current markdown documentation files and their archived NPM versions
+        glob(`${vueCompFilePath}*.md`, (mdFileErr, mdFiles) => {
+          if (mdFileErr) {
+            throw new Error(`Error while trying to find markdown documentation files in directory ${vueCompDir}:\n${mdFileErr}`)
+          }
+
+          // no archived markdown documentation file exists yet, create the first one
+          if (mdFiles.length == 0) {
+            fs.outputFile(`${vueCompFilePath}-${currentVer}.md`, mdTemplate)
+            .then(() => console.log(`No existing markdown file for ${vueCompName}. Creating one at ${vueCompFilePath}-${currentVer}.md`))
+            .catch((createErr) => {
+              console.log(`Error while trying to create markdown documentation file ${vueCompFilePath}-${currentVer}.md:\n${createErr}`)
+              process.exit(1)
+            })
+          }
+          else {
+            // find the most recent archived markdown documentation file based on NPM version
+            // only look at <component name>-1.2.3.md files, not <component name>.md files
+            mdFiles.forEach((mdFile) => {
+              // find the semver version in the markdown file name, if it exists
+              let startMdVer = mdFile.lastIndexOf(`${vueCompName}-`)
+              let endMdVer = -1
+              let mdFileVer = ''
+              if (startMdVer > -1 ) {
+                startMdVer += vueCompName.length + 1
+                endMdVer = mdFile.lastIndexOf('.')
+                mdFileVer = mdFile.slice(startMdVer, endMdVer)
+              }
+
+              // ensure `mdFileVer` is semver valid and test if it's a later version than current
+              // standing "latest version"
+              if (startMdVer > -1 && startMdVer < endMdVer && semver.valid(mdFileVer) && semver.lt(latestMdVer, mdFileVer)) {
+                latestMdVer = mdFileVer
+                latestMdDoc = mdFile
+              }
+            })
+
+            if( latestMdVer !== BASE_VERSION) {
+              console.log(`Latest markdown documentation version for ${vueCompName}: ${latestMdVer}`)
+            }
+  
+            // overwrite most recent archived markdown documentation if the update is a patch
+            // check to ensure `latestMdDoc` is a valid file and not null
+            if (latestMdDoc != null && (semver.eq(latestMdVer, currentVer) || semverDiff(latestMdVer, currentVer) === 'patch')) {
+              fs.remove(latestMdDoc)
+              .then(() => { return fs.outputFile(`${vueCompFilePath}-${currentVer}.md`, mdTemplate) })
+              .then(() => console.log(`Overwrote documentation for ${vueCompName}. ${(semver.lt(latestMdVer, currentVer)) ? `Updated to version ${currentVer} from ${latestMdVer}` : ''}`))
+              .catch((createErr) => {
+                console.log(`Error while trying to replace markdown documentation file ${latestMdDoc} with ${vueCompFilePath}-${currentVer}.md:\n${createErr}`)
+                process.exit(1)
+              })
+            }
+            // archive the previous markdown documentation if the update is a major or minor change
+            else if (semverDiff(latestMdVer, currentVer) === 'major' || semverDiff(latestMdVer, currentVer) === 'minor') {
+              fs.outputFile(`${vueCompFilePath}-${currentVer}.md`, mdTemplate)
+              .then(() => console.log(`Archived markdown file for ${vueCompName}, version ${latestMdVer}. Updated to version ${currentVer}`))
+              .catch((createErr) => {
+                console.log(`Error while trying to create markdown documentation file ${vueCompFilePath}-${currentVer}.md:\n${createErr}`)
+                process.exit(1)
+              })
+            }
+          }
+  
+          // In all cases create the proper <component name>.md file for most recent version
+          fs.outputFile(`${vueCompFilePath}.md`, mdTemplate)
+          .then(() => console.log(`Successfully created ${vueCompName}.md`))
+          .catch((createErr) => {
+            console.log(`Error while creating ${vueCompFilePath}.md:\n${createErr}`)
+            process.exit(1)
+          })
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        process.exit(1)
       })
     })
-  })
-})
+  }
+)
+
 
 // take json object returned from vue-docgen-api and create markdown template
 function createMarkdownTemplate(file, vueObj) {
@@ -262,3 +297,28 @@ function tableFromSlots(slotsObj) {
 
   return rows.length > 0 ? {table: {headers, rows}} : null
 }
+
+// fs.readJson(pkgFilePath, (pkgErr, pkgObj) => {
+//   if (pkgErr) {
+//     throw new Error(`Can't find package.json file for ${path.basename(file)}:\n${pkgErr}`)
+//   }
+
+//   currentVer = pkgObj[`version`]
+
+//   if (!semver.valid(currentVer)) {
+//     throw new Error(`Vue component at ${path.basename(file)} doesn't have a valid semver on ${pkgFilePath} file`)
+//   }
+
+//   // Build the markdown template from README.md, EXAMPLES.md, and the JSON form of the Vue component files
+//   let mdTemplate = ''
+//   fs.readFile(readmeFilePath, 'utf8')
+//   .then(data => { mdTemplate += data } )
+//   .catch(err => { throw new Error(`There was an error reading ${readmeFilePath}:\n${err}`)} )
+
+//   mdTemplate += createMarkdownTemplate(file, vueObj)
+
+//   fs.readFile(examplesFilePath, 'utf8')
+//   .then(data => { mdTemplate += data } )
+//   .catch(err => { 
+//   })
+// })
