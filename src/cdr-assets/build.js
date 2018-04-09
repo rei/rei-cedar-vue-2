@@ -41,11 +41,11 @@ fs.copySync(staticDir, distDir, {
 const icons = {};
 
 const spriterConfig = {
-  dest: './static/',
+  dest: './dist/',
   mode: {
     symbol: {
       dest: '.',
-      sprite: './dist/cdr-icons.svg',
+      sprite: 'cdr-icons.svg',
     },
   },
 };
@@ -64,14 +64,12 @@ klaw(path.resolve(__dirname, '..', 'assets/icons/rei'))
   .on('data', (item) => {
     const name = path.basename(item.path).split('.')[0];
     const iconFilePath = item.path;
-    fs.readFile(iconFilePath, 'utf8', (err, data) => {
-      if (err) throw err;
 
-      // add to icon object
-      Object.assign(icons, { [`${name}`]: data });
-      // add to spriter
-      spriter.add(iconFilePath, null, data);
-    });
+    const data = fs.readFileSync(iconFilePath, 'utf8');
+    // add to icon object
+    Object.assign(icons, { [`${name}`]: data });
+    // add to spriter
+    spriter.add(iconFilePath, null, data);
   })
   .on('end', () => {
     // output icon.json
