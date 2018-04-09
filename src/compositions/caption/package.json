@@ -1,24 +1,26 @@
 {
   "name": "@rei/cdr-caption",
   "version": "0.0.1",
+  "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Caption",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-caption",
-  "license": "ISC",
-  "author": "REI Software Engineering",
-  "private": false,
-  "main": "dist/cdr-caption.js",
-  "style": "dist/cdr-caption.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "composition": "caption",
-    "tagName": "caption"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
   },
+  "license": "ISC",
+  "private": false,
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+   "dist"
+  ],
+  "main": "dist/cdr-caption.js",
+  "style": "dist/cdr-caption.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node ../../../build/build.js"
+    "build": "node build/build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",

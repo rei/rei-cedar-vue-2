@@ -1,24 +1,26 @@
 {
   "name": "@rei/cdr-select",
   "version": "0.0.1",
+  "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Select",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-select",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
+  },
   "license": "ISC",
-  "author": "REI Software Engineering",
   "private": false,
-  "main": "dist/cdr-select.js",
-  "style": "dist/cdr-select.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "component": "select",
-    "tagName": "select"
-  },
-  "scripts": {
-    "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node ../../../build/build.js"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "files": [
+   "dist"
+  ],
+  "main": "dist/cdr-select.js",
+  "style": "dist/cdr-select.css",
+  "scripts": {
+    "prepublishOnly": "npm run build && pkg-ok",
+    "build": "node build/build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",
@@ -29,6 +31,5 @@
     "@rei/cdr-assets": "^0.0.2",
     "lodash": "^4.17.4",
     "pkg-ok": "^1.1.0"
-  },
-  "dependencies": {}
+  }
 }

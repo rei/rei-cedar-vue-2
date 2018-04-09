@@ -1,24 +1,26 @@
 {
   "name": "@rei/cdr-card",
   "version": "0.0.1",
+  "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Card",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-card",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
+  },
   "license": "ISC",
-  "author": "REI Software Engineering",
   "private": false,
-  "main": "dist/cdr-card.js",
-  "style": "dist/cdr-card.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "component": "card",
-    "tagName": "card"
-  },
-  "scripts": {
-    "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node ../../../build/build.js"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/cdr-card.js",
+  "style": "dist/cdr-card.css",
+  "scripts": {
+    "prepublishOnly": "npm run build && pkg-ok",
+    "build": "node build/build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",
@@ -27,6 +29,5 @@
   "devDependencies": {
     "@rei/cdr-assets": "^0.0.2",
     "pkg-ok": "^1.1.0"
-  },
-  "dependencies": {}
+  }
 }

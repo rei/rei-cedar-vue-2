@@ -39,11 +39,11 @@
 </template>
 
 <script>
-import cdrRating from '../cdrRating';
+import CdrRating from '../CdrRating';
 
 export default {
   name: 'Rating',
-  components: { cdrRating },
+  components: { CdrRating },
 };
 </script>
 

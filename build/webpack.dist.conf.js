@@ -3,7 +3,7 @@ const utils = require('./utils');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const config = require('../config');
-const baseWebpackConfig = require('./webpack.common.conf');
+const baseWebpackConfig = require('./webpack.base.conf');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
