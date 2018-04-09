@@ -23,16 +23,16 @@
     "build": "node build/build.js"
   },
   "peerDependencies": {
-    "@rei/cdr-assets": "^0.0.2",
+    "@rei/cdr-assets": "^0.1.0",
     "@rei/cdr-a": "^0.0.1",
-    "@rei/cdr-icon": "^0.0.2",
+    "@rei/cdr-icon": "^0.1.0",
     "@rei/cdr-img": "^0.0.1",
     "vue": "^2.5.13"
   },
   "devDependencies": {
     "@rei/cdr-a": "^0.0.1",
-    "@rei/cdr-assets": "^0.0.2",
-    "@rei/cdr-icon": "^0.0.2",
+    "@rei/cdr-assets": "^0.1.0",
+    "@rei/cdr-icon": "^0.1.0",
     "@rei/cdr-img": "^0.0.1",
     "pkg-ok": "^1.1.0"
   }

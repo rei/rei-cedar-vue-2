@@ -23,9 +23,9 @@
     "build": "node build/build.js"
   },
   "peerDependencies": {
-    "@rei/cdr-assets": "^0.0.2",
+    "@rei/cdr-assets": "^0.1.0",
     "@rei/cdr-card": "^0.0.1",
-    "@rei/cdr-icon": "^0.0.2",
+    "@rei/cdr-icon": "^0.1.0",
     "@rei/cdr-img": "^0.0.1",
     "@rei/cdr-list": "^0.0.1",
     "@rei/cdr-media-object": "^0.0.1",
@@ -34,9 +34,9 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.0.2",
+    "@rei/cdr-assets": "^0.1.0",
     "@rei/cdr-card": "^0.0.1",
-    "@rei/cdr-icon": "^0.0.2",
+    "@rei/cdr-icon": "^0.1.0",
     "@rei/cdr-img": "^0.0.1",
     "@rei/cdr-list": "^0.0.1",
     "@rei/cdr-media-object": "^0.0.1",

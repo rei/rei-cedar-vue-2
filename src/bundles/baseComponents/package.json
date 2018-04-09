@@ -27,7 +27,7 @@
     "@rei/cdr-card": "^0.0.1",
     "@rei/cdr-checkbox": "^0.0.2",
     "@rei/cdr-col": "^0.0.1",
-    "@rei/cdr-icon": "^0.0.2",
+    "@rei/cdr-icon": "^0.1.0",
     "@rei/cdr-img": "^0.0.1",
     "@rei/cdr-input": "^0.0.1",
     "@rei/cdr-list": "^0.0.1",
@@ -39,7 +39,7 @@
     "@rei/cdr-text": "^0.0.1"
   },
   "peerDependencies": {
-    "@rei/cdr-assets": "^0.0.2",
+    "@rei/cdr-assets": "^0.1.0",
     "lodash": "^4.17.4",
     "svgxuse": "^1.2.4",
     "vue": "^2.5.13"

@@ -23,12 +23,12 @@
     "build": "node build/build.js"
   },
   "peerDependencies": {
-    "@rei/cdr-assets": "^0.0.2",
+    "@rei/cdr-assets": "^0.1.0",
     "@rei/cdr-button": "^0.0.3",
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.0.2",
+    "@rei/cdr-assets": "^0.1.0",
     "@rei/cdr-button": "^0.0.3",
     "pkg-ok": "^1.1.0"
   }
