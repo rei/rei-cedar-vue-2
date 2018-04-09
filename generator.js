@@ -35,10 +35,10 @@ const QUESTIONS = [
   {
     name: 'name',
     type: 'input',
-    message: 'What is the component name? (kebab-case without cdr/cedar prefix)',
+    message: 'What is the component name? (kebab-case without Cdr/Cedar prefix)',
     validate: (input) => {
-      if (_.startsWith(input, 'cdr')) return chalk.red('Name should be unprefixed (no cdr)');
-      else if (_.startsWith(input, 'cedar')) return chalk.red('Name should be unprefixed (no cedar)');
+      if (_.startsWith(input.toLowerCase(), 'cdr')) return chalk.red('Name should be unprefixed (no cdr)');
+      else if (_.startsWith(input.toLowerCase(), 'cedar')) return chalk.red('Name should be unprefixed (no cedar)');
       if (/^([a-z]+(-[a-z]+)*)$/.test(input)) return true;
       return chalk.red('Component name must be kebab-case');
     },

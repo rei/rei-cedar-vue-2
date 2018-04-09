@@ -1,24 +1,26 @@
 {
   "name": "@rei/cdr-search",
   "version": "0.0.1",
+  "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Search",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-search",
-  "license": "ISC",
-  "author": "REI Software Engineering",
-  "private": false,
-  "main": "dist/cdr-search.js",
-  "style": "dist/cdr-search.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "composition": "search",
-    "tagName": "search"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
   },
+  "license": "ISC",
+  "private": false,
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+   "dist"
+  ],
+  "main": "dist/cdr-search.js",
+  "style": "dist/cdr-search.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node ../../../build/build.js"
+    "build": "node build/build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",
@@ -31,6 +33,5 @@
     "@rei/cdr-button": "^0.0.3",
     "@rei/cdr-input": "^0.0.1",
     "pkg-ok": "^1.1.0"
-  },
-  "dependencies": {}
+  }
 }

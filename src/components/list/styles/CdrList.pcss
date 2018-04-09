@@ -1,0 +1,202 @@
+/* ==========================================================================
+  # CdrList
+
+  All values should map to variables in
+  vars/CdrList.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base Styles
+      :Spacing
+      :Nesting
+    :Modifiers
+      :Style variants
+        :Compact
+        :Unstyled
+        :Disc
+        :Circle
+        :Inline
+        :Numbered
+        :Menu
+        :Inline Bullet
+========================================================================== */
+
+.cdr-list {
+  list-style-type: disc;
+  padding-left: $list-padding-left;
+
+  /* spacing
+    ---------- */
+
+  & > li + li {
+    margin-top: $list-spacing-margin-top;
+  }
+
+  /* nesting
+    ---------- */
+
+  & > li {
+    & > ul,
+    & > ol {
+      margin-top: $list-nesting-margin-top;
+    }
+  }
+
+  /* Style variants
+    ========================================================================== */
+
+  /* Compact
+    ========== */
+  &--compact > li + li {
+    margin-top: $list-compact-margin-top;
+  }
+
+  /* Spread
+    ========== */
+  &--spread > li + li {
+    margin-top: $list-spread-margin-top;
+  }
+
+  /* Unstyled
+     ========== */
+  &--unstyled {
+    list-style-type: none;
+  }
+
+  /* Disc
+     ========== */
+  &--disc {
+    list-style-type: none;
+
+    & > li {
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: $list-disc-left;
+        height: $list-disc-height;
+        width: $list-disc-width;
+        background-color: $list-disc-background-color;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  /* Circle
+     ========== */
+  &--circle {
+    list-style-type: none;
+    
+    & > li {
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: $list-circle-left;
+        height: $list-circle-height;
+        width: $list-circle-width;
+        background-color: $list-circle-background-color;
+        border: $list-circle-border;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  /* Inline
+     ========== */
+  &--inline {
+    list-style-type: none;
+    padding: $list-inline-padding;
+    display: flex;
+
+    & > li {
+      display: inline-block;
+      padding-bottom: 0;
+
+      & + li {
+        margin-top: 0;
+        margin-left: $list-inline-margin-left;
+      }
+
+      &:first-of-type::before {
+        display: none;
+      }
+    }
+
+    /* inline - decorated
+      ---------- */
+    &.cdr-list--disc > li::before,
+    &.cdr-list--circle > li::before {
+      left: $list-inline-decorated-left;
+      transform: translate(-50%, -50%);
+    }
+
+    /* inline - compact
+      ---------- */
+    &.cdr-list--compact {
+      & > li + li {
+        margin-left: $list-inline-compact;
+      }
+
+      /* inline - compact - decorated
+        ---------- */
+      &.cdr-list--disc > li::before,
+      &.cdr-list--circle > li::before {
+        left: $list-inline-compact-decorated-left;
+      }
+    }
+
+    /* inline - spread
+      ---------- */
+    &.cdr-list--spread {
+      & > li + li {
+        margin-left: $list-inline-spread;
+      }
+
+      /* inline - spread - decorated
+        ---------- */
+      &.cdr-list--disc > li::before,
+      &.cdr-list--circle > li::before {
+        left: $list-inline-spread-decorated-left;
+      }
+    }
+  }
+
+  /* Numbered
+     ========== */
+  &--numbered {
+    list-style-type: decimal;
+  }
+
+  /* Menu
+     ========== */
+  &--menu {
+    list-style-type: none;
+    padding-left: $list-menu-padding-left;
+
+    & > li {
+      border-bottom-width: 0.1rem;
+      border-bottom-style: solid;
+      border-color: #222;
+      padding: $list-menu-li-padding;
+
+      & > a {
+        font-family: $font-copy-secondary;
+        font-weight: $font-copy-secondary-weight;
+        font-size: $font-size-navigation;
+        padding: 1.1rem 1.6rem;
+        color: #000;
+        display: inline-block;
+      }
+    }
+  }
+}

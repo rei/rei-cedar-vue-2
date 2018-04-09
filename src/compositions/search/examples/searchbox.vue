@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import cdrSearch from '../cdrSearch';
+import CdrSearch from '../CdrSearch';
 
 export default {
   name: 'Searchbox',
-  components: { cdrSearch },
+  components: { CdrSearch },
   data() {
     return {
       search1: '',

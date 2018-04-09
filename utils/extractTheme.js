@@ -17,7 +17,7 @@ function getThemeBlocks(content) {
   return themes;
 }
 
-// NOTE: theme filepath/name (below) must match path/name in build/themeLoader.js setThemeSrc()
+// NOTE: theme filepath/name (below) must match path/name in ./themeLoader.js setThemeSrc()
 const dir = `${componentDir}/styles/themes`;
 fs.emptydirSync(dir);
 

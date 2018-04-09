@@ -1,27 +1,26 @@
 {
   "name": "@rei/{NAME-TAGNAME}",
   "version": "0.0.1",
+  "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for {NAME-PASCAL}",
   "homepage": "https://rei.github.io/rei-cedar/#{NAME-TAGNAME}",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
+  },
   "license": "ISC",
-  "author": "REI Software Engineering",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist"
   ],
   "main": "dist/{NAME-TAGNAME}.js",
   "style": "dist/{NAME-TAGNAME}.css",
-  "config": {
-    "buildConfig": "webpack.dist.conf",
-    "{TYPE-SINGULAR}": "{NAME-CAMEL}",
-    "tagName": "{NAME-KEBAB}"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node ../../../build/build.js"
+    "build": "node build/build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.0.2",

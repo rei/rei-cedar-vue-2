@@ -1,9 +1,9 @@
-import cdrActivityCard from 'compositionsdir/activityCard/cdrActivityCard';
-import cdrCaption from 'compositionsdir/caption/CdrCaption';
-import cdrSearch from 'compositionsdir/search/cdrSearch';
+import CdrActivityCard from 'compositionsdir/activityCard/CdrActivityCard';
+import CdrCaption from 'compositionsdir/caption/CdrCaption';
+import CdrSearch from 'compositionsdir/search/CdrSearch';
 
 export default {
-  cdrActivityCard,
-  cdrCaption,
-  cdrSearch,
+  CdrActivityCard,
+  CdrCaption,
+  CdrSearch,
 };
