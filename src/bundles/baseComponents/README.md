@@ -15,3 +15,4 @@ Components available in this bundle:
 * cdr-row
 * cdr-select
 * cdr-text
+* cdr-quote

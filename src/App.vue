@@ -4,7 +4,6 @@
     class="cdr-container-fluid"
   >
     <h1>Cedar Proving grounds</h1>
-
     <anchors
       class="cpg-section"
       data-backstop="anchors"
@@ -44,6 +43,10 @@
     <radios
       class="cpg-section"
       data-backstop="radios"
+    />
+    <quote-example
+      class="cpg-section"
+      data-backstop="quote"
     />
     <ratings
       class="cpg-section"
