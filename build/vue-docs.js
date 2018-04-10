@@ -297,28 +297,3 @@ function tableFromSlots(slotsObj) {
 
   return rows.length > 0 ? {table: {headers, rows}} : null
 }
-
-// fs.readJson(pkgFilePath, (pkgErr, pkgObj) => {
-//   if (pkgErr) {
-//     throw new Error(`Can't find package.json file for ${path.basename(file)}:\n${pkgErr}`)
-//   }
-
-//   currentVer = pkgObj[`version`]
-
-//   if (!semver.valid(currentVer)) {
-//     throw new Error(`Vue component at ${path.basename(file)} doesn't have a valid semver on ${pkgFilePath} file`)
-//   }
-
-//   // Build the markdown template from README.md, EXAMPLES.md, and the JSON form of the Vue component files
-//   let mdTemplate = ''
-//   fs.readFile(readmeFilePath, 'utf8')
-//   .then(data => { mdTemplate += data } )
-//   .catch(err => { throw new Error(`There was an error reading ${readmeFilePath}:\n${err}`)} )
-
-//   mdTemplate += createMarkdownTemplate(file, vueObj)
-
-//   fs.readFile(examplesFilePath, 'utf8')
-//   .then(data => { mdTemplate += data } )
-//   .catch(err => { 
-//   })
-// })
