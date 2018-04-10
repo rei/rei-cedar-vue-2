@@ -1,6 +1,6 @@
 {
   "name": "@rei/{NAME-TAGNAME}",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for {NAME-PASCAL}",
   "homepage": "https://rei.github.io/rei-cedar/#{NAME-TAGNAME}",
