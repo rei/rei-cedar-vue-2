@@ -1,4 +1,6 @@
-### Modifiers
+# <span class="display-name">CdrText</span>
+
+### <span class="modifiers">Modifiers</span>
 
 Modifier values are any valid text styles
 
