@@ -18,20 +18,20 @@
 ========================================================================== */
 
 .cdr-button {
-  @include redwood-display-20;
+  @include redwood-display-30;
 
   background-color: $button-background-color;
   box-shadow: $button-box-shadow;
   border: none;
   border-radius: $button-border-radius;
   color: $button-color;
-  cursor: $button-cursor;
-  display: $button-display;
-  outline: $button-outline;
-  padding: $button-padding;
-  text-align: $button-text-align;
-  text-decoration: $button-text-decoration;
-  white-space: $button-white-space;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding: $inset-half-x;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
 
   & > .cdr-icon {
     display: inline;
@@ -97,6 +97,21 @@
     }
   }
 
+  /* Large modifier
+     ========== */
+
+  &--lg {
+    @include redwood-display-40;
+
+    padding: $inset-half-x-stretch;
+  }
+
+  &--sm {
+    @include redwood-display-20;
+
+    padding: $inset-quarter-x-stretch;
+  }
+
   &--cta {
     @include maple-utility-40;
   }
@@ -158,6 +173,8 @@
 
   /* md
     ========== */
+  
+  /*
   @media (--md-mq) {
     @include redwood-display-30;
 
@@ -166,11 +183,12 @@
     &--cta {
       @include maple-utility-40;
     }
-  }
+  } */
 
   /* lg
     ========== */
-  @media (--lg-mq) {
+  
+  /* @media (--lg-mq) {
     @include redwood-display-40;
 
     padding: $button-lg-padding;
@@ -178,21 +196,5 @@
     &--cta {
       @include maple-utility-40;
     }
-  }
-
-  &--xs {
-    
-  }
-
-  &--sm {
-    
-  }
-
-  &--md {
-    
-  }
-
-  &--lg {
-    
-  }
+  } */
 }
