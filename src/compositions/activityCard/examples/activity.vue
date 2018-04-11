@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import cdrActivityCard from '../cdrActivityCard';
+import CdrActivityCard from '../CdrActivityCard';
 
 export default {
   name: 'Activity',
-  components: { cdrActivityCard },
+  components: { CdrActivityCard },
 };
 </script>
 

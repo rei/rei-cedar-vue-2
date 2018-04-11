@@ -1,0 +1,42 @@
+/* ==========================================================================
+  # CdrSelect
+  
+  All values should map to variables in
+  vars/CdrSelect.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - Select
+      :States
+========================================================================== */
+
+.cdr-select {
+  font-size: $select-font-size;
+  line-height: $select-line-height;
+  text-align: $select-text-align;
+  color: $select-color;
+  font-style: $select-font-style;
+  font-weight: $select-font-weight;
+  font-family: $select-font-family;
+  width: 100%;
+  display: block;
+  border: $select-border;
+  border-radius: $select-border-radius;
+  height: $select-height;
+  background-color: $select-background-color;
+
+  /* States
+    ---------- */
+
+  &[disabled] {
+    background-color: $sys-color-input-disabled;
+  }
+
+  /* Style variants
+    ========================================================================== */
+
+  &--size {
+    height: auto;
+  }
+}

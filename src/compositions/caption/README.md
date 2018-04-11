@@ -1,8 +1,4 @@
-```
-<div>
-   <cdr-caption
-      :summary="`Lorem ipsum dolor sit amet consectetur adipisicing elit. At perferendis"
-      credit="Lorem ipsum dolor sit"
-    />
-</div>
-```
+# <span class="display-name">CdrCaption</span>
+
+* Cedar 2 component for captions
+
