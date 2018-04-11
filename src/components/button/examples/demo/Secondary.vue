@@ -2,24 +2,30 @@
   <div>
     <div class="button-example">
       <cdr-button
-        modifier="secondary"
+        modifier="secondary lg"
         data-backstop="cdr-button--secondary"
         type="submit"
-      >Secondary</cdr-button>
+      >Secondary Large</cdr-button>
       <cdr-button
-        modifier="secondary"
+        modifier="secondary lg"
         disabled
       >Secondary Disabled</cdr-button>
-    </div>
-    <div class="button-example">
       <cdr-button
+        modifier="secondary"
         type="submit"
-        modifier="sm secondary"
-      >Small secondary</cdr-button>
+      >Secondary Medium</cdr-button>
       <cdr-button
+        modifier="secondary"
+        type="submit">
+        <cdr-icon
+          url="/static/rei-icons.svg#cdr-check-lg"
+          modifier="sm"/>
+        Secondary Medium Icon
+      </cdr-button>
+      <cdr-button
+        modifier="secondary sm"
         type="submit"
-        modifier="xs secondary"
-      >Extra Small secondary</cdr-button>
+      >Secondary Small</cdr-button>
     </div>
   </div>
 </template>
