@@ -4,7 +4,7 @@ const semver = require('semver')
 const fs = require('fs-extra')
 const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
-const glob = require('glob')
+const glob = require('glob-promise')
 
 // Add convert for markdown anchor
 json2md.converters.anchor = (anchor, json) => {
@@ -169,3 +169,4 @@ function tableFromSlots(slotsObj) {
 
   return rows.length > 0 ? {table: {headers, rows}} : null
 }
+
