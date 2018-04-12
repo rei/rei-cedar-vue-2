@@ -47,10 +47,7 @@
 
   & > .cdr-icon {
     display: inline;
-  
-    & > svg {
-      fill: $button-color;
-    }
+    fill: $button-color;
   }
 
   /* States
@@ -64,16 +61,16 @@
     text-decoration: $button-hover-text-decoration;
     outline: $button-hover-text-outline;
 
-    & > .cdr-icon > svg {
+    & > .cdr-icon {
       fill: $button-hover-color;
     }
   }
 
   &[disabled] {
-    background-color: $button-disabled-background-color !important;
-    box-shadow: $button-disabled-box-shadow !important;
-    color: $button-disabled-color !important;
-    cursor: $button-disabled-cursor !important;
+    background-color: $button-disabled-background-color;
+    box-shadow: $button-disabled-box-shadow;
+    color: $button-disabled-color;
+    cursor: $button-disabled-cursor;
   }
 
   /* Modifier style variants
@@ -87,10 +84,9 @@
     box-shadow: $button-secondary-box-shadow;
     color: $button-secondary-color;
 
-    & > .cdr-icon > svg {
-      fill: $button-secondary-background-color;
+    & > .cdr-icon {
+      fill: $button-secondary-color;
     }
-   
 
     /* States
     ---------- */
@@ -100,16 +96,20 @@
       background-color: $button-secondary-hover-background-color;
       box-shadow: $button-secondary-box-shadow;
       color: $button-secondary-hover-color;
+
+      & > .cdr-icon {
+        fill: $button-secondary-hover-color;
+      }
     }
 
     &[disabled] {
-      background-color: $button-secondary-disabled-background-color !important;
-      box-shadow: $button-secondary-disabled-box-shadow !important;
-      color: $button-secondary-disabled-color !important;
+      background-color: $button-secondary-disabled-background-color;
+      box-shadow: $button-secondary-disabled-box-shadow;
+      color: $button-secondary-disabled-color;
     }
   }
 
-  /* Large modifier
+  /* Large
      ========== */
 
   &--lg {
@@ -117,6 +117,9 @@
 
     padding: 12px 24px;
   }
+
+  /* Small
+     ========== */
 
   &--sm {
     @include redwood-display-20;
@@ -126,6 +129,8 @@
 
   &--cta {
     @include maple-utility-40;
+    
+    text-transform: uppercase;
   }
 
   &--brand {
@@ -180,7 +185,7 @@
     }
   }
 
-  /* Size variants
+  /* Breakpooint variants
     ========================================================================== */
 
   /* md

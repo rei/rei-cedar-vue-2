@@ -131,8 +131,4 @@ export default {
   .button-example {
     padding: 10px;
   }
-
-  .button-icon-example > .cdr-icon {
-    fill: inherit;
-  }
 </style>

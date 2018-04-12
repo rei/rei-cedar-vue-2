@@ -5,7 +5,7 @@
         modifier="cta brand"
         data-backstop="cdr-button--cta-brand"
         type="submit"
-      >CTA-brand</cdr-button>
+      >Medium CTA-brand</cdr-button>
       <cdr-button
         modifier="cta brand"
         disabled
@@ -14,12 +14,12 @@
     <div class="button-example">
       <cdr-button
         type="submit"
-        modifier="sm cta brand"
-      >Small cta-brand</cdr-button>
+        modifier="lg cta brand"
+      >Large cta-brand</cdr-button>
       <cdr-button
         type="submit"
-        modifier="xs cta brand"
-      >Extra Small CTA-brand</cdr-button>
+        modifier="sm cta brand"
+      >Small CTA-brand</cdr-button>
     </div>
   </div>
 </template>
