@@ -17,41 +17,30 @@ json2md.converters.anchor = (anchor, json) => {
 
 /**
  * convert <cedar component>.vue file into JSON object then convert to markdown file
- * @param {String} file -- Raw Vue component file
+ * @param {String} file -- file path of raw Vue component file
+ * @param {Object} info -- packag.json
  */
-function docsBuild(file) {
+function docsBuild(file, info) {
   console.log(`Processing file: ${file}\n`)
   const vueObj = vueDocgen.parse(file)
   
   // Determine version of current raw vue component based on its associated package.json file
-  const currentDir = path.resolve(__dirname, '..', `${path.dirname(file)}`) + path.sep
-  const pkgFilePath = `${currentDir}package.json`
+  const currentDir = path.dirname(file) + path.sep
   const readmeFilePath = `${currentDir}README.md`
   const examplesFilePath = `${currentDir}EXAMPLES.md`
-  let currentVer = ''
+  const currentVer = info.version
   let mdTemplate = ''
 
-  // read in package.json file to get semver version
-  const pkgProm = fs.readJson(pkgFilePath)
-  .then( pkgObj => {
-    currentVer = pkgObj[`version`]
-  
-    // make sure package.json version is semver valid
-    if (!semver.valid(currentVer)) {
-      Promise.reject(new Error(`Vue component at ${path.basename(file)} doesn't have a valid semver on ${pkgFilePath} file\n`))
-    }
-  })
-  .catch( prkError => { 
-    console.log(`${pkgError}`)
-    process.exit(1)
-  })
+  const vueCompName = path.basename(file,'.vue')
+  const vueCompDir = path.dirname(file)
+  const vueCompFilePath = vueCompDir + path.sep + vueCompName
+  const BASE_VERSION = '0.0.0'
+  let latestMdDoc = null, latestMdVer = BASE_VERSION
 
   // read in README markdown file
-  const readmeProm = pkgProm.then(() => { return fs.readFile(readmeFilePath, 'utf8')} )
-  .then( readmeData => {
-    mdTemplate += readmeData 
-  })
-  .catch( readmeErr => { 
+  const readmeProm = fs.readFile(readmeFilePath, 'utf8')
+  .then( readmeData => { mdTemplate += readmeData })
+  .catch( readmeErr => {
     console.log(`There was an error reading README markdown file ${readmeFilePath}:\n${readmeErr}`)
     process.exit(1)
   })
@@ -59,9 +48,14 @@ function docsBuild(file) {
   // create markdown tables for component properties, events, methods, and slots
   const tblProm = readmeProm
   .then(() => {
-    return new Promise((resolve, reject) => { resolve(createMarkdownTemplate(file, vueObj)) }) 
+    return new Promise((resolve, reject) => {
+      resolve(createMarkdownTemplate(vueObj))
+    })
   })
   .then( tmplTblData => { mdTemplate += tmplTblData })
+  .catch(err => {
+    console.log(`Error while trying to create markdown tables:\n${err}`)
+  })
 
   // read in EXAMPLES markdown file
   const exampleProm = tblProm
@@ -80,12 +74,6 @@ function docsBuild(file) {
   // retrieve all associated API documentation markdown files, current and previous versions
   const globSearchProm = exampleProm
   .then(() => {
-    const vueCompName = path.basename(file,'.vue')
-    const vueCompDir = path.dirname(file)
-    const vueCompFilePath = vueCompDir + path.sep + vueCompName
-    const BASE_VERSION = '0.0.0'
-    let latestMdDoc = null, latestMdVer = BASE_VERSION
-
     return glob.promise(`${vueCompFilePath}*.md`)
   })
   .catch(err => {
@@ -219,7 +207,7 @@ function buildTables(vueObj) {
  * @param {Object} propsObj -- object representing properties of a Cedar component
  * @returns {Object} -- object representing markdown table
  */
-function tableFromProps(propsObj) {
+function tableFromProps(propsObj = {}) {
   const headers = ["Prop Name", "Type", "Default", "Require", "Description"]
   let rows = []
 
@@ -243,12 +231,12 @@ function tableFromProps(propsObj) {
   return rows.length > 0 ? {table: {headers, rows}} : null
 }
   
-/** 
+/**
  * auxilary function to create table from `methods` property of json2md object
  * @param {Array} methodsArr -- array representing the public methods of a Cedar component
  * @returns {Object} -- object representing markdown table
 */
-function tableFromMethods(methodsArr) {
+function tableFromMethods(methodsArr = []) {
   const headers = ["Method Name", "Type", "Parameters", "Description"]
   let rows = []
 
@@ -275,7 +263,7 @@ function tableFromMethods(methodsArr) {
  * @param {Object} eventsObj -- object representing events attached to Cedar component
  * @returns {Object} -- object representing markdown table
  */
-function tableFromEvents(eventsObj) {
+function tableFromEvents(eventsObj = {}) {
   const headers = ["Event Name", "Type", "Description"]
   let rows = []
 
@@ -302,7 +290,7 @@ function tableFromEvents(eventsObj) {
  * @param {Object} slotsObj -- object representing the inner content of a Cedar component
  * @returns {Object} -- object representing markdown table
  */
-function tableFromSlots(slotsObj) {
+function tableFromSlots(slotsObj = {}) {
   const headers = ["Slot", "Description"]
   let rows = []
 
