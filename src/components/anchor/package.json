@@ -16,11 +16,18 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrA"
+  },
+  "rei_cedar": {
+    "status": "prototype"
+  },
   "main": "dist/cdr-a.js",
   "style": "dist/cdr-a.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "docs:build": "node build/docs-build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
