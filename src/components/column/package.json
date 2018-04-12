@@ -16,6 +16,9 @@
   "files": [
     "dist"
   ],
+  "config": {
+    "vue_file": "CdrCol"
+  },
   "main": "dist/cdr-col.js",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",

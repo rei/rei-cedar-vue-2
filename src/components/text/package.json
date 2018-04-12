@@ -15,6 +15,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrText"
+  },
   "main": "dist/cdr-text.js",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",

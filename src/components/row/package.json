@@ -16,6 +16,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrRow"
+  },
   "main": "dist/cdr-row.js",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",

@@ -16,6 +16,9 @@
   "files": [
     "dist"
   ],
+  "config": {
+    "vue_file": "CdrCheckbox"
+  },
   "main": "dist/cdr-checkbox.js",
   "style": "dist/cdr-checkbox.css",
   "scripts": {

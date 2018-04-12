@@ -16,6 +16,9 @@
   "files": [
     "dist"
   ],
+  "config": {
+    "vue_file": "CdrButton"
+  },
   "main": "dist/cdr-button.js",
   "style": "dist/cdr-button.css",
   "scripts": {

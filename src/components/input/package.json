@@ -16,6 +16,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrImg"
+  },
   "main": "dist/cdr-input.js",
   "style": "dist/cdr-input.css",
   "scripts": {

@@ -16,6 +16,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrSelect"
+  },
   "main": "dist/cdr-select.js",
   "style": "dist/cdr-select.css",
   "scripts": {

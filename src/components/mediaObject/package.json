@@ -16,6 +16,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrMediaObject"
+  },
   "main": "dist/cdr-media-object.js",
   "style": "dist/cdr-media-object.css",
   "scripts": {

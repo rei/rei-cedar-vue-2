@@ -16,6 +16,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrCaption"
+  },
   "main": "dist/cdr-caption.js",
   "style": "dist/cdr-caption.css",
   "scripts": {

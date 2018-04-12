@@ -16,6 +16,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrRating"
+  },
   "main": "dist/cdr-rating.js",
   "style": "dist/cdr-rating.css",
   "scripts": {

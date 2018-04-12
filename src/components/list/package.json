@@ -16,6 +16,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrList"
+  },
   "main": "dist/cdr-list.js",
   "style": "dist/cdr-list.css",
   "scripts": {

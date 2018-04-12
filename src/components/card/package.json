@@ -16,6 +16,9 @@
   "files": [
     "dist"
   ],
+  "config": {
+    "vue_file": "CdrCard"
+  },
   "main": "dist/cdr-card.js",
   "style": "dist/cdr-card.css",
   "scripts": {

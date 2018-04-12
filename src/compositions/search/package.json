@@ -16,6 +16,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrSearch"
+  },
   "main": "dist/cdr-search.js",
   "style": "dist/cdr-search.css",
   "scripts": {

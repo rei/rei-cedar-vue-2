@@ -16,6 +16,9 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrIcon"
+  },
   "main": "dist/cdr-icon.js",
   "style": "dist/cdr-icon.css",
   "scripts": {
