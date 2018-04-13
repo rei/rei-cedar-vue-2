@@ -25,7 +25,8 @@
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "npm run build:theme && npm run build:component",
     "build:component": "node build/build.js",
-    "build:theme": "node ../../../utils/extractTheme.js"
+    "build:theme": "node ../../../utils/extractTheme.js",
+    "docs:build": "node build/docs-build.js"
   },
   "peerDependencies": {
     "@rei/cdr-a": "^0.0.1",

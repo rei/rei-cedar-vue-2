@@ -22,7 +22,8 @@
   "main": "dist/cdr-row.js",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "docs:build": "node build/docs-build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
