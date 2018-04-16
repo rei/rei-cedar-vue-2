@@ -13,8 +13,9 @@
       :Style variants
         :Secondary
       :Size variants
+        :lg
         :sm
-        :xs
+        :block
 ========================================================================== */
 
 .cdr-button {
@@ -125,6 +126,13 @@
     @include redwood-display-20;
 
     padding: 6px 12px;
+  }
+
+  /* Block Width 100%
+     ========== */
+  &--block {
+    display: block;
+    width: 100%;
   }
 
   &--cta {

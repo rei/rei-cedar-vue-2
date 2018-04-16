@@ -1,11 +1,10 @@
 <template>
   <div>
     <div class="button-example">
-      <h2>Default buttons with size modifiers</h2>
       <cdr-button
         type="submit"
         modifier="lg"
-      >Large {lg}
+      >Large
       </cdr-button>
       <cdr-button
         data-backstop="cdr-button"
@@ -16,8 +15,10 @@
       <cdr-button
         type="submit"
         modifier="sm"
-      >Small {sm}
+      >Small
       </cdr-button>
+    </div>
+    <div class="button-example">
       <cdr-button
         type="submit"
         modifier="lg"
@@ -37,7 +38,19 @@
       </cdr-button>
     </div>
     <div class="button-example">
-      <h2>Icon buttons with size modifiers</h2>
+      <cdr-button
+        type="submit"
+        modifier="block"
+      >Block
+      </cdr-button>
+      <cdr-button
+        type="submit"
+        modifier="block"
+        disabled
+      >Block Disabled
+      </cdr-button>
+    </div>
+    <div class="button-example">
       <cdr-button
         type="submit"
         modifier="lg">
@@ -45,7 +58,7 @@
           url="/static/rei-icons.svg#cdr-check-lg"
           modifier="sm"
         />
-        Large {lg}
+        Large
       </cdr-button>
       <cdr-button
         data-backstop="cdr-button"
@@ -64,8 +77,10 @@
           url="/static/rei-icons.svg#cdr-check-lg"
           modifier="sm"
         />
-        Small {sm}
+        Small
       </cdr-button>
+    </div>
+    <div class="button-example">
       <cdr-button
         type="submit"
         modifier="lg"
@@ -74,7 +89,7 @@
           url="/static/rei-icons.svg#cdr-check-lg"
           modifier="sm"
         />
-        Large {lg}
+        Large
       </cdr-button>
       <cdr-button
         data-backstop="cdr-button"
@@ -95,7 +110,7 @@
           url="/static/rei-icons.svg#cdr-check-lg"
           modifier="sm"
         />
-        Small {sm}
+        Small
       </cdr-button>
     </div>
     <div class="button-example">

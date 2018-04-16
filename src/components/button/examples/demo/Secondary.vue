@@ -27,6 +27,19 @@
         type="submit"
       >Secondary Small</cdr-button>
     </div>
+    <div class="button-example">
+      <cdr-button
+        modifier="secondary block"
+        type="submit"
+      >Secondary Block
+      </cdr-button>
+      <cdr-button
+        modifier="secondary block"
+        type="submit"
+        disabled
+      >Secondary Block Disabled
+      </cdr-button>
+    </div>
   </div>
 </template>
 
