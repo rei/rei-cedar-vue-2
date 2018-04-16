@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-caption",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Caption",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-caption",
