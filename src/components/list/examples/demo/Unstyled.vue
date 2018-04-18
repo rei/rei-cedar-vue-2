@@ -7,8 +7,7 @@
       <li>List unstyled</li>
     </cdr-list>
 
-    <cdr-list
-    modifier="unstyled compact">
+    <cdr-list modifier="unstyled compact">
       <li>List unstyled - compact</li>
       <li>List unstyled - compact</li>
       <li>List unstyled - compact</li>
