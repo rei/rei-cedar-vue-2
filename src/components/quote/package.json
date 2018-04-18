@@ -16,11 +16,15 @@
   "files": [
     "dist"
   ],
+  "config": {
+    "vue_file": "CdrQuote"
+  },
   "main": "dist/cdr-quote.js",
   "style": "dist/cdr-quote.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "build:docs": "node build/docs-build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",

@@ -16,11 +16,15 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrRadio"
+  },
   "main": "dist/cdr-radio.js",
   "style": "dist/cdr-radio.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "build:docs": "node build/docs-build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
