@@ -59,8 +59,8 @@
     background-color: $button-hover-background-color;
     color: $button-hover-color;
     box-shadow: $button-hover-box-shadow;
-    text-decoration: $button-hover-text-decoration;
-    outline: $button-hover-text-outline;
+    text-decoration: none;
+    outline: none;
 
     & > .cdr-icon {
       fill: $button-hover-color;
@@ -71,7 +71,7 @@
     background-color: $button-disabled-background-color;
     box-shadow: $button-disabled-box-shadow;
     color: $button-disabled-color;
-    cursor: $button-disabled-cursor;
+    cursor: not-allowed;
   }
 
   /* Modifier style variants
@@ -117,6 +117,12 @@
     @include redwood-display-40;
 
     padding: $inset-1-and-a-half-x-squish;
+  }
+
+  &--md {
+    @include redwood-display-30;
+
+    padding: $inset-1-x-squish;
   }
 
   /* Small
@@ -196,30 +202,70 @@
   /* Breakpooint variants
     ========================================================================== */
 
+  /* sm
+    ========== */
+  @media (--sm-mq) {
+    &--sm\@sm {
+      @include redwood-display-20;
+
+      padding: $inset-three-quarter-x-squish;
+    }
+
+    &--md\@sm {
+      @include redwood-display-30;
+
+      padding: $inset-1-x-squish;
+    }
+
+    &--lg\@sm {
+      @include redwood-display-40;
+
+      padding: $inset-1-and-a-half-x-squish;
+    }
+  }
+
   /* md
     ========== */
-  
-  /*
   @media (--md-mq) {
-    @include redwood-display-30;
+    &--sm\@md {
+      @include redwood-display-20;
 
-    padding: $button-sm-padding;
-
-    &--cta {
-      @include maple-utility-40;
+      padding: $inset-three-quarter-x-squish;
     }
-  } */
+
+    &--md\@md {
+      @include redwood-display-30;
+
+      padding: $inset-1-x-squish;
+    }
+
+    &--lg\@md {
+      @include redwood-display-40;
+
+      padding: $inset-1-and-a-half-x-squish;
+    }
+  }
 
   /* lg
     ========== */
   
-  /* @media (--lg-mq) {
-    @include redwood-display-40;
+  @media (--lg-mq) {
+    &--sm\@lg {
+      @include redwood-display-20;
 
-    padding: $button-lg-padding;
-
-    &--cta {
-      @include maple-utility-40;
+      padding: $inset-three-quarter-x-squish;
     }
-  } */
+
+    &--md\@lg {
+      @include redwood-display-30;
+
+      padding: $inset-1-x-squish;
+    }
+
+    &--lg\@lg {
+      @include redwood-display-40;
+
+      padding: $inset-1-and-a-half-x-squish;
+    }
+  }
 }

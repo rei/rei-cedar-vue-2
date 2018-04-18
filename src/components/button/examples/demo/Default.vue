@@ -124,7 +124,13 @@
         theme="green"
         modifier="xs">green xs</cdr-button>
     </div>
-
+    <div class="button-example">
+      <cdr-button
+        modifier="sm@lg lg@md md@sm"
+      >
+        Responsive
+      </cdr-button>
+    </div>
   </div>
 </template>
 
