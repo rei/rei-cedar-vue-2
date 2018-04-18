@@ -10,6 +10,10 @@
     :Base Styles
 ========================================================================== */
 
+.cdr-icon-sprite {
+  display: none;
+}
+
 .cdr-icon {
   display: inline-block;
   vertical-align: middle;
@@ -18,18 +22,12 @@
   /* TODO: create/add icon tokens */
   width: 24px;
   height: 24px;
-  fill: $icon-fill;
-
-  & > svg {
-    width: inherit;
-    height: inherit;
-    fill: inherit;
-  }
+  fill: black;
 
   &--sm {
     /* TODO: create/add icon tokens */
-    width: $icon-width;
-    height: $icon-height;
+    width: 16px;
+    height: 16px;
   }
 
   &--lg {
