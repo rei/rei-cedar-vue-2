@@ -24,9 +24,6 @@ export default {
     baseClass() {
       return 'cdr-icon';
     },
-    titleId() {
-      return this.iconTitle ? `iconTitle${this._uid}` : false; // eslint-disable-line no-underscore-dangle
-    },
   },
 };
 </script>
