@@ -23,9 +23,7 @@
             <p>{{ key }}</p>
           </div>
           <div class="cdr-text-center">
-            <cdr-icon>
-              <use :href="`#${getSpriteId(key)}`" />
-            </cdr-icon>
+            <cdr-icon :use="`#${getSpriteId(key)}`" />
             <p>using sprite</p>
           </div>
         </div>

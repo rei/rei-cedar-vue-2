@@ -6,6 +6,11 @@
     role="presentation"
   >
     <slot />
+    <use
+      v-if="use"
+      :href="`${use}`"
+      :xlink:href="`${use}`"
+    />
   </svg>
 </template>
 
@@ -20,6 +25,12 @@ import modifier from 'mixinsdir/modifier';
 export default {
   name: 'CdrIcon',
   mixins: [modifier],
+  props: {
+    /**
+    * The href attribute passed to the use element. Will be prefixed with # automatically
+    */
+    use: String,
+  },
   computed: {
     baseClass() {
       return 'cdr-icon';
