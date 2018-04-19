@@ -5,6 +5,7 @@
     :class="[modifierClass]"
     role="presentation"
   >
+    <!-- @slot any valid svg xml -->
     <slot />
     <use
       v-if="use"
@@ -17,6 +18,7 @@
 <script>
 /**
  * Cedar 2 component for icons
+ * This component is lower level. Each icon can also be consumed individually via their own component. See sticker sheet for icon names.
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
 
