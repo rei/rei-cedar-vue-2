@@ -25,9 +25,9 @@
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "npm run generate && node build/build.js",
+    "build:docs": "node build/docs-build.js",
     "generate": "npm run clean && node build/generate.js",
     "clean": "rimraf dist comps sprite"
-    "build:docs": "node build/docs-build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
