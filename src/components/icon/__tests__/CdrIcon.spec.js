@@ -3,11 +3,7 @@ import CdrIcon from 'componentsdir/icon/CdrIcon';
 
 describe('CdrIcon.vue', () => {
   it('renders a wrapping svg', () => {
-    const wrapper = shallow(CdrIcon, {
-      propsData: {
-        url: '',
-      }
-    });
+    const wrapper = shallow(CdrIcon, {});
     expect(wrapper.is('svg')).toBe(true);
   });
 });
