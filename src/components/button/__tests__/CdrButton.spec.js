@@ -24,6 +24,13 @@ describe('CdrButton.vue', () => {
     expect(wrapper.attributes().type).toBe('button');
   });
 
+  it('validates type prop', () => {
+    const wrapper = shallow(CdrButton);
+    const type = wrapper.vm.$options.props.type;
+    expect(type.validator('test')).toBe(false);
+    expect(type.validator('reset')).toBe(true);
+  });
+
   it('sets type attr correctly', () => {
     const wrapper = shallow(CdrButton, {
       propsData: {
