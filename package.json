@@ -17,7 +17,7 @@
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
     "docs": "vue-styleguidist server",
-    "build:docs": "vue-styleguidist build",
+    "build:docs": "lerna run build:docs",
     "create": "node generator.js",
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
