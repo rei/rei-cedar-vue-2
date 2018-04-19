@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-text",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "REI Cedar Style Framework - Vue Component for Text",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-text",
   "repository": {
@@ -15,10 +15,14 @@
   "files": [
    "dist"
   ],
+  "config": {
+    "vue_file": "CdrText"
+  },
   "main": "dist/cdr-text.js",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "build:docs": "node build/docs-build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
