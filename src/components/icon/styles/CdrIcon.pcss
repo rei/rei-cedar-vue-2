@@ -10,31 +10,25 @@
     :Base Styles
 ========================================================================== */
 
+.cdr-icon-sprite {
+  display: none;
+}
+
 .cdr-icon {
   display: inline-block;
   vertical-align: middle;
   flex: 0 0 auto;
-
-  /* TODO: create/add icon tokens */
-  width: 24px;
-  height: 24px;
+  width: $icon-size;
+  height: $icon-size;
   fill: $icon-fill;
 
-  & > svg {
-    width: inherit;
-    height: inherit;
-    fill: inherit;
-  }
-
   &--sm {
-    /* TODO: create/add icon tokens */
-    width: $icon-width;
-    height: $icon-height;
+    width: $icon-size-sm;
+    height: $icon-size-sm;
   }
 
   &--lg {
-    /* TODO: create/add icon tokens */
-    width: 32px;
-    height: 32px;
+    width: $icon-size-lg;
+    height: $icon-size-lg;
   }
 }
