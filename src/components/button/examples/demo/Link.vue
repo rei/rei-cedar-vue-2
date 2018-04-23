@@ -2,7 +2,7 @@
   <div>
     <h3>Buttons with link styles</h3>
     <p>
-      <cdr-button modifier="link">Button as link</cdr-button>
+      <cdr-button style-options="{ style: 'link' }">Button as link</cdr-button>
     </p>
     <p>
       <cdr-button

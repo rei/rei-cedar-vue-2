@@ -2,6 +2,11 @@
   <div>
     <div class="button-example">
       <cdr-button
+        type="button"
+        :style-options="{ defaultSize: 'size-large', responsive: ['large@small'] }"
+      >Button using object
+      </cdr-button>
+      <cdr-button
         type="submit"
         modifier="lg"
       >Large
