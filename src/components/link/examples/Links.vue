@@ -1,17 +1,30 @@
 <template>
   <div>
-    <h2>Anchors</h2>
+    <h2>Links</h2>
 
     <h3>Default Link, No props</h3>
-    <!-- Default Link, no props -->
     <div class="anchor-example">
-      <cdr-a/>
+      <cdr-link/>
     </div>
 
-    <!-- Too much content Link -->
+    <h3>Link, href set</h3>
+    <div class="anchor-example">
+      <cdr-link href="https://www.rei.com/">REI.com</cdr-link>
+    </div>
+
+    <h3>Standalone Link (No underline)</h3>
+    <div class="anchor-example">
+      <cdr-link modifier="standalone"/>
+    </div>
+
+    <h3>Contrast Link (for use on dark backgrounds)</h3>
+    <div class="anchor-example anchor-example--dark-background">
+      <cdr-link modifier="contrast"/>
+    </div>
+
     <h3>Content Resilience, too much content</h3>
     <div class="anchor-example">
-      <cdr-a>
+      <cdr-link>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Possimus animi maxime laboriosam nobis veniam fugit obca
         nihil enim, magnam aliquid temporibus perspiciatis amet
@@ -36,38 +49,27 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit
         Possimus animi maxime laboriosam nobis veniam fugit obca
         nihil enim, magnam aliquid temporibus perspiciatis amet
-      </cdr-a>
+      </cdr-link>
     </div>
 
-    <!-- Too much content Link -->
     <h3>Content Resilience, too little content</h3>
     <div class="anchor-example">
-      <cdr-a>K</cdr-a>
+      <cdr-link>K</cdr-link>
     </div>
 
-    <default-anchor/>
-    <contrast-anchor/>
-    <standalone-anchor/>
-    <button-anchor/>
+    <h3>Link using a &lt;button&gt; element</h3>
+    <div class="anchor-example">
+      <cdr-link el="button">I'm a button!</cdr-link>
+    </div>
   </div>
 </template>
 
 <script>
 import Components from 'componentsdir/_index';
-import defaultAnchor from './demo/Default';
-import contrastAnchor from './demo/Contrast';
-import standaloneAnchor from './demo/Standalone';
-import buttonAnchor from './demo/Button';
-
-const components = Components;
-components.defaultAnchor = defaultAnchor;
-components.contrastAnchor = contrastAnchor;
-components.standaloneAnchor = standaloneAnchor;
-components.buttonAnchor = buttonAnchor;
 
 export default {
-  name: 'Anchors',
-  components,
+  name: 'Links',
+  components: Components,
 };
 </script>
 
@@ -76,7 +78,7 @@ export default {
     padding: 20px;
   }
 
-  .overlay-example {
+  .anchor-example--dark-background {
     background-color: black;
   }
 </style>

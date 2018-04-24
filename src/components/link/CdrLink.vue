@@ -1,49 +1,49 @@
 <template>
-  <a
+  <component
+    :is="el"
     :class="modifierClass"
     :target="target"
-    :rel="newRel"
-    :href="href"
+    :rel="computedRel"
+    :href="el === 'a' ? href : null /* don't include the href attribute if not an <a> */"
   >
     <!-- @slot innerHTML on the inside of the anchor component -->
     <slot>Link Text</slot>
-  </a>
+  </component>
 </template>
 
 <script>
 import modifier from 'mixinsdir/modifier';
 
 /**
- * Cedar 2 component for anchor.
+ * Cedar 2 component for link.
  *
  * <span class="modifiers">Modifiers</span>
- *
- * Modifiers can be combined 1 from each grouping.
- * {contrast, overlay, standalone} **OR** button
- * Use of the 'button' modifier depends on including the css for CdrButton.
- * A modifier list that contains 'button' exposes the same modifiers as CdrButton and the other modifiers shouldn't be combined with it.
+ * {contrast, overlay, standalone}
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
 export default {
-  name: 'CdrA',
+  name: 'CdrLink',
   mixins: [modifier],
   props: {
-    /** @ignore */
-    target: String,
-    /** @ignore */
-    rel: String,
+    el: {
+      type: String,
+      default: 'a',
+    },
     href: {
       type: String,
       default: '#',
     },
+    /** @ignore */
+    target: String,
+    /** @ignore */
+    rel: String,
   },
   computed: {
     baseClass() {
-      const modifiers = this.modifier ? this.modifier.split(' ') : [];
-      return modifiers.indexOf('button') >= 0 ? 'cdr-button' : 'cdr-link';
+      return 'cdr-link';
     },
-    newRel() {
+    computedRel() {
       if (this.target === '_blank') {
         return this.rel || 'noopener noreferrer';
       }
@@ -55,7 +55,7 @@ export default {
 
 <style theme="default">
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrA.vars.pcss';
-  @import './styles/CdrA.pcss';
+  @import './styles/vars/CdrLink.vars.pcss';
+  @import './styles/CdrLink.pcss';
 </style>
 

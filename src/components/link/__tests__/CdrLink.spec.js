@@ -53,12 +53,12 @@ describe('CdrA.vue', () => {
     expect(wrapper.classes()).toContain('cdr-link');
   });
 
-  it('computes link as button base class correctly', () => {
+  it('computes link as button element correctly', () => {
     const wrapper = shallow(CdrA, {
       propsData: {
-        modifier: 'primary, button',
+        el: 'button'
       },
     });
-    expect(wrapper.classes()).toContain('cdr-button');
+    expect(wrapper.is('button')).toBe(true);
   });
 });

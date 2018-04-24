@@ -1,7 +1,7 @@
 module.exports = [{
-  label: 'Anchor',
+  label: 'Link',
   selectors: [
-    '[data-backstop="anchors"]',
+    '[data-backstop="links"]',
   ],
   hoverSelectors: [
     '[data-backstop="cdr-link"]',
