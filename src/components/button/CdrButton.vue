@@ -44,7 +44,9 @@ export default {
     },
     styleOptions: {
       type: Object,
-      default: () => () => {},
+      default() {
+        return { defaultSize: 'medium' };
+      },
     },
   },
   computed: {

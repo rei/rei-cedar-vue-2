@@ -101,13 +101,13 @@
   /* Large
      ========== */
 
-  &--lg {
+  &--large {
     @include redwood-display-40;
 
     padding: $inset-1-and-a-half-x-squish;
   }
 
-  &--md {
+  &--medium {
     @include redwood-display-30;
 
     padding: $inset-1-x-squish;
@@ -116,7 +116,7 @@
   /* Small
      ========== */
 
-  &--sm {
+  &--small {
     @include redwood-display-20;
 
     padding: $inset-three-quarter-x-squish;
@@ -124,8 +124,7 @@
 
   /* Block Width 100%
      ========== */
-  &--block {
-    display: block;
+  &--full-width {
     width: 100%;
   }
 
@@ -190,70 +189,79 @@
   /* Breakpooint variants
     ========================================================================== */
 
-  /* sm
+  /* @small
     ========== */
   @media (--sm-mq) {
-    &--sm\@sm {
+    &--small\@small {
       @include redwood-display-20;
 
       padding: $inset-three-quarter-x-squish;
+      width: auto;
     }
 
-    &--md\@sm {
+    &--medium\@small {
       @include redwood-display-30;
 
       padding: $inset-1-x-squish;
+      width: auto;
     }
 
-    &--lg\@sm {
+    &--large\@small {
       @include redwood-display-40;
 
       padding: $inset-1-and-a-half-x-squish;
+      width: auto;
     }
   }
 
-  /* md
+  /* @medium
     ========== */
   @media (--md-mq) {
-    &--sm\@md {
+    &--small\@medium {
       @include redwood-display-20;
 
       padding: $inset-three-quarter-x-squish;
+      width: auto;
     }
 
-    &--md\@md {
+    &--medium\@medium {
       @include redwood-display-30;
 
       padding: $inset-1-x-squish;
+      width: auto;
     }
 
-    &--lg\@md {
+    &--large\@medium {
       @include redwood-display-40;
 
       padding: $inset-1-and-a-half-x-squish;
+      width: auto;
     }
   }
 
-  /* lg
+  /* @large
     ========== */
   
   @media (--lg-mq) {
-    &--sm\@lg {
+    &--small\@large {
       @include redwood-display-20;
 
       padding: $inset-three-quarter-x-squish;
+      width: auto;
     }
 
-    &--md\@lg {
+    &--medium\@large {
       @include redwood-display-30;
 
       padding: $inset-1-x-squish;
+      width: auto;
     }
 
-    &--lg\@lg {
+    &--large\@large {
       @include redwood-display-40;
 
       padding: $inset-1-and-a-half-x-squish;
+      width: auto;
     }
   }
 }
