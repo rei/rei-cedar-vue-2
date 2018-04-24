@@ -3,9 +3,10 @@
     :class="modifierClass"
     :target="target"
     :rel="newRel"
+    :href="href"
   >
     <!-- @slot innerHTML on the inside of the anchor component -->
-    <slot/>
+    <slot>Link Text</slot>
   </a>
 </template>
 
@@ -32,6 +33,10 @@ export default {
     target: String,
     /** @ignore */
     rel: String,
+    href: {
+      type: String,
+      default: '#',
+    },
   },
   computed: {
     baseClass() {
