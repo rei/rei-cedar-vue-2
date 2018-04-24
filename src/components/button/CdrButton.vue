@@ -2,11 +2,18 @@
   <button
     :class="[styleClass, themeClass]"
     :type="type"
+    v-if="el === 'button'"
     @click="onClick"
   >
     <!-- @slot innerHTML on the inside of the button component -->
     <slot/>
   </button>
+  <a
+    href="#"
+    v-else
+  >
+    <slot />
+  </a>
 </template>
 
 <script>
@@ -27,6 +34,10 @@ export default {
   name: 'CdrButton',
   mixins: [theme],
   props: {
+    el: {
+      type: String,
+      default: 'button',
+    },
     /**
      * Defines the button type. Possible values: {button, submit, reset}.
      */
