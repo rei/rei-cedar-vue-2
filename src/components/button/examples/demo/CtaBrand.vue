@@ -8,11 +8,13 @@
       <cdr-button
         v-for="(button, index) in section.buttons"
         :key="index"
-        :style-options="button.styleOptions"
-        type="button"
+        :static-size="button.staticSize"
+        :full-width="button.fullWidth"
+        :responsive-size="button.responsiveSize"
+        :style-modifiers="button.styleModifiers"
+        :type="button"
         :disabled="button.disabled"
-      >{{ button.label }}
-      </cdr-button>
+      >{{ button.label }}</cdr-button>
     </div>
     <div class="button-example">
       <cdr-button
@@ -39,17 +41,20 @@ export default {
             {
               label: 'Large',
               disabled: false,
-              styleOptions: { defaultSize: 'large', style: ['cta', 'brand'] },
+              staticSize: 'large',
+              styleModifiers: ['cta', 'brand'],
             },
             {
               label: 'Medium',
               disabled: false,
-              styleOptions: { defaultSize: 'medium', style: ['cta', 'brand'] },
+              staticSize: 'medium',
+              styleModifiers: ['cta', 'brand'],
             },
             {
               label: 'Disabled',
               disabled: false,
-              styleOptions: { defaultSize: 'small', style: ['cta', 'brand'] },
+              staticSize: 'small',
+              styleModifiers: ['cta', 'brand'],
             },
           ],
         },
@@ -59,12 +64,14 @@ export default {
             {
               label: 'Full Width',
               disabled: false,
-              styleOptions: { defaultSize: 'full-width', style: ['cta', 'brand'] },
+              fullWidth: true,
+              styleModifiers: ['cta', 'brand'],
             },
             {
               label: 'Full Width Disabled',
               disabled: true,
-              styleOptions: { defaultSize: 'full-width', style: ['cta', 'brand'] },
+              fullWidth: true,
+              styleModifiers: ['cta', 'brand'],
             },
           ],
         },

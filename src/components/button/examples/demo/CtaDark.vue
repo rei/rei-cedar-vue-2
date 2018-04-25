@@ -1,25 +1,20 @@
 <template>
   <div>
-    <div class="button-example">
+    <div
+      class="button-example"
+      v-for="(section, index) in data"
+      :key="index">
+      <h2>{{ section.title }}</h2>
       <cdr-button
-        modifier="cta dark"
-        data-backstop="cdr-button--cta-dark"
-        type="submit"
-      >CTA-dark</cdr-button>
-      <cdr-button
-        modifier="cta dark"
-        disabled
-      >CTA-dark Disabled</cdr-button>
-    </div>
-    <div class="button-example">
-      <cdr-button
-        type="submit"
-        modifier="sm cta dark"
-      >Small cta-dark</cdr-button>
-      <cdr-button
-        type="submit"
-        modifier="xs cta dark"
-      >Extra Small CTA-dark</cdr-button>
+        v-for="(button, index) in section.buttons"
+        :key="index"
+        :static-size="button.staticSize"
+        :full-width="button.fullWidth"
+        :responsive-size="button.responsiveSize"
+        :style-modifiers="button.styleModifiers"
+        :type="button"
+        :disabled="button.disabled"
+      >{{ button.label }}</cdr-button>
     </div>
   </div>
 </template>
@@ -27,9 +22,45 @@
 <script>
 import Components from 'componentsdir/_index';
 
+/*
+  backstop variant
+  cta dark
+  disabled
+  sizes
+*/
+
 export default {
   name: 'CtaDark',
   components: Components,
+  data: function data() {
+    return {
+      data: [
+        {
+          title: 'CTA + Dark',
+          buttons: [
+            {
+              label: 'CTA-dark Large',
+              disabled: false,
+              staticSize: 'large',
+              styleModifiers: ['cta', 'dark'],
+            },
+            {
+              label: 'Disabled',
+              disabled: true,
+              staticSize: 'medium',
+              styleModifiers: ['cta', 'dark'],
+            },
+            {
+              label: 'Small',
+              disabled: false,
+              staticSize: 'small',
+              styleModifiers: ['cta', 'dark'],
+            },
+          ],
+        },
+      ],
+    };
+  },
 };
 </script>
 

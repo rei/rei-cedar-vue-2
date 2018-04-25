@@ -8,8 +8,11 @@
       <cdr-button
         v-for="(button, index) in section.buttons"
         :key="index"
-        :style-options="button.styleOptions"
-        type="button"
+        :static-size="button.staticSize"
+        :full-width="button.fullWidth"
+        :responsive-size="button.responsiveSize"
+        :style-modifiers="button.styleModifiers"
+        :type="button"
         :disabled="button.disabled"
       >{{ button.label }}</cdr-button>
     </div>
@@ -31,17 +34,20 @@ export default {
             {
               label: 'Large',
               disabled: false,
-              styleOptions: { defaultSize: 'large', style: 'secondary' },
-            },
-            {
-              label: 'Medium',
-              disabled: true,
-              styleOptions: { defaultSize: 'medium', style: 'secondary' },
+              staticSize: 'large',
+              styleModifiers: ['secondary'],
             },
             {
               label: 'Disabled',
+              disabled: true,
+              staticSize: 'medium',
+              styleModifiers: ['secondary'],
+            },
+            {
+              label: 'Small',
               disabled: false,
-              styleOptions: { defaultSize: 'small', style: 'secondary' },
+              staticSize: 'small',
+              styleModifiers: ['secondary'],
             },
           ],
         },
@@ -51,12 +57,14 @@ export default {
             {
               label: 'Full Width',
               disabled: false,
-              styleOptions: { defaultSize: 'full-width', style: 'secondary' },
+              fullWidth: true,
+              styleModifiers: ['secondary'],
             },
             {
               label: 'Full Width Disabled',
               disabled: true,
-              styleOptions: { defaultSize: 'full-width', style: 'secondary' },
+              fullWidth: true,
+              styleModifiers: ['sedondary'],
             },
           ],
         },

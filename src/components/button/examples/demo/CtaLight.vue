@@ -1,25 +1,20 @@
 <template>
   <div>
-    <div class="button-example">
+    <div
+      class="button-example"
+      v-for="(section, index) in data"
+      :key="index">
+      <h2>{{ section.title }}</h2>
       <cdr-button
-        modifier="cta light"
-        data-backstop="cdr-button--cta-light"
-        type="submit"
-      >CTA-light</cdr-button>
-      <cdr-button
-        modifier="cta light"
-        disabled
-      >CTA-light Disabled</cdr-button>
-    </div>
-    <div class="button-example">
-      <cdr-button
-        type="submit"
-        modifier="sm cta light"
-      >Small cta-light</cdr-button>
-      <cdr-button
-        type="submit"
-        modifier="xs cta light"
-      >Extra Small CTA-light</cdr-button>
+        v-for="(button, index) in section.buttons"
+        :key="index"
+        :static-size="button.staticSize"
+        :full-width="button.fullWidth"
+        :responsive-size="button.responsiveSize"
+        :style-modifiers="button.styleModifiers"
+        :type="button"
+        :disabled="button.disabled"
+      >{{ button.label }}</cdr-button>
     </div>
   </div>
 </template>
@@ -30,6 +25,35 @@ import Components from 'componentsdir/_index';
 export default {
   name: 'CtaLight',
   components: Components,
+  data: function data() {
+    return {
+      data: [
+        {
+          title: 'CTA + Light',
+          buttons: [
+            {
+              label: 'CTA-light Large',
+              disabled: false,
+              staticSize: 'large',
+              styleModifiers: ['cta', 'light'],
+            },
+            {
+              label: 'Disabled',
+              disabled: false,
+              staticSize: 'medium',
+              styleModifiers: ['cta', 'light'],
+            },
+            {
+              label: 'Small',
+              disabled: true,
+              staticSize: 'small',
+              styleModifiers: ['cta', 'light'],
+            },
+          ],
+        },
+      ],
+    };
+  },
 };
 </script>
 

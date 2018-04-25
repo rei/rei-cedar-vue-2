@@ -1,20 +1,13 @@
 <template>
-  <button
+  <component
+    :is="el"
     :class="[styleModifiersClass, themeClass]"
     :type="type"
-    v-if="el === 'button'"
     @click="onClick"
   >
     <!-- @slot innerHTML on the inside of the button component -->
     <slot/>
-  </button>
-  <a
-    :class="[styleClass]"
-    href="#"
-    v-else
-  >
-    <slot />
-  </a>
+  </component>
 </template>
 
 <script>
