@@ -14,8 +14,7 @@ Promise.all([componentsProm, compositionProm])
 .then( values => {
   const [componentObjs, compositionObjs] = values
   cedarDataObj = {"components": [...componentObjs], "compositions": [...compositionObjs]}
-  console.log(`cedar data object:\n${util.inspect(cedarDataObj, {depth: null, colors: true})}`)
-  // return fs.outputJSON(path.join(__dirname,'..','src'))
+  return fs.outputJSON(path.join(__dirname,'..','src/cedar-data.json'), cedarDataObj, {spaces: '\t'})
 })
 .catch(globErr)
 
