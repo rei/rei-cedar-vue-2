@@ -15,6 +15,7 @@
 import modifier from 'mixinsdir/modifier';
 
 /**
+ *
  * Cedar 2 component for link.
  *
  * <span class="modifiers">Modifiers</span>
