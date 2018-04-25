@@ -1,7 +1,7 @@
 <template>
   <div>
     <input
-      class="cdr-radio"
+      :class="[modifierClass]"
       type="radio"
       v-bind="$attrs"
       :id="radioId"
@@ -16,13 +16,14 @@
       :for="radioId"
       ref="label"
     >
-      <!-- @slot innerHTML inside of the radio component -->
-      <slot/>
+      <!-- On same line because of inline-block and whitespace -->
+      <span class="cdr-radio__figure" /><!-- @slot innerHTML inside of checkbox component --><slot/>
     </label>
   </div>
 </template>
 
 <script>
+import modifier from 'mixinsdir/modifier';
 import isEqual from 'lodash/isEqual';
 
 /**
@@ -33,6 +34,7 @@ import isEqual from 'lodash/isEqual';
  */
 export default {
   name: 'CdrRadio',
+  mixins: [modifier],
   inheritAttrs: false,
   model: {
     prop: 'modelValue',
@@ -68,6 +70,9 @@ export default {
     isChecked() {
       return isEqual(this.modelValue, this.value);
     },
+    baseClass() {
+      return 'cdr-radio';
+    },
   },
   methods: {
     onChange() {
@@ -84,6 +89,5 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrRadio.vars.pcss';
   @import './styles/CdrRadio.pcss';
 </style>

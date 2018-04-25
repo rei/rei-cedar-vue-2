@@ -6,26 +6,36 @@
       @change="logChange"
       data-backstop="checkbox-focus"
     >single</cdr-checkbox>
+    <cdr-checkbox
+      modifier="compact"
+      v-model="ex1"
+    >single compact</cdr-checkbox>
     <p>single: {{ ex1 }}</p>
+
     <span data-backstop="checkbox-checked">
       <cdr-checkbox
         v-model="ex2"
-        @change="logChange"
         true-value="checked"
         false-value="unchecked"
       >checked</cdr-checkbox>
+      <cdr-checkbox
+        modifier="compact"
+        v-model="ex2"
+        true-value="checked"
+        false-value="unchecked"
+      >checked compact</cdr-checkbox>
     </span>
     <p>checked: {{ ex2 }}</p>
+
     <cdr-checkbox
       v-model="ex3"
-      @change="logChange"
       true-value="checked"
     >custom true</cdr-checkbox>
     <p>custom true: {{ ex3 }}</p>
+
     <cdr-checkbox
       custom-value="A"
       v-model="exGroup"
-      @change="logChange"
     >A</cdr-checkbox>
     <cdr-checkbox
       custom-value="B"
@@ -47,23 +57,44 @@
       :custom-value="testVal2"
       v-model="exGroup"
     >F</cdr-checkbox>
+
+    <cdr-checkbox
+      custom-value="A"
+      modifier="compact"
+      v-model="exGroup"
+    >A compact</cdr-checkbox>
+    <cdr-checkbox
+      custom-value="B"
+      modifier="compact"
+      v-model="exGroup"
+    >B compact</cdr-checkbox>
+    <cdr-checkbox
+      custom-value="C"
+      modifier="compact"
+      v-model="exGroup"
+    >C compact</cdr-checkbox>
     <p>group: {{ exGroup }}</p>
+
     <cdr-checkbox disabled>disabled checkbox</cdr-checkbox>
     <cdr-checkbox
       v-model="checked"
       disabled
     >disabled and checked checkbox</cdr-checkbox>
+    <cdr-checkbox
+      disabled
+      modifier="compact"
+    >disabled checkbox compact</cdr-checkbox>
+    <cdr-checkbox
+      v-model="checked"
+      disabled
+      modifier="compact"
+    >disabled and checked checkbox compact</cdr-checkbox>
 
     <div class="wrap">
       <cdr-checkbox
         name="complex1"
         v-model="complex1"
         label-class="flex">
-
-        <cdr-icon
-          url="/static/rei-icons.svg#cdr-heart-fill"
-          class="cdr-inline--sm checkbox-example-icon"/>
-
         <div>
           <strong>
             Easy
@@ -78,11 +109,6 @@
         name="complex2"
         v-model="complex2"
         label-class="flex">
-
-        <cdr-icon
-          url="/static/rei-icons.svg#cdr-heart-fill"
-          class="cdr-inline--sm checkbox-example-icon"/>
-
         <div>
           <strong>
             Easy
@@ -93,6 +119,23 @@
 
       </cdr-checkbox>
     </div>
+
+    <cdr-checkbox
+      indeterminate
+    >indeterminate</cdr-checkbox>
+    <cdr-checkbox
+      indeterminate
+      disabled
+    >indeterminate</cdr-checkbox>
+    <cdr-checkbox
+      indeterminate
+      modifier="compact"
+    >indeterminate compact</cdr-checkbox>
+    <cdr-checkbox
+      indeterminate
+      disabled
+      modifier="compact"
+    >indeterminate compact</cdr-checkbox>
   </div>
 </template>
 

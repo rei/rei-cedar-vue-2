@@ -8,59 +8,17 @@
   TOC:
 
     :Base - Checkbox
-      :States
       :Elements
         :Label
-          :Box
+          :Figure
+      :States
+      :Modifiers
+        :Compact
 ========================================================================== */
 
 .cdr-checkbox {
   position: absolute;
   opacity: 0;
-
-  /* States
-    ---------- */
-
-  &:checked + &__label {
-    &::before {
-      background-color: $checkbox-checked-background-color;
-      border-color: $checkbox-checked-border-color;
-    }
-
-    &::after {
-      /* TODO: move this into the component so it doesn't fail silently */
-      background-image: svg-load('../../../assets/icons/rei/check-lg.svg', fill=$(checkbox-checked-icon-color));
-      background-repeat: no-repeat;
-    }
-  }
-
-  &:checked&:hover + &__label::before {
-    background-color: $checkbox-checked-hover-background-color;
-    border-color: $checkbox-checked-hover-border-color;
-  }
-
-  &[disabled] + &__label {
-    color: $checkbox-disabled-color;
-    cursor: default;
-
-    &::before {
-      border-color: $checkbox-disabled-border-color;
-    }
-  }
-
-  &:checked&[disabled] + &__label {
-    color: $checkbox-disabled-checked-color;
-    cursor: default;
-
-    &::before {
-      background-color: $checkbox-disabled-checked-background-color;
-      border-color: $checkbox-disabled-checked-border-color;
-    }
-  }
-
-  &:focus + &__label::before {
-    box-shadow: $checkbox-focus-box-shadow;
-  }
 
   /* Elements
     ========================================================================== */
@@ -69,14 +27,10 @@
     ========== */
 
   &__label {
-    font-size: $checkbox-label-font-size;
-    line-height: $checkbox-label-line-height;
-    text-align: $checkbox-label-text-align;
+    @include redwood-display-30;
+
     color: $checkbox-label-color;
-    font-style: $checkbox-label-font-style;
-    font-weight: $checkbox-label-font-weight;
-    font-family: $checkbox-label-font-family;
-    margin-bottom: $checkbox-label-margin-bottom;
+    margin-bottom: 0;
     position: relative;
 
     /* States
@@ -85,31 +39,153 @@
     &:hover {
       cursor: pointer;
     }
+  }
 
-    /* Box Decoration
-    ========== */
-
-    &::before {
-      content: '';
-      width: $checkbox-box-before-width;
-      height: $checkbox-box-before-height;
-      flex: 0 0 auto;
-      border: $checkbox-box-before-border;
-      border-radius: $checkbox-box-before-border-radius;
-      margin-right: $checkbox-box-before-margin-right;
-      background-color: $checkbox-box-before-background-color;
-      display: inline-block;
-      vertical-align: top;
-    }
+  /* Figure Decoration
+  ========== */
+  &__figure {
+    position: relative;
+    width: $checkbox-figure-size;
+    height: $checkbox-figure-size;
+    flex: 0 0 auto;
+    border-radius: $checkbox-figure-radius;
+    margin-top: $checkbox-figure-space-top;
+    margin-right: $checkbox-figure-space-right;
+    background-color: $checkbox-figure-background-color;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid $checkbox-figure-border-color;
 
     &::after {
       content: '';
       position: absolute;
-      left: 0;
-      top: 0;
-      width: $checkbox-box-after-width;
-      height: $checkbox-box-after-height;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: $checkbox-figure-size;
+      height: $checkbox-figure-size;
+      border-radius: $checkbox-figure-radius;
       flex: 0 0 auto;
+    }
+  }
+
+  /* States
+    ---------- */
+
+  /* Checked */
+  &:checked + &__label {
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-checked-border-color;
+      background-color: $checkbox-figure-checked-background-color;
+      
+      &::after {
+        /* move this into the component so it doesn't fail silently? */
+        background-image: svg-load('../../../assets/icons/rei/check-lg.svg', fill=$(checkbox-figure-icon-fill));
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  /* Hover */
+  &:hover + &__label {
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-hover-border-color;
+    }
+  }
+
+  /* Checked + Hover */
+  &:checked&:hover + &__label {
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-checked-hover-border-color;
+      background-color: $checkbox-figure-checked-hover-background-color;
+    }
+  }
+
+  /* Active */
+  &:active + &__label {
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-active-border-color;
+    }
+  }
+
+  /* Disabled */
+  &[disabled] + &__label {
+    color: $checkbox-label-disabled-color;
+    cursor: default;
+
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-disabled-border-color;
+    }
+  }
+
+  /* Checked + Disabled */
+  &:checked&[disabled] + &__label {
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-disabled-border-color;
+      background-color: $checkbox-figure-disabled-background-color;
+    }
+  }
+
+  /* Indeterminate */
+  &[indeterminate] + &__label {
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-indeterminate-border-color;
+      
+      &::after {
+        width: $checkbox-figure-indeterminate-size;
+        height: $checkbox-figure-indeterminate-size;
+        background-color: $checkbox-figure-indeterminate-background-color;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        border-radius: $checkbox-figure-radius;
+      }
+    }
+  }
+
+  /* Indeterminate + Hover */
+  &[indeterminate]&:hover + &__label {
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-checked-hover-border-color;
+      
+      &::after {
+        background-color: $checkbox-figure-checked-hover-background-color;
+      }
+    }
+  }
+
+  /* Indeterminate + Disabled */
+  &[indeterminate]&[disabled] + &__label {
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-disabled-border-color;
+      
+      &::after {
+        background-color: $checkbox-figure-disabled-background-color;
+      }
+    }
+  }
+
+  /* Focus */
+  &:focus + &__label {
+    & > .cdr-checkbox__figure {
+      border-color: $checkbox-figure-focus-border-color;
+      box-shadow: $checkbox-focus-outline;
+    }
+  }
+
+  /* Modifiers
+    ========================================================================== */
+
+  /* Compact
+    ========== */
+
+  &--compact {
+    & + .cdr-checkbox__label {
+      @include redwood-display-20;
+
+      & > .cdr-checkbox__figure {
+        margin-top: $checkbox-compact-figure-space-top;
+      }
     }
   }
 }

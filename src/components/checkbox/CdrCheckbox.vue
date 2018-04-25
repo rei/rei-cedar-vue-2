@@ -1,7 +1,8 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div>
     <input
-      class="cdr-checkbox"
+      :class="[modifierClass]"
       type="checkbox"
       :id="checkboxId"
       v-bind="$attrs"
@@ -9,6 +10,7 @@
       :true-value="customValue ? null : trueValue"
       :false-value="customValue ? null : falseValue"
       :value="customValue"
+      :indeterminate="indeterminate"
       @change="updateValue(newValue, $event)"
       ref="checkbox"
     >
@@ -18,13 +20,15 @@
       :for="checkboxId"
       ref="label"
     >
-      <!-- @slot innerHTML inside of checkbox component -->
-      <slot/>
+      <!-- On same line because of inline-block and whitespace -->
+      <span class="cdr-checkbox__figure" /><!-- @slot innerHTML inside of checkbox component --><slot/>
     </label>
   </div>
 </template>
 
 <script>
+import modifier from 'mixinsdir/modifier';
+
 /**
  * Cedar 2 component for checkbox
  * **NOTE:** `v-model` is required.
@@ -33,8 +37,16 @@
  */
 export default {
   name: 'CdrCheckbox',
+  mixins: [modifier],
   inheritAttrs: false,
   props: {
+    /**
+     * Show checkbox in indeterminate state. (NOTE: this is a visual-only state)
+    */
+    indeterminate: {
+      type: [Boolean, Function],
+      default: false,
+    },
     /**
      * The value when checked.
     */
@@ -73,6 +85,9 @@ export default {
     checkboxId() {
       return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
     },
+    baseClass() {
+      return 'cdr-checkbox';
+    },
   },
   watch: {
     value(val) {
@@ -98,6 +113,5 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrCheckbox.vars.pcss';
   @import './styles/CdrCheckbox.pcss';
 </style>
