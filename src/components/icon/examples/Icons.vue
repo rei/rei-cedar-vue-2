@@ -87,8 +87,8 @@ import * as Icons from 'componentsdir/icon/dist/cdr-icon';
 export default {
   name: 'Icons',
   components: {
-    ...Components,
     ...Icons,
+    ...Components,
   },
   data() {
     return {
