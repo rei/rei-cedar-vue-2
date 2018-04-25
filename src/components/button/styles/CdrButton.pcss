@@ -100,13 +100,14 @@
 
   /* Large
      ========== */
-
   &--large {
     @include redwood-display-40;
 
     padding: $inset-1-and-a-half-x-squish;
   }
 
+  /* Medium
+     ========== */
   &--medium {
     @include redwood-display-30;
 
@@ -115,14 +116,13 @@
 
   /* Small
      ========== */
-
   &--small {
     @include redwood-display-20;
 
     padding: $inset-three-quarter-x-squish;
   }
 
-  /* Block Width 100%
+  /* Full Width
      ========== */
   &--full-width {
     width: 100%;
@@ -189,9 +189,36 @@
   /* Breakpooint variants
     ========================================================================== */
 
-  /* @small
+  /* @extra-small
+    0px - 767px
     ========== */
-  @media (--sm-mq) {
+  @media (--xs-mq-only) {
+    &--small\@extra-small {
+      @include redwood-display-20;
+
+      padding: $inset-three-quarter-x-squish;
+      width: auto;
+    }
+
+    &--medium\@extra-small {
+      @include redwood-display-30;
+
+      padding: $inset-1-x-squish;
+      width: auto;
+    }
+
+    &--large\@extra-small {
+      @include redwood-display-40;
+
+      padding: $inset-1-and-a-half-x-squish;
+      width: auto;
+    }
+  }
+
+  /* @small
+    768px - 991px
+    ========== */
+  @media (--sm-mq-only) {
     &--small\@small {
       @include redwood-display-20;
 
@@ -215,8 +242,9 @@
   }
 
   /* @medium
+    992px - 1199px
     ========== */
-  @media (--md-mq) {
+  @media (--md-mq-only) {
     &--small\@medium {
       @include redwood-display-20;
 
@@ -240,9 +268,10 @@
   }
 
   /* @large
+    1200px and up
     ========== */
   
-  @media (--lg-mq) {
+  @media (--lg-mq-only) {
     &--small\@large {
       @include redwood-display-20;
 

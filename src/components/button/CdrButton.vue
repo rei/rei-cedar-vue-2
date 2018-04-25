@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="[styleClass, themeClass]"
+    :class="[styleModifiersClass, themeClass]"
     :type="type"
     v-if="el === 'button'"
     @click="onClick"
@@ -9,6 +9,7 @@
     <slot/>
   </button>
   <a
+    :class="[styleClass]"
     href="#"
     v-else
   >
@@ -34,9 +35,47 @@ export default {
   name: 'CdrButton',
   mixins: [theme],
   props: {
+    /**
+     * Controls render as button or anchor
+     */
     el: {
       type: String,
       default: 'button',
+      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
+    },
+    /**
+     * Sets a static size for the button. The only way to set top and bottom padding on component
+     */
+    staticSize: {
+      type: String,
+      default: '',
+      validator: value => (['small', 'medium', 'large', 'full-width'].indexOf(value) >= 0) || false,
+    },
+    /**
+     * Sets width to be 100%. Can be combined with staticSize
+    */
+    fullWidth: {
+      type: Boolean,
+      default: false,
+      validator: value => typeof value === 'boolean',
+    },
+    /**
+     * Render a specific button size at a specific breakpoint. Takes precedence over staticSize and fullWidth
+     */
+    responsiveSize: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
+    /**
+     * Additional style modifiers; essentially classes that you can pass in to alter the style
+     */
+    styleModifiers: {
+      type: Array,
+      default() {
+        return [];
+      },
     },
     /**
      * Defines the button type. Possible values: {button, submit, reset}.
@@ -53,36 +92,34 @@ export default {
       type: Function,
       default: () => () => null,
     },
-    styleOptions: {
-      type: Object,
-      default() {
-        return { defaultSize: 'medium' };
-      },
-    },
   },
   computed: {
     baseClass() {
-      const styles = this.styleOptions.style ? this.styleOptions.style : [];
-      return styles.indexOf('link') >= 0 ? 'cdr-link' : 'cdr-button';
+      return this.el === 'button' ? 'cdr-button' : 'cdr-link';
     },
-    styleClass() {
-      /* styles default guarantees we'll have an object */
-      const [base, styleOptions] = [this.baseClass, this.styleOptions];
+    styleModifiersClass() {
+      const [base, staticSize] = [this.baseClass, this.staticSize];
+      const propArrays = [...this.responsiveSize, ...this.styleModifiers];
       const final = [];
 
       if (!this.theme) {
+        // insert base
         final.push(`${base}`);
 
-        Object.keys(styleOptions).forEach((key) => {
-          if (typeof styleOptions[key] === 'string') {
-            final.push(`${base}--${styleOptions[key]}`);
-          } else {
-            styleOptions[key].forEach((val) => {
-              final.push(`${base}--${val}`);
-            });
-          }
+        // undefined when creating an anchor
+        if (staticSize) {
+          final.push(`${base}--${staticSize}`);
+        }
+
+        if (this.fullWidth) {
+          final.push(`${base}--full-width`);
+        }
+
+        propArrays.forEach((val) => {
+          final.push(`${base}--${val}`);
         });
       }
+
       return final.join(' ');
     },
   },

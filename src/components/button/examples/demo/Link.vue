@@ -2,13 +2,20 @@
   <div>
     <h3>Buttons with link styles</h3>
     <p>
-      <cdr-button style-options="{ style: 'link' }">Button as link</cdr-button>
+      <cdr-button
+        el="a"
+        href="https://google.com"
+        :style-options="{ style: 'link' }"
+      >This is a button-link
+      </cdr-button>
     </p>
     <p>
       <cdr-button
+        el="a"
         data-backstop="cdr-button--link-standalone"
-        modifier="link standalone"
-      >Button as link--standalone</cdr-button>
+        :style-options="{ style: ['link', 'standalone'] }"
+      >Button as link--standalone
+      </cdr-button>
     </p>
   </div>
 </template>

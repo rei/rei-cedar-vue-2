@@ -8,8 +8,10 @@
       <cdr-button
         v-for="(button, index) in section.buttons"
         :key="index"
-        :style-options="button.styleOptions"
-        type="button"
+        :static-size="button.staticSize"
+        :full-width="button.fullWidth"
+        :responsive-size="button.responsiveSize"
+        :type="button"
         :disabled="button.disabled"
       >{{ button.label }}</cdr-button>
     </div>
@@ -72,17 +74,20 @@ export default {
             {
               label: 'Large',
               disabled: false,
-              styleOptions: { defaultSize: 'large' },
+              staticSize: 'large',
+              fullWidth: false,
             },
             {
               label: 'Medium',
               disabled: false,
-              styleOptions: { defaultSize: 'medium' },
+              staticSize: 'medium',
+              fullWidth: false,
             },
             {
               label: 'Disabled',
               disabled: true,
-              styleOptions: { defaultSize: 'small' },
+              staticSize: 'small',
+              fullWidth: false,
             },
           ],
         },
@@ -90,14 +95,16 @@ export default {
           title: 'Full Width',
           buttons: [
             {
-              label: 'Small full width',
+              label: 'Small + full width',
               disabled: false,
-              styleOptions: { defaultSize: ['small', 'full-width'] },
+              staticSize: 'small',
+              fullWidth: true,
             },
             {
               label: 'Large full width',
               disabled: false,
-              styleOptions: { defaultSize: ['large', 'full-width'] },
+              staticSize: 'large',
+              fullWidth: true,
             },
           ],
         },
@@ -107,7 +114,8 @@ export default {
             {
               label: 'Responsive with default',
               disabled: false,
-              styleOptions: { defaultSize: 'full-width', responsiveSize: ['large@small'] },
+              fullWidth: true,
+              responsiveSize: ['large@small'],
             },
           ],
         },
