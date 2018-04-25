@@ -42,8 +42,7 @@ function docsBuild(file, info) {
   const readmeFilePath = `${currentDir}README.md`
   const examplesFilePath = `${currentDir}EXAMPLES.md`
   const compDataHistoryFilePath = `${currentDir}build${path.sep}component-data.json`
-  let compDataHistory = require(`${compDataHistoryFilePath}`) || {"versions": []}
-  compDataHistory = Object.assign(compDataHistory, {"name": `${vueCompName}`})
+  let compDataHistory = {"name": `${vueCompName}`, "versions": []}
   const currentVer = info.version
   compDataObj.version = currentVer
 

@@ -3,9 +3,6 @@ const fs = require('fs-extra')
 const semver = require('semver')
 const glob = require('glob-promise')
 
-const util = require('util')
-
-let cedarDataObj
 const componentsProm = globSearch('src/components/**/build/component-data.json', "components")
 
 const compositionProm = globSearch('src/compositions/**/build/component-data.json', "compositions")
@@ -13,7 +10,7 @@ const compositionProm = globSearch('src/compositions/**/build/component-data.jso
 Promise.all([componentsProm, compositionProm])
 .then( values => {
   const [componentObjs, compositionObjs] = values
-  cedarDataObj = {"components": [...componentObjs], "compositions": [...compositionObjs]}
+  const cedarDataObj = {"components": [...componentObjs], "compositions": [...compositionObjs]}
   return fs.outputJSON(path.join(__dirname,'..','src/cedar-data.json'), cedarDataObj, {spaces: '\t'})
 })
 .catch(globErr)
