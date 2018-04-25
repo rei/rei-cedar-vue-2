@@ -18,6 +18,7 @@
     "approve": "backstop approve --configPath=backstop.js",
     "docs": "vue-styleguidist server",
     "build:docs": "lerna run build:docs",
+    "build:archive": "node build/component-docs-archive.js",
     "create": "node generator.js",
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
