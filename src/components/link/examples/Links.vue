@@ -4,7 +4,7 @@
 
     <h3>Default Link, No props</h3>
     <div class="anchor-example">
-      <cdr-link/>
+      <cdr-link data-backstop="cdr-link"/>
     </div>
 
     <h3>Link, href set</h3>
@@ -14,7 +14,9 @@
 
     <h3>Standalone Link (No underline)</h3>
     <div class="anchor-example">
-      <cdr-link modifier="standalone"/>
+      <cdr-link
+        modifier="standalone"
+        data-backstop="cdr-link--standalone"/>
     </div>
 
     <h3>Contrast Link (for use on dark backgrounds)</h3>
@@ -59,7 +61,9 @@
 
     <h3>Link using a &lt;button&gt; element</h3>
     <div class="anchor-example">
-      <cdr-link el="button">I'm a button!</cdr-link>
+      <cdr-link
+        el="button"
+        data-backstop="cdr-link--button">I'm a button!</cdr-link>
     </div>
   </div>
 </template>

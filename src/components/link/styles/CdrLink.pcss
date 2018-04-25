@@ -1,30 +1,25 @@
 /* ==========================================================================
   # CdrLink
 
-  All values should map to variables in
-  vars/CdrALinkvars.pcss
-  in order to allow for theming
-
   TOC:
 
     :Base Styles
       :States
     :Modifiers
       :Style variants
-        :Contrast
+        :On Dark
         :Standalone
 ========================================================================== */
 
 .cdr-link {
-  cursor: $link-cursor;
-  display: $link-display;
-  border: $link-border;
-  text-decoration: $link-text-decoration;
-  outline: $link-outline;
-  background-color: $link-background-color;
-  border-color: $link-border-color;
-  color: $link-color;
-  padding: $link-padding;
+  background-color: $color-transparent-background;
+  border: 0;
+  color: $color-link--on-light;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding: 0;
+  text-decoration: underline;
 
   /* States
     ---------- */
@@ -32,40 +27,40 @@
   &:hover,
   &:active,
   &:focus {
-    outline: $link-hover-outline;
-    text-decoration: $link-hover-text-decoration;
-    background-color: $link-hover-background-color;
+    color: $color-link--on-light;
+    outline: none;
+    text-decoration: underline;
   }
 
   &:focus {
-    outline: $link-focus-outline;
+    outline: $outline-default-style $outline-default-width $color-outline-focus;
   }
+}
 
-  /* Style variants
-    ========================================================================== */
+/* Style variants
+  ========================================================================== */
 
-  /* Contrast
-     ========== */
-
-  &--contrast,
-  &--contrast:hover,
-  &--contrast:active,
-  &--contrast:focus,
-  &--contrast:visited {
-    color: $link-contrast-color;
+/* On Dark
+    ========== */
+.cdr-link--on-dark {
+  &,
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $color-link--on-dark;
   }
+}
 
-  /* Standalone
-     ========== */
+/* Standalone
+    ========== */
+.cdr-link--standalone {
+  text-decoration: none;
 
-  &--standalone {
-    text-decoration: $link-standalone-text-decoration;
-
-    &:hover,
-    &:active,
-    &:focus,
-    &:visited {
-      text-decoration: $link-standalone-hover-text-decoration;
-    }
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    text-decoration: underline;
   }
 }
