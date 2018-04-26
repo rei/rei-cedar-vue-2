@@ -12,6 +12,11 @@
       <cdr-link href="https://www.rei.com/">REI.com</cdr-link>
     </div>
 
+    <h3>Link, with icon</h3>
+    <div class="anchor-example">
+      <cdr-link icon-left="account-profile">Icon on the left</cdr-link>
+    </div>
+
     <h3>Standalone Link (No underline)</h3>
     <div class="anchor-example">
       <cdr-link

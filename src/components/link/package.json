@@ -14,7 +14,7 @@
     "access": "public"
   },
   "files": [
-   "dist"
+    "dist"
   ],
   "config": {
     "vue_file": "CdrLink"
@@ -25,6 +25,9 @@
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "node build/build.js",
     "build:docs": "node build/docs-build.js"
+  },
+  "dependencies": {
+    "@rei/cdr-icon": "^0.1.0"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",

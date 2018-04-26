@@ -7,12 +7,19 @@
     :href="el === 'a' ? href : null /* don't include the href attribute if not an <a> */"
   >
     <!-- @slot innerHTML on the inside of the anchor component -->
+    <cdr-icon use="#account-profile" />
+
+    <cdr-icon
+      v-if="iconLeft"
+      :use="account-profile" />
+    <span v-if="iconLeft">{{ iconLeft }}</span>
     <slot>Link Text</slot>
   </component>
 </template>
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import { CdrIcon } from '@rei/cdr-icon';
 
 /**
  *
@@ -25,6 +32,9 @@ import modifier from 'mixinsdir/modifier';
  */
 export default {
   name: 'CdrLink',
+  components: {
+    CdrIcon,
+  },
   mixins: [modifier],
   props: {
     el: {
@@ -39,6 +49,10 @@ export default {
     target: String,
     /** @ignore */
     rel: String,
+    iconLeft: {
+      type: [String, Boolean],
+      default: false,
+    },
   },
   computed: {
     baseClass() {
@@ -58,4 +72,3 @@ export default {
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrLink.pcss';
 </style>
-
