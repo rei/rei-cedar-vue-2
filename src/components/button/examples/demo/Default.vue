@@ -11,7 +11,7 @@
         :static-size="button.staticSize"
         :full-width="button.fullWidth"
         :responsive-size="button.responsiveSize"
-        :type="button"
+        :type="button.type"
         :disabled="button.disabled"
       >{{ button.label }}</cdr-button>
     </div>

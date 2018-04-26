@@ -5,7 +5,7 @@
       <cdr-button
         el="a"
         href="https://google.com"
-        :style-options="{ style: 'link' }"
+        :style-modifiers="['link']"
       >This is a button-link
       </cdr-button>
     </p>
@@ -13,7 +13,7 @@
       <cdr-button
         el="a"
         data-backstop="cdr-button--link-standalone"
-        :style-options="{ style: ['link', 'standalone'] }"
+        :style-modifiers="['link', 'standalone']"
       >Button as link--standalone
       </cdr-button>
     </p>

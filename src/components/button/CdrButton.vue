@@ -2,7 +2,7 @@
   <component
     :is="el"
     :class="[styleModifiersClass, themeClass]"
-    :type="type"
+    :type="el === 'button' ? type : ''"
     @click="onClick"
   >
     <!-- @slot innerHTML on the inside of the button component -->
@@ -41,8 +41,8 @@ export default {
      */
     staticSize: {
       type: String,
-      default: '',
-      validator: value => (['small', 'medium', 'large', 'full-width'].indexOf(value) >= 0) || false,
+      default: 'medium',
+      validator: value => (['small', 'medium', 'large'].indexOf(value) >= 0) || false,
     },
     /**
      * Sets width to be 100%. Can be combined with staticSize
@@ -91,28 +91,39 @@ export default {
       return this.el === 'button' ? 'cdr-button' : 'cdr-link';
     },
     styleModifiersClass() {
-      const [base, staticSize] = [this.baseClass, this.staticSize];
-      const propArrays = [...this.responsiveSize, ...this.styleModifiers];
+      const base = this.baseClass;
+      let isCTA = false;
       const final = [];
 
       if (!this.theme) {
         // insert base
         final.push(`${base}`);
 
-        // undefined when creating an anchor
-        if (staticSize) {
-          final.push(`${base}--${staticSize}`);
-        }
-
-        if (this.fullWidth) {
-          final.push(`${base}--full-width`);
-        }
-
-        propArrays.forEach((val) => {
+        // process style modifiers first because it will tell us if this is a CTA button
+        this.styleModifiers.forEach((val) => {
+          if (val.indexOf('cta-') >= 0) {
+            isCTA = true;
+          }
           final.push(`${base}--${val}`);
         });
-      }
 
+        if (this.el === 'button') {
+          // Technically not needed since CSS cascade would handle it
+          if (!isCTA) {
+            final.push(`${base}--${this.staticSize}`);
+          }
+
+          if (this.fullWidth) {
+            final.push(`${base}--full-width`);
+          }
+
+          if (!isCTA) {
+            this.responsiveSize.forEach((val) => {
+              final.push(`${base}--${val}`);
+            });
+          }
+        }
+      }
       return final.join(' ');
     },
   },

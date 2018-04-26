@@ -128,13 +128,16 @@
     width: 100%;
   }
 
-  &--cta {
+  @mixin cta() {
     @include maple-utility-40;
     
+    padding: $inset-1-x-squish;
     text-transform: uppercase;
   }
 
-  &--brand {
+  &--cta-brand {
+    @include cta;
+    
     background-color: $button-cta-brand-background-color;
     box-shadow: $button-cta-brand-box-shadow;
     color: $button-cta-brand-color;
@@ -147,7 +150,9 @@
     }
   }
 
-  &--dark {
+  &--cta-dark {
+    @include cta;
+
     background-color: $button-cta-dark-background-color;
     box-shadow: $button-cta-dark-box-shadow;
     color: $button-cta-dark-color;
@@ -160,7 +165,9 @@
     }
   }
 
-  &--light {
+  &--cta-light {
+    @include cta;
+
     background-color: $button-cta-light-background-color;
     box-shadow: $button-cta-light-box-shadow;
     color: $button-cta-light-color;
@@ -173,7 +180,9 @@
     }
   }
 
-  &--sale {
+  &--cta-sale {
+    @include cta;
+    
     background-color: $button-cta-sale-background-color;
     box-shadow: $button-cta-sale-box-shadow;
     color: $button-cta-sale-color;

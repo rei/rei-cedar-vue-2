@@ -32,22 +32,14 @@ export default {
           title: 'CTA + Sale',
           buttons: [
             {
-              label: 'CTA-sale Large',
-              disabled: true,
-              staticSize: 'large',
-              styleModifiers: ['cta', 'sale'],
+              label: 'CTA-Sale',
+              disabled: false,
+              styleModifiers: ['cta-sale'],
             },
             {
               label: 'Disabled',
-              disabled: false,
-              staticSize: 'medium',
-              styleModifiers: ['cta', 'sale'],
-            },
-            {
-              label: 'Small',
-              disabled: false,
-              staticSize: 'small',
-              styleModifiers: ['cta', 'sale'],
+              disabled: true,
+              styleModifiers: ['cta-sale'],
             },
           ],
         },
