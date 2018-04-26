@@ -19,6 +19,7 @@
     "docs": "vue-styleguidist server",
     "build:docs": "lerna run build:docs",
     "build:archive": "node build/component-docs-archive.js",
+    "build:transfer": "node build/component-docs-transfer.js",
     "create": "node generator.js",
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
@@ -175,6 +176,7 @@
     }
   },
   "dependencies": {
+    "glob-promise": "^3.4.0",
     "rei-cedar-tokens": "git+https://github.com/rei/rei-cedar-tokens.git#0.0.10"
   }
 }
