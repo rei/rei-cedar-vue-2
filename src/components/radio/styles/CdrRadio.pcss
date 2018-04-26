@@ -9,52 +9,52 @@
 
     :Base - Radio
       :Elements
-        :Label
-          :Figure
+        :wrap
+        :input
+        :figure
       :States
       :Modifiers
-        :Compact
+        :compact
+        :hide-figure
 ========================================================================== */
 
 .cdr-radio {
-  position: absolute;
-  opacity: 0;
+  @include redwood-display-30;
+
+  color: $radio-label-color;
+  margin-bottom: 0;
+  position: relative;
+  padding-left: calc($radio-figure-size + $radio-figure-space-right);
 
   /* Elements
     ========================================================================== */
 
-  /* Label
-    ========== */
+  /* Wrap
+  ========== */
+  &__wrap {
+    /* get rid of inline-block whitespace from label element */
+    font-size: 0;
+  }
 
-  &__label {
-    @include redwood-display-30;
-
-    color: $radio-label-color;
-    position: relative;
-    margin-bottom: 0;
-
-    /* States
-      ---------- */
-
-    &:hover {
-      cursor: pointer;
-    }
+  /* Input
+  ========== */
+  &__input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
   }
 
   /* Figure
   ========== */
 
   &__figure {
-    position: relative;
+    position: absolute;
+    top: $radio-figure-space-top;
+    left: 0;
     width: $radio-figure-size;
     height: $radio-figure-size;
-    flex: 0 0 auto;
     border-radius: $radio-figure-radius;
     background-color: $radio-figure-background-color;
-    margin-top: $radio-figure-space-top;
-    margin-right: $radio-figure-space-right;
-    display: inline-block;
-    vertical-align: top;
     border: 1px solid $radio-figure-border-color;
     
     &::after {
@@ -70,71 +70,80 @@
   }
 
   /* States
-    ---------- */
+    ========================================================================== */
 
-  /* Checked */
-  &:checked + &__label {
-    & > .cdr-radio__figure {
-      border-color: $radio-figure-checked-border-color;
-      
-      &::after {
-        background-color: $radio-figure-checked-background-color;
-      }
+  /* Checked
+  ========== */
+  &__input:checked ~ &__figure {
+    border-color: $radio-figure-checked-border-color;
+    
+    &::after {
+      background-color: $radio-figure-checked-background-color;
     }
   }
 
   /* Hover */
-  &:hover + &__label {
+  &:hover {
     & > .cdr-radio__figure {
+      cursor: pointer;
       border-color: $radio-figure-hover-border-color;
+      background-color: $radio-figure-hover-background-color;
     }
-  }
 
-  /* Checked + Hover */
-  &:checked&:hover + &__label {
-    & > .cdr-radio__figure {
-      border-color: $radio-figure-checked-hover-border-color;
-      
-      &::after {
-        background-color: $radio-figure-checked-hover-background-color;
+    & > .cdr-radio__content {
+      cursor: pointer;
+    }
+
+    & > .cdr-radio__input {
+      /* Hover + Checked
+      ========== */
+      &:checked ~ .cdr-radio__figure {
+        border-color: $radio-figure-checked-hover-border-color;
+
+        &::after {
+          background-color: $radio-figure-checked-hover-background-color;
+        }
       }
     }
   }
 
-  /* Active */
-  &:active + &__label {
-    & > .cdr-radio__figure {
-      border-color: $radio-figure-active-border-color;
+  /* Disabled
+  ========== */
+  &__input:disabled {
+    & ~ .cdr-radio__content {
+      color: $radio-label-disabled-color !important;
+      cursor: default;
     }
-  }
 
-  /* Disabled */
-  &[disabled] + &__label {
-    color: $radio-label-disabled-color;
-    cursor: default;
-
-    & > .cdr-radio__figure {
-      border-color: $radio-figure-disabled-border-color;
+    & ~ .cdr-radio__figure {
+      border-color: $radio-figure-disabled-border-color !important;
+      background-color: $radio-figure-disabled-background-color !important;
+      cursor: default;
     }
-  }
 
-  /* Disabled + Checked */
-  &:checked&[disabled] + &__label {
-    & > .cdr-radio__figure {
-      border-color: $radio-figure-disabled-border-color;
-      
-      &::after {
-        background-color: $radio-figure-disabled-background-color;
+    /* Disabled + Checked
+    ========== */
+    &:checked {
+      & ~ .cdr-radio__figure {
+        &::after {
+          background-color: $radio-figure-checked-disabled-background-color !important;
+        }
       }
     }
   }
 
-  /* Focus */
-  &:focus + &__label {
-    & > .cdr-radio__figure {
-      border-color: $radio-figure-focus-border-color;
-      box-shadow: $radio-focus-outline;
-    }
+  /* Active
+  ========== */
+  &:active > .cdr-radio__figure {
+    border-color: $radio-figure-active-border-color;
+    background-color: $radio-figure-background-color;
+  }
+
+  /* Focus
+  ========== */
+  &__input:focus ~ .cdr-radio__figure {
+    border-color: $radio-figure-focus-border-color;
+    box-shadow: $radio-focus-outline;
   }
 
   /* Modifiers
@@ -144,12 +153,21 @@
     ========== */
 
   &--compact {
-    & + .cdr-radio__label {
-      @include redwood-display-20;
+    @include redwood-display-20;
 
-      & > .cdr-radio__figure {
-        margin-top: $radio-compact-figure-space-top;
-      }
+    & > .cdr-radio__figure {
+      top: $radio-compact-figure-space-top;
+    }
+  }
+
+  /* Hide Figure
+    ========== */
+
+  &--hide-figure {
+    padding-left: 0;
+
+    & > .cdr-radio__figure {
+      display: none;
     }
   }
 }

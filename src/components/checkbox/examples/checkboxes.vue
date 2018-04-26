@@ -94,29 +94,7 @@
       <cdr-checkbox
         name="complex1"
         v-model="complex1"
-        label-class="flex">
-        <div>
-          <strong>
-            Easy
-          </strong>
-          <br>
-          No obstacles. Not steep.
-        </div>
-
-      </cdr-checkbox>
-
-      <cdr-checkbox
-        name="complex2"
-        v-model="complex2"
-        label-class="flex">
-        <div>
-          <strong>
-            Easy
-          </strong>
-          <br>
-          This one is selected.
-        </div>
-
+      >A longer label text to make things wrap for testing
       </cdr-checkbox>
     </div>
 
@@ -136,6 +114,15 @@
       disabled
       modifier="compact"
     >indeterminate compact</cdr-checkbox>
+
+    <cdr-checkbox modifier="hide-figure">Hidden box</cdr-checkbox>
+    <cdr-checkbox
+      modifier="hide-figure"
+      v-model="complex2"
+      input-class="no-box"
+      content-class="no-box__content"
+    >Hidden box + custom checked state
+    </cdr-checkbox>
   </div>
 </template>
 
@@ -176,13 +163,11 @@ export default {
     width: 180px;
   }
 
-  .checkbox-example-icon use {
-    fill: green;
-  }
+  .no-box:checked ~ .no-box__content {
+    color: green;
 
-  .flex {
-    display: flex;
-    align-items: flex-start;
+    &::after {
+      content: '(checked)';
+    }
   }
-
 </style>

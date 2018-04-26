@@ -9,168 +9,163 @@
 
     :Base - Checkbox
       :Elements
-        :Label
-          :Figure
+        :wrap
+        :input
+        :figure
       :States
       :Modifiers
-        :Compact
+        :compact
+        :hide-figure
 ========================================================================== */
 
 .cdr-checkbox {
-  position: absolute;
-  opacity: 0;
+  @include redwood-display-30;
+
+  color: $checkbox-label-color;
+  margin-bottom: 0;
+  position: relative;
+  padding-left: calc($checkbox-figure-size + $checkbox-figure-space-right);
 
   /* Elements
     ========================================================================== */
 
-  /* Label
-    ========== */
-
-  &__label {
-    @include redwood-display-30;
-
-    color: $checkbox-label-color;
-    margin-bottom: 0;
-    position: relative;
-
-    /* States
-      ---------- */
-
-    &:hover {
-      cursor: pointer;
-    }
+  /* Wrap
+  ========== */
+  &__wrap {
+    /* get rid of inline-block whitespace from label element */
+    font-size: 0;
   }
 
-  /* Figure Decoration
+  /* Input
+  ========== */
+  &__input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  /* Figure
   ========== */
   &__figure {
-    position: relative;
+    position: absolute;
+    top: $checkbox-figure-space-top;
+    left: 0;
     width: $checkbox-figure-size;
     height: $checkbox-figure-size;
-    flex: 0 0 auto;
     border-radius: $checkbox-figure-radius;
-    margin-top: $checkbox-figure-space-top;
-    margin-right: $checkbox-figure-space-right;
     background-color: $checkbox-figure-background-color;
-    display: inline-block;
-    vertical-align: top;
     border: 1px solid $checkbox-figure-border-color;
+  }
 
+  /* States
+    ========================================================================== */
+
+  /* Checked
+  ========== */
+  &__input:checked ~ &__figure {
+    border-color: $checkbox-figure-checked-border-color;
+    background-color: $checkbox-figure-checked-background-color;
+    background-image: svg-load('../../../assets/icons/rei/check-lg.svg', fill=$(checkbox-figure-icon-fill));
+    background-repeat: no-repeat;
+  }
+
+  /* Indeterminate
+  ========== */
+  &__input[indeterminate] ~ .cdr-checkbox__figure {
+    border-color: $checkbox-figure-indeterminate-border-color;
+    
     &::after {
       content: '';
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: $checkbox-figure-size;
-      height: $checkbox-figure-size;
-      border-radius: $checkbox-figure-radius;
-      flex: 0 0 auto;
+      width: $checkbox-figure-indeterminate-size;
+      height: $checkbox-figure-indeterminate-size;
+      background-color: $checkbox-figure-indeterminate-background-color;
+      border-radius: $checkbox-figure-indeterminate-border-radius;
     }
   }
 
-  /* States
-    ---------- */
-
-  /* Checked */
-  &:checked + &__label {
+  /* Hover
+  ========== */
+  &:hover {
     & > .cdr-checkbox__figure {
-      border-color: $checkbox-figure-checked-border-color;
-      background-color: $checkbox-figure-checked-background-color;
-      
-      &::after {
-        /* move this into the component so it doesn't fail silently? */
-        background-image: svg-load('../../../assets/icons/rei/check-lg.svg', fill=$(checkbox-figure-icon-fill));
-        background-repeat: no-repeat;
-      }
-    }
-  }
-
-  /* Hover */
-  &:hover + &__label {
-    & > .cdr-checkbox__figure {
+      cursor: pointer;
       border-color: $checkbox-figure-hover-border-color;
+      background-color: $checkbox-figure-hover-background-color;
     }
-  }
 
-  /* Checked + Hover */
-  &:checked&:hover + &__label {
-    & > .cdr-checkbox__figure {
-      border-color: $checkbox-figure-checked-hover-border-color;
-      background-color: $checkbox-figure-checked-hover-background-color;
+    & > .cdr-checkbox__content {
+      cursor: pointer;
     }
-  }
 
-  /* Active */
-  &:active + &__label {
-    & > .cdr-checkbox__figure {
-      border-color: $checkbox-figure-active-border-color;
-    }
-  }
-
-  /* Disabled */
-  &[disabled] + &__label {
-    color: $checkbox-label-disabled-color;
-    cursor: default;
-
-    & > .cdr-checkbox__figure {
-      border-color: $checkbox-figure-disabled-border-color;
-    }
-  }
-
-  /* Checked + Disabled */
-  &:checked&[disabled] + &__label {
-    & > .cdr-checkbox__figure {
-      border-color: $checkbox-figure-disabled-border-color;
-      background-color: $checkbox-figure-disabled-background-color;
-    }
-  }
-
-  /* Indeterminate */
-  &[indeterminate] + &__label {
-    & > .cdr-checkbox__figure {
-      border-color: $checkbox-figure-indeterminate-border-color;
-      
-      &::after {
-        width: $checkbox-figure-indeterminate-size;
-        height: $checkbox-figure-indeterminate-size;
-        background-color: $checkbox-figure-indeterminate-background-color;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-        border-radius: $checkbox-figure-radius;
-      }
-    }
-  }
-
-  /* Indeterminate + Hover */
-  &[indeterminate]&:hover + &__label {
-    & > .cdr-checkbox__figure {
-      border-color: $checkbox-figure-checked-hover-border-color;
-      
-      &::after {
+    & > .cdr-checkbox__input {
+      /* Hover + Checked
+      ========== */
+      &:checked ~ .cdr-checkbox__figure {
+        border-color: $checkbox-figure-checked-hover-border-color;
         background-color: $checkbox-figure-checked-hover-background-color;
       }
-    }
-  }
 
-  /* Indeterminate + Disabled */
-  &[indeterminate]&[disabled] + &__label {
-    & > .cdr-checkbox__figure {
-      border-color: $checkbox-figure-disabled-border-color;
-      
-      &::after {
-        background-color: $checkbox-figure-disabled-background-color;
+      /* Hover + Indeterminate
+      ========== */
+      &[indeterminate] ~ .cdr-checkbox__figure {
+        border-color: $checkbox-figure-checked-hover-border-color;
+
+        &::after {
+          background-color: $checkbox-figure-checked-hover-background-color;
+        }
       }
     }
   }
 
-  /* Focus */
-  &:focus + &__label {
-    & > .cdr-checkbox__figure {
-      border-color: $checkbox-figure-focus-border-color;
-      box-shadow: $checkbox-focus-outline;
+  /* Disabled
+  ========== */
+  &__input:disabled {
+    & ~ .cdr-checkbox__content {
+      color: $checkbox-label-disabled-color !important;
+      cursor: default;
     }
+
+    & ~ .cdr-checkbox__figure {
+      border-color: $checkbox-figure-disabled-border-color !important;
+      background-color: $checkbox-figure-disabled-background-color !important;
+      cursor: default;
+    }
+
+    /* Disabled + Checked
+    ========== */
+    &:checked {
+      & ~ .cdr-checkbox__figure {
+        background-color: $checkbox-figure-checked-disabled-background-color !important;
+      }
+    }
+
+    /* Disabled + Indeterminate
+    ========== */
+    &[indeterminate] {
+      & ~ .cdr-checkbox__figure {
+        border-color: $checkbox-figure-disabled-border-color !important;
+        
+        &::after {
+          background-color: $checkbox-figure-checked-disabled-background-color !important;
+        }
+      }
+    }
+  }
+
+  /* Active
+  ========== */
+  &:active > .cdr-checkbox__figure {
+    border-color: $checkbox-figure-active-border-color;
+  }
+
+  /* Focus
+  ========== */
+  &__input:focus ~ .cdr-checkbox__figure {
+    border-color: $checkbox-figure-focus-border-color;
+    box-shadow: $checkbox-focus-outline;
   }
 
   /* Modifiers
@@ -180,12 +175,21 @@
     ========== */
 
   &--compact {
-    & + .cdr-checkbox__label {
-      @include redwood-display-20;
+    @include redwood-display-20;
 
-      & > .cdr-checkbox__figure {
-        margin-top: $checkbox-compact-figure-space-top;
-      }
+    & > .cdr-checkbox__figure {
+      top: $checkbox-compact-figure-space-top;
+    }
+  }
+
+  /* Hide Figure
+    ========== */
+
+  &--hide-figure {
+    padding-left: 0;
+
+    & > .cdr-checkbox__figure {
+      display: none;
     }
   }
 }

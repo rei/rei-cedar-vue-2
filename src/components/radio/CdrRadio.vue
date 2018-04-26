@@ -1,23 +1,24 @@
 <template>
-  <div>
-    <input
-      :class="[modifierClass]"
-      type="radio"
-      v-bind="$attrs"
-      :id="radioId"
-      :name="name"
-      :checked="isChecked"
-      @change="onChange"
-      :value="value"
-      ref="radio"
-    >
+  <div class="cdr-radio__wrap">
     <label
-      class="cdr-radio__label"
-      :for="radioId"
+      :class="[modifierClass, labelClass]"
       ref="label"
     >
-      <!-- On same line because of inline-block and whitespace -->
-      <span class="cdr-radio__figure" /><!-- @slot innerHTML inside of checkbox component --><slot/>
+      <input
+        :class="['cdr-radio__input', inputClass]"
+        type="radio"
+        v-bind="$attrs"
+        :name="name"
+        :checked="isChecked"
+        @change="onChange"
+        :value="value"
+        ref="radio"
+      >
+      <span class="cdr-radio__figure" />
+      <div :class="['cdr-radio__content', contentClass]">
+        <!-- @slot innerHTML inside of radio component -->
+        <slot/>
+      </div>
     </label>
   </div>
 </template>
@@ -42,6 +43,18 @@ export default {
   },
   props: {
     /**
+     * Class that is added to the label for custom styles
+     */
+    labelClass: String,
+    /**
+     * Class that is added to the input for custom styles
+     */
+    inputClass: String,
+    /**
+     * Class that is added to the slot wrapper for custom styles
+     */
+    contentClass: String,
+    /**
      * Sets the name of the radio. Required.
     */
     name: {
@@ -56,17 +69,12 @@ export default {
       required: true,
     },
     /** @ignore */
-    id: String,
-    /** @ignore */
     modelValue: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: false,
     },
   },
   computed: {
-    radioId() {
-      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
-    },
     isChecked() {
       return isEqual(this.modelValue, this.value);
     },

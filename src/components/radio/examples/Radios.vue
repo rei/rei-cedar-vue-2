@@ -58,7 +58,7 @@
         name="example2"
         value="b1"
         v-model="ex2"
-      >B1 a long long name that will wrap to multiple lines so we can see it</cdr-radio>
+      >B1</cdr-radio>
       <cdr-radio
         name="example2"
         value="b2"
@@ -95,6 +95,31 @@
       v-model="ex3compact"
       disabled
     >C1 compact (selected + disabled)</cdr-radio>
+
+    <cdr-radio
+      name="custom"
+      value="customA"
+      v-model="custom"
+      modifier="hide-figure"
+    >Custom A (hide-figure)</cdr-radio>
+
+    <cdr-radio
+      name="custom"
+      value="customB"
+      v-model="custom"
+      modifier="hide-figure"
+      input-class="no-box"
+      content-class="no-box__content"
+    >Custom B</cdr-radio>
+
+    <div class="wrap">
+      <cdr-radio
+        name="example3"
+        value="c2"
+        v-model="ex3"
+      >A longer label text to make things wrap for testing
+      </cdr-radio>
+    </div>
   </div>
 </template>
 
@@ -112,10 +137,22 @@ export default {
       ex2compact: 'b2',
       ex3: 'c1',
       ex3compact: 'c1',
+      custom: 'customB',
     };
   },
 };
 </script>
 
 <style lang="css">
+  .wrap {
+    width: 180px;
+  }
+
+  .no-box:checked ~ .no-box__content {
+    color: green;
+
+    &::after {
+      content: '(checked)';
+    }
+  }
 </style>
