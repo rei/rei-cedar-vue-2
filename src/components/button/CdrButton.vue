@@ -2,7 +2,7 @@
   <component
     :is="el"
     :class="[styleModifiersClass, themeClass]"
-    :type="el === 'button' ? type : ''"
+    :type="el === 'button' ? type : null"
     @click="onClick"
   >
     <!-- @slot innerHTML on the inside of the button component -->
@@ -37,7 +37,7 @@ export default {
       validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
     },
     /**
-     * Sets a static size for the button. The only way to set top and bottom padding on component
+     * Sets a static size for the button. When combined with responsiveSize, will control padding-top and -bottom.
      */
     staticSize: {
       type: String,
@@ -76,7 +76,6 @@ export default {
     type: {
       type: String,
       default: 'button',
-      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
      * Add custom click actions.
