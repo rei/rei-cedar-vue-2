@@ -17,15 +17,6 @@ describe('CdrCheckbox.vue', () => {
     const wrapper = shallow(CdrCheckbox);
     expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
   });
-
-  it('renders label text correctly', () => {
-    const wrapper = shallow(CdrCheckbox, {
-      slots: {
-        default: `<span>Label Test</span>`,
-      },
-    });
-    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
-  });
   
   it('adds a custom label class correctly', () => {
     const wrapper = shallow(CdrCheckbox, {
@@ -33,24 +24,34 @@ describe('CdrCheckbox.vue', () => {
         labelClass: 'custom-label-class',
       },
       slots: {
-        default: `<span>Label Test</span>`,
+        default: 'Label Test',
       },
     });
     expect(wrapper.vm.$refs.label.classList.contains('custom-label-class')).toBe(true);
   });
-
-  it('maps input id to label for correctly', () => {
+  
+  it('adds a custom input class correctly', () => {
     const wrapper = shallow(CdrCheckbox, {
       propsData: {
-        id: 'test',
+        inputClass: 'custom-input-class',
+      },
+      slots: {
+        default: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.checkbox.id).toBe(wrapper.vm.$refs.label.htmlFor);
+    expect(wrapper.vm.$refs.checkbox.classList.contains('custom-input-class')).toBe(true);
   });
-
-  it('generates an id correctly', () => {
-    const wrapper = shallow(CdrCheckbox);
-    expect(wrapper.vm.$refs.checkbox.id).toBe(wrapper.vm._uid.toString());
+  
+  it('adds a custom content class correctly', () => {
+    const wrapper = shallow(CdrCheckbox, {
+      propsData: {
+        contentClass: 'custom-content-class',
+      },
+      slots: {
+        default: 'Label Test',
+      },
+    });
+    expect(wrapper.find('.custom-content-class').exists()).toBe(true);
   });
 
   it('watches values correctly', () => {
