@@ -2,5 +2,5 @@
 
 ### <span class="modifiers">Modifiers</span>
 
-{responsive, rounded, circle, thumbnail}
+{responsive, rounded, circle}
 

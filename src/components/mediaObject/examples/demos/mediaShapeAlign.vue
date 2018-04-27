@@ -46,49 +46,10 @@
     <cdr-col span="4">
       <cdr-media-object
         img-src="http://placehold.it/50x50"
-        img-modifier="thumbnail"
-        modifier="right"
-        media-align="right">
-        <cdr-text tag="h3"><a href="https://rei.com">Thumbnail image shape</a></cdr-text>
-        <p>Issaquah Alps, WA</p>
-      </cdr-media-object>
-    </cdr-col>
-    <cdr-col span="4">
-      <cdr-media-object
-        img-src="http://placehold.it/50x50"
-        img-modifier="circle"
-        modifier="bottom">
-        <cdr-text tag="h3"><a href="https://rei.com">Thumbnail image shape</a></cdr-text>
-        <p>Issaquah Alps, WA</p>
-      </cdr-media-object>
-    </cdr-col>
-    <cdr-col span="2">
-      <cdr-media-object
-        img-src="http://placehold.it/250x50"
-        img-modifier="circle responsive"
-        modifier="bottom center"
-        media-align="center">
-        <cdr-text tag="h3"><a href="https://rei.com">Thumbnail image shape</a></cdr-text>
-        <p>Issaquah Alps, WA</p>
-      </cdr-media-object>
-    </cdr-col>
-    <cdr-col span="2">
-      <cdr-media-object
-        img-src="http://placehold.it/250x50"
-        img-modifier="rounded responsive"
-        modifier="bottom right"
-        media-align="right">
-        <cdr-text tag="h3"><a href="https://rei.com">Thumbnail image shape</a></cdr-text>
-        <p>Issaquah Alps, WA</p>
-      </cdr-media-object>
-    </cdr-col>
-    <cdr-col span="4">
-      <cdr-media-object
-        img-src="http://placehold.it/50x50"
         img-modifier="rounded"
         modifier="top center"
         media-align="center">
-        <cdr-text tag="h3"><a href="https://rei.com">Rounded image shape</a></cdr-text>
+        <cdr-text tag="h3"><a href="https://rei.com">Another Rounded image shape</a></cdr-text>
         <p>Issaquah Alps, WA</p>
       </cdr-media-object>
     </cdr-col>
