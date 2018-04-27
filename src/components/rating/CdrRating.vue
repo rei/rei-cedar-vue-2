@@ -92,7 +92,7 @@ export default {
       return Math.round(this.rating * 4) / 4;
     },
     whole() {
-      return Math.floor(this.rating);
+      return Math.floor(this.rounded);
     },
     remainder() {
       return this.rounded.toFixed(2).split('.')[1];

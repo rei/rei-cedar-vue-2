@@ -17,7 +17,7 @@
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
     "docs": "vue-styleguidist server",
-    "build:docs": "vue-styleguidist build",
+    "build:docs": "lerna run build:docs",
     "create": "node generator.js",
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
@@ -31,7 +31,6 @@
   "devDependencies": {
     "@commitlint/cli": "^6.1.0",
     "@commitlint/config-conventional": "^6.1.0",
-    "@rei/cdr-text": "^0.1.0",
     "@vue/test-utils": "^1.0.0-beta.12",
     "autoprefixer": "^8.0.0",
     "babel-core": "^6.25.0",
@@ -133,7 +132,6 @@
     "stylelint-config-standard": "^18.1.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.10.3",
-    "svgxuse": "^1.2.4",
     "tenon-node": "^0.4.1",
     "theo": "^7.0.1",
     "tinycolor2": "^1.4.1",
@@ -174,6 +172,6 @@
     }
   },
   "dependencies": {
-    "rei-cedar-tokens": "git+https://github.com/rei/rei-cedar-tokens.git#0.0.10"
+    "rei-cedar-tokens": "git+https://github.com/rei/rei-cedar-tokens.git#0.1.1"
   }
 }
