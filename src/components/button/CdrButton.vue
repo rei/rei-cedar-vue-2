@@ -37,6 +37,21 @@ export default {
       validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
     },
     /**
+     * Defines the button type. Possible values: {button, submit, reset}.
+     */
+    type: {
+      type: String,
+      default: 'button',
+      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0 ) || false,
+    },
+    /**
+     * Add custom click actions.
+     */
+    onClick: {
+      type: Function,
+      default: () => () => null,
+    },
+    /**
      * Sets a static size for the button. When combined with responsiveSize, will control padding-top and -bottom.
      */
     staticSize: {
@@ -70,20 +85,6 @@ export default {
         return [];
       },
     },
-    /**
-     * Defines the button type. Possible values: {button, submit, reset}.
-     */
-    type: {
-      type: String,
-      default: 'button',
-    },
-    /**
-     * Add custom click actions.
-     */
-    onClick: {
-      type: Function,
-      default: () => () => null,
-    },
   },
   computed: {
     baseClass() {
@@ -91,35 +92,31 @@ export default {
     },
     styleModifiersClass() {
       const base = this.baseClass;
-      let isCTA = false;
+      let responsive = this.responsiveSize;
       const final = [];
 
       if (!this.theme) {
-        // insert base
         final.push(`${base}`);
 
-        // process style modifiers first because it will tell us if this is a CTA button
+        // handle style modifiers first - it will tell us if this is a CTA button
         this.styleModifiers.forEach((val) => {
           if (val.indexOf('cta-') >= 0) {
-            isCTA = true;
+            console.log('made it');
+            // CTA buttons do not receive responsive classes
+            responsive = [];
           }
           final.push(`${base}--${val}`);
         });
 
         if (this.el === 'button') {
-          // Technically not needed since CSS cascade would handle it
-          if (!isCTA) {
-            final.push(`${base}--${this.staticSize}`);
-          }
+          final.push(`${base}--${this.staticSize}`);
+
+          responsive.forEach((val) => {
+            final.push(`${base}--${val}`);
+          });
 
           if (this.fullWidth) {
             final.push(`${base}--full-width`);
-          }
-
-          if (!isCTA) {
-            this.responsiveSize.forEach((val) => {
-              final.push(`${base}--${val}`);
-            });
           }
         }
       }

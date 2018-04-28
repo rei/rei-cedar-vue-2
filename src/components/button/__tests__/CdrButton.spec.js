@@ -57,19 +57,69 @@ describe('CdrButton.vue', () => {
     expect(clickHandler).toHaveBeenCalled();
   });
 
-    it('computes base class correctly', () => {
+  it('computes base class correctly', () => {
     const wrapper = shallow(CdrButton, {
       propsData: {
-        modifier: 'primary',
+        el: 'a',
       },
     });
-    expect(wrapper.classes()).toContain('cdr-button');
+    
+    expect(wrapper.classes()).toContain('cdr-link');
+  });
+
+  it('CTA overrides responsive', () => {
+    const wrapper = shallow(CdrButton, {
+      propsData: {
+        responsiveSize: ['large@extra-small'],
+        styleModifiers: ['cta-dark'],
+        fullWidth: true,
+      }
+    });
+
+    console.log('wrapper', wrapper.classes());
+    
+    expect(wrapper.classes()).not.toContain('cdr-button--large@extra-small');
+    expect(wrapper.classes()).toContain('cdr-button--full-width');
+  });
+
+  it('adds responsive classes', () => {
+    const wrapper = shallow(CdrButton, {
+      propsData: {
+        staticSize: 'medium',
+        responsiveSize: ['large@extra-small'],
+      }
+    });
+
+    expect(wrapper.classes()).toContain('cdr-button--large@extra-small');
+  })
+
+  it('renders a link', () => {
+    const wrapper = shallow(CdrButton, {
+      propsData: {
+        el: 'a',
+      }, 
+    });
+    expect(wrapper.is('a')).toBe(true);
+  });
+
+  it('validates el prop', () => {
+    const wrapper = shallow(CdrButton);
+    const el = wrapper.vm.$options.props.el;
+    expect(el.validator('button')).toBe(true);
+    expect(el.validator('link')).toBe(false);
+  });
+
+  it('validates staticSize prop', () => {
+    const wrapper = shallow(CdrButton);
+    const staticSize = wrapper.vm.$options.props.staticSize;
+    expect(staticSize.validator('small')).toBe(true);
+    expect(staticSize.validator('extra-small')).toBe(false);
   });
 
   it('computes button as link base class correctly', () => {
     const wrapper = shallow(CdrButton, {
       propsData: {
-        modifier: 'primary, link',
+        el: 'a',
       },
     });
     expect(wrapper.classes()).toContain('cdr-link');

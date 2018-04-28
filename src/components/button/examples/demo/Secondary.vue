@@ -12,7 +12,7 @@
         :full-width="button.fullWidth"
         :responsive-size="button.responsiveSize"
         :style-modifiers="button.styleModifiers"
-        :type="button"
+        :type="button.type"
         :disabled="button.disabled"
       >{{ button.label }}</cdr-button>
     </div>
