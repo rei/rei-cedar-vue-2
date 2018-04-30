@@ -64,7 +64,7 @@ describe('CdrButton.vue', () => {
       },
     });
     
-    expect(wrapper.classes()).toContain('cdr-link');
+    expect(wrapper.classes()).toContain('cdr-button');
   });
 
   it('CTA overrides responsive', () => {
@@ -75,8 +75,6 @@ describe('CdrButton.vue', () => {
         fullWidth: true,
       }
     });
-
-    console.log('wrapper', wrapper.classes());
     
     expect(wrapper.classes()).not.toContain('cdr-button--large@extra-small');
     expect(wrapper.classes()).toContain('cdr-button--full-width');
@@ -115,15 +113,4 @@ describe('CdrButton.vue', () => {
     expect(staticSize.validator('small')).toBe(true);
     expect(staticSize.validator('extra-small')).toBe(false);
   });
-
-  it('computes button as link base class correctly', () => {
-    const wrapper = shallow(CdrButton, {
-      propsData: {
-        el: 'a',
-      },
-    });
-    expect(wrapper.classes()).toContain('cdr-link');
-  });
-
-  
 });

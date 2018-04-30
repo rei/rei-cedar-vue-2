@@ -19,7 +19,7 @@
     <div class="button-example">
       <cdr-button
         data-backstop="cdr-button--cta-brand"
-        :style-options="{ styles: ['cta', 'brand'] }"
+        :style-options="{ styles: ['cta-brand'] }"
       >Backstop button
       </cdr-button>
     </div>

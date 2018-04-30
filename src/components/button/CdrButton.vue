@@ -42,7 +42,7 @@ export default {
     type: {
       type: String,
       default: 'button',
-      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0 ) || false,
+      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
      * Add custom click actions.
@@ -88,7 +88,7 @@ export default {
   },
   computed: {
     baseClass() {
-      return this.el === 'button' ? 'cdr-button' : 'cdr-link';
+      return 'cdr-button';
     },
     styleModifiersClass() {
       const base = this.baseClass;
@@ -101,23 +101,20 @@ export default {
         // handle style modifiers first - it will tell us if this is a CTA button
         this.styleModifiers.forEach((val) => {
           if (val.indexOf('cta-') >= 0) {
-            console.log('made it');
             // CTA buttons do not receive responsive classes
             responsive = [];
           }
           final.push(`${base}--${val}`);
         });
 
-        if (this.el === 'button') {
-          final.push(`${base}--${this.staticSize}`);
+        final.push(`${base}--${this.staticSize}`);
 
-          responsive.forEach((val) => {
-            final.push(`${base}--${val}`);
-          });
+        responsive.forEach((val) => {
+          final.push(`${base}--${val}`);
+        });
 
-          if (this.fullWidth) {
-            final.push(`${base}--full-width`);
-          }
+        if (this.fullWidth) {
+          final.push(`${base}--full-width`);
         }
       }
       return final.join(' ');
