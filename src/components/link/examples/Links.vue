@@ -75,7 +75,7 @@
     <h3>Link using a &lt;button&gt; element</h3>
     <div class="anchor-example">
       <cdr-link
-        el="button"
+        tag="button"
         data-backstop="cdr-link--button">I'm a button!</cdr-link>
     </div>
   </div>

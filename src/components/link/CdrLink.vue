@@ -1,10 +1,10 @@
 <template>
   <component
-    :is="el"
+    :is="tag"
     :class="modifierClass"
     :target="target"
     :rel="computedRel"
-    :href="el === 'a' ? href : null /* don't include the href attribute if not an <a> */"
+    :href="tag === 'a' ? href : null /* don't include the href attribute if not an <a> */"
   >
     <!-- @slot innerHTML on the inside of the anchor component -->
     <slot>Link Text</slot>
@@ -31,7 +31,7 @@ export default {
   },
   mixins: [modifier],
   props: {
-    el: {
+    tag: {
       type: String,
       default: 'a',
     },
