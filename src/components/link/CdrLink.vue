@@ -7,12 +7,6 @@
     :href="el === 'a' ? href : null /* don't include the href attribute if not an <a> */"
   >
     <!-- @slot innerHTML on the inside of the anchor component -->
-    <cdr-icon use="#account-profile" />
-
-    <cdr-icon
-      v-if="iconLeft"
-      :use="account-profile" />
-    <span v-if="iconLeft">{{ iconLeft }}</span>
     <slot>Link Text</slot>
   </component>
 </template>
@@ -49,10 +43,6 @@ export default {
     target: String,
     /** @ignore */
     rel: String,
-    iconLeft: {
-      type: [String, Boolean],
-      default: false,
-    },
   },
   computed: {
     baseClass() {

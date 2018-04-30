@@ -12,14 +12,16 @@
 ========================================================================== */
 
 .cdr-link {
+  align-items: center;
   background-color: $color-transparent-background;
   border: 0;
   color: $color-link--on-light;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   outline: none;
   padding: 0;
   text-decoration: underline;
+  vertical-align: top;
 
   /* States
     ---------- */
@@ -63,4 +65,22 @@
   &:visited {
     text-decoration: underline;
   }
+}
+
+/* With Icons
+    ========== */
+
+/* Adding additional specificity so the default icon styles are overridden correctly */
+.cdr-link .cdr-link__icon {
+  fill: $color-link--on-light;
+}
+
+/* Adding additional specificity so the default icon styles are overridden correctly */
+.cdr-link .cdr-link__icon--left {
+  margin-right: $space-half-x;
+}
+
+/* Adding additional specificity so the default icon styles are overridden correctly */
+.cdr-link .cdr-link__icon--right {
+  margin-left: $space-half-x;
 }

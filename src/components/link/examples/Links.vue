@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div>
     <h2>Links</h2>
 
@@ -12,16 +13,40 @@
       <cdr-link href="https://www.rei.com/">REI.com</cdr-link>
     </div>
 
-    <h3>Link, with icon</h3>
-    <div class="anchor-example">
-      <cdr-link icon-left="account-profile">Icon on the left</cdr-link>
-    </div>
-
     <h3>Standalone Link (No underline)</h3>
     <div class="anchor-example">
       <cdr-link
         modifier="standalone"
         data-backstop="cdr-link--standalone"/>
+    </div>
+
+    <h3>Links, with icon</h3>
+    <div class="anchor-example">
+      <cdr-icon-sprite/>
+
+      <cdr-link>
+        <cdr-icon
+          use="#mail"
+          class="cdr-link__icon cdr-link__icon--left"/>Icon on the left
+      </cdr-link>
+      <br>
+      <br>
+      <cdr-link>
+        Icon on the right
+        <cdr-icon
+          use="#download"
+          class="cdr-link__icon cdr-link__icon--right"/>
+      </cdr-link>
+      <br>
+      <br>
+      <cdr-link>
+        <cdr-icon
+          use="#twitter"
+          class="cdr-link__icon cdr-link__icon--left"/>Icons on both sides
+        <cdr-icon
+          use="#external-link"
+          class="cdr-link__icon cdr-link__icon--right"/>
+      </cdr-link>
     </div>
 
     <h3>Contrast Link (for use on dark backgrounds)</h3>
@@ -32,30 +57,13 @@
     <h3>Content Resilience, too much content</h3>
     <div class="anchor-example">
       <cdr-link>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Possimus animi maxime laboriosam nobis veniam fugit obca
-        nihil enim, magnam aliquid temporibus perspiciatis amet
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        Possimus animi maxime laboriosam nobis veniam fugit obca
-        nihil enim, magnam aliquid temporibus perspiciatis amet
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        Possimus animi maxime laboriosam nobis veniam fugit obca
-        nihil enim, magnam aliquid temporibus perspiciatis amet
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        Possimus animi maxime laboriosam nobis veniam fugit obca
-        nihil enim, magnam aliquid temporibus perspiciatis amet
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        Possimus animi maxime laboriosam nobis veniam fugit obca
-        nihil enim, magnam aliquid temporibus perspiciatis amet
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        Possimus animi maxime laboriosam nobis veniam fugit obca
-        nihil enim, magnam aliquid temporibus perspiciatis amet
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        Possimus animi maxime laboriosam nobis veniam fugit obca
-        nihil enim, magnam aliquid temporibus perspiciatis amet
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
-        Possimus animi maxime laboriosam nobis veniam fugit obca
-        nihil enim, magnam aliquid temporibus perspiciatis amet
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
       </cdr-link>
     </div>
 
