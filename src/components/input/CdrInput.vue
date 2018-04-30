@@ -18,6 +18,7 @@
         @input="onInput"
         @focus="onFocus"
         @paste="onPaste"
+        @keydown="onKeydown"
         :required="required"
         :disabled="disabled"
         :aria-label="hideLabel ? label : null"
@@ -36,6 +37,7 @@
         @input="onInput"
         @focus="onFocus"
         @paste="onPaste"
+        @keydown="onKeydown"
         :required="required"
         :disabled="disabled"
         :aria-label="hideLabel ? label : null"
@@ -339,6 +341,14 @@ export default {
        */
       this.validate(true);
       this.$emit('paste', e);
+    },
+    onKeydown(e) {
+      /**
+      * Fires when a key is pressed.
+      * @event keydown
+      * @type {event}
+       */
+      this.$emit('keydown', e);
     },
     setCurrentValue(value) {
       if (value === this.currentValue) return;
