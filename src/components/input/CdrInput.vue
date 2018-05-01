@@ -307,10 +307,11 @@ export default {
       const { value } = e.target;
       /**
       * Current input value. Fires while typing.
+      * Returns (value, event)
       * @event input
-      * @type string
+      * @type {event}
       */
-      this.$emit('input', value);
+      this.$emit('input', value, e);
       this.setCurrentValue(value);
     },
     onBlur(e) {
