@@ -1,0 +1,11 @@
+{
+	"name": "CdrSearch",
+	"versions": [
+		{
+			"readme": "# <span class=\"display-name\">CdrSearch</span>\n\nA composition of `cdr-input` and `cdr-button`that gives you a simple search box. Passes all other attributes and events to `cdr-input`.\n",
+			"examples": "### Examples\n\n#### Standard\n\n```\nvar searchTerm = '';\nfunction runSearch() {\n  console.log('Searching');\n}\n\n<form>\n  <cdr-search v-model=\"searchTerm\" :click=\"runSearch\"></cdr-search>\n  <p>Entered: {{searchTerm}}</p>\n</form>\n```\n\n#### Bare\n\n```\nvar searchTerm = '';\nfunction runSearch() {\n  console.log('Searching');\n}\n\n<form>\n  <cdr-search v-model=\"searchTerm\" :click=\"runSearch\" bare></cdr-search>\n  <p>Entered: {{searchTerm}}</p>\n</form>\n```",
+			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nclick | func | n/a | false | The function to run when search button is clicked\nbare | boolean | false | false | Bare display variant (removes button).\nlarge | boolean | false | false | Large display variant.\n\nEvent Name | Type | Description\n--- | --- | ---\ninput | string | Current input value. Fires while typing.\n",
+			"version": "0.1.0"
+		}
+	]
+}
