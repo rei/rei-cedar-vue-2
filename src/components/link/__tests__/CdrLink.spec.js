@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import { createRenderer } from 'vue-server-renderer'
+import { createRenderer } from 'vue-server-renderer';
 import CdrLink from 'componentsdir/link/CdrLink';
 
 describe('CdrLink.vue', () => {
@@ -7,8 +7,8 @@ describe('CdrLink.vue', () => {
     const wrapper = shallow(CdrLink);
     const renderer = createRenderer();
     renderer.renderToString(wrapper.vm, (err, str) => {
-      if (err) throw new Error(err)
-      expect(str).toMatchSnapshot()
+      if (err) throw new Error(err);
+      expect(str).toMatchSnapshot();
     });
   });
 
@@ -81,7 +81,7 @@ describe('CdrLink.vue', () => {
   it('renders a link with a button element and no href attribute', () => {
     const wrapper = shallow(CdrLink, {
       propsData: {
-        el: 'button'
+        tag: 'button',
       },
     });
     expect(wrapper.is('button')).toBe(true);

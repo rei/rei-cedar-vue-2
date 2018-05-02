@@ -18,6 +18,7 @@
   color: $color-link--on-light;
   cursor: pointer;
   display: inline-flex;
+  fill: $color-link--on-light;
   outline: none;
   padding: 0;
   text-decoration: underline;
@@ -42,18 +43,6 @@
 /* Style variants
   ========================================================================== */
 
-/* On Dark
-    ========== */
-.cdr-link--on-dark {
-  &,
-  &:hover,
-  &:active,
-  &:focus,
-  &:visited {
-    color: $color-link--on-dark;
-  }
-}
-
 /* Standalone
     ========== */
 .cdr-link--standalone {
@@ -69,18 +58,6 @@
 
 /* With Icons
     ========== */
-
-/* Adding additional specificity so the default icon styles are overridden correctly */
 .cdr-link .cdr-link__icon {
   fill: $color-link--on-light;
-}
-
-/* Adding additional specificity so the default icon styles are overridden correctly */
-.cdr-link .cdr-link__icon--left {
-  margin-right: $space-half-x;
-}
-
-/* Adding additional specificity so the default icon styles are overridden correctly */
-.cdr-link .cdr-link__icon--right {
-  margin-left: $space-half-x;
 }

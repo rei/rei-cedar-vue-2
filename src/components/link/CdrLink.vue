@@ -20,7 +20,7 @@ import { CdrIcon } from '@rei/cdr-icon';
  * Cedar 2 component for link.
  *
  * <span class="modifiers">Modifiers</span>
- * {on-dark, standalone}
+ * {standalone}
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */

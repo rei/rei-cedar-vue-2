@@ -24,10 +24,13 @@
     <div class="anchor-example">
       <cdr-icon-sprite/>
 
+
       <cdr-link>
         <cdr-icon
           use="#mail"
-          class="cdr-link__icon cdr-link__icon--left"/>Icon on the left
+          modifier="inherit-color"
+          class="cdr-inline-left--sm"/>
+        Icon on the left
       </cdr-link>
       <br>
       <br>
@@ -35,23 +38,22 @@
         Icon on the right
         <cdr-icon
           use="#download"
-          class="cdr-link__icon cdr-link__icon--right"/>
+          modifier="inherit-color"
+          class="cdr-inline-right--sm"/>
       </cdr-link>
       <br>
       <br>
       <cdr-link>
         <cdr-icon
           use="#twitter"
-          class="cdr-link__icon cdr-link__icon--left"/>Icons on both sides
+          modifier="inherit-color"
+          class="cdr-inline-left--sm"/>
+        Icons on both sides
         <cdr-icon
           use="#external-link"
-          class="cdr-link__icon cdr-link__icon--right"/>
+          modifier="inherit-color"
+          class="cdr-inline-right--sm"/>
       </cdr-link>
-    </div>
-
-    <h3>Contrast Link (for use on dark backgrounds)</h3>
-    <div class="anchor-example anchor-example--dark-background">
-      <cdr-link modifier="contrast"/>
     </div>
 
     <h3>Content Resilience, too much content</h3>
@@ -91,12 +93,11 @@ export default {
 </script>
 
 <style>
-  .anchor-example {
-    padding: 20px;
-  }
+.anchor-example {
+  padding: 20px;
+}
 
-  .anchor-example--dark-background {
-    background-color: black;
-  }
+.anchor-example--dark-background {
+  background-color: black;
+}
 </style>
-
