@@ -1,8 +1,8 @@
 <template>
   <component
-    :is="el"
+    :is="tag"
     :class="[styleModifiersClass, themeClass]"
-    :type="el === 'button' ? type : null"
+    :type="tag === 'button' ? type : null"
     @click="onClick"
   >
     <!-- @slot innerHTML on the inside of the button component -->
@@ -21,7 +21,7 @@ import theme from 'mixinsdir/theme';
  * {secondary} | {sm, md, lg} | {sm@sm, lg@sm, sm@md, lg@md, sm@lg, lg@lg } | {block, fixed, responsive} **OR** link
  * Use of the 'link' modifier depends on including the css for cdrA.
  * A modifier list that contains 'link' exposes the same modifiers as cdrA and the other modifiers shouldn't be combined with it.
- * @version 0.0.1
+ * @version 0.1.0
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
 export default {
@@ -29,9 +29,9 @@ export default {
   mixins: [theme],
   props: {
     /**
-     * Controls render as button or anchor
+     * Controls render as button or anchor.
      */
-    el: {
+    tag: {
       type: String,
       default: 'button',
       validator: value => (['button', 'a'].indexOf(value) >= 0) || false,

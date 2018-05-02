@@ -94,7 +94,7 @@ describe('CdrButton.vue', () => {
   it('renders a link', () => {
     const wrapper = shallow(CdrButton, {
       propsData: {
-        el: 'a',
+        tag: 'a',
       }, 
     });
     expect(wrapper.is('a')).toBe(true);
@@ -102,9 +102,9 @@ describe('CdrButton.vue', () => {
 
   it('validates el prop', () => {
     const wrapper = shallow(CdrButton);
-    const el = wrapper.vm.$options.props.el;
-    expect(el.validator('button')).toBe(true);
-    expect(el.validator('link')).toBe(false);
+    const tag = wrapper.vm.$options.props.tag;
+    expect(tag.validator('button')).toBe(true);
+    expect(tag.validator('link')).toBe(false);
   });
 
   it('validates staticSize prop', () => {
