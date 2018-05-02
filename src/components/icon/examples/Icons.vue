@@ -1,10 +1,8 @@
 <template>
   <div class="icon-examples">
     <h2>Icons</h2>
-    <cdr-icon
-      name="account-profile"
-      data-backstop="cdr-icon-add"
-    />
+    <cdr-icon-sprite/>
+    <icon-account-profile data-backstop="cdr-icon-add" />
 
     <h3>Default icon size</h3>
     <hr>
@@ -12,23 +10,20 @@
     <cdr-row
       cols="3"
       cols-md="6"
-      cols-lg="12"
+      cols-lg="10"
     >
       <cdr-col
-        v-for="(svg, name) in icons"
-        :key="name"
+        v-for="(val, key) in Icons"
+        :key="key"
+        v-if="key !== 'CdrIcon' && key !== 'CdrIconSprite'"
       >
         <div>
           <div class="cdr-text-center">
-            <cdr-icon
-              :name="name"
-            />
-            <p>{{ name }}</p>
+            <svg :is="key" />
+            <p>{{ key }}</p>
           </div>
           <div class="cdr-text-center">
-            <cdr-icon
-              :url="`${sprite}#${name}`"
-            />
+            <cdr-icon :use="`#${getSpriteId(key)}`" />
             <p>using sprite</p>
           </div>
         </div>
@@ -41,18 +36,19 @@
     <cdr-row
       cols="3"
       cols-md="6"
-      cols-lg="12"
+      cols-lg="10"
     >
       <cdr-col
-        v-for="(svg, name) in icons"
-        :key="name"
+        v-for="(val, key) in Icons"
+        :key="key"
+        v-if="key !== 'CdrIcon' && key !== 'CdrIconSprite'"
       >
         <div class="cdr-text-center">
-          <cdr-icon
-            :name="name"
+          <svg
+            :is="key"
             modifier="sm"
           />
-          <p>{{ name }}</p>
+          <p>{{ key }}</p>
         </div>
       </cdr-col>
     </cdr-row>
@@ -63,58 +59,46 @@
     <cdr-row
       cols="3"
       cols-md="6"
-      cols-lg="12"
+      cols-lg="10"
     >
       <cdr-col
-        v-for="(svg, name) in icons"
-        :key="name"
+        v-for="(val, key) in Icons"
+        :key="key"
+        v-if="key !== 'CdrIcon' && key !== 'CdrIconSprite'"
       >
         <div class="cdr-text-center">
-          <cdr-icon
-            :name="name"
+          <svg
+            :is="key"
             modifier="lg"
           />
-          <p>{{ name }}</p>
+          <p>{{ key }}</p>
         </div>
       </cdr-col>
     </cdr-row>
 
-    <h3>External Icons</h3>
-    <hr>
-
-    <cdr-row
-      cols="3"
-      cols-md="6"
-      cols-lg="12"
-    >
-      <cdr-col>
-        <div class="icon-example">
-          <cdr-icon
-            :raw="EAicon"
-          />
-          <p>EA Camping</p>
-        </div>
-      </cdr-col>
-    </cdr-row>
   </div>
 </template>
 
 <script>
 import Components from 'componentsdir/_index';
 
-const icons = require('@rei/cdr-assets/dist/icons.json');
-const EAicon = require('assetsdir/icons/ea/ea-camping.svg');
-const sprite = require('@rei/cdr-assets/dist/cdr-icons.svg');
+import * as Icons from 'componentsdir/icon/dist/cdr-icon';
 
 export default {
   name: 'Icons',
-  components: Components,
+  components: {
+    ...Icons,
+    ...Components,
+  },
   data() {
     return {
-      icons,
-      EAicon,
-      sprite,
+      Icons,
     };
+  },
+  methods: {
+    getSpriteId(name) {
+      return name.replace('Icon', '').replace(/([a-zA-Z])([A-Z0-9])/g, '$1-$2').toLowerCase();
+    },
   },
 };
 </script>
