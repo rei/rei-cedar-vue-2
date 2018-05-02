@@ -1,28 +1,30 @@
 <template>
-  <div>
-    <input
-      class="cdr-radio"
-      type="radio"
-      v-bind="$attrs"
-      :id="radioId"
-      :name="name"
-      :checked="isChecked"
-      @change="onChange"
-      :value="value"
-      ref="radio"
-    >
+  <div class="cdr-radio__wrap">
     <label
-      class="cdr-radio__label"
-      :for="radioId"
+      :class="[modifierClass, labelClass]"
       ref="label"
     >
-      <!-- @slot innerHTML inside of the radio component -->
-      <slot/>
+      <input
+        :class="['cdr-radio__input', inputClass]"
+        type="radio"
+        v-bind="$attrs"
+        :name="name"
+        :checked="isChecked"
+        @change="onChange"
+        :value="value"
+        ref="radio"
+      >
+      <span class="cdr-radio__figure" />
+      <div :class="['cdr-radio__content', contentClass]">
+        <!-- @slot innerHTML inside of radio component -->
+        <slot/>
+      </div>
     </label>
   </div>
 </template>
 
 <script>
+import modifier from 'mixinsdir/modifier';
 import isEqual from 'lodash/isEqual';
 
 /**
@@ -33,12 +35,25 @@ import isEqual from 'lodash/isEqual';
  */
 export default {
   name: 'CdrRadio',
+  mixins: [modifier],
   inheritAttrs: false,
   model: {
     prop: 'modelValue',
     event: 'change',
   },
   props: {
+    /**
+     * Class that is added to the label for custom styles
+     */
+    labelClass: String,
+    /**
+     * Class that is added to the input for custom styles
+     */
+    inputClass: String,
+    /**
+     * Class that is added to the slot wrapper for custom styles
+     */
+    contentClass: String,
     /**
      * Sets the name of the radio. Required.
     */
@@ -54,19 +69,17 @@ export default {
       required: true,
     },
     /** @ignore */
-    id: String,
-    /** @ignore */
     modelValue: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: false,
     },
   },
   computed: {
-    radioId() {
-      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
-    },
     isChecked() {
       return isEqual(this.modelValue, this.value);
+    },
+    baseClass() {
+      return 'cdr-radio';
     },
   },
   methods: {
@@ -84,6 +97,5 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrRadio.vars.pcss';
   @import './styles/CdrRadio.pcss';
 </style>

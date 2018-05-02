@@ -1,30 +1,34 @@
 <template>
-  <div>
-    <input
-      class="cdr-checkbox"
-      type="checkbox"
-      :id="checkboxId"
-      v-bind="$attrs"
-      v-model="newValue"
-      :true-value="customValue ? null : trueValue"
-      :false-value="customValue ? null : falseValue"
-      :value="customValue"
-      @change="updateValue(newValue, $event)"
-      ref="checkbox"
-    >
+  <!-- eslint-disable max-len -->
+  <div class="cdr-checkbox__wrap">
     <label
-      class="cdr-checkbox__label"
-      :class="labelClass"
-      :for="checkboxId"
+      :class="[modifierClass, labelClass]"
       ref="label"
     >
-      <!-- @slot innerHTML inside of checkbox component -->
-      <slot/>
+      <input
+        :class="['cdr-checkbox__input', inputClass]"
+        type="checkbox"
+        v-bind="$attrs"
+        v-model="newValue"
+        :true-value="customValue ? null : trueValue"
+        :false-value="customValue ? null : falseValue"
+        :value="customValue"
+        :indeterminate="indeterminate"
+        @change="updateValue(newValue, $event)"
+        ref="checkbox"
+      >
+      <span class="cdr-checkbox__figure" />
+      <div :class="['cdr-checkbox__content', contentClass]">
+        <!-- @slot innerHTML inside of checkbox component -->
+        <slot/>
+      </div>
     </label>
   </div>
 </template>
 
 <script>
+import modifier from 'mixinsdir/modifier';
+
 /**
  * Cedar 2 component for checkbox
  * **NOTE:** `v-model` is required.
@@ -33,8 +37,28 @@
  */
 export default {
   name: 'CdrCheckbox',
+  mixins: [modifier],
   inheritAttrs: false,
   props: {
+    /**
+     * Class that is added to the label for custom styles
+     */
+    labelClass: String,
+    /**
+     * Class that is added to the input for custom styles
+     */
+    inputClass: String,
+    /**
+     * Class that is added to the slot wrapper for custom styles
+     */
+    contentClass: String,
+    /**
+     * Show checkbox in indeterminate state. (NOTE: this is a visual-only state and there is no logic for when to show it)
+    */
+    indeterminate: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * The value when checked.
     */
@@ -53,12 +77,6 @@ export default {
      * The value when used in a checkbox group. Replaces `trueValue` and `falseValue`.
     */
     customValue: [String, Number, Boolean, Object, Array, Symbol, Function],
-    /**
-     * Class that is added to the label for custom styles
-     */
-    labelClass: String,
-    /** @ignore */
-    id: String,
     /** @ignore */
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
@@ -70,8 +88,8 @@ export default {
     };
   },
   computed: {
-    checkboxId() {
-      return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
+    baseClass() {
+      return 'cdr-checkbox';
     },
   },
   watch: {
@@ -98,6 +116,5 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrCheckbox.vars.pcss';
   @import './styles/CdrCheckbox.pcss';
 </style>

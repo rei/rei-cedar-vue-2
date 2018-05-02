@@ -63,27 +63,6 @@
           />
         </div>
       </cdr-col>
-      <cdr-col>
-        <div>
-          <p>thumbnail</p>
-          <cdr-img
-            ratio="4-3"
-            modifier="thumbnail"
-            alt="ratio thumbnail"
-            src="http://placehold.it/200x200"
-          />
-          <cdr-img
-            modifier="thumbnail"
-            alt="landscape thumbnail"
-            src="http://placehold.it/350x150"
-          />
-          <cdr-img
-            modifier="thumbnail"
-            alt="square thumbnail"
-            src="http://placehold.it/200x200"
-          />
-        </div>
-      </cdr-col>
     </cdr-row>
   </div>
 </template>
