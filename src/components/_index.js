@@ -1,4 +1,5 @@
 import CdrA from 'componentsdir/anchor/CdrA';
+import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
 import CdrButton from 'componentsdir/button/CdrButton';
 import CdrCard from 'componentsdir/card/CdrCard';
 import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
@@ -17,6 +18,7 @@ import CdrText from 'componentsdir/text/CdrText';
 
 export default {
   CdrA,
+  CdrBreadcrumb,
   CdrButton,
   CdrCard,
   CdrCheckbox,
