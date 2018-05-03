@@ -1,8 +1,9 @@
 const path = require('path');
 const utils = require('./utils');
-const vueLoaderConfig = require('./vue-loader.conf');
+const cssLoaderConfig = require('./css-loader.conf');
 const config = require('../config');
 const mainPostConfig = require('./mainPost.conf.js');
+const { VueLoaderPlugin } = require('vue-loader');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -48,18 +49,19 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: vueLoaderConfig
-          },
-          {
-            loader: 'cedar-theme-loader',
-            options: {
-              isDev: process.env.NODE_ENV === 'development' ? true : false,
-            }
-          }
-        ],
+        loader: 'vue-loader'
+        // use: [
+        //   {
+        //     loader: 'vue-loader',
+        //     // options: vueLoaderConfig
+        //   },
+        //   {
+        //     loader: 'cedar-theme-loader',
+        //     options: {
+        //       isDev: process.env.NODE_ENV === 'development' ? true : false,
+        //     }
+        //   }
+        // ],
       },
       {
         test: /\.js$/,
@@ -71,9 +73,18 @@ module.exports = {
         include: [resolve('src'), resolve('test')],
       },
       {
-        test: /\.(postcss|pcss)$/,
-        include: [resolve('src/css')],
-        use: mainPostConfig.loaders
+        test: /\.(css|postcss|pcss)$/,
+        oneOf: [
+          // this matches <style module>
+          {
+            resourceQuery: /module/,
+            use: cssLoaderConfig.moduleLoaders
+          },
+          // this matches plain <style> or <style scoped>
+          {
+            use: cssLoaderConfig.defaultLoaders
+          }
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -99,4 +110,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 };

@@ -1,5 +1,5 @@
 <template>
-  <cdr-card modifier="activity">
+  <cdr-card class="cdr-card--activity">
     <section class="cdr-inset cdr-inset--remove-top">
       <cdr-media-object
         :img-src="media"

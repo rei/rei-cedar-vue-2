@@ -1,5 +1,5 @@
 <template>
-  <article :class="[modifierClass]">
+  <article :class="$style['cdr-card']">
     <!-- @slot innerHTML on the inside of the card component -->
     <slot/>
   </article>
@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/CdrCard.vars.pcss';
   @import './styles/CdrCard.pcss';

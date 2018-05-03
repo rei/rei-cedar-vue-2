@@ -4,7 +4,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import './css/main.postcss';
-import './cdr-assets/dist/cdr-fonts.min.css';
+import '../static/cdr-fonts.css';
 import App from './App';
 
 Vue.config.devtools = false;

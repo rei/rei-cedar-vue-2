@@ -61,15 +61,19 @@ export default {
 </style>
 
 <style cedar-theme="red">
+/*
   @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/CdrButton.vars.pcss';
   @import './styles/vars/red.vars.pcss';
   @import './styles/CdrButton.pcss';
+*/
 </style>
 
 <style cedar-theme="green">
+/*
   @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/CdrButton.vars.pcss';
   @import './styles/vars/green.vars.pcss';
   @import './styles/CdrButton.pcss';
+*/
 </style>

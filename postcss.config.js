@@ -12,7 +12,7 @@ module.exports = {
 
         // include where to look for modules
         // modules: ['src', 'node_modules']
-      })
+      }),
     },
     'postcss-strip-inline-comments': {},
     'postcss-sassy-mixins': {},
@@ -32,6 +32,8 @@ module.exports = {
     },
     'postcss-inline-svg': {},
     autoprefixer: {},
-    cssnano: {},
+    cssnano: {
+      discardUnused: { fontFace: false },
+    },
   },
 };

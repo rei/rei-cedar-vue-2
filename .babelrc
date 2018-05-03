@@ -11,7 +11,7 @@
         "env", 
         "stage-2",
         "./.babel-jest.js"
-      ],
+      ]
     }
   }
 }

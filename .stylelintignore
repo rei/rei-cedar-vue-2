@@ -1,7 +1,6 @@
 # built files
 dist/
 dist-docs/
-release/
 backstop_data/
 
 node_modules/

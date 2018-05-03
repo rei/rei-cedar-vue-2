@@ -1,6 +1,5 @@
 build/*.js
 config/*.js
-release/*.js
 dist-docs/
 dist/
 

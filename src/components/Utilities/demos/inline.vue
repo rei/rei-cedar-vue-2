@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-<style type="text/css">
+<style>
   .example {
     background-color: rgba(27, 28, 28, 0.6);
   }

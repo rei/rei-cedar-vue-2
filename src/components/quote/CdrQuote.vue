@@ -55,6 +55,5 @@ export default {
 
 <style>
   @import '../../css/settings/_index.pcss';
-  @import './styles/spruceQuote.min.css';
   @import './styles/CdrQuote.pcss';
 </style>

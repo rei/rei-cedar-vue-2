@@ -1,12 +1,12 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div class="cdr-checkbox__wrap">
+  <div :class="$style['cdr-checkbox__wrap']">
     <label
-      :class="[modifierClass, labelClass]"
+      :class="[modClasses, labelClass]"
       ref="label"
     >
       <input
-        :class="['cdr-checkbox__input', inputClass]"
+        :class="[$style['cdr-checkbox__input'], inputClass]"
         type="checkbox"
         v-bind="$attrs"
         v-model="newValue"
@@ -17,8 +17,8 @@
         @change="updateValue(newValue, $event)"
         ref="checkbox"
       >
-      <span class="cdr-checkbox__figure" />
-      <div :class="['cdr-checkbox__content', contentClass]">
+      <span :class="$style['cdr-checkbox__figure']" />
+      <div :class="[$style['cdr-checkbox__content'], contentClass]">
         <!-- @slot innerHTML inside of checkbox component -->
         <slot/>
       </div>
@@ -91,6 +91,13 @@ export default {
     baseClass() {
       return 'cdr-checkbox';
     },
+    modClasses() {
+      const final = [];
+      this.modifierClass.split(' ').forEach((mclass) => {
+        final.push(this.$style[mclass]);
+      });
+      return final;
+    },
   },
   watch: {
     value(val) {
@@ -114,7 +121,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrCheckbox.pcss';
 </style>
