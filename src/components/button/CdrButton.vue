@@ -12,6 +12,7 @@
 
 <script>
 import theme from 'mixinsdir/theme';
+import { CdrIcon } from '@rei/cdr-icon';
 
 /**
  * Cedar 2 component for button
@@ -25,6 +26,9 @@ import theme from 'mixinsdir/theme';
  */
 export default {
   name: 'CdrButton',
+  components: {
+    CdrIcon,
+  },
   mixins: [theme],
   props: {
     /**

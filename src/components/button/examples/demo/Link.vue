@@ -3,7 +3,7 @@
     <h3>Buttons with link styles</h3>
     <p>
       <cdr-button
-        :el="a"
+        tag="a"
         href="https://google.com"
         :style-modifiers="['secondary']"
       >This is a button-link
@@ -11,7 +11,7 @@
     </p>
     <p>
       <cdr-button
-        :el="a"
+        tag="a"
         data-backstop="cdr-button--link-standalone"
         :style-modifiers="['cta-sale']"
       >Button as link--standalone

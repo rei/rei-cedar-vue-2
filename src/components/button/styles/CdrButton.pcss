@@ -95,6 +95,11 @@
       background-color: $button-secondary-disabled-background-color;
       box-shadow: $button-secondary-disabled-box-shadow;
       color: $button-secondary-disabled-color;
+      cursor: not-allowed;
+
+      & > .cdr-icon {
+        fill: $button-secondary-disabled-color;
+      }
     }
   }
 
@@ -172,11 +177,21 @@
     box-shadow: $button-cta-light-box-shadow;
     color: $button-cta-light-color;
 
+    & > .cdr-icon {
+      display: inline;
+      fill: $button-cta-light-color;
+    }
+
     &:hover,
     &:active {
       background-color: $button-cta-light-hover-background-color;
       box-shadow: $button-cta-light-box-shadow;
       color: $button-cta-light-hover-color;
+
+      & > .cdr-icon {
+        display: inline;
+        fill: $button-cta-light-hover-color;
+      }
     }
   }
 

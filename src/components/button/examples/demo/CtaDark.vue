@@ -14,7 +14,12 @@
         :style-modifiers="button.styleModifiers"
         :type="button.type"
         :disabled="button.disabled"
-      >{{ button.label }}</cdr-button>
+      >{{ button.label }}
+        <cdr-icon
+          use="#caret-right"
+          modifier="inherit-color"
+          class="cdr-inline-right--sm" />
+      </cdr-button>
     </div>
   </div>
 </template>

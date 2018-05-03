@@ -8,13 +8,18 @@
       <cdr-button
         v-for="(button, index) in section.buttons"
         :key="index"
-        :static-size="button.staticSize"
-        :full-width="button.fullWidth"
-        :responsive-size="button.responsiveSize"
-        :style-modifiers="button.styleModifiers"
-        :type="button.type"
-        :disabled="button.disabled"
-      >{{ button.label }}</cdr-button>
+        static-size="button.staticSize"
+        full-width="button.fullWidth"
+        responsive-size="button.responsiveSize"
+        style-modifiers="button.styleModifiers"
+        type="button.type"
+        disabled="button.disabled"
+      >{{ button.label }}
+        <cdr-icon
+          use="#caret-right"
+          modifier="inherit-color"
+          class="cdr-inline-right--lg" />
+      </cdr-button>
     </div>
   </div>
 </template>
