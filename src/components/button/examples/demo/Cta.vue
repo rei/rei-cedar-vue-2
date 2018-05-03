@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Bluuurg</h1>
     <div
       class="button-example"
       v-for="(section, index) in data"
@@ -16,6 +17,13 @@
         :disabled="button.disabled"
       >{{ button.label }}</cdr-button>
     </div>
+    <div class="button-example">
+      <cdr-button
+        data-backstop="cdr-button--cta-brand"
+        :style-options="{ styles: ['cta-brand'] }"
+      >Backstop button
+      </cdr-button>
+    </div>
   </div>
 </template>
 
@@ -23,60 +31,42 @@
 import Components from 'componentsdir/_index';
 
 export default {
-  name: 'Secondary',
+  name: 'Cta',
   components: Components,
   data: function data() {
     return {
       data: [
         {
-          title: 'Secondary',
+          title: 'CTA-brand',
           buttons: [
             {
               label: 'Large',
               disabled: false,
               staticSize: 'large',
-              styleModifiers: ['secondary'],
-              backstop: 'cdr-button--large cdr-button--secondary',
+              styleModifiers: ['cta-brand'],
             },
             {
               label: 'Medium',
               disabled: false,
               staticSize: 'medium',
-              styleModifiers: ['secondary'],
-              backstop: 'cdr-button--medium cdr-button--secondary',
-            },
-            {
-              label: 'Small',
-              disabled: false,
-              staticSize: 'small',
-              styleModifiers: ['secondary'],
-              backstop: 'cdr-button--small cdr-button--secondary',
+              styleModifiers: ['cta-brand'],
             },
           ],
         },
         {
-          title: 'Secondary Disabled',
+          title: 'CTA-brand Full Width',
           buttons: [
             {
-              label: 'Large',
-              disabled: true,
-              staticSize: 'large',
-              styleModifiers: ['secondary'],
-              backstop: 'cdr-button--large cdr-button--secondary disabled',
+              label: 'Full Width',
+              disabled: false,
+              fullWidth: true,
+              styleModifiers: ['cta-brand'],
             },
             {
-              label: 'Medium',
+              label: 'Full Width Disabled',
               disabled: true,
-              staticSize: 'medium',
-              styleModifiers: ['secondary'],
-              backstop: 'cdr-button--medium cdr-button--secondary disalbed',
-            },
-            {
-              label: 'Small',
-              disabled: true,
-              staticSize: 'small',
-              styleModifiers: ['secondary'],
-              backstop: 'cdr-button--small cdr-button--secondary disabled',
+              fullWidth: true,
+              styleModifiers: ['cta-brand'],
             },
           ],
         },

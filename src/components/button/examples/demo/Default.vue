@@ -13,35 +13,24 @@
         :responsive-size="button.responsiveSize"
         :type="button.type"
         :disabled="button.disabled"
+        :data-backstop="button.backstop"
       >{{ button.label }}</cdr-button>
     </div>
     <div class="button-example">
       <cdr-button
         type="submit"
         modifier="lg">
-        <cdr-icon
-          url="/static/rei-icons.svg#cdr-check-lg"
-          modifier="sm"
-        />
         Large
       </cdr-button>
       <cdr-button
         data-backstop="cdr-button"
         type="submit"
         :on-click="log">
-        <cdr-icon
-          url="/static/rei-icons.svg#cdr-check-lg"
-          modifier="sm"
-        />
         Medium
       </cdr-button>
       <cdr-button
         type="submit"
         modifier="sm">
-        <cdr-icon
-          url="/static/rei-icons.svg#cdr-check-lg"
-          modifier="sm"
-        />
         Small
       </cdr-button>
     </div>
@@ -76,18 +65,47 @@ export default {
               disabled: false,
               staticSize: 'large',
               fullWidth: false,
+              backstop: 'cdr-button--large',
             },
             {
               label: 'Medium',
               disabled: false,
               staticSize: 'medium',
               fullWidth: false,
+              backstop: 'cdr-button--medium',
             },
             {
-              label: 'Disabled',
+              label: 'Small',
+              disabled: false,
+              staticSize: 'small',
+              fullWidth: false,
+              backstop: 'cdr-button--small',
+            },
+          ],
+        },
+        {
+          title: 'Disabled',
+          buttons: [
+            {
+              label: 'Large',
+              disabled: true,
+              staticSize: 'large',
+              fullWidth: false,
+              backstop: 'cdr-button--large disabled',
+            },
+            {
+              label: 'Medium',
+              disabled: true,
+              staticSize: 'medium',
+              fullWidth: false,
+              backstop: 'cdr-button--medium disabled',
+            },
+            {
+              label: 'Small',
               disabled: true,
               staticSize: 'small',
               fullWidth: false,
+              backstop: 'cdr-button--small disabled',
             },
           ],
         },
@@ -101,7 +119,13 @@ export default {
               fullWidth: true,
             },
             {
-              label: 'Large full width',
+              label: 'Medium + full width',
+              disabled: false,
+              staticSize: 'medium',
+              fullWidth: true,
+            },
+            {
+              label: 'Large + full width',
               disabled: false,
               staticSize: 'large',
               fullWidth: true,
@@ -116,6 +140,7 @@ export default {
               disabled: false,
               fullWidth: true,
               responsiveSize: ['large@small'],
+              backstop: 'cdr-button--large@small',
             },
           ],
         },
