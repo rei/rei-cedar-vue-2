@@ -16,11 +16,10 @@ import theme from 'mixinsdir/theme';
 /**
  * Cedar 2 component for button
  *
- * <span class="modifiers">Modifiers</span>
- * Modifiers can be combined 1 from each grouping.
- * {secondary} | {sm, md, lg} | {sm@sm, lg@sm, sm@md, lg@md, sm@lg, lg@lg } | {block, fixed, responsive} **OR** link
- * Use of the 'link' modifier depends on including the css for cdrA.
- * A modifier list that contains 'link' exposes the same modifiers as cdrA and the other modifiers shouldn't be combined with it.
+ * CdrButton will render either a button, or a anchor that looks like a button.
+ * As such, the decision to use CdrButton vs CdrAnchor should be made based on what
+ * you need the rendered element to look like.
+ *
  * @version 0.1.0
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -29,7 +28,7 @@ export default {
   mixins: [theme],
   props: {
     /**
-     * Controls render as button or anchor.
+     * Controls render as button or anchor. {button, a}
      */
     tag: {
       type: String,
@@ -37,7 +36,7 @@ export default {
       validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
     },
     /**
-     * Defines the button type. Possible values: {button, submit, reset}.
+     * Sets the button type. {button, submit, reset}
      */
     type: {
       type: String,
@@ -45,14 +44,14 @@ export default {
       validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
-     * Add custom click actions.
+     * Adds custom click actions.
      */
     onClick: {
       type: Function,
       default: () => () => null,
     },
     /**
-     * Sets a static size for the button. When combined with responsiveSize, will control padding-top and -bottom.
+     * Sets a static size for the button, which scales padding and text size. {small, medium, large}
      */
     staticSize: {
       type: String,
@@ -60,7 +59,7 @@ export default {
       validator: value => (['small', 'medium', 'large'].indexOf(value) >= 0) || false,
     },
     /**
-     * Sets width to be 100%. Can be combined with staticSize
+     * Sets width to be 100%. Can be combined with staticSize.
     */
     fullWidth: {
       type: Boolean,
@@ -68,7 +67,8 @@ export default {
       validator: value => typeof value === 'boolean',
     },
     /**
-     * Render a specific button size at a specific breakpoint. Takes precedence over staticSize and fullWidth
+     * Render a specific button size at a specific breakpoint. Takes precedence over staticSize and fullWidth.
+     * Default function returns an empty array.
      */
     responsiveSize: {
       type: Array,
@@ -77,7 +77,8 @@ export default {
       },
     },
     /**
-     * Additional style modifiers; essentially classes that you can pass in to alter the style
+     * Additional style modifiers. Default function returns an empty array.
+     * {`secondary`, `cta-brand`, `cta-light`, `cta-dark`, `cta-sale`}
      */
     styleModifiers: {
       type: Array,

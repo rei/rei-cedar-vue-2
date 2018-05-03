@@ -1,47 +1,39 @@
 # <span class="display-name">CdrButton</span>
 
-## <span class="props">Props</span>
-
-### <span class="el">el<span>
-
-CdrButton can be rendered as a button (default), or as an anchor styled like a button. Passing 'a' to the 'el' prop will render an anchor instead of a button.
-
-`<cdr-button :el="a" href="https://google.com">Google</cdr-button>`
-
-### <span class="type">Type<span>
-
-Button type attribute. Type attribute will not render on an anchor. Accepted values are {`button`, `submit`, `reset`}.
-
-`<cdr-button :type="submit">Submit</cdr-button>`
-
-### <span class="static-size">Static Size<span>
-
-CdrButton has three basic sizes {`small`, `medium`, `large`} that scale padding and text size. Medium is the default.
-
-`<cdr-button :static-size="large">Large Button</cdr-button>`
+## <span class="usage">Usage Tips</span>
 
 ### <span class="full-width">Full Width<span>
-
-Defaults to false. Passing `true` will render a button that has width: 100%.
-
-`<cdr-button :static-size="large" :full-width="true">Full Width Button</cdr-button>`
 
 The full-width prop can be combined with static-size to create, for instance, a small button that is 100% wide.
 
 `<cdr-button :static-size="small" :full-width="true">Small Full Width Button</cdr-button>`
 
+Unlike some of the other sizing props, fullWidth can be used together with CTA style modifiers.
+
 ### <span class="static-size">Resoponsive Size<span>
 
-CdrButton has responsive classes that leverage static size {`small`, `medium`, `large`} against set breakpoints {`extra-small`, `small`, `medium`, `large`}. This prop accepts an Array of class names and defaults to `[]`.
+CdrButton has responsive classes that leverage static sizes {`small`, `medium`, `large`} against set breakpoints {`extra-small`, `small`, `medium`, `large`}. This prop accepts an Array of class names and defaults to `[]`. Class names are formated as buttonSize@breakpoint.
 
 `<cdr-button :responsive-size="['large@extra-small']">Responsive Button</cdr-button>`
 
 Can be combined with static-size and full-width, though responsive size will take precedence because of CSS cascade.
 
-### <span class="static-size">Style Modifiers<span>
+### <span class="style-modifiers">Style Modifiers<span>
 
-Syle modifiers will change the look of a button. Accepted values are {`secondary`, `cta-brand`, `cta-light`, `cta-dark`, `cta-sale`}.
+Syle modifiers will change the look of a button from the default. Accepted values are {`secondary`, `cta-brand`, `cta-light`, `cta-dark`, `cta-sale`}.
 
-`<cdr-button :style-modifiers="['cta-sale']">CTA Button Sale</cdr-button>`
+#### <span class="secondary">Secondary Buttons</span>
 
-CTA buttons have a sepcific styling, and can only be combined with the full-width prop. CTA buttons will ignore static-size and responsive-size props.
+Secondary buttons can be combined with staticSize, full-width, and responsiveSize the same way the default button styles work.
+
+`<cdr-button :static-size="small" :style-modifiers="['secondary']">A small secondary styled button</cdr-button>`
+
+#### <span class="cta-butons">CTA Buttons</span>
+
+CTA buttons are more strict about styling, and cannot be combined with staticSize and responsiveSize. CTA buttons are basically always staticSize: large, though they will also work with the fullWidth prop. Padding and text size do not scale. The various CTA classes change colors.
+
+`<cdr-button :style-modifiers="['cta-sale']" :full-width="true">CTA Button Sale</cdr-button>`
+
+## <span class="ada">Accessibility</span>
+
+Since CdrButton will render a button, or an anchor that looks like a button, it will have the correct ARIA context by default. 
