@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "private": true,
   "scripts": {
+    "try": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "dev": "node build/dev-server.js",
     "unit": "cross-env BABEL_ENV=test jest --no-cache",
@@ -139,17 +140,15 @@
     "url-loader": "^0.6.2",
     "vue": "^2.5.13",
     "vue-jest": "^2.1.0",
-    "vue-loader": "^15.0.5",
+    "vue-loader": "^15.0.7",
     "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.13",
     "vue-style-loader": "^4.1.0",
     "vue-styleguidist": "^1.4.8",
-    "vue-template-compiler": "^2.5.13",
-    "vue-theme-loader": "^2.0.1",
     "webpack": "^3.11.0",
     "webpack-bundle-analyzer": "^2.10.0",
-    "webpack-dev-middleware": "^2.0.5",
-    "webpack-hot-middleware": "^2.18.2",
+    "webpack-dev-middleware": "^2.0.6",
+    "webpack-hot-middleware": "^2.22.1",
     "webpack-merge": "^4.1.0"
   },
   "engines": {

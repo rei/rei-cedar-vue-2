@@ -2,7 +2,6 @@ const path = require('path');
 const utils = require('./utils');
 const cssLoaderConfig = require('./css-loader.conf');
 const config = require('../config');
-const mainPostConfig = require('./mainPost.conf.js');
 const { VueLoaderPlugin } = require('vue-loader');
 
 function resolve(dir) {
@@ -30,11 +29,6 @@ module.exports = {
     },
     extensions: ['.js', '.vue', '.json'],
   },
-  resolveLoader: { 
-    alias: { 
-      'cedar-theme-loader': resolve('utils/themeLoader.js'),
-    } 
-  }, 
   module: {
     rules: [
       {
@@ -50,18 +44,6 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader'
-        // use: [
-        //   {
-        //     loader: 'vue-loader',
-        //     // options: vueLoaderConfig
-        //   },
-        //   {
-        //     loader: 'cedar-theme-loader',
-        //     options: {
-        //       isDev: process.env.NODE_ENV === 'development' ? true : false,
-        //     }
-        //   }
-        // ],
       },
       {
         test: /\.js$/,

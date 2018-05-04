@@ -8,22 +8,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 
-// Define entries here so we can bind hot reloading below
-const entryObj = {
-  'dev': path.resolve(__dirname, '../src/dev.js')
-}
 
-// add hot-reload related code to entry chunks
-Object.keys(entryObj).forEach(function (name) {
-  entryObj[name] = ['./build/dev-client'].concat(entryObj[name])
-})
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
 
 module.exports = merge(baseWebpackConfig, {
-  entry: entryObj,
+  entry: [
+    'webpack-hot-middleware/client?noInfo=true&reload=true',
+    path.resolve(__dirname, '../src/dev.js')
+  ],
   // cheap-module-eval-source-map is faster for development
   devtool: '#cheap-module-eval-source-map',
   plugins: [
