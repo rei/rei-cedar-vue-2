@@ -12,6 +12,7 @@
 
 <script>
 import theme from 'mixinsdir/theme';
+import buttonBase from 'mixinsdir/buttonBase';
 import { CdrIcon } from '@rei/cdr-icon';
 
 /**
@@ -29,31 +30,8 @@ export default {
   components: {
     CdrIcon,
   },
-  mixins: [theme],
+  mixins: [buttonBase, theme],
   props: {
-    /**
-     * Controls render as button or anchor. {button, a}
-     */
-    tag: {
-      type: String,
-      default: 'button',
-      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
-    },
-    /**
-     * Sets the button type. {button, submit, reset}
-     */
-    type: {
-      type: String,
-      default: 'button',
-      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
-    },
-    /**
-     * Adds custom click actions.
-     */
-    onClick: {
-      type: Function,
-      default: () => () => null,
-    },
     /**
      * Sets a static size for the button, which scales padding and text size. {small, medium, large}
      */
@@ -92,9 +70,6 @@ export default {
     },
   },
   computed: {
-    baseClass() {
-      return 'cdr-button';
-    },
     styleModifiersClass() {
       const base = this.baseClass;
       let responsive = this.responsiveSize;
