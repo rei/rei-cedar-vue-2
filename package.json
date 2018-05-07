@@ -131,7 +131,7 @@
     "semver-diff": "^2.1.0",
     "standard-changelog": "^1.0.12",
     "style-loader": "^0.20.2",
-    "stylelint": "^9.1.0",
+    "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.1.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.10.3",
@@ -175,6 +175,7 @@
     }
   },
   "dependencies": {
+    "ajv": "^6.4.0",
     "rei-cedar-tokens": "git+https://github.com/rei/rei-cedar-tokens.git#0.1.2"
   }
 }
