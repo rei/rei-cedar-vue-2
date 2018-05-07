@@ -8,16 +8,14 @@
         <span class="cdr-sr-only">{{ imgHrefText }}</span>
         <cdr-icon
           v-if="iconUrl"
-          class="cdr-media-object__figure"
-          :class="imgClass"
+          :class="[$style['cdr-media-object__figure'], imgClass]"
           :url="iconUrl"
         />
         <cdr-img
           v-else
-          class="cdr-media-object__figure"
+          :class="[$style['cdr-media-object__figure'], imgClass]"
           :lazy="lazy"
           :lazy-opts="lazyOpts"
-          :class="imgClass"
           :alt="imgAlt"
           :src="imgSrc"
           :ratio="imgRatio"
@@ -31,15 +29,13 @@
     <template v-else>
       <cdr-icon
         v-if="iconUrl"
-        class="cdr-media-object__figure"
-        :class="imgClass"
+        :class="[$style['cdr-media-object__figure'], imgClass]"
         :url="iconUrl"/>
       <cdr-img
         v-else
-        class="cdr-media-object__figure"
+        :class="[$style['cdr-media-object__figure'], imgClass]"
         :lazy="lazy"
         :lazy-opts="lazyOpts"
-        :class="imgClass"
         :alt="imgAlt"
         :src="imgSrc"
         :ratio="imgRatio"
@@ -50,8 +46,7 @@
         :style="mediaWidth"/>
     </template>
     <div
-      class="cdr-media-object__body"
-      :class="alignClass"
+      :class="[$style['cdr-media-object__body'], alignClass]"
     >
       <!-- @slot innerHTML inside of the media object component -->
       <slot/>
@@ -159,7 +154,7 @@ export default {
     },
     alignClass() {
       if (this.mediaAlign) {
-        return `cdr-media-object__body--${this.mediaAlign}`;
+        return this.$style[`cdr-media-object__body--${this.mediaAlign}`];
       }
       return '';
     },
@@ -170,7 +165,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrMediaObject.pcss';
 </style>

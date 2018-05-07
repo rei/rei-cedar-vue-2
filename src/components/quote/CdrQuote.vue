@@ -5,14 +5,16 @@
   >
     <cdr-text
       v-if="summary"
-      class="cdr-quote__summary">
+      :class="$style['cdr-quote__summary']">
       {{ summary }}
     </cdr-text>
     <slot />
     <cdr-text
-      tag="cite"
       v-if="citation"
-      modifier="citation">
+      tag="cite"
+      modifier="citation"
+      :class="$style['cdr-quote__citation']"
+    >
       {{ citation }}
     </cdr-text>
   </component>
@@ -53,7 +55,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrQuote.pcss';
 </style>

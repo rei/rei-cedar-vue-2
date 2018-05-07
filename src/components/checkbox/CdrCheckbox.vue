@@ -2,7 +2,7 @@
   <!-- eslint-disable max-len -->
   <div :class="$style['cdr-checkbox__wrap']">
     <label
-      :class="[modClasses, labelClass]"
+      :class="[modifierClass, labelClass]"
       ref="label"
     >
       <input
@@ -90,13 +90,6 @@ export default {
   computed: {
     baseClass() {
       return 'cdr-checkbox';
-    },
-    modClasses() {
-      const final = [];
-      this.modifierClass.split(' ').forEach((mclass) => {
-        final.push(this.$style[mclass]);
-      });
-      return final;
     },
   },
   watch: {

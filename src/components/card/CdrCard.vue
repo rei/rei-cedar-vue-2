@@ -1,5 +1,5 @@
 <template>
-  <article :class="$style['cdr-card']">
+  <article :class="modifierClass">
     <!-- @slot innerHTML on the inside of the card component -->
     <slot/>
   </article>

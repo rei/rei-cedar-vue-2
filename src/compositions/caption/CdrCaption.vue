@@ -1,12 +1,13 @@
 <template>
-  <div class="cdr-caption cdr-inset--squish">
+  <div :class="[$style['cdr-caption'], 'cdr-inset--squish']">
     <p
       v-if="summary"
-      class="cdr-caption__summary">
+      :class="$style['cdr-caption__summary']">
       {{ summary }}
     </p>
     <cite
       v-if="credit"
+      :class="$style['cdr-caption__cite']"
       class="cdr-text cdr-text--citation">
       {{ credit }}
     </cite>
@@ -31,7 +32,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrCaption.pcss';
 </style>

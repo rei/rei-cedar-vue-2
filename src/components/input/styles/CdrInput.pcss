@@ -27,13 +27,10 @@
 /* ==========================================================================
   # INPUT LABEL
   ========================================================================== */
-.cdr-label {
+.cdr-input__label {
+  @include maple-utility-20;
+  
   color: $input-label-color-text;
-  font-size: $input-label-font-size;
-  line-height: $input-label-line-height;
-  font-style: $input-label-font-style;
-  font-weight: $input-label-font-weight;
-  text-align: $input-label-text-align;
   margin-bottom: $input-label-margin-bottom;
 
   &--error {

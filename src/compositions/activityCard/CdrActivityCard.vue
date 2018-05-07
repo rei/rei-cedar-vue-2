@@ -1,5 +1,6 @@
 <template>
-  <cdr-card class="cdr-card--activity">
+  <!-- eslint-disable max-len -->
+  <cdr-card :class="$style['cdr-card--activity']">
     <section class="cdr-inset cdr-inset--remove-top">
       <cdr-media-object
         :img-src="media"
@@ -7,14 +8,14 @@
         :img-crop="mediaCrop"
         :img-cover="mediaCover"
         :img-ratio="mediaRatio"
-        img-class="cdr-card--activity__image"
+        :img-class="$style['cdr-card--activity__image']"
         img-modifier="responsive"
         modifier="top stretch"
         img-radius="top"
       >
         <div
           v-if="label != null"
-          class="cdr-card--activity__label"
+          :class="$style['cdr-card--activity__label']"
         >{{ label }}</div>
         <cdr-text
           v-if="title != null"
@@ -22,13 +23,13 @@
           modifier="heading-small"
         >
           <a
-            class="cdr-card--activity__title cdr-card--activity__title--action"
+            :class="[$style['cdr-card--activity__title'], $style['cdr-card--activity__title--action']]"
             :href="titleUrl"
           >{{ title }}</a>
         </cdr-text>
         <cdr-list
           v-if="snapshot"
-          class="cdr-card--activity__snapshot"
+          :class="$style['cdr-card--activity__snapshot']"
           modifier="inline disc compact"
         >
           <li
@@ -40,13 +41,13 @@
         </cdr-list>
         <div
           v-if="location"
-          class="cdr-card--activity__location"
+          :class="$style['cdr-card--activity__location']"
         >
           {{ location }}
         </div>
         <cdr-rating
           v-if="rating != null"
-          class="cdr-card--activity__rating"
+          :class="$style['cdr-card--activity__rating']"
           :rating="rating"
           :count="count"
           modifier="medium"/>
@@ -153,7 +154,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/CdrActivityCard.vars.pcss';
   @import './styles/CdrActivityCard.pcss';
