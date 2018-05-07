@@ -12,21 +12,21 @@ import CdrButton from 'componentsdir/button/CdrButton';
 import { IconCaretRight } from '@rei/cdr-icon';
 
 export default {
-  name: 'IconBookmarkFill',
+  name: 'ButtonCta',
   components: {
     CdrButton,
     IconCaretRight,
   },
   extends: CdrButton,
-  props: {
+  computed: {
     ctaClass() {
       return `${this.baseClass}--cta-${this.ctaStyle}`;
     },
-  }
+  },
 };
 </script>
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import '../button/styles/CdrButton.pcss';
+  @import '../styles/CdrButton.pcss';
 </style>

@@ -7,7 +7,7 @@
 
 <script>
 import Components from 'componentsdir/_index';
-import { ButtonCta } from '@rei/cdr-icon';
+import { ButtonCta } from 'componentsdir/button/dist/cdr-button';
 
 export default {
   name: 'Cta',
