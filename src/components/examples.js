@@ -1,5 +1,6 @@
 import anchors from 'componentsdir/anchor/examples/Anchors';
 import buttons from 'componentsdir/button/examples/Buttons';
+import ctaButtons from 'componentsdir/buttonCta/examples/ButtonCta';
 import cards from 'componentsdir/card/examples/Cards';
 import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
 import grid from 'componentsdir/grid/examples/Grid';
@@ -20,6 +21,7 @@ import utilities from 'componentsdir/Utilities/Utilities';
 export default {
   anchors,
   buttons,
+  ctaButtons,
   cards,
   checkboxes,
   grid,

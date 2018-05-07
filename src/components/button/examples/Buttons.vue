@@ -3,10 +3,6 @@
     <h2>Buttons</h2>
     <default-buttons/>
     <secondary-buttons/>
-    <cta-brand-buttons/>
-    <cta-dark-buttons/>
-    <cta-light-buttons/>
-    <cta-sale-buttons/>
     <link-buttons/>
   </div>
 </template>
