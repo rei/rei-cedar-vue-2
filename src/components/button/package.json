@@ -29,7 +29,7 @@
     "build:docs": "node build/docs-build.js"
   },
   "dependencies": {
-    "@rei/cdr-icon": "^0.1.0"
+    "@rei/cdr-icon": "^0.2.0"
   },
   "peerDependencies": {
     "@rei/cdr-a": "^0.1.0",

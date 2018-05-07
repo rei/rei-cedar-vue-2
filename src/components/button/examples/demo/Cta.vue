@@ -1,38 +1,20 @@
 <template>
   <div>
     <h1>Bluuurg</h1>
-    <div
-      class="button-example"
-      v-for="(section, index) in data"
-      :key="index">
-      <h2>{{ section.title }}</h2>
-      <cdr-button
-        v-for="(button, index) in section.buttons"
-        :key="index"
-        :static-size="button.staticSize"
-        :full-width="button.fullWidth"
-        :responsive-size="button.responsiveSize"
-        :style-modifiers="button.styleModifiers"
-        :type="button.type"
-        :disabled="button.disabled"
-      >{{ button.label }}</cdr-button>
-    </div>
-    <div class="button-example">
-      <cdr-button
-        data-backstop="cdr-button--cta-brand"
-        :style-options="{ styles: ['cta-brand'] }"
-      >Backstop button
-      </cdr-button>
-    </div>
+    <button-cta>Text</button-cta>
   </div>
 </template>
 
 <script>
 import Components from 'componentsdir/_index';
+import { ButtonCta } from '@rei/cdr-icon';
 
 export default {
   name: 'Cta',
-  components: Components,
+  components: {
+    Components,
+    ButtonCta,
+  },
   data: function data() {
     return {
       data: [

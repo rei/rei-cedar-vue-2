@@ -1,6 +1,5 @@
 import CdrA from 'componentsdir/anchor/CdrA';
 import CdrButton from 'componentsdir/button/CdrButton';
-import CdrButtonCta from 'componentsdir/buttonCta/CdrButtonCta';
 import CdrCard from 'componentsdir/card/CdrCard';
 import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
 import CdrCol from 'componentsdir/column/CdrCol';
@@ -19,7 +18,6 @@ import CdrText from 'componentsdir/text/CdrText';
 export default {
   CdrA,
   CdrButton,
-  CdrButtonCta,
   CdrCard,
   CdrCheckbox,
   CdrCol,

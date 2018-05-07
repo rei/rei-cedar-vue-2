@@ -3,6 +3,7 @@
     <h2>Buttons</h2>
     <default-buttons/>
     <secondary-buttons/>
+    <cta-buttons />
     <link-buttons/>
   </div>
 </template>

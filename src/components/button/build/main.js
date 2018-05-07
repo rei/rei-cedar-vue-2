@@ -1,1 +1,3 @@
-export { default as CdrButton } from '../CdrButton'; // eslint-disable-line import/prefer-default-export
+/* eslint-disable */
+export { default as CdrButton } from '../CdrButton';
+export { default as ButtonCta } from 'componentsdir/button/comps/buttonCta';
