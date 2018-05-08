@@ -14,17 +14,6 @@ import secondaryButtons from './demo/Secondary';
 import linkButtons from './demo/Link';
 import ctaButtons from './demo/Cta';
 
-/*    ctaBrandButtons,
-    ctaDarkButtons,
-    ctaLightButtons,
-    ctaSaleButtons,
-
-    import ctaBrandButtons from './demo/CtaBrand';
-import ctaDarkButtons from './demo/CtaDark';
-import ctaLightButtons from './demo/CtaLight';
-import ctaSaleButtons from './demo/CtaSale';
-    */
-
 export default {
   name: 'Buttons',
   components: {

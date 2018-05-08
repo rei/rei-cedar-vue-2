@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[styleModifiersClass, themeClass]"
+    :class="[blockClass, sizeClass, fullWidthClass, responsiveClass, styleModifiersClass]"
     :type="tag === 'button' ? type : null"
     @click="onClick"
   >
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import theme from 'mixinsdir/theme';
+import classModifier from 'mixinsdir/classModifier';
 import { CdrIcon } from '@rei/cdr-icon';
 
 /**
@@ -29,7 +29,7 @@ export default {
   components: {
     CdrIcon,
   },
-  mixins: [theme],
+  mixins: [classModifier],
   props: {
     /**
      * Controls render as button or anchor. {button, a}
@@ -57,7 +57,7 @@ export default {
     /**
      * Sets a static size for the button, which scales padding and text size. {small, medium, large}
      */
-    staticSize: {
+    size: {
       type: String,
       default: 'medium',
       validator: value => (['small', 'medium', 'large'].indexOf(value) >= 0) || false,
@@ -76,53 +76,39 @@ export default {
      */
     responsiveSize: {
       type: Array,
-      default() {
-        return [];
-      },
     },
     /**
      * Additional style modifiers. Default function returns an empty array.
-     * {`secondary`, `cta-brand`, `cta-light`, `cta-dark`, `cta-sale`}
+     * {`secondary`}
      */
     styleModifiers: {
-      type: Array,
-      default() {
-        return [];
-      },
+      type: String,
+      validator: value => value === 'secondary',
     },
   },
   computed: {
-    baseClass() {
+    blockClass() {
       return 'cdr-button';
     },
-    styleModifiersClass() {
-      const base = this.baseClass;
-      let responsive = this.responsiveSize;
-      const final = [];
+    sizeClass() {
+      return this.modifierClass(this.size);
+    },
+    fullWidthClass() {
+      return this.fullWidth ? this.modifierClass('full-width') : null;
+    },
+    responsiveClass() {
+      const responsiveClass = [];
 
-      if (!this.theme) {
-        final.push(`${base}`);
-
-        // handle style modifiers first - it will tell us if this is a CTA button
-        this.styleModifiers.forEach((val) => {
-          if (val.indexOf('cta-') >= 0) {
-            // CTA buttons do not receive responsive classes
-            responsive = [];
-          }
-          final.push(`${base}--${val}`);
+      if (this.responsiveSize) {
+        this.responsiveSize.forEach((val) => {
+          responsiveClass.push(this.modifierClass(val));
         });
-
-        final.push(`${base}--${this.staticSize}`);
-
-        responsive.forEach((val) => {
-          final.push(`${base}--${val}`);
-        });
-
-        if (this.fullWidth) {
-          final.push(`${base}--full-width`);
-        }
       }
-      return final.join(' ');
+
+      return responsiveClass.join(' ');
+    },
+    styleModifiersClass() {
+      return this.styleModifiers ? this.modifierClass(this.styleModifiers) : null;
     },
   },
 };
@@ -130,17 +116,5 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/CdrButton.pcss';
-</style>
-
-<style cedar-theme="red">
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/red.vars.pcss';
-  @import './styles/CdrButton.pcss';
-</style>
-
-<style cedar-theme="green">
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/green.vars.pcss';
   @import './styles/CdrButton.pcss';
 </style>

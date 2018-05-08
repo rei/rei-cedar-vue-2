@@ -8,7 +8,7 @@
       <cdr-button
         v-for="(button, index) in section.buttons"
         :key="index"
-        :static-size="button.staticSize"
+        :size="button.size"
         :full-width="button.fullWidth"
         :responsive-size="button.responsiveSize"
         :style-modifiers="button.styleModifiers"
@@ -34,22 +34,22 @@ export default {
             {
               label: 'Large',
               disabled: false,
-              staticSize: 'large',
-              styleModifiers: ['secondary'],
+              size: 'large',
+              styleModifiers: 'secondary',
               backstop: 'cdr-button--large cdr-button--secondary',
             },
             {
               label: 'Medium',
               disabled: false,
-              staticSize: 'medium',
-              styleModifiers: ['secondary'],
+              size: 'medium',
+              styleModifiers: 'secondary',
               backstop: 'cdr-button--medium cdr-button--secondary',
             },
             {
               label: 'Small',
               disabled: false,
-              staticSize: 'small',
-              styleModifiers: ['secondary'],
+              size: 'small',
+              styleModifiers: 'secondary',
               backstop: 'cdr-button--small cdr-button--secondary',
             },
           ],
@@ -60,22 +60,22 @@ export default {
             {
               label: 'Large',
               disabled: true,
-              staticSize: 'large',
-              styleModifiers: ['secondary'],
+              size: 'large',
+              styleModifiers: 'secondary',
               backstop: 'cdr-button--large cdr-button--secondary disabled',
             },
             {
               label: 'Medium',
               disabled: true,
-              staticSize: 'medium',
-              styleModifiers: ['secondary'],
+              size: 'medium',
+              styleModifiers: 'secondary',
               backstop: 'cdr-button--medium cdr-button--secondary disalbed',
             },
             {
               label: 'Small',
               disabled: true,
-              staticSize: 'small',
-              styleModifiers: ['secondary'],
+              size: 'small',
+              styleModifiers: 'secondary',
               backstop: 'cdr-button--small cdr-button--secondary disabled',
             },
           ],

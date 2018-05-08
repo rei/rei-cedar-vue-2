@@ -8,7 +8,7 @@
       <cdr-button
         v-for="(button, index) in section.buttons"
         :key="index"
-        :static-size="button.staticSize"
+        :size="button.size"
         :full-width="button.fullWidth"
         :responsive-size="button.responsiveSize"
         :type="button.type"
@@ -34,17 +34,6 @@
         Small
       </cdr-button>
     </div>
-    <div class="button-example">
-      <h2>Color themes</h2>
-      <cdr-button theme="red">red</cdr-button>
-      <cdr-button
-        theme="red"
-        modifier="sm">red sm</cdr-button>
-      <cdr-button theme="green">green</cdr-button>
-      <cdr-button
-        theme="green"
-        modifier="xs">green xs</cdr-button>
-    </div>
   </div>
 </template>
 
@@ -63,21 +52,21 @@ export default {
             {
               label: 'Large',
               disabled: false,
-              staticSize: 'large',
+              size: 'large',
               fullWidth: false,
               backstop: 'cdr-button--large',
             },
             {
               label: 'Medium',
               disabled: false,
-              staticSize: 'medium',
+              size: 'medium',
               fullWidth: false,
               backstop: 'cdr-button--medium',
             },
             {
               label: 'Small',
               disabled: false,
-              staticSize: 'small',
+              size: 'small',
               fullWidth: false,
               backstop: 'cdr-button--small',
             },
@@ -89,21 +78,21 @@ export default {
             {
               label: 'Large',
               disabled: true,
-              staticSize: 'large',
+              size: 'large',
               fullWidth: false,
               backstop: 'cdr-button--large disabled',
             },
             {
               label: 'Medium',
               disabled: true,
-              staticSize: 'medium',
+              size: 'medium',
               fullWidth: false,
               backstop: 'cdr-button--medium disabled',
             },
             {
               label: 'Small',
               disabled: true,
-              staticSize: 'small',
+              size: 'small',
               fullWidth: false,
               backstop: 'cdr-button--small disabled',
             },
@@ -115,19 +104,19 @@ export default {
             {
               label: 'Small + full width',
               disabled: false,
-              staticSize: 'small',
+              size: 'small',
               fullWidth: true,
             },
             {
               label: 'Medium + full width',
               disabled: false,
-              staticSize: 'medium',
+              size: 'medium',
               fullWidth: true,
             },
             {
               label: 'Large + full width',
               disabled: false,
-              staticSize: 'large',
+              size: 'large',
               fullWidth: true,
             },
           ],

@@ -1,10 +1,14 @@
 <template>
   <!-- eslint-disable -->
-  <cdr-button v-bind="$props">
+  <component
+    :is="tag"
+    :class="[blockClass, fullWidthClass, ctaClass]"
+    :type="tag === 'button' ? type : null"
+    @click="onClick"
+  >
     <slot />
-    Darin
     <icon-caret-right />
-  </cdr-button>
+  </component>
 </template>
 
 <script>
@@ -18,9 +22,18 @@ export default {
     IconCaretRight,
   },
   extends: CdrButton,
+  props: {
+    ctaStyle: {
+      type: String,
+      default: 'brand',
+      validator: value => (['brand', 'dark', 'light', 'sale'].indexOf(value) >= 0) || false,
+    },
+  },
   computed: {
     ctaClass() {
-      return `${this.baseClass}--cta-${this.ctaStyle}`;
+      // return this.styleModifiers ? this.modifierClass(this.styleModifiers) : null;
+      // return `${this.baseClass}--cta-${this.ctaStyle}`;
+      return this.modifierClass(`cta-${this.ctaStyle}`);
     },
   },
 };

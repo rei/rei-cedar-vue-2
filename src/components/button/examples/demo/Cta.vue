@@ -1,7 +1,35 @@
 <template>
   <div>
-    <h1>Bluuurg</h1>
-    <button-cta>Text</button-cta>
+    <div class="button-example">
+      <h2>CTA</h2>
+      <button-cta>
+        Default (brand)
+      </button-cta>
+      <button-cta
+        cta-style="dark"
+      >Dark
+      </button-cta>
+      <button-cta
+        cta-style="light"
+      >Light
+      </button-cta>
+      <button-cta
+        cta-style="sale"
+      >Sale
+      </button-cta>
+      <button-cta
+        tag="a"
+        cta-style="sale"
+      >Link
+      </button-cta>
+    </div>
+    <div class="button-example">
+      <button-cta
+        cta-style="dark"
+        :full-width="true"
+      >Full width
+      </button-cta>
+    </div>
   </div>
 </template>
 
@@ -14,46 +42,6 @@ export default {
   components: {
     Components,
     ButtonCta,
-  },
-  data: function data() {
-    return {
-      data: [
-        {
-          title: 'CTA-brand',
-          buttons: [
-            {
-              label: 'Large',
-              disabled: false,
-              staticSize: 'large',
-              styleModifiers: ['cta-brand'],
-            },
-            {
-              label: 'Medium',
-              disabled: false,
-              staticSize: 'medium',
-              styleModifiers: ['cta-brand'],
-            },
-          ],
-        },
-        {
-          title: 'CTA-brand Full Width',
-          buttons: [
-            {
-              label: 'Full Width',
-              disabled: false,
-              fullWidth: true,
-              styleModifiers: ['cta-brand'],
-            },
-            {
-              label: 'Full Width Disabled',
-              disabled: true,
-              fullWidth: true,
-              styleModifiers: ['cta-brand'],
-            },
-          ],
-        },
-      ],
-    };
   },
 };
 </script>
