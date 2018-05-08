@@ -13,8 +13,6 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
-import { CdrIcon } from '@rei/cdr-icon';
-
 /**
  *
  * Cedar 2 component for link.
@@ -26,9 +24,6 @@ import { CdrIcon } from '@rei/cdr-icon';
  */
 export default {
   name: 'CdrLink',
-  components: {
-    CdrIcon,
-  },
   mixins: [modifier],
   props: {
     tag: {

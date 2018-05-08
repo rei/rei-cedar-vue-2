@@ -96,8 +96,4 @@ export default {
 .anchor-example {
   padding: 20px;
 }
-
-.anchor-example--dark-background {
-  background-color: black;
-}
 </style>
