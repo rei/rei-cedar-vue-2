@@ -1,0 +1,11 @@
+{
+	"name": "CdrList",
+	"versions": [
+		{
+			"readme": "# <span class=\"display-name\">CdrList</span>\n\n### <span class=\"modifiers\">Modifiers</span>\n\n{unstyled, bullet, disc, numbered, menu, compact, circle, inline}\n\nNote: type doesn't affect the modifier.\n",
+			"examples": "### Examples\n\n#### Default\n\n```\n<cdr-list>\n  <li>List default</li>\n  <li>List default\n    <cdr-list>\n      <li>List default - nested</li>\n      <li>List default - nested</li>\n      <li>List default - nested</li>\n    </cdr-list>\n  </li>\n</cdr-list>\n```\n\n#### Compact\n```\n<cdr-list modifier=\"compact\">\n  <li>List default compact</li>\n  <li>List default compact</li>\n  <li>List default compact</li>\n</cdr-list>\n```\n\n#### Unstyled\n\n```\n<cdr-list modifier=\"unstyled\">\n  <li>List unstyled</li>\n  <li>List unstyled</li>\n  <li>List unstyled</li>\n</cdr-list>\n```\n\n#### Disc\n\n```\n<cdr-list modifier=\"disc\">\n  <li>List disc</li>\n  <li>List disc</li>\n  <li>List disc</li>\n</cdr-list>\n```\n\n#### Circle\n```\n<cdr-list modifier=\"circle\">\n  <li>list circle</li>\n  <li>list circle</li>\n  <li>list circle</li>\n</cdr-list>\n```\n\n#### Numbered\n\n```\n<cdr-list modifier=\"numbered\">\n  <li>List numbered</li>\n  <li>List numbered</li>\n  <li>List numbered</li>\n</cdr-list>\n```\n\n#### Menu\n\n```\n<cdr-list modifier=\"menu\">\n  <li><a href=\"/\">List menu</a></li>\n  <li><a href=\"/\">List menu</a></li>\n  <li><a href=\"/\">List menu</a></li>\n</cdr-list>\n```\n\n#### Inline\n```\n<cdr-list modifier=\"inline\">\n  <li>Inline item</li>\n  <li>Inline item</li>\n  <li>Inline item</li>\n</cdr-list>\n```\n\n#### Bulleted Inline\n```\n<cdr-list modifier=\"inline bullet\">\n  <li>Bulleted Inline Item</li>\n  <li>Bulleted Inline Item</li>\n  <li>Bulleted Inline Item</li>\n</cdr-list>\n```\n",
+			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nlistType | string | \"ul\" | false | List type. 'ul' = Unordered List. 'ol' = Ordered List.\n\nSlot | Description\n--- | ---\ndefault | innerHTML inside of the list component\n",
+			"version": "0.1.0"
+		}
+	]
+}

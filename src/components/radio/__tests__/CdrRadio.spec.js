@@ -32,38 +32,46 @@ describe('CdrRadio.vue', () => {
     expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
   });
 
-  it('renders label text correctly', () => {
+  it('adds a custom label class correctly', () => {
     const wrapper = shallow(CdrRadio, {
       propsData: {
+        labelClass: 'custom-label-class',
         value: 'A',
         name: 'testName',
       },
       slots: {
-        default: `<span>Label Test</span>`,
+        default: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
+    expect(wrapper.vm.$refs.label.classList.contains('custom-label-class')).toBe(true);
   });
-
-  it('maps input id to label for correctly', () => {
+  
+  it('adds a custom input class correctly', () => {
     const wrapper = shallow(CdrRadio, {
       propsData: {
+        inputClass: 'custom-input-class',
         value: 'A',
         name: 'testName',
-        id: 'test',
+      },
+      slots: {
+        default: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.radio.id).toBe(wrapper.vm.$refs.label.htmlFor);
+    expect(wrapper.vm.$refs.radio.classList.contains('custom-input-class')).toBe(true);
   });
-
-  it('generates an id correctly', () => {
+  
+  it('adds a custom content class correctly', () => {
     const wrapper = shallow(CdrRadio, {
       propsData: {
+        contentClass: 'custom-content-class',
         value: 'A',
         name: 'testName',
-      }
+      },
+      slots: {
+        default: 'Label Test',
+      },
     });
-    expect(wrapper.vm.$refs.radio.id).toBe(wrapper.vm._uid.toString());
+    expect(wrapper.find('.custom-content-class').exists()).toBe(true);
   });
 
   it('sets name attribute correctly', () => {

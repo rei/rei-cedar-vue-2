@@ -31,7 +31,7 @@ import modifier from 'mixinsdir/modifier';
 /**
  * Cedar 2 component for image
  * <span class="modifiers">Modifiers</span>
- * {responsive, rounded, circle, thumbnail}
+ * {responsive, rounded, circle}
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -195,6 +195,5 @@ export default {
 
 <style>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrImg.vars.pcss';
   @import './styles/CdrImg.pcss';
 </style>
