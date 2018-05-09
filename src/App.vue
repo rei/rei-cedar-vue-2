@@ -12,6 +12,9 @@
       class="cpg-section"
       data-backstop="buttons"
     />
+    <cta
+      class="cpg-section"
+    />
     <cards class="cpg-section"/>
     <!-- <card-content class="cpg-section"></card-content> -->
     <activity class="cpg-section"/>
