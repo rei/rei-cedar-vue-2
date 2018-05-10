@@ -16,6 +16,16 @@
         :disabled="button.disabled"
       >{{ button.label }}</cdr-button>
     </div>
+    <div class="button-example">
+      <h2>Secondary Anchor</h2>
+      <cdr-button
+        tag="a"
+        href="https://rei.com"
+        size="small"
+        style-modifiers="secondary"
+      >Link
+      </cdr-button>
+    </div>
   </div>
 </template>
 

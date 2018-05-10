@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[blockClass, ctaClass]"
+    :class="[blockClass, ctaClass, fullWidthClass]"
     :type="tag === 'button' ? type : null"
     @click="onClick"
   >
@@ -23,14 +23,6 @@ export default {
   },
   mixins: [buttonBase, classModifier],
   props: {
-    /**
-     * Sets width to be 100%. Can be combined with staticSize.
-    */
-    fullWidth: {
-      type: Boolean,
-      default: false,
-      validator: value => typeof value === 'boolean',
-    },
     ctaStyle: {
       type: String,
       default: 'brand',
@@ -39,8 +31,6 @@ export default {
   },
   computed: {
     ctaClass() {
-      // return this.styleModifiers ? this.modifierClass(this.styleModifiers) : null;
-      // return `${this.baseClass}--cta-${this.ctaStyle}`;
       return this.modifierClass(`cta-${this.ctaStyle}`);
     },
   },

@@ -3,24 +3,21 @@
     <h2>Buttons</h2>
     <default-buttons/>
     <secondary-buttons/>
-    <cta-buttons />
-    <link-buttons/>
+    <!--<icon-buttons />-->
   </div>
 </template>
 
 <script>
 import defaultButtons from './demo/Default';
 import secondaryButtons from './demo/Secondary';
-import linkButtons from './demo/Link';
-import ctaButtons from './demo/Cta';
+// import iconButtons from './deom/Icons';
 
 export default {
   name: 'Buttons',
   components: {
     defaultButtons,
     secondaryButtons,
-    ctaButtons,
-    linkButtons,
+    // iconButtons,
   },
 };
 </script>

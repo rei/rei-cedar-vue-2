@@ -31,8 +31,6 @@ export default {
   },
   computed: {
     ctaClass() {
-      // return this.styleModifiers ? this.modifierClass(this.styleModifiers) : null;
-      // return `${this.baseClass}--cta-${this.ctaStyle}`;
       return this.modifierClass(`cta-${this.ctaStyle}`);
     },
   },

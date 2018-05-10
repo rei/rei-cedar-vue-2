@@ -17,7 +17,7 @@ import buttonBase from 'mixinsdir/buttonBase';
 /**
  * Cedar 2 component for button
  *
- * CdrButton will render either a button, or a anchor that looks like a button.
+ * CdrButton will render either a button, or an anchor that looks like a button.
  * As such, the decision to use CdrButton vs CdrAnchor should be made based on what
  * you need the rendered element to look like.
  *
@@ -37,23 +37,13 @@ export default {
       validator: value => (['small', 'medium', 'large'].indexOf(value) >= 0) || false,
     },
     /**
-     * Sets width to be 100%. Can be combined with staticSize.
-    */
-    fullWidth: {
-      type: Boolean,
-      default: false,
-      validator: value => typeof value === 'boolean',
-    },
-    /**
      * Render a specific button size at a specific breakpoint. Takes precedence over staticSize and fullWidth.
-     * Default function returns an empty array.
      */
     responsiveSize: {
       type: Array,
     },
     /**
-     * Additional style modifiers. Default function returns an empty array.
-     * {`secondary`}
+     * Additional style modifiers.
      */
     styleModifiers: {
       type: String,
@@ -66,9 +56,6 @@ export default {
     },
     sizeClass() {
       return this.modifierClass(this.size);
-    },
-    fullWidthClass() {
-      return this.fullWidth ? this.modifierClass('full-width') : null;
     },
     responsiveClass() {
       const responsiveClass = [];

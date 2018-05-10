@@ -17,6 +17,15 @@
       >{{ button.label }}</cdr-button>
     </div>
     <div class="button-example">
+      <h2>Primary Anchor</h2>
+      <cdr-button
+        tag="a"
+        href="https://rei.com"
+        size="large"
+      >Link
+      </cdr-button>
+    </div>
+    <div class="button-example">
       <cdr-button
         type="submit"
         modifier="lg">

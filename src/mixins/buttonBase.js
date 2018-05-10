@@ -26,10 +26,21 @@ export default {
       type: Function,
       default: () => () => null,
     },
+    /**
+     * Sets width to be 100%.
+    */
+    fullWidth: {
+      type: Boolean,
+      default: false,
+      validator: value => typeof value === 'boolean',
+    },
   },
   computed: {
     blockClass() {
       return 'cdr-button';
+    },
+    fullWidthClass() {
+      return this.fullWidth ? this.modifierClass('full-width') : null;
     },
   },
 };

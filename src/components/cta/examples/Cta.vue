@@ -19,6 +19,7 @@
       </cdr-cta>
       <cdr-cta
         tag="a"
+        href="https://www.rei.com/"
         cta-style="sale"
       >Link
       </cdr-cta>
