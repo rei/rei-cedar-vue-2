@@ -4,16 +4,6 @@ import CdrButton from 'componentsdir/button/CdrButton';
 const clickHandler = jest.fn();
 
 describe('CdrButton.vue', () => {
-  // test for theme mixin
-  it('sets theme correctly', () => {
-    const wrapper = shallow(CdrButton, {
-      propsData: {
-        theme: 'red'
-      },
-    });
-    expect(wrapper.classes()).toContain('theme-red-cdr-button');
-  });
-
   it('renders a button', () => {
     const wrapper = shallow(CdrButton);
     expect(wrapper.is('button')).toBe(true);
@@ -67,17 +57,11 @@ describe('CdrButton.vue', () => {
     expect(wrapper.classes()).toContain('cdr-button');
   });
 
-  it('CTA overrides responsive', () => {
-    const wrapper = shallow(CdrButton, {
-      propsData: {
-        responsiveSize: ['large@extra-small'],
-        styleModifiers: ['cta-dark'],
-        fullWidth: true,
-      }
-    });
-    
-    expect(wrapper.classes()).not.toContain('cdr-button--large@extra-small');
-    expect(wrapper.classes()).toContain('cdr-button--full-width');
+  it ('validates styleModifiers', () => {
+    const wrapper = shallow(CdrButton);
+    const styleModifiers = wrapper.vm.$options.props.styleModifiers;
+    expect(styleModifiers.validator('sale')).toBe(false);
+    expect(styleModifiers.validator('secondary')).toBe(true);
   });
 
   it('adds responsive classes', () => {
@@ -107,10 +91,10 @@ describe('CdrButton.vue', () => {
     expect(tag.validator('link')).toBe(false);
   });
 
-  it('validates staticSize prop', () => {
+  it('validates size prop', () => {
     const wrapper = shallow(CdrButton);
-    const staticSize = wrapper.vm.$options.props.staticSize;
-    expect(staticSize.validator('small')).toBe(true);
-    expect(staticSize.validator('extra-small')).toBe(false);
+    const size = wrapper.vm.$options.props.size;
+    expect(size.validator('small')).toBe(true);
+    expect(size.validator('extra-small')).toBe(false);
   });
 });
