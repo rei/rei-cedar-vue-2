@@ -257,10 +257,8 @@ function methodsAPIObject(methodsArr = []) {
       }, '')}`,
       "description": `${method["description"]}`
     }
-
     meths.push(ele)
   })
-
   return meths
 }
 
@@ -292,6 +290,27 @@ function tableFromEvents(eventsObj = {}) {
 }
 
 /**
+ * Create object representing component events
+ * @param {Object} -- JSON object from vue-docgen-api library
+ * @returns {Object} -- Object for component events that goes into Cedar Data Object
+ */
+function eventsAPIObject(eventsObj = {}) {
+  let evts = []
+
+  for (const evt in eventsObj) {
+    const ele = {
+      "name": `${evt}`,
+      "type": `${eventsObj[evt]["type"]["names"].reduce((typeList, type, idx, arr) => {
+        typeList += `${type}${arr[idx+1] ? `|` : ''}`
+      }, '')}`,
+      "description": `${eventsObj[evt]["description"]}`
+    }
+    evts.push(ele)
+  }
+  return evts
+}
+
+/**
  * auxilary function to create table from `slots` property of json2md object
  * @param {Object} slotsObj -- object representing the inner content of a Cedar component
  * @returns {Object} -- object representing markdown table
@@ -309,6 +328,24 @@ function tableFromSlots(slotsObj = {}) {
   }
 
   return rows.length > 0 ? {table: {headers, rows}} : null
+}
+
+/**
+ * Create object representing component slots
+ * @param {Object} -- JSON object from vue-docgen-api library
+ * @returns {Object} -- Object for component slots that goes into Cedar Data Object
+ */
+function slotsAPIObject(slotsObj = {}) {
+  let slots = []
+  
+  for (const slot in slotsObj) {
+    const ele = {
+      "name": `${slot}`,
+      "description": `${slotsObj[slot]["description"] || ''}`
+    }
+    slots.push(ele)
+  }
+  return slots
 }
 
 module.exports = docsBuild
