@@ -3,9 +3,9 @@ const fs = require('fs-extra')
 const semver = require('semver')
 const glob = require('glob-promise')
 
-const componentsProm = globSearch('src/components/**/build/component-data.json', "components")
+const componentsProm = globSearch('src/components/**/build/component-data.json')
 
-const compositionProm = globSearch('src/compositions/**/build/component-data.json', "compositions")
+const compositionProm = globSearch('src/compositions/**/build/component-data.json')
 
 Promise.all([componentsProm, compositionProm])
 .then( values => {

@@ -54,7 +54,7 @@ function docsBuild(file, info) {
     process.exit(1)
   })
     
-  // create markdown tables for component properties, events, methods, and slots
+  // create data objects for component properties, events, methods, and slots
   const tblProm = new Promise((resolve, reject) => {
     resolve(createMarkdownTemplate(vueObj))
   })
@@ -96,6 +96,15 @@ function docsBuild(file, info) {
 }
 
 /**
+ * takes JSON object of Vue component and creates Cedar Data Object
+ * @param {Object} vueObj -- JSON object returned by vue-docgen-api library
+ * @returns {Object} -- Object representing specific Cedar Data Object
+ */
+function createAPIObject(vueObj) {
+
+}
+
+/**
  * take json object and create markdown template
  * @param {Object} vueObj -- JSON object returned by vue-docgen-api library
  * @returns {String} -- JSON object converted to markdown string
@@ -123,22 +132,22 @@ function buildTables(vueObj) {
   let mdTable
   
   mdTable = tableFromProps(vueObj["props"])
-  if(mdTable != null) {
+  if (mdTable != null) {
     updatedTemplate.push(mdTable)
   }
   
   mdTable = tableFromMethods(vueObj["methods"])
-  if(mdTable != null) {
+  if (mdTable != null) {
     updatedTemplate.push(mdTable)
   }
 
   mdTable = tableFromEvents(vueObj["events"])
-  if(mdTable != null) {
+  if (mdTable != null) {
     updatedTemplate.push(mdTable)
   }
   
   mdTable = tableFromSlots(vueObj["slots"])
-  if(mdTable != null) {
+  if (mdTable != null) {
     updatedTemplate.push(mdTable)
   }
 
@@ -174,6 +183,36 @@ function tableFromProps(propsObj = {}) {
   return rows.length > 0 ? {table: {headers, rows}} : null
 }
   
+
+/**
+ * Create object representing component props
+ * @param {Object} -- JSON object from vue-docgen-api library
+ * @returns {Object} -- Object for component props that goes into Cedar Data Object
+ */
+function propsAPIObject(propsObj = {}) {
+
+  let props = []
+  // construct array of objects for props
+  for (const prop in probsObj) {
+    // Don't document properties with `@ignore` tag
+    if (propsObj[prop].tags.ignore) {
+      continue
+    }
+
+    // object representing a single prop
+    const ele = {
+      "name": `${prop}`,
+      "type": propsObj[prop]["type"] ? propsObj[prop]["type"]["name"].replace(/\|/g, ',') : 'unknown',
+      "default": propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a',
+      "description": `${propsObj[prop]["description"]}`
+    }
+
+    props.push(ele)
+  }
+
+  return props
+}
+
 /**
  * auxilary function to create table from `methods` property of json2md object
  * @param {Array} methodsArr -- array representing the public methods of a Cedar component
@@ -199,6 +238,30 @@ function tableFromMethods(methodsArr = []) {
   })
   
   return rows.length > 0 ? {table: {headers, rows}} : null
+}
+
+/**
+ * Create object representing component public methods
+ * @param {Object} -- JSON object from vue-docgen-api library
+ * @returns {Object} -- Object for component methods that goes into Cedar Data Object
+ */
+function methodsAPIObject(methodsArr = []) {
+  let meths = []
+  
+  // construct array of objects for public methods
+  methodsArr.forEach((method) => {
+    const ele = {
+      "name": `${method["name"]}`,
+      "parameters": `${method["params"].reduce((paramList, param) => {
+          paramList += `${param["name"]}: ${param["type"]["name"]} - ${param["description"]}\n`
+      }, '')}`,
+      "description": `${method["description"]}`
+    }
+
+    meths.push(ele)
+  })
+
+  return meths
 }
 
 /**
