@@ -31,7 +31,10 @@ export default {
   },
   computed: {
     ctaClass() {
-      return this.modifierClass(`cta-${this.ctaStyle}`);
+      const classes = [];
+      classes.push(this.modifierClass('cta'));
+      classes.push(this.modifierClass(`${this.ctaStyle}`));
+      return classes.join(' ');
     },
   },
 };
