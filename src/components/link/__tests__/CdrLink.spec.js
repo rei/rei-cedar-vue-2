@@ -81,7 +81,7 @@ describe('CdrLink.vue', () => {
   it('renders a link with a button element and no href attribute', () => {
     const wrapper = shallow(CdrLink, {
       propsData: {
-        el: 'button',
+        tag: 'button',
       },
     });
     expect(wrapper.is('button')).toBe(true);
