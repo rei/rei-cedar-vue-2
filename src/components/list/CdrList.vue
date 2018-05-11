@@ -13,7 +13,7 @@ import modifier from 'mixinsdir/modifier';
 /**
  * Cedar 2 component for list
  * <span class="modifiers">Modifiers</span>
- * {unstyled, compact, circle, inline}
+ * {compact, ordered, unordered}
  * **Note**: type doesn't affect the modifier.
  * @version 0.1.0
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
