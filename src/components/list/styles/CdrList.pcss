@@ -33,7 +33,7 @@
     ---------- */
   & li > .cdr-list {
     margin-top: $space-half-x;
-    padding-left: calc($space-1-x + $space-quarter-x);
+    padding-left: $space-1-x;
     list-style-type: none;
   }
 
@@ -59,14 +59,26 @@
   &--ordered {
     list-style-type: decimal;
     padding-left: $space-1-x;
+    
+    & li {
+      padding-left: $space-quarter-x;
 
-    /* nesting
-    ---------- */
-    & li > .cdr-list > li::before {
-      content: '\2013';
-      display: inline-block;
-      position: relative;
-      left: calc(-1 * $space-1-x);
+      /* nesting
+      ---------- */
+      & > .cdr-list {
+        padding-left: 12px;
+
+        & > li {
+          padding: 0;
+
+          &::before {
+            content: '\2013';
+            display: inline-block;
+            position: relative;
+            left: calc(-1 * 12px);
+          }
+        }
+      }
     }
   }
 
@@ -86,11 +98,15 @@
 
     /* nesting
       ---------- */
-    & li > .cdr-list > li::before {
-      content: '\2013';
-      display: inline-block;
-      position: relative;
-      left: calc(-1 * $space-1-x);
+    & li > .cdr-list > li {
+      padding: 0;
+
+      &::before {
+        content: '\2013';
+        display: inline-block;
+        position: relative;
+        left: calc(-1 * 12px);
+      }
     }
   }
 }
