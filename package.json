@@ -175,6 +175,6 @@
     }
   },
   "dependencies": {
-    "rei-cedar-tokens": "git+https://github.com/rei/rei-cedar-tokens.git#0.1.2"
+    "rei-cedar-tokens": "git+https://github.com/rei/rei-cedar-tokens.git#0.1.3"
   }
 }

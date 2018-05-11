@@ -22,7 +22,9 @@
 
     <h3>Links, with icon</h3>
     <div class="anchor-example">
-      <cdr-icon-sprite/>
+      <!-- Already on page from icons -->
+      <!-- Uncomment if moving to separate page -->
+      <!-- <cdr-icon-sprite/> -->
 
 
       <cdr-link>
@@ -85,10 +87,14 @@
 
 <script>
 import Components from 'componentsdir/_index';
+// import { CdrIconSprite } from 'componentsdir/icon/dist/cdr-icon';
 
 export default {
   name: 'Links',
-  components: Components,
+  components: {
+    ...Components,
+    // CdrIconSprite,
+  },
 };
 </script>
 
