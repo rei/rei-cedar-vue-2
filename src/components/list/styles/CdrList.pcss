@@ -8,39 +8,44 @@
   TOC:
 
     :Base Styles
-      :Spacing
-      :Nesting
+      :Unordered
+        :Spacing
+        :Nesting
     :Modifiers
       :Style variants
+        :Bare
         :Compact
-        :Unstyled
-        :Disc
-        :Circle
-        :Inline
-        :Numbered
-        :Menu
-        :Inline Bullet
+        :Ordered
 ========================================================================== */
 
 .cdr-list {
-  list-style-type: disc;
-  padding-left: $list-padding-left;
+  list-style-position: outside;
+  list-style-type: none;
+  padding-left: 0;
+
+  & > li {
+    padding-left: 0;
+
+    & > .cdr-list > li {
+      &::before {
+        content: '';
+      }
+    }
+  }
 
   /* spacing
     ---------- */
 
   & > li + li {
-    margin-top: $list-spacing-margin-top;
+    margin-top: $space-half-x;
   }
 
   /* nesting
     ---------- */
-
-  & > li {
-    & > ul,
-    & > ol {
-      margin-top: $list-nesting-margin-top;
-    }
+  & li > .cdr-list {
+    margin-top: $space-half-x;
+    padding-left: calc($space-1-x + $space-quarter-x);
+    list-style-type: none;
   }
 
   /* Style variants
@@ -48,154 +53,81 @@
 
   /* Compact
     ========== */
-  &--compact > li + li {
-    margin-top: $list-compact-margin-top;
+  &--compact {
+    & > li + li {
+      margin-top: $space-quarter-x;
+    }
+
+    & li > .cdr-list {
+      margin-top: $space-quarter-x;
+    }
   }
 
-  /* Spread
+  /* Ordered
     ========== */
-  &--spread > li + li {
-    margin-top: $list-spread-margin-top;
-  }
+  &--ordered {
+    list-style-type: decimal;
+    list-style-position: outside;
+    padding-left: $space-1-x;
 
-  /* Unstyled
-     ========== */
-  &--unstyled {
-    list-style-type: none;
+    & > li {
+      padding-left: 0;
+    }
+
+    /* nesting
+    ---------- */
+    & li > .cdr-list {
+      margin-top: $space-half-x;
+      padding-left: calc($space-1-x + $space-quarter-x);
+      list-style-type: none;
+
+      & > li {
+        position: relative;
+
+        &::before {
+          content: '\2013';
+          display: block;
+          position: absolute;
+          left: calc(-1 * $space-1-x);
+        }
+      }
+    }
   }
 
   /* Disc
      ========== */
-  &--disc {
-    list-style-type: none;
-
-    & > li {
-      position: relative;
-
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: $list-disc-left;
-        height: $list-disc-height;
-        width: $list-disc-width;
-        background-color: $list-disc-background-color;
-        border-radius: 50%;
-      }
-    }
-  }
-
-  /* Circle
-     ========== */
-  &--circle {
-    list-style-type: none;
+  &--unordered {
+    padding-left: 10px;
     
     & > li {
-      position: relative;
-
+      padding-left: 0;
+      
       &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: $list-circle-left;
-        height: $list-circle-height;
-        width: $list-circle-width;
-        background-color: $list-circle-background-color;
-        border: $list-circle-border;
-        border-radius: 50%;
-      }
-    }
-  }
-
-  /* Inline
-     ========== */
-  &--inline {
-    list-style-type: none;
-    padding: $list-inline-padding;
-    display: flex;
-
-    & > li {
-      display: inline-block;
-      padding-bottom: 0;
-
-      & + li {
-        margin-top: 0;
-        margin-left: $list-inline-margin-left;
-      }
-
-      &:first-of-type::before {
-        display: none;
-      }
-    }
-
-    /* inline - decorated
-      ---------- */
-    &.cdr-list--disc > li::before,
-    &.cdr-list--circle > li::before {
-      left: $list-inline-decorated-left;
-      transform: translate(-50%, -50%);
-    }
-
-    /* inline - compact
-      ---------- */
-    &.cdr-list--compact {
-      & > li + li {
-        margin-left: $list-inline-compact;
-      }
-
-      /* inline - compact - decorated
-        ---------- */
-      &.cdr-list--disc > li::before,
-      &.cdr-list--circle > li::before {
-        left: $list-inline-compact-decorated-left;
-      }
-    }
-
-    /* inline - spread
-      ---------- */
-    &.cdr-list--spread {
-      & > li + li {
-        margin-left: $list-inline-spread;
-      }
-
-      /* inline - spread - decorated
-        ---------- */
-      &.cdr-list--disc > li::before,
-      &.cdr-list--circle > li::before {
-        left: $list-inline-spread-decorated-left;
-      }
-    }
-  }
-
-  /* Numbered
-     ========== */
-  &--numbered {
-    list-style-type: decimal;
-  }
-
-  /* Menu
-     ========== */
-  &--menu {
-    list-style-type: none;
-    padding-left: $list-menu-padding-left;
-
-    & > li {
-      border-bottom-width: 0.1rem;
-      border-bottom-style: solid;
-      border-color: #222;
-      padding: $list-menu-li-padding;
-
-      & > a {
-        font-family: $font-copy-secondary;
-        font-weight: $font-copy-secondary-weight;
-        font-size: $font-size-navigation;
-        padding: 1.1rem 1.6rem;
-        color: #000;
+        content: '\2022';
         display: inline-block;
+        position: relative;
+        left: -10px;
+        vertical-align: middle;
+        line-height: $space-1-x;
+      }
+    }
+
+    /* nesting
+    ---------- */
+    & li > .cdr-list {
+      margin-top: $space-half-x;
+      padding-left: calc($space-1-x + $space-quarter-x);
+      list-style-type: none;
+
+      & > li {
+        position: relative;
+
+        &::before {
+          content: '\2013';
+          display: block;
+          position: absolute;
+          left: calc(-1 * $space-1-x);
+        }
       }
     }
   }
