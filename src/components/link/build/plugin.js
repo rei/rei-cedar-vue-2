@@ -1,7 +1,7 @@
-import CdrA from '../CdrA';
+import CdrLink from '../CdrLink';
 
 function install(Vue) {
-  Vue.component('cdr-a', CdrA);
+  Vue.component('cdr-link', CdrLink);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
