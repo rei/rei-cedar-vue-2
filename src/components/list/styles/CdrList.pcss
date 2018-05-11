@@ -21,17 +21,7 @@
 .cdr-list {
   list-style-position: outside;
   list-style-type: none;
-  padding-left: 0;
-
-  & > li {
-    padding-left: 0;
-
-    & > .cdr-list > li {
-      &::before {
-        content: '';
-      }
-    }
-  }
+  padding: 0;
 
   /* spacing
     ---------- */
@@ -67,30 +57,15 @@
     ========== */
   &--ordered {
     list-style-type: decimal;
-    list-style-position: outside;
     padding-left: $space-1-x;
-
-    & > li {
-      padding-left: 0;
-    }
 
     /* nesting
     ---------- */
-    & li > .cdr-list {
-      margin-top: $space-half-x;
-      padding-left: calc($space-1-x + $space-quarter-x);
-      list-style-type: none;
-
-      & > li {
-        position: relative;
-
-        &::before {
-          content: '\2013';
-          display: block;
-          position: absolute;
-          left: calc(-1 * $space-1-x);
-        }
-      }
+    & li > .cdr-list > li::before {
+      content: '\2013';
+      display: inline-block;
+      position: relative;
+      left: calc(-1 * $space-1-x);
     }
   }
 
@@ -98,37 +73,23 @@
      ========== */
   &--unordered {
     padding-left: 10px;
-    
-    & > li {
-      padding-left: 0;
-      
-      &::before {
-        content: '\2022';
-        display: inline-block;
-        position: relative;
-        left: -10px;
-        vertical-align: middle;
-        line-height: $space-1-x;
-      }
+
+    & > li::before {
+      content: '\2022';
+      display: inline-block;
+      position: relative;
+      left: -10px;
+      vertical-align: middle;
+      line-height: $space-1-x;
     }
 
     /* nesting
-    ---------- */
-    & li > .cdr-list {
-      margin-top: $space-half-x;
-      padding-left: calc($space-1-x + $space-quarter-x);
-      list-style-type: none;
-
-      & > li {
-        position: relative;
-
-        &::before {
-          content: '\2013';
-          display: block;
-          position: absolute;
-          left: calc(-1 * $space-1-x);
-        }
-      }
+      ---------- */
+    & li > .cdr-list > li::before {
+      content: '\2013';
+      display: inline-block;
+      position: relative;
+      left: calc(-1 * $space-1-x);
     }
   }
 }
