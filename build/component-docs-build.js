@@ -154,6 +154,23 @@ function buildTables(vueObj) {
   return updatedTemplate.length > 1 ? updatedTemplate : []
 }
 
+/**
+ * build data objects for Vue props, methods, events, and slots
+ * @param {Object} vueObj -- JSON object returned by vue-docgen-api library
+ * @returns {Object} -- obJect representing different parts of component API
+ */
+function buildAPIs(vueObj) {
+  const funcArray = [propsAPIObject, methodsAPIObject, eventsAPIObject, slotsAPIObject]
+
+  funcArray.reduce((apiObj, curFn) => {
+    const obj = curFn(vueObj)
+    if (obj !== null) {
+      Object.assign(apiObj, obj)
+    }
+    return apiObj
+  }, {})
+}
+
 /** 
  * auxilary function to create table from `props` property of json2md object
  * @param {Object} propsObj -- object representing properties of a Cedar component
@@ -189,8 +206,8 @@ function tableFromProps(propsObj = {}) {
  * @param {Object} -- JSON object from vue-docgen-api library
  * @returns {Object} -- Object for component props that goes into Cedar Data Object
  */
-function propsAPIObject(propsObj = {}) {
-
+function propsAPIObject(vueObj) {
+  const propsObj = vueObj["props"]
   let props = []
   // construct array of objects for props
   for (const prop in probsObj) {
@@ -210,7 +227,7 @@ function propsAPIObject(propsObj = {}) {
     props.push(ele)
   }
 
-  return props
+  return props.length > 0 ? {props} : null
 }
 
 /**
@@ -245,8 +262,9 @@ function tableFromMethods(methodsArr = []) {
  * @param {Object} -- JSON object from vue-docgen-api library
  * @returns {Object} -- Object for component methods that goes into Cedar Data Object
  */
-function methodsAPIObject(methodsArr = []) {
-  let meths = []
+function methodsAPIObject(vueObj) {
+  const methodsArr = vueObj["methods"]
+  let methods = []
   
   // construct array of objects for public methods
   methodsArr.forEach((method) => {
@@ -257,9 +275,9 @@ function methodsAPIObject(methodsArr = []) {
       }, '')}`,
       "description": `${method["description"]}`
     }
-    meths.push(ele)
+    methods.push(ele)
   })
-  return meths
+  return methods.length > 0 ? {methods} : null
 }
 
 /**
@@ -294,8 +312,9 @@ function tableFromEvents(eventsObj = {}) {
  * @param {Object} -- JSON object from vue-docgen-api library
  * @returns {Object} -- Object for component events that goes into Cedar Data Object
  */
-function eventsAPIObject(eventsObj = {}) {
-  let evts = []
+function eventsAPIObject(vueObj) {
+  const eventsObj = vueObj["events"]
+  let events = []
 
   for (const evt in eventsObj) {
     const ele = {
@@ -305,9 +324,9 @@ function eventsAPIObject(eventsObj = {}) {
       }, '')}`,
       "description": `${eventsObj[evt]["description"]}`
     }
-    evts.push(ele)
+    events.push(ele)
   }
-  return evts
+  return events.length > 0 ? {events} : null
 }
 
 /**
@@ -335,7 +354,8 @@ function tableFromSlots(slotsObj = {}) {
  * @param {Object} -- JSON object from vue-docgen-api library
  * @returns {Object} -- Object for component slots that goes into Cedar Data Object
  */
-function slotsAPIObject(slotsObj = {}) {
+function slotsAPIObject(vueObj) {
+  slotsObj = vueObj["slots"]
   let slots = []
   
   for (const slot in slotsObj) {
@@ -345,7 +365,7 @@ function slotsAPIObject(slotsObj = {}) {
     }
     slots.push(ele)
   }
-  return slots
+  return slots.length > 0 ? {slots} : null
 }
 
 module.exports = docsBuild
