@@ -1,0 +1,11 @@
+{
+	"name": "CdrActivityCard",
+	"versions": [
+		{
+			"readme": "# <span class=\"display-name\">CdrActivityCard</span>\n\nWhile the simple card is a generic wrapper that does not do much more than provide a chome, the activity card is a composition of compomnents and is intended to fill a specific role as outlined. \n \nThis Component enhances the behavior of specific presentation parts that are important for this use case, knotice that by providing a title url that the entire card becomes \"hot\". Note also that this does not alter the tab index of nested elements and remains accessible to screen readers. \n",
+			"examples": "### Examples \n \n#### Activity card  \n``` \nvar snapshotData = ['7.5 mi', 'out & back', '286 ft Ele Gain'];\n\nvar cardData = {\n  media: 'http://placehold.it/350x150',\n  label: 'hiking',\n  title: 'Snow Lake Trail'\n};\n\n<cdr-activity-card \n  :media=\"cardData.media\"\n  :label=\"cardData.label\"\n  title-url=\"http://rei.com\"\n  :title=\"cardData.title\"\n  :snapshot=\"snapshotData\"\n  location=\"Seattle, WA\"\n  rating=\"5\"\n  count=\"138\">\n</cdr-activity-card>\n```\n",
+			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nmedia | string | n/a | false | Path to primary image\nmediaAlt | string | \" \" | false | this is set to top when there is no attribution\nmediaRatio | string | n/a | false | Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}. See cdr-img\nmediaCover | boolean | n/a | false | Requires `mediaRatio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img\nmediaCrop | string | n/a | false | Requires `mediaRatio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img\ntitle | string | n/a | false | Title text\ntitleUrl | string | n/a | true | href to turn card into a link\ntitleLevel | string,number | \"2\" | false | Heading level\nlabel | string | n/a | false | Label text\nlocation | string | n/a | false | Location text\nsnapshot | array | n/a | false | Snapshot text\nrating | string,number | n/a | false | Rating value\ncount | string,number | n/a | false | Number of ratings\n",
+			"version": "0.1.1"
+		}
+	]
+}

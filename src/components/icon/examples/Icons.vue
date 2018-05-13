@@ -5,6 +5,7 @@
     <icon-account-profile data-backstop="cdr-icon-add" />
 
     <h3>Default icon size</h3>
+    <cdr-icon use="#account-profile" />
     <hr>
 
     <cdr-row
