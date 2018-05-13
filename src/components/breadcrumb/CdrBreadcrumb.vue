@@ -1,15 +1,17 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <div>
-    <div
-      :for="{ item, index } in breadcrumbItems"
-      :key="index"
-    >
-      <a href="item.url">{{item.textValue}}</a>
-      TEST KRIS
-    </div>
-  </div>
+  <ul id="breadcrumb-container">
+    <li
+      :if="items.length > 0"
+      v-for="(item, index) in items"
+      :key="item.id">
+      <a>Test</a>
+      <span
+        :if="index < items.length - 1"
+      > / </span>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -30,12 +32,29 @@ export default {
      *   url: /product/detailpage
      * }
      */
-    items: [],
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    // items: {
+    //   type: Array,
+    //   default: () => [],
+    // },
     /**
      * Flag to track expand toggle
      */
-    isExpanded: false,
-  }
+    isExpanded: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  // computed: {
+  //   filteredItems: () =>
+  //     // Modify collection so that it does not span more than
+  //     // 80% of the screen width.
+  //     this.items
+  //   ,
+  // },
 };
 </script>
 
