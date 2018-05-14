@@ -1,11 +1,29 @@
 /* ==========================================================================
-  # CdrIconButton
+  # CdrIconOnlyButton
   
   All values should map to variables in
-  vars/CdrIconButton.vars.pcss
+  vars/CdrIconOnlyButton.vars.pcss
   in order to allow for theming
 
   TOC:
 
-    :Base - CdrIconButton
+    :Base - CdrIconOnlyButton
 ========================================================================== */
+
+.cdr-icon-only-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  & > .cdr-icon {
+    display: inline;
+    fill: $heart-of-darkness;
+  }
+
+  &--on-dark {
+    & > .cdr-icon {
+      display: inline;
+      fill: $moon-shot;
+    }
+  }
+}

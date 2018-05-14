@@ -25,24 +25,6 @@
       >Link
       </cdr-button>
     </div>
-    <div class="button-example">
-      <cdr-button
-        type="submit"
-        modifier="lg">
-        Large
-      </cdr-button>
-      <cdr-button
-        data-backstop="cdr-button"
-        type="submit"
-        :on-click="log">
-        Medium
-      </cdr-button>
-      <cdr-button
-        type="submit"
-        modifier="sm">
-        Small
-      </cdr-button>
-    </div>
   </div>
 </template>
 

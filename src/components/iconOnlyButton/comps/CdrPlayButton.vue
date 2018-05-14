@@ -2,20 +2,20 @@
   <cdr-icon-only-button
     v-bind="$props"
   >
-    <icon-x-lg />
+    <icon-play />
   </cdr-icon-only-button>
 </template>
 
 <script>
 import classModifier from 'mixinsdir/classModifier';
-import { IconXLg } from '@rei/cdr-icon';
+import { IconPlay } from '@rei/cdr-icon';
 import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 
 export default {
-  name: 'CdrCloseButton',
+  name: 'CdrPlayButton',
   components: {
     CdrIconOnlyButton,
-    IconXLg,
+    IconPlay,
   },
   extends: CdrIconOnlyButton,
   mixins: [classModifier],

@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[blockClass]"
+    :class="[blockClass, onDarkClass]"
     :type="tag === 'button' ? type : null"
     @click="onClick"
   >
@@ -18,14 +18,17 @@ export default {
   name: 'CdrIconOnlyButton',
   mixins: [buttonBase, classModifier],
   props: {
-    size: {
-      type: String,
-      default: 'medium',
+    onDark: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
     blockClass() {
       return 'cdr-icon-only-button';
+    },
+    onDarkClass() {
+      return this.onDark ? this.modifierClass('on-dark') : null;
     },
   },
 };
