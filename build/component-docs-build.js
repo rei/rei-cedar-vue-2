@@ -5,6 +5,8 @@ const fs = require('fs-extra')
 const json2md = require('json2md')
 const vueDocgen = require('vue-docgen-api')
 
+const util = require('util')
+
 // Add convert for markdown anchor
 json2md.converters.anchor = (anchor, json) => {
   if (!anchor.text) {
@@ -17,16 +19,14 @@ json2md.converters.anchor = (anchor, json) => {
 /**
  * convert <cedar component>.vue file into JSON object then convert to markdown file
  * @param {String} file -- file path of raw Vue component file
- * @param {Object} info -- packag.json
+ * @param {Object} info -- package.json
  */
 function docsBuild(file, info) {
   console.log(`Processing file: ${file}\n`)
   const vueObj = vueDocgen.parse(file)
 
   let compDataObj = {
-    "readme": '',
-    "examples": '',
-    "tmplTblData": '',
+    "api": {},
     "version": '',
   }
 
@@ -47,45 +47,45 @@ function docsBuild(file, info) {
   compDataObj.version = currentVer
 
   // read in README markdown file
-  const readmeProm = fs.readFile(readmeFilePath, 'utf8')
-  .then( readmeData => { compDataObj.readme = readmeData })
-  .catch( readmeErr => {
-    console.log(`There was an error reading README markdown file ${readmeFilePath}:\n${readmeErr}`)
-    process.exit(1)
-  })
-    
-  // create data objects for component properties, events, methods, and slots
-  const tblProm = new Promise((resolve, reject) => {
-    resolve(createMarkdownTemplate(vueObj))
-  })
-  .then( tmplTblData => { compDataObj.tmplTblData = tmplTblData })
-  .catch( err => {
-    console.log(`Error while trying to create markdown tables:\n${err}`)
-  })
-
+  // const readmeProm = fs.readFile(readmeFilePath, 'utf8')
+  // .then( readmeData => { compDataObj.readme = readmeData })
+  // .catch( readmeErr => {
+  //   console.log(`There was an error reading README markdown file ${readmeFilePath}:\n${readmeErr}`)
+  //   process.exit(1)
+  // })
+  // 
   // read in EXAMPLES markdown file
-  const exampleProm = fs.readFile(examplesFilePath, 'utf8')
-  .then( examplesData => { compDataObj.examples = examplesData })
-  .catch( examplesErr => {
-    if (`${examplesErr}`.indexOf('ENOENT') > -1) {
-      console.log(`EXAMPLES.md doesn't exist for ${currentDir}`)
-    }
-    else {
-      console.log(`${examplesErr}`)
-      process.exit(1)
-    }
+  // const exampleProm = fs.readFile(examplesFilePath, 'utf8')
+  // .then( examplesData => { compDataObj.examples = examplesData })
+  // .catch( examplesErr => {
+  //   if (`${examplesErr}`.indexOf('ENOENT') > -1) {
+  //     console.log(`EXAMPLES.md doesn't exist for ${currentDir}`)
+  //   }
+  //   else {
+  //     console.log(`${examplesErr}`)
+  //     process.exit(1)
+  //   }
+  // })
+
+  // create data objects for component properties, events, methods, and slots
+  const apiProm = new Promise((resolve, reject) => { resolve(buildAPIs(vueObj)) })
+  .then( api => { 
+    console.log(`Completed API data object for ${vueCompName}\n`)
+    Object.assign(compDataObj.api, api) 
   })
+  .catch( err => { console.log(`Error while trying to create API objects:\n${err}`) })
 
   // After all promises complete, add new component data object to history of component
   // If current version is in history array, replace that element with current 
-  Promise.all([readmeProm, tblProm, exampleProm])
+  Promise.all([apiProm])
   .then(() => {
-    let versionPresent = -1
-    versionPresent = compDataHistory.versions.findIndex((element) => {
+    let currVersionIdx = -1
+    currVersionIdx = compDataHistory.versions.findIndex((element) => {
       return element.version === compDataObj.version
     })
-    versionPresent == -1 ? compDataHistory.versions.unshift(compDataObj) : 
-      compDataHistory.versions[versionPresent] = compDataObj
+    currVersionIdx == -1 ? 
+      compDataHistory.versions.unshift(compDataObj) :
+      compDataHistory.versions[currVersionIdx] = compDataObj
 
     return fs.outputJSON(compDataHistoryFilePath, compDataHistory, {spaces: '\t'})
   })
@@ -93,15 +93,6 @@ function docsBuild(file, info) {
     console.log(`Problem saving component history for ${vueCompName}:\n${err}`)
     process.exit(1)
   })
-}
-
-/**
- * takes JSON object of Vue component and creates Cedar Data Object
- * @param {Object} vueObj -- JSON object returned by vue-docgen-api library
- * @returns {Object} -- Object representing specific Cedar Data Object
- */
-function createAPIObject(vueObj) {
-
 }
 
 /**
@@ -161,14 +152,18 @@ function buildTables(vueObj) {
  */
 function buildAPIs(vueObj) {
   const funcArray = [propsAPIObject, methodsAPIObject, eventsAPIObject, slotsAPIObject]
+  // const funcArray = [propsAPIObject, slotsAPIObject]
 
-  funcArray.reduce((apiObj, curFn) => {
+  const compAPIObj = funcArray.reduce((apiObj, curFn) => {
     const obj = curFn(vueObj)
+
     if (obj !== null) {
       Object.assign(apiObj, obj)
     }
     return apiObj
   }, {})
+  
+  return compAPIObj
 }
 
 /** 
@@ -208,12 +203,12 @@ function tableFromProps(propsObj = {}) {
  */
 function propsAPIObject(vueObj) {
   const propsObj = vueObj["props"] || {}
+
   let props = []
   
   // construct array of objects for props
-  for (const prop in probsObj) {
-    
-    if (probsObj.hasOwnProperty(prop)) {
+  for (const prop in propsObj) {
+    if (propsObj.hasOwnProperty(prop)) {
       // Don't document properties with `@ignore` tag
       if (propsObj[prop].tags.ignore) {
         continue
@@ -226,7 +221,6 @@ function propsAPIObject(vueObj) {
         "default": propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a',
         "description": `${propsObj[prop]["description"]}`
       }
-
       props.push(ele)
     }
   }
