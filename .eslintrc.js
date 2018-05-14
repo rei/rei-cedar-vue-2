@@ -45,6 +45,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'vue/require-default-prop': 0,
+    'vue/attributes-order': 0,
     'max-len': ['error', {
       'code': 100,
       'ignoreComments': true,
