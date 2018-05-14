@@ -140,7 +140,7 @@ export default {
     },
     lazyClass() {
       const classObj = {};
-      classObj[this.$style['lazy-image']] = this.lazy;
+      classObj['lazy-image'] = this.lazy;
       return classObj;
     },
     radiusClass() {

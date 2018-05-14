@@ -1,14 +1,14 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrText from 'componentsdir/text/CdrText';
 
 describe('CdrText.vue', () => {
   it('renders as p by default', () => {
-    const wrapper = shallow(CdrText);
+    const wrapper = shallowMount(CdrText);
     expect(wrapper.is('p')).toBe(true);
   });
 
   it('renders as h1 correctly', () => {
-    const wrapper = shallow(CdrText, {
+    const wrapper = shallowMount(CdrText, {
       propsData: {
         tag: 'h1',
       },

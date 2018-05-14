@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrButton from 'componentsdir/button/CdrButton';
 
 const clickHandler = jest.fn();
@@ -6,7 +6,7 @@ const clickHandler = jest.fn();
 describe('CdrButton.vue', () => {
   // test for theme mixin
   it('sets theme correctly', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         theme: 'red'
       },
@@ -15,17 +15,17 @@ describe('CdrButton.vue', () => {
   });
 
   it('renders a button', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     expect(wrapper.is('button')).toBe(true);
   });
 
   it('sets default type prop correctly', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     expect(wrapper.attributes().type).toBe('button');
   });
 
   it('sets type attr correctly', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         type: 'reset',
       },
@@ -34,14 +34,14 @@ describe('CdrButton.vue', () => {
   });
 
   it('has default click', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     const defaultFunc = wrapper.vm.$props.onClick();
     const result = defaultFunc();
     expect(result).toBe(null)
   });
 
   it('click function triggers correctly', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         onClick: clickHandler
       },
@@ -51,7 +51,7 @@ describe('CdrButton.vue', () => {
   });
 
     it('computes base class correctly', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         modifier: 'primary',
       },
@@ -60,7 +60,7 @@ describe('CdrButton.vue', () => {
   });
 
   it('computes button as link base class correctly', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         modifier: 'primary, link',
       },

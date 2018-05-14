@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrInput from 'componentsdir/input/CdrInput';
 
 function validateFn(inputText) {
@@ -20,7 +20,7 @@ function validateFn(inputText) {
 
 describe('CdrInput.vue', () => {
   it('renders a label element', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'Label Test',
       },
@@ -29,7 +29,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('renders label correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'Label Test',
       },
@@ -38,7 +38,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('renders required label correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'Label Test',
         required: true,
@@ -48,7 +48,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('maps input id to label for correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'testing',
         id: 'test',
@@ -58,7 +58,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('generates an id correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'testing',
       },
@@ -67,7 +67,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('renders an input element', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'Label Test',
       },
@@ -76,7 +76,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets input name attribute correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'Label Test',
       },
@@ -88,7 +88,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('renders input value correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         value: 'testing',
@@ -98,7 +98,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets input disabled attribute correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         disabled: true,
@@ -108,7 +108,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets input readonly attribute correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -120,7 +120,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets input required attribute correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         required: true,
@@ -130,7 +130,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets input autofocus attribute correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -142,7 +142,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets input maxlength attribute correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -154,7 +154,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets input placeholder correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -166,7 +166,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets multiline to textarea correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         multiLine: true,
@@ -176,7 +176,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets multiline rows correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         multiLine: true,
@@ -189,7 +189,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets default input type correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -198,7 +198,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('overrides input type correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         type: 'url',
@@ -208,7 +208,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('hide-label sets aria-label correctly', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         hideLabel: true,
@@ -218,7 +218,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('debounce 0 when not defined', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -227,7 +227,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets default debounce', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         debounce: true,
@@ -237,7 +237,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('sets override debounce', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         debounce: 1000,
@@ -247,7 +247,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('auto generates an id', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -256,7 +256,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('validates errors', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -271,7 +271,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('renders error messages correctly', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -286,7 +286,7 @@ describe('CdrInput.vue', () => {
   });
   
   it('sets a11y for error messages correctly', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -301,7 +301,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('validates warnings', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -316,7 +316,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('renders warning messages correctly', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -331,7 +331,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('validates successfully', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         rules: [validateFn],
@@ -346,7 +346,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('validates pattern successfully', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         pattern: '[a-zA-Z0-9]+',
@@ -361,7 +361,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('errors on pattern correctly', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         pattern: '[a-zA-Z0-9]+',
@@ -376,7 +376,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('displays pattern errors correctly', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         pattern: '[a-zA-Z0-9]+',
@@ -391,49 +391,63 @@ describe('CdrInput.vue', () => {
     }, 100);
   });
 
-  it('emits an input event with correct value', () => {
-    const wrapper = shallow(CdrInput, {
+  it('emits an input event', () => {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
     });
-    wrapper.vm.onInput({target: {value: 'b'}});
-    expect(wrapper.emitted().input[0][0]).toBe('b');
-    expect(wrapper.vm.currentValue).toBe('b');
+    const input = wrapper.find({ ref: 'input' });
+    input.trigger('input')
+    expect(wrapper.emitted().input).toBeTruthy();
   });
   
-  it('emits a blur event with correct value', () => {
-    const wrapper = shallow(CdrInput, {
+  it('emits a blur event', () => {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
     });
-    wrapper.vm.onBlur(123);
-    expect(wrapper.emitted().blur[0][0]).toBe(123);
+    const input = wrapper.find({ ref: 'input' });
+    input.trigger('blur')
+    expect(wrapper.emitted().blur).toBeTruthy();
   });
   
-  it('emits a focus event with correct value', () => {
-    const wrapper = shallow(CdrInput, {
+  it('emits a focus event', () => {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
     });
-    wrapper.vm.onFocus(123);
-    expect(wrapper.emitted().focus[0][0]).toBe(123);
+    const input = wrapper.find({ ref: 'input' });
+    input.trigger('focus')
+    expect(wrapper.emitted().focus).toBeTruthy();
   });
 
-  it('emits a paste event with correct value', () => {
-    const wrapper = shallow(CdrInput, {
+  it('emits a paste event', () => {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
     });
-    wrapper.vm.onPaste(123);
-    expect(wrapper.emitted().paste[0][0]).toBe(123);
+    const input = wrapper.find({ ref: 'input' });
+    input.trigger('paste')
+    expect(wrapper.emitted().paste).toBeTruthy();
+  });
+
+  it('emits a keydown event with correct value', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+    });
+    const input = wrapper.find({ ref: 'input' });
+    input.trigger('keydown')
+    expect(wrapper.emitted().keydown).toBeTruthy();
   });
 
   it('default validation when required works', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         required: true,
@@ -456,7 +470,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('renders feedback', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
         feedback: true,
@@ -467,7 +481,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('returns an icon for error', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -477,7 +491,7 @@ describe('CdrInput.vue', () => {
   });
   
   it('returns an icon for warn', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -487,7 +501,7 @@ describe('CdrInput.vue', () => {
   });
   
   it('returns an icon for valid', () => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
@@ -497,7 +511,7 @@ describe('CdrInput.vue', () => {
   });
 
   it('immediately validates', (done) => {
-    const wrapper = shallow(CdrInput, {
+    const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: '',
         required: true,

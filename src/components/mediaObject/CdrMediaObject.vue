@@ -154,7 +154,7 @@ export default {
     },
     alignClass() {
       if (this.mediaAlign) {
-        return this.$style[`cdr-media-object__body--${this.mediaAlign}`];
+        return this.$style[`cdr-media-object__body--${this.mediaAlign}`] || this.mediaAlign;
       }
       return '';
     },

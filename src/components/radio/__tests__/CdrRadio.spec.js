@@ -1,9 +1,9 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrRadio from 'componentsdir/radio/CdrRadio';
 
 describe('CdrRadio.vue', () => {
   it('renders an input', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
@@ -13,7 +13,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('is type radio', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
@@ -23,7 +23,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('renders a label element', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
@@ -33,7 +33,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('adds a custom label class correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         labelClass: 'custom-label-class',
         value: 'A',
@@ -47,7 +47,7 @@ describe('CdrRadio.vue', () => {
   });
   
   it('adds a custom input class correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         inputClass: 'custom-input-class',
         value: 'A',
@@ -61,7 +61,7 @@ describe('CdrRadio.vue', () => {
   });
   
   it('adds a custom content class correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         contentClass: 'custom-content-class',
         value: 'A',
@@ -75,7 +75,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('sets name attribute correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
@@ -85,7 +85,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('evaluates simple not checked state correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
@@ -96,7 +96,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('evaluates simple checked state correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
@@ -107,7 +107,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('evaluates group not checked state correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: 'B',
         name: 'testName',
@@ -118,7 +118,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('evaluates group checked state correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',
@@ -129,7 +129,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('evaluates complex group not checked state correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: {test: 'B', arr: [1,2,3]},
         name: 'testName',
@@ -140,7 +140,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('evaluates complex group checked state correctly', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: {test: 'B', arr: [1,2,3]},
         name: 'testName',
@@ -151,7 +151,7 @@ describe('CdrRadio.vue', () => {
   });
 
   it('emits a change event with correct value', () => {
-    const wrapper = shallow(CdrRadio, {
+    const wrapper = shallowMount(CdrRadio, {
       propsData: {
         value: 'A',
         name: 'testName',

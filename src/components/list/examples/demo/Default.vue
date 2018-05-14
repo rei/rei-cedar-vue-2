@@ -7,15 +7,13 @@
       <li>List default</li>
     </cdr-list>
 
-    <cdr-list
-    modifier="compact">
+    <cdr-list modifier="compact">
       <li>List default - compact</li>
       <li>List default - compact</li>
       <li>List default - compact</li>
     </cdr-list>
 
-    <cdr-list
-    modifier="spread">
+    <cdr-list modifier="spread">
       <li>List default - spread</li>
       <li>List default - spread</li>
       <li>List default - spread</li>

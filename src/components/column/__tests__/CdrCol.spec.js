@@ -1,10 +1,10 @@
-import { shallow, mount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import CdrCol from 'componentsdir/column/CdrCol';
 import CdrRow from 'componentsdir/row/CdrRow';
 
 describe('CdrCol.vue', () => {
   it('renders as list type correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         type: 'list',
       },
@@ -16,17 +16,17 @@ describe('CdrCol.vue', () => {
   });
 
   it('renders default correctly', () => {
-    const wrapper = shallow(CdrCol);
+    const wrapper = shallowMount(CdrCol);
     expect(wrapper.is('div')).toBe(true);
   });
 
   it('has the correct block class', () => {
-    const wrapper = shallow(CdrCol);
+    const wrapper = shallowMount(CdrCol);
     expect(wrapper.classes()).toContain('cdr-col');
   });
 
   it('sets span props correctly', () => {
-    const wrapper = shallow(CdrCol, {
+    const wrapper = shallowMount(CdrCol, {
       propsData: {
         span: '1',
         spanMd: '2',
@@ -41,7 +41,7 @@ describe('CdrCol.vue', () => {
   });
 
   it('computes span classes correctly', () => {
-    const wrapper = shallow(CdrCol, {
+    const wrapper = shallowMount(CdrCol, {
       propsData: {
         span: '1',
         spanMd: '2',
@@ -56,7 +56,7 @@ describe('CdrCol.vue', () => {
   });
 
   it('sets offsetLeft props correctly', () => {
-    const wrapper = shallow(CdrCol, {
+    const wrapper = shallowMount(CdrCol, {
       propsData: {
         offsetLeft: '1',
         offsetLeftMd: '2',
@@ -71,7 +71,7 @@ describe('CdrCol.vue', () => {
   });
 
   it('computes offsetLeft classes correctly', () => {
-    const wrapper = shallow(CdrCol, {
+    const wrapper = shallowMount(CdrCol, {
       propsData: {
         offsetLeft: '1',
         offsetLeftMd: '2',
@@ -86,7 +86,7 @@ describe('CdrCol.vue', () => {
   });
 
   it('sets offsetRight props correctly', () => {
-    const wrapper = shallow(CdrCol, {
+    const wrapper = shallowMount(CdrCol, {
       propsData: {
         offsetRight: '1',
         offsetRightMd: '2',
@@ -101,7 +101,7 @@ describe('CdrCol.vue', () => {
   });
 
   it('computes offsetRight classes correctly', () => {
-    const wrapper = shallow(CdrCol, {
+    const wrapper = shallowMount(CdrCol, {
       propsData: {
         offsetRight: '1',
         offsetRightMd: '2',
@@ -116,7 +116,7 @@ describe('CdrCol.vue', () => {
   });
 
   it('sets alignSelf props correctly', () => {
-    const wrapper = shallow(CdrCol, {
+    const wrapper = shallowMount(CdrCol, {
       propsData: {
         alignSelf: 'top',
         alignSelfMd: 'top',
@@ -131,7 +131,7 @@ describe('CdrCol.vue', () => {
   });
 
   it('computes alignSelf classes correctly', () => {
-    const wrapper = shallow(CdrCol, {
+    const wrapper = shallowMount(CdrCol, {
       propsData: {
         alignSelf: 'top',
         alignSelfMd: 'top',
@@ -146,7 +146,7 @@ describe('CdrCol.vue', () => {
   });
 
   it('sets isRow prop correctly', () => {
-    const wrapper = shallow(CdrCol, {
+    const wrapper = shallowMount(CdrCol, {
       propsData: {
         isRow: true,
       }
