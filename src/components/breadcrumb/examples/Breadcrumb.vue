@@ -17,19 +17,20 @@ export default {
     return {
       breadcrumbItems: [
         {
-          id: 1,
-          textValue: 'Kris1',
           url: 'http://google.com',
+          displayText: 'Step 1 ',
         },
         {
-          id: 2,
-          textValue: 'Kris2',
-          url: 'http://google.com',
+          url: 'http://rei.com',
+          displayText: 'Step 2 ',
         },
         {
-          id: 3,
-          textValue: 'Kris3',
-          url: 'http://google.com',
+          url: 'http://yahoo.com',
+          displayText: 'Step 3 ',
+        },
+        {
+          url: 'http://bing.com',
+          displayText: 'Step 4 ',
         },
       ],
     };

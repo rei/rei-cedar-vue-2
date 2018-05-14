@@ -1,17 +1,30 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <ul id="breadcrumb-container">
-    <li
-      :if="items.length > 0"
-      v-for="(item, index) in items"
-      :key="item.id">
-      <a>Test</a>
+  <div id="breadcrumb-container">
+    <div id="expanded">
       <span
-        :if="index < items.length - 1"
-      > / </span>
-    </li>
-  </ul>
+        v-for="(item, index) in items"
+        :key="index">
+        <a
+        :href="item.url">{{ item.displayText }}</a>
+        <span
+          v-if="index < items.length - 1"
+        > / </span>
+      </span>
+    </div>
+    <!-- <div id="collapsed">
+      <span
+        v-for="(item, index) in items"
+        :key="index">
+        <a
+        :href="item.url">{{ item.textValue }}</a>
+        <span
+          v-if="index < items.length - 1"
+        > / </span>
+      </span>
+    </div> -->
+  </div>
 </template>
 
 <script>
@@ -48,13 +61,14 @@ export default {
       default: false,
     },
   },
-  // computed: {
-  //   filteredItems: () =>
-  //     // Modify collection so that it does not span more than
-  //     // 80% of the screen width.
-  //     this.items
-  //   ,
-  // },
+  computed: {
+    // expandedWidth: () =>
+    //   // Modify collection so that it does not span more than
+    //   // 80% of the screen width.
+    //   // console.log('REFS = ', this.$Refs);
+    //   // return this.$refs.
+    // ,
+  },
 };
 </script>
 
