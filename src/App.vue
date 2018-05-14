@@ -15,6 +15,7 @@
     <cta
       class="cpg-section"
     />
+    <icon-buttons class="cpg-section" />
     <cards class="cpg-section"/>
     <!-- <card-content class="cpg-section"></card-content> -->
     <activity class="cpg-section"/>
