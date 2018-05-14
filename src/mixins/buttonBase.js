@@ -36,9 +36,6 @@ export default {
     },
   },
   computed: {
-    blockClass() {
-      return 'cdr-button';
-    },
     fullWidthClass() {
       return this.fullWidth ? this.modifierClass('full-width') : null;
     },

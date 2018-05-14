@@ -19,8 +19,8 @@ describe('CdrCta.vue', () => {
     });
 
     // it's important that it add cta as a separate class because BEM!
-    expect(wrapper.classes()).toContain('cdr-button--cta');
-    expect(wrapper.classes()).toContain('cdr-button--sale');
+    expect(wrapper.classes()).toContain('cdr-cta');
+    expect(wrapper.classes()).toContain('cdr-cta--sale');
   });
 
   // this is actually testing the full-width prop in the buttonBase mixin
@@ -31,6 +31,6 @@ describe('CdrCta.vue', () => {
       },
     });
 
-    expect(wrapper.classes()).toContain('cdr-button--full-width');
+    expect(wrapper.classes()).toContain('cdr-cta--full-width');
   });
 });

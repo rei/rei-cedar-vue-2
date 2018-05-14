@@ -10,13 +10,8 @@
     :Base - CdrCta
 ========================================================================== */
 
-.cdr-button {
-  @include redwood-display-30;
-
-  /*
-
-  I commented out this code because it was wrecking proving grounds, though I think we'll need it
-  when CSS modules go live
+.cdr-cta {
+  @include maple-utility-40;
 
   background-color: $button-background-color;
   box-shadow: $button-box-shadow;
@@ -28,9 +23,14 @@
   outline: none;
   padding: $inset-1-x-squish;
   text-align: center;
+  text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  */
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
 
   /* Full Width
      ========== */
@@ -38,23 +38,27 @@
     width: 100%;
   }
 
-  &--cta {
-    @include maple-utility-40;
-    
-    padding: $inset-1-x-squish;
-    text-transform: uppercase;
-  }
-
   &--brand {
     background-color: $button-cta-brand-background-color;
     box-shadow: $button-cta-brand-box-shadow;
     color: $button-cta-brand-color;
 
+    & > .cdr-icon {
+      display: inline;
+      fill: $button-cta-brand-color;
+    }
+
     &:hover,
+    &:focus,
     &:active {
       background-color: $button-cta-brand-hover-background-color;
       box-shadow: $button-cta-brand-box-shadow;
       color: $button-cta-brand-hover-color;
+
+      & > .cdr-icon {
+        display: inline;
+        fill: $button-cta-brand-hover-color;
+      }
     }
   }
 
@@ -63,11 +67,22 @@
     box-shadow: $button-cta-dark-box-shadow;
     color: $button-cta-dark-color;
 
+    & > .cdr-icon {
+      display: inline;
+      fill: $button-cta-dark-color;
+    }
+
     &:hover,
+    &:focus,
     &:active {
       background-color: $button-cta-dark-hover-background-color;
       box-shadow: $button-cta-dark-box-shadow;
       color: $button-cta-dark-hover-color;
+
+      & > .cdr-icon {
+        display: inline;
+        fill: $button-cta-dark-hover-color;
+      }
     }
   }
 
@@ -82,6 +97,7 @@
     }
 
     &:hover,
+    &:focus,
     &:active {
       background-color: $button-cta-light-hover-background-color;
       box-shadow: $button-cta-light-box-shadow;
@@ -99,11 +115,22 @@
     box-shadow: $button-cta-sale-box-shadow;
     color: $button-cta-sale-color;
 
+    & > .cdr-icon {
+      display: inline;
+      fill: $button-cta-sale-color;
+    }
+
     &:hover,
+    &:focus,
     &:active {
       background-color: $button-cta-sale-hover-background-color;
       box-shadow: $button-cta-sale-box-shadow;
       color: $button-cta-sale-hover-color;
+
+      & > .cdr-icon {
+        display: inline;
+        fill: $button-cta-sale-hover-color;
+      }
     }
   }
 }

@@ -3,6 +3,7 @@
     :is="tag"
     :class="[blockClass, ctaClass, fullWidthClass]"
     :type="tag === 'button' ? type : null"
+    :tabindex="tag === 'button' ? null: 0"
     @click="onClick"
   >
     <!-- @slot innerHTML on the inside of the button component -->
@@ -30,11 +31,11 @@ export default {
     },
   },
   computed: {
+    blockClass() {
+      return 'cdr-cta';
+    },
     ctaClass() {
-      const classes = [];
-      classes.push(this.modifierClass('cta'));
-      classes.push(this.modifierClass(`${this.ctaStyle}`));
-      return classes.join(' ');
+      return this.modifierClass(`${this.ctaStyle}`);
     },
   },
 };
