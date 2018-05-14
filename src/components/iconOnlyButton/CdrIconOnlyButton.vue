@@ -15,7 +15,7 @@ import buttonBase from 'mixinsdir/buttonBase';
 import classModifier from 'mixinsdir/classModifier';
 
 export default {
-  name: 'CdrIconButton',
+  name: 'CdrIconOnlyButton',
   mixins: [buttonBase, classModifier],
   props: {
     size: {
@@ -23,10 +23,15 @@ export default {
       default: 'medium',
     },
   },
+  computed: {
+    blockClass() {
+      return 'cdr-icon-only-button';
+    },
+  },
 };
 </script>
 
 <style>
   @import '../../css/settings/_index.pcss';
-  @import './styles/CdrIconButton.pcss';
+  @import './styles/CdrIconOnlyButton.pcss';
 </style>

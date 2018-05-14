@@ -1,9 +1,9 @@
 {
-  "name": "@rei/cdr-icon-button",
+  "name": "@rei/cdr-icon-only-button",
   "version": "0.1.0",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for IconButton",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-icon-button",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-icon-only-button",
   "repository": {
     "type": "git",
     "url": "https://github.com/rei/rei-cedar.git"
@@ -16,8 +16,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/cdr-icon-button.js",
-  "style": "dist/cdr-icon-button.css",
+  "main": "dist/cdr-icon-only-button.js",
+  "style": "dist/cdr-icon-only-button.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "node build/build.js"

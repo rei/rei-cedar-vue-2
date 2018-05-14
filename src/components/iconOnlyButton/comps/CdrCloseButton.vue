@@ -1,22 +1,22 @@
 <template>
-  <cdr-icon-button v-bind="$props">
+  <cdr-icon-only-button v-bind="$props">
     <icon-x-lg />
-  </cdr-icon-button>
+  </cdr-icon-only-button>
 </template>
 
 <script>
 import classModifier from 'mixinsdir/classModifier';
 import { IconXLg } from '@rei/cdr-icon';
-import CdrIconButton from 'componentsdir/iconButton/CdrIconButton';
+import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 
 export default {
   name: 'CdrCloseButton',
   components: {
-    CdrIconButton,
+    CdrIconOnlyButton,
     IconXLg,
   },
   extends: {
-    CdrIconButton,
+    CdrIconOnlyButton,
   },
   mixins: [classModifier],
 };
@@ -24,5 +24,5 @@ export default {
 
 <style>
   @import '../../../css/settings/_index.pcss';
-  @import '../styles/CdrIconButton.pcss';
+  @import '../styles/CdrIconOnlyButton.pcss';
 </style>
