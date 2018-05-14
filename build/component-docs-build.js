@@ -207,26 +207,29 @@ function tableFromProps(propsObj = {}) {
  * @returns {Object} -- Object for component props that goes into Cedar Data Object
  */
 function propsAPIObject(vueObj) {
-  const propsObj = vueObj["props"]
+  const propsObj = vueObj["props"] || {}
   let props = []
+  
   // construct array of objects for props
   for (const prop in probsObj) {
-    // Don't document properties with `@ignore` tag
-    if (propsObj[prop].tags.ignore) {
-      continue
-    }
+    
+    if (probsObj.hasOwnProperty(prop)) {
+      // Don't document properties with `@ignore` tag
+      if (propsObj[prop].tags.ignore) {
+        continue
+      }
 
-    // object representing a single prop
-    const ele = {
-      "name": `${prop}`,
-      "type": propsObj[prop]["type"] ? propsObj[prop]["type"]["name"].replace(/\|/g, ',') : 'unknown',
-      "default": propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a',
-      "description": `${propsObj[prop]["description"]}`
-    }
+      // object representing a single prop
+      const ele = {
+        "name": `${prop}`,
+        "type": propsObj[prop]["type"] ? propsObj[prop]["type"]["name"].replace(/\|/g, ',') : 'unknown',
+        "default": propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a',
+        "description": `${propsObj[prop]["description"]}`
+      }
 
-    props.push(ele)
+      props.push(ele)
+    }
   }
-
   return props.length > 0 ? {props} : null
 }
 
@@ -263,7 +266,7 @@ function tableFromMethods(methodsArr = []) {
  * @returns {Object} -- Object for component methods that goes into Cedar Data Object
  */
 function methodsAPIObject(vueObj) {
-  const methodsArr = vueObj["methods"]
+  const methodsArr = vueObj["methods"] || []
   let methods = []
   
   // construct array of objects for public methods
@@ -313,18 +316,20 @@ function tableFromEvents(eventsObj = {}) {
  * @returns {Object} -- Object for component events that goes into Cedar Data Object
  */
 function eventsAPIObject(vueObj) {
-  const eventsObj = vueObj["events"]
+  const eventsObj = vueObj["events"] || {}
   let events = []
 
   for (const evt in eventsObj) {
-    const ele = {
-      "name": `${evt}`,
-      "type": `${eventsObj[evt]["type"]["names"].reduce((typeList, type, idx, arr) => {
-        typeList += `${type}${arr[idx+1] ? `|` : ''}`
-      }, '')}`,
-      "description": `${eventsObj[evt]["description"]}`
+    if (eventsObj.hasOwnProperty(evt)) {
+      const ele = {
+        "name": `${evt}`,
+        "type": `${eventsObj[evt]["type"]["names"].reduce((typeList, type, idx, arr) => {
+          typeList += `${type}${arr[idx+1] ? `|` : ''}`
+        }, '')}`,
+        "description": `${eventsObj[evt]["description"]}`
+      }
+      events.push(ele)
     }
-    events.push(ele)
   }
   return events.length > 0 ? {events} : null
 }
@@ -355,15 +360,17 @@ function tableFromSlots(slotsObj = {}) {
  * @returns {Object} -- Object for component slots that goes into Cedar Data Object
  */
 function slotsAPIObject(vueObj) {
-  slotsObj = vueObj["slots"]
+  slotsObj = vueObj["slots"] || {}
   let slots = []
   
   for (const slot in slotsObj) {
-    const ele = {
-      "name": `${slot}`,
-      "description": `${slotsObj[slot]["description"] || ''}`
+    if (slotsObj.hasOwnProperty(slot)) {
+      const ele = {
+        "name": `${slot}`,
+        "description": `${slotsObj[slot]["description"] || ''}`
+      }
+      slots.push(ele)
     }
-    slots.push(ele)
   }
   return slots.length > 0 ? {slots} : null
 }
