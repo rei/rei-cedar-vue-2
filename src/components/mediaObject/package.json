@@ -30,14 +30,14 @@
     "@rei/cdr-assets": "^0.1.0",
     "@rei/cdr-link": "^0.1.0",
     "@rei/cdr-icon": "^0.1.0",
-    "@rei/cdr-img": "^0.1.0",
+    "@rei/cdr-img": "^1.0.0-alpha.1",
     "vue": "^2.5.13"
   },
   "devDependencies": {
     "@rei/cdr-link": "^0.1.0",
     "@rei/cdr-assets": "^0.1.0",
     "@rei/cdr-icon": "^0.1.0",
-    "@rei/cdr-img": "^0.1.0",
+    "@rei/cdr-img": "^1.0.0-alpha.1",
     "pkg-ok": "^1.1.0"
   }
 }

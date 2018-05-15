@@ -131,7 +131,6 @@
     "selenium-server": "^3.9.1",
     "semver": "^5.5.0",
     "semver-diff": "^2.1.0",
-    "sinon": "^5.0.7",
     "standard-changelog": "^1.0.12",
     "style-loader": "^0.20.2",
     "stylelint": "^9.2.0",
