@@ -12,7 +12,9 @@
       >
         <icon-external-link />
       </cdr-icon-only-button>
-      <cdr-play-button />
+      <cdr-play-button
+        :on-click="play"
+      />
     </div>
     <div class="button-example dark">
       <cdr-icon-only-button
@@ -55,10 +57,10 @@ export default {
   },
   methods: {
     close() {
-      console.log('Close button clicked.');
+      console.log('Close button clicked.'); // eslint-disable-line
     },
     play() {
-      console.log('Play button clicked');
+      console.log('Play button clicked'); // eslint-disable-line
     },
   },
 };
