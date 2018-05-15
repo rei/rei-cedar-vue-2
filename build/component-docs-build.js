@@ -46,31 +46,11 @@ function docsBuild(file, info) {
   const currentVer = info.version
   compDataObj.version = currentVer
 
-  // read in README markdown file
-  // const readmeProm = fs.readFile(readmeFilePath, 'utf8')
-  // .then( readmeData => { compDataObj.readme = readmeData })
-  // .catch( readmeErr => {
-  //   console.log(`There was an error reading README markdown file ${readmeFilePath}:\n${readmeErr}`)
-  //   process.exit(1)
-  // })
-  // 
-  // read in EXAMPLES markdown file
-  // const exampleProm = fs.readFile(examplesFilePath, 'utf8')
-  // .then( examplesData => { compDataObj.examples = examplesData })
-  // .catch( examplesErr => {
-  //   if (`${examplesErr}`.indexOf('ENOENT') > -1) {
-  //     console.log(`EXAMPLES.md doesn't exist for ${currentDir}`)
-  //   }
-  //   else {
-  //     console.log(`${examplesErr}`)
-  //     process.exit(1)
-  //   }
-  // })
-
   // create data objects for component properties, events, methods, and slots
   const apiProm = new Promise((resolve, reject) => { resolve(buildAPIs(vueObj)) })
   .then( api => { 
     console.log(`Completed API data object for ${vueCompName}\n`)
+    console.log(`${util.inspect(api)}`)
     Object.assign(compDataObj.api, api) 
   })
   .catch( err => { console.log(`Error while trying to create API objects:\n${err}`) })
@@ -96,56 +76,6 @@ function docsBuild(file, info) {
 }
 
 /**
- * take json object and create markdown template
- * @param {Object} vueObj -- JSON object returned by vue-docgen-api library
- * @returns {String} -- JSON object converted to markdown string
- */
-function createMarkdownTemplate(vueObj) {
-
-  let json2mdTemplate = [], mdTablesTemplate;
-  
-  mdTablesTemplate = buildTables(vueObj)
-  
-  if(mdTablesTemplate.length > 0) {
-    json2mdTemplate = json2mdTemplate.concat(mdTablesTemplate)
-  }
-
-  return json2md(json2mdTemplate)
-}
-
-/**
- * build tables for Vue props, methods, events, and slots
- * @param {Object} vueObj -- JSON object returned by vue-docgen-api library
- * @returns {Array} -- array of objects representing different parts of markdown template tables
- */
-function buildTables(vueObj) {
-  let updatedTemplate = [{h3: "<button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>"}]
-  let mdTable
-  
-  mdTable = tableFromProps(vueObj["props"])
-  if (mdTable != null) {
-    updatedTemplate.push(mdTable)
-  }
-  
-  mdTable = tableFromMethods(vueObj["methods"])
-  if (mdTable != null) {
-    updatedTemplate.push(mdTable)
-  }
-
-  mdTable = tableFromEvents(vueObj["events"])
-  if (mdTable != null) {
-    updatedTemplate.push(mdTable)
-  }
-  
-  mdTable = tableFromSlots(vueObj["slots"])
-  if (mdTable != null) {
-    updatedTemplate.push(mdTable)
-  }
-
-  return updatedTemplate.length > 1 ? updatedTemplate : []
-}
-
-/**
  * build data objects for Vue props, methods, events, and slots
  * @param {Object} vueObj -- JSON object returned by vue-docgen-api library
  * @returns {Object} -- obJect representing different parts of component API
@@ -165,36 +95,6 @@ function buildAPIs(vueObj) {
   
   return compAPIObj
 }
-
-/** 
- * auxilary function to create table from `props` property of json2md object
- * @param {Object} propsObj -- object representing properties of a Cedar component
- * @returns {Object} -- object representing markdown table
- */
-function tableFromProps(propsObj = {}) {
-  const headers = ["Prop Name", "Type", "Default", "Require", "Description"]
-  let rows = []
-
-  // construct rows of table from object of properties
-  for(const prop in propsObj) {
-    // Don't document properties with `@ignore` tag
-    if (propsObj[prop].tags.ignore) {
-      continue
-    }
-    
-    let cols = []
-    cols.push(`${prop}`) // property name
-    cols.push(propsObj[prop]["type"] ? propsObj[prop]["type"]["name"].replace(/\|/g, ',') : 'unknown') // type of the property
-    cols.push(propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a') // property default value
-    cols.push(propsObj[prop]["required"] ? 'true' : 'false') // property is required
-    cols.push(`${propsObj[prop]["description"]}`) // description of the property
-    
-    rows.push(cols)
-  }
-
-  return rows.length > 0 ? {table: {headers, rows}} : null
-}
-  
 
 /**
  * Create object representing component props
@@ -228,33 +128,6 @@ function propsAPIObject(vueObj) {
 }
 
 /**
- * auxilary function to create table from `methods` property of json2md object
- * @param {Array} methodsArr -- array representing the public methods of a Cedar component
- * @returns {Object} -- object representing markdown table
-*/
-function tableFromMethods(methodsArr = []) {
-  const headers = ["Method Name", "Type", "Parameters", "Description"]
-  let rows = []
-
-  // construct rows of table array of methods
-  methodsArr.forEach((method) => {
-    let cols = []
-
-    cols.push(method["name"]) // method name
-    let paramList = ''
-    method["params"].forEach((param) => {
-      paramList += `${param["name"]}: ${param["type"]["name"]} - ${param["description"]}\n`
-    })
-    cols.push(paramList) // list of method parameters
-    cols.push(`${method["description"]}`) // description of the method
-
-    rows.push(cols);
-  })
-  
-  return rows.length > 0 ? {table: {headers, rows}} : null
-}
-
-/**
  * Create object representing component public methods
  * @param {Object} -- JSON object from vue-docgen-api library
  * @returns {Object} -- Object for component methods that goes into Cedar Data Object
@@ -275,33 +148,6 @@ function methodsAPIObject(vueObj) {
     methods.push(ele)
   })
   return methods.length > 0 ? {methods} : null
-}
-
-/**
- * auxilary function to create table from `events` property of json2md object
- * @param {Object} eventsObj -- object representing events attached to Cedar component
- * @returns {Object} -- object representing markdown table
- */
-function tableFromEvents(eventsObj = {}) {
-  const headers = ["Event Name", "Type", "Description"]
-  let rows = []
-
-  for(const evt in eventsObj) {
-    let cols = []
-
-    cols.push(`${evt}`) // event name
-    
-    let typeList = ''
-    eventsObj[evt]["type"]["names"].forEach((type, idx, arr) => {
-      typeList += `${type}${arr[idx+1] ? `|` : ''}`
-    })
-    cols.push(typeList) // list of event types
-    cols.push(`${eventsObj[evt]["description"]}`) // description of the event
-
-    rows.push(cols);
-  }
-
-  return rows.length > 0 ? {table: {headers, rows}} : null
 }
 
 /**
@@ -326,26 +172,6 @@ function eventsAPIObject(vueObj) {
     }
   }
   return events.length > 0 ? {events} : null
-}
-
-/**
- * auxilary function to create table from `slots` property of json2md object
- * @param {Object} slotsObj -- object representing the inner content of a Cedar component
- * @returns {Object} -- object representing markdown table
- */
-function tableFromSlots(slotsObj = {}) {
-  const headers = ["Slot", "Description"]
-  let rows = []
-
-  for(const slot in slotsObj) {
-    let cols = []
-    cols.push(`${slot}`) // name of the slot
-    cols.push(`${slotsObj[slot]["description"] || ''}`) // description of the slot
-
-    rows.push(cols)
-  }
-
-  return rows.length > 0 ? {table: {headers, rows}} : null
 }
 
 /**
