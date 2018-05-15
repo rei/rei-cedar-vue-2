@@ -82,7 +82,6 @@ function docsBuild(file, info) {
  */
 function buildAPIs(vueObj) {
   const funcArray = [propsAPIObject, methodsAPIObject, eventsAPIObject, slotsAPIObject]
-  // const funcArray = [propsAPIObject, slotsAPIObject]
 
   const compAPIObj = funcArray.reduce((apiObj, curFn) => {
     const obj = curFn(vueObj)
@@ -117,9 +116,10 @@ function propsAPIObject(vueObj) {
       // object representing a single prop
       const ele = {
         "name": `${prop}`,
-        "type": propsObj[prop]["type"] ? propsObj[prop]["type"]["name"].replace(/\|/g, ',') : 'unknown',
-        "default": propsObj[prop]["defaultValue"] ? propsObj[prop]["defaultValue"]["value"] : 'n/a',
-        "description": `${propsObj[prop]["description"]}`
+        "type": propsObj[prop]["type"] ? propsObj[prop]["type"]["name"] : 'unknown',
+        "default": (propsObj[prop]["defaultValue"] && propsObj[prop]["defaultValue"] !== " ") ? 
+          propsObj[prop]["defaultValue"]["value"] : 'n/a',
+        "description": `${propsObj[prop]["description"] || 'MISSING DESCRIPTION'}`
       }
       props.push(ele)
     }
@@ -142,8 +142,9 @@ function methodsAPIObject(vueObj) {
       "name": `${method["name"]}`,
       "parameters": `${method["params"].reduce((paramList, param) => {
           paramList += `${param["name"]}: ${param["type"]["name"]} - ${param["description"]}\n`
+          return paramList
       }, '')}`,
-      "description": `${method["description"]}`
+      "description": `${method["description"] || 'MISSING DESCRIPTION'}`
     }
     methods.push(ele)
   })
@@ -165,8 +166,9 @@ function eventsAPIObject(vueObj) {
         "name": `${evt}`,
         "type": `${eventsObj[evt]["type"]["names"].reduce((typeList, type, idx, arr) => {
           typeList += `${type}${arr[idx+1] ? `|` : ''}`
+          return typeList
         }, '')}`,
-        "description": `${eventsObj[evt]["description"]}`
+        "description": `${eventsObj[evt]["description"] || 'MISSING DESCRIPTION'}`
       }
       events.push(ele)
     }
@@ -187,7 +189,7 @@ function slotsAPIObject(vueObj) {
     if (slotsObj.hasOwnProperty(slot)) {
       const ele = {
         "name": `${slot}`,
-        "description": `${slotsObj[slot]["description"] || ''}`
+        "description": `${slotsObj[slot]["description"] || 'MISSING DESCRIPTION'}`
       }
       slots.push(ele)
     }

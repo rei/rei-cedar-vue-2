@@ -3,8 +3,9 @@ const fs = require('fs-extra')
 const semver = require('semver')
 const glob = require('glob-promise')
 
-const componentsProm = globSearch('src/components/**/build/component-data.json')
+const util = require('util')
 
+const componentsProm = globSearch('src/components/**/build/component-data.json')
 const compositionProm = globSearch('src/compositions/**/build/component-data.json')
 
 Promise.all([componentsProm, compositionProm])
@@ -46,13 +47,12 @@ function globSearch(searchRegex) {
  * @returns {Array} -- Array of JSON data objects for all Cedar componnents|compositions
  */
 function archiveComps(compFiles) {
-  let compObjCollection = []
-  compFiles.forEach(file => {
-    let compObj = require(`${file}`)
+  return compFiles.reduce((compObjCollection, file) => {
+    const compObj = require(`${file}`)
     if (compObj !== null) {
       compObjCollection.push(compObj)
+      console.log(`Added object for ${compObj.name} to Cedar Data Object`)
     }
-  })
-
-  return compObjCollection
+    return compObjCollection
+  }, [])
 }
