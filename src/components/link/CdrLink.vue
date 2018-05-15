@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style theme="default">
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrLink.pcss';
 </style>
