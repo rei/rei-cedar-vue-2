@@ -1,7 +1,7 @@
 <template>
   <div :class="[modifierClass]">
     <template v-if="imgHref">
-      <cdr-a
+      <cdr-link
         :href="imgHref"
         target="imgTarget"
       >
@@ -24,7 +24,7 @@
           :radius="imgRadius"
           :modifier="imgModifier"
           :style="mediaWidth"/>
-      </cdr-a>
+      </cdr-link>
     </template>
     <template v-else>
       <cdr-icon
@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { CdrA } from '@rei/cdr-a';
+import { CdrLink } from '@rei/cdr-link';
 import { CdrImg } from '@rei/cdr-img';
 import { CdrIcon } from '@rei/cdr-icon';
 import modifier from 'mixinsdir/modifier';
@@ -79,7 +79,7 @@ import lazyImage from 'mixinsdir/lazyImage';
 export default {
   name: 'CdrMediaObject',
   components: {
-    CdrA,
+    CdrLink,
     CdrImg,
     CdrIcon,
   },

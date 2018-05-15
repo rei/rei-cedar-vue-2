@@ -446,6 +446,16 @@ describe('CdrInput.vue', () => {
     expect(wrapper.emitted().keydown).toBeTruthy();
   });
 
+  it('emits a keydown event', () => { 
+    const wrapper = shallow(CdrInput, { 
+      propsData: { 
+        label: 'test', 
+      }, 
+    }); 
+    wrapper.vm.onKeydown(123); 
+    expect(wrapper.emitted().keydown[0][0]).toBe(123); 
+  }); 
+
   it('default validation when required works', (done) => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

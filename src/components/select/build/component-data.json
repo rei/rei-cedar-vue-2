@@ -1,0 +1,11 @@
+{
+	"name": "CdrSelect",
+	"versions": [
+		{
+			"readme": "# <span class=\"display-name\">CdrSelect</span>\n\n**NOTE:** `v-model` is required.\n",
+			"examples": "### Examples\n\n#### Standard\n\n```\nvar selected = '';\n\n<div>\n  <cdr-select label=\"Normal\" v-model=\"selected\">\n    <option value=\"1\">1</option>\n    <option value=\"2\">2</option>\n    <option value=\"3\">3</option>\n    <option value=\"4\">4</option>\n  </cdr-select>\n  <p>Selected: {{selected}}</p>\n</div>\n```\n\n#### With prompt\n\n```\nvar selected = '';\n\n<div>\n  <cdr-select label=\"Normal with prompt\" v-model=\"selected\" prompt=\"Choose one\">\n    <option value=\"1\">1</option>\n    <option value=\"2\">2</option>\n    <option value=\"3\">3</option>\n    <option value=\"4\">4</option>\n  </cdr-select>\n  <p>Selected: {{selected}}</p>\n</div>\n```\n\n#### Data driven options\n\n```\nvar selected = '';\nvar data = ['a', 'b', 'c', 'd'];\n\n<div>\n  <cdr-select label=\"Built with data\" v-model=\"selected\" :options=\"data\"></cdr-select>\n  <p>Selected: {{selected}}</p>\n</div>\n\n```\n",
+			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nlabel | string | n/a | true | Label text.\nid | string | n/a | false | `id` for the select that is mapped to the label `for` attribute. If one is not provided, it will be generated.\nhideLabel | boolean | n/a | false | Removes the label element but sets the select `aria-label` to `label` text for a11y.\nprompt | string | n/a | false | Adds an option that is disabled and selected by default to serve as a `placeholder` for the select.\noptions | array | n/a | false | Build options programatically with data. Array of objects [{ text: String, value: String}] to give greater control. Array of strings ['String'] for simpler setup (value and text will be the same).\n\nEvent Name | Type | Description\n--- | --- | ---\ninput | string|array | Current input value. Fires when\n\nSlot | Description\n--- | ---\ndefault | \n",
+			"version": "0.1.0"
+		}
+	]
+}

@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`CdrA.vue outputs the same HTML 1`] = `<a class="cdr-link"></a>`;

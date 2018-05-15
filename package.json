@@ -19,6 +19,8 @@
     "approve": "backstop approve --configPath=backstop.js",
     "docs": "vue-styleguidist server",
     "build:docs": "lerna run build:docs",
+    "build:archive": "node build/component-docs-archive.js",
+    "build:transfer": "node build/component-docs-transfer.js",
     "create": "node generator.js",
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
@@ -72,6 +74,7 @@
     "fs-extra": "^5.0.0",
     "function-bind": "^1.1.0",
     "glob": "^7.1.2",
+    "glob-promise": "^3.4.0",
     "html-loader": "^0.5.0",
     "html-webpack-plugin": "^2.29.0",
     "http-proxy-middleware": "^0.17.3",
@@ -131,7 +134,7 @@
     "sinon": "^5.0.7",
     "standard-changelog": "^1.0.12",
     "style-loader": "^0.20.2",
-    "stylelint": "^9.1.0",
+    "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.1.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.10.3",
@@ -173,6 +176,6 @@
     }
   },
   "dependencies": {
-    "rei-cedar-tokens": "git+https://github.com/rei/rei-cedar-tokens.git#0.1.2"
+    "rei-cedar-tokens": "git+https://github.com/rei/rei-cedar-tokens.git#0.1.3"
   }
 }

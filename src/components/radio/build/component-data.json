@@ -1,0 +1,11 @@
+{
+	"name": "CdrRadio",
+	"versions": [
+		{
+			"readme": "# <span class=\"display-name\">CdrRadio</span>\n\n**NOTE:** `v-model` is required.\n\n",
+			"examples": "### Examples\n\n#### Standard checkbox\n\n`v-model` can be anything and is shared to all of the radios in the group.\n\n```\nvar model = '';\n\n<div>\n  <cdr-radio name=\"example\" value=\"a1\" v-model=\"model\">A1</cdr-radio>\n  <cdr-radio name=\"example\" value=\"a2\" v-model=\"model\">A2</cdr-radio>\n  <cdr-radio name=\"example\" :value=\"{val:'a3'}\" v-model=\"model\">A3</cdr-radio>\n  <p>Group A Picked: {{model}}</p>\n</div>\n```\n\n#### Preselected\n\n`v-model` is preset to one of the values in the group.\n\n```\nvar model2 = 'a2';\n\n<div>\n  <cdr-radio name=\"example2\" value=\"a1\" v-model=\"model2\">A1</cdr-radio>\n  <cdr-radio name=\"example2\" value=\"a2\" v-model=\"model2\">A2</cdr-radio>\n  <cdr-radio name=\"example2\" :value=\"{val:'a3'}\" v-model=\"model2\">A3</cdr-radio>\n  <p>Group A Picked: {{model2}}</p>\n</div>\n```\n\n#### Event\n\nOpen the console to see output.\n\n```\nvar model3 = '';\n\nfunction eventExample(val) {\n  console.log(val + ' was selected');\n}\n\n<div>\n  <cdr-radio @change=\"eventExample\" name=\"example3\" value=\"a1\" v-model=\"model3\">A1</cdr-radio>\n  <cdr-radio @change=\"eventExample\" name=\"example3\" value=\"a2\" v-model=\"model3\">A2</cdr-radio>\n  <cdr-radio @change=\"eventExample\" name=\"example3\" :value=\"{val:'a3'}\" v-model=\"model3\">A3</cdr-radio>\n  <p>Group A Picked: {{model3}}</p>\n</div>\n```\n",
+			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nname | string | n/a | true | Sets the name of the radio. Required.\nvalue | string,number,boolean,object,array,symbol,func | n/a | true | Sets the value of the radio. Required.\n\nEvent Name | Type | Description\n--- | --- | ---\nchange | boolean|array | Selected radio value. Fires on section.\n\nSlot | Description\n--- | ---\ndefault | innerHTML inside of the radio component\n",
+			"version": "0.1.0"
+		}
+	]
+}
