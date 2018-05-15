@@ -2,34 +2,34 @@
   <div>
     <h2>CTA</h2>
     <div class="button-example">
-      <cdr-cta>
-        Default (brand)
-      </cdr-cta>
+      <cdr-cta
+      >Default (brand)</cdr-cta
+      >
       <cdr-cta
         cta-style="dark"
-      >Dark
-      </cdr-cta>
+      >Dark</cdr-cta
+      >
       <cdr-cta
         cta-style="light"
-      >Light
-      </cdr-cta>
+      >Light</cdr-cta
+      >
       <cdr-cta
         cta-style="sale"
-      >Sale
-      </cdr-cta>
+      >Sale</cdr-cta
+      >
       <cdr-cta
         tag="a"
         href="https://www.rei.com/"
         cta-style="sale"
-      >Link
-      </cdr-cta>
+      >Link</cdr-cta
+      >
     </div>
     <div class="button-example">
       <cdr-cta
         cta-style="dark"
         :full-width="true"
-      >Full width
-      </cdr-cta>
+      >Full width</cdr-cta
+      >
     </div>
   </div>
 </template>

@@ -5,10 +5,9 @@
     :type="tag === 'button' ? type : null"
     :tabindex="tag === 'button' ? null: 0"
     @click="onClick"
-  >
-    <!-- @slot innerHTML on the inside of the button component -->
-    <slot/>
-    <icon-caret-right />
+  ><slot
+  /><icon-caret-right
+  />
   </component>
 </template>
 

@@ -3,23 +3,20 @@
     <h2>CdrButton + CdrIcon Comps</h2>
     <cdr-button
       size="large"
+    ><icon-check-lg
+    />Button and Icon</cdr-button
     >
-      <icon-check-lg />
-      Button and Icon
-    </cdr-button>
     <cdr-button
       size="medium"
       style-modifiers="secondary"
+    ><icon-check-lg
+    />Button and Icon</cdr-button
     >
-      <icon-check-lg />
-      Button and Icon
-    </cdr-button>
     <cdr-button
       size="small"
+    ><icon-check-sm
+    />Button and Icon</cdr-button
     >
-      <icon-check-sm />
-      Button and Icon
-    </cdr-button>
   </div>
 </template>
 
