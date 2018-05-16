@@ -1,7 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import CdrButton from 'componentsdir/button/CdrButton';
-
-const clickHandler = jest.fn();
+import sinon from 'sinon'
 
 describe('CdrButton.vue', () => {
   // test for theme mixin
@@ -41,13 +40,14 @@ describe('CdrButton.vue', () => {
   });
 
   it('click function triggers correctly', () => {
+    const spy = sinon.spy();
     const wrapper = shallowMount(CdrButton, {
       propsData: {
-        onClick: clickHandler
+        onClick: spy
       },
     });
     wrapper.trigger('click');
-    expect(clickHandler).toHaveBeenCalled();
+    expect(spy.calledOnce).toBeTruthy();
   });
 
     it('computes base class correctly', () => {

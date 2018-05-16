@@ -8,7 +8,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-var ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -39,10 +38,6 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
       sourceMap: true
     }),
-    // extract css into its own file
-    // new ExtractCssChunks({
-    //   filename: utils.assetsPath('css/cedar-core.[contenthash].css')
-    // }),
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/cedar-components.[contenthash].css')
     }),

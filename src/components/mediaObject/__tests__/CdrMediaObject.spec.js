@@ -9,9 +9,7 @@ describe('CdrMediaObject.vue', () => {
         imgSrc: '',
       },
     });
-    console.log(wrapper.vm.$style);
-    console.log(wrapper.vm.alignClass);
-    expect(wrapper.vm.alignClass).toBe('right');
+    expect(wrapper.vm.$style['cdr-media-object__body--right']).toContain('--right');
   });
 
   it('defaults to no media align class', () => {

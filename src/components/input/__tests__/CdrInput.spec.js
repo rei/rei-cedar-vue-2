@@ -435,7 +435,7 @@ describe('CdrInput.vue', () => {
     expect(wrapper.emitted().paste).toBeTruthy();
   });
 
-  it('emits a keydown event with correct value', () => {
+  it('emits a keydown event', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
@@ -445,16 +445,6 @@ describe('CdrInput.vue', () => {
     input.trigger('keydown')
     expect(wrapper.emitted().keydown).toBeTruthy();
   });
-
-  it('emits a keydown event', () => { 
-    const wrapper = shallow(CdrInput, { 
-      propsData: { 
-        label: 'test', 
-      }, 
-    }); 
-    wrapper.vm.onKeydown(123); 
-    expect(wrapper.emitted().keydown[0][0]).toBe(123); 
-  }); 
 
   it('default validation when required works', (done) => {
     const wrapper = shallowMount(CdrInput, {
@@ -477,47 +467,6 @@ describe('CdrInput.vue', () => {
       expect(wrapper.vm.errors[0]).toBe('This field is required');
       done();
     }, 100);
-  });
-
-  it('renders feedback', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-        feedback: true,
-      },
-    });
-    wrapper.setData({ state: 'error' });
-    expect(wrapper.vm.$refs.icon.textContent).toBe('test-file-stub');
-  });
-
-  it('returns an icon for error', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-      },
-    });
-    wrapper.setData({ state: 'error' });
-    expect(wrapper.vm.getIcon).toBe('test-file-stub');
-  });
-  
-  it('returns an icon for warn', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-      },
-    });
-    wrapper.setData({ state: 'warn' });
-    expect(wrapper.vm.getIcon).toBe('test-file-stub');
-  });
-  
-  it('returns an icon for valid', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-      },
-    });
-    wrapper.setData({ state: 'valid' });
-    expect(wrapper.vm.getIcon).toBe('test-file-stub');
   });
 
   it('immediately validates', (done) => {
