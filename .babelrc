@@ -9,9 +9,9 @@
     "test": {
       "presets": [
         "env", 
-        "stage-2",
-        "./.babel-jest.js"
-      ]
+        "stage-2"
+      ],
+      "plugins": ["istanbul"]
     }
   }
 }

@@ -47,7 +47,7 @@ describe('CdrLink.vue', () => {
   it('computes the base class correctly', () => {
     const wrapper = shallowMount(CdrLink);
     expect(wrapper.classes().length).toBe(1);
-    expect(wrapper.vm.$style['cdr-link']).toContain('cdr-link');
+    expect(wrapper.vm.$style).toHaveProperty('cdr-link');
   });
   
   it('computes classes correctly for standalone modifier', () => {
@@ -56,7 +56,7 @@ describe('CdrLink.vue', () => {
         modifier: 'standalone',
       },
     });
-    expect(wrapper.vm.$style['cdr-link--standalone']).toContain('cdr-link--standalone');
+    expect(wrapper.vm.$style).toHaveProperty('cdr-link--standalone');
   });
 
   it('renders a link with a button element and no href attribute', () => {
