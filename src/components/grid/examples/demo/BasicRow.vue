@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import CdrRow from 'componentsdir/row/CdrRow';
-import CdrCol from 'componentsdir/column/CdrCol';
+import CdrRow from 'componentsdir/grid/CdrRow';
+import CdrCol from 'componentsdir/grid/CdrCol';
 
 export default {
   name: 'BasicRowExample',
