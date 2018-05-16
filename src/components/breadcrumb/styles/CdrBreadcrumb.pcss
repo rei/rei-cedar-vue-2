@@ -1,6 +1,6 @@
 /* ==========================================================================
   # CdrBreadcrumb
-  
+
   All values should map to variables in
   vars/CdrBreadcrumb.vars.pcss
   in order to allow for theming
@@ -8,4 +8,29 @@
   TOC:
 
     :Base - CdrBreadcrumb
+      :Elements
+        :breadcrumb-item
+        :delimiter
 ========================================================================== */
+
+.cdr-breadcrumb {
+  /* color: $breadcrumb-text-color; */
+
+  /* Hover
+  ========== */
+  .breadcrumb-item:hover a {
+    /* color: $breadcrumb-hover-text-color; */
+  }
+
+  /* breadcrumb-item
+  ========== */
+  span.breadcrumb-item:last-child a {
+    /* color: $breadcrumb-last-child-text-color; */
+  }
+
+  /* delimiter
+  ========== */
+  .delimiter {
+    /* color: $breadcrumb-delimiter-text-color; */
+  }
+}

@@ -16,12 +16,17 @@
   "files": [
     "dist"
   ],
+  "config": {
+    "vue_file": "CdrBreadcrumb"
+  },
   "main": "dist/cdr-breadcrumb.js",
   "style": "dist/cdr-breadcrumb.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "node build/build.js",
-    "build:docs": "node build/docs-build.js"
+    "build:docs": "node build/docs-build.js",
+    "generate": "npm run clean && node build/generate.js",
+    "clean": "rimraf dist comps sprite"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",

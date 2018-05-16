@@ -18,19 +18,19 @@ export default {
       breadcrumbItems: [
         {
           url: 'http://google.com',
-          displayText: 'Step 1 ',
+          displayText: 'Breadcrumb Step 1 ',
         },
         {
           url: 'http://rei.com',
-          displayText: 'Step 2 ',
+          displayText: 'Breadcrumb Step 2 ',
         },
         {
           url: 'http://yahoo.com',
-          displayText: 'Step 3 ',
+          displayText: 'Breadcrumb Step 3 ',
         },
         {
           url: 'http://bing.com',
-          displayText: 'Step 4 ',
+          displayText: 'Breadcrumb Step 4 ',
         },
       ],
     };

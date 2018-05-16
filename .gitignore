@@ -43,4 +43,5 @@ test/unit/coverage
 
 # Build assets
 src/**/dist/*
+dist/
 src/**/styles/themes/*
