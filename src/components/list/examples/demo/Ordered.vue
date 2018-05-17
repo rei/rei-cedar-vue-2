@@ -19,7 +19,17 @@
           modifier="ordered"
         >
           <li>List item text</li>
-          <li>List item text</li>
+          <li>List item text
+            <cdr-list>
+              <li>List item text</li>
+              <li>List item text
+                <cdr-list>
+                  <li>List item text</li>
+                  <li>List item text</li>
+                </cdr-list>
+              </li>
+            </cdr-list>
+          </li>
         </cdr-list>
       </li>
       <li>List item text</li>

@@ -19,7 +19,6 @@
 ========================================================================== */
 
 .cdr-list {
-  list-style-position: outside;
   list-style-type: none;
   padding: 0;
 
@@ -58,7 +57,7 @@
     ========== */
   &--ordered {
     list-style-type: decimal;
-    padding-left: $space-1-x;
+    padding-left: 1.5em;
     
     & li {
       padding-left: $space-quarter-x;
@@ -66,16 +65,16 @@
       /* nesting
       ---------- */
       & > .cdr-list {
-        padding-left: 12px;
+        position: relative;
+        padding-left: 1em;
 
         & > li {
-          padding: 0;
+          padding-left: 0;
 
           &::before {
             content: '\2013';
-            display: inline-block;
-            position: relative;
-            left: calc(-1 * 12px);
+            position: absolute;
+            left: 0;
           }
         }
       }
@@ -85,28 +84,92 @@
   /* Disc
      ========== */
   &--unordered {
-    padding-left: 10px;
+    position: relative;
+    padding-left: 1em;
 
     & > li::before {
       content: '\2022';
-      display: inline-block;
-      position: relative;
-      left: -10px;
-      vertical-align: middle;
-      line-height: $space-1-x;
+      position: absolute;
+      left: 0;
     }
 
     /* nesting
       ---------- */
-    & li > .cdr-list > li {
-      padding: 0;
+    & li > .cdr-list {
+      position: relative;
+      padding-left: 1em;
 
-      &::before {
-        content: '\2013';
-        display: inline-block;
+      & > li {
+        &::before {
+          content: '\2013';
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  /* Inline
+     ========== */
+  &--inline {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+
+    & > li {
+      display: block;
+
+      & + li {
+        margin-top: 0;
+        padding-left: 1em;
+      }
+    }
+
+    &.cdr-list--compact > li + li {
+      padding-left: 0.5em;
+    }
+
+    /* inline - decorated
+      ---------- */
+    &.cdr-list--unordered {
+      left: 0;
+
+      & > li {
         position: relative;
-        left: calc(-1 * 12px);
+
+        & + li {
+          padding-left: 1.5em;
+        }
+
+        &:first-of-type::before {
+          content: '';
+        }
+
+        &::before {
+          content: '\2022';
+          display: block;
+          position: absolute;
+          top: 50%;
+          transform: translate(150%, -50%);
+          height: 6px;
+          width: 6px;
+          line-height: 6px;
+          left: 0;
+        }
+      }
+
+      /* inline - compact
+---------- */
+      &.cdr-list--compact {
+        & > li + li {
+          padding-left: 1em;
+
+          &::before {
+            transform: translate(100%, -50%);
+          }
+        }
       }
     }
   }
 }
+
