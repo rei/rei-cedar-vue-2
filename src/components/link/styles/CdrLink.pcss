@@ -1,0 +1,62 @@
+/* ==========================================================================
+  # CdrLink
+
+  TOC:
+
+    :Base Styles
+      :States
+    :Modifiers
+      :Style variants
+        :Standalone
+========================================================================== */
+
+.cdr-link {
+  align-items: center;
+  background-color: $color-transparent-background;
+  border: 0;
+  color: $link-color;
+  cursor: pointer;
+  display: inline-flex;
+  fill: $link-color;
+  outline: none;
+  padding: 0;
+  text-decoration: underline;
+  vertical-align: top;
+
+  /* States
+    ---------- */
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color;
+    outline: none;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: $outline-default-style $outline-default-width $color-outline-focus;
+  }
+}
+
+/* Style variants
+  ========================================================================== */
+
+/* Standalone
+    ========== */
+.cdr-link--standalone {
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    text-decoration: underline;
+  }
+}
+
+/* With Icons
+    ========== */
+.cdr-link .cdr-link__icon {
+  fill: $link-color;
+}

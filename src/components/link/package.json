@@ -1,9 +1,9 @@
 {
-  "name": "@rei/cdr-a",
+  "name": "@rei/cdr-link",
   "version": "0.1.0",
   "author": "REI Software Engineering",
-  "description": "REI Cedar Style Framework - Vue Component for Anchor",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-a",
+  "description": "REI Cedar Style Framework - Vue Component for Link",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-link",
   "repository": {
     "type": "git",
     "url": "https://github.com/rei/rei-cedar.git"
@@ -14,26 +14,27 @@
     "access": "public"
   },
   "files": [
-   "dist"
+    "dist"
   ],
   "config": {
-    "vue_file": "CdrA"
+    "vue_file": "CdrLink"
   },
-  "main": "dist/cdr-a.js",
-  "style": "dist/cdr-a.css",
+  "main": "dist/cdr-link.js",
+  "style": "dist/cdr-link.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "node build/build.js",
     "build:docs": "node build/docs-build.js"
   },
+  "dependencies": {
+    "@rei/cdr-icon": "^0.1.0"
+  },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
-    "@rei/cdr-button": "^0.1.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.1.0",
-    "@rei/cdr-button": "^0.1.0",
     "pkg-ok": "^1.1.0"
   }
 }

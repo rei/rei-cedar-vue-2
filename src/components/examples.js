@@ -1,4 +1,4 @@
-import anchors from 'componentsdir/anchor/examples/Anchors';
+import links from 'componentsdir/link/examples/Links';
 import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
 import cards from 'componentsdir/card/examples/Cards';
@@ -19,7 +19,7 @@ import texts from 'componentsdir/text/examples/Text';
 import utilities from 'componentsdir/Utilities/Utilities';
 
 export default {
-  anchors,
+  links,
   breadcrumb,
   buttons,
   cards,

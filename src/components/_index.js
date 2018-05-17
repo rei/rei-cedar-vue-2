@@ -1,4 +1,4 @@
-import CdrA from 'componentsdir/anchor/CdrA';
+import CdrLink from 'componentsdir/link/CdrLink';
 import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
 import CdrButton from 'componentsdir/button/CdrButton';
 import CdrCard from 'componentsdir/card/CdrCard';
@@ -17,7 +17,7 @@ import CdrSelect from 'componentsdir/select/CdrSelect';
 import CdrText from 'componentsdir/text/CdrText';
 
 export default {
-  CdrA,
+  CdrLink,
   CdrBreadcrumb,
   CdrButton,
   CdrCard,
