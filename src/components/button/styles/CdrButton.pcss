@@ -35,7 +35,8 @@
   white-space: nowrap;
 
   & > .cdr-icon {
-    display: inline;
+    display: block;
+    float: left;
     fill: $button-color;
     margin-right: $space-quarter-x;
   }
@@ -126,6 +127,11 @@
     @include redwood-display-20;
 
     padding: $inset-three-quarter-x-squish;
+
+    & > .cdr-icon {
+      /* This is to correct icon size vs line height */
+      @include small-button-icon();
+    }
   }
 
   /* Full Width
@@ -137,6 +143,16 @@
   /* Breakpooint variants
     ========================================================================== */
 
+  @mixin auto-icon() {
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  @mixin small-button-icon() {
+    width: 20px;
+    height: 20px;
+  }
+
   /* @extra-small
     0px - 767px
     ========== */
@@ -146,6 +162,10 @@
 
       padding: $inset-three-quarter-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include small-button-icon();
+      }
     }
 
     &--medium\@extra-small {
@@ -153,6 +173,10 @@
 
       padding: $inset-1-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include auto-icon();
+      }
     }
 
     &--large\@extra-small {
@@ -160,6 +184,10 @@
 
       padding: $inset-1-and-a-half-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include auto-icon();
+      }
     }
   }
 
@@ -172,6 +200,10 @@
 
       padding: $inset-three-quarter-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include small-button-icon();
+      }
     }
 
     &--medium\@small {
@@ -179,6 +211,10 @@
 
       padding: $inset-1-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include auto-icon();
+      }
     }
 
     &--large\@small {
@@ -186,6 +222,10 @@
 
       padding: $inset-1-and-a-half-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include auto-icon();
+      }
     }
   }
 
@@ -198,6 +238,10 @@
 
       padding: $inset-three-quarter-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include small-button-icon();
+      }
     }
 
     &--medium\@medium {
@@ -205,6 +249,10 @@
 
       padding: $inset-1-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include auto-icon();
+      }
     }
 
     &--large\@medium {
@@ -212,6 +260,10 @@
 
       padding: $inset-1-and-a-half-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include auto-icon();
+      }
     }
   }
 
@@ -225,6 +277,10 @@
 
       padding: $inset-three-quarter-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include small-button-icon();
+      }
     }
 
     &--medium\@large {
@@ -232,6 +288,10 @@
 
       padding: $inset-1-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include auto-icon();
+      }
     }
 
     &--large\@large {
@@ -239,6 +299,10 @@
 
       padding: $inset-1-and-a-half-x-squish;
       width: auto;
+
+      & > .cdr-icon {
+        @include auto-icon();
+      }
     }
   }
 }

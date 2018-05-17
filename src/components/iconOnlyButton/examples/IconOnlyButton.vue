@@ -6,12 +6,12 @@
         <icon-twitter />
       </cdr-icon-only-button>
       <cdr-close-button :on-click="close" />
-      <cdr-icon-only-button
+      <!-- <cdr-icon-only-button
         tag="a"
         href="https://rei.com"
       >
         <icon-external-link />
-      </cdr-icon-only-button>
+      </cdr-icon-only-button> -->
       <cdr-play-button
         :on-click="play"
       />
@@ -26,13 +26,13 @@
         :on-dark="true"
         :on-click="close"
       />
-      <cdr-icon-only-button
+      <!-- <cdr-icon-only-button
         tag="a"
         href="https://rei.com"
         :on-dark="true"
       >
         <icon-external-link />
-      </cdr-icon-only-button>
+      </cdr-icon-only-button> -->
       <cdr-play-button
         :on-dark="true"
         :on-click="play"

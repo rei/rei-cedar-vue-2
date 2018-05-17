@@ -14,16 +14,17 @@
   background: none;
   border: none;
   cursor: pointer;
+  display: inline-block;
   padding: $inset-quarter-x;
 
   & > .cdr-icon {
-    display: inline;
+    display: block;
+    float: left;
     fill: $heart-of-darkness;
   }
 
   &--on-dark {
     & > .cdr-icon {
-      display: inline;
       fill: $moon-shot;
     }
   }

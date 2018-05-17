@@ -28,6 +28,8 @@
   white-space: nowrap;
 
   & > .cdr-icon {
+    display: block;
+    float: right;
     margin-left: $space-quarter-x;
   }
 
@@ -40,6 +42,13 @@
      ========== */
   &--full-width {
     width: 100%;
+
+    & > .cdr-icon {
+      display: inline-block;
+      float: none;
+      position: relative;
+      bottom: 1px; /* This is to fix the extra pixel added when svg is inline-block */
+    }
   }
 
   &--brand {
@@ -48,7 +57,6 @@
     color: $button-cta-brand-color;
 
     & > .cdr-icon {
-      display: inline;
       fill: $button-cta-brand-color;
     }
 
@@ -60,7 +68,6 @@
       color: $button-cta-brand-hover-color;
 
       & > .cdr-icon {
-        display: inline;
         fill: $button-cta-brand-hover-color;
       }
     }
@@ -72,7 +79,6 @@
     color: $button-cta-dark-color;
 
     & > .cdr-icon {
-      display: inline;
       fill: $button-cta-dark-color;
     }
 
@@ -84,7 +90,6 @@
       color: $button-cta-dark-hover-color;
 
       & > .cdr-icon {
-        display: inline;
         fill: $button-cta-dark-hover-color;
       }
     }
@@ -96,7 +101,6 @@
     color: $button-cta-light-color;
 
     & > .cdr-icon {
-      display: inline;
       fill: $button-cta-light-color;
     }
 
@@ -108,7 +112,6 @@
       color: $button-cta-light-hover-color;
 
       & > .cdr-icon {
-        display: inline;
         fill: $button-cta-light-hover-color;
       }
     }
@@ -120,7 +123,6 @@
     color: $button-cta-sale-color;
 
     & > .cdr-icon {
-      display: inline;
       fill: $button-cta-sale-color;
     }
 
@@ -132,7 +134,6 @@
       color: $button-cta-sale-hover-color;
 
       & > .cdr-icon {
-        display: inline;
         fill: $button-cta-sale-hover-color;
       }
     }

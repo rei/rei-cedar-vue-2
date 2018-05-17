@@ -140,7 +140,7 @@ export default {
     padding: 10px;
   }
 
-  .button-example button {
+  .button-example button, .button-example a {
     margin: 0 10px 5px 0;
   }
 </style>
