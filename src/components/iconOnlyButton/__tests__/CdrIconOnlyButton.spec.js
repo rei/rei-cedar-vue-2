@@ -1,8 +1,14 @@
 import { shallow } from '@vue/test-utils';
-import CdrIconButton from 'Components/iconButton/CdrIconButton';
+import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 
 describe('CdrIconButton.vue', () => {
-  it('has a failing test by default so you remember to do them', () => {
-    expect(false).toBe(true);
+  it('adds on-dark class', () => {
+    const wrapper = shallow(CdrIconOnlyButton, {
+      propsData: {
+        onDark: true,
+      }
+    });
+
+    expect(wrapper.classes()).toContain('cdr-icon-only-button--on-dark');
   });
 });

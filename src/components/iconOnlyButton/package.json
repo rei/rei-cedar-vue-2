@@ -2,7 +2,7 @@
   "name": "@rei/cdr-icon-only-button",
   "version": "0.1.0",
   "author": "REI Software Engineering",
-  "description": "REI Cedar Style Framework - Vue Component for IconButton",
+  "description": "REI Cedar Style Framework - Vue Component for IconOnlyButton",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-icon-only-button",
   "repository": {
     "type": "git",
