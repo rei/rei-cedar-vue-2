@@ -57,13 +57,6 @@ describe('CdrButton.vue', () => {
     expect(wrapper.classes()).toContain('cdr-button');
   });
 
-  it ('validates styleModifiers', () => {
-    const wrapper = shallow(CdrButton);
-    const styleModifiers = wrapper.vm.$options.props.styleModifiers;
-    expect(styleModifiers.validator('sale')).toBe(false);
-    expect(styleModifiers.validator('secondary')).toBe(true);
-  });
-
   it('adds responsive classes', () => {
     const wrapper = shallow(CdrButton, {
       propsData: {

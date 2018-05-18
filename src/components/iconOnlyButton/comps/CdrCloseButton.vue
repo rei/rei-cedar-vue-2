@@ -2,12 +2,11 @@
   <cdr-icon-only-button
     v-bind="$props"
   >
-    <icon-x-lg />
+    <icon-x-lg modifier="inherit-color" />
   </cdr-icon-only-button>
 </template>
 
 <script>
-import classModifier from 'mixinsdir/classModifier';
 import { IconXLg } from '@rei/cdr-icon';
 import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 
@@ -18,7 +17,6 @@ export default {
     IconXLg,
   },
   extends: CdrIconOnlyButton,
-  mixins: [classModifier],
 };
 </script>
 

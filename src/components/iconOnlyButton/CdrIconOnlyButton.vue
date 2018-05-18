@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[blockClass, onDarkClass]"
+    :class="[modifierClass, onDarkClass]"
     :type="tag === 'button' ? type : null"
     @click="onClick"
   >
@@ -12,11 +12,12 @@
 
 <script>
 import buttonBase from 'mixinsdir/buttonBase';
-import classModifier from 'mixinsdir/classModifier';
+import modifier from 'mixinsdir/modifier';
+import classNameModifier from 'srcdir/utils/classNameModifier';
 
 export default {
   name: 'CdrIconOnlyButton',
-  mixins: [buttonBase, classModifier],
+  mixins: [buttonBase, modifier],
   props: {
     onDark: {
       type: Boolean,
@@ -24,11 +25,11 @@ export default {
     },
   },
   computed: {
-    blockClass() {
+    baseClass() {
       return 'cdr-icon-only-button';
     },
     onDarkClass() {
-      return this.onDark ? this.modifierClass('on-dark') : null;
+      return this.onDark ? classNameModifier(this.baseClass, 'on-dark') : null;
     },
   },
 };

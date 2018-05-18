@@ -1,6 +1,9 @@
 /**
  * @mixin
  */
+
+import classNameModifier from 'srcdir/utils/classNameModifier';
+
 export default {
   props: {
     /**
@@ -37,7 +40,7 @@ export default {
   },
   computed: {
     fullWidthClass() {
-      return this.fullWidth ? this.modifierClass('full-width') : null;
+      return this.fullWidth ? classNameModifier(this.baseClass, 'full-width') : null;
     },
   },
 };

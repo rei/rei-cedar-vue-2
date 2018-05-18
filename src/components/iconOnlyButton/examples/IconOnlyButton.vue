@@ -3,7 +3,7 @@
     <h2>Icon Only Buttons</h2>
     <div class="button-example">
       <cdr-icon-only-button>
-        <icon-twitter />
+        <icon-twitter modifier="inherit-color" />
       </cdr-icon-only-button>
       <cdr-close-button :on-click="close" />
       <cdr-icon-only-button
@@ -22,7 +22,7 @@
         href="https://rei.com"
         :on-dark="true"
       >
-        <icon-twitter />
+        <icon-twitter modifier="inherit-color" />
       </cdr-icon-only-button>
       <cdr-close-button
         :on-dark="true"
@@ -33,7 +33,7 @@
         href="https://rei.com"
         :on-dark="true"
       >
-        <icon-external-link />
+        <icon-external-link modifier="inherit-color" />
       </cdr-icon-only-button>
       <cdr-play-button
         :on-dark="true"

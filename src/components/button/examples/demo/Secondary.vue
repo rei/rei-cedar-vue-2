@@ -11,7 +11,7 @@
         :size="button.size"
         :full-width="button.fullWidth"
         :responsive-size="button.responsiveSize"
-        :style-modifiers="button.styleModifiers"
+        :modifier="button.modifier"
         :type="button.type"
         :disabled="button.disabled"
       >{{ button.label }}</cdr-button>
@@ -22,7 +22,7 @@
         tag="a"
         href="https://rei.com"
         size="small"
-        style-modifiers="secondary"
+        modifier="secondary"
       >Link
       </cdr-button>
     </div>
@@ -45,21 +45,21 @@ export default {
               label: 'Large',
               disabled: false,
               size: 'large',
-              styleModifiers: 'secondary',
+              modifier: 'secondary',
               backstop: 'cdr-button--large cdr-button--secondary',
             },
             {
               label: 'Medium',
               disabled: false,
               size: 'medium',
-              styleModifiers: 'secondary',
+              modifier: 'secondary',
               backstop: 'cdr-button--medium cdr-button--secondary',
             },
             {
               label: 'Small',
               disabled: false,
               size: 'small',
-              styleModifiers: 'secondary',
+              modifier: 'secondary',
               backstop: 'cdr-button--small cdr-button--secondary',
             },
           ],
@@ -71,21 +71,21 @@ export default {
               label: 'Large',
               disabled: true,
               size: 'large',
-              styleModifiers: 'secondary',
+              modifier: 'secondary',
               backstop: 'cdr-button--large cdr-button--secondary disabled',
             },
             {
               label: 'Medium',
               disabled: true,
               size: 'medium',
-              styleModifiers: 'secondary',
+              modifier: 'secondary',
               backstop: 'cdr-button--medium cdr-button--secondary disalbed',
             },
             {
               label: 'Small',
               disabled: true,
               size: 'small',
-              styleModifiers: 'secondary',
+              modifier: 'secondary',
               backstop: 'cdr-button--small cdr-button--secondary disabled',
             },
           ],

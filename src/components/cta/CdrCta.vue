@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[blockClass, ctaClass, fullWidthClass]"
+    :class="[modifierClass, ctaClass, fullWidthClass]"
     :type="tag === 'button' ? type : null"
     :tabindex="tag === 'button' ? null: 0"
     @click="onClick"
@@ -13,7 +13,8 @@
 
 <script>
 import buttonBase from 'mixinsdir/buttonBase';
-import classModifier from 'mixinsdir/classModifier';
+import modifier from 'mixinsdir/modifier';
+import classNameModifier from 'srcdir/utils/classNameModifier';
 import { IconCaretRight } from '@rei/cdr-icon';
 
 export default {
@@ -21,7 +22,7 @@ export default {
   components: {
     IconCaretRight,
   },
-  mixins: [buttonBase, classModifier],
+  mixins: [buttonBase, modifier],
   props: {
     ctaStyle: {
       type: String,
@@ -30,11 +31,11 @@ export default {
     },
   },
   computed: {
-    blockClass() {
+    baseClass() {
       return 'cdr-cta';
     },
     ctaClass() {
-      return this.modifierClass(`${this.ctaStyle}`);
+      return classNameModifier(this.baseClass, this.ctaStyle);
     },
   },
 };

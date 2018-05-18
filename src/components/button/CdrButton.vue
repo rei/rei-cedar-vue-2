@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[blockClass, sizeClass, fullWidthClass, responsiveClass, styleModifiersClass]"
+    :class="[modifierClass, sizeClass, fullWidthClass, responsiveClass]"
     :type="tag === 'button' ? type : null"
     @click="onClick"
   >
@@ -11,8 +11,9 @@
 </template>
 
 <script>
-import classModifier from 'mixinsdir/classModifier';
 import buttonBase from 'mixinsdir/buttonBase';
+import modifier from 'mixinsdir/modifier';
+import classNameModifier from 'srcdir/utils/classNameModifier';
 
 /**
  * Cedar 2 component for button
@@ -26,7 +27,7 @@ import buttonBase from 'mixinsdir/buttonBase';
  */
 export default {
   name: 'CdrButton',
-  mixins: [buttonBase, classModifier],
+  mixins: [buttonBase, modifier],
   props: {
     /**
      * Sets a static size for the button, which scales padding and text size. {small, medium, large}
@@ -42,34 +43,24 @@ export default {
     responsiveSize: {
       type: Array,
     },
-    /**
-     * Additional style modifiers.
-     */
-    styleModifiers: {
-      type: String,
-      validator: value => value === 'secondary',
-    },
   },
   computed: {
-    blockClass() {
+    baseClass() {
       return 'cdr-button';
     },
     sizeClass() {
-      return this.modifierClass(this.size);
+      return classNameModifier(this.baseClass, this.size);
     },
     responsiveClass() {
       const responsiveClass = [];
 
       if (this.responsiveSize) {
         this.responsiveSize.forEach((val) => {
-          responsiveClass.push(this.modifierClass(val));
+          responsiveClass.push(classNameModifier(this.baseClass, val));
         });
       }
 
       return responsiveClass.join(' ');
-    },
-    styleModifiersClass() {
-      return this.styleModifiers ? this.modifierClass(this.styleModifiers) : null;
     },
   },
 };
