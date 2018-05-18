@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Buttons from 'componentsdir/button/examples/Buttons';
 
 import './css/main.postcss';
 import './cdr-assets/dist/cdr-fonts.min.css';
@@ -13,6 +14,7 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: '/', component: App },
+  { path: '/buttons', component: Buttons },
 ];
 
 const router = new VueRouter({ routes });
