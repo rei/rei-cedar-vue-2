@@ -62,7 +62,7 @@
       class="cpg-section"
       data-backstop="caption"
     />
-
+    <router-view />
   </div>
 </template>
 
