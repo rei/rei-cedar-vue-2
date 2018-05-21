@@ -1,38 +1,40 @@
 /* ==========================================================================
   # CdrList
 
-  All values should map to variables in
-  vars/CdrList.vars.pcss
-  in order to allow for theming
-
   TOC:
 
     :Base Styles
-      :Unordered
+      :cdr-list (Bare)
         :Spacing
         :Nesting
-    :Modifiers
-      :Style variants
-        :Bare
-        :Compact
-        :Ordered
-========================================================================== */
+    :Style variants
+      :Compact
+        :Nesting
+      :Ordered
+        :Nesting
+      :Unordered
+        :Nesting
+      :Inline
+        :compact
+        :unordered
+          :compact
 
+========================================================================== */
 .cdr-list {
   list-style-type: none;
-  padding: 0;
+  padding: $list-item-indentation-space;
 
   /* spacing
     ---------- */
   & > li + li {
-    margin-top: $space-half-x;
+    margin-top: $list-item-space;
   }
 
   /* nesting
     ---------- */
   & li > .cdr-list {
-    margin-top: $space-half-x;
-    padding-left: $space-1-x;
+    margin-top: $nested-list-space;
+    padding-left: $nested-list-indentation-space;
     list-style-type: none;
   }
 
@@ -43,7 +45,7 @@
     ========== */
   &--compact {
     & > li + li {
-      margin-top: $space-quarter-x;
+      margin-top: $compact-list-item-space;
     }
 
     /* nesting
@@ -57,7 +59,7 @@
     ========== */
   &--ordered {
     list-style-type: decimal;
-    padding-left: 1.5em;
+    padding-left: $ordered-list-indentation-space;
     
     & li {
       padding-left: $space-quarter-x;
@@ -66,13 +68,13 @@
       ---------- */
       & > .cdr-list {
         position: relative;
-        padding-left: 1em;
+        padding-left: $nested-list-indentation-space;
 
         & > li {
-          padding-left: 0;
+          padding-left: $list-item-indentation-space;
 
           &::before {
-            content: '\2013';
+            content: '\$nested-ordered-list-item-decorator';
             position: absolute;
             left: 0;
           }
@@ -81,14 +83,14 @@
     }
   }
 
-  /* Disc
+  /* Unordered
      ========== */
   &--unordered {
     position: relative;
-    padding-left: 1em;
+    padding-left: $unordered-list-indentation-space;
 
     & > li::before {
-      content: '\2022';
+      content: '\$unordered-list-item-decorator';
       position: absolute;
       left: 0;
     }
@@ -97,11 +99,11 @@
       ---------- */
     & li > .cdr-list {
       position: relative;
-      padding-left: 1em;
+      padding-left: $nested-list-indentation-space;
 
       & > li {
         &::before {
-          content: '\2013';
+          content: '\$nested-unordered-list-item-decorator';
           position: absolute;
           left: 0;
         }
@@ -110,35 +112,37 @@
   }
 
   /* Inline
-     ========== */
+  ========== */
   &--inline {
     display: flex;
     list-style-type: none;
-    padding-left: 0;
+    padding-left: $inline-list-space;
 
     & > li {
       display: block;
 
       & + li {
-        margin-top: 0;
-        padding-left: 1em;
+        margin-top: $inline-list-space;
+        padding-left: $inline-list-item-indentation-space;
       }
     }
 
+    /* compact
+    ---------- */
     &.cdr-list--compact > li + li {
-      padding-left: 0.5em;
+      padding-left: $inline-compact-list-item-indentation-space;
     }
 
-    /* inline - decorated
-      ---------- */
+    /* unordered
+    ---------- */
     &.cdr-list--unordered {
-      left: 0;
+      left: $inline-list-space;
 
       & > li {
         position: relative;
 
         & + li {
-          padding-left: 1.5em;
+          padding-left: $inline-unordered-list-item-indentation-space;
         }
 
         &:first-of-type::before {
@@ -146,7 +150,7 @@
         }
 
         &::before {
-          content: '\2022';
+          content: '\$unordered-list-item-decorator';
           display: block;
           position: absolute;
           top: 50%;
@@ -158,11 +162,11 @@
         }
       }
 
-      /* inline - compact
----------- */
+      /* unordered - compact
+      ---------- */
       &.cdr-list--compact {
         & > li + li {
-          padding-left: 1em;
+          padding-left: $inline-list-item-indentation-space;
 
           &::before {
             transform: translate(100%, -50%);

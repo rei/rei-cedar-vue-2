@@ -10,20 +10,12 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 
-/**
- * Cedar 2 component for list
- * <span class="modifiers">Modifiers</span>
- * {compact, ordered, unordered}
- * **Note**: type doesn't affect the modifier.
- * @version 0.1.0
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- */
 export default {
   name: 'CdrList',
   mixins: [modifier],
   props: {
     /**
-     * Tag expects: 'ul' = Unordered List or 'ol' = Ordered List.
+     * Tag accepts a user defined element and expects either: 'ul' = Unordered List or 'ol' = Ordered List.
      */
     tag: {
       type: String,
