@@ -3,6 +3,20 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Buttons from 'componentsdir/button/examples/Buttons';
+import Cards from 'componentsdir/card/examples/Cards';
+import ActivityCards from 'compositionsdir/activityCard/examples/activity';
+import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
+import Grids from 'componentsdir/grid/examples/Grid';
+import Icons from 'componentsdir/icon/examples/Icons';
+import Images from 'componentsdir/image/examples/Images';
+import Links from 'componentsdir/link/examples/Links';
+import Lists from 'componentsdir/list/examples/Lists';
+import MediaObjects from 'componentsdir/mediaObject/examples/mediaObject';
+import Quotes from 'componentsdir/quote/examples/Quote';
+import Radios from 'componentsdir/radio/examples/Radios';
+import Ratings from 'componentsdir/rating/examples/Ratings';
+import Selects from 'componentsdir/select/examples/Selects';
+import Texts from 'componentsdir/text/examples/Text';
 
 import './css/main.postcss';
 import './cdr-assets/dist/cdr-fonts.min.css';
@@ -15,6 +29,20 @@ Vue.use(VueRouter);
 const routes = [
   { path: '/', component: App },
   { path: '/buttons', component: Buttons },
+  { path: '/cards', component: Cards },
+  { path: '/checkboxes', component: CheckBoxes },
+  { path: '/grids', component: Grids },
+  { path: '/activitycards', component: ActivityCards },
+  { path: '/icons', component: Icons },
+  { path: '/images', component: Images },
+  { path: '/links', component: Links },
+  { path: '/lists', component: Lists },
+  { path: '/mediaobjects', component: MediaObjects },
+  { path: '/quotes', component: Quotes },
+  { path: '/radios', component: Radios },
+  { path: '/ratings', component: Ratings },
+  { path: '/selects', component: Selects },
+  { path: '/texts', component: Texts },
 ];
 
 const router = new VueRouter({ routes });
