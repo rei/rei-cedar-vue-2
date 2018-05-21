@@ -28,13 +28,13 @@
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
-    "@rei/cdr-a": "^0.1.0",
+    "@rei/cdr-link": "^0.1.0",
     "@rei/cdr-icon": "^0.1.0",
     "@rei/cdr-img": "^0.1.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-a": "^0.1.0",
+    "@rei/cdr-link": "^0.1.0",
     "@rei/cdr-assets": "^0.1.0",
     "@rei/cdr-icon": "^0.1.0",
     "@rei/cdr-img": "^0.1.0",
