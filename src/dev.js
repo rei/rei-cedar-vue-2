@@ -4,7 +4,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Buttons from 'componentsdir/button/examples/Buttons';
 import Cards from 'componentsdir/card/examples/Cards';
-import ActivityCards from 'compositionsdir/activityCard/examples/activity';
 import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
 import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
@@ -17,6 +16,10 @@ import Radios from 'componentsdir/radio/examples/Radios';
 import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Texts from 'componentsdir/text/examples/Text';
+
+import ActivityCards from 'compositionsdir/activityCard/examples/activity';
+import Captions from 'compositionsdir/caption/examples/Caption';
+import Searches from 'compositionsdir/search/examples/searchbox';
 
 import './css/main.postcss';
 import './cdr-assets/dist/cdr-fonts.min.css';
@@ -32,7 +35,6 @@ const routes = [
   { path: '/cards', component: Cards },
   { path: '/checkboxes', component: CheckBoxes },
   { path: '/grids', component: Grids },
-  { path: '/activitycards', component: ActivityCards },
   { path: '/icons', component: Icons },
   { path: '/images', component: Images },
   { path: '/links', component: Links },
@@ -43,6 +45,10 @@ const routes = [
   { path: '/ratings', component: Ratings },
   { path: '/selects', component: Selects },
   { path: '/texts', component: Texts },
+
+  { path: '/activitycards', component: ActivityCards },
+  { path: '/captions', component: Captions },
+  { path: '/searches', component: Searches },
 ];
 
 const router = new VueRouter({ routes });
