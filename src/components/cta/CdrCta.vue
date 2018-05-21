@@ -7,6 +7,7 @@
     @click="onClick"
   ><slot
   /><icon-caret-right
+    class="cdr-button__icon"
   />
   </component>
 </template>
