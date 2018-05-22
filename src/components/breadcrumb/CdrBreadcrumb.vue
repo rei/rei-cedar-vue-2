@@ -10,25 +10,23 @@
           v-for="(item, index) in items"
           :key="index">
           <a :href="item.url">{{ item.displayText }}</a>
-          <span v-if="index < items.length - 1"> / </span>
+          <span
+            class="delimiter"
+            v-if="index < items.length - 1">
+          /</span>
         </span>
       </span>
     </div>
-    <div>
+    <div class="breadcrumb-container">
       <span
         v-if="(!isExpanded) && shouldTruncate"
-        class="breadcrumb-container"
       >
-        <span
-          class="delimiter"
+        <span class="breadcrumb-item ellipses"><a
+          href="javascript:void(0)"
           @click="isExpanded = true">
-          ... /
-        </span>
-        <span class="breadcrumb-item">
+        ...</a><span class="delimiter">/</span></span><span class="breadcrumb-item">
           <a :href="items[items.length - 2]">{{ items[items.length - 2].displayText }}</a>
-        </span>
-        <span class="delimiter"> / </span>
-        <span class="breadcrumb-item">
+        <span class="delimiter">/</span></span><span class="breadcrumb-item">
           <a :href="items[items.length - 1]">{{ items[items.length - 1].displayText }}</a>
         </span>
       </span>
@@ -37,8 +35,9 @@
         class="breadcrumb-item"
         v-for="(item, index) in items"
         :key="index">
-        <a :href="item.url">{{ item.displayText }}</a>
-        <span v-if="index < items.length - 1"> / </span>
+        <a :href="item.url">{{ item.displayText }}</a><span
+          class="delimiter"
+          v-if="index < items.length - 1">/</span>
       </span>
     </div>
   </div>
@@ -105,14 +104,13 @@ export default {
       this.shouldTruncate = this.calculateTruncation(this.$refs, this.truncationThreshold)
     });
   },
-  updated() {
-  },
   methods: {
     calculateTruncation: (refs, threshold) => {
       let shouldTruncate = false;
       let containerWidth = refs.container.offsetWidth || 0;
       let breadcrumbWidth = refs.ruler.offsetWidth || 0;
-      if(breadcrumbWidth/containerWidth > threshold) {
+      let ratio = breadcrumbWidth/containerWidth || 0;
+      if(ratio > threshold) {
         shouldTruncate = true;
       }
       return shouldTruncate;

@@ -1,6 +1,6 @@
 /* ==========================================================================
   # CdrCheckbox
-  
+
   All values should map to variables in
   vars/CdrCheckbox.vars.pcss
   in order to allow for theming
@@ -73,7 +73,7 @@
   ========== */
   &__input[indeterminate] ~ .cdr-checkbox__figure {
     border-color: $checkbox-figure-indeterminate-border-color;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -147,7 +147,7 @@
     &[indeterminate] {
       & ~ .cdr-checkbox__figure {
         border-color: $checkbox-figure-disabled-border-color !important;
-        
+
         &::after {
           background-color: $checkbox-figure-checked-disabled-background-color !important;
         }

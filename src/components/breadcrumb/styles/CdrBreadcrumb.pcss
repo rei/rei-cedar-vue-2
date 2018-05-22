@@ -11,26 +11,47 @@
       :Elements
         :breadcrumb-item
         :delimiter
+      :Modifiers
+        :sm
 ========================================================================== */
 
 .cdr-breadcrumb {
-  /* color: $breadcrumb-text-color; */
+  a {
+    @include redwood-display-10;
+
+    color: $breadcrumb-text-color;
+  }
 
   /* Hover
   ========== */
-  .breadcrumb-item:hover a {
-    /* color: $breadcrumb-hover-text-color; */
+  .breadcrumb-item {
+    display: inline-block;
+
+    &:hover a {
+      color: $breadcrumb-hover-text-color;
+    }
   }
 
   /* breadcrumb-item
   ========== */
   span.breadcrumb-item:last-child a {
-    /* color: $breadcrumb-last-child-text-color; */
+    color: $breadcrumb-last-child-text-color;
   }
 
   /* delimiter
   ========== */
   .delimiter {
-    /* color: $breadcrumb-delimiter-text-color; */
+    @include redwood-display-10;
+
+    color: $breadcrumb-delimiter-text-color;
+    padding-left: $space-quarter-x;
+    padding-right: $space-half-x;
+  }
+
+  @media (--md-mq) {
+    .breadcrumb-item a,
+    .breadcrumb-item .delimiter {
+      @include redwood-display-20;
+    }
   }
 }
