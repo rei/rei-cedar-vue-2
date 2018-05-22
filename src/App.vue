@@ -4,25 +4,25 @@
     class="cdr-container-fluid"
   >
     <h1>Cedar Proving grounds</h1>
-    <!-- <links
+    <links
       class="cpg-section"
       data-backstop="links"
     />
     <anchors
       class="cpg-section"
       data-backstop="anchors"
-    /> -->
+    />
     <breadcrumb
       class="cpg-section"
       data-backstop="breadcrumb"
     />
-    <!-- <buttons
+    <buttons
       class="cpg-section"
       data-backstop="buttons"
     />
-    <cards class="cpg-section"/> -->
+    <cards class="cpg-section"/>
     <!-- <card-content class="cpg-section"></card-content> -->
-    <!-- <activity class="cpg-section"/>
+    <activity class="cpg-section"/>
     <checkboxes
       class="cpg-section"
       data-backstop="checkboxes"
@@ -69,8 +69,8 @@
     <caption-example
       class="cpg-section"
       data-backstop="caption"
-    /> -->
-
+    />
+    <router-view />
   </div>
 </template>
 
