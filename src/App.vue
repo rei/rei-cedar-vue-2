@@ -8,10 +8,6 @@
       class="cpg-section"
       data-backstop="links"
     />
-    <anchors
-      class="cpg-section"
-      data-backstop="anchors"
-    />
     <breadcrumb
       class="cpg-section"
       data-backstop="breadcrumb"
