@@ -6,19 +6,21 @@
         tag="a"
         href="https://rei.com"
         size="large"
+        data-backstop="cdr-button--large icon"
       ><icon-check-lg
         class="cdr-button__icon"
       />Anchor and Icon</cdr-button
       >
       <cdr-button
         size="medium"
-        style-modifiers="secondary"
+        data-backstop="cdr-button--medium icon"
       ><icon-check-lg
         class="cdr-button__icon"
       />Medium and Icon</cdr-button
       >
       <cdr-button
         size="small"
+        data-backstop="cdr-button--small icon"
       ><icon-check-lg
         modifier="sm"
         class="cdr-button__icon"
@@ -35,6 +37,8 @@
       <h2>Using a sprite</h2>
       <cdr-button
         size="large"
+        modifier="secondary"
+        data-backstop="cdr-button--large secondary icon"
       ><cdr-icon
         class="cdr-button__icon"
         use="#download"
@@ -43,7 +47,8 @@
       >
       <cdr-button
         size="medium"
-        style-modifiers="secondary"
+        modifier="secondary"
+        data-backstop="cdr-button--medium secondary icon"
       ><cdr-icon
         class="cdr-button__icon"
         use="#twitter"
@@ -52,6 +57,8 @@
       >
       <cdr-button
         size="small"
+        modifier="secondary"
+        data-backstop="cdr-button-small secondary icon"
       ><cdr-icon
         class="cdr-button__icon"
         use="#instagram"
@@ -72,6 +79,7 @@
       <cdr-button
         size="large"
         full-width="true"
+        data-backstop="cdr-button--large full-width icon"
       ><icon-clock
         class="cdr-button__icon"
       />Full Width</cdr-button>

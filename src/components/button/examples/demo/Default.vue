@@ -17,11 +17,19 @@
       >{{ button.label }}</cdr-button>
     </div>
     <div class="button-example">
+      <h2>Responsive</h2>
+      <cdr-button
+        :full-width="true"
+        :responsive-size="['large@small']"
+      >Responsive with default</cdr-button>
+    </div>
+    <div class="button-example">
       <h2>Primary Anchor</h2>
       <cdr-button
         tag="a"
         href="https://rei.com"
         size="large"
+        data-backstop="cdr-button--large anchor"
       >Link
       </cdr-button>
     </div>
@@ -97,30 +105,21 @@ export default {
               disabled: false,
               size: 'small',
               fullWidth: true,
+              backstop: 'cdr-button--mall full-width',
             },
             {
               label: 'Medium + full width',
               disabled: false,
               size: 'medium',
               fullWidth: true,
+              backstop: 'cdr-button--medium full-width',
             },
             {
               label: 'Large + full width',
               disabled: false,
               size: 'large',
               fullWidth: true,
-            },
-          ],
-        },
-        {
-          title: 'Responsive',
-          buttons: [
-            {
-              label: 'Responsive with default',
-              disabled: false,
-              fullWidth: true,
-              responsiveSize: ['large@small'],
-              backstop: 'cdr-button--large@small',
+              backstop: 'cdr-button--large full-width',
             },
           ],
         },

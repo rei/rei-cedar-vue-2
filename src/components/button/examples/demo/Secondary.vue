@@ -14,6 +14,7 @@
         :modifier="button.modifier"
         :type="button.type"
         :disabled="button.disabled"
+        :data-backstop="button.backstop"
       >{{ button.label }}</cdr-button>
     </div>
     <div class="button-example">
@@ -23,6 +24,7 @@
         href="https://rei.com"
         size="small"
         modifier="secondary"
+        data-backstop="cdr-button--small secondary anchor"
       >Link
       </cdr-button>
     </div>
@@ -46,21 +48,21 @@ export default {
               disabled: false,
               size: 'large',
               modifier: 'secondary',
-              backstop: 'cdr-button--large cdr-button--secondary',
+              backstop: 'cdr-button--large secondary',
             },
             {
               label: 'Medium',
               disabled: false,
               size: 'medium',
               modifier: 'secondary',
-              backstop: 'cdr-button--medium cdr-button--secondary',
+              backstop: 'cdr-button--medium secondary',
             },
             {
               label: 'Small',
               disabled: false,
               size: 'small',
               modifier: 'secondary',
-              backstop: 'cdr-button--small cdr-button--secondary',
+              backstop: 'cdr-button--small secondary',
             },
           ],
         },
@@ -72,21 +74,21 @@ export default {
               disabled: true,
               size: 'large',
               modifier: 'secondary',
-              backstop: 'cdr-button--large cdr-button--secondary disabled',
+              backstop: 'cdr-button--large secondary disabled',
             },
             {
               label: 'Medium',
               disabled: true,
               size: 'medium',
               modifier: 'secondary',
-              backstop: 'cdr-button--medium cdr-button--secondary disalbed',
+              backstop: 'cdr-button--medium secondary disalbed',
             },
             {
               label: 'Small',
               disabled: true,
               size: 'small',
               modifier: 'secondary',
-              backstop: 'cdr-button--small cdr-button--secondary disabled',
+              backstop: 'cdr-button--small secondary disabled',
             },
           ],
         },

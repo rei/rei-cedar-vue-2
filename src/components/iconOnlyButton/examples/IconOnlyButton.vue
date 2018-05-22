@@ -2,17 +2,23 @@
   <div>
     <h2>Icon Only Buttons</h2>
     <div class="button-example">
-      <cdr-icon-only-button>
+      <cdr-icon-only-button
+        data-backstop="cdr-icon-only-button twitter"
+      >
         <icon-twitter modifier="inherit-color" />
       </cdr-icon-only-button>
-      <cdr-close-button :on-click="close" />
+      <cdr-close-button
+        data-backstop="cdr-icon-only-button close"
+        :on-click="close" />
       <cdr-icon-only-button
         tag="a"
         href="https://rei.com"
+        data-backstop="cdr-icon-only-button anchor external-link"
       >
         <icon-external-link />
       </cdr-icon-only-button>
       <cdr-play-button
+        data-backstop="cdr-icon-only-button play"
         :on-click="play"
       />
     </div>
@@ -21,23 +27,27 @@
         tag="a"
         href="https://rei.com"
         :on-dark="true"
+        data-backstop="cdr-icon-only-button--on-dark anchor twitter"
       >
         <icon-twitter modifier="inherit-color" />
       </cdr-icon-only-button>
       <cdr-close-button
         :on-dark="true"
         :on-click="close"
+        data-backstop="cdr-icon-only-button--on-dark close"
       />
       <cdr-icon-only-button
         tag="a"
         href="https://rei.com"
         :on-dark="true"
+        data-backstop="cdr-icon-only-button--on-dark external-link"
       >
         <icon-external-link modifier="inherit-color" />
       </cdr-icon-only-button>
       <cdr-play-button
         :on-dark="true"
         :on-click="play"
+        data-backstop="cdr-icon-only-button--on-dark play"
       />
     </div>
   </div>
