@@ -1,46 +1,41 @@
 /* ==========================================================================
   # CdrList
 
-  All values should map to variables in
-  vars/CdrList.vars.pcss
-  in order to allow for theming
-
   TOC:
 
     :Base Styles
-      :Spacing
-      :Nesting
-    :Modifiers
-      :Style variants
-        :Compact
-        :Unstyled
-        :Disc
-        :Circle
-        :Inline
-        :Numbered
-        :Menu
-        :Inline Bullet
-========================================================================== */
+      :cdr-list (Bare)
+        :Spacing
+        :Nesting
+    :Style variants
+      :Compact
+        :Nesting
+      :Ordered
+        :Nesting
+      :Unordered
+        :Nesting
+      :Inline
+        :compact
+        :unordered
+          :compact
 
+========================================================================== */
 .cdr-list {
-  list-style-type: disc;
-  padding-left: $list-padding-left;
+  list-style-type: none;
+  padding: $list-item-indentation-space;
 
   /* spacing
     ---------- */
-
   & > li + li {
-    margin-top: $list-spacing-margin-top;
+    margin-top: $list-item-space;
   }
 
   /* nesting
     ---------- */
-
-  & > li {
-    & > ul,
-    & > ol {
-      margin-top: $list-nesting-margin-top;
-    }
+  & li > .cdr-list {
+    margin-top: $nested-list-space;
+    padding-left: $nested-list-indentation-space;
+    list-style-type: none;
   }
 
   /* Style variants
@@ -48,155 +43,137 @@
 
   /* Compact
     ========== */
-  &--compact > li + li {
-    margin-top: $list-compact-margin-top;
+  &--compact {
+    & > li + li {
+      margin-top: $compact-list-item-space;
+    }
+
+    /* nesting
+      ---------- */
+    & li > .cdr-list {
+      margin-top: $space-quarter-x;
+    }
   }
 
-  /* Spread
+  /* Ordered
     ========== */
-  &--spread > li + li {
-    margin-top: $list-spread-margin-top;
-  }
+  &--ordered {
+    list-style-type: decimal;
+    padding-left: $ordered-list-indentation-space;
+    
+    & li {
+      padding-left: $space-quarter-x;
 
-  /* Unstyled
-     ========== */
-  &--unstyled {
-    list-style-type: none;
-  }
+      /* nesting
+      ---------- */
+      & > .cdr-list {
+        position: relative;
+        padding-left: $nested-list-indentation-space;
 
-  /* Disc
-     ========== */
-  &--disc {
-    list-style-type: none;
+        & > li {
+          padding-left: $list-item-indentation-space;
 
-    & > li {
-      position: relative;
-
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: $list-disc-left;
-        height: $list-disc-height;
-        width: $list-disc-width;
-        background-color: $list-disc-background-color;
-        border-radius: 50%;
+          &::before {
+            content: '\$nested-ordered-list-item-decorator';
+            position: absolute;
+            left: 0;
+          }
+        }
       }
     }
   }
 
-  /* Circle
+  /* Unordered
      ========== */
-  &--circle {
-    list-style-type: none;
-    
-    & > li {
-      position: relative;
+  &--unordered {
+    position: relative;
+    padding-left: $unordered-list-indentation-space;
 
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: $list-circle-left;
-        height: $list-circle-height;
-        width: $list-circle-width;
-        background-color: $list-circle-background-color;
-        border: $list-circle-border;
-        border-radius: 50%;
+    & > li::before {
+      content: '\$unordered-list-item-decorator';
+      position: absolute;
+      left: 0;
+    }
+
+    /* nesting
+      ---------- */
+    & li > .cdr-list {
+      position: relative;
+      padding-left: $nested-list-indentation-space;
+
+      & > li {
+        &::before {
+          content: '\$nested-unordered-list-item-decorator';
+          position: absolute;
+          left: 0;
+        }
       }
     }
   }
 
   /* Inline
-     ========== */
+  ========== */
   &--inline {
-    list-style-type: none;
-    padding: $list-inline-padding;
     display: flex;
+    list-style-type: none;
+    padding-left: $inline-list-space;
 
     & > li {
-      display: inline-block;
-      padding-bottom: 0;
+      display: block;
 
       & + li {
-        margin-top: 0;
-        margin-left: $list-inline-margin-left;
-      }
-
-      &:first-of-type::before {
-        display: none;
+        margin-top: $inline-list-space;
+        padding-left: $inline-list-item-indentation-space;
       }
     }
 
-    /* inline - decorated
+    /* compact
+    ---------- */
+    &.cdr-list--compact > li + li {
+      padding-left: $inline-compact-list-item-indentation-space;
+    }
+
+    /* unordered
+    ---------- */
+    &.cdr-list--unordered {
+      left: $inline-list-space;
+
+      & > li {
+        position: relative;
+
+        & + li {
+          padding-left: $inline-unordered-list-item-indentation-space;
+        }
+
+        &:first-of-type::before {
+          content: '';
+        }
+
+        &::before {
+          content: '\$unordered-list-item-decorator';
+          display: block;
+          position: absolute;
+          top: 50%;
+          transform: translate(150%, -50%);
+          height: 6px;
+          width: 6px;
+          line-height: 6px;
+          left: 0;
+        }
+      }
+
+      /* unordered - compact
       ---------- */
-    &.cdr-list--disc > li::before,
-    &.cdr-list--circle > li::before {
-      left: $list-inline-decorated-left;
-      transform: translate(-50%, -50%);
-    }
+      &.cdr-list--compact {
+        & > li + li {
+          padding-left: $inline-list-item-indentation-space;
 
-    /* inline - compact
-      ---------- */
-    &.cdr-list--compact {
-      & > li + li {
-        margin-left: $list-inline-compact;
-      }
-
-      /* inline - compact - decorated
-        ---------- */
-      &.cdr-list--disc > li::before,
-      &.cdr-list--circle > li::before {
-        left: $list-inline-compact-decorated-left;
-      }
-    }
-
-    /* inline - spread
-      ---------- */
-    &.cdr-list--spread {
-      & > li + li {
-        margin-left: $list-inline-spread;
-      }
-
-      /* inline - spread - decorated
-        ---------- */
-      &.cdr-list--disc > li::before,
-      &.cdr-list--circle > li::before {
-        left: $list-inline-spread-decorated-left;
-      }
-    }
-  }
-
-  /* Numbered
-     ========== */
-  &--numbered {
-    list-style-type: decimal;
-  }
-
-  /* Menu
-     ========== */
-  &--menu {
-    list-style-type: none;
-    padding-left: $list-menu-padding-left;
-
-    & > li {
-      border-bottom-width: 0.1rem;
-      border-bottom-style: solid;
-      border-color: #222;
-      padding: $list-menu-li-padding;
-
-      & > a {
-        font-family: $font-copy-secondary;
-        font-weight: $font-copy-secondary-weight;
-        font-size: $font-size-navigation;
-        padding: 1.1rem 1.6rem;
-        color: #000;
-        display: inline-block;
+          &::before {
+            transform: translate(100%, -50%);
+          }
+        }
       }
     }
   }
 }
+
