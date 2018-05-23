@@ -4,23 +4,23 @@
     class="cdr-container-fluid"
   >
     <h1>Cedar Proving grounds</h1>
-    <a href="/#/buttons">Buttons</a>
-    <a href="/#/grids">Grids</a>
-    <a href="/#/cards">Cards</a>
-    <a href="/#/checkboxes">Checkboxes</a>
-    <a href="/#/icons">Icons</a>
-    <a href="/#/images">Images</a>
-    <a href="/#/links">Links</a>
-    <a href="/#/lists">Lists</a>
-    <a href="/#/mediaobjects">Media Objects</a>
-    <a href="/#/quotes">Quotes</a>
-    <a href="/#/ratings">Ratings</a>
-    <a href="/#/radios">Radios</a>
-    <a href="/#/selects">Selects</a>
-    <a href="/#/texts">Texts</a>
-    <a href="/#/activitycards">Activity Cards</a>
-    <a href="/#/captions">Captions</a>
-    <a href="/#/searches">Searches</a>
+    <router-link to="buttons">Buttons</router-link>
+    <router-link to="grids">Grids</router-link>
+    <router-link to="cards">Cards</router-link>
+    <router-link to="checkboxes">Checkboxes</router-link>
+    <router-link to="icons">Icons</router-link>
+    <router-link to="images">Images</router-link>
+    <router-link to="links">Links</router-link>
+    <router-link to="lists">Lists</router-link>
+    <router-link to="mediaobjects">Media Objects</router-link>
+    <router-link to="quotes">Quotes</router-link>
+    <router-link to="ratings">Ratings</router-link>
+    <router-link to="radios">Radios</router-link>
+    <router-link to="selects">Selects</router-link>
+    <router-link to="texts">Texts</router-link>
+    <router-link to="activitycards">Activity Cards</router-link>
+    <router-link to="captions">Captions</router-link>
+    <router-link to="searches">Searches</router-link>
     <links
       class="cpg-section"
       data-backstop="links"
