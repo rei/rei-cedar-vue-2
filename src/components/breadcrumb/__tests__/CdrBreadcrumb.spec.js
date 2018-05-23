@@ -66,7 +66,8 @@ describe('CdrBreadcrumb.vue', () => {
     let props = wrapper.props();
     props.items = BreadcrumbItems;
     wrapper.setProps(props);
-    wrapper.trigger('resize');
+    window.dispatchEvent(new Event('resize'));
+    //wrapper.trigger('resize');
     expect(wrapper.props().shouldTruncate).toBe(false);
   });
 
@@ -76,22 +77,27 @@ describe('CdrBreadcrumb.vue', () => {
     props.items = BreadcrumbItems;
     wrapper.setProps(props);
     window.dispatchEvent(new Event('resize'));
-    expect(wrapper.vm.shouldTruncate).toBe(true);
+    // wrapper.vm.$nextTick(() => {
+    //   //expect(wrapper.vm.calculateTruncation).toHaveBeenCalled();
+    //   expect(wrapper.vm.shouldTruncate).toBe(true);
+    //   done();
+    // });
+
+    setTimeout(() => {
+      expect(wrapper.vm.shouldTruncate).toBe(true);
+    }, 500);
   });
 
   it('breadcrumb should not truncate', () => {
-    const shouldTruncate = wrapper.vm.calculateTruncation(
-      wrapper.vm.$refs,
-      wrapper.vm.truncationThreshold
-    );
+    const shouldTruncate = wrapper.vm.calculateTruncation();
     expect(shouldTruncate).toBe(false);
   });
 
   it('breadcrumb should truncate', () => {
-    const shouldTruncate = wrapper.vm.calculateTruncation(
-      wrapper.vm.$refs,
-      -1
-    );
+    let props = wrapper.props();
+    props.truncationThreshold = -1;
+    wrapper.setProps(props);
+    const shouldTruncate = wrapper.vm.calculateTruncation();
     expect(shouldTruncate).toBe(true);
   });
 });

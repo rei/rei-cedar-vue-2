@@ -50,9 +50,9 @@
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
-/* eslint-disable */
 
 import modifier from 'mixinsdir/modifier';
+import _ from 'lodash';
 
 export default {
   name: 'CdrBreadcrumb',
@@ -95,26 +95,29 @@ export default {
   },
   computed: {
     baseClass() {
-      return 'cdr-breadcrumb'
-    }
+      return 'cdr-breadcrumb';
+    },
   },
   mounted() {
-    this.shouldTruncate = this.calculateTruncation(this.$refs, this.truncationThreshold);
-    window.addEventListener('resize', () => {
-      this.shouldTruncate = this.calculateTruncation(this.$refs, this.truncationThreshold)
-    });
+    this.shouldTruncate = this.calculateTruncation();
+    window.addEventListener('resize', _.debounce(() => {
+      this.shouldTruncate = this.calculateTruncation();
+    }, 250));
   },
   methods: {
-    calculateTruncation: (refs, threshold) => {
+    calculateTruncation() {
       let shouldTruncate = false;
-      let containerWidth = refs.container.offsetWidth || 0;
-      let breadcrumbWidth = refs.ruler.offsetWidth || 0;
-      let ratio = breadcrumbWidth/containerWidth || 0;
-      if(ratio > threshold) {
+      const containerWidth = this.$refs.container.offsetWidth || 0;
+      const breadcrumbWidth = this.$refs.ruler.offsetWidth || 0;
+      const ratio = breadcrumbWidth / containerWidth || 0;
+      if (ratio > this.truncationThreshold) {
         shouldTruncate = true;
       }
       return shouldTruncate;
     },
+    // handleResize() {
+    //   return
+    // },
   },
 };
 </script>
