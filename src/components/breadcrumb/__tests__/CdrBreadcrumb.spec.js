@@ -1,5 +1,9 @@
 import { shallow } from '@vue/test-utils';
 import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
+import _ from 'lodash';
+
+jest.unmock('lodash');
+_.debounce = jest.fn((fn) => fn);
 
 describe('CdrBreadcrumb.vue', () => {
   let wrapper = null;
@@ -71,21 +75,19 @@ describe('CdrBreadcrumb.vue', () => {
     expect(wrapper.props().shouldTruncate).toBe(false);
   });
 
-  it('trigger resize should truncate', () => {
-    let props = wrapper.props();
-    props.truncationThreshold = -1;
-    props.items = BreadcrumbItems;
-    wrapper.setProps(props);
+  it('trigger resize should truncate', (done) => {
+    wrapper = shallow(CdrBreadcrumb, {
+      propsData: {
+        truncationThreshold: -1,
+        items: BreadcrumbItems,
+      },
+      attachToDocument: true,
+    });
     window.dispatchEvent(new Event('resize'));
-    // wrapper.vm.$nextTick(() => {
-    //   //expect(wrapper.vm.calculateTruncation).toHaveBeenCalled();
-    //   expect(wrapper.vm.shouldTruncate).toBe(true);
-    //   done();
-    // });
-
-    setTimeout(() => {
+    wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.shouldTruncate).toBe(true);
-    }, 500);
+      done();
+    });
   });
 
   it('breadcrumb should not truncate', () => {

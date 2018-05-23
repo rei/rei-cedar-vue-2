@@ -101,6 +101,7 @@ export default {
   mounted() {
     this.shouldTruncate = this.calculateTruncation();
     window.addEventListener('resize', _.debounce(() => {
+      console.log('in debounce');
       this.shouldTruncate = this.calculateTruncation();
     }, 250));
   },
