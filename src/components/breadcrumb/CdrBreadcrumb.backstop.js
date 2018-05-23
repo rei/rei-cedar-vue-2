@@ -1,4 +1,4 @@
 module.exports = [{
   label: 'Breadcrumb',
-  selectors: [],
+  selectors: '[data-backstop="breadcrumbs"]',
 }];

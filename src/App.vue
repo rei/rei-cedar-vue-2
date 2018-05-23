@@ -27,7 +27,7 @@
     />
     <breadcrumb
       class="cpg-section"
-      data-backstop="breadcrumb"
+      data-backstop="breadcrumbs"
     />
     <buttons
       class="cpg-section"
