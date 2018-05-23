@@ -78,7 +78,7 @@
     <div class="button-example">
       <cdr-button
         size="large"
-        full-width="true"
+        full-width
         data-backstop="cdr-button--large full-width icon"
       ><icon-clock
         class="cdr-button__icon"

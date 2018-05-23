@@ -14,9 +14,11 @@
     />
     <cta
       class="cpg-section"
+      data-backstop="cta-buttons"
     />
     <icon-only-buttons
       class="cpg-section"
+      data-backstop="icon-only-buttons"
     />
     <cards class="cpg-section"/>
     <!-- <card-content class="cpg-section"></card-content> -->
