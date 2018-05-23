@@ -26,6 +26,9 @@ export default {
   mixins: [buttonBase, modifier],
   props: {
     ctaStyle: {
+      /**
+       * Changes the color of the cdr-cta button match different themes.
+       */
       type: String,
       default: 'brand',
       validator: value => (['brand', 'dark', 'light', 'sale'].indexOf(value) >= 0) || false,

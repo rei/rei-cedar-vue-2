@@ -19,6 +19,9 @@ export default {
   name: 'CdrIconOnlyButton',
   mixins: [buttonBase, modifier],
   props: {
+    /**
+     * Sets icon fill to contrast light/dark background.
+     */
     onDark: {
       type: Boolean,
       default: false,

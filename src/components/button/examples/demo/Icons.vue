@@ -42,7 +42,6 @@
       ><cdr-icon
         class="cdr-button__icon"
         use="#download"
-        modifier="inherit-color"
       />Button and Icon</cdr-button
       >
       <cdr-button
@@ -52,7 +51,6 @@
       ><cdr-icon
         class="cdr-button__icon"
         use="#twitter"
-        modifier="inherit-color"
       />Button and Icon</cdr-button
       >
       <cdr-button
@@ -62,7 +60,6 @@
       ><cdr-icon
         class="cdr-button__icon"
         use="#instagram"
-        modifier="inherit-color"
       />Button and Icon</cdr-button
       >
     </div>

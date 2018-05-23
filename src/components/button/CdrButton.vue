@@ -22,7 +22,6 @@ import classNameModifier from 'srcdir/utils/classNameModifier';
  * As such, the decision to use CdrButton vs CdrAnchor should be made based on what
  * you need the rendered element to look like.
  *
- * @version 0.1.0
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
 export default {
@@ -38,7 +37,7 @@ export default {
       validator: value => (['small', 'medium', 'large'].indexOf(value) >= 0) || false,
     },
     /**
-     * Render a specific button size at a specific breakpoint. Takes precedence over staticSize and fullWidth.
+     * Render a specific button size at a specific breakpoint. Takes precedence over size and fullWidth.
      */
     responsiveSize: {
       type: Array,

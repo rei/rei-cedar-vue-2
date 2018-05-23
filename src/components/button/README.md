@@ -1,39 +1,81 @@
-# <span class="display-name">CdrButton</span>
+## <span class="usage">Usage</span>
 
-## <span class="usage">Usage Tips</span>
+```
+  <cdr-button
+    type="button"
+    @onClick="myFunction"
+  >Button</cdr-button>
+```
 
-### <span class="full-width">Full Width<span>
+### <span class="variants">Variants</span>
 
-The full-width prop can be combined with static-size to create, for instance, a small button that is 100% wide.
+#### <span class="anchor">Anchor</span>
 
-`<cdr-button :static-size="small" :full-width="true">Small Full Width Button</cdr-button>`
+`cdr-button` can render as either a button or an anchor element with the same styling; button is the default. 
 
-Unlike some of the other sizing props, fullWidth can be used together with CTA style modifiers.
+```
+  <cdr-button
+    tag="a"
+    href="https://rei.com"
+  >REI</cdr-button>
+```
 
-### <span class="static-size">Resoponsive Size<span>
+#### <span class="secondary">Secondary</span>
 
-CdrButton has responsive classes that leverage static sizes {`small`, `medium`, `large`} against set breakpoints {`extra-small`, `small`, `medium`, `large`}. This prop accepts an Array of class names and defaults to `[]`. Class names are formated as buttonSize@breakpoint.
+Adding a `modifier` attribute with a value of `secondary` will render the secondary button style. 
 
-`<cdr-button :responsive-size="['large@extra-small']">Responsive Button</cdr-button>`
+```
+  <cdr-button
+    modifier="secondary"
+    @onClick="myFunction"
+  >Secondary</cdr-button>
+```
 
-Can be combined with static-size and full-width, though responsive size will take precedence because of CSS cascade.
+#### <span class="">Composing with Icons</span>
 
-### <span class="style-modifiers">Style Modifiers<span>
+The default slot in `cdr-button` can be used to include an icon. `cdr-button` does not include `cdr-icon` as a dependency, so you will need to import it into your composition. If you are trying to create an icon-only button (i.e. no text), there's a separate component for that: `@rei/cdr-icon-only-button`.
 
-Syle modifiers will change the look of a button from the default. Accepted values are {`secondary`, `cta-brand`, `cta-light`, `cta-dark`, `cta-sale`}.
+```
+  import { CdrIcon } from '@rei/cdr-icon'
 
-#### <span class="secondary">Secondary Buttons</span>
+  <cdr-button
+    size="large"
+    modifier="secondary"
+  ><cdr-icon
+    class="cdr-button__icon"
+    use="#download"
+    modifier="inherit-color"
+  />Button and Icon</cdr-button
+  >
+```
 
-Secondary buttons can be combined with staticSize, full-width, and responsiveSize the same way the default button styles work.
+You can also use single icon components. Per design guidelines, icons should always display to the left of text.
 
-`<cdr-button :static-size="small" :style-modifiers="['secondary']">A small secondary styled button</cdr-button>`
+```
+  import { IconCheckLg } from '@rei/cdr-icon'
 
-#### <span class="cta-butons">CTA Buttons</span>
+  <cdr-button
+  ><icon-check-lg
+    class="cdr-button__icon"
+  />Medium and Icon</cdr-button
+  >
+```
 
-CTA buttons are more strict about styling, and cannot be combined with staticSize and responsiveSize. CTA buttons are basically always staticSize: large, though they will also work with the fullWidth prop. Padding and text size do not scale. The various CTA classes change colors.
+The `cdr-button__icon` class needs to be added to the icon element inside of `cdr-button`. This allows `cdr-button` to dictate some icon styling across modularized CSS.
 
-`<cdr-button :style-modifiers="['cta-sale']" :full-width="true">CTA Button Sale</cdr-button>`
+## <span class="accessibility">Accessibility</span>
 
-## <span class="ada">Accessibility</span>
+Since `cdr-button` can render as a button or an anchor, users should focus on what the semantically correct element would be. It will always look like a button, so as long as the correct semantic choice is made, the default ARIA context should suffice. 
 
-Since CdrButton will render a button, or an anchor that looks like a button, it will have the correct ARIA context by default. 
+## <span class="">Installation</span>
+
+Import the component to use it in your application.
+
+```
+  npm i @rei/cdr-button
+```
+
+## <span class="">Contributing</span>
+
+### Request an an enhancement
+Join us on Slack at [#design-systems](https://rei.slack.com/messages/CA58YCGN4).
