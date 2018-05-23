@@ -19,11 +19,11 @@
     </div>
     <div class="breadcrumb-container">
       <span
-        v-if="(!isExpanded) && shouldTruncate"
+        v-if="(truncate)"
       >
         <span class="breadcrumb-item ellipses"><a
           href="javascript:void(0)"
-          @click="isExpanded = true">
+          @click="shouldTruncate = false">
         ...</a><span class="delimiter">/</span></span><span class="breadcrumb-item">
           <a :href="items[items.length - 2]">{{ items[items.length - 2].displayText }}</a>
         <span class="delimiter">/</span></span><span class="breadcrumb-item">
@@ -71,18 +71,11 @@ export default {
       default: () => [],
     },
     /**
-     * Flag to track expand toggle
-     */
-    isExpanded: {
-      type: Boolean,
-      default: false,
-    },
-    /**
      * Flag to track container width threshold exceeded
      */
-    shouldTruncate: {
+    truncationEnabled: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     /**
      * Value for max breadcrumb width to container width
@@ -93,32 +86,33 @@ export default {
       default: 0.8,
     },
   },
+  data() {
+    return {
+      thresholdExceeded: false,
+      shouldTruncate: this.truncationEnabled,
+    };
+  },
   computed: {
     baseClass() {
       return 'cdr-breadcrumb';
     },
+    truncate() {
+      return this.shouldTruncate && this.thresholdExceeded;
+    },
   },
   mounted() {
-    this.shouldTruncate = this.calculateTruncation();
+    this.thresholdExceeded = this.calculateTruncation();
     window.addEventListener('resize', _.debounce(() => {
-      console.log('in debounce');
-      this.shouldTruncate = this.calculateTruncation();
+      this.thresholdExceeded = this.calculateTruncation();
     }, 250));
   },
   methods: {
     calculateTruncation() {
-      let shouldTruncate = false;
       const containerWidth = this.$refs.container.offsetWidth || 0;
       const breadcrumbWidth = this.$refs.ruler.offsetWidth || 0;
       const ratio = breadcrumbWidth / containerWidth || 0;
-      if (ratio > this.truncationThreshold) {
-        shouldTruncate = true;
-      }
-      return shouldTruncate;
+      return (ratio > this.truncationThreshold);
     },
-    // handleResize() {
-    //   return
-    // },
   },
 };
 </script>

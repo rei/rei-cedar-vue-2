@@ -71,8 +71,7 @@ describe('CdrBreadcrumb.vue', () => {
     props.items = BreadcrumbItems;
     wrapper.setProps(props);
     window.dispatchEvent(new Event('resize'));
-    //wrapper.trigger('resize');
-    expect(wrapper.props().shouldTruncate).toBe(false);
+    expect(wrapper.vm.thresholdExceeded).toBe(false);
   });
 
   it('trigger resize should truncate', (done) => {
@@ -85,7 +84,8 @@ describe('CdrBreadcrumb.vue', () => {
     });
     window.dispatchEvent(new Event('resize'));
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.shouldTruncate).toBe(true);
+      console.log('KRIS vm = ', wrapper.vm.thresholdExceeded);
+      expect(wrapper.vm.thresholdExceeded).toBe(true);
       done();
     });
   });
