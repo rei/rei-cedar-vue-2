@@ -1,0 +1,15 @@
+$xs-bp: 0;
+$sm-bp: 768px;
+$md-bp: 992px;
+$lg-bp: 1200px;
+
+/* Media Queries */
+
+@custom-media --xs-mq (width >= $xs-bp);
+@custom-media --xs-mq-only (width >= $xs-bp) and (width < $sm-bp);
+@custom-media --sm-mq (width >= $sm-bp);
+@custom-media --sm-mq-only (width >= $sm-bp) and (width < $md-bp);
+@custom-media --md-mq (width >= $md-bp);
+@custom-media --md-mq-only (width >= $md-bp) and (width < $lg-bp);
+@custom-media --lg-mq (width >= $lg-bp);
+@custom-media --lg-mq-only (width >= $lg-bp);

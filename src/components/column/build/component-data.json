@@ -1,0 +1,120 @@
+{
+	"name": "CdrCol",
+	"versions": [
+		{
+			"api": {
+				"props": [
+					{
+						"name": "span",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Number of columns (1-12) the column should span."
+					},
+					{
+						"name": "spanSm",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "spanMd",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "spanLg",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "offsetLeft",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Number of columns (1-12) of empty space to add left of this column."
+					},
+					{
+						"name": "offsetLeftSm",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "offsetLeftMd",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "offsetLeftLg",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "offsetRight",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Number of columns (1-12) of empty space to add right of this column."
+					},
+					{
+						"name": "offsetRightSm",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "offsetRightMd",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "offsetRightLg",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "alignSelf",
+						"type": "string",
+						"default": "n/a",
+						"description": "How the column should align (overrides cdr-row alignment). Possible values: {top, middle, bottom, stretch}. See CSS flexbox align-self."
+					},
+					{
+						"name": "alignSelfSm",
+						"type": "string",
+						"default": "n/a",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "alignSelfMd",
+						"type": "string",
+						"default": "n/a",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "alignSelfLg",
+						"type": "string",
+						"default": "n/a",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "isRow",
+						"type": "boolean",
+						"default": "false",
+						"description": "Makes the column act as a new cdr-row. Setting this to true exposes the same props as cdr-row."
+					}
+				],
+				"slots": [
+					{
+						"name": "default",
+						"description": "innerHTML inside of the column component"
+					}
+				]
+			},
+			"version": "0.1.0"
+		}
+	]
+}

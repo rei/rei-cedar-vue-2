@@ -1,0 +1,24 @@
+{
+	"name": "CdrIcon",
+	"versions": [
+		{
+			"api": {
+				"props": [
+					{
+						"name": "use",
+						"type": "string",
+						"default": "n/a",
+						"description": "The href attribute passed to the use element. Will be prefixed with # automatically"
+					}
+				],
+				"slots": [
+					{
+						"name": "default",
+						"description": "any valid svg xml"
+					}
+				]
+			},
+			"version": "0.2.0"
+		}
+	]
+}

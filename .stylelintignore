@@ -1,0 +1,10 @@
+# built files
+dist/
+dist-docs/
+release/
+backstop_data/
+
+node_modules/
+
+src/css/settings/brandai.pcss
+*.md

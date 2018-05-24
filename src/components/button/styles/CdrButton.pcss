@@ -1,0 +1,134 @@
+/* ==========================================================================
+  # CdrButton
+  
+  All values should map to variables in
+  vars/CdrButton.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base Styles
+      :States
+    :Modifiers
+      :Style variants
+        :Secondary
+      :Size variants
+        :sm
+        :xs
+========================================================================== */
+
+.cdr-button {
+  background-color: $button-background-color;
+  border-color: $button-border-color;
+  border-width: $button-border-width;
+  border-style: $button-border-style;
+  border-radius: $button-border-radius;
+  color: $button-color;
+  cursor: $button-cursor;
+  display: $button-display;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-style: $button-font-style;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
+  outline: $button-outline;
+  padding: $button-padding;
+  text-align: $button-text-align;
+  text-decoration: $button-text-decoration;
+  white-space: $button-white-space;
+
+  /* States
+    ---------- */
+
+  &:hover,
+  &:active {
+    text-decoration: $button-hover-text-decoration;
+    outline: $button-hover-text-outline;
+    background-color: $button-hover-background-color;
+    border-color: $button-hover-border-color;
+    color: $button-hover-color;
+  }
+
+  &:focus {
+    outline: $button-focus-outline;
+    box-shadow: $button-focus-box-shadow;
+    border-color: $button-focus-border-color;
+    border-width: $button-focus-border-width;
+    border-style: $button-focus-border-style;
+    border-radius: $button-focus-border-radius;
+  }
+
+  &[disabled] {
+    background-color: $button-disabled-background-color !important;
+    border-color: $button-disabled-border-color !important;
+    color: $button-disabled-color !important;
+    cursor: $button-disabled-cursor !important;
+  }
+
+  /* Modifier style variants
+    ========================================================================== */
+    
+  /* Secondary
+     ========== */
+
+  &--secondary {
+    background-color: $button-secondary-background-color;
+    border-color: $button-secondary-border-color;
+    color: $button-secondary-color;
+
+    /* States
+    ---------- */
+
+    &:hover,
+    &:active {
+      background-color: $button-secondary-hover-background-color;
+      border-color: $button-secondary-hover-border-color;
+      color: $button-secondary-hover-color;
+    }
+
+    &[disabled] {
+      background-color: $button-secondary-disabled-background-color !important;
+      border-color: $button-secondary-disabled-border-color !important;
+      color: $button-secondary-disabled-color !important;
+    }
+  }
+
+  &--cta-sale {
+    background-color: $button-cta-sale-background-color;
+    border-color: $button-cta-sale-border-color;
+    color: $button-cta-sale-color;
+
+    &:hover,
+    &:active {
+      background-color: $button-cta-sale-hover-background-color;
+      border-color: $button-cta-sale-hover-border-color;
+    }
+  }
+
+  /* Size variants
+    ========================================================================== */
+
+  /* sm
+    ========== */
+
+  &--sm {
+    font-family: $button-sm-font-family;
+    font-size: $button-sm-font-size;
+    font-style: $button-sm-font-style;
+    font-weight: $button-sm-font-weight;
+    line-height: $button-sm-line-height;
+    padding: $button-sm-padding;
+  }
+
+  /* xs
+    ========== */
+
+  &--xs {
+    font-family: $button-xs-font-family;
+    font-size: $button-xs-font-size;
+    font-style: $button-xs-font-style;
+    font-weight: $button-xs-font-weight;
+    line-height: $button-xs-line-height;
+    padding: $button-xs-padding;
+  }
+}

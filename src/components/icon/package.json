@@ -1,0 +1,46 @@
+{
+  "name": "@rei/cdr-icon",
+  "version": "0.2.0",
+  "author": "REI Software Engineering",
+  "description": "REI Cedar Style Framework - Vue Component for Icon",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-icon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
+  },
+  "license": "ISC",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "sprite"
+  ],
+  "config": {
+    "vue_file": "CdrIcon"
+  },
+  "main": "dist/cdr-icon.js",
+  "style": "dist/cdr-icon.css",
+  "scripts": {
+    "prepublishOnly": "npm run build && pkg-ok",
+    "build": "npm run generate && node build/build.js",
+    "build:docs": "node build/docs-build.js",
+    "generate": "npm run clean && node build/generate.js",
+    "clean": "rimraf dist comps sprite"
+  },
+  "peerDependencies": {
+    "@rei/cdr-assets": "^0.1.0",
+    "vue": "^2.5.13"
+  },
+  "devDependencies": {
+    "@rei/cdr-assets": "^0.1.0",
+    "fs-extra": "^5.0.0",
+    "glob": "^7.1.2",
+    "jsdom": "^11.7.0",
+    "lodash": "^4.17.5",
+    "pkg-ok": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "svg-sprite": "^1.4.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "CdrButton",
+	"versions": [
+		{
+			"api": {
+				"props": [
+					{
+						"name": "type",
+						"type": "string",
+						"default": "\"button\"",
+						"description": "Defines the button type. Possible values: {button, submit, reset}."
+					},
+					{
+						"name": "onClick",
+						"type": "func",
+						"default": "function() { return function () { return null; }; }",
+						"description": "Add custom click actions."
+					}
+				],
+				"slots": [
+					{
+						"name": "default",
+						"description": "innerHTML on the inside of the button component"
+					}
+				]
+			},
+			"version": "0.1.0"
+		}
+	]
+}

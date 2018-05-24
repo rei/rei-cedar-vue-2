@@ -1,0 +1,110 @@
+{
+	"name": "CdrInput",
+	"versions": [
+		{
+			"api": {
+				"props": [
+					{
+						"name": "id",
+						"type": "string",
+						"default": "n/a",
+						"description": "`id` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated."
+					},
+					{
+						"name": "label",
+						"type": "string",
+						"default": "n/a",
+						"description": "Label text. This is required for a11y even if hiding the label with `hideLabel`."
+					},
+					{
+						"name": "hideLabel",
+						"type": "boolean",
+						"default": "n/a",
+						"description": "Removes the label element but sets the input `aria-label` to `label` text for a11y."
+					},
+					{
+						"name": "multiLine",
+						"type": "boolean",
+						"default": "n/a",
+						"description": "Changes the input to a textarea."
+					},
+					{
+						"name": "pattern",
+						"type": "string",
+						"default": "n/a",
+						"description": "Regex validation pattern. Useful for simple validation."
+					},
+					{
+						"name": "patternError",
+						"type": "string",
+						"default": "n/a",
+						"description": "Error message to be displayed when `pattern` validation fails."
+					},
+					{
+						"name": "feedback",
+						"type": "boolean",
+						"default": "n/a",
+						"description": "Enables icon feedback as part of validation for valid, warn, and error states."
+					},
+					{
+						"name": "type",
+						"type": "string",
+						"default": "\"text\"",
+						"description": "Input type. NOTE: This component is meant for text style inputs. Other input types (checkbox, radio) have their own components."
+					},
+					{
+						"name": "rules",
+						"type": "array",
+						"default": "function() { return []; }",
+						"description": "Array of functions. Provide your own validation function(s). Takes the input string and outputs an object with a state and message. State is a String with value `valid`, `warning`, or `error`. Message is any String."
+					},
+					{
+						"name": "debounce",
+						"type": "boolean|number",
+						"default": "false",
+						"description": "Boolean or Number. `true` has a default of 500ms. Providing a number will set debounce to that (in ms). `false` is no debounce."
+					}
+				],
+				"events": [
+					{
+						"name": "keydown",
+						"type": "event",
+						"description": "Fires when a key is pressed."
+					},
+					{
+						"name": "paste",
+						"type": "event",
+						"description": "Fires when text is pasted into input."
+					},
+					{
+						"name": "focus",
+						"type": "event",
+						"description": "Fires when input gains focus."
+					},
+					{
+						"name": "blur",
+						"type": "event",
+						"description": "Fires when input loses focus."
+					},
+					{
+						"name": "input",
+						"type": "event",
+						"description": "Current input value. Fires while typing.\nReturns (value, event)"
+					},
+					{
+						"name": "change",
+						"type": "string",
+						"description": "New input value (if changed). Fires on blur."
+					}
+				],
+				"slots": [
+					{
+						"name": "preicon",
+						"description": "Icon to be put in front of input"
+					}
+				]
+			},
+			"version": "0.1.2"
+		}
+	]
+}
