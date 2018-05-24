@@ -8,6 +8,10 @@
       class="cpg-section"
       data-backstop="links"
     />
+    <accordion
+      class="cpg-section"
+      data-backstop="accordion"
+    />
     <buttons
       class="cpg-section"
       data-backstop="buttons"
