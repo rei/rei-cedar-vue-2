@@ -53,3 +53,13 @@ This property is the string that is displayed upon rendering the breadcrumb elem
   }
 </script>
 ```
+
+## Component Infrastructure
+
+### Props
+
+#### items
+
+  Items are the array that the breadcrumb component interates over to create the breadcrumb.  The items collection should be ordered and will render from index 0 from the left to index n to the right.
+
+####
