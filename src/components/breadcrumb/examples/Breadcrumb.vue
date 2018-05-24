@@ -124,16 +124,3 @@ export default {
   },
 };
 </script>
-<style>
-  .breadcrumb-demo-container {
-    margin-left: 30px;
-  }
-
-  h2 {
-    padding: 0 15px;
-  }
-
-  h6 {
-    padding: 15px 30px;
-  }
-</style>
