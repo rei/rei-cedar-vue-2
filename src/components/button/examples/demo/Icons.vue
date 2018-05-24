@@ -66,7 +66,7 @@
     <div class="button-example">
       <cdr-button
         size="small"
-        :responsive-size="['large@extra-small', 'medium@small', 'small@large']"
+        :responsive-size="['large@xs', 'medium@sm', 'small@lg']"
       ><icon-clock
         class="cdr-button__icon"
       />Responsive</cdr-button

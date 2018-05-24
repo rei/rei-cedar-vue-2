@@ -15,7 +15,6 @@
 <script>
 import buttonBase from 'mixinsdir/buttonBase';
 import modifier from 'mixinsdir/modifier';
-import classNameModifier from 'srcdir/utils/classNameModifier';
 import { IconCaretRight } from '@rei/cdr-icon';
 
 export default {
@@ -39,7 +38,7 @@ export default {
       return 'cdr-cta';
     },
     ctaClass() {
-      return classNameModifier(this.baseClass, this.ctaStyle);
+      return this.modifyClassName(this.baseClass, this.ctaStyle);
     },
   },
 };

@@ -13,7 +13,6 @@
 <script>
 import buttonBase from 'mixinsdir/buttonBase';
 import modifier from 'mixinsdir/modifier';
-import classNameModifier from 'srcdir/utils/classNameModifier';
 
 /**
  * Cedar 2 component for button
@@ -38,6 +37,7 @@ export default {
     },
     /**
      * Render a specific button size at a specific breakpoint. Takes precedence over size and fullWidth.
+     * Format is size@breakpoint (ex: large@sm).
      */
     responsiveSize: {
       type: Array,
@@ -48,14 +48,14 @@ export default {
       return 'cdr-button';
     },
     sizeClass() {
-      return classNameModifier(this.baseClass, this.size);
+      return this.modifyClassName(this.baseClass, this.size);
     },
     responsiveClass() {
       const responsiveClass = [];
 
       if (this.responsiveSize) {
         this.responsiveSize.forEach((val) => {
-          responsiveClass.push(classNameModifier(this.baseClass, val));
+          responsiveClass.push(this.modifyClassName(this.baseClass, val));
         });
       }
 

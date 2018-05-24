@@ -13,7 +13,6 @@
 <script>
 import buttonBase from 'mixinsdir/buttonBase';
 import modifier from 'mixinsdir/modifier';
-import classNameModifier from 'srcdir/utils/classNameModifier';
 
 export default {
   name: 'CdrIconOnlyButton',
@@ -32,7 +31,7 @@ export default {
       return 'cdr-icon-only-button';
     },
     onDarkClass() {
-      return this.onDark ? classNameModifier(this.baseClass, 'on-dark') : null;
+      return this.onDark ? this.modifyClassName(this.baseClass, 'on-dark') : null;
     },
   },
 };
