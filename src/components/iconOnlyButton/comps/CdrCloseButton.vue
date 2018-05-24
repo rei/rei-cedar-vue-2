@@ -1,5 +1,6 @@
 <template>
   <cdr-icon-only-button
+    aria-label="Close"
     v-bind="$props"
   >
     <icon-x-lg modifier="inherit-color" />

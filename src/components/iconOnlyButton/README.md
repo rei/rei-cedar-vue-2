@@ -4,21 +4,12 @@
 
 ```
   <cdr-icon-only-button
+    aria-label="Twitter"
   ><icon-twitter modifier="inherit-color" 
   /></cdr-icon-only-button>
 ```
 
 The icon element needs `modifier="inherit-color"` added so that the fill color on the icon is correct. 
-
-The `cta-style` prop will allow you to change the color to match different themes. Accepted values are `brand`, `dark`, `light`, and `sale`.
-
-```
-  <cdr-cta
-    tag="a"
-    cta-style="sale"
-    href="https://rei.com"
-  >Learn More</cdr-cta>
-```
 
 ### <span class="variants">Variants</span>
 
@@ -35,7 +26,11 @@ Separate components for `cdr-close-button` and `cdr-play-button` are included in
 
 ## <span class="accessibility">Accessibility</span>
 
-Since `cdr-icon-only-button` can render as a button or an anchor, users should focus on what the semantically correct element would be. It will always look like a call to action button, so as long as the correct semantic choice is made, the default ARIA context should suffice. 
+`cdr-icon-only-button` needs some extra accessibility work since it doesn't include human readable text. Use `aria-label` to give screen readers additional context for the button.
+
+`cdr-close-button` and `cdr-play-button` don't need `aria-label`, as it's already handled in the component itself.
+
+Since `cdr-icon-only-button` can render as a button or an anchor, users should focus on what the semantically correct element would be.
 
 ## <span class="">Installation</span>
 

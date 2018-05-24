@@ -3,6 +3,7 @@
     <h2>Icon Only Buttons</h2>
     <div class="button-example">
       <cdr-icon-only-button
+        aria-label="Twitter"
         data-backstop="cdr-icon-only-button twitter"
       >
         <icon-twitter modifier="inherit-color" />
@@ -11,6 +12,7 @@
         data-backstop="cdr-icon-only-button close"
         :on-click="close" />
       <cdr-icon-only-button
+        aria-label="External Link"
         tag="a"
         href="https://rei.com"
         data-backstop="cdr-icon-only-button anchor external-link"
@@ -24,6 +26,7 @@
     </div>
     <div class="button-example dark">
       <cdr-icon-only-button
+        aria-label="Twitter"
         tag="a"
         href="https://rei.com"
         :on-dark="true"
@@ -37,6 +40,7 @@
         data-backstop="cdr-icon-only-button--on-dark close"
       />
       <cdr-icon-only-button
+        aria-label="External Link"
         tag="a"
         href="https://rei.com"
         :on-dark="true"

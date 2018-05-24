@@ -1,5 +1,6 @@
 <template>
   <cdr-icon-only-button
+    aria-label="Play"
     v-bind="$props"
   >
     <icon-play modifier="inherit-color" />
