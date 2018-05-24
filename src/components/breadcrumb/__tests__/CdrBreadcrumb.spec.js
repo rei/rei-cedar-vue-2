@@ -84,7 +84,6 @@ describe('CdrBreadcrumb.vue', () => {
     });
     window.dispatchEvent(new Event('resize'));
     wrapper.vm.$nextTick(() => {
-      console.log('KRIS vm = ', wrapper.vm.thresholdExceeded);
       expect(wrapper.vm.thresholdExceeded).toBe(true);
       done();
     });
