@@ -2,10 +2,29 @@
 	"name": "CdrRating",
 	"versions": [
 		{
-			"readme": "# <span class=\"display-name\">CdrRating<span>\n\nRatings are rounded to nearest .25 for displaying stars.\n\n### <span class=\"modifiers>Modifiers</span>\n\nModifiers can be combined 1 from each grouping.\n\n{small, medium, large}\n\nDefault is large.\n\n### Large + compact\n\n```\n<div>\n  <cdr-rating rating=\"5\" count=\"10\" modifier=\"large\"></cdr-rating>\n  <cdr-rating :rating=\"1\" :count=\"100\" modifier=\"large\" compact></cdr-rating>\n</div>\n```\n\n### Medium + compact\n\n```\n<div>\n  <cdr-rating rating=\"5\" count=\"10\" modifier=\"medium\"></cdr-rating>\n  <cdr-rating :rating=\"1\" :count=\"100\" modifier=\"medium\" compact></cdr-rating>\n</div>\n```\n\n### Small + compact\n\n```\n<div>\n  <cdr-rating rating=\"5\" count=\"10\" modifier=\"small\"></cdr-rating>\n  <cdr-rating :rating=\"1\" :count=\"100\" modifier=\"small\" compact></cdr-rating>\n</div>\n```",
-			"examples": "",
-			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nrating | string,number | n/a | true | Rating out of 5\ncount | string,number | n/a | false | Number of ratings\ncompact | boolean | false | false | Hides the word 'reviews' if true\n",
-			"version": "0.1.0"
+			"api": {
+				"props": [
+					{
+						"name": "rating",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Rating out of 5"
+					},
+					{
+						"name": "count",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Number of ratings"
+					},
+					{
+						"name": "compact",
+						"type": "boolean",
+						"default": "false",
+						"description": "Hides the word 'reviews' if true"
+					}
+				]
+			},
+			"version": "0.1.1"
 		}
 	]
 }

@@ -2,9 +2,190 @@
 	"name": "CdrRow",
 	"versions": [
 		{
-			"readme": "# <span class=\"display-name\">CdrRow</span>\n\nCedar 2 component for row\n",
-			"examples": "",
-			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\ncols | string,number | n/a | false | Number of columns in the row (1-12, auto).\ncolsSm | string,number | n/a | false | Sm breakpoint and above\ncolsMd | string,number | n/a | false | Md breakpoint and above\ncolsLg | string,number | n/a | false | Lg breakpoint and above\njustify | string | n/a | false | How columns should be justified within empty space of the row. Possible values: {left, center, right, around, between}. See CSS flexbox justify-content.\njustifySm | string | n/a | false | Sm breakpoint and above\njustifyMd | string | n/a | false | Md breakpoint and above\njustifyLg | string | n/a | false | Lg breakpoint and above\nalign | string | n/a | false | How columns of different heights should align. {top, middle, bottom, stretch}. See CSS flexbox align-items.\nalignSm | string | n/a | false | Sm breakpoint and above\nalignMd | string | n/a | false | Md breakpoint and above\nalignLg | string | n/a | false | Lg breakpoint and above\ngutter | string | n/a | false | Overrides default gutter spacing. {none}.\ngutterSm | string | n/a | false | Sm breakpoint and above\ngutterMd | string | n/a | false | Md breakpoint and above\ngutterLg | string | n/a | false | Lg breakpoint and above\nvertical | boolean | false | false | Changes row to a column layout. See CSS flexbox flex-direction.\nverticalSm | boolean | false | false | Sm breakpoint and above\nverticalMd | boolean | false | false | Md breakpoint and above\nverticalLg | boolean | false | false | Lg breakpoint and above\nwrap | boolean | false | false | Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.\nwrapSm | boolean | false | false | Sm breakpoint and above\nwrapMd | boolean | false | false | Md breakpoint and above\nwrapLg | boolean | false | false | Lg breakpoint and above\nnowrap | boolean | false | false | Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.\nnowrapSm | boolean | false | false | Sm breakpoint and above\nnowrapMd | boolean | false | false | Md breakpoint and above\nnowrapLg | boolean | false | false | Lg breakpoint and above\ntype | string | \"normal\" | false | Changes grid to built with ul>li rather than divs. {normal, list}\n\nSlot | Description\n--- | ---\ndefault | innerHTML inside the row component\n",
+			"api": {
+				"props": [
+					{
+						"name": "cols",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Number of columns in the row (1-12, auto)."
+					},
+					{
+						"name": "colsSm",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "colsMd",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "colsLg",
+						"type": "string|number",
+						"default": "n/a",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "justify",
+						"type": "string",
+						"default": "n/a",
+						"description": "How columns should be justified within empty space of the row. Possible values: {left, center, right, around, between}. See CSS flexbox justify-content."
+					},
+					{
+						"name": "justifySm",
+						"type": "string",
+						"default": "n/a",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "justifyMd",
+						"type": "string",
+						"default": "n/a",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "justifyLg",
+						"type": "string",
+						"default": "n/a",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "align",
+						"type": "string",
+						"default": "n/a",
+						"description": "How columns of different heights should align. {top, middle, bottom, stretch}. See CSS flexbox align-items."
+					},
+					{
+						"name": "alignSm",
+						"type": "string",
+						"default": "n/a",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "alignMd",
+						"type": "string",
+						"default": "n/a",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "alignLg",
+						"type": "string",
+						"default": "n/a",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "gutter",
+						"type": "string",
+						"default": "n/a",
+						"description": "Overrides default gutter spacing. {none}."
+					},
+					{
+						"name": "gutterSm",
+						"type": "string",
+						"default": "n/a",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "gutterMd",
+						"type": "string",
+						"default": "n/a",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "gutterLg",
+						"type": "string",
+						"default": "n/a",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "vertical",
+						"type": "boolean",
+						"default": "false",
+						"description": "Changes row to a column layout. See CSS flexbox flex-direction."
+					},
+					{
+						"name": "verticalSm",
+						"type": "boolean",
+						"default": "false",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "verticalMd",
+						"type": "boolean",
+						"default": "false",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "verticalLg",
+						"type": "boolean",
+						"default": "false",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "wrap",
+						"type": "boolean",
+						"default": "false",
+						"description": "Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap."
+					},
+					{
+						"name": "wrapSm",
+						"type": "boolean",
+						"default": "false",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "wrapMd",
+						"type": "boolean",
+						"default": "false",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "wrapLg",
+						"type": "boolean",
+						"default": "false",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "nowrap",
+						"type": "boolean",
+						"default": "false",
+						"description": "Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap."
+					},
+					{
+						"name": "nowrapSm",
+						"type": "boolean",
+						"default": "false",
+						"description": "Sm breakpoint and above"
+					},
+					{
+						"name": "nowrapMd",
+						"type": "boolean",
+						"default": "false",
+						"description": "Md breakpoint and above"
+					},
+					{
+						"name": "nowrapLg",
+						"type": "boolean",
+						"default": "false",
+						"description": "Lg breakpoint and above"
+					},
+					{
+						"name": "type",
+						"type": "string",
+						"default": "\"normal\"",
+						"description": "Changes grid to built with ul>li rather than divs. {normal, list}"
+					}
+				],
+				"slots": [
+					{
+						"name": "default",
+						"description": "innerHTML inside the row component"
+					}
+				]
+			},
 			"version": "0.1.0"
 		}
 	]
