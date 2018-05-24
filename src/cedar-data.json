@@ -12,7 +12,7 @@
 							}
 						]
 					},
-					"version": "0.1.0"
+										"version": "0.1.0"
 				}
 			]
 		},
@@ -347,7 +347,7 @@
 							}
 						]
 					},
-					"version": "0.1.0"
+					"version": "1.0.0-alpha.1"
 				}
 			]
 		},
@@ -462,22 +462,52 @@
 			]
 		},
 		{
+			"name": "CdrLink",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "tag",
+								"type": "string",
+								"default": "\"a\"",
+								"description": "MISSING DESCRIPTION"
+							},
+							{
+								"name": "href",
+								"type": "string",
+								"default": "\"#\"",
+								"description": "MISSING DESCRIPTION"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML on the inside of the anchor component"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
 			"name": "CdrList",
 			"versions": [
 				{
 					"api": {
 						"props": [
 							{
-								"name": "listType",
+								"name": "tag",
 								"type": "string",
 								"default": "\"ul\"",
-								"description": "List type. 'ul' = Unordered List. 'ol' = Ordered List."
+								"description": "Tag accepts a user defined element and expects either: 'ul' = Unordered List or 'ol' = Ordered List."
 							}
 						],
 						"slots": [
 							{
 								"name": "default",
-								"description": "innerHTML inside of the list component"
+								"description": "MISSING DESCRIPTION"
 							}
 						]
 					},
