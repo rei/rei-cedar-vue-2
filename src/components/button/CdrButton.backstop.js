@@ -2,7 +2,7 @@ module.exports = [
   {
     label: 'Button',
     selectors: [
-      '[data-backstop="cdr-buttons"]',
+      '[data-backstop="buttons"]',
     ],
     focusSelectors: [
       '[data-backstop="cdr-button--large"]',
