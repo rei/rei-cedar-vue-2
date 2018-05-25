@@ -8,16 +8,15 @@
       <button
         class="accordion"
         :id="id"
-        :on-click="toggle"
+        @click="toggle"
         :aria-expanded="`${show}`"
         :aria-controls="`${id}-collapsible`"
         v-bind="$attrs"
-        slot="preicon"
         modifier="link"
       >
 
         <label :id="`${id}-label`">
-          <span class="sr-only">
+          <span>
             {{ a11yPrefix }}
           </span>
           {{ label }}
@@ -28,6 +27,8 @@
       </button>
 
     </div>
+
+    {{ initShow }}
 
     <div
       v-show="show"
@@ -41,6 +42,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import { IconCaretDown } from '@rei/cdr-icon';
 
 export default {
@@ -58,23 +60,35 @@ export default {
       required: true,
     },
     /** Sets Facet Initial Display State  */
-    show: {
+    initShow: {
       type: Boolean,
       default: false,
     },
   },
+  data: () => ({
+    show: this.initShow,
+  }),
   computed: {
-    accordionIcon() {
-      return this.show ? this.iconOpen : this.iconClosed;
-    },
     a11yPrefix() {
+      console.log('allyPrefix');
       return this.show ? 'Hide' : 'Show';
     },
+    init() {
+      console.log('init function');
+      return false;
+    },
+  },
+  beforeMount: () => {
+    console.log('beforeMount initShow val', this.initShow);
+  },
+  mounted: () => {
+    console.log('mounted', this.initShow);
   },
   methods: {
     toggle() {
-      // this.show = !this.show;
       console.log('hello');
+      console.log('toggle init show', this.initShow);
+      this.show = !this.show;
     },
   },
 };

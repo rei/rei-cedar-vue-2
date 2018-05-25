@@ -4,6 +4,7 @@
     <cdr-accordion
       id="darin"
       label="Accordion!"
+      :init-show="true"
     >
       <ul>
         <li>This is stuff in the slot</li>
