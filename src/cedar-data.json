@@ -4,10 +4,15 @@
 			"name": "CdrA",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrAnchor</span>\n\n### <span class=\"modifiers\">Modifiers</span>\n\nModifiers can be combined 1 from each grouping.\n\n{contrast, overlay, standalone} **OR** button\n\nUse of the 'button' modifier depends on including the css for cdrButton.\n\nA modifier list that contains 'button' exposes the same modifiers as cdrButton and the other modifiers shouldn't be combined with it.\n\n",
-					"examples": "### Examples\n\n#### Basic\n```\n<cdr-a href=\"https://www.rei.com/\">Default link</cdr-a>\n\n```\n\n#### Standalone\n\n```\n<cdr-a modifier=\"standalone\" href=\"https://www.rei.com/\">An example standalone link</cdr-a>\n```\n\n#### Button modifier\n\n```\n<cdr-a modifier=\"button\" href=\"https://www.rei.com/\">Link as button</cdr-a>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nSlot | Description\n--- | ---\ndefault | innerHTML on the inside of the anchor component\n",
-					"version": "0.1.0"
+					"api": {
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML on the inside of the anchor component"
+							}
+						]
+					},
+										"version": "0.1.0"
 				}
 			]
 		},
@@ -15,9 +20,28 @@
 			"name": "CdrButton",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrButton</span>\n\n### <span class=\"modifiers\">Modifiers</span>\n\nModifiers can be combined 1 from each grouping.\n\n{secondary} | {sm,xs} | {block, fixed, responsive} **OR** link\n\nUse of the 'link' modifier depends on including the css for cdrA.\n\nA modifier list that contains 'link' exposes the same modifiers as cdrA and the other modifiers shouldn't be combined with it.\n\nResponsive makes the button full width and block @ sm breakpoint.\n",
-					"examples": "### Examples\n\n#### Default\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button :on-click=\"log\">I have a click event</cdr-button>\n```\n\n#### Secondary\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"secondary\" :on-click=\"log\">Secondary</cdr-button>\n```\n\n#### CTA Sale\n\n```\n<cdr-button modifier=\"cta-sale\">Secondary</cdr-button>\n```\n\n#### Link Modifier\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"link\" :on-click=\"log\">Link</cdr-button>\n```\n\n### Sizes and Shapes\n\n#### Small Modifier\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"sm\" :on-click=\"log\">Default</cdr-button>\n```\n\n#### Extra Small Modifier\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"xs\" :on-click=\"log\">Default</cdr-button>\n```\n\n### Block Modifier\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"block\"  :on-click=\"log\">Default</cdr-button>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\ntype | string | \"button\" | false | Defines the button type. Possible values: {button, submit, reset}.\nonClick | func | () => () => null | false | Add custom click actions.\n\nSlot | Description\n--- | ---\ndefault | innerHTML on the inside of the button component\n",
+					"api": {
+						"props": [
+							{
+								"name": "type",
+								"type": "string",
+								"default": "\"button\"",
+								"description": "Defines the button type. Possible values: {button, submit, reset}."
+							},
+							{
+								"name": "onClick",
+								"type": "func",
+								"default": "function() { return function () { return null; }; }",
+								"description": "Add custom click actions."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML on the inside of the button component"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -26,9 +50,14 @@
 			"name": "CdrCard",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrCard</span>\n\nThe basic card is intended as a container for grouping like content.\n",
-					"examples": "### Examples\n\n#### Simple card \n```\n<cdr-card>\n  <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n</cdr-card>\n```\n#### Simple card with an inset to provide internal spacing\n```\n<cdr-card \n  wrapper-a=\"cdr-inset\"\n>\n <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n</cdr-card>\n```\n#### placing content in multiple slots\n```\n<cdr-card\n wrapper-b=\"cdr-inset\"\n header\n headerClass=\"cdr-inset\"\n footer\n footerClass=\"cdr-inset\"\n>\n  <cdr-media-object\n  level=\"3\"\n  media-url=\"http://rei.com\"\n  media-title=\"Article attribution\"\n  img-src=\"http://placehold.it/50x50\"\n  media-extend-style=\"cdr-card__media\"\n  media-img-shape=\"circle\"\n  modifier=\"center\"\n  slot=\"header\">\n  </cdr-media-object>\n  <section slot=\"bodyB\">\n    <cdr-row cols=\"3\" gutter=\"none\">\n     <cdr-col>\n       <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n      <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n      <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n       <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n      <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n      <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n  </cdr-row>\n</section>\n<section slot=\"bodyC\">\n    <cdr-row cols=\"3\" gutter=\"none\">\n     <cdr-col>\n       <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n      <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n      <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n       <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n      <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n    <cdr-col>\n      <cdr-img alt=\"\" modifier=\"responsive\" src=\"http://placehold.it/350x150\"></cdr-img>\n    </cdr-col>\n  </cdr-row>\n</section>\n<cdr-media-object\n  level=\"3\"\n  media-url=\"http://rei.com\"\n  media-title=\"Backpacking Tents: How to Choose\"\n  img-src=\"http://placehold.it/350x150\"\n  media-extend-style=\"cdr-card__media\"\n  media-img-shape=\"responsive\"\n  modifier=\"top block\">\n  </cdr-media-object>\n  <cdr-button-group slot=\"footer\">\n    <cdr-button >B1</cdr-button>\n    <cdr-button class=\"cdr-card__action\" modifier=\"secondary\">B2</cdr-button>\n  </cdr-button-group>\n</cdr-card>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nSlot | Description\n--- | ---\ndefault | innerHTML on the inside of the card component\n",
+					"api": {
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML on the inside of the card component"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -37,9 +66,65 @@
 			"name": "CdrCheckbox",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrCol</span>\n\n**NOTE:** `v-model` is required.\n\n",
-					"examples": "### Examples\n\n#### Standard checkbox\n\n`v-model` is a boolean. Checkbox value is either true or false.\n\n```\nvar model = false;\n\n<cdr-checkbox v-model=\"model\">Checkbox: {{model}}</cdr-checkbox>\n```\n\n#### Standard checkbox with custom true/false values\n\nSet `true-value` and/or `false-value` to desired checked and unchecked values.\n\n```\nvar model = '';\n\n<cdr-checkbox v-model=\"model\" true-value=\"checked\" false-value=\"unchecked\">Checkbox: {{model}}</cdr-checkbox>\n```\n\n#### Group of checkboxes\n\n`v-model` is an Array. Set checkbox value with `custom-value`.\n\n```\nvar model = [];\nvar valE = {val: 'X', otherVal: 'Y', more: [8,9]};\n\n<div>\n  <cdr-checkbox custom-value=\"A\" v-model=\"model\">A</cdr-checkbox>\n  <cdr-checkbox custom-value=\"B\" v-model=\"model\">B</cdr-checkbox>\n  <cdr-checkbox :custom-value=\"{value: 'C'}\" v-model=\"model\">C</cdr-checkbox>\n  <cdr-checkbox :custom-value=\"[1,2,3]\" v-model=\"model\">D</cdr-checkbox>\n  <cdr-checkbox :custom-value=\"valE\" v-model=\"model\">E</cdr-checkbox>\n  <p>Value: {{model}}</p>\n</div>\n```\n\n#### Preselected\n\nStandard: set `v-model` value to true.\n\n```\nvar model = true;\n\n<cdr-checkbox v-model=\"model\">Checkbox: {{model}}</cdr-checkbox>\n```\n\nMultiple: add value to the `v-model` array.\n\n```\nvar model = [\"A\", {value: 'C'}, [1,2,3]];\nvar valE = {val: 'X', otherVal: 'Y', more: [8,9]};\n\n<div>\n  <cdr-checkbox custom-value=\"A\" v-model=\"model\">A</cdr-checkbox>\n  <cdr-checkbox custom-value=\"B\" v-model=\"model\">B</cdr-checkbox>\n  <cdr-checkbox :custom-value=\"{value: 'C'}\" v-model=\"model\">C</cdr-checkbox>\n  <cdr-checkbox :custom-value=\"[1,2,3]\" v-model=\"model\">D</cdr-checkbox>\n  <cdr-checkbox :custom-value=\"valE\" v-model=\"model\">E</cdr-checkbox>\n  <p>Value: {{model}}</p>\n</div>\n```\n\n#### Event\n\nOpen console to see output\n\n```\nvar model = false;\n\nfunction eventExample(val) {\n  console.log(val + ' was selected');\n}\n\n<cdr-checkbox @change=\"eventExample\" v-model=\"model\">Checkbox: {{model}}</cdr-checkbox>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\ntrueValue | string,number,boolean,object,array,symbol,func | true | false | The value when checked.\nfalseValue | string,number,boolean,object,array,symbol,func | false | false | The value when unchecked.\ncustomValue | string,number,boolean,object,array,symbol,func | n/a | false | The value when used in a checkbox group. Replaces `trueValue` and `falseValue`.\nlabelClass | string | n/a | false | Class that is added to the label for custom styles\n\nEvent Name | Type | Description\n--- | --- | ---\ninput | value|event | `v-model` value. Fires on check/uncheck.\n\nSlot | Description\n--- | ---\ndefault | innerHTML inside of checkbox component\n",
+					"api": {
+						"props": [
+							{
+								"name": "labelClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the label for custom styles"
+							},
+							{
+								"name": "inputClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the input for custom styles"
+							},
+							{
+								"name": "contentClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the slot wrapper for custom styles"
+							},
+							{
+								"name": "indeterminate",
+								"type": "boolean",
+								"default": "false",
+								"description": "Show checkbox in indeterminate state. (NOTE: this is a visual-only state and there is no logic for when to show it)"
+							},
+							{
+								"name": "trueValue",
+								"type": "string|number|boolean|object|array|symbol|func",
+								"default": "true",
+								"description": "The value when checked."
+							},
+							{
+								"name": "falseValue",
+								"type": "string|number|boolean|object|array|symbol|func",
+								"default": "false",
+								"description": "The value when unchecked."
+							},
+							{
+								"name": "customValue",
+								"type": "string|number|boolean|object|array|symbol|func",
+								"default": "n/a",
+								"description": "The value when used in a checkbox group. Replaces `trueValue` and `falseValue`."
+							}
+						],
+						"events": [
+							{
+								"name": "input",
+								"type": "value|event",
+								"description": "`v-model` value. Fires on check/uncheck."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside of checkbox component"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -48,9 +133,118 @@
 			"name": "CdrCol",
 			"versions": [
 				{
-					"readme": "Note: immediate children of `cdr-col` are treated as flex items (due to a flex height bug in Safari). As a result, if you want to have more than one child element they should be wrapped in a single `div` element.\n\nBad:\n```html\n...\n<cdr-col>\n  <div/>\n  <div/>\n  <div/>\n</cdr-col>\n...\n```\nGood:\n```html\n...\n<cdr-col>\n  <div>\n    <div/>\n    <div/>\n    <div/>\n  </div>\n</cdr-col>\n...\n```\n\n\nNOTE: anytime a `cdr-col` is nested within another `cdr-col` the parent needs `is-row` to function correctly\n\n```html\n...\n<cdr-col is-row>\n  <cdr-col>\n    <div/>\n  </cdr-col>\n  <cdr-col>\n    <div/>\n  </cdr-col>\n  <cdr-col is-row cols=\"3\">\n    <cdr-col>\n      <div/>\n    </cdr-col>\n  </cdr-col>\n</cdr-col>\n...\n```\n\nSee cdr-row for complex example.\n\n### Examples\n\n#### Span\n\n```html\n<div class=\"cdr-container-fluid\">\n  <h4>Basic</h4>\n  <cdr-row>\n    <cdr-col span=\"3\">\n      <div class=\"row-demo\">A</div>\n    </cdr-col>\n    <cdr-col span=\"3\">\n      <div class=\"row-demo\">B</div>\n    </cdr-col>\n    <cdr-col span=\"3\">\n      <div class=\"row-demo\">C</div>\n    </cdr-col>\n    <cdr-col span=\"3\">\n      <div class=\"row-demo\">D</div>\n    </cdr-col>\n    <cdr-col span=\"3\">\n      <div class=\"row-demo\">E</div>\n    </cdr-col>\n  </cdr-row>\n</div>\n```\n",
-					"examples": "",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nspan | string,number | n/a | false | Number of columns (1-12) the column should span.\nspanSm | string,number | n/a | false | Sm breakpoint and above\nspanMd | string,number | n/a | false | Md breakpoint and above\nspanLg | string,number | n/a | false | Lg breakpoint and above\noffsetLeft | string,number | n/a | false | Number of columns (1-12) of empty space to add left of this column.\noffsetLeftSm | string,number | n/a | false | Sm breakpoint and above\noffsetLeftMd | string,number | n/a | false | Md breakpoint and above\noffsetLeftLg | string,number | n/a | false | Lg breakpoint and above\noffsetRight | string,number | n/a | false | Number of columns (1-12) of empty space to add right of this column.\noffsetRightSm | string,number | n/a | false | Sm breakpoint and above\noffsetRightMd | string,number | n/a | false | Md breakpoint and above\noffsetRightLg | string,number | n/a | false | Lg breakpoint and above\nalignSelf | string | n/a | false | How the column should align (overrides cdr-row alignment). Possible values: {top, middle, bottom, stretch}. See CSS flexbox align-self.\nalignSelfSm | string | n/a | false | Sm breakpoint and above\nalignSelfMd | string | n/a | false | Md breakpoint and above\nalignSelfLg | string | n/a | false | Lg breakpoint and above\nisRow | boolean | false | false | Makes the column act as a new cdr-row. Setting this to true exposes the same props as cdr-row.\n\nSlot | Description\n--- | ---\ndefault | innerHTML inside of the column component\n",
+					"api": {
+						"props": [
+							{
+								"name": "span",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of columns (1-12) the column should span."
+							},
+							{
+								"name": "spanSm",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "spanMd",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "spanLg",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "offsetLeft",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of columns (1-12) of empty space to add left of this column."
+							},
+							{
+								"name": "offsetLeftSm",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "offsetLeftMd",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "offsetLeftLg",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "offsetRight",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of columns (1-12) of empty space to add right of this column."
+							},
+							{
+								"name": "offsetRightSm",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "offsetRightMd",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "offsetRightLg",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "alignSelf",
+								"type": "string",
+								"default": "n/a",
+								"description": "How the column should align (overrides cdr-row alignment). Possible values: {top, middle, bottom, stretch}. See CSS flexbox align-self."
+							},
+							{
+								"name": "alignSelfSm",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "alignSelfMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "alignSelfLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "isRow",
+								"type": "boolean",
+								"default": "false",
+								"description": "Makes the column act as a new cdr-row. Setting this to true exposes the same props as cdr-row."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside of the column component"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -59,10 +253,23 @@
 			"name": "CdrIcon",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrIcon</span>\n\n## 3 ways to use icons\n \n`cdr-icon` can support 3 different ways of getting svg icons onto your page.\n \n### 1. SVG Sprite\n \nSlightly more work, but offers the best performance when lots of icons will be used.\n \nRequires:\n \n* `cdr-icons.svg` from `@rei/cdr-assets`\n* `file-loader` to get url or `raw-loader` to inline (if using webpack)\n* `svgxuse` polyfill (included somewhere on page or in your bundle)\n \n#### Examples: \n \nInlining the sprite (recommended) \n \n(needs to be available on any page where icons are used so it's best to do it at the base layout/index) \n``` \n// Base view template (assuming .vue and vue-router) \n<template> \n  <div id=\"main\"> \n    <cdr-icon :raw=\"icons\"/> \n \n    <router-view></router-view> // rest of app\n  </div> \n</template> \n \n<script> \nimport icons from '@rei/cdr-assets/dist/cdr-icons.svg'; // have raw-loader handle this \n... \ndata() { \n  return { \n    icons \n  } \n} \n... \n</script> \n \n \n \n// Then in any component template \n// NOTE: It's just the id of the icon and doesn't need a full url path since it's already in the page DOM \n<cdr-icon url=\"#caret-right\" /> \n \n``` \n \nWithin an individual component (you can probably come up with a better way to scale this if you need to do it in a lot of places): \n``` \n//  A .vue file \n \n<template> \n  ... \n  <cdr-icon :url=\"`${icons}#caret-right`\"/> \n  ... \n</template> \n \n<script> \n// import the sprite so file-loader will do its magic \n@import icons from '@rei/cdr-assets/dist/cdr-icons.svg`; \n \nexport default { \n  ... \n  data() { \n    return { \n      icons \n    }; \n  } \n} \n \n</script> \n``` \n \n### 2. Inline from standard REI icons \n \n**This method will bloat your HTML if using a lot of icons.** \n \nThis is the easiest way to get an icon on your page. But use it carefully. \n \nRequirements: \n \n* Have `@rei/cdr-assets` installed \n \n#### Examples: \n \n``` \n<cdr-icon name=\"caret-right\"/> \n``` \n \n### 3. Inline from external svg file \n \n**This method will bloat your HTML if using a lot of icons.** \n \nThis is so you can include icons from outside of the standard set but still benefit from our classes/a11y that is built in. You might consider making a symbol sprite for your icons if you have to use a lot and then using method 1 above. \n \nRequirements: \n \nNone, but you might find the example below helpful. \n \n#### Examples: \n \nThis example assumes you have raw-loader (or something similar) set up \n``` \n//  A .vue file \n \n<template> \n  ... \n  <cdr-icon raw=\"icon\"/> \n  ... \n</template> \n \n<script> \n// import the svg so raw-loader will do its magic \n@import icon from 'path/to/your-icon.svg`; \n \nexport default { \n  ... \n  data() { \n    return { \n      icon \n    }; \n  } \n} \n \n</script> \n```",
-					"examples": "",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nurl | string | n/a | false | URL to the svg sprite and icon name. /path/to/svg.svg#icon-name\nname | string | n/a | false | Icon name from the default REI icon set\nraw | string | n/a | false | Raw SVG string for using icons outside of the REI icon set\n",
-					"version": "0.1.0"
+					"api": {
+						"props": [
+							{
+								"name": "use",
+								"type": "string",
+								"default": "n/a",
+								"description": "The href attribute passed to the use element. Will be prefixed with # automatically"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "any valid svg xml"
+							}
+						]
+					},
+					"version": "0.2.0"
 				}
 			]
 		},
@@ -70,10 +277,77 @@
 			"name": "CdrImg",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrImg</span>\n\n### <span class=\"modifiers\">Modifiers</span>\n\n{responsive, rounded, circle, thumbnail}\n\n",
-					"examples": "### Examples\n\n#### Default\n\n```\n<div>\n  <cdr-img ratio=\"16-9\" alt=\"ratio standard\" src=\"http://placehold.it/200x200\"></cdr-img>\n  <cdr-img alt=\"standard landscape\" src=\"http://placehold.it/350x150\"></cdr-img>\n  <cdr-img alt=\"standard portrait\" src=\"http://placehold.it/150x350\"></cdr-img>\n</div>\n```\n\n#### Cropping\n\n```\n<div>\n  <h4>Cropping (with landscape images)</h4>\n  <cdr-row cols=\"1\" cols-md=\"3\">\n    <cdr-col>\n      <div>\n        <p>Left</p>\n        <cdr-img ratio=\"square\" crop=\"left\" alt=\"crop left\" src=\"http://placehold.it/1920x1080\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Center</p>\n        <cdr-img ratio=\"square\" crop=\"x-center\" alt=\"crop x-center\" src=\"http://placehold.it/1920x1080\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Right</p>\n        <cdr-img ratio=\"square\" crop=\"right\" alt=\"crop right\" src=\"http://placehold.it/1920x1080\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n\n  <h4>Cropping (with portrait images)</h4>\n  <cdr-row cols=\"1\" cols-md=\"3\">\n    <cdr-col>\n      <div>\n        <p>Top</p>\n        <cdr-img ratio=\"square\" crop=\"top\" alt=\"crop top\" src=\"http://placehold.it/1080x1920\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Center</p>\n        <cdr-img ratio=\"square\" crop=\"y-center\" alt=\"crop y-center\" src=\"http://placehold.it/1080x1920\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Bottom</p>\n        <cdr-img ratio=\"square\" crop=\"bottom\" alt=\"crop bottom\" src=\"http://placehold.it/1080x1920\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n\n  <h4>Cropping (combinations)</h4>\n  <cdr-row justify=\"center\">\n    <cdr-col span=\"9\">\n      <div>\n        <p>Reference Image</p>\n        <cdr-img alt=\"reference image\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n  <cdr-row cols=\"1\" cols-md=\"3\">\n    <cdr-col>\n      <div>\n        <p>top left</p>\n        <cdr-img ratio=\"16-9\" crop=\"top left\" alt=\"crop top left\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>top x-center</p>\n        <cdr-img ratio=\"16-9\" crop=\"top x-center\" alt=\"crop top x-center\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>top right</p>\n        <cdr-img ratio=\"16-9\" crop=\"top right\" alt=\"crop top right\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>y-center left</p>\n        <cdr-img ratio=\"16-9\" crop=\"y-center left\" alt=\"crop y-center left\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>y-center x-center</p>\n        <cdr-img ratio=\"16-9\" crop=\"y-center x-center\" alt=\"crop y-center x-center\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>y-center right</p>\n        <cdr-img ratio=\"16-9\" crop=\"y-center right\" alt=\"crop y-center right\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>bottom left</p>\n        <cdr-img ratio=\"16-9\" crop=\"bottom left\" alt=\"crop bottom left\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>bottom x-center</p>\n        <cdr-img ratio=\"16-9\" crop=\"bottom x-center\" alt=\"crop bottom x-center\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>bottom right</p>\n        <cdr-img ratio=\"16-9\" crop=\"bottom right\" alt=\"crop bottom right\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n</div>\n```\n\n#### Aspect Ratios\n\n```\n<div>\n  <cdr-row cols=\"2\" cols-md=\"4\">\n    <cdr-col>\n      <div>\n        <p>Square</p>\n        <cdr-img ratio=\"square\" alt=\"ratio square\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>1-2</p>\n        <cdr-img ratio=\"1-2\" alt=\"ratio 1-2\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>2-3</p>\n        <cdr-img ratio=\"2-3\" alt=\"ratio 2-3\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>3-4</p>\n        <cdr-img ratio=\"3-4\" alt=\"ratio 3-4\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>9-16</p>\n        <cdr-img ratio=\"9-16\" alt=\"ratio 9-16\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>2-1</p>\n        <cdr-img ratio=\"2-1\" alt=\"ratio 2-1\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>3-2</p>\n        <cdr-img ratio=\"3-2\" alt=\"ratio 3-2\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>4-3</p>\n        <cdr-img ratio=\"4-3\" alt=\"ratio 4-3\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>16-9</p>\n        <cdr-img ratio=\"16-9\" alt=\"ratio 16-9\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n</div>\n```\n\n#### Image modifiers\n\n```\n<div>\n  <cdr-row cols=\"2\" cols-md=\"4\">\n    <cdr-col>\n      <div>\n        <p>Responsive</p>\n        <cdr-img ratio=\"4-3\" modifier=\"responsive\" alt=\"ratio responsive\" src=\"http://placehold.it/200x200\"></cdr-img>\n        <cdr-img modifier=\"responsive\" alt=\"standard responsive\" src=\"http://placehold.it/200x200\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Rounded</p>\n        <cdr-img ratio=\"4-3\" modifier=\"rounded\" alt=\"ratio rounded\" src=\"http://placehold.it/200x200\"></cdr-img>\n        <cdr-img modifier=\"rounded\" alt=\"landscape rounded\" src=\"http://placehold.it/350x150\"></cdr-img>\n        <cdr-img modifier=\"rounded\" alt=\"square rounded\" src=\"http://placehold.it/200x200\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>circle</p>\n        <cdr-img ratio=\"4-3\" modifier=\"circle\" alt=\"ratio circle\" src=\"http://placehold.it/200x200\"></cdr-img>\n        <cdr-img modifier=\"circle\" alt=\"landscape circle\" src=\"http://placehold.it/350x150\"></cdr-img>\n        <cdr-img modifier=\"circle\" alt=\"square circle\" src=\"http://placehold.it/200x200\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>thumbnail</p>\n        <cdr-img ratio=\"4-3\" modifier=\"thumbnail\" alt=\"ratio thumbnail\" src=\"http://placehold.it/200x200\"></cdr-img>\n        <cdr-img modifier=\"thumbnail\" alt=\"landscape thumbnail\" src=\"http://placehold.it/350x150\"></cdr-img>\n        <cdr-img modifier=\"thumbnail\" alt=\"square thumbnail\" src=\"http://placehold.it/200x200\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n</div>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nsrc | string | n/a | true | Required. Image source url.\nalt | string | \" \" | false | Required. Image alt text.\nlazy | boolean | n/a | false | Enable lazy loading.\nlazyOpts | object | () => {} | false | Object of lazy options\nratio | string | n/a | false | Aspect ratio of the media container. {auto, square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}\nratioSm | string | n/a | false | sm breakpoint and above\nratioMd | string | n/a | false | md breakpoint and above\nratioLg | string | n/a | false | lg breakpoint and above\ncrop | string | n/a | false | Requires a `ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right}\ncover | boolean | n/a | false | Requires a `ratio`. Scale the image to be as large as possible to fill the area (background-position: cover;)\nradius | string | n/a | false | Sets a border radius to an element {square, top, right, bottom, left}\n",
-					"version": "0.1.0"
+					"api": {
+						"props": [
+							{
+								"name": "src",
+								"type": "string",
+								"default": "n/a",
+								"description": "Required. Image source url."
+							},
+							{
+								"name": "alt",
+								"type": "string",
+								"default": "\" \"",
+								"description": "Required. Image alt text."
+							},
+							{
+								"name": "lazy",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Enable lazy loading."
+							},
+							{
+								"name": "lazyOpts",
+								"type": "object",
+								"default": "function() {}",
+								"description": "Object of lazy options"
+							},
+							{
+								"name": "ratio",
+								"type": "string",
+								"default": "n/a",
+								"description": "Aspect ratio of the media container. {auto, square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}"
+							},
+							{
+								"name": "ratioSm",
+								"type": "string",
+								"default": "n/a",
+								"description": "sm breakpoint and above"
+							},
+							{
+								"name": "ratioMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "md breakpoint and above"
+							},
+							{
+								"name": "ratioLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "lg breakpoint and above"
+							},
+							{
+								"name": "crop",
+								"type": "string",
+								"default": "n/a",
+								"description": "Requires a `ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right}"
+							},
+							{
+								"name": "cover",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Requires a `ratio`. Scale the image to be as large as possible to fill the area (background-position: cover;)"
+							},
+							{
+								"name": "radius",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sets a border radius to an element {square, top, right, bottom, left}"
+							}
+						]
+					},
+					"version": "1.0.0-alpha.1"
 				}
 			]
 		},
@@ -81,9 +355,138 @@
 			"name": "CdrInput",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrInput</span>\n\n**NOTE:** `v-model` is required.\n\n",
-					"examples": "### Examples\n\n#### Single line with feedback icons, error messages, and a debounced validation rule\n\n```\n// Stuff for demo\nvar debounce = '';\nfunction validateFn(inputText) {\n  var obj = {};\n  if (inputText === 'hi') {\n    obj.state = 'valid';\n  } else if (inputText === '') {\n    obj.state = 'warn';\n    obj.message = 'Warning Empty';\n  } else if (!isNaN(inputText) && inputText !== '') {\n    obj.state = 'error';\n    obj.message = 'Error: needs to be letters';\n  } else {\n    obj.state = 'error';\n    obj.message = 'Error Message';\n  }\n  return obj;\n}\n\n//Component usages\n<cdr-input v-model=\"debounce\"\n  label=\"Enter hi\"\n  id=\"testing\"\n  placeholder=\"Enter hi\"\n  feedback\n  :rules=\"[validateFn]\"\n  debounce\n  data-backstop=\"text-input\"\n  ></cdr-input>\n```\n\n#### Normal multiline input\n\n```\nvar multi = '';\n\n<cdr-input v-model=\"multi\"\n      label=\"Multiline\"\n      multi-line\n      ></cdr-input>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nid | string | n/a | false | `id` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated.\nlabel | string | n/a | true | Label text. This is required for a11y even if hiding the label with `hideLabel`.\nhideLabel | boolean | n/a | false | Removes the label element but sets the input `aria-label` to `label` text for a11y.\nmultiLine | boolean | n/a | false | Changes the input to a textarea.\npattern | string | n/a | false | Regex validation pattern. Useful for simple validation.\npatternError | string | n/a | false | Error message to be displayed when `pattern` validation fails.\nfeedback | boolean | n/a | false | Enables icon feedback as part of validation for valid, warn, and error states.\ntype | string | \"text\" | false | Input type. NOTE: This component is meant for text style inputs. Other input types (checkbox, radio) have their own components.\nrules | array | () => [] | false | Array of functions. Provide your own validation function(s). Takes the input string and outputs an object with a state and message. State is a String with value `valid`, `warning`, or `error`. Message is any String.\ndebounce | boolean,number | false | false | Boolean or Number. `true` has a default of 500ms. Providing a number will set debounce to that (in ms). `false` is no debounce.\n\nEvent Name | Type | Description\n--- | --- | ---\npaste | event | Fires when text is pasted into input.\nfocus | event | Fires when input gains focus.\nblur | event | Fires when input loses focus.\ninput | string | Current input value. Fires while typing.\nchange | string | New input value (if changed). Fires on blur.\n\nSlot | Description\n--- | ---\npreicon | Icon to be put in front of input\n",
+					"api": {
+						"props": [
+							{
+								"name": "id",
+								"type": "string",
+								"default": "n/a",
+								"description": "`id` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated."
+							},
+							{
+								"name": "label",
+								"type": "string",
+								"default": "n/a",
+								"description": "Label text. This is required for a11y even if hiding the label with `hideLabel`."
+							},
+							{
+								"name": "hideLabel",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Removes the label element but sets the input `aria-label` to `label` text for a11y."
+							},
+							{
+								"name": "multiLine",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Changes the input to a textarea."
+							},
+							{
+								"name": "pattern",
+								"type": "string",
+								"default": "n/a",
+								"description": "Regex validation pattern. Useful for simple validation."
+							},
+							{
+								"name": "patternError",
+								"type": "string",
+								"default": "n/a",
+								"description": "Error message to be displayed when `pattern` validation fails."
+							},
+							{
+								"name": "feedback",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Enables icon feedback as part of validation for valid, warn, and error states."
+							},
+							{
+								"name": "type",
+								"type": "string",
+								"default": "\"text\"",
+								"description": "Input type. NOTE: This component is meant for text style inputs. Other input types (checkbox, radio) have their own components."
+							},
+							{
+								"name": "rules",
+								"type": "array",
+								"default": "function() { return []; }",
+								"description": "Array of functions. Provide your own validation function(s). Takes the input string and outputs an object with a state and message. State is a String with value `valid`, `warning`, or `error`. Message is any String."
+							},
+							{
+								"name": "debounce",
+								"type": "boolean|number",
+								"default": "false",
+								"description": "Boolean or Number. `true` has a default of 500ms. Providing a number will set debounce to that (in ms). `false` is no debounce."
+							}
+						],
+						"events": [
+							{
+								"name": "keydown",
+								"type": "event",
+								"description": "Fires when a key is pressed."
+							},
+							{
+								"name": "paste",
+								"type": "event",
+								"description": "Fires when text is pasted into input."
+							},
+							{
+								"name": "focus",
+								"type": "event",
+								"description": "Fires when input gains focus."
+							},
+							{
+								"name": "blur",
+								"type": "event",
+								"description": "Fires when input loses focus."
+							},
+							{
+								"name": "input",
+								"type": "event",
+								"description": "Current input value. Fires while typing.\nReturns (value, event)"
+							},
+							{
+								"name": "change",
+								"type": "string",
+								"description": "New input value (if changed). Fires on blur."
+							}
+						],
+						"slots": [
+							{
+								"name": "preicon",
+								"description": "Icon to be put in front of input"
+							}
+						]
+					},
+					"version": "0.1.2"
+				}
+			]
+		},
+		{
+			"name": "CdrLink",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "tag",
+								"type": "string",
+								"default": "\"a\"",
+								"description": "MISSING DESCRIPTION"
+							},
+							{
+								"name": "href",
+								"type": "string",
+								"default": "\"#\"",
+								"description": "MISSING DESCRIPTION"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML on the inside of the anchor component"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -92,9 +495,22 @@
 			"name": "CdrList",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrList</span>\n\n### <span class=\"modifiers\">Modifiers</span>\n\n{unstyled, bullet, disc, numbered, menu, compact, circle, inline}\n\nNote: type doesn't affect the modifier.\n",
-					"examples": "### Examples\n\n#### Default\n\n```\n<cdr-list>\n  <li>List default</li>\n  <li>List default\n    <cdr-list>\n      <li>List default - nested</li>\n      <li>List default - nested</li>\n      <li>List default - nested</li>\n    </cdr-list>\n  </li>\n</cdr-list>\n```\n\n#### Compact\n```\n<cdr-list modifier=\"compact\">\n  <li>List default compact</li>\n  <li>List default compact</li>\n  <li>List default compact</li>\n</cdr-list>\n```\n\n#### Unstyled\n\n```\n<cdr-list modifier=\"unstyled\">\n  <li>List unstyled</li>\n  <li>List unstyled</li>\n  <li>List unstyled</li>\n</cdr-list>\n```\n\n#### Disc\n\n```\n<cdr-list modifier=\"disc\">\n  <li>List disc</li>\n  <li>List disc</li>\n  <li>List disc</li>\n</cdr-list>\n```\n\n#### Circle\n```\n<cdr-list modifier=\"circle\">\n  <li>list circle</li>\n  <li>list circle</li>\n  <li>list circle</li>\n</cdr-list>\n```\n\n#### Numbered\n\n```\n<cdr-list modifier=\"numbered\">\n  <li>List numbered</li>\n  <li>List numbered</li>\n  <li>List numbered</li>\n</cdr-list>\n```\n\n#### Menu\n\n```\n<cdr-list modifier=\"menu\">\n  <li><a href=\"/\">List menu</a></li>\n  <li><a href=\"/\">List menu</a></li>\n  <li><a href=\"/\">List menu</a></li>\n</cdr-list>\n```\n\n#### Inline\n```\n<cdr-list modifier=\"inline\">\n  <li>Inline item</li>\n  <li>Inline item</li>\n  <li>Inline item</li>\n</cdr-list>\n```\n\n#### Bulleted Inline\n```\n<cdr-list modifier=\"inline bullet\">\n  <li>Bulleted Inline Item</li>\n  <li>Bulleted Inline Item</li>\n  <li>Bulleted Inline Item</li>\n</cdr-list>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nlistType | string | \"ul\" | false | List type. 'ul' = Unordered List. 'ol' = Ordered List.\n\nSlot | Description\n--- | ---\ndefault | innerHTML inside of the list component\n",
+					"api": {
+						"props": [
+							{
+								"name": "tag",
+								"type": "string",
+								"default": "\"ul\"",
+								"description": "Tag accepts a user defined element and expects either: 'ul' = Unordered List or 'ol' = Ordered List."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "MISSING DESCRIPTION"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -103,9 +519,100 @@
 			"name": "CdrMediaObject",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrMediaObject</span>\n\nThe Media Object allows you to group small amounts of like content is a small amount of markup. The examples below show some of the may visual displays available to this component.\n\n### <span class=\"modifiers\">Modifiers</span>\nadd \n{top, right, bottom, center, overlay, block, stretch}\n<table class=\"table-0-31\">\n<thead class=\"tableHead-0-32\">\n<tr>\n<th class=\"cellHeading-0-34\">Name</th>\n<th class=\"cellHeading-0-34 cellDesc-0-35\">Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td class=\"cell-0-33\"><span class=\"name-0-42\"><code class=\"code-0-44\">top</code></span></td>\n<td class=\"cell-0-33 cellDesc-0-35\">\n<div><p class=\"p-0-55 para-0-47\">Media figure displays above Media body</p></div>\n</td>\n</tr>\n<tr>\n<td class=\"cell-0-33\"><span class=\"name-0-42\"><code class=\"code-0-44\">right</code></span></td>\n<td class=\"cell-0-33 cellDesc-0-35\">\n<div><p class=\"p-0-55 para-0-47\">Media figure displays to the right of the Media body</p></div>\n</td>\n</tr>\n<tr>\n<td class=\"cell-0-33\"><span class=\"name-0-42\"><code class=\"code-0-44\">bottom</code></span></td>\n<td class=\"cell-0-33 cellDesc-0-35\">\n<div><p class=\"p-0-55 para-0-47\">Media figure displays below the Media body</p></div>\n</td>\n</tr>\n<tr>\n<td class=\"cell-0-33\"><span class=\"name-0-42\"><code class=\"code-0-44\">Center</code></span></td>\n<td class=\"cell-0-33 cellDesc-0-35\">\n<div><p class=\"p-0-55 para-0-47\">Can be stacked with other alignment modifiers and will center the Media figure.</p></div>\n</td>\n</tr>\n<tr>\n<td class=\"cell-0-33\"><span class=\"name-0-42\"><code class=\"code-0-44\">overlay</code></span></td>\n<td class=\"cell-0-33 cellDesc-0-35\">\n<div><p class=\"p-0-55 para-0-47\">Media Body overlays the Media Frame</p></div>\n</td>\n</tr>\n<tr>\n<td class=\"cell-0-33\"><span class=\"name-0-42\"><code class=\"code-0-44\">stretch</code></span></td>\n<td class=\"cell-0-33 cellDesc-0-35\">\n<div><p class=\"p-0-55 para-0-47\">The Media Frame extends 16px left and right from the parent container. This is intended to be used with the top or bottom modifier.</p></div>\n</td>\n</tr>\n<tr>\n<td class=\"cell-0-33\"><span class=\"name-0-42\"><code class=\"code-0-44\">block</code></span></td>\n<td class=\"cell-0-33 cellDesc-0-35\">\n<div><p class=\"p-0-55 para-0-47\">The Media Frame extends 16px left and right from the parent container. and an additional 16px left and right value wraps the media object. This is intended to be used with the top or bottom modifier.</p></div>\n</td>\n</tr>\n</tbody>\n</table>\n",
-					"examples": "### Examples\n\n#### Media objects aligning media frames\n```\n  <cdr-media-object\n    img-src=\"http://placehold.it/350x150\"\n    media-url=\"http://rei.com\"\n    media-title=\"Backpacking Tents: How to Choose\"\n    level=\"2\"\n    media-img-shape=\"responsive\"\n    modifier=\"top stretch\">\n    <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis posuere ornare ante, id placerat purus pretium non. Nulla rhoncus libero sed faucibus finibus. Proin egestas volutpat tortor, non tincidunt quam accumsan et. Donec eleifend condimentum consectetur. Ut a lorem cursus, fermentum eros in, commodo ex. Nulla fringilla mi ex, eu tempus turpis molestie vitae. Duis eget tellus malesuada, iaculis ipsum non, vehicula sapien. Mauris tincidunt sem at turpis dapibus, nec viverra arcu condimentum. Donec felis nulla, blandit mollis tristique ut, commodo in sapien.</p>\n  </cdr-media-object>\n```\n```\n  <cdr-media-object\n    img-src=\"http://placehold.it/350x150\"\n    media-url=\"http://rei.com\"\n    media-title=\"Backpacking Tents: How to Choose\"\n    level=\"2\"\n    media-img-shape=\"responsive\"\n    modifier=\"bottom block\">\n  </cdr-media-object>\n```\n```\n  <cdr-media-object\n    img-src=\"http://placehold.it/150x150\"\n    level=\"3\"\n    media-title=\"Tiger Mountain Loop\">\n    <p>Tiger Mountain is a multi-use recreation area near Seattle. In recent years, new trails and the continued work of Evergreen Mountain…</p>\n  </cdr-media-object>\n```\n```\n  <cdr-media-object\n    img-src=\"http://placehold.it/50x50\"\n    media-img-shape=\"circle\"\n    level=\"3\"\n    media-title=\"Jerry Stritzke\">\n    <p>Issaquah Alps, WA</p>\n  </cdr-media-object>\n```\n```\n  <cdr-media-object\n    img-src=\"http://placehold.it/150x150\"\n    level=\"3\"\n    media-title=\"Tiger Mountain Loop\"\n    modifier=\"right\">\n    <p>Tiger Mountain is a multi-use recreation area near Seattle. In recent years, new trails and the continued work of Evergreen Mountain…</p>\n  </cdr-media-object>\n```\n#### Media Object overlay\n```\n  <cdr-media-object\n    img-src=\"http://placehold.it/350x150/212121/222222\"\n    media-url=\"http://rei.com\"\n    media-title=\"Backpacking Tents: How to Choose\"\n    level=\"2\"\n    media-img-shape=\"responsive\"\n    modifier=\"top stretch overlay\">\n    <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis posuere ornare ante, id placerat purus pretium non. Nulla rhoncus libero sed faucibus finibus. Proin egestas volutpat tortor, non tincidunt quam accumsan et. Donec eleifend condimentum consectetur. Ut a lorem cursus, fermentum eros in, commodo ex. Nulla fringilla mi ex, eu tempus turpis molestie vitae. Duis eget tellus malesuada, iaculis ipsum non, vehicula sapien. Mauris tincidunt sem at turpis dapibus, nec viverra arcu condimentum. Donec felis nulla, blandit mollis tristique ut, commodo in sapien.</p>\n  </cdr-media-object>\n```\n#### Media Figure ratio\n```\n <cdr-media-object\n    img-src=\"http://placehold.it/350x150\"\n    media-url=\"http://rei.com\"\n    media-title=\"Backpacking Tents: How to Choose\"\n    level=\"2\"\n    media-img-shape=\"responsive thumbnail\"\n    ratio=\"16-9\"\n    modifier=\"top stretch\">\n    <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis posuere ornare ante, id placerat purus pretium non. Nulla rhoncus libero sed faucibus finibus. Proin egestas volutpat tortor, non tincidunt quam accumsan et. Donec eleifend condimentum consectetur. Ut a lorem cursus, fermentum eros in, commodo ex. Nulla fringilla mi ex, eu tempus turpis molestie vitae. Duis eget tellus malesuada, iaculis ipsum non, vehicula sapien. Mauris tincidunt sem at turpis dapibus, nec viverra arcu condimentum. Donec felis nulla, blandit mollis tristique ut, commodo in sapien.</p>\n  </cdr-media-object>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nwidth | string | n/a | false | Sets the media width\nmediaAlign | string | n/a | false | Allows you to align your text {right, left, center}\niconUrl | string | n/a | false | icon svg path. See cdr-icon\nimgClass | string | n/a | false | Custom class added to the image/icon\nimgSrc | string | n/a | false | Image path. See cdr-img\nimgRadius | string | n/a | false | Image radius. See cdr-img\nimgRatio | string | n/a | false | Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9} See cdr-img\nimgCover | boolean | n/a | false | Requires `imgRatio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img\nimgCrop | string | n/a | false | Requires `imgRatio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img\nimgAlt | string | n/a | false | Image alternitive description, defaults to blank. See cdr-img\nimgModifier | string | n/a | false | {Responsive, Rounded, circle, thumbnail}. See cdr-img\nimgHref | string | n/a | false | Link the image\nimgHrefText | string | n/a | false | Screen reader text for the linked image\nimgTarget | string | n/a | false | Target for the image link\n\nSlot | Description\n--- | ---\ndefault | innerHTML inside of the media object component\n",
+					"api": {
+						"props": [
+							{
+								"name": "width",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sets the media width"
+							},
+							{
+								"name": "mediaAlign",
+								"type": "string",
+								"default": "n/a",
+								"description": "Allows you to align your text {right, left, center}"
+							},
+							{
+								"name": "iconUrl",
+								"type": "string",
+								"default": "n/a",
+								"description": "icon svg path. See cdr-icon"
+							},
+							{
+								"name": "imgClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Custom class added to the image/icon"
+							},
+							{
+								"name": "imgSrc",
+								"type": "string",
+								"default": "n/a",
+								"description": "Image path. See cdr-img"
+							},
+							{
+								"name": "imgRadius",
+								"type": "string",
+								"default": "n/a",
+								"description": "Image radius. See cdr-img"
+							},
+							{
+								"name": "imgRatio",
+								"type": "string",
+								"default": "n/a",
+								"description": "Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9} See cdr-img"
+							},
+							{
+								"name": "imgCover",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Requires `imgRatio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img"
+							},
+							{
+								"name": "imgCrop",
+								"type": "string",
+								"default": "n/a",
+								"description": "Requires `imgRatio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img"
+							},
+							{
+								"name": "imgAlt",
+								"type": "string",
+								"default": "n/a",
+								"description": "Image alternitive description, defaults to blank. See cdr-img"
+							},
+							{
+								"name": "imgModifier",
+								"type": "string",
+								"default": "n/a",
+								"description": "{Responsive, Rounded, circle, thumbnail}. See cdr-img"
+							},
+							{
+								"name": "imgHref",
+								"type": "string",
+								"default": "n/a",
+								"description": "Link the image"
+							},
+							{
+								"name": "imgHrefText",
+								"type": "string",
+								"default": "n/a",
+								"description": "Screen reader text for the linked image"
+							},
+							{
+								"name": "imgTarget",
+								"type": "string",
+								"default": "n/a",
+								"description": "Target for the image link"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside of the media object component"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -114,9 +621,34 @@
 			"name": "CdrQuote",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrQuote</span>\n\n### Markup Tag\nthe Tag attribute of cdr-quote allows one of the following options:\n\n  * blockquote (default)\n  * aside\n  * q\n  * div\n  \n### <span class=\"modifiers\">Modifiers</span>\nModifier values of cdr-quote:\n\n  * block\n  * pull\n\n### Note:\nthe blockquote element allows for a `cite` attribute that allows for a URL path to the source. This attribute should be added when using blockquote and is different that the display option `citation`\n```\n<div>\n  <cdr-quote\n    modifier=\"block\"\n    summary=\"Blockquote Summary...\"\n    citation=\"Blockquote Citation...\"\n  />\n  <cdr-quote\n      tag=\"aside\"\n      modifier=\"pull\"\n      summary=\"Aside Pullquote Summary...\"\n    />\n</div>\n```\n",
-					"examples": "",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\ntag | string | \"blockquote\" | false | \nsummary | string | n/a | false | Caption summary text\ncitation | string | n/a | false | Caption credit text\n\nSlot | Description\n--- | ---\ndefault | \n",
+					"api": {
+						"props": [
+							{
+								"name": "tag",
+								"type": "string",
+								"default": "\"blockquote\"",
+								"description": "MISSING DESCRIPTION"
+							},
+							{
+								"name": "summary",
+								"type": "string",
+								"default": "n/a",
+								"description": "Caption summary text"
+							},
+							{
+								"name": "citation",
+								"type": "string",
+								"default": "n/a",
+								"description": "Caption credit text"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "MISSING DESCRIPTION"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -125,9 +657,53 @@
 			"name": "CdrRadio",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrRadio</span>\n\n**NOTE:** `v-model` is required.\n\n",
-					"examples": "### Examples\n\n#### Standard checkbox\n\n`v-model` can be anything and is shared to all of the radios in the group.\n\n```\nvar model = '';\n\n<div>\n  <cdr-radio name=\"example\" value=\"a1\" v-model=\"model\">A1</cdr-radio>\n  <cdr-radio name=\"example\" value=\"a2\" v-model=\"model\">A2</cdr-radio>\n  <cdr-radio name=\"example\" :value=\"{val:'a3'}\" v-model=\"model\">A3</cdr-radio>\n  <p>Group A Picked: {{model}}</p>\n</div>\n```\n\n#### Preselected\n\n`v-model` is preset to one of the values in the group.\n\n```\nvar model2 = 'a2';\n\n<div>\n  <cdr-radio name=\"example2\" value=\"a1\" v-model=\"model2\">A1</cdr-radio>\n  <cdr-radio name=\"example2\" value=\"a2\" v-model=\"model2\">A2</cdr-radio>\n  <cdr-radio name=\"example2\" :value=\"{val:'a3'}\" v-model=\"model2\">A3</cdr-radio>\n  <p>Group A Picked: {{model2}}</p>\n</div>\n```\n\n#### Event\n\nOpen the console to see output.\n\n```\nvar model3 = '';\n\nfunction eventExample(val) {\n  console.log(val + ' was selected');\n}\n\n<div>\n  <cdr-radio @change=\"eventExample\" name=\"example3\" value=\"a1\" v-model=\"model3\">A1</cdr-radio>\n  <cdr-radio @change=\"eventExample\" name=\"example3\" value=\"a2\" v-model=\"model3\">A2</cdr-radio>\n  <cdr-radio @change=\"eventExample\" name=\"example3\" :value=\"{val:'a3'}\" v-model=\"model3\">A3</cdr-radio>\n  <p>Group A Picked: {{model3}}</p>\n</div>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nname | string | n/a | true | Sets the name of the radio. Required.\nvalue | string,number,boolean,object,array,symbol,func | n/a | true | Sets the value of the radio. Required.\n\nEvent Name | Type | Description\n--- | --- | ---\nchange | boolean|array | Selected radio value. Fires on section.\n\nSlot | Description\n--- | ---\ndefault | innerHTML inside of the radio component\n",
+					"api": {
+						"props": [
+							{
+								"name": "labelClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the label for custom styles"
+							},
+							{
+								"name": "inputClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the input for custom styles"
+							},
+							{
+								"name": "contentClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the slot wrapper for custom styles"
+							},
+							{
+								"name": "name",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sets the name of the radio. Required."
+							},
+							{
+								"name": "value",
+								"type": "string|number|boolean|object|array|symbol|func",
+								"default": "n/a",
+								"description": "Sets the value of the radio. Required."
+							}
+						],
+						"events": [
+							{
+								"name": "change",
+								"type": "boolean|array",
+								"description": "Selected radio value. Fires on section."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside of radio component"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -136,10 +712,29 @@
 			"name": "CdrRating",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrRating<span>\n\nRatings are rounded to nearest .25 for displaying stars.\n\n### <span class=\"modifiers>Modifiers</span>\n\nModifiers can be combined 1 from each grouping.\n\n{small, medium, large}\n\nDefault is large.\n\n### Large + compact\n\n```\n<div>\n  <cdr-rating rating=\"5\" count=\"10\" modifier=\"large\"></cdr-rating>\n  <cdr-rating :rating=\"1\" :count=\"100\" modifier=\"large\" compact></cdr-rating>\n</div>\n```\n\n### Medium + compact\n\n```\n<div>\n  <cdr-rating rating=\"5\" count=\"10\" modifier=\"medium\"></cdr-rating>\n  <cdr-rating :rating=\"1\" :count=\"100\" modifier=\"medium\" compact></cdr-rating>\n</div>\n```\n\n### Small + compact\n\n```\n<div>\n  <cdr-rating rating=\"5\" count=\"10\" modifier=\"small\"></cdr-rating>\n  <cdr-rating :rating=\"1\" :count=\"100\" modifier=\"small\" compact></cdr-rating>\n</div>\n```",
-					"examples": "",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nrating | string,number | n/a | true | Rating out of 5\ncount | string,number | n/a | false | Number of ratings\ncompact | boolean | false | false | Hides the word 'reviews' if true\n",
-					"version": "0.1.0"
+					"api": {
+						"props": [
+							{
+								"name": "rating",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Rating out of 5"
+							},
+							{
+								"name": "count",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of ratings"
+							},
+							{
+								"name": "compact",
+								"type": "boolean",
+								"default": "false",
+								"description": "Hides the word 'reviews' if true"
+							}
+						]
+					},
+					"version": "0.1.1"
 				}
 			]
 		},
@@ -147,9 +742,190 @@
 			"name": "CdrRow",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrRow</span>\n\nCedar 2 component for row\n",
-					"examples": "",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\ncols | string,number | n/a | false | Number of columns in the row (1-12, auto).\ncolsSm | string,number | n/a | false | Sm breakpoint and above\ncolsMd | string,number | n/a | false | Md breakpoint and above\ncolsLg | string,number | n/a | false | Lg breakpoint and above\njustify | string | n/a | false | How columns should be justified within empty space of the row. Possible values: {left, center, right, around, between}. See CSS flexbox justify-content.\njustifySm | string | n/a | false | Sm breakpoint and above\njustifyMd | string | n/a | false | Md breakpoint and above\njustifyLg | string | n/a | false | Lg breakpoint and above\nalign | string | n/a | false | How columns of different heights should align. {top, middle, bottom, stretch}. See CSS flexbox align-items.\nalignSm | string | n/a | false | Sm breakpoint and above\nalignMd | string | n/a | false | Md breakpoint and above\nalignLg | string | n/a | false | Lg breakpoint and above\ngutter | string | n/a | false | Overrides default gutter spacing. {none}.\ngutterSm | string | n/a | false | Sm breakpoint and above\ngutterMd | string | n/a | false | Md breakpoint and above\ngutterLg | string | n/a | false | Lg breakpoint and above\nvertical | boolean | false | false | Changes row to a column layout. See CSS flexbox flex-direction.\nverticalSm | boolean | false | false | Sm breakpoint and above\nverticalMd | boolean | false | false | Md breakpoint and above\nverticalLg | boolean | false | false | Lg breakpoint and above\nwrap | boolean | false | false | Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.\nwrapSm | boolean | false | false | Sm breakpoint and above\nwrapMd | boolean | false | false | Md breakpoint and above\nwrapLg | boolean | false | false | Lg breakpoint and above\nnowrap | boolean | false | false | Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.\nnowrapSm | boolean | false | false | Sm breakpoint and above\nnowrapMd | boolean | false | false | Md breakpoint and above\nnowrapLg | boolean | false | false | Lg breakpoint and above\ntype | string | \"normal\" | false | Changes grid to built with ul>li rather than divs. {normal, list}\n\nSlot | Description\n--- | ---\ndefault | innerHTML inside the row component\n",
+					"api": {
+						"props": [
+							{
+								"name": "cols",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of columns in the row (1-12, auto)."
+							},
+							{
+								"name": "colsSm",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "colsMd",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "colsLg",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "justify",
+								"type": "string",
+								"default": "n/a",
+								"description": "How columns should be justified within empty space of the row. Possible values: {left, center, right, around, between}. See CSS flexbox justify-content."
+							},
+							{
+								"name": "justifySm",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "justifyMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "justifyLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "align",
+								"type": "string",
+								"default": "n/a",
+								"description": "How columns of different heights should align. {top, middle, bottom, stretch}. See CSS flexbox align-items."
+							},
+							{
+								"name": "alignSm",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "alignMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "alignLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "gutter",
+								"type": "string",
+								"default": "n/a",
+								"description": "Overrides default gutter spacing. {none}."
+							},
+							{
+								"name": "gutterSm",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "gutterMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "gutterLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "vertical",
+								"type": "boolean",
+								"default": "false",
+								"description": "Changes row to a column layout. See CSS flexbox flex-direction."
+							},
+							{
+								"name": "verticalSm",
+								"type": "boolean",
+								"default": "false",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "verticalMd",
+								"type": "boolean",
+								"default": "false",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "verticalLg",
+								"type": "boolean",
+								"default": "false",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "wrap",
+								"type": "boolean",
+								"default": "false",
+								"description": "Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap."
+							},
+							{
+								"name": "wrapSm",
+								"type": "boolean",
+								"default": "false",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "wrapMd",
+								"type": "boolean",
+								"default": "false",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "wrapLg",
+								"type": "boolean",
+								"default": "false",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "nowrap",
+								"type": "boolean",
+								"default": "false",
+								"description": "Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap."
+							},
+							{
+								"name": "nowrapSm",
+								"type": "boolean",
+								"default": "false",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "nowrapMd",
+								"type": "boolean",
+								"default": "false",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "nowrapLg",
+								"type": "boolean",
+								"default": "false",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "type",
+								"type": "string",
+								"default": "\"normal\"",
+								"description": "Changes grid to built with ul>li rather than divs. {normal, list}"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside the row component"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -158,9 +934,53 @@
 			"name": "CdrSelect",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrSelect</span>\n\n**NOTE:** `v-model` is required.\n",
-					"examples": "### Examples\n\n#### Standard\n\n```\nvar selected = '';\n\n<div>\n  <cdr-select label=\"Normal\" v-model=\"selected\">\n    <option value=\"1\">1</option>\n    <option value=\"2\">2</option>\n    <option value=\"3\">3</option>\n    <option value=\"4\">4</option>\n  </cdr-select>\n  <p>Selected: {{selected}}</p>\n</div>\n```\n\n#### With prompt\n\n```\nvar selected = '';\n\n<div>\n  <cdr-select label=\"Normal with prompt\" v-model=\"selected\" prompt=\"Choose one\">\n    <option value=\"1\">1</option>\n    <option value=\"2\">2</option>\n    <option value=\"3\">3</option>\n    <option value=\"4\">4</option>\n  </cdr-select>\n  <p>Selected: {{selected}}</p>\n</div>\n```\n\n#### Data driven options\n\n```\nvar selected = '';\nvar data = ['a', 'b', 'c', 'd'];\n\n<div>\n  <cdr-select label=\"Built with data\" v-model=\"selected\" :options=\"data\"></cdr-select>\n  <p>Selected: {{selected}}</p>\n</div>\n\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nlabel | string | n/a | true | Label text.\nid | string | n/a | false | `id` for the select that is mapped to the label `for` attribute. If one is not provided, it will be generated.\nhideLabel | boolean | n/a | false | Removes the label element but sets the select `aria-label` to `label` text for a11y.\nprompt | string | n/a | false | Adds an option that is disabled and selected by default to serve as a `placeholder` for the select.\noptions | array | n/a | false | Build options programatically with data. Array of objects [{ text: String, value: String}] to give greater control. Array of strings ['String'] for simpler setup (value and text will be the same).\n\nEvent Name | Type | Description\n--- | --- | ---\ninput | string|array | Current input value. Fires when\n\nSlot | Description\n--- | ---\ndefault | \n",
+					"api": {
+						"props": [
+							{
+								"name": "label",
+								"type": "string",
+								"default": "n/a",
+								"description": "Label text."
+							},
+							{
+								"name": "id",
+								"type": "string",
+								"default": "n/a",
+								"description": "`id` for the select that is mapped to the label `for` attribute. If one is not provided, it will be generated."
+							},
+							{
+								"name": "hideLabel",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Removes the label element but sets the select `aria-label` to `label` text for a11y."
+							},
+							{
+								"name": "prompt",
+								"type": "string",
+								"default": "n/a",
+								"description": "Adds an option that is disabled and selected by default to serve as a `placeholder` for the select."
+							},
+							{
+								"name": "options",
+								"type": "array",
+								"default": "n/a",
+								"description": "Build options programatically with data. Array of objects [{ text: String, value: String}] to give greater control. Array of strings ['String'] for simpler setup (value and text will be the same)."
+							}
+						],
+						"events": [
+							{
+								"name": "input",
+								"type": "string|array",
+								"description": "Current input value. Fires when"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "MISSING DESCRIPTION"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -169,9 +989,22 @@
 			"name": "CdrText",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrText</span>\n\n### <span class=\"modifiers\">Modifiers</span>\n\nModifier values are any valid text styles\n\n#### Heading Styles\n  * heading-large\n  * heading-large-static (non responsive)\n  * heading-medium\n  * heading-medium-static (non responsive)\n  * heading-small\n  * heading-small-static (non responsive)\n  * display\n  * display-static (non responsive)\n  * subheading\n\n#### Paragraph Styles\n  * Null (default) \n  * body\n\n#### Citation Styles\n  * citation\n```\n<div>\n  <cdr-text tag=\"h2\" modifier=\"display\">h2 display heading</cdr-text>\n  <cdr-text>Default paragraph</cdr-text>\n  <cdr-text modifier=\"body\">Body paragraph</cdr-text>\n  <cdr-text tag=\"em\" modifier=\"citation\">citation</cdr-text>\n</div>\n```\n",
-					"examples": "",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\ntag | string | \"p\" | false | Any valid HTML tag\n\nSlot | Description\n--- | ---\ndefault | \n",
+					"api": {
+						"props": [
+							{
+								"name": "tag",
+								"type": "string",
+								"default": "\"p\"",
+								"description": "Any valid HTML tag"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "MISSING DESCRIPTION"
+							}
+						]
+					},
 					"version": "0.2.1"
 				}
 			]
@@ -182,9 +1015,88 @@
 			"name": "CdrActivityCard",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrActivityCard</span>\n\nWhile the simple card is a generic wrapper that does not do much more than provide a chome, the activity card is a composition of compomnents and is intended to fill a specific role as outlined. \n \nThis Component enhances the behavior of specific presentation parts that are important for this use case, knotice that by providing a title url that the entire card becomes \"hot\". Note also that this does not alter the tab index of nested elements and remains accessible to screen readers. \n",
-					"examples": "### Examples \n \n#### Activity card  \n``` \nvar snapshotData = ['7.5 mi', 'out & back', '286 ft Ele Gain'];\n\nvar cardData = {\n  media: 'http://placehold.it/350x150',\n  label: 'hiking',\n  title: 'Snow Lake Trail'\n};\n\n<cdr-activity-card \n  :media=\"cardData.media\"\n  :label=\"cardData.label\"\n  title-url=\"http://rei.com\"\n  :title=\"cardData.title\"\n  :snapshot=\"snapshotData\"\n  location=\"Seattle, WA\"\n  rating=\"5\"\n  count=\"138\">\n</cdr-activity-card>\n```\n",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nmedia | string | n/a | false | Path to primary image\nmediaAlt | string | \" \" | false | this is set to top when there is no attribution\nmediaRatio | string | n/a | false | Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}. See cdr-img\nmediaCover | boolean | n/a | false | Requires `mediaRatio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img\nmediaCrop | string | n/a | false | Requires `mediaRatio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img\ntitle | string | n/a | false | Title text\ntitleUrl | string | n/a | true | href to turn card into a link\ntitleLevel | string,number | \"2\" | false | Heading level\nlabel | string | n/a | false | Label text\nlocation | string | n/a | false | Location text\nsnapshot | array | n/a | false | Snapshot text\nrating | string,number | n/a | false | Rating value\ncount | string,number | n/a | false | Number of ratings\n",
+					"api": {
+						"props": [
+							{
+								"name": "media",
+								"type": "string",
+								"default": "n/a",
+								"description": "Path to primary image"
+							},
+							{
+								"name": "mediaAlt",
+								"type": "string",
+								"default": "\" \"",
+								"description": "this is set to top when there is no attribution"
+							},
+							{
+								"name": "mediaRatio",
+								"type": "string",
+								"default": "n/a",
+								"description": "Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}. See cdr-img"
+							},
+							{
+								"name": "mediaCover",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Requires `mediaRatio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img"
+							},
+							{
+								"name": "mediaCrop",
+								"type": "string",
+								"default": "n/a",
+								"description": "Requires `mediaRatio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img"
+							},
+							{
+								"name": "title",
+								"type": "string",
+								"default": "n/a",
+								"description": "Title text"
+							},
+							{
+								"name": "titleUrl",
+								"type": "string",
+								"default": "n/a",
+								"description": "href to turn card into a link"
+							},
+							{
+								"name": "titleLevel",
+								"type": "string|number",
+								"default": "\"2\"",
+								"description": "Heading level"
+							},
+							{
+								"name": "label",
+								"type": "string",
+								"default": "n/a",
+								"description": "Label text"
+							},
+							{
+								"name": "location",
+								"type": "string",
+								"default": "n/a",
+								"description": "Location text"
+							},
+							{
+								"name": "snapshot",
+								"type": "array",
+								"default": "n/a",
+								"description": "Snapshot text"
+							},
+							{
+								"name": "rating",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Rating value"
+							},
+							{
+								"name": "count",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of ratings"
+							}
+						]
+					},
 					"version": "0.1.1"
 				}
 			]
@@ -193,9 +1105,22 @@
 			"name": "CdrCaption",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrCaption</span>\n\n* Cedar 2 component for captions\n\n",
-					"examples": "",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nsummary | string | n/a | false | Caption summary text\ncredit | string | n/a | false | Caption credit text\n",
+					"api": {
+						"props": [
+							{
+								"name": "summary",
+								"type": "string",
+								"default": "n/a",
+								"description": "Caption summary text"
+							},
+							{
+								"name": "credit",
+								"type": "string",
+								"default": "n/a",
+								"description": "Caption credit text"
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]
@@ -204,9 +1129,35 @@
 			"name": "CdrSearch",
 			"versions": [
 				{
-					"readme": "# <span class=\"display-name\">CdrSearch</span>\n\nA composition of `cdr-input` and `cdr-button`that gives you a simple search box. Passes all other attributes and events to `cdr-input`.\n",
-					"examples": "### Examples\n\n#### Standard\n\n```\nvar searchTerm = '';\nfunction runSearch() {\n  console.log('Searching');\n}\n\n<form>\n  <cdr-search v-model=\"searchTerm\" :click=\"runSearch\"></cdr-search>\n  <p>Entered: {{searchTerm}}</p>\n</form>\n```\n\n#### Bare\n\n```\nvar searchTerm = '';\nfunction runSearch() {\n  console.log('Searching');\n}\n\n<form>\n  <cdr-search v-model=\"searchTerm\" :click=\"runSearch\" bare></cdr-search>\n  <p>Entered: {{searchTerm}}</p>\n</form>\n```",
-					"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nclick | func | n/a | false | The function to run when search button is clicked\nbare | boolean | false | false | Bare display variant (removes button).\nlarge | boolean | false | false | Large display variant.\n\nEvent Name | Type | Description\n--- | --- | ---\ninput | string | Current input value. Fires while typing.\n",
+					"api": {
+						"props": [
+							{
+								"name": "click",
+								"type": "func",
+								"default": "n/a",
+								"description": "The function to run when search button is clicked"
+							},
+							{
+								"name": "bare",
+								"type": "boolean",
+								"default": "false",
+								"description": "Bare display variant (removes button)."
+							},
+							{
+								"name": "large",
+								"type": "boolean",
+								"default": "false",
+								"description": "Large display variant."
+							}
+						],
+						"events": [
+							{
+								"name": "input",
+								"type": "string",
+								"description": "Current input value. Fires while typing."
+							}
+						]
+					},
 					"version": "0.1.0"
 				}
 			]

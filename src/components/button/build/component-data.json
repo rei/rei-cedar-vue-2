@@ -2,9 +2,28 @@
 	"name": "CdrButton",
 	"versions": [
 		{
-			"readme": "# <span class=\"display-name\">CdrButton</span>\n\n### <span class=\"modifiers\">Modifiers</span>\n\nModifiers can be combined 1 from each grouping.\n\n{secondary} | {sm,xs} | {block, fixed, responsive} **OR** link\n\nUse of the 'link' modifier depends on including the css for cdrA.\n\nA modifier list that contains 'link' exposes the same modifiers as cdrA and the other modifiers shouldn't be combined with it.\n\nResponsive makes the button full width and block @ sm breakpoint.\n",
-			"examples": "### Examples\n\n#### Default\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button :on-click=\"log\">I have a click event</cdr-button>\n```\n\n#### Secondary\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"secondary\" :on-click=\"log\">Secondary</cdr-button>\n```\n\n#### CTA Sale\n\n```\n<cdr-button modifier=\"cta-sale\">Secondary</cdr-button>\n```\n\n#### Link Modifier\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"link\" :on-click=\"log\">Link</cdr-button>\n```\n\n### Sizes and Shapes\n\n#### Small Modifier\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"sm\" :on-click=\"log\">Default</cdr-button>\n```\n\n#### Extra Small Modifier\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"xs\" :on-click=\"log\">Default</cdr-button>\n```\n\n### Block Modifier\n\n```\nfunction log() {\n    console.log('Clicked!');\n}\n\n<cdr-button modifier=\"block\"  :on-click=\"log\">Default</cdr-button>\n```\n",
-			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\ntype | string | \"button\" | false | Defines the button type. Possible values: {button, submit, reset}.\nonClick | func | () => () => null | false | Add custom click actions.\n\nSlot | Description\n--- | ---\ndefault | innerHTML on the inside of the button component\n",
+			"api": {
+				"props": [
+					{
+						"name": "type",
+						"type": "string",
+						"default": "\"button\"",
+						"description": "Defines the button type. Possible values: {button, submit, reset}."
+					},
+					{
+						"name": "onClick",
+						"type": "func",
+						"default": "function() { return function () { return null; }; }",
+						"description": "Add custom click actions."
+					}
+				],
+				"slots": [
+					{
+						"name": "default",
+						"description": "innerHTML on the inside of the button component"
+					}
+				]
+			},
 			"version": "0.1.0"
 		}
 	]

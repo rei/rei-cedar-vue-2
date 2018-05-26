@@ -2,10 +2,77 @@
 	"name": "CdrImg",
 	"versions": [
 		{
-			"readme": "# <span class=\"display-name\">CdrImg</span>\n\n### <span class=\"modifiers\">Modifiers</span>\n\n{responsive, rounded, circle, thumbnail}\n\n",
-			"examples": "### Examples\n\n#### Default\n\n```\n<div>\n  <cdr-img ratio=\"16-9\" alt=\"ratio standard\" src=\"http://placehold.it/200x200\"></cdr-img>\n  <cdr-img alt=\"standard landscape\" src=\"http://placehold.it/350x150\"></cdr-img>\n  <cdr-img alt=\"standard portrait\" src=\"http://placehold.it/150x350\"></cdr-img>\n</div>\n```\n\n#### Cropping\n\n```\n<div>\n  <h4>Cropping (with landscape images)</h4>\n  <cdr-row cols=\"1\" cols-md=\"3\">\n    <cdr-col>\n      <div>\n        <p>Left</p>\n        <cdr-img ratio=\"square\" crop=\"left\" alt=\"crop left\" src=\"http://placehold.it/1920x1080\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Center</p>\n        <cdr-img ratio=\"square\" crop=\"x-center\" alt=\"crop x-center\" src=\"http://placehold.it/1920x1080\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Right</p>\n        <cdr-img ratio=\"square\" crop=\"right\" alt=\"crop right\" src=\"http://placehold.it/1920x1080\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n\n  <h4>Cropping (with portrait images)</h4>\n  <cdr-row cols=\"1\" cols-md=\"3\">\n    <cdr-col>\n      <div>\n        <p>Top</p>\n        <cdr-img ratio=\"square\" crop=\"top\" alt=\"crop top\" src=\"http://placehold.it/1080x1920\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Center</p>\n        <cdr-img ratio=\"square\" crop=\"y-center\" alt=\"crop y-center\" src=\"http://placehold.it/1080x1920\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Bottom</p>\n        <cdr-img ratio=\"square\" crop=\"bottom\" alt=\"crop bottom\" src=\"http://placehold.it/1080x1920\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n\n  <h4>Cropping (combinations)</h4>\n  <cdr-row justify=\"center\">\n    <cdr-col span=\"9\">\n      <div>\n        <p>Reference Image</p>\n        <cdr-img alt=\"reference image\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n  <cdr-row cols=\"1\" cols-md=\"3\">\n    <cdr-col>\n      <div>\n        <p>top left</p>\n        <cdr-img ratio=\"16-9\" crop=\"top left\" alt=\"crop top left\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>top x-center</p>\n        <cdr-img ratio=\"16-9\" crop=\"top x-center\" alt=\"crop top x-center\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>top right</p>\n        <cdr-img ratio=\"16-9\" crop=\"top right\" alt=\"crop top right\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>y-center left</p>\n        <cdr-img ratio=\"16-9\" crop=\"y-center left\" alt=\"crop y-center left\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>y-center x-center</p>\n        <cdr-img ratio=\"16-9\" crop=\"y-center x-center\" alt=\"crop y-center x-center\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>y-center right</p>\n        <cdr-img ratio=\"16-9\" crop=\"y-center right\" alt=\"crop y-center right\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>bottom left</p>\n        <cdr-img ratio=\"16-9\" crop=\"bottom left\" alt=\"crop bottom left\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>bottom x-center</p>\n        <cdr-img ratio=\"16-9\" crop=\"bottom x-center\" alt=\"crop bottom x-center\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>bottom right</p>\n        <cdr-img ratio=\"16-9\" crop=\"bottom right\" alt=\"crop bottom right\" src=\"http://lorempixel.com/960/540/sports/9\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n</div>\n```\n\n#### Aspect Ratios\n\n```\n<div>\n  <cdr-row cols=\"2\" cols-md=\"4\">\n    <cdr-col>\n      <div>\n        <p>Square</p>\n        <cdr-img ratio=\"square\" alt=\"ratio square\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>1-2</p>\n        <cdr-img ratio=\"1-2\" alt=\"ratio 1-2\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>2-3</p>\n        <cdr-img ratio=\"2-3\" alt=\"ratio 2-3\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>3-4</p>\n        <cdr-img ratio=\"3-4\" alt=\"ratio 3-4\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>9-16</p>\n        <cdr-img ratio=\"9-16\" alt=\"ratio 9-16\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>2-1</p>\n        <cdr-img ratio=\"2-1\" alt=\"ratio 2-1\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>3-2</p>\n        <cdr-img ratio=\"3-2\" alt=\"ratio 3-2\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>4-3</p>\n        <cdr-img ratio=\"4-3\" alt=\"ratio 4-3\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>16-9</p>\n        <cdr-img ratio=\"16-9\" alt=\"ratio 16-9\" src=\"http://placehold.it/300x100\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n</div>\n```\n\n#### Image modifiers\n\n```\n<div>\n  <cdr-row cols=\"2\" cols-md=\"4\">\n    <cdr-col>\n      <div>\n        <p>Responsive</p>\n        <cdr-img ratio=\"4-3\" modifier=\"responsive\" alt=\"ratio responsive\" src=\"http://placehold.it/200x200\"></cdr-img>\n        <cdr-img modifier=\"responsive\" alt=\"standard responsive\" src=\"http://placehold.it/200x200\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>Rounded</p>\n        <cdr-img ratio=\"4-3\" modifier=\"rounded\" alt=\"ratio rounded\" src=\"http://placehold.it/200x200\"></cdr-img>\n        <cdr-img modifier=\"rounded\" alt=\"landscape rounded\" src=\"http://placehold.it/350x150\"></cdr-img>\n        <cdr-img modifier=\"rounded\" alt=\"square rounded\" src=\"http://placehold.it/200x200\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>circle</p>\n        <cdr-img ratio=\"4-3\" modifier=\"circle\" alt=\"ratio circle\" src=\"http://placehold.it/200x200\"></cdr-img>\n        <cdr-img modifier=\"circle\" alt=\"landscape circle\" src=\"http://placehold.it/350x150\"></cdr-img>\n        <cdr-img modifier=\"circle\" alt=\"square circle\" src=\"http://placehold.it/200x200\"></cdr-img>\n      </div>\n    </cdr-col>\n    <cdr-col>\n      <div>\n        <p>thumbnail</p>\n        <cdr-img ratio=\"4-3\" modifier=\"thumbnail\" alt=\"ratio thumbnail\" src=\"http://placehold.it/200x200\"></cdr-img>\n        <cdr-img modifier=\"thumbnail\" alt=\"landscape thumbnail\" src=\"http://placehold.it/350x150\"></cdr-img>\n        <cdr-img modifier=\"thumbnail\" alt=\"square thumbnail\" src=\"http://placehold.it/200x200\"></cdr-img>\n      </div>\n    </cdr-col>\n  </cdr-row>\n</div>\n```\n",
-			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nsrc | string | n/a | true | Required. Image source url.\nalt | string | \" \" | false | Required. Image alt text.\nlazy | boolean | n/a | false | Enable lazy loading.\nlazyOpts | object | () => {} | false | Object of lazy options\nratio | string | n/a | false | Aspect ratio of the media container. {auto, square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}\nratioSm | string | n/a | false | sm breakpoint and above\nratioMd | string | n/a | false | md breakpoint and above\nratioLg | string | n/a | false | lg breakpoint and above\ncrop | string | n/a | false | Requires a `ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right}\ncover | boolean | n/a | false | Requires a `ratio`. Scale the image to be as large as possible to fill the area (background-position: cover;)\nradius | string | n/a | false | Sets a border radius to an element {square, top, right, bottom, left}\n",
-			"version": "0.1.0"
+			"api": {
+				"props": [
+					{
+						"name": "src",
+						"type": "string",
+						"default": "n/a",
+						"description": "Required. Image source url."
+					},
+					{
+						"name": "alt",
+						"type": "string",
+						"default": "\" \"",
+						"description": "Required. Image alt text."
+					},
+					{
+						"name": "lazy",
+						"type": "boolean",
+						"default": "n/a",
+						"description": "Enable lazy loading."
+					},
+					{
+						"name": "lazyOpts",
+						"type": "object",
+						"default": "function() {}",
+						"description": "Object of lazy options"
+					},
+					{
+						"name": "ratio",
+						"type": "string",
+						"default": "n/a",
+						"description": "Aspect ratio of the media container. {auto, square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}"
+					},
+					{
+						"name": "ratioSm",
+						"type": "string",
+						"default": "n/a",
+						"description": "sm breakpoint and above"
+					},
+					{
+						"name": "ratioMd",
+						"type": "string",
+						"default": "n/a",
+						"description": "md breakpoint and above"
+					},
+					{
+						"name": "ratioLg",
+						"type": "string",
+						"default": "n/a",
+						"description": "lg breakpoint and above"
+					},
+					{
+						"name": "crop",
+						"type": "string",
+						"default": "n/a",
+						"description": "Requires a `ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right}"
+					},
+					{
+						"name": "cover",
+						"type": "boolean",
+						"default": "n/a",
+						"description": "Requires a `ratio`. Scale the image to be as large as possible to fill the area (background-position: cover;)"
+					},
+					{
+						"name": "radius",
+						"type": "string",
+						"default": "n/a",
+						"description": "Sets a border radius to an element {square, top, right, bottom, left}"
+					}
+				]
+			},
+			"version": "1.0.0-alpha.1"
 		}
 	]
 }
