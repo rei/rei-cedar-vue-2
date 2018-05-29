@@ -2,9 +2,34 @@
 	"name": "CdrQuote",
 	"versions": [
 		{
-			"readme": "# <span class=\"display-name\">CdrQuote</span>\n\n### Markup Tag\nthe Tag attribute of cdr-quote allows one of the following options:\n\n  * blockquote (default)\n  * aside\n  * q\n  * div\n  \n### <span class=\"modifiers\">Modifiers</span>\nModifier values of cdr-quote:\n\n  * block\n  * pull\n\n### Note:\nthe blockquote element allows for a `cite` attribute that allows for a URL path to the source. This attribute should be added when using blockquote and is different that the display option `citation`\n```\n<div>\n  <cdr-quote\n    modifier=\"block\"\n    summary=\"Blockquote Summary...\"\n    citation=\"Blockquote Citation...\"\n  />\n  <cdr-quote\n      tag=\"aside\"\n      modifier=\"pull\"\n      summary=\"Aside Pullquote Summary...\"\n    />\n</div>\n```\n",
-			"examples": "",
-			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\ntag | string | \"blockquote\" | false | \nsummary | string | n/a | false | Caption summary text\ncitation | string | n/a | false | Caption credit text\n\nSlot | Description\n--- | ---\ndefault | \n",
+			"api": {
+				"props": [
+					{
+						"name": "tag",
+						"type": "string",
+						"default": "\"blockquote\"",
+						"description": "MISSING DESCRIPTION"
+					},
+					{
+						"name": "summary",
+						"type": "string",
+						"default": "n/a",
+						"description": "Caption summary text"
+					},
+					{
+						"name": "citation",
+						"type": "string",
+						"default": "n/a",
+						"description": "Caption credit text"
+					}
+				],
+				"slots": [
+					{
+						"name": "default",
+						"description": "MISSING DESCRIPTION"
+					}
+				]
+			},
 			"version": "0.1.0"
 		}
 	]
