@@ -18,7 +18,7 @@
         </span>
       </span>
     </div>
-    <div class="breadcrumb-container">
+    <div class="cdr-breadcrumb-container">
       <span
         v-if="truncate"
       >

@@ -1,9 +1,5 @@
 import { shallow } from '@vue/test-utils';
 import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
-import debounce from 'lodash/debounce';
-
-//jest.unmock('lodash/debounce');
-debounce = jest.fn((fn) => fn);
 
 describe('CdrBreadcrumb.vue', () => {
   let wrapper = null;
@@ -47,11 +43,11 @@ describe('CdrBreadcrumb.vue', () => {
   });
 
   it('breadcrumb container is rendered', () => {
-    expect(wrapper.find('.breadcrumb-container').exists()).toBe(true);
+    expect(wrapper.find('.cdr-breadcrumb-container').exists()).toBe(true);
   });
 
   it('breadcrumb item is NOT rendered', () => {
-    expect(wrapper.find('.breadcrumb-item').exists()).toBe(false);
+    expect(wrapper.find('.cdr-breadcrumb__item').exists()).toBe(false);
   });
 
   it('breadcrumb item is rendered', () => {
@@ -63,7 +59,7 @@ describe('CdrBreadcrumb.vue', () => {
         },
       ]
     });
-    expect(wrapper.find('.breadcrumb-item').isVisible()).toBe(true);
+    expect(wrapper.find('.cdr-breadcrumb__item').isVisible()).toBe(true);
   });
 
   it('trigger resize no truncation', () => {
@@ -74,6 +70,8 @@ describe('CdrBreadcrumb.vue', () => {
     expect(wrapper.vm.thresholdExceeded).toBe(false);
   });
 
+  // TODO: Need to update lodash/debounce dependency after
+  // switch to mocha from Jest
   it('trigger resize should truncate', (done) => {
     wrapper = shallow(CdrBreadcrumb, {
       propsData: {
