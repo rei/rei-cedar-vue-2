@@ -1,17 +1,18 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
+  <!-- eslint-disable vue/require-v-for-key -->
   <div
     ref="container"
     :class="[modifierClass]">
-    <div class="ruler">
+    <div class="cdr-breadcrumb__ruler">
       <span ref="ruler">
-        <span
-          v-for="(item, index) in items"
-          :key="index">
-          <a :href="item.url">{{ item.displayText }}</a>
+        <span v-for="(item, index) in items">
+          <a
+            :href="item.url"
+            class="cdr-breadcrumb__link">{{ item.displayText }}</a>
           <span
-            class="delimiter"
+            class="cdr_breadcrumb__delimiter"
             v-if="index < items.length - 1">
           /</span>
         </span>
@@ -19,25 +20,31 @@
     </div>
     <div class="breadcrumb-container">
       <span
-        v-if="(truncate)"
+        v-if="truncate"
       >
-        <span class="breadcrumb-item ellipses"><a
+        <span class="cdr-breadcrumb__item"><a
+          class="cdr-breadcrumb__link"
           href="javascript:void(0)"
           @click="shouldTruncate = false">
-        ...</a><span class="delimiter">/</span></span><span class="breadcrumb-item">
-          <a :href="items[items.length - 2]">{{ items[items.length - 2].displayText }}</a>
-        <span class="delimiter">/</span></span><span class="breadcrumb-item">
-          <a :href="items[items.length - 1]">{{ items[items.length - 1].displayText }}</a>
+        ...</a><span class="cdr-breadcrumb__delimiter">/</span></span><span class="cdr-breadcrumb__item">
+          <a
+            class="cdr-breadcrumb__link"
+            :href="items[items.length - 2]">{{ items[items.length - 2].displayText }}</a>
+        <span class="cdr-breadcrumb__delimiter">/</span></span><span class="cdr-breadcrumb__item">
+          <a
+            class="cdr-breadcrumb__link"
+            :href="items[items.length - 1]">{{ items[items.length - 1].displayText }}</a>
         </span>
       </span>
       <span
         v-else
-        class="breadcrumb-item"
-        v-for="(item, index) in items"
-        :key="index">
-        <a :href="item.url">{{ item.displayText }}</a><span
-          class="delimiter"
-          v-if="index < items.length - 1">/</span>
+        class="cdr-breadcrumb__item"
+        v-for="(item, index) in items">
+        <a
+          class="cdr-breadcrumb__link"
+          :href="item.url">{{ item.displayText }}</a><span
+            class="cdr-breadcrumb__delimiter"
+            v-if="index < items.length - 1">/</span>
       </span>
     </div>
   </div>
@@ -52,7 +59,7 @@
  */
 
 import modifier from 'mixinsdir/modifier';
-import _ from 'lodash';
+import debounce from 'lodash/debounce';
 
 export default {
   name: 'CdrBreadcrumb',
@@ -102,7 +109,7 @@ export default {
   },
   mounted() {
     this.thresholdExceeded = this.calculateTruncation();
-    window.addEventListener('resize', _.debounce(() => {
+    window.addEventListener('resize', debounce(() => {
       this.thresholdExceeded = this.calculateTruncation();
     }, 250));
   },
@@ -121,7 +128,7 @@ export default {
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrBreadcrumb.pcss';
 
-  .ruler {
+  .cdr-breadcrumb__ruler {
     visibility: hidden;
     white-space: nowrap;
     height: 1px;

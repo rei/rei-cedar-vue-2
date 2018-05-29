@@ -1,9 +1,9 @@
 import { shallow } from '@vue/test-utils';
 import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
-import _ from 'lodash';
+import debounce from 'lodash/debounce';
 
-jest.unmock('lodash');
-_.debounce = jest.fn((fn) => fn);
+//jest.unmock('lodash/debounce');
+debounce = jest.fn((fn) => fn);
 
 describe('CdrBreadcrumb.vue', () => {
   let wrapper = null;

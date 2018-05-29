@@ -10,7 +10,6 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "dev": "node build/dev-server.js",
     "build": "cross-env NODE_ENV=prod node build/build.js",
-    "build:demo": "cross-env NODE_ENV=dev node build/build-demo.js",
     "unit": "cross-env BABEL_ENV=test jest --no-cache",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",

@@ -9,14 +9,15 @@
 
     :Base - CdrBreadcrumb
       :Elements
-        :breadcrumb-item
+        :item
         :delimiter
+        :link
       :Modifiers
         :sm
 ========================================================================== */
 
 .cdr-breadcrumb {
-  a {
+  &__link {
     @include redwood-display-10;
 
     color: $breadcrumb-text-color;
@@ -24,23 +25,23 @@
 
   /* Hover
   ========== */
-  .breadcrumb-item {
+  &__item {
     display: inline-block;
 
-    &:hover a {
+    &:hover .cdr-breadcrumb__link {
       color: $breadcrumb-hover-text-color;
     }
   }
 
   /* breadcrumb-item
   ========== */
-  span.breadcrumb-item:last-child a {
+  &__item:last-child > .cdr-breadcrumb__link {
     color: $breadcrumb-last-child-text-color;
   }
 
   /* delimiter
   ========== */
-  .delimiter {
+  &__delimiter {
     @include redwood-display-10;
 
     color: $breadcrumb-delimiter-text-color;
@@ -49,8 +50,8 @@
   }
 
   @media (--md-mq) {
-    .breadcrumb-item a,
-    .breadcrumb-item .delimiter {
+    &__item > .cdr-breadcrumb__link,
+    &__item .cdr-breadcrumb__delimiter {
       @include redwood-display-20;
     }
   }
