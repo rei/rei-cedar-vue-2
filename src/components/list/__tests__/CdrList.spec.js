@@ -10,7 +10,7 @@ describe('CdrList.vue', () => {
   it('renders an ol', () => {
     const wrapper = shallowMount(CdrList, {
       propsData: {
-        listType: 'ol',
+        tag: 'ol',
       }
     });
     expect(wrapper.is('ol')).toBe(true);

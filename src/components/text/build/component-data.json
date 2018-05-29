@@ -2,9 +2,22 @@
 	"name": "CdrText",
 	"versions": [
 		{
-			"readme": "# <span class=\"display-name\">CdrText</span>\n\n### <span class=\"modifiers\">Modifiers</span>\n\nModifier values are any valid text styles\n\n#### Heading Styles\n  * heading-large\n  * heading-large-static (non responsive)\n  * heading-medium\n  * heading-medium-static (non responsive)\n  * heading-small\n  * heading-small-static (non responsive)\n  * display\n  * display-static (non responsive)\n  * subheading\n\n#### Paragraph Styles\n  * Null (default) \n  * body\n\n#### Citation Styles\n  * citation\n```\n<div>\n  <cdr-text tag=\"h2\" modifier=\"display\">h2 display heading</cdr-text>\n  <cdr-text>Default paragraph</cdr-text>\n  <cdr-text modifier=\"body\">Body paragraph</cdr-text>\n  <cdr-text tag=\"em\" modifier=\"citation\">citation</cdr-text>\n</div>\n```\n",
-			"examples": "",
-			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\ntag | string | \"p\" | false | Any valid HTML tag\n\nSlot | Description\n--- | ---\ndefault | \n",
+			"api": {
+				"props": [
+					{
+						"name": "tag",
+						"type": "string",
+						"default": "\"p\"",
+						"description": "Any valid HTML tag"
+					}
+				],
+				"slots": [
+					{
+						"name": "default",
+						"description": "MISSING DESCRIPTION"
+					}
+				]
+			},
 			"version": "0.2.1"
 		}
 	]

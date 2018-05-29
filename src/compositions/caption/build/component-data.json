@@ -2,9 +2,22 @@
 	"name": "CdrCaption",
 	"versions": [
 		{
-			"readme": "# <span class=\"display-name\">CdrCaption</span>\n\n* Cedar 2 component for captions\n\n",
-			"examples": "",
-			"tmplTblData": "### <button class='title'>PROPS, METHODS, EVENTS, SLOTS</button>\n\nProp Name | Type | Default | Require | Description\n--- | --- | --- | --- | ---\nsummary | string | n/a | false | Caption summary text\ncredit | string | n/a | false | Caption credit text\n",
+			"api": {
+				"props": [
+					{
+						"name": "summary",
+						"type": "string",
+						"default": "n/a",
+						"description": "Caption summary text"
+					},
+					{
+						"name": "credit",
+						"type": "string",
+						"default": "n/a",
+						"description": "Caption credit text"
+					}
+				]
+			},
 			"version": "0.1.0"
 		}
 	]

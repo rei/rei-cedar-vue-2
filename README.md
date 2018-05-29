@@ -30,6 +30,10 @@ Bootstraps all the seaparate component dependencies.
 
 Runs locally for development. Has hot reloading, linting, and other nice things related to development.
 
+
+***NOTE: If you have FEBS set up locally to run the REI.com Monolith on a mac, make sure to remove any reference to: `~/code/rei.com/scripts/mac/.reirc` in your terminal configuration files, e.g., `.bash_profile` or `.bashrc`.  Also make sure your system PATH does not contain `febs/bin`***
+
+
 ## Build System
 
 The [webpack](https://webpack.github.io/) build system is taken largely from the [Vue webpack template](https://github.com/vuejs-templates/webpack) which has its own set of docs that are a good reference.
@@ -62,7 +66,7 @@ This includes running [Tenon](https://tenon.io/) a11y tests.
 
 ### Visual Regression Testing
 
-Check [backstop](https://github.com/garris/BackstopJS) for general configuration questions. 
+Check [backstop](https://github.com/garris/BackstopJS) for general configuration questions.
 
 Our visual regressions audits can be performed against all patterns documented within the project's component proving grounds. To do so, follow the steps below:
 
@@ -99,7 +103,7 @@ __TODO:__ Notes about js, eslint
 ## Design system Integration
 
 __TODO:__ Notes about DDS, design tokens, integrations
-Tokens are stored in the REI-Cedar-tokens project, and new tokens will need to be created there. 
+Tokens are stored in the REI-Cedar-tokens project, and new tokens will need to be created there.
 REI-Cedar uses the THEO project for design tokens, when bringing in an update from the REI-Cedar-tokens project do the following:
 - update the package.json to the latest tag from the REI-Cedar-Tokens repo.
 - `npm i` to install the latest tag from REI-Cedar-tokens.
@@ -127,11 +131,11 @@ __TODO:__ Notes about css, postcss, stylelint
 __TODO:__ Notes about Vue, components
 
 - Using [Vue.js](https://vuejs.org/) single file components. They have excellent docs.
-- Import them into the _index.js. 
+- Import them into the _index.js.
 - Write the component name prefixed/namespaced with `cdr-`.
 - Horizontal theming with css-modules, dynamically binding classes based on theme
 
-## Commits 
+## Commits
 This project is Commitizen friendly.
 when creating a pull request run `git cz` rather than `git commit` and follow the prompts.
 

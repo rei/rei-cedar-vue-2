@@ -30,7 +30,7 @@
         <cdr-list
           v-if="snapshot"
           :class="$style['cdr-card--activity__snapshot']"
-          modifier="inline disc compact"
+          modifier="unordered inline compact"
         >
           <li
             v-for="(item, i) in snapshot"

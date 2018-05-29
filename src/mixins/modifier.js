@@ -16,18 +16,29 @@ export default {
 
       if (!this.$style) {
         final.push(`${base}`);
-        final = final.concat(modifierArr.map(mod => `${base}--${mod}`));
+        final = final.concat(modifierArr.map(mod => this.modifyClassName(base, mod)));
       } else {
-        final.push(this.moduleClass(`${base}`));
-        final = final.concat(modifierArr.map(mod => this.moduleClass(`${base}--${mod}`)));
+        final.push(this.moduleClass(base));
+        final = final
+          .concat(modifierArr
+            .map(mod => this.moduleClass(this.modifyClassName(base, mod))));
       }
 
       return final.join(' ');
     },
   },
   methods: {
+    /**
+     * Returns a css module class
+     */
     moduleClass(className) {
       return this.$style[`${className}`];
+    },
+    /**
+     * Returns a modified base class
+     */
+    modifyClassName(base, modifier) {
+      return `${base}--${modifier}`;
     },
   },
 };

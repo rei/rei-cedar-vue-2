@@ -1,42 +1,59 @@
 <template>
   <div>
-    <h3>Ordered List</h3>
-    <cdr-list list-type="ol">
-      <li>List ordered</li>
-      <li>List ordered</li>
-      <li>List ordered</li>
-    </cdr-list>
+
+    <cdr-text
+      tag="h3"
+      modifier="heading-medium">
+      Ordered list
+    </cdr-text>
 
     <cdr-list
-      list-type="ol"
-      modifier="compact">
-      <li>List ordered - compact</li>
-      <li>List ordered - compact</li>
-      <li>List ordered - compact</li>
-    </cdr-list>
-
-    <cdr-list
-      list-type="ol"
-      modifier="spread">
-      <li>List ordered - spread</li>
-      <li>List ordered - spread</li>
-      <li>List ordered - spread</li>
-    </cdr-list>
-
-    <cdr-list list-type="ol">
-      <li>List ordered Nested
-        <cdr-list list-type="ol">
-          <li>List ordered - nested</li>
-          <li>List ordered - nested
-            <cdr-list
-              list-type="ol"
-              modifier="numbered">
-              <li>List ordered - nested - numbered</li>
-              <li>List ordered - nested - numbered</li>
+      tag="ol"
+      modifier="ordered"
+      class="cdr-stack--lg"
+    >
+      <li>List item text</li>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
+        <cdr-list
+          tag="ol"
+          modifier="ordered"
+        >
+          <li>List item text</li>
+          <li>List item text
+            <cdr-list>
+              <li>List item text</li>
+              <li>List item text
+                <cdr-list>
+                  <li>List item text</li>
+                  <li>List item text</li>
+                </cdr-list>
+              </li>
             </cdr-list>
           </li>
         </cdr-list>
       </li>
+      <li>List item text</li>
+    </cdr-list>
+
+    <cdr-text
+      tag="h4"
+      modifier="heading-medium">
+      Compact ordered list
+    </cdr-text>
+
+    <cdr-list
+      tag="ol"
+      modifier="ordered compact">
+      <li>List item text</li>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
+        <cdr-list
+          tag="ol"
+          modifier="ordered">
+          <li>List item text</li>
+          <li>List item text</li>
+        </cdr-list>
+      </li>
+      <li>List item text</li>
     </cdr-list>
   </div>
 </template>

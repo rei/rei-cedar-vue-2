@@ -1,29 +1,32 @@
 <template>
   <div>
-    <h2>Lists</h2>
-    <default-list/>
-    <ordered-list/>
-    <unstyled-list/>
-    <styled-list/>
-    <menu-list/>
+
+    <cdr-text
+      tag="h2"
+      modifier="heading-large">
+      List
+    </cdr-text>
+
+    <unordered-list class="cdr-stack--xl"/>
+    <ordered-list class="cdr-stack--xl"/>
+    <bare-list class="cdr-stack--xl"/>
   </div>
 </template>
 
 <script>
-import defaultList from './demo/Default';
+import CdrText from 'componentsdir/text/CdrText';
+import unorderedList from './demo/Unordered';
 import orderedList from './demo/Ordered';
-import unstyledList from './demo/Unstyled';
-import styledList from './demo/Styled';
-import menuList from './demo/Menu';
+import bareList from './demo/Bare';
+
 
 export default {
   name: 'Lists',
   components: {
-    defaultList,
+    unorderedList,
     orderedList,
-    unstyledList,
-    styledList,
-    menuList,
+    bareList,
+    CdrText,
   },
 };
 </script>
