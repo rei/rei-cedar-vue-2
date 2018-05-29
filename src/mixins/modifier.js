@@ -19,9 +19,7 @@ export default {
         final = final.concat(modifierArr.map(mod => this.modifyClassName(base, mod)));
       } else {
         final.push(this.moduleClass(base));
-        final = final
-          .concat(modifierArr
-            .map(mod => this.moduleClass(this.modifyClassName(base, mod))));
+        final = final.concat(modifierArr.map(mod => this.modifyClassName(base, mod)));
       }
 
       return final.join(' ');
@@ -38,7 +36,7 @@ export default {
      * Returns a modified base class
      */
     modifyClassName(base, modifier) {
-      return `${base}--${modifier}`;
+      return this.$style ? this.moduleClass(`${base}--${modifier}`) : `${base}--${modifier}`;
     },
   },
 };

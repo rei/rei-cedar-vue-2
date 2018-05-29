@@ -3,11 +3,11 @@
     :is="tag"
     :class="[modifierClass]"
   >
-    <cdr-text
+    <p
       v-if="summary"
       :class="$style['cdr-quote__summary']">
       {{ summary }}
-    </cdr-text>
+    </p>
     <slot />
     <cdr-text
       v-if="citation"

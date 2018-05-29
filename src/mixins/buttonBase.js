@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     fullWidthClass() {
-      return this.fullWidth ? `${this.baseClass}--full-width` : null;
+      return this.fullWidth ? this.modifyClassName(this.baseClass, 'full-width') : null;
     },
   },
 };

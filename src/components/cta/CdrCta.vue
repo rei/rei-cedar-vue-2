@@ -7,7 +7,7 @@
     @click="onClick"
   ><slot
   /><icon-caret-right
-    class="cdr-cta__icon"
+    :class="$style[`cdr-cta__icon`]"
   />
   </component>
 </template>
@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrCta.pcss';
 </style>
