@@ -1,35 +1,38 @@
 <template>
   <div>
-    <div class="button-example">
+    <div
+      class="button-example"
+      v-for="(section, index) in data"
+      :key="index">
+      <h2>{{ section.title }}</h2>
       <cdr-button
-        data-backstop="cdr-button"
-        type="submit"
-        :on-click="log"
-      >Default with click</cdr-button>
-      <cdr-button disabled>Default Disabled</cdr-button>
+        v-for="(button, index) in section.buttons"
+        :key="index"
+        :size="button.size"
+        :full-width="button.fullWidth"
+        :responsive-size="button.responsiveSize"
+        :type="button.type"
+        :disabled="button.disabled"
+        :data-backstop="button.backstop"
+      >{{ button.label }}</cdr-button>
     </div>
     <div class="button-example">
+      <h2>Responsive</h2>
       <cdr-button
-        type="submit"
-        modifier="sm"
-      >Small button</cdr-button>
-      <cdr-button
-        type="submit"
-        modifier="xs"
-      >Extra Small button</cdr-button>
+        :full-width="true"
+        :responsive-size="['large@sm']"
+      >Responsive with default</cdr-button>
     </div>
-
     <div class="button-example">
-      <cdr-button theme="red">red</cdr-button>
+      <h2>Primary Anchor</h2>
       <cdr-button
-        theme="red"
-        modifier="sm">red sm</cdr-button>
-      <cdr-button theme="green">green</cdr-button>
-      <cdr-button
-        theme="green"
-        modifier="xs">green xs</cdr-button>
+        tag="a"
+        href="https://rei.com"
+        size="large"
+        data-backstop="cdr-button--large anchor"
+      >Link
+      </cdr-button>
     </div>
-
   </div>
 </template>
 
@@ -39,6 +42,90 @@ import Components from 'componentsdir/_index';
 export default {
   name: 'Default',
   components: Components,
+  data: function data() {
+    return {
+      data: [
+        {
+          title: 'Default sizes',
+          buttons: [
+            {
+              label: 'Large',
+              disabled: false,
+              size: 'large',
+              fullWidth: false,
+              backstop: 'cdr-button--large',
+            },
+            {
+              label: 'Medium',
+              disabled: false,
+              size: 'medium',
+              fullWidth: false,
+              backstop: 'cdr-button--medium',
+            },
+            {
+              label: 'Small',
+              disabled: false,
+              size: 'small',
+              fullWidth: false,
+              backstop: 'cdr-button--small',
+            },
+          ],
+        },
+        {
+          title: 'Disabled',
+          buttons: [
+            {
+              label: 'Large',
+              disabled: true,
+              size: 'large',
+              fullWidth: false,
+              backstop: 'cdr-button--large disabled',
+            },
+            {
+              label: 'Medium',
+              disabled: true,
+              size: 'medium',
+              fullWidth: false,
+              backstop: 'cdr-button--medium disabled',
+            },
+            {
+              label: 'Small',
+              disabled: true,
+              size: 'small',
+              fullWidth: false,
+              backstop: 'cdr-button--small disabled',
+            },
+          ],
+        },
+        {
+          title: 'Full Width',
+          buttons: [
+            {
+              label: 'Small + full width',
+              disabled: false,
+              size: 'small',
+              fullWidth: true,
+              backstop: 'cdr-button--mall full-width',
+            },
+            {
+              label: 'Medium + full width',
+              disabled: false,
+              size: 'medium',
+              fullWidth: true,
+              backstop: 'cdr-button--medium full-width',
+            },
+            {
+              label: 'Large + full width',
+              disabled: false,
+              size: 'large',
+              fullWidth: true,
+              backstop: 'cdr-button--large full-width',
+            },
+          ],
+        },
+      ],
+    };
+  },
   methods: {
     log() {
       console.log('clicked'); // eslint-disable-line
@@ -50,5 +137,9 @@ export default {
 <style>
   .button-example {
     padding: 10px;
+  }
+
+  .button-example button, .button-example a {
+    margin: 0 10px 5px 0;
   }
 </style>
