@@ -1,9 +1,9 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 
 describe('CdrIconButton.vue', () => {
   it('adds on-dark class', () => {
-    const wrapper = shallow(CdrIconOnlyButton, {
+    const wrapper = shallowMount(CdrIconOnlyButton, {
       propsData: {
         onDark: true,
       }

@@ -14,7 +14,7 @@ describe('CdrButton.vue', () => {
   });
 
   it('validates type prop', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     const type = wrapper.vm.$options.props.type;
     expect(type.validator('test')).toBe(false);
     expect(type.validator('reset')).toBe(true);
@@ -48,7 +48,7 @@ describe('CdrButton.vue', () => {
   });
 
   it('computes base class correctly', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         el: 'a',
       },
@@ -58,18 +58,18 @@ describe('CdrButton.vue', () => {
   });
 
   it('adds responsive classes', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         staticSize: 'medium',
-        responsiveSize: ['large@extra-small'],
+        responsiveSize: ['large@xs'],
       }
     });
 
-    expect(wrapper.classes()).toContain('cdr-button--large@extra-small');
+    expect(wrapper.vm.$style).toHaveProperty(`cdr-button--large@xs`);
   })
 
   it('renders a link', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         tag: 'a',
       }, 
@@ -78,14 +78,14 @@ describe('CdrButton.vue', () => {
   });
 
   it('validates el prop', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     const tag = wrapper.vm.$options.props.tag;
     expect(tag.validator('button')).toBe(true);
     expect(tag.validator('link')).toBe(false);
   });
 
   it('validates size prop', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     const size = wrapper.vm.$options.props.size;
     expect(size.validator('small')).toBe(true);
     expect(size.validator('extra-small')).toBe(false);
