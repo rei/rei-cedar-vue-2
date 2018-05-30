@@ -10,20 +10,73 @@
     :Base - CdrAccordion
 ========================================================================== */
 
-/* Facet Toggle */
-.accordion-toggle {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 0;
+.cdr-accordion {
+  border-top: 1px solid $partly-cloudy;
 
-  &.cdr-link {
+  .cdr-accordion__button {
+    @include redwood-display-30;
+
+    background-color: $clean-slate;
+    border: none;
+    color: $heart-of-darkness;
     cursor: pointer;
-    color: #000;
+    padding: $inset-1-x;
+    text-align: left;
+    width: 100%;
+
+    &:hover,
+    &:active {
+      background-color: $moon-shot;
+    }
   }
 
-  & .cdr-icon {
+  .cdr-accordion__label {
+    font-weight: bold;
+  }
+
+  .cdr-accordion__icon {
     float: right;
-    margin-top: 0.4rem;
+    margin-left: $space-1-x;
+  }
+
+  .cdr-accordion__content {
+    @include redwood-body-20;
+
+    padding: $space-half-x $space-1-x $space-1-x;
+  }
+
+  &--border-aligned {
+    margin: 0 $inset-1-x;
+
+    & .cdr-accordion__button {
+      margin-left: -$space-1-x;
+      width: calc(100% + ($space-1-x * 2));
+    }
+
+    .cdr-accordion__content {
+      padding: $space-half-x 0 $space-1-x;
+    }
+  }
+
+  &--compact {
+    .cdr-accordion__button {
+      @include redwood-display-20;
+
+      padding: $inset-three-quarter-x;
+    }
+
+    .cdr-accordion__label {
+      font-weight: bold;
+    }
+
+    .cdr-accordion__content {
+      @include redwood-body-10;
+
+      padding: $space-quarter-x $space-three-quarter-x $space-three-quarter-x;
+    }
+  }
+
+  &--border-last {
+    border-bottom: 1px solid $partly-cloudy;
   }
 }

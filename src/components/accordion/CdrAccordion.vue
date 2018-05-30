@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div
+    :class="[modifierClass]"
+  >
     <div
       role="group"
       :aria-labelledby="`${id}-label`"
     >
 
       <button
-        class="accordion"
+        class="cdr-accordion__button"
         :id="id"
         @click="toggle"
         :aria-expanded="`${show}`"
@@ -14,24 +16,23 @@
         v-bind="$attrs"
         modifier="link"
       >
-
-        <label :id="`${id}-label`">
-          <span>
+        <label
+          class="cdr-accordion__label"
+          :id="`${id}-label`">
+          <!-- <span class="sr-only">
             {{ a11yPrefix }}
-          </span>
+          </span> -->
           {{ label }}
         </label>
 
-        <icon-caret-down />
-
+        <icon-caret-down class="cdr-accordion__icon" />
       </button>
 
     </div>
 
-    {{ initShow }}
-
     <div
-      v-show="show"
+      class="cdr-accordion__content"
+      :show="show"
       :aria-hidden="`${!show}`"
       :id="`${id}-collapsible`"
     >
@@ -44,12 +45,14 @@
 <script>
 /* eslint-disable */
 import { IconCaretDown } from '@rei/cdr-icon';
+import modifier from 'mixinsdir/modifier';
 
 export default {
   name: 'CdrAccordion',
   components: {
     IconCaretDown,
   },
+  mixins: [modifier],
   props: {
     id: {
       type: String,
@@ -66,9 +69,12 @@ export default {
     },
   },
   data: () => ({
-    show: this.initShow,
+    show: true,
   }),
   computed: {
+    baseClass() {
+      return 'cdr-accordion';
+    },
     a11yPrefix() {
       console.log('allyPrefix');
       return this.show ? 'Hide' : 'Show';

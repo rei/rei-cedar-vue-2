@@ -3,12 +3,24 @@
     <h2>Accordion</h2>
     <cdr-accordion
       id="darin"
-      label="Accordion!"
+      label="Label with multiple words, so many words in fact that
+       this content may wrap to several lines"
       :init-show="true"
     >
-      <ul>
-        <li>This is stuff in the slot</li>
-      </ul>
+      This is some paragraph text. It should align on the left with the label above it.
+    </cdr-accordion>
+    <cdr-accordion
+      id="something"
+      label="Label"
+      modifier="border-aligned"
+    >
+      This is some text inside.
+    </cdr-accordion>
+    <cdr-accordion
+      id="nofx"
+      label="A multi word label"
+      modifier="compact border-last"
+    >This is the inner text, yo.
     </cdr-accordion>
   </div>
 </template>
