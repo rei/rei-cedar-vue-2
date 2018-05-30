@@ -1,6 +1,10 @@
 import { shallowMount } from '@vue/test-utils';
 import CdrInput from 'componentsdir/input/CdrInput';
 
+const checkIcon = require('assetsdir/icons/rei/check-lg.svg');
+const errorIcon = require('assetsdir/icons/rei/x-fill.svg');
+const warningIcon = require('assetsdir/icons/rei/warning-tri.svg');
+
 function validateFn(inputText) {
   const obj = {};
   if (inputText === 'hi') {
@@ -467,6 +471,36 @@ describe('CdrInput.vue', () => {
       expect(wrapper.vm.errors[0]).toBe('This field is required');
       done();
     }, 100);
+  });
+
+  it('returns an icon for error', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+    });
+    wrapper.setData({ state: 'error' });
+    expect(wrapper.vm.getIcon).toBe(errorIcon);
+  });
+  
+  it('returns an icon for warn', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+    });
+    wrapper.setData({ state: 'warn' });
+    expect(wrapper.vm.getIcon).toBe(warningIcon);
+  });
+  
+  it('returns an icon for valid', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+    });
+    wrapper.setData({ state: 'valid' });
+    expect(wrapper.vm.getIcon).toBe(checkIcon);
   });
 
   it('immediately validates', (done) => {

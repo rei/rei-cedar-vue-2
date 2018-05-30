@@ -205,6 +205,7 @@ export default {
       };
     },
     validationIconClass() {
+    /* istanbul ignore next */
       return {
         [this.$style['cdr-input-wrap__icon']]: true,
         [this.$style['cdr-input-wrap__icon--error']]: this.isErr,
