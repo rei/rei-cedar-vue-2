@@ -21,7 +21,7 @@
     <router-link to="activitycards">Activity Cards</router-link>
     <router-link to="captions">Captions</router-link>
     <router-link to="searches">Searches</router-link>
-    <links
+    <!-- <links
       class="cpg-section"
       data-backstop="links"
     />
@@ -29,9 +29,9 @@
       class="cpg-section"
       data-backstop="buttons"
     />
-    <cards class="cpg-section"/>
+    <cards class="cpg-section"/> -->
     <!-- <card-content class="cpg-section"></card-content> -->
-    <activity class="cpg-section"/>
+    <!-- <activity class="cpg-section"/>
     <checkboxes
       class="cpg-section"
       data-backstop="checkboxes"
@@ -72,7 +72,7 @@
     <selects
       class="cpg-section"
       data-backstop="selects"
-    />
+    /> -->
     <tabs
       class="cpg-section"
       data-backstop="tabs"

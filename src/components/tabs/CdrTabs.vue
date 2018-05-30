@@ -2,11 +2,10 @@
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
   <div :class="[modifierClass]">
-    <span
+    <!-- <span
       v-for="(tab, index) in tabs"
       :key="index">{{ tab.name }}
-    </span>
-    <slot/>
+    </span> -->
   </div>
 </template>
 
@@ -18,14 +17,14 @@ export default {
       tabs: [],
     };
   },
-  computed: {
-    baseClass() {
-      return 'cdr-checkbox';
-    },
-  },
-  created() {
-    this.tabs = this.$children;
-  },
+  // computed: {
+  //   baseClass() {
+  //     return 'cdr-checkbox';
+  //   },
+  // },
+  // created() {
+  //   this.tabs = this.$children;
+  // },
 };
 </script>
 

@@ -5,7 +5,7 @@
     v-show="active"
     :aria-hidden="!active"
     class="cdr-tab-container">
-    <slot/>
+    Test
   </div>
 </template>
 
