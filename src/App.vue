@@ -73,6 +73,10 @@
       class="cpg-section"
       data-backstop="selects"
     />
+    <tabs
+      class="cpg-section"
+      data-backstop="tabs"
+    />
     <utilities class="cpg-section"/>
 
     <caption-example

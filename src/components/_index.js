@@ -13,6 +13,8 @@ import CdrRadio from 'componentsdir/radio/CdrRadio';
 import CdrRating from 'componentsdir/rating/CdrRating';
 import CdrRow from 'componentsdir/row/CdrRow';
 import CdrSelect from 'componentsdir/select/CdrSelect';
+import CdrTab from 'componentsdir/tab/CdrTab';
+import CdrTabs from 'componentsdir/tabs/CdrTabs';
 import CdrText from 'componentsdir/text/CdrText';
 
 export default {
@@ -31,5 +33,7 @@ export default {
   CdrRating,
   CdrRow,
   CdrSelect,
+  CdrTab,
+  CdrTabs,
   CdrText,
 };
