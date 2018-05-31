@@ -1,10 +1,11 @@
 <template>
   <div>
     <h2>tabs</h2>
-    <tabs>
-      <!-- <tab name="tab1">Tab 1 Content</tab> -->
-      <!-- <tab name="tab2">Tab 2 Content</tab> -->
-    </tabs>
+    <cdr-tabs>
+      <cdr-tab name="Tab1">Content ONE</cdr-tab>
+      <cdr-tab name="Tab2">Content TWO</cdr-tab>
+      <cdr-tab name="Tab3">Content THREE</cdr-tab>
+    </cdr-tabs>
   </div>
 </template>
 
@@ -12,8 +13,8 @@
 import Components from 'componentsdir/_index';
 
 export default {
-  name: 'TabsDemo',
-  components: Components,
+  name: 'TabsExample',
+  components: { ...Components },
 };
 </script>
 

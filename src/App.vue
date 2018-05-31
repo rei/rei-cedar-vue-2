@@ -4,7 +4,7 @@
     class="cdr-container-fluid"
   >
     <h1>Cedar Proving grounds</h1>
-    <router-link to="buttons">Buttons</router-link>
+    <!-- <router-link to="buttons">Buttons</router-link>
     <router-link to="grids">Grids</router-link>
     <router-link to="cards">Cards</router-link>
     <router-link to="checkboxes">Checkboxes</router-link>
@@ -20,7 +20,7 @@
     <router-link to="texts">Texts</router-link>
     <router-link to="activitycards">Activity Cards</router-link>
     <router-link to="captions">Captions</router-link>
-    <router-link to="searches">Searches</router-link>
+    <router-link to="searches">Searches</router-link> -->
     <!-- <links
       class="cpg-section"
       data-backstop="links"
@@ -77,12 +77,12 @@
       class="cpg-section"
       data-backstop="tabs"
     />
-    <utilities class="cpg-section"/>
+    <!-- <utilities class="cpg-section"/>
 
     <caption-example
       class="cpg-section"
       data-backstop="caption"
-    />
+    /> -->
     <router-view />
   </div>
 </template>

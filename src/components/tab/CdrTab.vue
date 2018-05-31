@@ -4,25 +4,35 @@
   <div
     v-show="active"
     :aria-hidden="!active"
-    class="cdr-tab-container">
-    Test
+    :class="[modifierClass]">
+    <slot/>
   </div>
 </template>
 
 <script>
+import modifier from 'mixinsdir/modifier';
+
 export default {
   name: 'CdrTab',
+  mixins: [modifier],
   props: {
     name: String,
+    id: String,
   },
   data() {
     return {
       active: false,
+      tabId: this.id || this.key,
     };
   },
   computed: {
     baseClass() {
       return 'cdr-tab';
+    },
+  },
+  methods: {
+    setActive(state) {
+      this.active = state;
     },
   },
 };
