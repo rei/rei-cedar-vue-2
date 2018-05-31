@@ -16,10 +16,18 @@ export default {
 
       if (!this.theme) {
         final.push(`${base}`);
-        final = final.concat(modifierArr.map(mod => `${base}--${mod}`));
+        final = final.concat(modifierArr.map(mod => this.modifyClassName(base, mod)));
       }
 
       return final.join(' ');
+    },
+  },
+  methods: {
+    /**
+     * Returns a modified base class
+     */
+    modifyClassName(base, modifier) {
+      return `${base}--${modifier}`;
     },
   },
 };
