@@ -19,7 +19,8 @@
     <cdr-accordion
       id="nofx"
       label="A multi word label"
-      modifier="compact border-last"
+      :compact="true"
+      modifier="border-last"
     >This is the inner text, yo.
     </cdr-accordion>
   </div>

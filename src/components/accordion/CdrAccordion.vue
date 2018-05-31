@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="[modifierClass]"
+    :class="[modifierClass, compactClass]"
   >
     <div
       role="group"
@@ -25,14 +25,16 @@
           {{ label }}
         </label>
 
-        <icon-caret-down class="cdr-accordion__icon" />
+        <icon-caret-down
+          class="cdr-accordion__icon"
+          :modifier="compact ? 'sm' : null" />
       </button>
 
     </div>
 
     <div
       class="cdr-accordion__content"
-      :show="show"
+      v-show="show"
       :aria-hidden="`${!show}`"
       :id="`${id}-collapsible`"
     >
@@ -67,6 +69,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    compact: {
+      type: Boolean,
+      default: false,
+    }
   },
   data: () => ({
     show: true,
@@ -74,6 +80,9 @@ export default {
   computed: {
     baseClass() {
       return 'cdr-accordion';
+    },
+    compactClass() {
+      return this.modifyClassName(this.baseClass, 'compact');
     },
     a11yPrefix() {
       console.log('allyPrefix');
@@ -92,8 +101,7 @@ export default {
   },
   methods: {
     toggle() {
-      console.log('hello');
-      console.log('toggle init show', this.initShow);
+      console.log('toggle, show:', this.show);
       this.show = !this.show;
     },
   },
