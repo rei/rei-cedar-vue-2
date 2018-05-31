@@ -168,7 +168,7 @@ export default {
       const cropArr = this.crop ? this.crop.split(' ') : [];
       let final = [];
 
-      final = final.concat(cropArr.map(mod => this.$style[`${base}--${mod}`]));
+      final = final.concat(cropArr.map(mod => this.modifyClassName(base, mod)));
 
       return final.join(' ');
     },
