@@ -14,7 +14,6 @@
         :aria-expanded="`${show}`"
         :aria-controls="`${id}-collapsible`"
         v-bind="$attrs"
-        modifier="link"
       >
         <label
           class="cdr-accordion__label"
@@ -24,7 +23,6 @@
           </span> -->
           {{ label }}
         </label>
-
         <icon-caret-down
           class="cdr-accordion__icon"
           :modifier="compact ? 'sm' : null" />
