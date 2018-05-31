@@ -2,49 +2,39 @@
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
   <!-- eslint-disable vue/require-v-for-key -->
+
   <div
     ref="container"
-    :class="[modifierClass]">
-    <div class="cdr-breadcrumb__ruler">
-      <span ref="ruler">
-        <span v-for="(item, index) in items">
-          <a
-            :href="item.url"
-            class="cdr-breadcrumb__link">{{ item.displayText }}</a>
-          <span
-            class="cdr_breadcrumb__delimiter"
-            v-if="index < items.length - 1">
-          /</span>
-        </span>
-      </span>
-    </div>
-    <div class="cdr-breadcrumb-container">
+    :class="modifierClass">
+    <div :class="$style['cdr-breadcrumb-container']">
       <span
         v-if="truncate"
       >
-        <span class="cdr-breadcrumb__item"><a
-          class="cdr-breadcrumb__link"
-          href="javascript:void(0)"
+        <span :class="$style['cdr-breadcrumb__item']"><button
+          :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]"
           @click="shouldTruncate = false">
-        ...</a><span class="cdr-breadcrumb__delimiter">/</span></span><span class="cdr-breadcrumb__item">
+        ...</button><span :class="$style['cdr-breadcrumb__delimiter']">/</span></span><span :class="$style['cdr-breadcrumb__item']">
           <a
-            class="cdr-breadcrumb__link"
+            :class="$style['cdr-breadcrumb__link']"
             :href="items[items.length - 2]">{{ items[items.length - 2].displayText }}</a>
-        <span class="cdr-breadcrumb__delimiter">/</span></span><span class="cdr-breadcrumb__item">
+        <span :class="$style['cdr-breadcrumb__delimiter']">/</span></span><span :class="$style['cdr-breadcrumb__item']">
           <a
-            class="cdr-breadcrumb__link"
+            :class="$style['cdr-breadcrumb__link']"
             :href="items[items.length - 1]">{{ items[items.length - 1].displayText }}</a>
         </span>
       </span>
       <span
         v-else
-        class="cdr-breadcrumb__item"
-        v-for="(item, index) in items">
-        <a
-          class="cdr-breadcrumb__link"
-          :href="item.url">{{ item.displayText }}</a><span
-            class="cdr-breadcrumb__delimiter"
-            v-if="index < items.length - 1">/</span>
+        ref="fullBreadcrumb">
+        <span
+          :class="$style['cdr-breadcrumb__item']"
+          v-for="(item, index) in items">
+          <a
+            :class="$style['cdr-breadcrumb__link']"
+            :href="item.url">{{ item.displayText }}</a><span
+              :class="$style['cdr-breadcrumb__delimiter']"
+              v-if="index < items.length - 1">/</span>
+        </span>
       </span>
     </div>
   </div>
@@ -97,6 +87,7 @@ export default {
     return {
       thresholdExceeded: false,
       shouldTruncate: this.truncationEnabled,
+      breadcrumbWidth: 0,
     };
   },
   computed: {
@@ -108,23 +99,37 @@ export default {
     },
   },
   mounted() {
+    this.breadcrumbWidth = this.getBreadcrumbWidth();
+    console.log('KRIS breadcrumbWidth = ', this.breadcrumbWidth);
     this.thresholdExceeded = this.calculateTruncation();
     window.addEventListener('resize', debounce(() => {
       this.thresholdExceeded = this.calculateTruncation();
     }, 250));
   },
   methods: {
+    getBreadcrumbWidth() {
+      const breadcrumbsElements = Array.from(this.$refs.fullBreadcrumb.children);
+      let totalWidth = 0;
+      breadcrumbsElements.forEach((element) => {
+        totalWidth += element.offsetWidth || 0;
+      });
+      // const containerWidth = this.$refs.container.offsetWidth || 0;
+      console.log('KRIS fullBreadcrumb REF = ', this.$refs.fullBreadcrumb.children);
+      // return this.$refs.fullBreadcrumb.offsetWidth || 0;
+      return totalWidth;
+      // const ratio = breadcrumbWidth / containerWidth || 0;
+      // return (ratio > this.truncationThreshold);
+    },
     calculateTruncation() {
       const containerWidth = this.$refs.container.offsetWidth || 0;
-      const breadcrumbWidth = this.$refs.ruler.offsetWidth || 0;
-      const ratio = breadcrumbWidth / containerWidth || 0;
+      const ratio = this.breadcrumbWidth / containerWidth || 0;
       return (ratio > this.truncationThreshold);
     },
   },
 };
 </script>
 
-<style>
+<style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrBreadcrumb.pcss';
 

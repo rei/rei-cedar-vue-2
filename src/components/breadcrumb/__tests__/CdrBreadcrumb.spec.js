@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
 
 describe('CdrBreadcrumb.vue', () => {
@@ -27,7 +27,7 @@ describe('CdrBreadcrumb.vue', () => {
   ];
 
   beforeEach(() => {
-    wrapper = shallow(CdrBreadcrumb);
+    wrapper = shallowMount(CdrBreadcrumb);
   });
 
   it('renders a div', () => {
@@ -36,10 +36,6 @@ describe('CdrBreadcrumb.vue', () => {
 
   it('container the base class', () => {
     expect(wrapper.vm.$refs.container.classList.contains('cdr-breadcrumb')).toBe(true);
-  });
-
-  it('ruler element is rendered', () => {
-    expect(wrapper.vm.$refs.ruler.tagName).toBe('SPAN');
   });
 
   it('breadcrumb container is rendered', () => {

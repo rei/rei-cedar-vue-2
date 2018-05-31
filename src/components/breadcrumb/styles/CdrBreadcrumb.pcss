@@ -12,6 +12,7 @@
         :item
         :delimiter
         :link
+        :ellipses
       :Modifiers
         :sm
 ========================================================================== */
@@ -47,6 +48,10 @@
     color: $breadcrumb-delimiter-text-color;
     padding-left: $space-quarter-x;
     padding-right: $space-half-x;
+  }
+
+  &__ellipses {
+    border: none;
   }
 
   @media (--md-mq) {
