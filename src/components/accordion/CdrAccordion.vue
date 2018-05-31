@@ -74,34 +74,24 @@ export default {
       default: false,
     }
   },
-  data: () => ({
-    show: true,
-  }),
+  data() {
+    return {
+      show: this.initShow,
+    }
+  },
   computed: {
     baseClass() {
       return 'cdr-accordion';
     },
     compactClass() {
-      return this.modifyClassName(this.baseClass, 'compact');
+      return this.compact ? this.modifyClassName(this.baseClass, 'compact') : null;
     },
     a11yPrefix() {
-      console.log('allyPrefix');
       return this.show ? 'Hide' : 'Show';
     },
-    init() {
-      console.log('init function');
-      return false;
-    },
-  },
-  beforeMount: () => {
-    console.log('beforeMount initShow val', this.initShow);
-  },
-  mounted: () => {
-    console.log('mounted', this.initShow);
   },
   methods: {
     toggle() {
-      console.log('toggle, show:', this.show);
       this.show = !this.show;
     },
   },
