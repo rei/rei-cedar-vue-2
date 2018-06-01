@@ -66,7 +66,7 @@
         id="border-aligned-compact"
         label="Border-aligned and compact"
         :compact="true"
-        modifier="border-aligned border-last">
+        modifier="border-aligned">
         It helps to see at least two accordions together.
       </cdr-accordion>
       <cdr-accordion
@@ -90,9 +90,16 @@ export default {
 </script>
 
 <style>
-.accordion-container h2, .accordion-group h3 {
+.accordion-container h2,
+.accordion-group h3 {
   margin-bottom: 10px;
 }
+
+/*
+.accordion-group h3 {
+  margin-bottom: 10px;
+}
+*/
 
 .accordion-group {
   margin-bottom: 30px;
