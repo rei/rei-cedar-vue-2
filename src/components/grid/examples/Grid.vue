@@ -1821,8 +1821,8 @@
 </template>
 
 <script>
-import CdrRow from 'componentsdir/row/CdrRow';
-import CdrCol from 'componentsdir/column/CdrCol';
+import CdrRow from 'componentsdir/grid/CdrRow';
+import CdrCol from 'componentsdir/grid/CdrCol';
 import complex from './demo/Complex';
 
 export default {
@@ -1832,7 +1832,7 @@ export default {
 </script>
 
 <style>
-  .row-demo-wrapper .cdr-row {
+  .row-demo-wrapper [class^="cdr-row_"] {
     margin-bottom: 16px;
   }
 

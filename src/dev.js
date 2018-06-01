@@ -22,7 +22,7 @@ import Captions from 'compositionsdir/caption/examples/Caption';
 import Searches from 'compositionsdir/search/examples/searchbox';
 
 import './css/main.postcss';
-import './cdr-assets/dist/cdr-fonts.min.css';
+import '../static/cdr-fonts.css';
 import App from './App';
 
 Vue.config.devtools = false;

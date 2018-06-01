@@ -1,7 +1,9 @@
 <template>
-  <cdr-card>
-    <p>A simple card</p>
-  </cdr-card>
+  <div>
+    <cdr-card>
+      <p>A simple card</p>
+    </cdr-card>
+  </div>
 </template>
 
 <script>

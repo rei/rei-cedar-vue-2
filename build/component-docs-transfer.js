@@ -10,7 +10,7 @@ const destCdrDataFilePath = path.join(__dirname, `../../${DEST_REPO_NAME + path.
 // Test to make sure the Cedar Data Object file exists
 const pathExistsProm = fs.pathExists(srcCdrDataFilePath)
 .catch( err => {
-  console.log(`Error testing existence of Cedar data object at:\n${srcCdrDataFilePath}`)
+  console.log(`Error testing existence of Cedar data object at ${srcCdrDataFilePath}:\n${err}`)
   process.exit(1)
 })
 

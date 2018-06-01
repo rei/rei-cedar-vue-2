@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="modifierClass"
+    :class="[modifierClass]"
     :target="target"
     :rel="computedRel"
     :href="tag === 'a' ? href : null /* don't include the href attribute if not an <a> */"
@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style theme="default">
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrLink.pcss';
 </style>

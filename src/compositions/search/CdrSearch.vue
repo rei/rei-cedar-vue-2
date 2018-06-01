@@ -1,7 +1,7 @@
 <template>
-  <div class="cdr-search">
+  <div :class="$style['cdr-search']">
     <cdr-input
-      class="cdr-search__input"
+      :class="$style['cdr-search__input']"
       v-bind="$attrs"
       label="Search"
       hide-label
@@ -12,7 +12,7 @@
     >
       <span
         slot="preicon"
-        class="cdr-search__icon"
+        :class="$style['cdr-search__icon']"
       />
     </cdr-input>
     <cdr-button
@@ -90,7 +90,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
 @import 'cssdir/settings/_index.pcss';
 @import './styles/vars/CdrSearch.vars.pcss';
 @import './styles/CdrSearch.pcss';

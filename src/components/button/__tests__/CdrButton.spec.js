@@ -1,28 +1,27 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrButton from 'componentsdir/button/CdrButton';
-
-const clickHandler = jest.fn();
+import sinon from 'sinon'
 
 describe('CdrButton.vue', () => {
   it('renders a button', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     expect(wrapper.is('button')).toBe(true);
   });
 
   it('sets default type prop correctly', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     expect(wrapper.attributes().type).toBe('button');
   });
 
   it('validates type prop', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     const type = wrapper.vm.$options.props.type;
     expect(type.validator('test')).toBe(false);
     expect(type.validator('reset')).toBe(true);
   });
 
   it('sets type attr correctly', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         type: 'reset',
       },
@@ -31,24 +30,25 @@ describe('CdrButton.vue', () => {
   });
 
   it('has default click', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     const defaultFunc = wrapper.vm.$props.onClick();
     const result = defaultFunc();
     expect(result).toBe(null)
   });
 
   it('click function triggers correctly', () => {
-    const wrapper = shallow(CdrButton, {
+    const spy = sinon.spy();
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
-        onClick: clickHandler
+        onClick: spy
       },
     });
     wrapper.trigger('click');
-    expect(clickHandler).toHaveBeenCalled();
+    expect(spy.calledOnce).toBeTruthy();
   });
 
   it('computes base class correctly', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         el: 'a',
       },
@@ -58,18 +58,18 @@ describe('CdrButton.vue', () => {
   });
 
   it('adds responsive classes', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         staticSize: 'medium',
-        responsiveSize: ['large@extra-small'],
+        responsiveSize: ['large@xs'],
       }
     });
 
-    expect(wrapper.classes()).toContain('cdr-button--large@extra-small');
+    expect(wrapper.vm.$style).toHaveProperty(`cdr-button--large@xs`);
   })
 
   it('renders a link', () => {
-    const wrapper = shallow(CdrButton, {
+    const wrapper = shallowMount(CdrButton, {
       propsData: {
         tag: 'a',
       }, 
@@ -78,14 +78,14 @@ describe('CdrButton.vue', () => {
   });
 
   it('validates el prop', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     const tag = wrapper.vm.$options.props.tag;
     expect(tag.validator('button')).toBe(true);
     expect(tag.validator('link')).toBe(false);
   });
 
   it('validates size prop', () => {
-    const wrapper = shallow(CdrButton);
+    const wrapper = shallowMount(CdrButton);
     const size = wrapper.vm.$options.props.size;
     expect(size.validator('small')).toBe(true);
     expect(size.validator('extra-small')).toBe(false);

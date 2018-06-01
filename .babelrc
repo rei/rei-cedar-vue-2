@@ -8,10 +8,10 @@
   "env": {
     "test": {
       "presets": [
-        "env", 
-        "stage-2",
-        "./.babel-jest.js"
+        "env",
+        "stage-2"
       ],
+      "plugins": ["istanbul"]
     }
   }
 }

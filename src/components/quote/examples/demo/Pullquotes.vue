@@ -1,8 +1,7 @@
 <template>
   <div>
     <h2>Pullquote</h2>
-    <cdr-text
-    modifier="body">
+    <cdr-text modifier="body">
       Body paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit.
       At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam
       ex aliquam. Temporibus, veritatis laudantium molestiae accusamus
