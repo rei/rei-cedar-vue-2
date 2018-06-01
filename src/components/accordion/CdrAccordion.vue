@@ -10,7 +10,7 @@
         class="cdr-accordion__button"
         :id="id"
         @click="toggle"
-        :aria-expanded="`${show}`"
+        :aria-expanded="`${isOpen}`"
         :aria-controls="`${id}-collapsible`"
         v-bind="$attrs"
       >
@@ -24,7 +24,7 @@
         </label>
         <icon-caret-down
           class="cdr-accordion__icon"
-          :class="show ? 'open' : 'closed'"
+          :class="isOpen ? 'open' : 'closed'"
           :modifier="compact ? 'sm' : null" />
       </button>
 
@@ -32,13 +32,12 @@
 
     <div
       class="cdr-accordion__content"
-      v-show="show"
-      :aria-hidden="`${!show}`"
+      v-show="isOpen"
+      :aria-hidden="`${!isOpen}`"
       :id="`${id}-collapsible`"
     >
       <slot/>
     </div>
-
   </div>
 </template>
 
@@ -63,7 +62,7 @@ export default {
       required: true,
     },
     /** Sets Facet Initial Display State  */
-    initShow: {
+    show: {
       type: Boolean,
       default: false,
     },
@@ -74,7 +73,7 @@ export default {
   },
   data() {
     return {
-      show: this.initShow,
+      isOpen: this.show,
     }
   },
   computed: {
@@ -85,12 +84,12 @@ export default {
       return this.compact ? this.modifyClassName(this.baseClass, 'compact') : null;
     },
     a11yPrefix() {
-      return this.show ? 'Hide' : 'Show';
+      return this.isOpen ? 'Hide' : 'Show';
     },
   },
   methods: {
     toggle() {
-      this.show = !this.show;
+      this.isOpen = !this.isOpen;
     },
   },
 };
