@@ -1,9 +1,9 @@
-import { shallow } from '@vue/test-utils';
-import CdrRow from 'componentsdir/row/CdrRow';
+import { shallowMount } from '@vue/test-utils';
+import CdrRow from 'componentsdir/grid/CdrRow';
 
 describe('CdrRow.vue', () => {
   it('sets type prop correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         type: 'normal',
       }
@@ -12,7 +12,7 @@ describe('CdrRow.vue', () => {
   });
 
   it('renders as list type correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         type: 'list',
       },
@@ -21,12 +21,12 @@ describe('CdrRow.vue', () => {
   });
 
   it('renders default type correctly', () => {
-    const wrapper = shallow(CdrRow);
+    const wrapper = shallowMount(CdrRow);
     expect(wrapper.is('div')).toBe(true);
   });
 
   it('computes cols classes correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         cols: '1',
         colsMd: '2',
@@ -41,7 +41,7 @@ describe('CdrRow.vue', () => {
   });
 
   it('computes justify classes correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         justify: 'center',
         justifyMd: 'center',
@@ -56,7 +56,7 @@ describe('CdrRow.vue', () => {
   });
 
   it('computes align classes correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         align: 'top',
         alignMd: 'top',
@@ -71,7 +71,7 @@ describe('CdrRow.vue', () => {
   });
 
   it('computes gutter classes correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         gutter: 'none',
         gutterMd: 'none',
@@ -86,7 +86,7 @@ describe('CdrRow.vue', () => {
   });
 
   it('computes vertical classes correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         vertical: true,
         verticalMd: true,
@@ -101,7 +101,7 @@ describe('CdrRow.vue', () => {
   });
 
   it('computes wrap classes correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         wrapMd: true,
         wrapLg: true,
@@ -114,7 +114,7 @@ describe('CdrRow.vue', () => {
   });
 
   it('computes nowrap classes correctly', () => {
-    const wrapper = shallow(CdrRow, {
+    const wrapper = shallowMount(CdrRow, {
       propsData: {
         nowrap: true,
         nowrapMd: true,

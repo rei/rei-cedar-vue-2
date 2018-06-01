@@ -1,41 +1,44 @@
 <template>
+  <!-- !row && !list -->
   <div
     v-if="!isRow && !isList"
-    class="cdr-col"
-    :class="columnClasses"
+    :class="[$style['cdr-col'],columnClasses]"
   >
-    <div class="cdr-col__content">
+    <div :class="$style['cdr-col__content']">
       <!-- @slot innerHTML inside of the column component -->
       <slot/>
     </div>
   </div>
+
+  <!-- !row && list -->
   <li
     v-else-if="!isRow && isList"
-    class="cdr-col"
-    :class="columnClasses"
+    :class="[$style['cdr-col'],columnClasses]"
   >
-    <div class="cdr-col__content">
+    <div :class="$style['cdr-col__content']">
       <!-- @slot innerHTML inside of the column component -->
       <slot/>
     </div>
   </li>
+
+  <!-- row && list -->
   <li
     v-else-if="isRow && isList"
-    class="cdr-row cdr-col"
-    :class="columnClasses"
+    :class="[$style['cdr-row'], $style['cdr-col'],columnClasses]"
   >
     <cdr-row
-      class="cdr-col"
+      :class="$style['cdr-col']"
       v-bind="$attrs"
     >
       <!-- @slot innerHTML inside of the column component -->
       <slot/>
     </cdr-row>
   </li>
+
+  <!-- else -->
   <cdr-row
     v-else
-    class="cdr-col"
-    :class="columnClasses"
+    :class="[$style['cdr-col'],columnClasses]"
     v-bind="$attrs"
   >
     <!-- @slot innerHTML inside of the column component -->
@@ -44,7 +47,7 @@
 </template>
 
 <script>
-import { CdrRow } from '@rei/cdr-row';
+import CdrRow from './CdrRow';
 
 /**
  * Cedar 2 component for column
@@ -201,28 +204,34 @@ export default {
     columnClasses() {
       const classObj = {};
       // span
-      classObj[`cdr-col_span${this.span}`] = this.span;
-      classObj[`cdr-col_span${this.spanSm}@sm`] = this.spanSm;
-      classObj[`cdr-col_span${this.spanMd}@md`] = this.spanMd;
-      classObj[`cdr-col_span${this.spanLg}@lg`] = this.spanLg;
+      classObj[this.$style[`cdr-col_span${this.span}`]] = this.span;
+      classObj[this.$style[`cdr-col_span${this.spanSm}@sm`]] = this.spanSm;
+      classObj[this.$style[`cdr-col_span${this.spanMd}@md`]] = this.spanMd;
+      classObj[this.$style[`cdr-col_span${this.spanLg}@lg`]] = this.spanLg;
       // offset left
-      classObj[`cdr-col--offsetLeft${this.offsetLeft}`] = this.offsetLeft;
-      classObj[`cdr-col--offsetLeft${this.offsetLeftSm}@sm`] = this.offsetLeftSm;
-      classObj[`cdr-col--offsetLeft${this.offsetLeftMd}@md`] = this.offsetLeftMd;
-      classObj[`cdr-col--offsetLeft${this.offsetLeftLg}@lg`] = this.offsetLeftLg;
+      classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeft}`]] = this.offsetLeft;
+      classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftSm}@sm`]] = this.offsetLeftSm;
+      classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftMd}@md`]] = this.offsetLeftMd;
+      classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftLg}@lg`]] = this.offsetLeftLg;
       // offset right
-      classObj[`cdr-col--offsetRight${this.offsetRight}`] = this.offsetRight;
-      classObj[`cdr-col--offsetRight${this.offsetRightSm}@sm`] = this.offsetRightSm;
-      classObj[`cdr-col--offsetRight${this.offsetRightMd}@md`] = this.offsetRightMd;
-      classObj[`cdr-col--offsetRight${this.offsetRightLg}@lg`] = this.offsetRightLg;
+      classObj[this.$style[`cdr-col--offsetRight${this.offsetRight}`]] = this.offsetRight;
+      classObj[this.$style[`cdr-col--offsetRight${this.offsetRightSm}@sm`]] = this.offsetRightSm;
+      classObj[this.$style[`cdr-col--offsetRight${this.offsetRightMd}@md`]] = this.offsetRightMd;
+      classObj[this.$style[`cdr-col--offsetRight${this.offsetRightLg}@lg`]] = this.offsetRightLg;
       // align
-      classObj[`cdr-col--${this.alignSelf}`] = this.alignSelf;
-      classObj[`cdr-col--${this.alignSelfSm}@sm`] = this.alignSelfSm;
-      classObj[`cdr-col--${this.alignSelfMd}@md`] = this.alignSelfMd;
-      classObj[`cdr-col--${this.alignSelfLg}@lg`] = this.alignSelfLg;
+      classObj[this.$style[`cdr-col--${this.alignSelf}`]] = this.alignSelf;
+      classObj[this.$style[`cdr-col--${this.alignSelfSm}@sm`]] = this.alignSelfSm;
+      classObj[this.$style[`cdr-col--${this.alignSelfMd}@md`]] = this.alignSelfMd;
+      classObj[this.$style[`cdr-col--${this.alignSelfLg}@lg`]] = this.alignSelfLg;
 
       return classObj;
     },
   },
 };
 </script>
+
+<style module>
+@import 'cssdir/settings/_index.pcss';
+@import "./styles/Grid.vars.pcss";
+@import "./styles/CdrCol.pcss";
+</style>

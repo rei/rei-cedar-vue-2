@@ -1,43 +1,40 @@
 <template>
-  <div
-    class="cdr-rating"
-    :class="[modifierClass]"
-  >
-    <div class="cdr-rating__background">
+  <div :class="[modifierClass]">
+    <div :class="$style['cdr-rating__background']">
       <span
-        class="cdr-rating__icon cdr-rating__placeholder"
+        :class="[$style['cdr-rating__icon'], $style['cdr-rating__placeholder']]"
         v-for="n in 5"
         :key="n"
         aria-hidden="true"
       />
     </div>
-    <div class="cdr-rating__ratings">
+    <div :class="$style['cdr-rating__ratings']">
       <span
-        class="cdr-rating__icon cdr-rating__100"
+        :class="[$style['cdr-rating__icon'], $style['cdr-rating__100']]"
         v-for="n in whole"
         :key="n"
         aria-hidden="true"
       />
       <span
         v-if="remainder === '25'"
-        class="cdr-rating__icon cdr-rating__25"
+        :class="[$style['cdr-rating__icon'], $style['cdr-rating__25']]"
         aria-hidden="true"
       />
       <span
         v-else-if="remainder === '50'"
-        class="cdr-rating__icon cdr-rating__50"
+        :class="[$style['cdr-rating__icon'], $style['cdr-rating__50']]"
         aria-hidden="true"
       />
       <span
         v-else-if="remainder === '75'"
-        class="cdr-rating__icon cdr-rating__75"
+        :class="[$style['cdr-rating__icon'], $style['cdr-rating__75']]"
         aria-hidden="true"
       />
     </div>
     <span
       v-if="count"
       aria-hidden="true"
-      class="cdr-rating__count"
+      :class="$style['cdr-rating__count']"
     >({{ count }})<span v-if="!compact"> Reviews</span></span>
     <span
       class="cdr-sr-only"
@@ -101,7 +98,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/CdrRating.vars.pcss';
   @import './styles/CdrRating.pcss';

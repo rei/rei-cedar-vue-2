@@ -34,6 +34,7 @@ node_modules
 dist-docs
 
 # Test results
+.nyc_output
 backstop_data/bitmaps_reference
 backstop_data/bitmaps_backup
 backstop_data/bitmaps_test

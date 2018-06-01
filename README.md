@@ -118,7 +118,6 @@ __TODO:__ Notes about css, postcss, stylelint
 - Components styles are in the same directory and imported into style tags in the component file.
 - main.postcss (.postcss so webpack uses the correct loader - others are .pcss and just need to be imported here to be processed)
 - Component css is output as a file separate from main.postcss.
-- Using [vue-theme-loader](https://github.com/zephraph/vue-theme-loader) to allow for vertical themes. Every style tag in the components needs a `theme="<theme>"`.
 - Imported into entry files (dev.js and main.js so webpack processes it)
 - [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) inspired file structure.
 - CSS needs to be written with `cdr-` namespace prefix.

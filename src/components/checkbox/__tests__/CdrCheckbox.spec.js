@@ -1,25 +1,24 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
-
 
 describe('CdrCheckbox.vue', () => {
   it('renders an input', () => {
-    const wrapper = shallow(CdrCheckbox);
+    const wrapper = shallowMount(CdrCheckbox);
     expect(wrapper.vm.$refs.checkbox.tagName).toBe('INPUT');
   });
 
   it('is type checkbox', () => {
-    const wrapper = shallow(CdrCheckbox);
+    const wrapper = shallowMount(CdrCheckbox);
     expect(wrapper.vm.$refs.checkbox.hasAttribute('type', 'checkbox')).toBe(true);
   });
 
   it('renders a label element', () => {
-    const wrapper = shallow(CdrCheckbox);
+    const wrapper = shallowMount(CdrCheckbox);
     expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
   });
   
   it('adds a custom label class correctly', () => {
-    const wrapper = shallow(CdrCheckbox, {
+    const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
         labelClass: 'custom-label-class',
       },
@@ -31,7 +30,7 @@ describe('CdrCheckbox.vue', () => {
   });
   
   it('adds a custom input class correctly', () => {
-    const wrapper = shallow(CdrCheckbox, {
+    const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
         inputClass: 'custom-input-class',
       },
@@ -43,7 +42,7 @@ describe('CdrCheckbox.vue', () => {
   });
   
   it('adds a custom content class correctly', () => {
-    const wrapper = shallow(CdrCheckbox, {
+    const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
         contentClass: 'custom-content-class',
       },
@@ -55,7 +54,7 @@ describe('CdrCheckbox.vue', () => {
   });
 
   it('watches values correctly', () => {
-    const wrapper = shallow(CdrCheckbox, {
+    const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
         value: false,
       },
@@ -66,46 +65,44 @@ describe('CdrCheckbox.vue', () => {
   });
 
   it('emits change events with correct values for default checkbox', () => {
-    const wrapper = shallow(CdrCheckbox, {
+    const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
         value: false,
       },
     });
-    const cb = wrapper.find('.cdr-checkbox');
-    cb.element.click();
+    const cb = wrapper.find({ ref: 'checkbox'});
+    cb.trigger('click');
     expect(wrapper.emitted().change[0][0]).toBe(true);
-    cb.element.click();
+    cb.trigger('click');
     expect(wrapper.emitted().change[1][0]).toBe(false);
   });
   
   it('emits change events with correct values for custom checkbox', () => {
-    const wrapper = shallow(CdrCheckbox, {
+    const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
         trueValue: 'checked',
         falseValue: 'unchecked',
         value: '',
       },
-      attachToDocument: true,
     });
-    const cb = wrapper.find('.cdr-checkbox');
-    cb.element.click();
+    const cb = wrapper.find({ ref: 'checkbox'});
+    cb.trigger('click');
     expect(wrapper.emitted().change[0][0]).toBe('checked');
-    cb.element.click();
+    cb.trigger('click');
     expect(wrapper.emitted().change[1][0]).toBe('unchecked');
   });
-
+  
   it('emits change events with correct values for group checkbox', () => {
-    const wrapper = shallow(CdrCheckbox, {
+    const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
         customValue: 'b',
         value: ['a'],
       },
-      attachToDocument: true,
     });
-    const cb = wrapper.find('.cdr-checkbox');
-    cb.element.click();
+    const cb = wrapper.find({ ref: 'checkbox'});
+    cb.trigger('click');
     expect(wrapper.emitted().change[0][0]).toEqual(['a', 'b']);
-    cb.element.click();
+    cb.trigger('click');
     expect(wrapper.emitted().change[1][0]).toEqual(['a']);
   });
 });

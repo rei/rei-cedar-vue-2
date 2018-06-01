@@ -34,7 +34,7 @@
   text-decoration: none;
   white-space: nowrap;
 
-  &__icon {
+  & > :global(&__icon) {
     display: block;
     float: left;
     fill: $button-color;
@@ -52,7 +52,7 @@
     text-decoration: none;
     outline: none;
 
-    &__icon {
+    & > :global(&__icon) {
       fill: $button-hover-color;
     }
   }
@@ -75,7 +75,7 @@
     box-shadow: $button-secondary-box-shadow;
     color: $button-secondary-color;
 
-    & > .cdr-button__icon {
+    & > :global(.cdr-button__icon) {
       fill: $button-secondary-color;
     }
 
@@ -88,7 +88,7 @@
       box-shadow: $button-secondary-box-shadow;
       color: $button-secondary-hover-color;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         fill: $button-secondary-hover-color;
       }
     }
@@ -99,7 +99,7 @@
       color: $button-secondary-disabled-color;
       cursor: not-allowed;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         fill: $button-secondary-disabled-color;
       }
     }
@@ -128,7 +128,7 @@
 
     padding: $inset-three-quarter-x-squish;
 
-    & > .cdr-button__icon {
+    & > :global(.cdr-button__icon) {
       /* This is to correct icon size vs line height */
       @include small-button-icon();
     }
@@ -139,7 +139,7 @@
   &--full-width {
     width: 100%;
 
-    & > .cdr-button__icon {
+    & > :global(.cdr-button__icon) {
       display: inline-block;
       float: none;
       position: relative;
@@ -147,7 +147,7 @@
     }
   }
 
-  /* Breakpooint variants
+  /* Breakpoint variants
     ========================================================================== */
 
   @mixin auto-icon() {
@@ -170,7 +170,7 @@
       padding: $inset-three-quarter-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include small-button-icon();
       }
     }
@@ -181,7 +181,7 @@
       padding: $inset-1-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
     }
@@ -192,7 +192,7 @@
       padding: $inset-1-and-a-half-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
     }
@@ -208,7 +208,7 @@
       padding: $inset-three-quarter-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include small-button-icon();
       }
     }
@@ -219,7 +219,7 @@
       padding: $inset-1-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
     }
@@ -230,7 +230,7 @@
       padding: $inset-1-and-a-half-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
     }
@@ -246,7 +246,7 @@
       padding: $inset-three-quarter-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include small-button-icon();
       }
     }
@@ -257,7 +257,7 @@
       padding: $inset-1-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
     }
@@ -268,7 +268,7 @@
       padding: $inset-1-and-a-half-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
     }
@@ -285,7 +285,7 @@
       padding: $inset-three-quarter-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include small-button-icon();
       }
     }
@@ -296,7 +296,7 @@
       padding: $inset-1-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
     }
@@ -307,7 +307,7 @@
       padding: $inset-1-and-a-half-x-squish;
       width: auto;
 
-      & > .cdr-button__icon {
+      & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
     }

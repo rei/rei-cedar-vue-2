@@ -1,5 +1,5 @@
 <template>
-  <div class="cdr-input-group">
+  <div :class="$style['cdr-input-group']">
     <label
       v-if="!hideLabel"
       :class="labelClass"
@@ -98,14 +98,14 @@ export default {
     },
     selectClass() {
       return {
-        'cdr-select': true,
-        'cdr-select--size': parseInt(this.size, 10) > 0,
+        [this.$style['cdr-select']]: true,
+        [this.$style['cdr-select--size']]: parseInt(this.size, 10) > 0,
       };
     },
     labelClass() {
       return {
-        'cdr-label': true,
-        'cdr-label--disabled': this.disabled,
+        [this.$style['cdr-select__label']]: true,
+        [this.$style['cdr-select__label--disabled']]: this.disabled,
       };
     },
     computedOpts() {
@@ -171,7 +171,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/CdrSelect.vars.pcss';
   @import './styles/CdrSelect.pcss';

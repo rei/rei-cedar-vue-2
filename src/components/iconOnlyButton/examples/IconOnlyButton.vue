@@ -86,6 +86,7 @@ export default {
   .button-example {
     padding: 10px;
   }
+
   .dark {
     background: #434343;
   }
