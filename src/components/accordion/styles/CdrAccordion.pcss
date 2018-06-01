@@ -20,6 +20,7 @@
     border: none;
     color: $heart-of-darkness;
     cursor: pointer;
+    display: flex;
     padding: $inset-1-x;
     text-align: left;
     width: 100%;
@@ -34,12 +35,14 @@
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 0;
-    width: calc(100% - ($space-1-x + 24px)); /* 24px represents icon size, minus additional icon spacing */
   }
 
   .cdr-accordion__icon {
-    float: right;
     margin-left: $space-1-x;
+
+    &.open {
+      transform: rotate(-180deg);
+    }
   }
 
   .cdr-accordion__content {
@@ -59,18 +62,6 @@
     .cdr-accordion__content {
       padding: $space-half-x 0 $space-1-x;
     }
-
-    /* Border aligned and compact  */
-    &.cdr-accordion--compact {
-      .cdr-accordion__button {
-        margin-left: -$space-three-quarter-x;
-        width: calc(100% + ($space-three-quarter-x * 2));
-      }
-
-      .cdr-accordion__content {
-        padding: $space-quarter-x 0 $space-three-quarter-x;
-      }
-    }
   }
 
   &--compact {
@@ -89,6 +80,18 @@
       @include redwood-body-10;
 
       padding: $space-quarter-x $space-three-quarter-x $space-three-quarter-x;
+    }
+  }
+
+  /* Border aligned and compact  */
+  &--compact.cdr-accordion--border-aligned {
+    .cdr-accordion__button {
+      margin-left: -$space-three-quarter-x;
+      width: calc(100% + ($space-three-quarter-x * 2));
+    }
+
+    .cdr-accordion__content {
+      padding: $space-quarter-x 0 $space-three-quarter-x;
     }
   }
 

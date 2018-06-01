@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="accordion-container">
     <h2>Accordion</h2>
     <cdr-accordion
       id="darin"
@@ -44,4 +44,7 @@ export default {
 </script>
 
 <style>
+.accordion-container h2 {
+  margin-bottom: 10px;
+}
 </style>

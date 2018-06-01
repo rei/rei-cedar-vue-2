@@ -6,7 +6,6 @@
       role="group"
       :aria-labelledby="`${id}-label`"
     >
-
       <button
         class="cdr-accordion__button"
         :id="id"
@@ -25,6 +24,7 @@
         </label>
         <icon-caret-down
           class="cdr-accordion__icon"
+          :class="show ? 'open' : 'closed'"
           :modifier="compact ? 'sm' : null" />
       </button>
 
