@@ -13,6 +13,9 @@
         "at-rule-no-unknown": [true, {
             "ignoreAtRules": ["mixin", "include"]
         } ],
-        "color-hex-length": null
+        "color-hex-length": null,
+        "selector-pseudo-class-no-unknown": [true, {
+            "ignorePseudoClasses": ["global"]
+        }]
     }
 }

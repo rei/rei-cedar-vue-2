@@ -1,18 +1,16 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrCta from 'componentsdir/cta/CdrCta';
-
-const clickHandler = jest.fn();
 
 describe('CdrCta.vue', () => {
   it('validates ctaStyle prop', () => {
-    const wrapper = shallow(CdrCta);
+    const wrapper = shallowMount(CdrCta);
     const ctaStyle = wrapper.vm.$options.props.ctaStyle;
     expect(ctaStyle.validator('test')).toBe(false);
     expect(ctaStyle.validator('dark')).toBe(true);
   });
 
   it('adds classes from ctaStyle prop', () => {
-    const wrapper = shallow(CdrCta, {
+    const wrapper = shallowMount(CdrCta, {
       propsData: {
         ctaStyle: 'sale',
       },
@@ -25,7 +23,7 @@ describe('CdrCta.vue', () => {
 
   // this is actually testing the full-width prop in the buttonBase mixin
   it('adds full width class from mixin', () => {
-    const wrapper = shallow(CdrCta, {
+    const wrapper = shallowMount(CdrCta, {
       propsData: {
         fullWidth: true,
       },

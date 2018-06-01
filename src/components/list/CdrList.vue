@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrList.pcss';
 </style>

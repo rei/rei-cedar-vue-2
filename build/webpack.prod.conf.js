@@ -8,7 +8,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-var ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -21,12 +20,6 @@ var env = process.env.NODE_ENV === 'testing'
 var webpackConfig = merge(baseWebpackConfig, {
   entry: {
     'dev': path.resolve(__dirname, '../src/dev.js')
-  },
-  module: {
-    rules: utils.styleLoaders({
-      sourceMap: config.build.productionSourceMap,
-      extract: true
-    })
   },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
@@ -45,10 +38,6 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
       sourceMap: true
     }),
-    // extract css into its own file
-    // new ExtractCssChunks({
-    //   filename: utils.assetsPath('css/cedar-core.[contenthash].css')
-    // }),
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/cedar-components.[contenthash].css')
     }),

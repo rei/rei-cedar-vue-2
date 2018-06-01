@@ -1,9 +1,9 @@
 {
-  "name": "@rei/cdr-row",
+  "name": "@rei/cdr-grid",
   "version": "0.1.0",
   "author": "REI Software Engineering",
-  "description": "REI Cedar Style Framework - Vue Component for Row",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-row",
+  "description": "REI Cedar Style Framework - Vue Component for Column",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-col",
   "repository": {
     "type": "git",
     "url": "https://github.com/rei/rei-cedar.git"
@@ -14,12 +14,12 @@
     "access": "public"
   },
   "files": [
-   "dist"
+    "dist"
   ],
   "config": {
-    "vue_file": "CdrRow"
+    "vue_file": "CdrCol"
   },
-  "main": "dist/cdr-row.js",
+  "main": "dist/cdr-grid.js",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "node build/build.js",
@@ -27,7 +27,7 @@
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
-    "vue": "^2.4.2"
+    "vue": "^2.5.13"
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.1.0",

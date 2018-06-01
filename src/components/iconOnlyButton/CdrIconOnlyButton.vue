@@ -37,7 +37,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrIconOnlyButton.pcss';
 </style>

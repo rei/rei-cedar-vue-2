@@ -34,28 +34,8 @@ describe('CdrBreadcrumb.vue', () => {
     expect(wrapper.vm.$refs.container.tagName).toBe('DIV');
   });
 
-  it('container the base class', () => {
-    expect(wrapper.vm.$refs.container.classList.contains('cdr-breadcrumb')).toBe(true);
-  });
-
   it('breadcrumb container is rendered', () => {
     expect(wrapper.find('.cdr-breadcrumb-container').exists()).toBe(true);
-  });
-
-  it('breadcrumb item is NOT rendered', () => {
-    expect(wrapper.find('.cdr-breadcrumb__item').exists()).toBe(false);
-  });
-
-  it('breadcrumb item is rendered', () => {
-    wrapper.setProps({
-      items: [
-        {
-          url: 'http://google.com',
-          displayText: 'Breadcrumb Step 1',
-        },
-      ]
-    });
-    expect(wrapper.find('.cdr-breadcrumb__item').isVisible()).toBe(true);
   });
 
   it('trigger resize no truncation', () => {
@@ -66,10 +46,8 @@ describe('CdrBreadcrumb.vue', () => {
     expect(wrapper.vm.thresholdExceeded).toBe(false);
   });
 
-  // TODO: Need to update lodash/debounce dependency after
-  // switch to mocha from Jest
   it('trigger resize should truncate', (done) => {
-    wrapper = shallow(CdrBreadcrumb, {
+    wrapper = shallowMount(CdrBreadcrumb, {
       propsData: {
         truncationThreshold: -1,
         items: BreadcrumbItems,

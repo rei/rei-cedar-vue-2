@@ -5,8 +5,7 @@
     align="stretch"
   >
     <cdr-col span="6">
-      <cdr-media-object
-      img-src="http://placehold.it/350x150">
+      <cdr-media-object img-src="http://placehold.it/350x150">
         <cdr-text
           tag="h2"
           modifier="heading-medium">

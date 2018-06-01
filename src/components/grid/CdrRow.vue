@@ -1,20 +1,11 @@
 <template>
-  <div
-    v-if="type === 'normal'"
-    class="cdr-row"
-    :class="rowClasses"
+  <component
+    :is="type === 'list' ? 'ul' : 'div'"
+    :class="[$style['cdr-row'], rowClasses]"
   >
     <!-- @slot innerHTML inside the row component -->
     <slot/>
-  </div>
-  <ul
-    v-else-if="type === 'list'"
-    class="cdr-row"
-    :class="rowClasses"
-  >
-    <!-- @slot innerHTML inside the row component -->
-    <slot/>
-  </ul>
+  </component>
 </template>
 
 <script>
@@ -217,42 +208,48 @@ export default {
   computed: {
     rowClasses() {
       const classObj = {};
-      classObj[`cdr-row_row${this.cols}`] = this.cols;
-      classObj[`cdr-row_row${this.colsSm}@sm`] = this.colsSm;
-      classObj[`cdr-row_row${this.colsMd}@md`] = this.colsMd;
-      classObj[`cdr-row_row${this.colsLg}@lg`] = this.colsLg;
+      classObj[this.$style[`cdr-row_row${this.cols}`]] = this.cols;
+      classObj[this.$style[`cdr-row_row${this.colsSm}@sm`]] = this.colsSm;
+      classObj[this.$style[`cdr-row_row${this.colsMd}@md`]] = this.colsMd;
+      classObj[this.$style[`cdr-row_row${this.colsLg}@lg`]] = this.colsLg;
       // justify
-      classObj[`cdr-row--${this.justify}`] = this.justify;
-      classObj[`cdr-row--${this.justifySm}@sm`] = this.justifySm;
-      classObj[`cdr-row--${this.justifyMd}@md`] = this.justifyMd;
-      classObj[`cdr-row--${this.justifyLg}@lg`] = this.justifyLg;
+      classObj[this.$style[`cdr-row--${this.justify}`]] = this.justify;
+      classObj[this.$style[`cdr-row--${this.justifySm}@sm`]] = this.justifySm;
+      classObj[this.$style[`cdr-row--${this.justifyMd}@md`]] = this.justifyMd;
+      classObj[this.$style[`cdr-row--${this.justifyLg}@lg`]] = this.justifyLg;
       // align
-      classObj[`cdr-row--${this.align}`] = this.align;
-      classObj[`cdr-row--${this.alignSm}@sm`] = this.alignSm;
-      classObj[`cdr-row--${this.alignMd}@md`] = this.alignMd;
-      classObj[`cdr-row--${this.alignLg}@lg`] = this.alignLg;
+      classObj[this.$style[`cdr-row--${this.align}`]] = this.align;
+      classObj[this.$style[`cdr-row--${this.alignSm}@sm`]] = this.alignSm;
+      classObj[this.$style[`cdr-row--${this.alignMd}@md`]] = this.alignMd;
+      classObj[this.$style[`cdr-row--${this.alignLg}@lg`]] = this.alignLg;
       // column
-      classObj['cdr-row--column'] = this.vertical;
-      classObj['cdr-row--column@sm'] = this.verticalSm;
-      classObj['cdr-row--column@md'] = this.verticalMd;
-      classObj['cdr-row--column@lg'] = this.verticalLg;
+      classObj[this.$style['cdr-row--column']] = this.vertical;
+      classObj[this.$style['cdr-row--column@sm']] = this.verticalSm;
+      classObj[this.$style['cdr-row--column@md']] = this.verticalMd;
+      classObj[this.$style['cdr-row--column@lg']] = this.verticalLg;
       // gutter
-      classObj[`cdr-row--gutter-${this.gutter}`] = this.gutter;
-      classObj[`cdr-row--gutter-${this.gutterSm}@sm`] = this.gutterSm;
-      classObj[`cdr-row--gutter-${this.gutterMd}@md`] = this.gutterMd;
-      classObj[`cdr-row--gutter-${this.gutterLg}@lg`] = this.gutterLg;
+      classObj[this.$style[`cdr-row--gutter-${this.gutter}`]] = this.gutter;
+      classObj[this.$style[`cdr-row--gutter-${this.gutterSm}@sm`]] = this.gutterSm;
+      classObj[this.$style[`cdr-row--gutter-${this.gutterMd}@md`]] = this.gutterMd;
+      classObj[this.$style[`cdr-row--gutter-${this.gutterLg}@lg`]] = this.gutterLg;
       // wrap
-      classObj['cdr-row--wrap@sm'] = this.wrapSm;
-      classObj['cdr-row--wrap@md'] = this.wrapMd;
-      classObj['cdr-row--wrap@lg'] = this.wrapLg;
+      classObj[this.$style['cdr-row--wrap@sm']] = this.wrapSm;
+      classObj[this.$style['cdr-row--wrap@md']] = this.wrapMd;
+      classObj[this.$style['cdr-row--wrap@lg']] = this.wrapLg;
       // noWrap
-      classObj['cdr-row--noWrap'] = this.nowrap;
-      classObj['cdr-row--noWrap@sm'] = this.nowrapSm;
-      classObj['cdr-row--noWrap@md'] = this.nowrapMd;
-      classObj['cdr-row--noWrap@lg'] = this.nowrapLg;
+      classObj[this.$style['cdr-row--noWrap']] = this.nowrap;
+      classObj[this.$style['cdr-row--noWrap@sm']] = this.nowrapSm;
+      classObj[this.$style['cdr-row--noWrap@md']] = this.nowrapMd;
+      classObj[this.$style['cdr-row--noWrap@lg']] = this.nowrapLg;
 
       return classObj;
     },
   },
 };
 </script>
+
+<style module>
+@import 'cssdir/settings/_index.pcss';
+@import "./styles/Grid.vars.pcss";
+@import "./styles/CdrRow.pcss";
+</style>

@@ -1,8 +1,8 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div
     v-if="ratio"
-    class="cdr-media-frame"
-    :class="[ratioClass, cropClass]"
+    :class="[$style['cdr-media-frame'], ratioClass, cropClass]"
   >
     <div
       :class="[coverClass, lazyClass]"
@@ -10,8 +10,7 @@
       aria-hidden="true"
       v-bind="lazyAttrs"/>
     <img
-      class="cdr-media-frame__image cdr-media-frame__image--hidden"
-      :class="[modifierClass, radiusClass]"
+      :class="[$style['cdr-media-frame__image'], $style['cdr-media-frame__image--hidden'], modifierClass, radiusClass]"
       :src="src"
       :alt="alt"
     >
@@ -146,34 +145,32 @@ export default {
     },
     radiusClass() {
       const classObj = {};
-      classObj[`cdr-add-radius--${this.utiliyRadius}`] = this.utiliyRadius;
+      classObj[this.$style[`cdr-add-radius--${this.utiliyRadius}`]] = this.utiliyRadius;
       return classObj;
     },
     ratioClass() {
       const classObj = {};
-      classObj[`cdr-media-frame--${this.ratio}`] = this.ratio;
-      classObj[`cdr-media-frame--${this.ratioSm}@sm`] = this.ratioSm;
-      classObj[`cdr-media-frame--${this.ratioMd}@md`] = this.ratioMd;
-      classObj[`cdr-media-frame--${this.ratioLg}@lg`] = this.ratioLg;
+      classObj[this.$style[`cdr-media-frame--${this.ratio}`]] = this.ratio;
+      classObj[this.$style[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
+      classObj[this.$style[`cdr-media-frame--${this.ratioMd}@md`]] = this.ratioMd;
+      classObj[this.$style[`cdr-media-frame--${this.ratioLg}@lg`]] = this.ratioLg;
       return classObj;
     },
     coverClass() {
       const classObj = {};
-      classObj['cdr-media-frame__cover'] = true;
-      classObj['cdr-media-frame__cover--crop'] = this.crop;
-      classObj['cdr-media-frame__cover--cover'] = this.cover;
+      classObj[this.$style['cdr-media-frame__cover']] = true;
+      classObj[this.$style['cdr-media-frame__cover--crop']] = this.crop;
+      classObj[this.$style['cdr-media-frame__cover--cover']] = this.cover;
       return classObj;
     },
     cropClass() {
       const base = 'cdr-media-frame';
       const cropArr = this.crop ? this.crop.split(' ') : [];
+      let final = [];
 
-      let final = '';
+      final = final.concat(cropArr.map(mod => this.modifyClassName(base, mod)));
 
-      cropArr.forEach((crop) => {
-        final += `${base}--${crop} `;
-      });
-      return final;
+      return final.join(' ');
     },
     styleObject() {
       return {
@@ -193,7 +190,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrImg.pcss';
 </style>

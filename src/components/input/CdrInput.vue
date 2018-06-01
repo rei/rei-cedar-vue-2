@@ -1,5 +1,5 @@
 <template>
-  <div class="cdr-input-container">
+  <div :class="$style['cdr-input-container']">
     <label
       v-if="!hideLabel"
       :class="labelClass"
@@ -46,7 +46,7 @@
       >
       <span
         v-if="$slots.preicon"
-        class="cdr-input__pre-icon"
+        :class="$style['cdr-input__pre-icon']"
         aria-hidden="true"
       >
         <!-- @slot Icon to be put in front of input -->
@@ -60,7 +60,7 @@
       />
     </div>
     <transition-group
-      class="cdr-input-messages"
+      :class="$style['cdr-input-messages']"
       :id="messagesId"
       ref="messages"
       name="cdr-animated-errors"
@@ -184,39 +184,40 @@ export default {
     },
     labelClass() {
       return {
-        'cdr-label': true,
-        'cdr-label--error': this.isErr,
-        'cdr-label--disabled': this.disabled,
+        [this.$style['cdr-input__label']]: true,
+        [this.$style['cdr-input__label--error']]: this.isErr,
+        [this.$style['cdr-input__label--disabled']]: this.disabled,
       };
     },
     inputClass() {
       return {
-        'cdr-input': true,
-        'cdr-input--multiline': this.multiLine,
-        'cdr-input--error': this.isErr,
-        'cdr-input--warn': this.isWarn,
-        'cdr-input--preicon': this.$slots.preicon,
+        [this.$style['cdr-input']]: true,
+        [this.$style['cdr-input--multiline']]: this.multiLine,
+        [this.$style['cdr-input--error']]: this.isErr,
+        [this.$style['cdr-input--warn']]: this.isWarn,
+        [this.$style['cdr-input--preicon']]: this.$slots.preicon,
       };
     },
     inputWrapClass() {
       return {
-        'cdr-input-wrap': true,
-        'cdr-input-wrap--actions': this.$slots.pre || this.$slots.post,
+        [this.$style['cdr-input-wrap']]: true,
+        [this.$style['cdr-input-wrap--actions']]: this.$slots.pre || this.$slots.post,
       };
     },
     validationIconClass() {
+    /* istanbul ignore next */
       return {
-        'cdr-input-wrap__icon': true,
-        'cdr-input-wrap__icon--error': this.isErr,
-        'cdr-input-wrap__icon--warn': this.isWarn,
-        'cdr-input-wrap__icon--valid': this.isValid,
+        [this.$style['cdr-input-wrap__icon']]: true,
+        [this.$style['cdr-input-wrap__icon--error']]: this.isErr,
+        [this.$style['cdr-input-wrap__icon--warn']]: this.isWarn,
+        [this.$style['cdr-input-wrap__icon--valid']]: this.isValid,
       };
     },
     messageClass() {
       return {
-        'cdr-input-messages__notification': true,
-        'cdr-input-messages__notification--error': this.isErr,
-        'cdr-input-messages__notification--warn': this.isWarn,
+        [this.$style['cdr-input-messages__notification']]: true,
+        [this.$style['cdr-input-messages__notification--error']]: this.isErr,
+        [this.$style['cdr-input-messages__notification--warn']]: this.isWarn,
       };
     },
     getIcon() {
@@ -386,7 +387,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/CdrInput.vars.pcss';
   @import './styles/CdrInput.pcss';
