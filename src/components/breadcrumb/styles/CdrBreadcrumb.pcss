@@ -21,23 +21,24 @@
   &__link {
     @include redwood-display-10;
 
-    color: $breadcrumb-text-color;
-  }
-
-  /* Hover
-  ========== */
-  &__item {
-    display: inline-block;
-
-    &:hover .cdr-breadcrumb__link {
-      color: $breadcrumb-hover-text-color;
-    }
+    color: inherit; /* inherit color from &__item */
   }
 
   /* breadcrumb-item
   ========== */
-  &__item:last-child > .cdr-breadcrumb__link {
-    color: $breadcrumb-last-child-text-color;
+  &__item {
+    display: inline-block;
+    color: $breadcrumb-text-color;
+
+    &:last-child {
+      color: $breadcrumb-last-child-text-color;
+    }
+
+    /* Hover
+    ---------- */
+    &:hover .cdr-breadcrumb__link {
+      color: $breadcrumb-hover-text-color;
+    }
   }
 
   /* delimiter
@@ -55,8 +56,8 @@
   }
 
   @media (--md-mq) {
-    &__item > .cdr-breadcrumb__link,
-    &__item .cdr-breadcrumb__delimiter {
+    &__link,
+    &__delimiter {
       @include redwood-display-20;
     }
   }
