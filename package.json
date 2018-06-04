@@ -7,9 +7,9 @@
   "author": "REI Software Engineering",
   "private": true,
   "scripts": {
-    "try": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "dev": "node build/dev-server.js",
+    "build": "cross-env NODE_ENV=production node build/build.js",
     "unit": "cross-env NODE_ENV=test nyc --check-coverage --lines 100 --reporter=lcov --report-dir=test/unit/coverage --reporter=text mocha-webpack --webpack-config build/webpack.test.conf.js --require test/setup.js src/**/*.spec.js",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
