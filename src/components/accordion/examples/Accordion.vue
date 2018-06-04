@@ -20,6 +20,10 @@
         <ul>
           <li>This is a list item inside an accordion.</li>
           <li>It includes no extra styling</li>
+          <li>I'm adding a bunch of items</li>
+          <li>to this list because</li>
+          <li>I want to see what it's like</li>
+          <li>when animated!</li>
         </ul>
       </cdr-accordion>
     </div>

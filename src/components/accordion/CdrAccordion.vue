@@ -24,20 +24,19 @@
         </label>
         <icon-caret-down
           class="cdr-accordion__icon"
-          :class="isOpen ? 'open' : 'closed'"
+          :class="isOpen ? 'open' : null"
           :modifier="compact ? 'sm' : null" />
       </button>
-
     </div>
-
-    <div
-      class="cdr-accordion__content"
-      v-show="isOpen"
-      :aria-hidden="`${!isOpen}`"
-      :id="`${id}-collapsible`"
-    >
-      <slot/>
-    </div>
+    <transition name="reveal">
+      <div
+        class="cdr-accordion__content"
+        :aria-hidden="`${!isOpen}`"
+        :id="`${id}-collapsible`"
+      >
+        <slot/>
+      </div>
+    </transition>
   </div>
 </template>
 

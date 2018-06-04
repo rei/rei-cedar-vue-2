@@ -41,6 +41,7 @@
   .cdr-accordion__icon {
     margin-left: $space-1-x;
     fill: $heart-of-darkness;
+    transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
 
     &.open {
       transform: rotate(-180deg);
@@ -99,5 +100,23 @@
 
   &--border-last {
     border-bottom: 1px solid $partly-cloudy;
+  }
+  
+  .reveal-enter,
+  .reveal-leave-to {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 auto;
+  }
+
+  .reveal-enter-to,
+  .reveal-leave {
+    opacity: 1;
+    max-height: 100%;
+  }
+
+  .reveal-enter-active,
+  .reveal-leave-active {
+    transition: height 300ms linear;
   }
 }
