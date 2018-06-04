@@ -6,36 +6,45 @@
   <div
     ref="container"
     :class="modifierClass">
-    <div class="cdr-breadcrumb-container">
-      <span
-        v-if="truncate"
-      >
-        <span :class="$style['cdr-breadcrumb__item']"><button
-          :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]"
-          @click="shouldTruncate = false">...</button><span :class="$style['cdr-breadcrumb__delimiter']">/</span></span><span :class="$style['cdr-breadcrumb__item']">
-            <a
-              :class="$style['cdr-breadcrumb__link']"
-              :href="items[items.length - 2]">{{ items[items.length - 2].displayText }}</a>
-        <span :class="$style['cdr-breadcrumb__delimiter']">/</span></span><span :class="$style['cdr-breadcrumb__item']">
-          <a
-            :class="$style['cdr-breadcrumb__link']"
-            :href="items[items.length - 1]">{{ items[items.length - 1].displayText }}</a>
-        </span>
-      </span>
-      <span
-        v-else
-        ref="fullBreadcrumb">
-        <span
+    <nav
+      class="cdr-breadcrumb__container"
+      aria-label="Breadcrumb">
+      <ol
+        ref="cdrBreadcrumbList"
+        :class="$style['cdr-breadcrumb__list']">
+        <li
+          v-if="truncate"
+          :class="$style['cdr-breadcrumb__item']">
+          <button
+            :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]"
+            @click="shouldTruncate = false">
+            ...
+          </button>
+          <span
+            :class="$style['cdr-breadcrumb__delimiter']"
+            aria-hidden="true">
+            /
+          </span>
+        </li>
+        <li
           :class="$style['cdr-breadcrumb__item']"
-          v-for="(item, index) in items">
+          v-for="(item, index) in items"
+          v-if="!truncate || (index > items.length - 3)"
+        >
           <a
             :class="$style['cdr-breadcrumb__link']"
-            :href="item.url">{{ item.displayText }}</a><span
-              :class="$style['cdr-breadcrumb__delimiter']"
-              v-if="index < items.length - 1">/</span>
-        </span>
-      </span>
-    </div>
+            :href="item.url">
+            {{ item.displayText }}
+          </a>
+          <span
+            :class="$style['cdr-breadcrumb__delimiter']"
+            aria-hidden="true"
+            v-if="index < items.length - 1">
+            /
+          </span>
+        </li>
+      </ol>
+    </nav>
   </div>
 </template>
 
@@ -106,7 +115,7 @@ export default {
   },
   methods: {
     getBreadcrumbWidth() {
-      const breadcrumbsElements = Array.from(this.$refs.fullBreadcrumb.children);
+      const breadcrumbsElements = Array.from(this.$refs.cdrBreadcrumbList.children);
       let totalWidth = 0;
       breadcrumbsElements.forEach((element) => {
         totalWidth += element.offsetWidth || 0;
@@ -125,10 +134,4 @@ export default {
 <style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrBreadcrumb.pcss';
-
-  .cdr-breadcrumb__ruler {
-    visibility: hidden;
-    white-space: nowrap;
-    height: 1px;
-  }
 </style>

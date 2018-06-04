@@ -35,7 +35,7 @@ describe('CdrBreadcrumb.vue', () => {
   });
 
   it('breadcrumb container is rendered', () => {
-    expect(wrapper.find('.cdr-breadcrumb-container').exists()).toBe(true);
+    expect(wrapper.find('.cdr-breadcrumb__container').exists()).toBe(true);
   });
 
   it('trigger resize no truncation', () => {

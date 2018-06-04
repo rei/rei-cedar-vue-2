@@ -9,25 +9,27 @@
 
     :Base - CdrBreadcrumb
       :Elements
+        :container
+        :list
         :item
-        :delimiter
         :link
+        :delimiter
         :ellipses
       :Modifiers
         :sm
 ========================================================================== */
 
 .cdr-breadcrumb {
-  &__link {
-    @include redwood-display-10;
-
-    color: inherit; /* inherit color from &__item */
+  /* List
+  ========== */
+  &__list {
+    display: inline-flex;
   }
 
-  /* breadcrumb-item
+  /* Item
   ========== */
   &__item {
-    display: inline-block;
+    display: inline-flex;
     color: $breadcrumb-text-color;
 
     &:last-child {
@@ -41,7 +43,15 @@
     }
   }
 
-  /* delimiter
+  /* Link
+  ---------- */
+  &__link {
+    @include redwood-display-10;
+
+    color: inherit; /* inherit color from &__item */
+  }
+
+  /* Delimiter
   ========== */
   &__delimiter {
     @include redwood-display-10;
@@ -51,9 +61,12 @@
     padding-right: $space-half-x;
   }
 
+  /* Ellipses
+  ========== */
   &__ellipses {
     border: none;
     background-color: transparent;
+    padding: 0;
   }
 
   @media (--md-mq) {
