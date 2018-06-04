@@ -29,11 +29,12 @@
         <li
           :class="$style['cdr-breadcrumb__item']"
           v-for="(item, index) in items"
-          v-if="!truncate || (index > items.length - 3)"
+          v-if="!truncate || (index >= items.length - 2)"
         >
           <a
             :class="$style['cdr-breadcrumb__link']"
-            :href="item.url">
+            :href="item.url"
+            :aria-current="index == (items.length - 1) ? 'page' : null">
             {{ item.displayText }}
           </a>
           <span
