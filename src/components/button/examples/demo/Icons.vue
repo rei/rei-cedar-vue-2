@@ -6,11 +6,14 @@
         tag="a"
         href="https://rei.com"
         size="large"
-        data-backstop="cdr-button--large icon"
-      ><icon-check-lg
-        class="cdr-button__icon"
-      />Anchor and Icon</cdr-button
-      >
+        data-backstop="cdr-button--large icon">
+        <template slot="icon">
+          <icon-check-lg
+            class="cdr-button__icon"
+            modifier="inherit-color" />
+        </template>
+        Anchor and Icon
+      </cdr-button>
       <cdr-button
         size="medium"
         data-backstop="cdr-button--medium icon"
@@ -33,7 +36,7 @@
       />Small (different) icon</cdr-button
       >
     </div>
-    <div class="button-example">
+    <!-- <div class="button-example">
       <h2>Using a sprite</h2>
       <cdr-button
         size="large"
@@ -62,7 +65,7 @@
         use="#instagram"
       />Button and Icon</cdr-button
       >
-    </div>
+    </div> -->
     <div class="button-example">
       <cdr-button
         size="small"
@@ -81,13 +84,36 @@
         class="cdr-button__icon"
       />Full Width</cdr-button>
     </div>
+    <div class="button-example">
+      <cdr-button
+        :icon-only="true"
+        size="small">
+        <template name="icon">
+          <icon-twitter
+            class="cdr-button__icon"
+            modifier="inherit-color" />
+        </template>
+      </cdr-button>
+    </div>
+    <div class="button-example dark">
+      <cdr-button
+        :icon-only="true"
+        :on-dark="true">
+        <template name="icon">
+          <icon-twitter
+            class="cdr-button__icon"
+            modifier="inherit-color" />
+        </template>
+      </cdr-button>
+    </div>
   </div>
 </template>
 
 <script>
 import Components from 'componentsdir/_index';
 import CdrButton from 'componentsdir/button/CdrButton';
-import { IconCheckLg, IconCheckSm, IconClock } from 'componentsdir/icon/dist/cdr-icon';
+/* eslint-disable-next-line */
+import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink } from 'componentsdir/icon/dist/cdr-icon';
 import CdrIcon from 'componentsdir/icon/CdrIcon';
 
 export default {
@@ -99,6 +125,8 @@ export default {
     IconCheckSm,
     IconClock,
     CdrIcon,
+    IconTwitter,
+    IconExternalLink,
   },
 };
 </script>
@@ -106,5 +134,9 @@ export default {
 <style>
   .button-example {
     padding: 10px;
+  }
+
+  .dark {
+    background: #434343;
   }
 </style>

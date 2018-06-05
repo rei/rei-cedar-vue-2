@@ -36,6 +36,7 @@ export default {
      * Returns a modified base class
      */
     modifyClassName(base, modifier) {
+      console.log('modifyClassName', this.$style, base, modifier);
       return this.$style ? this.moduleClass(`${base}--${modifier}`) : `${base}--${modifier}`;
     },
   },

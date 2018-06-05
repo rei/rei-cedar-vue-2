@@ -1,12 +1,12 @@
 <template>
   <component
     :is="tag"
-    :class="[modifierClass, sizeClass, fullWidthClass, responsiveClass]"
+    :class="[modifierClass, sizeClass, fullWidthClass, responsiveClass, iconOnlyClass, onDarkClass]"
     :type="tag === 'button' ? type : null"
-    @click="onClick"
-  >
+    @click="onClick">
+    <slot name="icon" />
     <!-- @slot innerHTML on the inside of the button component -->
-    <slot/>
+    <slot />
   </component>
 </template>
 
@@ -42,24 +42,38 @@ export default {
     responsiveSize: {
       type: Array,
     },
+    iconOnly: {
+      type: Boolean,
+      default: false,
+    },
+    onDark: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     baseClass() {
       return 'cdr-button';
     },
     sizeClass() {
-      return this.modifyClassName(this.baseClass, this.size);
+      return !this.iconOnly ? this.modifyClassName(this.baseClass, this.size) : null;
     },
     responsiveClass() {
       const responsiveClass = [];
 
-      if (this.responsiveSize) {
+      if (this.responsiveSize && !this.iconOnly) {
         this.responsiveSize.forEach((val) => {
           responsiveClass.push(this.modifyClassName(this.baseClass, val));
         });
       }
 
       return responsiveClass.join(' ');
+    },
+    iconOnlyClass() {
+      return this.iconOnly ? this.modifyClassName(this.baseClass, 'icon-only') : null;
+    },
+    onDarkClass() {
+      return this.onDark ? this.modifyClassName(this.baseClass, 'on-dark') : null;
     },
   },
 };

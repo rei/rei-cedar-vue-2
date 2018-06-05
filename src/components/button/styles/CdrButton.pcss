@@ -28,6 +28,7 @@
   color: $button-color;
   cursor: pointer;
   display: inline-block;
+  fill: $button-color;
   outline: none;
   padding: $inset-1-x-squish;
   text-align: center;
@@ -37,7 +38,7 @@
   & > :global(&__icon) {
     display: block;
     float: left;
-    fill: $button-color;
+    fill: inherit;
     margin-right: $space-quarter-x;
   }
 
@@ -144,6 +145,28 @@
       float: none;
       position: relative;
       bottom: 1px; /* This is to fix the extra pixel added when svg is inline-block */
+    }
+  }
+
+  /* Icon Only
+     ========= */
+
+  &--icon-only {
+    background: none;
+    border: none;
+    box-shadow: none;
+    display: inline-block;
+    padding: $inset-quarter-x;
+    fill: $heart-of-darkness;
+
+    &:hover,
+    &:active {
+      background: none;
+      box-shadow: none;
+    }
+
+    &.cdr-button--on-dark {
+      fill: $moon-shot;
     }
   }
 
