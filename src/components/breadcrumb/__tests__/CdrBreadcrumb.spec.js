@@ -31,7 +31,7 @@ describe('CdrBreadcrumb.vue', () => {
   });
 
   it('renders a div', () => {
-    expect(wrapper.vm.$refs.container.tagName).toBe('DIV');
+    expect(wrapper.vm.$refs.container.tagName).toBe('NAV');
   });
 
   it('breadcrumb container is rendered', () => {
