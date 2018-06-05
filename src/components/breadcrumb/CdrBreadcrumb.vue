@@ -3,50 +3,48 @@
   <!-- eslint-disable max-len -->
   <!-- eslint-disable vue/require-v-for-key -->
 
-  <div
+  <nav
     ref="container"
-    :class="modifierClass">
-    <nav
-      class="cdr-breadcrumb__container"
-      aria-label="Breadcrumb">
-      <ol
-        ref="cdrBreadcrumbList"
-        :class="$style['cdr-breadcrumb__list']">
-        <li
-          v-if="truncate"
-          :class="$style['cdr-breadcrumb__item']">
-          <button
-            :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]"
-            @click="shouldTruncate = false">
-            ...
-          </button>
-          <span
-            :class="$style['cdr-breadcrumb__delimiter']"
-            aria-hidden="true">
-            /
-          </span>
-        </li>
-        <li
-          :class="$style['cdr-breadcrumb__item']"
-          v-for="(item, index) in items"
-          v-if="!truncate || (index >= items.length - 2)"
-        >
-          <a
-            :class="$style['cdr-breadcrumb__link']"
-            :href="item.url"
-            :aria-current="index == (items.length - 1) ? 'page' : null">
-            {{ item.displayText }}
-          </a>
-          <span
-            :class="$style['cdr-breadcrumb__delimiter']"
-            aria-hidden="true"
-            v-if="index < items.length - 1">
-            /
-          </span>
-        </li>
-      </ol>
-    </nav>
-  </div>
+    :class="modifierClass"
+    class="cdr-breadcrumb__container"
+    aria-label="Breadcrumb">
+    <ol
+      ref="cdrBreadcrumbList"
+      :class="$style['cdr-breadcrumb__list']">
+      <li
+        v-if="truncate"
+        :class="$style['cdr-breadcrumb__item']">
+        <button
+          :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]"
+          @click="shouldTruncate = false">
+          ...
+        </button>
+        <span
+          :class="$style['cdr-breadcrumb__delimiter']"
+          aria-hidden="true">
+          /
+        </span>
+      </li>
+      <li
+        :class="$style['cdr-breadcrumb__item']"
+        v-for="(item, index) in items"
+        v-if="!truncate || (index >= items.length - 2)"
+      >
+        <a
+          :class="$style['cdr-breadcrumb__link']"
+          :href="item.url"
+          :aria-current="index == (items.length - 1) ? 'page' : null">
+          {{ item.displayText }}
+        </a>
+        <span
+          :class="$style['cdr-breadcrumb__delimiter']"
+          aria-hidden="true"
+          v-if="index < items.length - 1">
+          /
+        </span>
+      </li>
+    </ol>
+  </nav>
 </template>
 
 <script>

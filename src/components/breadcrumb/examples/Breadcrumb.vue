@@ -124,3 +124,14 @@ export default {
   },
 };
 </script>
+
+<style>
+  h2 {
+    padding-bottom: 10px;
+  }
+
+  h6 {
+    margin: 10px 0 10px 10px;
+  }
+</style>
+
