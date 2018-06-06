@@ -73,7 +73,7 @@ export default {
       return this.iconOnly ? this.modifyClassName(this.baseClass, 'icon-only') : null;
     },
     onDarkClass() {
-      return this.onDark ? this.modifyClassName(this.baseClass, 'on-dark') : null;
+      return this.onDark && this.iconOnly ? this.modifyClassName(this.baseClass, 'on-dark') : null;
     },
   },
 };
