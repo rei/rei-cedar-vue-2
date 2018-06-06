@@ -38,15 +38,21 @@ Runs locally for development. Has hot reloading, linting, and other nice things 
 
 The [webpack](https://webpack.github.io/) build system is taken largely from the [Vue webpack template](https://github.com/vuejs-templates/webpack) which has its own set of docs that are a good reference.
 
-## Vue-styleguidist
+## Documentation Site
 
-We're using [vue-styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) to document and demo components.
+The API documentation for Cedar components is built inside the **rei-cedar** repository by running the following scripts:
 
-`npm run docs`
-
-Runs the local server for docs.
+Builds the JSON data object for the APIs of each component individually
 
 `npm run build:docs`
+
+Collects all of the individual component data objects into one large Cedar Data Object at **src/cedar-data.json** 
+
+`npm run build:archive`
+
+Transfers the Cedar Data Object from the **rei-cedar** repository to the **rei-cedar-docs** repository on your local machine
+
+`npm run build:transfer`
 
 Outputs a standalone app to `styleguide/build` that can be hosted somewhere (like gh-pages).
 
