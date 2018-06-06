@@ -1,0 +1,67 @@
+{
+	"name": "CdrCheckbox",
+	"versions": [
+		{
+			"api": {
+				"props": [
+					{
+						"name": "labelClass",
+						"type": "string",
+						"default": "n/a",
+						"description": "Class that is added to the label for custom styles"
+					},
+					{
+						"name": "inputClass",
+						"type": "string",
+						"default": "n/a",
+						"description": "Class that is added to the input for custom styles"
+					},
+					{
+						"name": "contentClass",
+						"type": "string",
+						"default": "n/a",
+						"description": "Class that is added to the slot wrapper for custom styles"
+					},
+					{
+						"name": "indeterminate",
+						"type": "boolean",
+						"default": "false",
+						"description": "Show checkbox in indeterminate state. (NOTE: this is a visual-only state and there is no logic for when to show it)"
+					},
+					{
+						"name": "trueValue",
+						"type": "string|number|boolean|object|array|symbol|func",
+						"default": "true",
+						"description": "The value when checked."
+					},
+					{
+						"name": "falseValue",
+						"type": "string|number|boolean|object|array|symbol|func",
+						"default": "false",
+						"description": "The value when unchecked."
+					},
+					{
+						"name": "customValue",
+						"type": "string|number|boolean|object|array|symbol|func",
+						"default": "n/a",
+						"description": "The value when used in a checkbox group. Replaces `trueValue` and `falseValue`."
+					}
+				],
+				"events": [
+					{
+						"name": "input",
+						"type": "value|event",
+						"description": "`v-model` value. Fires on check/uncheck."
+					}
+				],
+				"slots": [
+					{
+						"name": "default",
+						"description": "innerHTML inside of checkbox component"
+					}
+				]
+			},
+			"version": "0.1.0"
+		}
+	]
+}

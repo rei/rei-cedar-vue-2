@@ -1,0 +1,36 @@
+{
+	"name": "CdrQuote",
+	"versions": [
+		{
+			"api": {
+				"props": [
+					{
+						"name": "tag",
+						"type": "string",
+						"default": "\"blockquote\"",
+						"description": "MISSING DESCRIPTION"
+					},
+					{
+						"name": "summary",
+						"type": "string",
+						"default": "n/a",
+						"description": "Caption summary text"
+					},
+					{
+						"name": "citation",
+						"type": "string",
+						"default": "n/a",
+						"description": "Caption credit text"
+					}
+				],
+				"slots": [
+					{
+						"name": "default",
+						"description": "MISSING DESCRIPTION"
+					}
+				]
+			},
+			"version": "0.1.0"
+		}
+	]
+}

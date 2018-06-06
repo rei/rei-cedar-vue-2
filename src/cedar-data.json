@@ -1,0 +1,1166 @@
+{
+	"components": [
+		{
+			"name": "CdrA",
+			"versions": [
+				{
+					"api": {
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML on the inside of the anchor component"
+							}
+						]
+					},
+										"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrButton",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "type",
+								"type": "string",
+								"default": "\"button\"",
+								"description": "Defines the button type. Possible values: {button, submit, reset}."
+							},
+							{
+								"name": "onClick",
+								"type": "func",
+								"default": "function() { return function () { return null; }; }",
+								"description": "Add custom click actions."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML on the inside of the button component"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrCard",
+			"versions": [
+				{
+					"api": {
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML on the inside of the card component"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrCheckbox",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "labelClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the label for custom styles"
+							},
+							{
+								"name": "inputClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the input for custom styles"
+							},
+							{
+								"name": "contentClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the slot wrapper for custom styles"
+							},
+							{
+								"name": "indeterminate",
+								"type": "boolean",
+								"default": "false",
+								"description": "Show checkbox in indeterminate state. (NOTE: this is a visual-only state and there is no logic for when to show it)"
+							},
+							{
+								"name": "trueValue",
+								"type": "string|number|boolean|object|array|symbol|func",
+								"default": "true",
+								"description": "The value when checked."
+							},
+							{
+								"name": "falseValue",
+								"type": "string|number|boolean|object|array|symbol|func",
+								"default": "false",
+								"description": "The value when unchecked."
+							},
+							{
+								"name": "customValue",
+								"type": "string|number|boolean|object|array|symbol|func",
+								"default": "n/a",
+								"description": "The value when used in a checkbox group. Replaces `trueValue` and `falseValue`."
+							}
+						],
+						"events": [
+							{
+								"name": "input",
+								"type": "value|event",
+								"description": "`v-model` value. Fires on check/uncheck."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside of checkbox component"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrCol",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "span",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of columns (1-12) the column should span."
+							},
+							{
+								"name": "spanSm",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "spanMd",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "spanLg",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "offsetLeft",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of columns (1-12) of empty space to add left of this column."
+							},
+							{
+								"name": "offsetLeftSm",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "offsetLeftMd",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "offsetLeftLg",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "offsetRight",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of columns (1-12) of empty space to add right of this column."
+							},
+							{
+								"name": "offsetRightSm",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "offsetRightMd",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "offsetRightLg",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "alignSelf",
+								"type": "string",
+								"default": "n/a",
+								"description": "How the column should align (overrides cdr-row alignment). Possible values: {top, middle, bottom, stretch}. See CSS flexbox align-self."
+							},
+							{
+								"name": "alignSelfSm",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "alignSelfMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "alignSelfLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "isRow",
+								"type": "boolean",
+								"default": "false",
+								"description": "Makes the column act as a new cdr-row. Setting this to true exposes the same props as cdr-row."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside of the column component"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrIcon",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "use",
+								"type": "string",
+								"default": "n/a",
+								"description": "The href attribute passed to the use element. Will be prefixed with # automatically"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "any valid svg xml"
+							}
+						]
+					},
+					"version": "0.2.0"
+				}
+			]
+		},
+		{
+			"name": "CdrImg",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "src",
+								"type": "string",
+								"default": "n/a",
+								"description": "Required. Image source url."
+							},
+							{
+								"name": "alt",
+								"type": "string",
+								"default": "\" \"",
+								"description": "Required. Image alt text."
+							},
+							{
+								"name": "lazy",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Enable lazy loading."
+							},
+							{
+								"name": "lazyOpts",
+								"type": "object",
+								"default": "function() {}",
+								"description": "Object of lazy options"
+							},
+							{
+								"name": "ratio",
+								"type": "string",
+								"default": "n/a",
+								"description": "Aspect ratio of the media container. {auto, square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}"
+							},
+							{
+								"name": "ratioSm",
+								"type": "string",
+								"default": "n/a",
+								"description": "sm breakpoint and above"
+							},
+							{
+								"name": "ratioMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "md breakpoint and above"
+							},
+							{
+								"name": "ratioLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "lg breakpoint and above"
+							},
+							{
+								"name": "crop",
+								"type": "string",
+								"default": "n/a",
+								"description": "Requires a `ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right}"
+							},
+							{
+								"name": "cover",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Requires a `ratio`. Scale the image to be as large as possible to fill the area (background-position: cover;)"
+							},
+							{
+								"name": "radius",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sets a border radius to an element {square, top, right, bottom, left}"
+							}
+						]
+					},
+					"version": "1.0.0-alpha.1"
+				}
+			]
+		},
+		{
+			"name": "CdrInput",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "id",
+								"type": "string",
+								"default": "n/a",
+								"description": "`id` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated."
+							},
+							{
+								"name": "label",
+								"type": "string",
+								"default": "n/a",
+								"description": "Label text. This is required for a11y even if hiding the label with `hideLabel`."
+							},
+							{
+								"name": "hideLabel",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Removes the label element but sets the input `aria-label` to `label` text for a11y."
+							},
+							{
+								"name": "multiLine",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Changes the input to a textarea."
+							},
+							{
+								"name": "pattern",
+								"type": "string",
+								"default": "n/a",
+								"description": "Regex validation pattern. Useful for simple validation."
+							},
+							{
+								"name": "patternError",
+								"type": "string",
+								"default": "n/a",
+								"description": "Error message to be displayed when `pattern` validation fails."
+							},
+							{
+								"name": "feedback",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Enables icon feedback as part of validation for valid, warn, and error states."
+							},
+							{
+								"name": "type",
+								"type": "string",
+								"default": "\"text\"",
+								"description": "Input type. NOTE: This component is meant for text style inputs. Other input types (checkbox, radio) have their own components."
+							},
+							{
+								"name": "rules",
+								"type": "array",
+								"default": "function() { return []; }",
+								"description": "Array of functions. Provide your own validation function(s). Takes the input string and outputs an object with a state and message. State is a String with value `valid`, `warning`, or `error`. Message is any String."
+							},
+							{
+								"name": "debounce",
+								"type": "boolean|number",
+								"default": "false",
+								"description": "Boolean or Number. `true` has a default of 500ms. Providing a number will set debounce to that (in ms). `false` is no debounce."
+							}
+						],
+						"events": [
+							{
+								"name": "keydown",
+								"type": "event",
+								"description": "Fires when a key is pressed."
+							},
+							{
+								"name": "paste",
+								"type": "event",
+								"description": "Fires when text is pasted into input."
+							},
+							{
+								"name": "focus",
+								"type": "event",
+								"description": "Fires when input gains focus."
+							},
+							{
+								"name": "blur",
+								"type": "event",
+								"description": "Fires when input loses focus."
+							},
+							{
+								"name": "input",
+								"type": "event",
+								"description": "Current input value. Fires while typing.\nReturns (value, event)"
+							},
+							{
+								"name": "change",
+								"type": "string",
+								"description": "New input value (if changed). Fires on blur."
+							}
+						],
+						"slots": [
+							{
+								"name": "preicon",
+								"description": "Icon to be put in front of input"
+							}
+						]
+					},
+					"version": "0.1.2"
+				}
+			]
+		},
+		{
+			"name": "CdrLink",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "tag",
+								"type": "string",
+								"default": "\"a\"",
+								"description": "MISSING DESCRIPTION"
+							},
+							{
+								"name": "href",
+								"type": "string",
+								"default": "\"#\"",
+								"description": "MISSING DESCRIPTION"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML on the inside of the anchor component"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrList",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "tag",
+								"type": "string",
+								"default": "\"ul\"",
+								"description": "Tag accepts a user defined element and expects either: 'ul' = Unordered List or 'ol' = Ordered List."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "MISSING DESCRIPTION"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrMediaObject",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "width",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sets the media width"
+							},
+							{
+								"name": "mediaAlign",
+								"type": "string",
+								"default": "n/a",
+								"description": "Allows you to align your text {right, left, center}"
+							},
+							{
+								"name": "iconUrl",
+								"type": "string",
+								"default": "n/a",
+								"description": "icon svg path. See cdr-icon"
+							},
+							{
+								"name": "imgClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Custom class added to the image/icon"
+							},
+							{
+								"name": "imgSrc",
+								"type": "string",
+								"default": "n/a",
+								"description": "Image path. See cdr-img"
+							},
+							{
+								"name": "imgRadius",
+								"type": "string",
+								"default": "n/a",
+								"description": "Image radius. See cdr-img"
+							},
+							{
+								"name": "imgRatio",
+								"type": "string",
+								"default": "n/a",
+								"description": "Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9} See cdr-img"
+							},
+							{
+								"name": "imgCover",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Requires `imgRatio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img"
+							},
+							{
+								"name": "imgCrop",
+								"type": "string",
+								"default": "n/a",
+								"description": "Requires `imgRatio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img"
+							},
+							{
+								"name": "imgAlt",
+								"type": "string",
+								"default": "n/a",
+								"description": "Image alternitive description, defaults to blank. See cdr-img"
+							},
+							{
+								"name": "imgModifier",
+								"type": "string",
+								"default": "n/a",
+								"description": "{Responsive, Rounded, circle, thumbnail}. See cdr-img"
+							},
+							{
+								"name": "imgHref",
+								"type": "string",
+								"default": "n/a",
+								"description": "Link the image"
+							},
+							{
+								"name": "imgHrefText",
+								"type": "string",
+								"default": "n/a",
+								"description": "Screen reader text for the linked image"
+							},
+							{
+								"name": "imgTarget",
+								"type": "string",
+								"default": "n/a",
+								"description": "Target for the image link"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside of the media object component"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrQuote",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "tag",
+								"type": "string",
+								"default": "\"blockquote\"",
+								"description": "MISSING DESCRIPTION"
+							},
+							{
+								"name": "summary",
+								"type": "string",
+								"default": "n/a",
+								"description": "Caption summary text"
+							},
+							{
+								"name": "citation",
+								"type": "string",
+								"default": "n/a",
+								"description": "Caption credit text"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "MISSING DESCRIPTION"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrRadio",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "labelClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the label for custom styles"
+							},
+							{
+								"name": "inputClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the input for custom styles"
+							},
+							{
+								"name": "contentClass",
+								"type": "string",
+								"default": "n/a",
+								"description": "Class that is added to the slot wrapper for custom styles"
+							},
+							{
+								"name": "name",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sets the name of the radio. Required."
+							},
+							{
+								"name": "value",
+								"type": "string|number|boolean|object|array|symbol|func",
+								"default": "n/a",
+								"description": "Sets the value of the radio. Required."
+							}
+						],
+						"events": [
+							{
+								"name": "change",
+								"type": "boolean|array",
+								"description": "Selected radio value. Fires on section."
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside of radio component"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrRating",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "rating",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Rating out of 5"
+							},
+							{
+								"name": "count",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of ratings"
+							},
+							{
+								"name": "compact",
+								"type": "boolean",
+								"default": "false",
+								"description": "Hides the word 'reviews' if true"
+							}
+						]
+					},
+					"version": "0.1.1"
+				}
+			]
+		},
+		{
+			"name": "CdrRow",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "cols",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of columns in the row (1-12, auto)."
+							},
+							{
+								"name": "colsSm",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "colsMd",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "colsLg",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "justify",
+								"type": "string",
+								"default": "n/a",
+								"description": "How columns should be justified within empty space of the row. Possible values: {left, center, right, around, between}. See CSS flexbox justify-content."
+							},
+							{
+								"name": "justifySm",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "justifyMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "justifyLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "align",
+								"type": "string",
+								"default": "n/a",
+								"description": "How columns of different heights should align. {top, middle, bottom, stretch}. See CSS flexbox align-items."
+							},
+							{
+								"name": "alignSm",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "alignMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "alignLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "gutter",
+								"type": "string",
+								"default": "n/a",
+								"description": "Overrides default gutter spacing. {none}."
+							},
+							{
+								"name": "gutterSm",
+								"type": "string",
+								"default": "n/a",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "gutterMd",
+								"type": "string",
+								"default": "n/a",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "gutterLg",
+								"type": "string",
+								"default": "n/a",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "vertical",
+								"type": "boolean",
+								"default": "false",
+								"description": "Changes row to a column layout. See CSS flexbox flex-direction."
+							},
+							{
+								"name": "verticalSm",
+								"type": "boolean",
+								"default": "false",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "verticalMd",
+								"type": "boolean",
+								"default": "false",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "verticalLg",
+								"type": "boolean",
+								"default": "false",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "wrap",
+								"type": "boolean",
+								"default": "false",
+								"description": "Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap."
+							},
+							{
+								"name": "wrapSm",
+								"type": "boolean",
+								"default": "false",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "wrapMd",
+								"type": "boolean",
+								"default": "false",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "wrapLg",
+								"type": "boolean",
+								"default": "false",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "nowrap",
+								"type": "boolean",
+								"default": "false",
+								"description": "Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap."
+							},
+							{
+								"name": "nowrapSm",
+								"type": "boolean",
+								"default": "false",
+								"description": "Sm breakpoint and above"
+							},
+							{
+								"name": "nowrapMd",
+								"type": "boolean",
+								"default": "false",
+								"description": "Md breakpoint and above"
+							},
+							{
+								"name": "nowrapLg",
+								"type": "boolean",
+								"default": "false",
+								"description": "Lg breakpoint and above"
+							},
+							{
+								"name": "type",
+								"type": "string",
+								"default": "\"normal\"",
+								"description": "Changes grid to built with ul>li rather than divs. {normal, list}"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "innerHTML inside the row component"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrSelect",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "label",
+								"type": "string",
+								"default": "n/a",
+								"description": "Label text."
+							},
+							{
+								"name": "id",
+								"type": "string",
+								"default": "n/a",
+								"description": "`id` for the select that is mapped to the label `for` attribute. If one is not provided, it will be generated."
+							},
+							{
+								"name": "hideLabel",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Removes the label element but sets the select `aria-label` to `label` text for a11y."
+							},
+							{
+								"name": "prompt",
+								"type": "string",
+								"default": "n/a",
+								"description": "Adds an option that is disabled and selected by default to serve as a `placeholder` for the select."
+							},
+							{
+								"name": "options",
+								"type": "array",
+								"default": "n/a",
+								"description": "Build options programatically with data. Array of objects [{ text: String, value: String}] to give greater control. Array of strings ['String'] for simpler setup (value and text will be the same)."
+							}
+						],
+						"events": [
+							{
+								"name": "input",
+								"type": "string|array",
+								"description": "Current input value. Fires when"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "MISSING DESCRIPTION"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrText",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "tag",
+								"type": "string",
+								"default": "\"p\"",
+								"description": "Any valid HTML tag"
+							}
+						],
+						"slots": [
+							{
+								"name": "default",
+								"description": "MISSING DESCRIPTION"
+							}
+						]
+					},
+					"version": "0.2.1"
+				}
+			]
+		}
+	],
+	"compositions": [
+		{
+			"name": "CdrActivityCard",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "media",
+								"type": "string",
+								"default": "n/a",
+								"description": "Path to primary image"
+							},
+							{
+								"name": "mediaAlt",
+								"type": "string",
+								"default": "\" \"",
+								"description": "this is set to top when there is no attribution"
+							},
+							{
+								"name": "mediaRatio",
+								"type": "string",
+								"default": "n/a",
+								"description": "Aspect ratio of the media container. {square, 1-2, 2-3, 3-4, 9-16, 2-1, 3-2, 4-3, 16-9}. See cdr-img"
+							},
+							{
+								"name": "mediaCover",
+								"type": "boolean",
+								"default": "n/a",
+								"description": "Requires `mediaRatio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img"
+							},
+							{
+								"name": "mediaCrop",
+								"type": "string",
+								"default": "n/a",
+								"description": "Requires `mediaRatio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img"
+							},
+							{
+								"name": "title",
+								"type": "string",
+								"default": "n/a",
+								"description": "Title text"
+							},
+							{
+								"name": "titleUrl",
+								"type": "string",
+								"default": "n/a",
+								"description": "href to turn card into a link"
+							},
+							{
+								"name": "titleLevel",
+								"type": "string|number",
+								"default": "\"2\"",
+								"description": "Heading level"
+							},
+							{
+								"name": "label",
+								"type": "string",
+								"default": "n/a",
+								"description": "Label text"
+							},
+							{
+								"name": "location",
+								"type": "string",
+								"default": "n/a",
+								"description": "Location text"
+							},
+							{
+								"name": "snapshot",
+								"type": "array",
+								"default": "n/a",
+								"description": "Snapshot text"
+							},
+							{
+								"name": "rating",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Rating value"
+							},
+							{
+								"name": "count",
+								"type": "string|number",
+								"default": "n/a",
+								"description": "Number of ratings"
+							}
+						]
+					},
+					"version": "0.1.1"
+				}
+			]
+		},
+		{
+			"name": "CdrCaption",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "summary",
+								"type": "string",
+								"default": "n/a",
+								"description": "Caption summary text"
+							},
+							{
+								"name": "credit",
+								"type": "string",
+								"default": "n/a",
+								"description": "Caption credit text"
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		},
+		{
+			"name": "CdrSearch",
+			"versions": [
+				{
+					"api": {
+						"props": [
+							{
+								"name": "click",
+								"type": "func",
+								"default": "n/a",
+								"description": "The function to run when search button is clicked"
+							},
+							{
+								"name": "bare",
+								"type": "boolean",
+								"default": "false",
+								"description": "Bare display variant (removes button)."
+							},
+							{
+								"name": "large",
+								"type": "boolean",
+								"default": "false",
+								"description": "Large display variant."
+							}
+						],
+						"events": [
+							{
+								"name": "input",
+								"type": "string",
+								"description": "Current input value. Fires while typing."
+							}
+						]
+					},
+					"version": "0.1.0"
+				}
+			]
+		}
+	]
+}

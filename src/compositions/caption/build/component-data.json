@@ -1,0 +1,24 @@
+{
+	"name": "CdrCaption",
+	"versions": [
+		{
+			"api": {
+				"props": [
+					{
+						"name": "summary",
+						"type": "string",
+						"default": "n/a",
+						"description": "Caption summary text"
+					},
+					{
+						"name": "credit",
+						"type": "string",
+						"default": "n/a",
+						"description": "Caption credit text"
+					}
+				]
+			},
+			"version": "0.1.0"
+		}
+	]
+}

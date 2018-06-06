@@ -1,0 +1,39 @@
+{
+  "name": "@rei/cdr-quote",
+  "version": "0.1.0",
+  "author": "REI Software Engineering",
+  "description": "REI Cedar Style Framework - Vue Component for quotes",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-quote",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
+  },
+  "license": "ISC",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "config": {
+    "vue_file": "CdrQuote"
+  },
+  "main": "dist/cdr-quote.js",
+  "style": "dist/cdr-quote.css",
+  "scripts": {
+    "prepublishOnly": "npm run build && pkg-ok",
+    "build": "node build/build.js",
+    "build:docs": "node build/docs-build.js"
+  },
+  "peerDependencies": {
+    "@rei/cdr-assets": "^0.1.0",
+    "@rei/cdr-text": "^0.2.0",
+    "vue": "^2.5.13"
+  },
+  "devDependencies": {
+    "@rei/cdr-assets": "^0.1.0",
+    "@rei/cdr-text": "^0.2.0",
+    "pkg-ok": "^2.1.0"
+  }
+}

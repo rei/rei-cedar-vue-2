@@ -1,78 +1,94 @@
 // utilities
-const _ = require('lodash');
+// const _ = require('lodash');
 const glob = require('glob');
 
 // variables
-const scenarios = [];
+const scenariosArr = [];
 let defs = [];
+const scenarioDefaults = {
+  url: 'http://localhost:3000',
+  misMatchThreshold: 0.1,
+  readyEvent: null,
+  onReadyScript: 'onReady.js',
+};
+
+// functions for creating scenarios
+function createScenario(def) {
+  const finalScenario = Object.assign({}, scenarioDefaults, def);
+  scenariosArr.push(finalScenario);
+}
+
+function splitScenario(def, type = '', selectorsArr, extraOptions = {}) {
+  const scenario = Object.assign({}, extraOptions, def);
+  scenario.label = `${def.label} ${type}`;
+  selectorsArr.forEach((s) => {
+    scenario[`${type}Selector`] = true;
+    scenario.selectors = [s];
+    createScenario(scenario);
+  });
+}
 
 // get backstop definition files and concat the contents
-const files = glob.sync('./docs_src/**/*.backstop.js');
+const files = glob.sync('./src/**/*.backstop.js', { ignore: ['./src/**/node_modules/**'] });
+
 files.forEach((file) => {
   defs = defs.concat(require(file));
 });
 
-
-function createSelectorObj(def, selector, onReadyScript) {
-  let rObj = {};
-  _.forOwn(def, (value, key) => {
-    if (key === 'selectors') {
-      rObj[key] = [selector];
-    } else {
-      rObj[key] = value;
-    }
-  });
-  if (onReadyScript) {
-    rObj.label = `${def.label}_${onReadyScript}`;
-    rObj.onReadyScript = onReadyScript;
-  }
-  return rObj;
-}
-
 defs.forEach((def) => {
-  if (_.has(def, 'onReadyScripts')) {
-    def.selectors.forEach((selector) => {
-      def.onReadyScripts.forEach((script) => {
-        scenarios.push(createSelectorObj(def, selector, script));
-      });
-    })
-  } else {
-    scenarios.push(def);
+  const currDef = def;
+
+  if (Object.prototype.hasOwnProperty.call(currDef, 'hoverSelectors')) {
+    const { hoverSelectors } = currDef;
+    delete currDef.hoverSelectors;
+    splitScenario(currDef, 'hover', hoverSelectors, { hoverWait: 1000 });
   }
+
+  if (Object.prototype.hasOwnProperty.call(currDef, 'focusSelectors')) {
+    const { focusSelectors } = currDef;
+    delete currDef.focusSelectors;
+    splitScenario(currDef, 'focus', focusSelectors, { focusWait: 1000 });
+  }
+
+  createScenario(currDef);
 });
 
 module.exports = {
   id: 'cedar',
   viewports: [
     {
-      name: 'phone',
-      width: 320,
-      height: 480,
+      label: 'xs',
+      width: 360,
+      height: 640,
     },
     {
-      name: 'tablet_v',
-      width: 568,
+      label: 'sm',
+      width: 768,
       height: 1024,
     },
     {
-      name: 'tablet_h',
+      label: 'md',
       width: 1024,
       height: 768,
     },
+    {
+      label: 'lg',
+      width: 1366,
+      height: 768,
+    },
   ],
-  scenarios,
+  scenarios: scenariosArr,
   paths: {
     bitmaps_reference: 'backstop_data/bitmaps_reference',
     bitmaps_test: 'backstop_data/bitmaps_test',
-    casper_scripts: 'backstop_data/casper_scripts',
+    engine_scripts: 'backstop_data/engine_scripts',
     html_report: 'backstop_data/html_report',
     ci_report: 'backstop_data/ci_report',
   },
-  casperFlags: [],
-  engine: 'phantomjs',
-  report: [
-    'CLI',
-    'browser'
-  ],
+  asyncCaptureLimit: 5,
+  asyncCompareLimit: 10,
+  engine: 'chromy',
+  report: ['browser'],
   debug: false,
+  debugWindow: false,
 };

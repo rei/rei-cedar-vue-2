@@ -1,142 +1,144 @@
-
-##1.7.10
-Bugfixes:
-- select box text bug on safari
-
-##1.7.8
-Bugfixes:
-- star color updates
-- secondary button border color updates
-- breadcrumb text-decoration on hover
-
-##1.7.7
-Bugfixes:
-- link color updates
-
-##1.7.6
-Features:
-- btn-icon
-- btn-bare
-Bugfixes:
-- text-decoration turned on by default
-
-##1.7.5
-Features:
-- transparent button utility class
-- link text decoration skip
-Bugfixes:
-- secondary button hover state
-- link text decoration set to on for defualt
-- input-group addon icon spacing ajustments
-- md button font and spacing updates
-- close button sizing updates
-
-##1.7.4
-Features:
-- update to focus and hover state of tab items
+<a name="5.0.0-0"></a>
+# [5.0.0-0](https://github.com/rei/rei-cedar/compare/v4.3.4-0...v5.0.0-0) (2018-01-29)
 
 
-##1.7.3
-Bugfixes:
-- restrain close button from going full width at xs breakpoint
+### Bug Fixes
+
+* **rating:** Fix rating screen reader text to be rounded ([949fc92](https://github.com/rei/rei-cedar/commit/949fc92)), closes [#352](https://github.com/rei/rei-cedar/issues/352)
 
 
-##1.7.2
-Bugfixes:
-- close button on modal was not assigned the icon font correctly
+### Features
 
-##1.7.1
-Bugfixes:
-- close button padding increase
-- input lg padding increase
-- medium button font family to redwood-ui-40
-- update to brand.ai variables
+* 1.0 Space variables and classes have been added to REI-Cedar, Brand.ai vaiables have been upda ([7e87b0f](https://github.com/rei/rei-cedar/commit/7e87b0f))
 
-##1.7.0
-Features:
-- Button design updates
-- Input design updates
-- Input Group design updates
-- Form updates
-- Validation markup and design updates, still supports old markup contract
 
-## 1.6.3
-Features:
-- Adding event riot components
+### BREAKING CHANGES
 
-## 1.6.2
-Features:
-- removing jQuery from video modal ui-component
+* The Checkbox and Radio had a hard-coded value of 10px for right margin spacing,
+this is not represented in the spacing system and was updated with the closest represnted  value,
+size-sm(8px).
 
-## 1.5
-Features:
-- Riot modals.
-- Open and closed type classes for lineheight.
+PLIB-2046
 
-## 1.5
-Features:
-- Typograpgy updates.
 
-## 1.2.11  2016-08-25 Michael Hewson  <mhewson@rei.com.com>
-Bugfixes:
-- Bootstrap added to project and import removed.
 
-## 1.2.10  2016-08-24 Michael Hewson  <mhewson@rei.com.com>
-Features:
-- BackstopJs visual regression
-- Bootstrap removed from project and imported to main less file.
-- first pass of css-usage-report 
+<a name="4.3.4-0"></a>
+## [4.3.4-0](https://github.com/rei/rei-cedar/compare/v4.3.3-0...v4.3.4-0) (2017-09-26)
 
-## 1.2.9
-Features:
-- Set image sharpening to be an opt-in by assigning .img-sharpen class rather than being a built in feature of .img-frame
 
-## 1.2.5  2016-05-31 Michael Hewson  <mhewson@rei.com.com>
-Features:
-- BackstopJs visual regression first pass
 
-## 1.2.4  2016-03-18 Michael Hewson  <mhewson@rei.com.com>
-Features:
-- Toggle between float and flex grid by adding the row-flex class to existing rows
+<a name="4.3.3-0"></a>
+## [4.3.3-0](https://github.com/rei/rei-cedar/compare/v4.3.2-0...v4.3.3-0) (2017-09-21)
 
-## 1.2.2  2016-03-18 Michael Hewson  <mhewson@rei.com.com>
-Bugfixes:
-- adding padding to container and -margin to row
 
-## 1.2.1  2016-03-18 Michael Hewson  <mhewson@rei.com.com>
-Bugfixes:
-- adding position relative to cols
-- setting col to display inline-block
 
-## 1.2.0  2016-03-16 Michael Hewson  <mhewson@rei.com.com>
-Features:
-- Move from bootstrap 3.6 float based grid to flex grid.
-Bugfixes:
-- Reset hamburger text size from 1.8rem to 2.4 rem.
+<a name="4.3.2-0"></a>
+## [4.3.2-0](https://github.com/rei/rei-cedar/compare/v4.3.1-0...v4.3.2-0) (2017-09-18)
 
-## 1.1.0  2016-03-9 Michael Hewson  <mhewson@rei.com.com>
-Features:
-- Move from px to rem.
 
-## 1.0.0  2016-02-19 Michael Hewson  <mhewson@rei.com.com>
-Features:
- - Moves former ui-framework project to Github <https://github.com/rei/rei-cedar>
- - Re-brands project as rei-cedar.
- - Breaking out less patterns into atomic directory structure and moving to the definitions dir.
- - Major update for themes following semantic-UI structure.
- - Stub out for garage theme.
- - Provide variables and overrides per component within themes directory.
- - Update to gulp-less dependency allowing for 'optional' imports and variables defined outside of root.
- - Documentation directory structure and navigation now following atomic design.
- - All site navigation contained within navigation.yml, removed nav dir.
- - Visual regression tests updated to flow through new site order.
-Bugfixes:
- - Filter button bug fix
- - Adding margin-top: 0 to all default headers
- - Fixed hardcoded protocol for icon font path
- - Moved reset.override to reset.less,
- - Refactored image utility mixins
-Removals:
- - Variables.less
- - .overrides are adding multiple iterations of themselves and have been removed for the moment.
- - Gliphcons
+
+<a name="4.3.1-0"></a>
+## [4.3.1-0](https://github.com/rei/rei-cedar/compare/v4.3.0-0...v4.3.1-0) (2017-09-14)
+
+
+
+<a name="4.3.0-0"></a>
+# [4.3.0-0](https://github.com/rei/rei-cedar/compare/v4.2.0-0...v4.3.0-0) (2017-09-13)
+
+
+
+<a name="4.2.0-0"></a>
+# [4.2.0-0](https://github.com/rei/rei-cedar/compare/v4.1.1-0...v4.2.0-0) (2017-09-11)
+
+
+
+<a name="4.1.1-0"></a>
+## [4.1.1-0](https://github.com/rei/rei-cedar/compare/v4.1.0-0...v4.1.1-0) (2017-09-08)
+
+
+
+<a name="4.1.0-0"></a>
+# [4.1.0-0](https://github.com/rei/rei-cedar/compare/v4.0.1-0...v4.1.0-0) (2017-09-07)
+
+
+
+<a name="4.0.1-0"></a>
+## [4.0.1-0](https://github.com/rei/rei-cedar/compare/v4.0.0-0...v4.0.1-0) (2017-09-05)
+
+
+
+<a name="4.0.0-0"></a>
+# [4.0.0-0](https://github.com/rei/rei-cedar/compare/v3.0.0-0...v4.0.0-0) (2017-09-05)
+
+
+
+<a name="3.0.0-0"></a>
+# [3.0.0-0](https://github.com/rei/rei-cedar/compare/v1.6.1...v3.0.0-0) (2017-08-08)
+
+
+
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/rei/rei-cedar/compare/v1.5.0...v1.6.0) (2017-02-28)
+
+
+
+<a name="1.2.10"></a>
+## [1.2.10](https://github.com/rei/rei-cedar/compare/v1.2.12...v1.2.10) (2016-08-24)
+
+
+
+<a name="1.2.12"></a>
+## [1.2.12](https://github.com/rei/rei-cedar/compare/v1.2.9...v1.2.12) (2016-08-10)
+
+
+
+<a name="1.2.9"></a>
+## [1.2.9](https://github.com/rei/rei-cedar/compare/v1.2.8...v1.2.9) (2016-06-14)
+
+
+
+<a name="1.2.8"></a>
+## [1.2.8](https://github.com/rei/rei-cedar/compare/v1.2.7...v1.2.8) (2016-06-13)
+
+
+
+<a name="1.2.7"></a>
+## [1.2.7](https://github.com/rei/rei-cedar/compare/v1.2.6...v1.2.7) (2016-03-25)
+
+
+
+<a name="1.2.6"></a>
+## [1.2.6](https://github.com/rei/rei-cedar/compare/v1.2.5...v1.2.6) (2016-03-23)
+
+
+
+<a name="1.2.5"></a>
+## [1.2.5](https://github.com/rei/rei-cedar/compare/v1.2.1...v1.2.5) (2016-03-22)
+
+
+
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/rei/rei-cedar/compare/v1.1.2...v1.2.1) (2016-03-18)
+
+
+
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/rei/rei-cedar/compare/v1.1.1...v1.1.2) (2016-03-07)
+
+
+
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/rei/rei-cedar/compare/v1.1.0...v1.1.1) (2016-03-03)
+
+
+
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/rei/rei-cedar/compare/v1.0.0...v1.1.0) (2016-02-29)
+
+
+
+<a name="1.0.0"></a>
+# 1.0.0 (2016-02-24)
+
+
+

@@ -1,8 +1,0 @@
-# Manually-generated file
-
-- type:  default
-  class: list-group
-- type:  menu
-  class: list-group-menu
-- type:  filter
-  class: list-group-filter

@@ -1,0 +1,41 @@
+/* ==========================================================================
+  # CdrIcon
+
+  All values should map to variables in
+  vars/CdrIcon.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base Styles
+========================================================================== */
+
+/* non-modularized so it works with <cdr-icon-sprite/> */
+:global {
+  .cdr-icon-sprite {
+    display: none;
+  }
+}
+
+.cdr-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex: 0 0 auto;
+  width: $icon-size;
+  height: $icon-size;
+  fill: $icon-fill;
+
+  &--sm {
+    width: $icon-size-sm;
+    height: $icon-size-sm;
+  }
+
+  &--lg {
+    width: $icon-size-lg;
+    height: $icon-size-lg;
+  }
+}
+
+.cdr-icon--inherit-color {
+  fill: inherit;
+}
