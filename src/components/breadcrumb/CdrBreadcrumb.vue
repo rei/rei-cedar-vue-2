@@ -14,11 +14,12 @@
       <li
         v-if="truncate"
         :class="$style['cdr-breadcrumb__item']">
-        <button
+        <cdr-icon-only-button
           :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]"
           @click="shouldTruncate = false">
-          ...
-        </button>
+          <icon-more-functions :class="$style['cdr-breadcrumb__ellipses-icon']" />
+        </cdr-icon-only-button>
+
         <span
           :class="$style['cdr-breadcrumb__delimiter']"
           aria-hidden="true">
@@ -56,10 +57,16 @@
  */
 
 import modifier from 'mixinsdir/modifier';
+import { IconMoreFunctions } from '@rei/cdr-icon';
+import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 import debounce from 'lodash/debounce';
 
 export default {
   name: 'CdrBreadcrumb',
+  components: {
+    CdrIconOnlyButton,
+    IconMoreFunctions,
+  },
   mixins: [modifier],
   props: {
     /**

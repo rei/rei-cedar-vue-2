@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.10",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "@rei/cdr-icon": "^0.2.0"
   }
 }

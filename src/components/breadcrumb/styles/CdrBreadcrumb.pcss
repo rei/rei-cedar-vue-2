@@ -68,15 +68,32 @@
   ========== */
   &__ellipses {
     border: none;
+    background: none;
     background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
     padding: 6px 11px; /* extend clickable area */
     margin: -6px -11px; /* preserve layout */
   }
 
+  /* Ellipses
+  ========== */
+  &__ellipses-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    transform: rotate(90deg);
+  }
+
   @media (--md-mq) {
     &__link,
-    &__delimiter {
+    &__delimiter,
+    &__ellipses {
       @include redwood-display-20;
+    }
+
+    &__ellipses-icon {
+      width: 1.6rem;
+      height: 1.6rem;
     }
   }
 }
