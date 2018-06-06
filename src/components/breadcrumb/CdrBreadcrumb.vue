@@ -19,7 +19,6 @@
           @click="shouldTruncate = false">
           <icon-more-functions :class="$style['cdr-breadcrumb__ellipses-icon']" />
         </cdr-icon-only-button>
-
         <span
           :class="$style['cdr-breadcrumb__delimiter']"
           aria-hidden="true">
