@@ -104,15 +104,15 @@
         </template>
       </cdr-button>
       <cdr-close-button />
-      <cdr-play-button />
       <cdr-button
-        :tag="a"
+        tag="a"
         href="https://rei.com"
         :icon-only="true">
         <template name="icon">
           <icon-external-link class="cdr-button__icon" />
         </template>
       </cdr-button>
+      <cdr-play-button />
     </div>
     <div class="button-example dark">
       <cdr-button
@@ -124,9 +124,8 @@
         </template>
       </cdr-button>
       <cdr-close-button :on-dark="true" />
-      <cdr-play-button :on-dark="true" />
       <cdr-button
-        :tag="a"
+        tag="a"
         href="https://rei.com"
         :icon-only="true"
         :on-dark="true">
@@ -134,6 +133,7 @@
           <icon-external-link class="cdr-button__icon" />
         </template>
       </cdr-button>
+      <cdr-play-button :on-dark="true" />
     </div>
   </div>
 </template>

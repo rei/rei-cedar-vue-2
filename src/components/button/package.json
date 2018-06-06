@@ -26,11 +26,9 @@
     "build": "node build/build.js",
     "build:docs": "node build/docs-build.js"
   },
-  "dependencies": {
-    "@rei/cdr-icon": "^0.2.0"
-  },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
+    "@rei/cdr-icon": "^0.2.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {

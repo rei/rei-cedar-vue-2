@@ -23,7 +23,6 @@
 
   background-color: $button-background-color;
   box-shadow: $button-box-shadow;
-  border: none;
   border-radius: $button-border-radius;
   color: $button-color;
   cursor: pointer;
@@ -158,6 +157,10 @@
     display: inline-block;
     padding: $inset-quarter-x;
     fill: $heart-of-darkness;
+
+    & > :global(&__icon) {
+      margin-right: 0;
+    }
 
     &:hover,
     &:active {
