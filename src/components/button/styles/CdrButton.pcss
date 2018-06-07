@@ -26,17 +26,15 @@
   border-radius: $button-border-radius;
   color: $button-color;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   fill: $button-color;
   outline: none;
   padding: $inset-1-x-squish;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
-  white-space: nowrap;
 
   & > :global(&__icon) {
-    display: block;
-    float: left;
+    align-self: center;
     fill: inherit;
     margin-right: $space-quarter-x;
   }
@@ -138,6 +136,7 @@
      ========== */
   &--full-width {
     width: 100%;
+    justify-content: center;
 
     & > :global(.cdr-button__icon) {
       display: inline-block;

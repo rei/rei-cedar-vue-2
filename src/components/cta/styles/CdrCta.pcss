@@ -19,17 +19,16 @@
   border-radius: $button-border-radius;
   color: $button-color;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   outline: none;
-  padding: $inset-1-and-a-half-x-squish;
-  text-align: center;
+  padding: 12px 16px 12px 24px; /* needs var */
+  text-align: left;
   text-transform: uppercase;
   text-decoration: none;
-  white-space: nowrap;
 
   & > .cdr-cta__icon {
+    align-self: center;
     display: block;
-    float: right;
     margin-left: $space-quarter-x;
   }
 
@@ -41,6 +40,7 @@
   /* Full Width
      ========== */
   &--full-width {
+    justify-content: center;
     width: 100%;
 
     & > .cdr-cta__icon {

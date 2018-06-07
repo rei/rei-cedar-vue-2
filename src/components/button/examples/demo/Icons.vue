@@ -7,7 +7,7 @@
         href="https://rei.com"
         size="large"
         data-backstop="cdr-button--large icon">
-        <template slot="icon">
+        <template name="icon">
           <icon-check-lg class="cdr-button__icon" />
         </template>
         Anchor and Icon
@@ -27,8 +27,8 @@
           <icon-check-lg
             modifier="sm"
             class="cdr-button__icon" />
-          Icon CSS small
         </template>
+        Icon CSS small
       </cdr-button>
       <cdr-button
         size="small">
@@ -88,10 +88,30 @@
       <cdr-button
         size="large"
         full-width
-        data-backstop="cdr-button--large full-width icon"
-      ><icon-clock
-        class="cdr-button__icon"
-      />Full Width</cdr-button>
+        data-backstop="cdr-button--large full-width icon">
+        <template name="icon">
+          <icon-clock class="cdr-button__icon" />
+        </template>
+        Full Width
+      </cdr-button>
+    </div>
+    <div class="button-example">
+      <div
+        class="button-text-wrap"
+        style="max-width: 300px;">
+        <cdr-button
+          size="medium"
+          modifier="secondary"
+          data-backstop="cdr-button--medium secondary icon">
+          <template name="icon">
+            <cdr-icon
+              class="cdr-button__icon"
+              use="#twitter" />
+          </template>
+          <!-- eslint-disable-next-line -->
+          The text of this button will wrap onto two lines!
+        </cdr-button>
+      </div>
     </div>
     <div class="button-example">
       <h2>Icon only button</h2>

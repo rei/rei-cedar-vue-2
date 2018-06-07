@@ -4,11 +4,9 @@
     :class="[modifierClass, ctaClass, fullWidthClass]"
     :type="tag === 'button' ? type : null"
     :tabindex="tag === 'button' ? null: 0"
-    @click="onClick"
-  ><slot
-  /><icon-caret-right
-    :class="$style[`cdr-cta__icon`]"
-  />
+    @click="onClick">
+    <slot />
+    <icon-caret-right :class="$style[`cdr-cta__icon`]" />
   </component>
 </template>
 
