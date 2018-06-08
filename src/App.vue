@@ -4,6 +4,7 @@
     class="cdr-container-fluid"
   >
     <h1>Cedar Proving grounds</h1>
+    <router-link to="accordions">Accordions</router-link>
     <router-link to="buttons">Buttons</router-link>
     <router-link to="grids">Grids</router-link>
     <router-link to="cards">Cards</router-link>

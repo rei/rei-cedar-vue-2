@@ -105,18 +105,15 @@
   .reveal-enter,
   .reveal-leave-to {
     opacity: 0;
-    max-height: 0;
-    padding: 0 auto;
   }
 
   .reveal-enter-to,
   .reveal-leave {
     opacity: 1;
-    max-height: 100%;
   }
 
   .reveal-enter-active,
   .reveal-leave-active {
-    transition: height 300ms linear;
+    transition: opacity 300ms;
   }
 }

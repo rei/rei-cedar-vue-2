@@ -14,14 +14,14 @@
         :aria-controls="`${id}-collapsible`"
         v-bind="$attrs"
       >
-        <label
+        <span
           class="cdr-accordion__label"
           :id="`${id}-label`">
           <!-- <span class="sr-only">
             {{ a11yPrefix }}
           </span> -->
           {{ label }}
-        </label>
+        </span>
         <icon-caret-down
           class="cdr-accordion__icon"
           :class="isOpen ? 'open' : null"
@@ -30,6 +30,7 @@
     </div>
     <transition name="reveal">
       <div
+        v-show="isOpen"
         class="cdr-accordion__content"
         :aria-hidden="`${!isOpen}`"
         :id="`${id}-collapsible`"
