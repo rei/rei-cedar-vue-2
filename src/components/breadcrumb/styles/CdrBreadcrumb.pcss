@@ -42,7 +42,9 @@
 
     /* Hover
     ---------- */
-    &:hover .cdr-breadcrumb__link {
+    &:hover,
+    &:active,
+    &:focus {
       color: $breadcrumb-hover-text-color;
     }
   }
@@ -53,6 +55,13 @@
     @include redwood-display-10;
 
     color: inherit; /* inherit color from &__item */
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: inherit;
+      text-decoration: underline;
+    }
   }
 
   /* Delimiter
@@ -75,6 +84,14 @@
     display: inline-block;
     padding: 6px 11px; /* extend clickable area */
     margin: -6px -11px; /* preserve layout */
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: inherit;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 
   /* Ellipses Icon
