@@ -48,11 +48,28 @@
     }
   }
 
+  .cdr-accordion__content-container {
+    overflow: hidden;
+    transition-duration: 200ms;
+    transition-property: max-height;
+    transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1);
+
+    &.open {
+      transition-duration: 300ms;
+    }
+  }
+
   .cdr-accordion__content {
     @include redwood-body-20;
 
     color: $heart-of-darkness;
     padding: $space-half-x $space-1-x $space-1-x;
+    transition: opacity 100ms linear;
+    opacity: 0;
+
+    &.open {
+      opacity: 1;
+    }
   }
 
   &--border-aligned {
@@ -100,20 +117,5 @@
 
   &--border-last {
     border-bottom: 1px solid $partly-cloudy;
-  }
-  
-  .reveal-enter,
-  .reveal-leave-to {
-    opacity: 0;
-  }
-
-  .reveal-enter-to,
-  .reveal-leave {
-    opacity: 1;
-  }
-
-  .reveal-enter-active,
-  .reveal-leave-active {
-    transition: opacity 300ms;
   }
 }

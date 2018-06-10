@@ -1,6 +1,7 @@
 <template>
   <div
     :class="[modifierClass, compactClass]"
+    :ref="`accordion-${id}`"
   >
     <div
       role="group"
@@ -28,16 +29,19 @@
           :modifier="compact ? 'sm' : null" />
       </button>
     </div>
-    <transition name="reveal">
+    <div
+      class="cdr-accordion__content-container"
+      :class="isOpen ? 'open' : null"
+      :style="`max-height:${maxHeight}`">
       <div
-        v-show="isOpen"
         class="cdr-accordion__content"
+        :class="isOpen ? 'open' : null"
         :aria-hidden="`${!isOpen}`"
         :id="`${id}-collapsible`"
       >
         <slot/>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
@@ -74,6 +78,7 @@ export default {
   data() {
     return {
       isOpen: this.show,
+      contentHeight: 0,
     }
   },
   computed: {
@@ -86,11 +91,18 @@ export default {
     a11yPrefix() {
       return this.isOpen ? 'Hide' : 'Show';
     },
+    maxHeight() {
+      return this.isOpen ? `${this.contentHeight}px` : '0';
+    }
   },
   methods: {
     toggle() {
       this.isOpen = !this.isOpen;
     },
+  },
+  mounted() {
+    const ref = `accordion-${this.$props.id}`;
+    this.contentHeight = this.$refs[ref].childNodes[2].childNodes[0].clientHeight;
   },
 };
 </script>
