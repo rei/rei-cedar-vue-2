@@ -83,10 +83,7 @@
 <script>
 import examples from 'componentsdir/examples';
 import compexamples from 'compositionsdir/examples';
-// import router from './dev';
 import routes from './router';
-
-console.log( routes ); //eslint-disable-line
 
 const all = Object.assign({}, examples, compexamples);
 export default {
