@@ -1,7 +1,7 @@
 <template>
   <component
     :is="type === 'list' ? 'ul' : 'div'"
-    :class="[$style['cdr-row'], colsClass, justifyClass, alignClass, rowClasses]"
+    :class="[$style['cdr-row'], colsClass, justifyClass, alignClass, gutterClass, rowClasses]"
   >
     <!-- @slot innerHTML inside the row component -->
     <slot/>
@@ -20,7 +20,7 @@ export default {
   mixins: [modifier],
   props: {
     /**
-     * Number of columns in the row (1-12, auto). Also accepts responsive designations: "2 4@md"
+     * Number of columns in the row (1-12, auto). Also accepts responsive values with `@breakpoint`: "2 4@md"
      */
     cols: {
       type: [String, Number],
@@ -33,7 +33,7 @@ export default {
     /**
      * How columns should be justified within empty space of the row.
      * Possible values: {left, center, right, around, between}. See CSS flexbox justify-content.
-     * Also accepts responsive designations: "center right@lg"
+     * Also accepts responsive values with `@breakpoint`: "center right@lg"
      */
     justify: {
       type: String,
@@ -41,33 +41,21 @@ export default {
       //   .indexOf(value) >= 0) || false,
     },
     /**
-     * How columns of different heights should align. {top, middle, bottom, stretch}. See CSS flexbox align-items.
+     * How columns of different heights should align. {top, middle, bottom, stretch}.
+     * Also accepts responsive values with `@breakpoint`: "top middle@sm"
+     * See CSS flexbox align-items.
      */
     align: {
       type: String,
       // validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
     /**
-     * Overrides default gutter spacing. {none}.
+     * Overrides default gutter spacing. {none, xxs}.
+     * Also accepts responsive values with `@breakpoint`: "none@md"
      */
     gutter: {
       type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
-    },
-    /** Sm breakpoint and above */
-    gutterSm: {
-      type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
-    },
-    /** Md breakpoint and above */
-    gutterMd: {
-      type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
-    },
-    /** Lg breakpoint and above */
-    gutterLg: {
-      type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
+      // validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
     },
     /**
      * Changes row to a column layout. See CSS flexbox flex-direction.
@@ -183,6 +171,17 @@ export default {
 
       return classStr.join(' ');
     },
+    gutterClass() {
+      const classStr = [];
+
+      if (this.gutter) {
+        this.gutter.split(' ').forEach((val) => {
+          classStr.push(this.$style[`cdr-row--gutter-${val}`]);
+        });
+      }
+
+      return classStr.join(' ');
+    },
     rowClasses() {
       const classObj = {};
       // column
@@ -190,11 +189,6 @@ export default {
       classObj[this.$style['cdr-row--column@sm']] = this.verticalSm;
       classObj[this.$style['cdr-row--column@md']] = this.verticalMd;
       classObj[this.$style['cdr-row--column@lg']] = this.verticalLg;
-      // gutter
-      classObj[this.$style[`cdr-row--gutter-${this.gutter}`]] = this.gutter;
-      classObj[this.$style[`cdr-row--gutter-${this.gutterSm}@sm`]] = this.gutterSm;
-      classObj[this.$style[`cdr-row--gutter-${this.gutterMd}@md`]] = this.gutterMd;
-      classObj[this.$style[`cdr-row--gutter-${this.gutterLg}@lg`]] = this.gutterLg;
       // wrap
       classObj[this.$style['cdr-row--wrap@sm']] = this.wrapSm;
       classObj[this.$style['cdr-row--wrap@md']] = this.wrapMd;

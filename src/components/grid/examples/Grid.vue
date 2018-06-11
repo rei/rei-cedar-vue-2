@@ -897,10 +897,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-sm="none"</p>
+        <p>gutter="none@sm"</p>
         <cdr-row
           cols="6"
-          gutter-sm="none"
+          gutter="none@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -910,10 +910,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-sm="xxs"</p>
+        <p>gutter="xxs@sm"</p>
         <cdr-row
           cols="6"
-          gutter-sm="xxs"
+          gutter="xxs@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1118,10 +1118,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-md="none"</p>
+        <p>gutter="none@sm"</p>
         <cdr-row
           cols="6"
-          gutter-md="none"
+          gutter="none@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1131,10 +1131,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-md="xxs"</p>
+        <p>gutter="xxs@md"</p>
         <cdr-row
           cols="6"
-          gutter-md="xxs"
+          gutter="xxs@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1339,10 +1339,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-lg="none"</p>
+        <p>gutter="none@lg"</p>
         <cdr-row
           cols="6"
-          gutter-lg="none"
+          gutter="none@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1352,10 +1352,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-lg="xxs"</p>
+        <p>gutter="xxs@lg"</p>
         <cdr-row
           cols="6"
-          gutter-lg="xxs"
+          gutter="xxs@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
