@@ -2,8 +2,7 @@
   <!-- eslint-disable max-len -->
   <div data-backstop="row-mosaic">
     <cdr-row
-      cols="1"
-      cols-sm="4"
+      cols="1 4@sm"
     >
       <cdr-col>
         <div class="row-demo">One</div>
@@ -39,8 +38,7 @@
             span="12"
             span-sm="8"
             is-row
-            cols="1"
-            cols-sm="2"
+            cols="1 2@sm"
           >
             <cdr-col>
               <div class="row-demo">Six</div>

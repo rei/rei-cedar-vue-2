@@ -311,10 +311,7 @@
         <h4>cols="auto"</h4>
         <cdr-row
           cols="auto"
-          justify="center"
-          justify-sm="around"
-          justify-md="between"
-          justify-lg="right"
+          justify="center around@sm between@md right@lg"
         >
           <cdr-col>
             <div class="row-demo">AAAAAAAAAAAAAAAAAAAA</div>
@@ -866,10 +863,9 @@
 
       <div data-backstop="row-sm">
         <h5>Small breakpoint</h5>
-        <p>cols="2" cols-sm="4"</p>
+        <p>cols="2 4@sm"</p>
         <cdr-row
-          cols="2"
-          cols-sm="4"
+          cols="2 4@sm"
         >
           <cdr-col>
             <div class="row-demo">2, 4-sm</div>
@@ -885,8 +881,8 @@
           </cdr-col>
         </cdr-row>
 
-        <p>cols-sm="6"</p>
-        <cdr-row cols-sm="6">
+        <p>cols="6@sm"</p>
+        <cdr-row cols="6@sm">
           <cdr-col>
             <div class="row-demo">auto, 6-sm</div>
           </cdr-col>
@@ -927,10 +923,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-sm="center"</p>
+        <p>justify="center@sm"</p>
         <cdr-row
           cols="6"
-          justify-sm="center"
+          justify="center@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -940,10 +936,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-sm="right"</p>
+        <p>justify="right@sm"</p>
         <cdr-row
           cols="6"
-          justify-sm="right"
+          justify="right@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -953,10 +949,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-sm="between"</p>
+        <p>justify="between@sm"</p>
         <cdr-row
           cols="6"
-          justify-sm="between"
+          justify="between@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -966,10 +962,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-sm="around"</p>
+        <p>justify="around@sm"</p>
         <cdr-row
           cols="6"
-          justify-sm="around"
+          justify="around@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1088,10 +1084,9 @@
 
       <div data-backstop="row-md">
         <h5>Medium breakpoint</h5>
-        <p>cols="2" cols-md="4"</p>
+        <p>cols="2 4@md"</p>
         <cdr-row
-          cols="2"
-          cols-md="4"
+          cols="2 4@md"
         >
           <cdr-col>
             <div class="row-demo">2, 4-md</div>
@@ -1107,8 +1102,8 @@
           </cdr-col>
         </cdr-row>
 
-        <p>cols-md="6"</p>
-        <cdr-row cols-md="6">
+        <p>cols="6@md"</p>
+        <cdr-row cols="6@md">
           <cdr-col>
             <div class="row-demo">auto, 6-md</div>
           </cdr-col>
@@ -1149,10 +1144,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-md="center"</p>
+        <p>justify="center@md"</p>
         <cdr-row
           cols="6"
-          justify-md="center"
+          justify="center@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1162,10 +1157,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-md="right"</p>
+        <p>justify="right@md"</p>
         <cdr-row
           cols="6"
-          justify-md="right"
+          justify="right@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1175,10 +1170,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-md="between"</p>
+        <p>justify="between@md"</p>
         <cdr-row
           cols="6"
-          justify-md="between"
+          justify="between@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1188,10 +1183,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-md="around"</p>
+        <p>justify="around@md"</p>
         <cdr-row
           cols="6"
-          justify-md="around"
+          justify="around@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1310,10 +1305,9 @@
 
       <div data-backstop="row-lg">
         <h5>Large breakpoint</h5>
-        <p>cols="2" cols-lg="4"</p>
+        <p>cols="2 4@lg"</p>
         <cdr-row
-          cols="2"
-          cols-lg="4"
+          cols="2 4@lg"
         >
           <cdr-col>
             <div class="row-demo">2, 4-lg</div>
@@ -1329,8 +1323,8 @@
           </cdr-col>
         </cdr-row>
 
-        <p>cols-lg="6"</p>
-        <cdr-row cols-lg="6">
+        <p>cols="6@lg"</p>
+        <cdr-row cols="6@lg">
           <cdr-col>
             <div class="row-demo">auto, 6-lg</div>
           </cdr-col>
@@ -1371,10 +1365,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-lg="center"</p>
+        <p>justify="center@lg"</p>
         <cdr-row
           cols="6"
-          justify-lg="center"
+          justify="center@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1384,10 +1378,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-lg="right"</p>
+        <p>justify="right@lg"</p>
         <cdr-row
           cols="6"
-          justify-lg="right"
+          justify="right@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1397,10 +1391,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-lg="between"</p>
+        <p>justify="between@lg"</p>
         <cdr-row
           cols="6"
-          justify-lg="between"
+          justify="between@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1410,10 +1404,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-lg="around"</p>
+        <p>justify="around@lg"</p>
         <cdr-row
           cols="6"
-          justify-lg="around"
+          justify="around@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1534,10 +1528,7 @@
         <h4>Mix and match responsive row classes</h4>
         <p>1 > 2-sm > 3-md > 4-lg </p>
         <cdr-row
-          cols="1"
-          cols-sm="2"
-          cols-md="3"
-          cols-lg="4"
+          cols="1 2@sm 3@md 4@lg"
         >
           <cdr-col>
             <div class="row-demo"/>
@@ -1561,9 +1552,7 @@
         <p>justify (default@xs > center@sm > right@md > around@lg)</p>
         <cdr-row
           cols="6"
-          justify-sm="center"
-          justify-md="right"
-          justify-lg="around"
+          justify="center@sm right@md around@lg"
         >
           <cdr-col>
             <div class="row-demo"/>
@@ -1711,8 +1700,7 @@
     <div data-backstop="row-mosaic-list">
       <cdr-row
         type="list"
-        cols="1"
-        cols-sm="4"
+        cols="1 4@sm"
       >
         <cdr-col>
           <div class="row-demo">One</div>
@@ -1750,8 +1738,7 @@
               span="12"
               span-sm="8"
               is-row
-              cols="1"
-              cols-sm="2"
+              cols="1 2@sm"
               type="list"
             >
               <cdr-col>

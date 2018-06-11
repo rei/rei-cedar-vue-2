@@ -1,7 +1,7 @@
 <template>
   <component
     :is="type === 'list' ? 'ul' : 'div'"
-    :class="[$style['cdr-row'], rowClasses]"
+    :class="[$style['cdr-row'], colsClass, justifyClass, rowClasses]"
   >
     <!-- @slot innerHTML inside the row component -->
     <slot/>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import modifier from 'mixinsdir/modifier';
 /**
  * Cedar 2 component for row
  * @version 0.0.1
@@ -16,70 +17,26 @@
  */
 export default {
   name: 'CdrRow',
+  mixins: [modifier],
   props: {
     /**
-     * Number of columns in the row (1-12, auto).
+     * Number of columns in the row (1-12, auto). Also accepts responsive designations: "2 4@md"
      */
     cols: {
       type: [String, Number],
-      validator: (value) => {
-        const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
-          .indexOf(str) >= 0 || false;
-      },
-    },
-    /** Sm breakpoint and above */
-    colsSm: {
-      type: [String, Number],
-      validator: (value) => {
-        const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
-          .indexOf(str) >= 0 || false;
-      },
-    },
-    /** Md breakpoint and above */
-    colsMd: {
-      type: [String, Number],
-      validator: (value) => {
-        const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
-          .indexOf(str) >= 0 || false;
-      },
-    },
-    /** Lg breakpoint and above */
-    colsLg: {
-      type: [String, Number],
-      validator: (value) => {
-        const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
-          .indexOf(str) >= 0 || false;
-      },
+      // validator: (value) => {
+      //   const str = value.toString();
+      //   return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
+      //     .indexOf(str) >= 0 || false;
+      // },
     },
     /**
      * How columns should be justified within empty space of the row. Possible values: {left, center, right, around, between}. See CSS flexbox justify-content.
      */
     justify: {
       type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between']
-        .indexOf(value) >= 0) || false,
-    },
-    /** Sm breakpoint and above */
-    justifySm: {
-      type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between']
-        .indexOf(value) >= 0) || false,
-    },
-    /** Md breakpoint and above */
-    justifyMd: {
-      type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between']
-        .indexOf(value) >= 0) || false,
-    },
-    /** Lg breakpoint and above */
-    justifyLg: {
-      type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between']
-        .indexOf(value) >= 0) || false,
+      // validator: value => (['left', 'center', 'right', 'around', 'between']
+      //   .indexOf(value) >= 0) || false,
     },
     /**
      * How columns of different heights should align. {top, middle, bottom, stretch}. See CSS flexbox align-items.
@@ -206,17 +163,39 @@ export default {
     };
   },
   computed: {
+    colsClass() {
+      const classStr = [];
+
+      if (this.cols) {
+        this.cols.split(' ').forEach((val) => {
+          classStr.push(this.$style[`cdr-row_row${val}`]);
+        });
+      }
+
+      return classStr.join(' ');
+    },
+    justifyClass() {
+      const classStr = [];
+
+      if (this.justify) {
+        this.justify.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
+    },
     rowClasses() {
       const classObj = {};
-      classObj[this.$style[`cdr-row_row${this.cols}`]] = this.cols;
-      classObj[this.$style[`cdr-row_row${this.colsSm}@sm`]] = this.colsSm;
-      classObj[this.$style[`cdr-row_row${this.colsMd}@md`]] = this.colsMd;
-      classObj[this.$style[`cdr-row_row${this.colsLg}@lg`]] = this.colsLg;
+      // classObj[this.$style[`cdr-row_row${this.cols}`]] = this.cols;
+      // classObj[this.$style[`cdr-row_row${this.colsSm}@sm`]] = this.colsSm;
+      // classObj[this.$style[`cdr-row_row${this.colsMd}@md`]] = this.colsMd;
+      // classObj[this.$style[`cdr-row_row${this.colsLg}@lg`]] = this.colsLg;
       // justify
-      classObj[this.$style[`cdr-row--${this.justify}`]] = this.justify;
-      classObj[this.$style[`cdr-row--${this.justifySm}@sm`]] = this.justifySm;
-      classObj[this.$style[`cdr-row--${this.justifyMd}@md`]] = this.justifyMd;
-      classObj[this.$style[`cdr-row--${this.justifyLg}@lg`]] = this.justifyLg;
+      // classObj[this.$style[`cdr-row--${this.justify}`]] = this.justify;
+      // classObj[this.$style[`cdr-row--${this.justifySm}@sm`]] = this.justifySm;
+      // classObj[this.$style[`cdr-row--${this.justifyMd}@md`]] = this.justifyMd;
+      // classObj[this.$style[`cdr-row--${this.justifyLg}@lg`]] = this.justifyLg;
       // align
       classObj[this.$style[`cdr-row--${this.align}`]] = this.align;
       classObj[this.$style[`cdr-row--${this.alignSm}@sm`]] = this.alignSm;
