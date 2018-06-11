@@ -975,10 +975,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-sm="top"</p>
+        <p>align="top@sm"</p>
         <cdr-row
           cols="3"
-          align-sm="top"
+          align="top@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -991,10 +991,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-sm="middle"</p>
+        <p>align="middle@sm"</p>
         <cdr-row
           cols="3"
-          align-sm="middle"
+          align="middle@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1007,10 +1007,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-sm="bottom"</p>
+        <p>align="bottom@sm"</p>
         <cdr-row
           cols="3"
-          align-sm="bottom"
+          align="bottom@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1196,10 +1196,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-md="top"</p>
+        <p>align="top@md"</p>
         <cdr-row
           cols="3"
-          align-md="top"
+          align="top@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1212,10 +1212,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-md="middle"</p>
+        <p>align="middle@md"</p>
         <cdr-row
           cols="3"
-          align-md="middle"
+          align="middle@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1228,10 +1228,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-md="bottom"</p>
+        <p>align="bottom@md"</p>
         <cdr-row
           cols="3"
-          align-md="bottom"
+          align="bottom@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1417,10 +1417,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-lg="top"</p>
+        <p>align="top@lg"</p>
         <cdr-row
           cols="3"
-          align-lg="top"
+          align="top@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1433,10 +1433,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-lg="middle"</p>
+        <p>align="middle@lg"</p>
         <cdr-row
           cols="3"
-          align-lg="middle"
+          align="middle@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1449,10 +1449,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-lg="bottom"</p>
+        <p>align="bottom@lg"</p>
         <cdr-row
           cols="3"
-          align-lg="bottom"
+          align="bottom@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1564,9 +1564,7 @@
         <p>align (default@xs > top@sm > middle@md > bottom@lg)</p>
         <cdr-row
           cols="3"
-          align-sm="top"
-          align-md="middle"
-          align-lg="bottom"
+          align="top@sm middle@md bottom@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>

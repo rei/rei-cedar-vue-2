@@ -1,7 +1,7 @@
 <template>
   <component
     :is="type === 'list' ? 'ul' : 'div'"
-    :class="[$style['cdr-row'], colsClass, justifyClass, rowClasses]"
+    :class="[$style['cdr-row'], colsClass, justifyClass, alignClass, rowClasses]"
   >
     <!-- @slot innerHTML inside the row component -->
     <slot/>
@@ -31,7 +31,9 @@ export default {
       // },
     },
     /**
-     * How columns should be justified within empty space of the row. Possible values: {left, center, right, around, between}. See CSS flexbox justify-content.
+     * How columns should be justified within empty space of the row.
+     * Possible values: {left, center, right, around, between}. See CSS flexbox justify-content.
+     * Also accepts responsive designations: "center right@lg"
      */
     justify: {
       type: String,
@@ -43,22 +45,7 @@ export default {
      */
     align: {
       type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** Sm breakpoint and above */
-    alignSm: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** Md breakpoint and above */
-    alignMd: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** Lg breakpoint and above */
-    alignLg: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
+      // validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
     /**
      * Overrides default gutter spacing. {none}.
@@ -185,22 +172,19 @@ export default {
 
       return classStr.join(' ');
     },
+    alignClass() {
+      const classStr = [];
+
+      if (this.align) {
+        this.align.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
+    },
     rowClasses() {
       const classObj = {};
-      // classObj[this.$style[`cdr-row_row${this.cols}`]] = this.cols;
-      // classObj[this.$style[`cdr-row_row${this.colsSm}@sm`]] = this.colsSm;
-      // classObj[this.$style[`cdr-row_row${this.colsMd}@md`]] = this.colsMd;
-      // classObj[this.$style[`cdr-row_row${this.colsLg}@lg`]] = this.colsLg;
-      // justify
-      // classObj[this.$style[`cdr-row--${this.justify}`]] = this.justify;
-      // classObj[this.$style[`cdr-row--${this.justifySm}@sm`]] = this.justifySm;
-      // classObj[this.$style[`cdr-row--${this.justifyMd}@md`]] = this.justifyMd;
-      // classObj[this.$style[`cdr-row--${this.justifyLg}@lg`]] = this.justifyLg;
-      // align
-      classObj[this.$style[`cdr-row--${this.align}`]] = this.align;
-      classObj[this.$style[`cdr-row--${this.alignSm}@sm`]] = this.alignSm;
-      classObj[this.$style[`cdr-row--${this.alignMd}@md`]] = this.alignMd;
-      classObj[this.$style[`cdr-row--${this.alignLg}@lg`]] = this.alignLg;
       // column
       classObj[this.$style['cdr-row--column']] = this.vertical;
       classObj[this.$style['cdr-row--column@sm']] = this.verticalSm;
