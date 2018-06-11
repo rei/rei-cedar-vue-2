@@ -4,6 +4,7 @@
     :class="[modifierClass, sizeClass, fullWidthClass, responsiveClass, iconOnlyClass, onDarkClass]"
     :type="tag === 'button' ? type : null"
     @click="onClick">
+    <!-- @slot for icon -->
     <slot name="icon" />
     <!-- @slot innerHTML on the inside of the button component -->
     <slot />
@@ -42,10 +43,17 @@ export default {
     responsiveSize: {
       type: Array,
     },
+    /**
+     * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.
+     */
     iconOnly: {
       type: Boolean,
       default: false,
     },
+    /**
+     * Renders an icon-only button with a light fill color for use on dark backgrounds.
+     * iconOnly must be true.
+     */
     onDark: {
       type: Boolean,
       default: false,

@@ -117,6 +117,7 @@
       <h2>Icon only button</h2>
       <cdr-button
         :icon-only="true"
+        :full-width="true"
         size="small">
         <template name="icon">
           <icon-twitter
