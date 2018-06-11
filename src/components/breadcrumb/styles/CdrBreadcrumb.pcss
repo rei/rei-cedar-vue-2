@@ -66,7 +66,7 @@
   }
 
   /* Ellipses
-  ========== */
+    ========== */
   &__ellipses {
     border: none;
     background: none;
@@ -75,14 +75,22 @@
     display: inline-block;
     padding: 6px 11px; /* extend clickable area */
     margin: -6px -11px; /* preserve layout */
-  }
 
-  /* Ellipses Icon
-  ========== */
-  &__ellipses-icon {
-    width: 1.4rem;
-    height: 1.4rem;
-    transform: rotate(90deg);
+    /* Ellipses Icon
+    ========== */
+    .cdr-breadcrumb__ellipses-icon {
+      width: 1.4rem;
+      height: 1.4rem;
+      transform: rotate(90deg);
+      fill: $breadcrumb-text-color;
+    }
+
+    &:hover {
+      .cdr-breadcrumb__ellipses-icon {
+        border-right: 1px solid $breadcrumb-hover-text-color;
+        fill: $breadcrumb-hover-text-color;
+      }
+    }
   }
 
   @media (--md-mq) {
@@ -92,7 +100,7 @@
       @include redwood-display-20;
     }
 
-    &__ellipses-icon {
+    &__ellipses .cdr-breadcrumb__ellipses-icon {
       width: 1.6rem;
       height: 1.6rem;
     }

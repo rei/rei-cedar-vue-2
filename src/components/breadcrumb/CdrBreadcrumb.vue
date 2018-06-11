@@ -13,10 +13,11 @@
       :class="$style['cdr-breadcrumb__list']">
       <li
         v-if="truncate"
+        @click="shouldTruncate = false"
         :class="$style['cdr-breadcrumb__item']">
         <cdr-icon-only-button
-          :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]"
-          @click="shouldTruncate = false">
+          aria-expanded="false"
+          :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]">
           <icon-more-functions :class="$style['cdr-breadcrumb__ellipses-icon']" />
         </cdr-icon-only-button>
         <span
@@ -32,8 +33,7 @@
       >
         <a
           :class="$style['cdr-breadcrumb__link']"
-          :href="item.url"
-          :aria-current="index == (items.length - 1) ? 'page' : null">
+          :href="item.url">
           {{ item.displayText }}
         </a>
         <span
