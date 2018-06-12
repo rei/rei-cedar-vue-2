@@ -30,12 +30,8 @@ describe('CdrBreadcrumb.vue', () => {
     wrapper = shallowMount(CdrBreadcrumb);
   });
 
-  it('renders a div', () => {
+  it('renders a nav', () => {
     expect(wrapper.vm.$refs.container.tagName).toBe('NAV');
-  });
-
-  it('breadcrumb container is rendered', () => {
-    expect(wrapper.find('.cdr-breadcrumb__container').exists()).toBe(true);
   });
 
   it('trigger resize no truncation', () => {

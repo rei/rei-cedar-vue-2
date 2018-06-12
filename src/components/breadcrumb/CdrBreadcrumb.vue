@@ -6,7 +6,6 @@
   <nav
     ref="container"
     :class="modifierClass"
-    class="cdr-breadcrumb__container"
     aria-label="Breadcrumb">
     <ol
       ref="cdrBreadcrumbList"

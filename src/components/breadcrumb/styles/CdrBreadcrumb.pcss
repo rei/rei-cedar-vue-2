@@ -42,7 +42,9 @@
 
     /* Hover
     ---------- */
-    &:hover .cdr-breadcrumb__link {
+    &:hover,
+    &:active,
+    &:focus {
       color: $breadcrumb-hover-text-color;
     }
   }
@@ -53,6 +55,13 @@
     @include redwood-display-10;
 
     color: inherit; /* inherit color from &__item */
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: inherit;
+      text-decoration: underline;
+    }
   }
 
   /* Delimiter
@@ -85,7 +94,9 @@
       fill: $breadcrumb-text-color;
     }
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       .cdr-breadcrumb__ellipses-icon {
         border-right: 1px solid $breadcrumb-hover-text-color;
         fill: $breadcrumb-hover-text-color;
