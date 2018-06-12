@@ -6,6 +6,7 @@
       $style['cdr-col'],
       spanClass,
       offsetLeftClass,
+      offsetRightClass,
 
       columnClasses
     ]"
@@ -23,6 +24,7 @@
       $style['cdr-col'],
       spanClass,
       offsetLeftClass,
+      offsetRightClass,
 
       columnClasses
     ]"
@@ -41,6 +43,7 @@
       $style['cdr-col'],
       spanClass,
       offsetLeftClass,
+      offsetRightClass,
 
       columnClasses
     ]"
@@ -61,6 +64,7 @@
       $style['cdr-col'],
       spanClass,
       offsetLeftClass,
+      offsetRightClass,
 
       columnClasses
     ]"
@@ -116,37 +120,14 @@ export default {
     },
     /**
      * Number of columns (1-12) of empty space to add right of this column.
+     * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     offsetRight: {
       type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num >= 0 && num <= 12) || false;
-      },
-    },
-    /** Sm breakpoint and above */
-    offsetRightSm: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num >= 0 && num <= 12) || false;
-      },
-    },
-    /** Md breakpoint and above */
-    offsetRightMd: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num >= 0 && num <= 12) || false;
-      },
-    },
-    /** Lg breakpoint and above */
-    offsetRightLg: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num >= 0 && num <= 12) || false;
-      },
+      // validator: (value) => {
+      //   const num = parseInt(value, 10);
+      //   return (num >= 0 && num <= 12) || false;
+      // },
     },
     /**
      * How the column should align (overrides cdr-row alignment). Possible values: {top, middle, bottom, stretch}. See CSS flexbox align-self.
@@ -204,18 +185,19 @@ export default {
 
       return classStr.join(' ');
     },
+    offsetRightClass() {
+      const classStr = [];
+
+      if (this.offsetRight) {
+        this.offsetRight.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-col', `offsetRight${val}`));
+        });
+      }
+
+      return classStr.join(' ');
+    },
     columnClasses() {
       const classObj = {};
-      // // offset left
-      // classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeft}`]] = this.offsetLeft;
-      // classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftSm}@sm`]] = this.offsetLeftSm;
-      // classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftMd}@md`]] = this.offsetLeftMd;
-      // classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftLg}@lg`]] = this.offsetLeftLg;
-      // offset right
-      classObj[this.$style[`cdr-col--offsetRight${this.offsetRight}`]] = this.offsetRight;
-      classObj[this.$style[`cdr-col--offsetRight${this.offsetRightSm}@sm`]] = this.offsetRightSm;
-      classObj[this.$style[`cdr-col--offsetRight${this.offsetRightMd}@md`]] = this.offsetRightMd;
-      classObj[this.$style[`cdr-col--offsetRight${this.offsetRightLg}@lg`]] = this.offsetRightLg;
       // align
       classObj[this.$style[`cdr-col--${this.alignSelf}`]] = this.alignSelf;
       classObj[this.$style[`cdr-col--${this.alignSelfSm}@sm`]] = this.alignSelfSm;

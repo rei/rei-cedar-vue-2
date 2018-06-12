@@ -1590,9 +1590,9 @@
             <div class="row-demo">auto</div>
           </cdr-col>
         </cdr-row>
-        <p>offset-right-sm="1" offset-left="1@sm"</p>
+        <p>offset-right="1@sm" offset-left="1@sm"</p>
         <cdr-row>
-          <cdr-col offset-right-sm="1">
+          <cdr-col offset-right="1@sm">
             <div class="row-demo">right 1</div>
           </cdr-col>
           <cdr-col offset-left="1@sm">
@@ -1627,9 +1627,9 @@
             <div class="row-demo">auto</div>
           </cdr-col>
         </cdr-row>
-        <p>offset-right-md="1" offset-left="1@md"</p>
+        <p>offset-right="1@md" offset-left="1@md"</p>
         <cdr-row>
-          <cdr-col offset-right-md="1">
+          <cdr-col offset-right="1@md">
             <div class="row-demo">right 1</div>
           </cdr-col>
           <cdr-col offset-left="1@md">
@@ -1664,7 +1664,7 @@
             <div class="row-demo">auto</div>
           </cdr-col>
         </cdr-row>
-        <p>offset-right-lg="1" offset-left-lg="1"</p>
+        <p>offset-right="1@lg" offset-left-lg="1"</p>
         <cdr-row>
           <cdr-col offset-right="1@lg">
             <div class="row-demo">right 1</div>
