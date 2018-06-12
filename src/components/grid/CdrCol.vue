@@ -5,6 +5,7 @@
     :class="[
       $style['cdr-col'],
       spanClass,
+      offsetLeftClass,
 
       columnClasses
     ]"
@@ -21,6 +22,7 @@
     :class="[
       $style['cdr-col'],
       spanClass,
+      offsetLeftClass,
 
       columnClasses
     ]"
@@ -38,6 +40,7 @@
       $style['cdr-row'],
       $style['cdr-col'],
       spanClass,
+      offsetLeftClass,
 
       columnClasses
     ]"
@@ -57,6 +60,7 @@
     :class="[
       $style['cdr-col'],
       spanClass,
+      offsetLeftClass,
 
       columnClasses
     ]"
@@ -68,6 +72,7 @@
 </template>
 
 <script>
+import modifier from 'mixinsdir/modifier';
 import CdrRow from './CdrRow';
 
 /**
@@ -81,6 +86,7 @@ import CdrRow from './CdrRow';
 export default {
   name: 'CdrCol',
   components: { CdrRow },
+  mixins: [modifier],
   inject: {
     rowType: { default: 'normal' },
   },
@@ -99,37 +105,14 @@ export default {
     },
     /**
      * Number of columns (1-12) of empty space to add left of this column.
+     * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     offsetLeft: {
       type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num >= 0 && num <= 12) || false;
-      },
-    },
-    /** Sm breakpoint and above */
-    offsetLeftSm: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num >= 0 && num <= 12) || false;
-      },
-    },
-    /** Md breakpoint and above */
-    offsetLeftMd: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num >= 0 && num <= 12) || false;
-      },
-    },
-    /** Lg breakpoint and above */
-    offsetLeftLg: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num >= 0 && num <= 12) || false;
-      },
+      // validator: (value) => {
+      //   const num = parseInt(value, 10);
+      //   return (num >= 0 && num <= 12) || false;
+      // },
     },
     /**
      * Number of columns (1-12) of empty space to add right of this column.
@@ -210,13 +193,24 @@ export default {
 
       return classStr.join(' ');
     },
+    offsetLeftClass() {
+      const classStr = [];
+
+      if (this.offsetLeft) {
+        this.offsetLeft.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-col', `offsetLeft${val}`));
+        });
+      }
+
+      return classStr.join(' ');
+    },
     columnClasses() {
       const classObj = {};
-      // offset left
-      classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeft}`]] = this.offsetLeft;
-      classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftSm}@sm`]] = this.offsetLeftSm;
-      classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftMd}@md`]] = this.offsetLeftMd;
-      classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftLg}@lg`]] = this.offsetLeftLg;
+      // // offset left
+      // classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeft}`]] = this.offsetLeft;
+      // classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftSm}@sm`]] = this.offsetLeftSm;
+      // classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftMd}@md`]] = this.offsetLeftMd;
+      // classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftLg}@lg`]] = this.offsetLeftLg;
       // offset right
       classObj[this.$style[`cdr-col--offsetRight${this.offsetRight}`]] = this.offsetRight;
       classObj[this.$style[`cdr-col--offsetRight${this.offsetRightSm}@sm`]] = this.offsetRightSm;
