@@ -56,6 +56,7 @@
  */
 
 import modifier from 'mixinsdir/modifier';
+import breakpoints from 'mixinsdir/breakpoints';
 import { IconMoreFunctions } from '@rei/cdr-icon';
 import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 import debounce from 'lodash/debounce';
@@ -66,7 +67,7 @@ export default {
     CdrIconOnlyButton,
     IconMoreFunctions,
   },
-  mixins: [modifier],
+  mixins: [modifier, breakpoints],
   props: {
     /**
      * Required. List of source breadcrumb property objects
@@ -94,6 +95,14 @@ export default {
     truncationThreshold: {
       type: Number,
       default: 0.8,
+    },
+    /**
+     * Value for max breadcrumb width to container width
+     * ratio before truncation is performed on XS breakpoint
+     */
+    truncationXSThreshold: {
+      type: Number,
+      default: 1,
     },
   },
   data() {
@@ -130,6 +139,9 @@ export default {
     calculateTruncation() {
       const containerWidth = this.$refs.container.offsetWidth || 0;
       const ratio = this.breadcrumbWidth / containerWidth || 0;
+      if (this.isXS()) {
+        return (ratio > this.truncationXSThreshold);
+      }
       return (ratio > this.truncationThreshold);
     },
   },

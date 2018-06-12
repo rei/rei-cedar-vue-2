@@ -31,7 +31,7 @@ export default {
       averageBreadcrumbItems: [
         {
           url: 'http://google.com',
-          displayText: 'Breadcrumb Step 1',
+          displayText: 'Step 1',
         },
         {
           url: 'http://rei.com',
