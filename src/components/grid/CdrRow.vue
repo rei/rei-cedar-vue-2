@@ -1,7 +1,16 @@
 <template>
   <component
     :is="type === 'list' ? 'ul' : 'div'"
-    :class="[$style['cdr-row'], colsClass, justifyClass, alignClass, gutterClass, rowClasses]"
+    :class="[
+      $style['cdr-row'],
+      colsClass,
+      justifyClass,
+      alignClass,
+      gutterClass,
+      verticalClass,
+
+      rowClasses
+    ]"
   >
     <!-- @slot innerHTML inside the row component -->
     <slot/>
@@ -59,25 +68,10 @@ export default {
     },
     /**
      * Changes row to a column layout. See CSS flexbox flex-direction.
+     * Also accepts responsive values with `@breakpoint`: "vertical vertical@md"
      */
     vertical: {
-      type: Boolean,
-      default: false,
-    },
-    /** Sm breakpoint and above */
-    verticalSm: {
-      type: Boolean,
-      default: false,
-    },
-    /** Md breakpoint and above */
-    verticalMd: {
-      type: Boolean,
-      default: false,
-    },
-    /** Lg breakpoint and above */
-    verticalLg: {
-      type: Boolean,
-      default: false,
+      type: String,
     },
     /**
      * Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.
@@ -182,13 +176,19 @@ export default {
 
       return classStr.join(' ');
     },
+    verticalClass() {
+      const classStr = [];
+
+      if (this.vertical) {
+        this.vertical.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
+    },
     rowClasses() {
       const classObj = {};
-      // column
-      classObj[this.$style['cdr-row--column']] = this.vertical;
-      classObj[this.$style['cdr-row--column@sm']] = this.verticalSm;
-      classObj[this.$style['cdr-row--column@md']] = this.verticalMd;
-      classObj[this.$style['cdr-row--column@lg']] = this.verticalLg;
       // wrap
       classObj[this.$style['cdr-row--wrap@sm']] = this.wrapSm;
       classObj[this.$style['cdr-row--wrap@md']] = this.wrapMd;

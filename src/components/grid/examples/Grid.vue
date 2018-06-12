@@ -518,7 +518,7 @@
         <h4>vertical</h4>
         <cdr-row
           cols="3"
-          vertical
+          vertical="vertical"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1023,10 +1023,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>vertical-sm</p>
+        <p>vertical@sm</p>
         <cdr-row
           cols="3"
-          vertical-sm
+          vertical="vertical@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1244,10 +1244,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>vertical-md</p>
+        <p>vertical@md</p>
         <cdr-row
           cols="3"
-          vertical-md
+          vertical="vertical@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1465,10 +1465,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>vertical-lg</p>
+        <p>vertical@lg</p>
         <cdr-row
           cols="3"
-          vertical-lg
+          vertical="vertical@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
