@@ -1042,11 +1042,11 @@
           </cdr-col>
         </cdr-row>
 
-        <p>wrap-sm</p>
+        <p>wrap@sm</p>
         <cdr-row
           cols="3"
           nowrap
-          wrap-sm
+          wrap="wrap@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1263,11 +1263,11 @@
           </cdr-col>
         </cdr-row>
 
-        <p>wrap-md</p>
+        <p>wrap@md</p>
         <cdr-row
           cols="3"
           nowrap
-          wrap-md
+          wrap="wrap@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1484,11 +1484,11 @@
           </cdr-col>
         </cdr-row>
 
-        <p>wrap-lg</p>
+        <p>wrap@lg</p>
         <cdr-row
           cols="3"
           nowrap
-          wrap-lg
+          wrap="wrap@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>

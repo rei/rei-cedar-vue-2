@@ -8,6 +8,7 @@
       alignClass,
       gutterClass,
       verticalClass,
+      wrapClass,
 
       rowClasses
     ]"
@@ -75,25 +76,10 @@ export default {
     },
     /**
      * Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.
+     * Also accepts responsive values with `@breakpoint`: "wrap@md"
      */
     wrap: {
-      type: Boolean,
-      default: false,
-    },
-    /** Sm breakpoint and above */
-    wrapSm: {
-      type: Boolean,
-      default: false,
-    },
-    /** Md breakpoint and above */
-    wrapMd: {
-      type: Boolean,
-      default: false,
-    },
-    /** Lg breakpoint and above */
-    wrapLg: {
-      type: Boolean,
-      default: false,
+      type: String,
     },
     /**
      * Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.
@@ -187,12 +173,19 @@ export default {
 
       return classStr.join(' ');
     },
+    wrapClass() {
+      const classStr = [];
+
+      if (this.wrap) {
+        this.wrap.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
+    },
     rowClasses() {
       const classObj = {};
-      // wrap
-      classObj[this.$style['cdr-row--wrap@sm']] = this.wrapSm;
-      classObj[this.$style['cdr-row--wrap@md']] = this.wrapMd;
-      classObj[this.$style['cdr-row--wrap@lg']] = this.wrapLg;
       // noWrap
       classObj[this.$style['cdr-row--noWrap']] = this.nowrap;
       classObj[this.$style['cdr-row--noWrap@sm']] = this.nowrapSm;
