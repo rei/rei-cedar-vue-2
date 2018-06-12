@@ -9,8 +9,7 @@
       gutterClass,
       verticalClass,
       wrapClass,
-
-      rowClasses
+      nowrapClass,
     ]"
   >
     <!-- @slot innerHTML inside the row component -->
@@ -69,7 +68,7 @@ export default {
     },
     /**
      * Changes row to a column layout. See CSS flexbox flex-direction.
-     * Also accepts responsive values with `@breakpoint`: "vertical vertical@md"
+     * Also accepts responsive values with `@breakpoint`: "vertical@md"
      */
     vertical: {
       type: String,
@@ -83,25 +82,10 @@ export default {
     },
     /**
      * Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.
+     * Also accepts responsive values with `@breakpoint`: "nowrap@md"
      */
     nowrap: {
-      type: Boolean,
-      default: false,
-    },
-    /** Sm breakpoint and above */
-    nowrapSm: {
-      type: Boolean,
-      default: false,
-    },
-    /** Md breakpoint and above */
-    nowrapMd: {
-      type: Boolean,
-      default: false,
-    },
-    /** Lg breakpoint and above */
-    nowrapLg: {
-      type: Boolean,
-      default: false,
+      type: String,
     },
     /**
      * Changes grid to built with ul>li rather than divs. {normal, list}
@@ -184,15 +168,16 @@ export default {
 
       return classStr.join(' ');
     },
-    rowClasses() {
-      const classObj = {};
-      // noWrap
-      classObj[this.$style['cdr-row--noWrap']] = this.nowrap;
-      classObj[this.$style['cdr-row--noWrap@sm']] = this.nowrapSm;
-      classObj[this.$style['cdr-row--noWrap@md']] = this.nowrapMd;
-      classObj[this.$style['cdr-row--noWrap@lg']] = this.nowrapLg;
+    nowrapClass() {
+      const classStr = [];
 
-      return classObj;
+      if (this.nowrap) {
+        this.nowrap.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
     },
   },
 };

@@ -380,7 +380,7 @@
         <h4>nowrap</h4>
         <cdr-row
           cols="3"
-          nowrap
+          nowrap="nowrap"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1045,7 +1045,7 @@
         <p>wrap@sm</p>
         <cdr-row
           cols="3"
-          nowrap
+          nowrap="nowrap"
           wrap="wrap@sm"
         >
           <cdr-col>
@@ -1062,10 +1062,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>nowrap-sm</p>
+        <p>nowrap@sm</p>
         <cdr-row
           cols="3"
-          nowrap-sm
+          nowrap="nowrap@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1266,7 +1266,7 @@
         <p>wrap@md</p>
         <cdr-row
           cols="3"
-          nowrap
+          nowrap="nowrap"
           wrap="wrap@md"
         >
           <cdr-col>
@@ -1283,10 +1283,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>nowrap-md</p>
+        <p>nowrap@md</p>
         <cdr-row
           cols="3"
-          nowrap-md
+          nowrap="nowrap@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1487,7 +1487,7 @@
         <p>wrap@lg</p>
         <cdr-row
           cols="3"
-          nowrap
+          nowrap="nowrap"
           wrap="wrap@lg"
         >
           <cdr-col>
@@ -1504,10 +1504,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>nowrap-lg</p>
+        <p>nowrap@lg</p>
         <cdr-row
           cols="3"
-          nowrap-lg
+          nowrap="nowrap@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
