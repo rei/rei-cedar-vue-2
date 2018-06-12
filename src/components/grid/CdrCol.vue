@@ -7,8 +7,7 @@
       spanClass,
       offsetLeftClass,
       offsetRightClass,
-
-      columnClasses
+      alignSelfClass,
     ]"
   >
     <div :class="$style['cdr-col__content']">
@@ -25,8 +24,7 @@
       spanClass,
       offsetLeftClass,
       offsetRightClass,
-
-      columnClasses
+      alignSelfClass,
     ]"
   >
     <div :class="$style['cdr-col__content']">
@@ -44,8 +42,7 @@
       spanClass,
       offsetLeftClass,
       offsetRightClass,
-
-      columnClasses
+      alignSelfClass,
     ]"
   >
     <cdr-row
@@ -65,8 +62,7 @@
       spanClass,
       offsetLeftClass,
       offsetRightClass,
-
-      columnClasses
+      alignSelfClass,
     ]"
     v-bind="$attrs"
   >
@@ -131,25 +127,11 @@ export default {
     },
     /**
      * How the column should align (overrides cdr-row alignment). Possible values: {top, middle, bottom, stretch}. See CSS flexbox align-self.
+     * Also accepts responsive values with `@breakpoint`: "middle@sm"
      */
     alignSelf: {
       type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** Sm breakpoint and above */
-    alignSelfSm: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** Md breakpoint and above */
-    alignSelfMd: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** Lg breakpoint and above */
-    alignSelfLg: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
+      // validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
     },
     /**
      * Makes the column act as a new cdr-row. Setting this to true exposes the same props as cdr-row.
@@ -196,15 +178,16 @@ export default {
 
       return classStr.join(' ');
     },
-    columnClasses() {
-      const classObj = {};
-      // align
-      classObj[this.$style[`cdr-col--${this.alignSelf}`]] = this.alignSelf;
-      classObj[this.$style[`cdr-col--${this.alignSelfSm}@sm`]] = this.alignSelfSm;
-      classObj[this.$style[`cdr-col--${this.alignSelfMd}@md`]] = this.alignSelfMd;
-      classObj[this.$style[`cdr-col--${this.alignSelfLg}@lg`]] = this.alignSelfLg;
+    alignSelfClass() {
+      const classStr = [];
 
-      return classObj;
+      if (this.alignSelf) {
+        this.alignSelf.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-col', val));
+        });
+      }
+
+      return classStr.join(' ');
     },
   },
 };

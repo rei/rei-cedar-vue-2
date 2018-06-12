@@ -1599,15 +1599,15 @@
             <div class="row-demo">left 1</div>
           </cdr-col>
         </cdr-row>
-        <p>align-self-sm</p>
+        <p>align-self@sm</p>
         <cdr-row>
-          <cdr-col align-self-sm="top">
+          <cdr-col align-self="top@sm">
             <div class="row-demo">top</div>
           </cdr-col>
-          <cdr-col align-self-sm="middle">
+          <cdr-col align-self="middle@sm">
             <div class="row-demo">middle</div>
           </cdr-col>
-          <cdr-col align-self-sm="bottom">
+          <cdr-col align-self="bottom@sm">
             <div class="row-demo">bottom</div>
           </cdr-col>
           <cdr-col>
@@ -1636,15 +1636,15 @@
             <div class="row-demo">left 1</div>
           </cdr-col>
         </cdr-row>
-        <p>align-self-md</p>
+        <p>align-self@md</p>
         <cdr-row>
-          <cdr-col align-self-md="top">
+          <cdr-col align-self="top@md">
             <div class="row-demo">top</div>
           </cdr-col>
-          <cdr-col align-self-md="middle">
+          <cdr-col align-self="middle@md">
             <div class="row-demo">middle</div>
           </cdr-col>
-          <cdr-col align-self-md="bottom">
+          <cdr-col align-self="bottom@md">
             <div class="row-demo">bottom</div>
           </cdr-col>
           <cdr-col>
@@ -1673,15 +1673,15 @@
             <div class="row-demo">left 1</div>
           </cdr-col>
         </cdr-row>
-        <p>align-self-lg</p>
+        <p>align-self@lg</p>
         <cdr-row>
-          <cdr-col align-self-lg="top">
+          <cdr-col align-self="top@lg">
             <div class="row-demo">top</div>
           </cdr-col>
-          <cdr-col align-self-lg="middle">
+          <cdr-col align-self="middle@lg">
             <div class="row-demo">middle</div>
           </cdr-col>
-          <cdr-col align-self-lg="bottom">
+          <cdr-col align-self="bottom@lg">
             <div class="row-demo">bottom</div>
           </cdr-col>
           <cdr-col>
