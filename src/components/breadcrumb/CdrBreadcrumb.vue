@@ -17,6 +17,7 @@
         :class="$style['cdr-breadcrumb__item']">
         <cdr-icon-only-button
           aria-expanded="false"
+          aria-label="ellipsis"
           :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]">
           <icon-more-functions :class="$style['cdr-breadcrumb__ellipses-icon']" />
         </cdr-icon-only-button>
