@@ -2,7 +2,12 @@
   <!-- !row && !list -->
   <div
     v-if="!isRow && !isList"
-    :class="[$style['cdr-col'],columnClasses]"
+    :class="[
+      $style['cdr-col'],
+      spanClass,
+
+      columnClasses
+    ]"
   >
     <div :class="$style['cdr-col__content']">
       <!-- @slot innerHTML inside of the column component -->
@@ -13,7 +18,12 @@
   <!-- !row && list -->
   <li
     v-else-if="!isRow && isList"
-    :class="[$style['cdr-col'],columnClasses]"
+    :class="[
+      $style['cdr-col'],
+      spanClass,
+
+      columnClasses
+    ]"
   >
     <div :class="$style['cdr-col__content']">
       <!-- @slot innerHTML inside of the column component -->
@@ -24,7 +34,13 @@
   <!-- row && list -->
   <li
     v-else-if="isRow && isList"
-    :class="[$style['cdr-row'], $style['cdr-col'],columnClasses]"
+    :class="[
+      $style['cdr-row'],
+      $style['cdr-col'],
+      spanClass,
+
+      columnClasses
+    ]"
   >
     <cdr-row
       :class="$style['cdr-col']"
@@ -38,7 +54,12 @@
   <!-- else -->
   <cdr-row
     v-else
-    :class="[$style['cdr-col'],columnClasses]"
+    :class="[
+      $style['cdr-col'],
+      spanClass,
+
+      columnClasses
+    ]"
     v-bind="$attrs"
   >
     <!-- @slot innerHTML inside of the column component -->
@@ -67,37 +88,14 @@ export default {
   props: {
     /**
      * Number of columns (1-12) the column should span.
+     * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     span: {
       type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
-      },
-    },
-    /** Sm breakpoint and above */
-    spanSm: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
-      },
-    },
-    /** Md breakpoint and above */
-    spanMd: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
-      },
-    },
-    /** Lg breakpoint and above */
-    spanLg: {
-      type: [String, Number],
-      validator: (value) => {
-        const num = parseInt(value, 10);
-        return (num > 0 && num <= 12) || false;
-      },
+      // validator: (value) => {
+      //   const num = parseInt(value, 10);
+      //   return (num > 0 && num <= 12) || false;
+      // },
     },
     /**
      * Number of columns (1-12) of empty space to add left of this column.
@@ -201,13 +199,19 @@ export default {
     isList() {
       return this.rowType === 'list';
     },
+    spanClass() {
+      const classStr = [];
+
+      if (this.span) {
+        this.span.split(' ').forEach((val) => {
+          classStr.push(this.$style[`cdr-col_span${val}`]);
+        });
+      }
+
+      return classStr.join(' ');
+    },
     columnClasses() {
       const classObj = {};
-      // span
-      classObj[this.$style[`cdr-col_span${this.span}`]] = this.span;
-      classObj[this.$style[`cdr-col_span${this.spanSm}@sm`]] = this.spanSm;
-      classObj[this.$style[`cdr-col_span${this.spanMd}@md`]] = this.spanMd;
-      classObj[this.$style[`cdr-col_span${this.spanLg}@lg`]] = this.spanLg;
       // offset left
       classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeft}`]] = this.offsetLeft;
       classObj[this.$style[`cdr-col--offsetLeft${this.offsetLeftSm}@sm`]] = this.offsetLeftSm;

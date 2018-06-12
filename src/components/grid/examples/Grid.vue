@@ -1581,9 +1581,9 @@
       <h4>cdr-col responsive options</h4>
       <div data-backstop="col-sm">
         <h5>Small breakpoint</h5>
-        <p>span-sm="#"</p>
+        <p>span="#@sm"</p>
         <cdr-row>
-          <cdr-col span-sm="3">
+          <cdr-col span="3@sm">
             <div class="row-demo">auto, 3-sm</div>
           </cdr-col>
           <cdr-col>
@@ -1618,9 +1618,9 @@
 
       <div data-backstop="col-md">
         <h5>Medium breakpoint</h5>
-        <p>span-md="#"</p>
+        <p>span="#@md"</p>
         <cdr-row>
-          <cdr-col span-md="3">
+          <cdr-col span="3@md">
             <div class="row-demo">auto, 3-md</div>
           </cdr-col>
           <cdr-col>
@@ -1655,9 +1655,9 @@
 
       <div data-backstop="col-lg">
         <h5>Large breakpoint</h5>
-        <p>span-lg="#"</p>
+        <p>span="#@lg"</p>
         <cdr-row>
-          <cdr-col span-lg="3">
+          <cdr-col span="3@lg">
             <div class="row-demo">auto, 3-lg</div>
           </cdr-col>
           <cdr-col>
@@ -1718,14 +1718,12 @@
           type="list"
         >
           <cdr-col
-            span="12"
-            span-sm="9"
+            span="12 9@sm"
             is-row
             type="list"
           >
             <cdr-col
-              span="12"
-              span-sm="4"
+              span="12 4@sm"
             >
               <div class="row-demo">
                 Five
@@ -1733,8 +1731,7 @@
               </div>
             </cdr-col>
             <cdr-col
-              span="12"
-              span-sm="8"
+              span="12 8@sm"
               is-row
               cols="1 2@sm"
               type="list"
@@ -1750,8 +1747,7 @@
               </cdr-col>
             </cdr-col>
             <cdr-col
-              span="12"
-              span-sm="9"
+              span="12 9@sm"
             >
               <div class="row-demo">
                 Nine
@@ -1759,8 +1755,7 @@
               </div>
             </cdr-col>
             <cdr-col
-              span="12"
-              span-sm="3"
+              span="12 3@sm"
             >
               <div class="row-demo">
                 Ten
@@ -1769,8 +1764,7 @@
             </cdr-col>
           </cdr-col>
           <cdr-col
-            span="12"
-            span-sm="3"
+            span="12 3@sm"
           >
             <div class="row-demo">
               Eleven
@@ -1785,8 +1779,7 @@
           </div>
         </cdr-col>
         <cdr-col
-          span="12"
-          span-sm="6"
+          span="12 6@sm"
         >
           <div class="row-demo">
             Thirteen
