@@ -19,14 +19,16 @@
       <cdr-cta
         cta-style="sale"
         data-backstop="cdr-cta--sale"
-      >Sale</cdr-cta
+        modifier="elevated"
+      >Sale (elevated)</cdr-cta
       >
       <cdr-cta
         tag="a"
         href="https://www.rei.com/"
         cta-style="sale"
         data-backstop="cdr-cta--sale anchor"
-      >Link</cdr-cta
+        modifier="elevated"
+      >Link (elevated)</cdr-cta
       >
     </div>
     <div class="button-example">

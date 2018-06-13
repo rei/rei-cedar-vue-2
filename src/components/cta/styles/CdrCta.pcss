@@ -28,7 +28,7 @@
 
   & > .cdr-cta__icon {
     align-self: center;
-    display: block;
+    fill: inherit;
     margin-left: $space-quarter-x;
   }
 
@@ -42,23 +42,13 @@
   &--full-width {
     justify-content: center;
     width: 100%;
-
-    & > .cdr-cta__icon {
-      display: inline-block;
-      float: none;
-      position: relative;
-      bottom: 1px; /* This is to fix the extra pixel added when svg is inline-block */
-    }
   }
 
   &--brand {
     background-color: $button-cta-brand-background-color;
     box-shadow: $button-cta-brand-box-shadow;
     color: $button-cta-brand-color;
-
-    & > .cdr-cta__icon {
-      fill: $button-cta-brand-color;
-    }
+    fill: $button-cta-brand-color;
 
     &:hover,
     &:focus,
@@ -66,10 +56,7 @@
       background-color: $button-cta-brand-hover-background-color;
       box-shadow: $button-cta-brand-box-shadow;
       color: $button-cta-brand-hover-color;
-
-      & > .cdr-cta__icon {
-        fill: $button-cta-brand-hover-color;
-      }
+      fill: $button-cta-brand-hover-color;
     }
   }
 
@@ -77,10 +64,7 @@
     background-color: $button-cta-dark-background-color;
     box-shadow: $button-cta-dark-box-shadow;
     color: $button-cta-dark-color;
-
-    & > .cdr-cta__icon {
-      fill: $button-cta-dark-color;
-    }
+    fill: $button-cta-dark-color;
 
     &:hover,
     &:focus,
@@ -99,10 +83,7 @@
     background-color: $button-cta-light-background-color;
     box-shadow: $button-cta-light-box-shadow;
     color: $button-cta-light-color;
-
-    & > .cdr-cta__icon {
-      fill: $button-cta-light-color;
-    }
+    fill: $button-cta-light-color;
 
     &:hover,
     &:focus,
@@ -110,10 +91,7 @@
       background-color: $button-cta-light-hover-background-color;
       box-shadow: $button-cta-light-box-shadow;
       color: $button-cta-light-hover-color;
-
-      & > .cdr-cta__icon {
-        fill: $button-cta-light-hover-color;
-      }
+      fill: $button-cta-light-hover-color;
     }
   }
 
@@ -121,10 +99,7 @@
     background-color: $button-cta-sale-background-color;
     box-shadow: $button-cta-sale-box-shadow;
     color: $button-cta-sale-color;
-
-    & > .cdr-cta__icon {
-      fill: $button-cta-sale-color;
-    }
+    fill: $button-cta-sale-color;
 
     &:hover,
     &:focus,
@@ -132,10 +107,17 @@
       background-color: $button-cta-sale-hover-background-color;
       box-shadow: $button-cta-sale-box-shadow;
       color: $button-cta-sale-hover-color;
+      fill: $button-cta-sale-hover-color;
+    }
+  }
+  
+  &--elevated {
+    box-shadow: $prominence-elevated;
 
-      & > .cdr-cta__icon {
-        fill: $button-cta-sale-hover-color;
-      }
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: $prominence-elevated;
     }
   }
 }

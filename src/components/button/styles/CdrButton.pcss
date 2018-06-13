@@ -1,9 +1,5 @@
 /* ==========================================================================
   # CdrButton
-  
-  All values should map to variables in
-  vars/CdrButton.vars.pcss
-  in order to allow for theming
 
   TOC:
 
@@ -12,10 +8,18 @@
     :Modifiers
       :Style variants
         :Secondary
-      :Size variants
-        :lg
-        :sm
-        :block
+    :Size variants
+      :large
+      :medium
+      :small
+      :full-width
+    :icon-only
+    :on-dark
+    :Breakpoint variants
+      :xs
+      :sm
+      :md
+      :lg
 ========================================================================== */
 
 .cdr-button {
@@ -49,10 +53,7 @@
     box-shadow: $button-hover-box-shadow;
     text-decoration: none;
     outline: none;
-
-    & > :global(&__icon) {
-      fill: $button-hover-color;
-    }
+    fill: $button-hover-color;
   }
 
   &[disabled] {
@@ -72,10 +73,7 @@
     background-color: $button-secondary-background-color;
     box-shadow: $button-secondary-box-shadow;
     color: $button-secondary-color;
-
-    & > :global(.cdr-button__icon) {
-      fill: $button-secondary-color;
-    }
+    fill: $button-secondary-color;
 
     /* States
     ---------- */
@@ -85,10 +83,7 @@
       background-color: $button-secondary-hover-background-color;
       box-shadow: $button-secondary-box-shadow;
       color: $button-secondary-hover-color;
-
-      & > :global(.cdr-button__icon) {
-        fill: $button-secondary-hover-color;
-      }
+      fill: $button-secondary-hover-color;
     }
 
     &[disabled] {
@@ -96,12 +91,12 @@
       box-shadow: $button-secondary-disabled-box-shadow;
       color: $button-secondary-disabled-color;
       cursor: not-allowed;
-
-      & > :global(.cdr-button__icon) {
-        fill: $button-secondary-disabled-color;
-      }
+      fill: $button-secondary-disabled-color;
     }
   }
+
+  /* Size variants
+    ========================================================================== */
 
   /* Large
      ========== */
@@ -137,13 +132,6 @@
   &--full-width {
     width: 100%;
     justify-content: center;
-
-    & > :global(.cdr-button__icon) {
-      display: inline-block;
-      float: none;
-      position: relative;
-      bottom: 1px; /* This is to fix the extra pixel added when svg is inline-block */
-    }
   }
 
   /* Icon Only
@@ -155,11 +143,8 @@
     box-shadow: none;
     display: inline-block;
     padding: $inset-half-x;
+    padding-right: calc($inset-half-x - $space-quarter-x);
     fill: $heart-of-darkness;
-
-    & > :global(&__icon) {
-      margin-right: 0;
-    }
 
     &:hover,
     &:active {
