@@ -36,7 +36,7 @@
   padding: $inset-1-x-squish;
   text-align: left;
   text-decoration: none;
-
+  
   & > :global(&__icon) {
     align-self: center;
     fill: inherit;
@@ -104,6 +104,10 @@
     @include redwood-display-40;
 
     padding: $inset-1-and-a-half-x-squish;
+
+    &.cdr-button--has-icon {
+      padding-left: calc($space-1-and-a-half-x - $space-quarter-x);
+    }
   }
 
   /* Medium
@@ -112,6 +116,10 @@
     @include redwood-display-30;
 
     padding: $inset-1-x-squish;
+
+    &.cdr-button--has-icon {
+      padding-left: calc($space-1-x - $space-quarter-x);
+    }
   }
 
   /* Small
@@ -120,6 +128,10 @@
     @include redwood-display-20;
 
     padding: $inset-three-quarter-x-squish;
+
+    &.cdr-button--has-icon {
+      padding-left: calc($space-three-quarter-x - $space-quarter-x);
+    }
 
     & > :global(.cdr-button__icon) {
       /* This is to correct icon size vs line height */
@@ -150,6 +162,7 @@
     &:active {
       background: none;
       box-shadow: none;
+      fill: $heart-of-darkness;
     }
 
     &.cdr-button--on-dark {
