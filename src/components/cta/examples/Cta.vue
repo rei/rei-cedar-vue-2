@@ -3,32 +3,35 @@
     <h2>CTA</h2>
     <div class="button-example">
       <cdr-cta
+        href="https://rei.com"
         data-backstop="cdr-cta--brand">
         Default (brand)
       </cdr-cta>
       <cdr-cta
+        href="https://rei.com"
         cta-style="dark"
         data-backstop="cdr-cta--dark"
       >Dark</cdr-cta
       >
       <cdr-cta
+        href="https://rei.com"
         cta-style="light"
         data-backstop="cdr-cta--light"
       >Light</cdr-cta
       >
       <cdr-cta
+        href="https://rei.com"
         cta-style="sale"
         data-backstop="cdr-cta--sale"
         modifier="elevated"
       >Sale (elevated)</cdr-cta
       >
       <cdr-cta
-        tag="a"
-        href="https://www.rei.com/"
+        tag="button"
         cta-style="sale"
         data-backstop="cdr-cta--sale anchor"
         modifier="elevated"
-      >Link (elevated)</cdr-cta
+      >Button (elevated)</cdr-cta
       >
     </div>
     <div class="button-example">
