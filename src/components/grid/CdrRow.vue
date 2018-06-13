@@ -19,6 +19,8 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import propValidator from 'srcdir/utils/propValidator';
+
 /**
  * Cedar 2 component for row
  * @version 0.0.1
@@ -29,15 +31,15 @@ export default {
   mixins: [modifier],
   props: {
     /**
-     * Number of columns in the row (1-12, auto). Also accepts responsive values with `@breakpoint`: "2 4@md"
+     * Number of columns in the row (1-12, auto).
+     * Also accepts responsive values with `@breakpoint`: "2 4@md"
      */
     cols: {
-      type: [String, Number],
-      // validator: (value) => {
-      //   const str = value.toString();
-      //   return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
-      //     .indexOf(str) >= 0 || false;
-      // },
+      type: String,
+      validator: value => propValidator(
+        value,
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'],
+      ),
     },
     /**
      * How columns should be justified within empty space of the row.
@@ -46,8 +48,10 @@ export default {
      */
     justify: {
       type: String,
-      // validator: value => (['left', 'center', 'right', 'around', 'between']
-      //   .indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['left', 'center', 'right', 'around', 'between'],
+      ),
     },
     /**
      * How columns of different heights should align. {top, middle, bottom, stretch}.
@@ -56,7 +60,10 @@ export default {
      */
     align: {
       type: String,
-      // validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['top', 'middle', 'bottom', 'stretch'],
+      ),
     },
     /**
      * Overrides default gutter spacing. {none, xxs}.
@@ -64,7 +71,10 @@ export default {
      */
     gutter: {
       type: String,
-      // validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['none', 'xxs'],
+      ),
     },
     /**
      * Changes row to a column layout. See CSS flexbox flex-direction.
@@ -72,6 +82,10 @@ export default {
      */
     vertical: {
       type: String,
+      validator: value => propValidator(
+        value,
+        ['vertical'],
+      ),
     },
     /**
      * Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.
@@ -79,6 +93,10 @@ export default {
      */
     wrap: {
       type: String,
+      validator: value => propValidator(
+        value,
+        ['wrap'],
+      ),
     },
     /**
      * Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.
@@ -86,6 +104,10 @@ export default {
      */
     nowrap: {
       type: String,
+      validator: value => propValidator(
+        value,
+        ['nowrap'],
+      ),
     },
     /**
      * Changes grid to built with ul>li rather than divs. {normal, list}
@@ -93,7 +115,11 @@ export default {
     type: {
       type: String,
       default: 'normal',
-      validator: value => (['normal', 'list'].indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['normal', 'list'],
+        false,
+      ),
     },
   },
   provide() {

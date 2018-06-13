@@ -73,6 +73,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import propValidator from 'srcdir/utils/propValidator';
 import CdrRow from './CdrRow';
 
 /**
@@ -97,33 +98,33 @@ export default {
      * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     span: {
-      type: [String, Number],
-      // validator: (value) => {
-      //   const num = parseInt(value, 10);
-      //   return (num > 0 && num <= 12) || false;
-      // },
+      type: String,
+      validator: value => propValidator(
+        value,
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+      ),
     },
     /**
-     * Number of columns (1-12) of empty space to add left of this column.
+     * Number of columns (0-12) of empty space to add left of this column.
      * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     offsetLeft: {
       type: [String, Number],
-      // validator: (value) => {
-      //   const num = parseInt(value, 10);
-      //   return (num >= 0 && num <= 12) || false;
-      // },
+      validator: value => propValidator(
+        value,
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+      ),
     },
     /**
-     * Number of columns (1-12) of empty space to add right of this column.
+     * Number of columns (0-12) of empty space to add right of this column.
      * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     offsetRight: {
       type: [String, Number],
-      // validator: (value) => {
-      //   const num = parseInt(value, 10);
-      //   return (num >= 0 && num <= 12) || false;
-      // },
+      validator: value => propValidator(
+        value,
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+      ),
     },
     /**
      * How the column should align (overrides cdr-row alignment). Possible values: {top, middle, bottom, stretch}. See CSS flexbox align-self.
@@ -131,7 +132,10 @@ export default {
      */
     alignSelf: {
       type: String,
-      // validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['top', 'middle', 'bottom', 'stretch'],
+      ),
     },
     /**
      * Makes the column act as a new cdr-row. Setting this to true exposes the same props as cdr-row.
