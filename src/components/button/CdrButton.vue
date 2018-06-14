@@ -79,7 +79,8 @@ export default {
       return responsiveClass.join(' ');
     },
     hasIconClass() {
-      return this.$slots.default.length > 1 ?
+      /* default is undefined when running tests without complete setup, so check for default before length */
+      return this.$slots.default && this.$slots.default.length > 1 ?
         this.modifyClassName(this.baseClass, 'has-icon') : null;
     },
     iconOnlyClass() {

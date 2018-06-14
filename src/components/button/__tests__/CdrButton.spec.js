@@ -68,6 +68,34 @@ describe('CdrButton.vue', () => {
     expect(wrapper.vm.$style).toHaveProperty(`cdr-button--large@xs`);
   })
 
+  it('does not add size class when icon only', () => {
+    const wrapper = shallowMount(CdrButton, {
+      propsData: {
+        size: 'large',
+        iconOnly: true,
+      },
+    });
+    expect(wrapper.vm.sizeClass).toBe(null);
+  })
+
+  it('does not add icon class when slot is unused', () => {
+    const wrapper = shallowMount(CdrButton);
+    expect(wrapper.vm.hasIconClass).toBe(null);
+  });
+
+  it('adds icon class when slot is used', () => {
+    const wrapper = shallowMount(CdrButton, {
+      slots: {
+        default: [
+          'named slot icon',
+          'default slot for text'
+        ],
+      },
+    });
+
+    expect(wrapper.vm.hasIconClass.split("_")[0]).toBe('cdr-button--has-icon');
+  });
+
   it('renders a link', () => {
     const wrapper = shallowMount(CdrButton, {
       propsData: {
