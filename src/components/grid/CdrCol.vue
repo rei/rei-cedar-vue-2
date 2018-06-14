@@ -11,7 +11,6 @@
     ]"
   >
     <div :class="$style['cdr-col__content']">
-      <!-- @slot innerHTML inside of the column component -->
       <slot/>
     </div>
   </div>
@@ -28,7 +27,6 @@
     ]"
   >
     <div :class="$style['cdr-col__content']">
-      <!-- @slot innerHTML inside of the column component -->
       <slot/>
     </div>
   </li>
@@ -49,7 +47,6 @@
       :class="$style['cdr-col']"
       v-bind="$attrs"
     >
-      <!-- @slot innerHTML inside of the column component -->
       <slot/>
     </cdr-row>
   </li>
@@ -66,7 +63,6 @@
     ]"
     v-bind="$attrs"
   >
-    <!-- @slot innerHTML inside of the column component -->
     <slot/>
   </cdr-row>
 </template>
@@ -76,14 +72,6 @@ import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
 import CdrRow from './CdrRow';
 
-/**
- * Cedar 2 component for column
- * **Note**: immediate children of `cdr-col` are treated as flex items (due to a flex height bug in Safari). As a result, if you want to have more than one child element they should be wrapped in a single `div` element.
- * **NOTE**: anytime a `cdr-col` is nested within another `cdr-col` the parent needs `is-row` to function correctly
- * See cdr-row for complex example.
- * @version 0.0.1
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- */
 export default {
   name: 'CdrCol',
   components: { CdrRow },
@@ -94,7 +82,9 @@ export default {
   inheritAttrs: false,
   props: {
     /**
-     * Number of columns (1-12) the column should span.
+     * Number of columns (out of 12) the column should span. Functions like bootstrap col-* classes.
+     * Overrides widths set by "cols" prop on CdrRow.
+     * Possible values: {1-12}
      * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     span: {
@@ -105,29 +95,32 @@ export default {
       ),
     },
     /**
-     * Number of columns (0-12) of empty space to add left of this column.
+     * Number of columns (out of 12) of empty space to add left of this column.
+     * Possible values: {0-12}
      * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     offsetLeft: {
-      type: [String, Number],
+      type: String,
       validator: value => propValidator(
         value,
         ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
       ),
     },
     /**
-     * Number of columns (0-12) of empty space to add right of this column.
+     * Number of columns (out of 12) of empty space to add right of this column.
+     * Possible values: {0-12}
      * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     offsetRight: {
-      type: [String, Number],
+      type: String,
       validator: value => propValidator(
         value,
         ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
       ),
     },
     /**
-     * How the column should align (overrides cdr-row alignment). Possible values: {top, middle, bottom, stretch}. See CSS flexbox align-self.
+     * How the column should align (overrides CdrRow alignment). See CSS flexbox align-self.
+     * Possible values: {top, middle, bottom, stretch}.
      * Also accepts responsive values with `@breakpoint`: "middle@sm"
      */
     alignSelf: {
@@ -138,7 +131,7 @@ export default {
       ),
     },
     /**
-     * Makes the column act as a new cdr-row. Setting this to true exposes the same props as cdr-row.
+     * Makes the column act as a CdrRow. Setting this to true exposes all props of CdrRow in addition to cdr-col props.
      */
     isRow: {
       type: Boolean,

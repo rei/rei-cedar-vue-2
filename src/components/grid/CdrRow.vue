@@ -12,7 +12,6 @@
       nowrapClass,
     ]"
   >
-    <!-- @slot innerHTML inside the row component -->
     <slot/>
   </component>
 </template>
@@ -21,17 +20,13 @@
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
 
-/**
- * Cedar 2 component for row
- * @version 0.0.1
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- */
 export default {
   name: 'CdrRow',
   mixins: [modifier],
   props: {
     /**
-     * Number of columns in the row (1-12, auto).
+     * Number of equal-width columns in the row.
+     * Possible values: {1-12, auto}
      * Also accepts responsive values with `@breakpoint`: "2 4@md"
      */
     cols: {
@@ -42,8 +37,8 @@ export default {
       ),
     },
     /**
-     * How columns should be justified within empty space of the row.
-     * Possible values: {left, center, right, around, between}. See CSS flexbox justify-content.
+     * How columns should be justified within empty space of the row. See CSS flexbox justify-content.
+     * Possible values: {left, center, right, around, between}.
      * Also accepts responsive values with `@breakpoint`: "center right@lg"
      */
     justify: {
@@ -54,9 +49,9 @@ export default {
       ),
     },
     /**
-     * How columns of different heights should align. {top, middle, bottom, stretch}.
+     * How columns of different heights should align. See CSS flexbox align-items.
+     * Possible values: {top, middle, bottom, stretch}.
      * Also accepts responsive values with `@breakpoint`: "top middle@sm"
-     * See CSS flexbox align-items.
      */
     align: {
       type: String,
@@ -66,7 +61,8 @@ export default {
       ),
     },
     /**
-     * Overrides default gutter spacing. {none, xxs}.
+     * Defines size of the gutters.
+     * Possible values: {none, xxs}.
      * Also accepts responsive values with `@breakpoint`: "none@md"
      */
     gutter: {
@@ -78,6 +74,7 @@ export default {
     },
     /**
      * Changes row to a column layout. See CSS flexbox flex-direction.
+     * Possible values: {vertical}.
      * Also accepts responsive values with `@breakpoint`: "vertical@md"
      */
     vertical: {
@@ -89,6 +86,7 @@ export default {
     },
     /**
      * Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.
+     * Possible values: {wrap}.
      * Also accepts responsive values with `@breakpoint`: "wrap@md"
      */
     wrap: {
@@ -100,6 +98,7 @@ export default {
     },
     /**
      * Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.
+     * Possible values: {nowrap}.
      * Also accepts responsive values with `@breakpoint`: "nowrap@md"
      */
     nowrap: {
@@ -110,7 +109,8 @@ export default {
       ),
     },
     /**
-     * Changes grid to built with ul>li rather than divs. {normal, list}
+     * Changes grid to built with ul>li rather than divs.
+     * Possible values: {normal, list}.
      */
     type: {
       type: String,
