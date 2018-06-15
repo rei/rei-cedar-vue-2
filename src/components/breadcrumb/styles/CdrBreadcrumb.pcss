@@ -88,9 +88,9 @@
     /* Ellipses Icon
     ========== */
     .cdr-breadcrumb__ellipses-icon {
+      border-bottom: 1px solid transparent;
       width: 1.4rem;
       height: 1.4rem;
-      transform: rotate(90deg);
       fill: $breadcrumb-text-color;
     }
 
@@ -98,7 +98,7 @@
     &:active,
     &:focus {
       .cdr-breadcrumb__ellipses-icon {
-        border-right: 1px solid $breadcrumb-hover-text-color;
+        border-bottom: 1px solid $breadcrumb-hover-text-color;
         fill: $breadcrumb-hover-text-color;
       }
     }
