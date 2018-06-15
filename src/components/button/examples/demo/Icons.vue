@@ -118,7 +118,8 @@
       <cdr-button
         :icon-only="true"
         :full-width="true"
-        size="small">
+        size="small"
+        aria-label="Check our Twitter feed">
         <template name="icon">
           <icon-twitter
             class="cdr-button__icon" />
@@ -128,7 +129,8 @@
       <cdr-button
         tag="a"
         href="https://rei.com"
-        :icon-only="true">
+        :icon-only="true"
+        aria-label="This link goes elsewhere">
         <template name="icon">
           <icon-external-link class="cdr-button__icon" />
         </template>
@@ -138,7 +140,8 @@
     <div class="button-example dark">
       <cdr-button
         :icon-only="true"
-        :on-dark="true">
+        :on-dark="true"
+        aria-label="A Twitter button">
         <template name="icon">
           <icon-twitter
             class="cdr-button__icon" />
@@ -149,7 +152,8 @@
         tag="a"
         href="https://rei.com"
         :icon-only="true"
-        :on-dark="true">
+        :on-dark="true"
+        aria-label="An external link">
         <template name="icon">
           <icon-external-link class="cdr-button__icon" />
         </template>

@@ -20,6 +20,7 @@
     <div class="button-example">
       <h2>Responsive</h2>
       <cdr-button
+        :on-click="log"
         :full-width="true"
         :responsive-size="['large@sm']">
         Responsive with default
