@@ -30,94 +30,136 @@ export default {
     return {
       averageBreadcrumbItems: [
         {
-          url: 'http://google.com',
-          displayText: 'Step 1',
+          item: {
+            url: 'http://google.com',
+            name: 'Breadcrumb 1',
+          },
         },
         {
-          url: 'http://rei.com',
-          displayText: 'Long Breadcrumb Step 2',
+          item: {
+            url: 'http://rei.com',
+            name: 'Longer Breadcrumb 2',
+          },
         },
         {
-          url: 'http://yahoo.com',
-          displayText: 'Breadcrumb Step 3',
+          item: {
+            url: 'http://yahoo.com',
+            name: 'Breadcrumb 3',
+          },
         },
         {
-          url: 'http://bing.com',
-          displayText: 'Really Really Long Breadcrumb Step 4',
+          item: {
+            url: 'http://bing.com',
+            name: 'Really Really Long Breadcrumb 4',
+          },
         },
         {
-          url: 'http://bing.com',
-          displayText: 'Last Step',
+          item: {
+            url: 'http://bing.com',
+            name: 'Breadcrumb 5',
+          },
         },
       ],
       shortBreadcrumbItems: [
         {
-          url: 'http://google.com',
-          displayText: 'Step 1',
+          item: {
+            url: 'http://google.com',
+            name: 'Item 1',
+          },
         },
         {
-          url: 'http://rei.com',
-          displayText: 'Step 2',
+          item: {
+            url: 'http://rei.com',
+            name: 'Item 2',
+          },
         },
         {
-          url: 'http://yahoo.com',
-          displayText: 'Step 3',
+          item: {
+            url: 'http://yahoo.com',
+            name: 'Item 3',
+          },
         },
       ],
       superLongBreadcrumbItems: [
         {
-          url: 'http://google.com',
-          displayText: 'Long Breadcrumb Step 1',
+          item: {
+            url: 'http://google.com',
+            name: 'Long Breadcrumb Item 1',
+          },
         },
         {
-          url: 'http://rei.com',
-          displayText: 'Super Long Breadcrumb Step 2',
+          item: {
+            url: 'http://rei.com',
+            name: 'Super Long Breadcrumb Item 2',
+          },
         },
         {
-          url: 'http://yahoo.com',
-          displayText: 'Super Really Long Breadcrumb Step 3',
+          item: {
+            url: 'http://yahoo.com',
+            name: 'Super Really Long Breadcrumb Item 3',
+          },
         },
         {
-          url: 'http://bing.com',
-          displayText: 'Really Really Long Breadcrumb Step 4',
+          item: {
+            url: 'http://bing.com',
+            name: 'Really Really Long Breadcrumb Item 4',
+          },
         },
         {
-          url: 'http://bing.com',
-          displayText: 'Following Breadcrumb is Longest on REI.com',
+          item: {
+            url: 'http://bing.com',
+            name: 'Following Breadcrumb is Longest on REI.com',
+          },
         },
         {
-          url: 'http://bing.com',
-          displayText: 'Mexico, Central and South America GPS Mapping Software',
+          item: {
+            url: 'http://bing.com',
+            name: 'Mexico, Central and South America GPS Mapping Software',
+          },
         },
       ],
       reiExampleBreadcrumbItems: [
         {
-          url: 'http://rei.com',
-          displayText: 'Clothing',
+          item: {
+            url: 'http://rei.com',
+            name: 'Clothing',
+          },
         },
         {
-          url: 'http://rei.com',
-          displayText: 'Clothing Accessories',
+          item: {
+            url: 'http://rei.com',
+            name: 'Clothing Accessories',
+          },
         },
         {
-          url: 'http://rei.com',
-          displayText: 'Gloves and Mittens',
+          item: {
+            url: 'http://rei.com',
+            name: 'Gloves and Mittens',
+          },
         },
         {
-          url: 'http://rei.com',
-          displayText: 'Gloves',
+          item: {
+            url: 'http://rei.com',
+            name: 'Gloves',
+          },
         },
         {
-          url: 'http://rei.com',
-          displayText: 'Snowsports Gloves',
+          item: {
+            url: 'http://rei.com',
+            name: 'Snowsports Gloves',
+          },
         },
         {
-          url: 'http://rei.com',
-          displayText: 'Cross-Country Ski Gloves',
+          item: {
+            url: 'http://rei.com',
+            name: 'Cross-Country Ski Gloves',
+          },
         },
         {
-          url: 'http://rei.com',
-          displayText: 'Women\'s Cross-Country Ski Gloves',
+          item: {
+            url: 'http://rei.com',
+            name: 'Women\'s Cross-Country Ski Gloves',
+          },
         },
       ],
     };

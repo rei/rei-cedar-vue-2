@@ -4,24 +4,34 @@ import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
 describe('CdrBreadcrumb.vue', () => {
   const BreadcrumbItems = [
     {
-      url: 'http://google.com',
-      displayText: 'Breadcrumb Step 1',
+      item: {
+        url: 'http://google.com',
+        name: 'Breadcrumb Step 1',
+      },
     },
     {
-      url: 'http://rei.com',
-      displayText: 'Long Breadcrumb Step 2',
+      item:{
+        url: 'http://rei.com',
+        name: 'Long Breadcrumb Step 2',
+      },
     },
     {
-      url: 'http://yahoo.com',
-      displayText: 'Breadcrumb Step 3',
+      item:{
+        url: 'http://yahoo.com',
+        name: 'Breadcrumb Step 3',
+      },
     },
     {
-      url: 'http://bing.com',
-      displayText: 'Really Really Long Breadcrumb Step 4',
+      item:{
+        url: 'http://bing.com',
+        name: 'Really Really Long Breadcrumb Step 4',
+      },
     },
     {
-      url: 'http://amazon.com',
-      displayText: 'Last Step',
+      item:{
+        url: 'http://amazon.com',
+        name: 'Last Step',
+      },
     },
   ];
 

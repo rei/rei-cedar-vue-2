@@ -28,13 +28,13 @@
       </li>
       <li
         :class="$style['cdr-breadcrumb__item']"
-        v-for="(item, index) in items"
-        v-if="!truncate || (index >= items.length - 2)"
+        v-for="(breadcrumb, index) in items"
+        v-show="!truncate || (index >= items.length - 2)"
       >
         <a
           :class="$style['cdr-breadcrumb__link']"
-          :href="item.url">
-          {{ item.displayText }}
+          :href="breadcrumb.item.url">
+          {{ breadcrumb.item.name }}
         </a>
         <span
           :class="$style['cdr-breadcrumb__delimiter']"
@@ -129,7 +129,9 @@ export default {
   },
   methods: {
     getBreadcrumbWidth() {
+      console.log('KRIS cdrBreadcrumb = ', this.$refs.cdrBreadcrumbList);
       const breadcrumbsElements = Array.from(this.$refs.cdrBreadcrumbList.children);
+      console.log('KRIS breadcrumbArray = ', breadcrumbsElements);
       let totalWidth = 0;
       breadcrumbsElements.forEach((element) => {
         totalWidth += element.offsetWidth || 0;
