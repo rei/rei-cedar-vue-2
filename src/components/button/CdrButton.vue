@@ -1,8 +1,13 @@
-<!-- eslint-disable max-len -->
 <template>
   <component
     :is="tag"
-    :class="[modifierClass, sizeClass, fullWidthClass, responsiveClass, hasIconClass, iconOnlyClass, onDarkClass]"
+    :class="[
+      modifierClass,
+      sizeClass,
+      fullWidthClass,
+      responsiveClass,
+      iconClass,
+    ]"
     :type="tag === 'button' ? type : null"
     @click="onClick">
     <!-- @slot for icon -->
@@ -78,16 +83,21 @@ export default {
 
       return responsiveClass.join(' ');
     },
-    hasIconClass() {
-      /* default is undefined when running tests without complete setup, so check for default before length */
-      return this.$slots.default && this.$slots.default.length > 1 ?
-        this.modifyClassName(this.baseClass, 'has-icon') : null;
-    },
-    iconOnlyClass() {
-      return this.iconOnly ? this.modifyClassName(this.baseClass, 'icon-only') : null;
-    },
-    onDarkClass() {
-      return this.onDark && this.iconOnly ? this.modifyClassName(this.baseClass, 'on-dark') : null;
+    iconClass() {
+      const classes = [];
+
+      if (this.$slots.default && this.$slots.default.length > 1) {
+        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));
+      }
+
+      if (this.iconOnly) {
+        classes.push(this.modifyClassName(this.baseClass, 'icon-only'));
+
+        if (this.onDark) {
+          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));
+        }
+      }
+      return classes.join(' ');
     },
   },
 };
