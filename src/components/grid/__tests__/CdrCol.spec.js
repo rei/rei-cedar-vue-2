@@ -28,10 +28,7 @@ describe('CdrCol.vue', () => {
   it('computes span classes correctly', () => {
     const wrapper = shallowMount(CdrCol, {
       propsData: {
-        span: '1',
-        spanMd: '2',
-        spanLg: '2',
-        spanSm: '2',
+        span: '1 2@sm 2@md 2@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-col_span1');
@@ -43,10 +40,7 @@ describe('CdrCol.vue', () => {
   it('computes offsetLeft classes correctly', () => {
     const wrapper = shallowMount(CdrCol, {
       propsData: {
-        offsetLeft: '1',
-        offsetLeftMd: '2',
-        offsetLeftLg: '2',
-        offsetLeftSm: '2',
+        offsetLeft: '1 2@sm 2@md 2@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-col--offsetLeft1');
@@ -58,10 +52,7 @@ describe('CdrCol.vue', () => {
   it('computes offsetRight classes correctly', () => {
     const wrapper = shallowMount(CdrCol, {
       propsData: {
-        offsetRight: '1',
-        offsetRightMd: '2',
-        offsetRightLg: '2',
-        offsetRightSm: '2',
+        offsetRight: '1 2@sm 2@md 2@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-col--offsetRight1');
@@ -73,10 +64,7 @@ describe('CdrCol.vue', () => {
   it('computes alignSelf classes correctly', () => {
     const wrapper = shallowMount(CdrCol, {
       propsData: {
-        alignSelf: 'top',
-        alignSelfMd: 'top',
-        alignSelfLg: 'top',
-        alignSelfSm: 'top',
+        alignSelf: 'top top@sm top@md top@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-col--top');

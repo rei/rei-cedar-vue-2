@@ -9,9 +9,7 @@
     <hr>
 
     <cdr-row
-      cols="3"
-      cols-md="6"
-      cols-lg="10"
+      cols="3 6@md 10@lg"
     >
       <cdr-col
         v-for="(val, key) in Icons"
@@ -35,9 +33,7 @@
     <hr>
 
     <cdr-row
-      cols="3"
-      cols-md="6"
-      cols-lg="10"
+      cols="3 6@md 10@lg"
     >
       <cdr-col
         v-for="(val, key) in Icons"
@@ -58,9 +54,7 @@
     <hr>
 
     <cdr-row
-      cols="3"
-      cols-md="6"
-      cols-lg="10"
+      cols="3 6@md 10@lg"
     >
       <cdr-col
         v-for="(val, key) in Icons"
