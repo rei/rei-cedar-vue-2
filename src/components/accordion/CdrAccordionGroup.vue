@@ -1,6 +1,5 @@
 <template>
   <div class="cdr-accordion-group">
-    <p>compact: {{ compact }} | borderAligned: {{ borderAligned }} | show: {{ show }}</p>
     <!-- @slot default -->
     <slot />
   </div>
