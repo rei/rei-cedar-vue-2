@@ -8,7 +8,7 @@
       :aria-labelledby="`${id}-label`"
     >
       <button
-        class="cdr-accordion__button"
+        :class="$style['cdr-accordion__button']"
         :id="id"
         @click="toggle"
         :aria-expanded="`${isOpen}`"
@@ -16,7 +16,7 @@
         v-bind="$attrs"
       >
         <span
-          class="cdr-accordion__label"
+          :class="$style['cdr-accordion__label']"
           :id="`${id}-label`">
           <!-- <span class="sr-only">
             {{ a11yPrefix }}
@@ -24,18 +24,21 @@
           {{ label }}
         </span>
         <icon-caret-down
-          class="cdr-accordion__icon"
-          :class="isOpen ? 'open' : null"
+          :class="[
+            $style['cdr-accordion__icon'],
+            isOpenClass,
+          ]"
           :modifier="compact ? 'sm' : null" />
       </button>
     </div>
     <div
-      class="cdr-accordion__content-container"
-      :class="isOpen ? 'open' : null"
+      :class="[
+        $style['cdr-accordion__content-container'],
+        isOpenClass,
+      ]"
       :style="`max-height:${maxHeight}`">
       <div
-        class="cdr-accordion__content"
-        :class="isOpen ? 'open' : null"
+        :class="[$style['cdr-accordion__content'], isOpenClass]"
         :aria-hidden="`${!isOpen}`"
         :id="`${id}-collapsible`"
       >
@@ -65,20 +68,14 @@ export default {
       type: String,
       required: true,
     },
-    /** Sets Facet Initial Display State  */
-    show: {
-      type: Boolean,
-      default: false,
-    },
-    compact: {
-      type: Boolean,
-      default: false,
-    }
   },
   data() {
     return {
-      isOpen: this.show,
+      borderAligned: this.$parent.$props.borderAligned,
+      compact: this.$parent.$props.compact,
       contentHeight: 0,
+      isOpen: this.$parent.$props.show,
+      show: this.$parent.$props.show,
     }
   },
   computed: {
@@ -87,6 +84,9 @@ export default {
     },
     compactClass() {
       return this.compact ? this.modifyClassName(this.baseClass, 'compact') : null;
+    },
+    isOpenClass() {
+      return this.isOpen ? 'open' : null;
     },
     a11yPrefix() {
       return this.isOpen ? 'Hide' : 'Show';
@@ -107,7 +107,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrAccordion.pcss';
 </style>

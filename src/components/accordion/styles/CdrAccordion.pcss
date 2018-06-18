@@ -43,7 +43,7 @@
     fill: $heart-of-darkness;
     transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
 
-    &.open {
+    &:global(.open) {
       transform: rotate(-180deg);
     }
   }
@@ -54,7 +54,7 @@
     transition-property: max-height;
     transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1);
 
-    &.open {
+    &:global(.open) {
       transition-duration: 300ms;
     }
   }
@@ -67,7 +67,7 @@
     transition: opacity 100ms linear;
     opacity: 0;
 
-    &.open {
+    &:global(.open) {
       opacity: 1;
     }
   }

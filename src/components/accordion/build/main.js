@@ -1,1 +1,3 @@
-export { default as CdrAccordion } from '../CdrAccordion'; // eslint-disable-line import/prefer-default-export
+/* eslint-disable */
+export { default as CdrAccordion } from '../CdrAccordion';
+export { default as CdrAccordionGroup } from '../CdrAccordionGroup';
