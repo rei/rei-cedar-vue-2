@@ -49,7 +49,7 @@ export default {
   name: 'CdrSelect',
   inheritAttrs: false,
   model: {
-    prop: 'sel',
+    prop: 'extVal',
     event: 'change',
   },
   props: {
@@ -79,7 +79,7 @@ export default {
       type: Array,
     },
     /** @ignore */
-    sel: {
+    extVal: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: false,
     },
@@ -92,7 +92,7 @@ export default {
   },
   data() {
     return {
-      val: this.sel,
+      val: this.extVal,
     };
   },
   computed: {
@@ -136,9 +136,9 @@ export default {
     },
   },
   watch: {
-    sel() {
+    extVal() {
       if (!this.multiple) {
-        this.val = this.sel;
+        this.val = this.extVal;
       }
     },
   },
