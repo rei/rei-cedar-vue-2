@@ -11,9 +11,9 @@
       v-bind="$attrs"
       :id="selectId"
       :size="size"
-      @input="onInput"
+      @change="onChange"
       ref="select"
-      :value="val"
+      v-model="val"
       :required="required"
       :multiple="multiple"
       :aria-label="hideLabel ? label : null"
@@ -48,6 +48,10 @@ import toArray from 'lodash/toArray';
 export default {
   name: 'CdrSelect',
   inheritAttrs: false,
+  model: {
+    prop: 'sel',
+    event: 'change',
+  },
   props: {
     /**
      * Label text.
@@ -75,7 +79,7 @@ export default {
       type: Array,
     },
     /** @ignore */
-    value: {
+    sel: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: false,
     },
@@ -88,7 +92,7 @@ export default {
   },
   data() {
     return {
-      val: this.value,
+      val: this.sel,
     };
   },
   computed: {
@@ -132,9 +136,9 @@ export default {
     },
   },
   watch: {
-    value() {
+    sel() {
       if (!this.multiple) {
-        this.val = this.value;
+        this.val = this.sel;
       }
     },
   },
@@ -151,7 +155,7 @@ export default {
     }
   },
   methods: {
-    onInput(e) {
+    onChange(e) {
       /**
        * Current input value. Fires when
        * @event input
@@ -160,11 +164,11 @@ export default {
       if (this.multiple) {
         const optArr = toArray(e.target.options);
         const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-        this.val = e.target.value;
-        this.$emit('input', selected);
+        this.val = selected;
+        this.$emit('change', selected);
       } else {
         this.val = e.target.value;
-        this.$emit('input', e.target.value);
+        this.$emit('change', e.target.value);
       }
     },
   },

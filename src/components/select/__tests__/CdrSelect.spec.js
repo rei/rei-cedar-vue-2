@@ -135,26 +135,26 @@ describe('cdrSelect.vue', () => {
     expect(wrapper.vm.$refs.select.hasAttribute('multiple')).toBe(true);
   });
 
-  it('emits input event with correct value', () => {
+  it('emits change event with correct value', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
-        value: '2',
+        sel: '2',
         options: ['1', '2'],
       },
     });
     const select = wrapper.find({ ref: 'select'});
-    wrapper.setProps({ value: '1' });
-    select.trigger('input');
-    expect(wrapper.emitted().input[0][0]).toBe('1');
+    wrapper.setProps({ sel: '1' });
+    select.trigger('change');
+    expect(wrapper.emitted().change[0][0]).toBe('1');
   });
 
-  it('emits input event with correct value for multiple', () => {
+  it('emits change event with correct value for multiple', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
         multiple: true,
-        value: ['1', '2'],
+        sel: ['1', '2'],
         options: [{
           value: '1',
           text: 'one',
@@ -169,13 +169,13 @@ describe('cdrSelect.vue', () => {
         }],
       },
     });
-    wrapper.setProps({ value: ['1', '3'] });
-    const propValues = wrapper.vm.value;
+    wrapper.setProps({ sel: ['1', '3'] });
+    const propValues = wrapper.vm.sel;
     for(let o of wrapper.vm.$refs.select.options) {
       propValues.indexOf(o.value) >= 0 ? o.selected = true : o.selected = false;
     }
     const select = wrapper.find({ ref: 'select'});
-    select.trigger('input');
-    expect(wrapper.emitted().input[0][0]).toEqual(['1', '3']);
+    select.trigger('change');
+    expect(wrapper.emitted().change[0][0]).toEqual(['1', '3']);
   });
 });
