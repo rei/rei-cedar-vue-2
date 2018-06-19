@@ -2,13 +2,13 @@
   <div class="accordion-container">
     <h2>Accordion</h2>
     <div class="accordion-group">
-      <h3>Default - show is true</h3>
+      <h3>Default</h3>
       <cdr-accordion
         :show-all="false"
       >
         <cdr-accordion-item
           id="default"
-          label="A short label"
+          :label="`A short label ${maxHeight}`"
           :show="true"
         >
           This is some text. It's not in a <strong>paragraph</strong> element because

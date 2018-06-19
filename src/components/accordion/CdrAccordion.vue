@@ -1,5 +1,7 @@
 <template>
-  <div class="cdr-accordion">
+  <div
+    class="cdr-accordion"
+  >
     <!-- @slot default -->
     <slot />
   </div>

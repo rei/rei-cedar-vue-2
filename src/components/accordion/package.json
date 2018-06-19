@@ -23,7 +23,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "@rei/cdr-icon": "^0.2.0"
+    "@rei/cdr-icon": "^0.2.0",
+    "core-js": "^2.5.7"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
