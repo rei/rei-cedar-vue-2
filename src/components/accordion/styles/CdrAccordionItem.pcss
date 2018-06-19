@@ -10,10 +10,10 @@
     :Base - CdrAccordion
 ========================================================================== */
 
-.cdr-accordion {
+.cdr-accordion-item {
   border-top: 1px solid $partly-cloudy;
 
-  .cdr-accordion__button {
+  .cdr-accordion-item__button {
     @include redwood-display-30;
 
     background-color: $clean-slate;
@@ -32,13 +32,13 @@
     }
   }
 
-  .cdr-accordion__label {
+  .cdr-accordion-item__label {
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 0;
   }
 
-  .cdr-accordion__icon {
+  .cdr-accordion-item__icon {
     margin-left: $space-1-x;
     fill: $heart-of-darkness;
     transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
@@ -48,7 +48,7 @@
     }
   }
 
-  .cdr-accordion__content-container {
+  .cdr-accordion-item__content-container {
     overflow: hidden;
     transition-duration: 200ms;
     transition-property: max-height;
@@ -59,7 +59,7 @@
     }
   }
 
-  .cdr-accordion__content {
+  .cdr-accordion-item__content {
     @include redwood-body-20;
 
     color: $heart-of-darkness;
@@ -75,28 +75,28 @@
   &--border-aligned {
     margin: 0 $inset-1-x;
 
-    .cdr-accordion__button {
+    .cdr-accordion-item__button {
       margin-left: -$space-1-x;
       width: calc(100% + ($space-1-x * 2));
     }
 
-    .cdr-accordion__content {
+    .cdr-accordion-item__content {
       padding: $space-half-x 0 $space-1-x;
     }
   }
 
   &--compact {
-    .cdr-accordion__button {
+    .cdr-accordion-item__button {
       @include redwood-display-20;
 
       padding: $inset-three-quarter-x;
     }
 
-    .cdr-accordion__label {
+    .cdr-accordion-item__label {
       font-weight: bold;
     }
 
-    .cdr-accordion__content {
+    .cdr-accordion-item__content {
       @include redwood-body-10;
 
       padding: $space-quarter-x $space-three-quarter-x $space-three-quarter-x;
@@ -104,13 +104,13 @@
   }
 
   /* Border aligned and compact  */
-  &--compact.cdr-accordion--border-aligned {
-    .cdr-accordion__button {
+  &--compact.cdr-accordion-item--border-aligned {
+    .cdr-accordion-item__button {
       margin-left: -$space-three-quarter-x;
       width: calc(100% + ($space-three-quarter-x * 2));
     }
 
-    .cdr-accordion__content {
+    .cdr-accordion-item__content {
       padding: $space-quarter-x 0 $space-three-quarter-x;
     }
   }

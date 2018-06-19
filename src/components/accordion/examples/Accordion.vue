@@ -3,17 +3,17 @@
     <h2>Accordion</h2>
     <div class="accordion-group">
       <h3>Default - show is true</h3>
-      <cdr-accordion-group
+      <cdr-accordion
         :show="true"
       >
-        <cdr-accordion
+        <cdr-accordion-item
           id="default"
           label="A short label"
         >
           This is some text. It's not in a <strong>paragraph</strong> element because
           that would include margin and add space to the container.
-        </cdr-accordion>
-        <cdr-accordion
+        </cdr-accordion-item>
+        <cdr-accordion-item
           id="default-long-label"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
@@ -27,29 +27,29 @@
             <li>I want to see what it's like</li>
             <li>when animated!</li>
           </ul>
-        </cdr-accordion>
-      </cdr-accordion-group>
+        </cdr-accordion-item>
+      </cdr-accordion>
     </div>
     <div class="accordion-group">
       <h3>Compact and Border-aligned</h3>
-      <cdr-accordion-group
+      <cdr-accordion
         :compact="true"
         :border-aligned="true"
       >
-        <cdr-accordion
+        <cdr-accordion-item
           id="border-aligned-compact"
           label="Border-aligned and compact"
           modifier="border-aligned">
           It helps to see at least two accordions together.
-        </cdr-accordion>
-        <cdr-accordion
+        </cdr-accordion-item>
+        <cdr-accordion-item
           id="border-aligned-compact-2"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
           modifier="border-aligned">
           Some text inside, should align to the label above.
-        </cdr-accordion>
-      </cdr-accordion-group>
+        </cdr-accordion-item>
+      </cdr-accordion>
     </div>
   </div>
 </template>

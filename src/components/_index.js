@@ -17,11 +17,11 @@ import CdrRow from 'componentsdir/grid/CdrRow';
 import CdrSelect from 'componentsdir/select/CdrSelect';
 import CdrText from 'componentsdir/text/CdrText';
 import CdrAccordion from 'componentsdir/accordion/CdrAccordion';
-import CdrAccordionGroup from 'componentsdir/accordion/CdrAccordionGroup';
+import CdrAccordionItem from 'componentsdir/accordion/CdrAccordionItem';
 
 export default {
   CdrAccordion,
-  CdrAccordionGroup,
+  CdrAccordionItem,
   CdrLink,
   CdrButton,
   CdrCard,
