@@ -20,7 +20,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    show: {
+    showAll: {
       type: Boolean,
       default: false,
     },

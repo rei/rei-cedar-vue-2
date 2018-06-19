@@ -68,14 +68,17 @@ export default {
       type: String,
       required: true,
     },
+    show: {
+      type: String,
+      default: false,
+    },
   },
   data() {
     return {
       borderAligned: this.$parent.$props.borderAligned,
       compact: this.$parent.$props.compact,
       contentHeight: 0,
-      isOpen: this.$parent.$props.show,
-      show: this.$parent.$props.show,
+      isOpen: this.$parent.$props.showAll || this.show,
     }
   },
   computed: {

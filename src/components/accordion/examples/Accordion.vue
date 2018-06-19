@@ -4,11 +4,12 @@
     <div class="accordion-group">
       <h3>Default - show is true</h3>
       <cdr-accordion
-        :show="true"
+        :show-all="false"
       >
         <cdr-accordion-item
           id="default"
           label="A short label"
+          :show="true"
         >
           This is some text. It's not in a <strong>paragraph</strong> element because
           that would include margin and add space to the container.
