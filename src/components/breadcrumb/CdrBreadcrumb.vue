@@ -73,9 +73,6 @@ import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 import debounce from 'lodash/debounce';
 
 export default {
-  rules: {
-    console: 'off',
-  },
   name: 'CdrBreadcrumb',
   components: {
     CdrIconOnlyButton,
@@ -101,7 +98,7 @@ export default {
             const hasName = breadcrumbItem.item && breadcrumbItem.item.name;
             if (!hasName) {
               isValid = false;
-              console.error('Breadcrumb items array is missing item.name value at index ', index);
+              console.error('Breadcrumb items array is missing item.name value at index ', index); // eslint-disable-line no-console
             }
           });
         }
