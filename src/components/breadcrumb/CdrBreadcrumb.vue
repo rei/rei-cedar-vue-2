@@ -73,6 +73,9 @@ import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 import debounce from 'lodash/debounce';
 
 export default {
+  rules: {
+    console: 'off',
+  },
   name: 'CdrBreadcrumb',
   components: {
     CdrIconOnlyButton,
@@ -91,6 +94,19 @@ export default {
     items: {
       type: Array,
       default: () => [],
+      validator: (value) => {
+        let isValid = true;
+        if (value.length && value.length > 0) {
+          value.forEach((breadcrumbItem, index) => {
+            const hasName = breadcrumbItem.item && breadcrumbItem.item.name;
+            if (!hasName) {
+              isValid = false;
+              console.error('Breadcrumb items array is missing item.name value at index ', index);
+            }
+          });
+        }
+        return isValid;
+      },
     },
     /**
      * Flag to track container width threshold exceeded
