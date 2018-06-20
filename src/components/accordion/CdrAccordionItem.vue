@@ -1,7 +1,7 @@
 <template>
   <div
-    :class="[modifierClass, compactClass]"
-    :ref="`${id}-accordion`"
+    :class="[modifierClass, styleClass]"
+    :id="`${id}-accordion-item`"
   >
     <button
       :class="$style['cdr-accordion-item__button']"
@@ -12,10 +12,8 @@
     >
       <span
         :class="$style['cdr-accordion-item__label']"
-        :id="`${id}-label`">
-        <!-- <span class="sr-only">
-          {{ a11yPrefix }}
-        </span> -->
+        :id="`${id}-label`"
+      >
         {{ label }}
       </span>
       <icon-caret-down
@@ -85,14 +83,21 @@ export default {
     baseClass() {
       return 'cdr-accordion-item';
     },
-    compactClass() {
-      return this.compact ? this.modifyClassName(this.baseClass, 'compact') : null;
+    styleClass() {
+      const styles = [];
+
+      if (this.compact) {
+        styles.push(this.modifyClassName(this.baseClass, 'compact'));
+      }
+
+      if (this.borderAligned) {
+        styles.push(this.modifyClassName(this.baseClass, 'border-aligned'));
+      }
+
+      return styles.join(' ');
     },
     isOpenClass() {
       return this.isOpen ? 'open' : null;
-    },
-    a11yPrefix() {
-      return this.isOpen ? 'Hide' : 'Show';
     },
   },
   mounted() {

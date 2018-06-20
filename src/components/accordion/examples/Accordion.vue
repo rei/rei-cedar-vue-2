@@ -8,7 +8,7 @@
       >
         <cdr-accordion-item
           id="default"
-          :label="`A short label ${maxHeight}`"
+          label="A short label"
           :show="true"
         >
           This is some text. It's not in a <strong>paragraph</strong> element because
@@ -40,14 +40,14 @@
         <cdr-accordion-item
           id="border-aligned-compact"
           label="Border-aligned and compact"
-          modifier="border-aligned">
+        >
           It helps to see at least two accordions together.
         </cdr-accordion-item>
         <cdr-accordion-item
           id="border-aligned-compact-2"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
-          modifier="border-aligned">
+          modifier="border-last">
           Some text inside, should align to the label above.
         </cdr-accordion-item>
       </cdr-accordion>
