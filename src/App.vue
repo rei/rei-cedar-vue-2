@@ -4,24 +4,13 @@
     class="cdr-container-fluid"
   >
     <h1>Cedar Proving grounds</h1>
-    <!-- <router-link to="buttons">Buttons</router-link>
-    <router-link to="grids">Grids</router-link>
-    <router-link to="cards">Cards</router-link>
-    <router-link to="checkboxes">Checkboxes</router-link>
-    <router-link to="icons">Icons</router-link>
-    <router-link to="images">Images</router-link>
-    <router-link to="links">Links</router-link>
-    <router-link to="lists">Lists</router-link>
-    <router-link to="mediaobjects">Media Objects</router-link>
-    <router-link to="quotes">Quotes</router-link>
-    <router-link to="ratings">Ratings</router-link>
-    <router-link to="radios">Radios</router-link>
-    <router-link to="selects">Selects</router-link>
-    <router-link to="texts">Texts</router-link>
-    <router-link to="activitycards">Activity Cards</router-link>
-    <router-link to="captions">Captions</router-link>
-    <router-link to="searches">Searches</router-link> -->
-    <!-- <links
+    <router-link
+      v-for="route in routes"
+      :key="route.path"
+      :to="route.path">{{ route.name }} *
+    </router-link>
+
+    <links
       class="cpg-section"
       data-backstop="links"
     />
@@ -29,7 +18,15 @@
       class="cpg-section"
       data-backstop="buttons"
     />
-    <cards class="cpg-section"/> -->
+    <cta
+      class="cpg-section"
+      data-backstop="cta-buttons"
+    />
+    <icon-only-buttons
+      class="cpg-section"
+      data-backstop="icon-only-buttons"
+    />
+    <cards class="cpg-section"/>
     <!-- <card-content class="cpg-section"></card-content> -->
     <!-- <activity class="cpg-section"/>
     <checkboxes
@@ -90,12 +87,17 @@
 <script>
 import examples from 'componentsdir/examples';
 import compexamples from 'compositionsdir/examples';
+import routes from './router';
 
 const all = Object.assign({}, examples, compexamples);
-
 export default {
   name: 'App',
   components: all,
+  data() {
+    return {
+      routes,
+    };
+  },
 };
 </script>
 

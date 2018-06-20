@@ -1,10 +1,9 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import CdrSelect from 'componentsdir/select/CdrSelect';
-import { toArray } from 'lodash';
 
 describe('cdrSelect.vue', () => {
   it('renders a label element', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'Label Test',
       },
@@ -13,7 +12,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders label correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'Label Test',
       },
@@ -22,7 +21,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders required label correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'Label Test',
         required: true,
@@ -32,7 +31,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('hide-label sets aria-label correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
         hideLabel: true,
@@ -42,7 +41,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('maps select id to label for correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'testing',
         id: 'test',
@@ -52,7 +51,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('generates an id correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'testing',
       },
@@ -61,16 +60,17 @@ describe('cdrSelect.vue', () => {
   });
 
   it('renders a select element', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.select.tagName).toBe('SELECT');
+    const select = wrapper.find({ ref: 'select'});
+    expect(select.is('select')).toBe(true);
   });
 
   it('sets select name attribute correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'Label Test',
       },
@@ -82,7 +82,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select disabled attribute correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
       },
@@ -94,7 +94,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select required attribute correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
         required: true,
@@ -104,7 +104,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select autofocus attribute correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
       },
@@ -116,7 +116,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select size attribute correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
         size: '4',
@@ -126,7 +126,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('sets select multiple attribute correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'Label Test',
         multiple: true,
@@ -135,67 +135,26 @@ describe('cdrSelect.vue', () => {
     expect(wrapper.vm.$refs.select.hasAttribute('multiple')).toBe(true);
   });
 
-  it('renders prompt value correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+  it('emits change event with correct value', () => {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
-        prompt: 'test prompt'
-      },
-    });
-    const opts = toArray(wrapper.vm.$refs.select.options);
-    expect(opts[0].value).toBe('');
-    expect(opts[0].text).toBe('test prompt');
-  });
-
-  it('renders select value correctly', () => {
-    const wrapper = shallow(CdrSelect, {
-      propsData: {
-        label: 'test',
+        extVal: '2',
         options: ['1', '2'],
       },
     });
-    wrapper.setProps({ value: '1' });
-    expect(wrapper.vm.$refs.select.value).toBe('1');
+    const select = wrapper.find({ ref: 'select'});
+    wrapper.setProps({ extVal: '1' });
+    select.trigger('change');
+    expect(wrapper.emitted().change[0][0]).toBe('1');
   });
 
-  it('renders multiple select values correctly', () => {
-    const wrapper = shallow(CdrSelect, {
+  it('emits change event with correct value for multiple', () => {
+    const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
         multiple: true,
-        value: ['1', '2'],
-        options: ['1', '2', '3'],
-      },
-    });
-    const optArr = toArray(wrapper.vm.$refs.select.options);
-    const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-    expect(selected).toEqual(['1', '2']);
-  });
-
-  it('renders select value from object def correctly', () => {
-    const wrapper = shallow(CdrSelect, {
-      propsData: {
-        label: 'test',
-        value: '1',
-        options: [{
-          value: '1',
-          text: 'one',
-        },
-        {
-          value: '2',
-          text: 'two',
-        }],
-      },
-    });
-    expect(wrapper.vm.$refs.select.value).toBe('1');
-  });
-
-  it('renders multiple select values from object def correctly', () => {
-    const wrapper = shallow(CdrSelect, {
-      propsData: {
-        label: 'test',
-        multiple: true,
-        value: ['1', '2'],
+        extVal: ['1', '2'],
         options: [{
           value: '1',
           text: 'one',
@@ -210,52 +169,13 @@ describe('cdrSelect.vue', () => {
         }],
       },
     });
-    const optArr = toArray(wrapper.vm.$refs.select.options);
-    const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-    expect(selected).toEqual(['1', '2']);
-  });
-
-  it('emits input event with correct value', () => {
-    const wrapper = shallow(CdrSelect, {
-      propsData: {
-        label: 'test',
-        value: '2',
-        options: ['1', '2'],
-      },
-    });
-    const select = wrapper.find('.cdr-select');
-    wrapper.setProps({ value: '1' });
-    select.trigger('input');
-    expect(wrapper.emitted().input[0][0]).toBe('1');
-  });
-
-  it('emits input event with correct value for multiple', () => {
-    const wrapper = shallow(CdrSelect, {
-      propsData: {
-        label: 'test',
-        multiple: true,
-        value: ['1', '2'],
-        options: [{
-          value: '1',
-          text: 'one',
-        },
-        {
-          value: '2',
-          text: 'two',
-        },
-        {
-          value: '3',
-          text: 'three',
-        }],
-      },
-    });
-    wrapper.setProps({ value: ['1', '3'] });
-    const propValues = wrapper.vm.value;
+    wrapper.setProps({ extVal: ['1', '3'] });
+    const propValues = wrapper.vm.extVal;
     for(let o of wrapper.vm.$refs.select.options) {
       propValues.indexOf(o.value) >= 0 ? o.selected = true : o.selected = false;
     }
-    const select = wrapper.find('.cdr-select');
-    select.trigger('input');
-    expect(wrapper.emitted().input[0][0]).toEqual(['1', '3']);
+    const select = wrapper.find({ ref: 'select'});
+    select.trigger('change');
+    expect(wrapper.emitted().change[0][0]).toEqual(['1', '3']);
   });
 });

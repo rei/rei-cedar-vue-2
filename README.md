@@ -38,15 +38,21 @@ Runs locally for development. Has hot reloading, linting, and other nice things 
 
 The [webpack](https://webpack.github.io/) build system is taken largely from the [Vue webpack template](https://github.com/vuejs-templates/webpack) which has its own set of docs that are a good reference.
 
-## Vue-styleguidist
+## Documentation Site
 
-We're using [vue-styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) to document and demo components.
+The API documentation for Cedar components is built inside the **rei-cedar** repository by running the following scripts:
 
-`npm run docs`
-
-Runs the local server for docs.
+Builds the JSON data object for the APIs of each component individually
 
 `npm run build:docs`
+
+Collects all of the individual component data objects into one large Cedar Data Object at **src/cedar-data.json** 
+
+`npm run build:archive`
+
+Transfers the Cedar Data Object from the **rei-cedar** repository to the **rei-cedar-docs** repository on your local machine
+
+`npm run build:transfer`
 
 Outputs a standalone app to `styleguide/build` that can be hosted somewhere (like gh-pages).
 
@@ -118,7 +124,6 @@ __TODO:__ Notes about css, postcss, stylelint
 - Components styles are in the same directory and imported into style tags in the component file.
 - main.postcss (.postcss so webpack uses the correct loader - others are .pcss and just need to be imported here to be processed)
 - Component css is output as a file separate from main.postcss.
-- Using [vue-theme-loader](https://github.com/zephraph/vue-theme-loader) to allow for vertical themes. Every style tag in the components needs a `theme="<theme>"`.
 - Imported into entry files (dev.js and main.js so webpack processes it)
 - [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) inspired file structure.
 - CSS needs to be written with `cdr-` namespace prefix.

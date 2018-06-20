@@ -2,17 +2,13 @@ const createResolver = require('postcss-import-webpack-resolver');
 const webpackConfig = require('./build/webpack.base.conf.js');
 
 module.exports = {
-  parser: 'postcss-html',
   syntax: 'postcss-scss',
   plugins: {
     'postcss-import': {
       resolve: createResolver({
-        // use aliases defined in config
+        // use aliases defined in webpack config
         alias: webpackConfig.resolve.alias,
-
-        // include where to look for modules
-        // modules: ['src', 'node_modules']
-      })
+      }),
     },
     'postcss-strip-inline-comments': {},
     'postcss-sassy-mixins': {},
@@ -32,6 +28,8 @@ module.exports = {
     },
     'postcss-inline-svg': {},
     autoprefixer: {},
-    cssnano: {},
+    cssnano: {
+      discardUnused: { fontFace: false },
+    },
   },
 };

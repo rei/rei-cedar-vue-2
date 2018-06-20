@@ -13,56 +13,55 @@
       :Style variants
         :Secondary
       :Size variants
+        :lg
         :sm
-        :xs
+        :block
 ========================================================================== */
 
 .cdr-button {
+  @include redwood-display-30;
+
   background-color: $button-background-color;
-  border-color: $button-border-color;
-  border-width: $button-border-width;
-  border-style: $button-border-style;
+  box-shadow: $button-box-shadow;
+  border: none;
   border-radius: $button-border-radius;
   color: $button-color;
-  cursor: $button-cursor;
-  display: $button-display;
-  font-family: $button-font-family;
-  font-size: $button-font-size;
-  font-style: $button-font-style;
-  font-weight: $button-font-weight;
-  line-height: $button-line-height;
-  outline: $button-outline;
-  padding: $button-padding;
-  text-align: $button-text-align;
-  text-decoration: $button-text-decoration;
-  white-space: $button-white-space;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding: $inset-1-x-squish;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  & > :global(&__icon) {
+    display: block;
+    float: left;
+    fill: $button-color;
+    margin-right: $space-quarter-x;
+  }
 
   /* States
     ---------- */
 
   &:hover,
   &:active {
-    text-decoration: $button-hover-text-decoration;
-    outline: $button-hover-text-outline;
     background-color: $button-hover-background-color;
-    border-color: $button-hover-border-color;
     color: $button-hover-color;
-  }
+    box-shadow: $button-hover-box-shadow;
+    text-decoration: none;
+    outline: none;
 
-  &:focus {
-    outline: $button-focus-outline;
-    box-shadow: $button-focus-box-shadow;
-    border-color: $button-focus-border-color;
-    border-width: $button-focus-border-width;
-    border-style: $button-focus-border-style;
-    border-radius: $button-focus-border-radius;
+    & > :global(&__icon) {
+      fill: $button-hover-color;
+    }
   }
 
   &[disabled] {
-    background-color: $button-disabled-background-color !important;
-    border-color: $button-disabled-border-color !important;
-    color: $button-disabled-color !important;
-    cursor: $button-disabled-cursor !important;
+    background-color: $button-disabled-background-color;
+    box-shadow: $button-disabled-box-shadow;
+    color: $button-disabled-color;
+    cursor: not-allowed;
   }
 
   /* Modifier style variants
@@ -73,8 +72,12 @@
 
   &--secondary {
     background-color: $button-secondary-background-color;
-    border-color: $button-secondary-border-color;
+    box-shadow: $button-secondary-box-shadow;
     color: $button-secondary-color;
+
+    & > :global(.cdr-button__icon) {
+      fill: $button-secondary-color;
+    }
 
     /* States
     ---------- */
@@ -82,53 +85,231 @@
     &:hover,
     &:active {
       background-color: $button-secondary-hover-background-color;
-      border-color: $button-secondary-hover-border-color;
+      box-shadow: $button-secondary-box-shadow;
       color: $button-secondary-hover-color;
+
+      & > :global(.cdr-button__icon) {
+        fill: $button-secondary-hover-color;
+      }
     }
 
     &[disabled] {
-      background-color: $button-secondary-disabled-background-color !important;
-      border-color: $button-secondary-disabled-border-color !important;
-      color: $button-secondary-disabled-color !important;
+      background-color: $button-secondary-disabled-background-color;
+      box-shadow: $button-secondary-disabled-box-shadow;
+      color: $button-secondary-disabled-color;
+      cursor: not-allowed;
+
+      & > :global(.cdr-button__icon) {
+        fill: $button-secondary-disabled-color;
+      }
     }
   }
 
-  &--cta-sale {
-    background-color: $button-cta-sale-background-color;
-    border-color: $button-cta-sale-border-color;
-    color: $button-cta-sale-color;
+  /* Large
+     ========== */
+  &--large {
+    @include redwood-display-40;
 
-    &:hover,
-    &:active {
-      background-color: $button-cta-sale-hover-background-color;
-      border-color: $button-cta-sale-hover-border-color;
+    padding: $inset-1-and-a-half-x-squish;
+  }
+
+  /* Medium
+     ========== */
+  &--medium {
+    @include redwood-display-30;
+
+    padding: $inset-1-x-squish;
+  }
+
+  /* Small
+     ========== */
+  &--small {
+    @include redwood-display-20;
+
+    padding: $inset-three-quarter-x-squish;
+
+    & > :global(.cdr-button__icon) {
+      /* This is to correct icon size vs line height */
+      @include small-button-icon();
     }
   }
 
-  /* Size variants
+  /* Full Width
+     ========== */
+  &--full-width {
+    width: 100%;
+
+    & > :global(.cdr-button__icon) {
+      display: inline-block;
+      float: none;
+      position: relative;
+      bottom: 1px; /* This is to fix the extra pixel added when svg is inline-block */
+    }
+  }
+
+  /* Breakpoint variants
     ========================================================================== */
 
-  /* sm
-    ========== */
-
-  &--sm {
-    font-family: $button-sm-font-family;
-    font-size: $button-sm-font-size;
-    font-style: $button-sm-font-style;
-    font-weight: $button-sm-font-weight;
-    line-height: $button-sm-line-height;
-    padding: $button-sm-padding;
+  @mixin auto-icon() {
+    width: $icon-size;
+    height: $icon-size;
   }
 
-  /* xs
-    ========== */
+  @mixin small-button-icon() {
+    width: 20px;
+    height: 20px;
+  }
 
-  &--xs {
-    font-family: $button-xs-font-family;
-    font-size: $button-xs-font-size;
-    font-style: $button-xs-font-style;
-    font-weight: $button-xs-font-weight;
-    line-height: $button-xs-line-height;
-    padding: $button-xs-padding;
+  /* @extra-small
+    0px - 767px
+    ========== */
+  @media (--xs-mq-only) {
+    &--small\@xs {
+      @include redwood-display-20;
+
+      padding: $inset-three-quarter-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include small-button-icon();
+      }
+    }
+
+    &--medium\@xs {
+      @include redwood-display-30;
+
+      padding: $inset-1-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include auto-icon();
+      }
+    }
+
+    &--large\@xs {
+      @include redwood-display-40;
+
+      padding: $inset-1-and-a-half-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include auto-icon();
+      }
+    }
+  }
+
+  /* @small
+    768px - 991px
+    ========== */
+  @media (--sm-mq-only) {
+    &--small\@sm {
+      @include redwood-display-20;
+
+      padding: $inset-three-quarter-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include small-button-icon();
+      }
+    }
+
+    &--medium\@sm {
+      @include redwood-display-30;
+
+      padding: $inset-1-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include auto-icon();
+      }
+    }
+
+    &--large\@sm {
+      @include redwood-display-40;
+
+      padding: $inset-1-and-a-half-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include auto-icon();
+      }
+    }
+  }
+
+  /* @medium
+    992px - 1199px
+    ========== */
+  @media (--md-mq-only) {
+    &--small\@md {
+      @include redwood-display-20;
+
+      padding: $inset-three-quarter-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include small-button-icon();
+      }
+    }
+
+    &--medium\@md {
+      @include redwood-display-30;
+
+      padding: $inset-1-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include auto-icon();
+      }
+    }
+
+    &--large\@md {
+      @include redwood-display-40;
+
+      padding: $inset-1-and-a-half-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include auto-icon();
+      }
+    }
+  }
+
+  /* @large
+    1200px and up
+    ========== */
+  
+  @media (--lg-mq-only) {
+    &--small\@lg {
+      @include redwood-display-20;
+
+      padding: $inset-three-quarter-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include small-button-icon();
+      }
+    }
+
+    &--medium\@lg {
+      @include redwood-display-30;
+
+      padding: $inset-1-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include auto-icon();
+      }
+    }
+
+    &--large\@lg {
+      @include redwood-display-40;
+
+      padding: $inset-1-and-a-half-x-squish;
+      width: auto;
+
+      & > :global(.cdr-button__icon) {
+        @include auto-icon();
+      }
+    }
   }
 }

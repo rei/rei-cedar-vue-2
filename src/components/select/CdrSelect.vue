@@ -1,5 +1,5 @@
 <template>
-  <div class="cdr-input-group">
+  <div :class="$style['cdr-input-group']">
     <label
       v-if="!hideLabel"
       :class="labelClass"
@@ -11,9 +11,9 @@
       v-bind="$attrs"
       :id="selectId"
       :size="size"
-      @input="onInput"
+      @change="onChange"
       ref="select"
-      :value="val"
+      v-model="val"
       :required="required"
       :multiple="multiple"
       :aria-label="hideLabel ? label : null"
@@ -48,6 +48,10 @@ import toArray from 'lodash/toArray';
 export default {
   name: 'CdrSelect',
   inheritAttrs: false,
+  model: {
+    prop: 'extVal',
+    event: 'change',
+  },
   props: {
     /**
      * Label text.
@@ -75,7 +79,7 @@ export default {
       type: Array,
     },
     /** @ignore */
-    value: {
+    extVal: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: false,
     },
@@ -88,7 +92,7 @@ export default {
   },
   data() {
     return {
-      val: this.value,
+      val: this.extVal,
     };
   },
   computed: {
@@ -98,14 +102,14 @@ export default {
     },
     selectClass() {
       return {
-        'cdr-select': true,
-        'cdr-select--size': parseInt(this.size, 10) > 0,
+        [this.$style['cdr-select']]: true,
+        [this.$style['cdr-select--size']]: parseInt(this.size, 10) > 0,
       };
     },
     labelClass() {
       return {
-        'cdr-label': true,
-        'cdr-label--disabled': this.disabled,
+        [this.$style['cdr-select__label']]: true,
+        [this.$style['cdr-select__label--disabled']]: this.disabled,
       };
     },
     computedOpts() {
@@ -132,9 +136,9 @@ export default {
     },
   },
   watch: {
-    value() {
+    extVal() {
       if (!this.multiple) {
-        this.val = this.value;
+        this.val = this.extVal;
       }
     },
   },
@@ -151,7 +155,7 @@ export default {
     }
   },
   methods: {
-    onInput(e) {
+    onChange(e) {
       /**
        * Current input value. Fires when
        * @event input
@@ -160,18 +164,18 @@ export default {
       if (this.multiple) {
         const optArr = toArray(e.target.options);
         const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-        this.val = e.target.value;
-        this.$emit('input', selected);
+        this.val = selected;
+        this.$emit('change', selected);
       } else {
         this.val = e.target.value;
-        this.$emit('input', e.target.value);
+        this.$emit('change', e.target.value);
       }
     },
   },
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/vars/CdrSelect.vars.pcss';
   @import './styles/CdrSelect.pcss';

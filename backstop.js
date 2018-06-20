@@ -87,7 +87,7 @@ module.exports = {
   },
   asyncCaptureLimit: 5,
   asyncCompareLimit: 10,
-  engine: 'chrome',
+  engine: 'chromy',
   report: ['browser'],
   debug: false,
   debugWindow: false,

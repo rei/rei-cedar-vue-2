@@ -1,75 +1,71 @@
 <template>
-  <button
-    :class="[modifierClass, themeClass]"
-    :type="type"
+  <component
+    :is="tag"
+    :class="[modifierClass, sizeClass, fullWidthClass, responsiveClass]"
+    :type="tag === 'button' ? type : null"
     @click="onClick"
   >
     <!-- @slot innerHTML on the inside of the button component -->
     <slot/>
-  </button>
+  </component>
 </template>
 
 <script>
-import theme from 'mixinsdir/theme';
+import buttonBase from 'mixinsdir/buttonBase';
 import modifier from 'mixinsdir/modifier';
 
 /**
  * Cedar 2 component for button
  *
- * <span class="modifiers">Modifiers</span>
- * Modifiers can be combined 1 from each grouping.
- * {secondary} | {sm,xs} | {block, fixed, responsive} **OR** link
- * Use of the 'link' modifier depends on including the css for CdrA.
- * A modifier list that contains 'link' exposes the same modifiers as CdrA and the other modifiers shouldn't be combined with it.
- * Responsive makes the button full width and block @ sm breakpoint.
- * @version 0.0.1
+ * CdrButton will render either a button, or an anchor that looks like a button.
+ * As such, the decision to use CdrButton vs CdrAnchor should be made based on what
+ * you need the rendered element to look like.
+ *
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
 export default {
   name: 'CdrButton',
-  mixins: [modifier, theme],
+  mixins: [buttonBase, modifier],
   props: {
     /**
-     * Defines the button type. Possible values: {button, submit, reset}.
+     * Sets a static size for the button, which scales padding and text size. {small, medium, large}
      */
-    type: {
+    size: {
       type: String,
-      default: 'button',
-      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
+      default: 'medium',
+      validator: value => (['small', 'medium', 'large'].indexOf(value) >= 0) || false,
     },
     /**
-     * Add custom click actions.
+     * Render a specific button size at a specific breakpoint. Takes precedence over size and fullWidth.
+     * Format is size@breakpoint (ex: large@sm).
      */
-    onClick: {
-      type: Function,
-      default: () => () => null,
+    responsiveSize: {
+      type: Array,
     },
   },
   computed: {
     baseClass() {
-      const modifiers = this.modifier ? this.modifier.split(' ') : [];
-      return modifiers.indexOf('link') >= 0 ? 'cdr-link' : 'cdr-button';
+      return 'cdr-button';
+    },
+    sizeClass() {
+      return this.modifyClassName(this.baseClass, this.size);
+    },
+    responsiveClass() {
+      const responsiveClass = [];
+
+      if (this.responsiveSize) {
+        this.responsiveSize.forEach((val) => {
+          responsiveClass.push(this.modifyClassName(this.baseClass, val));
+        });
+      }
+
+      return responsiveClass.join(' ');
     },
   },
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrButton.vars.pcss';
-  @import './styles/CdrButton.pcss';
-</style>
-
-<style cedar-theme="red">
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrButton.vars.pcss';
-  @import './styles/vars/red.vars.pcss';
-  @import './styles/CdrButton.pcss';
-</style>
-
-<style cedar-theme="green">
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrButton.vars.pcss';
-  @import './styles/vars/green.vars.pcss';
   @import './styles/CdrButton.pcss';
 </style>

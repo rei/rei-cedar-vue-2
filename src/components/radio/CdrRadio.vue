@@ -1,11 +1,11 @@
 <template>
-  <div class="cdr-radio__wrap">
+  <div :class="$style['cdr-radio__wrap']">
     <label
       :class="[modifierClass, labelClass]"
       ref="label"
     >
       <input
-        :class="['cdr-radio__input', inputClass]"
+        :class="[$style['cdr-radio__input'], inputClass]"
         type="radio"
         v-bind="$attrs"
         :name="name"
@@ -14,8 +14,8 @@
         :value="value"
         ref="radio"
       >
-      <span class="cdr-radio__figure" />
-      <div :class="['cdr-radio__content', contentClass]">
+      <span :class="$style['cdr-radio__figure']" />
+      <div :class="[$style['cdr-radio__content'], contentClass]">
         <!-- @slot innerHTML inside of radio component -->
         <slot/>
       </div>
@@ -95,7 +95,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrRadio.pcss';
 </style>

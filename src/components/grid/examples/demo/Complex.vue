@@ -2,8 +2,7 @@
   <!-- eslint-disable max-len -->
   <div data-backstop="row-mosaic">
     <cdr-row
-      cols="1"
-      cols-sm="4"
+      cols="1 4@sm"
     >
       <cdr-col>
         <div class="row-demo">One</div>
@@ -22,13 +21,11 @@
         is-row
       >
         <cdr-col
-          span="12"
-          span-sm="9"
+          span="12 9@sm"
           is-row
         >
           <cdr-col
-            span="12"
-            span-sm="4"
+            span="12 4@sm"
           >
             <div class="row-demo">
               Five
@@ -36,11 +33,9 @@
             </div>
           </cdr-col>
           <cdr-col
-            span="12"
-            span-sm="8"
+            span="12 8@sm"
             is-row
-            cols="1"
-            cols-sm="2"
+            cols="1 2@sm"
           >
             <cdr-col>
               <div class="row-demo">Six</div>
@@ -53,8 +48,7 @@
             </cdr-col>
           </cdr-col>
           <cdr-col
-            span="12"
-            span-sm="9"
+            span="12 9@sm"
           >
             <div class="row-demo">
               Nine
@@ -62,8 +56,7 @@
             </div>
           </cdr-col>
           <cdr-col
-            span="12"
-            span-sm="3"
+            span="12 3@sm"
           >
             <div class="row-demo">
               Ten
@@ -72,8 +65,7 @@
           </cdr-col>
         </cdr-col>
         <cdr-col
-          span="12"
-          span-sm="3"
+          span="12 3@sm"
         >
           <div class="row-demo">
             Eleven
@@ -88,8 +80,7 @@
         </div>
       </cdr-col>
       <cdr-col
-        span="12"
-        span-sm="6"
+        span="12 6@sm"
       >
         <div class="row-demo">
           Thirteen

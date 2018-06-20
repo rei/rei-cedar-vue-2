@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
   .mountain-test {
     background-color: lightgray;
     margin-top: 4rem;
