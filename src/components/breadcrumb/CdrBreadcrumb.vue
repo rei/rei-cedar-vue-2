@@ -92,17 +92,19 @@ export default {
       type: Array,
       default: () => [],
       validator: (value) => {
-        let isValid = true;
         if (value.length && value.length > 0) {
-          value.forEach((breadcrumbItem, index) => {
-            const hasName = breadcrumbItem.item && breadcrumbItem.item.name;
-            if (!hasName) {
-              isValid = false;
-              console.error('Breadcrumb items array is missing item.name value at index ', index); // eslint-disable-line no-console
+          for (let i = 0; i < value.length; i += 1) {
+            if (!(typeof value[i].item === 'object')) {
+              console.error('Breadcrumb items array missing item key at index ', i); // eslint-disable-line no-console
+              return false;
             }
-          });
+            if (!Object.hasOwnProperty.call(value[i].item, 'name')) {
+              console.error('Breadcrumb items array is missing item.name value at index ', i); // eslint-disable-line no-console
+              return false;
+            }
+          }
         }
-        return isValid;
+        return true;
       },
     },
     /**
@@ -153,9 +155,7 @@ export default {
   },
   methods: {
     getBreadcrumbWidth() {
-      console.log('KRIS cdrBreadcrumb = ', this.$refs.cdrBreadcrumbList);
       const breadcrumbsElements = Array.from(this.$refs.cdrBreadcrumbList.children);
-      console.log('KRIS breadcrumbArray = ', breadcrumbsElements);
       let totalWidth = 0;
       breadcrumbsElements.forEach((element) => {
         totalWidth += element.offsetWidth || 0;
