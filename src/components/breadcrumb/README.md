@@ -70,3 +70,7 @@ This property is the string that is displayed upon rendering the breadcrumb elem
 
   This property respresents the ratio between breadcrumb width vs container width that truncation will occur.  The default is 0.8 which means that truncation will occur when the breadcrumb width reaches 80% of the container width.  A user can change this if they want the breadcrumb to truncate at a lesser or greater breadcrumb width.
 
+#### truncationXSThreshold
+
+  This property respresents the ratio between breadcrumb width vs container width that truncation will occur on XS breakpoint.  The default is 1.0 which means that truncation will occur when the breadcrumb width reaches 100% of the container width.  A user can change this if they want the breadcrumb to truncate at a lesser or greater breadcrumb width on the XS breakpoint.
+
