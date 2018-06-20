@@ -177,7 +177,6 @@
     "sourceMap": false
   },
   "dependencies": {
-    "@rei/cdr-icon": "^0.2.1",
     "rei-cedar-tokens": "git+https://github.com/rei/rei-cedar-tokens.git#0.1.4"
   }
 }
