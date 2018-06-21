@@ -76,6 +76,8 @@
       class="cpg-section"
       data-backstop="caption"
     />
+
+    <tables />
     <router-view />
   </div>
 </template>

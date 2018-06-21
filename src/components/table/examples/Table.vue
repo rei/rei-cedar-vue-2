@@ -47,6 +47,18 @@
             test
           </td>
         </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
       </tbody>
     </cdr-table>
   </div>

@@ -16,6 +16,7 @@ import CdrRating from 'componentsdir/rating/CdrRating';
 import CdrRow from 'componentsdir/grid/CdrRow';
 import CdrSelect from 'componentsdir/select/CdrSelect';
 import CdrText from 'componentsdir/text/CdrText';
+import CdrTable from 'componentsdir/table/CdrTable';
 
 export default {
   CdrLink,
@@ -36,4 +37,5 @@ export default {
   CdrRow,
   CdrSelect,
   CdrText,
+  CdrTable,
 };
