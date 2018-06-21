@@ -1,10 +1,14 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <table class="cdr-table">
-    <!-- @slot table placed into data table component -->
-    <slot />
-  </table>
+  <div class="cdr-table">
+    <div class="scroll-container">
+      <table>
+        <!-- @slot table placed into data table component -->
+        <slot />
+      </table>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -27,5 +31,6 @@ export default {
 
 <style>
   @import '../../css/settings/_index.pcss';
+  @import './styles/vars/CdrTable.vars.pcss';
   @import './styles/CdrTable.pcss';
 </style>

@@ -8,20 +8,21 @@
   TOC:
 
     :Base - CdrTable
+      :States
+        :Breakpoint Variants
 ========================================================================== */
 
 .cdr-table {
   @include redwood-display-20();
   
-  td {
-    max-width: 95px;
-    border: 1px solid $partly-cloudy;
-    padding: $inset-1-x;
+  table {
+    empty-cells: show;
   }
   
   th {
     border: 1px solid $partly-cloudy;
     color: $heart-of-darkness;
+    width: $table-cell-width;
   }
 
   thead {
@@ -40,8 +41,74 @@
   }
 
   tbody {
-    tr:nth-of-type(even) {
-      background-color: lightgrey;
+    tr {
+      &:nth-of-type(even) {
+        background-color: lightgrey;
+      }
+      
+      td {
+        width: $table-cell-width;
+        border: 1px solid $partly-cloudy;
+        text-align: left;
+        padding: $inset-1-x;
+      }
+    }
+  }
+
+  /* Breakpoint variants
+    ========================================================================== */
+
+  /* @extra-small
+    0px - 767px
+    ========== */
+  @media (--xs-mq-only) {
+    /* scroll with more than two columns */
+
+    .scroll-container {
+      margin-left: calc($table-cell-width - 1px);
+
+      td {
+        width: $table-cell-width;
+      }
+
+      thead {
+        th {
+          &:nth-last-child(n+3):first-child {
+            left: 0;
+            position: absolute;
+            width: $table-cell-width;
+            border-right: 4px solid $grey-matter;
+            border-bottom: 2px solid $grey-matter;
+            z-index: 1;
+            margin-top: -1px;
+
+            &::before {
+              content: '\a0';
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          &:first-child {
+            th {
+              margin-top: -1px;
+            }
+          }
+
+          th {
+            &:nth-last-child(n+3):first-child {
+              left: 0;
+              position: absolute;
+              width: $table-cell-width;
+              border-right: 4px solid $grey-matter;
+              z-index: 1;
+              padding: $inset-1-x;
+            }
+          }
+        }
+      }
     }
   }
 }
