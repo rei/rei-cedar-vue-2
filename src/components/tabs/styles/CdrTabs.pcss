@@ -13,8 +13,30 @@
       :header-item
 ========================================================================== */
 
-.cdr-tabs__header {
-  width: 100%;
-  display: inline-flex;
-  align-content: stretch;
+.cdr-tabs {
+  &__header {
+    width: 100%;
+    display: inline-flex;
+    align-content: stretch;
+    border-bottom: 1px solid black;
+    padding: 0;
+    margin-bottom: 6px;
+  }
+
+  &__header-item {
+    display: inline-flex;
+    margin-right: 10px;
+    margin-bottom: -5px;
+    padding: 6px;
+    border-bottom: 5px solid transparent;
+  }
+
+  &__underline {
+    width: 10px;
+    height: 4px;
+    background: red;
+    margin: 0;
+    transition: 0.3s ease-in-out;
+    display: block;
+  }
 }

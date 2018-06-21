@@ -22,6 +22,7 @@ export default {
   data() {
     return {
       active: false,
+      offsetX: 0,
       tabId: this.id || this.key,
     };
   },
@@ -33,6 +34,10 @@ export default {
   methods: {
     setActive(state) {
       this.active = state;
+    },
+    setOffsetX(x) {
+      console.log('KRIS set offset X called with ', x);
+      this.offsetX = x;
     },
   },
 };
