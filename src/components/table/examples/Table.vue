@@ -1,6 +1,60 @@
 <template>
   <div>
-    <h2>table</h2>
+    <h2>default table</h2>
+    <cdr-table>
+      <tbody>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <h2>default table with header</h2>
     <cdr-table>
       <thead>
         <tr>

@@ -24,21 +24,24 @@
     color: $heart-of-darkness;
   }
 
-  th[scope="row"]:first-child {
-    border-right: 4px solid $grey-matter;
-  }
-
   thead {
     border-bottom: 2px solid $grey-matter;
-    
-    th:first-child {
-      border-right: 4px solid $grey-matter;
+
+    th:first-child,
+    td:first-child {
+      border-right: 2px solid $grey-matter;
+    }
+
+    & + tbody {
+      th:first-child {
+        border-right: 2px solid $grey-matter;
+      }
     }
   }
 
   tbody {
     tr:nth-of-type(even) {
-      background-color: lightblue;
+      background-color: lightgrey;
     }
   }
 }
