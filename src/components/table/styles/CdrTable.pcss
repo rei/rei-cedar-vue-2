@@ -9,3 +9,36 @@
 
     :Base - CdrTable
 ========================================================================== */
+
+.cdr-table {
+  @include redwood-display-20();
+  
+  td {
+    max-width: 95px;
+    border: 1px solid $partly-cloudy;
+    padding: $inset-1-x;
+  }
+  
+  th {
+    border: 1px solid $partly-cloudy;
+    color: $heart-of-darkness;
+  }
+
+  th[scope="row"]:first-child {
+    border-right: 4px solid $grey-matter;
+  }
+
+  thead {
+    border-bottom: 2px solid $grey-matter;
+    
+    th:first-child {
+      border-right: 4px solid $grey-matter;
+    }
+  }
+
+  tbody {
+    tr:nth-of-type(even) {
+      background-color: lightblue;
+    }
+  }
+}
