@@ -8,6 +8,8 @@ module.exports = {
       resolve: createResolver({
         // use aliases defined in webpack config
         alias: webpackConfig.resolve.alias,
+        // include where to look for modules
+        modules: ['node_modules'],
       }),
     },
     'postcss-strip-inline-comments': {},
