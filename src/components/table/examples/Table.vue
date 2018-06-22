@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>default table</h2>
+    <h2>default table (srollable mobile)</h2>
     <cdr-table>
       <tbody>
         <tr>
@@ -54,7 +54,7 @@
       </tbody>
     </cdr-table>
 
-    <h2>default table with header</h2>
+    <h2>default table with header (scrollable mobile)</h2>
     <cdr-table>
       <thead>
         <tr>
@@ -103,6 +103,272 @@
         </tr>
         <tr>
           <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <h2>default table (srollable tablet)</h2>
+    <cdr-table>
+      <tbody>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <h2>default table with header (scrollable tablet)</h2>
+    <cdr-table>
+      <thead>
+        <tr>
+          <th/>
+          <th>one</th>
+          <th>two</th>
+          <th>three</th>
+          <th>four</th>
+          <th>five</th>
+          <th>six</th>
+          <th>seven</th>
+          <th>eight</th>
+          <th>nine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
           <td>
             test
           </td>
