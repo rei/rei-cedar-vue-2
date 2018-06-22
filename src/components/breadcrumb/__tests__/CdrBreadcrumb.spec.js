@@ -79,6 +79,24 @@ describe('CdrBreadcrumb.vue', () => {
     expect(shouldTruncate).toBe(true);
   });
 
+  it('breadcrumb items validator should return true for valid items prop', () => {
+    const wrapper = shallowMount(CdrBreadcrumb);
+    let validItems = BreadcrumbItems;
+    expect(wrapper.vm.$options.props.items.validator(validItems)).toBe(true);
+  });
+
+  it('breadcrumb items validator should return false if item not an object', () => {
+    const wrapper = shallowMount(CdrBreadcrumb);
+    let invalidItems = [{badItem:''},{item:{noname:''}}];
+    expect(wrapper.vm.$options.props.items.validator(invalidItems)).toBe(false);
+  });
+
+  it('breadcrumb items validator should return false if item does not contain name', () => {
+    const wrapper = shallowMount(CdrBreadcrumb);
+    let invalidItems = [{item:{noname:''}}];
+    expect(wrapper.vm.$options.props.items.validator(invalidItems)).toBe(false);
+  });
+
   it('breadcrumb breakpoints isXS returns true at extra small breakpoint', () => {
     window.outerWidth = 600; // Force xs screen size
     const wrapper = shallowMount(CdrBreadcrumb);
