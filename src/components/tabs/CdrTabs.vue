@@ -6,8 +6,8 @@
       :class="$style['cdr-tabs__header']"
       ref="cdrTabsHeader">
       <li
-        v-for="(tab, index) in tabs"
-        :key="index"
+        v-for="tab in tabs"
+        :key="tab.id"
         :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]"
         @click="handleClick(tab, $event)">
         <a>
@@ -17,7 +17,7 @@
     </ol>
     <hr
       :class="$style['cdr-tabs__underline']"
-      :style="{transform: 'translateX(' + underlineOffsetX + ')'}">
+      :style="underlineStyle">
     <div class="cdr-tabs__content-container">
       <slot/>
     </div>
@@ -40,34 +40,50 @@ export default {
     baseClass() {
       return 'cdr-tabs';
     },
+    underlineStyle() {
+      return `margin-left: ${this.underlineOffsetX}px`;
+    },
   },
+  // watch: {
+  //   tabs() {
+  //     this.$nextTick(this.initializeOffsets());
+  //   },
+  // },
   created() {
     this.tabs = this.$children;
   },
   mounted() {
-    let offsetX = 0;
-    const tabsHeaderElements = Array.from(this.$refs.cdrTabsHeader.children);
-    console.log('KRIS cdrTabsHeader = ', this.$refs.cdrTabsHeader.children);
-    console.log('KRIS cdrTabsHeader Array = ', this.tabsHeaderElements);
-    tabsHeaderElements.forEach((tab) => {
-      tab.setOffsetX(offsetX);
-      console.log('KRIS tab = ', tab);
-      offsetX += tab.offsetWidth;
-    });
+    console.log('KRIS mounted triggered');
+  },
+  updated() {
+    console.log('KRIS updated triggered');
+    this.initializeOffsets();
   },
   methods: {
-    handleClick(tabClicked) {
+    handleClick(tabClicked, event) {
       console.log('KRIS tabclicked = ', tabClicked);
+      console.log('KRIS event = ', event);
       const selectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab) => {
         tab.setActive(selectedTab.name === tab.name);
       });
-      this.underlineOffsetX = tabClicked.offsetX;
+      this.underlineOffsetX = event.currentTarget.offsetLeft;
+      // this.underlineStyle.transform = `translateX(${this.underlineOffsetX})`;
       console.log('KRIS underlineOffsetX = ', this.underlineOffsetX);
       console.log('KRIS tabclicked.offsetX = ', tabClicked.offsetX);
     },
     isActiveTab(tab) {
       return tab.active;
+    },
+    initializeOffsets() {
+      const elements = Array.from(this.$refs.cdrTabsHeader.children);
+      let offsetX = 0;
+      elements.forEach((element, index) => {
+        this.tabs[index].setOffsetX(offsetX);
+        console.log('KRIS element = ', element);
+        console.log('KRIS tab = ', this.tabs[index]);
+        offsetX += element.offsetWidth;
+      });
     },
   },
 };
