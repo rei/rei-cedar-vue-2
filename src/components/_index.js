@@ -1,4 +1,5 @@
 import CdrLink from 'componentsdir/link/CdrLink';
+import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
 import CdrButton from 'componentsdir/button/CdrButton';
 import CdrCard from 'componentsdir/card/CdrCard';
 import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
@@ -23,6 +24,7 @@ export default {
   CdrAccordion,
   CdrAccordionItem,
   CdrLink,
+  CdrBreadcrumb,
   CdrButton,
   CdrCard,
   CdrCheckbox,

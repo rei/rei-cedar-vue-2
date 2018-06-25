@@ -2,8 +2,7 @@
   <div>
     <h3>Image modifiers</h3>
     <cdr-row
-      cols="2"
-      cols-md="4"
+      cols="2 4@md"
     >
       <cdr-col>
         <div>
