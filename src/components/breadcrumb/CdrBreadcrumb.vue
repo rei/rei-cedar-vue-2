@@ -14,23 +14,26 @@
         v-if="truncate"
         @click="shouldTruncate = false"
         :class="$style['cdr-breadcrumb__item']">
-        <cdr-icon-only-button
+        <cdr-button
+          :icon-only="true"
           aria-expanded="false"
           aria-label="ellipsis"
           :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]">
           <!-- <cdr-icon :class="$style['cdr-breadcrumb__ellipses-icon']">
             <path d=""/>
           </cdr-icon> -->
-          <svg
-            :class="$style['cdr-breadcrumb__ellipses-icon']"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24">
-            <title>
-              ellipsis
-            </title>
-            <path d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-          </svg>
-        </cdr-icon-only-button>
+          <template name="icon">
+            <svg
+              :class="$style['cdr-breadcrumb__ellipses-icon']"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24">
+              <title>
+                ellipsis
+              </title>
+              <path d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+            </svg>
+          </template>
+        </cdr-button>
         <span
           :class="$style['cdr-breadcrumb__delimiter']"
           aria-hidden="true">
@@ -69,13 +72,13 @@
 import modifier from 'mixinsdir/modifier';
 import breakpoints from 'mixinsdir/breakpoints';
 // import CdrIcon from 'componentsdir/icon/CdrIcon';
-import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
+import CdrButton from 'componentsdir/button/CdrButton';
 import debounce from 'lodash/debounce';
 
 export default {
   name: 'CdrBreadcrumb',
   components: {
-    CdrIconOnlyButton,
+    CdrButton,
     // CdrIcon,
   },
   mixins: [modifier, breakpoints],

@@ -80,7 +80,18 @@ describe('CdrButton.vue', () => {
 
   it('does not add icon class when slot is unused', () => {
     const wrapper = shallowMount(CdrButton);
-    expect(wrapper.vm.hasIconClass).toBe(null);
+    expect(wrapper.vm.iconClass).toBe('');
+  });
+
+  it('adds classes for icon only and on-dark', () => {
+    const wrapper = shallowMount(CdrButton, {
+      propsData: {
+        iconOnly: true,
+        onDark: true,
+      }
+    });
+    expect(wrapper.classes()).toContain('cdr-button--on-dark');
+    expect(wrapper.classes()).toContain('cdr-button--icon-only');
   });
 
   it('adds icon class when slot is used', () => {
@@ -93,7 +104,7 @@ describe('CdrButton.vue', () => {
       },
     });
 
-    expect(wrapper.vm.hasIconClass.split("_")[0]).toBe('cdr-button--has-icon');
+    expect(wrapper.classes()).toContain('cdr-button--has-icon');
   });
 
   it('renders a link', () => {
