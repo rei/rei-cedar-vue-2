@@ -311,10 +311,7 @@
         <h4>cols="auto"</h4>
         <cdr-row
           cols="auto"
-          justify="center"
-          justify-sm="around"
-          justify-md="between"
-          justify-lg="right"
+          justify="center around@sm between@md right@lg"
         >
           <cdr-col>
             <div class="row-demo">AAAAAAAAAAAAAAAAAAAA</div>
@@ -383,7 +380,7 @@
         <h4>nowrap</h4>
         <cdr-row
           cols="3"
-          nowrap
+          nowrap="nowrap"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -521,7 +518,7 @@
         <h4>vertical</h4>
         <cdr-row
           cols="3"
-          vertical
+          vertical="vertical"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -866,10 +863,9 @@
 
       <div data-backstop="row-sm">
         <h5>Small breakpoint</h5>
-        <p>cols="2" cols-sm="4"</p>
+        <p>cols="2 4@sm"</p>
         <cdr-row
-          cols="2"
-          cols-sm="4"
+          cols="2 4@sm"
         >
           <cdr-col>
             <div class="row-demo">2, 4-sm</div>
@@ -885,8 +881,8 @@
           </cdr-col>
         </cdr-row>
 
-        <p>cols-sm="6"</p>
-        <cdr-row cols-sm="6">
+        <p>cols="6@sm"</p>
+        <cdr-row cols="6@sm">
           <cdr-col>
             <div class="row-demo">auto, 6-sm</div>
           </cdr-col>
@@ -901,10 +897,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-sm="none"</p>
+        <p>gutter="none@sm"</p>
         <cdr-row
           cols="6"
-          gutter-sm="none"
+          gutter="none@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -914,10 +910,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-sm="xxs"</p>
+        <p>gutter="xxs@sm"</p>
         <cdr-row
           cols="6"
-          gutter-sm="xxs"
+          gutter="xxs@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -927,10 +923,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-sm="center"</p>
+        <p>justify="center@sm"</p>
         <cdr-row
           cols="6"
-          justify-sm="center"
+          justify="center@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -940,10 +936,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-sm="right"</p>
+        <p>justify="right@sm"</p>
         <cdr-row
           cols="6"
-          justify-sm="right"
+          justify="right@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -953,10 +949,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-sm="between"</p>
+        <p>justify="between@sm"</p>
         <cdr-row
           cols="6"
-          justify-sm="between"
+          justify="between@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -966,10 +962,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-sm="around"</p>
+        <p>justify="around@sm"</p>
         <cdr-row
           cols="6"
-          justify-sm="around"
+          justify="around@sm"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -979,10 +975,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-sm="top"</p>
+        <p>align="top@sm"</p>
         <cdr-row
           cols="3"
-          align-sm="top"
+          align="top@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -995,10 +991,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-sm="middle"</p>
+        <p>align="middle@sm"</p>
         <cdr-row
           cols="3"
-          align-sm="middle"
+          align="middle@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1011,10 +1007,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-sm="bottom"</p>
+        <p>align="bottom@sm"</p>
         <cdr-row
           cols="3"
-          align-sm="bottom"
+          align="bottom@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1027,10 +1023,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>vertical-sm</p>
+        <p>vertical@sm</p>
         <cdr-row
           cols="3"
-          vertical-sm
+          vertical="vertical@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1046,11 +1042,11 @@
           </cdr-col>
         </cdr-row>
 
-        <p>wrap-sm</p>
+        <p>wrap@sm</p>
         <cdr-row
           cols="3"
-          nowrap
-          wrap-sm
+          nowrap="nowrap"
+          wrap="wrap@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1066,10 +1062,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>nowrap-sm</p>
+        <p>nowrap@sm</p>
         <cdr-row
           cols="3"
-          nowrap-sm
+          nowrap="nowrap@sm"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1088,10 +1084,9 @@
 
       <div data-backstop="row-md">
         <h5>Medium breakpoint</h5>
-        <p>cols="2" cols-md="4"</p>
+        <p>cols="2 4@md"</p>
         <cdr-row
-          cols="2"
-          cols-md="4"
+          cols="2 4@md"
         >
           <cdr-col>
             <div class="row-demo">2, 4-md</div>
@@ -1107,8 +1102,8 @@
           </cdr-col>
         </cdr-row>
 
-        <p>cols-md="6"</p>
-        <cdr-row cols-md="6">
+        <p>cols="6@md"</p>
+        <cdr-row cols="6@md">
           <cdr-col>
             <div class="row-demo">auto, 6-md</div>
           </cdr-col>
@@ -1123,10 +1118,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-md="none"</p>
+        <p>gutter="none@sm"</p>
         <cdr-row
           cols="6"
-          gutter-md="none"
+          gutter="none@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1136,10 +1131,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-md="xxs"</p>
+        <p>gutter="xxs@md"</p>
         <cdr-row
           cols="6"
-          gutter-md="xxs"
+          gutter="xxs@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1149,10 +1144,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-md="center"</p>
+        <p>justify="center@md"</p>
         <cdr-row
           cols="6"
-          justify-md="center"
+          justify="center@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1162,10 +1157,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-md="right"</p>
+        <p>justify="right@md"</p>
         <cdr-row
           cols="6"
-          justify-md="right"
+          justify="right@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1175,10 +1170,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-md="between"</p>
+        <p>justify="between@md"</p>
         <cdr-row
           cols="6"
-          justify-md="between"
+          justify="between@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1188,10 +1183,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-md="around"</p>
+        <p>justify="around@md"</p>
         <cdr-row
           cols="6"
-          justify-md="around"
+          justify="around@md"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1201,10 +1196,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-md="top"</p>
+        <p>align="top@md"</p>
         <cdr-row
           cols="3"
-          align-md="top"
+          align="top@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1217,10 +1212,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-md="middle"</p>
+        <p>align="middle@md"</p>
         <cdr-row
           cols="3"
-          align-md="middle"
+          align="middle@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1233,10 +1228,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-md="bottom"</p>
+        <p>align="bottom@md"</p>
         <cdr-row
           cols="3"
-          align-md="bottom"
+          align="bottom@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1249,10 +1244,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>vertical-md</p>
+        <p>vertical@md</p>
         <cdr-row
           cols="3"
-          vertical-md
+          vertical="vertical@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1268,11 +1263,11 @@
           </cdr-col>
         </cdr-row>
 
-        <p>wrap-md</p>
+        <p>wrap@md</p>
         <cdr-row
           cols="3"
-          nowrap
-          wrap-md
+          nowrap="nowrap"
+          wrap="wrap@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1288,10 +1283,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>nowrap-md</p>
+        <p>nowrap@md</p>
         <cdr-row
           cols="3"
-          nowrap-md
+          nowrap="nowrap@md"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1310,10 +1305,9 @@
 
       <div data-backstop="row-lg">
         <h5>Large breakpoint</h5>
-        <p>cols="2" cols-lg="4"</p>
+        <p>cols="2 4@lg"</p>
         <cdr-row
-          cols="2"
-          cols-lg="4"
+          cols="2 4@lg"
         >
           <cdr-col>
             <div class="row-demo">2, 4-lg</div>
@@ -1329,8 +1323,8 @@
           </cdr-col>
         </cdr-row>
 
-        <p>cols-lg="6"</p>
-        <cdr-row cols-lg="6">
+        <p>cols="6@lg"</p>
+        <cdr-row cols="6@lg">
           <cdr-col>
             <div class="row-demo">auto, 6-lg</div>
           </cdr-col>
@@ -1345,10 +1339,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-lg="none"</p>
+        <p>gutter="none@lg"</p>
         <cdr-row
           cols="6"
-          gutter-lg="none"
+          gutter="none@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1358,10 +1352,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter-lg="xxs"</p>
+        <p>gutter="xxs@lg"</p>
         <cdr-row
           cols="6"
-          gutter-lg="xxs"
+          gutter="xxs@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1371,10 +1365,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-lg="center"</p>
+        <p>justify="center@lg"</p>
         <cdr-row
           cols="6"
-          justify-lg="center"
+          justify="center@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1384,10 +1378,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-lg="right"</p>
+        <p>justify="right@lg"</p>
         <cdr-row
           cols="6"
-          justify-lg="right"
+          justify="right@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1397,10 +1391,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-lg="between"</p>
+        <p>justify="between@lg"</p>
         <cdr-row
           cols="6"
-          justify-lg="between"
+          justify="between@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1410,10 +1404,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify-lg="around"</p>
+        <p>justify="around@lg"</p>
         <cdr-row
           cols="6"
-          justify-lg="around"
+          justify="around@lg"
         >
           <cdr-col>
             <div class="row-demo">6</div>
@@ -1423,10 +1417,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-lg="top"</p>
+        <p>align="top@lg"</p>
         <cdr-row
           cols="3"
-          align-lg="top"
+          align="top@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1439,10 +1433,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-lg="middle"</p>
+        <p>align="middle@lg"</p>
         <cdr-row
           cols="3"
-          align-lg="middle"
+          align="middle@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1455,10 +1449,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align-lg="bottom"</p>
+        <p>align="bottom@lg"</p>
         <cdr-row
           cols="3"
-          align-lg="bottom"
+          align="bottom@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1471,10 +1465,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>vertical-lg</p>
+        <p>vertical@lg</p>
         <cdr-row
           cols="3"
-          vertical-lg
+          vertical="vertical@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1490,11 +1484,11 @@
           </cdr-col>
         </cdr-row>
 
-        <p>wrap-lg</p>
+        <p>wrap@lg</p>
         <cdr-row
           cols="3"
-          nowrap
-          wrap-lg
+          nowrap="nowrap"
+          wrap="wrap@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1510,10 +1504,10 @@
           </cdr-col>
         </cdr-row>
 
-        <p>nowrap-lg</p>
+        <p>nowrap@lg</p>
         <cdr-row
           cols="3"
-          nowrap-lg
+          nowrap="nowrap@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1534,10 +1528,7 @@
         <h4>Mix and match responsive row classes</h4>
         <p>1 > 2-sm > 3-md > 4-lg </p>
         <cdr-row
-          cols="1"
-          cols-sm="2"
-          cols-md="3"
-          cols-lg="4"
+          cols="1 2@sm 3@md 4@lg"
         >
           <cdr-col>
             <div class="row-demo"/>
@@ -1561,9 +1552,7 @@
         <p>justify (default@xs > center@sm > right@md > around@lg)</p>
         <cdr-row
           cols="6"
-          justify-sm="center"
-          justify-md="right"
-          justify-lg="around"
+          justify="center@sm right@md around@lg"
         >
           <cdr-col>
             <div class="row-demo"/>
@@ -1575,9 +1564,7 @@
         <p>align (default@xs > top@sm > middle@md > bottom@lg)</p>
         <cdr-row
           cols="3"
-          align-sm="top"
-          align-md="middle"
-          align-lg="bottom"
+          align="top@sm middle@md bottom@lg"
         >
           <cdr-col>
             <div class="row-demo">3</div>
@@ -1594,33 +1581,33 @@
       <h4>cdr-col responsive options</h4>
       <div data-backstop="col-sm">
         <h5>Small breakpoint</h5>
-        <p>span-sm="#"</p>
+        <p>span="#@sm"</p>
         <cdr-row>
-          <cdr-col span-sm="3">
+          <cdr-col span="3@sm">
             <div class="row-demo">auto, 3-sm</div>
           </cdr-col>
           <cdr-col>
             <div class="row-demo">auto</div>
           </cdr-col>
         </cdr-row>
-        <p>offset-right-sm="1" offset-left-sm="1"</p>
+        <p>offset-right="1@sm" offset-left="1@sm"</p>
         <cdr-row>
-          <cdr-col offset-right-sm="1">
+          <cdr-col offset-right="1@sm">
             <div class="row-demo">right 1</div>
           </cdr-col>
-          <cdr-col offset-left-sm="1">
+          <cdr-col offset-left="1@sm">
             <div class="row-demo">left 1</div>
           </cdr-col>
         </cdr-row>
-        <p>align-self-sm</p>
+        <p>align-self@sm</p>
         <cdr-row>
-          <cdr-col align-self-sm="top">
+          <cdr-col align-self="top@sm">
             <div class="row-demo">top</div>
           </cdr-col>
-          <cdr-col align-self-sm="middle">
+          <cdr-col align-self="middle@sm">
             <div class="row-demo">middle</div>
           </cdr-col>
-          <cdr-col align-self-sm="bottom">
+          <cdr-col align-self="bottom@sm">
             <div class="row-demo">bottom</div>
           </cdr-col>
           <cdr-col>
@@ -1631,33 +1618,33 @@
 
       <div data-backstop="col-md">
         <h5>Medium breakpoint</h5>
-        <p>span-md="#"</p>
+        <p>span="#@md"</p>
         <cdr-row>
-          <cdr-col span-md="3">
+          <cdr-col span="3@md">
             <div class="row-demo">auto, 3-md</div>
           </cdr-col>
           <cdr-col>
             <div class="row-demo">auto</div>
           </cdr-col>
         </cdr-row>
-        <p>offset-right-md="1" offset-left-md="1"</p>
+        <p>offset-right="1@md" offset-left="1@md"</p>
         <cdr-row>
-          <cdr-col offset-right-md="1">
+          <cdr-col offset-right="1@md">
             <div class="row-demo">right 1</div>
           </cdr-col>
-          <cdr-col offset-left-md="1">
+          <cdr-col offset-left="1@md">
             <div class="row-demo">left 1</div>
           </cdr-col>
         </cdr-row>
-        <p>align-self-md</p>
+        <p>align-self@md</p>
         <cdr-row>
-          <cdr-col align-self-md="top">
+          <cdr-col align-self="top@md">
             <div class="row-demo">top</div>
           </cdr-col>
-          <cdr-col align-self-md="middle">
+          <cdr-col align-self="middle@md">
             <div class="row-demo">middle</div>
           </cdr-col>
-          <cdr-col align-self-md="bottom">
+          <cdr-col align-self="bottom@md">
             <div class="row-demo">bottom</div>
           </cdr-col>
           <cdr-col>
@@ -1668,33 +1655,33 @@
 
       <div data-backstop="col-lg">
         <h5>Large breakpoint</h5>
-        <p>span-lg="#"</p>
+        <p>span="#@lg"</p>
         <cdr-row>
-          <cdr-col span-lg="3">
+          <cdr-col span="3@lg">
             <div class="row-demo">auto, 3-lg</div>
           </cdr-col>
           <cdr-col>
             <div class="row-demo">auto</div>
           </cdr-col>
         </cdr-row>
-        <p>offset-right-lg="1" offset-left-lg="1"</p>
+        <p>offset-right="1@lg" offset-left-lg="1"</p>
         <cdr-row>
-          <cdr-col offset-right-lg="1">
+          <cdr-col offset-right="1@lg">
             <div class="row-demo">right 1</div>
           </cdr-col>
-          <cdr-col offset-left-lg="1">
+          <cdr-col offset-left="1@lg">
             <div class="row-demo">left 1</div>
           </cdr-col>
         </cdr-row>
-        <p>align-self-lg</p>
+        <p>align-self@lg</p>
         <cdr-row>
-          <cdr-col align-self-lg="top">
+          <cdr-col align-self="top@lg">
             <div class="row-demo">top</div>
           </cdr-col>
-          <cdr-col align-self-lg="middle">
+          <cdr-col align-self="middle@lg">
             <div class="row-demo">middle</div>
           </cdr-col>
-          <cdr-col align-self-lg="bottom">
+          <cdr-col align-self="bottom@lg">
             <div class="row-demo">bottom</div>
           </cdr-col>
           <cdr-col>
@@ -1711,8 +1698,7 @@
     <div data-backstop="row-mosaic-list">
       <cdr-row
         type="list"
-        cols="1"
-        cols-sm="4"
+        cols="1 4@sm"
       >
         <cdr-col>
           <div class="row-demo">One</div>
@@ -1732,14 +1718,12 @@
           type="list"
         >
           <cdr-col
-            span="12"
-            span-sm="9"
+            span="12 9@sm"
             is-row
             type="list"
           >
             <cdr-col
-              span="12"
-              span-sm="4"
+              span="12 4@sm"
             >
               <div class="row-demo">
                 Five
@@ -1747,11 +1731,9 @@
               </div>
             </cdr-col>
             <cdr-col
-              span="12"
-              span-sm="8"
+              span="12 8@sm"
               is-row
-              cols="1"
-              cols-sm="2"
+              cols="1 2@sm"
               type="list"
             >
               <cdr-col>
@@ -1765,8 +1747,7 @@
               </cdr-col>
             </cdr-col>
             <cdr-col
-              span="12"
-              span-sm="9"
+              span="12 9@sm"
             >
               <div class="row-demo">
                 Nine
@@ -1774,8 +1755,7 @@
               </div>
             </cdr-col>
             <cdr-col
-              span="12"
-              span-sm="3"
+              span="12 3@sm"
             >
               <div class="row-demo">
                 Ten
@@ -1784,8 +1764,7 @@
             </cdr-col>
           </cdr-col>
           <cdr-col
-            span="12"
-            span-sm="3"
+            span="12 3@sm"
           >
             <div class="row-demo">
               Eleven
@@ -1800,8 +1779,7 @@
           </div>
         </cdr-col>
         <cdr-col
-          span="12"
-          span-sm="6"
+          span="12 6@sm"
         >
           <div class="row-demo">
             Thirteen

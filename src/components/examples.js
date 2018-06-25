@@ -1,4 +1,5 @@
 import links from 'componentsdir/link/examples/Links';
+import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
 import cards from 'componentsdir/card/examples/Cards';
 import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
@@ -20,6 +21,7 @@ import utilities from 'componentsdir/Utilities/Utilities';
 
 export default {
   links,
+  breadcrumb,
   buttons,
   cards,
   checkboxes,
