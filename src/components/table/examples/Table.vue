@@ -381,6 +381,12 @@
         </tr>
       </tbody>
     </cdr-table>
+
+    <h2>compact table</h2>
+    <cdr-table modifer="compact">
+      <tbody>
+      </tbody>
+    </cdr-table>
   </div>
 </template>
 

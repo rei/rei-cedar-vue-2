@@ -14,53 +14,64 @@
 
 .cdr-table {
   @include redwood-display-20();
+
+  table {
+    margin-bottom: 12px;
   
-  th,
-  td {
-    border: 1px solid $partly-cloudy;
-    color: $heart-of-darkness;
-    min-width: $table-cell-width;
-    padding: $inset-1-x;
-  }
-
-  thead {
-    border-bottom: 2px solid $grey-matter;
-
-    /* Show right border for empty column headers */
     th,
     td {
-      &:first-child {
-        border-right: 2px solid $grey-matter;
-      }
+      border: 1px solid $partly-cloudy;
+      color: $heart-of-darkness;
+      min-width: $table-cell-width;
+      padding: $inset-1-x;
     }
 
-    /* show right border for row headers when there are column headers */
-    & + tbody {
-      th:first-child {
-        border-right: 2px solid $grey-matter;
-      }
-    }
-  }
+    thead {
+      border-bottom: 2px solid $grey-matter;
 
-  tbody {
-    tr {
-      /* Alternate row colors */
-      &:nth-child(even) {
-        background-color: lightgrey;
-
-        /* Make row headers inside alternate colored rows
-          stay same color when they're moved two the left
-          for scrolling.
-        */
-        th[scope="row"] {
-          background-color: lightgrey;
+      /* Show right border for empty column headers */
+      th,
+      td {
+        &:first-child {
+          border-right: 2px solid $grey-matter;
         }
       }
-      
+
+      /* show right border for row headers when there are column headers */
+      & + tbody {
+        th:first-child {
+          border-right: 2px solid $grey-matter;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        /* Alternate row colors */
+        &:nth-child(even) {
+          background-color: lightgrey;
+
+          /* Make row headers inside alternate colored rows
+            stay same color when they're moved two the left
+            for scrolling.
+          */
+          th[scope="row"] {
+            background-color: lightgrey;
+          }
+        }
+        
+        td {
+          border: 1px solid $partly-cloudy;
+          text-align: left;
+          padding: $inset-1-x;
+        }
+      }
+    }
+
+    &--compact {
+      td,
       td {
-        border: 1px solid $partly-cloudy;
-        text-align: left;
-        padding: $inset-1-x;
+        border: none;
       }
     }
   }
@@ -127,6 +138,8 @@
     992px - infinity
   */
   @media (--md-mq) {
+    /* scroll with more than seven columns */
+
     .scroll-container {
       margin-left: calc($table-cell-width - 2px);
       overflow-x: scroll;
