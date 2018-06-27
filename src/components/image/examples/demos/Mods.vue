@@ -28,19 +28,19 @@
           <cdr-img
             class="cdr-img-test"
             ratio="4-3"
-            modifier="rounded"
+            radius="rounded"
             alt="ratio rounded"
             src="http://placehold.it/200x200"
           />
           <cdr-img
             class="cdr-img-test"
-            modifier="rounded"
+            radius="rounded"
             alt="landscape rounded"
             src="http://placehold.it/350x150"
           />
           <cdr-img
             class="cdr-img-test"
-            modifier="rounded"
+            radius="rounded"
             alt="square rounded"
             src="http://placehold.it/200x200"
           />
@@ -52,19 +52,19 @@
           <cdr-img
             class="cdr-img-test"
             ratio="4-3"
-            modifier="circle"
+            radius="circle"
             alt="ratio circle"
             src="http://placehold.it/200x200"
           />
           <cdr-img
             class="cdr-img-test"
-            modifier="circle"
+            radius="circle"
             alt="landscape circle"
             src="http://placehold.it/350x150"
           />
           <cdr-img
             class="cdr-img-test"
-            modifier="circle"
+            radius-="circle"
             alt="square circle"
             src="http://placehold.it/200x200"
           />
