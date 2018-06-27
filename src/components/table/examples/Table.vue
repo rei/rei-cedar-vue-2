@@ -1,5 +1,34 @@
 <template>
   <div>
+    <h2>default table (non-srollable mobile)</h2>
+    <cdr-table>
+      <tbody>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">row header</th>
+          <td>
+            test
+          </td>
+        </tr>
+      </tbody>
+    </cdr-table>
     <h2>default table (srollable mobile)</h2>
     <cdr-table>
       <tbody>
@@ -382,9 +411,57 @@
       </tbody>
     </cdr-table>
 
-    <h2>compact table</h2>
-    <cdr-table modifer="compact">
+    <h2>borderless table</h2>
+    <cdr-table modifier="borderless">
       <tbody>
+        <tr>
+          <th scope="row">borderless</th>
+          <td> test </td>
+          <td> test </td>
+          <td> test </td>
+        </tr>
+        <tr>
+          <th scope="row">borderless</th>
+          <td> test </td>
+          <td> test </td>
+          <td> test </td>
+        </tr>
+        <tr>
+          <th scope="row">borderless</th>
+          <td> test </td>
+          <td> test </td>
+          <td> test </td>
+        </tr>
+        <tr>
+          <th scope="row">borderless</th>
+          <td> test </td>
+          <td> test </td>
+          <td> test </td>
+        </tr>
+        <tr>
+          <th scope="row">borderless</th>
+          <td> test </td>
+          <td> test </td>
+          <td> test </td>
+        </tr>
+        <tr>
+          <th scope="row">borderless</th>
+          <td> test </td>
+          <td> test </td>
+          <td> test </td>
+        </tr>
+        <tr>
+          <th scope="row">borderless</th>
+          <td> test </td>
+          <td> test </td>
+          <td> test </td>
+        </tr>
+        <tr>
+          <th scope="row">borderless</th>
+          <td> test </td>
+          <td> test </td>
+          <td> test </td>
+        </tr>
       </tbody>
     </cdr-table>
   </div>
