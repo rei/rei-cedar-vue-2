@@ -35,7 +35,7 @@ export default {
     console.log(`number of columns:${numberOfCells}\n`); //eslint-disable-line
 
     if (numberOfCells > 2) {
-      cdrTableScrollable.classList.add('scrolling');
+      cdrTableScrollable.classList.add(this.$style['scrolling']); //eslint-disable-line
     }
   },
 };
