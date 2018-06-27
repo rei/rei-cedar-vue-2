@@ -1,12 +1,17 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <div
-    v-show="active"
-    :aria-hidden="!active"
-    :class="[modifierClass]">
-    <slot/>
-  </div>
+  <transition
+    name="fly"
+    v-on="animationHooks">
+    <div
+      v-if="active"
+      :aria-hidden="!active"
+      :class="[modifierClass]"
+      :key="name">
+      <slot/>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -24,20 +29,50 @@ export default {
       active: false,
       offsetX: 0,
       tabId: this.id || this.key,
+      animationDirection: 'flyRight',
     };
   },
   computed: {
     baseClass() {
       return 'cdr-tab';
     },
+    animationHooks() {
+      return {
+        beforeEnter: this.setEnterStart,
+        afterEnter: this.setEnterEnd,
+        beforeLeave: this.setLeaveStart,
+        afterLeave: this.setLeaveEnd,
+        ...this.$listeners,
+      };
+    },
   },
   methods: {
     setActive(state) {
       this.active = state;
     },
+    setAnimationDirection(direction) {
+      this.animationDirection = direction;
+    },
     setOffsetX(x) {
-      console.log('KRIS set offset X called with ', x);
       this.offsetX = x;
+    },
+    setEnterStart(element) {
+      const el = element;
+      el.style.animationDirection = 'reverse';
+      el.classList.add(this.animationDirection);
+    },
+    setEnterEnd(element) {
+      const el = element;
+      el.style.animationDirection = '';
+      el.classList.remove(this.animationDirection);
+    },
+    setLeaveStart(element) {
+      const el = element;
+      el.classList.add(this.animationDirection);
+    },
+    setLeaveEnd(element) {
+      const el = element;
+      el.classList.remove(this.animationDirection);
     },
   },
 };

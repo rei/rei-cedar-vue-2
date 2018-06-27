@@ -18,7 +18,7 @@
     <hr
       :class="$style['cdr-tabs__underline']"
       :style="underlineStyle">
-    <div class="cdr-tabs__content-container">
+    <div :class="$style['cdr-tabs__content-container']">
       <slot/>
     </div>
   </div>
@@ -34,6 +34,9 @@ export default {
     return {
       tabs: [],
       underlineOffsetX: 0,
+      underlineOffsetWidth: 0,
+      widthInitialized: false,
+      activeTabIndex: 0,
     };
   },
   computed: {
@@ -41,49 +44,54 @@ export default {
       return 'cdr-tabs';
     },
     underlineStyle() {
-      return `margin-left: ${this.underlineOffsetX}px`;
+      return {
+        marginLeft: `${this.underlineOffsetX}px`,
+        width: `${this.underlineOffsetWidth}px`,
+      };
     },
   },
-  // watch: {
-  //   tabs() {
-  //     this.$nextTick(this.initializeOffsets());
-  //   },
-  // },
-  created() {
+  beforeMount() {
     this.tabs = this.$children;
   },
   mounted() {
-    console.log('KRIS mounted triggered');
+    if (this.tabs.length > 0) this.tabs[0].setActive(true);
   },
   updated() {
-    console.log('KRIS updated triggered');
     this.initializeOffsets();
   },
   methods: {
     handleClick(tabClicked, event) {
-      console.log('KRIS tabclicked = ', tabClicked);
-      console.log('KRIS event = ', event);
-      const selectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
-      this.tabs.forEach((tab) => {
-        tab.setActive(selectedTab.name === tab.name);
+      const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
+      this.tabs.forEach((tab, index) => {
+        if (newSelectedTab.name === tab.name) {
+          if (this.activeTabIndex < index) {
+            tab.setAnimationDirection('flyRight');
+            this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
+          } else {
+            tab.setAnimationDirection('flyLeft');
+            this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
+          }
+          this.activeTabIndex = index;
+          this.$nextTick(tab.setActive(true));
+        } else {
+          this.$nextTick(tab.setActive(false));
+        }
       });
-      this.underlineOffsetX = event.currentTarget.offsetLeft;
-      // this.underlineStyle.transform = `translateX(${this.underlineOffsetX})`;
-      console.log('KRIS underlineOffsetX = ', this.underlineOffsetX);
-      console.log('KRIS tabclicked.offsetX = ', tabClicked.offsetX);
-    },
-    isActiveTab(tab) {
-      return tab.active;
+      this.underlineOffsetX =
+        event.currentTarget.offsetLeft
+        - event.currentTarget.parentElement.parentElement.offsetLeft;
+      this.underlineOffsetWidth = event.currentTarget.offsetWidth;
     },
     initializeOffsets() {
-      const elements = Array.from(this.$refs.cdrTabsHeader.children);
-      let offsetX = 0;
-      elements.forEach((element, index) => {
-        this.tabs[index].setOffsetX(offsetX);
-        console.log('KRIS element = ', element);
-        console.log('KRIS tab = ', this.tabs[index]);
-        offsetX += element.offsetWidth;
-      });
+      if (!this.widthInitialized) {
+        const elements = Array.from(this.$refs.cdrTabsHeader.children);
+        this.underlineOffsetWidth = elements[0].offsetWidth;
+        this.widthInitialized = true;
+      // elements.forEach((element, index) => {
+        //   this.tabs[index].setOffsetX(offsetX);
+      //   offsetX += element.offsetWidth;
+      // });
+      }
     },
   },
 };
