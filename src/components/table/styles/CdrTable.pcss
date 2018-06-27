@@ -10,101 +10,50 @@
     :Base - CdrTable
       :States
         :Breakpoint Variants
-========================================================================== */
+========================================================================= */
 
 .cdr-table {
-  @include redwood-display-20();
+  margin-bottom: 12px;
 
-  table {
-    margin-bottom: 12px;
-  
-    th,
-    td {
-      border: 1px solid $partly-cloudy;
-      color: $heart-of-darkness;
-      min-width: $table-cell-width;
-      padding: $inset-1-x;
-    }
+  tr {
+    /* Alternate row colors */
+    &:nth-child(even) {
+      background-color: lightgrey;
 
-    thead {
-      border-bottom: 2px solid $grey-matter;
-
-      /* Show right border for empty column headers */
-      th,
-      td {
-        &:first-child {
-          border-right: 2px solid $grey-matter;
-        }
-      }
-
-      /* show right border for row headers when there are column headers */
-      & + tbody {
-        th:first-child {
-          border-right: 2px solid $grey-matter;
-        }
-      }
-    }
-
-    tbody {
-      tr {
-        /* Alternate row colors */
-        &:nth-child(even) {
-          background-color: lightgrey;
-
-          /* Make row headers inside alternate colored rows
-            stay same color when they're moved two the left
-            for scrolling.
-          */
-          th[scope="row"] {
-            background-color: lightgrey;
-          }
-        }
-        
-        td {
-          border: 1px solid $partly-cloudy;
-          text-align: left;
-          padding: $inset-1-x;
-        }
-      }
-    }
-
-    &--compact {
-      td,
-      td {
-        border: none;
+      /* Make row headers inside alternate colored rows
+        stay same color when they're moved two the left
+        for scrolling.
+      */
+      th[scope="row"] {
+        background-color: lightgrey;
       }
     }
   }
-
+  
+  &__wrapper {
+    @include redwood-display-20();
+  }
+  
   /* Breakpoint variants
     ========================================================================== */
 
-  /* @extra-small and up
-    0px - 991px
+  /* @extra-small
+    0px and up
     ========== */
   @media (--xs-mq) {
-    /* scroll with more than two columns */
-
-    .scroll-container {
-      margin-left: calc($table-cell-width - 2px);
-      overflow-x: scroll;
-
+    &__scrollable {
       thead {
         th {
-          /* Move empty column header to left and have content scroll under it
-          when content larger than two columns */
-          &:nth-last-child(n+3):first-child {
-            left: 0;
-            position: absolute;
-            border-bottom: 2px solid $grey-matter;
-            border-right: 4px solid $grey-matter;
-            min-width: $table-cell-width;
-            z-index: 1;
-            margin-top: -1px;
+          border: 1px solid $partly-cloudy;
+          border-bottom: 2px solid $grey-matter;
+          color: $heart-of-darkness;
+          min-width: $table-cell-width;
+          padding: $inset-1-x;
 
-            /* Ensure empty top right left cell has same line height */
-            &::before {
-              content: '\a0';
+          /* show right border for row headers when there are column headers */
+          & + tbody {
+            th:first-child {
+              border-right: 2px solid $grey-matter;
             }
           }
         }
@@ -113,75 +62,55 @@
       tbody {
         tr {
           /* Align top cell correctly */
-          &:first-child {
-            th {
-              margin-top: -1px;
-            }
+          &:first-child th {
+            margin-top: -1px;
           }
 
-          th {
-            &:nth-last-child(n+3):first-child {
-              left: 0;
-              position: absolute;
-              border-right: 4px solid $grey-matter;
-              z-index: 1;
-              padding: $inset-1-x;
-            }
+          /* Default cell styling */
+          th,
+          td {
+            border: 1px solid $partly-cloudy;
+            min-width: $table-cell-width;
+            color: $heart-of-darkness;
+            padding: $inset-1-x;
           }
         }
       }
-    }
-  }
 
-  /*
-    @medium and up
-    992px - infinity
-  */
-  @media (--md-mq) {
-    /* scroll with more than seven columns */
+      &.scrolling {
+        /* scroll with more than two columns */
 
-    .scroll-container {
-      margin-left: calc($table-cell-width - 2px);
-      overflow-x: scroll;
+        /* Move table over to scroll under reader columns */
+        margin-left: calc($table-cell-width - 2px);
+        overflow-x: auto;
 
-      thead {
-        th {
+        thead {
           /* Move empty column header to left and have content scroll under it
           when content larger than two columns */
-          &:nth-last-child(n+7):first-child {
-            left: 0;
-            position: absolute;
-            border-bottom: 2px solid $grey-matter;
-            border-right: 4px solid $grey-matter;
-            min-width: $table-cell-width;
-            z-index: 1;
-            margin-top: -1px;
-
-            /* Ensure empty top right left cell has same line height */
-            &::before {
-              content: '\a0';
-            }
-          }
-        }
-      }
-
-      tbody {
-        tr {
-          /* Align top cell correctly */
-          &:first-child {
-            th {
-              margin-top: -1px;
-            }
-          }
-
-          th {
-            &:nth-last-child(n+7):first-child {
+          th:nth-last-child(n+3) {
+            &:first-child {
               left: 0;
               position: absolute;
               border-right: 4px solid $grey-matter;
               z-index: 1;
-              padding: $inset-1-x;
+              margin-top: -1px;
+
+              /* Ensure empty top right left cell has same line height */
+              &::before {
+                content: '\a0';
+              }
             }
+          }
+        }
+
+        tbody {
+          /* Move row headers to left and have content scroll under it
+          when content larger than two columns */
+          th:nth-last-child(n+3):first-child {
+            left: 0;
+            position: absolute;
+            border-right: 4px solid $grey-matter;
+            z-index: 1;
           }
         }
       }
