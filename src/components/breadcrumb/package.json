@@ -1,9 +1,9 @@
 {
-  "name": "@rei/cdr-link",
-  "version": "1.0.0-next.beta.0",
+  "name": "@rei/cdr-breadcrumb",
+  "version": "0.1.0",
   "author": "REI Software Engineering",
-  "description": "REI Cedar Style Framework - Vue Component for Link",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-link",
+  "description": "REI Cedar Style Framework - Vue Component for Breadcrumb",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-breadcrumb",
   "repository": {
     "type": "git",
     "url": "https://github.com/rei/rei-cedar.git"
@@ -17,17 +17,16 @@
     "dist"
   ],
   "config": {
-    "vue_file": "CdrLink"
+    "vue_file": "CdrBreadcrumb"
   },
-  "main": "dist/cdr-link.js",
-  "style": "dist/cdr-link.css",
+  "main": "dist/cdr-breadcrumb.js",
+  "style": "dist/cdr-breadcrumb.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "node build/build.js",
-    "build:docs": "node build/docs-build.js"
-  },
-  "dependencies": {
-    "@rei/cdr-icon": "^0.1.0"
+    "build:docs": "node build/docs-build.js",
+    "generate": "npm run clean && node build/generate.js",
+    "clean": "rimraf dist comps sprite"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.1.0",
@@ -36,5 +35,9 @@
   "devDependencies": {
     "@rei/cdr-assets": "^0.1.0",
     "pkg-ok": "^1.1.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "lodash.debounce": "^4.0.8"
   }
 }

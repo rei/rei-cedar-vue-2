@@ -14,6 +14,10 @@
       class="cpg-section"
       data-backstop="links"
     />
+    <breadcrumb
+      class="cpg-section"
+      data-backstop="breadcrumbs"
+    />
     <buttons
       class="cpg-section"
       data-backstop="buttons"
