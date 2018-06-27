@@ -26,7 +26,6 @@
           id="default-long-label"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
-          modifier="border-last"
         >
           <ul>
             <li>This is a list item inside an accordion.</li>
@@ -55,7 +54,7 @@
           id="border-aligned-compact-2"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
-          modifier="border-last">
+        >
           Some text inside, should align to the label above.
         </cdr-accordion-item>
       </cdr-accordion>
