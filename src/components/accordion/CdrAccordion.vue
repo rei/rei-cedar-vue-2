@@ -27,5 +27,12 @@ export default {
       default: false,
     },
   },
+  provide() {
+    return {
+      compact: this.compact,
+      borderAligned: this.borderAligned,
+      showAll: this.showAll,
+    };
+  },
 };
 </script>

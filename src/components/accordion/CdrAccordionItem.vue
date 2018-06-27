@@ -2,6 +2,7 @@
   <div
     :class="[modifierClass, styleClass]"
     :id="`${id}-accordion-item`"
+    :ref="`accordion-${id}`"
   >
     <button
       :class="$style['cdr-accordion-item__button']"
@@ -73,10 +74,8 @@ export default {
   },
   data() {
     return {
-      borderAligned: this.$parent.$props.borderAligned,
-      compact: this.$parent.$props.compact,
       maxHeight: 0,
-      isOpen: this.$parent.$props.showAll || this.show,
+      isOpen: this.showAll || this.show,
     };
   },
   computed: {
@@ -108,7 +107,8 @@ export default {
   methods: {
     toggle() {
       this.isOpen = !this.isOpen;
-      this.maxHeight = `${document.getElementById(`${this.$props.id}-collapsible`).clientHeight}px`;
+      const ref = `accordion-${this.$props.id}`;
+      this.maxHeight = `${this.$refs[ref].childNodes[2].childNodes[0].clientHeight}px`;
       const timeout = this.isOpen ? 300 : 50;
 
       setTimeout(() => {
@@ -116,6 +116,7 @@ export default {
       }, timeout);
     },
   },
+  inject: ['compact', 'borderAligned', 'showAll'],
 };
 </script>
 

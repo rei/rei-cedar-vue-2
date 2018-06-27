@@ -4,7 +4,6 @@
     <div class="accordion-group">
       <h3>Default</h3>
       <cdr-accordion
-        :show-all="false"
       >
         <cdr-accordion-item
           id="default"
@@ -12,7 +11,16 @@
           :show="true"
         >
           This is some text. It's not in a <strong>paragraph</strong> element because
-          that would include margin and add space to the container.
+          that would include margin and add space to the container. Lorem ipsum dolor
+          sit amet, consectetur adipiscing elit. Sed dictum fermentum tortor posuere
+          fermentum. Sed interdum vel urna at tempor. Nullam vel sapien odio. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Fusce venenatis ex ut ultricies tincidunt. Suspendisse potenti.
+          Sed ut euismod mi, sit amet porta augue. Proin dictum laoreet blandit. Nulla
+          tempus tellus id ligula sodales ultrices. Proin lacus diam, ornare at libero
+          nec, eleifend vulputate mi. Praesent vestibulum accumsan erat id dapibus.
+          Suspendisse ut laoreet nunc, et tempor eros. Etiam vel commodo velit. Proin
+          egestas fringilla elit et lacinia. Praesent et vehicula massa. Fusce ac purus neque.
         </cdr-accordion-item>
         <cdr-accordion-item
           id="default-long-label"
