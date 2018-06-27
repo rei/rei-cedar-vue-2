@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>default table (non-srollable mobile)</h2>
+    <h2>default table (non-scrollable mobile)</h2>
     <cdr-table>
       <tbody>
         <tr>
@@ -29,7 +29,7 @@
         </tr>
       </tbody>
     </cdr-table>
-    <h2>default table (srollable mobile)</h2>
+    <h2>default table (srcollable mobile)</h2>
     <cdr-table>
       <tbody>
         <tr>
@@ -145,7 +145,7 @@
       </tbody>
     </cdr-table>
 
-    <h2>default table (srollable tablet)</h2>
+    <h2>default table (srcollable tablet)</h2>
     <cdr-table>
       <tbody>
         <tr>
