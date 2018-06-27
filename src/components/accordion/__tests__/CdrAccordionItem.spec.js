@@ -53,6 +53,23 @@ describe('CdrAccordionItem', () => {
       }, 300);
     });
 
+    it('style class checks provided values', () => {
+      const wrapper = shallowMount(CdrAccordionItem, {
+        propsData: propsData,
+        provide: {
+          showAll: false,
+          borderAligned: true,
+          compact: true,
+        },
+        slots: {
+          default: 'This is some slot text.'
+        },
+      });
+
+      expect(wrapper.classes()).toContain('cdr-accordion-item--compact');
+      expect(wrapper.classes()).toContain('cdr-accordion-item--border-aligned');
+    });
+
     it('toggles when isOpen', () => {
       const wrapper = shallowMount(CdrAccordionItem, {
         propsData: propsData,
@@ -69,8 +86,9 @@ describe('CdrAccordionItem', () => {
       expect(wrapper.vm.maxHeight).toBe('none');
       wrapper.vm.toggle();
       expect(wrapper.vm.isOpen).toBe(false);
-      expect(wrapper.vm.maxHeight).toBe()
-
+      setTimeout(() => {
+        expect(wrapper.vm.maxHeight).toBe(0);
+      }, 500);
     });
   });
 });
