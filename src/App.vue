@@ -4,7 +4,7 @@
     class="cdr-container-fluid"
   >
     <h1>Cedar Proving grounds</h1>
-    <router-link
+    <!-- <router-link
       v-for="route in routes"
       :key="route.path"
       :to="route.path">{{ route.name }} *
@@ -30,7 +30,7 @@
       class="cpg-section"
       data-backstop="icon-only-buttons"
     />
-    <cards class="cpg-section"/>
+    <cards class="cpg-section"/> -->
     <!-- <card-content class="cpg-section"></card-content> -->
     <!-- <activity class="cpg-section"/>
     <checkboxes

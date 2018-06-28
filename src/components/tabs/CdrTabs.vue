@@ -11,7 +11,7 @@
         :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]"
         @click="handleClick(tab, $event)">
         <a
-          :href="'#' + tab.name"
+          :href="'/#' + tab.name"
           :class="$style['cdr-tabs__header-item-label']">
           {{ tab.name }}
         </a>
@@ -36,7 +36,7 @@ export default {
     return {
       tabs: [],
       underlineOffsetX: 0,
-      underlineOffsetWidth: 0,
+      underlineWidth: 0,
       widthInitialized: false,
       activeTabIndex: 0,
     };
@@ -48,7 +48,7 @@ export default {
     underlineStyle() {
       return {
         marginLeft: `${this.underlineOffsetX}px`,
-        width: `${this.underlineOffsetWidth}px`,
+        width: `${this.underlineWidth}px`,
       };
     },
   },
@@ -82,12 +82,12 @@ export default {
       this.underlineOffsetX =
         event.currentTarget.offsetLeft
         - event.currentTarget.parentElement.parentElement.offsetLeft;
-      this.underlineOffsetWidth = event.currentTarget.offsetWidth;
+      this.underlineWidth = event.currentTarget.children[0].offsetWidth;
     },
     initializeOffsets() {
       if (!this.widthInitialized) {
         const elements = Array.from(this.$refs.cdrTabsHeader.children);
-        this.underlineOffsetWidth = elements[0].offsetWidth;
+        this.underlineWidth = elements[0].children[0].offsetWidth;
         this.widthInitialized = true;
       // elements.forEach((element, index) => {
         //   this.tabs[index].setOffsetX(offsetX);
