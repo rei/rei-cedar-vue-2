@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.1.0",
+    "@rei/cdr-tokens": "^0.1.7",
     "pkg-ok": "^2.1.0"
   }
 }
