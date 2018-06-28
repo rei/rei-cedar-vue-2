@@ -50,11 +50,15 @@
           min-width: $table-cell-width;
           padding: $inset-1-x;
 
-          /* show right border for row headers when there are column headers */
-          & + tbody {
-            th:first-child {
-              border-right: 2px solid $grey-matter;
-            }
+          &:first-child {
+            border-right: 2px solid $grey-matter;
+          }
+        }
+        
+        /* show right border for row headers when there are column headers */
+        & + tbody {
+          th:first-child {
+            border-right: 2px solid $grey-matter;
           }
         }
       }
@@ -107,6 +111,51 @@
           /* Move row headers to left and have content scroll under it
           when content larger than two columns */
           th:nth-last-child(n+3):first-child {
+            left: 0;
+            position: absolute;
+            border-right: 4px solid $grey-matter;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+
+  /* @medium
+    992px and up
+    ========== */
+  @media (--md-mq) {
+    &___scrollable {
+      &.scrolling {
+        /* scroll with more than two columns */
+
+        /* Move table over to scroll under reader columns */
+        margin-left: calc($table-cell-width - 2px);
+        overflow-x: auto;
+
+        thead {
+          /* Move empty column header to left and have content scroll under it
+          when content larger than two columns */
+          th:nth-last-child(n+7) {
+            &:first-child {
+              left: 0;
+              position: absolute;
+              border-right: 4px solid $grey-matter;
+              z-index: 1;
+              margin-top: -1px;
+
+              /* Ensure empty top right left cell has same line height */
+              &::before {
+                content: '\a0';
+              }
+            }
+          }
+        }
+
+        tbody {
+          /* Move row headers to left and have content scroll under it
+          when content larger than two columns */
+          th:nth-last-child(n+7):first-child {
             left: 0;
             position: absolute;
             border-right: 4px solid $grey-matter;
