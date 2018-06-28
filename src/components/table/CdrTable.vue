@@ -13,6 +13,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import CdrTokens from '@rei/cdr-tokens';
 
 /**
  * Cedar 2 compfor for data table
@@ -26,17 +27,38 @@ export default {
       return 'cdr-table';
     },
   },
-  // Determine whenther or not table shoud be scrollable
+  // Determine whether or not table shoud be scrollable
   mounted() {
-    const cdrTableScrollable =
-      this.$el.getElementsByClassName(this.$style['cdr-table__scrollable'])[0];
-    const cdrTableBody = this.$el.getElementsByTagName('tbody')[0];
-    const numberOfCells = cdrTableBody.getElementsByTagName('tr')[0].cells.length;
-    console.log(`number of columns:${numberOfCells}\n`); //eslint-disable-line
+    const mq = window.matchMedia(`(min-width: ${CdrTokens.breakpointMd})`);
 
-    if (numberOfCells > 2) {
-      cdrTableScrollable.classList.add(this.$style['scrolling']); //eslint-disable-line
-    }
+    mq.addListener(this.screenResize);
+
+    this.screenResize(mq);
+  },
+  methods: {
+    screenResize(mediaQuery) {
+      const cdrTableScrollable =
+        this.$el.getElementsByClassName(this.$style['cdr-table__scrollable'])[0];
+      const cdrTableBody = this.$el.getElementsByTagName('tbody')[0];
+      const numberOfCells = cdrTableBody.getElementsByTagName('tr')[0].cells.length;
+
+      // For screens medium and larger
+      if (mediaQuery.matches) {
+        if (numberOfCells > 7) { // more than 7 cells means scrollable
+          cdrTableScrollable.classList.add(this.$style['scrolling']); //eslint-disable-line
+        } else { // 7 cells or less means non-scrollable
+          cdrTableScrollable.classList.remove(this.$style['scrolling']); //eslint-disable-line
+        }
+      // For xs and sm screens
+      } else if (window.matchMedia(`(max-width: ${CdrTokens.breakpointMd}`).matches) {
+        // more than 2 cells means scrollable
+        if (numberOfCells > 2) {
+          cdrTableScrollable.classList.add(this.$style['scrolling']); //eslint-disable-line
+        } else { // 2 cells or less means non-scrollable
+          cdrTableScrollable.classList.remove(this.$style['scrolling']); //eslint-disable-line
+        }
+      }
+    },
   },
 };
 </script>
