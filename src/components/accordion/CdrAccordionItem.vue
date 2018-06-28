@@ -40,7 +40,7 @@
         :aria-hidden="`${!isOpen}`"
         :id="`${id}-collapsible`"
       >
-        <!-- @default slot for content  -->
+        <!-- @slot innerHTML on the inside of the accordion-item component -->
         <slot/>
       </div>
     </div>
@@ -59,14 +59,23 @@ export default {
   },
   mixins: [modifier],
   props: {
+    /**
+     * The unique id of an accordion-item.
+     */
     id: {
       type: String,
       required: true,
     },
+    /**
+     * The readable text on the accordion-item button.
+     */
     label: {
       type: String,
       required: true,
     },
+    /**
+     * Sets the default isOpen state of the accordion-item, if show-all is false from cdr-accordion.
+     */
     show: {
       type: Boolean,
       default: false,

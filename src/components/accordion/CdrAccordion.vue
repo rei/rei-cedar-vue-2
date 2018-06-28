@@ -2,7 +2,7 @@
   <div
     class="cdr-accordion"
   >
-    <!-- @slot default -->
+    <!-- @slot innerHTML on the inside of the accordion component -->
     <slot />
   </div>
 </template>
@@ -14,14 +14,23 @@ export default {
   name: 'CdrAccordion',
   mixins: [modifier],
   props: {
+    /**
+     * Sets a compact style on children cdr-accordion-item components.
+     */
     compact: {
       type: Boolean,
       default: false,
     },
+    /**
+     * Sets a border-aligned style on children cdr-accordion-item comoponents.
+     */
     borderAligned: {
       type: Boolean,
       default: false,
     },
+    /**
+     * Sets the default isOpen state of all children cdr-accordion-item components.
+     */
     showAll: {
       type: Boolean,
       default: false,
