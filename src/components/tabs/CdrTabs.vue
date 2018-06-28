@@ -10,7 +10,9 @@
         :key="tab.id"
         :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]"
         @click="handleClick(tab, $event)">
-        <a>
+        <a
+          :href="'#' + tab.name"
+          :class="$style['cdr-tabs__header-item-label']">
           {{ tab.name }}
         </a>
       </li>

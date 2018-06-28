@@ -11,6 +11,7 @@
     :Elements
       :header
       :header-item
+      :header-item-button
       :underline
       :content-container
 ========================================================================== */
@@ -20,29 +21,42 @@
     width: 100%;
     display: inline-flex;
     align-content: stretch;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $grey-matter;
     padding: 0;
   }
 
   &__header-item {
     display: inline-flex;
-    margin-right: 15px;
-    margin-bottom: -5px;
-    padding-bottom: 6px;
+  }
+
+  &__header-item-label {
+    @include redwood-display-30;
+
+    margin: 0 $space-1-x 0 0;
+    padding: $inset-half-x-stretch;
+    color: $heart-of-darkness;
+
+    &:active,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $easily-excited;
+    }
   }
 
   &__underline {
     width: 30px;
     margin: 0;
     margin-left: 5px;
-    height: 4px;
-    background: blue;
+    height: $space-quarter-x;
+    background: $easily-excited;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
     display: block;
   }
 
   &__content-container {
     height: 400px;
+    position: relative;
 
     /* .fly-enter-active {
       animation: fly-in 0.5s;
