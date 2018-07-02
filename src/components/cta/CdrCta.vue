@@ -22,15 +22,18 @@ export default {
   },
   mixins: [buttonBase, modifier],
   props: {
+    /**
+      * Render cdr-cta as an <a> or <button> element.
+      */
     tag: {
       type: String,
       default: 'a',
       validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
     },
+    /**
+      * Change the color of the cdr-cta button match different themes.
+      */
     ctaStyle: {
-      /**
-       * Changes the color of the cdr-cta button match different themes.
-       */
       type: String,
       default: 'brand',
       validator: value => (['brand', 'dark', 'light', 'sale'].indexOf(value) >= 0) || false,

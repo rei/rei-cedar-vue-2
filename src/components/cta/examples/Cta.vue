@@ -3,7 +3,6 @@
     <h2>CTA</h2>
     <div class="button-example">
       <cdr-cta
-        href="https://rei.com"
         data-backstop="cdr-cta--brand">
         Default (brand)
       </cdr-cta>
