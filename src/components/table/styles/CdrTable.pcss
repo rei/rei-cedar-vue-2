@@ -15,6 +15,15 @@
 .cdr-table {
   margin-bottom: 12px;
 
+  /* Clear border for all elements inside the table */
+  &--borderless {
+    border: none;
+
+    * {
+      border: none !important;
+    }
+  }
+
   tr {
     /* Alternate row colors */
     &:nth-child(even) {
