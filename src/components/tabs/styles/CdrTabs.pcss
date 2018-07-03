@@ -23,6 +23,7 @@
     align-content: stretch;
     border-bottom: 1px solid $grey-matter;
     padding: 0;
+    overflow-x: scroll;
   }
 
   &__header-item {
@@ -35,6 +36,7 @@
     margin: 0 $space-1-x 0 0;
     padding: $inset-half-x-stretch;
     color: $heart-of-darkness;
+    white-space: nowrap;
 
     &:active,
     &:hover,
@@ -48,6 +50,7 @@
     width: 30px;
     margin: 0;
     margin-left: 5px;
+    margin-bottom: -1px;
     height: $space-quarter-x;
     background: $easily-excited;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);

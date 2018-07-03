@@ -89,10 +89,6 @@ export default {
         const elements = Array.from(this.$refs.cdrTabsHeader.children);
         this.underlineWidth = elements[0].children[0].offsetWidth;
         this.widthInitialized = true;
-      // elements.forEach((element, index) => {
-        //   this.tabs[index].setOffsetX(offsetX);
-      //   offsetX += element.offsetWidth;
-      // });
       }
     },
   },

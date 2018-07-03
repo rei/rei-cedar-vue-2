@@ -59,6 +59,7 @@ export default {
     setEnterStart(element) {
       const el = element;
       el.style.animationDirection = 'reverse';
+      el.style.animationTimingFunction = 'cubic-bezier(0.4, 0, 0.68, .06)';
       el.classList.add(this.animationDirection);
     },
     setEnterEnd(element) {
@@ -69,6 +70,8 @@ export default {
     setLeaveStart(element) {
       const el = element;
       el.classList.add(this.animationDirection);
+      // el.style.animationTimingFunction = 'cubic-bezier(0, 1.52, 0.6, 0.67)';
+      el.style.animationTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
     },
     setLeaveEnd(element) {
       const el = element;
