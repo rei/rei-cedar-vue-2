@@ -24,6 +24,14 @@
     }
   }
 
+  /* Decrease padding for all elements inside the table */
+  &--compact {
+    th,
+    td {
+      padding: $inset-1-x-squish !important;
+    }
+  }
+
   tr {
     /* Alternate row colors */
     &:nth-child(even) {
@@ -56,8 +64,10 @@
           border: 1px solid $partly-cloudy;
           border-bottom: 2px solid $grey-matter;
           color: $heart-of-darkness;
-          min-width: $table-cell-width;
+          min-width: $table-cell-min-width;
+          max-width: $table-cell-max-width;
           padding: $inset-1-x;
+          text-align: left;
 
           &:first-child {
             border-right: 2px solid $grey-matter;
@@ -83,9 +93,11 @@
           th,
           td {
             border: 1px solid $partly-cloudy;
-            min-width: $table-cell-width;
+            min-width: $table-cell-min-width;
+            max-width: $table-cell-max-width;
             color: $heart-of-darkness;
             padding: $inset-1-x;
+            text-align: left;
           }
         }
       }
@@ -94,7 +106,7 @@
         /* scroll with more than two columns */
 
         /* Move table over to scroll under reader columns */
-        margin-left: calc($table-cell-width - 2px);
+        margin-left: calc($table-cell-min-width - 2px);
         overflow-x: auto;
 
         thead {
