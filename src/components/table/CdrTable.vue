@@ -39,6 +39,7 @@ export default {
     screenResize(mediaQuery) {
       const cdrTableScrollable =
         this.$el.getElementsByClassName(this.$style['cdr-table__scrollable'])[0];
+      const cdrTable = this.$el.getElementsByTagName('table')[0];
       const cdrTableBody = this.$el.getElementsByTagName('tbody')[0];
       const numberOfCells = cdrTableBody.getElementsByTagName('tr')[0].cells.length;
 
@@ -54,8 +55,10 @@ export default {
         // more than 2 cells means scrollable
         if (numberOfCells > 2) {
           cdrTableScrollable.classList.add(this.$style['scrolling']); //eslint-disable-line
+          cdrTable.classList.remove(this.$style['single-column']);
         } else { // 2 cells or less means non-scrollable
           cdrTableScrollable.classList.remove(this.$style['scrolling']); //eslint-disable-line
+          cdrTable.classList.add(this.$style['single-column']);
         }
       }
     },

@@ -13,51 +13,60 @@
 ========================================================================= */
 
 .cdr-table {
-  margin-bottom: 12px;
-
-  /* Clear border for all elements inside the table */
-  &--borderless {
-    border: none;
-
-    * {
-      border: none !important;
-    }
-  }
-
-  /* Decrease padding for all elements inside the table */
-  &--compact {
-    th,
-    td {
-      padding: $inset-1-x-squish !important;
-    }
-  }
-
-  tr {
-    /* Alternate row colors */
-    &:nth-child(even) {
-      background-color: lightgrey;
-
-      /* Make row headers inside alternate colored rows
-        stay same color when they're moved two the left
-        for scrolling.
-      */
-      th[scope="row"] {
-        background-color: lightgrey;
-      }
-    }
-  }
-  
-  &__wrapper {
-    @include redwood-display-20();
-  }
-  
   /* Breakpoint variants
     ========================================================================== */
+  
+  /* @extra-small only
+    0px to 767px
+    ========== */
+  @media (--xs-mq-only) {
+    &.single-column {
+      width: 100%;
+    }
+  }
 
   /* @extra-small
     0px and up
     ========== */
   @media (--xs-mq) {
+    margin-bottom: 12px;
+
+    /* Clear border for all elements inside the table */
+    &--borderless {
+      border: none;
+
+      * {
+        border: none !important;
+      }
+    }
+
+    /* Decrease padding for all elements inside the table */
+    &--compact {
+      th,
+      td {
+        padding: $inset-1-x-squish !important;
+      }
+    }
+
+    tr {
+      /* Alternate row colors */
+      &:nth-child(even) {
+        background-color: lightgrey;
+
+        /* Make row headers inside alternate colored rows
+          stay same color when they're moved two the left
+          for scrolling.
+        */
+        th[scope="row"] {
+          background-color: lightgrey;
+        }
+      }
+    }
+    
+    &__wrapper {
+      @include redwood-display-20();
+    }
+
     &__scrollable {
       thead {
         th {
