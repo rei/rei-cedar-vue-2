@@ -25,13 +25,6 @@
         modifier="elevated"
       >Sale (elevated)</cdr-cta
       >
-      <cdr-cta
-        tag="button"
-        cta-style="sale"
-        data-backstop="cdr-cta--sale anchor"
-        modifier="elevated"
-      >Button (elevated)</cdr-cta
-      >
     </div>
     <div class="button-example">
       <cdr-cta

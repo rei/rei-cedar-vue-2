@@ -1,17 +1,17 @@
 <template>
-  <component
-    :is="tag"
+  <a
     :class="[modifierClass, ctaClass, fullWidthClass]"
-    :type="tag === 'button' ? type : null"
-    :tabindex="tag === 'button' ? null: 0"
-    @click="onClick">
+    :target="target"
+    :rel="computedRel"
+    :href="href"
+  >
+    <!-- @slot innerHTML on the inside of the cta component -->
     <slot />
     <icon-caret-right :class="$style[`cdr-cta__icon`]" />
-  </component>
+  </a>
 </template>
 
 <script>
-import buttonBase from 'mixinsdir/buttonBase';
 import modifier from 'mixinsdir/modifier';
 import { IconCaretRight } from '@rei/cdr-icon';
 
@@ -20,16 +20,8 @@ export default {
   components: {
     IconCaretRight,
   },
-  mixins: [buttonBase, modifier],
+  mixins: [modifier],
   props: {
-    /**
-      * Render cdr-cta as an <a> or <button> element.
-      */
-    tag: {
-      type: String,
-      default: 'a',
-      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
-    },
     /**
       * Change the color of the cdr-cta button match different themes.
       */
@@ -38,6 +30,22 @@ export default {
       default: 'brand',
       validator: value => (['brand', 'dark', 'light', 'sale'].indexOf(value) >= 0) || false,
     },
+    /**
+     * Sets width to be 100%.
+    */
+    fullWidth: {
+      type: Boolean,
+      default: false,
+      validator: value => typeof value === 'boolean',
+    },
+    href: {
+      type: String,
+      default: '#',
+    },
+    /** @ignore */
+    target: String,
+    /** @ignore */
+    rel: String,
   },
   computed: {
     baseClass() {
@@ -45,6 +53,16 @@ export default {
     },
     ctaClass() {
       return this.modifyClassName(this.baseClass, this.ctaStyle);
+    },
+    fullWidthClass() {
+      return this.fullWidth && !this.iconOnly ?
+        this.modifyClassName(this.baseClass, 'full-width') : null;
+    },
+    computedRel() {
+      if (this.target === '_blank') {
+        return this.rel || 'noopener noreferrer';
+      }
+      return this.rel;
     },
   },
 };
