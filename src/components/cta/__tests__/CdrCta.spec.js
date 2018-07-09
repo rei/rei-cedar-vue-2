@@ -9,6 +9,14 @@ describe('CdrCta.vue', () => {
     expect(ctaStyle.validator('dark')).toBe(true);
   });
 
+  it('validates tag prop', () => {
+    const wrapper = shallowMount(CdrCta);
+    const tag = wrapper.vm.$options.props.tag;
+    expect(tag.validator('input')).toBe(false);
+    expect(tag.validator('a')).toBe(true);
+    expect(tag.validator('button')).toBe(true);
+  });
+
   it('adds classes from ctaStyle prop', () => {
     const wrapper = shallowMount(CdrCta, {
       propsData: {

@@ -25,7 +25,7 @@
         size="small"
         modifier="secondary"
         data-backstop="cdr-button--small secondary anchor"
-      >Link
+      >Link <span>text in span</span>
       </cdr-button>
     </div>
   </div>
