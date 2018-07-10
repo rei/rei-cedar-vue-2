@@ -6,7 +6,6 @@ import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
 import CdrCol from 'componentsdir/grid/CdrCol';
 import CdrCta from 'componentsdir/cta/CdrCta';
 import CdrIcon from 'componentsdir/icon/CdrIcon';
-import CdrIconOnlyButton from 'componentsdir/iconOnlyButton/CdrIconOnlyButton';
 import CdrImg from 'componentsdir/image/CdrImg';
 import CdrInput from 'componentsdir/input/CdrInput';
 import CdrList from 'componentsdir/list/CdrList';
@@ -27,7 +26,6 @@ export default {
   CdrCol,
   CdrCta,
   CdrIcon,
-  CdrIconOnlyButton,
   CdrImg,
   CdrInput,
   CdrList,
