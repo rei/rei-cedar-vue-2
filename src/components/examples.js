@@ -6,7 +6,6 @@ import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
 import cta from 'componentsdir/cta/examples/Cta';
 import grid from 'componentsdir/grid/examples/Grid';
 import icons from 'componentsdir/icon/examples/Icons';
-import iconOnlyButtons from 'componentsdir/iconOnlyButton/examples/IconOnlyButton';
 import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
 import lists from 'componentsdir/list/examples/Lists';
@@ -31,7 +30,6 @@ export default {
   cta,
   grid,
   icons,
-  iconOnlyButtons,
   images,
   inputs,
   lists,
