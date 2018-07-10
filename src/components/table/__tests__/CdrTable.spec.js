@@ -1,8 +1,9 @@
-import { shallow } from '@vue/test-utils';
-import CdrTable from 'Components/table/CdrTable';
+import { shallowMount } from '@vue/test-utils';
+import CdrTable from 'componentsdir/table/CdrTable';
 
 describe('CdrTable.vue', () => {
-  it('has a failing test by default so you remember to do them', () => {
-    expect(false).toBe(true);
+  it('has a table', () => {
+    const wrapper = shallowMount(CdrTable);
+    expect(wrapper.contains('table')).toBe(true);
   });
 });
