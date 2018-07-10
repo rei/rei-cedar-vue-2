@@ -1,31 +1,84 @@
-# <span class="display-name">CdrText</span>
+## Installation
 
-### <span class="modifiers">Modifiers</span>
+Resources are available within the [cdr-text package](https://www.npmjs.com/package/@rei/cdr-text):
 
-Modifier values are any valid text styles
+- Component: `@rei/cdr-text`
 
-#### Heading Styles
-  * heading-large
-  * heading-large-static (non responsive)
-  * heading-medium
-  * heading-medium-static (non responsive)
-  * heading-small
-  * heading-small-static (non responsive)
-  * display
-  * display-static (non responsive)
-  * subheading
+To incorporate the required assets for a component, use the following steps:
 
-#### Paragraph Styles
-  * Null (default) 
-  * body
+### #1. Install using NPM
 
-#### Citation Styles
-  * citation
+Install the `cdr-text` package using `npm` in your terminal:
+
+_Terminal_
+
+```terminal
+    npm i -s @rei/cdr-text
 ```
-<div>
-  <cdr-text tag="h2" modifier="display">h2 display heading</cdr-text>
-  <cdr-text>Default paragraph</cdr-text>
-  <cdr-text modifier="body">Body paragraph</cdr-text>
-  <cdr-text tag="em" modifier="citation">citation</cdr-text>
-</div>
+
+### #2. Import Dependencies
+
+_main.js_
+
+```javascript
+// import your required css.
+import "@rei/cdr-assets/dist/cdr-core.css";
+import "@rei/cdr-assets/dist/cdr-fonts.css";
+```
+
+### #3. Add component to a template
+
+_local.vue_
+
+```vue
+<template>
+  <cdr-text
+    modifier="body"
+  >
+    For long-form content like expert advice articles or co-op journal entries.
+  </cdr-text>
+</template>
+
+<script>
+import { CdrText } from '@rei/cdr-text';
+export default {
+  ...
+  components: {
+     CdrText  
+  }
+}
+</script>
+```
+
+## Usage
+
+The **cdrText** component allows for styling any html element with available text styles. Visual style and semantic meaning are managed independently by providing: 
+
+* Element to the `tag` prop 
+* Style to the `modifier` prop
+
+By default the **cdrText** component renders as a paragraph, this default paragraph is intended for most standard use cases.
+
+```vue
+  <cdr-text>
+    This is a standard paragraph, intended for non long form copy usage.
+  </cdr-text>
+```
+
+When rendering long form copy add the `body` modifier.
+
+```vue
+  <cdr-text modifier="body">
+    This paragraph is intended for long form copy usage.  
+  </cdr-text>
+```
+
+Define custom tags by applying a specific **cdr-text** style with modifiers to it.
+
+```vue
+  <cdr-text
+    tag="span"
+    modifier="body">
+    This span now renders as a long form copy paragraph that displays inline.
+  </cdr-text>
 ```
