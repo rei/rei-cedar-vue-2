@@ -24,6 +24,29 @@ import matchMediaAddListener from 'matchmedia-polyfill/matchMedia.addListener';
 export default {
   name: 'CdrTable',
   mixins: [modifier],
+  props: {
+    records: {
+      type: Array,
+      required: false,
+      default() {
+        return [];
+      },
+    },
+    headerCols: {
+      type: Array,
+      required: false,
+      default() {
+        return [];
+      },
+    },
+    headerRows: {
+      type: Array,
+      required: false,
+      default() {
+        return [];
+      },
+    },
+  },
   computed: {
     baseClass() {
       return 'cdr-table';
