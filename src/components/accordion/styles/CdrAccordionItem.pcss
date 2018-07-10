@@ -1,19 +1,27 @@
 /* ==========================================================================
-  # CdrAccordion
-  
-  All values should map to variables in
-  vars/CdrAccordion.vars.pcss
-  in order to allow for theming
+  # CdrAccordionItem
 
   TOC:
 
-    :Base - CdrAccordion
+    :Base
+      :__button
+      :__label
+      :__icon
+        :open
+      :__content-container
+        :open
+      :__content
+        :open
+      :Style Variants
+        :border-aligned
+        :compact
+        :border-aligned and compact
 ========================================================================== */
 
 .cdr-accordion-item {
   border-top: 1px solid $partly-cloudy;
 
-  .cdr-accordion-item__button {
+  &__button {
     @include redwood-display-30;
 
     background-color: $clean-slate;
@@ -28,17 +36,17 @@
 
     &:hover,
     &:active {
-      background-color: #f7f7f7; /* $the-tooth; */
+      background-color: $the-tooth;
     }
   }
 
-  .cdr-accordion-item__label {
+  &__label {
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 0;
   }
 
-  .cdr-accordion-item__icon {
+  &__icon {
     margin-left: $space-1-x;
     fill: $heart-of-darkness;
     transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
@@ -48,7 +56,7 @@
     }
   }
 
-  .cdr-accordion-item__content-container {
+  &__content-container {
     overflow: hidden;
     transition-duration: 200ms;
     transition-property: max-height;
@@ -59,7 +67,7 @@
     }
   }
 
-  .cdr-accordion-item__content {
+  &__content {
     @include redwood-body-20;
 
     color: $heart-of-darkness;
@@ -72,6 +80,11 @@
     }
   }
 
+  /* Style variants
+    ========================================================================== */
+  
+  /* Border-Aligned
+     ========== */
   &--border-aligned {
     margin: 0 $inset-1-x;
 
@@ -85,6 +98,8 @@
     }
   }
 
+  /* Compact
+     ========== */
   &--compact {
     .cdr-accordion-item__button {
       @include redwood-display-20;
@@ -103,7 +118,8 @@
     }
   }
 
-  /* Border aligned and compact  */
+  /* Border-Aligned and Compact
+     ========== */
   &--compact.cdr-accordion-item--border-aligned {
     .cdr-accordion-item__button {
       margin-left: -$space-three-quarter-x;

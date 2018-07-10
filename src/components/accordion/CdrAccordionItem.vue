@@ -81,6 +81,7 @@ export default {
       default: false,
     },
   },
+  inject: ['compact', 'borderAligned', 'showAll'],
   data() {
     return {
       maxHeight: 0,
@@ -125,7 +126,6 @@ export default {
       }, timeout);
     },
   },
-  inject: ['compact', 'borderAligned', 'showAll'],
 };
 </script>
 
