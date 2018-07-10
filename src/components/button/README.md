@@ -41,12 +41,16 @@ The default slot in `cdr-button` can be used to include an icon. `cdr-button` do
   <cdr-button
     size="large"
     modifier="secondary"
-  ><cdr-icon
-    class="cdr-button__icon"
-    use="#download"
-    modifier="inherit-color"
-  />Button and Icon</cdr-button
   >
+    <template name="icon">
+      <cdr-icon
+        class="cdr-button__icon"
+        use="#download"
+        modifier="inherit-color"
+      />
+    </template>
+    Button and Icon
+  </cdr-button>
 ```
 
 You can also use single icon components. Per design guidelines, icons should always display to the left of text.
@@ -54,11 +58,14 @@ You can also use single icon components. Per design guidelines, icons should alw
 ```
   import { IconCheckLg } from '@rei/cdr-icon'
 
-  <cdr-button
-  ><icon-check-lg
-    class="cdr-button__icon"
-  />Medium and Icon</cdr-button
-  >
+  <cdr-button>
+    <template name="icon">
+      <icon-check-lg
+        class="cdr-button__icon"
+      />
+    </template>
+    Medium and Icon
+  </cdr-button>
 ```
 
 The `cdr-button__icon` class needs to be added to the icon element inside of `cdr-button`. This allows `cdr-button` to dictate some icon styling across modularized CSS.

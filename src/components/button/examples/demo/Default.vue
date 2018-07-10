@@ -13,15 +13,18 @@
         :responsive-size="button.responsiveSize"
         :type="button.type"
         :disabled="button.disabled"
-        :data-backstop="button.backstop"
-      >{{ button.label }}</cdr-button>
+        :data-backstop="button.backstop">
+        {{ button.label }}
+      </cdr-button>
     </div>
     <div class="button-example">
       <h2>Responsive</h2>
       <cdr-button
+        :on-click="log"
         :full-width="true"
-        :responsive-size="['large@sm']"
-      >Responsive with default</cdr-button>
+        :responsive-size="['large@sm']">
+        Responsive with default
+      </cdr-button>
     </div>
     <div class="button-example">
       <h2>Primary Anchor</h2>
@@ -29,8 +32,8 @@
         tag="a"
         href="https://rei.com"
         size="large"
-        data-backstop="cdr-button--large anchor"
-      >Link
+        data-backstop="cdr-button--large anchor">
+        Link
       </cdr-button>
     </div>
   </div>
