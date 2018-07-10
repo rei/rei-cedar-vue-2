@@ -45,6 +45,7 @@ glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
   <!-- File generated during build -->
   <!-- eslint-disable -->
   <cdr-icon v-bind="$props">
+    <slot />
     ${innerHTML.trim()}
   </cdr-icon>
 </template>

@@ -1,12 +1,19 @@
 <template>
   <component
     :is="tag"
-    :class="[modifierClass, sizeClass, fullWidthClass, responsiveClass]"
+    :class="[
+      modifierClass,
+      sizeClass,
+      fullWidthClass,
+      responsiveClass,
+      iconClass,
+    ]"
     :type="tag === 'button' ? type : null"
-    @click="onClick"
-  >
+    @click="onClick">
+    <!-- @slot for icon -->
+    <slot name="icon" />
     <!-- @slot innerHTML on the inside of the button component -->
-    <slot/>
+    <slot />
   </component>
 </template>
 
@@ -42,24 +49,55 @@ export default {
     responsiveSize: {
       type: Array,
     },
+    /**
+     * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.
+     */
+    iconOnly: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * Renders an icon-only button with a light fill color for use on dark backgrounds.
+     * iconOnly must be true.
+     */
+    onDark: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     baseClass() {
       return 'cdr-button';
     },
     sizeClass() {
-      return this.modifyClassName(this.baseClass, this.size);
+      return !this.iconOnly ? this.modifyClassName(this.baseClass, this.size) : null;
     },
     responsiveClass() {
       const responsiveClass = [];
 
-      if (this.responsiveSize) {
+      if (this.responsiveSize && !this.iconOnly) {
         this.responsiveSize.forEach((val) => {
           responsiveClass.push(this.modifyClassName(this.baseClass, val));
         });
       }
 
       return responsiveClass.join(' ');
+    },
+    iconClass() {
+      const classes = [];
+
+      if (this.$slots.default && this.$slots.default.length > 1) {
+        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));
+      }
+
+      if (this.iconOnly) {
+        classes.push(this.modifyClassName(this.baseClass, 'icon-only'));
+
+        if (this.onDark) {
+          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));
+        }
+      }
+      return classes.join(' ');
     },
   },
 };
