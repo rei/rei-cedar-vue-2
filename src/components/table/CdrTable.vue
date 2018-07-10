@@ -14,6 +14,8 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import CdrTokens from '@rei/cdr-tokens';
+import matchmedia from 'matchmedia-polyfill';
+import matchMediaAddListener from 'matchmedia-polyfill/matchMedia.addListener';
 
 /**
  * Cedar 2 compfor for data table
@@ -29,6 +31,9 @@ export default {
   },
   // Determine whether or not table shoud be scrollable
   mounted() {
+    window.matchMedia = window.matchMedia || matchmedia;
+    window.matchMedia.addListener = window.matchMedia.addListener || matchMediaAddListener;
+
     const mq = window.matchMedia(`(min-width: ${CdrTokens.breakpointMd})`);
 
     mq.addListener(this.screenResize);
@@ -41,7 +46,8 @@ export default {
         this.$el.getElementsByClassName(this.$style['cdr-table__scrollable'])[0];
       const cdrTable = this.$el.getElementsByTagName('table')[0];
       const cdrTableBody = this.$el.getElementsByTagName('tbody')[0];
-      const numberOfCells = cdrTableBody.getElementsByTagName('tr')[0].cells.length;
+      const numberOfCells = cdrTableBody ?
+        cdrTableBody.getElementsByTagName('tr')[0].cells.length : 0;
 
       // For screens medium and larger
       if (mediaQuery.matches) {
