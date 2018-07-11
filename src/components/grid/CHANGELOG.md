@@ -1,5 +1,5 @@
-<a name="0.1.0"></a>
-# 0.1.0 (2018-06-27)
+<a name="1.0.0-next.beta.1"></a>
+# 1.0.0-next.beta.1 (2018-07-11)
 
 
 ### Features
@@ -9,12 +9,14 @@
 * **grid:** consolidate col's offsetRight props to single offsetRight ([b812e99](https://github.com/rei/rei-cedar/commit/b812e99))
 * **grid:** consolidate col's span props to just span ([a3ef361](https://github.com/rei/rei-cedar/commit/a3ef361))
 * **grid:** move col and row to single package ([b0469b6](https://github.com/rei/rei-cedar/commit/b0469b6))
+* **grid:** release 0.2.0 ([accc22b](https://github.com/rei/rei-cedar/commit/accc22b))
 * **grid:** update align prop to accept responsive values ([1907de8](https://github.com/rei/rei-cedar/commit/1907de8))
 * **grid:** update col and justify props to accept responsive values ([c572a51](https://github.com/rei/rei-cedar/commit/c572a51))
 * **grid:** update gutter prop to accept responsive values ([a3f613f](https://github.com/rei/rei-cedar/commit/a3f613f))
 * **grid:** update row's nowrap prop to accept responsive values ([6dd3514](https://github.com/rei/rei-cedar/commit/6dd3514))
 * **grid:** update vertical prop to be a string and accept responsive values ([008f05b](https://github.com/rei/rei-cedar/commit/008f05b))
 * **grid:** update wrap prop to be a string and accept responsive values ([cfe2d8a](https://github.com/rei/rei-cedar/commit/cfe2d8a))
+* **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 
 
 ### BREAKING CHANGES
