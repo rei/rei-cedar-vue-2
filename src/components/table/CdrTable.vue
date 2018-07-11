@@ -5,7 +5,26 @@
     <div :class="$style['cdr-table__scrollable']">
       <table :class="[modifierClass]">
         <!-- @slot table head and/or body placed into data table component -->
-        <slot />
+        <slot v-if="records.length == 0"/>
+        <template v-else>
+          <thead v-if="headerCols.length > 0">
+            <th
+              v-for="header in headerCols"
+              :key="header.id">{{ header.value }}
+            </th>
+          </thead>
+          <tbody>
+            <tr
+              v-for="(recObj, index) in records"
+              :key="index">
+              <td
+                v-for="header in headerCols"
+                :key="header.id">
+                {{ recObj[header.id] }}
+              </td>
+            </tr>
+          </tbody>
+        </template>
       </table>
     </div>
   </div>
