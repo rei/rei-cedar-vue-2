@@ -141,4 +141,10 @@ __TODO:__ Notes about Vue, components
 This project is Commitizen friendly.
 when creating a pull request run `git cz` rather than `git commit` and follow the prompts.
 
-To generate the Changelog on tag run `standard-changelog`.
+This projects Changlogs are generated.
+To output the latest changelog files you will need to create a new repository release.
+This is done with calendar versioning in the following format
+**YY.MM.(iterator)**
+
+- Generate the root Changelog: `standard-changelog`.
+- Generate the component Changelogs: `lerna-semantic-release post`.

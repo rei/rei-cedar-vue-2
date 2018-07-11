@@ -1,5 +1,5 @@
-<a name="0.2.0"></a>
-# 0.2.0 (2018-06-27)
+<a name="1.0.0-next.beta.1"></a>
+# 1.0.0-next.beta.1 (2018-07-11)
 
 
 ### Bug Fixes
@@ -19,8 +19,10 @@
 * **components:** update components to use css-modules ([ec1321c](https://github.com/rei/rei-cedar/commit/ec1321c))
 * **deps:** update icon and assets for publishing ([48f2c67](https://github.com/rei/rei-cedar/commit/48f2c67))
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))
+* **icon:** add a slot to all components ([5bd063f](https://github.com/rei/rei-cedar/commit/5bd063f))
 * **icon:** generate new sprite, externalize icon.json ([f49f828](https://github.com/rei/rei-cedar/commit/f49f828))
 * **icons:** gernerate icon components ([dcefd4e](https://github.com/rei/rei-cedar/commit/dcefd4e))
+* **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **link-component:** simplifies link component props, adds prop to Icon for fill color inheritance ([9d404f4](https://github.com/rei/rei-cedar/commit/9d404f4))
 
 

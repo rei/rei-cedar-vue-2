@@ -1,5 +1,5 @@
 <a name="0.2.0"></a>
-# 0.2.0 (2018-06-27)
+# 0.2.0 (2018-07-11)
 
 
 ### Bug Fixes
@@ -17,6 +17,7 @@
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))
 * **fonts:** remove several font weights and styles ([36f21d8](https://github.com/rei/rei-cedar/commit/36f21d8))
 * **icon:** generate new sprite, externalize icon.json ([f49f828](https://github.com/rei/rei-cedar/commit/f49f828))
+* **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **tokens:** output token file for cdr-assets ([717836f](https://github.com/rei/rei-cedar/commit/717836f))
 
 

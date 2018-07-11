@@ -1,5 +1,5 @@
 <a name="0.1.0"></a>
-# 0.1.0 (2018-06-27)
+# 0.1.0 (2018-07-11)
 
 
 ### Chores
@@ -15,6 +15,7 @@
 * **deps:** update icon and assets for publishing ([48f2c67](https://github.com/rei/rei-cedar/commit/48f2c67))
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))
 * **docs:** added compositions routes ([a3a0f81](https://github.com/rei/rei-cedar/commit/a3a0f81))
+* **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **release:** bump all to 0.1.0 and remove base-components ([f5c335e](https://github.com/rei/rei-cedar/commit/f5c335e))
 
 
