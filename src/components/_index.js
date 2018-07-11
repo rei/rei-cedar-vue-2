@@ -16,8 +16,12 @@ import CdrRating from 'componentsdir/rating/CdrRating';
 import CdrRow from 'componentsdir/grid/CdrRow';
 import CdrSelect from 'componentsdir/select/CdrSelect';
 import CdrText from 'componentsdir/text/CdrText';
+import CdrAccordion from 'componentsdir/accordion/CdrAccordion';
+import CdrAccordionItem from 'componentsdir/accordion/CdrAccordionItem';
 
 export default {
+  CdrAccordion,
+  CdrAccordionItem,
   CdrLink,
   CdrBreadcrumb,
   CdrButton,

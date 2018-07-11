@@ -14,6 +14,10 @@
       class="cpg-section"
       data-backstop="links"
     />
+    <accordion
+      class="cpg-section"
+      data-backstop="accordion"
+    />
     <breadcrumb
       class="cpg-section"
       data-backstop="breadcrumbs"
