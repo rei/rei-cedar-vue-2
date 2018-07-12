@@ -3,16 +3,19 @@
 | tag  | string | "a”     |
 |:-----|:-------|:--------|
 | name | type   | Default |
+
 Enables user to set appropriate HTML element tag. {a, button}
 
 | modifier                                                                                        | string | N/A     |
 |:------------------------------------------------------------------------------------------------|:-------|:--------|
 | name                                                                                            | type   | Default |
-| Modifier allows the user to pass a style variant to this component. Possible values: standalone |        |         |
+
+Modifier allows the user to pass a style variant to this component. Possible values: standalone
 
 | href | string | "#”     |
 |:-----|:-------|:--------|
 | name | type   | Default |
+
 Requires tag to be set to “a”. Sets URL to cdr-link href property
 
 ## Slots
