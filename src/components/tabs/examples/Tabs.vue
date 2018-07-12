@@ -2,7 +2,7 @@
   <!-- eslint-disable max-len -->
   <div>
     <h2>Tabs</h2>
-    <cdr-tabs modifier="full-width">
+    <cdr-tabs>
       <cdr-tab name="Tab1"><div class="demo-content-container">
         <h1>Tab One Content</h1>
         <p>

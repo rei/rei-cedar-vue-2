@@ -73,6 +73,7 @@ export default {
     if (this.tabs.length > 0) this.tabs[0].setActive(true);
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
+      this.headerWidth = this.getHeaderWidth();
       this.calculateOverflow();
     }, 250));
     // Listen for left and right arrow keypress
@@ -83,6 +84,7 @@ export default {
     this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
       this.calculateOverflow();
     }, 250));
+    this.headerWidth = this.getHeaderWidth();
   },
   updated() {
     this.initializeOffsets();
@@ -120,14 +122,14 @@ export default {
       }
     },
     calculateOverflow() {
-      const headerWidth = this.$refs.cdrTabsHeader.offsetWidth;
+      // const headerWidth = this.$refs.cdrTabsHeader.offsetWidth;
       const containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
-      this.headerOverflow = headerWidth > containerWidth;
+      this.headerOverflow = this.headerWidth > containerWidth;
       if (this.headerOverflow) {
         // Get Scroll Position
         const scrollX = this.$refs.cdrTabsHeader.parentElement.scrollLeft;
         this.overflowLeft = scrollX > 1;
-        this.overflowRight = (scrollX + 1) < (headerWidth - containerWidth);
+        this.overflowRight = (scrollX + 1) < (this.headerWidth - containerWidth);
       } else {
         this.overflowLeft = false;
         this.overflowRight = false;
@@ -161,6 +163,14 @@ export default {
           this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].offsetWidth;
         this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
       }
+    },
+    getHeaderWidth() {
+      const headerElements = Array.from(this.$refs.cdrTabsHeader.children);
+      let totalWidth = 0;
+      headerElements.forEach((element) => {
+        totalWidth += element.offsetWidth || 0;
+      });
+      return totalWidth;
     },
   },
 };
