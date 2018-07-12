@@ -115,4 +115,8 @@ export default {
     height: 150px;
     padding-top: 25px;
   }
+
+  .tab-demo-section > h2 {
+    text-align: left;
+  }
 </style>
