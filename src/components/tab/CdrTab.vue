@@ -8,6 +8,7 @@
       v-if="active"
       :aria-hidden="!active"
       :class="[modifierClass]"
+      tabindex="2"
       :key="name">
       <slot/>
     </div>

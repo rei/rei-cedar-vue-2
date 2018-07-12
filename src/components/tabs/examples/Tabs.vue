@@ -2,7 +2,7 @@
   <!-- eslint-disable max-len -->
   <div>
     <h2>Tabs</h2>
-    <cdr-tabs>
+    <cdr-tabs modifier="full-width">
       <cdr-tab name="Tab1"><div class="demo-content-container">
         <h1>Tab One Content</h1>
         <p>
@@ -67,6 +67,21 @@
           Look, you gotta listen to me. Well, it will just happen. Like the way I met your father. Looks like a airplane, without wings. whoa, whoa Doc, stuck here, I can't be stuck here, I got a life in 1985. I got a girl. My god, do you know what this means? It means that this damn thing doesn't work at all.
         </p>
       </div></cdr-tab>
+    </cdr-tabs>
+    <h2>Compact Tabs</h2>
+    <cdr-tabs modifier="full-width">
+      <cdr-tab name="one">
+        <h1>tab content</h1>
+      </cdr-tab>
+      <cdr-tab name="two">
+        <h1>tab content</h1>
+      </cdr-tab>
+      <cdr-tab name="three">
+        <h1>tab content</h1>
+      </cdr-tab>
+      <cdr-tab name="four">
+        <h1>tab content</h1>
+      </cdr-tab>
     </cdr-tabs>
   </div>
 </template>

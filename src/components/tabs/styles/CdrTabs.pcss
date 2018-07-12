@@ -14,16 +14,73 @@
       :header-item-button
       :underline
       :content-container
+    :Modifiers
+      :compact
+      :no-border
+      :full-width
 ========================================================================== */
 
 .cdr-tabs {
-  &__header {
-    width: 100%;
-    display: inline-flex;
-    align-content: stretch;
-    border-bottom: 1px solid $grey-matter;
-    padding: 0;
+  &__header-container {
     overflow-x: scroll;
+
+    &::before {
+      transition: opacity 0.5s ease;
+      content: '';
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 36px;
+      background:
+        linear-gradient(
+          to left,
+          transparent,
+          $clean-slate
+        );
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    &::after {
+      transition: opacity 0.5s ease;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 36px;
+      background:
+        linear-gradient(
+          to right,
+          transparent,
+          $clean-slate
+        );
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+
+  &__gradient-container {
+    position: relative;
+  }
+
+  &__header {
+    display: inline-flex;
+    border-bottom: 1px solid $grey-matter;
+
+    /* align-content: stretch; */
+    padding: 0;
+    position: relative;
+
+    &-gradient-left::before {
+      opacity: 1;
+    }
+
+    &-gradient-right::after {
+      opacity: 1;
+    }
   }
 
   &__header-item {
@@ -43,45 +100,25 @@
     &:focus {
       text-decoration: none;
       color: $easily-excited;
+      outline: none;
     }
   }
 
   &__underline {
+    position: relative;
     width: 30px;
     margin: 0;
     margin-left: 5px;
-    margin-bottom: -1px;
+    margin-top: -1px;
     height: $space-quarter-x;
+    border: none;
     background: $easily-excited;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
-    display: block;
   }
 
   &__content-container {
     height: 400px;
     position: relative;
-
-    /* .fly-enter-active {
-      animation: fly-in 0.5s;
-    }
-
-    .fly-leave-active {
-      animation: fly-in 0.5s reverse;
-    } */
-
-    /* @keyframes fly-in {
-      0% {
-        transform: translateX(1500px);
-      }
-
-      50% {
-        transform: translateX(500px);
-      }
-
-      100% {
-        transform: translateX(0);
-      }
-    } */
   }
 
   .fade-enter-active,
@@ -92,5 +129,33 @@
   .fade-enter,
   .fade-leave-to {
     opacity: 0;
+  }
+
+  /* Compact
+    ========== */
+  &--compact {
+    .cdr-tabs__header-item-label {
+      @include redwood-display-20;
+
+      margin: 0 $space-half-x 0 0;
+      padding: $inset-three-quarter-x-squish;
+    }
+  }
+
+  /* No Border
+    ========== */
+  &--no-border {
+    .cdr-tabs__header {
+      border-bottom: 1px solid transparent;
+    }
+  }
+
+  /* Full Width
+    ========== */
+  &--full-width {
+    .cdr-tabs__header {
+      width: 100%;
+      align-content: space-between;
+    }
   }
 }
