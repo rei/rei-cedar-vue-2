@@ -171,8 +171,5 @@
     ],
     "instrument": false,
     "sourceMap": false
-  },
-  "dependencies": {
-    "@rei/cdr-icon": "^0.2.1"
   }
 }
