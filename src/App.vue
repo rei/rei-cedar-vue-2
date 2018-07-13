@@ -4,7 +4,7 @@
     class="cdr-container-fluid"
   >
     <h1>Cedar Proving grounds</h1>
-    <!-- <router-link
+    <router-link
       v-for="route in routes"
       :key="route.path"
       :to="route.path">{{ route.name }} *
@@ -13,6 +13,10 @@
     <links
       class="cpg-section"
       data-backstop="links"
+    />
+    <accordion
+      class="cpg-section"
+      data-backstop="accordion"
     />
     <breadcrumb
       class="cpg-section"
@@ -26,13 +30,9 @@
       class="cpg-section"
       data-backstop="cta-buttons"
     />
-    <icon-only-buttons
-      class="cpg-section"
-      data-backstop="icon-only-buttons"
-    />
-    <cards class="cpg-section"/> -->
+    <cards class="cpg-section"/>
     <!-- <card-content class="cpg-section"></card-content> -->
-    <!-- <activity class="cpg-section"/>
+    <activity class="cpg-section"/>
     <checkboxes
       class="cpg-section"
       data-backstop="checkboxes"
@@ -73,17 +73,17 @@
     <selects
       class="cpg-section"
       data-backstop="selects"
-    /> -->
+    />
     <tabs
       class="cpg-section"
       data-backstop="tabs"
     />
-    <!-- <utilities class="cpg-section"/>
+    <utilities class="cpg-section"/>
 
     <caption-example
       class="cpg-section"
       data-backstop="caption"
-    /> -->
+    />
     <router-view />
   </div>
 </template>

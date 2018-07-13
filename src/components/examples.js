@@ -6,7 +6,6 @@ import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
 import cta from 'componentsdir/cta/examples/Cta';
 import grid from 'componentsdir/grid/examples/Grid';
 import icons from 'componentsdir/icon/examples/Icons';
-import iconOnlyButtons from 'componentsdir/iconOnlyButton/examples/IconOnlyButton';
 import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
 import lists from 'componentsdir/list/examples/Lists';
@@ -18,10 +17,12 @@ import ratings from 'componentsdir/rating/examples/Ratings';
 import selects from 'componentsdir/select/examples/Selects';
 import tabs from 'componentsdir/tabs/examples/Tabs';
 import texts from 'componentsdir/text/examples/Text';
+import accordion from 'componentsdir/accordion/examples/Accordion';
 
 import utilities from 'componentsdir/Utilities/Utilities';
 
 export default {
+  accordion,
   links,
   breadcrumb,
   buttons,
@@ -30,7 +31,6 @@ export default {
   cta,
   grid,
   icons,
-  iconOnlyButtons,
   images,
   inputs,
   lists,

@@ -1,6 +1,8 @@
+import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Buttons from 'componentsdir/button/examples/Buttons';
 import Cards from 'componentsdir/card/examples/Cards';
 import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
+import Cta from 'componentsdir/cta/examples/Cta';
 import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
@@ -20,9 +22,11 @@ import App from './App';
 
 const routes = [
   { path: '/', component: App },
+  { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/buttons', name: 'Buttons', component: Buttons },
   { path: '/cards', name: 'Cards', component: Cards },
   { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
+  { path: '/cta', name: 'CTA', component: Cta },
   { path: '/grids', name: 'Grids', component: Grids },
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },

@@ -1,19 +1,9 @@
 ## <span class="usage">Usage</span>
 
-```
-  <cdr-cta
-    tag="a"
-    href="https://rei.com"
-  >Learn More</cdr-cta>
-```
-
-`cdr-cta` can render as a button or an anchor element. The default is a button. 
-
 The `cta-style` prop will allow you to change the color to match different themes. Accepted values are `brand`, `dark`, `light`, and `sale`.
 
 ```
   <cdr-cta
-    tag="a"
     cta-style="sale"
     href="https://rei.com"
   >Learn More</cdr-cta>

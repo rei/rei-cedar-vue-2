@@ -1,6 +1,6 @@
 {
   "name": "rei-cedar",
-  "version": "5.0.0-0",
+  "version": "18.07.1",
   "description": "REI Cedar Style Framework",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
     "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
-    "changelog": "standard-changelog"
+    "changelog": "lerna-semantic-release post"
   },
   "devDependencies": {
     "@commitlint/cli": "^6.1.0",
@@ -86,6 +86,7 @@
     "karma-spec-reporter": "^0.0.32",
     "klaw-sync": "^4.0.0",
     "lerna": "^2.10.1",
+    "lerna-semantic-release": "^9.1.0",
     "loader-utils": "^1.1.0",
     "lodash": "^4.17.5",
     "minimist": "^1.2.0",
@@ -125,7 +126,6 @@
     "semver": "^5.5.0",
     "semver-diff": "^2.1.0",
     "sinon": "^5.0.7",
-    "standard-changelog": "^1.0.12",
     "style-loader": "^0.21.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.1.0",
@@ -171,5 +171,8 @@
     ],
     "instrument": false,
     "sourceMap": false
+  },
+  "dependencies": {
+    "@rei/cdr-icon": "^0.2.1"
   }
 }

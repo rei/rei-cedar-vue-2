@@ -40,6 +40,7 @@
 import modifier from 'mixinsdir/modifier';
 import debounce from 'lodash/debounce';
 
+
 export default {
   name: 'CdrTabs',
   mixins: [modifier],
@@ -122,7 +123,6 @@ export default {
       }
     },
     calculateOverflow() {
-      // const headerWidth = this.$refs.cdrTabsHeader.offsetWidth;
       const containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
       this.headerOverflow = this.headerWidth > containerWidth;
       if (this.headerOverflow) {

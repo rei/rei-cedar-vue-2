@@ -21,8 +21,7 @@ describe('CdrCta.vue', () => {
     expect(wrapper.classes()).toContain('cdr-cta--sale');
   });
 
-  // this is actually testing the full-width prop in the buttonBase mixin
-  it('adds full width class from mixin', () => {
+  it('adds full width class', () => {
     const wrapper = shallowMount(CdrCta, {
       propsData: {
         fullWidth: true,
@@ -30,5 +29,37 @@ describe('CdrCta.vue', () => {
     });
 
     expect(wrapper.classes()).toContain('cdr-cta--full-width');
+  });
+
+  it('sets target attr correctly', () => {
+    const wrapper = shallowMount(CdrCta, {
+      propsData: {
+        target: '_self',
+      },
+    });
+    expect(wrapper.attributes().target).toBe('_self');
+  });
+
+  it('sets a default href', () => {
+    const wrapper = shallowMount(CdrCta);
+    expect(wrapper.attributes().href).toBe('#');
+  });
+
+  it('sets rel attr correctly', () => {
+    const wrapper = shallowMount(CdrCta, {
+      propsData: {
+        rel: 'nofollow',
+      },
+    });
+    expect(wrapper.attributes().rel).toBe('nofollow');
+  });
+
+  it('computes target="_blank" rel attr correctly', () => {
+    const wrapper = shallowMount(CdrCta, {
+      propsData: {
+        target: '_blank',
+      },
+    });
+    expect(wrapper.attributes().rel).toBe('noopener noreferrer');
   });
 });
