@@ -5,7 +5,7 @@
     <div :class="$style['cdr-table__scrollable']">
       <table :class="[modifierClass]">
         <!-- @slot table head and/or body placed into data table component -->
-        <slot v-if="records.length == 0"/>
+        <slot v-if="records.length == 0" />
         <template v-else>
           <thead v-if="headers.length > 0">
             <slot name="headers">
@@ -24,9 +24,9 @@
                 :row="record"
                 v-for="(header, index) in headers">
                 <td
-                  v-if="hasValue(record, column)"
+                  v-if="hasValue(record, header)"
                   :key="index">
-                  {{ recordValue(record, column) }}
+                  {{ recordValue(record, header) }}
                 </td>
               </slot>
             </tr>
@@ -107,7 +107,7 @@ export default {
       }
     },
     hasValue(record, column) {
-      return record[column.toLowerCAse()] !== 'undefined';
+      return record[column.toLowerCase()] !== 'undefined';
     },
     recordValue(record, column) {
       return record[column.toLowerCase()];
