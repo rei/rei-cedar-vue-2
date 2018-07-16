@@ -1,5 +1,9 @@
 <template>
   <div>
+    <h2>table with data fed in</h2>
+    <cdr-table
+      :records="bookRecords"
+      :headers="bookHeaders"/>
     <h2>default table (non-scrollable mobile)</h2>
     <cdr-table>
       <tbody>
@@ -87,7 +91,7 @@
     <cdr-table>
       <thead>
         <tr>
-          <th/>
+          <th class="empty" />
           <th>one</th>
           <th>two</th>
           <th>three</th>
@@ -275,7 +279,7 @@
     <cdr-table>
       <thead>
         <tr>
-          <th/>
+          <th class="empty" />
           <th>one</th>
           <th>two</th>
           <th>three</th>
@@ -469,7 +473,7 @@
     <cdr-table modifier="compact">
       <thead>
         <tr>
-          <th/>
+          <th class="empty" />
           <th>one</th>
           <th>two</th>
           <th>three</th>
@@ -557,7 +561,7 @@
     <cdr-table modifier="compact borderless">
       <thead>
         <tr>
-          <th/>
+          <th class="empty" />
           <th>one</th>
           <th>two</th>
           <th>three</th>
@@ -649,6 +653,32 @@ import Components from 'componentsdir/_index';
 export default {
   name: 'Table',
   components: Components,
+  data() {
+    return {
+      bookHeaders: [
+        'Title',
+        'Year',
+        'Author',
+      ],
+      bookRecords: [
+        {
+          title: 'Book A',
+          year: 1823,
+          author: 'Mikey',
+        },
+        {
+          title: 'Book C',
+          year: 1532,
+          author: 'Joey',
+        },
+        {
+          title: 'Book E',
+          year: 1253,
+          author: 'Scotty',
+        },
+      ],
+    };
+  },
 };
 </script>
 
