@@ -7,21 +7,28 @@
         <!-- @slot table head and/or body placed into data table component -->
         <slot v-if="records.length == 0"/>
         <template v-else>
-          <thead v-if="headerCols.length > 0">
-            <th
-              v-for="header in headerCols"
-              :key="header.id">{{ header.value }}
-            </th>
+          <thead v-if="headers.length > 0">
+            <slot name="headers">
+              <th
+                v-for="(header, index) in headers"
+                :key="index">
+                {{ header }}
+              </th>
+            </slot>
           </thead>
           <tbody>
             <tr
-              v-for="(recObj, index) in records"
+              v-for="(record, index) in records"
               :key="index">
-              <td
-                v-for="header in headerCols"
-                :key="header.id">
-                {{ recObj[header.id] }}
-              </td>
+              <slot
+                :row="record"
+                v-for="(header, index) in headers">
+                <td
+                  v-if="hasValue(record, column)"
+                  :key="index">
+                  {{ recordValue(record, column) }}
+                </td>
+              </slot>
             </tr>
           </tbody>
         </template>
@@ -47,23 +54,12 @@ export default {
     records: {
       type: Array,
       required: false,
-      default() {
-        return [];
-      },
+      default: () => [],
     },
-    headerCols: {
+    headers: {
       type: Array,
       required: false,
-      default() {
-        return [];
-      },
-    },
-    headerRows: {
-      type: Array,
-      required: false,
-      default() {
-        return [];
-      },
+      default: () => [],
     },
   },
   computed: {
@@ -109,6 +105,12 @@ export default {
           cdrTable.classList.add(this.$style['single-column']);
         }
       }
+    },
+    hasValue(record, column) {
+      return record[column.toLowerCAse()] !== 'undefined';
+    },
+    recordValue(record, column) {
+      return record[column.toLowerCase()];
     },
   },
 };
