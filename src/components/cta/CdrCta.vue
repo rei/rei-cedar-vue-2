@@ -14,6 +14,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import { IconCaretRight } from '@rei/cdr-icon';
+import '@rei/cdr-icon/dist/cdr-icon.css';
 
 export default {
   name: 'CdrCta',
@@ -27,7 +28,7 @@ export default {
       */
     ctaStyle: {
       type: String,
-      default: 'brand',
+      default: 'dark',
       validator: value => (['brand', 'dark', 'light', 'sale'].indexOf(value) >= 0) || false,
     },
     /**
