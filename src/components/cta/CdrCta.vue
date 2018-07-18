@@ -14,6 +14,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import { IconCaretRight } from '@rei/cdr-icon';
+import '@rei/cdr-icon/dist/cdr-icon.css';
 
 export default {
   name: 'CdrCta',
