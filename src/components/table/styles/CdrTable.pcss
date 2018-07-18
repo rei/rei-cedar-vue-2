@@ -21,7 +21,8 @@
     ========== */
   @media (--xs-mq-only) {
     &.single-column {
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
     }
   }
 
@@ -53,11 +54,12 @@
       &:nth-child(even) {
         background-color: lightgrey;
 
-        /* Make row headers inside alternate colored rows
+        /*
+          Make row headers inside alternate colored rows
           stay same color when they're moved two the left
           for scrolling.
         */
-        th[scope="row"] {
+        th:first-child {
           background-color: lightgrey;
         }
       }
@@ -78,11 +80,11 @@
           padding: $inset-1-x;
           text-align: left;
 
-          &:first-child {
+          &[class^=empty] {
             border-right: 2px solid $grey-matter;
           }
         }
-        
+
         /* show right border for row headers when there are column headers */
         & + tbody {
           th:first-child {
@@ -93,11 +95,6 @@
 
       tbody {
         tr {
-          /* Align top cell correctly */
-          &:first-child th {
-            margin-top: -1px;
-          }
-
           /* Default cell styling */
           th,
           td {
@@ -121,8 +118,8 @@
         thead {
           /* Move empty column header to left and have content scroll under it
           when content larger than two columns */
-          th:nth-last-child(n+3) {
-            &:first-child {
+          th:nth-last-child(n+3):first-child {
+            &[class^=empty] {
               left: 0;
               position: absolute;
               border-right: 4px solid $grey-matter;
@@ -166,8 +163,8 @@
         thead {
           /* Move empty column header to left and have content scroll under it
           when content larger than two columns */
-          th:nth-last-child(n+7) {
-            &:first-child {
+          th:nth-last-child(n+7):first-child {
+            &[class^=empty] {
               left: 0;
               position: absolute;
               border-right: 4px solid $grey-matter;
