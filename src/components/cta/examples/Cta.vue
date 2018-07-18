@@ -3,14 +3,14 @@
     <h2>CTA</h2>
     <div class="button-example">
       <cdr-cta
-        data-backstop="cdr-cta--brand">
-        Default (brand)
+        data-backstop="cdr-cta--dark">
+        Default (dark)
       </cdr-cta>
       <cdr-cta
         href="https://rei.com"
-        cta-style="dark"
-        data-backstop="cdr-cta--dark"
-      >Dark</cdr-cta
+        cta-style="brand"
+        data-backstop="cdr-cta--brand"
+      >Brand</cdr-cta
       >
       <cdr-cta
         href="https://rei.com"
