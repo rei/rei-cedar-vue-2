@@ -4,29 +4,35 @@
     <cdr-table
       :records="bookRecords"
       :headers="bookHeaders"/>
+
+    <h2>table with data fed in and row headers</h2>
+    <cdr-table
+      :records="bookRecords"
+      :headers="bookHeaders"
+      :row-headers="true"/>
     <h2>default table (non-scrollable mobile)</h2>
     <cdr-table>
       <tbody>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -37,7 +43,7 @@
     <cdr-table>
       <tbody>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -49,7 +55,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -61,7 +67,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -73,7 +79,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -99,7 +105,7 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -111,7 +117,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -123,7 +129,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -135,7 +141,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -149,11 +155,11 @@
       </tbody>
     </cdr-table>
 
-    <h2>default table (srcollable tablet)</h2>
+    <!-- <h2>default table (srcollable tablet)</h2>
     <cdr-table>
       <tbody>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -183,7 +189,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -213,7 +219,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -243,7 +249,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -293,7 +299,7 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -323,7 +329,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -353,7 +359,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -383,7 +389,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -419,49 +425,49 @@
     <cdr-table modifier="borderless">
       <tbody>
         <tr>
-          <th scope="row">borderless</th>
+          <th class="row-header">borderless</th>
           <td> test </td>
           <td> test </td>
           <td> test </td>
         </tr>
         <tr>
-          <th scope="row">borderless</th>
+          <th class="row-header">borderless</th>
           <td> test </td>
           <td> test </td>
           <td> test </td>
         </tr>
         <tr>
-          <th scope="row">borderless</th>
+          <th class="row-header">borderless</th>
           <td> test </td>
           <td> test </td>
           <td> test </td>
         </tr>
         <tr>
-          <th scope="row">borderless</th>
+          <th class="row-header">borderless</th>
           <td> test </td>
           <td> test </td>
           <td> test </td>
         </tr>
         <tr>
-          <th scope="row">borderless</th>
+          <th class="row-header">borderless</th>
           <td> test </td>
           <td> test </td>
           <td> test </td>
         </tr>
         <tr>
-          <th scope="row">borderless</th>
+          <th class="row-header">borderless</th>
           <td> test </td>
           <td> test </td>
           <td> test </td>
         </tr>
         <tr>
-          <th scope="row">borderless</th>
+          <th class="row-header">borderless</th>
           <td> test </td>
           <td> test </td>
           <td> test </td>
         </tr>
         <tr>
-          <th scope="row">borderless</th>
+          <th class="row-header">borderless</th>
           <td> test </td>
           <td> test </td>
           <td> test </td>
@@ -483,7 +489,7 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -501,7 +507,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -519,7 +525,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -537,7 +543,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -571,7 +577,7 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -589,7 +595,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -607,7 +613,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -625,7 +631,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row">row header</th>
+          <th class="row-header">row header</th>
           <td>
             test
           </td>
@@ -643,7 +649,7 @@
           </td>
         </tr>
       </tbody>
-    </cdr-table>
+    </cdr-table> -->
   </div>
 </template>
 
@@ -665,16 +671,19 @@ export default {
           title: 'Book A',
           year: 1823,
           author: 'Mikey',
+          rowheader: 'row 1',
         },
         {
           title: 'Book C',
           year: 1532,
           author: 'Joey',
+          rowheader: 'row 2',
         },
         {
           title: 'Book E',
           year: 1253,
           author: 'Scotty',
+          rowheader: 'row 3',
         },
       ],
     };
