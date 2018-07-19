@@ -10,6 +10,7 @@
       :records="bookRecords"
       :headers="bookHeaders"
       :row-headers="true"/>
+
     <h2>default table (non-scrollable mobile)</h2>
     <cdr-table>
       <tbody>
@@ -155,7 +156,7 @@
       </tbody>
     </cdr-table>
 
-    <!-- <h2>default table (srcollable tablet)</h2>
+    <h2>default table (srcollable tablet)</h2>
     <cdr-table>
       <tbody>
         <tr>
@@ -250,6 +251,141 @@
         </tr>
         <tr>
           <th class="row-header">row header</th>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <h2>default table without header (scrollable tablet)</h2>
+    <cdr-table>
+      <thead>
+        <tr>
+          <th>one</th>
+          <th>two</th>
+          <th>three</th>
+          <th>four</th>
+          <th>five</th>
+          <th>six</th>
+          <th>seven</th>
+          <th>eight</th>
+          <th>nine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+          <td>
+            test
+          </td>
+        </tr>
+        <tr>
           <td>
             test
           </td>
@@ -649,7 +785,7 @@
           </td>
         </tr>
       </tbody>
-    </cdr-table> -->
+    </cdr-table>
   </div>
 </template>
 
