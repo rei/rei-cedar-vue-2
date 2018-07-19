@@ -11,6 +11,7 @@
                   $style['cdr-tabs__header-container']]">
         <ol
           :class="$style['cdr-tabs__header']"
+          role="tablist"
           ref="cdrTabsHeader">
           <li
             v-for="tab in tabs"
@@ -19,6 +20,7 @@
             @click="handleClick(tab, $event)">
             <a
               :href="'/#' + tab.name"
+              role="tab"
               :tabindex="[ tab.active ? 1 : -1 ]"
               :class="$style['cdr-tabs__header-item-label']">
               {{ tab.name }}

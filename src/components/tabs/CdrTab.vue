@@ -9,6 +9,7 @@
       :aria-hidden="!active"
       :class="[modifierClass]"
       tabindex="1"
+      role="tabpanel"
       :key="name">
       <slot/>
     </div>
