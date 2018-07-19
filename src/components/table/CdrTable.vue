@@ -8,6 +8,9 @@
         <slot v-if="records.length == 0" />
         <template v-else>
           <thead v-if="headers.length > 0">
+            <th
+              class="empty"
+              v-if="rowHeaders" />
             <slot name="headers">
               <th
                 v-for="(header, index) in headers"
@@ -20,6 +23,11 @@
             <tr
               v-for="(record, index) in records"
               :key="index">
+              <th
+                class="row-header"
+                v-if="rowHeaders">
+                {{ recordValue(record, 'rowheader') }}
+              </th>
               <slot
                 :row="record"
                 v-for="(header, index) in headers">
@@ -61,13 +69,20 @@ export default {
       required: false,
       default: () => [],
     },
+    rowHeaders: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     baseClass() {
       return 'cdr-table';
     },
   },
-  // Determine whether or not table shoud be scrollable
+  /**
+   * Attach required modules for using media queries.
+   * Attach event handler for resizing of the screen to recalulate media queries
+   */
   mounted() {
     window.matchMedia = window.matchMedia || matchmedia;
     window.matchMedia.addListener = window.matchMedia.addListener || matchMediaAddListener;
@@ -79,30 +94,60 @@ export default {
     this.screenResize(mq);
   },
   methods: {
+    /**
+     * Recalculate table properties whenever screen is resized
+     */
     screenResize(mediaQuery) {
+      const cdrTableWrapper = this.$el;
       const cdrTableScrollable =
         this.$el.getElementsByClassName(this.$style['cdr-table__scrollable'])[0];
       const cdrTable = this.$el.getElementsByTagName('table')[0];
-      const cdrTableBody = this.$el.getElementsByTagName('tbody')[0];
-      const numberOfCells = cdrTableBody ?
-        cdrTableBody.getElementsByTagName('tr')[0].cells.length : 0;
+      // const cdrTableHead = cdrTable.getElementsByTagName('thead')[0];
+      const cdrTableBody = cdrTable.getElementsByTagName('tbody')[0];
+      const cdrTableRowHeader = cdrTable.querySelector('th.row-header');
+      let numberOfCells;
+
+      // If data has been fed in count number of columns in table
+      if (this.headers.length > 0) {
+        numberOfCells = this.headers.length;
+      } else if (cdrTableBody) {
+      // Otherwise use has defined their own table, count the columns
+        numberOfCells = cdrTableBody.getElementsByTagName('tr')[0].cells.length;
+      } else {
+        numberOfCells = 0;
+      }
 
       // For screens medium and larger
       if (mediaQuery.matches) {
-        if (numberOfCells > 7) { // more than 7 cells means scrollable
-          cdrTableScrollable.classList.add(this.$style['scrolling']); //eslint-disable-line
-        } else { // 7 cells or less means non-scrollable
+        // more than 7 cells and there are row headers mean scrollable
+        if (numberOfCells > 7) {
+          if (cdrTableRowHeader || this.rowHeaders) {
+            // make table scroll under row headers
+            cdrTableScrollable.classList.add(this.$style['scrolling']); //eslint-disable-line
+          } else {
+            // make entire table scrollable
+            cdrTableWrapper.classList.add(this.$style['scrolling']); //eslint-disable-line
+          }
+        } else {
+        // 7 or less cells or no row headers means non-scrollable
           cdrTableScrollable.classList.remove(this.$style['scrolling']); //eslint-disable-line
+          cdrTableWrapper.classList.add(this.$style['scrolling']); //eslint-disable-line
         }
       // For xs and sm screens
       } else if (window.matchMedia(`(max-width: ${CdrTokens.breakpointMd}`).matches) {
-        // more than 2 cells means scrollable
+        // more than 2 cells and there are row headers means scrollable
         if (numberOfCells > 2) {
-          cdrTableScrollable.classList.add(this.$style['scrolling']); //eslint-disable-line
-          cdrTable.classList.remove(this.$style['single-column']);
-        } else { // 2 cells or less means non-scrollable
+          if (cdrTableRowHeader || this.rowHeaders) {
+            cdrTableScrollable.classList.add(this.$style['scrolling']); //eslint-disable-line
+          } else {
+            cdrTableWrapper.classList.add(this.$style['scrolling']); //eslint-disable-line
+          }
+          // cdrTable.classList.remove(this.$style['single-column']);
+        } else {
+          // 2 or less cells or no row headers means non-scrollable
           cdrTableScrollable.classList.remove(this.$style['scrolling']); //eslint-disable-line
-          cdrTable.classList.add(this.$style['single-column']);
+          cdrTableWrapper.classList.add(this.$style['scrolling']); //eslint-disable-line
+          // cdrTable.classList.add(this.$style['single-column']);
         }
       }
     },
