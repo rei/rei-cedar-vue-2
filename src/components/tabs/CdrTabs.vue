@@ -4,7 +4,10 @@
   <div
     :class="[modifierClass]"
     ref="cdrTabsContainer">
-    <div :class="$style['cdr-tabs__gradient-container']">
+    <div
+      :class="$style['cdr-tabs__gradient-container']"
+      @keyup.right="handleArrowNav"
+      @keyup.left="handleArrowNav">
       <nav
         :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
                   overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
@@ -80,11 +83,11 @@ export default {
       this.calculateOverflow();
     }, 250));
     // Listen for left and right arrow keypress
-    window.addEventListener('keydown', debounce((event) => {
-      if (this.tabs.length > 0) {
-        this.handleArrowNav(event);
-      }
-    }, 250));
+    // window.addEventListener('keydown', debounce((event) => {
+    //   if (this.tabs.length > 0) {
+    //     this.handleArrowNav(event);
+    //   }
+    // }, 250));
     // Check for header overflow on widow resize for gradient behavior.
     this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
       this.calculateOverflow();
