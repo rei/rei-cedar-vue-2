@@ -1,203 +1,125 @@
 <template>
   <component
     :is="type === 'list' ? 'ul' : 'div'"
-    :class="[$style['cdr-row'], rowClasses]"
+    :class="[
+      $style['cdr-row'],
+      colsClass,
+      justifyClass,
+      alignClass,
+      gutterClass,
+      verticalClass,
+      wrapClass,
+      nowrapClass,
+    ]"
   >
-    <!-- @slot innerHTML inside the row component -->
     <slot/>
   </component>
 </template>
 
 <script>
-/**
- * Cedar 2 component for row
- * @version 0.0.1
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- */
+import modifier from 'mixinsdir/modifier';
+import propValidator from 'srcdir/utils/propValidator';
+
 export default {
   name: 'CdrRow',
+  mixins: [modifier],
   props: {
     /**
-     * Number of columns in the row (1-12, auto).
+     * Number of equal-width columns in the row.
+     * Possible values: {1-12, auto}
+     * Also accepts responsive values with `@breakpoint`: "2 4@md"
      */
     cols: {
-      type: [String, Number],
-      validator: (value) => {
-        const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
-          .indexOf(str) >= 0 || false;
-      },
-    },
-    /** Sm breakpoint and above */
-    colsSm: {
-      type: [String, Number],
-      validator: (value) => {
-        const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
-          .indexOf(str) >= 0 || false;
-      },
-    },
-    /** Md breakpoint and above */
-    colsMd: {
-      type: [String, Number],
-      validator: (value) => {
-        const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
-          .indexOf(str) >= 0 || false;
-      },
-    },
-    /** Lg breakpoint and above */
-    colsLg: {
-      type: [String, Number],
-      validator: (value) => {
-        const str = value.toString();
-        return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto']
-          .indexOf(str) >= 0 || false;
-      },
+      type: String,
+      validator: value => propValidator(
+        value,
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'],
+      ),
     },
     /**
-     * How columns should be justified within empty space of the row. Possible values: {left, center, right, around, between}. See CSS flexbox justify-content.
+     * How columns should be justified within empty space of the row. See CSS flexbox justify-content.
+     * Possible values: {left, center, right, around, between}.
+     * Also accepts responsive values with `@breakpoint`: "center right@lg"
      */
     justify: {
       type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between']
-        .indexOf(value) >= 0) || false,
-    },
-    /** Sm breakpoint and above */
-    justifySm: {
-      type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between']
-        .indexOf(value) >= 0) || false,
-    },
-    /** Md breakpoint and above */
-    justifyMd: {
-      type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between']
-        .indexOf(value) >= 0) || false,
-    },
-    /** Lg breakpoint and above */
-    justifyLg: {
-      type: String,
-      validator: value => (['left', 'center', 'right', 'around', 'between']
-        .indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['left', 'center', 'right', 'around', 'between'],
+      ),
     },
     /**
-     * How columns of different heights should align. {top, middle, bottom, stretch}. See CSS flexbox align-items.
+     * How columns of different heights should align. See CSS flexbox align-items.
+     * Possible values: {top, middle, bottom, stretch}.
+     * Also accepts responsive values with `@breakpoint`: "top middle@sm"
      */
     align: {
       type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** Sm breakpoint and above */
-    alignSm: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** Md breakpoint and above */
-    alignMd: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
-    },
-    /** Lg breakpoint and above */
-    alignLg: {
-      type: String,
-      validator: value => (['top', 'middle', 'bottom', 'stretch'].indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['top', 'middle', 'bottom', 'stretch'],
+      ),
     },
     /**
-     * Overrides default gutter spacing. {none}.
+     * Defines size of the gutters.
+     * Possible values: {none, xxs}.
+     * Also accepts responsive values with `@breakpoint`: "none@md"
      */
     gutter: {
       type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
-    },
-    /** Sm breakpoint and above */
-    gutterSm: {
-      type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
-    },
-    /** Md breakpoint and above */
-    gutterMd: {
-      type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
-    },
-    /** Lg breakpoint and above */
-    gutterLg: {
-      type: String,
-      validator: value => (['none', 'xxs'].indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['none', 'xxs'],
+      ),
     },
     /**
      * Changes row to a column layout. See CSS flexbox flex-direction.
+     * Possible values: {vertical}.
+     * Also accepts responsive values with `@breakpoint`: "vertical@md"
      */
     vertical: {
-      type: Boolean,
-      default: false,
-    },
-    /** Sm breakpoint and above */
-    verticalSm: {
-      type: Boolean,
-      default: false,
-    },
-    /** Md breakpoint and above */
-    verticalMd: {
-      type: Boolean,
-      default: false,
-    },
-    /** Lg breakpoint and above */
-    verticalLg: {
-      type: Boolean,
-      default: false,
+      type: String,
+      validator: value => propValidator(
+        value,
+        ['vertical'],
+      ),
     },
     /**
      * Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.
+     * Possible values: {wrap}.
+     * Also accepts responsive values with `@breakpoint`: "wrap@md"
      */
     wrap: {
-      type: Boolean,
-      default: false,
-    },
-    /** Sm breakpoint and above */
-    wrapSm: {
-      type: Boolean,
-      default: false,
-    },
-    /** Md breakpoint and above */
-    wrapMd: {
-      type: Boolean,
-      default: false,
-    },
-    /** Lg breakpoint and above */
-    wrapLg: {
-      type: Boolean,
-      default: false,
+      type: String,
+      validator: value => propValidator(
+        value,
+        ['wrap'],
+      ),
     },
     /**
      * Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.
+     * Possible values: {nowrap}.
+     * Also accepts responsive values with `@breakpoint`: "nowrap@md"
      */
     nowrap: {
-      type: Boolean,
-      default: false,
-    },
-    /** Sm breakpoint and above */
-    nowrapSm: {
-      type: Boolean,
-      default: false,
-    },
-    /** Md breakpoint and above */
-    nowrapMd: {
-      type: Boolean,
-      default: false,
-    },
-    /** Lg breakpoint and above */
-    nowrapLg: {
-      type: Boolean,
-      default: false,
+      type: String,
+      validator: value => propValidator(
+        value,
+        ['nowrap'],
+      ),
     },
     /**
-     * Changes grid to built with ul>li rather than divs. {normal, list}
+     * Changes grid to built with ul>li rather than divs.
+     * Possible values: {normal, list}.
      */
     type: {
       type: String,
       default: 'normal',
-      validator: value => (['normal', 'list'].indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['normal', 'list'],
+        false,
+      ),
     },
   },
   provide() {
@@ -206,43 +128,82 @@ export default {
     };
   },
   computed: {
-    rowClasses() {
-      const classObj = {};
-      classObj[this.$style[`cdr-row_row${this.cols}`]] = this.cols;
-      classObj[this.$style[`cdr-row_row${this.colsSm}@sm`]] = this.colsSm;
-      classObj[this.$style[`cdr-row_row${this.colsMd}@md`]] = this.colsMd;
-      classObj[this.$style[`cdr-row_row${this.colsLg}@lg`]] = this.colsLg;
-      // justify
-      classObj[this.$style[`cdr-row--${this.justify}`]] = this.justify;
-      classObj[this.$style[`cdr-row--${this.justifySm}@sm`]] = this.justifySm;
-      classObj[this.$style[`cdr-row--${this.justifyMd}@md`]] = this.justifyMd;
-      classObj[this.$style[`cdr-row--${this.justifyLg}@lg`]] = this.justifyLg;
-      // align
-      classObj[this.$style[`cdr-row--${this.align}`]] = this.align;
-      classObj[this.$style[`cdr-row--${this.alignSm}@sm`]] = this.alignSm;
-      classObj[this.$style[`cdr-row--${this.alignMd}@md`]] = this.alignMd;
-      classObj[this.$style[`cdr-row--${this.alignLg}@lg`]] = this.alignLg;
-      // column
-      classObj[this.$style['cdr-row--column']] = this.vertical;
-      classObj[this.$style['cdr-row--column@sm']] = this.verticalSm;
-      classObj[this.$style['cdr-row--column@md']] = this.verticalMd;
-      classObj[this.$style['cdr-row--column@lg']] = this.verticalLg;
-      // gutter
-      classObj[this.$style[`cdr-row--gutter-${this.gutter}`]] = this.gutter;
-      classObj[this.$style[`cdr-row--gutter-${this.gutterSm}@sm`]] = this.gutterSm;
-      classObj[this.$style[`cdr-row--gutter-${this.gutterMd}@md`]] = this.gutterMd;
-      classObj[this.$style[`cdr-row--gutter-${this.gutterLg}@lg`]] = this.gutterLg;
-      // wrap
-      classObj[this.$style['cdr-row--wrap@sm']] = this.wrapSm;
-      classObj[this.$style['cdr-row--wrap@md']] = this.wrapMd;
-      classObj[this.$style['cdr-row--wrap@lg']] = this.wrapLg;
-      // noWrap
-      classObj[this.$style['cdr-row--noWrap']] = this.nowrap;
-      classObj[this.$style['cdr-row--noWrap@sm']] = this.nowrapSm;
-      classObj[this.$style['cdr-row--noWrap@md']] = this.nowrapMd;
-      classObj[this.$style['cdr-row--noWrap@lg']] = this.nowrapLg;
+    colsClass() {
+      const classStr = [];
 
-      return classObj;
+      if (this.cols) {
+        this.cols.split(' ').forEach((val) => {
+          classStr.push(this.$style[`cdr-row_row${val}`]);
+        });
+      }
+
+      return classStr.join(' ');
+    },
+    justifyClass() {
+      const classStr = [];
+
+      if (this.justify) {
+        this.justify.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
+    },
+    alignClass() {
+      const classStr = [];
+
+      if (this.align) {
+        this.align.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
+    },
+    gutterClass() {
+      const classStr = [];
+
+      if (this.gutter) {
+        this.gutter.split(' ').forEach((val) => {
+          classStr.push(this.$style[`cdr-row--gutter-${val}`]);
+        });
+      }
+
+      return classStr.join(' ');
+    },
+    verticalClass() {
+      const classStr = [];
+
+      if (this.vertical) {
+        this.vertical.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
+    },
+    wrapClass() {
+      const classStr = [];
+
+      if (this.wrap) {
+        this.wrap.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
+    },
+    nowrapClass() {
+      const classStr = [];
+
+      if (this.nowrap) {
+        this.nowrap.split(' ').forEach((val) => {
+          classStr.push(this.modifyClassName('cdr-row', val));
+        });
+      }
+
+      return classStr.join(' ');
     },
   },
 };

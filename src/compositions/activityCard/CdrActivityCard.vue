@@ -11,7 +11,6 @@
         :img-class="$style['cdr-card--activity__image']"
         img-modifier="responsive"
         modifier="top stretch"
-        img-radius="top"
       >
         <div
           v-if="label != null"

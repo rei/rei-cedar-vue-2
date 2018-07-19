@@ -110,10 +110,6 @@ __TODO:__ Notes about js, eslint
 
 __TODO:__ Notes about DDS, design tokens, integrations
 Tokens are stored in the REI-Cedar-tokens project, and new tokens will need to be created there.
-REI-Cedar uses the THEO project for design tokens, when bringing in an update from the REI-Cedar-tokens project do the following:
-- update the package.json to the latest tag from the REI-Cedar-Tokens repo.
-- `npm i` to install the latest tag from REI-Cedar-tokens.
-- `npm run theo` will run THEO in the REI-Cedar repo and convert the tokens to scss variables in `src/css/settings/tokens.pcss`.
 
 ## CSS
 
@@ -145,4 +141,10 @@ __TODO:__ Notes about Vue, components
 This project is Commitizen friendly.
 when creating a pull request run `git cz` rather than `git commit` and follow the prompts.
 
-To generate the Changelog on tag run `standard-changelog`.
+This projects Changlogs are generated.
+To output the latest changelog files you will need to create a new repository release.
+This is done with calendar versioning in the following format
+**YY.MM.(iterator)**
+
+- Generate the root Changelog: `standard-changelog`.
+- Generate the component Changelogs: `lerna-semantic-release post`.

@@ -1,7 +1,6 @@
 <template>
   <cdr-row
-    cols="2"
-    cols-md="4"
+    cols="2 4@md"
   >
     <cdr-col>
       <div>

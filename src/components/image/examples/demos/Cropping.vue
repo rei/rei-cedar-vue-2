@@ -2,8 +2,7 @@
   <div>
     <h3>Cropping (with landscape images)</h3>
     <cdr-row
-      cols="1"
-      cols-md="3"
+      cols="1 3@md"
     >
       <cdr-col>
         <div>
@@ -45,8 +44,7 @@
 
     <h3>Cropping (with portrait images)</h3>
     <cdr-row
-      cols="1"
-      cols-md="3"
+      cols="1 3@md"
     >
       <cdr-col>
         <div>
@@ -99,8 +97,7 @@
       </cdr-col>
     </cdr-row>
     <cdr-row
-      cols="1"
-      cols-md="3"
+      cols="1 3@md"
     >
       <cdr-col>
         <div>

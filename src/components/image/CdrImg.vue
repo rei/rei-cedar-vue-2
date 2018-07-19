@@ -5,7 +5,7 @@
     :class="[$style['cdr-media-frame'], ratioClass, cropClass]"
   >
     <div
-      :class="[coverClass, lazyClass]"
+      :class="[coverClass, lazyClass, radiusClass]"
       :style="styleObject"
       aria-hidden="true"
       v-bind="lazyAttrs"/>
@@ -30,7 +30,7 @@ import modifier from 'mixinsdir/modifier';
 /**
  * Cedar 2 component for image
  * <span class="modifiers">Modifiers</span>
- * {responsive, rounded, circle}
+ * {responsive}
  * @version 0.0.1
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
@@ -127,11 +127,8 @@ export default {
     radius: {
       type: String,
       validator: value => ([
-        'square',
-        'top',
-        'right',
-        'bottom',
-        'left'].indexOf(value) >= 0) || false,
+        'circle',
+        'rounded'].indexOf(value) >= 0) || false,
     },
   },
   computed: {
@@ -145,7 +142,7 @@ export default {
     },
     radiusClass() {
       const classObj = {};
-      classObj[this.$style[`cdr-add-radius--${this.utiliyRadius}`]] = this.utiliyRadius;
+      classObj[this.$style[`cdr-image--${this.radius}`]] = this.radius;
       return classObj;
     },
     ratioClass() {

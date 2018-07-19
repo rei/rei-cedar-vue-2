@@ -14,6 +14,14 @@
       class="cpg-section"
       data-backstop="links"
     />
+    <accordion
+      class="cpg-section"
+      data-backstop="accordion"
+    />
+    <breadcrumb
+      class="cpg-section"
+      data-backstop="breadcrumbs"
+    />
     <buttons
       class="cpg-section"
       data-backstop="buttons"
@@ -21,10 +29,6 @@
     <cta
       class="cpg-section"
       data-backstop="cta-buttons"
-    />
-    <icon-only-buttons
-      class="cpg-section"
-      data-backstop="icon-only-buttons"
     />
     <cards class="cpg-section"/>
     <!-- <card-content class="cpg-section"></card-content> -->
