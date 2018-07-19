@@ -71,7 +71,6 @@ export default {
     setLeaveStart(element) {
       const el = element;
       el.classList.add(this.animationDirection);
-      // el.style.animationTimingFunction = 'cubic-bezier(0, 1.52, 0.6, 0.67)';
       el.style.animationTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
     },
     setLeaveEnd(element) {

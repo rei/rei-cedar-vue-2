@@ -79,7 +79,9 @@ export default {
     }, 250));
     // Listen for left and right arrow keypress
     window.addEventListener('keydown', debounce((event) => {
-      this.handleArrowNav(event);
+      if (this.tabs.length > 0) {
+        this.handleArrowNav(event);
+      }
     }, 250));
     // Check for header overflow on widow resize for gradient behavior.
     this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
