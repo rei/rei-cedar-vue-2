@@ -59,16 +59,26 @@ export default {
   name: 'CdrTable',
   mixins: [modifier],
   props: {
+    /**
+     * Provides array of objects representing table records. Each object property value
+     * corresponds to a column in the table record.
+     */
     records: {
       type: Array,
       required: false,
       default: () => [],
     },
+    /**
+     * Provides array of strings representing titles of each column in the table
+     */
     headers: {
       type: Array,
       required: false,
       default: () => [],
     },
+    /**
+     * Boolean value indicating that data fed into the component has row headers
+     */
     rowHeaders: {
       type: Boolean,
       default: false,
