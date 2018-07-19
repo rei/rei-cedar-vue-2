@@ -5,7 +5,7 @@
     :class="[$style['cdr-media-frame'], ratioClass, cropClass]"
   >
     <div
-      :class="[coverClass, lazyClass]"
+      :class="[coverClass, lazyClass, radiusClass]"
       :style="styleObject"
       aria-hidden="true"
       v-bind="lazyAttrs"/>
