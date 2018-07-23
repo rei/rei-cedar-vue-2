@@ -14,7 +14,8 @@
             <slot name="headers">
               <th
                 v-for="(header, index) in headers"
-                :key="index">
+                :key="index"
+                scope="col">
                 {{ header }}
               </th>
             </slot>
@@ -25,6 +26,7 @@
               :key="index">
               <th
                 class="row-header"
+                scope="row"
                 v-if="rowHeaders">
                 {{ recordValue(record, 'rowheader') }}
               </th>
