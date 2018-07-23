@@ -3,7 +3,8 @@
     <h2>table with data fed in</h2>
     <cdr-table
       :records="bookRecords"
-      :headers="bookHeaders"/>
+      :headers="bookHeaders"
+      data-backstop="tables"/>
 
     <h2>table with data fed in and row headers</h2>
     <cdr-table
@@ -558,7 +559,9 @@
     </cdr-table>
 
     <h2>borderless table</h2>
-    <cdr-table modifier="borderless">
+    <cdr-table
+      modifier="borderless"
+      data-backstop="tables--borderless">
       <tbody>
         <tr>
           <th class="row-header">borderless</th>
@@ -612,7 +615,9 @@
     </cdr-table>
 
     <h2>compact table</h2>
-    <cdr-table modifier="compact">
+    <cdr-table
+      modifier="compact"
+      data-backstop="tables--compact">
       <thead>
         <tr>
           <th class="empty" />
