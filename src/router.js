@@ -7,6 +7,7 @@ import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
 import Links from 'componentsdir/link/examples/Links';
+import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Lists from 'componentsdir/list/examples/Lists';
 import MediaObjects from 'componentsdir/mediaObject/examples/mediaObject';
 import Quotes from 'componentsdir/quote/examples/Quote';
@@ -14,6 +15,7 @@ import Radios from 'componentsdir/radio/examples/Radios';
 import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Texts from 'componentsdir/text/examples/Text';
+import Input from 'componentsdir/input/examples/Inputs';
 
 import ActivityCards from 'compositionsdir/activityCard/examples/activity';
 import Captions from 'compositionsdir/caption/examples/Caption';
@@ -31,6 +33,8 @@ const routes = [
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
   { path: '/links', name: 'Links', component: Links },
+  { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
+  { path: '/inputs', name: 'Input', component: Input },
   { path: '/lists', name: 'Lists', component: Lists },
   { path: '/mediaobjects', name: 'Media Objects', component: MediaObjects },
   { path: '/quotes', name: 'Quotes', component: Quotes },
