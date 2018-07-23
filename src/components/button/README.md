@@ -5,42 +5,42 @@
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | tag | string   | button |
-| Render CdrButton as a `<button>` or `<a>` element. When using a value of a, this element renders as an anchor link. Possible values: { button, a }
+| Render CdrButton as a `<button>` or `<a>` element. When using a value of a, this element renders as an anchor link. Possible values: { button, a } |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | type| string   | button |
-| Set the button type. Possible values: { button, submit, reset}
+| Set the button type. Possible values: { button, submit, reset} |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | onClick | function   | return null |
-| Add custom click actions.
+| Add custom click actions. |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | fullWidth | boolean | false |
-| Set button width to 100%. Setting it to true will set the button width to 100% of the parent container. Use the full-width prop with the size prop to control top and bottom padding.
+| Set button width to 100%. Setting it to true will set the button width to 100% of the parent container. Use the full-width prop with the size prop to control top and bottom padding. |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | size | string | medium |
-| Set the button size. Possible values: { small, medium, large }
+| Set the button size. Possible values: { small, medium, large } | 
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | responsiveSize | array | n/a |
-| Set the button size at different responsive breakpoints. Breakpoints are expressed as t-shirt sizing with values: `xs`, `sm`, `md`, and `lg`. Example: [‘large@xs’, ‘small@lg’]
+| Set the button size at different responsive breakpoints. Breakpoints are expressed as t-shirt sizing with values: `xs`, `sm`, `md`, and `lg`. Example: [‘large@xs’, ‘small@lg’] |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | iconOnly | boolean | false |
-| Renders an icon-only button. Overrides size and responsiveSize props.
+| Renders an icon-only button. Overrides size and responsiveSize props. |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | onDark | boolean | false |
-| Renders an icon-only button with a light fill color for use on dark backgrounds. iconOnly must also be true.
+| Renders an icon-only button with a light fill color for use on dark backgrounds. iconOnly must also be true. |
 
 ## Slots
 
@@ -70,7 +70,7 @@ Resources are available within the [cdr-button package:](https://www.npmjs.com/s
 | Name  | Type | Description     |
 |:-----|:-------|:--------|
 | `@rei/cdr-button` | Node module package | Import the component into your project |
-| `cdr-button.css` | Style sheet | Component specific styles
+| `cdr-button.css` | Style sheet | Component specific styles |
 
 To incorporate the required assets for a component, use the following steps:
 
