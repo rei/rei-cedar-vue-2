@@ -1,12 +1,32 @@
+# CdrList
+
+## Properties
+
+| name                                                                              | type   | Default |
+| :-------------------------------------------------------------------------------- | :----- | :------ |
+| Tag                                                                               | string | "ul"    |
+| Tag allows the user to define what html list root to use. Possible values: ul, ol |
+
+| name                                                                                                                     | type   | Default |
+| :----------------------------------------------------------------------------------------------------------------------- | :----- | :------ |
+| modifier                                                                                                                 | string | N/A     |
+| Modifier allows the user to pass a style variant to this component. Possible values: ordered, unordered, compact, inline |
+
+## Slots
+
+| name                                            |
+| :---------------------------------------------- |
+| Default                                         |
+| innerHTML on the inside of the anchor component |
+
 ## Installation
 
 Resources are available within the [cdr-list package](https://www.npmjs.com/package/@rei/cdr-list):
 
 | **Name**        | **Type**            | **Description**                        |
-|:----------------|:--------------------|:---------------------------------------|
+| :-------------- | :------------------ | :------------------------------------- |
 | `@rei/cdr-list` | Node module package | Import the component into your project |
 | `cdr-list.css`  | Style sheet         | Component specific styles              |
-
 
 To incorporate the required assets for a component, use the following steps:
 
@@ -26,9 +46,8 @@ _main.js_
 
 ```javascript
 // import your required css.
-import '@rei/cdr-list/dist/cdr-list.css';
+import "@rei/cdr-list/dist/cdr-list.css";
 ```
-
 
 ### #3. Add component to a template
 
@@ -43,18 +62,18 @@ _local.vue_
 </template>
 
 <script>
-import { CdrList } from '@rei/cdr-list';
+import { CdrList } from "@rei/cdr-list";
 export default {
   components: {
-     CdrList  
+    CdrList
   }
-}
+};
 </script>
 ```
 
 ## Usage
 
-Visual style and semantic meaning are managed independently by providing: 
+Visual style and semantic meaning are managed independently by providing:
 
 - Element to the **tag** prop
 - Style to the **modifier** prop
@@ -75,7 +94,7 @@ It is possible to render a semantic ordered list `<ol>` as a visually non styled
 
 Following are different types of lists:
 
-- Unordered lists: 
+- Unordered lists:
   - Used when the order of the items is not relevant
   - Consists of one `<ul>` element and multiple list item `<li>` elements
 - Ordered lists:
@@ -102,12 +121,12 @@ Following are different types of lists:
 
 Note that the tag itself does not determine display, a modifier must be added for list styles. Add one of the following variants to the **modifier** attribute of the `cdr-list` tag to change the visual presentation:
 
-| **Name**  | **Description**                                                                                                                                                                            | **Example**                                   |
-|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------|
-| unordered | The unordered modifier adds a bullet decorator to child list items and a ‘en-dash’ decorator to grandchild list items. This variant can be used on both `<ul>`  or `<ol>`  list types.     | ```<cdr-list  modifier="unordered" >```       |
-| ordered   | The ordered modifier adds a numeric decorator to child list items and a ‘en-dash’ decorator to grandchild list items. This variant can be used on both `<ul>`  or `<ol>`  list types.      | ```<cdr-list tag="ol" modifier="ordered" >``` |
-| compact   | The compact modifier reduces the vertical space between list items for non-inline list variants. For inline variants the compact modifier reduces the horizontal space between list items. | ```<cdr-list modifier="compact">```           |
-| inline    | The inline modifier is intended for bare or unordered list variants. In ether case this can be combined with compact to adjust the spacing of inline list variants.                        | ```<cdr-list modifier=" inline">```           |
+| **Name**  | **Description**                                                                                                                                                                            | **Example**                               |
+| :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------- |
+| unordered | The unordered modifier adds a bullet decorator to child list items and a ‘en-dash’ decorator to grandchild list items. This variant can be used on both `<ul>` or `<ol>` list types.       | `<cdr-list modifier="unordered" >`        |
+| ordered   | The ordered modifier adds a numeric decorator to child list items and a ‘en-dash’ decorator to grandchild list items. This variant can be used on both `<ul>` or `<ol>` list types.        | `<cdr-list tag="ol" modifier="ordered" >` |
+| compact   | The compact modifier reduces the vertical space between list items for non-inline list variants. For inline variants the compact modifier reduces the horizontal space between list items. | `<cdr-list modifier="compact">`           |
+| inline    | The inline modifier is intended for bare or unordered list variants. In ether case this can be combined with compact to adjust the spacing of inline list variants.                        | `<cdr-list modifier=" inline">`           |
 
 ## Accessibility
 
@@ -118,4 +137,4 @@ Note that the tag itself does not determine display, a modifier must be added fo
   - Proper structure is used to provide a visual list, do not rely on indentation
   - Special characters are not used to create a list
 - This component has compliance with following WebAIM’s accessibility guidelines:
-  - [WCAG SC 1.3.1: Info and Relationships](https://www.w3.org/TR/WCAG20/#content-structure-separation): Cedar Design System provides ability to create structured lists. Lists are easier to navigate than simple tables 
+  - [WCAG SC 1.3.1: Info and Relationships](https://www.w3.org/TR/WCAG20/#content-structure-separation): Cedar Design System provides ability to create structured lists. Lists are easier to navigate than simple tables
