@@ -10,10 +10,11 @@
     <cdr-table
       :records="bookRecords"
       :headers="bookHeaders"
-      :row-headers="true"/>
+      :row-headers="true"
+      data-backstop="tables"/>
 
     <h2>default table (non-scrollable mobile)</h2>
-    <cdr-table>
+    <cdr-table data-backstop="tables">
       <tbody>
         <tr>
           <th class="row-header">row header</th>
@@ -42,7 +43,7 @@
       </tbody>
     </cdr-table>
     <h2>default table (srcollable mobile)</h2>
-    <cdr-table>
+    <cdr-table data-backstop="tables">
       <tbody>
         <tr>
           <th class="row-header">row header</th>
@@ -96,7 +97,7 @@
     </cdr-table>
 
     <h2>default table with header (scrollable mobile)</h2>
-    <cdr-table>
+    <cdr-table data-backstop="tables">
       <thead>
         <tr>
           <th class="empty" />
@@ -158,7 +159,7 @@
     </cdr-table>
 
     <h2>default table (srcollable tablet)</h2>
-    <cdr-table>
+    <cdr-table data-backstop="tables">
       <tbody>
         <tr>
           <th class="row-header">row header</th>
@@ -284,7 +285,7 @@
     </cdr-table>
 
     <h2>default table without header (scrollable tablet)</h2>
-    <cdr-table>
+    <cdr-table data-backstop="tables">
       <thead>
         <tr>
           <th>one</th>
@@ -419,7 +420,7 @@
     </cdr-table>
 
     <h2>default table with header (scrollable tablet)</h2>
-    <cdr-table>
+    <cdr-table data-backstop="tables">
       <thead>
         <tr>
           <th class="empty" />
