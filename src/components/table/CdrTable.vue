@@ -62,15 +62,6 @@ export default {
   mixins: [modifier],
   props: {
     /**
-     * Provides array of objects representing table records. Each object property value
-     * corresponds to a column in the table record.
-     */
-    records: {
-      type: Array,
-      required: false,
-      default: () => [],
-    },
-    /**
      * Provides array of strings representing titles of each column in the table
      */
     headers: {
@@ -79,7 +70,19 @@ export default {
       default: () => [],
     },
     /**
-     * Boolean value indicating that data fed into the component has row headers
+     * Provides array of objects representing table records. Each object property value
+     * corresponds to a column in the table record. Each object property key must match
+     * the string value of the corresponding header array.
+     */
+    records: {
+      type: Array,
+      required: false,
+      default: () => [],
+    },
+    /**
+     * Boolean value indicating that data fed into the component has row headers. For each
+     * table record object in the data, row header column must have 'rowheader' as the
+     * property key.
      */
     rowHeaders: {
       type: Boolean,
@@ -163,9 +166,17 @@ export default {
         }
       }
     },
+    /**
+     * Determines if a table record obejct has a value corresponding to a
+     * specific column value
+     */
     hasValue(record, column) {
       return record[column.toLowerCase()] !== 'undefined';
     },
+    /**
+     * Returns the value of a table record object corresponding to a specific
+     * column value.
+     */
     recordValue(record, column) {
       return record[column.toLowerCase()];
     },
