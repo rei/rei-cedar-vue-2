@@ -4,7 +4,7 @@
     <div class="button-example">
       <cdr-cta
         data-backstop="cdr-cta--dark">
-        Default (dark)
+        Dark
       </cdr-cta>
       <cdr-cta
         href="https://rei.com"
@@ -22,22 +22,26 @@
         href="https://rei.com"
         cta-style="sale"
         data-backstop="cdr-cta--sale"
-        modifier="elevated"
-      >Sale (elevated)</cdr-cta
+      >Sale</cdr-cta
       >
     </div>
     <div class="button-example">
       <cdr-cta
         cta-style="dark"
+        href="https://rei.com"
         :full-width="true"
-        data-backstop="cdr-cta--dark full-width"
+        data-backstop="cdr-cta--full-width"
       >Full width</cdr-cta
       >
     </div>
     <div
       class="button-example"
       style="max-width: 300px">
-      <cdr-cta>
+      <cdr-cta
+        data-backstop="cdr-cta--elevated"
+        href="https://rei.com"
+        cta-style="sale"
+        modifier="elevated">
         This button has long text. It wraps!
       </cdr-cta>
     </div>
