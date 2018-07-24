@@ -4,13 +4,14 @@
   <div :class="$style['cdr-table__wrapper']">
     <div :class="$style['cdr-table__scrollable']">
       <table :class="[modifierClass]">
-        <!-- @slot table head and/or body placed into data table component -->
+        <!-- @slot Use this slot when defining markup for table yourself -->
         <slot v-if="records.length == 0" />
         <template v-else>
           <thead v-if="headers.length > 0">
             <th
               class="empty"
               v-if="rowHeaders" />
+            <!-- @slot Use this slot for column headers -->
             <slot name="headers">
               <th
                 v-for="(header, index) in headers"
@@ -30,6 +31,7 @@
                 v-if="rowHeaders">
                 {{ recordValue(record, 'rowheader') }}
               </th>
+              <!-- @slot Use this slot as default design of data records fed into table -->
               <slot
                 :row="record"
                 v-for="(header, index) in headers">
