@@ -14,7 +14,7 @@
         :modifier="button.modifier"
         :type="button.type"
         :disabled="button.disabled"
-        :data-backstop="button.backstop"
+        :data-backstop="button.backstop ? button.backstop : null"
       >{{ button.label }}</cdr-button>
     </div>
     <div class="button-example">
@@ -48,21 +48,19 @@ export default {
               disabled: false,
               size: 'large',
               modifier: 'secondary',
-              backstop: 'cdr-button--large secondary',
+              backstop: 'cdr-button--secondary',
             },
             {
               label: 'Medium',
               disabled: false,
               size: 'medium',
               modifier: 'secondary',
-              backstop: 'cdr-button--medium secondary',
             },
             {
               label: 'Small',
               disabled: false,
               size: 'small',
               modifier: 'secondary',
-              backstop: 'cdr-button--small secondary',
             },
           ],
         },
@@ -74,21 +72,18 @@ export default {
               disabled: true,
               size: 'large',
               modifier: 'secondary',
-              backstop: 'cdr-button--large secondary disabled',
             },
             {
               label: 'Medium',
               disabled: true,
               size: 'medium',
               modifier: 'secondary',
-              backstop: 'cdr-button--medium secondary disalbed',
             },
             {
               label: 'Small',
               disabled: true,
               size: 'small',
               modifier: 'secondary',
-              backstop: 'cdr-button--small secondary disabled',
             },
           ],
         },

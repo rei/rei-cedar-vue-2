@@ -1,4 +1,8 @@
 module.exports = [{
   label: 'Accordion',
-  selectors: [],
+  selectors: [
+    '[data-backstop="accordion-default"]',
+    '[data-backstop="accordion-compact"]',
+    '[data-backstop="accordion-border-aligned"]',
+  ],
 }];

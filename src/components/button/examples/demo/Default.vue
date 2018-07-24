@@ -13,7 +13,7 @@
         :responsive-size="button.responsiveSize"
         :type="button.type"
         :disabled="button.disabled"
-        :data-backstop="button.backstop">
+        :data-backstop="button.backstop ? button.backstop : null">
         {{ button.label }}
       </cdr-button>
     </div>
@@ -56,21 +56,19 @@ export default {
               disabled: false,
               size: 'large',
               fullWidth: false,
-              backstop: 'cdr-button--large',
+              backstop: 'cdr-button--size',
             },
             {
               label: 'Medium',
               disabled: false,
               size: 'medium',
               fullWidth: false,
-              backstop: 'cdr-button--medium',
             },
             {
               label: 'Small',
               disabled: false,
               size: 'small',
               fullWidth: false,
-              backstop: 'cdr-button--small',
             },
           ],
         },
@@ -82,21 +80,19 @@ export default {
               disabled: true,
               size: 'large',
               fullWidth: false,
-              backstop: 'cdr-button--large disabled',
+              backstop: 'cdr-button--disabled',
             },
             {
               label: 'Medium',
               disabled: true,
               size: 'medium',
               fullWidth: false,
-              backstop: 'cdr-button--medium disabled',
             },
             {
               label: 'Small',
               disabled: true,
               size: 'small',
               fullWidth: false,
-              backstop: 'cdr-button--small disabled',
             },
           ],
         },
@@ -108,21 +104,18 @@ export default {
               disabled: false,
               size: 'small',
               fullWidth: true,
-              backstop: 'cdr-button--mall full-width',
             },
             {
               label: 'Medium + full width',
               disabled: false,
               size: 'medium',
               fullWidth: true,
-              backstop: 'cdr-button--medium full-width',
             },
             {
               label: 'Large + full width',
               disabled: false,
               size: 'large',
               fullWidth: true,
-              backstop: 'cdr-button--large full-width',
             },
           ],
         },
