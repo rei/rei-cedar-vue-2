@@ -1,5 +1,11 @@
-<a name="0.1.0-alpha.0"></a>
-# 0.1.0-alpha.0 (2018-07-11)
+<a name="1.0.0"></a>
+# 1.0.0 (2018-07-25)
+
+
+### Bug Fixes
+
+* **button:** bump version to match alpha ([3439b98](https://github.com/rei/rei-cedar/commit/3439b98))
+* **button cta:** import cdr-icon css for components packaged with an icon ([6bb2233](https://github.com/rei/rei-cedar/commit/6bb2233))
 
 
 ### Chores
