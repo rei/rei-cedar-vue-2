@@ -6,7 +6,7 @@
         tag="a"
         href="https://rei.com"
         size="large"
-        data-backstop="cdr-button--large icon">
+        data-backstop="cdr-button--icon">
         <template name="icon">
           <icon-check-lg class="cdr-button__icon" />
         </template>
@@ -14,7 +14,7 @@
       </cdr-button>
       <cdr-button
         size="medium"
-        data-backstop="cdr-button--medium icon">
+      >
         <template name="icon">
           <icon-check-lg class="cdr-button__icon" />
         </template>
@@ -22,7 +22,7 @@
       </cdr-button>
       <cdr-button
         size="small"
-        data-backstop="cdr-button--small icon">
+      >
         <template name="icon">
           <icon-check-lg
             modifier="sm"
@@ -43,7 +43,7 @@
       <cdr-button
         size="large"
         modifier="secondary"
-        data-backstop="cdr-button--large secondary icon">
+      >
         <template name="icon">
           <cdr-icon
             class="cdr-button__icon"
@@ -54,7 +54,7 @@
       <cdr-button
         size="medium"
         modifier="secondary"
-        data-backstop="cdr-button--medium secondary icon">
+      >
         <template name="icon">
           <cdr-icon
             class="cdr-button__icon"
@@ -65,7 +65,7 @@
       <cdr-button
         size="small"
         modifier="secondary"
-        data-backstop="cdr-button-small secondary icon">
+      >
         <template name="icon">
           <cdr-icon
             class="cdr-button__icon"
@@ -77,7 +77,8 @@
     <div class="button-example">
       <cdr-button
         size="small"
-        :responsive-size="['large@xs', 'medium@sm', 'small@lg']">
+        :responsive-size="['large@xs', 'medium@sm', 'small@lg']"
+      >
         <template name="icon">
           <icon-clock class="cdr-button__icon" />
         </template>
@@ -88,7 +89,7 @@
       <cdr-button
         size="large"
         full-width
-        data-backstop="cdr-button--large full-width icon">
+      >
         <template name="icon">
           <icon-clock class="cdr-button__icon" />
         </template>
@@ -102,7 +103,7 @@
         <cdr-button
           size="medium"
           modifier="secondary"
-          data-backstop="cdr-button--medium secondary icon">
+        >
           <template name="icon">
             <cdr-icon
               class="cdr-button__icon"

@@ -49,6 +49,7 @@
 
 <script>
 import { IconCaretDown } from '@rei/cdr-icon';
+import '@rei/cdr-icon/dist/cdr-icon.css';
 import modifier from 'mixinsdir/modifier';
 import { setTimeout } from 'core-js';
 

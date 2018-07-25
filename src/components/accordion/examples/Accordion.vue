@@ -4,11 +4,11 @@
     <div class="accordion-group">
       <h3>Default</h3>
       <cdr-accordion
+        data-backstop="accordion-default"
       >
         <cdr-accordion-item
           id="default"
           label="A short label"
-          :show="true"
         >
           This is some text. It's not in a <strong>paragraph</strong> element because
           that would include margin and add space to the container. Lorem ipsum dolor
@@ -39,19 +39,40 @@
       </cdr-accordion>
     </div>
     <div class="accordion-group">
-      <h3>Compact and Border-aligned</h3>
+      <h3>Compact</h3>
       <cdr-accordion
         :compact="true"
-        :border-aligned="true"
+        data-backstop="accordion-compact"
       >
         <cdr-accordion-item
-          id="border-aligned-compact"
-          label="Border-aligned and compact"
+          id="compact"
+          label="Compact"
         >
           It helps to see at least two accordions together.
         </cdr-accordion-item>
         <cdr-accordion-item
-          id="border-aligned-compact-2"
+          id="compact-2"
+          label="Label with multiple words, so many words in fact that
+          this content may wrap to several lines"
+        >
+          Some text inside, should align to the label above.
+        </cdr-accordion-item>
+      </cdr-accordion>
+    </div>
+    <div class="accordion-group">
+      <h3>Border-Aligned</h3>
+      <cdr-accordion
+        :border-aligned="true"
+        data-backstop="accordion-border-aligned"
+      >
+        <cdr-accordion-item
+          id="border-aligned"
+          label="Border-aligned"
+        >
+          It helps to see at least two accordions together.
+        </cdr-accordion-item>
+        <cdr-accordion-item
+          id="border-aligned-2"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
         >
