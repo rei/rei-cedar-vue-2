@@ -1,9 +1,10 @@
-<a name="1.0.0-next.alpha.0"></a>
-# 1.0.0-next.alpha.0 (2018-07-11)
+<a name="1.0.0-next.alpha.1"></a>
+# 1.0.0-next.alpha.1 (2018-07-25)
 
 
 ### Bug Fixes
 
+* **cdr-img:** add radius to cropped/ratio images ([ceefec6](https://github.com/rei/rei-cedar/commit/ceefec6))
 * **cdr-img:** the radius validator did not have the correct values, removing them and updating radiu ([c39066d](https://github.com/rei/rei-cedar/commit/c39066d))
 
 

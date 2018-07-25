@@ -1,5 +1,5 @@
 <a name="1.0.0-next.beta.1"></a>
-# 1.0.0-next.beta.1 (2018-07-11)
+# 1.0.0-next.beta.1 (2018-07-25)
 
 
 ### Bug Fixes
