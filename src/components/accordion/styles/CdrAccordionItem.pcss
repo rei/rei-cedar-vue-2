@@ -35,12 +35,15 @@
     width: 100%;
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
       background-color: $the-tooth;
     }
   }
 
   &__label {
+    @include redwood-display-30;
+
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 0;
@@ -70,10 +73,15 @@
   &__content {
     @include redwood-body-20;
 
+    background-color: $clean-slate;
     color: $heart-of-darkness;
     padding: $space-half-x $space-1-x $space-1-x;
     transition: opacity 100ms linear;
     opacity: 0;
+
+    & > * {
+      @include redwood-body-20;
+    }
 
     &:global(.open) {
       opacity: 1;
@@ -102,12 +110,12 @@
      ========== */
   &--compact {
     .cdr-accordion-item__button {
-      @include redwood-display-20;
-
       padding: $inset-three-quarter-x;
     }
 
     .cdr-accordion-item__label {
+      @include redwood-display-20;
+
       font-weight: bold;
     }
 
@@ -115,6 +123,10 @@
       @include redwood-body-10;
 
       padding: $space-quarter-x $space-three-quarter-x $space-three-quarter-x;
+
+      & > * {
+        @include redwood-body-10;
+      }
     }
   }
 
