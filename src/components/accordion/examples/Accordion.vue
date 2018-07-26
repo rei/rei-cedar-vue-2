@@ -48,14 +48,22 @@
           id="compact"
           label="Compact"
         >
-          It helps to see at least two accordions together.
+          <cdr-text
+            tag="p"
+          >
+            It helps to see at least two accordions together.
+          </cdr-text>
         </cdr-accordion-item>
         <cdr-accordion-item
           id="compact-2"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
         >
-          Some text inside, should align to the label above.
+          <cdr-list tag="ol">
+            <li>Item one</li>
+            <li>Item two</li>
+            <li>Hopefully right font size</li>
+          </cdr-list>
         </cdr-accordion-item>
       </cdr-accordion>
     </div>
