@@ -20,6 +20,8 @@
 
 .cdr-accordion-item {
   border-top: 1px solid $partly-cloudy;
+  position: relative;
+  z-index: 1;
 
   &__button {
     @include redwood-display-30;
@@ -31,11 +33,12 @@
     display: flex;
     justify-content: space-between;
     padding: $inset-1-x;
+    position: relative;
     text-align: left;
     width: 100%;
+    z-index: 1;
 
     &:hover,
-    &:active,
     &:focus {
       background-color: $the-tooth;
     }
@@ -145,5 +148,9 @@
 
   &:last-child {
     border-bottom: 1px solid $partly-cloudy;
+  }
+
+  &--focused {
+    z-index: 10;
   }
 }
