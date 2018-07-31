@@ -40,7 +40,7 @@
       <cdr-cta
         data-backstop="cdr-cta--elevated"
         href="https://rei.com"
-        cta-style="sale"
+        cta-style="light"
         modifier="elevated">
         This button has long text. It wraps!
       </cdr-cta>
