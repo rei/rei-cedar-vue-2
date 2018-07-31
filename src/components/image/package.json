@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-img",
-  "version": "1.0.0-next.alpha.1",
+  "version": "1.0.0",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Image",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-img",
