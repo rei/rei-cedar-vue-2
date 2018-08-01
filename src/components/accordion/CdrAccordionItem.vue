@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="[modifierClass, styleClass]"
+    :class="[modifierClass, styleClass, focusedClass]"
     :id="`${id}-accordion-item`"
     :ref="`accordion-${id}`"
   >
@@ -8,6 +8,8 @@
       :class="$style['cdr-accordion-item__button']"
       :id="id"
       @click="toggle"
+      @focus="focused = true"
+      @blur="focused = false"
       :aria-expanded="`${isOpen}`"
       :aria-controls="`${id}-collapsible`"
     >
@@ -87,6 +89,7 @@ export default {
     return {
       maxHeight: 0,
       isOpen: this.showAll || this.show,
+      focused: false,
     };
   },
   computed: {
@@ -105,6 +108,9 @@ export default {
       }
 
       return styles.join(' ');
+    },
+    focusedClass() {
+      return this.focused ? this.modifyClassName(this.baseClass, 'focused') : null;
     },
     isOpenClass() {
       return this.isOpen ? 'open' : null;
