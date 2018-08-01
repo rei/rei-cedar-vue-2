@@ -1,5 +1,5 @@
 <a name="1.0.0-next.beta.1"></a>
-# 1.0.0-next.beta.1 (2018-07-25)
+# 1.0.0-next.beta.1 (2018-08-01)
 
 
 ### Bug Fixes
@@ -24,6 +24,7 @@
 * **icons:** gernerate icon components ([dcefd4e](https://github.com/rei/rei-cedar/commit/dcefd4e))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **link-component:** simplifies link component props, adds prop to Icon for fill color inheritance ([9d404f4](https://github.com/rei/rei-cedar/commit/9d404f4))
+* **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
 
 
 ### BREAKING CHANGES
