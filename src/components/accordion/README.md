@@ -9,48 +9,65 @@ Accordions are built from two components, `cdr-accordion` and `cdr-accordion-ite
 | name | type | Default |
 | :--- | :--- | :--- |
 | compact | boolean | false |
-| Set compact style of cdr-accordion-item child components
+
+Set compact style of cdr-accordion-item child components
 
 | name | type | Default |
 | :--- | :--- | :--- |
 | borderAligned | boolean | false |
-| Set border-aligned style of cdr-accordion-item child components |
+
+Set border-aligned style of cdr-accordion-item child components
 
 | name | type | Default |
 | :--- | :--- | :--- |
 | showAll | boolean | false |
-| Set all child cdr-accordion-item components to display open by default |
+
+Set all child cdr-accordion-item components to display open by default
 
 ### cdr-accordion-item
 
 | name | type | Default |
 | :--- | :--- | :--- |
 | id | string | n/a |
-| Required id for component reference. Id must e unique |
+
+Required id for component reference. Id must e unique
 
 | name | type | Default |
 | :--- | :--- | :--- |
 | label | string | n/a |
-| Set the readable text on the cdr-accordion-item button or trigger. Required |
+
+Set the readable text on the cdr-accordion-item button or trigger. Required |
 
 | name | type | Default |
 | :--- | :--- | :--- |
 | show | boolean | false |
-| Set a single cdr-accordion-item to display open by default. Prop showAll will take precedence, if true. |
+
+Set a single cdr-accordion-item to display open by default. Prop showAll will take precedence, if true. |
 
 ## Slots
 
-#### cdr-accordion
+### cdr-accordion
 | name                                            |
 | :---------------------------------------------- |
 | Default                                         |
-| Default slot for cdr-accordion-item(s) |
 
-#### cdr-accordion-item
+Default slot for cdr-accordion-item(s)
+
+### cdr-accordion-item
 | name                                            |
 | :---------------------------------------------- |
 | Default                                         |
-| Default slot for cdr-accordion-item content |
+
+Default slot for cdr-accordion-item content
+
+## Events
+
+### cdr-accordion-item
+| name                                            |
+| :---------------------------------------------- |
+| accordion-item-toggle
+
+$emit event fired on cdr-accordion-item toggle
 
 ## Installation
 
