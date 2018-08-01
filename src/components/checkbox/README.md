@@ -1,4 +1,4 @@
-## Properties
+## Props
 
 | Name | Type   | Default |
 |:-----|:-------|:--------|
@@ -42,6 +42,33 @@ The value when unchecked.
 
 The value when used in a checkbox group. Replaces `trueValue` and `falseValue`.
 
+| Name     | Type   | n/a |
+|:---------|:-------|:----|
+| modifier | string | n/a |
+
+Allows style variants to be defined
+
+
+## Slots
+
+| Name    |
+|:--------|
+| default |
+
+innerHTML inside of checkbox component. This is the readable text inside the `<label>` element.
+
+## Events
+
+| Name   |
+|:-------|
+| change |
+
+$emit event fired on check/uncheck
+
+| Name       | Type   | Default |
+|:-----------|:-------|:--------|
+| labelClass | string | n/a     |
+
 ## Modifiers
 
 Following are modifiers for `cdrCheckbox` component:
@@ -49,25 +76,6 @@ Following are modifiers for `cdrCheckbox` component:
 - compact
 - hide-figure
 
-## Slots
-
-| Name | 
-|:-----|
-| default |
-
-innerHTML inside of checkbox component. This is the readable text inside the `<label>` element.
-
-## Events
-
-| Name    |
-|:--------|
-| change |
-
-$emit event fired on check/uncheck
-
-| Name | Type   | Default |
-|:-----|:-------|:--------|
-| labelClass | string | n/a |
 
 ## Installation
 
