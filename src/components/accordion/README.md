@@ -40,17 +40,25 @@ Accordions are built from two components, `cdr-accordion` and `cdr-accordion-ite
 
 ## Slots
 
-#### cdr-accordion
+### cdr-accordion
 | name                                            |
 | :---------------------------------------------- |
 | Default                                         |
 | Default slot for cdr-accordion-item(s) |
 
-#### cdr-accordion-item
+### cdr-accordion-item
 | name                                            |
 | :---------------------------------------------- |
 | Default                                         |
 | Default slot for cdr-accordion-item content |
+
+## Events
+
+### cdr-accordion-item
+| name                                            |
+| :---------------------------------------------- |
+| accordion-item-toggle                                         |
+| $emit event fired on cdr-accordion-item toggle
 
 ## Installation
 

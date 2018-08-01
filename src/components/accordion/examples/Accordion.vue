@@ -40,32 +40,45 @@
     </div>
     <div class="accordion-group">
       <h3>Compact</h3>
-      <cdr-accordion
-        :compact="true"
-        data-backstop="accordion-compact"
+      <cdr-accordion-item
+        id="compact"
+        label="Compact"
       >
-        <cdr-accordion-item
-          id="compact"
-          label="Compact"
-        >
-          <cdr-text
-            tag="p"
-          >
-            It helps to see at least two accordions together.
-          </cdr-text>
-        </cdr-accordion-item>
-        <cdr-accordion-item
-          id="compact-2"
-          label="Label with multiple words, so many words in fact that
-          this content may wrap to several lines"
-        >
-          <cdr-list tag="ol">
-            <li>Item one</li>
-            <li>Item two</li>
-            <li>Hopefully right font size</li>
-          </cdr-list>
-        </cdr-accordion-item>
-      </cdr-accordion>
+        <ul>
+          <li>
+            <a
+              href="https://www.rei.com/"
+            >
+              REI.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.rei.com/h/adventure-projects"
+            >
+              adventure projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.rei.com/stewardship"
+            >
+              stewardship
+            </a>
+          </li>
+        </ul>
+      </cdr-accordion-item>
+      <cdr-accordion-item
+        id="compact-2"
+        label="Label with multiple words, so many words in fact that
+        this content may wrap to several lines"
+      >
+        <cdr-list tag="ol">
+          <li>Item one</li>
+          <li>Item two</li>
+          <li>Hopefully right font size</li>
+        </cdr-list>
+      </cdr-accordion-item>
     </div>
     <div class="accordion-group">
       <h3>Border-Aligned</h3>
@@ -97,6 +110,18 @@ import Components from 'componentsdir/_index';
 export default {
   name: 'Accordion',
   components: Components,
+  data() {
+    return {
+      tabindex: -1,
+    };
+  },
+  provide() {
+    return {
+      compact: true,
+      borderAligned: false,
+      showAll: false,
+    };
+  },
 };
 </script>
 
