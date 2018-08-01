@@ -43,6 +43,13 @@ describe('CdrAccordionItem', () => {
           default: 'This is some slot text.'
         },
       });
+
+      /* Dupe call to parent $emit because using shallowMount */
+      wrapper.vm.$parent = {
+        $emit: function() {
+          return true;
+        }
+      };
   
       expect(wrapper.vm.maxHeight).toBe(0);
       wrapper.vm.toggle();
@@ -51,23 +58,6 @@ describe('CdrAccordionItem', () => {
       setTimeout(() => {
         expect(wrapper.vm.maxHeight).toBe('none');
       }, 300);
-    });
-
-    it('style class checks provided values', () => {
-      const wrapper = shallowMount(CdrAccordionItem, {
-        propsData: propsData,
-        provide: {
-          showAll: false,
-          borderAligned: true,
-          compact: true,
-        },
-        slots: {
-          default: 'This is some slot text.'
-        },
-      });
-
-      expect(wrapper.classes()).toContain('cdr-accordion-item--compact');
-      expect(wrapper.classes()).toContain('cdr-accordion-item--border-aligned');
     });
 
     it('toggles when isOpen', () => {
@@ -83,6 +73,12 @@ describe('CdrAccordionItem', () => {
         },
       });
 
+      wrapper.vm.$parent = {
+        $emit: function() {
+          return true;
+        }
+      };
+
       expect(wrapper.vm.maxHeight).toBe('none');
       wrapper.vm.toggle();
       expect(wrapper.vm.isOpen).toBe(false);
@@ -90,5 +86,38 @@ describe('CdrAccordionItem', () => {
         expect(wrapper.vm.maxHeight).toBe(0);
       }, 500);
     });
+  });
+
+  it('focused style', () => {
+    const wrapper = shallowMount(CdrAccordionItem, {
+      propsData: propsData,
+      provide: {
+        showAll: false,
+        borderAligned: true,
+        compact: true,
+      },
+      slots: {
+        default: 'This is some slot text.'
+      },
+    });
+    wrapper.setData({ focused: true });
+    expect(wrapper.classes()).toContain('cdr-accordion-item--focused');
+  });
+
+  it('style class checks provided values', () => {
+    const wrapper = shallowMount(CdrAccordionItem, {
+      propsData: propsData,
+      provide: {
+        showAll: false,
+        borderAligned: true,
+        compact: true,
+      },
+      slots: {
+        default: 'This is some slot text.'
+      },
+    });
+
+    expect(wrapper.classes()).toContain('cdr-accordion-item--compact');
+    expect(wrapper.classes()).toContain('cdr-accordion-item--border-aligned');
   });
 });
