@@ -4,22 +4,26 @@
 | name | type | Default |
 | :--- | :--- | :--- |
 | ctaStyle | string | dark |
+
 Set Call to Action color by changing ctaStyle to match different themes. Possible values: {brand, dark, light, sale}
 
 | name | type | Default |
 | :--- | :--- | :--- |
 | fullWidth | boolean | false |
+
 Set Call to Action width to 100%. Setting it to true will set the width to 100% of the parent container
 
 | name | type | Default |
 | :--- | :--- | :--- |
 | compact | boolean | false |
+
 Set the link using the page url
 
 ## Slots
 | name                                            |
 | :---------------------------------------------- |
 | Default                                         |
+
 This is for the readable text of cdr-cta.
 
 ## Modifiers
