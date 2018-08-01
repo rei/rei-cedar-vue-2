@@ -3,7 +3,7 @@
     id="app"
     class="cdr-container-fluid"
   >
-    <h1>Cedar Proving grounds</h1>
+    <!-- <h1>Cedar Proving grounds</h1>
     <router-link
       v-for="route in routes"
       :key="route.path"
@@ -30,9 +30,9 @@
       class="cpg-section"
       data-backstop="cta-buttons"
     />
-    <cards class="cpg-section"/>
+    <cards class="cpg-section"/> -->
     <!-- <card-content class="cpg-section"></card-content> -->
-    <activity class="cpg-section"/>
+    <!-- <activity class="cpg-section"/>
     <checkboxes
       class="cpg-section"
       data-backstop="checkboxes"
@@ -73,17 +73,17 @@
     <selects
       class="cpg-section"
       data-backstop="selects"
-    />
+    /> -->
     <tabs
       class="cpg-section"
       data-backstop="tabs"
     />
-    <utilities class="cpg-section"/>
+    <!-- <utilities class="cpg-section"/>
 
     <caption-example
       class="cpg-section"
       data-backstop="caption"
-    />
+    /> -->
     <router-view />
   </div>
 </template>

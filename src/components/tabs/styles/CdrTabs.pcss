@@ -22,10 +22,13 @@
 
 .cdr-tabs {
   &__header-container {
-    overflow-x: scroll;
+    overflow-x: auto;
+    border-bottom: 1px solid $grey-matter;
+    -webkit-overflow-scrolling: touch;
 
     &::before {
-      transition: opacity 0.5s ease;
+      transition: opacity 150ms ease;
+      -webkit-transition: opacity 150ms ease;
       content: '';
       position: absolute;
       z-index: 100;
@@ -44,7 +47,8 @@
     }
 
     &::after {
-      transition: opacity 0.5s ease;
+      transition: opacity 150ms ease;
+      -webkit-transition: opacity 150ms ease;
       content: '';
       position: absolute;
       top: 0;
@@ -69,7 +73,6 @@
   &__header {
     display: inline-flex;
     width: 100%;
-    border-bottom: 1px solid $grey-matter;
 
     /* align-content: stretch; */
     padding: 0;
