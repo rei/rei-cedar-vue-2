@@ -65,10 +65,6 @@ innerHTML inside of checkbox component. This is the readable text inside the `<l
 
 $emit event fired on check/uncheck
 
-| Name       | Type   | Default |
-|:-----------|:-------|:--------|
-| labelClass | string | n/a     |
-
 ## Modifiers
 
 Following are modifiers for `cdrCheckbox` component:
