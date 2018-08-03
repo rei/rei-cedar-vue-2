@@ -15,6 +15,7 @@ import Radios from 'componentsdir/radio/examples/Radios';
 import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Texts from 'componentsdir/text/examples/Text';
+import Tables from 'componentsdir/table/examples/Table';
 import Input from 'componentsdir/input/examples/Inputs';
 
 import ActivityCards from 'compositionsdir/activityCard/examples/activity';
@@ -45,6 +46,7 @@ const routes = [
   { path: '/activitycards', name: 'ActivityCards', component: ActivityCards },
   { path: '/captions', name: 'Captions', component: Captions },
   { path: '/searches', name: 'Searches', component: Searches },
+  { path: '/tables', name: 'Tables', component: Tables },
 ];
 
 export default routes;

@@ -16,6 +16,7 @@ import radios from 'componentsdir/radio/examples/Radios';
 import ratings from 'componentsdir/rating/examples/Ratings';
 import selects from 'componentsdir/select/examples/Selects';
 import texts from 'componentsdir/text/examples/Text';
+import tables from 'componentsdir/table/examples/Table';
 import accordion from 'componentsdir/accordion/examples/Accordion';
 
 import utilities from 'componentsdir/Utilities/Utilities';
@@ -41,4 +42,5 @@ export default {
   selects,
   texts,
   utilities,
+  tables,
 };

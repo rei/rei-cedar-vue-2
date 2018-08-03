@@ -1,0 +1,199 @@
+/* ==========================================================================
+  # CdrTable
+  
+  All values should map to variables in
+  vars/CdrTable.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrTable
+      :States
+        :Breakpoint Variants
+========================================================================= */
+
+.cdr-table {
+  /* Breakpoint variants
+    ========================================================================== */
+  
+  /* @extra-small only
+    0px to 767px
+    ========== */
+  @media (--xs-mq-only) {
+    &.single-column {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  /* @extra-small
+    0px and up
+    ========== */
+  @media (--xs-mq) {
+    margin-bottom: 12px;
+
+    /* Clear border for all elements inside the table */
+    &--borderless {
+      border: none;
+
+      * {
+        border: none !important;
+      }
+    }
+
+    /* Decrease padding for all elements inside the table */
+    &--compact {
+      th,
+      td {
+        padding: $inset-1-x-squish !important;
+      }
+    }
+
+    tr {
+      /* Alternate row colors */
+      &:nth-child(even) {
+        background-color: $the-tooth;
+
+        /*
+          Make row headers inside alternate colored rows
+          stay same color when they're moved two the left
+          for scrolling.
+        */
+        th:first-child {
+          background-color: $the-tooth;
+        }
+      }
+    }
+    
+    &__wrapper {
+      @include redwood-display-20();
+
+      &.scrolling {
+        overflow: auto;
+      }
+    }
+
+    &__scrollable {
+      thead {
+        th {
+          border: 1px solid $partly-cloudy;
+          border-bottom: 2px solid $grey-matter;
+          color: $heart-of-darkness;
+          min-width: $table-cell-min-width;
+          max-width: $table-cell-max-width;
+          padding: $inset-1-x;
+          text-align: left;
+
+          &[class^=empty] {
+            border-right: 2px solid $grey-matter;
+          }
+        }
+
+        /* show right border for row headers when there are column headers */
+        & + tbody {
+          th:first-child {
+            border-right: 2px solid $grey-matter;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          /* Default cell styling */
+          th,
+          td {
+            border: 1px solid $partly-cloudy;
+            min-width: $table-cell-min-width;
+            max-width: $table-cell-max-width;
+            color: $heart-of-darkness;
+            padding: $inset-1-x;
+            text-align: left;
+          }
+        }
+      }
+
+      &.scrolling {
+        /* scroll with more than two columns */
+
+        /* Move table over to scroll under reader columns */
+        margin-left: calc($table-cell-min-width - 2px);
+        overflow-x: auto;
+
+        thead {
+          /* Move empty column header to left and have content scroll under it
+          when content larger than two columns */
+          th:nth-last-child(n+3):first-child {
+            &[class^=empty] {
+              left: 0;
+              position: absolute;
+              border-right: 4px solid $grey-matter;
+              z-index: 1;
+              margin-top: -1px;
+
+              /* Ensure empty top right left cell has same line height */
+              &::before {
+                content: '\a0';
+              }
+            }
+          }
+        }
+
+        tbody {
+          /* Move row headers to left and have content scroll under it
+          when content larger than two columns */
+          th:nth-last-child(n+3):first-child {
+            left: 0;
+            position: absolute;
+            border-right: 4px solid $grey-matter;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+
+  /* @medium
+    992px and up
+    ========== */
+  @media (--md-mq) {
+    &___scrollable {
+      &.scrolling {
+        /* scroll with more than two columns */
+
+        /* Move table over to scroll under reader columns */
+        margin-left: calc($table-cell-width - 2px);
+        overflow-x: auto;
+
+        thead {
+          /* Move empty column header to left and have content scroll under it
+          when content larger than two columns */
+          th:nth-last-child(n+7):first-child {
+            &[class^=empty] {
+              left: 0;
+              position: absolute;
+              border-right: 4px solid $grey-matter;
+              z-index: 1;
+              margin-top: -1px;
+
+              /* Ensure empty top right left cell has same line height */
+              &::before {
+                content: '\a0';
+              }
+            }
+          }
+        }
+
+        tbody {
+          /* Move row headers to left and have content scroll under it
+          when content larger than two columns */
+          th:nth-last-child(n+7):first-child {
+            left: 0;
+            position: absolute;
+            border-right: 4px solid $grey-matter;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
