@@ -80,8 +80,8 @@
 import debounce from 'srcdir/utils/debounce';
 import modifier from 'mixinsdir/modifier';
 
-const checkIcon = require('assetsdir/icons/rei/check-lg.svg');
-const errorIcon = require('assetsdir/icons/rei/x-fill.svg');
+// const checkIcon = require('assetsdir/icons/rei/check-lg.svg');
+const errorIcon = require('assetsdir/icons/rei/warning-fill.svg');
 const warningIcon = require('assetsdir/icons/rei/warning-tri.svg');
 
 /**
@@ -225,8 +225,8 @@ export default {
 
       if (this.isErr) {
         icon = errorIcon;
-      } else if (this.isValid) {
-        icon = checkIcon;
+      // } else if (this.isValid) {
+      //   icon = checkIcon;
       } else if (this.isWarn) {
         icon = warningIcon;
       }
