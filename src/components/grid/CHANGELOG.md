@@ -1,5 +1,5 @@
-<a name="1.0.0-next.beta.1"></a>
-# 1.0.0-next.beta.1 (2018-07-11)
+<a name="1.0.0"></a>
+# 1.0.0 (2018-08-01)
 
 
 ### Features
@@ -17,6 +17,7 @@
 * **grid:** update vertical prop to be a string and accept responsive values ([008f05b](https://github.com/rei/rei-cedar/commit/008f05b))
 * **grid:** update wrap prop to be a string and accept responsive values ([cfe2d8a](https://github.com/rei/rei-cedar/commit/cfe2d8a))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
+* **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
 
 
 ### BREAKING CHANGES

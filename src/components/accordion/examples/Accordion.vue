@@ -4,11 +4,11 @@
     <div class="accordion-group">
       <h3>Default</h3>
       <cdr-accordion
+        data-backstop="accordion-default"
       >
         <cdr-accordion-item
           id="default"
           label="A short label"
-          :show="true"
         >
           This is some text. It's not in a <strong>paragraph</strong> element because
           that would include margin and add space to the container. Lorem ipsum dolor
@@ -39,19 +39,61 @@
       </cdr-accordion>
     </div>
     <div class="accordion-group">
-      <h3>Compact and Border-aligned</h3>
+      <h3>Compact</h3>
+      <cdr-accordion-item
+        id="compact"
+        label="Compact"
+      >
+        <ul>
+          <li>
+            <a
+              href="https://www.rei.com/"
+            >
+              REI.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.rei.com/h/adventure-projects"
+            >
+              adventure projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.rei.com/stewardship"
+            >
+              stewardship
+            </a>
+          </li>
+        </ul>
+      </cdr-accordion-item>
+      <cdr-accordion-item
+        id="compact-2"
+        label="Label with multiple words, so many words in fact that
+        this content may wrap to several lines"
+      >
+        <cdr-list tag="ol">
+          <li>Item one</li>
+          <li>Item two</li>
+          <li>Hopefully right font size</li>
+        </cdr-list>
+      </cdr-accordion-item>
+    </div>
+    <div class="accordion-group">
+      <h3>Border-Aligned</h3>
       <cdr-accordion
-        :compact="true"
         :border-aligned="true"
+        data-backstop="accordion-border-aligned"
       >
         <cdr-accordion-item
-          id="border-aligned-compact"
-          label="Border-aligned and compact"
+          id="border-aligned"
+          label="Border-aligned"
         >
           It helps to see at least two accordions together.
         </cdr-accordion-item>
         <cdr-accordion-item
-          id="border-aligned-compact-2"
+          id="border-aligned-2"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
         >
@@ -68,6 +110,18 @@ import Components from 'componentsdir/_index';
 export default {
   name: 'Accordion',
   components: Components,
+  data() {
+    return {
+      tabindex: -1,
+    };
+  },
+  provide() {
+    return {
+      compact: true,
+      borderAligned: false,
+      showAll: false,
+    };
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <a name="1.0.0"></a>
-# 1.0.0 (2018-07-11)
+# 1.0.0 (2018-08-01)
 
 
 ### Features
@@ -10,6 +10,7 @@
 * **link:** use css modules for link ([6b244d2](https://github.com/rei/rei-cedar/commit/6b244d2))
 * **link:** use css modules with link ([bfb98f9](https://github.com/rei/rei-cedar/commit/bfb98f9))
 * **link-component:** simplifies link component props, adds prop to Icon for fill color inheritance ([9d404f4](https://github.com/rei/rei-cedar/commit/9d404f4))
+* **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
 * **release:** cedar Alpha release ([883ff94](https://github.com/rei/rei-cedar/commit/883ff94))
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-breadcrumb",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Breadcrumb",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-breadcrumb",

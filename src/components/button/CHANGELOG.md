@@ -1,5 +1,11 @@
-<a name="0.1.0-alpha.0"></a>
-# 0.1.0-alpha.0 (2018-07-11)
+<a name="1.0.0"></a>
+# 1.0.0 (2018-08-01)
+
+
+### Bug Fixes
+
+* **button:** bump version to match alpha ([3439b98](https://github.com/rei/rei-cedar/commit/3439b98))
+* **button cta:** import cdr-icon css for components packaged with an icon ([6bb2233](https://github.com/rei/rei-cedar/commit/6bb2233))
 
 
 ### Chores
@@ -18,6 +24,7 @@
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **release:** bump all to 0.1.0 and remove base-components ([f5c335e](https://github.com/rei/rei-cedar/commit/f5c335e))
+* **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
 
 
 ### BREAKING CHANGES
