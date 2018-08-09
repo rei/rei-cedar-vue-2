@@ -11,7 +11,10 @@
       :Elements
         :Icon
         :Count
-      :Size variants
+      :Modifiers
+        :Linked
+        :Large
+        :Small
 ========================================================================== */
 
 .cdr-rating {
@@ -81,8 +84,29 @@
     background-repeat: no-repeat;
   }
 
-  /* Size variants
+  /* Modifiers
     ========================================================================== */
+
+  /* Linked
+    ========== */
+
+  &--linked {
+    & .cdr-rating__count {
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: underline;
+        text-decoration-color: $heart-of-darkness;
+      }
+
+      & > .cdr-rating__number {
+        border-right: 1px solid $grey-matter;
+        border-left: 1px solid $grey-matter;
+        padding: 0 $space-quarter-x;
+        margin-right: $space-quarter-x;
+      }
+    }
+  }
 
   /* Large
     ========== */

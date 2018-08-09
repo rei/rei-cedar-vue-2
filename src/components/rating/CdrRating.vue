@@ -1,5 +1,13 @@
 <template>
-  <div :class="[modifierClass]">
+  <!-- eslint-disable max-len -->
+  <component
+    :is="href ? 'a' : 'div'"
+    :href="href"
+    :class="[
+      modifierClass,
+      href ? $style['cdr-rating--linked'] : '',
+    ]"
+  >
     <div :class="$style['cdr-rating__background']">
       <span
         :class="[$style['cdr-rating__icon'], $style['cdr-rating__placeholder']]"
@@ -35,11 +43,11 @@
       v-if="count"
       aria-hidden="true"
       :class="$style['cdr-rating__count']"
-    >({{ count }})<span v-if="!compact"> Reviews</span></span>
+    ><span :class="$style['cdr-rating__number']">{{ formattedCount }}</span><span v-if="!compact">Reviews</span></span>
     <span
       class="cdr-sr-only"
     >rated {{ rounded }} out of 5 with {{ count }} reviews</span>
-  </div>
+  </component>
 </template>
 
 <script>
@@ -60,14 +68,14 @@ export default {
   mixins: [modifier],
   props: {
     /**
-     * Rating out of 5
+     * Rating value (out of 5)
      */
     rating: {
       required: true,
       type: [String, Number],
     },
     /**
-     * Number of ratings
+     * Total number of ratings
      */
     count: {
       required: false,
@@ -79,6 +87,12 @@ export default {
     compact: {
       type: Boolean,
       default: false,
+    },
+    /**
+     * Allows the ratings to act as a link
+     */
+    href: {
+      type: String,
     },
   },
   computed: {
@@ -93,6 +107,9 @@ export default {
     },
     remainder() {
       return this.rounded.toFixed(2).split('.')[1];
+    },
+    formattedCount() {
+      return this.href ? `${this.count}` : `(${this.count}) `;
     },
   },
 };
