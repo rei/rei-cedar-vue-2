@@ -57,8 +57,12 @@
     ========== */
 
   &__placeholder {
-    background-image: svg-load('../../../assets/icons/rei/star-stroke.svg', fill=$(taken-for-granite));
+    background-image: svg-load('../../../assets/icons/rei/star-stroke.svg', fill=$(closed-on-monday));
     background-repeat: no-repeat;
+
+    &--no-reviews {
+      background-image: svg-load('../../../assets/icons/rei/star-stroke.svg', fill=$(taken-for-granite));
+    }
   }
 
   /* Stars
@@ -92,7 +96,7 @@
 
   &--linked {
     display: inline-flex;
-    
+
     &:hover,
     &:active,
     &:focus {
@@ -108,7 +112,6 @@
 
       & > .cdr-rating__number {
         border-right: 1px solid $grey-matter;
-        border-left: 1px solid $grey-matter;
         padding: 0 $space-quarter-x;
         margin-right: $space-quarter-x;
       }

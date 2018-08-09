@@ -5,7 +5,7 @@
     <!-- Large Size -->
     <cdr-rating
       rating="0"
-      count="10"
+      count="0"
       modifier="large"
     />
     <cdr-rating
@@ -20,6 +20,15 @@
       href="https://www.rei.com"
       modifier="large"
     />
+    <div>
+      <cdr-rating
+        rating="3.66"
+        count="1000"
+        href="https://www.rei.com"
+        modifier="large"
+        compact
+      />
+    </div>
 
     <!-- Default Size -->
     <cdr-rating

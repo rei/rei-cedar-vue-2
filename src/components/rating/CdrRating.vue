@@ -10,7 +10,10 @@
   >
     <div :class="$style['cdr-rating__background']">
       <span
-        :class="[$style['cdr-rating__icon'], $style['cdr-rating__placeholder']]"
+        :class="[
+          $style['cdr-rating__icon'],
+          count > 0 ? $style['cdr-rating__placeholder'] : $style['cdr-rating__placeholder--no-reviews'],
+        ]"
         v-for="n in 5"
         :key="n"
         aria-hidden="true"
@@ -112,7 +115,10 @@ export default {
       return this.rounded.toFixed(2).split('.')[1];
     },
     formattedCount() {
-      return this.href ? `${this.count}` : `(${this.count})`;
+      if (this.compact && !this.href) {
+        return `(${this.count})`;
+      }
+      return `${this.count}`;
     },
   },
 };
