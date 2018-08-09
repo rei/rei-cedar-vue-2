@@ -91,12 +91,19 @@
     ========== */
 
   &--linked {
+    display: inline-flex;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration-color: $heart-of-darkness;
+    }
+
     & .cdr-rating__count {
       &:hover,
       &:active,
       &:focus {
         text-decoration: underline;
-        text-decoration-color: $heart-of-darkness;
       }
 
       & > .cdr-rating__number {
