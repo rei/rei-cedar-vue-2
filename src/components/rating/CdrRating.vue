@@ -115,10 +115,7 @@ export default {
       return this.rounded.toFixed(2).split('.')[1];
     },
     formattedCount() {
-      if (this.compact && !this.href) {
-        return `(${this.count})`;
-      }
-      return `${this.count}`;
+      return this.compact ? `(${this.count})` : `${this.count}`;
     },
   },
 };
