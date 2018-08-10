@@ -87,6 +87,7 @@ export default {
     count: {
       required: false,
       type: [String, Number],
+      default: 0,
     },
     /**
      * Hides the word 'reviews' if true
