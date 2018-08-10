@@ -79,6 +79,7 @@ export default {
     rating: {
       required: true,
       type: [String, Number],
+      default: 0,
     },
     /**
      * Total number of ratings
