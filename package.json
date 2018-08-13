@@ -171,5 +171,8 @@
     ],
     "instrument": false,
     "sourceMap": false
+  },
+  "dependencies": {
+    "npm": "^6.3.0"
   }
 }
