@@ -149,7 +149,7 @@ In the below example, a Download button is rendered as a button with icon and te
 ```vue
 <template>
   <cdr-button>
-    <template name="icon">
+    <template slot="icon">
       <cdr-icon
         class="cdr-button__icon"
         use="#download"
@@ -190,7 +190,7 @@ Use the following props to modify `cdr-button`:
     :on-dark="true"
     aria-label="Complete this step"
   >
-    <template name="icon">
+    <template slot="icon">
       <icon-check-lg class="cdr-button__icon" />
     </template>
   </cdr-button>
