@@ -7,7 +7,7 @@
         href="https://rei.com"
         size="large"
         data-backstop="cdr-button--icon">
-        <template name="icon">
+        <template slot="icon">
           <icon-check-lg class="cdr-button__icon" />
         </template>
         Anchor and Icon
@@ -15,7 +15,7 @@
       <cdr-button
         size="medium"
       >
-        <template name="icon">
+        <template slot="icon">
           <icon-check-lg class="cdr-button__icon" />
         </template>
         Medium and Icon
@@ -23,7 +23,7 @@
       <cdr-button
         size="small"
       >
-        <template name="icon">
+        <template slot="icon">
           <icon-check-lg
             modifier="sm"
             class="cdr-button__icon" />
@@ -32,7 +32,7 @@
       </cdr-button>
       <cdr-button
         size="small">
-        <template name="icon">
+        <template slot="icon">
           <icon-check-sm class="cdr-button__icon"/>
         </template>
         Small (different) icon
@@ -44,7 +44,7 @@
         size="large"
         modifier="secondary"
       >
-        <template name="icon">
+        <template slot="icon">
           <cdr-icon
             class="cdr-button__icon"
             use="#download"/>
@@ -55,7 +55,7 @@
         size="medium"
         modifier="secondary"
       >
-        <template name="icon">
+        <template slot="icon">
           <cdr-icon
             class="cdr-button__icon"
             use="#twitter" />
@@ -66,7 +66,7 @@
         size="small"
         modifier="secondary"
       >
-        <template name="icon">
+        <template slot="icon">
           <cdr-icon
             class="cdr-button__icon"
             use="#instagram" />
@@ -79,7 +79,7 @@
         size="small"
         :responsive-size="['large@xs', 'medium@sm', 'small@lg']"
       >
-        <template name="icon">
+        <template slot="icon">
           <icon-clock class="cdr-button__icon" />
         </template>
         Responsive
@@ -90,7 +90,7 @@
         size="large"
         full-width
       >
-        <template name="icon">
+        <template slot="icon">
           <icon-clock class="cdr-button__icon" />
         </template>
         Full Width
@@ -104,7 +104,7 @@
           size="medium"
           modifier="secondary"
         >
-          <template name="icon">
+          <template slot="icon">
             <cdr-icon
               class="cdr-button__icon"
               use="#twitter" />
@@ -121,7 +121,7 @@
         :full-width="true"
         size="small"
         aria-label="Check our Twitter feed">
-        <template name="icon">
+        <template slot="icon">
           <icon-twitter
             class="cdr-button__icon" />
         </template>
@@ -132,7 +132,7 @@
         href="https://rei.com"
         :icon-only="true"
         aria-label="This link goes elsewhere">
-        <template name="icon">
+        <template slot="icon">
           <icon-external-link class="cdr-button__icon" />
         </template>
       </cdr-button>
@@ -143,7 +143,7 @@
         :icon-only="true"
         :on-dark="true"
         aria-label="A Twitter button">
-        <template name="icon">
+        <template slot="icon">
           <icon-twitter
             class="cdr-button__icon" />
         </template>
@@ -155,7 +155,7 @@
         :icon-only="true"
         :on-dark="true"
         aria-label="An external link">
-        <template name="icon">
+        <template slot="icon">
           <icon-external-link class="cdr-button__icon" />
         </template>
       </cdr-button>
