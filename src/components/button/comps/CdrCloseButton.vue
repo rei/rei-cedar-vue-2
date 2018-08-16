@@ -3,9 +3,9 @@
     :icon-only="true"
     :on-dark="onDark"
     aria-label="Close">
-    <template slot="icon">
-      <icon-x-lg class="cdr-button__icon" />
-    </template>
+    <icon-x-lg
+      slot="icon"
+      class="cdr-button__icon" />
   </cdr-button>
 </template>
 

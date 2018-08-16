@@ -3,9 +3,9 @@
     :icon-only="true"
     :on-dark="onDark"
     aria-label="Play">
-    <template slot="icon">
-      <icon-play class="cdr-button__icon" />
-    </template>
+    <icon-play
+      slot="icon"
+      class="cdr-button__icon" />
   </cdr-button>
 </template>
 
