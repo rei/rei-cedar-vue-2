@@ -22,6 +22,7 @@
     "build:archive": "node build/component-docs-archive.js",
     "build:transfer": "node build/component-docs-transfer.js",
     "create": "node generator.js",
+    "clean": "lerna clean",
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && lerna run build",
     "check-version": "node check-version.js",

@@ -27,7 +27,7 @@ function isPre(p1, p2) {
   // remove the ^
   const stripped = semver.coerce(p2).raw;
   const diff = semver.diff(p1, stripped);
-  return ['premajor', 'preminor', 'prepatch', 'prerelease'].indexOf(diff);
+  return ['premajor', 'preminor', 'prepatch', 'prerelease'].indexOf(diff) >= 0 ? true : false;
 }
 
 async function main() {
@@ -49,7 +49,7 @@ async function main() {
       // check if peerDep version resolves to local component version
       locs.forEach((loc) => {
         if (!semver.satisfies(loc.version, peerDependencies[loc.name])
-          && isPre(loc.version, peerDependencies[loc.name])) {
+          && !isPre(loc.version, peerDependencies[loc.name])) {
           anyErr = true;
           hasErr = true;
           errMsg.push(`${loc.name}: "${peerDependencies[loc.name]}" doesn't resolve to the local package version of "${loc.version}"`);
@@ -65,7 +65,10 @@ async function main() {
   });
 
   if (anyErr) {
+    console.log(chalk.yellow('Update versions in each package.json and publish corrected component(s)'));
     process.exitCode = 1;
+  } else {
+    console.log(chalk.green('Version checking complete'));
   }
 }
 
