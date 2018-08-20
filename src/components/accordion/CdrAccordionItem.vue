@@ -1,13 +1,15 @@
 <template>
   <div
-    :class="[modifierClass, styleClass]"
+    :class="[modifierClass, styleClass, focusedClass]"
     :id="`${id}-accordion-item`"
     :ref="`accordion-${id}`"
   >
     <button
       :class="$style['cdr-accordion-item__button']"
       :id="id"
-      @click="toggle"
+      @click="toggle($event)"
+      @focus="focused = true"
+      @blur="focused = false"
       :aria-expanded="`${isOpen}`"
       :aria-controls="`${id}-collapsible`"
     >
@@ -87,6 +89,7 @@ export default {
     return {
       maxHeight: 0,
       isOpen: this.showAll || this.show,
+      focused: false,
     };
   },
   computed: {
@@ -106,8 +109,11 @@ export default {
 
       return styles.join(' ');
     },
+    focusedClass() {
+      return this.focused ? this.modifyClassName(this.baseClass, 'focused') : null;
+    },
     isOpenClass() {
-      return this.isOpen ? 'open' : null;
+      return this.isOpen ? 'open' : 'closed';
     },
   },
   mounted() {
@@ -116,8 +122,9 @@ export default {
     }
   },
   methods: {
-    toggle() {
+    toggle(event) {
       this.isOpen = !this.isOpen;
+      this.$parent.$emit('accordion-item-toggle', this.isOpen, event);
       const ref = `accordion-${this.$props.id}`;
       this.maxHeight = `${this.$refs[ref].childNodes[2].childNodes[0].clientHeight}px`;
       const timeout = this.isOpen ? 300 : 50;
