@@ -22,6 +22,10 @@
 .cdr-table {
   @include redwood-display-20();
 
+  caption {
+    caption-side: top;
+  }
+
   &__wrapper {
     position: relative;
   }
@@ -70,6 +74,10 @@
         /* should apply only if column headers exist */
         border-right: 2px solid $grey-matter;
       }
+
+      .content-align-right {
+        text-align: right;
+      }
     }
   }
 
@@ -81,7 +89,7 @@
 
       thead {
         th:first-child {
-          position: absolute;
+          position: relative;
           left: 0;
         }
       }
@@ -100,22 +108,44 @@
     &--scroll-large {
       /* set margin to lock left column */
       .cdr-table__scroll-container {
-        margin-left: 127px;
+        margin-left: 150px;
       }
 
       thead {
         th:first-child {
-          position: absolute;
+          width: 150px;
           left: 0;
+          position: absolute;
         }
       }
       
       tbody {
         th {
-          position: absolute;
+          width: 150px;
           left: 0;
+          position: absolute;
         }
       }
+    }
+  }
+
+  &--borderless {
+    border: none;
+
+    th,
+    td {
+      border: none;
+    }
+
+    tbody tr th {
+      border-right: none;
+    }
+  }
+
+  &--compact {
+    th,
+    td {
+      padding: $inset-1-x-squish;
     }
   }
 }

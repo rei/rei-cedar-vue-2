@@ -5,9 +5,17 @@
       scrollClass,
     ]"
   >
-    <p>Props: {{ colHeaders }} {{ rowHeaders }}</p>
     <div :class="$style['cdr-table__scroll-container']">
-      <table :class="$style[baseClass]">
+      <table
+        :class="[
+          $style[baseClass],
+          modifierClass,
+        ]"
+        :summary="summary ? summary : null"
+      >
+        <caption v-if="caption">
+          {{ caption }}
+        </caption>
         <thead v-if="colHeaders">
           <tr>
             <th class="empty" />
@@ -47,6 +55,14 @@ export default {
     rowHeaders: {
       type: Boolean,
       default: false,
+    },
+    summary: {
+      type: String,
+      required: false,
+    },
+    caption: {
+      type: String,
+      required: false,
     },
   },
   data() {
