@@ -8,7 +8,6 @@
     <div :class="$style['cdr-table__scroll-container']">
       <table
         :class="[
-          $style[baseClass],
           modifierClass,
         ]"
         :summary="summary ? summary : null"
@@ -32,8 +31,9 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import debounce from 'lodash/debounce';
 
-/* eslint-disable no-console */
+/* eslint-disable */
 
 /**
  * Cedar 2 compfor for data table
@@ -68,6 +68,8 @@ export default {
   data() {
     return {
       cols: 0,
+      clientWidth: 0,
+      scrollWidth: 0,
     };
   },
   computed: {
@@ -75,24 +77,30 @@ export default {
       return 'cdr-table';
     },
     scrollClass() {
-      const classes = [];
-      if (this.cols > 2) {
-        classes.push(this.modifyClassName(this.baseClass, 'scroll-small'));
+      if (this.scrolling) {
+        if (this.cols > 7) {
+          return this.modifyClassName(this.baseClass, 'scroll-large');
+        }
+
+        if (this.cols > 2) {
+          return this.modifyClassName(this.baseClass, 'scroll-small');
+        };
       }
-      if (this.cols > 7) {
-        classes.push(this.modifyClassName(this.baseClass, 'scroll-large'));
-      }
-      return classes.join(' ');
+    },
+    scrolling() {
+      return this.scrollWidth > this.clientWidth;
     },
   },
   mounted() {
+    this.clientWidth = this.$el.children[0].clientWidth;
+    this.scrollWidth = this.$el.children[0].scrollWidth;
     this.cols = this.$el.querySelector('tr').children.length;
-    console.log('cols', this.cols);
+
+    window.addEventListener('resize', debounce(() => {
+      this.clientWidth = this.$el.children[0].clientWidth;
+      this.scrollWidth = this.$el.children[0].scrollWidth;
+    }, 250));
   },
-  /**
-   * Attach required modules for using media queries.
-   * Attach event handler for resizing of the screen to recalulate media queries
-   */
 };
 </script>
 

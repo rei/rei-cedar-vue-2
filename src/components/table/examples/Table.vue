@@ -1,8 +1,8 @@
 <template>
   <div class="table-examples-wrapper">
-    <h2>table with data fed in</h2>
     <cdr-table
       :col-headers="true"
+      caption="Table with data fed in"
     >
       <template slot="col-headers">
         <th
@@ -27,8 +27,10 @@
       </tr>
     </cdr-table>
 
-    <h2>Some text</h2>
-    <cdr-table>
+    <cdr-table
+      id="scroll-example"
+      caption="Scroll example"
+    >
       <tr
         v-for="(record) in scroll.records"
         :key="record.rowheader"
@@ -44,7 +46,6 @@
       </tr>
     </cdr-table>
 
-    <h2>Compact-Borderless</h2>
     <cdr-table
       modifier="compact borderless"
       caption="Compact & Borderless"

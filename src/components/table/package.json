@@ -36,6 +36,8 @@
     "pkg-ok": "^2.1.0"
   },
   "dependencies": {
-    "matchmedia-polyfill": "^0.3.1"
+    "matchmedia-polyfill": "^0.3.1",
+    "lodash": "^4.17.10",
+    "lodash.debounce": "^4.0.8"
   }
 }

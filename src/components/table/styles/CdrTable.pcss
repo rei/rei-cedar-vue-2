@@ -22,8 +22,13 @@
 .cdr-table {
   @include redwood-display-20();
 
+  border: none;
+
   caption {
+    @include spruce-display-20();
+
     caption-side: top;
+    color: $heart-of-darkness;
   }
 
   &__wrapper {
@@ -32,6 +37,7 @@
 
   &__scroll-container {
     overflow-x: auto;
+    color: red;
   }
 
   th,
@@ -42,7 +48,7 @@
     min-height: 48px;
     color: $heart-of-darkness;
     padding: $inset-1-x;
-    text-align: left !important;
+    text-align: left;
   }
 
   thead {
@@ -98,7 +104,6 @@
         th {
           position: absolute;
           left: 0;
-          z-index: 10;
         }
       }
     }
