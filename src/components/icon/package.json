@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-icon",
-  "version": "1.0.0-next.beta.1",
+  "version": "1.0.0-next.beta.2",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Icon",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-icon",
@@ -30,11 +30,11 @@
     "clean": "rimraf dist comps sprite"
   },
   "peerDependencies": {
-    "@rei/cdr-assets": "^0.1.0",
+    "@rei/cdr-assets": "^0.3.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.1.0",
+    "@rei/cdr-assets": "^0.3.0",
     "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
     "jsdom": "^11.7.0",

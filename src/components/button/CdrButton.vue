@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import buttonBase from 'mixinsdir/buttonBase';
 import modifier from 'mixinsdir/modifier';
 
 /**
@@ -32,8 +31,39 @@ import modifier from 'mixinsdir/modifier';
  */
 export default {
   name: 'CdrButton',
-  mixins: [buttonBase, modifier],
+  mixins: [modifier],
   props: {
+    /**
+     * Controls render as button or anchor. {button, a}
+     */
+    tag: {
+      type: String,
+      default: 'button',
+      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
+    },
+    /**
+     * Sets the button type. {button, submit, reset}
+     */
+    type: {
+      type: String,
+      default: 'button',
+      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
+    },
+    /**
+     * Adds custom click actions.
+     */
+    onClick: {
+      type: Function,
+      default: () => () => null,
+    },
+    /**
+     * Sets width to be 100%.
+    */
+    fullWidth: {
+      type: Boolean,
+      default: false,
+      validator: value => typeof value === 'boolean',
+    },
     /**
      * Sets a static size for the button, which scales padding and text size. {small, medium, large}
      */
@@ -86,7 +116,8 @@ export default {
     iconClass() {
       const classes = [];
 
-      if (this.$slots.default && this.$slots.default.length > 1) {
+      if (this.$slots.icon && this.$slots.default) {
+        /* only add class for buttons with text + icon */
         classes.push(this.modifyClassName(this.baseClass, 'has-icon'));
       }
 
@@ -98,6 +129,10 @@ export default {
         }
       }
       return classes.join(' ');
+    },
+    fullWidthClass() {
+      return this.fullWidth && !this.iconOnly ?
+        this.modifyClassName(this.baseClass, 'full-width') : null;
     },
   },
 };
