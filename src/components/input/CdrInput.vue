@@ -5,11 +5,24 @@
       :class="labelClass"
       :for="inputId"
       ref="label"
-    >{{ label }}<span v-if="required">*</span>
+    >{{ label }}
+      <!-- @slot for required indicator -->
+      <span
+        v-if="$slots.required"
+        :class="$style['cdr-input__required-label']">
+        <slot name="required"/>
+      </span>
     </label>
+    <!-- @slot for information -->
+    <span
+      v-if="$slots.info"
+      :class="$style['cdr-input__info-container']">
+      <slot name="info"/>
+    </span>
     <div :class="[inputWrapClass]">
       <textarea
-        v-if="multiLine"
+        v-if="rows && rows > 1"
+        :rows="[rows]"
         :class="[inputClass, modifierClass]"
         v-bind="$attrs"
         :id="inputId"
@@ -22,13 +35,12 @@
         :required="required"
         :disabled="disabled"
         :aria-label="hideLabel ? label : null"
-        :aria-describedby="errors.length ? messagesId : null"
         ref="input"
       />
 
       <input
         v-else
-        :type="type"
+        type="text"
         :class="[inputClass, modifierClass]"
         v-bind="$attrs"
         :id="inputId"
@@ -41,48 +53,27 @@
         :required="required"
         :disabled="disabled"
         :aria-label="hideLabel ? label : null"
-        :aria-describedby="errors.length ? messagesId : null"
         ref="input"
       >
+      <!-- @slot Icon to be put in front of input -->
       <span
         v-if="$slots.preicon"
-        :class="$style['cdr-input__pre-icon']"
-        aria-hidden="true"
-      >
-        <!-- @slot Icon to be put in front of input -->
+        :class="$style['cdr-input__pre-icon']">
         <slot name="preicon"/>
       </span>
+      <!-- @slot Icon to be put at end of input -->
       <span
-        v-if="feedback"
-        :class="validationIconClass"
-        v-html="getIcon"
-        ref="icon"
-      />
+        v-if="$slots.posticon"
+        :class="$style['cdr-input__post-icon']">
+        <slot name="posticon"/>
+      </span>
     </div>
-    <transition-group
-      :class="$style['cdr-input-messages']"
-      :id="messagesId"
-      ref="messages"
-      name="cdr-animated-errors"
-      tag="div"
-    >
-      <div
-        :class="messageClass"
-        ref="error"
-        v-for="error in errors"
-        :error="error"
-        :key="error">{{ error }}</div>
-    </transition-group>
   </div>
 </template>
 
 <script>
-import debounce from 'srcdir/utils/debounce';
+// import debounce from 'srcdir/utils/debounce';
 import modifier from 'mixinsdir/modifier';
-
-// const checkIcon = require('assetsdir/icons/rei/check-lg.svg');
-const errorIcon = require('assetsdir/icons/rei/warning-fill.svg');
-const warningIcon = require('assetsdir/icons/rei/warning-tri.svg');
 
 /**
  * Cedar 2 component for input
@@ -111,49 +102,20 @@ export default {
     */
     hideLabel: Boolean,
     /**
-     * Changes the input to a textarea.
+     * Adds standard DDS design to signify input is required.
     */
-    multiLine: Boolean,
+    required: Boolean,
     /**
-     * Regex validation pattern. Useful for simple validation.
+     * Number of rows for input.  Converts component to text-area if rows greater than 1.
     */
-    pattern: String,
+    rows: Number,
     /**
      * Error message to be displayed when `pattern` validation fails.
     */
     patternError: String,
-    /**
-     * Enables icon feedback as part of validation for valid, warn, and error states.
-    */
-    feedback: Boolean,
-    /**
-     * Input type. NOTE: This component is meant for text style inputs. Other input types (checkbox, radio) have their own components.
-    */
-    type: {
-      type: String,
-      default: 'text',
-    },
-    /**
-     * Array of functions. Provide your own validation function(s). Takes the input string and outputs an object with a state and message. State is a String with value `valid`, `warning`, or `error`. Message is any String.
-    */
-    rules: {
-      type: Array,
-      default: () => [],
-    },
-    /**
-     * Boolean or Number. `true` has a default of 500ms. Providing a number will set debounce to that (in ms). `false` is no debounce.
-    */
-    debounce: {
-      type: [Boolean, Number],
-      required: false,
-      default: false,
-    },
+
     /** @ignore */
     disabled: Boolean,
-    /** @ignore */
-    required: Boolean,
-    /** @ignore */
-    immediateValidate: Boolean,
     /** @ignore */
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
@@ -164,7 +126,6 @@ export default {
     return {
       errors: [],
       currentValue: this.value,
-      pristine: true,
       touched: false,
       valid: false,
       focused: false,
@@ -176,25 +137,18 @@ export default {
     inputId() {
       return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
     },
-    messagesId() {
-      return `err${this._uid}`; // eslint-disable-line no-underscore-dangle
-    },
     baseClass() {
       return 'cdr-input';
     },
     labelClass() {
       return {
         [this.$style['cdr-input__label']]: true,
-        [this.$style['cdr-input__label--error']]: this.isErr,
         [this.$style['cdr-input__label--disabled']]: this.disabled,
       };
     },
     inputClass() {
       return {
         [this.$style['cdr-input']]: true,
-        [this.$style['cdr-input--multiline']]: this.multiLine,
-        [this.$style['cdr-input--error']]: this.isErr,
-        [this.$style['cdr-input--warn']]: this.isWarn,
         [this.$style['cdr-input--preicon']]: this.$slots.preicon,
       };
     },
@@ -204,58 +158,9 @@ export default {
         [this.$style['cdr-input-wrap--actions']]: this.$slots.pre || this.$slots.post,
       };
     },
-    validationIconClass() {
-    /* istanbul ignore next */
-      return {
-        [this.$style['cdr-input-wrap__icon']]: true,
-        [this.$style['cdr-input-wrap__icon--error']]: this.isErr,
-        [this.$style['cdr-input-wrap__icon--warn']]: this.isWarn,
-        [this.$style['cdr-input-wrap__icon--valid']]: this.isValid,
-      };
-    },
-    messageClass() {
-      return {
-        [this.$style['cdr-input-messages__notification']]: true,
-        [this.$style['cdr-input-messages__notification--error']]: this.isErr,
-        [this.$style['cdr-input-messages__notification--warn']]: this.isWarn,
-      };
-    },
-    getIcon() {
-      let icon = '';
-
-      if (this.isErr) {
-        icon = errorIcon;
-      // } else if (this.isValid) {
-      //   icon = checkIcon;
-      } else if (this.isWarn) {
-        icon = warningIcon;
-      }
-
-      return icon;
-    },
-    // Check if debounce is enabled, defined, or default
-    debounceVal() {
-      if (this.debounce === false) {
-        return 0;
-      } else if (!Number.isNaN(this.debounce) && this.debounce !== '' && this.debounce !== true) {
-        return this.debounce;
-      }
-      return 500;
-    },
-    isErr() {
-      return this.state === 'error';
-    },
-    isWarn() {
-      return this.state === 'warn';
-    },
-    isValid() {
-      return this.state === 'valid';
-    },
   },
   watch: {
     focused(val) {
-      this.touched = true;
-
       /**
       * New input value (if changed). Fires on blur.
       * @event change
@@ -267,44 +172,10 @@ export default {
     },
     value(val) {
       this.setCurrentValue(val);
-      this.validate();
     },
-  },
-  mounted() {
-    // Convert pattern to a rule for testing
-    if (this.pattern) {
-      const regPattern = new RegExp(this.pattern);
-      this.rules.push((text) => {
-        const obj = {};
-        if (regPattern.test(text)) {
-          obj.state = 'valid';
-        } else {
-          obj.state = 'error';
-          obj.message = this.patternError || '';
-        }
-        return obj;
-      });
-    }
-    // Provide some default validation for required
-    if (this.required) {
-      this.rules.push((text) => {
-        const obj = {};
-        // interacted with, not currently focsed, and empty
-        if (this.touched && !this.focused && text === '') {
-          obj.state = 'warn';
-          obj.message = 'This field is required';
-        }
-        return obj;
-      });
-    }
-
-    if (this.immediateValidate) {
-      this.validate(true);
-    }
   },
   methods: {
     onInput(e) {
-      this.pristine = false;
       const { value } = e.target;
       /**
       * Current input value. Fires while typing.
@@ -316,7 +187,6 @@ export default {
       this.setCurrentValue(value);
     },
     onBlur(e) {
-      this.validate(true);
       this.$nextTick(() => {
         this.focused = false;
       });
@@ -341,7 +211,6 @@ export default {
       * @event paste
       * @type {event}
        */
-      this.validate(true);
       this.$emit('paste', e);
     },
     onKeydown(e) {
@@ -355,33 +224,6 @@ export default {
     setCurrentValue(value) {
       if (value === this.currentValue) return;
       this.currentValue = value;
-    },
-    validate(immediate = false) {
-      // only validate rules if there are any
-      if (this.rules.length > 0) {
-        const delay = immediate ? 0 : this.debounceVal;
-        (debounce(() => {
-          this.errors = [];
-          this.valid = false;
-
-          this.rules.forEach((rule) => {
-            const validObj = rule(this.currentValue);
-            validObj.state = validObj.state ? validObj.state : this.state;
-
-            if (validObj.state === 'valid') {
-              this.state = validObj.state;
-            } else if (validObj.state === 'warn') {
-              this.state = validObj.state;
-              this.errors.push(validObj.message);
-            } else {
-              this.state = validObj.state;
-              if (validObj.message) {
-                this.errors.push(validObj.message);
-              }
-            }
-          });
-        }, delay))();
-      }
     },
   },
 };

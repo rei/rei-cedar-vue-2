@@ -34,9 +34,9 @@
   margin-bottom: $space-quarter-x;
   margin-right: $inset-quarter-x;
 
-  &--error {
+  /* &--error {
     color: $input-label-error-color-text;
-  }
+  } */
 
   &--disabled {
     color: $grey-matter;
@@ -47,11 +47,11 @@
   # INPUT CONTAINER
   ========================================================================== */
 
-.cdr-input-container {
+/* .cdr-input-container {
   & + & {
-    margin-top: $input-container-spacing;
+    margin-top: $space-2-x;
   }
-}
+} */
 
 /* ==========================================================================
   # INPUT
@@ -61,19 +61,20 @@
   @include redwood-display-30;
 
   color: $heart-of-darkness;
+  box-shadow: inset 0 0 0 1px $taken-for-granite;
+  border: 0;
+  border-radius: $radius-softer;
 
-  /* font-size: $input-font-size; */
-
+  /* font-size: $input-font-size;
   line-height: $input-line-height;
   text-align: $input-text-align;
   font-style: $input-font-style;
   font-weight: $input-font-weight;
-  font-family: $input-font-family;
-  background-color: $input-background-color;
-  border-color: $input-border-color;
-  border-style: $input-border-style;
-  border-radius: $radius-softer;
-  border-width: $input-border-width;
+  font-family: $input-font-family; */
+
+  /* background-color: $input-background-color;
+  border-color: $input-border-color; */
+
   padding: $input-padding;
   height: $input-height;
   display: block;
@@ -81,10 +82,20 @@
 
   /* States
   ---------- */
-
   &[disabled] {
-    background-color: $input-disabled-background-color;
+    background-color: $moon-shot;
     color: $grey-matter;
+    box-shadow: inset 0 0 0 1px $partly-cloudy;
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px $partly-cloudy;
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    box-shadow: inset 0 0 0 1px $easily-excited;
   }
 
   /* Style variants
@@ -95,15 +106,19 @@
   }
 
   &--error {
-    border-color: $input-error-border-color;
+    /* border-color: $input-error-border-color;
     border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0; */
+
+    box-shadow: inset 0 0 0 1px $center-of-attention;
   }
 
   &--warn {
-    border-color: $input-warning-border-color;
+    box-shadow: inset 0 0 0 1px $golden-face;
+
+    /* border-color: $input-warning-border-color;
     border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0; */
   }
 
   &--preicon {
@@ -133,14 +148,29 @@
     color: $input-color-placeholder-text; */
   }
 
-  /* Block elements
+  /* Slot Sections
     ========================================================================== */
 
   &__pre-icon {
     position: absolute;
     top: 50%;
-    left: $sizing-size-md;
+    left: $space-half-x;
     transform: translateY(-50%);
+  }
+
+  &__post-icon {
+    position: absolute;
+    top: 50%;
+    right: $space-half-x;
+    transform: translateY(-50%);
+  }
+
+  &__required-label {
+    color: $coal-train;
+  }
+
+  &__info-container {
+    float: right;
   }
 }
 
@@ -162,7 +192,7 @@
   /* Block elements
     ========================================================================== */
 
-  &__icon {
+  &__posticon {
     position: absolute;
     top: $input-icon-top;
     right: $input-icon-right;
