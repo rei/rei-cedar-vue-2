@@ -2,6 +2,7 @@
   <div class="table-examples-wrapper">
     <cdr-table
       :col-headers="true"
+      :row-headers="true"
       caption="Table with data fed in"
     >
       <template slot="col-headers">
@@ -28,14 +29,31 @@
     </cdr-table>
 
     <cdr-table
-      id="scroll-example"
       caption="Scroll example"
+      :row-headers="true"
     >
       <tr
         v-for="(record) in scroll.records"
         :key="record.rowheader"
       >
         <th>{{ record.rowheader }}</th>
+        <td
+          v-for="(colData, index) in record"
+          v-if="index !== 'rowheader'"
+          :key="index"
+        >
+          {{ colData }}
+        </td>
+      </tr>
+    </cdr-table>
+
+    <cdr-table
+      caption="Scroll example"
+    >
+      <tr
+        v-for="(record) in scroll.records"
+        :key="record.rowheader"
+      >
         <td
           v-for="(colData, index) in record"
           v-if="index !== 'rowheader'"

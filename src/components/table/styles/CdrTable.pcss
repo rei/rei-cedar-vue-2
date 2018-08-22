@@ -24,39 +24,16 @@
 
   border: none;
 
-  caption {
-    @include spruce-display-20();
-
-    caption-side: top;
-    color: $heart-of-darkness;
-  }
-
-  &__wrapper {
-    position: relative;
-  }
-
-  &__scroll-container {
-    overflow-x: auto;
-    color: red;
-  }
-
-  th,
-  td {
-    border: 1px solid $partly-cloudy;
-    min-width: 127px;
-    max-width: 150px;
-    min-height: 48px;
-    color: $heart-of-darkness;
-    padding: $inset-1-x;
-    text-align: left;
-  }
-
   thead {
     th {
       border-bottom: 2px solid $grey-matter;
 
+      /* empty column header, row header column */
       &[class^=empty] {
         border-right: 2px solid $grey-matter;
+        left: 0;
+        position: absolute;
+        width: 150px;
 
         /* Ensure empty top right left cell has same line height */
         &::before {
@@ -79,6 +56,9 @@
       th {
         /* should apply only if column headers exist */
         border-right: 2px solid $grey-matter;
+        left: 0;
+        position: absolute;
+        width: 150px;
       }
 
       .content-align-right {
@@ -87,50 +67,43 @@
     }
   }
 
-  @media (width < $md-bp) {
-    &--scroll-small {
-      .cdr-table__scroll-container {
-        margin-left: 127px;
-      }
+  th,
+  td {
+    border: 1px solid $partly-cloudy;
+    min-height: 48px;
+    color: $heart-of-darkness;
+    padding: $inset-1-x;
+    text-align: left;
+  }
 
-      thead {
-        th:first-child {
-          position: relative;
-          left: 0;
-        }
-      }
+  td {
+    min-width: 127px;
+    max-width: 150px;
+  }
+
+  caption {
+    @include spruce-display-20();
+
+    caption-side: top;
+    color: $heart-of-darkness;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    .caption {
+      @include spruce-display-20();
       
-      tbody {
-        th {
-          position: absolute;
-          left: 0;
-        }
-      }
+      color: $heart-of-darkness;
     }
   }
 
-  @media (width >= $md-bp) {
-    &--scroll-large {
-      /* set margin to lock left column */
-      .cdr-table__scroll-container {
-        margin-left: 150px;
-      }
+  &__scroll-container {
+    margin-left: 150px;
+    overflow-x: auto;
 
-      thead {
-        th:first-child {
-          width: 150px;
-          left: 0;
-          position: absolute;
-        }
-      }
-      
-      tbody {
-        th {
-          width: 150px;
-          left: 0;
-          position: absolute;
-        }
-      }
+    &:global(.no-row-headers) {
+      margin-left: 0;
     }
   }
 
