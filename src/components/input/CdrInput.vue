@@ -32,7 +32,6 @@
         @focus="onFocus"
         @paste="onPaste"
         @keydown="onKeydown"
-        :required="required"
         :disabled="disabled"
         :aria-label="hideLabel ? label : null"
         ref="input"
@@ -50,7 +49,6 @@
         @focus="onFocus"
         @paste="onPaste"
         @keydown="onKeydown"
-        :required="required"
         :disabled="disabled"
         :aria-label="hideLabel ? label : null"
         ref="input"
@@ -72,7 +70,6 @@
 </template>
 
 <script>
-// import debounce from 'srcdir/utils/debounce';
 import modifier from 'mixinsdir/modifier';
 
 /**
@@ -102,20 +99,13 @@ export default {
     */
     hideLabel: Boolean,
     /**
-     * Adds standard DDS design to signify input is required.
-    */
-    required: Boolean,
-    /**
      * Number of rows for input.  Converts component to text-area if rows greater than 1.
     */
     rows: Number,
-    /**
-     * Error message to be displayed when `pattern` validation fails.
-    */
-    patternError: String,
-
     /** @ignore */
     disabled: Boolean,
+    /** @ignore */
+    large: Boolean,
     /** @ignore */
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
@@ -124,10 +114,7 @@ export default {
   },
   data() {
     return {
-      errors: [],
       currentValue: this.value,
-      touched: false,
-      valid: false,
       focused: false,
       state: '',
     };
@@ -149,13 +136,14 @@ export default {
     inputClass() {
       return {
         [this.$style['cdr-input']]: true,
+        [this.$style['cdr-input--multiline']]: this.rows > 1,
         [this.$style['cdr-input--preicon']]: this.$slots.preicon,
+        [this.$style['cdr-input--large']]: this.large,
       };
     },
     inputWrapClass() {
       return {
         [this.$style['cdr-input-wrap']]: true,
-        [this.$style['cdr-input-wrap--actions']]: this.$slots.pre || this.$slots.post,
       };
     },
   },

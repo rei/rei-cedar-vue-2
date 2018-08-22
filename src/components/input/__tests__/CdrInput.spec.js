@@ -138,16 +138,6 @@ describe('CdrInput.vue', () => {
     expect(wrapper.vm.$refs.input.hasAttribute('readonly')).toBe(true);
   });
 
-  it('sets input required attribute correctly', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'test',
-        required: true,
-      },
-    });
-    expect(wrapper.vm.$refs.input.hasAttribute('required')).toBe(true);
-  });
-
   it('sets input autofocus attribute correctly', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

@@ -24,6 +24,7 @@
       label="Large Input"
       id="large-input"
       placeholder="Large Input Placeholder"
+      large
     />
     <br>
     <cdr-input
@@ -32,6 +33,7 @@
       label="Large Disabled Input"
       id="large-inactive-input"
       placeholder="Large Disabled Placeholder"
+      large
       disabled
     />
     <br>
@@ -118,17 +120,7 @@ export default {
       withLabel: '',
       textArea: '',
       requiredWithIcon: '',
-      debounce: '',
-      requiredValidated: '',
       required: '',
-      nothing: '',
-      pattern: '',
-      empty: '',
-      valid: 'hi',
-      warning: '',
-      error: 1,
-      multi: '',
-      multi2: '',
     };
   },
 };
