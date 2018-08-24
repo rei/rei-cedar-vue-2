@@ -164,6 +164,9 @@ export default {
 </script>
 
 <style>
+.table-examples-wrapper {
+  padding: 10px;
+}
 
 .table-examples-wrapper > div {
   margin-bottom: 40px;

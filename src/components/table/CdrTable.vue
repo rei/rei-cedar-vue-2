@@ -1,29 +1,25 @@
 <template>
   <div
-    :class="[
-      $style['cdr-table__wrapper'],
-    ]"
+    :class="[modifierClass]"
   >
-    <span class="caption">{{ caption }}</span>
+    <!-- <span class="caption">{{ caption }}</span> -->
     <div
       :class="[
         $style['cdr-table__scroll-container'],
-        { 'no-row-headers': !rowHeaders },
-        { 'cdr-table--scroll': scrolling },
+        { 'full-scroll': fullScroll },
+        { 'is-scrolling': isScrolling },
       ]"
     >
       <table
-        :class="[
-          modifierClass,
-        ]"
+        :class="$style['cdr-table__content']"
         :summary="summary ? summary : null"
       >
-        <caption
+        <!-- <caption
           v-if="caption"
           class="sr-only"
         >
           {{ caption }}
-        </caption>
+        </caption> -->
         <thead v-if="colHeaders">
           <tr>
             <th class="empty" />
@@ -35,12 +31,6 @@
         </tbody>
       </table>
     </div>
-    <!-- <ul>
-      <li>clientWidth: {{ clientWidth }}</li>
-      <li>scrollWidth: {{ scrollWidth }}</li>
-      <li>scrolling: {{ scrolling }}</li>
-      <li>scrollClass: {{ scrollClass || 'fucking broken' }}</li>
-    </ul> -->
   </div>
 </template>
 
@@ -91,8 +81,11 @@ export default {
     baseClass() {
       return 'cdr-table';
     },
-    scrolling() {
-      return this.scrollWidth > this.clientWidth && this.cols > 2;
+    fullScroll() {
+      return this.cols <= 2 || !this.rowHeaders;
+    },
+    isScrolling() {
+      return !this.fullScroll && this.scrollWidth > this.clientWidth;
     },
   },
   mounted() {

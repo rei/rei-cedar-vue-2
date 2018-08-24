@@ -12,100 +12,113 @@
         :Breakpoint Variants
 ========================================================================= */
 
-/*
-  $table-cell-width: 110px;
-  $table-cell-max-width: 150px;
-  $table-cell-min-width: 127px;
-  $table-cell-min-height: 48px;
-*/
-
 .cdr-table {
   @include redwood-display-20();
 
-  border: none;
-
-  thead {
-    th {
-      border-bottom: 2px solid $grey-matter;
-
-      /* empty column header, row header column */
-      &[class^=empty] {
-        border-right: 2px solid $grey-matter;
-        left: 0;
-        position: absolute;
-        width: 150px;
-
-        /* Ensure empty top right left cell has same line height */
-        &::before {
-          content: '\a0';
-        }
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      &:nth-child(even) {
-        background-color: $the-tooth;
-
-        th {
-          background-color: $the-tooth;
-        }
-      }
-
-      th {
-        /* should apply only if column headers exist */
-        border-right: 2px solid $grey-matter;
-        left: 0;
-        position: absolute;
-        width: 150px;
-      }
-
-      .content-align-right {
-        text-align: right;
-      }
-    }
-  }
-
-  th,
-  td {
-    border: 1px solid $partly-cloudy;
-    min-height: 48px;
-    color: $heart-of-darkness;
-    padding: $inset-1-x;
-    text-align: left;
-  }
-
-  td {
-    min-width: 127px;
-    max-width: 150px;
-  }
-
-  caption {
-    @include spruce-display-20();
-
-    caption-side: top;
-    color: $heart-of-darkness;
-  }
-
-  &__wrapper {
-    position: relative;
-
-    .caption {
-      @include spruce-display-20();
-      
-      color: $heart-of-darkness;
-    }
-  }
+  position: relative;
 
   &__scroll-container {
     margin-left: 150px;
     overflow-x: auto;
 
-    &:global(.no-row-headers) {
+    &:global(.full-scroll) {
       margin-left: 0;
+
+      .cdr-table__content {
+        th.empty,
+        tbody th {
+          position: relative;
+        }
+      }
+    }
+
+    &:global(.is-scrolling) {
+      /* add extra border width */
+      tbody tr th {
+        border-right: 4px solid $partly-cloudy !important;
+      }
     }
   }
+
+  &__content {
+    border: none;
+
+    th,
+    td {
+      border: 1px solid $partly-cloudy;
+      min-height: 48px;
+      color: $heart-of-darkness;
+      padding: $inset-1-x;
+      text-align: left;
+    }
+
+    td {
+      min-width: 127px;
+      max-width: 150px;
+    }
+
+    @mixin lockedColTh() {
+      border-right: 2px solid $grey-matter;
+      left: 0;
+      position: absolute;
+      width: 150px;
+    }
+
+    thead {
+      th {
+        border-bottom: 2px solid $grey-matter;
+
+        /* empty column header, row header column */
+        &[class^=empty] {
+          @include lockedColTh();
+
+          /* Ensure empty top right left cell has same line height */
+          &::before {
+            content: '\a0';
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: $the-tooth;
+
+          th {
+            background-color: $the-tooth;
+          }
+        }
+      }
+
+      th {
+        @include lockedColTh();
+
+        &:global(.content-align-right) {
+          text-align: right;
+        }
+      }
+    }
+
+    caption {
+      @include spruce-display-20();
+
+      caption-side: top;
+      color: $heart-of-darkness;
+    }
+  }
+
+  /*
+  &__wrapper {
+    position: relative;
+
+    &:global(.caption) {
+      @include spruce-display-20();
+      
+      color: $heart-of-darkness;
+    }
+  }
+  */
 
   &--borderless {
     border: none;
