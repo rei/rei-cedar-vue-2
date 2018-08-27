@@ -20,8 +20,8 @@ function createScenario(def) {
 
 function splitScenario(def, type = '', selectorsArr, extraOptions = {}) {
   const scenario = Object.assign({}, extraOptions, def);
-  scenario.label = `${def.label} ${type}`;
-  selectorsArr.forEach((s) => {
+  selectorsArr.forEach((s, idx) => {
+    scenario.label = `${def.label} ${type}${idx}`;
     scenario[`${type}Selector`] = true;
     scenario.selectors = [s];
     createScenario(scenario);

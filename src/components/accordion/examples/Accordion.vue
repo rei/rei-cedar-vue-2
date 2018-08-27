@@ -43,6 +43,7 @@
       <cdr-accordion-item
         id="compact"
         label="Compact"
+        data-backstop="accordion-compact"
       >
         <ul>
           <li>
