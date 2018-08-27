@@ -88,6 +88,11 @@ export default {
     */
     id: String,
     /**
+     * `type` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated.
+    */
+    type: String,
+    default: 'text',
+    /**
      * Label text. This is required for a11y even if hiding the label with `hideLabel`.
     */
     label: {
