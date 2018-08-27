@@ -25,7 +25,7 @@ export default {
   mixins: [modifier],
   props: {
     /**
-     * Number of equal-width columns in the row.
+     * Number of equal-width columns in the row. A value of ‘auto’ will size columns as wide as their content.
      * Possible values: {1-12, auto}
      * Also accepts responsive values with `@breakpoint`: "2 4@md"
      */
@@ -37,7 +37,7 @@ export default {
       ),
     },
     /**
-     * How columns should be justified within empty space of the row. See CSS flexbox justify-content.
+     * Justify columns within a row. See CSS flexbox justify-content.
      * Possible values: {left, center, right, around, between}.
      * Also accepts responsive values with `@breakpoint`: "center right@lg"
      */
@@ -49,7 +49,7 @@ export default {
       ),
     },
     /**
-     * How columns of different heights should align. See CSS flexbox align-items.
+     * Align columns of different heights. See CSS flexbox align-items.
      * Possible values: {top, middle, bottom, stretch}.
      * Also accepts responsive values with `@breakpoint`: "top middle@sm"
      */
@@ -61,7 +61,7 @@ export default {
       ),
     },
     /**
-     * Defines size of the gutters.
+     * Defines gutter size. Default gutter size is 16px @xs and @sm and 32px @md and @lg.
      * Possible values: {none, xxs}.
      * Also accepts responsive values with `@breakpoint`: "none@md"
      */
@@ -109,7 +109,7 @@ export default {
       ),
     },
     /**
-     * Changes grid to built with ul>li rather than divs.
+     * Sets grid to use `ul` and `li` or `div`.
      * Possible values: {normal, list}.
      */
     type: {

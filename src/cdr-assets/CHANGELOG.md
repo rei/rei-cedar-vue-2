@@ -1,5 +1,5 @@
 <a name="0.2.0"></a>
-# 0.2.0 (2018-07-11)
+# 0.2.0 (2018-08-01)
 
 
 ### Bug Fixes
@@ -18,6 +18,7 @@
 * **fonts:** remove several font weights and styles ([36f21d8](https://github.com/rei/rei-cedar/commit/36f21d8))
 * **icon:** generate new sprite, externalize icon.json ([f49f828](https://github.com/rei/rei-cedar/commit/f49f828))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
+* **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
 * **tokens:** output token file for cdr-assets ([717836f](https://github.com/rei/rei-cedar/commit/717836f))
 
 

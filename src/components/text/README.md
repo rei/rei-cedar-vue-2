@@ -1,8 +1,27 @@
 # <span class="display-name">CdrText</span>
 
-### <span class="modifiers">Modifiers</span>
+## Properties
 
-Modifier values are any valid text styles
+| tag  | string | "p”     |
+|:-----|:-------|:--------|
+| name | type   | Default |
+
+Valid HTML tag
+
+| modifier                                                                                                                                                                                                                                        | string | N/A     |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------|:--------|
+| name                                                                                                                                                                                                                                            | type   | Default |
+
+Modifier allows the user to pass a style variant to this component. Possible values: body, display, display-static, heading-large, heading-large-static, heading-medium, heading-medium-static, heading-small, heading-small-static, subheading
+
+## Slots
+
+| default                                         |
+|:------------------------------------------------|
+| name                                            |
+| innerHTML on the inside of the anchor component |
+
+
 
 ## Installation
 

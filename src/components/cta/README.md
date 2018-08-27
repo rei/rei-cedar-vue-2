@@ -1,27 +1,123 @@
-## <span class="usage">Usage</span>
+# CdrCTA
 
-The `cta-style` prop will allow you to change the color to match different themes. Accepted values are `brand`, `dark`, `light`, and `sale`.
+## Properties
+| name | type | Default |
+| :--- | :--- | :--- |
+| ctaStyle | string | dark |
 
+Set Call to Action color by changing ctaStyle to match different themes. Possible values: {brand, dark, light, sale}
+
+| name | type | Default |
+| :--- | :--- | :--- |
+| fullWidth | boolean | false |
+
+Set Call to Action width to 100%. Setting it to true will set the width to 100% of the parent container
+
+| name | type | Default |
+| :--- | :--- | :--- |
+| compact | boolean | false |
+
+Set the link using the page url
+
+## Slots
+| name                                            |
+| :---------------------------------------------- |
+| Default                                         |
+
+This is for the readable text of cdr-cta.
+
+## Modifiers
+
+- elevated
+
+## Installation
+
+Resources are available with the [cdr-cta package](https://www.npmjs.com/package/@rei/cdr-cta):
+
+<cdr-doc-api type="installation" />
+
+- Component: `@rei/cdr-cta`
+- Component styles: `cdr-cta.css`
+
+To incorporate the required assets for a component, use the following steps:
+
+### #1. Install using NPM
+
+Install the `cdr-cta` package using `npm` in your terminal:
+
+_Terminal_
+
+```terminal
+    npm i -s @rei/cdr-link
 ```
-  <cdr-cta
-    cta-style="sale"
-    href="https://rei.com"
-  >Learn More</cdr-cta>
+
+### #2. Import Dependencies
+
+_main.js_
+
+```javascript
+// import your required css
+import "@rei/cdr-cta/dist/cdr-cta.css";
+
+// CTA uses a 
+import "@rei/cdr-link/dist/cdr-icon.css";
 ```
 
-## <span class="accessibility">Accessibility</span>
+### #3. Add component to a template
 
-Since `cdr-cta` can render as a button or an anchor, users should focus on what the semantically correct element would be. It will always look like a call to action button, so as long as the correct semantic choice is made, the default ARIA context should suffice. 
+_local.vue_
 
-## <span class="">Installation</span>
+```vue
+<template>
+...
+  <cdr-cta href="rei.com"></cdr-cta>
+...
+</template>
 
-Import the component to use it in your application.
-
+<script>
+import { CdrCta } from '@rei/cdr-cta';
+export default {
+  ...
+  components: {
+    CdrCta
+  }
+}
+</script>
 ```
-  npm i @rei/cdr-cta
+
+## Usage
+
+This example code renders a full width `cdr-cta`, with the `elevated` modifier and the `sale` theme.
+
+```vue
+<template>
+  <cdr-cta 
+    href="https://rei.com" 
+    :full-width="true" 
+    cta-style="sale" 
+    modifier"elevated"
+  >
+    See our new gear!
+  </cdr-cta>
+</template>
 ```
 
-## <span class="">Contributing</span>
+The `cdr-cta` component looks like a button; however it's actually an anchor:
+- Do not use when a button is preferable such as triggering an action
+- Do not assign the role of button
+- For basic links, use [cdr-link](/components/link/)
 
-### Request an an enhancement
-Join us on Slack at [#design-systems](https://rei.slack.com/messages/CA58YCGN4).
+## Accessibility
+
+- Ensure cdr-cta can be accessed via the keyboard. Don't manipulate the default tab index
+- Ensure assistive technologies can find all cdr-cta links on a page by:
+  - Using labels that are descriptive. Do not use "Click here" or "start here"
+  - Describing the cdr-cta link's destination when clicked
+  - Always providing an href attribute. Empty href attributes are not considered true links.
+  - Use hidden text that can be read by screen readers, if screen space for text is minimal
+  - Use an inline element for hidden text using the cdr-sr-only class
+  ```vue
+  <cdr-cta>
+    Start here <span class="cdr-sr-only">for help finding the proper sleeping bag</span>
+  </cdr-cta>
+  ```

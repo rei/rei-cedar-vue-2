@@ -28,7 +28,7 @@
     />
     <cta
       class="cpg-section"
-      data-backstop="cta-buttons"
+      data-backstop="cta-links"
     />
     <cards class="cpg-section"/> -->
     <!-- <card-content class="cpg-section"></card-content> -->

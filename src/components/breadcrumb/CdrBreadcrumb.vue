@@ -19,9 +19,6 @@
           aria-expanded="false"
           aria-label="ellipsis"
           :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]">
-          <!-- <cdr-icon :class="$style['cdr-breadcrumb__ellipses-icon']">
-            <path d=""/>
-          </cdr-icon> -->
           <template name="icon">
             <svg
               :class="$style['cdr-breadcrumb__ellipses-icon']"
@@ -166,6 +163,7 @@ export default {
       return totalWidth;
     },
     calculateTruncation() {
+      if (!this.$refs.container) return false;
       const containerWidth = this.$refs.container.offsetWidth || 0;
       const ratio = this.breadcrumbWidth / containerWidth || 0;
       if (this.isXS()) {
