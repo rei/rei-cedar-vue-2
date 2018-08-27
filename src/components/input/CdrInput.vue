@@ -39,7 +39,7 @@
 
       <input
         v-else
-        type="text"
+        :type="type"
         :class="[inputClass, modifierClass]"
         v-bind="$attrs"
         :id="inputId"
