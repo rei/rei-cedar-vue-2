@@ -62,9 +62,6 @@ export default {
     };
   },
   computed: {
-    baseClass() {
-      return 'cdr-tabs';
-    },
     underlineStyle() {
       return {
         marginLeft: `${this.underlineOffsetX}px`,
@@ -82,12 +79,6 @@ export default {
       this.headerWidth = this.getHeaderWidth();
       this.calculateOverflow();
     }, 250));
-    // Listen for left and right arrow keypress
-    // window.addEventListener('keydown', debounce((event) => {
-    //   if (this.tabs.length > 0) {
-    //     this.handleArrowNav(event);
-    //   }
-    // }, 250));
     // Check for header overflow on widow resize for gradient behavior.
     this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
       this.calculateOverflow();
@@ -162,7 +153,8 @@ export default {
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
         }
       }
-      if (event.which === 37 || event.which === 39) {
+      if (this.$refs.cdrTabsHeader.children[this.activeTabIndex] &&
+        (event.which === 37 || event.which === 39)) {
         this.underlineOffsetX =
         this.$refs.cdrTabsHeader.children[this.activeTabIndex].offsetLeft
           - this.$refs.cdrTabsHeader.offsetLeft;

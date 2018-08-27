@@ -8,11 +8,6 @@ describe('CdrTabs.vue', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  it('base class returns cdr-tabs', () => {
-    const wrapper = shallowMount(CdrTabs);
-    expect(wrapper.vm.baseClass).toBe('cdr-tabs');
-  });
-
   it('renders child tabs properly', () => {
     const wrapper = mount(CdrTabs, {
       slots: {
@@ -33,21 +28,19 @@ describe('CdrTabs.vue', () => {
   });
 
   it('handles right arrow key', (done) => {
-    const wrapper = shallowMount(CdrTabs, {
+    const wrapper = mount(CdrTabs, {
       slots: {
         default: [CdrTab, CdrTab]
       }
     });
-    const event = new KeyboardEvent("keydown", {
-      which : 39
-    });
     // Trigger right arrow keydown event
-    window.dispatchEvent(event);
-    // Due to debounce, must wait for event handler to eventually run.
-    setTimeout(() => {
-      expect(wrapper.vm.activeTabIndex).toBe(1);
-      done();
-    }, 250);
+    wrapper.vm.$nextTick(() => {
+      wrapper.vm.handleArrowNav({ which: 39 });
+      wrapper.vm.$nextTick(() => {
+        expect(wrapper.vm.activeTabIndex).toBe(1);
+        done();
+      });
+    });
   });
 
   it('handles right arrow key when far right tab is active', (done) => {
@@ -70,21 +63,20 @@ describe('CdrTabs.vue', () => {
   });
 
   it('handles left arrow key', (done) => {
-    const wrapper = shallowMount(CdrTabs, {
+    const wrapper = mount(CdrTabs, {
       slots: {
         default: [CdrTab, CdrTab]
       }
     });
-    const event = new KeyboardEvent("keydown", {
-      which : 37
-    });
     wrapper.vm.activeTabIndex = 1;
     // Trigger left arrow keypress event
-    window.dispatchEvent(event);
-    setTimeout(() => {
-      expect(wrapper.vm.activeTabIndex).toBe(0);
-      done();
-    }, 250);
+    wrapper.vm.$nextTick(() => {
+      wrapper.vm.handleArrowNav({ which: 37 });
+      wrapper.vm.$nextTick(() => {
+        expect(wrapper.vm.activeTabIndex).toBe(0);
+        done();
+      });
+    })
   });
 
   it('handles left arrow key when far left is active', (done) => {
