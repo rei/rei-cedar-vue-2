@@ -5,7 +5,7 @@
     name="fly"
     v-on="animationHooks">
     <div
-      v-if="active"
+      v-show="active"
       :aria-hidden="!active"
       :class="[modifierClass]"
       tabindex="1"
