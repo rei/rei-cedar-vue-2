@@ -2,7 +2,7 @@
   <div
     :class="[modifierClass]"
   >
-    <!-- <span class="caption">{{ caption }}</span> -->
+    <span class="caption">{{ caption }}</span>
     <div
       :class="[
         $style['cdr-table__scroll-container'],
@@ -20,13 +20,48 @@
         >
           {{ caption }}
         </caption> -->
-        <thead v-if="colHeaders">
-          <tr>
-            <th class="empty" />
+
+        <thead v-if="hasColHeaders">
+          <tr v-if="rowData.length > 0">
+            <th
+              class="empty"
+              v-show="hasRowHeaders"
+            />
+            <th
+              v-for="(header, index) in colHeaders"
+              :key="id + '_col-head_' + index"
+            >
+              {{ header }}
+            </th>
+          </tr>
+          <tr v-else>
+            <th
+              class="empty"
+              v-show="hasRowHeaders"
+            />
             <slot name="col-headers" />
           </tr>
         </thead>
-        <tbody>
+
+        <tbody v-if="rowData.length > 0">
+          <tr
+            v-for="(row, index) in rowData"
+            :key="id + '_row_' + index"
+          >
+            <!-- ROW HEADERS -->
+            <th v-if="hasRowHeaders">
+              {{ rowHeaders[index] }}
+            </th>
+            <td
+              v-for="(col, key) in row"
+              :key="id + '_col_' + key"
+            >
+              {{ col }}
+            </td>
+          </tr>
+        </tbody>
+
+        <tbody v-else>
           <slot />
         </tbody>
       </table>
@@ -38,8 +73,6 @@
 import modifier from 'mixinsdir/modifier';
 import debounce from 'lodash/debounce';
 
-/* eslint-disable */
-
 /**
  * Cedar 2 compfor for data table
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
@@ -48,8 +81,12 @@ export default {
   name: 'CdrTable',
   mixins: [modifier],
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     colHeaders: {
-      type: Boolean,
+      type: [Array, Boolean],
       default: false,
     },
     /**
@@ -58,7 +95,11 @@ export default {
      * property key.
      */
     rowHeaders: {
-      type: Boolean,
+      type: [Array, Boolean],
+      default: false,
+    },
+    rowData: {
+      type: [Array, Boolean],
       default: false,
     },
     summary: {
@@ -75,6 +116,8 @@ export default {
       cols: 0,
       clientWidth: 0,
       scrollWidth: 0,
+      hasColHeaders: false,
+      hasRowHeaders: false,
     };
   },
   computed: {
@@ -89,13 +132,24 @@ export default {
     },
   },
   mounted() {
-    this.clientWidth = this.$el.children[0].clientWidth;
-    this.scrollWidth = this.$el.children[0].scrollWidth;
-    this.cols = this.$el.querySelector('tr').children.length;
+    this.hasColHeaders = typeof this.colHeaders === 'boolean' ?
+      this.colHeaders : this.colHeaders.length > 0;
+
+    this.hasRowHeaders = typeof this.rowHeaders === 'boolean' ?
+      this.rowHeaders : this.rowHeaders.length > 0;
+
+    /* count the columns */
+    this.cols = this.hasColHeaders ?
+      this.colHeaders.length : this.$el.querySelector('tr').children.length;
+
+    /* select correct child element */
+    const scrollContainer = this.caption ? this.$el.children[1] : this.$el.children[0];
+    this.clientWidth = scrollContainer.clientWidth;
+    this.scrollWidth = scrollContainer.scrollWidth;
 
     window.addEventListener('resize', debounce(() => {
-      this.clientWidth = this.$el.children[0].clientWidth;
-      this.scrollWidth = this.$el.children[0].scrollWidth;
+      this.clientWidth = scrollContainer.clientWidth;
+      this.scrollWidth = scrollContainer.scrollWidth;
     }, 250));
   },
 };

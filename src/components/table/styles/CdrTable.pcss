@@ -17,6 +17,12 @@
 
   position: relative;
 
+  & > :global(.caption) {
+    @include spruce-display-20();
+      
+    color: $heart-of-darkness;
+  }
+
   &__scroll-container {
     margin-left: 150px;
     overflow-x: auto;
@@ -35,7 +41,7 @@
     &:global(.is-scrolling) {
       /* add extra border width */
       tbody tr th {
-        border-right: 4px solid $partly-cloudy !important;
+        border-right: 4px solid $grey-matter !important;
       }
     }
   }
@@ -55,6 +61,10 @@
     td {
       min-width: 127px;
       max-width: 150px;
+
+      &:not(:first-of-type) {
+        text-align: left;
+      }
     }
 
     @mixin lockedColTh() {
@@ -107,18 +117,6 @@
       color: $heart-of-darkness;
     }
   }
-
-  /*
-  &__wrapper {
-    position: relative;
-
-    &:global(.caption) {
-      @include spruce-display-20();
-      
-      color: $heart-of-darkness;
-    }
-  }
-  */
 
   &--borderless {
     border: none;
