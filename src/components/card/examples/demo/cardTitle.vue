@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <cdr-card modifier="red">
-      <p>A simple card</p>
-    </cdr-card>
-  </div>
+  <cdr-card
+    modifier="default">
+    <cdr-card-title
+      title="title"
+      title-url="#"/>
+  </cdr-card>
 </template>
 
 <script>
@@ -11,7 +12,7 @@ import Components from 'componentsdir/_index';
 
 
 export default {
-  name: 'SimpleCard',
+  name: 'CardTitle',
   components: Components,
 };
 </script>

@@ -33,5 +33,10 @@
   "devDependencies": {
     "@rei/cdr-assets": "^0.1.0",
     "pkg-ok": "^1.1.0"
+  },
+  "dependencies": {
+    "@rei/cdr-list": "^1.0.0",
+    "@rei/cdr-text": "^1.0.0",
+    "vue": "^2.5.17"
   }
 }
