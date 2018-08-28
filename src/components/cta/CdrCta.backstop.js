@@ -9,7 +9,7 @@ module.exports = [{
     '[data-backstop="cdr-cta--light"]',
     '[data-backstop="cdr-cta--sale"]',
     '[data-backstop="cdr-cta--full-width"]',
-    '[data-backstop="cdr-cta--elevated]',
+    '[data-backstop="cdr-cta--elevated"]',
   ],
   hoverSelectors: [
     '[data-backstop="cdr-cta--brand"]',
@@ -17,6 +17,6 @@ module.exports = [{
     '[data-backstop="cdr-cta--light"]',
     '[data-backstop="cdr-cta--sale"]',
     '[data-backstop="cdr-cta--full-width"]',
-    '[data-backstop="cdr-cta--elevated]',
+    '[data-backstop="cdr-cta--elevated"]',
   ],
 }];

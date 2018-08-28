@@ -32,7 +32,7 @@
         tag="a"
         href="https://rei.com"
         size="large"
-        data-backstop="cdr-button--large anchor">
+        data-backstop="cdr-button--anchor">
         Link
       </cdr-button>
     </div>
