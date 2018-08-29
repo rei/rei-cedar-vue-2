@@ -2,7 +2,7 @@
   <div>
     <h2>Tables</h2>
     <auto-table />
-    <!-- <manual-table /> -->
+    <manual-table />
   </div>
 </template>
 

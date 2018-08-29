@@ -4,6 +4,7 @@
       :col-headers="true"
       :row-headers="true"
       caption="Table with data fed in"
+      id="manual-3-col"
     >
       <template slot="col-headers">
         <th
@@ -31,6 +32,7 @@
     <cdr-table
       caption="Scroll example"
       :row-headers="true"
+      id="manual-scroll"
     >
       <tr
         v-for="(record, key, index) in scroll.records"
@@ -50,6 +52,7 @@
     <cdr-table
       caption="Scroll example - No column headers"
       :row-headers="false"
+      id="manual-full-scroll"
     >
       <tr
         v-for="(record, key, index) in scroll.records"
@@ -67,8 +70,9 @@
 
     <cdr-table
       modifier="compact borderless"
-      caption="Full Manual -   Compact & Borderless"
+      caption="Full Manual - Compact & Borderless"
       summary="Summary"
+      id="full-manual"
     >
       <tr>
         <th>Best Use</th>

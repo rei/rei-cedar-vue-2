@@ -20,6 +20,18 @@
       :row-data="rowData"
       id="auto-table-no-col-no-row-headers"
     />
+
+    <!--<cdr-table
+      :col-headers="false"
+      :row-headers="['Row 1', 'Row 2']"
+      :row-data="[
+        {
+          a: "1",
+          b: "2",
+        }
+      ]"
+      id="new-test"
+    />-->
   </div>
 </template>
 
@@ -44,13 +56,13 @@ export default {
           xxxl: '54-57',
         },
         {
-          xs: 'N/A',
           s: '33',
           m: '34',
           l: '35',
           xl: '35.5',
           xxl: '36',
           xxxl: '36.6',
+          xs: 'N/A',
         },
         {
           xs: '26.5 - 27.5',
@@ -79,6 +91,9 @@ export default {
           xxl: '32',
           xxxl: '32',
         },
+      ],
+      twoCol: [
+
       ],
     };
   },

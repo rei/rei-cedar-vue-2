@@ -40,8 +40,12 @@
 
     &:global(.is-scrolling) {
       /* add extra border width */
+      thead tr th:first-child {
+        border-right: 4px solid $grey-matter;
+      }
+
       tbody tr th {
-        border-right: 4px solid $grey-matter !important;
+        border-right: 4px solid $grey-matter;
       }
     }
   }

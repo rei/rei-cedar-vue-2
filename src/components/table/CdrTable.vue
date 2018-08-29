@@ -2,7 +2,12 @@
   <div
     :class="[modifierClass]"
   >
-    <span class="caption">{{ caption }}</span>
+    <span
+      v-show="caption"
+      class="caption"
+    >
+      {{ caption }}
+    </span>
     <div
       :class="[
         $style['cdr-table__scroll-container'],
@@ -14,13 +19,6 @@
         :class="$style['cdr-table__content']"
         :summary="summary ? summary : null"
       >
-        <!-- <caption
-          v-if="caption"
-          class="sr-only"
-        >
-          {{ caption }}
-        </caption> -->
-
         <thead v-if="hasColHeaders">
           <tr v-if="rowData.length > 0">
             <th
@@ -128,7 +126,7 @@ export default {
       return this.cols <= 2 || !this.rowHeaders;
     },
     isScrolling() {
-      return !this.fullScroll && this.scrollWidth > this.clientWidth;
+      return this.scrollWidth > this.clientWidth && !this.fullScroll;
     },
   },
   mounted() {
@@ -138,12 +136,14 @@ export default {
     this.hasRowHeaders = typeof this.rowHeaders === 'boolean' ?
       this.rowHeaders : this.rowHeaders.length > 0;
 
-    /* count the columns */
-    this.cols = this.hasColHeaders ?
-      this.colHeaders.length : this.$el.querySelector('tr').children.length;
+    if (this.hasColHeaders && typeof this.colHeaders !== 'boolean') {
+      this.cols = this.colHeaders.length;
+    } else {
+      this.cols = this.$el.querySelector('tr').children.length;
+    }
 
     /* select correct child element */
-    const scrollContainer = this.caption ? this.$el.children[1] : this.$el.children[0];
+    const scrollContainer = this.$el.children[1];
     this.clientWidth = scrollContainer.clientWidth;
     this.scrollWidth = scrollContainer.scrollWidth;
 
