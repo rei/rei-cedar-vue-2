@@ -33,8 +33,5 @@
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",
     "pkg-ok": "^1.1.0"
-  },
-  "dependencies": {
-    "@rei/cdr-icon": "^0.2.1"
   }
 }
