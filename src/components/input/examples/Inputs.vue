@@ -74,11 +74,9 @@
       v-model="requiredWithIcon"
       id="required-with-icon"
       placeholder="Required with Icon"
-      label="Input Label">
-      <!-- Required Slot -->
-      <template slot="required">
-        Required
-      </template>
+      label="Input Label"
+      required
+      type="email">
       <!-- Info Slot -->
       <template slot="info">
         <a href="#/inputs">

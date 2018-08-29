@@ -8,9 +8,9 @@
     >{{ label }}
       <!-- @slot for required indicator -->
       <span
-        v-if="$slots.required"
+        v-if="required"
         :class="$style['cdr-input__required-label']">
-        <slot name="required"/>
+        Required
       </span>
     </label>
     <!-- @slot for information -->
@@ -71,6 +71,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import propValidator from 'srcdir/utils/propValidator';
 
 /**
  * Cedar 2 component for input
@@ -88,10 +89,18 @@ export default {
     */
     id: String,
     /**
-     * `type` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated.
+     *  'type' attribute for the input as defined by w3c.  Only supporting text|email|number|password|search|url.
+     *  The increment/decrement webkit psuedo element is hidden for number.
+     *  See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input for more details.
     */
-    type: String,
-    default: 'text',
+    type: {
+      type: [String],
+      default: 'text',
+      validator: value => propValidator(
+        value,
+        ['text', 'email', 'number', 'password', 'search', 'url'],
+      ),
+    },
     /**
      * Label text. This is required for a11y even if hiding the label with `hideLabel`.
     */
@@ -109,6 +118,8 @@ export default {
     rows: Number,
     /** @ignore */
     disabled: Boolean,
+    /** @ignore */
+    required: Boolean,
     /** @ignore */
     large: Boolean,
     /** @ignore */
