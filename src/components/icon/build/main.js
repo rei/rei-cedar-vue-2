@@ -32,6 +32,7 @@ export { default as IconExpand } from 'componentsdir/icon/comps/expand';
 export { default as IconExternalLink } from 'componentsdir/icon/comps/external-link';
 export { default as IconFacebook } from 'componentsdir/icon/comps/facebook';
 export { default as IconFindLocation } from 'componentsdir/icon/comps/find-location';
+export { default as IconGridView } from 'componentsdir/icon/comps/grid-view';
 export { default as IconHeartFill } from 'componentsdir/icon/comps/heart-fill';
 export { default as IconHeartStroke } from 'componentsdir/icon/comps/heart-stroke';
 export { default as IconHome } from 'componentsdir/icon/comps/home';
@@ -40,6 +41,7 @@ export { default as IconInformationFill } from 'componentsdir/icon/comps/informa
 export { default as IconInformationStroke } from 'componentsdir/icon/comps/information-stroke';
 export { default as IconInstagram } from 'componentsdir/icon/comps/instagram';
 export { default as IconListRagged } from 'componentsdir/icon/comps/list-ragged';
+export { default as IconListView } from 'componentsdir/icon/comps/list-view';
 export { default as IconLocationPinFill } from 'componentsdir/icon/comps/location-pin-fill';
 export { default as IconLocationPinStroke } from 'componentsdir/icon/comps/location-pin-stroke';
 export { default as IconMail } from 'componentsdir/icon/comps/mail';
@@ -65,6 +67,7 @@ export { default as IconQuestionFill } from 'componentsdir/icon/comps/question-f
 export { default as IconQuestionStroke } from 'componentsdir/icon/comps/question-stroke';
 export { default as IconRefresh } from 'componentsdir/icon/comps/refresh';
 export { default as IconReload } from 'componentsdir/icon/comps/reload';
+export { default as IconScanBarcode } from 'componentsdir/icon/comps/scan-barcode';
 export { default as IconSearch } from 'componentsdir/icon/comps/search';
 export { default as IconServiceShop } from 'componentsdir/icon/comps/service-shop';
 export { default as IconShipping } from 'componentsdir/icon/comps/shipping';
