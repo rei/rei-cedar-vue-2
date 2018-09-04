@@ -5,7 +5,9 @@
     :class="[modifierClass]"
     ref="cdrTabsContainer">
     <div
-      :class="$style['cdr-tabs__gradient-container']"
+      :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
+                overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
+                $style['cdr-tabs__gradient-container']]"
       @keyup.right="handleArrowNav"
       @keyup.left="handleArrowNav">
       <nav
