@@ -35,7 +35,7 @@
       </cdr-tabs>
     </div>
     <!-- Compact Modifier -->
-    <!-- <div class="tab-demo-section">
+    <div class="tab-demo-section">
       <h2>Compact Tabs</h2>
       <cdr-tabs modifier="compact">
         <cdr-tab name="one">
@@ -54,9 +54,9 @@
           <h1>tab five content</h1>
         </cdr-tab>
       </cdr-tabs>
-    </div> -->
+    </div>
     <!-- Full Width Modifier -->
-    <!-- <div class="tab-demo-section">
+    <div class="tab-demo-section">
       <h2>Full Width Tabs</h2>
       <cdr-tabs modifier="full-width">
         <cdr-tab name="one">
@@ -75,9 +75,9 @@
           <h1>tab five content</h1>
         </cdr-tab>
       </cdr-tabs>
-    </div> -->
+    </div>
     <!-- No Border Modifier -->
-    <!-- <div class="tab-demo-section">
+    <div class="tab-demo-section">
       <h2>No Border Tabs</h2>
       <cdr-tabs modifier="no-border">
         <cdr-tab name="one">
@@ -97,8 +97,8 @@
         </cdr-tab>
       </cdr-tabs>
     </div>
-  </div> -->
-</div></template>
+  </div>
+</template>
 
 <script>
 import Components from 'componentsdir/_index';

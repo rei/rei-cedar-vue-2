@@ -64,6 +64,9 @@ export default {
     };
   },
   computed: {
+    baseClass() {
+      return 'cdr-tabs';
+    },
     underlineStyle() {
       return {
         marginLeft: `${this.underlineOffsetX}px`,
