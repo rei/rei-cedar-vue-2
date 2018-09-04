@@ -45,3 +45,5 @@ test/unit/coverage
 # Build assets
 **/dist/*
 src/**/styles/themes/*
+
+src/**/package-lock\.json

@@ -11,7 +11,10 @@
       :Elements
         :Icon
         :Count
-      :Size variants
+      :Modifiers
+        :Linked
+        :Large
+        :Small
 ========================================================================== */
 
 .cdr-rating {
@@ -25,21 +28,17 @@
   /* Icon
     ========== */
   &__icon {
-    width: $ratings-icon-width;
-    height: $ratings-icon-height;
+    width: $icon-size;
+    height: $icon-size;
   }
 
   /* Count
     ========== */
   &__count {
-    margin-left: $ratings-count-margin-left;
-    font-size: $ratings-count-font-size;
-    line-height: $ratings-count-line-height;
-    text-align: $ratings-count-text-align;
-    font-style: $ratings-count-font-style;
-    font-weight: $ratings-count-font-weight;
-    font-family: $ratings-count-font-family;
-    color: $ratings-count-color;
+    @include redwood-display-20();
+
+    margin-left: $space-half-x;
+    color: $heart-of-darkness;
   }
 
   &__ratings {
@@ -58,54 +57,78 @@
     ========== */
 
   &__placeholder {
-    background-image: svg-load('../../../assets/icons/rei/star-100.svg', fill=$(ratings-placeholder-fill));
+    background-image: svg-load('../../../assets/icons/rei/star-stroke.svg', fill=$(closed-on-monday));
     background-repeat: no-repeat;
+
+    &--no-reviews {
+      background-image: svg-load('../../../assets/icons/rei/star-stroke.svg', fill=$(taken-for-granite));
+    }
   }
 
   /* Stars
     ========== */
 
   &__100 {
-    background-image: svg-load('../../../assets/icons/rei/star-100.svg', fill=$(ratings-star-fill));
+    background-image: svg-load('../../../assets/icons/rei/star-100.svg', fill=$(closed-on-monday));
     background-repeat: no-repeat;
   }
 
   &__75 {
-    background-image: svg-load('../../../assets/icons/rei/star-75.svg', fill=$(ratings-star-fill));
+    background-image: svg-load('../../../assets/icons/rei/star-75.svg', fill=$(closed-on-monday));
     background-repeat: no-repeat;
   }
 
   &__50 {
-    background-image: svg-load('../../../assets/icons/rei/star-50.svg', fill=$(ratings-star-fill));
+    background-image: svg-load('../../../assets/icons/rei/star-50.svg', fill=$(closed-on-monday));
     background-repeat: no-repeat;
   }
 
   &__25 {
-    background-image: svg-load('../../../assets/icons/rei/star-25.svg', fill=$(ratings-star-fill));
+    background-image: svg-load('../../../assets/icons/rei/star-25.svg', fill=$(closed-on-monday));
     background-repeat: no-repeat;
   }
 
-  /* Size variants
+  /* Modifiers
     ========================================================================== */
+
+  /* Linked
+    ========== */
+
+  &--linked {
+    display: inline-flex;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration-color: $heart-of-darkness;
+    }
+
+    & .cdr-rating__count {
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: underline;
+      }
+
+      & > .cdr-rating__number {
+        border-right: 1px solid $grey-matter;
+        padding: 0 $space-quarter-x;
+        margin-right: $space-quarter-x;
+      }
+    }
+  }
 
   /* Large
     ========== */
 
   &--large {
     & .cdr-rating__icon {
-      width: $ratings-icon-large-width;
-      height: $ratings-icon-large-height;
+      width: $icon-size-lg;
+      height: $icon-size-lg;
     }
 
     & .cdr-rating__count {
-      margin-left: $ratings-count-large-margin-left;
-      font-size: $ratings-count-large-font-size;
-      line-height: $ratings-count-large-line-height;
-      text-align: $ratings-count-large-text-align;
-      font-style: $ratings-count-large-font-style;
-      font-weight: $ratings-count-large-font-weight;
-      font-family: $ratings-count-large-font-family;
-      color: $ratings-count-large-color;
+      @include redwood-display-30();
     }
   }
 
@@ -114,19 +137,14 @@
 
   &--small {
     & .cdr-rating__icon {
-      width: $ratings-icon-small-width;
-      height: $ratings-icon-small-height;
+      width: $icon-size-sm;
+      height: $icon-size-sm;
     }
 
     & .cdr-rating__count {
-      margin-left: $ratings-count-small-margin-left;
-      font-size: $ratings-count-small-font-size;
-      line-height: $ratings-count-small-line-height;
-      text-align: $ratings-count-small-text-align;
-      font-style: $ratings-count-small-font-style;
-      font-weight: $ratings-count-small-font-weight;
-      font-family: $ratings-count-small-font-family;
-      color: $ratings-count-small-color;
+      @include redwood-display-10();
+
+      margin-left: $space-quarter-x;
     }
   }
 }
