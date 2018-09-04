@@ -4,6 +4,7 @@
       :col-headers="colHeaders"
       :row-headers="rowHeaders"
       :row-data="rowData"
+      :key-order="['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']"
       id="auto-table-col-lock-scroll"
     />
 
@@ -11,6 +12,7 @@
       :col-headers="false"
       :row-headers="rowHeaders"
       :row-data="rowData"
+      :key-order="['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']"
       id="auto-table-no-col-headers"
     />
 
@@ -18,6 +20,7 @@
       :col-headers="false"
       :row-headers="false"
       :row-data="rowData"
+      :key-order="['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']"
       id="auto-table-no-col-no-row-headers"
     />
 

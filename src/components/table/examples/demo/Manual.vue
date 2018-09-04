@@ -127,7 +127,7 @@ export default {
         record[header] = header;
       });
 
-      record.rowheader = 'Row header';
+      record.rowheader = 'Row header Row header Row header';
       records.push(record);
     }
 

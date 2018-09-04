@@ -50,11 +50,17 @@
             <th v-if="hasRowHeaders">
               {{ rowHeaders[index] }}
             </th>
-            <td
+            <!-- <td
               v-for="(col, key) in row"
               :key="id + '_col_' + key"
             >
               {{ col }}
+            </td> -->
+            <td
+              v-for="(key, index) in keyOrder"
+              :key="id + '_' + index + '_' + key"
+            >
+              {{ row[key] }}
             </td>
           </tr>
         </tbody>
@@ -100,6 +106,10 @@ export default {
       type: [Array, Boolean],
       default: false,
     },
+    keyOrder: {
+      type: Array,
+      default: () => [],
+    },
     summary: {
       type: String,
       required: false,
@@ -142,15 +152,18 @@ export default {
       this.cols = this.$el.querySelector('tr').children.length;
     }
 
-    /* select correct child element */
-    const scrollContainer = this.$el.children[1];
-    this.clientWidth = scrollContainer.clientWidth;
-    this.scrollWidth = scrollContainer.scrollWidth;
+    this.checkScroll();
 
     window.addEventListener('resize', debounce(() => {
+      this.checkScroll();
+    }, 250));
+  },
+  methods: {
+    checkScroll() {
+      const scrollContainer = this.$el.children[1];
       this.clientWidth = scrollContainer.clientWidth;
       this.scrollWidth = scrollContainer.scrollWidth;
-    }, 250));
+    },
   },
 };
 </script>
