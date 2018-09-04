@@ -22,6 +22,7 @@ install:
 before_script:
   - lerna run build
 script: 
+  - npm run check-version
   - npm run lint
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
       npm run unit;

@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-activity-card",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Activity Card",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-card-activity",
@@ -27,25 +27,25 @@
     "build:docs": "node build/docs-build.js"
   },
   "peerDependencies": {
-    "@rei/cdr-assets": "^0.1.0",
-    "@rei/cdr-card": "^0.1.0",
+    "@rei/cdr-assets": "^0.3.0",
+    "@rei/cdr-card": "^0.2.0",
     "@rei/cdr-icon": "^0.1.0",
-    "@rei/cdr-img": "^0.1.0",
-    "@rei/cdr-list": "^0.1.0",
+    "@rei/cdr-img": "^1.0.0",
+    "@rei/cdr-list": "^1.0.0",
     "@rei/cdr-media-object": "^0.1.0",
     "@rei/cdr-rating": "^1.0.0-alpha.1",
-    "@rei/cdr-text": "^0.2.0",
+    "@rei/cdr-text": "^1.0.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.1.0",
-    "@rei/cdr-card": "^0.1.0",
+    "@rei/cdr-assets": "^0.3.0",
+    "@rei/cdr-card": "^0.2.0",
     "@rei/cdr-icon": "^0.1.0",
-    "@rei/cdr-img": "^0.1.0",
-    "@rei/cdr-list": "^0.1.0",
+    "@rei/cdr-img": "^1.0.0",
+    "@rei/cdr-list": "^1.0.0",
     "@rei/cdr-media-object": "^0.1.0",
     "@rei/cdr-rating": "^1.0.0-alpha.1",
-    "@rei/cdr-text": "^0.2.0",
+    "@rei/cdr-text": "^1.0.0",
     "pkg-ok": "^1.1.0"
   }
 }
