@@ -7,13 +7,12 @@
 
 
 
-Applies to **CdrIcon** and all individual Cedar Icon* components
+Applies to **CdrIcon** and all individual Cedar Icon* Icon* (IconArrowUp, IconCalendar, etc.) components
 
 | name                                                                      | type   | default            |
 |:--------------------------------------------------------------------------|:-------|:-------------------|
 | modifier                                                                  | string | N/A                |
-| ~~Allows style variants to be defined. See below.~~                       |        |                    |
-| Modifies the style variant for this component.  Possible values: {   ‘sm’, ‘md’, ‘lg’  } |        | |
+| Allows style variants to be defined. See below.                       |        |                    |
 
 ## Slots
 
@@ -79,7 +78,7 @@ The **CdrIcon** package contains many different components:
 
 1. **CdrIcon**  -- This is a basic SVG wrapper. This component allows for using Non-Cedar SVGs. Use this component in conjunction with the CdrIconSprite package
 2. **CdrIconSprite** -- A symbol definition sprite with all Cedar icons
-3. Individual icons -- For available icons, view [Cedar Icon Library](?active-tab=design-guidelines&active-link=icon-library) on Design Guidelines tab
+3. Individual icons -- For available icons, view [Cedar Icon Library](https://rei.github.io/rei-cedar-docs/components/icon/?active-tab=design-guidelines&active-link=icon-library) on Design Guidelines tab
 
 There are 3 different options to display SVG icons on your page using the `CdrIcon` package.
 
