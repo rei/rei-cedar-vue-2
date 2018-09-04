@@ -30,8 +30,6 @@ Resources are available within the [CdrIcon package](https://www.npmjs.com/packa
 - Component: `@rei/cdr-accordion`
 - Component styles: `cdr-accordion.css`
 
-<div class="cdr-stack--xl" />
-
 To incorporate the required assets for a component, use the following steps:
 
 ### 1. Install using NPM
