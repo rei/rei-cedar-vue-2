@@ -1,23 +1,99 @@
-# <span class="display-name">CdrIcon</span>
+## Props
 
-## 3 ways to use icons
- 
-`cdr-icon` can support 3 different ways of getting svg icons onto your page.
- 
+| name                                                                   | type   | default |
+|:-----------------------------------------------------------------------|:-------|:--------|
+| use                                                                    | string | none    |
+| Sets the href attribute for use with SVG symbol sprite (CdrIconSprite). |        |         |
+
+
+
+Applies to **CdrIcon** and all individual Cedar Icon* Icon* (IconArrowUp, IconCalendar, etc.) components
+
+| name                                                                      | type   | default            |
+|:--------------------------------------------------------------------------|:-------|:-------------------|
+| modifier                                                                  | string | N/A                |
+| Allows style variants to be defined. See below.                       |        |                    |
+
+## Slots
+
+CdrIcon and all Icon* (IconArrowUp, IconCalendar, etc.) components have a default slot.
+
+| name    | notes                                                                                         |
+|:--------|:----------------------------------------------------------------------------------------------|
+| default | Sets the innerHTML of SVG element. This includes <title>, <desc>, or any other valid SVG xml. |
+
+## Installation
+
+Resources are available within the [CdrIcon package](https://www.npmjs.com/package/@rei/cdr-icon):
+
+- Component: `@rei/cdr-accordion`
+- Component styles: `cdr-accordion.css`
+
+To incorporate the required assets for a component, use the following steps:
+
+### 1. Install using NPM
+
+Install the CdrIcon package using `npm` in your terminal:
+
+_Terminal_
+
+```bash
+npm i -S @rei/cdr-icon
+```
+
+### 2. Import dependencies
+
+_main.js_
+
+```bash
+// import your required css.
+import '@rei/cdr-icon/dist/cdr-icon.css';
+```
+
+### 3. Add component to a template
+
+_local.vue_
+
+```vue
+<template>
+  ...
+    <icon-arrow-down />
+  ...
+</template>
+
+<script>
+import { IconArrowDown } from '@rei/cdr-icon';
+export default {
+  ...
+  components: {
+     IconArrowDown  
+  }
+}
+</script>
+```
+
+## Usage
+
+The **CdrIcon** package contains many different components:
+
+1. **CdrIcon**  -- This is a basic SVG wrapper. This component allows for using Non-Cedar SVGs. Use this component in conjunction with the CdrIconSprite package
+2. **CdrIconSprite** -- A symbol definition sprite with all Cedar icons
+3. Individual icons -- For available icons, view [Cedar Icon Library](https://rei.github.io/rei-cedar-docs/components/icon/?active-tab=design-guidelines&active-link=icon-library) on Design Guidelines tab
+
+There are 3 different options to display SVG icons on your page using the `CdrIcon` package.
+
 ### 1. SVG Sprite
 
 #### Option A: Inline symbol sprite
  
-Requires:
+Requires: 
+- Icon sprite inline on page
  
-* Icon sprite inlined on page
- 
-#### Example: 
+The sprite needs to be available on any page where the icons are being used, so add the sprite component at the base layout or index:
 
-The sprite needs to be available on any page where the icons will be used so it's best to do it at the base layout/index
+_App.vue (base template)_
 
-``` 
-// Base view template (assuming .vue and vue-router) 
+```vue
 <template> 
   <div id="main"> 
     <cdr-icon-sprite /> 
@@ -35,25 +111,38 @@ components: {
 }
 ... 
 </script> 
+```
+
+_Child.vue (any descendant component of App.vue above)_
+
+```vue
+<template> 
+  <div> 
+    <cdr-icon use="#caret-right" />
+  </div> 
+</template> 
  
-// -----------------------------------------------------------------
- 
-// Then in any descendant child component template
-<cdr-icon use="#caret-right" />
+<script> 
+import { CdrIcon } from '@rei/cdr-icon';
+
+... 
+components: {
+  CdrIcon
+}
+... 
+</script> 
 ```
 
 #### Option B: External symbol defs
  
 Requires:
+- `@rei/cdr-icon/sprite/cdr-icon-sprite.svg`
+- A webpack loader to handle the asset. This example assumes the file-loader package
+- A polyfill for external SVG resource. Possible packages are: svgxuse or svg4everybody 
  
-* @rei/cdr-icon/sprite/cdr-icon-sprite.svg
-* A webpack loader to handle the asset (this example assumes `file-loader`)
-* A polyfill for external svg resource. Possibly `svgxuse` or `svg4everybody`
- 
-Within an individual component (you can probably come up with a better way to scale this if you need to do it in a lot of places): 
-``` 
-//  A .vue file 
- 
+Within an individual component (there may be a better way to scale this if the code calls it in many places): 
+
+```vue
 <template> 
   ... 
   <cdr-icon :use="`${iconUrl}#caret-right`" />
@@ -74,21 +163,16 @@ export default {
 } 
  
 </script> 
-``` 
+```
+
+### 2. Individual icon components
  
-### 2. Use individual icon components
+This may be the easiest way to use an icon on a page however use this method carefully. This method will increase HTML file size and slow down performance if using a lot of icons. 
  
-**This method will bloat your HTML if using a lot of icons.** 
- 
-This is the easiest way to get an icon on your page. But use it carefully. 
- 
-Requirements: 
- 
-* Have `@rei/cdr-icon` installed 
- 
-#### Examples: 
- 
-``` 
+Requires:
+- Install  `@rei/cdr-icon`
+
+```vue
 <template>
   ...
     <icon-caret-right />
@@ -107,21 +191,22 @@ import { IconCaretRight, IconClock } from '@rei/cdr-icon';
 ...
 
 </script>
-``` 
+```
+
+### 3. Non-Cedar SVG
  
-### 3. Use non cedar svg
+The CdrIcon package is simply an SVG with default attributes set for accessibility and styling. 
+
+- Any SVG markup can be used
+- Any attributes added will override the defaults
+- This method will increase HTML file size and slow down performance if using a lot of icons.
  
-**This method will bloat your HTML if using a lot of icons.** 
- 
-`cdr-icon` is simply an svg (with some default attributes set -- mostly for a11y and styling) and a slot. Any svg markup can go inside of it. Any attributes added will simply override the defaults.
- 
-Requirements: 
- 
-None, but you might find the example below helpful. 
- 
-#### Examples: 
- 
-``` 
+Requires: 
+- None
+
+Use any valid SVG markup in the CdrIcon slot. 
+
+```vue
 <template> 
   ... 
   <cdr-icon viewBox="0 0 30 30">
@@ -140,5 +225,14 @@ None, but you might find the example below helpful.
   }
 ...
  
-</script> 
+</script>
 ```
+
+## Modifiers
+
+Following variants are available to the `cdr-icon` modifier attribute: 
+| Value | Description            |
+|:------|:-----------------------|
+| 'sm'  | Sets icon size to 16px |
+| 'md'  | Sets icon size to 24px |
+| 'lg'  | Sets icon size to 32px |
