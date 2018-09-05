@@ -27,7 +27,7 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.1.0",
+    "@rei/cdr-assets": "^0.3.0",
     "pkg-ok": "^2.1.0"
   },
   "dependencies": {
