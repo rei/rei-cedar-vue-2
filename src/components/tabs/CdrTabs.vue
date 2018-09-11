@@ -25,7 +25,8 @@
             <a
               role="tab"
               :tabindex="[ tab.active ? 1 : -1 ]"
-              @click="handleClick(tab, $event)"
+              @click.prevent="handleClick(tab, $event)"
+              :href="tab.name"
               :class="$style['cdr-tabs__header-item-label']">
               {{ tab.name }}
             </a>
@@ -52,7 +53,6 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import debounce from 'lodash/debounce';
-
 
 export default {
   name: 'CdrTabs',
@@ -104,6 +104,7 @@ export default {
       console.log('KRISTEST testClick');
     },
     handleClick(tabClicked, event) {
+      this.testClick();
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {
         if (newSelectedTab.name === tab.name) {
