@@ -25,17 +25,11 @@
             <a
               role="tab"
               :tabindex="[ tab.active ? 1 : -1 ]"
-              @click="handleClick(tab, $event)"
+              @click.prevent="handleClick(tab, $event)"
+              href="#"
               :class="$style['cdr-tabs__header-item-label']">
               {{ tab.name }}
             </a>
-            <!-- <span
-              role="tab"
-              :tabindex="[ tab.active ? 1 : -1 ]"
-              @click="handleClick(tab, $event)"
-              :class="$style['cdr-tabs__header-item-label']">
-              {{ tab.name }}
-            </span> -->
           </li>
         </ol>
         <hr
@@ -100,9 +94,6 @@ export default {
     this.initializeOffsets();
   },
   methods: {
-    testClick() {
-      console.log('KRISTEST testClick');
-    },
     handleClick(tabClicked, event) {
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {

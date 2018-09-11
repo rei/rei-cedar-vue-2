@@ -30,7 +30,7 @@ export default {
     return {
       active: false,
       offsetX: 0,
-      tabId: this.id || this.key,
+      tabId: this.id || this.name,
       animationDirection: 'flyRight',
     };
   },
@@ -51,6 +51,7 @@ export default {
   methods: {
     setActive(state) {
       this.active = state;
+      this.$emit('tabChange', state, this.tabId);
     },
     setAnimationDirection(direction) {
       this.animationDirection = direction;
