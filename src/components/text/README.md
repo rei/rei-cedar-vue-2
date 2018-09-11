@@ -12,7 +12,7 @@ Sets valid HTML element tag
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------|:--------|
 | name                                                                                                                                                                                                                                            | type   | default |
 
-Modifies the style variant for this component. Possible values: { ‘display’ | ‘display-static’ | ‘heading-large’ | ‘heading-large-static’ | ‘heading-medium’ | ‘heading-medium-static’ | ‘heading-small’ | ‘heading-small-static’ | ‘subheading' }
+Modifies the style variant for this component. Possible values: { ‘body’  | ‘display’ | ‘display-static’ | ‘heading-large’ | ‘heading-large-static’ | ‘heading-medium’ | ‘heading-medium-static’ | ‘heading-small’ | ‘heading-small-static’ | ‘subheading' }
 
 ## Slots
 
