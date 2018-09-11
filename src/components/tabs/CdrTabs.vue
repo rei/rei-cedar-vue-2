@@ -21,15 +21,21 @@
           <li
             v-for="tab in tabs"
             :key="tab.id"
-            :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]"
-            @click="handleClick(tab, $event)">
+            :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]">
             <a
-              :href="'/#' + tab.name"
               role="tab"
               :tabindex="[ tab.active ? 1 : -1 ]"
+              @click="handleClick(tab, $event)"
               :class="$style['cdr-tabs__header-item-label']">
               {{ tab.name }}
             </a>
+            <!-- <span
+              role="tab"
+              :tabindex="[ tab.active ? 1 : -1 ]"
+              @click="handleClick(tab, $event)"
+              :class="$style['cdr-tabs__header-item-label']">
+              {{ tab.name }}
+            </span> -->
           </li>
         </ol>
         <hr
@@ -78,7 +84,7 @@ export default {
     this.tabs = this.$children;
   },
   mounted() {
-    if (this.tabs.length > 0) this.tabs[0].setActive(true);
+    if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
       this.headerWidth = this.getHeaderWidth();
@@ -94,6 +100,9 @@ export default {
     this.initializeOffsets();
   },
   methods: {
+    testClick() {
+      console.log('KRISTEST testClick');
+    },
     handleClick(tabClicked, event) {
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {
@@ -114,7 +123,7 @@ export default {
       this.underlineOffsetX =
         event.currentTarget.offsetLeft
         - event.currentTarget.parentElement.parentElement.offsetLeft;
-      this.underlineWidth = event.currentTarget.children[0].offsetWidth;
+      this.underlineWidth = event.currentTarget.offsetWidth;
     },
     initializeOffsets() {
       if (!this.widthInitialized) {
@@ -122,7 +131,9 @@ export default {
         this.underlineWidth = elements[0].children[0].offsetWidth;
         this.widthInitialized = true;
         // Set focus to default Tab header
-        this.$nextTick(this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus());
+        this.$nextTick(() => {
+          this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+        });
       }
     },
     calculateOverflow() {

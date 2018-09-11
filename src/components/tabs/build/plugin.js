@@ -1,7 +1,9 @@
 import CdrTabs from '../CdrTabs';
+import CdrTab from '../CdrTab';
 
 function install(Vue) {
   Vue.component('cdr-tabs', CdrTabs);
+  Vue.component('cdr-tab', CdrTab);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -10,4 +12,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default install;
 
-export { CdrTabs };
+// export { CdrTabs, CdrTab };
