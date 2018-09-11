@@ -5,25 +5,25 @@
 |:-----|:-------|:--------|
 | labelClass | string | n/a |
 
-Class that is added to the label for custom styles.
+Add CSS class to the label for custom styles.
 
 | Name | Type   | Default |
 |:-----|:-------|:--------|
 | inputClass | string | n/a   |
 
-Class that is added to the input for custom styles.
+Add CSS class to the input for custom styles.
 
 | Name | Type   | Default |
 |:-----|:-------|:--------|
 | contentClass | string | n/a   |
 
-Class that is added to the slot wrapper for custom styles.
+Add CSS class to the slot wrapper for custom styles.
 
 | Name | Type   | Default |
 |:-----|:-------|:--------|
 | indeterminate | boolean | false |
 
-Show checkbox in indeterminate state. This is a visual-only state and there is no logic for when to show it.
+Shows checkbox in indeterminate state. This is a visual-only state with no logic for when to show it.
 
 | Name | Type   | Default |
 |:-----|:-------|:--------|
@@ -47,7 +47,7 @@ The value when used in a checkbox group. Replaces `trueValue` and `falseValue`.
 |:---------|:-------|:----|
 | modifier | string | n/a |
 
-Allows style variants to be defined
+Modifies the style variant for this component.  Possible values: { ‘compact’  |  ‘hide-figure’ }
 
 
 ## Slots
@@ -56,28 +56,19 @@ Allows style variants to be defined
 |:--------|
 | default |
 
-innerHTML inside of checkbox component. This is the readable text inside the `<label>` element.
+Sets the innerHTML for cdr-checkbox. This is the readable text for the <label> element
 
 ## Events
 
-| Name   |
-|:-------|
-| change |
+| Name   | Arguments   |
+|:-------|:-------|
+| change | newValue, event |
 
 $emit event fired on check/uncheck
 
-## Modifiers
-
-Following are modifiers for `cdrCheckbox` component:
-
-- compact
-- hide-figure
-
-
 ## Installation
 
-Resources are available within the [cdr-checkbox package:](https://www.npmjs.com/search?q=cdr-checkbox)
-
+Resources are available within the [CdrCheckbox package:](https://www.npmjs.com/search?q=cdr-checkbox)
 
 - Component: `@rei/cdr-checkbox`
 - Component styles: `cdr-checkbox.css`
@@ -86,7 +77,7 @@ To incorporate the required assets for a component, use the following steps:
 
 ### 1. Install using NPM
 
-Install the `cdr-checkbox` package using `npm` in your terminal:
+Install the `CdrCheckbox` package using `npm` in your terminal:
 
 _Terminal_
 
@@ -131,7 +122,7 @@ export default {
 
 ## Usage
 
-Cdr-checkbox requires  `v-model`  to track  `:checked`  values.
+`CdrCheckbox` requires  `v-model`  to track  `:checked`  values.
 
 This example uses  `true-value`  and  `false-value`  props to change what’s saved to the model.
 
@@ -191,6 +182,30 @@ Default checkbox to checked/unchecked state by setting the model in Javascript.
 </script>
 ```
 
+Set the indeterminate prop to true to generate an indeterminate checkbox, which looks different than the default. This is a visual styling only; it does not include any of the functional aspects of an indeterminate checkbox.
+
+```vue
+<template>
+  <cdr-checkbox
+    v-model="groupModel"
+    :indeterminate="true"
+  >
+    Option 1
+  </cdr-checkbox>
+  ...
+</template>
+```
+
+### Modifiers
+
+Following variants are available to the `cdr-checkbox` modifier attribute: 
+| Value         | Description                               |
+|:--------------|:------------------------------------------|
+| 'compact'     | Sets the spacing for smaller screen sizes |
+| 'hide-figure' | Hides the checkbox icon                   |
+
+
+
 Use the `hide-figure` modifier to hide the checkbox itself, which leaves the text label as the clickable element. Add appropriate custom styles to convey selected and unselected states.
 
 ```vue
@@ -217,40 +232,3 @@ Use the `hide-figure` modifier to hide the checkbox itself, which leaves the tex
  }
 </style>
 ```
-
-Set the indeterminate prop to true to generate an indeterminate checkbox, which looks different than the default. This is a visual styling only; it does not include any of the functional aspects of an indeterminate checkbox.
-
-```vue
-<template>
-  <cdr-checkbox
-    v-model="groupModel"
-    :indeterminate="true"
-  >
-    Option 1
-  </cdr-checkbox>
-  ...
-</template>
-```
-
-## Accessibility
-
-- The input is wrapped in a label element, so label is automatically associated as per these guidelines [WCAG 2.0,  3.3.2 Labels and Instructions](https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html)
-- Custom checkboxes maintain accessibility requirements. The checkbox icon is only visually hidden and replaced with custom style
-
-To ensure that usage of this component complies with accessibility guidelines:
-
-- Each checkbox must be focusable and keyboard accessible:
-  - When the checkbox has focus, the `Space` key changes the selection
-  - `Tab` key moves to next element in list
-- Fieldsets (or grouped checkboxes) should be:
-  - Used when associating group of checkboxes
-  - Identified or described as a group using a `<legend>` tag
-- Avoid nested fieldsets
-- Single checkboxes:
-  - May be interchangeable with a toggle
-  - Write labels to be self-explanatory
-
-For more information, review techniques and failures for:
-
-- [WCAG 2.0,  1.3.1 Info and Relationships](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html)
-- [WCAG 2.0,  3.3.2 Labels and Instructions](https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html)
