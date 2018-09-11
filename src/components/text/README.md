@@ -1,4 +1,4 @@
-# <span class="display-name">CdrText</span>
+# CdrText
 
 ## Properties
 
