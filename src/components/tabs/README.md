@@ -47,14 +47,14 @@ _local.vue_
 ```vue
 <template>
   <cdr-tabs>
-    <cdr-tab name=”tab1”>TAB1 CONTENT GOES HERE</cdr-tab>
-    <cdr-tab name=”tab2”>TAB2 CONTENT GOES HERE</cdr-tab>
-    <cdr-tab name=”tab3”>TAB3 CONTENT GOES HERE</cdr-tab>
+    <cdr-tab name="tab1">TAB1 CONTENT GOES HERE</cdr-tab>
+    <cdr-tab name="tab2">TAB2 CONTENT GOES HERE</cdr-tab>
+    <cdr-tab name="tab3">TAB3 CONTENT GOES HERE</cdr-tab>
   </cdr-tabs>
 </template>
 
 <script>
-import { CdrTabs, CdrTab } from '@rei/cdr-tabs’;
+import { CdrTabs, CdrTab } from '@rei/cdr-tabs';
 export default {
   ...
   components: {
