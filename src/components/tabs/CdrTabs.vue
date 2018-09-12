@@ -3,6 +3,7 @@
   <!-- eslint-disable max-len -->
   <div
     :class="[modifierClass]"
+    :style="{ height: height }"
     ref="cdrTabsContainer">
     <div
       :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
@@ -50,6 +51,12 @@ import debounce from 'lodash/debounce';
 export default {
   name: 'CdrTabs',
   mixins: [modifier],
+  props: {
+    height: {
+      type: String,
+      default: '240px',
+    },
+  },
   data() {
     return {
       tabs: [],
@@ -94,7 +101,6 @@ export default {
   },
   methods: {
     handleClick(tabClicked, event) {
-      this.testClick();
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {
         if (newSelectedTab.name === tab.name) {

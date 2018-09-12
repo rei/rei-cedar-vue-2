@@ -3,7 +3,7 @@
   <div>
     <div class="tab-demo-section">
       <h2>Tabs</h2>
-      <cdr-tabs>
+      <cdr-tabs height="100px">
         <cdr-tab name="Tab1">
           <h1>Tab One Content</h1>
         </cdr-tab>
