@@ -1,6 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrTabs from 'componentsdir/tabs/CdrTabs';
-import CdrTabPanel from 'componentsdir/tabs/CdrTab';
+import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
 
 describe('CdrTabs.vue', () => {
   it('mounts tabs', () => {
