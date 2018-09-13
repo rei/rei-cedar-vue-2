@@ -1,129 +1,112 @@
 # CdrGrid
 
+Grids are built from two components, **CdrRow** and **CdrCol**.
+
 ## Props
 
 ### CdrRow
 
-| name | type   | Default |
+| name | type   | default |
 |:-----|:-------|:--------|
 | cols | String | none    |
 
-Number of equal-width columns in the row. A value of ‘auto’ will size columns as wide as their content.
+Number of equal-width columns in the row; however the value of ‘auto’ will size columns as wide as the column’s content. Possible values: {  ‘1’  through  ‘12’, ‘auto’  }.  Also accepts responsive values @breakpoint: ‘2 4@md’
 
-Possible values: {1-12, auto}
-Also accepts responsive values with `@breakpoint`: "2 4@md"
-
-| name    | type   | Default |
+| name    | type   | default |
 |:--------|:-------|:--------|
 | justify | String | none    |
 
-Justify columns within a row. See CSS flexbox justify-content.
+Justify columns within a row. See CSS Flexbox justify-content. Possible values: {  ‘left’, ‘center’, ‘right’, ‘around’, ‘between’  }. Also accepts responsive values @breakpoint: ‘center right@lg’
 
-Possible values: {left, center, right, around, between}.
-Also accepts responsive values with `@breakpoint`: "center right@lg"
-
-| name  | type   | Default |
+| name  | type   | default |
 |:------|:-------|:--------|
 | align | String | none    |
 
-Align columns of different heights. See CSS flexbox align-items.
+Align columns of different heights. See CSS Flexbox align-items. Possible values: {  ‘top’, ‘middle’, ‘bottom’, ‘stretch}. Also accepts responsive values @breakpoint:  ‘top middle@sm’
 
-Possible values: {top, middle, bottom, stretch}.
-Also accepts responsive values with `@breakpoint`: "top middle@sm"
-
-| name   | type   | Default |
+| name   | type   | default |
 |:-------|:-------|:--------|
 | gutter | String | none    |
 
-Defines gutter size.
-Default gutter size is 16px @xs and @sm and 32px @md and @lg.
+Defines gutter size. Default gutter size is 16px @xs and @sm and 32px @md and @lg. Possible values: {  ‘none’, ‘xxs’  }. Also accepts responsive values @breakpoint:  none@md’
 
-Possible values: {none, xxs}.
-Also accepts responsive values with `@breakpoint`: "none@md"
-
-| name     | type   | Default |
+| name     | type   | default |
 |:---------|:-------|:--------|
 | vertical | String | none    |
 
-Changes row to a column layout. See CSS flexbox flex-direction.
+Changes row to a column layout. See CSS Flexbox flex-direction. Possible values: {  ‘vertical’  }. Also accepts responsive values @breakpoint:  vertical@md’
 
-Possible values: {vertical}.
-Also accepts responsive values with `@breakpoint`: "vertical@md"
-
-| name | type   | Default |
+| name | type   | default |
 |:-----|:-------|:--------|
 | wrap | String | none    |
 
-Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.
+Enables row wrapping. Change only if overriding `nowrap`. See CSS Flexbox flex-wrap
 
-Possible values: {wrap}.
-Also accepts responsive values with `@breakpoint`: "wrap@md"
-
-| name   | type   | Default |
+| name   | type   | default |
 |:-------|:-------|:--------|
 | nowrap | String | none    |
 
-Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.
+Disables row wrapping and enables overflow scrolling. See CSS Flexbox flex-wrap. Possible values: {  ‘nowrap’  }. Also accepts responsive values with @breakpoint: ‘nowrap@md’
 
-Possible values: {nowrap}.
-Also accepts responsive values with `@breakpoint`: "nowrap@md"
-
-| name | type   | Default |
+| name | type   | default |
 |:-----|:-------|:--------|
 | type | String | none    |
 
-Sets grid to use `ul` and `li` or `div`.
-
-Possible values: {normal, list}.
+Sets grid to use <ul> and <li> or <div>. Possible values: {  ‘normal’, ‘list’  }
 
 ### CdrCol
 
-| name | type   | Default |
+| name | type   | default |
 |:-----|:-------|:--------|
 | span | String | none    |
 
-Number of columns (out of 12) the column should span. Functions like bootstrap col-* classes.
-Overrides widths set by "cols" prop on CdrRow.
+Number of columns (out of 12) the column will span. Functions like bootstrap col-* classes. Overrides widths set by ‘cols’ prop on CdrRow. Possible values: {  ‘1’  through   ‘12’  }. Also accepts responsive values with @breakpoint: ‘12 8@lg’
 
-Possible values: {1-12}
-Also accepts responsive values with `@breakpoint`: "12 8@lg"
-
-| name       | type   | Default |
+| name       | type   | default |
 |:-----------|:-------|:--------|
 | offsetLeft | String | none    |
 
-Number of columns (out of 12)  of empty space to add left of this column.
+Adds up to 12 columns of empty space to left of an individual column. Possible values: {  ‘1’  through  ‘12’  }. Also accepts responsive values with @breakpoint: ‘12 8@lg’
 
-Possible values: {0-12}
-Also accepts responsive values with `@breakpoint`: "12 8@lg"
-
-| name        | type   | Default |
+| name        | type   | default |
 |:------------|:-------|:--------|
 | offsetRight | String | none    |
 
-Number of columns (out of 12) of empty space to add right of this column.
+Adds up to 12 columns of empty space to right of an individual column. Possible values: {  ‘1’  through  ‘12’  }. Also accepts responsive values with @breakpoint: ‘12 8@lg’
 
-Possible values: {0-12}
-Also accepts responsive values with `@breakpoint`: "12 8@lg"
-
-| name      | type   | Default |
+| name      | type   | default |
 |:----------|:-------|:--------|
 | alignSelf | String | none    |
 
-How the column should align (overrides CdrRow alignment). See CSS flexbox align-self.
+Aligns individual column by overriding CdrRow alignment. See CSS Flexbox align-self. Possible values: {  ‘top’, ‘middle’, ‘bottom’, ‘stretch’  }. Also accepts responsive values with @breakpoint: ‘middle@sm’
 
-Possible values: {top, middle, bottom, stretch}.
-Also accepts responsive values with `@breakpoint`: "middle@sm"
-
-| name  | type    | Default |
+| name  | type    | default |
 |:------|:--------|:--------|
 | isRow | Boolean | false   |
 
-Makes the column act as a CdrRow. Setting this to true exposes all props of CdrRow in addition to CdrCol props.
+Makes the column act as a CdrRow. Setting this value to true will expose all props of CdrRow in addition to CdrCol props
+
+## Slots
+
+### CdrRow
+
+| Name    |
+|:--------|
+| default |
+
+Sets the innerHTML for cdr-row content. This includes text and html markup
+
+### CdrCol
+
+| Name    |
+|:--------|
+| default |
+
+Sets the innerHTML for cdr-col content. This includes text and html markup
 
 ## Installation
 
-Resources are available within the [cdr-grid package](https://www.npmjs.com/package/@rei/cdr-grid):
+Resources are available within the [CdrGrid package](https://www.npmjs.com/package/@rei/cdr-grid):
 
 | **Name**        | **Type**            | **Description**                        |
 |:----------------|:--------------------|:---------------------------------------|
@@ -132,9 +115,9 @@ Resources are available within the [cdr-grid package](https://www.npmjs.com/pack
 
 To incorporate the required assets for a component, use the following steps:
 
-### #1. Install using NPM
+### 1. Install using NPM
 
-Install the `cdr-grid` package using **npm** in your terminal:
+Install the `CdrGrid` package using **npm** in your terminal:
 
 _Terminal_
 
@@ -142,7 +125,7 @@ _Terminal_
 npm i -s @rei/cdr-grid
 ```
 
-### #2. Import Dependencies
+### 2. Import Dependencies
 
 _main.js_
 
@@ -151,7 +134,7 @@ _main.js_
 import "@rei/cdr-grid/dist/cdr-grid.css";
 ```
 
-### #3. Add component to a template
+### 3. Add component to a template
 
 _local.vue_
 
@@ -188,9 +171,12 @@ CdrRow functions as a flexbox container, and CdrCol functions as a flexbox item.
     - Never include other elements as immediate children of CdrRow besides CdrCol 
 - The grid system is mobile-first, flexbox based, and 12 columns wide. Many props mirror the flexbox API and work as you’d expect CSS flexbox to work.
 
+
 New to or unfamiliar with flexbox? Read this [CSS Tricks flexbox guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background) for background, terminology, guidelines, and examples.
 
-Immediate children of `cdr-col` are flexed due to a flex height display bug in some versions of Safari. This causes immediate children to be full-width and display stacked horizontally. Wrapping child elements in a single `div` element will fix these problems (if undesired). 
+### Cdr-col content width
+
+Immediate children of `cdr-col` are flexed due to a flex height display bug in some versions of Safari. This causes immediate children to be full-width and display stacked horizontally. Wrapping child elements in a single `<div>` element will fix these problems (if undesired).
 
 ```html
 <cdr-row>
@@ -218,12 +204,3 @@ Nested grids are made by nesting CdrCols and adding the `is-row` prop to the `Cd
   </cdr-col>
 </cdr-row>
 ```
-
-## Accessibility
-
-- Low-vision users should be able to increase the size of the text by up to 200 percent without breaking the layout
-- Use list markup for content layout. List markup allow contents to be structured which makes it easier for assistive technologies
-
-This component follows WebAIM’s accessibility guidelines:
-
-- [WCAG SC 1.3.2: Meaningful Sequence](https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence): Cedar Design System does not provide for flexbox’s order property.  Reverse order or reordering of items is not allowed. Content must be presented in a correct reading sequence to comply with accessibility standards
