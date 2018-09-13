@@ -1,36 +1,36 @@
 ## Props
 
-| Name       | Type   | default |
+| name       | type   | default |
 |:-----------|:-------|:--------|
 | labelClass | string | n/a     |
 
 Adds CSS class to the label for custom styles
 
-| Name       | Type   | default |
+| name       | type   | default |
 |:-----------|:-------|:--------|
 | inputClass | string | n/a     |
 
 Adds CSS class to the input for custom styles
 
-| Name         | Type   | default |
+| name         | type   | default |
 |:-------------|:-------|:--------|
 | contentClass | string | n/a     |
 
 Adds CSS class to the slot wrapper for custom styles
 
-| Name      | Type   | default |
+| name      | type   | default |
 |:----------|:-------|:--------|
 | name | string | n/a     |
 
 Sets the name of the radio button. Required.
 
-| Name  | Type                                                     | n/a   |
+| name  | type                                                     | default   |
 |:------|:---------------------------------------------------------|:------|
 | value | string, number, boolean, object, array, symbol, function | false |
 
 Sets the value of the radio button. Required
 
-| Name     | Type   | n/a |
+| name     | type   | default |
 |:---------|:-------|:----|
 | modifier | string | n/a |
 
@@ -38,7 +38,7 @@ Modifies the style variants for this component. Possible values: {  â€˜compactâ€
 
 ## Slots
 
-| Name    |
+| name    |
 |:--------|
 | default |
 
@@ -46,7 +46,7 @@ Sets the innerHTML for cdr-radio. This is the readable text for the <label> elem
 
 ## Events
 
-| Name   | arguments |
+| name   | arguments |
 |:-------|:-------|
 | change | value |
 
