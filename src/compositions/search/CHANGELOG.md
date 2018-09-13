@@ -1,5 +1,5 @@
-<a name="0.1.0"></a>
-# 0.1.0 (2018-08-01)
+<a name="0.1.1"></a>
+## 0.1.1 (2018-09-13)
 
 
 ### Bug Fixes
@@ -23,6 +23,7 @@
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **release:** bump all to 0.1.0 and remove base-components ([f5c335e](https://github.com/rei/rei-cedar/commit/f5c335e))
 * **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
+* **search:** update dependencies ([f8d98b6](https://github.com/rei/rei-cedar/commit/f8d98b6))
 
 
 ### BREAKING CHANGES

@@ -1,5 +1,5 @@
-<a name="0.1.1"></a>
-## 0.1.1 (2018-08-01)
+<a name="0.1.2"></a>
+## 0.1.2 (2018-09-13)
 
 
 ### Bug Fixes
@@ -15,6 +15,7 @@
 ### Features
 
 * **activity-card:** publish new plugin build ([2fb19e3](https://github.com/rei/rei-cedar/commit/2fb19e3))
+* **activity-card:** update dependencies ([efcc917](https://github.com/rei/rei-cedar/commit/efcc917))
 * **all components:** change package name prefixes from cedar-* to cdr-* ([dad0dfb](https://github.com/rei/rei-cedar/commit/dad0dfb)), closes [#354](https://github.com/rei/rei-cedar/issues/354)
 * **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
 * **components:** update components to use css-modules ([ec1321c](https://github.com/rei/rei-cedar/commit/ec1321c))
