@@ -168,7 +168,7 @@ describe('CdrTabs.vue', () => {
     wrapper.vm.activeTabIndex = 1;
     // Trigger resize event
     wrapper.vm.$nextTick(() => {
-      wrapper.vm.$refs.cdrTabsHeader.children[0].dispatchEvent(new Event('click'));
+      wrapper.vm.$refs.cdrTabsHeader.children[0].children[0].dispatchEvent(new Event('click'));
       // Due to debounce function, must use timeout
       setTimeout(() => {
         expect(wrapper.vm.activeTabIndex).toBe(1);
