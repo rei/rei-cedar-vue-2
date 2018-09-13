@@ -34,10 +34,13 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-link": "^1.0.0",
     "@rei/cdr-assets": "^0.3.0",
     "@rei/cdr-icon": "^1.0.0",
     "@rei/cdr-img": "^1.0.0",
+    "@rei/cdr-link": "^1.0.0",
     "pkg-ok": "^1.1.0"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
   }
 }
