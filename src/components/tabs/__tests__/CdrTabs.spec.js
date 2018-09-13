@@ -151,7 +151,7 @@ describe('CdrTabs.vue', () => {
     wrapper.vm.tabs[0].name = 'tab1';
     // Due to debounce function, must use timeout
     wrapper.vm.$nextTick(() => {
-      wrapper.vm.$refs.cdrTabsHeader.children[1].dispatchEvent(new Event('click'));
+      wrapper.vm.$refs.cdrTabsHeader.children[1].children[0].dispatchEvent(new Event('click'));
       setTimeout(() => {
         expect(wrapper.vm.activeTabIndex).toBe(1);
         done();
