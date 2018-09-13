@@ -47,8 +47,5 @@
     "@rei/cdr-rating": "^1.0.0-alpha.1",
     "@rei/cdr-text": "^1.0.0",
     "pkg-ok": "^1.1.0"
-  },
-  "dependencies": {
-    "@rei/cdr-link": "^1.0.0"
   }
 }
