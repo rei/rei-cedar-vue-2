@@ -13,4 +13,13 @@ describe('CdrRating.vue', () => {
     expect(wrapper.vm.remainder).toBe('50');
     expect(wrapper.vm.rounded).toBe(3.5);
   });
+  
+  it('renders an anchor when given an href', () => {
+    const wrapper = shallowMount(CdrRating, {
+      propsData: {
+        href: 'rei.com'
+      }
+    });
+    expect(wrapper.is('a')).toBeTruthy();
+  });
 });

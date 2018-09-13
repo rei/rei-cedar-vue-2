@@ -20,7 +20,7 @@
 import modifier from 'mixinsdir/modifier';
 
 export default {
-  name: 'CdrTab',
+  name: 'CdrTabPanel',
   mixins: [modifier],
   props: {
     name: String,
@@ -30,13 +30,13 @@ export default {
     return {
       active: false,
       offsetX: 0,
-      tabId: this.id || this.key,
+      tabId: this.id || this.name,
       animationDirection: 'flyRight',
     };
   },
   computed: {
     baseClass() {
-      return 'cdr-tab';
+      return 'cdr-tab-panel';
     },
     animationHooks() {
       return {
@@ -51,6 +51,7 @@ export default {
   methods: {
     setActive(state) {
       this.active = state;
+      this.$emit('tabChange', state, this.tabId);
     },
     setAnimationDirection(direction) {
       this.animationDirection = direction;
@@ -84,5 +85,5 @@ export default {
 
 <style>
   @import '../../css/settings/_index.pcss';
-  @import './styles/CdrTab.pcss';
+  @import './styles/CdrTabPanel.pcss';
 </style>

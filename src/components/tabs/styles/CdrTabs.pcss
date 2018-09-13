@@ -21,10 +21,16 @@
 ========================================================================== */
 
 .cdr-tabs {
+  overflow: auto;
+
   &__header-container {
     overflow-x: auto;
     border-bottom: 1px solid $grey-matter;
     -webkit-overflow-scrolling: touch;
+  }
+
+  &__gradient-container {
+    position: relative;
 
     &::before {
       transition: opacity 150ms ease;
@@ -39,7 +45,7 @@
       background:
         linear-gradient(
           to left,
-          transparent,
+          rgba(255, 255, 255, 0),
           $clean-slate
         );
       pointer-events: none;
@@ -58,16 +64,12 @@
       background:
         linear-gradient(
           to right,
-          transparent,
+          rgba(255, 255, 255, 0),
           $clean-slate
         );
       pointer-events: none;
       opacity: 0;
     }
-  }
-
-  &__gradient-container {
-    position: relative;
   }
 
   &__header {
@@ -148,7 +150,8 @@
   /* No Border
     ========== */
   &--no-border {
-    .cdr-tabs__header {
+    .cdr-tabs__header,
+    .cdr-tabs__header-container {
       border-bottom: 1px solid transparent;
     }
   }

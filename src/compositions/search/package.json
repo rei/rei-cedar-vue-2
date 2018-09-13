@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-search",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Search",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-search",
@@ -27,14 +27,16 @@
     "build:docs": "node build/docs-build.js"
   },
   "peerDependencies": {
-    "@rei/cdr-assets": "^0.1.0",
-    "@rei/cdr-button": "^0.1.0",
+    "@rei/cdr-assets": "^0.3.0",
+    "@rei/cdr-button": "^1.0.0",
+    "@rei/cdr-icon": "^1.0.0",
     "@rei/cdr-input": "^0.1.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.1.0",
-    "@rei/cdr-button": "^0.1.0",
+    "@rei/cdr-assets": "^0.3.0",
+    "@rei/cdr-button": "^1.0.0",
+    "@rei/cdr-icon": "^1.0.0",
     "@rei/cdr-input": "^0.1.0",
     "pkg-ok": "^1.1.0"
   }

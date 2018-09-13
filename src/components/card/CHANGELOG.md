@@ -1,5 +1,5 @@
-<a name="0.2.0"></a>
-# 0.2.0 (2018-08-01)
+<a name="0.2.1"></a>
+## 0.2.1 (2018-09-13)
 
 
 ### Chores
@@ -11,6 +11,7 @@
 
 * **all components:** change package name prefixes from cedar-* to cdr-* ([dad0dfb](https://github.com/rei/rei-cedar/commit/dad0dfb)), closes [#354](https://github.com/rei/rei-cedar/issues/354)
 * **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
+* **card:** update dependencies ([0ef7910](https://github.com/rei/rei-cedar/commit/0ef7910))
 * **components:** update components to use css-modules ([ec1321c](https://github.com/rei/rei-cedar/commit/ec1321c))
 * **deps:** update icon and assets for publishing ([48f2c67](https://github.com/rei/rei-cedar/commit/48f2c67))
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))

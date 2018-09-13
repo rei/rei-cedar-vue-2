@@ -3,9 +3,12 @@
   <!-- eslint-disable max-len -->
   <div
     :class="[modifierClass]"
+    :style="{ height: height }"
     ref="cdrTabsContainer">
     <div
-      :class="$style['cdr-tabs__gradient-container']"
+      :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
+                overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
+                $style['cdr-tabs__gradient-container']]"
       @keyup.right="handleArrowNav"
       @keyup.left="handleArrowNav">
       <nav
@@ -19,12 +22,12 @@
           <li
             v-for="tab in tabs"
             :key="tab.id"
-            :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]"
-            @click="handleClick(tab, $event)">
+            :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]">
             <a
-              :href="'/#' + tab.name"
               role="tab"
               :tabindex="[ tab.active ? 1 : -1 ]"
+              @click.prevent="handleClick(tab, $event)"
+              :href="tab.name"
               :class="$style['cdr-tabs__header-item-label']">
               {{ tab.name }}
             </a>
@@ -45,10 +48,15 @@
 import modifier from 'mixinsdir/modifier';
 import debounce from 'lodash/debounce';
 
-
 export default {
   name: 'CdrTabs',
   mixins: [modifier],
+  props: {
+    height: {
+      type: String,
+      default: '240px',
+    },
+  },
   data() {
     return {
       tabs: [],
@@ -62,6 +70,9 @@ export default {
     };
   },
   computed: {
+    baseClass() {
+      return 'cdr-tabs';
+    },
     underlineStyle() {
       return {
         marginLeft: `${this.underlineOffsetX}px`,
@@ -73,7 +84,7 @@ export default {
     this.tabs = this.$children;
   },
   mounted() {
-    if (this.tabs.length > 0) this.tabs[0].setActive(true);
+    if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
       this.headerWidth = this.getHeaderWidth();
@@ -109,7 +120,7 @@ export default {
       this.underlineOffsetX =
         event.currentTarget.offsetLeft
         - event.currentTarget.parentElement.parentElement.offsetLeft;
-      this.underlineWidth = event.currentTarget.children[0].offsetWidth;
+      this.underlineWidth = event.currentTarget.offsetWidth;
     },
     initializeOffsets() {
       if (!this.widthInitialized) {
@@ -117,7 +128,9 @@ export default {
         this.underlineWidth = elements[0].children[0].offsetWidth;
         this.widthInitialized = true;
         // Set focus to default Tab header
-        this.$nextTick(this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus());
+        this.$nextTick(() => {
+          this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+        });
       }
     },
     calculateOverflow() {

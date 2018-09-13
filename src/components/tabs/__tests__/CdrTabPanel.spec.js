@@ -1,19 +1,19 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import CdrTab from 'componentsdir/tabs/CdrTab';
+import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
 
 describe('CdrTab.vue', () => {
   it('renders tab', () => {
-    const wrapper = shallowMount(CdrTab);
+    const wrapper = shallowMount(CdrTabPanel);
     expect(wrapper.exists()).toBe(true);
   });
 
   it('is not active by default', () => {
-    const wrapper = shallowMount(CdrTab);
+    const wrapper = shallowMount(CdrTabPanel);
     expect(wrapper.vm.active).toBe(false);
   });
 
   it('is active when set', (done) => {
-    const wrapper = shallowMount(CdrTab);
+    const wrapper = shallowMount(CdrTabPanel);
     wrapper.vm.setActive(true);
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.active).toBe(true);
@@ -22,7 +22,7 @@ describe('CdrTab.vue', () => {
   });
 
   it('enter start function properly sets transition', (done) => {
-    const wrapper = shallowMount(CdrTab);
+    const wrapper = shallowMount(CdrTabPanel);
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -33,7 +33,7 @@ describe('CdrTab.vue', () => {
   });
 
   it('enter end function properly clears transition', (done) => {
-    const wrapper = shallowMount(CdrTab);
+    const wrapper = shallowMount(CdrTabPanel);
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -44,7 +44,7 @@ describe('CdrTab.vue', () => {
   });
 
   it('leave start function properly sets transition', (done) => {
-    const wrapper = shallowMount(CdrTab);
+    const wrapper = shallowMount(CdrTabPanel);
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -55,7 +55,7 @@ describe('CdrTab.vue', () => {
   });
 
   it('leave end function properly clears transition', (done) => {
-    const wrapper = shallowMount(CdrTab);
+    const wrapper = shallowMount(CdrTabPanel);
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -66,7 +66,7 @@ describe('CdrTab.vue', () => {
   });
 
   it('set animation direction functions correctly', (done) => {
-    const wrapper = shallowMount(CdrTab);
+    const wrapper = shallowMount(CdrTabPanel);
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -77,7 +77,7 @@ describe('CdrTab.vue', () => {
   });
 
   it('set animation direction functions correctly', (done) => {
-    const wrapper = shallowMount(CdrTab);
+    const wrapper = shallowMount(CdrTabPanel);
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {

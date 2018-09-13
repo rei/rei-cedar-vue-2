@@ -15,7 +15,7 @@ import CdrRadio from 'componentsdir/radio/CdrRadio';
 import CdrRating from 'componentsdir/rating/CdrRating';
 import CdrRow from 'componentsdir/grid/CdrRow';
 import CdrSelect from 'componentsdir/select/CdrSelect';
-import CdrTab from 'componentsdir/tabs/CdrTab';
+import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
 import CdrTabs from 'componentsdir/tabs/CdrTabs';
 import CdrText from 'componentsdir/text/CdrText';
 import CdrAccordion from 'componentsdir/accordion/CdrAccordion';
@@ -41,7 +41,7 @@ export default {
   CdrRating,
   CdrRow,
   CdrSelect,
-  CdrTab,
+  CdrTabPanel,
   CdrTabs,
   CdrText,
 };

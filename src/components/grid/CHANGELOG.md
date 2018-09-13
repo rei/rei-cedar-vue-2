@@ -1,5 +1,5 @@
-<a name="1.0.0"></a>
-# 1.0.0 (2018-08-01)
+<a name="1.0.1"></a>
+## 1.0.1 (2018-09-13)
 
 
 ### Features
@@ -12,6 +12,7 @@
 * **grid:** release 0.2.0 ([accc22b](https://github.com/rei/rei-cedar/commit/accc22b))
 * **grid:** update align prop to accept responsive values ([1907de8](https://github.com/rei/rei-cedar/commit/1907de8))
 * **grid:** update col and justify props to accept responsive values ([c572a51](https://github.com/rei/rei-cedar/commit/c572a51))
+* **grid:** update dependencies ([4c320d1](https://github.com/rei/rei-cedar/commit/4c320d1))
 * **grid:** update gutter prop to accept responsive values ([a3f613f](https://github.com/rei/rei-cedar/commit/a3f613f))
 * **grid:** update row's nowrap prop to accept responsive values ([6dd3514](https://github.com/rei/rei-cedar/commit/6dd3514))
 * **grid:** update vertical prop to be a string and accept responsive values ([008f05b](https://github.com/rei/rei-cedar/commit/008f05b))

@@ -1,6 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrTabs from 'componentsdir/tabs/CdrTabs';
-import CdrTab from 'componentsdir/tabs/CdrTab';
+import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
 
 describe('CdrTabs.vue', () => {
   it('mounts tabs', () => {
@@ -11,7 +11,7 @@ describe('CdrTabs.vue', () => {
   it('renders child tabs properly', () => {
     const wrapper = mount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     expect(wrapper.vm.tabs.length).toBe(2);
@@ -20,7 +20,7 @@ describe('CdrTabs.vue', () => {
   it('calculates overflow properly', () => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     wrapper.vm.calculateOverflow();
@@ -30,7 +30,7 @@ describe('CdrTabs.vue', () => {
   it('handles right arrow key', (done) => {
     const wrapper = mount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     // Trigger right arrow keydown event
@@ -46,7 +46,7 @@ describe('CdrTabs.vue', () => {
   it('handles right arrow key when far right tab is active', (done) => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     const event = new KeyboardEvent("keydown", {
@@ -65,7 +65,7 @@ describe('CdrTabs.vue', () => {
   it('handles left arrow key', (done) => {
     const wrapper = mount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     wrapper.vm.activeTabIndex = 1;
@@ -82,7 +82,7 @@ describe('CdrTabs.vue', () => {
   it('handles left arrow key when far left is active', (done) => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     const event = new KeyboardEvent("keydown", {
@@ -99,7 +99,7 @@ describe('CdrTabs.vue', () => {
   it('ignores non left and right arrow key', (done) => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     const event = new KeyboardEvent("keydown", {
@@ -116,7 +116,7 @@ describe('CdrTabs.vue', () => {
   it('handles scroll event', (done) => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     // Trigger scroll event
@@ -130,7 +130,7 @@ describe('CdrTabs.vue', () => {
   it('resize event recalculates overflow', (done) => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     // Trigger resize event
@@ -145,13 +145,13 @@ describe('CdrTabs.vue', () => {
   it('click tab changes active tab', (done) => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     wrapper.vm.tabs[0].name = 'tab1';
     // Due to debounce function, must use timeout
     wrapper.vm.$nextTick(() => {
-      wrapper.vm.$refs.cdrTabsHeader.children[1].dispatchEvent(new Event('click'));
+      wrapper.vm.$refs.cdrTabsHeader.children[1].children[0].dispatchEvent(new Event('click'));
       setTimeout(() => {
         expect(wrapper.vm.activeTabIndex).toBe(1);
         done();
@@ -162,13 +162,13 @@ describe('CdrTabs.vue', () => {
   it('click tab changes active tab lower index variation', (done) => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     wrapper.vm.activeTabIndex = 1;
     // Trigger resize event
     wrapper.vm.$nextTick(() => {
-      wrapper.vm.$refs.cdrTabsHeader.children[0].dispatchEvent(new Event('click'));
+      wrapper.vm.$refs.cdrTabsHeader.children[0].children[0].dispatchEvent(new Event('click'));
       // Due to debounce function, must use timeout
       setTimeout(() => {
         expect(wrapper.vm.activeTabIndex).toBe(1);
@@ -180,7 +180,7 @@ describe('CdrTabs.vue', () => {
   it('calculateOverflow sets header overflow properly', () => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     wrapper.vm.headerWidth = 2000;
@@ -191,7 +191,7 @@ describe('CdrTabs.vue', () => {
   it('width is initialized only once', () => {
     const wrapper = shallowMount(CdrTabs, {
       slots: {
-        default: [CdrTab, CdrTab]
+        default: [CdrTabPanel, CdrTabPanel]
       }
     });
     wrapper.vm.widthInitialized = true;
