@@ -1,24 +1,24 @@
 ## Props
 
-| Name       | Type   | Default |
+| Name       | Type   | default |
 |:-----------|:-------|:--------|
 | labelClass | string | n/a     |
 
 Adds CSS class to the label for custom styles
 
-| Name       | Type   | Default |
+| Name       | Type   | default |
 |:-----------|:-------|:--------|
 | inputClass | string | n/a     |
 
 Adds CSS class to the input for custom styles
 
-| Name         | Type   | Default |
+| Name         | Type   | default |
 |:-------------|:-------|:--------|
 | contentClass | string | n/a     |
 
 Adds CSS class to the slot wrapper for custom styles
 
-| Name      | Type   | Default |
+| Name      | Type   | default |
 |:----------|:-------|:--------|
 | name | string | n/a     |
 
@@ -46,7 +46,7 @@ Sets the innerHTML for cdr-radio. This is the readable text for the <label> elem
 
 ## Events
 
-| Name   | Arguments |
+| Name   | arguments |
 |:-------|:-------|
 | change | value |
 
