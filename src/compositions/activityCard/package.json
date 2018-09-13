@@ -14,7 +14,7 @@
     "access": "public"
   },
   "files": [
-   "dist"
+    "dist"
   ],
   "config": {
     "vue_file": "CdrActivityCard"
