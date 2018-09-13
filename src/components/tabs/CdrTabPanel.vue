@@ -20,7 +20,7 @@
 import modifier from 'mixinsdir/modifier';
 
 export default {
-  name: 'CdrTab',
+  name: 'CdrTabPanel',
   mixins: [modifier],
   props: {
     name: String,
@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     baseClass() {
-      return 'cdr-tab';
+      return 'cdr-tab-panel';
     },
     animationHooks() {
       return {
@@ -85,5 +85,5 @@ export default {
 
 <style>
   @import '../../css/settings/_index.pcss';
-  @import './styles/CdrTab.pcss';
+  @import './styles/CdrTabPanel.pcss';
 </style>
