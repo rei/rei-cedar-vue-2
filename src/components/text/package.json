@@ -13,7 +13,7 @@
     "access": "public"
   },
   "files": [
-   "dist"
+    "dist"
   ],
   "config": {
     "vue_file": "CdrText"
@@ -31,5 +31,8 @@
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",
     "pkg-ok": "^2.1.0"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
   }
 }
