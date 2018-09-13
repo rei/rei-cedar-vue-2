@@ -2,37 +2,35 @@
 
 ## Properties
 
-| name                                                                              | type   | Default |
+| name                                                                              | type   | default |
 | :-------------------------------------------------------------------------------- | :----- | :------ |
-| Tag                                                                               | string | "ul"    |
-| Tag allows the user to define what html list root to use. Possible values: ul, ol |
+| Tag                                                                               | string | 'ul'    |
+| Sets valid HTML element tag for lists. Possible values: { ‘ul’ | ‘ol’ }|
 
-| name                                                                                                                     | type   | Default |
+| name                                                                                                                     | type   | default |
 | :----------------------------------------------------------------------------------------------------------------------- | :----- | :------ |
 | modifier                                                                                                                 | string | N/A     |
-| Modifier allows the user to pass a style variant to this component. Possible values: ordered, unordered, compact, inline |
+| Modifies the style variant for this component. Possible values: { ‘ordered’ | ‘unordered’ | ‘compact’ | ‘inline’ } |
 
 ## Slots
 
 | name                                            |
 | :---------------------------------------------- |
-| Default                                         |
-| innerHTML on the inside of the anchor component |
+| default                                         |
+| Sets the innerHTML for cdr-list. This includes text and html markup |
 
 ## Installation
 
-Resources are available within the [cdr-list package](https://www.npmjs.com/package/@rei/cdr-list):
+Resources are available within the [CdrList package](https://www.npmjs.com/package/@rei/cdr-list):
 
-| **Name**        | **Type**            | **Description**                        |
-| :-------------- | :------------------ | :------------------------------------- |
-| `@rei/cdr-list` | Node module package | Import the component into your project |
-| `cdr-list.css`  | Style sheet         | Component specific styles              |
+- Component: `@rei/cdr-list`
+- Component styles: `cdr-list.css`
 
 To incorporate the required assets for a component, use the following steps:
 
-### #1. Install using NPM
+### 1. Install using NPM
 
-Install the `cdr-list` package using **npm** in your terminal:
+Install the `CdrList` package using `npm` in your terminal:
 
 _Terminal_
 
@@ -40,7 +38,7 @@ _Terminal_
 npm i -s @rei/cdr-list
 ```
 
-### #2. Import Dependencies
+### 2. Import dependencies
 
 _main.js_
 
@@ -49,7 +47,7 @@ _main.js_
 import "@rei/cdr-list/dist/cdr-list.css";
 ```
 
-### #3. Add component to a template
+### 3. Add component to a template
 
 _local.vue_
 
@@ -75,10 +73,10 @@ export default {
 
 Visual style and semantic meaning are managed independently by providing:
 
-- Element to the **tag** prop
-- Style to the **modifier** prop
+- Element to the `tag` prop
+- Style to the `modifier` prop
 
-By default the `cdr-list` component renders as an unordered and undecorated "bare" list. To use an ordered list pass `<ol>` to the tag property.
+By default the `CdrList` component renders as an unordered and undecorated "bare" list. To use an ordered list pass `<ol>` to the tag property.
 
 ```html
 <cdr-list tag="ol">
@@ -87,8 +85,7 @@ By default the `cdr-list` component renders as an unordered and undecorated "bar
 </cdr-list>
 ```
 
-The `cdr-list` component has decoupled the semantic tags `<ul>` and `<ol>` from visual presentation.
-It is possible to render a semantic ordered list `<ol>` as a visually non styled or bulleted list using the `cdr-list` modifiers. With this decoupling, individual list items can contain a variety of HTML elements, including paragraphs, headings, form elements, and other (nested) lists. Ensure that content is structured and follows design guidelines.
+The `CdrList` component has decoupled the semantic tags `<ul>` and `<ol>` from visual presentation. It is possible to render a semantic ordered list `<ol>` as a visually non styled or bulleted list using the `cdr-list` modifiers. With this decoupling, individual list items can contain a variety of HTML elements, including paragraphs, headings, form elements, and other (nested) lists. Ensure that content is structured and follows design guidelines.
 
 ### Tag variants
 
@@ -119,7 +116,7 @@ Following are different types of lists:
 
 ### Modifier options
 
-Note that the tag itself does not determine display, a modifier must be added for list styles. Add one of the following variants to the **modifier** attribute of the `cdr-list` tag to change the visual presentation:
+Note that the tag itself does not determine display, a modifier must be added for list styles. Add one of the following variants to the `modifier` attribute of the `cdr-list` tag to change the visual presentation:
 
 | **Name**  | **Description**                                                                                                                                                                            | **Example**                               |
 | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------- |
@@ -128,13 +125,3 @@ Note that the tag itself does not determine display, a modifier must be added fo
 | compact   | The compact modifier reduces the vertical space between list items for non-inline list variants. For inline variants the compact modifier reduces the horizontal space between list items. | `<cdr-list modifier="compact">`           |
 | inline    | The inline modifier is intended for bare or unordered list variants. In ether case this can be combined with compact to adjust the spacing of inline list variants.                        | `<cdr-list modifier=" inline">`           |
 
-## Accessibility
-
-- When creating nested lists, ensure they are coded properly. Always check that:
-  - List items are contained within one list
-  - Spacing does not break a list into multiple individual points
-  - Proper semantic tags are used - either `<ul>` or `<ol>`
-  - Proper structure is used to provide a visual list, do not rely on indentation
-  - Special characters are not used to create a list
-- This component has compliance with following WebAIM’s accessibility guidelines:
-  - [WCAG SC 1.3.1: Info and Relationships](https://www.w3.org/TR/WCAG20/#content-structure-separation): Cedar Design System provides ability to create structured lists. Lists are easier to navigate than simple tables
