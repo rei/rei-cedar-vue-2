@@ -1,5 +1,5 @@
-<a name="1.0.0"></a>
-# 1.0.0 (2018-08-01)
+<a name="1.0.1"></a>
+## 1.0.1 (2018-09-13)
 
 
 ### Bug Fixes
@@ -13,6 +13,7 @@
 
 * **accordion button cta:** bump versions to match alpha release ([c7f21bb](https://github.com/rei/rei-cedar/commit/c7f21bb))
 * **buttons:** update to use css modules ([a5e5fda](https://github.com/rei/rei-cedar/commit/a5e5fda))
+* **cta:** update dependencies ([6467ba2](https://github.com/rei/rei-cedar/commit/6467ba2))
 * **cta:** update readme, bump version ([4f87071](https://github.com/rei/rei-cedar/commit/4f87071))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))

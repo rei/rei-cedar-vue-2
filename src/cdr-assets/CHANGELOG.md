@@ -1,5 +1,5 @@
-<a name="0.2.0"></a>
-# 0.2.0 (2018-08-01)
+<a name="0.3.0"></a>
+# 0.3.0 (2018-09-13)
 
 
 ### Bug Fixes
@@ -19,11 +19,14 @@
 * **icon:** generate new sprite, externalize icon.json ([f49f828](https://github.com/rei/rei-cedar/commit/f49f828))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
+* **resets:** normalize resets to use tokens ([5a705e3](https://github.com/rei/rei-cedar/commit/5a705e3))
 * **tokens:** output token file for cdr-assets ([717836f](https://github.com/rei/rei-cedar/commit/717836f))
 
 
 ### BREAKING CHANGES
 
+* **resets:** Default line height changed from 1.15 to 1 | Remove default margin on blockquote, figure, and label
+elements
 * **assets:** icon assets are removed from cdr-assets and are now in cdr-icon
 * **grid:** row no longer has a margin-bottom so no styles bleed
 * **all components:** Change all package names to cdr- prefix. Package name for cdr-image changed to cdr-img. Package name
