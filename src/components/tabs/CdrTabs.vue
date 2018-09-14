@@ -112,6 +112,7 @@ export default {
             this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
           }
           this.activeTabIndex = index;
+          this.hideScrollBar();
           this.$nextTick(tab.setActive(true));
         } else {
           this.$nextTick(tab.setActive(false));
@@ -183,6 +184,13 @@ export default {
         totalWidth += element.offsetWidth || 0;
       });
       return totalWidth;
+    },
+    hideScrollBar() {
+      const styleRef = this.$refs.cdrTabsContainer.style;
+      window.addEventListener('transitionend', () => {
+        styleRef.setProperty('overflow-x', 'unset');
+      }, { once: true });
+      styleRef.setProperty('overflow-x', 'hidden');
     },
   },
 };
