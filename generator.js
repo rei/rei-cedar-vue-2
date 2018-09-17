@@ -105,5 +105,8 @@ inquirer.prompt(QUESTIONS).then((answers) => {
 
   // Done!
   console.log(chalk.green(`Successfuly generated files for '${name}' in ${outDir}`));
+  console.log(chalk.white('Add component to src/components/_index.js'));
+  console.log(chalk.white('Add component example to src/components/examples.js'));
+  console.log(chalk.white('Place component example in src/App.vue'));
 });
 
