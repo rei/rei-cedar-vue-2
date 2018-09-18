@@ -1,0 +1,36 @@
+/* ==========================================================================
+  # CdrLayout
+  
+  All values should map to variables in
+  vars/CdrLayout.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrLayout
+========================================================================== */
+
+.cdr-layout {
+  display: flex;
+
+  &--inline {
+    flex-direction: row;
+
+    &.cdr-layout--space {
+      &-1-x > * + * {
+        margin-left: $space-1-x;
+      }
+    }
+  }
+
+  &--stack {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &.cdr-layout--space {
+      &-1-x > * + * {
+        margin-top: $space-1-x;
+      }
+    }
+  }
+}

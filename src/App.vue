@@ -52,6 +52,9 @@
       class="cpg-section"
       data-backstop="inputs"
     />
+    <layouts
+      class="cgp-section"
+    />
     <lists
       class="cpg-section"
       data-backstop="lists"
