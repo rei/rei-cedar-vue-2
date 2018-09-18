@@ -153,6 +153,7 @@ export default {
         if (this.activeTabIndex < (this.tabs.length - 1)) {
           this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
           this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
+          this.hideScrollBar();
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
           this.activeTabIndex += 1;
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
@@ -162,6 +163,7 @@ export default {
         if (this.activeTabIndex > 0) {
           this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
           this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
+          this.hideScrollBar();
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
           this.activeTabIndex -= 1;
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
