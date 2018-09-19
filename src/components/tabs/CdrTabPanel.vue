@@ -31,7 +31,7 @@ export default {
       active: false,
       offsetX: 0,
       tabId: this.id || this.name,
-      animationDirection: 'flyRight',
+      animationDirection: 'default',
     };
   },
   computed: {
