@@ -21,12 +21,16 @@
 ========================================================================== */
 
 .cdr-tabs {
-  overflow-x: auto;
+  /* overflow-x: auto; */
+  display: flex;
+  flex-flow: column;
+  height: 500px;
 
   &__header-container {
     overflow-x: auto;
     border-bottom: 1px solid $grey-matter;
     -webkit-overflow-scrolling: touch;
+    flex: 0 1 auto;
   }
 
   &__gradient-container {
@@ -124,6 +128,8 @@
 
   &__content-container {
     position: relative;
+    flex: 1 1 auto;
+    overflow: auto;
   }
 
   .fade-enter-active,

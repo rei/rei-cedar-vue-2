@@ -3,7 +3,6 @@
   <!-- eslint-disable max-len -->
   <div
     :class="[modifierClass]"
-    :style="{ height: height }"
     ref="cdrTabsContainer">
     <div
       :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
@@ -38,7 +37,9 @@
           :style="underlineStyle">
       </nav>
     </div>
-    <div :class="$style['cdr-tabs__content-container']">
+    <div
+      :class="$style['cdr-tabs__content-container']"
+      :style="{ height: height }">
       <slot/>
     </div>
   </div>
