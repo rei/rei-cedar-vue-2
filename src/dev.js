@@ -8,7 +8,7 @@ import './css/main.postcss';
 import '../static/cdr-fonts.css';
 
 
-Vue.config.devtools = false;
+Vue.config.devtools = true;
 // routing
 Vue.use(VueRouter);
 
