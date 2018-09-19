@@ -1,5 +1,5 @@
-<a name="1.0.0"></a>
-# 1.0.0 (2018-08-01)
+<a name="1.0.1"></a>
+## 1.0.1 (2018-09-13)
 
 
 ### Chores
@@ -17,6 +17,7 @@
 * **release:** cedar Alpha release ([883ff94](https://github.com/rei/rei-cedar/commit/883ff94))
 * **template:** the cdr-text component has been updated with the following two variants:  default pa ([f23e61f](https://github.com/rei/rei-cedar/commit/f23e61f))
 * **text:** add text component ([bb481c5](https://github.com/rei/rei-cedar/commit/bb481c5))
+* **text:** update dependencies ([506d029](https://github.com/rei/rei-cedar/commit/506d029))
 
 
 ### BREAKING CHANGES

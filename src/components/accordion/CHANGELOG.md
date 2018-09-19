@@ -1,5 +1,5 @@
-<a name="1.0.0"></a>
-# 1.0.0 (2018-08-01)
+<a name="1.0.1"></a>
+## 1.0.1 (2018-09-13)
 
 
 ### Bug Fixes
@@ -12,6 +12,7 @@
 
 ### Features
 
+* **accordion:** update dependencies ([d45808f](https://github.com/rei/rei-cedar/commit/d45808f))
 * **accordion button cta:** bump versions to match alpha release ([c7f21bb](https://github.com/rei/rei-cedar/commit/c7f21bb))
 * **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
 

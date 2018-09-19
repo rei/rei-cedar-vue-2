@@ -1,5 +1,5 @@
-<a name="1.0.0"></a>
-# 1.0.0 (2018-08-01)
+<a name="1.0.1"></a>
+## 1.0.1 (2018-09-13)
 
 
 ### Chores
@@ -12,8 +12,9 @@
 * **all components:** change package name prefixes from cedar-* to cdr-* ([dad0dfb](https://github.com/rei/rei-cedar/commit/dad0dfb)), closes [#354](https://github.com/rei/rei-cedar/issues/354)
 * **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
 * **cdr-radio release:** updates to the cdr-radio readme API and moving the package.json to v1 ([13b35c4](https://github.com/rei/rei-cedar/commit/13b35c4))
-* **checkbox:** add custom label class ([7012f33](https://github.com/rei/rei-cedar/commit/7012f33))
 * **checkbox:** add custom label class ([d8882b8](https://github.com/rei/rei-cedar/commit/d8882b8))
+* **checkbox:** add custom label class ([7012f33](https://github.com/rei/rei-cedar/commit/7012f33))
+* **checkbox:** update dependencies ([ea5d4fa](https://github.com/rei/rei-cedar/commit/ea5d4fa))
 * **checkbox radio:** update checkbox and radio to design spec ([30a5ef0](https://github.com/rei/rei-cedar/commit/30a5ef0))
 * **components:** update components to use css-modules ([ec1321c](https://github.com/rei/rei-cedar/commit/ec1321c))
 * **crd-checkbox release:** updates to the cdr-checkbox API readme and bumping the package to v1 ([0066831](https://github.com/rei/rei-cedar/commit/0066831))
