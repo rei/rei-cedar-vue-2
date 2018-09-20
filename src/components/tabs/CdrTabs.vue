@@ -46,7 +46,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
-// import debounce from 'lodash/debounce';
+import debounce from 'lodash/debounce';
 
 export default {
   name: 'CdrTabs',
@@ -86,14 +86,14 @@ export default {
   mounted() {
     if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
     // Check for header overflow on window resize for gradient behavior.
-    // window.addEventListener('resize', debounce(() => {
-    //   this.headerWidth = this.getHeaderWidth();
-    //   this.calculateOverflow();
-    // }, 250));
+    window.addEventListener('resize', debounce(() => {
+      this.headerWidth = this.getHeaderWidth();
+      this.calculateOverflow();
+    }, 250));
     // Check for header overflow on widow resize for gradient behavior.
-    // this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
-    //   this.calculateOverflow();
-    // }, 250));
+    this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
+      this.calculateOverflow();
+    }, 250));
     this.headerWidth = this.getHeaderWidth();
   },
   updated() {
