@@ -1,5 +1,6 @@
 <template>
   <div>
+    <cdr-icon-sprite />
     <div class="button-example">
       <h2>CdrButton + CdrIcon Comps</h2>
       <cdr-button
@@ -7,6 +8,19 @@
         href="https://rei.com"
         size="large"
         data-backstop="cdr-button--icon">
+        <icon-check-lg
+          slot="icon"
+          class="cdr-button__icon"
+        />
+        Anchor and Icon
+      </cdr-button>
+      <cdr-button
+        tag="a"
+        href="https://rei.com"
+        size="large"
+        data-backstop="cdr-button--icon"
+        disabled
+      >
         <icon-check-lg
           slot="icon"
           class="cdr-button__icon"
@@ -46,6 +60,17 @@
       <cdr-button
         size="large"
         modifier="secondary"
+      >
+        <cdr-icon
+          slot="icon"
+          class="cdr-button__icon"
+          use="#download"/>
+        Button and Icon
+      </cdr-button>
+      <cdr-button
+        size="large"
+        modifier="secondary"
+        disabled
       >
         <cdr-icon
           slot="icon"
@@ -166,7 +191,7 @@
 import Components from 'componentsdir/_index';
 import CdrButton from 'componentsdir/button/CdrButton';
 /* eslint-disable-next-line */
-import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink } from 'componentsdir/icon/dist/cdr-icon';
+import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink, CdrIconSprite } from 'componentsdir/icon/dist/cdr-icon';
 import { CdrCloseButton, CdrPlayButton } from 'componentsdir/button/dist/cdr-button';
 import CdrIcon from 'componentsdir/icon/CdrIcon';
 
@@ -183,6 +208,7 @@ export default {
     IconExternalLink,
     CdrCloseButton,
     CdrPlayButton,
+    CdrIconSprite,
   },
 };
 </script>

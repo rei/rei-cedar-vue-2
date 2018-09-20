@@ -85,7 +85,7 @@ describe('CdrTable.vue', () => {
       expect(wrapper.vm.hasRowHeaders).toBe(true);
     });
 
-    xit('adds resize event watcher', (done) => {
+    it('adds resize event watcher', (done) => {
       const wrapper = shallowMount(CdrTable, {
         propsData: {
           colHeaders: data.colHeaders,
@@ -98,6 +98,7 @@ describe('CdrTable.vue', () => {
       console.log('spy', spy);
       window.dispatchEvent(new Event('resize'));
       wrapper.vm.$nextTick(() => {
+        console.log('next tick');
         expect(spy).toHaveBeenCalled();
         done();
       });

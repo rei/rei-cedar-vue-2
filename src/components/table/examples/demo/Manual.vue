@@ -8,14 +8,14 @@
     >
       <template slot="col-headers">
         <th
-          v-for="(header, key, index) in books.headers"
+          v-for="(header, index) in books.headers"
           :key="index"
         >
           {{ header }}
         </th>
       </template>
       <tr
-        v-for="(record, key, index) in books.records"
+        v-for="(record, index) in books.records"
         :key="key + '_' + index"
       >
         <th>{{ record.rowheader }}</th>
