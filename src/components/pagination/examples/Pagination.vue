@@ -1,20 +1,18 @@
 <template>
   <div>
     <h2>pagination</h2>
-    <cdr-pagination
-      :total-pages="ex1Pages"
-      :page-data="getEx1PageData(0)"
+    <div
+      v-for="datam in getEx1PageData(0)"
+      :key="datam.title"
     >
-      <template slot-scope="data">
-        <div
-          v-for="datam in data"
-          :key="datam.title"
-        >
-          <h1>{{ datam.title }}</h1>
-          <p>{{ datam.description }}</p>
-        </div>
-      </template>
-    </cdr-pagination>
+      <h1>{{ datam.title }}</h1>
+      <p>{{ datam.description }}</p>
+    </div>
+    <cdr-pagination
+      :total-pages="20"
+      :current-page="4"
+      @change="changeMethod"
+    />
   </div>
 </template>
 
@@ -44,6 +42,9 @@ export default {
   methods: {
     getEx1PageData(page) {
       return this.ex1[page];
+    },
+    changeMethod(x) {
+      console.log('CHANGED', x);
     },
   },
 };
