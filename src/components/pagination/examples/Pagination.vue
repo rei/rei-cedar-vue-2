@@ -2,15 +2,15 @@
   <div>
     <h2>pagination</h2>
     <div
-      v-for="datam in getEx1PageData(0)"
+      v-for="datam in pageData"
       :key="datam.title"
     >
       <h1>{{ datam.title }}</h1>
       <p>{{ datam.description }}</p>
     </div>
     <cdr-pagination
-      :total-pages="20"
-      :current-page="4"
+      :total-pages="ex1Pages"
+      :current-page="pageNum"
       @change="changeMethod"
     />
   </div>
@@ -29,12 +29,17 @@ export default {
   data() {
     return {
       paginationData,
+      pageNum: 1,
+      pageData: this.getEx1PageData(this.pageNum),
     };
   },
   computed: {
     ex1() {
       return this.paginationData.example1;
     },
+    // ex1Page() {
+    //   return ;
+    // },
     ex1Pages() {
       return Object.keys(this.ex1).length;
     },
@@ -44,6 +49,7 @@ export default {
       return this.ex1[page];
     },
     changeMethod(x) {
+      this.pageData = this.getEx1PageData(x);
       console.log('CHANGED', x);
     },
   },
