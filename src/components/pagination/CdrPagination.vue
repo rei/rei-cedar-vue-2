@@ -4,20 +4,31 @@
   <ul>
     <li
       v-if="localCurrent > 1"
-      @click="prevNext(-1)"
-    >Previous</li>
-    <!-- <li>1</li> -->
+    >
+      <a
+        :href="`?page=${prevPage}`"
+        @click="setPage(prevPage, $event)"
+      >Previous</a>
+    </li>
     <li
       v-for="n in pagination(localCurrent, totalPages)"
-      :key="n"
+      :key="`${n}-${guid()}`"
     >
-      <span v-if="n === localCurrent">{{ n }} &lt;</span>
+      <a
+        v-if="n !== '...'"
+        :href="`?page=${n}`"
+        @click="setPage(n, $event)"
+      >{{ n }}{{ n === localCurrent ? '&lt;' : '' }}</a>
       <span v-else>{{ n }}</span>
     </li>
     <li
       v-if="localCurrent < totalPages"
-      @click="prevNext(1)"
-    >Next</li>
+    >
+      <a
+        :href="`?page=${nextPage}`"
+        @click="setPage(nextPage, $event)"
+      >Next</a>
+    </li>
   </ul>
 </template>
 
@@ -29,22 +40,41 @@ export default {
     event: 'change',
   },
   props: {
-    currentPage: {
-      type: Number,
-    },
+    /**
+     * Total number of pages
+     */
     totalPages: {
       type: Number,
       required: true,
     },
+    /**
+     * Number of pages to show on either side of current page
+     */
     range: {
       type: Number,
       default: 1,
+    },
+    onClick: {
+      type: Function,
+      default: () => () => null,
+    },
+    /** @ignore */
+    currentPage: {
+      type: Number,
     },
   },
   data() {
     return {
       localCurrent: this.currentPage,
     };
+  },
+  computed: {
+    prevPage() {
+      return this.localCurrent - 1;
+    },
+    nextPage() {
+      return this.localCurrent + 1;
+    },
   },
   watch: {
     currentPage(v) {
@@ -55,8 +85,9 @@ export default {
     },
   },
   methods: {
-    prevNext(n) {
-      this.localCurrent = this.localCurrent + n;
+    setPage(n, event) {
+      this.localCurrent = n;
+      this.onClick(this.localCurrent, event);
     },
     pagination(current, total) {
       const delta = this.range;
@@ -81,6 +112,14 @@ export default {
       range.push(total);
 
       return range;
+    },
+    guid() {
+      function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+      }
+      return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
     },
   },
 };

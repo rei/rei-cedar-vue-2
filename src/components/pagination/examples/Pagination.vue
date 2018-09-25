@@ -2,7 +2,7 @@
   <div>
     <h2>pagination</h2>
     <div
-      v-for="datam in pageData"
+      v-for="datam in paginationData.example1[currentPage]"
       :key="datam.title"
     >
       <h1>{{ datam.title }}</h1>
@@ -10,8 +10,8 @@
     </div>
     <cdr-pagination
       :total-pages="ex1Pages"
-      :current-page="pageNum"
-      @change="changeMethod"
+      v-model="currentPage"
+      :on-click="doThis"
     />
   </div>
 </template>
@@ -29,28 +29,22 @@ export default {
   data() {
     return {
       paginationData,
-      pageNum: 1,
-      pageData: this.getEx1PageData(this.pageNum),
+      currentPage: 1,
     };
   },
   computed: {
     ex1() {
       return this.paginationData.example1;
     },
-    // ex1Page() {
-    //   return ;
-    // },
     ex1Pages() {
       return Object.keys(this.ex1).length;
     },
   },
   methods: {
-    getEx1PageData(page) {
-      return this.ex1[page];
-    },
-    changeMethod(x) {
-      this.pageData = this.getEx1PageData(x);
-      console.log('CHANGED', x);
+    doThis(num, e) {
+      e.preventDefault();
+      console.log('doThis', num);
+      this.$router.replace({ query: Object.assign({}, this.$route.query, { page: num }) });
     },
   },
 };
