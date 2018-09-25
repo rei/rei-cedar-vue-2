@@ -142,3 +142,7 @@ export default {
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrButton.pcss';
 </style>
+
+<style>
+  @import '@rei/cdr-icon/dist/cdr-icon.css';
+</style>
