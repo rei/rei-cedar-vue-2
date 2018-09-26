@@ -1,18 +1,39 @@
 <template>
   <div>
     <h2>pagination</h2>
+
+    <h3>Vue-router example</h3>
     <div
-      v-for="datam in paginationData.example1[currentPage]"
+      v-for="datam in paginationData.example1[ex1Page]"
       :key="datam.title"
     >
       <h1>{{ datam.title }}</h1>
       <p>{{ datam.description }}</p>
     </div>
+
     <cdr-pagination
-      :total-pages="ex1Pages"
-      v-model="currentPage"
-      :on-click="doThis"
+      :total-pages="total"
+      v-model="ex1Page"
+      @change="doChange"
     />
+
+    <br>
+    <br>
+
+    <h3>Standard</h3>
+    <div
+      v-for="datam in paginationData.example1[ex2Page]"
+      :key="datam.title"
+    >
+      <h1>{{ datam.title }}</h1>
+      <p>{{ datam.description }}</p>
+    </div>
+
+    <cdr-pagination
+      :total-pages="total"
+      v-model="ex2Page"
+    />
+
   </div>
 </template>
 
@@ -29,22 +50,25 @@ export default {
   data() {
     return {
       paginationData,
-      currentPage: 1,
+      ex1Page: 1,
+      ex2Page: 10,
     };
   },
   computed: {
-    ex1() {
-      return this.paginationData.example1;
+    total() {
+      return Object.keys(this.paginationData.example1).length;
     },
-    ex1Pages() {
-      return Object.keys(this.ex1).length;
+    computedUrls() {
+      const urls = [];
+      Object.keys(this.paginationData.example1);
+      return urls;
     },
   },
   methods: {
-    doThis(num, e) {
+    doChange(num, e) {
       e.preventDefault();
-      console.log('doThis', num);
-      this.$router.replace({ query: Object.assign({}, this.$route.query, { page: num }) });
+      console.log('changed', num);
+      this.$router.replace({ query: Object.assign({}, this.$route.query, { 'router-page': num }) });
     },
   },
 };

@@ -7,7 +7,7 @@
     >
       <a
         :href="`?page=${prevPage}`"
-        @click="setPage(prevPage, $event)"
+        @click="$emit('change', prevPage, $event)"
       >Previous</a>
     </li>
     <li
@@ -17,7 +17,7 @@
       <a
         v-if="n !== '...'"
         :href="`?page=${n}`"
-        @click="setPage(n, $event)"
+        @click="$emit('change', n, $event)"
       >{{ n }}{{ n === localCurrent ? '&lt;' : '' }}</a>
       <span v-else>{{ n }}</span>
     </li>
@@ -26,7 +26,7 @@
     >
       <a
         :href="`?page=${nextPage}`"
-        @click="setPage(nextPage, $event)"
+        @click="$emit('change', nextPage, $event)"
       >Next</a>
     </li>
   </ul>
@@ -54,9 +54,9 @@ export default {
       type: Number,
       default: 1,
     },
-    onClick: {
-      type: Function,
-      default: () => () => null,
+    // TODO: assign link hrefs based on user data
+    urls: {
+      type: Array,
     },
     /** @ignore */
     currentPage: {
@@ -80,15 +80,8 @@ export default {
     currentPage(v) {
       this.localCurrent = v;
     },
-    localCurrent(v) {
-      this.$emit('change', v);
-    },
   },
   methods: {
-    setPage(n, event) {
-      this.localCurrent = n;
-      this.onClick(this.localCurrent, event);
-    },
     pagination(current, total) {
       const delta = this.range;
       const range = [];
