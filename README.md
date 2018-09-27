@@ -68,7 +68,7 @@ Runs [karma](https://karma-runner.github.io/1.0/index.html) unit tests. We're us
 
 Runs [Nightwatch](http://nightwatchjs.org/) end-to-end tests.
 
-`npm run unit`
+`npm run unit:watch`
 
 Runs unit tests. Keeps mocha active to watch for changes and re-runs tests. Use `it.only()` to watch just a single test.
 
