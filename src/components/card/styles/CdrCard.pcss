@@ -14,19 +14,15 @@
   background-color: $clean-slate;
   border-radius: $radius-softer;
   box-shadow: $prominence-elevated;
-  width: 100%;
-      
-  &--default {
-    position: relative;
-    transition: transform 500ms ease, box-shadow 500ms ease;
+  position: relative;
+  transition: transform 500ms ease, box-shadow 500ms ease;
 
-    /* States
-      ---------- */
+  /* States
+    ---------- */
 
-    &:hover {
-      box-shadow: $activity-card-hover-box-shadow;
-      transform: scale(1.006);
-    }
+  &:hover {
+    box-shadow: $activity-card-hover-box-shadow;
+    transform: scale(1.006);
   }
   
   &__section-title {
@@ -134,4 +130,3 @@
     margin-bottom: $activity-card-rating-margin-bottom;
   }
 }
-

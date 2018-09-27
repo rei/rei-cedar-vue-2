@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-card",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Card",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-card",
@@ -37,6 +37,7 @@
   "dependencies": {
     "@rei/cdr-list": "^1.0.0",
     "@rei/cdr-text": "^1.0.0",
+    "@rei/cdr-img": "^1.0.0",
     "vue": "^2.5.17"
   }
 }

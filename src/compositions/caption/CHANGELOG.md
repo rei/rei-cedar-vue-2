@@ -1,5 +1,5 @@
-<a name="0.1.0"></a>
-# 0.1.0 (2018-08-01)
+<a name="0.1.1"></a>
+## 0.1.1 (2018-09-13)
 
 
 ### Chores
@@ -11,6 +11,7 @@
 
 * **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
 * **caption:** clean up caption composition ([d88bfa5](https://github.com/rei/rei-cedar/commit/d88bfa5))
+* **caption:** update dependencies ([daee967](https://github.com/rei/rei-cedar/commit/daee967))
 * **component:** the cdr-quote component allows for block and pull quotes. spacing, inset, and break ([2c30b1a](https://github.com/rei/rei-cedar/commit/2c30b1a))
 * **components:** update components to use css-modules ([ec1321c](https://github.com/rei/rei-cedar/commit/ec1321c))
 * **deps:** update icon and assets for publishing ([48f2c67](https://github.com/rei/rei-cedar/commit/48f2c67))
