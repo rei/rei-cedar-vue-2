@@ -157,9 +157,12 @@ export default {
     window.addEventListener('resize', debounce(() => {
       this.checkScroll();
     }, 250));
+
+    console.log('mounted finished');
   },
   methods: {
     checkScroll() {
+      console.log('checkScroll ran!');
       const scrollContainer = this.$el.children[1];
       this.clientWidth = scrollContainer.clientWidth;
       this.scrollWidth = scrollContainer.scrollWidth;

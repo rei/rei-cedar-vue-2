@@ -85,22 +85,25 @@ describe('CdrTable.vue', () => {
       expect(wrapper.vm.hasRowHeaders).toBe(true);
     });
 
-    it('adds resize event watcher', (done) => {
+    it.only('adds resize event watcher', (done) => {
       const wrapper = shallowMount(CdrTable, {
         propsData: {
           colHeaders: data.colHeaders,
           rowHeaders: data.rowHeaders,
           rowData: data.rowData,
           id: "test",
+          caption: "Test"
         }
       });
+      console.log('checkScroll', wrapper.vm.checkScroll());
       const spy = sinon.spy(wrapper.vm, 'checkScroll');
-      console.log('spy', spy);
+      // console.log('spy', spy);
       window.dispatchEvent(new Event('resize'));
       wrapper.vm.$nextTick(() => {
         console.log('next tick');
-        expect(spy).toHaveBeenCalled();
-        done();
+        expect(spy).not.toBeCalled();
+        console.log('spy to have been called');
+        done()
       });
     });
 
