@@ -24,13 +24,26 @@
     box-shadow: $activity-card-hover-box-shadow;
     transform: scale(1.006);
   }
-  
-  &__section-title {
-    padding: $inset-1-x;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $activity-card-title-action-hover-color;
+    text-decoration: $activity-card-title-action-hover-text-decoration;
   }
 
-  /* Elements
-    ========================================================================== */
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: trasparent 0.1s ease-out;
+    background-color: trasparent;
+  }
   
   /* Action
     ========== */
@@ -40,24 +53,18 @@
     z-index: 1;
   }
 
-  /* Snapshot
+  /* image
     ========== */
 
-  &__snapshot {
-    font-size: $activity-card-snapshot-font-size;
-    line-height: $activity-card-snapshot-line-height;
-    text-align: $activity-card-snapshot-text-align;
-    font-style: $activity-card-snapshot-font-style;
-    font-weight: $activity-card-snapshot-font-weight;
-    font-family: $activity-card-snapshot-font-family;
-    color: $activity-card-snapshot-color;
-    margin-top: $activity-card-snapshot-margin-top;
-    margin-bottom: $activity-card-snapshot-margin-bottom;
+  &__media {
+    border-top-left-radius: $radius-soft;
+    border-top-right-radius: $radius-soft;
   }
+}
 
+.cdr-lead {
   /* Label, Location
     ========== */
-
   &__label,
   &__location {
     font-size: $activity-card-label-font-size;
@@ -71,17 +78,8 @@
     margin-bottom: $activity-card-label-margin-bottom;
   }
 
-  /* image
-    ========== */
-
-  &__image {
-    border-top-left-radius: $radius-soft;
-    border-top-right-radius: $radius-soft;
-  }
-
   /* Title
     ========== */
-
   &__title {
     font-size: $activity-card-title-font-size;
     line-height: $activity-card-title-line-height;
@@ -94,36 +92,24 @@
     margin-top: $activity-card-title-margin-top;
     margin-bottom: $activity-card-title-margin-bottom;
 
-    /* Action
-      ---------- */
-
     &--action {
       position: static;
       transition: color 500ms ease;
-
-      /* States
-      ---------- */
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: $activity-card-title-action-hover-color;
-        text-decoration: $activity-card-title-action-hover-text-decoration;
-      }
-
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        z-index: 1;
-        height: 100%;
-        left: 0;
-        top: 0;
-        transition: trasparent 0.1s ease-out;
-        background-color: trasparent;
-      }
     }
+  }
+
+  /* Snapshot
+    ========== */
+  &__snapshot {
+    font-size: $activity-card-snapshot-font-size;
+    line-height: $activity-card-snapshot-line-height;
+    text-align: $activity-card-snapshot-text-align;
+    font-style: $activity-card-snapshot-font-style;
+    font-weight: $activity-card-snapshot-font-weight;
+    font-family: $activity-card-snapshot-font-family;
+    color: $activity-card-snapshot-color;
+    margin-top: $activity-card-snapshot-margin-top;
+    margin-bottom: $activity-card-snapshot-margin-bottom;
   }
 
   &__rating {
