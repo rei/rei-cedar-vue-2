@@ -10,7 +10,10 @@
         :Standalone
 ========================================================================== */
 
-.cdr-link {
+/* Default Light Theme */
+
+.cdr-link,
+:global(.cdr-bg--light) .cdr-link {
   align-items: center;
   background-color: $color-transparent-background;
   border: 0;
@@ -52,5 +55,23 @@
   &:focus,
   &:visited {
     text-decoration: underline;
+  }
+}
+
+/* TODO: get this value */
+$link-color-dark: white;
+
+/* Dark Theme */
+:global(.cdr-bg--dark) .cdr-link {
+  color: $link-color-dark;
+  fill: $link-color-dark;
+
+  /* States
+    ---------- */
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color-dark;
   }
 }
