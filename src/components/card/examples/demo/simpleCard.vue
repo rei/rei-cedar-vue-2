@@ -3,6 +3,10 @@
     <cdr-card
       card-img="https://picsum.photos/200/300"
       card-img-alt="a randomly generated image for testing the cdr-card experience"
+      :card-img-props="{
+        'ratio': '16-9',
+        'cover': true
+      }"
       card-lable=""
       card-title=""
       card-url="https://www.rei.com"

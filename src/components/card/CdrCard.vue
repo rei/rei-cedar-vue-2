@@ -4,6 +4,7 @@
       <cdr-img
         :src="cardImg"
         :alt="cardImgAlt"
+        v-bind="cardImgProps"
       />
     </section>
     <section :class="$style['cdr-card__section-title']">
@@ -61,6 +62,7 @@ export default {
   mixins: [modifier],
   props: {
     cardImg: String,
+    cardImgProps: Object,
     /**
     * this is set to top when there is no attribution
     */
