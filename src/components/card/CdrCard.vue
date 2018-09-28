@@ -4,14 +4,11 @@
       direction="stack"
       spacing="1-x"
     >
-      <section
-      >
+      <section>
         <cdr-img
           :src="cardImg"
           :alt="cardImgAlt"
-          :ratio="cardImgRatio"
-          :cover="cardImgCover"
-          :crop="cardImgCrop"
+          v-bind="cardImgProps"
           :class="$style['cdr-card__media']"
         />
         <slot name="cardMedia" />
@@ -84,15 +81,6 @@ export default {
       type: String,
       default: ' ',
     },
-    cardImgRatio: String,
-    /**
-     * Requires `Ratio`. Scale the image to be as large as possible to fill the area (background-position: cover;) See cdr-img
-     */
-    cardImgCover: Boolean,
-    /**
-     * Requires `Ratio`. Area to crop the image overflow to. {top, y-center, bottom} {left, x-center, right} See cdr-img
-     */
-    cardImgCrop: String,
     cardTitle: String,
     /**
     * href to turn card into a link
