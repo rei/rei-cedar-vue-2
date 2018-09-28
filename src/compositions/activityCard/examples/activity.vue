@@ -5,6 +5,9 @@
     <cdr-activity-card
       data-backstop="activity-card"
       media="http://placehold.it/350x150"
+      media-ratio="16/9"
+      media-cover
+      media-crop="top"
       label="hiking"
       title-url="http://rei.com"
       title="Snow Lake Trail"

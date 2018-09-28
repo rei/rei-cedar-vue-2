@@ -28,16 +28,16 @@
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "vue": "^2.5.13"
+    "vue":             "^2.5.13"
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "pkg-ok": "^1.1.0"
+    "pkg-ok":          "^1.1.0"
   },
   "dependencies": {
-    "@rei/cdr-list": "^1.0.0",
-    "@rei/cdr-text": "^1.0.0",
-    "@rei/cdr-img": "^1.0.0",
-    "vue": "^2.5.17"
+    "@rei/cdr-list":   "^1.0.0",
+    "@rei/cdr-text":   "^1.0.0",
+    "@rei/cdr-img":    "^1.0.0",
+    "vue":             "^2.5.17"
   }
 }

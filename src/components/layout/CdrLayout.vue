@@ -1,7 +1,8 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <div
+  <component
+    :is="tag"
     :class="[
       $style['cdr-layout'],
       directionClass,
@@ -9,7 +10,7 @@
     ]"
   >
     <slot />
-  </div>
+  </component>
 </template>
 
 <script>
@@ -30,6 +31,10 @@ export default {
     },
     spacing: {
       type: String,
+    },
+    tag: {
+      type: String,
+      default: 'div',
     },
   },
   computed: {
