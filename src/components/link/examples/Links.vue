@@ -8,39 +8,16 @@
     <all-links />
 
     <p>Links on Dark</p>
-    <div class="cdr-bg--dark">
-
+    <cdr-themer
+      theme="dark"
+      background="dark"
+    >
       <all-links backstop="dark" />
 
-      <div class="cdr-bg--light">
-        <p>Cascade doesn't work nested</p>
-        <p>
-          <cdr-link href="https://www.rei.com/">REI.com</cdr-link>
-          <cdr-link
-            href="https://www.rei.com/"
-            modifier="standalone">REI.com</cdr-link>
-        </p>
-      </div>
-    </div>
-
-    <hr>
-    <p>Using a theme prop</p>
-    <all-links />
-
-    <p>Links on Dark</p>
-    <div class="cdr-bg--dark">
-
-      <p>
-        <cdr-link
-          href="https://www.rei.com/"
-          theme="dark">REI.com</cdr-link>
-        <cdr-link
-          href="https://www.rei.com/"
-          theme="dark"
-          modifier="standalone">REI.com</cdr-link>
-      </p>
-
-      <div class="cdr-bg--light">
+      <cdr-themer
+        theme="light"
+        background="light"
+      >
         <p>Works nested</p>
         <p>
           <cdr-link
@@ -51,8 +28,15 @@
             theme="light"
             modifier="standalone">REI.com</cdr-link>
         </p>
-      </div>
-    </div>
+      </cdr-themer>
+
+      <p>
+        <cdr-link
+          href="https://www.rei.com/">REI.com</cdr-link>
+      </p>
+      <cdr-link
+        href="https://www.rei.com/">REI.com</cdr-link>
+    </cdr-themer>
   </div>
 </template>
 
