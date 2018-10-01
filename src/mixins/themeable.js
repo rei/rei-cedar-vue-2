@@ -7,10 +7,10 @@ export default {
   },
   computed: {
     computedTheme() {
-      if (this.wrapperTheme !== '') {
-        return this.wrapperTheme;
-      } else if (this.theme !== '') {
+      if (this.theme !== '') {
         return this.theme;
+      } else if (this.wrapperTheme !== '') {
+        return this.wrapperTheme;
       }
       return false;
     },
