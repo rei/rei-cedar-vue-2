@@ -10,10 +10,7 @@
         :Standalone
 ========================================================================== */
 
-/* Default Light Theme */
-
-.cdr-link,
-:global(.cdr-bg--light) .cdr-link {
+.cdr-link {
   align-items: center;
   background-color: $color-transparent-background;
   border: 0;
@@ -58,11 +55,64 @@
   }
 }
 
+/* Light Theme */
+
+/* Theme via cascade */
+
+:global(.cdr-bg--light) .cdr-link {
+  color: $link-color;
+  fill: $link-color;
+
+  /* States
+    ---------- */
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color;
+  }
+}
+
+/* Theme via prop */
+
+:global(.on-light).cdr-link {
+  color: $link-color;
+  fill: $link-color;
+
+  /* States
+    ---------- */
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color;
+  }
+}
+
+/* Dark Theme */
+
 /* TODO: get this value */
 $link-color-dark: white;
 
-/* Dark Theme */
+/* Theme via cascade */
+
 :global(.cdr-bg--dark) .cdr-link {
+  color: $link-color-dark;
+  fill: $link-color-dark;
+
+  /* States
+    ---------- */
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color-dark;
+  }
+}
+
+/* Theme via prop */
+
+:global(.on-dark).cdr-link {
   color: $link-color-dark;
   fill: $link-color-dark;
 

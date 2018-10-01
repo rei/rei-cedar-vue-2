@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[modifierClass]"
+    :class="[modifierClass, themeClass]"
     :target="target"
     :rel="computedRel"
     :href="tag === 'a' ? href : null /* don't include the href attribute if not an <a> */"
@@ -34,6 +34,7 @@ export default {
       type: String,
       default: '#',
     },
+    theme: String,
     /** @ignore */
     target: String,
     /** @ignore */
@@ -48,6 +49,9 @@ export default {
         return this.rel || 'noopener noreferrer';
       }
       return this.rel;
+    },
+    themeClass() {
+      return this.theme ? `on-${this.theme}` : '';
     },
   },
 };
