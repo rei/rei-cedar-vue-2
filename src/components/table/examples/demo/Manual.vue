@@ -8,14 +8,14 @@
     >
       <template slot="col-headers">
         <th
-          v-for="(header, index) in books.headers"
+          v-for="(header, index) in tableData.books.headers"
           :key="index"
         >
           {{ header }}
         </th>
       </template>
       <tr
-        v-for="(record, index) in books.records"
+        v-for="(record, index) in tableData.books.records"
         :key="key + '_' + index"
       >
         <th>{{ record.rowheader }}</th>
@@ -35,7 +35,7 @@
       id="manual-scroll"
     >
       <tr
-        v-for="(record, key, index) in scroll.records"
+        v-for="(record, key, index) in tableData.scroll.records"
         :key="index + '_' + key"
       >
         <th>{{ record.rowheader }}</th>
@@ -55,7 +55,7 @@
       id="manual-full-scroll"
     >
       <tr
-        v-for="(record, key, index) in scroll.records"
+        v-for="(record, key, index) in tableData.scroll.records"
         :key="'row_' + key + index"
       >
         <td
@@ -112,58 +112,13 @@
 
 <script>
 import Components from 'componentsdir/_index';
+import tableData from '../../data';
 
 export default {
   name: 'Table',
   components: Components,
   data() {
-    const headers = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
-    const records = [];
-
-    for (let i = 0; i < 2; i += 1) {
-      const record = {};
-
-      headers.forEach((header) => {
-        record[header] = header;
-      });
-
-      record.rowheader = 'Row header Row header Row header';
-      records.push(record);
-    }
-
-    return {
-      books: {
-        headers: [
-          'Title',
-          'Year',
-          'Author',
-        ],
-        records: [
-          {
-            title: 'Book A',
-            year: 1823,
-            author: 'Mikey',
-            rowheader: 'row 1',
-          },
-          {
-            title: 'Book C',
-            year: 1532,
-            author: 'Joey',
-            rowheader: 'row 2',
-          },
-          {
-            title: 'Book E',
-            year: 1253,
-            author: 'Scotty',
-            rowheader: 'row 3',
-          },
-        ],
-      },
-      scroll: {
-        headers,
-        records,
-      },
-    };
+    return tableData;
   },
 };
 </script>

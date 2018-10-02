@@ -8,6 +8,7 @@
     >
       {{ caption }}
     </span>
+    <caption class="cdr-sr-only">{{ caption }}</caption>
     <div
       :class="[
         $style['cdr-table__scroll-container'],
@@ -24,10 +25,12 @@
             <th
               class="empty"
               v-show="hasRowHeaders"
+              scope="col"
             />
             <th
               v-for="(header, index) in colHeaders"
               :key="id + '_col-head_' + index"
+              scope="col"
             >
               {{ header }}
             </th>
@@ -36,6 +39,7 @@
             <th
               class="empty"
               v-show="hasRowHeaders"
+              scope="col"
             />
             <slot name="col-headers" />
           </tr>
@@ -47,7 +51,10 @@
             :key="id + '_row_' + index"
           >
             <!-- ROW HEADERS -->
-            <th v-if="hasRowHeaders">
+            <th
+              v-if="hasRowHeaders"
+              scope="row"
+            >
               {{ rowHeaders[index] }}
             </th>
             <!-- <td
