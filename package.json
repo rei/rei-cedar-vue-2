@@ -11,6 +11,7 @@
     "dev": "node build/dev-server.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
     "unit": "cross-env NODE_ENV=test nyc --check-coverage --lines 100 --reporter=lcov --report-dir=test/unit/coverage --reporter=text mocha-webpack --webpack-config build/webpack.test.conf.js --require test/setup.js src/**/*.spec.js",
+    "unit:watch": "cross-env NODE_ENV=test nyc --check-coverage --lines 100 --reporter=lcov --report-dir=test/unit/coverage --reporter=text mocha-webpack --watch --webpack-config build/webpack.test.conf.js --require test/setup.js src/**/*.spec.js",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs utils build",
