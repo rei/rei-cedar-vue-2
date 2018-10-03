@@ -128,10 +128,6 @@ export default {
         const elements = Array.from(this.$refs.cdrTabsHeader.children);
         this.underlineWidth = elements[0].children[0].offsetWidth;
         this.widthInitialized = true;
-        // Set focus to default Tab header
-        this.$nextTick(() => {
-          this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
-        });
       }
     },
     calculateOverflow() {
