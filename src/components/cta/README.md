@@ -1,38 +1,40 @@
 # CdrCTA
 
 ## Properties
-| name | type | Default |
+| name | type | default |
 | :--- | :--- | :--- |
 | ctaStyle | string | dark |
 
-Set Call to Action color by changing ctaStyle to match different themes. Possible values: {brand, dark, light, sale}
+Sets Call to Action color by changing ctaStyle to match different themes. Possible values: { 'brand' | 'dark' | 'light' | 'sale' }
 
-| name | type | Default |
+| name | type | default |
 | :--- | :--- | :--- |
 | fullWidth | boolean | false |
 
-Set Call to Action width to 100%. Setting it to true will set the width to 100% of the parent container
+Sets Call to Action width to 100%. Setting this value to true will set the width to 100% of the parent container
 
-| name | type | Default |
+| name | type | default |
 | :--- | :--- | :--- |
 | compact | boolean | false |
 
-Set the link using the page url
+Sets the link using the page url
+
+| name | type | default |
+| :--- | :--- | :--- |
+| modifier | string | # |
+
+Modifies the style variant for this component. Possible values: { 'elevated' }
 
 ## Slots
 | name                                            |
 | :---------------------------------------------- |
 | Default                                         |
 
-This is for the readable text of cdr-cta.
-
-## Modifiers
-
-- elevated
+Sets the innerHTML for cdr-cta. This is the readable text of the button
 
 ## Installation
 
-Resources are available with the [cdr-cta package](https://www.npmjs.com/package/@rei/cdr-cta):
+Resources are available with the [CdrCta package](https://www.npmjs.com/package/@rei/cdr-cta):
 
 <cdr-doc-api type="installation" />
 
@@ -41,9 +43,9 @@ Resources are available with the [cdr-cta package](https://www.npmjs.com/package
 
 To incorporate the required assets for a component, use the following steps:
 
-### #1. Install using NPM
+### 1. Install using NPM
 
-Install the `cdr-cta` package using `npm` in your terminal:
+Install the CdrCta package using `npm` in your terminal:8
 
 _Terminal_
 
@@ -51,7 +53,7 @@ _Terminal_
     npm i -s @rei/cdr-link
 ```
 
-### #2. Import Dependencies
+### 2. Import Dependencies
 
 _main.js_
 
@@ -102,10 +104,18 @@ This example code renders a full width `cdr-cta`, with the `elevated` modifier a
 </template>
 ```
 
-The `cdr-cta` component looks like a button; however it's actually an anchor:
+The CdrCta component looks like a button; however it's actually an anchor:
 - Do not use when a button is preferable such as triggering an action
 - Do not assign the role of button
-- For basic links, use [cdr-link](/components/link/)
+- For basic links, use [CdrLink](/components/link/)
+
+## Modifiers
+
+Following variants are available to the `cdr-cta` modifier attribute:
+
+| Value      | Description                 |
+|:---------- |:----------------------------|
+| `elevated` | Adds drop shadow to button  |
 
 ## Accessibility
 

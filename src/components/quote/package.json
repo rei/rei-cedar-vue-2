@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-quote",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for quotes",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-quote",
