@@ -18,6 +18,7 @@ import Selects from 'componentsdir/select/examples/Selects';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
 import Input from 'componentsdir/input/examples/Inputs';
+import Lead from 'compositionsdir/lead/examples/Lead';
 
 import ActivityCards from 'compositionsdir/activityCard/examples/activity';
 import Captions from 'compositionsdir/caption/examples/Caption';
@@ -35,6 +36,7 @@ const routes = [
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
   { path: '/layouts', name: 'layouts', component: layouts },
+  { path: '/lead', name: 'lead', component: Lead },
   { path: '/links', name: 'Links', component: Links },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/inputs', name: 'Input', component: Input },

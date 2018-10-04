@@ -1,6 +1,6 @@
 <template>
   <section
-    :class="modifierClass"
+    :class="[modifierClass]"
   >
     <div
       v-if="$slots.category || category"
