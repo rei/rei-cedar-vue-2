@@ -1,9 +1,9 @@
 {
-  "name": "@rei/cdr-card",
-  "version": "0.2.2",
+  "name": "@rei/cdr-lead",
+  "version": "0.1.0",
   "author": "REI Software Engineering",
-  "description": "REI Cedar Style Framework - Vue Component for Card",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-card",
+  "description": "REI Cedar Style Framework - Vue Component for Lead",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-lead",
   "repository": {
     "type": "git",
     "url": "https://github.com/rei/rei-cedar.git"
@@ -16,22 +16,17 @@
   "files": [
     "dist"
   ],
-  "config": {
-    "vue_file": "CdrCard"
-  },
-  "main": "dist/cdr-card.js",
-  "style": "dist/cdr-card.css",
+  "main": "dist/cdr-lead.js",
+  "style": "dist/cdr-lead.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
-    "build": "node build/build.js",
-    "build:docs": "node build/docs-build.js"
+    "build": "node build/build.js"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.3.0",
     "@rei/cdr-rating": "^1.0.0-alpha.1",
     "@rei/cdr-list": "^1.0.0",
     "@rei/cdr-text": "^1.0.0",
-    "@rei/cdr-img": "^1.0.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
@@ -39,7 +34,9 @@
     "@rei/cdr-rating": "^1.0.0-alpha.1",
     "@rei/cdr-list": "^1.0.0",
     "@rei/cdr-text": "^1.0.0",
-    "@rei/cdr-img": "^1.0.0",
-    "pkg-ok": "^1.1.0"
+    "pkg-ok": "^2.1.0"
+  },
+  "dependencies": {
+    "npm": "^6.4.1"
   }
 }

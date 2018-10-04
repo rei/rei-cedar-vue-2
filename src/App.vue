@@ -55,6 +55,10 @@
     <layouts
       class="cgp-section"
     />
+    <lead-example
+      class="cpg-section"
+      data-backstop="lead"
+    />
     <lists
       class="cpg-section"
       data-backstop="lists"

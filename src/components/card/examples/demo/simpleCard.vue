@@ -1,52 +1,39 @@
 <template>
   <div class="temp">
     <cdr-card
-      card-img="https://picsum.photos/200/300"
-      card-img-alt="a randomly generated image for testing the cdr-card experience"
       :card-img-props="{
+        'src':'https://picsum.photos/200/300',
         'ratio': '16-9',
-        'cover': true
+        'cover': true,
+        'alt': 'this is the alt text for your image'
       }"
-      card-lable=""
-      card-title=""
-      card-url="https://www.rei.com"
-      :snapshot="['7.5 mi', 'out & back', '286 ft Ele Gain']"
     >
-      <span slot="cardMedia">
-        <cdr-img
-          src="
-https://www.rei.com/assets/drsp/2018/q2/campaign/summer/chapter-4/rei-backpacking-bundle/live.jpg
-         "
-          ratio="16-9"
-        />
-      </span>
-      <span slot="cardLabelSlot"> some other place </span>
-      <span slot="cardTitleSlot"> bob </span>
+      <cdr-lead
+        :rating-props="{
+          'rating':'5',
+          'count':'2',
+          'href':'https://www.rei.com',
+        }"
+        heading-level="4"
+        :snapshot="['7.5 mi', 'out & back', '286 ft Ele Gain']"
+        url="https://www.rei.com"
+      >
+        <span slot="category"> some other place </span>
+        <span slot="heading"> bob </span>
+      </cdr-lead>
     </cdr-card>
-    <cdr-card
-      card-img="
-https://www.rei.com/assets/drsp/2018/q2/campaign/summer/chapter-4/rei-backpacking-bundle/live.jpg"
-      card-img-alt="a randomly generated image for testing the cdr-card experience"
-      card-img-ratio="16-9"
-      card-img-cover
-      card-img-crop="top"
-      card-label="someplace"
-      card-title="this is a title"
-      card-title-level="4"
-      card-url="https://www.rei.com"
-      :snapshot="['7.5 mi', 'out & back', '286 ft Ele Gain']"
-    />
-
   </div>
 </template>
-
 <script>
 import Components from 'componentsdir/_index';
-
+import Compositions from 'compositionsdir/_index';
 
 export default {
   name: 'SimpleCard',
-  components: Components,
+  components: {
+    ...Components,
+    ...Compositions,
+  },
 };
 </script>
 <style>

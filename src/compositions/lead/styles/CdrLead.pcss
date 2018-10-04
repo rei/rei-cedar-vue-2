@@ -1,0 +1,123 @@
+/* ==========================================================================
+  # CdrLead
+  
+  All values should map to variables in
+  vars/CdrLead.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrLead
+========================================================================== */
+
+/* States
+  ---------- */
+
+/* hover */
+$activity-card-hover-box-shadow: $shadow-prominence-20;
+
+/* Elements
+  ========================================================================== */
+
+/* Snapshot
+  ========== */
+$activity-card-snapshot-font-size: $sys-font-redwood-dsp-20-font-size;
+$activity-card-snapshot-line-height: $sys-font-redwood-dsp-20-line-height;
+$activity-card-snapshot-text-align: $sys-font-redwood-dsp-20-text-align;
+$activity-card-snapshot-font-style: $sys-font-redwood-dsp-20-font-style;
+$activity-card-snapshot-font-weight: $sys-font-redwood-dsp-20-font-weight;
+$activity-card-snapshot-font-family: $sys-font-redwood-dsp-20-font-family;
+$activity-card-snapshot-color: $sys-color-activity-card-subtext;
+$activity-card-snapshot-margin-top: $space-xxs;
+$activity-card-snapshot-margin-bottom: $space-xxs;
+
+/* Label, Location
+  ========== */
+$activity-card-label-font-size: $sys-font-redwood-dsp-10-font-size;
+$activity-card-label-line-height: $sys-font-redwood-dsp-10-line-height;
+$activity-card-label-text-align: $sys-font-redwood-dsp-10-text-align;
+$activity-card-label-font-style: $sys-font-redwood-dsp-10-font-style;
+$activity-card-label-font-weight: $sys-font-redwood-dsp-10-font-weight;
+$activity-card-label-font-family: $sys-font-redwood-dsp-10-font-family;
+$activity-card-label-color: $sys-color-activity-card-subtext;
+$activity-card-label-margin-top: $space-xxs;
+$activity-card-label-margin-bottom: $space-xxs;
+
+/* Title
+  ========== */
+$activity-card-title-font-size: $sys-font-spruce-dsp-40-font-size;
+$activity-card-title-line-height: $sys-font-spruce-dsp-40-line-height;
+$activity-card-title-text-align: $sys-font-spruce-dsp-40-text-align;
+$activity-card-title-letter-spacing: $sys-font-spruce-dsp-40-letter-spacing;
+$activity-card-title-font-style: $sys-font-spruce-dsp-40-font-style;
+$activity-card-title-font-weight: $sys-font-spruce-dsp-40-font-weight;
+$activity-card-title-font-family: $sys-font-spruce-dsp-40-font-family;
+$activity-card-title-color: $sys-font-spruce-dsp-40-color;
+$activity-card-title-margin-top: $space-xxs;
+$activity-card-title-margin-bottom: $space-xxs;
+
+/* Action States
+  ---------- */
+
+/* hover */
+$activity-card-title-action-hover-color: $sys-color-link;
+$activity-card-title-action-hover-text-decoration: none;
+
+/* Rating
+  ========== */
+$activity-card-rating-margin-bottom: $space-sm;
+
+.cdr-lead {
+  /* Label, Location
+    ========== */
+  &__label,
+  &__location {
+    font-size: $activity-card-label-font-size;
+    line-height: $activity-card-label-line-height;
+    text-align: $activity-card-label-text-align;
+    font-style: $activity-card-label-font-style;
+    font-weight: $activity-card-label-font-weight;
+    font-family: $activity-card-label-font-family;
+    color: $activity-card-label-color;
+    margin-top: $activity-card-label-margin-top;
+    margin-bottom: $activity-card-label-margin-bottom;
+  }
+
+  /* Title
+    ========== */
+  &__title {
+    font-size: $activity-card-title-font-size;
+    line-height: $activity-card-title-line-height;
+    text-align: $activity-card-title-text-align;
+    letter-spacing: $activity-card-title-letter-spacing;
+    font-style: $activity-card-title-font-style;
+    font-weight: $activity-card-title-font-weight;
+    font-family: $activity-card-title-font-family;
+    color: $activity-card-title-color;
+    margin-top: $activity-card-title-margin-top;
+    margin-bottom: $activity-card-title-margin-bottom;
+
+    &--action {
+      position: static;
+      transition: color 500ms ease;
+    }
+  }
+
+  /* Snapshot
+    ========== */
+  &__snapshot {
+    font-size: $activity-card-snapshot-font-size;
+    line-height: $activity-card-snapshot-line-height;
+    text-align: $activity-card-snapshot-text-align;
+    font-style: $activity-card-snapshot-font-style;
+    font-weight: $activity-card-snapshot-font-weight;
+    font-family: $activity-card-snapshot-font-family;
+    color: $activity-card-snapshot-color;
+    margin-top: $activity-card-snapshot-margin-top;
+    margin-bottom: $activity-card-snapshot-margin-bottom;
+  }
+
+  &__rating {
+    margin-bottom: $activity-card-rating-margin-bottom;
+  }
+}
