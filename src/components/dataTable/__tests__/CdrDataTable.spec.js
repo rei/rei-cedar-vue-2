@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import CdrTable from 'componentsdir/table/CdrTable';
+import CdrTable from 'componentsdir/dataTable/CdrDataTable';
 import sinon from 'sinon';
 
 const data = {

@@ -1,7 +1,7 @@
-import CdrTable from '../CdrTable';
+import CdrDataTable from '../CdrDataTable';
 
 function install(Vue) {
-  Vue.component('cdr-table', CdrTable);
+  Vue.component('cdr-data-table', CdrDataTable);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -10,4 +10,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default install;
 
-export { CdrTable };
+export { CdrDataTable };

@@ -1,9 +1,9 @@
 {
-  "name": "@rei/cdr-table",
-  "version": "0.1.0-alpha.1",
+  "name": "@rei/cdr-data-table",
+  "version": "0.1.0-alpha.0",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Table",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-table",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-data-table",
   "repository": {
     "type": "git",
     "url": "https://github.com/rei/rei-cedar.git"
@@ -17,10 +17,10 @@
     "dist"
   ],
   "config": {
-    "vue_file": "CdrTable"
+    "vue_file": "CdrDataTable"
   },
-  "main": "dist/cdr-table.js",
-  "style": "dist/cdr-table.css",
+  "main": "dist/cdr-data-table.js",
+  "style": "dist/cdr-data-table.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "node build/build.js",

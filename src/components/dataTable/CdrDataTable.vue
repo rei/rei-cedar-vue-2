@@ -180,6 +180,6 @@ export default {
 
 <style module>
   @import '../../css/settings/_index.pcss';
-  @import './styles/vars/CdrTable.vars.pcss';
-  @import './styles/CdrTable.pcss';
+  @import './styles/vars/CdrDataTable.vars.pcss';
+  @import './styles/CdrDataTable.pcss';
 </style>
