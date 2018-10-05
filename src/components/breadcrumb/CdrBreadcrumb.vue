@@ -14,23 +14,28 @@
         v-if="truncate"
         @click="shouldTruncate = false"
         :class="$style['cdr-breadcrumb__item']">
-        <cdr-button
+        <!-- <cdr-button
           :icon-only="true"
           aria-expanded="false"
           aria-label="ellipsis"
           :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]">
-          <template name="icon">
-            <svg
-              :class="$style['cdr-breadcrumb__ellipses-icon']"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24">
-              <title>
-                ellipsis
-              </title>
-              <path d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-            </svg>
-          </template>
-        </cdr-button>
+          <template name="icon"> -->
+        <button
+          aria-expanded="false"
+          :class="$style['cdr-breadcrumb__ellipses']"
+          aria-label="ellipsis">
+          <svg
+            :class="$style['cdr-breadcrumb__ellipses-icon']"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24">
+            <title>
+              ellipsis
+            </title>
+            <path d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+          </svg>
+        </button>
+        <!-- </template>
+        </cdr-button> -->
         <span
           :class="$style['cdr-breadcrumb__delimiter']"
           aria-hidden="true">
@@ -68,16 +73,10 @@
 
 import modifier from 'mixinsdir/modifier';
 import breakpoints from 'mixinsdir/breakpoints';
-// import CdrIcon from 'componentsdir/icon/CdrIcon';
-import CdrButton from 'componentsdir/button/CdrButton';
 import debounce from 'lodash/debounce';
 
 export default {
   name: 'CdrBreadcrumb',
-  components: {
-    CdrButton,
-    // CdrIcon,
-  },
   mixins: [modifier, breakpoints],
   props: {
     /**
