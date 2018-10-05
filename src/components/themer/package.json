@@ -1,9 +1,9 @@
 {
-  "name": "@rei/cdr-tabs",
-  "version": "1.0.0-alpha.56",
+  "name": "@rei/cdr-themer",
+  "version": "0.1.0",
   "author": "REI Software Engineering",
-  "description": "REI Cedar Style Framework - Vue Component for Tabs",
-  "homepage": "https://rei.github.io/rei-cedar/#cdr-tabs",
+  "description": "REI Cedar Style Framework - Vue Component for Themer",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-themer",
   "repository": {
     "type": "git",
     "url": "https://github.com/rei/rei-cedar.git"
@@ -16,8 +16,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/cdr-tabs.js",
-  "style": "dist/cdr-tabs.css",
+  "main": "dist/cdr-themer.js",
+  "style": "dist/cdr-themer.css",
   "scripts": {
     "prepublishOnly": "npm run build && pkg-ok",
     "build": "node build/build.js"
@@ -29,8 +29,5 @@
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",
     "pkg-ok": "^2.1.0"
-  },
-  "dependencies": {
-    "lodash": "^4.17.10"
   }
 }
