@@ -14,12 +14,6 @@
         v-if="truncate"
         @click="shouldTruncate = false"
         :class="$style['cdr-breadcrumb__item']">
-        <!-- <cdr-button
-          :icon-only="true"
-          aria-expanded="false"
-          aria-label="ellipsis"
-          :class="[$style['cdr-breadcrumb__link'], $style['cdr-breadcrumb__ellipses']]">
-          <template name="icon"> -->
         <button
           aria-expanded="false"
           :class="$style['cdr-breadcrumb__ellipses']"
@@ -34,8 +28,6 @@
             <path d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
           </svg>
         </button>
-        <!-- </template>
-        </cdr-button> -->
         <span
           :class="$style['cdr-breadcrumb__delimiter']"
           aria-hidden="true">
