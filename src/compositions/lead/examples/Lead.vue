@@ -6,8 +6,9 @@
         'rating':'5',
         'count':'2',
         'href':'https://www.rei.com',
+        'theme':'light-secondary',
       }"
-      category="someplace"
+      label="someplace"
       heading="this is a title"
       heading-level="4"
       :snapshot="['7.5 mi', 'out & back', '286 ft Ele Gain']"

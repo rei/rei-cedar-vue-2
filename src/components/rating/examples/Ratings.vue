@@ -57,12 +57,14 @@
       count="615"
       modifier="small"
       compact
+      theme="light-secondary"
     />
     <cdr-rating
       rating="3"
       count="100"
       href="https://www.rei.com"
       modifier="small"
+      theme="light"
     />
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <section
-    :class="[modifierClass]"
+    :class="[modifierClass, themeClass]"
   >
     <div
       v-if="$slots.category || category"
@@ -43,7 +43,7 @@
       <cdr-rating
         v-if="ratingProps"
         v-bind="ratingProps"
-        modifier="medium"/>
+        modifier="medium" />
       <slot name="rating" />
     </div>
   </section>
@@ -54,6 +54,7 @@ import { CdrText } from '@rei/cdr-text';
 import { CdrList } from '@rei/cdr-list';
 import { CdrRating } from '@rei/cdr-rating';
 import modifier from 'mixinsdir/modifier';
+import themeable from 'mixinsdir/themeable';
 
 export default {
   name: 'CdrLead',
@@ -62,7 +63,7 @@ export default {
     CdrList,
     CdrRating,
   },
-  mixins: [modifier],
+  mixins: [modifier, themeable],
   props: {
     category: {
       type: String,

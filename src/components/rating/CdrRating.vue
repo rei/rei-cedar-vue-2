@@ -5,6 +5,7 @@
     :href="href"
     :class="[
       modifierClass,
+      themeClass,
       href ? $style['cdr-rating--linked'] : '',
     ]"
   >
@@ -58,6 +59,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import themeable from 'mixinsdir/themeable';
 
 /**
  * Cedar 2 component for rating
@@ -71,7 +73,7 @@ import modifier from 'mixinsdir/modifier';
  */
 export default {
   name: 'CdrRating',
-  mixins: [modifier],
+  mixins: [modifier, themeable],
   props: {
     /**
      * Rating value (out of 5)
@@ -126,4 +128,5 @@ export default {
 <style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrRating.pcss';
+  @import './styles/CdrRatingTheme.pcss';
 </style>
