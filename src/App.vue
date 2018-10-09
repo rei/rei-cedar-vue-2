@@ -37,6 +37,10 @@
       class="cpg-section"
       data-backstop="checkboxes"
     />
+    <data-table
+      class="cpg-section"
+      data-backstop="data-tables"
+    />
     <grid class="cpg-section"/>
     <texts class="cpg-section"/>
     <icons
@@ -85,7 +89,6 @@
       data-backstop="caption"
     />
 
-    <tables />
     <router-view />
   </div>
 </template>

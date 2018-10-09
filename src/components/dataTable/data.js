@@ -8,7 +8,7 @@ for (let i = 0; i < 2; i += 1) {
     record[header] = header;
   });
 
-  record.rowheader = 'Row header Row header Row header';
+  record.rowheader = 'Row header';
   records.push(record);
 }
 

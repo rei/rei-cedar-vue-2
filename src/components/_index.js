@@ -18,7 +18,7 @@ import CdrSelect from 'componentsdir/select/CdrSelect';
 import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
 import CdrTabs from 'componentsdir/tabs/CdrTabs';
 import CdrText from 'componentsdir/text/CdrText';
-import CdrTable from 'componentsdir/dataTable/CdrDataTable';
+import CdrDataTable from 'componentsdir/dataTable/CdrDataTable';
 import CdrAccordion from 'componentsdir/accordion/CdrAccordion';
 import CdrAccordionItem from 'componentsdir/accordion/CdrAccordionItem';
 
@@ -45,5 +45,5 @@ export default {
   CdrTabPanel,
   CdrTabs,
   CdrText,
-  CdrTable,
+  CdrDataTable,
 };

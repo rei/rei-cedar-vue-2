@@ -1,55 +1,66 @@
 <template>
   <div class="table-examples-wrapper">
-    <cdr-table
+
+    <cdr-data-table
       :col-headers="true"
       :row-headers="true"
       caption="Table with data fed in"
       id="manual-3-col"
     >
-      <template slot="col-headers">
-        <th
-          v-for="(header, index) in tableData.books.headers"
-          :key="index"
-        >
-          {{ header }}
-        </th>
+      <template slot="thead">
+        <tr>
+          <th
+            class="empty"
+            scope="col"
+          />
+          <th
+            v-for="(header, index) in tableData.books.headers"
+            :key="index"
+          >
+            {{ header }}
+          </th>
+        </tr>
       </template>
-      <tr
-        v-for="(record, index) in tableData.books.records"
-        :key="key + '_' + index"
-      >
-        <th>{{ record.rowheader }}</th>
-        <td
-          v-for="(colData, key, index) in record"
-          v-if="key !== 'rowheader'"
-          :key="index"
+      <template slot="tbody">
+        <tr
+          v-for="(record, index) in tableData.books.records"
+          :key="'tr_' + index"
         >
-          {{ colData }}
-        </td>
-      </tr>
-    </cdr-table>
+          <th>{{ record.rowheader }}</th>
+          <td
+            v-for="(colData, key, index) in record"
+            v-if="key !== 'rowheader'"
+            :key="index"
+          >
+            {{ colData }}
+          </td>
+        </tr>
+      </template>
+    </cdr-data-table>
 
-    <cdr-table
+    <cdr-data-table
       caption="Scroll example"
       :row-headers="true"
       id="manual-scroll"
     >
-      <tr
-        v-for="(record, key, index) in tableData.scroll.records"
-        :key="index + '_' + key"
-      >
-        <th>{{ record.rowheader }}</th>
-        <td
-          v-for="(colData, key, index) in record"
-          v-if="key !== 'rowheader'"
-          :key="key + '_' + index"
+      <template slot="tbody">
+        <tr
+          v-for="(record, key, index) in tableData.scroll.records"
+          :key="index + '_' + key"
         >
-          {{ colData }}
-        </td>
-      </tr>
-    </cdr-table>
+          <th>{{ record.rowheader }}</th>
+          <td
+            v-for="(colData, key, index) in record"
+            v-if="key !== 'rowheader'"
+            :key="key + '_' + index"
+          >
+            {{ colData }}
+          </td>
+        </tr>
+      </template>
+    </cdr-data-table>
 
-    <cdr-table
+    <!-- <cdr-data-table
       caption="Scroll example - No column headers"
       :row-headers="false"
       id="manual-full-scroll"
@@ -66,47 +77,50 @@
           {{ colData }}
         </td>
       </tr>
-    </cdr-table>
+    </cdr-data-table> -->
 
-    <cdr-table
+    <cdr-data-table
       modifier="compact borderless"
       caption="Full Manual - Compact & Borderless"
       summary="Summary"
       id="full-manual"
     >
-      <tr>
-        <th>Best Use</th>
-        <td>Casual</td>
-      </tr>
-      <tr>
-        <th>Fabric</th>
-        <td>Cotton canvas</td>
-      </tr>
-      <tr>
-        <th>Lining Fabric</th>
-        <td>Polyester microfleece/nylon</td>
-      </tr>
-      <tr>
-        <th>Hood</th>
-        <td>No</td>
-      </tr>
-      <tr>
-        <th>Black Length</th>
-        <td>Hip-length</td>
-      </tr>
-      <tr>
-        <th>Weight</th>
-        <td>Unavailable</td>
-      </tr>
-      <tr>
-        <th>Gender</th>
-        <td>Men's</td>
-      </tr>
-      <tr>
-        <th>Number</th>
-        <td class="content-align-right">25</td>
-      </tr>
-    </cdr-table>
+      <template slot="tbody">
+        <tr>
+          <th>Best Use</th>
+          <td>Casual</td>
+        </tr>
+        <tr>
+          <th>Fabric</th>
+          <td>Cotton canvas</td>
+        </tr>
+        <tr>
+          <th>Lining Fabric</th>
+          <td>Polyester microfleece/nylon</td>
+        </tr>
+        <tr>
+          <th>Hood</th>
+          <td>No</td>
+        </tr>
+        <tr>
+          <th>Black Length</th>
+          <td>Hip-length</td>
+        </tr>
+        <tr>
+          <th>Weight</th>
+          <td>Unavailable</td>
+        </tr>
+        <tr>
+          <th>Gender</th>
+          <td>Men's</td>
+        </tr>
+        <tr>
+          <th>Number</th>
+          <td class="content-align-right">25</td>
+        </tr>
+      </template>
+    </cdr-data-table>
+
   </div>
 </template>
 

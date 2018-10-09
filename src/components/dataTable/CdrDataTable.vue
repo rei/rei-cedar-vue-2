@@ -15,65 +15,51 @@
         { 'full-scroll': fullScroll },
         { 'is-scrolling': isScrolling },
       ]"
+      ref="scroll-container"
     >
       <table
         :class="$style['cdr-table__content']"
         :summary="summary ? summary : null"
       >
         <thead v-if="hasColHeaders">
-          <tr v-if="rowData.length > 0">
-            <th
-              class="empty"
-              v-show="hasRowHeaders"
-              scope="col"
-            />
-            <th
-              v-for="(header, index) in colHeaders"
-              :key="id + '_col-head_' + index"
-              scope="col"
-            >
-              {{ header }}
-            </th>
-          </tr>
-          <tr v-else>
-            <th
-              class="empty"
-              v-show="hasRowHeaders"
-              scope="col"
-            />
-            <slot name="col-headers" />
-          </tr>
+          <slot name="thead">
+            <tr>
+              <th
+                class="empty"
+                v-show="hasRowHeaders"
+                scope="col"
+              />
+              <th
+                v-for="(header, index) in colHeaders"
+                :key="id + '_col-head_' + index"
+                scope="col"
+              >
+                {{ header }}
+              </th>
+            </tr>
+          </slot>
         </thead>
 
-        <tbody v-if="rowData.length > 0">
-          <tr
-            v-for="(row, index) in rowData"
-            :key="id + '_row_' + index"
-          >
-            <!-- ROW HEADERS -->
-            <th
-              v-if="hasRowHeaders"
-              scope="row"
+        <tbody ref="table-body">
+          <slot name="tbody">
+            <tr
+              v-for="(row, index) in rowData"
+              :key="id + '_row_' + index"
             >
-              {{ rowHeaders[index] }}
-            </th>
-            <!-- <td
-              v-for="(col, key) in row"
-              :key="id + '_col_' + key"
-            >
-              {{ col }}
-            </td> -->
-            <td
-              v-for="(key, index) in keyOrder"
-              :key="id + '_' + index + '_' + key"
-            >
-              {{ row[key] }}
-            </td>
-          </tr>
-        </tbody>
-
-        <tbody v-else>
-          <slot />
+              <th
+                v-if="hasRowHeaders"
+                scope="row"
+              >
+                {{ rowHeaders[index] }}
+              </th>
+              <td
+                v-for="(key, index) in keyOrder"
+                :key="id + '_' + index + '_' + key"
+              >
+                {{ getCellContent(row, key) }}
+              </td>
+            </tr>
+          </slot>
         </tbody>
       </table>
     </div>
@@ -89,7 +75,7 @@ import debounce from 'lodash/debounce';
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
 export default {
-  name: 'CdrTable',
+  name: 'CdrDataTable',
   mixins: [modifier],
   props: {
     id: {
@@ -153,26 +139,27 @@ export default {
     this.hasRowHeaders = typeof this.rowHeaders === 'boolean' ?
       this.rowHeaders : this.rowHeaders.length > 0;
 
-    if (this.hasColHeaders && typeof this.colHeaders !== 'boolean') {
-      this.cols = this.colHeaders.length;
-    } else {
-      this.cols = this.$el.querySelector('tr').children.length;
-    }
+    this.cols = this.$refs['table-body'].querySelector('tr').children.length;
 
     this.checkScroll();
 
     window.addEventListener('resize', debounce(() => {
       this.checkScroll();
     }, 250));
-
-    console.log('mounted finished');
   },
   methods: {
     checkScroll() {
-      console.log('checkScroll ran!');
-      const scrollContainer = this.$el.children[1];
+      const scrollContainer = this.$refs['scroll-container'];
+
+      if (scrollContainer === undefined) {
+        return;
+      }
+
       this.clientWidth = scrollContainer.clientWidth;
       this.scrollWidth = scrollContainer.scrollWidth;
+    },
+    getCellContent(row, key) {
+      return row[key] || '';
     },
   },
 };
@@ -180,6 +167,5 @@ export default {
 
 <style module>
   @import '../../css/settings/_index.pcss';
-  @import './styles/vars/CdrDataTable.vars.pcss';
   @import './styles/CdrDataTable.pcss';
 </style>
