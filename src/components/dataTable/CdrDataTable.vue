@@ -5,10 +5,10 @@
     <span
       v-show="caption"
       class="caption"
+      aria-hidden="true"
     >
       {{ caption }}
     </span>
-    <caption class="cdr-sr-only">{{ caption }}</caption>
     <div
       :class="[
         $style['cdr-table__scroll-container'],
@@ -21,6 +21,12 @@
         :class="$style['cdr-table__content']"
         :summary="summary ? summary : null"
       >
+        <caption
+          class="cdr-sr-only"
+          v-show="caption"
+        >
+          {{ caption }}
+        </caption>
         <thead v-if="hasColHeaders">
           <slot name="thead">
             <tr>
