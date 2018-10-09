@@ -199,4 +199,21 @@ describe('CdrTabs.vue', () => {
     wrapper.vm.initializeOffsets();
     expect(wrapper.vm.underlineWidth).toBe(-1);
   });
+
+  it('scrollbar is hidden properly', (done) => {
+    const wrapper = shallowMount(CdrTabs, {
+      slots: {
+        default: [CdrTabPanel, CdrTabPanel]
+      }
+    });
+    wrapper.vm.widthInitialized = true;
+    wrapper.vm.underlineWidth = -1;
+    wrapper.vm.hideScrollBar();
+    expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('hidden');
+    window.dispatchEvent(new Event('transitionend'));
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('unset');
+      done();
+    });
+  });
 });

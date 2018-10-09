@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-tabs",
-  "version": "1.0.0-alpha.50",
+  "version": "1.0.0-alpha.56",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Tabs",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-tabs",
