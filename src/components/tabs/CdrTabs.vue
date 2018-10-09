@@ -21,10 +21,11 @@
           ref="cdrTabsHeader">
           <li
             v-for="tab in tabs"
+            role="tab"
+            :aria-selected="tab.active"
             :key="tab.id"
             :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]">
             <a
-              role="tab"
               :tabindex="[ tab.active ? 1 : -1 ]"
               @click.prevent="handleClick(tab, $event)"
               :href="tab.name"
@@ -124,10 +125,6 @@ export default {
         }
       });
       this.updateUnderline();
-      // this.underlineOffsetX =
-      //   event.currentTarget.offsetLeft
-      //   - event.currentTarget.parentElement.parentElement.parentElement.scrollLeft;
-      // this.underlineWidth = event.currentTarget.offsetWidth;
     },
     initializeOffsets() {
       if (!this.widthInitialized) {
@@ -191,11 +188,6 @@ export default {
             this.animationInProgress = false;
           }, 600);
           this.updateUnderline();
-          // this.underlineOffsetX =
-          // this.$refs.cdrTabsHeader.children[this.activeTabIndex].offsetLeft
-          //   - this.$refs.cdrTabsHeader.offsetLeft;
-          // this.underlineWidth =
-          //   this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].offsetWidth;
           this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
         }
       }
