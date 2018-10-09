@@ -46,7 +46,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
-import debounce from 'lodash/debounce';
+import { debounce, delay } from 'lodash';
 
 export default {
   name: 'CdrTabs',
@@ -62,11 +62,13 @@ export default {
       tabs: [],
       underlineOffsetX: 0,
       underlineWidth: 0,
-      widthInitialized: false,
+      underlineScrollX: 0,
       activeTabIndex: 0,
+      widthInitialized: false,
       headerOverflow: false,
       overflowLeft: false,
       overflowRight: false,
+      animationInProgress: false,
     };
   },
   computed: {
@@ -88,11 +90,14 @@ export default {
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
       this.headerWidth = this.getHeaderWidth();
-      this.calculateOverflow();
-    }, 250));
+      this.$nextTick(() => {
+        this.calculateOverflow();
+      });
+    }, 500));
     // Check for header overflow on widow resize for gradient behavior.
     this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
       this.calculateOverflow();
+      this.updateUnderline();
     }, 250));
     this.headerWidth = this.getHeaderWidth();
   },
@@ -100,7 +105,7 @@ export default {
     this.initializeOffsets();
   },
   methods: {
-    handleClick(tabClicked, event) {
+    handleClick(tabClicked) {
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {
         if (newSelectedTab.name === tab.name) {
@@ -118,10 +123,11 @@ export default {
           this.$nextTick(tab.setActive(false));
         }
       });
-      this.underlineOffsetX =
-        event.currentTarget.offsetLeft
-        - event.currentTarget.parentElement.parentElement.offsetLeft;
-      this.underlineWidth = event.currentTarget.offsetWidth;
+      this.updateUnderline();
+      // this.underlineOffsetX =
+      //   event.currentTarget.offsetLeft
+      //   - event.currentTarget.parentElement.parentElement.parentElement.scrollLeft;
+      // this.underlineWidth = event.currentTarget.offsetWidth;
     },
     initializeOffsets() {
       if (!this.widthInitialized) {
@@ -131,7 +137,10 @@ export default {
       }
     },
     calculateOverflow() {
-      const containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
+      let containerWidth = 0;
+      if (this.$refs.cdrTabsContainer) {
+        containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
+      }
       this.headerOverflow = this.headerWidth > containerWidth;
       if (this.headerOverflow) {
         // Get Scroll Position
@@ -143,40 +152,59 @@ export default {
         this.overflowRight = false;
       }
     },
-    handleArrowNav(event) {
-      if (event.which === 39) {
-        // navigate right
-        if (this.activeTabIndex < (this.tabs.length - 1)) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
-          this.hideScrollBar();
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex += 1;
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-        }
-      } else if (event.which === 37) {
-        // navigate left
-        if (this.activeTabIndex > 0) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
-          this.hideScrollBar();
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex -= 1;
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-        }
+    updateUnderline() {
+      const elements = Array.from(this.$refs.cdrTabsHeader.children);
+      if (elements) {
+        const activeTab = elements[this.activeTabIndex];
+        this.underlineOffsetX = activeTab.offsetLeft
+          - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
+        this.underlineWidth = activeTab.firstChild.offsetWidth;
       }
-      if (this.$refs.cdrTabsHeader.children[this.activeTabIndex] &&
-        (event.which === 37 || event.which === 39)) {
-        this.underlineOffsetX =
-        this.$refs.cdrTabsHeader.children[this.activeTabIndex].offsetLeft
-          - this.$refs.cdrTabsHeader.offsetLeft;
-        this.underlineWidth =
-          this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].offsetWidth;
-        this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+    },
+    handleArrowNav(event) {
+      if (!this.animationInProgress) {
+        if (event.which === 39) {
+          // navigate right
+          if (this.activeTabIndex < (this.tabs.length - 1)) {
+            this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
+            this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
+            this.hideScrollBar();
+            this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
+            this.activeTabIndex += 1;
+            this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
+          }
+        } else if (event.which === 37) {
+          // navigate left
+          if (this.activeTabIndex > 0) {
+            this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
+            this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
+            this.hideScrollBar();
+            this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
+            this.activeTabIndex -= 1;
+            this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
+          }
+        }
+        if (this.$refs.cdrTabsHeader.children[this.activeTabIndex] &&
+          (event.which === 37 || event.which === 39)) {
+          this.animationInProgress = true;
+          delay(() => {
+            this.animationInProgress = false;
+          }, 600);
+          this.updateUnderline();
+          // this.underlineOffsetX =
+          // this.$refs.cdrTabsHeader.children[this.activeTabIndex].offsetLeft
+          //   - this.$refs.cdrTabsHeader.offsetLeft;
+          // this.underlineWidth =
+          //   this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].offsetWidth;
+          this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+        }
       }
     },
     getHeaderWidth() {
-      const headerElements = Array.from(this.$refs.cdrTabsHeader.children);
+      let headerElements = [];
+      if (this.$refs.cdrTabsHeader) {
+        headerElements = Array.from(this.$refs.cdrTabsHeader.children);
+      }
       let totalWidth = 0;
       headerElements.forEach((element) => {
         totalWidth += element.offsetWidth || 0;
