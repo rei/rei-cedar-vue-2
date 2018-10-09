@@ -11,7 +11,6 @@ export default {
   computed: {
     modifierClass() {
       const base = this.baseClass;
-      console.log('base', this.base);
       const modifierArr = this.modifier ? this.modifier.split(' ') : [];
       let final = [];
 

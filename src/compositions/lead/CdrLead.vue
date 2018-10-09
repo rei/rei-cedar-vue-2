@@ -43,7 +43,8 @@
       <cdr-rating
         v-if="ratingProps"
         v-bind="ratingProps"
-        modifier="medium" />
+        modifier="medium"
+        :theme="ratingTheme" />
       <slot name="rating" />
     </div>
   </section>
@@ -69,15 +70,31 @@ export default {
       type: String,
       required: false,
     },
+    categoryTheme: {
+      type: String,
+      default: 'secondary',
+    },
     ratingProps: Object,
     snapshot: {
       type: Array,
       default: () => [],
     },
+    snapshotTheme: {
+      type: String,
+      default: 'secondary',
+    },
+    ratingTheme: {
+      type: String,
+      default: 'light-secondary',
+    },
     heading: String,
     headingLevel: {
       type: [String, Number],
       default: '3',
+    },
+    headingTheme: {
+      type: String,
+      default: 'primary',
     },
     url: {
       type: String,

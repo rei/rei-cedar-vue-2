@@ -6,7 +6,6 @@
         'rating':'5',
         'count':'2',
         'href':'https://www.rei.com',
-        'theme':'light-secondary',
       }"
       label="someplace"
       heading="this is a title"
