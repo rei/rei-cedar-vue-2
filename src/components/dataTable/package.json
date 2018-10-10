@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-data-table",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Table",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-data-table",
@@ -31,7 +31,7 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.1.0",
+    "@rei/cdr-assets": "^0.3.0",
     "@rei/cdr-tokens": "^0.1.7",
     "pkg-ok": "^2.1.0"
   },
