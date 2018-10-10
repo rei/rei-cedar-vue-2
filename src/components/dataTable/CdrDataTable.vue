@@ -11,14 +11,14 @@
     </span>
     <div
       :class="[
-        $style['cdr-table__scroll-container'],
+        $style['cdr-data-table__scroll-container'],
         { 'full-scroll': fullScroll },
         { 'is-scrolling': isScrolling },
       ]"
       ref="scroll-container"
     >
       <table
-        :class="$style['cdr-table__content']"
+        :class="$style['cdr-data-table__content']"
         :summary="summary ? summary : null"
       >
         <caption
@@ -129,7 +129,7 @@ export default {
   },
   computed: {
     baseClass() {
-      return 'cdr-table';
+      return 'cdr-data-table';
     },
     fullScroll() {
       return this.cols <= 2 || !this.rowHeaders;

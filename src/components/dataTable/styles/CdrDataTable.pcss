@@ -1,18 +1,18 @@
 /* ==========================================================================
-  # CdrTable
+  # CdrDataTable
   
   All values should map to variables in
-  vars/CdrTable.vars.pcss
+  vars/CdrDataTable.vars.pcss
   in order to allow for theming
 
   TOC:
 
-    :Base - CdrTable
+    :Base - CdrDataTable
       :States
         :Breakpoint Variants
 ========================================================================= */
 
-.cdr-table {
+.cdr-data-table {
   @include redwood-display-20();
 
   position: relative;
@@ -30,7 +30,7 @@
     &:global(.full-scroll) {
       margin-left: 0;
 
-      .cdr-table__content {
+      .cdr-data-table__content {
         th.empty,
         tbody th {
           position: relative;
