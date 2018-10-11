@@ -157,12 +157,10 @@ export default {
     checkScroll() {
       const scrollContainer = this.$refs['scroll-container'];
 
-      if (scrollContainer === undefined) {
-        return;
+      if (scrollContainer !== undefined) {
+        this.clientWidth = scrollContainer.clientWidth;
+        this.scrollWidth = scrollContainer.scrollWidth;
       }
-
-      this.clientWidth = scrollContainer.clientWidth;
-      this.scrollWidth = scrollContainer.scrollWidth;
     },
     getCellContent(row, key) {
       return row[key] || '';

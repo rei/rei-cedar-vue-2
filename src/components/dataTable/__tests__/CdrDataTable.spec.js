@@ -1,5 +1,5 @@
-import { shallowMount } from '@vue/test-utils';
-import CdrTable from 'componentsdir/dataTable/CdrDataTable';
+import { shallowMount, mount } from '@vue/test-utils';
+import CdrDataTable from 'componentsdir/dataTable/CdrDataTable';
 import sinon from 'sinon';
 
 const data = {
@@ -54,11 +54,11 @@ const data = {
   ],
 };
 
-describe('CdrTable.vue', () => {
+describe('CdrDataTable.vue', () => {
 
   describe('mounted hook', () => {
     it('sets hasColHeaders, hasRowHeaders with boolean', () => {
-      const wrapper = shallowMount(CdrTable, {
+      const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: true,
           rowHeaders: true,
@@ -72,7 +72,7 @@ describe('CdrTable.vue', () => {
     });
 
     it ('sets hasColHeaders, hasRowHeaders with data array', () => {
-      const wrapper = shallowMount(CdrTable, {
+      const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: ['test', 'test2'],
           rowHeaders: ['test', 'test2'],
@@ -85,10 +85,10 @@ describe('CdrTable.vue', () => {
       expect(wrapper.vm.hasRowHeaders).toBe(true);
     });
 
-    xit('adds resize event watcher', (done) => {
-      // console.log('cdrTable', CdrTable.methods.checkScroll);
-      const spy = sinon.spy(CdrTable.methods, 'checkScroll');
-      const wrapper = shallowMount(CdrTable, {
+    it('adds resize event watcher', (done) => {
+      const spy = sinon.spy(CdrDataTable.methods, 'checkScroll');
+      
+      const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: data.colHeaders,
           rowHeaders: data.rowHeaders,
@@ -97,21 +97,17 @@ describe('CdrTable.vue', () => {
           caption: "Test"
         }
       });
-      console.log('checkScroll', wrapper.vm.checkScroll());
-
-      // console.log('spy', spy);
+      
       window.dispatchEvent(new Event('resize'));
       wrapper.vm.$nextTick(() => {
-        console.log('next tick');
-        expect(spy).not.toBeCalled();
-        console.log('spy to have been called');
+        sinon.assert.called(spy);
         done()
       });
     });
 
     describe('computed properties', () => {
       it('fullScroll checks number of columns', () => {
-        const wrapper = shallowMount(CdrTable, {
+        const wrapper = shallowMount(CdrDataTable, {
           propsData: {
             colHeaders: ['col1', 'col2'],
             rowHeaders: ['row1', 'row2'],
@@ -125,7 +121,7 @@ describe('CdrTable.vue', () => {
       });
 
       it('fullScroll checks hasRowHeaders', () => {
-        const wrapper = shallowMount(CdrTable, {
+        const wrapper = shallowMount(CdrDataTable, {
           propsData: {
             colHeaders: ['col1', 'col2', 'col3'],
             rowHeaders: false,
@@ -139,7 +135,7 @@ describe('CdrTable.vue', () => {
       });
 
       it('isScrolling checks fullScroll', () => {
-        const wrapper = shallowMount(CdrTable, {
+        const wrapper = shallowMount(CdrDataTable, {
           propsData: {
             colHeaders: ['col1', 'col2', 'col3'],
             rowHeaders: ['row1', 'row2', 'row3'],
@@ -154,8 +150,8 @@ describe('CdrTable.vue', () => {
     });
 
     describe('methods', () => {
-      it('checkScroll', () => {
-        const wrapper = shallowMount(CdrTable, {
+      it('checkScroll sets clientWidth and scrollWidth', () => {
+        const wrapper = shallowMount(CdrDataTable, {
           propsData: {
             colHeaders: ['col1', 'col2', 'col3'],
             rowHeaders: ['row1', 'row2', 'row3'],
@@ -171,7 +167,6 @@ describe('CdrTable.vue', () => {
         });
 
         wrapper.vm.checkScroll();
-
         expect(wrapper.vm.clientWidth).not.toBe(500);
         expect(wrapper.vm.scrollWidth).not.toBe(500);
       });
