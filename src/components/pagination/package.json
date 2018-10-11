@@ -24,10 +24,14 @@
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.3.0",
+    "@rei/cdr-icon": "^1.0.0",
+    "@rei/cdr-select": "^0.1.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",
+    "@rei/cdr-icon": "^1.0.0",
+    "@rei/cdr-select": "^0.1.0",
     "pkg-ok": "^2.1.0"
   }
 }

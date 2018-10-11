@@ -1,49 +1,77 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <ul :class="$style['cdr-pagination']">
-    <li
-      v-if="localCurrent > 1"
-    >
-      <a
-        :class="$style['cdr-pagination__link']"
-        :href="`?page=${prevPage}`"
-        @click="$emit('change', prevPage, $event)"
-      >Previous</a>
-    </li>
-    <li
-      v-for="n in pagination(localCurrent, totalPages)"
-      :key="`${n}-${guid()}`"
-    >
-      <a
-        v-if="n !== '...'"
-        :class="[
-          $style['cdr-pagination__link'],
-          {'current': n === localCurrent}
-        ]"
-        :href="`?page=${n}`"
-        @click="$emit('change', n, $event)"
-      >{{ n }}</a>
-      <span
-        v-else
-        :class="$style['cdr-pagination__ellipse']"
-      >{{ n }}</span>
-    </li>
-    <li
-      v-if="localCurrent < totalPages"
-    >
-      <a
-        :class="$style['cdr-pagination__link']"
-        :href="`?page=${nextPage}`"
-        @click="$emit('change', nextPage, $event)"
-      >Next</a>
-    </li>
-  </ul>
+  <div :class="$style['cdr-pagination-wrap']">
+    <ul :class="$style['cdr-pagination']">
+      <li
+        v-if="localCurrent > 1"
+      >
+        <a
+          :class="[
+            $style['cdr-pagination__link'],
+            $style['cdr-pagination__prev'],
+          ]"
+          :href="`?page=${prevPage}`"
+          @click="$emit('change', prevPage, $event)"
+        ><icon-caret-left
+          :class="[
+            $style['cdr-pagination__caret'],
+            $style['cdr-pagination__caret--prev']
+          ]"
+          modifier="sm" />Previous
+        </a>
+      </li>
+      <li
+        v-for="n in pagination(localCurrent, totalPages)"
+        :key="`${n}-${guid()}`"
+        :class="$style['cdr-pagination__li']"
+      >
+        <a
+          v-if="n !== '&hellip;'"
+          :class="[
+            $style['cdr-pagination__link'],
+            {'current': n === localCurrent}
+          ]"
+          :href="`?page=${n}`"
+          @click="$emit('change', n, $event)"
+        >{{ n }}</a>
+        <span
+          v-else
+          :class="$style['cdr-pagination__ellipse']"
+          v-html="n"
+        />
+      </li>
+      <li
+        v-if="localCurrent < totalPages"
+      >
+        <a
+          :class="[
+            $style['cdr-pagination__link'],
+            $style['cdr-pagination__next'],
+          ]"
+          :href="`?page=${nextPage}`"
+          @click="$emit('change', nextPage, $event)"
+        >Next<icon-caret-right
+          :class="[
+            $style['cdr-pagination__caret'],
+            $style['cdr-pagination__caret--next']
+          ]"
+          modifier="sm" />
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
+import { IconCaretLeft, IconCaretRight } from '@rei/cdr-icon';
+
 export default {
   name: 'CdrPagination',
+  components: {
+    IconCaretLeft,
+    IconCaretRight,
+  },
   model: {
     prop: 'currentPage',
     event: 'change',
@@ -116,10 +144,10 @@ export default {
       }
 
       if ((current - delta > 2) && over5) {
-        range.unshift('...');
+        range.unshift('&hellip;');
       }
       if ((current + delta < total - 1) && over5remain) {
-        range.push('...');
+        range.push('&hellip;');
       }
 
       range.unshift(1);

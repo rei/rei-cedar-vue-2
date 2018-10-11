@@ -10,18 +10,68 @@
     :Base - CdrPagination
 ========================================================================== */
 
+.cdr-pagination-wrap {
+  display: flex;
+  justify-content: space-around;
+}
+
 .cdr-pagination {
   display: flex;
+  align-items: center;
   list-style: none;
   padding: 0;
 
-  &__link,
-  &__ellipse {
-    padding: 10px;
+  &__li {
+    & + & {
+      margin-left: $space-1-x;
+    }
+  }
+
+  &__link {
+    @include redwood-display-30();
+
+    color: $text-color-primary-on-light;
     display: block;
+    padding: $inset-three-quarter-x-squish;
+    text-decoration: none;
 
     &:global(.current) {
-      border: 1px solid black;
+      border: 1px solid $taken-for-granite;
+      border-radius: $radius-softer;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $text-color-primary-on-light;
+      text-decoration: underline;
+    }
+  }
+
+  &__ellipse {
+    display: block;
+    padding: $inset-three-quarter-x-squish;
+  }
+
+  &__prev {
+    display: flex;
+    align-items: center;
+    margin-right: $space-2-x;
+  }
+
+  &__next {
+    display: flex;
+    align-items: center;
+    margin-left: $space-2-x;
+  }
+
+  &__caret {
+    &--prev {
+      margin-right: $space-eighth-x;
+    }
+
+    &--next {
+      margin-left: $space-eighth-x;
     }
   }
 }
