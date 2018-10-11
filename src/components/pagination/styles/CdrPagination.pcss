@@ -9,3 +9,19 @@
 
     :Base - CdrPagination
 ========================================================================== */
+
+.cdr-pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+
+  &__link,
+  &__ellipse {
+    padding: 10px;
+    display: block;
+
+    &:global(.current) {
+      border: 1px solid black;
+    }
+  }
+}

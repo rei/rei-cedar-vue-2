@@ -1,11 +1,12 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <ul>
+  <ul :class="$style['cdr-pagination']">
     <li
       v-if="localCurrent > 1"
     >
       <a
+        :class="$style['cdr-pagination__link']"
         :href="`?page=${prevPage}`"
         @click="$emit('change', prevPage, $event)"
       >Previous</a>
@@ -16,15 +17,23 @@
     >
       <a
         v-if="n !== '...'"
+        :class="[
+          $style['cdr-pagination__link'],
+          {'current': n === localCurrent}
+        ]"
         :href="`?page=${n}`"
         @click="$emit('change', n, $event)"
-      >{{ n }}{{ n === localCurrent ? '&lt;' : '' }}</a>
-      <span v-else>{{ n }}</span>
+      >{{ n }}</a>
+      <span
+        v-else
+        :class="$style['cdr-pagination__ellipse']"
+      >{{ n }}</span>
     </li>
     <li
       v-if="localCurrent < totalPages"
     >
       <a
+        :class="$style['cdr-pagination__link']"
         :href="`?page=${nextPage}`"
         @click="$emit('change', nextPage, $event)"
       >Next</a>
@@ -46,13 +55,6 @@ export default {
     totalPages: {
       type: Number,
       required: true,
-    },
-    /**
-     * Number of pages to show on either side of current page
-     */
-    range: {
-      type: Number,
-      default: 1,
     },
     // TODO: assign link hrefs based on user data
     urls: {
@@ -83,21 +85,40 @@ export default {
   },
   methods: {
     pagination(current, total) {
-      const delta = this.range;
-      const range = [];
+      const delta = 1;
+      let range = [];
+      let over5 = true;
+      let over5remain = true;
 
-      for (
-        let i = Math.max(2, current - delta);
-        i <= Math.min(total - 1, current + delta);
-        i += 1
-      ) {
-        range.push(i);
+      if (total <= 7) {
+        // [1-7]
+        return Array(total).fill().map((_, i) => i + 1);
       }
 
-      if (current - delta > 2) {
+      if (current < 5) {
+      // first 5 pages
+        over5 = false;
+        // [2-5]
+        range = Array(5).fill().map((_, i) => i + 1).slice(1);
+      } else if (total - current < 4) {
+      // last 5 pages
+        over5remain = false;
+        range = Array(4).fill().map((_, i) => total - (i + 1)).reverse();
+      } else {
+      // in between
+        for (
+          let i = Math.max(2, current - delta);
+          i <= Math.min(total - 1, current + delta);
+          i += 1
+        ) {
+          range.push(i);
+        }
+      }
+
+      if ((current - delta > 2) && over5) {
         range.unshift('...');
       }
-      if (current + delta < total - 1) {
+      if ((current + delta < total - 1) && over5remain) {
         range.push('...');
       }
 
@@ -118,7 +139,7 @@ export default {
 };
 </script>
 
-<style>
+<style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrPagination.pcss';
 </style>
