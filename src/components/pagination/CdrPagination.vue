@@ -76,7 +76,8 @@ export default {
   },
   props: {
     /**
-     * Object of page numbers/urls
+     * Object of page numbers/urls. key=number, value=url.
+     * {"1": "url1", "2": "url2"}
      */
     pages: {
       type: Object,
@@ -93,6 +94,9 @@ export default {
     };
   },
   computed: {
+    /**
+     * Returns array from pages. {"1": "url1", "2": "url2"} --> ['1', '2']
+     */
     pageNumbers() {
       return Object.keys(this.pages);
     },
@@ -112,6 +116,25 @@ export default {
     },
   },
   methods: {
+    /**
+     * Creates an array of the pages that should be shown as links with logic for truncation.
+     *
+     * If total = 20 ([num] indicates current page)
+     * [1] 2 3 4 5 ... 20
+     * 1 2 3 [4] 5 ... 20
+     * 1 ... 4 [5] 6 ... 20
+     * 1 ... 15 [16] 17 ... 20
+     * 1 ... 16 [17] 18 19 20
+     *
+     * If total 5 (or anything <= 7)
+     * [1] 2 3 4 5
+     * 1 2 [3] 4 5
+     * 1 2 3 4 [5]
+     *
+     * Degrades for prev/next only scenario
+     * urls = {"4": "url4", "5": "url5", "6": "url6"} (assuming current page is 5)
+     * 4 [5] 6
+     */
     pagination(current, total) {
       const delta = 1;
       let range = [];
@@ -124,16 +147,16 @@ export default {
       }
 
       if (current < 5) {
-      // first 5 pages
+      // if first 5 pages
         over5 = false;
         // [2-5]
         range = Array(5).fill().map((_, i) => i + 1).slice(1);
       } else if (total - current < 4) {
-      // last 5 pages
+      // if last 5 pages
         over5remain = false;
         range = Array(4).fill().map((_, i) => total - (i + 1)).reverse();
       } else {
-      // in between
+      // else in between
         for (
           let i = Math.max(2, current - delta);
           i <= Math.min(total - 1, current + delta);
@@ -170,4 +193,8 @@ export default {
 <style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrPagination.pcss';
+</style>
+
+<style>
+  @import '@rei/cdr-icon/dist/cdr-icon.css';
 </style>
