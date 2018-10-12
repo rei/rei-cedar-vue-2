@@ -16,39 +16,32 @@ export default {
   },
   computed: {
     contentPriorityClass() {
-      const base = this.baseClass;
-      const contentPriorityArr = this.contentPriority
-        ? this.contentPriority.split(' ')
-        : [];
-      let final = [];
-
-      if (!this.$style) {
-        final.push(`${base}`);
-        final = final.concat(contentPriorityArr.map(mod => this.modifyClassName(base, mod)));
-      } else {
-        final.push(this.moduleClass(base));
-        final = final.concat(contentPriorityArr.map(mod => this.modifyClassName(base, mod)));
-      }
-
-      return final.join(' ');
+      return this.buildClass('contentPriority');
     },
     modifierClass() {
-      const base = this.baseClass;
-      const modifierArr = this.modifier ? this.modifier.split(' ') : [];
-      let final = [];
-
-      if (!this.$style) {
-        final.push(`${base}`);
-        final = final.concat(modifierArr.map(mod => this.modifyClassName(base, mod)));
-      } else {
-        final.push(this.moduleClass(base));
-        final = final.concat(modifierArr.map(mod => this.modifyClassName(base, mod)));
-      }
-
-      return final.join(' ');
+      return this.buildClass('modifier');
     },
   },
   methods: {
+    /**
+     *
+     * @param {String} prop -- the prop to build classes from
+     */
+    buildClass(prop) {
+      const base = this.baseClass;
+      const propArgsArr = this[prop] ? this[prop].split(' ') : [];
+      let final = [];
+
+      if (!this.$style) {
+        final.push(`${base}`);
+        final = final.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
+      } else {
+        final.push(this.moduleClass(base));
+        final = final.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
+      }
+
+      return final.join(' ');
+    },
     /**
      * Returns a css module class
      */
