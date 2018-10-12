@@ -12,13 +12,13 @@
     </div>
 
     <cdr-pagination
-      :total-pages="total"
+      :pages="makePages(20, 'router-page')"
       v-model="ex1Page"
       @change="doChange"
     />
 
     <cdr-pagination
-      :total-pages="833"
+      :pages="makePages(ex2Pages, 'router-page', ex2Page - 2)"
       v-model="ex2Page"
       @change="doChange"
     />
@@ -93,21 +93,28 @@ export default {
     return {
       paginationData,
       ex1Page: 1,
-      ex2Page: 10,
+      ex2Page: 5,
       ex3Page: 1,
     };
   },
   computed: {
-    total() {
-      return Object.keys(this.paginationData.example1).length;
-    },
-    computedUrls() {
-      const urls = [];
-      Object.keys(this.paginationData.example1);
-      return urls;
+    ex2Pages() {
+      if (this.ex2Page === 1 || this.ex2Page === 10) {
+        return 2;
+      }
+      return 3;
     },
   },
   methods: {
+    makePages(total, arg = 'page', startingAt = 0) {
+      const adjuster = startingAt > 0 ? startingAt : 0;
+      const obj = {};
+      const arr = Array(total).fill().map((_, i) => i + adjuster + 1);
+      arr.forEach((n) => {
+        obj[n] = `?${arg}=${n}`;
+      });
+      return obj;
+    },
     doChange(num, e) {
       e.preventDefault();
       console.log('changed', num); // eslint-disable-line

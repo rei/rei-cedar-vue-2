@@ -1,23 +1,21 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <div :class="$style['cdr-pagination-wrap']">
+  <nav aria-label="Pagination Navigation">
     <ul :class="$style['cdr-pagination']">
       <li
-        v-if="localCurrent > 1"
+        v-if="localCurrent > pageNumbers[0]"
       >
         <a
           :class="[
             $style['cdr-pagination__link'],
             $style['cdr-pagination__prev'],
           ]"
-          :href="`?page=${prevPage}`"
+          :href="pages[prevPage]"
+          :aria-label="`Go to previous Page`"
           @click="$emit('change', prevPage, $event)"
         ><icon-caret-left
-          :class="[
-            $style['cdr-pagination__caret'],
-            $style['cdr-pagination__caret--prev']
-          ]"
+          :class="$style['cdr-pagination__caret--prev']"
           modifier="sm" />Previous
         </a>
       </li>
@@ -32,7 +30,9 @@
             $style['cdr-pagination__link'],
             {'current': n === localCurrent}
           ]"
-          :href="`?page=${n}`"
+          :href="pages[n]"
+          :aria-label=" n === localCurrent ? `Current page, page ${n}` : `Go to page ${n}`"
+          :aria-current="n === localCurrent"
           @click="$emit('change', n, $event)"
         >{{ n }}</a>
         <span
@@ -42,25 +42,23 @@
         />
       </li>
       <li
-        v-if="localCurrent < totalPages"
+        v-if="localCurrent < pageNumbers[totalPages - 1]"
       >
         <a
           :class="[
             $style['cdr-pagination__link'],
             $style['cdr-pagination__next'],
           ]"
-          :href="`?page=${nextPage}`"
+          :href="pages[nextPage]"
+          :aria-label="`Go to next page`"
           @click="$emit('change', nextPage, $event)"
         >Next<icon-caret-right
-          :class="[
-            $style['cdr-pagination__caret'],
-            $style['cdr-pagination__caret--next']
-          ]"
+          :class="$style['cdr-pagination__caret--next']"
           modifier="sm" />
         </a>
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -78,17 +76,13 @@ export default {
   },
   props: {
     /**
-     * Total number of pages
+     * Object of page numbers/urls
      */
-    totalPages: {
-      type: Number,
+    pages: {
+      type: Object,
       required: true,
     },
-    // TODO: assign link hrefs based on user data
-    urls: {
-      type: Array,
-    },
-    /** @ignore */
+    /** @ignore used for binding v-model */
     currentPage: {
       type: Number,
     },
@@ -99,6 +93,12 @@ export default {
     };
   },
   computed: {
+    pageNumbers() {
+      return Object.keys(this.pages);
+    },
+    totalPages() {
+      return this.pageNumbers.length;
+    },
     prevPage() {
       return this.localCurrent - 1;
     },
@@ -119,8 +119,8 @@ export default {
       let over5remain = true;
 
       if (total <= 7) {
-        // [1-7]
-        return Array(total).fill().map((_, i) => i + 1);
+        // all pages
+        return Object.keys(this.pages).map(i => parseInt(i, 10));
       }
 
       if (current < 5) {
