@@ -38,7 +38,6 @@
     @include redwood-display-20();
 
     margin-left: $space-half-x;
-    color: $heart-of-darkness;
   }
 
   &__ratings {
@@ -97,12 +96,6 @@
   &--linked {
     display: inline-flex;
 
-    &:hover,
-    &:active,
-    &:focus {
-      text-decoration-color: $heart-of-darkness;
-    }
-
     & .cdr-rating__count {
       &:hover,
       &:active,
@@ -111,7 +104,7 @@
       }
 
       & > .cdr-rating__number {
-        border-right: 1px solid $grey-matter;
+        border-right: 1px solid $rating-number-decoration;
         padding: 0 $space-quarter-x;
         margin-right: $space-quarter-x;
       }
@@ -147,4 +140,43 @@
       margin-left: $space-quarter-x;
     }
   }
+
+  /* Content Color Variants
+    ========================================================================== */
+  &--primary {
+    & .cdr-rating__count {
+      color: $content-primary;
+    }
+
+    & .cdr-rating--linked {
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration-color: $content-primary;
+      }
+    }
+
+    & .cdr-rating__number {
+      border-right-color: $rating-number-decoration;
+    }
+  }
+
+  &--secondary {
+    & .cdr-rating__count {
+      color: $content-secondary;
+    }
+
+    & .cdr-rating--linked {
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration-color: $content-secondary;
+      }
+    }
+
+    & .cdr-rating__number {
+      border-right-color: $rating-number-decoration;
+    }
+  }
 }
+
