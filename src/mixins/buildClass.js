@@ -8,7 +8,7 @@ export default {
      * @param {String} prop -- the prop to build classes from
      */
     buildClass(prop) {
-      let checkBase = '';
+      let checkBase = 'cdr';
       if (this.baseClass) {
         checkBase = this.baseClass;
       }
