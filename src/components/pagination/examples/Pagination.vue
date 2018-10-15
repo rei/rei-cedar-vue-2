@@ -18,7 +18,7 @@
     />
 
     <cdr-pagination
-      :pages="makePages(ex2Pages, 'router-page', ex2Page - 2)"
+      :pages="makePages(ex2Pages, 'router-page-b', ex2Page - 2)"
       v-model="ex2Page"
       @change="doChange"
     />
@@ -63,7 +63,6 @@ export default {
         obj.url = `?${arg}=${n}`;
         result.push(obj);
       });
-      // console.log(result);
       return result;
     },
     doChange(num, e) {

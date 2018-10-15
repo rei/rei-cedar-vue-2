@@ -81,6 +81,21 @@ export default {
     pages: {
       type: Array,
       required: true,
+      validator: (value) => {
+        const result = value.every((obj) => {
+          if (!Object.prototype.hasOwnProperty.call(obj, 'page')
+          || typeof obj.page !== 'number') {
+            console.error('Property "page" is missing or is not a number', obj); // eslint-disable-line
+            return false;
+          } else if (!Object.prototype.hasOwnProperty.call(obj, 'url')
+          || typeof obj.url !== 'string') {
+            console.error('Property "url" is missing or is not a string', obj); // eslint-disable-line
+            return false;
+          }
+          return true;
+        });
+        return result;
+      },
     },
     /** @ignore used for binding v-model */
     currentPage: {
