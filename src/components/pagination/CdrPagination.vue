@@ -4,23 +4,23 @@
   <nav aria-label="Pagination Navigation">
     <ul :class="$style['cdr-pagination']">
       <li
-        v-if="localCurrent > pageNumbers[0]"
+        v-if="localCurrent > pages[0].page"
       >
         <a
           :class="[
             $style['cdr-pagination__link'],
             $style['cdr-pagination__prev'],
           ]"
-          :href="pages[prevPage]"
+          :href="pages[prevPageIdx].url"
           :aria-label="`Go to previous Page`"
-          @click="$emit('change', prevPage, $event)"
+          @click="$emit('change', pages[prevPageIdx].page, $event)"
         ><icon-caret-left
           :class="$style['cdr-pagination__caret--prev']"
           modifier="sm" />Previous
         </a>
       </li>
       <li
-        v-for="n in pagination(localCurrent, totalPages)"
+        v-for="n in paginationData"
         :key="`${n}-${guid()}`"
         :class="$style['cdr-pagination__li']"
       >
@@ -28,13 +28,13 @@
           v-if="n !== '&hellip;'"
           :class="[
             $style['cdr-pagination__link'],
-            {'current': n === localCurrent}
+            {'current': n.page === localCurrent}
           ]"
-          :href="pages[n]"
-          :aria-label=" n === localCurrent ? `Current page, page ${n}` : `Go to page ${n}`"
-          :aria-current="n === localCurrent"
-          @click="$emit('change', n, $event)"
-        >{{ n }}</a>
+          :href="n.url"
+          :aria-label=" n.page === localCurrent ? `Current page, page ${n}` : `Go to page ${n}`"
+          :aria-current="n.page === localCurrent"
+          @click="$emit('change', n.page, $event)"
+        >{{ n.page }}</a>
         <span
           v-else
           :class="$style['cdr-pagination__ellipse']"
@@ -42,16 +42,16 @@
         />
       </li>
       <li
-        v-if="localCurrent < pageNumbers[totalPages - 1]"
+        v-if="localCurrent < pages[totalPages - 1].page"
       >
         <a
           :class="[
             $style['cdr-pagination__link'],
             $style['cdr-pagination__next'],
           ]"
-          :href="pages[nextPage]"
+          :href="pages[nextPageIdx].url"
           :aria-label="`Go to next page`"
-          @click="$emit('change', nextPage, $event)"
+          @click="$emit('change', pages[nextPageIdx].page, $event)"
         >Next<icon-caret-right
           :class="$style['cdr-pagination__caret--next']"
           modifier="sm" />
@@ -76,11 +76,10 @@ export default {
   },
   props: {
     /**
-     * Object of page numbers/urls. key=number, value=url.
-     * {"1": "url1", "2": "url2"}
+     * Array of objects. Objects have structure of { page: Number, url: String }
      */
     pages: {
-      type: Object,
+      type: Array,
       required: true,
     },
     /** @ignore used for binding v-model */
@@ -94,28 +93,18 @@ export default {
     };
   },
   computed: {
-    /**
-     * Returns array from pages. {"1": "url1", "2": "url2"} --> ['1', '2']
-     */
-    pageNumbers() {
-      return Object.keys(this.pages);
-    },
     totalPages() {
-      return this.pageNumbers.length;
+      return this.pages.length;
     },
-    prevPage() {
-      return this.localCurrent - 1;
+    prevPageIdx() {
+      return this.currentIdx - 1;
     },
-    nextPage() {
-      return this.localCurrent + 1;
+    nextPageIdx() {
+      return this.currentIdx + 1;
     },
-  },
-  watch: {
-    currentPage(v) {
-      this.localCurrent = v;
+    currentIdx() {
+      return this.pages.map(x => x.page).indexOf(this.localCurrent);
     },
-  },
-  methods: {
     /**
      * Creates an array of the pages that should be shown as links with logic for truncation.
      *
@@ -135,7 +124,9 @@ export default {
      * urls = {"4": "url4", "5": "url5", "6": "url6"} (assuming current page is 5)
      * 4 [5] 6
      */
-    pagination(current, total) {
+    paginationData() {
+      const total = this.totalPages;
+      const current = this.localCurrent;
       const delta = 1;
       let range = [];
       let over5 = true;
@@ -143,18 +134,18 @@ export default {
 
       if (total <= 7) {
         // all pages
-        return Object.keys(this.pages).map(i => parseInt(i, 10));
+        return this.pages;
       }
 
       if (current < 5) {
       // if first 5 pages
         over5 = false;
         // [2-5]
-        range = Array(5).fill().map((_, i) => i + 1).slice(1);
+        range = this.pages.slice(1, 5);
       } else if (total - current < 4) {
       // if last 5 pages
         over5remain = false;
-        range = Array(4).fill().map((_, i) => total - (i + 1)).reverse();
+        range = this.pages.slice(-5, -1);
       } else {
       // else in between
         for (
@@ -162,7 +153,7 @@ export default {
           i <= Math.min(total - 1, current + delta);
           i += 1
         ) {
-          range.push(i);
+          range.push(this.pages[i - 1]);
         }
       }
 
@@ -173,11 +164,18 @@ export default {
         range.push('&hellip;');
       }
 
-      range.unshift(1);
-      range.push(total);
+      range.unshift(this.pages[0]);
+      range.push(this.pages[total - 1]);
 
       return range;
     },
+  },
+  watch: {
+    currentPage(v) {
+      this.localCurrent = v;
+    },
+  },
+  methods: {
     guid() {
       function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)

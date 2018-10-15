@@ -23,59 +23,6 @@
       @change="doChange"
     />
 
-    <!-- <br>
-    <br>
-
-    <h3>Standard</h3>
-    <div
-      v-for="datam in paginationData.example1[ex2Page]"
-      :key="datam.title"
-    >
-      <h1>{{ datam.title }}</h1>
-      <p>{{ datam.description }}</p>
-    </div>
-
-    <cdr-pagination
-      :total-pages="total"
-      v-model="ex2Page"
-    />
-
-    <br>
-    <br>
-
-    <h3>Standard</h3>
-    <div
-      v-for="datam in paginationData.example1[ex3Page]"
-      :key="datam.title"
-    >
-      <h1>{{ datam.title }}</h1>
-      <p>{{ datam.description }}</p>
-    </div>
-
-    <cdr-pagination
-      :total-pages="7"
-      v-model="ex3Page"
-      @change="doChange"
-    />
-
-    <br>
-    <br>
-
-    <h3>Standard</h3>
-    <div
-      v-for="datam in paginationData.example1[ex3Page]"
-      :key="datam.title"
-    >
-      <h1>{{ datam.title }}</h1>
-      <p>{{ datam.description }}</p>
-    </div>
-
-    <cdr-pagination
-      :total-pages="8"
-      v-model="ex3Page"
-      @change="doChange"
-    /> -->
-
   </div>
 </template>
 
@@ -108,12 +55,16 @@ export default {
   methods: {
     makePages(total, arg = 'page', startingAt = 0) {
       const adjuster = startingAt > 0 ? startingAt : 0;
-      const obj = {};
+      const result = [];
       const arr = Array(total).fill().map((_, i) => i + adjuster + 1);
       arr.forEach((n) => {
-        obj[n] = `?${arg}=${n}`;
+        const obj = {};
+        obj.page = n;
+        obj.url = `?${arg}=${n}`;
+        result.push(obj);
       });
-      return obj;
+      // console.log(result);
+      return result;
     },
     doChange(num, e) {
       e.preventDefault();
