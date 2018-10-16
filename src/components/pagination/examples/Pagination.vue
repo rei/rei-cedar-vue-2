@@ -23,6 +23,12 @@
       @change="doChange"
     />
 
+    <cdr-pagination
+      :pages="makePages(5, 'router-page-c')"
+      v-model="ex3Page"
+      @change="doChange"
+    />
+
   </div>
 </template>
 

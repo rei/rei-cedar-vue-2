@@ -13,7 +13,7 @@
           ]"
           :href="pages[prevPageIdx].url"
           :aria-label="`Go to previous Page`"
-          @click="$emit('change', pages[prevPageIdx].page, $event)"
+          @click="navigate(pages[prevPageIdx].page, $event)"
         ><icon-caret-left
           :class="$style['cdr-pagination__caret--prev']"
           modifier="sm" />Previous
@@ -22,8 +22,9 @@
       <li
         v-for="n in paginationData"
         :key="`${n}-${guid()}`"
-        :class="$style['cdr-pagination__li']"
+        :class="$style['cdr-pagination__li--links']"
       >
+        <!-- Desktop -->
         <a
           v-if="n !== '&hellip;'"
           :class="[
@@ -33,13 +34,30 @@
           :href="n.url"
           :aria-label=" n.page === localCurrent ? `Current page, page ${n}` : `Go to page ${n}`"
           :aria-current="n.page === localCurrent"
-          @click="$emit('change', n.page, $event)"
+          @click="navigate(n.page, $event)"
         >{{ n.page }}</a>
         <span
           v-else
           :class="$style['cdr-pagination__ellipse']"
           v-html="n"
         />
+      </li>
+      <li :class="$style['cdr-pagination__li--select']">
+        <!-- Mobile -->
+        <cdr-select
+          v-model="currentUrl"
+          label="Navigate to page"
+          hide-label
+          @change="select(currentUrl, ...arguments)"
+          :class="$style['cdr-pagination__select']"
+        >
+          <option
+            v-for="n in paginationData"
+            :key="`${n}-${guid()}`"
+            :value="n.url"
+            v-if="n !== '&hellip;'"
+          >{{ n.page }}</option>
+        </cdr-select>
       </li>
       <li
         v-if="localCurrent < pages[totalPages - 1].page"
@@ -51,7 +69,7 @@
           ]"
           :href="pages[nextPageIdx].url"
           :aria-label="`Go to next page`"
-          @click="$emit('change', pages[nextPageIdx].page, $event)"
+          @click="navigate(pages[nextPageIdx].page, $event)"
         >Next<icon-caret-right
           :class="$style['cdr-pagination__caret--next']"
           modifier="sm" />
@@ -63,12 +81,14 @@
 
 <script>
 import { IconCaretLeft, IconCaretRight } from '@rei/cdr-icon';
+import { CdrSelect } from '@rei/cdr-select';
 
 export default {
   name: 'CdrPagination',
   components: {
     IconCaretLeft,
     IconCaretRight,
+    CdrSelect,
   },
   model: {
     prop: 'currentPage',
@@ -105,6 +125,7 @@ export default {
   data() {
     return {
       localCurrent: this.currentPage,
+      currentUrl: '',
     };
   },
   computed: {
@@ -188,9 +209,21 @@ export default {
   watch: {
     currentPage(v) {
       this.localCurrent = v;
+      this.currentUrl = this.pages[this.currentIdx].url;
     },
   },
+  mounted() {
+    this.currentUrl = this.pages[this.currentIdx].url;
+  },
   methods: {
+    navigate(num, e) {
+      this.$emit('change', num, e);
+    },
+    select(url, url2, e) {
+      const idx = this.pages.map(x => x.url).indexOf(url);
+      const n = this.pages[idx].page;
+      this.navigate(n, e);
+    },
     guid() {
       function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)

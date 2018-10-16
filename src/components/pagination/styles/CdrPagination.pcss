@@ -18,8 +18,16 @@
   padding: 0;
 
   &__li {
-    & + & {
-      margin-left: $space-1-x;
+    &--links {
+      display: none;
+
+      & + & {
+        margin-left: $space-1-x;
+      }
+    }
+
+    &--select {
+      display: block;
     }
   }
 
@@ -68,6 +76,17 @@
 
     &--next {
       margin-left: $space-eighth-x;
+    }
+  }
+
+  /* Responsive */
+  @media (--sm-mq) {
+    &__li--links {
+      display: block;
+    }
+
+    &__li--select {
+      display: none;
     }
   }
 }
