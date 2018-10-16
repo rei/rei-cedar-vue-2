@@ -96,7 +96,13 @@
     }
 
     &.cdr-cta--elevated {
-      box-shadow: inset $button-cta-light-box-shadow, $prominence-elevated;
+      box-shadow: $button-cta-light-box-shadow, $prominence-elevated;
+      
+      &:hover,
+      &:focus,
+      &:active, {
+        box-shadow: $button-cta-light-box-shadow, $prominence-elevated;
+      }
     }
   }
 

@@ -7,6 +7,8 @@
       rating="0"
       count="0"
       modifier="large"
+      content-priority="secondary"
+
     />
     <cdr-rating
       rating="3"
