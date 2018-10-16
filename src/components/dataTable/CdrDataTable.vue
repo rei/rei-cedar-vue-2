@@ -92,11 +92,6 @@ export default {
       type: [Array, Boolean],
       default: false,
     },
-    /**
-     * Boolean value indicating that data fed into the component has row headers. For each
-     * table record object in the data, row header column must have 'rowheader' as the
-     * property key.
-     */
     rowHeaders: {
       type: [Array, Boolean],
       default: false,
@@ -108,10 +103,6 @@ export default {
     keyOrder: {
       type: Array,
       default: () => [],
-    },
-    summary: {
-      type: String,
-      required: false,
     },
     caption: {
       type: String,
