@@ -19,7 +19,6 @@
     >
       <table
         :class="$style['cdr-data-table__content']"
-        :summary="summary ? summary : null"
       >
         <caption
           class="cdr-sr-only"
