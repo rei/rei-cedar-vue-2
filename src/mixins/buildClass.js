@@ -8,7 +8,11 @@ export default {
      * @param {String} prop -- the prop to build classes from
      */
     buildClass(prop) {
-      const base = this.baseClass;
+      let checkBase = 'cdr';
+      if (this.baseClass) {
+        checkBase = this.baseClass;
+      }
+      const base = checkBase;
       const propArgsArr = this[prop] ? this[prop].split(' ') : [];
       let final = [];
 
