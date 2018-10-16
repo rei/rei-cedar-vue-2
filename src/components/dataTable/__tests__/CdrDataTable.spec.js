@@ -170,6 +170,20 @@ describe('CdrDataTable.vue', () => {
         expect(wrapper.vm.clientWidth).not.toBe(500);
         expect(wrapper.vm.scrollWidth).not.toBe(500);
       });
+
+      it('getCellContent', () => {
+        const wrapper = shallowMount(CdrDataTable, {
+          propsData: {
+            colHeaders: ['col1', 'col2', 'col3'],
+            rowHeaders: ['row1', 'row2', 'row3'],
+            rowData: data.rowData,
+            keyOrder: ["xs", "sm", "m"],
+            id: "test",
+          }
+        });
+
+        expect(wrapper.vm.getCellContent({ a: 1, b: 2, c: 3 }, 'b')).toBe(2);
+      });
     });
   });
 });

@@ -3,8 +3,8 @@
     :class="[modifierClass]"
   >
     <span
-      v-show="caption"
-      class="caption"
+      v-if="caption"
+      :class="$style['cdr-data-table__caption']"
       aria-hidden="true"
     >
       {{ caption }}
@@ -23,7 +23,7 @@
       >
         <caption
           class="cdr-sr-only"
-          v-show="caption"
+          v-if="caption"
         >
           {{ caption }}
         </caption>

@@ -1,15 +1,12 @@
 /* ==========================================================================
   # CdrDataTable
-  
-  All values should map to variables in
-  vars/CdrDataTable.vars.pcss
-  in order to allow for theming
 
   TOC:
 
     :Base - CdrDataTable
-      :States
-        :Breakpoint Variants
+    :States
+      :borderless
+      :compact
 ========================================================================= */
 
 .cdr-data-table {
@@ -17,7 +14,7 @@
 
   position: relative;
 
-  & > :global(.caption) {
+  &__caption {
     @include spruce-display-20();
       
     color: $heart-of-darkness;
@@ -107,18 +104,7 @@
 
       th {
         @include lockedColTh();
-
-        &:global(.content-align-right) {
-          text-align: right;
-        }
       }
-    }
-
-    caption {
-      @include spruce-display-20();
-
-      caption-side: top;
-      color: $heart-of-darkness;
     }
   }
 
