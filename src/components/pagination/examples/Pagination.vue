@@ -13,9 +13,21 @@
 
     <cdr-pagination
       :pages="makePages(20, 'router-page')"
+      :total-pages="20"
       v-model="ex1Page"
       @change="doChange"
     />
+
+    <p>Previous/Next only (known total)</p>
+
+    <cdr-pagination
+      :pages="makePages(ex2Pages, 'router-page-b', ex2Page - 2)"
+      :total-pages="10"
+      v-model="ex2Page"
+      @change="doChange"
+    />
+
+    <p>Previous/Next only (unknown total)</p>
 
     <cdr-pagination
       :pages="makePages(ex2Pages, 'router-page-b', ex2Page - 2)"
@@ -23,8 +35,11 @@
       @change="doChange"
     />
 
+    <p>Only 5 pages provided</p>
+
     <cdr-pagination
       :pages="makePages(5, 'router-page-c')"
+      :total-pages="5"
       v-model="ex3Page"
       @change="doChange"
     />

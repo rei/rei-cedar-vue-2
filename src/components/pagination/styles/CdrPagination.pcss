@@ -40,8 +40,14 @@
     text-decoration: none;
 
     &:global(.current) {
-      border: 1px solid $taken-for-granite;
+      box-shadow: inset 0 0 0 1px $taken-for-granite;
       border-radius: $radius-softer;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
     }
 
     &:hover,
@@ -60,13 +66,13 @@
   &__prev {
     display: flex;
     align-items: center;
-    margin-right: $space-2-x;
+    margin-right: $space-1-and-a-half-x;
   }
 
   &__next {
     display: flex;
     align-items: center;
-    margin-left: $space-2-x;
+    margin-left: $space-1-and-a-half-x;
   }
 
   &__caret {
@@ -77,6 +83,10 @@
     &--next {
       margin-left: $space-eighth-x;
     }
+  }
+
+  &__select {
+    min-width: 240px;
   }
 
   /* Responsive */

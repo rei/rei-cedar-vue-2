@@ -19,12 +19,12 @@
           modifier="sm" />Previous
         </a>
       </li>
+      <!-- Desktop -->
       <li
         v-for="n in paginationData"
         :key="`${n}-${guid()}`"
         :class="$style['cdr-pagination__li--links']"
       >
-        <!-- Desktop -->
         <a
           v-if="n !== '&hellip;'"
           :class="[
@@ -42,8 +42,8 @@
           v-html="n"
         />
       </li>
+      <!-- Mobile -->
       <li :class="$style['cdr-pagination__li--select']">
-        <!-- Mobile -->
         <cdr-select
           v-model="currentUrl"
           label="Navigate to page"
@@ -56,11 +56,11 @@
             :key="`${n}-${guid()}`"
             :value="n.url"
             v-if="n !== '&hellip;'"
-          >{{ n.page }}</option>
+          >Page {{ n.page }}{{ totalPages === null ? `` : ` of ${totalPages}` }}</option>
         </cdr-select>
       </li>
       <li
-        v-if="localCurrent < pages[totalPages - 1].page"
+        v-if="localCurrent < pages[totalPageData - 1].page"
       >
         <a
           :class="[
@@ -96,6 +96,14 @@ export default {
   },
   props: {
     /**
+     * Total number of pages. Sometimes the total number of pages is different than total page data
+     * and this prop allows for that.
+     */
+    totalPages: {
+      type: Number,
+      default: null,
+    },
+    /**
      * Array of objects. Objects have structure of { page: Number, url: String }
      */
     pages: {
@@ -129,7 +137,7 @@ export default {
     };
   },
   computed: {
-    totalPages() {
+    totalPageData() {
       return this.pages.length;
     },
     prevPageIdx() {
@@ -161,7 +169,7 @@ export default {
      * 4 [5] 6
      */
     paginationData() {
-      const total = this.totalPages;
+      const total = this.totalPageData;
       const current = this.localCurrent;
       const delta = 1;
       let range = [];
