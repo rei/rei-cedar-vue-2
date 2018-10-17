@@ -14,6 +14,7 @@
           :href="pages[prevPageIdx].url"
           :aria-label="`Go to previous Page`"
           @click="navigate(pages[prevPageIdx].page, $event)"
+          ref="prev-link"
         ><icon-caret-left
           :class="$style['cdr-pagination__caret--prev']"
           modifier="sm" />Previous
@@ -50,6 +51,7 @@
           hide-label
           @change="select(currentUrl, ...arguments)"
           :class="$style['cdr-pagination__select']"
+          ref="select"
         >
           <option
             v-for="n in paginationData"
@@ -70,6 +72,7 @@
           :href="pages[nextPageIdx].url"
           :aria-label="`Go to next page`"
           @click="navigate(pages[nextPageIdx].page, $event)"
+          ref="next-link"
         >Next<icon-caret-right
           :class="$style['cdr-pagination__caret--next']"
           modifier="sm" />
@@ -230,6 +233,7 @@ export default {
     select(url, url2, e) {
       const idx = this.pages.map(x => x.url).indexOf(url);
       const n = this.pages[idx].page;
+      this.$emit('select-change', url, e);
       this.navigate(n, e);
     },
     guid() {
