@@ -8,6 +8,7 @@
       count="0"
       modifier="large"
       content-priority="secondary"
+      space="cdr-inset"
 
     />
     <cdr-rating
