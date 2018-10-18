@@ -16,6 +16,7 @@
       :total-pages="20"
       v-model="ex1Page"
       @change="doChange"
+      @select-change="doSelect"
     />
 
     <p>Previous/Next only (known total)</p>
@@ -90,6 +91,9 @@ export default {
       e.preventDefault();
       console.log('changed', num); // eslint-disable-line
       this.$router.replace({ query: Object.assign({}, this.$route.query, { 'router-page': num }) });
+    },
+    doSelect(url, e) {
+      console.log('selected', url, e); // eslint-disable-line
     },
   },
 };
