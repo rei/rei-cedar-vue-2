@@ -19,6 +19,7 @@
     >
       <table
         :class="$style['cdr-data-table__content']"
+        :id="id"
       >
         <caption
           class="cdr-sr-only"
@@ -96,8 +97,8 @@ export default {
       default: false,
     },
     rowData: {
-      type: [Array, Boolean],
-      default: false,
+      type: Array,
+      required: false,
     },
     keyOrder: {
       type: Array,

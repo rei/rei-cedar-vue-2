@@ -1,5 +1,41 @@
 <template>
   <div class="table-examples-wrapper">
+    <cdr-data-table
+      id="manual-size-chart"
+      caption="Manual Size Chart"
+      :col-headers="true"
+      :row-headers="true"
+    >
+      <template slot="thead">
+        <tr>
+          <th
+            class="empty"
+            scope="col"
+          />
+          <th
+            v-for="(header, index) in tableData.colHeaders"
+            :key="index"
+          >
+            {{ header }}
+          </th>
+        </tr>
+      </template>
+      <template slot="tbody">
+        <tr
+          v-for="(row, index) in tableData.rowData"
+          :key="'tr_' + index"
+        >
+          <th
+            scope="row"
+          >{{ tableData.rowHeaders[index] }}</th>
+          <td
+            v-for="(key, index) in ['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']"
+            :key="index"
+          >{{ row[key] }}
+          </td>
+        </tr>
+      </template>
+    </cdr-data-table>
 
     <cdr-data-table
       :col-headers="true"
@@ -26,7 +62,7 @@
           v-for="(record, index) in tableData.books.records"
           :key="'tr_' + index"
         >
-          <th>{{ record.rowheader }}</th>
+          <th scope="row">{{ record.rowheader }}</th>
           <td
             v-for="(colData, key, index) in record"
             v-if="key !== 'rowheader'"
@@ -60,29 +96,9 @@
       </template>
     </cdr-data-table>
 
-    <!-- <cdr-data-table
-      caption="Scroll example - No column headers"
-      :row-headers="false"
-      id="manual-full-scroll"
-    >
-      <tr
-        v-for="(record, key, index) in tableData.scroll.records"
-        :key="'row_' + key + index"
-      >
-        <td
-          v-for="(colData, key, index) in record"
-          v-if="key !== 'rowheader'"
-          :key="index + '_' + key"
-        >
-          {{ colData }}
-        </td>
-      </tr>
-    </cdr-data-table> -->
-
     <cdr-data-table
       modifier="compact borderless"
       caption="Full Manual - Compact & Borderless"
-      summary="Summary"
       id="full-manual"
     >
       <template slot="tbody">
@@ -116,7 +132,7 @@
         </tr>
         <tr>
           <th>Number</th>
-          <td class="content-align-right">25</td>
+          <td>25</td>
         </tr>
       </template>
     </cdr-data-table>
