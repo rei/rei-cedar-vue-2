@@ -34,7 +34,7 @@
     "@commitlint/cli": "^6.1.0",
     "@commitlint/config-conventional": "^6.1.0",
     "@rei/cdr-tokens": "^0.1.7",
-    "@vue/test-utils": "^1.0.0-beta.16",
+    "@vue/test-utils": "^1.0.0-beta.25",
     "autoprefixer": "^8.5.2",
     "babel-core": "^6.25.0",
     "babel-eslint": "^8.2.2",

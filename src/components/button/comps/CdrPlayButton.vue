@@ -11,7 +11,6 @@
 
 <script>
 import { IconPlay } from '@rei/cdr-icon';
-import '@rei/cdr-icon/dist/cdr-icon.css';
 import CdrButton from 'componentsdir/button/CdrButton';
 
 export default {
@@ -23,8 +22,3 @@ export default {
   extends: CdrButton,
 };
 </script>
-
-<style>
-  @import '../../../css/settings/_index.pcss';
-  @import '../styles/CdrButton.pcss';
-</style>
