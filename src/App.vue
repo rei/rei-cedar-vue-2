@@ -3,7 +3,12 @@
     id="app"
     class="cdr-container-fluid"
   >
-    <h1>Cedar Proving grounds</h1>
+    <cdr-text
+      tag="h1"
+      modifier="heading-large">
+      Cedar Proving grounds
+    </cdr-text>
+
     <router-link
       v-for="route in routes"
       :key="route.path"
@@ -91,9 +96,11 @@
 <script>
 import examples from 'componentsdir/examples';
 import compexamples from 'compositionsdir/examples';
+import components from 'componentsdir/_index';
 import routes from './router';
 
-const all = Object.assign({}, examples, compexamples);
+
+const all = Object.assign(components, {}, examples, compexamples);
 export default {
   name: 'App',
   components: all,

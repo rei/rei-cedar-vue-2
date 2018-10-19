@@ -1,19 +1,34 @@
 <template>
   <div class="breadcrumb-demo-container">
-    <h2>Breadcrumb</h2>
-    <h6>Basic Breadcrumb</h6>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Breadcrumb
+    </cdr-text>
     <cdr-breadcrumb
       :items="averageBreadcrumbItems"
     />
-    <h6>Short Breadcrumb</h6>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Short Breadcrumb
+    </cdr-text>
     <cdr-breadcrumb
       :items="shortBreadcrumbItems"
     />
-    <h6>Super Long Breadcrumb</h6>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Super Long Breadcrumb
+    </cdr-text>
     <cdr-breadcrumb
       :items="superLongBreadcrumbItems"
     />
-    <h6>REI.com's Longest Breadcrumb</h6>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      REI.com's Longest Breadcrumb
+    </cdr-text>
     <cdr-breadcrumb
       :items="reiExampleBreadcrumbItems"
     />
@@ -168,12 +183,5 @@ export default {
 </script>
 
 <style>
-  h2 {
-    padding-bottom: 10px;
-  }
-
-  h6 {
-    margin: 10px 0 10px 10px;
-  }
 </style>
 
