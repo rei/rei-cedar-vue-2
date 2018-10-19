@@ -173,12 +173,32 @@ describe('CdrPagination.vue', () => {
     expect(wrapper.emitted().change[1][0]).toBe(4);
     expect(wrapper.emitted().change[1][1] instanceof Event).toBeTruthy();
     
+    // click a page link
+    let link = wrapper.findAll('ul > li > a').at(1);
+    link.trigger('click');
+    expect(wrapper.emitted().change[2][0]).toBe(1);
+    expect(wrapper.emitted().change[2][1] instanceof Event).toBeTruthy();
+
     // use select
     let options = wrapper.find({ ref: 'select' }).findAll('option')
     options.at(1).setSelected();
     expect(wrapper.emitted()['select-change'][0][0]).toBe('?page=4');
     expect(wrapper.emitted()['select-change'][0][1] instanceof Event).toBeTruthy();
-
   });
   
+  it('adds "of x" when a total is provided', () => {
+    const wrapper = shallowMount(CdrPagination, {
+      propsData: {
+        pages: makePages(20),
+        currentPage: 1,
+      },
+    });
+
+    let option = wrapper.find({ ref: 'select' }).findAll('option').at(0);
+    expect(option.text()).toBe('Page 1');
+    
+    wrapper.setProps({ totalPages: 20 });
+    option = wrapper.find({ ref: 'select' }).findAll('option').at(0);
+    expect(option.text()).toBe('Page 1 of 20');
+  });
 });

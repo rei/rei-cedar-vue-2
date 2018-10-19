@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="pagination">
     <h2>pagination</h2>
 
     <h3>Vue-router example</h3>
