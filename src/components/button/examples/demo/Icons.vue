@@ -16,7 +16,7 @@
         />
         Anchor and Icon
       </cdr-button>
-      <cdr-button
+      <!-- <cdr-button
         tag="a"
         href="https://rei.com"
         size="large"
@@ -28,7 +28,7 @@
           class="cdr-button__icon"
         />
         Anchor and Icon
-      </cdr-button>
+      </cdr-button> -->
       <cdr-button
         size="medium"
       >
