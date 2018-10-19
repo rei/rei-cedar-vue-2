@@ -1,6 +1,8 @@
 <template>
   <div>
-    <cdr-icon-sprite />
+    <cdr-icon-sprite
+      v-if="loadSprite"
+    />
     <div class="button-example">
       <h2>CdrButton + CdrIcon Comps</h2>
       <cdr-button
@@ -209,6 +211,14 @@ export default {
     CdrCloseButton,
     CdrPlayButton,
     CdrIconSprite,
+  },
+  data() {
+    return {
+      loadSprite: false,
+    };
+  },
+  mounted() {
+    this.loadSprite = window.location.href.split('#')[1] === '/buttons';
   },
 };
 </script>
