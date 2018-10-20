@@ -1,6 +1,11 @@
 <template>
   <div data-backstop="inset-space-utilities">
     <h2>Inset classes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Align classes
+    </cdr-text>
 
     <cdr-card class="example">
       <p class="cdr-inset--xxs">

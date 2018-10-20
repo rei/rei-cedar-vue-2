@@ -1,12 +1,16 @@
 <template>
   <div>
-    <h3>Cropping (with landscape images)</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Cropping (with landscape images)
+    </cdr-text>
     <cdr-row
       cols="1 3@md"
     >
       <cdr-col>
         <div>
-          <p>Left</p>
+          <cdr-text modifier="subheading">Left</cdr-text>
           <cdr-img
             ratio="square"
             cover
@@ -18,7 +22,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>Center</p>
+          <cdr-text modifier="subheading">Center</cdr-text>
           <cdr-img
             ratio="square"
             cover
@@ -30,7 +34,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>Right</p>
+          <cdr-text modifier="subheading">Right</cdr-text>
           <cdr-img
             ratio="square"
             cover
@@ -42,13 +46,17 @@
       </cdr-col>
     </cdr-row>
 
-    <h3>Cropping (with portrait images)</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Cropping (with portrait images)
+    </cdr-text>
     <cdr-row
       cols="1 3@md"
     >
       <cdr-col>
         <div>
-          <p>Top</p>
+          <cdr-text modifier="subheading">Top</cdr-text>
           <cdr-img
             ratio="square"
             cover
@@ -60,7 +68,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>Center</p>
+          <cdr-text modifier="subheading">Center</cdr-text>
           <cdr-img
             ratio="square"
             cover
@@ -72,7 +80,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>Bottom</p>
+          <cdr-text modifier="subheading">Bottom</cdr-text>
           <cdr-img
             ratio="square"
             cover
@@ -84,11 +92,15 @@
       </cdr-col>
     </cdr-row>
 
-    <h3>Cropping (combinations)</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Cropping (combinations)
+    </cdr-text>
     <cdr-row justify="center">
       <cdr-col span="9">
         <div>
-          <p>Reference Image</p>
+          <cdr-text modifier="subheading">Reference Image</cdr-text>
           <cdr-img
             alt="reference image"
             :src="testImage"
@@ -101,7 +113,7 @@
     >
       <cdr-col>
         <div>
-          <p>top, left</p>
+          <cdr-text modifier="subheading">top, left</cdr-text>
           <cdr-img
             ratio="16-9"
             crop="top left"
@@ -112,7 +124,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>top, x-center</p>
+          <cdr-text modifier="subheading">top, x-center</cdr-text>
           <cdr-img
             ratio="16-9"
             crop="top x-center"
@@ -123,7 +135,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>top, right</p>
+          <cdr-text modifier="subheading">top, right</cdr-text>
           <cdr-img
             ratio="16-9"
             crop="top right"
@@ -134,7 +146,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>y-center, left</p>
+          <cdr-text modifier="subheading">y-center, left</cdr-text>
           <cdr-img
             ratio="16-9"
             crop="y-center left"
@@ -145,7 +157,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>y-center, x-center</p>
+          <cdr-text modifier="subheading">y-center, x-center</cdr-text>
           <cdr-img
             ratio="16-9"
             crop="y-center x-center"
@@ -156,7 +168,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>y-center, right</p>
+          <cdr-text modifier="subheading">y-center, right</cdr-text>
           <cdr-img
             ratio="16-9"
             crop="y-center right"
@@ -167,7 +179,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>bottom, left</p>
+          <cdr-text modifier="subheading">bottom, left</cdr-text>
           <cdr-img
             ratio="16-9"
             crop="bottom left"
@@ -178,7 +190,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>bottom, x-center</p>
+          <cdr-text modifier="subheading">bottom, x-center</cdr-text>
           <cdr-img
             ratio="16-9"
             crop="bottom x-center"
@@ -189,7 +201,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>bottom, right</p>
+          <cdr-text modifier="subheading">bottom, right</cdr-text>
           <cdr-img
             ratio="16-9"
             crop="bottom right"

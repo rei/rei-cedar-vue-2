@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h2>Radios</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Radios
+    </cdr-text>
     <cdr-radio
       id="test1"
       name="example"
@@ -24,7 +28,7 @@
       v-model="ex1"
       disabled
     >A4 (disabled)</cdr-radio>
-    <p>Group A Picked: {{ ex1 }}</p>
+    <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>
 
     <cdr-radio
       modifier="compact"
@@ -51,7 +55,7 @@
       v-model="ex1compact"
       disabled
     >A4 compact (disabled)</cdr-radio>
-    <p>Group A compact Picked: {{ ex1compact }}</p>
+    <cdr-text>Group A compact Picked: {{ ex1compact }}</cdr-text>
 
     <div style="max-width: 200px">
       <cdr-radio
@@ -79,7 +83,7 @@
       value="b2"
       v-model="ex2compact"
     >B2 compact</cdr-radio>
-    <p>Group B compact Picked: {{ ex2compact }}</p>
+    <cdr-text>Group B compact Picked: {{ ex2compact }}</cdr-text>
 
     <cdr-radio
       name="example3"

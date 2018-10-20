@@ -1,39 +1,44 @@
 <template>
   <div>
-    <h2>Searchbox</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Searchbox
+    </cdr-text>
 
     <cdr-search
       v-model="search1"
       :click="search"/>
-    <p>Searching: {{ search1 }}</p>
+    <cdr-text>Searching: {{ search1 }}</cdr-text>
 
     <cdr-search
       v-model="search1"
       :click="search"
       large/>
-    <p>Searching: {{ search1 }}</p>
+    <cdr-text>Searching: {{ search1 }}</cdr-text>
 
     <cdr-search
       v-model="search2"
       :click="search"
       bare/>
-    <p>Searching: {{ search2 }}</p>
+    <cdr-text>Searching: {{ search2 }}</cdr-text>
 
     <cdr-search
       v-model="search2"
       :click="search"
       bare
       large/>
-    <p>Searching: {{ search2 }}</p>
+    <cdr-text>Searching: {{ search2 }}</cdr-text>
   </div>
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
 import CdrSearch from '../CdrSearch';
 
 export default {
   name: 'Searchbox',
-  components: { CdrSearch },
+  components: { ...Components, CdrSearch },
   data() {
     return {
       search1: '',

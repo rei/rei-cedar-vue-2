@@ -1053,7 +1053,7 @@
           </cdr-col>
         </cdr-row>
 
-        <pcdr-text>justify="between@sm"</pcdr-text>
+        <cdr-text>justify="between@sm"</cdr-text>
         <cdr-row
           cols="6"
           justify="between@sm"

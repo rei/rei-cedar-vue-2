@@ -1,6 +1,11 @@
 <template>
   <div data-backstop="inline-space-utilities">
     <h2>Inline space classes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Align classes
+    </cdr-text>
     <cdr-card class="example">
       <p class="cdr-inline--xxs"> cdr-inline--xxs </p>
       <p class="cdr-inline--xs"> cdr-inline--xs </p>
