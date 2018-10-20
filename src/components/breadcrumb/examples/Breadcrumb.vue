@@ -10,7 +10,7 @@
     />
     <cdr-text
       tag="h3"
-      modifier="heading-small">
+      modifier="subheading">
       Short Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
@@ -18,7 +18,7 @@
     />
     <cdr-text
       tag="h3"
-      modifier="heading-small">
+      modifier="subheading">
       Super Long Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
@@ -26,7 +26,7 @@
     />
     <cdr-text
       tag="h3"
-      modifier="heading-small">
+      modifier="subheading">
       REI.com's Longest Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
