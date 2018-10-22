@@ -33,7 +33,7 @@
             {'current': n.page === localCurrent}
           ]"
           :href="n.url"
-          :aria-label=" n.page === localCurrent ? `Current page, page ${n}` : `Go to page ${n}`"
+          :aria-label=" n.page === localCurrent ? `Current page, page ${n.page}` : `Go to page ${n.page}`"
           :aria-current="n.page === localCurrent"
           @click="navigate(n.page, $event)"
         >{{ n.page }}</a>
