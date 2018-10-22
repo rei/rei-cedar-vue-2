@@ -1,7 +1,6 @@
 <template>
   <div class="icon-examples">
     <h2>Icons</h2>
-    <cdr-icon-sprite/>
     <icon-account-profile data-backstop="cdr-icon-add" />
 
     <h3>Default icon size</h3>

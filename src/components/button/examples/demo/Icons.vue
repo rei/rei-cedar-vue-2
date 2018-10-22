@@ -1,8 +1,5 @@
 <template>
   <div>
-    <cdr-icon-sprite
-      v-if="loadSprite"
-    />
     <div class="button-example">
       <h2>CdrButton + CdrIcon Comps</h2>
       <cdr-button
@@ -193,7 +190,7 @@
 import Components from 'componentsdir/_index';
 import CdrButton from 'componentsdir/button/CdrButton';
 /* eslint-disable-next-line */
-import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink, CdrIconSprite } from 'componentsdir/icon/dist/cdr-icon';
+import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink } from 'componentsdir/icon/dist/cdr-icon';
 import { CdrCloseButton, CdrPlayButton } from 'componentsdir/button/dist/cdr-button';
 import CdrIcon from 'componentsdir/icon/CdrIcon';
 
@@ -210,15 +207,6 @@ export default {
     IconExternalLink,
     CdrCloseButton,
     CdrPlayButton,
-    CdrIconSprite,
-  },
-  data() {
-    return {
-      loadSprite: false,
-    };
-  },
-  mounted() {
-    this.loadSprite = window.location.href.split('#')[1] === '/buttons';
   },
 };
 </script>

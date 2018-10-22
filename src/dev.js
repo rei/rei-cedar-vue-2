@@ -2,8 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import { CdrIconSprite } from 'componentsdir/icon/dist/cdr-icon';
 import routes from './router';
-
 import './css/main.postcss';
 import '../static/cdr-fonts.css';
 
@@ -20,4 +20,7 @@ Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
   router,
+  components: {
+    CdrIconSprite,
+  },
 }).$mount('#main');
