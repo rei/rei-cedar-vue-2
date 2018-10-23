@@ -24,7 +24,7 @@
           $style['cdr-accordion-item__icon'],
           isOpenClass,
         ]"
-        :size="compact ? 'sm' : null"
+        :modifier="compact ? 'sm' : null"
       />
     </button>
     <div
@@ -51,6 +51,7 @@
 
 <script>
 import { IconCaretDown } from '@rei/cdr-icon';
+import '@rei/cdr-icon/dist/cdr-icon.css';
 import modifier from 'mixinsdir/modifier';
 import { setTimeout } from 'core-js';
 
@@ -139,8 +140,4 @@ export default {
 <style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrAccordionItem.pcss';
-</style>
-
-<style>
-  @import '@rei/cdr-icon/dist/cdr-icon.css';
 </style>

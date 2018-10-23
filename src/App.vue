@@ -107,6 +107,6 @@ export default {
 
 <style scoped>
   .cpg-section {
-    margin: 16px 20px;
+    margin: 16px 0;
   }
 </style>
