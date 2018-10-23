@@ -68,7 +68,7 @@
         value="b2"
         v-model="ex2"
       >B2</cdr-radio>
-      <p>Group B Picked: {{ ex2 }}</p>
+      <cdr-text>Group B Picked: {{ ex2 }}</cdr-text>
     </div>
 
     <cdr-radio
