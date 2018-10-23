@@ -97,12 +97,8 @@ describe('CdrButton.vue', () => {
   it('adds icon class when slot is used', () => {
     const wrapper = shallowMount(CdrButton, {
       slots: {
-        icon: [
-          'named slot icon',
-        ],
-        default: [
-          'default slot for text'
-        ],
+        default: [ 'default slot for text' ],
+        icon: '<div />',
       },
     });
 
