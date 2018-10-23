@@ -77,7 +77,7 @@
     </div>
     <div class="button-example">
       <cdr-button
-        size="small large@xs medium@sm small@lg"
+        size="large large@xs medium@sm small@lg"
       >
         <icon-clock
           slot="icon"
