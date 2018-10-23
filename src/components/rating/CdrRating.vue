@@ -61,6 +61,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import contentPriority from 'mixinsdir/contentPriority';
+import size from 'mixinsdir/size';
 /**
  * Cedar 2 component for rating
  * Ratings are rounded to nearest .25 for displaying stars.
@@ -76,6 +77,7 @@ export default {
   mixins: [
     modifier,
     contentPriority,
+    size,
   ],
   props: {
     /**

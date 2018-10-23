@@ -43,7 +43,7 @@
         <div class="cdr-text-center">
           <svg
             :is="key"
-            modifier="sm"
+            size="small"
           />
           <p>{{ key }}</p>
         </div>
@@ -64,7 +64,7 @@
         <div class="cdr-text-center">
           <svg
             :is="key"
-            modifier="lg"
+            size="large"
           />
           <p>{{ key }}</p>
         </div>

@@ -27,7 +27,7 @@
       >
         <icon-check-lg
           slot="icon"
-          modifier="sm"
+          size="small"
           class="cdr-button__icon"
         />
         Icon CSS small
@@ -77,8 +77,7 @@
     </div>
     <div class="button-example">
       <cdr-button
-        size="small"
-        :responsive-size="['large@xs', 'medium@sm', 'small@lg']"
+        size="small large@xs medium@sm small@lg"
       >
         <icon-clock
           slot="icon"

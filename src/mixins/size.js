@@ -1,43 +1,39 @@
 /**
+ * #Size Mixin/Interface
+ *
+ * Functionality for handling/standardizing component sizing.
+ *
+ *  :Values
+ *    :small
+ *    :medium (default)
+ *    :large
+ *
  * @mixin
  */
+import BuildClass from './buildClass';
+
+const sizes = ['small', 'medium', 'large'];
+
 export default {
+  mixins: [BuildClass],
   props: {
     /**
      * Size state
      */
-    size: String,
+    size: {
+      type: String,
+      default: 'medium',
+      validator: value => (sizes.indexOf(value) >= 0) || false,
+    },
   },
   computed: {
     sizeClass() {
-      const base = this.baseClass;
-      const sizeParam = this.modifier ? this.modifier.split(' ') : [];
-      let final = [];
-
-      if (!this.$style) {
-        final.push(`${base}`);
-        final = final.concat(modifierArr.map(mod => this.modifyClassName(base, mod)));
-      } else {
-        final.push(this.moduleClass(base));
-        final = final.concat(modifierArr.map(mod => this.modifyClassName(base, mod)));
-      }
-
-      return final.join(' ');
+      const returnClass = this.buildClass('size');
+      console.log('Size Class = ', returnClass);
+      return returnClass;
     },
   },
   methods: {
-    /**
-     * Returns a css module class
-     */
-    moduleClass(className) {
-      return this.$style[`${className}`];
-    },
-    /**
-     * Returns a modified base class
-     */
-    modifyClassName(base, modifier) {
-      return this.$style ? this.moduleClass(`${base}--${modifier}`) : `${base}--${modifier}`;
-    },
     /**
      * Changes the component Size Prop
      */

@@ -24,7 +24,7 @@
           $style['cdr-accordion-item__icon'],
           isOpenClass,
         ]"
-        :modifier="compact ? 'sm' : null"
+        :size="compact ? 'sm' : null"
       />
     </button>
     <div
