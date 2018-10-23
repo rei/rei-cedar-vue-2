@@ -71,10 +71,11 @@ describe('CdrBreadcrumb.vue', () => {
   });
 
   it('breadcrumb should truncate', () => {
-    const wrapper = shallowMount(CdrBreadcrumb);
-    let props = wrapper.props();
-    props.truncationThreshold = -1;
-    wrapper.setProps(props);
+    const wrapper = shallowMount(CdrBreadcrumb, {
+      propsData: {
+        truncationThreshold: -1,
+      }
+    });
     const shouldTruncate = wrapper.vm.calculateTruncation();
     expect(shouldTruncate).toBe(true);
   });

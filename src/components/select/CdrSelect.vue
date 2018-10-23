@@ -165,10 +165,10 @@ export default {
         const optArr = toArray(e.target.options);
         const selected = optArr.filter(o => o.selected === true).map(o => o.value);
         this.val = selected;
-        this.$emit('change', selected);
+        this.$emit('change', selected, e);
       } else {
         this.val = e.target.value;
-        this.$emit('change', e.target.value);
+        this.$emit('change', e.target.value, e);
       }
     },
   },
