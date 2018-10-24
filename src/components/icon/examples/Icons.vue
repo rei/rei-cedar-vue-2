@@ -5,11 +5,10 @@
       modifier="heading-small">
       Icons
     </cdr-text>
-    <cdr-icon-sprite/>
     <icon-account-profile data-backstop="cdr-icon-add" />
 
     <cdr-text
-      tag="h2"
+      tag="h3"
       modifier="heading-small">
       Default icon size
     </cdr-text>
