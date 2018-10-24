@@ -4,7 +4,11 @@
       class="button-example"
       v-for="(section, index) in data"
       :key="index">
-      <h2>{{ section.title }}</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        {{ section.title }}
+      </cdr-text>
       <cdr-button
         v-for="(button, index) in section.buttons"
         :key="index"
@@ -18,7 +22,11 @@
       </cdr-button>
     </div>
     <div class="button-example">
-      <h2>Responsive</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Responsive
+      </cdr-text>
       <cdr-button
         :on-click="log"
         :full-width="true"
@@ -27,7 +35,11 @@
       </cdr-button>
     </div>
     <div class="button-example">
-      <h2>Primary Anchor</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Primary Anchor
+      </cdr-text>
       <cdr-button
         tag="a"
         href="https://rei.com"
@@ -131,12 +143,16 @@ export default {
 </script>
 
 <style>
-  .button-example {
-    padding: 10px;
-  }
+/* This should be removed: */
 
-  .button-example button,
-  .button-example a {
-    margin: 0 10px 5px 0;
-  }
+/* having custom styles here provides false positives */
+
+.button-example {
+  padding: 10px;
+}
+
+.button-example button,
+.button-example a {
+  margin: 0 10px 5px 0;
+}
 </style>

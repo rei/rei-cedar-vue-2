@@ -4,7 +4,11 @@
       class="button-example"
       v-for="(section, index) in data"
       :key="index">
-      <h2>{{ section.title }}</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        {{ section.title }}
+      </cdr-text>
       <cdr-button
         v-for="(button, index) in section.buttons"
         :key="index"
@@ -18,7 +22,11 @@
       >{{ button.label }}</cdr-button>
     </div>
     <div class="button-example">
-      <h2>Secondary Anchor</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Secondary Anchor
+      </cdr-text>
       <cdr-button
         tag="a"
         href="https://rei.com"
@@ -32,11 +40,15 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import CdrButton from 'componentsdir/button/CdrButton';
+import CdrText from 'componentsdir/text/CdrText';
 
 export default {
   name: 'Secondary',
-  components: Components,
+  components: {
+    CdrButton,
+    CdrText,
+  },
   data: function data() {
     return {
       data: [

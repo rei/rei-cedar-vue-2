@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h3>Headings</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-medium">
+      Headings
+    </cdr-text>
 
     <cdr-text
       v-for="n in 6"

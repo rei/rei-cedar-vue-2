@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="button-example">
-      <h2>CdrButton + CdrIcon Comps</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        CdrButton + CdrIcon Comps
+      </cdr-text>
       <cdr-button
         tag="a"
         href="https://rei.com"
@@ -57,7 +61,11 @@
       </cdr-button>
     </div>
     <div class="button-example">
-      <h2>Using a sprite</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Using a sprite
+      </cdr-text>
       <cdr-button
         size="large"
         modifier="secondary"
@@ -141,7 +149,11 @@
       </div>
     </div>
     <div class="button-example">
-      <h2>Icon only button</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Icon only button
+      </cdr-text>
       <cdr-button
         :icon-only="true"
         :full-width="true"
@@ -189,7 +201,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import CdrText from 'componentsdir/text/CdrText';
 import CdrButton from 'componentsdir/button/CdrButton';
 /* eslint-disable-next-line */
 import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink } from 'componentsdir/icon/dist/cdr-icon';
@@ -199,7 +211,7 @@ import CdrIcon from 'componentsdir/icon/CdrIcon';
 export default {
   name: 'ButtonIconComps',
   components: {
-    Components,
+    CdrText,
     CdrButton,
     IconCheckLg,
     IconCheckSm,

@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h2>Selects</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Selects
+    </cdr-text>
 
     <cdr-select
       label="Disabled select"
@@ -9,7 +13,7 @@
     >
       <option value="1">1</option>
     </cdr-select>
-    <p>Selected: {{ selected }}</p>
+    <cdr-text>Selected: {{ selected }}</cdr-text>
 
     <cdr-select
       label="Prompt"
@@ -21,7 +25,7 @@
       <option value="3">3</option>
       <option value="4">4</option>
     </cdr-select>
-    <p>Selected: {{ selected }}</p>
+    <cdr-text>Selected: {{ selected }}</cdr-text>
 
     <cdr-select
       label="Prompt Required"
@@ -34,7 +38,7 @@
       <option value="3">3</option>
       <option value="4">4</option>
     </cdr-select>
-    <p>Selected: {{ selected }}</p>
+    <cdr-text>Selected: {{ selected }}</cdr-text>
 
     <cdr-select
       label="Hidden label text"
@@ -47,7 +51,7 @@
       <option value="3">3</option>
       <option value="4">4</option>
     </cdr-select>
-    <p>Selected: {{ selected }}</p>
+    <cdr-text>Selected: {{ selected }}</cdr-text>
 
     <cdr-select
       label="No Prompt"
@@ -58,14 +62,14 @@
       <option value="3">3</option>
       <option value="4">4</option>
     </cdr-select>
-    <p>Selected: {{ selected2 }}</p>
+    <cdr-text>Selected: {{ selected2 }}</cdr-text>
 
     <cdr-select
       label="Dynamic"
       v-model="dynamic"
       :options="dynamicData"
     />
-    <p>Selected: {{ dynamic }}</p>
+    <cdr-text>Selected: {{ dynamic }}</cdr-text>
 
     <cdr-select
       label="Multiple Prompt"
@@ -79,7 +83,7 @@
       <option value="3">3</option>
       <option value="4">4</option>
     </cdr-select>
-    <p>selected: {{ multiple }}</p>
+    <cdr-text>selected: {{ multiple }}</cdr-text>
 
     <cdr-select
       label="Multiple No Prompt"
@@ -88,7 +92,7 @@
       size="4"
       :options="multiple2Data"
     />
-    <p>selected: {{ multiple2 }}</p>
+    <cdr-text>selected: {{ multiple2 }}</cdr-text>
   </div>
 </template>
 
