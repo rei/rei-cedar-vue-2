@@ -13,6 +13,21 @@
         />
         Anchor and Icon
       </cdr-button>
+
+      <!-- <cdr-button
+        tag="a"
+        href="https://rei.com"
+        size="large"
+        data-backstop="cdr-button--icon"
+        disabled
+      >
+        <icon-check-lg
+          slot="icon"
+          class="cdr-button__icon"
+        />
+        Anchor and Icon
+      </cdr-button> -->
+
       <cdr-button
         size="medium"
       >
@@ -46,6 +61,17 @@
       <cdr-button
         size="large"
         modifier="secondary"
+      >
+        <cdr-icon
+          slot="icon"
+          class="cdr-button__icon"
+          use="#download"/>
+        Button and Icon
+      </cdr-button>
+      <cdr-button
+        size="large"
+        modifier="secondary"
+        disabled
       >
         <cdr-icon
           slot="icon"
