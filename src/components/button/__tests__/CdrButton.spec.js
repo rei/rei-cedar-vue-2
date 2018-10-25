@@ -116,15 +116,4 @@ describe('CdrButton.vue', () => {
     expect(size.validator('small')).toBe(true);
     expect(size.validator('extra-small')).toBe(false);
   });
-
-  it('size setter properly modifies size', () => {
-    const wrapper = shallowMount(CdrButton);
-    wrapper.vm.setSize('large');
-    expect(wrapper.vm.sizeClass).toContain('large');
-  });
-
-  it('size getter properly returns size', () => {
-    const wrapper = shallowMount(CdrButton);
-    expect(wrapper.vm.getSize()).toContain('medium');
-  });
 });
