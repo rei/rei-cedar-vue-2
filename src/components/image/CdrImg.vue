@@ -26,7 +26,6 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
-import size from 'mixinsdir/size';
 
 /**
  * Cedar 2 component for image
@@ -37,7 +36,7 @@ import size from 'mixinsdir/size';
  */
 export default {
   name: 'CdrImg',
-  mixins: [modifier, size],
+  mixins: [modifier],
   props: {
     /**
      * Required. Image source url.
