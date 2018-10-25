@@ -59,7 +59,6 @@
 </template>
 
 <script>
-// import modifier from 'mixinsdir/modifier';
 import contentPriority from 'mixinsdir/contentPriority';
 import size from 'mixinsdir/size';
 /**
@@ -75,7 +74,6 @@ import size from 'mixinsdir/size';
 export default {
   name: 'CdrRating',
   mixins: [
-    // modifier,
     contentPriority,
     size,
   ],

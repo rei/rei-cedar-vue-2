@@ -64,13 +64,6 @@ export default {
       default: false,
       validator: value => typeof value === 'boolean',
     },
-    // /**
-    //  * Render a specific button size at a specific breakpoint. Takes precedence over size and fullWidth.
-    //  * Format is size@breakpoint (ex: large@sm).
-    //  */
-    // responsiveSize: {
-    //   type: Array,
-    // },
     /**
      * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.
      */
@@ -94,17 +87,6 @@ export default {
     buttonSizeClass() {
       return !this.iconOnly ? this.sizeClass : null;
     },
-    // responsiveClass() {
-    //   const responsiveClass = [];
-
-    //   if (this.responsiveSize && !this.iconOnly) {
-    //     this.responsiveSize.forEach((val) => {
-    //       responsiveClass.push(this.modifyClassName(this.baseClass, val));
-    //     });
-    //   }
-
-    //   return responsiveClass.join(' ');
-    // },
     iconClass() {
       const classes = [];
 
