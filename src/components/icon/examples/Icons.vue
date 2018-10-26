@@ -71,6 +71,21 @@
       </cdr-col>
     </cdr-row>
 
+    <h3>Responsive icon size</h3>
+    <hr>
+
+    <h6>Grow with screen width</h6>
+    <cdr-icon
+      use="#account-profile"
+      size="small@xs large@md large@lg"
+    />
+    <hr>
+    <h6>Inverse Grow</h6>
+    <cdr-icon
+      use="#account-profile"
+      size="large@xs small@md small@lg"
+    />
+    <hr>
   </div>
 </template>
 
