@@ -2,98 +2,188 @@
   <!-- eslint-disable max-len -->
   <div>
     <div class="tab-demo-section">
-      <h2>Tabs</h2>
+      <cdr-text
+        tag="h2"
+        modifier="heading-medium">
+        Tabs
+      </cdr-text>
       <cdr-tabs height="100px">
         <cdr-tab-panel name="Tab1">
-          <h1>Tab One Content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab One Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="Tab2">
-          <h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
             Tab Two Content
-          </h1>
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="REALLY REALLY LARGE TAB NAME">
-          <h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
             Tab Three Content
-          </h1>
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="4">
-          <h1>
-            Four Content
-          </h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Four Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="Five">
-          <h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
             Tab Five Content
-          </h1>
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="Six">
-          <h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
             Tab Six Content
-          </h1>
+          </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
     <!-- Compact Modifier -->
     <div class="tab-demo-section">
-      <h2>Compact Tabs</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Compact Tabs
+      </cdr-text>
       <cdr-tabs modifier="compact">
         <cdr-tab-panel name="one">
-          <h1>tab one content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab One Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="two">
-          <h1>tab two content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Two Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="three">
-          <h1>tab three content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Three Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="four">
-          <h1>tab four content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Four Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="five">
-          <h1>tab five content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Five Content
+          </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
     <!-- Full Width Modifier -->
     <div class="tab-demo-section">
-      <h2>Full Width Tabs</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Full Width Tabs
+      </cdr-text>
       <cdr-tabs modifier="full-width">
         <cdr-tab-panel name="one">
-          <h1>tab one content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab One Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="two">
-          <h1>tab two content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Two Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="three">
-          <h1>tab three content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Three Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="four">
-          <h1>tab four content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Four Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="five">
-          <h1>tab five content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Five Content
+          </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
     <!-- No Border Modifier -->
     <div class="tab-demo-section">
-      <h2>No Border Tabs</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        No Border Tabs
+      </cdr-text>
       <cdr-tabs modifier="no-border">
         <cdr-tab-panel name="one">
-          <h1>tab one content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab One Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="two">
-          <h1>tab two content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Two Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="three">
-          <h1>tab three content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Three Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="four">
-          <h1>tab four content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Four Content
+          </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="five">
-          <h1>tab five content</h1>
+          <cdr-text
+            tag="strong"
+            modifier="subheading">
+            Tab Five Content
+          </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
@@ -114,9 +204,5 @@ export default {
     text-align: center;
     height: 150px;
     padding-top: 25px;
-  }
-
-  .tab-demo-section > h2 {
-    text-align: left;
   }
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h2>Text Inputs</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Text Inputs
+    </cdr-text>
 
     <cdr-input
       v-model="debounce"

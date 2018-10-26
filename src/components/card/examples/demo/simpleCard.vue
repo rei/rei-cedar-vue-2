@@ -1,7 +1,7 @@
 <template>
   <div>
     <cdr-card>
-      <p>A simple card</p>
+      <cdr-text>A simple card</cdr-text>
     </cdr-card>
   </div>
 </template>

@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h2>Ratings</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Ratings
+    </cdr-text>
 
     <!-- Large Size -->
     <cdr-rating
@@ -8,6 +12,7 @@
       count="0"
       size="large"
       content-priority="secondary"
+      space="cdr-inset"
 
     />
     <cdr-rating
@@ -84,11 +89,15 @@
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
 import CdrRating from '../CdrRating';
 
 export default {
   name: 'Rating',
-  components: { CdrRating },
+  components: {
+    ...Components,
+    CdrRating,
+  },
 };
 </script>
 

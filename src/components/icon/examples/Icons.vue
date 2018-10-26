@@ -1,10 +1,17 @@
 <template>
   <div class="icon-examples">
-    <h2>Icons</h2>
-    <cdr-icon-sprite/>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Icons
+    </cdr-text>
     <icon-account-profile data-backstop="cdr-icon-add" />
 
-    <h3>Default icon size</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Default icon size
+    </cdr-text>
     <cdr-icon use="#account-profile" />
     <hr>
 
@@ -19,17 +26,21 @@
         <div>
           <div class="cdr-text-center">
             <svg :is="key" />
-            <p>{{ key }}</p>
+            <cdr-text>{{ key }}</cdr-text>
           </div>
           <div class="cdr-text-center">
             <cdr-icon :use="`#${getSpriteId(key)}`" />
-            <p>using sprite</p>
+            <cdr-text>using sprite</cdr-text>
           </div>
         </div>
       </cdr-col>
     </cdr-row>
 
-    <h3>Small icon size</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Small icon size
+    </cdr-text>
     <hr>
 
     <cdr-row
@@ -45,12 +56,16 @@
             :is="key"
             size="small"
           />
-          <p>{{ key }}</p>
+          <cdr-text>{{ key }}</cdr-text>
         </div>
       </cdr-col>
     </cdr-row>
 
-    <h3>Large icon size</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Large icon size
+    </cdr-text>
     <hr>
 
     <cdr-row
@@ -66,7 +81,7 @@
             :is="key"
             size="large"
           />
-          <p>{{ key }}</p>
+          <cdr-text>{{ key }}</cdr-text>
         </div>
       </cdr-col>
     </cdr-row>
