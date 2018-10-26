@@ -65,6 +65,7 @@
         :class="$style['cdr-input__post-icon']">
         <slot name="posticon"/>
       </span>
+      <small>This is helper Text</small>
     </div>
   </div>
 </template>
