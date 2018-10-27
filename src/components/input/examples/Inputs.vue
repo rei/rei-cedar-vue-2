@@ -1,75 +1,77 @@
 <template>
-  <form class="input-demo-form">
+  <div>
     <h2>Text Inputs</h2>
+
     <cdr-input
-      v-model="standard"
-      hide-label
-      label="Standard Input"
-      id="default-input"
-      placeholder="Default Input Placeholder"
+      v-model="debounce"
+      label="Validation with debounce"
+      id="testing"
+      placeholder="Enter hi"
+      feedback
+      name="yoyo"
+      :rules="[validateFn]"
+      debounce
+      data-backstop="text-input"
     />
-    <br>
+
     <cdr-input
-      v-model="standard"
+      v-model="requiredValidated"
+      label="Required"
+      feedback
+      :rules="[validateFn]"
+      required
+    />
+
+    <cdr-input
+      v-model="required"
+      label="Default required validation"
+      required
+    />
+
+    <cdr-input
+      v-model="nothing"
+      label="Nothing"
+    />
+
+    <cdr-input
+      v-model="nothing"
+      label="This has no label"
       hide-label
-      label="Standard Disabled Input"
-      id="default-inactive-input"
-      placeholder="Disabled Default Placeholder"
+      placeholder="hidden-label"
+    />
+
+    <cdr-input
+      v-model="pattern"
+      label="Pattern validation"
+      required
+      pattern="[a-zA-Z0-9\-\s'/@#+&%]+"
+      pattern-error="Only letters, numbers, spaces, dashes,
+      apostrophes, /, @, #, +, &amp; or % are allowed."
+    />
+
+    <cdr-input
+      v-model="empty"
+      label="Disabled Input"
+      placeholder="I am disabled"
       disabled
     />
-    <br>
+
     <cdr-input
-      v-model="large"
-      hide-label
-      label="Large Input"
-      id="large-input"
-      placeholder="Large Input Placeholder"
-      large
+      v-model="valid"
+      label="Success"
+      feedback
+      :rules="[validateFn]"
+      immediate-validate
     />
-    <br>
+
     <cdr-input
-      v-model="large"
-      hide-label
-      label="Large Disabled Input"
-      id="large-inactive-input"
-      placeholder="Large Disabled Placeholder"
-      large
-      disabled
+      v-model="warning"
+      label="Warning"
+      feedback
+      :rules="[validateFn]"
+      immediate-validate
     />
-    <br>
-    <cdr-input
-      v-model="withLabel"
-      id="input-with-label"
-      label="Input with Label"
-      placeholder="Input with Label"
-    />
-    <br>
-    <cdr-input
-      v-model="withLabel"
-      id="disabled-input-with-label"
-      placeholder="Disabled Input with Label"
-      label="Disabled Input with Label"
-      disabled
-    />
-    <br>
-    <cdr-input
-      v-model="textArea"
-      id="text-area"
-      placeholder="Text Area"
-      label="Text Area"
-      :rows="10"
-    />
-    <br>
-    <cdr-input
-      v-model="textArea"
-      id="disabled-text-area"
-      placeholder="Disabled Text Area"
-      label="Disabled Text Area"
-      :rows="10"
-      disabled
-    />
-    <br>
-    <h2>Add ons</h2>
+
     <cdr-input
       v-model="requiredWithIcon"
       id="required-with-icon"
@@ -101,34 +103,42 @@
 
 <script>
 import Components from 'componentsdir/_index';
-import { IconTwitter, IconCheckLg } from 'componentsdir/icon/dist/cdr-icon';
-import CdrIcon from 'componentsdir/icon/CdrIcon';
-import CdrInput from 'componentsdir/input/CdrInput';
 
 export default {
   name: 'Forms',
-  components: {
-    Components,
-    CdrIcon,
-    CdrInput,
-    IconTwitter,
-    IconCheckLg,
-  },
+  components: Components,
   data() {
     return {
-      standard: '',
-      large: '',
-      withLabel: '',
-      textArea: '',
-      requiredWithIcon: '',
+      debounce: '',
+      requiredValidated: '',
       required: '',
+      nothing: '',
+      pattern: '',
+      empty: '',
+      valid: 'hi',
+      warning: '',
+      error: 1,
+      multi: '',
+      multi2: '',
     };
+  },
+  methods: {
+    validateFn(inputText) {
+      const obj = {};
+      if (inputText === 'hi') {
+        obj.state = 'valid';
+      } else if (inputText === '') {
+        obj.state = 'warn';
+        obj.message = 'Warning Message';
+      } else if (!isNaN(inputText) && inputText !== '') { //eslint-disable-line
+        obj.state = 'error';
+        obj.message = 'Error: needs to be letters';
+      } else {
+        obj.state = 'error';
+        obj.message = 'Error Message';
+      }
+      return obj;
+    },
   },
 };
 </script>
-<style>
-  .input-demo-form {
-    margin: 20px;
-  }
-</style>
-

@@ -32,18 +32,4 @@ export default {
       return returnClass;
     },
   },
-  methods: {
-    /**
-     * Changes the component Size Prop
-     */
-    setSize(newSize) {
-      this.size = newSize;
-    },
-    /**
-     * Changes the component Size Prop
-     */
-    getSize() {
-      return this.size;
-    },
-  },
 };

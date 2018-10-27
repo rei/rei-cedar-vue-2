@@ -57,16 +57,6 @@ describe('CdrButton.vue', () => {
     expect(wrapper.classes()).toContain('cdr-button');
   });
 
-  // it('adds responsive classes', () => {
-  //   const wrapper = shallowMount(CdrButton, {
-  //     propsData: {
-  //       size: 'medium large@xs',
-  //     }
-  //   });
-
-  //   expect(wrapper.vm.$style).toHaveProperty(`cdr-button--large@xs`);
-  // })
-
   it('does not add size class when icon only', () => {
     const wrapper = shallowMount(CdrButton, {
       propsData: {
@@ -125,16 +115,5 @@ describe('CdrButton.vue', () => {
     const size = wrapper.vm.$options.props.size;
     expect(size.validator('small')).toBe(true);
     expect(size.validator('extra-small')).toBe(false);
-  });
-
-  it('size setter properly modifies size', () => {
-    const wrapper = shallowMount(CdrButton);
-    wrapper.vm.setSize('large');
-    expect(wrapper.vm.sizeClass).toContain('large');
-  });
-
-  it('size getter properly returns size', () => {
-    const wrapper = shallowMount(CdrButton);
-    expect(wrapper.vm.getSize()).toContain('medium');
   });
 });
