@@ -2,11 +2,23 @@
   <!-- eslint-disable max-len -->
   <div>
     <div class="row-demo-wrapper">
-      <h2>The Grid</h2>
+      <cdr-text
+        tag="h2"
+        modifier="heading-small">
+        The Grid
+      </cdr-text>
 
       <div data-backstop="row-basic">
-        <h3>cdr-row usage</h3>
-        <h4>cols="#"</h4>
+        <cdr-text
+          tag="h3"
+          modifier="heading-small">
+          cdr-row usage
+        </cdr-text>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          cols="#"
+        </cdr-text>
         <cdr-row cols="1">
           <cdr-col>
             <div class="row-demo">1</div>
@@ -292,7 +304,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>default behavior</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          default behavior
+        </cdr-text>
         <cdr-row>
           <cdr-col>
             <div class="row-demo">auto auto auto auto auto auto auto auto</div>
@@ -308,7 +324,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>cols="auto"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          cols="auto"
+        </cdr-text>
         <cdr-row
           cols="auto"
           justify="center around@sm between@md right@lg"
@@ -327,7 +347,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>gutter="none"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          gutter="none"
+        </cdr-text>
         <cdr-row
           cols="3"
           gutter="none"
@@ -352,7 +376,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>gutter="xxs"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          gutter="xxs"
+        </cdr-text>
         <cdr-row
           cols="3"
           gutter="xxs"
@@ -377,7 +405,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>nowrap</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          nowrap
+        </cdr-text>
         <cdr-row
           cols="3"
           nowrap="nowrap"
@@ -396,7 +428,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>justify="left"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          justify="left"
+        </cdr-text>
         <cdr-row
           cols="3"
           justify="left"
@@ -406,7 +442,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>justify="center"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          justify="center"
+        </cdr-text>
         <cdr-row
           cols="3"
           justify="center"
@@ -416,7 +456,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>justify="right"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          justify="right"
+        </cdr-text>
         <cdr-row
           cols="3"
           justify="right"
@@ -426,7 +470,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>justify="between"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          justify="between"
+        </cdr-text>
         <cdr-row
           cols="4"
           justify="between"
@@ -442,7 +490,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>justify="around"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          justify="around"
+        </cdr-text>
         <cdr-row
           cols="4"
           justify="around"
@@ -458,7 +510,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>align="top"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          align="top"
+        </cdr-text>
         <cdr-row
           cols="3"
           align="top"
@@ -477,7 +533,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>align="middle"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          align="middle"
+        </cdr-text>
         <cdr-row
           cols="3"
           align="middle"
@@ -496,7 +556,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>align="bottom"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          align="bottom"
+        </cdr-text>
         <cdr-row
           cols="3"
           align="bottom"
@@ -515,7 +579,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>vertical</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          vertical
+        </cdr-text>
         <cdr-row
           cols="3"
           vertical="vertical"
@@ -534,9 +602,17 @@
           </cdr-col>
         </cdr-row>
 
-        <h3>cdr-col usage</h3>
+        <cdr-text
+          tag="h3"
+          modifier="heading-small">
+          cdr-col usage
+        </cdr-text>
 
-        <h4>span="#"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          span="#"
+        </cdr-text>
         <cdr-row>
           <cdr-col span="12">
             <div class="row-demo">12</div>
@@ -579,7 +655,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>mixing cdr-row cols="#" and cdr-col span="#"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          mixing cdr-row cols="#" and cdr-col span="#"
+        </cdr-text>
         <cdr-row cols="3">
           <cdr-col>
             <div class="row-demo">3</div>
@@ -601,7 +681,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>align-self</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          align-self
+        </cdr-text>
         <cdr-row
           cols="4"
           style="height: 300px"
@@ -620,7 +704,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>offset-left="#"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          offset-left="#"
+        </cdr-text>
         <cdr-row>
           <cdr-col
             span="1"
@@ -738,7 +826,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>offset-right="#"</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          offset-right="#"
+        </cdr-text>
         <cdr-row>
           <cdr-col
             span="2"
@@ -760,7 +852,11 @@
           </cdr-col>
         </cdr-row>
 
-        <h4>offset-right="#" (with cdr-row justify="right")</h4>
+        <cdr-text
+          tag="h4"
+          modifier="subheading">
+          offset-right="#" (with cdr-row justify="right")
+        </cdr-text>
         <cdr-row justify="right">
           <cdr-col
             span="1"
@@ -859,11 +955,19 @@
         </cdr-row>
       </div>
 
-      <h4>cdr-row responsive options</h4>
+      <cdr-text
+        tag="h4"
+        modifier="subheading">
+        cdr-row responsive options
+      </cdr-text>
 
       <div data-backstop="row-sm">
-        <h5>Small breakpoint</h5>
-        <p>cols="2 4@sm"</p>
+        <cdr-text
+          tag="h5"
+          modifier="subheading">
+          Small breakpoint
+        </cdr-text>
+        <cdr-text>cols="2 4@sm"</cdr-text>
         <cdr-row
           cols="2 4@sm"
         >
@@ -881,7 +985,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>cols="6@sm"</p>
+        <cdr-text>cols="6@sm"</cdr-text>
         <cdr-row cols="6@sm">
           <cdr-col>
             <div class="row-demo">auto, 6-sm</div>
@@ -897,7 +1001,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter="none@sm"</p>
+        <cdr-text>gutter="none@sm"</cdr-text>
         <cdr-row
           cols="6"
           gutter="none@sm"
@@ -910,7 +1014,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter="xxs@sm"</p>
+        <cdr-text>gutter="xxs@sm"</cdr-text>
         <cdr-row
           cols="6"
           gutter="xxs@sm"
@@ -923,7 +1027,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="center@sm"</p>
+        <cdr-text>justify="center@sm"</cdr-text>
         <cdr-row
           cols="6"
           justify="center@sm"
@@ -936,7 +1040,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="right@sm"</p>
+        <cdr-text>justify="right@sm"</cdr-text>
         <cdr-row
           cols="6"
           justify="right@sm"
@@ -949,7 +1053,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="between@sm"</p>
+        <cdr-text>justify="between@sm"</cdr-text>
         <cdr-row
           cols="6"
           justify="between@sm"
@@ -962,7 +1066,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="around@sm"</p>
+        <cdr-text>justify="around@sm"</cdr-text>
         <cdr-row
           cols="6"
           justify="around@sm"
@@ -975,7 +1079,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align="top@sm"</p>
+        <cdr-text>align="top@sm"</cdr-text>
         <cdr-row
           cols="3"
           align="top@sm"
@@ -991,7 +1095,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align="middle@sm"</p>
+        <cdr-text>align="middle@sm"</cdr-text>
         <cdr-row
           cols="3"
           align="middle@sm"
@@ -1007,7 +1111,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align="bottom@sm"</p>
+        <cdr-text>align="bottom@sm"</cdr-text>
         <cdr-row
           cols="3"
           align="bottom@sm"
@@ -1023,7 +1127,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>vertical@sm</p>
+        <cdr-text>vertical@sm</cdr-text>
         <cdr-row
           cols="3"
           vertical="vertical@sm"
@@ -1042,7 +1146,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>wrap@sm</p>
+        <cdr-text>wrap@sm</cdr-text>
         <cdr-row
           cols="3"
           nowrap="nowrap"
@@ -1062,7 +1166,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>nowrap@sm</p>
+        <cdr-text>nowrap@sm</cdr-text>
         <cdr-row
           cols="3"
           nowrap="nowrap@sm"
@@ -1083,8 +1187,12 @@
       </div>
 
       <div data-backstop="row-md">
-        <h5>Medium breakpoint</h5>
-        <p>cols="2 4@md"</p>
+        <cdr-text
+          tag="h5"
+          modifier="subheading">
+          Medium breakpoint
+        </cdr-text>
+        <cdr-text>cols="2 4@md"</cdr-text>
         <cdr-row
           cols="2 4@md"
         >
@@ -1102,7 +1210,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>cols="6@md"</p>
+        <cdr-text>cols="6@md"</cdr-text>
         <cdr-row cols="6@md">
           <cdr-col>
             <div class="row-demo">auto, 6-md</div>
@@ -1118,7 +1226,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter="none@sm"</p>
+        <cdr-text>gutter="none@sm"</cdr-text>
         <cdr-row
           cols="6"
           gutter="none@md"
@@ -1131,7 +1239,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter="xxs@md"</p>
+        <cdr-text>gutter="xxs@md"</cdr-text>
         <cdr-row
           cols="6"
           gutter="xxs@md"
@@ -1144,7 +1252,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="center@md"</p>
+        <cdr-text>justify="center@md"</cdr-text>
         <cdr-row
           cols="6"
           justify="center@md"
@@ -1157,7 +1265,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="right@md"</p>
+        <cdr-text>justify="right@md"</cdr-text>
         <cdr-row
           cols="6"
           justify="right@md"
@@ -1170,7 +1278,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="between@md"</p>
+        <cdr-text>justify="between@md"</cdr-text>
         <cdr-row
           cols="6"
           justify="between@md"
@@ -1183,7 +1291,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="around@md"</p>
+        <cdr-text>justify="around@md"</cdr-text>
         <cdr-row
           cols="6"
           justify="around@md"
@@ -1196,7 +1304,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align="top@md"</p>
+        <cdr-text>align="top@md"</cdr-text>
         <cdr-row
           cols="3"
           align="top@md"
@@ -1212,7 +1320,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align="middle@md"</p>
+        <cdr-text>align="middle@md"</cdr-text>
         <cdr-row
           cols="3"
           align="middle@md"
@@ -1228,7 +1336,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align="bottom@md"</p>
+        <cdr-text>align="bottom@md"</cdr-text>
         <cdr-row
           cols="3"
           align="bottom@md"
@@ -1244,7 +1352,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>vertical@md</p>
+        <cdr-text>vertical@md</cdr-text>
         <cdr-row
           cols="3"
           vertical="vertical@md"
@@ -1263,7 +1371,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>wrap@md</p>
+        <cdr-text>wrap@md</cdr-text>
         <cdr-row
           cols="3"
           nowrap="nowrap"
@@ -1283,7 +1391,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>nowrap@md</p>
+        <cdr-text>nowrap@md</cdr-text>
         <cdr-row
           cols="3"
           nowrap="nowrap@md"
@@ -1304,8 +1412,12 @@
       </div>
 
       <div data-backstop="row-lg">
-        <h5>Large breakpoint</h5>
-        <p>cols="2 4@lg"</p>
+        <cdr-text
+          tag="h5"
+          modifier="subheading">
+          Large breakpoint
+        </cdr-text>
+        <cdr-text>cols="2 4@lg"</cdr-text>
         <cdr-row
           cols="2 4@lg"
         >
@@ -1323,7 +1435,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>cols="6@lg"</p>
+        <cdr-text>cols="6@lg"</cdr-text>
         <cdr-row cols="6@lg">
           <cdr-col>
             <div class="row-demo">auto, 6-lg</div>
@@ -1339,7 +1451,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter="none@lg"</p>
+        <cdr-text>gutter="none@lg"</cdr-text>
         <cdr-row
           cols="6"
           gutter="none@lg"
@@ -1352,7 +1464,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>gutter="xxs@lg"</p>
+        <cdr-text>gutter="xxs@lg"</cdr-text>
         <cdr-row
           cols="6"
           gutter="xxs@lg"
@@ -1365,7 +1477,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="center@lg"</p>
+        <cdr-text>justify="center@lg"</cdr-text>
         <cdr-row
           cols="6"
           justify="center@lg"
@@ -1378,7 +1490,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="right@lg"</p>
+        <cdr-text>justify="right@lg"</cdr-text>
         <cdr-row
           cols="6"
           justify="right@lg"
@@ -1391,7 +1503,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="between@lg"</p>
+        <cdr-text>justify="between@lg"</cdr-text>
         <cdr-row
           cols="6"
           justify="between@lg"
@@ -1404,7 +1516,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>justify="around@lg"</p>
+        <cdr-text>justify="around@lg"</cdr-text>
         <cdr-row
           cols="6"
           justify="around@lg"
@@ -1417,7 +1529,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align="top@lg"</p>
+        <cdr-text>align="top@lg"</cdr-text>
         <cdr-row
           cols="3"
           align="top@lg"
@@ -1433,7 +1545,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align="middle@lg"</p>
+        <cdr-text>align="middle@lg"</cdr-text>
         <cdr-row
           cols="3"
           align="middle@lg"
@@ -1449,7 +1561,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>align="bottom@lg"</p>
+        <cdr-text>align="bottom@lg"</cdr-text>
         <cdr-row
           cols="3"
           align="bottom@lg"
@@ -1465,7 +1577,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>vertical@lg</p>
+        <cdr-text>vertical@lg</cdr-text>
         <cdr-row
           cols="3"
           vertical="vertical@lg"
@@ -1484,7 +1596,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>wrap@lg</p>
+        <cdr-text>wrap@lg</cdr-text>
         <cdr-row
           cols="3"
           nowrap="nowrap"
@@ -1504,7 +1616,7 @@
           </cdr-col>
         </cdr-row>
 
-        <p>nowrap@lg</p>
+        <cdr-text>nowrap@lg</cdr-text>
         <cdr-row
           cols="3"
           nowrap="nowrap@lg"
@@ -1525,8 +1637,12 @@
       </div>
 
       <div data-backstop="row-responsive">
-        <h4>Mix and match responsive row classes</h4>
-        <p>1 > 2-sm > 3-md > 4-lg </p>
+        <cdr-text
+          tag="h4"
+          modifier="heading-small">
+          Mix and match responsive row classes
+        </cdr-text>
+        <cdr-text>1 > 2-sm > 3-md > 4-lg </cdr-text>
         <cdr-row
           cols="1 2@sm 3@md 4@lg"
         >
@@ -1549,7 +1665,7 @@
             <div class="row-demo"/>
           </cdr-col>
         </cdr-row>
-        <p>justify (default@xs > center@sm > right@md > around@lg)</p>
+        <cdr-text>justify (default@xs > center@sm > right@md > around@lg)</cdr-text>
         <cdr-row
           cols="6"
           justify="center@sm right@md around@lg"
@@ -1561,7 +1677,7 @@
             <div class="row-demo"/>
           </cdr-col>
         </cdr-row>
-        <p>align (default@xs > top@sm > middle@md > bottom@lg)</p>
+        <cdr-text>align (default@xs > top@sm > middle@md > bottom@lg)</cdr-text>
         <cdr-row
           cols="3"
           align="top@sm middle@md bottom@lg"
@@ -1578,10 +1694,18 @@
         </cdr-row>
       </div>
 
-      <h4>cdr-col responsive options</h4>
+      <cdr-text
+        tag="h4"
+        modifier="heading-small">
+        cdr-col responsive options
+      </cdr-text>
       <div data-backstop="col-sm">
-        <h5>Small breakpoint</h5>
-        <p>span="#@sm"</p>
+        <cdr-text
+          tag="h5"
+          modifier="subheading">
+          Small breakpoint
+        </cdr-text>
+        <cdr-text>span="#@sm"</cdr-text>
         <cdr-row>
           <cdr-col span="3@sm">
             <div class="row-demo">auto, 3-sm</div>
@@ -1590,7 +1714,7 @@
             <div class="row-demo">auto</div>
           </cdr-col>
         </cdr-row>
-        <p>offset-right="1@sm" offset-left="1@sm"</p>
+        <cdr-text>offset-right="1@sm" offset-left="1@sm"</cdr-text>
         <cdr-row>
           <cdr-col offset-right="1@sm">
             <div class="row-demo">right 1</div>
@@ -1599,7 +1723,7 @@
             <div class="row-demo">left 1</div>
           </cdr-col>
         </cdr-row>
-        <p>align-self@sm</p>
+        <cdr-text>align-self@sm</cdr-text>
         <cdr-row>
           <cdr-col align-self="top@sm">
             <div class="row-demo">top</div>
@@ -1617,8 +1741,12 @@
       </div>
 
       <div data-backstop="col-md">
-        <h5>Medium breakpoint</h5>
-        <p>span="#@md"</p>
+        <cdr-text
+          tag="h5"
+          modifier="subheading">
+          Medium breakpoint
+        </cdr-text>
+        <cdr-text>span="#@md"</cdr-text>
         <cdr-row>
           <cdr-col span="3@md">
             <div class="row-demo">auto, 3-md</div>
@@ -1627,7 +1755,7 @@
             <div class="row-demo">auto</div>
           </cdr-col>
         </cdr-row>
-        <p>offset-right="1@md" offset-left="1@md"</p>
+        <cdr-text>offset-right="1@md" offset-left="1@md"</cdr-text>
         <cdr-row>
           <cdr-col offset-right="1@md">
             <div class="row-demo">right 1</div>
@@ -1636,7 +1764,7 @@
             <div class="row-demo">left 1</div>
           </cdr-col>
         </cdr-row>
-        <p>align-self@md</p>
+        <cdr-text>align-self@md</cdr-text>
         <cdr-row>
           <cdr-col align-self="top@md">
             <div class="row-demo">top</div>
@@ -1654,8 +1782,12 @@
       </div>
 
       <div data-backstop="col-lg">
-        <h5>Large breakpoint</h5>
-        <p>span="#@lg"</p>
+        <cdr-text
+          tag="h5"
+          modifier="subheading">
+          Large breakpoint
+        </cdr-text>
+        <cdr-text>span="#@lg"</cdr-text>
         <cdr-row>
           <cdr-col span="3@lg">
             <div class="row-demo">auto, 3-lg</div>
@@ -1664,7 +1796,7 @@
             <div class="row-demo">auto</div>
           </cdr-col>
         </cdr-row>
-        <p>offset-right="1@lg" offset-left-lg="1"</p>
+        <cdr-text>offset-right="1@lg" offset-left-lg="1"</cdr-text>
         <cdr-row>
           <cdr-col offset-right="1@lg">
             <div class="row-demo">right 1</div>
@@ -1673,7 +1805,7 @@
             <div class="row-demo">left 1</div>
           </cdr-col>
         </cdr-row>
-        <p>align-self@lg</p>
+        <cdr-text>align-self@lg</cdr-text>
         <cdr-row>
           <cdr-col align-self="top@lg">
             <div class="row-demo">top</div>
@@ -1691,10 +1823,10 @@
       </div>
     </div>
 
-    <p>Complex Mosaic/Metro/Masonry-ish Demo</p>
+    <cdr-text>Complex Mosaic/Metro/Masonry-ish Demo</cdr-text>
     <complex/>
 
-    <p>Complex demo with list type</p>
+    <cdr-text>Complex demo with list type</cdr-text>
     <div data-backstop="row-mosaic-list">
       <cdr-row
         type="list"
@@ -1801,11 +1933,17 @@
 <script>
 import CdrRow from 'componentsdir/grid/CdrRow';
 import CdrCol from 'componentsdir/grid/CdrCol';
+import CdrText from 'componentsdir/text/CdrText';
 import complex from './demo/Complex';
 
 export default {
   name: 'Grid',
-  components: { CdrRow, CdrCol, complex },
+  components: {
+    CdrRow,
+    CdrCol,
+    CdrText,
+    complex,
+  },
 };
 </script>
 

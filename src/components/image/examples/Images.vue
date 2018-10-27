@@ -1,8 +1,17 @@
 <template>
   <div>
-    <h2>Images</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Images
+    </cdr-text>
     <div data-backstop="image-aspect-ratio">
-      <h3>Aspect Ratios (with landscape images)</h3>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Aspect Ratios (with landscape images)
+      </cdr-text>
+
       <ratios/>
     </div>
 
@@ -15,7 +24,11 @@
     </div>
 
     <div data-backstop="image-standard">
-      <h3>Standard image</h3>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Standard image
+      </cdr-text>
       <cdr-img
         alt="ratio standard"
         src="http://placehold.it/200x200"

@@ -6,6 +6,7 @@
     :class="[
       modifierClass,
       contentPriorityClass,
+      space,
       href ? $style['cdr-rating--linked'] : '',
     ]"
   >
@@ -62,6 +63,7 @@
 import modifier from 'mixinsdir/modifier';
 import contentPriority from 'mixinsdir/contentPriority';
 import size from 'mixinsdir/size';
+import space from 'mixinsdir/space';
 /**
  * Cedar 2 component for rating
  * Ratings are rounded to nearest .25 for displaying stars.
@@ -78,6 +80,7 @@ export default {
     modifier,
     contentPriority,
     size,
+    space,
   ],
   props: {
     /**

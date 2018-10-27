@@ -1,22 +1,29 @@
 <template>
   <div data-backstop="a11y-utilities">
-    <h2>A11y classes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      A11y classes
+    </cdr-text>
 
-    <p>Has some screen reader text after this.
+    <cdr-text>Has some screen reader text after this.
       <span class="cdr-sr-only">Text for screen reader</span>
-    </p>
+    </cdr-text>
 
-    <p data-backstop="a11y-skip-link">skip link -->
-      <a
+    <cdr-text data-backstop="a11y-skip-link">skip link -->
+      <cdr-link
         class="cdr-sr-only cdr-sr-only-focusable"
-        href="#skip">Skip to main content</a>
-    </p>
+        href="#skip">Skip to main content</cdr-link>
+    </cdr-text>
   </div>
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
+
 export default {
   name: 'UtilitiesA11y',
+  components: { ...Components },
 };
 </script>
 
