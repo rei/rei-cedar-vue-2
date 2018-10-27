@@ -55,17 +55,22 @@
       >
       <!-- @slot Icon to be put in front of input -->
       <span
-        v-if="$slots.preicon"
+        v-if="$slots.pre-icon"
         :class="$style['cdr-input__pre-icon']">
-        <slot name="preicon"/>
+        <slot name="pre-icon"/>
       </span>
       <!-- @slot Icon to be put at end of input -->
       <span
-        v-if="$slots.posticon"
+        v-if="$slots.post-icon"
         :class="$style['cdr-input__post-icon']">
-        <slot name="posticon"/>
+        <slot name="post-icon"/>
       </span>
-      <small>This is helper Text</small>
+      <span
+        v-if="$slots.helper-text"
+        :class="$style['cdr-input__post-icon']"
+      >
+        <slot name="helper-text" />
+      </span>
     </div>
   </div>
 </template>

@@ -29,7 +29,6 @@ export default {
   computed: {
     sizeClass() {
       const returnClass = this.buildClass('size');
-      console.log('Size Class = ', returnClass);
       return returnClass;
     },
   },

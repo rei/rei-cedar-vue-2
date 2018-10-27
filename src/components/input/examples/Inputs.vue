@@ -83,11 +83,14 @@
           Info Link/Icon
         </a>
       </template>
-      <template slot="preicon">
+      <template slot="pre-icon">
         <icon-twitter />
       </template>
-      <template slot="posticon">
+      <template slot="post-icon">
         <icon-check-lg />
+      </template>
+      <template slot="helper-text">
+        This is helper text.
       </template>
     </cdr-input>
     <br>
