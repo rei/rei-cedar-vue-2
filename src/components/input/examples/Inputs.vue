@@ -96,9 +96,7 @@
       </template>
     </cdr-input>
     <br>
-
-
-  </form>
+  </div>
 </template>
 
 <script>
