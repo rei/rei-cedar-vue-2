@@ -14,7 +14,6 @@
         :key="index"
         :size="button.size"
         :full-width="button.fullWidth"
-        :responsive-size="button.responsiveSize"
         :type="button.type"
         :disabled="button.disabled"
         :data-backstop="button.backstop ? button.backstop : null">
@@ -30,7 +29,7 @@
       <cdr-button
         :on-click="log"
         :full-width="true"
-        :responsive-size="['large@sm']">
+        size="large@sm">
         Responsive with default
       </cdr-button>
     </div>

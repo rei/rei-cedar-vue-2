@@ -10,7 +10,7 @@
     <cdr-rating
       rating="0"
       count="0"
-      modifier="large"
+      size="large"
       content-priority="secondary"
       space="cdr-inset"
 
@@ -18,21 +18,21 @@
     <cdr-rating
       rating="3"
       count="100"
-      modifier="large"
+      size="large"
       compact
     />
     <cdr-rating
       rating="3.66"
       count="1000"
       href="https://www.rei.com"
-      modifier="large"
+      size="large"
     />
     <div>
       <cdr-rating
         rating="3.66"
         count="1000"
         href="https://www.rei.com"
-        modifier="large"
+        size="large"
         compact
       />
     </div>
@@ -57,19 +57,33 @@
     <cdr-rating
       rating="2"
       count="9"
-      modifier="small"
+      size="small"
     />
     <cdr-rating
       rating="3.444412321"
       count="615"
-      modifier="small"
+      size="small"
       compact
     />
     <cdr-rating
       rating="3"
       count="100"
       href="https://www.rei.com"
-      modifier="small"
+      size="small"
+    />
+
+    <!-- Responsive Size -->
+    <h6>Responsive Growing</h6>
+    <cdr-rating
+      rating="2"
+      count="9"
+      size="small@xs large@md large@lg"
+    />
+    <h6>Responsive Inverse</h6>
+    <cdr-rating
+      rating="3"
+      count="100"
+      size="large@xs small@md small@lg"
     />
   </div>
 </template>
