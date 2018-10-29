@@ -5,8 +5,8 @@
     :href="href"
     :class="[
       contentPriorityClass,
-      space,
       sizeClass,
+      space,
       href ? $style['cdr-rating--linked'] : '',
     ]"
   >

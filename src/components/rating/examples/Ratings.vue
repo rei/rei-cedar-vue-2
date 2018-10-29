@@ -71,6 +71,20 @@
       href="https://www.rei.com"
       size="small"
     />
+
+    <!-- Responsive Size -->
+    <h6>Responsive Growing</h6>
+    <cdr-rating
+      rating="2"
+      count="9"
+      size="small@xs large@md large@lg"
+    />
+    <h6>Responsive Inverse</h6>
+    <cdr-rating
+      rating="3"
+      count="100"
+      size="large@xs small@md small@lg"
+    />
   </div>
 </template>
 
