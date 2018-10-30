@@ -18,6 +18,7 @@ import ratings from 'componentsdir/rating/examples/Ratings';
 import selects from 'componentsdir/select/examples/Selects';
 import tabs from 'componentsdir/tabs/examples/Tabs';
 import texts from 'componentsdir/text/examples/Text';
+import dataTable from 'componentsdir/dataTable/examples/DataTable';
 import accordion from 'componentsdir/accordion/examples/Accordion';
 
 import utilities from 'componentsdir/Utilities/Utilities';
@@ -30,6 +31,7 @@ export default {
   cards,
   checkboxes,
   cta,
+  dataTable,
   grid,
   icons,
   images,

@@ -4,7 +4,7 @@
   >
     <cdr-col>
       <div>
-        <p>Square</p>
+        <cdr-text modifier="subheading">Square</cdr-text>
         <cdr-img
           class="cdr-img-test"
           ratio="square"
@@ -15,7 +15,7 @@
     </cdr-col>
     <cdr-col>
       <div>
-        <p>1-2</p>
+        <cdr-text modifier="subheading">1-2</cdr-text>
         <cdr-img
           class="cdr-img-test"
           ratio="1-2"
@@ -26,7 +26,7 @@
     </cdr-col>
     <cdr-col>
       <div>
-        <p>2-3</p>
+        <cdr-text modifier="subheading">2-3</cdr-text>
         <cdr-img
           class="cdr-img-test"
           ratio="2-3"
@@ -37,7 +37,7 @@
     </cdr-col>
     <cdr-col>
       <div>
-        <p>3-4</p>
+        <cdr-text modifier="subheading">3-4</cdr-text>
         <cdr-img
           class="cdr-img-test"
           ratio="3-4"
@@ -48,7 +48,7 @@
     </cdr-col>
     <cdr-col>
       <div>
-        <p>9-16</p>
+        <cdr-text modifier="subheading">9-16</cdr-text>
         <cdr-img
           class="cdr-img-test"
           ratio="9-16"
@@ -59,7 +59,7 @@
     </cdr-col>
     <cdr-col>
       <div>
-        <p>2-1</p>
+        <cdr-text modifier="subheading">2-1</cdr-text>
         <cdr-img
           class="cdr-img-test"
           ratio="2-1"
@@ -70,7 +70,7 @@
     </cdr-col>
     <cdr-col>
       <div>
-        <p>3-2</p>
+        <cdr-text modifier="subheading">3-2</cdr-text>
         <cdr-img
           class="cdr-img-test"
           ratio="3-2"
@@ -81,7 +81,7 @@
     </cdr-col>
     <cdr-col>
       <div>
-        <p>4-3</p>
+        <cdr-text modifier="subheading">4-3</cdr-text>
         <cdr-img
           class="cdr-img-test"
           ratio="4-3"
@@ -92,7 +92,7 @@
     </cdr-col>
     <cdr-col>
       <div>
-        <p>16-9</p>
+        <cdr-text modifier="subheading">16-9</cdr-text>
         <cdr-img
           class="cdr-img-test"
           ratio="16-9"

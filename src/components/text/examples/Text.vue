@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h2>text</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Text
+    </cdr-text>
 
     <headings data-backstop="headings"/>
 

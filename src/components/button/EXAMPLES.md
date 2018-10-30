@@ -45,17 +45,7 @@ function log() {
     console.log('Clicked!');
 }
 
-<cdr-button modifier="sm" :on-click="log">Default</cdr-button>
-```
-
-#### Extra Small Modifier
-
-```
-function log() {
-    console.log('Clicked!');
-}
-
-<cdr-button modifier="xs" :on-click="log">Default</cdr-button>
+<cdr-button size="small" :on-click="log">Default</cdr-button>
 ```
 
 ### Block Modifier

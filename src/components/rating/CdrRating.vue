@@ -4,8 +4,9 @@
     :is="href ? 'a' : 'div'"
     :href="href"
     :class="[
-      modifierClass,
       contentPriorityClass,
+      sizeClass,
+      space,
       href ? $style['cdr-rating--linked'] : '',
     ]"
   >
@@ -59,8 +60,9 @@
 </template>
 
 <script>
-import modifier from 'mixinsdir/modifier';
 import contentPriority from 'mixinsdir/contentPriority';
+import size from 'mixinsdir/size';
+import space from 'mixinsdir/space';
 /**
  * Cedar 2 component for rating
  * Ratings are rounded to nearest .25 for displaying stars.
@@ -74,8 +76,9 @@ import contentPriority from 'mixinsdir/contentPriority';
 export default {
   name: 'CdrRating',
   mixins: [
-    modifier,
     contentPriority,
+    size,
+    space,
   ],
   props: {
     /**

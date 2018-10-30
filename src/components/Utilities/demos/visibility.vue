@@ -1,6 +1,10 @@
 <template>
   <div data-backstop="visibility-utilities">
-    <h2>Visibility classes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Visibility classes
+    </cdr-text>
 
     <table>
       <thead>
@@ -244,8 +248,11 @@
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
+
 export default {
   name: 'VisibleUtilities',
+  components: { ...Components },
 };
 </script>
 

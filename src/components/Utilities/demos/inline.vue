@@ -1,14 +1,18 @@
 <template>
   <div data-backstop="inline-space-utilities">
-    <h2>Inline space classes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Inline space classes
+    </cdr-text>
     <cdr-card class="example">
-      <p class="cdr-inline--xxs"> cdr-inline--xxs </p>
-      <p class="cdr-inline--xs"> cdr-inline--xs </p>
-      <p class="cdr-inline--sm"> cdr-inline--sm </p>
-      <p class="cdr-inline"> cdr-inline </p>
-      <p class="cdr-inline--lg"> cdr-inline--lg </p>
-      <p class="cdr-inline--xl"> cdr-inline--xl </p>
-      <p class="cdr-inline--xxl"> cdr-inline--xxl </p>
+      <cdr-text class="cdr-inline--xxs"> cdr-inline--xxs </cdr-text>
+      <cdr-text class="cdr-inline--xs"> cdr-inline--xs </cdr-text>
+      <cdr-text class="cdr-inline--sm"> cdr-inline--sm </cdr-text>
+      <cdr-text class="cdr-inline"> cdr-inline </cdr-text>
+      <cdr-text class="cdr-inline--lg"> cdr-inline--lg </cdr-text>
+      <cdr-text class="cdr-inline--xl"> cdr-inline--xl </cdr-text>
+      <cdr-text class="cdr-inline--xxl"> cdr-inline--xxl </cdr-text>
     </cdr-card>
   </div>
 </template>

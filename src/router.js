@@ -3,6 +3,7 @@ import Buttons from 'componentsdir/button/examples/Buttons';
 import Cards from 'componentsdir/card/examples/Cards';
 import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
 import Cta from 'componentsdir/cta/examples/Cta';
+import DataTables from 'componentsdir/dataTable/examples/DataTable';
 import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
@@ -31,6 +32,7 @@ const routes = [
   { path: '/cards', name: 'Cards', component: Cards },
   { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
   { path: '/cta', name: 'CTA', component: Cta },
+  { path: '/dataTables', name: 'Data Tables', component: DataTables },
   { path: '/grids', name: 'Grids', component: Grids },
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
