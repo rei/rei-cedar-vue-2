@@ -2,20 +2,17 @@
 
 Ratings are rounded to nearest .25 for displaying stars.
 
-### <span class="modifiers>Modifiers</span>
-
-Modifiers can be combined 1 from each grouping.
 
 {small, medium, large}
 
-Default is large.
+Default is medium.
 
 ### Large + compact
 
 ```
 <div>
-  <cdr-rating rating="5" count="10" modifier="large"></cdr-rating>
-  <cdr-rating :rating="1" :count="100" modifier="large" compact></cdr-rating>
+  <cdr-rating rating="5" count="10" size="large"></cdr-rating>
+  <cdr-rating :rating="1" :count="100" size="large" compact></cdr-rating>
 </div>
 ```
 
@@ -23,8 +20,8 @@ Default is large.
 
 ```
 <div>
-  <cdr-rating rating="5" count="10" modifier="medium"></cdr-rating>
-  <cdr-rating :rating="1" :count="100" modifier="medium" compact></cdr-rating>
+  <cdr-rating rating="5" count="10" size="medium"></cdr-rating>
+  <cdr-rating :rating="1" :count="100" size="medium" compact></cdr-rating>
 </div>
 ```
 
@@ -32,7 +29,7 @@ Default is large.
 
 ```
 <div>
-  <cdr-rating rating="5" count="10" modifier="small"></cdr-rating>
-  <cdr-rating :rating="1" :count="100" modifier="small" compact></cdr-rating>
+  <cdr-rating rating="5" count="10" size="small"></cdr-rating>
+  <cdr-rating :rating="1" :count="100" size="small" compact></cdr-rating>
 </div>
 ```
