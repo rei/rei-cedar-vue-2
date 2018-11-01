@@ -58,8 +58,8 @@
       class="demo-input"
       v-model="multiRowModel"
       rows="10"
-      placeholder="Multi Line Input/TextArea"
-      label="Multi Line Input/TextArea"
+      placeholder="#6 Multi Line Input/TextArea"
+      label="#6 Multi Line Input/TextArea"
     />
     <br>
     <div class="demo-input">Input #1 Value = {{ defaultModel }}</div>

@@ -128,11 +128,8 @@ export default {
     required: Boolean,
     /** @ignore */
     large: Boolean,
-  },
-  data() {
-    return {
-      focused: false,
-    };
+    /** @ignore */
+    value: String,
   },
   computed: {
     // Use given id or generate one
@@ -174,9 +171,6 @@ export default {
       this.$emit('input', value, e);
     },
     onBlur(e) {
-      this.$nextTick(() => {
-        this.focused = false;
-      });
       /**
       * Fires when input loses focus.
       * @event blur
@@ -189,7 +183,6 @@ export default {
       * Fires when input gains focus.
       * @event focus
       * @type {event} */
-      this.focused = true;
       this.$emit('focus', e);
     },
     onPaste(e) {
