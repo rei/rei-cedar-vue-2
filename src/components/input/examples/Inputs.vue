@@ -3,83 +3,42 @@
     <h2>Text Inputs</h2>
 
     <cdr-input
-      v-model="debounce"
-      label="Validation with debounce"
-      id="testing"
-      placeholder="Enter hi"
-      feedback
-      name="yoyo"
-      :rules="[validateFn]"
-      debounce
-      data-backstop="text-input"
+      class="demo-input"
+      v-model="defaultModel"
+      label="#1 Default"
     />
 
     <cdr-input
-      v-model="requiredValidated"
-      label="Required"
-      feedback
-      :rules="[validateFn]"
+      class="demo-input"
+      v-model="requiredModel"
+      label="#2 Required"
       required
     />
 
     <cdr-input
-      v-model="required"
-      label="Default required validation"
-      required
-    />
-
-    <cdr-input
-      v-model="nothing"
-      label="Nothing"
-    />
-
-    <cdr-input
-      v-model="nothing"
+      class="demo-input"
+      v-model="hiddenModel"
       label="This has no label"
       hide-label
-      placeholder="hidden-label"
+      placeholder="#3 hidden-label"
     />
 
     <cdr-input
-      v-model="pattern"
-      label="Pattern validation"
-      required
-      pattern="[a-zA-Z0-9\-\s'/@#+&%]+"
-      pattern-error="Only letters, numbers, spaces, dashes,
-      apostrophes, /, @, #, +, &amp; or % are allowed."
-    />
-
-    <cdr-input
-      v-model="empty"
-      label="Disabled Input"
+      class="demo-input"
+      v-model="disabledModel"
+      label="#4 Disabled Input"
       placeholder="I am disabled"
       disabled
     />
 
     <cdr-input
-      v-model="valid"
-      label="Success"
-      feedback
-      :rules="[validateFn]"
-      immediate-validate
-    />
-
-    <cdr-input
-      v-model="warning"
-      label="Warning"
-      feedback
-      :rules="[validateFn]"
-      immediate-validate
-    />
-
-    <cdr-input
-      v-model="requiredWithIcon"
+      class="demo-input"
+      v-model="requiredWithIcons"
       id="required-with-icon"
       placeholder="Required with Icon"
-      label="Input Label"
+      label="#5 Input Label"
       required
       type="email">
-      <!-- Info Slot -->
       <template slot="info">
         <a href="#/inputs">
           Info Link/Icon
@@ -96,47 +55,39 @@
       </template>
     </cdr-input>
     <br>
+    <div class="demo-input">Input #1 Value = {{ defaultModel }}</div>
+    <div class="demo-input">Input #2 Value = {{ requiredModel }}</div>
+    <div class="demo-input">Input #3 Value = {{ hiddenModel }}</div>
+    <div class="demo-input">Input #4 Value = {{ disabledModel }}</div>
+    <div class="demo-input">Input #5 Value = {{ requiredWithIcons }}</div>
   </div>
 </template>
 
 <script>
 import Components from 'componentsdir/_index';
+import { IconTwitter, IconCheckLg } from 'componentsdir/icon/dist/cdr-icon';
 
 export default {
-  name: 'Forms',
-  components: Components,
+  name: 'Inputs',
+  components: {
+    ...Components,
+    IconTwitter,
+    IconCheckLg,
+  },
   data() {
     return {
-      debounce: '',
-      requiredValidated: '',
-      required: '',
-      nothing: '',
-      pattern: '',
-      empty: '',
-      valid: 'hi',
-      warning: '',
-      error: 1,
-      multi: '',
-      multi2: '',
+      defaultModel: 'empty',
+      requiredModel: null,
+      hiddenModel: null,
+      disabledModel: null,
+      requiredWithIcons: null,
     };
-  },
-  methods: {
-    validateFn(inputText) {
-      const obj = {};
-      if (inputText === 'hi') {
-        obj.state = 'valid';
-      } else if (inputText === '') {
-        obj.state = 'warn';
-        obj.message = 'Warning Message';
-      } else if (!isNaN(inputText) && inputText !== '') { //eslint-disable-line
-        obj.state = 'error';
-        obj.message = 'Error: needs to be letters';
-      } else {
-        obj.state = 'error';
-        obj.message = 'Error Message';
-      }
-      return obj;
-    },
   },
 };
 </script>
+<style>
+  .demo-input {
+    margin: 10px;
+  }
+</style>
+
