@@ -54,12 +54,20 @@
         This is helper text.
       </template>
     </cdr-input>
+    <cdr-input
+      class="demo-input"
+      v-model="multiRowModel"
+      rows="10"
+      placeholder="Multi Line Input/TextArea"
+      label="Multi Line Input/TextArea"
+    />
     <br>
     <div class="demo-input">Input #1 Value = {{ defaultModel }}</div>
     <div class="demo-input">Input #2 Value = {{ requiredModel }}</div>
     <div class="demo-input">Input #3 Value = {{ hiddenModel }}</div>
     <div class="demo-input">Input #4 Value = {{ disabledModel }}</div>
     <div class="demo-input">Input #5 Value = {{ requiredWithIcons }}</div>
+    <div class="demo-input">Input #6 Value = {{ multiRowModel }}</div>
   </div>
 </template>
 
@@ -76,11 +84,12 @@ export default {
   },
   data() {
     return {
-      defaultModel: 'empty',
-      requiredModel: null,
-      hiddenModel: null,
-      disabledModel: null,
-      requiredWithIcons: null,
+      defaultModel: '',
+      requiredModel: '',
+      hiddenModel: '',
+      disabledModel: '',
+      requiredWithIcons: '',
+      multiRowModel: '',
     };
   },
 };
