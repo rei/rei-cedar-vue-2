@@ -88,7 +88,7 @@ import propValidator from 'srcdir/utils/propValidator';
 export default {
   name: 'CdrInput',
   mixins: [modifier, size],
-  // inheritAttrs: false,
+  inheritAttrs: false,
   props: {
     /**
      * `id` for the input that is mapped to the label `for` attribute. If one is not provided, it will be auto generated.
