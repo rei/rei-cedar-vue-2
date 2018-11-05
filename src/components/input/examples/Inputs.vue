@@ -45,19 +45,21 @@
         </a>
       </template>
       <template slot="pre-icon">
-        <icon-twitter />
+        <icon-twitter
+          modifier="inherit-color"/>
       </template>
       <template slot="post-icon">
-        <icon-check-lg />
+        <icon-check-lg
+          modifier="inherit-color" />
       </template>
       <template slot="helper-text">
         This is helper text.
       </template>
     </cdr-input>
     <cdr-input
-      class="demo-input"
+      class="demo-input "
       v-model="multiRowModel"
-      rows="10"
+      :rows="10"
       placeholder="#6 Multi Line Input/TextArea"
       label="#6 Multi Line Input/TextArea"
     />

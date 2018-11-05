@@ -82,7 +82,7 @@ import propValidator from 'srcdir/utils/propValidator';
 /**
  * Cedar 2 component for input
  * **NOTE:** `v-model` is required.
- * @version 0.0.1
+ * @version 1.0.0
  * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
  */
 export default {
@@ -126,8 +126,6 @@ export default {
     disabled: Boolean,
     /** @ignore */
     required: Boolean,
-    /** @ignore */
-    large: Boolean,
     /** @ignore */
     value: String,
   },
