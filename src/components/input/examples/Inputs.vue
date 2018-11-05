@@ -46,11 +46,11 @@
       </template>
       <template slot="pre-icon">
         <icon-twitter
-          modifier="inherit-color"/>
+          inherit-color />
       </template>
       <template slot="post-icon">
         <icon-check-lg
-          modifier="inherit-color" />
+          inherit-color="true" />
       </template>
       <template slot="helper-text">
         This is helper text.
