@@ -89,36 +89,36 @@ describe('CdrTab.vue', () => {
     });
   });
 
-  it('handles up arrow', () => {
-    // const spy = sinon.spy(CdrTabPanel.methods, 'handleUpArrowNav');
-    console.log('KRISTEST CdrTabs = ', CdrTabs);
-    const handleUpArrowNav = () => {};
-    const wrapper = shallowMount(CdrTabPanel, {
-      mocks: {
-        handleUpArrowNav
-      }
-    });
-    // console.log('KRISTEST CdrTabPanel = ', CdrTabPanel)
-    console.log('KRISTEST wrapper.vm.$parent = ', wrapper.vm.$parent);
+  // it('handles up arrow', () => {
+  //   // const spy = sinon.spy(CdrTabPanel.methods, 'handleUpArrowNav');
+  //   console.log('KRISTEST CdrTabs = ', CdrTabs);
+  //   const handleUpArrowNav = () => {};
+  //   const wrapper = shallowMount(CdrTabPanel, {
+  //     mocks: {
+  //       handleUpArrowNav
+  //     }
+  //   });
+  //   // console.log('KRISTEST CdrTabPanel = ', CdrTabPanel)
+  //   console.log('KRISTEST wrapper.vm.$parent = ', wrapper.vm.$parent);
 
-    wrapper.vm.handleUpArrowNav();
-    // sinon.assert.called(spy);
+  //   wrapper.vm.handleUpArrowNav();
+  //   // sinon.assert.called(spy);
 
 
 
-      // const wrapper = shallowMount(CdrDataTable, {
-      //   propsData: {
-      //     colHeaders: data.colHeaders,
-      //     rowHeaders: data.rowHeaders,
-      //     rowData: data.rowData,
-      //     id: "test",
-      //     caption: "Test"
-      //   }
-      // });
+  //     // const wrapper = shallowMount(CdrDataTable, {
+  //     //   propsData: {
+  //     //     colHeaders: data.colHeaders,
+  //     //     rowHeaders: data.rowHeaders,
+  //     //     rowData: data.rowData,
+  //     //     id: "test",
+  //     //     caption: "Test"
+  //     //   }
+  //     // });
 
-      // wrapper.vm.$nextTick(() => {
-      //   done()
-      // });
-  });
+  //     // wrapper.vm.$nextTick(() => {
+  //     //   done()
+  //     // });
+  // });
 
 });

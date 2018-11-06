@@ -220,21 +220,22 @@ describe('CdrTabs.vue', () => {
 
   it('handles down arrow', (done) => {
     const spy = sinon.spy(CdrTabs.methods, 'handleDownArrowNav');
-    const wrapper = shallowMount(CdrTabs, {});
-    wrapper.vm.handleDownArrowNav();
+    const wrapper = shallowMount(CdrTabs, {
+      slots: {
+        default: [CdrTabPanel, CdrTabPanel]
+      }
+    });
+    // wrapper.vm.handleDownArrowNav();
     const event = new KeyboardEvent("keydown", {
-      which : 38
+      which : 40
     });
 
-    // Trigger up arrow keypress event
-    window.dispatchEvent(event);
-    setTimeout(() => {
-      sinon.assert.called(spy);
-      done();
-    }, 250);
+    // Trigger down arrow keypress event
+    wrapper.vm.$refs.cdrTabsHeader.dispatchEvent(event);
 
-      // wrapper.vm.$nextTick(() => {
-      //   done()
-      // });
+    wrapper.vm.$nextTick(() => {
+      sinon.assert.called(spy);
+      done()
+    });
   });
 });

@@ -194,7 +194,7 @@ export default {
     },
     handleDownArrowNav() {
       if (!this.animationInProgress) {
-        console.log('KRISTEST');
+        console.log('KRISTEST lastchild = ', this.$el.lastElementChild);
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
       }
     },
