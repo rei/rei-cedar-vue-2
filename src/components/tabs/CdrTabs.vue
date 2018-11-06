@@ -10,7 +10,8 @@
                 overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
                 $style['cdr-tabs__gradient-container']]"
       @keyup.right="handleArrowNav"
-      @keyup.left="handleArrowNav">
+      @keyup.left="handleArrowNav"
+      @keydown.down.prevent="handleDownArrowNav">
       <nav
         :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
                   overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
@@ -26,7 +27,6 @@
             :key="tab.id"
             :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]">
             <a
-              :tabindex="[ tab.active ? 1 : -1 ]"
               @click.prevent="handleClick(tab, $event)"
               :href="tab.name"
               :class="$style['cdr-tabs__header-item-label']">
@@ -191,6 +191,14 @@ export default {
           this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
         }
       }
+    },
+    handleDownArrowNav() {
+      if (!this.animationInProgress) {
+        this.$el.lastElementChild.children[this.activeTabIndex].focus();
+      }
+    },
+    setFocusToActiveTabHeader() {
+      this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
     },
     getHeaderWidth() {
       let headerElements = [];

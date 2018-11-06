@@ -1,6 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrTabs from 'componentsdir/tabs/CdrTabs';
 import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
+import sinon from 'sinon';
 
 describe('CdrTabs.vue', () => {
   it('mounts tabs', () => {
@@ -215,5 +216,24 @@ describe('CdrTabs.vue', () => {
       expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('unset');
       done();
     });
+  });
+
+  it('handles down arrow', (done) => {
+    const spy = sinon.spy(CdrTabPanel.methods, 'handleDownArrowNav');
+    const wrapper = shallowMount(CdrTabs, {});
+    const event = new KeyboardEvent("keydown", {
+      which : 38
+    });
+
+    // Trigger up arrow keypress event
+    window.dispatchEvent(event);
+    setTimeout(() => {
+      sinon.assert.called(spy);
+      done();
+    }, 250);
+
+      // wrapper.vm.$nextTick(() => {
+      //   done()
+      // });
   });
 });

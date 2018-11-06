@@ -1,5 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils';
+import CdrTabs from 'componentsdir/tabs/CdrTabs';
 import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
+import sinon from 'sinon';
 
 describe('CdrTab.vue', () => {
   it('renders tab', () => {
@@ -85,6 +87,30 @@ describe('CdrTab.vue', () => {
       expect(wrapper.vm.offsetX).toBe(1234);
       done();
     });
+  });
+
+  it('handles up arrow', () => {
+    const spy = sinon.spy(CdrTabPanel.methods, 'handleUpArrowNav');
+    const spy2 = sinon.spy(CdrTabPanel.$parent, 'setFocusToActiveTabHeader');
+    const wrapper = shallowMount(CdrTabPanel, {});
+    wrapper.vm.handleUpArrowNav();
+    sinon.assert.called(spy);
+
+
+
+      // const wrapper = shallowMount(CdrDataTable, {
+      //   propsData: {
+      //     colHeaders: data.colHeaders,
+      //     rowHeaders: data.rowHeaders,
+      //     rowData: data.rowData,
+      //     id: "test",
+      //     caption: "Test"
+      //   }
+      // });
+
+      // wrapper.vm.$nextTick(() => {
+      //   done()
+      // });
   });
 
 });

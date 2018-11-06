@@ -96,6 +96,10 @@
 
   &__header-item {
     display: inline-flex;
+
+    &[aria-selected] > .cdr-tabs__header-item-label {
+      color: $easily-excited;
+    }
   }
 
   &__header-item-label {
@@ -105,13 +109,13 @@
     padding: $inset-half-x-stretch;
     color: $heart-of-darkness;
     white-space: nowrap;
+    outline-offset: -3px;
 
     &:active,
     &:hover,
     &:focus {
       text-decoration: none;
       color: $easily-excited;
-      outline: none;
     }
   }
 
@@ -120,7 +124,8 @@
     width: 30px;
     margin: 0;
     height: $space-quarter-x;
-    border: none;
+
+    /* border: none; */
     background: $easily-excited;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
   }
