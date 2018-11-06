@@ -23,7 +23,7 @@
       <textarea
         v-if="rows && rows > 1"
         :rows="[rows]"
-        :class="[inputClass, modifierClass]"
+        :class="[inputClass, sizeClass]"
         v-bind="$attrs"
         v-model="value"
         :id="inputId"
@@ -40,7 +40,7 @@
       <input
         v-else
         :type="type"
-        :class="[inputClass, modifierClass]"
+        :class="[inputClass, sizeClass]"
         v-bind="$attrs"
         v-model="value"
         :id="inputId"
@@ -76,7 +76,6 @@
 </template>
 
 <script>
-import modifier from 'mixinsdir/modifier';
 import size from 'mixinsdir/size';
 import propValidator from 'srcdir/utils/propValidator';
 /**
@@ -87,7 +86,7 @@ import propValidator from 'srcdir/utils/propValidator';
  */
 export default {
   name: 'CdrInput',
-  mixins: [modifier, size],
+  mixins: [size],
   inheritAttrs: false,
   props: {
     /**
@@ -148,7 +147,6 @@ export default {
         [this.$style['cdr-input']]: true,
         [this.$style['cdr-input--multiline']]: this.rows > 1,
         [this.$style['cdr-input--preicon']]: this.$slots['pre-icon'],
-        [this.$style['cdr-input--large']]: this.large,
       };
     },
     inputWrapClass() {

@@ -33,6 +33,42 @@
 
     <cdr-input
       class="demo-input"
+      v-model="sizeModel"
+      label="Large Input"
+      placeholder="Large Input"
+      size="large"
+    />
+    <cdr-input
+      class="demo-input"
+      v-model="sizeModel"
+      label="Large@xs Input"
+      placeholder="Large@xs Input"
+      size="large@xs"
+    />
+    <cdr-input
+      class="demo-input"
+      v-model="sizeModel"
+      label="Large@sm Input"
+      placeholder="Large@sm Input"
+      size="large@sm"
+    />
+    <cdr-input
+      class="demo-input"
+      v-model="sizeModel"
+      label="Large@md Input"
+      placeholder="Large@md Input"
+      size="large@md"
+    />
+    <cdr-input
+      class="demo-input"
+      v-model="sizeModel"
+      label="Large@lg Input"
+      placeholder="Large@lg Input"
+      size="large@lg"
+    />
+
+    <cdr-input
+      class="demo-input"
       v-model="requiredWithIcons"
       id="required-with-icon"
       placeholder="Required with Icon"
@@ -70,6 +106,7 @@
     <div class="demo-input">Input #4 Value = {{ disabledModel }}</div>
     <div class="demo-input">Input #5 Value = {{ requiredWithIcons }}</div>
     <div class="demo-input">Input #6 Value = {{ multiRowModel }}</div>
+    <div class="demo-input">Size Inputs Value = {{ sizeModel }}</div>
   </div>
 </template>
 
@@ -92,6 +129,7 @@ export default {
       disabledModel: '',
       requiredWithIcons: '',
       multiRowModel: '',
+      sizeModel: '',
     };
   },
 };
