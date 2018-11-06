@@ -219,8 +219,9 @@ describe('CdrTabs.vue', () => {
   });
 
   it('handles down arrow', (done) => {
-    const spy = sinon.spy(CdrTabPanel.methods, 'handleDownArrowNav');
+    const spy = sinon.spy(CdrTabs.methods, 'handleDownArrowNav');
     const wrapper = shallowMount(CdrTabs, {});
+    wrapper.vm.handleDownArrowNav();
     const event = new KeyboardEvent("keydown", {
       which : 38
     });
