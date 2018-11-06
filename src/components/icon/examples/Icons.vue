@@ -101,6 +101,25 @@
       size="large@xs small@md small@lg"
     />
     <hr>
+    <h6>Container with pink fill color</h6>
+    <div class="inherit-container">
+      <cdr-row cols="2">
+        <cdr-col>
+          <span>Icon with inherit-color</span>
+          <cdr-icon
+            use="#account-profile"
+            inherit-color
+          />
+        </cdr-col>
+        <cdr-col>
+          <span>Icon WITHOUT inherit-color</span>
+          <cdr-icon
+            use="#account-profile"
+          />
+        </cdr-col>
+      </cdr-row>
+    </div>
+    <hr>
   </div>
 </template>
 
@@ -129,11 +148,17 @@ export default {
 </script>
 
 <style>
-.icon-examples {
-  .cdr-icon {
-    &:hover {
-      fill: red;
+  .icon-examples {
+    .cdr-icon {
+      &:hover {
+        fill: red;
+      }
     }
   }
-}
+
+  .inherit-container {
+    fill: pink;
+    border: 2px solid pink;
+  }
+
 </style>
