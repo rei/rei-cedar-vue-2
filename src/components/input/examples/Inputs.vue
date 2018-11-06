@@ -137,6 +137,7 @@ export default {
 <style>
   .demo-input {
     margin: 10px;
+    background: white;
   }
 </style>
 
