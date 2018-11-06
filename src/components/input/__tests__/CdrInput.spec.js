@@ -512,9 +512,11 @@ describe('CdrInput.vue', () => {
         immediateValidate: true,
         value: '',
       },
-      data: {
-        touched: true,
-        focused: false,
+      data() {
+        return {
+          touched: true,
+          focused: false,
+        }
       }
     });
     setTimeout(() => {

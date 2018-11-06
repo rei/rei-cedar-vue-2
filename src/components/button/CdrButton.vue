@@ -3,9 +3,8 @@
     :is="tag"
     :class="[
       modifierClass,
-      sizeClass,
+      buttonSizeClass,
       fullWidthClass,
-      responsiveClass,
       iconClass,
     ]"
     :type="tag === 'button' ? type : null"
@@ -19,6 +18,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import size from 'mixinsdir/size';
 
 /**
  * Cedar 2 component for button
@@ -31,7 +31,7 @@ import modifier from 'mixinsdir/modifier';
  */
 export default {
   name: 'CdrButton',
-  mixins: [modifier],
+  mixins: [modifier, size],
   props: {
     /**
      * Controls render as button or anchor. {button, a}
@@ -65,21 +65,6 @@ export default {
       validator: value => typeof value === 'boolean',
     },
     /**
-     * Sets a static size for the button, which scales padding and text size. {small, medium, large}
-     */
-    size: {
-      type: String,
-      default: 'medium',
-      validator: value => (['small', 'medium', 'large'].indexOf(value) >= 0) || false,
-    },
-    /**
-     * Render a specific button size at a specific breakpoint. Takes precedence over size and fullWidth.
-     * Format is size@breakpoint (ex: large@sm).
-     */
-    responsiveSize: {
-      type: Array,
-    },
-    /**
      * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.
      */
     iconOnly: {
@@ -99,19 +84,8 @@ export default {
     baseClass() {
       return 'cdr-button';
     },
-    sizeClass() {
-      return !this.iconOnly ? this.modifyClassName(this.baseClass, this.size) : null;
-    },
-    responsiveClass() {
-      const responsiveClass = [];
-
-      if (this.responsiveSize && !this.iconOnly) {
-        this.responsiveSize.forEach((val) => {
-          responsiveClass.push(this.modifyClassName(this.baseClass, val));
-        });
-      }
-
-      return responsiveClass.join(' ');
+    buttonSizeClass() {
+      return !this.iconOnly ? this.sizeClass : null;
     },
     iconClass() {
       const classes = [];
@@ -141,4 +115,8 @@ export default {
 <style module>
   @import 'cssdir/settings/_index.pcss';
   @import './styles/CdrButton.pcss';
+</style>
+
+<style>
+  @import '@rei/cdr-icon/dist/cdr-icon.css';
 </style>

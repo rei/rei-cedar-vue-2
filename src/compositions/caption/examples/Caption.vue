@@ -1,25 +1,40 @@
 <template>
   <!-- eslint-disable max-len -->
   <div>
-    <h2>Caption</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Caption
+    </cdr-text>
 
-    <h3>Default</h3>
     <cdr-caption
       summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam ex aliquam. Temporibus, veritatis laudantium molestiae accusamus asperiores odio fuga reiciendis blanditiis magni?"
       credit="Lorem ipsum dolor sit"
     />
 
-    <h3>Summary only</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">
+      Summary only
+    </cdr-text>
     <cdr-caption
       summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam ex aliquam. Temporibus, veritatis laudantium molestiae accusamus asperiores odio fuga reiciendis blanditiis magni?"
     />
 
-    <h3>Caption only</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">
+      Caption only
+    </cdr-text>
     <cdr-caption
       credit="Lorem ipsum dolor sit"
     />
 
-    <h3>In a figure</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">
+      In a figure
+    </cdr-text>
     <figure>
       <figcaption>
         <cdr-caption
@@ -32,11 +47,13 @@
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
 import CdrCaption from '../CdrCaption';
 
 export default {
   name: 'CaptionExample',
   components: {
+    ...Components,
     CdrCaption,
   },
 };

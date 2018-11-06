@@ -1,29 +1,33 @@
 <template>
   <div data-backstop="stack-space-utilities">
-    <h2>Stack classes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Stack classes
+    </cdr-text>
 
     <cdr-card class="example">
-      <p class="cdr-stack--xxs">
+      <cdr-text class="cdr-stack--xxs">
         cdr-stack--xxs
-      </p>
-      <p class="cdr-stack--xs">
+      </cdr-text>
+      <cdr-text class="cdr-stack--xs">
         cdr-stack--xs
-      </p>
-      <p class="cdr-stack--sm">
+      </cdr-text>
+      <cdr-text class="cdr-stack--sm">
         cdr-stack--sm
-      </p>
-      <p class="cdr-stack">
+      </cdr-text>
+      <cdr-text class="cdr-stack">
         cdr-stack
-      </p>
-      <p class="cdr-stack--lg">
+      </cdr-text>
+      <cdr-text class="cdr-stack--lg">
         cdr-stack--lg
-      </p>
-      <p class="cdr-stack--xl">
+      </cdr-text>
+      <cdr-text class="cdr-stack--xl">
         cdr-stack--xl
-      </p>
-      <p class="cdr-stack--xxl">
+      </cdr-text>
+      <cdr-text class="cdr-stack--xxl">
         cdr-stack--xxl
-      </p>
+      </cdr-text>
     </cdr-card>
 
   </div>
