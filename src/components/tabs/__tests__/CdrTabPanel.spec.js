@@ -91,8 +91,13 @@ describe('CdrTab.vue', () => {
 
   it('handles up arrow', () => {
     const spy = sinon.spy(CdrTabPanel.methods, 'handleUpArrowNav');
-    CdrTabPanel.$parent.setFocusToActiveTabHeader = () => {};
     const wrapper = shallowMount(CdrTabPanel, {});
+    wrapper.$parent = {
+      setFocusToActiveTabHeader: () => {},
+    };
+    console.log('KRISTEST CdrTabPanel = ', CdrTabPanel)
+    console.log('KRISTEST wrapper = ', wrapper)
+
     wrapper.vm.handleUpArrowNav();
     sinon.assert.called(spy);
 

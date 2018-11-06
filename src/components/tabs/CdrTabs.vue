@@ -194,6 +194,7 @@ export default {
     },
     handleDownArrowNav() {
       if (!this.animationInProgress) {
+        console.log('KRISTEST');
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
       }
     },
