@@ -35,7 +35,7 @@ export default {
     */
     use: String,
     /**
-    * Sets icon fill to inherit-color so as to use parent/ancestor styling.
+    * Sets icon fill to "inherit" so as to use parent/ancestor fill color.
     */
     inheritColor: Boolean,
   },
