@@ -82,7 +82,7 @@ export default {
       el.classList.remove(this.animationDirection);
     },
     handleUpArrowNav() {
-      console.log('KRISTEST this.$parent = ', this.$parent);
+      // console.log('KRISTEST this.$parent = ', this.$parent);
       this.$parent.setFocusToActiveTabHeader();
     },
   },

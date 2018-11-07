@@ -199,6 +199,11 @@ export default {
       }
     },
     setFocusToActiveTabHeader() {
+      console.log(
+        'KRISTEST this.$slots[0] = ',
+        this.$slots[0],
+      );
+      console.log('KRISTEST this.activeTabIndex = ', this.activeTabIndex);
       this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
     },
     getHeaderWidth() {

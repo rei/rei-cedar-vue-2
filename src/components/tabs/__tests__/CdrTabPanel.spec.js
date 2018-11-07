@@ -3,6 +3,7 @@ import CdrTabs from 'componentsdir/tabs/CdrTabs';
 import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
 import sinon from 'sinon';
 
+
 describe('CdrTab.vue', () => {
   it('renders tab', () => {
     const wrapper = shallowMount(CdrTabPanel);
@@ -90,19 +91,20 @@ describe('CdrTab.vue', () => {
   });
 
   // it('handles up arrow', () => {
-  //   // const spy = sinon.spy(CdrTabPanel.methods, 'handleUpArrowNav');
-  //   console.log('KRISTEST CdrTabs = ', CdrTabs);
-  //   const handleUpArrowNav = () => {};
-  //   const wrapper = shallowMount(CdrTabPanel, {
-  //     mocks: {
-  //       handleUpArrowNav
-  //     }
+  //   // const mockParent = {
+  //   //   setFocusToActiveTabHeader: () => true,
+  //   // }
+  //   const spy = sinon.spy(CdrTabPanel.methods, 'handleUpArrowNav');
+  //   const wrapper = mount(CdrTabPanel, {
+  //     parentComponent: CdrTabs
   //   });
+  //   // const handleUpArrowNav = () => {};
   //   // console.log('KRISTEST CdrTabPanel = ', CdrTabPanel)
   //   console.log('KRISTEST wrapper.vm.$parent = ', wrapper.vm.$parent);
-
   //   wrapper.vm.handleUpArrowNav();
-  //   // sinon.assert.called(spy);
+  //   wrapper.vm.$nextTick(() => {
+  //     sinon.assert.called(spy);
+  //   });
 
 
 

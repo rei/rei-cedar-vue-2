@@ -225,14 +225,25 @@ describe('CdrTabs.vue', () => {
         default: [CdrTabPanel, CdrTabPanel]
       }
     });
-    // wrapper.vm.handleDownArrowNav();
-    const event = new KeyboardEvent("keydown", {
-      which : 40
+
+    wrapper.vm.handleDownArrowNav();
+    wrapper.vm.$nextTick(() => {
+      sinon.assert.called(spy);
+      done()
     });
+  });
 
-    // Trigger down arrow keypress event
-    wrapper.vm.$refs.cdrTabsHeader.dispatchEvent(event);
+  it('handles up arrow', (done) => {
+    const spy = sinon.spy(CdrTabs.methods, 'setFocusToActiveTabHeader');
+    const wrapper = mount(CdrTabs, {
+      slots: {
+        default: [CdrTabPanel, CdrTabPanel]
+      }
+    });
+    wrapper.vm.activeTabIndex = 0;
+    wrapper.vm.$children[0].handleUpArrowNav();
 
+    // console.log('KRISTEST wrapper.vm.$children[0].handleUpArrowNav = ', wrapper.vm.$children[0].handleUpArrowNav);
     wrapper.vm.$nextTick(() => {
       sinon.assert.called(spy);
       done()
