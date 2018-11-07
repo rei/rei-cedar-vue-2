@@ -89,38 +89,4 @@ describe('CdrTab.vue', () => {
       done();
     });
   });
-
-  // it('handles up arrow', () => {
-  //   // const mockParent = {
-  //   //   setFocusToActiveTabHeader: () => true,
-  //   // }
-  //   const spy = sinon.spy(CdrTabPanel.methods, 'handleUpArrowNav');
-  //   const wrapper = mount(CdrTabPanel, {
-  //     parentComponent: CdrTabs
-  //   });
-  //   // const handleUpArrowNav = () => {};
-  //   // console.log('KRISTEST CdrTabPanel = ', CdrTabPanel)
-  //   console.log('KRISTEST wrapper.vm.$parent = ', wrapper.vm.$parent);
-  //   wrapper.vm.handleUpArrowNav();
-  //   wrapper.vm.$nextTick(() => {
-  //     sinon.assert.called(spy);
-  //   });
-
-
-
-  //     // const wrapper = shallowMount(CdrDataTable, {
-  //     //   propsData: {
-  //     //     colHeaders: data.colHeaders,
-  //     //     rowHeaders: data.rowHeaders,
-  //     //     rowData: data.rowData,
-  //     //     id: "test",
-  //     //     caption: "Test"
-  //     //   }
-  //     // });
-
-  //     // wrapper.vm.$nextTick(() => {
-  //     //   done()
-  //     // });
-  // });
-
 });

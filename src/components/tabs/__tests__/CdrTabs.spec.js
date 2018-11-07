@@ -241,12 +241,12 @@ describe('CdrTabs.vue', () => {
       }
     });
     wrapper.vm.activeTabIndex = 0;
-    wrapper.vm.$children[0].handleUpArrowNav();
-
-    // console.log('KRISTEST wrapper.vm.$children[0].handleUpArrowNav = ', wrapper.vm.$children[0].handleUpArrowNav);
     wrapper.vm.$nextTick(() => {
-      sinon.assert.called(spy);
-      done()
+      wrapper.vm.$children[0].handleUpArrowNav();
+      wrapper.vm.$nextTick(() => {
+        sinon.assert.called(spy);
+        done()
+      });
     });
   });
 });

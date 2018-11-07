@@ -194,16 +194,10 @@ export default {
     },
     handleDownArrowNav() {
       if (!this.animationInProgress) {
-        console.log('KRISTEST lastchild = ', this.$el.lastElementChild);
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
       }
     },
     setFocusToActiveTabHeader() {
-      console.log(
-        'KRISTEST this.$slots[0] = ',
-        this.$slots[0],
-      );
-      console.log('KRISTEST this.activeTabIndex = ', this.activeTabIndex);
       this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
     },
     getHeaderWidth() {
