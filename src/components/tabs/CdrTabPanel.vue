@@ -8,8 +8,10 @@
       v-show="active"
       :aria-hidden="!active"
       :class="[modifierClass]"
-      tabindex="1"
+      ref="cdrTabPanelContainer"
+      tabindex="0"
       role="tabpanel"
+      @keydown.up.prevent="handleUpArrowNav"
       :key="name">
       <slot/>
     </div>
@@ -78,6 +80,9 @@ export default {
     setLeaveEnd(element) {
       const el = element;
       el.classList.remove(this.animationDirection);
+    },
+    handleUpArrowNav() {
+      this.$parent.setFocusToActiveTabHeader();
     },
   },
 };
