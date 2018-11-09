@@ -10,11 +10,8 @@
  *
  * @mixin
  */
+import propValidator from 'srcdir/utils/propValidator';
 import BuildClass from './buildClass';
-
-const ValidSizes = ['small', 'small@xs', 'small@sm', 'small@md', 'small@lg',
-  'medium', 'medium@xs', 'medium@sm', 'medium@md', 'medium@lg',
-  'large', 'large@xs', 'large@sm', 'large@md', 'large@lg'];
 
 export default {
   mixins: [BuildClass],
@@ -25,16 +22,10 @@ export default {
     size: {
       type: String,
       default: 'medium',
-      validator: (size) => {
-        const sizes = size.split(' ');
-        let isValid = true;
-        sizes.forEach((value) => {
-          if (ValidSizes.indexOf(value) < 0) {
-            isValid = false;
-          }
-        });
-        return isValid;
-      },
+      validator: value => propValidator(
+        value,
+        ['small', 'medium', 'large'],
+      ),
     },
   },
   computed: {
