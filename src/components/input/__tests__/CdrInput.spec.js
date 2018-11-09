@@ -1,23 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import CdrInput from 'componentsdir/input/CdrInput';
 
-// function validateFn(inputText) {
-//   const obj = {};
-//   if (inputText === 'hi') {
-//     obj.state = 'valid';
-//   } else if (inputText === '') {
-//     obj.state = 'warn';
-//     obj.message = 'Warning Message';
-//   } else if (!isNaN(inputText) && inputText !== '') {
-//     obj.state = 'error';
-//     obj.message = 'Error Message';
-//   } else {
-//     obj.state = 'error';
-//     obj.message = 'Error Message 2';
-//   }
-//   return obj;
-// }
-
 describe('CdrInput.vue', () => {
   it('renders a label element', () => {
     const wrapper = shallowMount(CdrInput, {

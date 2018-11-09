@@ -4,8 +4,5 @@ module.exports = [
     selectors: [
       '[data-backstop="inputs"]',
     ],
-    // focusSelectors: [
-    //   '[data-backstop="text-input"]',
-    // ],
   },
 ];
