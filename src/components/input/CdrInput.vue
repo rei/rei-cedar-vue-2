@@ -6,7 +6,6 @@
       :for="inputId"
       ref="label"
     >{{ label }}
-      <!-- @slot for required indicator -->
       <span
         v-if="required"
         :class="$style['cdr-input__required-label']">
@@ -203,5 +202,6 @@ export default {
 
 <style module>
   @import 'cssdir/settings/_index.pcss';
+  @import './styles/vars/CdrInput.vars.pcss';
   @import './styles/CdrInput.pcss';
 </style>
