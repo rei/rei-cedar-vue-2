@@ -86,7 +86,7 @@
       </template>
       <template slot="post-icon">
         <icon-check-lg
-          inherit-color="true" />
+          inherit-color />
       </template>
       <template slot="helper-text">
         This is helper text.
