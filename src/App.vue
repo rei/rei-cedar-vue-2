@@ -122,3 +122,9 @@ export default {
     margin: 16px 0;
   }
 </style>
+
+<style lang="pcss">
+h2 {
+  @include redwood-display-60;
+}
+</style>
