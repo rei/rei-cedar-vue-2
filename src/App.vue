@@ -124,6 +124,8 @@ export default {
 </style>
 
 <style lang="pcss">
+@import "@rei/cdr-tokens/dist/cdr-tokens.scss";
+
 h2 {
   @include redwood-display-60;
 }
