@@ -1957,5 +1957,14 @@ export default {
     text-align: center;
     padding: 10px;
     width: 100%;
+    line-height: 1;
+
+    & * {
+      line-height: 1;
+    }
+
+    & p {
+      margin: 1.6rem 0;
+    }
   }
 </style>
