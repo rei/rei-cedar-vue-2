@@ -2,59 +2,53 @@
 
 ## Properties
 
-| Name                                                                                                                  | Type   | Default           |
-|-----------------------------------------------------------------------------------------------------------------------|--------|-------------------|
-| id                                                                                                                    | string | auto-generated    |
-| Requires unique ID that is mapped to the label `for` attribute.  If this value is not set, it will be auto-generated. |        |                   |
+| Name | Type   | Default        |
+|:-----|:-------|:---------------|
+| id   | string | auto-generated |
 
-<br />
+Requires unique ID that is mapped to the label `for` attribute.  If this value is not set, it will be auto-generated.
 
-| Name                                                                                                                                                                                                                                                  | Type          | Default |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|---------|
-| type                                                                                                                                                                                                                                            | string | 'text'   |
-| Supports HTML5 `<input>` types for text, email, number, password, search, and URL. For more information, view [WebAIM’s Future Web Accessibility: New input Types in HTML5](https://webaim.org/blog/future-web-accessibility-new-input-types-in-html5/). |               |         |
+| Name | Type   | Default |
+|:-----|:-------|:--------|
+| type | string | 'text'  |
 
-<br />
+Supports HTML5 `<input>` types for text, email, number, password, search, and URL. For more information, view [WebAIM’s Future Web Accessibility: New input Types in HTML5](https://webaim.org/blog/future-web-accessibility-new-input-types-in-html5/).
 
-| Name                                                                                                                                                                                                                                      | Type          | Default |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|---------|
-| label                                                                                                                                                                                                                                | string | N/A   |
-| Sets the text value for the input label.  Required for a11y compliance.  Use `hideLabel` if the label display is not desired. |               |         |
+| Name | Type   | Default |
+|:------|:-------|:-------|
+| label | string | N/A    |
 
-<br />
+Sets the text value for the input label.  Required for a11y compliance.  Use `hideLabel` if the label display is not desired.
 
-| Name                                                         | Type  | Default |
-|--------------------------------------------------------------|-------|---------|
-| hideLabel                                                      | boolean | false      |
-| Hides the label element and sets the input `aria-label` to the `label` value for a11y compliance. |       |         |
+| Name      | Type    | Default |
+|:----------|:--------|:--------|
+| hideLabel | boolean | false   |
 
-<br />
+Hides the label element and sets the input `aria-label` to the `label` value for a11y compliance.
 
-| Name                                           | Type  | Default |
-|------------------------------------------------|-------|---------|
-| rows                                       | number | null      |
-| Sets the number of rows for the input field and converts input field to textarea if the rows value is greater than 1. |       |         |
+| Name    | Type    | Default |
+|:--------|:--------|:--------|
+| rows    | number  | null    |
 
-<br />
+Sets the number of rows for the input field and converts input field to textarea if the rows value is greater than 1.
 
-| Name                                | Type   | Default |
-|-------------------------------------|--------|---------|
-| disabled                             | string | N/A     |
-| Sets disabled input field and label styling and restricts user input. |        |         |
+| Name      | Type    | Default |
+|:----------|:--------|:--------|
+| disabled  | boolean | false   |
 
-<br />
+Sets disabled input field and label styling and restricts user input.
 
-| Name                                | Type   | Default |
-|-------------------------------------|--------|---------|
-| required                             | boolean | false     |
-| Sets the field to required and displays the text “Required” next to the input label. |        |         |
+| Name      | Type    | Default |
+|:----------|:--------|:--------|
+| required  | Boolean | false   |
 
-<br />
+Sets the field to required and displays the text “Required” next to the input label.
 
-| Name                                | Type   | Default |
-|-------------------------------------|--------|---------|
-| size                             | string | 'medium'     |
-| Sets the input field size. Possible values: { 'medium', 'large' } |        |         |
+| Name      | Type    | Default |
+|:----------|:--------|:---------|
+| size      | string  | 'medium' |
+
+Sets the input field size. Possible values: { 'medium', 'large' }
 
 
 ## Slots
@@ -109,7 +103,7 @@ _local.vue_
 ```vue
 <template>
   ...
-     <cdr-input 
+     <cdr-input
        v-model=”inputModel”
        label=”Input Label Text”
        placeholder=”Input Placeholder Text”
@@ -122,7 +116,7 @@ import { CdrInput } from '@rei/cdr-input';
 export default {
   ...
   components: {
-     CdrInput  
+     CdrInput
   },
   data() {
     inputModel: ‘Default Value’
