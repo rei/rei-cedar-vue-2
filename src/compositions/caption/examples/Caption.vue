@@ -35,7 +35,7 @@
       modifier="subheading">
       In a figure
     </cdr-text>
-    <figure>
+    <figure class="caption-example__figure">
       <figcaption>
         <cdr-caption
           summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam ex aliquam. Temporibus, veritatis laudantium molestiae accusamus asperiores odio fuga reiciendis blanditiis magni?"
@@ -60,4 +60,7 @@ export default {
 </script>
 
 <style>
+.caption-example__figure {
+  margin: 0;
+}
 </style>

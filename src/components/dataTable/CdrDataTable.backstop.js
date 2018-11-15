@@ -1,8 +1,7 @@
 module.exports = [{
-  label: 'Table',
+  label: 'DataTable',
   selectors: [
-    '[data-backstop="tables"]',
-    '[data-backstop="tables--compact"]',
-    '[data-backstop="tables--borderless"]',
+    '[data-backstop="DataTable"]',
+    '[data-backstop="DataTable--compact-borderless"]',
   ],
 }];
