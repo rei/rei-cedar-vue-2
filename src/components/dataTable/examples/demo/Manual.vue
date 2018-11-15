@@ -100,6 +100,7 @@
       modifier="compact borderless"
       caption="Full Manual - Compact & Borderless"
       id="full-manual"
+      data-backstop="DataTable--compact-borderless"
     >
       <template slot="tbody">
         <tr>

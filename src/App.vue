@@ -44,7 +44,7 @@
     />
     <data-table
       class="cpg-section"
-      data-backstop="data-tables"
+      data-backstop="DataTable"
     />
     <grid class="cpg-section"/>
     <texts class="cpg-section"/>

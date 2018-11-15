@@ -13,12 +13,14 @@
 </template>
 
 <script>
+import CdrText from 'componentsdir/text/CdrText';
 import headings from './demo/Headings';
 import paragraphs from './demo/Paragraphs';
 
 export default {
   name: 'TextExamples',
   components: {
+    CdrText,
     headings,
     paragraphs,
   },
