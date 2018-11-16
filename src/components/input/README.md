@@ -164,7 +164,7 @@ This will result in the following HTML:
 </div>
 ```
 
-Input inherits the `placeholder` attribute for the placeholder text. You can also use the [ post-icon ] slot for adding and icon.
+Input inherits the `placeholder` attribute for the placeholder text. You can also use the `post-icon` slot for adding and icon.
 
 ```vue
 <cdr-input
