@@ -5,42 +5,47 @@
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | tag | string   | button |
-| Render CdrButton as a `<button>` or `<a>` element. When using a value of a, this element renders as an anchor link. Possible values: { button, a } |
+| Renders CdrButton as a &lt;button&gt; or &lt;a&gt; element. When using the value of &lt;a&gt;, this element renders as an achor link. Possible values: { 'button' | 'a' } |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | type| string   | button |
-| Set the button type. Possible values: { button, submit, reset} |
+| Sets the button type. Possible values: { 'button' | 'submit' | 'reset' } |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | onClick | function   | return null |
-| Add custom click actions. |
+| Adds custom click actions. |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | fullWidth | boolean | false |
-| Set button width to 100%. Setting it to true will set the button width to 100% of the parent container. Use the full-width prop with the size prop to control top and bottom padding. |
+| Sets button width to 100%. Setting it to true will set the button width to 100% of the parent container. Use the full-width prop with the size prop to control top and bottom padding. |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | size | string | medium |
-| Set the button size. Possible values: { small, medium, large } | 
+| Sets the button size. Possible values: { 'small' | 'medium' | 'large' } | 
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | responsiveSize | array | n/a |
-| Set the button size at different responsive breakpoints. Breakpoints are expressed as t-shirt sizing with values: `xs`, `sm`, `md`, and `lg`. Example: [‘large@xs’, ‘small@lg’] |
+| Sets the button size at different responsive breakpoints. Breakpoints are expressed as t-shirt sizing with values: xs, sm, md, and lg. Examples: { ‘large@xs’ | ‘small@lg’ } |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | iconOnly | boolean | false |
-| Renders an icon-only button. Overrides size and responsiveSize props. |
+| Renders an icon-only button. When this value is true, it will override the size and responsiveSize props |
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | onDark | boolean | false |
-| Renders an icon-only button with a light fill color for use on dark backgrounds. iconOnly must also be true. |
+| Renders an icon-only button with a light fill color for use on dark backgrounds. The 'iconOnly' prop must be true. |
+
+| Name  | Type | Default     |
+|:-----|:-------|:--------|
+| modifier | string | n/a |
+| Modifies the style variant for this component. Possible values: { 'secondary' } |
 
 ## Slots
 
@@ -51,21 +56,9 @@ All CdrButton components have two slots.
 | Default | Slot for button text. Leave empty if icon-only |
 | icon | Slot for the icon |
 
-## Additional Properties
-
-| Name  | Type | Value     |
-|:-----|:-------|:--------|
-| modifier | string | Allows style variants to be defined. |
-
-## Modifiers
-
-Following are modifiers for `cdrButton` component:
-
-- Secondary
-
 ## Installation
 
-Resources are available within the [cdr-button package:](https://www.npmjs.com/search?q=cdr-button)
+Resources are available within the [CdrButton package:](https://www.npmjs.com/search?q=cdr-button)
 
 | Name  | Type | Description     |
 |:-----|:-------|:--------|
@@ -76,7 +69,7 @@ To incorporate the required assets for a component, use the following steps:
 
 ### 1. Install using NPM
 
-Install the `cdr-button` package using `npm` in your terminal:
+Install the CdrButton package using `npm` in your terminal:
 
 _Terminal_
 
@@ -136,65 +129,13 @@ The below example uses both the `size` and `responsive-size` props. This button�
 </template>
 ```
 
-### Composing with icons
+### Modifiers
 
-`cdr-button` can be used with the icon component from the @rei/cdr-icon package.
+Following variants are available to the `cdr-button` modifier attribute:
 
-### Text and Icon
-
-To scale Cedar icons appropriately, include the `cdr-button__icon` class with any icon component. The `size` prop scales both the icon and button.
-
-In the below example, a Download button is rendered as a button with icon and text using `cdr-icon` and the icon sprite.
-
-```vue
-<template>
-  <cdr-button>
-    <cdr-icon
-      slot="icon"
-      class="cdr-button__icon"
-      use="#download"
-    />
-    Download
-  </cdr-button>
-</template>
-
-<script>
-import { CdrButton } from '@rei/cdr-button';
-import { CdrIcon } from '@rei/cdr-icon;
-export default {
-  ...
-  components: {
-     CdrButton,
-     CdrIcon,  
-  }
-}
-</script>
-```
-
-### Icon Only
-
-Use the following props to modify `cdr-button`:
-
-- Default slot must be empty. If text is present in default slot, the text will render  
-- `Size` prop is disable when `icon-only` prop is true
-- For the SVG files:
-  - If the `fill` color is dark, assign true to the `on-dark` prop
-  - `On-dark` prop only works if `icon-only` prop is also true
-- Add `aria-label` text to describe the button’s action when clicked or tapped
-
-```vue
-<template>
-  <cdr-button
-    :icon-only="true"
-    :on-dark="true"
-    aria-label="Complete this step"
-  >
-    <icon-check-lg
-      slot="icon"
-      class="cdr-button__icon" />
-  </cdr-button>
-</template>
-```
+| Value       | Description                                      |
+|:----------- |:------------------------------------------------ |
+| `secondary` | Sets the secondary style for the button          |
 
 ### Click Actions
 
@@ -221,9 +162,69 @@ export default {
 </script>
 ```
 
+## Composing with icons
+
+CdrButton can be used with the icon component from the CdrIcon package.
+
+### Text and Icon
+
+To scale Cedar icons appropriately, include the `cdr-button__icon` class with any icon component. The `size` prop scales both the icon and button.
+
+In the below example, a _Download_ button is rendered as a button with icon and text using `cdr-icon` and the icon sprite.
+
+```vue
+<template>
+  <cdr-button>
+    <cdr-icon
+      slot="icon"
+      class="cdr-button__icon"
+      use="#download"
+    />
+    Download
+  </cdr-button>
+</template>
+
+<script>
+import { CdrButton } from '@rei/cdr-button';
+import { CdrIcon } from '@rei/cdr-icon';
+export default {
+  ...
+  components: {
+     CdrButton,
+     CdrIcon,  
+  }
+}
+</script>
+```
+
+### Icon Only
+
+Use the following props to modify `cdr-button`:
+
+- Default slot must be empty. If text is present in default slot, the text will render  
+- `size` prop is disable when `icon-only` prop is true
+- For the SVG files:
+  - If the `fill` color is dark, assign true to the `on-dark` prop
+  - `on-dark` prop only works if `icon-only` prop is also true
+- Add `aria-label` text to describe the button’s action when clicked or tapped
+
+```vue
+<template>
+  <cdr-button
+    :icon-only="true"
+    :on-dark="true"
+    aria-label="Complete this step"
+  >
+    <icon-check-lg
+      slot="icon"
+      class="cdr-button__icon" />
+  </cdr-button>
+</template>
+```
+
 ### CdrCloseButton & CdrPlayButton
 
-The cdr-button package includes two specific icon-only variants. CdrCloseButton and CdrPlayButton include their respective icons and aria-label text for accessibility.
+The CdrButton package includes two specific icon-only variants. CdrCloseButton and CdrPlayButton include their respective icons and `aria-label` text for accessibility.
 
 ```vue
 <template>

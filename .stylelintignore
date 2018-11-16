@@ -7,3 +7,4 @@ node_modules/
 
 src/css/settings/brandai.pcss
 *.md
+*.js

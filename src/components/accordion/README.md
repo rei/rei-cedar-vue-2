@@ -1,77 +1,77 @@
 # CdrAccordion
 
-Accordions are built from two components, `cdr-accordion` and `cdr-accordion-item`, which are meant to be used together.
+Accordions are built from two components, CdrAccordion and CdrAccordionItem, which are meant to be used together.
 
 ## Props
 
-### cdr-accordion
+### CdrAccordion
 
-| name | type | Default |
+| name | type | default |
 | :--- | :--- | :--- |
 | compact | boolean | false |
 
-Set compact style of cdr-accordion-item child components
+Sets the compact style of CdrAccordionItem child components
 
-| name | type | Default |
+| name | type | default |
 | :--- | :--- | :--- |
 | borderAligned | boolean | false |
 
-Set border-aligned style of cdr-accordion-item child components
+Sets the border-aligned style of CdrAccordionItem child components
 
-| name | type | Default |
+| name | type | default |
 | :--- | :--- | :--- |
 | showAll | boolean | false |
 
-Set all child cdr-accordion-item components to display open by default
+Sets all child CdrAccordionItem components to display open by default
 
-### cdr-accordion-item
+### CdrAccordionItem
 
-| name | type | Default |
+| name | type | default |
 | :--- | :--- | :--- |
 | id | string | n/a |
 
-Required id for component reference. Id must e unique
+Requires unique ID for each component reference
 
 | name | type | Default |
 | :--- | :--- | :--- |
 | label | string | n/a |
 
-Set the readable text on the cdr-accordion-item button or trigger. Required |
+Sets the readable text on the CdrAccordionItem button or trigger. Required |
 
 | name | type | Default |
 | :--- | :--- | :--- |
 | show | boolean | false |
 
-Set a single cdr-accordion-item to display open by default. Prop showAll will take precedence, if true. |
+Sets a single CdrAccordionItem to display open by default. The 'showAll' prop takes precedence, when true |
 
 ## Slots
 
-### cdr-accordion
+### CdrAccorion
 | name                                            |
 | :---------------------------------------------- |
-| Default                                         |
+| default                                         |
 
-Default slot for cdr-accordion-item(s)
+Slot for CdrAccordionItem(s)
 
-### cdr-accordion-item
+### CdrAccordionItem
 | name                                            |
 | :---------------------------------------------- |
-| Default                                         |
+| default                                         |
 
-Default slot for cdr-accordion-item content
+Slot for CdrAccordionItem content
 
 ## Events
 
-### cdr-accordion-item
+### CdrAccordionItem
 | name                                            |
 | :---------------------------------------------- |
 | accordion-item-toggle
 
-$emit event fired on cdr-accordion-item toggle
+$emit event fired on CdrAccordionItem toggle
 
 ## Installation
 
-Resources are available within the [cdr-accordion package](https://www.npmjs.com/package/@rei/cdr-accordion);
+Resources are available within the [CdrAccordion package](https://www.npmjs.com/package/@rei/cdr-accordion);
 
 <cdr-doc-api type="installation" />
 
@@ -82,7 +82,7 @@ To incorporate the required assets for a component, use the following steps:
 
 ### #1. Install using NPM
 
-Install the `cdr-accordion` package using `npm` in your terminal:
+Install the CdrAccordion package using `npm` in your terminal:
 
 _Terminal_
 
@@ -166,7 +166,7 @@ Set `show-all` to `true` on `cdr-accordion`, and each `cdr-accordion-item` will 
     ...
 ```
 
-`cdr-accordion-item` can also be controlled individually. If `show-all` is `false` at the `cdr-accordion` level, set `show` to `true` to display an individual accordion item in an open state. Note that `cdr-accordion` settings will take precedence over `cdr-accordion-item` settings.
+The CdrAccordionItem component can also be controlled individually. If `show-all` is `false` at the CdrAccordion level, set `show` to `true` to display an individual accordion item in an open state. Note that CdrAccordion settings will take precedence over CdrAccordionItem settings.
 
 ```vue
 <template>

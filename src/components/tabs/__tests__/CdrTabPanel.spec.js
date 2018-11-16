@@ -1,5 +1,8 @@
 import { shallowMount, mount } from '@vue/test-utils';
+import CdrTabs from 'componentsdir/tabs/CdrTabs';
 import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
+import sinon from 'sinon';
+
 
 describe('CdrTab.vue', () => {
   it('renders tab', () => {
@@ -86,5 +89,4 @@ describe('CdrTab.vue', () => {
       done();
     });
   });
-
 });

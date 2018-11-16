@@ -1,26 +1,47 @@
 <template>
   <section>
-    <h2>Media Object</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Media Object
+    </cdr-text>
     <div data-backstop="figure-placement">
-      <h3>Media Object Figure Placement</h3>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Media Object Figure Placement
+      </cdr-text>
       <figurePlacement/>
     </div>
     <div data-backstop="media-object-flux">
-      <h3>Media Object Flux</h3>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Media Object Flux
+      </cdr-text>
       <mediaObjectFlux/>
     </div>
     <div data-backstop="media-shape-align">
-      <h3>Media Figure shapes and body alignment</h3>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Media Figure shapes and body alignment
+      </cdr-text>
       <mediaShapeAlign/>
     </div>
     <div data-backstop="media-object-overlay">
-      <h3>Media Object Overlay</h3>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Media Object Overlay
+      </cdr-text>
       <mediaOverlay/>
     </div>
   </section>
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
 import figurePlacement from './demos/figurePlacement';
 import mediaObjectFlux from './demos/mediaObjectFlux';
 import mediaOverlay from './demos/mediaOverlay';
@@ -30,6 +51,7 @@ import mediaShapeAlign from './demos/mediaShapeAlign';
 export default {
   name: 'MediaObject',
   components: {
+    ...Components,
     figurePlacement,
     mediaObjectFlux,
     mediaOverlay,

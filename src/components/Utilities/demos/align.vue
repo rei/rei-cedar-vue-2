@@ -1,16 +1,23 @@
 <template>
   <div data-backstop="align-utilities">
-    <h2>Align classes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Align classes
+    </cdr-text>
 
-    <p class="cdr-text-left">.cdr-text-left</p>
-    <p class="cdr-text-center">.cdr-text-center</p>
-    <p class="cdr-text-right">.cdr-text-right</p>
+    <cdr-text class="cdr-text-left">.cdr-text-left</cdr-text>
+    <cdr-text class="cdr-text-center">.cdr-text-center</cdr-text>
+    <cdr-text class="cdr-text-right">.cdr-text-right</cdr-text>
   </div>
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
+
 export default {
   name: 'UtilitiesAlign',
+  components: { ...Components },
 };
 </script>
 

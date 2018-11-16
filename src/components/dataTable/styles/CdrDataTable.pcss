@@ -1,0 +1,131 @@
+/* ==========================================================================
+  # CdrDataTable
+
+  TOC:
+
+    :Base - CdrDataTable
+    :States
+      :borderless
+      :compact
+========================================================================= */
+
+.cdr-data-table {
+  @include redwood-display-20();
+
+  position: relative;
+
+  &__caption {
+    @include spruce-display-20();
+      
+    color: $heart-of-darkness;
+  }
+
+  &__scroll-container {
+    margin-left: 150px;
+    overflow-x: auto;
+
+    &:global(.full-scroll) {
+      margin-left: 0;
+
+      .cdr-data-table__content {
+        th.empty,
+        tbody th {
+          position: relative;
+        }
+      }
+    }
+
+    &:global(.is-scrolling) {
+      /* add extra border width */
+      thead tr th:first-child {
+        border-right: 4px solid $grey-matter;
+      }
+
+      tbody tr th {
+        border-right: 4px solid $grey-matter;
+      }
+    }
+  }
+
+  &__content {
+    border: none;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid $partly-cloudy;
+      min-height: 48px;
+      color: $heart-of-darkness;
+      padding: $inset-1-x;
+      text-align: left;
+    }
+
+    td {
+      min-width: 127px;
+      max-width: 150px;
+
+      &:not(:first-of-type) {
+        text-align: left;
+      }
+    }
+
+    @mixin lockedColTh() {
+      border-right: 2px solid $grey-matter;
+      left: 0;
+      position: absolute;
+      width: 150px;
+    }
+
+    thead {
+      th {
+        border-bottom: 2px solid $grey-matter;
+
+        /* empty column header, row header column */
+        &[class^=empty] {
+          @include lockedColTh();
+
+          /* Ensure empty top right left cell has same line height */
+          &::before {
+            content: '\a0';
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: $the-tooth;
+
+          th {
+            background-color: $the-tooth;
+          }
+        }
+      }
+
+      th {
+        @include lockedColTh();
+      }
+    }
+  }
+
+  &--borderless {
+    border: none;
+
+    th,
+    td {
+      border: none;
+    }
+
+    tbody tr th {
+      border-right: none;
+    }
+  }
+
+  &--compact {
+    th,
+    td {
+      padding: $inset-1-x-squish;
+    }
+  }
+}

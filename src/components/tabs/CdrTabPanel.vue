@@ -8,8 +8,10 @@
       v-show="active"
       :aria-hidden="!active"
       :class="[modifierClass]"
-      tabindex="1"
+      ref="cdrTabPanelContainer"
+      tabindex="0"
       role="tabpanel"
+      @keydown.up.prevent="handleUpArrowNav"
       :key="name">
       <slot/>
     </div>
@@ -23,7 +25,17 @@ export default {
   name: 'CdrTabPanel',
   mixins: [modifier],
   props: {
-    name: String,
+    /**
+     * Required string value that shows up on tab header
+     */
+    name: {
+      type: String,
+      required: true,
+    },
+    /**
+     * Optional extra reference value to be set on the tab, otherwise
+     * the tab name will be used for reference.
+     */
     id: String,
   },
   data() {
@@ -31,7 +43,7 @@ export default {
       active: false,
       offsetX: 0,
       tabId: this.id || this.name,
-      animationDirection: 'flyRight',
+      animationDirection: 'default',
     };
   },
   computed: {
@@ -78,6 +90,9 @@ export default {
     setLeaveEnd(element) {
       const el = element;
       el.classList.remove(this.animationDirection);
+    },
+    handleUpArrowNav() {
+      this.$parent.setFocusToActiveTabHeader();
     },
   },
 };

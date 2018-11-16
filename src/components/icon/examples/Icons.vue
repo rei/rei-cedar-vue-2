@@ -1,10 +1,17 @@
 <template>
   <div class="icon-examples">
-    <h2>Icons</h2>
-    <cdr-icon-sprite/>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Icons
+    </cdr-text>
     <icon-account-profile data-backstop="cdr-icon-add" />
 
-    <h3>Default icon size</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Default icon size
+    </cdr-text>
     <cdr-icon use="#account-profile" />
     <hr>
 
@@ -19,17 +26,21 @@
         <div>
           <div class="cdr-text-center">
             <svg :is="key" />
-            <p>{{ key }}</p>
+            <cdr-text>{{ key }}</cdr-text>
           </div>
           <div class="cdr-text-center">
             <cdr-icon :use="`#${getSpriteId(key)}`" />
-            <p>using sprite</p>
+            <cdr-text>using sprite</cdr-text>
           </div>
         </div>
       </cdr-col>
     </cdr-row>
 
-    <h3>Small icon size</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Small icon size
+    </cdr-text>
     <hr>
 
     <cdr-row
@@ -43,14 +54,18 @@
         <div class="cdr-text-center">
           <svg
             :is="key"
-            modifier="sm"
+            size="small"
           />
-          <p>{{ key }}</p>
+          <cdr-text>{{ key }}</cdr-text>
         </div>
       </cdr-col>
     </cdr-row>
 
-    <h3>Large icon size</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Large icon size
+    </cdr-text>
     <hr>
 
     <cdr-row
@@ -64,13 +79,47 @@
         <div class="cdr-text-center">
           <svg
             :is="key"
-            modifier="lg"
+            size="large"
           />
-          <p>{{ key }}</p>
+          <cdr-text>{{ key }}</cdr-text>
         </div>
       </cdr-col>
     </cdr-row>
 
+    <h3>Responsive icon size</h3>
+    <hr>
+
+    <h6>Grow with screen width</h6>
+    <cdr-icon
+      use="#account-profile"
+      size="small@xs large@md large@lg"
+    />
+    <hr>
+    <h6>Inverse Grow</h6>
+    <cdr-icon
+      use="#account-profile"
+      size="large@xs small@md small@lg"
+    />
+    <hr>
+    <h6>Container with pink fill color</h6>
+    <div class="inherit-container">
+      <cdr-row cols="2">
+        <cdr-col>
+          <span>Icon with inherit-color</span>
+          <cdr-icon
+            use="#account-profile"
+            inherit-color
+          />
+        </cdr-col>
+        <cdr-col>
+          <span>Icon WITHOUT inherit-color</span>
+          <cdr-icon
+            use="#account-profile"
+          />
+        </cdr-col>
+      </cdr-row>
+    </div>
+    <hr>
   </div>
 </template>
 
@@ -99,11 +148,17 @@ export default {
 </script>
 
 <style>
-.icon-examples {
-  .cdr-icon {
-    &:hover {
-      fill: red;
+  .icon-examples {
+    .cdr-icon {
+      &:hover {
+        fill: red;
+      }
     }
   }
-}
+
+  .inherit-container {
+    fill: pink;
+    border: 2px solid pink;
+  }
+
 </style>

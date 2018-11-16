@@ -1,4 +1,6 @@
 module.exports = [{
   label: 'Tabs',
-  selectors: [],
+  selectors: [
+    '[data-backstop="tabs"]',
+  ],
 }];

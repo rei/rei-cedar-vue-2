@@ -4,7 +4,9 @@
     :is="href ? 'a' : 'div'"
     :href="href"
     :class="[
-      modifierClass,
+      contentPriorityClass,
+      sizeClass,
+      space,
       href ? $style['cdr-rating--linked'] : '',
     ]"
   >
@@ -46,6 +48,7 @@
       v-if="count"
       aria-hidden="true"
       :class="$style['cdr-rating__count']"
+
     ><span
       v-if="href"
       :class="$style['cdr-rating__number']"
@@ -57,8 +60,9 @@
 </template>
 
 <script>
-import modifier from 'mixinsdir/modifier';
-
+import contentPriority from 'mixinsdir/contentPriority';
+import size from 'mixinsdir/size';
+import space from 'mixinsdir/space';
 /**
  * Cedar 2 component for rating
  * Ratings are rounded to nearest .25 for displaying stars.
@@ -71,7 +75,11 @@ import modifier from 'mixinsdir/modifier';
  */
 export default {
   name: 'CdrRating',
-  mixins: [modifier],
+  mixins: [
+    contentPriority,
+    size,
+    space,
+  ],
   props: {
     /**
      * Rating value (out of 5)
@@ -125,5 +133,6 @@ export default {
 
 <style module>
   @import 'cssdir/settings/_index.pcss';
+  @import './styles/vars/CdrRating.vars.pcss';
   @import './styles/CdrRating.pcss';
 </style>
