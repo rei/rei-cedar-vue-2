@@ -127,6 +127,54 @@ export default {
 
 ## Usage
 
-The CdrInput component requires `v-model` to bind the input value to your data model. See above template example with 'inputModel' variable.
+The CdrInput component requires [ v-model ] to bind the input value to your data model.  You can also use   [ helper-text ] to display additional information below the input.
 
-Input inherits the `placeholder` attribute for the placeholder text. See above template example with placeholder=”Input Placeholder Text”.
+```vue
+<cdr-input
+  class="demo-input"
+  v-model="inputWithSlots"
+  id="slots-demo"
+  label="Billing address ZIP code">
+  <template slot="helper-text">
+    International customers, if no postal code, enter “NA”
+  </template>
+</cdr-input>
+```
+
+`aria-label` will automatically be added on compilation based upon what is provided in `label`
+
+```vue
+<cdr-input
+  class="demo-input"
+  v-model="ariaModel"
+  id="aria-demo"
+  label=”First Name">
+</cdr-input>
+```
+
+This will result in the following HTML:
+
+```vue
+<div class="cdr-input-wrap_1.0.0-alpha.5">
+  <input
+    id="aria-demo"
+    type="text"
+    class="cdr-input_1.0.0"
+    aria-label="First Name">
+</div>
+```
+
+Input inherits the `placeholder` attribute for the placeholder text. You can also use the [ post-icon ] slot for adding and icon.
+
+```vue
+<cdr-input
+  class="demo-input"
+  v-model="inputWithSlots"
+  placeholder="mm/dd/yyyy"
+  id="slots-demo"
+  label="Event Date">
+  <template slot="post-icon">
+    <icon-calendar />
+  </template>
+</cdr-input>
+```
