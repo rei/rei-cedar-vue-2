@@ -186,7 +186,7 @@ In the below example, a _Download_ button is rendered as a button with icon and 
 
 <script>
 import { CdrButton } from '@rei/cdr-button';
-import { CdrIcon } from '@rei/cdr-icon;
+import { CdrIcon } from '@rei/cdr-icon';
 export default {
   ...
   components: {
