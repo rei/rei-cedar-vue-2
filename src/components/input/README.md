@@ -127,7 +127,7 @@ export default {
 
 ## Usage
 
-The CdrInput component requires [ v-model ] to bind the input value to your data model.  You can also use   [ helper-text ] to display additional information below the input.
+The CdrInput component requires `v-model` to bind the input value to your data model.  You can also use   `helper-text` to display additional information below the input.
 
 ```vue
 <cdr-input
