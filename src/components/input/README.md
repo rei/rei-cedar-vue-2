@@ -141,25 +141,26 @@ The CdrInput component requires `v-model` to bind the input value to your data m
 </cdr-input>
 ```
 
-`aria-label` will automatically be added on compilation based upon what is provided in `label`
+`aria-label` will automatically be added on compilation based upon what is provided in `label` when label is hidden using `hide-label`.
 
 ```vue
 <cdr-input
   class="demo-input"
   v-model="ariaModel"
   id="aria-demo"
-  label=”First Name">
+  label=”First Name"
+  hide-label>
 </cdr-input>
 ```
 
 This will result in the following HTML:
 
 ```vue
-<div class="cdr-input-wrap_1.0.0-alpha.5">
+<div class="cdr-input-wrap">
   <input
     id="aria-demo"
     type="text"
-    class="cdr-input_1.0.0"
+    class="cdr-input"
     aria-label="First Name">
 </div>
 ```
