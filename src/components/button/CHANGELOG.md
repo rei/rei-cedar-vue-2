@@ -1,11 +1,12 @@
-<a name="1.0.1-alpha.1"></a>
-## 1.0.1-alpha.1 (2018-09-13)
+<a name="1.0.3"></a>
+## 1.0.3 (2018-11-17)
 
 
 ### Bug Fixes
 
 * **button:** bump version to match alpha ([3439b98](https://github.com/rei/rei-cedar/commit/3439b98))
 * **button cta:** import cdr-icon css for components packaged with an icon ([6bb2233](https://github.com/rei/rei-cedar/commit/6bb2233))
+* **button cta accordion:** bump version from alpha ([fe1c8f0](https://github.com/rei/rei-cedar/commit/fe1c8f0))
 
 
 ### Chores
@@ -15,6 +16,7 @@
 
 ### Features
 
+* **18.9.1 release:** release adds support for cdr-icon and updates the peer-dependancies of compone ([5a6da2c](https://github.com/rei/rei-cedar/commit/5a6da2c))
 * **accordion button cta:** bump versions to match alpha release ([c7f21bb](https://github.com/rei/rei-cedar/commit/c7f21bb))
 * **all components:** change package name prefixes from cedar-* to cdr-* ([dad0dfb](https://github.com/rei/rei-cedar/commit/dad0dfb)), closes [#354](https://github.com/rei/rei-cedar/issues/354)
 * **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
