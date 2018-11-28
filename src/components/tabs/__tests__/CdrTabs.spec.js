@@ -1,6 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrTabs from 'componentsdir/tabs/CdrTabs';
 import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
+import sinon from 'sinon';
 
 describe('CdrTabs.vue', () => {
   it('mounts tabs', () => {
@@ -214,6 +215,38 @@ describe('CdrTabs.vue', () => {
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('unset');
       done();
+    });
+  });
+
+  it('handles down arrow', (done) => {
+    const spy = sinon.spy(CdrTabs.methods, 'handleDownArrowNav');
+    const wrapper = shallowMount(CdrTabs, {
+      slots: {
+        default: [CdrTabPanel, CdrTabPanel]
+      }
+    });
+
+    wrapper.vm.handleDownArrowNav();
+    wrapper.vm.$nextTick(() => {
+      sinon.assert.called(spy);
+      done()
+    });
+  });
+
+  it('handles up arrow', (done) => {
+    const spy = sinon.spy(CdrTabs.methods, 'setFocusToActiveTabHeader');
+    const wrapper = mount(CdrTabs, {
+      slots: {
+        default: [CdrTabPanel, CdrTabPanel]
+      }
+    });
+    wrapper.vm.activeTabIndex = 0;
+    wrapper.vm.$nextTick(() => {
+      wrapper.vm.$children[0].handleUpArrowNav();
+      wrapper.vm.$nextTick(() => {
+        sinon.assert.called(spy);
+        done()
+      });
     });
   });
 });

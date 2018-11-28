@@ -1,5 +1,5 @@
 <a name="0.3.0"></a>
-# 0.3.0 (2018-09-13)
+# 0.3.0 (2018-11-17)
 
 
 ### Bug Fixes
@@ -10,6 +10,7 @@
 
 ### Features
 
+* **18.9.1 release:** release adds support for cdr-icon and updates the peer-dependancies of compone ([5a6da2c](https://github.com/rei/rei-cedar/commit/5a6da2c))
 * **all components:** change package name prefixes from cedar-* to cdr-* ([dad0dfb](https://github.com/rei/rei-cedar/commit/dad0dfb)), closes [#354](https://github.com/rei/rei-cedar/issues/354)
 * **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
 * **assets:** remove icons from assets ([c402676](https://github.com/rei/rei-cedar/commit/c402676))
@@ -19,12 +20,14 @@
 * **icon:** generate new sprite, externalize icon.json ([f49f828](https://github.com/rei/rei-cedar/commit/f49f828))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
+* **reset:** remove anchor styles from reset ([853740e](https://github.com/rei/rei-cedar/commit/853740e))
 * **resets:** normalize resets to use tokens ([5a705e3](https://github.com/rei/rei-cedar/commit/5a705e3))
 * **tokens:** output token file for cdr-assets ([717836f](https://github.com/rei/rei-cedar/commit/717836f))
 
 
 ### BREAKING CHANGES
 
+* **reset:** removed default anchor styles from reset, now only available via cdr-link
 * **resets:** Default line height changed from 1.15 to 1 | Remove default margin on blockquote, figure, and label
 elements
 * **assets:** icon assets are removed from cdr-assets and are now in cdr-icon

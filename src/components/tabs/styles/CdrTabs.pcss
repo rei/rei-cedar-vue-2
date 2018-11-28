@@ -21,12 +21,17 @@
 ========================================================================== */
 
 .cdr-tabs {
-  overflow-x: auto;
+  /* overflow-x: auto; */
+  display: flex;
+  flex-flow: column;
+  height: 500px;
 
   &__header-container {
     overflow-x: auto;
     border-bottom: 1px solid $grey-matter;
     -webkit-overflow-scrolling: touch;
+    flex: 0 1 auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 
   &__gradient-container {
@@ -75,6 +80,7 @@
   &__header {
     display: inline-flex;
     width: 100%;
+    margin: 0;
 
     /* align-content: stretch; */
     padding: 0;
@@ -91,39 +97,45 @@
 
   &__header-item {
     display: inline-flex;
+
+    &[aria-selected] > .cdr-tabs__header-item-label {
+      color: $easily-excited;
+    }
   }
 
   &__header-item-label {
     @include redwood-display-30;
 
+    text-decoration: none;
     margin: 0 $space-1-x 0 0;
     padding: $inset-half-x-stretch;
     color: $heart-of-darkness;
     white-space: nowrap;
+    outline-offset: -3px;
 
     &:active,
     &:hover,
     &:focus {
       text-decoration: none;
       color: $easily-excited;
-      outline: none;
     }
   }
 
   &__underline {
-    position: relative;
+    position: absolute;
     width: 30px;
     margin: 0;
-    margin-left: 5px;
-    margin-top: -1px;
     height: $space-quarter-x;
-    border: none;
+
+    /* border: none; */
     background: $easily-excited;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
   }
 
   &__content-container {
     position: relative;
+    flex: 1 1 auto;
+    overflow: auto;
   }
 
   .fade-enter-active,
