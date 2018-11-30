@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h2>Text Inputs</h2>
+    <cdr-text
+      tag="h2">Text Inputs</cdr-text>
 
     <cdr-input
       class="demo-input"
@@ -76,9 +77,9 @@
       required
       type="email">
       <template slot="info">
-        <a href="#/inputs">
+        <cdr-link href="#/inputs">
           Info Link/Icon
-        </a>
+        </cdr-link>
       </template>
       <template slot="pre-icon">
         <icon-twitter
@@ -99,7 +100,7 @@
       placeholder="#6 Multi Line Input/TextArea"
       label="#6 Multi Line Input/TextArea"
     />
-    <br>
+
     <div class="demo-input">Input #1 Value = {{ defaultModel }}</div>
     <div class="demo-input">Input #2 Value = {{ requiredModel }}</div>
     <div class="demo-input">Input #3 Value = {{ hiddenModel }}</div>
@@ -138,6 +139,7 @@ export default {
   .demo-input {
     margin: 10px;
     background: white;
+    line-height: 1;
   }
 </style>
 

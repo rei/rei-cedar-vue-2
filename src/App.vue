@@ -122,11 +122,3 @@ export default {
     margin: 16px 0;
   }
 </style>
-
-<style lang="pcss">
-@import "@rei/cdr-tokens/dist/cdr-tokens.scss";
-
-h2 {
-  @include redwood-display-60;
-}
-</style>

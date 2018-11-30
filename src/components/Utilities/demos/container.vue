@@ -15,5 +15,6 @@ export default {
   background-color: lightblue;
   padding: 20px;
   margin-bottom: 20px;
+  line-height: 1;
 }
 </style>
