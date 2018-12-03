@@ -30,9 +30,20 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
 
 .cdr-col {
   flex: 1 1 0;
-  padding-top: $rowGutter-xs;
-  padding-left: $rowGutter-xs;
-  display: flex;
+
+  /* increase specificity to prevent cedar 1 from overriding */
+  &.cdr-col {
+    padding-top: $rowGutter-xs;
+    padding-left: $rowGutter-xs;
+    padding-right: 0;
+    padding-bottom: 0;
+    display: flex;
+  }
+
+  /* increase specificity to undo above when is-row=true */
+  &.cdr-row {
+    padding: 0;
+  }
 
   &__content {
     display: flex;
@@ -257,8 +268,18 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--sm-mq) {
-    padding-top: $rowGutter-sm;
-    padding-left: $rowGutter-sm;
+    /* increase specificity to prevent cedar 1 from overriding */
+    &.cdr-col {
+      padding-top: $rowGutter-sm;
+      padding-left: $rowGutter-sm;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+
+    /* increase specificity to undo above when is-row=true */
+    &.cdr-row {
+      padding: 0;
+    }
 
     /* Col small elements
     ========================================================================== */
@@ -458,8 +479,18 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--md-mq) {
-    padding-top: $rowGutter-md;
-    padding-left: $rowGutter-md;
+    /* increase specificity to prevent cedar 1 from overriding */
+    &.cdr-col {
+      padding-top: $rowGutter-md;
+      padding-left: $rowGutter-md;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+
+    /* increase specificity to undo above when is-row=true */
+    &.cdr-row {
+      padding: 0;
+    }
 
     /* Col medium elements
     ========================================================================== */
@@ -659,8 +690,18 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--lg-mq) {
-    padding-top: $rowGutter-lg;
-    padding-left: $rowGutter-lg;
+    /* increase specificity to prevent cedar 1 from overriding */
+    &.cdr-col {
+      padding-top: $rowGutter-lg;
+      padding-left: $rowGutter-lg;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+    
+    /* increase specificity to undo above when is-row=true */
+    &.cdr-row {
+      padding: 0;
+    }
 
     /* Col large elements
     ========================================================================== */

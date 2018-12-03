@@ -50,13 +50,19 @@
     ---------- */
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     background-color: $button-hover-background-color;
     color: $button-hover-color;
     box-shadow: $button-hover-box-shadow;
     text-decoration: none;
     outline: none;
+    outline-offset: 0;
     fill: $button-hover-color;
+  }
+
+  &:focus {
+    outline: $default-outline;
   }
 
   &[disabled] {
@@ -82,7 +88,8 @@
     ---------- */
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
       background-color: $button-secondary-hover-background-color;
       box-shadow: $button-secondary-box-shadow;
       color: $button-secondary-hover-color;
@@ -162,7 +169,8 @@
     fill: $heart-of-darkness;
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
       background: none;
       box-shadow: none;
       fill: $heart-of-darkness;

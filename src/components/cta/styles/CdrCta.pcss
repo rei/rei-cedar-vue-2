@@ -34,8 +34,14 @@
   }
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     text-decoration: none;
+  }
+
+  &:focus {
+    outline: $default-outline;
+    outline-offset: 0;
   }
 
   /* Full Width
