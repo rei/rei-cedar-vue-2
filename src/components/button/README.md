@@ -1,5 +1,7 @@
 # CdrButton
 
+For the most up-to-date information, see [REI Cedar documentation](https://rei.github.io/rei-cedar-docs/components/buttons/).
+
 ## Properties
 
 | Name  | Type | Default     |
@@ -25,12 +27,7 @@
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | size | string | medium |
-| Sets the button size. Possible values: { 'small' | 'medium' | 'large' } | 
-
-| Name  | Type | Default     |
-|:-----|:-------|:--------|
-| responsiveSize | array | n/a |
-| Sets the button size at different responsive breakpoints. Breakpoints are expressed as t-shirt sizing with values: xs, sm, md, and lg. Examples: { ‘large@xs’ | ‘small@lg’ } |
+| Sets the button size; values can target responsive breakpoints. Breakpoint values are: xs, sm, md, and lg. Examples: { 'small' | 'medium' | 'large' | 'large@sm' }
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
@@ -114,15 +111,14 @@ export default {
 
 ## Usage
 
-### Size, responsive size, and full-width sizing props
+### Size prop
 
-The below example uses both the `size` and `responsive-size` props. This button’s size is small, but it will become a large button at the `xs` and `sm` breakpoints.
+The below example uses the `size` prop to set default and responsive size. This button’s size is small, but it will become a large button at the `xs` and `sm` breakpoints.
 
 ```vue
 <template>
   <cdr-button
-    size="small"
-    :responsive-size="[‘large@xs’, ‘large@sm’]"
+    size="small large@xs large@sm"
   >
     Add to cart
   </cdr-button>
