@@ -13,7 +13,7 @@ For the most up-to-date information, see [REI Cedar documentation](https://rei.g
 | name                                                                   | type   | default |
 |:-----------------------------------------------------------------------|:-------|:--------|
 | size                                                                    | string | medium    |
-| Modifiers the icon size; values can target responsive breakpoints. Breakpoint values are: xs, sm, md, and lg. Examples: { 'small' | 'medium' | 'large' | 'large@sm' }  |        |         |
+| Modifies the icon size; values can target responsive breakpoints. Breakpoint values are: xs, sm, md, and lg. Examples: { 'small' | 'medium' | 'large' | 'large@sm' }  |        |         |
 
 
 | name                                                                      | type   | default            |
