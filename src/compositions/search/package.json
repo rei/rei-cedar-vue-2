@@ -28,14 +28,14 @@
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "@rei/cdr-button": "^1.0.0",
+    "@rei/cdr-button": "^2.0.0",
     "@rei/cdr-icon": "^2.0.0",
     "@rei/cdr-input": "^1.0.0",
     "vue": "^2.5.13"
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "@rei/cdr-button": "^1.0.0",
+    "@rei/cdr-button": "^2.0.0",
     "@rei/cdr-icon": "^2.0.0",
     "@rei/cdr-input": "^0.1.0",
     "pkg-ok": "^1.1.0"
