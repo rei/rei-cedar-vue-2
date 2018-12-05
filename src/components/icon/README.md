@@ -1,3 +1,7 @@
+# CdrIcon
+
+For the most up-to-date information, see [REI Cedar documentation](https://rei.github.io/rei-cedar-docs/components/icon/)
+
 ## Props
 
 | name                                                                   | type   | default |
@@ -6,13 +10,16 @@
 | Sets the href attribute for use with SVG symbol sprite (CdrIconSprite). |        |         |
 
 
+| name                                                                   | type   | default |
+|:-----------------------------------------------------------------------|:-------|:--------|
+| size                                                                    | string | medium    |
+| Modifiers the icon size; values can target responsive breakpoints. Breakpoint values are: xs, sm, md, and lg. Examples: { 'small' | 'medium' | 'large' | 'large@sm' }  |        |         |
 
-Applies to **CdrIcon** and all individual Cedar Icon* Icon* (IconArrowUp, IconCalendar, etc.) components
 
 | name                                                                      | type   | default            |
 |:--------------------------------------------------------------------------|:-------|:-------------------|
 | modifier                                                                  | string | N/A                |
-| Allows style variants to be defined. See below.                       |        |                    |
+| Modifies the style variant fot this component. Possible values: { 'inherit-color' }                   |        |                    |
 
 ## Slots
 
@@ -20,7 +27,7 @@ CdrIcon and all Icon* (IconArrowUp, IconCalendar, etc.) components have a defaul
 
 | name    | notes                                                                                         |
 |:--------|:----------------------------------------------------------------------------------------------|
-| default | Sets the innerHTML of SVG element. This includes <title>, <desc>, or any other valid SVG xml. |
+| default | Sets the innerHTML of SVG element. This includes &lt;title&gt;, &lt;desc&gt;, or any other valid SVG xml. |
 
 ## Installation
 
