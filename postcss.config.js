@@ -33,10 +33,12 @@ module.exports = {
       // for correct paths during component-only css creation
       path: process.env.NODE_ENV === 'css' ? './src/components/button/styles/' : '',
     },
-    'postcss-modules': process.env.NODE_ENV === 'css' ? {
-      getJSON: () => { },
-      generateScopedName: '[local]',
-    } : undefined,
+    ...(process.env.NODE_ENV === 'css' ? {
+      'postcss-modules': {
+        getJSON: () => { },
+        generateScopedName: '[local]',
+      },
+    } : {}),
     autoprefixer: {},
     cssnano: {
       discardUnused: { fontFace: false },
