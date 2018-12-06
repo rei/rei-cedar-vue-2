@@ -153,7 +153,7 @@ describe('CdrInput.vue', () => {
       propsData: {
         label: 'test',
         multiLine: true,
-        rows: '10'
+        rows: 10
       },
     });
     expect(wrapper.vm.$refs.input.hasAttribute('rows', '10')).toBe(true);
