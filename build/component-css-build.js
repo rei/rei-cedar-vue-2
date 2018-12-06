@@ -40,6 +40,7 @@ ${pcss}`;
       .process(fullPcss, options)
       .then((result) => {
         fs.outputFileSync('styles/components.css', result.css);
+        console.log(`Compiled component styles to 'styles/components.css'`);
       })
   })
 }
