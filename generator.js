@@ -99,7 +99,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
         .replace(/\{NAME-FULLNAME\}/g, compName)
         .replace(/\{NAME-FULLKEBAB\}/g, fullName);
 
-      fs.writeFile(filePath, rewrite, 'utf-8');
+      fs.outputFileSync(filePath, rewrite);
     });
   });
 
