@@ -24,7 +24,7 @@
         :rows="[rows]"
         :class="[inputClass, sizeClass]"
         v-bind="$attrs"
-        v-model="value"
+        v-model="newValue"
         :id="inputId"
         @blur="onBlur"
         @input="onInput"
@@ -41,7 +41,7 @@
         :type="type"
         :class="[inputClass, sizeClass]"
         v-bind="$attrs"
-        v-model="value"
+        v-model="newValue"
         :id="inputId"
         @blur="onBlur"
         @input="onInput"
@@ -125,7 +125,14 @@ export default {
     /** @ignore */
     required: Boolean,
     /** @ignore */
-    value: String,
+    value: {
+      type: [String, Number],
+    },
+  },
+  data() {
+    return {
+      newValue: this.value,
+    };
   },
   computed: {
     // Use given id or generate one
