@@ -28,7 +28,7 @@
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "@rei/cdr-link": "^1.0.3-alpha.0",
+    "@rei/cdr-link": "^1.0.3",
     "@rei/cdr-icon": "^2.0.0",
     "@rei/cdr-img": "^1.0.0",
     "vue": "^2.5.17"
@@ -37,7 +37,7 @@
     "@rei/cdr-assets": "^0.3.0",
     "@rei/cdr-icon": "^2.0.0",
     "@rei/cdr-img": "^1.0.0",
-    "@rei/cdr-link": "^1.0.3-alpha.0",
+    "@rei/cdr-link": "^1.0.3",
     "pkg-ok": "^1.1.0"
   }
 }
