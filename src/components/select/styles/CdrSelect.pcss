@@ -12,20 +12,33 @@
 ========================================================================== */
 
 .cdr-select {
-  font-size: $select-font-size;
-  line-height: $select-line-height;
-  text-align: $select-text-align;
-  color: $select-color;
-  font-style: $select-font-style;
-  font-weight: $select-font-weight;
-  font-family: $select-font-family;
-  width: 100%;
-  display: block;
-  border: $select-border;
-  border-radius: $select-border-radius;
-  height: $select-height;
-  background-color: $select-background-color;
-  text-transform: none;
+  &.cdr-select {
+    box-sizing: border-box;
+    font-size: $select-font-size;
+    line-height: $select-line-height;
+    text-align: $select-text-align;
+    color: $select-color;
+    font-style: $select-font-style;
+    font-weight: $select-font-weight;
+    font-family: $select-font-family;
+    width: 100%;
+    display: block;
+    border: $select-border;
+    border-radius: $select-border-radius;
+    height: $select-height;
+    background-color: $select-background-color;
+    text-transform: none;
+    margin: 0;
+  }
+
+  &[multiple] {
+    padding: 0;
+  }
+
+  & option {
+    line-height: 1;
+    box-sizing: border-box;
+  }
 
   /* States
     ---------- */
@@ -37,11 +50,14 @@
   /* Style variants
     ========================================================================== */
 
-  &--size {
+  &--size&[size] {
     height: auto;
   }
 
   &__label {
     @include maple-utility-20;
+
+    display: block;
+    margin: 0;
   }
 }

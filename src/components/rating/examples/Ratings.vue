@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="rating-reset">
     <cdr-text
       tag="h2"
       modifier="heading-medium">
@@ -15,6 +15,7 @@
       space="cdr-inset"
 
     />
+
     <cdr-rating
       rating="3"
       count="100"
@@ -27,7 +28,7 @@
       href="https://www.rei.com"
       size="large"
     />
-    <div>
+    <div class="line-height-reset">
       <cdr-rating
         rating="3.66"
         count="1000"
@@ -73,13 +74,13 @@
     />
 
     <!-- Responsive Size -->
-    <h6>Responsive Growing</h6>
+    <cdr-text tag="h3">Responsive Growing</cdr-text>
     <cdr-rating
       rating="2"
       count="9"
       size="small@xs large@md large@lg"
     />
-    <h6>Responsive Inverse</h6>
+    <cdr-text tag="h3">Responsive Inverse</cdr-text>
     <cdr-rating
       rating="3"
       count="100"
@@ -102,5 +103,12 @@ export default {
 </script>
 
 <style>
+/** resets to protect example stylings unrelated to the component for consistent testing */
+.rating-reset {
+  font-size: 0;
+}
 
+.line-height-reset {
+  line-height: 1;
+}
 </style>

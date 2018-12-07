@@ -17,7 +17,7 @@
           >
             Circle image shape
           </cdr-text>
-          <p>Class aptent taciti sociosqu ad per inceptos himenaeos.</p>
+          <cdr-text>Class aptent taciti sociosqu ad per inceptos himenaeos.</cdr-text>
         </cdr-media-object>
       </cdr-col>
       <cdr-col span="6">
@@ -30,7 +30,7 @@
           >
             Circle image shape
           </cdr-text>
-          <p>Issaquah Alps, WA</p>
+          <cdr-text>Issaquah Alps, WA</cdr-text>
         </cdr-media-object>
       </cdr-col>
     </cdr-col>
