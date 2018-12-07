@@ -1,11 +1,12 @@
-<a name="1.0.0"></a>
-# 1.0.0 (2018-11-17)
+<a name="1.0.1-alpha.0"></a>
+## 1.0.1-alpha.0 (2018-12-07)
 
 
 ### Bug Fixes
 
 * **input:** a11y test fix ([080972e](https://github.com/rei/rei-cedar/commit/080972e))
 * **input:** link style update ([fe8e491](https://github.com/rei/rei-cedar/commit/fe8e491))
+* **input:** removed direct modification of input value ([45d6070](https://github.com/rei/rei-cedar/commit/45d6070))
 * **input:** updated element contrast for a11y ([b527cdd](https://github.com/rei/rei-cedar/commit/b527cdd))
 
 
@@ -24,6 +25,7 @@
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))
 * **examples:** updates to examples to use cdr-text rather than elements ([3619265](https://github.com/rei/rei-cedar/commit/3619265))
 * **input:** add css resets to input ([ac3b95b](https://github.com/rei/rei-cedar/commit/ac3b95b))
+* **input:** add defensive css for normalize and cedar 1 styles ([f930c61](https://github.com/rei/rei-cedar/commit/f930c61))
 * **input:** add keydown event ([3c476b3](https://github.com/rei/rei-cedar/commit/3c476b3))
 * **input:** finalized changes for input release ([2b480a3](https://github.com/rei/rei-cedar/commit/2b480a3))
 * **input:** input refactor for cedar2 ([4ab0131](https://github.com/rei/rei-cedar/commit/4ab0131))

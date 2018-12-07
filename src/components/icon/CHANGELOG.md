@@ -1,5 +1,5 @@
-<a name="1.0.1-alpha.1"></a>
-## 1.0.1-alpha.1 (2018-11-17)
+<a name="2.0.0"></a>
+# 2.0.0 (2018-12-07)
 
 
 ### Bug Fixes
@@ -26,6 +26,7 @@
 * **examples:** updates to examples to use cdr-text rather than elements ([3619265](https://github.com/rei/rei-cedar/commit/3619265))
 * **icon:** add a slot to all components ([5bd063f](https://github.com/rei/rei-cedar/commit/5bd063f))
 * **icon:** add grid-view, list-view, and scan-barcode icons ([918f782](https://github.com/rei/rei-cedar/commit/918f782))
+* **icon:** bump version, update README ([b5441b7](https://github.com/rei/rei-cedar/commit/b5441b7))
 * **icon:** generate new sprite, externalize icon.json ([f49f828](https://github.com/rei/rei-cedar/commit/f49f828))
 * **icon:** update dependencies ([6b6c0fe](https://github.com/rei/rei-cedar/commit/6b6c0fe))
 * **icons:** gernerate icon components ([dcefd4e](https://github.com/rei/rei-cedar/commit/dcefd4e))
@@ -36,6 +37,7 @@
 
 ### BREAKING CHANGES
 
+* **icon:** size values go to size prop rather than modifier prop
 * **icons:** pin-fill and pin-stroke have been reversed to correct a naming error
 * **icon:** Replace star icons with new ones
 * **components:** Components are now using css-modules for unique class names tied to the package version

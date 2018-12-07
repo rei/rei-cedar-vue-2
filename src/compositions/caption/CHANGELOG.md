@@ -1,5 +1,5 @@
 <a name="1.0.0"></a>
-# 1.0.0 (2018-11-17)
+# 1.0.0 (2018-12-07)
 
 
 ### Chores
@@ -11,6 +11,7 @@
 
 * **18.9.1 release:** release adds support for cdr-icon and updates the peer-dependancies of compone ([5a6da2c](https://github.com/rei/rei-cedar/commit/5a6da2c))
 * **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
+* **caption:** add defensive css for normalize and cedar 1 styles ([99c0698](https://github.com/rei/rei-cedar/commit/99c0698))
 * **caption:** clean up caption composition ([d88bfa5](https://github.com/rei/rei-cedar/commit/d88bfa5))
 * **caption:** update dependencies ([daee967](https://github.com/rei/rei-cedar/commit/daee967))
 * **caption block-quote and pull-quote release:** moving these components to v1 ([0286274](https://github.com/rei/rei-cedar/commit/0286274))

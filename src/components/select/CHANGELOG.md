@@ -1,5 +1,5 @@
 <a name="0.1.3"></a>
-## 0.1.3 (2018-11-17)
+## 0.1.3 (2018-12-07)
 
 
 ### Bug Fixes
@@ -25,6 +25,7 @@
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **release:** bump all to 0.1.0 and remove base-components ([f5c335e](https://github.com/rei/rei-cedar/commit/f5c335e))
 * **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
+* **select:** add defensive css for normalize and cedar 1 styles ([f660a5a](https://github.com/rei/rei-cedar/commit/f660a5a))
 * **select:** add DOM event to emitted vue event ([ddb99f1](https://github.com/rei/rei-cedar/commit/ddb99f1))
 * **select:** update dependencies ([cd60f29](https://github.com/rei/rei-cedar/commit/cd60f29))
 

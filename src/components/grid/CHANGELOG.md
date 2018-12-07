@@ -1,9 +1,10 @@
 <a name="1.0.2"></a>
-## 1.0.2 (2018-11-17)
+## 1.0.2 (2018-12-07)
 
 
 ### Bug Fixes
 
+* **grid:** add defensive css to prevent cedar 1 collisions ([4a96291](https://github.com/rei/rei-cedar/commit/4a96291))
 * **grid:** add style property to package.json ([6f7a22f](https://github.com/rei/rei-cedar/commit/6f7a22f))
 
 

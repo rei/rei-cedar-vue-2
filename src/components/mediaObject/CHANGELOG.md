@@ -1,5 +1,5 @@
-<a name="0.1.3"></a>
-## 0.1.3 (2018-11-17)
+<a name="0.1.4-alpha.0"></a>
+## 0.1.4-alpha.0 (2018-12-07)
 
 
 ### Chores
@@ -17,6 +17,7 @@
 * **deps:** update icon and assets for publishing ([48f2c67](https://github.com/rei/rei-cedar/commit/48f2c67))
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))
 * **examples:** updates to examples to use cdr-text rather than elements ([3619265](https://github.com/rei/rei-cedar/commit/3619265))
+* **icon accordion:** bump version ([a2cd2a7](https://github.com/rei/rei-cedar/commit/a2cd2a7))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **media-object:** update dependencies ([ec035df](https://github.com/rei/rei-cedar/commit/ec035df))
 * **release:** bump all to 0.1.0 and remove base-components ([f5c335e](https://github.com/rei/rei-cedar/commit/f5c335e))

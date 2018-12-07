@@ -1,5 +1,5 @@
 <a name="0.3.0"></a>
-# 0.3.0 (2018-11-17)
+# 0.3.0 (2018-12-07)
 
 
 ### Bug Fixes
@@ -14,6 +14,7 @@
 * **all components:** change package name prefixes from cedar-* to cdr-* ([dad0dfb](https://github.com/rei/rei-cedar/commit/dad0dfb)), closes [#354](https://github.com/rei/rei-cedar/issues/354)
 * **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
 * **assets:** remove icons from assets ([c402676](https://github.com/rei/rei-cedar/commit/c402676))
+* **assets:** remove tokens from assets ([9304b8f](https://github.com/rei/rei-cedar/commit/9304b8f))
 * **deps:** update icon and assets for publishing ([48f2c67](https://github.com/rei/rei-cedar/commit/48f2c67))
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))
 * **fonts:** remove several font weights and styles ([36f21d8](https://github.com/rei/rei-cedar/commit/36f21d8))
@@ -27,6 +28,7 @@
 
 ### BREAKING CHANGES
 
+* **assets:** Token file removed from cdr-assets. They are available in @rei/cdr-tokens
 * **reset:** removed default anchor styles from reset, now only available via cdr-link
 * **resets:** Default line height changed from 1.15 to 1 | Remove default margin on blockquote, figure, and label
 elements
