@@ -17,8 +17,7 @@
           ref="prev-link"
         ><icon-caret-left
           :class="$style['cdr-pagination__caret--prev']"
-          modifier="sm" />Prev
-        </a>
+          modifier="sm" />Prev</a>
       </li>
       <!-- Desktop -->
       <li
