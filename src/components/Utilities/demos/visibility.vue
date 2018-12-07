@@ -266,7 +266,9 @@ export default {
   }
 
   table {
+    border-spacing: 0;
     border-collapse: collapse;
+    line-height: 1;
   }
 
   th {

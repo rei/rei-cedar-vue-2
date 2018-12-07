@@ -34,9 +34,9 @@
             </a>
           </li>
         </ol>
-        <hr
+        <div
           :class="$style['cdr-tabs__underline']"
-          :style="underlineStyle">
+          :style="underlineStyle" />
       </nav>
     </div>
     <div :class="$style['cdr-tabs__content-container']">

@@ -5,7 +5,7 @@ module.exports = [
       '[data-backstop="icons"]',
     ],
     hoverSelectors: [
-      '[data-backstop="cdr-icon-add"]',
+      '[data-backstop="cdr-icon-hover"]',
     ],
   },
 ];
