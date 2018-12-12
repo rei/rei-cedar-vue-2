@@ -1,5 +1,7 @@
 # CdrAccordion
 
+For the most up-to-date information, see [REI Cedar documentation](https://rei.github.io/rei-cedar-docs/components/accordion/).
+
 Accordions are built from two components, CdrAccordion and CdrAccordionItem, which are meant to be used together.
 
 ## Props
