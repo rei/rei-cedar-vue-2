@@ -52,7 +52,7 @@ Install the CdrCta package using `npm` in your terminal:8
 _Terminal_
 
 ```terminal
-    npm i -s @rei/cdr-link
+    npm i -s @rei/cdr-cta
 ```
 
 ### 2. Import Dependencies
