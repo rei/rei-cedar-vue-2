@@ -1,174 +1,145 @@
 <template>
   <div>
     <cdr-text
-      tag="h2"
-      modifier="heading-small">
-      Text Inputs
-    </cdr-text>
+      tag="h2">Text Inputs</cdr-text>
 
     <cdr-input
-      v-model="debounce"
-      label="Validation with debounce"
-      id="testing"
-      placeholder="Enter hi"
-      feedback
-      name="yoyo"
-      :rules="[validateFn]"
-      debounce
-      data-backstop="text-input"
+      class="demo-input"
+      v-model="defaultModel"
+      label="#1 Default"
     />
 
     <cdr-input
-      v-model="requiredValidated"
-      label="Required"
-      feedback
-      :rules="[validateFn]"
+      class="demo-input"
+      v-model="requiredModel"
+      label="#2 Required"
       required
     />
 
     <cdr-input
-      v-model="required"
-      label="Default required validation"
-      required
-    />
-
-    <cdr-input
-      v-model="nothing"
-      label="Nothing"
-    />
-
-    <cdr-input
-      v-model="nothing"
+      class="demo-input"
+      v-model="hiddenModel"
       label="This has no label"
       hide-label
-      placeholder="hidden-label"
+      placeholder="#3 hidden-label"
     />
 
     <cdr-input
-      v-model="pattern"
-      label="Pattern validation"
-      required
-      pattern="[a-zA-Z0-9\-\s'/@#+&%]+"
-      pattern-error="Only letters, numbers, spaces, dashes,
-      apostrophes, /, @, #, +, &amp; or % are allowed."
-    />
-
-    <cdr-input
-      v-model="empty"
-      label="Disabled Input"
+      class="demo-input"
+      v-model="disabledModel"
+      label="#4 Disabled Input"
       placeholder="I am disabled"
       disabled
     />
 
     <cdr-input
-      v-model="valid"
-      label="Success"
-      feedback
-      :rules="[validateFn]"
-      immediate-validate
+      class="demo-input"
+      v-model="sizeModel"
+      label="Large Input"
+      placeholder="Large Input"
+      size="large"
+    />
+    <cdr-input
+      class="demo-input"
+      v-model="sizeModel"
+      label="Large@xs Input"
+      placeholder="Large@xs Input"
+      size="large@xs"
+    />
+    <cdr-input
+      class="demo-input"
+      v-model="sizeModel"
+      label="Large@sm Input"
+      placeholder="Large@sm Input"
+      size="large@sm"
+    />
+    <cdr-input
+      class="demo-input"
+      v-model="sizeModel"
+      label="Large@md Input"
+      placeholder="Large@md Input"
+      size="large@md"
+    />
+    <cdr-input
+      class="demo-input"
+      v-model="sizeModel"
+      label="Large@lg Input"
+      placeholder="Large@lg Input"
+      size="large@lg"
     />
 
     <cdr-input
-      v-model="warning"
-      label="Warning"
-      feedback
-      :rules="[validateFn]"
-      immediate-validate
+      class="demo-input"
+      v-model="requiredWithIcons"
+      id="required-with-icon"
+      placeholder="Required with Icon"
+      label="#5 Input Label"
+      required
+      type="email">
+      <template slot="info">
+        <cdr-link href="#/inputs">
+          Info Link/Icon
+        </cdr-link>
+      </template>
+      <template slot="pre-icon">
+        <icon-twitter
+          inherit-color />
+      </template>
+      <template slot="post-icon">
+        <icon-check-lg
+          inherit-color />
+      </template>
+      <template slot="helper-text">
+        This is helper text.
+      </template>
+    </cdr-input>
+    <cdr-input
+      class="demo-input "
+      v-model="multiRowModel"
+      :rows="10"
+      placeholder="#6 Multi Line Input/TextArea"
+      label="#6 Multi Line Input/TextArea"
     />
 
-    <cdr-input
-      v-model="error"
-      label="Error"
-      feedback
-      :rules="[validateFn]"
-      immediate-validate
-    />
-
-    <cdr-input
-      v-model="multi"
-      label="Multiline"
-      multi-line
-      rows="5"
-      data-backstop="form-textarea"
-    />
-
-    <cdr-input
-      v-model="valid"
-      label="Multiline Success"
-      feedback
-      :rules="[validateFn]"
-      multi-line
-      rows="5"
-      immediate-validate
-    />
-
-    <cdr-input
-      v-model="warning"
-      label="Multiline Warning"
-      feedback
-      :rules="[validateFn]"
-      multi-line
-      rows="5"
-      immediate-validate
-    />
-
-    <cdr-input
-      v-model="error"
-      label="Multiline Error"
-      feedback
-      :rules="[validateFn]"
-      multi-line
-      rows="5"
-      immediate-validate
-    />
-
-    <cdr-input
-      v-model="multi2"
-      label="Multiline 10 rows"
-      multi-line
-      rows="10"
-    />
+    <div class="demo-input">Input #1 Value = {{ defaultModel }}</div>
+    <div class="demo-input">Input #2 Value = {{ requiredModel }}</div>
+    <div class="demo-input">Input #3 Value = {{ hiddenModel }}</div>
+    <div class="demo-input">Input #4 Value = {{ disabledModel }}</div>
+    <div class="demo-input">Input #5 Value = {{ requiredWithIcons }}</div>
+    <div class="demo-input">Input #6 Value = {{ multiRowModel }}</div>
+    <div class="demo-input">Size Inputs Value = {{ sizeModel }}</div>
   </div>
 </template>
 
 <script>
 import Components from 'componentsdir/_index';
+import { IconTwitter, IconCheckLg } from 'componentsdir/icon/dist/cdr-icon';
 
 export default {
-  name: 'Forms',
-  components: Components,
+  name: 'Inputs',
+  components: {
+    ...Components,
+    IconTwitter,
+    IconCheckLg,
+  },
   data() {
     return {
-      debounce: '',
-      requiredValidated: '',
-      required: '',
-      nothing: '',
-      pattern: '',
-      empty: '',
-      valid: 'hi',
-      warning: '',
-      error: 1,
-      multi: '',
-      multi2: '',
+      defaultModel: '',
+      requiredModel: '',
+      hiddenModel: '',
+      disabledModel: '',
+      requiredWithIcons: '',
+      multiRowModel: '',
+      sizeModel: '',
     };
-  },
-  methods: {
-    validateFn(inputText) {
-      const obj = {};
-      if (inputText === 'hi') {
-        obj.state = 'valid';
-      } else if (inputText === '') {
-        obj.state = 'warn';
-        obj.message = 'Warning Message';
-      } else if (!isNaN(inputText) && inputText !== '') { //eslint-disable-line
-        obj.state = 'error';
-        obj.message = 'Error: needs to be letters';
-      } else {
-        obj.state = 'error';
-        obj.message = 'Error Message';
-      }
-      return obj;
-    },
   },
 };
 </script>
+<style>
+  .demo-input {
+    margin: 10px;
+    background: white;
+    line-height: 1;
+  }
+</style>
+

@@ -19,12 +19,15 @@
 ========================================================================== */
 
 .cdr-breadcrumb {
+  line-height: 1;
+
   /* List
   ========== */
   &__list {
     display: inline-flex;
     flex-wrap: wrap;
     padding: 0;
+    margin: 0;
   }
 
   /* Item
@@ -33,6 +36,7 @@
     display: inline-flex;
     flex: none;
     color: $breadcrumb-text-color;
+    padding: 0;
 
     &:last-child {
       color: $breadcrumb-last-child-text-color;
@@ -52,6 +56,7 @@
   &__link {
     @include redwood-display-10;
 
+    text-decoration: none;
     color: inherit; /* inherit color from &__item */
 
     &:hover,
@@ -75,6 +80,9 @@
   /* Ellipses
     ========== */
   &__ellipses {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
     border: none;
     background: none;
     background-color: transparent;

@@ -5,15 +5,20 @@
       modifier="heading-small">
       Icons
     </cdr-text>
-    <icon-account-profile data-backstop="cdr-icon-add" />
 
     <cdr-text
       tag="h3"
       modifier="heading-small">
       Default icon size
     </cdr-text>
-    <cdr-icon use="#account-profile" />
-    <hr>
+    <icon-account-profile
+      data-backstop="cdr-icon-hover"
+      class="icon-hover" />
+    <cdr-icon
+      use="#account-profile"
+      class="icon-hover" />
+
+    <hr class="icon-hr">
 
     <cdr-row
       cols="3 6@md 10@lg"
@@ -41,7 +46,7 @@
       modifier="heading-small">
       Small icon size
     </cdr-text>
-    <hr>
+    <hr class="icon-hr">
 
     <cdr-row
       cols="3 6@md 10@lg"
@@ -66,7 +71,7 @@
       modifier="heading-small">
       Large icon size
     </cdr-text>
-    <hr>
+    <hr class="icon-hr">
 
     <cdr-row
       cols="3 6@md 10@lg"
@@ -86,21 +91,40 @@
       </cdr-col>
     </cdr-row>
 
-    <h3>Responsive icon size</h3>
-    <hr>
+    <cdr-text tag="h3">Responsive icon size</cdr-text>
+    <hr class="icon-hr">
 
-    <h6>Grow with screen width</h6>
+    <cdr-text tag="h4">Grow with screen width</cdr-text>
     <cdr-icon
       use="#account-profile"
       size="small@xs large@md large@lg"
     />
-    <hr>
-    <h6>Inverse Grow</h6>
+    <hr class="icon-hr">
+    <cdr-text tag="h4">Inverse Grow</cdr-text>
     <cdr-icon
       use="#account-profile"
       size="large@xs small@md small@lg"
     />
-    <hr>
+    <hr class="icon-hr">
+    <cdr-text tag="h4">Container with pink fill color</cdr-text>
+    <div class="inherit-container">
+      <cdr-row cols="2">
+        <cdr-col>
+          <span>Icon with inherit-color</span>
+          <cdr-icon
+            use="#account-profile"
+            inherit-color
+          />
+        </cdr-col>
+        <cdr-col>
+          <span>Icon WITHOUT inherit-color</span>
+          <cdr-icon
+            use="#account-profile"
+          />
+        </cdr-col>
+      </cdr-row>
+    </div>
+    <hr class="icon-hr">
   </div>
 </template>
 
@@ -129,11 +153,26 @@ export default {
 </script>
 
 <style>
-.icon-examples {
-  .cdr-icon {
-    &:hover {
-      fill: red;
+  .icon-examples {
+    line-height: 1;
+
+    .icon-hover {
+      &:hover {
+        fill: red;
+      }
     }
   }
-}
+
+  .inherit-container {
+    fill: pink;
+    border: 2px solid pink;
+  }
+
+  .icon-hr {
+    margin: 0.5em 0;
+    border-style: inset;
+    border-width: 1px;
+    border-color: black;
+  }
+
 </style>

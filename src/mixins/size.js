@@ -10,9 +10,8 @@
  *
  * @mixin
  */
+import propValidator from 'srcdir/utils/propValidator';
 import BuildClass from './buildClass';
-
-const sizes = ['small', 'medium', 'large'];
 
 export default {
   mixins: [BuildClass],
@@ -23,7 +22,10 @@ export default {
     size: {
       type: String,
       default: 'medium',
-      validator: value => (sizes.indexOf(value) >= 0) || false,
+      validator: value => propValidator(
+        value,
+        ['small', 'medium', 'large'],
+      ),
     },
   },
   computed: {

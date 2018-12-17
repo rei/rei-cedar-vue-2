@@ -1,9 +1,16 @@
-<a name="1.0.1"></a>
-## 1.0.1 (2018-09-13)
+<a name="1.0.2"></a>
+## 1.0.2 (2018-11-17)
+
+
+### Bug Fixes
+
+* **grid:** add style property to package.json ([6f7a22f](https://github.com/rei/rei-cedar/commit/6f7a22f))
 
 
 ### Features
 
+* **18.9.1 release:** release adds support for cdr-icon and updates the peer-dependancies of compone ([5a6da2c](https://github.com/rei/rei-cedar/commit/5a6da2c))
+* **examples:** updates to examples to use cdr-text rather than elements ([3619265](https://github.com/rei/rei-cedar/commit/3619265))
 * **grid:** consolidate col's alignSelf props to single alignSelf ([0058ad0](https://github.com/rei/rei-cedar/commit/0058ad0))
 * **grid:** consolidate col's offsetLeft props to just offsetLeft ([ecc3294](https://github.com/rei/rei-cedar/commit/ecc3294))
 * **grid:** consolidate col's offsetRight props to single offsetRight ([b812e99](https://github.com/rei/rei-cedar/commit/b812e99))

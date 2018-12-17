@@ -1,6 +1,6 @@
 {
   "name": "rei-cedar",
-  "version": "18.08.1",
+  "version": "18.11.1",
   "description": "REI Cedar Style Framework",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -28,7 +28,8 @@
     "start": "lerna bootstrap && lerna run build",
     "check-version": "node check-version.js",
     "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
-    "changelog": "lerna-semantic-release post"
+    "changelog": "lerna-semantic-release post",
+    "component-css": "cross-env NODE_ENV=css node build/component-css-build.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^6.1.0",
@@ -48,6 +49,7 @@
     "chalk": "^2.3.1",
     "chromedriver": "^2.35.0",
     "clean-webpack-plugin": "^0.1.16",
+    "concat": "^1.0.3",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.4.1",
     "cross-env": "^5.0.3",
@@ -114,6 +116,7 @@
     "postcss-load-config": "^1.2.0",
     "postcss-loader": "^2.1.5",
     "postcss-media-minmax": "^3.0.0",
+    "postcss-modules": "^1.4.1",
     "postcss-nested": "^3.0.0",
     "postcss-pxtorem": "^4.0.1",
     "postcss-responsive-type": "^1.0.0",

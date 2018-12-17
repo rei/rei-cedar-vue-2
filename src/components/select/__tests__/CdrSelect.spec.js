@@ -9,14 +9,6 @@ describe('cdrSelect.vue', () => {
       },
     });
     expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
-  });
-
-  it('renders label correctly', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'Label Test',
-      },
-    });
     expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
   });
 
@@ -115,21 +107,12 @@ describe('cdrSelect.vue', () => {
     expect(wrapper.vm.$refs.select.hasAttribute('autofocus')).toBe(true);
   });
 
-  it('sets select size attribute correctly', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'test',
-        size: '4',
-      },
-    });
-    expect(wrapper.vm.$refs.select.hasAttribute('size', '4')).toBe(true);
-  });
-
   it('sets select multiple attribute correctly', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'Label Test',
         multiple: true,
+        extVal: [],
       },
     });
     expect(wrapper.vm.$refs.select.hasAttribute('multiple')).toBe(true);

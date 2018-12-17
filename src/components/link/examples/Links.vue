@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div>
+  <div class="link-examples">
     <cdr-text
       tag="h2"
       modifier="heading-small">
@@ -131,6 +131,12 @@ export default {
 </script>
 
 <style>
+/** normalize line-height for consistent testing because links inherit it */
+
+.link-examples {
+  line-height: 1;
+}
+
 .anchor-example {
   padding: 20px;
 }

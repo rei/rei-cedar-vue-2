@@ -2,7 +2,7 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    :class="[sizeClass]"
+    :class="[sizeClass, inheritColorClass]"
     role="presentation"
   >
     <!-- @slot any valid svg xml -->
@@ -34,11 +34,19 @@ export default {
     * The href attribute passed to the use element. Will be prefixed with # automatically
     */
     use: String,
+    /**
+    * Sets icon fill to "inherit" so as to use parent/ancestor fill color.
+    */
+    inheritColor: Boolean,
   },
   computed: {
     baseClass() {
       return 'cdr-icon';
     },
+    inheritColorClass() {
+      return this.inheritColor ? this.$style['cdr-icon--inherit-color'] : '';
+    },
+
   },
 };
 </script>
