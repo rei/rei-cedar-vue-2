@@ -17,7 +17,7 @@
           ref="prev-link"
         ><icon-caret-left
           :class="$style['cdr-pagination__caret--prev']"
-          modifier="sm" />Prev</a>
+          size="small" />Prev</a>
       </li>
       <!-- Desktop -->
       <li
@@ -74,7 +74,7 @@
           ref="next-link"
         >Next<icon-caret-right
           :class="$style['cdr-pagination__caret--next']"
-          modifier="sm" />
+          size="small" />
         </a>
       </li>
     </ul>
