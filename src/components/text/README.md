@@ -1,5 +1,7 @@
 # CdrText
 
+For the most up-to-date information, see [headings](https://rei.github.io/rei-cedar-docs/components/headings/) and [paragraphs](https://rei.github.io/rei-cedar-docs/components/paragraphs/) in REI Cedar Docs.
+
 ## Properties
 
 | tag  | string | 'p'     |

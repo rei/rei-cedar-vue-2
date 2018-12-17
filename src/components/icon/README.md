@@ -18,8 +18,8 @@ For the most up-to-date information, see [REI Cedar documentation](https://rei.g
 
 | name                                                                      | type   | default            |
 |:--------------------------------------------------------------------------|:-------|:-------------------|
-| modifier                                                                  | string | N/A                |
-| Modifies the style variant fot this component. Possible values: { 'inherit-color' }                   |        |                    |
+| inherit-color                                                                  | boolean | none               |
+| Sets icon fill color to 'inherit'.                   |        |                    |
 
 ## Slots
 
@@ -234,12 +234,3 @@ Use any valid SVG markup in the CdrIcon slot.
 
 </script>
 ```
-
-## Modifiers
-
-Following variants are available to the `cdr-icon` modifier attribute:
-| Value | Description            |
-|:------|:-----------------------|
-| 'small'  | Sets icon size to 16px |
-| 'medium'  | Sets icon size to 24px |
-| 'large'  | Sets icon size to 32px |
