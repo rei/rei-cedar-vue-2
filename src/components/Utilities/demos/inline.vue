@@ -6,13 +6,30 @@
       Inline space classes
     </cdr-text>
     <cdr-card class="example">
-      <cdr-text class="cdr-inline--xxs"> cdr-inline--xxs </cdr-text>
-      <cdr-text class="cdr-inline--xs"> cdr-inline--xs </cdr-text>
-      <cdr-text class="cdr-inline--sm"> cdr-inline--sm </cdr-text>
-      <cdr-text class="cdr-inline"> cdr-inline </cdr-text>
-      <cdr-text class="cdr-inline--lg"> cdr-inline--lg </cdr-text>
-      <cdr-text class="cdr-inline--xl"> cdr-inline--xl </cdr-text>
-      <cdr-text class="cdr-inline--xxl"> cdr-inline--xxl </cdr-text>
+      <cdr-text class="cdr-inline-eighth-x">
+        cdr-inline-eighth-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-quarter-x">
+        cdr-inline-quarter-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-half-x">
+        cdr-inline-half-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-three-quarter-x">
+        cdr-inline-three-quarter-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-1-x">
+        cdr-inline-1-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-1-and-a-half-x">
+        cdr-inline-1-and-a-half-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-2-x">
+        cdr-inline-2-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-4-x">
+        cdr-inline-4-x
+      </cdr-text>
     </cdr-card>
   </div>
 </template>
