@@ -34,8 +34,6 @@ $emit event fired on select change with the URL value of the selected option. Al
 
 Resources are available with the [CdrPagination package](https://www.npmjs.com/package/@rei/cdr-pagination):
 
-<cdr-doc-api type="installation" />
-
 - Component: `@rei/cdr-pagination`
 - Component styles: `cdr-pagination.css`
 
