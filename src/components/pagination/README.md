@@ -76,7 +76,7 @@ _local.vue_
 </template>
 
 <script>
-import { CdrPagination } from '@rei/cdr-pagination;
+import { CdrPagination } from '@rei/cdr-pagination';
 export default {
   ...
   components: {
@@ -123,7 +123,7 @@ If not using Vue Router (see "Usage with Vue Router" below) you will need to man
 </template>
 
 <script>
-import { CdrPagination } from '@rei/cdr-pagination;
+import { CdrPagination } from '@rei/cdr-pagination';
 export default {
   ...
   components: {
@@ -165,7 +165,7 @@ Page URLs still need to be provided for SEO purposes, but the events emitted by 
 </template>
 
 <script>
-import { CdrPagination } from '@rei/cdr-pagination;
+import { CdrPagination } from '@rei/cdr-pagination';
 export default {
   ...
   components: {
