@@ -1,5 +1,5 @@
-<a name="1.0.2"></a>
-## 1.0.2 (2018-11-17)
+<a name="1.0.3"></a>
+## 1.0.3 (2018-12-20)
 
 
 ### Bug Fixes
@@ -17,6 +17,7 @@
 * **18.9.1 release:** release adds support for cdr-icon and updates the peer-dependancies of compone ([5a6da2c](https://github.com/rei/rei-cedar/commit/5a6da2c))
 * **accordion:** update dependencies ([d45808f](https://github.com/rei/rei-cedar/commit/d45808f))
 * **accordion button cta:** bump versions to match alpha release ([c7f21bb](https://github.com/rei/rei-cedar/commit/c7f21bb))
+* **icon accordion:** bump version ([a2cd2a7](https://github.com/rei/rei-cedar/commit/a2cd2a7))
 * **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
 
 

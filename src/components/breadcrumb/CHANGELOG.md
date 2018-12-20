@@ -1,10 +1,11 @@
 <a name="1.0.1"></a>
-## 1.0.1 (2018-11-17)
+## 1.0.1 (2018-12-20)
 
 
 ### Bug Fixes
 
 * **breadcrumb:** cdrButton dependency removal ([9e10229](https://github.com/rei/rei-cedar/commit/9e10229))
+* **breadcrumb:** defensive css for cedar 1 ([66ccee2](https://github.com/rei/rei-cedar/commit/66ccee2))
 * **breadcrumb:** fixed console error where element was not available in resize event ([dea6b8b](https://github.com/rei/rei-cedar/commit/dea6b8b))
 * **css:** relocate needed anchor reset css ([8cc8ced](https://github.com/rei/rei-cedar/commit/8cc8ced))
 

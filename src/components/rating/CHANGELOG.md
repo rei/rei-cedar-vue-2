@@ -1,5 +1,5 @@
 <a name="1.0.0"></a>
-# 1.0.0 (2018-11-17)
+# 1.0.0 (2018-12-20)
 
 
 ### Bug Fixes
@@ -24,6 +24,7 @@
 * **examples:** updates to examples to use cdr-text rather than elements ([3619265](https://github.com/rei/rei-cedar/commit/3619265))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
 * **mixin:** abstract out the methods of the modifier mixin to create a re-usable module for future ([c934122](https://github.com/rei/rei-cedar/commit/c934122))
+* **rating:** add defensive css for normalize and cedar 1 styles ([6a3b74c](https://github.com/rei/rei-cedar/commit/6a3b74c))
 * **rating:** new icons, color adjustments, add ability to make the component a link ([302f30c](https://github.com/rei/rei-cedar/commit/302f30c))
 * **rating:** update dependencies ([98f8250](https://github.com/rei/rei-cedar/commit/98f8250))
 * **rating:** update rating version for new size prop ([e86a18f](https://github.com/rei/rei-cedar/commit/e86a18f))
