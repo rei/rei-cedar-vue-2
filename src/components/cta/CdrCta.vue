@@ -7,19 +7,23 @@
   >
     <!-- @slot innerHTML on the inside of the cta component -->
     <slot />
-    <icon-caret-right :class="$style[`cdr-cta__icon`]" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      role="presentation"
+      :class="$style['cdr-cta__icon']"
+    >
+      <!-- eslint-disable-next-line -->
+      <path d="M16 12a.997.997 0 0 0-.288-.702l-5.005-5.005a1 1 0 0 0-1.414 1.414L13.585 12 9.29 16.295a1 1 0 0 0 1.417 1.412l4.98-4.98A.997.997 0 0 0 16 12z" />
+    </svg>
   </a>
 </template>
 
 <script>
 import modifier from 'mixinsdir/modifier';
-import { IconCaretRight } from '@rei/cdr-icon';
 
 export default {
   name: 'CdrCta',
-  components: {
-    IconCaretRight,
-  },
   mixins: [modifier],
   props: {
     /**
@@ -71,8 +75,4 @@ export default {
 <style module>
   @import '../../css/settings/_index.pcss';
   @import './styles/CdrCta.pcss';
-</style>
-
-<style>
-  @import '@rei/cdr-icon/dist/cdr-icon.css';
 </style>

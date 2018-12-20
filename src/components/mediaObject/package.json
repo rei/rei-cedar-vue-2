@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-media-object",
-  "version": "0.1.4-alpha.0",
+  "version": "0.1.4",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Media Object",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-media-object",

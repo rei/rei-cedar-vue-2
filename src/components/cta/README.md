@@ -1,6 +1,9 @@
 # CdrCTA
 
+For the most up-to-date information, see [REI Cedar documentation](https://rei.github.io/rei-cedar-docs/components/cta/).
+
 ## Properties
+
 | name | type | default |
 | :--- | :--- | :--- |
 | ctaStyle | string | dark |
@@ -36,8 +39,6 @@ Sets the innerHTML for cdr-cta. This is the readable text of the button
 
 Resources are available with the [CdrCta package](https://www.npmjs.com/package/@rei/cdr-cta):
 
-<cdr-doc-api type="installation" />
-
 - Component: `@rei/cdr-cta`
 - Component styles: `cdr-cta.css`
 
@@ -45,12 +46,12 @@ To incorporate the required assets for a component, use the following steps:
 
 ### 1. Install using NPM
 
-Install the CdrCta package using `npm` in your terminal:8
+Install the CdrCta package using `npm` in your terminal:
 
 _Terminal_
 
 ```terminal
-    npm i -s @rei/cdr-link
+  npm i -s @rei/cdr-cta
 ```
 
 ### 2. Import Dependencies
@@ -58,11 +59,7 @@ _Terminal_
 _main.js_
 
 ```javascript
-// import your required css
 import "@rei/cdr-cta/dist/cdr-cta.css";
-
-// CTA uses a 
-import "@rei/cdr-link/dist/cdr-icon.css";
 ```
 
 ### #3. Add component to a template
@@ -107,7 +104,7 @@ This example code renders a full width `cdr-cta`, with the `elevated` modifier a
 The CdrCta component looks like a button; however it's actually an anchor:
 - Do not use when a button is preferable such as triggering an action
 - Do not assign the role of button
-- For basic links, use [CdrLink](/components/link/)
+- For basic links, use [CdrLink](https://www.npmjs.com/package/@rei/cdr-link)
 
 ## Modifiers
 

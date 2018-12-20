@@ -67,6 +67,7 @@
     />
     <mediaObject class="cpg-section"/>
     <mountains class="cpg-section"/>
+    <pagination class="cpg-section" />
     <radios
       class="cpg-section"
       data-backstop="radios"
