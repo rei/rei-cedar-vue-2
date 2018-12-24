@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - '8'
 before_install:
-  - rvm install 2.2.5
+  - rvm install 2.5.3
 before_script:
   - gem install jekyll
   - npm install -g gulp
