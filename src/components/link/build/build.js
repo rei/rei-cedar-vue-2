@@ -1,4 +1,5 @@
 const build = require('../../../../build/component-build');
+const extract = require('../../../../build/component-template-extract');
 const info = require('../package.json');
 
 /*
@@ -10,4 +11,7 @@ const compWebpack = {
   externals: /^@rei\/cdr-/,
 };
 
-build(info, {}, compWebpack);
+// build(info, {}, compWebpack);
+build(info, {}, compWebpack).then(() => {
+  extract(['CdrLink'], info, '<cdr-link>Link</cdr-link>');
+});
