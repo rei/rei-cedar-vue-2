@@ -1,5 +1,5 @@
 <a name="1.0.0"></a>
-# 1.0.0 (2018-11-17)
+# 1.0.0 (2018-12-20)
 
 
 ### Bug Fixes
@@ -22,6 +22,7 @@
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))
 * **examples:** updates to examples to use cdr-text rather than elements ([3619265](https://github.com/rei/rei-cedar/commit/3619265))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
+* **quote:** add defensive css for normalize and cedar 1 styles ([ee84756](https://github.com/rei/rei-cedar/commit/ee84756))
 * **quote:** update dependencies ([6d0149e](https://github.com/rei/rei-cedar/commit/6d0149e))
 * **quote:** update to the quote component merging block into the base class for cdr-quote. This ena ([f53e0b7](https://github.com/rei/rei-cedar/commit/f53e0b7))
 * **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))

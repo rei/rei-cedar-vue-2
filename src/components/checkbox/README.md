@@ -1,4 +1,7 @@
 # CdrCheckbox
+
+For the most up-to-date information, see [REI Cedar documentation](https://rei.github.io/rei-cedar-docs/components/checkboxes/).
+
 ## Props
 
 | Name | Type   | Default |

@@ -1,3 +1,19 @@
+<a name="18.12.2"></a>
+## [18.12.2](https://github.com/rei/rei-cedar/compare/18.12.1...18.12.2) (2018-12-20)
+
+
+### Bug Fixes
+
+* **pagination:** update icon dependency and correct for API change ([e816666](https://github.com/rei/rei-cedar/commit/e816666))
+
+
+### Features
+
+* **cta:** cdr-icon dependency removed, update readme ([e8cb080](https://github.com/rei/rei-cedar/commit/e8cb080))
+* **pagination:** release pagination@1.0.0 ([bc1ba85](https://github.com/rei/rei-cedar/commit/bc1ba85))
+
+
+
 <a name="18.11.1"></a>
 ## [18.11.1](https://github.com/rei/rei-cedar/compare/v5.0.0-alpha.1...v18.11.1) (2018-11-17)
 
