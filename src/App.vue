@@ -17,11 +17,13 @@
         name="theme-picker"
         value="light"
         v-model="globalTheme"
+        @change="radioNavigate"
       >Light</cdr-radio>
       <cdr-radio
         name="theme-picker"
         value="dark"
         v-model="globalTheme"
+        @change="radioNavigate"
       >Dark</cdr-radio>
 
       <router-link
@@ -131,6 +133,17 @@ export default {
       routes,
       globalTheme: 'light',
     };
+  },
+  methods: {
+    radioNavigate() {
+      this.$router.replace({
+        query: Object.assign(
+          {},
+          this.$route.query,
+          { 'global-theme': this.globalTheme },
+        ),
+      });
+    },
   },
 };
 </script>
