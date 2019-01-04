@@ -185,5 +185,6 @@
     ],
     "instrument": false,
     "sourceMap": false
-  }
+  },
+  "dependencies": {}
 }

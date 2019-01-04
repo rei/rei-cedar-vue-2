@@ -2,15 +2,13 @@
  * @mixin
  */
 export default {
-  inject: {
-    wrapperTheme: { default: '' },
-  },
+  inject: ['wrapperTheme'],
   computed: {
     computedTheme() {
       if (this.theme !== '') {
         return this.theme;
-      } else if (this.wrapperTheme !== '') {
-        return this.wrapperTheme;
+      } else if (this.wrapperTheme.theme !== '') {
+        return this.wrapperTheme.theme;
       }
       return false;
     },
