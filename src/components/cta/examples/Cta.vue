@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h2>CTA</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      CTA
+    </cdr-text>
     <div class="button-example">
       <cdr-cta
         data-backstop="cdr-cta--dark">
@@ -62,3 +66,4 @@ export default {
     padding: 10px;
   }
 </style>
+

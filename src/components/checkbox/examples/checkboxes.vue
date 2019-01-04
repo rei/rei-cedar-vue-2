@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h2>Checkboxes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Checkboxes
+    </cdr-text>
     <cdr-checkbox
       v-model="ex1"
       @change="logChange"
@@ -10,7 +14,7 @@
       modifier="compact"
       v-model="ex1"
     >single compact</cdr-checkbox>
-    <p>single: {{ ex1 }}</p>
+    <cdr-text>single: {{ ex1 }}</cdr-text>
 
     <span data-backstop="checkbox-checked">
       <cdr-checkbox
@@ -25,13 +29,13 @@
         false-value="unchecked"
       >checked compact</cdr-checkbox>
     </span>
-    <p>checked: {{ ex2 }}</p>
+    <cdr-text>checked: {{ ex2 }}</cdr-text>
 
     <cdr-checkbox
       v-model="ex3"
       true-value="checked"
     >custom true</cdr-checkbox>
-    <p>custom true: {{ ex3 }}</p>
+    <cdr-text>custom true: {{ ex3 }}</cdr-text>
 
     <cdr-checkbox
       custom-value="A"
@@ -73,7 +77,7 @@
       modifier="compact"
       v-model="exGroup"
     >C compact</cdr-checkbox>
-    <p>group: {{ exGroup }}</p>
+    <cdr-text>group: {{ exGroup }}</cdr-text>
 
     <cdr-checkbox disabled>disabled checkbox</cdr-checkbox>
     <cdr-checkbox

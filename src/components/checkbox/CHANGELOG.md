@@ -1,5 +1,5 @@
 <a name="1.0.1"></a>
-## 1.0.1 (2018-09-13)
+## 1.0.1 (2018-12-20)
 
 
 ### Chores
@@ -9,6 +9,7 @@
 
 ### Features
 
+* **18.9.1 release:** release adds support for cdr-icon and updates the peer-dependancies of compone ([5a6da2c](https://github.com/rei/rei-cedar/commit/5a6da2c))
 * **all components:** change package name prefixes from cedar-* to cdr-* ([dad0dfb](https://github.com/rei/rei-cedar/commit/dad0dfb)), closes [#354](https://github.com/rei/rei-cedar/issues/354)
 * **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
 * **cdr-radio release:** updates to the cdr-radio readme API and moving the package.json to v1 ([13b35c4](https://github.com/rei/rei-cedar/commit/13b35c4))

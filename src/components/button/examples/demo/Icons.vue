@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="button-example">
-      <h2>CdrButton + CdrIcon Comps</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        CdrButton + CdrIcon Comps
+      </cdr-text>
       <cdr-button
         tag="a"
         href="https://rei.com"
@@ -13,6 +17,21 @@
         />
         Anchor and Icon
       </cdr-button>
+
+      <!-- <cdr-button
+        tag="a"
+        href="https://rei.com"
+        size="large"
+        data-backstop="cdr-button--icon"
+        disabled
+      >
+        <icon-check-lg
+          slot="icon"
+          class="cdr-button__icon"
+        />
+        Anchor and Icon
+      </cdr-button> -->
+
       <cdr-button
         size="medium"
       >
@@ -27,7 +46,7 @@
       >
         <icon-check-lg
           slot="icon"
-          modifier="sm"
+          size="small"
           class="cdr-button__icon"
         />
         Icon CSS small
@@ -42,10 +61,25 @@
       </cdr-button>
     </div>
     <div class="button-example">
-      <h2>Using a sprite</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Using a sprite
+      </cdr-text>
       <cdr-button
         size="large"
         modifier="secondary"
+      >
+        <cdr-icon
+          slot="icon"
+          class="cdr-button__icon"
+          use="#download"/>
+        Button and Icon
+      </cdr-button>
+      <cdr-button
+        size="large"
+        modifier="secondary"
+        disabled
       >
         <cdr-icon
           slot="icon"
@@ -77,8 +111,7 @@
     </div>
     <div class="button-example">
       <cdr-button
-        size="small"
-        :responsive-size="['large@xs', 'medium@sm', 'small@lg']"
+        size="large large@xs medium@sm small@lg"
       >
         <icon-clock
           slot="icon"
@@ -115,7 +148,11 @@
       </div>
     </div>
     <div class="button-example">
-      <h2>Icon only button</h2>
+      <cdr-text
+        tag="h3"
+        modifier="heading-small">
+        Icon only button
+      </cdr-text>
       <cdr-button
         :icon-only="true"
         :full-width="true"
@@ -163,7 +200,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import CdrText from 'componentsdir/text/CdrText';
 import CdrButton from 'componentsdir/button/CdrButton';
 /* eslint-disable-next-line */
 import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink } from 'componentsdir/icon/dist/cdr-icon';
@@ -173,7 +210,7 @@ import CdrIcon from 'componentsdir/icon/CdrIcon';
 export default {
   name: 'ButtonIconComps',
   components: {
-    Components,
+    CdrText,
     CdrButton,
     IconCheckLg,
     IconCheckSm,

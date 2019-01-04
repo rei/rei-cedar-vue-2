@@ -1,19 +1,32 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
 
-describe('CdrTab.vue', () => {
+
+describe('CdrTabPanel.vue', () => {
   it('renders tab', () => {
-    const wrapper = shallowMount(CdrTabPanel);
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+      },
+    });
     expect(wrapper.exists()).toBe(true);
   });
 
   it('is not active by default', () => {
-    const wrapper = shallowMount(CdrTabPanel);
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+      },
+    });
     expect(wrapper.vm.active).toBe(false);
   });
 
   it('is active when set', (done) => {
-    const wrapper = shallowMount(CdrTabPanel);
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+      },
+    });
     wrapper.vm.setActive(true);
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.active).toBe(true);
@@ -22,7 +35,11 @@ describe('CdrTab.vue', () => {
   });
 
   it('enter start function properly sets transition', (done) => {
-    const wrapper = shallowMount(CdrTabPanel);
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+      },
+    });
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -33,7 +50,11 @@ describe('CdrTab.vue', () => {
   });
 
   it('enter end function properly clears transition', (done) => {
-    const wrapper = shallowMount(CdrTabPanel);
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+      },
+    });
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -44,7 +65,11 @@ describe('CdrTab.vue', () => {
   });
 
   it('leave start function properly sets transition', (done) => {
-    const wrapper = shallowMount(CdrTabPanel);
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+      },
+    });
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -55,7 +80,11 @@ describe('CdrTab.vue', () => {
   });
 
   it('leave end function properly clears transition', (done) => {
-    const wrapper = shallowMount(CdrTabPanel);
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+      },
+    });
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -66,7 +95,11 @@ describe('CdrTab.vue', () => {
   });
 
   it('set animation direction functions correctly', (done) => {
-    const wrapper = shallowMount(CdrTabPanel);
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+      },
+    });
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -77,7 +110,11 @@ describe('CdrTab.vue', () => {
   });
 
   it('set animation direction functions correctly', (done) => {
-    const wrapper = shallowMount(CdrTabPanel);
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+      },
+    });
     wrapper.vm.setActive(true);
 
     wrapper.vm.$nextTick(() => {
@@ -86,5 +123,4 @@ describe('CdrTab.vue', () => {
       done();
     });
   });
-
 });

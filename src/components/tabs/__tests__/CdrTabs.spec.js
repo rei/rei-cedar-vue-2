@@ -1,6 +1,8 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrTabs from 'componentsdir/tabs/CdrTabs';
 import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
+import sinon from 'sinon';
+import Vue from 'vue';
 
 describe('CdrTabs.vue', () => {
   it('mounts tabs', () => {
@@ -9,9 +11,12 @@ describe('CdrTabs.vue', () => {
   });
 
   it('renders child tabs properly', () => {
-    const wrapper = mount(CdrTabs, {
+    const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     expect(wrapper.vm.tabs.length).toBe(2);
@@ -19,8 +24,11 @@ describe('CdrTabs.vue', () => {
 
   it('calculates overflow properly', () => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     wrapper.vm.calculateOverflow();
@@ -29,8 +37,11 @@ describe('CdrTabs.vue', () => {
 
   it('handles right arrow key', (done) => {
     const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     // Trigger right arrow keydown event
@@ -45,8 +56,11 @@ describe('CdrTabs.vue', () => {
 
   it('handles right arrow key when far right tab is active', (done) => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     const event = new KeyboardEvent("keydown", {
@@ -64,8 +78,11 @@ describe('CdrTabs.vue', () => {
 
   it('handles left arrow key', (done) => {
     const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     wrapper.vm.activeTabIndex = 1;
@@ -81,8 +98,11 @@ describe('CdrTabs.vue', () => {
 
   it('handles left arrow key when far left is active', (done) => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     const event = new KeyboardEvent("keydown", {
@@ -98,8 +118,11 @@ describe('CdrTabs.vue', () => {
 
   it('ignores non left and right arrow key', (done) => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     const event = new KeyboardEvent("keydown", {
@@ -115,8 +138,11 @@ describe('CdrTabs.vue', () => {
 
   it('handles scroll event', (done) => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     // Trigger scroll event
@@ -129,8 +155,11 @@ describe('CdrTabs.vue', () => {
 
   it('resize event recalculates overflow', (done) => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     // Trigger resize event
@@ -144,11 +173,13 @@ describe('CdrTabs.vue', () => {
 
   it('click tab changes active tab', (done) => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
-    wrapper.vm.tabs[0].name = 'tab1';
     // Due to debounce function, must use timeout
     wrapper.vm.$nextTick(() => {
       wrapper.vm.$refs.cdrTabsHeader.children[1].children[0].dispatchEvent(new Event('click'));
@@ -161,26 +192,35 @@ describe('CdrTabs.vue', () => {
 
   it('click tab changes active tab lower index variation', (done) => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
-      }
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
+      },
     });
-    wrapper.vm.activeTabIndex = 1;
-    // Trigger resize event
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.$refs.cdrTabsHeader.children[0].children[0].dispatchEvent(new Event('click'));
-      // Due to debounce function, must use timeout
-      setTimeout(() => {
-        expect(wrapper.vm.activeTabIndex).toBe(1);
-        done();
-      }, 250);
-    });
+
+    Vue.nextTick(() => {
+      const list = wrapper.find({ ref: 'cdrTabsHeader' });
+      const tabLink1 = list.findAll('a').at(0);
+      tabLink1.trigger('click');
+      expect(wrapper.vm.activeTabIndex).toBe(0);
+
+      const tabLink2 = list.findAll('a').at(1);
+      tabLink2.trigger('click');
+      expect(wrapper.vm.activeTabIndex).toBe(1);
+
+      done()
+    })
   });
 
   it('calculateOverflow sets header overflow properly', () => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     wrapper.vm.headerWidth = 2000;
@@ -190,8 +230,11 @@ describe('CdrTabs.vue', () => {
 
   it('width is initialized only once', () => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     wrapper.vm.widthInitialized = true;
@@ -202,8 +245,11 @@ describe('CdrTabs.vue', () => {
 
   it('scrollbar is hidden properly', (done) => {
     const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
       slots: {
-        default: [CdrTabPanel, CdrTabPanel]
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
       }
     });
     wrapper.vm.widthInitialized = true;
@@ -214,6 +260,44 @@ describe('CdrTabs.vue', () => {
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('unset');
       done();
+    });
+  });
+
+  it('handles down arrow', (done) => {
+    const spy = sinon.spy(CdrTabs.methods, 'handleDownArrowNav');
+    const wrapper = shallowMount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
+      slots: {
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
+      }
+    });
+
+    wrapper.vm.handleDownArrowNav();
+    wrapper.vm.$nextTick(() => {
+      sinon.assert.called(spy);
+      done()
+    });
+  });
+
+  it('handles up arrow', (done) => {
+    const spy = sinon.spy(CdrTabs.methods, 'setFocusToActiveTabHeader');
+    const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
+      slots: {
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
+      }
+    });
+    wrapper.vm.activeTabIndex = 0;
+    wrapper.vm.$nextTick(() => {
+      wrapper.vm.$children[0].handleUpArrowNav();
+      wrapper.vm.$nextTick(() => {
+        sinon.assert.called(spy);
+        done()
+      });
     });
   });
 });

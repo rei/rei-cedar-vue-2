@@ -1,29 +1,36 @@
 <template>
   <div data-backstop="stack-space-utilities">
-    <h2>Stack classes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Stack classes
+    </cdr-text>
 
     <cdr-card class="example">
-      <p class="cdr-stack--xxs">
-        cdr-stack--xxs
-      </p>
-      <p class="cdr-stack--xs">
-        cdr-stack--xs
-      </p>
-      <p class="cdr-stack--sm">
-        cdr-stack--sm
-      </p>
-      <p class="cdr-stack">
-        cdr-stack
-      </p>
-      <p class="cdr-stack--lg">
-        cdr-stack--lg
-      </p>
-      <p class="cdr-stack--xl">
-        cdr-stack--xl
-      </p>
-      <p class="cdr-stack--xxl">
-        cdr-stack--xxl
-      </p>
+      <cdr-text class="cdr-stack-eighth-x">
+        cdr-stack-eighth-x
+      </cdr-text>
+      <cdr-text class="cdr-stack-quarter-x">
+        cdr-stack-quarter-x
+      </cdr-text>
+      <cdr-text class="cdr-stack-half-x">
+        cdr-stack-half-x
+      </cdr-text>
+      <cdr-text class="cdr-stack-three-quarter-x">
+        cdr-stack-three-quarter-x
+      </cdr-text>
+      <cdr-text class="cdr-stack-1-x">
+        cdr-stack-1-x
+      </cdr-text>
+      <cdr-text class="cdr-stack-1-and-a-half-x">
+        cdr-stack-1-and-a-half-x
+      </cdr-text>
+      <cdr-text class="cdr-stack-2-x">
+        cdr-stack-2-x
+      </cdr-text>
+      <cdr-text class="cdr-stack-4-x">
+        cdr-stack-4-x
+      </cdr-text>
     </cdr-card>
 
   </div>

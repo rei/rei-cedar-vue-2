@@ -5,8 +5,13 @@
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
+
 export default {
   name: '{NAME-PASCAL}',
+  components: {
+    ...Components,
+  },
 };
 </script>
 

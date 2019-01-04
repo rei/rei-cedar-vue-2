@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="list-examples">
 
     <cdr-text
       tag="h2"
@@ -30,3 +30,11 @@ export default {
   },
 };
 </script>
+
+<style>
+/** normalize line-height for consistent testing because lists inherit it */
+
+.list-examples {
+  line-height: 1;
+}
+</style>

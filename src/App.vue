@@ -3,7 +3,12 @@
     id="app"
     class="cdr-container-fluid"
   >
-    <h1>Cedar Proving grounds</h1>
+    <cdr-text
+      tag="h1"
+      modifier="heading-large">
+      Cedar Proving grounds
+    </cdr-text>
+
     <router-link
       v-for="route in routes"
       :key="route.path"
@@ -37,6 +42,10 @@
       class="cpg-section"
       data-backstop="checkboxes"
     />
+    <data-table
+      class="cpg-section"
+      data-backstop="DataTable"
+    />
     <grid class="cpg-section"/>
     <texts class="cpg-section"/>
     <icons
@@ -58,6 +67,7 @@
     />
     <mediaObject class="cpg-section"/>
     <mountains class="cpg-section"/>
+    <pagination class="cpg-section" />
     <radios
       class="cpg-section"
       data-backstop="radios"
@@ -84,6 +94,7 @@
       class="cpg-section"
       data-backstop="caption"
     />
+
     <router-view />
   </div>
 </template>
@@ -91,9 +102,11 @@
 <script>
 import examples from 'componentsdir/examples';
 import compexamples from 'compositionsdir/examples';
+import components from 'componentsdir/_index';
 import routes from './router';
 
-const all = Object.assign({}, examples, compexamples);
+
+const all = Object.assign(components, {}, examples, compexamples);
 export default {
   name: 'App',
   components: all,

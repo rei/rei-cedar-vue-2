@@ -1,6 +1,6 @@
 /* ==========================================================================
   # CdrRating
-  
+
   All values should map to variables in
   vars/CdrRating.vars.pcss
   in order to allow for theming
@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  line-height: 1;
 
   /* Elements
     ========================================================================== */
@@ -38,7 +39,6 @@
     @include redwood-display-20();
 
     margin-left: $space-half-x;
-    color: $heart-of-darkness;
   }
 
   &__ratings {
@@ -96,12 +96,7 @@
 
   &--linked {
     display: inline-flex;
-
-    &:hover,
-    &:active,
-    &:focus {
-      text-decoration-color: $heart-of-darkness;
-    }
+    text-decoration: none;
 
     & .cdr-rating__count {
       &:hover,
@@ -111,7 +106,7 @@
       }
 
       & > .cdr-rating__number {
-        border-right: 1px solid $grey-matter;
+        border-right: 1px solid $rating-number-decoration;
         padding: 0 $space-quarter-x;
         margin-right: $space-quarter-x;
       }
@@ -147,4 +142,160 @@
       margin-left: $space-quarter-x;
     }
   }
+
+  /* Content Color Variants
+    ========================================================================== */
+  &--primary {
+    & .cdr-rating__count {
+      color: $content-primary;
+    }
+
+    & .cdr-rating--linked {
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration-color: $content-primary;
+      }
+    }
+
+    & .cdr-rating__number {
+      border-right-color: $rating-number-decoration;
+    }
+  }
+
+  &--secondary {
+    & .cdr-rating__count {
+      color: $content-secondary;
+    }
+
+    & .cdr-rating--linked {
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration-color: $content-secondary;
+      }
+    }
+
+    & .cdr-rating__number {
+      border-right-color: $rating-number-decoration;
+    }
+  }
+
+  /* @xs
+    0px - 767px
+    ========== */
+  @media (--xs-mq-only) {
+    &--small\@xs {
+      & .cdr-rating__icon {
+        width: $icon-size-sm;
+        height: $icon-size-sm;
+      }
+
+      & .cdr-rating__count {
+        @include redwood-display-10();
+
+        margin-left: $space-quarter-x;
+      }
+    }
+
+    &--large\@xs {
+      & .cdr-rating__icon {
+        width: $icon-size-lg;
+        height: $icon-size-lg;
+      }
+
+      & .cdr-rating__count {
+        @include redwood-display-30();
+      }
+    }
+  }
+
+  /* @sm
+    768px - 991px
+    ========== */
+  @media (--sm-mq-only) {
+    &--small\@sm {
+      & .cdr-rating__icon {
+        width: $icon-size-sm;
+        height: $icon-size-sm;
+      }
+
+      & .cdr-rating__count {
+        @include redwood-display-10();
+
+        margin-left: $space-quarter-x;
+      }
+    }
+
+    &--large\@sm {
+      & .cdr-rating__icon {
+        width: $icon-size-lg;
+        height: $icon-size-lg;
+      }
+
+      & .cdr-rating__count {
+        @include redwood-display-30();
+      }
+    }
+  }
+
+  /* @md
+    992px - 1199px
+    ========== */
+  @media (--md-mq-only) {
+    &--small\@md {
+      & .cdr-rating__icon {
+        width: $icon-size-sm;
+        height: $icon-size-sm;
+      }
+
+      & .cdr-rating__count {
+        @include redwood-display-10();
+
+        margin-left: $space-quarter-x;
+      }
+    }
+
+    &--large\@md {
+      & .cdr-rating__icon {
+        width: $icon-size-lg;
+        height: $icon-size-lg;
+      }
+
+      & .cdr-rating__count {
+        @include redwood-display-30();
+      }
+    }
+  }
+
+  /* @lg
+    1200px and up
+    ========== */
+
+  @media (--lg-mq-only) {
+    &--small\@lg {
+      & .cdr-rating__icon {
+        width: $icon-size-sm;
+        height: $icon-size-sm;
+      }
+
+      & .cdr-rating__count {
+        @include redwood-display-10();
+
+        margin-left: $space-quarter-x;
+      }
+    }
+
+    &--large\@lg {
+      & .cdr-rating__icon {
+        width: $icon-size-lg;
+        height: $icon-size-lg;
+      }
+
+      & .cdr-rating__count {
+        @include redwood-display-30();
+      }
+    }
+  }
 }
+

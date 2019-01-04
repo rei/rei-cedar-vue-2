@@ -12,7 +12,7 @@
       :large
       :medium
       :small
-      :full-width
+    :full-width
     :icon-only
     :on-dark
     :Breakpoint variants
@@ -37,7 +37,9 @@
   padding: $inset-1-x-squish;
   text-align: left;
   text-decoration: none;
-  
+  text-transform: none;
+  overflow: visible;
+
   & > :global(&__icon) {
     align-self: center;
     fill: inherit;
@@ -48,13 +50,19 @@
     ---------- */
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     background-color: $button-hover-background-color;
     color: $button-hover-color;
     box-shadow: $button-hover-box-shadow;
     text-decoration: none;
     outline: none;
+    outline-offset: 0;
     fill: $button-hover-color;
+  }
+
+  &:focus {
+    outline: $default-outline;
   }
 
   &[disabled] {
@@ -66,7 +74,7 @@
 
   /* Modifier style variants
     ========================================================================== */
-    
+
   /* Secondary
      ========== */
 
@@ -80,7 +88,8 @@
     ---------- */
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
       background-color: $button-secondary-hover-background-color;
       box-shadow: $button-secondary-box-shadow;
       color: $button-secondary-hover-color;
@@ -160,7 +169,8 @@
     fill: $heart-of-darkness;
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
       background: none;
       box-shadow: none;
       fill: $heart-of-darkness;
@@ -301,7 +311,7 @@
   /* @lg
     1200px and up
     ========== */
-  
+
   @media (--lg-mq-only) {
     &--small\@lg {
       @include redwood-display-20;

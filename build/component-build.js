@@ -98,26 +98,36 @@ function build(info, sharedOpts={}, compOpts={}, pluginOpts={}) {
   const outputPath = `${dir}/${config.outDir}`;
 
   console.log(chalk.cyan(`Building ${name}...\n`));
+  return new Promise((resolve, reject)=>{
+    rm(
+      outputPath,
+      (err) => {
+        if (err) {
+          // throw err
+          reject(err);
+        }
+        webpack(createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts), (err2, stats) => {
+          if (err2) {
+            // throw err2;
+            reject(err2);
+          }
+          stats.stats.forEach(stat => {
+            process.stdout.write(`${stat.toString({
+              colors: true,
+              modules: false,
+              children: false,
+              chunks: false,
+              chunkModules: false,
+            })}\n\n`);
+          })
+          console.log(chalk.cyan(`Build of ${name} complete.\n`));
+          resolve();
+        });
+      }
+    );
 
-  rm(
-    outputPath,
-    (err) => {
-      if (err) throw err;
-      webpack(createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts), (err2, stats) => {
-        if (err2) throw err2;
-        stats.stats.forEach(stat => {
-          process.stdout.write(`${stat.toString({
-            colors: true,
-            modules: false,
-            children: false,
-            chunks: false,
-            chunkModules: false,
-          })}\n\n`);
-        })
-        console.log(chalk.cyan(`Build of ${name} complete.\n`));
-      });
-    }
-  );
+  });
+
 }
 
 module.exports = build;

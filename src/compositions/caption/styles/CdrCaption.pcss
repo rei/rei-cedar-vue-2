@@ -12,17 +12,18 @@
 
 .cdr-caption {
   max-width: 530px;
+  line-height: 1;
 
   &__summary {
     @include redwood-display-20;
 
-    margin-bottom: 0;
+    margin: 0;
 
     & + .cdr-caption__cite {
       display: inline-block;
 
       /* TODO: replace with spacing token */
-      margin-top: 8px;
+      margin-top: $space-half-x;
     }
   }
 }

@@ -1,24 +1,34 @@
 <template>
   <!-- eslint-disable max-len -->
   <div>
-    <h3>Default Link, No props</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">
+      Default Link, No props
+    </cdr-text>
     <div class="anchor-example">
       <cdr-link :data-backstop="`cdr-link${backstopMod()}`"/>
     </div>
 
-    <h3>Link, href set</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">Link, href set</cdr-text>
     <div class="anchor-example">
       <cdr-link href="https://www.rei.com/">REI.com</cdr-link>
     </div>
 
-    <h3>Standalone Link (No underline)</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">Standalone Link (No underline)</cdr-text>
     <div class="anchor-example">
       <cdr-link
         modifier="standalone"
         :data-backstop="`cdr-link--standalone${backstopMod()}`"/>
     </div>
 
-    <h3>Links, with icon</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">Links, with icon</cdr-text>
     <div class="anchor-example">
       <cdr-link>
         <cdr-icon
@@ -51,7 +61,9 @@
       </cdr-link>
     </div>
 
-    <h3>Content Resilience, too much content</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">Content Resilience, too much content</cdr-text>
     <div class="anchor-example">
       <cdr-link>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
@@ -64,12 +76,16 @@
       </cdr-link>
     </div>
 
-    <h3>Content Resilience, too little content</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">Content Resilience, too little content</cdr-text>
     <div class="anchor-example">
       <cdr-link>K</cdr-link>
     </div>
 
-    <h3>Link using a &lt;button&gt; element</h3>
+    <cdr-text
+      tag="h3"
+      modifier="subheading">Link using a &lt;button&gt; element</cdr-text>
     <div class="anchor-example">
       <cdr-link
         tag="button"

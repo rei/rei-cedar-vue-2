@@ -1,16 +1,35 @@
 ## Props
 
-| Name | Type   | Default |
-|:-----|:-------|:--------|
-| name | string | n/a     |
+For the most up-to-date information, see [REI Cedar documentation](https://rei.github.io/rei-cedar-docs/components/tabs/).
 
-Sets code reference and tab display name. Required and must be unique for each tab
+### CdrTabs
 
-| Name     | Type   | n/a |
+| Name     | Type   | Default |
+|:---------|:-------|:--------|
+|  height  | string | '240px' |
+
+Sets height of the tabs container element.  This is needed for managing content overflow and animations.
+
+| Name     | Type   | N/A |
 |:---------|:-------|:----|
-| modifier | string | n/a |
+| modifier | string | N/A |
 
 Modifies the style variants for this component. Possible values: { 'compact' | 'full-width' | 'no-border' }
+
+### CdrTabPanel
+
+| Name | Type   | Default |
+|:-----|:-------|:--------|
+| name | string |  N/A    |
+
+Sets tab display name. Required and must be unique for each tab.  If id prop not provided, this value will be used as the reference identifier.
+
+| Name | Type   | Default |
+|:-----|:-------|:--------|
+|  id  | string | N/A     |
+
+Sets reference identifier.  Must be unique for each tab.
+
 
 ## Installation
 
@@ -47,19 +66,19 @@ _local.vue_
 ```vue
 <template>
   <cdr-tabs>
-    <cdr-tab name="tab1">TAB1 CONTENT GOES HERE</cdr-tab>
-    <cdr-tab name="tab2">TAB2 CONTENT GOES HERE</cdr-tab>
-    <cdr-tab name="tab3">TAB3 CONTENT GOES HERE</cdr-tab>
+    <cdr-tab-panel name="tab1">TAB1 CONTENT GOES HERE</cdr-tab-panel>
+    <cdr-tab-panel name="tab2">TAB2 CONTENT GOES HERE</cdr-tab-panel>
+    <cdr-tab-panel name="tab3">TAB3 CONTENT GOES HERE</cdr-tab-panel>
   </cdr-tabs>
 </template>
 
 <script>
-import { CdrTabs, CdrTab } from '@rei/cdr-tabs';
+import { CdrTabs, CdrTabPanel } from '@rei/cdr-tabs';
 export default {
   ...
   components: {
      CdrTabs,
-     CdrTab
+     CdrTabPanel
   },
 }
 </script>
