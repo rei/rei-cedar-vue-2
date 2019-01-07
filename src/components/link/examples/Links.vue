@@ -113,12 +113,12 @@
           modifier="standalone">REI.com</cdr-link>
       </p>
       <!-- Override individual theme -->
-      <p>Individual override (dark on light)</p>
+      <!-- <p>Individual override (dark on light)</p>
       <p>
         <cdr-link
           href="https://www.rei.com/"
           theme="dark">REI.com</cdr-link>
-      </p>
+      </p> -->
     </cdr-themer>
 
     <cdr-link

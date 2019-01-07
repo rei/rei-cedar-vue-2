@@ -131,7 +131,7 @@ export default {
   data() {
     return {
       routes,
-      globalTheme: 'light',
+      globalTheme: 'lightest',
     };
   },
   methods: {
