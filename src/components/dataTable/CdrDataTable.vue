@@ -51,10 +51,14 @@
             <tr
               v-for="(row, index) in rowData"
               :key="id + '_row_' + index"
+              :ref="`row-${index}`"
+              :style="{ height: getRowHeight(index) }"
             >
               <th
                 v-if="hasRowHeaders"
                 scope="row"
+                :ref="`row-${index}-th`"
+                :style="{ height: getRowHeight(index) }"
               >
                 {{ rowHeaders[index] }}
               </th>
@@ -116,6 +120,7 @@ export default {
       scrollWidth: 0,
       hasColHeaders: false,
       hasRowHeaders: false,
+      rowHeights: null,
     };
   },
   computed: {
@@ -143,6 +148,10 @@ export default {
     window.addEventListener('resize', debounce(() => {
       this.checkScroll();
     }, 250));
+
+    this.$nextTick(() => {
+      this.setRowsContentHeight();
+    });
   },
   methods: {
     checkScroll() {
@@ -155,6 +164,25 @@ export default {
     },
     getCellContent(row, key) {
       return row[key] || '';
+    },
+    setRowsContentHeight() {
+      const rowHeights = [];
+
+      for (let i = 0; i < this.rowData.length; i += 1) {
+        const rowHeight = this.$refs[`row-${i}`][0].clientHeight;
+        let thHeight = 0;
+
+        if (this.hasRowHeaders) {
+          thHeight = this.$refs[`row-${i}`][0].children[0].clientHeight;
+        }
+
+        rowHeights.push(Math.max(rowHeight, thHeight));
+      }
+
+      this.rowHeights = rowHeights;
+    },
+    getRowHeight(index) {
+      return this.rowHeights !== null ? `${this.rowHeights[index]}px` : null;
     },
   },
 };

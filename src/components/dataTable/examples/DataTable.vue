@@ -5,8 +5,8 @@
       modifier="heading-small">
       Tables
     </cdr-text>
-    <!-- <auto-table /> -->
-    <manual-table />
+    <auto-table />
+    <!-- <manual-table /> -->
   </div>
 </template>
 
