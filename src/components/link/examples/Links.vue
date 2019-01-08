@@ -102,7 +102,7 @@
 
     <cdr-themer
       theme="light"
-      background="light"
+      background="lightest"
     >
       <!-- Smaller examples with nested theme (for override) -->
       <p>Works nested</p>
