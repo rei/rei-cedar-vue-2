@@ -83,11 +83,6 @@
         /* empty column header, row header column */
         &[class^=empty] {
           @include lockedColTh();
-
-          /* Ensure empty top right left cell has same line height */
-          &::before {
-            content: '\a0';
-          }
         }
       }
     }
@@ -105,7 +100,7 @@
 
       th {
         @include lockedColTh();
-        
+
         display: flex;
         justify-content: center;
         flex-direction: column;

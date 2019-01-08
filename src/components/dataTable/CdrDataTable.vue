@@ -29,12 +29,20 @@
         </caption>
         <thead v-if="hasColHeaders">
           <slot name="thead">
-            <tr>
+            <tr
+              ref="row-colHeaders"
+              :style="{ height: getRowHeight() }"
+            >
               <th
                 class="empty"
                 v-show="hasRowHeaders"
                 scope="col"
-              />
+                :style="{ height: getRowHeight() }"
+              >
+                <span class="cdr-sr-only">
+                  Empty first column header for table with both column and row headers.
+                </span>
+              </th>
               <th
                 v-for="(header, index) in colHeaders"
                 :key="id + '_col-head_' + index"
@@ -121,6 +129,7 @@ export default {
       hasColHeaders: false,
       hasRowHeaders: false,
       rowHeights: null,
+      rowColHeadersHeight: null,
     };
   },
   computed: {
@@ -146,6 +155,9 @@ export default {
     this.checkScroll();
 
     window.addEventListener('resize', debounce(() => {
+      this.rowHeights = null;
+      this.rowColHeadersHeight = null;
+      this.setRowsContentHeight();
       this.checkScroll();
     }, 250));
 
@@ -168,6 +180,11 @@ export default {
     setRowsContentHeight() {
       const rowHeights = [];
 
+      if (this.hasColHeaders) {
+        const headersRow = this.$refs['row-colHeaders'];
+        this.rowColHeadersHeight = `${Math.max(headersRow.clientHeight, headersRow.children[0].clientHeight)}px`; /* eslint-disable-line */
+      }
+
       for (let i = 0; i < this.rowData.length; i += 1) {
         const rowHeight = this.$refs[`row-${i}`][0].clientHeight;
         let thHeight = 0;
@@ -182,7 +199,11 @@ export default {
       this.rowHeights = rowHeights;
     },
     getRowHeight(index) {
-      return this.rowHeights !== null ? `${this.rowHeights[index]}px` : null;
+      if (index) {
+        return this.rowHeights !== null ? `${this.rowHeights[index]}px` : null;
+      }
+
+      return this.rowColHeadersHeight !== null ? this.rowColHeadersHeight : null;
     },
   },
 };
