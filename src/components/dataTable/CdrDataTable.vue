@@ -18,7 +18,10 @@
       ref="scroll-container"
     >
       <table
-        :class="$style['cdr-data-table__content']"
+        :class="[
+          $style['cdr-data-table__content'],
+          { 'constrain-width': constrainWidth },
+        ]"
         :id="id"
       >
         <caption
@@ -119,6 +122,10 @@ export default {
     caption: {
       type: String,
       required: false,
+    },
+    constrainWidth: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {

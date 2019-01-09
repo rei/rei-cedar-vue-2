@@ -58,14 +58,19 @@
       color: $heart-of-darkness;
       padding: $inset-1-x;
       text-align: left;
+      min-width: 127px;
     }
 
-    td {
-      min-width: 127px;
-      max-width: 150px;
-
+    /* td {
       &:not(:first-of-type) {
         text-align: left;
+      }
+    } */
+
+    &:global(.constrain-width) {
+      th,
+      td {
+        max-width: 150px;
       }
     }
 
