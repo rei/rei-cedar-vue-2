@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import CdrLink from 'componentsdir/link/CdrLink';
+import CdrThemer from 'componentsdir/themer/CdrThemer';
 
 describe('CdrLink.vue', () => {
   it('renders an anchor by default', () => {
@@ -46,7 +47,7 @@ describe('CdrLink.vue', () => {
   
   it('computes the base class correctly', () => {
     const wrapper = shallowMount(CdrLink);
-    expect(wrapper.classes().length).toBe(1);
+    // expect(wrapper.classes().length).toBe(1);
     expect(wrapper.vm.$style).toHaveProperty('cdr-link');
   });
   
@@ -67,5 +68,37 @@ describe('CdrLink.vue', () => {
     });
     expect(wrapper.is('button')).toBe(true);
     expect(wrapper.attributes().href).toBe(undefined);
+  });
+
+  it('inherits theme correctly', () => {
+    const wrapper = shallowMount(CdrThemer, {
+      stubs: {
+        'cdr-link': CdrLink,
+      },
+      slots: {
+        default: ['<cdr-link/>']
+      },
+      propsData: {
+        theme: 'dark',
+      },
+    });
+
+    const link = wrapper.find(CdrLink)
+
+    expect(link.classes()).toContain('on-dark');
+  });
+
+  it('sets theme correctly', () => {
+    const wrapper = shallowMount(CdrLink, {
+      propsData: {
+        theme: 'dark',
+      },
+    });
+    expect(wrapper.classes()).toContain('on-dark');
+  });
+
+  it('does nothing if no theme provided', () => {
+    const wrapper = shallowMount(CdrLink);
+    expect(wrapper.vm.computedTheme).toBeFalsy();
   });
 });

@@ -1,5 +1,10 @@
-<a name="1.0.2"></a>
-## 1.0.2 (2018-11-17)
+<a name="1.0.3"></a>
+## 1.0.3 (2018-12-20)
+
+
+### Bug Fixes
+
+* **focus:** add default focus state for sharing ([16133cf](https://github.com/rei/rei-cedar/commit/16133cf))
 
 
 ### Features
@@ -8,7 +13,9 @@
 * **buttons:** update to use css modules ([a5e5fda](https://github.com/rei/rei-cedar/commit/a5e5fda))
 * **docs:** added all component's routes to rei-cedar project, and a couple compositions as a POC ([29fdf72](https://github.com/rei/rei-cedar/commit/29fdf72))
 * **examples:** updates to examples to use cdr-text rather than elements ([3619265](https://github.com/rei/rei-cedar/commit/3619265))
+* **icon accordion:** bump version ([a2cd2a7](https://github.com/rei/rei-cedar/commit/a2cd2a7))
 * **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
+* **link:** add defensive css for normalize and cedar 1 styles ([26c3aaa](https://github.com/rei/rei-cedar/commit/26c3aaa))
 * **link:** update dependencies ([bf6b68e](https://github.com/rei/rei-cedar/commit/bf6b68e))
 * **link:** use css modules for link ([6b244d2](https://github.com/rei/rei-cedar/commit/6b244d2))
 * **link:** use css modules with link ([bfb98f9](https://github.com/rei/rei-cedar/commit/bfb98f9))
