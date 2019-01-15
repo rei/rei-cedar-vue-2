@@ -12,7 +12,7 @@
     <div
       :class="[
         $style['cdr-data-table__scroll-container'],
-        { 'full-scroll': fullScroll },
+        { 'locked-col': lockedCol },
         { 'is-scrolling': isScrolling },
       ]"
       ref="scroll-container"
@@ -101,7 +101,7 @@ export default {
   props: {
     id: {
       type: String,
-      required: true,
+      required: false,
     },
     colHeaders: {
       type: [Array, Boolean],
@@ -113,7 +113,7 @@ export default {
     },
     rowData: {
       type: Array,
-      required: false,
+      default: () => [],
     },
     keyOrder: {
       type: Array,
@@ -144,13 +144,17 @@ export default {
       return 'cdr-data-table';
     },
     fullScroll() {
-      return this.cols <= 2 || !this.rowHeaders;
+      return this.cols <= 2 || !this.rowHeaders || this.rowData.length === 0;
+    },
+    lockedCol() {
+      return this.rowData.length > 0 && this.cols > 2 && this.rowHeaders;
     },
     isScrolling() {
-      return this.scrollWidth > this.clientWidth && !this.fullScroll;
+      return this.scrollWidth > this.clientWidth && this.lockedCol;
     },
   },
   mounted() {
+    console.log('cdrdatatable mounted', this); /* eslint-disable-line */
     this.hasColHeaders = typeof this.colHeaders === 'boolean' ?
       this.colHeaders : this.colHeaders.length > 0;
 
@@ -162,14 +166,12 @@ export default {
     this.checkScroll();
 
     window.addEventListener('resize', debounce(() => {
-      this.rowHeights = null;
-      this.rowColHeadersHeight = null;
-      this.setRowsContentHeight();
+      // this.setRowsContentHeight();
       this.checkScroll();
     }, 250));
 
     this.$nextTick(() => {
-      this.setRowsContentHeight();
+      // this.setRowsContentHeight();
     });
   },
   methods: {
@@ -185,6 +187,13 @@ export default {
       return row[key] || '';
     },
     setRowsContentHeight() {
+      console.log('setRowsContentHeight'); /* eslint-disable-line */
+
+      if (this.rowData && this.rowData.length === 0) {
+        console.log('rowData.length === 0', this.uid); /* eslint-disable-line */
+        return;
+      }
+
       const rowHeights = [];
 
       if (this.hasColHeaders) {

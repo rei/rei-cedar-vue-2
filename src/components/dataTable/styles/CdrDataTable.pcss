@@ -21,10 +21,10 @@
   }
 
   &__scroll-container {
-    margin-left: 150px;
+    /* margin-left: 150px; */
     overflow-x: auto;
 
-    &:global(.full-scroll) {
+    /* &:global(.full-scroll) {
       margin-left: 0;
 
       .cdr-data-table__content {
@@ -32,6 +32,26 @@
         tbody th {
           position: relative;
         }
+      }
+    }
+    */
+    
+    &:global(.locked-col) {
+      margin-left: 150px;
+
+      @mixin lockedColTh() {
+        border-right: 2px solid $grey-matter;
+        left: 0;
+        position: absolute;
+        width: 150px;
+      }
+
+      thead tr th:first-child {
+        @include lockedColTh();
+      }
+
+      tbody tr th {
+        @include lockedColTh();
       }
     }
 
@@ -74,20 +94,13 @@
       }
     }
 
-    @mixin lockedColTh() {
-      border-right: 2px solid $grey-matter;
-      left: 0;
-      position: absolute;
-      width: 150px;
-    }
-
     thead {
       th {
         border-bottom: 2px solid $grey-matter;
 
         /* empty column header, row header column */
         &[class^=empty] {
-          @include lockedColTh();
+          min-height: 54px;
         }
       }
     }
@@ -104,8 +117,6 @@
       }
 
       th {
-        @include lockedColTh();
-
         display: flex;
         justify-content: center;
         flex-direction: column;
