@@ -1,10 +1,17 @@
 <template>
   <div class="table-examples-wrapper">
-    <!-- <cdr-data-table
+    <cdr-data-table
+      :row-data="tableData.overflow.rowData"
+      :col-headers="tableData.overflow.colHeaders"
+      :row-headers="tableData.overflow.rowHeaders"
+      :key-order="['col1', 'col2', 'col3', 'col4']"
+      caption="Content Resilience - API"
+    />
+
+    <cdr-data-table
+      caption="Content Resilience - Slots"
       :col-headers="true"
       :row-headers="true"
-      caption="Table with data fed in"
-      id="manual-3-col"
     >
       <template slot="thead">
         <tr>
@@ -13,7 +20,7 @@
             scope="col"
           />
           <th
-            v-for="(header, index) in tableData.books.headers"
+            v-for="(header, index) in tableData.overflow.colHeaders"
             :key="index"
           >
             {{ header }}
@@ -22,42 +29,20 @@
       </template>
       <template slot="tbody">
         <tr
-          v-for="(record, index) in tableData.books.records"
+          v-for="(row, index) in tableData.overflow.rowData"
           :key="'tr_' + index"
         >
-          <th scope="row">{{ record.rowheader }}</th>
+          <th
+            scope="row"
+          >{{ tableData.overflow.rowHeaders[index] }}</th>
           <td
-            v-for="(colData, key, index) in record"
-            v-if="key !== 'rowheader'"
+            v-for="(key, index) in ['col1', 'col2', 'col3', 'col4']"
             :key="index"
-          >
-            {{ colData }}
+          >{{ row[key] }}
           </td>
         </tr>
       </template>
-    </cdr-data-table> -->
-
-    <!-- <cdr-data-table
-      caption="Scroll example"
-      :row-headers="true"
-      id="manual-scroll"
-    >
-      <template slot="tbody">
-        <tr
-          v-for="(record, key, index) in tableData.scroll.records"
-          :key="index + '_' + key"
-        >
-          <th>{{ record.rowheader }}</th>
-          <td
-            v-for="(colData, key, index) in record"
-            v-if="key !== 'rowheader'"
-            :key="key + '_' + index"
-          >
-            {{ colData }}
-          </td>
-        </tr>
-      </template>
-    </cdr-data-table> -->
+    </cdr-data-table>
   </div>
 </template>
 

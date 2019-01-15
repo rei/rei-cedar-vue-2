@@ -5,10 +5,10 @@
       modifier="heading-small">
       Tables
     </cdr-text>
-    <all-headers />
+    <!-- <all-headers />
     <no-col-headers />
     <no-headers />
-    <variants />
+    <variants /> -->
     <content-resilience />
   </div>
 </template>

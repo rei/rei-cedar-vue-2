@@ -62,33 +62,6 @@ const tableData = {
       xxxl: '32',
     },
   ],
-  books: {
-    headers: [
-      'Title',
-      'Year',
-      'Author',
-    ],
-    records: [
-      {
-        title: 'Book A',
-        year: 1823,
-        author: 'Mikey',
-        rowheader: 'row 1',
-      },
-      {
-        title: 'Book C',
-        year: 1532,
-        author: 'Joey',
-        rowheader: 'row 2',
-      },
-      {
-        title: 'Book E',
-        year: 1253,
-        author: 'Scotty',
-        rowheader: 'row 3',
-      },
-    ],
-  },
   scroll: {
     headers,
     records,
