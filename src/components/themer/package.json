@@ -1,0 +1,34 @@
+{
+  "name": "@rei/cdr-themer",
+  "version": "0.1.0",
+  "author": "REI Software Engineering",
+  "description": "REI Cedar Style Framework - Vue Component for Themer",
+  "homepage": "https://rei.github.io/rei-cedar/#cdr-themer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
+  },
+  "license": "ISC",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/cdr-themer.js",
+  "style": "dist/cdr-themer.css",
+  "scripts": {
+    "prepublishOnly": "npm run build && pkg-ok",
+    "build": "node build/build.js"
+  },
+  "peerDependencies": {
+    "@rei/cdr-assets": "^0.3.0",
+    "vue": "^2.5.13"
+  },
+  "devDependencies": {
+    "@rei/cdr-assets": "^0.3.0",
+    "pkg-ok": "^2.1.0",
+    "vue-reactive-provide": "^0.2.1"
+  }
+}

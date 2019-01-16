@@ -15,7 +15,7 @@
   font-size: inherit;
   line-height: inherit;
   align-items: center;
-  background-color: $color-transparent-background;
+  background-color: transparent;
   border: 0;
   margin: 0;
   color: $link-color;
@@ -57,5 +57,72 @@
   &:focus,
   &:visited {
     text-decoration: underline;
+  }
+}
+
+/* Light Theme */
+
+/* Theme via cascade
+
+:global(.cdr-bg--light) .cdr-link {
+  color: $link-color;
+  fill: $link-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color;
+  }
+}
+*/
+
+/* Theme via prop */
+
+:global(.on-light).cdr-link {
+  color: $link-color;
+  fill: $link-color;
+
+  /* States
+    ---------- */
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color;
+  }
+}
+
+/* Dark Theme */
+
+/* TODO: get this value */
+$link-color-dark: white;
+
+/* Theme via cascade
+
+:global(.cdr-bg--dark) .cdr-link {
+  color: $link-color-dark;
+  fill: $link-color-dark;
+  
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color-dark;
+  }
+}
+*/
+
+/* Theme via prop */
+
+:global(.on-dark).cdr-link {
+  color: $link-color-dark;
+  fill: $link-color-dark;
+
+  /* States
+    ---------- */
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color-dark;
   }
 }
