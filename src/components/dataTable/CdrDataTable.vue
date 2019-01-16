@@ -70,6 +70,7 @@
                 scope="row"
                 :ref="`row-${index}-th`"
                 :style="{ height: getRowHeight(index) }"
+                :class="$style['align-row-header-content']"
               >
                 {{ rowHeaders[index] }}
               </th>
