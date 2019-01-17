@@ -1,5 +1,7 @@
 ## Properties
 
+For the most up-to-date information, see [REI Cedar documentation](https://rei.github.io/rei-cedar-docs/components/image/).
+
 | name  | type | default     |
 |:-----|:-------|:--------|
 | alt | string   | empty |

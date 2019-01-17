@@ -1,12 +1,16 @@
 <template>
   <div>
-    <h3>Image modifiers</h3>
+    <cdr-text
+      tag="h3"
+      modifier="heading-small">
+      Image modifiers
+    </cdr-text>
     <cdr-row
       cols="2 4@md"
     >
       <cdr-col>
         <div>
-          <p>Responsive</p>
+          <cdr-text modifier="subheading">Responsive</cdr-text>
           <cdr-img
             class="cdr-img-test"
             ratio="4-3"
@@ -24,7 +28,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>Rounded</p>
+          <cdr-text modifier="subheading">Rounded</cdr-text>
           <cdr-img
             class="cdr-img-test"
             ratio="4-3"
@@ -48,7 +52,7 @@
       </cdr-col>
       <cdr-col>
         <div>
-          <p>circle</p>
+          <cdr-text modifier="subheading">circle</cdr-text>
           <cdr-img
             class="cdr-img-test"
             ratio="4-3"

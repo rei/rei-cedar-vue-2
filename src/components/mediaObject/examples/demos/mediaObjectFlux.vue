@@ -10,15 +10,15 @@
         img-modifier="responsive"
         modifier="top">
         <cdr-text
-          tag="h2"
+          tag="h4"
           modifier="heading-medium">
-          <a href="https://rei.com">Responsive</a>
+          Responsive
         </cdr-text>
-        <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
+        <cdr-text>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis
         posuere ornare ante, id placerat purus pretium non. Nulla rhoncus libero sed faucibus
-        finibus.</p>
+        finibus.</cdr-text>
       </cdr-media-object>
     </cdr-col>
     <cdr-col span="4">
@@ -26,15 +26,15 @@
         img-src="http://placehold.it/350x150"
         modifier="top stretch">
         <cdr-text
-          tag="h2"
+          tag="h4"
           modifier="heading-medium">
-          <a href="https://rei.com">Stretch</a>
+          Stretch
         </cdr-text>
-        <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
+        <cdr-text>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis
         posuere ornare ante, id placerat purus pretium non. Nulla rhoncus libero sed faucibus
-        finibus.</p>
+        finibus.</cdr-text>
       </cdr-media-object>
     </cdr-col>
     <cdr-col span="4">
@@ -42,15 +42,15 @@
         img-src="http://placehold.it/350x150"
         modifier="top block">
         <cdr-text
-          tag="h2"
+          tag="h4"
           modifier="heading-medium">
-          <a href="https://rei.com">block</a>
+          block
         </cdr-text>
-        <p>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
+        <cdr-text>Cras volutpat, nibh quis fringilla efficitur, dolor sapien posuere ipsum, sit amet
         pharetra est dolor ac est. Class aptent taciti sociosqu ad litora torquent per conubia
         nostra, per inceptos himenaeos. Praesent nec ex semper ex congue tristique ac at massa. Duis
         posuere ornare ante, id placerat purus pretium non. Nulla rhoncus libero sed faucibus
-        finibus.</p>
+        finibus.</cdr-text>
       </cdr-media-object>
     </cdr-col>
   </cdr-row>

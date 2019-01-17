@@ -1,6 +1,12 @@
 <template>
-  <div data-backstop="visibility-utilities">
-    <h2>Visibility classes</h2>
+  <div
+    data-backstop="visibility-utilities"
+    class="visibility-utilities">
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Visibility classes
+    </cdr-text>
 
     <table>
       <thead>
@@ -244,30 +250,38 @@
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
+
 export default {
   name: 'VisibleUtilities',
+  components: { ...Components },
 };
 </script>
 
 <style>
-table,
-td {
-  border: 1px solid lightgray;
-}
+.visibility-utilities {
+  table,
+  td {
+    border: 1px solid lightgray;
+  }
 
-table {
-  border-collapse: collapse;
-}
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    line-height: 1;
+  }
 
-th {
-  padding: 10px;
-}
+  th {
+    text-align: left;
+    padding: 10px;
+  }
 
-td {
-  padding: 5px;
-}
+  td {
+    padding: 5px;
+  }
 
-td:not(:first-of-type) {
-  text-align: center;
+  td:not(:first-of-type) {
+    text-align: center;
+  }
 }
 </style>

@@ -1,14 +1,35 @@
 <template>
   <div data-backstop="inline-space-utilities">
-    <h2>Inline space classes</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-medium">
+      Inline space classes
+    </cdr-text>
     <cdr-card class="example">
-      <p class="cdr-inline--xxs"> cdr-inline--xxs </p>
-      <p class="cdr-inline--xs"> cdr-inline--xs </p>
-      <p class="cdr-inline--sm"> cdr-inline--sm </p>
-      <p class="cdr-inline"> cdr-inline </p>
-      <p class="cdr-inline--lg"> cdr-inline--lg </p>
-      <p class="cdr-inline--xl"> cdr-inline--xl </p>
-      <p class="cdr-inline--xxl"> cdr-inline--xxl </p>
+      <cdr-text class="cdr-inline-eighth-x">
+        cdr-inline-eighth-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-quarter-x">
+        cdr-inline-quarter-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-half-x">
+        cdr-inline-half-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-three-quarter-x">
+        cdr-inline-three-quarter-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-1-x">
+        cdr-inline-1-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-1-and-a-half-x">
+        cdr-inline-1-and-a-half-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-2-x">
+        cdr-inline-2-x
+      </cdr-text>
+      <cdr-text class="cdr-inline-4-x">
+        cdr-inline-4-x
+      </cdr-text>
     </cdr-card>
   </div>
 </template>

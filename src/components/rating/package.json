@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-rating",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Rating",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-rating",

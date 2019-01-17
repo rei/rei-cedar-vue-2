@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h2>Activity Card</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-small">
+      Activity Card
+    </cdr-text>
 
     <cdr-activity-card
       data-backstop="activity-card"
@@ -19,11 +23,12 @@
 </template>
 
 <script>
+import Components from 'componentsdir/_index';
 import CdrActivityCard from '../CdrActivityCard';
 
 export default {
   name: 'Activity',
-  components: { CdrActivityCard },
+  components: { ...Components, CdrActivityCard },
 };
 </script>
 

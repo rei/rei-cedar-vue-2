@@ -13,7 +13,9 @@
 .cdr-card {
   background-color: $clean-slate;
   border-radius: $radius-softer;
-  box-shadow: $prominence-elevated;
+  box-shadow: 0 3px 8px rgba(26, 26, 26, 0.2);
+  color: $card-color;
+  width: $card-width;
   position: relative;
   transition: transform 500ms ease, box-shadow 500ms ease;
 
@@ -21,15 +23,15 @@
     ---------- */
 
   &:hover {
-    box-shadow: $activity-card-hover-box-shadow;
+    box-shadow: $prominence-floating;
     transform: scale(1.006);
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: $activity-card-title-action-hover-color;
-    text-decoration: $activity-card-title-action-hover-text-decoration;
+    color: $easily-excited;
+    text-decoration: underline;
   }
 
   &::before {

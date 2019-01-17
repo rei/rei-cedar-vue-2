@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "pkg-ok": "^2.1.0"
+    "pkg-ok": "^2.1.0",
+    "vue-reactive-provide": "^0.2.1"
   }
 }

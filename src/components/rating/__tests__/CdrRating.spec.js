@@ -17,6 +17,7 @@ describe('CdrRating.vue', () => {
   it('renders an anchor when given an href', () => {
     const wrapper = shallowMount(CdrRating, {
       propsData: {
+        rating: 5,
         href: 'rei.com'
       }
     });

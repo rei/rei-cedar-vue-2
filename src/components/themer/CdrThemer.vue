@@ -7,8 +7,16 @@
 </template>
 
 <script>
+import { ReactiveProvideMixin } from 'vue-reactive-provide';
+
 export default {
   name: 'CdrThemer',
+  mixins: [
+    ReactiveProvideMixin({
+      name: 'wrapperTheme',
+      props: true,
+    }),
+  ],
   props: {
     theme: {
       type: String,
@@ -17,11 +25,6 @@ export default {
     background: {
       type: String,
     },
-  },
-  provide() {
-    return {
-      wrapperTheme: this.theme,
-    };
   },
   computed: {
     backgroundClass() {

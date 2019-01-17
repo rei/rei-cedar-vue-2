@@ -29,13 +29,24 @@
 
   & > .cdr-cta__icon {
     align-self: center;
+    display: inline-block;
     fill: inherit;
+    height: $icon-size;
     margin-left: $space-quarter-x;
+    vertical-align: middle;
+    flex: 0 0 auto;
+    width: $icon-size;
   }
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     text-decoration: none;
+  }
+
+  &:focus {
+    outline: $default-outline;
+    outline-offset: 0;
   }
 
   /* Full Width
@@ -96,7 +107,13 @@
     }
 
     &.cdr-cta--elevated {
-      box-shadow: inset $button-cta-light-box-shadow, $prominence-elevated;
+      box-shadow: $button-cta-light-box-shadow, $prominence-elevated;
+      
+      &:hover,
+      &:focus,
+      &:active, {
+        box-shadow: $button-cta-light-box-shadow, $prominence-elevated;
+      }
     }
   }
 

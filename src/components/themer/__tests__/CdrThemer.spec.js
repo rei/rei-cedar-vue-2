@@ -1,8 +1,14 @@
-import { shallow } from '@vue/test-utils';
-import CdrThemer from 'Components/themer/CdrThemer';
+import { shallowMount } from '@vue/test-utils';
+import CdrThemer from 'componentsdir/themer/CdrThemer';
 
 describe('CdrThemer.vue', () => {
-  it('has a failing test by default so you remember to do them', () => {
-    expect(false).toBe(true);
+  it('computes classes correctly', () => {
+    const wrapper = shallowMount(CdrThemer, {
+      propsData: {
+        theme: 'dark',
+        background: 'dark',
+      }
+    });
+    expect(wrapper.classes()).toContain('cdr-bg--dark');
   });
 });
