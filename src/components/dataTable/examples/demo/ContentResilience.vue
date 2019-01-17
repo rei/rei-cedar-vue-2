@@ -8,7 +8,7 @@
       caption="Content Resilience - API"
     />
 
-    <!-- <cdr-data-table
+    <cdr-data-table
       caption="Content Resilience - Slots"
       :col-headers="true"
       :row-headers="true"
@@ -42,7 +42,7 @@
           </td>
         </tr>
       </template>
-    </cdr-data-table> -->
+    </cdr-data-table>
   </div>
 </template>
 

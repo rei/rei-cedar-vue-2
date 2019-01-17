@@ -1,6 +1,6 @@
 <template>
   <div class="table-examples-wrapper">
-    <!-- <cdr-data-table
+    <cdr-data-table
       id="manual-size-chart"
       caption="All Headers - Slots"
       :col-headers="true"
@@ -36,7 +36,7 @@
           </td>
         </tr>
       </template>
-    </cdr-data-table> -->
+    </cdr-data-table>
 
     <cdr-data-table
       :col-headers="tableData.colHeaders"

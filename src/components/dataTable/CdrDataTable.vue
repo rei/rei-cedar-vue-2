@@ -55,23 +55,23 @@
         <tbody ref="table-body">
           <slot name="tbody">
             <tr
-              v-for="(row, index) in rowData"
-              :key="id + '_row_' + index"
-              :ref="`row-${index}`"
+              v-for="(row, rowIndex) in rowData"
+              :key="id + '_row_' + rowIndex"
+              :ref="`row-${rowIndex}`"
             >
               <th
                 v-if="hasRowHeaders"
                 scope="row"
-                :ref="`row-${index}-th`"
+                :ref="`row-${rowIndex}-th`"
                 :class="$style['align-row-header-content']"
-                :style="{ 'height': getRowAlignHeight('th', index) }"
+                :style="{ 'height': getRowAlignHeight('th', rowIndex) }"
               >
-                {{ rowHeaders[index] }}
+                {{ rowHeaders[rowIndex] }}
               </th>
               <td
                 v-for="(key, index) in keyOrder"
                 :key="id + '_' + index + '_' + key"
-                :style="{ 'height': getRowAlignHeight('td', index) }"
+                :style="{ 'height': getRowAlignHeight('td', rowIndex) }"
               >
                 {{ getCellContent(row, key) }}
               </td>
@@ -158,11 +158,12 @@ export default {
 
     this.cols = this.$refs['table-body'].querySelector('tr').children.length;
 
-    // we don't always need this event listener == make this code better.
-    window.addEventListener('resize', debounce(() => {
-      // this.setRowsContentHeight();
-      this.checkScroll();
-    }, 250));
+    if (this.lockedCol) {
+      window.addEventListener('resize', debounce(() => {
+        // this.setRowsContentHeight();
+        this.checkScroll();
+      }, 250));
+    }
 
     this.$nextTick(() => {
       if (this.lockedCol) {
@@ -186,7 +187,9 @@ export default {
     setRowsContentHeight() {
       const rowContentHeights = [];
 
-      this.headerRowHeight = this.$refs['row-col-headers'].children[1].offsetHeight;
+      if (this.hasColHeaders) {
+        this.headerRowHeight = this.$refs['row-col-headers'].children[1].offsetHeight;
+      }
 
       /* main table */
       for (let i = 0; i < this.rowData.length; i += 1) {
@@ -199,13 +202,9 @@ export default {
       }
 
       this.rowHeights = rowContentHeights;
-      console.log('setRowsContentHeight done'); /* eslint-disable-line */
     },
     getRowAlignHeight(elem, index) {
-      console.log('getRowAlignHeight', elem, index); /* eslint-disable-line */
       if (this.rowHeights === null) {
-        // return null while we're waiting for values
-        console.log('rowHeights is null, return null'); /* eslint-dsiable-line */
         return null;
       }
 
@@ -222,7 +221,6 @@ export default {
         return null;
       }
 
-      // elemToChange is the smaller value
       return elemToChange === 'td' ? `${row.th - 1}px` : `${row.td + 1}px`;
     },
   },
