@@ -100,7 +100,7 @@
 
         /* empty column header, row header column */
         &[class^=empty] {
-          min-height: 54px;
+          border-right: 2px solid $grey-matter;
         }
       }
     }
@@ -113,6 +113,11 @@
           th {
             background-color: $the-tooth;
           }
+        }
+
+        th {
+          min-width: 150px;
+          border-right: 2px solid $grey-matter;
         }
       }
 

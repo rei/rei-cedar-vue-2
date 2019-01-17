@@ -15,6 +15,7 @@
           <th
             v-for="(header, index) in tableData.colHeaders"
             :key="index"
+            scope="col"
           >
             {{ header }}
           </th>

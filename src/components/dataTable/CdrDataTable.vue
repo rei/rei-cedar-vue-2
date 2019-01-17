@@ -22,7 +22,7 @@
           $style['cdr-data-table__content'],
           { 'constrain-width': constrainWidth },
         ]"
-        :id="id"
+        :id="id ? id : null"
       >
         <caption
           class="cdr-sr-only"
@@ -33,22 +33,19 @@
         <thead v-if="hasColHeaders">
           <slot name="thead">
             <tr
-              ref="row-colHeaders"
-              :style="{ height: getRowHeight() }"
+              ref="row-col-headers"
             >
               <th
                 class="empty"
                 v-show="hasRowHeaders"
                 scope="col"
-                :style="{ height: getRowHeight() }"
+                :style="{ 'height': getRowsAlignHeight }"
               >
-                <span class="cdr-sr-only">
-                  Empty first column header for table with both column and row headers.
-                </span>
+                {{ getRowsAlignHeight }}
               </th>
               <th
                 v-for="(header, index) in colHeaders"
-                :key="id + '_col-head_' + index"
+                :key="`header-row-col-${index}`"
                 scope="col"
               >
                 {{ header }}
@@ -63,20 +60,20 @@
               v-for="(row, index) in rowData"
               :key="id + '_row_' + index"
               :ref="`row-${index}`"
-              :style="{ height: getRowHeight(index) }"
             >
               <th
                 v-if="hasRowHeaders"
                 scope="row"
                 :ref="`row-${index}-th`"
-                :style="{ height: getRowHeight(index) }"
                 :class="$style['align-row-header-content']"
+                :style="{ 'height': getRowHeight('th') }"
               >
                 {{ rowHeaders[index] }}
               </th>
               <td
                 v-for="(key, index) in keyOrder"
                 :key="id + '_' + index + '_' + key"
+                :style="{ 'height': getRowHeight('td', index) }"
               >
                 {{ getCellContent(row, key) }}
               </td>
@@ -137,7 +134,7 @@ export default {
       hasColHeaders: false,
       hasRowHeaders: false,
       rowHeights: null,
-      rowColHeadersHeight: null,
+      rowColHeadersHeight: 0,
     };
   },
   computed: {
@@ -150,9 +147,11 @@ export default {
     isScrolling() {
       return this.scrollWidth > this.clientWidth && this.lockedCol;
     },
+    getRowsAlignHeight() {
+      return this.rowColHeadersHeight ? `${this.rowColHeadersHeight + 1}px` : this.rowColHeadersHeight; /* eslint-disable-line */
+    },
   },
   mounted() {
-    // console.log('cdrdatatable mounted', this); /* eslint-disable-line */
     this.hasColHeaders = typeof this.colHeaders === 'boolean' ?
       this.colHeaders : this.colHeaders.length > 0;
 
@@ -161,18 +160,24 @@ export default {
 
     this.cols = this.$refs['table-body'].querySelector('tr').children.length;
 
-    this.checkScroll();
-
     window.addEventListener('resize', debounce(() => {
       // this.setRowsContentHeight();
       this.checkScroll();
     }, 250));
 
-    if (this.lockedCol) {
-      this.$nextTick(() => {
+    // this.checkScroll();
+
+    // this.$nextTick(())
+    // if (this.lockedCol) {
+    //   this.setRowsContentHeight();
+    // }
+
+    this.$nextTick(() => {
+      if (this.lockedCol) {
         this.setRowsContentHeight();
-      });
-    }
+      }
+      this.checkScroll();
+    });
   },
   methods: {
     checkScroll() {
@@ -187,32 +192,34 @@ export default {
       return row[key] || '';
     },
     setRowsContentHeight() {
-      const rowHeights = [];
+      const rowContentHeights = [];
 
-      if (this.hasColHeaders) {
-        const headersRow = this.$refs['row-colHeaders'];
-        this.rowColHeadersHeight = `${Math.max(headersRow.clientHeight, headersRow.children[0].clientHeight)}px`; /* eslint-disable-line */
-      }
+      this.rowColHeadersHeight = this.$refs['row-col-headers'].children[1].offsetHeight;
 
+      /* main table */
       for (let i = 0; i < this.rowData.length; i += 1) {
-        const rowHeight = this.$refs[`row-${i}`][0].clientHeight;
-        let thHeight = 0;
+        const heights = {
+          th: this.$refs[`row-${i}`][0].children[0].offsetHeight,
+          td: this.$refs[`row-${i}`][0].children[1].offsetHeight,
+        };
 
-        if (this.hasRowHeaders) {
-          thHeight = this.$refs[`row-${i}`][0].children[0].clientHeight;
-        }
-
-        rowHeights.push(Math.max(rowHeight, thHeight));
+        rowContentHeights.push(heights);
       }
 
-      this.rowHeights = rowHeights;
+      this.rowHeights = rowContentHeights;
+      console.log('rowContentHeights', rowContentHeights); /* eslint-disable-line */
     },
-    getRowHeight(index) {
-      if (index) {
-        return this.rowHeights !== null ? `${this.rowHeights[index]}px` : null;
+    getRowHeight(elem, index) {
+      if (this.rowHeights === null) {
+        // return null because we're waiting for values
+        return null;
       }
 
-      return this.rowColHeadersHeight !== null ? this.rowColHeadersHeight : null;
+      const { th, td } = index ? this.rowHeights[index] : this.rowColHeadersHeight;
+
+      console.log('getRowHeight', elem, index, th, td); /* eslint-disable-line */
+
+      return true;
     },
   },
 };

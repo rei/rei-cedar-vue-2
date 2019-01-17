@@ -6,9 +6,9 @@
       Tables
     </cdr-text>
     <all-headers />
-    <no-col-headers />
+    <!-- <no-col-headers />
     <no-headers />
-    <variants />
+    <variants />-->
     <content-resilience />
   </div>
 </template>
