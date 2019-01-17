@@ -64,12 +64,14 @@
                 scope="row"
                 :ref="`row-${index}-th`"
                 :class="$style['align-row-header-content']"
+                :style="{ 'height': getRowAlignHeight('th', index) }"
               >
                 {{ rowHeaders[index] }}
               </th>
               <td
                 v-for="(key, index) in keyOrder"
                 :key="id + '_' + index + '_' + key"
+                :style="{ 'height': getRowAlignHeight('td', index) }"
               >
                 {{ getCellContent(row, key) }}
               </td>
@@ -156,6 +158,7 @@ export default {
 
     this.cols = this.$refs['table-body'].querySelector('tr').children.length;
 
+    // we don't always need this event listener == make this code better.
     window.addEventListener('resize', debounce(() => {
       // this.setRowsContentHeight();
       this.checkScroll();
@@ -196,18 +199,31 @@ export default {
       }
 
       this.rowHeights = rowContentHeights;
+      console.log('setRowsContentHeight done'); /* eslint-disable-line */
     },
-    getRowHeight(elem, index) {
+    getRowAlignHeight(elem, index) {
+      console.log('getRowAlignHeight', elem, index); /* eslint-disable-line */
       if (this.rowHeights === null) {
-        // return null because we're waiting for values
+        // return null while we're waiting for values
+        console.log('rowHeights is null, return null'); /* eslint-dsiable-line */
         return null;
       }
 
-      const { th, td } = index ? this.rowHeights[index] : this.rowColHeadersHeight;
+      const row = this.rowHeights[index];
+      const alreadyAligned = row.th - row.td === 1; // th should be one pixel larger than td for everything to align correctly....
 
-      console.log('getRowHeight', elem, index, th, td); /* eslint-disable-line */
+      if (alreadyAligned) {
+        return null;
+      }
 
-      return true;
+      const elemToChange = row.th > row.td ? 'td' : 'th';
+
+      if (elem !== elemToChange) {
+        return null;
+      }
+
+      // elemToChange is the smaller value
+      return elemToChange === 'td' ? `${row.th - 1}px` : `${row.td + 1}px`;
     },
   },
 };
