@@ -160,17 +160,18 @@ export default {
 
     if (this.lockedCol) {
       window.addEventListener('resize', debounce(() => {
-        // this.setRowsContentHeight();
-        this.checkScroll();
+        this.rowHeights = null;
+        this.$nextTick(() => {
+          this.checkScroll();
+          this.setRowsContentHeight();
+        });
       }, 250));
-    }
 
-    this.$nextTick(() => {
-      if (this.lockedCol) {
+      this.$nextTick(() => {
+        this.checkScroll();
         this.setRowsContentHeight();
-      }
-      this.checkScroll();
-    });
+      });
+    }
   },
   methods: {
     checkScroll() {
@@ -187,10 +188,6 @@ export default {
     setRowsContentHeight() {
       const rowContentHeights = [];
 
-      if (this.hasColHeaders) {
-        this.headerRowHeight = this.$refs['row-col-headers'].children[1].offsetHeight;
-      }
-
       /* main table */
       for (let i = 0; i < this.rowData.length; i += 1) {
         const heights = {
@@ -201,15 +198,20 @@ export default {
         rowContentHeights.push(heights);
       }
 
+      if (this.hasColHeaders) {
+        this.headerRowHeight = this.$refs['row-col-headers'].children[1].offsetHeight;
+      }
+
       this.rowHeights = rowContentHeights;
     },
     getRowAlignHeight(elem, index) {
+      // The idea here is only to return a height when it needs it, otherwise return null
       if (this.rowHeights === null) {
         return null;
       }
 
       const row = this.rowHeights[index];
-      const alreadyAligned = row.th - row.td === 1; // th should be one pixel larger than td for everything to align correctly....
+      const alreadyAligned = row.th - row.td === 1;
 
       if (alreadyAligned) {
         return null;
