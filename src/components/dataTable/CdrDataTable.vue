@@ -39,10 +39,8 @@
                 class="empty"
                 v-show="hasRowHeaders"
                 scope="col"
-                :style="{ 'height': getRowsAlignHeight }"
-              >
-                {{ getRowsAlignHeight }}
-              </th>
+                :style="{ height: headerRowAlignHeight }"
+              />
               <th
                 v-for="(header, index) in colHeaders"
                 :key="`header-row-col-${index}`"
@@ -66,14 +64,12 @@
                 scope="row"
                 :ref="`row-${index}-th`"
                 :class="$style['align-row-header-content']"
-                :style="{ 'height': getRowHeight('th') }"
               >
                 {{ rowHeaders[index] }}
               </th>
               <td
                 v-for="(key, index) in keyOrder"
                 :key="id + '_' + index + '_' + key"
-                :style="{ 'height': getRowHeight('td', index) }"
               >
                 {{ getCellContent(row, key) }}
               </td>
@@ -133,8 +129,8 @@ export default {
       scrollWidth: 0,
       hasColHeaders: false,
       hasRowHeaders: false,
+      headerRowHeight: 0,
       rowHeights: null,
-      rowColHeadersHeight: 0,
     };
   },
   computed: {
@@ -142,13 +138,13 @@ export default {
       return 'cdr-data-table';
     },
     lockedCol() {
-      return this.rowData.length > 0 && this.cols > 2 && this.rowHeaders;
+      return this.rowData.length > 0 && this.cols > 2 && this.hasRowHeaders;
     },
     isScrolling() {
       return this.scrollWidth > this.clientWidth && this.lockedCol;
     },
-    getRowsAlignHeight() {
-      return this.rowColHeadersHeight ? `${this.rowColHeadersHeight + 1}px` : this.rowColHeadersHeight; /* eslint-disable-line */
+    headerRowAlignHeight() {
+      return this.headerRowHeight ? `${this.headerRowHeight + 1}px` : this.headerRowHeight; /* eslint-disable-line */
     },
   },
   mounted() {
@@ -164,13 +160,6 @@ export default {
       // this.setRowsContentHeight();
       this.checkScroll();
     }, 250));
-
-    // this.checkScroll();
-
-    // this.$nextTick(())
-    // if (this.lockedCol) {
-    //   this.setRowsContentHeight();
-    // }
 
     this.$nextTick(() => {
       if (this.lockedCol) {
@@ -194,7 +183,7 @@ export default {
     setRowsContentHeight() {
       const rowContentHeights = [];
 
-      this.rowColHeadersHeight = this.$refs['row-col-headers'].children[1].offsetHeight;
+      this.headerRowHeight = this.$refs['row-col-headers'].children[1].offsetHeight;
 
       /* main table */
       for (let i = 0; i < this.rowData.length; i += 1) {
@@ -207,7 +196,6 @@ export default {
       }
 
       this.rowHeights = rowContentHeights;
-      console.log('rowContentHeights', rowContentHeights); /* eslint-disable-line */
     },
     getRowHeight(elem, index) {
       if (this.rowHeights === null) {
