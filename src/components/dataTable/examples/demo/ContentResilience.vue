@@ -8,7 +8,7 @@
       caption="Content Resilience - API"
     />
 
-    <!-- <cdr-data-table
+    <cdr-data-table
       caption="Content Resilience - Slots"
       :col-headers="true"
       :row-headers="true"
@@ -42,7 +42,16 @@
           </td>
         </tr>
       </template>
-    </cdr-data-table> -->
+    </cdr-data-table>
+
+    <cdr-data-table
+      caption="Constrain Width Off"
+      :constrain-width="false"
+      :row-data="tableData.overflow.rowData"
+      :col-headers="tableData.overflow.colHeaders"
+      :row-headers="tableData.overflow.rowHeaders"
+      :key-order="['col1', 'col2', 'col3', 'col4']"
+    />
   </div>
 </template>
 
