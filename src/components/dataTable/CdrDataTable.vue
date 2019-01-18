@@ -56,7 +56,7 @@
           <slot name="tbody">
             <tr
               v-for="(row, rowIndex) in rowData"
-              :key="id + '_row_' + rowIndex"
+              :key="`row-${rowIndex}`"
               :ref="`row-${rowIndex}`"
             >
               <th
@@ -70,7 +70,7 @@
               </th>
               <td
                 v-for="(key, index) in keyOrder"
-                :key="id + '_' + index + '_' + key"
+                :key="`td-${index}-${key}`"
                 :style="{ 'height': getRowAlignHeight('td', rowIndex) }"
               >
                 {{ getCellContent(row, key) }}
