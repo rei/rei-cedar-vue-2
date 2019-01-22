@@ -40,7 +40,7 @@
     </div>
     <div
       class="button-example"
-      style="max-width: 300px">
+      style="max-width: 300px;">
       <cdr-cta
         data-backstop="cdr-cta--elevated"
         href="https://rei.com"

@@ -9,7 +9,7 @@ const _ = require('lodash');
 
 // webpack packages and configs
 const baseConfig = require('./webpack.base.conf');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
@@ -49,13 +49,13 @@ function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
       }),
       new UglifyJsPlugin(),
       new ExtractTextPlugin(`${name}.css`),
-      new CopyWebpackPlugin([
-        {
-          from: `${dir}/styles/themes/*`,
-          to: `${dir}/dist`,
-          flatten: true,
-        }
-      ]),
+      // new CopyWebpackPlugin([
+      //   {
+      //     from: `${dir}/styles/themes/*`,
+      //     to: `${dir}/dist`,
+      //     flatten: true,
+      //   }
+      // ]),
       new OptimizeCSSPlugin({
         cssProcessorOptions: {
           safe: true,

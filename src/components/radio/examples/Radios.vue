@@ -57,7 +57,7 @@
     >A4 compact (disabled)</cdr-radio>
     <cdr-text>Group A compact Picked: {{ ex1compact }}</cdr-text>
 
-    <div style="max-width: 200px">
+    <div style="max-width: 200px;">
       <cdr-radio
         name="example2"
         value="b1"

@@ -688,7 +688,7 @@
         </cdr-text>
         <cdr-row
           cols="4"
-          style="height: 300px"
+          style="height: 300px;"
         >
           <cdr-col align-self="top">
             <div class="row-demo">align-self="top"</div>
