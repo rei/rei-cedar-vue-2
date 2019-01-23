@@ -2,6 +2,7 @@ build/*.js
 config/*.js
 dist-docs/
 dist/
+test/
 
 node_modules/
 

@@ -7,7 +7,6 @@ function resolve(dir) {
 
 module.exports = {
   root: true,
-  // parser: 'vue-eslint-parser',
   parserOptions: {
     parser: 'babel-eslint',
     sourceType: 'module',
@@ -19,9 +18,8 @@ module.exports = {
     'airbnb-base',
     'plugin:vue/recommended',
   ],
-  // required to lint *.vue files
   plugins: [
-    // 'html',
+    'vue',
   ],
   // check if imports actually resolve
   settings: {
@@ -50,6 +48,7 @@ module.exports = {
       'code': 100,
       'ignoreComments': true,
       'ignoreTrailingComments': true
-    }]
+    }],
+    'vue/multiline-html-element-content-newline': 0,
   }
 }
