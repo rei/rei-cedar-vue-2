@@ -2,7 +2,8 @@
   <div data-backstop="inset-space-utilities">
     <cdr-text
       tag="h2"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Inset classes
     </cdr-text>
 

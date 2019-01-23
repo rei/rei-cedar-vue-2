@@ -1,12 +1,12 @@
 <template>
   <div>
-    <container/>
+    <container />
 
-    <a11y/>
+    <a11y />
 
-    <align/>
+    <align />
 
-    <visibility/>
+    <visibility />
 
     <inline />
 

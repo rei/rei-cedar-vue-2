@@ -4,43 +4,50 @@
   <div
     :class="[modifierClass]"
     ref="cdrTabsContainer"
-    :style="{ height: height }">
+    :style="{ height: height }"
+  >
     <div
       :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
                 overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
                 $style['cdr-tabs__gradient-container']]"
       @keyup.right="handleArrowNav"
       @keyup.left="handleArrowNav"
-      @keydown.down.prevent="handleDownArrowNav">
+      @keydown.down.prevent="handleDownArrowNav"
+    >
       <nav
         :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
                   overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
-                  $style['cdr-tabs__header-container']]">
+                  $style['cdr-tabs__header-container']]"
+      >
         <ol
           :class="$style['cdr-tabs__header']"
           role="tablist"
-          ref="cdrTabsHeader">
+          ref="cdrTabsHeader"
+        >
           <li
             v-for="tab in tabs"
             role="tab"
             :aria-selected="tab.active"
             :key="tab.id"
-            :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]">
+            :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]"
+          >
             <a
               @click.prevent="handleClick(tab, $event)"
               :href="tab.name"
-              :class="$style['cdr-tabs__header-item-label']">
+              :class="$style['cdr-tabs__header-item-label']"
+            >
               {{ tab.name }}
             </a>
           </li>
         </ol>
         <div
           :class="$style['cdr-tabs__underline']"
-          :style="underlineStyle" />
+          :style="underlineStyle"
+        />
       </nav>
     </div>
     <div :class="$style['cdr-tabs__content-container']">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
@@ -181,8 +188,8 @@ export default {
             this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
           }
         }
-        if (this.$refs.cdrTabsHeader.children[this.activeTabIndex] &&
-          (event.which === 37 || event.which === 39)) {
+        if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]
+          && (event.which === 37 || event.which === 39)) {
           this.animationInProgress = true;
           delay(() => {
             this.animationInProgress = false;

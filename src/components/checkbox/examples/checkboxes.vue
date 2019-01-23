@@ -2,7 +2,8 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Checkboxes
     </cdr-text>
     <cdr-checkbox
@@ -79,7 +80,9 @@
     >C compact</cdr-checkbox>
     <cdr-text>group: {{ exGroup }}</cdr-text>
 
-    <cdr-checkbox disabled>disabled checkbox</cdr-checkbox>
+    <cdr-checkbox disabled>
+      disabled checkbox
+    </cdr-checkbox>
     <cdr-checkbox
       v-model="checked"
       disabled
@@ -119,7 +122,9 @@
       modifier="compact"
     >indeterminate compact</cdr-checkbox>
 
-    <cdr-checkbox modifier="hide-figure">Hidden box</cdr-checkbox>
+    <cdr-checkbox modifier="hide-figure">
+      Hidden box
+    </cdr-checkbox>
     <cdr-checkbox
       modifier="hide-figure"
       v-model="complex2"

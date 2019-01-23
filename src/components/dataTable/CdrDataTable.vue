@@ -59,8 +59,8 @@
                 {{ rowHeaders[index] }}
               </th>
               <td
-                v-for="(key, index) in keyOrder"
-                :key="id + '_' + index + '_' + key"
+                v-for="(key, index2) in keyOrder"
+                :key="id + '_' + index2 + '_' + key"
               >
                 {{ getCellContent(row, key) }}
               </td>
@@ -130,11 +130,11 @@ export default {
     },
   },
   mounted() {
-    this.hasColHeaders = typeof this.colHeaders === 'boolean' ?
-      this.colHeaders : this.colHeaders.length > 0;
+    this.hasColHeaders = typeof this.colHeaders === 'boolean'
+      ? this.colHeaders : this.colHeaders.length > 0;
 
-    this.hasRowHeaders = typeof this.rowHeaders === 'boolean' ?
-      this.rowHeaders : this.rowHeaders.length > 0;
+    this.hasRowHeaders = typeof this.rowHeaders === 'boolean'
+      ? this.rowHeaders : this.rowHeaders.length > 0;
 
     this.cols = this.$refs['table-body'].querySelector('tr').children.length;
 

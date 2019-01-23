@@ -11,7 +11,7 @@
     ]"
   >
     <div :class="$style['cdr-col__content']">
-      <slot/>
+      <slot />
     </div>
   </div>
 
@@ -27,7 +27,7 @@
     ]"
   >
     <div :class="$style['cdr-col__content']">
-      <slot/>
+      <slot />
     </div>
   </li>
 
@@ -47,7 +47,7 @@
       :class="$style['cdr-col']"
       v-bind="$attrs"
     >
-      <slot/>
+      <slot />
     </cdr-row>
   </li>
 
@@ -63,7 +63,7 @@
     ]"
     v-bind="$attrs"
   >
-    <slot/>
+    <slot />
   </cdr-row>
 </template>
 

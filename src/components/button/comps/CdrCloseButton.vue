@@ -2,10 +2,12 @@
   <cdr-button
     :icon-only="true"
     :on-dark="onDark"
-    aria-label="Close">
+    aria-label="Close"
+  >
     <icon-x-lg
       slot="icon"
-      class="cdr-button__icon" />
+      class="cdr-button__icon"
+    />
   </cdr-button>
 </template>
 

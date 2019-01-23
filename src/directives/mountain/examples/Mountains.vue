@@ -3,22 +3,28 @@
     <h2>Mountain shape directive</h2>
     <div
       class="mountain-test"
-      v-mountain-shape.top.left/>
+      v-mountain-shape.top.left
+    />
     <div
       class="mountain-test"
-      v-mountain-shape.top.right/>
+      v-mountain-shape.top.right
+    />
     <div
       class="mountain-test"
-      v-mountain-shape.top.center/>
+      v-mountain-shape.top.center
+    />
     <div
       class="mountain-test"
-      v-mountain-shape.bottom.center/>
+      v-mountain-shape.bottom.center
+    />
     <div
       class="mountain-test"
-      v-mountain-shape.bottom.left/>
+      v-mountain-shape.bottom.left
+    />
     <div
       class="mountain-test"
-      v-mountain-shape.bottom.right/>
+      v-mountain-shape.bottom.right
+    />
   </div>
 </template>
 

@@ -9,7 +9,8 @@
     >
       <cdr-text
         tag="h1"
-        modifier="heading-large">
+        modifier="heading-large"
+      >
         Cedar Proving grounds
       </cdr-text>
 
@@ -29,7 +30,8 @@
       <router-link
         v-for="route in routes"
         :key="route.path"
-        :to="route.path">{{ route.name }} *
+        :to="route.path"
+      >{{ route.name }} *
       </router-link>
 
       <links
@@ -52,9 +54,9 @@
         class="cpg-section"
         data-backstop="cta-links"
       />
-      <cards class="cpg-section"/>
+      <cards class="cpg-section" />
       <!-- <card-content class="cpg-section"></card-content> -->
-      <activity class="cpg-section"/>
+      <activity class="cpg-section" />
       <checkboxes
         class="cpg-section"
         data-backstop="checkboxes"
@@ -63,13 +65,13 @@
         class="cpg-section"
         data-backstop="DataTable"
       />
-      <grid class="cpg-section"/>
-      <texts class="cpg-section"/>
+      <grid class="cpg-section" />
+      <texts class="cpg-section" />
       <icons
         class="cpg-section"
         data-backstop="icons"
       />
-      <images class="cpg-section"/>
+      <images class="cpg-section" />
       <searchbox
         class="cpg-section"
         data-backstop="search"
@@ -82,8 +84,8 @@
         class="cpg-section"
         data-backstop="lists"
       />
-      <mediaObject class="cpg-section"/>
-      <mountains class="cpg-section"/>
+      <mediaObject class="cpg-section" />
+      <mountains class="cpg-section" />
       <pagination class="cpg-section" />
       <radios
         class="cpg-section"
@@ -105,7 +107,7 @@
         class="cpg-section"
         data-backstop="tabs"
       />
-      <utilities class="cpg-section"/>
+      <utilities class="cpg-section" />
 
       <caption-example
         class="cpg-section"

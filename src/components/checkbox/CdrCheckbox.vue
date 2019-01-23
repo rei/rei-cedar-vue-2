@@ -20,7 +20,7 @@
       <span :class="$style['cdr-checkbox__figure']" />
       <div :class="[$style['cdr-checkbox__content'], contentClass]">
         <!-- @slot innerHTML inside of checkbox component -->
-        <slot/>
+        <slot />
       </div>
     </label>
   </div>

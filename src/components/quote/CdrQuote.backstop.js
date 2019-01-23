@@ -5,4 +5,3 @@ module.exports = [{
     '[data-backstop="pullquote"]',
   ],
 }];
-

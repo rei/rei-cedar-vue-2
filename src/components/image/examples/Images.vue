@@ -2,31 +2,34 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Images
     </cdr-text>
     <div data-backstop="image-aspect-ratio">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Aspect Ratios (with landscape images)
       </cdr-text>
 
-      <ratios/>
+      <ratios />
     </div>
 
     <div data-backstop="image-cropping">
-      <cropping/>
+      <cropping />
     </div>
 
     <div data-backstop="image-mods">
-      <mods/>
+      <mods />
     </div>
 
     <div data-backstop="image-standard">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Standard image
       </cdr-text>
       <cdr-img

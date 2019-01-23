@@ -1,7 +1,8 @@
 <template>
   <div>
     <cdr-text
-      tag="h2">Text Inputs</cdr-text>
+      tag="h2"
+    >Text Inputs</cdr-text>
 
     <cdr-input
       class="demo-input"
@@ -75,7 +76,8 @@
       placeholder="Required with Icon"
       label="#5 Input Label"
       required
-      type="email">
+      type="email"
+    >
       <template slot="info">
         <cdr-link href="#/inputs">
           Info Link/Icon
@@ -83,11 +85,13 @@
       </template>
       <template slot="pre-icon">
         <icon-twitter
-          inherit-color />
+          inherit-color
+        />
       </template>
       <template slot="post-icon">
         <icon-check-lg
-          inherit-color />
+          inherit-color
+        />
       </template>
       <template slot="helper-text">
         This is helper text.
@@ -101,13 +105,27 @@
       label="#6 Multi Line Input/TextArea"
     />
 
-    <div class="demo-input">Input #1 Value = {{ defaultModel }}</div>
-    <div class="demo-input">Input #2 Value = {{ requiredModel }}</div>
-    <div class="demo-input">Input #3 Value = {{ hiddenModel }}</div>
-    <div class="demo-input">Input #4 Value = {{ disabledModel }}</div>
-    <div class="demo-input">Input #5 Value = {{ requiredWithIcons }}</div>
-    <div class="demo-input">Input #6 Value = {{ multiRowModel }}</div>
-    <div class="demo-input">Size Inputs Value = {{ sizeModel }}</div>
+    <div class="demo-input">
+      Input #1 Value = {{ defaultModel }}
+    </div>
+    <div class="demo-input">
+      Input #2 Value = {{ requiredModel }}
+    </div>
+    <div class="demo-input">
+      Input #3 Value = {{ hiddenModel }}
+    </div>
+    <div class="demo-input">
+      Input #4 Value = {{ disabledModel }}
+    </div>
+    <div class="demo-input">
+      Input #5 Value = {{ requiredWithIcons }}
+    </div>
+    <div class="demo-input">
+      Input #6 Value = {{ multiRowModel }}
+    </div>
+    <div class="demo-input">
+      Size Inputs Value = {{ sizeModel }}
+    </div>
   </div>
 </template>
 
@@ -142,4 +160,3 @@ export default {
     line-height: 1;
   }
 </style>
-

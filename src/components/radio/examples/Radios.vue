@@ -2,7 +2,8 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Radios
     </cdr-text>
     <cdr-radio

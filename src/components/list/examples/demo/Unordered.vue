@@ -28,7 +28,8 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Compact Unordered list
     </cdr-text>
 
@@ -48,7 +49,8 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Inline unordered list
     </cdr-text>
 
@@ -63,7 +65,8 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Inline compact unordered list
     </cdr-text>
 

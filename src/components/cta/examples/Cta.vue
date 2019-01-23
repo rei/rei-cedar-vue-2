@@ -2,32 +2,31 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       CTA
     </cdr-text>
     <div class="button-example">
       <cdr-cta
-        data-backstop="cdr-cta--dark">
+        data-backstop="cdr-cta--dark"
+      >
         Dark
       </cdr-cta>
       <cdr-cta
         href="https://rei.com"
         cta-style="brand"
         data-backstop="cdr-cta--brand"
-      >Brand</cdr-cta
-      >
+      >Brand</cdr-cta>
       <cdr-cta
         href="https://rei.com"
         cta-style="light"
         data-backstop="cdr-cta--light"
-      >Light</cdr-cta
-      >
+      >Light</cdr-cta>
       <cdr-cta
         href="https://rei.com"
         cta-style="sale"
         data-backstop="cdr-cta--sale"
-      >Sale</cdr-cta
-      >
+      >Sale</cdr-cta>
     </div>
     <div class="button-example">
       <cdr-cta
@@ -35,17 +34,18 @@
         href="https://rei.com"
         :full-width="true"
         data-backstop="cdr-cta--full-width"
-      >Full width</cdr-cta
-      >
+      >Full width</cdr-cta>
     </div>
     <div
       class="button-example"
-      style="max-width: 300px;">
+      style="max-width: 300px;"
+    >
       <cdr-cta
         data-backstop="cdr-cta--elevated"
         href="https://rei.com"
         cta-style="light"
-        modifier="elevated">
+        modifier="elevated"
+      >
         This button has long text. It wraps!
       </cdr-cta>
     </div>
@@ -66,4 +66,3 @@ export default {
     padding: 10px;
   }
 </style>
-

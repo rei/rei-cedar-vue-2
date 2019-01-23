@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/no-use-v-if-with-v-for -->
   <div class="table-examples-wrapper">
     <cdr-data-table
       id="manual-size-chart"
@@ -29,8 +30,8 @@
             scope="row"
           >{{ tableData.rowHeaders[index] }}</th>
           <td
-            v-for="(key, index) in ['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']"
-            :key="index"
+            v-for="(key, index2) in ['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']"
+            :key="index2"
           >{{ row[key] }}
           </td>
         </tr>
@@ -62,11 +63,13 @@
           v-for="(record, index) in tableData.books.records"
           :key="'tr_' + index"
         >
-          <th scope="row">{{ record.rowheader }}</th>
+          <th scope="row">
+            {{ record.rowheader }}
+          </th>
           <td
-            v-for="(colData, key, index) in record"
+            v-for="(colData, key, index2) in record"
             v-if="key !== 'rowheader'"
-            :key="index"
+            :key="index2"
           >
             {{ colData }}
           </td>
@@ -86,9 +89,9 @@
         >
           <th>{{ record.rowheader }}</th>
           <td
-            v-for="(colData, key, index) in record"
-            v-if="key !== 'rowheader'"
-            :key="key + '_' + index"
+            v-for="(colData, key2, index2) in record"
+            v-if="key2 !== 'rowheader'"
+            :key="key2 + '_' + index2"
           >
             {{ colData }}
           </td>

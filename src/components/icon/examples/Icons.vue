@@ -2,21 +2,25 @@
   <div class="icon-examples">
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Icons
     </cdr-text>
 
     <cdr-text
       tag="h3"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Default icon size
     </cdr-text>
     <icon-account-profile
       data-backstop="cdr-icon-hover"
-      class="icon-hover" />
+      class="icon-hover"
+    />
     <cdr-icon
       use="#account-profile"
-      class="icon-hover" />
+      class="icon-hover"
+    />
 
     <hr class="icon-hr">
 
@@ -24,9 +28,8 @@
       cols="3 6@md 10@lg"
     >
       <cdr-col
-        v-for="(val, key) in Icons"
+        v-for="(val, key) in filteredIcons"
         :key="key"
-        v-if="key !== 'CdrIcon' && key !== 'CdrIconSprite'"
       >
         <div>
           <div class="cdr-text-center">
@@ -43,7 +46,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Small icon size
     </cdr-text>
     <hr class="icon-hr">
@@ -52,9 +56,8 @@
       cols="3 6@md 10@lg"
     >
       <cdr-col
-        v-for="(val, key) in Icons"
+        v-for="(val, key) in filteredIcons"
         :key="key"
-        v-if="key !== 'CdrIcon' && key !== 'CdrIconSprite'"
       >
         <div class="cdr-text-center">
           <svg
@@ -68,7 +71,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Large icon size
     </cdr-text>
     <hr class="icon-hr">
@@ -77,9 +81,8 @@
       cols="3 6@md 10@lg"
     >
       <cdr-col
-        v-for="(val, key) in Icons"
+        v-for="(val, key) in filteredIcons"
         :key="key"
-        v-if="key !== 'CdrIcon' && key !== 'CdrIconSprite'"
       >
         <div class="cdr-text-center">
           <svg
@@ -91,22 +94,30 @@
       </cdr-col>
     </cdr-row>
 
-    <cdr-text tag="h3">Responsive icon size</cdr-text>
+    <cdr-text tag="h3">
+      Responsive icon size
+    </cdr-text>
     <hr class="icon-hr">
 
-    <cdr-text tag="h4">Grow with screen width</cdr-text>
+    <cdr-text tag="h4">
+      Grow with screen width
+    </cdr-text>
     <cdr-icon
       use="#account-profile"
       size="small@xs large@md large@lg"
     />
     <hr class="icon-hr">
-    <cdr-text tag="h4">Inverse Grow</cdr-text>
+    <cdr-text tag="h4">
+      Inverse Grow
+    </cdr-text>
     <cdr-icon
       use="#account-profile"
       size="large@xs small@md small@lg"
     />
     <hr class="icon-hr">
-    <cdr-text tag="h4">Container with pink fill color</cdr-text>
+    <cdr-text tag="h4">
+      Container with pink fill color
+    </cdr-text>
     <div class="inherit-container">
       <cdr-row cols="2">
         <cdr-col>
@@ -143,6 +154,17 @@ export default {
     return {
       Icons,
     };
+  },
+  computed: {
+    filteredIcons() {
+      const notAllowed = ['CdrIcon', 'CdrIconSprite'];
+      return Object.keys(this.Icons)
+        .filter(key => !notAllowed.includes(key))
+        .reduce((obj, key) => ({
+          ...obj,
+          [key]: this.Icons[key],
+        }), {});
+    },
   },
   methods: {
     getSpriteId(name) {

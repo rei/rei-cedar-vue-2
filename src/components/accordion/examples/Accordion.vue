@@ -2,13 +2,15 @@
   <div class="accordion-container">
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Accordion
     </cdr-text>
     <div class="accordion-group">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Default
       </cdr-text>
       <cdr-accordion
@@ -53,7 +55,8 @@
     <div class="accordion-group">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Compact
       </cdr-text>
       <cdr-accordion-item
@@ -100,7 +103,8 @@
     <div class="accordion-group">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Border-Aligned
       </cdr-text>
       <cdr-accordion
