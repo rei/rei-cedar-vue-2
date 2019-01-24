@@ -163,11 +163,6 @@
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
-  "husky": {
-    "hooks": {
-      "commitmsg": "commitlint -e $GIT_PARAMS"
-    }
-  },
   "nyc": {
     "check-coverage": true,
     "lines": 100,
