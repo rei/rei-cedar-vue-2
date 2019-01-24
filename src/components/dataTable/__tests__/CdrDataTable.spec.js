@@ -56,14 +56,13 @@ const data = {
 
 describe('CdrDataTable.vue', () => {
 
-  xdescribe('mounted hook', () => {
+  describe('mounted hook', () => {
     it('sets hasColHeaders, hasRowHeaders with boolean', () => {
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: true,
           rowHeaders: true,
           rowData: data.rowData,
-          id: "test",
         }
       });
 
@@ -77,7 +76,6 @@ describe('CdrDataTable.vue', () => {
           colHeaders: ['test', 'test2'],
           rowHeaders: ['test', 'test2'],
           rowData: data.rowData,
-          id: "test",
         }
       });
 
@@ -86,21 +84,26 @@ describe('CdrDataTable.vue', () => {
     });
 
     it('adds resize event watcher', (done) => {
-      const spy = sinon.spy(CdrDataTable.methods, 'checkScroll');
+      const checkScroll = sinon.spy(CdrDataTable.methods, 'checkScroll');
       
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: data.colHeaders,
           rowHeaders: data.rowHeaders,
           rowData: data.rowData,
-          id: "test",
-          caption: "Test"
-        }
+        },
+        computed: {
+          lockedCol: () => true,
+        },
+        methods: {
+          setRowsContentHeight: () => true,
+        },
       });
       
       window.dispatchEvent(new Event('resize'));
+      
       wrapper.vm.$nextTick(() => {
-        sinon.assert.called(spy);
+        sinon.assert.called(checkScroll);
         done()
       });
     });
@@ -178,7 +181,7 @@ describe('CdrDataTable.vue', () => {
     });
   });
 
-  xdescribe('methods', () => {
+  describe('methods', () => {
     it('checkScroll sets clientWidth and scrollWidth', () => {
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
@@ -186,7 +189,6 @@ describe('CdrDataTable.vue', () => {
           rowHeaders: ['row1', 'row2', 'row3'],
           rowData: data.rowData,
           keyOrder: ["xs", "sm", "m"],
-          id: "test",
         }
       });
 
@@ -207,12 +209,31 @@ describe('CdrDataTable.vue', () => {
           rowHeaders: ['row1', 'row2', 'row3'],
           rowData: data.rowData,
           keyOrder: ["xs", "sm", "m"],
-          id: "test",
         }
       });
 
       expect(wrapper.vm.getCellContent({ a: 1, b: 2, c: 3 }, 'b')).toBe(2);
     });
+
+    it('getRowAlignHeight already aligned', () => {
+      const wrapper = shallowMount(CdrDataTable, {
+        propsData: {
+          colHeaders: ['col1', 'col2', 'col3'],
+          rowHeaders: ['row1', 'row2', 'row3'],
+          rowData: data.rowData,
+          keyOrder: ["xs", "sm", "m"],
+        }
+      });
+      
+      wrapper.vm.$nextTick(() => {
+        // wait for next tick to finish setting up test
+        wrapper.setData({
+          rowHeights: [{ th: 25, td: 24 }],
+        });
+
+        expect(wrapper.vm.getRowAlignHeight('th', 0)).toBe(null);
+      });
+    })
   });
   
 });

@@ -156,7 +156,9 @@ export default {
     this.hasRowHeaders = typeof this.rowHeaders === 'boolean' ?
       this.rowHeaders : this.rowHeaders.length > 0;
 
-    this.cols = this.$refs['table-body'].querySelector('tr').children.length;
+    if (this.rowData.length > 0) {
+      this.cols = this.$refs['row-0'][0].children.length;
+    }
 
     if (this.lockedCol) {
       window.addEventListener('resize', debounce(() => {
@@ -191,8 +193,8 @@ export default {
       /* main table */
       for (let i = 0; i < this.rowData.length; i += 1) {
         const heights = {
-          th: this.$refs[`row-${i}`][0].children[0].offsetHeight,
-          td: this.$refs[`row-${i}`][0].children[1].offsetHeight,
+          th: this.$refs[`row-${i}`][0].children[0].offsetHeight || 1,
+          td: this.$refs[`row-${i}`][0].children[1].offsetHeight || 0,
         };
 
         rowContentHeights.push(heights);
@@ -211,7 +213,7 @@ export default {
       }
 
       const row = this.rowHeights[index];
-      const alreadyAligned = row.th - row.td === 1;
+      const alreadyAligned = row ? row.th - row.td === 1 : true;
 
       if (alreadyAligned) {
         return null;
