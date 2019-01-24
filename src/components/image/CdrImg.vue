@@ -43,7 +43,6 @@ export default {
      */
     src: {
       type: String,
-      required: true,
     },
     /**
      * Required. Image alt text.

@@ -28,7 +28,7 @@
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "@rei/cdr-rating": "^1.0.0-alpha.1",
+    "@rei/cdr-rating": "^1.0.0",
     "@rei/cdr-list": "^1.0.0",
     "@rei/cdr-text": "^1.0.0",
     "@rei/cdr-img": "^1.0.0",

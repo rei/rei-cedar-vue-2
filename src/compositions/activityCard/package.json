@@ -33,7 +33,7 @@
     "@rei/cdr-img": "^1.0.0",
     "@rei/cdr-list": "^1.0.0",
     "@rei/cdr-media-object": "^0.1.4-alpha.0",
-    "@rei/cdr-rating": "^1.0.0-alpha.1",
+    "@rei/cdr-rating": "^1.0.0",
     "@rei/cdr-text": "^1.0.0",
     "vue": "^2.5.13"
   },
@@ -44,7 +44,7 @@
     "@rei/cdr-img": "^1.0.0",
     "@rei/cdr-list": "^1.0.0",
     "@rei/cdr-media-object": "^0.1.4-alpha.0",
-    "@rei/cdr-rating": "^1.0.0-alpha.1",
+    "@rei/cdr-rating": "^1.0.0",
     "@rei/cdr-text": "^1.0.0",
     "pkg-ok": "^1.1.0"
   }

@@ -1,10 +1,10 @@
 <template>
   <section
-    :class="[modifierClass, themeClass]"
+    :class="[modifierClass]"
   >
     <div
       v-if="$slots.category || category"
-      :class="$style['cdr-lead__category']"
+      :class="$style['cdr-card-intro__category']"
     >
       <slot name="category">{{ category }}</slot>
     </div>
@@ -14,7 +14,7 @@
       modifier="heading-small"
     >
       <a
-        :class="[$style['cdr-lead__heading'], $style['cdr-lead__heading--action']]"
+        :class="[$style['cdr-card-intro__heading'], $style['cdr-card-intro__heading--action']]"
         :href="url"
       >
         <slot name="heading">{{ heading }}</slot>
@@ -23,7 +23,7 @@
     <cdr-list
       v-if="snapshot"
       modifier="unordered inline compact"
-      :class="$style['cdr-lead__snapshot']"
+      :class="$style['cdr-card-intro__snapshot']"
     >
       <li
         v-for="item in snapshot"
@@ -38,13 +38,12 @@
     </cdr-list>
     <div
       v-if="$slots.rating || ratingProps"
-      :class="$style['cdr-lead__rating']"
+      :class="$style['cdr-card-intro__rating']"
     >
       <cdr-rating
         v-if="ratingProps"
         v-bind="ratingProps"
-        modifier="medium"
-        :theme="ratingTheme" />
+        modifier="medium" />
       <slot name="rating" />
     </div>
   </section>
@@ -55,46 +54,29 @@ import { CdrText } from '@rei/cdr-text';
 import { CdrList } from '@rei/cdr-list';
 import { CdrRating } from '@rei/cdr-rating';
 import modifier from 'mixinsdir/modifier';
-import themeable from 'mixinsdir/themeable';
 
 export default {
-  name: 'CdrLead',
+  name: 'CdrCardIntro',
   components: {
     CdrText,
     CdrList,
     CdrRating,
   },
-  mixins: [modifier, themeable],
+  mixins: [modifier],
   props: {
     category: {
       type: String,
       required: false,
-    },
-    categoryTheme: {
-      type: String,
-      default: 'secondary',
     },
     ratingProps: Object,
     snapshot: {
       type: Array,
       default: () => [],
     },
-    snapshotTheme: {
-      type: String,
-      default: 'secondary',
-    },
-    ratingTheme: {
-      type: String,
-      default: 'light-secondary',
-    },
     heading: String,
     headingLevel: {
       type: [String, Number],
       default: '3',
-    },
-    headingTheme: {
-      type: String,
-      default: 'primary',
     },
     url: {
       type: String,
@@ -103,7 +85,7 @@ export default {
   },
   computed: {
     baseClass() {
-      return 'cdr-lead';
+      return 'cdr-card-intro';
     },
   },
 };
@@ -111,6 +93,7 @@ export default {
 
 <style module>
   @import 'cssdir/settings/_index.pcss';
-  @import './styles/CdrLead.pcss';
+  @import './styles/vars/CdrCard.vars.pcss';
+  @import './styles/CdrCard.pcss';
 </style>
 

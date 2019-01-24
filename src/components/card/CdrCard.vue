@@ -7,8 +7,11 @@
       />
       <slot name="cardMedia" />
     </section>
-    <section :class="$style['cdr-card__container']">
-      <slot name="cardLead" />
+    <section
+      :class="$style['cdr-card__container']"
+      v-if="hasCardContentSlot"
+    >
+      <slot name="cardIntro" />
       <slot />
     </section>
   </article>
@@ -30,6 +33,9 @@ export default {
   computed: {
     baseClass() {
       return 'cdr-card';
+    },
+    hasCardContentSlot() {
+      return this.$slots.cardIntro || this.$slots.default;
     },
   },
 };
