@@ -1,13 +1,13 @@
 <template>
+  <!-- eslint-disable vue/singleline-html-element-content-newline -->
   <div :class="$style['cdr-input-group']">
     <label
       v-if="!hideLabel"
       :class="labelClass"
       :for="selectId"
       ref="label"
-    >{{ label }}<span v-if="required">
-      *
-    </span></label>
+    >{{ label }}<span v-if="required">*</span>
+    </label>
     <select
       :class="selectClass"
       v-bind="$attrs"
