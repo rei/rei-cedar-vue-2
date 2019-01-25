@@ -11,9 +11,8 @@ const _ = require('lodash');
 const baseConfig = require('./webpack.base.conf');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // config
 const config = {
@@ -36,6 +35,7 @@ function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
 
   // SHARED WEBPACK CONFIG
   let sharedConfig = merge(baseConfig, {
+    mode: 'production',
     output: {
       path: `${dir}/${config.outDir}`,
       filename: '[name].js',
@@ -47,8 +47,9 @@ function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
       new StyleLintPlugin({
         files: ['**/*.postcss', '**/*.pcss', '**/*.vue']
       }),
-      new UglifyJsPlugin(),
-      new ExtractTextPlugin(`${name}.css`),
+      new MiniCssExtractPlugin({
+        filename: `${name}.css`,
+      }),
       // new CopyWebpackPlugin([
       //   {
       //     from: `${dir}/styles/themes/*`,

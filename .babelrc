@@ -1,15 +1,15 @@
 {
   "presets": [
-    ["env", { "modules": false }],
-    "stage-2"
+    ["@babel/preset-env", { "modules": false }],
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": [
+    "@babel/transform-runtime",
+  ],
   "comments": false,
   "env": {
     "test": {
       "presets": [
-        "env",
-        "stage-2"
+        "@babel/preset-env",
       ],
       "plugins": ["istanbul"]
     }
