@@ -16,7 +16,7 @@
 
       <cdr-radio
         name="theme-picker"
-        value="light"
+        value="lightest"
         v-model="globalTheme"
         @change="radioNavigate"
       >Light</cdr-radio>
@@ -85,7 +85,6 @@
         data-backstop="lists"
       />
       <mediaObject class="cpg-section" />
-      <mountains class="cpg-section" />
       <pagination class="cpg-section" />
       <radios
         class="cpg-section"
@@ -135,6 +134,9 @@ export default {
       routes,
       globalTheme: 'lightest',
     };
+  },
+  mounted() {
+    if (this.$route.query['global-theme']) this.globalTheme = this.$route.query['global-theme'];
   },
   methods: {
     radioNavigate() {
