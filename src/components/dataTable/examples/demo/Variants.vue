@@ -3,7 +3,6 @@
     <cdr-data-table
       modifier="compact borderless"
       caption="Compact & Borderless - Slots"
-      id="full-manual"
       data-backstop="DataTable--compact-borderless"
     >
       <template slot="tbody">

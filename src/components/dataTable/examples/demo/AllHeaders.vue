@@ -1,7 +1,6 @@
 <template>
   <div class="table-examples-wrapper">
     <cdr-data-table
-      id="manual-size-chart"
       caption="All Headers - Slots"
       :col-headers="true"
       :row-headers="true"
@@ -43,7 +42,6 @@
       :row-headers="tableData.rowHeaders"
       :row-data="tableData.rowData"
       :key-order="['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']"
-      id="auto-table-col-lock-scroll"
       caption="All Headers - API"
     />
   </div>

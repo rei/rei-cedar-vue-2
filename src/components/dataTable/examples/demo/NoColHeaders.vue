@@ -1,7 +1,6 @@
 <template>
   <div class="table-examples-wrapper">
     <cdr-data-table
-      id="manual-size-chart"
       caption="No Column Headers - Slots"
       :row-headers="true"
     >
