@@ -189,9 +189,10 @@ export default {
     },
     setRowsContentHeight() {
       const rowContentHeights = [];
+      const numRows = this.rowData.length;
 
       /* main table */
-      for (let i = 0; i < this.rowData.length; i += 1) {
+      for (let i = 0; i < numRows; i += 1) {
         const heights = {
           th: this.$refs[`row-${i}`][0].children[0].offsetHeight || 1,
           td: this.$refs[`row-${i}`][0].children[1].offsetHeight || 0,
