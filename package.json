@@ -36,11 +36,12 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.3.1",
-    "@commitlint/cli": "^7.3.2",
+    "@commitlint/cli": "^7.4.0",
     "@commitlint/config-conventional": "^7.3.1",
     "@rei/cdr-tokens": "^0.1.8",
+    "@vue/babel-preset-app": "^3.3.0",
     "@vue/test-utils": "^1.0.0-beta.28",
-    "autoprefixer": "^9.4.6",
+    "autoprefixer": "^9.4.7",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-istanbul": "^5.1.0",
@@ -61,7 +62,7 @@
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-import-resolver-webpack": "^0.11.0",
     "eslint-loader": "^2.1.1",
-    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.1.0",
@@ -129,7 +130,7 @@
     "tinycolor2": "^1.4.1",
     "url-loader": "^1.1.2",
     "vue": "^2.5.22",
-    "vue-loader": "^15.6.1",
+    "vue-loader": "^15.6.2",
     "vue-router": "^3.0.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.22",
@@ -153,21 +154,6 @@
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
     }
-  },
-  "nyc": {
-    "check-coverage": true,
-    "lines": 100,
-    "reporter": [
-      "lcov",
-      "text"
-    ],
-    "report-dir": "./test/unit/coverage",
-    "require": "./test/setup.js",
-    "include": [
-      "src/**/*.(js|vue)"
-    ],
-    "instrument": false,
-    "sourceMap": false
   },
   "dependencies": {}
 }
