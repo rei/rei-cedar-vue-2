@@ -2,10 +2,12 @@
   <cdr-button
     :icon-only="true"
     :on-dark="onDark"
-    aria-label="Play">
+    aria-label="Play"
+  >
     <icon-play
       slot="icon"
-      class="cdr-button__icon" />
+      class="cdr-button__icon"
+    />
   </cdr-button>
 </template>
 

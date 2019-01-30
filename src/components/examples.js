@@ -11,7 +11,6 @@ import inputs from 'componentsdir/input/examples/Inputs';
 import layouts from 'componentsdir/layout/examples/Layout';
 import lists from 'componentsdir/list/examples/Lists';
 import mediaObject from 'componentsdir/mediaObject/examples/mediaObject';
-import mountains from 'directivesdir/mountain/examples/Mountains';
 import pagination from 'componentsdir/pagination/examples/Pagination';
 import quoteExample from 'componentsdir/quote/examples/Quote';
 import radios from 'componentsdir/radio/examples/Radios';
@@ -40,7 +39,6 @@ export default {
   layouts,
   lists,
   mediaObject,
-  mountains,
   pagination,
   quoteExample,
   radios,

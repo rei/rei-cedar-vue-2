@@ -2,13 +2,15 @@
   <div :class="[$style['cdr-caption'], 'cdr-inset--squish']">
     <p
       v-if="summary"
-      :class="$style['cdr-caption__summary']">
+      :class="$style['cdr-caption__summary']"
+    >
       {{ summary }}
     </p>
     <cite
       v-if="credit"
       :class="$style['cdr-caption__cite']"
-      class="cdr-text cdr-text--citation">
+      class="cdr-text cdr-text--citation"
+    >
       {{ credit }}
     </cite>
   </div>

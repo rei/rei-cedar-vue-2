@@ -2,19 +2,19 @@
   <div class="cdr-container-fluid">
     <cdr-row>
       <cdr-col span="3">
-        <div class="row-demo"/>
+        <div class="row-demo" />
       </cdr-col>
       <cdr-col span="3">
-        <div class="row-demo"/>
+        <div class="row-demo" />
       </cdr-col>
       <cdr-col span="3">
-        <div class="row-demo"/>
+        <div class="row-demo" />
       </cdr-col>
       <cdr-col span="3">
-        <div class="row-demo"/>
+        <div class="row-demo" />
       </cdr-col>
       <cdr-col span="3">
-        <div class="row-demo"/>
+        <div class="row-demo" />
       </cdr-col>
     </cdr-row>
   </div>

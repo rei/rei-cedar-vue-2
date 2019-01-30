@@ -10,7 +10,8 @@
         <cdr-media-object
           img-src="http://placehold.it/50x50"
           img-modifier="circle"
-          modifier="center">
+          modifier="center"
+        >
           <cdr-text
             tag="h4"
             modifier="subheading"
@@ -23,7 +24,8 @@
       <cdr-col span="6">
         <cdr-media-object
           img-src="http://placehold.it/50x50"
-          img-modifier="circle">
+          img-modifier="circle"
+        >
           <cdr-text
             tag="h4"
             modifier="subheading"
@@ -38,7 +40,8 @@
       <cdr-media-object
         img-src="http://placehold.it/250x50"
         img-modifier="circle responsive"
-        modifier="top center">
+        modifier="top center"
+      >
         <cdr-text
           tag="h4"
           modifier="subheading"
@@ -53,7 +56,8 @@
         img-src="http://placehold.it/250x50"
         img-modifier="rounded responsive"
         modifier="top right"
-        media-align="right">
+        media-align="right"
+      >
         <cdr-text
           tag="h4"
           modifier="subheading"
@@ -68,7 +72,8 @@
         img-src="http://placehold.it/50x50"
         img-modifier="rounded"
         modifier="top center"
-        media-align="center">
+        media-align="center"
+      >
         <cdr-text
           tag="h4"
           modifier="subheading"
@@ -89,4 +94,3 @@ export default {
   components: Components,
 };
 </script>
-

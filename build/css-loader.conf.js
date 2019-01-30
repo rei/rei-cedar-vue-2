@@ -1,5 +1,5 @@
 var config = require('../config')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // turn resourceQuery into an object
 function getQueryObj(query='') {
@@ -21,7 +21,6 @@ const defaultCssLoader = {
   loader: 'css-loader',
   options: {
     importLoaders: 1,
-    minimize: process.env.NODE_ENV === 'production',
     sourceMap: isProduction
     ? config.build.productionSourceMap
     : config.dev.cssSourceMap,
@@ -44,13 +43,11 @@ function genModuleLoaders(isModule) {
   const cssLoader = isModule ? moduleCssLoader : defaultCssLoader
 
   if(isProduction) {
-    return ExtractTextPlugin.extract({
-      use: [
+    return [
+        MiniCssExtractPlugin.loader,
         cssLoader,
         {loader:'postcss-loader', options: {sourceMap: true}},
-      ],
-      fallback: 'vue-style-loader'
-    });
+      ]
   }
 
   return [

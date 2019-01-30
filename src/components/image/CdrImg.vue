@@ -8,7 +8,8 @@
       :class="[coverClass, lazyClass, radiusClass]"
       :style="styleObject"
       aria-hidden="true"
-      v-bind="lazyAttrs"/>
+      v-bind="lazyAttrs"
+    />
     <img
       :class="[$style['cdr-media-frame__image'], $style['cdr-media-frame__image--hidden'], modifierClass, radiusClass]"
       :src="src"

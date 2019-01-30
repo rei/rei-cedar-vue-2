@@ -59,8 +59,8 @@ export default {
       return this.modifyClassName(this.baseClass, this.ctaStyle);
     },
     fullWidthClass() {
-      return this.fullWidth && !this.iconOnly ?
-        this.modifyClassName(this.baseClass, 'full-width') : null;
+      return this.fullWidth && !this.iconOnly
+        ? this.modifyClassName(this.baseClass, 'full-width') : null;
     },
     computedRel() {
       if (this.target === '_blank') {

@@ -43,7 +43,7 @@
         :id="`${id}-collapsible`"
       >
         <!-- @slot innerHTML on the inside of the accordion-item component -->
-        <slot/>
+        <slot />
       </div>
     </div>
   </div>

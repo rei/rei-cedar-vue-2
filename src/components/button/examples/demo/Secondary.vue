@@ -3,15 +3,17 @@
     <div
       class="button-example"
       v-for="(section, index) in data"
-      :key="index">
+      :key="index"
+    >
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         {{ section.title }}
       </cdr-text>
       <cdr-button
-        v-for="(button, index) in section.buttons"
-        :key="index"
+        v-for="(button, index2) in section.buttons"
+        :key="index2"
         :size="button.size"
         :full-width="button.fullWidth"
         :modifier="button.modifier"
@@ -23,7 +25,8 @@
     <div class="button-example">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Secondary Anchor
       </cdr-text>
       <cdr-button

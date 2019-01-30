@@ -1,8 +1,8 @@
 <template>
   <div>
-    <blockquotes data-backstop="blockquote"/>
+    <blockquotes data-backstop="blockquote" />
 
-    <pullquotes data-backstop="pullquote"/>
+    <pullquotes data-backstop="pullquote" />
   </div>
 </template>
 

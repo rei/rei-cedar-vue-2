@@ -2,13 +2,14 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Text
     </cdr-text>
 
-    <headings data-backstop="headings"/>
+    <headings data-backstop="headings" />
 
-    <paragraphs data-backstop="paragraphs"/>
+    <paragraphs data-backstop="paragraphs" />
   </div>
 </template>
 

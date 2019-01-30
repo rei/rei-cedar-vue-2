@@ -7,9 +7,12 @@ export default {
     computedTheme() {
       if (this.theme !== '') {
         return this.theme;
-      } else if (this.wrapperTheme && this.wrapperTheme.theme !== '') {
+      }
+
+      if (this.wrapperTheme && this.wrapperTheme.theme !== '') {
         return this.wrapperTheme.theme;
       }
+
       return false;
     },
     themeClass() {
