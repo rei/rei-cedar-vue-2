@@ -63,7 +63,6 @@ describe('CdrDataTable.vue', () => {
           colHeaders: true,
           rowHeaders: true,
           rowData: data.rowData,
-          id: "test",
         }
       });
 
@@ -77,7 +76,6 @@ describe('CdrDataTable.vue', () => {
           colHeaders: ['test', 'test2'],
           rowHeaders: ['test', 'test2'],
           rowData: data.rowData,
-          id: "test",
         }
       });
 
@@ -86,104 +84,196 @@ describe('CdrDataTable.vue', () => {
     });
 
     it('adds resize event watcher', (done) => {
-      const spy = sinon.spy(CdrDataTable.methods, 'checkScroll');
+      const checkScroll = sinon.spy(CdrDataTable.methods, 'checkScroll');
       
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: data.colHeaders,
           rowHeaders: data.rowHeaders,
           rowData: data.rowData,
-          id: "test",
-          caption: "Test"
-        }
+        },
+        computed: {
+          lockedCol: () => true,
+        },
+        methods: {
+          setRowsContentHeight: () => true,
+        },
       });
       
       window.dispatchEvent(new Event('resize'));
+      
       wrapper.vm.$nextTick(() => {
-        sinon.assert.called(spy);
+        sinon.assert.called(checkScroll);
         done()
       });
     });
+  });
 
-    describe('computed properties', () => {
-      it('fullScroll checks number of columns', () => {
-        const wrapper = shallowMount(CdrDataTable, {
-          propsData: {
-            colHeaders: ['col1', 'col2'],
-            rowHeaders: ['row1', 'row2'],
-            rowData: data.rowData,
-            keyOrder: ["xs", "sm"],
-            id: "test",
-          }
-        });
+  describe('computed properties', () => {
+    let wrapper;
 
-        expect(wrapper.vm.fullScroll).toBe(true);
-      });
-
-      it('fullScroll checks hasRowHeaders', () => {
-        const wrapper = shallowMount(CdrDataTable, {
-          propsData: {
-            colHeaders: ['col1', 'col2', 'col3'],
-            rowHeaders: false,
-            rowData: data.rowData,
-            keyOrder: ["xs", "sm", "m"],
-            id: "test",
-          }
-        });
-
-        expect(wrapper.vm.fullScroll).toBe(true);
-      });
-
-      it('isScrolling checks fullScroll', () => {
-        const wrapper = shallowMount(CdrDataTable, {
-          propsData: {
-            colHeaders: ['col1', 'col2', 'col3'],
-            rowHeaders: ['row1', 'row2', 'row3'],
-            rowData: data.rowData,
-            keyOrder: ["xs", "sm", "m"],
-            id: "test",
-          }
-        });
-
-        expect(wrapper.vm.isScrolling).toBe(false);
+    beforeEach(() => {
+      wrapper = shallowMount(CdrDataTable, {
+        propsData: {
+          colHeaders: ['col1', 'col2'],
+          rowHeaders: ['row1', 'row2'],
+          rowData: data.rowData,
+          keyOrder: ["xs", "sm"],
+        }
       });
     });
 
-    describe('methods', () => {
-      it('checkScroll sets clientWidth and scrollWidth', () => {
-        const wrapper = shallowMount(CdrDataTable, {
+    it('lockedCol checks number of columns and hasRowHeaders', () => {
+      wrapper.setData({
+        cols: 5,
+        hasRowHeaders: true,
+      });
+      
+      expect(wrapper.vm.lockedCol).toBe(true);
+    });
+
+    it('lockedCol checks that rowData prop is used', () => {
+      wrapper = shallowMount(CdrDataTable, {
+        propsData: {
+          colHeaders: ['col1', 'col2'],
+          rowHeaders: ['row1', 'row2'],
+          keyOrder: ["xs", "sm"],
+        },
+        slots: {
+          tbody: '<tr><td></td><td></td><td></td></tr>',
+        },
+      });
+
+      wrapper.setData({
+        cols: 5,
+        hasRowHeaders: true,
+      });
+      
+      expect(wrapper.vm.lockedCol).toBe(false);
+    });
+
+    it('isScrolling requires lockedCol to be true', () => {
+      wrapper = shallowMount(CdrDataTable, {
+        propsData: {
+          colHeaders: ['col1', 'col2', 'col3'],
+          rowHeaders: false,
+          rowData: data.rowData,
+          keyOrder: ["xs", "sm", "m"],
+        }
+      });
+
+      wrapper.setData({
+        clientWidth: 500,
+        scrollWidth: 700,
+      });
+
+      expect(wrapper.vm.isScrolling).toBe(false);
+    });
+
+    it('headerRowAlignHeight returns px height for empty cell align', () => {
+      wrapper.setData({
+        cols: 5,
+        hasRowHeaders: true,
+        headerRowHeight: 45,
+      });
+
+      expect(wrapper.vm.headerRowAlignHeight).toBe('46px');
+    });
+  });
+
+  describe('methods', () => {
+    it('checkScroll sets clientWidth and scrollWidth', () => {
+      const wrapper = shallowMount(CdrDataTable, {
+        propsData: {
+          colHeaders: ['col1', 'col2', 'col3'],
+          rowHeaders: ['row1', 'row2', 'row3'],
+          rowData: data.rowData,
+          keyOrder: ["xs", "sm", "m"],
+        }
+      });
+
+      wrapper.setData({
+        clientWidth: 500,
+        scrollWidth: 500,
+      });
+
+      wrapper.vm.checkScroll();
+      expect(wrapper.vm.clientWidth).not.toBe(500);
+      expect(wrapper.vm.scrollWidth).not.toBe(500);
+    });
+
+    it('getCellContent', () => {
+      const wrapper = shallowMount(CdrDataTable, {
+        propsData: {
+          colHeaders: ['col1', 'col2', 'col3'],
+          rowHeaders: ['row1', 'row2', 'row3'],
+          rowData: data.rowData,
+          keyOrder: ["xs", "sm", "m"],
+        }
+      });
+
+      expect(wrapper.vm.getCellContent({ a: 1, b: 2, c: 3 }, 'b')).toBe(2);
+    });
+
+    describe('getRowAlignHeight', () => {
+      let wrapper; 
+
+      beforeEach(() => {
+        wrapper = shallowMount(CdrDataTable, {
           propsData: {
             colHeaders: ['col1', 'col2', 'col3'],
             rowHeaders: ['row1', 'row2', 'row3'],
             rowData: data.rowData,
             keyOrder: ["xs", "sm", "m"],
-            id: "test",
           }
         });
-
-        wrapper.setData({
-          clientWidth: 500,
-          scrollWidth: 500,
-        });
-
-        wrapper.vm.checkScroll();
-        expect(wrapper.vm.clientWidth).not.toBe(500);
-        expect(wrapper.vm.scrollWidth).not.toBe(500);
       });
 
-      it('getCellContent', () => {
-        const wrapper = shallowMount(CdrDataTable, {
-          propsData: {
-            colHeaders: ['col1', 'col2', 'col3'],
-            rowHeaders: ['row1', 'row2', 'row3'],
-            rowData: data.rowData,
-            keyOrder: ["xs", "sm", "m"],
-            id: "test",
-          }
+      it('already aligned', () => {
+        wrapper.vm.$nextTick(() => {
+          // wait for next tick to finish setting up test
+          wrapper.setData({
+            rowHeights: [{ th: 25, td: 24 }],
+          });
+  
+          expect(wrapper.vm.getRowAlignHeight('th', 0)).toBe(null);
+        });
+      });
+
+      it('returns null when not the changing elem', () => {
+        wrapper.vm.$nextTick(() => {
+          wrapper.setData({
+            rowHeights: [{ th: 30, td: 12 }],
+          });
         });
 
-        expect(wrapper.vm.getCellContent({ a: 1, b: 2, c: 3 }, 'b')).toBe(2);
+        expect(wrapper.vm.getRowAlignHeight('th', 0)).toBe(null);
       });
+
+      xit('returns a pixel value', () => {
+        wrapper.vm.$nextTick(() => {
+          wrapper.setData({
+            rowHeights: [{ th: 30, td: 12 }],
+          });
+
+          expect(wrapper.vm.getRowAlignHeight('td', 0)).toBe('29px');
+        });
+
+        console.log(wrapper.vm.rowHeights);
+        console.log(wrapper.vm.getRowAlignHeight('td', 0));
+        expect(wrapper.vm.getRowAlignHeight('td', 0)).toBe('29px');
+      });
+    });
+
+    it('default functions for rowData, keyOrder prop', () => {
+      const wrapper = shallowMount(CdrDataTable, {
+        slots: {
+          tbody: '<tr><td></td><td></td><td></td></tr>',
+        },
+      });
+
+      expect(wrapper.vm.rowData).toEqual([]);
+      expect(wrapper.vm.keyOrder).toEqual([]);
     });
   });
 });
