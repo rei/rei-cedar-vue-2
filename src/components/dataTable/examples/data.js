@@ -62,36 +62,33 @@ const tableData = {
       xxxl: '32',
     },
   ],
-  books: {
-    headers: [
-      'Title',
-      'Year',
-      'Author',
-    ],
-    records: [
-      {
-        title: 'Book A',
-        year: 1823,
-        author: 'Mikey',
-        rowheader: 'row 1',
-      },
-      {
-        title: 'Book C',
-        year: 1532,
-        author: 'Joey',
-        rowheader: 'row 2',
-      },
-      {
-        title: 'Book E',
-        year: 1253,
-        author: 'Scotty',
-        rowheader: 'row 3',
-      },
-    ],
-  },
   scroll: {
     headers,
     records,
+  },
+  overflow: {
+    colHeaders: ['Col 1', 'Overflowing column header will widen column', 'Col 3', 'Col 4'],
+    rowHeaders: ['Row 1', 'Overflowing row header reaches three rows', 'Row 3'],
+    rowData: [
+      {
+        col1: 'Col',
+        col2: 'Col',
+        col3: 'Col',
+        col4: 'Col',
+      },
+      {
+        col1: 'Col',
+        col2: 'Col',
+        col3: 'Col',
+        col4: 'Col',
+      },
+      {
+        col1: 'Col',
+        col2: 'Col',
+        col3: 'Col',
+        col4: 'Overflowing cell data gets to three rows',
+      },
+    ],
   },
 };
 

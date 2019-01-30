@@ -12,14 +12,17 @@
     <div
       :class="[
         $style['cdr-data-table__scroll-container'],
-        { 'full-scroll': fullScroll },
+        { 'locked-col': lockedCol },
         { 'is-scrolling': isScrolling },
       ]"
       ref="scroll-container"
     >
       <table
-        :class="$style['cdr-data-table__content']"
-        :id="id"
+        :class="[
+          $style['cdr-data-table__content'],
+          { 'constrain-width': constrainWidth },
+        ]"
+        :id="id ? id : null"
       >
         <caption
           class="cdr-sr-only"
@@ -29,15 +32,18 @@
         </caption>
         <thead v-if="hasColHeaders">
           <slot name="thead">
-            <tr>
+            <tr
+              ref="row-col-headers"
+            >
               <th
                 class="empty"
                 v-show="hasRowHeaders"
                 scope="col"
+                :style="{ height: headerRowAlignHeight }"
               />
               <th
                 v-for="(header, index) in colHeaders"
-                :key="id + '_col-head_' + index"
+                :key="`header-row-col-${index}`"
                 scope="col"
               >
                 {{ header }}
@@ -49,18 +55,23 @@
         <tbody ref="table-body">
           <slot name="tbody">
             <tr
-              v-for="(row, index) in rowData"
-              :key="id + '_row_' + index"
+              v-for="(row, rowIndex) in rowData"
+              :key="`row-${rowIndex}`"
+              :ref="`row-${rowIndex}`"
             >
               <th
                 v-if="hasRowHeaders"
                 scope="row"
+                :ref="`row-${rowIndex}-th`"
+                :class="$style['align-row-header-content']"
+                :style="{ 'height': getRowAlignHeight('th', rowIndex) }"
               >
-                {{ rowHeaders[index] }}
+                {{ rowHeaders[rowIndex] }}
               </th>
               <td
-                v-for="(key, index2) in keyOrder"
-                :key="id + '_' + index2 + '_' + key"
+                v-for="(key, index) in keyOrder"
+                :key="`td-${index}-${key}`"
+                :style="{ 'height': getRowAlignHeight('td', rowIndex) }"
               >
                 {{ getCellContent(row, key) }}
               </td>
@@ -86,7 +97,7 @@ export default {
   props: {
     id: {
       type: String,
-      required: true,
+      required: false,
     },
     colHeaders: {
       type: [Array, Boolean],
@@ -98,7 +109,7 @@ export default {
     },
     rowData: {
       type: Array,
-      required: false,
+      default: () => [],
     },
     keyOrder: {
       type: Array,
@@ -108,6 +119,10 @@ export default {
       type: String,
       required: false,
     },
+    constrainWidth: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
@@ -116,17 +131,22 @@ export default {
       scrollWidth: 0,
       hasColHeaders: false,
       hasRowHeaders: false,
+      headerRowHeight: 0,
+      rowHeights: null,
     };
   },
   computed: {
     baseClass() {
       return 'cdr-data-table';
     },
-    fullScroll() {
-      return this.cols <= 2 || !this.rowHeaders;
+    lockedCol() {
+      return this.rowData.length > 0 && this.cols > 2 && this.hasRowHeaders;
     },
     isScrolling() {
-      return this.scrollWidth > this.clientWidth && !this.fullScroll;
+      return this.scrollWidth > this.clientWidth && this.lockedCol;
+    },
+    headerRowAlignHeight() {
+      return this.headerRowHeight ? `${this.headerRowHeight + 1}px` : this.headerRowHeight; /* eslint-disable-line */
     },
   },
   mounted() {
@@ -136,13 +156,24 @@ export default {
     this.hasRowHeaders = typeof this.rowHeaders === 'boolean'
       ? this.rowHeaders : this.rowHeaders.length > 0;
 
-    this.cols = this.$refs['table-body'].querySelector('tr').children.length;
+    if (this.rowData.length > 0) {
+      this.cols = this.$refs['row-0'][0].children.length;
+    }
 
-    this.checkScroll();
+    if (this.lockedCol) {
+      window.addEventListener('resize', debounce(() => {
+        this.rowHeights = null;
+        this.$nextTick(() => {
+          this.checkScroll();
+          this.setRowsContentHeight();
+        });
+      }, 250));
 
-    window.addEventListener('resize', debounce(() => {
-      this.checkScroll();
-    }, 250));
+      this.$nextTick(() => {
+        this.checkScroll();
+        this.setRowsContentHeight();
+      });
+    }
   },
   methods: {
     checkScroll() {
@@ -155,6 +186,47 @@ export default {
     },
     getCellContent(row, key) {
       return row[key] || '';
+    },
+    setRowsContentHeight() {
+      const rowContentHeights = [];
+      const numRows = this.rowData.length;
+
+      /* main table */
+      for (let i = 0; i < numRows; i += 1) {
+        const heights = {
+          th: this.$refs[`row-${i}`][0].children[0].offsetHeight || 1,
+          td: this.$refs[`row-${i}`][0].children[1].offsetHeight || 0,
+        };
+
+        rowContentHeights.push(heights);
+      }
+
+      if (this.hasColHeaders) {
+        this.headerRowHeight = this.$refs['row-col-headers'].children[1].offsetHeight;
+      }
+
+      this.rowHeights = rowContentHeights;
+    },
+    getRowAlignHeight(elem, index) {
+      // The idea here is only to return a height when it needs it, otherwise return null
+      if (this.rowHeights === null) {
+        return null;
+      }
+
+      const row = this.rowHeights[index];
+      const alreadyAligned = row ? row.th - row.td === 1 : true;
+
+      if (alreadyAligned) {
+        return null;
+      }
+
+      const elemToChange = row.th > row.td ? 'td' : 'th';
+
+      if (elem !== elemToChange) {
+        return null;
+      }
+
+      return elemToChange === 'td' ? `${row.th - 1}px` : `${row.td + 1}px`;
     },
   },
 };

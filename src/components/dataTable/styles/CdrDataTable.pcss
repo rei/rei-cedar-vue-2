@@ -21,10 +21,10 @@
   }
 
   &__scroll-container {
-    margin-left: 150px;
+    /* margin-left: 150px; */
     overflow-x: auto;
 
-    &:global(.full-scroll) {
+    /* &:global(.full-scroll) {
       margin-left: 0;
 
       .cdr-data-table__content {
@@ -32,6 +32,26 @@
         tbody th {
           position: relative;
         }
+      }
+    }
+    */
+    
+    &:global(.locked-col) {
+      margin-left: 150px;
+
+      @mixin lockedColTh() {
+        border-right: 2px solid $grey-matter;
+        left: 0;
+        position: absolute;
+        width: 150px;
+      }
+
+      thead tr th:first-child {
+        @include lockedColTh();
+      }
+
+      tbody tr th {
+        @include lockedColTh();
       }
     }
 
@@ -58,22 +78,20 @@
       color: $heart-of-darkness;
       padding: $inset-1-x;
       text-align: left;
+      min-width: 127px;
     }
 
-    td {
-      min-width: 127px;
-      max-width: 150px;
-
+    /* td {
       &:not(:first-of-type) {
         text-align: left;
       }
-    }
+    } */
 
-    @mixin lockedColTh() {
-      border-right: 2px solid $grey-matter;
-      left: 0;
-      position: absolute;
-      width: 150px;
+    &:global(.constrain-width) {
+      th,
+      td {
+        max-width: 150px;
+      }
     }
 
     thead {
@@ -82,12 +100,7 @@
 
         /* empty column header, row header column */
         &[class^=empty] {
-          @include lockedColTh();
-
-          /* Ensure empty top right left cell has same line height */
-          &::before {
-            content: '\a0';
-          }
+          border-right: 2px solid $grey-matter;
         }
       }
     }
@@ -101,10 +114,17 @@
             background-color: $the-tooth;
           }
         }
+
+        th {
+          min-width: 150px;
+          border-right: 2px solid $grey-matter;
+        }
       }
 
-      th {
-        @include lockedColTh();
+      .align-row-header-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
       }
     }
   }
