@@ -1,6 +1,6 @@
 <template>
   <section
-    :class="[modifierClass]"
+    :class="[$style['cdr-card-intro'], contentSpaceClass]"
   >
     <div
       v-if="$slots.category || category"
@@ -53,7 +53,6 @@
 import { CdrText } from '@rei/cdr-text';
 import { CdrList } from '@rei/cdr-list';
 import { CdrRating } from '@rei/cdr-rating';
-import modifier from 'mixinsdir/modifier';
 
 export default {
   name: 'CdrCardIntro',
@@ -62,7 +61,6 @@ export default {
     CdrList,
     CdrRating,
   },
-  mixins: [modifier],
   props: {
     category: {
       type: String,
@@ -82,10 +80,9 @@ export default {
       type: String,
       required: true,
     },
-  },
-  computed: {
-    baseClass() {
-      return 'cdr-card-intro';
+    contentSpaceClass: {
+      type: String,
+      default: 'cdr-inset-1-x',
     },
   },
 };

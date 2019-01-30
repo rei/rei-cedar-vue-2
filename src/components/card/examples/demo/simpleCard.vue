@@ -5,18 +5,21 @@
         tag="h2"
         modifier="heading-small"
         class="cdr-text-right">
-        Card
+        Simple Card
       </cdr-text>
     </cdr-col>
     <cdr-col span="4">
-      <cdr-card
-        :card-img-props="{
-          'src':'https://picsum.photos/200/300',
-          'ratio': '16-9',
-          'cover': true,
-          'alt': 'this is the alt text for your image'
-        }"
-      />
+      <cdr-card>
+        <cdr-text
+          tag="strong"
+          modifier="heading-small"
+        >
+          Card as a wrapper
+        </cdr-text>
+        <cdr-text>
+          This card is passed custom tags defined by a user and does not follow desing guidelines.
+        </cdr-text>
+      </cdr-card>
     </cdr-col>
     <cdr-col span="4" />
     <cdr-col span="4">
@@ -24,18 +27,62 @@
         tag="h2"
         modifier="heading-small"
         class="cdr-text-right">
-        Card with Card Intro
+        Card
       </cdr-text>
     </cdr-col>
     <cdr-col span="4">
       <cdr-card
-        :card-img-props="{
-          'src':'https://picsum.photos/200/300',
-          'ratio': '16-9',
-          'cover': true,
-          'alt': 'this is the alt text for your image'
-        }"
+        modifier="article"
       >
+        <cdr-card-media
+          media-space-class="cdr-inset-1-x"
+          :card-img-props="{
+            'src':'https://picsum.photos/200/300',
+            'ratio': '16-9',
+            'cover': true,
+            'alt': 'this is the alt text for your image'
+          }"
+        />
+      </cdr-card>
+    </cdr-col>
+    <cdr-col
+      span="4"
+      class="cdr-bg--dark"
+    >
+      <cdr-card
+        modifier="article"
+      >
+        <cdr-card-media
+          media-space-class="cdr-inset-1-x"
+          :card-img-props="{
+            'src':'https://picsum.photos/200/300',
+            'ratio': '16-9',
+            'cover': true,
+            'alt': 'this is the alt text for your image'
+          }"
+        />
+      </cdr-card>
+    </cdr-col>
+    <cdr-col span="4">
+      <cdr-text
+        tag="h2"
+        modifier="heading-small"
+        class="cdr-text-right">
+        article Card with Card Intro
+      </cdr-text>
+    </cdr-col>
+    <cdr-col span="4">
+      <cdr-card
+        modifier="article"
+      >
+        <cdr-card-media
+          :card-img-props="{
+            'src':'https://picsum.photos/200/300',
+            'ratio': '16-9',
+            'cover': true,
+            'alt': 'this is the alt text for your image'
+          }"
+        />
         <cdr-card-intro
           :rating-props="{
             'rating':'3.5',

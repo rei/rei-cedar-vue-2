@@ -3,6 +3,7 @@ import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
 import CdrButton from 'componentsdir/button/CdrButton';
 import CdrCard from 'componentsdir/card/CdrCard';
 import CdrCardIntro from 'componentsdir/card/CdrCardIntro';
+import CdrCardMedia from 'componentsdir/card/CdrCardMedia';
 import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
 import CdrCol from 'componentsdir/grid/CdrCol';
 import CdrCta from 'componentsdir/cta/CdrCta';
@@ -34,6 +35,7 @@ export default {
   CdrButton,
   CdrCard,
   CdrCardIntro,
+  CdrCardMedia,
   CdrCheckbox,
   CdrCol,
   CdrCta,

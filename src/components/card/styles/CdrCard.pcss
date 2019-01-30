@@ -16,55 +16,47 @@
   box-shadow: 0 3px 8px rgba(26, 26, 26, 0.2);
   color: $card-color;
   width: $card-width;
-  position: relative;
-  transition: transform 500ms ease, box-shadow 500ms ease;
-
-  /* States
-    ---------- */
-
-  &:hover {
-    box-shadow: $prominence-floating;
-    transform: scale(1.006);
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $easily-excited;
-    text-decoration: underline;
-  }
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-    height: 100%;
-    left: 0;
-    top: 0;
-    transition: trasparent 0.1s ease-out;
-    background-color: trasparent;
-  }
   
-  /* Action
-    ========== */
-
-  &__action {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* image
-    ========== */
-
   &__media {
     border-top-left-radius: $radius-soft;
     border-top-right-radius: $radius-soft;
   }
-  
-  &__container {
-    padding: $space-1-x;
+
+  &--article,
+  &--adventure,
+  &--event {
+    position: relative;
+    transition: transform 500ms ease, box-shadow 500ms ease;
+
+    &:hover {
+      box-shadow: $prominence-floating;
+      transform: scale(1.006);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $easily-excited;
+      text-decoration: underline;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      height: 100%;
+      left: 0;
+      top: 0;
+      transition: trasparent 0.1s ease-out;
+      background-color: trasparent;
+    }
+
+    &__action {
+      position: relative;
+      z-index: 1;
+    }
   }
 }
 
