@@ -2,11 +2,12 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Buttons
     </cdr-text>
-    <default-buttons/>
-    <secondary-buttons/>
+    <default-buttons />
+    <secondary-buttons />
     <icon-buttons />
   </div>
 </template>
@@ -33,4 +34,3 @@ export default {
     padding: 10px;
   }
 </style>
-

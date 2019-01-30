@@ -5,16 +5,24 @@
       cols="1 4@sm"
     >
       <cdr-col>
-        <div class="row-demo">One</div>
+        <div class="row-demo">
+          One
+        </div>
       </cdr-col>
       <cdr-col cols="7">
-        <div class="row-demo">Two</div>
+        <div class="row-demo">
+          Two
+        </div>
       </cdr-col>
       <cdr-col>
-        <div class="row-demo">Three</div>
+        <div class="row-demo">
+          Three
+        </div>
       </cdr-col>
       <cdr-col>
-        <div class="row-demo">Four</div>
+        <div class="row-demo">
+          Four
+        </div>
       </cdr-col>
       <cdr-col
         span="12"
@@ -38,13 +46,19 @@
             cols="1 2@sm"
           >
             <cdr-col>
-              <div class="row-demo">Six</div>
+              <div class="row-demo">
+                Six
+              </div>
             </cdr-col>
             <cdr-col>
-              <div class="row-demo">Seven</div>
+              <div class="row-demo">
+                Seven
+              </div>
             </cdr-col>
             <cdr-col span="12">
-              <div class="row-demo">Eight</div>
+              <div class="row-demo">
+                Eight
+              </div>
             </cdr-col>
           </cdr-col>
           <cdr-col

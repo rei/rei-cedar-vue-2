@@ -15,6 +15,7 @@ function resolve(dir) {
 }
 
 module.exports = merge(baseWebpackConfig, {
+  mode: 'development',
   entry: [
     'webpack-hot-middleware/client?noInfo=true&reload=true',
     path.resolve(__dirname, '../src/dev.js')

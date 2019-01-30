@@ -3,7 +3,8 @@
   <!-- eslint-disable max-len -->
   <transition
     name="fly"
-    v-on="animationHooks">
+    v-on="animationHooks"
+  >
     <div
       v-show="active"
       :aria-hidden="!active"
@@ -12,8 +13,9 @@
       tabindex="0"
       role="tabpanel"
       @keydown.up.prevent="handleUpArrowNav"
-      :key="name">
-      <slot/>
+      :key="name"
+    >
+      <slot />
     </div>
   </transition>
 </template>

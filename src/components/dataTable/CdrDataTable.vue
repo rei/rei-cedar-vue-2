@@ -150,11 +150,11 @@ export default {
     },
   },
   mounted() {
-    this.hasColHeaders = typeof this.colHeaders === 'boolean' ?
-      this.colHeaders : this.colHeaders.length > 0;
+    this.hasColHeaders = typeof this.colHeaders === 'boolean'
+      ? this.colHeaders : this.colHeaders.length > 0;
 
-    this.hasRowHeaders = typeof this.rowHeaders === 'boolean' ?
-      this.rowHeaders : this.rowHeaders.length > 0;
+    this.hasRowHeaders = typeof this.rowHeaders === 'boolean'
+      ? this.rowHeaders : this.rowHeaders.length > 0;
 
     if (this.rowData.length > 0) {
       this.cols = this.$refs['row-0'][0].children.length;

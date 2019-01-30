@@ -14,13 +14,11 @@ before_install:
   # - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get update ; fi
   # - if [ "$TRAVIS_OS_NAME" == "linux" ]; then wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb; fi
   # - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo dpkg -i google-chrome*.deb; fi
-  - npm install -g lerna --cache-min 999999999
   - npm i -g npm
 install:
   - npm install
-  - lerna bootstrap
 before_script:
-  - lerna run build
+  - npm run start
 script: 
   - npm run check-version
   - npm run lint

@@ -14,4 +14,3 @@ const compWebpack = {
 build(info, {}, compWebpack).then(() => {
   extract(['CdrButton'], info, '<cdr-button>Button</cdr-button>');
 });
-

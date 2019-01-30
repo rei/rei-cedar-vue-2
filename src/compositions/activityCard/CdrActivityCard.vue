@@ -49,7 +49,8 @@
           :class="$style['cdr-card--activity__rating']"
           :rating="rating"
           :count="count"
-          modifier="medium"/>
+          modifier="medium"
+        />
       </cdr-media-object>
     </section>
   </cdr-card>
@@ -58,7 +59,6 @@
 <script>
 import { CdrCard } from '@rei/cdr-card';
 import { CdrText } from '@rei/cdr-text';
-import { cdrImg } from '@rei/cdr-img';
 import { CdrMediaObject } from '@rei/cdr-media-object';
 import { CdrRating } from '@rei/cdr-rating';
 import { CdrList } from '@rei/cdr-list';
@@ -75,7 +75,6 @@ export default {
   components: {
     CdrCard,
     CdrText,
-    cdrImg,
     CdrMediaObject,
     CdrRating,
     CdrList,

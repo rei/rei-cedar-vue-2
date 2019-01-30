@@ -2,7 +2,8 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Blockquote
     </cdr-text>
     <cdr-quote
@@ -17,7 +18,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading">
+      modifier="subheading"
+    >
       Summary only
     </cdr-text>
     <cdr-quote
@@ -30,7 +32,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading">
+      modifier="subheading"
+    >
       Citation only
     </cdr-text>
     <cdr-quote
@@ -39,7 +42,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading">
+      modifier="subheading"
+    >
       Nested blockquote
     </cdr-text>
     <cdr-quote
@@ -47,9 +51,11 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
       At perferendis reiciendis sapiente delectus commodi eaque sunt aperiam
       ex aliquam. Temporibus, veritatis laudantium molestiae accusamus asperiores
-      odio fuga reiciendis blanditiis magni?">
+      odio fuga reiciendis blanditiis magni?"
+    >
       <cdr-quote
-        citation="bob">
+        citation="bob"
+      >
         <cdr-text>
           consectetur adipisicing elit. At perferendis reiciendis
           sapiente delectus commodi eaque sunt aperiam ex aliquam.

@@ -1,7 +1,8 @@
 <template>
   <div
     class="cdr-container container-test cdr-text-center"
-    data-backstop="utility-container">Container test</div>
+    data-backstop="utility-container"
+  >Container test</div>
 </template>
 
 <script>

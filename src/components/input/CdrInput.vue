@@ -8,15 +8,17 @@
     >{{ label }}
       <span
         v-if="required"
-        :class="$style['cdr-input__required-label']">
+        :class="$style['cdr-input__required-label']"
+      >
         Required
       </span>
     </label>
     <!-- @slot for information -->
     <span
       v-if="$slots.info"
-      :class="$style['cdr-input__info-container']">
-      <slot name="info"/>
+      :class="$style['cdr-input__info-container']"
+    >
+      <slot name="info" />
     </span>
     <div :class="[inputWrapClass]">
       <textarea
@@ -56,20 +58,23 @@
       <!-- @slot Icon to be put in front of input -->
       <span
         v-if="$slots['pre-icon']"
-        :class="$style['cdr-input__pre-icon']">
-        <slot name="pre-icon"/>
+        :class="$style['cdr-input__pre-icon']"
+      >
+        <slot name="pre-icon" />
       </span>
       <!-- @slot Icon to be put at end of input -->
       <span
         v-if="$slots['post-icon']"
-        :class="$style['cdr-input__post-icon']">
-        <slot name="post-icon"/>
+        :class="$style['cdr-input__post-icon']"
+      >
+        <slot name="post-icon" />
       </span>
     </div>
     <div
       v-if="$slots['helper-text']"
-      :class="$style['cdr-input__helper-text']">
-      <slot name="helper-text"/>
+      :class="$style['cdr-input__helper-text']"
+    >
+      <slot name="helper-text" />
     </div>
   </div>
 </template>

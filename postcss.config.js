@@ -1,6 +1,6 @@
+const process = require('process');
 const createResolver = require('postcss-import-webpack-resolver');
 const webpackConfig = require('./build/webpack.base.conf.js');
-const process = require('process');
 
 module.exports = {
   syntax: 'postcss-scss',
@@ -20,7 +20,6 @@ module.exports = {
     'postcss-nested': {},
     'postcss-media-minmax': {},
     'postcss-custom-media': {},
-    'postcss-responsive-type': {},
     'postcss-pxtorem': {
       rootValue: 10,
       unitPrecision: 5,

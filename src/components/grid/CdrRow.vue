@@ -12,7 +12,7 @@
       nowrapClass,
     ]"
   >
-    <slot/>
+    <slot />
   </component>
 </template>
 

@@ -2,7 +2,8 @@
   <div class="breadcrumb-demo-container">
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
@@ -10,7 +11,8 @@
     />
     <cdr-text
       tag="h3"
-      modifier="subheading">
+      modifier="subheading"
+    >
       Short Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
@@ -18,7 +20,8 @@
     />
     <cdr-text
       tag="h3"
-      modifier="subheading">
+      modifier="subheading"
+    >
       Super Long Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
@@ -26,7 +29,8 @@
     />
     <cdr-text
       tag="h3"
-      modifier="subheading">
+      modifier="subheading"
+    >
       REI.com's Longest Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
@@ -184,4 +188,3 @@ export default {
 
 <style>
 </style>
-

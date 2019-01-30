@@ -2,7 +2,8 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Selects
     </cdr-text>
 
@@ -11,7 +12,9 @@
       v-model="selected"
       disabled
     >
-      <option value="1">1</option>
+      <option value="1">
+        1
+      </option>
     </cdr-select>
     <cdr-text>Selected: {{ selected }}</cdr-text>
 
@@ -20,10 +23,18 @@
       v-model="selected"
       prompt="Choose one"
     >
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="1">
+        1
+      </option>
+      <option value="2">
+        2
+      </option>
+      <option value="3">
+        3
+      </option>
+      <option value="4">
+        4
+      </option>
     </cdr-select>
     <cdr-text>Selected: {{ selected }}</cdr-text>
 
@@ -33,10 +44,18 @@
       prompt="Choose one"
       required
     >
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="1">
+        1
+      </option>
+      <option value="2">
+        2
+      </option>
+      <option value="3">
+        3
+      </option>
+      <option value="4">
+        4
+      </option>
     </cdr-select>
     <cdr-text>Selected: {{ selected }}</cdr-text>
 
@@ -46,10 +65,18 @@
       v-model="selected"
       prompt="Hidden label"
     >
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="1">
+        1
+      </option>
+      <option value="2">
+        2
+      </option>
+      <option value="3">
+        3
+      </option>
+      <option value="4">
+        4
+      </option>
     </cdr-select>
     <cdr-text>Selected: {{ selected }}</cdr-text>
 
@@ -57,10 +84,18 @@
       label="No Prompt"
       v-model="selected2"
     >
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="1">
+        1
+      </option>
+      <option value="2">
+        2
+      </option>
+      <option value="3">
+        3
+      </option>
+      <option value="4">
+        4
+      </option>
     </cdr-select>
     <cdr-text>Selected: {{ selected2 }}</cdr-text>
 
@@ -78,10 +113,18 @@
       size="4"
       prompt="Choose two"
     >
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="1">
+        1
+      </option>
+      <option value="2">
+        2
+      </option>
+      <option value="3">
+        3
+      </option>
+      <option value="4">
+        4
+      </option>
     </cdr-select>
     <cdr-text>selected: {{ multiple }}</cdr-text>
 

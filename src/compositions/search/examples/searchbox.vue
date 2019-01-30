@@ -2,32 +2,37 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Searchbox
     </cdr-text>
 
     <cdr-search
       v-model="search1"
-      :click="search"/>
+      :click="search"
+    />
     <cdr-text>Searching: {{ search1 }}</cdr-text>
 
     <cdr-search
       v-model="search1"
       :click="search"
-      large/>
+      large
+    />
     <cdr-text>Searching: {{ search1 }}</cdr-text>
 
     <cdr-search
       v-model="search2"
       :click="search"
-      bare/>
+      bare
+    />
     <cdr-text>Searching: {{ search2 }}</cdr-text>
 
     <cdr-search
       v-model="search2"
       :click="search"
       bare
-      large/>
+      large
+    />
     <cdr-text>Searching: {{ search2 }}</cdr-text>
   </div>
 </template>

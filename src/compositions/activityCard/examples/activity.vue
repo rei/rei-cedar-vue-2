@@ -2,7 +2,8 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Activity Card
     </cdr-text>
 
@@ -29,4 +30,3 @@ export default {
   components: { ...Components, CdrActivityCard },
 };
 </script>
-

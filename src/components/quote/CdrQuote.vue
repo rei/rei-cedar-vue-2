@@ -5,7 +5,8 @@
   >
     <p
       v-if="summary"
-      :class="$style['cdr-quote__summary']">
+      :class="$style['cdr-quote__summary']"
+    >
       {{ summary }}
     </p>
     <slot />

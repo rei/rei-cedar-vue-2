@@ -13,8 +13,8 @@
             scope="row"
           >{{ tableData.rowHeaders[index] }}</th>
           <td
-            v-for="(key, index) in ['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']"
-            :key="index"
+            v-for="(key, index2) in ['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']"
+            :key="index2"
           >{{ row[key] }}
           </td>
         </tr>

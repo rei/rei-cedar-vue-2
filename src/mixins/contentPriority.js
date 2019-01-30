@@ -9,8 +9,7 @@ export default {
     contentPriority: {
       type: String,
       default: 'primary',
-      validator: value =>
-        ['primary', 'secondary', 'tertiary'].indexOf(value) >= 0 || false,
+      validator: value => ['primary', 'secondary', 'tertiary'].indexOf(value) >= 0 || false,
     },
   },
   computed: {

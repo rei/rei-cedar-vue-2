@@ -2,7 +2,8 @@
   <div data-backstop="inline-space-utilities">
     <cdr-text
       tag="h2"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Inline space classes
     </cdr-text>
     <cdr-card class="example">

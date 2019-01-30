@@ -8,7 +8,8 @@
       iconClass,
     ]"
     :type="tag === 'button' ? type : null"
-    @click="onClick">
+    @click="onClick"
+  >
     <!-- @slot for icon -->
     <slot name="icon" />
     <!-- @slot innerHTML on the inside of the button component -->
@@ -105,8 +106,8 @@ export default {
       return classes.join(' ');
     },
     fullWidthClass() {
-      return this.fullWidth && !this.iconOnly ?
-        this.modifyClassName(this.baseClass, 'full-width') : null;
+      return this.fullWidth && !this.iconOnly
+        ? this.modifyClassName(this.baseClass, 'full-width') : null;
     },
   },
 };

@@ -3,47 +3,54 @@
     <div
       class="button-example"
       v-for="(section, index) in data"
-      :key="index">
+      :key="index"
+    >
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         {{ section.title }}
       </cdr-text>
       <cdr-button
-        v-for="(button, index) in section.buttons"
-        :key="index"
+        v-for="(button, index2) in section.buttons"
+        :key="index2"
         :size="button.size"
         :full-width="button.fullWidth"
         :type="button.type"
         :disabled="button.disabled"
-        :data-backstop="button.backstop ? button.backstop : null">
+        :data-backstop="button.backstop ? button.backstop : null"
+      >
         {{ button.label }}
       </cdr-button>
     </div>
     <div class="button-example">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Responsive
       </cdr-text>
       <cdr-button
         :on-click="log"
         :full-width="true"
-        size="large@sm">
+        size="large@sm"
+      >
         Responsive with default
       </cdr-button>
     </div>
     <div class="button-example">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Primary Anchor
       </cdr-text>
       <cdr-button
         tag="a"
         href="https://rei.com"
         size="large"
-        data-backstop="cdr-button--anchor">
+        data-backstop="cdr-button--anchor"
+      >
         Link
       </cdr-button>
     </div>

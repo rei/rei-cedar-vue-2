@@ -17,7 +17,8 @@
           ref="prev-link"
         ><icon-caret-left
           :class="$style['cdr-pagination__caret--prev']"
-          size="small" />Prev</a>
+          size="small"
+        />Prev</a>
       </li>
       <!-- Desktop -->
       <li
@@ -36,6 +37,7 @@
           :aria-current="n.page === localCurrent"
           @click="navigate(n.page, $event)"
         >{{ n.page }}</a>
+        <!-- eslint-disable vue/no-v-html -->
         <span
           v-else
           :class="$style['cdr-pagination__ellipse']"
@@ -52,6 +54,7 @@
           :class="$style['cdr-pagination__select']"
           ref="select"
         >
+          <!-- eslint-disable vue/no-use-v-if-with-v-for -->
           <option
             v-for="n in paginationData"
             :key="`${n}-${guid()}`"
@@ -74,7 +77,8 @@
           ref="next-link"
         >Next<icon-caret-right
           :class="$style['cdr-pagination__caret--next']"
-          size="small" />
+          size="small"
+        />
         </a>
       </li>
     </ul>
@@ -117,7 +121,7 @@ export default {
           || typeof obj.page !== 'number') {
             console.error('Property "page" is missing or is not a number', obj); // eslint-disable-line
             return false;
-          } else if (!Object.prototype.hasOwnProperty.call(obj, 'url')
+          } if (!Object.prototype.hasOwnProperty.call(obj, 'url')
           || typeof obj.url !== 'string') {
             console.error('Property "url" is missing or is not a string', obj); // eslint-disable-line
             return false;

@@ -36,8 +36,8 @@
             scope="row"
           >{{ tableData.overflow.rowHeaders[index] }}</th>
           <td
-            v-for="(key, index) in ['col1', 'col2', 'col3', 'col4']"
-            :key="index"
+            v-for="(key, index2) in ['col1', 'col2', 'col3', 'col4']"
+            :key="index2"
           >{{ row[key] }}
           </td>
         </tr>

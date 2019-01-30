@@ -2,7 +2,8 @@
   <div>
     <cdr-text
       tag="h3"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Headings
     </cdr-text>
 
@@ -13,7 +14,9 @@
       modifier="display"
     >Display Heading h{{ n }}</cdr-text>
 
-    <cdr-text modifier="display-static">Static display heading as p</cdr-text>
+    <cdr-text modifier="display-static">
+      Static display heading as p
+    </cdr-text>
 
     <cdr-text
       v-for="n in 6"
@@ -29,7 +32,9 @@
       modifier="heading-large"
     >Heading-large  h{{ n }}</cdr-text>
 
-    <cdr-text modifier="heading-large-static">Static heading-large as p</cdr-text>
+    <cdr-text modifier="heading-large-static">
+      Static heading-large as p
+    </cdr-text>
 
     <cdr-text
       v-for="n in 6"
@@ -38,7 +43,9 @@
       modifier="heading-medium"
     >Heading-medium  h{{ n }}</cdr-text>
 
-    <cdr-text modifier="heading-medium-static">Static heading-medium as p</cdr-text>
+    <cdr-text modifier="heading-medium-static">
+      Static heading-medium as p
+    </cdr-text>
 
     <cdr-text
       v-for="n in 6"
@@ -47,7 +54,9 @@
       modifier="heading-small"
     >Heading-small  h{{ n }}</cdr-text>
 
-    <cdr-text modifier="heading-small-static">Static heading-small as p</cdr-text>
+    <cdr-text modifier="heading-small-static">
+      Static heading-small as p
+    </cdr-text>
   </div>
 </template>
 

@@ -49,9 +49,11 @@ export default {
     getCurrentBreakpoint() {
       if (this.isSM()) {
         return 'SM';
-      } else if (this.isMD()) {
+      }
+      if (this.isMD()) {
         return 'MD';
-      } else if (this.isLG()) {
+      }
+      if (this.isLG()) {
         return 'LG';
       }
       return 'XS';

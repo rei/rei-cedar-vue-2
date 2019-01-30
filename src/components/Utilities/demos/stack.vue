@@ -2,7 +2,8 @@
   <div data-backstop="stack-space-utilities">
     <cdr-text
       tag="h2"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Stack classes
     </cdr-text>
 

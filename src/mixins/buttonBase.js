@@ -38,8 +38,8 @@ export default {
   },
   computed: {
     fullWidthClass() {
-      return this.fullWidth && !this.iconOnly ?
-        this.modifyClassName(this.baseClass, 'full-width') : null;
+      return this.fullWidth && !this.iconOnly
+        ? this.modifyClassName(this.baseClass, 'full-width') : null;
     },
   },
 };
