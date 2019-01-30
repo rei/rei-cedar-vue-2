@@ -23,7 +23,7 @@
     "build:transfer": "node build/component-docs-transfer.js",
     "create": "node generator.js",
     "clean": "lerna clean",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --no-ci",
     "start": "lerna bootstrap && lerna run build && npm run component-css",
     "check-version": "node check-version.js",
     "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
