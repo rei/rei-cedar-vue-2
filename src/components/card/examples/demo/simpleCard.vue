@@ -4,7 +4,8 @@
       <cdr-text
         tag="h2"
         modifier="heading-small"
-        class="cdr-text-right">
+        class="cdr-text-right"
+      >
         Simple Card
       </cdr-text>
     </cdr-col>
@@ -26,7 +27,8 @@
       <cdr-text
         tag="h2"
         modifier="heading-small"
-        class="cdr-text-right">
+        class="cdr-text-right"
+      >
         Card
       </cdr-text>
     </cdr-col>
@@ -45,29 +47,13 @@
         />
       </cdr-card>
     </cdr-col>
-    <cdr-col
-      span="4"
-      class="cdr-bg--dark"
-    >
-      <cdr-card
-        modifier="article"
-      >
-        <cdr-card-media
-          media-space-class="cdr-inset-1-x"
-          :card-img-props="{
-            'src':'https://picsum.photos/200/300',
-            'ratio': '16-9',
-            'cover': true,
-            'alt': 'this is the alt text for your image'
-          }"
-        />
-      </cdr-card>
-    </cdr-col>
+    <cdr-col span="4" />
     <cdr-col span="4">
       <cdr-text
         tag="h2"
         modifier="heading-small"
-        class="cdr-text-right">
+        class="cdr-text-right"
+      >
         article Card with Card Intro
       </cdr-text>
     </cdr-col>
@@ -93,8 +79,12 @@
           :snapshot="['7.5 mi', 'out & back', '286 ft Ele Gain']"
           url="https://www.rei.com"
         >
-          <span slot="category"> some other place </span>
-          <span slot="heading"> bob </span>
+          <span slot="category">
+            some other place
+          </span>
+          <span slot="heading">
+            bob
+          </span>
         </cdr-card-intro>
       </cdr-card>
     </cdr-col>
@@ -110,3 +100,5 @@ export default {
   },
 };
 </script>
+<style>
+</style>

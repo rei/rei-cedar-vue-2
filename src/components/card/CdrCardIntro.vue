@@ -1,3 +1,4 @@
+
 <template>
   <section
     :class="[$style['cdr-card-intro'], contentSpaceClass]"
@@ -6,7 +7,9 @@
       v-if="$slots.category || category"
       :class="$style['cdr-card-intro__category']"
     >
-      <slot name="category">{{ category }}</slot>
+      <slot name="category">
+        {{ category }}
+      </slot>
     </div>
     <cdr-text
       v-if="$slots.heading || heading"
@@ -17,7 +20,9 @@
         :class="[$style['cdr-card-intro__heading'], $style['cdr-card-intro__heading--action']]"
         :href="url"
       >
-        <slot name="heading">{{ heading }}</slot>
+        <slot name="heading">
+          {{ heading }}
+        </slot>
       </a>
     </cdr-text>
     <cdr-list
@@ -27,7 +32,8 @@
     >
       <li
         v-for="item in snapshot"
-        :key="item.id">
+        :key="item.id"
+      >
         <!-- We have a slot for each item, passing it the -->
         <!-- `item` object as a slot prop.                 -->
         <slot :item="item">
@@ -43,7 +49,8 @@
       <cdr-rating
         v-if="ratingProps"
         v-bind="ratingProps"
-        modifier="medium" />
+        modifier="medium"
+      />
       <slot name="rating" />
     </div>
   </section>
@@ -93,4 +100,3 @@ export default {
   @import './styles/vars/CdrCard.vars.pcss';
   @import './styles/CdrCard.pcss';
 </style>
-
