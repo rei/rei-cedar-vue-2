@@ -9,7 +9,7 @@ export default {
     computedTheme() {
       if (this.theme !== '') {
         return this.theme;
-      } else if (this.wrapperTheme !== '') {
+      } if (this.wrapperTheme !== '') {
         return this.wrapperTheme;
       }
       return false;
