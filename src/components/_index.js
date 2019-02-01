@@ -10,7 +10,6 @@ import CdrCta from 'componentsdir/cta/CdrCta';
 import CdrIcon from 'componentsdir/icon/CdrIcon';
 import CdrImg from 'componentsdir/image/CdrImg';
 import CdrInput from 'componentsdir/input/CdrInput';
-import CdrLayout from 'componentsdir/layout/CdrLayout';
 import CdrList from 'componentsdir/list/CdrList';
 import CdrMediaObject from 'componentsdir/mediaObject/CdrMediaObject';
 import CdrPagination from 'componentsdir/pagination/CdrPagination';
@@ -42,7 +41,6 @@ export default {
   CdrIcon,
   CdrImg,
   CdrInput,
-  CdrLayout,
   CdrList,
   CdrMediaObject,
   CdrPagination,

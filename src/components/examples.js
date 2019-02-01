@@ -8,7 +8,6 @@ import grid from 'componentsdir/grid/examples/Grid';
 import icons from 'componentsdir/icon/examples/Icons';
 import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
-import layouts from 'componentsdir/layout/examples/Layout';
 import lists from 'componentsdir/list/examples/Lists';
 import mediaObject from 'componentsdir/mediaObject/examples/mediaObject';
 import pagination from 'componentsdir/pagination/examples/Pagination';
@@ -36,7 +35,6 @@ export default {
   icons,
   images,
   inputs,
-  layouts,
   lists,
   mediaObject,
   pagination,

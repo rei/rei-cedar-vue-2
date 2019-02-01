@@ -7,7 +7,6 @@ import DataTables from 'componentsdir/dataTable/examples/DataTable';
 import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
-import layouts from 'componentsdir/layout/examples/Layout';
 import Links from 'componentsdir/link/examples/Links';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Lists from 'componentsdir/list/examples/Lists';
@@ -37,7 +36,6 @@ const routes = [
   { path: '/grids', name: 'Grids', component: Grids },
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
-  { path: '/layouts', name: 'layouts', component: layouts },
   { path: '/links', name: 'Links', component: Links },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/inputs', name: 'Input', component: Input },
