@@ -1,0 +1,65 @@
+/* ==========================================================================
+  # CdrPopover
+  
+  All values should map to variables in
+  vars/CdrPopover.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrPopover
+========================================================================== */
+
+// @import '~@rei/cdr-assets/dist/cdr-tokens';
+
+.popover{
+
+  &__container {
+    padding: 2rem;
+
+    // Default popup styles with box shadow and arrow.
+    // Positions popup horizontally centered under a container element with pos: relative
+    &--default {
+      background: white;
+      border: 1px solid $partly-cloudy;
+      box-shadow: $prominence-elevated;
+      min-width: 300px;
+      position: absolute;
+      z-index: 100;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 200%;
+
+      // Outer grey arrow that acts as the "border"
+      &::before {
+        content: '';
+        position: absolute;
+        margin: auto;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $partly-cloudy;
+      }
+
+      // Inner white arrow
+      &::after {
+        content: '';
+        position: absolute;
+        margin: auto;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-bottom: 9px solid white;
+      }
+    }
+    // -- End default styles
+  }
+}
