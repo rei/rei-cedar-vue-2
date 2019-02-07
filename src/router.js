@@ -12,6 +12,7 @@ import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Lists from 'componentsdir/list/examples/Lists';
 import MediaObjects from 'componentsdir/mediaObject/examples/mediaObject';
 import Pagination from 'componentsdir/pagination/examples/Pagination';
+import Popover from 'componentsdir/popover/examples/Popover';
 import Quotes from 'componentsdir/quote/examples/Quote';
 import Radios from 'componentsdir/radio/examples/Radios';
 import Ratings from 'componentsdir/rating/examples/Ratings';
@@ -42,6 +43,7 @@ const routes = [
   { path: '/lists', name: 'Lists', component: Lists },
   { path: '/mediaobjects', name: 'Media Objects', component: MediaObjects },
   { path: '/pagination', name: 'Pagination', component: Pagination },
+  { path: '/popover', name: 'Popover', component: Popover },
   { path: '/quotes', name: 'Quotes', component: Quotes },
   { path: '/radios', name: 'Radios', component: Radios },
   { path: '/ratings', name: 'Ratings', component: Ratings },

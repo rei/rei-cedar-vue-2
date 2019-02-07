@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>popover</h2>
+    <h2>Hola popover</h2>
   </div>
 </template>
 

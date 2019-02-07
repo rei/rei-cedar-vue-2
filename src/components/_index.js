@@ -11,6 +11,7 @@ import CdrInput from 'componentsdir/input/CdrInput';
 import CdrList from 'componentsdir/list/CdrList';
 import CdrMediaObject from 'componentsdir/mediaObject/CdrMediaObject';
 import CdrPagination from 'componentsdir/pagination/CdrPagination';
+import CdrPopover from 'componentsdir/popover/CdrPopover';
 import CdrQuote from 'componentsdir/quote/CdrQuote';
 import CdrRadio from 'componentsdir/radio/CdrRadio';
 import CdrRating from 'componentsdir/rating/CdrRating';
@@ -40,6 +41,7 @@ export default {
   CdrList,
   CdrMediaObject,
   CdrPagination,
+  CdrPopover,
   CdrQuote,
   CdrRadio,
   CdrRating,
