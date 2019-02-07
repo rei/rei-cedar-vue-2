@@ -10,15 +10,14 @@
     :Base - CdrPopover
 ========================================================================== */
 
-// @import '~@rei/cdr-assets/dist/cdr-tokens';
-
-.popover{
-
+.popover {
   &__container {
     padding: 2rem;
 
-    // Default popup styles with box shadow and arrow.
-    // Positions popup horizontally centered under a container element with pos: relative
+    /*
+      Default popup styles with box shadow and arrow.
+      Positions popup horizontally centered under a container element with pos: relative
+    */
     &--default {
       background: white;
       border: 1px solid $partly-cloudy;
@@ -30,7 +29,9 @@
       transform: translateX(-50%);
       top: 200%;
 
-      // Outer grey arrow that acts as the "border"
+      /*
+        Outer grey arrow that acts as the "border"
+      */
       &::before {
         content: '';
         position: absolute;
@@ -45,7 +46,9 @@
         border-bottom: 10px solid $partly-cloudy;
       }
 
-      // Inner white arrow
+      /*
+        Inner white arrow
+      */
       &::after {
         content: '';
         position: absolute;
@@ -60,6 +63,5 @@
         border-bottom: 9px solid white;
       }
     }
-    // -- End default styles
   }
 }

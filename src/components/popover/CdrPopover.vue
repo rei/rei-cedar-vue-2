@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import styles from './styles/CdrPopover.pcss';
+
 export default {
   name: 'CdrPopover',
   props: {
@@ -54,13 +56,13 @@ export default {
   },
   data() {
     return {
-      // styles,
+      styles,
       isOpen: false,
     };
   },
   computed: {
     defaultStylesClass() {
-      return this.hasDefaultStyling ? this.styles['popover__container--default'] : '';
+      return this.hasDefaultStyling ? styles['popover__container--default'] : '';
     },
   },
   mounted() {
@@ -83,10 +85,8 @@ export default {
       if (!toggleButton) return;
 
       // Store some information about what was clicked.
-      const toggleButtonWasClicked =
-        (clickTarget === toggleButton || toggleButton.contains(clickTarget));
-      const anywhereButPopoverWasClicked =
-        (clickTarget !== popover && !popover.contains(clickTarget));
+      const toggleButtonWasClicked = (clickTarget === toggleButton || toggleButton.contains(clickTarget)); /* eslint-disable-line */
+      const anywhereButPopoverWasClicked = (clickTarget !== popover && !popover.contains(clickTarget)); /* eslint-disable-line */
 
       // Delegate to the correct methods based on the conditions.
       if (!this.isOpen && toggleButtonWasClicked) {
