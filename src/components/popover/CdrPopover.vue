@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="isOpen || !toggleButtonSelector"
-    :class="[$style['popover__container'], defaultStylesClass]"
+    :class="[$style['cdr-popover__container'], defaultStylesClass]"
     :aria-labelledby="ariaLabelledBy"
     :aria-describedby="ariaDescribedBy"
     role="dialog"
@@ -60,7 +60,7 @@ export default {
   },
   computed: {
     defaultStylesClass() {
-      return this.hasDefaultStyling ? this.$style['popover__container--default'] : '';
+      return this.hasDefaultStyling ? this.$style['cdr-popover__container--default'] : '';
     },
   },
   mounted() {

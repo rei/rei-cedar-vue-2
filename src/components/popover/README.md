@@ -1,8 +1,8 @@
-# @rei/popover
+# @rei/cdr-popover
 
 ## Installation
 ```bash
-$npm i -S @rei/popover
+$npm i -S @rei/cdr-popover
 ```
 ## Requirements
 
@@ -36,7 +36,7 @@ you must give the container element `position: relative;`. Generally, if you are
 ```html
 <div class="popover-container">
   <button class="popover-toggle-button">Click me!</button>
-  <popover />
+  <cdr-popover />
 </div>
 ```
 
@@ -49,20 +49,20 @@ The class names are not guaranteed to stay constant between minor / patch versio
 ## Usage
 ```vue
 // In your imports
-import Popover from '@rei/popover';
+import CdrPopover from '@rei/cdr-popover';
 
 // In your components section of the vue component you want to render the activity card within:
 export default {
   components: {
-    Popover,
+    CdrPopover,
   },
 }
 
 // In your vue template:
-<popover
-  toggle-button-selector="[data-js='popover-button']"
+<cdr-popover
+  toggle-button-selector="[data-js='popover-toggle-button']"
 >
   <h4>Welcome to my amazing popover</h4>
   <p>Thanks for stopping by.</p>
-</popover>
+</cdr-popover>
 ```
