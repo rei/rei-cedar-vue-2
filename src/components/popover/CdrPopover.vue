@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="isOpen || !toggleButtonSelector"
-    :class="[styles['popover__container'], defaultStylesClass]"
+    :class="[$style['popover__container'], defaultStylesClass]"
     :aria-labelledby="ariaLabelledBy"
     :aria-describedby="ariaDescribedBy"
     role="dialog"
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import styles from './styles/CdrPopover.pcss';
 
 export default {
   name: 'CdrPopover',
@@ -56,13 +55,12 @@ export default {
   },
   data() {
     return {
-      styles,
       isOpen: false,
     };
   },
   computed: {
     defaultStylesClass() {
-      return this.hasDefaultStyling ? styles['popover__container--default'] : '';
+      return this.hasDefaultStyling ? this.$style['popover__container--default'] : '';
     },
   },
   mounted() {
