@@ -28,7 +28,8 @@
     "check-version": "node check-version.js",
     "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
     "changelog": "lerna-semantic-release post",
-    "component-css": "cross-env NODE_ENV=css node build/component-css-build.js"
+    "component-css": "cross-env NODE_ENV=css node build/component-css-build.js",
+    "prerelease": "npm-publish-prerelease"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -92,6 +93,7 @@
     "mocha-webpack": "^2.0.0-beta.0",
     "nightwatch": "^1.0.18",
     "nightwatch-axe": "^0.1.5",
+    "npm-publish-prerelease": "^1.0.2",
     "nyc": "^13.1.0",
     "opn": "^5.4.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
