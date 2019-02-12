@@ -74,5 +74,6 @@ export default {
 
 <style module>
   @import '../../css/settings/_index.pcss';
+  @import './styles/vars/CdrCta.vars.pcss';
   @import './styles/CdrCta.pcss';
 </style>
