@@ -30,9 +30,7 @@
     "changelog": "lerna-semantic-release post",
     "component-css": "cross-env NODE_ENV=css node build/component-css-build.js",
     "prerelease": "npm-publish-prerelease",
-    "changed": "lerna changed",
-    "version": "lerna version",
-    "release": "lerna version --conventional-commits"
+    "release-preview": "lerna version --conventional-commits --no-push"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
