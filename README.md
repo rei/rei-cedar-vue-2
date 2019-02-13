@@ -140,6 +140,12 @@ __TODO:__ Notes about css, postcss, stylelint
 
 ## Components
 
+### Publishing Prerelease Components
+
+`npm run prerelease <path to component folder>`
+
+Publishes component to npm with a prerelease tag. You must increment the component's version manually prior to publishing. `--dry-run` flag will run the prerelease process without publishing to npm.
+
 __TODO:__ Notes about Vue, components
 
 - Using [Vue.js](https://vuejs.org/) single file components. They have excellent docs.
