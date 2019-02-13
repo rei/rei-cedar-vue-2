@@ -27,10 +27,10 @@
     "start": "lerna bootstrap --no-ci && lerna run build && npm run component-css",
     "check-version": "node check-version.js",
     "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
-    "changelog": "lerna-semantic-release post",
     "component-css": "cross-env NODE_ENV=css node build/component-css-build.js",
     "prerelease": "npm-publish-prerelease",
-    "release-preview": "lerna version --conventional-commits --no-push"
+    "release:preview": "lerna version --conventional-commits --no-push",
+    "release:publish": "lerna publish from-package"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
