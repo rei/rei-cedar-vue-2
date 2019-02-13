@@ -32,7 +32,7 @@
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    padding: $inset-1-x;
+    padding: $cdr-space-inset-one-x;
     position: relative;
     text-align: left;
     width: 100%;
@@ -53,7 +53,7 @@
   }
 
   &__icon {
-    margin-left: $space-1-x;
+    margin-left: $cdr-space-one-x;
     fill: $heart-of-darkness;
     transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
 
@@ -78,7 +78,7 @@
 
     background-color: $clean-slate;
     color: $heart-of-darkness;
-    padding: $space-half-x $space-1-x $space-1-x;
+    padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-one-x;
     transition: opacity 100ms linear;
     opacity: 0;
 
@@ -101,15 +101,15 @@
   /* Border-Aligned
      ========== */
   &--border-aligned {
-    margin: 0 $inset-1-x;
+    margin: 0 $cdr-space-inset-one-x;
 
     .cdr-accordion-item__button {
-      margin-left: -$space-1-x;
-      width: calc(100% + ($space-1-x * 2));
+      margin-left: -$cdr-space-one-x;
+      width: calc(100% + ($cdr-space-one-x * 2));
     }
 
     .cdr-accordion-item__content {
-      padding: $space-half-x 0 $space-1-x;
+      padding: $cdr-space-half-x 0 $cdr-space-one-x;
     }
   }
 
@@ -117,7 +117,7 @@
      ========== */
   &--compact {
     .cdr-accordion-item__button {
-      padding: $inset-three-quarter-x;
+      padding: $cdr-space-inset-three-quarter-x;
     }
 
     .cdr-accordion-item__label {
@@ -129,7 +129,7 @@
     .cdr-accordion-item__content {
       @include redwood-body-10;
 
-      padding: $space-quarter-x $space-three-quarter-x $space-three-quarter-x;
+      padding: $cdr-space-quarter-x $cdr-space-three-quarter-x $cdr-space-three-quarter-x;
 
       & > * {
         @include redwood-body-10;
@@ -141,12 +141,12 @@
      ========== */
   &--compact.cdr-accordion-item--border-aligned {
     .cdr-accordion-item__button {
-      margin-left: -$space-three-quarter-x;
-      width: calc(100% + ($space-three-quarter-x * 2));
+      margin-left: -$cdr-space-three-quarter-x;
+      width: calc(100% + ($cdr-space-three-quarter-x * 2));
     }
 
     .cdr-accordion-item__content {
-      padding: $space-quarter-x 0 $space-three-quarter-x;
+      padding: $cdr-space-quarter-x 0 $cdr-space-three-quarter-x;
     }
   }
 
