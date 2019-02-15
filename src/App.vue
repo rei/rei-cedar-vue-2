@@ -56,7 +56,6 @@
       />
       <cards class="cpg-section" />
       <!-- <card-content class="cpg-section"></card-content> -->
-      <activity class="cpg-section" />
       <checkboxes
         class="cpg-section"
         data-backstop="checkboxes"
