@@ -6,17 +6,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ## 1.0.1 (2019-02-19)
 
 
-### Bug Fixes
-
-* **pagination:** update icon dependency and correct for API change ([e816666](https://github.com/rei/rei-cedar/commit/e816666))
-
-
-### Features
-
-* **pagination:** release pagination@1.0.0 ([bc1ba85](https://github.com/rei/rei-cedar/commit/bc1ba85))
-
-
-
+* Patch update so lerna can manage future releases
 
 
 <a name="1.0.0"></a>
