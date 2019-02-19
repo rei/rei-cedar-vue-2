@@ -1,3 +1,34 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 0.3.1 (2019-02-19)
+
+
+### Bug Fixes
+
+* **assets:** fix async race condition in icon asset build ([4934639](https://github.com/rei/rei-cedar/commit/4934639))
+
+
+### Features
+
+* **18.9.1 release:** release adds support for cdr-icon and updates the peer-dependancies of compone ([5a6da2c](https://github.com/rei/rei-cedar/commit/5a6da2c))
+* **assets:** bump to 0.2.0 with removal of icon assets ([2e57098](https://github.com/rei/rei-cedar/commit/2e57098))
+* **assets:** remove icons from assets ([c402676](https://github.com/rei/rei-cedar/commit/c402676))
+* **deps:** update icon and assets for publishing ([48f2c67](https://github.com/rei/rei-cedar/commit/48f2c67))
+* **lerna-semantic-release:** replaced standard changelog with lerna-semantic-release as dev depende ([5084037](https://github.com/rei/rei-cedar/commit/5084037))
+* **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
+
+
+### BREAKING CHANGES
+
+* **assets:** icon assets are removed from cdr-assets and are now in cdr-icon
+
+
+
+
+
 <a name="0.3.0"></a>
 # 0.3.0 (2018-12-20)
 
@@ -36,6 +67,3 @@ elements
 * **grid:** row no longer has a margin-bottom so no styles bleed
 * **all components:** Change all package names to cdr- prefix. Package name for cdr-image changed to cdr-img. Package name
 for cdr-column changed to cdr-col
-
-
-

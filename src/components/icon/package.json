@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-icon",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Icon",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-icon",
@@ -34,7 +34,7 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.3.0",
+    "@rei/cdr-assets": "^0.3.1",
     "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
     "jsdom": "^11.7.0",

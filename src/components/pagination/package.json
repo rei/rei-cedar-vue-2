@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-pagination",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Pagination",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-pagination",
@@ -29,9 +29,9 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.3.0",
-    "@rei/cdr-icon": "^2.0.0",
-    "@rei/cdr-select": "^0.1.3",
+    "@rei/cdr-assets": "^0.3.1",
+    "@rei/cdr-icon": "^2.0.1",
+    "@rei/cdr-select": "^0.1.4",
     "pkg-ok": "^2.1.0"
   }
 }
