@@ -1,3 +1,14 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.0.1 (2019-02-19)
+
+
+* Patch update so lerna can manage future releases
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2018-12-20)
 
@@ -10,6 +21,3 @@
 ### Features
 
 * **pagination:** release pagination@1.0.0 ([bc1ba85](https://github.com/rei/rei-cedar/commit/bc1ba85))
-
-
-

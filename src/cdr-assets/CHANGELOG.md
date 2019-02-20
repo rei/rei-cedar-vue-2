@@ -1,3 +1,17 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 0.3.1 (2019-02-19)
+
+
+* Patch update so lerna can manage future releases
+
+
+
+
+
 <a name="0.3.0"></a>
 # 0.3.0 (2018-12-20)
 
@@ -36,6 +50,3 @@ elements
 * **grid:** row no longer has a margin-bottom so no styles bleed
 * **all components:** Change all package names to cdr- prefix. Package name for cdr-image changed to cdr-img. Package name
 for cdr-column changed to cdr-col
-
-
-

@@ -1,3 +1,18 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 0.1.5 (2019-02-19)
+
+
+* Patch update so lerna can manage future releases
+
+### Bug Fixes
+
+* **grid:** remove margin bottom from row ([0f68118](https://github.com/rei/rei-cedar/commit/0f68118))
+
+
 <a name="0.1.4"></a>
 ## 0.1.4 (2018-12-20)
 
@@ -31,6 +46,3 @@
 * **build:** Raw component cdr-* peerdependencies are no longer bundled
 * **all components:** Change all package names to cdr- prefix. Package name for cdr-image changed to cdr-img. Package name
 for cdr-column changed to cdr-col
-
-
-

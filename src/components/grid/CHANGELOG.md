@@ -1,3 +1,14 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.0.3 (2019-02-19)
+
+
+* Patch update so lerna can manage future releases
+
+
 <a name="1.0.2"></a>
 ## 1.0.2 (2018-12-20)
 
@@ -47,6 +58,3 @@ supports responsive modifiers
 * **grid:** colsSm, colsMd, colsLg replaced with just cols prop. justifySm, justifyMd, justifyLg replaced with
 just justify prop
 * **grid:** remove wrapSm, wrapMd, wrapLg in favor of using wrap with responsive modifiers
-
-
-

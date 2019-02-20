@@ -1,3 +1,17 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.0.4 (2019-02-19)
+
+
+* Patch update so lerna can manage future releases
+
+
+
+
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2018-12-20)
 
@@ -19,6 +33,3 @@
 * **accordion button cta:** bump versions to match alpha release ([c7f21bb](https://github.com/rei/rei-cedar/commit/c7f21bb))
 * **icon accordion:** bump version ([a2cd2a7](https://github.com/rei/rei-cedar/commit/a2cd2a7))
 * **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
-
-
-

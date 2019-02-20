@@ -1,3 +1,14 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 2.0.1 (2019-02-19)
+
+
+* Patch update so lerna can manage future releases
+
+
 <a name="2.0.0"></a>
 # 2.0.0 (2018-12-20)
 
@@ -46,6 +57,3 @@ backwards compatibility.
 * **build:** Raw component cdr-* peerdependencies are no longer bundled
 * **all components:** Change all package names to cdr- prefix. Package name for cdr-image changed to cdr-img. Package name
 for cdr-column changed to cdr-col
-
-
-

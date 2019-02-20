@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-themer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Themer",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-themer",
@@ -27,7 +27,7 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.3.0",
+    "@rei/cdr-assets": "^0.3.1",
     "pkg-ok": "^2.1.0",
     "vue-reactive-provide": "^0.2.1"
   }
