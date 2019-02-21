@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const path = require('path');
 const { exec } = require('child_process');
+const getMaps = require('./get-maps');
 
 // core-css variables
 const distDir = path.resolve(__dirname, 'dist');
@@ -33,3 +34,5 @@ fs.copySync(staticDir, distDir, {
     return false;
   },
 });
+
+getMaps(distDir);
