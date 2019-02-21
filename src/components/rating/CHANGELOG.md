@@ -1,24 +1,3 @@
-# Change Log
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## 1.0.1 (2019-02-19)
-
-
-* Patch update so lerna can manage future releases
-
-
-### Bug Fixes
-
-* **rating:** Fix rating screen reader text to be rounded ([949fc92](https://github.com/rei/rei-cedar/commit/949fc92)), closes [#352](https://github.com/rei/rei-cedar/issues/352)
-
-
-### Features
-
-* **release:** button, breadcrumb, grid, and list are released to v1 ([d6973b7](https://github.com/rei/rei-cedar/commit/d6973b7))
-
-
 <a name="1.0.0"></a>
 # 1.0.0 (2018-12-20)
 
@@ -61,3 +40,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **build:** Raw component cdr-* peerdependencies are no longer bundled
 * **all components:** Change all package names to cdr- prefix. Package name for cdr-image changed to cdr-img. Package name
 for cdr-column changed to cdr-col
+
+
+

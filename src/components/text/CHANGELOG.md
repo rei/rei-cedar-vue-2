@@ -1,14 +1,3 @@
-# Change Log
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## 1.0.2 (2019-02-19)
-
-
-* Patch update so lerna can manage future releases
-
-
 <a name="1.0.1"></a>
 ## 1.0.1 (2018-12-20)
 
@@ -42,3 +31,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * **release:** CdrLink and CdrText are moving to V1
 * **build:** Raw component cdr-* peerdependencies are no longer bundled
+
+
+

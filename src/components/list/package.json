@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-list",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for List",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-list",
@@ -31,7 +31,7 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.3.1",
+    "@rei/cdr-assets": "^0.3.0",
     "pkg-ok": "^1.1.0"
   }
 }

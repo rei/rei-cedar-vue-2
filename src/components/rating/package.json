@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-rating",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Rating",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-rating",
@@ -14,7 +14,7 @@
     "access": "public"
   },
   "files": [
-    "dist"
+   "dist"
   ],
   "config": {
     "vue_file": "CdrRating"
@@ -31,7 +31,7 @@
     "vue": "^2.5.13"
   },
   "devDependencies": {
-    "@rei/cdr-assets": "^0.3.1",
+    "@rei/cdr-assets": "^0.3.0",
     "pkg-ok": "^1.1.0"
   }
 }
