@@ -1,14 +1,3 @@
-# Change Log
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## 1.0.4 (2019-02-19)
-
-
-* Patch update so lerna can manage future releases
-
-
 <a name="1.0.3"></a>
 ## 1.0.3 (2018-12-20)
 
@@ -41,3 +30,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **buttons:** Buttons use css modules
 * **link:** link uses css modules
 * **link:** link now uses css modules
+
+
+
