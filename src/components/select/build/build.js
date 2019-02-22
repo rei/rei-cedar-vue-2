@@ -1,4 +1,5 @@
 const build = require('../../../../build/component-build');
+const extract = require('../../../../build/component-template-extract');
 const info = require('../package.json');
 
 /*
@@ -13,4 +14,8 @@ const compWebpack = {
   ],
 };
 
-build(info, {}, compWebpack);
+build(info, {}, compWebpack).then(() => {
+  extract(['CdrSelect'], info, `<cdr-select label="Example select">
+      <option value="1">1</option>
+    </cdr-select>`);
+});

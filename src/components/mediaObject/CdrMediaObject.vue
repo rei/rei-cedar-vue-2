@@ -5,7 +5,9 @@
         :href="imgHref"
         target="imgTarget"
       >
-        <span class="cdr-sr-only">{{ imgHrefText }}</span>
+        <span class="cdr-sr-only">
+          {{ imgHrefText }}
+        </span>
         <cdr-icon
           v-if="iconUrl"
           :class="[$style['cdr-media-object__figure'], imgClass]"
@@ -23,14 +25,16 @@
           :cover="imgCover"
           :radius="imgRadius"
           :modifier="imgModifier"
-          :style="mediaWidth"/>
+          :style="mediaWidth"
+        />
       </cdr-link>
     </template>
     <template v-else>
       <cdr-icon
         v-if="iconUrl"
         :class="[$style['cdr-media-object__figure'], imgClass]"
-        :url="iconUrl"/>
+        :url="iconUrl"
+      />
       <cdr-img
         v-else
         :class="[$style['cdr-media-object__figure'], imgClass]"
@@ -43,13 +47,14 @@
         :cover="imgCover"
         :radius="imgRadius"
         :modifier="imgModifier"
-        :style="mediaWidth"/>
+        :style="mediaWidth"
+      />
     </template>
     <div
       :class="[$style['cdr-media-object__body'], alignClass]"
     >
       <!-- @slot innerHTML inside of the media object component -->
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>

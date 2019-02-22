@@ -1,6 +1,6 @@
 <template>
   <div data-backstop="simple-card">
-    <simple-card/>
+    <simple-card />
   </div>
 </template>
 
@@ -14,4 +14,3 @@ export default {
   },
 };
 </script>
-

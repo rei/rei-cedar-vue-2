@@ -1,11 +1,13 @@
 <template>
+  <!-- eslint-disable vue/singleline-html-element-content-newline -->
   <div :class="$style['cdr-input-group']">
     <label
       v-if="!hideLabel"
       :class="labelClass"
       :for="selectId"
       ref="label"
-    >{{ label }}<span v-if="required">*</span></label>
+    >{{ label }}<span v-if="required">*</span>
+    </label>
     <select
       :class="selectClass"
       v-bind="$attrs"
@@ -27,11 +29,10 @@
       >{{ prompt }}</option>
       <option
         v-for="option in computedOpts"
-        v-if="option"
         :key="option.text"
         :value="option.value"
       >{{ option.text }}</option>
-      <slot/>
+      <slot />
     </select>
   </div>
 </template>

@@ -3,17 +3,18 @@
   <div>
     <cdr-text
       tag="h3"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Paragraphs
     </cdr-text>
     <cdr-text>
       The default cdr-text component is a <code>p</code> tag with the class of 'cdr-text'
     </cdr-text>
     <cdr-text>Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
-    congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
-    donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
-    mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
-    vestibulum.
+      congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
+      donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
+      mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
+      vestibulum.
     </cdr-text>
     <cdr-text modifier="body">
       Some people consider articles longer than 700 words to be long-form, whereas others think

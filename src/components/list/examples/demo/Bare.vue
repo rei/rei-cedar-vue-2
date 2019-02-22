@@ -3,7 +3,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Bare list
     </cdr-text>
 
@@ -20,7 +21,8 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Compact bare list
     </cdr-text>
 
@@ -40,7 +42,8 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Inline bare list
     </cdr-text>
 
@@ -55,7 +58,8 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Inline compact bare list
     </cdr-text>
 

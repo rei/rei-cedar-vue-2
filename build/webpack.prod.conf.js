@@ -6,7 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 function resolve(dir) {
@@ -38,7 +38,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
       sourceMap: true
     }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: utils.assetsPath('css/cedar-components.[contenthash].css')
     }),
     // Compress extracted CSS. We are using this plugin so that possible

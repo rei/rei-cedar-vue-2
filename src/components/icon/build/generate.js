@@ -112,4 +112,3 @@ fs.outputFileSync(
 /* eslint-disable */
 ${indexArr.join('\n')}`,
 );
-

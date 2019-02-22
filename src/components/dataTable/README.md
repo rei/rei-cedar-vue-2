@@ -44,6 +44,12 @@ For the most up-to-date information, see [REI Cedar documentation](https://rei.g
 | caption                             | string | N/A     |
 | Sets the caption text for the table |        |         |
 
+<br />
+
+| Name                                | Type   | Default |
+|-------------------------------------|--------|---------|
+| constrainWidth                             | boolean | true     |
+| Applies default width constraints to table cells. |        |         |
 
 ## Slots
 
@@ -121,6 +127,8 @@ The simplest way to use CdrDataTable is using the props API. The below example s
 - The data props (`colHeaders`, `rowHeaders`, `rowData`) are used
 - `keyOrder` determines values displayed in each cell. The array order must match the `colHeaders` or column order
 
+The locked-column behavior described in the [design guidelines](https://rei.github.io/rei-cedar-docs/components/data-tables/?active-tab=design-guidelines&active-link=responsiveness) is available only when using the props API.
+
 ```vue
 <template>
   <cdr-data-table
@@ -167,11 +175,13 @@ The simplest way to use CdrDataTable is using the props API. The below example s
 
 ### Using Slots
 
-The same table can be rendered using the `v-for` Vue directive and CdrDataTable's named slots:
-- Iterates over the data set by looping through items in an array or object
-- Generates appropriate markup for each named slot
+The same information can be rendered using **CdrDataTable's** named slots, however the locked column behavior is not available.
 
-In the below examples, the `colHeaders` prop is set to true because there are column headers for the data table.
+The below example shows:
+
+- How to use the `thead` and `tbody` slots to define table markup
+- `colHeaders` prop set to true because the `thead` slot is being used
+- `scope` attribute on `th` elements inside a slot
 
 ```vue
 <template>
@@ -249,6 +259,40 @@ The below example uses:
     ...
   </template>
 </cdr-data-table>
+```
+
+### Responsive Setup
+
+CdrDataTable relies on the `mounted` lifecycle hook to set up some responsive functionality. Use `v-if` to ensure that CdrDataTable doesn't render before the data is available.
+
+```vue
+<template>
+  <cdr-data-table
+    :col-headers="colHeaders"
+    :row-headers="rowHeaders"
+    :row-data="rowData"
+    :key-order="keyOrder"
+    v-if="hasData"
+  />
+</template>
+
+<script>
+  ...
+  data() {
+    hasData: false,
+    ...
+  },
+  mounted() {
+    fetch('https://swapi.co/api/people')
+     .then(response => response.json())
+     .then((json) => {
+       this.hasData = true;
+       ...
+     })
+     .catch(err => console.log(err));
+  },
+}
+</script>
 ```
 
 ### Modifiers

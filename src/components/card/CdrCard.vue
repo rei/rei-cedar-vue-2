@@ -1,7 +1,7 @@
 <template>
   <article :class="modifierClass">
     <!-- @slot innerHTML on the inside of the card component -->
-    <slot/>
+    <slot />
   </article>
 </template>
 

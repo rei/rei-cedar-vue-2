@@ -2,40 +2,45 @@
   <section>
     <cdr-text
       tag="h2"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Media Object
     </cdr-text>
     <div data-backstop="figure-placement">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Media Object Figure Placement
       </cdr-text>
-      <figurePlacement/>
+      <figurePlacement />
     </div>
     <div data-backstop="media-object-flux">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Media Object Flux
       </cdr-text>
-      <mediaObjectFlux/>
+      <mediaObjectFlux />
     </div>
     <div data-backstop="media-shape-align">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Media Figure shapes and body alignment
       </cdr-text>
-      <mediaShapeAlign/>
+      <mediaShapeAlign />
     </div>
     <div data-backstop="media-object-overlay">
       <cdr-text
         tag="h3"
-        modifier="heading-small">
+        modifier="heading-small"
+      >
         Media Object Overlay
       </cdr-text>
-      <mediaOverlay/>
+      <mediaOverlay />
     </div>
   </section>
 </template>

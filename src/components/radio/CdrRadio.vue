@@ -17,7 +17,7 @@
       <span :class="$style['cdr-radio__figure']" />
       <div :class="[$style['cdr-radio__content'], contentClass]">
         <!-- @slot innerHTML inside of radio component -->
-        <slot/>
+        <slot />
       </div>
     </label>
   </div>
@@ -97,5 +97,6 @@ export default {
 
 <style module>
   @import 'cssdir/settings/_index.pcss';
+  @import './styles/vars/CdrRadio.vars.pcss';
   @import './styles/CdrRadio.pcss';
 </style>

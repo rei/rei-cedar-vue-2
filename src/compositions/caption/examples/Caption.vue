@@ -3,7 +3,8 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-small">
+      modifier="heading-small"
+    >
       Caption
     </cdr-text>
 
@@ -14,7 +15,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading">
+      modifier="subheading"
+    >
       Summary only
     </cdr-text>
     <cdr-caption
@@ -23,7 +25,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading">
+      modifier="subheading"
+    >
       Caption only
     </cdr-text>
     <cdr-caption
@@ -32,7 +35,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading">
+      modifier="subheading"
+    >
       In a figure
     </cdr-text>
     <figure class="caption-example__figure">

@@ -1,0 +1,19 @@
+{
+  "check-coverage": true,
+  "lines": 100,
+  "reporter": [
+    "lcov",
+    "text"
+  ],
+  "report-dir": "./test/unit/coverage",
+  "require": [
+    "@babel/register",
+    "./test/setup.js"
+  ],
+  "include": [
+    "src/**/*.js",
+    "src/**/*.vue"
+  ],
+  "instrument": false,
+  "sourceMap": false
+}

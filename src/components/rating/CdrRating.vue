@@ -48,11 +48,12 @@
       v-if="count"
       aria-hidden="true"
       :class="$style['cdr-rating__count']"
-
     ><span
       v-if="href"
       :class="$style['cdr-rating__number']"
-    >{{ rounded }}</span><span>{{ formattedCount }}</span><span v-if="!compact"> Reviews</span></span>
+    >{{ rounded }}</span><span>{{ formattedCount }}</span><span v-if="!compact">
+      Reviews
+    </span></span>
     <span
       class="cdr-sr-only"
     >rated {{ rounded }} out of 5 with {{ count }} reviews</span>

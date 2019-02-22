@@ -21,7 +21,7 @@ async function getCss() {
       console.log('Error!');
       console.log(err);
     }
-
+    
     return files;
   })
 }
@@ -32,7 +32,11 @@ async function main() {
   const cssFileArr = cssVars.concat(cssFiles);
   const pcss = await concat(cssFileArr);
   const fullPcss = `@import 'cssdir/settings/_index.pcss';
-${pcss}`;
+  ${pcss}`;
+  
+  console.log('Compiling styles from:');
+  console.log(cssFiles.join('\n'));
+  console.log('----------------------');
 
   postcssrc().then(({ plugins, options }) => {
     options.from = undefined;
@@ -40,7 +44,7 @@ ${pcss}`;
       .process(fullPcss, options)
       .then((result) => {
         fs.outputFileSync('styles/components.css', result.css);
-        console.log(`Compiled component styles to 'styles/components.css'`);
+        console.log(`Successfully compiled styles to 'styles/components.css'`);
       })
   })
 }

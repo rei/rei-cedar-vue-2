@@ -9,11 +9,10 @@ const _ = require('lodash');
 
 // webpack packages and configs
 const baseConfig = require('./webpack.base.conf');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // config
 const config = {
@@ -36,6 +35,7 @@ function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
 
   // SHARED WEBPACK CONFIG
   let sharedConfig = merge(baseConfig, {
+    mode: 'production',
     output: {
       path: `${dir}/${config.outDir}`,
       filename: '[name].js',
@@ -47,15 +47,16 @@ function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
       new StyleLintPlugin({
         files: ['**/*.postcss', '**/*.pcss', '**/*.vue']
       }),
-      new UglifyJsPlugin(),
-      new ExtractTextPlugin(`${name}.css`),
-      new CopyWebpackPlugin([
-        {
-          from: `${dir}/styles/themes/*`,
-          to: `${dir}/dist`,
-          flatten: true,
-        }
-      ]),
+      new MiniCssExtractPlugin({
+        filename: `${name}.css`,
+      }),
+      // new CopyWebpackPlugin([
+      //   {
+      //     from: `${dir}/styles/themes/*`,
+      //     to: `${dir}/dist`,
+      //     flatten: true,
+      //   }
+      // ]),
       new OptimizeCSSPlugin({
         cssProcessorOptions: {
           safe: true,
@@ -98,26 +99,36 @@ function build(info, sharedOpts={}, compOpts={}, pluginOpts={}) {
   const outputPath = `${dir}/${config.outDir}`;
 
   console.log(chalk.cyan(`Building ${name}...\n`));
+  return new Promise((resolve, reject)=>{
+    rm(
+      outputPath,
+      (err) => {
+        if (err) {
+          // throw err
+          reject(err);
+        }
+        webpack(createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts), (err2, stats) => {
+          if (err2) {
+            // throw err2;
+            reject(err2);
+          }
+          stats.stats.forEach(stat => {
+            process.stdout.write(`${stat.toString({
+              colors: true,
+              modules: false,
+              children: false,
+              chunks: false,
+              chunkModules: false,
+            })}\n\n`);
+          })
+          console.log(chalk.cyan(`Build of ${name} complete.\n`));
+          resolve();
+        });
+      }
+    );
 
-  rm(
-    outputPath,
-    (err) => {
-      if (err) throw err;
-      webpack(createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts), (err2, stats) => {
-        if (err2) throw err2;
-        stats.stats.forEach(stat => {
-          process.stdout.write(`${stat.toString({
-            colors: true,
-            modules: false,
-            children: false,
-            chunks: false,
-            chunkModules: false,
-          })}\n\n`);
-        })
-        console.log(chalk.cyan(`Build of ${name} complete.\n`));
-      });
-    }
-  );
+  });
+
 }
 
 module.exports = build;

@@ -59,8 +59,8 @@ export default {
       return this.modifyClassName(this.baseClass, this.ctaStyle);
     },
     fullWidthClass() {
-      return this.fullWidth && !this.iconOnly ?
-        this.modifyClassName(this.baseClass, 'full-width') : null;
+      return this.fullWidth && !this.iconOnly
+        ? this.modifyClassName(this.baseClass, 'full-width') : null;
     },
     computedRel() {
       if (this.target === '_blank') {
@@ -74,5 +74,6 @@ export default {
 
 <style module>
   @import '../../css/settings/_index.pcss';
+  @import './styles/vars/CdrCta.vars.pcss';
   @import './styles/CdrCta.pcss';
 </style>

@@ -3,7 +3,8 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Ordered list
     </cdr-text>
 
@@ -37,18 +38,21 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium">
+      modifier="heading-medium"
+    >
       Compact ordered list
     </cdr-text>
 
     <cdr-list
       tag="ol"
-      modifier="ordered compact">
+      modifier="ordered compact"
+    >
       <li>List item text</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
         <cdr-list
           tag="ol"
-          modifier="ordered">
+          modifier="ordered"
+        >
           <li>List item text</li>
           <li>List item text</li>
         </cdr-list>

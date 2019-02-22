@@ -1,7 +1,11 @@
 {
-  "lerna": "2.11.0",
   "packages": [
     "src/**/*"
   ],
-  "version": "independent"
+  "version": "independent",
+  "command": {
+    "version": {
+      "message": "chore(release): publish %s"
+    }
+  }
 }

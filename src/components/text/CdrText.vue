@@ -5,7 +5,7 @@
     :is="tag"
     :class="[modifierClass]"
   >
-    <slot/>
+    <slot />
   </component>
 </template>
 

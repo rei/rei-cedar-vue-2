@@ -9,11 +9,11 @@ function validateProp(propValue, validArr, responsive = true) {
   return strArr.every((mod) => {
     const modValid = validArr.some((validStr) => {
       if (responsive) {
-        return (mod === validStr) ||
-        (mod === `${validStr}@xs`) ||
-        (mod === `${validStr}@sm`) ||
-        (mod === `${validStr}@md`) ||
-        (mod === `${validStr}@lg`);
+        return (mod === validStr)
+        || (mod === `${validStr}@xs`)
+        || (mod === `${validStr}@sm`)
+        || (mod === `${validStr}@md`)
+        || (mod === `${validStr}@lg`);
       }
 
       return (mod === validStr);
