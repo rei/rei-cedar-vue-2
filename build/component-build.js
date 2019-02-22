@@ -9,7 +9,6 @@ const _ = require('lodash');
 
 // webpack packages and configs
 const baseConfig = require('./webpack.base.conf');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -36,6 +35,7 @@ function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
   // SHARED WEBPACK CONFIG
   let sharedConfig = merge(baseConfig, {
     mode: 'production',
+    devtool: 'source-map',
     output: {
       path: `${dir}/${config.outDir}`,
       filename: '[name].js',
@@ -43,25 +43,21 @@ function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
       libraryTarget: 'umd',
       umdNamedDefine: true,
     },
+    optimization: {
+      minimize: false,
+    },
     plugins: [
+      new OptimizeCSSPlugin({
+        cssProcessorOptions: {
+          safe: true,
+        }
+      }),
       new StyleLintPlugin({
         files: ['**/*.postcss', '**/*.pcss', '**/*.vue']
       }),
       new MiniCssExtractPlugin({
         filename: `${name}.css`,
       }),
-      // new CopyWebpackPlugin([
-      //   {
-      //     from: `${dir}/styles/themes/*`,
-      //     to: `${dir}/dist`,
-      //     flatten: true,
-      //   }
-      // ]),
-      new OptimizeCSSPlugin({
-        cssProcessorOptions: {
-          safe: true,
-        }
-      })
     ]
   });
   sharedConfig = merge(sharedConfig, sharedOpts);
