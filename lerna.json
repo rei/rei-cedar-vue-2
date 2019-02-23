@@ -5,7 +5,16 @@
   "version": "independent",
   "command": {
     "version": {
-      "message": "chore(release): publish %s"
+      "message": "chore(release): publish components",
+      "allowBranch": "master"
+    },
+    "publish": {
+      "allowBranch": "master"
     }
-  }
+  },
+  "ignoreChanges": [
+    "src/**/*.md", 
+    "src/**/__tests__/*", 
+    "src/**/examples/*"
+  ]
 }
