@@ -30,7 +30,7 @@
     "component-css": "cross-env NODE_ENV=css node build/component-css-build.js",
     "prerelease": "npm-publish-prerelease",
     "release:preview": "lerna changed",
-    "release:publish": "lerna publish from-package"
+    "release:publish": "lerna publish --conventional-commits --github-release --sign-git-commit --sign-git-tag --yes"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

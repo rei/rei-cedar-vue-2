@@ -14,7 +14,7 @@
   },
   "ignoreChanges": [
     "src/**/*.md", 
-    "src/**/__tests__/", 
-    "src/**/examples/"
+    "src/**/__tests__/*", 
+    "src/**/examples/*"
   ]
 }
