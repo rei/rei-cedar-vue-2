@@ -83,7 +83,6 @@
         class="cpg-section"
         data-backstop="lists"
       />
-      <mediaObject class="cpg-section" />
       <pagination class="cpg-section" />
       <radios
         class="cpg-section"
