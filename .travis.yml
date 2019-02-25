@@ -28,14 +28,7 @@ script:
       npm run test;
     fi
 after_success:
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_BRANCH" === "MASTER" ]; then
-      npm run release:preview;
-    else
-      echo "pull request is false or branch is not master" $TRAVIS_BRANCH;
-      git tag;
-      git fetch --tags;
-      git tag;
-
+  - if [ "$TRAVIS_PULL_REQUEST" == "true" && "$TRAVIS_BRANCH" === "master" ]; then
       npm run release:preview;
     fi;
 notifications:
