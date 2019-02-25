@@ -28,6 +28,8 @@ script:
       npm run test;
     fi
 after_success:
+  - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_PULL_REQUEST
   - test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && npm run release:preview
 notifications:
   slack:
