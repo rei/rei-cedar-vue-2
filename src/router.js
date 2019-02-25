@@ -10,7 +10,6 @@ import Images from 'componentsdir/image/examples/Images';
 import Links from 'componentsdir/link/examples/Links';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Lists from 'componentsdir/list/examples/Lists';
-import MediaObjects from 'componentsdir/mediaObject/examples/mediaObject';
 import Pagination from 'componentsdir/pagination/examples/Pagination';
 import Quotes from 'componentsdir/quote/examples/Quote';
 import Radios from 'componentsdir/radio/examples/Radios';
@@ -39,7 +38,6 @@ const routes = [
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/inputs', name: 'Input', component: Input },
   { path: '/lists', name: 'Lists', component: Lists },
-  { path: '/mediaobjects', name: 'Media Objects', component: MediaObjects },
   { path: '/pagination', name: 'Pagination', component: Pagination },
   { path: '/quotes', name: 'Quotes', component: Quotes },
   { path: '/radios', name: 'Radios', component: Radios },
