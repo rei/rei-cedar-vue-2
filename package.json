@@ -29,7 +29,7 @@
     "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
     "component-css": "cross-env NODE_ENV=css node build/component-css-build.js",
     "prerelease": "npm-publish-prerelease",
-    "release:preview": "lerna changed",
+    "release:preview": "lerna changed --conventional-commits",
     "release:publish": "lerna publish --conventional-commits --github-release --sign-git-commit --sign-git-tag --yes"
   },
   "devDependencies": {
