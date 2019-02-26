@@ -42,6 +42,7 @@ function createWebpackConfig(dir, name, sharedOpts, compOpts, pluginOpts) {
       library: pascalName,
       libraryTarget: 'umd',
       umdNamedDefine: true,
+      globalObject: 'this',
     },
     plugins: [
       new StyleLintPlugin({
