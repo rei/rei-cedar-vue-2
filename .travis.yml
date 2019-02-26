@@ -1,40 +1,39 @@
 os:
-  - linux
+- linux
 language: node_js
 node_js:
-  - "8"
+- '10'
 sudo: required
 addons:
   chrome: stable
 dist: trusty
 before_install:
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export CHROME_BIN=/usr/bin/google-chrome; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DISPLAY=:99.0; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sh -e /etc/init.d/xvfb start; fi
-  # - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get update ; fi
-  # - if [ "$TRAVIS_OS_NAME" == "linux" ]; then wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb; fi
-  # - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo dpkg -i google-chrome*.deb; fi
-  - npm i -g npm
-  - npm i -g lerna
+- echo $gpg_pw | gpg --passphrase-fd 0 gpg.txt.gpg
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export CHROME_BIN=/usr/bin/google-chrome;
+  fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then export DISPLAY=:99.0; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then sh -e /etc/init.d/xvfb start; fi
+- npm i -g npm
+- npm i -g lerna
 install:
-  - npm install
+- npm install
 before_script:
-  - npm run start
-script: 
-  - npm run check-version
-  - npm run lint
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-      npm run unit;
-    else
-      npm run test;
-    fi
+- npm run start
+script:
+- npm run check-version
+- npm run lint
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; else npm run test;
+  fi
 after_success:
-  # - test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && lerna publish --conventional-commits --github-release --yes # standard release command
-  - echo $TRAVIS_BRANCH
-  - echo $TRAVIS_PULL_REQUEST
-  - test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && lerna publish patch --conventional-commits --github-release --yes # for initial lerna release. 
+- echo $TRAVIS_BRANCH
+- echo $TRAVIS_PULL_REQUEST
+- test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && lerna publish
+  patch --conventional-commits --github-release --yes
 notifications:
   slack:
     secure: PUPMZ2+nU9DJ0IExfVdjXK2QuYuB6AcVIWsWc/JGKkPyhJo1fWdKF7yrBURwD2bj++99yPcnbtWtzju2w0hKm2pcx/08hcGVmsitOfdPYNc/tN8nJUAFJutqAibxLDmYh0OXlU0N6AiFAbka/ePrEa7tCEtUrF5PRcEHdJuClCTqR+URWZCp65fGpY+bMCrw5EXETxNQce4OLzEcQXi9B4CYqv/VNcXlHHaLYjojgHNCdL927AJJkQww41Myo5vqAaycwARS1+LRCzEOHGauxMJvMxDME5VykSRdVsU3vKx/070XU+QmDfVaFiBJBixFzEwwcGh7r6SwSdJRf3CNgtfm7sYUsRl28DBBhjZ5uHMZZfiGllfEdNZDW1safxZpk1Sr5oC5EKEwqcdSiqoNJgdVqf9vdliBcVu9TzhZUexyNKsi5Kaer90aWNcLksTbzvf2h3cgdAUXqSMOboRgRFlgtHc0zxz/AN4CXm3feGVLX3q+6jXXPqlXD2laBzdMquSJOXPvA7tr9qn7XZrSAEMtTUGVHzu77B1u0tAfc7SOvVRVa/YWe3QxWDQVEQvsqrxtyon/NfP5xVLkcbxrVZN6rJtyTRR9+11ZviMLE5WEcqKkyjubrekrR8CdHU8ZplqsyvQZN1YhBS/by+am758u1Zd/TZf1TsGcmFIWUpg=
     on_success: change
     on_failure: always
+env:
+  global:
+    secure: Gkl//Nasff2BOQcjg914wfZveBxukG70xOA6T5MNL8lfyTVqF3O3OI0q8U5zCc09rpWDwI4ZlR7M6w4NAVAAgU4Ffr0hEDya0ojCLj0VWf9ZbwzeUvIi/AiI29cffncdZFHTNsMHByDTnSmA4KnQ9vw+ssesWWf4Yv29CK3s7c+QwVU1d6UHrk8CyXT5wDqMQ/DZ8tDPOWl+WjSHUYhmcqPYe2uY4ZLtv/X3b9Ao1H5EjRil0X0EnVlov/yH1rLOP1b5bA3A/T2fPypfoYSYtEU/9ODpH1A1A0zx22NYdArhQp0hunvHApBFMOjI9tWd9wrmg2n/TYPjJovJJS4DCl2p2KAYBKGpKJhgLkwNrGMx85k1gsK4GSjUSxQfnV5qC7FyP/3LYnq2UAovoMJgEKIJtaNbqn9KMB85/eDIUh48U0OOxr5O/lDNU/Go5tPe9okGBIM+/CsmiaEuo0BD10iPiPojkir/wk842vRKkY3kfqG14EIekYvf899y6sz1cdN4YnEC4LAyVdtEIppSX0xFaI7n5JGYDeHc7BE6aIqb95ToH3cOOdR9lQY95Nfc4nyzrQ04cjJZQd+m7XDR64/wHfYAPbbr72Af7yu8cBV6WSmCAHW1NaOK5jzH+Ids2lIAXDKHfQFLWX3nxoS9pOom/F97riqe9MtXM7r6iss=
