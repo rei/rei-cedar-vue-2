@@ -15,6 +15,7 @@
   "ignoreChanges": [
     "src/**/*.md", 
     "src/**/__tests__/*", 
-    "src/**/examples/*"
+    "src/**/examples/*",
+    "src/components/themer/*"
   ]
 }
