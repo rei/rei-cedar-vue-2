@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-accordion",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Accordion",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-accordion",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "@rei/cdr-icon": "^2.0.0",
+    "@rei/cdr-icon": "^2.0.1",
     "pkg-ok": "^2.1.0"
   }
 }
