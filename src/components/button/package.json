@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-button",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Button",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-button",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "@rei/cdr-icon": "^2.0.0",
+    "@rei/cdr-icon": "^2.0.1",
     "pkg-ok": "^1.1.0"
   }
 }

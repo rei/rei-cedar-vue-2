@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-data-table",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Table",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-data-table",
@@ -36,8 +36,8 @@
     "pkg-ok": "^2.1.0"
   },
   "dependencies": {
-    "matchmedia-polyfill": "^0.3.1",
     "lodash": "^4.17.10",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "matchmedia-polyfill": "^0.3.1"
   }
 }
