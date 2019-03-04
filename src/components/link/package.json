@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-link",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Link",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-link",
@@ -27,11 +27,11 @@
     "build:docs": "node build/docs-build.js"
   },
   "dependencies": {
-    "@rei/cdr-icon": "^2.0.0"
+    "@rei/cdr-icon": "^2.0.1"
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "vue": "^2.5.13"
+    "vue": "^2.6.7"
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",

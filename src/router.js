@@ -10,7 +10,6 @@ import Images from 'componentsdir/image/examples/Images';
 import Links from 'componentsdir/link/examples/Links';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Lists from 'componentsdir/list/examples/Lists';
-import MediaObjects from 'componentsdir/mediaObject/examples/mediaObject';
 import Pagination from 'componentsdir/pagination/examples/Pagination';
 import Quotes from 'componentsdir/quote/examples/Quote';
 import Radios from 'componentsdir/radio/examples/Radios';
@@ -20,7 +19,6 @@ import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
 import Input from 'componentsdir/input/examples/Inputs';
 
-import ActivityCards from 'compositionsdir/activityCard/examples/activity';
 import Captions from 'compositionsdir/caption/examples/Caption';
 import Searches from 'compositionsdir/search/examples/searchbox';
 import App from './App';
@@ -40,7 +38,6 @@ const routes = [
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/inputs', name: 'Input', component: Input },
   { path: '/lists', name: 'Lists', component: Lists },
-  { path: '/mediaobjects', name: 'Media Objects', component: MediaObjects },
   { path: '/pagination', name: 'Pagination', component: Pagination },
   { path: '/quotes', name: 'Quotes', component: Quotes },
   { path: '/radios', name: 'Radios', component: Radios },
@@ -48,7 +45,6 @@ const routes = [
   { path: '/selects', name: 'Selects', component: Selects },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
-  { path: '/activitycards', name: 'ActivityCards', component: ActivityCards },
   { path: '/captions', name: 'Captions', component: Captions },
   { path: '/searches', name: 'Searches', component: Searches },
 ];
