@@ -115,6 +115,7 @@ export default {
 
 <style module>
   @import 'cssdir/settings/_index.pcss';
+  @import './styles/vars/CdrButton.vars.pcss';
   @import './styles/CdrButton.pcss';
 </style>
 

@@ -1,6 +1,6 @@
 {
   "name": "rei-cedar",
-  "version": "18.12.2",
+  "version": "19.02.1",
   "description": "REI Cedar Style Framework",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -27,8 +27,10 @@
     "start": "lerna bootstrap --no-ci && lerna run build && npm run component-css",
     "check-version": "node check-version.js",
     "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
-    "changelog": "lerna-semantic-release post",
-    "component-css": "cross-env NODE_ENV=css node build/component-css-build.js"
+    "component-css": "cross-env NODE_ENV=css node build/component-css-build.js",
+    "prerelease": "npm-publish-prerelease",
+    "release:preview": "lerna changed --conventional-commits",
+    "release:publish": "lerna publish --conventional-commits --github-release --sign-git-commit --sign-git-tag --yes"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -84,7 +86,7 @@
     "jsdom-global": "^3.0.2",
     "json2md": "^1.6.2",
     "klaw-sync": "^6.0.0",
-    "lerna": "^3.10.7",
+    "lerna": "^3.13.0",
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.5.0",
     "minimist": "^1.2.0",
@@ -92,7 +94,8 @@
     "mocha-webpack": "^2.0.0-beta.0",
     "nightwatch": "^1.0.18",
     "nightwatch-axe": "^0.1.5",
-    "nyc": "^13.1.0",
+    "npm-publish-prerelease": "^1.0.2",
+    "nyc": "^13.3.0",
     "opn": "^5.4.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "ora": "^3.0.0",

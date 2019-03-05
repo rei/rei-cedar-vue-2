@@ -9,7 +9,6 @@ import icons from 'componentsdir/icon/examples/Icons';
 import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
 import lists from 'componentsdir/list/examples/Lists';
-import mediaObject from 'componentsdir/mediaObject/examples/mediaObject';
 import pagination from 'componentsdir/pagination/examples/Pagination';
 import popover from 'componentsdir/popover/examples/Popover';
 import quoteExample from 'componentsdir/quote/examples/Quote';
@@ -37,7 +36,6 @@ export default {
   images,
   inputs,
   lists,
-  mediaObject,
   pagination,
   popover,
   quoteExample,
