@@ -154,8 +154,8 @@ __TODO:__ Notes about Vue, components
 - Horizontal theming with css-modules, dynamically binding classes based on theme
 
 ## Commits
-This project is Commitizen friendly.
-when creating a pull request run `git cz` rather than `git commit` and follow the prompts.
+This project is Commitizen friendly.  To install: `npm install -g commitizen`
+When creating a pull request run `git cz` rather than `git commit` and follow the prompts.
 
 This projects Changlogs are generated.
 To output the latest changelog files you will need to create a new repository release.
