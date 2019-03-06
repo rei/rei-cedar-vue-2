@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-text",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "REI Cedar Style Framework - Vue Component for Text",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-text",
   "repository": {
@@ -26,7 +26,7 @@
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "vue": "^2.5.17"
+    "vue": "^2.6.7"
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",

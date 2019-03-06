@@ -1,6 +1,6 @@
 {
   "name": "rei-cedar",
-  "version": "18.12.2",
+  "version": "19.02.1",
   "description": "REI Cedar Style Framework",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -27,9 +27,10 @@
     "start": "lerna bootstrap --no-ci && lerna run build && npm run component-css",
     "check-version": "node check-version.js",
     "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
-    "changelog": "lerna-semantic-release post",
     "component-css": "cross-env NODE_ENV=css node build/component-css-build.js",
-    "prerelease": "npm-publish-prerelease"
+    "prerelease": "npm-publish-prerelease",
+    "release:preview": "lerna changed --conventional-commits",
+    "release:publish": "lerna publish --conventional-commits --github-release --sign-git-commit --sign-git-tag --yes"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -39,7 +40,7 @@
     "@babel/runtime": "^7.3.1",
     "@commitlint/cli": "^7.4.0",
     "@commitlint/config-conventional": "^7.3.1",
-    "@rei/cdr-tokens": "^1.0.0-beta.0",
+    "@rei/cdr-tokens": "^1.0.0-beta.2",
     "@vue/babel-preset-app": "^3.3.0",
     "@vue/test-utils": "^1.0.0-beta.28",
     "autoprefixer": "^9.4.7",
