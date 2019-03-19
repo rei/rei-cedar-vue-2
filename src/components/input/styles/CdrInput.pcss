@@ -22,8 +22,8 @@
   color: $heart-of-darkness;
   display: inline-block;
   margin: 0;
-  margin-bottom: $space-quarter-x;
-  margin-right: $inset-quarter-x;
+  margin-bottom: $cdr-space-quarter-x;
+  margin-right: $cdr-space-inset-quarter-x;
 
   &--disabled {
     color: $grey-matter;
@@ -40,8 +40,8 @@
   color: $heart-of-darkness;
   box-shadow: inset 0 0 0 1px $taken-for-granite;
   border: 0;
-  border-radius: $radius-softer;
-  padding: $inset-half-x;
+  border-radius: $cdr-radius-softer;
+  padding: $cdr-space-inset-half-x;
   height: 40px;
   display: block;
   width: 100%;
@@ -79,15 +79,15 @@
   &--preicon {
     /* $input-pre-icon-default-width = 25px with the expectation that
         slot provided icon is close to that width */
-    padding-left: calc($space-half-x + $space-quarter-x + $input-pre-icon-default-width);
+    padding-left: calc($cdr-space-half-x + $cdr-space-quarter-x + $input-pre-icon-default-width);
   }
 
   /* Size variants
     ========================================================================== */
 
   &--large {
-    padding-top: $space-1-x;
-    padding-bottom: $space-1-x;
+    padding-top: $cdr-space-one-x;
+    padding-bottom: $cdr-space-one-x;
     height: 48px;
   }
 
@@ -96,8 +96,8 @@
     ========== */
   @media (--xs-mq-only) {
     &--large\@xs {
-      padding-top: $space-1-x;
-      padding-bottom: $space-1-x;
+      padding-top: $cdr-space-one-x;
+      padding-bottom: $cdr-space-one-x;
       height: 48px;
     }
   }
@@ -107,8 +107,8 @@
     ========== */
   @media (--sm-mq-only) {
     &--large\@sm {
-      padding-top: $space-1-x;
-      padding-bottom: $space-1-x;
+      padding-top: $cdr-space-one-x;
+      padding-bottom: $cdr-space-one-x;
       height: 48px;
     }
   }
@@ -118,8 +118,8 @@
     ========== */
   @media (--md-mq-only) {
     &--large\@md {
-      padding-top: $space-1-x;
-      padding-bottom: $space-1-x;
+      padding-top: $cdr-space-one-x;
+      padding-bottom: $cdr-space-one-x;
       height: 48px;
     }
   }
@@ -130,8 +130,8 @@
 
   @media (--lg-mq-only) {
     &--large\@lg {
-      padding-top: $space-1-x;
-      padding-bottom: $space-1-x;
+      padding-top: $cdr-space-one-x;
+      padding-bottom: $cdr-space-one-x;
       height: 48px;
     }
   }
@@ -160,7 +160,7 @@
   &__pre-icon {
     position: absolute;
     top: 50%;
-    left: $space-half-x;
+    left: $cdr-space-half-x;
     transform: translateY(-50%);
     fill: $coal-train;
   }
@@ -169,7 +169,7 @@
     fill: $coal-train;
     position: absolute;
     top: 50%;
-    right: $space-half-x;
+    right: $cdr-space-half-x;
     transform: translateY(-50%);
   }
 
@@ -187,8 +187,8 @@
     @include redwood-display-20;
 
     color: $taken-for-granite;
-    padding-left: $space-half-x;
-    padding-top: $space-quarter-x;
+    padding-left: $cdr-space-half-x;
+    padding-top: $cdr-space-quarter-x;
   }
 }
 

@@ -21,8 +21,8 @@
   cursor: pointer;
   display: inline-flex;
   outline: none;
-  padding: $inset-1-and-a-half-x-squish;
-  padding-right: calc($space-1-and-a-half-x - $space-half-x);
+  padding: $cdr-space-inset-one-and-a-half-x-squish;
+  padding-right: calc($cdr-space-one-and-a-half-x - $cdr-space-half-x);
   text-align: left;
   text-transform: uppercase;
   text-decoration: none;
@@ -31,11 +31,11 @@
     align-self: center;
     display: inline-block;
     fill: inherit;
-    height: $icon-size;
-    margin-left: $space-quarter-x;
+    height: $cdr-icon-size;
+    margin-left: $cdr-space-quarter-x;
     vertical-align: middle;
     flex: 0 0 auto;
-    width: $icon-size;
+    width: $cdr-icon-size;
   }
 
   &:hover,
@@ -107,12 +107,12 @@
     }
 
     &.cdr-cta--elevated {
-      box-shadow: $cta-light-box-shadow, $prominence-elevated;
+      box-shadow: $cta-light-box-shadow, $cdr-prominence-elevated;
       
       &:hover,
       &:focus,
       &:active, {
-        box-shadow: $cta-light-box-shadow, $prominence-elevated;
+        box-shadow: $cta-light-box-shadow, $cdr-prominence-elevated;
       }
     }
   }
@@ -134,12 +134,12 @@
   }
   
   &--elevated {
-    box-shadow: $prominence-elevated;
+    box-shadow: $cdr-prominence-elevated;
 
     &:hover,
     &:focus,
     &:active {
-      box-shadow: $prominence-elevated;
+      box-shadow: $cdr-prominence-elevated;
     }
   }
 }

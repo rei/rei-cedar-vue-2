@@ -9,7 +9,7 @@
 
 .cdr-quote {
   margin: 0;
-  padding: $inset-1-x-stretch;
+  padding: $cdr-space-inset-one-x-stretch;
   line-height: 1;
   
   &__summary {
@@ -28,7 +28,7 @@
 
     & + .cdr-quote__citation {
       display: block;
-      padding-top: $space-1-x;
+      padding-top: $cdr-space-one-x;
     }
   }
 
@@ -42,14 +42,14 @@
 
     @media (--xs-mq) {
       border-width: 0 0 1px 0;
-      padding: $inset-1-x-stretch;
-      margin: 0 0 $space-1-x;
+      padding: $cdr-space-inset-one-x-stretch;
+      margin: 0 0 $cdr-space-one-x;
     }
 
     @media (--sm-mq) {
       border-width: 0 0 0 1px;
-      padding: $space-half-x $space-1-x $space-half-x $space-2-x;
-      margin: $space-1-x 0;
+      padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-half-x $cdr-space-two-x;
+      margin: $cdr-space-one-x 0;
     }
   }
 }
