@@ -140,6 +140,12 @@ __TODO:__ Notes about css, postcss, stylelint
 
 ## Components
 
+### Publishing Prerelease Components
+
+`npm run prerelease <path to component folder>`
+
+Publishes component to npm with a prerelease tag. You must increment the component's version manually prior to publishing. `--dry-run` flag will run the prerelease process without publishing to npm.
+
 __TODO:__ Notes about Vue, components
 
 - Using [Vue.js](https://vuejs.org/) single file components. They have excellent docs.
@@ -148,8 +154,8 @@ __TODO:__ Notes about Vue, components
 - Horizontal theming with css-modules, dynamically binding classes based on theme
 
 ## Commits
-This project is Commitizen friendly.
-when creating a pull request run `git cz` rather than `git commit` and follow the prompts.
+This project is Commitizen friendly.  To install: `npm install -g commitizen`
+When creating a pull request run `git cz` rather than `git commit` and follow the prompts.
 
 This projects Changlogs are generated.
 To output the latest changelog files you will need to create a new repository release.

@@ -1,6 +1,6 @@
 {
   "name": "@rei/cdr-grid",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "REI Software Engineering",
   "description": "REI Cedar Style Framework - Vue Component for Column",
   "homepage": "https://rei.github.io/rei-cedar/#cdr-col",
@@ -28,7 +28,7 @@
   },
   "peerDependencies": {
     "@rei/cdr-assets": "^0.3.0",
-    "vue": "^2.5.13"
+    "vue": "^2.6.7"
   },
   "devDependencies": {
     "@rei/cdr-assets": "^0.3.0",

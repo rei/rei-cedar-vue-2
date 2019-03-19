@@ -11,7 +11,6 @@ import CdrIcon from 'componentsdir/icon/CdrIcon';
 import CdrImg from 'componentsdir/image/CdrImg';
 import CdrInput from 'componentsdir/input/CdrInput';
 import CdrList from 'componentsdir/list/CdrList';
-import CdrMediaObject from 'componentsdir/mediaObject/CdrMediaObject';
 import CdrPagination from 'componentsdir/pagination/CdrPagination';
 import CdrQuote from 'componentsdir/quote/CdrQuote';
 import CdrRadio from 'componentsdir/radio/CdrRadio';
@@ -42,7 +41,6 @@ export default {
   CdrImg,
   CdrInput,
   CdrList,
-  CdrMediaObject,
   CdrPagination,
   CdrQuote,
   CdrRadio,

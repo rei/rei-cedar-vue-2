@@ -116,5 +116,6 @@ export default {
 
 <style module>
   @import 'cssdir/settings/_index.pcss';
+  @import './styles/vars/CdrCheckbox.vars.pcss';
   @import './styles/CdrCheckbox.pcss';
 </style>
