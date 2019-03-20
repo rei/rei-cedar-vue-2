@@ -13,7 +13,7 @@
       count="0"
       size="large"
       content-priority="secondary"
-      space="cdr-inset"
+      space="cdr-space-inset"
     />
 
     <cdr-rating

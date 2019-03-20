@@ -8,29 +8,29 @@
     </cdr-text>
 
     <cdr-card class="example">
-      <cdr-text class="cdr-stack-eighth-x">
-        cdr-stack-eighth-x
+      <cdr-text class="cdr-space-stack-eighth-x">
+        cdr-space-stack-eighth-x
       </cdr-text>
-      <cdr-text class="cdr-stack-quarter-x">
-        cdr-stack-quarter-x
+      <cdr-text class="cdr-space-stack-quarter-x">
+        cdr-space-stack-quarter-x
       </cdr-text>
-      <cdr-text class="cdr-stack-half-x">
-        cdr-stack-half-x
+      <cdr-text class="cdr-space-stack-half-x">
+        cdr-space-stack-half-x
       </cdr-text>
-      <cdr-text class="cdr-stack-three-quarter-x">
-        cdr-stack-three-quarter-x
+      <cdr-text class="cdr-space-stack-three-quarter-x">
+        cdr-space-stack-three-quarter-x
       </cdr-text>
-      <cdr-text class="cdr-stack-1-x">
-        cdr-stack-1-x
+      <cdr-text class="cdr-space-stack-1-x">
+        cdr-space-stack-1-x
       </cdr-text>
-      <cdr-text class="cdr-stack-1-and-a-half-x">
-        cdr-stack-1-and-a-half-x
+      <cdr-text class="cdr-space-stack-1-and-a-half-x">
+        cdr-space-stack-1-and-a-half-x
       </cdr-text>
-      <cdr-text class="cdr-stack-2-x">
-        cdr-stack-2-x
+      <cdr-text class="cdr-space-stack-2-x">
+        cdr-space-stack-2-x
       </cdr-text>
-      <cdr-text class="cdr-stack-4-x">
-        cdr-stack-4-x
+      <cdr-text class="cdr-space-stack-4-x">
+        cdr-space-stack-4-x
       </cdr-text>
     </cdr-card>
 

@@ -48,7 +48,7 @@
         <cdr-icon
           use="#mail"
           modifier="inherit-color"
-          class="cdr-inline-left--sm"
+          class="cdr-space-inline-half-x"
         />
         Icon on the left
       </cdr-link>

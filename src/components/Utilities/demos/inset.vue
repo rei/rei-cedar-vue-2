@@ -8,74 +8,74 @@
     </cdr-text>
 
     <cdr-card class="example">
-      <cdr-text class="cdr-inset-eighth-x">
-        cdr-inset-eighth-x
+      <cdr-text class="cdr-space-inset-eighth-x">
+        cdr-space-inset-eighth-x
       </cdr-text>
-      <cdr-text class="cdr-inset-quarter-x">
-        cdr-inset-quarter-x
+      <cdr-text class="cdr-space-inset-quarter-x">
+        cdr-space-inset-quarter-x
       </cdr-text>
-      <cdr-text class="cdr-inset-half-x">
-        cdr-inset-half-x
+      <cdr-text class="cdr-space-inset-half-x">
+        cdr-space-inset-half-x
       </cdr-text>
-      <cdr-text class="cdr-inset-three-quarter-x">
-        cdr-inset-three-quarter-x
+      <cdr-text class="cdr-space-inset-three-quarter-x">
+        cdr-space-inset-three-quarter-x
       </cdr-text>
-      <cdr-text class="cdr-inset-1-x">
-        cdr-inset-1-x
+      <cdr-text class="cdr-space-inset-1-x">
+        cdr-space-inset-1-x
       </cdr-text>
-      <cdr-text class="cdr-inset-1-and-a-half-x">
-        cdr-inset-1-and-a-half-x
+      <cdr-text class="cdr-space-inset-1-and-a-half-x">
+        cdr-space-inset-1-and-a-half-x
       </cdr-text>
-      <cdr-text class="cdr-inset-2-x">
-        cdr-inset-2-x
+      <cdr-text class="cdr-space-inset-2-x">
+        cdr-space-inset-2-x
       </cdr-text>
-      <cdr-text class="cdr-inset-4-x">
-        cdr-inset-4-x
+      <cdr-text class="cdr-space-inset-4-x">
+        cdr-space-inset-4-x
       </cdr-text>
-      <cdr-text class="cdr-inset-eighth-x-squish">
-        cdr-inset-eighth-x-squish
+      <cdr-text class="cdr-space-inset-eighth-x-squish">
+        cdr-space-inset-eighth-x-squish
       </cdr-text>
-      <cdr-text class="cdr-inset-quarter-x-squish">
-        cdr-inset-quarter-x-squish
+      <cdr-text class="cdr-space-inset-quarter-x-squish">
+        cdr-space-inset-quarter-x-squish
       </cdr-text>
-      <cdr-text class="cdr-inset-half-x-squish">
-        cdr-inset-half-x-squish
+      <cdr-text class="cdr-space-inset-half-x-squish">
+        cdr-space-inset-half-x-squish
       </cdr-text>
-      <cdr-text class="cdr-inset-three-quarter-x-squish">
-        cdr-inset-three-quarter-x-squish
+      <cdr-text class="cdr-space-inset-three-quarter-x-squish">
+        cdr-space-inset-three-quarter-x-squish
       </cdr-text>
-      <cdr-text class="cdr-inset-1-x-squish">
-        cdr-inset-1-x-squish
+      <cdr-text class="cdr-space-inset-1-x-squish">
+        cdr-space-inset-1-x-squish
       </cdr-text>
-      <cdr-text class="cdr-inset-2-x-squish">
-        cdr-inset-2-x-squish
+      <cdr-text class="cdr-space-inset-2-x-squish">
+        cdr-space-inset-2-x-squish
       </cdr-text>
-      <cdr-text class="cdr-inset-4-x-squish">
-        cdr-inset-4-x-squish
+      <cdr-text class="cdr-space-inset-4-x-squish">
+        cdr-space-inset-4-x-squish
       </cdr-text>
-      <cdr-text class="cdr-inset-eighth-x-stretch">
-        cdr-inset-eighth-x-stretch
+      <cdr-text class="cdr-space-inset-eighth-x-stretch">
+        cdr-space-inset-eighth-x-stretch
       </cdr-text>
-      <cdr-text class="cdr-inset-quarter-x-stretch">
-        cdr-inset-quarter-x-stretch
+      <cdr-text class="cdr-space-inset-quarter-x-stretch">
+        cdr-space-inset-quarter-x-stretch
       </cdr-text>
-      <cdr-text class="cdr-inset-half-x-stretch">
-        cdr-inset-half-x-stretch
+      <cdr-text class="cdr-space-inset-half-x-stretch">
+        cdr-space-inset-half-x-stretch
       </cdr-text>
-      <cdr-text class="cdr-inset-three-quarter-x-stretch">
-        cdr-inset-three-quarter-x-stretch
+      <cdr-text class="cdr-space-inset-three-quarter-x-stretch">
+        cdr-space-inset-three-quarter-x-stretch
       </cdr-text>
-      <cdr-text class="cdr-inset-1-x-stretch">
-        cdr-inset-1-x-stretch
+      <cdr-text class="cdr-space-inset-1-x-stretch">
+        cdr-space-inset-1-x-stretch
       </cdr-text>
-      <cdr-text class="cdr-inset-1-and-a-half-x-stretch">
-        cdr-inset-1-and-a-half-x-stretch
+      <cdr-text class="cdr-space-inset-1-and-a-half-x-stretch">
+        cdr-space-inset-1-and-a-half-x-stretch
       </cdr-text>
-      <cdr-text class="cdr-inset-2-x-stretch">
-        cdr-inset-2-x-stretch
+      <cdr-text class="cdr-space-inset-2-x-stretch">
+        cdr-space-inset-2-x-stretch
       </cdr-text>
-      <cdr-text class="cdr-inset-4-x-stretch">
-        cdr-inset-4-x-stretch
+      <cdr-text class="cdr-space-inset-4-x-stretch">
+        cdr-space-inset-4-x-stretch
       </cdr-text>
 
     </cdr-card>

@@ -1,5 +1,5 @@
 <template>
-  <div :class="[$style['cdr-caption'], 'cdr-inset--squish']">
+  <div :class="[$style['cdr-caption'], 'cdr-space-inset-squish']">
     <p
       v-if="summary"
       :class="$style['cdr-caption__summary']"
