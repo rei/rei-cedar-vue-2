@@ -1,36 +1,36 @@
 <template>
-  <div data-backstop="stack-space-utilities">
+  <div data-backstop="mb-space-utilities">
     <cdr-text
       tag="h2"
       modifier="heading-medium"
     >
-      Stack classes
+      margin bottom classes
     </cdr-text>
 
     <cdr-card class="example">
-      <cdr-text class="cdr-space-stack-eighth-x">
-        cdr-space-stack-eighth-x
+      <cdr-text class="cdr-space-mb-eighth-x">
+        cdr-space-mb-eighth-x
       </cdr-text>
-      <cdr-text class="cdr-space-stack-quarter-x">
-        cdr-space-stack-quarter-x
+      <cdr-text class="cdr-space-mb-quarter-x">
+        cdr-space-mb-quarter-x
       </cdr-text>
-      <cdr-text class="cdr-space-stack-half-x">
-        cdr-space-stack-half-x
+      <cdr-text class="cdr-space-mb-half-x">
+        cdr-space-mb-half-x
       </cdr-text>
-      <cdr-text class="cdr-space-stack-three-quarter-x">
-        cdr-space-stack-three-quarter-x
+      <cdr-text class="cdr-space-mb-three-quarter-x">
+        cdr-space-mb-three-quarter-x
       </cdr-text>
-      <cdr-text class="cdr-space-stack-1-x">
-        cdr-space-stack-1-x
+      <cdr-text class="cdr-space-mb-one-x">
+        cdr-space-mb-one-x
       </cdr-text>
-      <cdr-text class="cdr-space-stack-1-and-a-half-x">
-        cdr-space-stack-1-and-a-half-x
+      <cdr-text class="cdr-space-mb-one-and-a-half-x">
+        cdr-space-mb-one-and-a-half-x
       </cdr-text>
-      <cdr-text class="cdr-space-stack-2-x">
-        cdr-space-stack-2-x
+      <cdr-text class="cdr-space-mb-two-x">
+        cdr-space-mb-two-x
       </cdr-text>
-      <cdr-text class="cdr-space-stack-4-x">
-        cdr-space-stack-4-x
+      <cdr-text class="cdr-space-mb-four-x">
+        cdr-space-mb-four-x
       </cdr-text>
     </cdr-card>
 
@@ -42,7 +42,7 @@
 import Components from 'componentsdir/_index';
 
 export default {
-  name: 'UtilitiesSpaceStack',
+  name: 'UtilitiesSpacemb',
   components: Components,
 };
 </script>

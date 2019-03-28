@@ -48,7 +48,7 @@
         <cdr-icon
           use="#mail"
           modifier="inherit-color"
-          class="cdr-space-inline-half-x"
+          class="cdr-space-mr-half-x"
         />
         Icon on the left
       </cdr-link>
@@ -59,7 +59,7 @@
         <cdr-icon
           use="#download"
           modifier="inherit-color"
-          class="cdr-inline-right--sm"
+          class="cdr-space-mr-half-x"
         />
       </cdr-link>
       <br>
@@ -68,13 +68,13 @@
         <cdr-icon
           use="#twitter"
           modifier="inherit-color"
-          class="cdr-inline-left--sm"
+          class="cdr-space-ml-half-x"
         />
         Icons on both sides
         <cdr-icon
           use="#external-link"
           modifier="inherit-color"
-          class="cdr-inline-right--sm"
+          class="cdr-space-mr-half-x"
         />
       </cdr-link>
     </div>

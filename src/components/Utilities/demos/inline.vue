@@ -1,35 +1,35 @@
 <template>
-  <div data-backstop="inline-space-utilities">
+  <div data-backstop="mr-space-utilities">
     <cdr-text
       tag="h2"
       modifier="heading-medium"
     >
-      Inline space classes
+      margin right space classes
     </cdr-text>
     <cdr-card class="example">
-      <cdr-text class="cdr-inline-eighth-x">
-        cdr-inline-eighth-x
+      <cdr-text class="cdr-space-mr-eighth-x">
+        cdr-space-mr-eighth-x
       </cdr-text>
-      <cdr-text class="cdr-inline-quarter-x">
-        cdr-inline-quarter-x
+      <cdr-text class="cdr-space-mr-quarter-x">
+        cdr-space-mr-quarter-x
       </cdr-text>
-      <cdr-text class="cdr-inline-half-x">
-        cdr-inline-half-x
+      <cdr-text class="cdr-space-mr-half-x">
+        cdr-space-mr-half-x
       </cdr-text>
-      <cdr-text class="cdr-inline-three-quarter-x">
-        cdr-inline-three-quarter-x
+      <cdr-text class="cdr-space-mr-three-quarter-x">
+        cdr-space-mr-three-quarter-x
       </cdr-text>
-      <cdr-text class="cdr-inline-1-x">
-        cdr-inline-1-x
+      <cdr-text class="cdr-space-mr-one-x">
+        cdr-space-mr-one-x
       </cdr-text>
-      <cdr-text class="cdr-inline-1-and-a-half-x">
-        cdr-inline-1-and-a-half-x
+      <cdr-text class="cdr-space-mr-one-and-a-half-x">
+        cdr-space-mr-one-and-a-half-x
       </cdr-text>
-      <cdr-text class="cdr-inline-2-x">
-        cdr-inline-2-x
+      <cdr-text class="cdr-space-mr-two-x">
+        cdr-space-mr-two-x
       </cdr-text>
-      <cdr-text class="cdr-inline-4-x">
-        cdr-inline-4-x
+      <cdr-text class="cdr-space-mr-four-x">
+        cdr-space-mr-four-x
       </cdr-text>
     </cdr-card>
   </div>

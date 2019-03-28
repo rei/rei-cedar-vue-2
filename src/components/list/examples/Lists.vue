@@ -8,9 +8,9 @@
       List
     </cdr-text>
 
-    <unordered-list class="cdr-space-stack-4-x" />
-    <ordered-list class="cdr-space-stack-4-x" />
-    <bare-list class="cdr-space-stack-4-x" />
+    <unordered-list class="cdr-space-mb-four-x" />
+    <ordered-list class="cdr-space-mb-four-x" />
+    <bare-list class="cdr-space-mb-four-x" />
   </div>
 </template>
 
