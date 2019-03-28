@@ -97,6 +97,13 @@
   &--linked {
     display: inline-flex;
     text-decoration: none;
+    position: relative;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration-color: $heart-of-darkness;
+    }
 
     & .cdr-rating__count {
       &:hover,

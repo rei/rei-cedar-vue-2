@@ -11,9 +11,109 @@
 ========================================================================== */
 
 .cdr-card {
-  background-color: $card-background-color;
-  border-radius: $card-border-radius;
+  background-color: $clean-slate;
+  border-radius: $radius-softer;
   box-shadow: 0 3px 8px rgba(26, 26, 26, 0.2);
   color: $card-color;
   width: $card-width;
+  
+  &__media {
+    border-top-left-radius: $radius-soft;
+    border-top-right-radius: $radius-soft;
+  }
+
+  &--article,
+  &--adventure,
+  &--event {
+    position: relative;
+    transition: transform 500ms ease, box-shadow 500ms ease;
+
+    &:hover {
+      box-shadow: $prominence-floating;
+      transform: scale(1.006);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $easily-excited;
+      text-decoration: underline;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      height: 100%;
+      left: 0;
+      top: 0;
+      transition: trasparent 0.1s ease-out;
+      background-color: trasparent;
+    }
+
+    &__action {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+/* ==========================================================================
+  # CdrLead
+  
+  All values should map to variables in
+  vars/CdrLead.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrLead
+========================================================================== */
+.cdr-card-intro {
+  align-self: auto;
+
+  /* Label, Location
+    ========== */
+  &__category,
+  &__snapshot {
+    @include redwood-display-20;
+
+    color: $text-color-secondary-on-light;
+  }
+
+  /* Title
+    ========== */
+  &__heading {
+    color: $text-color-primary-on-light;
+
+    &--action {
+      position: static;
+      transition: color 500ms ease;
+
+      /* States
+      ---------- */
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $text-color-primary-on-light;
+        text-decoration: none;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: trasparent 0.1s ease-out;
+        background-color: trasparent;
+      }
+    }
+  }
 }

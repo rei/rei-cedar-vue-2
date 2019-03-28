@@ -1,0 +1,66 @@
+/* ==========================================================================
+  # CdrRating
+  
+  All values should map to variables in
+  vars/CdrRating.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :light default
+    :light secondary
+========================================================================== */
+
+/* Light Theme */
+
+/* Theme via cascade
+:global(.cdr-bg--light) .cdr-rating {
+   &__count {
+    color: $text-color-primary-on-light;
+    }
+    &--linked {
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration-color: $text-color-primary-on-light;
+      }
+    }
+  }
+}
+*/
+
+/* Theme via prop */
+
+:global(.on-light).cdr-rating {
+  &__count {
+    color: $text-color-primary-on-light;
+  }
+
+  &--linked {
+    /* States
+    ---------- */
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration-color: $text-color-primary-on-light;
+    }
+  }
+}
+
+:global(.on-light-secondary).cdr-rating {
+  & .cdr-rating__count {
+    color: $text-color-secondary-on-light;
+  }
+
+  & .cdr-rating--linked {
+    color: $text-color-secondary-on-light;
+
+    /* States
+    ---------- */
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration-color: $text-color-secondary-on-light;
+    }
+  }
+}

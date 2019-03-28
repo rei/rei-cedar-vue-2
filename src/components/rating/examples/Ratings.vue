@@ -65,6 +65,7 @@
       count="615"
       size="small"
       compact
+      theme="light-secondary"
     />
     <cdr-rating
       rating="3"
