@@ -28,7 +28,7 @@
 import Components from 'componentsdir/_index';
 
 export default {
-  name: 'UtilitiesSpaceInline',
+  name: 'UtilitiesSpaceInset',
   components: Components,
   data() {
     return {
