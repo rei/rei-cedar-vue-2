@@ -7,7 +7,7 @@
   ],
   "report-dir": "./test/unit/coverage",
   "require": [
-    "@babel/register",
+    "babel-register",
     "./test/setup.js"
   ],
   "include": [

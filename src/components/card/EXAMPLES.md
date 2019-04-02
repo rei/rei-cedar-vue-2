@@ -9,7 +9,7 @@
 #### Simple card with an inset to provide internal spacing
 ```
 <cdr-card 
-  wrapper-a="cdr-inset"
+  wrapper-a="cdr-space-inset-one-x"
 >
  <cdr-img alt="" modifier="responsive" src="http://placehold.it/350x150"></cdr-img>
 </cdr-card>
@@ -17,11 +17,11 @@
 #### placing content in multiple slots
 ```
 <cdr-card
- wrapper-b="cdr-inset"
+ wrapper-b="cdr-space-inset-one-x"
  header
- headerClass="cdr-inset"
+ headerClass="cdr-space-inset-one-x"
  footer
- footerClass="cdr-inset"
+ footerClass="cdr-space-inset-one-x"
 >
   <cdr-media-object
   level="3"
