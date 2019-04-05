@@ -116,3 +116,20 @@ $cdr-button-base-color-fill-icon-only-focus: $heart-of-darkness;
 $cdr-button-base-prominence-box-shadow-icon-only-focus: none;
 
 $cdr-button-base-color-fill-icon-only-darkmode: $moon-shot;
+
+@mixin cdr-button-base-text-mixin() {
+  @include redwood-display-30
+}
+
+
+@mixin cdr-button-base-text-mixin-small() {
+  @include redwood-display-20;
+}
+
+@mixin cdr-button-base-text-mixin-medium() {
+  @include redwood-display-30;
+}
+
+@mixin cdr-button-base-text-mixin-large() {
+  @include redwood-display-40;
+}

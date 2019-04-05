@@ -23,7 +23,7 @@
 ========================================================================== */
 
 .cdr-button {
-  @include redwood-display-30; // TODO: typo mixins >_<
+  @include cdr-button-base-text-mixin;
 
   background-color: $cdr-button-primary-color-background;
   box-shadow: $cdr-button-primary-prominence-box-shadow;
@@ -140,7 +140,7 @@
   /* Large
      ========== */
   &--large {
-    @include redwood-display-40; // TODO: typo mixins >_<
+    @include cdr-button-base-text-mixin-large;
 
     padding: $cdr-button-base-space-padding-large;
 
@@ -158,7 +158,7 @@
   /* Medium
      ========== */
   &--medium {
-    @include redwood-display-30; // TODO: typo mixins >_<
+    @include cdr-button-base-text-mixin-medium;
 
     padding: $cdr-button-base-space-padding-medium;
 
@@ -176,7 +176,7 @@
   /* Small
      ========== */
   &--small {
-    @include redwood-display-20; // TODO: typo mixins >_<
+    @include cdr-button-base-text-mixin-small;
     padding: $cdr-button-base-space-padding-small;
 
     &.cdr-button--has-icon {
@@ -246,7 +246,7 @@
     width: 20px;
     height: 20px;
   }
-
+// TODO: update these to use the same variables as the base large/medium/small, for consistency
   /* @xs
     0px - 767px
     ========== */
