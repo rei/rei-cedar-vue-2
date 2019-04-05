@@ -11,36 +11,43 @@
 ========================================================================== */
 
 .cdr-link {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  color: $link-color;
-  cursor: pointer;
-  display: inline-flex;
-  fill: $link-color;
-  outline: none;
-  padding: 0;
-  text-decoration: underline;
-  vertical-align: top;
+  font-family: $cdr-link-text-font-family;
+  font-size: $cdr-link-text-font-size;
+  line-height: $cdr-link-text-line-height;
+  align-items: $cdr-link-space-align-items;
+  background-color: $cdr-link-color-background;
+  border: $cdr-link-color-border;
+  margin: $cdr-link-space-margin;
+  color: $cdr-link-color-text;
+  cursor: $cdr-link-ui-cursor;
+  display: $cdr-link-space-display;
+  fill: $cdr-link-color-fill;
+  outline: $cdr-link-color-outline;
+  padding: $cdr-link-space-padding;
+  text-decoration: $cdr-link-text-decoration;
+  vertical-align: $cdr-link-space-vertical-align;
 
   /* States
     ---------- */
 
-  &:hover,
-  &:active,
-  &:focus {
-    color: $link-color;
-    outline: none;
-    text-decoration: underline;
+  &:hover {
+    color: $cdr-link-color-text-hover;
+    outline: $cdr-link-color-outline-hover;
+    text-decoration: $cdr-link-text-decoration-hover;
   }
 
+  &:active{
+    color: $cdr-link-color-text-active;
+    outline: $cdr-link-color-outline-active;
+    text-decoration: $cdr-link-text-decoration-active;
+  }
+
+
   &:focus {
-    outline: $default-outline;
-    outline-offset: 0;
+    color: $cdr-link-color-text-focus;
+    outline: $cdr-link-color-outline-focus;
+    outline-offset: $cdr-link-space-outline-offset-focus;
+    text-decoration: $cdr-link-text-decoration-focus;
   }
 }
 
@@ -50,18 +57,29 @@
 /* Standalone
     ========== */
 .cdr-link--standalone {
-  text-decoration: none;
+  text-decoration: $cdr-link-text-decoration-standalone;
 
-  &:hover,
-  &:active,
-  &:focus,
+  &:hover {
+    text-decoration: $cdr-link-text-decoration-standalone-hover;
+  }
+
+  &:active {
+    text-decoration: $cdr-link-text-decoration-standalone-active;
+  }
+
+  &:focus {
+    text-decoration: $cdr-link-text-decoration-standalone-focus;
+  }
+
   &:visited {
-    text-decoration: underline;
+    text-decoration: $cdr-link-text-decoration-standalone-visited;
   }
 }
 
+
 /* Light Theme */
 
+$link-color-light: $cdr-color-text-link-lightmode;
 /* Theme via cascade
 
 :global(.cdr-bg--light) .cdr-link {
@@ -79,8 +97,8 @@
 /* Theme via prop */
 
 :global(.on-light).cdr-link {
-  color: $link-color;
-  fill: $link-color;
+  color: $link-color-light;
+  fill: $link-color-light;
 
   /* States
     ---------- */
@@ -88,13 +106,12 @@
   &:hover,
   &:active,
   &:focus {
-    color: $link-color;
+    color: $link-color-light;
   }
 }
 
 /* Dark Theme */
 
-/* TODO: get this value */
 $link-color-dark: $cdr-color-text-link-darkmode;
 
 /* Theme via cascade
@@ -102,7 +119,7 @@ $link-color-dark: $cdr-color-text-link-darkmode;
 :global(.cdr-bg--dark) .cdr-link {
   color: $link-color-dark;
   fill: $link-color-dark;
-  
+
   &:hover,
   &:active,
   &:focus {
