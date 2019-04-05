@@ -18,19 +18,12 @@
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
     "docs": "vue-styleguidist server",
-    "build:docs": "lerna run build:docs",
     "build:archive": "node build/component-docs-archive.js",
     "build:transfer": "node build/component-docs-transfer.js",
     "create": "node generator.js",
-    "clean": "lerna clean",
-    "bootstrap": "lerna bootstrap",
-    "start": "lerna bootstrap --no-ci && lerna run build && npm run component-css",
     "check-version": "node check-version.js",
     "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
-    "component-css": "cross-env NODE_ENV=css node build/component-css-build.js",
-    "prerelease": "npm-publish-prerelease",
-    "release:preview": "lerna changed --conventional-commits",
-    "release:publish": "lerna publish --conventional-commits --github-release --sign-git-commit --sign-git-tag --yes"
+    "component-css": "cross-env NODE_ENV=css node build/component-css-build.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.4.0",
@@ -57,7 +50,6 @@
     "css-loader": "^2.1.0",
     "cssnano": "^4.1.10",
     "cz-conventional-changelog": "^2.1.0",
-    "cz-lerna-changelog": "^2.0.2",
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-friendly-formatter": "^4.0.1",
@@ -85,7 +77,6 @@
     "jsdom-global": "^3.0.2",
     "json2md": "^1.6.2",
     "klaw-sync": "^6.0.0",
-    "lerna": "^3.13.1",
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.5.0",
     "minimist": "^1.2.0",
@@ -156,10 +147,10 @@
     "> 1%",
     "last 2 versions",
     "ie >= 11"
-  ],
+  ], 
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "dependencies": {}
