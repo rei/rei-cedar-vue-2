@@ -1,103 +1,118 @@
-// The way button is currently written, the "primary" styles apply to all buttons, and the "secondary" variant is just overriding some of the primary styles.
-// is that the way all of our components are structured CSS-wise? if so, do we just need to document that "primary" means "all buttons" and everything else is a variant on top of that, so secondary is really "primary + secondary" and small is "primary + small", and secondary small is "primary + secondary + small" etc.
-// Do we need to export a "secondary" copy of the "primary" variables that are not currently overridden by the secondary variant? (and the same for small/medium/large....all variants really)
-// should we export those variables, but not use them in our css? (and add a bunch of comments to our code about keeping them in sync)
+$cdr-button-base-color-border: none;
+$cdr-button-base-color-outline: none;
+$cdr-button-base-size-border-radius: $cdr-radius-softer;
+$cdr-button-base-space-display: inline-flex;
+$cdr-button-base-space-overflow: visible;
+$cdr-button-base-space-padding: $cdr-space-inset-one-x-squish;
+$cdr-button-base-text-align: left;
+$cdr-button-base-text-decoration: none;
+$cdr-button-base-text-transform: none;
+$cdr-button-base-ui-cursor: pointer;
+
+$cdr-button-primary-color-background: #3278ae;
+$cdr-button-primary-prominence-box-shadow: inset 0 0 0 1px #2b6692;
+$cdr-button-primary-color-fill: #ffffff;
+$cdr-button-primary-color-text: #ffffff;
+
+$cdr-button-base-space-icon-align-self: center;
+$cdr-button-primary-color-icon-fill: inherit;
+$cdr-button-base-space-icon-margin-right: $cdr-space-quarter-x;
+
+$cdr-button-primary-color-background-hover: #2b6692;
+$cdr-button-primary-color-fill-hover: #ffffff;
+$cdr-button-primary-color-text-hover: #ffffff;
+$cdr-button-primary-prominence-box-shadow-hover: inset 0 0 0 1px #2b6692;
+$cdr-button-base-color-outline-hover: none;
+$cdr-button-base-space-outline-offset-hover: 0;
+$cdr-button-base-text-decoration-hover: none;
+
+$cdr-button-primary-color-background-active: #2b6692;
+$cdr-button-primary-color-fill-active: #ffffff;
+$cdr-button-primary-color-text-active: #ffffff;
+$cdr-button-primary-prominence-box-shadow-active: inset 0 0 0 1px #2b6692;
+$cdr-button-base-color-outline-active: none;
+$cdr-button-base-space-outline-offset-active: 0;
+$cdr-button-base-text-decoration-active: none;
+
+$cdr-button-primary-color-background-focus: #2b6692;
+$cdr-button-primary-color-fill-focus: #ffffff;
+$cdr-button-primary-color-text-focus: #ffffff;
+$cdr-button-primary-prominence-box-shadow-focus: inset 0 0 0 1px #2b6692;
+$cdr-button-base-color-outline-focus: $default-outline;
+$cdr-button-base-space-outline-offset-focus: 0;
+$cdr-button-base-text-decoration-focus: none;
+
+$cdr-button-primary-color-background-disabled: #dadada;
+$cdr-button-primary-color-text-disabled: #ffffff;
+$cdr-button-primary-prominence-box-shadow-disabled: inset 0 0 0 1px #b8b8b8;
+
+$cdr-button-base-ui-cursor-disabled: not-allowed;
+
+$cdr-button-secondary-color-background: #ffffff;
+$cdr-button-secondary-color-text: #292929;
+$cdr-button-secondary-color-fill: #292929;
+$cdr-button-secondary-prominence-box-shadow: inset 0 0 0 1px #616161;
+
+$cdr-button-secondary-color-background-hover: #f7f7f7;
+$cdr-button-secondary-color-text-hover: #292929;
+$cdr-button-secondary-color-fill-hover: #292929;
+$cdr-button-secondary-prominence-box-shadow-hover: inset 0 0 0 1px #616161;
+
+$cdr-button-secondary-color-background-active: #f7f7f7;
+$cdr-button-secondary-color-text-active: #292929;
+$cdr-button-secondary-color-fill-active: #292929;
+$cdr-button-secondary-prominence-box-shadow-active: inset 0 0 0 1px #616161;
+
+$cdr-button-secondary-color-background-focus: #f7f7f7;
+$cdr-button-secondary-color-text-focus: #292929;
+$cdr-button-secondary-color-fill-focus: #292929;
+$cdr-button-secondary-prominence-box-shadow-focus: inset 0 0 0 1px #616161;
+
+$cdr-button-secondary-color-background-disabled: #ffffff;
+$cdr-button-secondary-color-text-disabled: #b8b8b8;
+$cdr-button-secondary-color-fill-disabled: #b8b8b8;
+$cdr-button-secondary-prominence-box-shadow-disabled: inset 0 0 0 1px #dadada;
+
+$cdr-button-base-space-padding-large: $cdr-space-inset-one-and-a-half-x-squish;
+$cdr-button-base-space-padding-left-has-icon-large: calc($cdr-space-one-and-a-half-x - $cdr-space-quarter-x);
+
+$cdr-button-base-space-padding-medium: $cdr-space-inset-one-x-squish;
+$cdr-button-base-space-padding-left-has-icon-medium: calc($cdr-space-one-x - $cdr-space-quarter-x);
+
+$cdr-button-base-space-padding-small: $cdr-space-inset-three-quarter-x-squish;
+$cdr-button-base-space-padding-left-has-icon-small: calc($cdr-space-three-quarter-x - $cdr-space-quarter-x);
+
+$cdr-button-base-size-width-icon-small: 20px;
+$cdr-button-base-size-height-icon-small: 20px;
+$cdr-button-base-size-width-icon-medium: $cdr-icon-size;
+$cdr-button-base-size-height-icon-medium: $cdr-icon-size;
+$cdr-button-base-size-width-icon-large: $cdr-icon-size;
+$cdr-button-base-size-height-icon-large: $cdr-icon-size;
+
+$cdr-button-base-size-width-full-width: 100%;
+$cdr-button-base-space-justify-content-full-width: center;
+
+$cdr-button-base-color-background-icon-only: none;
+$cdr-button-base-color-border-icon-only: none;
+$cdr-button-base-prominence-box-shadow-icon-only: none;
+$cdr-button-base-space-display-icon-only: inline-block;
 
 
-// if a component doesn't have a lightmode/darkmode already, should we just call everything "lightmode" for now?
+$cdr-button-base-space-padding-icon-only: $cdr-space-inset-half-x; // this class has "padding" and "padding-right" declared. Should the variables export separate top/left/right/bottom variables in cases like these?
+$cdr-button-base-space-padding-right-icon-only: calc($cdr-space-inset-half-x - $cdr-space-quarter-x); // then in the actual component css we would do like: padding: $padding-top $padding-right $padding-bottom $padding-left
 
+$cdr-button-base-color-fill-icon-only-darkmode: $heart-of-darkness;
 
-$cdr-button-primary-color-background-lightmode: #3278ae;
-$cdr-button-primary-color-border-lightmode: none;
-$cdr-button-primary-prominence-box-shadow-lightmode: inset 0 0 0 1px #2b6692;
-$cdr-button-primary-color-fill-lightmode: #ffffff;
-$cdr-button-primary-color-outline-lightmode: none;
-$cdr-button-primary-color-text-lightmode: #ffffff; // should this be "primary-color-text" or "primary-color-color"?
-$cdr-button-primary-size-border-radius-lightmode: $cdr-radius-softer;
-$cdr-button-primary-space-display-lightmode: inline-flex; // is "space" the right token category?
-$cdr-button-primary-space-overflow-lightmode: visible;// same Q as above
-$cdr-button-primary-space-padding-lightmode: $cdr-space-inset-one-x-squish;
-$cdr-button-primary-text-align-lightmode: left; // should this be "text-text-align"?
-$cdr-button-primary-text-decoration-lightmode: none; // same Q as above
-$cdr-button-primary-text-transform-lightmode: none; // same Q as above
-$cdr-button-primary-ui-cursor-lightmode: pointer; // not sure how to categorize "cursor: pointer", it's the only CSS attribute like that
+$cdr-button-base-color-background-icon-only-hover: none;
+$cdr-button-base-color-fill-icon-only-hover: $heart-of-darkness;
+$cdr-button-base-prominence-box-shadow-icon-only-hover: none;
 
-// it might make more sense for sub-items to appear earlier in the variable name, so it's easier to tell where it is applied to
-// like $cdr-button-primary-space-icon-align-self-lightmode or $cdr-button-icon-primary-space-align-self-lightmode
-$cdr-button-primary-space-align-self-icon-lightmode: center;
-$cdr-button-primary-color-fill-icon-lightmode: inherit;
-$cdr-button-primary-space-margin-right-icon-lightmode: $cdr-space-quarter-x;
+$cdr-button-base-color-background-icon-only-active: none;
+$cdr-button-base-color-fill-icon-only-active: $heart-of-darkness;
+$cdr-button-base-prominence-box-shadow-icon-only-active: none;
 
+$cdr-button-base-color-background-icon-only-focus: none;
+$cdr-button-base-color-fill-icon-only-focus: $heart-of-darkness;
+$cdr-button-base-prominence-box-shadow-icon-only-focus: none;
 
-// should these be "hover-active-focus" or split across all 3?
-// if that means we can no longer group styles together like that, how much duplication does that add to the cedar CSS for everyone? (i see 26 results for "&:hover,")
-// do we export a hover, active, and focus version of each of these variables, but only use 1 in our code? (and add a bunch of comments to our code about keeping them in sync) that way if we ever did want to add a separate hover state from active/focus, we could.
-$cdr-button-primary-color-background-hover-active-focus-lightmode: #2b6692;
-$cdr-button-primary-color-fill-hover-active-focus-lightmode: #ffffff;
-$cdr-button-primary-color-outline-hover-active-focus-lightmode: none;
-$cdr-button-primary-color-text-hover-active-focus-lightmode: #ffffff;
-$cdr-button-primary-prominence-box-shadow-hover-active-focus-lightmode: inset 0 0 0 1px #2b6692;
-$cdr-button-primary-space-outline-offset-hover-active-focus-lightmode: 0; // is space the right category for "outline-offset"? it has to do with the spacing of the outline, but sort of affects the visual "size" of the element
-$cdr-button-primary-text-decoration-hover-active-focus-lightmode: none;
-
-$cdr-button-primary-color-outline-focus-lightmode: $default-outline; // this style overrides the value for $cdr-button-primary-color-outline-hover-active-focus-lightmode above, do we need some way to specify that this variable/style has to be declared after the previous one so it overrides it?
-
-$cdr-button-primary-color-background-disabled-lightmode: #dadada;
-$cdr-button-primary-color-text-disabled-lightmode: #ffffff;
-$cdr-button-primary-ui-cursor-disabled-lightmode: not-allowed;
-$cdr-button-primary-prominence-box-shadow-disabled-lightmode: inset 0 0 0 1px #b8b8b8;
-
-
-$cdr-button-secondary-color-background-lightmode: #ffffff;
-$cdr-button-secondary-color-text-lightmode: #292929;
-$cdr-button-secondary-color-fill-lightmode: #292929;
-$cdr-button-secondary-prominence-box-shadow-lightmode: inset 0 0 0 1px #616161;
-
-$cdr-button-secondary-color-background-hover-active-focus-lightmode: #f7f7f7;
-$cdr-button-secondary-color-text-hover-active-focus-lightmode: #292929;
-$cdr-button-secondary-color-fill-hover-active-focus-lightmode: #292929;
-$cdr-button-secondary-prominence-box-shadow-hover-active-focus-lightmode: inset 0 0 0 1px #616161;
-
-$cdr-button-secondary-color-background-disabled-lightmode: #ffffff;
-$cdr-button-secondary-color-text-disabled-lightmode: #b8b8b8;
-$cdr-button-secondary-color-fill-disabled-lightmode: #b8b8b8;
-$cdr-button-secondary-prominence-box-shadow-disabled-lightmode: inset 0 0 0 1px #dadada;
-$cdr-button-secondary-ui-cursor-disabled-lightmode: not-allowed;
-
-// should these be under primary? you could also have secondary large.
-$cdr-button-primary-space-padding-large-lightmode: $cdr-space-inset-one-and-a-half-x-squish;
-$cdr-button-primary-space-padding-left-has-icon-large-lightmode: calc($cdr-space-one-and-a-half-x - $cdr-space-quarter-x); // applies to the class .cdr-button--has-icon...not sure how to specify that in the variable name
-
-$cdr-button-primary-space-padding-medium-lightmode: $cdr-space-inset-one-x-squish;
-$cdr-button-primary-space-padding-left-has-icon-medium-lightmode: calc($cdr-space-one-x - $cdr-space-quarter-x);
-
-$cdr-button-primary-space-padding-small-lightmode: $cdr-space-inset-three-quarter-x-squish;
-$cdr-button-primary-space-padding-left-has-icon-small-lightmode: calc($cdr-space-three-quarter-x - $cdr-space-quarter-x);
-
-// the icon size is currently set for each of the breakpoints, however it is the same across all breakpoints for each button size
-// i.e, the icon size for a small button is always 20px regardless of the breakpoint.
-// should we update the CSS to move those icon size declarations out of the breakpoints since they don't actually change anything? (the breakpoints literally appear to declare the same styles for every breakpoint?)
-// or do we want to maintain the flexibility of having separate "small-breakpoint-sm", "small-breakpoint-md", "small-breakpoint-lg", etc. variables?
-$cdr-button-primary-size-width-icon-small-lightmode: 20px;
-$cdr-button-primary-size-height-icon-small-lightmode: 20px;
-$cdr-button-primary-size-width-icon-medium-lightmode: $cdr-icon-size;
-$cdr-button-primary-size-height-icon-medium-lightmode: $cdr-icon-size;
-$cdr-button-primary-size-width-icon-large-lightmode: $cdr-icon-size;
-$cdr-button-primary-size-height-icon-large-lightmode: $cdr-icon-size;
-
-$cdr-button-primary-size-width-full-width-lightmode: 100%;
-$cdr-button-primary-space-justify-content-full-width-lightmode: center;
-
-$cdr-button-primary-color-background-icon-only-lightmode: none;
-$cdr-button-primary-color-border-icon-only-lightmode: none;
-$cdr-button-primary-prominence-box-shadow-icon-only-lightmode: none;
-$cdr-button-primary-space-display-icon-only-lightmode: inline-block;
-$cdr-button-primary-space-padding-icon-only-lightmode: $cdr-space-inset-half-x; // this class has "padding" and "padding-right" declared. Should the variables export separate top/left/right/bottom variables in cases like these?
-$cdr-button-primary-space-padding-right-icon-only-lightmode: calc($cdr-space-inset-half-x - $cdr-space-quarter-x); // then in the actual component css we would do like: padding: $padding-top $padding-right $padding-bottom $padding-left
-$cdr-button-primary-color-fill-icon-only-lightmode: $heart-of-darkness;
-
-$cdr-button-primary-color-background-icon-only-hover-active-focus-lightmode: none;
-$cdr-button-primary-color-fill-icon-only-hover-active-focus-lightmode: $heart-of-darkness;
-$cdr-button-primary-prominence-box-shadow-icon-only-hover-active-focus-lightmode: none;
-
-$cdr-button-primary-color-fill-icon-only-on-dark-lightmode: $moon-shot; // is "on-dark" darkmode? why does this component only have one thing "on-dark"?
+$cdr-button-base-color-fill-icon-only-on-dark: $moon-shot;

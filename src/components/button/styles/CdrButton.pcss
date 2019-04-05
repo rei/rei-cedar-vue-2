@@ -25,50 +25,70 @@
 .cdr-button {
   @include redwood-display-30; // TODO: typo mixins >_<
 
-  background-color: $cdr-button-primary-color-background-lightmode;
-  border: $cdr-button-primary-color-border-lightmode;
-  border-radius: $cdr-button-primary-size-border-radius-lightmode;
-  box-shadow: $cdr-button-primary-prominence-box-shadow-lightmode;
-  color: $cdr-button-primary-color-text-lightmode;
-  cursor: $cdr-button-primary-ui-cursor-lightmode;
-  display: $cdr-button-primary-space-display-lightmode;
-  fill: $cdr-button-primary-color-fill-lightmode;
-  outline: $cdr-button-primary-color-outline-lightmode;
-  overflow: $cdr-button-primary-space-overflow-lightmode;
-  padding: $cdr-button-primary-space-padding-lightmode;
-  text-align: $cdr-button-primary-text-align-lightmode;
-  text-decoration: $cdr-button-primary-text-decoration-lightmode;
-  text-transform: $cdr-button-primary-text-transform-lightmode;
+  background-color: $cdr-button-primary-color-background;
+  box-shadow: $cdr-button-primary-prominence-box-shadow;
+  color: $cdr-button-primary-color-text;
+  fill: $cdr-button-primary-color-fill;
+
+  border: $cdr-button-base-color-border;
+  border-radius: $cdr-button-base-size-border-radius;
+  cursor: $cdr-button-base-ui-cursor;
+  display: $cdr-button-base-space-display;
+  outline: $cdr-button-base-color-outline;
+  overflow: $cdr-button-base-space-overflow;
+  padding: $cdr-button-base-space-padding;
+  text-align: $cdr-button-base-text-align;
+  text-decoration: $cdr-button-base-text-decoration;
+  text-transform: $cdr-button-base-text-transform;
 
   & > :global(&__icon) {
-    align-self: $cdr-button-primary-space-align-self-icon-lightmode;
-    fill: $cdr-button-primary-color-fill-icon-lightmode;
-    margin-right: $cdr-button-primary-space-margin-right-icon-lightmode;
+    align-self: $cdr-button-base-space-icon-align-self;
+    margin-right: $cdr-button-base-space-icon-margin-right;
+
+    fill: $cdr-button-primary-color-icon-fill; // ? is this base or primary?
   }
   /* States
     ---------- */
 
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: $cdr-button-primary-color-background-hover-active-focus-lightmode;
-    color: $cdr-button-primary-color-text-hover-active-focus-lightmode;
-    box-shadow: $cdr-button-primary-prominence-box-shadow-hover-active-focus-lightmode;
-    fill: $cdr-button-primary-color-fill-hover-active-focus-lightmode;
-    outline: $cdr-button-primary-color-outline-hover-active-focus-lightmode;
-    outline-offset: $cdr-button-primary-space-outline-offset-hover-active-focus-lightmode;
-    text-decoration: $cdr-button-primary-text-decoration-hover-active-focus-lightmode;
+  &:hover {
+    background-color: $cdr-button-primary-color-background-hover;
+    color: $cdr-button-primary-color-text-hover;
+    box-shadow: $cdr-button-primary-prominence-box-shadow-hover;
+    fill: $cdr-button-primary-color-fill-hover;
+
+    outline: $cdr-button-base-color-outline-hover;
+    outline-offset: $cdr-button-base-space-outline-offset-hover;
+    text-decoration: $cdr-button-base-text-decoration-hover;
+  }
+
+  &:active {
+    background-color: $cdr-button-primary-color-background-active;
+    color: $cdr-button-primary-color-text-active;
+    box-shadow: $cdr-button-primary-prominence-box-shadow-active;
+    fill: $cdr-button-primary-color-fill-active;
+
+    outline: $cdr-button-base-color-outline-active;
+    outline-offset: $cdr-button-base-space-outline-offset-active;
+    text-decoration: $cdr-button-base-text-decoration-active;
   }
 
   &:focus {
-    outline: $cdr-button-primary-color-outline-focus-lightmode;
+    background-color: $cdr-button-primary-color-background-focus;
+    color: $cdr-button-primary-color-text-focus;
+    box-shadow: $cdr-button-primary-prominence-box-shadow-focus;
+    fill: $cdr-button-primary-color-fill-focus;
+
+    outline: $cdr-button-base-color-outline-focus;
+    outline-offset: $cdr-button-base-space-outline-offset-focus;
+    text-decoration: $cdr-button-base-text-decoration-focus;
   }
 
   &[disabled] {
-    background-color: $cdr-button-primary-color-background-disabled-lightmode;
-    box-shadow: $cdr-button-primary-prominence-box-shadow-disabled-lightmode;
-    color: $cdr-button-primary-color-text-disabled-lightmode;
-    cursor: $cdr-button-primary-ui-cursor-disabled-lightmode;
+    background-color: $cdr-button-primary-color-background-disabled;
+    box-shadow: $cdr-button-primary-prominence-box-shadow-disabled;
+    color: $cdr-button-primary-color-text-disabled;
+
+    cursor: $cdr-button-base-ui-cursor-disabled;
   }
 
   /* Modifier style variants
@@ -76,31 +96,41 @@
 
   /* Secondary
      ========== */
-
   &--secondary {
-    background-color: $cdr-button-secondary-color-background-lightmode;
-    box-shadow: $cdr-button-secondary-prominence-box-shadow-lightmode;
-    color: $cdr-button-secondary-color-text-lightmode;
-    fill: $cdr-button-secondary-color-fill-lightmode;
+    background-color: $cdr-button-secondary-color-background;
+    box-shadow: $cdr-button-secondary-prominence-box-shadow;
+    color: $cdr-button-secondary-color-text;
+    fill: $cdr-button-secondary-color-fill;
 
     /* States
     ---------- */
 
-    &:hover,
-    &:active,
+    &:hover {
+      background-color: $cdr-button-secondary-color-background-hover;
+      box-shadow: $cdr-button-secondary-prominence-box-shadow-hover;
+      color: $cdr-button-secondary-color-text-hover;
+      fill: $cdr-button-secondary-color-fill-hover;
+    }
+
+    &:active {
+      background-color: $cdr-button-secondary-color-background-active;
+      box-shadow: $cdr-button-secondary-prominence-box-shadow-active;
+      color: $cdr-button-secondary-color-text-active;
+      fill: $cdr-button-secondary-color-fill-active;
+    }
+
     &:focus {
-      background-color: $cdr-button-secondary-color-background-hover-active-focus-lightmode;
-      box-shadow: $cdr-button-secondary-prominence-box-shadow-hover-active-focus-lightmode;
-      color: $cdr-button-secondary-color-text-hover-active-focus-lightmode;
-      fill: $cdr-button-secondary-color-fill-hover-active-focus-lightmode;
+      background-color: $cdr-button-secondary-color-background-focus;
+      box-shadow: $cdr-button-secondary-prominence-box-shadow-focus;
+      color: $cdr-button-secondary-color-text-focus;
+      fill: $cdr-button-secondary-color-fill-focus;
     }
 
     &[disabled] {
-      background-color: $cdr-button-secondary-color-background-disabled-lightmode;
-      box-shadow: $cdr-button-secondary-prominence-box-shadow-disabled-lightmode;
-      color: $cdr-button-secondary-color-color-disabled-lightmode;
-      cursor: $cdr-button-secondary-ui-cursor-disabled-lightmode;
-      fill: $cdr-button-secondary-color-fill-disabled-lightmode;
+      background-color: $cdr-button-secondary-color-background-disabled;
+      box-shadow: $cdr-button-secondary-prominence-box-shadow-disabled;
+      color: $cdr-button-secondary-color-color-disabled;
+      fill: $cdr-button-secondary-color-fill-disabled;
     }
   }
 
@@ -112,10 +142,16 @@
   &--large {
     @include redwood-display-40; // TODO: typo mixins >_<
 
-    padding: $cdr-space-inset-one-and-a-half-x-squish;
+    padding: $cdr-button-base-space-padding-large;
 
     &.cdr-button--has-icon {
-      padding-left: $cdr-button-primary-space-padding-left-has-icon-large-lightmode;
+      padding-left: $cdr-button-base-space-padding-left-has-icon-large;
+    }
+
+    & > :global(.cdr-button__icon) {
+      /* This is to correct icon size vs line height */
+      width: $cdr-button-base-size-width-icon-large;
+      height: $cdr-button-base-size-height-icon-large;
     }
   }
 
@@ -124,10 +160,16 @@
   &--medium {
     @include redwood-display-30; // TODO: typo mixins >_<
 
-    padding: $cdr-space-inset-one-x-squish;
+    padding: $cdr-button-base-space-padding-medium;
 
     &.cdr-button--has-icon {
-      padding-left: $cdr-button-primary-space-padding-left-has-icon-medium-lightmode;
+      padding-left: $cdr-button-base-space-padding-left-has-icon-medium;
+    }
+
+    & > :global(.cdr-button__icon) {
+      /* This is to correct icon size vs line height */
+      width: $cdr-button-base-size-width-icon-medium;
+      height: $cdr-button-base-size-height-icon-medium;
     }
   }
 
@@ -135,50 +177,60 @@
      ========== */
   &--small {
     @include redwood-display-20; // TODO: typo mixins >_<
-
-    padding: $cdr-space-inset-three-quarter-x-squish;
+    padding: $cdr-button-base-space-padding-small;
 
     &.cdr-button--has-icon {
-      padding-left: $cdr-button-primary-space-padding-left-has-icon-small-lightmode;
+      padding-left: $cdr-button-base-space-padding-left-has-icon-small;
     }
 
-// \   this seems redudnant, as it is also set via the breakpoints?
-    // & > :global(.cdr-button__icon) {
-    //   /* This is to correct icon size vs line height */
-    //   width: $cdr-button-primary-size-width-icon-small-lightmode;
-    //   height: $cdr-button-primary-size-height-icon-small-lightmode;
-    // }
+    & > :global(.cdr-button__icon) {
+      /* This is to correct icon size vs line height */
+      width: $cdr-button-base-size-width-icon-small;
+      height: $cdr-button-base-size-height-icon-small;
+    }
   }
 
   /* Full Width
      ========== */
   &--full-width {
-    width: $cdr-button-primary-size-width-full-width-lightmode;
-    justify-content: $cdr-button-primary-space-justify-content-full-width-lightmode;
+    width: $cdr-button-base-size-width-full-width;
+    justify-content: $cdr-button-base-space-justify-content-full-width;
   }
 
   /* Icon Only
      ========= */
 
   &--icon-only {
-    background: $cdr-button-primary-color-background-icon-only-lightmode;
-    border: $cdr-button-primary-color-border-icon-only-lightmode;
-    box-shadow: $cdr-button-primary-prominence-box-shadow-icon-only-lightmode;
-    display: $cdr-button-primary-space-display-icon-only-lightmode;
-    padding: $cdr-button-primary-space-padding-icon-only-lightmode;
-    padding-right: $cdr-button-primary-space-padding-right-icon-only-lightmode;
-    fill: $cdr-button-primary-color-fill-icon-only-lightmode;
+    background: $cdr-button-base-color-background-icon-only;
+    border: $cdr-button-base-color-border-icon-only;
+    box-shadow: $cdr-button-base-prominence-box-shadow-icon-only;
+    display: $cdr-button-base-space-display-icon-only;
 
-    &:hover,
-    &:active,
+    padding: $cdr-button-base-space-padding-icon-only;
+    padding-right: $cdr-button-base-space-padding-right-icon-only;
+
+    fill: $cdr-button-base-color-fill-icon-only;
+
+    &:hover {
+      background: $cdr-button-base-color-background-icon-only-hover;
+      box-shadow: $cdr-button-base-color-fill-icon-only-hover;
+      fill: $cdr-button-base-prominence-box-shadow-icon-only-hover;
+    }
+
+    &:active {
+      background: $cdr-button-base-color-background-icon-only-active;
+      box-shadow: $cdr-button-base-color-fill-icon-only-active;
+      fill: $cdr-button-base-prominence-box-shadow-icon-only-active;
+    }
+
     &:focus {
-      background: $cdr-button-primary-color-background-icon-only-hover-active-focus-lightmode;
-      box-shadow: $cdr-button-primary-color-fill-icon-only-hover-active-focus-lightmode;
-      fill: $cdr-button-primary-prominence-box-shadow-icon-only-hover-active-focus-lightmode;
+      background: $cdr-button-base-color-background-icon-only-focus;
+      box-shadow: $cdr-button-base-color-fill-icon-only-focus;
+      fill: $cdr-button-base-prominence-box-shadow-icon-only-focus;
     }
 
     &.cdr-button--on-dark {
-      fill: $cdr-button-primary-color-fill-icon-only-on-dark-lightmode;
+      fill: $cdr-button-base-color-fill-icon-only-darkmode;
     }
   }
 
@@ -195,8 +247,6 @@
     height: 20px;
   }
 
-// These breakpoints don't actually seem to do anything? they appear to apply these same styles regardless of what the breakpoint is?
-// small is always redwood-display-20 no matter the breakpoint, etc.
   /* @xs
     0px - 767px
     ========== */
@@ -205,10 +255,10 @@
       @include redwood-display-20;
 
       padding: $cdr-space-inset-three-quarter-x-squish;
-      width: auto; // this is the same for all of the breakpoints, do we actually need it?
+      width: auto;
 
       & > :global(.cdr-button__icon) {
-        @include small-button-icon(); // this is the same for all --small breapoints, should this be moved out of the breakpoints?
+        @include small-button-icon();
       }
     }
 
