@@ -145,13 +145,13 @@
     padding: $cdr-button-base-space-padding-large;
 
     &.cdr-button--has-icon {
-      padding-left: $cdr-button-base-space-padding-left-has-icon-large;
+      padding-left: $cdr-button-has-icon-space-pl-large;
     }
 
     & > :global(.cdr-button__icon) {
       /* This is to correct icon size vs line height */
-      width: $cdr-button-base-size-width-icon-large;
-      height: $cdr-button-base-size-height-icon-large;
+      width: $cdr-button-base-icon-size-width-large;
+      height: $cdr-button-base-icon-size-height-large;
     }
   }
 
@@ -163,13 +163,13 @@
     padding: $cdr-button-base-space-padding-medium;
 
     &.cdr-button--has-icon {
-      padding-left: $cdr-button-base-space-padding-left-has-icon-medium;
+      padding-left: $cdr-button-has-icon-space-pl-medium;
     }
 
     & > :global(.cdr-button__icon) {
       /* This is to correct icon size vs line height */
-      width: $cdr-button-base-size-width-icon-medium;
-      height: $cdr-button-base-size-height-icon-medium;
+      width: $cdr-button-base-icon-size-width-medium;
+      height: $cdr-button-base-icon-size-height-medium;
     }
   }
 
@@ -180,57 +180,57 @@
     padding: $cdr-button-base-space-padding-small;
 
     &.cdr-button--has-icon {
-      padding-left: $cdr-button-base-space-padding-left-has-icon-small;
+      padding-left: $cdr-button-has-icon-space-pl-small;
     }
 
     & > :global(.cdr-button__icon) {
       /* This is to correct icon size vs line height */
-      width: $cdr-button-base-size-width-icon-small;
-      height: $cdr-button-base-size-height-icon-small;
+      width: $cdr-button-base-icon-size-width-small;
+      height: $cdr-button-base-icon-size-height-small;
     }
   }
 
   /* Full Width
      ========== */
   &--full-width {
-    width: $cdr-button-base-size-width-full-width;
-    justify-content: $cdr-button-base-space-justify-content-full-width;
+    width: $cdr-button-full-width-size-width;
+    justify-content: $cdr-button-full-width-space-justify-content;
   }
 
   /* Icon Only
      ========= */
 
   &--icon-only {
-    background: $cdr-button-base-color-background-icon-only;
-    border: $cdr-button-base-color-border-icon-only;
-    box-shadow: $cdr-button-base-prominence-box-shadow-icon-only;
-    display: $cdr-button-base-space-display-icon-only;
+    background: $cdr-button-icon-only-color-background;
+    border: $cdr-button-icon-only-color-border;
+    box-shadow: $cdr-button-icon-only-prominence-box-shadow;
+    display: $cdr-button-icon-only-space-display;
 
-    padding: $cdr-button-base-space-padding-icon-only;
-    padding-right: $cdr-button-base-space-padding-right-icon-only;
+    padding: $cdr-button-icon-only-space-padding;
+    padding-right: $cdr-button-icon-only-space-pr;
 
-    fill: $cdr-button-base-color-fill-icon-only;
+    fill: $cdr-button-icon-only-color-fill;
 
     &:hover {
-      background: $cdr-button-base-color-background-icon-only-hover;
-      box-shadow: $cdr-button-base-color-fill-icon-only-hover;
-      fill: $cdr-button-base-prominence-box-shadow-icon-only-hover;
+      background: $cdr-button-icon-only-color-background-hover;
+      box-shadow: $cdr-button-icon-only-color-fill-hover;
+      fill: $cdr-button-icon-only-prominence-box-shadow-hover;
     }
 
     &:active {
-      background: $cdr-button-base-color-background-icon-only-active;
-      box-shadow: $cdr-button-base-color-fill-icon-only-active;
-      fill: $cdr-button-base-prominence-box-shadow-icon-only-active;
+      background: $cdr-button-icon-only-color-background-active;
+      box-shadow: $cdr-button-icon-only-color-fill-active;
+      fill: $cdr-button-icon-only-prominence-box-shadow-active;
     }
 
     &:focus {
-      background: $cdr-button-base-color-background-icon-only-focus;
-      box-shadow: $cdr-button-base-color-fill-icon-only-focus;
-      fill: $cdr-button-base-prominence-box-shadow-icon-only-focus;
+      background: $cdr-button-icon-only-color-background-focus;
+      box-shadow: $cdr-button-icon-only-color-fill-focus;
+      fill: $cdr-button-icon-only-prominence-box-shadow-focus;
     }
 
     &.cdr-button--on-dark {
-      fill: $cdr-button-base-color-fill-icon-only-darkmode;
+      fill: $cdr-button-icon-only-color-fill-darkmode;
     }
   }
 
@@ -247,6 +247,7 @@
     height: 20px;
   }
 // TODO: update these to use the same variables as the base large/medium/small, for consistency
+// TODO: are these supposed to be identical to the small/medium/large declarations above? could we make those mixins to reduce duplication?
   /* @xs
     0px - 767px
     ========== */

@@ -74,53 +74,52 @@ $cdr-button-secondary-color-fill-disabled: #b8b8b8;
 $cdr-button-secondary-prominence-box-shadow-disabled: inset 0 0 0 1px #dadada;
 
 $cdr-button-base-space-padding-large: $cdr-space-inset-one-and-a-half-x-squish;
-$cdr-button-base-space-padding-left-has-icon-large: calc($cdr-space-one-and-a-half-x - $cdr-space-quarter-x);
+$cdr-button-has-icon-space-pl-large: calc($cdr-space-one-and-a-half-x - $cdr-space-quarter-x);
 
 $cdr-button-base-space-padding-medium: $cdr-space-inset-one-x-squish;
-$cdr-button-base-space-padding-left-has-icon-medium: calc($cdr-space-one-x - $cdr-space-quarter-x);
+$cdr-button-has-icon-space-pl-medium: calc($cdr-space-one-x - $cdr-space-quarter-x);
 
 $cdr-button-base-space-padding-small: $cdr-space-inset-three-quarter-x-squish;
-$cdr-button-base-space-padding-left-has-icon-small: calc($cdr-space-three-quarter-x - $cdr-space-quarter-x);
+$cdr-button-has-icon-space-pl-small: calc($cdr-space-three-quarter-x - $cdr-space-quarter-x);
 
-$cdr-button-base-size-width-icon-small: 20px;
-$cdr-button-base-size-height-icon-small: 20px;
-$cdr-button-base-size-width-icon-medium: $cdr-icon-size;
-$cdr-button-base-size-height-icon-medium: $cdr-icon-size;
-$cdr-button-base-size-width-icon-large: $cdr-icon-size;
-$cdr-button-base-size-height-icon-large: $cdr-icon-size;
+$cdr-button-base-icon-size-width-small: 20px;
+$cdr-button-base-icon-size-height-small: 20px;
+$cdr-button-base-icon-size-width-medium: $cdr-icon-size;
+$cdr-button-base-icon-size-height-medium: $cdr-icon-size;
+$cdr-button-base-icon-size-width-large: $cdr-icon-size;
+$cdr-button-base-icon-size-height-large: $cdr-icon-size;
 
-$cdr-button-base-size-width-full-width: 100%;
-$cdr-button-base-space-justify-content-full-width: center;
+$cdr-button-full-width-size-width: 100%;
+$cdr-button-full-width-space-justify-content: center;
 
-$cdr-button-base-color-background-icon-only: none;
-$cdr-button-base-color-border-icon-only: none;
-$cdr-button-base-prominence-box-shadow-icon-only: none;
-$cdr-button-base-space-display-icon-only: inline-block;
+$cdr-button-icon-only-color-background: none;
+$cdr-button-icon-only-color-border: none;
+$cdr-button-icon-only-prominence-box-shadow: none;
+$cdr-button-icon-only-space-display: inline-block;
 
 
-$cdr-button-base-space-padding-icon-only: $cdr-space-inset-half-x; // this class has "padding" and "padding-right" declared. Should the variables export separate top/left/right/bottom variables in cases like these?
-$cdr-button-base-space-padding-right-icon-only: calc($cdr-space-inset-half-x - $cdr-space-quarter-x); // then in the actual component css we would do like: padding: $padding-top $padding-right $padding-bottom $padding-left
+$cdr-button-icon-only-space-padding: $cdr-space-inset-half-x;
+$cdr-button-icon-only-space-pr: calc($cdr-space-inset-half-x - $cdr-space-quarter-x); // note that this overrides the previous padding variable
 
-$cdr-button-base-color-fill-icon-only: $heart-of-darkness;
+$cdr-button-icon-only-color-fill: $heart-of-darkness;
 
-$cdr-button-base-color-background-icon-only-hover: none;
-$cdr-button-base-color-fill-icon-only-hover: $heart-of-darkness;
-$cdr-button-base-prominence-box-shadow-icon-only-hover: none;
+$cdr-button-icon-only-color-background-hover: none;
+$cdr-button-icon-only-color-fill-hover: $heart-of-darkness;
+$cdr-button-icon-only-prominence-box-shadow-hover: none;
 
-$cdr-button-base-color-background-icon-only-active: none;
-$cdr-button-base-color-fill-icon-only-active: $heart-of-darkness;
-$cdr-button-base-prominence-box-shadow-icon-only-active: none;
+$cdr-button-icon-only-color-background-active: none;
+$cdr-button-icon-only-color-fill-active: $heart-of-darkness;
+$cdr-button-icon-only-prominence-box-shadow-active: none;
 
-$cdr-button-base-color-background-icon-only-focus: none;
-$cdr-button-base-color-fill-icon-only-focus: $heart-of-darkness;
-$cdr-button-base-prominence-box-shadow-icon-only-focus: none;
+$cdr-button-icon-only-color-background-focus: none;
+$cdr-button-icon-only-color-fill-focus: $heart-of-darkness;
+$cdr-button-icon-only-prominence-box-shadow-focus: none;
 
-$cdr-button-base-color-fill-icon-only-darkmode: $moon-shot;
+$cdr-button-icon-only-color-fill-darkmode: $moon-shot;
 
 @mixin cdr-button-base-text-mixin() {
   @include redwood-display-30
 }
-
 
 @mixin cdr-button-base-text-mixin-small() {
   @include redwood-display-20;

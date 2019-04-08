@@ -11,43 +11,43 @@
 ========================================================================== */
 
 .cdr-link {
-  font-family: $cdr-link-text-font-family;
-  font-size: $cdr-link-text-font-size;
-  line-height: $cdr-link-text-line-height;
-  align-items: $cdr-link-space-align-items;
-  background-color: $cdr-link-color-background;
-  border: $cdr-link-color-border;
-  margin: $cdr-link-space-margin;
-  color: $cdr-link-color-text;
-  cursor: $cdr-link-ui-cursor;
-  display: $cdr-link-space-display;
-  fill: $cdr-link-color-fill;
-  outline: $cdr-link-color-outline;
-  padding: $cdr-link-space-padding;
-  text-decoration: $cdr-link-text-decoration;
-  vertical-align: $cdr-link-space-vertical-align;
+  font-family: $cdr-link-base-text-font-family;
+  font-size: $cdr-link-base-text-font-size;
+  line-height: $cdr-link-base-text-line-height;
+  align-items: $cdr-link-base-space-align-items;
+  background-color: $cdr-link-base-color-background;
+  border: $cdr-link-base-color-border;
+  margin: $cdr-link-base-space-margin;
+  color: $cdr-link-base-color-text;
+  cursor: $cdr-link-base-ui-cursor;
+  display: $cdr-link-base-space-display;
+  fill: $cdr-link-base-color-fill;
+  outline: $cdr-link-base-color-outline;
+  padding: $cdr-link-base-space-padding;
+  text-decoration: $cdr-link-base-text-decoration;
+  vertical-align: $cdr-link-base-space-vertical-align;
 
   /* States
     ---------- */
 
   &:hover {
-    color: $cdr-link-color-text-hover;
-    outline: $cdr-link-color-outline-hover;
-    text-decoration: $cdr-link-text-decoration-hover;
+    color: $cdr-link-base-color-text-hover;
+    outline: $cdr-link-base-color-outline-hover;
+    text-decoration: $cdr-link-base-text-decoration-hover;
   }
 
   &:active{
-    color: $cdr-link-color-text-active;
-    outline: $cdr-link-color-outline-active;
-    text-decoration: $cdr-link-text-decoration-active;
+    color: $cdr-link-base-color-text-active;
+    outline: $cdr-link-base-color-outline-active;
+    text-decoration: $cdr-link-base-text-decoration-active;
   }
 
 
   &:focus {
-    color: $cdr-link-color-text-focus;
-    outline: $cdr-link-color-outline-focus;
-    outline-offset: $cdr-link-space-outline-offset-focus;
-    text-decoration: $cdr-link-text-decoration-focus;
+    color: $cdr-link-base-color-text-focus;
+    outline: $cdr-link-base-color-outline-focus;
+    outline-offset: $cdr-link-base-space-outline-offset-focus;
+    text-decoration: $cdr-link-base-text-decoration-focus;
   }
 }
 
@@ -57,22 +57,22 @@
 /* Standalone
     ========== */
 .cdr-link--standalone {
-  text-decoration: $cdr-link-text-decoration-standalone;
+  text-decoration: $cdr-link-standalone-text-decoration;
 
   &:hover {
-    text-decoration: $cdr-link-text-decoration-standalone-hover;
+    text-decoration: $cdr-link-standalone-text-decoration-hover;
   }
 
   &:active {
-    text-decoration: $cdr-link-text-decoration-standalone-active;
+    text-decoration: $cdr-link-standalone-text-decoration-active;
   }
 
   &:focus {
-    text-decoration: $cdr-link-text-decoration-standalone-focus;
+    text-decoration: $cdr-link-standalone-text-decoration-focus;
   }
 
   &:visited {
-    text-decoration: $cdr-link-text-decoration-standalone-visited;
+    text-decoration: $cdr-link-standalone-text-decoration-visited;
   }
 }
 
