@@ -6,6 +6,8 @@ import vue from 'rollup-plugin-vue';
 import commonjs from 'rollup-plugin-commonjs';
 import multiEntry from 'rollup-plugin-multi-entry';
 import alias from 'rollup-plugin-alias';
+import resolve2 from 'rollup-plugin-node-resolve';
+import babel from 'rollup-plugin-babel';
 
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -48,6 +50,10 @@ export default [
       }),
       commonjs(),
       vue(),
+      resolve2(),
+      babel({
+        exclude: 'node_modules/**' // only transpile our source code
+      })
     ],
   },
 ];

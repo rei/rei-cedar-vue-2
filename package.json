@@ -37,6 +37,7 @@
     "babel-plugin-istanbul": "^5.1.0",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "backstopjs": "^3.8.8",
@@ -113,8 +114,10 @@
     "rimraf": "^2.6.3",
     "rollup": "^1.9.0",
     "rollup-plugin-alias": "^1.5.1",
+    "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup-plugin-node-resolve": "^4.2.1",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-vue": "^4.7.2",
     "selenium-server": "^3.141.59",
@@ -147,7 +150,7 @@
     "> 1%",
     "last 2 versions",
     "ie >= 11"
-  ], 
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
