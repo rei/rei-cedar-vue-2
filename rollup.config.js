@@ -7,24 +7,27 @@ import commonjs from 'rollup-plugin-commonjs';
 import multiEntry from 'rollup-plugin-multi-entry';
 import alias from 'rollup-plugin-alias';
 import resolve2 from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
+import postcss from 'rollup-plugin-postcss';
+import atImport from 'postcss-import';
 
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
+const excludePaths = [
+  'src/components/**/examples/*',
+  'src/components/**/examples/demo/*',
+  'src/components/**/comps/*',
+  'src/components/Utilities/*',
+  // 'src/components/_index.js',
+  'src/components/examples.js',
+];
+
 export default [
   {
     input: {
       include: ['src/components/_index.js'],
-      exclude: [
-        'src/components/**/examples/*',
-        'src/components/**/examples/demo/*',
-        'src/components/**/comps/*',
-        'src/components/Utilities/*',
-        // 'src/components/_index.js',
-        'src/components/examples.js',
-      ],
+      exclude: excludePaths,
     },
     output: [
       {
@@ -40,7 +43,7 @@ export default [
       multiEntry(),
       alias({
         resolve: ['.vue', '.json', '.js'],
-        srcdir: resolve('src'),
+        srcdir: 'src',
         cssdir: resolve('src/css'),
         assetsdir: resolve('src/assets'),
         componentsdir: resolve('src/components'),
@@ -50,11 +53,11 @@ export default [
       }),
       commonjs(),
       vue(),
-      resolve2(),
-      babel({
-        exclude: 'node_modules/**', // only transpile our source code
-        runtimeHelpers: true
-      })
+      // resolve2(),
+      // babel({
+      //   exclude: 'node_modules/**', // only transpile our source code
+      //   runtimeHelpers: true,
+      // }),
     ],
   },
 ];
