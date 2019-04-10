@@ -23,127 +23,18 @@
 ========================================================================== */
 
 .cdr-button {
-  @include cdr-button-base-text-mixin;
-
-  border: $cdr-button-base-border;
-  border-radius: $cdr-button-base-border-radius;
-  cursor: $cdr-button-base-cursor;
-  display: $cdr-button-base-display;
-  outline: $cdr-button-base-outline;
-  overflow: $cdr-button-base-overflow;
-  padding: $cdr-button-base-padding;
-  text-align: $cdr-button-base-text-align;
-  text-decoration: $cdr-button-base-text-decoration;
-  text-transform: $cdr-button-base-text-transform;
-
-  & > :global(&__icon) {
-    align-self: $cdr-button-base-icon-align-self;
-    margin-right: $cdr-button-base-icon-mr;
-    fill: $cdr-button-base-icon-fill;
-  }
-
-  /* States
-    ---------- */
-
-  &:hover {
-    outline: $cdr-button-base-outline-hover;
-    outline-offset: $cdr-button-base-outline-offset-hover;
-    text-decoration: $cdr-button-base-text-decoration-hover;
-  }
-
-  &:active {
-    outline: $cdr-button-base-outline-active;
-    outline-offset: $cdr-button-base-outline-offset-active;
-    text-decoration: $cdr-button-base-text-decoration-active;
-  }
-
-  &:focus {
-    outline: $cdr-button-base-outline-focus;
-    outline-offset: $cdr-button-base-outline-offset-focus;
-    text-decoration: $cdr-button-base-text-decoration-focus;
-  }
-
-  &[disabled] {
-    cursor: $cdr-button-base-cursor-disabled;
-  }
+  @include cdr-button-base-mixin;
 
   /* Modifier style variants
     ========================================================================== */
   &--primary {
-    background-color: $cdr-button-primary-background-color;
-    box-shadow: $cdr-button-primary-box-shadow;
-    color: $cdr-button-primary-color;
-    fill: $cdr-button-primary-fill;
-
-    /* States
-      ---------- */
-
-    &:hover {
-      background-color: $cdr-button-primary-background-color-hover;
-      color: $cdr-button-primary-color-hover;
-      box-shadow: $cdr-button-primary-box-shadow-hover;
-      fill: $cdr-button-primary-fill-hover;
-    }
-
-    &:active {
-      background-color: $cdr-button-primary-background-color-active;
-      color: $cdr-button-primary-color-active;
-      box-shadow: $cdr-button-primary-box-shadow-active;
-      fill: $cdr-button-primary-fill-active;
-    }
-
-    &:focus {
-      background-color: $cdr-button-primary-background-color-focus;
-      color: $cdr-button-primary-color-focus;
-      box-shadow: $cdr-button-primary-box-shadow-focus;
-      fill: $cdr-button-primary-fill-focus;
-    }
-
-    &[disabled] {
-      background-color: $cdr-button-primary-background-color-disabled;
-      box-shadow: $cdr-button-primary-box-shadow-disabled;
-      color: $cdr-button-primary-color-disabled;
-    }
+    @include cdr-button-primary-mixin;
   }
 
   /* Secondary
      ========== */
   &--secondary {
-    background-color: $cdr-button-secondary-background-color;
-    box-shadow: $cdr-button-secondary-box-shadow;
-    color: $cdr-button-secondary-color;
-    fill: $cdr-button-secondary-fill;
-
-    /* States
-    ---------- */
-
-    &:hover {
-      background-color: $cdr-button-secondary-background-color-hover;
-      box-shadow: $cdr-button-secondary-box-shadow-hover;
-      color: $cdr-button-secondary-color-hover;
-      fill: $cdr-button-secondary-fill-hover;
-    }
-
-    &:active {
-      background-color: $cdr-button-secondary-background-color-active;
-      box-shadow: $cdr-button-secondary-box-shadow-active;
-      color: $cdr-button-secondary-color-active;
-      fill: $cdr-button-secondary-fill-active;
-    }
-
-    &:focus {
-      background-color: $cdr-button-secondary-background-color-focus;
-      box-shadow: $cdr-button-secondary-box-shadow-focus;
-      color: $cdr-button-secondary-color-focus;
-      fill: $cdr-button-secondary-fill-focus;
-    }
-
-    &[disabled] {
-      background-color: $cdr-button-secondary-background-color-disabled;
-      box-shadow: $cdr-button-secondary-box-shadow-disabled;
-      color: $cdr-button-secondary-color-disabled;
-      fill: $cdr-button-secondary-fill-disabled;
-    }
+    @include cdr-button-primary-mixin;
   }
 
   /* Size variants
