@@ -2,6 +2,7 @@
   <component
     :is="tag"
     :class="[
+      primaryClass,
       modifierClass,
       buttonSizeClass,
       fullWidthClass,
@@ -86,6 +87,9 @@ export default {
   computed: {
     baseClass() {
       return 'cdr-button';
+    },
+    primaryClass() {
+      return this.modifyClassName(this.baseClass, 'primary');
     },
     buttonSizeClass() {
       return !this.iconOnly ? this.sizeClass : null;
