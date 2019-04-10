@@ -3,7 +3,7 @@
  */
 export default {
   props: {
-    space: {
+    spacingClass: {
       type: String,
       default: '',
     },

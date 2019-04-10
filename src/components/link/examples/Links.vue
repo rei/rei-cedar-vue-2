@@ -21,70 +21,74 @@
     <cdr-text
       tag="h3"
       modifier="subheading"
-    >Link, href set</cdr-text>
-    <div class="anchor-example">
-      <cdr-link href="https://www.rei.com/">
-        REI.com
-      </cdr-link>
-    </div>
-
+    >Link, href set, spacing class applied</cdr-text>
+    <cdr-link
+      href="https://www.rei.com/"
+      spacing-class="cdr-space-inset-one-x"
+    >
+      REI.com
+    </cdr-link>
     <cdr-text
       tag="h3"
       modifier="subheading"
     >Standalone Link (No underline)</cdr-text>
-    <div class="anchor-example">
-      <cdr-link
-        modifier="standalone"
-        :data-backstop="`cdr-link--standalone`"
-      />
-    </div>
+    <cdr-link
+      modifier="standalone"
+      spacing-class="cdr-space-inset-one-x"
+      :data-backstop="`cdr-link--standalone`"
+    />
 
     <cdr-text
       tag="h3"
       modifier="subheading"
     >Links, with icon</cdr-text>
-    <div class="anchor-example">
-      <cdr-link>
-        <cdr-icon
-          use="#mail"
-          modifier="inherit-color"
-          class="cdr-space-mr-half-x"
-        />
-        Icon on the left
-      </cdr-link>
-      <br>
-      <br>
-      <cdr-link>
-        Icon on the right
-        <cdr-icon
-          use="#download"
-          modifier="inherit-color"
-          class="cdr-space-ml-half-x"
-        />
-      </cdr-link>
-      <br>
-      <br>
-      <cdr-link>
-        <cdr-icon
-          use="#twitter"
-          modifier="inherit-color"
-          class="cdr-space-mr-half-x"
-        />
-        Icons on both sides
-        <cdr-icon
-          use="#external-link"
-          modifier="inherit-color"
-          class="cdr-space-ml-half-x"
-        />
-      </cdr-link>
-    </div>
+
+    <cdr-list
+      spacing-class="cdr-space-inset-one-x"
+    >
+      <li>
+        <cdr-link>
+          <cdr-icon
+            use="#mail"
+            modifier="inherit-color"
+            spacing-class="cdr-space-mr-half-x"
+          />
+          Icon on the left
+        </cdr-link>
+      </li>
+      <li>
+        <cdr-link>
+          Icon on the right
+          <cdr-icon
+            use="#download"
+            modifier="inherit-color"
+            spacing-class="cdr-space-ml-half-x"
+          />
+        </cdr-link>
+      </li>
+      <li>
+        <cdr-link>
+          <cdr-icon
+            use="#twitter"
+            modifier="inherit-color"
+            spacing-class="cdr-space-mr-half-x"
+          />
+          Icons on both sides
+          <cdr-icon
+            use="#external-link"
+            modifier="inherit-color"
+            spacing-class="cdr-space-ml-half-x"
+          />
+        </cdr-link>
+      </li>
+    </cdr-list>
 
     <cdr-text
       tag="h3"
       modifier="subheading"
     >Content Resilience, too much content</cdr-text>
     <div class="anchor-example">
-      <cdr-link>
+      <cdr-link spacing-class="cdr-space-inset-one-x">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
@@ -100,7 +104,9 @@
       modifier="subheading"
     >Content Resilience, too little content</cdr-text>
     <div class="anchor-example">
-      <cdr-link>K</cdr-link>
+      <cdr-link spacing-class="cdr-space-inset-one-x">
+        K
+      </cdr-link>
     </div>
 
     <cdr-text
@@ -110,6 +116,7 @@
     <div class="anchor-example">
       <cdr-link
         tag="button"
+        spacing-class="cdr-space-inset-one-x"
         :data-backstop="`cdr-link--button`"
       >I'm a button!</cdr-link>
     </div>
@@ -123,7 +130,10 @@
       <!-- Smaller examples with nested theme (for override) -->
       <p>Works nested</p>
       <p>
-        <cdr-link href="https://www.rei.com/">
+        <cdr-link
+          href="https://www.rei.com/"
+          spacing-class="cdr-space-pl-one-x cdr-space-pr-one-x"
+        >
           REI.com
         </cdr-link>
         <cdr-link
@@ -142,6 +152,7 @@
 
     <cdr-link
       href="https://www.rei.com/"
+      spacing-class="cdr-space-pl-one-x cdr-space-pr-one-x"
     >REI.com</cdr-link>
     <cdr-link
       href="https://www.rei.com/"
@@ -149,6 +160,7 @@
     <p>Override (light on dark)</p>
     <cdr-link
       href="https://www.rei.com/"
+      spacing-class="cdr-space-inset-one-x"
       theme="light"
     >REI.com</cdr-link>
   </div>
@@ -172,7 +184,4 @@ export default {
   line-height: 1;
 }
 
-.anchor-example {
-  padding: 20px;
-}
 </style>

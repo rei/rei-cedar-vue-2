@@ -24,7 +24,7 @@
       <textarea
         v-if="rows && rows > 1"
         :rows="[rows]"
-        :class="[inputClass, sizeClass]"
+        :class="[inputClass, sizeClass, spacingClass]"
         v-bind="$attrs"
         v-model="newValue"
         :id="inputId"
@@ -41,7 +41,7 @@
       <input
         v-else
         :type="type"
-        :class="[inputClass, sizeClass]"
+        :class="[inputClass, sizeClass, spacingClass]"
         v-bind="$attrs"
         v-model="newValue"
         :id="inputId"
@@ -81,6 +81,7 @@
 
 <script>
 import size from 'mixinsdir/size';
+import space from 'mixinsdir/space';
 import propValidator from 'srcdir/utils/propValidator';
 /**
  * Cedar 2 component for input
@@ -90,7 +91,7 @@ import propValidator from 'srcdir/utils/propValidator';
  */
 export default {
   name: 'CdrInput',
-  mixins: [size],
+  mixins: [size, space],
   inheritAttrs: false,
   props: {
     /**

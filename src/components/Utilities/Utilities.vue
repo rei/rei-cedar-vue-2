@@ -12,8 +12,6 @@
 
     <inset />
 
-    <stack />
-
   </div>
 </template>
 

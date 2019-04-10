@@ -3,7 +3,7 @@
   <!-- eslint-disable max-len -->
   <component
     :is="tag"
-    :class="[modifierClass]"
+    :class="[modifierClass, spacingClass]"
   >
     <slot />
   </component>
@@ -11,6 +11,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import space from 'mixinsdir/space';
 
 /**
  * Cedar 2 component for text styles
@@ -20,7 +21,7 @@ import modifier from 'mixinsdir/modifier';
  */
 export default {
   name: 'CdrText',
-  mixins: [modifier],
+  mixins: [modifier, space],
   props: {
     /** Any valid HTML tag */
     tag: {

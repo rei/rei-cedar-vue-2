@@ -3,6 +3,7 @@
     :is="tag"
     :class="[
       modifierClass,
+      spacingClass,
       contentPriorityClass,
     ]"
   >
@@ -12,12 +13,14 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import space from 'mixinsdir/space';
 import contentPriority from 'mixinsdir/contentPriority';
 
 export default {
   name: 'CdrList',
   mixins: [
     modifier,
+    space,
     contentPriority,
   ],
   props: {

@@ -177,12 +177,6 @@ export default {
 <style>
   .icon-examples {
     line-height: 1;
-
-    .icon-hover {
-      &:hover {
-        fill: red;
-      }
-    }
   }
 
   .inherit-container {

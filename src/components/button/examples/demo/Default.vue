@@ -54,6 +54,21 @@
         Link
       </cdr-button>
     </div>
+    <div>
+      <cdr-button
+        size="large@sm"
+        space="cdr-space-mr-one-x"
+      >
+        button 1
+      </cdr-button>
+
+      <cdr-button
+        size="large@sm"
+        space="cdr-space-mr-one-x"
+      >
+        button 2
+      </cdr-button>
+    </div>
   </div>
 </template>
 

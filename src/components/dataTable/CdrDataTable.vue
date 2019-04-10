@@ -1,6 +1,9 @@
 <template>
   <div
-    :class="[modifierClass]"
+    :class="[
+      modifierClass,
+      spacingClass
+    ]"
   >
     <span
       v-if="caption"
@@ -85,6 +88,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import space from 'mixinsdir/space';
 import debounce from 'lodash/debounce';
 
 /**
@@ -93,7 +97,7 @@ import debounce from 'lodash/debounce';
  */
 export default {
   name: 'CdrDataTable',
-  mixins: [modifier],
+  mixins: [modifier, space],
   props: {
     id: {
       type: String,

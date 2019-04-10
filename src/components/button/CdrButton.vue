@@ -6,6 +6,7 @@
       buttonSizeClass,
       fullWidthClass,
       iconClass,
+      spacingClass
     ]"
     :type="tag === 'button' ? type : null"
     @click="onClick"
@@ -20,6 +21,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import size from 'mixinsdir/size';
+import space from 'mixinsdir/space';
 
 /**
  * Cedar 2 component for button
@@ -32,7 +34,7 @@ import size from 'mixinsdir/size';
  */
 export default {
   name: 'CdrButton',
-  mixins: [modifier, size],
+  mixins: [modifier, size, space],
   props: {
     /**
      * Controls render as button or anchor. {button, a}
