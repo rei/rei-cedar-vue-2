@@ -374,12 +374,12 @@
     /**
      * Show production mode tip message on boot?
      */
-    productionTip: process.env.NODE_ENV !== 'production',
+    productionTip: "dev" !== 'production',
 
     /**
      * Whether to enable devtools
      */
-    devtools: process.env.NODE_ENV !== 'production',
+    devtools: "dev" !== 'production',
 
     /**
      * Whether to record perf
@@ -588,7 +588,7 @@
   var generateComponentTrace = (noop); // work around flow check
   var formatComponentName = (noop);
 
-  if (process.env.NODE_ENV !== 'production') {
+  {
     var hasConsole = typeof console !== 'undefined';
     var classifyRE = /(?:^|[-_])(\w)/g;
     var classify = function (str) { return str
@@ -705,7 +705,7 @@
   Dep.prototype.notify = function notify () {
     // stabilize the subscriber list first
     var subs = this.subs.slice();
-    if (process.env.NODE_ENV !== 'production' && !config.async) {
+    if (!config.async) {
       // subs aren't sorted in scheduler if not running async
       // we need to sort them now to make sure they fire in correct
       // order
@@ -1026,7 +1026,7 @@
           return
         }
         /* eslint-enable no-self-compare */
-        if (process.env.NODE_ENV !== 'production' && customSetter) {
+        if (customSetter) {
           customSetter();
         }
         // #7981: for accessor properties without setter
@@ -1048,8 +1048,7 @@
    * already exist.
    */
   function set (target, key, val) {
-    if (process.env.NODE_ENV !== 'production' &&
-      (isUndef(target) || isPrimitive(target))
+    if (isUndef(target) || isPrimitive(target)
     ) {
       warn(("Cannot set reactive property on undefined, null, or primitive value: " + ((target))));
     }
@@ -1064,7 +1063,7 @@
     }
     var ob = (target).__ob__;
     if (target._isVue || (ob && ob.vmCount)) {
-      process.env.NODE_ENV !== 'production' && warn(
+      warn(
         'Avoid adding reactive properties to a Vue instance or its root $data ' +
         'at runtime - declare it upfront in the data option.'
       );
@@ -1083,8 +1082,7 @@
    * Delete a property and trigger change if necessary.
    */
   function del (target, key) {
-    if (process.env.NODE_ENV !== 'production' &&
-      (isUndef(target) || isPrimitive(target))
+    if (isUndef(target) || isPrimitive(target)
     ) {
       warn(("Cannot delete reactive property on undefined, null, or primitive value: " + ((target))));
     }
@@ -1094,7 +1092,7 @@
     }
     var ob = (target).__ob__;
     if (target._isVue || (ob && ob.vmCount)) {
-      process.env.NODE_ENV !== 'production' && warn(
+      warn(
         'Avoid deleting properties on a Vue instance or its root $data ' +
         '- just set it to null.'
       );
@@ -1136,7 +1134,7 @@
   /**
    * Options with restrictions
    */
-  if (process.env.NODE_ENV !== 'production') {
+  {
     strats.el = strats.propsData = function (parent, child, vm, key) {
       if (!vm) {
         warn(
@@ -1224,7 +1222,7 @@
   ) {
     if (!vm) {
       if (childVal && typeof childVal !== 'function') {
-        process.env.NODE_ENV !== 'production' && warn(
+        warn(
           'The "data" option should be a function ' +
           'that returns a per-instance value in component ' +
           'definitions.',
@@ -1287,7 +1285,7 @@
   ) {
     var res = Object.create(parentVal || null);
     if (childVal) {
-      process.env.NODE_ENV !== 'production' && assertObjectType(key, childVal, vm);
+      assertObjectType(key, childVal, vm);
       return extend(res, childVal)
     } else {
       return res
@@ -1315,7 +1313,7 @@
     if (childVal === nativeWatch) { childVal = undefined; }
     /* istanbul ignore if */
     if (!childVal) { return Object.create(parentVal || null) }
-    if (process.env.NODE_ENV !== 'production') {
+    {
       assertObjectType(key, childVal, vm);
     }
     if (!parentVal) { return childVal }
@@ -1346,7 +1344,7 @@
     vm,
     key
   ) {
-    if (childVal && process.env.NODE_ENV !== 'production') {
+    if (childVal && "dev" !== 'production') {
       assertObjectType(key, childVal, vm);
     }
     if (!parentVal) { return childVal }
@@ -1407,7 +1405,7 @@
         if (typeof val === 'string') {
           name = camelize(val);
           res[name] = { type: null };
-        } else if (process.env.NODE_ENV !== 'production') {
+        } else {
           warn('props must be strings when using array syntax.');
         }
       }
@@ -1419,7 +1417,7 @@
           ? val
           : { type: val };
       }
-    } else if (process.env.NODE_ENV !== 'production') {
+    } else {
       warn(
         "Invalid value for option \"props\": expected an Array or an Object, " +
         "but got " + (toRawType(props)) + ".",
@@ -1447,7 +1445,7 @@
           ? extend({ from: key }, val)
           : { from: val };
       }
-    } else if (process.env.NODE_ENV !== 'production') {
+    } else {
       warn(
         "Invalid value for option \"inject\": expected an Array or an Object, " +
         "but got " + (toRawType(inject)) + ".",
@@ -1490,7 +1488,7 @@
     child,
     vm
   ) {
-    if (process.env.NODE_ENV !== 'production') {
+    {
       checkComponents(child);
     }
 
@@ -1558,7 +1556,7 @@
     if (hasOwn(assets, PascalCaseId)) { return assets[PascalCaseId] }
     // fallback to prototype chain
     var res = assets[id] || assets[camelizedId] || assets[PascalCaseId];
-    if (process.env.NODE_ENV !== 'production' && warnMissing && !res) {
+    if (warnMissing && !res) {
       warn(
         'Failed to resolve ' + type.slice(0, -1) + ': ' + id,
         options
@@ -1604,11 +1602,7 @@
       observe(value);
       toggleObserving(prevShouldObserve);
     }
-    if (
-      process.env.NODE_ENV !== 'production' &&
-      // skip validation for weex recycle-list child component props
-      !(false)
-    ) {
+    {
       assertProp(prop, key, value, vm, absent);
     }
     return value
@@ -1624,7 +1618,7 @@
     }
     var def = prop.default;
     // warn against non-factory defaults for Object & Array
-    if (process.env.NODE_ENV !== 'production' && isObject(def)) {
+    if (isObject(def)) {
       warn(
         'Invalid default value for prop "' + key + '": ' +
         'Props with type Object/Array must use a factory function ' +
@@ -1827,7 +1821,7 @@
   }
 
   function logError (err, vm, info) {
-    if (process.env.NODE_ENV !== 'production') {
+    {
       warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
     }
     /* istanbul ignore else */
@@ -1959,7 +1953,7 @@
 
   var initProxy;
 
-  if (process.env.NODE_ENV !== 'production') {
+  {
     var allowedGlobals = makeMap(
       'Infinity,undefined,NaN,isFinite,isNaN,' +
       'parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,' +
@@ -2083,7 +2077,7 @@
   var mark;
   var measure;
 
-  if (process.env.NODE_ENV !== 'production') {
+  {
     var perf = inBrowser && window.performance;
     /* istanbul ignore if */
     if (
@@ -2153,7 +2147,7 @@
       old = oldOn[name];
       event = normalizeEvent(name);
       if (isUndef(cur)) {
-        process.env.NODE_ENV !== 'production' && warn(
+        warn(
           "Invalid handler for event \"" + (event.name) + "\": got " + String(cur),
           vm
         );
@@ -2233,7 +2227,7 @@
     if (isDef(attrs) || isDef(props)) {
       for (var key in propOptions) {
         var altKey = hyphenate(key);
-        if (process.env.NODE_ENV !== 'production') {
+        {
           var keyInLowerCase = key.toLowerCase();
           if (
             key !== keyInLowerCase &&
@@ -2442,7 +2436,7 @@
       });
 
       var reject = once(function (reason) {
-        process.env.NODE_ENV !== 'production' && warn(
+        warn(
           "Failed to resolve async component: " + (String(factory)) +
           (reason ? ("\nReason: " + reason) : '')
         );
@@ -2485,9 +2479,7 @@
             setTimeout(function () {
               if (isUndef(factory.resolved)) {
                 reject(
-                  process.env.NODE_ENV !== 'production'
-                    ? ("timeout (" + (res.timeout) + "ms)")
-                    : null
+                  "timeout (" + (res.timeout) + "ms)"
                 );
               }
             }, res.timeout);
@@ -2634,7 +2626,7 @@
 
     Vue.prototype.$emit = function (event) {
       var vm = this;
-      if (process.env.NODE_ENV !== 'production') {
+      {
         var lowerCaseEvent = event.toLowerCase();
         if (lowerCaseEvent !== event && vm._events[lowerCaseEvent]) {
           tip(
@@ -2858,7 +2850,7 @@
     vm.$el = el;
     if (!vm.$options.render) {
       vm.$options.render = createEmptyVNode;
-      if (process.env.NODE_ENV !== 'production') {
+      {
         /* istanbul ignore if */
         if ((vm.$options.template && vm.$options.template.charAt(0) !== '#') ||
           vm.$options.el || el) {
@@ -2880,7 +2872,7 @@
 
     var updateComponent;
     /* istanbul ignore if */
-    if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
+    if (config.performance && mark) {
       updateComponent = function () {
         var name = vm._name;
         var id = vm._uid;
@@ -2931,7 +2923,7 @@
     parentVnode,
     renderChildren
   ) {
-    if (process.env.NODE_ENV !== 'production') {
+    {
       isUpdatingChildComponent = true;
     }
 
@@ -2985,7 +2977,7 @@
       vm.$forceUpdate();
     }
 
-    if (process.env.NODE_ENV !== 'production') {
+    {
       isUpdatingChildComponent = false;
     }
   }
@@ -3068,7 +3060,7 @@
   function resetSchedulerState () {
     index = queue.length = activatedChildren.length = 0;
     has = {};
-    if (process.env.NODE_ENV !== 'production') {
+    {
       circular = {};
     }
     waiting = flushing = false;
@@ -3102,7 +3094,7 @@
       has[id] = null;
       watcher.run();
       // in dev build, check and stop circular updates.
-      if (process.env.NODE_ENV !== 'production' && has[id] != null) {
+      if (has[id] != null) {
         circular[id] = (circular[id] || 0) + 1;
         if (circular[id] > MAX_UPDATE_COUNT) {
           warn(
@@ -3188,7 +3180,7 @@
       if (!waiting) {
         waiting = true;
 
-        if (process.env.NODE_ENV !== 'production' && !config.async) {
+        if (!config.async) {
           flushSchedulerQueue();
           return
         }
@@ -3238,9 +3230,7 @@
     this.newDeps = [];
     this.depIds = new _Set();
     this.newDepIds = new _Set();
-    this.expression = process.env.NODE_ENV !== 'production'
-      ? expOrFn.toString()
-      : '';
+    this.expression = expOrFn.toString();
     // parse expression for getter
     if (typeof expOrFn === 'function') {
       this.getter = expOrFn;
@@ -3248,7 +3238,7 @@
       this.getter = parsePath(expOrFn);
       if (!this.getter) {
         this.getter = noop;
-        process.env.NODE_ENV !== 'production' && warn(
+        warn(
           "Failed watching path: \"" + expOrFn + "\" " +
           'Watcher only accepts simple dot-delimited paths. ' +
           'For full control, use a function instead.',
@@ -3457,7 +3447,7 @@
       keys.push(key);
       var value = validateProp(key, propsOptions, propsData, vm);
       /* istanbul ignore else */
-      if (process.env.NODE_ENV !== 'production') {
+      {
         var hyphenatedKey = hyphenate(key);
         if (isReservedAttribute(hyphenatedKey) ||
             config.isReservedAttr(hyphenatedKey)) {
@@ -3477,8 +3467,6 @@
             );
           }
         });
-      } else {
-        defineReactive$$1(props, key, value);
       }
       // static props are already proxied on the component's prototype
       // during Vue.extend(). We only need to proxy props defined at
@@ -3499,7 +3487,7 @@
       : data || {};
     if (!isPlainObject(data)) {
       data = {};
-      process.env.NODE_ENV !== 'production' && warn(
+      warn(
         'data functions should return an object:\n' +
         'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
         vm
@@ -3512,7 +3500,7 @@
     var i = keys.length;
     while (i--) {
       var key = keys[i];
-      if (process.env.NODE_ENV !== 'production') {
+      {
         if (methods && hasOwn(methods, key)) {
           warn(
             ("Method \"" + key + "\" has already been defined as a data property."),
@@ -3521,7 +3509,7 @@
         }
       }
       if (props && hasOwn(props, key)) {
-        process.env.NODE_ENV !== 'production' && warn(
+        warn(
           "The data property \"" + key + "\" is already declared as a prop. " +
           "Use prop default value instead.",
           vm
@@ -3558,7 +3546,7 @@
     for (var key in computed) {
       var userDef = computed[key];
       var getter = typeof userDef === 'function' ? userDef : userDef.get;
-      if (process.env.NODE_ENV !== 'production' && getter == null) {
+      if (getter == null) {
         warn(
           ("Getter is missing for computed property \"" + key + "\"."),
           vm
@@ -3580,7 +3568,7 @@
       // at instantiation here.
       if (!(key in vm)) {
         defineComputed(vm, key, userDef);
-      } else if (process.env.NODE_ENV !== 'production') {
+      } else {
         if (key in vm.$data) {
           warn(("The computed property \"" + key + "\" is already defined in data."), vm);
         } else if (vm.$options.props && key in vm.$options.props) {
@@ -3609,8 +3597,7 @@
         : noop;
       sharedPropertyDefinition.set = userDef.set || noop;
     }
-    if (process.env.NODE_ENV !== 'production' &&
-        sharedPropertyDefinition.set === noop) {
+    if (sharedPropertyDefinition.set === noop) {
       sharedPropertyDefinition.set = function () {
         warn(
           ("Computed property \"" + key + "\" was assigned to but it has no setter."),
@@ -3645,7 +3632,7 @@
   function initMethods (vm, methods) {
     var props = vm.$options.props;
     for (var key in methods) {
-      if (process.env.NODE_ENV !== 'production') {
+      {
         if (typeof methods[key] !== 'function') {
           warn(
             "Method \"" + key + "\" has type \"" + (typeof methods[key]) + "\" in the component definition. " +
@@ -3707,7 +3694,7 @@
     dataDef.get = function () { return this._data };
     var propsDef = {};
     propsDef.get = function () { return this._props };
-    if (process.env.NODE_ENV !== 'production') {
+    {
       dataDef.set = function () {
         warn(
           'Avoid replacing instance root $data. ' +
@@ -3767,7 +3754,7 @@
       toggleObserving(false);
       Object.keys(result).forEach(function (key) {
         /* istanbul ignore else */
-        if (process.env.NODE_ENV !== 'production') {
+        {
           defineReactive$$1(vm, key, result[key], function () {
             warn(
               "Avoid mutating an injected value directly since the changes will be " +
@@ -3776,8 +3763,6 @@
               vm
             );
           });
-        } else {
-          defineReactive$$1(vm, key, result[key]);
         }
       });
       toggleObserving(true);
@@ -3812,7 +3797,7 @@
             result[key] = typeof provideDefault === 'function'
               ? provideDefault.call(vm)
               : provideDefault;
-          } else if (process.env.NODE_ENV !== 'production') {
+          } else {
             warn(("Injection \"" + key + "\" not found"), vm);
           }
         }
@@ -3872,7 +3857,7 @@
     if (scopedSlotFn) { // scoped slot
       props = props || {};
       if (bindObject) {
-        if (process.env.NODE_ENV !== 'production' && !isObject(bindObject)) {
+        if (!isObject(bindObject)) {
           warn(
             'slot v-bind without argument expects an Object',
             this
@@ -3948,7 +3933,7 @@
   ) {
     if (value) {
       if (!isObject(value)) {
-        process.env.NODE_ENV !== 'production' && warn(
+        warn(
           'v-bind without argument expects an Object or Array value',
           this
         );
@@ -4055,7 +4040,7 @@
   function bindObjectListeners (data, value) {
     if (value) {
       if (!isPlainObject(value)) {
-        process.env.NODE_ENV !== 'production' && warn(
+        warn(
           'v-on without argument expects an Object value',
           this
         );
@@ -4200,7 +4185,7 @@
     var clone = cloneVNode(vnode);
     clone.fnContext = contextVm;
     clone.fnOptions = options;
-    if (process.env.NODE_ENV !== 'production') {
+    {
       (clone.devtoolsMeta = clone.devtoolsMeta || {}).renderContext = renderContext;
     }
     if (data.slot) {
@@ -4311,7 +4296,7 @@
     // if at this stage it's not a constructor or an async component factory,
     // reject.
     if (typeof Ctor !== 'function') {
-      if (process.env.NODE_ENV !== 'production') {
+      {
         warn(("Invalid Component definition: " + (String(Ctor))), context);
       }
       return
@@ -4485,7 +4470,7 @@
     normalizationType
   ) {
     if (isDef(data) && isDef((data).__ob__)) {
-      process.env.NODE_ENV !== 'production' && warn(
+      warn(
         "Avoid using observed data object as vnode data: " + (JSON.stringify(data)) + "\n" +
         'Always create fresh vnode data objects in each render!',
         context
@@ -4501,8 +4486,7 @@
       return createEmptyVNode()
     }
     // warn against non-primitive key
-    if (process.env.NODE_ENV !== 'production' &&
-      isDef(data) && isDef(data.key) && !isPrimitive(data.key)
+    if (isDef(data) && isDef(data.key) && !isPrimitive(data.key)
     ) {
       {
         warn(
@@ -4616,16 +4600,13 @@
     var parentData = parentVnode && parentVnode.data;
 
     /* istanbul ignore else */
-    if (process.env.NODE_ENV !== 'production') {
+    {
       defineReactive$$1(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
         !isUpdatingChildComponent && warn("$attrs is readonly.", vm);
       }, true);
       defineReactive$$1(vm, '$listeners', options._parentListeners || emptyObject, function () {
         !isUpdatingChildComponent && warn("$listeners is readonly.", vm);
       }, true);
-    } else {
-      defineReactive$$1(vm, '$attrs', parentData && parentData.attrs || emptyObject, null, true);
-      defineReactive$$1(vm, '$listeners', options._parentListeners || emptyObject, null, true);
     }
   }
 
@@ -4659,7 +4640,7 @@
         // return error render result,
         // or previous vnode to prevent render error causing blank component
         /* istanbul ignore else */
-        if (process.env.NODE_ENV !== 'production' && vm.$options.renderError) {
+        if (vm.$options.renderError) {
           try {
             vnode = vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e);
           } catch (e) {
@@ -4672,7 +4653,7 @@
       }
       // return empty vnode in case the render function errored out
       if (!(vnode instanceof VNode)) {
-        if (process.env.NODE_ENV !== 'production' && Array.isArray(vnode)) {
+        if (Array.isArray(vnode)) {
           warn(
             'Multiple root nodes returned from render function. Render function ' +
             'should return a single root node.',
@@ -4699,7 +4680,7 @@
 
       var startTag, endTag;
       /* istanbul ignore if */
-      if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
+      if (config.performance && mark) {
         startTag = "vue-perf-start:" + (vm._uid);
         endTag = "vue-perf-end:" + (vm._uid);
         mark(startTag);
@@ -4721,10 +4702,8 @@
         );
       }
       /* istanbul ignore else */
-      if (process.env.NODE_ENV !== 'production') {
+      {
         initProxy(vm);
-      } else {
-        vm._renderProxy = vm;
       }
       // expose real self
       vm._self = vm;
@@ -4738,7 +4717,7 @@
       callHook(vm, 'created');
 
       /* istanbul ignore if */
-      if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
+      if (config.performance && mark) {
         vm._name = formatComponentName(vm, false);
         mark(endTag);
         measure(("vue " + (vm._name) + " init"), startTag, endTag);
@@ -4807,8 +4786,7 @@
   }
 
   function Vue (options) {
-    if (process.env.NODE_ENV !== 'production' &&
-      !(this instanceof Vue)
+    if (!(this instanceof Vue)
     ) {
       warn('Vue is a constructor and should be called with the `new` keyword');
     }
@@ -4876,7 +4854,7 @@
       }
 
       var name = extendOptions.name || Super.options.name;
-      if (process.env.NODE_ENV !== 'production' && name) {
+      if (name) {
         validateComponentName(name);
       }
 
@@ -4959,7 +4937,7 @@
           return this.options[type + 's'][id]
         } else {
           /* istanbul ignore if */
-          if (process.env.NODE_ENV !== 'production' && type === 'component') {
+          if (type === 'component') {
             validateComponentName(id);
           }
           if (type === 'component' && isPlainObject(definition)) {
@@ -5116,7 +5094,7 @@
     // config
     var configDef = {};
     configDef.get = function () { return config; };
-    if (process.env.NODE_ENV !== 'production') {
+    {
       configDef.set = function () {
         warn(
           'Do not replace the Vue.config object, set individual fields instead.'
@@ -5381,7 +5359,7 @@
     if (typeof el === 'string') {
       var selected = document.querySelector(el);
       if (!selected) {
-        process.env.NODE_ENV !== 'production' && warn(
+        warn(
           'Cannot find element: ' + el
         );
         return document.createElement('div')
@@ -5643,7 +5621,7 @@
       var children = vnode.children;
       var tag = vnode.tag;
       if (isDef(tag)) {
-        if (process.env.NODE_ENV !== 'production') {
+        {
           if (data && data.pre) {
             creatingElmInVPre++;
           }
@@ -5671,7 +5649,7 @@
           insert(parentElm, vnode.elm, refElm);
         }
 
-        if (process.env.NODE_ENV !== 'production' && data && data.pre) {
+        if (data && data.pre) {
           creatingElmInVPre--;
         }
       } else if (isTrue(vnode.isComment)) {
@@ -5759,7 +5737,7 @@
 
     function createChildren (vnode, children, insertedVnodeQueue) {
       if (Array.isArray(children)) {
-        if (process.env.NODE_ENV !== 'production') {
+        {
           checkDuplicateKeys(children);
         }
         for (var i = 0; i < children.length; ++i) {
@@ -5893,7 +5871,7 @@
       // during leaving transitions
       var canMove = !removeOnly;
 
-      if (process.env.NODE_ENV !== 'production') {
+      {
         checkDuplicateKeys(newCh);
       }
 
@@ -6031,7 +6009,7 @@
         if (isDef(oldCh) && isDef(ch)) {
           if (oldCh !== ch) { updateChildren(elm, oldCh, ch, insertedVnodeQueue, removeOnly); }
         } else if (isDef(ch)) {
-          if (process.env.NODE_ENV !== 'production') {
+          {
             checkDuplicateKeys(ch);
           }
           if (isDef(oldVnode.text)) { nodeOps.setTextContent(elm, ''); }
@@ -6082,7 +6060,7 @@
         return true
       }
       // assert node match
-      if (process.env.NODE_ENV !== 'production') {
+      {
         if (!assertNodeMatch(elm, vnode, inVPre)) {
           return false
         }
@@ -6105,8 +6083,7 @@
             if (isDef(i = data) && isDef(i = i.domProps) && isDef(i = i.innerHTML)) {
               if (i !== elm.innerHTML) {
                 /* istanbul ignore if */
-                if (process.env.NODE_ENV !== 'production' &&
-                  typeof console !== 'undefined' &&
+                if (typeof console !== 'undefined' &&
                   !hydrationBailed
                 ) {
                   hydrationBailed = true;
@@ -6131,8 +6108,7 @@
               // longer than the virtual children list.
               if (!childrenMatch || childNode) {
                 /* istanbul ignore if */
-                if (process.env.NODE_ENV !== 'production' &&
-                  typeof console !== 'undefined' &&
+                if (typeof console !== 'undefined' &&
                   !hydrationBailed
                 ) {
                   hydrationBailed = true;
@@ -6206,7 +6182,7 @@
               if (hydrate(oldVnode, vnode, insertedVnodeQueue)) {
                 invokeInsertHook(vnode, insertedVnodeQueue, true);
                 return oldVnode
-              } else if (process.env.NODE_ENV !== 'production') {
+              } else {
                 warn(
                   'The client-side rendered virtual DOM tree is not matching ' +
                   'server-rendered content. This is likely caused by incorrect ' +
@@ -7224,7 +7200,7 @@
         : duration
     );
 
-    if (process.env.NODE_ENV !== 'production' && explicitEnterDuration != null) {
+    if (explicitEnterDuration != null) {
       checkDuration(explicitEnterDuration, 'enter', vnode);
     }
 
@@ -7332,7 +7308,7 @@
         : duration
     );
 
-    if (process.env.NODE_ENV !== 'production' && isDef(explicitLeaveDuration)) {
+    if (isDef(explicitLeaveDuration)) {
       checkDuration(explicitLeaveDuration, 'leave', vnode);
     }
 
@@ -7559,7 +7535,7 @@
     var value = binding.value;
     var isMultiple = el.multiple;
     if (isMultiple && !Array.isArray(value)) {
-      process.env.NODE_ENV !== 'production' && warn(
+      warn(
         "<select multiple v-model=\"" + (binding.expression) + "\"> " +
         "expects an Array value for its binding, but got " + (Object.prototype.toString.call(value).slice(8, -1)),
         vm
@@ -7776,7 +7752,7 @@
       }
 
       // warn multiple elements
-      if (process.env.NODE_ENV !== 'production' && children.length > 1) {
+      if (children.length > 1) {
         warn(
           '<transition> can only be used on a single element. Use ' +
           '<transition-group> for lists.',
@@ -7787,8 +7763,7 @@
       var mode = this.mode;
 
       // warn invalid mode
-      if (process.env.NODE_ENV !== 'production' &&
-        mode && mode !== 'in-out' && mode !== 'out-in'
+      if (mode && mode !== 'in-out' && mode !== 'out-in'
       ) {
         warn(
           'invalid <transition> mode: ' + mode,
@@ -7920,7 +7895,7 @@
             children.push(c);
             map[c.key] = c
             ;(c.data || (c.data = {})).transition = transitionData;
-          } else if (process.env.NODE_ENV !== 'production') {
+          } else {
             var opts = c.componentOptions;
             var name = opts ? (opts.Ctor.options.name || opts.tag || '') : c.tag;
             warn(("<transition-group> children must be keyed: <" + name + ">"));
@@ -8081,8 +8056,6 @@
         if (devtools) {
           devtools.emit('init', Vue);
         } else if (
-          process.env.NODE_ENV !== 'production' &&
-          process.env.NODE_ENV !== 'test' &&
           isChrome
         ) {
           console[console.info ? 'info' : 'log'](
@@ -8091,9 +8064,7 @@
           );
         }
       }
-      if (process.env.NODE_ENV !== 'production' &&
-        process.env.NODE_ENV !== 'test' &&
-        config.productionTip !== false &&
+      if (config.productionTip !== false &&
         typeof console !== 'undefined'
       ) {
         console[console.info ? 'info' : 'log'](
@@ -8119,7 +8090,7 @@
   }
 
   function warn$1 (condition, message) {
-    if (process.env.NODE_ENV !== 'production' && !condition) {
+    if (!condition) {
       typeof console !== 'undefined' && console.warn(("[vue-router] " + message));
     }
   }
@@ -8238,7 +8209,7 @@
       case 'boolean':
         return config ? route.params : undefined
       default:
-        if (process.env.NODE_ENV !== 'production') {
+        {
           warn$1(
             false,
             "props in \"" + (route.path) + "\" is a " + (typeof config) + ", " +
@@ -8275,7 +8246,7 @@
     try {
       parsedQuery = parse(query || '');
     } catch (e) {
-      process.env.NODE_ENV !== 'production' && warn$1(false, e.message);
+      warn$1(false, e.message);
       parsedQuery = {};
     }
     for (var key in extraQuery) {
@@ -9195,7 +9166,7 @@
         (regexpCompileCache[path] = pathToRegexp_1.compile(path));
       return filler(params || {}, { pretty: true })
     } catch (e) {
-      if (process.env.NODE_ENV !== 'production') {
+      {
         warn$1(false, ("missing param for " + routeMsg + ": " + (e.message)));
       }
       return ''
@@ -9247,7 +9218,7 @@
   ) {
     var path = route.path;
     var name = route.name;
-    if (process.env.NODE_ENV !== 'production') {
+    {
       assert(path != null, "\"path\" is required in a route configuration.");
       assert(
         typeof route.component !== 'string',
@@ -9289,7 +9260,7 @@
       // Warn if route is named, does not redirect and has a default child route.
       // If users navigate to this route by name, the default child will
       // not be rendered (GH Issue #629)
-      if (process.env.NODE_ENV !== 'production') {
+      {
         if (route.name && !route.redirect && route.children.some(function (child) { return /^\/?$/.test(child.path); })) {
           warn$1(
             false,
@@ -9338,7 +9309,7 @@
     if (name) {
       if (!nameMap[name]) {
         nameMap[name] = record;
-      } else if (process.env.NODE_ENV !== 'production' && !matchAs) {
+      } else if (!matchAs) {
         warn$1(
           false,
           "Duplicate named routes definition: " +
@@ -9350,7 +9321,7 @@
 
   function compileRouteRegex (path, pathToRegexpOptions) {
     var regex = pathToRegexp_1(path, [], pathToRegexpOptions);
-    if (process.env.NODE_ENV !== 'production') {
+    {
       var keys = Object.create(null);
       regex.keys.forEach(function (key) {
         warn$1(!keys[key.name], ("Duplicate param keys in route with path: \"" + path + "\""));
@@ -9392,7 +9363,7 @@
       } else if (current.matched.length) {
         var rawPath = current.matched[current.matched.length - 1].path;
         next.path = fillParams(rawPath, params, ("path " + (current.path)));
-      } else if (process.env.NODE_ENV !== 'production') {
+      } else {
         warn$1(false, "relative params navigation requires a current route.");
       }
       return next
@@ -9450,7 +9421,7 @@
 
       if (name) {
         var record = nameMap[name];
-        if (process.env.NODE_ENV !== 'production') {
+        {
           warn$1(record, ("Route with name '" + name + "' does not exist"));
         }
         if (!record) { return _createRoute(null, location) }
@@ -9502,7 +9473,7 @@
       }
 
       if (!redirect || typeof redirect !== 'object') {
-        if (process.env.NODE_ENV !== 'production') {
+        {
           warn$1(
             false, ("invalid redirect option: " + (JSON.stringify(redirect)))
           );
@@ -9523,7 +9494,7 @@
       if (name) {
         // resolved named direct
         var targetRecord = nameMap[name];
-        if (process.env.NODE_ENV !== 'production') {
+        {
           assert(targetRecord, ("redirect failed: named route \"" + name + "\" not found."));
         }
         return match({
@@ -9546,7 +9517,7 @@
           hash: hash
         }, undefined, location)
       } else {
-        if (process.env.NODE_ENV !== 'production') {
+        {
           warn$1(false, ("invalid redirect option: " + (JSON.stringify(redirect))));
         }
         return _createRoute(null, location)
@@ -9652,7 +9623,7 @@
       return
     }
 
-    if (process.env.NODE_ENV !== 'production') {
+    {
       assert(typeof behavior === 'function', "scrollBehavior must be a function");
     }
 
@@ -9669,7 +9640,7 @@
         shouldScroll.then(function (shouldScroll) {
           scrollToPosition((shouldScroll), position);
         }).catch(function (err) {
-          if (process.env.NODE_ENV !== 'production') {
+          {
             assert(false, err.toString());
           }
         });
@@ -9859,7 +9830,7 @@
 
           var reject = once$1(function (reason) {
             var msg = "Failed to resolve async component " + key + ": " + reason;
-            process.env.NODE_ENV !== 'production' && warn$1(false, msg);
+            warn$1(false, msg);
             if (!error) {
               error = isError(reason)
                 ? reason
@@ -10552,7 +10523,7 @@
         this.history = new AbstractHistory(this, options.base);
         break
       default:
-        if (process.env.NODE_ENV !== 'production') {
+        {
           assert(false, ("invalid mode: " + mode));
         }
     }
@@ -10575,7 +10546,7 @@
   VueRouter.prototype.init = function init (app /* Vue component instance */) {
       var this$1 = this;
 
-    process.env.NODE_ENV !== 'production' && assert(
+    assert(
       install.installed,
       "not installed. Make sure to call `Vue.use(VueRouter)` " +
       "before creating root instance."
@@ -10966,13 +10937,35 @@
   const __vue_script__ = script;
 
   /* template */
-  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",class:[_vm.modifierClass, _vm.themeClass],attrs:{"target":_vm.target,"rel":_vm.computedRel,"href":_vm.tag === 'a' ? _vm.href : null /* don't include the href attribute if not an <a> */}},[_vm._t("default",[_vm._v("Link Text")])],2)};
+  var __vue_render__ = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      _vm.tag,
+      {
+        tag: "component",
+        class: [_vm.modifierClass, _vm.themeClass],
+        attrs: {
+          target: _vm.target,
+          rel: _vm.computedRel,
+          href:
+            _vm.tag === "a"
+              ? _vm.href
+              : null /* don't include the href attribute if not an <a> */
+        }
+      },
+      [_vm._t("default", [_vm._v("Link Text")])],
+      2
+    )
+  };
   var __vue_staticRenderFns__ = [];
+  __vue_render__._withStripped = true;
 
     /* style */
     const __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-7c41bcce_0", { source: "", map: undefined, media: undefined });
+      inject("data-v-72cd3a3e_0", { source: "\n@import 'cssdir/settings/_index.pcss';\n@import './styles/vars/CdrLink.vars.pcss';\n@import './styles/CdrLink.pcss';\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/link/CdrLink.vue"],"names":[],"mappings":";AAyDA,qCAAA;AACA,yCAAA;AACA,+BAAA","file":"CdrLink.vue","sourcesContent":["<template>\n  <component\n    :is=\"tag\"\n    :class=\"[modifierClass, themeClass]\"\n    :target=\"target\"\n    :rel=\"computedRel\"\n    :href=\"tag === 'a' ? href : null /* don't include the href attribute if not an <a> */\"\n  >\n    <!-- @slot innerHTML on the inside of the anchor component -->\n    <slot>Link Text</slot>\n  </component>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\n// import themeable from 'mixinsdir/themeable';\n/**\n *\n * Cedar 2 component for link.\n *\n * <span class=\"modifiers\">Modifiers</span>\n * {standalone}\n * @version 0.0.1\n * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)\n */\nexport default {\n  name: 'CdrLink',\n  mixins: [modifier],\n  props: {\n    tag: {\n      type: String,\n      default: 'a',\n    },\n    href: {\n      type: String,\n      default: '#',\n    },\n    /** @ignore */\n    target: String,\n    /** @ignore */\n    rel: String,\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-link';\n    },\n    computedRel() {\n      if (this.target === '_blank') {\n        return this.rel || 'noopener noreferrer';\n      }\n      return this.rel;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import 'cssdir/settings/_index.pcss';\n  @import './styles/vars/CdrLink.vars.pcss';\n  @import './styles/CdrLink.pcss';\n</style>\n"]}, media: undefined });
   Object.defineProperty(this, "$style", { value: {} });
 
     };
@@ -11157,19 +11150,36 @@
   const __vue_script__$1 = script$1;
 
   /* template */
-  var __vue_render__$1 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",class:[
-      _vm.modifierClass,
-      _vm.buttonSizeClass,
-      _vm.fullWidthClass,
-      _vm.iconClass ],attrs:{"type":_vm.tag === 'button' ? _vm.type : null},on:{"click":_vm.onClick}},[_vm._t("icon"),_vm._v(" "),_vm._t("default")],2)};
+  var __vue_render__$1 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      _vm.tag,
+      {
+        tag: "component",
+        class: [
+          _vm.modifierClass,
+          _vm.buttonSizeClass,
+          _vm.fullWidthClass,
+          _vm.iconClass
+        ],
+        attrs: { type: _vm.tag === "button" ? _vm.type : null },
+        on: { click: _vm.onClick }
+      },
+      [_vm._t("icon"), _vm._v(" "), _vm._t("default")],
+      2
+    )
+  };
   var __vue_staticRenderFns__$1 = [];
+  __vue_render__$1._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$1 = function (inject) {
       if (!inject) return
-      inject("data-v-0a9abbc0_0", { source: "", map: undefined, media: undefined });
+      inject("data-v-deff55b6_0", { source: "\n@import 'cssdir/settings/_index.pcss';\n@import './styles/vars/CdrButton.vars.pcss';\n@import './styles/CdrButton.pcss';\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/CdrButton.vue"],"names":[],"mappings":";AAoHA,qCAAA;AACA,2CAAA;AACA,iCAAA","file":"CdrButton.vue","sourcesContent":["<template>\n  <component\n    :is=\"tag\"\n    :class=\"[\n      modifierClass,\n      buttonSizeClass,\n      fullWidthClass,\n      iconClass,\n    ]\"\n    :type=\"tag === 'button' ? type : null\"\n    @click=\"onClick\"\n  >\n    <!-- @slot for icon -->\n    <slot name=\"icon\" />\n    <!-- @slot innerHTML on the inside of the button component -->\n    <slot />\n  </component>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\nimport size from 'mixinsdir/size';\n\n/**\n * Cedar 2 component for button\n *\n * CdrButton will render either a button, or an anchor that looks like a button.\n * As such, the decision to use CdrButton vs CdrAnchor should be made based on what\n * you need the rendered element to look like.\n *\n * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)\n */\nexport default {\n  name: 'CdrButton',\n  mixins: [modifier, size],\n  props: {\n    /**\n     * Controls render as button or anchor. {button, a}\n     */\n    tag: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Sets the button type. {button, submit, reset}\n     */\n    type: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Adds custom click actions.\n     */\n    onClick: {\n      type: Function,\n      default: () => () => null,\n    },\n    /**\n     * Sets width to be 100%.\n    */\n    fullWidth: {\n      type: Boolean,\n      default: false,\n      validator: value => typeof value === 'boolean',\n    },\n    /**\n     * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.\n     */\n    iconOnly: {\n      type: Boolean,\n      default: false,\n    },\n    /**\n     * Renders an icon-only button with a light fill color for use on dark backgrounds.\n     * iconOnly must be true.\n     */\n    onDark: {\n      type: Boolean,\n      default: false,\n    },\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-button';\n    },\n    buttonSizeClass() {\n      return !this.iconOnly ? this.sizeClass : null;\n    },\n    iconClass() {\n      const classes = [];\n\n      if (this.$slots.icon && this.$slots.default) {\n        /* only add class for buttons with text + icon */\n        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));\n      }\n\n      if (this.iconOnly) {\n        classes.push(this.modifyClassName(this.baseClass, 'icon-only'));\n\n        if (this.onDark) {\n          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));\n        }\n      }\n      return classes.join(' ');\n    },\n    fullWidthClass() {\n      return this.fullWidth && !this.iconOnly\n        ? this.modifyClassName(this.baseClass, 'full-width') : null;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import 'cssdir/settings/_index.pcss';\n  @import './styles/vars/CdrButton.vars.pcss';\n  @import './styles/CdrButton.pcss';\n</style>\n\n<style>\n  @import '@rei/cdr-icon/dist/cdr-icon.css';\n</style>\n"]}, media: undefined });
   Object.defineProperty(this, "$style", { value: {} })
-  ,inject("data-v-0a9abbc0_1", { source: "", map: undefined, media: undefined });
+  ,inject("data-v-deff55b6_1", { source: "\n@import '@rei/cdr-icon/dist/cdr-icon.css';\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/CdrButton.vue"],"names":[],"mappings":";AA0HA,yCAAA","file":"CdrButton.vue","sourcesContent":["<template>\n  <component\n    :is=\"tag\"\n    :class=\"[\n      modifierClass,\n      buttonSizeClass,\n      fullWidthClass,\n      iconClass,\n    ]\"\n    :type=\"tag === 'button' ? type : null\"\n    @click=\"onClick\"\n  >\n    <!-- @slot for icon -->\n    <slot name=\"icon\" />\n    <!-- @slot innerHTML on the inside of the button component -->\n    <slot />\n  </component>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\nimport size from 'mixinsdir/size';\n\n/**\n * Cedar 2 component for button\n *\n * CdrButton will render either a button, or an anchor that looks like a button.\n * As such, the decision to use CdrButton vs CdrAnchor should be made based on what\n * you need the rendered element to look like.\n *\n * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)\n */\nexport default {\n  name: 'CdrButton',\n  mixins: [modifier, size],\n  props: {\n    /**\n     * Controls render as button or anchor. {button, a}\n     */\n    tag: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Sets the button type. {button, submit, reset}\n     */\n    type: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Adds custom click actions.\n     */\n    onClick: {\n      type: Function,\n      default: () => () => null,\n    },\n    /**\n     * Sets width to be 100%.\n    */\n    fullWidth: {\n      type: Boolean,\n      default: false,\n      validator: value => typeof value === 'boolean',\n    },\n    /**\n     * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.\n     */\n    iconOnly: {\n      type: Boolean,\n      default: false,\n    },\n    /**\n     * Renders an icon-only button with a light fill color for use on dark backgrounds.\n     * iconOnly must be true.\n     */\n    onDark: {\n      type: Boolean,\n      default: false,\n    },\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-button';\n    },\n    buttonSizeClass() {\n      return !this.iconOnly ? this.sizeClass : null;\n    },\n    iconClass() {\n      const classes = [];\n\n      if (this.$slots.icon && this.$slots.default) {\n        /* only add class for buttons with text + icon */\n        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));\n      }\n\n      if (this.iconOnly) {\n        classes.push(this.modifyClassName(this.baseClass, 'icon-only'));\n\n        if (this.onDark) {\n          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));\n        }\n      }\n      return classes.join(' ');\n    },\n    fullWidthClass() {\n      return this.fullWidth && !this.iconOnly\n        ? this.modifyClassName(this.baseClass, 'full-width') : null;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import 'cssdir/settings/_index.pcss';\n  @import './styles/vars/CdrButton.vars.pcss';\n  @import './styles/CdrButton.pcss';\n</style>\n\n<style>\n  @import '@rei/cdr-icon/dist/cdr-icon.css';\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11248,13 +11258,49 @@
   const __vue_script__$2 = script$2;
 
   /* template */
-  var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('a',{class:[_vm.modifierClass, _vm.ctaClass, _vm.fullWidthClass],attrs:{"target":_vm.target,"rel":_vm.computedRel,"href":_vm.href}},[_vm._t("default"),_vm._v(" "),_c('svg',{class:_vm.$style['cdr-cta__icon'],attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 24 24","role":"presentation"}},[_c('path',{attrs:{"d":"M16 12a.997.997 0 0 0-.288-.702l-5.005-5.005a1 1 0 0 0-1.414 1.414L13.585 12 9.29 16.295a1 1 0 0 0 1.417 1.412l4.98-4.98A.997.997 0 0 0 16 12z"}})])],2)};
+  var __vue_render__$2 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "a",
+      {
+        class: [_vm.modifierClass, _vm.ctaClass, _vm.fullWidthClass],
+        attrs: { target: _vm.target, rel: _vm.computedRel, href: _vm.href }
+      },
+      [
+        _vm._t("default"),
+        _vm._v(" "),
+        _c(
+          "svg",
+          {
+            class: _vm.$style["cdr-cta__icon"],
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 24 24",
+              role: "presentation"
+            }
+          },
+          [
+            _c("path", {
+              attrs: {
+                d:
+                  "M16 12a.997.997 0 0 0-.288-.702l-5.005-5.005a1 1 0 0 0-1.414 1.414L13.585 12 9.29 16.295a1 1 0 0 0 1.417 1.412l4.98-4.98A.997.997 0 0 0 16 12z"
+              }
+            })
+          ]
+        )
+      ],
+      2
+    )
+  };
   var __vue_staticRenderFns__$2 = [];
+  __vue_render__$2._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$2 = function (inject) {
       if (!inject) return
-      inject("data-v-7448dbc5_0", { source: "", map: undefined, media: undefined });
+      inject("data-v-667819e0_0", { source: "\n@import '../../css/settings/_index.pcss';\n@import './styles/vars/CdrCta.vars.pcss';\n@import './styles/CdrCta.pcss';\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/cta/CdrCta.vue"],"names":[],"mappings":";AA2EA,wCAAA;AACA,wCAAA;AACA,8BAAA","file":"CdrCta.vue","sourcesContent":["<template>\n  <a\n    :class=\"[modifierClass, ctaClass, fullWidthClass]\"\n    :target=\"target\"\n    :rel=\"computedRel\"\n    :href=\"href\"\n  >\n    <!-- @slot innerHTML on the inside of the cta component -->\n    <slot />\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      viewBox=\"0 0 24 24\"\n      role=\"presentation\"\n      :class=\"$style['cdr-cta__icon']\"\n    >\n      <!-- eslint-disable-next-line -->\n      <path d=\"M16 12a.997.997 0 0 0-.288-.702l-5.005-5.005a1 1 0 0 0-1.414 1.414L13.585 12 9.29 16.295a1 1 0 0 0 1.417 1.412l4.98-4.98A.997.997 0 0 0 16 12z\" />\n    </svg>\n  </a>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\n\nexport default {\n  name: 'CdrCta',\n  mixins: [modifier],\n  props: {\n    /**\n      * Change the color of the cdr-cta button match different themes.\n      */\n    ctaStyle: {\n      type: String,\n      default: 'dark',\n      validator: value => (['brand', 'dark', 'light', 'sale'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Sets width to be 100%.\n    */\n    fullWidth: {\n      type: Boolean,\n      default: false,\n      validator: value => typeof value === 'boolean',\n    },\n    href: {\n      type: String,\n      default: '#',\n    },\n    /** @ignore */\n    target: String,\n    /** @ignore */\n    rel: String,\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-cta';\n    },\n    ctaClass() {\n      return this.modifyClassName(this.baseClass, this.ctaStyle);\n    },\n    fullWidthClass() {\n      return this.fullWidth && !this.iconOnly\n        ? this.modifyClassName(this.baseClass, 'full-width') : null;\n    },\n    computedRel() {\n      if (this.target === '_blank') {\n        return this.rel || 'noopener noreferrer';\n      }\n      return this.rel;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import '../../css/settings/_index.pcss';\n  @import './styles/vars/CdrCta.vars.pcss';\n  @import './styles/CdrCta.pcss';\n</style>\n"]}, media: undefined });
   Object.defineProperty(this, "$style", { value: {} });
 
     };
@@ -11308,8 +11354,19 @@
   const __vue_script__$3 = script$3;
 
   /* template */
-  var __vue_render__$3 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",class:[_vm.modifierClass]},[_vm._t("default")],2)};
+  var __vue_render__$3 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      _vm.tag,
+      { tag: "component", class: [_vm.modifierClass] },
+      [_vm._t("default")],
+      2
+    )
+  };
   var __vue_staticRenderFns__$3 = [];
+  __vue_render__$3._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$3 = undefined;
@@ -11379,13 +11436,166 @@
   const __vue_script__$4 = script$4;
 
   /* template */
-  var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"link-examples"},[_c('cdr-text',{attrs:{"tag":"h2","modifier":"heading-small"}},[_vm._v("\n    Links\n  ")]),_vm._v(" "),_c('cdr-text',{attrs:{"tag":"h3","modifier":"subheading"}},[_vm._v("\n    Default Link, No props\n  ")]),_vm._v(" "),_c('div',{staticClass:"anchor-example"},[_c('cdr-link',{attrs:{"data-backstop":"cdr-link"}})],1),_vm._v(" "),_c('cdr-text',{attrs:{"tag":"h3","modifier":"subheading"}},[_vm._v("Link, href set")]),_vm._v(" "),_c('div',{staticClass:"anchor-example"},[_c('cdr-link',{attrs:{"href":"https://www.rei.com/"}},[_vm._v("\n      REI.com\n    ")])],1),_vm._v(" "),_c('cdr-text',{attrs:{"tag":"h3","modifier":"subheading"}},[_vm._v("Standalone Link (No underline)")]),_vm._v(" "),_c('div',{staticClass:"anchor-example"},[_c('cdr-link',{attrs:{"modifier":"standalone","data-backstop":"cdr-link--standalone"}})],1),_vm._v(" "),_c('cdr-text',{attrs:{"tag":"h3","modifier":"subheading"}},[_vm._v("Links, with icon")]),_vm._v(" "),_c('div',{staticClass:"anchor-example"},[_c('cdr-link',[_vm._v("\n      Icon on the left\n    ")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('br'),_vm._v(" "),_c('cdr-link',[_vm._v("\n      Icon on the right\n      "),_c('cdr-icon',{staticClass:"cdr-inline-right--sm",attrs:{"use":"#download","modifier":"inherit-color"}})],1),_vm._v(" "),_c('br'),_vm._v(" "),_c('br')],1),_vm._v(" "),_c('cdr-text',{attrs:{"tag":"h3","modifier":"subheading"}},[_vm._v("Content Resilience, too much content")]),_vm._v(" "),_c('div',{staticClass:"anchor-example"},[_c('cdr-link',[_vm._v("\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n    ")])],1),_vm._v(" "),_c('cdr-text',{attrs:{"tag":"h3","modifier":"subheading"}},[_vm._v("Content Resilience, too little content")]),_vm._v(" "),_c('div',{staticClass:"anchor-example"},[_c('cdr-link',[_vm._v("K")])],1),_vm._v(" "),_c('cdr-text',{attrs:{"tag":"h3","modifier":"subheading"}},[_vm._v("Link using a <button> element")]),_vm._v(" "),_c('div',{staticClass:"anchor-example"},[_c('cdr-link',{attrs:{"tag":"button","data-backstop":"cdr-link--button"}},[_vm._v("I'm a button!")])],1),_vm._v(" "),_c('cdr-link',{attrs:{"href":"https://www.rei.com/"}},[_vm._v("REI.com")]),_vm._v(" "),_c('cdr-link',{attrs:{"href":"https://www.rei.com/"}},[_vm._v("REI.com")]),_vm._v(" "),_c('p',[_vm._v("Override (light on dark)")]),_vm._v(" "),_c('cdr-link',{attrs:{"href":"https://www.rei.com/","theme":"light"}},[_vm._v("REI.com")])],1)};
+  var __vue_render__$4 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      { staticClass: "link-examples" },
+      [
+        _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-small" } }, [
+          _vm._v("\n    Links\n  ")
+        ]),
+        _vm._v(" "),
+        _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
+          _vm._v("\n    Default Link, No props\n  ")
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [_c("cdr-link", { attrs: { "data-backstop": "cdr-link" } })],
+          1
+        ),
+        _vm._v(" "),
+        _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
+          _vm._v("Link, href set")
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [
+            _c("cdr-link", { attrs: { href: "https://www.rei.com/" } }, [
+              _vm._v("\n      REI.com\n    ")
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
+          _vm._v("Standalone Link (No underline)")
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [
+            _c("cdr-link", {
+              attrs: {
+                modifier: "standalone",
+                "data-backstop": "cdr-link--standalone"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
+          _vm._v("Links, with icon")
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [
+            _c("cdr-link", [_vm._v("\n      Icon on the left\n    ")]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "cdr-link",
+              [
+                _vm._v("\n      Icon on the right\n      "),
+                _c("cdr-icon", {
+                  staticClass: "cdr-inline-right--sm",
+                  attrs: { use: "#download", modifier: "inherit-color" }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("br")
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
+          _vm._v("Content Resilience, too much content")
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [
+            _c("cdr-link", [
+              _vm._v(
+                "\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n    "
+              )
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
+          _vm._v("Content Resilience, too little content")
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [_c("cdr-link", [_vm._v("K")])],
+          1
+        ),
+        _vm._v(" "),
+        _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
+          _vm._v("Link using a <button> element")
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "anchor-example" },
+          [
+            _c(
+              "cdr-link",
+              { attrs: { tag: "button", "data-backstop": "cdr-link--button" } },
+              [_vm._v("I'm a button!")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("cdr-link", { attrs: { href: "https://www.rei.com/" } }, [
+          _vm._v("REI.com")
+        ]),
+        _vm._v(" "),
+        _c("cdr-link", { attrs: { href: "https://www.rei.com/" } }, [
+          _vm._v("REI.com")
+        ]),
+        _vm._v(" "),
+        _c("p", [_vm._v("Override (light on dark)")]),
+        _vm._v(" "),
+        _c(
+          "cdr-link",
+          { attrs: { href: "https://www.rei.com/", theme: "light" } },
+          [_vm._v("REI.com")]
+        )
+      ],
+      1
+    )
+  };
   var __vue_staticRenderFns__$4 = [];
+  __vue_render__$4._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$4 = function (inject) {
       if (!inject) return
-      inject("data-v-e8ea2276_0", { source: ".link-examples{line-height:1}.anchor-example{padding:20px}", map: undefined, media: undefined });
+      inject("data-v-1e2eefec_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n.anchor-example {\n  padding: 20px;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/link/examples/Links.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA0KA,2EAAA;AAEA;EACA,cAAA;AACA;AAEA;EACA,aAAA;AACA","file":"Links.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div class=\"link-examples\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-small\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link :data-backstop=\"`cdr-link`\" />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Link, href set</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link href=\"https://www.rei.com/\">\n        REI.com\n      </cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Standalone Link (No underline)</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link\n        modifier=\"standalone\"\n        :data-backstop=\"`cdr-link--standalone`\"\n      />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Links, with icon</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link>\n        <!-- <cdr-icon\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-left--sm\"\n        /> -->\n        Icon on the left\n      </cdr-link>\n      <br>\n      <br>\n      <cdr-link>\n        Icon on the right\n        <cdr-icon\n          use=\"#download\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-right--sm\"\n        />\n      </cdr-link>\n      <br>\n      <br>\n      <!-- <cdr-link>\n        <cdr-icon\n          use=\"#twitter\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-left--sm\"\n        />\n        Icons on both sides\n        <cdr-icon\n          use=\"#external-link\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-right--sm\"\n        />\n      </cdr-link> -->\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Content Resilience, too much content</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      </cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Content Resilience, too little content</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link>K</cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Link using a &lt;button&gt; element</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link\n        tag=\"button\"\n        :data-backstop=\"`cdr-link--button`\"\n      >I'm a button!</cdr-link>\n    </div>\n\n    <!-- Nested theme Testing -->\n\n    <!-- <cdr-themer\n      theme=\"light\"\n      background=\"lightest\"\n    > -->\n      <!-- Smaller examples with nested theme (for override) -->\n      <!-- <p>Works nested</p>\n      <p>\n        <cdr-link href=\"https://www.rei.com/\">\n          REI.com\n        </cdr-link>\n        <cdr-link\n          href=\"https://www.rei.com/\"\n          modifier=\"standalone\"\n        >REI.com</cdr-link>\n      </p> -->\n      <!-- Override individual theme -->\n      <!-- <p>Individual override (dark on light)</p>\n      <p>\n        <cdr-link\n          href=\"https://www.rei.com/\"\n          theme=\"dark\">REI.com</cdr-link>\n      </p> -->\n    <!-- </cdr-themer> -->\n\n    <cdr-link\n      href=\"https://www.rei.com/\"\n    >REI.com</cdr-link>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n    >REI.com</cdr-link>\n    <p>Override (light on dark)</p>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      theme=\"light\"\n    >REI.com</cdr-link>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText, CdrLink } from 'componentsdir/_index';\n\nexport default {\n  name: 'Links',\n  components: {\n    CdrText,\n    CdrLink,\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n.anchor-example {\n  padding: 20px;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11505,13 +11715,102 @@
   const __vue_script__$5 = script$5;
 
   /* template */
-  var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._l((_vm.data),function(section,index){return _c('div',{key:index,staticClass:"button-example"},[_c('cdr-text',{attrs:{"tag":"h3","modifier":"heading-small"}},[_vm._v("\n      "+_vm._s(section.title)+"\n    ")]),_vm._v(" "),_vm._l((section.buttons),function(button,index2){return _c('cdr-button',{key:index2,attrs:{"size":button.size,"full-width":button.fullWidth,"type":button.type,"disabled":button.disabled,"data-backstop":button.backstop ? button.backstop : null}},[_vm._v("\n      "+_vm._s(button.label)+"\n    ")])})],2)}),_vm._v(" "),_c('div',{staticClass:"button-example"},[_c('cdr-text',{attrs:{"tag":"h3","modifier":"heading-small"}},[_vm._v("\n      Responsive\n    ")]),_vm._v(" "),_c('cdr-button',{attrs:{"on-click":_vm.log,"full-width":true,"size":"large@sm"}},[_vm._v("\n      Responsive with default\n    ")])],1),_vm._v(" "),_c('div',{staticClass:"button-example"},[_c('cdr-text',{attrs:{"tag":"h3","modifier":"heading-small"}},[_vm._v("\n      Primary Anchor\n    ")]),_vm._v(" "),_c('cdr-button',{attrs:{"tag":"a","href":"https://rei.com","size":"large","data-backstop":"cdr-button--anchor"}},[_vm._v("\n      Link\n    ")])],1)],2)};
+  var __vue_render__$5 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      [
+        _vm._l(_vm.data, function(section, index) {
+          return _c(
+            "div",
+            { key: index, staticClass: "button-example" },
+            [
+              _c(
+                "cdr-text",
+                { attrs: { tag: "h3", modifier: "heading-small" } },
+                [_vm._v("\n      " + _vm._s(section.title) + "\n    ")]
+              ),
+              _vm._v(" "),
+              _vm._l(section.buttons, function(button, index2) {
+                return _c(
+                  "cdr-button",
+                  {
+                    key: index2,
+                    attrs: {
+                      size: button.size,
+                      "full-width": button.fullWidth,
+                      type: button.type,
+                      disabled: button.disabled,
+                      "data-backstop": button.backstop ? button.backstop : null
+                    }
+                  },
+                  [_vm._v("\n      " + _vm._s(button.label) + "\n    ")]
+                )
+              })
+            ],
+            2
+          )
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "button-example" },
+          [
+            _c("cdr-text", { attrs: { tag: "h3", modifier: "heading-small" } }, [
+              _vm._v("\n      Responsive\n    ")
+            ]),
+            _vm._v(" "),
+            _c(
+              "cdr-button",
+              {
+                attrs: {
+                  "on-click": _vm.log,
+                  "full-width": true,
+                  size: "large@sm"
+                }
+              },
+              [_vm._v("\n      Responsive with default\n    ")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "button-example" },
+          [
+            _c("cdr-text", { attrs: { tag: "h3", modifier: "heading-small" } }, [
+              _vm._v("\n      Primary Anchor\n    ")
+            ]),
+            _vm._v(" "),
+            _c(
+              "cdr-button",
+              {
+                attrs: {
+                  tag: "a",
+                  href: "https://rei.com",
+                  size: "large",
+                  "data-backstop": "cdr-button--anchor"
+                }
+              },
+              [_vm._v("\n      Link\n    ")]
+            )
+          ],
+          1
+        )
+      ],
+      2
+    )
+  };
   var __vue_staticRenderFns__$5 = [];
+  __vue_render__$5._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$5 = function (inject) {
       if (!inject) return
-      inject("data-v-0a4e716e_0", { source: ".button-example{padding:10px}.button-example a,.button-example button{margin:0 10px 5px 0}", map: undefined, media: undefined });
+      inject("data-v-fc69b030_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* This should be removed: */\n\n/* having custom styles here provides false positives */\n.button-example {\n  padding: 10px;\n}\n.button-example button,\n.button-example a {\n  margin: 0 10px 5px 0;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/examples/demo/Default.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2JA,4BAAA;;AAEA,uDAAA;AAEA;EACA,aAAA;AACA;AAEA;;EAEA,oBAAA;AACA","file":"Default.vue","sourcesContent":["<template>\n  <div>\n    <div\n      class=\"button-example\"\n      v-for=\"(section, index) in data\"\n      :key=\"index\"\n    >\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        {{ section.title }}\n      </cdr-text>\n      <cdr-button\n        v-for=\"(button, index2) in section.buttons\"\n        :key=\"index2\"\n        :size=\"button.size\"\n        :full-width=\"button.fullWidth\"\n        :type=\"button.type\"\n        :disabled=\"button.disabled\"\n        :data-backstop=\"button.backstop ? button.backstop : null\"\n      >\n        {{ button.label }}\n      </cdr-button>\n    </div>\n    <div class=\"button-example\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        Responsive\n      </cdr-text>\n      <cdr-button\n        :on-click=\"log\"\n        :full-width=\"true\"\n        size=\"large@sm\"\n      >\n        Responsive with default\n      </cdr-button>\n    </div>\n    <div class=\"button-example\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        Primary Anchor\n      </cdr-text>\n      <cdr-button\n        tag=\"a\"\n        href=\"https://rei.com\"\n        size=\"large\"\n        data-backstop=\"cdr-button--anchor\"\n      >\n        Link\n      </cdr-button>\n    </div>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText, CdrButton } from 'componentsdir/_index';\n\nexport default {\n  name: 'Default',\n  components: {\n    CdrText,\n    CdrButton,\n  },\n  data: function data() {\n    return {\n      data: [\n        {\n          title: 'Default sizes',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: false,\n              size: 'large',\n              fullWidth: false,\n              backstop: 'cdr-button--size',\n            },\n            {\n              label: 'Medium',\n              disabled: false,\n              size: 'medium',\n              fullWidth: false,\n            },\n            {\n              label: 'Small',\n              disabled: false,\n              size: 'small',\n              fullWidth: false,\n            },\n          ],\n        },\n        {\n          title: 'Disabled',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: true,\n              size: 'large',\n              fullWidth: false,\n              backstop: 'cdr-button--disabled',\n            },\n            {\n              label: 'Medium',\n              disabled: true,\n              size: 'medium',\n              fullWidth: false,\n            },\n            {\n              label: 'Small',\n              disabled: true,\n              size: 'small',\n              fullWidth: false,\n            },\n          ],\n        },\n        {\n          title: 'Full Width',\n          buttons: [\n            {\n              label: 'Small + full width',\n              disabled: false,\n              size: 'small',\n              fullWidth: true,\n            },\n            {\n              label: 'Medium + full width',\n              disabled: false,\n              size: 'medium',\n              fullWidth: true,\n            },\n            {\n              label: 'Large + full width',\n              disabled: false,\n              size: 'large',\n              fullWidth: true,\n            },\n          ],\n        },\n      ],\n    };\n  },\n  methods: {\n    log() {\n      console.log('clicked'); // eslint-disable-line\n    },\n  },\n};\n</script>\n\n<style>\n/* This should be removed: */\n\n/* having custom styles here provides false positives */\n\n.button-example {\n  padding: 10px;\n}\n\n.button-example button,\n.button-example a {\n  margin: 0 10px 5px 0;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11602,13 +11901,81 @@
   const __vue_script__$6 = script$6;
 
   /* template */
-  var __vue_render__$6 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._l((_vm.data),function(section,index){return _c('div',{key:index,staticClass:"button-example"},[_c('cdr-text',{attrs:{"tag":"h3","modifier":"heading-small"}},[_vm._v("\n      "+_vm._s(section.title)+"\n    ")]),_vm._v(" "),_vm._l((section.buttons),function(button,index2){return _c('cdr-button',{key:index2,attrs:{"size":button.size,"full-width":button.fullWidth,"modifier":button.modifier,"type":button.type,"disabled":button.disabled,"data-backstop":button.backstop ? button.backstop : null}},[_vm._v(_vm._s(button.label))])})],2)}),_vm._v(" "),_c('div',{staticClass:"button-example"},[_c('cdr-text',{attrs:{"tag":"h3","modifier":"heading-small"}},[_vm._v("\n      Secondary Anchor\n    ")]),_vm._v(" "),_c('cdr-button',{attrs:{"tag":"a","href":"https://rei.com","size":"small","modifier":"secondary","data-backstop":"cdr-button--small secondary anchor"}},[_vm._v("Link "),_c('span',[_vm._v("text in span")])])],1)],2)};
+  var __vue_render__$6 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      [
+        _vm._l(_vm.data, function(section, index) {
+          return _c(
+            "div",
+            { key: index, staticClass: "button-example" },
+            [
+              _c(
+                "cdr-text",
+                { attrs: { tag: "h3", modifier: "heading-small" } },
+                [_vm._v("\n      " + _vm._s(section.title) + "\n    ")]
+              ),
+              _vm._v(" "),
+              _vm._l(section.buttons, function(button, index2) {
+                return _c(
+                  "cdr-button",
+                  {
+                    key: index2,
+                    attrs: {
+                      size: button.size,
+                      "full-width": button.fullWidth,
+                      modifier: button.modifier,
+                      type: button.type,
+                      disabled: button.disabled,
+                      "data-backstop": button.backstop ? button.backstop : null
+                    }
+                  },
+                  [_vm._v(_vm._s(button.label))]
+                )
+              })
+            ],
+            2
+          )
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "button-example" },
+          [
+            _c("cdr-text", { attrs: { tag: "h3", modifier: "heading-small" } }, [
+              _vm._v("\n      Secondary Anchor\n    ")
+            ]),
+            _vm._v(" "),
+            _c(
+              "cdr-button",
+              {
+                attrs: {
+                  tag: "a",
+                  href: "https://rei.com",
+                  size: "small",
+                  modifier: "secondary",
+                  "data-backstop": "cdr-button--small secondary anchor"
+                }
+              },
+              [_vm._v("Link "), _c("span", [_vm._v("text in span")])]
+            )
+          ],
+          1
+        )
+      ],
+      2
+    )
+  };
   var __vue_staticRenderFns__$6 = [];
+  __vue_render__$6._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$6 = function (inject) {
       if (!inject) return
-      inject("data-v-0e3840da_0", { source: ".button-example{padding:10px}", map: undefined, media: undefined });
+      inject("data-v-483afb5b_0", { source: "\n.button-example {\n  padding: 10px;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/examples/demo/Secondary.vue"],"names":[],"mappings":";AAgHA;EACA,aAAA;AACA","file":"Secondary.vue","sourcesContent":["<template>\n  <div>\n    <div\n      class=\"button-example\"\n      v-for=\"(section, index) in data\"\n      :key=\"index\"\n    >\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        {{ section.title }}\n      </cdr-text>\n      <cdr-button\n        v-for=\"(button, index2) in section.buttons\"\n        :key=\"index2\"\n        :size=\"button.size\"\n        :full-width=\"button.fullWidth\"\n        :modifier=\"button.modifier\"\n        :type=\"button.type\"\n        :disabled=\"button.disabled\"\n        :data-backstop=\"button.backstop ? button.backstop : null\"\n      >{{ button.label }}</cdr-button>\n    </div>\n    <div class=\"button-example\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        Secondary Anchor\n      </cdr-text>\n      <cdr-button\n        tag=\"a\"\n        href=\"https://rei.com\"\n        size=\"small\"\n        modifier=\"secondary\"\n        data-backstop=\"cdr-button--small secondary anchor\"\n      >Link <span>text in span</span>\n      </cdr-button>\n    </div>\n  </div>\n</template>\n\n<script>\n// import CdrButton from 'componentsdir/button/CdrButton';\n// import CdrText from 'componentsdir/text/CdrText';\n\nimport { CdrButton, CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'Secondary',\n  components: {\n    CdrButton,\n    CdrText,\n  },\n  data: function data() {\n    return {\n      data: [\n        {\n          title: 'Secondary',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: false,\n              size: 'large',\n              modifier: 'secondary',\n              backstop: 'cdr-button--secondary',\n            },\n            {\n              label: 'Medium',\n              disabled: false,\n              size: 'medium',\n              modifier: 'secondary',\n            },\n            {\n              label: 'Small',\n              disabled: false,\n              size: 'small',\n              modifier: 'secondary',\n            },\n          ],\n        },\n        {\n          title: 'Secondary Disabled',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: true,\n              size: 'large',\n              modifier: 'secondary',\n            },\n            {\n              label: 'Medium',\n              disabled: true,\n              size: 'medium',\n              modifier: 'secondary',\n            },\n            {\n              label: 'Small',\n              disabled: true,\n              size: 'small',\n              modifier: 'secondary',\n            },\n          ],\n        },\n      ],\n    };\n  },\n};\n</script>\n\n<style>\n  .button-example {\n    padding: 10px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11649,13 +12016,33 @@
   const __vue_script__$7 = script$7;
 
   /* template */
-  var __vue_render__$7 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('cdr-text',{attrs:{"tag":"h2","modifier":"heading-small"}},[_vm._v("\n    Buttons\n  ")]),_vm._v(" "),_c('default-buttons'),_vm._v(" "),_c('secondary-buttons'),_vm._v(" "),_c('icon-buttons')],1)};
+  var __vue_render__$7 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      [
+        _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-small" } }, [
+          _vm._v("\n    Buttons\n  ")
+        ]),
+        _vm._v(" "),
+        _c("default-buttons"),
+        _vm._v(" "),
+        _c("secondary-buttons"),
+        _vm._v(" "),
+        _c("icon-buttons")
+      ],
+      1
+    )
+  };
   var __vue_staticRenderFns__$7 = [];
+  __vue_render__$7._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$7 = function (inject) {
       if (!inject) return
-      inject("data-v-2d43d903_0", { source: ".button-example{padding:10px}", map: undefined, media: undefined });
+      inject("data-v-0d10ff22_0", { source: "\n.button-example {\n  padding: 10px;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/examples/Buttons.vue"],"names":[],"mappings":";AAgCA;EACA,aAAA;AACA","file":"Buttons.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-small\"\n    >\n      Buttons\n    </cdr-text>\n    <default-buttons />\n    <secondary-buttons />\n    <icon-buttons />\n  </div>\n</template>\n\n<script>\n// import CdrText from 'componentsdir/text/CdrText';\nimport defaultButtons from 'componentsdir/button/examples/demo/Default';\nimport secondaryButtons from 'componentsdir/button/examples/demo/Secondary';\n// import iconButtons from 'componentsdir/button/examples/demo/Icons';\n\nexport default {\n  name: 'Buttons',\n  components: {\n    // CdrText,\n    defaultButtons,\n    secondaryButtons,\n    // iconButtons,\n  },\n};\n</script>\n\n<style>\n  .button-example {\n    padding: 10px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11693,13 +12080,117 @@
   const __vue_script__$8 = script$8;
 
   /* template */
-  var __vue_render__$8 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('cdr-text',{attrs:{"tag":"h2","modifier":"heading-small"}},[_vm._v("\n    CTA\n  ")]),_vm._v(" "),_c('div',{staticClass:"button-example"},[_c('cdr-cta',{attrs:{"data-backstop":"cdr-cta--dark"}},[_vm._v("\n      Dark\n    ")]),_vm._v(" "),_c('cdr-cta',{attrs:{"href":"https://rei.com","cta-style":"brand","data-backstop":"cdr-cta--brand"}},[_vm._v("Brand")]),_vm._v(" "),_c('cdr-cta',{attrs:{"href":"https://rei.com","cta-style":"light","data-backstop":"cdr-cta--light"}},[_vm._v("Light")]),_vm._v(" "),_c('cdr-cta',{attrs:{"href":"https://rei.com","cta-style":"sale","data-backstop":"cdr-cta--sale"}},[_vm._v("Sale")])],1),_vm._v(" "),_c('div',{staticClass:"button-example"},[_c('cdr-cta',{attrs:{"cta-style":"dark","href":"https://rei.com","full-width":true,"data-backstop":"cdr-cta--full-width"}},[_vm._v("Full width")])],1),_vm._v(" "),_c('div',{staticClass:"button-example",staticStyle:{"max-width":"300px"}},[_c('cdr-cta',{attrs:{"data-backstop":"cdr-cta--elevated","href":"https://rei.com","cta-style":"light","modifier":"elevated"}},[_vm._v("\n      This button has long text. It wraps!\n    ")])],1)],1)};
+  var __vue_render__$8 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      [
+        _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-small" } }, [
+          _vm._v("\n    CTA\n  ")
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "button-example" },
+          [
+            _c("cdr-cta", { attrs: { "data-backstop": "cdr-cta--dark" } }, [
+              _vm._v("\n      Dark\n    ")
+            ]),
+            _vm._v(" "),
+            _c(
+              "cdr-cta",
+              {
+                attrs: {
+                  href: "https://rei.com",
+                  "cta-style": "brand",
+                  "data-backstop": "cdr-cta--brand"
+                }
+              },
+              [_vm._v("Brand")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-cta",
+              {
+                attrs: {
+                  href: "https://rei.com",
+                  "cta-style": "light",
+                  "data-backstop": "cdr-cta--light"
+                }
+              },
+              [_vm._v("Light")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-cta",
+              {
+                attrs: {
+                  href: "https://rei.com",
+                  "cta-style": "sale",
+                  "data-backstop": "cdr-cta--sale"
+                }
+              },
+              [_vm._v("Sale")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "button-example" },
+          [
+            _c(
+              "cdr-cta",
+              {
+                attrs: {
+                  "cta-style": "dark",
+                  href: "https://rei.com",
+                  "full-width": true,
+                  "data-backstop": "cdr-cta--full-width"
+                }
+              },
+              [_vm._v("Full width")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "button-example",
+            staticStyle: { "max-width": "300px" }
+          },
+          [
+            _c(
+              "cdr-cta",
+              {
+                attrs: {
+                  "data-backstop": "cdr-cta--elevated",
+                  href: "https://rei.com",
+                  "cta-style": "light",
+                  modifier: "elevated"
+                }
+              },
+              [_vm._v("\n      This button has long text. It wraps!\n    ")]
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
+  };
   var __vue_staticRenderFns__$8 = [];
+  __vue_render__$8._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$8 = function (inject) {
       if (!inject) return
-      inject("data-v-ddf00380_0", { source: ".button-example{padding:10px}", map: undefined, media: undefined });
+      inject("data-v-045df6fb_0", { source: "\n.button-example {\n  padding: 10px;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/cta/examples/Cta.vue"],"names":[],"mappings":";AAoEA;EACA,aAAA;AACA","file":"Cta.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-small\"\n    >\n      CTA\n    </cdr-text>\n    <div class=\"button-example\">\n      <cdr-cta\n        data-backstop=\"cdr-cta--dark\"\n      >\n        Dark\n      </cdr-cta>\n      <cdr-cta\n        href=\"https://rei.com\"\n        cta-style=\"brand\"\n        data-backstop=\"cdr-cta--brand\"\n      >Brand</cdr-cta>\n      <cdr-cta\n        href=\"https://rei.com\"\n        cta-style=\"light\"\n        data-backstop=\"cdr-cta--light\"\n      >Light</cdr-cta>\n      <cdr-cta\n        href=\"https://rei.com\"\n        cta-style=\"sale\"\n        data-backstop=\"cdr-cta--sale\"\n      >Sale</cdr-cta>\n    </div>\n    <div class=\"button-example\">\n      <cdr-cta\n        cta-style=\"dark\"\n        href=\"https://rei.com\"\n        :full-width=\"true\"\n        data-backstop=\"cdr-cta--full-width\"\n      >Full width</cdr-cta>\n    </div>\n    <div\n      class=\"button-example\"\n      style=\"max-width: 300px;\"\n    >\n      <cdr-cta\n        data-backstop=\"cdr-cta--elevated\"\n        href=\"https://rei.com\"\n        cta-style=\"light\"\n        modifier=\"elevated\"\n      >\n        This button has long text. It wraps!\n      </cdr-cta>\n    </div>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText, CdrCta } from 'componentsdir/_index';\n\nexport default {\n  name: 'Cta',\n  components: {\n    CdrCta,\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .button-example {\n    padding: 10px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11737,19 +12228,60 @@
   const __vue_script__$9 = script$9;
 
   /* template */
-  var __vue_render__$9 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"data-backstop":"a11y-utilities"}},[_c('cdr-text',{attrs:{"tag":"h2","modifier":"heading-medium"}},[_vm._v("\n    A11y classes\n  ")]),_vm._v(" "),_c('cdr-text',[_vm._v("Has some screen reader text after this.\n    "),_c('span',{staticClass:"cdr-sr-only"},[_vm._v("\n      Text for screen reader\n    ")])]),_vm._v(" "),_c('cdr-text',{attrs:{"data-backstop":"a11y-skip-link"}},[_vm._v("skip link -->\n    "),_c('cdr-link',{staticClass:"cdr-sr-only cdr-sr-only-focusable",attrs:{"href":"#skip"}},[_vm._v("Skip to main content")])],1)],1)};
+  var __vue_render__$9 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      { attrs: { "data-backstop": "a11y-utilities" } },
+      [
+        _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-medium" } }, [
+          _vm._v("\n    A11y classes\n  ")
+        ]),
+        _vm._v(" "),
+        _c("cdr-text", [
+          _vm._v("Has some screen reader text after this.\n    "),
+          _c("span", { staticClass: "cdr-sr-only" }, [
+            _vm._v("\n      Text for screen reader\n    ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          { attrs: { "data-backstop": "a11y-skip-link" } },
+          [
+            _vm._v("skip link -->\n    "),
+            _c(
+              "cdr-link",
+              {
+                staticClass: "cdr-sr-only cdr-sr-only-focusable",
+                attrs: { href: "#skip" }
+              },
+              [_vm._v("Skip to main content")]
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
+  };
   var __vue_staticRenderFns__$9 = [];
+  __vue_render__$9._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$9 = undefined;
+    const __vue_inject_styles__$9 = function (inject) {
+      if (!inject) return
+      inject("data-v-4527b9c6_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"a11y.vue"}, media: undefined });
+
+    };
     /* scoped */
     const __vue_scope_id__$9 = undefined;
     /* module identifier */
     const __vue_module_identifier__$9 = undefined;
     /* functional template */
     const __vue_is_functional_template__$9 = false;
-    /* style inject */
-    
     /* style inject SSR */
     
 
@@ -11761,7 +12293,7 @@
       __vue_scope_id__$9,
       __vue_is_functional_template__$9,
       __vue_module_identifier__$9,
-      undefined,
+      browser,
       undefined
     );
 
@@ -11778,13 +12310,392 @@
   const __vue_script__$a = script$a;
 
   /* template */
-  var __vue_render__$a = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"visibility-utilities",attrs:{"data-backstop":"visibility-utilities"}},[_c('cdr-text',{attrs:{"tag":"h2","modifier":"heading-medium"}},[_vm._v("\n    Visibility classes\n  ")]),_vm._v(" "),_vm._m(0)],1)};
-  var __vue_staticRenderFns__$a = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',[_c('thead',[_c('tr',[_c('th',[_vm._v("class")]),_vm._v(" "),_c('th',{staticClass:"cdr-hide cdr-show@xs-only"},[_vm._v("\n          visible @ xs\n        ")]),_vm._v(" "),_c('th',{staticClass:"cdr-hide cdr-show@sm-only"},[_vm._v("\n          visible @ sm\n        ")]),_vm._v(" "),_c('th',{staticClass:"cdr-hide cdr-show@md-only"},[_vm._v("\n          visible @ md\n        ")]),_vm._v(" "),_c('th',{staticClass:"cdr-hide cdr-show@lg-only"},[_vm._v("\n          visible @ lg\n        ")])])]),_vm._v(" "),_c('tbody',[_c('tr',[_c('td',[_vm._v(".cdr-hide")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-hide@xs-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide@xs-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-hide@sm")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide@sm"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-hide@sm-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide@sm-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-hide@md")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide@md"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-hide@md-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide@md-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-hide@lg")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide@lg"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-hide@lg-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide@lg-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline-block")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline-block"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show@xs-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show@xs-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline@xs-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline@xs-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline-block@xs-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline-block@xs-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show@sm")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show@sm"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline@sm")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline@sm"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline-block@sm")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline-block@sm"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show@sm-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show@sm-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline@sm-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline@sm-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline-block@sm-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline-block@sm-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show@md")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show@md"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline@md")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline@md"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline-block@md")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline-block@md"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show@md-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show@md-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline@md-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline@md-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline-block@md-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline-block@md-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show@lg")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show@lg"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline@lg")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline@lg"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline-block@lg")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline-block@lg"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show@lg-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show@lg-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline@lg-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline@lg-only"},[_vm._v("\n            X\n          ")])])]),_vm._v(" "),_c('tr',[_c('td',[_vm._v(".cdr-show-inline-block@lg-only")]),_vm._v(" "),_c('td',[_c('div',{staticClass:"cdr-hide cdr-show-inline-block@lg-only"},[_vm._v("\n            X\n          ")])])])])])}];
+  var __vue_render__$a = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      {
+        staticClass: "visibility-utilities",
+        attrs: { "data-backstop": "visibility-utilities" }
+      },
+      [
+        _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-medium" } }, [
+          _vm._v("\n    Visibility classes\n  ")
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
+      ],
+      1
+    )
+  };
+  var __vue_staticRenderFns__$a = [
+    function() {
+      var _vm = this;
+      var _h = _vm.$createElement;
+      var _c = _vm._self._c || _h;
+      return _c("table", [
+        _c("thead", [
+          _c("tr", [
+            _c("th", [_vm._v("class")]),
+            _vm._v(" "),
+            _c("th", { staticClass: "cdr-hide cdr-show@xs-only" }, [
+              _vm._v("\n          visible @ xs\n        ")
+            ]),
+            _vm._v(" "),
+            _c("th", { staticClass: "cdr-hide cdr-show@sm-only" }, [
+              _vm._v("\n          visible @ sm\n        ")
+            ]),
+            _vm._v(" "),
+            _c("th", { staticClass: "cdr-hide cdr-show@md-only" }, [
+              _vm._v("\n          visible @ md\n        ")
+            ]),
+            _vm._v(" "),
+            _c("th", { staticClass: "cdr-hide cdr-show@lg-only" }, [
+              _vm._v("\n          visible @ lg\n        ")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tbody", [
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-hide")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-hide@xs-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide@xs-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-hide@sm")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide@sm" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-hide@sm-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide@sm-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-hide@md")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide@md" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-hide@md-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide@md-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-hide@lg")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide@lg" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-hide@lg-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide@lg-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline-block")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline-block" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show@xs-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show@xs-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline@xs-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline@xs-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline-block@xs-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "div",
+                { staticClass: "cdr-hide cdr-show-inline-block@xs-only" },
+                [_vm._v("\n            X\n          ")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show@sm")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show@sm" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline@sm")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline@sm" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline-block@sm")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline-block@sm" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show@sm-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show@sm-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline@sm-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline@sm-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline-block@sm-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "div",
+                { staticClass: "cdr-hide cdr-show-inline-block@sm-only" },
+                [_vm._v("\n            X\n          ")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show@md")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show@md" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline@md")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline@md" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline-block@md")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline-block@md" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show@md-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show@md-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline@md-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline@md-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline-block@md-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "div",
+                { staticClass: "cdr-hide cdr-show-inline-block@md-only" },
+                [_vm._v("\n            X\n          ")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show@lg")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show@lg" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline@lg")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline@lg" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline-block@lg")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline-block@lg" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show@lg-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show@lg-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline@lg-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "cdr-hide cdr-show-inline@lg-only" }, [
+                _vm._v("\n            X\n          ")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v(".cdr-show-inline-block@lg-only")]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "div",
+                { staticClass: "cdr-hide cdr-show-inline-block@lg-only" },
+                [_vm._v("\n            X\n          ")]
+              )
+            ])
+          ])
+        ])
+      ])
+    }
+  ];
+  __vue_render__$a._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$a = function (inject) {
       if (!inject) return
-      inject("data-v-508dd5d6_0", { source: "table{border-spacing:0;border-collapse:collapse;line-height:1}th{text-align:left;padding:10px}td{padding:5px}td:not(:first-of-type){text-align:center}", map: undefined, media: undefined });
+      inject("data-v-0fffdf62_0", { source: "\n.visibility-utilities {\ntable,\n  td {\n    border: 1px solid lightgray;\n}\ntable {\n    border-spacing: 0;\n    border-collapse: collapse;\n    line-height: 1;\n}\nth {\n    text-align: left;\n    padding: 10px;\n}\ntd {\n    padding: 5px;\n}\ntd:not(:first-of-type) {\n    text-align: center;\n}\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/visibility.vue"],"names":[],"mappings":";AAkVA;AACA;;IAEA,2BAAA;AACA;AAEA;IACA,iBAAA;IACA,yBAAA;IACA,cAAA;AACA;AAEA;IACA,gBAAA;IACA,aAAA;AACA;AAEA;IACA,YAAA;AACA;AAEA;IACA,kBAAA;AACA;AACA","file":"visibility.vue","sourcesContent":["<template>\n  <div\n    data-backstop=\"visibility-utilities\"\n    class=\"visibility-utilities\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Visibility classes\n    </cdr-text>\n\n    <table>\n      <thead>\n        <tr>\n          <th>class</th>\n          <th class=\"cdr-hide cdr-show@xs-only\">\n            visible @ xs\n          </th>\n          <th class=\"cdr-hide cdr-show@sm-only\">\n            visible @ sm\n          </th>\n          <th class=\"cdr-hide cdr-show@md-only\">\n            visible @ md\n          </th>\n          <th class=\"cdr-hide cdr-show@lg-only\">\n            visible @ lg\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n\n        <tr>\n          <td>.cdr-hide</td>\n          <td>\n            <div class=\"cdr-hide\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@xs-only</td>\n          <td>\n            <div class=\"cdr-hide@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@sm</td>\n          <td>\n            <div class=\"cdr-hide@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@sm-only</td>\n          <td>\n            <div class=\"cdr-hide@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@md</td>\n          <td>\n            <div class=\"cdr-hide@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@md-only</td>\n          <td>\n            <div class=\"cdr-hide@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@lg</td>\n          <td>\n            <div class=\"cdr-hide@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@lg-only</td>\n          <td>\n            <div class=\"cdr-hide@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show</td>\n          <td>\n            <div class=\"cdr-hide cdr-show\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@xs-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@xs-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@xs-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@sm</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@sm</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@sm</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@sm-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@sm-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@sm-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@md</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@md</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@md</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@md-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@md-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@md-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@lg</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@lg</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@lg</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@lg-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@lg-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@lg-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n      </tbody>\n    </table>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'VisibleUtilities',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n.visibility-utilities {\n  table,\n  td {\n    border: 1px solid lightgray;\n  }\n\n  table {\n    border-spacing: 0;\n    border-collapse: collapse;\n    line-height: 1;\n  }\n\n  th {\n    text-align: left;\n    padding: 10px;\n  }\n\n  td {\n    padding: 5px;\n  }\n\n  td:not(:first-of-type) {\n    text-align: center;\n  }\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11821,19 +12732,48 @@
   const __vue_script__$b = script$b;
 
   /* template */
-  var __vue_render__$b = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"data-backstop":"align-utilities"}},[_c('cdr-text',{attrs:{"tag":"h2","modifier":"heading-medium"}},[_vm._v("\n    Align classes\n  ")]),_vm._v(" "),_c('cdr-text',{staticClass:"cdr-text-left"},[_vm._v("\n    .cdr-text-left\n  ")]),_vm._v(" "),_c('cdr-text',{staticClass:"cdr-text-center"},[_vm._v("\n    .cdr-text-center\n  ")]),_vm._v(" "),_c('cdr-text',{staticClass:"cdr-text-right"},[_vm._v("\n    .cdr-text-right\n  ")])],1)};
+  var __vue_render__$b = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      { attrs: { "data-backstop": "align-utilities" } },
+      [
+        _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-medium" } }, [
+          _vm._v("\n    Align classes\n  ")
+        ]),
+        _vm._v(" "),
+        _c("cdr-text", { staticClass: "cdr-text-left" }, [
+          _vm._v("\n    .cdr-text-left\n  ")
+        ]),
+        _vm._v(" "),
+        _c("cdr-text", { staticClass: "cdr-text-center" }, [
+          _vm._v("\n    .cdr-text-center\n  ")
+        ]),
+        _vm._v(" "),
+        _c("cdr-text", { staticClass: "cdr-text-right" }, [
+          _vm._v("\n    .cdr-text-right\n  ")
+        ])
+      ],
+      1
+    )
+  };
   var __vue_staticRenderFns__$b = [];
+  __vue_render__$b._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$b = undefined;
+    const __vue_inject_styles__$b = function (inject) {
+      if (!inject) return
+      inject("data-v-89580d7e_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"align.vue"}, media: undefined });
+
+    };
     /* scoped */
     const __vue_scope_id__$b = undefined;
     /* module identifier */
     const __vue_module_identifier__$b = undefined;
     /* functional template */
     const __vue_is_functional_template__$b = false;
-    /* style inject */
-    
     /* style inject SSR */
     
 
@@ -11845,7 +12785,7 @@
       __vue_scope_id__$b,
       __vue_is_functional_template__$b,
       __vue_module_identifier__$b,
-      undefined,
+      browser,
       undefined
     );
 
@@ -11862,13 +12802,28 @@
   const __vue_script__$c = script$c;
 
   /* template */
-  var __vue_render__$c = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"data-backstop":"inline-space-utilities"}},[_c('cdr-text',{attrs:{"tag":"h2","modifier":"heading-medium"}},[_vm._v("\n    Inline space classes\n  ")])],1)};
+  var __vue_render__$c = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      { attrs: { "data-backstop": "inline-space-utilities" } },
+      [
+        _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-medium" } }, [
+          _vm._v("\n    Inline space classes\n  ")
+        ])
+      ],
+      1
+    )
+  };
   var __vue_staticRenderFns__$c = [];
+  __vue_render__$c._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$c = function (inject) {
       if (!inject) return
-      inject("data-v-dca18c0a_0", { source: ".example{background-color:rgba(27,28,28,.6)}.example>*{background-color:rgba(249,229,229,.8)}", map: undefined, media: undefined });
+      inject("data-v-a95c9cfe_0", { source: "\n.example {\n  background-color: rgba(27, 28, 28, 0.6);\n}\n.example > * {\n  background-color: rgba(249, 229, 229, 0.8);\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/inline.vue"],"names":[],"mappings":";AAmDA;EACA,uCAAA;AACA;AAEA;EACA,0CAAA;AACA","file":"inline.vue","sourcesContent":["<template>\n  <div data-backstop=\"inline-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Inline space classes\n    </cdr-text>\n    <!-- <cdr-card class=\"example\">\n      <cdr-text class=\"cdr-inline-eighth-x\">\n        cdr-inline-eighth-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-quarter-x\">\n        cdr-inline-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-half-x\">\n        cdr-inline-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-three-quarter-x\">\n        cdr-inline-three-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-1-x\">\n        cdr-inline-1-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-1-and-a-half-x\">\n        cdr-inline-1-and-a-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-2-x\">\n        cdr-inline-2-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-4-x\">\n        cdr-inline-4-x\n      </cdr-text>\n    </cdr-card> -->\n  </div>\n</template>\n\n<script>\n\n// import Components from 'componentsdir/_index';\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'UtilitiesSpaceInline',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .example {\n    background-color: rgba(27, 28, 28, 0.6);\n  }\n\n  .example > * {\n    background-color: rgba(249, 229, 229, 0.8);\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11905,13 +12860,28 @@
   const __vue_script__$d = script$d;
 
   /* template */
-  var __vue_render__$d = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"data-backstop":"inset-space-utilities"}},[_c('cdr-text',{attrs:{"tag":"h2","modifier":"heading-medium"}},[_vm._v("\n    Inset classes\n  ")])],1)};
+  var __vue_render__$d = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      { attrs: { "data-backstop": "inset-space-utilities" } },
+      [
+        _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-medium" } }, [
+          _vm._v("\n    Inset classes\n  ")
+        ])
+      ],
+      1
+    )
+  };
   var __vue_staticRenderFns__$d = [];
+  __vue_render__$d._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$d = function (inject) {
       if (!inject) return
-      inject("data-v-97ac7068_0", { source: ".example{background-color:rgba(27,28,28,.6)}.example>*{background-color:rgba(249,229,229,.8)}", map: undefined, media: undefined });
+      inject("data-v-7c0ef186_0", { source: "\n.example {\n  background-color: rgba(27, 28, 28, 0.6);\n}\n.example > * {\n  background-color: rgba(249, 229, 229, 0.8);\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/inset.vue"],"names":[],"mappings":";AAiGA;EACA,uCAAA;AACA;AAEA;EACA,0CAAA;AACA","file":"inset.vue","sourcesContent":["<template>\n  <div data-backstop=\"inset-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Inset classes\n    </cdr-text>\n\n    <!-- <cdr-card class=\"example\">\n      <cdr-text class=\"cdr-inset-eighth-x\">\n        cdr-inset-eighth-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-quarter-x\">\n        cdr-inset-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-half-x\">\n        cdr-inset-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-three-quarter-x\">\n        cdr-inset-three-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-x\">\n        cdr-inset-1-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-and-a-half-x\">\n        cdr-inset-1-and-a-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-2-x\">\n        cdr-inset-2-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-4-x\">\n        cdr-inset-4-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-eighth-x-squish\">\n        cdr-inset-eighth-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-quarter-x-squish\">\n        cdr-inset-quarter-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-half-x-squish\">\n        cdr-inset-half-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-three-quarter-x-squish\">\n        cdr-inset-three-quarter-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-x-squish\">\n        cdr-inset-1-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-2-x-squish\">\n        cdr-inset-2-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-4-x-squish\">\n        cdr-inset-4-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-eighth-x-stretch\">\n        cdr-inset-eighth-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-quarter-x-stretch\">\n        cdr-inset-quarter-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-half-x-stretch\">\n        cdr-inset-half-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-three-quarter-x-stretch\">\n        cdr-inset-three-quarter-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-x-stretch\">\n        cdr-inset-1-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-and-a-half-x-stretch\">\n        cdr-inset-1-and-a-half-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-2-x-stretch\">\n        cdr-inset-2-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-4-x-stretch\">\n        cdr-inset-4-x-stretch\n      </cdr-text>\n\n    </cdr-card> -->\n  </div>\n</template>\n\n<script>\n\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'UtilitiesSpaceInset',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .example {\n    background-color: rgba(27, 28, 28, 0.6);\n  }\n\n  .example > * {\n    background-color: rgba(249, 229, 229, 0.8);\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11948,13 +12918,28 @@
   const __vue_script__$e = script$e;
 
   /* template */
-  var __vue_render__$e = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"data-backstop":"stack-space-utilities"}},[_c('cdr-text',{attrs:{"tag":"h2","modifier":"heading-medium"}},[_vm._v("\n    Stack classes\n  ")])],1)};
+  var __vue_render__$e = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      { attrs: { "data-backstop": "stack-space-utilities" } },
+      [
+        _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-medium" } }, [
+          _vm._v("\n    Stack classes\n  ")
+        ])
+      ],
+      1
+    )
+  };
   var __vue_staticRenderFns__$e = [];
+  __vue_render__$e._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$e = function (inject) {
       if (!inject) return
-      inject("data-v-46c175b8_0", { source: ".example{background-color:rgba(27,28,28,.6)}.example>*{background-color:rgba(249,229,229,.8)}", map: undefined, media: undefined });
+      inject("data-v-fb0507ac_0", { source: "\n.example {\n  background-color: rgba(27, 28, 28, 0.6);\n}\n.example > * {\n  background-color: rgba(249, 229, 229, 0.8);\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/stack.vue"],"names":[],"mappings":";AAoDA;EACA,uCAAA;AACA;AAEA;EACA,0CAAA;AACA","file":"stack.vue","sourcesContent":["<template>\n  <div data-backstop=\"stack-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Stack classes\n    </cdr-text>\n\n    <!-- <cdr-card class=\"example\">\n      <cdr-text class=\"cdr-stack-eighth-x\">\n        cdr-stack-eighth-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-quarter-x\">\n        cdr-stack-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-half-x\">\n        cdr-stack-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-three-quarter-x\">\n        cdr-stack-three-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-1-x\">\n        cdr-stack-1-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-1-and-a-half-x\">\n        cdr-stack-1-and-a-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-2-x\">\n        cdr-stack-2-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-4-x\">\n        cdr-stack-4-x\n      </cdr-text>\n    </cdr-card> -->\n\n  </div>\n</template>\n\n<script>\n\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'UtilitiesSpaceStack',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .example {\n    background-color: rgba(27, 28, 28, 0.6);\n  }\n\n  .example > * {\n    background-color: rgba(249, 229, 229, 0.8);\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11994,13 +12979,26 @@
   const __vue_script__$f = script$f;
 
   /* template */
-  var __vue_render__$f = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"cdr-container container-test cdr-text-center",attrs:{"data-backstop":"utility-container"}},[_vm._v("Container test")])};
+  var __vue_render__$f = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      {
+        staticClass: "cdr-container container-test cdr-text-center",
+        attrs: { "data-backstop": "utility-container" }
+      },
+      [_vm._v("Container test")]
+    )
+  };
   var __vue_staticRenderFns__$f = [];
+  __vue_render__$f._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$f = function (inject) {
       if (!inject) return
-      inject("data-v-6672d520_0", { source: ".container-test{background-color:#add8e6;padding:20px;margin-bottom:20px;line-height:1}", map: undefined, media: undefined });
+      inject("data-v-668ac0ac_0", { source: "\n.container-test {\n  background-color: lightblue;\n  padding: 20px;\n  margin-bottom: 20px;\n  line-height: 1;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/container.vue"],"names":[],"mappings":";AAcA;EACA,2BAAA;EACA,aAAA;EACA,mBAAA;EACA,cAAA;AACA","file":"container.vue","sourcesContent":["<template>\n  <div\n    class=\"cdr-container container-test cdr-text-center\"\n    data-backstop=\"utility-container\"\n  >Container test</div>\n</template>\n\n<script>\nexport default {\n  name: 'ContainerTest',\n};\n</script>\n\n<style>\n.container-test {\n  background-color: lightblue;\n  padding: 20px;\n  margin-bottom: 20px;\n  line-height: 1;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -12048,19 +13046,45 @@
   const __vue_script__$g = script$g;
 
   /* template */
-  var __vue_render__$g = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('container'),_vm._v(" "),_c('a11y'),_vm._v(" "),_c('align'),_vm._v(" "),_c('visibility'),_vm._v(" "),_c('inline'),_vm._v(" "),_c('inset'),_vm._v(" "),_c('stack')],1)};
+  var __vue_render__$g = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      [
+        _c("container"),
+        _vm._v(" "),
+        _c("a11y"),
+        _vm._v(" "),
+        _c("align"),
+        _vm._v(" "),
+        _c("visibility"),
+        _vm._v(" "),
+        _c("inline"),
+        _vm._v(" "),
+        _c("inset"),
+        _vm._v(" "),
+        _c("stack")
+      ],
+      1
+    )
+  };
   var __vue_staticRenderFns__$g = [];
+  __vue_render__$g._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$g = undefined;
+    const __vue_inject_styles__$g = function (inject) {
+      if (!inject) return
+      inject("data-v-3e180e9f_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Utilities.vue"}, media: undefined });
+
+    };
     /* scoped */
     const __vue_scope_id__$g = undefined;
     /* module identifier */
     const __vue_module_identifier__$g = undefined;
     /* functional template */
     const __vue_is_functional_template__$g = false;
-    /* style inject */
-    
     /* style inject SSR */
     
 
@@ -12072,7 +13096,7 @@
       __vue_scope_id__$g,
       __vue_is_functional_template__$g,
       __vue_module_identifier__$g,
-      undefined,
+      browser,
       undefined
     );
 
@@ -12140,17 +13164,53 @@
   const __vue_script__$h = script$h;
 
   /* template */
-  var __vue_render__$h = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"cdr-container-fluid",attrs:{"id":"app"}},[_vm._l((_vm.routes),function(route){return _c('router-link',{key:route.path,attrs:{"to":route.path}},[_vm._v(_vm._s(route.name)+" *\n  ")])}),_vm._v(" "),_c('links',{staticClass:"cpg-section",attrs:{"data-backstop":"links"}}),_vm._v(" "),_c('buttons',{staticClass:"cpg-section",attrs:{"data-backstop":"buttons"}}),_vm._v(" "),_c('cta',{staticClass:"cpg-section",attrs:{"data-backstop":"cta-links"}}),_vm._v(" "),_c('router-view')],2)};
+  var __vue_render__$h = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      { staticClass: "cdr-container-fluid", attrs: { id: "app" } },
+      [
+        _vm._l(_vm.routes, function(route) {
+          return _c(
+            "router-link",
+            { key: route.path, attrs: { to: route.path } },
+            [_vm._v(_vm._s(route.name) + " *\n  ")]
+          )
+        }),
+        _vm._v(" "),
+        _c("links", {
+          staticClass: "cpg-section",
+          attrs: { "data-backstop": "links" }
+        }),
+        _vm._v(" "),
+        _c("buttons", {
+          staticClass: "cpg-section",
+          attrs: { "data-backstop": "buttons" }
+        }),
+        _vm._v(" "),
+        _c("cta", {
+          staticClass: "cpg-section",
+          attrs: { "data-backstop": "cta-links" }
+        }),
+        _vm._v(" "),
+        _c("router-view")
+      ],
+      2
+    )
+  };
   var __vue_staticRenderFns__$h = [];
+  __vue_render__$h._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$h = function (inject) {
       if (!inject) return
-      inject("data-v-296fbaf5_0", { source: ".cpg-section[data-v-296fbaf5]{margin:16px 0}", map: undefined, media: undefined });
+      inject("data-v-31ff0e04_0", { source: "\n.cpg-section[data-v-31ff0e04] {\n  margin: 16px 0;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/App.vue"],"names":[],"mappings":";AAgEA;EACA,cAAA;AACA","file":"App.vue","sourcesContent":["<template>\n  <div\n    id=\"app\"\n    class=\"cdr-container-fluid\"\n  >\n\n    <router-link\n      v-for=\"route in routes\"\n      :key=\"route.path\"\n      :to=\"route.path\"\n    >{{ route.name }} *\n    </router-link>\n\n    <links\n      class=\"cpg-section\"\n      data-backstop=\"links\"\n    />\n    <buttons\n      class=\"cpg-section\"\n      data-backstop=\"buttons\"\n    />\n    <cta\n      class=\"cpg-section\"\n      data-backstop=\"cta-links\"\n    />\n    <router-view />\n  </div>\n</template>\n\n<script>\nimport examples from 'componentsdir/examples';\n// import compexamples from 'compositionsdir/examples';\nimport {CdrText, CdrButton, CdrLink, CdrCta } from 'componentsdir/_index'; // eslint-disable-line\nimport routes from './router';\n\n\nconst all = Object.assign(CdrText, CdrButton, CdrLink, CdrCta, {}, examples);\nexport default {\n  name: 'App',\n  components: all,\n  data() {\n    return {\n      routes,\n      globalTheme: 'lightest',\n    };\n  },\n  mounted() {\n    if (this.$route.query['global-theme']) this.globalTheme = this.$route.query['global-theme'];\n  },\n  methods: {\n    radioNavigate() {\n      this.$router.replace({\n        query: Object.assign(\n          {},\n          this.$route.query,\n          { 'global-theme': this.globalTheme },\n        ),\n      });\n    },\n  },\n};\n</script>\n\n<style scoped>\n  .cpg-section {\n    margin: 16px 0;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$h = "data-v-296fbaf5";
+    const __vue_scope_id__$h = "data-v-31ff0e04";
     /* module identifier */
     const __vue_module_identifier__$h = undefined;
     /* functional template */

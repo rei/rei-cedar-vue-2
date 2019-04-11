@@ -10,6 +10,7 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import atImport from 'postcss-import';
 import serve from 'rollup-plugin-serve';
+import replace from 'rollup-plugin-replace';
 
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -73,6 +74,9 @@ export default [
     ],
     plugins: [
       multiEntry(),
+      replace({
+        'process.env.NODE_ENV': JSON.stringify('dev'),
+      }),
       alias({
         resolve: ['.vue', '.json', '.js'],
         srcdir: resolve('src'),

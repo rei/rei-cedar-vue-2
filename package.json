@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "dev-old": "node build/dev-server.js",
-    "dev": "cross-env NODE_ENV=production rollup -c",
+    "dev": "rollup -c",
     "build": "cross-env NODE_ENV=production node build/build.js",
     "unit": "cross-env NODE_ENV=test nyc mocha-webpack --webpack-config build/webpack.test.conf.js src/**/*.spec.js",
     "unit:watch": "cross-env NODE_ENV=test nyc mocha-webpack --watch --webpack-config build/webpack.test.conf.js src/**/*.spec.js",
@@ -128,6 +128,7 @@
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-node-resolve": "^4.2.1",
     "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-vue": "^4.7.2",
     "selenium-server": "^3.141.59",
