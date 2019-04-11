@@ -25,6 +25,12 @@
 .cdr-button {
   @include cdr-button-base-mixin;
 
+  & > :global(&__icon) {
+    align-self: $cdr-button-base-icon-align-self;
+    margin-right: $cdr-button-base-icon-mr;
+    fill: $cdr-button-base-icon-fill;
+  }
+
   /* Modifier style variants
     ========================================================================== */
   &--primary {
@@ -43,9 +49,7 @@
   /* Large
      ========== */
   &--large {
-    @include cdr-button-base-text-mixin-large;
-
-    padding: $cdr-button-base-padding-large;
+    @include cdr-button-large-mixin;
 
     &.cdr-button--has-icon {
       padding-left: $cdr-button-has-icon-pl-large;
@@ -61,9 +65,7 @@
   /* Medium
      ========== */
   &--medium {
-    @include cdr-button-base-text-mixin-medium;
-
-    padding: $cdr-button-base-padding-medium;
+    @include cdr-button-medium-mixin;
 
     &.cdr-button--has-icon {
       padding-left: $cdr-button-has-icon-pl-medium;
@@ -80,9 +82,7 @@
      ========== */
 
   &--small {
-    @include cdr-button-base-text-mixin-small;
-
-    padding: $cdr-button-base-padding-small;
+    @include cdr-button-small-mixin;
 
     &.cdr-button--has-icon {
       padding-left: $cdr-button-has-icon-pl-small;
@@ -98,39 +98,14 @@
   /* Full Width
      ========== */
   &--full-width {
-    width: $cdr-button-full-width-width;
-    justify-content: $cdr-button-full-width-justify-content;
+    @include cdr-button-full-width-mixin;
   }
 
   /* Icon Only
      ========= */
 
   &--icon-only {
-    background: $cdr-button-icon-only-background-color;
-    border: $cdr-button-icon-only-border;
-    box-shadow: $cdr-button-icon-only-box-shadow;
-    display: $cdr-button-icon-only-display;
-    padding: $cdr-button-icon-only-padding;
-    padding-right: $cdr-button-icon-only-pr;
-    fill: $cdr-button-icon-only-fill;
-
-    &:hover {
-      background: $cdr-button-icon-only-background-color-hover;
-      box-shadow: $cdr-button-icon-only-box-shadow-hover;
-      fill: $cdr-button-icon-only-fill-hover;
-    }
-
-    &:active {
-      background: $cdr-button-icon-only-background-color-active;
-      box-shadow: $cdr-button-icon-only-box-shadow-active;
-      fill: $cdr-button-icon-only-fill-active;
-    }
-
-    &:focus {
-      background: $cdr-button-icon-only-background-color-focus;
-      box-shadow: $cdr-button-icon-only-box-shadow-focus;
-      fill: $cdr-button-icon-only-fill-focus;
-    }
+    @include cdr-button-icon-only-mixin;
 
     &.cdr-button--on-dark {
       fill: $cdr-button-icon-only-fill-darkmode;
@@ -155,10 +130,7 @@
     ========== */
   @media (--xs-mq-only) {
     &--small\@xs {
-      @include redwood-display-20;
-
-      padding: $cdr-space-inset-three-quarter-x-squish;
-      width: auto;
+      @include cdr-button-small-mixin;
 
       & > :global(.cdr-button__icon) {
         @include small-button-icon();
@@ -166,10 +138,7 @@
     }
 
     &--medium\@xs {
-      @include redwood-display-30;
-
-      padding: $cdr-space-inset-one-x-squish;
-      width: auto;
+      @include cdr-button-medium-mixin;
 
       & > :global(.cdr-button__icon) {
         @include auto-icon();
@@ -177,10 +146,7 @@
     }
 
     &--large\@xs {
-      @include redwood-display-40;
-
-      padding: $cdr-space-inset-one-and-a-half-x-squish;
-      width: auto;
+      @include cdr-button-large-mixin;
 
       & > :global(.cdr-button__icon) {
         @include auto-icon();
@@ -193,10 +159,7 @@
     ========== */
   @media (--sm-mq-only) {
     &--small\@sm {
-      @include redwood-display-20;
-
-      padding: $cdr-space-inset-three-quarter-x-squish;
-      width: auto;
+      @include cdr-button-small-mixin;
 
       & > :global(.cdr-button__icon) {
         @include small-button-icon();
@@ -204,10 +167,7 @@
     }
 
     &--medium\@sm {
-      @include redwood-display-30;
-
-      padding: $cdr-space-inset-one-x-squish;
-      width: auto;
+      @include cdr-button-medium-mixin;
 
       & > :global(.cdr-button__icon) {
         @include auto-icon();
@@ -215,10 +175,7 @@
     }
 
     &--large\@sm {
-      @include redwood-display-40;
-
-      padding: $cdr-space-inset-one-and-a-half-x-squish;
-      width: auto;
+      @include cdr-button-large-mixin;
 
       & > :global(.cdr-button__icon) {
         @include auto-icon();
@@ -231,10 +188,7 @@
     ========== */
   @media (--md-mq-only) {
     &--small\@md {
-      @include redwood-display-20;
-
-      padding: $cdr-space-inset-three-quarter-x-squish;
-      width: auto;
+      @include cdr-button-small-mixin;
 
       & > :global(.cdr-button__icon) {
         @include small-button-icon();
@@ -242,10 +196,7 @@
     }
 
     &--medium\@md {
-      @include redwood-display-30;
-
-      padding: $cdr-space-inset-one-x-squish;
-      width: auto;
+      @include cdr-button-medium-mixin;
 
       & > :global(.cdr-button__icon) {
         @include auto-icon();
@@ -253,10 +204,7 @@
     }
 
     &--large\@md {
-      @include redwood-display-40;
-
-      padding: $cdr-space-inset-one-and-a-half-x-squish;
-      width: auto;
+      @include cdr-button-large-mixin;
 
       & > :global(.cdr-button__icon) {
         @include auto-icon();
@@ -270,33 +218,24 @@
 
   @media (--lg-mq-only) {
     &--small\@lg {
-      @include redwood-display-20;
-
-      padding: $cdr-space-inset-three-quarter-x-squish;
-      width: auto;
-
+      @include cdr-button-small-mixin;
+      
       & > :global(.cdr-button__icon) {
         @include small-button-icon();
       }
     }
 
     &--medium\@lg {
-      @include redwood-display-30;
-
-      padding: $cdr-space-inset-one-x-squish;
-      width: auto;
-
+      @include cdr-button-medium-mixin;
+      
       & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
     }
 
     &--large\@lg {
-      @include redwood-display-40;
-
-      padding: $cdr-space-inset-one-and-a-half-x-squish;
-      width: auto;
-
+      @include cdr-button-large-mixin;
+      
       & > :global(.cdr-button__icon) {
         @include auto-icon();
       }
