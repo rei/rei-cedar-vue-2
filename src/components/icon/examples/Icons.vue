@@ -25,7 +25,7 @@
     <hr class="icon-hr">
 
     <cdr-row
-      cols="3 6@md 10@lg"
+      cols="3 6@breakpoint--md 10@breakpoint--lg"
     >
       <cdr-col
         v-for="(val, key) in filteredIcons"
@@ -53,7 +53,7 @@
     <hr class="icon-hr">
 
     <cdr-row
-      cols="3 6@md 10@lg"
+      cols="3 6@breakpoint--md 10@breakpoint--lg"
     >
       <cdr-col
         v-for="(val, key) in filteredIcons"
@@ -78,7 +78,7 @@
     <hr class="icon-hr">
 
     <cdr-row
-      cols="3 6@md 10@lg"
+      cols="3 6@breakpoint--md 10@breakpoint--lg"
     >
       <cdr-col
         v-for="(val, key) in filteredIcons"
@@ -104,7 +104,7 @@
     </cdr-text>
     <cdr-icon
       use="#account-profile"
-      size="small@xs large@md large@lg"
+      size="small@breakpoint--xs large@breakpoint--md large@breakpoint--lg"
     />
     <hr class="icon-hr">
     <cdr-text tag="h4">
@@ -112,7 +112,7 @@
     </cdr-text>
     <cdr-icon
       use="#account-profile"
-      size="large@xs small@md small@lg"
+      size="large@breakpoint--xs small@breakpoint--md small@breakpoint--lg"
     />
     <hr class="icon-hr">
     <cdr-text tag="h4">

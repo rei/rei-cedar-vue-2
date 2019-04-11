@@ -14,7 +14,7 @@
         Default
       </cdr-text>
       <cdr-accordion
-        spacing-class="cdr-space-mb-one-x@xs cdr-space-mb-four-x@sm"
+        spacing-class="cdr-space-mb-one-x@breakpoint--xs cdr-space-mb-four-x@breakpoint--sm"
         data-backstop="accordion-default"
       >
         <cdr-accordion-item

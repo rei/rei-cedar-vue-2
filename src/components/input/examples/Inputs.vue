@@ -43,30 +43,30 @@
     <cdr-input
       class="demo-input"
       v-model="sizeModel"
-      label="Large@xs Input"
-      placeholder="Large@xs Input"
-      size="large@xs"
+      label="Large@breakpoint--xs Input"
+      placeholder="Large@breakpoint--xs Input"
+      size="large@breakpoint--xs"
     />
     <cdr-input
       class="demo-input"
       v-model="sizeModel"
-      label="Large@sm Input"
-      placeholder="Large@sm Input"
-      size="large@sm"
+      label="Large@breakpoint--sm Input"
+      placeholder="Large@breakpoint--sm Input"
+      size="large@breakpoint--sm"
     />
     <cdr-input
       class="demo-input"
       v-model="sizeModel"
-      label="Large@md Input"
-      placeholder="Large@md Input"
-      size="large@md"
+      label="Large@breakpoint--md Input"
+      placeholder="Large@breakpoint--md Input"
+      size="large@breakpoint--md"
     />
     <cdr-input
       class="demo-input"
       v-model="sizeModel"
-      label="Large@lg Input"
-      placeholder="Large@lg Input"
-      size="large@lg"
+      label="Large@breakpoint--lg Input"
+      placeholder="Large@breakpoint--lg Input"
+      size="large@breakpoint--lg"
     />
 
     <cdr-input

@@ -1,6 +1,6 @@
 <template>
   <cdr-row
-    cols="2 4@md"
+    cols="2 4@breakpoint--md"
   >
     <cdr-col>
       <div>

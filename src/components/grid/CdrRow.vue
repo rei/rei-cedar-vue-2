@@ -27,7 +27,7 @@ export default {
     /**
      * Number of equal-width columns in the row. A value of ‘auto’ will size columns as wide as their content.
      * Possible values: {1-12, auto}
-     * Also accepts responsive values with `@breakpoint`: "2 4@md"
+     * Also accepts responsive values with `@breakpoint`: "2 4@breakpoint--md"
      */
     cols: {
       type: String,
@@ -39,7 +39,7 @@ export default {
     /**
      * Justify columns within a row. See CSS flexbox justify-content.
      * Possible values: {left, center, right, around, between}.
-     * Also accepts responsive values with `@breakpoint`: "center right@lg"
+     * Also accepts responsive values with `@breakpoint`: "center right@breakpoint--lg"
      */
     justify: {
       type: String,
@@ -51,7 +51,7 @@ export default {
     /**
      * Align columns of different heights. See CSS flexbox align-items.
      * Possible values: {top, middle, bottom, stretch}.
-     * Also accepts responsive values with `@breakpoint`: "top middle@sm"
+     * Also accepts responsive values with `@breakpoint`: "top middle@breakpoint--sm"
      */
     align: {
       type: String,
@@ -61,9 +61,9 @@ export default {
       ),
     },
     /**
-     * Defines gutter size. Default gutter size is 16px @xs and @sm and 32px @md and @lg.
+     * Defines gutter size. Default gutter size is 16px @breakpoint--xs and @breakpoint--sm and 32px @breakpoint--md and @breakpoint--lg.
      * Possible values: {none, xxs}.
-     * Also accepts responsive values with `@breakpoint`: "none@md"
+     * Also accepts responsive values with `@breakpoint`: "none@breakpoint--md"
      */
     gutter: {
       type: String,
@@ -75,7 +75,7 @@ export default {
     /**
      * Changes row to a column layout. See CSS flexbox flex-direction.
      * Possible values: {vertical}.
-     * Also accepts responsive values with `@breakpoint`: "vertical@md"
+     * Also accepts responsive values with `@breakpoint`: "vertical@breakpoint--md"
      */
     vertical: {
       type: String,
@@ -87,7 +87,7 @@ export default {
     /**
      * Enables row wrapping. Only needs to be changed if overriding `nowrap`. See CSS flexbox flex-wrap.
      * Possible values: {wrap}.
-     * Also accepts responsive values with `@breakpoint`: "wrap@md"
+     * Also accepts responsive values with `@breakpoint`: "wrap@breakpoint--md"
      */
     wrap: {
       type: String,
@@ -99,7 +99,7 @@ export default {
     /**
      * Disables row wrapping and enables overflow scrolling. See CSS flexbox flex-wrap.
      * Possible values: {nowrap}.
-     * Also accepts responsive values with `@breakpoint`: "nowrap@md"
+     * Also accepts responsive values with `@breakpoint`: "nowrap@breakpoint--md"
      */
     nowrap: {
       type: String,

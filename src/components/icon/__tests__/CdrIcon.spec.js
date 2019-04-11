@@ -19,10 +19,10 @@ describe('CdrIcon.vue', () => {
   it('adds size class correctly', () => {
     const wrapper = shallowMount(CdrIcon, {
       propsData: {
-        size: 'small large@lg',
+        size: 'small large@breakpoint--lg',
       },
     });
     expect(wrapper.classes()).toContain('cdr-icon--small');
-    expect(wrapper.classes()).toContain('cdr-icon--large@lg');
+    expect(wrapper.classes()).toContain('cdr-icon--large@breakpoint--lg');
   });
 });

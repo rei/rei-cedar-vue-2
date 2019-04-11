@@ -27,7 +27,7 @@ For the most up-to-date information, see [REI Cedar documentation](https://rei.g
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
 | size | string | medium |
-| Sets the button size; values can target responsive breakpoints. Breakpoint values are: xs, sm, md, and lg. Examples: { 'small' | 'medium' | 'large' | 'large@sm' }
+| Sets the button size; values can target responsive breakpoints. Breakpoint values are: xs, sm, md, and lg. Examples: { 'small' | 'medium' | 'large' | 'large@breakpoint--sm' }
 
 | Name  | Type | Default     |
 |:-----|:-------|:--------|
@@ -118,7 +118,7 @@ The below example uses the `size` prop to set default and responsive size. This 
 ```vue
 <template>
   <cdr-button
-    size="small large@xs large@sm"
+    size="small large@breakpoint--xs large@breakpoint--sm"
   >
     Add to cart
   </cdr-button>

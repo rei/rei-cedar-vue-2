@@ -80,7 +80,7 @@
     <cdr-rating
       rating="2"
       count="9"
-      size="small@xs large@md large@lg"
+      size="small@breakpoint--xs large@breakpoint--md large@breakpoint--lg"
     />
     <cdr-text tag="h3">
       Responsive Inverse
@@ -88,7 +88,7 @@
     <cdr-rating
       rating="3"
       count="100"
-      size="large@xs small@md small@lg"
+      size="large@breakpoint--xs small@breakpoint--md small@breakpoint--lg"
     />
   </div>
 </template>

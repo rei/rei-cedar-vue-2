@@ -251,7 +251,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
 
     /* Row small elements
     ========================================================================== */
-    &_row1\@sm {
+    &_row1\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $1-row-pct;
         width: $1-row-pct;
@@ -259,7 +259,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row2\@sm {
+    &_row2\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $2-row-pct;
         width: $2-row-pct;
@@ -267,7 +267,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row3\@sm {
+    &_row3\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $3-row-pct;
         width: $3-row-pct;
@@ -275,7 +275,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row4\@sm {
+    &_row4\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $4-row-pct;
         width: $4-row-pct;
@@ -283,7 +283,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row5\@sm {
+    &_row5\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $5-row-pct;
         width: $5-row-pct;
@@ -291,7 +291,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row6\@sm {
+    &_row6\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $6-row-pct;
         width: $6-row-pct;
@@ -299,7 +299,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row7\@sm {
+    &_row7\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $7-row-pct;
         width: $7-row-pct;
@@ -307,7 +307,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row8\@sm {
+    &_row8\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $8-row-pct;
         width: $8-row-pct;
@@ -315,7 +315,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row9\@sm {
+    &_row9\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $9-row-pct;
         width: $9-row-pct;
@@ -323,7 +323,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row10\@sm {
+    &_row10\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $10-row-pct;
         width: $10-row-pct;
@@ -331,7 +331,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row11\@sm {
+    &_row11\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $11-row-pct;
         width: $11-row-pct;
@@ -339,7 +339,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row12\@sm {
+    &_row12\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $12-row-pct;
         width: $12-row-pct;
@@ -347,7 +347,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_rowauto\@sm {
+    &_rowauto\@breakpoint--sm {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex: 0 0 auto;
         width: auto;
@@ -357,7 +357,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
 
     /* Row small modifiers
     ========================================================================== */
-    &--gutter-none\@sm {
+    &--gutter-none\@breakpoint--sm {
       margin: 0 !important;
 
       & > .cdr-col {
@@ -365,7 +365,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--gutter-xxs\@sm {
+    &--gutter-xxs\@breakpoint--sm {
       margin-top: calc($cdr-space-eighth-x * -1) !important;
       margin-left: calc($cdr-space-eighth-x * -1) !important;
 
@@ -375,7 +375,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--nowrap\@sm {
+    &--nowrap\@breakpoint--sm {
       flex-wrap: nowrap;
       overflow: auto;
 
@@ -385,7 +385,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--wrap\@sm {
+    &--wrap\@breakpoint--sm {
       flex-wrap: wrap;
 
       & > .cdr-col {
@@ -394,37 +394,37 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--left\@sm {
+    &--left\@breakpoint--sm {
       justify-content: flex-start;
       align-self: flex-start;
     }
 
-    &--center\@sm {
+    &--center\@breakpoint--sm {
       justify-content: center;
     }
 
-    &--right\@sm {
+    &--right\@breakpoint--sm {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &--stretch\@sm {
+    &--stretch\@breakpoint--sm {
       align-items: stretch;
     }
 
-    &--top\@sm {
+    &--top\@breakpoint--sm {
       align-items: flex-start;
     }
 
-    &--middle\@sm {
+    &--middle\@breakpoint--sm {
       align-items: center;
     }
 
-    &--bottom\@sm {
+    &--bottom\@breakpoint--sm {
       align-items: flex-end;
     }
 
-    &--vertical\@sm {
+    &--vertical\@breakpoint--sm {
       flex-direction: column;
 
       & > .cdr-col,
@@ -433,11 +433,11 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--between\@sm {
+    &--between\@breakpoint--sm {
       justify-content: space-between;
     }
 
-    &--around\@sm {
+    &--around\@breakpoint--sm {
       justify-content: space-around;
     }
   }
@@ -452,7 +452,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
     /* Row medium elements
     ========================================================================== */
 
-    &_row1\@md {
+    &_row1\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $1-row-pct;
         width: $1-row-pct;
@@ -460,7 +460,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row2\@md {
+    &_row2\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $2-row-pct;
         width: $2-row-pct;
@@ -468,7 +468,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row3\@md {
+    &_row3\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $3-row-pct;
         width: $3-row-pct;
@@ -476,7 +476,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row4\@md {
+    &_row4\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $4-row-pct;
         width: $4-row-pct;
@@ -484,7 +484,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row5\@md {
+    &_row5\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $5-row-pct;
         width: $5-row-pct;
@@ -492,7 +492,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row6\@md {
+    &_row6\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $6-row-pct;
         width: $6-row-pct;
@@ -500,7 +500,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row7\@md {
+    &_row7\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $7-row-pct;
         width: $7-row-pct;
@@ -508,7 +508,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row8\@md {
+    &_row8\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $8-row-pct;
         width: $8-row-pct;
@@ -516,7 +516,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row9\@md {
+    &_row9\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $9-row-pct;
         width: $9-row-pct;
@@ -524,7 +524,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row10\@md {
+    &_row10\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $10-row-pct;
         width: $10-row-pct;
@@ -532,7 +532,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row11\@md {
+    &_row11\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $11-row-pct;
         width: $11-row-pct;
@@ -540,7 +540,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row12\@md {
+    &_row12\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $12-row-pct;
         width: $12-row-pct;
@@ -548,7 +548,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_rowauto\@md {
+    &_rowauto\@breakpoint--md {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex: 0 0 auto;
         width: auto;
@@ -559,7 +559,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
     /* Row medium modifiers
     ========================================================================== */
 
-    &--gutter-none\@md {
+    &--gutter-none\@breakpoint--md {
       margin: 0 !important;
 
       & > .cdr-col {
@@ -567,7 +567,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--gutter-xxs\@md {
+    &--gutter-xxs\@breakpoint--md {
       margin-top: calc($cdr-space-eighth-x * -1) !important;
       margin-left: calc($cdr-space-eighth-x * -1) !important;
 
@@ -577,7 +577,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--nowrap\@md {
+    &--nowrap\@breakpoint--md {
       flex-wrap: nowrap;
       overflow: auto;
 
@@ -587,7 +587,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--wrap\@md {
+    &--wrap\@breakpoint--md {
       flex-wrap: wrap;
 
       & > .cdr-col {
@@ -596,37 +596,37 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--left\@md {
+    &--left\@breakpoint--md {
       justify-content: flex-start;
       align-self: flex-start;
     }
 
-    &--center\@md {
+    &--center\@breakpoint--md {
       justify-content: center;
     }
 
-    &--right\@md {
+    &--right\@breakpoint--md {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &--stretch\@md {
+    &--stretch\@breakpoint--md {
       align-items: stretch;
     }
 
-    &--top\@md {
+    &--top\@breakpoint--md {
       align-items: flex-start;
     }
 
-    &--middle\@md {
+    &--middle\@breakpoint--md {
       align-items: center;
     }
 
-    &--bottom\@md {
+    &--bottom\@breakpoint--md {
       align-items: flex-end;
     }
 
-    &--vertical\@md {
+    &--vertical\@breakpoint--md {
       flex-direction: column;
 
       & > .cdr-col,
@@ -635,11 +635,11 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--between\@md {
+    &--between\@breakpoint--md {
       justify-content: space-between;
     }
 
-    &--around\@md {
+    &--around\@breakpoint--md {
       justify-content: space-around;
     }
   }
@@ -654,7 +654,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
     /* Row large elements
     ========================================================================== */
 
-    &_row1\@lg {
+    &_row1\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $1-row-pct;
         width: $1-row-pct;
@@ -662,7 +662,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row2\@lg {
+    &_row2\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $2-row-pct;
         width: $2-row-pct;
@@ -670,7 +670,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row3\@lg {
+    &_row3\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $3-row-pct;
         width: $3-row-pct;
@@ -678,7 +678,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row4\@lg {
+    &_row4\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $4-row-pct;
         width: $4-row-pct;
@@ -686,7 +686,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row5\@lg {
+    &_row5\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $5-row-pct;
         width: $5-row-pct;
@@ -694,7 +694,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row6\@lg {
+    &_row6\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $6-row-pct;
         width: $6-row-pct;
@@ -702,7 +702,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row7\@lg {
+    &_row7\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $7-row-pct;
         width: $7-row-pct;
@@ -710,7 +710,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row8\@lg {
+    &_row8\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $8-row-pct;
         width: $8-row-pct;
@@ -718,7 +718,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row9\@lg {
+    &_row9\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $9-row-pct;
         width: $9-row-pct;
@@ -726,7 +726,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row10\@lg {
+    &_row10\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $10-row-pct;
         width: $10-row-pct;
@@ -734,7 +734,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row11\@lg {
+    &_row11\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $11-row-pct;
         width: $11-row-pct;
@@ -742,7 +742,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_row12\@lg {
+    &_row12\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex-basis: $12-row-pct;
         width: $12-row-pct;
@@ -750,7 +750,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &_rowauto\@lg {
+    &_rowauto\@breakpoint--lg {
       & > .cdr-col:not([class*="cdr-col_span"]) {
         flex: 0 0 auto;
         width: auto;
@@ -761,7 +761,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
     /* Row large modifiers
     ========================================================================== */
 
-    &--gutter-none\@lg {
+    &--gutter-none\@breakpoint--lg {
       margin: 0 !important;
 
       & > .cdr-col {
@@ -769,7 +769,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--gutter-xxs\@lg {
+    &--gutter-xxs\@breakpoint--lg {
       margin-top: calc($cdr-space-eighth-x * -1) !important;
       margin-left: calc($cdr-space-eighth-x * -1) !important;
 
@@ -779,7 +779,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--nowrap\@lg {
+    &--nowrap\@breakpoint--lg {
       flex-wrap: nowrap;
       overflow: auto;
 
@@ -789,7 +789,7 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--wrap\@lg {
+    &--wrap\@breakpoint--lg {
       flex-wrap: wrap;
 
       & > .cdr-col {
@@ -798,37 +798,37 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--left\@lg {
+    &--left\@breakpoint--lg {
       justify-content: flex-start;
       align-self: flex-start;
     }
 
-    &--center\@lg {
+    &--center\@breakpoint--lg {
       justify-content: center;
     }
 
-    &--right\@lg {
+    &--right\@breakpoint--lg {
       justify-content: flex-end;
       align-self: flex-end;
     }
 
-    &--stretch\@lg {
+    &--stretch\@breakpoint--lg {
       align-items: stretch;
     }
 
-    &--top\@lg {
+    &--top\@breakpoint--lg {
       align-items: flex-start;
     }
 
-    &--middle\@lg {
+    &--middle\@breakpoint--lg {
       align-items: center;
     }
 
-    &--bottom\@lg {
+    &--bottom\@breakpoint--lg {
       align-items: flex-end;
     }
 
-    &--vertical\@lg {
+    &--vertical\@breakpoint--lg {
       flex-direction: column;
 
       & > .cdr-col,
@@ -837,11 +837,11 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       }
     }
 
-    &--between\@lg {
+    &--between\@breakpoint--lg {
       justify-content: space-between;
     }
 
-    &--around\@lg {
+    &--around\@breakpoint--lg {
       justify-content: space-around;
     }
   }

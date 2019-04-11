@@ -149,9 +149,9 @@ export default {
     ratioClass() {
       const classObj = {};
       classObj[this.$style[`cdr-media-frame--${this.ratio}`]] = this.ratio;
-      classObj[this.$style[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
-      classObj[this.$style[`cdr-media-frame--${this.ratioMd}@md`]] = this.ratioMd;
-      classObj[this.$style[`cdr-media-frame--${this.ratioLg}@lg`]] = this.ratioLg;
+      classObj[this.$style[`cdr-media-frame--${this.ratioSm}@breakpoint--sm`]] = this.ratioSm;
+      classObj[this.$style[`cdr-media-frame--${this.ratioMd}@breakpoint--md`]] = this.ratioMd;
+      classObj[this.$style[`cdr-media-frame--${this.ratioLg}@breakpoint--lg`]] = this.ratioLg;
       return classObj;
     },
     coverClass() {

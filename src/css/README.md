@@ -30,13 +30,13 @@
 | Class             | Visible @ xs | Visible @ sm | Visible @ md | Visible @ lg |
 |-------------------|:------------:|:------------:|:------------:|:------------:|
 | .cdr-hide         |              |              |              |              |
-| .cdr-hide@xs-only |              |       x      |       x      |       x      |
-| .cdr-hide@sm-only |       x      |              |       x      |       x      |
-| .cdr-hide@sm      |       x      |              |              |              |
-| .cdr-hide@md-only |       x      |       x      |              |       x      |
-| .cdr-hide@md      |       x      |       x      |              |              |
-| .cdr-hide@lg-only |       x      |       x      |       x      |              |
-| .cdr-hide@lg      |       x      |       x      |       x      |              |
+| .cdr-hide@breakpoint--xs-only |              |       x      |       x      |       x      |
+| .cdr-hide@breakpoint--sm-only |       x      |              |       x      |       x      |
+| .cdr-hide@breakpoint--sm      |       x      |              |              |              |
+| .cdr-hide@breakpoint--md-only |       x      |       x      |              |       x      |
+| .cdr-hide@breakpoint--md      |       x      |       x      |              |              |
+| .cdr-hide@breakpoint--lg-only |       x      |       x      |       x      |              |
+| .cdr-hide@breakpoint--lg      |       x      |       x      |       x      |              |
 
 ### Show:
 
@@ -51,13 +51,13 @@ When combined with `.cdr-hide`
 | Class                 | Visible @ xs | Visible @ sm | Visible @ md | Visible @ lg |
 |-----------------------|:------------:|:------------:|:------------:|:------------:|
 | .cdr-show(-*)         |       x      |       x      |       x      |       x      |
-| .cdr-show(-*)@xs-only |       x      |              |              |              |
-| .cdr-show(-*)@sm-only |              |       x      |              |              |
-| .cdr-show(-*)@sm      |              |       x      |       x      |       x      |
-| .cdr-show(-*)@md-only |              |              |       x      |              |
-| .cdr-show(-*)@md      |              |              |       x      |       x      |
-| .cdr-show(-*)@lg-only |              |              |              |       x      |
-| .cdr-show(-*)@lg      |              |              |              |       x      |
+| .cdr-show(-*)@breakpoint--xs-only |       x      |              |              |              |
+| .cdr-show(-*)@breakpoint--sm-only |              |       x      |              |              |
+| .cdr-show(-*)@breakpoint--sm      |              |       x      |       x      |       x      |
+| .cdr-show(-*)@breakpoint--md-only |              |              |       x      |              |
+| .cdr-show(-*)@breakpoint--md      |              |              |       x      |       x      |
+| .cdr-show(-*)@breakpoint--lg-only |              |              |              |       x      |
+| .cdr-show(-*)@breakpoint--lg      |              |              |              |       x      |
 
 ### Print:
 

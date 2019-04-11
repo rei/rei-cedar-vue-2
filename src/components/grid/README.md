@@ -12,31 +12,31 @@ Grids are built from two components, **CdrRow** and **CdrCol**.
 |:-----|:-------|:--------|
 | cols | String | none    |
 
-Number of equal-width columns in the row; however the value of ‘auto’ will size columns as wide as the column’s content. Possible values: {  ‘1’  through  ‘12’, ‘auto’  }.  Also accepts responsive values @breakpoint: ‘2 4@md’
+Number of equal-width columns in the row; however the value of ‘auto’ will size columns as wide as the column’s content. Possible values: {  ‘1’  through  ‘12’, ‘auto’  }.  Also accepts responsive values @breakpoint: ‘2 4@breakpoint--md’
 
 | name    | type   | default |
 |:--------|:-------|:--------|
 | justify | String | none    |
 
-Justify columns within a row. See CSS Flexbox justify-content. Possible values: {  ‘left’, ‘center’, ‘right’, ‘around’, ‘between’  }. Also accepts responsive values @breakpoint: ‘center right@lg’
+Justify columns within a row. See CSS Flexbox justify-content. Possible values: {  ‘left’, ‘center’, ‘right’, ‘around’, ‘between’  }. Also accepts responsive values @breakpoint: ‘center right@breakpoint--lg’
 
 | name  | type   | default |
 |:------|:-------|:--------|
 | align | String | none    |
 
-Align columns of different heights. See CSS Flexbox align-items. Possible values: {  ‘top’, ‘middle’, ‘bottom’, ‘stretch}. Also accepts responsive values @breakpoint:  ‘top middle@sm’
+Align columns of different heights. See CSS Flexbox align-items. Possible values: {  ‘top’, ‘middle’, ‘bottom’, ‘stretch}. Also accepts responsive values @breakpoint:  ‘top middle@breakpoint--sm’
 
 | name   | type   | default |
 |:-------|:-------|:--------|
 | gutter | String | none    |
 
-Defines gutter size. Default gutter size is 16px @xs and @sm and 32px @md and @lg. Possible values: {  ‘none’, ‘xxs’  }. Also accepts responsive values @breakpoint:  none@md’
+Defines gutter size. Default gutter size is 16px @breakpoint--xs and @breakpoint--sm and 32px @breakpoint--md and @breakpoint--lg. Possible values: {  ‘none’, ‘xxs’  }. Also accepts responsive values @breakpoint:  none@breakpoint--md’
 
 | name     | type   | default |
 |:---------|:-------|:--------|
 | vertical | String | none    |
 
-Changes row to a column layout. See CSS Flexbox flex-direction. Possible values: {  ‘vertical’  }. Also accepts responsive values @breakpoint:  vertical@md’
+Changes row to a column layout. See CSS Flexbox flex-direction. Possible values: {  ‘vertical’  }. Also accepts responsive values @breakpoint:  vertical@breakpoint--md’
 
 | name | type   | default |
 |:-----|:-------|:--------|
@@ -48,7 +48,7 @@ Enables row wrapping. Change only if overriding `nowrap`. See CSS Flexbox flex-w
 |:-------|:-------|:--------|
 | nowrap | String | none    |
 
-Disables row wrapping and enables overflow scrolling. See CSS Flexbox flex-wrap. Possible values: {  ‘nowrap’  }. Also accepts responsive values with @breakpoint: ‘nowrap@md’
+Disables row wrapping and enables overflow scrolling. See CSS Flexbox flex-wrap. Possible values: {  ‘nowrap’  }. Also accepts responsive values with @breakpoint: ‘nowrap@breakpoint--md’
 
 | name | type   | default |
 |:-----|:-------|:--------|
@@ -62,25 +62,25 @@ Sets grid to use <ul> and <li> or <div>. Possible values: {  ‘normal’, ‘li
 |:-----|:-------|:--------|
 | span | String | none    |
 
-Number of columns (out of 12) the column will span. Functions like bootstrap col-* classes. Overrides widths set by ‘cols’ prop on CdrRow. Possible values: {  ‘1’  through   ‘12’  }. Also accepts responsive values with @breakpoint: ‘12 8@lg’
+Number of columns (out of 12) the column will span. Functions like bootstrap col-* classes. Overrides widths set by ‘cols’ prop on CdrRow. Possible values: {  ‘1’  through   ‘12’  }. Also accepts responsive values with @breakpoint: ‘12 8@breakpoint--lg’
 
 | name       | type   | default |
 |:-----------|:-------|:--------|
 | offsetLeft | String | none    |
 
-Adds up to 12 columns of empty space to left of an individual column. Possible values: {  ‘1’  through  ‘12’  }. Also accepts responsive values with @breakpoint: ‘12 8@lg’
+Adds up to 12 columns of empty space to left of an individual column. Possible values: {  ‘1’  through  ‘12’  }. Also accepts responsive values with @breakpoint: ‘12 8@breakpoint--lg’
 
 | name        | type   | default |
 |:------------|:-------|:--------|
 | offsetRight | String | none    |
 
-Adds up to 12 columns of empty space to right of an individual column. Possible values: {  ‘1’  through  ‘12’  }. Also accepts responsive values with @breakpoint: ‘12 8@lg’
+Adds up to 12 columns of empty space to right of an individual column. Possible values: {  ‘1’  through  ‘12’  }. Also accepts responsive values with @breakpoint: ‘12 8@breakpoint--lg’
 
 | name      | type   | default |
 |:----------|:-------|:--------|
 | alignSelf | String | none    |
 
-Aligns individual column by overriding CdrRow alignment. See CSS Flexbox align-self. Possible values: {  ‘top’, ‘middle’, ‘bottom’, ‘stretch’  }. Also accepts responsive values with @breakpoint: ‘middle@sm’
+Aligns individual column by overriding CdrRow alignment. See CSS Flexbox align-self. Possible values: {  ‘top’, ‘middle’, ‘bottom’, ‘stretch’  }. Also accepts responsive values with @breakpoint: ‘middle@breakpoint--sm’
 
 | name  | type    | default |
 |:------|:--------|:--------|

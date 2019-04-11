@@ -14,16 +14,16 @@
       <thead>
         <tr>
           <th>class</th>
-          <th class="cdr-hide cdr-show@xs-only">
+          <th class="cdr-hide cdr-show@breakpoint--xs-only">
             visible @ xs
           </th>
-          <th class="cdr-hide cdr-show@sm-only">
+          <th class="cdr-hide cdr-show@breakpoint--sm-only">
             visible @ sm
           </th>
-          <th class="cdr-hide cdr-show@md-only">
+          <th class="cdr-hide cdr-show@breakpoint--md-only">
             visible @ md
           </th>
-          <th class="cdr-hide cdr-show@lg-only">
+          <th class="cdr-hide cdr-show@breakpoint--lg-only">
             visible @ lg
           </th>
         </tr>
@@ -40,63 +40,63 @@
         </tr>
 
         <tr>
-          <td>.cdr-hide@xs-only</td>
+          <td>.cdr-hide@breakpoint--xs-only</td>
           <td>
-            <div class="cdr-hide@xs-only">
+            <div class="cdr-hide@breakpoint--xs-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@sm</td>
+          <td>.cdr-hide@breakpoint--sm</td>
           <td>
-            <div class="cdr-hide@sm">
+            <div class="cdr-hide@breakpoint--sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@sm-only</td>
+          <td>.cdr-hide@breakpoint--sm-only</td>
           <td>
-            <div class="cdr-hide@sm-only">
+            <div class="cdr-hide@breakpoint--sm-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@md</td>
+          <td>.cdr-hide@breakpoint--md</td>
           <td>
-            <div class="cdr-hide@md">
+            <div class="cdr-hide@breakpoint--md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@md-only</td>
+          <td>.cdr-hide@breakpoint--md-only</td>
           <td>
-            <div class="cdr-hide@md-only">
+            <div class="cdr-hide@breakpoint--md-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@lg</td>
+          <td>.cdr-hide@breakpoint--lg</td>
           <td>
-            <div class="cdr-hide@lg">
+            <div class="cdr-hide@breakpoint--lg">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@lg-only</td>
+          <td>.cdr-hide@breakpoint--lg-only</td>
           <td>
-            <div class="cdr-hide@lg-only">
+            <div class="cdr-hide@breakpoint--lg-only">
               X
             </div>
           </td>
@@ -130,189 +130,189 @@
         </tr>
 
         <tr>
-          <td>.cdr-show@xs-only</td>
+          <td>.cdr-show@breakpoint--xs-only</td>
           <td>
-            <div class="cdr-hide cdr-show@xs-only">
+            <div class="cdr-hide cdr-show@breakpoint--xs-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@xs-only</td>
+          <td>.cdr-show-inline@breakpoint--xs-only</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@xs-only">
+            <div class="cdr-hide cdr-show-inline@breakpoint--xs-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@xs-only</td>
+          <td>.cdr-show-inline-block@breakpoint--xs-only</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@xs-only">
+            <div class="cdr-hide cdr-show-inline-block@breakpoint--xs-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@sm</td>
+          <td>.cdr-show@breakpoint--sm</td>
           <td>
-            <div class="cdr-hide cdr-show@sm">
+            <div class="cdr-hide cdr-show@breakpoint--sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@sm</td>
+          <td>.cdr-show-inline@breakpoint--sm</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@sm">
+            <div class="cdr-hide cdr-show-inline@breakpoint--sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@sm</td>
+          <td>.cdr-show-inline-block@breakpoint--sm</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@sm">
+            <div class="cdr-hide cdr-show-inline-block@breakpoint--sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@sm-only</td>
+          <td>.cdr-show@breakpoint--sm-only</td>
           <td>
-            <div class="cdr-hide cdr-show@sm-only">
+            <div class="cdr-hide cdr-show@breakpoint--sm-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@sm-only</td>
+          <td>.cdr-show-inline@breakpoint--sm-only</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@sm-only">
+            <div class="cdr-hide cdr-show-inline@breakpoint--sm-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@sm-only</td>
+          <td>.cdr-show-inline-block@breakpoint--sm-only</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@sm-only">
+            <div class="cdr-hide cdr-show-inline-block@breakpoint--sm-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@md</td>
+          <td>.cdr-show@breakpoint--md</td>
           <td>
-            <div class="cdr-hide cdr-show@md">
+            <div class="cdr-hide cdr-show@breakpoint--md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@md</td>
+          <td>.cdr-show-inline@breakpoint--md</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@md">
+            <div class="cdr-hide cdr-show-inline@breakpoint--md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@md</td>
+          <td>.cdr-show-inline-block@breakpoint--md</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@md">
+            <div class="cdr-hide cdr-show-inline-block@breakpoint--md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@md-only</td>
+          <td>.cdr-show@breakpoint--md-only</td>
           <td>
-            <div class="cdr-hide cdr-show@md-only">
+            <div class="cdr-hide cdr-show@breakpoint--md-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@md-only</td>
+          <td>.cdr-show-inline@breakpoint--md-only</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@md-only">
+            <div class="cdr-hide cdr-show-inline@breakpoint--md-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@md-only</td>
+          <td>.cdr-show-inline-block@breakpoint--md-only</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@md-only">
+            <div class="cdr-hide cdr-show-inline-block@breakpoint--md-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@lg</td>
+          <td>.cdr-show@breakpoint--lg</td>
           <td>
-            <div class="cdr-hide cdr-show@lg">
+            <div class="cdr-hide cdr-show@breakpoint--lg">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@lg</td>
+          <td>.cdr-show-inline@breakpoint--lg</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@lg">
+            <div class="cdr-hide cdr-show-inline@breakpoint--lg">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@lg</td>
+          <td>.cdr-show-inline-block@breakpoint--lg</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@lg">
+            <div class="cdr-hide cdr-show-inline-block@breakpoint--lg">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@lg-only</td>
+          <td>.cdr-show@breakpoint--lg-only</td>
           <td>
-            <div class="cdr-hide cdr-show@lg-only">
+            <div class="cdr-hide cdr-show@breakpoint--lg-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@lg-only</td>
+          <td>.cdr-show-inline@breakpoint--lg-only</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@lg-only">
+            <div class="cdr-hide cdr-show-inline@breakpoint--lg-only">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@lg-only</td>
+          <td>.cdr-show-inline-block@breakpoint--lg-only</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@lg-only">
+            <div class="cdr-hide cdr-show-inline-block@breakpoint--lg-only">
               X
             </div>
           </td>
