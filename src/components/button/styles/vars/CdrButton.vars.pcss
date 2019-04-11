@@ -289,14 +289,44 @@ $cdr-button-icon-only-fill-darkmode: $moon-shot;
   width: auto;
 }
 
+@mixin cdr-button-has-icon-small-mixin {
+  padding-left: $cdr-button-has-icon-pl-small;
+}
+
+@mixin cdr-button-icon-small-mixin {
+  /* This is to correct icon size vs line height */
+  width: $cdr-button-base-icon-width-small;
+  height: $cdr-button-base-icon-height-small;
+}
+
 @mixin cdr-button-medium-mixin() {
   @include cdr-button-base-text-mixin-medium;
   padding: $cdr-button-base-padding-medium;
   width: auto;
 }
 
+@mixin cdr-button-has-icon-medium-mixin {
+  padding-left: $cdr-button-has-icon-pl-medium;
+}
+
+@mixin cdr-button-icon-medium-mixin {
+  /* This is to correct icon size vs line height */
+  width: $cdr-button-base-icon-width-medium;
+  height: $cdr-button-base-icon-height-medium;
+}
+
 @mixin cdr-button-large-mixin() {
   @include cdr-button-base-text-mixin-large;
   padding: $cdr-button-base-padding-large;
   width: auto;
+}
+
+@mixin cdr-button-has-icon-large-mixin {
+  padding-left: $cdr-button-has-icon-pl-large;
+}
+
+@mixin cdr-button-icon-large-mixin {
+  /* This is to correct icon size vs line height */
+  width: $cdr-button-base-icon-width-large;
+  height: $cdr-button-base-icon-height-large;
 }

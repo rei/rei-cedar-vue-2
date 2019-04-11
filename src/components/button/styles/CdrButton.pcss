@@ -51,14 +51,12 @@
   &--large {
     @include cdr-button-large-mixin;
 
-    &.cdr-button--has-icon {
-      padding-left: $cdr-button-has-icon-pl-large;
+    &.cdr-button-has-icon {
+      @include cdr-button-has-icon-large-mixin;
     }
 
     & > :global(.cdr-button__icon) {
-      /* This is to correct icon size vs line height */
-      width: $cdr-button-base-icon-width-large;
-      height: $cdr-button-base-icon-height-large;
+      @include cdr-button-icon-large-mixin;
     }
   }
 
@@ -67,14 +65,12 @@
   &--medium {
     @include cdr-button-medium-mixin;
 
-    &.cdr-button--has-icon {
-      padding-left: $cdr-button-has-icon-pl-medium;
+    &.cdr-button-has-icon {
+      @include cdr-button-has-icon-medium-mixin;
     }
 
     & > :global(.cdr-button__icon) {
-      /* This is to correct icon size vs line height */
-      width: $cdr-button-base-icon-width-medium;
-      height: $cdr-button-base-icon-height-medium;
+      @include cdr-button-icon-medium-mixin;
     }
   }
 
@@ -84,14 +80,12 @@
   &--small {
     @include cdr-button-small-mixin;
 
-    &.cdr-button--has-icon {
-      padding-left: $cdr-button-has-icon-pl-small;
+    &.cdr-button-has-icon {
+      @include cdr-button-has-icon-small-mixin;
     }
 
     & > :global(.cdr-button__icon) {
-      /* This is to correct icon size vs line height */
-      width: $cdr-button-base-icon-width-small;
-      height: $cdr-button-base-icon-height-small;
+      @include cdr-button-icon-small-mixin;
     }
   }
 
@@ -132,24 +126,36 @@
     &--small\@xs {
       @include cdr-button-small-mixin;
 
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-small-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include small-button-icon();
+        @include cdr-button-icon-small-mixin;
       }
     }
 
     &--medium\@xs {
       @include cdr-button-medium-mixin;
 
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-medium-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-medium-mixin;
       }
     }
 
     &--large\@xs {
       @include cdr-button-large-mixin;
 
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-large-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-large-mixin;
       }
     }
   }
@@ -161,24 +167,36 @@
     &--small\@sm {
       @include cdr-button-small-mixin;
 
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-small-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include small-button-icon();
+        @include cdr-button-icon-small-mixin;
       }
     }
 
     &--medium\@sm {
       @include cdr-button-medium-mixin;
 
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-medium-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-medium-mixin;
       }
     }
 
     &--large\@sm {
       @include cdr-button-large-mixin;
 
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-large-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-large-mixin;
       }
     }
   }
@@ -190,24 +208,36 @@
     &--small\@md {
       @include cdr-button-small-mixin;
 
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-small-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include small-button-icon();
+        @include cdr-button-icon-small-mixin;
       }
     }
 
     &--medium\@md {
       @include cdr-button-medium-mixin;
 
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-medium-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-medium-mixin;
       }
     }
 
     &--large\@md {
       @include cdr-button-large-mixin;
 
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-large-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-large-mixin;
       }
     }
   }
@@ -219,25 +249,37 @@
   @media (--lg-mq-only) {
     &--small\@lg {
       @include cdr-button-small-mixin;
-      
+
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-small-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include small-button-icon();
+        @include cdr-button-icon-small-mixin;
       }
     }
 
     &--medium\@lg {
       @include cdr-button-medium-mixin;
-      
+
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-medium-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-medium-mixin;
       }
     }
 
     &--large\@lg {
       @include cdr-button-large-mixin;
-      
+
+      &.cdr-button-has-icon {
+        @include cdr-button-has-icon-large-mixin;
+      }
+
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-large-mixin;
       }
     }
   }
