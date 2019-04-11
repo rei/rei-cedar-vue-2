@@ -149,12 +149,6 @@ $cdr-button-icon-only-fill-darkmode: $moon-shot;
   text-decoration: $cdr-button-base-text-decoration;
   text-transform: $cdr-button-base-text-transform;
 
-  & > :global(&__icon) {
-    align-self: $cdr-button-base-icon-align-self;
-    margin-right: $cdr-button-base-icon-mr;
-    fill: $cdr-button-base-icon-fill;
-  }
-
   /* States
     ---------- */
 
@@ -254,4 +248,55 @@ $cdr-button-icon-only-fill-darkmode: $moon-shot;
     color: $cdr-button-secondary-color-disabled;
     fill: $cdr-button-secondary-fill-disabled;
   }
+}
+
+@mixin cdr-button-full-width-mixin() {
+  width: $cdr-button-full-width-width;
+  justify-content: $cdr-button-full-width-justify-content;
+}
+
+@mixin cdr-button-icon-only-mixin() {
+  background: $cdr-button-icon-only-background-color;
+  border: $cdr-button-icon-only-border;
+  box-shadow: $cdr-button-icon-only-box-shadow;
+  display: $cdr-button-icon-only-display;
+  padding: $cdr-button-icon-only-padding;
+  padding-right: $cdr-button-icon-only-pr;
+  fill: $cdr-button-icon-only-fill;
+
+  &:hover {
+    background: $cdr-button-icon-only-background-color-hover;
+    box-shadow: $cdr-button-icon-only-box-shadow-hover;
+    fill: $cdr-button-icon-only-fill-hover;
+  }
+
+  &:active {
+    background: $cdr-button-icon-only-background-color-active;
+    box-shadow: $cdr-button-icon-only-box-shadow-active;
+    fill: $cdr-button-icon-only-fill-active;
+  }
+
+  &:focus {
+    background: $cdr-button-icon-only-background-color-focus;
+    box-shadow: $cdr-button-icon-only-box-shadow-focus;
+    fill: $cdr-button-icon-only-fill-focus;
+  }
+}
+
+@mixin cdr-button-small-mixin() {
+  @include cdr-button-base-text-mixin-small;
+  padding: $cdr-button-base-padding-small;
+  width: auto;
+}
+
+@mixin cdr-button-medium-mixin() {
+  @include cdr-button-base-text-mixin-medium;
+  padding: $cdr-button-base-padding-medium;
+  width: auto;
+}
+
+@mixin cdr-button-large-mixin() {
+  @include cdr-button-base-text-mixin-large;
+  padding: $cdr-button-base-padding-large;
+  width: auto;
 }
