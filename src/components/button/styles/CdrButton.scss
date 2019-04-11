@@ -49,7 +49,7 @@
   &--large {
     @include cdr-button-large-mixin;
 
-    &.cdr-button-has-icon {
+    &.cdr-button--has-icon {
       @include cdr-button-has-icon-large-mixin;
     }
 
@@ -63,7 +63,7 @@
   &--medium {
     @include cdr-button-medium-mixin;
 
-    &.cdr-button-has-icon {
+    &.cdr-button--has-icon {
       @include cdr-button-has-icon-medium-mixin;
     }
 
@@ -78,7 +78,7 @@
   &--small {
     @include cdr-button-small-mixin;
 
-    &.cdr-button-has-icon {
+    &.cdr-button--has-icon {
       @include cdr-button-has-icon-small-mixin;
     }
 
@@ -113,7 +113,7 @@
     &--small\@xs {
       @include cdr-button-small-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-small-mixin;
       }
 
@@ -125,7 +125,7 @@
     &--medium\@xs {
       @include cdr-button-medium-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-medium-mixin;
       }
 
@@ -137,7 +137,7 @@
     &--large\@xs {
       @include cdr-button-large-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-large-mixin;
       }
 
@@ -154,7 +154,7 @@
     &--small\@sm {
       @include cdr-button-small-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-small-mixin;
       }
 
@@ -166,7 +166,7 @@
     &--medium\@sm {
       @include cdr-button-medium-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-medium-mixin;
       }
 
@@ -178,7 +178,7 @@
     &--large\@sm {
       @include cdr-button-large-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-large-mixin;
       }
 
@@ -195,7 +195,7 @@
     &--small\@md {
       @include cdr-button-small-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-small-mixin;
       }
 
@@ -207,7 +207,7 @@
     &--medium\@md {
       @include cdr-button-medium-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-medium-mixin;
       }
 
@@ -219,7 +219,7 @@
     &--large\@md {
       @include cdr-button-large-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-large-mixin;
       }
 
@@ -237,7 +237,7 @@
     &--small\@lg {
       @include cdr-button-small-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-small-mixin;
       }
 
@@ -249,7 +249,7 @@
     &--medium\@lg {
       @include cdr-button-medium-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-medium-mixin;
       }
 
@@ -261,7 +261,7 @@
     &--large\@lg {
       @include cdr-button-large-mixin;
 
-      &.cdr-button-has-icon {
+      &.cdr-button--has-icon {
         @include cdr-button-has-icon-large-mixin;
       }
 
