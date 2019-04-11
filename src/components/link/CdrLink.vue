@@ -13,7 +13,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
-import themeable from 'mixinsdir/themeable';
+// import themeable from 'mixinsdir/themeable';
 /**
  *
  * Cedar 2 component for link.
@@ -25,7 +25,7 @@ import themeable from 'mixinsdir/themeable';
  */
 export default {
   name: 'CdrLink',
-  mixins: [modifier, themeable],
+  mixins: [modifier],
   props: {
     tag: {
       type: String,

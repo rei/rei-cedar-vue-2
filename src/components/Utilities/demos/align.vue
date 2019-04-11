@@ -20,11 +20,14 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+// import Components from 'componentsdir/_index';
+import { CdrText } from 'componentsdir/_index';
 
 export default {
   name: 'UtilitiesAlign',
-  components: { ...Components },
+  components: {
+    CdrText,
+  },
 };
 </script>
 

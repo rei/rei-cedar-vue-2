@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "dev-old": "node build/dev-server.js",
-    "dev": "rollup -c build/rollup.dev.conf.js",
+    "dev": "cross-env NODE_ENV=production rollup -c",
     "build": "cross-env NODE_ENV=production node build/build.js",
     "unit": "cross-env NODE_ENV=test nyc mocha-webpack --webpack-config build/webpack.test.conf.js src/**/*.spec.js",
     "unit:watch": "cross-env NODE_ENV=test nyc mocha-webpack --watch --webpack-config build/webpack.test.conf.js src/**/*.spec.js",

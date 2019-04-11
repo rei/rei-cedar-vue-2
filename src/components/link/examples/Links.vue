@@ -45,11 +45,11 @@
     >Links, with icon</cdr-text>
     <div class="anchor-example">
       <cdr-link>
-        <cdr-icon
+        <!-- <cdr-icon
           use="#mail"
           modifier="inherit-color"
           class="cdr-inline-left--sm"
-        />
+        /> -->
         Icon on the left
       </cdr-link>
       <br>
@@ -64,7 +64,7 @@
       </cdr-link>
       <br>
       <br>
-      <cdr-link>
+      <!-- <cdr-link>
         <cdr-icon
           use="#twitter"
           modifier="inherit-color"
@@ -76,7 +76,7 @@
           modifier="inherit-color"
           class="cdr-inline-right--sm"
         />
-      </cdr-link>
+      </cdr-link> -->
     </div>
 
     <cdr-text
@@ -116,12 +116,12 @@
 
     <!-- Nested theme Testing -->
 
-    <cdr-themer
+    <!-- <cdr-themer
       theme="light"
       background="lightest"
-    >
+    > -->
       <!-- Smaller examples with nested theme (for override) -->
-      <p>Works nested</p>
+      <!-- <p>Works nested</p>
       <p>
         <cdr-link href="https://www.rei.com/">
           REI.com
@@ -130,7 +130,7 @@
           href="https://www.rei.com/"
           modifier="standalone"
         >REI.com</cdr-link>
-      </p>
+      </p> -->
       <!-- Override individual theme -->
       <!-- <p>Individual override (dark on light)</p>
       <p>
@@ -138,7 +138,7 @@
           href="https://www.rei.com/"
           theme="dark">REI.com</cdr-link>
       </p> -->
-    </cdr-themer>
+    <!-- </cdr-themer> -->
 
     <cdr-link
       href="https://www.rei.com/"
@@ -155,12 +155,14 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+// import Components from 'componentsdir/_index';
+import { CdrText, CdrLink } from 'componentsdir/_index';
 
 export default {
   name: 'Links',
   components: {
-    ...Components,
+    CdrText,
+    CdrLink,
   },
 };
 </script>

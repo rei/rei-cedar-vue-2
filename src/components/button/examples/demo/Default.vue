@@ -58,11 +58,15 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+// import Components from 'componentsdir/_index';
+import { CdrText, CdrButton } from 'componentsdir/_index';
 
 export default {
   name: 'Default',
-  components: Components,
+  components: {
+    CdrText,
+    CdrButton,
+  },
   data: function data() {
     return {
       data: [

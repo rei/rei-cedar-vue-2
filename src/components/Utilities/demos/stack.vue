@@ -7,7 +7,7 @@
       Stack classes
     </cdr-text>
 
-    <cdr-card class="example">
+    <!-- <cdr-card class="example">
       <cdr-text class="cdr-stack-eighth-x">
         cdr-stack-eighth-x
       </cdr-text>
@@ -32,18 +32,20 @@
       <cdr-text class="cdr-stack-4-x">
         cdr-stack-4-x
       </cdr-text>
-    </cdr-card>
+    </cdr-card> -->
 
   </div>
 </template>
 
 <script>
 
-import Components from 'componentsdir/_index';
+import { CdrText } from 'componentsdir/_index';
 
 export default {
   name: 'UtilitiesSpaceStack',
-  components: Components,
+  components: {
+    CdrText,
+  },
 };
 </script>
 

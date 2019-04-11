@@ -42,8 +42,10 @@
 </template>
 
 <script>
-import CdrButton from 'componentsdir/button/CdrButton';
-import CdrText from 'componentsdir/text/CdrText';
+// import CdrButton from 'componentsdir/button/CdrButton';
+// import CdrText from 'componentsdir/text/CdrText';
+
+import { CdrButton, CdrText } from 'componentsdir/_index';
 
 export default {
   name: 'Secondary',

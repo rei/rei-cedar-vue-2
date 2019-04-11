@@ -6,7 +6,7 @@
     >
       Inline space classes
     </cdr-text>
-    <cdr-card class="example">
+    <!-- <cdr-card class="example">
       <cdr-text class="cdr-inline-eighth-x">
         cdr-inline-eighth-x
       </cdr-text>
@@ -31,17 +31,20 @@
       <cdr-text class="cdr-inline-4-x">
         cdr-inline-4-x
       </cdr-text>
-    </cdr-card>
+    </cdr-card> -->
   </div>
 </template>
 
 <script>
 
-import Components from 'componentsdir/_index';
+// import Components from 'componentsdir/_index';
+import { CdrText } from 'componentsdir/_index';
 
 export default {
   name: 'UtilitiesSpaceInline',
-  components: Components,
+  components: {
+    CdrText,
+  },
 };
 </script>
 

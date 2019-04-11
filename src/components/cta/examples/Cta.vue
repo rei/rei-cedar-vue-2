@@ -53,11 +53,15 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+// import Components from 'componentsdir/_index';
+import { CdrText, CdrCta } from 'componentsdir/_index';
 
 export default {
   name: 'Cta',
-  components: Components,
+  components: {
+    CdrCta,
+    CdrText,
+  },
 };
 </script>
 

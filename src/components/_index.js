@@ -26,6 +26,7 @@
 export { default as CdrLink } from 'componentsdir/link/CdrLink';
 export { default as CdrButton } from 'componentsdir/button/CdrButton';
 export { default as CdrCta } from 'componentsdir/cta/CdrCta';
+export { default as CdrText } from 'componentsdir/text/CdrText';
 
 // export default {
 //   CdrAccordion,

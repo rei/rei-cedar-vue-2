@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import simpleCard from './demo/simpleCard';
+import simpleCard from './demo/simpleCard.vue';
 
 export default {
   name: 'Cards',

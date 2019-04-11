@@ -7,7 +7,7 @@
       Inset classes
     </cdr-text>
 
-    <cdr-card class="example">
+    <!-- <cdr-card class="example">
       <cdr-text class="cdr-inset-eighth-x">
         cdr-inset-eighth-x
       </cdr-text>
@@ -78,17 +78,19 @@
         cdr-inset-4-x-stretch
       </cdr-text>
 
-    </cdr-card>
+    </cdr-card> -->
   </div>
 </template>
 
 <script>
 
-import Components from 'componentsdir/_index';
+import { CdrText } from 'componentsdir/_index';
 
 export default {
   name: 'UtilitiesSpaceInset',
-  components: Components,
+  components: {
+    CdrText,
+  },
 };
 </script>
 
