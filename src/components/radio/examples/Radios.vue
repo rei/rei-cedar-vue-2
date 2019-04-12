@@ -62,7 +62,7 @@
     </cdr-text>
     <cdr-radio
       spacing-class="cdr-space-ml-one-x cdr-space-mt-half-x"
-      id="test1"
+      id="test2"
       name="example"
       value="a1"
       v-model="ex1"
@@ -174,15 +174,13 @@ export default {
 </script>
 
 <style lang="css">
-  .wrap {
-    width: 180px;
-  }
-
-  .no-box:checked ~ .no-box__content {
-    color: green;
-
-    &::after {
-      content: '(checked)';
-    }
-  }
+.wrap {
+  width: 180px;
+}
+.no-box:checked ~ .no-box__content {
+  color: green;
+}
+.no-box:checked ~ .no-box__content::after {
+  content: '(checked)';
+}
 </style>
