@@ -21,6 +21,7 @@
     "build:docs": "lerna run build:docs",
     "build:archive": "node build/component-docs-archive.js",
     "build:transfer": "node build/component-docs-transfer.js",
+    "build:mixins": "node build/mixins-transfer.js",
     "create": "node generator.js",
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap",
