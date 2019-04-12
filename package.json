@@ -37,7 +37,8 @@
     "approve": "backstop approve --configPath=backstop.js",
     "create": "node generator.js",
     "changelog": "standard-changelog",
-    "prerelease": "npm-publish-prerelease"
+    "prerelease": "npm-publish-prerelease",
+    "build:mixins": "node build/mixins-transfer.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
