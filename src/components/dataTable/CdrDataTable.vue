@@ -2,7 +2,7 @@
   <div
     :class="[
       modifierClass,
-      spacingClass
+      space
     ]"
   >
     <span

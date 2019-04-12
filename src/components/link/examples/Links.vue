@@ -24,7 +24,7 @@
     >Link, href set, spacing class applied</cdr-text>
     <cdr-link
       href="https://www.rei.com/"
-      spacing-class="cdr-space-inset-one-x"
+      space="cdr-space-inset-one-x"
     >
       REI.com
     </cdr-link>
@@ -34,7 +34,7 @@
     >Standalone Link (No underline)</cdr-text>
     <cdr-link
       modifier="standalone"
-      spacing-class="cdr-space-inset-one-x"
+      space="cdr-space-inset-one-x"
       :data-backstop="`cdr-link--standalone`"
     />
 
@@ -44,14 +44,14 @@
     >Links, with icon</cdr-text>
 
     <cdr-list
-      spacing-class="cdr-space-inset-one-x"
+      space="cdr-space-inset-one-x"
     >
       <li>
         <cdr-link>
           <cdr-icon
             use="#mail"
             modifier="inherit-color"
-            spacing-class="cdr-space-mr-half-x"
+            space="cdr-space-mr-half-x"
           />
           Icon on the left
         </cdr-link>
@@ -62,7 +62,7 @@
           <cdr-icon
             use="#download"
             modifier="inherit-color"
-            spacing-class="cdr-space-ml-half-x"
+            space="cdr-space-ml-half-x"
           />
         </cdr-link>
       </li>
@@ -71,13 +71,13 @@
           <cdr-icon
             use="#twitter"
             modifier="inherit-color"
-            spacing-class="cdr-space-mr-half-x"
+            space="cdr-space-mr-half-x"
           />
           Icons on both sides
           <cdr-icon
             use="#external-link"
             modifier="inherit-color"
-            spacing-class="cdr-space-ml-half-x"
+            space="cdr-space-ml-half-x"
           />
         </cdr-link>
       </li>
@@ -88,7 +88,7 @@
       modifier="subheading"
     >Content Resilience, too much content</cdr-text>
     <div class="anchor-example">
-      <cdr-link spacing-class="cdr-space-inset-one-x">
+      <cdr-link space="cdr-space-inset-one-x">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!
@@ -104,7 +104,7 @@
       modifier="subheading"
     >Content Resilience, too little content</cdr-text>
     <div class="anchor-example">
-      <cdr-link spacing-class="cdr-space-inset-one-x">
+      <cdr-link space="cdr-space-inset-one-x">
         K
       </cdr-link>
     </div>
@@ -116,7 +116,7 @@
     <div class="anchor-example">
       <cdr-link
         tag="button"
-        spacing-class="cdr-space-inset-one-x"
+        space="cdr-space-inset-one-x"
         :data-backstop="`cdr-link--button`"
       >I'm a button!</cdr-link>
     </div>
@@ -132,7 +132,7 @@
       <p>
         <cdr-link
           href="https://www.rei.com/"
-          spacing-class="cdr-space-pl-one-x cdr-space-pr-one-x"
+          space="cdr-space-pl-one-x cdr-space-pr-one-x"
         >
           REI.com
         </cdr-link>
@@ -152,7 +152,7 @@
 
     <cdr-link
       href="https://www.rei.com/"
-      spacing-class="cdr-space-pl-one-x cdr-space-pr-one-x"
+      space="cdr-space-pl-one-x cdr-space-pr-one-x"
     >REI.com</cdr-link>
     <cdr-link
       href="https://www.rei.com/"
@@ -160,7 +160,7 @@
     <p>Override (light on dark)</p>
     <cdr-link
       href="https://www.rei.com/"
-      spacing-class="cdr-space-inset-one-x"
+      space="cdr-space-inset-one-x"
       theme="light"
     >REI.com</cdr-link>
   </div>

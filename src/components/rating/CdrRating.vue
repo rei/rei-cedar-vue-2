@@ -6,7 +6,7 @@
     :class="[
       contentPriorityClass,
       sizeClass,
-      spacingClass,
+      space,
       href ? $style['cdr-rating--linked'] : '',
     ]"
   >

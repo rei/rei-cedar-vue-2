@@ -1,5 +1,5 @@
 <template>
-  <div :class="[spacingClass, $style['cdr-radio__wrap']]">
+  <div :class="[space, $style['cdr-radio__wrap']]">
     <label
       :class="[modifierClass, labelClass]"
       ref="label"

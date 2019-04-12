@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[modifierClass, spacingClass]"
+    :class="[modifierClass, space]"
   >
     <p
       v-if="summary"

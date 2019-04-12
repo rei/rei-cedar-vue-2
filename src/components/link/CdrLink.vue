@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[modifierClass, spacingClass, themeClass]"
+    :class="[modifierClass, space, themeClass]"
     :target="target"
     :rel="computedRel"
     :href="tag === 'a' ? href : null /* don't include the href attribute if not an <a> */"

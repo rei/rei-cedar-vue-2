@@ -2,7 +2,7 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    :class="[sizeClass, inheritColorClass, spacingClass]"
+    :class="[sizeClass, inheritColorClass, space]"
     role="presentation"
   >
     <!-- @slot any valid svg xml -->

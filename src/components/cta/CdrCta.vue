@@ -4,7 +4,7 @@
       modifierClass,
       ctaClass,
       fullWidthClass,
-      spacingClass
+      space
     ]"
     :target="target"
     :rel="computedRel"

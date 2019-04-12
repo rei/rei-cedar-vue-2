@@ -24,7 +24,7 @@
       <textarea
         v-if="rows && rows > 1"
         :rows="[rows]"
-        :class="[inputClass, sizeClass, spacingClass]"
+        :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
         v-model="newValue"
         :id="inputId"
@@ -41,7 +41,7 @@
       <input
         v-else
         :type="type"
-        :class="[inputClass, sizeClass, spacingClass]"
+        :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
         v-model="newValue"
         :id="inputId"

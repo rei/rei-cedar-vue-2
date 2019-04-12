@@ -3,7 +3,7 @@
   <!-- eslint-disable max-len -->
   <component
     :is="tag"
-    :class="[modifierClass, spacingClass]"
+    :class="[modifierClass, space]"
   >
     <slot />
   </component>

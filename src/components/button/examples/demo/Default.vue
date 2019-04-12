@@ -56,15 +56,17 @@
     </div>
     <div>
       <cdr-button
-        size="large@sm"
-        space="cdr-space-mr-one-x"
+        :full-width="true"
+        size="large@lg"
+        space="cdr-space-mb-one-x cdr-space-mr-one-x@md"
       >
         button 1
       </cdr-button>
 
       <cdr-button
-        size="large@sm"
-        space="cdr-space-mr-one-x"
+        :full-width="true"
+        modifier="secondary"
+        size="large@lg"
       >
         button 2
       </cdr-button>

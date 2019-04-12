@@ -8,7 +8,7 @@
       Bare list
     </cdr-text>
 
-    <cdr-list spacing-class="cdr-space-mb-two-x">
+    <cdr-list space="cdr-space-mb-two-x">
       <li>List item text</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
         <cdr-list>
@@ -28,7 +28,7 @@
 
     <cdr-list
       modifier="compact"
-      spacing-class="cdr-space-mb-two-x"
+      space="cdr-space-mb-two-x"
     >
       <li>List item text</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
@@ -49,7 +49,7 @@
 
     <cdr-list
       modifier="inline"
-      spacing-class="cdr-space-mb-two-x"
+      space="cdr-space-mb-two-x"
     >
       <li>List item text</li>
       <li>List item text</li>

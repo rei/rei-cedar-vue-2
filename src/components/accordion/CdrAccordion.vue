@@ -2,7 +2,7 @@
   <div
     :class="[
       modifierClass,
-      spacingClass
+      space
     ]"
   >
     <!-- @slot innerHTML on the inside of the accordion component -->

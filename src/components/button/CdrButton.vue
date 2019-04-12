@@ -6,7 +6,7 @@
       buttonSizeClass,
       fullWidthClass,
       iconClass,
-      spacingClass
+      space
     ]"
     :type="tag === 'button' ? type : null"
     @click="onClick"

@@ -3,7 +3,7 @@
     :is="tag"
     :class="[
       modifierClass,
-      spacingClass,
+      space,
       contentPriorityClass,
     ]"
   >

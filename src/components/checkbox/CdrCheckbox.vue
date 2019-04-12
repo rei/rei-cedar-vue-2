@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div :class="[spacingClass, $style['cdr-checkbox__wrap']]">
+  <div :class="[space, $style['cdr-checkbox__wrap']]">
     <label
       :class="[modifierClass, labelClass]"
       ref="label"
