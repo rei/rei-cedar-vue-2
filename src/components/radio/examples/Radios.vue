@@ -174,13 +174,17 @@ export default {
 </script>
 
 <style lang="css">
-.wrap {
-  width: 180px;
-}
-.no-box:checked ~ .no-box__content {
-  color: green;
-}
-.no-box:checked ~ .no-box__content::after {
-  content: '(checked)';
-}
+  .wrap {
+    width: 180px;
+  }
+
+  .no-box:checked ~ .no-box__content {
+    color: green;
+  }
+
+  .no-box:checked ~ .no-box__content::after {
+    content: '(checked)';
+  }
 </style>
+
+
