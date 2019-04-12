@@ -7,7 +7,7 @@
       Image modifiers
     </cdr-text>
     <cdr-row
-      cols="2 4@breakpoint--md"
+      cols="2 4@md"
     >
       <cdr-col>
         <div>

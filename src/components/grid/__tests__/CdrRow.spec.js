@@ -28,83 +28,83 @@ describe('CdrRow.vue', () => {
   it('computes cols classes correctly', () => {
     const wrapper = shallowMount(CdrRow, {
       propsData: {
-        cols: '1 2@breakpoint--sm 2@breakpoint--md 2@breakpoint--lg',
+        cols: '1 2@sm 2@md 2@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-row_row1');
-    expect(wrapper.classes()).toContain('cdr-row_row2@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-row_row2@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-row_row2@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-row_row2@md');
+    expect(wrapper.classes()).toContain('cdr-row_row2@lg');
+    expect(wrapper.classes()).toContain('cdr-row_row2@sm');
   });
 
   it('computes justify classes correctly', () => {
     const wrapper = shallowMount(CdrRow, {
       propsData: {
-        justify: 'center center@breakpoint--sm center@breakpoint--md center@breakpoint--lg',
+        justify: 'center center@sm center@md center@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-row--center');
-    expect(wrapper.classes()).toContain('cdr-row--center@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-row--center@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-row--center@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-row--center@md');
+    expect(wrapper.classes()).toContain('cdr-row--center@lg');
+    expect(wrapper.classes()).toContain('cdr-row--center@sm');
   });
 
   it('computes align classes correctly', () => {
     const wrapper = shallowMount(CdrRow, {
       propsData: {
-        align: 'top top@breakpoint--sm top@breakpoint--md top@breakpoint--lg',
+        align: 'top top@sm top@md top@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-row--top');
-    expect(wrapper.classes()).toContain('cdr-row--top@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-row--top@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-row--top@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-row--top@md');
+    expect(wrapper.classes()).toContain('cdr-row--top@lg');
+    expect(wrapper.classes()).toContain('cdr-row--top@sm');
   });
 
   it('computes gutter classes correctly', () => {
     const wrapper = shallowMount(CdrRow, {
       propsData: {
-        gutter: 'none none@breakpoint--sm none@breakpoint--md none@breakpoint--lg',
+        gutter: 'none none@sm none@md none@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-row--gutter-none');
-    expect(wrapper.classes()).toContain('cdr-row--gutter-none@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-row--gutter-none@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-row--gutter-none@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-row--gutter-none@md');
+    expect(wrapper.classes()).toContain('cdr-row--gutter-none@lg');
+    expect(wrapper.classes()).toContain('cdr-row--gutter-none@sm');
   });
 
   it('computes vertical classes correctly', () => {
     const wrapper = shallowMount(CdrRow, {
       propsData: {
-        vertical: "vertical vertical@breakpoint--sm vertical@breakpoint--md vertical@breakpoint--lg",
+        vertical: "vertical vertical@sm vertical@md vertical@lg",
       }
     });
     expect(wrapper.classes()).toContain('cdr-row--vertical');
-    expect(wrapper.classes()).toContain('cdr-row--vertical@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-row--vertical@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-row--vertical@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-row--vertical@md');
+    expect(wrapper.classes()).toContain('cdr-row--vertical@lg');
+    expect(wrapper.classes()).toContain('cdr-row--vertical@sm');
   });
 
   it('computes wrap classes correctly', () => {
     const wrapper = shallowMount(CdrRow, {
       propsData: {
-        wrap: "wrap@breakpoint--sm wrap@breakpoint--md wrap@breakpoint--lg",
+        wrap: "wrap@sm wrap@md wrap@lg",
       }
     });
-    expect(wrapper.classes()).toContain('cdr-row--wrap@breakpoint--sm');
-    expect(wrapper.classes()).toContain('cdr-row--wrap@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-row--wrap@breakpoint--lg');
+    expect(wrapper.classes()).toContain('cdr-row--wrap@sm');
+    expect(wrapper.classes()).toContain('cdr-row--wrap@md');
+    expect(wrapper.classes()).toContain('cdr-row--wrap@lg');
   });
 
   it('computes nowrap classes correctly', () => {
     const wrapper = shallowMount(CdrRow, {
       propsData: {
-        nowrap: "nowrap nowrap@breakpoint--sm nowrap@breakpoint--md nowrap@breakpoint--lg",
+        nowrap: "nowrap nowrap@sm nowrap@md nowrap@lg",
       }
     });
     expect(wrapper.classes()).toContain('cdr-row--nowrap');
-    expect(wrapper.classes()).toContain('cdr-row--nowrap@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-row--nowrap@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-row--nowrap@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-row--nowrap@md');
+    expect(wrapper.classes()).toContain('cdr-row--nowrap@lg');
+    expect(wrapper.classes()).toContain('cdr-row--nowrap@sm');
   });
 });

@@ -7,7 +7,7 @@
       Cropping (with landscape images)
     </cdr-text>
     <cdr-row
-      cols="1 3@breakpoint--md"
+      cols="1 3@md"
     >
       <cdr-col>
         <div>
@@ -60,7 +60,7 @@
       Cropping (with portrait images)
     </cdr-text>
     <cdr-row
-      cols="1 3@breakpoint--md"
+      cols="1 3@md"
     >
       <cdr-col>
         <div>
@@ -126,7 +126,7 @@
       </cdr-col>
     </cdr-row>
     <cdr-row
-      cols="1 3@breakpoint--md"
+      cols="1 3@md"
     >
       <cdr-col>
         <div>

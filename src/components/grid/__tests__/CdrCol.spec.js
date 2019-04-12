@@ -28,49 +28,49 @@ describe('CdrCol.vue', () => {
   it('computes span classes correctly', () => {
     const wrapper = shallowMount(CdrCol, {
       propsData: {
-        span: '1 2@breakpoint--sm 2@breakpoint--md 2@breakpoint--lg',
+        span: '1 2@sm 2@md 2@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-col_span1');
-    expect(wrapper.classes()).toContain('cdr-col_span2@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-col_span2@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-col_span2@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-col_span2@md');
+    expect(wrapper.classes()).toContain('cdr-col_span2@lg');
+    expect(wrapper.classes()).toContain('cdr-col_span2@sm');
   });
 
   it('computes offsetLeft classes correctly', () => {
     const wrapper = shallowMount(CdrCol, {
       propsData: {
-        offsetLeft: '1 2@breakpoint--sm 2@breakpoint--md 2@breakpoint--lg',
+        offsetLeft: '1 2@sm 2@md 2@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-col--offsetLeft1');
-    expect(wrapper.classes()).toContain('cdr-col--offsetLeft2@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-col--offsetLeft2@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-col--offsetLeft2@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-col--offsetLeft2@md');
+    expect(wrapper.classes()).toContain('cdr-col--offsetLeft2@lg');
+    expect(wrapper.classes()).toContain('cdr-col--offsetLeft2@sm');
   });
 
   it('computes offsetRight classes correctly', () => {
     const wrapper = shallowMount(CdrCol, {
       propsData: {
-        offsetRight: '1 2@breakpoint--sm 2@breakpoint--md 2@breakpoint--lg',
+        offsetRight: '1 2@sm 2@md 2@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-col--offsetRight1');
-    expect(wrapper.classes()).toContain('cdr-col--offsetRight2@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-col--offsetRight2@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-col--offsetRight2@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-col--offsetRight2@md');
+    expect(wrapper.classes()).toContain('cdr-col--offsetRight2@lg');
+    expect(wrapper.classes()).toContain('cdr-col--offsetRight2@sm');
   });
 
   it('computes alignSelf classes correctly', () => {
     const wrapper = shallowMount(CdrCol, {
       propsData: {
-        alignSelf: 'top top@breakpoint--sm top@breakpoint--md top@breakpoint--lg',
+        alignSelf: 'top top@sm top@md top@lg',
       }
     });
     expect(wrapper.classes()).toContain('cdr-col--top');
-    expect(wrapper.classes()).toContain('cdr-col--top@breakpoint--md');
-    expect(wrapper.classes()).toContain('cdr-col--top@breakpoint--lg');
-    expect(wrapper.classes()).toContain('cdr-col--top@breakpoint--sm');
+    expect(wrapper.classes()).toContain('cdr-col--top@md');
+    expect(wrapper.classes()).toContain('cdr-col--top@lg');
+    expect(wrapper.classes()).toContain('cdr-col--top@sm');
   });
 
   it('computes isRow class correctly', () => {

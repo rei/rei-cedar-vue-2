@@ -33,7 +33,7 @@
       <cdr-button
         :on-click="log"
         :full-width="true"
-        size="large@breakpoint--sm"
+        size="large@sm"
       >
         Responsive with default
       </cdr-button>
@@ -56,14 +56,14 @@
     </div>
     <div>
       <cdr-button
-        size="large@breakpoint--sm"
+        size="large@sm"
         space="cdr-space-mr-one-x"
       >
         button 1
       </cdr-button>
 
       <cdr-button
-        size="large@breakpoint--sm"
+        size="large@sm"
         space="cdr-space-mr-one-x"
       >
         button 2

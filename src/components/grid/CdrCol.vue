@@ -85,7 +85,7 @@ export default {
      * Number of columns (out of 12) the column should span. Functions like bootstrap col-* classes.
      * Overrides widths set by "cols" prop on CdrRow.
      * Possible values: {1-12}
-     * Also accepts responsive values with `@breakpoint`: "12 8@breakpoint--lg"
+     * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     span: {
       type: String,
@@ -97,7 +97,7 @@ export default {
     /**
      * Number of columns (out of 12) of empty space to add left of this column.
      * Possible values: {0-12}
-     * Also accepts responsive values with `@breakpoint`: "12 8@breakpoint--lg"
+     * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     offsetLeft: {
       type: String,
@@ -109,7 +109,7 @@ export default {
     /**
      * Number of columns (out of 12) of empty space to add right of this column.
      * Possible values: {0-12}
-     * Also accepts responsive values with `@breakpoint`: "12 8@breakpoint--lg"
+     * Also accepts responsive values with `@breakpoint`: "12 8@lg"
      */
     offsetRight: {
       type: String,
@@ -121,7 +121,7 @@ export default {
     /**
      * How the column should align (overrides CdrRow alignment). See CSS flexbox align-self.
      * Possible values: {top, middle, bottom, stretch}.
-     * Also accepts responsive values with `@breakpoint`: "middle@breakpoint--sm"
+     * Also accepts responsive values with `@breakpoint`: "middle@sm"
      */
     alignSelf: {
       type: String,
