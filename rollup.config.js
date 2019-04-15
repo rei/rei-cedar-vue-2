@@ -52,11 +52,11 @@ const config = {
   input: 'src/components/_index.js',
   output: [
     {
-      file: 'dist/cedar/cjs.js',
+      file: 'dist/cedar.cjs.js',
       format: 'cjs',
     },
     {
-      file: 'dist/cedar/esm.js',
+      file: 'dist/cedar.esm.js',
       format: 'esm',
     },
   ],

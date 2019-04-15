@@ -5,6 +5,8 @@
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
   "author": "REI Software Engineering",
+  "main": "dist/cedar.cjs.js",
+  "module": "dist/cedar.esm.js",
   "private": true,
   "scripts": {
     "dev": "rollup -c -w",
