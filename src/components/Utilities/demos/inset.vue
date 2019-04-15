@@ -1,5 +1,5 @@
 <template>
-  <div data-backstop="inline-space-utilities">
+  <div data-backstop="inset-space-utilities">
     <cdr-text
       tag="h2"
       modifier="heading-medium"
