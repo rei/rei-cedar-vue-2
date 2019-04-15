@@ -5,7 +5,7 @@
       tag="h2"
       modifier="heading-small"
     >
-      Links
+      Links, Pupple?
     </cdr-text>
 
     <cdr-text

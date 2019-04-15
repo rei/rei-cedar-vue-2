@@ -1,4 +1,4 @@
-(function () {
+var cedar = (function () {
   'use strict';
 
   /*!
@@ -268,6 +268,15 @@
    * Return the same value.
    */
   var identity = function (_) { return _; };
+
+  /**
+   * Generate a string containing static keys from compiler modules.
+   */
+  function genStaticKeys (modules) {
+    return modules.reduce(function (keys, m) {
+      return keys.concat(m.staticKeys || [])
+    }, []).join(',')
+  }
 
   /**
    * Check if two values are loosely equal - that is,
@@ -1949,6 +1958,29 @@
 
   /*  */
 
+  var mark;
+  var measure;
+
+  {
+    var perf = inBrowser && window.performance;
+    /* istanbul ignore if */
+    if (
+      perf &&
+      perf.mark &&
+      perf.measure &&
+      perf.clearMarks &&
+      perf.clearMeasures
+    ) {
+      mark = function (tag) { return perf.mark(tag); };
+      measure = function (name, startTag, endTag) {
+        perf.measure(name, startTag, endTag);
+        perf.clearMarks(startTag);
+        perf.clearMarks(endTag);
+        perf.clearMeasures(name);
+      };
+    }
+  }
+
   /* not type checking this file because flow doesn't play well with Proxy */
 
   var initProxy;
@@ -2071,29 +2103,6 @@
       keys = Object.keys(val);
       i = keys.length;
       while (i--) { _traverse(val[keys[i]], seen); }
-    }
-  }
-
-  var mark;
-  var measure;
-
-  {
-    var perf = inBrowser && window.performance;
-    /* istanbul ignore if */
-    if (
-      perf &&
-      perf.mark &&
-      perf.measure &&
-      perf.clearMarks &&
-      perf.clearMeasures
-    ) {
-      mark = function (tag) { return perf.mark(tag); };
-      measure = function (name, startTag, endTag) {
-        perf.measure(name, startTag, endTag);
-        perf.clearMarks(startTag);
-        perf.clearMarks(endTag);
-        perf.clearMeasures(name);
-      };
     }
   }
 
@@ -5307,6 +5316,8 @@
     true
   );
 
+  var isPreTag = function (tag) { return tag === 'pre'; };
+
   var isReservedTag = function (tag) {
     return isHTMLTag(tag) || isSVG(tag)
   };
@@ -6519,16 +6530,583 @@
 
   /*  */
 
-  /*  */
+  var validDivisionCharRE = /[\w).+\-_$\]]/;
+
+  function parseFilters (exp) {
+    var inSingle = false;
+    var inDouble = false;
+    var inTemplateString = false;
+    var inRegex = false;
+    var curly = 0;
+    var square = 0;
+    var paren = 0;
+    var lastFilterIndex = 0;
+    var c, prev, i, expression, filters;
+
+    for (i = 0; i < exp.length; i++) {
+      prev = c;
+      c = exp.charCodeAt(i);
+      if (inSingle) {
+        if (c === 0x27 && prev !== 0x5C) { inSingle = false; }
+      } else if (inDouble) {
+        if (c === 0x22 && prev !== 0x5C) { inDouble = false; }
+      } else if (inTemplateString) {
+        if (c === 0x60 && prev !== 0x5C) { inTemplateString = false; }
+      } else if (inRegex) {
+        if (c === 0x2f && prev !== 0x5C) { inRegex = false; }
+      } else if (
+        c === 0x7C && // pipe
+        exp.charCodeAt(i + 1) !== 0x7C &&
+        exp.charCodeAt(i - 1) !== 0x7C &&
+        !curly && !square && !paren
+      ) {
+        if (expression === undefined) {
+          // first filter, end of expression
+          lastFilterIndex = i + 1;
+          expression = exp.slice(0, i).trim();
+        } else {
+          pushFilter();
+        }
+      } else {
+        switch (c) {
+          case 0x22: inDouble = true; break         // "
+          case 0x27: inSingle = true; break         // '
+          case 0x60: inTemplateString = true; break // `
+          case 0x28: paren++; break                 // (
+          case 0x29: paren--; break                 // )
+          case 0x5B: square++; break                // [
+          case 0x5D: square--; break                // ]
+          case 0x7B: curly++; break                 // {
+          case 0x7D: curly--; break                 // }
+        }
+        if (c === 0x2f) { // /
+          var j = i - 1;
+          var p = (void 0);
+          // find first non-whitespace prev char
+          for (; j >= 0; j--) {
+            p = exp.charAt(j);
+            if (p !== ' ') { break }
+          }
+          if (!p || !validDivisionCharRE.test(p)) {
+            inRegex = true;
+          }
+        }
+      }
+    }
+
+    if (expression === undefined) {
+      expression = exp.slice(0, i).trim();
+    } else if (lastFilterIndex !== 0) {
+      pushFilter();
+    }
+
+    function pushFilter () {
+      (filters || (filters = [])).push(exp.slice(lastFilterIndex, i).trim());
+      lastFilterIndex = i + 1;
+    }
+
+    if (filters) {
+      for (i = 0; i < filters.length; i++) {
+        expression = wrapFilter(expression, filters[i]);
+      }
+    }
+
+    return expression
+  }
+
+  function wrapFilter (exp, filter) {
+    var i = filter.indexOf('(');
+    if (i < 0) {
+      // _f: resolveFilter
+      return ("_f(\"" + filter + "\")(" + exp + ")")
+    } else {
+      var name = filter.slice(0, i);
+      var args = filter.slice(i + 1);
+      return ("_f(\"" + name + "\")(" + exp + (args !== ')' ? ',' + args : args))
+    }
+  }
 
   /*  */
 
+  function baseWarn (msg) {
+    console.error(("[Vue compiler]: " + msg));
+  }
+
+  function pluckModuleFunction (
+    modules,
+    key
+  ) {
+    return modules
+      ? modules.map(function (m) { return m[key]; }).filter(function (_) { return _; })
+      : []
+  }
+
+  function addProp (el, name, value) {
+    (el.props || (el.props = [])).push({ name: name, value: value });
+    el.plain = false;
+  }
+
+  function addAttr (el, name, value) {
+    (el.attrs || (el.attrs = [])).push({ name: name, value: value });
+    el.plain = false;
+  }
+
+  // add a raw attr (use this in preTransforms)
+  function addRawAttr (el, name, value) {
+    el.attrsMap[name] = value;
+    el.attrsList.push({ name: name, value: value });
+  }
+
+  function addDirective (
+    el,
+    name,
+    rawName,
+    value,
+    arg,
+    modifiers
+  ) {
+    (el.directives || (el.directives = [])).push({ name: name, rawName: rawName, value: value, arg: arg, modifiers: modifiers });
+    el.plain = false;
+  }
+
+  function addHandler (
+    el,
+    name,
+    value,
+    modifiers,
+    important,
+    warn
+  ) {
+    modifiers = modifiers || emptyObject;
+    // warn prevent and passive modifier
+    /* istanbul ignore if */
+    if (
+      warn &&
+      modifiers.prevent && modifiers.passive
+    ) {
+      warn(
+        'passive and prevent can\'t be used together. ' +
+        'Passive handler can\'t prevent default event.'
+      );
+    }
+
+    // normalize click.right and click.middle since they don't actually fire
+    // this is technically browser-specific, but at least for now browsers are
+    // the only target envs that have right/middle clicks.
+    if (name === 'click') {
+      if (modifiers.right) {
+        name = 'contextmenu';
+        delete modifiers.right;
+      } else if (modifiers.middle) {
+        name = 'mouseup';
+      }
+    }
+
+    // check capture modifier
+    if (modifiers.capture) {
+      delete modifiers.capture;
+      name = '!' + name; // mark the event as captured
+    }
+    if (modifiers.once) {
+      delete modifiers.once;
+      name = '~' + name; // mark the event as once
+    }
+    /* istanbul ignore if */
+    if (modifiers.passive) {
+      delete modifiers.passive;
+      name = '&' + name; // mark the event as passive
+    }
+
+    var events;
+    if (modifiers.native) {
+      delete modifiers.native;
+      events = el.nativeEvents || (el.nativeEvents = {});
+    } else {
+      events = el.events || (el.events = {});
+    }
+
+    var newHandler = {
+      value: value.trim()
+    };
+    if (modifiers !== emptyObject) {
+      newHandler.modifiers = modifiers;
+    }
+
+    var handlers = events[name];
+    /* istanbul ignore if */
+    if (Array.isArray(handlers)) {
+      important ? handlers.unshift(newHandler) : handlers.push(newHandler);
+    } else if (handlers) {
+      events[name] = important ? [newHandler, handlers] : [handlers, newHandler];
+    } else {
+      events[name] = newHandler;
+    }
+
+    el.plain = false;
+  }
+
+  function getBindingAttr (
+    el,
+    name,
+    getStatic
+  ) {
+    var dynamicValue =
+      getAndRemoveAttr(el, ':' + name) ||
+      getAndRemoveAttr(el, 'v-bind:' + name);
+    if (dynamicValue != null) {
+      return parseFilters(dynamicValue)
+    } else if (getStatic !== false) {
+      var staticValue = getAndRemoveAttr(el, name);
+      if (staticValue != null) {
+        return JSON.stringify(staticValue)
+      }
+    }
+  }
+
+  // note: this only removes the attr from the Array (attrsList) so that it
+  // doesn't get processed by processAttrs.
+  // By default it does NOT remove it from the map (attrsMap) because the map is
+  // needed during codegen.
+  function getAndRemoveAttr (
+    el,
+    name,
+    removeFromMap
+  ) {
+    var val;
+    if ((val = el.attrsMap[name]) != null) {
+      var list = el.attrsList;
+      for (var i = 0, l = list.length; i < l; i++) {
+        if (list[i].name === name) {
+          list.splice(i, 1);
+          break
+        }
+      }
+    }
+    if (removeFromMap) {
+      delete el.attrsMap[name];
+    }
+    return val
+  }
+
   /*  */
+
+  /**
+   * Cross-platform code generation for component v-model
+   */
+  function genComponentModel (
+    el,
+    value,
+    modifiers
+  ) {
+    var ref = modifiers || {};
+    var number = ref.number;
+    var trim = ref.trim;
+
+    var baseValueExpression = '$$v';
+    var valueExpression = baseValueExpression;
+    if (trim) {
+      valueExpression =
+        "(typeof " + baseValueExpression + " === 'string'" +
+        "? " + baseValueExpression + ".trim()" +
+        ": " + baseValueExpression + ")";
+    }
+    if (number) {
+      valueExpression = "_n(" + valueExpression + ")";
+    }
+    var assignment = genAssignmentCode(value, valueExpression);
+
+    el.model = {
+      value: ("(" + value + ")"),
+      expression: JSON.stringify(value),
+      callback: ("function (" + baseValueExpression + ") {" + assignment + "}")
+    };
+  }
+
+  /**
+   * Cross-platform codegen helper for generating v-model value assignment code.
+   */
+  function genAssignmentCode (
+    value,
+    assignment
+  ) {
+    var res = parseModel(value);
+    if (res.key === null) {
+      return (value + "=" + assignment)
+    } else {
+      return ("$set(" + (res.exp) + ", " + (res.key) + ", " + assignment + ")")
+    }
+  }
+
+  /**
+   * Parse a v-model expression into a base path and a final key segment.
+   * Handles both dot-path and possible square brackets.
+   *
+   * Possible cases:
+   *
+   * - test
+   * - test[key]
+   * - test[test1[key]]
+   * - test["a"][key]
+   * - xxx.test[a[a].test1[key]]
+   * - test.xxx.a["asa"][test1[key]]
+   *
+   */
+
+  var len, str, chr, index$1, expressionPos, expressionEndPos;
+
+
+
+  function parseModel (val) {
+    // Fix https://github.com/vuejs/vue/pull/7730
+    // allow v-model="obj.val " (trailing whitespace)
+    val = val.trim();
+    len = val.length;
+
+    if (val.indexOf('[') < 0 || val.lastIndexOf(']') < len - 1) {
+      index$1 = val.lastIndexOf('.');
+      if (index$1 > -1) {
+        return {
+          exp: val.slice(0, index$1),
+          key: '"' + val.slice(index$1 + 1) + '"'
+        }
+      } else {
+        return {
+          exp: val,
+          key: null
+        }
+      }
+    }
+
+    str = val;
+    index$1 = expressionPos = expressionEndPos = 0;
+
+    while (!eof()) {
+      chr = next();
+      /* istanbul ignore if */
+      if (isStringStart(chr)) {
+        parseString(chr);
+      } else if (chr === 0x5B) {
+        parseBracket(chr);
+      }
+    }
+
+    return {
+      exp: val.slice(0, expressionPos),
+      key: val.slice(expressionPos + 1, expressionEndPos)
+    }
+  }
+
+  function next () {
+    return str.charCodeAt(++index$1)
+  }
+
+  function eof () {
+    return index$1 >= len
+  }
+
+  function isStringStart (chr) {
+    return chr === 0x22 || chr === 0x27
+  }
+
+  function parseBracket (chr) {
+    var inBracket = 1;
+    expressionPos = index$1;
+    while (!eof()) {
+      chr = next();
+      if (isStringStart(chr)) {
+        parseString(chr);
+        continue
+      }
+      if (chr === 0x5B) { inBracket++; }
+      if (chr === 0x5D) { inBracket--; }
+      if (inBracket === 0) {
+        expressionEndPos = index$1;
+        break
+      }
+    }
+  }
+
+  function parseString (chr) {
+    var stringQuote = chr;
+    while (!eof()) {
+      chr = next();
+      if (chr === stringQuote) {
+        break
+      }
+    }
+  }
+
+  /*  */
+
+  var warn$1;
 
   // in some cases, the event used has to be determined at runtime
   // so we used some reserved tokens during compile.
   var RANGE_TOKEN = '__r';
   var CHECKBOX_RADIO_TOKEN = '__c';
+
+  function model (
+    el,
+    dir,
+    _warn
+  ) {
+    warn$1 = _warn;
+    var value = dir.value;
+    var modifiers = dir.modifiers;
+    var tag = el.tag;
+    var type = el.attrsMap.type;
+
+    {
+      // inputs with type="file" are read only and setting the input's
+      // value will throw an error.
+      if (tag === 'input' && type === 'file') {
+        warn$1(
+          "<" + (el.tag) + " v-model=\"" + value + "\" type=\"file\">:\n" +
+          "File inputs are read only. Use a v-on:change listener instead."
+        );
+      }
+    }
+
+    if (el.component) {
+      genComponentModel(el, value, modifiers);
+      // component v-model doesn't need extra runtime
+      return false
+    } else if (tag === 'select') {
+      genSelect(el, value, modifiers);
+    } else if (tag === 'input' && type === 'checkbox') {
+      genCheckboxModel(el, value, modifiers);
+    } else if (tag === 'input' && type === 'radio') {
+      genRadioModel(el, value, modifiers);
+    } else if (tag === 'input' || tag === 'textarea') {
+      genDefaultModel(el, value, modifiers);
+    } else if (!config.isReservedTag(tag)) {
+      genComponentModel(el, value, modifiers);
+      // component v-model doesn't need extra runtime
+      return false
+    } else {
+      warn$1(
+        "<" + (el.tag) + " v-model=\"" + value + "\">: " +
+        "v-model is not supported on this element type. " +
+        'If you are working with contenteditable, it\'s recommended to ' +
+        'wrap a library dedicated for that purpose inside a custom component.'
+      );
+    }
+
+    // ensure runtime directive metadata
+    return true
+  }
+
+  function genCheckboxModel (
+    el,
+    value,
+    modifiers
+  ) {
+    var number = modifiers && modifiers.number;
+    var valueBinding = getBindingAttr(el, 'value') || 'null';
+    var trueValueBinding = getBindingAttr(el, 'true-value') || 'true';
+    var falseValueBinding = getBindingAttr(el, 'false-value') || 'false';
+    addProp(el, 'checked',
+      "Array.isArray(" + value + ")" +
+      "?_i(" + value + "," + valueBinding + ")>-1" + (
+        trueValueBinding === 'true'
+          ? (":(" + value + ")")
+          : (":_q(" + value + "," + trueValueBinding + ")")
+      )
+    );
+    addHandler(el, 'change',
+      "var $$a=" + value + "," +
+          '$$el=$event.target,' +
+          "$$c=$$el.checked?(" + trueValueBinding + "):(" + falseValueBinding + ");" +
+      'if(Array.isArray($$a)){' +
+        "var $$v=" + (number ? '_n(' + valueBinding + ')' : valueBinding) + "," +
+            '$$i=_i($$a,$$v);' +
+        "if($$el.checked){$$i<0&&(" + (genAssignmentCode(value, '$$a.concat([$$v])')) + ")}" +
+        "else{$$i>-1&&(" + (genAssignmentCode(value, '$$a.slice(0,$$i).concat($$a.slice($$i+1))')) + ")}" +
+      "}else{" + (genAssignmentCode(value, '$$c')) + "}",
+      null, true
+    );
+  }
+
+  function genRadioModel (
+    el,
+    value,
+    modifiers
+  ) {
+    var number = modifiers && modifiers.number;
+    var valueBinding = getBindingAttr(el, 'value') || 'null';
+    valueBinding = number ? ("_n(" + valueBinding + ")") : valueBinding;
+    addProp(el, 'checked', ("_q(" + value + "," + valueBinding + ")"));
+    addHandler(el, 'change', genAssignmentCode(value, valueBinding), null, true);
+  }
+
+  function genSelect (
+    el,
+    value,
+    modifiers
+  ) {
+    var number = modifiers && modifiers.number;
+    var selectedVal = "Array.prototype.filter" +
+      ".call($event.target.options,function(o){return o.selected})" +
+      ".map(function(o){var val = \"_value\" in o ? o._value : o.value;" +
+      "return " + (number ? '_n(val)' : 'val') + "})";
+
+    var assignment = '$event.target.multiple ? $$selectedVal : $$selectedVal[0]';
+    var code = "var $$selectedVal = " + selectedVal + ";";
+    code = code + " " + (genAssignmentCode(value, assignment));
+    addHandler(el, 'change', code, null, true);
+  }
+
+  function genDefaultModel (
+    el,
+    value,
+    modifiers
+  ) {
+    var type = el.attrsMap.type;
+
+    // warn if v-bind:value conflicts with v-model
+    // except for inputs with v-bind:type
+    {
+      var value$1 = el.attrsMap['v-bind:value'] || el.attrsMap[':value'];
+      var typeBinding = el.attrsMap['v-bind:type'] || el.attrsMap[':type'];
+      if (value$1 && !typeBinding) {
+        var binding = el.attrsMap['v-bind:value'] ? 'v-bind:value' : ':value';
+        warn$1(
+          binding + "=\"" + value$1 + "\" conflicts with v-model on the same element " +
+          'because the latter already expands to a value binding internally'
+        );
+      }
+    }
+
+    var ref = modifiers || {};
+    var lazy = ref.lazy;
+    var number = ref.number;
+    var trim = ref.trim;
+    var needCompositionGuard = !lazy && type !== 'range';
+    var event = lazy
+      ? 'change'
+      : type === 'range'
+        ? RANGE_TOKEN
+        : 'input';
+
+    var valueExpression = '$event.target.value';
+    if (trim) {
+      valueExpression = "$event.target.value.trim()";
+    }
+    if (number) {
+      valueExpression = "_n(" + valueExpression + ")";
+    }
+
+    var code = genAssignmentCode(value, valueExpression);
+    if (needCompositionGuard) {
+      code = "if($event.target.composing)return;" + code;
+    }
+
+    addProp(el, 'value', ("(" + value + ")"));
+    addHandler(el, event, code, null, true);
+    if (trim || number) {
+      addHandler(el, 'blur', '$forceUpdate()');
+    }
+  }
 
   /*  */
 
@@ -8076,6 +8654,2398 @@
     }, 0);
   }
 
+  /*  */
+
+  var defaultTagRE = /\{\{((?:.|\r?\n)+?)\}\}/g;
+  var regexEscapeRE = /[-.*+?^${}()|[\]\/\\]/g;
+
+  var buildRegex = cached(function (delimiters) {
+    var open = delimiters[0].replace(regexEscapeRE, '\\$&');
+    var close = delimiters[1].replace(regexEscapeRE, '\\$&');
+    return new RegExp(open + '((?:.|\\n)+?)' + close, 'g')
+  });
+
+
+
+  function parseText (
+    text,
+    delimiters
+  ) {
+    var tagRE = delimiters ? buildRegex(delimiters) : defaultTagRE;
+    if (!tagRE.test(text)) {
+      return
+    }
+    var tokens = [];
+    var rawTokens = [];
+    var lastIndex = tagRE.lastIndex = 0;
+    var match, index, tokenValue;
+    while ((match = tagRE.exec(text))) {
+      index = match.index;
+      // push text token
+      if (index > lastIndex) {
+        rawTokens.push(tokenValue = text.slice(lastIndex, index));
+        tokens.push(JSON.stringify(tokenValue));
+      }
+      // tag token
+      var exp = parseFilters(match[1].trim());
+      tokens.push(("_s(" + exp + ")"));
+      rawTokens.push({ '@binding': exp });
+      lastIndex = index + match[0].length;
+    }
+    if (lastIndex < text.length) {
+      rawTokens.push(tokenValue = text.slice(lastIndex));
+      tokens.push(JSON.stringify(tokenValue));
+    }
+    return {
+      expression: tokens.join('+'),
+      tokens: rawTokens
+    }
+  }
+
+  /*  */
+
+  function transformNode (el, options) {
+    var warn = options.warn || baseWarn;
+    var staticClass = getAndRemoveAttr(el, 'class');
+    if (staticClass) {
+      var res = parseText(staticClass, options.delimiters);
+      if (res) {
+        warn(
+          "class=\"" + staticClass + "\": " +
+          'Interpolation inside attributes has been removed. ' +
+          'Use v-bind or the colon shorthand instead. For example, ' +
+          'instead of <div class="{{ val }}">, use <div :class="val">.'
+        );
+      }
+    }
+    if (staticClass) {
+      el.staticClass = JSON.stringify(staticClass);
+    }
+    var classBinding = getBindingAttr(el, 'class', false /* getStatic */);
+    if (classBinding) {
+      el.classBinding = classBinding;
+    }
+  }
+
+  function genData (el) {
+    var data = '';
+    if (el.staticClass) {
+      data += "staticClass:" + (el.staticClass) + ",";
+    }
+    if (el.classBinding) {
+      data += "class:" + (el.classBinding) + ",";
+    }
+    return data
+  }
+
+  var klass$1 = {
+    staticKeys: ['staticClass'],
+    transformNode: transformNode,
+    genData: genData
+  };
+
+  /*  */
+
+  function transformNode$1 (el, options) {
+    var warn = options.warn || baseWarn;
+    var staticStyle = getAndRemoveAttr(el, 'style');
+    if (staticStyle) {
+      /* istanbul ignore if */
+      {
+        var res = parseText(staticStyle, options.delimiters);
+        if (res) {
+          warn(
+            "style=\"" + staticStyle + "\": " +
+            'Interpolation inside attributes has been removed. ' +
+            'Use v-bind or the colon shorthand instead. For example, ' +
+            'instead of <div style="{{ val }}">, use <div :style="val">.'
+          );
+        }
+      }
+      el.staticStyle = JSON.stringify(parseStyleText(staticStyle));
+    }
+
+    var styleBinding = getBindingAttr(el, 'style', false /* getStatic */);
+    if (styleBinding) {
+      el.styleBinding = styleBinding;
+    }
+  }
+
+  function genData$1 (el) {
+    var data = '';
+    if (el.staticStyle) {
+      data += "staticStyle:" + (el.staticStyle) + ",";
+    }
+    if (el.styleBinding) {
+      data += "style:(" + (el.styleBinding) + "),";
+    }
+    return data
+  }
+
+  var style$1 = {
+    staticKeys: ['staticStyle'],
+    transformNode: transformNode$1,
+    genData: genData$1
+  };
+
+  /*  */
+
+  var decoder;
+
+  var he = {
+    decode: function decode (html) {
+      decoder = decoder || document.createElement('div');
+      decoder.innerHTML = html;
+      return decoder.textContent
+    }
+  };
+
+  /*  */
+
+  var isUnaryTag = makeMap(
+    'area,base,br,col,embed,frame,hr,img,input,isindex,keygen,' +
+    'link,meta,param,source,track,wbr'
+  );
+
+  // Elements that you can, intentionally, leave open
+  // (and which close themselves)
+  var canBeLeftOpenTag = makeMap(
+    'colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr,source'
+  );
+
+  // HTML5 tags https://html.spec.whatwg.org/multipage/indices.html#elements-3
+  // Phrasing Content https://html.spec.whatwg.org/multipage/dom.html#phrasing-content
+  var isNonPhrasingTag = makeMap(
+    'address,article,aside,base,blockquote,body,caption,col,colgroup,dd,' +
+    'details,dialog,div,dl,dt,fieldset,figcaption,figure,footer,form,' +
+    'h1,h2,h3,h4,h5,h6,head,header,hgroup,hr,html,legend,li,menuitem,meta,' +
+    'optgroup,option,param,rp,rt,source,style,summary,tbody,td,tfoot,th,thead,' +
+    'title,tr,track'
+  );
+
+  /**
+   * Not type-checking this file because it's mostly vendor code.
+   */
+
+  // Regular Expressions for parsing tags and attributes
+  var attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
+  // could use https://www.w3.org/TR/1999/REC-xml-names-19990114/#NT-QName
+  // but for Vue templates we can enforce a simple charset
+  var ncname = '[a-zA-Z_][\\w\\-\\.]*';
+  var qnameCapture = "((?:" + ncname + "\\:)?" + ncname + ")";
+  var startTagOpen = new RegExp(("^<" + qnameCapture));
+  var startTagClose = /^\s*(\/?)>/;
+  var endTag = new RegExp(("^<\\/" + qnameCapture + "[^>]*>"));
+  var doctype = /^<!DOCTYPE [^>]+>/i;
+  // #7298: escape - to avoid being pased as HTML comment when inlined in page
+  var comment = /^<!\--/;
+  var conditionalComment = /^<!\[/;
+
+  // Special Elements (can contain anything)
+  var isPlainTextElement = makeMap('script,style,textarea', true);
+  var reCache = {};
+
+  var decodingMap = {
+    '&lt;': '<',
+    '&gt;': '>',
+    '&quot;': '"',
+    '&amp;': '&',
+    '&#10;': '\n',
+    '&#9;': '\t'
+  };
+  var encodedAttr = /&(?:lt|gt|quot|amp);/g;
+  var encodedAttrWithNewLines = /&(?:lt|gt|quot|amp|#10|#9);/g;
+
+  // #5992
+  var isIgnoreNewlineTag = makeMap('pre,textarea', true);
+  var shouldIgnoreFirstNewline = function (tag, html) { return tag && isIgnoreNewlineTag(tag) && html[0] === '\n'; };
+
+  function decodeAttr (value, shouldDecodeNewlines) {
+    var re = shouldDecodeNewlines ? encodedAttrWithNewLines : encodedAttr;
+    return value.replace(re, function (match) { return decodingMap[match]; })
+  }
+
+  function parseHTML (html, options) {
+    var stack = [];
+    var expectHTML = options.expectHTML;
+    var isUnaryTag$$1 = options.isUnaryTag || no;
+    var canBeLeftOpenTag$$1 = options.canBeLeftOpenTag || no;
+    var index = 0;
+    var last, lastTag;
+    while (html) {
+      last = html;
+      // Make sure we're not in a plaintext content element like script/style
+      if (!lastTag || !isPlainTextElement(lastTag)) {
+        var textEnd = html.indexOf('<');
+        if (textEnd === 0) {
+          // Comment:
+          if (comment.test(html)) {
+            var commentEnd = html.indexOf('-->');
+
+            if (commentEnd >= 0) {
+              if (options.shouldKeepComment) {
+                options.comment(html.substring(4, commentEnd));
+              }
+              advance(commentEnd + 3);
+              continue
+            }
+          }
+
+          // http://en.wikipedia.org/wiki/Conditional_comment#Downlevel-revealed_conditional_comment
+          if (conditionalComment.test(html)) {
+            var conditionalEnd = html.indexOf(']>');
+
+            if (conditionalEnd >= 0) {
+              advance(conditionalEnd + 2);
+              continue
+            }
+          }
+
+          // Doctype:
+          var doctypeMatch = html.match(doctype);
+          if (doctypeMatch) {
+            advance(doctypeMatch[0].length);
+            continue
+          }
+
+          // End tag:
+          var endTagMatch = html.match(endTag);
+          if (endTagMatch) {
+            var curIndex = index;
+            advance(endTagMatch[0].length);
+            parseEndTag(endTagMatch[1], curIndex, index);
+            continue
+          }
+
+          // Start tag:
+          var startTagMatch = parseStartTag();
+          if (startTagMatch) {
+            handleStartTag(startTagMatch);
+            if (shouldIgnoreFirstNewline(startTagMatch.tagName, html)) {
+              advance(1);
+            }
+            continue
+          }
+        }
+
+        var text = (void 0), rest = (void 0), next = (void 0);
+        if (textEnd >= 0) {
+          rest = html.slice(textEnd);
+          while (
+            !endTag.test(rest) &&
+            !startTagOpen.test(rest) &&
+            !comment.test(rest) &&
+            !conditionalComment.test(rest)
+          ) {
+            // < in plain text, be forgiving and treat it as text
+            next = rest.indexOf('<', 1);
+            if (next < 0) { break }
+            textEnd += next;
+            rest = html.slice(textEnd);
+          }
+          text = html.substring(0, textEnd);
+          advance(textEnd);
+        }
+
+        if (textEnd < 0) {
+          text = html;
+          html = '';
+        }
+
+        if (options.chars && text) {
+          options.chars(text);
+        }
+      } else {
+        var endTagLength = 0;
+        var stackedTag = lastTag.toLowerCase();
+        var reStackedTag = reCache[stackedTag] || (reCache[stackedTag] = new RegExp('([\\s\\S]*?)(</' + stackedTag + '[^>]*>)', 'i'));
+        var rest$1 = html.replace(reStackedTag, function (all, text, endTag) {
+          endTagLength = endTag.length;
+          if (!isPlainTextElement(stackedTag) && stackedTag !== 'noscript') {
+            text = text
+              .replace(/<!\--([\s\S]*?)-->/g, '$1') // #7298
+              .replace(/<!\[CDATA\[([\s\S]*?)]]>/g, '$1');
+          }
+          if (shouldIgnoreFirstNewline(stackedTag, text)) {
+            text = text.slice(1);
+          }
+          if (options.chars) {
+            options.chars(text);
+          }
+          return ''
+        });
+        index += html.length - rest$1.length;
+        html = rest$1;
+        parseEndTag(stackedTag, index - endTagLength, index);
+      }
+
+      if (html === last) {
+        options.chars && options.chars(html);
+        if (!stack.length && options.warn) {
+          options.warn(("Mal-formatted tag at end of template: \"" + html + "\""));
+        }
+        break
+      }
+    }
+
+    // Clean up any remaining tags
+    parseEndTag();
+
+    function advance (n) {
+      index += n;
+      html = html.substring(n);
+    }
+
+    function parseStartTag () {
+      var start = html.match(startTagOpen);
+      if (start) {
+        var match = {
+          tagName: start[1],
+          attrs: [],
+          start: index
+        };
+        advance(start[0].length);
+        var end, attr;
+        while (!(end = html.match(startTagClose)) && (attr = html.match(attribute))) {
+          advance(attr[0].length);
+          match.attrs.push(attr);
+        }
+        if (end) {
+          match.unarySlash = end[1];
+          advance(end[0].length);
+          match.end = index;
+          return match
+        }
+      }
+    }
+
+    function handleStartTag (match) {
+      var tagName = match.tagName;
+      var unarySlash = match.unarySlash;
+
+      if (expectHTML) {
+        if (lastTag === 'p' && isNonPhrasingTag(tagName)) {
+          parseEndTag(lastTag);
+        }
+        if (canBeLeftOpenTag$$1(tagName) && lastTag === tagName) {
+          parseEndTag(tagName);
+        }
+      }
+
+      var unary = isUnaryTag$$1(tagName) || !!unarySlash;
+
+      var l = match.attrs.length;
+      var attrs = new Array(l);
+      for (var i = 0; i < l; i++) {
+        var args = match.attrs[i];
+        var value = args[3] || args[4] || args[5] || '';
+        var shouldDecodeNewlines = tagName === 'a' && args[1] === 'href'
+          ? options.shouldDecodeNewlinesForHref
+          : options.shouldDecodeNewlines;
+        attrs[i] = {
+          name: args[1],
+          value: decodeAttr(value, shouldDecodeNewlines)
+        };
+      }
+
+      if (!unary) {
+        stack.push({ tag: tagName, lowerCasedTag: tagName.toLowerCase(), attrs: attrs });
+        lastTag = tagName;
+      }
+
+      if (options.start) {
+        options.start(tagName, attrs, unary, match.start, match.end);
+      }
+    }
+
+    function parseEndTag (tagName, start, end) {
+      var pos, lowerCasedTagName;
+      if (start == null) { start = index; }
+      if (end == null) { end = index; }
+
+      // Find the closest opened tag of the same type
+      if (tagName) {
+        lowerCasedTagName = tagName.toLowerCase();
+        for (pos = stack.length - 1; pos >= 0; pos--) {
+          if (stack[pos].lowerCasedTag === lowerCasedTagName) {
+            break
+          }
+        }
+      } else {
+        // If no tag name is provided, clean shop
+        pos = 0;
+      }
+
+      if (pos >= 0) {
+        // Close all the open elements, up the stack
+        for (var i = stack.length - 1; i >= pos; i--) {
+          if (i > pos || !tagName &&
+            options.warn
+          ) {
+            options.warn(
+              ("tag <" + (stack[i].tag) + "> has no matching end tag.")
+            );
+          }
+          if (options.end) {
+            options.end(stack[i].tag, start, end);
+          }
+        }
+
+        // Remove the open elements from the stack
+        stack.length = pos;
+        lastTag = pos && stack[pos - 1].tag;
+      } else if (lowerCasedTagName === 'br') {
+        if (options.start) {
+          options.start(tagName, [], true, start, end);
+        }
+      } else if (lowerCasedTagName === 'p') {
+        if (options.start) {
+          options.start(tagName, [], false, start, end);
+        }
+        if (options.end) {
+          options.end(tagName, start, end);
+        }
+      }
+    }
+  }
+
+  /*  */
+
+  var onRE = /^@|^v-on:/;
+  var dirRE = /^v-|^@|^:/;
+  var forAliasRE = /([\s\S]*?)\s+(?:in|of)\s+([\s\S]*)/;
+  var forIteratorRE = /,([^,\}\]]*)(?:,([^,\}\]]*))?$/;
+  var stripParensRE = /^\(|\)$/g;
+
+  var argRE = /:(.*)$/;
+  var bindRE = /^:|^v-bind:/;
+  var modifierRE = /\.[^.]+/g;
+
+  var decodeHTMLCached = cached(he.decode);
+
+  // configurable state
+  var warn$2;
+  var delimiters;
+  var transforms;
+  var preTransforms;
+  var postTransforms;
+  var platformIsPreTag;
+  var platformMustUseProp;
+  var platformGetTagNamespace;
+
+
+
+  function createASTElement (
+    tag,
+    attrs,
+    parent
+  ) {
+    return {
+      type: 1,
+      tag: tag,
+      attrsList: attrs,
+      attrsMap: makeAttrsMap(attrs),
+      parent: parent,
+      children: []
+    }
+  }
+
+  /**
+   * Convert HTML string to AST.
+   */
+  function parse (
+    template,
+    options
+  ) {
+    warn$2 = options.warn || baseWarn;
+
+    platformIsPreTag = options.isPreTag || no;
+    platformMustUseProp = options.mustUseProp || no;
+    platformGetTagNamespace = options.getTagNamespace || no;
+
+    transforms = pluckModuleFunction(options.modules, 'transformNode');
+    preTransforms = pluckModuleFunction(options.modules, 'preTransformNode');
+    postTransforms = pluckModuleFunction(options.modules, 'postTransformNode');
+
+    delimiters = options.delimiters;
+
+    var stack = [];
+    var preserveWhitespace = options.preserveWhitespace !== false;
+    var root;
+    var currentParent;
+    var inVPre = false;
+    var inPre = false;
+    var warned = false;
+
+    function warnOnce (msg) {
+      if (!warned) {
+        warned = true;
+        warn$2(msg);
+      }
+    }
+
+    function closeElement (element) {
+      // check pre state
+      if (element.pre) {
+        inVPre = false;
+      }
+      if (platformIsPreTag(element.tag)) {
+        inPre = false;
+      }
+      // apply post-transforms
+      for (var i = 0; i < postTransforms.length; i++) {
+        postTransforms[i](element, options);
+      }
+    }
+
+    parseHTML(template, {
+      warn: warn$2,
+      expectHTML: options.expectHTML,
+      isUnaryTag: options.isUnaryTag,
+      canBeLeftOpenTag: options.canBeLeftOpenTag,
+      shouldDecodeNewlines: options.shouldDecodeNewlines,
+      shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
+      shouldKeepComment: options.comments,
+      start: function start (tag, attrs, unary) {
+        // check namespace.
+        // inherit parent ns if there is one
+        var ns = (currentParent && currentParent.ns) || platformGetTagNamespace(tag);
+
+        // handle IE svg bug
+        /* istanbul ignore if */
+        if (isIE && ns === 'svg') {
+          attrs = guardIESVGBug(attrs);
+        }
+
+        var element = createASTElement(tag, attrs, currentParent);
+        if (ns) {
+          element.ns = ns;
+        }
+
+        if (isForbiddenTag(element) && !isServerRendering()) {
+          element.forbidden = true;
+          warn$2(
+            'Templates should only be responsible for mapping the state to the ' +
+            'UI. Avoid placing tags with side-effects in your templates, such as ' +
+            "<" + tag + ">" + ', as they will not be parsed.'
+          );
+        }
+
+        // apply pre-transforms
+        for (var i = 0; i < preTransforms.length; i++) {
+          element = preTransforms[i](element, options) || element;
+        }
+
+        if (!inVPre) {
+          processPre(element);
+          if (element.pre) {
+            inVPre = true;
+          }
+        }
+        if (platformIsPreTag(element.tag)) {
+          inPre = true;
+        }
+        if (inVPre) {
+          processRawAttrs(element);
+        } else if (!element.processed) {
+          // structural directives
+          processFor(element);
+          processIf(element);
+          processOnce(element);
+          // element-scope stuff
+          processElement(element, options);
+        }
+
+        function checkRootConstraints (el) {
+          {
+            if (el.tag === 'slot' || el.tag === 'template') {
+              warnOnce(
+                "Cannot use <" + (el.tag) + "> as component root element because it may " +
+                'contain multiple nodes.'
+              );
+            }
+            if (el.attrsMap.hasOwnProperty('v-for')) {
+              warnOnce(
+                'Cannot use v-for on stateful component root element because ' +
+                'it renders multiple elements.'
+              );
+            }
+          }
+        }
+
+        // tree management
+        if (!root) {
+          root = element;
+          checkRootConstraints(root);
+        } else if (!stack.length) {
+          // allow root elements with v-if, v-else-if and v-else
+          if (root.if && (element.elseif || element.else)) {
+            checkRootConstraints(element);
+            addIfCondition(root, {
+              exp: element.elseif,
+              block: element
+            });
+          } else {
+            warnOnce(
+              "Component template should contain exactly one root element. " +
+              "If you are using v-if on multiple elements, " +
+              "use v-else-if to chain them instead."
+            );
+          }
+        }
+        if (currentParent && !element.forbidden) {
+          if (element.elseif || element.else) {
+            processIfConditions(element, currentParent);
+          } else if (element.slotScope) { // scoped slot
+            currentParent.plain = false;
+            var name = element.slotTarget || '"default"'
+            ;(currentParent.scopedSlots || (currentParent.scopedSlots = {}))[name] = element;
+          } else {
+            currentParent.children.push(element);
+            element.parent = currentParent;
+          }
+        }
+        if (!unary) {
+          currentParent = element;
+          stack.push(element);
+        } else {
+          closeElement(element);
+        }
+      },
+
+      end: function end () {
+        // remove trailing whitespace
+        var element = stack[stack.length - 1];
+        var lastNode = element.children[element.children.length - 1];
+        if (lastNode && lastNode.type === 3 && lastNode.text === ' ' && !inPre) {
+          element.children.pop();
+        }
+        // pop stack
+        stack.length -= 1;
+        currentParent = stack[stack.length - 1];
+        closeElement(element);
+      },
+
+      chars: function chars (text) {
+        if (!currentParent) {
+          {
+            if (text === template) {
+              warnOnce(
+                'Component template requires a root element, rather than just text.'
+              );
+            } else if ((text = text.trim())) {
+              warnOnce(
+                ("text \"" + text + "\" outside root element will be ignored.")
+              );
+            }
+          }
+          return
+        }
+        // IE textarea placeholder bug
+        /* istanbul ignore if */
+        if (isIE &&
+          currentParent.tag === 'textarea' &&
+          currentParent.attrsMap.placeholder === text
+        ) {
+          return
+        }
+        var children = currentParent.children;
+        text = inPre || text.trim()
+          ? isTextTag(currentParent) ? text : decodeHTMLCached(text)
+          // only preserve whitespace if its not right after a starting tag
+          : preserveWhitespace && children.length ? ' ' : '';
+        if (text) {
+          var res;
+          if (!inVPre && text !== ' ' && (res = parseText(text, delimiters))) {
+            children.push({
+              type: 2,
+              expression: res.expression,
+              tokens: res.tokens,
+              text: text
+            });
+          } else if (text !== ' ' || !children.length || children[children.length - 1].text !== ' ') {
+            children.push({
+              type: 3,
+              text: text
+            });
+          }
+        }
+      },
+      comment: function comment (text) {
+        currentParent.children.push({
+          type: 3,
+          text: text,
+          isComment: true
+        });
+      }
+    });
+    return root
+  }
+
+  function processPre (el) {
+    if (getAndRemoveAttr(el, 'v-pre') != null) {
+      el.pre = true;
+    }
+  }
+
+  function processRawAttrs (el) {
+    var l = el.attrsList.length;
+    if (l) {
+      var attrs = el.attrs = new Array(l);
+      for (var i = 0; i < l; i++) {
+        attrs[i] = {
+          name: el.attrsList[i].name,
+          value: JSON.stringify(el.attrsList[i].value)
+        };
+      }
+    } else if (!el.pre) {
+      // non root node in pre blocks with no attributes
+      el.plain = true;
+    }
+  }
+
+  function processElement (element, options) {
+    processKey(element);
+
+    // determine whether this is a plain element after
+    // removing structural attributes
+    element.plain = !element.key && !element.attrsList.length;
+
+    processRef(element);
+    processSlot(element);
+    processComponent(element);
+    for (var i = 0; i < transforms.length; i++) {
+      element = transforms[i](element, options) || element;
+    }
+    processAttrs(element);
+  }
+
+  function processKey (el) {
+    var exp = getBindingAttr(el, 'key');
+    if (exp) {
+      {
+        if (el.tag === 'template') {
+          warn$2("<template> cannot be keyed. Place the key on real elements instead.");
+        }
+        if (el.for) {
+          var iterator = el.iterator2 || el.iterator1;
+          var parent = el.parent;
+          if (iterator && iterator === exp && parent && parent.tag === 'transition-group') {
+            warn$2(
+              "Do not use v-for index as key on <transition-group> children, " +
+              "this is the same as not using keys."
+            );
+          }
+        }
+      }
+      el.key = exp;
+    }
+  }
+
+  function processRef (el) {
+    var ref = getBindingAttr(el, 'ref');
+    if (ref) {
+      el.ref = ref;
+      el.refInFor = checkInFor(el);
+    }
+  }
+
+  function processFor (el) {
+    var exp;
+    if ((exp = getAndRemoveAttr(el, 'v-for'))) {
+      var res = parseFor(exp);
+      if (res) {
+        extend(el, res);
+      } else {
+        warn$2(
+          ("Invalid v-for expression: " + exp)
+        );
+      }
+    }
+  }
+
+
+
+  function parseFor (exp) {
+    var inMatch = exp.match(forAliasRE);
+    if (!inMatch) { return }
+    var res = {};
+    res.for = inMatch[2].trim();
+    var alias = inMatch[1].trim().replace(stripParensRE, '');
+    var iteratorMatch = alias.match(forIteratorRE);
+    if (iteratorMatch) {
+      res.alias = alias.replace(forIteratorRE, '').trim();
+      res.iterator1 = iteratorMatch[1].trim();
+      if (iteratorMatch[2]) {
+        res.iterator2 = iteratorMatch[2].trim();
+      }
+    } else {
+      res.alias = alias;
+    }
+    return res
+  }
+
+  function processIf (el) {
+    var exp = getAndRemoveAttr(el, 'v-if');
+    if (exp) {
+      el.if = exp;
+      addIfCondition(el, {
+        exp: exp,
+        block: el
+      });
+    } else {
+      if (getAndRemoveAttr(el, 'v-else') != null) {
+        el.else = true;
+      }
+      var elseif = getAndRemoveAttr(el, 'v-else-if');
+      if (elseif) {
+        el.elseif = elseif;
+      }
+    }
+  }
+
+  function processIfConditions (el, parent) {
+    var prev = findPrevElement(parent.children);
+    if (prev && prev.if) {
+      addIfCondition(prev, {
+        exp: el.elseif,
+        block: el
+      });
+    } else {
+      warn$2(
+        "v-" + (el.elseif ? ('else-if="' + el.elseif + '"') : 'else') + " " +
+        "used on element <" + (el.tag) + "> without corresponding v-if."
+      );
+    }
+  }
+
+  function findPrevElement (children) {
+    var i = children.length;
+    while (i--) {
+      if (children[i].type === 1) {
+        return children[i]
+      } else {
+        if (children[i].text !== ' ') {
+          warn$2(
+            "text \"" + (children[i].text.trim()) + "\" between v-if and v-else(-if) " +
+            "will be ignored."
+          );
+        }
+        children.pop();
+      }
+    }
+  }
+
+  function addIfCondition (el, condition) {
+    if (!el.ifConditions) {
+      el.ifConditions = [];
+    }
+    el.ifConditions.push(condition);
+  }
+
+  function processOnce (el) {
+    var once$$1 = getAndRemoveAttr(el, 'v-once');
+    if (once$$1 != null) {
+      el.once = true;
+    }
+  }
+
+  function processSlot (el) {
+    if (el.tag === 'slot') {
+      el.slotName = getBindingAttr(el, 'name');
+      if (el.key) {
+        warn$2(
+          "`key` does not work on <slot> because slots are abstract outlets " +
+          "and can possibly expand into multiple elements. " +
+          "Use the key on a wrapping element instead."
+        );
+      }
+    } else {
+      var slotScope;
+      if (el.tag === 'template') {
+        slotScope = getAndRemoveAttr(el, 'scope');
+        /* istanbul ignore if */
+        if (slotScope) {
+          warn$2(
+            "the \"scope\" attribute for scoped slots have been deprecated and " +
+            "replaced by \"slot-scope\" since 2.5. The new \"slot-scope\" attribute " +
+            "can also be used on plain elements in addition to <template> to " +
+            "denote scoped slots.",
+            true
+          );
+        }
+        el.slotScope = slotScope || getAndRemoveAttr(el, 'slot-scope');
+      } else if ((slotScope = getAndRemoveAttr(el, 'slot-scope'))) {
+        /* istanbul ignore if */
+        if (el.attrsMap['v-for']) {
+          warn$2(
+            "Ambiguous combined usage of slot-scope and v-for on <" + (el.tag) + "> " +
+            "(v-for takes higher priority). Use a wrapper <template> for the " +
+            "scoped slot to make it clearer.",
+            true
+          );
+        }
+        el.slotScope = slotScope;
+      }
+      var slotTarget = getBindingAttr(el, 'slot');
+      if (slotTarget) {
+        el.slotTarget = slotTarget === '""' ? '"default"' : slotTarget;
+        // preserve slot as an attribute for native shadow DOM compat
+        // only for non-scoped slots.
+        if (el.tag !== 'template' && !el.slotScope) {
+          addAttr(el, 'slot', slotTarget);
+        }
+      }
+    }
+  }
+
+  function processComponent (el) {
+    var binding;
+    if ((binding = getBindingAttr(el, 'is'))) {
+      el.component = binding;
+    }
+    if (getAndRemoveAttr(el, 'inline-template') != null) {
+      el.inlineTemplate = true;
+    }
+  }
+
+  function processAttrs (el) {
+    var list = el.attrsList;
+    var i, l, name, rawName, value, modifiers, isProp;
+    for (i = 0, l = list.length; i < l; i++) {
+      name = rawName = list[i].name;
+      value = list[i].value;
+      if (dirRE.test(name)) {
+        // mark element as dynamic
+        el.hasBindings = true;
+        // modifiers
+        modifiers = parseModifiers(name);
+        if (modifiers) {
+          name = name.replace(modifierRE, '');
+        }
+        if (bindRE.test(name)) { // v-bind
+          name = name.replace(bindRE, '');
+          value = parseFilters(value);
+          isProp = false;
+          if (
+            value.trim().length === 0
+          ) {
+            warn$2(
+              ("The value for a v-bind expression cannot be empty. Found in \"v-bind:" + name + "\"")
+            );
+          }
+          if (modifiers) {
+            if (modifiers.prop) {
+              isProp = true;
+              name = camelize(name);
+              if (name === 'innerHtml') { name = 'innerHTML'; }
+            }
+            if (modifiers.camel) {
+              name = camelize(name);
+            }
+            if (modifiers.sync) {
+              addHandler(
+                el,
+                ("update:" + (camelize(name))),
+                genAssignmentCode(value, "$event")
+              );
+            }
+          }
+          if (isProp || (
+            !el.component && platformMustUseProp(el.tag, el.attrsMap.type, name)
+          )) {
+            addProp(el, name, value);
+          } else {
+            addAttr(el, name, value);
+          }
+        } else if (onRE.test(name)) { // v-on
+          name = name.replace(onRE, '');
+          addHandler(el, name, value, modifiers, false, warn$2);
+        } else { // normal directives
+          name = name.replace(dirRE, '');
+          // parse arg
+          var argMatch = name.match(argRE);
+          var arg = argMatch && argMatch[1];
+          if (arg) {
+            name = name.slice(0, -(arg.length + 1));
+          }
+          addDirective(el, name, rawName, value, arg, modifiers);
+          if (name === 'model') {
+            checkForAliasModel(el, value);
+          }
+        }
+      } else {
+        // literal attribute
+        {
+          var res = parseText(value, delimiters);
+          if (res) {
+            warn$2(
+              name + "=\"" + value + "\": " +
+              'Interpolation inside attributes has been removed. ' +
+              'Use v-bind or the colon shorthand instead. For example, ' +
+              'instead of <div id="{{ val }}">, use <div :id="val">.'
+            );
+          }
+        }
+        addAttr(el, name, JSON.stringify(value));
+        // #6887 firefox doesn't update muted state if set via attribute
+        // even immediately after element creation
+        if (!el.component &&
+            name === 'muted' &&
+            platformMustUseProp(el.tag, el.attrsMap.type, name)) {
+          addProp(el, name, 'true');
+        }
+      }
+    }
+  }
+
+  function checkInFor (el) {
+    var parent = el;
+    while (parent) {
+      if (parent.for !== undefined) {
+        return true
+      }
+      parent = parent.parent;
+    }
+    return false
+  }
+
+  function parseModifiers (name) {
+    var match = name.match(modifierRE);
+    if (match) {
+      var ret = {};
+      match.forEach(function (m) { ret[m.slice(1)] = true; });
+      return ret
+    }
+  }
+
+  function makeAttrsMap (attrs) {
+    var map = {};
+    for (var i = 0, l = attrs.length; i < l; i++) {
+      if (
+        map[attrs[i].name] && !isIE && !isEdge
+      ) {
+        warn$2('duplicate attribute: ' + attrs[i].name);
+      }
+      map[attrs[i].name] = attrs[i].value;
+    }
+    return map
+  }
+
+  // for script (e.g. type="x/template") or style, do not decode content
+  function isTextTag (el) {
+    return el.tag === 'script' || el.tag === 'style'
+  }
+
+  function isForbiddenTag (el) {
+    return (
+      el.tag === 'style' ||
+      (el.tag === 'script' && (
+        !el.attrsMap.type ||
+        el.attrsMap.type === 'text/javascript'
+      ))
+    )
+  }
+
+  var ieNSBug = /^xmlns:NS\d+/;
+  var ieNSPrefix = /^NS\d+:/;
+
+  /* istanbul ignore next */
+  function guardIESVGBug (attrs) {
+    var res = [];
+    for (var i = 0; i < attrs.length; i++) {
+      var attr = attrs[i];
+      if (!ieNSBug.test(attr.name)) {
+        attr.name = attr.name.replace(ieNSPrefix, '');
+        res.push(attr);
+      }
+    }
+    return res
+  }
+
+  function checkForAliasModel (el, value) {
+    var _el = el;
+    while (_el) {
+      if (_el.for && _el.alias === value) {
+        warn$2(
+          "<" + (el.tag) + " v-model=\"" + value + "\">: " +
+          "You are binding v-model directly to a v-for iteration alias. " +
+          "This will not be able to modify the v-for source array because " +
+          "writing to the alias is like modifying a function local variable. " +
+          "Consider using an array of objects and use v-model on an object property instead."
+        );
+      }
+      _el = _el.parent;
+    }
+  }
+
+  /*  */
+
+  function preTransformNode (el, options) {
+    if (el.tag === 'input') {
+      var map = el.attrsMap;
+      if (!map['v-model']) {
+        return
+      }
+
+      var typeBinding;
+      if (map[':type'] || map['v-bind:type']) {
+        typeBinding = getBindingAttr(el, 'type');
+      }
+      if (!map.type && !typeBinding && map['v-bind']) {
+        typeBinding = "(" + (map['v-bind']) + ").type";
+      }
+
+      if (typeBinding) {
+        var ifCondition = getAndRemoveAttr(el, 'v-if', true);
+        var ifConditionExtra = ifCondition ? ("&&(" + ifCondition + ")") : "";
+        var hasElse = getAndRemoveAttr(el, 'v-else', true) != null;
+        var elseIfCondition = getAndRemoveAttr(el, 'v-else-if', true);
+        // 1. checkbox
+        var branch0 = cloneASTElement(el);
+        // process for on the main node
+        processFor(branch0);
+        addRawAttr(branch0, 'type', 'checkbox');
+        processElement(branch0, options);
+        branch0.processed = true; // prevent it from double-processed
+        branch0.if = "(" + typeBinding + ")==='checkbox'" + ifConditionExtra;
+        addIfCondition(branch0, {
+          exp: branch0.if,
+          block: branch0
+        });
+        // 2. add radio else-if condition
+        var branch1 = cloneASTElement(el);
+        getAndRemoveAttr(branch1, 'v-for', true);
+        addRawAttr(branch1, 'type', 'radio');
+        processElement(branch1, options);
+        addIfCondition(branch0, {
+          exp: "(" + typeBinding + ")==='radio'" + ifConditionExtra,
+          block: branch1
+        });
+        // 3. other
+        var branch2 = cloneASTElement(el);
+        getAndRemoveAttr(branch2, 'v-for', true);
+        addRawAttr(branch2, ':type', typeBinding);
+        processElement(branch2, options);
+        addIfCondition(branch0, {
+          exp: ifCondition,
+          block: branch2
+        });
+
+        if (hasElse) {
+          branch0.else = true;
+        } else if (elseIfCondition) {
+          branch0.elseif = elseIfCondition;
+        }
+
+        return branch0
+      }
+    }
+  }
+
+  function cloneASTElement (el) {
+    return createASTElement(el.tag, el.attrsList.slice(), el.parent)
+  }
+
+  var model$1 = {
+    preTransformNode: preTransformNode
+  };
+
+  var modules$1 = [
+    klass$1,
+    style$1,
+    model$1
+  ];
+
+  /*  */
+
+  function text (el, dir) {
+    if (dir.value) {
+      addProp(el, 'textContent', ("_s(" + (dir.value) + ")"));
+    }
+  }
+
+  /*  */
+
+  function html (el, dir) {
+    if (dir.value) {
+      addProp(el, 'innerHTML', ("_s(" + (dir.value) + ")"));
+    }
+  }
+
+  var directives$1 = {
+    model: model,
+    text: text,
+    html: html
+  };
+
+  /*  */
+
+  var baseOptions = {
+    expectHTML: true,
+    modules: modules$1,
+    directives: directives$1,
+    isPreTag: isPreTag,
+    isUnaryTag: isUnaryTag,
+    mustUseProp: mustUseProp,
+    canBeLeftOpenTag: canBeLeftOpenTag,
+    isReservedTag: isReservedTag,
+    getTagNamespace: getTagNamespace,
+    staticKeys: genStaticKeys(modules$1)
+  };
+
+  /*  */
+
+  var isStaticKey;
+  var isPlatformReservedTag;
+
+  var genStaticKeysCached = cached(genStaticKeys$1);
+
+  /**
+   * Goal of the optimizer: walk the generated template AST tree
+   * and detect sub-trees that are purely static, i.e. parts of
+   * the DOM that never needs to change.
+   *
+   * Once we detect these sub-trees, we can:
+   *
+   * 1. Hoist them into constants, so that we no longer need to
+   *    create fresh nodes for them on each re-render;
+   * 2. Completely skip them in the patching process.
+   */
+  function optimize (root, options) {
+    if (!root) { return }
+    isStaticKey = genStaticKeysCached(options.staticKeys || '');
+    isPlatformReservedTag = options.isReservedTag || no;
+    // first pass: mark all non-static nodes.
+    markStatic$1(root);
+    // second pass: mark static roots.
+    markStaticRoots(root, false);
+  }
+
+  function genStaticKeys$1 (keys) {
+    return makeMap(
+      'type,tag,attrsList,attrsMap,plain,parent,children,attrs' +
+      (keys ? ',' + keys : '')
+    )
+  }
+
+  function markStatic$1 (node) {
+    node.static = isStatic(node);
+    if (node.type === 1) {
+      // do not make component slot content static. this avoids
+      // 1. components not able to mutate slot nodes
+      // 2. static slot content fails for hot-reloading
+      if (
+        !isPlatformReservedTag(node.tag) &&
+        node.tag !== 'slot' &&
+        node.attrsMap['inline-template'] == null
+      ) {
+        return
+      }
+      for (var i = 0, l = node.children.length; i < l; i++) {
+        var child = node.children[i];
+        markStatic$1(child);
+        if (!child.static) {
+          node.static = false;
+        }
+      }
+      if (node.ifConditions) {
+        for (var i$1 = 1, l$1 = node.ifConditions.length; i$1 < l$1; i$1++) {
+          var block = node.ifConditions[i$1].block;
+          markStatic$1(block);
+          if (!block.static) {
+            node.static = false;
+          }
+        }
+      }
+    }
+  }
+
+  function markStaticRoots (node, isInFor) {
+    if (node.type === 1) {
+      if (node.static || node.once) {
+        node.staticInFor = isInFor;
+      }
+      // For a node to qualify as a static root, it should have children that
+      // are not just static text. Otherwise the cost of hoisting out will
+      // outweigh the benefits and it's better off to just always render it fresh.
+      if (node.static && node.children.length && !(
+        node.children.length === 1 &&
+        node.children[0].type === 3
+      )) {
+        node.staticRoot = true;
+        return
+      } else {
+        node.staticRoot = false;
+      }
+      if (node.children) {
+        for (var i = 0, l = node.children.length; i < l; i++) {
+          markStaticRoots(node.children[i], isInFor || !!node.for);
+        }
+      }
+      if (node.ifConditions) {
+        for (var i$1 = 1, l$1 = node.ifConditions.length; i$1 < l$1; i$1++) {
+          markStaticRoots(node.ifConditions[i$1].block, isInFor);
+        }
+      }
+    }
+  }
+
+  function isStatic (node) {
+    if (node.type === 2) { // expression
+      return false
+    }
+    if (node.type === 3) { // text
+      return true
+    }
+    return !!(node.pre || (
+      !node.hasBindings && // no dynamic bindings
+      !node.if && !node.for && // not v-if or v-for or v-else
+      !isBuiltInTag(node.tag) && // not a built-in
+      isPlatformReservedTag(node.tag) && // not a component
+      !isDirectChildOfTemplateFor(node) &&
+      Object.keys(node).every(isStaticKey)
+    ))
+  }
+
+  function isDirectChildOfTemplateFor (node) {
+    while (node.parent) {
+      node = node.parent;
+      if (node.tag !== 'template') {
+        return false
+      }
+      if (node.for) {
+        return true
+      }
+    }
+    return false
+  }
+
+  /*  */
+
+  var fnExpRE = /^([\w$_]+|\([^)]*?\))\s*=>|^function\s*\(/;
+  var simplePathRE = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/;
+
+  // KeyboardEvent.keyCode aliases
+  var keyCodes = {
+    esc: 27,
+    tab: 9,
+    enter: 13,
+    space: 32,
+    up: 38,
+    left: 37,
+    right: 39,
+    down: 40,
+    'delete': [8, 46]
+  };
+
+  // KeyboardEvent.key aliases
+  var keyNames = {
+    // #7880: IE11 and Edge use `Esc` for Escape key name.
+    esc: ['Esc', 'Escape'],
+    tab: 'Tab',
+    enter: 'Enter',
+    // #9112: IE11 uses `Spacebar` for Space key name.
+    space: [' ', 'Spacebar'],
+    // #7806: IE11 uses key names without `Arrow` prefix for arrow keys.
+    up: ['Up', 'ArrowUp'],
+    left: ['Left', 'ArrowLeft'],
+    right: ['Right', 'ArrowRight'],
+    down: ['Down', 'ArrowDown'],
+    // #9112: IE11 uses `Del` for Delete key name.
+    'delete': ['Backspace', 'Delete', 'Del']
+  };
+
+  // #4868: modifiers that prevent the execution of the listener
+  // need to explicitly return null so that we can determine whether to remove
+  // the listener for .once
+  var genGuard = function (condition) { return ("if(" + condition + ")return null;"); };
+
+  var modifierCode = {
+    stop: '$event.stopPropagation();',
+    prevent: '$event.preventDefault();',
+    self: genGuard("$event.target !== $event.currentTarget"),
+    ctrl: genGuard("!$event.ctrlKey"),
+    shift: genGuard("!$event.shiftKey"),
+    alt: genGuard("!$event.altKey"),
+    meta: genGuard("!$event.metaKey"),
+    left: genGuard("'button' in $event && $event.button !== 0"),
+    middle: genGuard("'button' in $event && $event.button !== 1"),
+    right: genGuard("'button' in $event && $event.button !== 2")
+  };
+
+  function genHandlers (
+    events,
+    isNative
+  ) {
+    var res = isNative ? 'nativeOn:{' : 'on:{';
+    for (var name in events) {
+      res += "\"" + name + "\":" + (genHandler(name, events[name])) + ",";
+    }
+    return res.slice(0, -1) + '}'
+  }
+
+  function genHandler (
+    name,
+    handler
+  ) {
+    if (!handler) {
+      return 'function(){}'
+    }
+
+    if (Array.isArray(handler)) {
+      return ("[" + (handler.map(function (handler) { return genHandler(name, handler); }).join(',')) + "]")
+    }
+
+    var isMethodPath = simplePathRE.test(handler.value);
+    var isFunctionExpression = fnExpRE.test(handler.value);
+
+    if (!handler.modifiers) {
+      if (isMethodPath || isFunctionExpression) {
+        return handler.value
+      }
+      return ("function($event){" + (handler.value) + "}") // inline statement
+    } else {
+      var code = '';
+      var genModifierCode = '';
+      var keys = [];
+      for (var key in handler.modifiers) {
+        if (modifierCode[key]) {
+          genModifierCode += modifierCode[key];
+          // left/right
+          if (keyCodes[key]) {
+            keys.push(key);
+          }
+        } else if (key === 'exact') {
+          var modifiers = (handler.modifiers);
+          genModifierCode += genGuard(
+            ['ctrl', 'shift', 'alt', 'meta']
+              .filter(function (keyModifier) { return !modifiers[keyModifier]; })
+              .map(function (keyModifier) { return ("$event." + keyModifier + "Key"); })
+              .join('||')
+          );
+        } else {
+          keys.push(key);
+        }
+      }
+      if (keys.length) {
+        code += genKeyFilter(keys);
+      }
+      // Make sure modifiers like prevent and stop get executed after key filtering
+      if (genModifierCode) {
+        code += genModifierCode;
+      }
+      var handlerCode = isMethodPath
+        ? ("return " + (handler.value) + "($event)")
+        : isFunctionExpression
+          ? ("return (" + (handler.value) + ")($event)")
+          : handler.value;
+      return ("function($event){" + code + handlerCode + "}")
+    }
+  }
+
+  function genKeyFilter (keys) {
+    return ("if(!('button' in $event)&&" + (keys.map(genFilterCode).join('&&')) + ")return null;")
+  }
+
+  function genFilterCode (key) {
+    var keyVal = parseInt(key, 10);
+    if (keyVal) {
+      return ("$event.keyCode!==" + keyVal)
+    }
+    var keyCode = keyCodes[key];
+    var keyName = keyNames[key];
+    return (
+      "_k($event.keyCode," +
+      (JSON.stringify(key)) + "," +
+      (JSON.stringify(keyCode)) + "," +
+      "$event.key," +
+      "" + (JSON.stringify(keyName)) +
+      ")"
+    )
+  }
+
+  /*  */
+
+  function on (el, dir) {
+    if (dir.modifiers) {
+      warn("v-on without argument does not support modifiers.");
+    }
+    el.wrapListeners = function (code) { return ("_g(" + code + "," + (dir.value) + ")"); };
+  }
+
+  /*  */
+
+  function bind$1 (el, dir) {
+    el.wrapData = function (code) {
+      return ("_b(" + code + ",'" + (el.tag) + "'," + (dir.value) + "," + (dir.modifiers && dir.modifiers.prop ? 'true' : 'false') + (dir.modifiers && dir.modifiers.sync ? ',true' : '') + ")")
+    };
+  }
+
+  /*  */
+
+  var baseDirectives = {
+    on: on,
+    bind: bind$1,
+    cloak: noop
+  };
+
+  /*  */
+
+
+
+
+
+  var CodegenState = function CodegenState (options) {
+    this.options = options;
+    this.warn = options.warn || baseWarn;
+    this.transforms = pluckModuleFunction(options.modules, 'transformCode');
+    this.dataGenFns = pluckModuleFunction(options.modules, 'genData');
+    this.directives = extend(extend({}, baseDirectives), options.directives);
+    var isReservedTag = options.isReservedTag || no;
+    this.maybeComponent = function (el) { return !(isReservedTag(el.tag) && !el.component); };
+    this.onceId = 0;
+    this.staticRenderFns = [];
+    this.pre = false;
+  };
+
+
+
+  function generate (
+    ast,
+    options
+  ) {
+    var state = new CodegenState(options);
+    var code = ast ? genElement(ast, state) : '_c("div")';
+    return {
+      render: ("with(this){return " + code + "}"),
+      staticRenderFns: state.staticRenderFns
+    }
+  }
+
+  function genElement (el, state) {
+    if (el.parent) {
+      el.pre = el.pre || el.parent.pre;
+    }
+
+    if (el.staticRoot && !el.staticProcessed) {
+      return genStatic(el, state)
+    } else if (el.once && !el.onceProcessed) {
+      return genOnce(el, state)
+    } else if (el.for && !el.forProcessed) {
+      return genFor(el, state)
+    } else if (el.if && !el.ifProcessed) {
+      return genIf(el, state)
+    } else if (el.tag === 'template' && !el.slotTarget && !state.pre) {
+      return genChildren(el, state) || 'void 0'
+    } else if (el.tag === 'slot') {
+      return genSlot(el, state)
+    } else {
+      // component or element
+      var code;
+      if (el.component) {
+        code = genComponent(el.component, el, state);
+      } else {
+        var data;
+        if (!el.plain || (el.pre && state.maybeComponent(el))) {
+          data = genData$2(el, state);
+        }
+
+        var children = el.inlineTemplate ? null : genChildren(el, state, true);
+        code = "_c('" + (el.tag) + "'" + (data ? ("," + data) : '') + (children ? ("," + children) : '') + ")";
+      }
+      // module transforms
+      for (var i = 0; i < state.transforms.length; i++) {
+        code = state.transforms[i](el, code);
+      }
+      return code
+    }
+  }
+
+  // hoist static sub-trees out
+  function genStatic (el, state) {
+    el.staticProcessed = true;
+    // Some elements (templates) need to behave differently inside of a v-pre
+    // node.  All pre nodes are static roots, so we can use this as a location to
+    // wrap a state change and reset it upon exiting the pre node.
+    var originalPreState = state.pre;
+    if (el.pre) {
+      state.pre = el.pre;
+    }
+    state.staticRenderFns.push(("with(this){return " + (genElement(el, state)) + "}"));
+    state.pre = originalPreState;
+    return ("_m(" + (state.staticRenderFns.length - 1) + (el.staticInFor ? ',true' : '') + ")")
+  }
+
+  // v-once
+  function genOnce (el, state) {
+    el.onceProcessed = true;
+    if (el.if && !el.ifProcessed) {
+      return genIf(el, state)
+    } else if (el.staticInFor) {
+      var key = '';
+      var parent = el.parent;
+      while (parent) {
+        if (parent.for) {
+          key = parent.key;
+          break
+        }
+        parent = parent.parent;
+      }
+      if (!key) {
+        state.warn(
+          "v-once can only be used inside v-for that is keyed. "
+        );
+        return genElement(el, state)
+      }
+      return ("_o(" + (genElement(el, state)) + "," + (state.onceId++) + "," + key + ")")
+    } else {
+      return genStatic(el, state)
+    }
+  }
+
+  function genIf (
+    el,
+    state,
+    altGen,
+    altEmpty
+  ) {
+    el.ifProcessed = true; // avoid recursion
+    return genIfConditions(el.ifConditions.slice(), state, altGen, altEmpty)
+  }
+
+  function genIfConditions (
+    conditions,
+    state,
+    altGen,
+    altEmpty
+  ) {
+    if (!conditions.length) {
+      return altEmpty || '_e()'
+    }
+
+    var condition = conditions.shift();
+    if (condition.exp) {
+      return ("(" + (condition.exp) + ")?" + (genTernaryExp(condition.block)) + ":" + (genIfConditions(conditions, state, altGen, altEmpty)))
+    } else {
+      return ("" + (genTernaryExp(condition.block)))
+    }
+
+    // v-if with v-once should generate code like (a)?_m(0):_m(1)
+    function genTernaryExp (el) {
+      return altGen
+        ? altGen(el, state)
+        : el.once
+          ? genOnce(el, state)
+          : genElement(el, state)
+    }
+  }
+
+  function genFor (
+    el,
+    state,
+    altGen,
+    altHelper
+  ) {
+    var exp = el.for;
+    var alias = el.alias;
+    var iterator1 = el.iterator1 ? ("," + (el.iterator1)) : '';
+    var iterator2 = el.iterator2 ? ("," + (el.iterator2)) : '';
+
+    if (state.maybeComponent(el) &&
+      el.tag !== 'slot' &&
+      el.tag !== 'template' &&
+      !el.key
+    ) {
+      state.warn(
+        "<" + (el.tag) + " v-for=\"" + alias + " in " + exp + "\">: component lists rendered with " +
+        "v-for should have explicit keys. " +
+        "See https://vuejs.org/guide/list.html#key for more info.",
+        true /* tip */
+      );
+    }
+
+    el.forProcessed = true; // avoid recursion
+    return (altHelper || '_l') + "((" + exp + ")," +
+      "function(" + alias + iterator1 + iterator2 + "){" +
+        "return " + ((altGen || genElement)(el, state)) +
+      '})'
+  }
+
+  function genData$2 (el, state) {
+    var data = '{';
+
+    // directives first.
+    // directives may mutate the el's other properties before they are generated.
+    var dirs = genDirectives(el, state);
+    if (dirs) { data += dirs + ','; }
+
+    // key
+    if (el.key) {
+      data += "key:" + (el.key) + ",";
+    }
+    // ref
+    if (el.ref) {
+      data += "ref:" + (el.ref) + ",";
+    }
+    if (el.refInFor) {
+      data += "refInFor:true,";
+    }
+    // pre
+    if (el.pre) {
+      data += "pre:true,";
+    }
+    // record original tag name for components using "is" attribute
+    if (el.component) {
+      data += "tag:\"" + (el.tag) + "\",";
+    }
+    // module data generation functions
+    for (var i = 0; i < state.dataGenFns.length; i++) {
+      data += state.dataGenFns[i](el);
+    }
+    // attributes
+    if (el.attrs) {
+      data += "attrs:{" + (genProps(el.attrs)) + "},";
+    }
+    // DOM props
+    if (el.props) {
+      data += "domProps:{" + (genProps(el.props)) + "},";
+    }
+    // event handlers
+    if (el.events) {
+      data += (genHandlers(el.events, false)) + ",";
+    }
+    if (el.nativeEvents) {
+      data += (genHandlers(el.nativeEvents, true)) + ",";
+    }
+    // slot target
+    // only for non-scoped slots
+    if (el.slotTarget && !el.slotScope) {
+      data += "slot:" + (el.slotTarget) + ",";
+    }
+    // scoped slots
+    if (el.scopedSlots) {
+      data += (genScopedSlots(el.scopedSlots, state)) + ",";
+    }
+    // component v-model
+    if (el.model) {
+      data += "model:{value:" + (el.model.value) + ",callback:" + (el.model.callback) + ",expression:" + (el.model.expression) + "},";
+    }
+    // inline-template
+    if (el.inlineTemplate) {
+      var inlineTemplate = genInlineTemplate(el, state);
+      if (inlineTemplate) {
+        data += inlineTemplate + ",";
+      }
+    }
+    data = data.replace(/,$/, '') + '}';
+    // v-bind data wrap
+    if (el.wrapData) {
+      data = el.wrapData(data);
+    }
+    // v-on data wrap
+    if (el.wrapListeners) {
+      data = el.wrapListeners(data);
+    }
+    return data
+  }
+
+  function genDirectives (el, state) {
+    var dirs = el.directives;
+    if (!dirs) { return }
+    var res = 'directives:[';
+    var hasRuntime = false;
+    var i, l, dir, needRuntime;
+    for (i = 0, l = dirs.length; i < l; i++) {
+      dir = dirs[i];
+      needRuntime = true;
+      var gen = state.directives[dir.name];
+      if (gen) {
+        // compile-time directive that manipulates AST.
+        // returns true if it also needs a runtime counterpart.
+        needRuntime = !!gen(el, dir, state.warn);
+      }
+      if (needRuntime) {
+        hasRuntime = true;
+        res += "{name:\"" + (dir.name) + "\",rawName:\"" + (dir.rawName) + "\"" + (dir.value ? (",value:(" + (dir.value) + "),expression:" + (JSON.stringify(dir.value))) : '') + (dir.arg ? (",arg:\"" + (dir.arg) + "\"") : '') + (dir.modifiers ? (",modifiers:" + (JSON.stringify(dir.modifiers))) : '') + "},";
+      }
+    }
+    if (hasRuntime) {
+      return res.slice(0, -1) + ']'
+    }
+  }
+
+  function genInlineTemplate (el, state) {
+    var ast = el.children[0];
+    if (el.children.length !== 1 || ast.type !== 1) {
+      state.warn('Inline-template components must have exactly one child element.');
+    }
+    if (ast.type === 1) {
+      var inlineRenderFns = generate(ast, state.options);
+      return ("inlineTemplate:{render:function(){" + (inlineRenderFns.render) + "},staticRenderFns:[" + (inlineRenderFns.staticRenderFns.map(function (code) { return ("function(){" + code + "}"); }).join(',')) + "]}")
+    }
+  }
+
+  function genScopedSlots (
+    slots,
+    state
+  ) {
+    return ("scopedSlots:_u([" + (Object.keys(slots).map(function (key) {
+        return genScopedSlot(key, slots[key], state)
+      }).join(',')) + "])")
+  }
+
+  function genScopedSlot (
+    key,
+    el,
+    state
+  ) {
+    if (el.for && !el.forProcessed) {
+      return genForScopedSlot(key, el, state)
+    }
+    var fn = "function(" + (String(el.slotScope)) + "){" +
+      "return " + (el.tag === 'template'
+        ? el.if
+          ? ("(" + (el.if) + ")?" + (genChildren(el, state) || 'undefined') + ":undefined")
+          : genChildren(el, state) || 'undefined'
+        : genElement(el, state)) + "}";
+    return ("{key:" + key + ",fn:" + fn + "}")
+  }
+
+  function genForScopedSlot (
+    key,
+    el,
+    state
+  ) {
+    var exp = el.for;
+    var alias = el.alias;
+    var iterator1 = el.iterator1 ? ("," + (el.iterator1)) : '';
+    var iterator2 = el.iterator2 ? ("," + (el.iterator2)) : '';
+    el.forProcessed = true; // avoid recursion
+    return "_l((" + exp + ")," +
+      "function(" + alias + iterator1 + iterator2 + "){" +
+        "return " + (genScopedSlot(key, el, state)) +
+      '})'
+  }
+
+  function genChildren (
+    el,
+    state,
+    checkSkip,
+    altGenElement,
+    altGenNode
+  ) {
+    var children = el.children;
+    if (children.length) {
+      var el$1 = children[0];
+      // optimize single v-for
+      if (children.length === 1 &&
+        el$1.for &&
+        el$1.tag !== 'template' &&
+        el$1.tag !== 'slot'
+      ) {
+        var normalizationType = checkSkip
+          ? state.maybeComponent(el$1) ? ",1" : ",0"
+          : "";
+        return ("" + ((altGenElement || genElement)(el$1, state)) + normalizationType)
+      }
+      var normalizationType$1 = checkSkip
+        ? getNormalizationType(children, state.maybeComponent)
+        : 0;
+      var gen = altGenNode || genNode;
+      return ("[" + (children.map(function (c) { return gen(c, state); }).join(',')) + "]" + (normalizationType$1 ? ("," + normalizationType$1) : ''))
+    }
+  }
+
+  // determine the normalization needed for the children array.
+  // 0: no normalization needed
+  // 1: simple normalization needed (possible 1-level deep nested array)
+  // 2: full normalization needed
+  function getNormalizationType (
+    children,
+    maybeComponent
+  ) {
+    var res = 0;
+    for (var i = 0; i < children.length; i++) {
+      var el = children[i];
+      if (el.type !== 1) {
+        continue
+      }
+      if (needsNormalization(el) ||
+          (el.ifConditions && el.ifConditions.some(function (c) { return needsNormalization(c.block); }))) {
+        res = 2;
+        break
+      }
+      if (maybeComponent(el) ||
+          (el.ifConditions && el.ifConditions.some(function (c) { return maybeComponent(c.block); }))) {
+        res = 1;
+      }
+    }
+    return res
+  }
+
+  function needsNormalization (el) {
+    return el.for !== undefined || el.tag === 'template' || el.tag === 'slot'
+  }
+
+  function genNode (node, state) {
+    if (node.type === 1) {
+      return genElement(node, state)
+    } else if (node.type === 3 && node.isComment) {
+      return genComment(node)
+    } else {
+      return genText(node)
+    }
+  }
+
+  function genText (text) {
+    return ("_v(" + (text.type === 2
+      ? text.expression // no need for () because already wrapped in _s()
+      : transformSpecialNewlines(JSON.stringify(text.text))) + ")")
+  }
+
+  function genComment (comment) {
+    return ("_e(" + (JSON.stringify(comment.text)) + ")")
+  }
+
+  function genSlot (el, state) {
+    var slotName = el.slotName || '"default"';
+    var children = genChildren(el, state);
+    var res = "_t(" + slotName + (children ? ("," + children) : '');
+    var attrs = el.attrs && ("{" + (el.attrs.map(function (a) { return ((camelize(a.name)) + ":" + (a.value)); }).join(',')) + "}");
+    var bind$$1 = el.attrsMap['v-bind'];
+    if ((attrs || bind$$1) && !children) {
+      res += ",null";
+    }
+    if (attrs) {
+      res += "," + attrs;
+    }
+    if (bind$$1) {
+      res += (attrs ? '' : ',null') + "," + bind$$1;
+    }
+    return res + ')'
+  }
+
+  // componentName is el.component, take it as argument to shun flow's pessimistic refinement
+  function genComponent (
+    componentName,
+    el,
+    state
+  ) {
+    var children = el.inlineTemplate ? null : genChildren(el, state, true);
+    return ("_c(" + componentName + "," + (genData$2(el, state)) + (children ? ("," + children) : '') + ")")
+  }
+
+  function genProps (props) {
+    var res = '';
+    for (var i = 0; i < props.length; i++) {
+      var prop = props[i];
+      /* istanbul ignore if */
+      {
+        res += "\"" + (prop.name) + "\":" + (transformSpecialNewlines(prop.value)) + ",";
+      }
+    }
+    return res.slice(0, -1)
+  }
+
+  // #3895, #4268
+  function transformSpecialNewlines (text) {
+    return text
+      .replace(/\u2028/g, '\\u2028')
+      .replace(/\u2029/g, '\\u2029')
+  }
+
+  /*  */
+
+  // these keywords should not appear inside expressions, but operators like
+  // typeof, instanceof and in are allowed
+  var prohibitedKeywordRE = new RegExp('\\b' + (
+    'do,if,for,let,new,try,var,case,else,with,await,break,catch,class,const,' +
+    'super,throw,while,yield,delete,export,import,return,switch,default,' +
+    'extends,finally,continue,debugger,function,arguments'
+  ).split(',').join('\\b|\\b') + '\\b');
+
+  // these unary operators should not be used as property/method names
+  var unaryOperatorsRE = new RegExp('\\b' + (
+    'delete,typeof,void'
+  ).split(',').join('\\s*\\([^\\)]*\\)|\\b') + '\\s*\\([^\\)]*\\)');
+
+  // strip strings in expressions
+  var stripStringRE = /'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*\$\{|\}(?:[^`\\]|\\.)*`|`(?:[^`\\]|\\.)*`/g;
+
+  // detect problematic expressions in a template
+  function detectErrors (ast) {
+    var errors = [];
+    if (ast) {
+      checkNode(ast, errors);
+    }
+    return errors
+  }
+
+  function checkNode (node, errors) {
+    if (node.type === 1) {
+      for (var name in node.attrsMap) {
+        if (dirRE.test(name)) {
+          var value = node.attrsMap[name];
+          if (value) {
+            if (name === 'v-for') {
+              checkFor(node, ("v-for=\"" + value + "\""), errors);
+            } else if (onRE.test(name)) {
+              checkEvent(value, (name + "=\"" + value + "\""), errors);
+            } else {
+              checkExpression(value, (name + "=\"" + value + "\""), errors);
+            }
+          }
+        }
+      }
+      if (node.children) {
+        for (var i = 0; i < node.children.length; i++) {
+          checkNode(node.children[i], errors);
+        }
+      }
+    } else if (node.type === 2) {
+      checkExpression(node.expression, node.text, errors);
+    }
+  }
+
+  function checkEvent (exp, text, errors) {
+    var stipped = exp.replace(stripStringRE, '');
+    var keywordMatch = stipped.match(unaryOperatorsRE);
+    if (keywordMatch && stipped.charAt(keywordMatch.index - 1) !== '$') {
+      errors.push(
+        "avoid using JavaScript unary operator as property name: " +
+        "\"" + (keywordMatch[0]) + "\" in expression " + (text.trim())
+      );
+    }
+    checkExpression(exp, text, errors);
+  }
+
+  function checkFor (node, text, errors) {
+    checkExpression(node.for || '', text, errors);
+    checkIdentifier(node.alias, 'v-for alias', text, errors);
+    checkIdentifier(node.iterator1, 'v-for iterator', text, errors);
+    checkIdentifier(node.iterator2, 'v-for iterator', text, errors);
+  }
+
+  function checkIdentifier (
+    ident,
+    type,
+    text,
+    errors
+  ) {
+    if (typeof ident === 'string') {
+      try {
+        new Function(("var " + ident + "=_"));
+      } catch (e) {
+        errors.push(("invalid " + type + " \"" + ident + "\" in expression: " + (text.trim())));
+      }
+    }
+  }
+
+  function checkExpression (exp, text, errors) {
+    try {
+      new Function(("return " + exp));
+    } catch (e) {
+      var keywordMatch = exp.replace(stripStringRE, '').match(prohibitedKeywordRE);
+      if (keywordMatch) {
+        errors.push(
+          "avoid using JavaScript keyword as property name: " +
+          "\"" + (keywordMatch[0]) + "\"\n  Raw expression: " + (text.trim())
+        );
+      } else {
+        errors.push(
+          "invalid expression: " + (e.message) + " in\n\n" +
+          "    " + exp + "\n\n" +
+          "  Raw expression: " + (text.trim()) + "\n"
+        );
+      }
+    }
+  }
+
+  /*  */
+
+
+
+  function createFunction (code, errors) {
+    try {
+      return new Function(code)
+    } catch (err) {
+      errors.push({ err: err, code: code });
+      return noop
+    }
+  }
+
+  function createCompileToFunctionFn (compile) {
+    var cache = Object.create(null);
+
+    return function compileToFunctions (
+      template,
+      options,
+      vm
+    ) {
+      options = extend({}, options);
+      var warn$$1 = options.warn || warn;
+      delete options.warn;
+
+      /* istanbul ignore if */
+      {
+        // detect possible CSP restriction
+        try {
+          new Function('return 1');
+        } catch (e) {
+          if (e.toString().match(/unsafe-eval|CSP/)) {
+            warn$$1(
+              'It seems you are using the standalone build of Vue.js in an ' +
+              'environment with Content Security Policy that prohibits unsafe-eval. ' +
+              'The template compiler cannot work in this environment. Consider ' +
+              'relaxing the policy to allow unsafe-eval or pre-compiling your ' +
+              'templates into render functions.'
+            );
+          }
+        }
+      }
+
+      // check cache
+      var key = options.delimiters
+        ? String(options.delimiters) + template
+        : template;
+      if (cache[key]) {
+        return cache[key]
+      }
+
+      // compile
+      var compiled = compile(template, options);
+
+      // check compilation errors/tips
+      {
+        if (compiled.errors && compiled.errors.length) {
+          warn$$1(
+            "Error compiling template:\n\n" + template + "\n\n" +
+            compiled.errors.map(function (e) { return ("- " + e); }).join('\n') + '\n',
+            vm
+          );
+        }
+        if (compiled.tips && compiled.tips.length) {
+          compiled.tips.forEach(function (msg) { return tip(msg, vm); });
+        }
+      }
+
+      // turn code into functions
+      var res = {};
+      var fnGenErrors = [];
+      res.render = createFunction(compiled.render, fnGenErrors);
+      res.staticRenderFns = compiled.staticRenderFns.map(function (code) {
+        return createFunction(code, fnGenErrors)
+      });
+
+      // check function generation errors.
+      // this should only happen if there is a bug in the compiler itself.
+      // mostly for codegen development use
+      /* istanbul ignore if */
+      {
+        if ((!compiled.errors || !compiled.errors.length) && fnGenErrors.length) {
+          warn$$1(
+            "Failed to generate render function:\n\n" +
+            fnGenErrors.map(function (ref) {
+              var err = ref.err;
+              var code = ref.code;
+
+              return ((err.toString()) + " in\n\n" + code + "\n");
+          }).join('\n'),
+            vm
+          );
+        }
+      }
+
+      return (cache[key] = res)
+    }
+  }
+
+  /*  */
+
+  function createCompilerCreator (baseCompile) {
+    return function createCompiler (baseOptions) {
+      function compile (
+        template,
+        options
+      ) {
+        var finalOptions = Object.create(baseOptions);
+        var errors = [];
+        var tips = [];
+        finalOptions.warn = function (msg, tip) {
+          (tip ? tips : errors).push(msg);
+        };
+
+        if (options) {
+          // merge custom modules
+          if (options.modules) {
+            finalOptions.modules =
+              (baseOptions.modules || []).concat(options.modules);
+          }
+          // merge custom directives
+          if (options.directives) {
+            finalOptions.directives = extend(
+              Object.create(baseOptions.directives || null),
+              options.directives
+            );
+          }
+          // copy other options
+          for (var key in options) {
+            if (key !== 'modules' && key !== 'directives') {
+              finalOptions[key] = options[key];
+            }
+          }
+        }
+
+        var compiled = baseCompile(template, finalOptions);
+        {
+          errors.push.apply(errors, detectErrors(compiled.ast));
+        }
+        compiled.errors = errors;
+        compiled.tips = tips;
+        return compiled
+      }
+
+      return {
+        compile: compile,
+        compileToFunctions: createCompileToFunctionFn(compile)
+      }
+    }
+  }
+
+  /*  */
+
+  // `createCompilerCreator` allows creating compilers that use alternative
+  // parser/optimizer/codegen, e.g the SSR optimizing compiler.
+  // Here we just export a default compiler using the default parts.
+  var createCompiler = createCompilerCreator(function baseCompile (
+    template,
+    options
+  ) {
+    var ast = parse(template.trim(), options);
+    if (options.optimize !== false) {
+      optimize(ast, options);
+    }
+    var code = generate(ast, options);
+    return {
+      ast: ast,
+      render: code.render,
+      staticRenderFns: code.staticRenderFns
+    }
+  });
+
+  /*  */
+
+  var ref$1 = createCompiler(baseOptions);
+  var compileToFunctions = ref$1.compileToFunctions;
+
+  /*  */
+
+  // check whether current browser encodes a char inside attribute values
+  var div;
+  function getShouldDecode (href) {
+    div = div || document.createElement('div');
+    div.innerHTML = href ? "<a href=\"\n\"/>" : "<div a=\"\n\"/>";
+    return div.innerHTML.indexOf('&#10;') > 0
+  }
+
+  // #3663: IE encodes newlines inside attribute values while other browsers don't
+  var shouldDecodeNewlines = inBrowser ? getShouldDecode(false) : false;
+  // #6828: chrome encodes content in a[href]
+  var shouldDecodeNewlinesForHref = inBrowser ? getShouldDecode(true) : false;
+
+  /*  */
+
+  var idToTemplate = cached(function (id) {
+    var el = query(id);
+    return el && el.innerHTML
+  });
+
+  var mount = Vue.prototype.$mount;
+  Vue.prototype.$mount = function (
+    el,
+    hydrating
+  ) {
+    el = el && query(el);
+
+    /* istanbul ignore if */
+    if (el === document.body || el === document.documentElement) {
+      warn(
+        "Do not mount Vue to <html> or <body> - mount to normal elements instead."
+      );
+      return this
+    }
+
+    var options = this.$options;
+    // resolve template/el and convert to render function
+    if (!options.render) {
+      var template = options.template;
+      if (template) {
+        if (typeof template === 'string') {
+          if (template.charAt(0) === '#') {
+            template = idToTemplate(template);
+            /* istanbul ignore if */
+            if (!template) {
+              warn(
+                ("Template element not found or is empty: " + (options.template)),
+                this
+              );
+            }
+          }
+        } else if (template.nodeType) {
+          template = template.innerHTML;
+        } else {
+          {
+            warn('invalid template option:' + template, this);
+          }
+          return this
+        }
+      } else if (el) {
+        template = getOuterHTML(el);
+      }
+      if (template) {
+        /* istanbul ignore if */
+        if (config.performance && mark) {
+          mark('compile');
+        }
+
+        var ref = compileToFunctions(template, {
+          shouldDecodeNewlines: shouldDecodeNewlines,
+          shouldDecodeNewlinesForHref: shouldDecodeNewlinesForHref,
+          delimiters: options.delimiters,
+          comments: options.comments
+        }, this);
+        var render = ref.render;
+        var staticRenderFns = ref.staticRenderFns;
+        options.render = render;
+        options.staticRenderFns = staticRenderFns;
+
+        /* istanbul ignore if */
+        if (config.performance && mark) {
+          mark('compile end');
+          measure(("vue " + (this._name) + " compile"), 'compile', 'compile end');
+        }
+      }
+    }
+    return mount.call(this, el, hydrating)
+  };
+
+  /**
+   * Get outerHTML of elements, taking care
+   * of SVG elements in IE as well.
+   */
+  function getOuterHTML (el) {
+    if (el.outerHTML) {
+      return el.outerHTML
+    } else {
+      var container = document.createElement('div');
+      container.appendChild(el.cloneNode(true));
+      return container.innerHTML
+    }
+  }
+
+  Vue.compile = compileToFunctions;
+
   /*!
     * vue-router v3.0.2
     * (c) 2018 Evan You
@@ -8089,7 +11059,7 @@
     }
   }
 
-  function warn$1 (condition, message) {
+  function warn$3 (condition, message) {
     if (!condition) {
       typeof console !== 'undefined' && console.warn(("[vue-router] " + message));
     }
@@ -8210,7 +11180,7 @@
         return config ? route.params : undefined
       default:
         {
-          warn$1(
+          warn$3(
             false,
             "props in \"" + (route.path) + "\" is a " + (typeof config) + ", " +
             "expecting an object, function or boolean."
@@ -8246,7 +11216,7 @@
     try {
       parsedQuery = parse(query || '');
     } catch (e) {
-      warn$1(false, e.message);
+      warn$3(false, e.message);
       parsedQuery = {};
     }
     for (var key in extraQuery) {
@@ -8725,7 +11695,7 @@
    * Expose `pathToRegexp`.
    */
   var pathToRegexp_1 = pathToRegexp;
-  var parse_1 = parse;
+  var parse_1 = parse$1;
   var compile_1 = compile;
   var tokensToFunction_1 = tokensToFunction;
   var tokensToRegExp_1 = tokensToRegExp;
@@ -8755,7 +11725,7 @@
    * @param  {Object=} options
    * @return {!Array}
    */
-  function parse (str, options) {
+  function parse$1 (str, options) {
     var tokens = [];
     var key = 0;
     var index = 0;
@@ -8829,7 +11799,7 @@
    * @return {!function(Object=, Object=)}
    */
   function compile (str, options) {
-    return tokensToFunction(parse(str, options))
+    return tokensToFunction(parse$1(str, options))
   }
 
   /**
@@ -9040,7 +12010,7 @@
    * @return {!RegExp}
    */
   function stringToRegexp (path, keys, options) {
-    return tokensToRegExp(parse(path, options), keys, options)
+    return tokensToRegExp(parse$1(path, options), keys, options)
   }
 
   /**
@@ -9167,7 +12137,7 @@
       return filler(params || {}, { pretty: true })
     } catch (e) {
       {
-        warn$1(false, ("missing param for " + routeMsg + ": " + (e.message)));
+        warn$3(false, ("missing param for " + routeMsg + ": " + (e.message)));
       }
       return ''
     }
@@ -9262,7 +12232,7 @@
       // not be rendered (GH Issue #629)
       {
         if (route.name && !route.redirect && route.children.some(function (child) { return /^\/?$/.test(child.path); })) {
-          warn$1(
+          warn$3(
             false,
             "Named Route '" + (route.name) + "' has a default child route. " +
             "When navigating to this named route (:to=\"{name: '" + (route.name) + "'\"), " +
@@ -9310,7 +12280,7 @@
       if (!nameMap[name]) {
         nameMap[name] = record;
       } else if (!matchAs) {
-        warn$1(
+        warn$3(
           false,
           "Duplicate named routes definition: " +
           "{ name: \"" + name + "\", path: \"" + (record.path) + "\" }"
@@ -9324,7 +12294,7 @@
     {
       var keys = Object.create(null);
       regex.keys.forEach(function (key) {
-        warn$1(!keys[key.name], ("Duplicate param keys in route with path: \"" + path + "\""));
+        warn$3(!keys[key.name], ("Duplicate param keys in route with path: \"" + path + "\""));
         keys[key.name] = true;
       });
     }
@@ -9364,7 +12334,7 @@
         var rawPath = current.matched[current.matched.length - 1].path;
         next.path = fillParams(rawPath, params, ("path " + (current.path)));
       } else {
-        warn$1(false, "relative params navigation requires a current route.");
+        warn$3(false, "relative params navigation requires a current route.");
       }
       return next
     }
@@ -9422,7 +12392,7 @@
       if (name) {
         var record = nameMap[name];
         {
-          warn$1(record, ("Route with name '" + name + "' does not exist"));
+          warn$3(record, ("Route with name '" + name + "' does not exist"));
         }
         if (!record) { return _createRoute(null, location) }
         var paramNames = record.regex.keys
@@ -9474,7 +12444,7 @@
 
       if (!redirect || typeof redirect !== 'object') {
         {
-          warn$1(
+          warn$3(
             false, ("invalid redirect option: " + (JSON.stringify(redirect)))
           );
         }
@@ -9518,7 +12488,7 @@
         }, undefined, location)
       } else {
         {
-          warn$1(false, ("invalid redirect option: " + (JSON.stringify(redirect))));
+          warn$3(false, ("invalid redirect option: " + (JSON.stringify(redirect))));
         }
         return _createRoute(null, location)
       }
@@ -9830,7 +12800,7 @@
 
           var reject = once$1(function (reason) {
             var msg = "Failed to resolve async component " + key + ": " + reason;
-            warn$1(false, msg);
+            warn$3(false, msg);
             if (!error) {
               error = isError(reason)
                 ? reason
@@ -9971,7 +12941,7 @@
         if (this$1.errorCbs.length) {
           this$1.errorCbs.forEach(function (cb) { cb(err); });
         } else {
-          warn$1(false, 'uncaught error during route navigation:');
+          warn$3(false, 'uncaught error during route navigation:');
           console.error(err);
         }
       }
@@ -10965,7 +13935,7 @@
     /* style */
     const __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-72cd3a3e_0", { source: "\n@import 'cssdir/settings/_index.pcss';\n@import './styles/vars/CdrLink.vars.pcss';\n@import './styles/CdrLink.pcss';\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/link/CdrLink.vue"],"names":[],"mappings":";AAyDA,qCAAA;AACA,yCAAA;AACA,+BAAA","file":"CdrLink.vue","sourcesContent":["<template>\n  <component\n    :is=\"tag\"\n    :class=\"[modifierClass, themeClass]\"\n    :target=\"target\"\n    :rel=\"computedRel\"\n    :href=\"tag === 'a' ? href : null /* don't include the href attribute if not an <a> */\"\n  >\n    <!-- @slot innerHTML on the inside of the anchor component -->\n    <slot>Link Text</slot>\n  </component>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\n// import themeable from 'mixinsdir/themeable';\n/**\n *\n * Cedar 2 component for link.\n *\n * <span class=\"modifiers\">Modifiers</span>\n * {standalone}\n * @version 0.0.1\n * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)\n */\nexport default {\n  name: 'CdrLink',\n  mixins: [modifier],\n  props: {\n    tag: {\n      type: String,\n      default: 'a',\n    },\n    href: {\n      type: String,\n      default: '#',\n    },\n    /** @ignore */\n    target: String,\n    /** @ignore */\n    rel: String,\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-link';\n    },\n    computedRel() {\n      if (this.target === '_blank') {\n        return this.rel || 'noopener noreferrer';\n      }\n      return this.rel;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import 'cssdir/settings/_index.pcss';\n  @import './styles/vars/CdrLink.vars.pcss';\n  @import './styles/CdrLink.pcss';\n</style>\n"]}, media: undefined });
+      inject("data-v-84a34070_0", { source: "\n@import 'cssdir/settings/_index.pcss';\n@import './styles/vars/CdrLink.vars.pcss';\n@import './styles/CdrLink.pcss';\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/link/CdrLink.vue"],"names":[],"mappings":";AAyDA,qCAAA;AACA,yCAAA;AACA,+BAAA","file":"CdrLink.vue","sourcesContent":["<template>\n  <component\n    :is=\"tag\"\n    :class=\"[modifierClass, themeClass]\"\n    :target=\"target\"\n    :rel=\"computedRel\"\n    :href=\"tag === 'a' ? href : null /* don't include the href attribute if not an <a> */\"\n  >\n    <!-- @slot innerHTML on the inside of the anchor component -->\n    <slot>Link Text</slot>\n  </component>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\n// import themeable from 'mixinsdir/themeable';\n/**\n *\n * Cedar 2 component for link.\n *\n * <span class=\"modifiers\">Modifiers</span>\n * {standalone}\n * @version 0.0.1\n * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)\n */\nexport default {\n  name: 'CdrLink',\n  mixins: [modifier],\n  props: {\n    tag: {\n      type: String,\n      default: 'a',\n    },\n    href: {\n      type: String,\n      default: '#',\n    },\n    /** @ignore */\n    target: String,\n    /** @ignore */\n    rel: String,\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-link';\n    },\n    computedRel() {\n      if (this.target === '_blank') {\n        return this.rel || 'noopener noreferrer';\n      }\n      return this.rel;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import 'cssdir/settings/_index.pcss';\n  @import './styles/vars/CdrLink.vars.pcss';\n  @import './styles/CdrLink.pcss';\n</style>\n"]}, media: undefined });
   Object.defineProperty(this, "$style", { value: {} });
 
     };
@@ -11177,9 +14147,9 @@
     /* style */
     const __vue_inject_styles__$1 = function (inject) {
       if (!inject) return
-      inject("data-v-deff55b6_0", { source: "\n@import 'cssdir/settings/_index.pcss';\n@import './styles/vars/CdrButton.vars.pcss';\n@import './styles/CdrButton.pcss';\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/CdrButton.vue"],"names":[],"mappings":";AAoHA,qCAAA;AACA,2CAAA;AACA,iCAAA","file":"CdrButton.vue","sourcesContent":["<template>\n  <component\n    :is=\"tag\"\n    :class=\"[\n      modifierClass,\n      buttonSizeClass,\n      fullWidthClass,\n      iconClass,\n    ]\"\n    :type=\"tag === 'button' ? type : null\"\n    @click=\"onClick\"\n  >\n    <!-- @slot for icon -->\n    <slot name=\"icon\" />\n    <!-- @slot innerHTML on the inside of the button component -->\n    <slot />\n  </component>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\nimport size from 'mixinsdir/size';\n\n/**\n * Cedar 2 component for button\n *\n * CdrButton will render either a button, or an anchor that looks like a button.\n * As such, the decision to use CdrButton vs CdrAnchor should be made based on what\n * you need the rendered element to look like.\n *\n * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)\n */\nexport default {\n  name: 'CdrButton',\n  mixins: [modifier, size],\n  props: {\n    /**\n     * Controls render as button or anchor. {button, a}\n     */\n    tag: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Sets the button type. {button, submit, reset}\n     */\n    type: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Adds custom click actions.\n     */\n    onClick: {\n      type: Function,\n      default: () => () => null,\n    },\n    /**\n     * Sets width to be 100%.\n    */\n    fullWidth: {\n      type: Boolean,\n      default: false,\n      validator: value => typeof value === 'boolean',\n    },\n    /**\n     * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.\n     */\n    iconOnly: {\n      type: Boolean,\n      default: false,\n    },\n    /**\n     * Renders an icon-only button with a light fill color for use on dark backgrounds.\n     * iconOnly must be true.\n     */\n    onDark: {\n      type: Boolean,\n      default: false,\n    },\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-button';\n    },\n    buttonSizeClass() {\n      return !this.iconOnly ? this.sizeClass : null;\n    },\n    iconClass() {\n      const classes = [];\n\n      if (this.$slots.icon && this.$slots.default) {\n        /* only add class for buttons with text + icon */\n        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));\n      }\n\n      if (this.iconOnly) {\n        classes.push(this.modifyClassName(this.baseClass, 'icon-only'));\n\n        if (this.onDark) {\n          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));\n        }\n      }\n      return classes.join(' ');\n    },\n    fullWidthClass() {\n      return this.fullWidth && !this.iconOnly\n        ? this.modifyClassName(this.baseClass, 'full-width') : null;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import 'cssdir/settings/_index.pcss';\n  @import './styles/vars/CdrButton.vars.pcss';\n  @import './styles/CdrButton.pcss';\n</style>\n\n<style>\n  @import '@rei/cdr-icon/dist/cdr-icon.css';\n</style>\n"]}, media: undefined });
+      inject("data-v-6a53075e_0", { source: "\n@import 'cssdir/settings/_index.pcss';\n@import './styles/vars/CdrButton.vars.pcss';\n@import './styles/CdrButton.pcss';\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/button/CdrButton.vue"],"names":[],"mappings":";AAoHA,qCAAA;AACA,2CAAA;AACA,iCAAA","file":"CdrButton.vue","sourcesContent":["<template>\n  <component\n    :is=\"tag\"\n    :class=\"[\n      modifierClass,\n      buttonSizeClass,\n      fullWidthClass,\n      iconClass,\n    ]\"\n    :type=\"tag === 'button' ? type : null\"\n    @click=\"onClick\"\n  >\n    <!-- @slot for icon -->\n    <slot name=\"icon\" />\n    <!-- @slot innerHTML on the inside of the button component -->\n    <slot />\n  </component>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\nimport size from 'mixinsdir/size';\n\n/**\n * Cedar 2 component for button\n *\n * CdrButton will render either a button, or an anchor that looks like a button.\n * As such, the decision to use CdrButton vs CdrAnchor should be made based on what\n * you need the rendered element to look like.\n *\n * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)\n */\nexport default {\n  name: 'CdrButton',\n  mixins: [modifier, size],\n  props: {\n    /**\n     * Controls render as button or anchor. {button, a}\n     */\n    tag: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Sets the button type. {button, submit, reset}\n     */\n    type: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Adds custom click actions.\n     */\n    onClick: {\n      type: Function,\n      default: () => () => null,\n    },\n    /**\n     * Sets width to be 100%.\n    */\n    fullWidth: {\n      type: Boolean,\n      default: false,\n      validator: value => typeof value === 'boolean',\n    },\n    /**\n     * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.\n     */\n    iconOnly: {\n      type: Boolean,\n      default: false,\n    },\n    /**\n     * Renders an icon-only button with a light fill color for use on dark backgrounds.\n     * iconOnly must be true.\n     */\n    onDark: {\n      type: Boolean,\n      default: false,\n    },\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-button';\n    },\n    buttonSizeClass() {\n      return !this.iconOnly ? this.sizeClass : null;\n    },\n    iconClass() {\n      const classes = [];\n\n      if (this.$slots.icon && this.$slots.default) {\n        /* only add class for buttons with text + icon */\n        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));\n      }\n\n      if (this.iconOnly) {\n        classes.push(this.modifyClassName(this.baseClass, 'icon-only'));\n\n        if (this.onDark) {\n          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));\n        }\n      }\n      return classes.join(' ');\n    },\n    fullWidthClass() {\n      return this.fullWidth && !this.iconOnly\n        ? this.modifyClassName(this.baseClass, 'full-width') : null;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import 'cssdir/settings/_index.pcss';\n  @import './styles/vars/CdrButton.vars.pcss';\n  @import './styles/CdrButton.pcss';\n</style>\n\n<style>\n  @import '@rei/cdr-icon/dist/cdr-icon.css';\n</style>\n"]}, media: undefined });
   Object.defineProperty(this, "$style", { value: {} })
-  ,inject("data-v-deff55b6_1", { source: "\n@import '@rei/cdr-icon/dist/cdr-icon.css';\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/CdrButton.vue"],"names":[],"mappings":";AA0HA,yCAAA","file":"CdrButton.vue","sourcesContent":["<template>\n  <component\n    :is=\"tag\"\n    :class=\"[\n      modifierClass,\n      buttonSizeClass,\n      fullWidthClass,\n      iconClass,\n    ]\"\n    :type=\"tag === 'button' ? type : null\"\n    @click=\"onClick\"\n  >\n    <!-- @slot for icon -->\n    <slot name=\"icon\" />\n    <!-- @slot innerHTML on the inside of the button component -->\n    <slot />\n  </component>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\nimport size from 'mixinsdir/size';\n\n/**\n * Cedar 2 component for button\n *\n * CdrButton will render either a button, or an anchor that looks like a button.\n * As such, the decision to use CdrButton vs CdrAnchor should be made based on what\n * you need the rendered element to look like.\n *\n * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)\n */\nexport default {\n  name: 'CdrButton',\n  mixins: [modifier, size],\n  props: {\n    /**\n     * Controls render as button or anchor. {button, a}\n     */\n    tag: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Sets the button type. {button, submit, reset}\n     */\n    type: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Adds custom click actions.\n     */\n    onClick: {\n      type: Function,\n      default: () => () => null,\n    },\n    /**\n     * Sets width to be 100%.\n    */\n    fullWidth: {\n      type: Boolean,\n      default: false,\n      validator: value => typeof value === 'boolean',\n    },\n    /**\n     * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.\n     */\n    iconOnly: {\n      type: Boolean,\n      default: false,\n    },\n    /**\n     * Renders an icon-only button with a light fill color for use on dark backgrounds.\n     * iconOnly must be true.\n     */\n    onDark: {\n      type: Boolean,\n      default: false,\n    },\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-button';\n    },\n    buttonSizeClass() {\n      return !this.iconOnly ? this.sizeClass : null;\n    },\n    iconClass() {\n      const classes = [];\n\n      if (this.$slots.icon && this.$slots.default) {\n        /* only add class for buttons with text + icon */\n        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));\n      }\n\n      if (this.iconOnly) {\n        classes.push(this.modifyClassName(this.baseClass, 'icon-only'));\n\n        if (this.onDark) {\n          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));\n        }\n      }\n      return classes.join(' ');\n    },\n    fullWidthClass() {\n      return this.fullWidth && !this.iconOnly\n        ? this.modifyClassName(this.baseClass, 'full-width') : null;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import 'cssdir/settings/_index.pcss';\n  @import './styles/vars/CdrButton.vars.pcss';\n  @import './styles/CdrButton.pcss';\n</style>\n\n<style>\n  @import '@rei/cdr-icon/dist/cdr-icon.css';\n</style>\n"]}, media: undefined });
+  ,inject("data-v-6a53075e_1", { source: "\n@import '@rei/cdr-icon/dist/cdr-icon.css';\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/button/CdrButton.vue"],"names":[],"mappings":";AA0HA,yCAAA","file":"CdrButton.vue","sourcesContent":["<template>\n  <component\n    :is=\"tag\"\n    :class=\"[\n      modifierClass,\n      buttonSizeClass,\n      fullWidthClass,\n      iconClass,\n    ]\"\n    :type=\"tag === 'button' ? type : null\"\n    @click=\"onClick\"\n  >\n    <!-- @slot for icon -->\n    <slot name=\"icon\" />\n    <!-- @slot innerHTML on the inside of the button component -->\n    <slot />\n  </component>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\nimport size from 'mixinsdir/size';\n\n/**\n * Cedar 2 component for button\n *\n * CdrButton will render either a button, or an anchor that looks like a button.\n * As such, the decision to use CdrButton vs CdrAnchor should be made based on what\n * you need the rendered element to look like.\n *\n * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)\n */\nexport default {\n  name: 'CdrButton',\n  mixins: [modifier, size],\n  props: {\n    /**\n     * Controls render as button or anchor. {button, a}\n     */\n    tag: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Sets the button type. {button, submit, reset}\n     */\n    type: {\n      type: String,\n      default: 'button',\n      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Adds custom click actions.\n     */\n    onClick: {\n      type: Function,\n      default: () => () => null,\n    },\n    /**\n     * Sets width to be 100%.\n    */\n    fullWidth: {\n      type: Boolean,\n      default: false,\n      validator: value => typeof value === 'boolean',\n    },\n    /**\n     * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.\n     */\n    iconOnly: {\n      type: Boolean,\n      default: false,\n    },\n    /**\n     * Renders an icon-only button with a light fill color for use on dark backgrounds.\n     * iconOnly must be true.\n     */\n    onDark: {\n      type: Boolean,\n      default: false,\n    },\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-button';\n    },\n    buttonSizeClass() {\n      return !this.iconOnly ? this.sizeClass : null;\n    },\n    iconClass() {\n      const classes = [];\n\n      if (this.$slots.icon && this.$slots.default) {\n        /* only add class for buttons with text + icon */\n        classes.push(this.modifyClassName(this.baseClass, 'has-icon'));\n      }\n\n      if (this.iconOnly) {\n        classes.push(this.modifyClassName(this.baseClass, 'icon-only'));\n\n        if (this.onDark) {\n          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));\n        }\n      }\n      return classes.join(' ');\n    },\n    fullWidthClass() {\n      return this.fullWidth && !this.iconOnly\n        ? this.modifyClassName(this.baseClass, 'full-width') : null;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import 'cssdir/settings/_index.pcss';\n  @import './styles/vars/CdrButton.vars.pcss';\n  @import './styles/CdrButton.pcss';\n</style>\n\n<style>\n  @import '@rei/cdr-icon/dist/cdr-icon.css';\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11300,7 +14270,7 @@
     /* style */
     const __vue_inject_styles__$2 = function (inject) {
       if (!inject) return
-      inject("data-v-667819e0_0", { source: "\n@import '../../css/settings/_index.pcss';\n@import './styles/vars/CdrCta.vars.pcss';\n@import './styles/CdrCta.pcss';\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/cta/CdrCta.vue"],"names":[],"mappings":";AA2EA,wCAAA;AACA,wCAAA;AACA,8BAAA","file":"CdrCta.vue","sourcesContent":["<template>\n  <a\n    :class=\"[modifierClass, ctaClass, fullWidthClass]\"\n    :target=\"target\"\n    :rel=\"computedRel\"\n    :href=\"href\"\n  >\n    <!-- @slot innerHTML on the inside of the cta component -->\n    <slot />\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      viewBox=\"0 0 24 24\"\n      role=\"presentation\"\n      :class=\"$style['cdr-cta__icon']\"\n    >\n      <!-- eslint-disable-next-line -->\n      <path d=\"M16 12a.997.997 0 0 0-.288-.702l-5.005-5.005a1 1 0 0 0-1.414 1.414L13.585 12 9.29 16.295a1 1 0 0 0 1.417 1.412l4.98-4.98A.997.997 0 0 0 16 12z\" />\n    </svg>\n  </a>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\n\nexport default {\n  name: 'CdrCta',\n  mixins: [modifier],\n  props: {\n    /**\n      * Change the color of the cdr-cta button match different themes.\n      */\n    ctaStyle: {\n      type: String,\n      default: 'dark',\n      validator: value => (['brand', 'dark', 'light', 'sale'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Sets width to be 100%.\n    */\n    fullWidth: {\n      type: Boolean,\n      default: false,\n      validator: value => typeof value === 'boolean',\n    },\n    href: {\n      type: String,\n      default: '#',\n    },\n    /** @ignore */\n    target: String,\n    /** @ignore */\n    rel: String,\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-cta';\n    },\n    ctaClass() {\n      return this.modifyClassName(this.baseClass, this.ctaStyle);\n    },\n    fullWidthClass() {\n      return this.fullWidth && !this.iconOnly\n        ? this.modifyClassName(this.baseClass, 'full-width') : null;\n    },\n    computedRel() {\n      if (this.target === '_blank') {\n        return this.rel || 'noopener noreferrer';\n      }\n      return this.rel;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import '../../css/settings/_index.pcss';\n  @import './styles/vars/CdrCta.vars.pcss';\n  @import './styles/CdrCta.pcss';\n</style>\n"]}, media: undefined });
+      inject("data-v-b2a27e92_0", { source: "\n@import '../../css/settings/_index.pcss';\n@import './styles/vars/CdrCta.vars.pcss';\n@import './styles/CdrCta.pcss';\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/cta/CdrCta.vue"],"names":[],"mappings":";AA2EA,wCAAA;AACA,wCAAA;AACA,8BAAA","file":"CdrCta.vue","sourcesContent":["<template>\n  <a\n    :class=\"[modifierClass, ctaClass, fullWidthClass]\"\n    :target=\"target\"\n    :rel=\"computedRel\"\n    :href=\"href\"\n  >\n    <!-- @slot innerHTML on the inside of the cta component -->\n    <slot />\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      viewBox=\"0 0 24 24\"\n      role=\"presentation\"\n      :class=\"$style['cdr-cta__icon']\"\n    >\n      <!-- eslint-disable-next-line -->\n      <path d=\"M16 12a.997.997 0 0 0-.288-.702l-5.005-5.005a1 1 0 0 0-1.414 1.414L13.585 12 9.29 16.295a1 1 0 0 0 1.417 1.412l4.98-4.98A.997.997 0 0 0 16 12z\" />\n    </svg>\n  </a>\n</template>\n\n<script>\nimport modifier from 'mixinsdir/modifier';\n\nexport default {\n  name: 'CdrCta',\n  mixins: [modifier],\n  props: {\n    /**\n      * Change the color of the cdr-cta button match different themes.\n      */\n    ctaStyle: {\n      type: String,\n      default: 'dark',\n      validator: value => (['brand', 'dark', 'light', 'sale'].indexOf(value) >= 0) || false,\n    },\n    /**\n     * Sets width to be 100%.\n    */\n    fullWidth: {\n      type: Boolean,\n      default: false,\n      validator: value => typeof value === 'boolean',\n    },\n    href: {\n      type: String,\n      default: '#',\n    },\n    /** @ignore */\n    target: String,\n    /** @ignore */\n    rel: String,\n  },\n  computed: {\n    baseClass() {\n      return 'cdr-cta';\n    },\n    ctaClass() {\n      return this.modifyClassName(this.baseClass, this.ctaStyle);\n    },\n    fullWidthClass() {\n      return this.fullWidth && !this.iconOnly\n        ? this.modifyClassName(this.baseClass, 'full-width') : null;\n    },\n    computedRel() {\n      if (this.target === '_blank') {\n        return this.rel || 'noopener noreferrer';\n      }\n      return this.rel;\n    },\n  },\n};\n</script>\n\n<style module>\n  @import '../../css/settings/_index.pcss';\n  @import './styles/vars/CdrCta.vars.pcss';\n  @import './styles/CdrCta.pcss';\n</style>\n"]}, media: undefined });
   Object.defineProperty(this, "$style", { value: {} });
 
     };
@@ -11445,7 +14415,7 @@
       { staticClass: "link-examples" },
       [
         _c("cdr-text", { attrs: { tag: "h2", modifier: "heading-small" } }, [
-          _vm._v("\n    Links\n  ")
+          _vm._v("\n    Links, Pupple?\n  ")
         ]),
         _vm._v(" "),
         _c("cdr-text", { attrs: { tag: "h3", modifier: "subheading" } }, [
@@ -11595,7 +14565,7 @@
     /* style */
     const __vue_inject_styles__$4 = function (inject) {
       if (!inject) return
-      inject("data-v-1e2eefec_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n.anchor-example {\n  padding: 20px;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/link/examples/Links.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA0KA,2EAAA;AAEA;EACA,cAAA;AACA;AAEA;EACA,aAAA;AACA","file":"Links.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div class=\"link-examples\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-small\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link :data-backstop=\"`cdr-link`\" />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Link, href set</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link href=\"https://www.rei.com/\">\n        REI.com\n      </cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Standalone Link (No underline)</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link\n        modifier=\"standalone\"\n        :data-backstop=\"`cdr-link--standalone`\"\n      />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Links, with icon</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link>\n        <!-- <cdr-icon\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-left--sm\"\n        /> -->\n        Icon on the left\n      </cdr-link>\n      <br>\n      <br>\n      <cdr-link>\n        Icon on the right\n        <cdr-icon\n          use=\"#download\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-right--sm\"\n        />\n      </cdr-link>\n      <br>\n      <br>\n      <!-- <cdr-link>\n        <cdr-icon\n          use=\"#twitter\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-left--sm\"\n        />\n        Icons on both sides\n        <cdr-icon\n          use=\"#external-link\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-right--sm\"\n        />\n      </cdr-link> -->\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Content Resilience, too much content</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      </cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Content Resilience, too little content</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link>K</cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Link using a &lt;button&gt; element</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link\n        tag=\"button\"\n        :data-backstop=\"`cdr-link--button`\"\n      >I'm a button!</cdr-link>\n    </div>\n\n    <!-- Nested theme Testing -->\n\n    <!-- <cdr-themer\n      theme=\"light\"\n      background=\"lightest\"\n    > -->\n      <!-- Smaller examples with nested theme (for override) -->\n      <!-- <p>Works nested</p>\n      <p>\n        <cdr-link href=\"https://www.rei.com/\">\n          REI.com\n        </cdr-link>\n        <cdr-link\n          href=\"https://www.rei.com/\"\n          modifier=\"standalone\"\n        >REI.com</cdr-link>\n      </p> -->\n      <!-- Override individual theme -->\n      <!-- <p>Individual override (dark on light)</p>\n      <p>\n        <cdr-link\n          href=\"https://www.rei.com/\"\n          theme=\"dark\">REI.com</cdr-link>\n      </p> -->\n    <!-- </cdr-themer> -->\n\n    <cdr-link\n      href=\"https://www.rei.com/\"\n    >REI.com</cdr-link>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n    >REI.com</cdr-link>\n    <p>Override (light on dark)</p>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      theme=\"light\"\n    >REI.com</cdr-link>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText, CdrLink } from 'componentsdir/_index';\n\nexport default {\n  name: 'Links',\n  components: {\n    CdrText,\n    CdrLink,\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n.anchor-example {\n  padding: 20px;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-41dd545c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n.anchor-example {\n  padding: 20px;\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/link/examples/Links.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA0KA,2EAAA;AAEA;EACA,cAAA;AACA;AAEA;EACA,aAAA;AACA","file":"Links.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div class=\"link-examples\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-small\"\n    >\n      Links, Pupple?\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link :data-backstop=\"`cdr-link`\" />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Link, href set</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link href=\"https://www.rei.com/\">\n        REI.com\n      </cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Standalone Link (No underline)</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link\n        modifier=\"standalone\"\n        :data-backstop=\"`cdr-link--standalone`\"\n      />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Links, with icon</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link>\n        <!-- <cdr-icon\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-left--sm\"\n        /> -->\n        Icon on the left\n      </cdr-link>\n      <br>\n      <br>\n      <cdr-link>\n        Icon on the right\n        <cdr-icon\n          use=\"#download\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-right--sm\"\n        />\n      </cdr-link>\n      <br>\n      <br>\n      <!-- <cdr-link>\n        <cdr-icon\n          use=\"#twitter\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-left--sm\"\n        />\n        Icons on both sides\n        <cdr-icon\n          use=\"#external-link\"\n          modifier=\"inherit-color\"\n          class=\"cdr-inline-right--sm\"\n        />\n      </cdr-link> -->\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Content Resilience, too much content</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia inventore, quis ducimus itaque rerum id animi accusantium porro ex numquam. Dolorum ducimus illo doloremque ullam quas. Vel similique laudantium error!\n      </cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Content Resilience, too little content</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link>K</cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Link using a &lt;button&gt; element</cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link\n        tag=\"button\"\n        :data-backstop=\"`cdr-link--button`\"\n      >I'm a button!</cdr-link>\n    </div>\n\n    <!-- Nested theme Testing -->\n\n    <!-- <cdr-themer\n      theme=\"light\"\n      background=\"lightest\"\n    > -->\n      <!-- Smaller examples with nested theme (for override) -->\n      <!-- <p>Works nested</p>\n      <p>\n        <cdr-link href=\"https://www.rei.com/\">\n          REI.com\n        </cdr-link>\n        <cdr-link\n          href=\"https://www.rei.com/\"\n          modifier=\"standalone\"\n        >REI.com</cdr-link>\n      </p> -->\n      <!-- Override individual theme -->\n      <!-- <p>Individual override (dark on light)</p>\n      <p>\n        <cdr-link\n          href=\"https://www.rei.com/\"\n          theme=\"dark\">REI.com</cdr-link>\n      </p> -->\n    <!-- </cdr-themer> -->\n\n    <cdr-link\n      href=\"https://www.rei.com/\"\n    >REI.com</cdr-link>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n    >REI.com</cdr-link>\n    <p>Override (light on dark)</p>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      theme=\"light\"\n    >REI.com</cdr-link>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText, CdrLink } from 'componentsdir/_index';\n\nexport default {\n  name: 'Links',\n  components: {\n    CdrText,\n    CdrLink,\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n.anchor-example {\n  padding: 20px;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11810,7 +14780,7 @@
     /* style */
     const __vue_inject_styles__$5 = function (inject) {
       if (!inject) return
-      inject("data-v-fc69b030_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* This should be removed: */\n\n/* having custom styles here provides false positives */\n.button-example {\n  padding: 10px;\n}\n.button-example button,\n.button-example a {\n  margin: 0 10px 5px 0;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/examples/demo/Default.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2JA,4BAAA;;AAEA,uDAAA;AAEA;EACA,aAAA;AACA;AAEA;;EAEA,oBAAA;AACA","file":"Default.vue","sourcesContent":["<template>\n  <div>\n    <div\n      class=\"button-example\"\n      v-for=\"(section, index) in data\"\n      :key=\"index\"\n    >\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        {{ section.title }}\n      </cdr-text>\n      <cdr-button\n        v-for=\"(button, index2) in section.buttons\"\n        :key=\"index2\"\n        :size=\"button.size\"\n        :full-width=\"button.fullWidth\"\n        :type=\"button.type\"\n        :disabled=\"button.disabled\"\n        :data-backstop=\"button.backstop ? button.backstop : null\"\n      >\n        {{ button.label }}\n      </cdr-button>\n    </div>\n    <div class=\"button-example\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        Responsive\n      </cdr-text>\n      <cdr-button\n        :on-click=\"log\"\n        :full-width=\"true\"\n        size=\"large@sm\"\n      >\n        Responsive with default\n      </cdr-button>\n    </div>\n    <div class=\"button-example\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        Primary Anchor\n      </cdr-text>\n      <cdr-button\n        tag=\"a\"\n        href=\"https://rei.com\"\n        size=\"large\"\n        data-backstop=\"cdr-button--anchor\"\n      >\n        Link\n      </cdr-button>\n    </div>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText, CdrButton } from 'componentsdir/_index';\n\nexport default {\n  name: 'Default',\n  components: {\n    CdrText,\n    CdrButton,\n  },\n  data: function data() {\n    return {\n      data: [\n        {\n          title: 'Default sizes',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: false,\n              size: 'large',\n              fullWidth: false,\n              backstop: 'cdr-button--size',\n            },\n            {\n              label: 'Medium',\n              disabled: false,\n              size: 'medium',\n              fullWidth: false,\n            },\n            {\n              label: 'Small',\n              disabled: false,\n              size: 'small',\n              fullWidth: false,\n            },\n          ],\n        },\n        {\n          title: 'Disabled',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: true,\n              size: 'large',\n              fullWidth: false,\n              backstop: 'cdr-button--disabled',\n            },\n            {\n              label: 'Medium',\n              disabled: true,\n              size: 'medium',\n              fullWidth: false,\n            },\n            {\n              label: 'Small',\n              disabled: true,\n              size: 'small',\n              fullWidth: false,\n            },\n          ],\n        },\n        {\n          title: 'Full Width',\n          buttons: [\n            {\n              label: 'Small + full width',\n              disabled: false,\n              size: 'small',\n              fullWidth: true,\n            },\n            {\n              label: 'Medium + full width',\n              disabled: false,\n              size: 'medium',\n              fullWidth: true,\n            },\n            {\n              label: 'Large + full width',\n              disabled: false,\n              size: 'large',\n              fullWidth: true,\n            },\n          ],\n        },\n      ],\n    };\n  },\n  methods: {\n    log() {\n      console.log('clicked'); // eslint-disable-line\n    },\n  },\n};\n</script>\n\n<style>\n/* This should be removed: */\n\n/* having custom styles here provides false positives */\n\n.button-example {\n  padding: 10px;\n}\n\n.button-example button,\n.button-example a {\n  margin: 0 10px 5px 0;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-6a84df61_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* This should be removed: */\n\n/* having custom styles here provides false positives */\n.button-example {\n  padding: 10px;\n}\n.button-example button,\n.button-example a {\n  margin: 0 10px 5px 0;\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/button/examples/demo/Default.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2JA,4BAAA;;AAEA,uDAAA;AAEA;EACA,aAAA;AACA;AAEA;;EAEA,oBAAA;AACA","file":"Default.vue","sourcesContent":["<template>\n  <div>\n    <div\n      class=\"button-example\"\n      v-for=\"(section, index) in data\"\n      :key=\"index\"\n    >\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        {{ section.title }}\n      </cdr-text>\n      <cdr-button\n        v-for=\"(button, index2) in section.buttons\"\n        :key=\"index2\"\n        :size=\"button.size\"\n        :full-width=\"button.fullWidth\"\n        :type=\"button.type\"\n        :disabled=\"button.disabled\"\n        :data-backstop=\"button.backstop ? button.backstop : null\"\n      >\n        {{ button.label }}\n      </cdr-button>\n    </div>\n    <div class=\"button-example\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        Responsive\n      </cdr-text>\n      <cdr-button\n        :on-click=\"log\"\n        :full-width=\"true\"\n        size=\"large@sm\"\n      >\n        Responsive with default\n      </cdr-button>\n    </div>\n    <div class=\"button-example\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        Primary Anchor\n      </cdr-text>\n      <cdr-button\n        tag=\"a\"\n        href=\"https://rei.com\"\n        size=\"large\"\n        data-backstop=\"cdr-button--anchor\"\n      >\n        Link\n      </cdr-button>\n    </div>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText, CdrButton } from 'componentsdir/_index';\n\nexport default {\n  name: 'Default',\n  components: {\n    CdrText,\n    CdrButton,\n  },\n  data: function data() {\n    return {\n      data: [\n        {\n          title: 'Default sizes',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: false,\n              size: 'large',\n              fullWidth: false,\n              backstop: 'cdr-button--size',\n            },\n            {\n              label: 'Medium',\n              disabled: false,\n              size: 'medium',\n              fullWidth: false,\n            },\n            {\n              label: 'Small',\n              disabled: false,\n              size: 'small',\n              fullWidth: false,\n            },\n          ],\n        },\n        {\n          title: 'Disabled',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: true,\n              size: 'large',\n              fullWidth: false,\n              backstop: 'cdr-button--disabled',\n            },\n            {\n              label: 'Medium',\n              disabled: true,\n              size: 'medium',\n              fullWidth: false,\n            },\n            {\n              label: 'Small',\n              disabled: true,\n              size: 'small',\n              fullWidth: false,\n            },\n          ],\n        },\n        {\n          title: 'Full Width',\n          buttons: [\n            {\n              label: 'Small + full width',\n              disabled: false,\n              size: 'small',\n              fullWidth: true,\n            },\n            {\n              label: 'Medium + full width',\n              disabled: false,\n              size: 'medium',\n              fullWidth: true,\n            },\n            {\n              label: 'Large + full width',\n              disabled: false,\n              size: 'large',\n              fullWidth: true,\n            },\n          ],\n        },\n      ],\n    };\n  },\n  methods: {\n    log() {\n      console.log('clicked'); // eslint-disable-line\n    },\n  },\n};\n</script>\n\n<style>\n/* This should be removed: */\n\n/* having custom styles here provides false positives */\n\n.button-example {\n  padding: 10px;\n}\n\n.button-example button,\n.button-example a {\n  margin: 0 10px 5px 0;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -11975,7 +14945,7 @@
     /* style */
     const __vue_inject_styles__$6 = function (inject) {
       if (!inject) return
-      inject("data-v-483afb5b_0", { source: "\n.button-example {\n  padding: 10px;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/examples/demo/Secondary.vue"],"names":[],"mappings":";AAgHA;EACA,aAAA;AACA","file":"Secondary.vue","sourcesContent":["<template>\n  <div>\n    <div\n      class=\"button-example\"\n      v-for=\"(section, index) in data\"\n      :key=\"index\"\n    >\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        {{ section.title }}\n      </cdr-text>\n      <cdr-button\n        v-for=\"(button, index2) in section.buttons\"\n        :key=\"index2\"\n        :size=\"button.size\"\n        :full-width=\"button.fullWidth\"\n        :modifier=\"button.modifier\"\n        :type=\"button.type\"\n        :disabled=\"button.disabled\"\n        :data-backstop=\"button.backstop ? button.backstop : null\"\n      >{{ button.label }}</cdr-button>\n    </div>\n    <div class=\"button-example\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        Secondary Anchor\n      </cdr-text>\n      <cdr-button\n        tag=\"a\"\n        href=\"https://rei.com\"\n        size=\"small\"\n        modifier=\"secondary\"\n        data-backstop=\"cdr-button--small secondary anchor\"\n      >Link <span>text in span</span>\n      </cdr-button>\n    </div>\n  </div>\n</template>\n\n<script>\n// import CdrButton from 'componentsdir/button/CdrButton';\n// import CdrText from 'componentsdir/text/CdrText';\n\nimport { CdrButton, CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'Secondary',\n  components: {\n    CdrButton,\n    CdrText,\n  },\n  data: function data() {\n    return {\n      data: [\n        {\n          title: 'Secondary',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: false,\n              size: 'large',\n              modifier: 'secondary',\n              backstop: 'cdr-button--secondary',\n            },\n            {\n              label: 'Medium',\n              disabled: false,\n              size: 'medium',\n              modifier: 'secondary',\n            },\n            {\n              label: 'Small',\n              disabled: false,\n              size: 'small',\n              modifier: 'secondary',\n            },\n          ],\n        },\n        {\n          title: 'Secondary Disabled',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: true,\n              size: 'large',\n              modifier: 'secondary',\n            },\n            {\n              label: 'Medium',\n              disabled: true,\n              size: 'medium',\n              modifier: 'secondary',\n            },\n            {\n              label: 'Small',\n              disabled: true,\n              size: 'small',\n              modifier: 'secondary',\n            },\n          ],\n        },\n      ],\n    };\n  },\n};\n</script>\n\n<style>\n  .button-example {\n    padding: 10px;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-b7b8847c_0", { source: "\n.button-example {\n  padding: 10px;\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/button/examples/demo/Secondary.vue"],"names":[],"mappings":";AAgHA;EACA,aAAA;AACA","file":"Secondary.vue","sourcesContent":["<template>\n  <div>\n    <div\n      class=\"button-example\"\n      v-for=\"(section, index) in data\"\n      :key=\"index\"\n    >\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        {{ section.title }}\n      </cdr-text>\n      <cdr-button\n        v-for=\"(button, index2) in section.buttons\"\n        :key=\"index2\"\n        :size=\"button.size\"\n        :full-width=\"button.fullWidth\"\n        :modifier=\"button.modifier\"\n        :type=\"button.type\"\n        :disabled=\"button.disabled\"\n        :data-backstop=\"button.backstop ? button.backstop : null\"\n      >{{ button.label }}</cdr-button>\n    </div>\n    <div class=\"button-example\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-small\"\n      >\n        Secondary Anchor\n      </cdr-text>\n      <cdr-button\n        tag=\"a\"\n        href=\"https://rei.com\"\n        size=\"small\"\n        modifier=\"secondary\"\n        data-backstop=\"cdr-button--small secondary anchor\"\n      >Link <span>text in span</span>\n      </cdr-button>\n    </div>\n  </div>\n</template>\n\n<script>\n// import CdrButton from 'componentsdir/button/CdrButton';\n// import CdrText from 'componentsdir/text/CdrText';\n\nimport { CdrButton, CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'Secondary',\n  components: {\n    CdrButton,\n    CdrText,\n  },\n  data: function data() {\n    return {\n      data: [\n        {\n          title: 'Secondary',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: false,\n              size: 'large',\n              modifier: 'secondary',\n              backstop: 'cdr-button--secondary',\n            },\n            {\n              label: 'Medium',\n              disabled: false,\n              size: 'medium',\n              modifier: 'secondary',\n            },\n            {\n              label: 'Small',\n              disabled: false,\n              size: 'small',\n              modifier: 'secondary',\n            },\n          ],\n        },\n        {\n          title: 'Secondary Disabled',\n          buttons: [\n            {\n              label: 'Large',\n              disabled: true,\n              size: 'large',\n              modifier: 'secondary',\n            },\n            {\n              label: 'Medium',\n              disabled: true,\n              size: 'medium',\n              modifier: 'secondary',\n            },\n            {\n              label: 'Small',\n              disabled: true,\n              size: 'small',\n              modifier: 'secondary',\n            },\n          ],\n        },\n      ],\n    };\n  },\n};\n</script>\n\n<style>\n  .button-example {\n    padding: 10px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -12042,7 +15012,7 @@
     /* style */
     const __vue_inject_styles__$7 = function (inject) {
       if (!inject) return
-      inject("data-v-0d10ff22_0", { source: "\n.button-example {\n  padding: 10px;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/button/examples/Buttons.vue"],"names":[],"mappings":";AAgCA;EACA,aAAA;AACA","file":"Buttons.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-small\"\n    >\n      Buttons\n    </cdr-text>\n    <default-buttons />\n    <secondary-buttons />\n    <icon-buttons />\n  </div>\n</template>\n\n<script>\n// import CdrText from 'componentsdir/text/CdrText';\nimport defaultButtons from 'componentsdir/button/examples/demo/Default';\nimport secondaryButtons from 'componentsdir/button/examples/demo/Secondary';\n// import iconButtons from 'componentsdir/button/examples/demo/Icons';\n\nexport default {\n  name: 'Buttons',\n  components: {\n    // CdrText,\n    defaultButtons,\n    secondaryButtons,\n    // iconButtons,\n  },\n};\n</script>\n\n<style>\n  .button-example {\n    padding: 10px;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-5ee8f99b_0", { source: "\n.button-example {\n  padding: 10px;\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/button/examples/Buttons.vue"],"names":[],"mappings":";AAgCA;EACA,aAAA;AACA","file":"Buttons.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-small\"\n    >\n      Buttons\n    </cdr-text>\n    <default-buttons />\n    <secondary-buttons />\n    <icon-buttons />\n  </div>\n</template>\n\n<script>\n// import CdrText from 'componentsdir/text/CdrText';\nimport defaultButtons from 'componentsdir/button/examples/demo/Default';\nimport secondaryButtons from 'componentsdir/button/examples/demo/Secondary';\n// import iconButtons from 'componentsdir/button/examples/demo/Icons';\n\nexport default {\n  name: 'Buttons',\n  components: {\n    // CdrText,\n    defaultButtons,\n    secondaryButtons,\n    // iconButtons,\n  },\n};\n</script>\n\n<style>\n  .button-example {\n    padding: 10px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -12190,7 +15160,7 @@
     /* style */
     const __vue_inject_styles__$8 = function (inject) {
       if (!inject) return
-      inject("data-v-045df6fb_0", { source: "\n.button-example {\n  padding: 10px;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/cta/examples/Cta.vue"],"names":[],"mappings":";AAoEA;EACA,aAAA;AACA","file":"Cta.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-small\"\n    >\n      CTA\n    </cdr-text>\n    <div class=\"button-example\">\n      <cdr-cta\n        data-backstop=\"cdr-cta--dark\"\n      >\n        Dark\n      </cdr-cta>\n      <cdr-cta\n        href=\"https://rei.com\"\n        cta-style=\"brand\"\n        data-backstop=\"cdr-cta--brand\"\n      >Brand</cdr-cta>\n      <cdr-cta\n        href=\"https://rei.com\"\n        cta-style=\"light\"\n        data-backstop=\"cdr-cta--light\"\n      >Light</cdr-cta>\n      <cdr-cta\n        href=\"https://rei.com\"\n        cta-style=\"sale\"\n        data-backstop=\"cdr-cta--sale\"\n      >Sale</cdr-cta>\n    </div>\n    <div class=\"button-example\">\n      <cdr-cta\n        cta-style=\"dark\"\n        href=\"https://rei.com\"\n        :full-width=\"true\"\n        data-backstop=\"cdr-cta--full-width\"\n      >Full width</cdr-cta>\n    </div>\n    <div\n      class=\"button-example\"\n      style=\"max-width: 300px;\"\n    >\n      <cdr-cta\n        data-backstop=\"cdr-cta--elevated\"\n        href=\"https://rei.com\"\n        cta-style=\"light\"\n        modifier=\"elevated\"\n      >\n        This button has long text. It wraps!\n      </cdr-cta>\n    </div>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText, CdrCta } from 'componentsdir/_index';\n\nexport default {\n  name: 'Cta',\n  components: {\n    CdrCta,\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .button-example {\n    padding: 10px;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-5c8cd0f4_0", { source: "\n.button-example {\n  padding: 10px;\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/cta/examples/Cta.vue"],"names":[],"mappings":";AAoEA;EACA,aAAA;AACA","file":"Cta.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-small\"\n    >\n      CTA\n    </cdr-text>\n    <div class=\"button-example\">\n      <cdr-cta\n        data-backstop=\"cdr-cta--dark\"\n      >\n        Dark\n      </cdr-cta>\n      <cdr-cta\n        href=\"https://rei.com\"\n        cta-style=\"brand\"\n        data-backstop=\"cdr-cta--brand\"\n      >Brand</cdr-cta>\n      <cdr-cta\n        href=\"https://rei.com\"\n        cta-style=\"light\"\n        data-backstop=\"cdr-cta--light\"\n      >Light</cdr-cta>\n      <cdr-cta\n        href=\"https://rei.com\"\n        cta-style=\"sale\"\n        data-backstop=\"cdr-cta--sale\"\n      >Sale</cdr-cta>\n    </div>\n    <div class=\"button-example\">\n      <cdr-cta\n        cta-style=\"dark\"\n        href=\"https://rei.com\"\n        :full-width=\"true\"\n        data-backstop=\"cdr-cta--full-width\"\n      >Full width</cdr-cta>\n    </div>\n    <div\n      class=\"button-example\"\n      style=\"max-width: 300px;\"\n    >\n      <cdr-cta\n        data-backstop=\"cdr-cta--elevated\"\n        href=\"https://rei.com\"\n        cta-style=\"light\"\n        modifier=\"elevated\"\n      >\n        This button has long text. It wraps!\n      </cdr-cta>\n    </div>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText, CdrCta } from 'componentsdir/_index';\n\nexport default {\n  name: 'Cta',\n  components: {\n    CdrCta,\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .button-example {\n    padding: 10px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -12273,7 +15243,7 @@
     /* style */
     const __vue_inject_styles__$9 = function (inject) {
       if (!inject) return
-      inject("data-v-4527b9c6_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"a11y.vue"}, media: undefined });
+      inject("data-v-a552c0a6_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"a11y.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -12695,7 +15665,7 @@
     /* style */
     const __vue_inject_styles__$a = function (inject) {
       if (!inject) return
-      inject("data-v-0fffdf62_0", { source: "\n.visibility-utilities {\ntable,\n  td {\n    border: 1px solid lightgray;\n}\ntable {\n    border-spacing: 0;\n    border-collapse: collapse;\n    line-height: 1;\n}\nth {\n    text-align: left;\n    padding: 10px;\n}\ntd {\n    padding: 5px;\n}\ntd:not(:first-of-type) {\n    text-align: center;\n}\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/visibility.vue"],"names":[],"mappings":";AAkVA;AACA;;IAEA,2BAAA;AACA;AAEA;IACA,iBAAA;IACA,yBAAA;IACA,cAAA;AACA;AAEA;IACA,gBAAA;IACA,aAAA;AACA;AAEA;IACA,YAAA;AACA;AAEA;IACA,kBAAA;AACA;AACA","file":"visibility.vue","sourcesContent":["<template>\n  <div\n    data-backstop=\"visibility-utilities\"\n    class=\"visibility-utilities\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Visibility classes\n    </cdr-text>\n\n    <table>\n      <thead>\n        <tr>\n          <th>class</th>\n          <th class=\"cdr-hide cdr-show@xs-only\">\n            visible @ xs\n          </th>\n          <th class=\"cdr-hide cdr-show@sm-only\">\n            visible @ sm\n          </th>\n          <th class=\"cdr-hide cdr-show@md-only\">\n            visible @ md\n          </th>\n          <th class=\"cdr-hide cdr-show@lg-only\">\n            visible @ lg\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n\n        <tr>\n          <td>.cdr-hide</td>\n          <td>\n            <div class=\"cdr-hide\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@xs-only</td>\n          <td>\n            <div class=\"cdr-hide@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@sm</td>\n          <td>\n            <div class=\"cdr-hide@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@sm-only</td>\n          <td>\n            <div class=\"cdr-hide@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@md</td>\n          <td>\n            <div class=\"cdr-hide@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@md-only</td>\n          <td>\n            <div class=\"cdr-hide@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@lg</td>\n          <td>\n            <div class=\"cdr-hide@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@lg-only</td>\n          <td>\n            <div class=\"cdr-hide@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show</td>\n          <td>\n            <div class=\"cdr-hide cdr-show\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@xs-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@xs-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@xs-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@sm</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@sm</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@sm</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@sm-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@sm-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@sm-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@md</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@md</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@md</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@md-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@md-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@md-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@lg</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@lg</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@lg</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@lg-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@lg-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@lg-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n      </tbody>\n    </table>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'VisibleUtilities',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n.visibility-utilities {\n  table,\n  td {\n    border: 1px solid lightgray;\n  }\n\n  table {\n    border-spacing: 0;\n    border-collapse: collapse;\n    line-height: 1;\n  }\n\n  th {\n    text-align: left;\n    padding: 10px;\n  }\n\n  td {\n    padding: 5px;\n  }\n\n  td:not(:first-of-type) {\n    text-align: center;\n  }\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-06082408_0", { source: "\n.visibility-utilities {\ntable,\n  td {\n    border: 1px solid lightgray;\n}\ntable {\n    border-spacing: 0;\n    border-collapse: collapse;\n    line-height: 1;\n}\nth {\n    text-align: left;\n    padding: 10px;\n}\ntd {\n    padding: 5px;\n}\ntd:not(:first-of-type) {\n    text-align: center;\n}\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/Utilities/demos/visibility.vue"],"names":[],"mappings":";AAkVA;AACA;;IAEA,2BAAA;AACA;AAEA;IACA,iBAAA;IACA,yBAAA;IACA,cAAA;AACA;AAEA;IACA,gBAAA;IACA,aAAA;AACA;AAEA;IACA,YAAA;AACA;AAEA;IACA,kBAAA;AACA;AACA","file":"visibility.vue","sourcesContent":["<template>\n  <div\n    data-backstop=\"visibility-utilities\"\n    class=\"visibility-utilities\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Visibility classes\n    </cdr-text>\n\n    <table>\n      <thead>\n        <tr>\n          <th>class</th>\n          <th class=\"cdr-hide cdr-show@xs-only\">\n            visible @ xs\n          </th>\n          <th class=\"cdr-hide cdr-show@sm-only\">\n            visible @ sm\n          </th>\n          <th class=\"cdr-hide cdr-show@md-only\">\n            visible @ md\n          </th>\n          <th class=\"cdr-hide cdr-show@lg-only\">\n            visible @ lg\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n\n        <tr>\n          <td>.cdr-hide</td>\n          <td>\n            <div class=\"cdr-hide\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@xs-only</td>\n          <td>\n            <div class=\"cdr-hide@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@sm</td>\n          <td>\n            <div class=\"cdr-hide@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@sm-only</td>\n          <td>\n            <div class=\"cdr-hide@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@md</td>\n          <td>\n            <div class=\"cdr-hide@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@md-only</td>\n          <td>\n            <div class=\"cdr-hide@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@lg</td>\n          <td>\n            <div class=\"cdr-hide@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-hide@lg-only</td>\n          <td>\n            <div class=\"cdr-hide@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show</td>\n          <td>\n            <div class=\"cdr-hide cdr-show\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@xs-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@xs-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@xs-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@xs-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@sm</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@sm</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@sm</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@sm-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@sm-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@sm-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@sm-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@md</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@md</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@md</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@md-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@md-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@md-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@md-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@lg</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@lg</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@lg</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show@lg-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline@lg-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-show-inline-block@lg-only</td>\n          <td>\n            <div class=\"cdr-hide cdr-show-inline-block@lg-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n      </tbody>\n    </table>\n  </div>\n</template>\n\n<script>\n// import Components from 'componentsdir/_index';\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'VisibleUtilities',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n.visibility-utilities {\n  table,\n  td {\n    border: 1px solid lightgray;\n  }\n\n  table {\n    border-spacing: 0;\n    border-collapse: collapse;\n    line-height: 1;\n  }\n\n  th {\n    text-align: left;\n    padding: 10px;\n  }\n\n  td {\n    padding: 5px;\n  }\n\n  td:not(:first-of-type) {\n    text-align: center;\n  }\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -12765,7 +15735,7 @@
     /* style */
     const __vue_inject_styles__$b = function (inject) {
       if (!inject) return
-      inject("data-v-89580d7e_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"align.vue"}, media: undefined });
+      inject("data-v-ddb69cb0_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"align.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -12823,7 +15793,7 @@
     /* style */
     const __vue_inject_styles__$c = function (inject) {
       if (!inject) return
-      inject("data-v-a95c9cfe_0", { source: "\n.example {\n  background-color: rgba(27, 28, 28, 0.6);\n}\n.example > * {\n  background-color: rgba(249, 229, 229, 0.8);\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/inline.vue"],"names":[],"mappings":";AAmDA;EACA,uCAAA;AACA;AAEA;EACA,0CAAA;AACA","file":"inline.vue","sourcesContent":["<template>\n  <div data-backstop=\"inline-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Inline space classes\n    </cdr-text>\n    <!-- <cdr-card class=\"example\">\n      <cdr-text class=\"cdr-inline-eighth-x\">\n        cdr-inline-eighth-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-quarter-x\">\n        cdr-inline-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-half-x\">\n        cdr-inline-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-three-quarter-x\">\n        cdr-inline-three-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-1-x\">\n        cdr-inline-1-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-1-and-a-half-x\">\n        cdr-inline-1-and-a-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-2-x\">\n        cdr-inline-2-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-4-x\">\n        cdr-inline-4-x\n      </cdr-text>\n    </cdr-card> -->\n  </div>\n</template>\n\n<script>\n\n// import Components from 'componentsdir/_index';\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'UtilitiesSpaceInline',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .example {\n    background-color: rgba(27, 28, 28, 0.6);\n  }\n\n  .example > * {\n    background-color: rgba(249, 229, 229, 0.8);\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-2a0120b0_0", { source: "\n.example {\n  background-color: rgba(27, 28, 28, 0.6);\n}\n.example > * {\n  background-color: rgba(249, 229, 229, 0.8);\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/Utilities/demos/inline.vue"],"names":[],"mappings":";AAmDA;EACA,uCAAA;AACA;AAEA;EACA,0CAAA;AACA","file":"inline.vue","sourcesContent":["<template>\n  <div data-backstop=\"inline-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Inline space classes\n    </cdr-text>\n    <!-- <cdr-card class=\"example\">\n      <cdr-text class=\"cdr-inline-eighth-x\">\n        cdr-inline-eighth-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-quarter-x\">\n        cdr-inline-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-half-x\">\n        cdr-inline-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-three-quarter-x\">\n        cdr-inline-three-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-1-x\">\n        cdr-inline-1-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-1-and-a-half-x\">\n        cdr-inline-1-and-a-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-2-x\">\n        cdr-inline-2-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inline-4-x\">\n        cdr-inline-4-x\n      </cdr-text>\n    </cdr-card> -->\n  </div>\n</template>\n\n<script>\n\n// import Components from 'componentsdir/_index';\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'UtilitiesSpaceInline',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .example {\n    background-color: rgba(27, 28, 28, 0.6);\n  }\n\n  .example > * {\n    background-color: rgba(249, 229, 229, 0.8);\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -12881,7 +15851,7 @@
     /* style */
     const __vue_inject_styles__$d = function (inject) {
       if (!inject) return
-      inject("data-v-7c0ef186_0", { source: "\n.example {\n  background-color: rgba(27, 28, 28, 0.6);\n}\n.example > * {\n  background-color: rgba(249, 229, 229, 0.8);\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/inset.vue"],"names":[],"mappings":";AAiGA;EACA,uCAAA;AACA;AAEA;EACA,0CAAA;AACA","file":"inset.vue","sourcesContent":["<template>\n  <div data-backstop=\"inset-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Inset classes\n    </cdr-text>\n\n    <!-- <cdr-card class=\"example\">\n      <cdr-text class=\"cdr-inset-eighth-x\">\n        cdr-inset-eighth-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-quarter-x\">\n        cdr-inset-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-half-x\">\n        cdr-inset-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-three-quarter-x\">\n        cdr-inset-three-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-x\">\n        cdr-inset-1-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-and-a-half-x\">\n        cdr-inset-1-and-a-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-2-x\">\n        cdr-inset-2-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-4-x\">\n        cdr-inset-4-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-eighth-x-squish\">\n        cdr-inset-eighth-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-quarter-x-squish\">\n        cdr-inset-quarter-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-half-x-squish\">\n        cdr-inset-half-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-three-quarter-x-squish\">\n        cdr-inset-three-quarter-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-x-squish\">\n        cdr-inset-1-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-2-x-squish\">\n        cdr-inset-2-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-4-x-squish\">\n        cdr-inset-4-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-eighth-x-stretch\">\n        cdr-inset-eighth-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-quarter-x-stretch\">\n        cdr-inset-quarter-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-half-x-stretch\">\n        cdr-inset-half-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-three-quarter-x-stretch\">\n        cdr-inset-three-quarter-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-x-stretch\">\n        cdr-inset-1-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-and-a-half-x-stretch\">\n        cdr-inset-1-and-a-half-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-2-x-stretch\">\n        cdr-inset-2-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-4-x-stretch\">\n        cdr-inset-4-x-stretch\n      </cdr-text>\n\n    </cdr-card> -->\n  </div>\n</template>\n\n<script>\n\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'UtilitiesSpaceInset',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .example {\n    background-color: rgba(27, 28, 28, 0.6);\n  }\n\n  .example > * {\n    background-color: rgba(249, 229, 229, 0.8);\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-1fbbe37f_0", { source: "\n.example {\n  background-color: rgba(27, 28, 28, 0.6);\n}\n.example > * {\n  background-color: rgba(249, 229, 229, 0.8);\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/Utilities/demos/inset.vue"],"names":[],"mappings":";AAiGA;EACA,uCAAA;AACA;AAEA;EACA,0CAAA;AACA","file":"inset.vue","sourcesContent":["<template>\n  <div data-backstop=\"inset-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Inset classes\n    </cdr-text>\n\n    <!-- <cdr-card class=\"example\">\n      <cdr-text class=\"cdr-inset-eighth-x\">\n        cdr-inset-eighth-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-quarter-x\">\n        cdr-inset-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-half-x\">\n        cdr-inset-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-three-quarter-x\">\n        cdr-inset-three-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-x\">\n        cdr-inset-1-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-and-a-half-x\">\n        cdr-inset-1-and-a-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-2-x\">\n        cdr-inset-2-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-4-x\">\n        cdr-inset-4-x\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-eighth-x-squish\">\n        cdr-inset-eighth-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-quarter-x-squish\">\n        cdr-inset-quarter-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-half-x-squish\">\n        cdr-inset-half-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-three-quarter-x-squish\">\n        cdr-inset-three-quarter-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-x-squish\">\n        cdr-inset-1-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-2-x-squish\">\n        cdr-inset-2-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-4-x-squish\">\n        cdr-inset-4-x-squish\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-eighth-x-stretch\">\n        cdr-inset-eighth-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-quarter-x-stretch\">\n        cdr-inset-quarter-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-half-x-stretch\">\n        cdr-inset-half-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-three-quarter-x-stretch\">\n        cdr-inset-three-quarter-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-x-stretch\">\n        cdr-inset-1-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-1-and-a-half-x-stretch\">\n        cdr-inset-1-and-a-half-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-2-x-stretch\">\n        cdr-inset-2-x-stretch\n      </cdr-text>\n      <cdr-text class=\"cdr-inset-4-x-stretch\">\n        cdr-inset-4-x-stretch\n      </cdr-text>\n\n    </cdr-card> -->\n  </div>\n</template>\n\n<script>\n\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'UtilitiesSpaceInset',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .example {\n    background-color: rgba(27, 28, 28, 0.6);\n  }\n\n  .example > * {\n    background-color: rgba(249, 229, 229, 0.8);\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -12939,7 +15909,7 @@
     /* style */
     const __vue_inject_styles__$e = function (inject) {
       if (!inject) return
-      inject("data-v-fb0507ac_0", { source: "\n.example {\n  background-color: rgba(27, 28, 28, 0.6);\n}\n.example > * {\n  background-color: rgba(249, 229, 229, 0.8);\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/stack.vue"],"names":[],"mappings":";AAoDA;EACA,uCAAA;AACA;AAEA;EACA,0CAAA;AACA","file":"stack.vue","sourcesContent":["<template>\n  <div data-backstop=\"stack-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Stack classes\n    </cdr-text>\n\n    <!-- <cdr-card class=\"example\">\n      <cdr-text class=\"cdr-stack-eighth-x\">\n        cdr-stack-eighth-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-quarter-x\">\n        cdr-stack-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-half-x\">\n        cdr-stack-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-three-quarter-x\">\n        cdr-stack-three-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-1-x\">\n        cdr-stack-1-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-1-and-a-half-x\">\n        cdr-stack-1-and-a-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-2-x\">\n        cdr-stack-2-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-4-x\">\n        cdr-stack-4-x\n      </cdr-text>\n    </cdr-card> -->\n\n  </div>\n</template>\n\n<script>\n\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'UtilitiesSpaceStack',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .example {\n    background-color: rgba(27, 28, 28, 0.6);\n  }\n\n  .example > * {\n    background-color: rgba(249, 229, 229, 0.8);\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-7641b1de_0", { source: "\n.example {\n  background-color: rgba(27, 28, 28, 0.6);\n}\n.example > * {\n  background-color: rgba(249, 229, 229, 0.8);\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/Utilities/demos/stack.vue"],"names":[],"mappings":";AAoDA;EACA,uCAAA;AACA;AAEA;EACA,0CAAA;AACA","file":"stack.vue","sourcesContent":["<template>\n  <div data-backstop=\"stack-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-medium\"\n    >\n      Stack classes\n    </cdr-text>\n\n    <!-- <cdr-card class=\"example\">\n      <cdr-text class=\"cdr-stack-eighth-x\">\n        cdr-stack-eighth-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-quarter-x\">\n        cdr-stack-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-half-x\">\n        cdr-stack-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-three-quarter-x\">\n        cdr-stack-three-quarter-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-1-x\">\n        cdr-stack-1-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-1-and-a-half-x\">\n        cdr-stack-1-and-a-half-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-2-x\">\n        cdr-stack-2-x\n      </cdr-text>\n      <cdr-text class=\"cdr-stack-4-x\">\n        cdr-stack-4-x\n      </cdr-text>\n    </cdr-card> -->\n\n  </div>\n</template>\n\n<script>\n\nimport { CdrText } from 'componentsdir/_index';\n\nexport default {\n  name: 'UtilitiesSpaceStack',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n  .example {\n    background-color: rgba(27, 28, 28, 0.6);\n  }\n\n  .example > * {\n    background-color: rgba(249, 229, 229, 0.8);\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -12998,7 +15968,7 @@
     /* style */
     const __vue_inject_styles__$f = function (inject) {
       if (!inject) return
-      inject("data-v-668ac0ac_0", { source: "\n.container-test {\n  background-color: lightblue;\n  padding: 20px;\n  margin-bottom: 20px;\n  line-height: 1;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/components/Utilities/demos/container.vue"],"names":[],"mappings":";AAcA;EACA,2BAAA;EACA,aAAA;EACA,mBAAA;EACA,cAAA;AACA","file":"container.vue","sourcesContent":["<template>\n  <div\n    class=\"cdr-container container-test cdr-text-center\"\n    data-backstop=\"utility-container\"\n  >Container test</div>\n</template>\n\n<script>\nexport default {\n  name: 'ContainerTest',\n};\n</script>\n\n<style>\n.container-test {\n  background-color: lightblue;\n  padding: 20px;\n  margin-bottom: 20px;\n  line-height: 1;\n}\n</style>\n"]}, media: undefined });
+      inject("data-v-2e36963a_0", { source: "\n.container-test {\n  background-color: lightblue;\n  padding: 20px;\n  margin-bottom: 20px;\n  line-height: 1;\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/components/Utilities/demos/container.vue"],"names":[],"mappings":";AAcA;EACA,2BAAA;EACA,aAAA;EACA,mBAAA;EACA,cAAA;AACA","file":"container.vue","sourcesContent":["<template>\n  <div\n    class=\"cdr-container container-test cdr-text-center\"\n    data-backstop=\"utility-container\"\n  >Container test</div>\n</template>\n\n<script>\nexport default {\n  name: 'ContainerTest',\n};\n</script>\n\n<style>\n.container-test {\n  background-color: lightblue;\n  padding: 20px;\n  margin-bottom: 20px;\n  line-height: 1;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -13076,7 +16046,7 @@
     /* style */
     const __vue_inject_styles__$g = function (inject) {
       if (!inject) return
-      inject("data-v-3e180e9f_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Utilities.vue"}, media: undefined });
+      inject("data-v-5584bfd8_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Utilities.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -13206,11 +16176,11 @@
     /* style */
     const __vue_inject_styles__$h = function (inject) {
       if (!inject) return
-      inject("data-v-31ff0e04_0", { source: "\n.cpg-section[data-v-31ff0e04] {\n  margin: 16px 0;\n}\n", map: {"version":3,"sources":["/Users/laharpe/REI/rei-cedar/src/App.vue"],"names":[],"mappings":";AAgEA;EACA,cAAA;AACA","file":"App.vue","sourcesContent":["<template>\n  <div\n    id=\"app\"\n    class=\"cdr-container-fluid\"\n  >\n\n    <router-link\n      v-for=\"route in routes\"\n      :key=\"route.path\"\n      :to=\"route.path\"\n    >{{ route.name }} *\n    </router-link>\n\n    <links\n      class=\"cpg-section\"\n      data-backstop=\"links\"\n    />\n    <buttons\n      class=\"cpg-section\"\n      data-backstop=\"buttons\"\n    />\n    <cta\n      class=\"cpg-section\"\n      data-backstop=\"cta-links\"\n    />\n    <router-view />\n  </div>\n</template>\n\n<script>\nimport examples from 'componentsdir/examples';\n// import compexamples from 'compositionsdir/examples';\nimport {CdrText, CdrButton, CdrLink, CdrCta } from 'componentsdir/_index'; // eslint-disable-line\nimport routes from './router';\n\n\nconst all = Object.assign(CdrText, CdrButton, CdrLink, CdrCta, {}, examples);\nexport default {\n  name: 'App',\n  components: all,\n  data() {\n    return {\n      routes,\n      globalTheme: 'lightest',\n    };\n  },\n  mounted() {\n    if (this.$route.query['global-theme']) this.globalTheme = this.$route.query['global-theme'];\n  },\n  methods: {\n    radioNavigate() {\n      this.$router.replace({\n        query: Object.assign(\n          {},\n          this.$route.query,\n          { 'global-theme': this.globalTheme },\n        ),\n      });\n    },\n  },\n};\n</script>\n\n<style scoped>\n  .cpg-section {\n    margin: 16px 0;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-4309ebf7_0", { source: "\n.cpg-section[data-v-4309ebf7] {\n  margin: 16px 0;\n}\n", map: {"version":3,"sources":["/home/darin/Code/rei-cedar/src/App.vue"],"names":[],"mappings":";AAgEA;EACA,cAAA;AACA","file":"App.vue","sourcesContent":["<template>\n  <div\n    id=\"app\"\n    class=\"cdr-container-fluid\"\n  >\n\n    <router-link\n      v-for=\"route in routes\"\n      :key=\"route.path\"\n      :to=\"route.path\"\n    >{{ route.name }} *\n    </router-link>\n\n    <links\n      class=\"cpg-section\"\n      data-backstop=\"links\"\n    />\n    <buttons\n      class=\"cpg-section\"\n      data-backstop=\"buttons\"\n    />\n    <cta\n      class=\"cpg-section\"\n      data-backstop=\"cta-links\"\n    />\n    <router-view />\n  </div>\n</template>\n\n<script>\nimport examples from 'componentsdir/examples';\n// import compexamples from 'compositionsdir/examples';\nimport {CdrText, CdrButton, CdrLink, CdrCta } from 'componentsdir/_index'; // eslint-disable-line\nimport routes from './router';\n\n\nconst all = Object.assign(CdrText, CdrButton, CdrLink, CdrCta, {}, examples);\nexport default {\n  name: 'App',\n  components: all,\n  data() {\n    return {\n      routes,\n      globalTheme: 'lightest',\n    };\n  },\n  mounted() {\n    if (this.$route.query['global-theme']) this.globalTheme = this.$route.query['global-theme'];\n  },\n  methods: {\n    radioNavigate() {\n      this.$router.replace({\n        query: Object.assign(\n          {},\n          this.$route.query,\n          { 'global-theme': this.globalTheme },\n        ),\n      });\n    },\n  },\n};\n</script>\n\n<style scoped>\n  .cpg-section {\n    margin: 16px 0;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$h = "data-v-31ff0e04";
+    const __vue_scope_id__$h = "data-v-4309ebf7";
     /* module identifier */
     const __vue_module_identifier__$h = undefined;
     /* functional template */
@@ -13276,5 +16246,7 @@
   new Vue({
     router,
   }).$mount('#main');
+
+  return routes;
 
 }());
