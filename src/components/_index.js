@@ -22,6 +22,8 @@
 // import CdrDataTable from 'componentsdir/dataTable/CdrDataTable';
 // import CdrAccordion from 'componentsdir/accordion/CdrAccordion';
 // import CdrAccordionItem from 'componentsdir/accordion/CdrAccordionItem';
+// import CdrCaption from 'compositionsdir/caption/CdrCaption';
+// import CdrSearch from 'compositionsdir/search/CdrSearch';
 
 export { default as CdrLink } from 'componentsdir/link/CdrLink';
 export { default as CdrButton } from 'componentsdir/button/CdrButton';
