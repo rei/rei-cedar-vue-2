@@ -18,7 +18,8 @@ import Selects from 'componentsdir/select/examples/Selects';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
 import Input from 'componentsdir/input/examples/Inputs';
-
+import Space from 'componentsdir/Utilities/demos/genericSpace';
+import Inset from 'componentsdir/Utilities/demos/inset';
 import Captions from 'compositionsdir/caption/examples/Caption';
 import Searches from 'compositionsdir/search/examples/searchbox';
 import App from './App';
@@ -45,6 +46,8 @@ const routes = [
   { path: '/selects', name: 'Selects', component: Selects },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
+  { path: '/Space', name: 'Generic Space', component: Space },
+  { path: '/Inset', name: 'Insets', component: Inset },
   { path: '/captions', name: 'Captions', component: Captions },
   { path: '/searches', name: 'Searches', component: Searches },
 ];

@@ -178,10 +178,8 @@ export default {
   .icon-examples {
     line-height: 1;
 
-    .icon-hover {
-      &:hover {
-        fill: red;
-      }
+    .icon-hover:hover {
+      fill: red;
     }
   }
 
@@ -196,5 +194,4 @@ export default {
     border-width: 1px;
     border-color: black;
   }
-
 </style>

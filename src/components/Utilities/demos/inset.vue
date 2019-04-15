@@ -4,81 +4,22 @@
       tag="h2"
       modifier="heading-medium"
     >
-      Inset classes
+      Inset space classes for all around padding
     </cdr-text>
-
-    <cdr-card class="example">
-      <cdr-text class="cdr-inset-eighth-x">
-        cdr-inset-eighth-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-quarter-x">
-        cdr-inset-quarter-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-half-x">
-        cdr-inset-half-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-three-quarter-x">
-        cdr-inset-three-quarter-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-x">
-        cdr-inset-1-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-and-a-half-x">
-        cdr-inset-1-and-a-half-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-2-x">
-        cdr-inset-2-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-4-x">
-        cdr-inset-4-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-eighth-x-squish">
-        cdr-inset-eighth-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-quarter-x-squish">
-        cdr-inset-quarter-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-half-x-squish">
-        cdr-inset-half-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-three-quarter-x-squish">
-        cdr-inset-three-quarter-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-x-squish">
-        cdr-inset-1-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-2-x-squish">
-        cdr-inset-2-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-4-x-squish">
-        cdr-inset-4-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-eighth-x-stretch">
-        cdr-inset-eighth-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-quarter-x-stretch">
-        cdr-inset-quarter-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-half-x-stretch">
-        cdr-inset-half-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-three-quarter-x-stretch">
-        cdr-inset-three-quarter-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-x-stretch">
-        cdr-inset-1-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-and-a-half-x-stretch">
-        cdr-inset-1-and-a-half-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-2-x-stretch">
-        cdr-inset-2-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-4-x-stretch">
-        cdr-inset-4-x-stretch
-      </cdr-text>
-
-    </cdr-card>
+    <ul>
+      <li
+        v-for="item in space"
+        :key="item.id"
+        class="example cdr-space-mb-one-x"
+      >
+        <div
+          class="space-example"
+          :class="[item]"
+        >
+          <span>{{ item }}</span>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -89,15 +30,48 @@ import Components from 'componentsdir/_index';
 export default {
   name: 'UtilitiesSpaceInset',
   components: Components,
+  data() {
+    return {
+      space: [
+        'cdr-space-inset-eighth-x',
+        'cdr-space-inset-eighth-x-squish',
+        'cdr-space-inset-eighth-x-stretch',
+        'cdr-space-inset-quarter-x',
+        'cdr-space-inset-quarter-x-squish',
+        'cdr-space-inset-quarter-x-stretch',
+        'cdr-space-inset-half-x',
+        'cdr-space-inset-half-x-squish',
+        'cdr-space-inset-half-x-stretch',
+        'cdr-space-inset-three-quarter-x',
+        'cdr-space-inset-three-quarter-x-squish',
+        'cdr-space-inset-three-quarter-x-stretch',
+        'cdr-space-inset-one-x',
+        'cdr-space-inset-one-x-squish',
+        'cdr-space-inset-one-x-stretch',
+        'cdr-space-inset-one-and-a-half-x',
+        'cdr-space-inset-one-and-a-half-x-squish',
+        'cdr-space-inset-one-and-a-half-x-stretch',
+        'cdr-space-inset-two-x',
+        'cdr-space-inset-two-x-squish',
+        'cdr-space-inset-two-x-stretch',
+        'cdr-space-inset-four-x',
+        'cdr-space-inset-four-x-squish',
+        'cdr-space-inset-four-x-stretch',
+      ],
+    };
+  },
 };
+
 </script>
 
-<style>
-  .example {
-    background-color: rgba(27, 28, 28, 0.6);
-  }
+<style >
+.example {
+  border: 1px solid;
+}
 
-  .example > * {
-    background-color: rgba(249, 229, 229, 0.8);
-  }
+.space-example::before {
+  background-color: black;
+  display: block;
+  height: auto;
+}
 </style>

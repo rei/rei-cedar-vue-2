@@ -8,11 +8,9 @@
 
     <visibility />
 
-    <inline />
+    <genericSpace />
 
     <inset />
-
-    <stack />
 
   </div>
 </template>
@@ -21,9 +19,8 @@
 import a11y from './demos/a11y';
 import visibility from './demos/visibility';
 import align from './demos/align';
-import inline from './demos/inline';
+import genericSpace from './demos/genericSpace';
 import inset from './demos/inset';
-import stack from './demos/stack';
 import container from './demos/container';
 
 /**
@@ -37,9 +34,8 @@ export default {
     a11y,
     visibility,
     align,
-    inline,
+    genericSpace,
     inset,
-    stack,
     container,
   },
 };
