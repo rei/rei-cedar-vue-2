@@ -23,18 +23,16 @@
       class="cpg-section"
       data-backstop="cta-links"
     />
-    <router-view />
   </div>
 </template>
 
 <script>
 import examples from 'componentsdir/examples';
-// import compexamples from 'compositionsdir/examples';
 import {CdrText, CdrButton, CdrLink, CdrCta } from 'componentsdir/_index'; // eslint-disable-line
 import routes from './router';
 
+const all = Object.assign({}, CdrText, CdrButton, CdrLink, CdrCta, examples);
 
-const all = Object.assign(CdrText, CdrButton, CdrLink, CdrCta, {}, examples);
 export default {
   name: 'App',
   components: all,
