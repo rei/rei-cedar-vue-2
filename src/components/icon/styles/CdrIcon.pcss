@@ -38,7 +38,7 @@
   /* @xs
     0px - 767px
     ========== */
-  @media (--xs-mq-only) {
+  @include xs-mq-only {
     &--small\@xs {
       width: $cdr-icon-size-sm;
       height: $cdr-icon-size-sm;
@@ -53,7 +53,7 @@
   /* @sm
     768px - 991px
     ========== */
-  @media (--sm-mq-only) {
+  @include sm-mq-only {
     &--small\@sm {
       width: $cdr-icon-size-sm;
       height: $cdr-icon-size-sm;
@@ -68,7 +68,7 @@
   /* @md
     992px - 1199px
     ========== */
-  @media (--md-mq-only) {
+  @include md-mq-only {
     &--small\@md {
       width: $cdr-icon-size-sm;
       height: $cdr-icon-size-sm;
@@ -84,7 +84,7 @@
     1200px and up
     ========== */
 
-  @media (--lg-mq-only) {
+  @include lg-mq-only {
     &--small\@lg {
       width: $cdr-icon-size-sm;
       height: $cdr-icon-size-sm;

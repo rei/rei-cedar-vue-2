@@ -20,7 +20,7 @@ $container-x-padding-md: 32px;
   width: 100%;
 }
 
-@media (--md-mq) {
+@include md-mq {
   .cdr-container-fluid {
     padding-left: $container-x-padding-md;
     padding-right: $container-x-padding-md;
@@ -40,7 +40,7 @@ $container-x-padding-md: 32px;
   max-width: 1232px;
 }
 
-@media (--md-mq) {
+@include md-mq {
   .cdr-container {
     padding-left: $container-x-padding-md;
     padding-right: $container-x-padding-md;

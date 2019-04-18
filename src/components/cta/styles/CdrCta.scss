@@ -22,7 +22,7 @@
   display: inline-flex;
   outline: none;
   padding: $cdr-space-inset-one-and-a-half-x-squish;
-  padding-right: calc($cdr-space-one-and-a-half-x - $cdr-space-half-x);
+  padding-right: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-half-x});
   text-align: left;
   text-transform: uppercase;
   text-decoration: none;

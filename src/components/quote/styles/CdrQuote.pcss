@@ -21,7 +21,7 @@
     letter-spacing: 0;
     margin: 0;
 
-    @media (--sm-mq) {
+    @include sm-mq {
       font-size: 24px;
       line-height: 32px;
     }
@@ -40,13 +40,13 @@
       font-weight: 600;
     }
 
-    @media (--xs-mq) {
+    @include xs-mq {
       border-width: 0 0 1px 0;
       padding: $cdr-space-inset-one-x-stretch;
       margin: 0 0 $cdr-space-one-x;
     }
 
-    @media (--sm-mq) {
+    @include sm-mq {
       border-width: 0 0 0 1px;
       padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-half-x $cdr-space-two-x;
       margin: $cdr-space-one-x 0;

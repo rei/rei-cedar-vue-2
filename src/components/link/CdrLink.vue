@@ -54,8 +54,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrLink.vars.pcss';
-  @import './styles/CdrLink.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrLink.vars.scss';
+  @import './styles/CdrLink.scss';
 </style>

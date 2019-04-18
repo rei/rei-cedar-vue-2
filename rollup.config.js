@@ -6,8 +6,7 @@ import vue from 'rollup-plugin-vue';
 import commonjs from 'rollup-plugin-commonjs';
 import alias from 'rollup-plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
-// import postcss from 'rollup-plugin-postcss';
-// import atImport from 'postcss-import';
+import postcss from 'rollup-plugin-postcss';
 import serve from 'rollup-plugin-serve';
 import replace from 'rollup-plugin-replace';
 import livereload from 'rollup-plugin-livereload';
@@ -35,7 +34,29 @@ const plugins = [
     mixinsdir: resolve('src/mixins'),
   }),
   nodeResolve(),
-  vue(),
+  vue({
+    css: false,
+    style: {
+      postcssModulesOptions: {
+        generateScopedName: '[local]-[hash:base64:4]',
+      },
+    },
+    data: {
+      // this gets prepended in all components <style>
+      scss() {
+        return `@import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
+          @import "${resolve('src/css/settings/_index.scss')}";`;
+      },
+    },
+    compileTemplate: !isDev,
+    template: {
+      isProduction: !isDev,
+    },
+  }),
+  postcss({
+    extract: isDev ? 'public/cedar.css' : 'dist/cedar.css',
+    extensions: ['.postcss', '.pcss', '.scss', '.css'],
+  }),
   commonjs(),
 ];
 
@@ -87,5 +108,5 @@ if (isDev) {
   );
 }
 
-console.log('config', config); /* eslint-disable-line */
+// console.log('config', config); /* eslint-disable-line */
 export default config;

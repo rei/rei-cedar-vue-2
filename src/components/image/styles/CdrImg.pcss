@@ -115,7 +115,7 @@
 
   /* Aspect ratios @ small
     ========== */
-  @media (--sm-mq) {
+  @include sm-mq {
     &--auto\@sm::before {
       padding-bottom: 0;
     }
@@ -159,7 +159,7 @@
 
   /* Aspect ratios @ medium
     ========== */
-  @media (--md-mq) {
+  @include md-mq {
     &--auto\@md::before {
       padding-bottom: 0;
     }
@@ -203,7 +203,7 @@
 
   /* Aspect ratios @ large
     ========== */
-  @media (--lg-mq) {
+  @include lg-mq {
     &--auto\@lg::before {
       padding-bottom: 0;
     }

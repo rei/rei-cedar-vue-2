@@ -41,7 +41,7 @@ h6.cdr-text {
       margin-top: $body-paragraph-stack;
     }
 
-    @media (--sm-mq) {
+    @include sm-mq {
       @include cdr-text-editorial-body;
 
       & + & {
@@ -79,12 +79,12 @@ h6.cdr-text {
     }
 
     /* @ small */
-    @media (--sm-mq) {
+    @include sm-mq {
       @include spruce-display-70;
     }
 
     /* @ large */
-    @media (--lg-mq) {
+    @include lg-mq {
       @include spruce-display-80;
     }
   }
@@ -101,7 +101,7 @@ h6.cdr-text {
     }
 
     /* @ large */
-    @media (--lg-mq) {
+    @include lg-mq {
       @include spruce-display-40;
     }
   }
@@ -118,7 +118,7 @@ h6.cdr-text {
     }
 
     /* @ large */
-    @media (--lg-mq) {
+    @include lg-mq {
       @include spruce-display-50;
     }
   }
@@ -135,12 +135,12 @@ h6.cdr-text {
     }
 
     /* @ small */
-    @media (--sm-mq) {
+    @include sm-mq {
       @include spruce-display-50;
     }
 
     /* @ large */
-    @media (--lg-mq) {
+    @include lg-mq {
       @include spruce-display-70;
     }
   }

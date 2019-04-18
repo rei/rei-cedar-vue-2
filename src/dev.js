@@ -4,7 +4,7 @@ import Vue from 'vue/dist/vue.esm';
 import VueRouter from 'vue-router';
 // import { CdrIconSprite } from 'componentsdir/icon/dist/cdr-icon';
 import routes from './router';
-// import './css/main.postcss';
+import './css/main.scss';
 // import '../static/cdr-fonts.css';
 
 

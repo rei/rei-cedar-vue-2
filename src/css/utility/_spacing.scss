@@ -209,7 +209,7 @@
   0px - 767px
   ========== */
 
-@media (--xs-mq-only) {
+@include xs-mq-only {
   .cdr-inset-eighth-x\@xs {
     padding: $cdr-space-inset-eighth-x;
   }
@@ -378,7 +378,7 @@
 /* @sm
   768px - 991px
   ========== */
-@media (--sm-mq-only) {
+@include sm-mq-only {
   .cdr-inset-eighth-x\@sm {
     padding: $cdr-space-inset-eighth-x;
   }
@@ -547,7 +547,7 @@
 /* @md
   992px - 1199px
   ========== */
-@media (--md-mq-only) {
+@include md-mq-only {
   .cdr-inset-eighth-x\@md {
     padding: $cdr-space-inset-eighth-x;
   }
@@ -717,7 +717,7 @@
   1200px and up
   ========== */
 
-@media (--lg-mq-only) {
+@include lg-mq-only {
   .cdr-inset-eighth-x\@lg {
     padding: $cdr-space-inset-eighth-x;
   }
