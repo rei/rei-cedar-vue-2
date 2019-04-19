@@ -11,6 +11,8 @@ import serve from 'rollup-plugin-serve';
 import replace from 'rollup-plugin-replace';
 import livereload from 'rollup-plugin-livereload';
 import babel from 'rollup-plugin-babel';
+import postcssScss from 'postcss-scss';
+import stringHash from 'string-hash';
 
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -37,8 +39,16 @@ const plugins = [
   vue({
     css: false,
     style: {
+      postcssOptions: { syntax: postcssScss },
+      postcssCleanOptions: { disabled: true },
       postcssModulesOptions: {
-        generateScopedName: '[local]-[hash:base64:4]',
+        generateScopedName(name, filename, css) {
+          const hash = stringHash(css)
+            .toString(36)
+            .substr(0, 5);
+          // to preseve '@' in responsive class names
+          return `${name}-${hash}`;
+        },
       },
     },
     data: {
@@ -54,6 +64,7 @@ const plugins = [
     },
   }),
   postcss({
+    syntax: 'postcss-scss',
     extract: isDev ? 'public/cedar.css' : 'dist/cedar.css',
     extensions: ['.postcss', '.pcss', '.scss', '.css'],
   }),

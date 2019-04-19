@@ -45,7 +45,7 @@
   text-transform: none;
   overflow: visible;
 
-  & > :global(&__icon) {
+  & > :global(.cdr-button__icon) {
     align-self: center;
     fill: inherit;
     margin-right: $cdr-space-quarter-x;

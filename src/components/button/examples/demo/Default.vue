@@ -32,7 +32,7 @@
       </cdr-text>
       <cdr-button
         :on-click="log"
-        :full-width="true"
+        full-width
         size="large@sm"
       >
         Responsive with default
@@ -52,6 +52,12 @@
         data-backstop="cdr-button--anchor"
       >
         Link
+      </cdr-button>
+
+      <cdr-button
+        size="large@xs medium@sm small@md"
+      >
+        Full responsive
       </cdr-button>
     </div>
   </div>

@@ -22,7 +22,7 @@ h3.cdr-text,
 h4.cdr-text,
 h5.cdr-text,
 h6.cdr-text {
-  @include cdr-text-default-body;
+  @include cdr-text-default;
 
   margin: 0;
   
@@ -33,7 +33,7 @@ h6.cdr-text {
     ========== */
 
   &--body {
-    @include cdr-text-editorial-body-compact;
+    @include cdr-text-editorial-compact;
 
     max-width: $body-paragraph-max-width;
 
@@ -42,7 +42,7 @@ h6.cdr-text {
     }
 
     @include sm-mq {
-      @include cdr-text-editorial-body;
+      @include cdr-text-editorial;
 
       & + & {
         margin-top: $body-paragraph-stack-sm;

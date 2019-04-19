@@ -3,7 +3,7 @@ const process = require('process');
 module.exports = {
   syntax: 'postcss-scss',
   plugins: {
-    'postcss-calc': {},
+    'postcss-calc': { mediaQueries: true },
     'postcss-pxtorem': {
       // change
       rootValue: 10,
@@ -18,8 +18,8 @@ module.exports = {
       path: process.env.NODE_ENV === 'css' ? './src/components/button/styles/' : '',
     },
     autoprefixer: {},
-    cssnano: {
-      discardUnused: { fontFace: false },
-    },
+    // cssnano: {
+    //   discardUnused: { fontFace: false },
+    // },
   },
 };

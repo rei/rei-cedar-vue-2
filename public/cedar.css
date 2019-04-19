@@ -1,18 +1,2637 @@
-.cdr-button-2B0d{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.6rem;line-height:2.4rem;letter-spacing:normal;background-color:#3278ae;-webkit-box-shadow:inset 0 0 0 .1rem #2b6692;box-shadow:inset 0 0 0 .1rem #2b6692;border:none;border-radius:.4rem;color:#fff;cursor:pointer;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;fill:#fff;outline:none;padding:.8rem 1.6rem;text-align:left;text-decoration:none;text-transform:none;overflow:visible}.cdr-button-2B0d>.cdr-button__icon{-ms-flex-item-align:center;align-self:center;fill:inherit;margin-right:.4rem}.cdr-button-2B0d:active,.cdr-button-2B0d:focus,.cdr-button-2B0d:hover{background-color:#2b6692;color:#fff;-webkit-box-shadow:inset 0 0 0 .1rem #2b6692;box-shadow:inset 0 0 0 .1rem #2b6692;text-decoration:none;outline:none;outline-offset:0;fill:#fff}.cdr-button-2B0d:focus{outline:.2rem auto -webkit-focus-ring-color}.cdr-button-2B0d[disabled]{background-color:#dadada;-webkit-box-shadow:inset 0 0 0 .1rem #b8b8b8;box-shadow:inset 0 0 0 .1rem #b8b8b8;color:#fff;cursor:not-allowed}.cdr-button--secondary-CF2G{background-color:#fff;-webkit-box-shadow:inset 0 0 0 .1rem #616161;box-shadow:inset 0 0 0 .1rem #616161;color:#292929;fill:#292929}.cdr-button--secondary-CF2G:active,.cdr-button--secondary-CF2G:focus,.cdr-button--secondary-CF2G:hover{background-color:#f7f7f7;-webkit-box-shadow:inset 0 0 0 .1rem #616161;box-shadow:inset 0 0 0 .1rem #616161;color:#292929;fill:#292929}.cdr-button--secondary-CF2G[disabled]{background-color:#fff;-webkit-box-shadow:inset 0 0 0 .1rem #dadada;box-shadow:inset 0 0 0 .1rem #dadada;color:#b8b8b8;cursor:not-allowed;fill:#b8b8b8}.cdr-button--large-35pi{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.8rem;line-height:2.4rem;letter-spacing:normal;padding:1.2rem 2.4rem}.cdr-button--large-35pi.cdr-button--has-icon-3sVd{padding-left:2rem}.cdr-button--medium-VjAS{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.6rem;line-height:2.4rem;letter-spacing:normal;padding:.8rem 1.6rem}.cdr-button--medium-VjAS.cdr-button--has-icon-3sVd{padding-left:1.2rem}.cdr-button--small-3NRt{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.4rem;line-height:2rem;letter-spacing:normal;padding:.6rem 1.2rem}.cdr-button--small-3NRt.cdr-button--has-icon-3sVd{padding-left:.8rem}.cdr-button--small-3NRt>.cdr-button__icon{width:2rem;height:2rem}.cdr-button--full-width-31YE{width:100%;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.cdr-button--icon-only-3a8o{border:none;display:inline-block;padding:.8rem .4rem .8rem .8rem}.cdr-button--icon-only-3a8o,.cdr-button--icon-only-3a8o:active,.cdr-button--icon-only-3a8o:focus,.cdr-button--icon-only-3a8o:hover{background:none;-webkit-box-shadow:none;box-shadow:none;fill:#292929}.cdr-button--icon-only-3a8o.cdr-button--on-dark-36E8{fill:#fafafa}@media (min-width:0) and (max-width:76.8rem){.cdr-button--small-xs-1eT9{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.4rem;line-height:2rem;letter-spacing:normal;padding:.6rem 1.2rem;width:auto}.cdr-button--small-xs-1eT9>.cdr-button__icon{width:2rem;height:2rem}.cdr-button--medium-xs-Pz0y{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.6rem;line-height:2.4rem;letter-spacing:normal;padding:.8rem 1.6rem;width:auto}.cdr-button--medium-xs-Pz0y>.cdr-button__icon{width:2.4rem;height:2.4rem}.cdr-button--large-xs-B9pU{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.8rem;line-height:2.4rem;letter-spacing:normal;padding:1.2rem 2.4rem;width:auto}.cdr-button--large-xs-B9pU>.cdr-button__icon{width:2.4rem;height:2.4rem}}@media (min-width:76.8rem) and (max-width:99.2rem){.cdr-button--small-sm-3UCp{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.4rem;line-height:2rem;letter-spacing:normal;padding:.6rem 1.2rem;width:auto}.cdr-button--small-sm-3UCp>.cdr-button__icon{width:2rem;height:2rem}.cdr-button--medium-sm-2FwK{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.6rem;line-height:2.4rem;letter-spacing:normal;padding:.8rem 1.6rem;width:auto}.cdr-button--medium-sm-2FwK>.cdr-button__icon{width:2.4rem;height:2.4rem}.cdr-button--large-sm-3X3s{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.8rem;line-height:2.4rem;letter-spacing:normal;padding:1.2rem 2.4rem;width:auto}.cdr-button--large-sm-3X3s>.cdr-button__icon{width:2.4rem;height:2.4rem}}@media (min-width:99.2rem) and (max-width:120rem){.cdr-button--small-md-3yrc{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.4rem;line-height:2rem;letter-spacing:normal;padding:.6rem 1.2rem;width:auto}.cdr-button--small-md-3yrc>.cdr-button__icon{width:2rem;height:2rem}.cdr-button--medium-md-1QHx{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.6rem;line-height:2.4rem;letter-spacing:normal;padding:.8rem 1.6rem;width:auto}.cdr-button--medium-md-1QHx>.cdr-button__icon{width:2.4rem;height:2.4rem}.cdr-button--large-md-3HB6{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.8rem;line-height:2.4rem;letter-spacing:normal;padding:1.2rem 2.4rem;width:auto}.cdr-button--large-md-3HB6>.cdr-button__icon{width:2.4rem;height:2.4rem}}@media (min-width:120rem){.cdr-button--small-lg-1IZN{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.4rem;line-height:2rem;letter-spacing:normal;padding:.6rem 1.2rem;width:auto}.cdr-button--small-lg-1IZN>.cdr-button__icon{width:2rem;height:2rem}.cdr-button--medium-lg-3_ro{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.6rem;line-height:2.4rem;letter-spacing:normal;padding:.8rem 1.6rem;width:auto}.cdr-button--medium-lg-3_ro>.cdr-button__icon{width:2.4rem;height:2.4rem}.cdr-button--large-lg-35Dn{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.8rem;line-height:2.4rem;letter-spacing:normal;padding:1.2rem 2.4rem;width:auto}.cdr-button--large-lg-35Dn>.cdr-button__icon{width:2.4rem;height:2.4rem}}
-.cdr-cta-uLp_{font-style:normal;font-family:Roboto Condensed,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.8rem;line-height:2.4rem;letter-spacing:normal;background-color:#3278ae;-webkit-box-shadow:inset 0 0 0 .1rem #2b6692;box-shadow:inset 0 0 0 .1rem #2b6692;border:none;border-radius:.4rem;color:#fff;cursor:pointer;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;outline:none;padding:1.2rem 1.6rem 1.2rem 2.4rem;text-align:left;text-transform:uppercase;text-decoration:none}.cdr-cta-uLp_>.cdr-cta__icon-26Y2{-ms-flex-item-align:center;align-self:center;display:inline-block;fill:inherit;height:2.4rem;margin-left:.4rem;vertical-align:middle;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:2.4rem}.cdr-cta-uLp_:active,.cdr-cta-uLp_:focus,.cdr-cta-uLp_:hover{text-decoration:none}.cdr-cta-uLp_:focus{outline:.2rem auto -webkit-focus-ring-color;outline-offset:0}.cdr-cta--full-width-1r4c{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100%}.cdr-cta--brand-32Gi{background-color:#3278ae;-webkit-box-shadow:inset 0 0 0 .1rem #2b6692;box-shadow:inset 0 0 0 .1rem #2b6692;color:#fff;fill:#fff}.cdr-cta--brand-32Gi:active,.cdr-cta--brand-32Gi:focus,.cdr-cta--brand-32Gi:hover{background-color:#2b6692;-webkit-box-shadow:inset 0 0 0 .1rem #2b6692;box-shadow:inset 0 0 0 .1rem #2b6692;color:#fff;fill:#fff}.cdr-cta--dark-eQk5{background-color:#292929;-webkit-box-shadow:inset 0 0 0 .1rem #434343;box-shadow:inset 0 0 0 .1rem #434343;color:#fff;fill:#fff}.cdr-cta--dark-eQk5:active,.cdr-cta--dark-eQk5:focus,.cdr-cta--dark-eQk5:hover{background-color:#434343;-webkit-box-shadow:inset 0 0 0 .1rem #434343;box-shadow:inset 0 0 0 .1rem #434343;color:#fff}.cdr-cta--dark-eQk5:active>.cdr-cta__icon-26Y2,.cdr-cta--dark-eQk5:focus>.cdr-cta__icon-26Y2,.cdr-cta--dark-eQk5:hover>.cdr-cta__icon-26Y2{fill:#fff}.cdr-cta--light-yNCO{background-color:#fff}.cdr-cta--light-yNCO,.cdr-cta--light-yNCO:active,.cdr-cta--light-yNCO:focus,.cdr-cta--light-yNCO:hover{-webkit-box-shadow:inset 0 0 0 .1rem #616161;box-shadow:inset 0 0 0 .1rem #616161;color:#292929;fill:#292929}.cdr-cta--light-yNCO:active,.cdr-cta--light-yNCO:focus,.cdr-cta--light-yNCO:hover{background-color:#f7f7f7}.cdr-cta--light-yNCO.cdr-cta--elevated-2_Ao,.cdr-cta--light-yNCO.cdr-cta--elevated-2_Ao:active,.cdr-cta--light-yNCO.cdr-cta--elevated-2_Ao:focus,.cdr-cta--light-yNCO.cdr-cta--elevated-2_Ao:hover{-webkit-box-shadow:inset 0 0 0 .1rem #616161,.4rem .4rem .4rem 0 rgba(26,26,26,.2);box-shadow:inset 0 0 0 .1rem #616161,.4rem .4rem .4rem 0 rgba(26,26,26,.2)}.cdr-cta--sale-1six{background-color:#b5292b}.cdr-cta--sale-1six,.cdr-cta--sale-1six:active,.cdr-cta--sale-1six:focus,.cdr-cta--sale-1six:hover{-webkit-box-shadow:inset 0 0 0 .1rem #a12024;box-shadow:inset 0 0 0 .1rem #a12024;color:#fff;fill:#fff}.cdr-cta--sale-1six:active,.cdr-cta--sale-1six:focus,.cdr-cta--sale-1six:hover{background-color:#a12024}.cdr-cta--elevated-2_Ao,.cdr-cta--elevated-2_Ao:active,.cdr-cta--elevated-2_Ao:focus,.cdr-cta--elevated-2_Ao:hover{-webkit-box-shadow:.4rem .4rem .4rem 0 rgba(26,26,26,.2);box-shadow:.4rem .4rem .4rem 0 rgba(26,26,26,.2)}
-.cdr-link-wnkx{font-family:inherit;font-size:inherit;line-height:inherit;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:transparent;border:0;margin:0;cursor:pointer;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;fill:#3278ae;padding:0;vertical-align:top}.cdr-link-wnkx,.cdr-link-wnkx:active,.cdr-link-wnkx:focus,.cdr-link-wnkx:hover{color:#3278ae;outline:none;text-decoration:underline}.cdr-link-wnkx:focus{outline:.2rem auto -webkit-focus-ring-color;outline-offset:0}.cdr-link--standalone-2UB8{text-decoration:none}.cdr-link--standalone-2UB8:active,.cdr-link--standalone-2UB8:focus,.cdr-link--standalone-2UB8:hover,.cdr-link--standalone-2UB8:visited{text-decoration:underline}.on-light.cdr-link-wnkx{color:#3278ae;fill:#3278ae}.on-light.cdr-link-wnkx:active,.on-light.cdr-link-wnkx:focus,.on-light.cdr-link-wnkx:hover{color:#3278ae}.on-dark.cdr-link-wnkx{color:#5197cd;fill:#5197cd}.on-dark.cdr-link-wnkx:active,.on-dark.cdr-link-wnkx:focus,.on-dark.cdr-link-wnkx:hover{color:#5197cd}
-.link-examples{line-height:1}.anchor-example{padding:2rem}
-.button-example{padding:1rem}.button-example a,.button-example button{margin:0 1rem .5rem 0}
-.button-example{padding:1rem}
-.button-example{padding:1rem}
-.button-example{padding:1rem}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrButton
 
-.visibility-utilities{table,td{border:.1rem solid #d3d3d3}table{border-spacing:0;border-collapse:collapse;line-height:1}th{text-align:left;padding:1rem}td{padding:.5rem}td:not(:first-of-type){text-align:center}}
+  TOC:
 
-.example{background-color:rgba(27,28,28,.6)}.example>*{background-color:rgba(249,229,229,.8)}
-.example{background-color:rgba(27,28,28,.6)}.example>*{background-color:rgba(249,229,229,.8)}
-.example{background-color:rgba(27,28,28,.6)}.example>*{background-color:rgba(249,229,229,.8)}
-.container-test{background-color:#add8e6;padding:2rem;margin-bottom:2rem;line-height:1}
+    :Base Styles
+      :States
+    :Modifiers
+      :Style variants
+        :Secondary
+    :Size variants
+      :large
+      :medium
+      :small
+    :full-width
+    :icon-only
+    :on-dark
+    :Breakpoint variants
+      :xs
+      :sm
+      :md
+      :lg
+========================================================================== */
+.cdr-button-1e1db {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  background-color: #3278ae;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #2b6692;
+          box-shadow: inset 0 0 0 0.1rem #2b6692;
+  border: none;
+  border-radius: 0.4rem;
+  color: #ffffff;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  fill: #ffffff;
+  outline: none;
+  padding: 0.8rem 1.6rem;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  overflow: visible;
+  /* States
+    ---------- */
+  /* Modifier style variants
+    ========================================================================== */
+  /* Secondary
+     ========== */
+  /* Size variants
+    ========================================================================== */
+  /* Large
+     ========== */
+  /* Medium
+     ========== */
+  /* Small
+     ========== */
+  /* Full Width
+     ========== */
+  /* Icon Only
+     ========= */
+  /* Breakpoint variants
+    ========================================================================== */
+  /* @xs
+    0px - 767px
+    ========== */
+  /* @sm
+    768px - 991px
+    ========== */
+  /* @md
+    992px - 1199px
+    ========== */
+  /* @lg
+    1200px and up
+    ========== */
+}
+.cdr-button-1e1db > .cdr-button__icon {
+  -ms-flex-item-align: center;
+      align-self: center;
+  fill: inherit;
+  margin-right: 0.4rem;
+}
+.cdr-button-1e1db:hover, .cdr-button-1e1db:active, .cdr-button-1e1db:focus {
+  background-color: #2b6692;
+  color: #ffffff;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #2b6692;
+          box-shadow: inset 0 0 0 0.1rem #2b6692;
+  text-decoration: none;
+  outline: none;
+  outline-offset: 0;
+  fill: #ffffff;
+}
+.cdr-button-1e1db:focus {
+  outline: 0.2rem auto -webkit-focus-ring-color;
+}
+.cdr-button-1e1db[disabled] {
+  background-color: #dadada;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #b8b8b8;
+          box-shadow: inset 0 0 0 0.1rem #b8b8b8;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+.cdr-button--secondary-1e1db {
+  background-color: #ffffff;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #616161;
+          box-shadow: inset 0 0 0 0.1rem #616161;
+  color: #292929;
+  fill: #292929;
+  /* States
+  ---------- */
+}
+.cdr-button--secondary-1e1db:hover, .cdr-button--secondary-1e1db:active, .cdr-button--secondary-1e1db:focus {
+  background-color: #f7f7f7;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #616161;
+          box-shadow: inset 0 0 0 0.1rem #616161;
+  color: #292929;
+  fill: #292929;
+}
+.cdr-button--secondary-1e1db[disabled] {
+  background-color: #ffffff;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #dadada;
+          box-shadow: inset 0 0 0 0.1rem #dadada;
+  color: #b8b8b8;
+  cursor: not-allowed;
+  fill: #b8b8b8;
+}
+.cdr-button--large-1e1db {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  padding: 1.2rem 2.4rem;
+}
+.cdr-button--large-1e1db.cdr-button--has-icon-1e1db {
+  padding-left: 2rem;
+}
+.cdr-button--medium-1e1db {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  padding: 0.8rem 1.6rem;
+}
+.cdr-button--medium-1e1db.cdr-button--has-icon-1e1db {
+  padding-left: 1.2rem;
+}
+.cdr-button--small-1e1db {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  padding: 0.6rem 1.2rem;
+}
+.cdr-button--small-1e1db.cdr-button--has-icon-1e1db {
+  padding-left: 0.8rem;
+}
+.cdr-button--small-1e1db > .cdr-button__icon {
+  /* This is to correct icon size vs line height */
+  width: 2rem;
+  height: 2rem;
+}
+.cdr-button--full-width-1e1db {
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.cdr-button--icon-only-1e1db {
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  display: inline-block;
+  padding: 0.8rem;
+  padding-right: 0.4rem;
+  fill: #292929;
+}
+.cdr-button--icon-only-1e1db:hover, .cdr-button--icon-only-1e1db:active, .cdr-button--icon-only-1e1db:focus {
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  fill: #292929;
+}
+.cdr-button--icon-only-1e1db.cdr-button--on-dark-1e1db {
+  fill: #fafafa;
+}
+@media (min-width: 0) and (max-width: 767px) {
+.cdr-button--small\@xs-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: normal;
+    padding: 0.6rem 1.2rem;
+    width: auto;
+}
+.cdr-button--small\@xs-1e1db > .cdr-button__icon {
+    width: 2rem;
+    height: 2rem;
+}
+.cdr-button--medium\@xs-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+    padding: 0.8rem 1.6rem;
+    width: auto;
+}
+.cdr-button--medium\@xs-1e1db > .cdr-button__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+.cdr-button--large\@xs-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+    padding: 1.2rem 2.4rem;
+    width: auto;
+}
+.cdr-button--large\@xs-1e1db > .cdr-button__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+.cdr-button--small\@sm-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: normal;
+    padding: 0.6rem 1.2rem;
+    width: auto;
+}
+.cdr-button--small\@sm-1e1db > .cdr-button__icon {
+    width: 2rem;
+    height: 2rem;
+}
+.cdr-button--medium\@sm-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+    padding: 0.8rem 1.6rem;
+    width: auto;
+}
+.cdr-button--medium\@sm-1e1db > .cdr-button__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+.cdr-button--large\@sm-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+    padding: 1.2rem 2.4rem;
+    width: auto;
+}
+.cdr-button--large\@sm-1e1db > .cdr-button__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+.cdr-button--small\@md-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: normal;
+    padding: 0.6rem 1.2rem;
+    width: auto;
+}
+.cdr-button--small\@md-1e1db > .cdr-button__icon {
+    width: 2rem;
+    height: 2rem;
+}
+.cdr-button--medium\@md-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+    padding: 0.8rem 1.6rem;
+    width: auto;
+}
+.cdr-button--medium\@md-1e1db > .cdr-button__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+.cdr-button--large\@md-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+    padding: 1.2rem 2.4rem;
+    width: auto;
+}
+.cdr-button--large\@md-1e1db > .cdr-button__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+}
+@media (min-width: 1200px) {
+.cdr-button--small\@lg-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: normal;
+    padding: 0.6rem 1.2rem;
+    width: auto;
+}
+.cdr-button--small\@lg-1e1db > .cdr-button__icon {
+    width: 2rem;
+    height: 2rem;
+}
+.cdr-button--medium\@lg-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+    padding: 0.8rem 1.6rem;
+    width: auto;
+}
+.cdr-button--medium\@lg-1e1db > .cdr-button__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+.cdr-button--large\@lg-1e1db {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+    padding: 1.2rem 2.4rem;
+    width: auto;
+}
+.cdr-button--large\@lg-1e1db > .cdr-button__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrCta
 
-.cpg-section[data-v-487c7c54]{margin:1.6rem 0}
-html{-webkit-box-sizing:border-box;box-sizing:border-box;font-family:sans-serif;font-size:10px;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}@-ms-viewport{width:device-width}body{font-style:normal;font-variant:normal;font-weight:400;font-size:1.6rem;line-height:2.6rem;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;letter-spacing:normal;line-height:1;margin:0;color:#292929;background-color:#fff}[tabindex="-1"]:focus{outline:none!important}[role=button],a,area,button,input,label,select,summary,textarea{-ms-touch-action:manipulation;touch-action:manipulation}button:focus{outline:.5rem auto -webkit-focus-ring-color}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-.2rem;-webkit-appearance:none}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}.cdr-container-fluid{padding-left:1.6rem;padding-right:1.6rem;width:100%}@media (min-width:99.2rem){.cdr-container-fluid{padding-left:3.2rem;padding-right:3.2rem}}.cdr-container{margin-left:auto;margin-right:auto;padding-left:1.6rem;padding-right:1.6rem;width:100%;max-width:123.2rem}@media (min-width:99.2rem){.cdr-container{padding-left:3.2rem;padding-right:3.2rem}}.cdr-bg--lightest{background-color:#fff}.cdr-bg--light{background-color:#f7f7f7}.cdr-bg--dark{background-color:#292929}.cdr-bg--darker{background-color:#1a1a1a}.cdr-text,h1.cdr-text,h2.cdr-text,h3.cdr-text,h4.cdr-text,h5.cdr-text,h6.cdr-text{font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;letter-spacing:normal;font-size:1.6rem;line-height:2.6rem;margin:0}.cdr-text--body,h1.cdr-text--body,h2.cdr-text--body,h3.cdr-text--body,h4.cdr-text--body,h5.cdr-text--body,h6.cdr-text--body{font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;letter-spacing:normal;font-size:1.8rem;line-height:2.8rem;max-width:63.4rem}.cdr-text--body+.cdr-text--body,.cdr-text--body+h1.cdr-text--body,.cdr-text--body+h2.cdr-text--body,.cdr-text--body+h3.cdr-text--body,.cdr-text--body+h4.cdr-text--body,.cdr-text--body+h5.cdr-text--body,.cdr-text--body+h6.cdr-text--body,h1.cdr-text--body+.cdr-text--body,h1.cdr-text--body+h1.cdr-text--body,h1.cdr-text--body+h2.cdr-text--body,h1.cdr-text--body+h3.cdr-text--body,h1.cdr-text--body+h4.cdr-text--body,h1.cdr-text--body+h5.cdr-text--body,h1.cdr-text--body+h6.cdr-text--body,h2.cdr-text--body+.cdr-text--body,h2.cdr-text--body+h1.cdr-text--body,h2.cdr-text--body+h2.cdr-text--body,h2.cdr-text--body+h3.cdr-text--body,h2.cdr-text--body+h4.cdr-text--body,h2.cdr-text--body+h5.cdr-text--body,h2.cdr-text--body+h6.cdr-text--body,h3.cdr-text--body+.cdr-text--body,h3.cdr-text--body+h1.cdr-text--body,h3.cdr-text--body+h2.cdr-text--body,h3.cdr-text--body+h3.cdr-text--body,h3.cdr-text--body+h4.cdr-text--body,h3.cdr-text--body+h5.cdr-text--body,h3.cdr-text--body+h6.cdr-text--body,h4.cdr-text--body+.cdr-text--body,h4.cdr-text--body+h1.cdr-text--body,h4.cdr-text--body+h2.cdr-text--body,h4.cdr-text--body+h3.cdr-text--body,h4.cdr-text--body+h4.cdr-text--body,h4.cdr-text--body+h5.cdr-text--body,h4.cdr-text--body+h6.cdr-text--body,h5.cdr-text--body+.cdr-text--body,h5.cdr-text--body+h1.cdr-text--body,h5.cdr-text--body+h2.cdr-text--body,h5.cdr-text--body+h3.cdr-text--body,h5.cdr-text--body+h4.cdr-text--body,h5.cdr-text--body+h5.cdr-text--body,h5.cdr-text--body+h6.cdr-text--body,h6.cdr-text--body+.cdr-text--body,h6.cdr-text--body+h1.cdr-text--body,h6.cdr-text--body+h2.cdr-text--body,h6.cdr-text--body+h3.cdr-text--body,h6.cdr-text--body+h4.cdr-text--body,h6.cdr-text--body+h5.cdr-text--body,h6.cdr-text--body+h6.cdr-text--body{margin-top:1.6rem}@media (min-width:76.8rem){.cdr-text--body,h1.cdr-text--body,h2.cdr-text--body,h3.cdr-text--body,h4.cdr-text--body,h5.cdr-text--body,h6.cdr-text--body{font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;letter-spacing:normal;font-size:2rem;line-height:3.2rem}.cdr-text--body+.cdr-text--body,.cdr-text--body+h1.cdr-text--body,.cdr-text--body+h2.cdr-text--body,.cdr-text--body+h3.cdr-text--body,.cdr-text--body+h4.cdr-text--body,.cdr-text--body+h5.cdr-text--body,.cdr-text--body+h6.cdr-text--body,h1.cdr-text--body+.cdr-text--body,h1.cdr-text--body+h1.cdr-text--body,h1.cdr-text--body+h2.cdr-text--body,h1.cdr-text--body+h3.cdr-text--body,h1.cdr-text--body+h4.cdr-text--body,h1.cdr-text--body+h5.cdr-text--body,h1.cdr-text--body+h6.cdr-text--body,h2.cdr-text--body+.cdr-text--body,h2.cdr-text--body+h1.cdr-text--body,h2.cdr-text--body+h2.cdr-text--body,h2.cdr-text--body+h3.cdr-text--body,h2.cdr-text--body+h4.cdr-text--body,h2.cdr-text--body+h5.cdr-text--body,h2.cdr-text--body+h6.cdr-text--body,h3.cdr-text--body+.cdr-text--body,h3.cdr-text--body+h1.cdr-text--body,h3.cdr-text--body+h2.cdr-text--body,h3.cdr-text--body+h3.cdr-text--body,h3.cdr-text--body+h4.cdr-text--body,h3.cdr-text--body+h5.cdr-text--body,h3.cdr-text--body+h6.cdr-text--body,h4.cdr-text--body+.cdr-text--body,h4.cdr-text--body+h1.cdr-text--body,h4.cdr-text--body+h2.cdr-text--body,h4.cdr-text--body+h3.cdr-text--body,h4.cdr-text--body+h4.cdr-text--body,h4.cdr-text--body+h5.cdr-text--body,h4.cdr-text--body+h6.cdr-text--body,h5.cdr-text--body+.cdr-text--body,h5.cdr-text--body+h1.cdr-text--body,h5.cdr-text--body+h2.cdr-text--body,h5.cdr-text--body+h3.cdr-text--body,h5.cdr-text--body+h4.cdr-text--body,h5.cdr-text--body+h5.cdr-text--body,h5.cdr-text--body+h6.cdr-text--body,h6.cdr-text--body+.cdr-text--body,h6.cdr-text--body+h1.cdr-text--body,h6.cdr-text--body+h2.cdr-text--body,h6.cdr-text--body+h3.cdr-text--body,h6.cdr-text--body+h4.cdr-text--body,h6.cdr-text--body+h5.cdr-text--body,h6.cdr-text--body+h6.cdr-text--body{margin-top:3.2rem}}.cdr-text--citation,h1.cdr-text--citation,h2.cdr-text--citation,h3.cdr-text--citation,h4.cdr-text--citation,h5.cdr-text--citation,h6.cdr-text--citation{font-style:normal;font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:400;font-size:1.2rem;line-height:1.6rem;letter-spacing:normal}.cdr-text--subheading,h1.cdr-text--subheading,h2.cdr-text--subheading,h3.cdr-text--subheading,h4.cdr-text--subheading,h5.cdr-text--subheading,h6.cdr-text--subheading{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:1.8rem;line-height:2.4rem;letter-spacing:.02rem}.cdr-text--display,h1.cdr-text--display,h2.cdr-text--display,h3.cdr-text--display,h4.cdr-text--display,h5.cdr-text--display,h6.cdr-text--display{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:3.2rem;line-height:4rem;letter-spacing:.02rem}.cdr-text--display-static,h1.cdr-text--display-static,h2.cdr-text--display-static,h3.cdr-text--display-static,h4.cdr-text--display-static,h5.cdr-text--display-static,h6.cdr-text--display-static{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:4rem;line-height:4.8rem;letter-spacing:.02rem}@media (min-width:76.8rem){.cdr-text--display,h1.cdr-text--display,h2.cdr-text--display,h3.cdr-text--display,h4.cdr-text--display,h5.cdr-text--display,h6.cdr-text--display{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:4rem;line-height:4.8rem;letter-spacing:.02rem}}@media (min-width:120rem){.cdr-text--display,h1.cdr-text--display,h2.cdr-text--display,h3.cdr-text--display,h4.cdr-text--display,h5.cdr-text--display,h6.cdr-text--display{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:5.6rem;line-height:6rem;letter-spacing:.02rem}}.cdr-text--heading-small,.cdr-text--heading-small-static,h1.cdr-text--heading-small,h1.cdr-text--heading-small-static,h2.cdr-text--heading-small,h2.cdr-text--heading-small-static,h3.cdr-text--heading-small,h3.cdr-text--heading-small-static,h4.cdr-text--heading-small,h4.cdr-text--heading-small-static,h5.cdr-text--heading-small,h5.cdr-text--heading-small-static,h6.cdr-text--heading-small,h6.cdr-text--heading-small-static{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:2rem;line-height:2.8rem;letter-spacing:.02rem}@media (min-width:120rem){.cdr-text--heading-small,h1.cdr-text--heading-small,h2.cdr-text--heading-small,h3.cdr-text--heading-small,h4.cdr-text--heading-small,h5.cdr-text--heading-small,h6.cdr-text--heading-small{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:2.4rem;line-height:3.2rem;letter-spacing:.02rem}}.cdr-text--heading-medium,.cdr-text--heading-medium-static,h1.cdr-text--heading-medium,h1.cdr-text--heading-medium-static,h2.cdr-text--heading-medium,h2.cdr-text--heading-medium-static,h3.cdr-text--heading-medium,h3.cdr-text--heading-medium-static,h4.cdr-text--heading-medium,h4.cdr-text--heading-medium-static,h5.cdr-text--heading-medium,h5.cdr-text--heading-medium-static,h6.cdr-text--heading-medium,h6.cdr-text--heading-medium-static{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:2.4rem;line-height:3.2rem;letter-spacing:.02rem}@media (min-width:120rem){.cdr-text--heading-medium,h1.cdr-text--heading-medium,h2.cdr-text--heading-medium,h3.cdr-text--heading-medium,h4.cdr-text--heading-medium,h5.cdr-text--heading-medium,h6.cdr-text--heading-medium{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:2.8rem;line-height:3.6rem;letter-spacing:.02rem}}.cdr-text--heading-large,h1.cdr-text--heading-large,h2.cdr-text--heading-large,h3.cdr-text--heading-large,h4.cdr-text--heading-large,h5.cdr-text--heading-large,h6.cdr-text--heading-large{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:2.4rem;line-height:3.2rem;letter-spacing:.02rem}.cdr-text--heading-large-static,h1.cdr-text--heading-large-static,h2.cdr-text--heading-large-static,h3.cdr-text--heading-large-static,h4.cdr-text--heading-large-static,h5.cdr-text--heading-large-static,h6.cdr-text--heading-large-static{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:2.8rem;line-height:3.6rem;letter-spacing:.02rem}@media (min-width:76.8rem){.cdr-text--heading-large,h1.cdr-text--heading-large,h2.cdr-text--heading-large,h3.cdr-text--heading-large,h4.cdr-text--heading-large,h5.cdr-text--heading-large,h6.cdr-text--heading-large{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:2.8rem;line-height:3.6rem;letter-spacing:.02rem}}@media (min-width:120rem){.cdr-text--heading-large,h1.cdr-text--heading-large,h2.cdr-text--heading-large,h3.cdr-text--heading-large,h4.cdr-text--heading-large,h5.cdr-text--heading-large,h6.cdr-text--heading-large{font-style:normal;font-family:Sentinel,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;font-variant:normal;font-weight:600;font-size:4rem;line-height:4.8rem;letter-spacing:.02rem}}.cdr-hide{display:none!important}@media (min-width:0) and (max-width:76.8rem){.cdr-hide\@xs-only{display:none!important}}@media (min-width:76.8rem) and (max-width:99.2rem){.cdr-hide\@sm-only{display:none!important}}@media (min-width:76.8rem){.cdr-hide\@sm{display:none!important}}@media (min-width:99.2rem) and (max-width:120rem){.cdr-hide\@md-only{display:none!important}}@media (min-width:99.2rem){.cdr-hide\@md{display:none!important}}@media (min-width:120rem){.cdr-hide\@lg,.cdr-hide\@lg-only{display:none!important}}.cdr-show{display:block!important}.cdr-show-inline{display:inline!important}.cdr-show-inline-block{display:inline-block!important}@media (min-width:0) and (max-width:76.8rem){.cdr-show\@xs-only{display:block!important}.cdr-show-inline\@xs-only{display:inline!important}.cdr-show-inline-block\@xs-only{display:inline-block!important}}@media (min-width:76.8rem) and (max-width:99.2rem){.cdr-show\@sm-only{display:block!important}.cdr-show-inline\@sm-only{display:inline!important}.cdr-show-inline-block\@sm-only{display:inline-block!important}}@media (min-width:76.8rem){.cdr-show\@sm{display:block!important}.cdr-show-inline\@sm{display:inline!important}.cdr-show-inline-block\@sm{display:inline-block!important}}@media (min-width:99.2rem) and (max-width:120rem){.cdr-show\@md-only{display:block!important}.cdr-show-inline\@md-only{display:inline!important}.cdr-show-inline-block\@md-only{display:inline-block!important}}@media (min-width:99.2rem){.cdr-show\@md{display:block!important}.cdr-show-inline\@md{display:inline!important}.cdr-show-inline-block\@md{display:inline-block!important}}@media (min-width:120rem){.cdr-show\@lg-only{display:block!important}.cdr-show-inline\@lg-only{display:inline!important}.cdr-show-inline-block\@lg-only{display:inline-block!important}}@media (min-width:120rem){.cdr-show\@lg{display:block!important}.cdr-show-inline\@lg{display:inline!important}.cdr-show-inline-block\@lg{display:inline-block!important}}@media print{.cdr-hide\@print{display:none!important}.cdr-show\@print{display:block!important}.cdr-show-inline\@print{display:inline!important}.cdr-show-inline-block\@print{display:inline-block!important}}.cdr-sr-only{position:absolute;width:.1rem;height:.1rem;padding:0;margin:-.1rem;overflow:hidden;clip:rect(0,0,0,0);border:0}.cdr-sr-only-focusable:active,.cdr-sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}.cdr-text-left{text-align:left!important}.cdr-text-center{text-align:center!important}.cdr-text-right{text-align:right!important}.cdr-center-block{display:block;margin-left:auto;margin-right:auto}.cdr-inset-eighth-x{padding:.2rem}.cdr-inset-quarter-x{padding:.4rem}.cdr-inset-half-x{padding:.8rem}.cdr-inset-three-quarter-x{padding:1.2rem}.cdr-inset-1-x{padding:1.6rem}.cdr-inset-1-and-a-half-x{padding:2.4rem}.cdr-inset-2-x{padding:3.2rem}.cdr-inset-4-x{padding:6.4rem}.cdr-inset-eighth-x-squish{padding:0 .2rem}.cdr-inset-quarter-x-squish{padding:.2rem .4rem}.cdr-inset-half-x-squish{padding:.4rem .8rem}.cdr-inset-three-quarter-x-squish{padding:.6rem 1.2rem}.cdr-inset-1-x-squish{padding:.8rem 1.6rem}.cdr-inset-1-and-a-half-x-squish{padding:1.2rem 2.4rem}.cdr-inset-2-x-squish{padding:1.6rem 3.2rem}.cdr-inset-4-x-squish{padding:3.2rem 6.4rem}.cdr-inset-eighth-x-stretch{padding:.4rem .2rem}.cdr-inset-quarter-x-stretch{padding:.6rem .4rem}.cdr-inset-half-x-stretch{padding:1.2rem .8rem}.cdr-inset-three-quarter-x-stretch{padding:1.8rem 1.2rem}.cdr-inset-1-x-stretch{padding:2.4rem 1.6rem}.cdr-inset-1-and-a-half-x-stretch{padding:3.6rem 2.4rem}.cdr-inset-2-x-stretch{padding:4.8rem 3.2rem}.cdr-inset-4-x-stretch{padding:9.6rem 6.4rem}.cdr-stack-eighth-x{margin-bottom:.2rem}.cdr-stack-quarter-x{margin-bottom:.4rem}.cdr-stack-half-x{margin-bottom:.8rem}.cdr-stack-three-quarter-x{margin-bottom:1.2rem}.cdr-stack-1-x{margin-bottom:1.6rem}.cdr-stack-1-and-a-half-x{margin-bottom:2.4rem}.cdr-stack-2-x{margin-bottom:3.2rem}.cdr-stack-4-x{margin-bottom:6.4rem}.cdr-inline-eighth-x{margin-right:.2rem}.cdr-inline-quarter-x{margin-right:.4rem}.cdr-inline-half-x{margin-right:.8rem}.cdr-inline-three-quarter-x{margin-right:1.2rem}.cdr-inline-1-x{margin-right:1.6rem}.cdr-inline-1-and-a-half-x{margin-right:2.4rem}.cdr-inline-2-x{margin-right:3.2rem}.cdr-inline-4-x{margin-right:6.4rem}@media (min-width:0) and (max-width:76.8rem){.cdr-inset-eighth-x\@xs{padding:.2rem}.cdr-inset-quarter-x\@xs{padding:.4rem}.cdr-inset-half-x\@xs{padding:.8rem}.cdr-inset-three-quarter-x\@xs{padding:1.2rem}.cdr-inset-1-x\@xs{padding:1.6rem}.cdr-inset-1-and-a-half-x\@xs{padding:2.4rem}.cdr-inset-2-x\@xs{padding:3.2rem}.cdr-inset-4-x\@xs{padding:6.4rem}.cdr-inset-eighth-x-squish\@xs{padding:0 .2rem}.cdr-inset-quarter-x-squish\@xs{padding:.2rem .4rem}.cdr-inset-half-x-squish\@xs{padding:.4rem .8rem}.cdr-inset-three-quarter-x-squish\@xs{padding:.6rem 1.2rem}.cdr-inset-1-x-squish\@xs{padding:.8rem 1.6rem}.cdr-inset-1-and-a-half-x-squish\@xs{padding:1.2rem 2.4rem}.cdr-inset-2-x-squish\@xs{padding:1.6rem 3.2rem}.cdr-inset-4-x-squish\@xs{padding:3.2rem 6.4rem}.cdr-inset-eighth-x-stretch\@xs{padding:.4rem .2rem}.cdr-inset-quarter-x-stretch\@xs{padding:.6rem .4rem}.cdr-inset-half-x-stretch\@xs{padding:1.2rem .8rem}.cdr-inset-three-quarter-x-stretch\@xs{padding:1.8rem 1.2rem}.cdr-inset-1-x-stretch\@xs{padding:2.4rem 1.6rem}.cdr-inset-1-and-a-half-x-stretch\@xs{padding:3.6rem 2.4rem}.cdr-inset-2-x-stretch\@xs{padding:4.8rem 3.2rem}.cdr-inset-4-x-stretch\@xs{padding:9.6rem 6.4rem}.cdr-stack-eighth-x\@xs{margin-bottom:.2rem}.cdr-stack-quarter-x\@xs{margin-bottom:.4rem}.cdr-stack-half-x\@xs{margin-bottom:.8rem}.cdr-stack-three-quarter-x\@xs{margin-bottom:1.2rem}.cdr-stack-1-x\@xs{margin-bottom:1.6rem}.cdr-stack-1-and-a-half-x\@xs{margin-bottom:2.4rem}.cdr-stack-2-x\@xs{margin-bottom:3.2rem}.cdr-stack-4-x\@xs{margin-bottom:6.4rem}.cdr-inline-eighth-x\@xs{margin-right:.2rem}.cdr-inline-quarter-x\@xs{margin-right:.4rem}.cdr-inline-half-x\@xs{margin-right:.8rem}.cdr-inline-three-quarter-x\@xs{margin-right:1.2rem}.cdr-inline-1-x\@xs{margin-right:1.6rem}.cdr-inline-1-and-a-half-x\@xs{margin-right:2.4rem}.cdr-inline-2-x\@xs{margin-right:3.2rem}.cdr-inline-4-x\@xs{margin-right:6.4rem}}@media (min-width:76.8rem) and (max-width:99.2rem){.cdr-inset-eighth-x\@sm{padding:.2rem}.cdr-inset-quarter-x\@sm{padding:.4rem}.cdr-inset-half-x\@sm{padding:.8rem}.cdr-inset-three-quarter-x\@sm{padding:1.2rem}.cdr-inset-1-x\@sm{padding:1.6rem}.cdr-inset-1-and-a-half-x\@sm{padding:2.4rem}.cdr-inset-2-x\@sm{padding:3.2rem}.cdr-inset-4-x\@sm{padding:6.4rem}.cdr-inset-eighth-x-squish\@sm{padding:0 .2rem}.cdr-inset-quarter-x-squish\@sm{padding:.2rem .4rem}.cdr-inset-half-x-squish\@sm{padding:.4rem .8rem}.cdr-inset-three-quarter-x-squish\@sm{padding:.6rem 1.2rem}.cdr-inset-1-x-squish\@sm{padding:.8rem 1.6rem}.cdr-inset-1-and-a-half-x-squish\@sm{padding:1.2rem 2.4rem}.cdr-inset-2-x-squish\@sm{padding:1.6rem 3.2rem}.cdr-inset-4-x-squish\@sm{padding:3.2rem 6.4rem}.cdr-inset-eighth-x-stretch\@sm{padding:.4rem .2rem}.cdr-inset-quarter-x-stretch\@sm{padding:.6rem .4rem}.cdr-inset-half-x-stretch\@sm{padding:1.2rem .8rem}.cdr-inset-three-quarter-x-stretch\@sm{padding:1.8rem 1.2rem}.cdr-inset-1-x-stretch\@sm{padding:2.4rem 1.6rem}.cdr-inset-1-and-a-half-x-stretch\@sm{padding:3.6rem 2.4rem}.cdr-inset-2-x-stretch\@sm{padding:4.8rem 3.2rem}.cdr-inset-4-x-stretch\@sm{padding:9.6rem 6.4rem}.cdr-stack-eighth-x\@sm{margin-bottom:.2rem}.cdr-stack-quarter-x\@sm{margin-bottom:.4rem}.cdr-stack-half-x\@sm{margin-bottom:.8rem}.cdr-stack-three-quarter-x\@sm{margin-bottom:1.2rem}.cdr-stack-1-x\@sm{margin-bottom:1.6rem}.cdr-stack-1-and-a-half-x\@sm{margin-bottom:2.4rem}.cdr-stack-2-x\@sm{margin-bottom:3.2rem}.cdr-stack-4-x\@sm{margin-bottom:6.4rem}.cdr-inline-eighth-x\@sm{margin-right:.2rem}.cdr-inline-quarter-x\@sm{margin-right:.4rem}.cdr-inline-half-x\@sm{margin-right:.8rem}.cdr-inline-three-quarter-x\@sm{margin-right:1.2rem}.cdr-inline-1-x\@sm{margin-right:1.6rem}.cdr-inline-1-and-a-half-x\@sm{margin-right:2.4rem}.cdr-inline-2-x\@sm{margin-right:3.2rem}.cdr-inline-4-x\@sm{margin-right:6.4rem}}@media (min-width:99.2rem) and (max-width:120rem){.cdr-inset-eighth-x\@md{padding:.2rem}.cdr-inset-quarter-x\@md{padding:.4rem}.cdr-inset-half-x\@md{padding:.8rem}.cdr-inset-three-quarter-x\@md{padding:1.2rem}.cdr-inset-1-x\@md{padding:1.6rem}.cdr-inset-1-and-a-half-x\@md{padding:2.4rem}.cdr-inset-2-x\@md{padding:3.2rem}.cdr-inset-4-x\@md{padding:6.4rem}.cdr-inset-eighth-x-squish\@md{padding:0 .2rem}.cdr-inset-quarter-x-squish\@md{padding:.2rem .4rem}.cdr-inset-half-x-squish\@md{padding:.4rem .8rem}.cdr-inset-three-quarter-x-squish\@md{padding:.6rem 1.2rem}.cdr-inset-1-x-squish\@md{padding:.8rem 1.6rem}.cdr-inset-1-and-a-half-x-squish\@md{padding:1.2rem 2.4rem}.cdr-inset-2-x-squish\@md{padding:1.6rem 3.2rem}.cdr-inset-4-x-squish\@md{padding:3.2rem 6.4rem}.cdr-inset-eighth-x-stretch\@md{padding:.4rem .2rem}.cdr-inset-quarter-x-stretch\@md{padding:.6rem .4rem}.cdr-inset-half-x-stretch\@md{padding:1.2rem .8rem}.cdr-inset-three-quarter-x-stretch\@md{padding:1.8rem 1.2rem}.cdr-inset-1-x-stretch\@md{padding:2.4rem 1.6rem}.cdr-inset-1-and-a-half-x-stretch\@md{padding:3.6rem 2.4rem}.cdr-inset-2-x-stretch\@md{padding:4.8rem 3.2rem}.cdr-inset-4-x-stretch\@md{padding:9.6rem 6.4rem}.cdr-stack-eighth-x\@md{margin-bottom:.2rem}.cdr-stack-quarter-x\@md{margin-bottom:.4rem}.cdr-stack-half-x\@md{margin-bottom:.8rem}.cdr-stack-three-quarter-x\@md{margin-bottom:1.2rem}.cdr-stack-1-x\@md{margin-bottom:1.6rem}.cdr-stack-1-and-a-half-x\@md{margin-bottom:2.4rem}.cdr-stack-2-x\@md{margin-bottom:3.2rem}.cdr-stack-4-x\@md{margin-bottom:6.4rem}.cdr-inline-eighth-x\@md{margin-right:.2rem}.cdr-inline-quarter-x\@md{margin-right:.4rem}.cdr-inline-half-x\@md{margin-right:.8rem}.cdr-inline-three-quarter-x\@md{margin-right:1.2rem}.cdr-inline-1-x\@md{margin-right:1.6rem}.cdr-inline-1-and-a-half-x\@md{margin-right:2.4rem}.cdr-inline-2-x\@md{margin-right:3.2rem}.cdr-inline-4-x\@md{margin-right:6.4rem}}@media (min-width:120rem){.cdr-inset-eighth-x\@lg{padding:.2rem}.cdr-inset-quarter-x\@lg{padding:.4rem}.cdr-inset-half-x\@lg{padding:.8rem}.cdr-inset-three-quarter-x\@lg{padding:1.2rem}.cdr-inset-1-x\@lg{padding:1.6rem}.cdr-inset-1-and-a-half-x\@lg{padding:2.4rem}.cdr-inset-2-x\@lg{padding:3.2rem}.cdr-inset-4-x\@lg{padding:6.4rem}.cdr-inset-eighth-x-squish\@lg{padding:0 .2rem}.cdr-inset-quarter-x-squish\@lg{padding:.2rem .4rem}.cdr-inset-half-x-squish\@lg{padding:.4rem .8rem}.cdr-inset-three-quarter-x-squish\@lg{padding:.6rem 1.2rem}.cdr-inset-1-x-squish\@lg{padding:.8rem 1.6rem}.cdr-inset-1-and-a-half-x-squish\@lg{padding:1.2rem 2.4rem}.cdr-inset-2-x-squish\@lg{padding:1.6rem 3.2rem}.cdr-inset-4-x-squish\@lg{padding:3.2rem 6.4rem}.cdr-inset-eighth-x-stretch\@lg{padding:.4rem .2rem}.cdr-inset-quarter-x-stretch\@lg{padding:.6rem .4rem}.cdr-inset-half-x-stretch\@lg{padding:1.2rem .8rem}.cdr-inset-three-quarter-x-stretch\@lg{padding:1.8rem 1.2rem}.cdr-inset-1-x-stretch\@lg{padding:2.4rem 1.6rem}.cdr-inset-1-and-a-half-x-stretch\@lg{padding:3.6rem 2.4rem}.cdr-inset-2-x-stretch\@lg{padding:4.8rem 3.2rem}.cdr-inset-4-x-stretch\@lg{padding:9.6rem 6.4rem}.cdr-stack-eighth-x\@lg{margin-bottom:.2rem}.cdr-stack-quarter-x\@lg{margin-bottom:.4rem}.cdr-stack-half-x\@lg{margin-bottom:.8rem}.cdr-stack-three-quarter-x\@lg{margin-bottom:1.2rem}.cdr-stack-1-x\@lg{margin-bottom:1.6rem}.cdr-stack-1-and-a-half-x\@lg{margin-bottom:2.4rem}.cdr-stack-2-x\@lg{margin-bottom:3.2rem}.cdr-stack-4-x\@lg{margin-bottom:6.4rem}.cdr-inline-eighth-x\@lg{margin-right:.2rem}.cdr-inline-quarter-x\@lg{margin-right:.4rem}.cdr-inline-half-x\@lg{margin-right:.8rem}.cdr-inline-three-quarter-x\@lg{margin-right:1.2rem}.cdr-inline-1-x\@lg{margin-right:1.6rem}.cdr-inline-1-and-a-half-x\@lg{margin-right:2.4rem}.cdr-inline-2-x\@lg{margin-right:3.2rem}.cdr-inline-4-x\@lg{margin-right:6.4rem}}
+  All values should map to variables in
+  vars/CdrCta.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrCta
+========================================================================== */
+.cdr-cta-1hkzw {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  background-color: #3278ae;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #2b6692;
+          box-shadow: inset 0 0 0 0.1rem #2b6692;
+  border: none;
+  border-radius: 0.4rem;
+  color: #ffffff;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  outline: none;
+  padding: 1.2rem 2.4rem;
+  padding-right: 1.6rem;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* Full Width
+     ========== */
+}
+.cdr-cta-1hkzw > .cdr-cta__icon-1hkzw {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: inline-block;
+  fill: inherit;
+  height: 2.4rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 2.4rem;
+}
+.cdr-cta-1hkzw:hover, .cdr-cta-1hkzw:active, .cdr-cta-1hkzw:focus {
+  text-decoration: none;
+}
+.cdr-cta-1hkzw:focus {
+  outline: 0.2rem auto -webkit-focus-ring-color;
+  outline-offset: 0;
+}
+.cdr-cta--full-width-1hkzw {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+.cdr-cta--brand-1hkzw {
+  background-color: #3278ae;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #2b6692;
+          box-shadow: inset 0 0 0 0.1rem #2b6692;
+  color: #ffffff;
+  fill: #ffffff;
+}
+.cdr-cta--brand-1hkzw:hover, .cdr-cta--brand-1hkzw:focus, .cdr-cta--brand-1hkzw:active {
+  background-color: #2b6692;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #2b6692;
+          box-shadow: inset 0 0 0 0.1rem #2b6692;
+  color: #ffffff;
+  fill: #ffffff;
+}
+.cdr-cta--dark-1hkzw {
+  background-color: #292929;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #434343;
+          box-shadow: inset 0 0 0 0.1rem #434343;
+  color: #ffffff;
+  fill: #ffffff;
+}
+.cdr-cta--dark-1hkzw:hover, .cdr-cta--dark-1hkzw:focus, .cdr-cta--dark-1hkzw:active {
+  background-color: #434343;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #434343;
+          box-shadow: inset 0 0 0 0.1rem #434343;
+  color: #ffffff;
+}
+.cdr-cta--dark-1hkzw:hover > .cdr-cta__icon-1hkzw, .cdr-cta--dark-1hkzw:focus > .cdr-cta__icon-1hkzw, .cdr-cta--dark-1hkzw:active > .cdr-cta__icon-1hkzw {
+  fill: #ffffff;
+}
+.cdr-cta--light-1hkzw {
+  background-color: #ffffff;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #616161;
+          box-shadow: inset 0 0 0 0.1rem #616161;
+  color: #292929;
+  fill: #292929;
+}
+.cdr-cta--light-1hkzw:hover, .cdr-cta--light-1hkzw:focus, .cdr-cta--light-1hkzw:active {
+  background-color: #f7f7f7;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #616161;
+          box-shadow: inset 0 0 0 0.1rem #616161;
+  color: #292929;
+  fill: #292929;
+}
+.cdr-cta--light-1hkzw.cdr-cta--elevated-1hkzw {
+  -webkit-box-shadow: inset 0 0 0 0.1rem #616161, 0.4rem 0.4rem 0.4rem 0 rgba(26, 26, 26, 0.2);
+          box-shadow: inset 0 0 0 0.1rem #616161, 0.4rem 0.4rem 0.4rem 0 rgba(26, 26, 26, 0.2);
+}
+.cdr-cta--light-1hkzw.cdr-cta--elevated-1hkzw:hover, .cdr-cta--light-1hkzw.cdr-cta--elevated-1hkzw:focus, .cdr-cta--light-1hkzw.cdr-cta--elevated-1hkzw:active {
+  -webkit-box-shadow: inset 0 0 0 0.1rem #616161, 0.4rem 0.4rem 0.4rem 0 rgba(26, 26, 26, 0.2);
+          box-shadow: inset 0 0 0 0.1rem #616161, 0.4rem 0.4rem 0.4rem 0 rgba(26, 26, 26, 0.2);
+}
+.cdr-cta--sale-1hkzw {
+  background-color: #b5292b;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #a12024;
+          box-shadow: inset 0 0 0 0.1rem #a12024;
+  color: #ffffff;
+  fill: #ffffff;
+}
+.cdr-cta--sale-1hkzw:hover, .cdr-cta--sale-1hkzw:focus, .cdr-cta--sale-1hkzw:active {
+  background-color: #a12024;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #a12024;
+          box-shadow: inset 0 0 0 0.1rem #a12024;
+  color: #ffffff;
+  fill: #ffffff;
+}
+.cdr-cta--elevated-1hkzw {
+  -webkit-box-shadow: 0.4rem 0.4rem 0.4rem 0 rgba(26, 26, 26, 0.2);
+          box-shadow: 0.4rem 0.4rem 0.4rem 0 rgba(26, 26, 26, 0.2);
+}
+.cdr-cta--elevated-1hkzw:hover, .cdr-cta--elevated-1hkzw:focus, .cdr-cta--elevated-1hkzw:active {
+  -webkit-box-shadow: 0.4rem 0.4rem 0.4rem 0 rgba(26, 26, 26, 0.2);
+          box-shadow: 0.4rem 0.4rem 0.4rem 0 rgba(26, 26, 26, 0.2);
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrLink
+
+  TOC:
+
+    :Base Styles
+      :States
+    :Modifiers
+      :Style variants
+        :Standalone
+========================================================================== */
+.cdr-link-lc69i {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  color: #3278ae;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  fill: #3278ae;
+  outline: none;
+  padding: 0;
+  text-decoration: underline;
+  vertical-align: top;
+  /* States
+    ---------- */
+}
+.cdr-link-lc69i:hover, .cdr-link-lc69i:active, .cdr-link-lc69i:focus {
+  color: #3278ae;
+  outline: none;
+  text-decoration: underline;
+}
+.cdr-link-lc69i:focus {
+  outline: 0.2rem auto -webkit-focus-ring-color;
+  outline-offset: 0;
+}
+
+/* Style variants
+  ========================================================================== */
+/* Standalone
+    ========== */
+.cdr-link--standalone-lc69i {
+  text-decoration: none;
+}
+.cdr-link--standalone-lc69i:hover, .cdr-link--standalone-lc69i:active, .cdr-link--standalone-lc69i:focus, .cdr-link--standalone-lc69i:visited {
+  text-decoration: underline;
+}
+
+/* Light Theme */
+/* Theme via cascade
+
+:global(.cdr-bg--light) .cdr-link {
+  color: $link-color;
+  fill: $link-color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color;
+  }
+}
+*/
+/* Theme via prop */
+.on-light.cdr-link-lc69i {
+  color: #3278ae;
+  fill: #3278ae;
+  /* States
+    ---------- */
+}
+.on-light.cdr-link-lc69i:hover, .on-light.cdr-link-lc69i:active, .on-light.cdr-link-lc69i:focus {
+  color: #3278ae;
+}
+
+/* Dark Theme */
+/* TODO: get this value */
+/* Theme via cascade
+
+:global(.cdr-bg--dark) .cdr-link {
+  color: $link-color-dark;
+  fill: $link-color-dark;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-color-dark;
+  }
+}
+*/
+/* Theme via prop */
+.on-dark.cdr-link-lc69i {
+  color: #5197cd;
+  fill: #5197cd;
+  /* States
+    ---------- */
+}
+.on-dark.cdr-link-lc69i:hover, .on-dark.cdr-link-lc69i:active, .on-dark.cdr-link-lc69i:focus {
+  color: #5197cd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** normalize line-height for consistent testing because links inherit it */
+.link-examples {
+  line-height: 1;
+}
+.anchor-example {
+  padding: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* This should be removed: */
+
+/* having custom styles here provides false positives */
+.button-example {
+  padding: 1rem;
+}
+.button-example button,
+.button-example a {
+  margin: 0 1rem 0.5rem 0;
+}
+
+
+.button-example {
+  padding: 1rem;
+}
+
+
+.button-example {
+  padding: 1rem;
+}
+
+
+.button-example {
+  padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.visibility-utilities {
+table,
+  td {
+    border: 0.1rem solid lightgray;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    line-height: 1;
+}
+th {
+    text-align: left;
+    padding: 1rem;
+}
+td {
+    padding: 0.5rem;
+}
+td:not(:first-of-type) {
+    text-align: center;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.example {
+  background-color: rgba(27, 28, 28, 0.6);
+}
+.example > * {
+  background-color: rgba(249, 229, 229, 0.8);
+}
+
+
+.example {
+  background-color: rgba(27, 28, 28, 0.6);
+}
+.example > * {
+  background-color: rgba(249, 229, 229, 0.8);
+}
+
+
+.example {
+  background-color: rgba(27, 28, 28, 0.6);
+}
+.example > * {
+  background-color: rgba(249, 229, 229, 0.8);
+}
+
+
+.container-test {
+  background-color: lightblue;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cpg-section[data-v-487c7c54] {
+  margin: 1.6rem 0;
+}
+
+/* Tokens */
+/* Settings */
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* Generic */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 10px;
+  /* update postcss.config.js pxtorem if this changes */
+  /* maybe one day
+  https://connect.microsoft.com/IE/feedback/details/816709/ie-11-calculating-font-sizes-wrong-when-setting-the-bodys-font-size-in-relative-units
+  font-size: 62.5%;
+  */
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+@-ms-viewport {
+  width: device-width; }
+
+body {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  line-height: 1;
+  margin: 0;
+  color: #292929;
+  background-color: #fff; }
+
+[tabindex="-1"]:focus {
+  outline: none !important; }
+
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
+
+button:focus {
+  outline: 0.5rem auto -webkit-focus-ring-color; }
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none; }
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox; }
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+[type="search"] {
+  outline-offset: -0.2rem;
+  -webkit-appearance: none; }
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/* ==========================================================================/*
+* Container utility classes
+*
+** TOC:
+**
+** container fluid
+** container
+*/
+/* ==========================================================================
+   # CONTAINER FLUID
+   ========================================================================== */
+.cdr-container-fluid {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  width: 100%; }
+
+@media (min-width: 992px) {
+  .cdr-container-fluid {
+    padding-left: 3.2rem;
+    padding-right: 3.2rem; } }
+
+/* ==========================================================================
+   # CONTAINER
+   ========================================================================== */
+.cdr-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  width: 100%;
+  max-width: 123.2rem; }
+
+@media (min-width: 992px) {
+  .cdr-container {
+    padding-left: 3.2rem;
+    padding-right: 3.2rem; } }
+
+/* ==========================================================================/*
+* Color utility classes
+*
+*
+** TOC:
+**
+** background theme classes
+*/
+.cdr-bg--lightest {
+  background-color: #ffffff; }
+
+.cdr-bg--light {
+  background-color: #f7f7f7; }
+
+.cdr-bg--dark {
+  background-color: #292929; }
+
+.cdr-bg--darker {
+  background-color: #1a1a1a; }
+
+/* ==========================================================================/*
+* Typography utility classes
+*
+* TOC:
+*   :base text styles
+*     :paragraphs
+*       :body
+*     :headings
+*       :subheading
+*       :display
+*       :simple
+*         :large
+*         :medium
+*         :small
+# cdr-label
+========================================================================== */
+.cdr-text,
+h1.cdr-text,
+h2.cdr-text,
+h3.cdr-text,
+h4.cdr-text,
+h5.cdr-text,
+h6.cdr-text {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  margin: 0;
+  /* Paragraphs
+    ========================================================================== */
+  /* Body
+    ========== */
+  /* Caption
+    ========== */
+  /* Headings
+    ========================================================================== */
+  /* Subheading
+    ========== */
+  /* Display
+    ========== */
+  /* Heading-small
+    ========== */
+  /* Heading-medium
+    ========== */
+  /* Heading-large
+    ========== */ }
+  .cdr-text--body,
+  h1.cdr-text--body,
+  h2.cdr-text--body,
+  h3.cdr-text--body,
+  h4.cdr-text--body,
+  h5.cdr-text--body,
+  h6.cdr-text--body {
+    font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: normal;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    max-width: 63.4rem; }
+    .cdr-text--body + .cdr-text--body,
+    h1.cdr-text--body + .cdr-text--body,
+    h2.cdr-text--body + .cdr-text--body,
+    h3.cdr-text--body + .cdr-text--body,
+    h4.cdr-text--body + .cdr-text--body,
+    h5.cdr-text--body + .cdr-text--body,
+    h6.cdr-text--body + .cdr-text--body, .cdr-text--body +
+    h1.cdr-text--body,
+    h1.cdr-text--body +
+    h1.cdr-text--body,
+    h2.cdr-text--body +
+    h1.cdr-text--body,
+    h3.cdr-text--body +
+    h1.cdr-text--body,
+    h4.cdr-text--body +
+    h1.cdr-text--body,
+    h5.cdr-text--body +
+    h1.cdr-text--body,
+    h6.cdr-text--body +
+    h1.cdr-text--body, .cdr-text--body +
+    h2.cdr-text--body,
+    h1.cdr-text--body +
+    h2.cdr-text--body,
+    h2.cdr-text--body +
+    h2.cdr-text--body,
+    h3.cdr-text--body +
+    h2.cdr-text--body,
+    h4.cdr-text--body +
+    h2.cdr-text--body,
+    h5.cdr-text--body +
+    h2.cdr-text--body,
+    h6.cdr-text--body +
+    h2.cdr-text--body, .cdr-text--body +
+    h3.cdr-text--body,
+    h1.cdr-text--body +
+    h3.cdr-text--body,
+    h2.cdr-text--body +
+    h3.cdr-text--body,
+    h3.cdr-text--body +
+    h3.cdr-text--body,
+    h4.cdr-text--body +
+    h3.cdr-text--body,
+    h5.cdr-text--body +
+    h3.cdr-text--body,
+    h6.cdr-text--body +
+    h3.cdr-text--body, .cdr-text--body +
+    h4.cdr-text--body,
+    h1.cdr-text--body +
+    h4.cdr-text--body,
+    h2.cdr-text--body +
+    h4.cdr-text--body,
+    h3.cdr-text--body +
+    h4.cdr-text--body,
+    h4.cdr-text--body +
+    h4.cdr-text--body,
+    h5.cdr-text--body +
+    h4.cdr-text--body,
+    h6.cdr-text--body +
+    h4.cdr-text--body, .cdr-text--body +
+    h5.cdr-text--body,
+    h1.cdr-text--body +
+    h5.cdr-text--body,
+    h2.cdr-text--body +
+    h5.cdr-text--body,
+    h3.cdr-text--body +
+    h5.cdr-text--body,
+    h4.cdr-text--body +
+    h5.cdr-text--body,
+    h5.cdr-text--body +
+    h5.cdr-text--body,
+    h6.cdr-text--body +
+    h5.cdr-text--body, .cdr-text--body +
+    h6.cdr-text--body,
+    h1.cdr-text--body +
+    h6.cdr-text--body,
+    h2.cdr-text--body +
+    h6.cdr-text--body,
+    h3.cdr-text--body +
+    h6.cdr-text--body,
+    h4.cdr-text--body +
+    h6.cdr-text--body,
+    h5.cdr-text--body +
+    h6.cdr-text--body,
+    h6.cdr-text--body +
+    h6.cdr-text--body {
+      margin-top: 1.6rem; }
+    @media (min-width: 768px) {
+      .cdr-text--body,
+      h1.cdr-text--body,
+      h2.cdr-text--body,
+      h3.cdr-text--body,
+      h4.cdr-text--body,
+      h5.cdr-text--body,
+      h6.cdr-text--body {
+        font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: normal;
+        font-size: 2rem;
+        line-height: 3.2rem; }
+        .cdr-text--body + .cdr-text--body,
+        h1.cdr-text--body + .cdr-text--body,
+        h2.cdr-text--body + .cdr-text--body,
+        h3.cdr-text--body + .cdr-text--body,
+        h4.cdr-text--body + .cdr-text--body,
+        h5.cdr-text--body + .cdr-text--body,
+        h6.cdr-text--body + .cdr-text--body, .cdr-text--body +
+        h1.cdr-text--body,
+        h1.cdr-text--body +
+        h1.cdr-text--body,
+        h2.cdr-text--body +
+        h1.cdr-text--body,
+        h3.cdr-text--body +
+        h1.cdr-text--body,
+        h4.cdr-text--body +
+        h1.cdr-text--body,
+        h5.cdr-text--body +
+        h1.cdr-text--body,
+        h6.cdr-text--body +
+        h1.cdr-text--body, .cdr-text--body +
+        h2.cdr-text--body,
+        h1.cdr-text--body +
+        h2.cdr-text--body,
+        h2.cdr-text--body +
+        h2.cdr-text--body,
+        h3.cdr-text--body +
+        h2.cdr-text--body,
+        h4.cdr-text--body +
+        h2.cdr-text--body,
+        h5.cdr-text--body +
+        h2.cdr-text--body,
+        h6.cdr-text--body +
+        h2.cdr-text--body, .cdr-text--body +
+        h3.cdr-text--body,
+        h1.cdr-text--body +
+        h3.cdr-text--body,
+        h2.cdr-text--body +
+        h3.cdr-text--body,
+        h3.cdr-text--body +
+        h3.cdr-text--body,
+        h4.cdr-text--body +
+        h3.cdr-text--body,
+        h5.cdr-text--body +
+        h3.cdr-text--body,
+        h6.cdr-text--body +
+        h3.cdr-text--body, .cdr-text--body +
+        h4.cdr-text--body,
+        h1.cdr-text--body +
+        h4.cdr-text--body,
+        h2.cdr-text--body +
+        h4.cdr-text--body,
+        h3.cdr-text--body +
+        h4.cdr-text--body,
+        h4.cdr-text--body +
+        h4.cdr-text--body,
+        h5.cdr-text--body +
+        h4.cdr-text--body,
+        h6.cdr-text--body +
+        h4.cdr-text--body, .cdr-text--body +
+        h5.cdr-text--body,
+        h1.cdr-text--body +
+        h5.cdr-text--body,
+        h2.cdr-text--body +
+        h5.cdr-text--body,
+        h3.cdr-text--body +
+        h5.cdr-text--body,
+        h4.cdr-text--body +
+        h5.cdr-text--body,
+        h5.cdr-text--body +
+        h5.cdr-text--body,
+        h6.cdr-text--body +
+        h5.cdr-text--body, .cdr-text--body +
+        h6.cdr-text--body,
+        h1.cdr-text--body +
+        h6.cdr-text--body,
+        h2.cdr-text--body +
+        h6.cdr-text--body,
+        h3.cdr-text--body +
+        h6.cdr-text--body,
+        h4.cdr-text--body +
+        h6.cdr-text--body,
+        h5.cdr-text--body +
+        h6.cdr-text--body,
+        h6.cdr-text--body +
+        h6.cdr-text--body {
+          margin-top: 3.2rem; } }
+  .cdr-text--citation,
+  h1.cdr-text--citation,
+  h2.cdr-text--citation,
+  h3.cdr-text--citation,
+  h4.cdr-text--citation,
+  h5.cdr-text--citation,
+  h6.cdr-text--citation {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: normal; }
+  .cdr-text--subheading,
+  h1.cdr-text--subheading,
+  h2.cdr-text--subheading,
+  h3.cdr-text--subheading,
+  h4.cdr-text--subheading,
+  h5.cdr-text--subheading,
+  h6.cdr-text--subheading {
+    font-style: normal;
+    font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.02rem; }
+  .cdr-text--display,
+  h1.cdr-text--display,
+  h2.cdr-text--display,
+  h3.cdr-text--display,
+  h4.cdr-text--display,
+  h5.cdr-text--display,
+  h6.cdr-text--display {
+    font-style: normal;
+    font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 4rem;
+    letter-spacing: 0.02rem;
+    /* non responsive */
+    /* @ small */
+    /* @ large */ }
+    .cdr-text--display-static,
+    h1.cdr-text--display-static,
+    h2.cdr-text--display-static,
+    h3.cdr-text--display-static,
+    h4.cdr-text--display-static,
+    h5.cdr-text--display-static,
+    h6.cdr-text--display-static {
+      font-style: normal;
+      font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-variant: normal;
+      font-weight: 600;
+      font-size: 4rem;
+      line-height: 4.8rem;
+      letter-spacing: 0.02rem; }
+    @media (min-width: 768px) {
+      .cdr-text--display,
+      h1.cdr-text--display,
+      h2.cdr-text--display,
+      h3.cdr-text--display,
+      h4.cdr-text--display,
+      h5.cdr-text--display,
+      h6.cdr-text--display {
+        font-style: normal;
+        font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-variant: normal;
+        font-weight: 600;
+        font-size: 4rem;
+        line-height: 4.8rem;
+        letter-spacing: 0.02rem; } }
+    @media (min-width: 1200px) {
+      .cdr-text--display,
+      h1.cdr-text--display,
+      h2.cdr-text--display,
+      h3.cdr-text--display,
+      h4.cdr-text--display,
+      h5.cdr-text--display,
+      h6.cdr-text--display {
+        font-style: normal;
+        font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-variant: normal;
+        font-weight: 600;
+        font-size: 5.6rem;
+        line-height: 6rem;
+        letter-spacing: 0.02rem; } }
+  .cdr-text--heading-small,
+  h1.cdr-text--heading-small,
+  h2.cdr-text--heading-small,
+  h3.cdr-text--heading-small,
+  h4.cdr-text--heading-small,
+  h5.cdr-text--heading-small,
+  h6.cdr-text--heading-small {
+    font-style: normal;
+    font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.02rem;
+    /* non responsive */
+    /* @ large */ }
+    .cdr-text--heading-small-static,
+    h1.cdr-text--heading-small-static,
+    h2.cdr-text--heading-small-static,
+    h3.cdr-text--heading-small-static,
+    h4.cdr-text--heading-small-static,
+    h5.cdr-text--heading-small-static,
+    h6.cdr-text--heading-small-static {
+      font-style: normal;
+      font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-variant: normal;
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 2.8rem;
+      letter-spacing: 0.02rem; }
+    @media (min-width: 1200px) {
+      .cdr-text--heading-small,
+      h1.cdr-text--heading-small,
+      h2.cdr-text--heading-small,
+      h3.cdr-text--heading-small,
+      h4.cdr-text--heading-small,
+      h5.cdr-text--heading-small,
+      h6.cdr-text--heading-small {
+        font-style: normal;
+        font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-variant: normal;
+        font-weight: 600;
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        letter-spacing: 0.02rem; } }
+  .cdr-text--heading-medium,
+  h1.cdr-text--heading-medium,
+  h2.cdr-text--heading-medium,
+  h3.cdr-text--heading-medium,
+  h4.cdr-text--heading-medium,
+  h5.cdr-text--heading-medium,
+  h6.cdr-text--heading-medium {
+    font-style: normal;
+    font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.02rem;
+    /* non responsive */
+    /* @ large */ }
+    .cdr-text--heading-medium-static,
+    h1.cdr-text--heading-medium-static,
+    h2.cdr-text--heading-medium-static,
+    h3.cdr-text--heading-medium-static,
+    h4.cdr-text--heading-medium-static,
+    h5.cdr-text--heading-medium-static,
+    h6.cdr-text--heading-medium-static {
+      font-style: normal;
+      font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-variant: normal;
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      letter-spacing: 0.02rem; }
+    @media (min-width: 1200px) {
+      .cdr-text--heading-medium,
+      h1.cdr-text--heading-medium,
+      h2.cdr-text--heading-medium,
+      h3.cdr-text--heading-medium,
+      h4.cdr-text--heading-medium,
+      h5.cdr-text--heading-medium,
+      h6.cdr-text--heading-medium {
+        font-style: normal;
+        font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-variant: normal;
+        font-weight: 600;
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.02rem; } }
+  .cdr-text--heading-large,
+  h1.cdr-text--heading-large,
+  h2.cdr-text--heading-large,
+  h3.cdr-text--heading-large,
+  h4.cdr-text--heading-large,
+  h5.cdr-text--heading-large,
+  h6.cdr-text--heading-large {
+    font-style: normal;
+    font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.02rem;
+    /* non responsive */
+    /* @ small */
+    /* @ large */ }
+    .cdr-text--heading-large-static,
+    h1.cdr-text--heading-large-static,
+    h2.cdr-text--heading-large-static,
+    h3.cdr-text--heading-large-static,
+    h4.cdr-text--heading-large-static,
+    h5.cdr-text--heading-large-static,
+    h6.cdr-text--heading-large-static {
+      font-style: normal;
+      font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-variant: normal;
+      font-weight: 600;
+      font-size: 2.8rem;
+      line-height: 3.6rem;
+      letter-spacing: 0.02rem; }
+    @media (min-width: 768px) {
+      .cdr-text--heading-large,
+      h1.cdr-text--heading-large,
+      h2.cdr-text--heading-large,
+      h3.cdr-text--heading-large,
+      h4.cdr-text--heading-large,
+      h5.cdr-text--heading-large,
+      h6.cdr-text--heading-large {
+        font-style: normal;
+        font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-variant: normal;
+        font-weight: 600;
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.02rem; } }
+    @media (min-width: 1200px) {
+      .cdr-text--heading-large,
+      h1.cdr-text--heading-large,
+      h2.cdr-text--heading-large,
+      h3.cdr-text--heading-large,
+      h4.cdr-text--heading-large,
+      h5.cdr-text--heading-large,
+      h6.cdr-text--heading-large {
+        font-style: normal;
+        font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-variant: normal;
+        font-weight: 600;
+        font-size: 4rem;
+        line-height: 4.8rem;
+        letter-spacing: 0.02rem; } }
+
+/* Utilities */
+/* ==========================================================================
+  # visibility
+  
+  Utility classes for hiding/showing content
+
+  TOC:
+
+    :Hide
+      :responsive
+    :Show
+      :responsive
+    :Print
+      :Hide
+      :show
+========================================================================== */
+/*
+* HIDE
+* --------------------------------------------
+*/
+.cdr-hide {
+  display: none !important; }
+
+@media (min-width: 0) and (max-width: 767px) {
+  .cdr-hide\@xs-only {
+    display: none !important; } }
+
+/* @sm
+============ */
+@media (min-width: 768px) and (max-width: 991px) {
+  .cdr-hide\@sm-only {
+    display: none !important; } }
+
+@media (min-width: 768px) {
+  .cdr-hide\@sm {
+    display: none !important; } }
+
+/* @md
+============ */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .cdr-hide\@md-only {
+    display: none !important; } }
+
+@media (min-width: 992px) {
+  .cdr-hide\@md {
+    display: none !important; } }
+
+/* @lg
+============ */
+@media (min-width: 1200px) {
+  .cdr-hide\@lg-only {
+    display: none !important; } }
+
+@media (min-width: 1200px) {
+  .cdr-hide\@lg {
+    display: none !important; } }
+
+/*
+* SHOW
+* --------------------------------------------
+*/
+.cdr-show {
+  display: block !important; }
+
+.cdr-show-inline {
+  display: inline !important; }
+
+.cdr-show-inline-block {
+  display: inline-block !important; }
+
+@media (min-width: 0) and (max-width: 767px) {
+  .cdr-show\@xs-only {
+    display: block !important; }
+  .cdr-show-inline\@xs-only {
+    display: inline !important; }
+  .cdr-show-inline-block\@xs-only {
+    display: inline-block !important; } }
+
+/* @sm
+============ */
+@media (min-width: 768px) and (max-width: 991px) {
+  .cdr-show\@sm-only {
+    display: block !important; }
+  .cdr-show-inline\@sm-only {
+    display: inline !important; }
+  .cdr-show-inline-block\@sm-only {
+    display: inline-block !important; } }
+
+@media (min-width: 768px) {
+  .cdr-show\@sm {
+    display: block !important; }
+  .cdr-show-inline\@sm {
+    display: inline !important; }
+  .cdr-show-inline-block\@sm {
+    display: inline-block !important; } }
+
+/* @md
+============ */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .cdr-show\@md-only {
+    display: block !important; }
+  .cdr-show-inline\@md-only {
+    display: inline !important; }
+  .cdr-show-inline-block\@md-only {
+    display: inline-block !important; } }
+
+@media (min-width: 992px) {
+  .cdr-show\@md {
+    display: block !important; }
+  .cdr-show-inline\@md {
+    display: inline !important; }
+  .cdr-show-inline-block\@md {
+    display: inline-block !important; } }
+
+/* @lg
+============ */
+@media (min-width: 1200px) {
+  .cdr-show\@lg-only {
+    display: block !important; }
+  .cdr-show-inline\@lg-only {
+    display: inline !important; }
+  .cdr-show-inline-block\@lg-only {
+    display: inline-block !important; } }
+
+@media (min-width: 1200px) {
+  .cdr-show\@lg {
+    display: block !important; }
+  .cdr-show-inline\@lg {
+    display: inline !important; }
+  .cdr-show-inline-block\@lg {
+    display: inline-block !important; } }
+
+/*
+* Print
+* --------------------------------------------
+*/
+@media print {
+  /* hide
+  ============ */
+  .cdr-hide\@print {
+    display: none !important; }
+  /* show
+  ============ */
+  .cdr-show\@print {
+    display: block !important; }
+  .cdr-show-inline\@print {
+    display: inline !important; }
+  .cdr-show-inline-block\@print {
+    display: inline-block !important; } }
+
+/* ==========================================================================
+  # a11y
+  
+  Utility classes for a11y
+
+  TOC:
+
+    :screen reader
+========================================================================== */
+/*
+* Screen reader
+* --------------------------------------------
+*/
+.cdr-sr-only {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  padding: 0;
+  margin: -0.1rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+.cdr-sr-only-focusable:active,
+.cdr-sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto; }
+
+/* ==========================================================================
+  # alignment
+  
+  Utility classes for aligning content
+
+  TOC:
+
+    :Text Align
+    :center
+      :block
+========================================================================== */
+/*
+* Text Align
+* --------------------------------------------
+*/
+.cdr-text-left {
+  text-align: left !important; }
+
+.cdr-text-center {
+  text-align: center !important; }
+
+.cdr-text-right {
+  text-align: right !important; }
+
+/*
+* Center
+* --------------------------------------------
+*/
+/* block
+=========== */
+.cdr-center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* ==========================================================================
+  # spacing
+  
+  Utility classes spacing
+
+  TOC:
+
+    :inset
+    :inset-squish
+    :inset-stretch
+    :stack
+    :inline
+    :responsive
+      :xs
+        :inset
+        :inset-squish
+        :inset-stretch
+        :stack
+        :inline
+      :sm
+        :inset
+        :inset-squish
+        :inset-stretch
+        :stack
+        :inline
+      :md
+        :inset
+        :inset-squish
+        :inset-stretch
+        :stack
+        :inline
+      :lg
+        :inset
+        :inset-squish
+        :inset-stretch
+        :stack
+        :inline
+========================================================================== */
+/*
+  inset values
+  these reference specific tokens because they exist
+*/
+.cdr-inset-eighth-x {
+  padding: 0.2rem; }
+
+.cdr-inset-quarter-x {
+  padding: 0.4rem; }
+
+.cdr-inset-half-x {
+  padding: 0.8rem; }
+
+.cdr-inset-three-quarter-x {
+  padding: 1.2rem; }
+
+.cdr-inset-1-x {
+  padding: 1.6rem; }
+
+.cdr-inset-1-and-a-half-x {
+  padding: 2.4rem; }
+
+.cdr-inset-2-x {
+  padding: 3.2rem; }
+
+.cdr-inset-4-x {
+  padding: 6.4rem; }
+
+/* inset-squish */
+.cdr-inset-eighth-x-squish {
+  padding: 0 0.2rem; }
+
+.cdr-inset-quarter-x-squish {
+  padding: 0.2rem 0.4rem; }
+
+.cdr-inset-half-x-squish {
+  padding: 0.4rem 0.8rem; }
+
+.cdr-inset-three-quarter-x-squish {
+  padding: 0.6rem 1.2rem; }
+
+.cdr-inset-1-x-squish {
+  padding: 0.8rem 1.6rem; }
+
+.cdr-inset-1-and-a-half-x-squish {
+  padding: 1.2rem 2.4rem; }
+
+.cdr-inset-2-x-squish {
+  padding: 1.6rem 3.2rem; }
+
+.cdr-inset-4-x-squish {
+  padding: 3.2rem 6.4rem; }
+
+/* inset-stretch */
+.cdr-inset-eighth-x-stretch {
+  padding: 0.4rem 0.2rem; }
+
+.cdr-inset-quarter-x-stretch {
+  padding: 0.6rem 0.4rem; }
+
+.cdr-inset-half-x-stretch {
+  padding: 1.2rem 0.8rem; }
+
+.cdr-inset-three-quarter-x-stretch {
+  padding: 1.8rem 1.2rem; }
+
+.cdr-inset-1-x-stretch {
+  padding: 2.4rem 1.6rem; }
+
+.cdr-inset-1-and-a-half-x-stretch {
+  padding: 3.6rem 2.4rem; }
+
+.cdr-inset-2-x-stretch {
+  padding: 4.8rem 3.2rem; }
+
+.cdr-inset-4-x-stretch {
+  padding: 9.6rem 6.4rem; }
+
+/* stack values */
+.cdr-stack-eighth-x {
+  margin-bottom: 0.2rem; }
+
+.cdr-stack-quarter-x {
+  margin-bottom: 0.4rem; }
+
+.cdr-stack-half-x {
+  margin-bottom: 0.8rem; }
+
+.cdr-stack-three-quarter-x {
+  margin-bottom: 1.2rem; }
+
+.cdr-stack-1-x {
+  margin-bottom: 1.6rem; }
+
+.cdr-stack-1-and-a-half-x {
+  margin-bottom: 2.4rem; }
+
+.cdr-stack-2-x {
+  margin-bottom: 3.2rem; }
+
+.cdr-stack-4-x {
+  margin-bottom: 6.4rem; }
+
+/* inline values */
+.cdr-inline-eighth-x {
+  margin-right: 0.2rem; }
+
+.cdr-inline-quarter-x {
+  margin-right: 0.4rem; }
+
+.cdr-inline-half-x {
+  margin-right: 0.8rem; }
+
+.cdr-inline-three-quarter-x {
+  margin-right: 1.2rem; }
+
+.cdr-inline-1-x {
+  margin-right: 1.6rem; }
+
+.cdr-inline-1-and-a-half-x {
+  margin-right: 2.4rem; }
+
+.cdr-inline-2-x {
+  margin-right: 3.2rem; }
+
+.cdr-inline-4-x {
+  margin-right: 6.4rem; }
+
+/* @xs
+  0px - 767px
+  ========== */
+@media (min-width: 0) and (max-width: 767px) {
+  .cdr-inset-eighth-x\@xs {
+    padding: 0.2rem; }
+  .cdr-inset-quarter-x\@xs {
+    padding: 0.4rem; }
+  .cdr-inset-half-x\@xs {
+    padding: 0.8rem; }
+  .cdr-inset-three-quarter-x\@xs {
+    padding: 1.2rem; }
+  .cdr-inset-1-x\@xs {
+    padding: 1.6rem; }
+  .cdr-inset-1-and-a-half-x\@xs {
+    padding: 2.4rem; }
+  .cdr-inset-2-x\@xs {
+    padding: 3.2rem; }
+  .cdr-inset-4-x\@xs {
+    padding: 6.4rem; }
+  /* inset-squish */
+  .cdr-inset-eighth-x-squish\@xs {
+    padding: 0 0.2rem; }
+  .cdr-inset-quarter-x-squish\@xs {
+    padding: 0.2rem 0.4rem; }
+  .cdr-inset-half-x-squish\@xs {
+    padding: 0.4rem 0.8rem; }
+  .cdr-inset-three-quarter-x-squish\@xs {
+    padding: 0.6rem 1.2rem; }
+  .cdr-inset-1-x-squish\@xs {
+    padding: 0.8rem 1.6rem; }
+  .cdr-inset-1-and-a-half-x-squish\@xs {
+    padding: 1.2rem 2.4rem; }
+  .cdr-inset-2-x-squish\@xs {
+    padding: 1.6rem 3.2rem; }
+  .cdr-inset-4-x-squish\@xs {
+    padding: 3.2rem 6.4rem; }
+  /* inset-stretch */
+  .cdr-inset-eighth-x-stretch\@xs {
+    padding: 0.4rem 0.2rem; }
+  .cdr-inset-quarter-x-stretch\@xs {
+    padding: 0.6rem 0.4rem; }
+  .cdr-inset-half-x-stretch\@xs {
+    padding: 1.2rem 0.8rem; }
+  .cdr-inset-three-quarter-x-stretch\@xs {
+    padding: 1.8rem 1.2rem; }
+  .cdr-inset-1-x-stretch\@xs {
+    padding: 2.4rem 1.6rem; }
+  .cdr-inset-1-and-a-half-x-stretch\@xs {
+    padding: 3.6rem 2.4rem; }
+  .cdr-inset-2-x-stretch\@xs {
+    padding: 4.8rem 3.2rem; }
+  .cdr-inset-4-x-stretch\@xs {
+    padding: 9.6rem 6.4rem; }
+  /* stack values */
+  .cdr-stack-eighth-x\@xs {
+    margin-bottom: 0.2rem; }
+  .cdr-stack-quarter-x\@xs {
+    margin-bottom: 0.4rem; }
+  .cdr-stack-half-x\@xs {
+    margin-bottom: 0.8rem; }
+  .cdr-stack-three-quarter-x\@xs {
+    margin-bottom: 1.2rem; }
+  .cdr-stack-1-x\@xs {
+    margin-bottom: 1.6rem; }
+  .cdr-stack-1-and-a-half-x\@xs {
+    margin-bottom: 2.4rem; }
+  .cdr-stack-2-x\@xs {
+    margin-bottom: 3.2rem; }
+  .cdr-stack-4-x\@xs {
+    margin-bottom: 6.4rem; }
+  /* inline values */
+  .cdr-inline-eighth-x\@xs {
+    margin-right: 0.2rem; }
+  .cdr-inline-quarter-x\@xs {
+    margin-right: 0.4rem; }
+  .cdr-inline-half-x\@xs {
+    margin-right: 0.8rem; }
+  .cdr-inline-three-quarter-x\@xs {
+    margin-right: 1.2rem; }
+  .cdr-inline-1-x\@xs {
+    margin-right: 1.6rem; }
+  .cdr-inline-1-and-a-half-x\@xs {
+    margin-right: 2.4rem; }
+  .cdr-inline-2-x\@xs {
+    margin-right: 3.2rem; }
+  .cdr-inline-4-x\@xs {
+    margin-right: 6.4rem; } }
+
+/* @sm
+  768px - 991px
+  ========== */
+@media (min-width: 768px) and (max-width: 991px) {
+  .cdr-inset-eighth-x\@sm {
+    padding: 0.2rem; }
+  .cdr-inset-quarter-x\@sm {
+    padding: 0.4rem; }
+  .cdr-inset-half-x\@sm {
+    padding: 0.8rem; }
+  .cdr-inset-three-quarter-x\@sm {
+    padding: 1.2rem; }
+  .cdr-inset-1-x\@sm {
+    padding: 1.6rem; }
+  .cdr-inset-1-and-a-half-x\@sm {
+    padding: 2.4rem; }
+  .cdr-inset-2-x\@sm {
+    padding: 3.2rem; }
+  .cdr-inset-4-x\@sm {
+    padding: 6.4rem; }
+  /* inset-squish */
+  .cdr-inset-eighth-x-squish\@sm {
+    padding: 0 0.2rem; }
+  .cdr-inset-quarter-x-squish\@sm {
+    padding: 0.2rem 0.4rem; }
+  .cdr-inset-half-x-squish\@sm {
+    padding: 0.4rem 0.8rem; }
+  .cdr-inset-three-quarter-x-squish\@sm {
+    padding: 0.6rem 1.2rem; }
+  .cdr-inset-1-x-squish\@sm {
+    padding: 0.8rem 1.6rem; }
+  .cdr-inset-1-and-a-half-x-squish\@sm {
+    padding: 1.2rem 2.4rem; }
+  .cdr-inset-2-x-squish\@sm {
+    padding: 1.6rem 3.2rem; }
+  .cdr-inset-4-x-squish\@sm {
+    padding: 3.2rem 6.4rem; }
+  /* inset-stretch */
+  .cdr-inset-eighth-x-stretch\@sm {
+    padding: 0.4rem 0.2rem; }
+  .cdr-inset-quarter-x-stretch\@sm {
+    padding: 0.6rem 0.4rem; }
+  .cdr-inset-half-x-stretch\@sm {
+    padding: 1.2rem 0.8rem; }
+  .cdr-inset-three-quarter-x-stretch\@sm {
+    padding: 1.8rem 1.2rem; }
+  .cdr-inset-1-x-stretch\@sm {
+    padding: 2.4rem 1.6rem; }
+  .cdr-inset-1-and-a-half-x-stretch\@sm {
+    padding: 3.6rem 2.4rem; }
+  .cdr-inset-2-x-stretch\@sm {
+    padding: 4.8rem 3.2rem; }
+  .cdr-inset-4-x-stretch\@sm {
+    padding: 9.6rem 6.4rem; }
+  /* stack values */
+  .cdr-stack-eighth-x\@sm {
+    margin-bottom: 0.2rem; }
+  .cdr-stack-quarter-x\@sm {
+    margin-bottom: 0.4rem; }
+  .cdr-stack-half-x\@sm {
+    margin-bottom: 0.8rem; }
+  .cdr-stack-three-quarter-x\@sm {
+    margin-bottom: 1.2rem; }
+  .cdr-stack-1-x\@sm {
+    margin-bottom: 1.6rem; }
+  .cdr-stack-1-and-a-half-x\@sm {
+    margin-bottom: 2.4rem; }
+  .cdr-stack-2-x\@sm {
+    margin-bottom: 3.2rem; }
+  .cdr-stack-4-x\@sm {
+    margin-bottom: 6.4rem; }
+  /* inline values */
+  .cdr-inline-eighth-x\@sm {
+    margin-right: 0.2rem; }
+  .cdr-inline-quarter-x\@sm {
+    margin-right: 0.4rem; }
+  .cdr-inline-half-x\@sm {
+    margin-right: 0.8rem; }
+  .cdr-inline-three-quarter-x\@sm {
+    margin-right: 1.2rem; }
+  .cdr-inline-1-x\@sm {
+    margin-right: 1.6rem; }
+  .cdr-inline-1-and-a-half-x\@sm {
+    margin-right: 2.4rem; }
+  .cdr-inline-2-x\@sm {
+    margin-right: 3.2rem; }
+  .cdr-inline-4-x\@sm {
+    margin-right: 6.4rem; } }
+
+/* @md
+  992px - 1199px
+  ========== */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .cdr-inset-eighth-x\@md {
+    padding: 0.2rem; }
+  .cdr-inset-quarter-x\@md {
+    padding: 0.4rem; }
+  .cdr-inset-half-x\@md {
+    padding: 0.8rem; }
+  .cdr-inset-three-quarter-x\@md {
+    padding: 1.2rem; }
+  .cdr-inset-1-x\@md {
+    padding: 1.6rem; }
+  .cdr-inset-1-and-a-half-x\@md {
+    padding: 2.4rem; }
+  .cdr-inset-2-x\@md {
+    padding: 3.2rem; }
+  .cdr-inset-4-x\@md {
+    padding: 6.4rem; }
+  /* inset-squish */
+  .cdr-inset-eighth-x-squish\@md {
+    padding: 0 0.2rem; }
+  .cdr-inset-quarter-x-squish\@md {
+    padding: 0.2rem 0.4rem; }
+  .cdr-inset-half-x-squish\@md {
+    padding: 0.4rem 0.8rem; }
+  .cdr-inset-three-quarter-x-squish\@md {
+    padding: 0.6rem 1.2rem; }
+  .cdr-inset-1-x-squish\@md {
+    padding: 0.8rem 1.6rem; }
+  .cdr-inset-1-and-a-half-x-squish\@md {
+    padding: 1.2rem 2.4rem; }
+  .cdr-inset-2-x-squish\@md {
+    padding: 1.6rem 3.2rem; }
+  .cdr-inset-4-x-squish\@md {
+    padding: 3.2rem 6.4rem; }
+  /* inset-stretch */
+  .cdr-inset-eighth-x-stretch\@md {
+    padding: 0.4rem 0.2rem; }
+  .cdr-inset-quarter-x-stretch\@md {
+    padding: 0.6rem 0.4rem; }
+  .cdr-inset-half-x-stretch\@md {
+    padding: 1.2rem 0.8rem; }
+  .cdr-inset-three-quarter-x-stretch\@md {
+    padding: 1.8rem 1.2rem; }
+  .cdr-inset-1-x-stretch\@md {
+    padding: 2.4rem 1.6rem; }
+  .cdr-inset-1-and-a-half-x-stretch\@md {
+    padding: 3.6rem 2.4rem; }
+  .cdr-inset-2-x-stretch\@md {
+    padding: 4.8rem 3.2rem; }
+  .cdr-inset-4-x-stretch\@md {
+    padding: 9.6rem 6.4rem; }
+  /* stack values */
+  .cdr-stack-eighth-x\@md {
+    margin-bottom: 0.2rem; }
+  .cdr-stack-quarter-x\@md {
+    margin-bottom: 0.4rem; }
+  .cdr-stack-half-x\@md {
+    margin-bottom: 0.8rem; }
+  .cdr-stack-three-quarter-x\@md {
+    margin-bottom: 1.2rem; }
+  .cdr-stack-1-x\@md {
+    margin-bottom: 1.6rem; }
+  .cdr-stack-1-and-a-half-x\@md {
+    margin-bottom: 2.4rem; }
+  .cdr-stack-2-x\@md {
+    margin-bottom: 3.2rem; }
+  .cdr-stack-4-x\@md {
+    margin-bottom: 6.4rem; }
+  /* inline values */
+  .cdr-inline-eighth-x\@md {
+    margin-right: 0.2rem; }
+  .cdr-inline-quarter-x\@md {
+    margin-right: 0.4rem; }
+  .cdr-inline-half-x\@md {
+    margin-right: 0.8rem; }
+  .cdr-inline-three-quarter-x\@md {
+    margin-right: 1.2rem; }
+  .cdr-inline-1-x\@md {
+    margin-right: 1.6rem; }
+  .cdr-inline-1-and-a-half-x\@md {
+    margin-right: 2.4rem; }
+  .cdr-inline-2-x\@md {
+    margin-right: 3.2rem; }
+  .cdr-inline-4-x\@md {
+    margin-right: 6.4rem; } }
+
+/* @lg
+  1200px and up
+  ========== */
+@media (min-width: 1200px) {
+  .cdr-inset-eighth-x\@lg {
+    padding: 0.2rem; }
+  .cdr-inset-quarter-x\@lg {
+    padding: 0.4rem; }
+  .cdr-inset-half-x\@lg {
+    padding: 0.8rem; }
+  .cdr-inset-three-quarter-x\@lg {
+    padding: 1.2rem; }
+  .cdr-inset-1-x\@lg {
+    padding: 1.6rem; }
+  .cdr-inset-1-and-a-half-x\@lg {
+    padding: 2.4rem; }
+  .cdr-inset-2-x\@lg {
+    padding: 3.2rem; }
+  .cdr-inset-4-x\@lg {
+    padding: 6.4rem; }
+  /* inset-squish */
+  .cdr-inset-eighth-x-squish\@lg {
+    padding: 0 0.2rem; }
+  .cdr-inset-quarter-x-squish\@lg {
+    padding: 0.2rem 0.4rem; }
+  .cdr-inset-half-x-squish\@lg {
+    padding: 0.4rem 0.8rem; }
+  .cdr-inset-three-quarter-x-squish\@lg {
+    padding: 0.6rem 1.2rem; }
+  .cdr-inset-1-x-squish\@lg {
+    padding: 0.8rem 1.6rem; }
+  .cdr-inset-1-and-a-half-x-squish\@lg {
+    padding: 1.2rem 2.4rem; }
+  .cdr-inset-2-x-squish\@lg {
+    padding: 1.6rem 3.2rem; }
+  .cdr-inset-4-x-squish\@lg {
+    padding: 3.2rem 6.4rem; }
+  /* inset-stretch */
+  .cdr-inset-eighth-x-stretch\@lg {
+    padding: 0.4rem 0.2rem; }
+  .cdr-inset-quarter-x-stretch\@lg {
+    padding: 0.6rem 0.4rem; }
+  .cdr-inset-half-x-stretch\@lg {
+    padding: 1.2rem 0.8rem; }
+  .cdr-inset-three-quarter-x-stretch\@lg {
+    padding: 1.8rem 1.2rem; }
+  .cdr-inset-1-x-stretch\@lg {
+    padding: 2.4rem 1.6rem; }
+  .cdr-inset-1-and-a-half-x-stretch\@lg {
+    padding: 3.6rem 2.4rem; }
+  .cdr-inset-2-x-stretch\@lg {
+    padding: 4.8rem 3.2rem; }
+  .cdr-inset-4-x-stretch\@lg {
+    padding: 9.6rem 6.4rem; }
+  /* stack values */
+  .cdr-stack-eighth-x\@lg {
+    margin-bottom: 0.2rem; }
+  .cdr-stack-quarter-x\@lg {
+    margin-bottom: 0.4rem; }
+  .cdr-stack-half-x\@lg {
+    margin-bottom: 0.8rem; }
+  .cdr-stack-three-quarter-x\@lg {
+    margin-bottom: 1.2rem; }
+  .cdr-stack-1-x\@lg {
+    margin-bottom: 1.6rem; }
+  .cdr-stack-1-and-a-half-x\@lg {
+    margin-bottom: 2.4rem; }
+  .cdr-stack-2-x\@lg {
+    margin-bottom: 3.2rem; }
+  .cdr-stack-4-x\@lg {
+    margin-bottom: 6.4rem; }
+  /* inline values */
+  .cdr-inline-eighth-x\@lg {
+    margin-right: 0.2rem; }
+  .cdr-inline-quarter-x\@lg {
+    margin-right: 0.4rem; }
+  .cdr-inline-half-x\@lg {
+    margin-right: 0.8rem; }
+  .cdr-inline-three-quarter-x\@lg {
+    margin-right: 1.2rem; }
+  .cdr-inline-1-x\@lg {
+    margin-right: 1.6rem; }
+  .cdr-inline-1-and-a-half-x\@lg {
+    margin-right: 2.4rem; }
+  .cdr-inline-2-x\@lg {
+    margin-right: 3.2rem; }
+  .cdr-inline-4-x\@lg {
+    margin-right: 6.4rem; } }

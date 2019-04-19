@@ -8,7 +8,7 @@
 }
 
 @mixin xs-mq-only {
-  @media (min-width: #{$cdr-breakpoint-xs}) and (max-width: #{$cdr-breakpoint-sm}) {
+  @media (min-width: #{$cdr-breakpoint-xs}) and (max-width: calc(#{$cdr-breakpoint-sm} - 1px)) {
     @content;
   }
 }
@@ -21,7 +21,7 @@
 }
 
 @mixin sm-mq-only {
-  @media (min-width: #{$cdr-breakpoint-sm}) and (max-width: #{$cdr-breakpoint-md}) {
+  @media (min-width: #{$cdr-breakpoint-sm}) and (max-width: calc(#{$cdr-breakpoint-md} - 1px)) {
     @content;
   }
 }
@@ -34,7 +34,7 @@
 }
 
 @mixin md-mq-only {
-  @media (min-width: #{$cdr-breakpoint-md}) and (max-width: #{$cdr-breakpoint-lg}) {
+  @media (min-width: #{$cdr-breakpoint-md}) and (max-width: calc(#{$cdr-breakpoint-lg} - 1px)) {
     @content;
   }
 }
