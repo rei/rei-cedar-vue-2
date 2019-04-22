@@ -1,4 +1,3 @@
-// import Accordions from 'componentsdir/accordion/examples/Accordion';
 // import Buttons from 'componentsdir/button/examples/Buttons';
 // import Cards from 'componentsdir/card/examples/Cards';
 // import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
@@ -22,13 +21,14 @@
 // import Captions from 'compositionsdir/caption/examples/Caption';
 // import Searches from 'compositionsdir/search/examples/searchbox';
 import App from 'srcdir/App';
+import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Buttons from 'componentsdir/button/examples/Buttons';
 import Cta from 'componentsdir/cta/examples/Cta';
 import Links from 'componentsdir/link/examples/Links';
 
 const routes = [
   { path: '/', component: App },
-  // { path: '/accordion', name: 'Accordion', component: Accordions },
+  { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/buttons', name: 'Buttons', component: Buttons },
   // { path: '/cards', name: 'Cards', component: Cards },
   // { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },

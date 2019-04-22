@@ -19,6 +19,320 @@
 * Outline
 * ------------------- */
 /* ==========================================================================
+  # CdrIcon
+
+  All values should map to variables in
+  vars/CdrIcon.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base Styles
+========================================================================== */
+/* non-modularized so it works with <cdr-icon-sprite/> */
+.cdr-icon-sprite {
+  display: none;
+}
+.cdr-icon-e6mab {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: #616161;
+  /* @xs
+    0px - 767px
+    ========== */
+  /* @sm
+    768px - 991px
+    ========== */
+  /* @md
+    992px - 1199px
+    ========== */
+  /* @lg
+    1200px and up
+    ========== */
+}
+.cdr-icon--small-e6mab {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.cdr-icon--large-e6mab {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+@media (min-width: 0) and (max-width: 767px) {
+.cdr-icon--small\@xs-e6mab {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.cdr-icon--large\@xs-e6mab {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+.cdr-icon--small\@sm-e6mab {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.cdr-icon--large\@sm-e6mab {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+.cdr-icon--small\@md-e6mab {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.cdr-icon--large\@md-e6mab {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+}
+@media (min-width: 1200px) {
+.cdr-icon--small\@lg-e6mab {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.cdr-icon--large\@lg-e6mab {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+}
+.cdr-icon--inherit-color-e6mab {
+  fill: inherit;
+}
+
+.cpg-section[data-v-084d1c22] {
+  margin: 1.6rem 0;
+}
+
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrAccordionItem
+
+  TOC:
+
+    :Base
+      :__button
+      :__label
+      :__icon
+        :open
+      :__content-container
+        :open
+      :__content
+        :open
+      :Style Variants
+        :border-aligned
+        :compact
+        :border-aligned and compact
+========================================================================== */
+.cdr-accordion-item-1qgwd {
+  border-top: 0.1rem solid #dadada;
+  position: relative;
+  z-index: 1;
+  /* Style variants
+    ========================================================================== */
+  /* Border-Aligned
+     ========== */
+  /* Compact
+     ========== */
+  /* Border-Aligned and Compact
+     ========== */
+}
+.cdr-accordion-item__button-1qgwd {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  background-color: #ffffff;
+  border: none;
+  color: #292929;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.6rem;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  z-index: 1;
+}
+.cdr-accordion-item__button-1qgwd:hover, .cdr-accordion-item__button-1qgwd:focus {
+  background-color: #f7f7f7;
+}
+.cdr-accordion-item__label-1qgwd {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.cdr-accordion-item__icon-1qgwd {
+  margin-left: 1.6rem;
+  fill: #292929;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
+  transition: -webkit-transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
+  transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
+  transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
+}
+.cdr-accordion-item__icon-1qgwd.open {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+.cdr-accordion-item__content-container-1qgwd {
+  overflow: hidden;
+  -webkit-transition-duration: cdr-duration-2-x;
+          transition-duration: cdr-duration-2-x;
+  -webkit-transition-property: max-height;
+  transition-property: max-height;
+  -webkit-transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1);
+          transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1);
+}
+.cdr-accordion-item__content-container-1qgwd.open {
+  -webkit-transition-duration: cdr-duration-3-x;
+          transition-duration: cdr-duration-3-x;
+}
+.cdr-accordion-item__content-1qgwd {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  background-color: #ffffff;
+  color: #292929;
+  padding: 0.8rem 1.6rem 1.6rem;
+  -webkit-transition: opacity 100ms linear;
+  transition: opacity 100ms linear;
+  opacity: 0;
+}
+.cdr-accordion-item__content-1qgwd > * {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+}
+.cdr-accordion-item__content-1qgwd.open {
+  opacity: 1;
+}
+.cdr-accordion-item__content-1qgwd.closed {
+  visibility: hidden;
+}
+.cdr-accordion-item--border-aligned-1qgwd {
+  margin: 0 1.6rem;
+}
+.cdr-accordion-item--border-aligned-1qgwd .cdr-accordion-item__button-1qgwd {
+  margin-left: -1.6rem;
+  width: calc(100% + 3.2rem);
+}
+.cdr-accordion-item--border-aligned-1qgwd .cdr-accordion-item__content-1qgwd {
+  padding: 0.8rem 0 1.6rem;
+}
+.cdr-accordion-item--compact-1qgwd .cdr-accordion-item__button-1qgwd {
+  padding: 1.2rem;
+}
+.cdr-accordion-item--compact-1qgwd .cdr-accordion-item__label-1qgwd {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  font-weight: bold;
+}
+.cdr-accordion-item--compact-1qgwd .cdr-accordion-item__content-1qgwd {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  padding: 0.4rem 1.2rem 1.2rem;
+}
+.cdr-accordion-item--compact-1qgwd .cdr-accordion-item__content-1qgwd > * {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+}
+.cdr-accordion-item--compact-1qgwd.cdr-accordion-item--border-aligned-1qgwd .cdr-accordion-item__button-1qgwd {
+  margin-left: -1.2rem;
+  width: calc(100% + 2.4rem);
+}
+.cdr-accordion-item--compact-1qgwd.cdr-accordion-item--border-aligned-1qgwd .cdr-accordion-item__content-1qgwd {
+  padding: 0.4rem 0 1.2rem;
+}
+.cdr-accordion-item-1qgwd:last-child {
+  border-bottom: 0.1rem solid #dadada;
+}
+.cdr-accordion-item--focused-1qgwd {
+  z-index: 10;
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
   # CdrButton
 
   TOC:
@@ -690,188 +1004,9 @@
   color: #5197cd;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/** normalize line-height for consistent testing because links inherit it */
-.link-examples {
-  line-height: 1;
+.accordion-group {
+  margin-bottom: 3rem;
 }
-.anchor-example {
-  padding: 2rem;
-}
-
-
-
-
-
-
 
 
 
@@ -1048,6 +1183,14 @@
 .button-example {
   padding: 1rem;
 }
+.dark {
+  background: #434343;
+}
+
+
+.button-example {
+  padding: 1rem;
+}
 
 
 .button-example {
@@ -1095,27 +1238,6 @@
 
 
 
-.visibility-utilities {
-table,
-  td {
-    border: 0.1rem solid lightgray;
-}
-table {
-    border-spacing: 0;
-    border-collapse: collapse;
-    line-height: 1;
-}
-th {
-    text-align: left;
-    padding: 1rem;
-}
-td {
-    padding: 0.5rem;
-}
-td:not(:first-of-type) {
-    text-align: center;
-}
-}
 
 
 
@@ -1154,89 +1276,103 @@ td:not(:first-of-type) {
 
 
 
-.example {
-  background-color: rgba(27, 28, 28, 0.6);
-}
-.example > * {
-  background-color: rgba(249, 229, 229, 0.8);
-}
 
 
-.example {
-  background-color: rgba(27, 28, 28, 0.6);
-}
-.example > * {
-  background-color: rgba(249, 229, 229, 0.8);
-}
 
 
-.example {
-  background-color: rgba(27, 28, 28, 0.6);
-}
-.example > * {
-  background-color: rgba(249, 229, 229, 0.8);
-}
 
 
-.container-test {
-  background-color: lightblue;
-  padding: 2rem;
-  margin-bottom: 2rem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** normalize line-height for consistent testing because links inherit it */
+.link-examples {
   line-height: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.cpg-section[data-v-487c7c54] {
-  margin: 1.6rem 0;
+.anchor-example {
+  padding: 2rem;
 }
 
 /* Tokens */

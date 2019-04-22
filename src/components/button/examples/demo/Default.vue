@@ -53,12 +53,6 @@
       >
         Link
       </cdr-button>
-
-      <cdr-button
-        size="large@xs medium@sm small@md"
-      >
-        Full responsive
-      </cdr-button>
     </div>
   </div>
 </template>

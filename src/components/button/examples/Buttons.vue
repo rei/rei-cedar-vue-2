@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="buttons">
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -13,18 +13,18 @@
 </template>
 
 <script>
-// import CdrText from 'componentsdir/text/CdrText';
+import CdrText from 'componentsdir/text/CdrText';
 import defaultButtons from 'componentsdir/button/examples/demo/Default';
 import secondaryButtons from 'componentsdir/button/examples/demo/Secondary';
-// import iconButtons from 'componentsdir/button/examples/demo/Icons';
+import iconButtons from 'componentsdir/button/examples/demo/Icons';
 
 export default {
   name: 'Buttons',
   components: {
-    // CdrText,
+    CdrText,
     defaultButtons,
     secondaryButtons,
-    // iconButtons,
+    iconButtons,
   },
 };
 </script>

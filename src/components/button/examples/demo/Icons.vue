@@ -20,7 +20,7 @@
         Anchor and Icon
       </cdr-button>
 
-      <!-- <cdr-button
+      <cdr-button
         tag="a"
         href="https://rei.com"
         size="large"
@@ -32,7 +32,7 @@
           class="cdr-button__icon"
         />
         Anchor and Icon
-      </cdr-button> -->
+      </cdr-button>
 
       <cdr-button
         size="medium"
@@ -176,7 +176,7 @@
           class="cdr-button__icon"
         />
       </cdr-button>
-      <cdr-close-button />
+      <!-- <cdr-close-button /> -->
       <cdr-button
         tag="a"
         href="https://rei.com"
@@ -188,7 +188,7 @@
           class="cdr-button__icon"
         />
       </cdr-button>
-      <cdr-play-button />
+      <!-- <cdr-play-button /> -->
     </div>
     <div class="button-example dark">
       <cdr-button
@@ -201,7 +201,7 @@
           class="cdr-button__icon"
         />
       </cdr-button>
-      <cdr-close-button :on-dark="true" />
+      <!-- <cdr-close-button :on-dark="true" /> -->
       <cdr-button
         tag="a"
         href="https://rei.com"
@@ -214,7 +214,7 @@
           class="cdr-button__icon"
         />
       </cdr-button>
-      <cdr-play-button :on-dark="true" />
+      <!-- <cdr-play-button :on-dark="true" /> -->
     </div>
   </div>
 </template>
@@ -223,8 +223,8 @@
 import CdrText from 'componentsdir/text/CdrText';
 import CdrButton from 'componentsdir/button/CdrButton';
 /* eslint-disable-next-line */
-import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink } from 'componentsdir/icon/dist/cdr-icon';
-import { CdrCloseButton, CdrPlayButton } from 'componentsdir/button/dist/cdr-button';
+import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink } from 'componentsdir/icon/build/main';
+// import { CdrCloseButton, CdrPlayButton } from 'componentsdir/button/dist/cdr-button';
 import CdrIcon from 'componentsdir/icon/CdrIcon';
 
 export default {
@@ -238,8 +238,8 @@ export default {
     CdrIcon,
     IconTwitter,
     IconExternalLink,
-    CdrCloseButton,
-    CdrPlayButton,
+    // CdrCloseButton,
+    // CdrPlayButton,
   },
 };
 </script>

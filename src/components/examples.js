@@ -1,3 +1,4 @@
+import accordion from 'componentsdir/accordion/examples/Accordion';
 import links from 'componentsdir/link/examples/Links';
 // import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
@@ -17,14 +18,12 @@ import cta from 'componentsdir/cta/examples/Cta';
 // import tabs from 'componentsdir/tabs/examples/Tabs';
 // import texts from 'componentsdir/text/examples/Text';
 // import dataTable from 'componentsdir/dataTable/examples/DataTable';
-// import accordion from 'componentsdir/accordion/examples/Accordion';
 // import searchbox from 'compositionsdir/search/examples/searchbox';
 // import captionExample from 'compositionsdir/caption/examples/Caption';
 
 import utilities from 'componentsdir/Utilities/Utilities';
 
 // export default {
-//   accordion,
 //   links,
 //   breadcrumb,
 //   buttons,
@@ -48,6 +47,7 @@ import utilities from 'componentsdir/Utilities/Utilities';
 // };
 
 export default {
+  accordion,
   links,
   buttons,
   cta,

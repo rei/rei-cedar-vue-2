@@ -3,42 +3,20 @@
     id="app"
     class="cdr-container-fluid"
   >
-
-    <router-link
-      v-for="route in routes"
-      :key="route.path"
-      :to="route.path"
-    >{{ route.name }} *
-    </router-link>
-
-    <links
-      class="cpg-section"
-      data-backstop="links"
-    />
-    <buttons
-      class="cpg-section"
-      data-backstop="buttons"
-    />
-    <cta
-      class="cpg-section"
-      data-backstop="cta-links"
-    />
+    <p>Pick a component above to view.</p>
   </div>
 </template>
 
 <script>
-import examples from 'componentsdir/examples';
-import routes from './router';
-
+// import examples from 'componentsdir/examples';
 
 export default {
   name: 'App',
   components: {
-    ...examples,
+    // ...examples,
   },
   data() {
     return {
-      routes,
       globalTheme: 'lightest',
     };
   },

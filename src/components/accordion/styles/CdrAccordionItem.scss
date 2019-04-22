@@ -105,7 +105,7 @@
 
     .cdr-accordion-item__button {
       margin-left: -$cdr-space-one-x;
-      width: calc(100% + ($cdr-space-one-x * 2));
+      width: calc(100% + (#{$cdr-space-one-x} * 2));
     }
 
     .cdr-accordion-item__content {
@@ -142,7 +142,7 @@
   &--compact.cdr-accordion-item--border-aligned {
     .cdr-accordion-item__button {
       margin-left: -$cdr-space-three-quarter-x;
-      width: calc(100% + ($cdr-space-three-quarter-x * 2));
+      width: calc(100% + (#{$cdr-space-three-quarter-x} * 2));
     }
 
     .cdr-accordion-item__content {
