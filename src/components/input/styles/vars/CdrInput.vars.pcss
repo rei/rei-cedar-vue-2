@@ -1,20 +1,8 @@
-/* ==========================================================================
-  # CdrInput
-
-  This file provides a contract between
-  design tokens and cedar non-changing variables.
-
-  TOC:
-
-    :Base Image
-      :Modifiers
-        :Style Variants
-    :Base Media Frame
-========================================================================== */
-
-/* ==========================================================================
-  # INPUT LABEL
-  ========================================================================== */
+/* PRIVATE */
+/* Assumed icon width of slot provided icon.  We may want to add a user provided
+  width option in the future.  */
+$input-pre-icon-default-width: 25px;
+/* PRIVATE */
 
 /* input label */
 @mixin cdr-input-label-text-mixin() {
@@ -142,7 +130,6 @@ $cdr-input-required-label-color: $taken-for-granite;
 $cdr-input-info-container-float: right;
 
 @mixin cdr-input-info-container-mixin() {
-
   @include cdr-input-info-container-text-mixin;
 
   float: $cdr-input-info-container-float;

@@ -1,6 +1,6 @@
 /* ==========================================================================
   # CdrCheckbox
-  
+
   All values should map to variables in
   vars/CdrCheckbox.vars.pcss
   in order to allow for theming
@@ -19,11 +19,8 @@
 ========================================================================== */
 
 .cdr-checkbox {
-  @include redwood-display-30;
+  @include cdr-checkbox-base-mixin;
 
-  color: $checkbox-label-color;
-  display: inline-block;
-  margin: 0;
   position: relative;
   padding-left: calc($checkbox-figure-size + $checkbox-figure-space-right);
 
@@ -74,7 +71,7 @@
   ========== */
   &__input[indeterminate] ~ .cdr-checkbox__figure {
     border-color: $checkbox-figure-indeterminate-border-color;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -98,7 +95,7 @@
     }
 
     & > .cdr-checkbox__content {
-      cursor: pointer;
+      @include cdr-checkbox-hover-mixin;
     }
 
     & > .cdr-checkbox__input {
@@ -125,8 +122,7 @@
   ========== */
   &__input:disabled {
     & ~ .cdr-checkbox__content {
-      color: $checkbox-label-disabled-color !important;
-      cursor: default;
+      @include cdr-checkbox-disabled-mixin;
     }
 
     & ~ .cdr-checkbox__figure {
@@ -148,7 +144,7 @@
     &[indeterminate] {
       & ~ .cdr-checkbox__figure {
         border-color: $checkbox-figure-disabled-border-color !important;
-        
+
         &::after {
           background-color: $checkbox-figure-checked-disabled-background-color !important;
         }
@@ -176,7 +172,7 @@
     ========== */
 
   &--compact {
-    @include redwood-display-20;
+    @include cdr-checkbox-compact-mixin;
 
     & > .cdr-checkbox__figure {
       top: $checkbox-compact-figure-space-top;

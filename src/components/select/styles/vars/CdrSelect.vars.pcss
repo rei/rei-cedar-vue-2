@@ -9,21 +9,74 @@
     :Base - Select
       :States
 ========================================================================== */
-//these vars are not inline with current token equivalents.
-$select-font-size: 16px;
-$select-line-height: 16px;
-$select-text-align: start;
-$select-color: #000000;
-$select-font-style: normal;
-$select-font-weight: 400;
-$select-font-family: Roboto;
-$select-border: 1px solid #c5c5c5;
-$select-border-radius: $cdr-radius-soft;
-$select-height: calc($cdr-space-one-and-a-half-x + $select-line-height);
-$select-background-color: #ffffff;
+$cdr-select-base-font-size: 16px;
+$cdr-select-base-font-style: normal;
+$cdr-select-base-font-weight: 400;
+$cdr-select-base-font-family: Roboto;
+$cdr-select-base-line-height: 16px;
 
-/* States
+$cdr-select-base-box-sizing: border-box;
+$cdr-select-base-width: 100%;
+$cdr-select-base-display: block;
+$cdr-select-base-text-transform: none;
+$cdr-select-base-margin: 0;
+$cdr-select-base-text-align: start;
+$cdr-select-base-color: #000000;
+$cdr-select-base-border: 1px solid #c5c5c5;
+$cdr-select-base-border-radius: $cdr-radius-soft;
+$cdr-select-base-height: $cdr-space-one-and-a-half-x + $cdr-select-base-line-height;
+$cdr-select-base-background-color: #ffffff;
+$cdr-select-base-background-color-disabled: #e9e9e9;
+
+$cdr-select-base-multiple-padding: 0;
+
+$cdr-select-base-option-line-height: 1;
+$cdr-select-base-option-box-sizing: border-box;
+
+@mixin cdr-select-base-mixin() {
+  box-sizing: $cdr-select-base-box-sizing;
+  font-size: $cdr-select-base-font-size;
+  line-height: $cdr-select-base-line-height;
+  text-align: $cdr-select-base-text-align;
+  color: $cdr-select-base-color;
+  font-style: $cdr-select-base-font-style;
+  font-weight: $cdr-select-base-font-weight;
+  font-family: $cdr-select-base-font-family;
+  width: $cdr-select-base-width;
+  display: $cdr-select-base-display;
+  border: $cdr-select-base-border;
+  border-radius: $cdr-select-base-border-radius;
+  height: $cdr-select-base-height;
+  background-color: $cdr-select-base-background-color;
+  text-transform: $cdr-select-base-text-transform;
+  margin: $cdr-select-base-margin;
+
+  &[multiple] {
+    padding: $cdr-select-base-multiple-padding;
+  }
+
+  & option {
+    line-height: $cdr-select-base-option-line-height;
+    box-sizing: $cdr-select-base-option-box-sizing;
+  }
+
+  /* States
     ---------- */
+  &[disabled] {
+    background-color: $cdr-select-base-background-color-disabled;
+  }
+}
 
-/* disabled */
-$select-disabled-background: #e9e9e9;
+@mixin cdr-select-base-label-text-mixin() {
+  @include maple-utility-20;
+}
+
+$cdr-select-base-label-display: block;
+$cdr-select-base-label-margin: 0;
+
+@mixin cdr-select-base-label-mixin() {
+  @include cdr-select-base-label-text-mixin;
+
+  display: $cdr-select-base-label-display;
+  margin: $cdr-select-base-label-margin;
+}

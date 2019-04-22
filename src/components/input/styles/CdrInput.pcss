@@ -13,11 +13,6 @@
       :Elements
 ========================================================================== */
 
-/* storing this variable here so it is not exported */
-/* Assumed icon width of slot provided icon.  We may want to add a user provided
-    width option in the future.  */
-$input-pre-icon-default-width: 25px;
-
 /* ==========================================================================
   # INPUT LABEL
   ========================================================================== */
@@ -105,7 +100,7 @@ $input-pre-icon-default-width: 25px;
 
   /* Slot Sections
     ========================================================================== */
-/* do we need to handle this case? */
+
   &__pre-icon {
     position: absolute;
     top: 50%;
@@ -131,11 +126,7 @@ $input-pre-icon-default-width: 25px;
   }
 
   &__helper-text {
-    @include redwood-display-20;
-
-    color: $taken-for-granite;
-    padding-left: $cdr-space-half-x;
-    padding-top: $cdr-space-quarter-x;
+    @include cdr-input-helper-text-mixin;
   }
 }
 
@@ -143,6 +134,7 @@ $input-pre-icon-default-width: 25px;
    # INPUT WRAPPER
    ========================================================================== */
 
+/* related to positioning/layout? */
 .cdr-input-wrap {
   position: relative;
 }

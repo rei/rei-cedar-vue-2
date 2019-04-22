@@ -1,6 +1,6 @@
 /* ==========================================================================
   # CdrRadio
-  
+
   All values should map to variables in
   vars/CdrRadio.vars.pcss
   in order to allow for theming
@@ -19,11 +19,8 @@
 ========================================================================== */
 
 .cdr-radio {
-  @include redwood-display-30;
+  @include cdr-radio-base-mixin;
 
-  color: $radio-label-color;
-  display: inline-block;
-  margin: 0;
   position: relative;
   padding-left: calc($radio-figure-size + $radio-figure-space-right);
 
@@ -57,7 +54,7 @@
     border-radius: $radio-figure-radius;
     background-color: $radio-figure-background-color;
     border: 1px solid $radio-figure-border-color;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -77,7 +74,7 @@
   ========== */
   &__input:checked ~ &__figure {
     border-color: $radio-figure-checked-border-color;
-    
+
     &::after {
       background-color: $radio-figure-checked-background-color;
     }
@@ -92,7 +89,7 @@
     }
 
     & > .cdr-radio__content {
-      cursor: pointer;
+      @include cdr-radio-hover-mixin;
     }
 
     & > .cdr-radio__input {
@@ -112,8 +109,7 @@
   ========== */
   &__input:disabled {
     & ~ .cdr-radio__content {
-      color: $radio-label-disabled-color !important;
-      cursor: default;
+      @include cdr-radio-disabled-mixin;
     }
 
     & ~ .cdr-radio__figure {
@@ -154,7 +150,7 @@
     ========== */
 
   &--compact {
-    @include redwood-display-20;
+    @include cdr-radio-compact-mixin;
 
     & > .cdr-radio__figure {
       top: $radio-compact-figure-space-top;
