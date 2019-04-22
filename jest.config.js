@@ -16,6 +16,7 @@ const config = {
   transform: {
     '.*\\.(vue)$': 'vue-jest',
     '^.+\\.(js|jsx)?$': 'babel-jest',
+    '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
   },
 };
 
