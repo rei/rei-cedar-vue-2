@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "unit": "cross-env NODE_ENV=test nyc mocha-webpack --webpack-config build/webpack.test.conf.js src/**/*.spec.js",
+    "unit": "jest --clearCache && jest",
     "unit:watch": "cross-env NODE_ENV=test nyc mocha-webpack --watch --webpack-config build/webpack.test.conf.js src/**/*.spec.js",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
@@ -39,14 +39,18 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/polyfill": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.4.3",
     "@commitlint/cli": "^7.4.0",
     "@commitlint/config-conventional": "^7.3.1",
     "@rei/cdr-tokens": "^1.0.1-alpha.0",
     "@vue/test-utils": "^1.0.0-beta.28",
     "autoprefixer": "^9.4.7",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.7.1",
     "babel-plugin-istanbul": "^5.1.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "backstopjs": "^3.8.8",
@@ -125,6 +129,7 @@
     "stylelint-webpack-plugin": "^0.10.5",
     "tinycolor2": "^1.4.1",
     "vue": "^2.5.22",
+    "vue-jest": "^3.0.4",
     "vue-router": "^3.0.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.22"
@@ -145,5 +150,25 @@
   },
   "dependencies": {
     "node-sass": "^4.11.0"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js",
+      "vue",
+      "json"
+    ],
+    "moduleNameMapper": {
+      "srcdir": "src",
+      "cssdir": "src/css",
+      "assetsdir": "src/assets",
+      "componentsdir": "src/components",
+      "directivesdir": "src/directives",
+      "mixinsdir": "src/mixins"
+    },
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.(js|jsx)?$": "babel-jest"
+    }
   }
 }
