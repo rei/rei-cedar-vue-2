@@ -1,9 +1,42 @@
-$checkbox-label-color: #292929;
+@mixin cdr-checkbox-base-text-mixin() {
+  @include redwood-display-30;
+}
+$cdr-checkbox-base-color: #292929;
+$cdr-checkbox-base-display: inline-block;
+$cdr-checkbox-base-margin: 0;
+@mixin cdr-checkbox-base-mixin() {
+  @include cdr-checkbox-base-text-mixin;
+
+  color: $cdr-checkbox-base-color;
+  display: $cdr-checkbox-base-display;
+  margin: $cdr-checkbox-base-margin;
+}
+
+$cdr-checkbox-base-cursor-hover: pointer;
+@mixin cdr-checkbox-hover-mixin() {
+  cursor: $cdr-checkbox-base-cursor-hover;
+}
+
+$cdr-checkbox-base-color-disabled: #b8b8b8;
+$cdr-checkbox-base-cursor-disabled: default;
+@mixin cdr-checkbox-disabled-mixin() {
+  color: $cdr-checkbox-base-color-disabled !important;
+  cursor: $cdr-checkbox-base-cursor-disabled;
+}
+
+@mixin cdr-checkbox-compact-text-mixin() {
+  @include redwood-display-20;
+}
+
+@mixin cdr-checkbox-compact-mixin() {
+  @include cdr-checkbox-compact-text-mixin;
+}
+
+/* PRIVATE */
 $checkbox-figure-size: 16px;
 $checkbox-figure-border-color: #616161;
 $checkbox-figure-indeterminate-border-radius: $cdr-radius-soft;
 $checkbox-figure-background-color: #ffffff;
-$checkbox-focus-outline: 0 0 8px 0 rgb(50, 120, 174);
 $checkbox-figure-checked-border-color: #3278ae;
 $checkbox-figure-checked-background-color: #3278ae;
 $checkbox-figure-active-border-color: #3278ae;
@@ -15,7 +48,6 @@ $checkbox-figure-hover-border-color: #616161;
 $checkbox-figure-indeterminate-border-color: #3278ae;
 $checkbox-figure-disabled-border-color: #dadada;
 $checkbox-figure-hover-background-color: #fafafa;
-$checkbox-label-disabled-color: #b8b8b8;
 $checkbox-figure-indeterminate-background-color: #3278ae;
 $checkbox-figure-disabled-background-color: #fafafa;
 $checkbox-figure-focus-border-color: #3278ae;
@@ -24,3 +56,4 @@ $checkbox-figure-checked-hover-border-color: #2b6692;
 $checkbox-figure-icon-fill: #ffffff;
 $checkbox-compact-figure-space-top: 2px;
 $checkbox-figure-checked-hover-background-color: #2b6692;
+$checkbox-focus-outline: 0 0 8px 0 rgb(50, 120, 174);

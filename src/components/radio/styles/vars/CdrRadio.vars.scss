@@ -1,3 +1,42 @@
+@mixin cdr-radio-base-text-mixin() {
+  @include redwood-display-30;
+}
+
+$cdr-radio-base-color: #292929;
+$cdr-radio-base-display: inline-block;
+$cdr-radio-base-margin: 0;
+@mixin cdr-radio-base-mixin() {
+  @include cdr-radio-base-text-mixin;
+
+  color: $cdr-radio-base-color;
+  display: $cdr-radio-base-display;
+  margin: $cdr-radio-base-margin;
+}
+
+$cdr-radio-base-cursor-hover: pointer;
+
+@mixin cdr-radio-hover-mixin() {
+  cursor: $cdr-radio-base-cursor-hover;
+}
+
+$cdr-radio-base-cursor-disabled: default;
+$cdr-radio-color-disabled: #b8b8b8;
+
+@mixin cdr-radio-disabled-mixin() {
+  color: $cdr-radio-color-disabled !important;
+  cursor: $cdr-radio-base-cursor-disabled;
+}
+
+
+@mixin cdr-radio-compact-text-mixin() {
+  @include redwood-display-20;
+}
+@mixin cdr-radio-compact-mixin() {
+  @include cdr-radio-compact-text-mixin;
+}
+
+
+/* PRIVATE */
 $radio-figure-checked-background-color: #3278ae;
 $radio-compact-figure-space-top: 2px;
 $radio-figure-radius: $cdr-radius-round;
@@ -8,7 +47,6 @@ $radio-figure-checked-hover-border-color: #2b6692;
 $radio-figure-active-border-color: #3278ae;
 $radio-figure-checked-hover-background-color: #2b6692;
 $radio-figure-space-top: 4px;
-$radio-label-color: #292929;
 $radio-figure-size: 16px;
 $radio-figure-checked-disabled-background-color: #dadada;
 $radio-figure-border-color: #616161;
@@ -16,7 +54,6 @@ $radio-figure-background-color: #ffffff;
 $radio-focus-outline: 0 0 8px 0 rgb(50, 120, 174);
 $radio-figure-disabled-border-color: #dadada;
 $radio-figure-selected-size: 8px;
-$radio-label-disabled-color: #b8b8b8;
 $radio-figure-space-right: 8px;
 $radio-figure-disabled-background-color: #fafafa;
 $radio-figure-checked-border-color: #3278ae;
