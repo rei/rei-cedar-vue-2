@@ -150,25 +150,5 @@
   },
   "dependencies": {
     "node-sass": "^4.11.0"
-  },
-  "jest": {
-    "verbose": true,
-    "moduleFileExtensions": [
-      "js",
-      "vue",
-      "json"
-    ],
-    "moduleNameMapper": {
-      "srcdir": "src",
-      "cssdir": "src/css",
-      "assetsdir": "src/assets",
-      "componentsdir": "src/components",
-      "directivesdir": "src/directives",
-      "mixinsdir": "src/mixins"
-    },
-    "transform": {
-      ".*\\.(vue)$": "vue-jest",
-      "^.+\\.(js|jsx)?$": "babel-jest"
-    }
   }
 }
