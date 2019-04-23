@@ -3,6 +3,7 @@ import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
 // import cards from 'componentsdir/card/examples/Cards';
 // import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
+import captionExample from 'componentsdir/caption/examples/Caption';
 import cta from 'componentsdir/cta/examples/Cta';
 // import grid from 'componentsdir/grid/examples/Grid';
 // import icons from 'componentsdir/icon/examples/Icons';
@@ -19,7 +20,6 @@ import lists from 'componentsdir/list/examples/Lists';
 // import texts from 'componentsdir/text/examples/Text';
 // import dataTable from 'componentsdir/dataTable/examples/DataTable';
 // import searchbox from 'compositionsdir/search/examples/searchbox';
-// import captionExample from 'compositionsdir/caption/examples/Caption';
 
 import utilities from 'componentsdir/Utilities/Utilities';
 
@@ -46,6 +46,7 @@ export default {
   accordion,
   breadcrumb,
   buttons,
+  captionExample,
   cta,
   links,
   lists,

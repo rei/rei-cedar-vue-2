@@ -22,6 +22,7 @@ import App from 'srcdir/App';
 import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Buttons from 'componentsdir/button/examples/Buttons';
+import Captions from 'componentsdir/caption/examples/Caption';
 import Cta from 'componentsdir/cta/examples/Cta';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
@@ -33,6 +34,7 @@ const routes = [
   { path: '/buttons', name: 'Buttons', component: Buttons },
   // { path: '/cards', name: 'Cards', component: Cards },
   // { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
+  { path: '/captions', name: 'Captions', component: Captions },
   { path: '/cta', name: 'CTA', component: Cta },
   // { path: '/dataTables', name: 'Data Tables', component: DataTables },
   // { path: '/grids', name: 'Grids', component: Grids },

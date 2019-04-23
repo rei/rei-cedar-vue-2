@@ -34,7 +34,6 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/CdrCaption.pcss';
+<style lang="scss" module>
+  @import './styles/CdrCaption.scss';
 </style>

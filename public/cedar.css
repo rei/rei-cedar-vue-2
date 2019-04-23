@@ -889,6 +889,56 @@
 * Outline
 * ------------------- */
 /* ==========================================================================
+  # CdrCaption
+
+  All values should map to variables in
+  vars/CdrCaption.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrCaption
+========================================================================== */
+.cdr-caption-4gxu0 {
+  max-width: 53rem;
+  line-height: 1;
+}
+.cdr-caption__summary-4gxu0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  margin: 0;
+}
+.cdr-caption__summary-4gxu0 + .cdr-caption__cite-4gxu0 {
+  display: inline-block;
+  /* TODO: replace with spacing token */
+  margin-top: 0.8rem;
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
   # CdrCta
 
   All values should map to variables in
@@ -1710,6 +1760,11 @@
 
 .button-example {
   padding: 1rem;
+}
+
+
+.caption-example__figure {
+  margin: 0;
 }
 
 
