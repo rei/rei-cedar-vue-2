@@ -1003,6 +1003,185 @@
 .on-dark.cdr-link-lc69i:hover, .on-dark.cdr-link-lc69i:active, .on-dark.cdr-link-lc69i:focus {
   color: #5197cd;
 }
+@charset "UTF-8";
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrList
+
+  TOC:
+
+    :Base Styles
+      :cdr-list (Bare)
+        :Spacing
+        :Nesting
+    :Style variants
+      :Compact
+        :Nesting
+      :Ordered
+        :Nesting
+      :Unordered
+        :Nesting
+      :Inline
+        :compact
+        :unordered
+          :compact
+
+========================================================================== */
+.cdr-list-kjsyo {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  /* spacing
+    ---------- */
+  /* nesting
+    ---------- */
+  /* Style variants
+    ========================================================================== */
+  /* Compact
+    ========== */
+  /* Ordered
+    ========== */
+  /* Unordered
+     ========== */
+  /* Inline
+  ========== */
+}
+.cdr-list-kjsyo > li + li {
+  margin-top: 0.8rem;
+}
+.cdr-list-kjsyo li > .cdr-list-kjsyo {
+  margin-top: 0.8rem;
+  padding-left: 1em;
+  list-style-type: none;
+}
+.cdr-list--compact-kjsyo {
+  /* nesting
+    ---------- */
+}
+.cdr-list--compact-kjsyo > li + li {
+  margin-top: 0.4rem;
+}
+.cdr-list--compact-kjsyo li > .cdr-list-kjsyo {
+  margin-top: 0.4rem;
+}
+.cdr-list--ordered-kjsyo {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  list-style-position: outside;
+}
+.cdr-list--ordered-kjsyo li {
+  padding-left: 0.4rem;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-top: 0;
+  /* nesting
+  ---------- */
+}
+.cdr-list--ordered-kjsyo li > .cdr-list-kjsyo {
+  position: relative;
+  padding-left: 1em;
+}
+.cdr-list--ordered-kjsyo li > .cdr-list-kjsyo > li {
+  padding-left: 0;
+}
+.cdr-list--ordered-kjsyo li > .cdr-list-kjsyo > li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+}
+.cdr-list--unordered-kjsyo {
+  position: relative;
+  padding-left: 1em;
+  /* nesting
+    ---------- */
+}
+.cdr-list--unordered-kjsyo > li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+}
+.cdr-list--unordered-kjsyo li > .cdr-list-kjsyo {
+  position: relative;
+  padding-left: 1em;
+}
+.cdr-list--unordered-kjsyo li > .cdr-list-kjsyo > li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+}
+.cdr-list--inline-kjsyo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  /* compact
+  ---------- */
+  /* unordered
+  ---------- */
+}
+.cdr-list--inline-kjsyo > li {
+  display: block;
+}
+.cdr-list--inline-kjsyo > li + li {
+  margin-top: 0;
+  padding-left: 1em;
+}
+.cdr-list--inline-kjsyo.cdr-list--compact-kjsyo > li + li {
+  padding-left: 0.5em;
+}
+.cdr-list--inline-kjsyo.cdr-list--unordered-kjsyo {
+  left: 0;
+  /* unordered - compact
+  ---------- */
+}
+.cdr-list--inline-kjsyo.cdr-list--unordered-kjsyo > li {
+  position: relative;
+}
+.cdr-list--inline-kjsyo.cdr-list--unordered-kjsyo > li + li {
+  padding-left: 1.5em;
+}
+.cdr-list--inline-kjsyo.cdr-list--unordered-kjsyo > li:first-of-type::before {
+  content: "";
+}
+.cdr-list--inline-kjsyo.cdr-list--unordered-kjsyo > li::before {
+  content: "\2022";
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(150%, -50%);
+          transform: translate(150%, -50%);
+  height: 0.6rem;
+  width: 0.6rem;
+  line-height: 0.6rem;
+  left: 0;
+}
+.cdr-list--inline-kjsyo.cdr-list--unordered-kjsyo.cdr-list--compact-kjsyo > li + li {
+  padding-left: 1em;
+}
+.cdr-list--inline-kjsyo.cdr-list--unordered-kjsyo.cdr-list--compact-kjsyo > li + li::before {
+  -webkit-transform: translate(100%, -50%);
+          transform: translate(100%, -50%);
+}
 
 .accordion-group {
   margin-bottom: 3rem;
@@ -1373,6 +1552,306 @@
 }
 .anchor-example {
   padding: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** normalize line-height for consistent testing because lists inherit it */
+.list-examples {
+  line-height: 1;
 }
 
 /* Tokens */

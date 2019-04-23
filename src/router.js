@@ -8,7 +8,6 @@
 // import Images from 'componentsdir/image/examples/Images';
 // import Links from 'componentsdir/link/examples/Links';
 // import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
-// import Lists from 'componentsdir/list/examples/Lists';
 // import Pagination from 'componentsdir/pagination/examples/Pagination';
 // import Quotes from 'componentsdir/quote/examples/Quote';
 // import Radios from 'componentsdir/radio/examples/Radios';
@@ -25,6 +24,7 @@ import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Buttons from 'componentsdir/button/examples/Buttons';
 import Cta from 'componentsdir/cta/examples/Cta';
 import Links from 'componentsdir/link/examples/Links';
+import Lists from 'componentsdir/list/examples/Lists';
 
 const routes = [
   { path: '/', component: App },
@@ -38,9 +38,9 @@ const routes = [
   // { path: '/icons', name: 'Icons', component: Icons },
   // { path: '/images', name: 'Images', component: Images },
   { path: '/links', name: 'Links', component: Links },
+  { path: '/lists', name: 'Lists', component: Lists },
   // { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   // { path: '/inputs', name: 'Input', component: Input },
-  // { path: '/lists', name: 'Lists', component: Lists },
   // { path: '/pagination', name: 'Pagination', component: Pagination },
   // { path: '/quotes', name: 'Quotes', component: Quotes },
   // { path: '/radios', name: 'Radios', component: Radios },

@@ -79,7 +79,7 @@
           padding-left: $list-item-indentation-space;
 
           &::before {
-            content: '\$nested-ordered-list-item-decorator';
+            content: '#{$nested-ordered-list-item-decorator}';
             position: absolute;
             left: 0;
           }
@@ -95,7 +95,7 @@
     padding-left: $unordered-list-indentation-space;
 
     & > li::before {
-      content: '\$unordered-list-item-decorator';
+      content: '#{$unordered-list-item-decorator}';
       position: absolute;
       left: 0;
     }
@@ -108,7 +108,7 @@
 
       & > li {
         &::before {
-          content: '\$nested-unordered-list-item-decorator';
+          content: '#{$nested-unordered-list-item-decorator}';
           position: absolute;
           left: 0;
         }
@@ -155,7 +155,7 @@
         }
 
         &::before {
-          content: '\$unordered-list-item-decorator';
+          content: '#{$unordered-list-item-decorator}';
           display: block;
           position: absolute;
           top: 50%;

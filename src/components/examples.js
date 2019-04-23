@@ -1,5 +1,4 @@
 import accordion from 'componentsdir/accordion/examples/Accordion';
-import links from 'componentsdir/link/examples/Links';
 // import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
 // import cards from 'componentsdir/card/examples/Cards';
@@ -9,7 +8,8 @@ import cta from 'componentsdir/cta/examples/Cta';
 // import icons from 'componentsdir/icon/examples/Icons';
 // import images from 'componentsdir/image/examples/Images';
 // import inputs from 'componentsdir/input/examples/Inputs';
-// import lists from 'componentsdir/list/examples/Lists';
+import links from 'componentsdir/link/examples/Links';
+import lists from 'componentsdir/list/examples/Lists';
 // import pagination from 'componentsdir/pagination/examples/Pagination';
 // import quoteExample from 'componentsdir/quote/examples/Quote';
 // import radios from 'componentsdir/radio/examples/Radios';
@@ -24,18 +24,14 @@ import cta from 'componentsdir/cta/examples/Cta';
 import utilities from 'componentsdir/Utilities/Utilities';
 
 // export default {
-//   links,
 //   breadcrumb,
-//   buttons,
 //   cards,
 //   checkboxes,
-//   cta,
 //   dataTable,
 //   grid,
 //   icons,
 //   images,
 //   inputs,
-//   lists,
 //   pagination,
 //   quoteExample,
 //   radios,
@@ -48,8 +44,9 @@ import utilities from 'componentsdir/Utilities/Utilities';
 
 export default {
   accordion,
-  links,
   buttons,
   cta,
+  links,
+  lists,
   utilities,
 };

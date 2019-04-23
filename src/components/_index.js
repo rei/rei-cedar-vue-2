@@ -5,7 +5,6 @@
 // import CdrIcon from 'componentsdir/icon/CdrIcon';
 // import CdrImg from 'componentsdir/image/CdrImg';
 // import CdrInput from 'componentsdir/input/CdrInput';
-// import CdrList from 'componentsdir/list/CdrList';
 // import CdrPagination from 'componentsdir/pagination/CdrPagination';
 // import CdrQuote from 'componentsdir/quote/CdrQuote';
 // import CdrRadio from 'componentsdir/radio/CdrRadio';
@@ -24,4 +23,5 @@ export { default as CdrAccordionItem } from 'componentsdir/accordion/CdrAccordio
 export { default as CdrButton } from 'componentsdir/button/CdrButton';
 export { default as CdrCta } from 'componentsdir/cta/CdrCta';
 export { default as CdrLink } from 'componentsdir/link/CdrLink';
+export { default as CdrList } from 'componentsdir/list/CdrList';
 export { default as CdrText } from 'componentsdir/text/CdrText';
