@@ -333,6 +333,154 @@
 * Outline
 * ------------------- */
 /* ==========================================================================
+  # CdrBreadcrumb
+
+  All values should map to variables in
+  vars/CdrBreadcrumb.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrBreadcrumb
+      :Elements
+        :container
+        :list
+        :item
+        :link
+        :delimiter
+        :ellipses
+        :ellipses-icon
+========================================================================== */
+.cdr-breadcrumb-cf4xk {
+  line-height: 1;
+  /* List
+  ========== */
+  /* Item
+  ========== */
+  /* Link
+  ---------- */
+  /* Delimiter
+  ========== */
+  /* Ellipses
+    ========== */
+}
+.cdr-breadcrumb__list-cf4xk {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+.cdr-breadcrumb__item-cf4xk {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  color: #616161;
+  padding: 0;
+  /* Hover
+  ---------- */
+}
+.cdr-breadcrumb__item-cf4xk:last-child {
+  color: #292929;
+}
+.cdr-breadcrumb__item-cf4xk:hover, .cdr-breadcrumb__item-cf4xk:active, .cdr-breadcrumb__item-cf4xk:focus {
+  color: #292929;
+}
+.cdr-breadcrumb__link-cf4xk {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  letter-spacing: normal;
+  text-decoration: none;
+  color: inherit;
+  /* inherit color from &__item */
+}
+.cdr-breadcrumb__link-cf4xk:hover, .cdr-breadcrumb__link-cf4xk:active, .cdr-breadcrumb__link-cf4xk:focus {
+  color: inherit;
+  text-decoration: underline;
+}
+.cdr-breadcrumb__delimiter-cf4xk {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  letter-spacing: normal;
+  color: #616161;
+  padding-left: 0.4rem;
+  padding-right: 0.8rem;
+}
+.cdr-breadcrumb__ellipses-cf4xk {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  background: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  /* extend clickable area */
+  margin: -0.6rem -1.1rem;
+  /* preserve layout */
+  /* Ellipses Icon
+  ========== */
+}
+.cdr-breadcrumb__ellipses-cf4xk .cdr-breadcrumb__ellipses-icon-cf4xk {
+  border-bottom: 0.1rem solid transparent;
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: #616161;
+}
+.cdr-breadcrumb__ellipses-cf4xk:hover .cdr-breadcrumb__ellipses-icon-cf4xk, .cdr-breadcrumb__ellipses-cf4xk:active .cdr-breadcrumb__ellipses-icon-cf4xk, .cdr-breadcrumb__ellipses-cf4xk:focus .cdr-breadcrumb__ellipses-icon-cf4xk {
+  border-bottom: 0.1rem solid #292929;
+  fill: #292929;
+}
+@media (min-width: 992px) {
+.cdr-breadcrumb__link-cf4xk, .cdr-breadcrumb__delimiter-cf4xk, .cdr-breadcrumb__ellipses-cf4xk {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: normal;
+}
+.cdr-breadcrumb__ellipses-cf4xk .cdr-breadcrumb__ellipses-icon-cf4xk {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
   # CdrButton
 
   TOC:
@@ -1186,6 +1334,199 @@
 .accordion-group {
   margin-bottom: 3rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

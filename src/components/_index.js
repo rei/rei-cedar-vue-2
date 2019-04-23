@@ -1,4 +1,3 @@
-// import CdrBreadcrumb from 'componentsdir/breadcrumb/CdrBreadcrumb';
 // import CdrCard from 'componentsdir/card/CdrCard';
 // import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
 // import CdrCol from 'componentsdir/grid/CdrCol';
@@ -20,6 +19,7 @@
 
 export { default as CdrAccordion } from 'componentsdir/accordion/CdrAccordion';
 export { default as CdrAccordionItem } from 'componentsdir/accordion/CdrAccordionItem';
+export { default as CdrBreadcrumb } from 'componentsdir/breadcrumb/CdrBreadcrumb';
 export { default as CdrButton } from 'componentsdir/button/CdrButton';
 export { default as CdrCta } from 'componentsdir/cta/CdrCta';
 export { default as CdrLink } from 'componentsdir/link/CdrLink';

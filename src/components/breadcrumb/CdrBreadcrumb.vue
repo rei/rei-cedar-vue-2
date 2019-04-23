@@ -174,8 +174,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/vars/CdrBreadcrumb.vars.pcss';
-  @import './styles/CdrBreadcrumb.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrBreadcrumb.vars.scss';
+  @import './styles/CdrBreadcrumb.scss';
 </style>
