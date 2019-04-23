@@ -19,7 +19,9 @@
       <cdr-icon-sprite></cdr-icon-sprite>
 
       <router-link v-for="route in routes" :key="route.path" :to="route.path">{{ route.name }} *</router-link>
-      <router-view></router-view>
+      <div class="cdr-container-fluid">
+        <router-view></router-view>
+      </div>
     </div>
     <!-- built files will be auto injected -->
     <script src="kitchen-sink.iife.js"></script>

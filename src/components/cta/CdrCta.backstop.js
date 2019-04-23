@@ -1,4 +1,5 @@
 module.exports = [{
+  url: 'http://localhost:3000/#/cta',
   label: 'Cta',
   selectors: [
     '[data-backstop="cta-links"]',
