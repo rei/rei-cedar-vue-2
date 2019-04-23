@@ -939,6 +939,55 @@
 * Outline
 * ------------------- */
 /* ==========================================================================
+  # CdrCard
+
+  This file provides a contract between
+  design tokens and cedar non-changing variables.
+
+  TOC:
+
+    :Base
+========================================================================== */
+/* ==========================================================================
+  # CdrCard
+
+  All values should map to variables in
+  vars/CdrCard.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base Styles
+========================================================================== */
+.cdr-card-5zaum {
+  background-color: #ffffff;
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 0 0.3rem 0.8rem rgba(26, 26, 26, 0.2);
+          box-shadow: 0 0.3rem 0.8rem rgba(26, 26, 26, 0.2);
+  color: #292929;
+  width: 100%;
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
   # CdrCta
 
   All values should map to variables in

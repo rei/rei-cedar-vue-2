@@ -1,5 +1,4 @@
 // import Buttons from 'componentsdir/button/examples/Buttons';
-// import Cards from 'componentsdir/card/examples/Cards';
 // import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
 // import Cta from 'componentsdir/cta/examples/Cta';
 // import DataTables from 'componentsdir/dataTable/examples/DataTable';
@@ -23,6 +22,7 @@ import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Buttons from 'componentsdir/button/examples/Buttons';
 import Captions from 'componentsdir/caption/examples/Caption';
+import Cards from 'componentsdir/card/examples/Cards';
 import Cta from 'componentsdir/cta/examples/Cta';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
@@ -32,9 +32,9 @@ const routes = [
   { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Buttons },
-  // { path: '/cards', name: 'Cards', component: Cards },
   // { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
   { path: '/captions', name: 'Captions', component: Captions },
+  { path: '/cards', name: 'Cards', component: Cards },
   { path: '/cta', name: 'CTA', component: Cta },
   // { path: '/dataTables', name: 'Data Tables', component: DataTables },
   // { path: '/grids', name: 'Grids', component: Grids },
