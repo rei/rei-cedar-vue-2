@@ -1,8 +1,16 @@
+/* base */
 @mixin cdr-text-base-text-mixin() {
   @include cdr-text-default-body;
 }
 
 $cdr-text-base-margin: 0;
+
+@mixin cdr-text-base-mixin() {
+  @include cdr-text-default-body;
+  margin: $cdr-text-base-margin
+}
+
+/* body */
 
 @mixin cdr-text-body-text-mixin() {
   @include cdr-text-editorial-body-compact;
@@ -17,20 +25,45 @@ $cdr-text-body-stack: 16px;
 
 $cdr-text-body-stack-bp-sm: 32px;
 
+@mixin cdr-text-body-responsive-mixin() {
+  @include cdr-text-body-text-mixin;
+
+  max-width: $cdr-text-body-max-width;
+
+  & + & {
+    margin-top: $cdr-text-body-stack;
+  }
+
+  @media (--sm-mq) {
+    @include cdr-text-body-text-bp-sm-mixin;
+
+    & + & {
+      margin-top: $cdr-text-body-stack-bp-sm;
+    }
+  }
+}
+
+/* citation */
 @mixin cdr-text-citation-text-mixin() {
   @include redwood-display-10;
 }
 
+@mixin cdr-text-citation-mixin() {
+  @include cdr-text-citation-text-mixin;
+}
+
+/* subheading */
 @mixin cdr-text-subheading-text-mixin() {
   @include spruce-display-20;
 }
 
-@mixin cdr-text-display-text-mixin() {
-  @include spruce-display-60;
+@mixin cdr-text-subheading-mixin() {
+  @include cdr-text-subheading-text-mixin;
 }
 
-@mixin cdr-text-display-text-static-mixin() {
-  @include spruce-display-70;
+/* display-responsive */
+@mixin cdr-text-display-text-mixin() {
+  @include spruce-display-60;
 }
 
 @mixin cdr-text-display-text-bp-sm-mixin() {
@@ -41,11 +74,34 @@ $cdr-text-body-stack-bp-sm: 32px;
   @include spruce-display-80;
 }
 
-@mixin cdr-text-heading-text-small-mixin() {
-  @include spruce-display-30;
+@mixin cdr-text-display-responsive-mixin() {
+  @include cdr-text-display-text-mixin;
+
+  /* @ small */
+  @media (--sm-mq) {
+    @include cdr-text-display-text-bp-sm-mixin;
+  }
+
+  /* @ large */
+  @media (--lg-mq) {
+    @include cdr-text-display-text-bp-lg-mixin;
+  }
 }
 
-@mixin cdr-text-heading-text-small-static-mixin() {
+/* display-static */
+@mixin cdr-text-display-text-static-mixin() {
+  @include spruce-display-70;
+}
+
+@mixin cdr-text-display-static-mixin() {
+  @include cdr-text-display-text-static-mixin;
+}
+
+
+/* heading */
+
+/* heading-small-responsive */
+@mixin cdr-text-heading-text-small-mixin() {
   @include spruce-display-30;
 }
 
@@ -53,11 +109,28 @@ $cdr-text-body-stack-bp-sm: 32px;
   @include spruce-display-40;
 }
 
-@mixin cdr-text-heading-text-medium-mixin() {
-  @include spruce-display-40;
+@mixin cdr-text-heading-small-responsive-mixin() {
+  @include cdr-text-heading-text-small-mixin;
+
+  /* @ large */
+  @media (--lg-mq) {
+    @include cdr-text-heading-text-small-bp-lg-mixin;
+  }
 }
 
-@mixin cdr-text-heading-text-medium-static-mixin() {
+/* heading-small-static */
+
+@mixin cdr-text-heading-text-small-static-mixin() {
+  @include spruce-display-30;
+}
+
+@mixin cdr-text-heading-small-static-mixin() {
+  @include cdr-text-heading-text-small-static-mixin;
+}
+
+/* heading-medium-responsive */
+
+@mixin cdr-text-heading-text-medium-mixin() {
   @include spruce-display-40;
 }
 
@@ -65,12 +138,31 @@ $cdr-text-body-stack-bp-sm: 32px;
   @include spruce-display-50;
 }
 
-@mixin cdr-text-heading-text-large-mixin() {
+@mixin cdr-text-heading-medium-responsive-mixin() {
+  @include cdr-text-heading-text-medium-mixin;
+
+  /* @ large */
+  @media (--lg-mq) {
+    @include cdr-text-heading-text-medium-bp-lg-mixin;
+  }
+}
+
+/* heading-medium-static */
+
+@mixin cdr-text-heading-medium-static-mixin() {
   @include spruce-display-40;
 }
 
-@mixin cdr-text-heading-text-large-static-mixin() {
-  @include spruce-display-50;
+@mixin cdr-text-heading-text-medium-static-mixin() {
+  @include cdr-text-heading-text-medium-static-mixin;
+}
+
+
+/* heading-large-responsive */
+
+
+@mixin cdr-text-heading-text-large-mixin() {
+  @include spruce-display-40;
 }
 
 @mixin cdr-text-heading-text-large-bp-sm-mixin() {
@@ -79,4 +171,28 @@ $cdr-text-body-stack-bp-sm: 32px;
 
 @mixin cdr-text-heading-text-large-bp-lg-mixin() {
   @include spruce-display-70;
+}
+
+@mixin cdr-text-heading-large-responsive-mixin() {
+  @include cdr-text-heading-text-large-mixin;
+
+  /* @ small */
+  @media (--sm-mq) {
+    @include cdr-text-heading-text-large-bp-sm-mixin;
+  }
+
+  /* @ large */
+  @media (--lg-mq) {
+    @include cdr-text-heading-text-large-bp-lg-mixin;
+  }
+}
+
+/* heading-large-static */
+
+@mixin cdr-text-heading-text-large-static-mixin() {
+  @include spruce-display-50;
+}
+
+@mixin cdr-text-heading-large-static-mixin() {
+  @include cdr-text-heading-text-large-static-mixin;
 }

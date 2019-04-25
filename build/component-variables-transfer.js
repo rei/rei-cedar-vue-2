@@ -7,7 +7,10 @@ const DEST_PATH = 'dist/scss';
 const SUPPORTED_COMPONENTS = [
   'CdrButton.vars.scss',
   'CdrLink.vars.scss',
-  'text.vars.scss'
+  'text.vars.scss',
+  'form-label.vars.scss',
+  'CdrInput.vars.scss',
+  'CdrSelect.vars.scss'
 ];
 
 const destMixinsDir = path.join(__dirname, `../../${DEST_REPO_NAME + path.sep + DEST_PATH}`);
