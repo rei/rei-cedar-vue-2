@@ -12,6 +12,7 @@ const config = {
     'componentsdir(.*)$': '<rootDir>/src/components/$1',
     'directivesdir(.*)$': '<rootDir>/src/directives/$1',
     'mixinsdir(.*)$': '<rootDir>/src/mixins/$1',
+    'distdir(.*)$': '<rootDir>/dist/$1',
   },
   transform: {
     '.*\\.(vue)$': 'vue-jest',

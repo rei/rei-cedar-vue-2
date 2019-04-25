@@ -58,14 +58,13 @@ const plugins = [
           @import "${resolve('src/css/settings/_index.scss')}";`;
       },
     },
-    compileTemplate: !isDev,
     template: {
-      isProduction: !isDev,
+      isProduction: false,
     },
   }),
   postcss({
     syntax: 'postcss-scss',
-    extract: isDev ? 'public/cedar.css' : 'dist/cedar.css',
+    // extract: isDev ? 'public/cedar.css' : 'dist/cedar.css',
     extensions: ['.postcss', '.pcss', '.scss', '.css'],
   }),
   commonjs(),
