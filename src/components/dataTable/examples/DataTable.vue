@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="DataTable">
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
-import AllHeaders from './demo/AllHeaders';
-import NoColHeaders from './demo/NoColHeaders';
-import NoHeaders from './demo/NoHeaders';
-import Variants from './demo/Variants';
-import ContentResilience from './demo/ContentResilience';
+import * as Components from 'componentsdir/_index';
+import AllHeaders from 'componentsdir/dataTable/examples/demo/AllHeaders';
+import NoColHeaders from 'componentsdir/dataTable/examples/demo/NoColHeaders';
+import NoHeaders from 'componentsdir/dataTable/examples/demo/NoHeaders';
+import Variants from 'componentsdir/dataTable/examples/demo/Variants';
+import ContentResilience from 'componentsdir/dataTable/examples/demo/ContentResilience';
 
 export default {
   name: 'Tables',

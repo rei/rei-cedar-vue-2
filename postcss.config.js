@@ -14,7 +14,7 @@ module.exports = {
       minPixelValue: 0,
     },
     'postcss-inline-svg': {
-      // for correct paths during component-only css creation
+      // paths are relative to root
       path: process.cwd(),
     },
     autoprefixer: {},

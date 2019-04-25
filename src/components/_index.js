@@ -11,7 +11,6 @@
 // import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
 // import CdrTabs from 'componentsdir/tabs/CdrTabs';
 // import CdrThemer from 'componentsdir/themer/CdrThemer';
-// import CdrDataTable from 'componentsdir/dataTable/CdrDataTable';
 // import CdrSearch from 'compositionsdir/search/CdrSearch';
 
 export { default as CdrAccordion } from 'componentsdir/accordion/CdrAccordion';
@@ -22,6 +21,7 @@ export { default as CdrCaption } from 'componentsdir/caption/CdrCaption';
 export { default as CdrCard } from 'componentsdir/card/CdrCard';
 export { default as CdrCheckbox } from 'componentsdir/checkbox/CdrCheckbox';
 export { default as CdrCta } from 'componentsdir/cta/CdrCta';
+export { default as CdrDataTable } from 'componentsdir/dataTable/CdrDataTable';
 export { default as CdrLink } from 'componentsdir/link/CdrLink';
 export { default as CdrList } from 'componentsdir/list/CdrList';
 export { default as CdrText } from 'componentsdir/text/CdrText';

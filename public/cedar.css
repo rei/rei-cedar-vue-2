@@ -1341,6 +1341,160 @@
 * Outline
 * ------------------- */
 /* ==========================================================================
+  # CdrDataTable
+
+  TOC:
+
+    :Base - CdrDataTable
+    :States
+      :borderless
+      :compact
+========================================================================= */
+.cdr-data-table-1jx9d {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  position: relative;
+}
+.cdr-data-table__caption-1jx9d {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.02rem;
+  color: #292929;
+}
+.cdr-data-table__scroll-container-1jx9d {
+  /* margin-left: 150px; */
+  overflow-x: auto;
+  /* &:global(.full-scroll) {
+    margin-left: 0;
+
+    .cdr-data-table__content {
+      th.empty,
+      tbody th {
+        position: relative;
+      }
+    }
+  }
+  */
+}
+.cdr-data-table__scroll-container-1jx9d.locked-col {
+  margin-left: 15rem;
+}
+.cdr-data-table__scroll-container-1jx9d.locked-col thead tr th:first-child {
+  border-right: 0.2rem solid #b8b8b8;
+  left: 0;
+  position: absolute;
+  width: 15rem;
+}
+.cdr-data-table__scroll-container-1jx9d.locked-col tbody tr th {
+  border-right: 0.2rem solid #b8b8b8;
+  left: 0;
+  position: absolute;
+  width: 15rem;
+}
+.cdr-data-table__scroll-container-1jx9d.is-scrolling {
+  /* add extra border width */
+}
+.cdr-data-table__scroll-container-1jx9d.is-scrolling thead tr th:first-child {
+  border-right: 0.4rem solid #b8b8b8;
+}
+.cdr-data-table__scroll-container-1jx9d.is-scrolling tbody tr th {
+  border-right: 0.4rem solid #b8b8b8;
+}
+.cdr-data-table__content-1jx9d {
+  border: none;
+  border-collapse: collapse;
+  /* td {
+    &:not(:first-of-type) {
+      text-align: left;
+    }
+  } */
+}
+.cdr-data-table__content-1jx9d th,
+.cdr-data-table__content-1jx9d td {
+  border: 0.1rem solid #dadada;
+  min-height: 4.8rem;
+  color: #292929;
+  padding: 1.6rem;
+  text-align: left;
+  min-width: 12.7rem;
+}
+.cdr-data-table__content-1jx9d.constrain-width th,
+.cdr-data-table__content-1jx9d.constrain-width td {
+  max-width: 15rem;
+}
+.cdr-data-table__content-1jx9d thead th {
+  border-bottom: 0.2rem solid #b8b8b8;
+  /* empty column header, row header column */
+}
+.cdr-data-table__content-1jx9d thead th[class^=empty] {
+  border-right: 0.2rem solid #b8b8b8;
+}
+.cdr-data-table__content-1jx9d tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+.cdr-data-table__content-1jx9d tbody tr:nth-child(even) th {
+  background-color: #f7f7f7;
+}
+.cdr-data-table__content-1jx9d tbody tr th {
+  min-width: 15rem;
+  border-right: 0.2rem solid #b8b8b8;
+}
+.cdr-data-table__content-1jx9d tbody .align-row-header-content-1jx9d {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.cdr-data-table--borderless-1jx9d {
+  border: none;
+}
+.cdr-data-table--borderless-1jx9d th,
+.cdr-data-table--borderless-1jx9d td {
+  border: none;
+}
+.cdr-data-table--borderless-1jx9d tbody tr th {
+  border-right: none;
+}
+.cdr-data-table--compact-1jx9d th,
+.cdr-data-table--compact-1jx9d td {
+  padding: 0.8rem 1.6rem;
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
   # CdrLink
 
   TOC:
@@ -2026,6 +2180,51 @@
 .button-example {
   padding: 1rem;
 }
+
+
+.table-examples-wrapper {
+  padding: 1rem;
+}
+.table-examples-wrapper > div {
+  margin-bottom: 4rem;
+}
+
+
+
+.table-examples-wrapper {
+  padding: 1rem;
+}
+.table-examples-wrapper > div {
+  margin-bottom: 4rem;
+}
+
+
+
+.table-examples-wrapper {
+  padding: 1rem;
+}
+.table-examples-wrapper > div {
+  margin-bottom: 4rem;
+}
+
+
+
+.table-examples-wrapper {
+  padding: 1rem;
+}
+.table-examples-wrapper > div {
+  margin-bottom: 4rem;
+}
+
+
+
+.table-examples-wrapper {
+  padding: 1rem;
+}
+.table-examples-wrapper > div {
+  margin-bottom: 4rem;
+}
+
 
 
 
