@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import CdrAccordion from '../CdrAccordion.vue';
+import { CdrAccordion } from 'distdir/cedar.esm.js';
 
 describe('CdrAccordion.vue', () => {
   it('renders accordion container', () => {

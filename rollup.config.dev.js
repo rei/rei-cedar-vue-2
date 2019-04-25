@@ -17,63 +17,6 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
-const isDev = process.env.ROLLUP_WATCH;
-
-const plugins = [
-  replace({
-    'process.env.NODE_ENV': JSON.stringify(isDev),
-  }),
-  alias({
-    resolve: ['.vue', '.json', '.js'],
-    srcdir: resolve('src'),
-    cssdir: resolve('src/css'),
-    assetsdir: resolve('src/assets'),
-    componentsdir: resolve('src/components'),
-    compositionsdir: resolve('src/compositions'),
-    directivesdir: resolve('src/directives'),
-    mixinsdir: resolve('src/mixins'),
-  }),
-  nodeResolve(),
-  vue({
-    css: false,
-    style: {
-      postcssOptions: { syntax: postcssScss },
-      postcssCleanOptions: { disabled: true },
-      postcssModulesOptions: {
-        generateScopedName(name, filename, css) {
-          const hash = stringHash(css)
-            .toString(36)
-            .substr(0, 5);
-          // to preseve '@' in responsive class names
-          return `${name}-${hash}`;
-        },
-      },
-    },
-    data: {
-      // this gets prepended in all components <style>
-      scss() {
-        return `@import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
-          @import "${resolve('src/css/settings/_index.scss')}";`;
-      },
-    },
-    template: {
-      isProduction: false,
-    },
-  }),
-  postcss({
-    syntax: 'postcss-scss',
-    extract: 'public/cedar.css',
-    extensions: ['.postcss', '.pcss', '.scss', '.css'],
-  }),
-  commonjs(),
-  serve({
-    open: true,
-    contentBase: 'public',
-    port: 3000,
-  }),
-  livereload(),
-];
-
 export default {
   input: 'src/dev.js',
   output: {
@@ -81,7 +24,60 @@ export default {
     format: 'iife',
     name: 'cedar',
   },
-  plugins,
+  plugins: [
+    replace({
+      'process.env.NODE_ENV': JSON.stringify(true),
+    }),
+    alias({
+      resolve: ['.vue', '.json', '.js'],
+      srcdir: resolve('src'),
+      cssdir: resolve('src/css'),
+      assetsdir: resolve('src/assets'),
+      componentsdir: resolve('src/components'),
+      compositionsdir: resolve('src/compositions'),
+      directivesdir: resolve('src/directives'),
+      mixinsdir: resolve('src/mixins'),
+    }),
+    nodeResolve(),
+    vue({
+      css: false,
+      style: {
+        postcssOptions: { syntax: postcssScss },
+        postcssCleanOptions: { disabled: true },
+        postcssModulesOptions: {
+          generateScopedName(name, filename, css) {
+            const hash = stringHash(css)
+              .toString(36)
+              .substr(0, 5);
+            // to preseve '@' in responsive class names
+            return `${name}-${hash}`;
+          },
+        },
+      },
+      data: {
+        // this gets prepended in all components <style>
+        scss() {
+          return `@import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
+            @import "${resolve('src/css/settings/_index.scss')}";`;
+        },
+      },
+      template: {
+        isProduction: false,
+      },
+    }),
+    postcss({
+      syntax: 'postcss-scss',
+      extract: 'public/cedar.css',
+      extensions: ['.postcss', '.pcss', '.scss', '.css'],
+    }),
+    commonjs(),
+    serve({
+      open: true,
+      contentBase: 'public',
+      port: 3000,
+    }),
+    livereload(),
+  ],
   watch: {
     clearScreen: false,
   },
