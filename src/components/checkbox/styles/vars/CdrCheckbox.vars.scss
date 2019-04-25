@@ -1,38 +1,3 @@
-@mixin cdr-checkbox-base-text-mixin() {
-  @include redwood-display-30;
-}
-$cdr-checkbox-base-color: #292929;
-$cdr-checkbox-base-display: inline-block;
-$cdr-checkbox-base-margin: 0;
-@mixin cdr-checkbox-base-mixin() {
-  @include cdr-checkbox-base-text-mixin;
-
-  color: $cdr-checkbox-base-color;
-  display: $cdr-checkbox-base-display;
-  margin: $cdr-checkbox-base-margin;
-}
-
-$cdr-checkbox-base-cursor-hover: pointer;
-@mixin cdr-checkbox-hover-mixin() {
-  cursor: $cdr-checkbox-base-cursor-hover;
-}
-
-$cdr-checkbox-base-color-disabled: #b8b8b8;
-$cdr-checkbox-base-cursor-disabled: default;
-@mixin cdr-checkbox-disabled-mixin() {
-  color: $cdr-checkbox-base-color-disabled !important;
-  cursor: $cdr-checkbox-base-cursor-disabled;
-}
-
-@mixin cdr-checkbox-compact-text-mixin() {
-  @include redwood-display-20;
-}
-
-@mixin cdr-checkbox-compact-mixin() {
-  @include cdr-checkbox-compact-text-mixin;
-}
-
-/* PRIVATE */
 $checkbox-figure-size: 16px;
 $checkbox-figure-border-color: #616161;
 $checkbox-figure-indeterminate-border-radius: $cdr-radius-soft;

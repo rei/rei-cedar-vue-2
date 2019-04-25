@@ -19,7 +19,7 @@
 ========================================================================== */
 
 .cdr-radio {
-  @include cdr-radio-base-mixin;
+  @include cdr-label-base-mixin;
 
   position: relative;
   padding-left: calc(#{$radio-figure-size} + #{$radio-figure-space-right});
@@ -89,7 +89,7 @@
     }
 
     & > .cdr-radio__content {
-      @include cdr-radio-hover-mixin;
+      @include cdr-label-hover-mixin;
     }
 
     & > .cdr-radio__input {
@@ -109,7 +109,7 @@
   ========== */
   &__input:disabled {
     & ~ .cdr-radio__content {
-      @include cdr-radio-disabled-mixin;
+      @include cdr-label-disabled-mixin;
     }
 
     & ~ .cdr-radio__figure {
@@ -150,7 +150,7 @@
     ========== */
 
   &--compact {
-    @include cdr-radio-compact-mixin;
+    @include cdr-label-compact-mixin;
 
     & > .cdr-radio__figure {
       top: $radio-compact-figure-space-top;
