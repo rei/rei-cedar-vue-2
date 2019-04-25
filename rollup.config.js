@@ -8,7 +8,6 @@ import alias from 'rollup-plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import babel from 'rollup-plugin-babel';
-import postcssScss from 'postcss-scss';
 import stringHash from 'string-hash';
 
 function resolve(dir) {
@@ -30,7 +29,6 @@ const plugins = [
   vue({
     css: false,
     style: {
-      postcssOptions: { syntax: postcssScss },
       postcssCleanOptions: { disabled: true },
       postcssModulesOptions: {
         generateScopedName(name, filename, css) {
@@ -54,9 +52,8 @@ const plugins = [
     },
   }),
   postcss({
-    syntax: 'postcss-scss',
     extract: 'dist/cedar.css',
-    extensions: ['.postcss', '.pcss', '.scss', '.css'],
+    extensions: ['.scss', '.css'],
   }),
   commonjs(),
   babel({

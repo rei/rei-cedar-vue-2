@@ -1,9 +1,9 @@
 import accordion from 'componentsdir/accordion/examples/Accordion';
 import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import buttons from 'componentsdir/button/examples/Buttons';
-// import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
 import captionExample from 'componentsdir/caption/examples/Caption';
 import cards from 'componentsdir/card/examples/Cards';
+import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
 import cta from 'componentsdir/cta/examples/Cta';
 // import grid from 'componentsdir/grid/examples/Grid';
 // import icons from 'componentsdir/icon/examples/Icons';
@@ -24,7 +24,6 @@ import lists from 'componentsdir/list/examples/Lists';
 import utilities from 'componentsdir/Utilities/Utilities';
 
 // export default {
-//   checkboxes,
 //   dataTable,
 //   grid,
 //   icons,
@@ -46,6 +45,7 @@ export default {
   buttons,
   captionExample,
   cards,
+  checkboxes,
   cta,
   links,
   lists,

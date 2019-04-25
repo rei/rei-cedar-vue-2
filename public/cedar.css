@@ -988,6 +988,201 @@
 * Outline
 * ------------------- */
 /* ==========================================================================
+  # CdrCheckbox
+
+  All values should map to variables in
+  vars/CdrCheckbox.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - Checkbox
+      :Elements
+        :wrap
+        :input
+        :figure
+      :States
+      :Modifiers
+        :compact
+        :hide-figure
+========================================================================== */
+.cdr-checkbox-1lkpa {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  color: #292929;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  padding-left: 2.4rem;
+  /* Elements
+    ========================================================================== */
+  /* Wrap
+  ========== */
+  /* Input
+  ========== */
+  /* Figure
+  ========== */
+  /* States
+    ========================================================================== */
+  /* Checked
+  ========== */
+  /* Indeterminate
+  ========== */
+  /* Hover
+  ========== */
+  /* Disabled
+  ========== */
+  /* Active
+  ========== */
+  /* Focus
+  ========== */
+  /* Modifiers
+    ========================================================================== */
+  /* Compact
+    ========== */
+  /* Hide Figure
+    ========== */
+}
+.cdr-checkbox__wrap-1lkpa {
+  /* get rid of inline-block whitespace from label element */
+  font-size: 0;
+}
+.cdr-checkbox__input-1lkpa {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.cdr-checkbox__figure-1lkpa {
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.4rem;
+  background-color: #ffffff;
+  border: 0.1rem solid #616161;
+}
+.cdr-checkbox__input-1lkpa:checked ~ .cdr-checkbox__figure-1lkpa {
+  border-color: #3278ae;
+  background-color: #3278ae;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E %3Ctitle%3E check-lg %3C/title%3E %3Cpath d='M9.673 18.669h.001L19.766 6.644a1 1 0 1 0-1.532-1.286l-9.3 11.085-3.169-3.776a1 1 0 1 0-1.532 1.286l3.875 4.618a.999.999 0 0 0 1.565.099z'/%3E %3C/svg%3E");
+  background-repeat: no-repeat;
+}
+.cdr-checkbox__input-1lkpa[indeterminate] ~ .cdr-checkbox__figure-1lkpa {
+  border-color: #3278ae;
+}
+.cdr-checkbox__input-1lkpa[indeterminate] ~ .cdr-checkbox__figure-1lkpa::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #3278ae;
+  border-radius: 0.2rem;
+}
+.cdr-checkbox-1lkpa:hover > .cdr-checkbox__figure-1lkpa {
+  cursor: pointer;
+  border-color: #616161;
+  background-color: #fafafa;
+}
+.cdr-checkbox-1lkpa:hover > .cdr-checkbox__content-1lkpa {
+  cursor: pointer;
+}
+.cdr-checkbox-1lkpa:hover > .cdr-checkbox__input-1lkpa {
+  /* Hover + Checked
+  ========== */
+  /* Hover + Indeterminate
+  ========== */
+}
+.cdr-checkbox-1lkpa:hover > .cdr-checkbox__input-1lkpa:checked ~ .cdr-checkbox__figure-1lkpa {
+  border-color: #2b6692;
+  background-color: #2b6692;
+}
+.cdr-checkbox-1lkpa:hover > .cdr-checkbox__input-1lkpa[indeterminate] ~ .cdr-checkbox__figure-1lkpa {
+  border-color: #2b6692;
+}
+.cdr-checkbox-1lkpa:hover > .cdr-checkbox__input-1lkpa[indeterminate] ~ .cdr-checkbox__figure-1lkpa::after {
+  background-color: #2b6692;
+}
+.cdr-checkbox__input-1lkpa:disabled {
+  /* Disabled + Checked
+  ========== */
+  /* Disabled + Indeterminate
+  ========== */
+}
+.cdr-checkbox__input-1lkpa:disabled ~ .cdr-checkbox__content-1lkpa {
+  color: #b8b8b8 !important;
+  cursor: default;
+}
+.cdr-checkbox__input-1lkpa:disabled ~ .cdr-checkbox__figure-1lkpa {
+  border-color: #dadada !important;
+  background-color: #fafafa !important;
+  cursor: default;
+}
+.cdr-checkbox__input-1lkpa:disabled:checked ~ .cdr-checkbox__figure-1lkpa {
+  background-color: #dadada !important;
+}
+.cdr-checkbox__input-1lkpa:disabled[indeterminate] ~ .cdr-checkbox__figure-1lkpa {
+  border-color: #dadada !important;
+}
+.cdr-checkbox__input-1lkpa:disabled[indeterminate] ~ .cdr-checkbox__figure-1lkpa::after {
+  background-color: #dadada !important;
+}
+.cdr-checkbox-1lkpa:active > .cdr-checkbox__figure-1lkpa {
+  border-color: #3278ae;
+}
+.cdr-checkbox__input-1lkpa:focus ~ .cdr-checkbox__figure-1lkpa {
+  border-color: #3278ae;
+  -webkit-box-shadow: 0 0 0.8rem 0 #3278ae;
+          box-shadow: 0 0 0.8rem 0 #3278ae;
+}
+.cdr-checkbox--compact-1lkpa {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+}
+.cdr-checkbox--compact-1lkpa > .cdr-checkbox__figure-1lkpa {
+  top: 0.2rem;
+}
+.cdr-checkbox--hide-figure-1lkpa {
+  padding-left: 0;
+}
+.cdr-checkbox--hide-figure-1lkpa > .cdr-checkbox__figure-1lkpa {
+  display: none;
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
   # CdrCta
 
   All values should map to variables in
@@ -1814,6 +2009,17 @@
 
 .caption-example__figure {
   margin: 0;
+}
+
+
+.wrap {
+  width: 18rem;
+}
+.no-box:checked ~ .no-box__content {
+  color: green;
+&::after {
+    content: '(checked)';
+}
 }
 
 

@@ -1,5 +1,4 @@
 // import Buttons from 'componentsdir/button/examples/Buttons';
-// import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
 // import Cta from 'componentsdir/cta/examples/Cta';
 // import DataTables from 'componentsdir/dataTable/examples/DataTable';
 // import Grids from 'componentsdir/grid/examples/Grid';
@@ -15,7 +14,6 @@
 // import Texts from 'componentsdir/text/examples/Text';
 // import Input from 'componentsdir/input/examples/Inputs';
 
-// import Captions from 'compositionsdir/caption/examples/Caption';
 // import Searches from 'compositionsdir/search/examples/searchbox';
 import App from 'srcdir/App';
 import Accordions from 'componentsdir/accordion/examples/Accordion';
@@ -23,6 +21,7 @@ import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Buttons from 'componentsdir/button/examples/Buttons';
 import Captions from 'componentsdir/caption/examples/Caption';
 import Cards from 'componentsdir/card/examples/Cards';
+import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
 import Cta from 'componentsdir/cta/examples/Cta';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
@@ -32,9 +31,9 @@ const routes = [
   { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Buttons },
-  // { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
   { path: '/captions', name: 'Captions', component: Captions },
   { path: '/cards', name: 'Cards', component: Cards },
+  { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
   { path: '/cta', name: 'CTA', component: Cta },
   // { path: '/dataTables', name: 'Data Tables', component: DataTables },
   // { path: '/grids', name: 'Grids', component: Grids },
@@ -50,7 +49,6 @@ const routes = [
   // { path: '/selects', name: 'Selects', component: Selects },
   // { path: '/tabs', name: 'Tabs', component: Tabs },
   // { path: '/texts', name: 'Texts', component: Texts },
-  // { path: '/captions', name: 'Captions', component: Captions },
   // { path: '/searches', name: 'Searches', component: Searches },
 ];
 

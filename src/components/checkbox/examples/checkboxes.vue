@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="checkboxes">
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -136,7 +136,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'Checkboxes',

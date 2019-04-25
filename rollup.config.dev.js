@@ -10,7 +10,6 @@ import postcss from 'rollup-plugin-postcss';
 import serve from 'rollup-plugin-serve';
 import replace from 'rollup-plugin-replace';
 import livereload from 'rollup-plugin-livereload';
-import postcssScss from 'postcss-scss';
 import stringHash from 'string-hash';
 
 function resolve(dir) {
@@ -42,7 +41,6 @@ export default {
     vue({
       css: false,
       style: {
-        postcssOptions: { syntax: postcssScss },
         postcssCleanOptions: { disabled: true },
         postcssModulesOptions: {
           generateScopedName(name, filename, css) {
@@ -66,9 +64,8 @@ export default {
       },
     }),
     postcss({
-      syntax: 'postcss-scss',
       extract: 'public/cedar.css',
-      extensions: ['.postcss', '.pcss', '.scss', '.css'],
+      extensions: ['.scss', '.css'],
     }),
     commonjs(),
     serve({

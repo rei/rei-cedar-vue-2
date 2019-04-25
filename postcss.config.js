@@ -15,7 +15,7 @@ module.exports = {
     },
     'postcss-inline-svg': {
       // for correct paths during component-only css creation
-      path: process.env.NODE_ENV === 'css' ? './src/components/button/styles/' : '',
+      path: process.cwd(),
     },
     autoprefixer: {},
     // cssnano: {
