@@ -38,8 +38,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrList.vars.pcss';
-  @import './styles/CdrList.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrList.vars.scss';
+  @import './styles/CdrList.scss';
 </style>

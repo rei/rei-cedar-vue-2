@@ -1,5 +1,8 @@
 <template>
-  <div class="breadcrumb-demo-container">
+  <div
+    class="breadcrumb-demo-container"
+    data-backstop="breadcrumbs"
+  >
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -40,7 +43,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'Breadcrumb',

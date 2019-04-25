@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="cta-links">
     <cdr-text
       tag="h2"
       modifier="heading-small"

@@ -34,7 +34,7 @@
         href="https://rei.com"
         size="small"
         modifier="secondary"
-        data-backstop="cdr-button--small secondary anchor"
+        data-backstop="cdr-button--size"
       >Link <span>text in span</span>
       </cdr-button>
     </div>

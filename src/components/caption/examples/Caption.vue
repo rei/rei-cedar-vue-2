@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div>
+  <div data-backstop="caption">
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -51,14 +51,12 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
-import CdrCaption from '../CdrCaption';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'CaptionExample',
   components: {
     ...Components,
-    CdrCaption,
   },
 };
 </script>
