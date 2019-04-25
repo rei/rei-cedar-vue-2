@@ -7,7 +7,9 @@ import commonjs from 'rollup-plugin-commonjs';
 import alias from 'rollup-plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
-import babel from 'rollup-plugin-babel';
+import serve from 'rollup-plugin-serve';
+import replace from 'rollup-plugin-replace';
+import livereload from 'rollup-plugin-livereload';
 import postcssScss from 'postcss-scss';
 import stringHash from 'string-hash';
 
@@ -15,7 +17,12 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
+const isDev = process.env.ROLLUP_WATCH;
+
 const plugins = [
+  replace({
+    'process.env.NODE_ENV': JSON.stringify(isDev),
+  }),
   alias({
     resolve: ['.vue', '.json', '.js'],
     srcdir: resolve('src'),
@@ -50,32 +57,32 @@ const plugins = [
       },
     },
     template: {
-      isProduction: true,
+      isProduction: false,
     },
   }),
   postcss({
     syntax: 'postcss-scss',
-    extract: 'dist/cedar.css',
+    extract: 'public/cedar.css',
     extensions: ['.postcss', '.pcss', '.scss', '.css'],
   }),
   commonjs(),
-  babel({
-    exclude: 'node_modules/**',
-    runtimeHelpers: true,
+  serve({
+    open: true,
+    contentBase: 'public',
+    port: 3000,
   }),
+  livereload(),
 ];
 
 export default {
-  input: 'src/components/_index.js',
-  output: [
-    {
-      file: 'dist/cedar.cjs.js',
-      format: 'cjs',
-    },
-    {
-      file: 'dist/cedar.esm.js',
-      format: 'esm',
-    },
-  ],
+  input: 'src/dev.js',
+  output: {
+    file: 'public/kitchen-sink.iife.js',
+    format: 'iife',
+    name: 'cedar',
+  },
   plugins,
+  watch: {
+    clearScreen: false,
+  },
 };
