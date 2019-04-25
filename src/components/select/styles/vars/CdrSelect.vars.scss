@@ -13,7 +13,7 @@ $cdr-select-base-text-align: start;
 $cdr-select-base-color: #000000;
 $cdr-select-base-border: 1px solid #c5c5c5;
 $cdr-select-base-border-radius: $cdr-radius-soft;
-$cdr-select-base-height: $cdr-space-one-and-a-half-x + $cdr-select-base-line-height;
+$cdr-select-base-height: calc($cdr-space-one-and-a-half-x + $cdr-select-base-line-height);
 $cdr-select-base-background-color: #ffffff;
 $cdr-select-base-background-color-disabled: #e9e9e9;
 
