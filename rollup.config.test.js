@@ -7,6 +7,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import alias from 'rollup-plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
+// import replace from 'rollup-plugin-replace';
 import babel from 'rollup-plugin-babel';
 import postcssScss from 'postcss-scss';
 import stringHash from 'string-hash';
@@ -50,12 +51,11 @@ const plugins = [
       },
     },
     template: {
-      isProduction: true,
+      isProduction: false,
     },
   }),
   postcss({
     syntax: 'postcss-scss',
-    extract: 'dist/cedar.css',
     extensions: ['.postcss', '.pcss', '.scss', '.css'],
   }),
   commonjs(),
@@ -65,13 +65,9 @@ const plugins = [
   }),
 ];
 
-export default {
+const config = {
   input: 'src/components/_index.js',
   output: [
-    {
-      file: 'dist/cedar.cjs.js',
-      format: 'cjs',
-    },
     {
       file: 'dist/cedar.esm.js',
       format: 'esm',
@@ -79,3 +75,5 @@ export default {
   ],
   plugins,
 };
+
+export default config;

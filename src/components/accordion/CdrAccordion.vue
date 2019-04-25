@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import modifier from 'mixinsdir/modifier';
+import modifier from '../../mixins/modifier';
 
 export default {
   name: 'CdrAccordion',

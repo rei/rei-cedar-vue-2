@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import CdrAccordionItem from 'componentsdir/accordion/CdrAccordionItem';
+import { CdrAccordionItem } from 'distdir/cedar.esm.js';
 
 const propsData = {
   id: 'test',
