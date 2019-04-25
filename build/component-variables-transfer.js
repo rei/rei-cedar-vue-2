@@ -5,6 +5,10 @@ const glob = require('glob');
 const DEST_REPO_NAME = 'rei-cedar-component-variables';
 const DEST_PATH = 'dist/scss';
 const SUPPORTED_COMPONENTS = [
+  /* global vars */
+  'responsive.vars.scss',
+  'options.vars.scss',
+  /* component vars */
   'CdrButton.vars.scss',
   'CdrLink.vars.scss',
   'text.vars.scss',
@@ -15,7 +19,6 @@ const SUPPORTED_COMPONENTS = [
 
 const destMixinsDir = path.join(__dirname, `../../${DEST_REPO_NAME + path.sep + DEST_PATH}`);
 
-let index = '';
 // get vars files
 const files = glob.sync('../**/*.vars.pcss', { ignore: ['../**/node_modules/**'] });
 
@@ -28,8 +31,9 @@ files.forEach((f) => {
 
   const outDest = `${destMixinsDir}/${outFname}`;
   fs.copySync(f, outDest);
-  index += `@import "./${outFname}";\n`;
   console.log(`copied ${fname} to ${outDest}`)
 });
+
+const index = SUPPORTED_COMPONENTS.map(fname => `@import "./${fname}";\n`).join('');
 
 fs.outputFileSync(`${destMixinsDir}/index.scss`, index);
