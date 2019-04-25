@@ -19,7 +19,7 @@
 ========================================================================== */
 
 .cdr-checkbox {
-  @include cdr-checkbox-base-mixin;
+  @include cdr-label-base-mixin;
 
   position: relative;
   padding-left: calc($checkbox-figure-size + $checkbox-figure-space-right);
@@ -95,7 +95,7 @@
     }
 
     & > .cdr-checkbox__content {
-      @include cdr-checkbox-hover-mixin;
+      @include cdr-label-hover-mixin;
     }
 
     & > .cdr-checkbox__input {
@@ -122,7 +122,7 @@
   ========== */
   &__input:disabled {
     & ~ .cdr-checkbox__content {
-      @include cdr-checkbox-disabled-mixin;
+      @include cdr-label-disabled-mixin;
     }
 
     & ~ .cdr-checkbox__figure {
@@ -172,7 +172,7 @@
     ========== */
 
   &--compact {
-    @include cdr-checkbox-compact-mixin;
+    @include cdr-label-compact-mixin;
 
     & > .cdr-checkbox__figure {
       top: $checkbox-compact-figure-space-top;

@@ -1,0 +1,36 @@
+@mixin cdr-label-base-text-mixin() {
+  @include redwood-display-30;
+}
+
+$cdr-label-base-color: #292929;
+$cdr-label-base-display: inline-block;
+$cdr-label-base-margin: 0;
+@mixin cdr-label-base-mixin() {
+  @include cdr-label-base-text-mixin;
+
+  color: $cdr-label-base-color;
+  display: $cdr-label-base-display;
+  margin: $cdr-label-base-margin;
+}
+
+$cdr-label-base-cursor-hover: pointer;
+
+@mixin cdr-label-hover-mixin() {
+  cursor: $cdr-label-base-cursor-hover;
+}
+
+$cdr-label-base-cursor-disabled: default;
+$cdr-label-color-disabled: #b8b8b8;
+
+@mixin cdr-label-disabled-mixin() {
+  color: $cdr-label-color-disabled !important;
+  cursor: $cdr-label-base-cursor-disabled;
+}
+
+
+@mixin cdr-label-compact-text-mixin() {
+  @include redwood-display-20;
+}
+@mixin cdr-label-compact-mixin() {
+  @include cdr-label-compact-text-mixin;
+}
