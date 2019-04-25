@@ -2,7 +2,6 @@ const config = {
   verbose: true,
   moduleFileExtensions: [
     'js',
-    'vue',
     'json',
   ],
   moduleNameMapper: {
@@ -15,7 +14,6 @@ const config = {
     'distdir(.*)$': '<rootDir>/dist/$1',
   },
   transform: {
-    '.*\\.(vue)$': 'vue-jest',
     '^.+\\.(js|jsx)?$': 'babel-jest',
     '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
   },
