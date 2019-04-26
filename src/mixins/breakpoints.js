@@ -8,9 +8,11 @@
 /**
  * @mixin
  */
-const SMBreakpoint = 768;
-const MDBreakpoint = 992;
-const LGBreakpoint = 1200;
+import cdrTokens from '@rei/cdr-tokens/dist/js/cdr-tokens.common';
+
+const SMBreakpoint = cdrTokens.CdrBreakpointSm;
+const MDBreakpoint = cdrTokens.CdrBreakpointMd;
+const LGBreakpoint = cdrTokens.CdrBreakpointLg;
 
 export default {
   methods: {
