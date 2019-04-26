@@ -167,7 +167,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
   .wrap {
     width: 180px;
   }
