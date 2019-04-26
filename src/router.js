@@ -1,6 +1,6 @@
-// import Texts from 'componentsdir/text/examples/Text';
-
+// TODO: are we keeping this?
 // import Searches from 'compositionsdir/search/examples/searchbox';
+
 import App from 'srcdir/App';
 import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
@@ -22,6 +22,7 @@ import Radios from 'componentsdir/radio/examples/Radios';
 import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
+import Texts from 'componentsdir/text/examples/Text';
 
 const routes = [
   { path: '/', component: App },
@@ -45,7 +46,7 @@ const routes = [
   { path: '/ratings', name: 'Ratings', component: Ratings },
   { path: '/selects', name: 'Selects', component: Selects },
   { path: '/tabs', name: 'Tabs', component: Tabs },
-  // { path: '/texts', name: 'Texts', component: Texts },
+  { path: '/texts', name: 'Texts', component: Texts },
   // { path: '/searches', name: 'Searches', component: Searches },
 ];
 

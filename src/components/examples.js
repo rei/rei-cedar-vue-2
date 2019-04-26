@@ -18,15 +18,11 @@ import radios from 'componentsdir/radio/examples/Radios';
 import ratings from 'componentsdir/rating/examples/Ratings';
 import selects from 'componentsdir/select/examples/Selects';
 import tabs from 'componentsdir/tabs/examples/Tabs';
-// import texts from 'componentsdir/text/examples/Text';
-// import searchbox from 'compositionsdir/search/examples/searchbox';
-
+import texts from 'componentsdir/text/examples/Text';
 import utilities from 'componentsdir/Utilities/Utilities';
 
-// export default {
-//   texts,
-//   utilities,
-// };
+// TODO: are we keeping this?
+// import searchbox from 'compositionsdir/search/examples/searchbox';
 
 export default {
   accordion,
@@ -49,5 +45,6 @@ export default {
   ratings,
   selects,
   tabs,
+  texts,
   utilities,
 };
