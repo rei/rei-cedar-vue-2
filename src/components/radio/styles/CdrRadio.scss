@@ -25,7 +25,7 @@
   display: inline-block;
   margin: 0;
   position: relative;
-  padding-left: calc($radio-figure-size + $radio-figure-space-right);
+  padding-left: calc(#{$radio-figure-size} + #{$radio-figure-space-right});
 
   /* Elements
     ========================================================================== */

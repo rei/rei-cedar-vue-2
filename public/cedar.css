@@ -4264,6 +4264,181 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
     margin: 1.6rem 0;
 }
 }
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrRadio
+
+  All values should map to variables in
+  vars/CdrRadio.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - Radio
+      :Elements
+        :wrap
+        :input
+        :figure
+      :States
+      :Modifiers
+        :compact
+        :hide-figure
+========================================================================== */
+.cdr-radio_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  color: #292929;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  padding-left: 2.4rem;
+  /* Elements
+    ========================================================================== */
+  /* Wrap
+  ========== */
+  /* Input
+  ========== */
+  /* Figure
+  ========== */
+  /* States
+    ========================================================================== */
+  /* Checked
+  ========== */
+  /* Hover */
+  /* Disabled
+  ========== */
+  /* Active
+  ========== */
+  /* Focus
+  ========== */
+  /* Modifiers
+    ========================================================================== */
+  /* Compact
+    ========== */
+  /* Hide Figure
+    ========== */
+}
+.cdr-radio__wrap_1\.0\.0-alpha\.0 {
+  /* get rid of inline-block whitespace from label element */
+  font-size: 0;
+}
+.cdr-radio__input_1\.0\.0-alpha\.0 {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.cdr-radio__figure_1\.0\.0-alpha\.0 {
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 0.1rem solid #616161;
+}
+.cdr-radio__figure_1\.0\.0-alpha\.0::after {
+  content: "";
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.cdr-radio__input_1\.0\.0-alpha\.0:checked ~ .cdr-radio__figure_1\.0\.0-alpha\.0 {
+  border-color: #3278ae;
+}
+.cdr-radio__input_1\.0\.0-alpha\.0:checked ~ .cdr-radio__figure_1\.0\.0-alpha\.0::after {
+  background-color: #3278ae;
+}
+.cdr-radio_1\.0\.0-alpha\.0:hover > .cdr-radio__figure_1\.0\.0-alpha\.0 {
+  cursor: pointer;
+  border-color: #616161;
+  background-color: #fafafa;
+}
+.cdr-radio_1\.0\.0-alpha\.0:hover > .cdr-radio__content_1\.0\.0-alpha\.0 {
+  cursor: pointer;
+}
+.cdr-radio_1\.0\.0-alpha\.0:hover > .cdr-radio__input_1\.0\.0-alpha\.0 {
+  /* Hover + Checked
+  ========== */
+}
+.cdr-radio_1\.0\.0-alpha\.0:hover > .cdr-radio__input_1\.0\.0-alpha\.0:checked ~ .cdr-radio__figure_1\.0\.0-alpha\.0 {
+  border-color: #2b6692;
+}
+.cdr-radio_1\.0\.0-alpha\.0:hover > .cdr-radio__input_1\.0\.0-alpha\.0:checked ~ .cdr-radio__figure_1\.0\.0-alpha\.0::after {
+  background-color: #2b6692;
+}
+.cdr-radio__input_1\.0\.0-alpha\.0:disabled {
+  /* Disabled + Checked
+  ========== */
+}
+.cdr-radio__input_1\.0\.0-alpha\.0:disabled ~ .cdr-radio__content_1\.0\.0-alpha\.0 {
+  color: #b8b8b8 !important;
+  cursor: default;
+}
+.cdr-radio__input_1\.0\.0-alpha\.0:disabled ~ .cdr-radio__figure_1\.0\.0-alpha\.0 {
+  border-color: #dadada !important;
+  background-color: #fafafa !important;
+  cursor: default;
+}
+.cdr-radio__input_1\.0\.0-alpha\.0:disabled:checked ~ .cdr-radio__figure_1\.0\.0-alpha\.0::after {
+  background-color: #dadada !important;
+}
+.cdr-radio_1\.0\.0-alpha\.0:active > .cdr-radio__figure_1\.0\.0-alpha\.0 {
+  border-color: #3278ae;
+  background-color: #ffffff;
+}
+.cdr-radio__input_1\.0\.0-alpha\.0:focus ~ .cdr-radio__figure_1\.0\.0-alpha\.0 {
+  border-color: #3278ae;
+  -webkit-box-shadow: 0 0 0.8rem 0 #3278ae;
+          box-shadow: 0 0 0.8rem 0 #3278ae;
+}
+.cdr-radio--compact_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+}
+.cdr-radio--compact_1\.0\.0-alpha\.0 > .cdr-radio__figure_1\.0\.0-alpha\.0 {
+  top: 0.2rem;
+}
+.cdr-radio--hide-figure_1\.0\.0-alpha\.0 {
+  padding-left: 0;
+}
+.cdr-radio--hide-figure_1\.0\.0-alpha\.0 > .cdr-radio__figure_1\.0\.0-alpha\.0 {
+  display: none;
+}
 
 .accordion-group {
   margin-bottom: 3rem;
@@ -5582,6 +5757,35 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
 
 
 
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+.wrap {
+  width: 18rem;
+}
+.no-box:checked ~ .no-box__content {
+  color: green;
+}
+.no-box:checked ~ .no-box__content::after {
+  content: "(checked)";
+}
 
 
 

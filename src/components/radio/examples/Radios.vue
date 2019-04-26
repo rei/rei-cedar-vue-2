@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="radios">
     <cdr-text
       tag="h2"
       modifier="heading-medium"
@@ -129,7 +129,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'Radios',
@@ -148,7 +148,7 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style lang="scss">
   .wrap {
     width: 180px;
   }
