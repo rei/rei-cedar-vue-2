@@ -54,7 +54,8 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
-import { debounce, delay } from 'lodash';
+import debounce from 'lodash/debounce';
+import delay from 'lodash/delay';
 
 export default {
   name: 'CdrTabs',
@@ -229,7 +230,6 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/CdrTabs.pcss';
+<style lang="scss" module>
+  @import './styles/CdrTabs.scss';
 </style>

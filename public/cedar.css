@@ -4748,6 +4748,285 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
     letter-spacing: normal;
 }
 }
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrTabPanel
+
+  TOC:
+
+    :Base - CdrTabPanel
+
+========================================================================== */
+.cdr-tab-panel_1\.0\.0-alpha\.0 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-top: 0.2rem;
+}
+@-webkit-keyframes flyLeft_1.0.0-alpha.0 {
+from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+to {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+}
+}
+@keyframes flyLeft_1.0.0-alpha.0 {
+from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+to {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+}
+}
+@-webkit-keyframes flyRight_1.0.0-alpha.0 {
+from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+to {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+}
+}
+@keyframes flyRight_1.0.0-alpha.0 {
+from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+to {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+}
+}
+.flyLeft_1\.0\.0-alpha\.0 {
+  -webkit-animation-duration: cdr-duration-5-x;
+          animation-duration: cdr-duration-5-x;
+  /* animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); */
+  -webkit-animation-name: flyLeft_1.0.0-alpha.0;
+          animation-name: flyLeft_1.0.0-alpha.0;
+}
+.flyRight_1\.0\.0-alpha\.0 {
+  -webkit-animation-duration: cdr-duration-5-x;
+          animation-duration: cdr-duration-5-x;
+  /* animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); */
+  -webkit-animation-name: flyRight_1.0.0-alpha.0;
+          animation-name: flyRight_1.0.0-alpha.0;
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrTabs
+
+  All values should map to variables in
+  vars/CdrTabs.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrTabs
+    :Elements
+      :header
+      :header-item
+      :header-item-button
+      :underline
+      :content-container
+    :Modifiers
+      :compact
+      :no-border
+      :full-width
+========================================================================== */
+.cdr-tabs_1\.0\.0-alpha\.0 {
+  /* overflow-x: auto; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  height: 50rem;
+  /* Compact
+    ========== */
+  /* No Border
+    ========== */
+  /* Full Width
+    ========== */
+}
+.cdr-tabs__header-container_1\.0\.0-alpha\.0 {
+  overflow-x: auto;
+  border-bottom: 0.1rem solid #b8b8b8;
+  -webkit-overflow-scrolling: touch;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.cdr-tabs__gradient-container_1\.0\.0-alpha\.0 {
+  position: relative;
+}
+.cdr-tabs__gradient-container_1\.0\.0-alpha\.0::before {
+  transition: opacity 150ms ease;
+  -webkit-transition: opacity 150ms ease;
+  content: "";
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3.6rem;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), to(#ffffff));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);
+  pointer-events: none;
+  opacity: 0;
+}
+.cdr-tabs__gradient-container_1\.0\.0-alpha\.0::after {
+  transition: opacity 150ms ease;
+  -webkit-transition: opacity 150ms ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 3.6rem;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(#ffffff));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+  pointer-events: none;
+  opacity: 0;
+}
+.cdr-tabs__header_1\.0\.0-alpha\.0 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  margin: 0;
+  /* align-content: stretch; */
+  padding: 0;
+  position: relative;
+}
+.cdr-tabs__header-gradient-left_1\.0\.0-alpha\.0::before {
+  opacity: 1;
+}
+.cdr-tabs__header-gradient-right_1\.0\.0-alpha\.0::after {
+  opacity: 1;
+}
+.cdr-tabs__header-item_1\.0\.0-alpha\.0 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+}
+.cdr-tabs__header-item_1\.0\.0-alpha\.0[aria-selected] > .cdr-tabs__header-item-label_1\.0\.0-alpha\.0 {
+  color: #3278ae;
+}
+.cdr-tabs__header-item-label_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  text-decoration: none;
+  margin: 0 1.6rem 0 0;
+  padding: 1.2rem 0.8rem;
+  color: #292929;
+  white-space: nowrap;
+  outline-offset: -0.3rem;
+}
+.cdr-tabs__header-item-label_1\.0\.0-alpha\.0:active, .cdr-tabs__header-item-label_1\.0\.0-alpha\.0:hover, .cdr-tabs__header-item-label_1\.0\.0-alpha\.0:focus {
+  text-decoration: none;
+  color: #3278ae;
+}
+.cdr-tabs__underline_1\.0\.0-alpha\.0 {
+  position: absolute;
+  width: 3rem;
+  margin: 0;
+  height: 0.4rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  /* border: none; */
+  background: #3278ae;
+  -webkit-transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
+  transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
+}
+.cdr-tabs__content-container_1\.0\.0-alpha\.0 {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: auto;
+}
+.cdr-tabs_1\.0\.0-alpha\.0 .fade-enter-active_1\.0\.0-alpha\.0,
+.cdr-tabs_1\.0\.0-alpha\.0 .fade-leave-active_1\.0\.0-alpha\.0 {
+  opacity: 0.5s;
+}
+.cdr-tabs_1\.0\.0-alpha\.0 .fade-enter_1\.0\.0-alpha\.0,
+.cdr-tabs_1\.0\.0-alpha\.0 .fade-leave-to_1\.0\.0-alpha\.0 {
+  opacity: 0;
+}
+.cdr-tabs--compact_1\.0\.0-alpha\.0 .cdr-tabs__header-item-label_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  margin: 0 0.8rem 0 0;
+  padding: 0.6rem 1.2rem;
+}
+.cdr-tabs--no-border_1\.0\.0-alpha\.0 .cdr-tabs__header_1\.0\.0-alpha\.0,
+.cdr-tabs--no-border_1\.0\.0-alpha\.0 .cdr-tabs__header-container_1\.0\.0-alpha\.0 {
+  border-bottom: 0.1rem solid transparent;
+}
+.cdr-tabs--full-width_1\.0\.0-alpha\.0 .cdr-tabs__header_1\.0\.0-alpha\.0 {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 
 .accordion-group {
   margin-bottom: 3rem;
@@ -6376,6 +6655,12 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
 
 
 
+
+
+.tab-demo-section {
+  text-align: center;
+  padding-top: 2.5rem;
+}
 
 /* Tokens */
 /* Settings */
