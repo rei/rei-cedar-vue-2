@@ -8,7 +8,7 @@ import alias from 'rollup-plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import babel from 'rollup-plugin-babel';
-import stringHash from 'string-hash';
+import packageJson from './package.json';
 
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -32,11 +32,8 @@ const plugins = [
       postcssCleanOptions: { disabled: true },
       postcssModulesOptions: {
         generateScopedName(name, filename, css) {
-          const hash = stringHash(css)
-            .toString(36)
-            .substr(0, 5);
           // to preseve '@' in responsive class names
-          return `${name}-${hash}`;
+          return `${name}_${packageJson.version}`;
         },
       },
     },

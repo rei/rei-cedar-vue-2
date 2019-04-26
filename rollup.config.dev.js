@@ -10,7 +10,7 @@ import postcss from 'rollup-plugin-postcss';
 import serve from 'rollup-plugin-serve';
 import replace from 'rollup-plugin-replace';
 import livereload from 'rollup-plugin-livereload';
-import stringHash from 'string-hash';
+import packageJson from './package.json';
 
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -44,11 +44,8 @@ export default {
         postcssCleanOptions: { disabled: true },
         postcssModulesOptions: {
           generateScopedName(name, filename, css) {
-            const hash = stringHash(css)
-              .toString(36)
-              .substr(0, 5);
             // to preseve '@' in responsive class names
-            return `${name}-${hash}`;
+            return `${name}_${packageJson.version}`;
           },
         },
       },
@@ -65,6 +62,12 @@ export default {
     }),
     postcss({
       extract: 'public/cedar.css',
+      // modules: {
+      //   generateScopedName(name, filename, css) {
+      //     // to preseve '@' in responsive class names
+      //     return `${name}-${packageJson.version}`;
+      //   },
+      // },
       extensions: ['.scss', '.css'],
     }),
     commonjs(),
