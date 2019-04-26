@@ -13,7 +13,7 @@ import inputs from 'componentsdir/input/examples/Inputs';
 import links from 'componentsdir/link/examples/Links';
 import lists from 'componentsdir/list/examples/Lists';
 import pagination from 'componentsdir/pagination/examples/Pagination';
-// import quoteExample from 'componentsdir/quote/examples/Quote';
+import quoteExample from 'componentsdir/quote/examples/Quote';
 // import radios from 'componentsdir/radio/examples/Radios';
 // import ratings from 'componentsdir/rating/examples/Ratings';
 import selects from 'componentsdir/select/examples/Selects';
@@ -24,7 +24,6 @@ import selects from 'componentsdir/select/examples/Selects';
 import utilities from 'componentsdir/Utilities/Utilities';
 
 // export default {
-//   quoteExample,
 //   radios,
 //   ratings,
 //   tabs,
@@ -48,6 +47,7 @@ export default {
   links,
   lists,
   pagination,
+  quoteExample,
   selects,
   utilities,
 };

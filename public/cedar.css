@@ -4191,6 +4191,79 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
     display: none;
 }
 }
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # Cdrquote
+
+  TOC:
+
+    :Base - Cdrquote
+========================================================================== */
+@import './spruceQuote.css';
+.cdr-quote_1\.0\.0-alpha\.0 {
+  margin: 0;
+  padding: 2.4rem 1.6rem;
+  line-height: 1;
+}
+.cdr-quote__summary_1\.0\.0-alpha\.0 {
+  font-size: 2rem;
+  font-style: italic;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 2.8rem;
+  letter-spacing: 0;
+  margin: 0;
+}
+@media (min-width: 768px) {
+.cdr-quote__summary_1\.0\.0-alpha\.0 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+}
+}
+.cdr-quote__summary_1\.0\.0-alpha\.0 + .cdr-quote__citation_1\.0\.0-alpha\.0 {
+  display: block;
+  padding-top: 1.6rem;
+}
+.cdr-quote--pull_1\.0\.0-alpha\.0 {
+  border-style: solid;
+  border-color: #222;
+}
+.cdr-quote--pull_1\.0\.0-alpha\.0 .cdr-quote__summary_1\.0\.0-alpha\.0 {
+  font-weight: 600;
+}
+@media (min-width: 0) {
+.cdr-quote--pull_1\.0\.0-alpha\.0 {
+    border-width: 0 0 0.1rem 0;
+    padding: 2.4rem 1.6rem;
+    margin: 0 0 1.6rem;
+}
+}
+@media (min-width: 768px) {
+.cdr-quote--pull_1\.0\.0-alpha\.0 {
+    border-width: 0 0 0 0.1rem;
+    padding: 0.8rem 1.6rem 0.8rem 3.2rem;
+    margin: 1.6rem 0;
+}
+}
 
 .accordion-group {
   margin-bottom: 3rem;
@@ -5215,6 +5288,196 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
 .list-examples {
   line-height: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

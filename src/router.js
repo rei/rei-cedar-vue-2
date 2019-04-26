@@ -1,4 +1,3 @@
-// import Quotes from 'componentsdir/quote/examples/Quote';
 // import Radios from 'componentsdir/radio/examples/Radios';
 // import Ratings from 'componentsdir/rating/examples/Ratings';
 // import Tabs from 'componentsdir/tabs/examples/Tabs';
@@ -21,6 +20,7 @@ import Input from 'componentsdir/input/examples/Inputs';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
 import Pagination from 'componentsdir/pagination/examples/Pagination';
+import Quotes from 'componentsdir/quote/examples/Quote';
 import Selects from 'componentsdir/select/examples/Selects';
 
 const routes = [
@@ -40,7 +40,7 @@ const routes = [
   { path: '/lists', name: 'Lists', component: Lists },
   { path: '/inputs', name: 'Input', component: Input },
   { path: '/pagination', name: 'Pagination', component: Pagination },
-  // { path: '/quotes', name: 'Quotes', component: Quotes },
+  { path: '/quotes', name: 'Quotes', component: Quotes },
   // { path: '/radios', name: 'Radios', component: Radios },
   // { path: '/ratings', name: 'Ratings', component: Ratings },
   { path: '/selects', name: 'Selects', component: Selects },

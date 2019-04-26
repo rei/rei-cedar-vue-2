@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { CdrText } from '@rei/cdr-text';
+import { default as CdrText } from 'componentsdir/text/CdrText';
 import modifier from 'mixinsdir/modifier';
 
 /**
@@ -56,7 +56,6 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/CdrQuote.pcss';
+<style lang="scss" module>
+  @import './styles/CdrQuote.scss';
 </style>
