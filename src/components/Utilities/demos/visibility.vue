@@ -324,7 +324,6 @@
 </template>
 
 <script>
-// import Components from 'componentsdir/_index';
 import { CdrText } from 'componentsdir/_index';
 
 export default {
@@ -335,7 +334,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .visibility-utilities {
   table,
   td {

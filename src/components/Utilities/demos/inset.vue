@@ -94,7 +94,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
   .example {
     background-color: rgba(27, 28, 28, 0.6);
   }

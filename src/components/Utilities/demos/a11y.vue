@@ -23,7 +23,6 @@
 </template>
 
 <script>
-// import Components from 'componentsdir/_index';
 import { CdrText, CdrLink } from 'componentsdir/_index';
 
 export default {

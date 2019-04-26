@@ -6816,6 +6816,254 @@ to {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+.visibility-utilities table,
+.visibility-utilities td {
+  border: 0.1rem solid lightgray;
+}
+.visibility-utilities table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  line-height: 1;
+}
+.visibility-utilities th {
+  text-align: left;
+  padding: 1rem;
+}
+.visibility-utilities td {
+  padding: 0.5rem;
+}
+.visibility-utilities td:not(:first-of-type) {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+.example {
+  background-color: rgba(27, 28, 28, 0.6);
+}
+.example > * {
+  background-color: rgba(249, 229, 229, 0.8);
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+.example {
+  background-color: rgba(27, 28, 28, 0.6);
+}
+.example > * {
+  background-color: rgba(249, 229, 229, 0.8);
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+.example {
+  background-color: rgba(27, 28, 28, 0.6);
+}
+.example > * {
+  background-color: rgba(249, 229, 229, 0.8);
+}
+
+.container-test {
+  background-color: lightblue;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Tokens */
 /* Settings */
 /* ==========================================================================/*
@@ -7495,11 +7743,14 @@ h6.cdr-text {
 * --------------------------------------------
 */
 .cdr-hide {
-  display: none !important; }
+  display: none !important;
+}
 
 @media (min-width: 0) and (max-width: 767px) {
   .cdr-hide\@xs-only {
-    display: none !important; } }
+    display: none !important;
+  } 
+}
 
 /* @sm
 ============ */

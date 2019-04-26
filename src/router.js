@@ -23,6 +23,7 @@ import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
+import Utilities from 'componentsdir/Utilities/Utilities';
 
 const routes = [
   { path: '/', component: App },
@@ -47,6 +48,7 @@ const routes = [
   { path: '/selects', name: 'Selects', component: Selects },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
+  { path: '/utilities', name: 'Utilities', component: Utilities },
   // { path: '/searches', name: 'Searches', component: Searches },
 ];
 
