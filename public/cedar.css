@@ -3977,6 +3977,220 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
   -webkit-transform: translate(100%, -50%);
           transform: translate(100%, -50%);
 }
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrSelect
+
+  This file provides a contract between
+  design tokens and cedar non-changing variables.
+
+  TOC:
+
+    :Base - Select
+      :States
+========================================================================== */
+/* States
+    ---------- */
+/* disabled */
+/* ==========================================================================
+  # CdrSelect
+
+  All values should map to variables in
+  vars/CdrSelect.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - Select
+      :States
+========================================================================== */
+.cdr-select_1\.0\.0-alpha\.0 {
+  /* States
+    ---------- */
+  /* Style variants
+    ========================================================================== */
+}
+.cdr-select_1\.0\.0-alpha\.0.cdr-select_1\.0\.0-alpha\.0 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-align: start;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  font-family: Roboto;
+  width: 100%;
+  display: block;
+  border: 0.1rem solid #c5c5c5;
+  border-radius: 0.2rem;
+  height: calc(2.4rem + 1.6rem);
+  background-color: #ffffff;
+  text-transform: none;
+  margin: 0;
+}
+.cdr-select_1\.0\.0-alpha\.0[multiple] {
+  padding: 0;
+}
+.cdr-select_1\.0\.0-alpha\.0 option {
+  line-height: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.cdr-select_1\.0\.0-alpha\.0[disabled] {
+  background-color: #e9e9e9;
+}
+.cdr-select--size_1\.0\.0-alpha\.0[size] {
+  height: auto;
+}
+.cdr-select__label_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  display: block;
+  margin: 0;
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrPagination
+
+  All values should map to variables in
+  vars/CdrPagination.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrPagination
+========================================================================== */
+.cdr-pagination_1\.0\.0-alpha\.0 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  padding: 0;
+  /* Responsive */
+}
+.cdr-pagination__li--links_1\.0\.0-alpha\.0 {
+  display: none;
+}
+.cdr-pagination__li--links_1\.0\.0-alpha\.0 + .cdr-pagination__li--links_1\.0\.0-alpha\.0 {
+  margin-left: 1.6rem;
+}
+.cdr-pagination__li--select_1\.0\.0-alpha\.0 {
+  display: block;
+}
+.cdr-pagination__link_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  color: #292929;
+  display: block;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+}
+.cdr-pagination__link_1\.0\.0-alpha\.0.current {
+  -webkit-box-shadow: inset 0 0 0 0.1rem #616161;
+          box-shadow: inset 0 0 0 0.1rem #616161;
+  border-radius: 0.4rem;
+}
+.cdr-pagination__link_1\.0\.0-alpha\.0.current:hover, .cdr-pagination__link_1\.0\.0-alpha\.0.current:focus, .cdr-pagination__link_1\.0\.0-alpha\.0.current:active {
+  text-decoration: none;
+}
+.cdr-pagination__link_1\.0\.0-alpha\.0:hover, .cdr-pagination__link_1\.0\.0-alpha\.0:focus, .cdr-pagination__link_1\.0\.0-alpha\.0:active {
+  color: #292929;
+  text-decoration: underline;
+}
+.cdr-pagination__ellipse_1\.0\.0-alpha\.0 {
+  display: block;
+  padding: 0.6rem 1.2rem;
+}
+.cdr-pagination__prev_1\.0\.0-alpha\.0 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 2.4rem;
+}
+.cdr-pagination__next_1\.0\.0-alpha\.0 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 2.4rem;
+}
+.cdr-pagination__caret--prev_1\.0\.0-alpha\.0 {
+  margin-right: 0.2rem;
+}
+.cdr-pagination__caret--next_1\.0\.0-alpha\.0 {
+  margin-left: 0.2rem;
+}
+.cdr-pagination__select_1\.0\.0-alpha\.0 {
+  max-width: 24rem;
+}
+@media (min-width: 768px) {
+.cdr-pagination__li--links_1\.0\.0-alpha\.0 {
+    display: block;
+}
+.cdr-pagination__li--select_1\.0\.0-alpha\.0 {
+    display: none;
+}
+}
 
 .accordion-group {
   margin-bottom: 3rem;
@@ -5001,6 +5215,273 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
 .list-examples {
   line-height: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Tokens */
 /* Settings */

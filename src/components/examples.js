@@ -12,11 +12,11 @@ import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
 import links from 'componentsdir/link/examples/Links';
 import lists from 'componentsdir/list/examples/Lists';
-// import pagination from 'componentsdir/pagination/examples/Pagination';
+import pagination from 'componentsdir/pagination/examples/Pagination';
 // import quoteExample from 'componentsdir/quote/examples/Quote';
 // import radios from 'componentsdir/radio/examples/Radios';
 // import ratings from 'componentsdir/rating/examples/Ratings';
-// import selects from 'componentsdir/select/examples/Selects';
+import selects from 'componentsdir/select/examples/Selects';
 // import tabs from 'componentsdir/tabs/examples/Tabs';
 // import texts from 'componentsdir/text/examples/Text';
 // import searchbox from 'compositionsdir/search/examples/searchbox';
@@ -24,11 +24,9 @@ import lists from 'componentsdir/list/examples/Lists';
 import utilities from 'componentsdir/Utilities/Utilities';
 
 // export default {
-//   pagination,
 //   quoteExample,
 //   radios,
 //   ratings,
-//   selects,
 //   tabs,
 //   texts,
 //   utilities,
@@ -49,5 +47,7 @@ export default {
   inputs,
   links,
   lists,
+  pagination,
+  selects,
   utilities,
 };

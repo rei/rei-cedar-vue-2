@@ -50,8 +50,10 @@
   /* Style variants
     ========================================================================== */
 
-  &--size&[size] {
-    height: auto;
+  &--size {
+    &[size] {
+      height: auto;
+    }
   }
 
   &__label {

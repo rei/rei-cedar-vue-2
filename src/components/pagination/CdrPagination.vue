@@ -86,8 +86,8 @@
 </template>
 
 <script>
-import { IconCaretLeft, IconCaretRight } from '@rei/cdr-icon';
-import { CdrSelect } from '@rei/cdr-select';
+import { IconCaretLeft, IconCaretRight } from 'componentsdir/icon/build/main';
+import { default as CdrSelect } from 'componentsdir/select/CdrSelect';
 
 export default {
   name: 'CdrPagination',
@@ -251,11 +251,6 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/CdrPagination.pcss';
-</style>
-
-<style>
-  @import '@rei/cdr-icon/dist/cdr-icon.css';
+<style lang="scss" module>
+  @import './styles/CdrPagination.scss';
 </style>

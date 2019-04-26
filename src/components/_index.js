@@ -1,8 +1,6 @@
-// import CdrPagination from 'componentsdir/pagination/CdrPagination';
 // import CdrQuote from 'componentsdir/quote/CdrQuote';
 // import CdrRadio from 'componentsdir/radio/CdrRadio';
 // import CdrRating from 'componentsdir/rating/CdrRating';
-// import CdrSelect from 'componentsdir/select/CdrSelect';
 // import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
 // import CdrTabs from 'componentsdir/tabs/CdrTabs';
 // import CdrThemer from 'componentsdir/themer/CdrThemer';
@@ -23,5 +21,7 @@ export { default as CdrImg } from 'componentsdir/image/CdrImg';
 export { default as CdrInput } from 'componentsdir/input/CdrInput';
 export { default as CdrLink } from 'componentsdir/link/CdrLink';
 export { default as CdrList } from 'componentsdir/list/CdrList';
+export { default as CdrPagination } from 'componentsdir/pagination/CdrPagination';
 export { default as CdrRow } from 'componentsdir/grid/CdrRow';
+export { default as CdrSelect } from 'componentsdir/select/CdrSelect';
 export { default as CdrText } from 'componentsdir/text/CdrText';

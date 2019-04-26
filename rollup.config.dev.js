@@ -10,6 +10,7 @@ import postcss from 'rollup-plugin-postcss';
 import serve from 'rollup-plugin-serve';
 import replace from 'rollup-plugin-replace';
 import livereload from 'rollup-plugin-livereload';
+import jsonPlugin from 'rollup-plugin-json';
 import packageJson from './package.json';
 
 function resolve(dir) {
@@ -38,6 +39,7 @@ export default {
       mixinsdir: resolve('src/mixins'),
     }),
     nodeResolve(),
+    jsonPlugin(),
     vue({
       css: false,
       style: {
