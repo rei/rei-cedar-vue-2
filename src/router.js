@@ -5,7 +5,6 @@
 // import Selects from 'componentsdir/select/examples/Selects';
 // import Tabs from 'componentsdir/tabs/examples/Tabs';
 // import Texts from 'componentsdir/text/examples/Text';
-// import Input from 'componentsdir/input/examples/Inputs';
 
 // import Searches from 'compositionsdir/search/examples/searchbox';
 import App from 'srcdir/App';
@@ -20,6 +19,7 @@ import DataTables from 'componentsdir/dataTable/examples/DataTable';
 import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
+import Input from 'componentsdir/input/examples/Inputs';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
 
@@ -38,7 +38,7 @@ const routes = [
   { path: '/images', name: 'Images', component: Images },
   { path: '/links', name: 'Links', component: Links },
   { path: '/lists', name: 'Lists', component: Lists },
-  // { path: '/inputs', name: 'Input', component: Input },
+  { path: '/inputs', name: 'Input', component: Input },
   // { path: '/pagination', name: 'Pagination', component: Pagination },
   // { path: '/quotes', name: 'Quotes', component: Quotes },
   // { path: '/radios', name: 'Radios', component: Radios },

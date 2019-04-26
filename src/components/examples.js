@@ -9,7 +9,7 @@ import dataTable from 'componentsdir/dataTable/examples/DataTable';
 import grid from 'componentsdir/grid/examples/Grid';
 import icons from 'componentsdir/icon/examples/Icons';
 import images from 'componentsdir/image/examples/Images';
-// import inputs from 'componentsdir/input/examples/Inputs';
+import inputs from 'componentsdir/input/examples/Inputs';
 import links from 'componentsdir/link/examples/Links';
 import lists from 'componentsdir/list/examples/Lists';
 // import pagination from 'componentsdir/pagination/examples/Pagination';
@@ -24,7 +24,6 @@ import lists from 'componentsdir/list/examples/Lists';
 import utilities from 'componentsdir/Utilities/Utilities';
 
 // export default {
-//   inputs,
 //   pagination,
 //   quoteExample,
 //   radios,
@@ -47,6 +46,7 @@ export default {
   grid,
   icons,
   images,
+  inputs,
   links,
   lists,
   utilities,

@@ -3348,6 +3348,352 @@
 * Outline
 * ------------------- */
 /* ==========================================================================
+  # CdrInput
+
+  This file provides a contract between
+  design tokens and cedar non-changing variables.
+
+  TOC:
+
+    :Base Image
+      :Modifiers
+        :Style Variants
+    :Base Media Frame
+========================================================================== */
+/* ==========================================================================
+  # INPUT LABEL
+  ========================================================================== */
+/* Assumed icon width of slot provided icon.  We may want to add a user provided
+    width option in the future.  */
+/*  KEEPING COMMENTED VARIABLES BELOW FOR LIKELY FUTURE USE.
+
+$input-label-color-text: $sys-color-input-label;
+$input-label-font-size: $sys-font-maple-utl-20-font-size;
+$input-label-line-height: $sys-font-maple-utl-20-line-height;
+$input-label-font-style: $sys-font-maple-utl-20-font-style;
+$input-label-font-weight: $sys-font-maple-utl-20-font-weight;
+$input-label-text-align: $sys-font-maple-utl-20-text-align;
+
+$input-label-margin-bottom: $cdr-space-xs;
+
+$input-label-disabled-color-text: $sys-color-input-disabled-label;
+$input-label-error-color-text: $sys-color-input-error-label; */
+/* ==========================================================================
+  # INPUT ICON
+  ========================================================================== */
+/* $input-icon-top: calc(($sys-font-redwood-ui-30-line-height - $sys-font-redwood-ui-30-font-size) / 2 + $cdr-space-sm-stretch);
+$input-icon-right: $cdr-space-sm;
+$input-icon-height: $sys-font-redwood-ui-30-font-size;
+$input-icon-width: $sys-font-redwood-ui-30-font-size;
+$input-icon-success-fill: $sys-color-success;
+$input-preicon: calc($cdr-space-sm-stretch * 2 + $inset-md); */
+/* ==========================================================================
+  # INPUT CONTAINER
+  ========================================================================== */
+/* $input-container-spacing: 16px; */
+/* ==========================================================================
+  # INPUT
+  ========================================================================== */
+/* $input-font-size: $sys-font-redwood-ui-30-font-size;
+$input-line-height: $sys-font-redwood-ui-30-line-height;
+$input-text-align: $sys-font-redwood-ui-30-text-align;
+$input-color-text: $sys-color-input-text;
+$input-font-style: $sys-font-redwood-ui-30-font-style;
+$input-font-weight: $sys-font-redwood-ui-30-font-weight;
+$input-font-family: $sys-font-redwood-ui-30-font-family;
+$input-background-color: $sys-color-input;
+$input-border-color: $sys-color-input-border;
+$input-border-style: solid;
+$input-border-radius: $radius-input;
+$input-border-width: 1px;
+$input-padding: $inset-sm--stretch;
+$input-height: calc($input-line-height + (2 * $input-border-width) + (2 * $cdr-space-sm-stretch)); */
+/* States
+  ---------- */
+/* disabled */
+/* $input-disabled-background-color: $sys-color-input-disabled;
+$input-disabled-text-color: $sys-color-input-disabled-text; */
+/* Modifier style variants
+  ========================================================================== */
+/* Error
+  ========== */
+/* $input-error-background-color: $sys-color-input-error;
+$input-error-border-color: $sys-color-input-error-border; */
+/* Warning
+  ========== */
+/* $input-warning-background-color: $sys-color-input-warning;
+$input-warning-border-color: $sys-color-input-warning-border; */
+/* Placeholder
+  ========== */
+/* $input-color-placeholder-text: $sys-color-input-placeholder-text;
+$input-line-height-placeholder: $sys-font-redwood-ui-30-line-height;
+$input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
+/* ==========================================================================
+  # CdrInput
+  All values should map to variables in
+  vars/CdrInput.vars.pcss
+  in order to allow for theming
+  TOC:
+    :Base - Label
+    :Base - Input container
+    :Base - Input
+      :States
+      :Modifiers
+      :Style Variants
+      :Elements
+========================================================================== */
+/* ==========================================================================
+  # INPUT LABEL
+  ========================================================================== */
+.cdr-input__label_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  color: #292929;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 0.4rem;
+  margin-right: 0.4rem;
+}
+.cdr-input__label--disabled_1\.0\.0-alpha\.0 {
+  color: #b8b8b8;
+}
+
+/* ==========================================================================
+  # INPUT
+  ========================================================================== */
+.cdr-input_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  color: #292929;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #616161;
+          box-shadow: inset 0 0 0 0.1rem #616161;
+  border: 0;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  height: 4rem;
+  display: block;
+  width: 100%;
+  overflow: visible;
+  margin: 0;
+  /* States
+  ---------- */
+  /* Style variants
+    ========================================================================== */
+  /* Size variants
+    ========================================================================== */
+  /* @xs
+    0px - 767px
+    ========== */
+  /* @sm
+    768px - 991px
+    ========== */
+  /* @md
+    992px - 1199px
+    ========== */
+  /* @lg
+    1200px and up
+    ========== */
+  /* Pseudo elements
+    ========================================================================== */
+  /* Slot Sections
+    ========================================================================== */
+}
+.cdr-input_1\.0\.0-alpha\.0[disabled] {
+  background-color: #fafafa;
+  color: #b8b8b8;
+  -webkit-box-shadow: inset 0 0 0 0.1rem #dadada;
+          box-shadow: inset 0 0 0 0.1rem #dadada;
+}
+.cdr-input_1\.0\.0-alpha\.0[disabled]:hover {
+  -webkit-box-shadow: inset 0 0 0 0.1rem #dadada;
+          box-shadow: inset 0 0 0 0.1rem #dadada;
+}
+.cdr-input_1\.0\.0-alpha\.0[disabled]::-webkit-input-placeholder {
+  color: #b8b8b8;
+}
+.cdr-input_1\.0\.0-alpha\.0[disabled]:-ms-input-placeholder {
+  color: #b8b8b8;
+}
+.cdr-input_1\.0\.0-alpha\.0[disabled]::-ms-input-placeholder {
+  color: #b8b8b8;
+}
+.cdr-input_1\.0\.0-alpha\.0[disabled]::placeholder {
+  color: #b8b8b8;
+}
+.cdr-input_1\.0\.0-alpha\.0:active, .cdr-input_1\.0\.0-alpha\.0:focus {
+  -webkit-box-shadow: inset 0 0 0 0.1rem #3278ae;
+          box-shadow: inset 0 0 0 0.1rem #3278ae;
+}
+.cdr-input--multiline_1\.0\.0-alpha\.0 {
+  height: auto;
+}
+.cdr-input--preicon_1\.0\.0-alpha\.0 {
+  /* $input-pre-icon-default-width = 25px with the expectation that
+      slot provided icon is close to that width */
+  padding-left: calc(1.2rem + 2.5rem);
+}
+.cdr-input--large_1\.0\.0-alpha\.0 {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  height: 4.8rem;
+}
+@media (min-width: 0) and (max-width: 767px) {
+.cdr-input--large\@xs_1\.0\.0-alpha\.0 {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    height: 4.8rem;
+}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+.cdr-input--large\@sm_1\.0\.0-alpha\.0 {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    height: 4.8rem;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+.cdr-input--large\@md_1\.0\.0-alpha\.0 {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    height: 4.8rem;
+}
+}
+@media (min-width: 1200px) {
+.cdr-input--large\@lg_1\.0\.0-alpha\.0 {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    height: 4.8rem;
+}
+}
+.cdr-input_1\.0\.0-alpha\.0::-webkit-input-placeholder {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  font-style: italic;
+  color: #7a7a7a;
+}
+.cdr-input_1\.0\.0-alpha\.0:-ms-input-placeholder {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  font-style: italic;
+  color: #7a7a7a;
+}
+.cdr-input_1\.0\.0-alpha\.0::-ms-input-placeholder {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  font-style: italic;
+  color: #7a7a7a;
+}
+.cdr-input_1\.0\.0-alpha\.0::placeholder {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+  font-style: italic;
+  color: #7a7a7a;
+}
+.cdr-input_1\.0\.0-alpha\.0[type=number]::-webkit-inner-spin-button, .cdr-input_1\.0\.0-alpha\.0[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.cdr-input__pre-icon_1\.0\.0-alpha\.0 {
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  fill: #7a7a7a;
+}
+.cdr-input__post-icon_1\.0\.0-alpha\.0 {
+  fill: #7a7a7a;
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.cdr-input__required-label_1\.0\.0-alpha\.0 {
+  color: #616161;
+}
+.cdr-input__info-container_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  float: right;
+}
+.cdr-input__helper-text_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  color: #616161;
+  padding-left: 0.8rem;
+  padding-top: 0.4rem;
+}
+
+/* ==========================================================================
+   # INPUT WRAPPER
+   ========================================================================== */
+.cdr-input-wrap_1\.0\.0-alpha\.0 {
+  position: relative;
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
   # CdrLink
 
   TOC:
@@ -4169,6 +4515,13 @@
 
 .cdr-img-test {
   background-color: lightblue;
+}
+
+
+.demo-input {
+  margin: 1rem;
+  background: white;
+  line-height: 1;
 }
 
 
