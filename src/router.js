@@ -1,7 +1,3 @@
-// import Buttons from 'componentsdir/button/examples/Buttons';
-// import Cta from 'componentsdir/cta/examples/Cta';
-// import Images from 'componentsdir/image/examples/Images';
-// import Links from 'componentsdir/link/examples/Links';
 // import Pagination from 'componentsdir/pagination/examples/Pagination';
 // import Quotes from 'componentsdir/quote/examples/Quote';
 // import Radios from 'componentsdir/radio/examples/Radios';
@@ -23,6 +19,7 @@ import Cta from 'componentsdir/cta/examples/Cta';
 import DataTables from 'componentsdir/dataTable/examples/DataTable';
 import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
+import Images from 'componentsdir/image/examples/Images';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
 
@@ -38,7 +35,7 @@ const routes = [
   { path: '/dataTables', name: 'Data Tables', component: DataTables },
   { path: '/grids', name: 'Grids', component: Grids },
   { path: '/icons', name: 'Icons', component: Icons },
-  // { path: '/images', name: 'Images', component: Images },
+  { path: '/images', name: 'Images', component: Images },
   { path: '/links', name: 'Links', component: Links },
   { path: '/lists', name: 'Lists', component: Lists },
   // { path: '/inputs', name: 'Input', component: Input },

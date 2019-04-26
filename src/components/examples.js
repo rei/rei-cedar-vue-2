@@ -8,7 +8,7 @@ import cta from 'componentsdir/cta/examples/Cta';
 import dataTable from 'componentsdir/dataTable/examples/DataTable';
 import grid from 'componentsdir/grid/examples/Grid';
 import icons from 'componentsdir/icon/examples/Icons';
-// import images from 'componentsdir/image/examples/Images';
+import images from 'componentsdir/image/examples/Images';
 // import inputs from 'componentsdir/input/examples/Inputs';
 import links from 'componentsdir/link/examples/Links';
 import lists from 'componentsdir/list/examples/Lists';
@@ -24,7 +24,6 @@ import lists from 'componentsdir/list/examples/Lists';
 import utilities from 'componentsdir/Utilities/Utilities';
 
 // export default {
-//   images,
 //   inputs,
 //   pagination,
 //   quoteExample,
@@ -47,6 +46,7 @@ export default {
   dataTable,
   grid,
   icons,
+  images,
   links,
   lists,
   utilities,

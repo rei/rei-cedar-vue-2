@@ -3082,6 +3082,272 @@
 * Outline
 * ------------------- */
 /* ==========================================================================
+  # CdrImg
+
+  All values should map to variables in
+  vars/CdrImg.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - Image
+      :Modifiers
+        :Style Variants
+    :Base - Media Frame
+      :Modifiers
+        :Aspect Ratios
+          :normal
+          :@small
+          :@medium
+          :@large
+        :Cropping
+      :Elements
+========================================================================== */
+/* ==========================================================================
+   # Image
+   ========================================================================== */
+.cdr-image_1\.0\.0-alpha\.0 {
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none;
+  /* Style variants
+    ========================================================================== */
+  /* responsive
+    ========== */
+  /* rounded
+    ========== */
+  /* circle
+    ========== */
+}
+.cdr-image--responsive_1\.0\.0-alpha\.0 {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.cdr-image--rounded_1\.0\.0-alpha\.0 {
+  border-radius: 0.4rem;
+}
+.cdr-image--circle_1\.0\.0-alpha\.0 {
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   # MEDIA FRAME
+   ========================================================================== */
+.cdr-media-frame_1\.0\.0-alpha\.0 {
+  position: relative;
+  overflow: hidden;
+  /* Aspect ratios
+    ========================================================================== */
+  /* Aspect ratios @ small
+    ========== */
+  /* Aspect ratios @ medium
+    ========== */
+  /* Aspect ratios @ large
+    ========== */
+  /* Cropping variants
+    ========================================================================== */
+  /* Block elements
+    ========================================================================== */
+}
+.cdr-media-frame_1\.0\.0-alpha\.0::before {
+  content: "";
+  height: 0;
+  display: block;
+}
+.cdr-media-frame--auto_1\.0\.0-alpha\.0::before {
+  padding-bottom: 0;
+}
+.cdr-media-frame--square_1\.0\.0-alpha\.0::before {
+  padding-bottom: 100%;
+}
+.cdr-media-frame--1-2_1\.0\.0-alpha\.0::before {
+  padding-bottom: 200%;
+}
+.cdr-media-frame--2-3_1\.0\.0-alpha\.0::before {
+  padding-bottom: 150%;
+}
+.cdr-media-frame--3-4_1\.0\.0-alpha\.0::before {
+  padding-bottom: 133.3333333333%;
+}
+.cdr-media-frame--9-16_1\.0\.0-alpha\.0::before {
+  padding-bottom: 177.7777777778%;
+}
+.cdr-media-frame--2-1_1\.0\.0-alpha\.0::before {
+  padding-bottom: 50%;
+}
+.cdr-media-frame--3-2_1\.0\.0-alpha\.0::before {
+  padding-bottom: 66.6666666667%;
+}
+.cdr-media-frame--4-3_1\.0\.0-alpha\.0::before {
+  padding-bottom: 75%;
+}
+.cdr-media-frame--16-9_1\.0\.0-alpha\.0::before {
+  padding-bottom: 56.25%;
+}
+@media (min-width: 768px) {
+.cdr-media-frame--auto\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 0;
+}
+.cdr-media-frame--square\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 100%;
+}
+.cdr-media-frame--1-2\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 200%;
+}
+.cdr-media-frame--2-3\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 150%;
+}
+.cdr-media-frame--3-4\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 133.3333333333%;
+}
+.cdr-media-frame--9-16\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 177.7777777778%;
+}
+.cdr-media-frame--2-1\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 50%;
+}
+.cdr-media-frame--3-2\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 66.6666666667%;
+}
+.cdr-media-frame--4-3\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 75%;
+}
+.cdr-media-frame--16-9\@sm_1\.0\.0-alpha\.0::before {
+    padding-bottom: 56.25%;
+}
+}
+@media (min-width: 992px) {
+.cdr-media-frame--auto\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 0;
+}
+.cdr-media-frame--square\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 100%;
+}
+.cdr-media-frame--1-2\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 200%;
+}
+.cdr-media-frame--2-3\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 150%;
+}
+.cdr-media-frame--3-4\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 133.3333333333%;
+}
+.cdr-media-frame--9-16\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 177.7777777778%;
+}
+.cdr-media-frame--2-1\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 50%;
+}
+.cdr-media-frame--3-2\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 66.6666666667%;
+}
+.cdr-media-frame--4-3\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 75%;
+}
+.cdr-media-frame--16-9\@md_1\.0\.0-alpha\.0::before {
+    padding-bottom: 56.25%;
+}
+}
+@media (min-width: 1200px) {
+.cdr-media-frame--auto\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 0;
+}
+.cdr-media-frame--square\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 100%;
+}
+.cdr-media-frame--1-2\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 200%;
+}
+.cdr-media-frame--2-3\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 150%;
+}
+.cdr-media-frame--3-4\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 133.3333333333%;
+}
+.cdr-media-frame--9-16\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 177.7777777778%;
+}
+.cdr-media-frame--2-1\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 50%;
+}
+.cdr-media-frame--3-2\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 66.6666666667%;
+}
+.cdr-media-frame--4-3\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 75%;
+}
+.cdr-media-frame--16-9\@lg_1\.0\.0-alpha\.0::before {
+    padding-bottom: 56.25%;
+}
+}
+.cdr-media-frame--x-center_1\.0\.0-alpha\.0 > .cdr-media-frame__cover_1\.0\.0-alpha\.0 {
+  background-position-x: center;
+}
+.cdr-media-frame--y-center_1\.0\.0-alpha\.0 > .cdr-media-frame__cover_1\.0\.0-alpha\.0 {
+  background-position-y: center;
+}
+.cdr-media-frame--left_1\.0\.0-alpha\.0 > .cdr-media-frame__cover_1\.0\.0-alpha\.0 {
+  background-position-x: left;
+}
+.cdr-media-frame--right_1\.0\.0-alpha\.0 > .cdr-media-frame__cover_1\.0\.0-alpha\.0 {
+  background-position-x: right;
+}
+.cdr-media-frame--top_1\.0\.0-alpha\.0 > .cdr-media-frame__cover_1\.0\.0-alpha\.0 {
+  background-position-y: top;
+}
+.cdr-media-frame--bottom_1\.0\.0-alpha\.0 > .cdr-media-frame__cover_1\.0\.0-alpha\.0 {
+  background-position-y: bottom;
+}
+.cdr-media-frame__image_1\.0\.0-alpha\.0 {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Hide image when only used for a11y */
+}
+.cdr-media-frame__image--hidden_1\.0\.0-alpha\.0 {
+  opacity: 0;
+}
+.cdr-media-frame__cover_1\.0\.0-alpha\.0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cdr-media-frame__cover--crop_1\.0\.0-alpha\.0 {
+  background-size: auto;
+}
+.cdr-media-frame__cover--cover_1\.0\.0-alpha\.0 {
+  background-size: cover;
+}
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
   # CdrLink
 
   TOC:
@@ -3900,6 +4166,11 @@
   border-width: 0.1rem;
   border-color: black;
 }
+
+.cdr-img-test {
+  background-color: lightblue;
+}
+
 
 
 

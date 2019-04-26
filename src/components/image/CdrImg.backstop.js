@@ -1,5 +1,6 @@
 module.exports = [
   {
+    url: 'http://localhost:3000/#/images',
     label: 'Images',
     selectors: [
       '[data-backstop="image-aspect-ratio"]',

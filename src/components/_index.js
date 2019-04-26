@@ -1,4 +1,3 @@
-// import CdrImg from 'componentsdir/image/CdrImg';
 // import CdrInput from 'componentsdir/input/CdrInput';
 // import CdrPagination from 'componentsdir/pagination/CdrPagination';
 // import CdrQuote from 'componentsdir/quote/CdrQuote';
@@ -21,6 +20,7 @@ export { default as CdrCol } from 'componentsdir/grid/CdrCol';
 export { default as CdrCta } from 'componentsdir/cta/CdrCta';
 export { default as CdrDataTable } from 'componentsdir/dataTable/CdrDataTable';
 export { default as CdrIcon } from 'componentsdir/icon/CdrIcon';
+export { default as CdrImg } from 'componentsdir/image/CdrImg';
 export { default as CdrLink } from 'componentsdir/link/CdrLink';
 export { default as CdrList } from 'componentsdir/list/CdrList';
 export { default as CdrRow } from 'componentsdir/grid/CdrRow';

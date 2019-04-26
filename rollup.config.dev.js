@@ -72,7 +72,7 @@ export default {
     }),
     commonjs(),
     serve({
-      open: true,
+      open: false,
       contentBase: 'public',
       port: 3000,
     }),
