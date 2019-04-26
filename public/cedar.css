@@ -4439,6 +4439,315 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
 .cdr-radio--hide-figure_1\.0\.0-alpha\.0 > .cdr-radio__figure_1\.0\.0-alpha\.0 {
   display: none;
 }
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+/* ==========================================================================
+  # CdrRating
+
+  All values should map to variables in
+  vars/CdrRating.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - Rating
+      :Elements
+        :Icon
+        :Count
+      :Modifiers
+        :Linked
+        :Large
+        :Small
+========================================================================== */
+.cdr-rating_1\.0\.0-alpha\.0 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  line-height: 1;
+  /* Elements
+    ========================================================================== */
+  /* Icon
+    ========== */
+  /* Count
+    ========== */
+  /* Placeholder
+    ========== */
+  /* Stars
+    ========== */
+  /* Modifiers
+    ========================================================================== */
+  /* Linked
+    ========== */
+  /* Large
+    ========== */
+  /* Small
+    ========== */
+  /* Content Color Variants
+    ========================================================================== */
+  /* @xs
+    0px - 767px
+    ========== */
+  /* @sm
+    768px - 991px
+    ========== */
+  /* @md
+    992px - 1199px
+    ========== */
+  /* @lg
+    1200px and up
+    ========== */
+}
+.cdr-rating__icon_1\.0\.0-alpha\.0 {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.cdr-rating__count_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: normal;
+  margin-left: 0.8rem;
+}
+.cdr-rating__ratings_1\.0\.0-alpha\.0 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+}
+.cdr-rating__background_1\.0\.0-alpha\.0 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.cdr-rating__placeholder_1\.0\.0-alpha\.0 {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232b6692'%3E %3Ctitle%3E star-empty %3C/title%3E %3Cpath d='M5.69 22.067l1.669-7.552-5.535-5.048 7.298-.66L12 1.662l2.878 7.147 7.298.659-5.535 5.048 1.669 7.552L12 18.061l-6.31 4.006zm1.496-2.134L12 16.877l4.814 3.056-1.274-5.767 4.284-3.907-5.645-.51L12 4.339l-2.179 5.41-5.645.51 4.284 3.907-1.274 5.767z'/%3E %3C/svg%3E");
+  background-repeat: no-repeat;
+}
+.cdr-rating__placeholder--no-reviews_1\.0\.0-alpha\.0 {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23616161'%3E %3Ctitle%3E star-empty %3C/title%3E %3Cpath d='M5.69 22.067l1.669-7.552-5.535-5.048 7.298-.66L12 1.662l2.878 7.147 7.298.659-5.535 5.048 1.669 7.552L12 18.061l-6.31 4.006zm1.496-2.134L12 16.877l4.814 3.056-1.274-5.767 4.284-3.907-5.645-.51L12 4.339l-2.179 5.41-5.645.51 4.284 3.907-1.274 5.767z'/%3E %3C/svg%3E");
+}
+.cdr-rating__100_1\.0\.0-alpha\.0 {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232b6692'%3E %3Ctitle%3E star-100-percent %3C/title%3E %3Cpath d='M5.686 22.066l1.668-7.552L1.82 9.465l7.298-.659 2.877-7.146 2.877 7.146 7.298.659-5.534 5.049 1.668 7.552-6.309-4.006z'/%3E %3C/svg%3E");
+  background-repeat: no-repeat;
+}
+.cdr-rating__75_1\.0\.0-alpha\.0 {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232b6692'%3E %3Ctitle%3E star-75-percent %3C/title%3E %3Cpath d='M5.686 22.066l1.668-7.552L1.82 9.465l7.298-.659 2.877-7.146 2.877 7.146 7.298.66-5.534 5.048 1.668 7.552-6.309-4.006-6.31 4.006zm8.514-3.79l2.609 1.656-1.274-5.767 4.283-3.908-5.62-.508.002 8.527z'/%3E %3C/svg%3E");
+  background-repeat: no-repeat;
+}
+.cdr-rating__50_1\.0\.0-alpha\.0 {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232b6692'%3E %3Ctitle%3E star-50-percent %3C/title%3E %3Cpath d='M5.686 22.066l1.668-7.552L1.82 9.465l7.298-.659 2.877-7.146 2.877 7.146 7.298.66-5.534 5.048 1.668 7.552-6.309-4.006-6.31 4.006zm6.309-5.19l4.814 3.056-1.274-5.767 4.283-3.908-5.645-.51-2.178-5.41v12.538z'/%3E %3C/svg%3E");
+  background-repeat: no-repeat;
+}
+.cdr-rating__25_1\.0\.0-alpha\.0 {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232b6692'%3E %3Ctitle%3E star-25-percent %3C/title%3E %3Cpath d='M5.686 22.066l1.668-7.552L1.82 9.465l7.298-.659 2.877-7.146 2.877 7.146 7.298.66-5.534 5.048 1.668 7.552-6.309-4.006-6.31 4.006zm4.303-3.917l2.006-1.274 4.814 3.057-1.274-5.767 4.283-3.908-5.645-.51-2.178-5.41-2.009 4.99.003 8.822z'/%3E %3C/svg%3E");
+  background-repeat: no-repeat;
+}
+.cdr-rating--linked_1\.0\.0-alpha\.0 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  text-decoration: none;
+}
+.cdr-rating--linked_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0:hover, .cdr-rating--linked_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0:active, .cdr-rating--linked_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0:focus {
+  text-decoration: underline;
+}
+.cdr-rating--linked_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 > .cdr-rating__number_1\.0\.0-alpha\.0 {
+  border-right: 0.1rem solid #b8b8b8;
+  padding: 0 0.4rem;
+  margin-right: 0.4rem;
+}
+.cdr-rating--large_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.cdr-rating--large_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: normal;
+}
+.cdr-rating--small_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.cdr-rating--small_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  letter-spacing: normal;
+  margin-left: 0.4rem;
+}
+.cdr-rating--primary_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+  color: #292929;
+}
+.cdr-rating--primary_1\.0\.0-alpha\.0 .cdr-rating--linked_1\.0\.0-alpha\.0:hover, .cdr-rating--primary_1\.0\.0-alpha\.0 .cdr-rating--linked_1\.0\.0-alpha\.0:active, .cdr-rating--primary_1\.0\.0-alpha\.0 .cdr-rating--linked_1\.0\.0-alpha\.0:focus {
+  -webkit-text-decoration-color: #292929;
+          text-decoration-color: #292929;
+}
+.cdr-rating--primary_1\.0\.0-alpha\.0 .cdr-rating__number_1\.0\.0-alpha\.0 {
+  border-right-color: #b8b8b8;
+}
+.cdr-rating--secondary_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+  color: #616161;
+}
+.cdr-rating--secondary_1\.0\.0-alpha\.0 .cdr-rating--linked_1\.0\.0-alpha\.0:hover, .cdr-rating--secondary_1\.0\.0-alpha\.0 .cdr-rating--linked_1\.0\.0-alpha\.0:active, .cdr-rating--secondary_1\.0\.0-alpha\.0 .cdr-rating--linked_1\.0\.0-alpha\.0:focus {
+  -webkit-text-decoration-color: #616161;
+          text-decoration-color: #616161;
+}
+.cdr-rating--secondary_1\.0\.0-alpha\.0 .cdr-rating__number_1\.0\.0-alpha\.0 {
+  border-right-color: #b8b8b8;
+}
+@media (min-width: 0) and (max-width: 767px) {
+.cdr-rating--small\@xs_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.cdr-rating--small\@xs_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: normal;
+    margin-left: 0.4rem;
+}
+.cdr-rating--large\@xs_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+.cdr-rating--large\@xs_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+.cdr-rating--small\@sm_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.cdr-rating--small\@sm_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: normal;
+    margin-left: 0.4rem;
+}
+.cdr-rating--large\@sm_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+.cdr-rating--large\@sm_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+.cdr-rating--small\@md_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.cdr-rating--small\@md_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: normal;
+    margin-left: 0.4rem;
+}
+.cdr-rating--large\@md_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+.cdr-rating--large\@md_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+}
+}
+@media (min-width: 1200px) {
+.cdr-rating--small\@lg_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.cdr-rating--small\@lg_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: normal;
+    margin-left: 0.4rem;
+}
+.cdr-rating--large\@lg_1\.0\.0-alpha\.0 .cdr-rating__icon_1\.0\.0-alpha\.0 {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+.cdr-rating--large\@lg_1\.0\.0-alpha\.0 .cdr-rating__count_1\.0\.0-alpha\.0 {
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-variant: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+}
+}
 
 .accordion-group {
   margin-bottom: 3rem;
@@ -5786,6 +6095,124 @@ $input-size-placeholder-text: $sys-font-redwood-ui-30-font-size; */
 .no-box:checked ~ .no-box__content::after {
   content: "(checked)";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** resets to protect example stylings unrelated to the component for consistent testing */
+.rating-reset {
+  font-size: 0;
+}
+.line-height-reset {
+  line-height: 1;
+}
+
 
 
 
