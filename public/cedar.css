@@ -3864,6 +3864,42 @@
 .row-demo * {
   line-height: 1;
 }
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+.icon-examples {
+  line-height: 1;
+}
+.icon-examples .icon-hover:hover {
+  fill: red;
+}
+.inherit-container {
+  fill: pink;
+  border: 0.2rem solid pink;
+}
+.icon-hr {
+  margin: 0.5em 0;
+  border-style: inset;
+  border-width: 0.1rem;
+  border-color: black;
+}
 
 
 
