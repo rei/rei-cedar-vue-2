@@ -5,7 +5,8 @@ import captionExample from 'componentsdir/caption/examples/Caption';
 import cards from 'componentsdir/card/examples/Cards';
 import checkboxes from 'componentsdir/checkbox/examples/checkboxes';
 import cta from 'componentsdir/cta/examples/Cta';
-// import grid from 'componentsdir/grid/examples/Grid';
+import dataTable from 'componentsdir/dataTable/examples/DataTable';
+import grid from 'componentsdir/grid/examples/Grid';
 // import icons from 'componentsdir/icon/examples/Icons';
 // import images from 'componentsdir/image/examples/Images';
 // import inputs from 'componentsdir/input/examples/Inputs';
@@ -18,13 +19,11 @@ import lists from 'componentsdir/list/examples/Lists';
 // import selects from 'componentsdir/select/examples/Selects';
 // import tabs from 'componentsdir/tabs/examples/Tabs';
 // import texts from 'componentsdir/text/examples/Text';
-// import dataTable from 'componentsdir/dataTable/examples/DataTable';
 // import searchbox from 'compositionsdir/search/examples/searchbox';
 
 import utilities from 'componentsdir/Utilities/Utilities';
 
 // export default {
-//   dataTable,
 //   grid,
 //   icons,
 //   images,
@@ -47,6 +46,8 @@ export default {
   cards,
   checkboxes,
   cta,
+  dataTable,
+  grid,
   links,
   lists,
   utilities,

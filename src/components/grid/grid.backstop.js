@@ -1,5 +1,6 @@
 module.exports = [
   {
+    url: 'http://localhost:3000/#/grids',
     label: 'Row',
     selectors: [
       '[data-backstop="row-basic"]',

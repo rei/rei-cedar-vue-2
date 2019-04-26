@@ -1,15 +1,16 @@
-$1-col-pct: calc(1 / $rowColumns * 100%);
-$2-col-pct: calc(2 / $rowColumns * 100%);
-$3-col-pct: calc(3 / $rowColumns * 100%);
-$4-col-pct: calc(4 / $rowColumns * 100%);
-$5-col-pct: calc(5 / $rowColumns * 100%);
-$6-col-pct: calc(6 / $rowColumns * 100%);
-$7-col-pct: calc(7 / $rowColumns * 100%);
-$8-col-pct: calc(8 / $rowColumns * 100%);
-$9-col-pct: calc(9 / $rowColumns * 100%);
-$10-col-pct: calc(10 / $rowColumns * 100%);
-$11-col-pct: calc(11 / $rowColumns * 100%);
-$12-col-pct: calc(12 / $rowColumns * 100%);
+// TODO: replace all of this with a mixin
+$colPct1: calc(1 / #{$rowColumns} * 100%);
+$colPct2: calc(2 / #{$rowColumns} * 100%);
+$colPct3: calc(3 / #{$rowColumns} * 100%);
+$colPct4: calc(4 / #{$rowColumns} * 100%);
+$colPct5: calc(5 / #{$rowColumns} * 100%);
+$colPct6: calc(6 / #{$rowColumns} * 100%);
+$colPct7: calc(7 / #{$rowColumns} * 100%);
+$colPct8: calc(8 / #{$rowColumns} * 100%);
+$colPct9: calc(9 / #{$rowColumns} * 100%);
+$colPct10: calc(10 / #{$rowColumns} * 100%);
+$colPct11: calc(11 / #{$rowColumns} * 100%);
+$colPct12: calc(12 / #{$rowColumns} * 100%);
 
 /* ==========================================================================
    # COL
@@ -65,75 +66,75 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   ========================================================================== */
 
   &_span1 {
-    flex-basis: $1-col-pct;
-    width: $1-col-pct;
-    max-width: $1-col-pct;
+    flex-basis: $colPct1;
+    width: $colPct1;
+    max-width: $colPct1;
   }
 
   &_span2 {
-    flex-basis: $2-col-pct;
-    width: $2-col-pct;
-    max-width: $2-col-pct;
+    flex-basis: $colPct2;
+    width: $colPct2;
+    max-width: $colPct2;
   }
 
   &_span3 {
-    flex-basis: $3-col-pct;
-    width: $3-col-pct;
-    max-width: $3-col-pct;
+    flex-basis: $colPct3;
+    width: $colPct3;
+    max-width: $colPct3;
   }
 
   &_span4 {
-    flex-basis: $4-col-pct;
-    width: $4-col-pct;
-    max-width: $4-col-pct;
+    flex-basis: $colPct4;
+    width: $colPct4;
+    max-width: $colPct4;
   }
 
   &_span5 {
-    flex-basis: $5-col-pct;
-    width: $5-col-pct;
-    max-width: $5-col-pct;
+    flex-basis: $colPct5;
+    width: $colPct5;
+    max-width: $colPct5;
   }
 
   &_span6 {
-    flex-basis: $6-col-pct;
-    width: $6-col-pct;
-    max-width: $6-col-pct;
+    flex-basis: $colPct6;
+    width: $colPct6;
+    max-width: $colPct6;
   }
 
   &_span7 {
-    flex-basis: $7-col-pct;
-    width: $7-col-pct;
-    max-width: $7-col-pct;
+    flex-basis: $colPct7;
+    width: $colPct7;
+    max-width: $colPct7;
   }
 
   &_span8 {
-    flex-basis: $8-col-pct;
-    width: $8-col-pct;
-    max-width: $8-col-pct;
+    flex-basis: $colPct8;
+    width: $colPct8;
+    max-width: $colPct8;
   }
 
   &_span9 {
-    flex-basis: $9-col-pct;
-    width: $9-col-pct;
-    max-width: $9-col-pct;
+    flex-basis: $colPct9;
+    width: $colPct9;
+    max-width: $colPct9;
   }
 
   &_span10 {
-    flex-basis: $10-col-pct;
-    width: $10-col-pct;
-    max-width: $10-col-pct;
+    flex-basis: $colPct10;
+    width: $colPct10;
+    max-width: $colPct10;
   }
 
   &_span11 {
-    flex-basis: $11-col-pct;
-    width: $11-col-pct;
-    max-width: $11-col-pct;
+    flex-basis: $colPct11;
+    width: $colPct11;
+    max-width: $colPct11;
   }
 
   &_span12 {
-    flex-basis: $12-col-pct;
-    width: $12-col-pct;
-    max-width: $12-col-pct;
+    flex-basis: $colPct12;
+    width: $colPct12;
+    max-width: $colPct12;
   }
 
   /* Col offsets
@@ -144,47 +145,47 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   }
 
   &--offsetLeft1 {
-    margin-left: $1-col-pct;
+    margin-left: $colPct1;
   }
 
   &--offsetLeft2 {
-    margin-left: $2-col-pct;
+    margin-left: $colPct2;
   }
 
   &--offsetLeft3 {
-    margin-left: $3-col-pct;
+    margin-left: $colPct3;
   }
 
   &--offsetLeft4 {
-    margin-left: $4-col-pct;
+    margin-left: $colPct4;
   }
 
   &--offsetLeft5 {
-    margin-left: $5-col-pct;
+    margin-left: $colPct5;
   }
 
   &--offsetLeft6 {
-    margin-left: $6-col-pct;
+    margin-left: $colPct6;
   }
 
   &--offsetLeft7 {
-    margin-left: $7-col-pct;
+    margin-left: $colPct7;
   }
 
   &--offsetLeft8 {
-    margin-left: $8-col-pct;
+    margin-left: $colPct8;
   }
 
   &--offsetLeft9 {
-    margin-left: $9-col-pct;
+    margin-left: $colPct9;
   }
 
   &--offsetLeft10 {
-    margin-left: $10-col-pct;
+    margin-left: $colPct10;
   }
 
   &--offsetLeft11 {
-    margin-left: $11-col-pct;
+    margin-left: $colPct11;
   }
 
   &--offsetRight0 {
@@ -192,47 +193,47 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
   }
 
   &--offsetRight1 {
-    margin-right: $1-col-pct;
+    margin-right: $colPct1;
   }
 
   &--offsetRight2 {
-    margin-right: $2-col-pct;
+    margin-right: $colPct2;
   }
 
   &--offsetRight3 {
-    margin-right: $3-col-pct;
+    margin-right: $colPct3;
   }
 
   &--offsetRight4 {
-    margin-right: $4-col-pct;
+    margin-right: $colPct4;
   }
 
   &--offsetRight5 {
-    margin-right: $5-col-pct;
+    margin-right: $colPct5;
   }
 
   &--offsetRight6 {
-    margin-right: $6-col-pct;
+    margin-right: $colPct6;
   }
 
   &--offsetRight7 {
-    margin-right: $7-col-pct;
+    margin-right: $colPct7;
   }
 
   &--offsetRight8 {
-    margin-right: $8-col-pct;
+    margin-right: $colPct8;
   }
 
   &--offsetRight9 {
-    margin-right: $9-col-pct;
+    margin-right: $colPct9;
   }
 
   &--offsetRight10 {
-    margin-right: $10-col-pct;
+    margin-right: $colPct10;
   }
 
   &--offsetRight11 {
-    margin-right: $11-col-pct;
+    margin-right: $colPct11;
   }
 
   /* Col modifiers
@@ -285,75 +286,75 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     ========================================================================== */
 
     &_span1\@sm {
-      flex-basis: $1-col-pct;
-      width: $1-col-pct;
-      max-width: $1-col-pct;
+      flex-basis: $colPct1;
+      width: $colPct1;
+      max-width: $colPct1;
     }
 
     &_span2\@sm {
-      flex-basis: $2-col-pct;
-      width: $2-col-pct;
-      max-width: $2-col-pct;
+      flex-basis: $colPct2;
+      width: $colPct2;
+      max-width: $colPct2;
     }
 
     &_span3\@sm {
-      flex-basis: $3-col-pct;
-      width: $3-col-pct;
-      max-width: $3-col-pct;
+      flex-basis: $colPct3;
+      width: $colPct3;
+      max-width: $colPct3;
     }
 
     &_span4\@sm {
-      flex-basis: $4-col-pct;
-      width: $4-col-pct;
-      max-width: $4-col-pct;
+      flex-basis: $colPct4;
+      width: $colPct4;
+      max-width: $colPct4;
     }
 
     &_span5\@sm {
-      flex-basis: $5-col-pct;
-      width: $5-col-pct;
-      max-width: $5-col-pct;
+      flex-basis: $colPct5;
+      width: $colPct5;
+      max-width: $colPct5;
     }
 
     &_span6\@sm {
-      flex-basis: $6-col-pct;
-      width: $6-col-pct;
-      max-width: $6-col-pct;
+      flex-basis: $colPct6;
+      width: $colPct6;
+      max-width: $colPct6;
     }
 
     &_span7\@sm {
-      flex-basis: $7-col-pct;
-      width: $7-col-pct;
-      max-width: $7-col-pct;
+      flex-basis: $colPct7;
+      width: $colPct7;
+      max-width: $colPct7;
     }
 
     &_span8\@sm {
-      flex-basis: $8-col-pct;
-      width: $8-col-pct;
-      max-width: $8-col-pct;
+      flex-basis: $colPct8;
+      width: $colPct8;
+      max-width: $colPct8;
     }
 
     &_span9\@sm {
-      flex-basis: $9-col-pct;
-      width: $9-col-pct;
-      max-width: $9-col-pct;
+      flex-basis: $colPct9;
+      width: $colPct9;
+      max-width: $colPct9;
     }
 
     &_span10\@sm {
-      flex-basis: $10-col-pct;
-      width: $10-col-pct;
-      max-width: $10-col-pct;
+      flex-basis: $colPct10;
+      width: $colPct10;
+      max-width: $colPct10;
     }
 
     &_span11\@sm {
-      flex-basis: $11-col-pct;
-      width: $11-col-pct;
-      max-width: $11-col-pct;
+      flex-basis: $colPct11;
+      width: $colPct11;
+      max-width: $colPct11;
     }
 
     &_span12\@sm {
-      flex-basis: $12-col-pct;
-      width: $12-col-pct;
-      max-width: $12-col-pct;
+      flex-basis: $colPct12;
+      width: $colPct12;
+      max-width: $colPct12;
     }
 
     /* Col small offsets
@@ -364,47 +365,47 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--offsetLeft1\@sm {
-      margin-left: $1-col-pct;
+      margin-left: $colPct1;
     }
 
     &--offsetLeft2\@sm {
-      margin-left: $2-col-pct;
+      margin-left: $colPct2;
     }
 
     &--offsetLeft3\@sm {
-      margin-left: $3-col-pct;
+      margin-left: $colPct3;
     }
 
     &--offsetLeft4\@sm {
-      margin-left: $4-col-pct;
+      margin-left: $colPct4;
     }
 
     &--offsetLeft5\@sm {
-      margin-left: $5-col-pct;
+      margin-left: $colPct5;
     }
 
     &--offsetLeft6\@sm {
-      margin-left: $6-col-pct;
+      margin-left: $colPct6;
     }
 
     &--offsetLeft7\@sm {
-      margin-left: $7-col-pct;
+      margin-left: $colPct7;
     }
 
     &--offsetLeft8\@sm {
-      margin-left: $8-col-pct;
+      margin-left: $colPct8;
     }
 
     &--offsetLeft9\@sm {
-      margin-left: $9-col-pct;
+      margin-left: $colPct9;
     }
 
     &--offsetLeft10\@sm {
-      margin-left: $10-col-pct;
+      margin-left: $colPct10;
     }
 
     &--offsetLeft11\@sm {
-      margin-left: $11-col-pct;
+      margin-left: $colPct11;
     }
 
     &--offsetRight0\@sm {
@@ -412,47 +413,47 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--offsetRight1\@sm {
-      margin-right: $1-col-pct;
+      margin-right: $colPct1;
     }
 
     &--offsetRight2\@sm {
-      margin-right: $2-col-pct;
+      margin-right: $colPct2;
     }
 
     &--offsetRight3\@sm {
-      margin-right: $3-col-pct;
+      margin-right: $colPct3;
     }
 
     &--offsetRight4\@sm {
-      margin-right: $4-col-pct;
+      margin-right: $colPct4;
     }
 
     &--offsetRight5\@sm {
-      margin-right: $5-col-pct;
+      margin-right: $colPct5;
     }
 
     &--offsetRight6\@sm {
-      margin-right: $6-col-pct;
+      margin-right: $colPct6;
     }
 
     &--offsetRight7\@sm {
-      margin-right: $7-col-pct;
+      margin-right: $colPct7;
     }
 
     &--offsetRight8\@sm {
-      margin-right: $8-col-pct;
+      margin-right: $colPct8;
     }
 
     &--offsetRight9\@sm {
-      margin-right: $9-col-pct;
+      margin-right: $colPct9;
     }
 
     &--offsetRight10\@sm {
-      margin-right: $10-col-pct;
+      margin-right: $colPct10;
     }
 
     &--offsetRight11\@sm {
-      margin-right: $11-col-pct;
+      margin-right: $colPct11;
     }
 
     /* Col small modifiers
@@ -496,75 +497,75 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     ========================================================================== */
 
     &_span1\@md {
-      flex-basis: $1-col-pct;
-      width: $1-col-pct;
-      max-width: $1-col-pct;
+      flex-basis: $colPct1;
+      width: $colPct1;
+      max-width: $colPct1;
     }
 
     &_span2\@md {
-      flex-basis: $2-col-pct;
-      width: $2-col-pct;
-      max-width: $2-col-pct;
+      flex-basis: $colPct2;
+      width: $colPct2;
+      max-width: $colPct2;
     }
 
     &_span3\@md {
-      flex-basis: $3-col-pct;
-      width: $3-col-pct;
-      max-width: $3-col-pct;
+      flex-basis: $colPct3;
+      width: $colPct3;
+      max-width: $colPct3;
     }
 
     &_span4\@md {
-      flex-basis: $4-col-pct;
-      width: $4-col-pct;
-      max-width: $4-col-pct;
+      flex-basis: $colPct4;
+      width: $colPct4;
+      max-width: $colPct4;
     }
 
     &_span5\@md {
-      flex-basis: $5-col-pct;
-      width: $5-col-pct;
-      max-width: $5-col-pct;
+      flex-basis: $colPct5;
+      width: $colPct5;
+      max-width: $colPct5;
     }
 
     &_span6\@md {
-      flex-basis: $6-col-pct;
-      width: $6-col-pct;
-      max-width: $6-col-pct;
+      flex-basis: $colPct6;
+      width: $colPct6;
+      max-width: $colPct6;
     }
 
     &_span7\@md {
-      flex-basis: $7-col-pct;
-      width: $7-col-pct;
-      max-width: $7-col-pct;
+      flex-basis: $colPct7;
+      width: $colPct7;
+      max-width: $colPct7;
     }
 
     &_span8\@md {
-      flex-basis: $8-col-pct;
-      width: $8-col-pct;
-      max-width: $8-col-pct;
+      flex-basis: $colPct8;
+      width: $colPct8;
+      max-width: $colPct8;
     }
 
     &_span9\@md {
-      flex-basis: $9-col-pct;
-      width: $9-col-pct;
-      max-width: $9-col-pct;
+      flex-basis: $colPct9;
+      width: $colPct9;
+      max-width: $colPct9;
     }
 
     &_span10\@md {
-      flex-basis: $10-col-pct;
-      width: $10-col-pct;
-      max-width: $10-col-pct;
+      flex-basis: $colPct10;
+      width: $colPct10;
+      max-width: $colPct10;
     }
 
     &_span11\@md {
-      flex-basis: $11-col-pct;
-      width: $11-col-pct;
-      max-width: $11-col-pct;
+      flex-basis: $colPct11;
+      width: $colPct11;
+      max-width: $colPct11;
     }
 
     &_span12\@md {
-      flex-basis: $12-col-pct;
-      width: $12-col-pct;
-      max-width: $12-col-pct;
+      flex-basis: $colPct12;
+      width: $colPct12;
+      max-width: $colPct12;
     }
 
     /* Col medium offsets
@@ -575,47 +576,47 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--offsetLeft1\@md {
-      margin-left: $1-col-pct;
+      margin-left: $colPct1;
     }
 
     &--offsetLeft2\@md {
-      margin-left: $2-col-pct;
+      margin-left: $colPct2;
     }
 
     &--offsetLeft3\@md {
-      margin-left: $3-col-pct;
+      margin-left: $colPct3;
     }
 
     &--offsetLeft4\@md {
-      margin-left: $4-col-pct;
+      margin-left: $colPct4;
     }
 
     &--offsetLeft5\@md {
-      margin-left: $5-col-pct;
+      margin-left: $colPct5;
     }
 
     &--offsetLeft6\@md {
-      margin-left: $6-col-pct;
+      margin-left: $colPct6;
     }
 
     &--offsetLeft7\@md {
-      margin-left: $7-col-pct;
+      margin-left: $colPct7;
     }
 
     &--offsetLeft8\@md {
-      margin-left: $8-col-pct;
+      margin-left: $colPct8;
     }
 
     &--offsetLeft9\@md {
-      margin-left: $9-col-pct;
+      margin-left: $colPct9;
     }
 
     &--offsetLeft10\@md {
-      margin-left: $10-col-pct;
+      margin-left: $colPct10;
     }
 
     &--offsetLeft11\@md {
-      margin-left: $11-col-pct;
+      margin-left: $colPct11;
     }
 
     &--offsetRight0\@md {
@@ -623,47 +624,47 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--offsetRight1\@md {
-      margin-right: $1-col-pct;
+      margin-right: $colPct1;
     }
 
     &--offsetRight2\@md {
-      margin-right: $2-col-pct;
+      margin-right: $colPct2;
     }
 
     &--offsetRight3\@md {
-      margin-right: $3-col-pct;
+      margin-right: $colPct3;
     }
 
     &--offsetRight4\@md {
-      margin-right: $4-col-pct;
+      margin-right: $colPct4;
     }
 
     &--offsetRight5\@md {
-      margin-right: $5-col-pct;
+      margin-right: $colPct5;
     }
 
     &--offsetRight6\@md {
-      margin-right: $6-col-pct;
+      margin-right: $colPct6;
     }
 
     &--offsetRight7\@md {
-      margin-right: $7-col-pct;
+      margin-right: $colPct7;
     }
 
     &--offsetRight8\@md {
-      margin-right: $8-col-pct;
+      margin-right: $colPct8;
     }
 
     &--offsetRight9\@md {
-      margin-right: $9-col-pct;
+      margin-right: $colPct9;
     }
 
     &--offsetRight10\@md {
-      margin-right: $10-col-pct;
+      margin-right: $colPct10;
     }
 
     &--offsetRight11\@md {
-      margin-right: $11-col-pct;
+      margin-right: $colPct11;
     }
 
     /* Col medium modifiers
@@ -707,75 +708,75 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     ========================================================================== */
 
     &_span1\@lg {
-      flex-basis: $1-col-pct;
-      width: $1-col-pct;
-      max-width: $1-col-pct;
+      flex-basis: $colPct1;
+      width: $colPct1;
+      max-width: $colPct1;
     }
 
     &_span2\@lg {
-      flex-basis: $2-col-pct;
-      width: $2-col-pct;
-      max-width: $2-col-pct;
+      flex-basis: $colPct2;
+      width: $colPct2;
+      max-width: $colPct2;
     }
 
     &_span3\@lg {
-      flex-basis: $3-col-pct;
-      width: $3-col-pct;
-      max-width: $3-col-pct;
+      flex-basis: $colPct3;
+      width: $colPct3;
+      max-width: $colPct3;
     }
 
     &_span4\@lg {
-      flex-basis: $4-col-pct;
-      width: $4-col-pct;
-      max-width: $4-col-pct;
+      flex-basis: $colPct4;
+      width: $colPct4;
+      max-width: $colPct4;
     }
 
     &_span5\@lg {
-      flex-basis: $5-col-pct;
-      width: $5-col-pct;
-      max-width: $5-col-pct;
+      flex-basis: $colPct5;
+      width: $colPct5;
+      max-width: $colPct5;
     }
 
     &_span6\@lg {
-      flex-basis: $6-col-pct;
-      width: $6-col-pct;
-      max-width: $6-col-pct;
+      flex-basis: $colPct6;
+      width: $colPct6;
+      max-width: $colPct6;
     }
 
     &_span7\@lg {
-      flex-basis: $7-col-pct;
-      width: $7-col-pct;
-      max-width: $7-col-pct;
+      flex-basis: $colPct7;
+      width: $colPct7;
+      max-width: $colPct7;
     }
 
     &_span8\@lg {
-      flex-basis: $8-col-pct;
-      width: $8-col-pct;
-      max-width: $8-col-pct;
+      flex-basis: $colPct8;
+      width: $colPct8;
+      max-width: $colPct8;
     }
 
     &_span9\@lg {
-      flex-basis: $9-col-pct;
-      width: $9-col-pct;
-      max-width: $9-col-pct;
+      flex-basis: $colPct9;
+      width: $colPct9;
+      max-width: $colPct9;
     }
 
     &_span10\@lg {
-      flex-basis: $10-col-pct;
-      width: $10-col-pct;
-      max-width: $10-col-pct;
+      flex-basis: $colPct10;
+      width: $colPct10;
+      max-width: $colPct10;
     }
 
     &_span11\@lg {
-      flex-basis: $11-col-pct;
-      width: $11-col-pct;
-      max-width: $11-col-pct;
+      flex-basis: $colPct11;
+      width: $colPct11;
+      max-width: $colPct11;
     }
 
     &_span12\@lg {
-      flex-basis: $12-col-pct;
-      width: $12-col-pct;
-      max-width: $12-col-pct;
+      flex-basis: $colPct12;
+      width: $colPct12;
+      max-width: $colPct12;
     }
 
     /* Col large offsets
@@ -786,47 +787,47 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--offsetLeft1\@lg {
-      margin-left: $1-col-pct;
+      margin-left: $colPct1;
     }
 
     &--offsetLeft2\@lg {
-      margin-left: $2-col-pct;
+      margin-left: $colPct2;
     }
 
     &--offsetLeft3\@lg {
-      margin-left: $3-col-pct;
+      margin-left: $colPct3;
     }
 
     &--offsetLeft4\@lg {
-      margin-left: $4-col-pct;
+      margin-left: $colPct4;
     }
 
     &--offsetLeft5\@lg {
-      margin-left: $5-col-pct;
+      margin-left: $colPct5;
     }
 
     &--offsetLeft6\@lg {
-      margin-left: $6-col-pct;
+      margin-left: $colPct6;
     }
 
     &--offsetLeft7\@lg {
-      margin-left: $7-col-pct;
+      margin-left: $colPct7;
     }
 
     &--offsetLeft8\@lg {
-      margin-left: $8-col-pct;
+      margin-left: $colPct8;
     }
 
     &--offsetLeft9\@lg {
-      margin-left: $9-col-pct;
+      margin-left: $colPct9;
     }
 
     &--offsetLeft10\@lg {
-      margin-left: $10-col-pct;
+      margin-left: $colPct10;
     }
 
     &--offsetLeft11\@lg {
-      margin-left: $11-col-pct;
+      margin-left: $colPct11;
     }
 
     &--offsetRight0\@lg {
@@ -834,47 +835,47 @@ $12-col-pct: calc(12 / $rowColumns * 100%);
     }
 
     &--offsetRight1\@lg {
-      margin-right: $1-col-pct;
+      margin-right: $colPct1;
     }
 
     &--offsetRight2\@lg {
-      margin-right: $2-col-pct;
+      margin-right: $colPct2;
     }
 
     &--offsetRight3\@lg {
-      margin-right: $3-col-pct;
+      margin-right: $colPct3;
     }
 
     &--offsetRight4\@lg {
-      margin-right: $4-col-pct;
+      margin-right: $colPct4;
     }
 
     &--offsetRight5\@lg {
-      margin-right: $5-col-pct;
+      margin-right: $colPct5;
     }
 
     &--offsetRight6\@lg {
-      margin-right: $6-col-pct;
+      margin-right: $colPct6;
     }
 
     &--offsetRight7\@lg {
-      margin-right: $7-col-pct;
+      margin-right: $colPct7;
     }
 
     &--offsetRight8\@lg {
-      margin-right: $8-col-pct;
+      margin-right: $colPct8;
     }
 
     &--offsetRight9\@lg {
-      margin-right: $9-col-pct;
+      margin-right: $colPct9;
     }
 
     &--offsetRight10\@lg {
-      margin-right: $10-col-pct;
+      margin-right: $colPct10;
     }
 
     &--offsetRight11\@lg {
-      margin-right: $11-col-pct;
+      margin-right: $colPct11;
     }
 
     /* Col large modifiers
