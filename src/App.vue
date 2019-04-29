@@ -1,7 +1,6 @@
 <template>
   <div
     id="app"
-    class="cdr-container-fluid"
   >
     <p>Pick a component above to view.</p>
   </div>
@@ -36,9 +35,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-  .cpg-section {
-    margin: 16px 0;
-  }
-</style>

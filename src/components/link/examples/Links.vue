@@ -120,8 +120,8 @@
       theme="light"
       background="lightest"
     > -->
-      <!-- Smaller examples with nested theme (for override) -->
-      <!-- <p>Works nested</p>
+    <!-- Smaller examples with nested theme (for override) -->
+    <!-- <p>Works nested</p>
       <p>
         <cdr-link href="https://www.rei.com/">
           REI.com
@@ -131,8 +131,8 @@
           modifier="standalone"
         >REI.com</cdr-link>
       </p> -->
-      <!-- Override individual theme -->
-      <!-- <p>Individual override (dark on light)</p>
+    <!-- Override individual theme -->
+    <!-- <p>Individual override (dark on light)</p>
       <p>
         <cdr-link
           href="https://www.rei.com/"
@@ -155,14 +155,12 @@
 </template>
 
 <script>
-// import Components from 'componentsdir/_index';
-import { CdrText, CdrLink } from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'Links',
   components: {
-    CdrText,
-    CdrLink,
+    ...Components,
   },
 };
 </script>

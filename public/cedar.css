@@ -1,3 +1,8 @@
+
+.cpg-section[data-v-33706fb5] {
+  margin: 1.6rem 0;
+}
+
 /* ==========================================================================/*
 * Token option variables
 *
@@ -106,11 +111,6 @@
 .cdr-icon--inherit-color_1\.0\.0-alpha\.0 {
   fill: inherit;
 }
-
-.cpg-section[data-v-084d1c22] {
-  margin: 1.6rem 0;
-}
-
 /* ==========================================================================/*
 * Token option variables
 *
@@ -5742,8 +5742,6 @@ to {
 
 
 
-
-
 /** normalize line-height for consistent testing because links inherit it */
 .link-examples {
   line-height: 1;
@@ -7064,6 +7062,29 @@ to {
 
 
 
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+/* ---------------------
+* Text
+* ------------------- */
+/* Redwood */
+/* Maple */
+/* Spruce */
+/* ---------------------
+* Color
+* ------------------- */
+/* ---------------------
+* Outline
+* ------------------- */
+.kitchen-sink-section {
+  margin: 1.6rem 0;
+}
 /* Tokens */
 /* Settings */
 /* ==========================================================================/*
@@ -7743,14 +7764,11 @@ h6.cdr-text {
 * --------------------------------------------
 */
 .cdr-hide {
-  display: none !important;
-}
+  display: none !important; }
 
 @media (min-width: 0) and (max-width: 767px) {
   .cdr-hide\@xs-only {
-    display: none !important;
-  } 
-}
+    display: none !important; } }
 
 /* @sm
 ============ */
