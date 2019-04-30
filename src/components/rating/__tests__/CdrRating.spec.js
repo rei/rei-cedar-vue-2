@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import CdrRating from 'componentsdir/rating/CdrRating';
+import { CdrRating } from 'distdir/cedar.esm.js';
 
 describe('CdrRating.vue', () => {
   it('computes and rounds rating stars correctly', () => {

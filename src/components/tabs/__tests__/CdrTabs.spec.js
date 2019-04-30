@@ -1,6 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import CdrTabs from 'componentsdir/tabs/CdrTabs';
-import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
+import { CdrTabs } from 'distdir/cedar.esm.js';
+import { CdrTabPanel } from 'distdir/cedar.esm.js';
 import sinon from 'sinon';
 import Vue from 'vue';
 
