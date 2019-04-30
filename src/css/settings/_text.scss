@@ -6,7 +6,7 @@
 $cdr-text-base-margin: 0;
 
 @mixin cdr-text-base-mixin() {
-  @include cdr-text-default-body;
+  @include cdr-text-base-text-mixin;
   margin: $cdr-text-base-margin
 }
 
