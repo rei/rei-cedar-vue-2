@@ -22,7 +22,7 @@
   @include cdr-label-base-mixin;
 
   position: relative;
-  padding-left: calc(#{$radio-figure-size} + #{$radio-figure-space-right});
+  padding-left: calc(#{$radio-figure-size} + #{$cdr-label-base-spacing});
 
   /* Elements
     ========================================================================== */
