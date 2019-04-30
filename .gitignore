@@ -47,4 +47,5 @@ test/unit/coverage
 src/**/styles/themes/*
 
 public/*.js
+public/*.css
 src/**/package-lock\.json
