@@ -1,3 +1,4 @@
+// TODO:re-enable once working again
 module.exports = [
   {
     label: 'Themer',

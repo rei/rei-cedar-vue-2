@@ -25,6 +25,8 @@ import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
 import Utilities from 'componentsdir/Utilities/Utilities';
 
+import KitchenSink from 'srcdir/KitchenSink';
+
 const routes = [
   { path: '/', component: App },
   { path: '/accordion', name: 'Accordion', component: Accordions },
@@ -49,6 +51,7 @@ const routes = [
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
   { path: '/utilities', name: 'Utilities', component: Utilities },
+  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   // { path: '/searches', name: 'Searches', component: Searches },
 ];
 
