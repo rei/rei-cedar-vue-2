@@ -34,6 +34,9 @@ files.forEach((f) => {
   console.log(`copied ${fname} to ${outDest}`)
 });
 
-const index = SUPPORTED_COMPONENTS.map(fname => `@import "./${fname}";\n`).join('');
+/* iterate over SUPPORTED_COMPONENTS to ensure that vars are loaded in correct order */
+const indexFile = SUPPORTED_COMPONENTS.map(fname => `@import "./${fname}";`).join('\n');
+const singleFile = SUPPORTED_COMPONENTS.map(fname => fs.readFileSync(`${destMixinsDir}/${fname}`, 'utf8')).join('\n');
 
-fs.outputFileSync(`${destMixinsDir}/index.scss`, index);
+fs.outputFileSync(`${destMixinsDir}/index.scss`, indexFile);
+fs.outputFileSync(`${destMixinsDir}/cedar-component-variables.scss`, singleFile);
