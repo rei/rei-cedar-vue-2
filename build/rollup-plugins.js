@@ -5,6 +5,7 @@ import alias from 'rollup-plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import jsonPlugin from 'rollup-plugin-json';
+import copyPlugin from 'rollup-plugin-copy';
 import packageJson from '../package.json';
 
 function resolve(dir) {
@@ -12,13 +13,21 @@ function resolve(dir) {
 }
 
 const env = process.env.NODE_ENV;
-let extractCss = false;
+// plugin configs
+let postcssExtract = false;
+let copyTargets = [''];
 
-if (env !== 'test') {
-  extractCss = env === 'dev' ? 'public/cedar.css' : 'dist/cedar.css';
+// prod only options
+if (env === 'prod') {
+  postcssExtract = 'dist/cedar.css';
 }
 
-console.log('extractCss', extractCss);
+// dev and prod options
+if (env !== 'test') {
+  copyTargets = ['static/cdr-fonts.css'];
+}
+
+console.log('postcssExtract', postcssExtract);
 
 const plugins = [
   alias({
@@ -34,7 +43,7 @@ const plugins = [
   nodeResolve(),
   jsonPlugin(),
   vue({
-    css: env === 'test',
+    css: false,
     style: {
       postcssCleanOptions: { disabled: true },
       postcssModulesOptions: {
@@ -56,7 +65,7 @@ const plugins = [
     },
   }),
   postcss({
-    extract: extractCss,
+    extract: postcssExtract,
     // modules: {
     //   generateScopedName(name, filename, css) {
     //     // to preseve '@' in responsive class names
@@ -66,6 +75,9 @@ const plugins = [
     extensions: ['.scss', '.css'],
   }),
   commonjs(),
+  copyPlugin({
+    targets: copyTargets,
+  })
 ];
 
 export default plugins;

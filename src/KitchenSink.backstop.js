@@ -1,6 +1,6 @@
 module.exports = [{
   url: 'http://localhost:3000/#/kitchen-sink',
-  label: 'Link',
+  label: 'Kitchen Sink',
   selectors: [
     '[data-backstop="kitchen-sink"]',
   ],
