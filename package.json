@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
     "build": "cross-env NODE_ENV=prod rollup -c",
-    "unit": "cross-env NODE_ENV=test rollup -c rollup.config.test.js && jest --clearCache && jest src/components/list/__tests__/CdrList.spec.js",
+    "unit": "cross-env NODE_ENV=test rollup -c rollup.config.test.js && jest --clearCache && jest",
     "unit:watch": "cross-env NODE_ENV=test nyc mocha-webpack --watch --webpack-config build/webpack.test.conf.js src/**/*.spec.js",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
