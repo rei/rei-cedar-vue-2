@@ -1,9 +1,10 @@
 {
   "name": "@rei/cedar",
   "version": "1.0.0-alpha.0",
-  "description": "REI Cedar Style Framework",
+  "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
+  "private": false,
   "author": "REI Software Engineering",
   "main": "dist/cedar.cjs.js",
   "module": "dist/cedar.esm.js",
@@ -12,6 +13,7 @@
     "dist"
   ],
   "scripts": {
+    "prepublishOnly": "npm run build",
     "dev": "cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
     "build": "npm run clean && cross-env NODE_ENV=prod rollup -c rollup.config.js",
     "unit": "cross-env NODE_ENV=test rollup -c rollup.config.test.js && jest --clearCache && jest",
