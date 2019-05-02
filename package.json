@@ -7,6 +7,7 @@
   "author": "REI Software Engineering",
   "main": "dist/cedar.cjs.js",
   "module": "dist/cedar.esm.js",
+  "style": "dist/cedar.css",
   "files": [
     "dist"
   ],
