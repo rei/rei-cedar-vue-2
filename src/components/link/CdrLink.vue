@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[modifierClass, themeClass]"
+    :class="[modifierClass]"
     :target="target"
     :rel="computedRel"
     :href="tag === 'a' ? href : null /* don't include the href attribute if not an <a> */"
@@ -13,7 +13,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
-// import themeable from 'mixinsdir/themeable';
+// import themeable from 'mixinsdir/themeable'; re-add themeClass to class array also
 /**
  *
  * Cedar 2 component for link.

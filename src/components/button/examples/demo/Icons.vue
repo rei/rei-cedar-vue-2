@@ -198,7 +198,6 @@
       </cdr-button>
       <cdr-button
         :icon-only="true"
-        :on-dark="onDark"
         aria-label="Play"
       >
         <icon-play

@@ -45,7 +45,7 @@ const plugins = [
   vue({
     css: false,
     style: {
-      postcssCleanOptions: { disabled: true },
+      // postcssCleanOptions: { disabled: true },
       postcssModulesOptions: {
         generateScopedName(name, filename, css) {
           // to preseve '@' in responsive class names
