@@ -1,16 +1,7 @@
-import babel from 'rollup-plugin-babel';
 import plugins from './build/rollup-plugins';
 
-
-plugins.push(
-  babel({
-    exclude: 'node_modules/**',
-    runtimeHelpers: true,
-  }),
-);
-
 export default {
-  input: 'src/components/_index.js',
+  input: 'src/prod.js',
   output: [
     {
       file: 'dist/cedar.cjs.js',

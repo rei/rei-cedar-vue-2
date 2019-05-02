@@ -1,4 +1,5 @@
 import path from 'path';
+import process from 'process';
 import vue from 'rollup-plugin-vue';
 import commonjs from 'rollup-plugin-commonjs';
 import alias from 'rollup-plugin-alias';
@@ -6,6 +7,7 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import jsonPlugin from 'rollup-plugin-json';
 import copyPlugin from 'rollup-plugin-copy';
+import babel from 'rollup-plugin-babel';
 import packageJson from '../package.json';
 
 function resolve(dir) {
@@ -77,7 +79,11 @@ const plugins = [
   commonjs(),
   copyPlugin({
     targets: copyTargets,
-  })
+  }),
+  babel({
+    exclude: 'node_modules/**',
+    runtimeHelpers: true,
+  }),
 ];
 
 export default plugins;
