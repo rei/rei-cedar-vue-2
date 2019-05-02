@@ -5,6 +5,9 @@
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "REI Software Engineering",
   "main": "dist/cedar.cjs.js",
   "module": "dist/cedar.esm.js",
