@@ -15,9 +15,12 @@ function resolve(dir) {
 }
 
 const env = process.env.NODE_ENV;
+const ssrEnv = process.env.SSR_ENV;
+
 // plugin configs
 let postcssExtract = false;
 let copyTargets = [''];
+let SSROptimize = false;
 
 // prod only options
 if (env === 'prod') {
@@ -27,8 +30,13 @@ if (env === 'prod') {
 // dev and prod options
 if (env !== 'test') {
   copyTargets = ['static/cdr-fonts.css'];
+  // SSR build
+  if (ssrEnv === 'ssr') {
+    SSROptimize = true;
+  }
 }
 
+console.log('SSR', ssrEnv);
 console.log('postcssExtract', postcssExtract);
 
 const plugins = [
@@ -64,6 +72,7 @@ const plugins = [
     },
     template: {
       isProduction: env === 'prod',
+      optimizeSSR: SSROptimize,
     },
   }),
   postcss({
