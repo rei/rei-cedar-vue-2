@@ -24,10 +24,20 @@ module.exports = {
   // check if imports actually resolve
   settings: {
     'import/resolver': {
-      webpack: {
-        config: resolve('build/webpack.base.conf.js'),
-      }
-    }
+      // matches aliases from build/rollup-plugins.js
+      alias: {
+        map: [
+          ['srcdir', resolve('src')],
+          ['cssdir', resolve('src/css')],
+          ['assetsdir', resolve('src/assets')],
+          ['componentsdir', resolve('src/components')],
+          ['compositionsdir', resolve('src/compositions')],
+          ['directivesdir', resolve('src/directives')],
+          ['mixinsdir', resolve('src/mixins')],
+        ],
+        extensions: ['.vue', '.json', '.js']
+      },
+    },
   },
   // add custom rules or overrides here
   rules: {
