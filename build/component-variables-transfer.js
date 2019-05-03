@@ -6,7 +6,6 @@ const DEST_REPO_NAME = 'rei-cedar-component-variables';
 const DEST_PATH = 'dist/scss';
 const SUPPORTED_COMPONENTS = [
   /* global vars */
-  'responsive.vars.scss',
   'options.vars.scss',
   /* component vars */
   'CdrButton.vars.scss',
