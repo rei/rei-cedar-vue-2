@@ -5,28 +5,28 @@ $input-pre-icon-default-width: 25px;
 /* PRIVATE */
 
 /* input label */
-@mixin cdr-input-label-text-mixin() {
+@mixin cdr-input-base-label-text-mixin() {
   @include maple-utility-20;
 }
-$cdr-input-label-color: $heart-of-darkness;
-$cdr-input-label-display: inline-block;
-$cdr-input-label-margin: 0;
-$cdr-input-label-mb: $cdr-space-quarter-x;
-$cdr-input-label-mr: $cdr-space-inset-quarter-x;
-@mixin cdr-input-label-mixin() {
-  @include cdr-input-label-text-mixin;
+$cdr-input-base-label-color: $heart-of-darkness;
+$cdr-input-base-label-display: inline-block;
+$cdr-input-base-label-margin: 0;
+$cdr-input-base-label-mb: $cdr-space-quarter-x;
+$cdr-input-base-label-mr: $cdr-space-inset-quarter-x;
+@mixin cdr-input-base-label-mixin() {
+  @include cdr-input-base-label-text-mixin;
 
-  color: $cdr-input-label-color;
-  display: $cdr-input-label-display;
-  margin: $cdr-input-label-margin;
-  margin-bottom: $cdr-input-label-mb;
-  margin-right: $cdr-input-label-mr;
+  color: $cdr-input-base-label-color;
+  display: $cdr-input-base-label-display;
+  margin: $cdr-input-base-label-margin;
+  margin-bottom: $cdr-input-base-label-mb;
+  margin-right: $cdr-input-base-label-mr;
 }
 
 /* input label disabled */
-$cdr-input-label-color-disabled: $grey-matter;
-@mixin cdr-input-label-disabled-mixin() {
-  color: $cdr-input-label-color-disabled;
+$cdr-input-base-label-color-disabled: $grey-matter;
+@mixin cdr-input-base-label-disabled-mixin() {
+  color: $cdr-input-base-label-color-disabled;
 }
 
 /* input base */
