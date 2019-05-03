@@ -25,21 +25,13 @@ $cdr-text-body-stack: 16px;
 
 $cdr-text-body-stack-bp-sm: 32px;
 
-@mixin cdr-text-body-responsive-mixin() {
+@mixin cdr-text-body-mixin() {
   @include cdr-text-body-text-mixin;
 
   max-width: $cdr-text-body-max-width;
 
   & + & {
     margin-top: $cdr-text-body-stack;
-  }
-
-  @include sm-mq {
-    @include cdr-text-body-text-bp-sm-mixin;
-
-    & + & {
-      margin-top: $cdr-text-body-stack-bp-sm;
-    }
   }
 }
 
@@ -74,18 +66,8 @@ $cdr-text-body-stack-bp-sm: 32px;
   @include spruce-display-80;
 }
 
-@mixin cdr-text-display-responsive-mixin() {
+@mixin cdr-text-display-mixin() {
   @include cdr-text-display-text-mixin;
-
-  /* @ small */
-  @include sm-mq {
-    @include cdr-text-display-text-bp-sm-mixin;
-  }
-
-  /* @ large */
-  @include lg-mq {
-    @include cdr-text-display-text-bp-lg-mixin;
-  }
 }
 
 /* display-static */
@@ -109,13 +91,8 @@ $cdr-text-body-stack-bp-sm: 32px;
   @include spruce-display-40;
 }
 
-@mixin cdr-text-heading-small-responsive-mixin() {
+@mixin cdr-text-heading-small-mixin() {
   @include cdr-text-heading-text-small-mixin;
-
-  /* @ large */
-  @include lg-mq {
-    @include cdr-text-heading-text-small-bp-lg-mixin;
-  }
 }
 
 /* heading-small-static */
@@ -138,13 +115,8 @@ $cdr-text-body-stack-bp-sm: 32px;
   @include spruce-display-50;
 }
 
-@mixin cdr-text-heading-medium-responsive-mixin() {
+@mixin cdr-text-heading-medium-mixin() {
   @include cdr-text-heading-text-medium-mixin;
-
-  /* @ large */
-  @include lg-mq {
-    @include cdr-text-heading-text-medium-bp-lg-mixin;
-  }
 }
 
 /* heading-medium-static */
@@ -173,18 +145,9 @@ $cdr-text-body-stack-bp-sm: 32px;
   @include spruce-display-70;
 }
 
-@mixin cdr-text-heading-large-responsive-mixin() {
+@mixin cdr-text-heading-large-mixin() {
   @include cdr-text-heading-text-large-mixin;
 
-  /* @ small */
-  @include sm-mq {
-    @include cdr-text-heading-text-large-bp-sm-mixin;
-  }
-
-  /* @ large */
-  @include lg-mq {
-    @include cdr-text-heading-text-large-bp-lg-mixin;
-  }
 }
 
 /* heading-large-static */
