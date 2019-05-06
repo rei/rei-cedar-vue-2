@@ -77,13 +77,8 @@ const plugins = [
   }),
   postcss({
     extract: postcssExtract,
-    // modules: {
-    //   generateScopedName(name, filename, css) {
-    //     // to preseve '@' in responsive class names
-    //     return `${name}-${packageJson.version}`;
-    //   },
-    // },
     extensions: ['.scss', '.css'],
+    sourceMap: env === 'dev' ? 'inline' : false, 
   }),
   commonjs(),
   copyPlugin({

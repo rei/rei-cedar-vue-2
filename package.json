@@ -69,7 +69,6 @@
     "chromedriver": "^2.45.0",
     "concat": "^1.0.3",
     "connect-history-api-fallback": "^1.6.0",
-    "copy-webpack-plugin": "^4.6.0",
     "core-js": "^3.0.1",
     "cross-env": "^5.2.0",
     "cross-spawn": "^6.0.4",

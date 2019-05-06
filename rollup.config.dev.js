@@ -23,6 +23,7 @@ export default {
     file: 'public/kitchen-sink.iife.js',
     format: 'iife',
     name: 'cedar',
+    sourcemap: true,
   },
   plugins,
   watch: {
