@@ -87,7 +87,7 @@
 
 <script>
 import { IconCaretLeft, IconCaretRight } from 'componentsdir/icon/build/main';
-import { default as CdrSelect } from 'componentsdir/select/CdrSelect';
+import CdrSelect from 'componentsdir/select/CdrSelect';
 
 export default {
   name: 'CdrPagination',

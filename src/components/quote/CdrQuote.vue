@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { default as CdrText } from 'componentsdir/text/CdrText';
+import CdrText from 'componentsdir/text/CdrText';
 import modifier from 'mixinsdir/modifier';
 
 /**

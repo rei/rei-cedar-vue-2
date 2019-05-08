@@ -24,8 +24,7 @@
 </template>
 
 <script>
-import { CdrButton } from '@rei/cdr-button';
-import { CdrInput } from '@rei/cdr-input';
+import { CdrButton, CdrInput } from 'componentsdir/_index';
 
 /**
  * A Cedar composition of `cdr-input` and `cdr-button` that gives you a simple search box. Passes all other attributes and events to `cdr-input`.

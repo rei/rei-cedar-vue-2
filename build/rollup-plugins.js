@@ -67,7 +67,7 @@ const plugins = [
       // this gets prepended in all components <style>
       scss() {
         return `@import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
-          @import "${resolve('src/css/settings/_index.scss')}";`;
+        @import "${resolve('src/css/settings/_index.scss')}";`;
       },
     },
     template: {
