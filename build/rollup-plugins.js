@@ -5,7 +5,6 @@ import commonjs from 'rollup-plugin-commonjs';
 import alias from 'rollup-plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
-import jsonPlugin from 'rollup-plugin-json';
 import copyPlugin from 'rollup-plugin-copy';
 import babel from 'rollup-plugin-babel';
 import packageJson from '../package.json';
@@ -51,7 +50,6 @@ const plugins = [
     mixinsdir: resolve('src/mixins'),
   }),
   nodeResolve(),
-  jsonPlugin(),
   vue({
     css: false,
     style: {
