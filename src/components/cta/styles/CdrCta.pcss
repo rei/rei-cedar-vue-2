@@ -1,6 +1,6 @@
 /* ==========================================================================
   # CdrCta
-  
+
   All values should map to variables in
   vars/CdrCta.vars.pcss
   in order to allow for theming
@@ -11,65 +11,20 @@
 ========================================================================== */
 
 .cdr-cta {
-  @include maple-utility-40;
-
-  background-color: $cta-background-color;
-  box-shadow: $cta-box-shadow;
-  border: none;
-  border-radius: $cta-border-radius;
-  color: $cta-color;
-  cursor: pointer;
-  display: inline-flex;
-  outline: none;
-  padding: $cdr-space-inset-one-and-a-half-x-squish;
-  padding-right: calc($cdr-space-one-and-a-half-x - $cdr-space-half-x);
-  text-align: left;
-  text-transform: uppercase;
-  text-decoration: none;
+  @include cdr-cta-base-mixin;
 
   & > .cdr-cta__icon {
-    align-self: center;
-    display: inline-block;
-    fill: inherit;
-    height: $cdr-icon-size;
-    margin-left: $cdr-space-quarter-x;
-    vertical-align: middle;
-    flex: 0 0 auto;
-    width: $cdr-icon-size;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: none;
-  }
-
-  &:focus {
-    outline: $default-outline;
-    outline-offset: 0;
+    @include cdr-cta-base-icon-mixin;
   }
 
   /* Full Width
      ========== */
   &--full-width {
-    justify-content: center;
-    width: 100%;
+    @include cdr-cta-full-width-mixin;
   }
 
   &--brand {
-    background-color: $cta-brand-background-color;
-    box-shadow: $cta-brand-box-shadow;
-    color: $cta-brand-color;
-    fill: $cta-brand-color;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $cta-brand-hover-background-color;
-      box-shadow: $cta-brand-box-shadow;
-      color: $cta-brand-hover-color;
-      fill: $cta-brand-hover-color;
-    }
+    @include cdr-cta-brand-mixin;
   }
 
   &--dark {
@@ -108,7 +63,7 @@
 
     &.cdr-cta--elevated {
       box-shadow: $cta-light-box-shadow, $cdr-prominence-elevated;
-      
+
       &:hover,
       &:focus,
       &:active, {
@@ -118,28 +73,10 @@
   }
 
   &--sale {
-    background-color: $cta-sale-background-color;
-    box-shadow: $cta-sale-box-shadow;
-    color: $cta-sale-color;
-    fill: $cta-sale-color;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $cta-sale-hover-background-color;
-      box-shadow: $cta-sale-box-shadow;
-      color: $cta-sale-hover-color;
-      fill: $cta-sale-hover-color;
-    }
+    @include cdr-cta-sale-mixin;
   }
-  
-  &--elevated {
-    box-shadow: $cdr-prominence-elevated;
 
-    &:hover,
-    &:focus,
-    &:active {
-      box-shadow: $cdr-prominence-elevated;
-    }
+  &--elevated {
+    @include cdr-cta-elevated-mixin;
   }
 }
