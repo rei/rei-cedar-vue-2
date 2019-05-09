@@ -13,7 +13,9 @@ const SUPPORTED_COMPONENTS = [
   'text.vars.scss',
   'form-label.vars.scss',
   'CdrInput.vars.scss',
-  'CdrSelect.vars.scss'
+  'CdrSelect.vars.scss',
+  'CdrCta.vars.scss',
+  'CdrList.vars.scss'
 ];
 
 const destMixinsDir = path.join(__dirname, `../../${DEST_REPO_NAME + path.sep + DEST_PATH}`);
