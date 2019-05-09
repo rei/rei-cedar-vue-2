@@ -21,7 +21,6 @@
     "build": "npm run clean && npm run build:csr && npm run build:ssr",
     "build:csr": "cross-env NODE_ENV=prod rollup -c rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=prod SSR_ENV=ssr rollup -c rollup.config.js",
-    "build:components": "cross-env NODE_ENV=prod rollup -c rollup.config.components.js",
     "unit": "cross-env NODE_ENV=test rollup -c rollup.config.test.js && jest --clearCache && jest",
     "unit:watch": "cross-env NODE_ENV=test nyc mocha-webpack --watch --webpack-config build/webpack.test.conf.js src/**/*.spec.js",
     "e2e": "node test/e2e/runner.js",
