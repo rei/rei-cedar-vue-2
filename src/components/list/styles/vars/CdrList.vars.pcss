@@ -1,14 +1,144 @@
-$nested-unordered-list-item-decorator: 2013;
-$inline-list-item-indentation-space: 1em;
-$nested-list-indentation-space: 1em;
-$inline-unordered-list-item-indentation-space: 1.5em;
-$inline-list-space: 0;
-$unordered-list-indentation-space: 1em;
-$nested-list-space: 8px;
+/* Private variables, do not use */
 $compact-list-item-space: 4px;
-$ordered-list-indentation-space: 1.5em;
-$list-item-indentation-space: 0;
-$unordered-list-item-decorator: 2022;
 $inline-compact-list-item-indentation-space: 0.5em;
-$nested-ordered-list-item-decorator: 2013;
+$inline-list-item-indentation-space: 1em;
+$inline-list-space: 0;
+$inline-unordered-list-item-indentation-space: 1.5em;
 $list-item-space: 8px;
+$nested-ordered-list-item-decorator: 2013;
+$nested-unordered-list-item-decorator: 2013;
+$ordered-list-indentation-space: 1.5em;
+$unordered-list-indentation-space: 1em;
+$unordered-list-item-decorator: 2022;
+/* End of Private variables*/
+
+
+$cdr-list-base-list-style-type: none;
+$cdr-list-base-padding: 0;
+$cdr-list-base-margin: 0;
+$cdr-list-base-item-mt: 8px;
+
+@mixin cdr-list-base-mixin() {
+  list-style-type: $cdr-list-base-list-style-type;
+  padding: $cdr-list-base-padding;
+  margin: $cdr-list-base-margin;
+
+  /* spacing
+    ---------- */
+  & > li + li {
+    margin-top: $cdr-list-base-item-mt;
+  }
+}
+
+/* base nested */
+$cdr-list-base-nested-mt: 8px;
+$cdr-list-base-nested-pl: 1em;
+$cdr-list-base-nested-list-style-type: none;
+@mixin cdr-list-base-nested-mixin() {
+  margin-top: $cdr-list-base-nested-mt;
+  padding-left: $cdr-list-base-nested-pl;
+  list-style-type: $cdr-list-base-nested-list-style-type;
+}
+
+
+/* compact */
+$cdr-list-compact-item-mt: $cdr-space-quarter-x;
+@mixin cdr-list-compact-mixin() {
+  & > li + li {
+    margin-top: $cdr-list-compact-item-mt;
+  }
+}
+
+/* compact nested */
+$cdr-list-compact-nested-mt: $cdr-space-quarter-x;
+@mixin cdr-list-compact-nested-mixin() {
+  margin-top: $cdr-space-quarter-x;
+}
+
+
+/* ordered */
+$cdr-list-ordered-list-style-type: decimal;
+$cdr-list-ordered-pl: 1.5em;
+$cdr-list-ordered-list-style-position: outside;
+
+$cdr-list-ordered-item-pl: $cdr-space-quarter-x;
+$cdr-list-ordered-item-pb: 0;
+$cdr-list-ordered-item-pr: 0;
+$cdr-list-ordered-item-pt: 0;
+
+@mixin cdr-list-ordered-mixin() {
+  list-style-type: $cdr-list-ordered-list-style-type;
+  padding-left: $cdr-list-ordered-pl;
+  list-style-position: $cdr-list-ordered-list-style-position;
+
+  & li {
+    padding-left: $cdr-list-ordered-item-pl;
+    padding-bottom: $cdr-list-ordered-item-pb;
+    padding-right: $cdr-list-ordered-item-pr;
+    padding-top: $cdr-list-ordered-item-pt;
+  }
+}
+
+/* ordered nested */
+$cdr-list-ordered-nested-position: relative;
+$cdr-list-ordered-nested-pl: 1em;
+
+$cdr-list-ordered-nested-item-pl: 0;
+$cdr-list-ordered-nested-item-content-before: '\$nested-ordered-list-item-decorator';
+$cdr-list-ordered-nested-item-position-before: absolute;
+$cdr-list-ordered-nested-item-left-before: 0;
+
+@mixin cdr-list-ordered-nested-mixin() {
+  position: $cdr-list-ordered-nested-position;
+  padding-left: $cdr-list-ordered-nested-pl;
+
+  & > li {
+    padding-left: $cdr-list-ordered-nested-item-pl;
+
+    &::before {
+      content: $cdr-list-ordered-nested-item-content-before;
+      position: $cdr-list-ordered-nested-item-position-before;
+      left: $cdr-list-ordered-nested-item-left-before;
+    }
+  }
+}
+
+/* unordered */
+$cdr-list-unordered-position: relative;
+$cdr-list-unordered-pl: 1em;
+
+$cdr-list-unordered-item-content: '\$unordered-list-item-decorator';
+$cdr-list-unordered-item-position: absolute;
+$cdr-list-unordered-item-left: 0;
+
+@mixin cdr-list-unordered-mixin() {
+  position: $cdr-list-unordered-position;
+  padding-left: $cdr-list-unordered-pl;
+
+  & > li::before {
+    content: $cdr-list-unordered-item-content;
+    position: $cdr-list-unordered-item-position;
+    left: $cdr-list-unordered-item-left;
+  }
+}
+
+/* unordered nested */
+$cdr-list-unordered-nested-position: relative;
+$cdr-list-unordered-nested-pl: 1em;
+
+$cdr-list-unordered-nested-item-content: '\$nested-unordered-list-item-decorator';
+$cdr-list-unordered-nested-item-position: absolute;
+$cdr-list-unordered-nested-item-left: 0;
+
+@mixin cdr-list-unordered-nested-mixin() {
+  position: $cdr-list-unordered-nested-position;
+  padding-left: $cdr-list-unordered-nested-pl;
+
+  & > li {
+    &::before {
+      content: $cdr-list-unordered-nested-item-content;
+      position: $cdr-list-unordered-nested-item-position;
+      left: $cdr-list-unordered-nested-item-left;
+    }
+  }
+}
