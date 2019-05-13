@@ -1,6 +1,9 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div class="link-examples">
+  <div
+    class="link-examples"
+    data-backstop="all-links"
+  >
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -45,11 +48,11 @@
     >Links, with icon</cdr-text>
     <div class="anchor-example">
       <cdr-link>
-        <!-- <cdr-icon
+        <cdr-icon
           use="#mail"
-          modifier="inherit-color"
-          class="cdr-inline-left--sm"
-        /> -->
+          inherit-color
+          class="cdr-mr-space-half-x"
+        />
         Icon on the left
       </cdr-link>
       <br>
@@ -58,25 +61,25 @@
         Icon on the right
         <cdr-icon
           use="#download"
-          modifier="inherit-color"
-          class="cdr-inline-right--sm"
+          inherit-color
+          class="cdr-ml-space-half-x"
         />
       </cdr-link>
       <br>
       <br>
-      <!-- <cdr-link>
+      <cdr-link>
         <cdr-icon
           use="#twitter"
-          modifier="inherit-color"
-          class="cdr-inline-left--sm"
+          inherit-color
+          class="cdr-mr-space-half-x"
         />
         Icons on both sides
         <cdr-icon
           use="#external-link"
-          modifier="inherit-color"
-          class="cdr-inline-right--sm"
+          inherit-color
+          class="cdr-ml-space-half-x"
         />
-      </cdr-link> -->
+      </cdr-link>
     </div>
 
     <cdr-text

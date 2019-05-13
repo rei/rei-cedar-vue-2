@@ -72,22 +72,6 @@ Within print media query.
 
 ## Spacing
 
-### Inline:
-Intended to be used for adding margin to the right of an element.
-
-#### Variants
-
-| Class                   | property     | value     |
-|-------------------------|--------------|-----------|
-| .inline-eighth-x        | margin-right | 2px       |
-| .inline-quarter-x       | margin-right | 4px       |
-| .inline-half-x          | margin-right | 8px       |
-| .inline-three-quarter-x | margin-right | 12px      |
-| .inline-1-x             | margin-right | 16px      |
-| .inline-1-and-a-half-x  | margin-right | 24px      |
-| .inline-2-x             | margin-right | 32px      |
-| .inline-4-x             | margin-right | 64px      |
-
 ### Insets:
 Used to add padding to all of our elements, it is important to be sure that elements use these variables rather than the generic space values for their internal spacing.
 
@@ -119,21 +103,3 @@ Used to add padding to all of our elements, it is important to be sure that elem
 | .inset-4-x                         | padding        | 64px      |
 | .inset-4-x-squish                  | padding        | 32px 64px |
 | .inset-4-x-stretch                 | padding        | 96px 64px |
-
-
-### Stack
-Intended to be used to add margin to the bottom of an element.
-
-#### Variants 
-
-| Class                   | property      | value     |
-|-------------------------|---------------|-----------|
-| .stack-eighth-x         | margin-bottom | 2px       |
-| .stack-quarter-x        | margin-bottom | 4px       |
-| .stack-half-x           | margin-bottom | 8px       |
-| .stack-three-quarter-x  | margin-bottom | 12px      |
-| .stack-1-x              | margin-bottom | 16px      |
-| .stack-1-and-a-half-x   | margin-bottom | 24px      |
-| .stack-2-x              | margin-bottom | 32px      |
-| .stack-4-x              | margin-bottom | 64px      |
-

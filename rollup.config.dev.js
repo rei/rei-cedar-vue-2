@@ -25,7 +25,7 @@ export default {
     file: 'public/kitchen-sink.iife.js',
     format: 'iife',
     name: 'cedar',
-    sourcemap: true,
+    // sourcemap: true, currently broken with vue plugin and watch -- https://github.com/vuejs/rollup-plugin-vue/issues/238
   },
   plugins,
   watch: {
