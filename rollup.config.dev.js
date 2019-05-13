@@ -4,20 +4,19 @@ import serve from 'rollup-plugin-serve';
 import jsonPlugin from 'rollup-plugin-json';
 import plugins from './build/rollup-plugins';
 
-console.log('env from config', process.env.NODE_ENV); /* eslint-disable-line */
-
 plugins.push(
   replace({
     'process.env.NODE_ENV': JSON.stringify(true),
   }),
   jsonPlugin(),
-  serve({
-    open: false,
-    contentBase: 'public',
-    port: 3000,
-  }),
-  livereload(),
 );
+
+// serve({
+//   open: false,
+//   contentBase: 'public',
+//   port: 3000,
+// }),
+// livereload(),
 
 export default {
   input: 'src/dev.js',
