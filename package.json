@@ -15,6 +15,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rei/rei-cedar.git"
+  },
   "scripts": {
     "prepublishOnly": "npm run lint && npm run build",
     "dev": "cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
