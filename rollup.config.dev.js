@@ -11,12 +11,16 @@ plugins.push(
   jsonPlugin(),
 );
 
-// serve({
-//   open: false,
-//   contentBase: 'public',
-//   port: 3000,
-// }),
-// livereload(),
+if (process.env.ROLLUP_WATCH) {
+  plugins.push(
+    serve({
+      open: false,
+      contentBase: 'public',
+      port: 3000,
+    }),
+    livereload(),
+  );
+}
 
 export default {
   input: 'src/dev.js',
