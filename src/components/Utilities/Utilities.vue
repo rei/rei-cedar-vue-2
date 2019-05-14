@@ -8,8 +8,6 @@
 
     <visibility />
 
-    <inset />
-
   </div>
 </template>
 
@@ -17,7 +15,6 @@
 import a11y from 'componentsdir/Utilities/demos/a11y';
 import visibility from 'componentsdir/Utilities/demos/visibility';
 import align from 'componentsdir/Utilities/demos/align';
-import inset from 'componentsdir/Utilities/demos/inset';
 import container from 'componentsdir/Utilities/demos/container';
 
 /**
@@ -31,7 +28,6 @@ export default {
     a11y,
     visibility,
     align,
-    inset,
     container,
   },
 };

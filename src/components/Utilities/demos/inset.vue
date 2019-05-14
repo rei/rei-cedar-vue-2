@@ -7,99 +7,89 @@
       Inset classes
     </cdr-text>
 
-    <!-- <cdr-card class="example">
-      <cdr-text class="cdr-inset-eighth-x">
-        cdr-inset-eighth-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-quarter-x">
-        cdr-inset-quarter-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-half-x">
-        cdr-inset-half-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-three-quarter-x">
-        cdr-inset-three-quarter-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-x">
-        cdr-inset-1-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-and-a-half-x">
-        cdr-inset-1-and-a-half-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-2-x">
-        cdr-inset-2-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-4-x">
-        cdr-inset-4-x
-      </cdr-text>
-      <cdr-text class="cdr-inset-eighth-x-squish">
-        cdr-inset-eighth-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-quarter-x-squish">
-        cdr-inset-quarter-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-half-x-squish">
-        cdr-inset-half-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-three-quarter-x-squish">
-        cdr-inset-three-quarter-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-x-squish">
-        cdr-inset-1-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-2-x-squish">
-        cdr-inset-2-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-4-x-squish">
-        cdr-inset-4-x-squish
-      </cdr-text>
-      <cdr-text class="cdr-inset-eighth-x-stretch">
-        cdr-inset-eighth-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-quarter-x-stretch">
-        cdr-inset-quarter-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-half-x-stretch">
-        cdr-inset-half-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-three-quarter-x-stretch">
-        cdr-inset-three-quarter-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-x-stretch">
-        cdr-inset-1-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-1-and-a-half-x-stretch">
-        cdr-inset-1-and-a-half-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-2-x-stretch">
-        cdr-inset-2-x-stretch
-      </cdr-text>
-      <cdr-text class="cdr-inset-4-x-stretch">
-        cdr-inset-4-x-stretch
-      </cdr-text>
+    <template
+      v-for="(v,k,i) in insetTokens"
+    >
+      <div
+        :key="`normal-${k}-${i}`"
+        :class="[kebab(k), 'inset-example']"
+        :style="{boxShadow: inset(v)}"
+      >{{ k }}</div>
+      <div
+        :key="`normal-${k}-${i}-xs`"
+        :class="[`${kebab(k)}@xs`, 'inset-example']"
+      >{{ k }}@xs</div>
+      <div
+        :key="`normal-${k}-${i}-sm`"
+        :class="[`${kebab(k)}@sm`, 'inset-example']"
+      >{{ k }}@sm</div>
+      <div
+        :key="`normal-${k}-${i}-md`"
+        :class="[`${kebab(k)}@md`, 'inset-example']"
+      >{{ k }}@md</div>
+      <div
+        :key="`normal-${k}-${i}-lg`"
+        :class="[`${kebab(k)}@lg`, 'inset-example']"
+      >{{ k }}@lg</div>
+    </template>
 
-    </cdr-card> -->
   </div>
 </template>
 
 <script>
 
 import { CdrText } from 'componentsdir/_index';
+import tokens from '@rei/cdr-tokens';
+import pickBy from 'lodash/pickBy';
+import kebabCase from 'lodash/kebabCase';
 
 export default {
   name: 'UtilitiesSpaceInset',
   components: {
     CdrText,
   },
+  data() {
+    return {
+      tokens,
+    };
+  },
+  computed: {
+    insetTokens() {
+      return pickBy(this.tokens, (v, k) => {
+        if (k.includes('SpaceInset')) {
+          if (!k.includes('Top') && !k.includes('Left')) {
+            return true;
+          }
+        }
+        return false;
+      });
+    },
+  },
+  methods: {
+    kebab(name) {
+      return kebabCase(name);
+    },
+    inset(val) {
+      if (val.indexOf(' ') <= 0) {
+        return this.getInset(val, val, `-${val}`, `-${val}`);
+      } if (val.indexOf('*') > 0) {
+        let [x, y] = val.split(') '); // eslint-disable-line
+        const negx = `${x.slice(0, 5)}-${x.slice(5)})`;
+        return this.getInset(`${x})`, y, negx, `-${y}`);
+      }
+      const [x, y] = val.split(' ');
+      return this.getInset(x, y, `-${x}`, `-${y}`);
+    },
+    getInset(posy, posx, negy, negx) {
+      // console.log(posx, posy, negx, negy);
+      return `inset ${negx} ${negy} 0 rgb(199, 220, 191), inset ${posx} ${posy} 0 rgb(199, 220, 191)`;// eslint-disable-line
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-  .example {
-    background-color: rgba(27, 28, 28, 0.6);
-  }
-
-  .example > * {
-    background-color: rgba(249, 229, 229, 0.8);
+  .inset-example + .inset-example {
+    margin-top: 10px;
   }
 </style>

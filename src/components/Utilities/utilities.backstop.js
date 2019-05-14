@@ -6,7 +6,6 @@ module.exports = [
       '[data-backstop="a11y-utilities"]',
       '[data-backstop="visibility-utilities"]',
       '[data-backstop="align-utilities"]',
-      '[data-backstop="inset-space-utilities"]',
       '[data-backstop="utility-container"]',
     ],
     focusSelectors: [
