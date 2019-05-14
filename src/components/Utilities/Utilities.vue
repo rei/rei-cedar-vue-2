@@ -8,11 +8,7 @@
 
     <visibility />
 
-    <inline />
-
     <inset />
-
-    <stack />
 
   </div>
 </template>
@@ -21,9 +17,7 @@
 import a11y from 'componentsdir/Utilities/demos/a11y';
 import visibility from 'componentsdir/Utilities/demos/visibility';
 import align from 'componentsdir/Utilities/demos/align';
-import inline from 'componentsdir/Utilities/demos/inline';
 import inset from 'componentsdir/Utilities/demos/inset';
-import stack from 'componentsdir/Utilities/demos/stack';
 import container from 'componentsdir/Utilities/demos/container';
 
 /**
@@ -37,9 +31,7 @@ export default {
     a11y,
     visibility,
     align,
-    inline,
     inset,
-    stack,
     container,
   },
 };

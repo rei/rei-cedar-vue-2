@@ -2,883 +2,96 @@
   # spacing
   
   Utility classes spacing
-
   TOC:
-
     :inset
     :inset-squish
     :inset-stretch
-    :stack
-    :inline
+    :space-m
+    :space-p
     :responsive
-      :xs
-        :inset
-        :inset-squish
-        :inset-stretch
-        :stack
-        :inline
-      :sm
-        :inset
-        :inset-squish
-        :inset-stretch
-        :stack
-        :inline
-      :md
-        :inset
-        :inset-squish
-        :inset-stretch
-        :stack
-        :inline
-      :lg
-        :inset
-        :inset-squish
-        :inset-stretch
-        :stack
-        :inline
+ 
 ========================================================================== */
 
-/*
-  inset values
-  these reference specific tokens because they exist
-*/
-.cdr-inset-eighth-x {
-  padding: $cdr-space-inset-eighth-x;
-}
-
-.cdr-inset-quarter-x {
-  padding: $cdr-space-inset-quarter-x;
-}
-
-.cdr-inset-half-x {
-  padding: $cdr-space-inset-half-x;
-}
-
-.cdr-inset-three-quarter-x {
-  padding: $cdr-space-inset-three-quarter-x;
-}
-
-.cdr-inset-1-x {
-  padding: $cdr-space-inset-one-x;
-}
-
-.cdr-inset-1-and-a-half-x {
-  padding: $cdr-space-inset-one-and-a-half-x;
-}
-
-.cdr-inset-2-x {
-  padding: $cdr-space-inset-two-x;
-}
-
-.cdr-inset-4-x {
-  padding: $cdr-space-inset-four-x;
-}
-
-/* inset-squish */
-.cdr-inset-eighth-x-squish {
-  padding: $cdr-space-inset-eighth-x-squish;
-}
-
-.cdr-inset-quarter-x-squish {
-  padding: $cdr-space-inset-quarter-x-squish;
-}
-
-.cdr-inset-half-x-squish {
-  padding: $cdr-space-inset-half-x-squish;
-}
-
-.cdr-inset-three-quarter-x-squish {
-  padding: $cdr-space-inset-three-quarter-x-squish;
-}
-
-.cdr-inset-1-x-squish {
-  padding: $cdr-space-inset-one-x-squish;
-}
-
-.cdr-inset-1-and-a-half-x-squish {
-  padding: $cdr-space-inset-one-and-a-half-x-squish;
-}
-
-.cdr-inset-2-x-squish {
-  padding: $cdr-space-inset-two-x-squish;
-}
-
-.cdr-inset-4-x-squish {
-  padding: $cdr-space-inset-four-x-squish;
-}
-
-/* inset-stretch */
-.cdr-inset-eighth-x-stretch {
-  padding: $cdr-space-inset-eighth-x-stretch;
-}
-
-.cdr-inset-quarter-x-stretch {
-  padding: $cdr-space-inset-quarter-x-stretch;
-}
-
-.cdr-inset-half-x-stretch {
-  padding: $cdr-space-inset-half-x-stretch;
-}
-
-.cdr-inset-three-quarter-x-stretch {
-  padding: $cdr-space-inset-three-quarter-x-stretch;
-}
-
-.cdr-inset-1-x-stretch {
-  padding: $cdr-space-inset-one-x-stretch;
-}
-
-.cdr-inset-1-and-a-half-x-stretch {
-  padding: $cdr-space-inset-one-and-a-half-x-stretch;
-}
-
-.cdr-inset-2-x-stretch {
-  padding: $cdr-space-inset-two-x-stretch;
-}
-
-.cdr-inset-4-x-stretch {
-  padding: $cdr-space-inset-four-x-stretch;
-}
-
-/* stack values */
-.cdr-stack-eighth-x {
-  margin-bottom: $cdr-space-eighth-x;
-}
-
-.cdr-stack-quarter-x {
-  margin-bottom: $cdr-space-quarter-x;
-}
-
-.cdr-stack-half-x {
-  margin-bottom: $cdr-space-half-x;
-}
-
-.cdr-stack-three-quarter-x {
-  margin-bottom: $cdr-space-three-quarter-x;
-}
-
-.cdr-stack-1-x {
-  margin-bottom: $cdr-space-one-x;
-}
-
-.cdr-stack-1-and-a-half-x {
-  margin-bottom: $cdr-space-one-and-a-half-x;
-}
-
-.cdr-stack-2-x {
-  margin-bottom: $cdr-space-two-x;
-}
-
-.cdr-stack-4-x {
-  margin-bottom: $cdr-space-four-x;
-}
-
-/* inline values */
-.cdr-inline-eighth-x {
-  margin-right: $cdr-space-eighth-x;
-}
-
-.cdr-inline-quarter-x {
-  margin-right: $cdr-space-quarter-x;
-}
-
-.cdr-inline-half-x {
-  margin-right: $cdr-space-half-x;
-}
-
-.cdr-inline-three-quarter-x {
-  margin-right: $cdr-space-three-quarter-x;
-}
-
-.cdr-inline-1-x {
-  margin-right: $cdr-space-one-x;
-}
-
-.cdr-inline-1-and-a-half-x {
-  margin-right: $cdr-space-one-and-a-half-x;
-}
-
-.cdr-inline-2-x {
-  margin-right: $cdr-space-two-x;
-}
-
-.cdr-inline-4-x {
-  margin-right: $cdr-space-four-x;
-}
-
-/* @xs
-  0px - 767px
-  ========== */
-
-@include xs-mq-only {
-  .cdr-inset-eighth-x\@xs {
-    padding: $cdr-space-inset-eighth-x;
-  }
-
-  .cdr-inset-quarter-x\@xs {
-    padding: $cdr-space-inset-quarter-x;
-  }
-
-  .cdr-inset-half-x\@xs {
-    padding: $cdr-space-inset-half-x;
-  }
-
-  .cdr-inset-three-quarter-x\@xs {
-    padding: $cdr-space-inset-three-quarter-x;
-  }
-
-  .cdr-inset-1-x\@xs {
-    padding: $cdr-space-inset-one-x;
-  }
-
-  .cdr-inset-1-and-a-half-x\@xs {
-    padding: $cdr-space-inset-one-and-a-half-x;
-  }
-
-  .cdr-inset-2-x\@xs {
-    padding: $cdr-space-inset-two-x;
-  }
-
-  .cdr-inset-4-x\@xs {
-    padding: $cdr-space-inset-four-x;
-  }
-
-  /* inset-squish */
-  .cdr-inset-eighth-x-squish\@xs {
-    padding: $cdr-space-inset-eighth-x-squish;
-  }
-
-  .cdr-inset-quarter-x-squish\@xs {
-    padding: $cdr-space-inset-quarter-x-squish;
-  }
-
-  .cdr-inset-half-x-squish\@xs {
-    padding: $cdr-space-inset-half-x-squish;
-  }
-
-  .cdr-inset-three-quarter-x-squish\@xs {
-    padding: $cdr-space-inset-three-quarter-x-squish;
-  }
-
-  .cdr-inset-1-x-squish\@xs {
-    padding: $cdr-space-inset-one-x-squish;
-  }
-
-  .cdr-inset-1-and-a-half-x-squish\@xs {
-    padding: $cdr-space-inset-one-and-a-half-x-squish;
-  }
-
-  .cdr-inset-2-x-squish\@xs {
-    padding: $cdr-space-inset-two-x-squish;
-  }
-
-  .cdr-inset-4-x-squish\@xs {
-    padding: $cdr-space-inset-four-x-squish;
-  }
-
-  /* inset-stretch */
-  .cdr-inset-eighth-x-stretch\@xs {
-    padding: $cdr-space-inset-eighth-x-stretch;
-  }
-
-  .cdr-inset-quarter-x-stretch\@xs {
-    padding: $cdr-space-inset-quarter-x-stretch;
-  }
-
-  .cdr-inset-half-x-stretch\@xs {
-    padding: $cdr-space-inset-half-x-stretch;
-  }
-
-  .cdr-inset-three-quarter-x-stretch\@xs {
-    padding: $cdr-space-inset-three-quarter-x-stretch;
-  }
-
-  .cdr-inset-1-x-stretch\@xs {
-    padding: $cdr-space-inset-one-x-stretch;
-  }
-
-  .cdr-inset-1-and-a-half-x-stretch\@xs {
-    padding: $cdr-space-inset-one-and-a-half-x-stretch;
-  }
-
-  .cdr-inset-2-x-stretch\@xs {
-    padding: $cdr-space-inset-two-x-stretch;
-  }
-
-  .cdr-inset-4-x-stretch\@xs {
-    padding: $cdr-space-inset-four-x-stretch;
-  }
-
-  /* stack values */
-  .cdr-stack-eighth-x\@xs {
-    margin-bottom: $cdr-space-eighth-x;
-  }
-
-  .cdr-stack-quarter-x\@xs {
-    margin-bottom: $cdr-space-quarter-x;
-  }
-
-  .cdr-stack-half-x\@xs {
-    margin-bottom: $cdr-space-half-x;
-  }
-
-  .cdr-stack-three-quarter-x\@xs {
-    margin-bottom: $cdr-space-three-quarter-x;
-  }
-
-  .cdr-stack-1-x\@xs {
-    margin-bottom: $cdr-space-one-x;
-  }
-
-  .cdr-stack-1-and-a-half-x\@xs {
-    margin-bottom: $cdr-space-one-and-a-half-x;
-  }
-
-  .cdr-stack-2-x\@xs {
-    margin-bottom: $cdr-space-two-x;
-  }
-
-  .cdr-stack-4-x\@xs {
-    margin-bottom: $cdr-space-four-x;
-  }
-
-  /* inline values */
-  .cdr-inline-eighth-x\@xs {
-    margin-right: $cdr-space-eighth-x;
-  }
-
-  .cdr-inline-quarter-x\@xs {
-    margin-right: $cdr-space-quarter-x;
-  }
-
-  .cdr-inline-half-x\@xs {
-    margin-right: $cdr-space-half-x;
-  }
-
-  .cdr-inline-three-quarter-x\@xs {
-    margin-right: $cdr-space-three-quarter-x;
-  }
-
-  .cdr-inline-1-x\@xs {
-    margin-right: $cdr-space-one-x;
-  }
-
-  .cdr-inline-1-and-a-half-x\@xs {
-    margin-right: $cdr-space-one-and-a-half-x;
-  }
-
-  .cdr-inline-2-x\@xs {
-    margin-right: $cdr-space-two-x;
-  }
-
-  .cdr-inline-4-x\@xs {
-    margin-right: $cdr-space-four-x;
-  }
-}
-
-/* @sm
-  768px - 991px
-  ========== */
-@include sm-mq-only {
-  .cdr-inset-eighth-x\@sm {
-    padding: $cdr-space-inset-eighth-x;
-  }
-
-  .cdr-inset-quarter-x\@sm {
-    padding: $cdr-space-inset-quarter-x;
-  }
-
-  .cdr-inset-half-x\@sm {
-    padding: $cdr-space-inset-half-x;
-  }
-
-  .cdr-inset-three-quarter-x\@sm {
-    padding: $cdr-space-inset-three-quarter-x;
-  }
-
-  .cdr-inset-1-x\@sm {
-    padding: $cdr-space-inset-one-x;
-  }
-
-  .cdr-inset-1-and-a-half-x\@sm {
-    padding: $cdr-space-inset-one-and-a-half-x;
-  }
-
-  .cdr-inset-2-x\@sm {
-    padding: $cdr-space-inset-two-x;
+// include token maps
+
+@import "~@rei/cdr-tokens/dist/scss/utility-map.scss";
+
+// needed functions
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
   }
   
-  .cdr-inset-4-x\@sm {
-    padding: $cdr-space-inset-four-x;
-  }
+  @return $string;
+}
 
-  /* inset-squish */
-  .cdr-inset-eighth-x-squish\@sm {
-    padding: $cdr-space-inset-eighth-x-squish;
-  }
+//----------------------------------------------------
+// generate space utilties
 
-  .cdr-inset-quarter-x-squish\@sm {
-    padding: $cdr-space-inset-quarter-x-squish;
-  }
+// regular space
+@mixin make-standard-space-utilities() {
+  @each $key, $value in $spacing {
+    $name: str-replace($key, 'cdr-');
+    $sides: (
+      left: 'l',
+      top: 't',
+      right: 'r',
+      bottom: 'b',
+    );
+    
+    // loop through sides
+    @each $full, $short in $sides {
+      .cdr-p#{$short}-#{$name} { padding-#{$full}: #{$value}; }
+      .cdr-m#{$short}-#{$name} { margin-#{$full}: #{$value}; }
 
-  .cdr-inset-half-x-squish\@sm {
-    padding: $cdr-space-inset-half-x-squish;
-  }
+      @include xs-mq-only {
+        .cdr-p#{$short}-#{$name}\@xs { padding-#{$full}: #{$value}; }
+        .cdr-m#{$short}-#{$name}\@xs { margin-#{$full}: #{$value}; }
+      }
 
-  .cdr-inset-three-quarter-x-squish\@sm {
-    padding: $cdr-space-inset-three-quarter-x-squish;
-  }
+      @include sm-mq-only {
+        .cdr-p#{$short}-#{$name}\@sm { padding-#{$full}: #{$value}; }
+        .cdr-m#{$short}-#{$name}\@sm { margin-#{$full}: #{$value}; }
+      }
 
-  .cdr-inset-1-x-squish\@sm {
-    padding: $cdr-space-inset-one-x-squish;
-  }
+      @include md-mq-only {
+        .cdr-p#{$short}-#{$name}\@md { padding-#{$full}: #{$value}; }
+        .cdr-m#{$short}-#{$name}\@md { margin-#{$full}: #{$value}; }
+      }
 
-  .cdr-inset-1-and-a-half-x-squish\@sm {
-    padding: $cdr-space-inset-one-and-a-half-x-squish;
-  }
-
-  .cdr-inset-2-x-squish\@sm {
-    padding: $cdr-space-inset-two-x-squish;
-  }
-
-  .cdr-inset-4-x-squish\@sm {
-    padding: $cdr-space-inset-four-x-squish;
-  }
-
-  /* inset-stretch */
-  .cdr-inset-eighth-x-stretch\@sm {
-    padding: $cdr-space-inset-eighth-x-stretch;
-  }
-
-  .cdr-inset-quarter-x-stretch\@sm {
-    padding: $cdr-space-inset-quarter-x-stretch;
-  }
-
-  .cdr-inset-half-x-stretch\@sm {
-    padding: $cdr-space-inset-half-x-stretch;
-  }
-
-  .cdr-inset-three-quarter-x-stretch\@sm {
-    padding: $cdr-space-inset-three-quarter-x-stretch;
-  }
-
-  .cdr-inset-1-x-stretch\@sm {
-    padding: $cdr-space-inset-one-x-stretch;
-  }
-
-  .cdr-inset-1-and-a-half-x-stretch\@sm {
-    padding: $cdr-space-inset-one-and-a-half-x-stretch;
-  }
-
-  .cdr-inset-2-x-stretch\@sm {
-    padding: $cdr-space-inset-two-x-stretch;
-  }
-
-  .cdr-inset-4-x-stretch\@sm {
-    padding: $cdr-space-inset-four-x-stretch;
-  }
-
-  /* stack values */
-  .cdr-stack-eighth-x\@sm {
-    margin-bottom: $cdr-space-eighth-x;
-  }
-
-  .cdr-stack-quarter-x\@sm {
-    margin-bottom: $cdr-space-quarter-x;
-  }
-
-  .cdr-stack-half-x\@sm {
-    margin-bottom: $cdr-space-half-x;
-  }
-
-  .cdr-stack-three-quarter-x\@sm {
-    margin-bottom: $cdr-space-three-quarter-x;
-  }
-
-  .cdr-stack-1-x\@sm {
-    margin-bottom: $cdr-space-one-x;
-  }
-
-  .cdr-stack-1-and-a-half-x\@sm {
-    margin-bottom: $cdr-space-one-and-a-half-x;
-  }
-
-  .cdr-stack-2-x\@sm {
-    margin-bottom: $cdr-space-two-x;
-  }
-
-  .cdr-stack-4-x\@sm {
-    margin-bottom: $cdr-space-four-x;
-  }
-
-  /* inline values */
-  .cdr-inline-eighth-x\@sm {
-    margin-right: $cdr-space-eighth-x;
-  }
-
-  .cdr-inline-quarter-x\@sm {
-    margin-right: $cdr-space-quarter-x;
-  }
-
-  .cdr-inline-half-x\@sm {
-    margin-right: $cdr-space-half-x;
-  }
-
-  .cdr-inline-three-quarter-x\@sm {
-    margin-right: $cdr-space-three-quarter-x;
-  }
-
-  .cdr-inline-1-x\@sm {
-    margin-right: $cdr-space-one-x;
-  }
-
-  .cdr-inline-1-and-a-half-x\@sm {
-    margin-right: $cdr-space-one-and-a-half-x;
-  }
-
-  .cdr-inline-2-x\@sm {
-    margin-right: $cdr-space-two-x;
-  }
-
-  .cdr-inline-4-x\@sm {
-    margin-right: $cdr-space-four-x;
+      @include lg-mq-only {
+        .cdr-p#{$short}-#{$name}\@lg { padding-#{$full}: #{$value}; }
+        .cdr-m#{$short}-#{$name}\@lg { margin-#{$full}: #{$value}; }
+      }
+    }
   }
 }
 
-/* @md
-  992px - 1199px
-  ========== */
-@include md-mq-only {
-  .cdr-inset-eighth-x\@md {
-    padding: $cdr-space-inset-eighth-x;
-  }
+@include make-standard-space-utilities();
 
-  .cdr-inset-quarter-x\@md {
-    padding: $cdr-space-inset-quarter-x;
-  }
+// inset
+@mixin make-inset-space-utilities() {
+  @each $key, $value in $spacing-inset {
+    .#{$key} { padding: #{$value}; }
 
-  .cdr-inset-half-x\@md {
-    padding: $cdr-space-inset-half-x;
-  }
+    @include xs-mq-only {
+        .#{$key}\@xs { padding: #{$value}; }
+      }
 
-  .cdr-inset-three-quarter-x\@md {
-    padding: $cdr-space-inset-three-quarter-x;
-  }
+      @include sm-mq-only {
+        .#{$key}\@sm { padding: #{$value}; }
+      }
 
-  .cdr-inset-1-x\@md {
-    padding: $cdr-space-inset-one-x;
-  }
+      @include md-mq-only {
+        .#{$key}\@md { padding: #{$value}; }
+      }
 
-  .cdr-inset-1-and-a-half-x\@md {
-    padding: $cdr-space-inset-one-and-a-half-x;
-  }
-
-  .cdr-inset-2-x\@md {
-    padding: $cdr-space-inset-two-x;
-  }
-
-  .cdr-inset-4-x\@md {
-    padding: $cdr-space-inset-four-x;
-  }
-
-  /* inset-squish */
-  .cdr-inset-eighth-x-squish\@md {
-    padding: $cdr-space-inset-eighth-x-squish;
-  }
-
-  .cdr-inset-quarter-x-squish\@md {
-    padding: $cdr-space-inset-quarter-x-squish;
-  }
-
-  .cdr-inset-half-x-squish\@md {
-    padding: $cdr-space-inset-half-x-squish;
-  }
-
-  .cdr-inset-three-quarter-x-squish\@md {
-    padding: $cdr-space-inset-three-quarter-x-squish;
-  }
-
-  .cdr-inset-1-x-squish\@md {
-    padding: $cdr-space-inset-one-x-squish;
-  }
-
-  .cdr-inset-1-and-a-half-x-squish\@md {
-    padding: $cdr-space-inset-one-and-a-half-x-squish;
-  }
-
-  .cdr-inset-2-x-squish\@md {
-    padding: $cdr-space-inset-two-x-squish;
-  }
-
-  .cdr-inset-4-x-squish\@md {
-    padding: $cdr-space-inset-four-x-squish;
-  }
-
-  /* inset-stretch */
-  .cdr-inset-eighth-x-stretch\@md {
-    padding: $cdr-space-inset-eighth-x-stretch;
-  }
-
-  .cdr-inset-quarter-x-stretch\@md {
-    padding: $cdr-space-inset-quarter-x-stretch;
-  }
-
-  .cdr-inset-half-x-stretch\@md {
-    padding: $cdr-space-inset-half-x-stretch;
-  }
-
-  .cdr-inset-three-quarter-x-stretch\@md {
-    padding: $cdr-space-inset-three-quarter-x-stretch;
-  }
-
-  .cdr-inset-1-x-stretch\@md {
-    padding: $cdr-space-inset-one-x-stretch;
-  }
-
-  .cdr-inset-1-and-a-half-x-stretch\@md {
-    padding: $cdr-space-inset-one-and-a-half-x-stretch;
-  }
-
-  .cdr-inset-2-x-stretch\@md {
-    padding: $cdr-space-inset-two-x-stretch;
-  }
-
-  .cdr-inset-4-x-stretch\@md {
-    padding: $cdr-space-inset-four-x-stretch;
-  }
-
-  /* stack values */
-  .cdr-stack-eighth-x\@md {
-    margin-bottom: $cdr-space-eighth-x;
-  }
-
-  .cdr-stack-quarter-x\@md {
-    margin-bottom: $cdr-space-quarter-x;
-  }
-
-  .cdr-stack-half-x\@md {
-    margin-bottom: $cdr-space-half-x;
-  }
-
-  .cdr-stack-three-quarter-x\@md {
-    margin-bottom: $cdr-space-three-quarter-x;
-  }
-
-  .cdr-stack-1-x\@md {
-    margin-bottom: $cdr-space-one-x;
-  }
-
-  .cdr-stack-1-and-a-half-x\@md {
-    margin-bottom: $cdr-space-one-and-a-half-x;
-  }
-
-  .cdr-stack-2-x\@md {
-    margin-bottom: $cdr-space-two-x;
-  }
-
-  .cdr-stack-4-x\@md {
-    margin-bottom: $cdr-space-four-x;
-  }
-
-  /* inline values */
-  .cdr-inline-eighth-x\@md {
-    margin-right: $cdr-space-eighth-x;
-  }
-
-  .cdr-inline-quarter-x\@md {
-    margin-right: $cdr-space-quarter-x;
-  }
-
-  .cdr-inline-half-x\@md {
-    margin-right: $cdr-space-half-x;
-  }
-
-  .cdr-inline-three-quarter-x\@md {
-    margin-right: $cdr-space-three-quarter-x;
-  }
-
-  .cdr-inline-1-x\@md {
-    margin-right: $cdr-space-one-x;
-  }
-
-  .cdr-inline-1-and-a-half-x\@md {
-    margin-right: $cdr-space-one-and-a-half-x;
-  }
-
-  .cdr-inline-2-x\@md {
-    margin-right: $cdr-space-two-x;
-  }
-
-  .cdr-inline-4-x\@md {
-    margin-right: $cdr-space-four-x;
+      @include lg-mq-only {
+        .#{$key}\@lg { padding: #{$value}; }
+      }
   }
 }
 
-/* @lg
-  1200px and up
-  ========== */
-
-@include lg-mq-only {
-  .cdr-inset-eighth-x\@lg {
-    padding: $cdr-space-inset-eighth-x;
-  }
-
-  .cdr-inset-quarter-x\@lg {
-    padding: $cdr-space-inset-quarter-x;
-  }
-
-  .cdr-inset-half-x\@lg {
-    padding: $cdr-space-inset-half-x;
-  }
-
-  .cdr-inset-three-quarter-x\@lg {
-    padding: $cdr-space-inset-three-quarter-x;
-  }
-
-  .cdr-inset-1-x\@lg {
-    padding: $cdr-space-inset-one-x;
-  }
-
-  .cdr-inset-1-and-a-half-x\@lg {
-    padding: $cdr-space-inset-one-and-a-half-x;
-  }
-  
-  .cdr-inset-2-x\@lg {
-    padding: $cdr-space-inset-two-x;
-  }
-
-  .cdr-inset-4-x\@lg {
-    padding: $cdr-space-inset-four-x;
-  }
-
-  /* inset-squish */
-  .cdr-inset-eighth-x-squish\@lg {
-    padding: $cdr-space-inset-eighth-x-squish;
-  }
-
-  .cdr-inset-quarter-x-squish\@lg {
-    padding: $cdr-space-inset-quarter-x-squish;
-  }
-
-  .cdr-inset-half-x-squish\@lg {
-    padding: $cdr-space-inset-half-x-squish;
-  }
-
-  .cdr-inset-three-quarter-x-squish\@lg {
-    padding: $cdr-space-inset-three-quarter-x-squish;
-  }
-
-  .cdr-inset-1-x-squish\@lg {
-    padding: $cdr-space-inset-one-x-squish;
-  }
-
-  .cdr-inset-1-and-a-half-x-squish\@lg {
-    padding: $cdr-space-inset-one-and-a-half-x-squish;
-  }
-
-  .cdr-inset-2-x-squish\@lg {
-    padding: $cdr-space-inset-two-x-squish;
-  }
-
-  .cdr-inset-4-x-squish\@lg {
-    padding: $cdr-space-inset-four-x-squish;
-  }
-
-  /* inset-stretch */
-  .cdr-inset-eighth-x-stretch\@lg {
-    padding: $cdr-space-inset-eighth-x-stretch;
-  }
-
-  .cdr-inset-quarter-x-stretch\@lg {
-    padding: $cdr-space-inset-quarter-x-stretch;
-  }
-
-  .cdr-inset-half-x-stretch\@lg {
-    padding: $cdr-space-inset-half-x-stretch;
-  }
-
-  .cdr-inset-three-quarter-x-stretch\@lg {
-    padding: $cdr-space-inset-three-quarter-x-stretch;
-  }
-
-  .cdr-inset-1-x-stretch\@lg {
-    padding: $cdr-space-inset-one-x-stretch;
-  }
-
-  .cdr-inset-1-and-a-half-x-stretch\@lg {
-    padding: $cdr-space-inset-one-and-a-half-x-stretch;
-  }
-
-  .cdr-inset-2-x-stretch\@lg {
-    padding: $cdr-space-inset-two-x-stretch;
-  }
-
-  .cdr-inset-4-x-stretch\@lg {
-    padding: $cdr-space-inset-four-x-stretch;
-  }
-
-  /* stack values */
-  .cdr-stack-eighth-x\@lg {
-    margin-bottom: $cdr-space-eighth-x;
-  }
-
-  .cdr-stack-quarter-x\@lg {
-    margin-bottom: $cdr-space-quarter-x;
-  }
-
-  .cdr-stack-half-x\@lg {
-    margin-bottom: $cdr-space-half-x;
-  }
-
-  .cdr-stack-three-quarter-x\@lg {
-    margin-bottom: $cdr-space-three-quarter-x;
-  }
-
-  .cdr-stack-1-x\@lg {
-    margin-bottom: $cdr-space-one-x;
-  }
-
-  .cdr-stack-1-and-a-half-x\@lg {
-    margin-bottom: $cdr-space-one-and-a-half-x;
-  }
-
-  .cdr-stack-2-x\@lg {
-    margin-bottom: $cdr-space-two-x;
-  }
-
-  .cdr-stack-4-x\@lg {
-    margin-bottom: $cdr-space-four-x;
-  }
-
-  /* inline values */
-  .cdr-inline-eighth-x\@lg {
-    margin-right: $cdr-space-eighth-x;
-  }
-
-  .cdr-inline-quarter-x\@lg {
-    margin-right: $cdr-space-quarter-x;
-  }
-
-  .cdr-inline-half-x\@lg {
-    margin-right: $cdr-space-half-x;
-  }
-
-  .cdr-inline-three-quarter-x\@lg {
-    margin-right: $cdr-space-three-quarter-x;
-  }
-
-  .cdr-inline-1-x\@lg {
-    margin-right: $cdr-space-one-x;
-  }
-
-  .cdr-inline-1-and-a-half-x\@lg {
-    margin-right: $cdr-space-one-and-a-half-x;
-  }
-
-  .cdr-inline-2-x\@lg {
-    margin-right: $cdr-space-two-x;
-  }
-
-  .cdr-inline-4-x\@lg {
-    margin-right: $cdr-space-four-x;
-  }
-}
+@include make-inset-space-utilities();
