@@ -9,8 +9,8 @@
     :Base
 ========================================================================== */
 
-$card-background-color: #ffffff;
+$card-background-color: $cdr-color-background-lightest;
 $card-border-radius: $cdr-radius-soft;
 $card-box-shadow: $cdr-prominence-raised;
-$card-color: $text-color-primary-on-light;
+$card-color: $cdr-color-text-primary-lightmode;
 $card-width: 100%;

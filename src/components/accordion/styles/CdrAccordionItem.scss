@@ -19,16 +19,19 @@
 ========================================================================== */
 
 .cdr-accordion-item {
+  // TODO: $cdr-color-border-disabled-lightmode
   border-top: 1px solid $partly-cloudy;
+
   position: relative;
   z-index: 1;
 
   &__button {
+    // TODO: typography token
     @include redwood-display-30;
 
-    background-color: $clean-slate;
+    background-color: $cdr-color-background-lightest;
     border: none;
-    color: $heart-of-darkness;
+    color: $cdr-color-text-primary-lightmode;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -40,11 +43,12 @@
 
     &:hover,
     &:focus {
-      background-color: $the-tooth;
+      background-color: $cdr-color-background-light;
     }
   }
 
   &__label {
+    // TODO: typography token
     @include redwood-display-30;
 
     font-weight: bold;
@@ -54,7 +58,8 @@
 
   &__icon {
     margin-left: $cdr-space-one-x;
-    fill: $heart-of-darkness;
+    // TODO: should this be an icon token?
+    fill: $cdr-color-text-primary-lightmode;
     transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
 
     &:global(.open) {
@@ -74,15 +79,17 @@
   }
 
   &__content {
+    // TODO: typography token
     @include redwood-body-20;
 
-    background-color: $clean-slate;
-    color: $heart-of-darkness;
+    background-color: $cdr-color-background-lightest;
+    color: $cdr-color-text-primary-lightmode;
     padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-one-x;
     transition: opacity 100ms linear;
     opacity: 0;
 
     & > * {
+      // TODO: typography token
       @include redwood-body-20;
     }
 
@@ -97,7 +104,7 @@
 
   /* Style variants
     ========================================================================== */
-  
+
   /* Border-Aligned
      ========== */
   &--border-aligned {
@@ -121,17 +128,20 @@
     }
 
     .cdr-accordion-item__label {
+      // TODO: typography token
       @include redwood-display-20;
 
       font-weight: bold;
     }
 
     .cdr-accordion-item__content {
+      // TODO: typography token
       @include redwood-body-10;
 
       padding: $cdr-space-quarter-x $cdr-space-three-quarter-x $cdr-space-three-quarter-x;
 
       & > * {
+        // TODO: typography token
         @include redwood-body-10;
       }
     }
@@ -151,6 +161,7 @@
   }
 
   &:last-child {
+    // TODO: $cdr-color-border-disabled-lightmode
     border-bottom: 1px solid $partly-cloudy;
   }
 
