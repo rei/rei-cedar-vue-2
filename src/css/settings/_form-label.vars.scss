@@ -1,10 +1,11 @@
-$cdr-label-base-spacing: 8px;
+$cdr-label-base-spacing: $cdr-space-half-x;
 
 @mixin cdr-label-base-text-mixin() {
+  // TODO: typography token
   @include redwood-display-30;
 }
 
-$cdr-label-base-color: #292929;
+$cdr-label-base-color: $cdr-color-text-form-label-lightmode;
 $cdr-label-base-display: inline-block;
 $cdr-label-base-margin: 0;
 @mixin cdr-label-base-mixin() {
@@ -31,6 +32,7 @@ $cdr-label-color-disabled: #b8b8b8;
 
 
 @mixin cdr-label-compact-text-mixin() {
+  // TODO: typography token
   @include redwood-display-20;
 }
 @mixin cdr-label-compact-mixin() {
