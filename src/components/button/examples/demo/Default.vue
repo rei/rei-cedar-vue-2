@@ -54,6 +54,23 @@
         Link
       </cdr-button>
     </div>
+    <div>
+      <cdr-button
+        :full-width="true"
+        size="large@lg"
+        space="cdr-space-mb-one-x cdr-space-mr-one-x@md"
+      >
+        button 1
+      </cdr-button>
+
+      <cdr-button
+        :full-width="true"
+        modifier="secondary"
+        size="large@lg"
+      >
+        button 2
+      </cdr-button>
+    </div>
   </div>
 </template>
 

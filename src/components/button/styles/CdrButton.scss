@@ -28,53 +28,67 @@
 }
 
 .cdr-button {
-  @include redwood-display-30;
+  @include cdr-button-base-text-mixin;
 
-  background-color: $button-background-color;
-  box-shadow: $button-box-shadow;
-  border: none;
-  border-radius: $button-border-radius;
-  color: $button-color;
-  cursor: pointer;
-  display: inline-flex;
-  fill: $button-color;
-  outline: none;
-  padding: $cdr-space-inset-one-x-squish;
-  text-align: left;
-  text-decoration: none;
-  text-transform: none;
-  overflow: visible;
+  background-color: $cdr-button-primary-background-color;
+  box-shadow: $cdr-button-primary-box-shadow;
+  color: $cdr-button-primary-color;
+  fill: $cdr-button-primary-fill;
+  border: $cdr-button-base-border;
+  border-radius: $cdr-button-base-border-radius;
+  cursor: $cdr-button-base-cursor;
+  display: $cdr-button-base-display;
+  outline: $cdr-button-base-outline;
+  overflow: $cdr-button-base-overflow;
+  padding: $cdr-button-base-padding;
+  text-align: $cdr-button-base-text-align;
+  text-decoration: $cdr-button-base-text-decoration;
+  text-transform: $cdr-button-base-text-transform;
 
-  & > :global(.cdr-button__icon) {
-    align-self: center;
-    fill: inherit;
-    margin-right: $cdr-space-quarter-x;
+  & > :global(&__icon) {
+    align-self: $cdr-button-base-icon-align-self;
+    margin-right: $cdr-button-base-icon-mr;
+    fill: $cdr-button-base-icon-fill;
   }
 
   /* States
     ---------- */
 
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: $button-hover-background-color;
-    color: $button-hover-color;
-    box-shadow: $button-hover-box-shadow;
-    text-decoration: none;
-    outline: none;
-    outline-offset: 0;
-    fill: $button-hover-color;
+  &:hover {
+    background-color: $cdr-button-primary-background-color-hover;
+    color: $cdr-button-primary-color-hover;
+    box-shadow: $cdr-button-primary-box-shadow-hover;
+    fill: $cdr-button-primary-fill-hover;
+    outline: $cdr-button-base-outline-hover;
+    outline-offset: $cdr-button-base-outline-offset-hover;
+    text-decoration: $cdr-button-base-text-decoration-hover;
+  }
+
+  &:active {
+    background-color: $cdr-button-primary-background-color-active;
+    color: $cdr-button-primary-color-active;
+    box-shadow: $cdr-button-primary-box-shadow-active;
+    fill: $cdr-button-primary-fill-active;
+    outline: $cdr-button-base-outline-active;
+    outline-offset: $cdr-button-base-outline-offset-active;
+    text-decoration: $cdr-button-base-text-decoration-active;
   }
 
   &:focus {
-    outline: $default-outline;
+    background-color: $cdr-button-primary-background-color-focus;
+    color: $cdr-button-primary-color-focus;
+    box-shadow: $cdr-button-primary-box-shadow-focus;
+    fill: $cdr-button-primary-fill-focus;
+    outline: $cdr-button-base-outline-focus;
+    outline-offset: $cdr-button-base-outline-offset-focus;
+    text-decoration: $cdr-button-base-text-decoration-focus;
   }
 
   &[disabled] {
-    background-color: $button-disabled-background-color;
-    box-shadow: $button-disabled-box-shadow;
-    color: $button-disabled-color;
-    cursor: not-allowed;
+    background-color: $cdr-button-primary-background-color-disabled;
+    box-shadow: $cdr-button-primary-box-shadow-disabled;
+    color: $cdr-button-primary-color-disabled;
+    cursor: $cdr-button-base-cursor-disabled;
   }
 
   /* Modifier style variants
@@ -82,31 +96,41 @@
 
   /* Secondary
      ========== */
-
   &--secondary {
-    background-color: $button-secondary-background-color;
-    box-shadow: $button-secondary-box-shadow;
-    color: $button-secondary-color;
-    fill: $button-secondary-color;
+    background-color: $cdr-button-secondary-background-color;
+    box-shadow: $cdr-button-secondary-box-shadow;
+    color: $cdr-button-secondary-color;
+    fill: $cdr-button-secondary-fill;
 
     /* States
     ---------- */
 
-    &:hover,
-    &:active,
+    &:hover {
+      background-color: $cdr-button-secondary-background-color-hover;
+      box-shadow: $cdr-button-secondary-box-shadow-hover;
+      color: $cdr-button-secondary-color-hover;
+      fill: $cdr-button-secondary-fill-hover;
+    }
+
+    &:active {
+      background-color: $cdr-button-secondary-background-color-active;
+      box-shadow: $cdr-button-secondary-box-shadow-active;
+      color: $cdr-button-secondary-color-active;
+      fill: $cdr-button-secondary-fill-active;
+    }
+
     &:focus {
-      background-color: $button-secondary-hover-background-color;
-      box-shadow: $button-secondary-box-shadow;
-      color: $button-secondary-hover-color;
-      fill: $button-secondary-hover-color;
+      background-color: $cdr-button-secondary-background-color-focus;
+      box-shadow: $cdr-button-secondary-box-shadow-focus;
+      color: $cdr-button-secondary-color-focus;
+      fill: $cdr-button-secondary-fill-focus;
     }
 
     &[disabled] {
-      background-color: $button-secondary-disabled-background-color;
-      box-shadow: $button-secondary-disabled-box-shadow;
-      color: $button-secondary-disabled-color;
-      cursor: not-allowed;
-      fill: $button-secondary-disabled-color;
+      background-color: $cdr-button-secondary-background-color-disabled;
+      box-shadow: $cdr-button-secondary-box-shadow-disabled;
+      color: $cdr-button-secondary-color-disabled;
+      fill: $cdr-button-secondary-fill-disabled;
     }
   }
 
@@ -116,73 +140,97 @@
   /* Large
      ========== */
   &--large {
-    @include redwood-display-40;
+    @include cdr-button-base-text-mixin-large;
 
-    padding: $cdr-space-inset-one-and-a-half-x-squish;
+    padding: $cdr-button-base-padding-large;
 
     &.cdr-button--has-icon {
-      padding-left: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-quarter-x});
+      padding-left: $cdr-button-has-icon-pl-large;
+    }
+
+    & > :global(.cdr-button__icon) {
+      /* This is to correct icon size vs line height */
+      width: $cdr-button-base-icon-width-large;
+      height: $cdr-button-base-icon-height-large;
     }
   }
 
   /* Medium
      ========== */
   &--medium {
-    @include redwood-display-30;
+    @include cdr-button-base-text-mixin-medium;
 
-    padding: $cdr-space-inset-one-x-squish;
+    padding: $cdr-button-base-padding-medium;
 
     &.cdr-button--has-icon {
-      padding-left: calc(#{$cdr-space-one-x} - #{$cdr-space-quarter-x});
+      padding-left: $cdr-button-has-icon-pl-medium;
+    }
+
+    & > :global(.cdr-button__icon) {
+      /* This is to correct icon size vs line height */
+      width: $cdr-button-base-icon-width-medium;
+      height: $cdr-button-base-icon-height-medium;
     }
   }
 
   /* Small
      ========== */
-  &--small {
-    @include redwood-display-20;
 
-    padding: $cdr-space-inset-three-quarter-x-squish;
+  &--small {
+    @include cdr-button-base-text-mixin-small;
+
+    padding: $cdr-button-base-padding-small;
 
     &.cdr-button--has-icon {
-      padding-left: calc(#{$cdr-space-three-quarter-x} - #{$cdr-space-quarter-x});
+      padding-left: $cdr-button-has-icon-pl-small;
     }
 
     & > :global(.cdr-button__icon) {
       /* This is to correct icon size vs line height */
-      @include small-button-icon();
+      width: $cdr-button-base-icon-width-small;
+      height: $cdr-button-base-icon-height-small;
     }
   }
 
   /* Full Width
      ========== */
   &--full-width {
-    width: 100%;
-    justify-content: center;
+    width: $cdr-button-full-width-width;
+    justify-content: $cdr-button-full-width-justify-content;
   }
 
   /* Icon Only
      ========= */
 
   &--icon-only {
-    background: none;
-    border: none;
-    box-shadow: none;
-    display: inline-block;
-    padding: $cdr-space-inset-half-x;
-    padding-right: calc(#{$cdr-space-inset-half-x} - #{$cdr-space-quarter-x});
-    fill: $heart-of-darkness;
+    background: $cdr-button-icon-only-background-color;
+    border: $cdr-button-icon-only-border;
+    box-shadow: $cdr-button-icon-only-box-shadow;
+    display: $cdr-button-icon-only-display;
+    padding: $cdr-button-icon-only-padding;
+    padding-right: $cdr-button-icon-only-pr;
+    fill: $cdr-button-icon-only-fill;
 
-    &:hover,
-    &:active,
+    &:hover {
+      background: $cdr-button-icon-only-background-color-hover;
+      box-shadow: $cdr-button-icon-only-box-shadow-hover;
+      fill: $cdr-button-icon-only-fill-hover;
+    }
+
+    &:active {
+      background: $cdr-button-icon-only-background-color-active;
+      box-shadow: $cdr-button-icon-only-box-shadow-active;
+      fill: $cdr-button-icon-only-fill-active;
+    }
+
     &:focus {
-      background: none;
-      box-shadow: none;
-      fill: $heart-of-darkness;
+      background: $cdr-button-icon-only-background-color-focus;
+      box-shadow: $cdr-button-icon-only-box-shadow-focus;
+      fill: $cdr-button-icon-only-fill-focus;
     }
 
     &.cdr-button--on-dark {
-      fill: $moon-shot;
+      fill: $cdr-button-icon-only-fill-darkmode;
     }
   }
 

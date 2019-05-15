@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style['cdr-radio__wrap']">
+  <div :class="[space, $style['cdr-radio__wrap']]">
     <label
       :class="[modifierClass, labelClass]"
       ref="label"
@@ -25,6 +25,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import space from 'mixinsdir/space';
 import isEqual from 'lodash/isEqual';
 
 /**
@@ -35,7 +36,7 @@ import isEqual from 'lodash/isEqual';
  */
 export default {
   name: 'CdrRadio',
-  mixins: [modifier],
+  mixins: [modifier, space],
   inheritAttrs: false,
   model: {
     prop: 'modelValue',

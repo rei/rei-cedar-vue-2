@@ -1,6 +1,9 @@
 <template>
   <div
-    class="cdr-accordion"
+    :class="[
+      modifierClass,
+      space
+    ]"
   >
     <!-- @slot innerHTML on the inside of the accordion component -->
     <slot />
@@ -8,11 +11,12 @@
 </template>
 
 <script>
-import modifier from '../../mixins/modifier';
+import modifier from 'mixinsdir/modifier';
+import space from 'mixinsdir/space';
 
 export default {
   name: 'CdrAccordion',
-  mixins: [modifier],
+  mixins: [modifier, space],
   props: {
     /**
      * Sets a compact style on children cdr-accordion-item components.
@@ -34,6 +38,11 @@ export default {
     showAll: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    baseClass() {
+      return 'cdr-accordion';
     },
   },
   provide() {

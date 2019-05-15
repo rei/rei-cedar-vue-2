@@ -11,36 +11,42 @@
 ========================================================================== */
 
 .cdr-link {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  color: $link-color;
-  cursor: pointer;
-  display: inline-flex;
-  fill: $link-color;
-  outline: none;
-  padding: 0;
-  text-decoration: underline;
-  vertical-align: top;
+  font-family: $cdr-link-base-font-family;
+  font-size: $cdr-link-base-font-size;
+  line-height: $cdr-link-base-line-height;
+  align-items: $cdr-link-base-align-items;
+  background-color: $cdr-link-base-background-color;
+  border: $cdr-link-base-border;
+  margin: $cdr-link-base-margin;
+  color: $cdr-link-base-color;
+  cursor: $cdr-link-base-cursor;
+  display: $cdr-link-base-display;
+  fill: $cdr-link-base-fill;
+  outline: $cdr-link-base-outline;
+  padding: $cdr-link-base-padding;
+  text-decoration: $cdr-link-base-text-decoration;
+  vertical-align: $cdr-link-base-vertical-align;
 
   /* States
     ---------- */
 
-  &:hover,
-  &:active,
-  &:focus {
-    color: $link-color;
-    outline: none;
-    text-decoration: underline;
+  &:hover {
+    color: $cdr-link-base-color-hover;
+    outline: $cdr-link-base-outline-hover;
+    text-decoration: $cdr-link-base-text-decoration-hover;
+  }
+
+  &:active {
+    color: $cdr-link-base-color-active;
+    outline: $cdr-link-base-outline-active;
+    text-decoration: $cdr-link-base-text-decoration-active;
   }
 
   &:focus {
-    outline: $default-outline;
-    outline-offset: 0;
+    color: $cdr-link-base-color-focus;
+    outline: $cdr-link-base-outline-focus;
+    outline-offset: $cdr-link-base-outline-offset-focus;
+    text-decoration: $cdr-link-base-text-decoration-focus;
   }
 }
 
@@ -50,13 +56,22 @@
 /* Standalone
     ========== */
 .cdr-link--standalone {
-  text-decoration: none;
+  text-decoration: $cdr-link-standalone-text-decoration;
 
-  &:hover,
-  &:active,
-  &:focus,
+  &:hover {
+    text-decoration: $cdr-link-standalone-text-decoration-hover;
+  }
+
+  &:active {
+    text-decoration: $cdr-link-standalone-text-decoration-active;
+  }
+
+  &:focus {
+    text-decoration: $cdr-link-standalone-text-decoration-focus;
+  }
+
   &:visited {
-    text-decoration: underline;
+    text-decoration: $cdr-link-standalone-text-decoration-visited;
   }
 }
 
@@ -65,13 +80,19 @@
 /* Theme via cascade
 
 :global(.cdr-bg--light) .cdr-link {
-  color: $link-color;
-  fill: $link-color;
+  color: $cdr-link-base-color-lightmode;
+  fill: $cdr-link-base-fill-lightmode;
 
-  &:hover,
-  &:active,
+  &:hover {
+    color: $cdr-link-base-color-hover-lightmode;
+  }
+
+  &:active {
+    color: $cdr-link-base-color-active-lightmode;
+  }
+
   &:focus {
-    color: $link-color;
+    color: $cdr-link-base-color-focus-lightmode;
   }
 }
 */
@@ -79,34 +100,43 @@
 /* Theme via prop */
 
 :global(.on-light).cdr-link {
-  color: $link-color;
-  fill: $link-color;
+  color: $cdr-link-base-color-lightmode;
+  fill: $cdr-link-base-fill-lightmode;
 
   /* States
     ---------- */
 
-  &:hover,
-  &:active,
+  &:hover {
+    color: $cdr-link-base-color-hover-lightmode;
+  }
+
+  &:active {
+    color: $cdr-link-base-color-active-lightmode;
+  }
+
   &:focus {
-    color: $link-color;
+    color: $cdr-link-base-color-focus-lightmode;
   }
 }
 
 /* Dark Theme */
 
-/* TODO: get this value */
-$link-color-dark: $cdr-color-text-link-darkmode;
-
 /* Theme via cascade
 
 :global(.cdr-bg--dark) .cdr-link {
-  color: $link-color-dark;
-  fill: $link-color-dark;
-  
-  &:hover,
-  &:active,
+  color: $cdr-link-base-color-darkmode;
+  fill: $cdr-link-base-fill-darkmode;
+
+  &:hover {
+    color: $cdr-link-base-color-hover-darkmode;
+  }
+
+  &:active {
+    color: $cdr-link-base-color-active-darkmode;
+  }
+
   &:focus {
-    color: $link-color-dark;
+    color: $cdr-link-base-color-focus-darkmode;
   }
 }
 */
@@ -114,15 +144,21 @@ $link-color-dark: $cdr-color-text-link-darkmode;
 /* Theme via prop */
 
 :global(.on-dark).cdr-link {
-  color: $link-color-dark;
-  fill: $link-color-dark;
+  color: $cdr-link-base-color-darkmode;
+  fill: $cdr-link-base-fill-darkmode;
 
   /* States
     ---------- */
 
-  &:hover,
-  &:active,
+  &:hover {
+    color: $cdr-link-base-color-hover-darkmode;
+  }
+
+  &:active {
+    color: $cdr-link-base-color-active-darkmode;
+  }
+
   &:focus {
-    color: $link-color-dark;
+    color: $cdr-link-base-color-focus-darkmode;
   }
 }

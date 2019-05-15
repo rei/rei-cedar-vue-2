@@ -56,6 +56,31 @@
       v-model="ex1compact"
       disabled
     >A4 compact (disabled)</cdr-radio>
+
+    <cdr-text>
+      Radios with spacing
+    </cdr-text>
+    <cdr-radio
+      space="cdr-space-ml-one-x cdr-space-mt-half-x"
+      id="test2"
+      name="example"
+      value="a1"
+      v-model="ex1"
+      data-backstop="radio-focus"
+    >A1</cdr-radio>
+    <cdr-radio
+      space="cdr-space-ml-one-x cdr-space-mt-half-x"
+      name="example"
+      value="a2"
+      v-model="ex1"
+    >A2</cdr-radio>
+    <cdr-radio
+      space="cdr-space-ml-one-x cdr-space-mt-half-x"
+      name="example"
+      :value="{val:'a3'}"
+      v-model="ex1"
+    >A3</cdr-radio>
+
     <cdr-text>Group A compact Picked: {{ ex1compact }}</cdr-text>
 
     <div style="max-width: 200px;">
@@ -155,9 +180,9 @@ export default {
 
   .no-box:checked ~ .no-box__content {
     color: green;
+  }
 
-    &::after {
-      content: '(checked)';
-    }
+  .no-box:checked ~ .no-box__content::after {
+    content: '(checked)';
   }
 </style>
