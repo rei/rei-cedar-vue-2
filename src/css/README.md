@@ -125,11 +125,11 @@ Classes can also have breakpoints appended to them to make them apply at that br
 
 | Class                                    | property | value     |
 |------------------------------------------|----------|-----------|
-| .cdr-(p|m)(t|r|b|l)space-inset-eighth-x                | padding  | 2px       |
-| .cdr-(p|m)(t|r|b|l)space-inset-quarter-x               | padding  | 4px       |
-| .cdr-(p|m)(t|r|b|l)space-inset-half-x                  | padding  | 8px       |
-| .cdr-(p|m)(t|r|b|l)space-inset-three-quarter-x         | padding  | 12px      |
-| .cdr-(p|m)(t|r|b|l)space-inset-1-x                     | padding  | 16px      |
-| .cdr-(p|m)(t|r|b|l)space-inset-1-and-a-half-x          | padding  | 24px      |
-| .cdr-(p|m)(t|r|b|l)space-inset-2-x                     | padding  | 32px      |
-| .cdr-(p|m)(t|r|b|l)space-inset-4-x                     | padding  | 64px      |
+| .cdr-(p|m)(t|r|b|l)-space-eighth-x                | padding  | 2px       |
+| .cdr-(p|m)(t|r|b|l)-space-quarter-x               | padding  | 4px       |
+| .cdr-(p|m)(t|r|b|l)-space-half-x                  | padding  | 8px       |
+| .cdr-(p|m)(t|r|b|l)-space-three-quarter-x         | padding  | 12px      |
+| .cdr-(p|m)(t|r|b|l)-space-1-x                     | padding  | 16px      |
+| .cdr-(p|m)(t|r|b|l)-space-1-and-a-half-x          | padding  | 24px      |
+| .cdr-(p|m)(t|r|b|l)-space-2-x                     | padding  | 32px      |
+| .cdr-(p|m)(t|r|b|l)-space-4-x                     | padding  | 64px      |
