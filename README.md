@@ -8,6 +8,10 @@ and a set of themes that build on this scaffolding. We started this project in 2
 The project has evolved into what it is today, and will continue to grow to fit our expanding needs. Feel free to watch
 the Cedar grow and learn from what we are doing, or jump in and provide some recommendations.
 
+## Using Cedar
+
+See the [Cedar docs](https://rei.github.io/rei-cedar-docs/) for usage instructions.
+
 ## Getting Started
 
 ### Install
@@ -16,69 +20,33 @@ Clone the project.
 
 `npm install`
 
-`npm i -g lerna`
-
-Install Lerna globally. Lerna helps manage projects with multiple packages.
-
 ### Run
-
-`npm run start`
-
-Bootstraps all the seaparate component dependencies.
 
 `npm run dev`
 
-Runs locally for development. Has hot reloading, linting, and other nice things related to development.
+Runs locally for development. Has hot reloading, and other nice things related to development.
 
+Sometimes the liveReload server will hang in the background, do the following...
 
-***NOTE: If you have FEBS set up locally to run the REI.com Monolith on a mac, make sure to remove any reference to: `~/code/rei.com/scripts/mac/.reirc` in your terminal configuration files, e.g., `.bash_profile` or `.bashrc`.  Also make sure your system PATH does not contain `febs/bin`***
+Works on MacOS:
 
-
-## Build System
-
-The [webpack](https://webpack.github.io/) build system is taken largely from the [Vue webpack template](https://github.com/vuejs-templates/webpack) which has its own set of docs that are a good reference.
-
-## Documentation Site
-
-The API documentation for Cedar components is built inside the **rei-cedar** repository by running the following scripts:
-
-Builds the JSON data object for the APIs of each component individually
-
-`npm run build:docs`
-
-Collects all of the individual component data objects into one large Cedar Data Object at **src/cedar-data.json** 
-
-`npm run build:archive`
-
-Transfers the Cedar Data Object from the **rei-cedar** repository to the **rei-cedar-docs** repository on your local machine
-
-`npm run build:transfer`
-
-Outputs a standalone app to `styleguide/build` that can be hosted somewhere (like gh-pages).
+```kill -9 $(lsof -ti tcp:35729)```
 
 ## Testing
 
 ### Code Tests
 
-`npm run test`
+`npm run unit`
 
-Runs [karma](https://karma-runner.github.io/1.0/index.html) unit tests. We're using [avoriaz](https://github.com/eddyerburgh/avoriaz) to help with Vue component testing (Vue is working on their official testing tools with the guy who made this).
+Runs unit tests.
 
 `npm run e2e`
 
-Runs [Nightwatch](http://nightwatchjs.org/) end-to-end tests.
+Runs [Nightwatch](http://nightwatchjs.org/) end-to-end tests and Axe a11y tests.
 
-`npm run unit:watch`
+`npm run test`
 
-Runs unit tests. Keeps mocha active to watch for changes and re-runs tests. Use `it.only()` to watch just a single test.
-
-```
-it.only('returns true', () => {
-  expect(1).toEqual(1);
-});
-```
-
-This includes running [Tenon](https://tenon.io/) a11y tests.
+Runs both unit and e2e/accesibility tests.
 
 ### Visual Regression Testing
 
@@ -108,56 +76,18 @@ __*.backstop.js__ files will export an array of objects that are standard backst
 2. `readyEvent` is set to null for each scenario.
 3. `hoverSelectors` is a custom option we've added (as noted above).
 
-## Javascript
-
-__TODO:__ Notes about js, eslint
-
-- Babel for transpiling js so use es6.
-- Aim to have 0 dependencies, don’t use jquery.
-- Eslint using [airbnb config](https://github.com/airbnb/javascript)
-
-## Design system Integration
-
-__TODO:__ Notes about DDS, design tokens, integrations
-Tokens are stored in the REI-Cedar-tokens project, and new tokens will need to be created there.
-
-## CSS
-
-__TODO:__ Notes about css, postcss, stylelint
-
-- Using postcss. Config for it lives in `postcss.config.js`
-- SCSS style variables ($variable). Don't use mixins/other logic. Keep it simple.
-- Components styles are in the same directory and imported into style tags in the component file.
-- main.postcss (.postcss so webpack uses the correct loader - others are .pcss and just need to be imported here to be processed)
-- Component css is output as a file separate from main.postcss.
-- Imported into entry files (dev.js and main.js so webpack processes it)
-- [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) inspired file structure.
-- CSS needs to be written with `cdr-` namespace prefix.
-- Auto prefixer settings is in package.json under "browserslist"
-- safari >= 4 used for backstop (phantomjs engine) issues with flexbox [issue here](https://github.com/ariya/phantomjs/issues/14365)
-- Build with variable configs for theming (want to hook these into theo/sketch/something for theming).
-- Stylelint using `stylelint-config-standard` for base but we have customizations on top of it. Not following stylelint guidelines will throw errors in build (need to lock down rules still).
-
-## Components
-
 ### Publishing Prerelease Components
 
-`npm run prerelease <path to component folder>`
+`npm run prerelease`
 
-Publishes component to npm with a prerelease tag. You must increment the component's version manually prior to publishing. `--dry-run` flag will run the prerelease process without publishing to npm.
-
-__TODO:__ Notes about Vue, components
-
-- Using [Vue.js](https://vuejs.org/) single file components. They have excellent docs.
-- Import them into the _index.js.
-- Write the component name prefixed/namespaced with `cdr-`.
-- Horizontal theming with css-modules, dynamically binding classes based on theme
+Publishes package to npm with a prerelease tag. You must increment the component's version manually prior to publishing. `--dry-run` flag will run the prerelease process without publishing to npm.
 
 ## Commits
+
 This project is Commitizen friendly.  To install: `npm install -g commitizen`
 When creating a pull request run `git cz` rather than `git commit` and follow the prompts.
 
-This projects Changlogs are generated.
+This projects Changelogs are generated.
 To output the latest changelog files you will need to create a new repository release.
 This is done with calendar versioning in the following format
 **YY.MM.(iterator)**

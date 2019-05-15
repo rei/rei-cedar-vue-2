@@ -36,12 +36,7 @@
     "reference": "backstop reference --configPath=backstop.js",
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
-    "docs": "vue-styleguidist server",
-    "build:archive": "node build/component-docs-archive.js",
-    "build:transfer": "node build/component-docs-transfer.js",
     "create": "node generator.js",
-    "vue:build": "npm run vue:docs && npm run vue:archive && npm run vue:transfer",
-    "component-css": "cross-env NODE_ENV=css node build/component-css-build.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
