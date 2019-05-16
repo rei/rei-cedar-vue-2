@@ -74,13 +74,13 @@ $cdr-button-secondary-fill-disabled: #b8b8b8;
 $cdr-button-secondary-box-shadow-disabled: inset 0 0 0 1px #dadada;
 
 $cdr-button-base-padding-large: $cdr-space-inset-one-and-a-half-x-squish;
-$cdr-button-has-icon-pl-large: calc($cdr-space-one-and-a-half-x - $cdr-space-quarter-x);
+$cdr-button-has-icon-pl-large: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-quarter-x});
 
 $cdr-button-base-padding-medium: $cdr-space-inset-one-x-squish;
-$cdr-button-has-icon-pl-medium: calc($cdr-space-one-x - $cdr-space-quarter-x);
+$cdr-button-has-icon-pl-medium: calc(#{$cdr-space-one-x} - #{$cdr-space-quarter-x});
 
 $cdr-button-base-padding-small: $cdr-space-inset-three-quarter-x-squish;
-$cdr-button-has-icon-pl-small: calc($cdr-space-three-quarter-x - $cdr-space-quarter-x);
+$cdr-button-has-icon-pl-small: calc(#{$cdr-space-three-quarter-x} - #{$cdr-space-quarter-x});
 
 $cdr-button-base-icon-width-small: 20px;
 $cdr-button-base-icon-height-small: 20px;
@@ -99,7 +99,7 @@ $cdr-button-icon-only-display: inline-block;
 
 
 $cdr-button-icon-only-padding: $cdr-space-inset-half-x;
-$cdr-button-icon-only-pr: calc($cdr-space-inset-half-x - $cdr-space-quarter-x); // note that this overrides the previous padding variable
+$cdr-button-icon-only-pr: calc(#{$cdr-space-inset-half-x} - #{$cdr-space-quarter-x}); // note that this overrides the previous padding variable
 
 $cdr-button-icon-only-fill: $heart-of-darkness;
 

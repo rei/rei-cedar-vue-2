@@ -61,7 +61,7 @@
       Radios with spacing
     </cdr-text>
     <cdr-radio
-      space="cdr-space-ml-one-x cdr-space-mt-half-x"
+      space="cdr-ml-space-one-x cdr-mt-space-half-x"
       id="test2"
       name="example"
       value="a1"
@@ -69,13 +69,13 @@
       data-backstop="radio-focus"
     >A1</cdr-radio>
     <cdr-radio
-      space="cdr-space-ml-one-x cdr-space-mt-half-x"
+      space="cdr-ml-space-one-x cdr-mt-space-half-x"
       name="example"
       value="a2"
       v-model="ex1"
     >A2</cdr-radio>
     <cdr-radio
-      space="cdr-space-ml-one-x cdr-space-mt-half-x"
+      space="cdr-ml-space-one-x cdr-mt-space-half-x"
       name="example"
       :value="{val:'a3'}"
       v-model="ex1"

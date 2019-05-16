@@ -11,9 +11,9 @@
       List
     </cdr-text>
 
-    <unordered-list class="cdr-space-mb-four-x" />
-    <ordered-list class="cdr-space-mb-four-x" />
-    <bare-list class="cdr-space-mb-four-x" />
+    <unordered-list class="cdr-mb-space-four-x" />
+    <ordered-list class="cdr-mb-space-four-x" />
+    <bare-list class="cdr-mb-space-four-x" />
   </div>
 </template>
 

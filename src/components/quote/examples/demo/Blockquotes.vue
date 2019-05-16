@@ -7,7 +7,7 @@
       Blockquote
     </cdr-text>
     <cdr-quote
-      space="cdr-space-mb-four-x"
+      space="cdr-mb-space-four-x"
       cite="http://github.com/rei/rei-cedar"
       summary="Blockquote Summary:
       Lorem ipsum dolor sit amet consectetur adipisicing elit.

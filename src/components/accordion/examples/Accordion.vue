@@ -14,7 +14,7 @@
         Default
       </cdr-text>
       <cdr-accordion
-        space="cdr-space-mb-one-x@xs cdr-space-mb-four-x@sm"
+        space="cdr-mb-space-one-x@xs cdr-mb-space-four-x@sm"
         data-backstop="accordion-default"
       >
         <cdr-accordion-item

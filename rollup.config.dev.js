@@ -31,7 +31,7 @@ export default {
     // sourcemap: true, currently broken with vue plugin and watch -- https://github.com/vuejs/rollup-plugin-vue/issues/238
   },
   plugins,
-  watch: {
-    clearScreen: false,
-  },
+  // watch: {
+  //   clearScreen: false, --> currently broken https://github.com/rollup/rollup/issues/2862
+  // },
 };

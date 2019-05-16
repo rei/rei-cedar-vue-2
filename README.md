@@ -60,6 +60,8 @@ Our visual regressions audits can be performed against all patterns documented w
 4. Review the generated report that should open in your browser. Make sure all changes are what you expect.
 5. `npm run approve` if everything looks good. This will promote the latest test images to be the new reference images that future tests will be compared against.
 
+If you want to do backstop tests against a single scenario you can do `npm run compare -- --filter=<Label>`
+
 #### Notes about our backstop configuration
 
 We’re aliasing the backstop commands to use `npm run <command>` just to abstract away supplying the config option since we are using a javascript based backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.

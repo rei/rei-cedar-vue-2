@@ -14,6 +14,7 @@
         data-backstop="cdr-button--icon"
       >
         <icon-check-lg
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -28,6 +29,7 @@
         disabled
       >
         <icon-check-lg
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -38,6 +40,7 @@
         size="medium"
       >
         <icon-check-lg
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -47,6 +50,7 @@
         size="small"
       >
         <icon-check-lg
+          inherit-color
           slot="icon"
           size="small"
           class="cdr-button__icon"
@@ -57,6 +61,7 @@
         size="small"
       >
         <icon-check-sm
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -75,6 +80,7 @@
         modifier="secondary"
       >
         <cdr-icon
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
           use="#download"
@@ -87,6 +93,7 @@
         disabled
       >
         <cdr-icon
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
           use="#download"
@@ -98,6 +105,7 @@
         modifier="secondary"
       >
         <cdr-icon
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
           use="#twitter"
@@ -109,6 +117,7 @@
         modifier="secondary"
       >
         <cdr-icon
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
           use="#instagram"
@@ -121,6 +130,7 @@
         size="large large@xs medium@sm small@lg"
       >
         <icon-clock
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -133,6 +143,7 @@
         full-width
       >
         <icon-clock
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -149,6 +160,7 @@
           modifier="secondary"
         >
           <cdr-icon
+            inherit-color
             slot="icon"
             class="cdr-button__icon"
             use="#twitter"
@@ -172,6 +184,7 @@
         aria-label="Check our Twitter feed"
       >
         <icon-twitter
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -181,6 +194,7 @@
         aria-label="Close"
       >
         <icon-x-lg
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -192,6 +206,7 @@
         aria-label="This link goes elsewhere"
       >
         <icon-external-link
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -201,6 +216,7 @@
         aria-label="Play"
       >
         <icon-play
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -213,6 +229,7 @@
         aria-label="A Twitter button"
       >
         <icon-twitter
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -223,6 +240,7 @@
         aria-label="Close"
       >
         <icon-x-lg
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -235,6 +253,7 @@
         aria-label="An external link"
       >
         <icon-external-link
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -245,6 +264,7 @@
         aria-label="Play"
       >
         <icon-play
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />

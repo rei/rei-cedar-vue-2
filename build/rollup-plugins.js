@@ -20,6 +20,7 @@ const ssrEnv = process.env.SSR_ENV;
 let postcssExtract = false;
 let copyTargets = [''];
 let SSROptimize = false;
+let copyOutput = 'dist';
 
 // prod only options
 if (env === 'prod') {
@@ -29,6 +30,7 @@ if (env === 'prod') {
 // dev and prod options
 if (env !== 'test') {
   copyTargets = ['static/cdr-fonts.css'];
+  copyOutput = 'public';
   // SSR build
   if (ssrEnv === 'ssr') {
     SSROptimize = true;
@@ -49,7 +51,10 @@ const plugins = [
     directivesdir: resolve('src/directives'),
     mixinsdir: resolve('src/mixins'),
   }),
-  nodeResolve(),
+  nodeResolve({
+    mainFields: ['module', 'jsnext:main', 'main'],
+    extensions: ['.mjs', '.js', '.jsx', '.json', '.css'],
+  }),
   vue({
     css: false,
     style: {
@@ -81,6 +86,7 @@ const plugins = [
   commonjs(),
   copyPlugin({
     targets: copyTargets,
+    outputFolder: copyOutput
   }),
   babel({
     exclude: 'node_modules/**',

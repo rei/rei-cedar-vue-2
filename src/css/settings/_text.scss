@@ -1,18 +1,18 @@
 @mixin cdr-text-base-text-mixin() {
-  @include cdr-text-default-body;
+  @include cdr-text-default;
 }
 
 $cdr-text-base-margin: 0;
 
 @mixin cdr-text-body-text-mixin() {
-  @include cdr-text-editorial-body-compact;
+  @include cdr-text-editorial-compact;
 }
 
 $cdr-text-body-max-width: 634px;
 $cdr-text-body-stack: 16px;
 
 @mixin cdr-text-body-text-bp-sm-mixin() {
-  @include cdr-text-editorial-body;
+  @include cdr-text-editorial;
 }
 
 $cdr-text-body-stack-bp-sm: 32px;

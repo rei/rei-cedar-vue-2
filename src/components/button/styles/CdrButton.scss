@@ -22,11 +22,6 @@
       :lg
 ========================================================================== */
 
-@mixin small-button-icon() {
-  width: 20px;
-  height: 20px;
-}
-
 .cdr-button {
   @include cdr-button-base-text-mixin;
 
@@ -45,7 +40,7 @@
   text-decoration: $cdr-button-base-text-decoration;
   text-transform: $cdr-button-base-text-transform;
 
-  & > :global(&__icon) {
+  & > :global(.cdr-button__icon) {
     align-self: $cdr-button-base-icon-align-self;
     margin-right: $cdr-button-base-icon-mr;
     fill: $cdr-button-base-icon-fill;
@@ -242,10 +237,15 @@
     height: $cdr-icon-size;
   }
 
+  @mixin small-button-icon() {
+    width: 20px;
+    height: 20px;
+  }
+
   /* @xs
     0px - 767px
     ========== */
-  @include xs-mq-only {
+  @media (--xs-mq-only) {
     &--small\@xs {
       @include redwood-display-20;
 
@@ -283,7 +283,7 @@
   /* @sm
     768px - 991px
     ========== */
-  @include sm-mq-only {
+  @media (--sm-mq-only) {
     &--small\@sm {
       @include redwood-display-20;
 
@@ -321,7 +321,7 @@
   /* @md
     992px - 1199px
     ========== */
-  @include md-mq-only {
+  @media (--md-mq-only) {
     &--small\@md {
       @include redwood-display-20;
 
@@ -360,7 +360,7 @@
     1200px and up
     ========== */
 
-  @include lg-mq-only {
+  @media (--lg-mq-only) {
     &--small\@lg {
       @include redwood-display-20;
 

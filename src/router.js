@@ -13,6 +13,8 @@ import DataTables from 'componentsdir/dataTable/examples/DataTable';
 import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
+import Input from 'componentsdir/input/examples/Inputs';
+import KitchenSink from 'srcdir/KitchenSink';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
 import Pagination from 'componentsdir/pagination/examples/Pagination';
@@ -22,10 +24,10 @@ import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
-import Input from 'componentsdir/input/examples/Inputs';
-import Space from 'componentsdir/Utilities/demos/genericSpace';
-import Inset from 'componentsdir/Utilities/demos/inset';
 // import Searches from 'compositionsdir/search/examples/searchbox';
+import Space from 'componentsdir/Utilities/Space';
+import Utilities from 'componentsdir/Utilities/Utilities';
+
 
 const routes = [
   { path: '/', component: App },
@@ -40,6 +42,7 @@ const routes = [
   { path: '/grids', name: 'Grids', component: Grids },
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
+  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   { path: '/links', name: 'Links', component: Links },
   { path: '/lists', name: 'Lists', component: Lists },
   { path: '/inputs', name: 'Input', component: Input },
@@ -48,11 +51,10 @@ const routes = [
   { path: '/radios', name: 'Radios', component: Radios },
   { path: '/ratings', name: 'Ratings', component: Ratings },
   { path: '/selects', name: 'Selects', component: Selects },
+  { path: '/space', name: 'Space', component: Space },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
-  { path: '/Space', name: 'Generic Space', component: Space },
-  { path: '/Inset', name: 'Insets', component: Inset },
-  { path: '/captions', name: 'Captions', component: Captions },
+  { path: '/utilities', name: 'Utilities', component: Utilities },
   // { path: '/searches', name: 'Searches', component: Searches },
 ];
 
