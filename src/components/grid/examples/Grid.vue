@@ -2541,70 +2541,75 @@
             Four
           </div>
         </cdr-col>
-        <cdr-col
-          span="12"
-          is-row
-          type="list"
-        >
+        <cdr-col span="12">
           <cdr-col
-            span="12 9@sm"
             is-row
             type="list"
           >
-            <cdr-col
-              span="12 4@sm"
-            >
-              <div class="row-demo">
-                Five
-                <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, labore. Quos dolor tempore accusamus eius, voluptas, ipsum nulla. At fugiat quas est modi autem quam dolores maxime, provident commodi alias.</cdr-text>
-              </div>
-            </cdr-col>
-            <cdr-col
-              span="12 8@sm"
-              is-row
-              cols="1 2@sm"
-              type="list"
-            >
-              <cdr-col>
-                <div class="row-demo">
-                  Six
-                </div>
+            <cdr-col span="12 9@sm">
+              <cdr-col
+                is-row
+                type="list"
+              >
+                <cdr-col
+                  span="12 4@sm"
+                >
+                  <div class="row-demo">
+                    Five
+                    <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, labore. Quos dolor tempore accusamus eius, voluptas, ipsum nulla. At fugiat quas est modi autem quam dolores maxime, provident commodi alias.</cdr-text>
+                  </div>
+                </cdr-col>
+                <cdr-col
+                  span="12 8@sm"
+                  cols="1 2@sm"
+                >
+                  <cdr-col
+                    is-row
+                    type="list"
+                  >
+                    <cdr-col>
+                      <div class="row-demo">
+                        Six
+                      </div>
+                    </cdr-col>
+                    <cdr-col>
+                      <div class="row-demo">
+                        Seven
+                      </div>
+                    </cdr-col>
+                    <cdr-col span="12">
+                      <div class="row-demo">
+                        Eight
+                      </div>
+                    </cdr-col>
+                  </cdr-col>
+                </cdr-col>
+                <cdr-col
+                  span="12 9@sm"
+                >
+                  <div class="row-demo">
+                    Nine
+                    <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima aliquam reprehenderit iusto ratione nihil ipsum, perferendis quasi nulla ad quis. Consequuntur odio blanditiis aliquid voluptatem, veniam porro, ad assumenda!</cdr-text>
+                  </div>
+                </cdr-col>
+                <cdr-col
+                  span="12 3@sm"
+                >
+                  <div class="row-demo">
+                    Ten
+                    <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
+                  </div>
+                </cdr-col>
               </cdr-col>
-              <cdr-col>
-                <div class="row-demo">
-                  Seven
-                </div>
-              </cdr-col>
-              <cdr-col span="12">
-                <div class="row-demo">
-                  Eight
-                </div>
-              </cdr-col>
-            </cdr-col>
-            <cdr-col
-              span="12 9@sm"
-            >
-              <div class="row-demo">
-                Nine
-                <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima aliquam reprehenderit iusto ratione nihil ipsum, perferendis quasi nulla ad quis. Consequuntur odio blanditiis aliquid voluptatem, veniam porro, ad assumenda!</cdr-text>
-              </div>
             </cdr-col>
             <cdr-col
               span="12 3@sm"
             >
               <div class="row-demo">
-                Ten
-                <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
+                Eleven
+                <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis deserunt, at, illum, earum quibusdam temporibus, molestiae doloremque iure ad est pariatur? Minima, fugit, accusantium. Aspernatur consectetur, labore enim ratione ducimus.</cdr-text>
               </div>
             </cdr-col>
-          </cdr-col>
-          <cdr-col
-            span="12 3@sm"
-          >
-            <div class="row-demo">
-              Eleven
-              <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis deserunt, at, illum, earum quibusdam temporibus, molestiae doloremque iure ad est pariatur? Minima, fugit, accusantium. Aspernatur consectetur, labore enim ratione ducimus.</cdr-text>
-            </div>
           </cdr-col>
         </cdr-col>
         <cdr-col>
@@ -2661,9 +2666,10 @@ export default {
     padding: 10px;
     width: 100%;
     line-height: 1;
-
-    & * {
-      line-height: 1;
-    }
   }
+
+  .row-demo > * {
+    line-height: 1;
+  }
+
 </style>

@@ -2,7 +2,7 @@
   <component
     :is="type === 'list' ? 'ul' : 'div'"
     :class="[
-      $style['cdr-row'],
+      'cdr-row',
       colsClass,
       justifyClass,
       alignClass,
@@ -133,7 +133,7 @@ export default {
 
       if (this.cols) {
         this.cols.split(' ').forEach((val) => {
-          classStr.push(this.$style[`cdr-row_row${val}`]);
+          classStr.push([`cdr-row_row${val}`]);
         });
       }
 
@@ -166,7 +166,7 @@ export default {
 
       if (this.gutter) {
         this.gutter.split(' ').forEach((val) => {
-          classStr.push(this.$style[`cdr-row--gutter-${val}`]);
+          classStr.push([`cdr-row--gutter-${val}`]);
         });
       }
 
@@ -208,9 +208,3 @@ export default {
   },
 };
 </script>
-
-<style module>
-@import 'cssdir/settings/_index.pcss';
-@import "./styles/Grid.vars.pcss";
-@import "./styles/CdrRow.pcss";
-</style>

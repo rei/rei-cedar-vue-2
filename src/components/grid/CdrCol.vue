@@ -3,14 +3,14 @@
   <div
     v-if="!isRow && !isList"
     :class="[
-      $style['cdr-col'],
+      'cdr-col',
       spanClass,
       offsetLeftClass,
       offsetRightClass,
       alignSelfClass,
     ]"
   >
-    <div :class="$style['cdr-col__content']">
+    <div class="cdr-col__content">
       <slot />
     </div>
   </div>
@@ -19,43 +19,38 @@
   <li
     v-else-if="!isRow && isList"
     :class="[
-      $style['cdr-col'],
+      'cdr-col',
       spanClass,
       offsetLeftClass,
       offsetRightClass,
       alignSelfClass,
     ]"
   >
-    <div :class="$style['cdr-col__content']">
+    <div class="cdr-col__content">
       <slot />
     </div>
   </li>
 
   <!-- row && list -->
-  <li
+  <ul
     v-else-if="isRow && isList"
     :class="[
-      $style['cdr-row'],
-      $style['cdr-col'],
+      'cdr-row',
+      'cdr-col',
       spanClass,
       offsetLeftClass,
       offsetRightClass,
       alignSelfClass,
     ]"
   >
-    <cdr-row
-      :class="$style['cdr-col']"
-      v-bind="$attrs"
-    >
-      <slot />
-    </cdr-row>
-  </li>
+    <slot />
+  </ul>
 
   <!-- else -->
   <cdr-row
     v-else
     :class="[
-      $style['cdr-col'],
+      'cdr-col',
       spanClass,
       offsetLeftClass,
       offsetRightClass,
@@ -147,7 +142,7 @@ export default {
 
       if (this.span) {
         this.span.split(' ').forEach((val) => {
-          classStr.push(this.$style[`cdr-col_span${val}`]);
+          classStr.push([`cdr-col_span${val}`]);
         });
       }
 
@@ -189,9 +184,3 @@ export default {
   },
 };
 </script>
-
-<style module>
-@import 'cssdir/settings/_index.pcss';
-@import "./styles/Grid.vars.pcss";
-@import "./styles/CdrCol.pcss";
-</style>

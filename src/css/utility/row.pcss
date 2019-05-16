@@ -34,8 +34,8 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
 .cdr-row {
   display: flex;
   flex-flow: row wrap;
-  margin-top: calc($rowGutter-xs * -1);
-  margin-left: calc($rowGutter-xs * -1);
+  margin-top: calc($rowGutter-xs * -1) !important;
+  margin-left: calc($rowGutter-xs * -1) !important;
   padding-left: 0;
   padding-right: 0;
 
@@ -167,9 +167,6 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
   }
 
   &--gutter-xxs {
-    margin-top: calc($cdr-space-eighth-x * -1) !important;
-    margin-left: calc($cdr-space-eighth-x * -1) !important;
-
     & > .cdr-col {
       padding-top: $cdr-space-eighth-x !important;
       padding-left: $cdr-space-eighth-x !important;
@@ -246,8 +243,8 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--sm-mq) {
-    margin-top: calc($rowGutter-sm * -1);
-    margin-left: calc($rowGutter-sm * -1);
+    margin-top: calc($rowGutter-sm * -1) !important;
+    margin-left: calc($rowGutter-sm * -1) !important;
 
     /* Row small elements
     ========================================================================== */
@@ -446,8 +443,8 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--md-mq) {
-    margin-top: calc($rowGutter-md * -1);
-    margin-left: calc($rowGutter-md * -1);
+    margin-top: calc($rowGutter-md * -1) !important;
+    margin-left: calc($rowGutter-md * -1) !important;
 
     /* Row medium elements
     ========================================================================== */
@@ -648,8 +645,8 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
   ========================================================================== */
 
   @media (--lg-mq) {
-    margin-top: calc($rowGutter-lg * -1);
-    margin-left: calc($rowGutter-lg * -1);
+    margin-top: calc($rowGutter-lg * -1) !important;
+    margin-left: calc($rowGutter-lg * -1) !important;
 
     /* Row large elements
     ========================================================================== */
@@ -845,4 +842,9 @@ $12-row-pct: calc($rowColumns / 12 / $rowColumns * 100%);
       justify-content: space-around;
     }
   }
+}
+
+.cdr-row .cdr-row--gutter-xxs {
+  margin-top: calc($cdr-space-eighth-x * -1) !important;
+  margin-left: calc($cdr-space-eighth-x * -1) !important;
 }
