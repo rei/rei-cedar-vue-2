@@ -1,7 +1,5 @@
 require('@babel/register');
 
-console.log('port', process.env.PORT);
-
 // http://nightwatchjs.org/getingstarted#settings-file
 module.exports = {
   src_folders: ['test/e2e/specs'],
@@ -20,13 +18,17 @@ module.exports = {
     cli_args: {
       'webdriver.chrome.driver': require('chromedriver').path,
     },
+    request_timeout_options: {
+      timeout: 30000,
+      retry_attempts: 2,
+    },
   },
 
   test_settings: {
     default: {
       selenium_port: 4444,
       selenium_host: 'localhost',
-      silent: true,
+      silent: false,
       globals: {
         devServerURL: `http://localhost:${process.env.PORT}` || 3000,
       },
