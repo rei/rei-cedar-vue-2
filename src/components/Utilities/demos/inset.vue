@@ -4,7 +4,7 @@
       tag="h2"
       modifier="heading-medium"
     >
-      Inset classes
+      Inset space classes for all around padding
     </cdr-text>
 
     <template
@@ -86,6 +86,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style lang="scss">

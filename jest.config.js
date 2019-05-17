@@ -18,6 +18,7 @@ const config = {
     '<rootDir>/test/e2e/',
     '<rootDir>/templates/__tests__',
     '<rootDir>/src/components/themer',
+    '<rootDir>/src/components/tabs',
   ],
   transform: {
     '^.+\\.(js|jsx)?$': 'babel-jest',
