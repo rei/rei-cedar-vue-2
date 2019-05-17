@@ -245,7 +245,7 @@
   /* @xs
     0px - 767px
     ========== */
-  @media (--xs-mq-only) {
+  @include xs-mq-only {
     &--small\@xs {
       @include redwood-display-20;
 
@@ -283,7 +283,7 @@
   /* @sm
     768px - 991px
     ========== */
-  @media (--sm-mq-only) {
+  @include sm-mq-only {
     &--small\@sm {
       @include redwood-display-20;
 
@@ -321,7 +321,7 @@
   /* @md
     992px - 1199px
     ========== */
-  @media (--md-mq-only) {
+  @include md-mq-only {
     &--small\@md {
       @include redwood-display-20;
 
@@ -360,7 +360,7 @@
     1200px and up
     ========== */
 
-  @media (--lg-mq-only) {
+  @include lg-mq-only {
     &--small\@lg {
       @include redwood-display-20;
 

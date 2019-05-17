@@ -41,7 +41,7 @@ h6.cdr-text {
       margin-top: $cdr-text-body-stack;
     }
 
-    @media (--sm-mq) {
+    @include sm-mq {
       @include cdr-text-body-text-bp-sm-mixin;
 
       & + & {
@@ -79,12 +79,12 @@ h6.cdr-text {
     }
 
     /* @ small */
-    @media (--sm-mq) {
+    @include sm-mq {
       @include cdr-text-display-text-bp-sm-mixin;
     }
 
     /* @ large */
-    @media (--lg-mq) {
+    @include lg-mq {
       @include cdr-text-display-text-bp-lg-mixin;
     }
   }
@@ -101,7 +101,7 @@ h6.cdr-text {
     }
 
     /* @ large */
-    @media (--lg-mq) {
+    @include lg-mq {
       @include cdr-text-heading-text-small-bp-lg-mixin;
     }
   }
@@ -118,7 +118,7 @@ h6.cdr-text {
     }
 
     /* @ large */
-    @media (--lg-mq) {
+    @include lg-mq {
       @include cdr-text-heading-text-medium-bp-lg-mixin;
     }
   }
@@ -135,12 +135,12 @@ h6.cdr-text {
     }
 
     /* @ small */
-    @media (--sm-mq) {
+    @include sm-mq {
       @include cdr-text-heading-text-large-bp-sm-mixin;
     }
 
     /* @ large */
-    @media (--lg-mq) {
+    @include lg-mq {
       @include cdr-text-heading-text-large-bp-lg-mixin;
     }
   }
