@@ -11,9 +11,9 @@ const server = http.createServer((request, response) => {
   });
 });
 
-server.listen(process.env.PORT, () => {
-
+function setupNightwatch() {
   let opts = process.argv.slice(2);
+
   if (opts.indexOf('--config') === -1) {
     opts = opts.concat(['--config', 'test/e2e/nightwatch.conf.js']);
   }
@@ -32,4 +32,11 @@ server.listen(process.env.PORT, () => {
     server.close();
     throw err;
   });
+}
+
+server.listen(process.env.PORT, () => {
+  setTimeout(
+    setupNightwatch,
+    1000
+  );
 });
