@@ -1,5 +1,7 @@
 require('@babel/register');
 
+console.log('port', process.env.PORT);
+
 // http://nightwatchjs.org/getingstarted#settings-file
 module.exports = {
   src_folders: ['test/e2e/specs'],
