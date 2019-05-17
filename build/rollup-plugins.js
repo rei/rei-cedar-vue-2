@@ -20,17 +20,17 @@ const ssrEnv = process.env.SSR_ENV;
 let postcssExtract = false;
 let copyTargets = [''];
 let SSROptimize = false;
-let copyOutput = 'dist';
+let copyOutput = 'public';
 
 // prod only options
 if (env === 'prod') {
   postcssExtract = 'dist/cedar.css';
+  copyOutput = 'dist';
 }
 
 // dev and prod options
 if (env !== 'test') {
   copyTargets = ['static/cdr-fonts.css'];
-  copyOutput = 'public';
   // SSR build
   if (ssrEnv === 'ssr') {
     SSROptimize = true;
