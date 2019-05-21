@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>rei-cedar</title>
+    <meta name="description" content="Welcome to the REI Digital Design System presentation framework. A home for modular components based on our evolving design patterns.">
+    <meta name="author" content="REI">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:400" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Uncomment to test vs normalize -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"> -->
+    <!-- Uncomment to test vs cedar 1 -->
+    <!-- <link href="https://satchel.rei.com/packages/rei/rei-cedar/1.7.11/rei-cedar.min.css" rel="stylesheet"> -->
+    <div id="main">
+      <h1>Some test text</h1>
+      <cdr-icon-sprite></cdr-icon-sprite>
+
+      <router-link v-for="route in routes" :key="route.path" :to="route.path">{{ route.name }} *</router-link>
+      <router-view></router-view>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

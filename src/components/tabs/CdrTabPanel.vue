@@ -100,7 +100,6 @@ export default {
 };
 </script>
 
-<style>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/CdrTabPanel.pcss';
+<style lang="scss" module>
+  @import './styles/CdrTabPanel.scss';
 </style>

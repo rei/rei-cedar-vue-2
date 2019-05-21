@@ -65,7 +65,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
-import CdrRow from './CdrRow';
+import CdrRow from 'componentsdir/grid/CdrRow';
 
 export default {
   name: 'CdrCol',

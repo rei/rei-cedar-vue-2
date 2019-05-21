@@ -236,7 +236,6 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/CdrDataTable.pcss';
+<style lang="scss" module>
+  @import './styles/CdrDataTable.scss';
 </style>

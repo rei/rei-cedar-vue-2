@@ -1,6 +1,9 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div class="link-examples">
+  <div
+    class="link-examples"
+    data-backstop="all-links"
+  >
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -49,9 +52,10 @@
       <li>
         <cdr-link>
           <cdr-icon
+            inherit-color
             use="#mail"
             modifier="inherit-color"
-            space="cdr-space-mr-half-x"
+            space="cdr-mr-space-half-x"
           />
           Icon on the left
         </cdr-link>
@@ -60,24 +64,27 @@
         <cdr-link>
           Icon on the right
           <cdr-icon
+            inherit-color
             use="#download"
             modifier="inherit-color"
-            space="cdr-space-ml-half-x"
+            space="cdr-ml-space-half-x"
           />
         </cdr-link>
       </li>
       <li>
         <cdr-link>
           <cdr-icon
+            inherit-color
             use="#twitter"
             modifier="inherit-color"
-            space="cdr-space-mr-half-x"
+            space="cdr-mr-space-half-x"
           />
           Icons on both sides
           <cdr-icon
+            inherit-color
             use="#external-link"
             modifier="inherit-color"
-            space="cdr-space-ml-half-x"
+            space="cdr-ml-space-half-x"
           />
         </cdr-link>
       </li>
@@ -123,16 +130,16 @@
 
     <!-- Nested theme Testing -->
 
-    <cdr-themer
+    <!-- <cdr-themer
       theme="light"
       background="lightest"
-    >
-      <!-- Smaller examples with nested theme (for override) -->
-      <p>Works nested</p>
+    > -->
+    <!-- Smaller examples with nested theme (for override) -->
+    <!-- <p>Works nested</p>
       <p>
         <cdr-link
           href="https://www.rei.com/"
-          space="cdr-space-pl-one-x cdr-space-pr-one-x"
+          space="cdr-pl-space-one-x cdr-pr-space-one-x"
         >
           REI.com
         </cdr-link>
@@ -140,19 +147,19 @@
           href="https://www.rei.com/"
           modifier="standalone"
         >REI.com</cdr-link>
-      </p>
-      <!-- Override individual theme -->
-      <!-- <p>Individual override (dark on light)</p>
+      </p> -->
+    <!-- Override individual theme -->
+    <!-- <p>Individual override (dark on light)</p>
       <p>
         <cdr-link
           href="https://www.rei.com/"
           theme="dark">REI.com</cdr-link>
       </p> -->
-    </cdr-themer>
+    <!-- </cdr-themer> -->
 
     <cdr-link
       href="https://www.rei.com/"
-      space="cdr-space-pl-one-x cdr-space-pr-one-x"
+      space="cdr-pl-space-one-x cdr-pr-space-one-x"
     >REI.com</cdr-link>
     <cdr-link
       href="https://www.rei.com/"
@@ -167,7 +174,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'Links',

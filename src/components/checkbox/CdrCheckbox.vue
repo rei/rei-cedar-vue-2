@@ -115,8 +115,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrCheckbox.vars.pcss';
-  @import './styles/CdrCheckbox.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrCheckbox.vars.scss';
+  @import './styles/CdrCheckbox.scss';
 </style>

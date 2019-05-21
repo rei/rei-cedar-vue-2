@@ -1,5 +1,6 @@
 module.exports = [
   {
+    url: 'http://localhost:3000/#/buttons',
     label: 'Button',
     selectors: [
       '[data-backstop="buttons"]',

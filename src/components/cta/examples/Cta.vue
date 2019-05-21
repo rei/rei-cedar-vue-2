@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="cta-links">
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -53,11 +53,15 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+// import Components from 'componentsdir/_index';
+import { CdrText, CdrCta } from 'componentsdir/_index';
 
 export default {
   name: 'Cta',
-  components: Components,
+  components: {
+    CdrCta,
+    CdrText,
+  },
 };
 </script>
 

@@ -25,8 +25,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrCard.vars.pcss';
-  @import './styles/CdrCard.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrCard.vars.scss';
+  @import './styles/CdrCard.scss';
 </style>

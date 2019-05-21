@@ -50,9 +50,8 @@
 </template>
 
 <script>
-import { IconCaretDown } from '@rei/cdr-icon';
+import { IconCaretDown } from 'componentsdir/icon/build/main';
 import modifier from 'mixinsdir/modifier';
-import { setTimeout } from 'core-js';
 
 export default {
   name: 'CdrAccordionItem',
@@ -136,11 +135,6 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/CdrAccordionItem.pcss';
-</style>
-
-<style>
-  @import '@rei/cdr-icon/dist/cdr-icon.css';
+<style lang="scss" module>
+  @import './styles/CdrAccordionItem.scss';
 </style>

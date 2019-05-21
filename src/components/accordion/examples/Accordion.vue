@@ -14,7 +14,7 @@
         Default
       </cdr-text>
       <cdr-accordion
-        space="cdr-space-mb-one-x@xs cdr-space-mb-four-x@sm"
+        space="cdr-mb-space-one-x@xs cdr-mb-space-four-x@sm"
         data-backstop="accordion-default"
       >
         <cdr-accordion-item
@@ -135,7 +135,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'Accordion',

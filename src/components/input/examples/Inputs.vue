@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="inputs">
     <cdr-text
       tag="h2"
     >Text Inputs</cdr-text>
@@ -130,8 +130,8 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
-import { IconTwitter, IconCheckLg } from 'componentsdir/icon/dist/cdr-icon';
+import * as Components from 'componentsdir/_index';
+import { IconTwitter, IconCheckLg } from 'componentsdir/icon/build/main';
 
 export default {
   name: 'Inputs',

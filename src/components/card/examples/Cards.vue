@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import simpleCard from './demo/simpleCard';
+import simpleCard from 'componentsdir/card/examples/demo/simpleCard';
 
 export default {
   name: 'Cards',

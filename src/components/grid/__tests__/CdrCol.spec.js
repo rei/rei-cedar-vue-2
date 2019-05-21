@@ -1,6 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import CdrCol from 'componentsdir/grid/CdrCol';
-import CdrRow from 'componentsdir/grid/CdrRow';
+import { CdrCol } from 'distdir/cedar.esm.js';
+import { CdrRow } from 'distdir/cedar.esm.js';
 
 describe('CdrCol.vue', () => {
   it('renders as list type correctly', () => {

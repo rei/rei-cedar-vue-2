@@ -1,0 +1,97 @@
+/* ==========================================================================
+  # spacing
+  
+  Utility classes spacing
+  TOC:
+    :inset
+    :inset-squish
+    :inset-stretch
+    :space-m
+    :space-p
+    :responsive
+ 
+========================================================================== */
+
+// include token maps
+
+@import "~@rei/cdr-tokens/dist/scss/utility-map.scss";
+
+// needed functions
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}
+
+//----------------------------------------------------
+// generate space utilties
+
+// regular space
+@mixin make-standard-space-utilities() {
+  @each $key, $value in $spacing {
+    $name: str-replace($key, 'cdr-');
+    $sides: (
+      left: 'l',
+      top: 't',
+      right: 'r',
+      bottom: 'b',
+    );
+    
+    // loop through sides
+    @each $full, $short in $sides {
+      .cdr-p#{$short}-#{$name} { padding-#{$full}: #{$value}; }
+      .cdr-m#{$short}-#{$name} { margin-#{$full}: #{$value}; }
+
+      @include xs-mq-only {
+        .cdr-p#{$short}-#{$name}\@xs { padding-#{$full}: #{$value}; }
+        .cdr-m#{$short}-#{$name}\@xs { margin-#{$full}: #{$value}; }
+      }
+
+      @include sm-mq-only {
+        .cdr-p#{$short}-#{$name}\@sm { padding-#{$full}: #{$value}; }
+        .cdr-m#{$short}-#{$name}\@sm { margin-#{$full}: #{$value}; }
+      }
+
+      @include md-mq-only {
+        .cdr-p#{$short}-#{$name}\@md { padding-#{$full}: #{$value}; }
+        .cdr-m#{$short}-#{$name}\@md { margin-#{$full}: #{$value}; }
+      }
+
+      @include lg-mq-only {
+        .cdr-p#{$short}-#{$name}\@lg { padding-#{$full}: #{$value}; }
+        .cdr-m#{$short}-#{$name}\@lg { margin-#{$full}: #{$value}; }
+      }
+    }
+  }
+}
+
+@include make-standard-space-utilities();
+
+// inset
+@mixin make-inset-space-utilities() {
+  @each $key, $value in $spacing-inset {
+    .#{$key} { padding: #{$value}; }
+
+    @include xs-mq-only {
+        .#{$key}\@xs { padding: #{$value}; }
+      }
+
+      @include sm-mq-only {
+        .#{$key}\@sm { padding: #{$value}; }
+      }
+
+      @include md-mq-only {
+        .#{$key}\@md { padding: #{$value}; }
+      }
+
+      @include lg-mq-only {
+        .#{$key}\@lg { padding: #{$value}; }
+      }
+  }
+}
+
+@include make-inset-space-utilities();

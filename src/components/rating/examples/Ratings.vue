@@ -1,5 +1,8 @@
 <template>
-  <div class="rating-reset">
+  <div
+    class="rating-reset"
+    data-backstop="ratings"
+  >
     <cdr-text
       tag="h2"
       modifier="heading-medium"
@@ -94,14 +97,12 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
-import CdrRating from '../CdrRating';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'Rating',
   components: {
     ...Components,
-    CdrRating,
   },
 };
 </script>

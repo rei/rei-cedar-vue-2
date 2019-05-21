@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="selects">
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -140,7 +140,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'Selects',

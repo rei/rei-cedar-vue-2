@@ -49,14 +49,14 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import { CdrPagination } from 'componentsdir/_index';
 
-import paginationData from './data.json';
+import paginationData from 'componentsdir/pagination/examples/data.json';
 
 export default {
   name: 'Pagination',
   components: {
-    ...Components,
+    CdrPagination,
   },
   data() {
     return {

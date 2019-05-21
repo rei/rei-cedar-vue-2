@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import CdrList from 'componentsdir/list/CdrList';
+import { CdrList } from 'distdir/cedar.esm.js';
 
 describe('CdrList.vue', () => {
   it('renders a ul by default', () => {

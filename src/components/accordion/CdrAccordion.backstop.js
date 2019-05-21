@@ -1,4 +1,5 @@
 module.exports = [{
+  url: 'http://localhost:3000/#/accordion',
   label: 'Accordion',
   selectors: [
     '[data-backstop="accordion-default"]',

@@ -1,5 +1,5 @@
 import { mount, shallowMount } from '@vue/test-utils';
-import CdrPagination from 'componentsdir/pagination/CdrPagination';
+import { CdrPagination } from 'distdir/cedar.esm.js';
 
 function makePages(total, startingAt = 0) {
   const arg = 'page';

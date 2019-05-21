@@ -72,68 +72,64 @@ Within print media query.
 
 ## Spacing
 
-### Inline:
-Intended to be used for adding margin to the right of an element.
-
-#### Variants
-
-| Class                   | property     | value     |
-|-------------------------|--------------|-----------|
-| .inline-eighth-x        | margin-right | 2px       |
-| .inline-quarter-x       | margin-right | 4px       |
-| .inline-half-x          | margin-right | 8px       |
-| .inline-three-quarter-x | margin-right | 12px      |
-| .inline-1-x             | margin-right | 16px      |
-| .inline-1-and-a-half-x  | margin-right | 24px      |
-| .inline-2-x             | margin-right | 32px      |
-| .inline-4-x             | margin-right | 64px      |
+Spacing classes reflect spacing tokens.
 
 ### Insets:
+
 Used to add padding to all of our elements, it is important to be sure that elements use these variables rather than the generic space values for their internal spacing.
 
-#### Variants
+#### Classes
+
+Anatomy of the class name is `cdr-<token-name>`. For example, `cdr-space-inset-one-x`.
+
+Classes can also have breakpoints appended to them to make them apply at that breakpoint only. `cdr-space-inset-one-x@md`
 
 | Class                              | property       | value     |
 |------------------------------------|----------------|-----------|
-| .inset-eighth-x                    | padding        | 2px       |
-| .inset-eighth-x-squish             | padding        | 0 2px     |
-| .inset-eighth-x-stretch            | padding        | 4px 2px   |
-| .inset-quarter-x                   | padding        | 4px       |
-| .inset-quarter-x-squish            | padding        | 2px 4px   |
-| .inset-quarter-x-stretch           | padding        | 6px 4px   |
-| .inset-half-x                      | padding        | 8px       |
-| .inset-half-x-squish               | padding        | 4px 8px   |
-| .inset-half-x-stretch              | padding        | 12px 8px  |
-| .inset-three-quarter-x             | padding        | 12px      |
-| .inset-three-quarter-x-squish      | padding        | 6px 12px  |
-| .inset-three-quarter-x-stretch     | padding        | 18px 12px |
-| .inset-1-x                         | padding        | 16px      |
-| .inset-1-x-squish                  | padding        | 8px 16px  |
-| .inset-1-x-stretch                 | padding        | 24px 16px |
-| .inset-1-and-a-half-x              | padding        | 24px      |
-| .inset-1-and-a-half-x-squish       | padding        | 12px 24px |
-| .inset-1-and-a-half-x-stretch      | padding        | 36px 24px |
-| .inset-2-x                         | padding        | 32px      |
-| .inset-2-x-squish                  | padding        | 16px 32px |
-| .inset-2-x-stretch                 | padding        | 48px 32px |
-| .inset-4-x                         | padding        | 64px      |
-| .inset-4-x-squish                  | padding        | 32px 64px |
-| .inset-4-x-stretch                 | padding        | 96px 64px |
+| .cdr-space-inset-eighth-x                    | padding        | 2px       |
+| .cdr-space-inset-eighth-x-squish             | padding        | 0 2px     |
+| .cdr-space-inset-eighth-x-stretch            | padding        | 4px 2px   |
+| .cdr-space-inset-quarter-x                   | padding        | 4px       |
+| .cdr-space-inset-quarter-x-squish            | padding        | 2px 4px   |
+| .cdr-space-inset-quarter-x-stretch           | padding        | 6px 4px   |
+| .cdr-space-inset-half-x                      | padding        | 8px       |
+| .cdr-space-inset-half-x-squish               | padding        | 4px 8px   |
+| .cdr-space-inset-half-x-stretch              | padding        | 12px 8px  |
+| .cdr-space-inset-three-quarter-x             | padding        | 12px      |
+| .cdr-space-inset-three-quarter-x-squish      | padding        | 6px 12px  |
+| .cdr-space-inset-three-quarter-x-stretch     | padding        | 18px 12px |
+| .cdr-space-inset-1-x                         | padding        | 16px      |
+| .cdr-space-inset-1-x-squish                  | padding        | 8px 16px  |
+| .cdr-space-inset-1-x-stretch                 | padding        | 24px 16px |
+| .cdr-space-inset-1-and-a-half-x              | padding        | 24px      |
+| .cdr-space-inset-1-and-a-half-x-squish       | padding        | 12px 24px |
+| .cdr-space-inset-1-and-a-half-x-stretch      | padding        | 36px 24px |
+| .cdr-space-inset-2-x                         | padding        | 32px      |
+| .cdr-space-inset-2-x-squish                  | padding        | 16px 32px |
+| .cdr-space-inset-2-x-stretch                 | padding        | 48px 32px |
+| .cdr-space-inset-4-x                         | padding        | 64px      |
+| .cdr-space-inset-4-x-squish                  | padding        | 32px 64px |
+| .cdr-space-inset-4-x-stretch                 | padding        | 96px 64px |
 
+### Generic:
 
-### Stack
-Intended to be used to add margin to the bottom of an element.
+Used to quickly add padding or margin to elements.
 
-#### Variants 
+#### Classes
 
-| Class                   | property      | value     |
-|-------------------------|---------------|-----------|
-| .stack-eighth-x         | margin-bottom | 2px       |
-| .stack-quarter-x        | margin-bottom | 4px       |
-| .stack-half-x           | margin-bottom | 8px       |
-| .stack-three-quarter-x  | margin-bottom | 12px      |
-| .stack-1-x              | margin-bottom | 16px      |
-| .stack-1-and-a-half-x   | margin-bottom | 24px      |
-| .stack-2-x              | margin-bottom | 32px      |
-| .stack-4-x              | margin-bottom | 64px      |
+Classes add spacing as either padding (`p`) or margin (`m`) to either the top (`t`), right (`r`), bottom (`b`), or left (`l`).
 
+Anatomy of the class name is `cdr-(p|m)(t|r|b|l)-<space-token>`. For example, `cdr-pr-space-one-x`.
+
+Classes can also have breakpoints appended to them to make them apply at that breakpoint only. `cdr-pr-space-one-x@mc`
+
+| Class                                    | property | value     |
+|------------------------------------------|----------|-----------|
+| .cdr-(p|m)(t|r|b|l)-space-eighth-x                | padding  | 2px       |
+| .cdr-(p|m)(t|r|b|l)-space-quarter-x               | padding  | 4px       |
+| .cdr-(p|m)(t|r|b|l)-space-half-x                  | padding  | 8px       |
+| .cdr-(p|m)(t|r|b|l)-space-three-quarter-x         | padding  | 12px      |
+| .cdr-(p|m)(t|r|b|l)-space-1-x                     | padding  | 16px      |
+| .cdr-(p|m)(t|r|b|l)-space-1-and-a-half-x          | padding  | 24px      |
+| .cdr-(p|m)(t|r|b|l)-space-2-x                     | padding  | 32px      |
+| .cdr-(p|m)(t|r|b|l)-space-4-x                     | padding  | 64px      |

@@ -132,8 +132,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrRating.vars.pcss';
-  @import './styles/CdrRating.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrRating.vars.scss';
+  @import './styles/CdrRating.scss';
 </style>
