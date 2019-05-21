@@ -34,7 +34,7 @@
         href="https://rei.com"
         size="small"
         modifier="secondary"
-        data-backstop="cdr-button--small secondary anchor"
+        data-backstop="cdr-button--size"
       >Link <span>text in span</span>
       </cdr-button>
     </div>
@@ -42,8 +42,10 @@
 </template>
 
 <script>
-import CdrButton from 'componentsdir/button/CdrButton';
-import CdrText from 'componentsdir/text/CdrText';
+// import CdrButton from 'componentsdir/button/CdrButton';
+// import CdrText from 'componentsdir/text/CdrText';
+
+import { CdrButton, CdrText } from 'componentsdir/_index';
 
 export default {
   name: 'Secondary',

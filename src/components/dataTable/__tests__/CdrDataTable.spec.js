@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import CdrDataTable from 'componentsdir/dataTable/CdrDataTable';
+import { CdrDataTable } from 'distdir/cedar.esm.js';
 import sinon from 'sinon';
 
 const data = {

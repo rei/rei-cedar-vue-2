@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import CdrText from 'componentsdir/text/CdrText';
+import { CdrText } from 'componentsdir/_index';
 
 export default {
   name: 'ParagraphsDemo',

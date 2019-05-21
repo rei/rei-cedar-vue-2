@@ -23,11 +23,14 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import { CdrText, CdrLink } from 'componentsdir/_index';
 
 export default {
   name: 'UtilitiesA11y',
-  components: { ...Components },
+  components: {
+    CdrText,
+    CdrLink,
+  },
 };
 </script>
 

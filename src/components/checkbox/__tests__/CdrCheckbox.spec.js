@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import CdrCheckbox from 'componentsdir/checkbox/CdrCheckbox';
+import { CdrCheckbox } from 'distdir/cedar.esm.js';
 
 describe('CdrCheckbox.vue', () => {
   it('renders an input', () => {

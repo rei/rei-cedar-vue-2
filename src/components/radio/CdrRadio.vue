@@ -96,8 +96,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrRadio.vars.pcss';
-  @import './styles/CdrRadio.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrRadio.vars.scss';
+  @import './styles/CdrRadio.scss';
 </style>

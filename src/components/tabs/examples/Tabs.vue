@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div>
+  <div data-backstop="tabs">
     <div class="tab-demo-section">
       <cdr-text
         tag="h2"
@@ -244,7 +244,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'TabsExample',

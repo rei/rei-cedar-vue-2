@@ -8,20 +8,14 @@
 
     <visibility />
 
-    <genericSpace />
-
-    <inset />
-
   </div>
 </template>
 
 <script>
-import a11y from './demos/a11y';
-import visibility from './demos/visibility';
-import align from './demos/align';
-import genericSpace from './demos/genericSpace';
-import inset from './demos/inset';
-import container from './demos/container';
+import a11y from 'componentsdir/Utilities/demos/a11y';
+import visibility from 'componentsdir/Utilities/demos/visibility';
+import align from 'componentsdir/Utilities/demos/align';
+import container from 'componentsdir/Utilities/demos/container';
 
 /**
  * Cedar 2 component for utilities
@@ -34,8 +28,6 @@ export default {
     a11y,
     visibility,
     align,
-    genericSpace,
-    inset,
     container,
   },
 };

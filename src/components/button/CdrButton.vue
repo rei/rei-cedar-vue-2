@@ -115,12 +115,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrButton.vars.pcss';
-  @import './styles/CdrButton.pcss';
-</style>
-
-<style>
-  @import '@rei/cdr-icon/dist/cdr-icon.css';
+<style lang="scss" module>
+  @import './styles/vars/CdrButton.vars.scss';
+  @import './styles/CdrButton.scss';
 </style>

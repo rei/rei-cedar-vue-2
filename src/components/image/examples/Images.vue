@@ -49,17 +49,18 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
-import ratios from './demos/Ratios';
-import cropping from './demos/Cropping';
-import mods from './demos/Mods';
-
-Components.ratios = ratios;
-Components.cropping = cropping;
-Components.mods = mods;
+import * as Components from 'componentsdir/_index';
+import ratios from 'componentsdir/image/examples/demos/Ratios';
+import cropping from 'componentsdir/image/examples/demos/Cropping';
+import mods from 'componentsdir/image/examples/demos/Mods';
 
 export default {
   name: 'Images',
-  components: Components,
+  components: {
+    ...Components,
+    ratios,
+    cropping,
+    mods,
+  },
 };
 </script>

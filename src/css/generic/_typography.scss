@@ -1,0 +1,147 @@
+/* ==========================================================================/*
+* Typography utility classes
+*
+* TOC:
+*   :base text styles
+*     :paragraphs
+*       :body
+*     :headings
+*       :subheading
+*       :display
+*       :simple
+*         :large
+*         :medium
+*         :small
+# cdr-label
+========================================================================== */
+
+.cdr-text,
+h1.cdr-text,
+h2.cdr-text,
+h3.cdr-text,
+h4.cdr-text,
+h5.cdr-text,
+h6.cdr-text {
+  @include cdr-text-base-text-mixin;
+
+  margin: $cdr-text-base-margin;
+
+  /* Paragraphs
+    ========================================================================== */
+
+  /* Body
+    ========== */
+
+  &--body {
+    @include cdr-text-body-text-mixin;
+
+    max-width: $cdr-text-body-max-width;
+
+    & + & {
+      margin-top: $cdr-text-body-stack;
+    }
+
+    @include sm-mq {
+      @include cdr-text-body-text-bp-sm-mixin;
+
+      & + & {
+        margin-top: $cdr-text-body-stack-bp-sm;
+      }
+    }
+  }
+
+  /* Caption
+    ========== */
+
+  &--citation {
+    @include cdr-text-citation-text-mixin;
+  }
+
+  /* Headings
+    ========================================================================== */
+
+  /* Subheading
+    ========== */
+
+  &--subheading {
+    @include cdr-text-subheading-text-mixin;
+  }
+
+  /* Display
+    ========== */
+
+  &--display {
+    @include cdr-text-display-text-mixin;
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-display-text-static-mixin;
+    }
+
+    /* @ small */
+    @include sm-mq {
+      @include cdr-text-display-text-bp-sm-mixin;
+    }
+
+    /* @ large */
+    @include lg-mq {
+      @include cdr-text-display-text-bp-lg-mixin;
+    }
+  }
+
+  /* Heading-small
+    ========== */
+
+  &--heading-small {
+    @include cdr-text-heading-text-small-mixin;
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-heading-text-small-static-mixin;
+    }
+
+    /* @ large */
+    @include lg-mq {
+      @include cdr-text-heading-text-small-bp-lg-mixin;
+    }
+  }
+
+  /* Heading-medium
+    ========== */
+
+  &--heading-medium {
+    @include cdr-text-heading-text-medium-mixin;
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-heading-text-medium-static-mixin;
+    }
+
+    /* @ large */
+    @include lg-mq {
+      @include cdr-text-heading-text-medium-bp-lg-mixin;
+    }
+  }
+
+  /* Heading-large
+    ========== */
+
+  &--heading-large {
+    @include cdr-text-heading-text-large-mixin;
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-heading-text-large-static-mixin;
+    }
+
+    /* @ small */
+    @include sm-mq {
+      @include cdr-text-heading-text-large-bp-sm-mixin;
+    }
+
+    /* @ large */
+    @include lg-mq {
+      @include cdr-text-heading-text-large-bp-lg-mixin;
+    }
+  }
+}

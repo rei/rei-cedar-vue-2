@@ -11,7 +11,7 @@
     <cdr-list
       tag="ol"
       modifier="ordered"
-      space="cdr-space-mb-two-x"
+      space="cdr-mb-space-two-x"
     >
       <li>List item text</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'OrderedList',

@@ -7,7 +7,7 @@
       Blockquote
     </cdr-text>
     <cdr-quote
-      space="cdr-space-mb-four-x"
+      space="cdr-mb-space-four-x"
       cite="http://github.com/rei/rei-cedar"
       summary="Blockquote Summary:
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'BlockquoteDemo',

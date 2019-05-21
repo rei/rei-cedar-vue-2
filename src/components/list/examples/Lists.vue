@@ -1,5 +1,8 @@
 <template>
-  <div class="list-examples">
+  <div
+    class="list-examples"
+    data-backstop="lists"
+  >
 
     <cdr-text
       tag="h2"
@@ -8,17 +11,17 @@
       List
     </cdr-text>
 
-    <unordered-list class="cdr-space-mb-four-x" />
-    <ordered-list class="cdr-space-mb-four-x" />
-    <bare-list class="cdr-space-mb-four-x" />
+    <unordered-list class="cdr-mb-space-four-x" />
+    <ordered-list class="cdr-mb-space-four-x" />
+    <bare-list class="cdr-mb-space-four-x" />
   </div>
 </template>
 
 <script>
 import CdrText from 'componentsdir/text/CdrText';
-import unorderedList from './demo/Unordered';
-import orderedList from './demo/Ordered';
-import bareList from './demo/Bare';
+import unorderedList from 'componentsdir/list/examples/demo/Unordered';
+import orderedList from 'componentsdir/list/examples/demo/Ordered';
+import bareList from 'componentsdir/list/examples/demo/Bare';
 
 
 export default {

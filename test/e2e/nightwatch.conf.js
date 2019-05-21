@@ -1,5 +1,4 @@
-require('babel-register');
-const config = require('../../config');
+require('@babel/register');
 
 // http://nightwatchjs.org/getingstarted#settings-file
 module.exports = {
@@ -11,23 +10,18 @@ module.exports = {
     './node_modules/nightwatch-axe/src/commands',
   ],
 
-  selenium: {
+  webdriver: {
     start_process: true,
-    server_path: require('selenium-server').path,
     host: '127.0.0.1',
-    port: 4444,
-    cli_args: {
-      'webdriver.chrome.driver': require('chromedriver').path,
-    },
+    port: 9515, // set to 9515 because the chromedriver log shows it starting on that port
+    server_path: require('chromedriver').path, //required because start_process: true
   },
 
   test_settings: {
     default: {
-      selenium_port: 4444,
-      selenium_host: 'localhost',
       silent: true,
       globals: {
-        devServerURL: `http://localhost:${process.env.PORT || config.dev.port}`,
+        devServerURL: `http://localhost:${process.env.PORT}` || 3000,
       },
     },
 

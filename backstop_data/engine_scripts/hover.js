@@ -6,8 +6,10 @@ module.exports = (chromy, scenario) => {
       .wait(hoverSelector)
       .rect(hoverSelector)
       .result((rect) => {
-        chromy.mouseMoved(rect.left, rect.top);
+        const left = rect.left + 1;
+        const top = rect.top + 1;
+        chromy.mouseMoved(left, top);
       })
-      .wait(waitTime);
+      .sleep(waitTime);
   }
 };

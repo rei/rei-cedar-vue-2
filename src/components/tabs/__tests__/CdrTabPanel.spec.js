@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import CdrTabPanel from 'componentsdir/tabs/CdrTabPanel';
+import { CdrTabPanel } from 'distdir/cedar.esm.js';
 
 
 describe('CdrTabPanel.vue', () => {

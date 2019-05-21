@@ -250,15 +250,15 @@
 </template>
 
 <script>
-import testImage from 'assetsdir/test-image.jpeg';
-import Components from 'componentsdir/_index';
+// import testImage from 'assetsdir/test-image.jpeg';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'Cropping',
   components: Components,
   data() {
     return {
-      testImage,
+      testImage: 'test-image.jpeg',
     };
   },
 };

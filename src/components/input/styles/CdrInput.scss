@@ -1,0 +1,201 @@
+/* ==========================================================================
+  # CdrInput
+  All values should map to variables in
+  vars/CdrInput.vars.pcss
+  in order to allow for theming
+  TOC:
+    :Base - Label
+    :Base - Input container
+    :Base - Input
+      :States
+      :Modifiers
+      :Style Variants
+      :Elements
+========================================================================== */
+
+/* ==========================================================================
+  # INPUT LABEL
+  ========================================================================== */
+.cdr-input__label {
+  @include maple-utility-20;
+
+  color: $heart-of-darkness;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: $cdr-space-quarter-x;
+  margin-right: $cdr-space-inset-quarter-x;
+
+  &--disabled {
+    color: $grey-matter;
+  }
+}
+
+/* ==========================================================================
+  # INPUT
+  ========================================================================== */
+
+.cdr-input {
+  @include redwood-display-30;
+
+  color: $heart-of-darkness;
+  box-shadow: inset 0 0 0 1px $taken-for-granite;
+  border: 0;
+  border-radius: $cdr-radius-softer;
+  padding: $cdr-space-inset-half-x;
+  height: 40px;
+  display: block;
+  width: 100%;
+  overflow: visible;
+  margin: 0;
+
+  /* States
+  ---------- */
+  &[disabled] {
+    background-color: $moon-shot;
+    color: $grey-matter;
+    box-shadow: inset 0 0 0 1px $partly-cloudy;
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px $partly-cloudy;
+    }
+
+    &::placeholder {
+      color: $grey-matter;
+    }
+  }
+
+  &:active,
+  &:focus {
+    box-shadow: inset 0 0 0 1px $easily-excited;
+  }
+
+  /* Style variants
+    ========================================================================== */
+
+  &--multiline {
+    height: auto;
+  }
+
+  &--preicon {
+    /* $input-pre-icon-default-width = 25px with the expectation that
+        slot provided icon is close to that width */
+    padding-left: calc(#{$cdr-space-half-x} + #{$cdr-space-quarter-x} + #{$input-pre-icon-default-width});
+  }
+
+  /* Size variants
+    ========================================================================== */
+
+  &--large {
+    padding-top: $cdr-space-one-x;
+    padding-bottom: $cdr-space-one-x;
+    height: 48px;
+  }
+
+  /* @xs
+    0px - 767px
+    ========== */
+  @include xs-mq-only {
+    &--large\@xs {
+      padding-top: $cdr-space-one-x;
+      padding-bottom: $cdr-space-one-x;
+      height: 48px;
+    }
+  }
+
+  /* @sm
+    768px - 991px
+    ========== */
+  @include sm-mq-only {
+    &--large\@sm {
+      padding-top: $cdr-space-one-x;
+      padding-bottom: $cdr-space-one-x;
+      height: 48px;
+    }
+  }
+
+  /* @md
+    992px - 1199px
+    ========== */
+  @include md-mq-only {
+    &--large\@md {
+      padding-top: $cdr-space-one-x;
+      padding-bottom: $cdr-space-one-x;
+      height: 48px;
+    }
+  }
+
+  /* @lg
+    1200px and up
+    ========== */
+
+  @include lg-mq-only {
+    &--large\@lg {
+      padding-top: $cdr-space-one-x;
+      padding-bottom: $cdr-space-one-x;
+      height: 48px;
+    }
+  }
+
+  /* Pseudo elements
+    ========================================================================== */
+
+  &::placeholder {
+    @include redwood-display-30;
+
+    font-style: italic;
+    color: $coal-train;
+  }
+
+  &[type=number]::-webkit-inner-spin-button,
+  &[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  /* Slot Sections
+    ========================================================================== */
+
+  &__pre-icon {
+    position: absolute;
+    top: 50%;
+    left: $cdr-space-half-x;
+    transform: translateY(-50%);
+    fill: $coal-train;
+  }
+
+  &__post-icon {
+    fill: $coal-train;
+    position: absolute;
+    top: 50%;
+    right: $cdr-space-half-x;
+    transform: translateY(-50%);
+  }
+
+  &__required-label {
+    color: $taken-for-granite;
+  }
+
+  &__info-container {
+    @include maple-utility-20;
+
+    float: right;
+  }
+
+  &__helper-text {
+    @include redwood-display-20;
+
+    color: $taken-for-granite;
+    padding-left: $cdr-space-half-x;
+    padding-top: $cdr-space-quarter-x;
+  }
+}
+
+/* ==========================================================================
+   # INPUT WRAPPER
+   ========================================================================== */
+
+.cdr-input-wrap {
+  position: relative;
+}

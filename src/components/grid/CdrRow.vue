@@ -209,8 +209,7 @@ export default {
 };
 </script>
 
-<style module>
-@import 'cssdir/settings/_index.pcss';
-@import "./styles/Grid.vars.pcss";
-@import "./styles/CdrRow.pcss";
+<style lang="scss" module>
+@import "./styles/Grid.vars.scss";
+@import "./styles/CdrRow.scss";
 </style>

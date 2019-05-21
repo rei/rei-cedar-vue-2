@@ -78,8 +78,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/vars/CdrCta.vars.pcss';
-  @import './styles/CdrCta.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrCta.vars.scss';
+  @import './styles/CdrCta.scss';
 </style>
