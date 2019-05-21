@@ -5,7 +5,6 @@
   >
     <div
       id="app"
-      class="cdr-container-fluid"
     >
       <cdr-text
         tag="h1"

@@ -1,117 +1,115 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div data-backstop="row-mosaic">
-    <cdr-row
-      cols="1 4@sm"
-    >
-      <cdr-col>
-        <div class="row-demo">
-          One
-        </div>
-      </cdr-col>
-      <cdr-col cols="7">
-        <div class="row-demo">
-          Two
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div class="row-demo">
-          Three
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <div class="row-demo">
-          Four
-        </div>
-      </cdr-col>
-      <cdr-col>
-        <cdr-col
-          is-row
-        >
-          <cdr-col>
+  <cdr-row
+    cols="1 4@sm"
+  >
+    <cdr-col class="demo-col">
+      <div class="content">
+        One
+      </div>
+    </cdr-col>
+    <cdr-col cols="7">
+      <div class="content">
+        Two
+      </div>
+    </cdr-col>
+    <cdr-col class="demo-col">
+      <div class="content">
+        Three
+      </div>
+    </cdr-col>
+    <cdr-col class="demo-col">
+      <div class="content">
+        Four
+      </div>
+    </cdr-col>
+    <cdr-col class="demo-col">
+      <cdr-col
+        is-row
+      >
+        <cdr-col class="demo-col">
+          <cdr-col
+            is-row
+          >
             <cdr-col
-              is-row
+              span="12 4@sm"
             >
+              <div class="content">
+                Five
+                <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, labore. Quos dolor tempore accusamus eius, voluptas, ipsum nulla. At fugiat quas est modi autem quam dolores maxime, provident commodi alias.</cdr-text>
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col">
               <cdr-col
-                span="12 4@sm"
+                is-row
+                cols="1 2@sm"
               >
-                <div class="row-demo">
-                  Five
-                  <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, labore. Quos dolor tempore accusamus eius, voluptas, ipsum nulla. At fugiat quas est modi autem quam dolores maxime, provident commodi alias.</cdr-text>
-                </div>
-              </cdr-col>
-              <cdr-col>
-                <cdr-col
-                  is-row
-                  cols="1 2@sm"
-                >
-                  <cdr-col span=" 612@sm">
-                    <div class="row-demo">
-                      Six
-                    </div>
-                  </cdr-col>
-                  <cdr-col span=" 612@sm">
-                    <div class="row-demo">
-                      Seven
-                    </div>
-                  </cdr-col>
-                  <cdr-col span="12">
-                    <div class="row-demo">
-                      Eight
-                    </div>
-                  </cdr-col>
+                <cdr-col span=" 612@sm">
+                  <div class="content">
+                    Six
+                  </div>
+                </cdr-col>
+                <cdr-col span=" 612@sm">
+                  <div class="content">
+                    Seven
+                  </div>
+                </cdr-col>
+                <cdr-col span="12">
+                  <div class="content">
+                    Eight
+                  </div>
                 </cdr-col>
               </cdr-col>
-              <cdr-col
-                span="12 9@sm"
-              >
-                <div class="row-demo">
-                  Nine
-                  <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima aliquam reprehenderit iusto ratione nihil ipsum, perferendis quasi nulla ad quis. Consequuntur odio blanditiis aliquid voluptatem, veniam porro, ad assumenda!</cdr-text>
-                </div>
-              </cdr-col>
-              <cdr-col
-                span="12 3@sm"
-              >
-                <div class="row-demo">
-                  Ten
-                  <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
-                </div>
-              </cdr-col>
+            </cdr-col>
+            <cdr-col
+              span="12 9@sm"
+            >
+              <div class="content">
+                Nine
+                <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima aliquam reprehenderit iusto ratione nihil ipsum, perferendis quasi nulla ad quis. Consequuntur odio blanditiis aliquid voluptatem, veniam porro, ad assumenda!</cdr-text>
+              </div>
+            </cdr-col>
+            <cdr-col
+              span="12 3@sm"
+            >
+              <div class="content">
+                Ten
+                <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
+              </div>
             </cdr-col>
           </cdr-col>
-          <cdr-col
-            span="12 3@sm"
-          >
-            <div class="row-demo">
-              Eleven
-              <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis deserunt, at, illum, earum quibusdam temporibus, molestiae doloremque iure ad est pariatur? Minima, fugit, accusantium. Aspernatur consectetur, labore enim ratione ducimus.</cdr-text>
-            </div>
-          </cdr-col>
+        </cdr-col>
+        <cdr-col
+          span="12 3@sm"
+        >
+          <div class="content">
+            Eleven
+            <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis deserunt, at, illum, earum quibusdam temporibus, molestiae doloremque iure ad est pariatur? Minima, fugit, accusantium. Aspernatur consectetur, labore enim ratione ducimus.</cdr-text>
+          </div>
         </cdr-col>
       </cdr-col>
-      <cdr-col>
-        <div class="row-demo">
-          Twelve
-          <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
-        </div>
-      </cdr-col>
-      <cdr-col
-        span="12 6@sm"
-      >
-        <div class="row-demo">
-          Thirteen
-          <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque suscipit cum nemo aperiam esse, error ipsam, at aliquam similique optio est quaerat impedit id hic asperiores veritatis unde quod voluptatibus.</cdr-text>
-        </div>
-      </cdr-col>
-      <cdr-col span="12">
-        <div class="row-demo">
-          Fourteen
-          <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
-        </div>
-      </cdr-col>
-    </cdr-row>
-  </div>
+    </cdr-col>
+    <cdr-col class="demo-col">
+      <div class="content">
+        Twelve
+        <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
+      </div>
+    </cdr-col>
+    <cdr-col
+      span="12 6@sm"
+    >
+      <div class="content">
+        Thirteen
+        <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque suscipit cum nemo aperiam esse, error ipsam, at aliquam similique optio est quaerat impedit id hic asperiores veritatis unde quod voluptatibus.</cdr-text>
+      </div>
+    </cdr-col>
+    <cdr-col span="12">
+      <div class="content">
+        Fourteen
+        <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
+      </div>
+    </cdr-col>
+  </cdr-row>
 </template>
 
 <script>
@@ -122,22 +120,3 @@ export default {
   components: Components,
 };
 </script>
-
-<style>
-  .row-demo-wrapper [class^="cdr-row_"] {
-    margin-bottom: 16px;
-  }
-
-  .row-demo {
-    background-color: lightgray;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    line-height: 1;
-  }
-
-  .row-demo > * {
-    line-height: 1;
-  }
-
-</style>

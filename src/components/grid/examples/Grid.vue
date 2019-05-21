@@ -1,2675 +1,992 @@
 <template>
-  <!-- eslint-disable max-len -->
   <div>
-    <div class="row-demo-wrapper">
-      <cdr-text
-        tag="h2"
-        modifier="heading-small"
-      >
-        The Grid
-      </cdr-text>
-
-      <div data-backstop="row-basic">
-        <cdr-text
-          tag="h3"
-          modifier="heading-small"
-        >
-          cdr-row usage
-        </cdr-text>
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          cols="#"
-        </cdr-text>
-        <cdr-row cols="1">
-          <cdr-col>
-            <div class="row-demo">
-              1
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="2">
-          <cdr-col>
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="3">
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="4">
-          <cdr-col>
-            <div class="row-demo">
-              4
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              4
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              4
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              4
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="5">
-          <cdr-col>
-            <div class="row-demo">
-              5
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              5
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              5
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              5
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              5
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="6">
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="7">
-          <cdr-col>
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="8">
-          <cdr-col>
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="9">
-          <cdr-col>
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="10">
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="11">
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="12">
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-row cols="2">
-          <cdr-col>
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          default behavior
-        </cdr-text>
-        <cdr-row>
-          <cdr-col>
-            <div class="row-demo">
-              auto auto auto auto auto auto auto auto
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          cols="auto"
-        </cdr-text>
-        <cdr-row
-          cols="auto"
-          justify="center around@sm between@md right@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              AAAAAAAAAAAAAAAAAAAA
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              A
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              A
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              A
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          gutter="none"
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          gutter="none"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          gutter="xxs"
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          gutter="xxs"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          nowrap
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          nowrap="nowrap"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          justify="left"
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          justify="left"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          justify="center"
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          justify="center"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          justify="right"
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          justify="right"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          justify="between"
-        </cdr-text>
-        <cdr-row
-          cols="4"
-          justify="between"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          justify="around"
-        </cdr-text>
-        <cdr-row
-          cols="4"
-          justify="around"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          align="top"
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          align="top"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-              <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</cdr-text>
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          align="middle"
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          align="middle"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-              <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</cdr-text>
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          align="bottom"
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          align="bottom"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-              <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda aperiam officia corporis, repellat vitae reprehenderit nobis expedita! Neque molestiae tempora corrupti provident eos repellat est, ut, similique quaerat adipisci.</cdr-text>
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          vertical
-        </cdr-text>
-        <cdr-row
-          cols="3"
-          vertical="vertical"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="5">
-            <div class="row-demo">
-              5
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h3"
-          modifier="heading-small"
-        >
-          cdr-col usage
-        </cdr-text>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          span="#"
-        </cdr-text>
-        <cdr-row>
-          <cdr-col span="12">
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col span="11">
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col span="1">
-            <div class="row-demo">
-              1
-            </div>
-          </cdr-col>
-          <cdr-col span="10">
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-          <cdr-col span="2">
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-          <cdr-col span="9">
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-          <cdr-col span="3">
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="8">
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-          <cdr-col span="4">
-            <div class="row-demo">
-              4
-            </div>
-          </cdr-col>
-          <cdr-col span="7">
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-          <cdr-col span="5">
-            <div class="row-demo">
-              5
-            </div>
-          </cdr-col>
-          <cdr-col span="6">
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col span="6">
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          mixing cdr-row cols="#" and cdr-col span="#"
-        </cdr-text>
-        <cdr-row cols="3">
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="12">
-            <div class="row-demo">
-              12
-            </div>
-          </cdr-col>
-          <cdr-col span="11">
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-          <cdr-col span="1">
-            <div class="row-demo">
-              1
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          align-self
-        </cdr-text>
-        <cdr-row
-          cols="4"
-          style="height: 300px;"
-        >
-          <cdr-col align-self="top">
-            <div class="row-demo">
-              align-self="top"
-            </div>
-          </cdr-col>
-          <cdr-col align-self="middle">
-            <div class="row-demo">
-              align-self="middle"
-            </div>
-          </cdr-col>
-          <cdr-col align-self="bottom">
-            <div class="row-demo">
-              align-self="bottom"
-            </div>
-          </cdr-col>
-          <cdr-col align-self="stretch">
-            <div class="row-demo">
-              align-self="stretch" (default)
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          offset-left="#"
-        </cdr-text>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="0"
-          >
-            <div class="row-demo">
-              0
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="1"
-          >
-            <div class="row-demo">
-              1
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="2"
-          >
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="3"
-          >
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="4"
-          >
-            <div class="row-demo">
-              4
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="5"
-          >
-            <div class="row-demo">
-              5
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="6"
-          >
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="7"
-          >
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="8"
-          >
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="9"
-          >
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="10"
-          >
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="1"
-            offset-left="11"
-          >
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row>
-          <cdr-col
-            span="2"
-            offset-left="2"
-          >
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-          <cdr-col
-            span="2"
-            offset-left="2"
-          >
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-          <cdr-col
-            span="2"
-            offset-left="2"
-          >
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          offset-right="#"
-        </cdr-text>
-        <cdr-row>
-          <cdr-col
-            span="2"
-            offset-right="2"
-          >
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-          <cdr-col
-            span="2"
-            offset-right="2"
-          >
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-          <cdr-col
-            span="2"
-            offset-right="2"
-          >
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text
-          tag="h4"
-          modifier="subheading"
-        >
-          offset-right="#" (with cdr-row justify="right")
-        </cdr-text>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="0"
-          >
-            <div class="row-demo">
-              0
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="1"
-          >
-            <div class="row-demo">
-              1
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="2"
-          >
-            <div class="row-demo">
-              2
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="3"
-          >
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="4"
-          >
-            <div class="row-demo">
-              4
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="5"
-          >
-            <div class="row-demo">
-              5
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="6"
-          >
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="7"
-          >
-            <div class="row-demo">
-              7
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="8"
-          >
-            <div class="row-demo">
-              8
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="9"
-          >
-            <div class="row-demo">
-              9
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="10"
-          >
-            <div class="row-demo">
-              10
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-row justify="right">
-          <cdr-col
-            span="1"
-            offset-right="11"
-          >
-            <div class="row-demo">
-              11
-            </div>
-          </cdr-col>
-        </cdr-row>
-      </div>
-
-      <cdr-text
-        tag="h4"
-        modifier="subheading"
-      >
-        cdr-row responsive options
-      </cdr-text>
-
-      <div data-backstop="row-sm">
-        <cdr-text
-          tag="h5"
-          modifier="subheading"
-        >
-          Small breakpoint
-        </cdr-text>
-        <cdr-text>cols="2 4@sm"</cdr-text>
-        <cdr-row
-          cols="2 4@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-sm
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-sm
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-sm
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-sm
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>cols="6@sm"</cdr-text>
-        <cdr-row cols="6@sm">
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-sm
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-sm
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-sm
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-sm
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>gutter="none@sm"</cdr-text>
-        <cdr-row
-          cols="6"
-          gutter="none@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>gutter="xxs@sm"</cdr-text>
-        <cdr-row
-          cols="6"
-          gutter="xxs@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="center@sm"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="center@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="right@sm"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="right@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="between@sm"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="between@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="around@sm"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="around@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>align="top@sm"</cdr-text>
-        <cdr-row
-          cols="3"
-          align="top@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>align="middle@sm"</cdr-text>
-        <cdr-row
-          cols="3"
-          align="middle@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>align="bottom@sm"</cdr-text>
-        <cdr-row
-          cols="3"
-          align="bottom@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>vertical@sm</cdr-text>
-        <cdr-row
-          cols="3"
-          vertical="vertical@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="3">
-            <div class="row-demo">
-              span 3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>wrap@sm</cdr-text>
-        <cdr-row
-          cols="3"
-          nowrap="nowrap"
-          wrap="wrap@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="6">
-            <div class="row-demo">
-              span 6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>nowrap@sm</cdr-text>
-        <cdr-row
-          cols="3"
-          nowrap="nowrap@sm"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="6">
-            <div class="row-demo">
-              span 6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-      </div>
-
-      <div data-backstop="row-md">
-        <cdr-text
-          tag="h5"
-          modifier="subheading"
-        >
-          Medium breakpoint
-        </cdr-text>
-        <cdr-text>cols="2 4@md"</cdr-text>
-        <cdr-row
-          cols="2 4@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-md
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-md
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-md
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-md
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>cols="6@md"</cdr-text>
-        <cdr-row cols="6@md">
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-md
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-md
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-md
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-md
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>gutter="none@sm"</cdr-text>
-        <cdr-row
-          cols="6"
-          gutter="none@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>gutter="xxs@md"</cdr-text>
-        <cdr-row
-          cols="6"
-          gutter="xxs@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="center@md"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="center@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="right@md"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="right@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="between@md"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="between@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="around@md"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="around@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>align="top@md"</cdr-text>
-        <cdr-row
-          cols="3"
-          align="top@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>align="middle@md"</cdr-text>
-        <cdr-row
-          cols="3"
-          align="middle@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>align="bottom@md"</cdr-text>
-        <cdr-row
-          cols="3"
-          align="bottom@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>vertical@md</cdr-text>
-        <cdr-row
-          cols="3"
-          vertical="vertical@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="3">
-            <div class="row-demo">
-              span 3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>wrap@md</cdr-text>
-        <cdr-row
-          cols="3"
-          nowrap="nowrap"
-          wrap="wrap@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="6">
-            <div class="row-demo">
-              span 6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>nowrap@md</cdr-text>
-        <cdr-row
-          cols="3"
-          nowrap="nowrap@md"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="6">
-            <div class="row-demo">
-              span 6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-      </div>
-
-      <div data-backstop="row-lg">
-        <cdr-text
-          tag="h5"
-          modifier="subheading"
-        >
-          Large breakpoint
-        </cdr-text>
-        <cdr-text>cols="2 4@lg"</cdr-text>
-        <cdr-row
-          cols="2 4@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-lg
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-lg
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-lg
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              2, 4-lg
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>cols="6@lg"</cdr-text>
-        <cdr-row cols="6@lg">
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-lg
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-lg
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-lg
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto, 6-lg
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>gutter="none@lg"</cdr-text>
-        <cdr-row
-          cols="6"
-          gutter="none@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>gutter="xxs@lg"</cdr-text>
-        <cdr-row
-          cols="6"
-          gutter="xxs@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="center@lg"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="center@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="right@lg"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="right@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="between@lg"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="between@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>justify="around@lg"</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="around@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              6
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>align="top@lg"</cdr-text>
-        <cdr-row
-          cols="3"
-          align="top@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>align="middle@lg"</cdr-text>
-        <cdr-row
-          cols="3"
-          align="middle@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>align="bottom@lg"</cdr-text>
-        <cdr-row
-          cols="3"
-          align="bottom@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolores perspiciatis iure officia doloribus, accusantium assumenda illum deleniti voluptas, suscipit quod cumque, mollitia! Minima debitis quia consequatur molestiae, consectetur error.
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>vertical@lg</cdr-text>
-        <cdr-row
-          cols="3"
-          vertical="vertical@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="3">
-            <div class="row-demo">
-              span 3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>wrap@lg</cdr-text>
-        <cdr-row
-          cols="3"
-          nowrap="nowrap"
-          wrap="wrap@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="6">
-            <div class="row-demo">
-              span 6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-
-        <cdr-text>nowrap@lg</cdr-text>
-        <cdr-row
-          cols="3"
-          nowrap="nowrap@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col span="6">
-            <div class="row-demo">
-              span 6
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-      </div>
-
-      <div data-backstop="row-responsive">
-        <cdr-text
-          tag="h4"
-          modifier="heading-small"
-        >
-          Mix and match responsive row classes
-        </cdr-text>
-        <cdr-text>1 > 2-sm > 3-md > 4-lg </cdr-text>
-        <cdr-row
-          cols="1 2@sm 3@md 4@lg"
-        >
-          <cdr-col>
-            <div class="row-demo" />
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo" />
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo" />
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo" />
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo" />
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo" />
-          </cdr-col>
-        </cdr-row>
-        <cdr-text>justify (default@xs > center@sm > right@md > around@lg)</cdr-text>
-        <cdr-row
-          cols="6"
-          justify="center@sm right@md around@lg"
-        >
-          <cdr-col>
-            <div class="row-demo" />
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo" />
-          </cdr-col>
-        </cdr-row>
-        <cdr-text>align (default@xs > top@sm > middle@md > bottom@lg)</cdr-text>
-        <cdr-row
-          cols="3"
-          align="top@sm middle@md bottom@lg"
-        >
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolores culpa, sit iste, modi, cupiditate veritatis ratione aut omnis libero quae quas placeat eligendi voluptatibus asperiores totam numquam inventore accusamus!
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              3
-            </div>
-          </cdr-col>
-        </cdr-row>
-      </div>
-
-      <cdr-text
-        tag="h4"
-        modifier="heading-small"
-      >
-        cdr-col responsive options
-      </cdr-text>
-      <div data-backstop="col-sm">
-        <cdr-text
-          tag="h5"
-          modifier="subheading"
-        >
-          Small breakpoint
-        </cdr-text>
-        <cdr-text>span="#@sm"</cdr-text>
-        <cdr-row>
-          <cdr-col span="3@sm">
-            <div class="row-demo">
-              auto, 3-sm
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-text>offset-right="1@sm" offset-left="1@sm"</cdr-text>
-        <cdr-row>
-          <cdr-col offset-right="1@sm">
-            <div class="row-demo">
-              right 1
-            </div>
-          </cdr-col>
-          <cdr-col offset-left="1@sm">
-            <div class="row-demo">
-              left 1
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-text>align-self@sm</cdr-text>
-        <cdr-row>
-          <cdr-col align-self="top@sm">
-            <div class="row-demo">
-              top
-            </div>
-          </cdr-col>
-          <cdr-col align-self="middle@sm">
-            <div class="row-demo">
-              middle
-            </div>
-          </cdr-col>
-          <cdr-col align-self="bottom@sm">
-            <div class="row-demo">
-              bottom
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!
-            </div>
-          </cdr-col>
-        </cdr-row>
-      </div>
-
-      <div data-backstop="col-md">
-        <cdr-text
-          tag="h5"
-          modifier="subheading"
-        >
-          Medium breakpoint
-        </cdr-text>
-        <cdr-text>span="#@md"</cdr-text>
-        <cdr-row>
-          <cdr-col span="3@md">
-            <div class="row-demo">
-              auto, 3-md
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-text>offset-right="1@md" offset-left="1@md"</cdr-text>
-        <cdr-row>
-          <cdr-col offset-right="1@md">
-            <div class="row-demo">
-              right 1
-            </div>
-          </cdr-col>
-          <cdr-col offset-left="1@md">
-            <div class="row-demo">
-              left 1
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-text>align-self@md</cdr-text>
-        <cdr-row>
-          <cdr-col align-self="top@md">
-            <div class="row-demo">
-              top
-            </div>
-          </cdr-col>
-          <cdr-col align-self="middle@md">
-            <div class="row-demo">
-              middle
-            </div>
-          </cdr-col>
-          <cdr-col align-self="bottom@md">
-            <div class="row-demo">
-              bottom
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!
-            </div>
-          </cdr-col>
-        </cdr-row>
-      </div>
-
-      <div data-backstop="col-lg">
-        <cdr-text
-          tag="h5"
-          modifier="subheading"
-        >
-          Large breakpoint
-        </cdr-text>
-        <cdr-text>span="#@lg"</cdr-text>
-        <cdr-row>
-          <cdr-col span="3@lg">
-            <div class="row-demo">
-              auto, 3-lg
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              auto
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-text>offset-right="1@lg" offset-left-lg="1"</cdr-text>
-        <cdr-row>
-          <cdr-col offset-right="1@lg">
-            <div class="row-demo">
-              right 1
-            </div>
-          </cdr-col>
-          <cdr-col offset-left="1@lg">
-            <div class="row-demo">
-              left 1
-            </div>
-          </cdr-col>
-        </cdr-row>
-        <cdr-text>align-self@lg</cdr-text>
-        <cdr-row>
-          <cdr-col align-self="top@lg">
-            <div class="row-demo">
-              top
-            </div>
-          </cdr-col>
-          <cdr-col align-self="middle@lg">
-            <div class="row-demo">
-              middle
-            </div>
-          </cdr-col>
-          <cdr-col align-self="bottom@lg">
-            <div class="row-demo">
-              bottom
-            </div>
-          </cdr-col>
-          <cdr-col>
-            <div class="row-demo">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odit illum quos praesentium eveniet, odio, commodi, quam quia nesciunt harum alias officia, mollitia sequi vel tempora rem eos exercitationem incidunt!
-            </div>
-          </cdr-col>
-        </cdr-row>
-      </div>
-    </div>
-
-    <cdr-text>Complex Mosaic/Metro/Masonry-ish Demo</cdr-text>
-    <complex />
-
-    <cdr-text>Complex demo with list type</cdr-text>
-    <div data-backstop="row-mosaic-list">
+    <div class="demo-cdr-container cdr-container cdr-stack--xl">
       <cdr-row
-        type="list"
-        cols="1 4@sm"
+        cols="1 2@sm 3@lg"
+        class="demo-row"
       >
-        <cdr-col>
-          <div class="row-demo">
-            One
-          </div>
-        </cdr-col>
-        <cdr-col cols="7">
-          <div class="row-demo">
-            Two
-          </div>
-        </cdr-col>
-        <cdr-col>
-          <div class="row-demo">
-            Three
-          </div>
-        </cdr-col>
-        <cdr-col>
-          <div class="row-demo">
-            Four
-          </div>
-        </cdr-col>
         <cdr-col span="12">
-          <cdr-col
-            is-row
-            type="list"
-          >
-            <cdr-col span="12 9@sm">
-              <cdr-col
-                is-row
-                type="list"
-              >
-                <cdr-col
-                  span="12 4@sm"
-                >
-                  <div class="row-demo">
-                    Five
-                    <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, labore. Quos dolor tempore accusamus eius, voluptas, ipsum nulla. At fugiat quas est modi autem quam dolores maxime, provident commodi alias.</cdr-text>
-                  </div>
-                </cdr-col>
-                <cdr-col
-                  span="12 8@sm"
-                  cols="1 2@sm"
-                >
-                  <cdr-col
-                    is-row
-                    type="list"
-                  >
-                    <cdr-col>
-                      <div class="row-demo">
-                        Six
-                      </div>
-                    </cdr-col>
-                    <cdr-col>
-                      <div class="row-demo">
-                        Seven
-                      </div>
-                    </cdr-col>
-                    <cdr-col span="12">
-                      <div class="row-demo">
-                        Eight
-                      </div>
-                    </cdr-col>
-                  </cdr-col>
-                </cdr-col>
-                <cdr-col
-                  span="12 9@sm"
-                >
-                  <div class="row-demo">
-                    Nine
-                    <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima aliquam reprehenderit iusto ratione nihil ipsum, perferendis quasi nulla ad quis. Consequuntur odio blanditiis aliquid voluptatem, veniam porro, ad assumenda!</cdr-text>
-                  </div>
-                </cdr-col>
-                <cdr-col
-                  span="12 3@sm"
-                >
-                  <div class="row-demo">
-                    Ten
-                    <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
-                  </div>
-                </cdr-col>
-              </cdr-col>
-            </cdr-col>
-            <cdr-col
-              span="12 3@sm"
-            >
-              <div class="row-demo">
-                Eleven
-                <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis deserunt, at, illum, earum quibusdam temporibus, molestiae doloremque iure ad est pariatur? Minima, fugit, accusantium. Aspernatur consectetur, labore enim ratione ducimus.</cdr-text>
-              </div>
-            </cdr-col>
-          </cdr-col>
-        </cdr-col>
-        <cdr-col>
-          <div class="row-demo">
-            Twelve
-            <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
+          <div>
+            <h2>The cdr-grid in a standard cdr-container</h2>
           </div>
         </cdr-col>
-        <cdr-col
-          span="12 6@sm"
-        >
-          <div class="row-demo">
-            Thirteen
-            <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque suscipit cum nemo aperiam esse, error ipsam, at aliquam similique optio est quaerat impedit id hic asperiores veritatis unde quod voluptatibus.</cdr-text>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col 1
           </div>
         </cdr-col>
-        <cdr-col>
-          <div class="row-demo">
-            Fourteen
-            <cdr-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</cdr-text>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col 2
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col 3
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col 4
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col 5
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col 6
           </div>
         </cdr-col>
       </cdr-row>
     </div>
 
+    <div class="demo-cdr-container cdr-container cdr-stack--xl">
+      <cdr-row
+        cols="2 4@sm 6@lg"
+        class="demo-row"
+      >
+        <cdr-col span="12">
+          <div>
+            <h2>A nested and responsive cdr-grid</h2>
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <cdr-col
+            is-row
+            cols="1 2@md"
+            gutter="xxs@md xxs@lg"
+            class="demo-col falseRow"
+          >
+            <cdr-col class="demo-col nested">
+              <cdr-col
+                is-row
+                gutter="xxs"
+              >
+                <cdr-col
+                  class="demo-col nested"
+                  span="6"
+                >
+                  <div class="content">
+                    content in a nested nested col
+                  </div>
+                </cdr-col>
+                <cdr-col
+                  class="demo-col nested"
+                  span="6"
+                >
+                  <div class="content">
+                    content in a nested nested col
+                  </div>
+                </cdr-col>
+              </cdr-col>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+          </cdr-col>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <div class="demo-cdr-container cdr-container cdr-stack--xl">
+      <cdr-row
+        cols="1"
+        class="demo-row"
+      >
+        <cdr-col span="12">
+          <div>
+            <h2>A complex cdr-grid</h2>
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <cdr-col
+            is-row
+            cols="1 2@sm"
+            gutter="xxs"
+            class="demo-col falseRow"
+          >
+            <cdr-col class="demo-col nested">
+              <cdr-col
+                is-row
+                gutter="xxs"
+                cols="1 4@lg"
+                class="demo-col falseRow"
+              >
+                <cdr-col
+                  span="6"
+                  class="demo-col nested"
+                >
+                  <cdr-col
+                    is-row
+                    gutter="xxs"
+                    cols="2 4@lg"
+                    class="demo-col falseRow"
+                  >
+                    <cdr-col class="demo-col nested">
+                      <div class="content nested-content">
+                        content in a nested col 1
+                      </div>
+                    </cdr-col>
+                    <cdr-col class="demo-col nested">
+                      <div class="content nested-content">
+                        content in a nested col
+                      </div>
+                    </cdr-col>
+                    <cdr-col class="demo-col nested">
+                      <cdr-col
+                        is-row
+                        gutter="xxs"
+                        cols="2"
+                        class="demo-col falseRow"
+                      >
+                        <cdr-col class="demo-col nested">
+                          <div class="content nested-content">
+                            content in a nested col
+                          </div>
+                        </cdr-col>
+                        <cdr-col class="demo-col nested">
+                          <div class="content nested-content">
+                            content in a nested col
+                          </div>
+                        </cdr-col>
+                        <cdr-col class="demo-col nested">
+                          <div class="content nested-content">
+                            content in a nested col
+                          </div>
+                        </cdr-col>
+                        <cdr-col class="demo-col nested">
+                          <div class="content nested-content">
+                            content in a nested col 1
+                          </div>
+                        </cdr-col>
+                      </cdr-col>
+                    </cdr-col>
+                    <cdr-col class="demo-col nested">
+                      <div class="content nested-content">
+                        content in a nested col 1
+                      </div>
+                    </cdr-col>
+                  </cdr-col>
+                </cdr-col>
+                <cdr-col
+                  span="6"
+                  class="demo-col nested"
+                >
+                  <div class="content nested-content">
+                    content in a nested col
+                  </div>
+                </cdr-col>
+                <cdr-col
+                  span="12"
+                  class="demo-col nested"
+                >
+                  <cdr-col
+                    is-row
+                    cols="2"
+                    gutter="xxs"
+                    class="demo-col falseRow"
+                  >
+                    <cdr-col class="demo-col nested">
+                      <cdr-col
+                        is-row
+                        gutter="xxs"
+                        cols="4"
+                        class="demo-col falseRow"
+                      >
+                        <cdr-col
+                          span="6"
+                          class="demo-col nested"
+                        >
+                          <cdr-col
+                            is-row
+                            gutter="xxs"
+                            cols="4"
+                            class="demo-col falseRow"
+                          >
+                            <cdr-col
+                              span="6"
+                              class="demo-col nested"
+                            >
+                              <div class="content nested-content">
+                                content in a nested col
+                              </div>
+                            </cdr-col>
+                            <cdr-col
+                              span="6"
+                              class="demo-col nested"
+                            >
+                              <div class="content nested-content">
+                                content in a nested col
+                              </div>
+                            </cdr-col>
+                            <cdr-col
+                              span="12"
+                              class="demo-col nested"
+                            >
+                              <cdr-col
+                                is-row
+                                gutter="xxs"
+                                cols="2"
+                                class="demo-col falseRow"
+                              >
+                                <cdr-col
+                                  span="6"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                                <cdr-col
+                                  span="6"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                                <cdr-col
+                                  span="12"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                              </cdr-col>
+                            </cdr-col>
+                          </cdr-col>
+                        </cdr-col>
+                        <cdr-col
+                          span="6"
+                          class="demo-col nested"
+                        >
+                          <div class="content nested-content">
+                            content in a nested col
+                          </div>
+                        </cdr-col>
+                        <cdr-col
+                          span="12"
+                          class="demo-col nested"
+                        >
+                          <div class="content nested-content">
+                            content in a nested col
+                          </div>
+                        </cdr-col>
+                      </cdr-col>
+                    </cdr-col>
+                    <cdr-col class="demo-col nested">
+                      <div class="content">
+                        content in a nested col
+                      </div>
+                    </cdr-col>
+                    <cdr-col class="demo-col nested">
+                      <div class="content">
+                        content in a nested col
+                      </div>
+                    </cdr-col>
+                    <cdr-col class="demo-col nested">
+                      <div class="content">
+                        content in a nested col
+                      </div>
+                    </cdr-col>
+                    <cdr-col class="demo-col nested">
+                      <cdr-col
+                        is-row
+                        cols="2"
+                        gutter="xxs"
+                        class="demo-col falseRow"
+                      >
+                        <cdr-col class="demo-col nested">
+                          <cdr-col
+                            is-row
+                            gutter="xxs"
+                            cols="4"
+                            class="demo-col falseRow"
+                          >
+                            <cdr-col
+                              span="6"
+                              class="demo-col nested"
+                            >
+                              <cdr-col
+                                is-row
+                                gutter="xxs"
+                                cols="4"
+                                class="demo-col falseRow"
+                              >
+                                <cdr-col
+                                  span="6"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                                <cdr-col
+                                  span="6"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                                <cdr-col
+                                  span="12"
+                                  class="demo-col nested"
+                                >
+                                  <cdr-col
+                                    is-row
+                                    gutter="xxs"
+                                    cols="2"
+                                    class="demo-col falseRow"
+                                  >
+                                    <cdr-col
+                                      span="6"
+                                      class="demo-col nested"
+                                    >
+                                      <div class="content nested-content">
+                                        content in a nested col
+                                      </div>
+                                    </cdr-col>
+                                    <cdr-col
+                                      span="6"
+                                      class="demo-col nested"
+                                    >
+                                      <div class="content nested-content">
+                                        content in a nested col
+                                      </div>
+                                    </cdr-col>
+                                    <cdr-col
+                                      span="12"
+                                      class="demo-col nested"
+                                    >
+                                      <div class="content nested-content">
+                                        content in a nested col
+                                      </div>
+                                    </cdr-col>
+                                  </cdr-col>
+                                </cdr-col>
+                              </cdr-col>
+                            </cdr-col>
+                            <cdr-col
+                              span="6"
+                              class="demo-col nested"
+                            >
+                              <div class="content nested-content">
+                                content in a nested col
+                              </div>
+                            </cdr-col>
+                            <cdr-col
+                              span="12"
+                              class="demo-col nested"
+                            >
+                              <div class="content nested-content">
+                                content in a nested col
+                              </div>
+                            </cdr-col>
+                          </cdr-col>
+                        </cdr-col>
+                        <cdr-col class="demo-col nested">
+                          <cdr-col
+                            is-row
+                            gutter="xxs"
+                            cols="4"
+                            class="demo-col falseRow"
+                          >
+                            <cdr-col
+                              span="6"
+                              class="demo-col nested"
+                            >
+                              <cdr-col
+                                is-row
+                                gutter="xxs"
+                                cols="4"
+                                class="demo-col falseRow"
+                              >
+                                <cdr-col
+                                  span="12"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                                <cdr-col
+                                  span="12"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                                <cdr-col
+                                  span="12"
+                                  class="demo-col nested"
+                                >
+                                  <cdr-col
+                                    is-row
+                                    gutter="xxs"
+                                    cols="2"
+                                    class="demo-col falseRow"
+                                  >
+                                    <cdr-col
+                                      span="4"
+                                      class="demo-col nested"
+                                    >
+                                      <div class="content nested-content">
+                                        content in a nested col
+                                      </div>
+                                    </cdr-col>
+                                    <cdr-col
+                                      span="4"
+                                      class="demo-col nested"
+                                    >
+                                      <div class="content nested-content">
+                                        content in a nested col
+                                      </div>
+                                    </cdr-col>
+                                    <cdr-col
+                                      span="4"
+                                      class="demo-col nested"
+                                    >
+                                      <div class="content nested-content">
+                                        content in a nested col
+                                      </div>
+                                    </cdr-col>
+                                  </cdr-col>
+                                </cdr-col>
+                              </cdr-col>
+                            </cdr-col>
+                            <cdr-col
+                              span="6"
+                              class="demo-col nested"
+                            >
+                              <cdr-col
+                                is-row
+                                gutter="xxs"
+                                cols="8"
+                                class="demo-col falseRow"
+                              >
+                                <cdr-col
+                                  span="4"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                                <cdr-col
+                                  span="4"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                                <cdr-col
+                                  span="4"
+                                  class="demo-col nested"
+                                >
+                                  <div class="content nested-content">
+                                    content in a nested col
+                                  </div>
+                                </cdr-col>
+                              </cdr-col>
+                            </cdr-col>
+                            <cdr-col
+                              span="12"
+                              class="demo-col nested"
+                            >
+                              <div class="content nested-content">
+                                content in a nested col
+                              </div>
+                            </cdr-col>
+                          </cdr-col>
+                        </cdr-col>
+                        <cdr-col class="demo-col nested">
+                          <div class="content">
+                            content in a nested col
+                          </div>
+                        </cdr-col>
+                        <cdr-col class="demo-col nested">
+                          <div class="content">
+                            content in a nested col
+                          </div>
+                        </cdr-col>
+                        <cdr-col class="demo-col nested">
+                          <div class="content">
+                            content in a nested col
+                          </div>
+                        </cdr-col>
+                        <cdr-col class="demo-col nested">
+                          <div class="content">
+                            content in a nested col
+                          </div>
+                        </cdr-col>
+                      </cdr-col>
+                    </cdr-col>
+                    <cdr-col class="demo-col nested">
+                      <div class="content">
+                        content in a nested col
+                      </div>
+                    </cdr-col>
+                  </cdr-col>
+                </cdr-col>
+              </cdr-col>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                content in a nested col
+              </div>
+            </cdr-col>
+          </cdr-col>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <div class="demo-cdr-container cdr-container-fluid">
+      <cdr-row
+        justify="between"
+        class="demo-row cdr-stack--xl"
+      >
+        <cdr-col span="12">
+          <div>
+            <h2>The cdr-grid within a cdr-container-fluid</h2>
+          </div>
+        </cdr-col>
+        <cdr-col
+          span="6"
+          class="demo-col"
+        >
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col
+          span="6"
+          class="demo-col"
+        >
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col
+          span="3"
+          class="demo-col"
+        >
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col
+          span="3"
+          class="demo-col"
+        >
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col
+          span="3"
+          class="demo-col"
+        >
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col
+          span="3"
+          class="demo-col"
+        >
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <div class="demo-cdr-container cdr-container cdr-stack--xl">
+      <cdr-col
+        is-row
+        cols="4"
+        justify="around"
+        gutter="xxs@md"
+        class="demo-row"
+      >
+        <cdr-col span="12">
+          <div>
+            <h2>Other examples and truoble shooting</h2>
+
+            <h3>Using "is-row" at the root col</h3>
+          </div>
+        </cdr-col>
+        <cdr-col
+          span="6"
+          class="demo-col"
+        >
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col
+          span="6"
+          class="demo-col"
+        >
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col
+          span="4"
+          class="demo-col"
+        >
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+      </cdr-col>
+    </div>
+
+    <cdr-row
+      justify="around"
+      class="demo-row cdr-stack--xl"
+    >
+      <cdr-col span="12">
+        <div>
+          <h2>Look out for</h2>
+
+          <h3>A grid without a container</h3>
+        </div>
+      </cdr-col>
+      <cdr-col
+        span="6"
+        class="demo-col"
+      >
+        <div class="content">
+          content in a col
+        </div>
+      </cdr-col>
+      <cdr-col
+        span="3"
+        class="demo-col"
+      >
+        <div class="content">
+          content in a col
+        </div>
+      </cdr-col>
+      <cdr-col
+        span="3"
+        class="demo-col"
+      >
+        <div class="content">
+          content in a col
+        </div>
+      </cdr-col>
+      <cdr-col
+        span="6"
+        class="demo-col"
+      >
+        <div class="content">
+          content in a col
+        </div>
+      </cdr-col>
+      <cdr-col
+        span="6"
+        class="demo-col"
+      >
+        <div class="content">
+          content in a col
+        </div>
+      </cdr-col>
+      <cdr-col
+        span="12"
+        class="demo-col"
+      >
+        <div class="content">
+          content in a col
+        </div>
+      </cdr-col>
+    </cdr-row>
+
+    <h2>Content outside of the grid containers</h2>
+    <div class="demo-cdr-container cdr-container-flex cdr-stack--xl">
+      <cdr-row
+        cols="1 2@sm 3@lg"
+        class="demo-row"
+      >
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            content in a col
+          </div>
+        </cdr-col>
+      </cdr-row>
+    </div>
+
+    <div class="demo-cdr-container cdr-container">
+      <cdr-row
+        type="list"
+        cols="2"
+        class="demo-row"
+      >
+        <cdr-col class="demo-col">
+          <div class="content">
+            One
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <cdr-row
+            is-list
+            cols="2"
+            class="demo-row"
+          >
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                Two
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <cdr-row
+                is-list
+                cols="2"
+                class="demo-row"
+              >
+                <cdr-col class="demo-col nested">
+                  <div class="content">
+                    Two
+                  </div>
+                </cdr-col>
+                <cdr-col class="demo-col nested">
+                  <div class="content">
+                    Two
+                  </div>
+                </cdr-col>
+                <cdr-col
+                  class="demo-col nested"
+                  span="12"
+                >
+                  <div class="content">
+                    Two
+                  </div>
+                </cdr-col>
+                <cdr-col
+                  class="demo-col nested"
+                  span="12"
+                >
+                  <div class="content">
+                    Two
+                  </div>
+                </cdr-col>
+              </cdr-row>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                Two
+              </div>
+            </cdr-col>
+            <cdr-col class="demo-col nested">
+              <div class="content">
+                Two
+              </div>
+            </cdr-col>
+          </cdr-row>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            Three
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            Four
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            five
+          </div>
+        </cdr-col>
+        <cdr-col class="demo-col">
+          <div class="content">
+            six
+          </div>
+        </cdr-col>
+      </cdr-row>
+    </div>
   </div>
 </template>
 
 <script>
 import CdrRow from 'componentsdir/grid/CdrRow';
 import CdrCol from 'componentsdir/grid/CdrCol';
-import CdrText from 'componentsdir/text/CdrText';
-import complex from './demo/Complex';
 
 export default {
   name: 'Grid',
   components: {
     CdrRow,
     CdrCol,
-    CdrText,
-    complex,
   },
 };
 </script>
 
 <style>
-  .row-demo-wrapper [class^="cdr-row_"] {
-    margin-bottom: 16px;
-  }
 
-  .row-demo {
-    background-color: lightgray;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    line-height: 1;
-  }
+.demo-row {
+  background-color: rgba(130, 234, 255, 0.5);
+}
 
-  .row-demo > * {
-    line-height: 1;
-  }
+.demo-cdr-container {
+  background-color: lightcoral;
+  color: purple;
+}
+
+.demo-col {
+  background-color: rgba(0, 255, 171, 0.4);
+}
+
+.content,
+.row-demo {
+  background-color: rgba(0, 255, 171, 0.8);
+  color: #000;
+}
+
+.demo-col.nested .content,
+.nested-content {
+  background-color: rgba(195, 0, 255, 0.4);
+}
 
 </style>
