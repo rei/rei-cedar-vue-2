@@ -25,10 +25,10 @@
           ref="cdrTabsHeader"
         >
           <li
-            v-for="tab in tabs"
+            v-for="(tab, index) in tabs"
             role="tab"
             :aria-selected="tab.active"
-            :key="tab.id"
+            :key="tab.id ? tab.id : `${tab.name}-${index}`"
             :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]"
           >
             <a
@@ -168,7 +168,7 @@ export default {
     },
     handleArrowNav(event) {
       if (!this.animationInProgress) {
-        if (event.which === 39) {
+        if (event.keyCode === 39) {
           // navigate right
           if (this.activeTabIndex < (this.tabs.length - 1)) {
             this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
@@ -178,7 +178,7 @@ export default {
             this.activeTabIndex += 1;
             this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
           }
-        } else if (event.which === 37) {
+        } else if (event.keyCode === 37) {
           // navigate left
           if (this.activeTabIndex > 0) {
             this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
@@ -190,7 +190,7 @@ export default {
           }
         }
         if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]
-          && (event.which === 37 || event.which === 39)) {
+          && (event.keyCode === 37 || event.keyCode === 39)) {
           this.animationInProgress = true;
           delay(() => {
             this.animationInProgress = false;
