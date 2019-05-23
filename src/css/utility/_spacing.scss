@@ -43,27 +43,27 @@
     
     // loop through sides
     @each $full, $short in $sides {
-      .cdr-p#{$short}-#{$name} { padding-#{$full}: #{$value}; }
-      .cdr-m#{$short}-#{$name} { margin-#{$full}: #{$value}; }
+      .cdr-p#{$short}-#{$name} { padding-#{$full}: #{$value} !important; }
+      .cdr-m#{$short}-#{$name} { margin-#{$full}: #{$value} !important; }
 
       @include xs-mq-only {
-        .cdr-p#{$short}-#{$name}\@xs { padding-#{$full}: #{$value}; }
-        .cdr-m#{$short}-#{$name}\@xs { margin-#{$full}: #{$value}; }
+        .cdr-p#{$short}-#{$name}\@xs { padding-#{$full}: #{$value} !important; }
+        .cdr-m#{$short}-#{$name}\@xs { margin-#{$full}: #{$value} !important; }
       }
 
       @include sm-mq-only {
-        .cdr-p#{$short}-#{$name}\@sm { padding-#{$full}: #{$value}; }
-        .cdr-m#{$short}-#{$name}\@sm { margin-#{$full}: #{$value}; }
+        .cdr-p#{$short}-#{$name}\@sm { padding-#{$full}: #{$value} !important; }
+        .cdr-m#{$short}-#{$name}\@sm { margin-#{$full}: #{$value} !important; }
       }
 
       @include md-mq-only {
-        .cdr-p#{$short}-#{$name}\@md { padding-#{$full}: #{$value}; }
-        .cdr-m#{$short}-#{$name}\@md { margin-#{$full}: #{$value}; }
+        .cdr-p#{$short}-#{$name}\@md { padding-#{$full}: #{$value} !important; }
+        .cdr-m#{$short}-#{$name}\@md { margin-#{$full}: #{$value} !important; }
       }
 
       @include lg-mq-only {
-        .cdr-p#{$short}-#{$name}\@lg { padding-#{$full}: #{$value}; }
-        .cdr-m#{$short}-#{$name}\@lg { margin-#{$full}: #{$value}; }
+        .cdr-p#{$short}-#{$name}\@lg { padding-#{$full}: #{$value} !important; }
+        .cdr-m#{$short}-#{$name}\@lg { margin-#{$full}: #{$value} !important; }
       }
     }
   }
@@ -74,22 +74,22 @@
 // inset
 @mixin make-inset-space-utilities() {
   @each $key, $value in $spacing-inset {
-    .#{$key} { padding: #{$value}; }
+    .#{$key} { padding: #{$value} !important; }
 
     @include xs-mq-only {
-        .#{$key}\@xs { padding: #{$value}; }
+        .#{$key}\@xs { padding: #{$value} !important; }
       }
 
       @include sm-mq-only {
-        .#{$key}\@sm { padding: #{$value}; }
+        .#{$key}\@sm { padding: #{$value} !important; }
       }
 
       @include md-mq-only {
-        .#{$key}\@md { padding: #{$value}; }
+        .#{$key}\@md { padding: #{$value} !important; }
       }
 
       @include lg-mq-only {
-        .#{$key}\@lg { padding: #{$value}; }
+        .#{$key}\@lg { padding: #{$value} !important; }
       }
   }
 }
