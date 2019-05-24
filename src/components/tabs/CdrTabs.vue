@@ -10,8 +10,8 @@
       :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
                 overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
                 $style['cdr-tabs__gradient-container']]"
-      @keyup.right="handleArrowNav"
-      @keyup.left="handleArrowNav"
+      @keyup.right="rightArrowNav"
+      @keyup.left="leftArrowNav"
       @keydown.down.prevent="handleDownArrowNav"
     >
       <nav
@@ -168,38 +168,40 @@ export default {
         this.underlineWidth = activeTab.firstChild.offsetWidth;
       }
     },
-    handleArrowNav(event) {
+    rightArrowNav() {
       if (!this.animationInProgress) {
-        if (event.keyCode === 39) {
-          // navigate right
-          if (this.activeTabIndex < (this.tabs.length - 1)) {
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-            this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
-            this.hideScrollBar();
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-            this.activeTabIndex += 1;
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-          }
-        } else if (event.keyCode === 37) {
-          // navigate left
-          if (this.activeTabIndex > 0) {
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-            this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
-            this.hideScrollBar();
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-            this.activeTabIndex -= 1;
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-          }
+        if (this.activeTabIndex < (this.tabs.length - 1)) {
+          this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
+          this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
+          this.hideScrollBar();
+          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
+          this.activeTabIndex += 1;
+          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
         }
-        if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]
-          && (event.keyCode === 37 || event.keyCode === 39)) {
-          this.animationInProgress = true;
-          delay(() => {
-            this.animationInProgress = false;
-          }, 600);
-          this.updateUnderline();
-          this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+        this.navAnimationProgress();
+      }
+    },
+    leftArrowNav() {
+      if (!this.animationInProgress) {
+        if (this.activeTabIndex > 0) {
+          this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
+          this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
+          this.hideScrollBar();
+          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
+          this.activeTabIndex -= 1;
+          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
         }
+        this.navAnimationProgress();
+      }
+    },
+    navAnimationProgress() {
+      if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]) {
+        this.animationInProgress = true;
+        delay(() => {
+          this.animationInProgress = false;
+        }, 600);
+        this.updateUnderline();
+        this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
       }
     },
     handleDownArrowNav() {
