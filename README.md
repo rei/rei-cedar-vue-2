@@ -90,9 +90,6 @@ This project is Commitizen friendly.  To install: `npm install -g commitizen`
 When creating a pull request run `git cz` rather than `git commit` and follow the prompts.
 
 This projects Changelogs are generated.
-To output the latest changelog files you will need to create a new repository release.
-This is done with calendar versioning in the following format
-**YY.MM.(iterator)**
+To output the latest changelog file you will need to create a new repository release.
 
-- Generate the root Changelog: `standard-changelog`.
-- Generate the component Changelogs: `lerna-semantic-release post`.
+- Generate the root Changelog: `standard-changelog`
