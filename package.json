@@ -35,7 +35,8 @@
     "reference": "backstop reference --configPath=backstop.js",
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
-    "create": "node generator.js"
+    "create": "node generator.js",
+    "changelog": "standard-changelog"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -124,6 +125,7 @@
     "rollup-plugin-vue": "^5.0.0",
     "serve-handler": "^6.0.0",
     "sinon": "^7.2.3",
+    "standard-changelog": "^2.0.11",
     "stylelint": "^10.0.1",
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.6.1",
