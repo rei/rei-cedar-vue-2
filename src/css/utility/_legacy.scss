@@ -1,6 +1,6 @@
 /*
   LEGACY utility classes
-  TODO: deprecation process?
+  NOTE: these classes are deprecated, and will be removed from Cedar in the Winter 2019 release
 */ 
 
 .cdr-inset {
@@ -77,23 +77,23 @@
 }
 
 .cdr-inset--remove-all {
-    padding: 0
+    padding: 0 !important;
 }
 
 .cdr-inset--remove-top {
-    padding-top: 0
+    padding-top: 0 !important;
 }
 
 .cdr-inset--remove-right {
-    padding-right: 0
+    padding-right: 0 !important;
 }
 
 .cdr-inset--remove-bottom {
-    padding-bottom: 0
+    padding-bottom: 0 !important;
 }
 
 .cdr-inset--remove-left {
-    padding-left: 0
+    padding-left: 0 !important;
 }
 
 .cdr-inline {
