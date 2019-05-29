@@ -8,7 +8,7 @@
     </cdr-text>
 
     <template
-      v-for="type in ['pt', 'pr', 'pb', 'pl', 'mt', 'mr', 'mb', 'ml']"
+      v-for="type in ['pt', 'pr', 'pb', 'pl', 'px', 'py', 'mt', 'mr', 'mb', 'ml', 'mx', 'my']"
     >
       <template
         v-for="(v,k,i) in spaceTokens"
