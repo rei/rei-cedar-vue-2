@@ -870,7 +870,7 @@
         </cdr-col>
         <cdr-col class="demo-col">
           <cdr-row
-            is-list
+            type="list"
             cols="2"
             class="demo-row"
           >
@@ -881,7 +881,7 @@
             </cdr-col>
             <cdr-col class="demo-col nested">
               <cdr-row
-                is-list
+                type="list"
                 cols="2"
                 class="demo-row"
               >
