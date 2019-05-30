@@ -66,6 +66,40 @@
         .cdr-m#{$short}-#{$name}\@lg { margin-#{$full}: #{$value} !important; }
       }
     }
+
+    // x and y
+    .cdr-px-#{$name} { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+    .cdr-mx-#{$name} { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+    .cdr-py-#{$name} { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+    .cdr-my-#{$name} { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+
+    @include xs-mq-only {
+      .cdr-px-#{$name}\@xs { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+      .cdr-mx-#{$name}\@xs { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+      .cdr-py-#{$name}\@xs { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+      .cdr-my-#{$name}\@xs { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+    }
+
+    @include sm-mq-only {
+      .cdr-px-#{$name}\@sm { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+      .cdr-mx-#{$name}\@sm { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+      .cdr-py-#{$name}\@sm { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+      .cdr-my-#{$name}\@sm { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+    }
+
+    @include md-mq-only {
+      .cdr-px-#{$name}\@md { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+      .cdr-mx-#{$name}\@md { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+      .cdr-py-#{$name}\@md { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+      .cdr-my-#{$name}\@md { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+    }
+
+    @include lg-mq-only {
+      .cdr-px-#{$name}\@lg { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+      .cdr-mx-#{$name}\@lg { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+      .cdr-py-#{$name}\@lg { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+      .cdr-my-#{$name}\@lg { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+    }
   }
 }
 

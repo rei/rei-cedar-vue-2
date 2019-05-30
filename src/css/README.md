@@ -117,19 +117,19 @@ Used to quickly add padding or margin to elements.
 
 #### Classes
 
-Classes add spacing as either padding (`p`) or margin (`m`) to either the top (`t`), right (`r`), bottom (`b`), or left (`l`).
+Classes add spacing as either padding (`p`) or margin (`m`) to either the top (`t`), right (`r`), bottom (`b`), or left (`l`). There are also `x` and `y` available for left/right and top/bottom respectively.
 
-Anatomy of the class name is `cdr-(p|m)(t|r|b|l)-<space-token>`. For example, `cdr-pr-space-one-x`.
+Anatomy of the class name is `cdr-(p|m)(t|r|b|l|x|y)-<space-token>`. For example, `cdr-pr-space-one-x`.
 
 Classes can also have breakpoints appended to them to make them apply at that breakpoint only. `cdr-pr-space-one-x@mc`
 
 | Class                                    | property | value     |
 |------------------------------------------|----------|-----------|
-| .cdr-(p|m)(t|r|b|l)-space-eighth-x                | padding  | 2px       |
-| .cdr-(p|m)(t|r|b|l)-space-quarter-x               | padding  | 4px       |
-| .cdr-(p|m)(t|r|b|l)-space-half-x                  | padding  | 8px       |
-| .cdr-(p|m)(t|r|b|l)-space-three-quarter-x         | padding  | 12px      |
-| .cdr-(p|m)(t|r|b|l)-space-1-x                     | padding  | 16px      |
-| .cdr-(p|m)(t|r|b|l)-space-1-and-a-half-x          | padding  | 24px      |
-| .cdr-(p|m)(t|r|b|l)-space-2-x                     | padding  | 32px      |
-| .cdr-(p|m)(t|r|b|l)-space-4-x                     | padding  | 64px      |
+| .cdr-(p|m)(t|r|b|l|x|y)-space-eighth-x                | padding  | 2px       |
+| .cdr-(p|m)(t|r|b|l|x|y)-space-quarter-x               | padding  | 4px       |
+| .cdr-(p|m)(t|r|b|l|x|y)-space-half-x                  | padding  | 8px       |
+| .cdr-(p|m)(t|r|b|l|x|y)-space-three-quarter-x         | padding  | 12px      |
+| .cdr-(p|m)(t|r|b|l|x|y)-space-1-x                     | padding  | 16px      |
+| .cdr-(p|m)(t|r|b|l|x|y)-space-1-and-a-half-x          | padding  | 24px      |
+| .cdr-(p|m)(t|r|b|l|x|y)-space-2-x                     | padding  | 32px      |
+| .cdr-(p|m)(t|r|b|l|x|y)-space-4-x                     | padding  | 64px      |
