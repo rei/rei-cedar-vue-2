@@ -10,8 +10,8 @@
       :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
                 overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
                 $style['cdr-tabs__gradient-container']]"
-      @keyup.right="handleArrowNav"
-      @keyup.left="handleArrowNav"
+      @keyup.right="rightArrowNav"
+      @keyup.left="leftArrowNav"
       @keydown.down.prevent="handleDownArrowNav"
     >
       <nav
@@ -25,10 +25,10 @@
           ref="cdrTabsHeader"
         >
           <li
-            v-for="tab in tabs"
+            v-for="(tab, index) in tabs"
             role="tab"
             :aria-selected="tab.active"
-            :key="tab.id"
+            :key="tab.id ? tab.id : `${tab.name}-${index}`"
             :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]"
           >
             <a
@@ -46,7 +46,10 @@
         />
       </nav>
     </div>
-    <div :class="$style['cdr-tabs__content-container']">
+    <div
+      :class="$style['cdr-tabs__content-container']"
+      ref="slotWrapper"
+    >
       <slot />
     </div>
   </div>
@@ -74,6 +77,7 @@ export default {
       underlineScrollX: 0,
       activeTabIndex: 0,
       widthInitialized: false,
+      headerWidth: 0,
       headerOverflow: false,
       overflowLeft: false,
       overflowRight: false,
@@ -86,32 +90,30 @@ export default {
     },
     underlineStyle() {
       return {
-        marginLeft: `${this.underlineOffsetX}px`,
+        transform: `translateX(${this.underlineOffsetX}px)`,
         width: `${this.underlineWidth}px`,
       };
     },
   },
-  beforeMount() {
-    this.tabs = this.$children;
-  },
   mounted() {
-    if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
+    this.tabs = (this.$slots.default || [])
+      .map(vnode => vnode.componentInstance)
+      .filter(tab => tab); // get vue component children in the slot
+    this.$nextTick(() => {
+      this.initializeOffsets();
+      this.headerWidth = this.getHeaderWidth();
+      if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
+    });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
       this.headerWidth = this.getHeaderWidth();
-      this.$nextTick(() => {
-        this.calculateOverflow();
-      });
+      this.calculateOverflow();
     }, 500));
     // Check for header overflow on widow resize for gradient behavior.
     this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
       this.calculateOverflow();
       this.updateUnderline();
     }, 250));
-    this.headerWidth = this.getHeaderWidth();
-  },
-  updated() {
-    this.initializeOffsets();
   },
   methods: {
     handleClick(tabClicked) {
@@ -127,15 +129,15 @@ export default {
           }
           this.activeTabIndex = index;
           this.hideScrollBar();
-          this.$nextTick(tab.setActive(true));
+          this.$nextTick(() => tab.setActive(true));
         } else {
-          this.$nextTick(tab.setActive(false));
+          this.$nextTick(() => tab.setActive(false));
         }
       });
       this.updateUnderline();
     },
     initializeOffsets() {
-      if (!this.widthInitialized) {
+      if (!this.widthInitialized && this.$refs.cdrTabsHeader.children.length > 0) {
         const elements = Array.from(this.$refs.cdrTabsHeader.children);
         this.underlineWidth = elements[0].children[0].offsetWidth;
         this.widthInitialized = true;
@@ -166,38 +168,40 @@ export default {
         this.underlineWidth = activeTab.firstChild.offsetWidth;
       }
     },
-    handleArrowNav(event) {
+    rightArrowNav() {
       if (!this.animationInProgress) {
-        if (event.which === 39) {
-          // navigate right
-          if (this.activeTabIndex < (this.tabs.length - 1)) {
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-            this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
-            this.hideScrollBar();
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-            this.activeTabIndex += 1;
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-          }
-        } else if (event.which === 37) {
-          // navigate left
-          if (this.activeTabIndex > 0) {
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-            this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
-            this.hideScrollBar();
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-            this.activeTabIndex -= 1;
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-          }
+        if (this.activeTabIndex < (this.tabs.length - 1)) {
+          this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
+          this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
+          this.hideScrollBar();
+          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
+          this.activeTabIndex += 1;
+          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
         }
-        if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]
-          && (event.which === 37 || event.which === 39)) {
-          this.animationInProgress = true;
-          delay(() => {
-            this.animationInProgress = false;
-          }, 600);
-          this.updateUnderline();
-          this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+        this.navAnimationProgress();
+      }
+    },
+    leftArrowNav() {
+      if (!this.animationInProgress) {
+        if (this.activeTabIndex > 0) {
+          this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
+          this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
+          this.hideScrollBar();
+          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
+          this.activeTabIndex -= 1;
+          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
         }
+        this.navAnimationProgress();
+      }
+    },
+    navAnimationProgress() {
+      if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]) {
+        this.animationInProgress = true;
+        delay(() => {
+          this.animationInProgress = false;
+        }, 600);
+        this.updateUnderline();
+        this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
       }
     },
     handleDownArrowNav() {

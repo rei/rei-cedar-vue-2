@@ -14,7 +14,7 @@
   padding-top: $cdr-space-eighth-x;
 }
 
-@keyframes flyLeft {
+@keyframes :global(flyLeft) {
   from {
     transform: translateX(0);
   }
@@ -24,7 +24,7 @@
   }
 }
 
-@keyframes flyRight {
+@keyframes :global(flyRight) {
   from {
     transform: translateX(0);
   }
@@ -35,15 +35,15 @@
 }
 
 .flyLeft {
-  animation-duration: cdr-duration-5-x;
-
-  /* animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); */
-  animation-name: flyLeft;
+  :global {
+    animation-name: flyLeft;
+  }
+  animation-duration: $cdr-duration-5-x;
 }
 
 .flyRight {
-  animation-duration: cdr-duration-5-x;
-
-  /* animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); */
-  animation-name: flyRight;
+  :global {
+    animation-name: flyRight;
+  }
+  animation-duration: $cdr-duration-5-x;
 }
