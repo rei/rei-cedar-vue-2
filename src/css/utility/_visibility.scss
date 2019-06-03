@@ -110,10 +110,6 @@ Print
 
 @media print {
   .cdr-display-none\@print { @include cdr-display-none-mixin; }
-  .cdr-display-hidden\@print { @include cdr-display-hidden-mixin; }
   .cdr-display-block\@print { @include cdr-display-block-mixin; }
   .cdr-display-inline\@print { @include cdr-display-inline-mixin; }
-  .cdr-display-inline-block\@print { @include cdr-display-inline-block-mixin; }
-  .cdr-display-flex\@print { @include cdr-display-flex-mixin; }
-  .cdr-display-inline-flex\@print { @include cdr-display-inline-flex-mixin; }
 }
