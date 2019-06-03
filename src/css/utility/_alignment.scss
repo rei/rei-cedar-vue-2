@@ -1,0 +1,59 @@
+/* ==========================================================================
+  # alignment
+  
+  Utility classes for aligning content
+
+  TOC:
+
+    :Text Align
+    :center
+      :block
+========================================================================== */
+
+/*
+* Text Align 
+* --------------------------------------------
+*/
+
+.cdr-align{
+  &-text-left { @include cdr-align-text-left-mixin; }
+  &-text-center { @include cdr-align-text-center-mixin; }
+  &-text-right { @include cdr-align-text-right-mixin; }
+  &-center-block { @include cdr-align-center-block-mixin; }
+}
+
+@include xs-mq-only {
+  .cdr-align{
+    &-text-left\@xs { @include cdr-align-text-left-mixin; }
+    &-text-center\@xs { @include cdr-align-text-center-mixin; }
+    &-text-right\@xs { @include cdr-align-text-right-mixin; }
+    &-center-block\@xs { @include cdr-align-center-block-mixin; }
+  }
+}
+
+@include sm-mq-only {
+  .cdr-align{
+    &-text-left\@sm { @include cdr-align-text-left-mixin; }
+    &-text-center\@sm { @include cdr-align-text-center-mixin; }
+    &-text-right\@sm { @include cdr-align-text-right-mixin; }
+    &-center-block\@sm { @include cdr-align-center-block-mixin; }
+  }
+}
+
+@include md-mq-only {
+  .cdr-align{
+    &-text-left\@md { @include cdr-align-text-left-mixin; }
+    &-text-center\@md { @include cdr-align-text-center-mixin; }
+    &-text-right\@md { @include cdr-align-text-right-mixin; }
+    &-center-block\@md { @include cdr-align-center-block-mixin; }
+  }
+}
+
+@include lg-mq-only {
+  .cdr-align{
+    &-text-left\@lg { @include cdr-align-text-left-mixin; }
+    &-text-center\@lg { @include cdr-align-text-center-mixin; }
+    &-text-right\@lg { @include cdr-align-text-right-mixin; }
+    &-center-block\@lg { @include cdr-align-center-block-mixin; }
+  }
+}
