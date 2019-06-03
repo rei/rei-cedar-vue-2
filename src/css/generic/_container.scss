@@ -15,6 +15,7 @@ $container-x-padding-md: $cdr-space-two-x;
    ========================================================================== */
 
 .cdr-container-fluid {
+  @include cdr-text-base-text-mixin;
   padding-left: $container-x-padding-xs;
   padding-right: $container-x-padding-xs;
   width: 100%;
@@ -32,6 +33,7 @@ $container-x-padding-md: $cdr-space-two-x;
    ========================================================================== */
 
 .cdr-container {
+  @include cdr-text-base-text-mixin;
   margin-left: auto;
   margin-right: auto;
   padding-left: $container-x-padding-xs;
