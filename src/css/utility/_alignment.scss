@@ -19,6 +19,7 @@
   &-text-left { @include cdr-align-text-left-mixin; }
   &-text-center { @include cdr-align-text-center-mixin; }
   &-text-right { @include cdr-align-text-right-mixin; }
+  &-text-justify { @include cdr-align-text-justify-mixin; }
   &-center-block { @include cdr-align-center-block-mixin; }
 }
 
@@ -27,6 +28,7 @@
     &-text-left\@xs { @include cdr-align-text-left-mixin; }
     &-text-center\@xs { @include cdr-align-text-center-mixin; }
     &-text-right\@xs { @include cdr-align-text-right-mixin; }
+    &-text-justify\@xs { @include cdr-align-text-justify-mixin; }
     &-center-block\@xs { @include cdr-align-center-block-mixin; }
   }
 }
@@ -36,6 +38,7 @@
     &-text-left\@sm { @include cdr-align-text-left-mixin; }
     &-text-center\@sm { @include cdr-align-text-center-mixin; }
     &-text-right\@sm { @include cdr-align-text-right-mixin; }
+    &-text-justify\@sm { @include cdr-align-text-justify-mixin; }
     &-center-block\@sm { @include cdr-align-center-block-mixin; }
   }
 }
@@ -45,6 +48,7 @@
     &-text-left\@md { @include cdr-align-text-left-mixin; }
     &-text-center\@md { @include cdr-align-text-center-mixin; }
     &-text-right\@md { @include cdr-align-text-right-mixin; }
+    &-text-justify\@md { @include cdr-align-text-justify-mixin; }
     &-center-block\@md { @include cdr-align-center-block-mixin; }
   }
 }
@@ -54,6 +58,7 @@
     &-text-left\@lg { @include cdr-align-text-left-mixin; }
     &-text-center\@lg { @include cdr-align-text-center-mixin; }
     &-text-right\@lg { @include cdr-align-text-right-mixin; }
+    &-text-justify\@lg { @include cdr-align-text-justify-mixin; }
     &-center-block\@lg { @include cdr-align-center-block-mixin; }
   }
 }
