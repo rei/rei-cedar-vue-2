@@ -1,0 +1,21 @@
+@mixin cdr-align-text-left-mixin() {
+  text-align: left !important;
+}
+
+@mixin cdr-align-text-center-mixin() {
+  text-align: center !important;
+}
+
+@mixin cdr-align-text-right-mixin() {
+  text-align: right !important;
+}
+
+@mixin cdr-align-text-justify-mixin() {
+  text-align: justify !important;
+}
+
+@mixin cdr-align-center-block-mixin() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
