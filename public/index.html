@@ -14,13 +14,19 @@
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"> -->
     <!-- Uncomment to test vs cedar 1 -->
     <!-- <link href="https://satchel.rei.com/packages/rei/rei-cedar/1.7.11/rei-cedar.min.css" rel="stylesheet"> -->
-    <div id="main">
+    <div id="main" class="cdr-container-fluid">
       <h1>REI Cedar</h1>
       <cdr-icon-sprite></cdr-icon-sprite>
-
-      <router-link v-for="route in routes" :key="route.path" :to="route.path">{{ route.name }} *</router-link>
-      <div class="cdr-container-fluid">
-        <router-view></router-view>
+      <div class="cdr-row">
+        <ul style="padding:0">
+          <li class="cdr-space-inset-quarter-x" style="display:inline-flex" v-for="route in routes"><router-link :key="route.path" :to="route.path">{{ route.name }} *</router-link></li>
+        </ul
+      </div>
+      <hr />
+      <div class="cdr-row cdr-mt-space-two-x">
+        <div class="cdr-col">
+          <router-view></router-view>
+        </div>
       </div>
     </div>
     <!-- built files will be auto injected -->
