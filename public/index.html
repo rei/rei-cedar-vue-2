@@ -17,16 +17,12 @@
     <div id="main" class="cdr-container-fluid">
       <h1>REI Cedar</h1>
       <cdr-icon-sprite></cdr-icon-sprite>
-      <div class="cdr-row">
         <ul style="padding:0">
           <li class="cdr-space-inset-quarter-x" style="display:inline-flex" v-for="route in routes"><router-link :key="route.path" :to="route.path">{{ route.name }} *</router-link></li>
         </ul
-      </div>
       <hr />
-      <div class="cdr-row cdr-mt-space-two-x">
-        <div class="cdr-col">
-          <router-view></router-view>
-        </div>
+      <div class=" cdr-mt-space-two-x">
+        <router-view></router-view>
       </div>
     </div>
     <!-- built files will be auto injected -->
