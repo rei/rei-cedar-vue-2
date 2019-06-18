@@ -48,6 +48,12 @@
   overflow: visible;
   margin: 0;
 
+  /* Prevent iOS from altering border and box-shadow */
+  @supports (-webkit-overflow-scrolling: touch) {
+    /* CSS specific to iOS devices */
+    -webkit-appearance: none;
+  }
+
   /* States
   ---------- */
   &[disabled] {
