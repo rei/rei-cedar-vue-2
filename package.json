@@ -22,7 +22,7 @@
   "scripts": {
     "prepublishOnly": "npm run lint && npm run build",
     "dev": "cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
-    "build": "npm run clean && npm run build:csr && npm run build:ssr",
+    "build": "npm run clean && npm run build:csr && npm run build:ssr && rollup -c rollup.utilities.config.js",
     "build:csr": "cross-env NODE_ENV=prod rollup -c rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=prod SSR_ENV=ssr rollup -c rollup.config.js",
     "unit": "cross-env NODE_ENV=test rollup -c rollup.config.unit.js && jest",
