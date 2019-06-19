@@ -167,6 +167,19 @@ export default {
       };
     },
   },
+  watch: {
+    value(val) {
+      this.newValue = val;
+    },
+    newValue(val) {
+      /**
+       * `v-model` value. Fires on input.
+       * @event input
+       * @type value | event
+       * */
+      this.$emit('input', val);
+    },
+  },
   methods: {
     onInput(e) {
       const { value } = e.target;
