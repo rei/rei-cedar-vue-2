@@ -251,4 +251,8 @@ describe('CdrInput.vue', () => {
     input.trigger('keydown')
     expect(wrapper.emitted().keydown).toBeTruthy();
   });
+
+  // TODO - If Vue Test Utils adds a way to mount with v-model,
+  // or if we can figure out a way to test that a v-model change
+  // updates the input value, then we should add that test.
 });
