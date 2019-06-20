@@ -100,6 +100,7 @@
     "nightwatch-axe": "^0.1.5",
     "node-cmd": "^3.0.0",
     "node-sass": "^4.12.0",
+    "node-sass-tilde-importer": "^1.0.2",
     "npm-publish-prerelease": "^1.0.2",
     "nyc": "^14.1.1",
     "ora": "^3.0.0",
@@ -149,7 +150,5 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {
-    "node-sass-tilde-importer": "^1.0.2"
-  }
+  "dependencies": {}
 }
