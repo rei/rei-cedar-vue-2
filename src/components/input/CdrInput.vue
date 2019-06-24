@@ -24,7 +24,7 @@
       <textarea
         v-if="rows && rows > 1"
         :rows="[rows]"
-        :class="[inputClass, sizeClass]"
+        :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
         v-model="newValue"
         :id="inputId"
@@ -41,7 +41,7 @@
       <input
         v-else
         :type="type"
-        :class="[inputClass, sizeClass]"
+        :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
         v-model="newValue"
         :id="inputId"
@@ -81,6 +81,7 @@
 
 <script>
 import size from 'mixinsdir/size';
+import space from 'mixinsdir/space';
 import propValidator from 'srcdir/utils/propValidator';
 /**
  * Cedar 2 component for input
@@ -90,7 +91,7 @@ import propValidator from 'srcdir/utils/propValidator';
  */
 export default {
   name: 'CdrInput',
-  mixins: [size],
+  mixins: [size, space],
   inheritAttrs: false,
   props: {
     /**
@@ -166,6 +167,19 @@ export default {
       };
     },
   },
+  watch: {
+    value(val) {
+      this.newValue = val;
+    },
+    newValue(val) {
+      /**
+       * `v-model` value. Fires on input.
+       * @event input
+       * @type value | event
+       * */
+      this.$emit('input', val);
+    },
+  },
   methods: {
     onInput(e) {
       const { value } = e.target;
@@ -212,8 +226,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrInput.vars.pcss';
-  @import './styles/CdrInput.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrInput.vars.scss';
+  @import './styles/CdrInput.scss';
 </style>

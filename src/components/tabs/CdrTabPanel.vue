@@ -77,21 +77,21 @@ export default {
       const el = element;
       el.style.animationDirection = 'reverse';
       el.style.animationTimingFunction = 'cubic-bezier(0.4, 0, 0.68, .06)';
-      el.classList.add(this.animationDirection);
+      el.classList.add(this.$style[this.animationDirection]);
     },
     setEnterEnd(element) {
       const el = element;
       el.style.animationDirection = '';
-      el.classList.remove(this.animationDirection);
+      el.classList.remove(this.$style[this.animationDirection]);
     },
     setLeaveStart(element) {
       const el = element;
-      el.classList.add(this.animationDirection);
+      el.classList.add(this.$style[this.animationDirection]);
       el.style.animationTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
     },
     setLeaveEnd(element) {
       const el = element;
-      el.classList.remove(this.animationDirection);
+      el.classList.remove(this.$style[this.animationDirection]);
     },
     handleUpArrowNav() {
       this.$parent.setFocusToActiveTabHeader();
@@ -100,7 +100,6 @@ export default {
 };
 </script>
 
-<style>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/CdrTabPanel.pcss';
+<style lang="scss" module>
+  @import './styles/CdrTabPanel.scss';
 </style>

@@ -1,0 +1,900 @@
+// TODO: replace all of this with a mixin
+$colPct1: calc(1 / #{$rowColumns} * 100%);
+$colPct2: calc(2 / #{$rowColumns} * 100%);
+$colPct3: calc(3 / #{$rowColumns} * 100%);
+$colPct4: calc(4 / #{$rowColumns} * 100%);
+$colPct5: calc(5 / #{$rowColumns} * 100%);
+$colPct6: calc(6 / #{$rowColumns} * 100%);
+$colPct7: calc(7 / #{$rowColumns} * 100%);
+$colPct8: calc(8 / #{$rowColumns} * 100%);
+$colPct9: calc(9 / #{$rowColumns} * 100%);
+$colPct10: calc(10 / #{$rowColumns} * 100%);
+$colPct11: calc(11 / #{$rowColumns} * 100%);
+$colPct12: calc(12 / #{$rowColumns} * 100%);
+
+/* ==========================================================================
+   # COL
+   ========================================================================== */
+
+/*
+* TOC:
+*
+* Base class
+* col elements
+* col offsets
+* col modifiers
+* Breakpoints
+* |-- col elements
+* |-- col offsets
+* |-- col modifiers
+*/
+
+.cdr-col {
+  flex: 1 1 0;
+
+  /* increase specificity to prevent cedar 1 from overriding */
+  &.cdr-col {
+    padding-top: $rowGutter-xs;
+    padding-left: $rowGutter-xs;
+    padding-right: 0;
+    padding-bottom: 0;
+    display: flex;
+  }
+
+  /* increase specificity to undo above when is-row=true */
+  &.cdr-row {
+    padding: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+
+    & > .cdr-row {
+      margin: 0;
+      padding: 0;
+    }
+
+    & > * {
+      height: auto;
+      width: inherit;
+    }
+  }
+
+  /* Col elements
+  ========================================================================== */
+
+  &_span1 {
+    flex-basis: $colPct1;
+    width: $colPct1;
+    max-width: $colPct1;
+  }
+
+  &_span2 {
+    flex-basis: $colPct2;
+    width: $colPct2;
+    max-width: $colPct2;
+  }
+
+  &_span3 {
+    flex-basis: $colPct3;
+    width: $colPct3;
+    max-width: $colPct3;
+  }
+
+  &_span4 {
+    flex-basis: $colPct4;
+    width: $colPct4;
+    max-width: $colPct4;
+  }
+
+  &_span5 {
+    flex-basis: $colPct5;
+    width: $colPct5;
+    max-width: $colPct5;
+  }
+
+  &_span6 {
+    flex-basis: $colPct6;
+    width: $colPct6;
+    max-width: $colPct6;
+  }
+
+  &_span7 {
+    flex-basis: $colPct7;
+    width: $colPct7;
+    max-width: $colPct7;
+  }
+
+  &_span8 {
+    flex-basis: $colPct8;
+    width: $colPct8;
+    max-width: $colPct8;
+  }
+
+  &_span9 {
+    flex-basis: $colPct9;
+    width: $colPct9;
+    max-width: $colPct9;
+  }
+
+  &_span10 {
+    flex-basis: $colPct10;
+    width: $colPct10;
+    max-width: $colPct10;
+  }
+
+  &_span11 {
+    flex-basis: $colPct11;
+    width: $colPct11;
+    max-width: $colPct11;
+  }
+
+  &_span12 {
+    flex-basis: $colPct12;
+    width: $colPct12;
+    max-width: $colPct12;
+  }
+
+  /* Col offsets
+  ========================================================================== */
+
+  &--offsetLeft0 {
+    margin-left: 0;
+  }
+
+  &--offsetLeft1 {
+    margin-left: $colPct1;
+  }
+
+  &--offsetLeft2 {
+    margin-left: $colPct2;
+  }
+
+  &--offsetLeft3 {
+    margin-left: $colPct3;
+  }
+
+  &--offsetLeft4 {
+    margin-left: $colPct4;
+  }
+
+  &--offsetLeft5 {
+    margin-left: $colPct5;
+  }
+
+  &--offsetLeft6 {
+    margin-left: $colPct6;
+  }
+
+  &--offsetLeft7 {
+    margin-left: $colPct7;
+  }
+
+  &--offsetLeft8 {
+    margin-left: $colPct8;
+  }
+
+  &--offsetLeft9 {
+    margin-left: $colPct9;
+  }
+
+  &--offsetLeft10 {
+    margin-left: $colPct10;
+  }
+
+  &--offsetLeft11 {
+    margin-left: $colPct11;
+  }
+
+  &--offsetRight0 {
+    margin-right: 0;
+  }
+
+  &--offsetRight1 {
+    margin-right: $colPct1;
+  }
+
+  &--offsetRight2 {
+    margin-right: $colPct2;
+  }
+
+  &--offsetRight3 {
+    margin-right: $colPct3;
+  }
+
+  &--offsetRight4 {
+    margin-right: $colPct4;
+  }
+
+  &--offsetRight5 {
+    margin-right: $colPct5;
+  }
+
+  &--offsetRight6 {
+    margin-right: $colPct6;
+  }
+
+  &--offsetRight7 {
+    margin-right: $colPct7;
+  }
+
+  &--offsetRight8 {
+    margin-right: $colPct8;
+  }
+
+  &--offsetRight9 {
+    margin-right: $colPct9;
+  }
+
+  &--offsetRight10 {
+    margin-right: $colPct10;
+  }
+
+  &--offsetRight11 {
+    margin-right: $colPct11;
+  }
+
+  /* Col modifiers
+  ========================================================================== */
+
+  &--top {
+    align-self: flex-start;
+  }
+
+  &--middle {
+    align-self: center;
+  }
+
+  &--bottom {
+    align-self: flex-end;
+  }
+
+  &--stretch {
+    align-self: stretch;
+  }
+
+  /* TODO: do we want to support this? http://tink.uk/flexbox-the-keyboard-navigation-disconnect/
+  &.-first {
+    order: -1;
+  }
+
+  &.-last {
+    order: 1;
+  }
+  */
+
+  /* COL SMALL
+  ========================================================================== */
+
+  @include sm-mq {
+    /* increase specificity to prevent cedar 1 from overriding */
+    &.cdr-col {
+      padding-top: $rowGutter-sm;
+      padding-left: $rowGutter-sm;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+
+    /* increase specificity to undo above when is-row=true */
+    &.cdr-row {
+      padding: 0;
+    }
+
+    /* Col small elements
+    ========================================================================== */
+
+    &_span1\@sm {
+      flex-basis: $colPct1;
+      width: $colPct1;
+      max-width: $colPct1;
+    }
+
+    &_span2\@sm {
+      flex-basis: $colPct2;
+      width: $colPct2;
+      max-width: $colPct2;
+    }
+
+    &_span3\@sm {
+      flex-basis: $colPct3;
+      width: $colPct3;
+      max-width: $colPct3;
+    }
+
+    &_span4\@sm {
+      flex-basis: $colPct4;
+      width: $colPct4;
+      max-width: $colPct4;
+    }
+
+    &_span5\@sm {
+      flex-basis: $colPct5;
+      width: $colPct5;
+      max-width: $colPct5;
+    }
+
+    &_span6\@sm {
+      flex-basis: $colPct6;
+      width: $colPct6;
+      max-width: $colPct6;
+    }
+
+    &_span7\@sm {
+      flex-basis: $colPct7;
+      width: $colPct7;
+      max-width: $colPct7;
+    }
+
+    &_span8\@sm {
+      flex-basis: $colPct8;
+      width: $colPct8;
+      max-width: $colPct8;
+    }
+
+    &_span9\@sm {
+      flex-basis: $colPct9;
+      width: $colPct9;
+      max-width: $colPct9;
+    }
+
+    &_span10\@sm {
+      flex-basis: $colPct10;
+      width: $colPct10;
+      max-width: $colPct10;
+    }
+
+    &_span11\@sm {
+      flex-basis: $colPct11;
+      width: $colPct11;
+      max-width: $colPct11;
+    }
+
+    &_span12\@sm {
+      flex-basis: $colPct12;
+      width: $colPct12;
+      max-width: $colPct12;
+    }
+
+    /* Col small offsets
+    ========================================================================== */
+
+    &--offsetLeft0\@sm {
+      margin-left: 0;
+    }
+
+    &--offsetLeft1\@sm {
+      margin-left: $colPct1;
+    }
+
+    &--offsetLeft2\@sm {
+      margin-left: $colPct2;
+    }
+
+    &--offsetLeft3\@sm {
+      margin-left: $colPct3;
+    }
+
+    &--offsetLeft4\@sm {
+      margin-left: $colPct4;
+    }
+
+    &--offsetLeft5\@sm {
+      margin-left: $colPct5;
+    }
+
+    &--offsetLeft6\@sm {
+      margin-left: $colPct6;
+    }
+
+    &--offsetLeft7\@sm {
+      margin-left: $colPct7;
+    }
+
+    &--offsetLeft8\@sm {
+      margin-left: $colPct8;
+    }
+
+    &--offsetLeft9\@sm {
+      margin-left: $colPct9;
+    }
+
+    &--offsetLeft10\@sm {
+      margin-left: $colPct10;
+    }
+
+    &--offsetLeft11\@sm {
+      margin-left: $colPct11;
+    }
+
+    &--offsetRight0\@sm {
+      margin-right: 0;
+    }
+
+    &--offsetRight1\@sm {
+      margin-right: $colPct1;
+    }
+
+    &--offsetRight2\@sm {
+      margin-right: $colPct2;
+    }
+
+    &--offsetRight3\@sm {
+      margin-right: $colPct3;
+    }
+
+    &--offsetRight4\@sm {
+      margin-right: $colPct4;
+    }
+
+    &--offsetRight5\@sm {
+      margin-right: $colPct5;
+    }
+
+    &--offsetRight6\@sm {
+      margin-right: $colPct6;
+    }
+
+    &--offsetRight7\@sm {
+      margin-right: $colPct7;
+    }
+
+    &--offsetRight8\@sm {
+      margin-right: $colPct8;
+    }
+
+    &--offsetRight9\@sm {
+      margin-right: $colPct9;
+    }
+
+    &--offsetRight10\@sm {
+      margin-right: $colPct10;
+    }
+
+    &--offsetRight11\@sm {
+      margin-right: $colPct11;
+    }
+
+    /* Col small modifiers
+    ========================================================================== */
+
+    &--top\@sm {
+      align-self: flex-start;
+    }
+
+    &--middle\@sm {
+      align-self: center;
+    }
+
+    &--bottom\@sm {
+      align-self: flex-end;
+    }
+
+    &--stretch\@sm {
+      align-self: stretch;
+    }
+  }
+
+  /* COL MEDIUM
+  ========================================================================== */
+
+  @include md-mq {
+    /* increase specificity to prevent cedar 1 from overriding */
+    &.cdr-col {
+      padding-top: $rowGutter-md;
+      padding-left: $rowGutter-md;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+
+    /* increase specificity to undo above when is-row=true */
+    &.cdr-row {
+      padding: 0;
+    }
+
+    /* Col medium elements
+    ========================================================================== */
+
+    &_span1\@md {
+      flex-basis: $colPct1;
+      width: $colPct1;
+      max-width: $colPct1;
+    }
+
+    &_span2\@md {
+      flex-basis: $colPct2;
+      width: $colPct2;
+      max-width: $colPct2;
+    }
+
+    &_span3\@md {
+      flex-basis: $colPct3;
+      width: $colPct3;
+      max-width: $colPct3;
+    }
+
+    &_span4\@md {
+      flex-basis: $colPct4;
+      width: $colPct4;
+      max-width: $colPct4;
+    }
+
+    &_span5\@md {
+      flex-basis: $colPct5;
+      width: $colPct5;
+      max-width: $colPct5;
+    }
+
+    &_span6\@md {
+      flex-basis: $colPct6;
+      width: $colPct6;
+      max-width: $colPct6;
+    }
+
+    &_span7\@md {
+      flex-basis: $colPct7;
+      width: $colPct7;
+      max-width: $colPct7;
+    }
+
+    &_span8\@md {
+      flex-basis: $colPct8;
+      width: $colPct8;
+      max-width: $colPct8;
+    }
+
+    &_span9\@md {
+      flex-basis: $colPct9;
+      width: $colPct9;
+      max-width: $colPct9;
+    }
+
+    &_span10\@md {
+      flex-basis: $colPct10;
+      width: $colPct10;
+      max-width: $colPct10;
+    }
+
+    &_span11\@md {
+      flex-basis: $colPct11;
+      width: $colPct11;
+      max-width: $colPct11;
+    }
+
+    &_span12\@md {
+      flex-basis: $colPct12;
+      width: $colPct12;
+      max-width: $colPct12;
+    }
+
+    /* Col medium offsets
+    ========================================================================== */
+
+    &--offsetLeft0\@md {
+      margin-left: 0;
+    }
+
+    &--offsetLeft1\@md {
+      margin-left: $colPct1;
+    }
+
+    &--offsetLeft2\@md {
+      margin-left: $colPct2;
+    }
+
+    &--offsetLeft3\@md {
+      margin-left: $colPct3;
+    }
+
+    &--offsetLeft4\@md {
+      margin-left: $colPct4;
+    }
+
+    &--offsetLeft5\@md {
+      margin-left: $colPct5;
+    }
+
+    &--offsetLeft6\@md {
+      margin-left: $colPct6;
+    }
+
+    &--offsetLeft7\@md {
+      margin-left: $colPct7;
+    }
+
+    &--offsetLeft8\@md {
+      margin-left: $colPct8;
+    }
+
+    &--offsetLeft9\@md {
+      margin-left: $colPct9;
+    }
+
+    &--offsetLeft10\@md {
+      margin-left: $colPct10;
+    }
+
+    &--offsetLeft11\@md {
+      margin-left: $colPct11;
+    }
+
+    &--offsetRight0\@md {
+      margin-right: 0;
+    }
+
+    &--offsetRight1\@md {
+      margin-right: $colPct1;
+    }
+
+    &--offsetRight2\@md {
+      margin-right: $colPct2;
+    }
+
+    &--offsetRight3\@md {
+      margin-right: $colPct3;
+    }
+
+    &--offsetRight4\@md {
+      margin-right: $colPct4;
+    }
+
+    &--offsetRight5\@md {
+      margin-right: $colPct5;
+    }
+
+    &--offsetRight6\@md {
+      margin-right: $colPct6;
+    }
+
+    &--offsetRight7\@md {
+      margin-right: $colPct7;
+    }
+
+    &--offsetRight8\@md {
+      margin-right: $colPct8;
+    }
+
+    &--offsetRight9\@md {
+      margin-right: $colPct9;
+    }
+
+    &--offsetRight10\@md {
+      margin-right: $colPct10;
+    }
+
+    &--offsetRight11\@md {
+      margin-right: $colPct11;
+    }
+
+    /* Col medium modifiers
+    ========================================================================== */
+
+    &--top\@md {
+      align-self: flex-start;
+    }
+
+    &--middle\@md {
+      align-self: center;
+    }
+
+    &--bottom\@md {
+      align-self: flex-end;
+    }
+
+    &--stretch\@md {
+      align-self: stretch;
+    }
+  }
+
+  /* COL LARGE
+  ========================================================================== */
+
+  @include lg-mq {
+    /* increase specificity to prevent cedar 1 from overriding */
+    &.cdr-col {
+      padding-top: $rowGutter-lg;
+      padding-left: $rowGutter-lg;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+    
+    /* increase specificity to undo above when is-row=true */
+    &.cdr-row {
+      padding: 0;
+    }
+
+    /* Col large elements
+    ========================================================================== */
+
+    &_span1\@lg {
+      flex-basis: $colPct1;
+      width: $colPct1;
+      max-width: $colPct1;
+    }
+
+    &_span2\@lg {
+      flex-basis: $colPct2;
+      width: $colPct2;
+      max-width: $colPct2;
+    }
+
+    &_span3\@lg {
+      flex-basis: $colPct3;
+      width: $colPct3;
+      max-width: $colPct3;
+    }
+
+    &_span4\@lg {
+      flex-basis: $colPct4;
+      width: $colPct4;
+      max-width: $colPct4;
+    }
+
+    &_span5\@lg {
+      flex-basis: $colPct5;
+      width: $colPct5;
+      max-width: $colPct5;
+    }
+
+    &_span6\@lg {
+      flex-basis: $colPct6;
+      width: $colPct6;
+      max-width: $colPct6;
+    }
+
+    &_span7\@lg {
+      flex-basis: $colPct7;
+      width: $colPct7;
+      max-width: $colPct7;
+    }
+
+    &_span8\@lg {
+      flex-basis: $colPct8;
+      width: $colPct8;
+      max-width: $colPct8;
+    }
+
+    &_span9\@lg {
+      flex-basis: $colPct9;
+      width: $colPct9;
+      max-width: $colPct9;
+    }
+
+    &_span10\@lg {
+      flex-basis: $colPct10;
+      width: $colPct10;
+      max-width: $colPct10;
+    }
+
+    &_span11\@lg {
+      flex-basis: $colPct11;
+      width: $colPct11;
+      max-width: $colPct11;
+    }
+
+    &_span12\@lg {
+      flex-basis: $colPct12;
+      width: $colPct12;
+      max-width: $colPct12;
+    }
+
+    /* Col large offsets
+    ========================================================================== */
+
+    &--offsetLeft0\@lg {
+      margin-left: 0;
+    }
+
+    &--offsetLeft1\@lg {
+      margin-left: $colPct1;
+    }
+
+    &--offsetLeft2\@lg {
+      margin-left: $colPct2;
+    }
+
+    &--offsetLeft3\@lg {
+      margin-left: $colPct3;
+    }
+
+    &--offsetLeft4\@lg {
+      margin-left: $colPct4;
+    }
+
+    &--offsetLeft5\@lg {
+      margin-left: $colPct5;
+    }
+
+    &--offsetLeft6\@lg {
+      margin-left: $colPct6;
+    }
+
+    &--offsetLeft7\@lg {
+      margin-left: $colPct7;
+    }
+
+    &--offsetLeft8\@lg {
+      margin-left: $colPct8;
+    }
+
+    &--offsetLeft9\@lg {
+      margin-left: $colPct9;
+    }
+
+    &--offsetLeft10\@lg {
+      margin-left: $colPct10;
+    }
+
+    &--offsetLeft11\@lg {
+      margin-left: $colPct11;
+    }
+
+    &--offsetRight0\@lg {
+      margin-right: 0;
+    }
+
+    &--offsetRight1\@lg {
+      margin-right: $colPct1;
+    }
+
+    &--offsetRight2\@lg {
+      margin-right: $colPct2;
+    }
+
+    &--offsetRight3\@lg {
+      margin-right: $colPct3;
+    }
+
+    &--offsetRight4\@lg {
+      margin-right: $colPct4;
+    }
+
+    &--offsetRight5\@lg {
+      margin-right: $colPct5;
+    }
+
+    &--offsetRight6\@lg {
+      margin-right: $colPct6;
+    }
+
+    &--offsetRight7\@lg {
+      margin-right: $colPct7;
+    }
+
+    &--offsetRight8\@lg {
+      margin-right: $colPct8;
+    }
+
+    &--offsetRight9\@lg {
+      margin-right: $colPct9;
+    }
+
+    &--offsetRight10\@lg {
+      margin-right: $colPct10;
+    }
+
+    &--offsetRight11\@lg {
+      margin-right: $colPct11;
+    }
+
+    /* Col large modifiers
+    ========================================================================== */
+
+    &--top\@lg {
+      align-self: flex-start;
+    }
+
+    &--middle\@lg {
+      align-self: center;
+    }
+
+    &--bottom\@lg {
+      align-self: flex-end;
+    }
+
+    &--stretch\@lg {
+      align-self: stretch;
+    }
+  }
+}

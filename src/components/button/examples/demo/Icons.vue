@@ -14,13 +14,14 @@
         data-backstop="cdr-button--icon"
       >
         <icon-check-lg
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
         Anchor and Icon
       </cdr-button>
 
-      <!-- <cdr-button
+      <cdr-button
         tag="a"
         href="https://rei.com"
         size="large"
@@ -28,16 +29,18 @@
         disabled
       >
         <icon-check-lg
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
         Anchor and Icon
-      </cdr-button> -->
+      </cdr-button>
 
       <cdr-button
         size="medium"
       >
         <icon-check-lg
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -47,6 +50,7 @@
         size="small"
       >
         <icon-check-lg
+          inherit-color
           slot="icon"
           size="small"
           class="cdr-button__icon"
@@ -57,6 +61,7 @@
         size="small"
       >
         <icon-check-sm
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -75,6 +80,7 @@
         modifier="secondary"
       >
         <cdr-icon
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
           use="#download"
@@ -87,6 +93,7 @@
         disabled
       >
         <cdr-icon
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
           use="#download"
@@ -98,6 +105,7 @@
         modifier="secondary"
       >
         <cdr-icon
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
           use="#twitter"
@@ -109,6 +117,7 @@
         modifier="secondary"
       >
         <cdr-icon
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
           use="#instagram"
@@ -121,6 +130,7 @@
         size="large large@xs medium@sm small@lg"
       >
         <icon-clock
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -133,6 +143,7 @@
         full-width
       >
         <icon-clock
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
@@ -149,6 +160,7 @@
           modifier="secondary"
         >
           <cdr-icon
+            inherit-color
             slot="icon"
             class="cdr-button__icon"
             use="#twitter"
@@ -172,11 +184,21 @@
         aria-label="Check our Twitter feed"
       >
         <icon-twitter
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
       </cdr-button>
-      <cdr-close-button />
+      <cdr-button
+        icon-only
+        aria-label="Close"
+      >
+        <icon-x-lg
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+      </cdr-button>
       <cdr-button
         tag="a"
         href="https://rei.com"
@@ -184,11 +206,21 @@
         aria-label="This link goes elsewhere"
       >
         <icon-external-link
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
       </cdr-button>
-      <cdr-play-button />
+      <cdr-button
+        :icon-only="true"
+        aria-label="Play"
+      >
+        <icon-play
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+      </cdr-button>
     </div>
     <div class="button-example dark">
       <cdr-button
@@ -197,11 +229,22 @@
         aria-label="A Twitter button"
       >
         <icon-twitter
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
       </cdr-button>
-      <cdr-close-button :on-dark="true" />
+      <cdr-button
+        icon-only
+        on-dark
+        aria-label="Close"
+      >
+        <icon-x-lg
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+      </cdr-button>
       <cdr-button
         tag="a"
         href="https://rei.com"
@@ -210,11 +253,22 @@
         aria-label="An external link"
       >
         <icon-external-link
+          inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
       </cdr-button>
-      <cdr-play-button :on-dark="true" />
+      <cdr-button
+        icon-only
+        on-dark
+        aria-label="Play"
+      >
+        <icon-play
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+      </cdr-button>
     </div>
   </div>
 </template>
@@ -223,8 +277,7 @@
 import CdrText from 'componentsdir/text/CdrText';
 import CdrButton from 'componentsdir/button/CdrButton';
 /* eslint-disable-next-line */
-import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink } from 'componentsdir/icon/dist/cdr-icon';
-import { CdrCloseButton, CdrPlayButton } from 'componentsdir/button/dist/cdr-button';
+import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink, IconPlay, IconXLg } from 'componentsdir/icon/build/main';
 import CdrIcon from 'componentsdir/icon/CdrIcon';
 
 export default {
@@ -238,8 +291,8 @@ export default {
     CdrIcon,
     IconTwitter,
     IconExternalLink,
-    CdrCloseButton,
-    CdrPlayButton,
+    IconPlay,
+    IconXLg,
   },
 };
 </script>

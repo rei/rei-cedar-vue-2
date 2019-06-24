@@ -7,15 +7,15 @@
 </template>
 
 <script>
-import { ReactiveProvideMixin } from 'vue-reactive-provide';
+// import { ReactiveProvideMixin } from 'vue-reactive-provide';
 
 export default {
   name: 'CdrThemer',
   mixins: [
-    ReactiveProvideMixin({
-      name: 'wrapperTheme',
-      props: true,
-    }),
+    // ReactiveProvideMixin({
+    //   name: 'wrapperTheme',
+    //   props: true,
+    // }),
   ],
   props: {
     theme: {

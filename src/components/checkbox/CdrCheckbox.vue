@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div :class="$style['cdr-checkbox__wrap']">
+  <div :class="[space, $style['cdr-checkbox__wrap']]">
     <label
       :class="[modifierClass, labelClass]"
       ref="label"
@@ -28,6 +28,7 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import space from 'mixinsdir/space';
 
 /**
  * Cedar 2 component for checkbox
@@ -37,7 +38,7 @@ import modifier from 'mixinsdir/modifier';
  */
 export default {
   name: 'CdrCheckbox',
-  mixins: [modifier],
+  mixins: [modifier, space],
   inheritAttrs: false,
   props: {
     /**
@@ -114,8 +115,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrCheckbox.vars.pcss';
-  @import './styles/CdrCheckbox.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrCheckbox.vars.scss';
+  @import './styles/CdrCheckbox.scss';
 </style>

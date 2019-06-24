@@ -1,6 +1,11 @@
 <template>
   <a
-    :class="[modifierClass, ctaClass, fullWidthClass]"
+    :class="[
+      modifierClass,
+      ctaClass,
+      fullWidthClass,
+      space
+    ]"
     :target="target"
     :rel="computedRel"
     :href="href"
@@ -21,10 +26,11 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import space from 'mixinsdir/space';
 
 export default {
   name: 'CdrCta',
-  mixins: [modifier],
+  mixins: [modifier, space],
   props: {
     /**
       * Change the color of the cdr-cta button match different themes.
@@ -72,8 +78,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/vars/CdrCta.vars.pcss';
-  @import './styles/CdrCta.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrCta.vars.scss';
+  @import './styles/CdrCta.scss';
 </style>

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Blockquotes from './demo/Blockquotes';
-import Pullquotes from './demo/Pullquotes';
+import Blockquotes from 'componentsdir/quote/examples/demo/Blockquotes';
+import Pullquotes from 'componentsdir/quote/examples/demo/Pullquotes';
 
 export default {
   name: 'QuoteExample',

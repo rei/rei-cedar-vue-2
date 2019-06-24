@@ -1,0 +1,48 @@
+$container-x-padding-xs: $cdr-space-one-x;
+$container-x-padding-md: $cdr-space-two-x;
+
+/* ==========================================================================/*
+* Container utility classes
+*
+** TOC:
+**
+** container fluid
+** container
+*/
+
+/* ==========================================================================
+   # CONTAINER FLUID
+   ========================================================================== */
+
+.cdr-container-fluid {
+  padding-left: $container-x-padding-xs;
+  padding-right: $container-x-padding-xs;
+  width: 100%;
+}
+
+@include md-mq {
+  .cdr-container-fluid {
+    padding-left: $container-x-padding-md;
+    padding-right: $container-x-padding-md;
+  }
+}
+
+/* ==========================================================================
+   # CONTAINER
+   ========================================================================== */
+
+.cdr-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-x-padding-xs;
+  padding-right: $container-x-padding-xs;
+  width: 100%;
+  max-width: 1232px;
+}
+
+@include md-mq {
+  .cdr-container {
+    padding-left: $container-x-padding-md;
+    padding-right: $container-x-padding-md;
+  }
+}

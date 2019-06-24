@@ -3,6 +3,7 @@
     :is="tag"
     :class="[
       modifierClass,
+      space,
       contentPriorityClass,
     ]"
   >
@@ -12,12 +13,14 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
+import space from 'mixinsdir/space';
 import contentPriority from 'mixinsdir/contentPriority';
 
 export default {
   name: 'CdrList',
   mixins: [
     modifier,
+    space,
     contentPriority,
   ],
   props: {
@@ -38,8 +41,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrList.vars.pcss';
-  @import './styles/CdrList.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrList.vars.scss';
+  @import './styles/CdrList.scss';
 </style>

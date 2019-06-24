@@ -1,0 +1,182 @@
+/* ==========================================================================
+  # CdrTabs
+
+  All values should map to variables in
+  vars/CdrTabs.vars.pcss
+  in order to allow for theming
+
+  TOC:
+
+    :Base - CdrTabs
+    :Elements
+      :header
+      :header-item
+      :header-item-button
+      :underline
+      :content-container
+    :Modifiers
+      :compact
+      :no-border
+      :full-width
+========================================================================== */
+
+.cdr-tabs {
+  /* overflow-x: auto; */
+  display: flex;
+  flex-flow: column;
+  height: 500px;
+
+  &__header-container {
+    overflow-x: auto;
+    border-bottom: 1px solid $grey-matter;
+    -webkit-overflow-scrolling: touch;
+    flex: 0 1 auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  &__gradient-container {
+    position: relative;
+
+    &::before {
+      transition: opacity 150ms ease;
+      -webkit-transition: opacity 150ms ease;
+      content: '';
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 36px;
+      background:
+        linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0),
+          $clean-slate
+        );
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    &::after {
+      transition: opacity 150ms ease;
+      -webkit-transition: opacity 150ms ease;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 36px;
+      background:
+        linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          $clean-slate
+        );
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+
+  &__header {
+    display: inline-flex;
+    width: 100%;
+    margin: 0;
+
+    /* align-content: stretch; */
+    padding: 0;
+    position: relative;
+
+    &-gradient-left::before {
+      opacity: 1;
+    }
+
+    &-gradient-right::after {
+      opacity: 1;
+    }
+  }
+
+  &__header-item {
+    display: inline-flex;
+    padding: 0;
+
+    &[aria-selected] > .cdr-tabs__header-item-label {
+      color: $easily-excited;
+    }
+  }
+
+  &__header-item-label {
+    @include redwood-display-30;
+
+    text-decoration: none;
+    margin: 0 $cdr-space-one-x 0 0;
+    padding: $cdr-space-inset-half-x-stretch;
+    color: $heart-of-darkness;
+    white-space: nowrap;
+    outline-offset: -3px;
+
+    &:active,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $easily-excited;
+    }
+  }
+
+  &__underline {
+    position: absolute;
+    width: 30px;
+    margin: 0;
+    height: $cdr-space-quarter-x;
+    box-sizing: border-box;
+    border: none;
+
+    /* border: none; */
+    background: $easily-excited;
+    transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
+  }
+
+  &__content-container {
+    position: relative;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    opacity: 0.5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  /* Compact
+    ========== */
+  &--compact {
+    .cdr-tabs__header-item-label {
+      @include redwood-display-20;
+
+      margin: 0 $cdr-space-half-x 0 0;
+      padding: $cdr-space-inset-three-quarter-x-squish;
+    }
+  }
+
+  /* No Border
+    ========== */
+  &--no-border {
+    .cdr-tabs__header,
+    .cdr-tabs__header-container {
+      border-bottom: 1px solid transparent;
+    }
+  }
+
+  /* Full Width
+    ========== */
+  &--full-width {
+    .cdr-tabs__header {
+      justify-content: space-between;
+    }
+  }
+}

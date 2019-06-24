@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[modifierClass, themeClass]"
+    :class="[modifierClass, space]"
     :target="target"
     :rel="computedRel"
     :href="tag === 'a' ? href : null /* don't include the href attribute if not an <a> */"
@@ -13,7 +13,8 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
-import themeable from 'mixinsdir/themeable';
+import space from 'mixinsdir/space';
+// import themeable from 'mixinsdir/themeable'; --> TODO: re-add themeClass to class array
 /**
  *
  * Cedar 2 component for link.
@@ -25,7 +26,11 @@ import themeable from 'mixinsdir/themeable';
  */
 export default {
   name: 'CdrLink',
-  mixins: [modifier, themeable],
+  mixins: [
+    modifier,
+    space,
+    // themeable,
+  ],
   props: {
     tag: {
       type: String,
@@ -54,8 +59,7 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/vars/CdrLink.vars.pcss';
-  @import './styles/CdrLink.pcss';
+<style lang="scss" module>
+  @import './styles/vars/CdrLink.vars.scss';
+  @import './styles/CdrLink.scss';
 </style>

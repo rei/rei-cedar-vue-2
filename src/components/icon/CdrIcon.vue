@@ -2,7 +2,7 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    :class="[sizeClass, inheritColorClass]"
+    :class="[sizeClass, inheritColorClass, space]"
     role="presentation"
   >
     <!-- @slot any valid svg xml -->
@@ -25,10 +25,11 @@
  */
 
 import size from 'mixinsdir/size';
+import space from 'mixinsdir/space';
 
 export default {
   name: 'CdrIcon',
-  mixins: [size],
+  mixins: [size, space],
   props: {
     /**
     * The href attribute passed to the use element. Will be prefixed with # automatically
@@ -51,7 +52,6 @@ export default {
 };
 </script>
 
-<style module>
-  @import 'cssdir/settings/_index.pcss';
-  @import './styles/CdrIcon.pcss';
+<style lang="scss" module>
+  @import './styles/CdrIcon.scss';
 </style>

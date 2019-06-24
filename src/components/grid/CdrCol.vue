@@ -70,7 +70,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
-import CdrRow from './CdrRow';
+import CdrRow from 'componentsdir/grid/CdrRow';
 
 export default {
   name: 'CdrCol',
@@ -190,8 +190,7 @@ export default {
 };
 </script>
 
-<style module>
-@import 'cssdir/settings/_index.pcss';
-@import "./styles/Grid.vars.pcss";
-@import "./styles/CdrCol.pcss";
+<style lang="scss" module>
+@import "./styles/Grid.vars.scss";
+@import "./styles/CdrCol.scss";
 </style>

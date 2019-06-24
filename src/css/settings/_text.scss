@@ -1,0 +1,82 @@
+@mixin cdr-text-base-text-mixin() {
+  @include cdr-text-default;
+}
+
+$cdr-text-base-margin: 0;
+
+@mixin cdr-text-body-text-mixin() {
+  @include cdr-text-editorial-compact;
+}
+
+$cdr-text-body-max-width: 634px;
+$cdr-text-body-stack: 16px;
+
+@mixin cdr-text-body-text-bp-sm-mixin() {
+  @include cdr-text-editorial;
+}
+
+$cdr-text-body-stack-bp-sm: 32px;
+
+@mixin cdr-text-citation-text-mixin() {
+  @include redwood-display-10;
+}
+
+@mixin cdr-text-subheading-text-mixin() {
+  @include spruce-display-20;
+}
+
+@mixin cdr-text-display-text-mixin() {
+  @include spruce-display-60;
+}
+
+@mixin cdr-text-display-text-static-mixin() {
+  @include spruce-display-70;
+}
+
+@mixin cdr-text-display-text-bp-sm-mixin() {
+  @include spruce-display-70;
+}
+
+@mixin cdr-text-display-text-bp-lg-mixin() {
+  @include spruce-display-80;
+}
+
+@mixin cdr-text-heading-text-small-mixin() {
+  @include spruce-display-30;
+}
+
+@mixin cdr-text-heading-text-small-static-mixin() {
+  @include spruce-display-30;
+}
+
+@mixin cdr-text-heading-text-small-bp-lg-mixin() {
+  @include spruce-display-40;
+}
+
+@mixin cdr-text-heading-text-medium-mixin() {
+  @include spruce-display-40;
+}
+
+@mixin cdr-text-heading-text-medium-static-mixin() {
+  @include spruce-display-40;
+}
+
+@mixin cdr-text-heading-text-medium-bp-lg-mixin() {
+  @include spruce-display-50;
+}
+
+@mixin cdr-text-heading-text-large-mixin() {
+  @include spruce-display-40;
+}
+
+@mixin cdr-text-heading-text-large-static-mixin() {
+  @include spruce-display-50;
+}
+
+@mixin cdr-text-heading-text-large-bp-sm-mixin() {
+  @include spruce-display-50;
+}
+
+@mixin cdr-text-heading-text-large-bp-lg-mixin() {
+  @include spruce-display-70;
+}

@@ -1,5 +1,8 @@
 <template>
-  <div class="icon-examples">
+  <div
+    class="icon-examples"
+    data-backstop="icons"
+  >
     <cdr-text
       tag="h2"
       modifier="heading-small"
@@ -121,17 +124,21 @@
     <div class="inherit-container">
       <cdr-row cols="2">
         <cdr-col>
-          <span>Icon with inherit-color</span>
-          <cdr-icon
-            use="#account-profile"
-            inherit-color
-          />
+          <div>
+            <span>Icon with inherit-color</span>
+            <cdr-icon
+              use="#account-profile"
+              inherit-color
+            />
+          </div>
         </cdr-col>
         <cdr-col>
-          <span>Icon WITHOUT inherit-color</span>
-          <cdr-icon
-            use="#account-profile"
-          />
+          <div>
+            <span>Icon WITHOUT inherit-color</span>
+            <cdr-icon
+              use="#account-profile"
+            />
+          </div>
         </cdr-col>
       </cdr-row>
     </div>
@@ -140,9 +147,9 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
-import * as Icons from 'componentsdir/icon/dist/cdr-icon';
+import * as Icons from 'componentsdir/icon/build/main';
 
 export default {
   name: 'Icons',
@@ -174,14 +181,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
   .icon-examples {
     line-height: 1;
 
-    .icon-hover {
-      &:hover {
-        fill: red;
-      }
+    .icon-hover:hover {
+      fill: red;
     }
   }
 
@@ -196,5 +201,4 @@ export default {
     border-width: 1px;
     border-color: black;
   }
-
 </style>

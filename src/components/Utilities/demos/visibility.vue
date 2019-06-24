@@ -324,15 +324,17 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import { CdrText } from 'componentsdir/_index';
 
 export default {
   name: 'VisibleUtilities',
-  components: { ...Components },
+  components: {
+    CdrText,
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
 .visibility-utilities {
   table,
   td {

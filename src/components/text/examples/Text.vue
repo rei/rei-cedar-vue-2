@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import CdrText from 'componentsdir/text/CdrText';
-import headings from './demo/Headings';
-import paragraphs from './demo/Paragraphs';
+import { CdrText } from 'componentsdir/_index';
+import headings from 'componentsdir/text/examples/demo/Headings';
+import paragraphs from 'componentsdir/text/examples/demo/Paragraphs';
 
 export default {
   name: 'TextExamples',

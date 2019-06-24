@@ -32,7 +32,7 @@
       </cdr-text>
       <cdr-button
         :on-click="log"
-        :full-width="true"
+        full-width
         size="large@sm"
       >
         Responsive with default
@@ -54,15 +54,36 @@
         Link
       </cdr-button>
     </div>
+    <div>
+      <cdr-button
+        :full-width="true"
+        size="large@lg"
+        space="cdr-mb-space-one-x cdr-mr-space-one-x@md"
+      >
+        button 1
+      </cdr-button>
+
+      <cdr-button
+        :full-width="true"
+        modifier="secondary"
+        size="large@lg"
+      >
+        button 2
+      </cdr-button>
+    </div>
   </div>
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+// import Components from 'componentsdir/_index';
+import { CdrText, CdrButton } from 'componentsdir/_index';
 
 export default {
   name: 'Default',
-  components: Components,
+  components: {
+    CdrText,
+    CdrButton,
+  },
   data: function data() {
     return {
       data: [

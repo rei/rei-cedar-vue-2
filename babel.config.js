@@ -1,46 +1,49 @@
-// Configs for normal env
-const normalPresets = [
-  [
-    '@vue/app',
-    {
-      useBuiltIns: false,
-    },
-  ],
-];
+// babelrc cooy
+// {
+//   "presets": [
+//     [
+//       "env",
+//       {
+//         "modules": false
+//       }
+//     ],
+//     "stage-2"
+//   ],
+//   "plugins": [
+//     "transform-runtime"
+//   ],
+//   "comments": false,
+//   "env": {
+//     "test": {
+//       "presets": [
+//         "env",
+//         "stage-2"
+//       ],
+//       "plugins": [
+//         "istanbul"
+//       ]
+//     }
+//   }
+// }
 
-const normalPlugins = [
-  '@babel/transform-runtime',
-];
+/* eslint-disable */
 
-// Config for test env
-const testPresets = [
-  [
-    '@vue/app',
-    {
-      useBuiltIns: false,
-      targets: {
-        node: 'current',
-      },
-    },
-  ],
-];
+module.exports = function (api) {
+  api.cache(true);
 
-const testPlugins = [
-  'istanbul',
-];
-
-
-module.exports = (api) => {
-  let presets = normalPresets;
-  let plugins = normalPlugins;
-
-  if (api.env('test')) {
-    presets = testPresets;
-    plugins = testPlugins;
-  }
+  const presets = [
+    [
+      "@babel/preset-env",
+      {
+        corejs: "3",
+        useBuiltIns: "usage"
+      }
+    ]
+  ];
+  const plugins = ['@babel/plugin-transform-runtime'];
 
   return {
     presets,
-    plugins,
+    plugins
   };
-};
+}

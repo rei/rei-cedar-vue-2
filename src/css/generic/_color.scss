@@ -1,0 +1,28 @@
+/* ==========================================================================/*
+* Color utility classes
+*
+*
+** TOC:
+**
+** background theme classes
+*/
+
+.cdr-bg--light {
+  background-color: $cdr-color-background-light;
+}
+
+.cdr-bg--lighter {
+  background-color: $cdr-color-background-lighter;
+}
+
+.cdr-bg--lightest {
+  background-color: $cdr-color-background-lightest;
+}
+
+.cdr-bg--dark {
+  background-color: $cdr-color-background-dark;
+}
+
+.cdr-bg--darker {
+  background-color: $cdr-color-background-darker;
+}

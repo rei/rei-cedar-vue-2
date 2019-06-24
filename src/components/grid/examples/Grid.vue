@@ -2637,7 +2637,7 @@
 import CdrRow from 'componentsdir/grid/CdrRow';
 import CdrCol from 'componentsdir/grid/CdrCol';
 import CdrText from 'componentsdir/text/CdrText';
-import complex from './demo/Complex';
+import complex from 'componentsdir/grid/examples/demo/Complex';
 
 export default {
   name: 'Grid',
@@ -2650,8 +2650,8 @@ export default {
 };
 </script>
 
-<style>
-  .row-demo-wrapper [class^="cdr-row_"] {
+<style lang="scss">
+  .row-demo-wrapper [class*="cdr-row_"] {
     margin-bottom: 16px;
   }
 

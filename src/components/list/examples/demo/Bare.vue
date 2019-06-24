@@ -8,7 +8,7 @@
       Bare list
     </cdr-text>
 
-    <cdr-list class="cdr-stack--lg">
+    <cdr-list space="cdr-mb-space-two-x">
       <li>List item text</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
         <cdr-list>
@@ -28,7 +28,7 @@
 
     <cdr-list
       modifier="compact"
-      class="cdr-stack--lg"
+      space="cdr-mb-space-two-x"
     >
       <li>List item text</li>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
@@ -49,7 +49,7 @@
 
     <cdr-list
       modifier="inline"
-      class="cdr-stack--lg"
+      space="cdr-mb-space-two-x"
     >
       <li>List item text</li>
       <li>List item text</li>
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import * as Components from 'componentsdir/_index';
 
 export default {
   name: 'BareList',

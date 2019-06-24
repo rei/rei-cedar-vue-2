@@ -1,0 +1,16 @@
+/* ==========================================================================
+  # CdrCard
+
+  This file provides a contract between
+  design tokens and cedar non-changing variables.
+
+  TOC:
+
+    :Base
+========================================================================== */
+
+$card-background-color: #ffffff;
+$card-border-radius: $cdr-radius-soft;
+$card-box-shadow: $cdr-prominence-raised;
+$card-color: $text-color-primary-on-light;
+$card-width: 100%;

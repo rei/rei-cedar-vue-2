@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="inputs">
     <cdr-text
       tag="h2"
     >Text Inputs</cdr-text>
@@ -104,6 +104,13 @@
       placeholder="#6 Multi Line Input/TextArea"
       label="#6 Multi Line Input/TextArea"
     />
+    <cdr-input
+      class="demo-input "
+      v-model="masterModel"
+      @input="onMasterInput"
+      placeholder="What would you like to set all input values to?"
+      label="Master input that overwrites all other inputs on this page"
+    />
 
     <div class="demo-input">
       Input #1 Value = {{ defaultModel }}
@@ -126,12 +133,15 @@
     <div class="demo-input">
       Size Inputs Value = {{ sizeModel }}
     </div>
+    <div class="demo-input">
+      Master Inputs Value = {{ masterModel }}
+    </div>
   </div>
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
-import { IconTwitter, IconCheckLg } from 'componentsdir/icon/dist/cdr-icon';
+import * as Components from 'componentsdir/_index';
+import { IconTwitter, IconCheckLg } from 'componentsdir/icon/build/main';
 
 export default {
   name: 'Inputs',
@@ -149,7 +159,20 @@ export default {
       requiredWithIcons: '',
       multiRowModel: '',
       sizeModel: '',
+      masterModel: '',
     };
+  },
+  methods: {
+    onMasterInput(value, e) {
+      console.log('On Master Input value = ', value, ' e = ', e);
+      this.defaultModel = value;
+      this.requiredModel = value;
+      this.hiddenModel = value;
+      this.disabledModel = value;
+      this.requiredWithIcons = value;
+      this.multiRowModel = value;
+      this.sizeModel = value;
+    },
   },
 };
 </script>

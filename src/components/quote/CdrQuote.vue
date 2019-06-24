@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :class="[modifierClass]"
+    :class="[modifierClass, space]"
   >
     <p
       v-if="summary"
@@ -22,8 +22,9 @@
 </template>
 
 <script>
-import { CdrText } from '@rei/cdr-text';
+import CdrText from 'componentsdir/text/CdrText';
 import modifier from 'mixinsdir/modifier';
+import space from 'mixinsdir/space';
 
 /**
  * Cedar 2 component for captions
@@ -35,7 +36,7 @@ export default {
   components: {
     CdrText,
   },
-  mixins: [modifier],
+  mixins: [modifier, space],
   props: {
     tag: {
       type: String,
@@ -56,7 +57,6 @@ export default {
 };
 </script>
 
-<style module>
-  @import '../../css/settings/_index.pcss';
-  @import './styles/CdrQuote.pcss';
+<style lang="scss" module>
+  @import './styles/CdrQuote.scss';
 </style>

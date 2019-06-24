@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import CdrText from 'componentsdir/text/CdrText';
+import { CdrText } from 'distdir/cedar.esm.js';
 
 describe('CdrText.vue', () => {
   it('renders as p by default', () => {

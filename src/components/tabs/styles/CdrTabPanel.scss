@@ -1,0 +1,49 @@
+/* ==========================================================================
+  # CdrTabPanel
+
+  TOC:
+
+    :Base - CdrTabPanel
+
+========================================================================== */
+
+.cdr-tab-panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-top: $cdr-space-eighth-x;
+}
+
+@keyframes :global(flyLeft) {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes :global(flyRight) {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+.flyLeft {
+  :global {
+    animation-name: flyLeft;
+  }
+  animation-duration: $cdr-duration-5-x;
+}
+
+.flyRight {
+  :global {
+    animation-name: flyRight;
+  }
+  animation-duration: $cdr-duration-5-x;
+}
