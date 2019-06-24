@@ -92,4 +92,4 @@ When creating a pull request run `git cz` rather than `git commit` and follow th
 This projects Changelogs are generated.
 To output the latest changelog file you will need to create a new repository release.
 
-- Generate the root Changelog: `standard-changelog`
+- Generate the root Changelog: `npm run changelog`
