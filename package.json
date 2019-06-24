@@ -36,7 +36,8 @@
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
     "create": "node generator.js",
-    "changelog": "standard-changelog"
+    "changelog": "standard-changelog",
+    "prerelease": "npm-publish-prerelease"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
