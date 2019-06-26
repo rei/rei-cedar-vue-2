@@ -28,7 +28,7 @@ function addStyle(id, css) {
       code += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(css.map)))) + ' */';
     }
 
-    if (!style.element && document) {
+    if (!style.element && typeof document !== 'undefined') {
       style.element = document.createElement('style');
       style.element.type = 'text/css';
       if (css.media) style.element.setAttribute('media', css.media);
@@ -40,10 +40,10 @@ function addStyle(id, css) {
       HEAD.appendChild(style.element);
     }
 
-    if ('styleSheet' in style.element) {
+    if (style.element && 'styleSheet' in style.element) {
       style.styles.push(code);
       style.element.styleSheet.cssText = style.styles.filter(Boolean).join('\n');
-    } else if (document) {
+    } else if (typeof document !== 'undefined') {
       var index = style.ids.size - 1;
       var textNode = document.createTextNode(code);
       var nodes = style.element.childNodes;
