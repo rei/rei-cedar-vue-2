@@ -79,6 +79,7 @@ const plugins = [
       isProduction: env === 'prod',
       optimizeSSR: SSROptimize,
     },
+    styleInjector: `~${resolve('build/style-injector.js')}`,
   }),
   postcss({
     extract: postcssExtract,
