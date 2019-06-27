@@ -53,4 +53,4 @@ function addStyle(id, css) {
   }
 }
 
-exports.createInjector = createInjector;
+module.exports = createInjector;
