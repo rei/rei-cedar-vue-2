@@ -57,7 +57,6 @@ const plugins = [
     extensions: ['.mjs', '.js', '.jsx', '.json', '.css'],
   }),
   vue({
-    // styleInjector: styleInjector,
     css: false,
     style: {
       // postcssCleanOptions: { disabled: true },
