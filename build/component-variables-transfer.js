@@ -21,16 +21,13 @@ const SUPPORTED_COMPONENTS = [
 const destMixinsDir = path.join(__dirname, `../../${DEST_REPO_NAME + path.sep + DEST_PATH}`);
 
 // get vars files
-const files = glob.sync('../**/*.vars.pcss', { ignore: ['../**/node_modules/**'] });
+const files = glob.sync('./**/*.vars.scss', { ignore: ['../**/node_modules/**'] });
 
 // copy vars files
 files.forEach((f) => {
-  const fname = path.basename(f);
-  const ext = path.extname(f);
-  const outFname = fname.replace(ext, '.scss');
-  if (!SUPPORTED_COMPONENTS.includes(outFname)) return console.log(`skipping ${outFname}`);
-
-  const outDest = `${destMixinsDir}/${outFname}`;
+  const fname = path.basename(f).replace(/^_/, ''); // remove `_` prefix from global vars files
+  if (!SUPPORTED_COMPONENTS.includes(fname)) return console.log(`skipping ${fname}`);
+  const outDest = `${destMixinsDir}/${fname}`;
   fs.copySync(f, outDest);
   console.log(`copied ${fname} to ${outDest}`)
 });
