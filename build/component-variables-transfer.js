@@ -1,6 +1,8 @@
 const path = require('path');
 const fs = require('fs-extra');
 const glob = require('glob');
+const cedarPackageJson = require('../package.json');
+const variablesPackageJson = require('../../rei-cedar-component-variables/package.json');
 
 const DEST_REPO_NAME = 'rei-cedar-component-variables';
 const DEST_PATH = 'dist/scss';
@@ -38,3 +40,14 @@ const singleFile = SUPPORTED_COMPONENTS.map(fname => fs.readFileSync(`${destMixi
 
 fs.outputFileSync(`${destMixinsDir}/index.scss`, indexFile);
 fs.outputFileSync(`${destMixinsDir}/cedar-component-variables.scss`, singleFile);
+
+// update cedar and cdr-tokens versions in component-variables
+
+const cedarVersion = cedarPackageJson.version;
+const tokenVersion = cedarPackageJson.devDependencies['@rei/cdr-tokens'];
+
+console.log('updating component-variables peerDependencies', { cedarVersion, tokenVersion, currentPeerDeps: variablesPackageJson.peerDependencies }, )
+variablesPackageJson.peerDependencies['@rei/cdr-tokens'] = tokenVersion;
+variablesPackageJson.peerDependencies['@rei/cedar'] = cedarVersion;
+fs.outputFileSync('../../rei-cedar-component-variables/package.json', JSON.stringify(variablesPackageJson));
+
