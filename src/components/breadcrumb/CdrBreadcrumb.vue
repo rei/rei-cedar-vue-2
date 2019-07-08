@@ -43,7 +43,7 @@
         :class="$style['cdr-breadcrumb__item']"
         v-for="(breadcrumb, index) in items"
         :key="index"
-        v-show="!truncate || (index >= items.length - 1)"
+        v-show="!truncate || (index >= items.length - 2)"
       >
         <a
           :class="$style['cdr-breadcrumb__link']"
