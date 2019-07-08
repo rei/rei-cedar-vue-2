@@ -1,7 +1,6 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <!-- eslint-disable vue/require-v-for-key -->
 
   <nav
     ref="container"
@@ -43,6 +42,7 @@
       <li
         :class="$style['cdr-breadcrumb__item']"
         v-for="(breadcrumb, index) in items"
+        :key="index"
         v-show="!truncate || (index >= items.length - 1)"
       >
         <a
