@@ -40,46 +40,6 @@ describe('CdrBreadcrumb.vue', () => {
     expect(wrapper.vm.$refs.container.tagName).toBe('NAV');
   });
 
-  xit('trigger resize no truncation', () => {
-    const wrapper = shallowMount(CdrBreadcrumb);
-    let props = wrapper.props();
-    props.items = BreadcrumbItems;
-    wrapper.setProps(props);
-    window.dispatchEvent(new Event('resize'));
-    expect(wrapper.vm.thresholdExceeded).toBe(false);
-  });
-
-  xit('trigger resize should truncate', (done) => {
-    const wrapper = shallowMount(CdrBreadcrumb, {
-      propsData: {
-        truncationThreshold: -1,
-        items: BreadcrumbItems,
-      },
-      attachToDocument: true,
-    });
-    window.dispatchEvent(new Event('resize'));
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.thresholdExceeded).toBe(true);
-      done();
-    });
-  });
-
-  xit('breadcrumb should not truncate', () => {
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const shouldTruncate = wrapper.vm.calculateTruncation();
-    expect(shouldTruncate).toBe(false);
-  });
-
-  xit('breadcrumb should truncate', () => {
-    const wrapper = shallowMount(CdrBreadcrumb, {
-      propsData: {
-        truncationThreshold: -1,
-      }
-    });
-    const shouldTruncate = wrapper.vm.calculateTruncation();
-    expect(shouldTruncate).toBe(true);
-  });
-
   it('breadcrumb items validator should return true for valid items prop', () => {
     const wrapper = shallowMount(CdrBreadcrumb);
     let validItems = BreadcrumbItems;
