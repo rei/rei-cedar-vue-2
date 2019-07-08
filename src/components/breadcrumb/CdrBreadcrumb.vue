@@ -42,7 +42,7 @@
       <li
         :class="$style['cdr-breadcrumb__item']"
         v-for="(breadcrumb, index) in items"
-        :key="index"
+        :key="breadcrumb.item.name.replace(/ /g, '-').toLowerCase()"
         v-show="!truncate || (index >= items.length - 2)"
       >
         <a
