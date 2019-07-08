@@ -43,7 +43,7 @@
       <li
         :class="$style['cdr-breadcrumb__item']"
         v-for="(breadcrumb, index) in items"
-        v-show="!truncate || (index >= items.length - 2)"
+        v-show="!truncate || (index >= items.length - 1)"
       >
         <a
           :class="$style['cdr-breadcrumb__link']"
@@ -113,28 +113,10 @@ export default {
       type: Boolean,
       default: true,
     },
-    /**
-     * Value for max breadcrumb width to container width
-     * ratio before truncation is performed
-     */
-    truncationThreshold: {
-      type: Number,
-      default: 0.8,
-    },
-    /**
-     * Value for max breadcrumb width to container width
-     * ratio before truncation is performed on XS breakpoint
-     */
-    truncationXSThreshold: {
-      type: Number,
-      default: 1,
-    },
   },
   data() {
     return {
-      thresholdExceeded: false,
       shouldTruncate: this.truncationEnabled,
-      breadcrumbWidth: 0,
     };
   },
   computed: {
@@ -142,33 +124,7 @@ export default {
       return 'cdr-breadcrumb';
     },
     truncate() {
-      return this.shouldTruncate && this.thresholdExceeded;
-    },
-  },
-  mounted() {
-    this.breadcrumbWidth = this.getBreadcrumbWidth();
-    this.thresholdExceeded = this.calculateTruncation();
-    window.addEventListener('resize', debounce(() => {
-      this.thresholdExceeded = this.calculateTruncation();
-    }, 250));
-  },
-  methods: {
-    getBreadcrumbWidth() {
-      const breadcrumbsElements = Array.from(this.$refs.cdrBreadcrumbList.children);
-      let totalWidth = 0;
-      breadcrumbsElements.forEach((element) => {
-        totalWidth += element.offsetWidth || 0;
-      });
-      return totalWidth;
-    },
-    calculateTruncation() {
-      if (!this.$refs.container) return false;
-      const containerWidth = this.$refs.container.offsetWidth || 0;
-      const ratio = this.breadcrumbWidth / containerWidth || 0;
-      if (this.isXS()) {
-        return (ratio > this.truncationXSThreshold);
-      }
-      return (ratio > this.truncationThreshold);
+      return this.shouldTruncate;
     },
   },
 };

@@ -40,7 +40,7 @@ describe('CdrBreadcrumb.vue', () => {
     expect(wrapper.vm.$refs.container.tagName).toBe('NAV');
   });
 
-  it('trigger resize no truncation', () => {
+  xit('trigger resize no truncation', () => {
     const wrapper = shallowMount(CdrBreadcrumb);
     let props = wrapper.props();
     props.items = BreadcrumbItems;
@@ -49,7 +49,7 @@ describe('CdrBreadcrumb.vue', () => {
     expect(wrapper.vm.thresholdExceeded).toBe(false);
   });
 
-  it('trigger resize should truncate', (done) => {
+  xit('trigger resize should truncate', (done) => {
     const wrapper = shallowMount(CdrBreadcrumb, {
       propsData: {
         truncationThreshold: -1,
@@ -64,13 +64,13 @@ describe('CdrBreadcrumb.vue', () => {
     });
   });
 
-  it('breadcrumb should not truncate', () => {
+  xit('breadcrumb should not truncate', () => {
     const wrapper = shallowMount(CdrBreadcrumb);
     const shouldTruncate = wrapper.vm.calculateTruncation();
     expect(shouldTruncate).toBe(false);
   });
 
-  it('breadcrumb should truncate', () => {
+  xit('breadcrumb should truncate', () => {
     const wrapper = shallowMount(CdrBreadcrumb, {
       propsData: {
         truncationThreshold: -1,
