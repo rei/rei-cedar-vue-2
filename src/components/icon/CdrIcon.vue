@@ -26,6 +26,7 @@ export default {
 
   },
   render(h) {
+    // for extracting content from slot
     const getChildrenTextContent = children => children.map(node => (node.children
       ? getChildrenTextContent(node.children)
       : node.text)).join('');
@@ -34,10 +35,17 @@ export default {
     const defaultOpts = {
       attrs: {
         xmlns: 'http://www.w3.org/2000/svg',
+        // TODO: will viewBox always be this or do we need a prop with this as default?
         viewBox: '0 0 24 24',
         role: 'presentation',
       },
-      class: [this.sizeClass, this.inheritColorClass, this.space],
+      class: [
+        // classes from mixins
+        this.sizeClass,
+        this.space,
+        // from computed
+        this.inheritColorClass,
+      ],
     };
 
     // 'use' with sprite
@@ -50,10 +58,10 @@ export default {
       }, [])]);
     }
 
-    // slot content is full svg string TODO: preserve svg attrs, etc.?
+    // slot content is full svg string
+    // TODO: preserve svg attrs, etc. in this case?
     const slotText = getChildrenTextContent(this.$slots.default);
     if (slotText.startsWith('<svg')) {
-      console.log('here');
       const startRx = new RegExp('(<svg[^>]*>)', 'i');
       const endRx = new RegExp('(</svg>)', 'i');
       const stripped = slotText.replace(startRx, '').replace(endRx, '');
