@@ -1,11 +1,4 @@
 <script>
-/**
- * Cedar 2 component for icons
- * This component is lower level. Each icon can also be consumed individually via their own component. See sticker sheet for icon names.
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- * <span class="modifiers">inherit-color</span>
- * {standalone}
- */
 
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
