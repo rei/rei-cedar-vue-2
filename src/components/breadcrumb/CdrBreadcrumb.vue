@@ -115,7 +115,7 @@ export default {
   },
   data() {
     return {
-      shouldTruncate: this.truncationEnabled,
+      shouldTruncate: this.truncationEnabled && this.items.length > 2,
     };
   },
   computed: {
