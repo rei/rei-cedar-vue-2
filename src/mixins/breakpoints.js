@@ -2,15 +2,22 @@
  * Provides methods for working with screen size breakpoints
  *   XS < 768px
  *   SM >= 768px < 992px
- *   MD >= 992px < 1200px
- *   LG >= 1200px
+ *   MD >= 992px < 1232px
+ *   LG >= 1232px
  */
 /**
  * @mixin
  */
-const SMBreakpoint = 768;
-const MDBreakpoint = 992;
-const LGBreakpoint = 1200;
+import {
+  CdrBreakpointSm,
+  CdrBreakpointMd,
+  CdrBreakpointLg,
+} from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
+
+// TODO: is this the most optimal way to drop the units for use in JS?
+const SMBreakpoint = CdrBreakpointSm.replace(/px/, '');
+const MDBreakpoint = CdrBreakpointMd.replace(/px/, '');
+const LGBreakpoint = CdrBreakpointLg.replace(/px/, '');
 
 export default {
   methods: {

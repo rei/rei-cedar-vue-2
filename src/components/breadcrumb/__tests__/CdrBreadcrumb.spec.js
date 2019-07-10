@@ -101,7 +101,7 @@ describe('CdrBreadcrumb.vue', () => {
   });
 
   it('breadcrumb breakpoints isLG returns true at lg breakpoint', () => {
-    window.outerWidth = 1201; // Force lg screen size
+    window.outerWidth = 1233; // Force lg screen size
     const wrapper = shallowMount(CdrBreadcrumb);
     const isLG = wrapper.vm.isLG();
     expect(isLG).toBe(true);
