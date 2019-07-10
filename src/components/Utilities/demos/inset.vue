@@ -39,7 +39,7 @@
 <script>
 
 import { CdrText } from 'componentsdir/_index';
-import tokens from '@rei/cdr-tokens';
+import * as tokens from '@rei/cdr-tokens';
 import pickBy from 'lodash/pickBy';
 import kebabCase from 'lodash/kebabCase';
 
