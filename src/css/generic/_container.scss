@@ -37,8 +37,7 @@ $container-x-padding-md: $cdr-space-two-x;
   padding-left: $container-x-padding-xs;
   padding-right: $container-x-padding-xs;
   width: 100%;
-  // TODO: what is this magic number?
-  max-width: 1232px;
+  max-width: $cdr-breakpoint-lg;
 }
 
 @include md-mq {
