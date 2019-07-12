@@ -65,6 +65,7 @@ $cdr-input-base-placeholder-color: $cdr-color-text-form-placeholder-lightmode;
 
 @mixin cdr-input-base-mixin() {
   @include cdr-input-base-text-mixin;
+  
 
   color: $cdr-input-base-color;
   box-shadow: $cdr-input-base-box-shadow;
@@ -82,7 +83,15 @@ $cdr-input-base-placeholder-color: $cdr-color-text-form-placeholder-lightmode;
     /* CSS specific to iOS devices */
     -webkit-appearance: none;
   }
-
+  
+  &[type=number]::-webkit-inner-spin-button,
+  &[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
   &[disabled] {
     background-color: $cdr-input-base-background-color-disabled;
     color: $cdr-input-base-color-disabled;

@@ -32,15 +32,6 @@
 .cdr-input {
   @include cdr-input-base-mixin;
 
-  /* TODO: should we handle this? include in the mixin but dont export variables? */
-  &[type=number]::-webkit-inner-spin-button,
-  &[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
-  }
-
   /* Style variants
     ========================================================================== */
 
