@@ -125,7 +125,7 @@ $cdr-input-base-placeholder-color: $cdr-color-text-form-placeholder-lightmode;
 /* --multiline */
 $cdr-input-multiline-height: auto;
 @mixin cdr-input-multiline-mixin() {
-  $cdr-input-multiline-height: auto;
+  height: auto;
 }
 
 /* --large */
