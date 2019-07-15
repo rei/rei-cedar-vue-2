@@ -25,7 +25,7 @@
 .cdr-button {
   @include cdr-button-base-mixin;
 
-  & > :global(&__icon) {
+  & > :global(.cdr-button__icon) {
     @include cdr-button-base-icon-mixin;
   }
 
@@ -38,7 +38,7 @@
   /* Secondary
      ========== */
   &--secondary {
-    @include cdr-button-primary-mixin;
+    @include cdr-button-secondary-mixin;
   }
 
   /* Size variants
