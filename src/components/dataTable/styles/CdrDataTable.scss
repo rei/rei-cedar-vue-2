@@ -10,14 +10,16 @@
 ========================================================================= */
 
 .cdr-data-table {
+  // TODO: typography token
   @include redwood-display-20();
 
   position: relative;
 
   &__caption {
+    // TODO: typography token
     @include spruce-display-20();
-      
-    color: $heart-of-darkness;
+
+    color: $cdr-color-text-primary-lightmode;
   }
 
   &__scroll-container {
@@ -35,12 +37,12 @@
       }
     }
     */
-    
+
     &:global(.locked-col) {
       margin-left: 150px;
 
       @mixin lockedColTh() {
-        border-right: 2px solid $grey-matter;
+        border-right: 2px solid $cdr-color-border-secondary-lightmode;
         left: 0;
         position: absolute;
         width: 150px;
@@ -58,11 +60,11 @@
     &:global(.is-scrolling) {
       /* add extra border width */
       thead tr th:first-child {
-        border-right: 4px solid $grey-matter;
+        border-right: 4px solid $cdr-color-border-secondary-lightmode;
       }
 
       tbody tr th {
-        border-right: 4px solid $grey-matter;
+        border-right: 4px solid $cdr-color-border-secondary-lightmode;
       }
     }
   }
@@ -73,9 +75,10 @@
 
     th,
     td {
+      // TODO: would be cdr-color-border-disabled-lightmode but is not disabled
       border: 1px solid $partly-cloudy;
       min-height: 48px;
-      color: $heart-of-darkness;
+      color: $cdr-color-text-primary-lightmode;
       padding: $cdr-space-inset-one-x;
       text-align: left;
       min-width: 127px;
@@ -96,11 +99,11 @@
 
     thead {
       th {
-        border-bottom: 2px solid $grey-matter;
+        border-bottom: 2px solid $cdr-color-border-secondary-lightmode;
 
         /* empty column header, row header column */
         &[class^=empty] {
-          border-right: 2px solid $grey-matter;
+          border-right: 2px solid $cdr-color-border-secondary-lightmode;
         }
       }
     }
@@ -108,16 +111,16 @@
     tbody {
       tr {
         &:nth-child(even) {
-          background-color: $the-tooth;
+          background-color: $cdr-color-background-light;
 
           th {
-            background-color: $the-tooth;
+            background-color: $cdr-color-background-light;
           }
         }
 
         th {
           min-width: 150px;
-          border-right: 2px solid $grey-matter;
+          border-right: 2px solid $cdr-color-border-secondary-lightmode;
         }
       }
 
