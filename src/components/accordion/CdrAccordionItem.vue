@@ -81,12 +81,19 @@ export default {
       type: Boolean,
       default: false,
     },
+    compact: {
+      type: Boolean,
+      default: false,
+    },
+    borderAligned: {
+      type: Boolean,
+      default: false,
+    },
   },
-  inject: ['compact', 'borderAligned', 'showAll'],
   data() {
     return {
       maxHeight: 0,
-      isOpen: this.showAll || this.show,
+      isOpen: this.show,
       focused: false,
     };
   },
