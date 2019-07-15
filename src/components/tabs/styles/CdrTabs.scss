@@ -134,9 +134,8 @@
     border: none;
 
     /* border: none; */
-    // TODO: this maps to cdr-color-text-link-lightmode but is being used for `background`
-    // TODO: why is this `background` and not `background-color`?
-    background: $easily-excited;
+    // TODO: this maps to cdr-color-text-link-lightmode but is being used for `background`. also not a link
+    background-color: $easily-excited;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
   }
 
