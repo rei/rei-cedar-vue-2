@@ -17,7 +17,9 @@
         :class="$style['cdr-accordion-item__label']"
         :id="`${id}-label`"
       >
-        {{ label }}
+        <slot name="label">
+          {{ label }}
+        </slot>
       </span>
       <icon-caret-down
         :class="[

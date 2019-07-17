@@ -15,8 +15,10 @@
       </cdr-text>
       <cdr-accordion-item
         id="default"
-        label="A short label"
       >
+        <template slot="label">
+          A short label
+        </template>
         <cdr-text>
           This is some text. It's in a
           <strong>cdr-text paragraph</strong> element as
