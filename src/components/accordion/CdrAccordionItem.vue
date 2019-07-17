@@ -43,6 +43,7 @@
         ]"
         :aria-hidden="`${!isOpen}`"
         :id="`${id}-collapsible`"
+        ref="accordion-content"
       >
         <!-- @slot innerHTML on the inside of the accordion-item component -->
         <slot />
@@ -74,7 +75,7 @@ export default {
      */
     label: {
       type: String,
-      required: true,
+      required: false,
     },
     /**
      * Sets the default isOpen state of the accordion-item, if show-all is false from cdr-accordion.
@@ -132,9 +133,8 @@ export default {
     toggle(event) {
       this.isOpen = !this.isOpen;
       this.$parent.$emit('accordion-item-toggle', this.isOpen, event);
-      const ref = `accordion-${this.$props.id}`;
-      this.maxHeight = `${this.$refs[ref].childNodes[2].childNodes[0].clientHeight}px`;
-      const timeout = this.isOpen ? 300 : 50;
+      this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
+      const timeout = this.isOpen ? 300 : 50; // ADD A NOTE ABOUT WHY THESE VALUES?
 
       setTimeout(() => {
         this.maxHeight = this.isOpen ? 'none' : 0;
