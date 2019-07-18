@@ -9,6 +9,24 @@
     <div class="accordion-group">
       <cdr-text
         tag="h3"
+        modifiers="heading-small"
+      >
+        With Events
+      </cdr-text>
+      <cdr-accordion-item
+        id="with-events"
+        :show="show"
+        @accordion-item-toggle="update($event)"
+      >
+        <template slot="label">
+          With events
+        </template>
+        Some text, bruh
+      </cdr-accordion-item>
+    </div>
+    <div class="accordion-group">
+      <cdr-text
+        tag="h3"
         modifier="heading-small"
       >
         Default
@@ -49,7 +67,6 @@
           <li>when animated!</li>
         </cdr-list>
       </cdr-accordion-item>
-      <!-- </cdr-accordion> -->
     </div>
     <div class="accordion-group">
       <cdr-text
@@ -108,10 +125,6 @@
       >
         Border-Aligned
       </cdr-text>
-      <!-- <cdr-accordion
-        :border-aligned="true"
-        data-backstop="accordion-border-aligned"
-      > -->
       <cdr-accordion-item
         id="border-aligned"
         label="Border-aligned"
@@ -126,12 +139,12 @@
         label="Label with multiple words, so many words in fact that
         this content may wrap to several lines"
         :border-aligned="true"
+        @accordion-item-toggle="log('border-aligned-2', $event)"
       >
         <cdr-text>
           Some text inside, should align to the label above.
         </cdr-text>
       </cdr-accordion-item>
-      <!-- </cdr-accordion> -->
     </div>
   </div>
 </template>
@@ -145,7 +158,14 @@ export default {
   data() {
     return {
       tabindex: -1,
+      show: true,
     };
+  },
+  methods: {
+    update(value) {
+      console.log('update', value);
+      this.show = !this.show;
+    },
   },
 };
 </script>

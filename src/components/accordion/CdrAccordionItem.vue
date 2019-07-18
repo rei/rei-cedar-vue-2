@@ -2,15 +2,15 @@
   <div
     :class="[modifierClass, styleClass, focusedClass]"
     :id="`${id}-accordion-item`"
-    :ref="`accordion-${id}`"
+    :ref="`accordion-container`"
   >
     <button
       :class="$style['cdr-accordion-item__button']"
       :id="id"
-      @click="toggle($event)"
+      @click="$emit('accordion-item-toggle', $event);"
       @focus="focused = true"
       @blur="focused = false"
-      :aria-expanded="`${isOpen}`"
+      :aria-expanded="`${show}`"
       :aria-controls="`${id}-collapsible`"
     >
       <span
@@ -41,7 +41,7 @@
           $style['cdr-accordion-item__content'],
           isOpenClass
         ]"
-        :aria-hidden="`${!isOpen}`"
+        :aria-hidden="`${!show}`"
         :id="`${id}-collapsible`"
         ref="accordion-content"
       >
@@ -96,7 +96,6 @@ export default {
   data() {
     return {
       maxHeight: 0,
-      isOpen: this.show,
       focused: false,
     };
   },
@@ -121,25 +120,26 @@ export default {
       return this.focused ? this.modifyClassName(this.baseClass, 'focused') : null;
     },
     isOpenClass() {
-      return this.isOpen ? 'open' : 'closed';
+      return this.show ? 'open' : 'closed';
+    },
+    delay() {
+      // text fades out before the accordion closes
+      return this.show ? 300 : 50;
+    },
+  },
+  watch: {
+    show() {
+      this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
+
+      setTimeout(() => {
+        this.maxHeight = this.show ? 'none' : 0;
+      }, this.delay);
     },
   },
   mounted() {
-    if (this.isOpen) {
+    if (this.show) {
       this.maxHeight = 'none';
     }
-  },
-  methods: {
-    toggle(event) {
-      this.isOpen = !this.isOpen;
-      this.$parent.$emit('accordion-item-toggle', this.isOpen, event);
-      this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
-      const timeout = this.isOpen ? 300 : 50; // ADD A NOTE ABOUT WHY THESE VALUES?
-
-      setTimeout(() => {
-        this.maxHeight = this.isOpen ? 'none' : 0;
-      }, timeout);
-    },
   },
 };
 </script>
