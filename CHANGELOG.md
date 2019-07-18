@@ -1,3 +1,69 @@
+## [2.0.2-alpha.0](https://github.com/rei/rei-cedar/compare/v2.0.0...v2.0.2-alpha.0) (2019-07-02)
+
+
+### Bug Fixes
+
+* **ssr:** add built style-injector file ([77230d3](https://github.com/rei/rei-cedar/commit/77230d3))
+* **ssr:** add correct build of style-injector ([2f7248f](https://github.com/rei/rei-cedar/commit/2f7248f))
+* **ssr:** resolve local style-injector ([f726f2f](https://github.com/rei/rei-cedar/commit/f726f2f))
+* **ssr:** revert to correct export for style-injector ([38a13a5](https://github.com/rei/rei-cedar/commit/38a13a5))
+* **ssr:** wip styleInjector override ([816b29b](https://github.com/rei/rei-cedar/commit/816b29b))
+
+
+
+# [2.0.0-alpha.0](https://github.com/rei/rei-cedar/compare/18.12.2...2.0.0-alpha.0) (2019-06-24)
+
+
+### Bug Fixes
+
+* **add style:** hover for icon example ([8254c69](https://github.com/rei/rei-cedar/commit/8254c69))
+* **adding comments:** tOC comments for color ([7974882](https://github.com/rei/rei-cedar/commit/7974882))
+* **ally:** added an example to the radio page that had a duplicate ID attribute ([b680c88](https://github.com/rei/rei-cedar/commit/b680c88))
+* **babel:** go back to babel 6 to fix ie11 issues ([657094a](https://github.com/rei/rei-cedar/commit/657094a))
+* **input:** fix border and box shadow on ios ([f0a89d8](https://github.com/rei/rei-cedar/commit/f0a89d8)), closes [#627](https://github.com/rei/rei-cedar/issues/627)
+* **package:** package ([962c601](https://github.com/rei/rei-cedar/commit/962c601))
+* **package update:** update to prevent vulnerabilities ([bf086e5](https://github.com/rei/rei-cedar/commit/bf086e5))
+* **removed file:** adding back the import of the color css file for theme support ([f5e6508](https://github.com/rei/rei-cedar/commit/f5e6508))
+* **revert breakpoint:** revert breakpoint ([929992a](https://github.com/rei/rei-cedar/commit/929992a))
+* **template name:** update inset template name ([e47eec9](https://github.com/rei/rei-cedar/commit/e47eec9))
+
+
+### chore
+
+* **package.json:** bump version to alpha, update name to reflect npm publishing ([0a42ab7](https://github.com/rei/rei-cedar/commit/0a42ab7))
+* **package.json:** remove lerna ([31df2b1](https://github.com/rei/rei-cedar/commit/31df2b1))
+* **package.json:** update babel 7 dependencies via babel-update ([3b678b4](https://github.com/rei/rei-cedar/commit/3b678b4))
+
+
+### Features
+
+* **breakpoints:** moving responsive.pcss to use TokensV1 ([c004629](https://github.com/rei/rei-cedar/commit/c004629))
+* **build:** add sourcemaps to output and uniminify built files ([9ac57d8](https://github.com/rei/rei-cedar/commit/9ac57d8))
+* **class names:** changing the names of our responsive classes ([2322d22](https://github.com/rei/rei-cedar/commit/2322d22))
+* **data-table:** add constrainWidth prop, increase content resilience ([6c5001a](https://github.com/rei/rei-cedar/commit/6c5001a))
+* **icons:** updating icons variables to tokenV1 variables ([706c318](https://github.com/rei/rei-cedar/commit/706c318))
+* **motion:** removing legacy motion token values, moving some values to use token variables ([3a5bedd](https://github.com/rei/rei-cedar/commit/3a5bedd))
+* **prominence:** update mapping of variables using prominence to new tokenV1 names ([262bed0](https://github.com/rei/rei-cedar/commit/262bed0))
+* **radius tokens:** components using radius tokens have been updated to use updated tokensv1 names ([7707bfb](https://github.com/rei/rei-cedar/commit/7707bfb))
+* **reset:** restore body line-height to 1.5 ([8ece439](https://github.com/rei/rei-cedar/commit/8ece439))
+* **space, utilities:** add !important to spacing utility classes ([adab6f1](https://github.com/rei/rei-cedar/commit/adab6f1))
+* **space, utilities:** add important to legacy util classes, add deprecation notice ([069a2a3](https://github.com/rei/rei-cedar/commit/069a2a3))
+* **spacing:** add x and y space utility classes ([02edc24](https://github.com/rei/rei-cedar/commit/02edc24))
+* **tokens:** add component token maps to cdr-assets ([afe53d0](https://github.com/rei/rei-cedar/commit/afe53d0))
+* **tokenv1 beta:** the TokensV1 dependancy has been moved to beta, icon-fill has been removed and r ([03fbdd5](https://github.com/rei/rei-cedar/commit/03fbdd5))
+* **utilities:** include legacy spacing utilities for backwards compatibility ([4b5c4f2](https://github.com/rei/rei-cedar/commit/4b5c4f2))
+* **utilities:** space utilities and examples updated to use token naming ([9a42abc](https://github.com/rei/rei-cedar/commit/9a42abc))
+
+
+### BREAKING CHANGES
+
+* **package.json:** convert from cal versionsing back to semver
+* **package.json:** babel 7 update in the past caused us some issues, so calling this a breaking
+change.
+* **package.json:** Cedar components will no longer be distributed individually
+
+
+
 <a name="18.12.2"></a>
 ## [18.12.2](https://github.com/rei/rei-cedar/compare/18.12.1...18.12.2) (2018-12-20)
 

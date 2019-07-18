@@ -7,15 +7,15 @@
       tag="h2"
       modifier="heading-medium"
     >
-      Visibility classes
+      Display classes
     </cdr-text>
 
     <table>
       <thead>
         <tr>
           <th>class</th>
-          <th class="cdr-hide cdr-show@xs-only">
-            visible @ xs
+          <th class="cdr-display-none cdr-display-block@xs">
+            cdr-display-block@xs
           </th>
           <th class="cdr-hide cdr-show@sm-only">
             visible @ sm

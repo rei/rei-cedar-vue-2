@@ -23,110 +23,22 @@
 ========================================================================== */
 
 .cdr-button {
-  @include cdr-button-base-text-mixin;
-
-  background-color: $cdr-button-primary-background-color;
-  box-shadow: $cdr-button-primary-box-shadow;
-  color: $cdr-button-primary-color;
-  fill: $cdr-button-primary-fill;
-  border: $cdr-button-base-border;
-  border-radius: $cdr-button-base-border-radius;
-  cursor: $cdr-button-base-cursor;
-  display: $cdr-button-base-display;
-  outline: $cdr-button-base-outline;
-  overflow: $cdr-button-base-overflow;
-  padding: $cdr-button-base-padding;
-  text-align: $cdr-button-base-text-align;
-  text-decoration: $cdr-button-base-text-decoration;
-  text-transform: $cdr-button-base-text-transform;
+  @include cdr-button-base-mixin;
 
   & > :global(.cdr-button__icon) {
-    align-self: $cdr-button-base-icon-align-self;
-    margin-right: $cdr-button-base-icon-mr;
-    fill: $cdr-button-base-icon-fill;
-  }
-
-  /* States
-    ---------- */
-
-  &:hover {
-    background-color: $cdr-button-primary-background-color-hover;
-    color: $cdr-button-primary-color-hover;
-    box-shadow: $cdr-button-primary-box-shadow-hover;
-    fill: $cdr-button-primary-fill-hover;
-    outline: $cdr-button-base-outline-hover;
-    outline-offset: $cdr-button-base-outline-offset-hover;
-    text-decoration: $cdr-button-base-text-decoration-hover;
-  }
-
-  &:active {
-    background-color: $cdr-button-primary-background-color-active;
-    color: $cdr-button-primary-color-active;
-    box-shadow: $cdr-button-primary-box-shadow-active;
-    fill: $cdr-button-primary-fill-active;
-    outline: $cdr-button-base-outline-active;
-    outline-offset: $cdr-button-base-outline-offset-active;
-    text-decoration: $cdr-button-base-text-decoration-active;
-  }
-
-  &:focus {
-    background-color: $cdr-button-primary-background-color-focus;
-    color: $cdr-button-primary-color-focus;
-    box-shadow: $cdr-button-primary-box-shadow-focus;
-    fill: $cdr-button-primary-fill-focus;
-    outline: $cdr-button-base-outline-focus;
-    outline-offset: $cdr-button-base-outline-offset-focus;
-    text-decoration: $cdr-button-base-text-decoration-focus;
-  }
-
-  &[disabled] {
-    background-color: $cdr-button-primary-background-color-disabled;
-    box-shadow: $cdr-button-primary-box-shadow-disabled;
-    color: $cdr-button-primary-color-disabled;
-    cursor: $cdr-button-base-cursor-disabled;
+    @include cdr-button-base-icon-mixin;
   }
 
   /* Modifier style variants
     ========================================================================== */
+  &--primary {
+    @include cdr-button-primary-mixin;
+  }
 
   /* Secondary
      ========== */
   &--secondary {
-    background-color: $cdr-button-secondary-background-color;
-    box-shadow: $cdr-button-secondary-box-shadow;
-    color: $cdr-button-secondary-color;
-    fill: $cdr-button-secondary-fill;
-
-    /* States
-    ---------- */
-
-    &:hover {
-      background-color: $cdr-button-secondary-background-color-hover;
-      box-shadow: $cdr-button-secondary-box-shadow-hover;
-      color: $cdr-button-secondary-color-hover;
-      fill: $cdr-button-secondary-fill-hover;
-    }
-
-    &:active {
-      background-color: $cdr-button-secondary-background-color-active;
-      box-shadow: $cdr-button-secondary-box-shadow-active;
-      color: $cdr-button-secondary-color-active;
-      fill: $cdr-button-secondary-fill-active;
-    }
-
-    &:focus {
-      background-color: $cdr-button-secondary-background-color-focus;
-      box-shadow: $cdr-button-secondary-box-shadow-focus;
-      color: $cdr-button-secondary-color-focus;
-      fill: $cdr-button-secondary-fill-focus;
-    }
-
-    &[disabled] {
-      background-color: $cdr-button-secondary-background-color-disabled;
-      box-shadow: $cdr-button-secondary-box-shadow-disabled;
-      color: $cdr-button-secondary-color-disabled;
-      fill: $cdr-button-secondary-fill-disabled;
-    }
+    @include cdr-button-secondary-mixin;
   }
 
   /* Size variants
@@ -135,36 +47,28 @@
   /* Large
      ========== */
   &--large {
-    @include cdr-button-base-text-mixin-large;
-
-    padding: $cdr-button-base-padding-large;
+    @include cdr-button-large-mixin;
 
     &.cdr-button--has-icon {
-      padding-left: $cdr-button-has-icon-pl-large;
+      @include cdr-button-has-icon-large-mixin;
     }
 
     & > :global(.cdr-button__icon) {
-      /* This is to correct icon size vs line height */
-      width: $cdr-button-base-icon-width-large;
-      height: $cdr-button-base-icon-height-large;
+      @include cdr-button-icon-large-mixin;
     }
   }
 
   /* Medium
      ========== */
   &--medium {
-    @include cdr-button-base-text-mixin-medium;
-
-    padding: $cdr-button-base-padding-medium;
+    @include cdr-button-medium-mixin;
 
     &.cdr-button--has-icon {
-      padding-left: $cdr-button-has-icon-pl-medium;
+      @include cdr-button-has-icon-medium-mixin;
     }
 
     & > :global(.cdr-button__icon) {
-      /* This is to correct icon size vs line height */
-      width: $cdr-button-base-icon-width-medium;
-      height: $cdr-button-base-icon-height-medium;
+      @include cdr-button-icon-medium-mixin;
     }
   }
 
@@ -172,57 +76,28 @@
      ========== */
 
   &--small {
-    @include cdr-button-base-text-mixin-small;
-
-    padding: $cdr-button-base-padding-small;
+    @include cdr-button-small-mixin;
 
     &.cdr-button--has-icon {
-      padding-left: $cdr-button-has-icon-pl-small;
+      @include cdr-button-has-icon-small-mixin;
     }
 
     & > :global(.cdr-button__icon) {
-      /* This is to correct icon size vs line height */
-      width: $cdr-button-base-icon-width-small;
-      height: $cdr-button-base-icon-height-small;
+      @include cdr-button-icon-small-mixin;
     }
   }
 
   /* Full Width
      ========== */
   &--full-width {
-    width: $cdr-button-full-width-width;
-    justify-content: $cdr-button-full-width-justify-content;
+    @include cdr-button-full-width-mixin;
   }
 
   /* Icon Only
      ========= */
 
   &--icon-only {
-    background: $cdr-button-icon-only-background-color;
-    border: $cdr-button-icon-only-border;
-    box-shadow: $cdr-button-icon-only-box-shadow;
-    display: $cdr-button-icon-only-display;
-    padding: $cdr-button-icon-only-padding;
-    padding-right: $cdr-button-icon-only-pr;
-    fill: $cdr-button-icon-only-fill;
-
-    &:hover {
-      background: $cdr-button-icon-only-background-color-hover;
-      box-shadow: $cdr-button-icon-only-box-shadow-hover;
-      fill: $cdr-button-icon-only-fill-hover;
-    }
-
-    &:active {
-      background: $cdr-button-icon-only-background-color-active;
-      box-shadow: $cdr-button-icon-only-box-shadow-active;
-      fill: $cdr-button-icon-only-fill-active;
-    }
-
-    &:focus {
-      background: $cdr-button-icon-only-background-color-focus;
-      box-shadow: $cdr-button-icon-only-box-shadow-focus;
-      fill: $cdr-button-icon-only-fill-focus;
-    }
+    @include cdr-button-icon-only-mixin;
 
     &.cdr-button--on-dark {
       fill: $cdr-button-icon-only-fill-darkmode;
@@ -230,52 +105,44 @@
   }
 
   /* Breakpoint variants
-    ========================================================================== */
-
-  @mixin auto-icon() {
-    width: $cdr-icon-size;
-    height: $cdr-icon-size;
-  }
-
-  @mixin small-button-icon() {
-    width: 20px;
-    height: 20px;
-  }
 
   /* @xs
     0px - 767px
     ========== */
   @include xs-mq-only {
     &--small\@xs {
-      @include redwood-display-20;
+      @include cdr-button-small-mixin;
 
-      padding: $cdr-space-inset-three-quarter-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-small-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include small-button-icon();
+        @include cdr-button-icon-small-mixin;
       }
     }
 
     &--medium\@xs {
-      @include redwood-display-30;
+      @include cdr-button-medium-mixin;
 
-      padding: $cdr-space-inset-one-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-medium-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-medium-mixin;
       }
     }
 
     &--large\@xs {
-      @include redwood-display-40;
+      @include cdr-button-large-mixin;
 
-      padding: $cdr-space-inset-one-and-a-half-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-large-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-large-mixin;
       }
     }
   }
@@ -285,35 +152,38 @@
     ========== */
   @include sm-mq-only {
     &--small\@sm {
-      @include redwood-display-20;
+      @include cdr-button-small-mixin;
 
-      padding: $cdr-space-inset-three-quarter-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-small-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include small-button-icon();
+        @include cdr-button-icon-small-mixin;
       }
     }
 
     &--medium\@sm {
-      @include redwood-display-30;
+      @include cdr-button-medium-mixin;
 
-      padding: $cdr-space-inset-one-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-medium-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-medium-mixin;
       }
     }
 
     &--large\@sm {
-      @include redwood-display-40;
+      @include cdr-button-large-mixin;
 
-      padding: $cdr-space-inset-one-and-a-half-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-large-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-large-mixin;
       }
     }
   }
@@ -323,35 +193,38 @@
     ========== */
   @include md-mq-only {
     &--small\@md {
-      @include redwood-display-20;
+      @include cdr-button-small-mixin;
 
-      padding: $cdr-space-inset-three-quarter-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-small-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include small-button-icon();
+        @include cdr-button-icon-small-mixin;
       }
     }
 
     &--medium\@md {
-      @include redwood-display-30;
+      @include cdr-button-medium-mixin;
 
-      padding: $cdr-space-inset-one-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-medium-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-medium-mixin;
       }
     }
 
     &--large\@md {
-      @include redwood-display-40;
+      @include cdr-button-large-mixin;
 
-      padding: $cdr-space-inset-one-and-a-half-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-large-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-large-mixin;
       }
     }
   }
@@ -362,35 +235,38 @@
 
   @include lg-mq-only {
     &--small\@lg {
-      @include redwood-display-20;
+      @include cdr-button-small-mixin;
 
-      padding: $cdr-space-inset-three-quarter-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-small-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include small-button-icon();
+        @include cdr-button-icon-small-mixin;
       }
     }
 
     &--medium\@lg {
-      @include redwood-display-30;
+      @include cdr-button-medium-mixin;
 
-      padding: $cdr-space-inset-one-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-medium-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-medium-mixin;
       }
     }
 
     &--large\@lg {
-      @include redwood-display-40;
+      @include cdr-button-large-mixin;
 
-      padding: $cdr-space-inset-one-and-a-half-x-squish;
-      width: auto;
+      &.cdr-button--has-icon {
+        @include cdr-button-has-icon-large-mixin;
+      }
 
       & > :global(.cdr-button__icon) {
-        @include auto-icon();
+        @include cdr-button-icon-large-mixin;
       }
     }
   }

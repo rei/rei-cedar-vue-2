@@ -16,7 +16,7 @@
       tag="h3"
       modifier="subheading"
     >
-      Short Breadcrumb
+      Two-Item Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
       :items="shortBreadcrumbItems"
@@ -25,7 +25,7 @@
       tag="h3"
       modifier="subheading"
     >
-      Super Long Breadcrumb
+      Three-Item Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
       :items="superLongBreadcrumbItems"
@@ -95,12 +95,6 @@ export default {
             name: 'Item 2',
           },
         },
-        {
-          item: {
-            url: 'http://yahoo.com',
-            name: 'Item 3',
-          },
-        },
       ],
       superLongBreadcrumbItems: [
         {
@@ -119,24 +113,6 @@ export default {
           item: {
             url: 'http://yahoo.com',
             name: 'Super Really Long Breadcrumb Item 3',
-          },
-        },
-        {
-          item: {
-            url: 'http://bing.com',
-            name: 'Really Really Long Breadcrumb Item 4',
-          },
-        },
-        {
-          item: {
-            url: 'http://bing.com',
-            name: 'Following Breadcrumb is Longest on REI.com',
-          },
-        },
-        {
-          item: {
-            url: 'http://bing.com',
-            name: 'Mexico, Central and South America GPS Mapping Software',
           },
         },
       ],

@@ -1,7 +1,6 @@
 <template>
   <!-- disable lint errors on line length in template -->
   <!-- eslint-disable max-len -->
-  <!-- eslint-disable vue/require-v-for-key -->
 
   <nav
     ref="container"
@@ -43,6 +42,7 @@
       <li
         :class="$style['cdr-breadcrumb__item']"
         v-for="(breadcrumb, index) in items"
+        :key="breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()"
         v-show="!truncate || (index >= items.length - 2)"
       >
         <a
@@ -73,7 +73,6 @@
 
 import modifier from 'mixinsdir/modifier';
 import breakpoints from 'mixinsdir/breakpoints';
-import debounce from 'lodash/debounce';
 
 export default {
   name: 'CdrBreadcrumb',
@@ -113,28 +112,10 @@ export default {
       type: Boolean,
       default: true,
     },
-    /**
-     * Value for max breadcrumb width to container width
-     * ratio before truncation is performed
-     */
-    truncationThreshold: {
-      type: Number,
-      default: 0.8,
-    },
-    /**
-     * Value for max breadcrumb width to container width
-     * ratio before truncation is performed on XS breakpoint
-     */
-    truncationXSThreshold: {
-      type: Number,
-      default: 1,
-    },
   },
   data() {
     return {
-      thresholdExceeded: false,
-      shouldTruncate: this.truncationEnabled,
-      breadcrumbWidth: 0,
+      shouldTruncate: this.truncationEnabled && this.items.length > 2,
     };
   },
   computed: {
@@ -142,33 +123,7 @@ export default {
       return 'cdr-breadcrumb';
     },
     truncate() {
-      return this.shouldTruncate && this.thresholdExceeded;
-    },
-  },
-  mounted() {
-    this.breadcrumbWidth = this.getBreadcrumbWidth();
-    this.thresholdExceeded = this.calculateTruncation();
-    window.addEventListener('resize', debounce(() => {
-      this.thresholdExceeded = this.calculateTruncation();
-    }, 250));
-  },
-  methods: {
-    getBreadcrumbWidth() {
-      const breadcrumbsElements = Array.from(this.$refs.cdrBreadcrumbList.children);
-      let totalWidth = 0;
-      breadcrumbsElements.forEach((element) => {
-        totalWidth += element.offsetWidth || 0;
-      });
-      return totalWidth;
-    },
-    calculateTruncation() {
-      if (!this.$refs.container) return false;
-      const containerWidth = this.$refs.container.offsetWidth || 0;
-      const ratio = this.breadcrumbWidth / containerWidth || 0;
-      if (this.isXS()) {
-        return (ratio > this.truncationXSThreshold);
-      }
-      return (ratio > this.truncationThreshold);
+      return this.shouldTruncate;
     },
   },
 };

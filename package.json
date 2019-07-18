@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "1.0.0-alpha.7",
+  "version": "2.1.0-alpha.0",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -22,7 +22,7 @@
   "scripts": {
     "prepublishOnly": "npm run lint && npm run build",
     "dev": "cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
-    "build": "npm run clean && npm run build:csr && npm run build:ssr",
+    "build": "npm run clean && npm run build:csr && npm run build:ssr && node build/extract-css.js",
     "build:csr": "cross-env NODE_ENV=prod rollup -c rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=prod SSR_ENV=ssr rollup -c rollup.config.js",
     "unit": "cross-env NODE_ENV=test rollup -c rollup.config.unit.js && jest",
@@ -36,7 +36,9 @@
     "compare": "backstop test --configPath=backstop.js",
     "approve": "backstop approve --configPath=backstop.js",
     "create": "node generator.js",
-    "changelog": "standard-changelog"
+    "changelog": "standard-changelog",
+    "prerelease": "npm-publish-prerelease",
+    "build:variables": "node build/component-variables-transfer.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -56,7 +58,7 @@
     "@babel/runtime": "^7.4.3",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
-    "@rei/cdr-tokens": "^1.0.1-alpha.0",
+    "@rei/cdr-tokens": "^1.1.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "autoprefixer": "^9.4.7",
     "babel-core": "^7.0.0-bridge.0",
@@ -100,6 +102,7 @@
     "nightwatch-axe": "^0.1.5",
     "node-cmd": "^3.0.0",
     "node-sass": "^4.12.0",
+    "node-sass-tilde-importer": "^1.0.2",
     "npm-publish-prerelease": "^1.0.2",
     "nyc": "^14.1.1",
     "ora": "^3.0.0",
@@ -116,7 +119,7 @@
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-copy": "^2.0.1",
     "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-livereload": "^1.0.1",
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-node-resolve": "^5.0.0",
     "rollup-plugin-postcss": "^2.0.3",

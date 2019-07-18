@@ -9,6 +9,7 @@ import copyPlugin from 'rollup-plugin-copy';
 import babel from 'rollup-plugin-babel';
 import packageJson from '../package.json';
 
+
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
@@ -77,6 +78,7 @@ const plugins = [
       isProduction: env === 'prod',
       optimizeSSR: SSROptimize,
     },
+    styleInjector: `~${resolve('build/style-injector.mjs')}`,
   }),
   postcss({
     extract: postcssExtract,

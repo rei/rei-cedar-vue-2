@@ -29,11 +29,12 @@ html {
 }
 
 body {
+  // TODO: typography token
   @include redwood-body-20;
 
   line-height: 1.5;
   margin: 0;
-  color: $text-color-primary-on-light;
+  color: $cdr-color-text-primary-lightmode;
   background-color: #fff;
 }
 
