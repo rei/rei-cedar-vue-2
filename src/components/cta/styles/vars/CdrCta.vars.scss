@@ -1,26 +1,8 @@
-/* Private variables, for internal use only */
-$cta-dark-background-color: #292929;
-$cta-dark-box-shadow: inset 0 0 0 1px #434343;
-$cta-dark-color: #ffffff;
-$cta-dark-hover-background-color: #434343;
-$cta-dark-hover-color: #ffffff;
-$cta-light-background-color: #ffffff;
-$cta-light-box-shadow: inset 0 0 0 1px #616161;
-$cta-light-color: #292929;
-$cta-light-hover-background-color: #f7f7f7;
-$cta-light-hover-color: #292929;
-/* End of Private variables */
-
-
 @mixin cdr-cta-base-text-mixin() {
   @include maple-utility-40;
 }
 
-$cdr-cta-base-background-color: #3278ae;
 $cdr-cta-base-border-radius: $cdr-radius-softer;
-$cdr-cta-base-box-shadow: inset 0 0 0 1px #2b6692;
-$cdr-cta-base-color: #ffffff;
-$cdr-cta-base-fill: #ffffff;
 $cdr-cta-base-border: none;
 $cdr-cta-base-cursor: pointer;
 $cdr-cta-base-display: inline-flex;
@@ -39,12 +21,8 @@ $cdr-cta-base-outline-offset-focus: 0;
 @mixin cdr-cta-base-mixin() {
   @include cdr-cta-base-text-mixin;
 
-  background-color: $cdr-cta-base-background-color;
-  box-shadow: $cdr-cta-base-box-shadow;
   border: $cdr-cta-base-border;
   border-radius: $cdr-cta-base-border-radius;
-  color: $cdr-cta-base-color;
-  fill: $cdr-cta-base-fill;
   cursor: $cdr-cta-base-cursor;
   display: $cdr-cta-base-display;
   outline: $cdr-cta-base-outline;
@@ -146,6 +124,129 @@ $cdr-cta-brand-fill-focus: #ffffff;
     box-shadow: $cdr-cta-brand-box-shadow-focus;
     color: $cdr-cta-brand-color-focus;
     fill: $cdr-cta-brand-fill-focus;
+  }
+}
+
+$cdr-cta-dark-background-color: #292929;
+$cdr-cta-dark-box-shadow: inset 0 0 0 1px #434343;
+$cdr-cta-dark-color: #ffffff;
+$cdr-cta-dark-fill: #ffffff;
+
+$cdr-cta-dark-background-color-hover: #434343;
+$cdr-cta-dark-box-shadow-hover: inset 0 0 0 1px #434343;
+$cdr-cta-dark-color-hover: #ffffff;
+$cdr-cta-dark-fill-hover: #ffffff;
+
+$cdr-cta-dark-background-color-active: #434343;
+$cdr-cta-dark-box-shadow-active: inset 0 0 0 1px #434343;
+$cdr-cta-dark-color-active: #ffffff;
+$cdr-cta-dark-fill-active: #ffffff;
+
+$cdr-cta-dark-background-color-focus: #434343;
+$cdr-cta-dark-box-shadow-focus: inset 0 0 0 1px #434343;
+$cdr-cta-dark-color-focus: #ffffff;
+$cdr-cta-dark-fill-focus: #ffffff;
+
+// &--dark {
+@mixin cdr-cta-dark-mixin() {
+  background-color: $cdr-cta-dark-background-color;
+  box-shadow: $cdr-cta-dark-box-shadow;
+  color: $cdr-cta-dark-color;
+  fill: $cdr-cta-dark-fill;
+
+  &:hover {
+    background-color: $cdr-cta-dark-background-color-hover;
+    box-shadow: $cdr-cta-dark-box-shadow-hover;
+    color: $cdr-cta-dark-color-hover;
+
+    & > .cdr-cta__icon {
+      fill: $cdr-cta-dark-fill-hover;
+    }
+  }
+  
+  &:active {
+    background-color: $cdr-cta-dark-background-color-active;
+    box-shadow: $cdr-cta-dark-box-shadow-active;
+    color: $cdr-cta-dark-color-active;
+
+    & > .cdr-cta__icon {
+      fill: $cdr-cta-dark-fill-active;
+    }
+  }
+  
+  &:focus {
+    background-color: $cdr-cta-dark-background-color-focus;
+    box-shadow: $cdr-cta-dark-box-shadow-focus;
+    color: $cdr-cta-dark-color-focus;
+
+    & > .cdr-cta__icon {
+      fill: $cdr-cta-dark-fill-focus;
+    }
+  }
+}
+
+$cdr-cta-light-background-color: #ffffff;
+$cdr-cta-light-box-shadow: inset 0 0 0 1px #616161;
+$cdr-cta-light-color: #292929;
+$cdr-cta-light-fill: #292929;
+
+$cdr-cta-light-background-color-hover: #f7f7f7;
+$cdr-cta-light-box-shadow-hover: inset 0 0 0 1px #616161;
+$cdr-cta-light-color-hover: #292929;
+$cdr-cta-light-fill-hover: #292929;
+
+$cdr-cta-light-background-color-active: #f7f7f7;
+$cdr-cta-light-box-shadow-active: inset 0 0 0 1px #616161;
+$cdr-cta-light-color-active: #292929;
+$cdr-cta-light-fill-active: #292929;
+
+$cdr-cta-light-background-color-focus: #f7f7f7;
+$cdr-cta-light-box-shadow-focus: inset 0 0 0 1px #616161;
+$cdr-cta-light-color-focus: #292929;
+$cdr-cta-light-fill-focus: #292929;
+
+// &--light {
+@mixin cdr-cta-light-mixin() {
+  background-color: $cdr-cta-light-background-color;
+  box-shadow: $cdr-cta-light-box-shadow;
+  color: $cdr-cta-light-color;
+  fill: $cdr-cta-light-fill;
+
+  &:hover {
+    background-color: $cdr-cta-light-background-color-hover;
+    box-shadow: $cdr-cta-light-box-shadow-hover;
+    color: $cdr-cta-light-color-hover;
+    fill: $cdr-cta-light-fill-hover;
+  }
+  
+  &:active {
+    background-color: $cdr-cta-light-background-color-active;
+    box-shadow: $cdr-cta-light-box-shadow-active;
+    color: $cdr-cta-light-color-active;
+    fill: $cdr-cta-light-fill-active;
+  }
+
+  &:focus {
+    background-color: $cdr-cta-light-background-color-focus;
+    box-shadow: $cdr-cta-light-box-shadow-focus;
+    color: $cdr-cta-light-color-focus;
+    fill: $cdr-cta-light-fill-focus;
+  }
+
+  &.cdr-cta--elevated {
+    box-shadow: $cdr-cta-light-box-shadow, $cdr-prominence-elevated;
+
+    &:hover {
+      box-shadow: $cdr-cta-light-box-shadow-hover, $cdr-prominence-elevated;
+    }
+    
+    &:active {
+      box-shadow: $cdr-cta-light-box-shadow-active, $cdr-prominence-elevated;
+    }
+    
+    &:focus {
+      box-shadow: $cdr-cta-light-box-shadow-focus, $cdr-prominence-elevated;
+    }
   }
 }
 
