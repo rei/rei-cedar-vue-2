@@ -22,9 +22,7 @@ h3.cdr-text,
 h4.cdr-text,
 h5.cdr-text,
 h6.cdr-text {
-  @include cdr-text-base-text-mixin;
-
-  margin: $cdr-text-base-margin;
+  @include cdr-text-base-mixin;
 
   /* Paragraphs
     ========================================================================== */
@@ -33,13 +31,7 @@ h6.cdr-text {
     ========== */
 
   &--body {
-    @include cdr-text-body-text-mixin;
-
-    max-width: $cdr-text-body-max-width;
-
-    & + & {
-      margin-top: $cdr-text-body-stack;
-    }
+    @include cdr-text-body-mixin;
 
     @include sm-mq {
       @include cdr-text-body-text-bp-sm-mixin;
@@ -54,7 +46,7 @@ h6.cdr-text {
     ========== */
 
   &--citation {
-    @include cdr-text-citation-text-mixin;
+    @include cdr-text-citation-mixin;
   }
 
   /* Headings
@@ -64,19 +56,14 @@ h6.cdr-text {
     ========== */
 
   &--subheading {
-    @include cdr-text-subheading-text-mixin;
+    @include cdr-text-subheading-mixin;
   }
 
   /* Display
     ========== */
 
   &--display {
-    @include cdr-text-display-text-mixin;
-
-    /* non responsive */
-    &-static {
-      @include cdr-text-display-text-static-mixin;
-    }
+    @include cdr-text-display-mixin;
 
     /* @ small */
     @include sm-mq {
@@ -87,22 +74,27 @@ h6.cdr-text {
     @include lg-mq {
       @include cdr-text-display-text-bp-lg-mixin;
     }
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-display-static-mixin;
+    }
   }
 
   /* Heading-small
     ========== */
 
   &--heading-small {
-    @include cdr-text-heading-text-small-mixin;
-
-    /* non responsive */
-    &-static {
-      @include cdr-text-heading-text-small-static-mixin;
-    }
+    @include cdr-text-heading-small-mixin;
 
     /* @ large */
     @include lg-mq {
       @include cdr-text-heading-text-small-bp-lg-mixin;
+    }
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-heading-small-static-mixin;
     }
   }
 
@@ -110,16 +102,16 @@ h6.cdr-text {
     ========== */
 
   &--heading-medium {
-    @include cdr-text-heading-text-medium-mixin;
-
-    /* non responsive */
-    &-static {
-      @include cdr-text-heading-text-medium-static-mixin;
-    }
+    @include cdr-text-heading-medium-mixin;
 
     /* @ large */
     @include lg-mq {
       @include cdr-text-heading-text-medium-bp-lg-mixin;
+    }
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-heading-medium-static-mixin;
     }
   }
 
@@ -127,12 +119,7 @@ h6.cdr-text {
     ========== */
 
   &--heading-large {
-    @include cdr-text-heading-text-large-mixin;
-
-    /* non responsive */
-    &-static {
-      @include cdr-text-heading-text-large-static-mixin;
-    }
+    @include cdr-text-heading-large-mixin;
 
     /* @ small */
     @include sm-mq {
@@ -142,6 +129,11 @@ h6.cdr-text {
     /* @ large */
     @include lg-mq {
       @include cdr-text-heading-text-large-bp-lg-mixin;
+    }
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-heading-large-static-mixin;
     }
   }
 }

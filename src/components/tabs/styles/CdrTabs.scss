@@ -28,7 +28,7 @@
 
   &__header-container {
     overflow-x: auto;
-    border-bottom: 1px solid $grey-matter;
+    border-bottom: 1px solid $cdr-color-border-secondary-lightmode;
     -webkit-overflow-scrolling: touch;
     flex: 0 1 auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -47,11 +47,12 @@
       bottom: 0;
       left: 0;
       width: 36px;
+      // TODO: is background token correct here?
       background:
         linear-gradient(
           to left,
           rgba(255, 255, 255, 0),
-          $clean-slate
+          $cdr-color-background-lightest
         );
       pointer-events: none;
       opacity: 0;
@@ -66,11 +67,12 @@
       bottom: 0;
       right: 0;
       width: 36px;
+      // TODO: is background token correct here?
       background:
         linear-gradient(
           to right,
           rgba(255, 255, 255, 0),
-          $clean-slate
+          $cdr-color-background-lightest
         );
       pointer-events: none;
       opacity: 0;
@@ -100,17 +102,18 @@
     padding: 0;
 
     &[aria-selected] > .cdr-tabs__header-item-label {
-      color: $easily-excited;
+      color: $cdr-color-text-link-lightmode;
     }
   }
 
   &__header-item-label {
+    // TODO: typography token
     @include redwood-display-30;
 
     text-decoration: none;
     margin: 0 $cdr-space-one-x 0 0;
     padding: $cdr-space-inset-half-x-stretch;
-    color: $heart-of-darkness;
+    color: $cdr-color-text-primary-lightmode;
     white-space: nowrap;
     outline-offset: -3px;
 
@@ -118,7 +121,7 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      color: $easily-excited;
+      color: $cdr-color-text-link-lightmode;
     }
   }
 
@@ -131,7 +134,8 @@
     border: none;
 
     /* border: none; */
-    background: $easily-excited;
+    // TODO: this maps to cdr-color-text-link-lightmode but is being used for `background`. also not a link
+    background-color: $easily-excited;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
   }
 
@@ -156,6 +160,7 @@
     ========== */
   &--compact {
     .cdr-tabs__header-item-label {
+      // TODO: typography token
       @include redwood-display-20;
 
       margin: 0 $cdr-space-half-x 0 0;
