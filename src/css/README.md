@@ -1,43 +1,88 @@
 # CSS Utility classes:
 
-## A11y
-
-| Class                  | notes                                                                                                   |
-|------------------------|---------------------------------------------------------------------------------------------------------|
-| .cdr-sr-only           | Hide an element to all devices except screen readers                                                    |
-| .cdr-sr-only-focusable | Combine with `.cdr-sr-only` to show the element again when it's focused (e.g. by a keyboard-only user). |
-
 ## Alignment
 
 ### Text:
 
-| class                   | notes             |
-|-------------------------|-------------------|
-| .cdr-align-text-left    | Left align text   |
-| .cdr-align-text-center  | Center align text |
-| .cdr-align-text-justify | Justify align text|
-| .cdr-align-text-right   | Right align text  |
+| class                      | notes             |
+|----------------------------|-------------------|
+| .cdr-align-text-left       | Left align text   |
+| .cdr-align-text-left@xs    | Left align text   |
+| .cdr-align-text-left@sm    | Left align text   |
+| .cdr-align-text-left@md    | Left align text   |
+| .cdr-align-text-left@lg    | Left align text   |
+| .cdr-align-text-center     | Center align text |
+| .cdr-align-text-center@xs  | Center align text |
+| .cdr-align-text-center@sm  | Center align text |
+| .cdr-align-text-center@md  | Center align text |
+| .cdr-align-text-center@lg  | Center align text |
+| .cdr-align-text-justify    | Justify align text|
+| .cdr-align-text-justify@xs | Justify align text|
+| .cdr-align-text-justify@sm | Justify align text|
+| .cdr-align-text-justify@md | Justify align text|
+| .cdr-align-text-justify@lg | Justify align text|
+| .cdr-align-text-right      | Right align text  |
+| .cdr-align-text-right@xs   | Right align text  |
+| .cdr-align-text-right@sm   | Right align text  |
+| .cdr-align-text-right@md   | Right align text  |
+| .cdr-align-text-right@lg   | Right align text  |
 
 ### Content:
 
 | class                   | notes             |
 |-------------------|------------------------------------------------------------------|
 | .cdr-align-center-block | Sets element to block display and centers using `margin: 0 auto` |
+| .cdr-align-center-block@xs |   for the extra small breakpoint only             |
+| .cdr-align-center-block@sm |   for the small breakpoint only             |
+| .cdr-align-center-block@md |   for the medium breakpoint only             |
+| .cdr-align-center-block@lg |   for the large breakpoint only            |
 
 ## Visibility
 
 ### Hide:
 
-| Class             | Visible @ xs | Visible @ sm | Visible @ md | Visible @ lg |
-|-------------------|:------------:|:------------:|:------------:|:------------:|
-| .cdr-hide         |              |              |              |              |
-| .cdr-hide@xs-only |              |       x      |       x      |       x      |
-| .cdr-hide@sm-only |       x      |              |       x      |       x      |
-| .cdr-hide@sm      |       x      |              |              |              |
-| .cdr-hide@md-only |       x      |       x      |              |       x      |
-| .cdr-hide@md      |       x      |       x      |              |              |
-| .cdr-hide@lg-only |       x      |       x      |       x      |              |
-| .cdr-hide@lg      |       x      |       x      |       x      |              |
+| Class                        | notes |
+|------------------------------|:-----:|
+| .cdr-display-none            |       |
+| .cdr-display-none@xs         |       |
+| .cdr-display-none@sm         |       |
+| .cdr-display-none@md         |       |
+| .cdr-display-none @lg        |       |
+| .cdr-display-hidden          |       |
+| .cdr-display-hidden@xs       |       |
+| .cdr-display-hidden@sm       |       |
+| .cdr-display-hidden@md       |       |
+| .cdr-display-hidden@lg       |       |
+| .cdr-display-block           |       |
+| .cdr-display-block@xs        |       |
+| .cdr-display-block@sm        |       |
+| .cdr-display-block@md        |       |
+| .cdr-display-block@lg        |       |
+| .cdr-display-inline-block    |       |
+| .cdr-display-inline-block@xs |       |
+| .cdr-display-inline-block@sm |       |
+| .cdr-display-inline-block@md |       |
+| .cdr-display-inline-block@lg |       |
+| .cdr-display-flex            |       |
+| .cdr-display-flex@xs         |       |
+| .cdr-display-flex@sm         |       |
+| .cdr-display-flex@md         |       |
+| .cdr-display-flex@lg         |       |
+| .cdr-display-inline-flex     |       |
+| .cdr-display-inline-flex@xs  |       |
+| .cdr-display-inline-flex@sm  |       |
+| .cdr-display-inline-flex@md  |       |
+| .cdr-display-inline-flex@lg  |       |
+| .cdr-display-sr-only         |       |
+| .cdr-display-sr-only@xs      |       |
+| .cdr-display-sr-only@sm      |       |
+| .cdr-display-sr-only@md      |       |
+| .cdr-display-sr-only@lg      |       |
+| .cdr-display-sr-focusable    |       |
+| .cdr-display-sr-focusable@xs |       |
+| .cdr-display-sr-focusable@sm |       |
+| .cdr-display-sr-focusable@md |       |
+| .cdr-display-sr-focusable@lg |       |
 
 ### Show:
 
