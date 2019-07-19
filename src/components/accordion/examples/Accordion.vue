@@ -13,16 +13,16 @@
       >
         With Events
       </cdr-text>
-      <cdr-accordion-item
+      <cdr-accordion
         id="with-events"
         :show="show"
-        @accordion-item-toggle="update($event)"
+        @accordion-toggle="update($event)"
       >
         <template slot="label">
           With events
         </template>
         Some text, bruh
-      </cdr-accordion-item>
+      </cdr-accordion>
     </div>
     <div class="accordion-group">
       <cdr-text
@@ -31,7 +31,7 @@
       >
         Default
       </cdr-text>
-      <cdr-accordion-item
+      <cdr-accordion
         id="default"
       >
         <template slot="label">
@@ -52,8 +52,8 @@
           Suspendisse ut laoreet nunc, et tempor eros. Etiam vel commodo velit. Proin
           egestas fringilla elit et lacinia. Praesent et vehicula massa. Fusce ac purus neque.
         </cdr-text>
-      </cdr-accordion-item>
-      <cdr-accordion-item
+      </cdr-accordion>
+      <cdr-accordion
         id="default-long-label"
         label="Label with multiple words, so many words in fact that
         this content may wrap to several lines"
@@ -66,7 +66,7 @@
           <li>I want to see what it's like</li>
           <li>when animated!</li>
         </cdr-list>
-      </cdr-accordion-item>
+      </cdr-accordion>
     </div>
     <div class="accordion-group">
       <cdr-text
@@ -75,7 +75,7 @@
       >
         Compact
       </cdr-text>
-      <cdr-accordion-item
+      <cdr-accordion
         id="compact"
         label="Compact"
         data-backstop="accordion-compact"
@@ -104,8 +104,8 @@
             </cdr-link>
           </li>
         </cdr-list>
-      </cdr-accordion-item>
-      <cdr-accordion-item
+      </cdr-accordion>
+      <cdr-accordion
         id="compact-2"
         label="Label with multiple words, so many words in fact that
         this content may wrap to several lines"
@@ -116,7 +116,7 @@
           <li>Item two</li>
           <li>Hopefully right font size</li>
         </cdr-list>
-      </cdr-accordion-item>
+      </cdr-accordion>
     </div>
     <div class="accordion-group">
       <cdr-text
@@ -125,7 +125,7 @@
       >
         Border-Aligned
       </cdr-text>
-      <cdr-accordion-item
+      <cdr-accordion
         id="border-aligned"
         label="Border-aligned"
         :border-aligned="true"
@@ -133,8 +133,8 @@
         <cdr-text>
           It helps to see at least two accordions together.
         </cdr-text>
-      </cdr-accordion-item>
-      <cdr-accordion-item
+      </cdr-accordion>
+      <cdr-accordion
         id="border-aligned-2"
         label="Label with multiple words, so many words in fact that
         this content may wrap to several lines"
@@ -144,7 +144,7 @@
         <cdr-text>
           Some text inside, should align to the label above.
         </cdr-text>
-      </cdr-accordion-item>
+      </cdr-accordion>
     </div>
   </div>
 </template>

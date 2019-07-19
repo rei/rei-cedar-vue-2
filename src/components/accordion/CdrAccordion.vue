@@ -1,20 +1,20 @@
 <template>
   <div
     :class="[modifierClass, styleClass, focusedClass]"
-    :id="`${id}-accordion-item`"
+    :id="`${id}-accordion`"
     :ref="`accordion-container`"
   >
     <button
-      :class="$style['cdr-accordion-item__button']"
+      :class="$style['cdr-accordion__button']"
       :id="id"
-      @click="$emit('accordion-item-toggle', $event);"
+      @click="$emit('accordion-toggle', $event);"
       @focus="focused = true"
       @blur="focused = false"
       :aria-expanded="`${show}`"
       :aria-controls="`${id}-collapsible`"
     >
       <span
-        :class="$style['cdr-accordion-item__label']"
+        :class="$style['cdr-accordion__label']"
         :id="`${id}-label`"
       >
         <slot name="label">
@@ -23,7 +23,7 @@
       </span>
       <icon-caret-down
         :class="[
-          $style['cdr-accordion-item__icon'],
+          $style['cdr-accordion__icon'],
           isOpenClass,
         ]"
         :size="compact ? 'small' : null"
@@ -31,14 +31,14 @@
     </button>
     <div
       :class="[
-        $style['cdr-accordion-item__content-container'],
+        $style['cdr-accordion__content-container'],
         isOpenClass,
       ]"
       :style="{ 'max-height': maxHeight }"
     >
       <div
         :class="[
-          $style['cdr-accordion-item__content'],
+          $style['cdr-accordion__content'],
           isOpenClass
         ]"
         :aria-hidden="`${!show}`"
@@ -57,7 +57,7 @@ import { IconCaretDown } from 'componentsdir/icon/build/main';
 import modifier from 'mixinsdir/modifier';
 
 export default {
-  name: 'CdrAccordionItem',
+  name: 'CdrAccordion',
   components: {
     IconCaretDown,
   },
@@ -101,7 +101,7 @@ export default {
   },
   computed: {
     baseClass() {
-      return 'cdr-accordion-item';
+      return 'cdr-accordion';
     },
     styleClass() {
       const styles = [];
@@ -145,5 +145,5 @@ export default {
 </script>
 
 <style lang="scss" module>
-  @import './styles/CdrAccordionItem.scss';
+  @import './styles/CdrAccordion.scss';
 </style>
