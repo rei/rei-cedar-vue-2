@@ -6,7 +6,6 @@ import alias from 'rollup-plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import copyPlugin from 'rollup-plugin-copy';
-import babel from 'rollup-plugin-babel';
 import packageJson from '../package.json';
 
 
@@ -85,14 +84,12 @@ const plugins = [
     extensions: ['.scss', '.css'],
     sourceMap: env === 'dev' ? 'inline' : false, 
   }),
-  commonjs(),
+  commonjs({
+    include: /node_modules/
+  }),
   copyPlugin({
     targets: copyTargets,
     outputFolder: copyOutput
-  }),
-  babel({
-    exclude: 'node_modules/**',
-    runtimeHelpers: true,
   }),
 ];
 
