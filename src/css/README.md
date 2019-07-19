@@ -39,8 +39,6 @@
 
 ## Visibility
 
-### Hide:
-
 | Class                        | notes |
 |------------------------------|:-----:|
 | .cdr-display-none            |       |
@@ -84,37 +82,16 @@
 | .cdr-display-sr-focusable@md |       |
 | .cdr-display-sr-focusable@lg |       |
 
-### Show:
-
-| Class                  |             note             |
-|------------------------|------------------------------|
-| .cdr-show              | Sets display to block        |
-| .cdr-show-inline       | Sets display to inline       |
-| .cdr-show-inline-block | Sets display to inline-block |
-
-When combined with `.cdr-hide`
-
-| Class                 | Visible @ xs | Visible @ sm | Visible @ md | Visible @ lg |
-|-----------------------|:------------:|:------------:|:------------:|:------------:|
-| .cdr-show(-*)         |       x      |       x      |       x      |       x      |
-| .cdr-show(-*)@xs-only |       x      |              |              |              |
-| .cdr-show(-*)@sm-only |              |       x      |              |              |
-| .cdr-show(-*)@sm      |              |       x      |       x      |       x      |
-| .cdr-show(-*)@md-only |              |              |       x      |              |
-| .cdr-show(-*)@md      |              |              |       x      |       x      |
-| .cdr-show(-*)@lg-only |              |              |              |       x      |
-| .cdr-show(-*)@lg      |              |              |              |       x      |
-
 ### Print:
 
 Within print media query.
 
-| Class                        |             note             |
-|------------------------------|------------------------------|
-| .cdr-hide@print              | Sets display to none         |
-| .cdr-show@print              | Sets display to block        |
-| .cdr-show-inline@print       | Sets display to inline       |
-| .cdr-show-inline-block@print | Sets display to inline-block |
+| Class                          |             note              |
+|--------------------------------|---------------------------------|
+| .cdr-display-none@print        | Sets display to none         |
+| .cdr-display-block@print       | Sets display to block        |
+| .cdr-disply-inline@print       | Sets display to inline       |
+| .cdr-display-inline-block@print| Sets display to inline-block |
 
 ## Spacing
 
@@ -122,7 +99,7 @@ Spacing classes reflect spacing tokens.
 
 ### Insets:
 
-Used to add padding to all of our elements, it is important to be sure that elements use these variables rather than the generic space values for their internal spacing.
+Insets are used to add padding to all of our elements, it is important to be sure that elements use these variables rather than the generic space values for their internal spacing.
 
 #### Classes
 

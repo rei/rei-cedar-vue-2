@@ -98,5 +98,6 @@ Print
     &-none\@print { @include cdr-display-none-mixin; }
     &-block\@print { @include cdr-display-block-mixin; }
     &-inline\@print { @include cdr-display-inline-mixin; }
+    &-inline-block\@print { @include cdr-display-inline-block-mixin; }
   }
 }
