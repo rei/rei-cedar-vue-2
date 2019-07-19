@@ -72,15 +72,7 @@
 | .cdr-display-inline-flex@md  |       |
 | .cdr-display-inline-flex@lg  |       |
 | .cdr-display-sr-only         |       |
-| .cdr-display-sr-only@xs      |       |
-| .cdr-display-sr-only@sm      |       |
-| .cdr-display-sr-only@md      |       |
-| .cdr-display-sr-only@lg      |       |
 | .cdr-display-sr-focusable    |       |
-| .cdr-display-sr-focusable@xs |       |
-| .cdr-display-sr-focusable@sm |       |
-| .cdr-display-sr-focusable@md |       |
-| .cdr-display-sr-focusable@lg |       |
 
 ### Print:
 

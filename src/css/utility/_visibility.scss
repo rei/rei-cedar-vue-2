@@ -43,8 +43,6 @@ Screen Breakpoints
     &-inline-block\@xs { @include cdr-display-inline-block-mixin; }
     &-flex\@xs { @include cdr-display-flex-mixin; }
     &-inline-flex\@xs { @include cdr-display-inline-flex-mixin; }
-    &-sr-only\@xs { @include cdr-display-sr-only-mixin }
-    &-sr-only-focusable\@xs { @include cdr-display-sr-focusable-mixin; }
   }
 }
 
@@ -57,8 +55,6 @@ Screen Breakpoints
     &-inline-block\@sm { @include cdr-display-inline-block-mixin; }
     &-flex\@sm { @include cdr-display-flex-mixin; }
     &-inline-flex\@sm { @include cdr-display-inline-flex-mixin; }
-    &-sr-only\@sm { @include cdr-display-sr-only-mixin }
-    &-sr-only-focusable\@sm { @include cdr-display-sr-focusable-mixin; }
   }
 }
 
@@ -71,8 +67,6 @@ Screen Breakpoints
     &-inline-block\@md { @include cdr-display-inline-block-mixin; }
     &-flex\@md { @include cdr-display-flex-mixin; }
     &-inline-flex\@md { @include cdr-display-inline-flex-mixin; }
-    &-sr-only\@md { @include cdr-display-sr-only-mixin }
-    &-sr-only-focusable\@md { @include cdr-display-sr-focusable-mixin; }
   }
 }
 
@@ -85,8 +79,6 @@ Screen Breakpoints
     &-inline-block\@lg { @include cdr-display-inline-block-mixin; }
     &-flex\@lg { @include cdr-display-flex-mixin; }
     &-inline-flex\@lg { @include cdr-display-inline-flex-mixin; }
-    &-sr-only\@lg { @include cdr-display-sr-only-mixin }
-    &-sr-only-focusable\@lg { @include cdr-display-sr-focusable-mixin; }
   }
 }
 /*..............................................
