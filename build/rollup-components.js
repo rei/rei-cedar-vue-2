@@ -2,7 +2,6 @@ const glob = require('glob');
 
 const ignore = [
   './src/components/**/node_modules/**',
-  './src/components/**/comps/**',
   './src/components/**/examples/**',
   './src/components/Utilities/**',
 ];
