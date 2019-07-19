@@ -11,17 +11,18 @@
 
 ### Text:
 
-| class            | notes             |
-|------------------|-------------------|
-| .cdr-text-left   | Left align text   |
-| .cdr-text-center | Center align text |
-| .cdr-text-right  | Right align text  |
+| class                   | notes             |
+|-------------------------|-------------------|
+| .cdr-align-text-left    | Left align text   |
+| .cdr-align-text-center  | Center align text |
+| .cdr-align-text-justify | Justify align text|
+| .cdr-align-text-right   | Right align text  |
 
 ### Content:
 
-| class             | notes                                                            |
+| class                   | notes             |
 |-------------------|------------------------------------------------------------------|
-| .cdr-center-block | Sets element to block display and centers using `margin: 0 auto` |
+| .cdr-align-center-block | Sets element to block display and centers using `margin: 0 auto` |
 
 ## Visibility
 
