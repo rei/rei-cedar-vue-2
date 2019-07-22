@@ -110,12 +110,12 @@
   &--border-aligned {
     margin: 0 $cdr-space-inset-one-x;
 
-    .cdr-accordion-item__button {
+    .cdr-accordion__button {
       margin-left: -$cdr-space-one-x;
       width: calc(100% + (#{$cdr-space-one-x} * 2));
     }
 
-    .cdr-accordion-item__content {
+    .cdr-accordion__content {
       padding: $cdr-space-half-x 0 $cdr-space-one-x;
     }
   }
@@ -123,18 +123,18 @@
   /* Compact
      ========== */
   &--compact {
-    .cdr-accordion-item__button {
+    .cdr-accordion__button {
       padding: $cdr-space-inset-three-quarter-x;
     }
 
-    .cdr-accordion-item__label {
+    .cdr-accordion__label {
       // TODO: typography token
       @include redwood-display-20;
 
       font-weight: bold;
     }
 
-    .cdr-accordion-item__content {
+    .cdr-accordion__content {
       // TODO: typography token
       @include redwood-body-10;
 
@@ -149,13 +149,13 @@
 
   /* Border-Aligned and Compact
      ========== */
-  &--compact.cdr-accordion-item--border-aligned {
+  &--compact.cdr-accordion--border-aligned {
     .cdr-accordion-item__button {
       margin-left: -$cdr-space-three-quarter-x;
       width: calc(100% + (#{$cdr-space-three-quarter-x} * 2));
     }
 
-    .cdr-accordion-item__content {
+    .cdr-accordion__content {
       padding: $cdr-space-quarter-x 0 $cdr-space-three-quarter-x;
     }
   }

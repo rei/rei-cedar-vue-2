@@ -6,24 +6,7 @@
     >
       Accordion
     </cdr-text>
-    <div class="accordion-group">
-      <cdr-text
-        tag="h3"
-        modifiers="heading-small"
-      >
-        With Events
-      </cdr-text>
-      <cdr-accordion
-        id="with-events"
-        :show="show"
-        @accordion-toggle="update($event)"
-      >
-        <template slot="label">
-          With events
-        </template>
-        Some text, bruh
-      </cdr-accordion>
-    </div>
+
     <div class="accordion-group">
       <cdr-text
         tag="h3"
@@ -33,6 +16,8 @@
       </cdr-text>
       <cdr-accordion
         id="default"
+        :show="accordionDefault"
+        @accordion-toggle="accordionDefault = !accordionDefault"
       >
         <template slot="label">
           A short label
@@ -55,6 +40,8 @@
       </cdr-accordion>
       <cdr-accordion
         id="default-long-label"
+        :show="accordionDefault2"
+        @accordion-toggle="accordionDefault2 = !accordionDefault2"
         label="Label with multiple words, so many words in fact that
         this content may wrap to several lines"
       >
@@ -68,6 +55,7 @@
         </cdr-list>
       </cdr-accordion>
     </div>
+
     <div class="accordion-group">
       <cdr-text
         tag="h3"
@@ -80,6 +68,8 @@
         label="Compact"
         data-backstop="accordion-compact"
         :compact="true"
+        :show="accordionCompact"
+        @accordion-toggle="accordionCompact = !accordionCompact"
       >
         <cdr-list modifier="unordered">
           <li>
@@ -110,6 +100,8 @@
         label="Label with multiple words, so many words in fact that
         this content may wrap to several lines"
         :compact="true"
+        :show="accordionCompact2"
+        @accordion-toggle="accordionCompact2 = !accordionCompact2"
       >
         <cdr-list tag="ol">
           <li>Item one</li>
@@ -118,6 +110,7 @@
         </cdr-list>
       </cdr-accordion>
     </div>
+
     <div class="accordion-group">
       <cdr-text
         tag="h3"
@@ -159,13 +152,19 @@ export default {
     return {
       tabindex: -1,
       show: true,
+      accordionDefault: false,
+      accordionDefault2: false,
+      accordionCompact: false,
+      accordionCompact2: false,
+      grouped: [
+      ],
     };
   },
   methods: {
-    update(value) {
-      console.log('update', value);
-      this.show = !this.show;
-    },
+    // update(value) {
+    //   console.log('update', value);
+    //   this.show = !this.show;
+    // },
   },
 };
 </script>
