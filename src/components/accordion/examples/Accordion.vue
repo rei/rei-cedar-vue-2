@@ -61,6 +61,27 @@
         tag="h3"
         modifier="heading-small"
       >
+        Border-Aligned and data driven
+      </cdr-text>
+      <cdr-accordion
+        v-for="(item, index) in grouped"
+        id="`linked-accordion-${index}`"
+        :border-aligned="true"
+        :show="item.opened"
+        @accordion-toggle="updateGroup(index)"
+      >
+        <template slot="label">
+          {{ item.label }}
+        </template>
+        {{ item.content }}
+      </cdr-accordion>
+    </div>
+
+    <div class="accordion-group">
+      <cdr-text
+        tag="h3"
+        modifier="heading-small"
+      >
         Compact
       </cdr-text>
       <cdr-accordion
@@ -111,7 +132,7 @@
       </cdr-accordion>
     </div>
 
-    <div class="accordion-group">
+    <!-- <div class="accordion-group">
       <cdr-text
         tag="h3"
         modifier="heading-small"
@@ -138,7 +159,7 @@
           Some text inside, should align to the label above.
         </cdr-text>
       </cdr-accordion>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -157,14 +178,37 @@ export default {
       accordionCompact: false,
       accordionCompact2: false,
       grouped: [
+        {
+          label: 'These are border-aligned',
+          content: 'These accordions will only allow one open at a time.',
+          opened: false,
+        },
+        {
+          label: 'And they are also linked',
+          content: 'These accordions will only allow one open at a time.',
+          opened: false,
+        },
+        {
+          label: 'To close others when one is opened',
+          content: 'These accordions will only allow one open at a time.',
+          opened: false,
+        },
       ],
     };
   },
   methods: {
-    // update(value) {
-    //   console.log('update', value);
-    //   this.show = !this.show;
-    // },
+    updateGroup(index) {
+      const { opened } = this.grouped[index];
+      if (opened) {
+        // closing opened accordion
+        this.grouped[index].opened = false;
+      } else {
+        // open closed accordion. close all others.
+        for (let i = 0; i < this.grouped.length; i += 1) {
+          this.grouped[i].opened = index === i;
+        }
+      }
+    },
   },
 };
 </script>
