@@ -1,0 +1,27 @@
+$container-x-padding-xs: $cdr-space-one-x;
+$container-x-padding-md: $cdr-space-two-x;
+
+@mixin cdr-container-fluid-mixin() {
+  padding-left: $container-x-padding-xs;
+  padding-right: $container-x-padding-xs;
+  width: 100%;
+}
+
+@mixin cdr-container-fluid-at-medium-mixin() {
+  padding-left: $container-x-padding-md;
+  padding-right: $container-x-padding-md;
+}
+
+@mixin cdr-container-mixin() {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-x-padding-xs;
+  padding-right: $container-x-padding-xs;
+  width: 100%;
+  max-width: 1232px;
+}
+
+@mixin cdr-container-at-medium-mixin() {
+  padding-left: $container-x-padding-md;
+  padding-right: $container-x-padding-md;
+}
