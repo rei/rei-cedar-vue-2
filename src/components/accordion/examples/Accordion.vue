@@ -65,9 +65,10 @@
       </cdr-text>
       <cdr-accordion
         v-for="(item, index) in grouped"
-        id="`linked-accordion-${index}`"
+        :id="item.id"
         :border-aligned="true"
         :show="item.opened"
+        :key="item.id"
         @accordion-toggle="updateGroup(index)"
       >
         <template slot="label">
@@ -182,16 +183,19 @@ export default {
           label: 'These are border-aligned',
           content: 'These accordions will only allow one open at a time.',
           opened: false,
+          id: 'linked1',
         },
         {
           label: 'And they are also linked',
           content: 'These accordions will only allow one open at a time.',
           opened: false,
+          id: 'linked2',
         },
         {
           label: 'To close others when one is opened',
           content: 'These accordions will only allow one open at a time.',
           opened: false,
+          id: 'linked3',
         },
       ],
     };
