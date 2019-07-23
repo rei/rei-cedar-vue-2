@@ -45,14 +45,19 @@ describe('CdrAccordion', () => {
           label: 'label',
         },
         slots: {
-          default: 'this is some default slot text'
+          default: 'this is some default slot text. it should take up some space'
         }
       });
 
+      expect(wrapper.vm.maxHeight).toBe(0);
+
+      // this is throwing a console error, but shouldn't be. Covered in this thread
+      // https://github.com/vuejs/vue-test-utils/issues/631
       wrapper.setData({ show: true });
 
-      expect(wrapper.vm.maxHeight).not.toBe('none');
-      expect(wrapper.vm.maxHeight).not.toBe(0);
+      setTimeout(() => {
+        expect(wrapper.vm.maxHeight).toBe('none');
+      }, 500);
     });
   });
 

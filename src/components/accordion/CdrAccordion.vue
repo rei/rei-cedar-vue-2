@@ -45,7 +45,7 @@
         :id="`${id}-collapsible`"
         ref="accordion-content"
       >
-        <!-- @slot innerHTML on the inside of the accordion-item component -->
+        <!-- @slot default slot for accordion content -->
         <slot />
       </div>
     </div>
@@ -64,30 +64,36 @@ export default {
   mixins: [modifier],
   props: {
     /**
-     * The unique id of an accordion-item.
+     * The unique id of an accordion.
      */
     id: {
       type: String,
       required: true,
     },
     /**
-     * The readable text on the accordion-item button.
+     * The readable text on the accordion button.
      */
     label: {
       type: String,
       required: false,
     },
     /**
-     * Sets the default isOpen state of the accordion-item, if show-all is false from cdr-accordion.
+     * Toggle this value to open/close the accordion.
      */
     show: {
       type: Boolean,
       default: false,
     },
+    /**
+     * Sets a compact style.
+     */
     compact: {
       type: Boolean,
       default: false,
     },
+    /**
+     * Sets a border-aligned style.
+     */
     borderAligned: {
       type: Boolean,
       default: false,
@@ -123,7 +129,6 @@ export default {
       return this.show ? 'open' : 'closed';
     },
     delay() {
-      // text fades out before the accordion closes
       return this.show ? 300 : 50;
     },
   },

@@ -132,35 +132,6 @@
         </cdr-list>
       </cdr-accordion>
     </div>
-
-    <!-- <div class="accordion-group">
-      <cdr-text
-        tag="h3"
-        modifier="heading-small"
-      >
-        Border-Aligned
-      </cdr-text>
-      <cdr-accordion
-        id="border-aligned"
-        label="Border-aligned"
-        :border-aligned="true"
-      >
-        <cdr-text>
-          It helps to see at least two accordions together.
-        </cdr-text>
-      </cdr-accordion>
-      <cdr-accordion
-        id="border-aligned-2"
-        label="Label with multiple words, so many words in fact that
-        this content may wrap to several lines"
-        :border-aligned="true"
-        @accordion-item-toggle="log('border-aligned-2', $event)"
-      >
-        <cdr-text>
-          Some text inside, should align to the label above.
-        </cdr-text>
-      </cdr-accordion>
-    </div> -->
   </div>
 </template>
 
