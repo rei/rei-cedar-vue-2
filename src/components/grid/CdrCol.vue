@@ -70,7 +70,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
-import CdrRow from 'componentsdir/grid/CdrRow';
+import { CdrRow } from '@rei/cedar';
 
 export default {
   name: 'CdrCol',

@@ -86,8 +86,7 @@
 </template>
 
 <script>
-import { IconCaretLeft, IconCaretRight } from 'componentsdir/icon/build/main';
-import CdrSelect from 'componentsdir/select/CdrSelect';
+import { CdrSelect, IconCaretLeft, IconCaretRight } from '@rei/cedar';
 
 export default {
   name: 'CdrPagination',

@@ -16,7 +16,7 @@ import modifier from 'mixinsdir/modifier';
  */
 export default {
   name: 'CdrCard',
-  mixins: [modifier],
+  mixins: [modifier], // TODO: does cdr-card even have modifiers available?
   computed: {
     baseClass() {
       return 'cdr-card';

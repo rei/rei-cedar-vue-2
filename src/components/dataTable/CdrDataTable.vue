@@ -89,6 +89,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
+// TODO: fix lodash
 import debounce from 'lodash/debounce';
 
 /**

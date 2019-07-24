@@ -58,6 +58,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import debounce from 'lodash/debounce';
+// TODO fix lodash
 import delay from 'lodash/delay';
 
 export default {

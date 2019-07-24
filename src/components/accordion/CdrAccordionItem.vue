@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { IconCaretDown } from 'componentsdir/icon/build/main';
+import { IconCaretDown } from '@rei/cedar';
 import modifier from 'mixinsdir/modifier';
 
 export default {

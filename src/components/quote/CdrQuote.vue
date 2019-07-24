@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import CdrText from 'componentsdir/text/CdrText';
+import { CdrText } from '@rei/cedar';
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 

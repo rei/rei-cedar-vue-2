@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue/dist/vue.esm';
 import VueRouter from 'vue-router';
-import { CdrIconSprite } from 'componentsdir/icon/build/main';
+import { CdrIconSprite } from '@rei/cedar';
 import routes from './router';
 import './css/main.scss';
 

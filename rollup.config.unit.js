@@ -5,6 +5,14 @@ plugins.push(
   babel({
     exclude: 'node_modules/**',
     runtimeHelpers: true,
+    plugins: [
+      ['transform-imports', {
+        '@rei/cedar': {
+          transform: (importName, matches) => `${__dirname}/dist/${importName.toLowerCase()}/${importName}.esm.js`,
+          preventFullImport: true,
+        }
+      }]
+    ]
   }),
 );
 

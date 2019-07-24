@@ -1,31 +1,3 @@
-// babelrc cooy
-// {
-//   "presets": [
-//     [
-//       "env",
-//       {
-//         "modules": false
-//       }
-//     ],
-//     "stage-2"
-//   ],
-//   "plugins": [
-//     "transform-runtime"
-//   ],
-//   "comments": false,
-//   "env": {
-//     "test": {
-//       "presets": [
-//         "env",
-//         "stage-2"
-//       ],
-//       "plugins": [
-//         "istanbul"
-//       ]
-//     }
-//   }
-// }
-
 /* eslint-disable */
 
 module.exports = function (api) {
@@ -36,11 +8,18 @@ module.exports = function (api) {
       "@babel/preset-env",
       {
         corejs: "3",
-        useBuiltIns: "usage"
+        useBuiltIns: "usage",
       }
     ]
   ];
-  const plugins = ['@babel/plugin-transform-runtime'];
+  const plugins = ['@babel/plugin-transform-runtime',
+    ['transform-imports', {
+        '@rei/cedar': {
+          transform: (importName, matches) => `@rei/cedar/dist/${importName.toLowerCase()}/${importName}.esm.js`,
+          preventFullImport: true,
+        }
+      }]
+  ];
 
   return {
     presets,

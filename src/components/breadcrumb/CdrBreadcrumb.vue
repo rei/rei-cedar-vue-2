@@ -73,6 +73,7 @@
 
 import modifier from 'mixinsdir/modifier';
 import breakpoints from 'mixinsdir/breakpoints';
+// TODO fix lodash
 import debounce from 'lodash/debounce';
 
 export default {

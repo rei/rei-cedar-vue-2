@@ -26,6 +26,7 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
+// TODO: fix lodash imports (es version?)
 import isEqual from 'lodash/isEqual';
 
 /**

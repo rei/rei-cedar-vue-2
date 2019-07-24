@@ -38,6 +38,7 @@
 </template>
 
 <script>
+// TODO: fix lodash imports
 import toArray from 'lodash/toArray';
 
 /**
