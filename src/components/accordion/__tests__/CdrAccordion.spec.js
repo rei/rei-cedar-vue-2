@@ -15,7 +15,7 @@ describe('CdrAccordion', () => {
       propsData: {
         id: 'test',
         label: 'a label',
-        show: true
+        opened: true
       },
     });
 
@@ -38,7 +38,7 @@ describe('CdrAccordion', () => {
       expect(wrapper.emitted('accordion-toggle'));
     });
 
-    it('toggles when show prop updates', () => {
+    it('toggles when opened prop updates', () => {
       const wrapper = shallowMount(CdrAccordion, {
         propsData: {
           id: 'test',
@@ -53,7 +53,7 @@ describe('CdrAccordion', () => {
 
       // this is throwing a console error, but shouldn't be. Covered in this thread
       // https://github.com/vuejs/vue-test-utils/issues/631
-      wrapper.setData({ show: true });
+      wrapper.setData({ opened: true });
 
       setTimeout(() => {
         expect(wrapper.vm.maxHeight).toBe('none');

@@ -10,7 +10,7 @@
       @click="$emit('accordion-toggle', $event);"
       @focus="focused = true"
       @blur="focused = false"
-      :aria-expanded="`${show}`"
+      :aria-expanded="`${opened}`"
       :aria-controls="`${id}-collapsible`"
     >
       <span
@@ -41,7 +41,7 @@
           $style['cdr-accordion__content'],
           isOpenClass
         ]"
-        :aria-hidden="`${!show}`"
+        :aria-hidden="`${!opened}`"
         :id="`${id}-collapsible`"
         ref="accordion-content"
       >
@@ -80,7 +80,7 @@ export default {
     /**
      * Toggle this value to open/close the accordion.
      */
-    show: {
+    opened: {
       type: Boolean,
       default: false,
     },
@@ -126,23 +126,23 @@ export default {
       return this.focused ? this.modifyClassName(this.baseClass, 'focused') : null;
     },
     isOpenClass() {
-      return this.show ? 'open' : 'closed';
+      return this.opened ? 'open' : 'closed';
     },
     delay() {
-      return this.show ? 300 : 50;
+      return this.opened ? 300 : 50;
     },
   },
   watch: {
-    show() {
+    opened() {
       this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
 
       setTimeout(() => {
-        this.maxHeight = this.show ? 'none' : 0;
+        this.maxHeight = this.opened ? 'none' : 0;
       }, this.delay);
     },
   },
   mounted() {
-    if (this.show) {
+    if (this.opened) {
       this.maxHeight = 'none';
     }
   },

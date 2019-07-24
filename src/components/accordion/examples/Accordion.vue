@@ -16,7 +16,7 @@
       </cdr-text>
       <cdr-accordion
         id="default"
-        :show="accordionDefault"
+        :opened="accordionDefault"
         @accordion-toggle="accordionDefault = !accordionDefault"
       >
         <template slot="label">
@@ -40,7 +40,7 @@
       </cdr-accordion>
       <cdr-accordion
         id="default-long-label"
-        :show="accordionDefault2"
+        :opened="accordionDefault2"
         @accordion-toggle="accordionDefault2 = !accordionDefault2"
         label="Label with multiple words, so many words in fact that
         this content may wrap to several lines"
@@ -67,7 +67,7 @@
         v-for="(item, index) in grouped"
         :id="item.id"
         :border-aligned="true"
-        :show="item.opened"
+        :opened="item.opened"
         :key="item.id"
         @accordion-toggle="updateGroup(index)"
       >
@@ -90,7 +90,7 @@
         label="Compact"
         data-backstop="accordion-compact"
         :compact="true"
-        :show="accordionCompact"
+        :opened="accordionCompact"
         @accordion-toggle="accordionCompact = !accordionCompact"
       >
         <cdr-list modifier="unordered">
@@ -122,7 +122,7 @@
         label="Label with multiple words, so many words in fact that
         this content may wrap to several lines"
         :compact="true"
-        :show="accordionCompact2"
+        :opened="accordionCompact2"
         @accordion-toggle="accordionCompact2 = !accordionCompact2"
       >
         <cdr-list tag="ol">
@@ -144,7 +144,7 @@ export default {
   data() {
     return {
       tabindex: -1,
-      show: true,
+      opened: true,
       accordionDefault: false,
       accordionDefault2: false,
       accordionCompact: false,
