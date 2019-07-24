@@ -90,7 +90,7 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 // TODO: fix lodash
-import debounce from 'lodash/debounce';
+import debounce from 'lodash-es/debounce';
 
 /**
  * Cedar 2 compfor for data table

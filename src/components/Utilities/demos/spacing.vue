@@ -42,8 +42,8 @@
 <script>
 import { CdrText } from 'componentsdir/_index';
 import tokens from '@rei/cdr-tokens';
-import pickBy from 'lodash/pickBy';
-import kebabCase from 'lodash/kebabCase';
+import pickBy from 'lodash-es/pickBy';
+import kebabCase from 'lodash-es/kebabCase';
 
 export default {
   name: 'UtilitiesSpace',

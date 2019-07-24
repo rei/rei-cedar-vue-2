@@ -57,9 +57,9 @@
 
 <script>
 import modifier from 'mixinsdir/modifier';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash-es/debounce';
 // TODO fix lodash
-import delay from 'lodash/delay';
+import delay from 'lodash-es/delay';
 
 export default {
   name: 'CdrTabs',

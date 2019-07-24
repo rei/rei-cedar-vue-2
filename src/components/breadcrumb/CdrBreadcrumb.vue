@@ -74,7 +74,7 @@
 import modifier from 'mixinsdir/modifier';
 import breakpoints from 'mixinsdir/breakpoints';
 // TODO fix lodash
-import debounce from 'lodash/debounce';
+import debounce from 'lodash-es/debounce';
 
 export default {
   name: 'CdrBreadcrumb',

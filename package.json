@@ -98,7 +98,7 @@
     "jsdom": "^13.2.0",
     "jsdom-global": "^3.0.2",
     "klaw-sync": "^6.0.0",
-    "lodash": "^4.17.11",
+    "lodash-es": "^4.17.15",
     "mocha": "^5.1.1",
     "nightwatch": "^1.1.8",
     "nightwatch-axe": "^0.1.5",
@@ -153,6 +153,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "dependencies": {}
+  }
 }

@@ -39,7 +39,7 @@
 
 <script>
 // TODO: fix lodash imports
-import toArray from 'lodash/toArray';
+import toArray from 'lodash-es/toArray';
 
 /**
  * Cedar 2 component for select
