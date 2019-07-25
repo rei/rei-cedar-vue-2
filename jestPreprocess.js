@@ -1,3 +1,5 @@
+console.log('jestpreprocess', __dirname);
+
 const babelOptions = {
   presets: [
     [
@@ -9,12 +11,13 @@ const babelOptions = {
     ]
   ],
   plugins: [
-    ['@babel/plugin-transform-runtime'], ['transform-imports', {
-      '@rei/cedar': {
-        transform: (importName, matches) => `./dist/${importName.toLowerCase()}/${importName}.esm.js`,
-        preventFullImport: true,
-      }
-    }]
+    ['@babel/plugin-transform-runtime'],
+    // ['transform-imports', {
+    //   '@rei/cedar': {
+    //     transform: (importName, matches) => `./dist/${importName.toLowerCase()}/${importName}.esm.js`,
+    //     preventFullImport: true,
+    //   }
+    // }]
   ]
 };
 
