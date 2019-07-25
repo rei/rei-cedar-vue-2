@@ -1,6 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import { CdrTabs } from 'distdir/cedar.esm.js';
-import { CdrTabPanel } from 'distdir/cedar.esm.js';
+import { CdrTabs } from '@rei/cedar';
+import { CdrTabPanel } from '@rei/cedar';
 import Vue from 'vue';
 
 // Tests use nextTick because of the nextTick in mounted hook of tabs

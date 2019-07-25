@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrLink } from 'distdir/cedar.esm.js';
+import { CdrLink } from '@rei/cedar';
 // import CdrThemer from 'componentsdir/themer/CdrThemer';
 
 describe('CdrLink.vue', () => {

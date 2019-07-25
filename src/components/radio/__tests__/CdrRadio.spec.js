@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrRadio } from 'distdir/cedar.esm.js';
+import { CdrRadio } from '@rei/cedar';
 
 describe('CdrRadio.vue', () => {
   it('renders an input', () => {

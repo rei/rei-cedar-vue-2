@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrIcon } from 'distdir/cedar.esm.js';
+import { CdrIcon } from '@rei/cedar';
 
 describe('CdrIcon.vue', () => {
   it('renders a wrapping svg', () => {
