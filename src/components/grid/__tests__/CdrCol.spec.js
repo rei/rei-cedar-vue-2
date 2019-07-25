@@ -79,6 +79,7 @@ describe('CdrCol.vue', () => {
         isRow: true,
       }
     });
-    expect(wrapper.classes()).toContain('cdr-row');
+    // TODO: cdr-row class is getting version appended here 
+    expect(!!wrapper.classes()[0].match(/^cdr-row/)).toBe(true);
   });
 });
