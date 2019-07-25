@@ -17,6 +17,7 @@ install:
 - npm install
 script:
 - npm run lint
+- npm run build
 - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; else npm run test;
   fi
 notifications:
