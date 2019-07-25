@@ -14,7 +14,7 @@ const config = {
     '<rootDir>/src/components/themer',
   ],
   transform: {
-    '^.+\\.(js|jsx)?$': 'babel-jest',
+    '^.+\\.(js|jsx)?$': '<rootDir>/jestPreprocess.js',
     '.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
   },
 };

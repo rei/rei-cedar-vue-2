@@ -1,68 +1,61 @@
 import process from 'process';
 import babel from 'rollup-plugin-babel';
+import alias from 'rollup-plugin-alias';
+import path from 'path';
+
+import _ from 'lodash';
 
 import plugins from './build/rollup-plugins';
 import components from './build/rollup-components';
-
-let cjs = 'cjs';
-let esm = 'esm';
-
-if (process.env.SSR_ENV === 'ssr') {
-  cjs = 'cjs.ssr';
-  esm = 'esm.ssr';
-}
 
 const config = [
   {
     input: 'src/prod.js',
     output: [
       {
-        file: `dist/cedar.${cjs}.js`,
+        file: 'dist/cedar.cjs.js',
         format: 'cjs',
       },
-      // TODO: big ESM build is not actually tree-shakeable, may want to only emit big CJS and per-component ESM files
-      {
-        file: `dist/cedar.${esm}.js`,
-        format: 'esm',
-      },
+      // Big ESM file is not shakeable :~(
+      // {
+      //   file: `dist/cedar.${esm}.js`,
+      //   format: 'esm',
+      // },
     ],
-    plugins: [
-      ...plugins, 
-      babel({
-        exclude: 'node_modules/**',
-        runtimeHelpers: true,
-        externalHelpers: false,
-      })
-    ],
+    plugins: plugins({cjs: true})
   },
 ];
 
-// TODO: update icon build so the per-icon components don't need special handling
-function cap(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 components.forEach((component) => {
+  
+  // example: `./src/components/grid/CdrRow.vue`
   let name = component.split('/')[4].split('.')[0];
   
-  // TODO: fix this mess :~(
-  if (name === 'comps') name = 'Icon' + cap(component.split('/')[5].split('.')[0].replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); }))
-  if (name.match('IconSprite')) name = 'CdrIconSprite'
+  if (name === 'comps') {
+     // example: `./src/components/icon/comps/arrow-down.vue`
+    let iconName = component.split('/')[5].split('.')[0];
+    if (iconName === 'CdrIconSprite') {
+      name = 'CdrIconSprite'
+    } else {
+      name = `Icon${_.capitalize(_.camelCase(iconName))}`;
+    }
+  }
+  // if (name.match('IconSprite')) 
 
-  // TODO: dash-case or smth might work better as a path here?
-  config.push({
+  config.unshift({
     input: component,
     output: [
+      // single component CJS exports look identical to the ESM ones? what is happening
+      // {
+      //   file: `dist/${name.toLowerCase()}/${name}.${cjs}.js`,
+      //   format: 'cjs',
+      // },
       {
-        file: `dist/${name.toLowerCase()}/${name}.${cjs}.js`,
-        format: 'cjs',
-      },
-      {
-        file: `dist/${name.toLowerCase()}/${name}.${esm}.js`,
+        file: `dist/${name.toLowerCase()}/${name}.esm.js`,
         format: 'esm',
       },
     ],
-    plugins,
+    plugins: plugins({esm: true}),
   });
 });
 
