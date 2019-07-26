@@ -23,6 +23,7 @@ module.exports = {
   ],
   // check if imports actually resolve
   settings: {
+    'import/core-modules': [ '@rei/cedar' ],
     'import/resolver': {
       // matches aliases from build/rollup-plugins.js
       alias: {
