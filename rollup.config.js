@@ -27,21 +27,19 @@ const config = [
 ];
 
 components.forEach((component) => {
-  
+
   // example: `./src/components/grid/CdrRow.vue`
   let name = component.split('/')[4].split('.')[0];
-  
+
   if (name === 'comps') {
      // example: `./src/components/icon/comps/arrow-down.vue`
     let iconName = component.split('/')[5].split('.')[0];
     if (iconName === 'CdrIconSprite') {
       name = 'CdrIconSprite'
     } else {
-      name = `Icon${_.capitalize(_.camelCase(iconName))}`;
+      name = `Icon${_.upperFirst(_.camelCase(iconName))}`;
     }
   }
-  // if (name.match('IconSprite')) 
-
   config.unshift({
     input: component,
     output: [
