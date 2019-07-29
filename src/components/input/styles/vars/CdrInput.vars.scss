@@ -52,9 +52,8 @@ $cdr-input-base-box-shadow-disabled: inset 0 0 0 1px $cdr-color-border-disabled-
 $cdr-input-base-box-shadow-disabled-hover: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
 $cdr-input-base-placeholder-color-disabled: $cdr-color-text-form-disabled-lightmode;
 
-// TODO: easily-excited is #3278ae / cdr-color-text-link-lightmode... cdr-color-border-selected-lightmode at 	#2b6692 seems appropriate here?
-$cdr-input-base-box-shadow-active: inset 0 0 0 1px $easily-excited;
-$cdr-input-base-box-shadow-focus: inset 0 0 0 1px $easily-excited;
+$cdr-input-base-box-shadow-active: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
+$cdr-input-base-box-shadow-focus: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
 
 @mixin cdr-input-base-placeholder-text-mixin() {
   // TODO: typography token
@@ -65,7 +64,6 @@ $cdr-input-base-placeholder-color: $cdr-color-text-form-placeholder-lightmode;
 
 @mixin cdr-input-base-mixin() {
   @include cdr-input-base-text-mixin;
-  
 
   color: $cdr-input-base-color;
   box-shadow: $cdr-input-base-box-shadow;
@@ -77,13 +75,13 @@ $cdr-input-base-placeholder-color: $cdr-color-text-form-placeholder-lightmode;
   width: $cdr-input-base-width;
   overflow: $cdr-input-base-overflow;
   margin: $cdr-input-base-margin;
-  
+
   /* Prevent iOS from altering border and box-shadow */
   @supports (-webkit-overflow-scrolling: touch) {
     /* CSS specific to iOS devices */
     -webkit-appearance: none;
   }
-  
+
   &[type=number]::-webkit-inner-spin-button,
   &[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -91,7 +89,7 @@ $cdr-input-base-placeholder-color: $cdr-color-text-form-placeholder-lightmode;
     appearance: none;
     margin: 0;
   }
-  
+
   &[disabled] {
     background-color: $cdr-input-base-background-color-disabled;
     color: $cdr-input-base-color-disabled;
@@ -139,7 +137,7 @@ $cdr-input-height-large: 48px;
 }
 
 /* required label */
-$cdr-input-required-label-color: $taken-for-granite;
+$cdr-input-required-label-color: $cdr-color-text-secondary-lightmode;
 
 @mixin cdr-input-required-label-mixin() {
   color: $cdr-input-required-label-color;
@@ -163,7 +161,7 @@ $cdr-input-info-container-float: right;
   // TODO: typography token
   @include redwood-display-20;
 }
-$cdr-input-helper-text-color: $taken-for-granite;
+$cdr-input-helper-text-color: $cdr-color-text-secondary-lightmode;
 $cdr-input-helper-text-pl: $cdr-space-half-x;
 $cdr-input-helper-text-pt: $cdr-space-quarter-x;
 

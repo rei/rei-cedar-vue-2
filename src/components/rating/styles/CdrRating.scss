@@ -57,12 +57,10 @@
   /* Placeholder
     ========== */
 
-  // TODO: closed-on-monday maps to cdr-color-border-selected-lightmode but is not being used as a border here
   &__placeholder {
-    background-image: svg-load('src/assets/icons/rei/star-stroke.svg', fill=#{$closed-on-monday});
+    background-image: svg-load('src/assets/icons/rei/star-stroke.svg', fill=#{$cdr-color-text-link-lightmode});
     background-repeat: no-repeat;
 
-    // TODO: is the placeholder text token correct here? coul;d also be "cdr-color-text-disabled-darkmode" or "cdr-color-text-secondary-lightmode" depending on how you look at it
     &--no-reviews {
       background-image: svg-load('src/assets/icons/rei/star-stroke.svg', fill=#{$cdr-color-text-form-placeholder-lightmode});
     }
@@ -72,22 +70,22 @@
     ========== */
 
   &__100 {
-    background-image: svg-load('src/assets/icons/rei/star-100.svg', fill=#{$closed-on-monday});
+    background-image: svg-load('src/assets/icons/rei/star-100.svg', fill=#{$cdr-color-text-link-lightmode});
     background-repeat: no-repeat;
   }
 
   &__75 {
-    background-image: svg-load('src/assets/icons/rei/star-75.svg', fill=#{$closed-on-monday});
+    background-image: svg-load('src/assets/icons/rei/star-75.svg', fill=#{$cdr-color-text-link-lightmode});
     background-repeat: no-repeat;
   }
 
   &__50 {
-    background-image: svg-load('src/assets/icons/rei/star-50.svg', fill=#{$closed-on-monday});
+    background-image: svg-load('src/assets/icons/rei/star-50.svg', fill=#{$cdr-color-text-link-lightmode});
     background-repeat: no-repeat;
   }
 
   &__25 {
-    background-image: svg-load('src/assets/icons/rei/star-25.svg', fill=#{$closed-on-monday});
+    background-image: svg-load('src/assets/icons/rei/star-25.svg', fill=#{$cdr-color-text-link-lightmode});
     background-repeat: no-repeat;
   }
 
