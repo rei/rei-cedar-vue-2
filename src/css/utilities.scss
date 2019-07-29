@@ -4,10 +4,14 @@
 /* Settings */
 @import "./settings/index";
 
+/* Generic */
+@import "./generic/container";
+@import "./generic/color";
+@import "./generic/typography";
+
 /* Utilities */
 @import './utility/visibility';
 @import './utility/alignment';
 @import './utility/spacing';
 
-/* Deprecated utils */
 @import './deprecated/index';
