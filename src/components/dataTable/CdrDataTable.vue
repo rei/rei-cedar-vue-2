@@ -28,7 +28,7 @@
         :id="id ? id : null"
       >
         <caption
-          class="cdr-sr-only"
+          class="cdr-display-sr-only"
           v-if="caption"
         >
           {{ caption }}
