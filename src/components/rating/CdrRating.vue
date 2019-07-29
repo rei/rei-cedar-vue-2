@@ -55,7 +55,7 @@
       Reviews
     </span></span>
     <span
-      class="cdr-sr-only"
+      class="cdr-display-sr-only"
     >rated {{ rounded }} out of 5 with {{ count }} reviews</span>
   </component>
 </template>
