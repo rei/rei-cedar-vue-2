@@ -1,8 +1,19 @@
 <template>
-  <div
-    class="cdr-container container-test cdr-text-center"
-    data-backstop="utility-container"
-  >Container test</div>
+  <section>
+    <div
+      class="cdr-container container-test cdr-display-text-center"
+      data-backstop="utility-container"
+    >
+      cdr-container
+    </div>
+
+    <div
+      class="cdr-container-fluid container-test cdr-display-text-center"
+      data-backstop="utility-container"
+    >
+      cdr-container-fluid
+    </div>
+  </section>
 </template>
 
 <script>

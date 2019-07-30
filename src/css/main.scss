@@ -12,7 +12,7 @@
 
 /* Utilities */
 @import './utility/visibility';
-@import './utility/a11y';
-@import './utility/align';
+@import './utility/alignment';
 @import './utility/spacing';
-@import './utility/legacy';
+
+@import './deprecated/index';

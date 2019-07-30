@@ -2,8 +2,6 @@
   <div>
     <container />
 
-    <a11y />
-
     <align />
 
     <visibility />
@@ -12,7 +10,6 @@
 </template>
 
 <script>
-import a11y from 'componentsdir/Utilities/demos/a11y';
 import visibility from 'componentsdir/Utilities/demos/visibility';
 import align from 'componentsdir/Utilities/demos/align';
 import container from 'componentsdir/Utilities/demos/container';
@@ -25,7 +22,6 @@ import container from 'componentsdir/Utilities/demos/container';
 export default {
   name: 'Utilities',
   components: {
-    a11y,
     visibility,
     align,
     container,

@@ -75,8 +75,7 @@
 
     th,
     td {
-      // TODO: would be cdr-color-border-disabled-lightmode but is not disabled
-      border: 1px solid $partly-cloudy;
+      border: 1px solid $cdr-color-border-secondary-lightmode;
       min-height: 48px;
       color: $cdr-color-text-primary-lightmode;
       padding: $cdr-space-inset-one-x;
