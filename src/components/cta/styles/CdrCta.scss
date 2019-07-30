@@ -28,48 +28,11 @@
   }
 
   &--dark {
-    background-color: $cta-dark-background-color;
-    box-shadow: $cta-dark-box-shadow;
-    color: $cta-dark-color;
-    fill: $cta-dark-color;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $cta-dark-hover-background-color;
-      box-shadow: $cta-dark-box-shadow;
-      color: $cta-dark-hover-color;
-
-      & > .cdr-cta__icon {
-        fill: $cta-dark-hover-color;
-      }
-    }
+    @include cdr-cta-dark-mixin;
   }
 
   &--light {
-    background-color: $cta-light-background-color;
-    box-shadow: $cta-light-box-shadow;
-    color: $cta-light-color;
-    fill: $cta-light-color;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $cta-light-hover-background-color;
-      box-shadow: $cta-light-box-shadow;
-      color: $cta-light-hover-color;
-      fill: $cta-light-hover-color;
-    }
-
-    &.cdr-cta--elevated {
-      box-shadow: $cta-light-box-shadow, $cdr-prominence-elevated;
-
-      &:hover,
-      &:focus,
-      &:active, {
-        box-shadow: $cta-light-box-shadow, $cdr-prominence-elevated;
-      }
-    }
+    @include cdr-cta-light-mixin;
   }
 
   &--sale {
