@@ -97,13 +97,11 @@
     top: 50%;
     left: $cdr-space-half-x;
     transform: translateY(-50%);
-    // TODO: coal-train is 7a7a7a, cdr-color-icon-primary-lightmode is 616161
-    fill: $coal-train;
+    fill: $cdr-color-icon-primary-lightmode;
   }
 
   &__post-icon {
-    // TODO: coal-train is 7a7a7a, cdr-color-icon-primary-lightmode is 616161
-    fill: $coal-train;
+    fill: $cdr-color-icon-primary-lightmode;
     position: absolute;
     top: 50%;
     right: $cdr-space-half-x;

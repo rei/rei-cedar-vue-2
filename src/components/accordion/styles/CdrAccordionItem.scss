@@ -18,9 +18,10 @@
         :border-aligned and compact
 ========================================================================== */
 
+$accordion-border: #dadada;
+
 .cdr-accordion-item {
-  // TODO: $cdr-color-border-disabled-lightmode
-  border-top: 1px solid $partly-cloudy;
+  border-top: 1px solid $accordion-border;
 
   position: relative;
   z-index: 1;
@@ -58,8 +59,7 @@
 
   &__icon {
     margin-left: $cdr-space-one-x;
-    // TODO: should this be an icon token?
-    fill: $cdr-color-text-primary-lightmode;
+    fill: $cdr-color-icon-emphasis-lightmode;
     transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
 
     &:global(.open) {
@@ -161,8 +161,7 @@
   }
 
   &:last-child {
-    // TODO: $cdr-color-border-disabled-lightmode
-    border-bottom: 1px solid $partly-cloudy;
+    border-bottom: 1px solid $accordion-border;
   }
 
   &--focused {
