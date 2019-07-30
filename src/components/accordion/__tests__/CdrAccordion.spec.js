@@ -10,18 +10,6 @@ const propsData = {
 };
 
 describe('CdrAccordion', () => {
-  it('maxHeight set if isOpen on mount', () => {
-    const wrapper = shallowMount(CdrAccordion, {
-      propsData: {
-        id: 'test',
-        label: 'a label',
-        opened: true
-      },
-    });
-
-    expect(wrapper.vm.maxHeight).toBe('none');
-  });
-
   describe('toggling accordion', () => {
     it('updates emits an event onClick', () => {
       const wrapper = shallowMount(CdrAccordion, {
@@ -38,27 +26,57 @@ describe('CdrAccordion', () => {
       expect(wrapper.emitted('accordion-toggle'));
     });
 
-    it('toggles when opened prop updates', () => {
+    it('maxHeight computed prop', () => {
       const wrapper = shallowMount(CdrAccordion, {
         propsData: {
           id: 'test',
           label: 'label',
+          opened: false,
         },
         slots: {
-          default: 'this is some default slot text. it should take up some space'
-        }
+          default: 'This is some slot text.'
+        },
       });
 
-      expect(wrapper.vm.maxHeight).toBe(0);
-
-      // this is throwing a console error, but shouldn't be. Covered in this thread
-      // https://github.com/vuejs/vue-test-utils/issues/631
-      wrapper.setData({ opened: true });
-
-      setTimeout(() => {
-        expect(wrapper.vm.maxHeight).toBe('none');
-      }, 500);
+      expect(wrapper.vm.maxHeight).toEqual(0);
     });
+
+    it('isOpenClass computed prop', () => {
+      const wrapper = shallowMount(CdrAccordion, {
+        propsData: {
+          id: 'test',
+          label: 'label',
+          opened: false,
+        },
+        slots: {
+          default: 'This is some slot text.'
+        },
+      });
+
+      expect(wrapper.vm.isOpenClass).toEqual('closed');
+    })
+
+    // it('toggles when opened prop updates', () => {
+    //   const wrapper = shallowMount(CdrAccordion, {
+    //     propsData: {
+    //       id: 'test',
+    //       label: 'label',
+    //     },
+    //     slots: {
+    //       default: 'this is some default slot text. it should take up some space'
+    //     }
+    //   });
+
+    //   expect(wrapper.vm.maxHeight).toBe(0);
+
+    //   // this is throwing a console error, but shouldn't be. Covered in this thread
+    //   // https://github.com/vuejs/vue-test-utils/issues/631
+    //   wrapper.setData({ opened: true });
+
+    //   setTimeout(() => {
+    //     expect(wrapper.vm.maxHeight).toBe('none');
+    //   }, 500);
+    // });
   });
 
   it('focused style', () => {

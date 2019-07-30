@@ -69,12 +69,14 @@
 
   &__content-container {
     overflow: hidden;
-    transition-duration: cdr-duration-2-x;
+    // transition-duration: cdr-duration-2-x;
+    transition-duration: 200ms;
     transition-property: max-height;
     transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1);
 
     &:global(.open) {
-      transition-duration: cdr-duration-3-x;
+      // transition-duration: cdr-duration-3-x;
+      transition-duration: 300ms;
     }
   }
 

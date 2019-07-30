@@ -101,7 +101,6 @@ export default {
   },
   data() {
     return {
-      maxHeight: 0,
       focused: false,
     };
   },
@@ -128,23 +127,9 @@ export default {
     isOpenClass() {
       return this.opened ? 'open' : 'closed';
     },
-    delay() {
-      return this.opened ? 300 : 50;
+    maxHeight() {
+      return this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
     },
-  },
-  watch: {
-    opened() {
-      this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
-
-      setTimeout(() => {
-        this.maxHeight = this.opened ? 'none' : 0;
-      }, this.delay);
-    },
-  },
-  mounted() {
-    if (this.opened) {
-      this.maxHeight = 'none';
-    }
   },
 };
 </script>

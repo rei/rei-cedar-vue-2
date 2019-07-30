@@ -157,8 +157,8 @@ export default {
           id: 'linked1',
         },
         {
-          label: 'And they are also linked',
-          content: 'These accordions will only allow one open at a time.',
+          label: 'And they are also linked', /* eslint-disable-next-line */
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vehicula, nibh vitae luctus mattis, quam sapien tempus risus, sit amet viverra quam velit a orci. In arcu diam, pretium sit amet placerat vitae, auctor ut justo. Mauris tristique erat quis tortor pulvinar, sed consectetur orci tempor. Curabitur elementum odio a odio varius vehicula. Cras volutpat metus libero, non blandit sapien sagittis porta. Curabitur est sapien, interdum eu pretium vel, auctor non lorem. Fusce pretium dui et purus hendrerit, ut congue nibh ultrices. Ut pulvinar congue libero, vitae faucibus orci semper sed. ',
           opened: false,
           id: 'linked2',
         },
