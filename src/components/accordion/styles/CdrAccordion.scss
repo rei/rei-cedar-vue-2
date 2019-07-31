@@ -19,8 +19,7 @@
 ========================================================================== */
 
 .cdr-accordion {
-  // TODO: $cdr-color-border-disabled-lightmode
-  border-top: 1px solid $partly-cloudy;
+  border-top: 1px solid $cdr-color-border-disabled-lightmode;
 
   position: relative;
   z-index: 1;
@@ -60,7 +59,7 @@
     margin-left: $cdr-space-one-x;
     // TODO: should this be an icon token?
     fill: $cdr-color-text-primary-lightmode;
-    transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
+    transition: transform $cdr-duration-3-x $cdr-timing-function-ease-out;
 
     &:global(.open) {
       transform: rotate(-180deg);
@@ -69,14 +68,12 @@
 
   &__content-container {
     overflow: hidden;
-    // transition-duration: cdr-duration-2-x;
-    transition-duration: 200ms;
+    transition-duration: $cdr-duration-2-x;
     transition-property: max-height;
     transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1);
 
     &:global(.open) {
-      // transition-duration: cdr-duration-3-x;
-      transition-duration: 300ms;
+      transition-duration: $cdr-duration-3-x;
     }
   }
 
@@ -87,7 +84,7 @@
     background-color: $cdr-color-background-lightest;
     color: $cdr-color-text-primary-lightmode;
     padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-one-x;
-    transition: opacity 100ms linear;
+    transition: opacity $cdr-duration-1-x linear;
     opacity: 0;
 
     & > * {
@@ -163,8 +160,7 @@
   }
 
   &:last-child {
-    // TODO: $cdr-color-border-disabled-lightmode
-    border-bottom: 1px solid $partly-cloudy;
+    border-bottom: 1px solid $cdr-color-border-disabled-lightmode;
   }
 
   &--focused {
