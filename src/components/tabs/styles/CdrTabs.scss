@@ -47,11 +47,10 @@
       bottom: 0;
       left: 0;
       width: 36px;
-      // TODO: is background token correct here?
       background:
         linear-gradient(
           to left,
-          rgba(255, 255, 255, 0),
+          rgba($cdr-color-background-lightest, 0),
           $cdr-color-background-lightest
         );
       pointer-events: none;
@@ -67,11 +66,10 @@
       bottom: 0;
       right: 0;
       width: 36px;
-      // TODO: is background token correct here?
       background:
         linear-gradient(
           to right,
-          rgba(255, 255, 255, 0),
+          rgba($cdr-color-background-lightest, 0),
           $cdr-color-background-lightest
         );
       pointer-events: none;
@@ -134,8 +132,7 @@
     border: none;
 
     /* border: none; */
-    // TODO: this maps to cdr-color-text-link-lightmode but is being used for `background`. also not a link
-    background-color: $easily-excited;
+    background-color: $cdr-color-text-link-lightmode;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
   }
 

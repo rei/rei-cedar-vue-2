@@ -14,16 +14,16 @@
       <thead>
         <tr>
           <th>class</th>
-          <th class="cdr-hide cdr-show@xs-only">
+          <th class="cdr-display-none cdr-display-block@xs">
             visible @ xs
           </th>
-          <th class="cdr-hide cdr-show@sm-only">
+          <th class="cdr-display-none cdr-display-block@sm">
             visible @ sm
           </th>
-          <th class="cdr-hide cdr-show@md-only">
+          <th class="cdr-display-none cdr-display-block@md">
             visible @ md
           </th>
-          <th class="cdr-hide cdr-show@lg-only">
+          <th class="cdr-display-none cdr-display-block@lg">
             visible @ lg
           </th>
         </tr>
@@ -31,288 +31,337 @@
       <tbody>
 
         <tr>
-          <td>.cdr-hide</td>
+          <td>.cdr-display-none</td>
           <td>
-            <div class="cdr-hide">
+            <div class="cdr-display-none">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@xs-only</td>
+          <td>.cdr-display-none@xs</td>
           <td>
-            <div class="cdr-hide@xs-only">
+            <div class="cdr-display-none@xs">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@sm</td>
+          <td>.cdr-dipslay-none@sm</td>
           <td>
-            <div class="cdr-hide@sm">
+            <div class="cdr-display-none@sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@sm-only</td>
+          <td>.cdr-display-none@md</td>
           <td>
-            <div class="cdr-hide@sm-only">
+            <div class="cdr-display-none@md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@md</td>
+          <td>.cdr-display-none@lg</td>
           <td>
-            <div class="cdr-hide@md">
+            <div class="cdr-display-none@lg">
+              X
+            </div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>.cdr-display-hidden</td>
+          <td>
+            <div class="cdr-display-hidden">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@md-only</td>
+          <td>.cdr-display-hidden@xs</td>
           <td>
-            <div class="cdr-hide@md-only">
+            <div class="cdr-display-hidden@xs">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@lg</td>
+          <td>.cdr-dipslay-hidden@sm</td>
           <td>
-            <div class="cdr-hide@lg">
+            <div class="cdr-display-hidden@sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-hide@lg-only</td>
+          <td>.cdr-display-hidden@md</td>
           <td>
-            <div class="cdr-hide@lg-only">
+            <div class="cdr-display-hidden@md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show</td>
+          <td>.cdr-display-hidden@lg</td>
           <td>
-            <div class="cdr-hide cdr-show">
+            <div class="cdr-display-hidden@lg">
+              X
+            </div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>.cdr-display-block</td>
+          <td>
+            <div class="cdr-display-block">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline</td>
+          <td>.cdr-display-block@xs</td>
           <td>
-            <div class="cdr-hide cdr-show-inline">
+            <div class="cdr-display-none cdr-display-block@xs">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block</td>
+          <td>.cdr-dipslay-block@sm</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block">
+            <div class="cdr-display-none cdr-display-block@sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@xs-only</td>
+          <td>.cdr-display-block@md</td>
           <td>
-            <div class="cdr-hide cdr-show@xs-only">
+            <div class="cdr-display-none cdr-display-block@md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@xs-only</td>
+          <td>.cdr-display-block@lg</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@xs-only">
+            <div class="cdr-display-none cdr-display-block@lg">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@xs-only</td>
+          <td>.cdr-display-inline</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@xs-only">
+            <div class="cdr-display-inline">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@sm</td>
+          <td>.cdr-display-inline@xs</td>
           <td>
-            <div class="cdr-hide cdr-show@sm">
+            <div class="cdr-display-none cdr-display-inline@xs">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@sm</td>
+          <td>.cdr-dipslay-inline@sm</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@sm">
+            <div class="cdr-display-none cdr-display-inline@sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@sm</td>
+          <td>.cdr-display-inline@md</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@sm">
+            <div class="cdr-display-none cdr-display-inline@md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@sm-only</td>
+          <td>.cdr-display-inline@lg</td>
           <td>
-            <div class="cdr-hide cdr-show@sm-only">
+            <div class="cdr-display-none cdr-display-inline@lg">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@sm-only</td>
+          <td>.cdr-display-inline-block</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@sm-only">
+            <div class="cdr-display-inline-block">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@sm-only</td>
+          <td>.cdr-display-inline-block@xs</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@sm-only">
+            <div class="cdr-display-none cdr-display-inline-block@xs">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@md</td>
+          <td>.cdr-dipslay-inline-block@sm</td>
           <td>
-            <div class="cdr-hide cdr-show@md">
+            <div class="cdr-display-none cdr-display-inline-block@sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@md</td>
+          <td>.cdr-display-inline-block@md</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@md">
+            <div class="cdr-display-none cdr-display-inline-block@md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@md</td>
+          <td>.cdr-display-inline-block@lg</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@md">
+            <div class="cdr-display-none cdr-display-inline-block@lg">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@md-only</td>
+          <td>.cdr-display-flex</td>
           <td>
-            <div class="cdr-hide cdr-show@md-only">
+            <div class="cdr-display-flex">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@md-only</td>
+          <td>.cdr-display-flex@xs</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@md-only">
+            <div class="cdr-display-none cdr-display-flex@xs">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@md-only</td>
+          <td>.cdr-dipslay-flex@sm</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@md-only">
+            <div class="cdr-display-none cdr-display-flex@sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@lg</td>
+          <td>.cdr-display-flex@md</td>
           <td>
-            <div class="cdr-hide cdr-show@lg">
+            <div class="cdr-display-none cdr-display-flex@md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@lg</td>
+          <td>.cdr-display-flex@lg</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@lg">
+            <div class="cdr-display-none cdr-display-flex@lg">
+              X
+            </div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>.cdr-display-inline-flex</td>
+          <td>
+            <div class="cdr-display-inline-flex">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@lg</td>
+          <td>.cdr-display-inline-flex@xs</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@lg">
+            <div class="cdr-display-none cdr-display-inline-flex@xs">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show@lg-only</td>
+          <td>.cdr-dipslay-inline-flex@sm</td>
           <td>
-            <div class="cdr-hide cdr-show@lg-only">
+            <div class="cdr-display-none cdr-display-inline-flex@sm">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline@lg-only</td>
+          <td>.cdr-display-inline-flex@md</td>
           <td>
-            <div class="cdr-hide cdr-show-inline@lg-only">
+            <div class="cdr-display-none cdr-display-inline-flex@md">
               X
             </div>
           </td>
         </tr>
 
         <tr>
-          <td>.cdr-show-inline-block@lg-only</td>
+          <td>.cdr-display-inline-flex@lg</td>
           <td>
-            <div class="cdr-hide cdr-show-inline-block@lg-only">
+            <div class="cdr-display-none cdr-display-inline-flex@lg">
+              X
+            </div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>.cdr-display-sr-only</td>
+          <td>
+            <div class="cdr-display-sr-only">
+              X
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>.cdr-display-sr-focusable</td>
+          <td>
+            <div class="cdr-display-sr-focusable">
               X
             </div>
           </td>
