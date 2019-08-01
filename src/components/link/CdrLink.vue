@@ -5,7 +5,7 @@
     :target="target"
     :rel="computedRel"
     :href="tag === 'a' ? href : null /* don't include the href attribute if not an <a> */"
-    @click="$emit('click', $event)"
+    v-on="$listeners"
   >
     <!-- @slot innerHTML on the inside of the anchor component -->
     <slot>Link Text</slot>
