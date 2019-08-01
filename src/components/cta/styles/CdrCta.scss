@@ -33,6 +33,9 @@
 
   &--light {
     @include cdr-cta-light-mixin;
+    &.cdr-cta--elevated {
+      @include cdr-cta-light-elevated-mixin;
+    }
   }
 
   &--sale {
