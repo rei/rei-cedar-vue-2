@@ -39,6 +39,14 @@ describe('CdrAccordion', () => {
       });
 
       expect(wrapper.vm.maxHeight).toEqual(0);
+
+      wrapper.setProps({ opened: true });
+      /*
+        Vue-test-utils is not getting the correct maxHeight here when run as a
+        test, so we simply test that it doesn't return 0, which is what it
+        should return when opened = false.
+      */
+      expect(wrapper.vm.maxHeight).not.toEqual(0);
     });
 
     it('isOpenClass computed prop', () => {
@@ -54,29 +62,7 @@ describe('CdrAccordion', () => {
       });
 
       expect(wrapper.vm.isOpenClass).toEqual('closed');
-    })
-
-    // it('toggles when opened prop updates', () => {
-    //   const wrapper = shallowMount(CdrAccordion, {
-    //     propsData: {
-    //       id: 'test',
-    //       label: 'label',
-    //     },
-    //     slots: {
-    //       default: 'this is some default slot text. it should take up some space'
-    //     }
-    //   });
-
-    //   expect(wrapper.vm.maxHeight).toBe(0);
-
-    //   // this is throwing a console error, but shouldn't be. Covered in this thread
-    //   // https://github.com/vuejs/vue-test-utils/issues/631
-    //   wrapper.setData({ opened: true });
-
-    //   setTimeout(() => {
-    //     expect(wrapper.vm.maxHeight).toBe('none');
-    //   }, 500);
-    // });
+    });
   });
 
   it('focused style', () => {
