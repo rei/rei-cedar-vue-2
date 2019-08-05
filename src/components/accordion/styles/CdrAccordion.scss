@@ -165,6 +165,11 @@ $accordion-border: #dadada;
   }
 
   &--focused {
+    /*
+      This z-index change is to fix a Chrome-only visual issue with the light blue focus outline. Basically, the bottom
+      line of the outline is usually covered by the accordion immediately below what's currently focuesd. We increase
+      the z-index so that the outline can be correctly seen when the accordion is focused.
+    */
     z-index: 10;
   }
 }
