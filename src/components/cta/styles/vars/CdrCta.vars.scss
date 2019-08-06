@@ -163,7 +163,7 @@ $cdr-cta-dark-fill-focus: #ffffff;
       fill: $cdr-cta-dark-fill-hover;
     }
   }
-  
+
   &:active {
     background-color: $cdr-cta-dark-background-color-active;
     box-shadow: $cdr-cta-dark-box-shadow-active;
@@ -173,7 +173,7 @@ $cdr-cta-dark-fill-focus: #ffffff;
       fill: $cdr-cta-dark-fill-active;
     }
   }
-  
+
   &:focus {
     background-color: $cdr-cta-dark-background-color-focus;
     box-shadow: $cdr-cta-dark-box-shadow-focus;
@@ -218,7 +218,7 @@ $cdr-cta-light-fill-focus: #292929;
     color: $cdr-cta-light-color-hover;
     fill: $cdr-cta-light-fill-hover;
   }
-  
+
   &:active {
     background-color: $cdr-cta-light-background-color-active;
     box-shadow: $cdr-cta-light-box-shadow-active;
@@ -232,21 +232,21 @@ $cdr-cta-light-fill-focus: #292929;
     color: $cdr-cta-light-color-focus;
     fill: $cdr-cta-light-fill-focus;
   }
+}
 
-  &.cdr-cta--elevated {
-    box-shadow: $cdr-cta-light-box-shadow, $cdr-prominence-elevated;
+@mixin cdr-cta-light-elevated-mixin() {
+  box-shadow: $cdr-cta-light-box-shadow, $cdr-prominence-elevated;
 
-    &:hover {
-      box-shadow: $cdr-cta-light-box-shadow-hover, $cdr-prominence-elevated;
-    }
-    
-    &:active {
-      box-shadow: $cdr-cta-light-box-shadow-active, $cdr-prominence-elevated;
-    }
-    
-    &:focus {
-      box-shadow: $cdr-cta-light-box-shadow-focus, $cdr-prominence-elevated;
-    }
+  &:hover {
+    box-shadow: $cdr-cta-light-box-shadow-hover, $cdr-prominence-elevated;
+  }
+
+  &:active {
+    box-shadow: $cdr-cta-light-box-shadow-active, $cdr-prominence-elevated;
+  }
+
+  &:focus {
+    box-shadow: $cdr-cta-light-box-shadow-focus, $cdr-prominence-elevated;
   }
 }
 

@@ -125,6 +125,7 @@
         tag="button"
         space="cdr-space-inset-one-x"
         :data-backstop="`cdr-link--button`"
+        @click="clicked"
       >I'm a button!</cdr-link>
     </div>
 
@@ -160,6 +161,7 @@
     <cdr-link
       href="https://www.rei.com/"
       space="cdr-pl-space-one-x cdr-pr-space-one-x"
+      @click.prevent="clicked"
     >REI.com</cdr-link>
     <cdr-link
       href="https://www.rei.com/"
@@ -180,6 +182,12 @@ export default {
   name: 'Links',
   components: {
     ...Components,
+  },
+  methods: {
+    clicked() {
+      // eslint-disable-next-line no-console
+      console.log('link clicked!');
+    },
   },
 };
 </script>

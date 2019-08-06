@@ -70,6 +70,16 @@ describe('CdrLink.vue', () => {
     expect(wrapper.attributes().href).toBe(undefined);
   });
 
+  it('emits a click', () => {
+    const wrapper = shallowMount(CdrLink, {
+      propsData: {
+        tag: 'button',
+      },
+    });
+    wrapper.trigger('click');
+    expect(wrapper.emitted('click'));
+  });
+
   xit('inherits theme correctly', () => {
     const wrapper = shallowMount(CdrThemer, {
       stubs: {
