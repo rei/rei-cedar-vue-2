@@ -1,56 +1,139 @@
 <template>
   <div
-    :class="[
-      modifierClass,
-      space
-    ]"
+    :class="[modifierClass, styleClass, focusedClass]"
+    :id="`${id}-accordion`"
+    :ref="`accordion-container`"
   >
-    <!-- @slot innerHTML on the inside of the accordion component -->
-    <slot />
+    <button
+      :class="$style['cdr-accordion__button']"
+      :id="id"
+      @click="$emit('accordion-toggle', $event);"
+      @focus="focused = true"
+      @blur="focused = false"
+      :aria-expanded="`${opened}`"
+      :aria-controls="`${id}-collapsible`"
+    >
+      <span
+        :class="$style['cdr-accordion__label']"
+        :id="`${id}-label`"
+      >
+        <slot name="label">
+          {{ label }}
+        </slot>
+      </span>
+      <icon-caret-down
+        :class="[
+          $style['cdr-accordion__icon'],
+          isOpenClass,
+        ]"
+        :size="compact ? 'small' : null"
+      />
+    </button>
+    <div
+      :class="[
+        $style['cdr-accordion__content-container'],
+        isOpenClass,
+      ]"
+      :style="{ 'max-height': maxHeight }"
+    >
+      <div
+        :class="[
+          $style['cdr-accordion__content'],
+          isOpenClass
+        ]"
+        :aria-hidden="`${!opened}`"
+        :id="`${id}-collapsible`"
+        ref="accordion-content"
+      >
+        <!-- @slot default slot for accordion content -->
+        <slot />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { IconCaretDown } from 'componentsdir/icon/build/main';
 import modifier from 'mixinsdir/modifier';
-import space from 'mixinsdir/space';
 
 export default {
   name: 'CdrAccordion',
-  mixins: [modifier, space],
+  components: {
+    IconCaretDown,
+  },
+  mixins: [modifier],
   props: {
     /**
-     * Sets a compact style on children cdr-accordion-item components.
+     * The unique id of an accordion.
+     */
+    id: {
+      type: String,
+      required: true,
+    },
+    /**
+     * The readable text on the accordion button.
+     */
+    label: {
+      type: String,
+      required: false,
+    },
+    /**
+     * Toggle this value to open/close the accordion.
+     */
+    opened: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * Sets a compact style.
      */
     compact: {
       type: Boolean,
       default: false,
     },
     /**
-     * Sets a border-aligned style on children cdr-accordion-item comoponents.
+     * Sets a border-aligned style.
      */
     borderAligned: {
       type: Boolean,
       default: false,
     },
-    /**
-     * Sets the default isOpen state of all children cdr-accordion-item components.
-     */
-    showAll: {
-      type: Boolean,
-      default: false,
-    },
+  },
+  data() {
+    return {
+      focused: false,
+    };
   },
   computed: {
     baseClass() {
       return 'cdr-accordion';
     },
-  },
-  provide() {
-    return {
-      compact: this.compact,
-      borderAligned: this.borderAligned,
-      showAll: this.showAll,
-    };
+    styleClass() {
+      const styles = [];
+
+      if (this.compact) {
+        styles.push(this.modifyClassName(this.baseClass, 'compact'));
+      }
+
+      if (this.borderAligned) {
+        styles.push(this.modifyClassName(this.baseClass, 'border-aligned'));
+      }
+
+      return styles.join(' ');
+    },
+    focusedClass() {
+      return this.focused ? this.modifyClassName(this.baseClass, 'focused') : null;
+    },
+    isOpenClass() {
+      return this.opened ? 'open' : 'closed';
+    },
+    maxHeight() {
+      return this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
+    },
   },
 };
 </script>
+
+<style lang="scss" module>
+  @import './styles/CdrAccordion.scss';
+</style>
