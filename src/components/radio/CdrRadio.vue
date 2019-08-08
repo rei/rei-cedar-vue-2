@@ -37,11 +37,6 @@ export default {
   name: 'CdrRadio',
   mixins: [modifier, space],
   inheritAttrs: false,
-  data() {
-    return {
-      newValue: this.value,
-    };
-  },
   props: {
     /**
      * Class that is added to the label for custom styles
@@ -75,6 +70,11 @@ export default {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
     },
   },
+  data() {
+    return {
+      newValue: this.value,
+    };
+  },
   computed: {
     baseClass() {
       return 'cdr-radio';
@@ -91,6 +91,7 @@ export default {
        * @type value | event
        * */
       this.$emit('input', val);
+
     },
   },
   methods: {

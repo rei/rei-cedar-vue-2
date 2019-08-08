@@ -216,7 +216,7 @@ export default {
     },
   },
   watch: {
-    value(v) {
+    value() {
       this.currentUrl = this.pages[this.currentIdx].url;
     },
   },
