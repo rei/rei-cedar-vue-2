@@ -15,7 +15,7 @@
       :size="size"
       @change="onChange"
       ref="select"
-      v-model="val"
+      v-model="newValue"
       :required="required"
       :multiple="multiple"
       :aria-label="hideLabel ? label : null"
@@ -49,10 +49,6 @@ import toArray from 'lodash/toArray';
 export default {
   name: 'CdrSelect',
   inheritAttrs: false,
-  model: {
-    prop: 'extVal',
-    event: 'change',
-  },
   props: {
     /**
      * Label text.
@@ -80,7 +76,7 @@ export default {
       type: Array,
     },
     /** @ignore */
-    extVal: {
+    value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
       required: false,
     },
@@ -93,7 +89,7 @@ export default {
   },
   data() {
     return {
-      val: this.extVal,
+      newValue: this.value,
     };
   },
   computed: {
@@ -137,9 +133,9 @@ export default {
     },
   },
   watch: {
-    extVal() {
+    value() {
       if (!this.multiple) {
-        this.val = this.extVal;
+        this.newValue = this.value;
       }
     },
   },
@@ -149,7 +145,7 @@ export default {
       const opts = toArray(this.$refs.select.options);
       opts.forEach((opt) => {
         const o = opt;
-        if (this.val.indexOf(o.value) !== -1) {
+        if (this.newValue.indexOf(o.value) !== -1) {
           o.selected = true;
         }
       });
@@ -165,11 +161,13 @@ export default {
       if (this.multiple) {
         const optArr = toArray(e.target.options);
         const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-        this.val = selected;
+        this.newValue = selected;
         this.$emit('change', selected, e);
+        this.$emit('input', selected, e);
       } else {
-        this.val = e.target.value;
+        this.newValue = e.target.value;
         this.$emit('change', e.target.value, e);
+        this.$emit('input', e.target.value, e);
       }
     },
   },

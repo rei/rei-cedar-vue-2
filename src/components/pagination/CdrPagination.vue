@@ -50,7 +50,7 @@
           v-model="currentUrl"
           label="Navigate to page"
           hide-label
-          @change="select(currentUrl, ...arguments)"
+          @change="select"
           :class="$style['cdr-pagination__select']"
           ref="select"
         >
@@ -228,7 +228,7 @@ export default {
       this.$emit('change', num, e);
       this.$emit('input', num, e);
     },
-    select(url, url2, e) {
+    select(url, e) {
       const idx = this.pages.map(x => x.url).indexOf(url);
       const n = this.pages[idx].page;
       this.$emit('select-change', url, e);
