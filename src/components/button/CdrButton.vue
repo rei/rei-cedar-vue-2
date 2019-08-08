@@ -10,7 +10,8 @@
       space
     ]"
     :type="tag === 'button' ? type : null"
-    @click="onClick"
+
+    v-on="$listeners"
   >
     <!-- @slot for icon -->
     <slot name="icon" />
@@ -52,13 +53,6 @@ export default {
       type: String,
       default: 'button',
       validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
-    },
-    /**
-     * Adds custom click actions.
-     */
-    onClick: {
-      type: Function,
-      default: () => () => null,
     },
     /**
      * Sets width to be 100%.
