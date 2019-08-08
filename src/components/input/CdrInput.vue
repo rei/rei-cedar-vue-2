@@ -26,13 +26,9 @@
         :rows="[rows]"
         :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
+        v-on="$listeners"
         v-model="newValue"
         :id="inputId"
-        @blur="onBlur"
-        @input="onInput"
-        @focus="onFocus"
-        @paste="onPaste"
-        @keydown="onKeydown"
         :disabled="disabled"
         :required="required"
         :aria-label="hideLabel ? label : null"
@@ -43,13 +39,9 @@
         :type="type"
         :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
+        v-on="$listeners"
         v-model="newValue"
         :id="inputId"
-        @blur="onBlur"
-        @input="onInput"
-        @focus="onFocus"
-        @paste="onPaste"
-        @keydown="onKeydown"
         :disabled="disabled"
         :required="required"
         :aria-label="hideLabel ? label : null"
@@ -178,49 +170,6 @@ export default {
        * @type value | event
        * */
       this.$emit('input', val);
-    },
-  },
-  methods: {
-    onInput(e) {
-      const { value } = e.target;
-      /**
-      * Current input value. Fires while typing.
-      * Returns (value, event)
-      * @event input
-      * @type {event}
-      */
-      this.$emit('input', value, e);
-    },
-    onBlur(e) {
-      /**
-      * Fires when input loses focus.
-      * @event blur
-      * @type {event}
-      */
-      this.$emit('blur', e);
-    },
-    onFocus(e) {
-      /**
-      * Fires when input gains focus.
-      * @event focus
-      * @type {event} */
-      this.$emit('focus', e);
-    },
-    onPaste(e) {
-      /**
-      * Fires when text is pasted into input.
-      * @event paste
-      * @type {event}
-       */
-      this.$emit('paste', e);
-    },
-    onKeydown(e) {
-      /**
-      * Fires when a key is pressed.
-      * @event keydown
-      * @type {event}
-       */
-      this.$emit('keydown', e);
     },
   },
 };
