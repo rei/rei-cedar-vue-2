@@ -8,10 +8,10 @@
         :class="[$style['cdr-radio__input'], inputClass]"
         type="radio"
         v-bind="$attrs"
+        v-model="newValue"
         :name="name"
-        :checked="isChecked"
-        @change="onChange"
-        :value="value"
+        @change="updateValue(newValue, $event)"
+        :value="customValue"
         ref="radio"
       >
       <span :class="$style['cdr-radio__figure']" />
@@ -26,7 +26,6 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
-import isEqual from 'lodash/isEqual';
 
 /**
  * Cedar 2 component for radio
@@ -38,9 +37,10 @@ export default {
   name: 'CdrRadio',
   mixins: [modifier, space],
   inheritAttrs: false,
-  model: {
-    prop: 'modelValue',
-    event: 'change',
+  data() {
+    return {
+      newValue: this.value,
+    };
   },
   props: {
     /**
@@ -62,35 +62,46 @@ export default {
       type: String,
       required: true,
     },
+
     /**
      * Sets the value of the radio. Required.
     */
+    customValue: {
+      type: [String, Number, Boolean, Object, Array, Symbol, Function],
+    },
+
+    /** @ignore v-model binding */
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
-      required: true,
-    },
-    /** @ignore */
-    modelValue: {
-      type: [String, Number, Boolean, Object, Array, Symbol, Function],
-      required: false,
     },
   },
   computed: {
-    isChecked() {
-      return isEqual(this.modelValue, this.value);
-    },
     baseClass() {
       return 'cdr-radio';
     },
   },
+  watch: {
+    value(val) {
+      this.newValue = val;
+    },
+    newValue(val) {
+      /**
+       * `v-model` value. Fires on check/uncheck.
+       * @event input
+       * @type value | event
+       * */
+      this.$emit('input', val);
+    },
+  },
   methods: {
-    onChange() {
+    updateValue(newValue, e) {
     /**
      * Selected radio value. Fires on section.
      * @event change
      * @type boolean|array
      */
-      this.$emit('change', this.value);
+      this.newValue = newValue;
+      this.$emit('change', newValue, e);
     },
   },
 };
