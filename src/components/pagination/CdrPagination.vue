@@ -4,7 +4,7 @@
   <nav aria-label="Pagination Navigation">
     <ul :class="$style['cdr-pagination']">
       <li
-        v-if="localCurrent > pages[0].page"
+        v-if="newValue > pages[0].page"
       >
         <a
           :class="[
@@ -30,11 +30,11 @@
           v-if="n !== '&hellip;'"
           :class="[
             $style['cdr-pagination__link'],
-            {'current': n.page === localCurrent}
+            {'current': n.page === newValue}
           ]"
           :href="n.url"
-          :aria-label=" n.page === localCurrent ? `Current page, page ${n.page}` : `Go to page ${n.page}`"
-          :aria-current="n.page === localCurrent"
+          :aria-label=" n.page === newValue ? `Current page, page ${n.page}` : `Go to page ${n.page}`"
+          :aria-current="n.page === newValue"
           @click="navigate(n.page, $event)"
         >{{ n.page }}</a>
         <!-- eslint-disable vue/no-v-html -->
@@ -64,7 +64,7 @@
         </cdr-select>
       </li>
       <li
-        v-if="localCurrent < pages[totalPageData - 1].page"
+        v-if="newValue < pages[totalPageData - 1].page"
       >
         <a
           :class="[
@@ -95,10 +95,6 @@ export default {
     IconCaretLeft,
     IconCaretRight,
     CdrSelect,
-  },
-  model: {
-    prop: 'currentPage',
-    event: 'change',
   },
   props: {
     /**
@@ -131,14 +127,14 @@ export default {
         return result;
       },
     },
-    /** @ignore used for binding v-model */
-    currentPage: {
+    /** @ignore used for binding v-model, represents the current page */
+    value: {
       type: Number,
     },
   },
   data() {
     return {
-      localCurrent: this.currentPage,
+      newValue: this.value,
       currentUrl: '',
     };
   },
@@ -153,7 +149,7 @@ export default {
       return this.currentIdx + 1;
     },
     currentIdx() {
-      return this.pages.map(x => x.page).indexOf(this.localCurrent);
+      return this.pages.map(x => x.page).indexOf(this.newValue);
     },
     /**
      * Creates an array of the pages that should be shown as links with logic for truncation.
@@ -176,7 +172,7 @@ export default {
      */
     paginationData() {
       const total = this.totalPageData;
-      const current = this.localCurrent;
+      const current = this.newValue;
       const delta = 1;
       let range = [];
       let over5 = true;
@@ -221,8 +217,8 @@ export default {
     },
   },
   watch: {
-    currentPage(v) {
-      this.localCurrent = v;
+    value(v) {
+      this.newValue = v;
       this.currentUrl = this.pages[this.currentIdx].url;
     },
   },
@@ -232,6 +228,7 @@ export default {
   methods: {
     navigate(num, e) {
       this.$emit('change', num, e);
+      this.$emit('input', num, e);
     },
     select(url, url2, e) {
       const idx = this.pages.map(x => x.url).indexOf(url);
