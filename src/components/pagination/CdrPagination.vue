@@ -4,7 +4,7 @@
   <nav aria-label="Pagination Navigation">
     <ul :class="$style['cdr-pagination']">
       <li
-        v-if="newValue > pages[0].page"
+        v-if="value > pages[0].page"
       >
         <a
           :class="[
@@ -30,11 +30,11 @@
           v-if="n !== '&hellip;'"
           :class="[
             $style['cdr-pagination__link'],
-            {'current': n.page === newValue}
+            {'current': n.page === value}
           ]"
           :href="n.url"
-          :aria-label=" n.page === newValue ? `Current page, page ${n.page}` : `Go to page ${n.page}`"
-          :aria-current="n.page === newValue"
+          :aria-label=" n.page === value ? `Current page, page ${n.page}` : `Go to page ${n.page}`"
+          :aria-current="n.page === value"
           @click="navigate(n.page, $event)"
         >{{ n.page }}</a>
         <!-- eslint-disable vue/no-v-html -->
@@ -64,7 +64,7 @@
         </cdr-select>
       </li>
       <li
-        v-if="newValue < pages[totalPageData - 1].page"
+        v-if="value < pages[totalPageData - 1].page"
       >
         <a
           :class="[
@@ -134,7 +134,6 @@ export default {
   },
   data() {
     return {
-      newValue: this.value,
       currentUrl: '',
     };
   },
@@ -149,7 +148,7 @@ export default {
       return this.currentIdx + 1;
     },
     currentIdx() {
-      return this.pages.map(x => x.page).indexOf(this.newValue);
+      return this.pages.map(x => x.page).indexOf(this.value);
     },
     /**
      * Creates an array of the pages that should be shown as links with logic for truncation.
@@ -172,7 +171,7 @@ export default {
      */
     paginationData() {
       const total = this.totalPageData;
-      const current = this.newValue;
+      const current = this.value;
       const delta = 1;
       let range = [];
       let over5 = true;
@@ -218,7 +217,6 @@ export default {
   },
   watch: {
     value(v) {
-      this.newValue = v;
       this.currentUrl = this.pages[this.currentIdx].url;
     },
   },

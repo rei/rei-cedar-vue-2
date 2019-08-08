@@ -53,21 +53,21 @@ describe('CdrPagination.vue', () => {
     expect(prev.exists()).toBeFalsy();
     expect(next.exists()).toBeTruthy();
 
-    wrapper.setData({ newValue: 4 })
+    wrapper.setProps({ value: 4 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5,'...',20]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
 
-    wrapper.setData({ newValue: 20 })
+    wrapper.setProps({ value: 20 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,'...',16,17,18,19,20]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeFalsy();
 
-    wrapper.setData({ newValue: 17 })
+    wrapper.setProps({ value: 17 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,'...',16,17,18,19,20]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
@@ -88,14 +88,14 @@ describe('CdrPagination.vue', () => {
     expect(prev.exists()).toBeFalsy();
     expect(next.exists()).toBeTruthy();
 
-    wrapper.setData({ newValue: 4 })
+    wrapper.setProps({ value: 4 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
 
-    wrapper.setData({ newValue: 5 })
+    wrapper.setProps({ value: 5 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
