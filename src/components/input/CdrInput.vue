@@ -26,8 +26,8 @@
         :rows="[rows]"
         :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
-        v-on="$listeners"
-        v-model="newValue"
+        v-on="inputListeners"
+        :value="value"
         :id="inputId"
         :disabled="disabled"
         :required="required"
@@ -39,8 +39,8 @@
         :type="type"
         :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
-        v-on="$listeners"
-        v-model="newValue"
+        v-on="inputListeners"
+        :value="value"
         :id="inputId"
         :disabled="disabled"
         :required="required"
@@ -127,11 +127,6 @@ export default {
       type: [String, Number],
     },
   },
-  data() {
-    return {
-      newValue: this.value,
-    };
-  },
   computed: {
     // Use given id or generate one
     inputId() {
@@ -158,19 +153,18 @@ export default {
         [this.$style['cdr-input-wrap']]: true,
       };
     },
-  },
-  watch: {
-    value(val) {
-      this.newValue = val;
-    },
-    newValue(val) {
-      /**
-       * `v-model` value. Fires on input.
-       * @event input
-       * @type value | event
-       * */
-      this.$emit('input', val);
-    },
+    inputListeners: function () {
+      var vm = this;
+      return Object.assign(
+        {},
+        this.$listeners,
+        {
+          input: function (event) {
+            vm.$emit('input', event.target.value)
+          }
+        }
+      );
+    }
   },
 };
 </script>

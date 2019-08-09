@@ -281,7 +281,7 @@ describe('CdrInput.vue', () => {
       },
     });
     const input = wrapper.find({ ref: 'input' });
-    wrapper.setData({newValue: ''});
+    wrapper.setProps({value: ''});
     expect(input.element.value).toBe('');
   });
 });
