@@ -153,7 +153,9 @@ export default {
         [this.$style['cdr-input-wrap']]: true,
       };
     },
-    inputListeners: function () {
+    inputListeners: function () {//
+      // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
+      // handles conflict between v-model and v-on="$listeners"
       var vm = this;
       return Object.assign(
         {},
