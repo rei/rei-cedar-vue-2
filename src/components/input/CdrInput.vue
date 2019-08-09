@@ -153,20 +153,20 @@ export default {
         [this.$style['cdr-input-wrap']]: true,
       };
     },
-    inputListeners: function () {//
+    inputListeners() {
       // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
       // handles conflict between v-model and v-on="$listeners"
-      var vm = this;
+      const vm = this;
       return Object.assign(
         {},
         this.$listeners,
         {
-          input: function (event) {
-            vm.$emit('input', event.target.value)
-          }
-        }
+          input(event) {
+            vm.$emit('input', event.target.value);
+          },
+        },
       );
-    }
+    },
   },
 };
 </script>

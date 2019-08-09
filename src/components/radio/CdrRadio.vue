@@ -91,7 +91,6 @@ export default {
        * @type value | event
        * */
       this.$emit('input', val);
-
     },
   },
   methods: {
