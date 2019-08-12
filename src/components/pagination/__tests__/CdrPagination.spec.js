@@ -33,7 +33,7 @@ describe('CdrPagination.vue', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {
         pages: makePages(20),
-        currentPage: 1,
+        value: 1,
       },
     });
     expect(wrapper.is('nav')).toBe(true);
@@ -43,7 +43,7 @@ describe('CdrPagination.vue', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {
         pages: makePages(20),
-        currentPage: 1,
+        value: 1,
       },
     });
     let prev = wrapper.find({ref: 'prev-link'});
@@ -52,22 +52,22 @@ describe('CdrPagination.vue', () => {
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5,'...',20]);
     expect(prev.exists()).toBeFalsy();
     expect(next.exists()).toBeTruthy();
-    
-    wrapper.setProps({ currentPage: 4 })
+
+    wrapper.setProps({ value: 4 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5,'...',20]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
-    
-    wrapper.setProps({ currentPage: 20 })
+
+    wrapper.setProps({ value: 20 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,'...',16,17,18,19,20]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeFalsy();
-    
-    wrapper.setProps({ currentPage: 17 })
+
+    wrapper.setProps({ value: 17 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,'...',16,17,18,19,20]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
@@ -79,7 +79,7 @@ describe('CdrPagination.vue', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {
         pages: makePages(5),
-        currentPage: 1,
+        value: 1,
       },
     });
     let prev = wrapper.find({ref: 'prev-link'});
@@ -87,15 +87,15 @@ describe('CdrPagination.vue', () => {
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
     expect(prev.exists()).toBeFalsy();
     expect(next.exists()).toBeTruthy();
-    
-    wrapper.setProps({ currentPage: 4 })
+
+    wrapper.setProps({ value: 4 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
-    
-    wrapper.setProps({ currentPage: 5 })
+
+    wrapper.setProps({ value: 5 })
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1,2,3,4,5]);
     prev = wrapper.find({ ref: 'prev-link' });
     next = wrapper.find({ ref: 'next-link' });
@@ -107,48 +107,43 @@ describe('CdrPagination.vue', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {
         pages: makePages(getPrevNextPages(5), 3),
-        currentPage: 5,
+        value: 5,
       },
     });
-    
+
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([4, 5, 6]);
     let prev = wrapper.find({ ref: 'prev-link' });
     let next = wrapper.find({ ref: 'next-link' });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeTruthy();
-    
-    wrapper.setProps({
-      currentPage: 4,
-      pages: makePages(getPrevNextPages(4), 2),
-    });
-    expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([3, 4, 5]);
-    prev = wrapper.find({ ref: 'prev-link' });
-    next = wrapper.find({ ref: 'next-link' });
-    expect(prev.exists()).toBeTruthy();
-    expect(next.exists()).toBeTruthy();
   });
 
-  it('sorts prev/next only pages correctly when at first/last', () => {
+  it('shows next but not prev link when at first page', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {
         pages: makePages(getPrevNextPages(1), -1),
-        currentPage: 1,
+        value: 1,
       },
     });
-    
+
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1, 2]);
-    let prev = wrapper.find({ ref: 'prev-link' });
-    let next = wrapper.find({ ref: 'next-link' });
+    const prev = wrapper.find({ ref: 'prev-link' });
+    const next = wrapper.find({ ref: 'next-link' });
     expect(prev.exists()).toBeFalsy();
     expect(next.exists()).toBeTruthy();
+  });
 
-    wrapper.setProps({
-      pages: makePages(getPrevNextPages(10), 8),
-      currentPage: 10,
+  it('shows prev but not next link when at last page', () => {
+    const wrapper = shallowMount(CdrPagination, {
+      propsData: {
+        pages: makePages(getPrevNextPages(10), 8),
+        value: 10,
+      },
     });
+
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([9, 10]);
-    prev = wrapper.find({ ref: 'prev-link' });
-    next = wrapper.find({ ref: 'next-link' });
+    const prev = wrapper.find({ ref: 'prev-link' });
+    const next = wrapper.find({ ref: 'next-link' });
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeFalsy();
   });
@@ -157,22 +152,22 @@ describe('CdrPagination.vue', () => {
     const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
-        currentPage: 5,
+        value: 5,
       },
     });
     let next = wrapper.find({ ref: 'next-link' });
     let prev = wrapper.find({ ref: 'prev-link' });
-    
+
     // click next
     next.trigger('click');
     expect(wrapper.emitted().change[0][0]).toBe(6);
     expect(wrapper.emitted().change[0][1] instanceof Event).toBeTruthy();
-    
+
     // click previous
     prev.trigger('click');
     expect(wrapper.emitted().change[1][0]).toBe(4);
     expect(wrapper.emitted().change[1][1] instanceof Event).toBeTruthy();
-    
+
     // click a page link
     let link = wrapper.findAll('ul > li > a').at(1);
     link.trigger('click');
@@ -185,18 +180,18 @@ describe('CdrPagination.vue', () => {
     expect(wrapper.emitted()['select-change'][0][0]).toBe('?page=4');
     expect(wrapper.emitted()['select-change'][0][1] instanceof Event).toBeTruthy();
   });
-  
+
   it('adds "of x" when a total is provided', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {
         pages: makePages(20),
-        currentPage: 1,
+        value: 1,
       },
     });
 
     let option = wrapper.find({ ref: 'select' }).findAll('option').at(0);
     expect(option.text()).toBe('Page 1');
-    
+
     wrapper.setProps({ totalPages: 20 });
     option = wrapper.find({ ref: 'select' }).findAll('option').at(0);
     expect(option.text()).toBe('Page 1 of 20');

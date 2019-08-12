@@ -31,6 +31,7 @@ import Utilities from 'componentsdir/Utilities/Utilities';
 
 const routes = [
   { path: '/', component: App },
+  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Buttons },
@@ -42,10 +43,9 @@ const routes = [
   { path: '/grids', name: 'Grids', component: Grids },
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
-  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
+  { path: '/inputs', name: 'Input', component: Input },
   { path: '/links', name: 'Links', component: Links },
   { path: '/lists', name: 'Lists', component: Lists },
-  { path: '/inputs', name: 'Input', component: Input },
   { path: '/pagination', name: 'Pagination', component: Pagination },
   { path: '/quotes', name: 'Quotes', component: Quotes },
   { path: '/radios', name: 'Radios', component: Radios },

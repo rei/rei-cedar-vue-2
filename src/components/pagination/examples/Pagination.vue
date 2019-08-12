@@ -15,34 +15,38 @@
       :pages="makePages(20, 'router-page')"
       :total-pages="20"
       v-model="ex1Page"
-      @change="doChange"
+      @input="handleInput"
       @select-change="doSelect"
     />
+
+    <hr>
 
     <p>Previous/Next only (known total)</p>
 
     <cdr-pagination
-      :pages="makePages(ex2Pages, 'router-page-b', ex2Page - 2)"
+      :pages="makePages(ex2Pages, 'router-page-b', ex2PageKnown - 2)"
       :total-pages="10"
-      v-model="ex2Page"
-      @change="doChange"
+      v-model="ex2PageKnown"
+      @input="handleInput"
     />
 
+    <hr>
     <p>Previous/Next only (unknown total)</p>
 
     <cdr-pagination
-      :pages="makePages(ex2Pages, 'router-page-b', ex2Page - 2)"
-      v-model="ex2Page"
-      @change="doChange"
+      :pages="makePages(ex2Pages, 'router-page-b', ex2PageUnknown - 2)"
+      v-model="ex2PageUnknown"
+      @input="handleInput"
     />
 
+    <hr>
     <p>Only 5 pages provided</p>
 
     <cdr-pagination
       :pages="makePages(5, 'router-page-c')"
       :total-pages="5"
       v-model="ex3Page"
-      @change="doChange"
+      @input="handleInput"
     />
 
   </div>
@@ -62,7 +66,8 @@ export default {
     return {
       paginationData,
       ex1Page: 1,
-      ex2Page: 5,
+      ex2PageKnown: 5,
+      ex2PageUnknown: 5,
       ex3Page: 1,
     };
   },
@@ -87,7 +92,7 @@ export default {
       });
       return result;
     },
-    doChange(num, e) {
+    handleInput(num, e) {
       e.preventDefault();
       console.log('changed', num); // eslint-disable-line
       this.$router.replace({ query: Object.assign({}, this.$route.query, { 'router-page': num }) });
