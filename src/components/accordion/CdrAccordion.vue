@@ -102,6 +102,7 @@ export default {
   data() {
     return {
       focused: false,
+      maxHeight: this.opened ? 'none' : 0, // set maxHeight to none if initialized as open
     };
   },
   computed: {
@@ -127,9 +128,21 @@ export default {
     isOpenClass() {
       return this.opened ? 'open' : 'closed';
     },
-    maxHeight() {
-      return this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
+  },
+  watch: {
+    opened() {
+      this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0; /* eslint-disable-line */
     },
+  },
+  mounted() {
+    /*
+      The intent here is to give maxHeight an actual pixel value when the accordion
+      is initialized as open. This guarantees that the open-to-close animation is
+      nice and smooth the first time they click it.
+    */
+    if (this.opened && this.maxHeight === 'none') {
+      this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
+    }
   },
 };
 </script>
