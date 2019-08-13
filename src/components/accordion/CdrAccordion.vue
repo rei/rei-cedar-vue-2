@@ -131,7 +131,7 @@ export default {
   },
   watch: {
     opened() {
-      this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0; /* eslint-disable-line */
+      this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
     },
   },
   mounted() {
@@ -140,7 +140,7 @@ export default {
       is initialized as open. This guarantees that the open-to-close animation is
       nice and smooth the first time they click it.
     */
-    if (this.opened && this.maxHeight === 'none') {
+    if (this.opened && this.$refs['accordion-content']) {
       this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
     }
   },
