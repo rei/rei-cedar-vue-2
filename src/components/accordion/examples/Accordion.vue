@@ -144,8 +144,7 @@ export default {
   data() {
     return {
       tabindex: -1,
-      opened: true,
-      accordionDefault: false,
+      accordionDefault: true,
       accordionDefault2: false,
       accordionCompact: false,
       accordionCompact2: false,
