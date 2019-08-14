@@ -51,7 +51,7 @@ export default {
      */
     alt: {
       type: String,
-      default: ' ',
+      default: '',
     },
     /**
      * Enable lazy loading.
