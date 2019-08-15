@@ -9,7 +9,8 @@
 
     :Base - CdrCta
 ========================================================================== */
-
+@import '../../../css/settings/index.scss';
+@import './vars/CdrCta.vars.scss';
 .cdr-cta {
   @include cdr-cta-base-mixin;
 
