@@ -1,31 +1,3 @@
-// babelrc cooy
-// {
-//   "presets": [
-//     [
-//       "env",
-//       {
-//         "modules": false
-//       }
-//     ],
-//     "stage-2"
-//   ],
-//   "plugins": [
-//     "transform-runtime"
-//   ],
-//   "comments": false,
-//   "env": {
-//     "test": {
-//       "presets": [
-//         "env",
-//         "stage-2"
-//       ],
-//       "plugins": [
-//         "istanbul"
-//       ]
-//     }
-//   }
-// }
-
 /* eslint-disable */
 
 module.exports = function (api) {
@@ -35,12 +7,24 @@ module.exports = function (api) {
     [
       "@babel/preset-env",
       {
-        corejs: "3",
-        useBuiltIns: "usage"
+        // corejs: 3,
+        // useBuiltIns: "usage",
+        modules: false,
+        "targets": {
+          "node": "current"
+        }
+      },
+    ]
+  ];
+  const plugins = [
+    "transform-vue-jsx",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        // "corejs": 3
       }
     ]
   ];
-  const plugins = ['@babel/plugin-transform-runtime'];
 
   return {
     presets,

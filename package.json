@@ -5,6 +5,7 @@
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
   "private": false,
+  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
@@ -21,10 +22,10 @@
   },
   "scripts": {
     "prepublishOnly": "npm run lint && npm run build",
-    "dev": "cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
-    "build": "npm run clean && npm run build:csr && npm run build:ssr && node build/extract-css.js",
+    
+        "dev": "cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
+    "build": "npm run clean && npm run build:csr && node build/extract-css.js",
     "build:csr": "cross-env NODE_ENV=prod rollup -c rollup.config.js",
-    "build:ssr": "cross-env NODE_ENV=prod SSR_ENV=ssr rollup -c rollup.config.js",
     "unit": "cross-env NODE_ENV=test rollup -c rollup.config.unit.js && jest",
     "e2e": "rollup -c rollup.config.dev.js && node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
@@ -51,6 +52,7 @@
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-syntax-jsx": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/polyfill": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
@@ -59,19 +61,24 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@rei/cdr-tokens": "^1.1.0",
+    "@rei/febs": "^5.1.1",
     "@vue/test-utils": "^1.0.0-beta.29",
-    "autoprefixer": "^9.4.7",
+    "autoprefixer": "^9.6.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-jest": "^24.7.1",
     "babel-plugin-istanbul": "^5.1.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "backstopjs": "^3.8.8",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.6",
     "chromedriver": "^76.0.0",
+    "classnames": "^2.2.6",
     "concat": "^1.0.3",
-    "core-js": "^3.0.1",
+    "core-js": "^3.1.4",
     "cross-env": "^5.2.0",
     "cross-spawn": "^6.0.4",
     "cssnano": "^4.1.10",
@@ -109,11 +116,12 @@
     "pkg-ok": "^2.3.1",
     "postcss": "^7.0.14",
     "postcss-calc": "^7.0.1",
+    "postcss-import": "^12.0.1",
     "postcss-inline-svg": "^3.0.0",
     "postcss-pxtorem": "^4.0.1",
     "postcss-scss": "^2.0.0",
     "rimraf": "^2.6.3",
-    "rollup": "^1.12.2",
+    "rollup": "^1.19.4",
     "rollup-plugin-alias": "^1.5.1",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.0.0",
@@ -123,6 +131,7 @@
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-node-resolve": "^5.0.0",
     "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-postcss-modules": "^2.0.1",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-vue": "^5.0.0",
@@ -151,6 +160,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "dependencies": {}
+  }
 }

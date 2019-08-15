@@ -10,6 +10,8 @@
         :Standalone
 ========================================================================== */
 
+@import '../../../css/settings/index.scss';
+@import './vars/CdrLink.vars.scss';
 .cdr-link {
   @include cdr-link-base-mixin;
 }
