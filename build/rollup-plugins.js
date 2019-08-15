@@ -62,7 +62,8 @@ const plugins = [
   //       @import "${resolve('src/css/settings/_index.scss')}";`;
   //     },
   //   },
-
+  
+  // 
   postcss({
     plugins: [
       postcssImport()
@@ -72,7 +73,10 @@ const plugins = [
     sourceMap: env === 'dev' ? 'inline' : false,
     modules: {
       generateScopedName(name, filename, css) {
-        // to preseve '@' in responsive class names
+        // don't scope anything in the `css/main.scss` (reset, utils, type, etc.)
+        if (filename.match(/main\.scss/)) return name;
+        
+        // scope classes for components
         return `${name}_${packageJson.version}`;
       },
     }

@@ -22,8 +22,7 @@
   },
   "scripts": {
     "prepublishOnly": "npm run lint && npm run build",
-    
-        "dev": "cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
+    "dev": "cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
     "build": "npm run clean && npm run build:csr && node build/extract-css.js",
     "build:csr": "cross-env NODE_ENV=prod rollup -c rollup.config.js",
     "unit": "cross-env NODE_ENV=test rollup -c rollup.config.unit.js && jest",
@@ -61,7 +60,6 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@rei/cdr-tokens": "^1.1.0",
-    "@rei/febs": "^5.1.1",
     "@vue/test-utils": "^1.0.0-beta.29",
     "autoprefixer": "^9.6.1",
     "babel-core": "^7.0.0-bridge.0",

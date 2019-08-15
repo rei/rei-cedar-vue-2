@@ -1,3 +1,5 @@
+import './css/main.scss';
+
 // import CdrThemer from 'componentsdir/themer/CdrThemer';
 // import CdrSearch from 'compositionsdir/search/CdrSearch';
 
