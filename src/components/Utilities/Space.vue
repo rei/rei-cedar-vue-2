@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { CdrText } from 'componentsdir/_index';
+import { CdrText } from 'srcdir/index';
 import inset from 'componentsdir/Utilities/demos/inset';
 import spacing from 'componentsdir/Utilities/demos/spacing';
 

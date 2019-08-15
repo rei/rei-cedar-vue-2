@@ -147,7 +147,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 import * as Icons from 'componentsdir/icon/build/main';
 

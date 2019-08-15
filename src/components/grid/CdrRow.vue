@@ -210,6 +210,6 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import "./styles/Grid.vars.scss";
+@import "./styles/vars/Grid.vars.scss";
 @import "./styles/CdrRow.scss";
 </style>

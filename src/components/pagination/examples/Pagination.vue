@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { CdrPagination } from 'componentsdir/_index';
+import { CdrPagination } from 'srcdir/index';
 
 import paginationData from 'componentsdir/pagination/examples/data.json';
 

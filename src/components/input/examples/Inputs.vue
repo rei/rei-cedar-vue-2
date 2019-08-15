@@ -140,7 +140,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 import { IconTwitter, IconCheckLg } from 'componentsdir/icon/build/main';
 
 export default {

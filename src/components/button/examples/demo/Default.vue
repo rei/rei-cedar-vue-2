@@ -75,8 +75,8 @@
 </template>
 
 <script>
-// import Components from 'componentsdir/_index';
-import { CdrText, CdrButton } from 'componentsdir/_index';
+// import Components from 'srcdir/index';
+import { CdrText, CdrButton } from 'srcdir/index';
 
 export default {
   name: 'Default',
