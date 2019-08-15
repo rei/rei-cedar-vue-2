@@ -27,4 +27,4 @@ export { default as CdrLink } from 'componentsdir/link/CdrLink';
 // export { default as CdrSelect } from 'componentsdir/select/CdrSelect';
 // export { default as CdrTabPanel } from 'componentsdir/tabs/CdrTabPanel';
 // export { default as CdrTabs } from 'componentsdir/tabs/CdrTabs';
-// export { default as CdrText } from 'componentsdir/text/CdrText';
+export { default as CdrText } from 'componentsdir/text/CdrText';

@@ -46,7 +46,7 @@
       modifier="subheading"
     >Links, with icon</cdr-text>
 
-    <cdr-list
+    <!-- <cdr-list
       space="cdr-space-inset-one-x"
     >
       <li>
@@ -88,7 +88,7 @@
           />
         </cdr-link>
       </li>
-    </cdr-list>
+    </cdr-list> -->
 
     <cdr-text
       tag="h3"

@@ -43,7 +43,7 @@ console.log('postcssExtract', postcssExtract);
 
 const plugins = [
   alias({
-    resolve: ['.vue', '.json', '.js'],
+    resolve: ['.vue', '.json', '.js', '.jsx'],
     srcdir: resolve('src'),
     cssdir: resolve('src/css'),
     assetsdir: resolve('src/assets'),
