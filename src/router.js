@@ -1,6 +1,3 @@
-// TODO: are we keeping this?
-// import Searches from 'compositionsdir/search/examples/searchbox';
-
 import App from 'srcdir/App';
 import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
@@ -10,7 +7,7 @@ import Cards from 'componentsdir/card/examples/Cards';
 // import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
 import Cta from 'componentsdir/cta/examples/Cta';
 // import DataTables from 'componentsdir/dataTable/examples/DataTable';
-// import Grids from 'componentsdir/grid/examples/Grid';
+import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
 // import Input from 'componentsdir/input/examples/Inputs';
@@ -41,7 +38,7 @@ const routes = [
   // { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
   { path: '/cta', name: 'CTA', component: Cta },
   // { path: '/dataTables', name: 'Data Tables', component: DataTables },
-  // { path: '/grids', name: 'Grids', component: Grids },
+  { path: '/grids', name: 'Grids', component: Grids },
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
   // { path: '/inputs', name: 'Input', component: Input },
@@ -55,7 +52,6 @@ const routes = [
   // { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
   // { path: '/utilities', name: 'Utilities', component: Utilities },
-  // { path: '/searches', name: 'Searches', component: Searches },
 ];
 
 export default routes;

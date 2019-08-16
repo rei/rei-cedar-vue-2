@@ -1,76 +1,8 @@
-<template>
-  <!-- !row && !list -->
-  <div
-    v-if="!isRow && !isList"
-    :class="[
-      $style['cdr-col'],
-      spanClass,
-      offsetLeftClass,
-      offsetRightClass,
-      alignSelfClass,
-    ]"
-  >
-    <div :class="$style['cdr-col__content']">
-      <slot />
-    </div>
-  </div>
-
-  <!-- !row && list -->
-  <li
-    v-else-if="!isRow && isList"
-    :class="[
-      $style['cdr-col'],
-      spanClass,
-      offsetLeftClass,
-      offsetRightClass,
-      alignSelfClass,
-    ]"
-  >
-    <div :class="$style['cdr-col__content']">
-      <slot />
-    </div>
-  </li>
-
-  <!-- row && list -->
-  <li
-    v-else-if="isRow && isList"
-    :class="[
-      $style['cdr-row'],
-      $style['cdr-col'],
-      spanClass,
-      offsetLeftClass,
-      offsetRightClass,
-      alignSelfClass,
-    ]"
-  >
-    <cdr-row
-      :class="$style['cdr-col']"
-      v-bind="$attrs"
-    >
-      <slot />
-    </cdr-row>
-  </li>
-
-  <!-- else -->
-  <cdr-row
-    v-else
-    :class="[
-      $style['cdr-col'],
-      spanClass,
-      offsetLeftClass,
-      offsetRightClass,
-      alignSelfClass,
-    ]"
-    v-bind="$attrs"
-  >
-    <slot />
-  </cdr-row>
-</template>
-
-<script>
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
-import CdrRow from 'componentsdir/grid/CdrRow';
+import CdrRow from 'componentsdir/grid/CdrRow'; // TODO: is this import shakeable?
+import s from './styles/CdrCol.scss';
+import cs from 'classnames';
 
 export default {
   name: 'CdrCol',
@@ -138,6 +70,11 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      style: s,
+    };
+  },
   computed: {
     isList() {
       return this.rowType === 'list';
@@ -147,7 +84,7 @@ export default {
 
       if (this.span) {
         this.span.split(' ').forEach((val) => {
-          classStr.push(this.$style[`cdr-col_span${val}`]);
+          classStr.push(this.style[`cdr-col_span${val}`]);
         });
       }
 
@@ -187,10 +124,74 @@ export default {
       return classStr.join(' ');
     },
   },
+  render() {
+    if (!this.isRow && !this.isList) {
+      return (
+        <div
+          class={cs(
+            this.style['cdr-col'],
+            this.spanClass,
+            this.offsetLeftClass,
+            this.offsetRightClass,
+            this.alignSelfClass,
+          )}
+        >
+          <div class={this.style['cdr-col__content']}>
+            {this.$slots.default}
+          </div>
+        </div>
+      );
+    } else if (!this.isRow && this.isList) {
+      return (
+        <li
+          class={cs(
+            this.style['cdr-col'],
+            this.spanClass,
+            this.offsetLeftClass,
+            this.offsetRightClass,
+            this.alignSelfClass,
+          )}
+        >
+          <div class={this.style['cdr-col__content']}>
+            {this.$slots.default}
+          </div>
+        </li>
+      );
+    } else if (this.isRow && this.isList) {
+      return (
+        <li
+          class={cs(
+            this.style['cdr-row'],
+            this.style['cdr-col'],
+            this.spanClass,
+            this.offsetLeftClass,
+            this.offsetRightClass,
+            this.alignSelfClass,
+          )}
+        >
+          <cdr-row
+            class={this.style['cdr-col']}
+            {...this.$attrs}
+          >
+            {this.$slots.default}
+          </cdr-row>
+        </li>
+      );
+    } else {
+      return (
+        <cdr-row
+          class={cs(
+            this.style['cdr-col'],
+            this.spanClass,
+            this.offsetLeftClass,
+            this.offsetRightClass,
+            this.alignSelfClass,
+          )}
+          {...this.$attrs}
+        >
+          {this.$slots.default}
+        </cdr-row>
+      );
+    }
+  }
 };
-</script>
-
-<style lang="scss" module>
-@import "./styles/vars/Grid.vars.scss";
-@import "./styles/CdrCol.scss";
-</style>

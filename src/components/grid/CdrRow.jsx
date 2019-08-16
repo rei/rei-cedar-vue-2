@@ -1,24 +1,7 @@
-<template>
-  <component
-    :is="type === 'list' ? 'ul' : 'div'"
-    :class="[
-      $style['cdr-row'],
-      colsClass,
-      justifyClass,
-      alignClass,
-      gutterClass,
-      verticalClass,
-      wrapClass,
-      nowrapClass,
-    ]"
-  >
-    <slot />
-  </component>
-</template>
-
-<script>
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
+import s from './styles/CdrRow.scss';
+import cs from 'classnames';
 
 export default {
   name: 'CdrRow',
@@ -122,6 +105,11 @@ export default {
       ),
     },
   },
+  data() {
+    return {
+      style: s,
+    };
+  },
   provide() {
     return {
       rowType: this.type,
@@ -133,7 +121,7 @@ export default {
 
       if (this.cols) {
         this.cols.split(' ').forEach((val) => {
-          classStr.push(this.$style[`cdr-row_row${val}`]);
+          classStr.push(this.style[`cdr-row_row${val}`]);
         });
       }
 
@@ -166,7 +154,7 @@ export default {
 
       if (this.gutter) {
         this.gutter.split(' ').forEach((val) => {
-          classStr.push(this.$style[`cdr-row--gutter-${val}`]);
+          classStr.push(this.style[`cdr-row--gutter-${val}`]);
         });
       }
 
@@ -206,10 +194,23 @@ export default {
       return classStr.join(' ');
     },
   },
+  render(h){ 
+    const Component = this.type === 'list' ? 'ul' : 'div';
+    return (
+      <Component
+        class={cs(
+          this.style['cdr-row'],
+          this.colsClass,
+          this.justifyClass,
+          this.alignClass,
+          this.gutterClass,
+          this.verticalClass,
+          this.wrapClass,
+          this.nowrapClass,
+        )}
+      >
+        {this.$slots.default}
+      </Component>
+    );
+  },
 };
-</script>
-
-<style lang="scss" module>
-@import "./styles/vars/Grid.vars.scss";
-@import "./styles/CdrRow.scss";
-</style>
