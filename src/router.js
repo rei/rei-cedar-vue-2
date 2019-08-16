@@ -3,8 +3,8 @@
 
 import App from 'srcdir/App';
 // import Accordions from 'componentsdir/accordion/examples/Accordion';
-// import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
-// import Buttons from 'componentsdir/button/examples/Buttons';
+import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
+import Buttons from 'componentsdir/button/examples/Buttons';
 // import Captions from 'componentsdir/caption/examples/Caption';
 // import Cards from 'componentsdir/card/examples/Cards';
 // import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
@@ -34,8 +34,8 @@ const routes = [
   { path: '/links', name: 'Links', component: Links },
   // { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   // { path: '/accordion', name: 'Accordion', component: Accordions },
-  // { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
-  // { path: '/buttons', name: 'Buttons', component: Buttons },
+  { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
+  { path: '/buttons', name: 'Buttons', component: Buttons },
   // { path: '/captions', name: 'Captions', component: Captions },
   // { path: '/cards', name: 'Cards', component: Cards },
   // { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },

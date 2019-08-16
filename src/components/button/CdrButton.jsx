@@ -1,42 +1,12 @@
-<template>
-  <component
-    :is="tag"
-    :class="[
-      defaultClass,
-      modifierClass,
-      buttonSizeClass,
-      fullWidthClass,
-      iconClass,
-      space
-    ]"
-    :type="tag === 'button' ? type : null"
-
-    v-on="$listeners"
-  >
-    <!-- @slot for icon -->
-    <slot name="icon" />
-    <!-- @slot innerHTML on the inside of the button component -->
-    <slot />
-  </component>
-</template>
-
-<script>
+import s from './styles/CdrButton.scss';
 import modifier from 'mixinsdir/modifier';
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
+import mapClasses from 'mixinsdir/mapClasses';
 
-/**
- * Cedar 2 component for button
- *
- * CdrButton will render either a button, or an anchor that looks like a button.
- * As such, the decision to use CdrButton vs CdrAnchor should be made based on what
- * you need the rendered element to look like.
- *
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- */
 export default {
   name: 'CdrButton',
-  mixins: [modifier, size, space],
+  mixins: [modifier, size, space, mapClasses],
   props: {
     /**
      * Controls render as button or anchor. {button, a}
@@ -110,10 +80,23 @@ export default {
         ? this.modifyClassName(this.baseClass, 'full-width') : null;
     },
   },
+  render() {
+    console.log(s)
+    const Component = this.tag
+    return (<Component
+      class={this.mapClasses(
+        [this.defaultClass,
+        this.modifierClass,
+        this.buttonSizeClass,
+        this.fullWidthClass,
+        this.iconClass,
+        this.space], s
+      )}
+      type={this.tag === 'button' ? this.type : null}
+      on={this.$listeners}
+    >
+      {this.$slots.icon}
+      {this.$slots.default}
+    </Component>)
+  }
 };
-</script>
-
-<style lang="scss" module>
-  @import './styles/vars/CdrButton.vars.scss';
-  @import './styles/CdrButton.scss';
-</style>

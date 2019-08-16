@@ -1,13 +1,14 @@
 import s from './styles/CdrLink.scss';
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import mapClasses from 'mixinsdir/mapClasses';
 
 export default {
   name: 'CdrLink',
   mixins: [
     modifier,
     space,
+    mapClasses,
   ],
   props: {
     tag: {
@@ -36,8 +37,12 @@ export default {
   },
   render(h) {
     const Component = this.tag;
+    console.log('m', this.modifierClass, 's', this.space, s)
     return (<Component
-      class={cs(s[this.modifierClass], s[this.space])}
+      class={this.mapClasses(
+        [this.modifierClass, 
+        this.space], s
+      )}
       target={this.target}
       rel={this.computedRel}
       href={this.tag === 'a' ? this.href : null}

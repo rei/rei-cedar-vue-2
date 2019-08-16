@@ -23,7 +23,7 @@ export default {
       return 'cdr-text';
     },
   },
-  render() {
+  render(h) {
     const Component = this.tag;
     return (<Component class={cs(this.modifierClass, this.space)}>
       {this.$slots.default}

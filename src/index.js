@@ -4,8 +4,8 @@ import './css/main.scss';
 // import CdrSearch from 'compositionsdir/search/CdrSearch';
 
 // export { default as CdrAccordion } from 'componentsdir/accordion/CdrAccordion';
-// export { default as CdrBreadcrumb } from 'componentsdir/breadcrumb/CdrBreadcrumb';
-// export { default as CdrButton } from 'componentsdir/button/CdrButton';
+export { default as CdrBreadcrumb } from 'componentsdir/breadcrumb/CdrBreadcrumb';
+export { default as CdrButton } from 'componentsdir/button/CdrButton';
 // export { default as CdrCaption } from 'componentsdir/caption/CdrCaption';
 // export { default as CdrCard } from 'componentsdir/card/CdrCard';
 // export { default as CdrCheckbox } from 'componentsdir/checkbox/CdrCheckbox';

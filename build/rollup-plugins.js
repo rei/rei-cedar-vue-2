@@ -6,6 +6,7 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 import copyPlugin from 'rollup-plugin-copy';
+import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
 import packageJson from '../package.json';
 
@@ -36,7 +37,7 @@ console.log('postcssExtract', postcssExtract);
 
 const plugins = [
   alias({
-    resolve: ['.json', '.js', '.jsx', '.scss'],
+    resolve: ['.json', '.js', '.jsx', '.scss', '.vue'],
     srcdir: resolve('src'),
     cssdir: resolve('src/css'),
     // cssvariables: resolve('src/css/'),
@@ -55,13 +56,29 @@ const plugins = [
     outputFolder: copyOutput
   }),
 
-  //   data: {
-  //     // this gets prepended in all components <style>
-  //     scss() {
-  //       return `@import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
-  //       @import "${resolve('src/css/settings/_index.scss')}";`;
-  //     },
-  //   },
+  vue({
+    css: false,
+    style: {
+      // postcssCleanOptions: { disabled: true },
+      postcssModulesOptions: {
+        generateScopedName(name, filename, css) {
+          // to preseve '@' in responsive class names
+          return `${name}_${packageJson.version}`;
+        },
+      },
+    },
+    data: {
+      // this gets prepended in all components <style>
+      scss() {
+        return `@import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
+        @import "${resolve('src/css/settings/_index.scss')}";`;
+      },
+    },
+    template: {
+      isProduction: env === 'prod',
+    },
+    styleInjector: `~${resolve('build/style-injector.mjs')}`,
+  }),
   
   // 
   postcss({
