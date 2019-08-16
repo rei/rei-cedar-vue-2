@@ -6,13 +6,13 @@ import './css/main.scss';
 // export { default as CdrAccordion } from 'componentsdir/accordion/CdrAccordion';
 export { default as CdrBreadcrumb } from 'componentsdir/breadcrumb/CdrBreadcrumb';
 export { default as CdrButton } from 'componentsdir/button/CdrButton';
-// export { default as CdrCaption } from 'componentsdir/caption/CdrCaption';
+export { default as CdrCaption } from 'componentsdir/caption/CdrCaption';
 // export { default as CdrCard } from 'componentsdir/card/CdrCard';
 // export { default as CdrCheckbox } from 'componentsdir/checkbox/CdrCheckbox';
 // export { default as CdrCol } from 'componentsdir/grid/CdrCol';
 // export { default as CdrCta } from 'componentsdir/cta/CdrCta';
 // export { default as CdrDataTable } from 'componentsdir/dataTable/CdrDataTable';
-// // export { default as CdrIcon } from 'componentsdir/icon/CdrIcon';
+export { default as CdrIcon } from 'componentsdir/icon/CdrIcon';
 // // export all icon components for now (includes sprite and CdrIcon)
 // export * from 'componentsdir/icon/build/main';
 // export { default as CdrImg } from 'componentsdir/image/CdrImg';

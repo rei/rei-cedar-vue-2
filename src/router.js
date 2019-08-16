@@ -5,13 +5,13 @@ import App from 'srcdir/App';
 // import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Buttons from 'componentsdir/button/examples/Buttons';
-// import Captions from 'componentsdir/caption/examples/Caption';
+import Captions from 'componentsdir/caption/examples/Caption';
 // import Cards from 'componentsdir/card/examples/Cards';
 // import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
 // import Cta from 'componentsdir/cta/examples/Cta';
 // import DataTables from 'componentsdir/dataTable/examples/DataTable';
 // import Grids from 'componentsdir/grid/examples/Grid';
-// import Icons from 'componentsdir/icon/examples/Icons';
+import Icons from 'componentsdir/icon/examples/Icons';
 // import Images from 'componentsdir/image/examples/Images';
 // import Input from 'componentsdir/input/examples/Inputs';
 // import KitchenSink from 'srcdir/KitchenSink';
@@ -36,13 +36,13 @@ const routes = [
   // { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Buttons },
-  // { path: '/captions', name: 'Captions', component: Captions },
+  { path: '/captions', name: 'Captions', component: Captions },
   // { path: '/cards', name: 'Cards', component: Cards },
   // { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
   // { path: '/cta', name: 'CTA', component: Cta },
   // { path: '/dataTables', name: 'Data Tables', component: DataTables },
   // { path: '/grids', name: 'Grids', component: Grids },
-  // { path: '/icons', name: 'Icons', component: Icons },
+  { path: '/icons', name: 'Icons', component: Icons },
   // { path: '/images', name: 'Images', component: Images },
   // { path: '/inputs', name: 'Input', component: Input },
   // { path: '/lists', name: 'Lists', component: Lists },
