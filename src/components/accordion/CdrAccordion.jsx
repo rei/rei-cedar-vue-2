@@ -122,7 +122,7 @@ export default {
           class={s['cdr-accordion__label']}
           id={`${this.id}-label`}
         >
-          { this.label || this.$slots.label }
+          { this.$slots.label || this.label}
         </span>
         <icon-caret-down
           class={cs(s['cdr-accordion__icon'], this.isOpenClass)}
