@@ -1,5 +1,5 @@
 import s from './styles/CdrAccordion.scss';
-// import { IconCaretDown } from 'componentsdir/icon/build/main';
+import { IconCaretDown } from 'componentsdir/icon/build/main';
 import modifier from 'mixinsdir/modifier';
 import cs from 'classnames';
 
@@ -50,6 +50,7 @@ export default {
     return {
       focused: false,
       maxHeight: this.opened ? 'none' : 0, // set maxHeight to none if initialized as open
+      style: s,
     };
   },
   computed: {
@@ -81,6 +82,17 @@ export default {
       this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
     },
   },
+  methods: {
+    onClick(event) {
+      this.$emit('accordion-toggle', event);
+    },
+    onFocus() {
+      this.focused = true;
+    },
+    onBlur() {
+      this.focused = false;
+    }
+  },
   mounted() {
     /*
       The intent here is to give maxHeight an actual pixel value when the accordion
@@ -92,55 +104,42 @@ export default {
     }
   },
   render(h) {
-    // TODO finish this once icon is updated
     return (<div
-      :class="[modifierClass, styleClass, focusedClass]"
-      :id="`${id}-accordion`"
-      :ref="`accordion-container`"
+      class={cs(this.modifierClass, this.styleClass, this.focusedClass)}
+      id={`${this.id}-accordion`}
+      ref="accordion-container"
     >
       <button
-        :class="$style['cdr-accordion__button']"
-        :id="id"
-        @click="$emit('accordion-toggle', $event);"
-        @focus="focused = true"
-        @blur="focused = false"
-        :aria-expanded="`${opened}`"
-        :aria-controls="`${id}-collapsible`"
+        class={s['cdr-accordion__button']}
+        id={this.id}
+        onClick={this.onClick}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+        aria-expanded={`${this.opened}`}
+        aria-controls={`${this.id}-collapsible`}
       >
         <span
-          :class="$style['cdr-accordion__label']"
-          :id="`${id}-label`"
+          class={s['cdr-accordion__label']}
+          id={`${this.id}-label`}
         >
-          <slot name="label">
-            {{ label }}
-          </slot>
+          { this.label || this.$slots.label }
         </span>
         <icon-caret-down
-          :class="[
-            $style['cdr-accordion__icon'],
-            isOpenClass,
-          ]"
-          :size="compact ? 'small' : null"
+          class={cs(s['cdr-accordion__icon'], this.isOpenClass)}
+          size={this.compact ? 'small' : null}
         />
       </button>
       <div
-        :class="[
-          $style['cdr-accordion__content-container'],
-          isOpenClass,
-        ]"
-        :style="{ 'max-height': maxHeight }"
+        class={cs(s['cdr-accordion__content-container'], this.isOpenClass)}
+        style={ { maxHeight: this.maxHeight } } 
       >
         <div
-          :class="[
-            $style['cdr-accordion__content'],
-            isOpenClass
-          ]"
-          :aria-hidden="`${!opened}`"
-          :id="`${id}-collapsible`"
+          class={cs(s['cdr-accordion__content'], this.isOpenClass)}
+          aria-hidden={`${!this.opened}`}
+          id={`${this.id}-collapsible`}
           ref="accordion-content"
         >
-          <!-- @slot default slot for accordion content -->
-          <slot />
+          {this.$slots.default}
         </div>
       </div>
     </div>);

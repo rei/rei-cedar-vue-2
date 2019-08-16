@@ -3,7 +3,7 @@ import './css/main.scss';
 // import CdrThemer from 'componentsdir/themer/CdrThemer';
 // import CdrSearch from 'compositionsdir/search/CdrSearch';
 
-// export { default as CdrAccordion } from 'componentsdir/accordion/CdrAccordion';
+export { default as CdrAccordion } from 'componentsdir/accordion/CdrAccordion';
 export { default as CdrBreadcrumb } from 'componentsdir/breadcrumb/CdrBreadcrumb';
 export { default as CdrButton } from 'componentsdir/button/CdrButton';
 export { default as CdrCaption } from 'componentsdir/caption/CdrCaption';

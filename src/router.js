@@ -2,7 +2,7 @@
 // import Searches from 'compositionsdir/search/examples/searchbox';
 
 import App from 'srcdir/App';
-// import Accordions from 'componentsdir/accordion/examples/Accordion';
+import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Buttons from 'componentsdir/button/examples/Buttons';
 import Captions from 'componentsdir/caption/examples/Caption';
@@ -33,7 +33,7 @@ const routes = [
   { path: '/', component: App },
   { path: '/links', name: 'Links', component: Links },
   // { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
-  // { path: '/accordion', name: 'Accordion', component: Accordions },
+  { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Buttons },
   { path: '/captions', name: 'Captions', component: Captions },
