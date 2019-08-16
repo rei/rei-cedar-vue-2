@@ -1,40 +1,7 @@
-<template>
-  <!-- eslint-disable max-len -->
-  <div
-    v-if="ratio"
-    :class="[$style['cdr-media-frame'], ratioClass, cropClass]"
-  >
-    <div
-      :class="[coverClass, lazyClass, radiusClass]"
-      :style="styleObject"
-      aria-hidden="true"
-      v-bind="lazyAttrs"
-    />
-    <img
-      :class="[$style['cdr-media-frame__image'], $style['cdr-media-frame__image--hidden'], modifierClass, radiusClass]"
-      :src="src"
-      :alt="alt"
-    >
-  </div>
-  <img
-    v-else
-    :class="[modifierClass, radiusClass, lazyClass]"
-    :src="src"
-    :alt="alt"
-    v-bind="lazyAttrs"
-  >
-</template>
-
-<script>
 import modifier from 'mixinsdir/modifier';
+import s from './styles/CdrImg.scss';
+import cs from 'classnames';
 
-/**
- * Cedar 2 component for image
- * <span class="modifiers">Modifiers</span>
- * {responsive}
- * @version 0.0.1
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- */
 export default {
   name: 'CdrImg',
   mixins: [modifier],
@@ -132,6 +99,11 @@ export default {
         'rounded'].indexOf(value) >= 0) || false,
     },
   },
+  data() {
+    return {
+      style: s,
+    };
+  },
   computed: {
     baseClass() {
       return 'cdr-image';
@@ -143,22 +115,22 @@ export default {
     },
     radiusClass() {
       const classObj = {};
-      classObj[this.$style[`cdr-image--${this.radius}`]] = this.radius;
+      classObj[s[`cdr-image--${this.radius}`]] = this.radius;
       return classObj;
     },
     ratioClass() {
       const classObj = {};
-      classObj[this.$style[`cdr-media-frame--${this.ratio}`]] = this.ratio;
-      classObj[this.$style[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
-      classObj[this.$style[`cdr-media-frame--${this.ratioMd}@md`]] = this.ratioMd;
-      classObj[this.$style[`cdr-media-frame--${this.ratioLg}@lg`]] = this.ratioLg;
+      classObj[s[`cdr-media-frame--${this.ratio}`]] = this.ratio;
+      classObj[s[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
+      classObj[s[`cdr-media-frame--${this.ratioMd}@md`]] = this.ratioMd;
+      classObj[s[`cdr-media-frame--${this.ratioLg}@lg`]] = this.ratioLg;
       return classObj;
     },
     coverClass() {
       const classObj = {};
-      classObj[this.$style['cdr-media-frame__cover']] = true;
-      classObj[this.$style['cdr-media-frame__cover--crop']] = this.crop;
-      classObj[this.$style['cdr-media-frame__cover--cover']] = this.cover;
+      classObj[s['cdr-media-frame__cover']] = true;
+      classObj[s['cdr-media-frame__cover--crop']] = this.crop;
+      classObj[s['cdr-media-frame__cover--cover']] = this.cover;
       return classObj;
     },
     cropClass() {
@@ -185,9 +157,32 @@ export default {
       return attrObj;
     },
   },
+  render(h) {
+    if (this.ratio) {
+      return (
+        <div
+          class={cs(s['cdr-media-frame'], this.ratioClass, this.cropClass)}
+        >
+          <div
+            class={cs(this.coverClass, this.lazyClass, this.radiusClass)}
+            style={this.styleObject}
+            aria-hidden="true"
+            {...this.lazyAttrs}
+          />
+          <img
+            class={cs(s['cdr-media-frame__image'], s['cdr-media-frame__image--hidden'], this.modifierClass, this.radiusClass)}
+            src={this.src}
+            alt={this.alt}
+          />
+        </div>
+      )
+    } else {
+        return (<img
+          class={cs(this.modifierClass, this.radiusClass, this.lazyClass)}
+          src={this.src}
+          alt={this.alt}
+          {...this.lazyAttrs}
+        />)
+    }
+  }
 };
-</script>
-
-<style lang="scss" module>
-  @import './styles/CdrImg.scss';
-</style>

@@ -90,7 +90,7 @@ export default {
           aria-hidden="true"
         >
           /
-        </span>) : ''
+        </span>) : '';
         
         return (<li
           class={s['cdr-breadcrumb__item']}

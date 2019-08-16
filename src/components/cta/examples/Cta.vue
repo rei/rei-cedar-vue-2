@@ -66,6 +66,7 @@ export default {
 </script>
 
 <style>
+/* TODO: example styles not getting parsed? */
   .button-example {
     padding: 10px;
   }

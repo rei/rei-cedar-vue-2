@@ -41,7 +41,6 @@ export default {
   },
   render(h) {
     const Component = this.tag;
-    console.log('m', this.modifierClass, 's', this.space, s)
     return (<Component
       class={cs(
         this.modifierClass, 
