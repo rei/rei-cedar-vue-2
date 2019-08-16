@@ -5,7 +5,7 @@ export { default as CdrBreadcrumb } from 'componentsdir/breadcrumb/CdrBreadcrumb
 export { default as CdrButton } from 'componentsdir/button/CdrButton';
 export { default as CdrCaption } from 'componentsdir/caption/CdrCaption';
 export { default as CdrCard } from 'componentsdir/card/CdrCard';
-// export { default as CdrCheckbox } from 'componentsdir/checkbox/CdrCheckbox';
+export { default as CdrCheckbox } from 'componentsdir/checkbox/CdrCheckbox';
 export { default as CdrCol } from 'componentsdir/grid/CdrCol';
 export { default as CdrCta } from 'componentsdir/cta/CdrCta';
 // export { default as CdrDataTable } from 'componentsdir/dataTable/CdrDataTable';
@@ -20,7 +20,7 @@ export { default as CdrLink } from 'componentsdir/link/CdrLink';
 export { default as CdrList } from 'componentsdir/list/CdrList';
 // export { default as CdrPagination } from 'componentsdir/pagination/CdrPagination';
 export { default as CdrQuote } from 'componentsdir/quote/CdrQuote';
-// export { default as CdrRadio } from 'componentsdir/radio/CdrRadio';
+export { default as CdrRadio } from 'componentsdir/radio/CdrRadio';
 // export { default as CdrRating } from 'componentsdir/rating/CdrRating';
 export { default as CdrRow } from 'componentsdir/grid/CdrRow';
 // export { default as CdrSelect } from 'componentsdir/select/CdrSelect';

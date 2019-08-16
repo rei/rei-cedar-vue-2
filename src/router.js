@@ -16,7 +16,7 @@ import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
 // import Pagination from 'componentsdir/pagination/examples/Pagination';
 import Quotes from 'componentsdir/quote/examples/Quote';
-// import Radios from 'componentsdir/radio/examples/Radios';
+import Radios from 'componentsdir/radio/examples/Radios';
 // import Ratings from 'componentsdir/rating/examples/Ratings';
 // import Selects from 'componentsdir/select/examples/Selects';
 // import Tabs from 'componentsdir/tabs/examples/Tabs';
@@ -35,7 +35,7 @@ const routes = [
   { path: '/buttons', name: 'Buttons', component: Buttons },
   { path: '/captions', name: 'Captions', component: Captions },
   { path: '/cards', name: 'Cards', component: Cards },
-  // { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
+  { path: '/checkboxes', name: 'CheckBoxes', component: CheckBoxes },
   { path: '/cta', name: 'CTA', component: Cta },
   // { path: '/dataTables', name: 'Data Tables', component: DataTables },
   { path: '/grids', name: 'Grids', component: Grids },
@@ -45,7 +45,7 @@ const routes = [
   { path: '/lists', name: 'Lists', component: Lists },
   // { path: '/pagination', name: 'Pagination', component: Pagination },
   { path: '/quotes', name: 'Quotes', component: Quotes },
-  // { path: '/radios', name: 'Radios', component: Radios },
+  { path: '/radios', name: 'Radios', component: Radios },
   // { path: '/ratings', name: 'Ratings', component: Ratings },
   // { path: '/selects', name: 'Selects', component: Selects },
   // { path: '/space', name: 'Space', component: Space },

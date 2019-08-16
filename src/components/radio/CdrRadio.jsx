@@ -1,38 +1,8 @@
-<template>
-  <div :class="[space, $style['cdr-radio__wrap']]">
-    <label
-      :class="[modifierClass, labelClass]"
-      ref="label"
-    >
-      <input
-        :class="[$style['cdr-radio__input'], inputClass]"
-        type="radio"
-        v-bind="$attrs"
-        v-model="newValue"
-        :name="name"
-        @change="updateValue(newValue, $event)"
-        :value="customValue"
-        ref="radio"
-      >
-      <span :class="$style['cdr-radio__figure']" />
-      <div :class="[$style['cdr-radio__content'], contentClass]">
-        <!-- @slot innerHTML inside of radio component -->
-        <slot />
-      </div>
-    </label>
-  </div>
-</template>
-
-<script>
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
+import s from './styles/CdrRadio.scss';
+import cs from 'classnames';
 
-/**
- * Cedar 2 component for radio
- * **NOTE:** `v-model` is required.
- * @version 0.0.1
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- */
 export default {
   name: 'CdrRadio',
   mixins: [modifier, space],
@@ -73,12 +43,16 @@ export default {
   data() {
     return {
       newValue: this.value,
+      style: s,
     };
   },
   computed: {
     baseClass() {
       return 'cdr-radio';
     },
+    isDisabled() {
+      return this.$attrs.hasOwnProperty('disabled');
+    }
   },
   watch: {
     value(val) {
@@ -94,20 +68,42 @@ export default {
     },
   },
   methods: {
-    updateValue(newValue, e) {
+    updateValue(e) {
     /**
      * Selected radio value. Fires on section.
      * @event change
      * @type boolean|array
      */
+     const newValue = e.target.value;
       this.newValue = newValue;
       this.$emit('change', newValue, e);
     },
   },
+  render() {
+    console.log(this.$attrs)
+    return (
+      <div class={cs(this.space, this.style['cdr-radio__wrap'])}>
+        <label
+          class={cs(this.modifierClass, this.labelClass)}
+          ref="label"
+        >
+          <input
+            class={cs(this.style['cdr-radio__input'], this.inputClass)}
+            type="radio"
+            {...this.$attrs}
+            disabled={this.isDisabled}
+            checked={this.newValue === this.customValue}
+            name={this.name}
+            onChange={this.updateValue}
+            value={this.customValue}
+            ref="radio"
+          />
+          <span class={this.style['cdr-radio__figure']} />
+          <div class={cs(this.style['cdr-radio__content'], this.contentClass)}>
+            {this.$slots.default}
+          </div>
+        </label>
+      </div>
+    )
+  }
 };
-</script>
-
-<style lang="scss" module>
-  @import './styles/vars/CdrRadio.vars.scss';
-  @import './styles/CdrRadio.scss';
-</style>

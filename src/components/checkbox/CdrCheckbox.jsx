@@ -1,41 +1,7 @@
-<template>
-  <!-- eslint-disable max-len -->
-  <div :class="[space, $style['cdr-checkbox__wrap']]">
-    <label
-      :class="[modifierClass, labelClass]"
-      ref="label"
-    >
-      <input
-        :class="[$style['cdr-checkbox__input'], inputClass]"
-        type="checkbox"
-        v-bind="$attrs"
-        v-model="newValue"
-        :true-value="customValue ? null : trueValue"
-        :false-value="customValue ? null : falseValue"
-        :value="customValue"
-        :indeterminate="indeterminate"
-        @change="updateValue(newValue, $event)"
-        ref="checkbox"
-      >
-      <span :class="$style['cdr-checkbox__figure']" />
-      <div :class="[$style['cdr-checkbox__content'], contentClass]">
-        <!-- @slot innerHTML inside of checkbox component -->
-        <slot />
-      </div>
-    </label>
-  </div>
-</template>
-
-<script>
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
+import style from './styles/CdrCheckbox.scss';
 
-/**
- * Cedar 2 component for checkbox
- * **NOTE:** `v-model` is required.
- * @version 0.0.1
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- */
 export default {
   name: 'CdrCheckbox',
   mixins: [modifier, space],
@@ -86,6 +52,7 @@ export default {
   data() {
     return {
       newValue: this.value,
+      style,
     };
   },
   computed: {
@@ -107,15 +74,41 @@ export default {
     },
   },
   methods: {
-    updateValue(newValue, e) {
+    updateValue(e) {
+      const newValue = this.target.value;
       this.newValue = newValue;
       this.$emit('change', newValue, e);
     },
   },
+  // TODO: pass disabled/checked/other attrs through? need direct binding?
+  // TODO: what do search do?
+  // TODO: do we not need the temp var now?
+  // TODO: how to bind object as value?
+  render() {
+    return (
+      <div class={cs(this.space, this.style['cdr-checkbox__wrap'])}>
+        <label
+          class={cs(this.modifierClass, this.labelClass])}
+          ref="label"
+        >
+          <input
+            class={cs(this.style['cdr-checkbox__input'], this.inputClass)}
+            type="checkbox"
+            {...this.$attrs}
+            checked={this.newValue}
+            true-value={this.customValue ? null : this.trueValue}
+            false-value={this.customValue ? null : this.falseValue}
+            value={this.customValue}
+            indeterminate={this.indeterminate}
+            onChange={updateValue}
+            ref="checkbox"
+          />
+          <span class={this.style['cdr-checkbox__figure']} />
+          <div class={cs(this.style['cdr-checkbox__content'], contentClass)}>
+            {this.$slots.default}
+          </div>
+        </label>
+      </div>
+    )
+  }
 };
-</script>
-
-<style lang="scss" module>
-  @import './styles/vars/CdrCheckbox.vars.scss';
-  @import './styles/CdrCheckbox.scss';
-</style>
