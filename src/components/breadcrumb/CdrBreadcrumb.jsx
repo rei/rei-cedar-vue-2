@@ -1,11 +1,10 @@
 import s from './styles/CdrBreadcrumb.scss';
 import modifier from 'mixinsdir/modifier';
 import breakpoints from 'mixinsdir/breakpoints';
-import mapClasses from 'mixinsdir/mapClasses';
 
 export default {
   name: 'CdrBreadcrumb',
-  mixins: [modifier, breakpoints, mapClasses],
+  mixins: [modifier, breakpoints],
   props: {
     /**
      * Required. List of source breadcrumb property objects
@@ -45,6 +44,7 @@ export default {
   data() {
     return {
       shouldTruncate: this.truncationEnabled && this.items.length > 2,
+      style: s,
     };
   },
   computed: {
@@ -111,7 +111,7 @@ export default {
   render(h) {
     return (<nav
       ref="container"
-      class={this.mapClasses([this.modifierClass], s)}
+      class={this.modifierClass}
       aria-label="Breadcrumb"
     >
       <ol

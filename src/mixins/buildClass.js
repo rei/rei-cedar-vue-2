@@ -14,29 +14,29 @@ export default {
       }
       const base = checkBase;
       const propArgsArr = this[prop] ? this[prop].split(' ') : [];
-      let final = [];
+      let builtClasses = [];
 
-      if (!this.$style) {
-        final.push(`${base}`);
-        final = final.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
+      if (!this.style) {
+        builtClasses.push(`${base}`);
+        builtClasses = builtClasses.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
       } else {
-        final.push(this.moduleClass(base));
-        final = final.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
+        builtClasses.push(this.moduleClass(base));
+        builtClasses = builtClasses.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
       }
 
-      return final.join(' ');
+      return builtClasses.join(' ');
     },
     /**
      * Returns a css module class
      */
     moduleClass(className) {
-      return this.$style[`${className}`];
+      return this.style[`${className}`];
     },
     /**
      * Returns a modified base class
      */
     modifyClassName(base, modifier) {
-      return this.$style
+      return this.style
         ? this.moduleClass(`${base}--${modifier}`)
         : `${base}--${modifier}`;
     },

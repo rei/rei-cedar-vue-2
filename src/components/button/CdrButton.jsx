@@ -2,11 +2,11 @@ import s from './styles/CdrButton.scss';
 import modifier from 'mixinsdir/modifier';
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
-import mapClasses from 'mixinsdir/mapClasses';
+import cs from 'classnames';
 
 export default {
   name: 'CdrButton',
-  mixins: [modifier, size, space, mapClasses],
+  mixins: [modifier, size, space],
   props: {
     /**
      * Controls render as button or anchor. {button, a}
@@ -48,6 +48,11 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      style: s,
+    };
+  },
   computed: {
     baseClass() {
       return 'cdr-button';
@@ -81,16 +86,15 @@ export default {
     },
   },
   render() {
-    console.log(s)
+    console.log(this.modifierClass)
     const Component = this.tag
     return (<Component
-      class={this.mapClasses(
-        [this.defaultClass,
+      class={cs(this.defaultClass,
         this.modifierClass,
         this.buttonSizeClass,
         this.fullWidthClass,
         this.iconClass,
-        this.space], s
+        this.space
       )}
       type={this.tag === 'button' ? this.type : null}
       on={this.$listeners}

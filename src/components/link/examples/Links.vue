@@ -18,7 +18,9 @@
       Default Link, No props
     </cdr-text>
     <div class="anchor-example">
-      <cdr-link :data-backstop="`cdr-link`" />
+      <cdr-link :data-backstop="`cdr-link`">
+        REI.com
+      </cdr-link>
     </div>
 
     <cdr-text
@@ -39,7 +41,9 @@
       modifier="standalone"
       space="cdr-space-inset-one-x"
       :data-backstop="`cdr-link--standalone`"
-    />
+    >
+      REI.com
+    </cdr-link>
 
     <cdr-text
       tag="h3"
