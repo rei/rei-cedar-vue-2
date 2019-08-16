@@ -68,7 +68,7 @@
     "babel-jest": "^24.7.1",
     "babel-plugin-istanbul": "^5.1.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-plugin-transform-vue-jsx": "^4.0.1",
     "babel-preset-es2015-rollup": "^3.0.0",
     "backstopjs": "^3.8.8",
     "chalk": "^2.4.2",

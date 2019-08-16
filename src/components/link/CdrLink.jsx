@@ -50,7 +50,7 @@ export default {
       target={this.target}
       rel={this.computedRel}
       href={this.tag === 'a' ? this.href : null}
-      on={this.$listeners}
+      {...{on: this.$listeners}}
     >
       {this.$slots.default}
     </Component>);

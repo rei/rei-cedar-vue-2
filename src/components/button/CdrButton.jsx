@@ -86,8 +86,8 @@ export default {
     },
   },
   render() {
-    console.log(this.modifierClass)
-    const Component = this.tag
+    // console.log(this.modifierClass)
+    const Component = this.tag;
     return (<Component
       class={cs(this.defaultClass,
         this.modifierClass,
@@ -97,7 +97,7 @@ export default {
         this.space
       )}
       type={this.tag === 'button' ? this.type : null}
-      on={this.$listeners}
+      {...{on: this.$listeners}}
     >
       {this.$slots.icon}
       {this.$slots.default}

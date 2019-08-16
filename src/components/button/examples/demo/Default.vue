@@ -19,6 +19,7 @@
         :type="button.type"
         :disabled="button.disabled"
         :data-backstop="button.backstop ? button.backstop : null"
+        @click="log"
       >
         {{ button.label }}
       </cdr-button>
@@ -31,7 +32,7 @@
         Responsive
       </cdr-text>
       <cdr-button
-        :on-click="log"
+        @click="log"
         full-width
         size="large@sm"
       >
