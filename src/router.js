@@ -10,7 +10,7 @@ import Cta from 'componentsdir/cta/examples/Cta';
 import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
-// import Input from 'componentsdir/input/examples/Inputs';
+import Input from 'componentsdir/input/examples/Inputs';
 // import KitchenSink from 'srcdir/KitchenSink';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
@@ -41,7 +41,7 @@ const routes = [
   { path: '/grids', name: 'Grids', component: Grids },
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
-  // { path: '/inputs', name: 'Input', component: Input },
+  { path: '/inputs', name: 'Input', component: Input },
   { path: '/lists', name: 'Lists', component: Lists },
   // { path: '/pagination', name: 'Pagination', component: Pagination },
   { path: '/quotes', name: 'Quotes', component: Quotes },

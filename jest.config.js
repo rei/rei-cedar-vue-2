@@ -19,7 +19,6 @@ const config = {
     '<rootDir>/src/components/pagination',
     '<rootDir>/src/components/dataTable',
     '<rootDir>/src/components/tabs',
-    '<rootDir>/src/components/input',
   ],
   transform: {
     '^.+\\.(js|jsx)?$': 'babel-jest',
