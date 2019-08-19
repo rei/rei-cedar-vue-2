@@ -14,10 +14,11 @@ module.exports = function (api) {
           "node": "current"
         }
       },
-    ]
+    ],
+    "@vue/babel-preset-jsx"
   ];
   const plugins = [
-    "transform-vue-jsx",
+    // "transform-vue-jsx",
     [
       "@babel/plugin-transform-runtime",
       {

@@ -4,7 +4,7 @@ import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Buttons from 'componentsdir/button/examples/Buttons';
 import Captions from 'componentsdir/caption/examples/Caption';
 import Cards from 'componentsdir/card/examples/Cards';
-// import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
+import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
 import Cta from 'componentsdir/cta/examples/Cta';
 // import DataTables from 'componentsdir/dataTable/examples/DataTable';
 import Grids from 'componentsdir/grid/examples/Grid';

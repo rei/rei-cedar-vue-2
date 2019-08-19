@@ -1,6 +1,7 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 import style from './styles/CdrCheckbox.scss';
+import cs from 'classnames';
 
 export default {
   name: 'CdrCheckbox',
@@ -70,16 +71,18 @@ export default {
        * @event input
        * @type value | event
        * */
-      this.$emit('input', val);
+      //  TODO: emit whether or not it was checked?
+      this.$emit('input', val, val === this.customValue);
+      // this.$emit('change', newValue, e); ??? 
     },
   },
-  methods: {
-    updateValue(e) {
-      const newValue = this.target.value;
-      this.newValue = newValue;
-      this.$emit('change', newValue, e);
-    },
-  },
+  // methods: {
+  //   updateValue(e) {
+  //     const newValue = e.target.value;
+  //     this.newValue = newValue;
+  //     this.$emit('change', newValue, e);
+  //   },
+  // },
   // TODO: pass disabled/checked/other attrs through? need direct binding?
   // TODO: what do search do?
   // TODO: do we not need the temp var now?
@@ -88,23 +91,22 @@ export default {
     return (
       <div class={cs(this.space, this.style['cdr-checkbox__wrap'])}>
         <label
-          class={cs(this.modifierClass, this.labelClass])}
+          class={cs(this.modifierClass, this.labelClass)}
           ref="label"
         >
           <input
             class={cs(this.style['cdr-checkbox__input'], this.inputClass)}
             type="checkbox"
             {...this.$attrs}
-            checked={this.newValue}
+            vModel={this.newValue}
             true-value={this.customValue ? null : this.trueValue}
             false-value={this.customValue ? null : this.falseValue}
             value={this.customValue}
             indeterminate={this.indeterminate}
-            onChange={updateValue}
             ref="checkbox"
           />
           <span class={this.style['cdr-checkbox__figure']} />
-          <div class={cs(this.style['cdr-checkbox__content'], contentClass)}>
+          <div class={cs(this.style['cdr-checkbox__content'], this.contentClass)}>
             {this.$slots.default}
           </div>
         </label>

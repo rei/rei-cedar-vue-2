@@ -64,23 +64,13 @@ export default {
        * @event input
        * @type value | event
        * */
+      //  TODO: emit change here?
+      // TODO: emit whether or not it's checked?
       this.$emit('input', val);
-    },
-  },
-  methods: {
-    updateValue(e) {
-    /**
-     * Selected radio value. Fires on section.
-     * @event change
-     * @type boolean|array
-     */
-     const newValue = e.target.value;
-      this.newValue = newValue;
-      this.$emit('change', newValue, e);
+      // this.$emit('change', newValue, e);
     },
   },
   render() {
-    console.log(this.$attrs)
     return (
       <div class={cs(this.space, this.style['cdr-radio__wrap'])}>
         <label
@@ -92,9 +82,8 @@ export default {
             type="radio"
             {...this.$attrs}
             disabled={this.isDisabled}
-            checked={this.newValue === this.customValue}
+            vModel={this.newValue}
             name={this.name}
-            onChange={this.updateValue}
             value={this.customValue}
             ref="radio"
           />
