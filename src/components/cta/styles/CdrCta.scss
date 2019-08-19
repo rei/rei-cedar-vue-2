@@ -45,4 +45,30 @@
   &--elevated {
     @include cdr-cta-elevated-mixin;
   }
+
+  /* Full Width @ breakpoint
+    ========== */
+  @include xs-mq-only {
+    &--fullWidth\@xs {
+      @include cdr-cta-full-width-mixin;
+    }
+  }
+
+  @include sm-mq-only {
+    &--fullWidth\@sm {
+      @include cdr-cta-full-width-mixin;
+    }
+  }
+
+  @include md-mq-only {
+    &--fullWidth\@md {
+      @include cdr-cta-full-width-mixin;
+    }
+  }
+
+  @include lg-mq-only {
+    &--fullWidth\@lg {
+      @include cdr-cta-full-width-mixin;
+    }
+  }
 }

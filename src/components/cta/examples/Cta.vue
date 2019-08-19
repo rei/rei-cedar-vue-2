@@ -36,6 +36,14 @@
         data-backstop="cdr-cta--full-width"
       >Full width</cdr-cta>
     </div>
+    <div class="button-example">
+      <cdr-cta
+        cta-style="dark"
+        href="https://rei.com"
+        full-width="fullWidth@xs"
+        data-backstop="cdr-cta--full-width-at-xs"
+      >Full width @ xs</cdr-cta>
+    </div>
     <div
       class="button-example"
       style="max-width: 300px;"

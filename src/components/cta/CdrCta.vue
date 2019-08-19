@@ -27,10 +27,11 @@
 <script>
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
+import BuildClass from 'mixinsdir/buildClass';
 
 export default {
   name: 'CdrCta',
-  mixins: [modifier, space],
+  mixins: [modifier, space, BuildClass],
   props: {
     /**
       * Change the color of the cdr-cta button match different themes.
@@ -44,9 +45,18 @@ export default {
      * Sets width to be 100%.
     */
     fullWidth: {
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
-      validator: value => typeof value === 'boolean',
+      validator: (value) => {
+        if (typeof value === 'string') {
+          return ([
+            'fullWidth@xs',
+            'fullWidth@sm',
+            'fullWidth@md',
+            'fullWidth@lg'].indexOf(value) >= 0) || false;
+        }
+        return typeof value === 'boolean';
+      },
     },
     href: {
       type: String,
@@ -65,8 +75,12 @@ export default {
       return this.modifyClassName(this.baseClass, this.ctaStyle);
     },
     fullWidthClass() {
-      return this.fullWidth && !this.iconOnly
-        ? this.modifyClassName(this.baseClass, 'full-width') : null;
+      if (typeof this.fullWidth === 'boolean') {
+        return this.fullWidth && !this.iconOnly
+          ? this.modifyClassName(this.baseClass, 'full-width') : null;
+      }
+
+      return this.buildClass('fullWidth');
     },
     computedRel() {
       if (this.target === '_blank') {

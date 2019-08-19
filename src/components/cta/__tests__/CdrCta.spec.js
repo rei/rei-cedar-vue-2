@@ -21,14 +21,26 @@ describe('CdrCta.vue', () => {
     expect(wrapper.classes()).toContain('cdr-cta--sale');
   });
 
-  it('adds full width class', () => {
-    const wrapper = shallowMount(CdrCta, {
-      propsData: {
-        fullWidth: true,
-      },
+  describe('full width class', () => {
+    it('adds full width class for boolean', () => {
+      const wrapper = shallowMount(CdrCta, {
+        propsData: {
+          fullWidth: true,
+        },
+      });
+  
+      expect(wrapper.classes()).toContain('cdr-cta--full-width');
     });
+    
+    it('adds full width class for breakpoint', () => {
+      const wrapper = shallowMount(CdrCta, {
+        propsData: {
+          fullWidth: "fullWidth@xs",
+        },
+      });
 
-    expect(wrapper.classes()).toContain('cdr-cta--full-width');
+      expect(wrapper.classes()).toContain('cdr-cta--fullWidth@xs');
+    });
   });
 
   it('sets target attr correctly', () => {
