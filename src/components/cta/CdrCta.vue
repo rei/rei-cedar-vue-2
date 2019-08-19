@@ -28,6 +28,7 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 import BuildClass from 'mixinsdir/buildClass';
+import propValidator from 'srcdir/utils/propValidator';
 
 export default {
   name: 'CdrCta',
@@ -49,11 +50,10 @@ export default {
       default: false,
       validator: (value) => {
         if (typeof value === 'string') {
-          return ([
-            'fullWidth@xs',
-            'fullWidth@sm',
-            'fullWidth@md',
-            'fullWidth@lg'].indexOf(value) >= 0) || false;
+          return propValidator(
+            value,
+            ['fullWidth'],
+          );
         }
         return typeof value === 'boolean';
       },
