@@ -56,7 +56,7 @@ export default {
     },
     ellipsis() {
       return this.truncate ? (<li
-        onClick={this.shouldTruncate = false}
+        onClick={() => {this.shouldTruncate = false}}
         class={s['cdr-breadcrumb__item']}
       >
         <button
@@ -95,7 +95,7 @@ export default {
         return (<li
           class={s['cdr-breadcrumb__item']}
           key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
-          v-show="!truncate || (index >= items.length - 2)"
+          v-show={!this.truncate || (index >= this.items.length - 2)}
         >
           <a
             class={s['cdr-breadcrumb__link']}
@@ -108,7 +108,7 @@ export default {
       })
     }
   },
-  render(h) {
+  render() {
     return (<nav
       ref="container"
       class={this.modifierClass}

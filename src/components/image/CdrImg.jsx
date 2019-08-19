@@ -167,7 +167,7 @@ export default {
             class={cs(this.coverClass, this.lazyClass, this.radiusClass)}
             style={this.styleObject}
             aria-hidden="true"
-            {...this.lazyAttrs}
+            {...{attrs: this.lazyAttrs}}
           />
           <img
             class={cs(s['cdr-media-frame__image'], s['cdr-media-frame__image--hidden'], this.modifierClass, this.radiusClass)}
@@ -181,7 +181,7 @@ export default {
           class={cs(this.modifierClass, this.radiusClass, this.lazyClass)}
           src={this.src}
           alt={this.alt}
-          {...this.lazyAttrs}
+          {...{attrs: this.lazyAttrs}}
         />)
     }
   }

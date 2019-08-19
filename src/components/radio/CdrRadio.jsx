@@ -67,7 +67,7 @@ export default {
       //  TODO: emit change here?
       // TODO: emit whether or not it's checked?
       this.$emit('input', val);
-      // this.$emit('change', newValue, e);
+      this.$emit('change', val);
     },
   },
   render() {

@@ -55,7 +55,12 @@ const plugins = [
     targets: copyTargets,
     outputFolder: copyOutput
   }),
-
+  
+  babel({
+    exclude: 'node_modules/**',
+    runtimeHelpers: true, // ????
+    externalHelpers: true, // ????
+  }),
   vue({
     css: false,
     style: {
@@ -63,6 +68,9 @@ const plugins = [
       postcssModulesOptions: {
         generateScopedName(name, filename, css) {
           // to preseve '@' in responsive class names
+          if (env === 'test') {
+            return name;
+          }
           return `${name}_${packageJson.version}`;
         },
       },
@@ -91,17 +99,11 @@ const plugins = [
     modules: {
       generateScopedName(name, filename, css) {
         // don't scope anything in the `css/main.scss` (reset, utils, type, etc.)
-        if (filename.match(/main\.scss/)) return name;
-        
+        if (filename.match(/main\.scss/) || env === 'test') return name;
         // scope classes for components
         return `${name}_${packageJson.version}`;
       },
     }
-  }),
-  babel({
-    exclude: 'node_modules/**',
-    runtimeHelpers: true, // ????
-    externalHelpers: true, // ????
   }),
   commonjs({
       extensions: ['.js', '.jsx']

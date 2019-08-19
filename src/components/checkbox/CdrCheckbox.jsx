@@ -73,7 +73,7 @@ export default {
        * */
       //  TODO: emit whether or not it was checked?
       this.$emit('input', val, val === this.customValue);
-      // this.$emit('change', newValue, e); ??? 
+      this.$emit('change', val);
     },
   },
   // methods: {

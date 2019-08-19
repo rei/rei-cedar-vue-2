@@ -9,10 +9,10 @@ module.exports = function (api) {
       {
         // corejs: 3,
         // useBuiltIns: "usage",
-        modules: false,
-        "targets": {
-          "node": "current"
-        }
+        // modules: false,
+        // "targets": {
+        //   "node": "current"
+        // }
       },
     ],
     "@vue/babel-preset-jsx"
