@@ -1,4 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
+import sinon from 'sinon';
 import { CdrInput } from 'distdir/cedar.esm.js';
 
 describe('CdrInput.vue', () => {
@@ -201,58 +202,86 @@ describe('CdrInput.vue', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
+        value: 'bar'
       },
     });
     const input = wrapper.find({ ref: 'input' });
-    input.trigger('input')
-    expect(wrapper.emitted().input).toBeTruthy();
+    input.setValue('foo');
+    expect(wrapper.emitted().input[0][0]).toBe('foo');
   });
 
   it('emits a blur event', () => {
+    const spy = sinon.spy();
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
+      listeners: {
+        'blur': spy
+      }
     });
     const input = wrapper.find({ ref: 'input' });
     input.trigger('blur')
-    expect(wrapper.emitted().blur).toBeTruthy();
+    expect(spy.calledOnce).toBeTruthy();
   });
 
   it('emits a focus event', () => {
+    const spy = sinon.spy();
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
+      listeners: {
+        'focus': spy
+      }
     });
     const input = wrapper.find({ ref: 'input' });
     input.trigger('focus')
-    expect(wrapper.emitted().focus).toBeTruthy();
+    expect(spy.calledOnce).toBeTruthy();
   });
 
   it('emits a paste event', () => {
+    const spy = sinon.spy();
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
+      listeners: {
+        'paste': spy
+      }
     });
     const input = wrapper.find({ ref: 'input' });
     input.trigger('paste')
-    expect(wrapper.emitted().paste).toBeTruthy();
+    expect(spy.calledOnce).toBeTruthy();
   });
 
   it('emits a keydown event', () => {
+    const spy = sinon.spy();
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test'
+      },
+      listeners: {
+        'keydown': spy
+      }
+    });
+    const input = wrapper.find({ ref: 'input' });
+    input.trigger('keydown', {
+      key: 'a'
+    })
+    expect(spy.called).toBeTruthy();
+  });
+
+  // NOTE - can't use v-model directly here, targeting the `data` prop instead
+  it('updating v-model data updates the input', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
+        value: 'bar'
       },
     });
     const input = wrapper.find({ ref: 'input' });
-    input.trigger('keydown')
-    expect(wrapper.emitted().keydown).toBeTruthy();
+    wrapper.setProps({value: ''});
+    expect(input.element.value).toBe('');
   });
-
-  // TODO - If Vue Test Utils adds a way to mount with v-model,
-  // or if we can figure out a way to test that a v-model change
-  // updates the input value, then we should add that test.
 });

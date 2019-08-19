@@ -20,7 +20,7 @@
 
 $accordion-border: #dadada;
 
-.cdr-accordion-item {
+.cdr-accordion {
   border-top: 1px solid $accordion-border;
 
   position: relative;
@@ -60,7 +60,7 @@ $accordion-border: #dadada;
   &__icon {
     margin-left: $cdr-space-one-x;
     fill: $cdr-color-icon-emphasis-lightmode;
-    transition: transform 300ms cubic-bezier(0.32, 0.94, 0.6, 1);
+    transition: transform $cdr-duration-3-x $cdr-timing-function-ease-out;
 
     &:global(.open) {
       transform: rotate(-180deg);
@@ -69,12 +69,12 @@ $accordion-border: #dadada;
 
   &__content-container {
     overflow: hidden;
-    transition-duration: cdr-duration-2-x;
+    transition-duration: $cdr-duration-2-x;
     transition-property: max-height;
     transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1);
 
     &:global(.open) {
-      transition-duration: cdr-duration-3-x;
+      transition-duration: $cdr-duration-3-x;
     }
   }
 
@@ -85,7 +85,7 @@ $accordion-border: #dadada;
     background-color: $cdr-color-background-lightest;
     color: $cdr-color-text-primary-lightmode;
     padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-one-x;
-    transition: opacity 100ms linear;
+    transition: opacity $cdr-duration-1-x linear;
     opacity: 0;
 
     & > * {
@@ -110,12 +110,12 @@ $accordion-border: #dadada;
   &--border-aligned {
     margin: 0 $cdr-space-inset-one-x;
 
-    .cdr-accordion-item__button {
+    .cdr-accordion__button {
       margin-left: -$cdr-space-one-x;
       width: calc(100% + (#{$cdr-space-one-x} * 2));
     }
 
-    .cdr-accordion-item__content {
+    .cdr-accordion__content {
       padding: $cdr-space-half-x 0 $cdr-space-one-x;
     }
   }
@@ -123,18 +123,18 @@ $accordion-border: #dadada;
   /* Compact
      ========== */
   &--compact {
-    .cdr-accordion-item__button {
+    .cdr-accordion__button {
       padding: $cdr-space-inset-three-quarter-x;
     }
 
-    .cdr-accordion-item__label {
+    .cdr-accordion__label {
       // TODO: typography token
       @include redwood-display-20;
 
       font-weight: bold;
     }
 
-    .cdr-accordion-item__content {
+    .cdr-accordion__content {
       // TODO: typography token
       @include redwood-body-10;
 
@@ -149,13 +149,13 @@ $accordion-border: #dadada;
 
   /* Border-Aligned and Compact
      ========== */
-  &--compact.cdr-accordion-item--border-aligned {
+  &--compact.cdr-accordion--border-aligned {
     .cdr-accordion-item__button {
       margin-left: -$cdr-space-three-quarter-x;
       width: calc(100% + (#{$cdr-space-three-quarter-x} * 2));
     }
 
-    .cdr-accordion-item__content {
+    .cdr-accordion__content {
       padding: $cdr-space-quarter-x 0 $cdr-space-three-quarter-x;
     }
   }
@@ -165,6 +165,11 @@ $accordion-border: #dadada;
   }
 
   &--focused {
+    /*
+      This z-index change is to fix a Chrome-only visual issue with the light blue focus outline. Basically, the bottom
+      line of the outline is usually covered by the accordion immediately below what's currently focuesd. We increase
+      the z-index so that the outline can be correctly seen when the accordion is focused.
+    */
     z-index: 10;
   }
 }

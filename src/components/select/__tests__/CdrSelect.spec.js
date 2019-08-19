@@ -112,7 +112,7 @@ describe('cdrSelect.vue', () => {
       propsData: {
         label: 'Label Test',
         multiple: true,
-        extVal: [],
+        value: [],
       },
     });
     expect(wrapper.vm.$refs.select.hasAttribute('multiple')).toBe(true);
@@ -122,12 +122,12 @@ describe('cdrSelect.vue', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
-        extVal: '2',
+        value: '2',
         options: ['1', '2'],
       },
     });
     const select = wrapper.find({ ref: 'select'});
-    wrapper.setProps({ extVal: '1' });
+    wrapper.setProps({ value: '1' });
     select.trigger('change');
     expect(wrapper.emitted().change[0][0]).toBe('1');
   });
@@ -137,7 +137,7 @@ describe('cdrSelect.vue', () => {
       propsData: {
         label: 'test',
         multiple: true,
-        extVal: ['1', '2'],
+        value: ['1', '2'],
         options: [{
           value: '1',
           text: 'one',
@@ -152,8 +152,8 @@ describe('cdrSelect.vue', () => {
         }],
       },
     });
-    wrapper.setProps({ extVal: ['1', '3'] });
-    const propValues = wrapper.vm.extVal;
+    wrapper.setProps({ value: ['1', '3'] });
+    const propValues = wrapper.vm.value;
     for(let o of wrapper.vm.$refs.select.options) {
       propValues.indexOf(o.value) >= 0 ? o.selected = true : o.selected = false;
     }

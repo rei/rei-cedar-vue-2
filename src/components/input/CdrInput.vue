@@ -26,13 +26,9 @@
         :rows="[rows]"
         :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
-        v-model="newValue"
+        v-on="inputListeners"
+        :value="value"
         :id="inputId"
-        @blur="onBlur"
-        @input="onInput"
-        @focus="onFocus"
-        @paste="onPaste"
-        @keydown="onKeydown"
         :disabled="disabled"
         :required="required"
         :aria-label="hideLabel ? label : null"
@@ -43,13 +39,9 @@
         :type="type"
         :class="[inputClass, sizeClass, space]"
         v-bind="$attrs"
-        v-model="newValue"
+        v-on="inputListeners"
+        :value="value"
         :id="inputId"
-        @blur="onBlur"
-        @input="onInput"
-        @focus="onFocus"
-        @paste="onPaste"
-        @keydown="onKeydown"
         :disabled="disabled"
         :required="required"
         :aria-label="hideLabel ? label : null"
@@ -135,11 +127,6 @@ export default {
       type: [String, Number],
     },
   },
-  data() {
-    return {
-      newValue: this.value,
-    };
-  },
   computed: {
     // Use given id or generate one
     inputId() {
@@ -166,61 +153,19 @@ export default {
         [this.$style['cdr-input-wrap']]: true,
       };
     },
-  },
-  watch: {
-    value(val) {
-      this.newValue = val;
-    },
-    newValue(val) {
-      /**
-       * `v-model` value. Fires on input.
-       * @event input
-       * @type value | event
-       * */
-      this.$emit('input', val);
-    },
-  },
-  methods: {
-    onInput(e) {
-      const { value } = e.target;
-      /**
-      * Current input value. Fires while typing.
-      * Returns (value, event)
-      * @event input
-      * @type {event}
-      */
-      this.$emit('input', value, e);
-    },
-    onBlur(e) {
-      /**
-      * Fires when input loses focus.
-      * @event blur
-      * @type {event}
-      */
-      this.$emit('blur', e);
-    },
-    onFocus(e) {
-      /**
-      * Fires when input gains focus.
-      * @event focus
-      * @type {event} */
-      this.$emit('focus', e);
-    },
-    onPaste(e) {
-      /**
-      * Fires when text is pasted into input.
-      * @event paste
-      * @type {event}
-       */
-      this.$emit('paste', e);
-    },
-    onKeydown(e) {
-      /**
-      * Fires when a key is pressed.
-      * @event keydown
-      * @type {event}
-       */
-      this.$emit('keydown', e);
+    inputListeners() {
+      // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
+      // handles conflict between v-model and v-on="$listeners"
+      const vm = this;
+      return Object.assign(
+        {},
+        this.$listeners,
+        {
+          input(event) {
+            vm.$emit('input', event.target.value);
+          },
+        },
+      );
     },
   },
 };

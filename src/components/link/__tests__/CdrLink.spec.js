@@ -1,4 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
+import sinon from 'sinon';
 import { CdrLink } from 'distdir/cedar.esm.js';
 // import CdrThemer from 'componentsdir/themer/CdrThemer';
 
@@ -44,13 +45,13 @@ describe('CdrLink.vue', () => {
     });
     expect(wrapper.attributes().rel).toBe('noopener noreferrer');
   });
-  
+
   it('computes the base class correctly', () => {
     const wrapper = shallowMount(CdrLink);
     // expect(wrapper.classes().length).toBe(1);
     expect(wrapper.vm.$style).toHaveProperty('cdr-link');
   });
-  
+
   it('computes classes correctly for standalone modifier', () => {
     const wrapper = shallowMount(CdrLink, {
       propsData: {
@@ -68,6 +69,20 @@ describe('CdrLink.vue', () => {
     });
     expect(wrapper.is('button')).toBe(true);
     expect(wrapper.attributes().href).toBe(undefined);
+  });
+
+  it('emits a click', () => {
+    const spy = sinon.spy();
+    const wrapper = shallowMount(CdrLink, {
+      propsData: {
+        tag: 'button',
+      },
+      listeners: {
+        'click': spy
+      },
+    });
+    wrapper.trigger('click');
+    expect(spy.called).toBeTruthy();
   });
 
   xit('inherits theme correctly', () => {
