@@ -9,7 +9,7 @@
       :compact
 ========================================================================= */
 @import '../../../css/settings/index.scss';
-@import './vars/CdrDataTable.vars.scss';
+
 .cdr-data-table {
   // TODO: typography token
   @include redwood-display-20();

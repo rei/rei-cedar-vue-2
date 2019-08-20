@@ -1,95 +1,8 @@
-<template>
-  <div
-    :class="[
-      modifierClass,
-      space
-    ]"
-  >
-    <span
-      v-if="caption"
-      :class="$style['cdr-data-table__caption']"
-      aria-hidden="true"
-    >
-      {{ caption }}
-    </span>
-    <div
-      :class="[
-        $style['cdr-data-table__scroll-container'],
-        { 'locked-col': lockedCol },
-        { 'is-scrolling': isScrolling },
-      ]"
-      ref="scroll-container"
-    >
-      <table
-        :class="[
-          $style['cdr-data-table__content'],
-          { 'constrain-width': constrainWidth },
-        ]"
-        :id="id ? id : null"
-      >
-        <caption
-          class="cdr-display-sr-only"
-          v-if="caption"
-        >
-          {{ caption }}
-        </caption>
-        <thead v-if="hasColHeaders">
-          <slot name="thead">
-            <tr
-              ref="row-col-headers"
-            >
-              <th
-                class="empty"
-                v-show="hasRowHeaders"
-                scope="col"
-                :style="{ height: headerRowAlignHeight }"
-              />
-              <th
-                v-for="(header, index) in colHeaders"
-                :key="`header-row-col-${index}`"
-                scope="col"
-              >
-                {{ header }}
-              </th>
-            </tr>
-          </slot>
-        </thead>
-
-        <tbody ref="table-body">
-          <slot name="tbody">
-            <tr
-              v-for="(row, rowIndex) in rowData"
-              :key="`row-${rowIndex}`"
-              :ref="`row-${rowIndex}`"
-            >
-              <th
-                v-if="hasRowHeaders"
-                scope="row"
-                :ref="`row-${rowIndex}-th`"
-                :class="$style['align-row-header-content']"
-                :style="{ 'height': getRowAlignHeight('th', rowIndex) }"
-              >
-                {{ rowHeaders[rowIndex] }}
-              </th>
-              <td
-                v-for="(key, index) in keyOrder"
-                :key="`td-${index}-${key}`"
-                :style="{ 'height': getRowAlignHeight('td', rowIndex) }"
-              >
-                {{ getCellContent(row, key) }}
-              </td>
-            </tr>
-          </slot>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</template>
-
-<script>
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 import debounce from 'lodash/debounce';
+import style from './styles/CdrDataTable.scss';
+import cs from 'classnames';
 
 /**
  * Cedar 2 compfor for data table
@@ -137,6 +50,7 @@ export default {
       hasRowHeaders: false,
       headerRowHeight: 0,
       rowHeights: null,
+      style,
     };
   },
   computed: {
@@ -161,7 +75,7 @@ export default {
       ? this.rowHeaders : this.rowHeaders.length > 0;
 
     if (this.rowData.length > 0) {
-      this.cols = this.$refs['row-0'][0].children.length;
+      this.cols = this.$refs['row-0'].children.length;
     }
 
     if (this.lockedCol) {
@@ -198,8 +112,8 @@ export default {
       /* main table */
       for (let i = 0; i < numRows; i += 1) {
         const heights = {
-          th: this.$refs[`row-${i}`][0].children[0].offsetHeight || 1,
-          td: this.$refs[`row-${i}`][0].children[1].offsetHeight || 0,
+          th: this.$refs[`row-${i}`].children[0].offsetHeight || 1,
+          td: this.$refs[`row-${i}`].children[1].offsetHeight || 0,
         };
 
         rowContentHeights.push(heights);
@@ -233,9 +147,106 @@ export default {
       return elemToChange === 'td' ? `${row.th - 1}px` : `${row.td + 1}px`;
     },
   },
+  render() {
+    return (
+      <div
+        class={cs(
+          this.modifierClass,
+          this.space
+        )}
+      >
+        { this.caption && 
+          <span
+            class={style['cdr-data-table__caption']}
+            aria-hidden="true"
+          >
+            { this.caption }
+          </span> 
+        }
+        
+        <div
+          class={cs(
+            style['cdr-data-table__scroll-container'],
+            { 'locked-col': this.lockedCol },
+            { 'is-scrolling': this.isScrolling },
+          )}
+          ref="scroll-container"
+        >
+          <table
+            class={cs(
+              style['cdr-data-table__content'],
+              { 'constrain-width': this.constrainWidth },
+            )}
+            id={this.id ? this.id : null}
+          >
+            {this.caption && 
+              <caption
+                class="cdr-display-sr-only"
+              >
+                { this.caption }
+              </caption>
+            }
+            
+            {this.hasColHeaders && 
+              <thead>
+                {this.$slots.thead || 
+                  <tr
+                    ref="row-col-headers"
+                  >
+                    <th
+                      class="empty"
+                      v-show={this.hasRowHeaders}
+                      scope="col"
+                      style={{ height: this.headerRowAlignHeight }}
+                    />
+                    {this.colHeaders.map((header, index) => {
+                      return (<th
+                        key={`header-row-col-${index}`}
+                        scope="col"
+                      >
+                        { header }
+                      </th>);
+                    })}
+                  </tr> 
+                }
+              </thead>
+            }
+          
+            <tbody ref="table-body">
+              {this.$slots.tbody || 
+                this.rowData.map((row, rowIndex) => {
+                  return (
+                    <tr
+                      key={`row-${rowIndex}`}
+                      ref={`row-${rowIndex}`}
+                    >
+                    {this.hasRowHeaders && 
+                      (<th
+                        scope="row"
+                        ref={`row-${rowIndex}-th`}
+                        class={style['align-row-header-content']}
+                        style={{ height: this.getRowAlignHeight('th', rowIndex) }}
+                      >
+                        { this.rowHeaders[rowIndex] }
+                      </th>)
+                    }
+                    
+                    {this.keyOrder.map((key, index) => {
+                      return (<td
+                        key={`td-${index}-${key}`}
+                        style={{ height: this.getRowAlignHeight('td', rowIndex) }}
+                      >
+                        { this.getCellContent(row, key) }
+                      </td>);
+                    })}
+                    </tr>
+                  );
+                })
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
 };
-</script>
-
-<style lang="scss" module>
-  @import './styles/CdrDataTable.scss';
-</style>

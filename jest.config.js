@@ -16,8 +16,6 @@ const config = {
     '<rootDir>/src/components/themer',
     '<rootDir>/src/components/rating',
     '<rootDir>/src/components/select',
-    '<rootDir>/src/components/pagination',
-    '<rootDir>/src/components/dataTable',
     '<rootDir>/src/components/tabs',
   ],
   transform: {
