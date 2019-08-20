@@ -7,7 +7,7 @@ export default {
      *
      * @param {String} prop -- the prop to build classes from
      */
-    buildClass(prop, classPrefix = false) {
+    buildClass(prop, propNamePrefix = false) {
       let checkBase = 'cdr';
       if (this.baseClass) {
         checkBase = this.baseClass;
@@ -16,7 +16,7 @@ export default {
       let propArgsArr = this[prop] ? this[prop].split(' ') : [];
       let final = [];
 
-      if (classPrefix) {
+      if (propNamePrefix) {
         /*
           prefix class names with prop name
         */
