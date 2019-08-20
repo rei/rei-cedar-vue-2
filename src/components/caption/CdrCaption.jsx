@@ -1,5 +1,5 @@
-import s from './styles/CdrCaption.scss';
 import cs from 'classnames';
+import style from './styles/CdrCaption.scss';
 /**
  * Cedar 2 component for captions
  * @version 0.0.1
@@ -15,27 +15,27 @@ export default {
   },
   data() {
     return {
-      style: s,
+      style,
     };
   },
-  render(h){
+  render() {
     return (
-      <div class={cs(s['cdr-caption'], 'cdr-space-inset-one-x-squish')}>
-        {this.summary ? 
-          <p
-            class={s['cdr-caption__summary']}
+      <div class={cs(style['cdr-caption'], 'cdr-space-inset-one-x-squish')}>
+        {this.summary
+          ? <p
+            class={style['cdr-caption__summary']}
           >
             { this.summary }
           </p> : ''
         }
         {this.credit ? <cite
-            class={s['cdr-caption__cite']}
+            class={style['cdr-caption__cite']}
             class="cdr-text cdr-text--citation"
           >
             { this.credit }
           </cite> : ''
         }
       </div>
-    )
-  }
+    );
+  },
 };

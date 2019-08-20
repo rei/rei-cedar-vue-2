@@ -1,7 +1,7 @@
-import s from './styles/CdrLink.scss';
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 import cs from 'classnames';
+import style from './styles/CdrLink.scss';
 
 export default {
   name: 'CdrLink',
@@ -9,11 +9,6 @@ export default {
     modifier,
     space,
   ],
-  data() {
-    return {
-      style: s,
-    };
-  },
   props: {
     tag: {
       type: String,
@@ -28,6 +23,11 @@ export default {
     /** @ignore */
     rel: String,
   },
+  data() {
+    return {
+      style,
+    };
+  },
   computed: {
     baseClass() {
       return 'cdr-link';
@@ -39,19 +39,19 @@ export default {
       return this.rel;
     },
   },
-  render(h) {
+  render() {
     const Component = this.tag;
     return (<Component
       class={cs(
-        this.modifierClass, 
-        this.space
+        this.modifierClass,
+        this.space,
       )}
       target={this.target}
       rel={this.computedRel}
       href={this.tag === 'a' ? this.href : null}
-      {...{on: this.$listeners}}
+      {...{ on: this.$listeners }}
     >
       {this.$slots.default}
     </Component>);
-  }
+  },
 };

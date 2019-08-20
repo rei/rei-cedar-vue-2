@@ -1,8 +1,8 @@
 import modifier from 'mixinsdir/modifier';
 import debounce from 'lodash/debounce';
 import delay from 'lodash/delay';
-import style from './styles/CdrTabs.scss';
 import cs from 'classnames';
+import style from './styles/CdrTabs.scss';
 
 export default {
   name: 'CdrTabs',
@@ -44,7 +44,7 @@ export default {
     this.tabs = (this.$slots.default || [])
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
-      
+
     this.$nextTick(() => {
       this.initializeOffsets();
       this.headerWidth = this.getHeaderWidth();
@@ -185,10 +185,10 @@ export default {
         style={{ height: this.height }}
       >
         <div
-          class={cs( 
+          class={cs(
             this.overflowLeft ? style['cdr-tabs__header-gradient-left'] : '',
             this.overflowRight ? style['cdr-tabs__header-gradient-right'] : '',
-            style['cdr-tabs__gradient-container']
+            style['cdr-tabs__gradient-container'],
           )}
           vOn:keyup_right={this.rightArrowNav}
           vOn:keyup_left={this.leftArrowNav}
@@ -198,7 +198,7 @@ export default {
             class={cs(
               this.overflowLeft ? style['cdr-tabs__header-gradient-left'] : '',
               this.overflowRight ? style['cdr-tabs__header-gradient-right'] : '',
-              style['cdr-tabs__header-container']
+              style['cdr-tabs__header-container'],
             )}
           >
             <ol
@@ -206,15 +206,14 @@ export default {
               role="tablist"
               ref="cdrTabsHeader"
             >
-              {this.tabs.map((tab, index) => {
-                return (
+              {this.tabs.map((tab, index) => (
                   <li
                     role="tab"
                     aria-selected={tab.active}
                     key={tab.id ? tab.id : `${tab.name}-${index}`}
                     class={cs(
-                      tab.active ? style['cdr-tabs__header-item-active'] : '', 
-                      style['cdr-tabs__header-item']
+                      tab.active ? style['cdr-tabs__header-item-active'] : '',
+                      style['cdr-tabs__header-item'],
                     )}
                   >
                     <a
@@ -225,8 +224,7 @@ export default {
                       { tab.name }
                     </a>
                   </li>
-                )
-              })}
+              ))}
             </ol>
             <div
               class={style['cdr-tabs__underline']}
@@ -242,5 +240,5 @@ export default {
         </div>
       </div>
     );
-  }
+  },
 };

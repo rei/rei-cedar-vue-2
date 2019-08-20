@@ -1,7 +1,7 @@
-import style from './styles/CdrPagination.scss';
 import { IconCaretLeft, IconCaretRight } from 'componentsdir/icon/build/main';
 import CdrSelect from 'componentsdir/select/CdrSelect'; // TODO:: is this shakeable?
 import cs from 'classnames';
+import style from './styles/CdrPagination.scss';
 
 export default {
   name: 'CdrPagination',
@@ -51,34 +51,6 @@ export default {
       currentUrl: '',
       style,
     };
-  },
-  watch: {
-    value() {
-      this.currentUrl = this.pages[this.currentIdx].url;
-    },
-  },
-  mounted() {
-    this.currentUrl = this.pages[this.currentIdx].url;
-  },
-  methods: {
-    navigate(num, e) {
-      this.$emit('change', num, e);
-      this.$emit('input', num, e);
-    },
-    select(url, e) {
-      const idx = this.pages.map(x => x.url).indexOf(url);
-      const n = this.pages[idx].page;
-      this.$emit('select-change', url, e);
-      this.navigate(n, e);
-    },
-    guid() {
-      function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000)
-          .toString(16)
-          .substring(1);
-      }
-      return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
-    },
   },
   computed: {
     totalPageData() {
@@ -167,7 +139,7 @@ export default {
             )}
             href={this.pages[this.prevPageIdx].url}
             aria-label="Go to previous Page"
-            onClick={(e) => this.navigate(this.pages[this.prevPageIdx].page, e)}
+            onClick={e => this.navigate(this.pages[this.prevPageIdx].page, e)}
             ref="prev-link"
           >
             <icon-caret-left
@@ -188,7 +160,7 @@ export default {
             )}
             href={this.pages[this.nextPageIdx].url}
             aria-label="Go to next page"
-            onClick={(e) => this.navigate(this.pages[this.nextPageIdx].page, e)}
+            onClick={e => this.navigate(this.pages[this.nextPageIdx].page, e)}
             ref="next-link"
           >
             Next
@@ -198,34 +170,35 @@ export default {
           </a>
         </li>
       ) : '';
-    }, 
+    },
     desktopEl() {
-      return this.paginationData.map((n) => {
-        return (
+      return this.paginationData.map(n => (
           <li
             key={`${n}-${this.guid()}`}
             class={style['cdr-pagination__li--links']}
           >
-            {n !== '&hellip;' ? 
-              <a
+            {n !== '&hellip;'
+              ? <a
                 class={cs(
                   style['cdr-pagination__link'],
-                  {'current': n.page === this.value}
+                  { current: n.page === this.value },
                 )}
                 href={n.url}
-                aria-label={n.page === this.value ? `Current page, page ${n.page}` : `Go to page ${n.page}`}
+                aria-label={
+                  n.page === this.value
+                    ? `Current page, page ${n.page}`
+                    : `Go to page ${n.page}`
+                }
                 aria-current={n.page === this.value}
-                onClick={(e) => this.navigate(n.page, e)}
+                onClick={e => this.navigate(n.page, e)}
               >{ n.page }</a>
-            :
-              <span
+              : <span
                 class={style['cdr-pagination__ellipse']}
                 domPropsInnerHTML={n}
               />
             }
           </li>
-        );
-      }); // ??.join('');
+      )); // ??.join('');
     },
     mobileEl() {
       return (
@@ -238,20 +211,45 @@ export default {
             class={style['cdr-pagination__select']}
             ref="select"
           >
-            {this.paginationData.map(n => {
-              if (n !== '&hellip;') return;
-              return (<option
+            {this.paginationData.map(n => n !== '&hellip;'
+              && (<option
                 key={`${n}-${this.guid()}`}
                 value={n.url}
               >
-                Page { n.page }{ this.totalPages === null ? `` : ` of ${this.totalPages}` }
-              </option>);
-            })}
-            
+                Page { n.page }{ this.totalPages === null ? '' : ` of ${this.totalPages}` }
+              </option>))}
           </cdr-select>
         </li>
       );
-    }
+    },
+  },
+  watch: {
+    value() {
+      this.currentUrl = this.pages[this.currentIdx].url;
+    },
+  },
+  mounted() {
+    this.currentUrl = this.pages[this.currentIdx].url;
+  },
+  methods: {
+    navigate(num, e) {
+      this.$emit('change', num, e);
+      this.$emit('input', num, e);
+    },
+    select(url, e) {
+      const idx = this.pages.map(x => x.url).indexOf(url);
+      const n = this.pages[idx].page;
+      this.$emit('select-change', url, e);
+      this.navigate(n, e);
+    },
+    guid() {
+      function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+      }
+      return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
+    },
   },
   render() {
     return (

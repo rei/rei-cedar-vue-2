@@ -1,7 +1,7 @@
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
-import s from './styles/CdrRow.scss';
 import cs from 'classnames';
+import style from './styles/CdrRow.scss';
 
 export default {
   name: 'CdrRow',
@@ -107,7 +107,7 @@ export default {
   },
   data() {
     return {
-      style: s,
+      style,
     };
   },
   provide() {
@@ -121,7 +121,7 @@ export default {
 
       if (this.cols) {
         this.cols.split(' ').forEach((val) => {
-          classStr.push(this.style[`cdr-row_row${val}`]);
+          classStr.push(style[`cdr-row_row${val}`]);
         });
       }
 
@@ -154,7 +154,7 @@ export default {
 
       if (this.gutter) {
         this.gutter.split(' ').forEach((val) => {
-          classStr.push(this.style[`cdr-row--gutter-${val}`]);
+          classStr.push(style[`cdr-row--gutter-${val}`]);
         });
       }
 
@@ -194,12 +194,12 @@ export default {
       return classStr.join(' ');
     },
   },
-  render(h){ 
+  render() {
     const Component = this.type === 'list' ? 'ul' : 'div';
     return (
       <Component
         class={cs(
-          this.style['cdr-row'],
+          style['cdr-row'],
           this.colsClass,
           this.justifyClass,
           this.alignClass,

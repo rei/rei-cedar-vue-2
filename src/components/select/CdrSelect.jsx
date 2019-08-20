@@ -1,6 +1,5 @@
 import toArray from 'lodash/toArray';
 import style from './styles/CdrSelect.scss';
-import cs from 'classnames';
 
 export default {
   name: 'CdrSelect',
@@ -56,14 +55,14 @@ export default {
     },
     selectClass() {
       return {
-        [this.style['cdr-select']]: true,
-        [this.style['cdr-select--size']]: parseInt(this.size, 10) > 0,
+        [style['cdr-select']]: true,
+        [style['cdr-select--size']]: parseInt(this.size, 10) > 0,
       };
     },
     labelClass() {
       return {
-        [this.style['cdr-select__label']]: true,
-        [this.style['cdr-select__label--disabled']]: this.disabled,
+        [style['cdr-select__label']]: true,
+        [style['cdr-select__label--disabled']]: this.disabled,
       };
     },
     computedOpts() {
@@ -131,8 +130,8 @@ export default {
   render() {
     return (
       <div class={style['cdr-input-group']}>
-        {!this.hideLabel &&  
-          <label
+        {!this.hideLabel
+          && <label
             class={this.labelClass}
             for={this.selectId}
             ref="label"
@@ -143,7 +142,7 @@ export default {
         }
         <select
           class={this.selectClass}
-          {...{attrs: this.$attrs}}
+          {...{ attrs: this.$attrs }}
           id={this.selectId}
           size={this.size}
           onChange={this.onChange}
@@ -153,8 +152,8 @@ export default {
           multiple={this.multiple}
           aria-label={this.hideLabel ? this.label : null}
         >
-          {this.prompt && 
-            <option
+          {this.prompt
+            && <option
               value=""
               disabled
               hidden={!this.multiple}
@@ -163,19 +162,17 @@ export default {
               { this.prompt }
             </option>
           }
-          {this.computedOpts.map(option => {
-            return (
+          {this.computedOpts.map(option => (
               <option
                 key={option.text}
                 value={option.value}
               >
                 { option.text }
               </option>
-            );
-          })}
+          ))}
           {this.$slots.default}
         </select>
       </div>
     );
-  }
+  },
 };

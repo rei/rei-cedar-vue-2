@@ -1,8 +1,8 @@
-import style from './styles/CdrInput.scss';
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
 import propValidator from 'srcdir/utils/propValidator';
 import cs from 'classnames';
+import style from './styles/CdrInput.scss';
 /**
  * Cedar 2 component for input
  * **NOTE:** `v-model` is required.
@@ -70,20 +70,20 @@ export default {
     },
     labelClass() {
       return {
-        [this.style['cdr-input__label']]: true,
-        [this.style['cdr-input__label--disabled']]: this.disabled,
+        [style['cdr-input__label']]: true,
+        [style['cdr-input__label--disabled']]: this.disabled,
       };
     },
     inputClass() {
       return {
-        [this.style['cdr-input']]: true,
-        [this.style['cdr-input--multiline']]: this.rows > 1,
-        [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
+        [style['cdr-input']]: true,
+        [style['cdr-input--multiline']]: this.rows > 1,
+        [style['cdr-input--preicon']]: this.$slots['pre-icon'],
       };
     },
     inputWrapClass() {
       return {
-        [this.style['cdr-input-wrap']]: true,
+        [style['cdr-input-wrap']]: true,
       };
     },
     inputListeners() {
@@ -108,7 +108,7 @@ export default {
           Required
         </span>
       ) : '';
-      
+
       return !this.hideLabel ? (
         <label
           class={this.labelClass}
@@ -146,7 +146,7 @@ export default {
         </span>
       ) : '';
     },
-    infoEl() {
+    helperEl() {
       return this.$slots['helper-text'] ? (
         <span
           class={style['cdr-input__helper-text']}
@@ -166,12 +166,12 @@ export default {
             required={this.required}
             aria-label={this.hideLabel ? this.label : null}
             ref="input"
-            {...{attrs: this.$attrs, on: this.inputListeners}}
+            {...{ attrs: this.$attrs, on: this.inputListeners }}
             vModel={this.value}
           />
         );
-      } else {
-        return (
+      }
+      return (
           <input
             type={this.type}
             class={cs(this.inputClass, this.sizeClass, this.space)}
@@ -180,12 +180,11 @@ export default {
             required={this.required}
             aria-label={this.hideLabel ? this.label : null}
             ref="input"
-            {...{attrs: this.$attrs, on: this.inputListeners}}
+            {...{ attrs: this.$attrs, on: this.inputListeners }}
             vModel={this.value}
           />
-        );
-      }
-    }
+      );
+    },
   },
   render() {
     return (
@@ -200,5 +199,5 @@ export default {
         {this.helperEl}
       </div>
     );
-  }
+  },
 };

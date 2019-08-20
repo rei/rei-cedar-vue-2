@@ -2,7 +2,7 @@ import CdrText from 'componentsdir/text/CdrText';
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 import cs from 'classnames';
-import s from './styles/CdrQuote.scss';
+import style from './styles/CdrQuote.scss';
 
 export default {
   name: 'CdrQuote',
@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      style: s,
+      style,
     };
   },
   computed: {
@@ -34,7 +34,7 @@ export default {
     summaryBlock() {
       return this.summary ? (
         <p
-          class={s['cdr-quote__summary']}
+          class={style['cdr-quote__summary']}
         >
           { this.summary }
         </p>
@@ -45,14 +45,14 @@ export default {
         <cdr-text
           tag="cite"
           modifier="citation"
-          class={s['cdr-quote__citation']}
+          class={style['cdr-quote__citation']}
         >
           { this.citation }
         </cdr-text>
       ) : '';
-    }
+    },
   },
-  render(h) {
+  render() {
     const Component = this.tag;
     return (<Component
       class={cs(this.modifierClass, this.space)}

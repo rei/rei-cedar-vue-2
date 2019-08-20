@@ -1,6 +1,5 @@
 import modifier from 'mixinsdir/modifier';
 import style from './styles/CdrTabPanel.scss';
-import cs from 'classnames';
 
 export default {
   name: 'CdrTabPanel',
@@ -58,21 +57,21 @@ export default {
       const el = element;
       el.style.animationDirection = 'reverse';
       el.style.animationTimingFunction = 'cubic-bezier(0.4, 0, 0.68, .06)';
-      el.classList.add(this.style[this.animationDirection]);
+      el.classList.add(style[this.animationDirection]);
     },
     setEnterEnd(element) {
       const el = element;
       el.style.animationDirection = '';
-      el.classList.remove(this.style[this.animationDirection]);
+      el.classList.remove(style[this.animationDirection]);
     },
     setLeaveStart(element) {
       const el = element;
-      el.classList.add(this.style[this.animationDirection]);
+      el.classList.add(style[this.animationDirection]);
       el.style.animationTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
     },
     setLeaveEnd(element) {
       const el = element;
-      el.classList.remove(this.style[this.animationDirection]);
+      el.classList.remove(style[this.animationDirection]);
     },
     handleUpArrowNav() {
       this.$parent.setFocusToActiveTabHeader();
@@ -82,7 +81,7 @@ export default {
     return (
       <transition
         name="fly"
-        {...{on: this.animationHooks}}
+        {...{ on: this.animationHooks }}
       >
         <div
           v-show={this.active}
@@ -98,5 +97,5 @@ export default {
         </div>
       </transition>
     );
-  }
+  },
 };

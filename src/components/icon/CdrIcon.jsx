@@ -1,7 +1,7 @@
-import s from './styles/CdrIcon.scss';
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
 import cs from 'classnames';
+import style from './styles/CdrIcon.scss';
 
 export default {
   name: 'CdrIcon',
@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      style: s,
+      style,
     };
   },
   computed: {
@@ -26,11 +26,11 @@ export default {
       return 'cdr-icon';
     },
     inheritColorClass() {
-      return this.inheritColor ? s['cdr-icon--inherit-color'] : '';
+      return this.inheritColor ? style['cdr-icon--inherit-color'] : '';
     },
   },
-  render(h) {
-    return ( <svg
+  render() {
+    return (<svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       class={cs(this.sizeClass, this.inheritColorClass, this.space)}
@@ -41,6 +41,6 @@ export default {
         href={this.use}
         xlinkHref={this.use}
       /> : ''}
-    </svg>)
-  }
+    </svg>);
+  },
 };

@@ -12,7 +12,7 @@ export { default as CdrDataTable } from 'componentsdir/dataTable/CdrDataTable';
 
 // export { default as CdrIcon } from 'componentsdir/icon/CdrIcon';
 // // export all icon components for now (includes sprite and CdrIcon)
- // TODO: verify this works with tree shaking
+// TODO: verify this works with tree shaking
 export * from 'componentsdir/icon/build/main';
 export { default as CdrImg } from 'componentsdir/image/CdrImg';
 export { default as CdrInput } from 'componentsdir/input/CdrInput';

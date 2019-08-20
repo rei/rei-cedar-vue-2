@@ -1,8 +1,8 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 import contentPriority from 'mixinsdir/contentPriority';
-import s from './styles/CdrList.scss';
 import cs from 'classnames';
+import style from './styles/CdrList.scss';
 
 export default {
   name: 'CdrList',
@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      style: s,
+      style,
     };
   },
   computed: {
@@ -32,15 +32,15 @@ export default {
     },
   },
   render() {
-    const Component = this.tag
+    const Component = this.tag;
     return (<Component
       class={cs(
         this.modifierClass,
         this.space,
-        this.contentPriorityClass
+        this.contentPriorityClass,
       )}
     >
       {this.$slots.default}
-    </Component>)
-  }
+    </Component>);
+  },
 };

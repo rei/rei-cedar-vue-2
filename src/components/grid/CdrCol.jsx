@@ -1,8 +1,8 @@
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
 import CdrRow from 'componentsdir/grid/CdrRow'; // TODO: is this import shakeable?
-import s from './styles/CdrCol.scss';
 import cs from 'classnames';
+import style from './styles/CdrCol.scss';
 
 export default {
   name: 'CdrCol',
@@ -72,7 +72,7 @@ export default {
   },
   data() {
     return {
-      style: s,
+      style,
     };
   },
   computed: {
@@ -84,7 +84,7 @@ export default {
 
       if (this.span) {
         this.span.split(' ').forEach((val) => {
-          classStr.push(this.style[`cdr-col_span${val}`]);
+          classStr.push(style[`cdr-col_span${val}`]);
         });
       }
 
@@ -125,44 +125,45 @@ export default {
     },
   },
   render() {
+    let colEl;
     if (!this.isRow && !this.isList) {
-      return (
+      colEl = (
         <div
           class={cs(
-            this.style['cdr-col'],
+            style['cdr-col'],
             this.spanClass,
             this.offsetLeftClass,
             this.offsetRightClass,
             this.alignSelfClass,
           )}
         >
-          <div class={this.style['cdr-col__content']}>
+          <div class={style['cdr-col__content']}>
             {this.$slots.default}
           </div>
         </div>
       );
     } else if (!this.isRow && this.isList) {
-      return (
+      colEl = (
         <li
           class={cs(
-            this.style['cdr-col'],
+            style['cdr-col'],
             this.spanClass,
             this.offsetLeftClass,
             this.offsetRightClass,
             this.alignSelfClass,
           )}
         >
-          <div class={this.style['cdr-col__content']}>
+          <div class={style['cdr-col__content']}>
             {this.$slots.default}
           </div>
         </li>
       );
     } else if (this.isRow && this.isList) {
-      return (
+      colEl = (
         <li
           class={cs(
-            this.style['cdr-row'],
-            this.style['cdr-col'],
+            style['cdr-row'],
+            style['cdr-col'],
             this.spanClass,
             this.offsetLeftClass,
             this.offsetRightClass,
@@ -170,7 +171,7 @@ export default {
           )}
         >
           <cdr-row
-            class={this.style['cdr-col']}
+            class={style['cdr-col']}
             {...this.$attrs}
           >
             {this.$slots.default}
@@ -178,20 +179,21 @@ export default {
         </li>
       );
     } else {
-      return (
-        <cdr-row
-          class={cs(
-            this.style['cdr-col'],
-            this.spanClass,
-            this.offsetLeftClass,
-            this.offsetRightClass,
-            this.alignSelfClass,
-          )}
-          {...this.$attrs}
-        >
-          {this.$slots.default}
-        </cdr-row>
+      colEl = (
+          <cdr-row
+            class={cs(
+              style['cdr-col'],
+              this.spanClass,
+              this.offsetLeftClass,
+              this.offsetRightClass,
+              this.alignSelfClass,
+            )}
+            {...this.$attrs}
+          >
+            {this.$slots.default}
+          </cdr-row>
       );
     }
-  }
+    return colEl;
+  },
 };

@@ -1,8 +1,8 @@
-import s from './styles/CdrButton.scss';
 import modifier from 'mixinsdir/modifier';
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
 import cs from 'classnames';
+import style from './styles/CdrButton.scss';
 
 export default {
   name: 'CdrButton',
@@ -50,7 +50,7 @@ export default {
   },
   data() {
     return {
-      style: s,
+      style,
     };
   },
   computed: {
@@ -93,13 +93,12 @@ export default {
         this.buttonSizeClass,
         this.fullWidthClass,
         this.iconClass,
-        this.space
-      )}
+        this.space)}
       type={this.tag === 'button' ? this.type : null}
-      {...{on: this.$listeners}}
+      {...{ on: this.$listeners }}
     >
       {this.$slots.icon}
       {this.$slots.default}
-    </Component>)
-  }
+    </Component>);
+  },
 };

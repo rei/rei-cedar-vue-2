@@ -1,23 +1,22 @@
 import modifier from 'mixinsdir/modifier';
-import s from './styles/CdrCard.scss';
+import style from './styles/CdrCard.scss';
 
 export default {
   name: 'CdrCard',
   mixins: [modifier],
+  data() {
+    return {
+      style,
+    };
+  },
   computed: {
     baseClass() {
       return 'cdr-card';
     },
   },
-  data() {
-    return {
-      style: s,
-    };
-  },
-  render(h) {
+  render() {
     return (<article class={this.modifierClass}>
       {this.$slots.default}
-    </article>)
-  }
+    </article>);
+  },
 };
-

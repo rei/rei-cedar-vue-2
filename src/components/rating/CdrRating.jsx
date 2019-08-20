@@ -1,8 +1,8 @@
 import contentPriority from 'mixinsdir/contentPriority';
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
-import style from './styles/CdrRating.scss';
 import cs from 'classnames';
+import style from './styles/CdrRating.scss';
 
 export default {
   name: 'CdrRating',
@@ -44,7 +44,7 @@ export default {
   },
   data() {
     return {
-      style
+      style,
     };
   },
   computed: {
@@ -64,23 +64,25 @@ export default {
       return this.compact ? `(${this.count})` : `${this.count}`;
     },
     remainderEl() {
+      let remainder;
       if (this.remainder === '25') {
-        return (<span
+        remainder = (<span
           class={cs(style['cdr-rating__icon'], style['cdr-rating__25'])}
           aria-hidden="true"
         />);
       } else if (this.remainder === '50') {
-        return (<span
+        remainder = (<span
           class={cs(style['cdr-rating__icon'], style['cdr-rating__50'])}
           aria-hidden="true"
         />);
       } else if (this.remainder === '75') {
-        return (<span
+        remainder = (<span
           class={cs(style['cdr-rating__icon'], style['cdr-rating__75'])}
           aria-hidden="true"
         />);
       }
-    }
+      return remainder;
+    },
   },
   render() {
     const Component = this.href ? 'a' : 'div';
@@ -95,59 +97,57 @@ export default {
         )}
       >
         <div class={style['cdr-rating__background']}>
-          {[...Array(5)].map(n => {
-            return (
+          {[...Array(5)].map(n => (
               <span
                 class={cs(
                   style['cdr-rating__icon'],
-                  this.count > 0 ? style['cdr-rating__placeholder'] : style['cdr-rating__placeholder--no-reviews'],
+                  this.count > 0
+                    ? style['cdr-rating__placeholder']
+                    : style['cdr-rating__placeholder--no-reviews'],
                 )}
                 key={n}
                 aria-hidden="true"
               />
-            );
-          })}
+          ))}
         </div>
         <div class={style['cdr-rating__ratings']}>
-          
-          {[...Array(this.whole)].map(n => {
-            return (
+
+          {[...Array(this.whole)].map(n => (
               <span
                 class={cs(style['cdr-rating__icon'], style['cdr-rating__100'])}
                 key={n}
                 aria-hidden="true"
               />
-            );
-          })}
+          ))}
           {this.remainderEl }
         </div>
-        {this.count && 
-          <span
+        {this.count
+          && <span
             aria-hidden="true"
             class={style['cdr-rating__count']}
           >
-            {this.href && 
-              <span class={style['cdr-rating__number']}>
+            {this.href
+              && <span class={style['cdr-rating__number']}>
                 { this.rounded }
               </span>
             }
-            
+
             <span>
               { this.formattedCount }
             </span>
-          
-            {!this.compact && 
-              <span>
+
+            {!this.compact
+              && <span>
                 &nbsp;Reviews
               </span>
             }
           </span>
         }
-        
+
         <span class="cdr-display-sr-only">
           rated { this.rounded } out of 5 with { this.count } reviews
         </span>
       </Component>
     );
-  }
+  },
 };

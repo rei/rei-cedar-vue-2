@@ -1,7 +1,7 @@
-import s from './styles/CdrAccordion.scss';
 import { IconCaretDown } from 'componentsdir/icon/build/main';
 import modifier from 'mixinsdir/modifier';
 import cs from 'classnames';
+import style from './styles/CdrAccordion.scss';
 
 export default {
   name: 'CdrAccordion',
@@ -50,7 +50,7 @@ export default {
     return {
       focused: false,
       maxHeight: this.opened ? 'none' : 0, // set maxHeight to none if initialized as open
-      style: s,
+      style,
     };
   },
   computed: {
@@ -82,17 +82,6 @@ export default {
       this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
     },
   },
-  methods: {
-    onClick(event) {
-      this.$emit('accordion-toggle', event);
-    },
-    onFocus() {
-      this.focused = true;
-    },
-    onBlur() {
-      this.focused = false;
-    }
-  },
   mounted() {
     /*
       The intent here is to give maxHeight an actual pixel value when the accordion
@@ -103,14 +92,25 @@ export default {
       this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
     }
   },
-  render(h) {
+  methods: {
+    onClick(event) {
+      this.$emit('accordion-toggle', event);
+    },
+    onFocus() {
+      this.focused = true;
+    },
+    onBlur() {
+      this.focused = false;
+    },
+  },
+  render() {
     return (<div
       class={cs(this.modifierClass, this.styleClass, this.focusedClass)}
       id={`${this.id}-accordion`}
       ref="accordion-container"
     >
       <button
-        class={s['cdr-accordion__button']}
+        class={style['cdr-accordion__button']}
         id={this.id}
         onClick={this.onClick}
         onFocus={this.onFocus}
@@ -119,22 +119,22 @@ export default {
         aria-controls={`${this.id}-collapsible`}
       >
         <span
-          class={s['cdr-accordion__label']}
+          class={style['cdr-accordion__label']}
           id={`${this.id}-label`}
         >
           { this.$slots.label || this.label}
         </span>
         <icon-caret-down
-          class={cs(s['cdr-accordion__icon'], this.isOpenClass)}
+          class={cs(style['cdr-accordion__icon'], this.isOpenClass)}
           size={this.compact ? 'small' : null}
         />
       </button>
       <div
-        class={cs(s['cdr-accordion__content-container'], this.isOpenClass)}
-        style={ { maxHeight: this.maxHeight } } 
+        class={cs(style['cdr-accordion__content-container'], this.isOpenClass)}
+        style={ { maxHeight: this.maxHeight } }
       >
         <div
-          class={cs(s['cdr-accordion__content'], this.isOpenClass)}
+          class={cs(style['cdr-accordion__content'], this.isOpenClass)}
           aria-hidden={`${!this.opened}`}
           id={`${this.id}-collapsible`}
           ref="accordion-content"
@@ -143,5 +143,5 @@ export default {
         </div>
       </div>
     </div>);
-  }
+  },
 };

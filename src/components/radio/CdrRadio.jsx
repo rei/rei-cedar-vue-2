@@ -1,7 +1,7 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
-import s from './styles/CdrRadio.scss';
 import cs from 'classnames';
+import style from './styles/CdrRadio.scss';
 
 export default {
   name: 'CdrRadio',
@@ -43,16 +43,13 @@ export default {
   data() {
     return {
       newValue: this.value,
-      style: s,
+      style,
     };
   },
   computed: {
     baseClass() {
       return 'cdr-radio';
     },
-    isDisabled() {
-      return this.$attrs.hasOwnProperty('disabled');
-    }
   },
   watch: {
     value(val) {
@@ -72,27 +69,26 @@ export default {
   },
   render() {
     return (
-      <div class={cs(this.space, this.style['cdr-radio__wrap'])}>
+      <div class={cs(this.space, style['cdr-radio__wrap'])}>
         <label
           class={cs(this.modifierClass, this.labelClass)}
           ref="label"
         >
           <input
-            class={cs(this.style['cdr-radio__input'], this.inputClass)}
+            class={cs(style['cdr-radio__input'], this.inputClass)}
             type="radio"
-            {...this.$attrs}
-            disabled={this.isDisabled}
+            { ...{ attrs: this.$attrs } }
             vModel={this.newValue}
             name={this.name}
             value={this.customValue}
             ref="radio"
           />
-          <span class={this.style['cdr-radio__figure']} />
-          <div class={cs(this.style['cdr-radio__content'], this.contentClass)}>
+          <span class={style['cdr-radio__figure']} />
+          <div class={cs(style['cdr-radio__content'], this.contentClass)}>
             {this.$slots.default}
           </div>
         </label>
       </div>
-    )
-  }
+    );
+  },
 };

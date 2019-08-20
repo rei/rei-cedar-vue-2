@@ -1,6 +1,6 @@
 import modifier from 'mixinsdir/modifier';
-import s from './styles/CdrImg.scss';
 import cs from 'classnames';
+import style from './styles/CdrImg.scss';
 
 export default {
   name: 'CdrImg',
@@ -101,7 +101,7 @@ export default {
   },
   data() {
     return {
-      style: s,
+      style,
     };
   },
   computed: {
@@ -115,22 +115,22 @@ export default {
     },
     radiusClass() {
       const classObj = {};
-      classObj[s[`cdr-image--${this.radius}`]] = this.radius;
+      classObj[style[`cdr-image--${this.radius}`]] = this.radius;
       return classObj;
     },
     ratioClass() {
       const classObj = {};
-      classObj[s[`cdr-media-frame--${this.ratio}`]] = this.ratio;
-      classObj[s[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
-      classObj[s[`cdr-media-frame--${this.ratioMd}@md`]] = this.ratioMd;
-      classObj[s[`cdr-media-frame--${this.ratioLg}@lg`]] = this.ratioLg;
+      classObj[style[`cdr-media-frame--${this.ratio}`]] = this.ratio;
+      classObj[style[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
+      classObj[style[`cdr-media-frame--${this.ratioMd}@md`]] = this.ratioMd;
+      classObj[style[`cdr-media-frame--${this.ratioLg}@lg`]] = this.ratioLg;
       return classObj;
     },
     coverClass() {
       const classObj = {};
-      classObj[s['cdr-media-frame__cover']] = true;
-      classObj[s['cdr-media-frame__cover--crop']] = this.crop;
-      classObj[s['cdr-media-frame__cover--cover']] = this.cover;
+      classObj[style['cdr-media-frame__cover']] = true;
+      classObj[style['cdr-media-frame__cover--crop']] = this.crop;
+      classObj[style['cdr-media-frame__cover--cover']] = this.cover;
       return classObj;
     },
     cropClass() {
@@ -157,32 +157,36 @@ export default {
       return attrObj;
     },
   },
-  render(h) {
+  render() {
     if (this.ratio) {
       return (
         <div
-          class={cs(s['cdr-media-frame'], this.ratioClass, this.cropClass)}
+          class={cs(style['cdr-media-frame'], this.ratioClass, this.cropClass)}
         >
           <div
             class={cs(this.coverClass, this.lazyClass, this.radiusClass)}
             style={this.styleObject}
             aria-hidden="true"
-            {...{attrs: this.lazyAttrs}}
+            {...{ attrs: this.lazyAttrs }}
           />
           <img
-            class={cs(s['cdr-media-frame__image'], s['cdr-media-frame__image--hidden'], this.modifierClass, this.radiusClass)}
+            class={cs(
+              style['cdr-media-frame__image'],
+              style['cdr-media-frame__image--hidden'],
+              this.modifierClass,
+              this.radiusClass,
+            )}
             src={this.src}
             alt={this.alt}
           />
         </div>
-      )
-    } else {
-        return (<img
+      );
+    }
+    return (<img
           class={cs(this.modifierClass, this.radiusClass, this.lazyClass)}
           src={this.src}
           alt={this.alt}
-          {...{attrs: this.lazyAttrs}}
-        />)
-    }
-  }
+          {...{ attrs: this.lazyAttrs }}
+        />);
+  },
 };

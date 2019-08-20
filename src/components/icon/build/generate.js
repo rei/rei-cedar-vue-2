@@ -81,7 +81,7 @@ spriter.compile((error, result) => {
         `
 export default {
   name: 'CdrIconSprite',
-  render(h) {
+  render() {
     return h(
       'div',
       {

@@ -1,8 +1,8 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 import debounce from 'lodash/debounce';
-import style from './styles/CdrDataTable.scss';
 import cs from 'classnames';
+import style from './styles/CdrDataTable.scss';
 
 /**
  * Cedar 2 compfor for data table
@@ -152,18 +152,18 @@ export default {
       <div
         class={cs(
           this.modifierClass,
-          this.space
+          this.space,
         )}
       >
-        { this.caption && 
-          <span
+        { this.caption
+          && <span
             class={style['cdr-data-table__caption']}
             aria-hidden="true"
           >
             { this.caption }
-          </span> 
+          </span>
         }
-        
+
         <div
           class={cs(
             style['cdr-data-table__scroll-container'],
@@ -179,18 +179,18 @@ export default {
             )}
             id={this.id ? this.id : null}
           >
-            {this.caption && 
-              <caption
+            {this.caption
+              && <caption
                 class="cdr-display-sr-only"
               >
                 { this.caption }
               </caption>
             }
-            
-            {this.hasColHeaders && 
-              <thead>
-                {this.$slots.thead || 
-                  <tr
+
+            {this.hasColHeaders
+              && <thead>
+                {this.$slots.thead
+                  || <tr
                     ref="row-col-headers"
                   >
                     <th
@@ -199,29 +199,26 @@ export default {
                       scope="col"
                       style={{ height: this.headerRowAlignHeight }}
                     />
-                    {this.colHeaders.map((header, index) => {
-                      return (<th
+                    {this.colHeaders.map((header, index) => (<th
                         key={`header-row-col-${index}`}
                         scope="col"
                       >
                         { header }
-                      </th>);
-                    })}
-                  </tr> 
+                      </th>))}
+                  </tr>
                 }
               </thead>
             }
-          
+
             <tbody ref="table-body">
-              {this.$slots.tbody || 
-                this.rowData.map((row, rowIndex) => {
-                  return (
+              {this.$slots.tbody
+                || this.rowData.map((row, rowIndex) => (
                     <tr
                       key={`row-${rowIndex}`}
                       ref={`row-${rowIndex}`}
                     >
-                    {this.hasRowHeaders && 
-                      (<th
+                    {this.hasRowHeaders
+                      && (<th
                         scope="row"
                         ref={`row-${rowIndex}-th`}
                         class={style['align-row-header-content']}
@@ -230,23 +227,20 @@ export default {
                         { this.rowHeaders[rowIndex] }
                       </th>)
                     }
-                    
-                    {this.keyOrder.map((key, index) => {
-                      return (<td
+
+                    {this.keyOrder.map((key, index) => (<td
                         key={`td-${index}-${key}`}
                         style={{ height: this.getRowAlignHeight('td', rowIndex) }}
                       >
                         { this.getCellContent(row, key) }
-                      </td>);
-                    })}
+                      </td>))}
                     </tr>
-                  );
-                })
+                ))
               }
             </tbody>
           </table>
         </div>
       </div>
     );
-  }
+  },
 };
