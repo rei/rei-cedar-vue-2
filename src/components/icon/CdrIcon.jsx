@@ -36,7 +36,7 @@ export default {
       class={cs(this.sizeClass, this.inheritColorClass, this.space)}
       role="presentation"
     >
-      <slot />
+      {this.$slots.default}
       {this.use ? <use
         href={this.use}
         xlinkHref={this.use}

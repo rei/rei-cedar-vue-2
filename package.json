@@ -30,7 +30,7 @@
     "test": "npm run unit && npm run e2e",
     "clean": "rm -rf dist",
     "lint": "npm run lint:js && npm run lint:styles",
-    "lint:js": "eslint --ext .js,.vue src",
+    "lint:js": "eslint --ext .js,.vue,.jsx src",
     "lint:styles": "stylelint src",
     "reference": "backstop reference --configPath=backstop.js",
     "compare": "backstop test --configPath=backstop.js",

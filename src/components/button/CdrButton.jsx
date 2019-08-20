@@ -86,7 +86,6 @@ export default {
     },
   },
   render() {
-    // console.log(this.modifierClass)
     const Component = this.tag;
     return (<Component
       class={cs(this.defaultClass,

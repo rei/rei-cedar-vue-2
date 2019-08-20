@@ -19,7 +19,7 @@ import Quotes from 'componentsdir/quote/examples/Quote';
 import Radios from 'componentsdir/radio/examples/Radios';
 import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
-// import Tabs from 'componentsdir/tabs/examples/Tabs';
+import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
 // import Space from 'componentsdir/Utilities/Space';
 // import Utilities from 'componentsdir/Utilities/Utilities';
@@ -47,7 +47,7 @@ const routes = [
   { path: '/radios', name: 'Radios', component: Radios },
   { path: '/ratings', name: 'Ratings', component: Ratings },
   { path: '/selects', name: 'Selects', component: Selects },
-  // { path: '/tabs', name: 'Tabs', component: Tabs },
+  { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
   // { path: '/space', name: 'Space', component: Space },
   // { path: '/utilities', name: 'Utilities', component: Utilities },

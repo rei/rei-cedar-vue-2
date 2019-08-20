@@ -1,27 +1,6 @@
-<template>
-  <!-- disable lint errors on line length in template -->
-  <!-- eslint-disable max-len -->
-  <transition
-    name="fly"
-    v-on="animationHooks"
-  >
-    <div
-      v-show="active"
-      :aria-hidden="!active"
-      :class="[modifierClass]"
-      ref="cdrTabPanelContainer"
-      tabindex="0"
-      role="tabpanel"
-      @keydown.up.prevent="handleUpArrowNav"
-      :key="name"
-    >
-      <slot />
-    </div>
-  </transition>
-</template>
-
-<script>
 import modifier from 'mixinsdir/modifier';
+import style from './styles/CdrTabPanel.scss';
+import cs from 'classnames';
 
 export default {
   name: 'CdrTabPanel',
@@ -46,6 +25,7 @@ export default {
       offsetX: 0,
       tabId: this.id || this.name,
       animationDirection: 'default',
+      style,
     };
   },
   computed: {
@@ -65,6 +45,7 @@ export default {
   methods: {
     setActive(state) {
       this.active = state;
+      this.$emit('tab-change', state, this.tabId);
       this.$emit('tabChange', state, this.tabId);
     },
     setAnimationDirection(direction) {
@@ -77,29 +58,45 @@ export default {
       const el = element;
       el.style.animationDirection = 'reverse';
       el.style.animationTimingFunction = 'cubic-bezier(0.4, 0, 0.68, .06)';
-      el.classList.add(this.$style[this.animationDirection]);
+      el.classList.add(this.style[this.animationDirection]);
     },
     setEnterEnd(element) {
       const el = element;
       el.style.animationDirection = '';
-      el.classList.remove(this.$style[this.animationDirection]);
+      el.classList.remove(this.style[this.animationDirection]);
     },
     setLeaveStart(element) {
       const el = element;
-      el.classList.add(this.$style[this.animationDirection]);
+      el.classList.add(this.style[this.animationDirection]);
       el.style.animationTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
     },
     setLeaveEnd(element) {
       const el = element;
-      el.classList.remove(this.$style[this.animationDirection]);
+      el.classList.remove(this.style[this.animationDirection]);
     },
     handleUpArrowNav() {
       this.$parent.setFocusToActiveTabHeader();
     },
   },
+  render() {
+    return (
+      <transition
+        name="fly"
+        {...{on: this.animationHooks}}
+      >
+        <div
+          v-show={this.active}
+          aria-hidden={!this.active}
+          class={this.modifierClass}
+          ref="cdrTabPanelContainer"
+          tabindex="0"
+          role="tabpanel"
+          vOn:keydown_up_prevent={this.handleUpArrowNav}
+          key={this.name}
+        >
+          {this.$slots.default}
+        </div>
+      </transition>
+    );
+  }
 };
-</script>
-
-<style lang="scss" module>
-  @import './styles/CdrTabPanel.scss';
-</style>

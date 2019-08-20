@@ -1,64 +1,8 @@
-<template>
-  <!-- disable lint errors on line length in template -->
-  <!-- eslint-disable max-len -->
-  <div
-    :class="[modifierClass]"
-    ref="cdrTabsContainer"
-    :style="{ height: height }"
-  >
-    <div
-      :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
-                overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
-                $style['cdr-tabs__gradient-container']]"
-      @keyup.right="rightArrowNav"
-      @keyup.left="leftArrowNav"
-      @keydown.down.prevent="handleDownArrowNav"
-    >
-      <nav
-        :class="[ overflowLeft ? $style['cdr-tabs__header-gradient-left'] : '',
-                  overflowRight ? $style['cdr-tabs__header-gradient-right'] : '',
-                  $style['cdr-tabs__header-container']]"
-      >
-        <ol
-          :class="$style['cdr-tabs__header']"
-          role="tablist"
-          ref="cdrTabsHeader"
-        >
-          <li
-            v-for="(tab, index) in tabs"
-            role="tab"
-            :aria-selected="tab.active"
-            :key="tab.id ? tab.id : `${tab.name}-${index}`"
-            :class="[ tab.active ? $style['cdr-tabs__header-item-active'] : '', $style['cdr-tabs__header-item']]"
-          >
-            <a
-              @click.prevent="handleClick(tab, $event)"
-              :href="tab.name"
-              :class="$style['cdr-tabs__header-item-label']"
-            >
-              {{ tab.name }}
-            </a>
-          </li>
-        </ol>
-        <div
-          :class="$style['cdr-tabs__underline']"
-          :style="underlineStyle"
-        />
-      </nav>
-    </div>
-    <div
-      :class="$style['cdr-tabs__content-container']"
-      ref="slotWrapper"
-    >
-      <slot />
-    </div>
-  </div>
-</template>
-
-<script>
 import modifier from 'mixinsdir/modifier';
 import debounce from 'lodash/debounce';
 import delay from 'lodash/delay';
+import style from './styles/CdrTabs.scss';
+import cs from 'classnames';
 
 export default {
   name: 'CdrTabs',
@@ -82,6 +26,7 @@ export default {
       overflowLeft: false,
       overflowRight: false,
       animationInProgress: false,
+      style,
     };
   },
   computed: {
@@ -99,6 +44,7 @@ export default {
     this.tabs = (this.$slots.default || [])
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
+      
     this.$nextTick(() => {
       this.initializeOffsets();
       this.headerWidth = this.getHeaderWidth();
@@ -231,9 +177,70 @@ export default {
       styleRef.setProperty('overflow-x', 'hidden');
     },
   },
+  render() {
+    return (
+      <div
+        class={this.modifierClass}
+        ref="cdrTabsContainer"
+        style={{ height: this.height }}
+      >
+        <div
+          class={cs( 
+            this.overflowLeft ? style['cdr-tabs__header-gradient-left'] : '',
+            this.overflowRight ? style['cdr-tabs__header-gradient-right'] : '',
+            style['cdr-tabs__gradient-container']
+          )}
+          vOn:keyup_right={this.rightArrowNav}
+          vOn:keyup_left={this.leftArrowNav}
+          vOn:keydown_down_prevent={this.handleDownArrowNav}
+        >
+          <nav
+            class={cs(
+              this.overflowLeft ? style['cdr-tabs__header-gradient-left'] : '',
+              this.overflowRight ? style['cdr-tabs__header-gradient-right'] : '',
+              style['cdr-tabs__header-container']
+            )}
+          >
+            <ol
+              class={style['cdr-tabs__header']}
+              role="tablist"
+              ref="cdrTabsHeader"
+            >
+              {this.tabs.map((tab, index) => {
+                return (
+                  <li
+                    role="tab"
+                    aria-selected={tab.active}
+                    key={tab.id ? tab.id : `${tab.name}-${index}`}
+                    class={cs(
+                      tab.active ? style['cdr-tabs__header-item-active'] : '', 
+                      style['cdr-tabs__header-item']
+                    )}
+                  >
+                    <a
+                      vOn:click_prevent={e => this.handleClick(tab, e)}
+                      href={tab.name}
+                      class={style['cdr-tabs__header-item-label']}
+                    >
+                      { tab.name }
+                    </a>
+                  </li>
+                )
+              })}
+            </ol>
+            <div
+              class={style['cdr-tabs__underline']}
+              style={this.underlineStyle}
+            />
+          </nav>
+        </div>
+        <div
+          class={style['cdr-tabs__content-container']}
+          ref="slotWrapper"
+        >
+          {this.$slots.default}
+        </div>
+      </div>
+    );
+  }
 };
-</script>
-
-<style lang="scss" module>
-  @import './styles/CdrTabs.scss';
-</style>
