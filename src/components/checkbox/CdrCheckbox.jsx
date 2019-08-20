@@ -73,7 +73,7 @@ export default {
        * */
       //  TODO: emit whether or not it was checked?
       this.$emit('input', val, val === this.customValue);
-      this.$emit('change', val);
+      this.$emit('change', val); // TODO: emit event as well here
     },
   },
   // methods: {
@@ -84,9 +84,6 @@ export default {
   //   },
   // },
   // TODO: pass disabled/checked/other attrs through? need direct binding?
-  // TODO: what do search do?
-  // TODO: do we not need the temp var now?
-  // TODO: how to bind object as value?
   render() {
     return (
       <div class={cs(this.space, this.style['cdr-checkbox__wrap'])}>

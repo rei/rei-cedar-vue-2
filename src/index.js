@@ -18,7 +18,7 @@ export { default as CdrImg } from 'componentsdir/image/CdrImg';
 export { default as CdrInput } from 'componentsdir/input/CdrInput';
 export { default as CdrLink } from 'componentsdir/link/CdrLink';
 export { default as CdrList } from 'componentsdir/list/CdrList';
-// export { default as CdrPagination } from 'componentsdir/pagination/CdrPagination';
+export { default as CdrPagination } from 'componentsdir/pagination/CdrPagination';
 export { default as CdrQuote } from 'componentsdir/quote/CdrQuote';
 export { default as CdrRadio } from 'componentsdir/radio/CdrRadio';
 // export { default as CdrRating } from 'componentsdir/rating/CdrRating';
