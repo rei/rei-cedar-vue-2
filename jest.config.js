@@ -13,8 +13,6 @@ const config = {
     'rollup.config.test.js',
     '<rootDir>/test/e2e/',
     '<rootDir>/templates/__tests__',
-    '<rootDir>/src/components/themer',
-    '<rootDir>/src/components/rating',
     '<rootDir>/src/components/pagination',
     '<rootDir>/src/components/tabs',
   ],
