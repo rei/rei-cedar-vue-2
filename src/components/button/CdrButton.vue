@@ -24,6 +24,7 @@
 import modifier from 'mixinsdir/modifier';
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
+import fullWidth from 'mixinsdir/fullWidth';
 
 /**
  * Cedar 2 component for button
@@ -36,7 +37,7 @@ import space from 'mixinsdir/space';
  */
 export default {
   name: 'CdrButton',
-  mixins: [modifier, size, space],
+  mixins: [modifier, size, space, fullWidth],
   props: {
     /**
      * Controls render as button or anchor. {button, a}
@@ -53,14 +54,6 @@ export default {
       type: String,
       default: 'button',
       validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
-    },
-    /**
-     * Sets width to be 100%.
-    */
-    fullWidth: {
-      type: Boolean,
-      default: false,
-      validator: value => typeof value === 'boolean',
     },
     /**
      * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.
@@ -104,10 +97,6 @@ export default {
         }
       }
       return classes.join(' ');
-    },
-    fullWidthClass() {
-      return this.fullWidth && !this.iconOnly
-        ? this.modifyClassName(this.baseClass, 'full-width') : null;
     },
   },
 };

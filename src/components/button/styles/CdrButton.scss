@@ -89,7 +89,8 @@
 
   /* Full Width
      ========== */
-  &--full-width {
+  &--full-width,
+  &--fullWidth\@all {
     @include cdr-button-full-width-mixin;
   }
 
@@ -145,6 +146,10 @@
         @include cdr-button-icon-large-mixin;
       }
     }
+
+    &--fullWidth\@xs {
+      @include cdr-button-full-width-mixin;
+    }
   }
 
   /* @sm
@@ -185,6 +190,10 @@
       & > :global(.cdr-button__icon) {
         @include cdr-button-icon-large-mixin;
       }
+    }
+
+    &--fullWidth\@sm {
+      @include cdr-button-full-width-mixin;
     }
   }
 
@@ -227,6 +236,10 @@
         @include cdr-button-icon-large-mixin;
       }
     }
+
+    &--fullWidth\@md {
+      @include cdr-button-full-width-mixin;
+    }
   }
 
   /* @lg
@@ -268,6 +281,10 @@
       & > :global(.cdr-button__icon) {
         @include cdr-button-icon-large-mixin;
       }
+    }
+
+    &--fullWidth\@lg {
+      @include cdr-button-full-width-mixin;
     }
   }
 }

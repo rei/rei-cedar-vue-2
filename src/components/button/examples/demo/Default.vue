@@ -24,6 +24,15 @@
       </cdr-button>
     </div>
     <div class="button-example">
+      <h1>Hello there</h1>
+      <cdr-button
+        size="medium large@xs"
+        full-width="xs"
+      >
+        full-width @xs
+      </cdr-button>
+    </div>
+    <div class="button-example">
       <cdr-text
         tag="h3"
         modifier="heading-small"

@@ -19,7 +19,8 @@
 
   /* Full Width
      ========== */
-  &--full-width {
+  &--full-width,
+  &--fullWidth\@all {
     @include cdr-cta-full-width-mixin;
   }
 
