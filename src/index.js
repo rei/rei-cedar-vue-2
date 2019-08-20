@@ -23,7 +23,7 @@ export { default as CdrQuote } from 'componentsdir/quote/CdrQuote';
 export { default as CdrRadio } from 'componentsdir/radio/CdrRadio';
 // export { default as CdrRating } from 'componentsdir/rating/CdrRating';
 export { default as CdrRow } from 'componentsdir/grid/CdrRow';
-// export { default as CdrSelect } from 'componentsdir/select/CdrSelect';
+export { default as CdrSelect } from 'componentsdir/select/CdrSelect';
 // export { default as CdrTabPanel } from 'componentsdir/tabs/CdrTabPanel';
 // export { default as CdrTabs } from 'componentsdir/tabs/CdrTabs';
 export { default as CdrText } from 'componentsdir/text/CdrText';

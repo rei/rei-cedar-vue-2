@@ -1,51 +1,7 @@
-<template>
-  <!-- eslint-disable vue/singleline-html-element-content-newline -->
-  <div :class="$style['cdr-input-group']">
-    <label
-      v-if="!hideLabel"
-      :class="labelClass"
-      :for="selectId"
-      ref="label"
-    >{{ label }}<span v-if="required">*</span>
-    </label>
-    <select
-      :class="selectClass"
-      v-bind="$attrs"
-      :id="selectId"
-      :size="size"
-      @change="onChange"
-      ref="select"
-      v-model="newValue"
-      :required="required"
-      :multiple="multiple"
-      :aria-label="hideLabel ? label : null"
-    >
-      <option
-        v-if="prompt"
-        value=""
-        disabled
-        :hidden="!multiple"
-        ref="prompt"
-      >{{ prompt }}</option>
-      <option
-        v-for="option in computedOpts"
-        :key="option.text"
-        :value="option.value"
-      >{{ option.text }}</option>
-      <slot />
-    </select>
-  </div>
-</template>
-
-<script>
 import toArray from 'lodash/toArray';
+import style from './styles/CdrSelect.scss';
+import cs from 'classnames';
 
-/**
- * Cedar 2 component for select
- * **NOTE:** `v-model` is required.
- * @version 0.0.1
- * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
- */
 export default {
   name: 'CdrSelect',
   inheritAttrs: false,
@@ -90,6 +46,7 @@ export default {
   data() {
     return {
       newValue: this.value,
+      style,
     };
   },
   computed: {
@@ -99,14 +56,14 @@ export default {
     },
     selectClass() {
       return {
-        [this.$style['cdr-select']]: true,
-        [this.$style['cdr-select--size']]: parseInt(this.size, 10) > 0,
+        [this.style['cdr-select']]: true,
+        [this.style['cdr-select--size']]: parseInt(this.size, 10) > 0,
       };
     },
     labelClass() {
       return {
-        [this.$style['cdr-select__label']]: true,
-        [this.$style['cdr-select__label--disabled']]: this.disabled,
+        [this.style['cdr-select__label']]: true,
+        [this.style['cdr-select__label--disabled']]: this.disabled,
       };
     },
     computedOpts() {
@@ -171,10 +128,54 @@ export default {
       }
     },
   },
+  render() {
+    return (
+      <div class={style['cdr-input-group']}>
+        {!this.hideLabel &&  
+          <label
+            class={this.labelClass}
+            for={this.selectId}
+            ref="label"
+          >
+            { this.label }
+            { this.required && <span>*</span>}
+          </label>
+        }
+        <select
+          class={this.selectClass}
+          {...{attrs: this.$attrs}}
+          id={this.selectId}
+          size={this.size}
+          onChange={this.onChange}
+          ref="select"
+          vModel={this.newValue}
+          required={this.required}
+          multiple={this.multiple}
+          aria-label={this.hideLabel ? this.label : null}
+        >
+          {this.prompt && 
+            <option
+              value=""
+              disabled
+              hidden={!this.multiple}
+              ref="prompt"
+            >
+              { this.prompt }
+            </option>
+          }
+          {this.computedOpts.map(option => {
+            return (
+              <option
+                key={option.text}
+                value={option.value}
+              >
+                { option.text }
+              </option>
+            );
+          })}
+          {this.$slots.default}
+        </select>
+      </div>
+    );
+  }
 };
-</script>
-
-<style lang="scss" module>
-  @import './styles/vars/CdrSelect.vars.scss';
-  @import './styles/CdrSelect.scss';
-</style>
