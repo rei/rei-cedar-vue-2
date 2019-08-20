@@ -28,6 +28,7 @@ export default {
           return propValidator(
             value,
             ['xs', 'sm', 'md', 'lg', 'all'],
+            false,
           );
         }
         return typeof value === 'boolean';
@@ -35,9 +36,13 @@ export default {
     },
   },
   computed: {
-    sizeClass() {
-      const returnClass = this.buildClass('fullWidth');
-      return returnClass;
+    fullWidthClass() {
+      if (typeof this.fullWidth === 'boolean') {
+        return this.fullWidth && !this.iconOnly
+          ? this.modifyClassName(this.baseClass, 'full-width') : null;
+      }
+
+      return this.buildClass('fullWidth', true);
     },
   },
 };
