@@ -172,7 +172,7 @@ export default {
         >
           <cdr-row
             class={style['cdr-col']}
-            {...this.$attrs}
+            {...{ attrs: this.$attrs }}
           >
             {this.$slots.default}
           </cdr-row>
@@ -188,7 +188,7 @@ export default {
               this.offsetRightClass,
               this.alignSelfClass,
             )}
-            {...this.$attrs}
+            {...{ attrs: this.$attrs } }
           >
             {this.$slots.default}
           </cdr-row>

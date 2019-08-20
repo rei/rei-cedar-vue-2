@@ -94,7 +94,7 @@ export default {
           <input
             class={cs(style['cdr-checkbox__input'], this.inputClass)}
             type="checkbox"
-            {...this.$attrs}
+            {... { attrs: this.$attrs } }
             vModel={this.newValue}
             true-value={this.customValue ? null : this.trueValue}
             false-value={this.customValue ? null : this.falseValue}
