@@ -26,7 +26,7 @@
     "build": "npm run clean && npm run build:csr && node build/extract-css.js",
     "build:csr": "cross-env NODE_ENV=prod rollup -c rollup.config.js",
     "unit": "cross-env NODE_ENV=test rollup -c rollup.config.js && jest",
-    "e2e": "rollup -c rollup.config.js && node test/e2e/runner.js",
+    "e2e": "cross-env NODE_ENV=test rollup -c rollup.config.dev.js && node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "clean": "rm -rf dist",
     "lint": "npm run lint:js && npm run lint:styles",

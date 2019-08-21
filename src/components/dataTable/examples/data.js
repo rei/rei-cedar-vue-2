@@ -92,4 +92,4 @@ const tableData = {
   },
 };
 
-module.exports.tableData = tableData;
+export default tableData;

@@ -59,7 +59,7 @@ const plugins = [
     exclude: 'node_modules/**',
     runtimeHelpers: true, // ????
   }),
-  env === 'dev' && vue({
+  env !== 'prod' && vue({
     css: false,
     style: {
       // postcssCleanOptions: { disabled: true },
@@ -85,8 +85,8 @@ const plugins = [
     },
     styleInjector: `~${resolve('build/style-injector.mjs')}`,
   }),
-  
-  // 
+
+  //
   postcss({
     plugins: [
       postcssImport()
