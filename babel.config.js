@@ -1,28 +1,35 @@
 /* eslint-disable */
 
 module.exports = function (api) {
+
+  const env = process.env.NODE_ENV;
+
   api.cache(true);
+
+  const presetEnvConfig = (env === 'prod') ?
+  {
+    corejs: 3,
+    useBuiltIns: "usage",
+    modules: false,
+  } :
+  {
+    targets: {
+      node: 'current',
+    },
+  }
 
   const presets = [
     [
       "@babel/preset-env",
-      {
-        // corejs: 3,
-        // useBuiltIns: "usage",
-        // modules: false,
-        // "targets": {
-        //   "node": "current"
-        // }
-      },
+      presetEnvConfig,
     ],
     "@vue/babel-preset-jsx"
   ];
   const plugins = [
-    // "transform-vue-jsx",
     [
       "@babel/plugin-transform-runtime",
       {
-        // "corejs": 3
+        "corejs": 3,
       }
     ]
   ];

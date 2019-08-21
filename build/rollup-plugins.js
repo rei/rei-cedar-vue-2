@@ -55,13 +55,11 @@ const plugins = [
     targets: copyTargets,
     outputFolder: copyOutput
   }),
-  
   babel({
     exclude: 'node_modules/**',
     runtimeHelpers: true, // ????
-    externalHelpers: true, // ????
   }),
-  vue({
+  env === 'dev' && vue({
     css: false,
     style: {
       // postcssCleanOptions: { disabled: true },
@@ -110,4 +108,4 @@ const plugins = [
   }),
 ];
 
-export default plugins;
+export default plugins.filter(x => x);
