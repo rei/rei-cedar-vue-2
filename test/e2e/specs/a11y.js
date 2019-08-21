@@ -28,7 +28,7 @@ module.exports = {
 
     browser
       .url(devServer)
-      .waitForElementVisible('#app', 5000)
+      .waitForElementVisible('#app', 10000)
       .axeInject()
       .axeRun('#app', {
         reporter: 'v2',
