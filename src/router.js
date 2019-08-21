@@ -11,7 +11,7 @@ import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
 import Input from 'componentsdir/input/examples/Inputs';
-// import KitchenSink from 'srcdir/KitchenSink';
+import KitchenSink from 'srcdir/KitchenSink';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
 import Pagination from 'componentsdir/pagination/examples/Pagination';
@@ -21,14 +21,14 @@ import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
-// import Space from 'componentsdir/Utilities/Space';
-// import Utilities from 'componentsdir/Utilities/Utilities';
+import Space from 'componentsdir/Utilities/Space';
+import Utilities from 'componentsdir/Utilities/Utilities';
 
 
 const routes = [
   { path: '/', component: App },
   { path: '/links', name: 'Links', component: Links },
-  // { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
+  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Buttons },
@@ -49,8 +49,8 @@ const routes = [
   { path: '/selects', name: 'Selects', component: Selects },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
-  // { path: '/space', name: 'Space', component: Space },
-  // { path: '/utilities', name: 'Utilities', component: Utilities },
+  { path: '/space', name: 'Space', component: Space },
+  { path: '/utilities', name: 'Utilities', component: Utilities },
 ];
 
 export default routes;
