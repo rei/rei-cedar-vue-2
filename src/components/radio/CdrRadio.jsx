@@ -61,10 +61,17 @@ export default {
        * @event input
        * @type value | event
        * */
-      //  TODO: emit change here?
-      // TODO: emit whether or not it's checked?
       this.$emit('input', val);
-      this.$emit('change', val);
+    },
+  },
+  methods: {
+    updateValue(newValue, e) {
+    /**
+     * Selected radio value. Fires on section.
+     * @event change
+     * @type boolean|array
+     */
+      this.$emit('change', newValue, e);
     },
   },
   render() {
@@ -79,6 +86,7 @@ export default {
             type="radio"
             { ...{ attrs: this.$attrs } }
             vModel={this.newValue}
+            onChange={e => this.updateValue(this.newValue, e)}
             name={this.name}
             value={this.customValue}
             ref="radio"

@@ -71,18 +71,14 @@ export default {
        * @event input
        * @type value | event
        * */
-      //  TODO: emit whether or not it was checked?
-      this.$emit('input', val, val === this.customValue);
-      this.$emit('change', val); // TODO: emit event as well here
+      this.$emit('input', val);
     },
   },
-  // methods: {
-  //   updateValue(e) {
-  //     const newValue = e.target.value;
-  //     this.newValue = newValue;
-  //     this.$emit('change', newValue, e);
-  //   },
-  // },
+  methods: {
+    updateValue(newValue, e) {
+      this.$emit('change', newValue, e);
+    },
+  },
   // TODO: pass disabled/checked/other attrs through? need direct binding?
   render() {
     return (
@@ -96,6 +92,7 @@ export default {
             type="checkbox"
             {... { attrs: this.$attrs } }
             vModel={this.newValue}
+            onChange={e => this.updateValue(this.newValue, e)}
             true-value={this.customValue ? null : this.trueValue}
             false-value={this.customValue ? null : this.falseValue}
             value={this.customValue}
