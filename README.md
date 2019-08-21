@@ -30,7 +30,7 @@ Sometimes the liveReload server will hang in the background, do the following...
 
 Works on MacOS:
 
-```kill -9 $(lsof -ti tcp:35729)```
+`kill -9 $(lsof -ti tcp:35729)`
 
 ## Testing
 
@@ -78,7 +78,7 @@ __*.backstop.js__ files will export an array of objects that are standard backst
 2. `readyEvent` is set to null for each scenario.
 3. `hoverSelectors` is a custom option we've added (as noted above).
 
-### Publishing Prerelease Components
+## Publishing Prerelease Components
 
 `npm run prerelease`
 
@@ -91,3 +91,7 @@ When creating a pull request run `git cz` rather than `git commit` and follow th
 
 This projects Changelogs are generated.
 - Generate the Changelog: `npm run changelog`
+
+## JSX
+
+Cedar templates are written in JSX rather than as `.vue` SFCs in order to support tree-shaking. See [JSX notes](jsx.md) for more information.
