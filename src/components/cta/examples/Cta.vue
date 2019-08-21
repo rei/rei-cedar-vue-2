@@ -40,17 +40,9 @@
       <cdr-cta
         cta-style="dark"
         href="https://rei.com"
-        full-width="all"
-        data-backstop="cdr-cta--full-width"
-      >Full width @all</cdr-cta>
-    </div>
-    <div class="button-example">
-      <cdr-cta
-        cta-style="dark"
-        href="https://rei.com"
-        full-width="xs lg"
+        full-width="@xs @lg"
         data-backstop="cdr-cta--full-width-at-xs"
-      >Full width @ xs and lg</cdr-cta>
+      >Full width @xs @lg</cdr-cta>
     </div>
     <div
       class="button-example"

@@ -17,13 +17,6 @@
     @include cdr-cta-base-icon-mixin;
   }
 
-  /* Full Width
-     ========== */
-  &--full-width,
-  &--fullWidth\@all {
-    @include cdr-cta-full-width-mixin;
-  }
-
   &--brand {
     @include cdr-cta-brand-mixin;
   }
@@ -47,8 +40,13 @@
     @include cdr-cta-elevated-mixin;
   }
 
-  /* Full Width @ breakpoint
+  /* Full Width
     ========== */
+  
+  &--full-width {
+    @include cdr-cta-full-width-mixin;
+  }
+  
   @include xs-mq-only {
     &--fullWidth\@xs {
       @include cdr-cta-full-width-mixin;

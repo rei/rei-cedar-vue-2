@@ -4,11 +4,10 @@
  * Functionality for handling/standardizing full-width components.
  *
  *  :Values
- *    :xs
- *    :sm
- *    :md
- *    :lg
- *    :all
+ *    :@xs
+ *    :x@sm
+ *    :@md
+ *    :@lg
  *
  * @mixin
  */
@@ -22,12 +21,13 @@ export default {
      * fullWidth state
      */
     fullWidth: {
-      type: [String, Boolean], // support both types until boolean can be depricated
+      type: [String, Boolean],
+      default: false,
       validator: (value) => {
         if (typeof value === 'string') {
           return propValidator(
             value,
-            ['xs', 'sm', 'md', 'lg', 'all'],
+            ['@xs', '@sm', '@md', '@lg'],
             false,
           );
         }

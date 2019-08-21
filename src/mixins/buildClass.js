@@ -20,7 +20,7 @@ export default {
         /*
           prefix class names with prop name
         */
-        propArgsArr = propArgsArr.map(mod => `${prop}@${mod}`);
+        propArgsArr = propArgsArr.map(mod => `${prop}${mod}`);
       }
 
       if (!this.$style) {
