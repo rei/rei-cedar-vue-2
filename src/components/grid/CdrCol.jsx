@@ -84,7 +84,7 @@ export default {
 
       if (this.span) {
         this.span.split(' ').forEach((val) => {
-          classStr.push(style[`cdr-col_span${val}`]);
+          classStr.push(this.style[`cdr-col_span${val}`]);
         });
       }
 
@@ -130,14 +130,14 @@ export default {
       colEl = (
         <div
           class={cs(
-            style['cdr-col'],
+            this.style['cdr-col'],
             this.spanClass,
             this.offsetLeftClass,
             this.offsetRightClass,
             this.alignSelfClass,
           )}
         >
-          <div class={style['cdr-col__content']}>
+          <div class={this.style['cdr-col__content']}>
             {this.$slots.default}
           </div>
         </div>
@@ -146,14 +146,14 @@ export default {
       colEl = (
         <li
           class={cs(
-            style['cdr-col'],
+            this.style['cdr-col'],
             this.spanClass,
             this.offsetLeftClass,
             this.offsetRightClass,
             this.alignSelfClass,
           )}
         >
-          <div class={style['cdr-col__content']}>
+          <div class={this.style['cdr-col__content']}>
             {this.$slots.default}
           </div>
         </li>
@@ -162,8 +162,8 @@ export default {
       colEl = (
         <li
           class={cs(
-            style['cdr-row'],
-            style['cdr-col'],
+            this.style['cdr-row'],
+            this.style['cdr-col'],
             this.spanClass,
             this.offsetLeftClass,
             this.offsetRightClass,
@@ -171,7 +171,7 @@ export default {
           )}
         >
           <cdr-row
-            class={style['cdr-col']}
+            class={this.style['cdr-col']}
             {...{ attrs: this.$attrs }}
           >
             {this.$slots.default}
@@ -182,7 +182,7 @@ export default {
       colEl = (
           <cdr-row
             class={cs(
-              style['cdr-col'],
+              this.style['cdr-col'],
               this.spanClass,
               this.offsetLeftClass,
               this.offsetRightClass,

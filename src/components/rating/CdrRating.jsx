@@ -67,17 +67,17 @@ export default {
       let remainder;
       if (this.remainder === '25') {
         remainder = (<span
-          class={cs(style['cdr-rating__icon'], style['cdr-rating__25'])}
+          class={cs(this.style['cdr-rating__icon'], this.style['cdr-rating__25'])}
           aria-hidden="true"
         />);
       } else if (this.remainder === '50') {
         remainder = (<span
-          class={cs(style['cdr-rating__icon'], style['cdr-rating__50'])}
+          class={cs(this.style['cdr-rating__icon'], this.style['cdr-rating__50'])}
           aria-hidden="true"
         />);
       } else if (this.remainder === '75') {
         remainder = (<span
-          class={cs(style['cdr-rating__icon'], style['cdr-rating__75'])}
+          class={cs(this.style['cdr-rating__icon'], this.style['cdr-rating__75'])}
           aria-hidden="true"
         />);
       }
@@ -93,28 +93,28 @@ export default {
           this.contentPriorityClass,
           this.sizeClass,
           this.space,
-          this.href ? style['cdr-rating--linked'] : '',
+          this.href ? this.style['cdr-rating--linked'] : '',
         )}
       >
-        <div class={style['cdr-rating__background']}>
+        <div class={this.style['cdr-rating__background']}>
           {[...Array(5)].map(n => (
               <span
                 class={cs(
-                  style['cdr-rating__icon'],
+                  this.style['cdr-rating__icon'],
                   this.count > 0
-                    ? style['cdr-rating__placeholder']
-                    : style['cdr-rating__placeholder--no-reviews'],
+                    ? this.style['cdr-rating__placeholder']
+                    : this.style['cdr-rating__placeholder--no-reviews'],
                 )}
                 key={n}
                 aria-hidden="true"
               />
           ))}
         </div>
-        <div class={style['cdr-rating__ratings']}>
+        <div class={this.style['cdr-rating__ratings']}>
 
           {[...Array(this.whole)].map(n => (
               <span
-                class={cs(style['cdr-rating__icon'], style['cdr-rating__100'])}
+                class={cs(this.style['cdr-rating__icon'], this.style['cdr-rating__100'])}
                 key={n}
                 aria-hidden="true"
               />
@@ -124,10 +124,10 @@ export default {
         {this.count
           && <span
             aria-hidden="true"
-            class={style['cdr-rating__count']}
+            class={this.style['cdr-rating__count']}
           >
             {this.href
-              && <span class={style['cdr-rating__number']}>
+              && <span class={this.style['cdr-rating__number']}>
                 { this.rounded }
               </span>
             }

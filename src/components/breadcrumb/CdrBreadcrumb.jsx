@@ -57,15 +57,15 @@ export default {
     ellipsis() {
       return this.truncate ? (<li
         onClick={this.handleEllipsisClick}
-        class={style['cdr-breadcrumb__item']}
+        class={this.style['cdr-breadcrumb__item']}
       >
         <button
           aria-expanded="false"
-          class={style['cdr-breadcrumb__ellipses']}
+          class={this.style['cdr-breadcrumb__ellipses']}
           aria-label="ellipsis"
         >
           <svg
-            class={style['cdr-breadcrumb__ellipses-icon']}
+            class={this.style['cdr-breadcrumb__ellipses-icon']}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -77,7 +77,7 @@ export default {
           </svg>
         </button>
         <span
-          class={style['cdr-breadcrumb__delimiter']}
+          class={this.style['cdr-breadcrumb__delimiter']}
           aria-hidden="true"
         >
           /
@@ -87,19 +87,19 @@ export default {
     listItems() {
       return this.items.map((breadcrumb, index) => {
         const delimiter = index < this.items.length - 1 ? (<span
-          class={style['cdr-breadcrumb__delimiter']}
+          class={this.style['cdr-breadcrumb__delimiter']}
           aria-hidden="true"
         >
           /
         </span>) : '';
 
         return (<li
-          class={style['cdr-breadcrumb__item']}
+          class={this.style['cdr-breadcrumb__item']}
           key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
           v-show={!this.truncate || (index >= this.items.length - 2)}
         >
           <a
-            class={style['cdr-breadcrumb__link']}
+            class={this.style['cdr-breadcrumb__link']}
             href={breadcrumb.item.url}
           >
             { breadcrumb.item.name }
@@ -122,7 +122,7 @@ export default {
     >
       <ol
         ref="cdrBreadcrumbList"
-        class={style['cdr-breadcrumb__list']}
+        class={this.style['cdr-breadcrumb__list']}
       >
         {this.ellipsis}
         {this.listItems}

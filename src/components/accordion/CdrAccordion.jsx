@@ -110,7 +110,7 @@ export default {
       ref="accordion-container"
     >
       <button
-        class={style['cdr-accordion__button']}
+        class={this.style['cdr-accordion__button']}
         id={this.id}
         onClick={this.onClick}
         onFocus={this.onFocus}
@@ -119,22 +119,22 @@ export default {
         aria-controls={`${this.id}-collapsible`}
       >
         <span
-          class={style['cdr-accordion__label']}
+          class={this.style['cdr-accordion__label']}
           id={`${this.id}-label`}
         >
           { this.$slots.label || this.label}
         </span>
         <icon-caret-down
-          class={cs(style['cdr-accordion__icon'], this.isOpenClass)}
+          class={cs(this.style['cdr-accordion__icon'], this.isOpenClass)}
           size={this.compact ? 'small' : null}
         />
       </button>
       <div
-        class={cs(style['cdr-accordion__content-container'], this.isOpenClass)}
+        class={cs(this.style['cdr-accordion__content-container'], this.isOpenClass)}
         style={ { maxHeight: this.maxHeight } }
       >
         <div
-          class={cs(style['cdr-accordion__content'], this.isOpenClass)}
+          class={cs(this.style['cdr-accordion__content'], this.isOpenClass)}
           aria-hidden={`${!this.opened}`}
           id={`${this.id}-collapsible`}
           ref="accordion-content"

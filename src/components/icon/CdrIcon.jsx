@@ -26,7 +26,7 @@ export default {
       return 'cdr-icon';
     },
     inheritColorClass() {
-      return this.inheritColor ? style['cdr-icon--inherit-color'] : '';
+      return this.inheritColor ? this.style['cdr-icon--inherit-color'] : '';
     },
   },
   render() {

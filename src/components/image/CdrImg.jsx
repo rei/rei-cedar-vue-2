@@ -115,22 +115,22 @@ export default {
     },
     radiusClass() {
       const classObj = {};
-      classObj[style[`cdr-image--${this.radius}`]] = this.radius;
+      classObj[this.style[`cdr-image--${this.radius}`]] = this.radius;
       return classObj;
     },
     ratioClass() {
       const classObj = {};
-      classObj[style[`cdr-media-frame--${this.ratio}`]] = this.ratio;
-      classObj[style[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
-      classObj[style[`cdr-media-frame--${this.ratioMd}@md`]] = this.ratioMd;
-      classObj[style[`cdr-media-frame--${this.ratioLg}@lg`]] = this.ratioLg;
+      classObj[this.style[`cdr-media-frame--${this.ratio}`]] = this.ratio;
+      classObj[this.style[`cdr-media-frame--${this.ratioSm}@sm`]] = this.ratioSm;
+      classObj[this.style[`cdr-media-frame--${this.ratioMd}@md`]] = this.ratioMd;
+      classObj[this.style[`cdr-media-frame--${this.ratioLg}@lg`]] = this.ratioLg;
       return classObj;
     },
     coverClass() {
       const classObj = {};
-      classObj[style['cdr-media-frame__cover']] = true;
-      classObj[style['cdr-media-frame__cover--crop']] = this.crop;
-      classObj[style['cdr-media-frame__cover--cover']] = this.cover;
+      classObj[this.style['cdr-media-frame__cover']] = true;
+      classObj[this.style['cdr-media-frame__cover--crop']] = this.crop;
+      classObj[this.style['cdr-media-frame__cover--cover']] = this.cover;
       return classObj;
     },
     cropClass() {
@@ -161,7 +161,7 @@ export default {
     if (this.ratio) {
       return (
         <div
-          class={cs(style['cdr-media-frame'], this.ratioClass, this.cropClass)}
+          class={cs(this.style['cdr-media-frame'], this.ratioClass, this.cropClass)}
         >
           <div
             class={cs(this.coverClass, this.lazyClass, this.radiusClass)}
@@ -171,8 +171,8 @@ export default {
           />
           <img
             class={cs(
-              style['cdr-media-frame__image'],
-              style['cdr-media-frame__image--hidden'],
+              this.style['cdr-media-frame__image'],
+              this.style['cdr-media-frame__image--hidden'],
               this.modifierClass,
               this.radiusClass,
             )}

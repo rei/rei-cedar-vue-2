@@ -20,16 +20,16 @@ export default {
   },
   render() {
     return (
-      <div class={cs(style['cdr-caption'], 'cdr-space-inset-one-x-squish')}>
+      <div class={cs(this.style['cdr-caption'], 'cdr-space-inset-one-x-squish')}>
         {this.summary
           ? <p
-            class={style['cdr-caption__summary']}
+            class={this.style['cdr-caption__summary']}
           >
             { this.summary }
           </p> : ''
         }
         {this.credit ? <cite
-            class={style['cdr-caption__cite']}
+            class={this.style['cdr-caption__cite']}
             class="cdr-text cdr-text--citation"
           >
             { this.credit }

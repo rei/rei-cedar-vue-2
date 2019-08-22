@@ -55,14 +55,14 @@ export default {
     },
     selectClass() {
       return {
-        [style['cdr-select']]: true,
-        [style['cdr-select--size']]: parseInt(this.size, 10) > 0,
+        [this.style['cdr-select']]: true,
+        [this.style['cdr-select--size']]: parseInt(this.size, 10) > 0,
       };
     },
     labelClass() {
       return {
-        [style['cdr-select__label']]: true,
-        [style['cdr-select__label--disabled']]: this.disabled,
+        [this.style['cdr-select__label']]: true,
+        [this.style['cdr-select__label--disabled']]: this.disabled,
       };
     },
     computedOpts() {
@@ -129,7 +129,7 @@ export default {
   },
   render() {
     return (
-      <div class={style['cdr-input-group']}>
+      <div class={this.style['cdr-input-group']}>
         {!this.hideLabel
           && <label
             class={this.labelClass}

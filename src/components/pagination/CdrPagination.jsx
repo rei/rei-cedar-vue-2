@@ -134,8 +134,8 @@ export default {
         <li>
           <a
             class={cs(
-              style['cdr-pagination__link'],
-              style['cdr-pagination__prev'],
+              this.style['cdr-pagination__link'],
+              this.style['cdr-pagination__prev'],
             )}
             href={this.pages[this.prevPageIdx].url}
             aria-label="Go to previous Page"
@@ -143,7 +143,7 @@ export default {
             ref="prev-link"
           >
             <icon-caret-left
-              class={style['cdr-pagination__caret--prev']}
+              class={this.style['cdr-pagination__caret--prev']}
             />
             Prev
           </a>
@@ -155,8 +155,8 @@ export default {
         <li>
           <a
             class={cs(
-              style['cdr-pagination__link'],
-              style['cdr-pagination__next'],
+              this.style['cdr-pagination__link'],
+              this.style['cdr-pagination__next'],
             )}
             href={this.pages[this.nextPageIdx].url}
             aria-label="Go to next page"
@@ -165,7 +165,7 @@ export default {
           >
             Next
             <icon-caret-right
-              class={style['cdr-pagination__caret--next']}
+              class={this.style['cdr-pagination__caret--next']}
             />
           </a>
         </li>
@@ -175,12 +175,12 @@ export default {
       return this.paginationData.map(n => (
           <li
             key={`${n}-${this.guid()}`}
-            class={style['cdr-pagination__li--links']}
+            class={this.style['cdr-pagination__li--links']}
           >
             {n !== '&hellip;'
               ? <a
                 class={cs(
-                  style['cdr-pagination__link'],
+                  this.style['cdr-pagination__link'],
                   { current: n.page === this.value },
                 )}
                 href={n.url}
@@ -193,7 +193,7 @@ export default {
                 onClick={e => this.navigate(n.page, e)}
               >{ n.page }</a>
               : <span
-                class={style['cdr-pagination__ellipse']}
+                class={this.style['cdr-pagination__ellipse']}
                 domPropsInnerHTML={n}
               />
             }
@@ -202,13 +202,13 @@ export default {
     },
     mobileEl() {
       return (
-        <li class={style['cdr-pagination__li--select']}>
+        <li class={this.style['cdr-pagination__li--select']}>
           <cdr-select
             vModel={this.currentUrl}
             label="Navigate to page"
             hide-label
             onChange={this.select}
-            class={style['cdr-pagination__select']}
+            class={this.style['cdr-pagination__select']}
             ref="select"
           >
             {this.paginationData.map(n => n !== '&hellip;'
@@ -254,7 +254,7 @@ export default {
   render() {
     return (
       <nav aria-label="Pagination Navigation">
-        <ul class={style['cdr-pagination']}>
+        <ul class={this.style['cdr-pagination']}>
           {this.prevEl}
           {this.desktopEl}
           {this.mobileEl}

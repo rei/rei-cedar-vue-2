@@ -186,9 +186,9 @@ export default {
       >
         <div
           class={cs(
-            this.overflowLeft ? style['cdr-tabs__header-gradient-left'] : '',
-            this.overflowRight ? style['cdr-tabs__header-gradient-right'] : '',
-            style['cdr-tabs__gradient-container'],
+            this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
+            this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
+            this.style['cdr-tabs__gradient-container'],
           )}
           vOn:keyup_right={this.rightArrowNav}
           vOn:keyup_left={this.leftArrowNav}
@@ -196,13 +196,13 @@ export default {
         >
           <nav
             class={cs(
-              this.overflowLeft ? style['cdr-tabs__header-gradient-left'] : '',
-              this.overflowRight ? style['cdr-tabs__header-gradient-right'] : '',
-              style['cdr-tabs__header-container'],
+              this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
+              this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
+              this.style['cdr-tabs__header-container'],
             )}
           >
             <ol
-              class={style['cdr-tabs__header']}
+              class={this.style['cdr-tabs__header']}
               role="tablist"
               ref="cdrTabsHeader"
             >
@@ -212,14 +212,14 @@ export default {
                     aria-selected={tab.active}
                     key={tab.id ? tab.id : `${tab.name}-${index}`}
                     class={cs(
-                      tab.active ? style['cdr-tabs__header-item-active'] : '',
-                      style['cdr-tabs__header-item'],
+                      tab.active ? this.style['cdr-tabs__header-item-active'] : '',
+                      this.style['cdr-tabs__header-item'],
                     )}
                   >
                     <a
                       vOn:click_prevent={e => this.handleClick(tab, e)}
                       href={tab.name}
-                      class={style['cdr-tabs__header-item-label']}
+                      class={this.style['cdr-tabs__header-item-label']}
                     >
                       { tab.name }
                     </a>
@@ -227,13 +227,13 @@ export default {
               ))}
             </ol>
             <div
-              class={style['cdr-tabs__underline']}
+              class={this.style['cdr-tabs__underline']}
               style={this.underlineStyle}
             />
           </nav>
         </div>
         <div
-          class={style['cdr-tabs__content-container']}
+          class={this.style['cdr-tabs__content-container']}
           ref="slotWrapper"
         >
           {this.$slots.default}

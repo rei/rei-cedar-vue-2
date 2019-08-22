@@ -34,7 +34,7 @@ export default {
     summaryBlock() {
       return this.summary ? (
         <p
-          class={style['cdr-quote__summary']}
+          class={this.style['cdr-quote__summary']}
         >
           { this.summary }
         </p>
@@ -45,7 +45,7 @@ export default {
         <cdr-text
           tag="cite"
           modifier="citation"
-          class={style['cdr-quote__citation']}
+          class={this.style['cdr-quote__citation']}
         >
           { this.citation }
         </cdr-text>

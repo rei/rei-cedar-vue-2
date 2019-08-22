@@ -76,13 +76,13 @@ export default {
   },
   render() {
     return (
-      <div class={cs(this.space, style['cdr-radio__wrap'])}>
+      <div class={cs(this.space, this.style['cdr-radio__wrap'])}>
         <label
           class={cs(this.modifierClass, this.labelClass)}
           ref="label"
         >
           <input
-            class={cs(style['cdr-radio__input'], this.inputClass)}
+            class={cs(this.style['cdr-radio__input'], this.inputClass)}
             type="radio"
             { ...{ attrs: this.$attrs } }
             vModel={this.newValue}
@@ -91,8 +91,8 @@ export default {
             value={this.customValue}
             ref="radio"
           />
-          <span class={style['cdr-radio__figure']} />
-          <div class={cs(style['cdr-radio__content'], this.contentClass)}>
+          <span class={this.style['cdr-radio__figure']} />
+          <div class={cs(this.style['cdr-radio__content'], this.contentClass)}>
             {this.$slots.default}
           </div>
         </label>

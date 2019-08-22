@@ -157,7 +157,7 @@ export default {
       >
         { this.caption
           && <span
-            class={style['cdr-data-table__caption']}
+            class={this.style['cdr-data-table__caption']}
             aria-hidden="true"
           >
             { this.caption }
@@ -166,7 +166,7 @@ export default {
 
         <div
           class={cs(
-            style['cdr-data-table__scroll-container'],
+            this.style['cdr-data-table__scroll-container'],
             { 'locked-col': this.lockedCol },
             { 'is-scrolling': this.isScrolling },
           )}
@@ -174,7 +174,7 @@ export default {
         >
           <table
             class={cs(
-              style['cdr-data-table__content'],
+              this.style['cdr-data-table__content'],
               { 'constrain-width': this.constrainWidth },
             )}
             id={this.id ? this.id : null}
@@ -221,7 +221,7 @@ export default {
                       && (<th
                         scope="row"
                         ref={`row-${rowIndex}-th`}
-                        class={style['align-row-header-content']}
+                        class={this.style['align-row-header-content']}
                         style={{ height: this.getRowAlignHeight('th', rowIndex) }}
                       >
                         { this.rowHeaders[rowIndex] }

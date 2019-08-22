@@ -121,7 +121,7 @@ export default {
 
       if (this.cols) {
         this.cols.split(' ').forEach((val) => {
-          classStr.push(style[`cdr-row_row${val}`]);
+          classStr.push(this.style[`cdr-row_row${val}`]);
         });
       }
 
@@ -154,7 +154,7 @@ export default {
 
       if (this.gutter) {
         this.gutter.split(' ').forEach((val) => {
-          classStr.push(style[`cdr-row--gutter-${val}`]);
+          classStr.push(this.style[`cdr-row--gutter-${val}`]);
         });
       }
 
@@ -199,7 +199,7 @@ export default {
     return (
       <Component
         class={cs(
-          style['cdr-row'],
+          this.style['cdr-row'],
           this.colsClass,
           this.justifyClass,
           this.alignClass,

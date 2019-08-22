@@ -82,13 +82,13 @@ export default {
   // TODO: pass disabled/checked/other attrs through? need direct binding?
   render() {
     return (
-      <div class={cs(this.space, style['cdr-checkbox__wrap'])}>
+      <div class={cs(this.space, this.style['cdr-checkbox__wrap'])}>
         <label
           class={cs(this.modifierClass, this.labelClass)}
           ref="label"
         >
           <input
-            class={cs(style['cdr-checkbox__input'], this.inputClass)}
+            class={cs(this.style['cdr-checkbox__input'], this.inputClass)}
             type="checkbox"
             {... { attrs: this.$attrs } }
             vModel={this.newValue}
@@ -99,8 +99,8 @@ export default {
             indeterminate={this.indeterminate}
             ref="checkbox"
           />
-          <span class={style['cdr-checkbox__figure']} />
-          <div class={cs(style['cdr-checkbox__content'], this.contentClass)}>
+          <span class={this.style['cdr-checkbox__figure']} />
+          <div class={cs(this.style['cdr-checkbox__content'], this.contentClass)}>
             {this.$slots.default}
           </div>
         </label>

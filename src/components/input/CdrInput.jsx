@@ -70,20 +70,20 @@ export default {
     },
     labelClass() {
       return {
-        [style['cdr-input__label']]: true,
-        [style['cdr-input__label--disabled']]: this.disabled,
+        [this.style['cdr-input__label']]: true,
+        [this.style['cdr-input__label--disabled']]: this.disabled,
       };
     },
     inputClass() {
       return {
-        [style['cdr-input']]: true,
-        [style['cdr-input--multiline']]: this.rows > 1,
-        [style['cdr-input--preicon']]: this.$slots['pre-icon'],
+        [this.style['cdr-input']]: true,
+        [this.style['cdr-input--multiline']]: this.rows > 1,
+        [this.style['cdr-input--preicon']]: this.$slots['pre-icon'],
       };
     },
     inputWrapClass() {
       return {
-        [style['cdr-input-wrap']]: true,
+        [this.style['cdr-input-wrap']]: true,
       };
     },
     inputListeners() {
@@ -103,7 +103,7 @@ export default {
     labelEl() {
       const requiredEl = this.required ? (
         <span
-          class={style['cdr-input__required-label']}
+          class={this.style['cdr-input__required-label']}
         >
           Required
         </span>
@@ -122,7 +122,7 @@ export default {
     infoEl() {
       return this.$slots.info ? (
         <span
-          class={style['cdr-input__info-container']}
+          class={this.style['cdr-input__info-container']}
         >
           {this.$slots.info}
         </span>
@@ -131,7 +131,7 @@ export default {
     preIconEl() {
       return this.$slots['pre-icon'] ? (
         <span
-          class={style['cdr-input__pre-icon']}
+          class={this.style['cdr-input__pre-icon']}
         >
           {this.$slots['pre-icon']}
         </span>
@@ -140,7 +140,7 @@ export default {
     postIconEl() {
       return this.$slots['post-icon'] ? (
         <span
-          class={style['cdr-input__post-icon']}
+          class={this.style['cdr-input__post-icon']}
         >
           {this.$slots['post-icon']}
         </span>
@@ -149,7 +149,7 @@ export default {
     helperEl() {
       return this.$slots['helper-text'] ? (
         <span
-          class={style['cdr-input__helper-text']}
+          class={this.style['cdr-input__helper-text']}
         >
           {this.$slots['helper-text']}
         </span>
@@ -188,7 +188,7 @@ export default {
   },
   render() {
     return (
-      <div class={style['cdr-input-container']}>
+      <div class={this.style['cdr-input-container']}>
         {this.labelEl}
         {this.infoEl}
         <div class={this.inputWrapClass}>
