@@ -8,9 +8,7 @@ module.exports = function (api) {
 
   const presetEnvConfig = (env === 'prod') ?
   {
-    corejs: 3,
-    useBuiltIns: "usage",
-    modules: false,
+    modules: false, // TODO: cjs settings?
   } :
   {
     targets: {
