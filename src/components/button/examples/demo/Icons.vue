@@ -275,6 +275,7 @@
 
 <script>
 import * as Components from 'srcdir/index';
+
 export default {
   name: 'ButtonIconComps',
   components: {

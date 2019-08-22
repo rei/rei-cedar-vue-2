@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 const glob = require('glob');
 const fs = require('fs-extra');
@@ -63,7 +64,7 @@ export default {
   // write component file
   fs.outputFileSync(`${outFile}`, component);
 
-  const wrapper = `export { default as Icon${pascalName} } from './${name}.jsx';`
+  const wrapper = `/* eslint-disable */\nexport { default as Icon${pascalName} } from './${name}.jsx';\n`
   fs.outputFileSync(`${outFileWrapper}`, wrapper);
 
   // add file to 'index'
@@ -72,7 +73,7 @@ export default {
   // add to sprite
   spriter.add(path.resolve(file), null, content);
 });
-fs.outputFileSync(resolve('comps/CdrIconSprite.js'), "export { default as CdrIconSprite } from './CdrIconSprite.jsx';");
+fs.outputFileSync(resolve('comps/CdrIconSprite.js'), "/* eslint-disable */\nexport { default as CdrIconSprite } from './CdrIconSprite.jsx';\n");
 // output icon sprite & sprite component
 indexArr.push('export { CdrIconSprite } from \'componentsdir/icon/comps/CdrIconSprite\';'); // eslint-disable-line max-len
 spriter.compile((error, result) => {
