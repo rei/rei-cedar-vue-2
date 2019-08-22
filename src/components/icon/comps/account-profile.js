@@ -1,0 +1,1 @@
+export { default as IconAccountProfile } from './account-profile.jsx';

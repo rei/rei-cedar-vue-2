@@ -1,0 +1,1 @@
+export { default as IconCouponStroke } from './coupon-stroke.jsx';

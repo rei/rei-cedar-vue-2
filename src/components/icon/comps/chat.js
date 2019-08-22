@@ -1,0 +1,1 @@
+export { default as IconChat } from './chat.jsx';

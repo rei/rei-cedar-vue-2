@@ -1,0 +1,1 @@
+export { default as IconXFill } from './x-fill.jsx';

@@ -1,6 +1,6 @@
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
-import CdrRow from 'componentsdir/grid/CdrRow'; // TODO: is this import shakeable?
+import { CdrRow } from 'componentsdir/grid/CdrRow'; // TODO: is this import shakeable?
 import cs from 'classnames';
 import style from './styles/CdrCol.scss';
 

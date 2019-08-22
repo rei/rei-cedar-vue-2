@@ -1,0 +1,1 @@
+export { default as CdrCard } from './CdrCard.jsx';

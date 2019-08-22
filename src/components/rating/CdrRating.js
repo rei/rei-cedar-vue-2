@@ -1,0 +1,1 @@
+export { default as CdrRating } from './CdrRating.jsx';

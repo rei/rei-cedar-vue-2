@@ -1,0 +1,1 @@
+export { default as CdrTabs } from './CdrTabs.jsx';

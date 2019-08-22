@@ -1,29 +1,28 @@
 import './css/main.scss';
 
-export { default as CdrAccordion } from 'componentsdir/accordion/CdrAccordion';
-export { default as CdrBreadcrumb } from 'componentsdir/breadcrumb/CdrBreadcrumb';
-export { default as CdrButton } from 'componentsdir/button/CdrButton';
-export { default as CdrCaption } from 'componentsdir/caption/CdrCaption';
-export { default as CdrCard } from 'componentsdir/card/CdrCard';
-export { default as CdrCheckbox } from 'componentsdir/checkbox/CdrCheckbox';
-export { default as CdrCol } from 'componentsdir/grid/CdrCol';
-export { default as CdrCta } from 'componentsdir/cta/CdrCta';
-export { default as CdrDataTable } from 'componentsdir/dataTable/CdrDataTable';
+export { CdrAccordion } from 'componentsdir/accordion/CdrAccordion';
+export { CdrBreadcrumb } from 'componentsdir/breadcrumb/CdrBreadcrumb';
+export { CdrButton } from 'componentsdir/button/CdrButton';
+export { CdrCaption } from 'componentsdir/caption/CdrCaption';
+export { CdrCard } from 'componentsdir/card/CdrCard';
+export { CdrCheckbox } from 'componentsdir/checkbox/CdrCheckbox';
+export { CdrCol } from 'componentsdir/grid/CdrCol';
+export { CdrCta } from 'componentsdir/cta/CdrCta';
+export { CdrDataTable } from 'componentsdir/dataTable/CdrDataTable';
 
-// export { default as CdrIcon } from 'componentsdir/icon/CdrIcon';
+// export { CdrIcon } from 'componentsdir/icon/CdrIcon';
 // // export all icon components for now (includes sprite and CdrIcon)
-// TODO: verify this works with tree shaking
 export * from 'componentsdir/icon/build/main';
-export { default as CdrImg } from 'componentsdir/image/CdrImg';
-export { default as CdrInput } from 'componentsdir/input/CdrInput';
-export { default as CdrLink } from 'componentsdir/link/CdrLink';
-export { default as CdrList } from 'componentsdir/list/CdrList';
-export { default as CdrPagination } from 'componentsdir/pagination/CdrPagination';
-export { default as CdrQuote } from 'componentsdir/quote/CdrQuote';
-export { default as CdrRadio } from 'componentsdir/radio/CdrRadio';
-export { default as CdrRating } from 'componentsdir/rating/CdrRating';
-export { default as CdrRow } from 'componentsdir/grid/CdrRow';
-export { default as CdrSelect } from 'componentsdir/select/CdrSelect';
-export { default as CdrTabPanel } from 'componentsdir/tabs/CdrTabPanel';
-export { default as CdrTabs } from 'componentsdir/tabs/CdrTabs';
-export { default as CdrText } from 'componentsdir/text/CdrText';
+export { CdrImg } from 'componentsdir/image/CdrImg';
+export { CdrInput } from 'componentsdir/input/CdrInput';
+export { CdrLink } from 'componentsdir/link/CdrLink';
+export { CdrList } from 'componentsdir/list/CdrList';
+export { CdrPagination } from 'componentsdir/pagination/CdrPagination';
+export { CdrQuote } from 'componentsdir/quote/CdrQuote';
+export { CdrRadio } from 'componentsdir/radio/CdrRadio';
+export { CdrRating } from 'componentsdir/rating/CdrRating';
+export { CdrRow } from 'componentsdir/grid/CdrRow';
+export { CdrSelect } from 'componentsdir/select/CdrSelect';
+export { CdrTabPanel } from 'componentsdir/tabs/CdrTabPanel';
+export { CdrTabs } from 'componentsdir/tabs/CdrTabs';
+export { CdrText } from 'componentsdir/text/CdrText';

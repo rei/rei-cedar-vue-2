@@ -1,0 +1,1 @@
+export { default as IconCaretUp } from './caret-up.jsx';

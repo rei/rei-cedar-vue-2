@@ -1,4 +1,4 @@
-import CdrText from 'componentsdir/text/CdrText';
+import { CdrText } from 'componentsdir/text/CdrText';
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 import cs from 'classnames';

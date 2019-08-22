@@ -1,0 +1,1 @@
+export { default as CdrDataTable } from './CdrDataTable.jsx';

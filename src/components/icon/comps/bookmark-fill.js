@@ -1,0 +1,1 @@
+export { default as IconBookmarkFill } from './bookmark-fill.jsx';

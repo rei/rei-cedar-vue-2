@@ -1,0 +1,1 @@
+export { default as IconSnow } from './snow.jsx';

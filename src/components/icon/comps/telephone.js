@@ -1,0 +1,1 @@
+export { default as IconTelephone } from './telephone.jsx';

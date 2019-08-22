@@ -22,7 +22,7 @@ const spriterConfig = {
 const spriter = new SVGSpriter(spriterConfig);
 
 // indexArr builds the 'index' main.js file
-const indexArr = ['export { default as CdrIcon } from \'componentsdir/icon/CdrIcon\';'];
+const indexArr = ['export { CdrIcon } from \'componentsdir/icon/CdrIcon\';'];
 
 // process each svg
 glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
@@ -30,6 +30,7 @@ glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
   const pascalName = _.upperFirst(_.camelCase(name));
   const content = fs.readFileSync(file, 'utf8');
   const outFile = resolve(`comps/${name}.jsx`);
+  const outFileWrapper = resolve(`comps/${name}.js`);
 
   // everything in root svg element
   const fragment = JSDOM.fragment(content).firstChild;
@@ -42,7 +43,7 @@ glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
 
   // create vue component
   const component = `
-import CdrIcon from 'componentsdir/icon/CdrIcon';
+import { CdrIcon } from 'componentsdir/icon/CdrIcon';
 
 export default {
   name: 'Icon${pascalName}',
@@ -62,15 +63,18 @@ export default {
   // write component file
   fs.outputFileSync(`${outFile}`, component);
 
+  const wrapper = `export { default as Icon${pascalName} } from './${name}.jsx';`
+  fs.outputFileSync(`${outFileWrapper}`, wrapper);
+
   // add file to 'index'
-  indexArr.push(`export { default as Icon${pascalName} } from 'componentsdir/icon/comps/${name}';`);
+  indexArr.push(`export { Icon${pascalName} } from 'componentsdir/icon/comps/${name}';`);
 
   // add to sprite
   spriter.add(path.resolve(file), null, content);
 });
-
+fs.outputFileSync(resolve('comps/CdrIconSprite.js'), "export { default as CdrIconSprite } from './CdrIconSprite.jsx';");
 // output icon sprite & sprite component
-indexArr.push('export { default as CdrIconSprite } from \'componentsdir/icon/comps/CdrIconSprite\';'); // eslint-disable-line max-len
+indexArr.push('export { CdrIconSprite } from \'componentsdir/icon/comps/CdrIconSprite\';'); // eslint-disable-line max-len
 spriter.compile((error, result) => {
   Object.keys(result).forEach((mode) => {
     Object.keys(result[mode]).forEach((resource) => {

@@ -1,5 +1,5 @@
 import { IconCaretLeft, IconCaretRight } from 'componentsdir/icon/build/main';
-import CdrSelect from 'componentsdir/select/CdrSelect'; // TODO:: is this shakeable?
+import { CdrSelect } from 'componentsdir/select/CdrSelect'; // TODO:: is this shakeable?
 import cs from 'classnames';
 import style from './styles/CdrPagination.scss';
 
