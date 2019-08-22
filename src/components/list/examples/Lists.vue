@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import CdrText from 'componentsdir/text/CdrText';
+import { CdrText } from 'srcdir/index';
 import unorderedList from 'componentsdir/list/examples/demo/Unordered';
 import orderedList from 'componentsdir/list/examples/demo/Ordered';
 import bareList from 'componentsdir/list/examples/demo/Bare';

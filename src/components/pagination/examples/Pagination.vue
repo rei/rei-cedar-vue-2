@@ -53,14 +53,14 @@
 </template>
 
 <script>
-import { CdrPagination } from 'srcdir/index';
+import * as Components from 'srcdir/index';
 
 import paginationData from 'componentsdir/pagination/examples/data.json';
 
 export default {
   name: 'Pagination',
   components: {
-    CdrPagination,
+    ...Components,
   },
   data() {
     return {

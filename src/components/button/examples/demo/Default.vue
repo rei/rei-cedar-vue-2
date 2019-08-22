@@ -76,14 +76,12 @@
 </template>
 
 <script>
-// import Components from 'srcdir/index';
-import { CdrText, CdrButton } from 'srcdir/index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Default',
   components: {
-    CdrText,
-    CdrButton,
+    ...Components,
   },
   data: function data() {
     return {

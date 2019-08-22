@@ -141,14 +141,11 @@
 
 <script>
 import * as Components from 'srcdir/index';
-import { IconTwitter, IconCheckLg } from 'componentsdir/icon/build/main';
 
 export default {
   name: 'Inputs',
   components: {
     ...Components,
-    IconTwitter,
-    IconCheckLg,
   },
   data() {
     return {

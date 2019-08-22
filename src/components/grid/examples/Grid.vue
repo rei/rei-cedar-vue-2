@@ -2634,17 +2634,13 @@
 </template>
 
 <script>
-import CdrRow from 'componentsdir/grid/CdrRow';
-import CdrCol from 'componentsdir/grid/CdrCol';
-import CdrText from 'componentsdir/text/CdrText';
+import * as Components from 'srcdir/index';
 import complex from 'componentsdir/grid/examples/demo/Complex';
 
 export default {
   name: 'Grid',
   components: {
-    CdrRow,
-    CdrCol,
-    CdrText,
+    ...Components,
     complex,
   },
 };

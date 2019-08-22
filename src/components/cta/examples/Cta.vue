@@ -53,14 +53,12 @@
 </template>
 
 <script>
-// import Components from 'srcdir/index';
-import { CdrText, CdrCta } from 'srcdir/index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Cta',
   components: {
-    CdrCta,
-    CdrText,
+    ...Components,
   },
 };
 </script>
