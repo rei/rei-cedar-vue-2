@@ -92,7 +92,7 @@ data() {
 use classnames to add styles:
 ```
 class={cs(
-  style['foo-bar'],
+  this.style['foo-bar'],
   'global-style'
   { current: something === value },
 )}
