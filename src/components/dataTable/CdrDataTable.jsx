@@ -1,7 +1,7 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
 import debounce from 'lodash/debounce';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrDataTable.scss';
 
 /**
@@ -150,7 +150,7 @@ export default {
   render() {
     return (
       <div
-        class={cs(
+        class={clsx(
           this.modifierClass,
           this.space,
         )}
@@ -165,7 +165,7 @@ export default {
         }
 
         <div
-          class={cs(
+          class={clsx(
             this.style['cdr-data-table__scroll-container'],
             { 'locked-col': this.lockedCol },
             { 'is-scrolling': this.isScrolling },
@@ -173,7 +173,7 @@ export default {
           ref="scroll-container"
         >
           <table
-            class={cs(
+            class={clsx(
               this.style['cdr-data-table__content'],
               { 'constrain-width': this.constrainWidth },
             )}

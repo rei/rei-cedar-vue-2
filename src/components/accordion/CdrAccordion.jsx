@@ -1,6 +1,6 @@
 import { IconCaretDown } from 'componentsdir/icon/build/main';
 import modifier from 'mixinsdir/modifier';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrAccordion.scss';
 
 export default {
@@ -105,7 +105,7 @@ export default {
   },
   render() {
     return (<div
-      class={cs(this.modifierClass, this.styleClass, this.focusedClass)}
+      class={clsx(this.modifierClass, this.styleClass, this.focusedClass)}
       id={`${this.id}-accordion`}
       ref="accordion-container"
     >
@@ -125,16 +125,16 @@ export default {
           { this.$slots.label || this.label}
         </span>
         <icon-caret-down
-          class={cs(this.style['cdr-accordion__icon'], this.isOpenClass)}
+          class={clsx(this.style['cdr-accordion__icon'], this.isOpenClass)}
           size={this.compact ? 'small' : null}
         />
       </button>
       <div
-        class={cs(this.style['cdr-accordion__content-container'], this.isOpenClass)}
+        class={clsx(this.style['cdr-accordion__content-container'], this.isOpenClass)}
         style={ { maxHeight: this.maxHeight } }
       >
         <div
-          class={cs(this.style['cdr-accordion__content'], this.isOpenClass)}
+          class={clsx(this.style['cdr-accordion__content'], this.isOpenClass)}
           aria-hidden={`${!this.opened}`}
           id={`${this.id}-collapsible`}
           ref="accordion-content"

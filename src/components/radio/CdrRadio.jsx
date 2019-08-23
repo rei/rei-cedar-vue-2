@@ -1,6 +1,6 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrRadio.scss';
 
 export default {
@@ -76,13 +76,13 @@ export default {
   },
   render() {
     return (
-      <div class={cs(this.space, this.style['cdr-radio__wrap'])}>
+      <div class={clsx(this.space, this.style['cdr-radio__wrap'])}>
         <label
-          class={cs(this.modifierClass, this.labelClass)}
+          class={clsx(this.modifierClass, this.labelClass)}
           ref="label"
         >
           <input
-            class={cs(this.style['cdr-radio__input'], this.inputClass)}
+            class={clsx(this.style['cdr-radio__input'], this.inputClass)}
             type="radio"
             { ...{ attrs: this.$attrs } }
             vModel={this.newValue}
@@ -92,7 +92,7 @@ export default {
             ref="radio"
           />
           <span class={this.style['cdr-radio__figure']} />
-          <div class={cs(this.style['cdr-radio__content'], this.contentClass)}>
+          <div class={clsx(this.style['cdr-radio__content'], this.contentClass)}>
             {this.$slots.default}
           </div>
         </label>

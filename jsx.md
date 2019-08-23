@@ -76,7 +76,7 @@ iterate over an array:
 
 import class helper as well as style module:
 ```
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrComponent.scss';
 ```
 
@@ -89,9 +89,9 @@ data() {
 },
 ```
 
-use classnames to add styles:
+use clsx to add styles:
 ```
-class={cs(
+class={clsx(
   this.style['foo-bar'],
   'global-style'
   { current: something === value },

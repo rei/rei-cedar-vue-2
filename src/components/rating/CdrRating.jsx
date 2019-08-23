@@ -1,7 +1,7 @@
 import contentPriority from 'mixinsdir/contentPriority';
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrRating.scss';
 
 export default {
@@ -67,17 +67,17 @@ export default {
       let remainder;
       if (this.remainder === '25') {
         remainder = (<span
-          class={cs(this.style['cdr-rating__icon'], this.style['cdr-rating__25'])}
+          class={clsx(this.style['cdr-rating__icon'], this.style['cdr-rating__25'])}
           aria-hidden="true"
         />);
       } else if (this.remainder === '50') {
         remainder = (<span
-          class={cs(this.style['cdr-rating__icon'], this.style['cdr-rating__50'])}
+          class={clsx(this.style['cdr-rating__icon'], this.style['cdr-rating__50'])}
           aria-hidden="true"
         />);
       } else if (this.remainder === '75') {
         remainder = (<span
-          class={cs(this.style['cdr-rating__icon'], this.style['cdr-rating__75'])}
+          class={clsx(this.style['cdr-rating__icon'], this.style['cdr-rating__75'])}
           aria-hidden="true"
         />);
       }
@@ -89,7 +89,7 @@ export default {
     return (
       <Component
         href={this.href}
-        class={cs(
+        class={clsx(
           this.contentPriorityClass,
           this.sizeClass,
           this.space,
@@ -99,7 +99,7 @@ export default {
         <div class={this.style['cdr-rating__background']}>
           {[...Array(5)].map(n => (
               <span
-                class={cs(
+                class={clsx(
                   this.style['cdr-rating__icon'],
                   this.count > 0
                     ? this.style['cdr-rating__placeholder']
@@ -114,7 +114,7 @@ export default {
 
           {[...Array(this.whole)].map(n => (
               <span
-                class={cs(this.style['cdr-rating__icon'], this.style['cdr-rating__100'])}
+                class={clsx(this.style['cdr-rating__icon'], this.style['cdr-rating__100'])}
                 key={n}
                 aria-hidden="true"
               />

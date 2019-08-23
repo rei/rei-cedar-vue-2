@@ -1,7 +1,7 @@
 import modifier from 'mixinsdir/modifier';
 import debounce from 'lodash/debounce';
 import delay from 'lodash/delay';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrTabs.scss';
 
 export default {
@@ -185,7 +185,7 @@ export default {
         style={{ height: this.height }}
       >
         <div
-          class={cs(
+          class={clsx(
             this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
             this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
             this.style['cdr-tabs__gradient-container'],
@@ -195,7 +195,7 @@ export default {
           vOn:keydown_down_prevent={this.handleDownArrowNav}
         >
           <nav
-            class={cs(
+            class={clsx(
               this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
               this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
               this.style['cdr-tabs__header-container'],
@@ -211,7 +211,7 @@ export default {
                     role="tab"
                     aria-selected={tab.active}
                     key={tab.id ? tab.id : `${tab.name}-${index}`}
-                    class={cs(
+                    class={clsx(
                       tab.active ? this.style['cdr-tabs__header-item-active'] : '',
                       this.style['cdr-tabs__header-item'],
                     )}

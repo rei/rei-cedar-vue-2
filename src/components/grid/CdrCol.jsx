@@ -1,7 +1,7 @@
+import clsx from 'clsx';
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
-import { CdrRow } from 'componentsdir/grid/CdrRow'; // TODO: is this import shakeable?
-import cs from 'classnames';
+import { CdrRow } from './CdrRow';
 import style from './styles/CdrCol.scss';
 
 export default {
@@ -129,7 +129,7 @@ export default {
     if (!this.isRow && !this.isList) {
       colEl = (
         <div
-          class={cs(
+          class={clsx(
             this.style['cdr-col'],
             this.spanClass,
             this.offsetLeftClass,
@@ -145,7 +145,7 @@ export default {
     } else if (!this.isRow && this.isList) {
       colEl = (
         <li
-          class={cs(
+          class={clsx(
             this.style['cdr-col'],
             this.spanClass,
             this.offsetLeftClass,
@@ -161,7 +161,7 @@ export default {
     } else if (this.isRow && this.isList) {
       colEl = (
         <li
-          class={cs(
+          class={clsx(
             this.style['cdr-row'],
             this.style['cdr-col'],
             this.spanClass,
@@ -181,7 +181,7 @@ export default {
     } else {
       colEl = (
           <cdr-row
-            class={cs(
+            class={clsx(
               this.style['cdr-col'],
               this.spanClass,
               this.offsetLeftClass,

@@ -1,6 +1,6 @@
-import { IconCaretLeft, IconCaretRight } from 'componentsdir/icon/build/main';
-import { CdrSelect } from 'componentsdir/select/CdrSelect'; // TODO:: is this shakeable?
-import cs from 'classnames';
+import { IconCaretLeft, IconCaretRight } from '../icon/build/main';
+import { CdrSelect } from '../select/CdrSelect'; // TODO:: is this shakeable?
+import clsx from 'clsx';
 import style from './styles/CdrPagination.scss';
 
 export default {
@@ -133,7 +133,7 @@ export default {
       return this.value > this.pages[0].page ? (
         <li>
           <a
-            class={cs(
+            class={clsx(
               this.style['cdr-pagination__link'],
               this.style['cdr-pagination__prev'],
             )}
@@ -154,7 +154,7 @@ export default {
       return this.value < this.pages[this.totalPageData - 1].page ? (
         <li>
           <a
-            class={cs(
+            class={clsx(
               this.style['cdr-pagination__link'],
               this.style['cdr-pagination__next'],
             )}
@@ -179,7 +179,7 @@ export default {
           >
             {n !== '&hellip;'
               ? <a
-                class={cs(
+                class={clsx(
                   this.style['cdr-pagination__link'],
                   { current: n.page === this.value },
                 )}

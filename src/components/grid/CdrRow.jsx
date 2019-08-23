@@ -1,6 +1,6 @@
 import modifier from 'mixinsdir/modifier';
 import propValidator from 'srcdir/utils/propValidator';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrRow.scss';
 
 export default {
@@ -198,7 +198,7 @@ export default {
     const Component = this.type === 'list' ? 'ul' : 'div';
     return (
       <Component
-        class={cs(
+        class={clsx(
           this.style['cdr-row'],
           this.colsClass,
           this.justifyClass,

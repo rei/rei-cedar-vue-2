@@ -1,5 +1,5 @@
 
-import { CdrIcon } from 'componentsdir/icon/CdrIcon';
+import { CdrIcon } from '../CdrIcon';
 
 export default {
   name: 'IconScanBarcode',

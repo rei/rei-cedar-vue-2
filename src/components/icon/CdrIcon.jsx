@@ -1,6 +1,6 @@
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrIcon.scss';
 
 export default {
@@ -33,7 +33,7 @@ export default {
     return (<svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      class={cs(this.sizeClass, this.inheritColorClass, this.space)}
+      class={clsx(this.sizeClass, this.inheritColorClass, this.space)}
       role="presentation"
     >
       {this.$slots.default}

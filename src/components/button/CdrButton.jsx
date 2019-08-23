@@ -1,7 +1,7 @@
 import modifier from 'mixinsdir/modifier';
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrButton.scss';
 
 export default {
@@ -88,7 +88,7 @@ export default {
   render() {
     const Component = this.tag;
     return (<Component
-      class={cs(this.defaultClass,
+      class={clsx(this.defaultClass,
         this.modifierClass,
         this.buttonSizeClass,
         this.fullWidthClass,

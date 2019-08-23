@@ -1,7 +1,7 @@
 import { CdrText } from 'componentsdir/text/CdrText';
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrQuote.scss';
 
 export default {
@@ -55,7 +55,7 @@ export default {
   render() {
     const Component = this.tag;
     return (<Component
-      class={cs(this.modifierClass, this.space)}
+      class={clsx(this.modifierClass, this.space)}
     >
       {this.summaryBlock}
       {this.$slots.default}

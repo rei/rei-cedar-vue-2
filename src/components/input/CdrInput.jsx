@@ -1,7 +1,7 @@
 import size from 'mixinsdir/size';
 import space from 'mixinsdir/space';
 import propValidator from 'srcdir/utils/propValidator';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrInput.scss';
 /**
  * Cedar 2 component for input
@@ -160,7 +160,7 @@ export default {
         return (
           <textarea
             rows={this.rows}
-            class={cs(this.inputClass, this.sizeClass, this.space)}
+            class={clsx(this.inputClass, this.sizeClass, this.space)}
             id={this.inputId}
             disabled={this.disabled}
             required={this.required}
@@ -174,7 +174,7 @@ export default {
       return (
           <input
             type={this.type}
-            class={cs(this.inputClass, this.sizeClass, this.space)}
+            class={clsx(this.inputClass, this.sizeClass, this.space)}
             id={this.inputId}
             disabled={this.disabled}
             required={this.required}

@@ -1,6 +1,6 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrLink.scss';
 
 export default {
@@ -42,7 +42,7 @@ export default {
   render() {
     const Component = this.tag;
     return (<Component
-      class={cs(
+      class={clsx(
         this.modifierClass,
         this.space,
       )}

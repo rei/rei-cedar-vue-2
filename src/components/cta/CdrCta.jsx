@@ -1,6 +1,6 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrCta.scss';
 
 export default {
@@ -57,7 +57,7 @@ export default {
   },
   render() {
     return (<a
-      class={cs(
+      class={clsx(
         this.modifierClass,
         this.ctaClass,
         this.fullWidthClass,

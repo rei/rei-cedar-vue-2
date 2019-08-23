@@ -1,6 +1,6 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrCheckbox.scss';
 
 export default {
@@ -82,13 +82,13 @@ export default {
   // TODO: pass disabled/checked/other attrs through? need direct binding?
   render() {
     return (
-      <div class={cs(this.space, this.style['cdr-checkbox__wrap'])}>
+      <div class={clsx(this.space, this.style['cdr-checkbox__wrap'])}>
         <label
-          class={cs(this.modifierClass, this.labelClass)}
+          class={clsx(this.modifierClass, this.labelClass)}
           ref="label"
         >
           <input
-            class={cs(this.style['cdr-checkbox__input'], this.inputClass)}
+            class={clsx(this.style['cdr-checkbox__input'], this.inputClass)}
             type="checkbox"
             {... { attrs: this.$attrs } }
             vModel={this.newValue}
@@ -100,7 +100,7 @@ export default {
             ref="checkbox"
           />
           <span class={this.style['cdr-checkbox__figure']} />
-          <div class={cs(this.style['cdr-checkbox__content'], this.contentClass)}>
+          <div class={clsx(this.style['cdr-checkbox__content'], this.contentClass)}>
             {this.$slots.default}
           </div>
         </label>

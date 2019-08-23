@@ -1,4 +1,4 @@
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrCaption.scss';
 /**
  * Cedar 2 component for captions
@@ -20,7 +20,7 @@ export default {
   },
   render() {
     return (
-      <div class={cs(this.style['cdr-caption'], 'cdr-space-inset-one-x-squish')}>
+      <div class={clsx(this.style['cdr-caption'], 'cdr-space-inset-one-x-squish')}>
         {this.summary
           ? <p
             class={this.style['cdr-caption__summary']}

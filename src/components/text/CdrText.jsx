@@ -1,6 +1,6 @@
 import modifier from 'mixinsdir/modifier';
 import space from 'mixinsdir/space';
-import cs from 'classnames';
+import clsx from 'clsx';
 
 /**
  * Cedar 2 component for text styles
@@ -25,7 +25,7 @@ export default {
   },
   render() {
     const Component = this.tag;
-    return (<Component class={cs(this.modifierClass, this.space)}>
+    return (<Component class={clsx(this.modifierClass, this.space)}>
       {this.$slots.default}
     </Component>);
   },

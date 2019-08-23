@@ -1,5 +1,5 @@
 import modifier from 'mixinsdir/modifier';
-import cs from 'classnames';
+import clsx from 'clsx';
 import style from './styles/CdrImg.scss';
 
 export default {
@@ -161,16 +161,16 @@ export default {
     if (this.ratio) {
       return (
         <div
-          class={cs(this.style['cdr-media-frame'], this.ratioClass, this.cropClass)}
+          class={clsx(this.style['cdr-media-frame'], this.ratioClass, this.cropClass)}
         >
           <div
-            class={cs(this.coverClass, this.lazyClass, this.radiusClass)}
+            class={clsx(this.coverClass, this.lazyClass, this.radiusClass)}
             style={this.styleObject}
             aria-hidden="true"
             {...{ attrs: this.lazyAttrs }}
           />
           <img
-            class={cs(
+            class={clsx(
               this.style['cdr-media-frame__image'],
               this.style['cdr-media-frame__image--hidden'],
               this.modifierClass,
@@ -183,7 +183,7 @@ export default {
       );
     }
     return (<img
-          class={cs(this.modifierClass, this.radiusClass, this.lazyClass)}
+          class={clsx(this.modifierClass, this.radiusClass, this.lazyClass)}
           src={this.src}
           alt={this.alt}
           {...{ attrs: this.lazyAttrs }}
