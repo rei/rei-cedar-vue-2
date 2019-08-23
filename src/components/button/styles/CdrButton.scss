@@ -87,13 +87,6 @@
     }
   }
 
-  /* Full Width
-     ========== */
-  &--full-width,
-  &--fullWidth\@all {
-    @include cdr-button-full-width-mixin;
-  }
-
   /* Icon Only
      ========= */
 
@@ -104,6 +97,12 @@
       fill: $cdr-button-icon-only-fill-darkmode;
     }
   }
+
+  /* Full Width
+    ========== */
+    &--full-width {
+      @include cdr-button-full-width-mixin;
+    }
 
   /* Breakpoint variants
 
