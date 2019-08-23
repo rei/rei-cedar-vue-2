@@ -15,50 +15,60 @@
 * --------------------------------------------
 */
 
-.cdr-align{
-  &-text-left { @include cdr-align-text-left-mixin; }
-  &-text-center { @include cdr-align-text-center-mixin; }
-  &-text-right { @include cdr-align-text-right-mixin; }
-  &-text-justify { @include cdr-align-text-justify-mixin; }
-  &-center-block { @include cdr-align-center-block-mixin; }
-}
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// @group utility|alignment
+*/
+.cdr-align-text-left { @include cdr-align-text-left-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// @group utility|alignment
+*/
+.cdr-align-text-center { @include cdr-align-text-center-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// @group utility|alignment
+*/
+.cdr-align-text-right { @include cdr-align-text-right-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// @group utility|alignment
+*/
+.cdr-align-text-justify { @include cdr-align-text-justify-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// @group utility|alignment
+*/
+.cdr-align-center-block { @include cdr-align-center-block-mixin; }
 
 @include xs-mq-only {
-  .cdr-align{
-    &-text-left\@xs { @include cdr-align-text-left-mixin; }
-    &-text-center\@xs { @include cdr-align-text-center-mixin; }
-    &-text-right\@xs { @include cdr-align-text-right-mixin; }
-    &-text-justify\@xs { @include cdr-align-text-justify-mixin; }
-    &-center-block\@xs { @include cdr-align-center-block-mixin; }
-  }
+  .cdr-align-text-left\@xs { @include cdr-align-text-left-mixin; }
+  .cdr-align-text-center\@xs { @include cdr-align-text-center-mixin; }
+  .cdr-align-text-right\@xs { @include cdr-align-text-right-mixin; }
+  .cdr-align-text-justify\@xs { @include cdr-align-text-justify-mixin; }
+  .cdr-align-center-block\@xs { @include cdr-align-center-block-mixin; }
 }
 
 @include sm-mq-only {
-  .cdr-align{
-    &-text-left\@sm { @include cdr-align-text-left-mixin; }
-    &-text-center\@sm { @include cdr-align-text-center-mixin; }
-    &-text-right\@sm { @include cdr-align-text-right-mixin; }
-    &-text-justify\@sm { @include cdr-align-text-justify-mixin; }
-    &-center-block\@sm { @include cdr-align-center-block-mixin; }
-  }
+  .cdr-align-text-left\@sm { @include cdr-align-text-left-mixin; }
+  .cdr-align-text-center\@sm { @include cdr-align-text-center-mixin; }
+  .cdr-align-text-right\@sm { @include cdr-align-text-right-mixin; }
+  .cdr-align-text-justify\@sm { @include cdr-align-text-justify-mixin; }
+  .cdr-align-center-block\@sm { @include cdr-align-center-block-mixin; }
 }
 
 @include md-mq-only {
-  .cdr-align{
-    &-text-left\@md { @include cdr-align-text-left-mixin; }
-    &-text-center\@md { @include cdr-align-text-center-mixin; }
-    &-text-right\@md { @include cdr-align-text-right-mixin; }
-    &-text-justify\@md { @include cdr-align-text-justify-mixin; }
-    &-center-block\@md { @include cdr-align-center-block-mixin; }
-  }
+  .cdr-align-text-left\@md { @include cdr-align-text-left-mixin; }
+  .cdr-align-text-center\@md { @include cdr-align-text-center-mixin; }
+  .cdr-align-text-right\@md { @include cdr-align-text-right-mixin; }
+  .cdr-align-text-justify\@md { @include cdr-align-text-justify-mixin; }
+  .cdr-align-center-block\@md { @include cdr-align-center-block-mixin; }
 }
 
 @include lg-mq-only {
-  .cdr-align{
-    &-text-left\@lg { @include cdr-align-text-left-mixin; }
-    &-text-center\@lg { @include cdr-align-text-center-mixin; }
-    &-text-right\@lg { @include cdr-align-text-right-mixin; }
-    &-text-justify\@lg { @include cdr-align-text-justify-mixin; }
-    &-center-block\@lg { @include cdr-align-center-block-mixin; }
-  }
+  .cdr-align-text-left\@lg { @include cdr-align-text-left-mixin; }
+  .cdr-align-text-center\@lg { @include cdr-align-text-center-mixin; }
+  .cdr-align-text-right\@lg { @include cdr-align-text-right-mixin; }
+  .cdr-align-text-justify\@lg { @include cdr-align-text-justify-mixin; }
+  .cdr-align-center-block\@lg { @include cdr-align-center-block-mixin; }
 }

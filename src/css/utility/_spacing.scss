@@ -43,7 +43,17 @@
     
     // loop through sides
     @each $full, $short in $sides {
+      /*
+      /// Add padding to one side
+      /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+      /// @group utility|spacing
+      */
       .cdr-p#{$short}-#{$name} { padding-#{$full}: #{$value} !important; }
+      /*
+      /// Add margin to one side
+      /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+      /// @group utility|spacing
+      */
       .cdr-m#{$short}-#{$name} { margin-#{$full}: #{$value} !important; }
 
       @include xs-mq-only {
@@ -68,9 +78,30 @@
     }
 
     // x and y
+    
+    /*
+    /// Add padding to left and right
+    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+    /// @group utility|spacing
+    */
     .cdr-px-#{$name} { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+    /*
+    /// Add margin to left and right
+    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+    /// @group utility|spacing
+    */
     .cdr-mx-#{$name} { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+    /*
+    /// Add padding to top and bottom
+    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+    /// @group utility|spacing
+    */
     .cdr-py-#{$name} { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+    /*
+    /// Add margin to top and bottom
+    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+    /// @group utility|spacing
+    */
     .cdr-my-#{$name} { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
 
     @include xs-mq-only {
@@ -108,6 +139,11 @@
 // inset
 @mixin make-inset-space-utilities() {
   @each $key, $value in $spacing-inset {
+    /*
+    /// Add inset padding
+    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+    /// @group utility|spacing
+    */
     .#{$key} { padding: #{$value} !important; }
 
     @include xs-mq-only {

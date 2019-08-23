@@ -18,78 +18,100 @@
  
 ========================================================================== */
 
-.cdr-display {
-  &-none { @include cdr-display-none-mixin; }
-  &-hidden { @include cdr-display-hidden-mixin; }
-  &-block { @include cdr-display-block-mixin; }
-  &-inline { @include cdr-display-inline-mixin; }
-  &-inline-block { @include cdr-display-inline-block-mixin; }
-  &-flex { @include cdr-display-flex-mixin; }
-  &-inline-flex { @include cdr-display-inline-flex-mixin; }
-  &-sr-only { @include cdr-display-sr-only-mixin; }
-  &-sr-focusable { @include cdr-display-sr-focusable-mixin; }
-}
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, @lg, or @print)
+/// @group utility|visibility
+*/
+.cdr-display-none { @include cdr-display-none-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// @group utility|visibility
+*/
+.cdr-display-hidden { @include cdr-display-hidden-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, @lg, or @print)
+/// @group utility|visibility
+*/
+.cdr-display-block { @include cdr-display-block-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, @lg, or @print)
+/// @group utility|visibility
+*/
+.cdr-display-inline { @include cdr-display-inline-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, @lg, or @print)
+/// @group utility|visibility
+*/
+.cdr-display-inline-block { @include cdr-display-inline-block-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// @group utility|visibility
+*/
+.cdr-display-flex { @include cdr-display-flex-mixin; }
+/*
+/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// @group utility|visibility
+*/
+.cdr-display-inline-flex { @include cdr-display-inline-flex-mixin; }
+/*
+/// @group utility|visibility
+*/
+.cdr-display-sr-only { @include cdr-display-sr-only-mixin; }
+/*
+/// @group utility|visibility
+*/
+.cdr-display-sr-focusable { @include cdr-display-sr-focusable-mixin; }
 
 /*..............................................
 Screen Breakpoints
 ..............................................*/
 
 @include xs-mq-only {
-  .cdr-display {
-    &-none\@xs { @include cdr-display-none-mixin; }
-    &-hidden\@xs { @include cdr-display-hidden-mixin; }
-    &-block\@xs { @include cdr-display-block-mixin; }
-    &-inline\@xs { @include cdr-display-inline-mixin; }
-    &-inline-block\@xs { @include cdr-display-inline-block-mixin; }
-    &-flex\@xs { @include cdr-display-flex-mixin; }
-    &-inline-flex\@xs { @include cdr-display-inline-flex-mixin; }
-  }
+  .cdr-display-none\@xs { @include cdr-display-none-mixin; }
+  .cdr-display-hidden\@xs { @include cdr-display-hidden-mixin; }
+  .cdr-display-block\@xs { @include cdr-display-block-mixin; }
+  .cdr-display-inline\@xs { @include cdr-display-inline-mixin; }
+  .cdr-display-inline-block\@xs { @include cdr-display-inline-block-mixin; }
+  .cdr-display-flex\@xs { @include cdr-display-flex-mixin; }
+  .cdr-display-inline-flex\@xs { @include cdr-display-inline-flex-mixin; }
 }
 
 @include sm-mq-only {
-  .cdr-display {
-    &-none\@sm { @include cdr-display-none-mixin; }
-    &-hidden\@sm { @include cdr-display-hidden-mixin; }
-    &-block\@sm { @include cdr-display-block-mixin; }
-    &-inline\@sm { @include cdr-display-inline-mixin; }
-    &-inline-block\@sm { @include cdr-display-inline-block-mixin; }
-    &-flex\@sm { @include cdr-display-flex-mixin; }
-    &-inline-flex\@sm { @include cdr-display-inline-flex-mixin; }
-  }
+  .cdr-display-none\@sm { @include cdr-display-none-mixin; }
+  .cdr-display-hidden\@sm { @include cdr-display-hidden-mixin; }
+  .cdr-display-block\@sm { @include cdr-display-block-mixin; }
+  .cdr-display-inline\@sm { @include cdr-display-inline-mixin; }
+  .cdr-display-inline-block\@sm { @include cdr-display-inline-block-mixin; }
+  .cdr-display-flex\@sm { @include cdr-display-flex-mixin; }
+  .cdr-display-inline-flex\@sm { @include cdr-display-inline-flex-mixin; }
 }
 
 @include md-mq-only {
-  .cdr-display {
-    &-none\@md { @include cdr-display-none-mixin; }
-    &-hidden\@md { @include cdr-display-hidden-mixin; }
-    &-block\@md { @include cdr-display-block-mixin; }
-    &-inline\@md { @include cdr-display-inline-mixin; }
-    &-inline-block\@md { @include cdr-display-inline-block-mixin; }
-    &-flex\@md { @include cdr-display-flex-mixin; }
-    &-inline-flex\@md { @include cdr-display-inline-flex-mixin; }
-  }
+  .cdr-display-none\@md { @include cdr-display-none-mixin; }
+  .cdr-display-hidden\@md { @include cdr-display-hidden-mixin; }
+  .cdr-display-block\@md { @include cdr-display-block-mixin; }
+  .cdr-display-inline\@md { @include cdr-display-inline-mixin; }
+  .cdr-display-inline-block\@md { @include cdr-display-inline-block-mixin; }
+  .cdr-display-flex\@md { @include cdr-display-flex-mixin; }
+  .cdr-display-inline-flex\@md { @include cdr-display-inline-flex-mixin; }
 }
 
 @include lg-mq-only {
-  .cdr-display {
-    &-none\@lg { @include cdr-display-none-mixin; }
-    &-hidden\@lg { @include cdr-display-hidden-mixin; }
-    &-block\@lg { @include cdr-display-block-mixin; }
-    &-inline\@lg { @include cdr-display-inline-mixin; }
-    &-inline-block\@lg { @include cdr-display-inline-block-mixin; }
-    &-flex\@lg { @include cdr-display-flex-mixin; }
-    &-inline-flex\@lg { @include cdr-display-inline-flex-mixin; }
-  }
+  .cdr-display-none\@lg { @include cdr-display-none-mixin; }
+  .cdr-display-hidden\@lg { @include cdr-display-hidden-mixin; }
+  .cdr-display-block\@lg { @include cdr-display-block-mixin; }
+  .cdr-display-inline\@lg { @include cdr-display-inline-mixin; }
+  .cdr-display-inline-block\@lg { @include cdr-display-inline-block-mixin; }
+  .cdr-display-flex\@lg { @include cdr-display-flex-mixin; }
+  .cdr-display-inline-flex\@lg { @include cdr-display-inline-flex-mixin; }
 }
 /*..............................................
 Print
 ..............................................*/
 
 @media print {
-  .cdr-display {
-    &-none\@print { @include cdr-display-none-mixin; }
-    &-block\@print { @include cdr-display-block-mixin; }
-    &-inline\@print { @include cdr-display-inline-mixin; }
-    &-inline-block\@print { @include cdr-display-inline-block-mixin; }
-  }
+  .cdr-display-none\@print { @include cdr-display-none-mixin; }
+  .cdr-display-block\@print { @include cdr-display-block-mixin; }
+  .cdr-display-inline\@print { @include cdr-display-inline-mixin; }
+  .cdr-display-inline-block\@print { @include cdr-display-inline-block-mixin; }
 }
