@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import modifier from 'mixinsdir/modifier';
-import propValidator from 'srcdir/utils/propValidator';
+import modifier from '../../mixins/modifier';
+import propValidator from '../../utils/propValidator';
 import { CdrRow } from './CdrRow';
 import style from './styles/CdrCol.scss';
 

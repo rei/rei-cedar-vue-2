@@ -1,7 +1,7 @@
-import size from 'mixinsdir/size';
-import space from 'mixinsdir/space';
-import propValidator from 'srcdir/utils/propValidator';
 import clsx from 'clsx';
+import size from '../../mixins/size';
+import space from '../../mixins/space';
+import propValidator from '../../utils/propValidator';
 import style from './styles/CdrInput.scss';
 /**
  * Cedar 2 component for input

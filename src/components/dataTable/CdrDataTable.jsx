@@ -1,7 +1,7 @@
-import modifier from 'mixinsdir/modifier';
-import space from 'mixinsdir/space';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash-es/debounce';
 import clsx from 'clsx';
+import modifier from '../../mixins/modifier';
+import space from '../../mixins/space';
 import style from './styles/CdrDataTable.scss';
 
 /**

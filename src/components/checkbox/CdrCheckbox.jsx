@@ -1,6 +1,6 @@
-import modifier from 'mixinsdir/modifier';
-import space from 'mixinsdir/space';
 import clsx from 'clsx';
+import modifier from '../../mixins/modifier';
+import space from '../../mixins/space';
 import style from './styles/CdrCheckbox.scss';
 
 export default {

@@ -1,4 +1,4 @@
-import modifier from 'mixinsdir/modifier';
+import modifier from '../../mixins/modifier';
 import style from './styles/CdrTabPanel.scss';
 
 export default {

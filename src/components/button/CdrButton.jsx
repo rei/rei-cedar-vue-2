@@ -1,7 +1,7 @@
-import modifier from 'mixinsdir/modifier';
-import size from 'mixinsdir/size';
-import space from 'mixinsdir/space';
 import clsx from 'clsx';
+import modifier from '../../mixins/modifier';
+import size from '../../mixins/size';
+import space from '../../mixins/space';
 import style from './styles/CdrButton.scss';
 
 export default {

@@ -1,7 +1,7 @@
-import modifier from 'mixinsdir/modifier';
-import space from 'mixinsdir/space';
-import contentPriority from 'mixinsdir/contentPriority';
 import clsx from 'clsx';
+import modifier from '../../mixins/modifier';
+import space from '../../mixins/space';
+import contentPriority from '../../mixins/contentPriority';
 import style from './styles/CdrList.scss';
 
 export default {

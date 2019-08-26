@@ -1,7 +1,7 @@
-import { CdrText } from 'componentsdir/text/CdrText';
-import modifier from 'mixinsdir/modifier';
-import space from 'mixinsdir/space';
 import clsx from 'clsx';
+import { CdrText } from '../text/CdrText';
+import modifier from '../../mixins/modifier';
+import space from '../../mixins/space';
 import style from './styles/CdrQuote.scss';
 
 export default {

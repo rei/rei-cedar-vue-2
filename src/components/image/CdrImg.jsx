@@ -1,5 +1,5 @@
-import modifier from 'mixinsdir/modifier';
 import clsx from 'clsx';
+import modifier from '../../mixins/modifier';
 import style from './styles/CdrImg.scss';
 
 export default {

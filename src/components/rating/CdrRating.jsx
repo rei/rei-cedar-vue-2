@@ -1,7 +1,7 @@
-import contentPriority from 'mixinsdir/contentPriority';
-import size from 'mixinsdir/size';
-import space from 'mixinsdir/space';
 import clsx from 'clsx';
+import contentPriority from '../../mixins/contentPriority';
+import size from '../../mixins/size';
+import space from '../../mixins/space';
 import style from './styles/CdrRating.scss';
 
 export default {

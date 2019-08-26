@@ -1,6 +1,6 @@
-import size from 'mixinsdir/size';
-import space from 'mixinsdir/space';
 import clsx from 'clsx';
+import size from '../../mixins/size';
+import space from '../../mixins/space';
 import style from './styles/CdrIcon.scss';
 
 export default {

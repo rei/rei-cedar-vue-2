@@ -1,5 +1,5 @@
-import modifier from 'mixinsdir/modifier';
-import breakpoints from 'mixinsdir/breakpoints';
+import modifier from '../../mixins/modifier';
+import breakpoints from '../../mixins/breakpoints';
 import style from './styles/CdrBreadcrumb.scss';
 
 export default {

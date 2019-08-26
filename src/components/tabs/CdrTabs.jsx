@@ -1,7 +1,7 @@
-import modifier from 'mixinsdir/modifier';
-import debounce from 'lodash/debounce';
-import delay from 'lodash/delay';
+import debounce from 'lodash-es/debounce';
+import delay from 'lodash-es/delay';
 import clsx from 'clsx';
+import modifier from '../../mixins/modifier';
 import style from './styles/CdrTabs.scss';
 
 export default {

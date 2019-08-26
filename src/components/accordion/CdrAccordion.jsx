@@ -1,6 +1,6 @@
-import { IconCaretDown } from 'componentsdir/icon/build/main';
-import modifier from 'mixinsdir/modifier';
 import clsx from 'clsx';
+import { IconCaretDown } from '../icon/comps/caret-down';
+import modifier from '../../mixins/modifier';
 import style from './styles/CdrAccordion.scss';
 
 export default {

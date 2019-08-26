@@ -1,4 +1,4 @@
-import toArray from 'lodash/toArray';
+import toArray from 'lodash-es/toArray';
 import style from './styles/CdrSelect.scss';
 
 export default {
