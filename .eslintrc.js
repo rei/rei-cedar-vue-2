@@ -20,6 +20,7 @@ module.exports = {
   ],
   plugins: [
     'vue',
+    'tree-shaking',
   ],
   // check if imports actually resolve
   settings: {

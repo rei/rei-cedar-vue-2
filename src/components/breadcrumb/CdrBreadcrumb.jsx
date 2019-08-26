@@ -1,10 +1,9 @@
 import modifier from '../../mixins/modifier';
-import breakpoints from '../../mixins/breakpoints';
 import style from './styles/CdrBreadcrumb.scss';
 
 export default {
   name: 'CdrBreadcrumb',
-  mixins: [modifier, breakpoints],
+  mixins: [modifier],
   props: {
     /**
      * Required. List of source breadcrumb property objects

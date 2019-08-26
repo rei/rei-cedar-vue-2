@@ -33,23 +33,18 @@ if (env !== 'test') {
   copyTargets = ['static/cdr-fonts.css'];
 }
 
-console.log('postcssExtract', postcssExtract);
-
 const plugins = [
-  alias({
+  (env == 'test' || env == 'dev') && alias({
     resolve: ['.json', '.js', '.jsx', '.scss', '.vue'],
     srcdir: resolve('src'),
     cssdir: resolve('src/css'),
-    // cssvariables: resolve('src/css/'),
     assetsdir: resolve('src/assets'),
     componentsdir: resolve('src/components'),
-    compositionsdir: resolve('src/compositions'),
-    directivesdir: resolve('src/directives'),
     mixinsdir: resolve('src/mixins'),
   }),
   nodeResolve({
     mainFields: ['module', 'jsnext:main', 'main'],
-    extensions: ['.mjs', '.js', '.jsx', '.json', '.css'],
+    extensions: ['.mjs', '.js', '.jsx', '.json'],
   }),
   copyPlugin({
     targets: copyTargets,
@@ -59,7 +54,7 @@ const plugins = [
     exclude: 'node_modules/**',
     runtimeHelpers: true, // ????
   }),
-  env !== 'prod' && vue({
+  env !== 'prod' &&  vue({
     css: false,
     style: {
       // postcssCleanOptions: { disabled: true },
@@ -86,8 +81,8 @@ const plugins = [
     styleInjector: `~${resolve('build/style-injector.mjs')}`,
   }),
 
-  //
   postcss({
+    config: true,
     plugins: [
       postcssImport()
     ],

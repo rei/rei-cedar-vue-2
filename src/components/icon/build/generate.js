@@ -22,8 +22,8 @@ const spriterConfig = {
 };
 const spriter = new SVGSpriter(spriterConfig);
 
-// indexArr builds the 'index' main.js file
-const indexArr = ['export { CdrIcon } from \'../CdrIcon\';'];
+// indexArr builds the 'index' index.js file
+const indexArr = ['export { CdrIcon } from \'./CdrIcon\';'];
 
 // process each svg
 glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
@@ -68,14 +68,14 @@ export default {
   fs.outputFileSync(`${outFileWrapper}`, wrapper);
 
   // add file to 'index'
-  indexArr.push(`export { Icon${pascalName} } from '../comps/${name}';`);
+  indexArr.push(`export { Icon${pascalName} } from './comps/${name}';`);
 
   // add to sprite
   spriter.add(path.resolve(file), null, content);
 });
 fs.outputFileSync(resolve('comps/CdrIconSprite.js'), "/* eslint-disable */\nexport { default as CdrIconSprite } from './CdrIconSprite.jsx';\n");
 // output icon sprite & sprite component
-indexArr.push('export { CdrIconSprite } from \'../comps/CdrIconSprite\';'); // eslint-disable-line max-len
+indexArr.push('export { CdrIconSprite } from \'./comps/CdrIconSprite\';'); // eslint-disable-line max-len
 spriter.compile((error, result) => {
   Object.keys(result).forEach((mode) => {
     Object.keys(result[mode]).forEach((resource) => {
@@ -106,7 +106,7 @@ export default {
 
 // output the 'index' file
 fs.outputFileSync(
-  resolve('build/main.js'),
+  resolve('index.js'),
   `// file created by generate.js
 /* eslint-disable */
 ${indexArr.join('\n')}`,

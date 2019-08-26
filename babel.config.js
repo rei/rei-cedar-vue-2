@@ -28,12 +28,13 @@ module.exports = function (api) {
       "@babel/plugin-transform-runtime",
       {
         "corejs": 3,
+        useESModules: true,
       }
     ]
   ];
 
   return {
     presets,
-    plugins
+    plugins,
   };
 }
