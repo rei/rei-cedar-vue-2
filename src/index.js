@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { CdrAccordion } from './components/accordion/CdrAccordion.js';
 export { CdrBreadcrumb } from './components/breadcrumb/CdrBreadcrumb.js';
 export { CdrButton } from './components/button/CdrButton.js';
