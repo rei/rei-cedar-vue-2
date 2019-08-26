@@ -1,4 +1,5 @@
 import process from 'process';
+import renameExtensions from '@betit/rollup-plugin-rename-extensions';
 import plugins from './build/rollup-plugins';
 import packageJson from './package.json';
 
@@ -43,7 +44,16 @@ if (env === 'prod') {
           entryFileNames: '[name].js'
         },
       ],
-      plugins,
+      plugins: [
+        ...plugins,
+        renameExtensions({
+            include: ['**/*.jsx', '**/*.scss'],
+            mappings: {
+                '.jsx': '.js',
+                '.scss': '.js',
+            },
+        })
+      ],
       external: env === 'prod' ? externalFn : undefined,
       preserveModules: true
     }

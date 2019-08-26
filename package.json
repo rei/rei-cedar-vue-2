@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "3.0.0-alpha.4",
+  "version": "3.0.0-alpha.6",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -47,6 +47,7 @@
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/register": "^7.0.0",
+    "@betit/rollup-plugin-rename-extensions": "0.0.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@rei/cdr-tokens": "^1.1.0",
