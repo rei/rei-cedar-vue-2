@@ -50,10 +50,6 @@ const plugins = [
     targets: copyTargets,
     outputFolder: copyOutput
   }),
-  babel({
-    exclude: 'node_modules/**',
-    runtimeHelpers: true, // ????
-  }),
   env !== 'prod' &&  vue({
     css: false,
     style: {
@@ -97,6 +93,10 @@ const plugins = [
         return `${name}_${packageJson.version}`;
       },
     }
+  }),
+  babel({
+    exclude: 'node_modules/**',
+    runtimeHelpers: true, // ????
   }),
   commonjs({
       extensions: ['.js', '.jsx']

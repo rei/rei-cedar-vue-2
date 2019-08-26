@@ -2,6 +2,7 @@ import process from 'process';
 import plugins from './build/rollup-plugins';
 import packageJson from './package.json';
 
+const env = process.env.NODE_ENV;
 const { dependencies = {}, peerDependencies = {} } = packageJson;
 
 const externals = Object.keys(Object.assign(
@@ -9,6 +10,8 @@ const externals = Object.keys(Object.assign(
   dependencies,
   peerDependencies,
 ));
+
+const externalFn = id => externals.some(dep => dep === id || id.startsWith(`${dep}/`));
 
 const config = [
   {
@@ -24,21 +27,26 @@ const config = [
       },
     ],
     plugins,
-    external: id => externals.some(dep => dep === id || id.startsWith(`${dep}/`)),
+    external: env === 'prod' ? externalFn : undefined,
   },
-  {
-    input: 'src/index.js',
-    output: [
-      {
-        dir: `dist/lib`,
-        format: 'esm',
-        entryFileNames: '[name].js'
-      },
-    ],
-    plugins,
-    external: id => externals.some(dep => dep === id || id.startsWith(`${dep}/`)),
-    preserveModules: true
-  },
+
 ];
 
+if (env === 'prod') {
+  config.push(
+    {
+      input: 'src/index.js',
+      output: [
+        {
+          dir: `dist/lib`,
+          format: 'esm',
+          entryFileNames: '[name].js'
+        },
+      ],
+      plugins,
+      external: env === 'prod' ? externalFn : undefined,
+      preserveModules: true
+    }
+  )
+}
 export default config;
