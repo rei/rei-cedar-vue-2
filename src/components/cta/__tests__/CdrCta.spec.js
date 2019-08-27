@@ -35,7 +35,7 @@ describe('CdrCta.vue', () => {
     it('adds full width class for breakpoint', () => {
       const wrapper = shallowMount(CdrCta, {
         propsData: {
-          fullWidth: "fullWidth@xs",
+          fullWidth: "@xs",
         },
       });
 
