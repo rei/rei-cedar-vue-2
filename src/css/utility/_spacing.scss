@@ -44,15 +44,15 @@
     // loop through sides
     @each $full, $short in $sides {
       /*
-      /// Add padding to one side
-      /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
-      /// @group utility|spacing
+      /// Adds padding to #{$full}. 
+      /// Append [@xs, @sm, @md, or @lg] to make responsive.
+      /// @group utility|spacing|padding|#{$full}
       */
       .cdr-p#{$short}-#{$name} { padding-#{$full}: #{$value} !important; }
       /*
-      /// Add margin to one side
-      /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
-      /// @group utility|spacing
+      /// Adds margin to #{$full}. 
+      /// Append [@xs, @sm, @md, or @lg] to make responsive.
+      /// @group utility|spacing|margin|#{$full}
       */
       .cdr-m#{$short}-#{$name} { margin-#{$full}: #{$value} !important; }
 
@@ -78,29 +78,29 @@
     }
 
     // x and y
-    
+
     /*
-    /// Add padding to left and right
-    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
-    /// @group utility|spacing
+    /// Adds padding to left and right. 
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility|spacing|padding|x
     */
     .cdr-px-#{$name} { padding-left: #{$value} !important; padding-right: #{$value} !important; }
     /*
-    /// Add margin to left and right
-    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
-    /// @group utility|spacing
+    /// Adds margin to left and right. 
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility|spacing|margin|x
     */
     .cdr-mx-#{$name} { margin-left: #{$value} !important; margin-right: #{$value} !important; }
     /*
-    /// Add padding to top and bottom
-    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
-    /// @group utility|spacing
+    /// Adds padding to top and bottom. 
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility|spacing|padding|y
     */
     .cdr-py-#{$name} { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
     /*
-    /// Add margin to top and bottom
-    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
-    /// @group utility|spacing
+    /// Adds margin to top and bottom. 
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility|spacing|margin|y
     */
     .cdr-my-#{$name} { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
 
@@ -140,9 +140,9 @@
 @mixin make-inset-space-utilities() {
   @each $key, $value in $spacing-inset {
     /*
-    /// Add inset padding
-    /// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
-    /// @group utility|spacing
+    /// Adds inset padding. 
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility|spacing|inset
     */
     .#{$key} { padding: #{$value} !important; }
 

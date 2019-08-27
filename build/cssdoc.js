@@ -4,7 +4,7 @@ const packageImporter = require('node-sass-package-importer');
 const fs = require('fs-extra');
 const _ = require('lodash');
 
-// compile the css
+// compile the css (so things like loops get all of their classes)
 const result = sass.renderSync({
   importer: packageImporter(),
   file: './src/css/main.scss',
@@ -32,7 +32,7 @@ sassdoc.parse('./src/css/tmp.scss', {
       final = _.merge(final, res);
     });
 
-    // TODO: change output path
+    // TODO: change output path to dist
     fs.outputFileSync('./cssdocdata.json', JSON.stringify(final, null, 2));
     fs.removeSync('./src/css/tmp.scss');
   });

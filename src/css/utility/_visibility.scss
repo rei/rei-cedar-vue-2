@@ -19,45 +19,47 @@
 ========================================================================== */
 
 /*
-/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, @lg, or @print)
+/// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
 /// @group utility|visibility
 */
 .cdr-display-none { @include cdr-display-none-mixin; }
 /*
-/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility|visibility
 */
 .cdr-display-hidden { @include cdr-display-hidden-mixin; }
 /*
-/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, @lg, or @print)
+/// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
 /// @group utility|visibility
 */
 .cdr-display-block { @include cdr-display-block-mixin; }
 /*
-/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, @lg, or @print)
+/// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
 /// @group utility|visibility
 */
 .cdr-display-inline { @include cdr-display-inline-mixin; }
 /*
-/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, @lg, or @print)
+/// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
 /// @group utility|visibility
 */
 .cdr-display-inline-block { @include cdr-display-inline-block-mixin; }
 /*
-/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility|visibility
 */
 .cdr-display-flex { @include cdr-display-flex-mixin; }
 /*
-/// Responsive version also available by appending a breakpoint to the classname (@xs, @sm, @md, or @lg)
+/// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility|visibility
 */
 .cdr-display-inline-flex { @include cdr-display-inline-flex-mixin; }
 /*
+/// Screen reader only text. 
 /// @group utility|visibility
 */
 .cdr-display-sr-only { @include cdr-display-sr-only-mixin; }
 /*
+/// Screen reader only text, but focusable. 
 /// @group utility|visibility
 */
 .cdr-display-sr-focusable { @include cdr-display-sr-focusable-mixin; }
