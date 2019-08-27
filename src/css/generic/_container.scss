@@ -15,7 +15,7 @@ $container-x-padding-md: $cdr-space-two-x;
    ========================================================================== */
 
 .cdr-container-fluid {
-  @include cdr-text-base-text-mixin;
+  @include cdr-text-default-mixin;
   @include cdr-container-fluid-mixin;
 }
 
@@ -30,7 +30,7 @@ $container-x-padding-md: $cdr-space-two-x;
    ========================================================================== */
 
 .cdr-container {
-  @include cdr-text-base-text-mixin;
+  @include cdr-text-default-mixin;
   @include cdr-container-mixin;
 }
 

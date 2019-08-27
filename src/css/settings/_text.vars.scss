@@ -1,46 +1,10 @@
-/* base */
-@mixin cdr-text-base-text-mixin() {
+/* default */
+@mixin cdr-text-default-mixin() {
   @include cdr-text-default;
-}
-
-$cdr-text-base-margin: 0;
-
-@mixin cdr-text-base-mixin() {
-  @include cdr-text-base-text-mixin;
-  margin: $cdr-text-base-margin
-}
-
-/* body */
-
-@mixin cdr-text-body-text-mixin() {
-  @include cdr-text-editorial-compact;
-}
-
-$cdr-text-body-max-width: 634px;
-$cdr-text-body-stack: 16px;
-
-@mixin cdr-text-body-text-bp-sm-mixin() {
-  @include cdr-text-editorial;
-}
-
-$cdr-text-body-stack-bp-sm: 32px;
-
-@mixin cdr-text-body-mixin() {
-  @include cdr-text-body-text-mixin;
-
-  max-width: $cdr-text-body-max-width;
-
-  & + & {
-    margin-top: $cdr-text-body-stack;
-  }
+  margin: 0;
 }
 
 /* citation */
-@mixin cdr-text-citation-text-mixin() {
-  // TODO: typography token
-  @include redwood-display-10;
-}
-
 @mixin cdr-text-citation-mixin() {
-  @include cdr-text-citation-text-mixin;
+  @include redwood-display-10;
 }

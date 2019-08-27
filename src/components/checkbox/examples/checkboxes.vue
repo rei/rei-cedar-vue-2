@@ -2,7 +2,7 @@
   <div data-backstop="checkboxes">
     <cdr-text
       tag="h2"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Checkboxes
     </cdr-text>

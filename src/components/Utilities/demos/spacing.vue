@@ -2,7 +2,7 @@
   <div data-backstop="spacing-utilities">
     <cdr-text
       tag="h2"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Space classes
     </cdr-text>

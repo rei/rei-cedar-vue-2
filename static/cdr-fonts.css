@@ -1,6 +1,21 @@
 /*
 * This is the unminified version of cedar-fonts.min.css
 */
+@font-face {
+	font-family: "REI Stuart App";
+	src: url("//satchel.rei.com/media/font/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff2")
+			format("woff2"),
+		url("//satchel.rei.com/media/font/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff")
+			format("woff");
+}
+
+@font-face {
+	font-family: "REI Stuart App";
+	src: url("//satchel.rei.com/media/font/Graphik/Graphik-VF/Graphik-VF-Web.woff2")
+			format("woff2"),
+		url("//satchel.rei.com/media/font/REI_Stuart/Graphik-VF/Graphik-VF-Web.woff")
+			format("woff");
+}
 
 @font-face {
 	font-family: 'Sentinel';

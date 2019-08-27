@@ -129,6 +129,30 @@
   @include cdr-text-heading-text-large-static-mixin;
 }
 
+/* body */
+
+@mixin cdr-text-body-text-mixin() {
+  @include cdr-text-editorial-compact;
+}
+
+$cdr-text-body-max-width: 634px;
+$cdr-text-body-stack: 16px;
+
+@mixin cdr-text-body-text-bp-sm-mixin() {
+  @include cdr-text-editorial;
+}
+
+$cdr-text-body-stack-bp-sm: 32px;
+
+@mixin cdr-text-body-mixin() {
+  @include cdr-text-body-text-mixin;
+
+  max-width: $cdr-text-body-max-width;
+
+  & + & {
+    margin-top: $cdr-text-body-stack;
+  }
+}
 
 .cdr-text,
 h1.cdr-text,
@@ -223,6 +247,20 @@ h6.cdr-text {
     /* non responsive */
     &-static {
       @include cdr-text-heading-large-static-mixin;
+    }
+  }
+  /* Body
+    ========== */
+
+  &--body {
+    @include cdr-text-body-mixin;
+
+    @include sm-mq {
+      @include cdr-text-body-text-bp-sm-mixin;
+
+      & + & {
+        margin-top: $cdr-text-body-stack-bp-sm;
+      }
     }
   }
 }

@@ -6,7 +6,7 @@
 
     <cdr-text
       tag="h2"
-      modifier="heading-large"
+      modifier="display-600 display-700@md display-900@lg"
     >
       List
     </cdr-text>

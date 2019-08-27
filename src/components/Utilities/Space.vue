@@ -2,7 +2,7 @@
   <div>
     <cdr-text
       tag="h1"
-      modifier="heading-large"
+      modifier="display-600 display-700@md display-900@lg"
     >
       Spacing classes
     </cdr-text>

@@ -7,7 +7,7 @@
     >
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         {{ section.title }}
       </cdr-text>
@@ -26,7 +26,7 @@
     <div class="button-example">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Responsive
       </cdr-text>
@@ -41,7 +41,7 @@
     <div class="button-example">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Primary Anchor
       </cdr-text>
