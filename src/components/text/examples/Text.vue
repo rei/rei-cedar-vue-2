@@ -1,14 +1,6 @@
 <template>
   <div>
-    <cdr-text
-      tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
-    >
-      Text
-    </cdr-text>
-
     <headings data-backstop="headings" />
-
     <paragraphs data-backstop="paragraphs" />
   </div>
 </template>
