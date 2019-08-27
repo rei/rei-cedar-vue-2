@@ -7,8 +7,8 @@
       Buttons
     </cdr-text>
     <default-buttons />
-    <responsive />
     <secondary-buttons />
+    <full-width />
     <icon-buttons />
   </div>
 </template>
@@ -18,7 +18,7 @@ import CdrText from 'componentsdir/text/CdrText';
 import defaultButtons from 'componentsdir/button/examples/demo/Default';
 import secondaryButtons from 'componentsdir/button/examples/demo/Secondary';
 import iconButtons from 'componentsdir/button/examples/demo/Icons';
-import responsive from 'componentsdir/button/examples/demo/Responsive';
+import fullWidth from 'componentsdir/button/examples/demo/FullWidth';
 
 export default {
   name: 'Buttons',
@@ -27,7 +27,7 @@ export default {
     defaultButtons,
     secondaryButtons,
     iconButtons,
-    responsive,
+    fullWidth,
   },
 };
 </script>

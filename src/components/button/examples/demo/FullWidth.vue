@@ -1,44 +1,24 @@
 <template>
   <div>
     <div class="button-example">
-      <h1>Hello there</h1>
-      <cdr-button
-        size="medium large@xs"
-        full-width="xs"
-      >
-        full-width @xs
-      </cdr-button>
-    </div>
-    <div class="button-example">
       <cdr-text
         tag="h3"
         modifier="heading-small"
       >
-        Responsive
+        Full Width
       </cdr-text>
       <cdr-button
+        size="small large@xs large@sm"
+        :full-width="true"
+      >
+        Full width + responsive sizes
+      </cdr-button>
+      <cdr-button
         :on-click="log"
-        full-width
-        size="large@sm"
+        full-width="@xs"
+        size="large"
       >
-        Responsive with default
-      </cdr-button>
-    </div>
-    <div>
-      <cdr-button
-        :full-width="true"
-        size="large@lg"
-        space="cdr-mb-space-one-x cdr-mr-space-one-x@md"
-      >
-        button 1
-      </cdr-button>
-
-      <cdr-button
-        :full-width="true"
-        modifier="secondary"
-        size="large@lg"
-      >
-        button 2
+        Large + fullWidth@xs
       </cdr-button>
     </div>
   </div>
@@ -49,7 +29,7 @@
 import { CdrText, CdrButton } from 'componentsdir/_index';
 
 export default {
-  name: 'Responsive',
+  name: 'FullWidth',
   components: {
     CdrText,
     CdrButton,
