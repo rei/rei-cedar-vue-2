@@ -1,5 +1,3 @@
-// WHAT THE HECKY HAPPENED HERE
-// https://jestjs.io/docs/en/configuration.html
 const config = {
   verbose: true,
   moduleFileExtensions: [
