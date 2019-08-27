@@ -1,7 +1,7 @@
 
 export default {
   name: 'CdrIconSprite',
-  render() {
+  render(h) {
     return h(
       'div',
       {
