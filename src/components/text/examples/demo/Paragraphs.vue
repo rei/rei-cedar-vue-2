@@ -2,7 +2,7 @@
   <!-- eslint-disable max-len -->
   <div>
     <cdr-text>
-      Paragraphs The default cdr-text component is a <code>p</code> tag with the class of 'cdr-text'
+      The default cdr-text component is a <code>p</code> tag with the class of 'cdr-text'
     </cdr-text>
     <cdr-text>Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
       congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
