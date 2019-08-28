@@ -49,8 +49,9 @@ if (env === 'prod') {
         renameExtensions({
             include: ['**/*.js', '**/*.jsx', '**/*.scss'],
             mappings: {
-                '.jsx': '.js',
-                '.scss': '.js',
+                '.js': '.mjs',
+                '.jsx': '.mjs',
+                '.scss': '.mjs',
             },
         })
       ],
