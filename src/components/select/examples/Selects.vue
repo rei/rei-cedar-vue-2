@@ -9,18 +9,18 @@
 
     <cdr-select
       label="Disabled select"
-      v-model="selected"
+      v-model="selectedDisabled"
       disabled
     >
       <option value="1">
         1
       </option>
     </cdr-select>
-    <cdr-text>Selected: {{ selected }}</cdr-text>
+    <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>
 
     <cdr-select
       label="Prompt"
-      v-model="selected"
+      v-model="selectedA"
       prompt="Choose one"
     >
       <option value="1">
@@ -36,11 +36,11 @@
         4
       </option>
     </cdr-select>
-    <cdr-text>Selected: {{ selected }}</cdr-text>
+    <cdr-text>Selected: {{ selectedA }}</cdr-text>
 
     <cdr-select
       label="Prompt Required"
-      v-model="selected"
+      v-model="selectedB"
       prompt="Choose one"
       required
     >
@@ -57,12 +57,12 @@
         4
       </option>
     </cdr-select>
-    <cdr-text>Selected: {{ selected }}</cdr-text>
+    <cdr-text>Selected: {{ selectedB }}</cdr-text>
 
     <cdr-select
       label="Hidden label text"
       hide-label
-      v-model="selected"
+      v-model="selectedC"
       prompt="Hidden label"
     >
       <option value="1">
@@ -78,7 +78,7 @@
         4
       </option>
     </cdr-select>
-    <cdr-text>Selected: {{ selected }}</cdr-text>
+    <cdr-text>Selected: {{ selectedC }}</cdr-text>
 
     <cdr-select
       label="No Prompt"
@@ -140,14 +140,17 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Selects',
   components: Components,
   data() {
     return {
-      selected: '',
+      selectedDisabled: '',
+      selectedA: '',
+      selectedB: '2',
+      selectedC: '',
       selected2: '1',
       dynamic: '',
       dynamicData: [{ value: 'a', text: 'a' }, { value: 'b', text: 'b' }],

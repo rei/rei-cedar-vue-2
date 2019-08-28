@@ -47,76 +47,6 @@
       </cdr-col>
     </cdr-row>
 
-    <cdr-text
-      tag="h3"
-      modifier="heading-small"
-    >
-      Small icon size
-    </cdr-text>
-    <hr class="icon-hr">
-
-    <cdr-row
-      cols="3 6@md 10@lg"
-    >
-      <cdr-col
-        v-for="(val, key) in filteredIcons"
-        :key="key"
-      >
-        <div class="cdr-text-center">
-          <svg
-            :is="key"
-            size="small"
-          />
-          <cdr-text>{{ key }}</cdr-text>
-        </div>
-      </cdr-col>
-    </cdr-row>
-
-    <cdr-text
-      tag="h3"
-      modifier="heading-small"
-    >
-      Large icon size
-    </cdr-text>
-    <hr class="icon-hr">
-
-    <cdr-row
-      cols="3 6@md 10@lg"
-    >
-      <cdr-col
-        v-for="(val, key) in filteredIcons"
-        :key="key"
-      >
-        <div class="cdr-text-center">
-          <svg
-            :is="key"
-            size="large"
-          />
-          <cdr-text>{{ key }}</cdr-text>
-        </div>
-      </cdr-col>
-    </cdr-row>
-
-    <cdr-text tag="h3">
-      Responsive icon size
-    </cdr-text>
-    <hr class="icon-hr">
-
-    <cdr-text tag="h4">
-      Grow with screen width
-    </cdr-text>
-    <cdr-icon
-      use="#account-profile"
-      size="small@xs large@md large@lg"
-    />
-    <hr class="icon-hr">
-    <cdr-text tag="h4">
-      Inverse Grow
-    </cdr-text>
-    <cdr-icon
-      use="#account-profile"
-      size="large@xs small@md small@lg"
-    />
     <hr class="icon-hr">
     <cdr-text tag="h4">
       Container with pink fill color
@@ -147,14 +77,13 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
+import * as Icons from 'componentsdir/icon/index';
 
-import * as Icons from 'componentsdir/icon/build/main';
 
 export default {
   name: 'Icons',
   components: {
-    ...Icons,
     ...Components,
   },
   data() {

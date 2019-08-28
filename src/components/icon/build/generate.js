@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 const glob = require('glob');
 const fs = require('fs-extra');
@@ -21,15 +22,16 @@ const spriterConfig = {
 };
 const spriter = new SVGSpriter(spriterConfig);
 
-// indexArr builds the 'index' main.js file
-const indexArr = ['export { default as CdrIcon } from \'componentsdir/icon/CdrIcon\';'];
+// indexArr builds the 'index' index.js file
+const indexArr = ['export { CdrIcon } from \'./CdrIcon\';'];
 
 // process each svg
 glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
   const name = path.basename(file, '.svg');
   const pascalName = _.upperFirst(_.camelCase(name));
   const content = fs.readFileSync(file, 'utf8');
-  const outFile = resolve(`comps/${name}.vue`);
+  const outFile = resolve(`comps/${name}.jsx`);
+  const outFileWrapper = resolve(`comps/${name}.js`);
 
   // everything in root svg element
   const fragment = JSDOM.fragment(content).firstChild;
@@ -41,17 +43,8 @@ glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
   const { innerHTML } = fragment;
 
   // create vue component
-  const component = `<template>
-  <!-- File generated during build -->
-  <!-- eslint-disable -->
-  <cdr-icon v-bind="$props">
-    <slot />
-    ${innerHTML.trim()}
-  </cdr-icon>
-</template>
-
-<script>
-import CdrIcon from 'componentsdir/icon/CdrIcon';
+  const component = `
+import { CdrIcon } from '../CdrIcon';
 
 export default {
   name: 'Icon${pascalName}',
@@ -59,34 +52,41 @@ export default {
     CdrIcon,
   },
   extends: CdrIcon,
+  render() {
+    return (<cdr-icon {...this.$props}>
+      {this.$slots.default}
+      ${innerHTML.trim()}
+    </cdr-icon>)
+  },
 };
-</script>
 `;
 
   // write component file
   fs.outputFileSync(`${outFile}`, component);
 
+  const wrapper = `/* eslint-disable */\nexport { default as Icon${pascalName} } from './${name}.jsx';\n`
+  fs.outputFileSync(`${outFileWrapper}`, wrapper);
+
   // add file to 'index'
-  indexArr.push(`export { default as Icon${pascalName} } from 'componentsdir/icon/comps/${name}';`);
+  indexArr.push(`export { Icon${pascalName} } from './comps/${name}';`);
 
   // add to sprite
   spriter.add(path.resolve(file), null, content);
 });
-
+fs.outputFileSync(resolve('comps/CdrIconSprite.js'), "/* eslint-disable */\nexport { default as CdrIconSprite } from './CdrIconSprite.jsx';\n");
 // output icon sprite & sprite component
-indexArr.push('export { default as CdrIconSprite } from \'componentsdir/icon/comps/CdrIconSprite\';'); // eslint-disable-line max-len
+indexArr.push('export { CdrIconSprite } from \'./comps/CdrIconSprite\';'); // eslint-disable-line max-len
 spriter.compile((error, result) => {
   Object.keys(result).forEach((mode) => {
     Object.keys(result[mode]).forEach((resource) => {
       fs.outputFileSync(result[mode][resource].path, result[mode][resource].contents);
       console.log('Created icon sprite');// eslint-disable-line no-console
       fs.outputFileSync(
-        resolve('comps/CdrIconSprite.vue'),
-        `<script>
-/* eslint-disable max-len */
+        resolve('comps/CdrIconSprite.jsx'),
+        `
 export default {
   name: 'CdrIconSprite',
-  render(h) {
+  render() {
     return h(
       'div',
       {
@@ -98,7 +98,6 @@ export default {
     );
   },
 };
-</script>
 `,
       );
     });
@@ -107,7 +106,7 @@ export default {
 
 // output the 'index' file
 fs.outputFileSync(
-  resolve('build/main.js'),
+  resolve('index.js'),
   `// file created by generate.js
 /* eslint-disable */
 ${indexArr.join('\n')}`,

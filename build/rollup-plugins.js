@@ -1,11 +1,12 @@
 import path from 'path';
 import process from 'process';
-import vue from 'rollup-plugin-vue';
 import commonjs from 'rollup-plugin-commonjs';
 import alias from 'rollup-plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
+import postcssImport from 'postcss-import';
 import copyPlugin from 'rollup-plugin-copy';
+import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
 import packageJson from '../package.json';
 
@@ -15,12 +16,10 @@ function resolve(dir) {
 }
 
 const env = process.env.NODE_ENV;
-const ssrEnv = process.env.SSR_ENV;
 
 // plugin configs
 let postcssExtract = false;
 let copyTargets = [''];
-let SSROptimize = false;
 let copyOutput = 'public';
 
 // prod only options
@@ -32,37 +31,35 @@ if (env === 'prod') {
 // dev and prod options
 if (env !== 'test') {
   copyTargets = ['static/cdr-fonts.css'];
-  // SSR build
-  if (ssrEnv === 'ssr') {
-    SSROptimize = true;
-  }
 }
 
-console.log('SSR', ssrEnv);
-console.log('postcssExtract', postcssExtract);
+if (env === 'dev') {
+  copyTargets.push('dist/cedar.css')
+}
 
 const plugins = [
-  alias({
-    resolve: ['.vue', '.json', '.js'],
+  (env == 'test' || env == 'dev') && alias({
+    resolve: ['.json', '.js', '.jsx', '.scss', '.vue'],
     srcdir: resolve('src'),
     cssdir: resolve('src/css'),
     assetsdir: resolve('src/assets'),
     componentsdir: resolve('src/components'),
-    compositionsdir: resolve('src/compositions'),
-    directivesdir: resolve('src/directives'),
     mixinsdir: resolve('src/mixins'),
   }),
   nodeResolve({
     mainFields: ['module', 'jsnext:main', 'main'],
-    extensions: ['.mjs', '.js', '.jsx', '.json', '.css'],
+    extensions: ['.mjs', '.js', '.jsx', '.json'],
   }),
-  vue({
+  env !== 'prod' &&  vue({
     css: false,
     style: {
       // postcssCleanOptions: { disabled: true },
       postcssModulesOptions: {
         generateScopedName(name, filename, css) {
           // to preseve '@' in responsive class names
+          if (env === 'test') {
+            return name;
+          }
           return `${name}_${packageJson.version}`;
         },
       },
@@ -76,24 +73,38 @@ const plugins = [
     },
     template: {
       isProduction: env === 'prod',
-      optimizeSSR: SSROptimize,
     },
     styleInjector: `~${resolve('build/style-injector.mjs')}`,
   }),
+
   postcss({
+    config: true,
+    plugins: [
+      postcssImport()
+    ],
     extract: postcssExtract,
     extensions: ['.scss', '.css'],
-    sourceMap: env === 'dev' ? 'inline' : false, 
+    sourceMap: env === 'dev' ? 'inline' : false,
+    modules: {
+      generateScopedName(name, filename, css) {
+        // don't scope anything in the `css/main.scss` (reset, utils, type, etc.)
+        if (filename.match(/main\.scss/) || env === 'test') return name;
+        // scope classes for components
+        return `${name}_${packageJson.version}`;
+      },
+    }
   }),
-  commonjs(),
+  babel({
+    exclude: 'node_modules/**',
+    runtimeHelpers: true, // ????
+  }),
+  commonjs({
+      extensions: ['.js', '.jsx']
+  }),
   copyPlugin({
     targets: copyTargets,
     outputFolder: copyOutput
   }),
-  babel({
-    exclude: 'node_modules/**',
-    runtimeHelpers: true,
-  }),
 ];
 
-export default plugins;
+export default plugins.filter(x => x);

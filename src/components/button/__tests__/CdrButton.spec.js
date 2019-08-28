@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrButton } from 'distdir/cedar.esm.js';
+import { CdrButton } from 'distdir/cedar.js';
 import sinon from 'sinon'
 
 describe('CdrButton.vue', () => {

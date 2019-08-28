@@ -21,7 +21,8 @@
       :md
       :lg
 ========================================================================== */
-
+@import '../../../css/settings/index.scss';
+@import './vars/CdrButton.vars.scss';
 .cdr-button {
   @include cdr-button-base-mixin;
 

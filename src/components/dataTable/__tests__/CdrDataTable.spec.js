@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import { CdrDataTable } from 'distdir/cedar.esm.js';
+import { CdrDataTable } from 'distdir/cedar.js';
 import sinon from 'sinon';
 
 const data = {
@@ -60,14 +60,14 @@ describe('CdrDataTable.vue', () => {
     it('sets hasColHeaders, hasRowHeaders with boolean', () => {
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
-          colHeaders: true,
-          rowHeaders: true,
+          colHeaders: false,
+          rowHeaders: false,
           rowData: data.rowData,
         }
       });
 
-      expect(wrapper.vm.hasColHeaders).toBe(true);
-      expect(wrapper.vm.hasRowHeaders).toBe(true);
+      expect(wrapper.vm.hasColHeaders).toBe(false);
+      expect(wrapper.vm.hasRowHeaders).toBe(false);
     });
 
     it ('sets hasColHeaders, hasRowHeaders with data array', () => {

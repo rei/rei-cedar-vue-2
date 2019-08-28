@@ -9,7 +9,8 @@
 
     :Base Styles
 ========================================================================== */
-
+@import '../../../css/settings/index.scss';
+@import './vars/CdrCard.vars.scss';
 .cdr-card {
   background-color: $card-background-color;
   border-radius: $card-border-radius;

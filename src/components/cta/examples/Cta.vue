@@ -53,19 +53,18 @@
 </template>
 
 <script>
-// import Components from 'componentsdir/_index';
-import { CdrText, CdrCta } from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Cta',
   components: {
-    CdrCta,
-    CdrText,
+    ...Components,
   },
 };
 </script>
 
 <style>
+/* TODO: example styles not getting parsed? */
   .button-example {
     padding: 10px;
   }

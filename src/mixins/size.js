@@ -10,7 +10,7 @@
  *
  * @mixin
  */
-import propValidator from 'srcdir/utils/propValidator';
+import propValidator from '../utils/propValidator';
 import BuildClass from './buildClass';
 
 export default {
