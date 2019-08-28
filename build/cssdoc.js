@@ -6,6 +6,8 @@ const _ = require('lodash');
 
 
 // compile the scss (so things like loops get all of their classes generated)
+// This is why sassdoc comments (with ///) are wrapped in /* */ so they are preserved through compilation
+
 const result = sass.renderSync({
   importer: packageImporter(),
   file: './src/css/main.scss',
