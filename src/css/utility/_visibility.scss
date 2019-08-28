@@ -19,36 +19,43 @@
 ========================================================================== */
 
 /*
+/// Sets display to none. 
 /// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
 /// @group utility.visibility
 */
 .cdr-display-none { @include cdr-display-none-mixin; }
 /*
+/// Sets visibility to hidden. 
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility.visibility
 */
 .cdr-display-hidden { @include cdr-display-hidden-mixin; }
 /*
+/// Sets display to block. 
 /// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
 /// @group utility.visibility
 */
 .cdr-display-block { @include cdr-display-block-mixin; }
 /*
+/// Sets display to inline. 
 /// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
 /// @group utility.visibility
 */
 .cdr-display-inline { @include cdr-display-inline-mixin; }
 /*
+/// Sets display to inline-block. 
 /// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
 /// @group utility.visibility
 */
 .cdr-display-inline-block { @include cdr-display-inline-block-mixin; }
 /*
+/// Sets display to flex. 
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility.visibility
 */
 .cdr-display-flex { @include cdr-display-flex-mixin; }
 /*
+/// Sets display to inline-flex. 
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility.visibility
 */
