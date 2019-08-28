@@ -4,7 +4,8 @@ const packageImporter = require('node-sass-package-importer');
 const fs = require('fs-extra');
 const _ = require('lodash');
 
-// compile the css (so things like loops get all of their classes)
+
+// compile the scss (so things like loops get all of their classes generated)
 const result = sass.renderSync({
   importer: packageImporter(),
   file: './src/css/main.scss',
@@ -23,16 +24,16 @@ sassdoc.parse('./src/css/tmp.scss', {
 
     data.map((o) => {
       const objClone = o;
-      const groupKeys = objClone.group[0].split('|');
+      const groupKeys = objClone.group[0].split('.');
       groupKeys.push(o.context.name);
 
       objClone.description = o.description.trim();
 
+      // convert group "path" to nested object
       const res = groupKeys.reduceRight((value, key) => ({ [key]: value }), objClone);
       final = _.merge(final, res);
     });
 
-    // TODO: change output path to dist
-    fs.outputFileSync('./cssdocdata.json', JSON.stringify(final, null, 2));
+    fs.outputFileSync('./dist/cssdocdata.json', JSON.stringify(final, null, 2));
     fs.removeSync('./src/css/tmp.scss');
   });

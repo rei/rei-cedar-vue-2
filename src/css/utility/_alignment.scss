@@ -17,27 +17,27 @@
 
 /*
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
-/// @group utility|alignment
+/// @group utility.alignment
 */
 .cdr-align-text-left { @include cdr-align-text-left-mixin; }
 /*
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
-/// @group utility|alignment
+/// @group utility.alignment
 */
 .cdr-align-text-center { @include cdr-align-text-center-mixin; }
 /*
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
-/// @group utility|alignment
+/// @group utility.alignment
 */
 .cdr-align-text-right { @include cdr-align-text-right-mixin; }
 /*
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
-/// @group utility|alignment
+/// @group utility.alignment
 */
 .cdr-align-text-justify { @include cdr-align-text-justify-mixin; }
 /*
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
-/// @group utility|alignment
+/// @group utility.alignment
 */
 .cdr-align-center-block { @include cdr-align-center-block-mixin; }
 

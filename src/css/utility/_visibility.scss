@@ -20,47 +20,47 @@
 
 /*
 /// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
-/// @group utility|visibility
+/// @group utility.visibility
 */
 .cdr-display-none { @include cdr-display-none-mixin; }
 /*
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
-/// @group utility|visibility
+/// @group utility.visibility
 */
 .cdr-display-hidden { @include cdr-display-hidden-mixin; }
 /*
 /// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
-/// @group utility|visibility
+/// @group utility.visibility
 */
 .cdr-display-block { @include cdr-display-block-mixin; }
 /*
 /// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
-/// @group utility|visibility
+/// @group utility.visibility
 */
 .cdr-display-inline { @include cdr-display-inline-mixin; }
 /*
 /// Append [@xs, @sm, @md, @lg, or @print] to make responsive.
-/// @group utility|visibility
+/// @group utility.visibility
 */
 .cdr-display-inline-block { @include cdr-display-inline-block-mixin; }
 /*
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
-/// @group utility|visibility
+/// @group utility.visibility
 */
 .cdr-display-flex { @include cdr-display-flex-mixin; }
 /*
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
-/// @group utility|visibility
+/// @group utility.visibility
 */
 .cdr-display-inline-flex { @include cdr-display-inline-flex-mixin; }
 /*
 /// Screen reader only text. 
-/// @group utility|visibility
+/// @group utility.visibility
 */
 .cdr-display-sr-only { @include cdr-display-sr-only-mixin; }
 /*
 /// Screen reader only text, but focusable. 
-/// @group utility|visibility
+/// @group utility.visibility
 */
 .cdr-display-sr-focusable { @include cdr-display-sr-focusable-mixin; }
 
