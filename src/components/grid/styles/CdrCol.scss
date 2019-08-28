@@ -1,3 +1,6 @@
+@import '../../../css/settings/index.scss';
+@import './vars/Grid.vars.scss';
+
 // TODO: replace all of this with a mixin
 $colPct1: calc(1 / #{$rowColumns} * 100%);
 $colPct2: calc(2 / #{$rowColumns} * 100%);

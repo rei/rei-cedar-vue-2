@@ -1,5 +1,8 @@
 <template>
-  <section data-backstop="kitchen-sink">
+  <section
+    data-backstop="kitchen-sink"
+    id="kitchen-sink"
+  >
     <div
       v-for="e in examples"
       :key="e.name"

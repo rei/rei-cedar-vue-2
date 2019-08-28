@@ -17,7 +17,8 @@
         :compact
         :hide-figure
 ========================================================================== */
-
+@import '../../../css/settings/index.scss';
+@import './vars/CdrCheckbox.vars.scss';
 .cdr-checkbox {
   @include cdr-label-base-mixin;
 

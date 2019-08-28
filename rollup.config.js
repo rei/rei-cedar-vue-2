@@ -1,48 +1,63 @@
 import process from 'process';
+import renameExtensions from '@betit/rollup-plugin-rename-extensions';
 import plugins from './build/rollup-plugins';
-import components from './build/rollup-components';
+import packageJson from './package.json';
 
-let cjs = 'cjs';
-let esm = 'esm';
+const env = process.env.NODE_ENV;
+const { dependencies = {}, peerDependencies = {} } = packageJson;
 
-if (process.env.SSR_ENV === 'ssr') {
-  cjs = 'cjs.ssr';
-  esm = 'esm.ssr';
-}
+const externals = Object.keys(Object.assign(
+  {},
+  dependencies,
+  peerDependencies,
+));
+
+const externalFn = id => externals.some(dep => dep === id || id.startsWith(`${dep}/`));
 
 const config = [
   {
-    input: 'src/prod.js',
+    input: 'src/main.js',
     output: [
       {
-        file: `dist/cedar.${cjs}.js`,
+        file: `dist/cedar.js`,
         format: 'cjs',
       },
       {
-        file: `dist/cedar.${esm}.js`,
+        file: `dist/cedar.mjs`,
         format: 'esm',
       },
     ],
     plugins,
+    external: env === 'prod' ? externalFn : undefined,
   },
+
 ];
 
-components.forEach((component) => {
-  const name = component.split('/')[4].split('.')[0];
-  config.push({
-    input: component,
-    output: [
-      {
-        file: `dist/${name.toLowerCase()}/${name}.${cjs}.js`,
-        format: 'cjs',
-      },
-      {
-        file: `dist/${name.toLowerCase()}/${name}.${esm}.js`,
-        format: 'esm',
-      },
-    ],
-    plugins,
-  });
-});
-
+if (env === 'prod') {
+  config.push(
+    {
+      input: 'src/index.js',
+      output: [
+        {
+          dir: `dist/lib`,
+          format: 'esm',
+          entryFileNames: '[name].js'
+        },
+      ],
+      plugins: [
+        ...plugins,
+        renameExtensions({
+            include: ['**/*.js', '**/*.jsx', '**/*.scss'],
+            mappings: {
+                '.js': '.mjs',
+                '.jsx': '.mjs',
+                '.scss': '.mjs',
+            },
+        })
+      ],
+      external: env === 'prod' ? externalFn : undefined,
+      preserveModules: true
+    }
+  )
+}
 export default config;

@@ -1,49 +1,40 @@
-// babelrc cooy
-// {
-//   "presets": [
-//     [
-//       "env",
-//       {
-//         "modules": false
-//       }
-//     ],
-//     "stage-2"
-//   ],
-//   "plugins": [
-//     "transform-runtime"
-//   ],
-//   "comments": false,
-//   "env": {
-//     "test": {
-//       "presets": [
-//         "env",
-//         "stage-2"
-//       ],
-//       "plugins": [
-//         "istanbul"
-//       ]
-//     }
-//   }
-// }
-
 /* eslint-disable */
 
 module.exports = function (api) {
+
+  const env = process.env.NODE_ENV;
+
   api.cache(true);
+
+  const presetEnvConfig = (env === 'prod') ?
+  {
+    modules: false, // TODO: cjs settings?
+  } :
+  {
+    targets: {
+      node: 'current',
+    },
+  }
 
   const presets = [
     [
       "@babel/preset-env",
+      presetEnvConfig,
+    ],
+    "@vue/babel-preset-jsx"
+  ];
+  const plugins = [
+    [
+      "@babel/plugin-transform-runtime",
       {
-        corejs: "3",
-        useBuiltIns: "usage"
+        "corejs": 3,
+        useESModules: true,
       }
     ]
   ];
-  const plugins = ['@babel/plugin-transform-runtime'];
 
   return {
     presets,
-    plugins
+    plugins,
   };
 }

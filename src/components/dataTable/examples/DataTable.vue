@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 import AllHeaders from 'componentsdir/dataTable/examples/demo/AllHeaders';
 import NoColHeaders from 'componentsdir/dataTable/examples/demo/NoColHeaders';
 import NoHeaders from 'componentsdir/dataTable/examples/demo/NoHeaders';

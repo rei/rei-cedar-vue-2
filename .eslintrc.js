@@ -20,6 +20,7 @@ module.exports = {
   ],
   plugins: [
     'vue',
+    'tree-shaking',
   ],
   // check if imports actually resolve
   settings: {
@@ -35,7 +36,7 @@ module.exports = {
           ['directivesdir', resolve('src/directives')],
           ['mixinsdir', resolve('src/mixins')],
         ],
-        extensions: ['.vue', '.json', '.js']
+        extensions: ['.vue', '.json', '.js', '.jsx']
       },
     },
   },
@@ -44,6 +45,7 @@ module.exports = {
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
+      jsx: 'never',
       vue: 'never'
     }],
     // allow optionalDependencies

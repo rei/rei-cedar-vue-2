@@ -1,8 +1,9 @@
-@import "./alignment.vars";
-@import "./container.vars";
-@import "./form-label.vars";
-@import "./options.vars";
-@import "./responsive.vars";
-@import "./text.vars";
-@import "./visibility.vars";
+@import "../../../node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss";
+@import "./_alignment.vars";
+@import "./_container.vars";
+@import "./_form-label.vars";
+@import "./_options.vars";
+@import "./_responsive.vars";
+@import "./_text.vars";
+@import "./_visibility.vars";
 

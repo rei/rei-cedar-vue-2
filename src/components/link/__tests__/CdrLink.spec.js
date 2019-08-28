@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import sinon from 'sinon';
-import { CdrLink } from 'distdir/cedar.esm.js';
+import { CdrLink } from 'distdir/cedar.js';
 // import CdrThemer from 'componentsdir/themer/CdrThemer';
 
 describe('CdrLink.vue', () => {
@@ -49,7 +49,7 @@ describe('CdrLink.vue', () => {
   it('computes the base class correctly', () => {
     const wrapper = shallowMount(CdrLink);
     // expect(wrapper.classes().length).toBe(1);
-    expect(wrapper.vm.$style).toHaveProperty('cdr-link');
+    expect(wrapper.classes()).toContain('cdr-link');
   });
 
   it('computes classes correctly for standalone modifier', () => {
@@ -58,7 +58,7 @@ describe('CdrLink.vue', () => {
         modifier: 'standalone',
       },
     });
-    expect(wrapper.vm.$style).toHaveProperty('cdr-link--standalone');
+    expect(wrapper.classes()).toContain('cdr-link--standalone');
   });
 
   it('renders a link with a button element and no href attribute', () => {
