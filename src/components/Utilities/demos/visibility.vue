@@ -373,7 +373,7 @@
 </template>
 
 <script>
-import { CdrText } from 'componentsdir/_index';
+import { CdrText } from 'srcdir/index';
 
 export default {
   name: 'VisibleUtilities',

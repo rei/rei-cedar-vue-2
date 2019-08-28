@@ -140,15 +140,12 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
-import { IconTwitter, IconCheckLg } from 'componentsdir/icon/build/main';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Inputs',
   components: {
     ...Components,
-    IconTwitter,
-    IconCheckLg,
   },
   data() {
     return {

@@ -19,6 +19,7 @@
         :type="button.type"
         :disabled="button.disabled"
         :data-backstop="button.backstop ? button.backstop : null"
+        @click="log"
       >
         {{ button.label }}
       </cdr-button>
@@ -31,7 +32,7 @@
         Responsive
       </cdr-text>
       <cdr-button
-        :on-click="log"
+        @click="log"
         full-width
         size="large@sm"
       >
@@ -75,14 +76,12 @@
 </template>
 
 <script>
-// import Components from 'componentsdir/_index';
-import { CdrText, CdrButton } from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Default',
   components: {
-    CdrText,
-    CdrButton,
+    ...Components,
   },
   data: function data() {
     return {

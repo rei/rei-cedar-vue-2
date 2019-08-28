@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrImg } from 'distdir/cedar.esm.js';
+import { CdrImg } from 'distdir/cedar.js';
 
 describe('CdrImg.vue', () => {
   it('sets the alt attr correctly', () => {

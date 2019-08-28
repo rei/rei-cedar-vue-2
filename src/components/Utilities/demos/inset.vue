@@ -38,7 +38,7 @@
 
 <script>
 
-import { CdrText } from 'componentsdir/_index';
+import { CdrText } from 'srcdir/index';
 import * as tokens from '@rei/cdr-tokens';
 import pickBy from 'lodash/pickBy';
 import kebabCase from 'lodash/kebabCase';

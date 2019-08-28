@@ -2,7 +2,7 @@ const config = {
   verbose: true,
   moduleFileExtensions: [
     'js',
-    'json',
+    'json'
   ],
   moduleNameMapper: {
     'distdir(.*)$': '<rootDir>/dist/$1',
@@ -11,7 +11,6 @@ const config = {
     'rollup.config.test.js',
     '<rootDir>/test/e2e/',
     '<rootDir>/templates/__tests__',
-    '<rootDir>/src/components/themer',
   ],
   transform: {
     '^.+\\.(js|jsx)?$': 'babel-jest',

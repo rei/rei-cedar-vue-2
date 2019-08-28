@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import CdrText from 'componentsdir/text/CdrText';
+import { CdrText } from 'srcdir/index';
 import defaultButtons from 'componentsdir/button/examples/demo/Default';
 import secondaryButtons from 'componentsdir/button/examples/demo/Secondary';
 import iconButtons from 'componentsdir/button/examples/demo/Icons';

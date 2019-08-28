@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 import ratios from 'componentsdir/image/examples/demos/Ratios';
 import cropping from 'componentsdir/image/examples/demos/Cropping';
 import mods from 'componentsdir/image/examples/demos/Mods';

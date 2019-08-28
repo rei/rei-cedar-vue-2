@@ -274,25 +274,12 @@
 </template>
 
 <script>
-import CdrText from 'componentsdir/text/CdrText';
-import CdrButton from 'componentsdir/button/CdrButton';
-/* eslint-disable-next-line */
-import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink, IconPlay, IconXLg } from 'componentsdir/icon/build/main';
-import CdrIcon from 'componentsdir/icon/CdrIcon';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'ButtonIconComps',
   components: {
-    CdrText,
-    CdrButton,
-    IconCheckLg,
-    IconCheckSm,
-    IconClock,
-    CdrIcon,
-    IconTwitter,
-    IconExternalLink,
-    IconPlay,
-    IconXLg,
+    ...Components,
   },
 };
 </script>

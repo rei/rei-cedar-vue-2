@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrCta } from 'distdir/cedar.esm.js';
+import { CdrCta } from 'distdir/cedar.js';
 
 describe('CdrCta.vue', () => {
   it('validates ctaStyle prop', () => {
