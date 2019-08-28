@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "3.0.0-alpha.7",
+  "version": "3.0.0-alpha.9",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -10,8 +10,8 @@
     "access": "public"
   },
   "author": "REI Software Engineering",
-  "main": "dist/cedar.cjs.js",
-  "module": "dist/cedar.esm.js",
+  "main": "dist/cedar.js",
+  "module": "dist/lib/index.mjs",
   "style": "dist/cedar.css",
   "files": [
     "dist"

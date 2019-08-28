@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import sinon from 'sinon';
-import { CdrInput } from 'distdir/cedar.esm.js';
+import { CdrInput } from 'distdir/cedar.js';
 
 describe('CdrInput.vue', () => {
   it('renders a label element', () => {

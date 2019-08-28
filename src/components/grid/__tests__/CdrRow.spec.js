@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrRow } from 'distdir/cedar.esm.js';
+import { CdrRow } from 'distdir/cedar.js';
 
 describe('CdrRow.vue', () => {
   it('sets type prop correctly', () => {

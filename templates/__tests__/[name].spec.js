@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils';
-import {NAME-FULLNAME} from 'distdir/cedar.esm.js';
+import {NAME-FULLNAME} from 'distdir/cedar.js';
 
 describe('{NAME-FULLNAME}.vue', () => {
   it('has a failing test by default so you remember to do them', () => {

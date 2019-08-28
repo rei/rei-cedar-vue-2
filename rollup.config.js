@@ -19,11 +19,11 @@ const config = [
     input: 'src/main.js',
     output: [
       {
-        file: `dist/cedar.cjs.js`,
+        file: `dist/cedar.js`,
         format: 'cjs',
       },
       {
-        file: `dist/cedar.esm.js`,
+        file: `dist/cedar.mjs`,
         format: 'esm',
       },
     ],
