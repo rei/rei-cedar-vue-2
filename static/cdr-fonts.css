@@ -1,1 +1,45 @@
- @font-face {font-family: "REI Stuart App";src: url("//satchel.rei.com/media/font/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff2") format("woff2"), url("//satchel.rei.com/media/font/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff") format("woff");}@font-face {font-family: "Graphik App";src: url("//satchel.rei.com/media/font/Graphik/Graphik-VF/Graphik-VF-Web.woff2") format("woff2"), url("//satchel.rei.com/media/font/REI_Stuart/Graphik-VF/Graphik-VF-Web.woff") format("woff");}@font-face {font-family: 'Sentinel';src: url('//satchel.rei.com/media/font/Sentinel/7A1B623E686C8E1BD.eot');font-weight: 400;font-style: normal;}@font-face {font-family: "Sentinel";src: url('//satchel.rei.com/media/font/Sentinel/68C535B10E6A8EE39.eot');font-weight: 600;font-style: normal;}@font-face {font-family: 'Sentinel';src: url('//satchel.rei.com/media/font/Sentinel/8B0CB88A55D03D7CE.eot');font-weight: 400;font-style: italic;}@font-face {font-family: 'Sentinel';src: url('//satchel.rei.com/media/font/Sentinel/CA67B1A8367D69B81.eot');font-weight: 600;font-style: italic;}
+@font-face {
+	font-family: "REI Stuart App";
+	src: url("//satchel.rei.com/media/font/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff2")
+			format("woff2"),
+		url("//satchel.rei.com/media/font/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff")
+			format("woff");
+}
+
+@font-face {
+	font-family: "Graphik App";
+	src: url("//satchel.rei.com/media/font/Graphik/Graphik-VF/Graphik-VF-Web.woff2")
+			format("woff2"),
+		url("//satchel.rei.com/media/font/REI_Stuart/Graphik-VF/Graphik-VF-Web.woff")
+			format("woff");
+}
+
+@font-face {
+	font-family: 'Sentinel';
+	src: url('//satchel.rei.com/media/font/Sentinel/7A1B623E686C8E1BD.eot');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: "Sentinel";
+  src: url('//satchel.rei.com/media/font/Sentinel/68C535B10E6A8EE39.eot');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/** These 2 are used for CdrQuote (italics) */
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url('//satchel.rei.com/media/font/Sentinel/8B0CB88A55D03D7CE.eot');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Sentinel';
+  src: url('//satchel.rei.com/media/font/Sentinel/CA67B1A8367D69B81.eot');
+  font-weight: 600;
+  font-style: italic;
+}
