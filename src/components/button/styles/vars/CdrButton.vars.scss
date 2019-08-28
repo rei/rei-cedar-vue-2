@@ -261,7 +261,7 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 }
 
 @mixin cdr-button-full-width-mixin() {
-  width: $cdr-button-full-width-width;
+  width: $cdr-button-full-width-width !important;
   justify-content: $cdr-button-full-width-justify-content;
 }
 
