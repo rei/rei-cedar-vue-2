@@ -30,7 +30,7 @@
     >Display @breakpoints 1000-1200  h{{ n }}</cdr-text>
     <cdr-text
       v-for="n in 6"
-      :key="`headingBreakpoint1-${n}`"
+      :key="`headingBreakpoint4-${n}`"
       :tag="`h${n}`"
       modifier="display-1000 display-1100@md display-1200@lg"
     >Display @breakpoints 1000-1200  h{{ n }}</cdr-text>
@@ -56,13 +56,13 @@
 
     <cdr-text
       v-for="n in 6"
-      :key="`headingBreakpoint1-${n}`"
+      :key="`headingBreakpoint2-${n}`"
       :tag="`h${n}`"
       modifier="heading-300 heading-400@sm heading-500@md heading-500@lg"
     >Heading @breakpoints 300-500  h{{ n }}</cdr-text>
     <cdr-text
       v-for="n in 6"
-      :key="`headingBreakpoint1-${n}`"
+      :key="`headingBreakpoint3-${n}`"
       :tag="`h${n}`"
       modifier="heading-600 heading-700@md heading-700@lg heading-800@lg"
     >Heading @breakpoints 500-800  h{{ n }}</cdr-text>
@@ -81,9 +81,8 @@
     >Subheading-600</cdr-text>
 
     <cdr-text
-      :tag="p"
       modifier="subheading-300 subheading-400@sm subheading-500@md subheading-600@lg"
-    >Subheading @breakpoints p</cdr-text>
+    >Subheading @breakpoints</cdr-text>
 
     <cdr-text
       modifier="heading-700 display-900@md display-1100@lg"
