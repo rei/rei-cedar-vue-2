@@ -29,21 +29,6 @@
         tag="h3"
         modifier="heading-small"
       >
-        Responsive
-      </cdr-text>
-      <cdr-button
-        @click="log"
-        full-width
-        size="large@sm"
-      >
-        Responsive with default
-      </cdr-button>
-    </div>
-    <div class="button-example">
-      <cdr-text
-        tag="h3"
-        modifier="heading-small"
-      >
         Primary Anchor
       </cdr-text>
       <cdr-button
@@ -131,29 +116,6 @@ export default {
               disabled: true,
               size: 'small',
               fullWidth: false,
-            },
-          ],
-        },
-        {
-          title: 'Full Width',
-          buttons: [
-            {
-              label: 'Small + full width',
-              disabled: false,
-              size: 'small',
-              fullWidth: true,
-            },
-            {
-              label: 'Medium + full width',
-              disabled: false,
-              size: 'medium',
-              fullWidth: true,
-            },
-            {
-              label: 'Large + full width',
-              disabled: false,
-              size: 'large',
-              fullWidth: true,
             },
           ],
         },
