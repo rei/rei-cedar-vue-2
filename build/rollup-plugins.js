@@ -33,6 +33,10 @@ if (env !== 'test') {
   copyTargets = ['static/cdr-fonts.css'];
 }
 
+if (env === 'dev') {
+  copyTargets.push('dist/cedar.css')
+}
+
 const plugins = [
   (env == 'test' || env == 'dev') && alias({
     resolve: ['.json', '.js', '.jsx', '.scss', '.vue'],
@@ -46,14 +50,8 @@ const plugins = [
     mainFields: ['module', 'jsnext:main', 'main'],
     extensions: ['.mjs', '.js', '.jsx', '.json'],
   }),
-  copyPlugin({
-    targets: copyTargets,
-    outputFolder: copyOutput
-  }),
   env !== 'prod' &&  vue({
-    css: false,
     style: {
-      // postcssCleanOptions: { disabled: true },
       postcssModulesOptions: {
         generateScopedName(name, filename, css) {
           // to preseve '@' in responsive class names
@@ -100,6 +98,10 @@ const plugins = [
   }),
   commonjs({
       extensions: ['.js', '.jsx']
+  }),
+  copyPlugin({
+    targets: copyTargets,
+    outputFolder: copyOutput
   }),
 ];
 
