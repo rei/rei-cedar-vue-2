@@ -39,6 +39,23 @@
     <cdr-breadcrumb
       :items="reiExampleBreadcrumbItems"
     />
+
+    <cdr-text
+      tag="h3"
+      modifier="subheading"
+    >
+      Scoped Slot
+    </cdr-text>
+    <cdr-breadcrumb :items="reiExampleBreadcrumbItems">
+      <template
+        slot="link"
+        slot-scope="link"
+      >
+        <div :class="link.class">
+          {{ link.content }} {{ link.href }}
+        </div>
+      </template>
+    </cdr-breadcrumb>
   </div>
 </template>
 

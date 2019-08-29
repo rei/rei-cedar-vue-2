@@ -34,7 +34,7 @@ describe('CdrBreadcrumb.vue', () => {
       },
     },
   ];
- 
+
   it('renders a nav', () => {
     const wrapper = shallowMount(CdrBreadcrumb);
     expect(wrapper.vm.$refs.container.tagName).toBe('NAV');
@@ -109,4 +109,25 @@ describe('CdrBreadcrumb.vue', () => {
     });
     expect(wrapper.vm.truncate).toBe(true);
   });
+
+  it('breadcrumb link can be overridden with link scopedSlot', () => {
+    const items = [
+      {
+        item: {
+          url: 'http://rei.com',
+          name: 'Scoped',
+        },
+      },
+    ];
+    const wrapper = shallowMount(CdrBreadcrumb, {
+      propsData: {
+        items: items,
+      },
+      scopedSlots: {
+        link: '<p slot-scope="link">{{link.href}} TEST {{link.content}} {{link.class}}</p>'
+      }
+    });
+    expect(wrapper.text()).toBe('http://rei.com TEST Scoped cdr-breadcrumb__link');
+  });
+
 });
