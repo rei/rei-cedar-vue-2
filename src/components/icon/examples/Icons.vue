@@ -5,14 +5,14 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Icons
     </cdr-text>
 
     <cdr-text
       tag="h3"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Default icon size
     </cdr-text>

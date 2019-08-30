@@ -5,7 +5,7 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Visibility classes
     </cdr-text>

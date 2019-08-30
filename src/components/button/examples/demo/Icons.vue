@@ -3,7 +3,7 @@
     <div class="button-example">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         CdrButton + CdrIcon Comps
       </cdr-text>
@@ -71,7 +71,7 @@
     <div class="button-example">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Using a sprite
       </cdr-text>
@@ -173,7 +173,7 @@
     <div class="button-example">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Icon only button
       </cdr-text>
