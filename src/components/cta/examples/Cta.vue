@@ -34,7 +34,15 @@
         href="https://rei.com"
         :full-width="true"
         data-backstop="cdr-cta--full-width"
-      >Full width</cdr-cta>
+      >Full width boolean</cdr-cta>
+    </div>
+    <div class="button-example">
+      <cdr-cta
+        cta-style="dark"
+        href="https://rei.com"
+        full-width="@xs @lg"
+        data-backstop="cdr-cta--full-width-at-xs"
+      >Full width @xs @lg</cdr-cta>
     </div>
     <div
       class="button-example"

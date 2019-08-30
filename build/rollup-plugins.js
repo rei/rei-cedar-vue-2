@@ -51,9 +51,7 @@ const plugins = [
     extensions: ['.mjs', '.js', '.jsx', '.json'],
   }),
   env !== 'prod' &&  vue({
-    css: false,
     style: {
-      // postcssCleanOptions: { disabled: true },
       postcssModulesOptions: {
         generateScopedName(name, filename, css) {
           // to preseve '@' in responsive class names
