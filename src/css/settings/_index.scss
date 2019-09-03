@@ -1,3 +1,4 @@
+$cdr-warn: false;
 @import "../../../node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss";
 @import "./_alignment.vars";
 @import "./_container.vars";
@@ -6,4 +7,3 @@
 @import "./_responsive.vars";
 @import "./_text.vars";
 @import "./_visibility.vars";
-
