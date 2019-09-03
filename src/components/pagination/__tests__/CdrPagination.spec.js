@@ -196,4 +196,19 @@ describe('CdrPagination.vue', () => {
     option = wrapper.find({ ref: 'select' }).findAll('option').at(0);
     expect(option.text()).toBe('Page 1 of 20');
   });
+
+  it('alows links to be overriden with scoped slots', () => {
+    const wrapper = shallowMount(CdrPagination, {
+      propsData: {
+        pages: makePages(3),
+        value: 2,
+      },
+      scopedSlots: {
+        link: '<p slot-scope="link">{{link.href}} {{link.content}}</p>',
+        prevLink: '<p slot-scope="link">{{link.href}} {{link.content}}</p>',
+        nextLink: '<p slot-scope="link">{{link.href}} {{link.content}}</p>',
+      }
+    });
+    expect(wrapper.text()).toBe('?page=1 Prev?page=1 1?page=2 2?page=3 3Page 1Page 2Page 3?page=3 Next');
+  });
 });

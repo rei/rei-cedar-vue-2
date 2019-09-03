@@ -130,45 +130,68 @@ export default {
 
       return range;
     },
+    prevElAttrs() {
+      return {
+        class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__prev']),
+        href: this.pages[this.prevPageIdx].url,
+        'aria-label': 'Go to previous Page',
+        ref: 'prev-link',
+        content: 'Prev',
+        iconClass: this.style['cdr-pagination__caret--prev'],
+        iconComponent: 'icon-caret-left',
+      };
+    },
     prevEl() {
       return this.value > this.pages[0].page ? (
         <li>
-          <a
-            class={clsx(
-              this.style['cdr-pagination__link'],
-              this.style['cdr-pagination__prev'],
-            )}
-            href={this.pages[this.prevPageIdx].url}
-            aria-label="Go to previous Page"
-            onClick={e => this.navigate(this.pages[this.prevPageIdx].page, e)}
-            ref="prev-link"
-          >
-            <icon-caret-left
-              class={this.style['cdr-pagination__caret--prev']}
-            />
-            Prev
-          </a>
+          {this.$scopedSlots.prevLink
+            ? this.$scopedSlots.prevLink(this.prevElAttrs)
+            : (<a
+              class={this.prevElAttrs.class}
+              href={this.prevElAttrs.href}
+              aria-label={this.prevElAttrs['aria-label']}
+              ref={this.prevElAttrs.ref}
+              onClick={e => this.navigate(this.pages[this.prevPageIdx].page, e)}
+            >
+              <this.prevElAttrs.iconComponent
+                class={this.prevElAttrs.iconClass}
+              />
+              {this.prevElAttrs.content}
+            </a>)
+          }
         </li>
       ) : '';
+    },
+    nextElAttrs() {
+      return {
+        class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__next']),
+        href: this.pages[this.nextPageIdx].url,
+        'aria-label': 'Go to next page',
+        ref: 'next-link',
+        content: 'Next',
+        iconClass: this.style['cdr-pagination__caret--next'],
+        iconComponent: 'icon-caret-right',
+      };
     },
     nextEl() {
       return this.value < this.pages[this.totalPageData - 1].page ? (
         <li>
-          <a
-            class={clsx(
-              this.style['cdr-pagination__link'],
-              this.style['cdr-pagination__next'],
-            )}
-            href={this.pages[this.nextPageIdx].url}
-            aria-label="Go to next page"
-            onClick={e => this.navigate(this.pages[this.nextPageIdx].page, e)}
-            ref="next-link"
-          >
-            Next
-            <icon-caret-right
-              class={this.style['cdr-pagination__caret--next']}
-            />
-          </a>
+          {this.$scopedSlots.nextLink
+            ? this.$scopedSlots.nextLink(this.nextElAttrs)
+            : (<a
+              class={this.nextElAttrs.class}
+              href={this.nextElAttrs.href}
+              aria-label={this.nextElAttrs['aria-label']}
+              ref={this.nextElAttrs.ref}
+              onClick={e => this.navigate(this.pages[this.nextPageIdx].page, e)}
+            >
+              {this.nextElAttrs.content}
+              <this.nextElAttrs.iconComponent
+                class={this.nextElAttrs.iconClass}
+              />
+            </a>)
+          }
+
         </li>
       ) : '';
     },
@@ -178,28 +201,15 @@ export default {
             key={`${n}-${this.guid()}`}
             class={this.style['cdr-pagination__li--links']}
           >
-            {n !== '&hellip;'
-              ? <a
-                class={clsx(
-                  this.style['cdr-pagination__link'],
-                  { current: n.page === this.value },
-                )}
-                href={n.url}
-                aria-label={
-                  n.page === this.value
-                    ? `Current page, page ${n.page}`
-                    : `Go to page ${n.page}`
-                }
-                aria-current={n.page === this.value}
-                onClick={e => this.navigate(n.page, e)}
-              >{ n.page }</a>
-              : <span
+            {n === '&hellip;'
+              && <span
                 class={this.style['cdr-pagination__ellipse']}
                 domPropsInnerHTML={n}
               />
             }
+            {n !== '&hellip;' && this.renderLinkEl(n) }
           </li>
-      )); // ??.join('');
+      ));
     },
     mobileEl() {
       return (
@@ -250,6 +260,27 @@ export default {
           .substring(1);
       }
       return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
+    },
+    renderLinkEl(n) {
+      const attrs = {
+        class: clsx(this.style['cdr-pagination__link'], { current: n.page === this.value }),
+        href: n.url,
+        'aria-label': n.page === this.value
+          ? `Current page, page ${n.page}`
+          : `Go to page ${n.page}`,
+        'aria-current': n.page === this.value,
+        content: n.page,
+      };
+
+      return (this.$scopedSlots.link ? this.$scopedSlots.link(attrs)
+        : <a
+          class={attrs.class}
+          href={attrs.href}
+          aria-label={attrs['aria-label']}
+          aria-current={attrs['aria-current']}
+          onClick={e => this.navigate(n.page, e)}
+        >{ attrs.content }</a>
+      );
     },
   },
   render() {

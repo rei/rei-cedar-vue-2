@@ -97,12 +97,19 @@ export default {
           key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
           v-show={!this.truncate || (index >= this.items.length - 2)}
         >
-          <a
-            class={this.style['cdr-breadcrumb__link']}
-            href={breadcrumb.item.url}
-          >
-            { breadcrumb.item.name }
-          </a>
+          {this.$scopedSlots.link
+            ? this.$scopedSlots.link({
+              class: this.style['cdr-breadcrumb__link'],
+              href: breadcrumb.item.url,
+              content: breadcrumb.item.name,
+            })
+            : (<a
+              class={this.style['cdr-breadcrumb__link']}
+              href={breadcrumb.item.url}
+            >
+              { breadcrumb.item.name }
+            </a>)
+          }
           {delimiter}
         </li>);
       });
