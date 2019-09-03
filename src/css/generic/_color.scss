@@ -28,10 +28,3 @@
   background-color: $cdr-color-background-darker;
 }
 
-//--------------------------------------------------------------------------------------------------
-// Foreground color
-//--------------------------------------------------------------------------------------------------
-.cdr-color-foreground-secondary{
-  color: $cdr-color-text-secondary-lightmode; 
-  fill: currentColor; // icons are usually the same color as text. 
-}
