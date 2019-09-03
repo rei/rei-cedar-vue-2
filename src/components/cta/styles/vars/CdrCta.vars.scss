@@ -16,6 +16,7 @@ $cdr-cta-base-text-decoration-hover: none;
 $cdr-cta-base-text-decoration-active: none;
 $cdr-cta-base-text-decoration-focus: none;
 $cdr-cta-base-outline-focus: $default-outline;
+$cdr-cta-base-outline-color-focus: -webkit-focus-ring-color;
 $cdr-cta-base-outline-offset-focus: 0;
 
 @mixin cdr-cta-base-mixin() {
@@ -43,6 +44,7 @@ $cdr-cta-base-outline-offset-focus: 0;
   &:focus {
     text-decoration: $cdr-cta-base-text-decoration-focus;
     outline: $cdr-cta-base-outline-focus;
+    outline-color: $cdr-cta-base-outline-color-focus;
     outline-offset: $cdr-cta-base-outline-offset-focus;
   }
 }

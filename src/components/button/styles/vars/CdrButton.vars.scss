@@ -39,6 +39,7 @@ $cdr-button-primary-fill-focus: #ffffff;
 $cdr-button-primary-color-focus: #ffffff;
 $cdr-button-primary-box-shadow-focus: inset 0 0 0 1px #2b6692;
 $cdr-button-base-outline-focus: $default-outline;
+$cdr-button-base-outline-color-focus: -webkit-focus-ring-color;
 $cdr-button-base-outline-offset-focus: 0;
 $cdr-button-base-text-decoration-focus: none;
 
@@ -170,6 +171,7 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 
   &:focus {
     outline: $cdr-button-base-outline-focus;
+    outline-color: $cdr-button-base-outline-color-focus;
     outline-offset: $cdr-button-base-outline-offset-focus;
     text-decoration: $cdr-button-base-text-decoration-focus;
   }
