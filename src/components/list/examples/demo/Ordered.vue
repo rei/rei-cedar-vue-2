@@ -3,7 +3,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Ordered list
     </cdr-text>
@@ -38,7 +38,7 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Compact ordered list
     </cdr-text>
