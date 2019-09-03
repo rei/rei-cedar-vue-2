@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="button-example"
+      class="button-example cdr-space-inset-one-x"
       v-for="(section, index) in data"
       :key="index"
     >
@@ -15,6 +15,7 @@
         v-for="(button, index2) in section.buttons"
         :key="index2"
         :size="button.size"
+        space="cdr-mr-space-one-x"
         :full-width="button.fullWidth"
         :modifier="button.modifier"
         :type="button.type"
@@ -22,7 +23,7 @@
         :data-backstop="button.backstop ? button.backstop : null"
       >{{ button.label }}</cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
         modifier="heading-400 heading-500@md heading-500@lg"
@@ -104,9 +105,3 @@ export default {
   },
 };
 </script>
-
-<style>
-  .button-example {
-    padding: 10px;
-  }
-</style>

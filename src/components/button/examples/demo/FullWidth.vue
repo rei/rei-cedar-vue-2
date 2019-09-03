@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
         modifier="heading-small"
@@ -9,6 +9,7 @@
       </cdr-text>
       <cdr-button
         size="small large@xs large@sm"
+        space="cdr-mb-space-one-x cdr-mr-space-one-x@sm"
         :full-width="true"
       >
         Full width + responsive sizes
@@ -40,15 +41,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* This should be removed: */
-/* having custom styles here provides false positives */
-.button-example {
-  padding: 10px;
-}
-.button-example button,
-.button-example a {
-  margin: 0 10px 5px 0;
-}
-</style>
