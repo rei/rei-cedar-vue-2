@@ -1,5 +1,5 @@
 
-import { CdrIcon } from '../CdrIcon';
+import CdrIcon from '../CdrIcon';
 
 export default {
   name: 'IconFindLocation',
