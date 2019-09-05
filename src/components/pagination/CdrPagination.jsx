@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import { IconCaretLeft } from '../icon/comps/caret-left';
-import { IconCaretRight } from '../icon/comps/caret-right';
-import { CdrSelect } from '../select/CdrSelect'; // TODO:: is this shakeable?
+import IconCaretLeft from '../icon/comps/caret-left';
+import IconCaretRight from '../icon/comps/caret-right';
+import CdrSelect from '../select/CdrSelect';
 import style from './styles/CdrPagination.scss';
 
 export default {

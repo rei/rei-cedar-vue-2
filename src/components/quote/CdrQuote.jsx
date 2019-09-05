@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { CdrText } from '../text/CdrText';
+import CdrText from '../text/CdrText';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
 import style from './styles/CdrQuote.scss';
