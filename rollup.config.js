@@ -4,27 +4,32 @@ import plugins from './build/rollup-plugins';
 import packageJson from './package.json';
 
 const env = process.env.NODE_ENV;
+const babelEnv = process.env.BABEL_ENV;
 const { dependencies = {}, peerDependencies = {} } = packageJson;
 
-const externals = Object.keys(Object.assign(
+let externals = Object.keys(Object.assign(
   {},
   dependencies,
   peerDependencies,
-));
+))
+
+if (babelEnv === 'cjs') {
+  // don't externalize ES modules in CJS build
+  // TODO: figure out config change needed in @rei/vunit
+  externals = externals.filter(x => x !== 'lodash-es' && x !== 'clsx');
+}
 
 const externalFn = id => externals.some(dep => dep === id || id.startsWith(`${dep}/`));
+
+const ext = babelEnv === 'cjs' ? 'js' : 'mjs';
 
 const config = [
   {
     input: 'src/main.js',
     output: [
       {
-        file: `dist/cedar.js`,
-        format: 'cjs',
-      },
-      {
-        file: `dist/cedar.mjs`,
-        format: 'esm',
+        file: `dist/cedar.${ext}`,
+        format: babelEnv,
       },
     ],
     plugins,
@@ -33,7 +38,7 @@ const config = [
 
 ];
 
-if (env === 'prod') {
+if (env === 'prod' && babelEnv === 'esm') {
   config.push(
     {
       input: 'src/index.js',
