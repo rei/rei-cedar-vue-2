@@ -3,6 +3,7 @@
 module.exports = function (api) {
 
   const env = process.env.NODE_ENV;
+  const babelEnv = process.env.BABEL_ENV;
 
   api.cache(true);
 
@@ -23,12 +24,13 @@ module.exports = function (api) {
     ],
     "@vue/babel-preset-jsx"
   ];
+
   const plugins = [
     [
       "@babel/plugin-transform-runtime",
       {
         "corejs": 3,
-        useESModules: true,
+        "useESModules": babelEnv === 'esm',
       }
     ]
   ];
