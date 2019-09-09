@@ -2,7 +2,6 @@
   <div data-backstop="pagination">
     <h2>pagination</h2>
 
-    <h3>Vue-router example</h3>
     <div
       v-for="datam in paginationData.example1[ex1Page]"
       :key="datam.title"
@@ -49,6 +48,39 @@
       @input="handleInput"
     />
 
+    <hr>
+    <p>Scoped Slot Link</p>
+
+    <cdr-pagination
+      :pages="makePages(5, 'router-page-d')"
+      :total-pages="5"
+      v-model="ex4Page"
+      @input="handleInput"
+    >
+      <template
+        slot="link"
+        slot-scope="link"
+      >
+        <div :class="link.class">
+          {{ link.href }}
+        </div>
+      </template>
+      <template
+        slot="prevLink"
+        slot-scope="link"
+      >
+        <span>&lt;</span>
+        <span>{{ link.content }}</span>
+      </template>
+      <template
+        slot="nextLink"
+        slot-scope="link"
+      >
+        <span>{{ link.content }}</span>
+        <span :class="link.iconClass">&gt;</span>
+      </template>
+    </cdr-pagination>
+
   </div>
 </template>
 
@@ -69,6 +101,7 @@ export default {
       ex2PageKnown: 5,
       ex2PageUnknown: 5,
       ex3Page: 1,
+      ex4Page: 3,
     };
   },
   computed: {

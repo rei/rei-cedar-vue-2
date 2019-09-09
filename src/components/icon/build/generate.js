@@ -23,7 +23,7 @@ const spriterConfig = {
 const spriter = new SVGSpriter(spriterConfig);
 
 // indexArr builds the 'index' index.js file
-const indexArr = ['export { CdrIcon } from \'./CdrIcon\';'];
+const indexArr = ['export { default as CdrIcon } from \'./CdrIcon\';'];
 
 // process each svg
 glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
@@ -31,7 +31,6 @@ glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
   const pascalName = _.upperFirst(_.camelCase(name));
   const content = fs.readFileSync(file, 'utf8');
   const outFile = resolve(`comps/${name}.jsx`);
-  const outFileWrapper = resolve(`comps/${name}.js`);
 
   // everything in root svg element
   const fragment = JSDOM.fragment(content).firstChild;
@@ -44,7 +43,7 @@ glob.sync('../../assets/icons/rei/**/*.svg').forEach((file) => {
 
   // create vue component
   const component = `
-import { CdrIcon } from '../CdrIcon';
+import CdrIcon from '../CdrIcon';
 
 export default {
   name: 'Icon${pascalName}',
@@ -64,18 +63,14 @@ export default {
   // write component file
   fs.outputFileSync(`${outFile}`, component);
 
-  const wrapper = `/* eslint-disable */\nexport { default as Icon${pascalName} } from './${name}.jsx';\n`
-  fs.outputFileSync(`${outFileWrapper}`, wrapper);
-
   // add file to 'index'
-  indexArr.push(`export { Icon${pascalName} } from './comps/${name}';`);
+  indexArr.push(`export { default as Icon${pascalName} } from './comps/${name}';`);
 
   // add to sprite
   spriter.add(path.resolve(file), null, content);
 });
-fs.outputFileSync(resolve('comps/CdrIconSprite.js'), "/* eslint-disable */\nexport { default as CdrIconSprite } from './CdrIconSprite.jsx';\n");
 // output icon sprite & sprite component
-indexArr.push('export { CdrIconSprite } from \'./comps/CdrIconSprite\';'); // eslint-disable-line max-len
+indexArr.push('export { default as CdrIconSprite } from \'./comps/CdrIconSprite\';'); // eslint-disable-line max-len
 spriter.compile((error, result) => {
   Object.keys(result).forEach((mode) => {
     Object.keys(result[mode]).forEach((resource) => {
@@ -86,7 +81,7 @@ spriter.compile((error, result) => {
         `
 export default {
   name: 'CdrIconSprite',
-  render() {
+  render(h) {
     return h(
       'div',
       {

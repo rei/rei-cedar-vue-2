@@ -1,12 +1,13 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
+import fullWidth from '../../mixins/fullWidth';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrButton.scss';
 
 export default {
   name: 'CdrButton',
-  mixins: [modifier, size, space],
+  mixins: [modifier, size, space, fullWidth],
   props: {
     /**
      * Controls render as button or anchor. {button, a}
@@ -23,14 +24,6 @@ export default {
       type: String,
       default: 'button',
       validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
-    },
-    /**
-     * Sets width to be 100%.
-    */
-    fullWidth: {
-      type: Boolean,
-      default: false,
-      validator: value => typeof value === 'boolean',
     },
     /**
      * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.
@@ -79,10 +72,6 @@ export default {
         }
       }
       return classes.join(' ');
-    },
-    fullWidthClass() {
-      return this.fullWidth && !this.iconOnly
-        ? this.modifyClassName(this.baseClass, 'full-width') : null;
     },
   },
   render() {

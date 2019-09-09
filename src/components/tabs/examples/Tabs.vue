@@ -4,7 +4,7 @@
     <div class="tab-demo-section">
       <cdr-text
         tag="h2"
-        modifier="heading-medium"
+        modifier="heading-600 heading-700@md heading-700@lg"
       >
         Tabs
       </cdr-text>
@@ -73,7 +73,7 @@
     <div class="tab-demo-section">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Compact Tabs
       </cdr-text>
@@ -124,7 +124,7 @@
     <div class="tab-demo-section">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Full Width Tabs
       </cdr-text>
@@ -148,7 +148,7 @@
         <cdr-tab-panel name="three">
           <cdr-text
             tag="h1"
-            modifier="heading-large"
+            modifier="display-600 display-700@md display-900@lg"
           >tab three content</cdr-text>
           <cdr-text
             tag="strong"
@@ -161,7 +161,7 @@
               Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>
             <cdr-text
               tag="h1"
-              modifier="heading-large"
+              modifier="display-600 display-700@md display-900@lg"
             >tab three content</cdr-text>
             Tab Two Content
             <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.
@@ -193,7 +193,7 @@
     <div class="tab-demo-section">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         No Border Tabs
       </cdr-text>

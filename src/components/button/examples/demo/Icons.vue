@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         CdrButton + CdrIcon Comps
       </cdr-text>
@@ -11,6 +11,7 @@
         tag="a"
         href="https://rei.com"
         size="large"
+        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
         data-backstop="cdr-button--icon"
       >
         <icon-check-lg
@@ -25,6 +26,7 @@
         tag="a"
         href="https://rei.com"
         size="large"
+        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
         data-backstop="cdr-button--icon"
         disabled
       >
@@ -38,6 +40,7 @@
 
       <cdr-button
         size="medium"
+        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -48,6 +51,7 @@
       </cdr-button>
       <cdr-button
         size="small"
+        space="cdr-mr-space-one-x"
       >
         <icon-check-lg
           inherit-color
@@ -68,15 +72,16 @@
         Small (different) icon
       </cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Using a sprite
       </cdr-text>
       <cdr-button
         size="large"
+        space="cdr-mr-space-one-x"
         modifier="secondary"
       >
         <cdr-icon
@@ -89,6 +94,7 @@
       </cdr-button>
       <cdr-button
         size="large"
+        space="cdr-mr-space-one-x"
         modifier="secondary"
         disabled
       >
@@ -102,6 +108,7 @@
       </cdr-button>
       <cdr-button
         size="medium"
+        space="cdr-mr-space-one-x"
         modifier="secondary"
       >
         <cdr-icon
@@ -125,7 +132,7 @@
         Instagram
       </cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-button
         size="large large@xs medium@sm small@lg"
       >
@@ -137,10 +144,10 @@
         Responsive
       </cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-button
         size="large"
-        full-width
+        :full-width="true"
       >
         <icon-clock
           inherit-color
@@ -150,7 +157,7 @@
         Full Width
       </cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <div
         class="button-text-wrap"
         style="max-width: 300px;"
@@ -170,10 +177,10 @@
         </cdr-button>
       </div>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Icon only button
       </cdr-text>
@@ -222,7 +229,7 @@
         />
       </cdr-button>
     </div>
-    <div class="button-example dark">
+    <div class="button-example cdr-space-inset-one-x dark">
       <cdr-button
         :icon-only="true"
         :on-dark="true"
@@ -285,9 +292,6 @@ export default {
 </script>
 
 <style>
-  .button-example {
-    padding: 10px;
-  }
 
   .dark {
     background: #434343;

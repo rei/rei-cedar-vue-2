@@ -65,7 +65,8 @@ const plugins = [
     data: {
       // this gets prepended in all components <style>
       scss() {
-        return `@import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
+        return `$cdr-warn: false;
+        @import "${resolve('node_modules/@rei/cdr-tokens/dist/scss/cdr-tokens.scss')}";
         @import "${resolve('src/css/settings/_index.scss')}";`;
       },
     },

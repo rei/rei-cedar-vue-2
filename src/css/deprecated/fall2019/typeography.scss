@@ -1,0 +1,266 @@
+/* subheading */
+@mixin cdr-text-subheading-text-mixin() {
+  // TODO: typography token
+  @include spruce-display-20;
+}
+
+@mixin cdr-text-subheading-mixin() {
+  @include cdr-text-subheading-text-mixin;
+}
+
+/* display-responsive */
+@mixin cdr-text-display-text-mixin() {
+  // TODO: typography token
+  @include spruce-display-60;
+}
+
+@mixin cdr-text-display-text-bp-sm-mixin() {
+  // TODO: typography token
+  @include spruce-display-70;
+}
+
+@mixin cdr-text-display-text-bp-lg-mixin() {
+  // TODO: typography token
+  @include spruce-display-80;
+}
+
+@mixin cdr-text-display-mixin() {
+  @include cdr-text-display-text-mixin;
+}
+
+/* display-static */
+@mixin cdr-text-display-text-static-mixin() {
+  // TODO: typography token
+  @include spruce-display-70;
+}
+
+@mixin cdr-text-display-static-mixin() {
+  @include cdr-text-display-text-static-mixin;
+}
+
+
+/* heading */
+
+/* heading-small-responsive */
+@mixin cdr-text-heading-text-small-mixin() {
+  // TODO: typography token
+  @include spruce-display-30;
+}
+
+@mixin cdr-text-heading-text-small-bp-lg-mixin() {
+  // TODO: typography token
+  @include spruce-display-40;
+}
+
+@mixin cdr-text-heading-small-mixin() {
+  @include cdr-text-heading-text-small-mixin;
+}
+
+/* heading-small-static */
+
+@mixin cdr-text-heading-text-small-static-mixin() {
+  // TODO: typography token
+  @include spruce-display-30;
+}
+
+@mixin cdr-text-heading-small-static-mixin() {
+  @include cdr-text-heading-text-small-static-mixin;
+}
+
+/* heading-medium-responsive */
+
+@mixin cdr-text-heading-text-medium-mixin() {
+  // TODO: typography token
+  @include spruce-display-40;
+}
+
+@mixin cdr-text-heading-text-medium-bp-lg-mixin() {
+  // TODO: typography token
+  @include spruce-display-50;
+}
+
+@mixin cdr-text-heading-medium-mixin() {
+  @include cdr-text-heading-text-medium-mixin;
+}
+
+/* heading-medium-static */
+
+@mixin cdr-text-heading-medium-static-mixin() {
+  // TODO: typography token
+  @include spruce-display-40;
+}
+
+@mixin cdr-text-heading-text-medium-static-mixin() {
+  @include cdr-text-heading-text-medium-static-mixin;
+}
+
+
+/* heading-large-responsive */
+
+
+@mixin cdr-text-heading-text-large-mixin() {
+  // TODO: typography token
+  @include spruce-display-40;
+}
+
+@mixin cdr-text-heading-text-large-bp-sm-mixin() {
+  // TODO: typography token
+  @include spruce-display-50;
+}
+
+@mixin cdr-text-heading-text-large-bp-lg-mixin() {
+  // TODO: typography token
+  @include spruce-display-70;
+}
+
+@mixin cdr-text-heading-large-mixin() {
+  @include cdr-text-heading-text-large-mixin;
+
+}
+
+/* heading-large-static */
+
+@mixin cdr-text-heading-text-large-static-mixin() {
+  // TODO: typography token
+  @include spruce-display-50;
+}
+
+@mixin cdr-text-heading-large-static-mixin() {
+  @include cdr-text-heading-text-large-static-mixin;
+}
+
+/* body */
+
+@mixin cdr-text-body-text-mixin() {
+  @include cdr-text-editorial-compact;
+}
+
+$cdr-text-body-max-width: 634px;
+$cdr-text-body-stack: 16px;
+
+@mixin cdr-text-body-text-bp-sm-mixin() {
+  @include cdr-text-editorial;
+}
+
+$cdr-text-body-stack-bp-sm: 32px;
+
+@mixin cdr-text-body-mixin() {
+  @include cdr-text-body-text-mixin;
+
+  max-width: $cdr-text-body-max-width;
+
+  & + & {
+    margin-top: $cdr-text-body-stack;
+  }
+}
+
+.cdr-text,
+h1.cdr-text,
+h2.cdr-text,
+h3.cdr-text,
+h4.cdr-text,
+h5.cdr-text,
+h6.cdr-text {
+  
+    /* Headings
+    ========================================================================== */
+
+  /* Subheading
+    ========== */
+
+  &--subheading {
+    @include cdr-text-subheading-mixin;
+  }
+
+  /* Display
+    ========== */
+
+  &--display {
+    @include cdr-text-display-mixin;
+
+    /* @ small */
+    @include sm-mq {
+      @include cdr-text-display-text-bp-sm-mixin;
+    }
+
+    /* @ large */
+    @include lg-mq {
+      @include cdr-text-display-text-bp-lg-mixin;
+    }
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-display-static-mixin;
+    }
+  }
+
+  /* Heading-small
+    ========== */
+
+  &--heading-small {
+    @include cdr-text-heading-small-mixin;
+
+    /* @ large */
+    @include lg-mq {
+      @include cdr-text-heading-text-small-bp-lg-mixin;
+    }
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-heading-small-static-mixin;
+    }
+  }
+
+  /* Heading-medium
+    ========== */
+
+  &--heading-medium {
+    @include cdr-text-heading-medium-mixin;
+
+    /* @ large */
+    @include lg-mq {
+      @include cdr-text-heading-text-medium-bp-lg-mixin;
+    }
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-heading-medium-static-mixin;
+    }
+  }
+
+  /* Heading-large
+    ========== */
+
+  &--heading-large {
+    @include cdr-text-heading-large-mixin;
+
+    /* @ small */
+    @include sm-mq {
+      @include cdr-text-heading-text-large-bp-sm-mixin;
+    }
+
+    /* @ large */
+    @include lg-mq {
+      @include cdr-text-heading-text-large-bp-lg-mixin;
+    }
+
+    /* non responsive */
+    &-static {
+      @include cdr-text-heading-large-static-mixin;
+    }
+  }
+  /* Body
+    ========== */
+
+  &--body {
+    @include cdr-text-body-mixin;
+
+    @include sm-mq {
+      @include cdr-text-body-text-bp-sm-mixin;
+
+      & + & {
+        margin-top: $cdr-text-body-stack-bp-sm;
+      }
+    }
+  }
+}

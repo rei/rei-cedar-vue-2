@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { IconCaretDown } from '../icon/comps/caret-down';
+import IconCaretDown from '../icon/comps/caret-down';
 import modifier from '../../mixins/modifier';
 import style from './styles/CdrAccordion.scss';
 

@@ -1,4 +1,4 @@
-import style from './styles/{NAME-FULLNAME}.pcss';
+import style from './styles/{NAME-FULLNAME}.scss';
 
 export default {
   name: '{NAME-FULLNAME}',
