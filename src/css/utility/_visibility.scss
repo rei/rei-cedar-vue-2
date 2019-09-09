@@ -61,12 +61,12 @@
 */
 .cdr-display-inline-flex { @include cdr-display-inline-flex-mixin; }
 /*
-/// Screen reader only text. 
+/// Text for screen reader only 
 /// @group utility.visibility
 */
 .cdr-display-sr-only { @include cdr-display-sr-only-mixin; }
 /*
-/// Screen reader only text, but focusable. 
+/// Text for screen reader only, focusable for navigation landmarks, etc. 
 /// @group utility.visibility
 */
 .cdr-display-sr-focusable { @include cdr-display-sr-focusable-mixin; }
