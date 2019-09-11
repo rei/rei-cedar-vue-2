@@ -16,7 +16,8 @@
     >
       Default icon size
     </cdr-text>
-    <icon-account-profile
+    <cdr-icon
+      use="#account-profile"
       data-backstop="cdr-icon-hover"
       class="icon-hover"
     />
@@ -36,12 +37,8 @@
       >
         <div>
           <div class="cdr-text-center">
-            <svg :is="key" />
-            <cdr-text>{{ key }}</cdr-text>
-          </div>
-          <div class="cdr-text-center">
             <cdr-icon :use="`#${getSpriteId(key)}`" />
-            <cdr-text>using sprite</cdr-text>
+            <cdr-text>{{getSpriteId(key)}}</cdr-text>
           </div>
         </div>
       </cdr-col>

@@ -84,12 +84,14 @@
         </cdr-link>
       </template>
       <template slot="pre-icon">
-        <icon-twitter
+        <cdr-icon
+          use="#twitter"
           inherit-color
         />
       </template>
       <template slot="post-icon">
-        <icon-check-lg
+        <cdr-icon
+          use="#check-lg"
           inherit-color
         />
       </template>

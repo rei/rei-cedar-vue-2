@@ -14,7 +14,8 @@
         space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
         data-backstop="cdr-button--icon"
       >
-        <icon-check-lg
+        <cdr-icon
+          use="#check-lg"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -26,7 +27,8 @@
         size="medium"
         space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
       >
-        <icon-check-lg
+        <cdr-icon
+          use="#check-lg"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -37,7 +39,8 @@
         size="small"
         space="cdr-mr-space-one-x"
       >
-        <icon-check-lg
+        <cdr-icon
+          use="#check-lg"
           inherit-color
           slot="icon"
           size="small"
@@ -48,7 +51,8 @@
       <cdr-button
         size="small"
       >
-        <icon-check-sm
+        <cdr-icon
+          use="#check-sm"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -120,7 +124,8 @@
       <cdr-button
         size="large large@xs medium@sm small@lg"
       >
-        <icon-clock
+        <cdr-icon
+          use="#clock"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -133,7 +138,8 @@
         size="large"
         :full-width="true"
       >
-        <icon-clock
+        <cdr-icon
+          use="#clock"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -174,7 +180,8 @@
         size="small"
         aria-label="Check our Twitter feed"
       >
-        <icon-twitter
+        <cdr-icon
+          use="#twitter"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -184,7 +191,8 @@
         icon-only
         aria-label="Close"
       >
-        <icon-x-lg
+        <cdr-icon
+          use="#x-lg"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -196,7 +204,8 @@
         :icon-only="true"
         aria-label="This link goes elsewhere"
       >
-        <icon-external-link
+        <cdr-icon
+          use="#external-link"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -206,7 +215,8 @@
         :icon-only="true"
         aria-label="Play"
       >
-        <icon-play
+        <cdr-icon
+          use="#play"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -219,7 +229,8 @@
         :on-dark="true"
         aria-label="A Twitter button"
       >
-        <icon-twitter
+        <cdr-icon
+          use="#twitter"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -230,7 +241,8 @@
         on-dark
         aria-label="Close"
       >
-        <icon-x-lg
+        <cdr-icon
+          use="#x-lg"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -243,7 +255,8 @@
         :on-dark="true"
         aria-label="An external link"
       >
-        <icon-external-link
+        <cdr-icon
+          use="#external-link"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -254,7 +267,8 @@
         on-dark
         aria-label="Play"
       >
-        <icon-play
+        <cdr-icon
+          use="#play"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
