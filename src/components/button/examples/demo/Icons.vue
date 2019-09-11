@@ -23,22 +23,6 @@
       </cdr-button>
 
       <cdr-button
-        tag="a"
-        href="https://rei.com"
-        size="large"
-        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
-        data-backstop="cdr-button--icon"
-        disabled
-      >
-        <icon-check-lg
-          inherit-color
-          slot="icon"
-          class="cdr-button__icon"
-        />
-        Anchor and Icon
-      </cdr-button>
-
-      <cdr-button
         size="medium"
         space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
       >
