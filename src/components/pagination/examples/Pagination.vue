@@ -61,7 +61,10 @@
         slot="link"
         slot-scope="link"
       >
-        <div :class="link.class">
+        <div
+          :class="link.class"
+          @click="e => ex4Page = link.page"
+        >
           {{ link.href }}
         </div>
       </template>
@@ -69,15 +72,25 @@
         slot="prevLink"
         slot-scope="link"
       >
-        <span>&lt;</span>
-        <span>{{ link.content }}</span>
+        <div @click="e => ex4Page = link.page">
+          <cdr-icon
+            :use="link.iconPath"
+            :class="link.iconClass"
+          />
+          <span>{{ link.content }}</span>
+        </div>
       </template>
       <template
         slot="nextLink"
         slot-scope="link"
       >
-        <span>{{ link.content }}</span>
-        <span :class="link.iconClass">&gt;</span>
+        <div @click="e => ex4Page = link.page">
+          <span>{{ link.content }}</span>
+          <cdr-icon
+            :use="link.iconPath"
+            :class="link.iconClass"
+          />
+        </div>
       </template>
     </cdr-pagination>
 
