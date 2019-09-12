@@ -21,7 +21,7 @@ module.exports = {
     default: {
       silent: true,
       globals: {
-        devServerURL: `http://localhost:${process.env.PORT}` || 3000,
+        devServerURL: `http://localhost:${process.env.PORT}/#/kitchen-sink`,
       },
     },
 
