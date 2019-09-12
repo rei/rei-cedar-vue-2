@@ -6,7 +6,7 @@ node_js:
 sudo: required
 addons:
   chrome: stable
-dist: trusty
+dist: xenial
 before_install:
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then export CHROME_BIN=/usr/bin/google-chrome;
   fi
