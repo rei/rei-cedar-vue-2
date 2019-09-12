@@ -10,7 +10,7 @@ module.exports = {
 
     browser
       .url(devServer)
-      .waitForElementVisible('#app', 10000)
+      .waitForElementVisible('#kitchen-sink', 10000)
       .end();
   },
 };
