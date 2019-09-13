@@ -96,7 +96,7 @@
         />
       </template>
       <template slot="helper-text">
-        This is helper text. Input length: {{requiredWithIcons.length}}
+        This is helper text. Input length: {{ requiredWithIcons.length }}
       </template>
     </cdr-input>
     <cdr-input

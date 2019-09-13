@@ -56,7 +56,7 @@ export default {
   components: Components,
   data() {
     return {
-      tableData
+      tableData,
     };
   },
 };

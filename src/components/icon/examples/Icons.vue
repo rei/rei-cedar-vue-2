@@ -38,7 +38,7 @@
         <div>
           <div class="cdr-text-center">
             <cdr-icon :use="`#${getSpriteId(key)}`" />
-            <cdr-text>{{getSpriteId(key)}}</cdr-text>
+            <cdr-text>{{ getSpriteId(key) }}</cdr-text>
           </div>
         </div>
       </cdr-col>
