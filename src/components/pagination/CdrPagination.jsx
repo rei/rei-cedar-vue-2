@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import { IconCaretLeft } from '../icon/comps/caret-left';
-import { IconCaretRight } from '../icon/comps/caret-right';
-import { CdrSelect } from '../select/CdrSelect'; // TODO:: is this shakeable?
+import IconCaretLeft from '../icon/comps/caret-left';
+import IconCaretRight from '../icon/comps/caret-right';
+import CdrSelect from '../select/CdrSelect';
 import style from './styles/CdrPagination.scss';
 
 export default {
@@ -134,11 +134,13 @@ export default {
       return {
         class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__prev']),
         href: this.pages[this.prevPageIdx].url,
+        page: this.pages[this.prevPageIdx].page,
         'aria-label': 'Go to previous Page',
         ref: 'prev-link',
         content: 'Prev',
         iconClass: this.style['cdr-pagination__caret--prev'],
         iconComponent: 'icon-caret-left',
+        iconPath: '#caret-left',
       };
     },
     prevEl() {
@@ -149,9 +151,10 @@ export default {
             : (<a
               class={this.prevElAttrs.class}
               href={this.prevElAttrs.href}
+              page={this.prevElAttrs.page}
               aria-label={this.prevElAttrs['aria-label']}
               ref={this.prevElAttrs.ref}
-              onClick={e => this.navigate(this.pages[this.prevPageIdx].page, e)}
+              onClick={e => this.navigate(this.prevElAttrs.page, e)}
             >
               <this.prevElAttrs.iconComponent
                 class={this.prevElAttrs.iconClass}
@@ -166,11 +169,13 @@ export default {
       return {
         class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__next']),
         href: this.pages[this.nextPageIdx].url,
+        page: this.pages[this.nextPageIdx].page,
         'aria-label': 'Go to next page',
         ref: 'next-link',
         content: 'Next',
         iconClass: this.style['cdr-pagination__caret--next'],
         iconComponent: 'icon-caret-right',
+        iconPath: '#caret-right',
       };
     },
     nextEl() {
@@ -181,9 +186,10 @@ export default {
             : (<a
               class={this.nextElAttrs.class}
               href={this.nextElAttrs.href}
+              page={this.nextElAttrs.page}
               aria-label={this.nextElAttrs['aria-label']}
               ref={this.nextElAttrs.ref}
-              onClick={e => this.navigate(this.pages[this.nextPageIdx].page, e)}
+              onClick={e => this.navigate(this.nextElAttrs.page, e)}
             >
               {this.nextElAttrs.content}
               <this.nextElAttrs.iconComponent
@@ -270,6 +276,7 @@ export default {
           : `Go to page ${n.page}`,
         'aria-current': n.page === this.value,
         content: n.page,
+        page: n.page,
       };
 
       return (this.$scopedSlots.link ? this.$scopedSlots.link(attrs)
@@ -278,7 +285,7 @@ export default {
           href={attrs.href}
           aria-label={attrs['aria-label']}
           aria-current={attrs['aria-current']}
-          onClick={e => this.navigate(n.page, e)}
+          onClick={e => this.navigate(attrs.page, e)}
         >{ attrs.content }</a>
       );
     },

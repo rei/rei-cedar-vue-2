@@ -12,7 +12,6 @@ const SUPPORTED_COMPONENTS = [
   /* component vars */
   'CdrButton.vars.scss',
   'CdrLink.vars.scss',
-  'text.vars.scss',
   'form-label.vars.scss',
   'CdrInput.vars.scss',
   'CdrSelect.vars.scss',
@@ -50,4 +49,3 @@ console.log('updating component-variables peerDependencies', { cedarVersion, tok
 variablesPackageJson.peerDependencies['@rei/cdr-tokens'] = tokenVersion;
 variablesPackageJson.peerDependencies['@rei/cedar'] = cedarVersion;
 fs.outputFileSync('../../rei-cedar-component-variables/package.json', JSON.stringify(variablesPackageJson));
-
