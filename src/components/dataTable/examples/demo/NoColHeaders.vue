@@ -40,7 +40,7 @@ export default {
   name: 'NoColHeaders',
   components: Components,
   data() {
-    return tableData;
+    return { tableData };
   },
 };
 </script>

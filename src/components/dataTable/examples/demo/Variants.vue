@@ -51,7 +51,7 @@ export default {
   name: 'Variants',
   components: Components,
   data() {
-    return tableData;
+    return { tableData };
   },
 };
 </script>

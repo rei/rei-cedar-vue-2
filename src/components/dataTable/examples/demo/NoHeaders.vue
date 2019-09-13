@@ -34,7 +34,7 @@ export default {
   name: 'NoHeaders',
   components: Components,
   data() {
-    return tableData;
+    return { tableData };
   },
 };
 </script>

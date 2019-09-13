@@ -55,7 +55,9 @@ export default {
   name: 'AllHeaders',
   components: Components,
   data() {
-    return tableData;
+    return {
+      tableData
+    };
   },
 };
 </script>
