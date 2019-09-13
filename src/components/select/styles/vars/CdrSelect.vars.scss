@@ -1,69 +1,209 @@
-$cdr-select-base-font-size: 16px;
-$cdr-select-base-font-style: normal;
-$cdr-select-base-font-weight: 400;
-$cdr-select-base-font-family: Roboto;
-$cdr-select-base-line-height: 16px;
 
-$cdr-select-base-box-sizing: border-box;
-$cdr-select-base-width: 100%;
+
+
+
+
+
+/* select label */
+@mixin cdr-select-base-label-text-mixin() {
+  // TODO: typography token
+  @include maple-utility-20;
+}
+$cdr-select-base-label-color: $cdr-color-text-form-label-lightmode;
+$cdr-select-base-label-display: inline-block;
+$cdr-select-base-label-margin: 0;
+$cdr-select-base-label-mb: $cdr-space-quarter-x;
+$cdr-select-base-label-mr: $cdr-space-inset-quarter-x;
+@mixin cdr-select-base-label-mixin() {
+  @include cdr-select-base-label-text-mixin;
+
+  color: $cdr-select-base-label-color;
+  display: $cdr-select-base-label-display;
+  margin: $cdr-select-base-label-margin;
+  margin-bottom: $cdr-select-base-label-mb;
+  margin-right: $cdr-select-base-label-mr;
+}
+
+/* input label disabled */
+$cdr-select-base-label-color-disabled: $cdr-color-text-disabled-lightmode;
+@mixin cdr-select-base-label-disabled-mixin() {
+  color: $cdr-select-base-label-color-disabled;
+}
+
+/* select base */
+@mixin cdr-select-base-text-mixin() {
+  // TODO: typography token
+  @include redwood-display-30;
+}
+$cdr-select-base-color: $cdr-color-text-form-label-lightmode;
+$cdr-select-base-box-shadow: inset 0 0 0 1px $cdr-color-border-primary-lightmode;
+$cdr-select-base-border: 0;
+$cdr-select-base-border-radius: $cdr-radius-softer;
+$cdr-select-base-padding-left: $cdr-space-half-x;
+$cdr-select-base-padding-right: $cdr-space-half-x;
+$cdr-select-base-height: 40px;
 $cdr-select-base-display: block;
-$cdr-select-base-text-transform: none;
+$cdr-select-base-width: 100%;
+$cdr-select-base-overflow: visible;
 $cdr-select-base-margin: 0;
-$cdr-select-base-text-align: start;
-$cdr-select-base-color: #000000;
-$cdr-select-base-border: 1px solid #c5c5c5;
-$cdr-select-base-border-radius: $cdr-radius-soft;
-$cdr-select-base-height: calc(#{$cdr-space-one-and-a-half-x} + #{$cdr-select-base-line-height});
-$cdr-select-base-background-color: #ffffff;
-$cdr-select-base-background-color-disabled: #e9e9e9;
 
-$cdr-select-base-multiple-padding: 0;
+$cdr-select-base-background-color: $cdr-color-background-lightest;
+$cdr-select-base-background-color-disabled: $cdr-color-background-lighter;
+$cdr-select-base-color-disabled: $cdr-color-text-form-disabled-lightmode;
+$cdr-select-base-box-shadow-disabled: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
+$cdr-select-base-box-shadow-disabled-hover: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
+$cdr-select-base-prompt-color-disabled: $cdr-color-text-form-disabled-lightmode;
 
-$cdr-select-base-option-line-height: 1;
-$cdr-select-base-option-box-sizing: border-box;
+$cdr-select-base-box-shadow-active: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
+$cdr-select-base-box-shadow-focus: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
+
+@mixin cdr-select-base-prompt-text-mixin() {
+  // TODO: typography token
+  @include redwood-display-30;
+}
+$cdr-select-base-prompt-font-style: italic;
+$cdr-select-base-prompt-color: $cdr-color-text-form-placeholder-lightmode;
 
 @mixin cdr-select-base-mixin() {
-  box-sizing: $cdr-select-base-box-sizing;
-  font-size: $cdr-select-base-font-size;
-  line-height: $cdr-select-base-line-height;
-  text-align: $cdr-select-base-text-align;
+  @include cdr-select-base-text-mixin;
+
   color: $cdr-select-base-color;
-  font-style: $cdr-select-base-font-style;
-  font-weight: $cdr-select-base-font-weight;
-  font-family: $cdr-select-base-font-family;
-  width: $cdr-select-base-width;
-  display: $cdr-select-base-display;
+  box-shadow: $cdr-select-base-box-shadow;
   border: $cdr-select-base-border;
   border-radius: $cdr-select-base-border-radius;
+  padding-left: $cdr-select-base-padding-left;
+  padding-right: $cdr-select-base-padding-right;
   height: $cdr-select-base-height;
-  background-color: $cdr-select-base-background-color;
-  text-transform: $cdr-select-base-text-transform;
+  display: $cdr-select-base-display;
+  width: $cdr-select-base-width;
+  overflow: $cdr-select-base-overflow;
   margin: $cdr-select-base-margin;
+  background: $cdr-select-base-background-color;
 
-  &[multiple] {
-    padding: $cdr-select-base-multiple-padding;
+  /* Hide Browser Styled Drowpdown Arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+    //text-indent: 1px;
+    //text-overflow:'';
+
+  &::-ms-expand {
+    display: none;
   }
 
-  & option {
-    line-height: $cdr-select-base-option-line-height;
-    box-sizing: $cdr-select-base-option-box-sizing;
+  /* Prevent iOS from altering border and box-shadow */
+  @supports (-webkit-overflow-scrolling: touch) {
+    /* CSS specific to iOS devices */
+    -webkit-appearance: none;
   }
 
   &[disabled] {
     background-color: $cdr-select-base-background-color-disabled;
+    color: $cdr-select-base-color-disabled;
+    box-shadow: $cdr-select-base-box-shadow-disabled;
+
+    &:hover {
+      box-shadow: $cdr-select-base-box-shadow-disabled-hover;
+    }
+
+    &__prompt {
+      color: $cdr-select-base-prompt-color-disabled;
+    }
+  }
+
+  &:active {
+    box-shadow: $cdr-select-base-box-shadow-active;
+  }
+
+  &:focus {
+    box-shadow: $cdr-select-base-box-shadow-active;
+  }
+
+  &__prompt {
+    @include cdr-select-base-prompt-text-mixin;
+
+    font-style: $cdr-select-base-prompt-font-style;
+    color: $cdr-select-base-prompt-color;
   }
 }
 
-@mixin cdr-select-base-label-text-mixin() {
-  @include maple-utility-20;
+/* --large */
+$cdr-select-height-large: 48px;
+@mixin cdr-select-large-mixin() {
+  height: $cdr-select-height-large;
 }
 
-$cdr-select-base-label-display: block;
-$cdr-select-base-label-margin: 0;
 
-@mixin cdr-select-base-label-mixin() {
-  @include cdr-select-base-label-text-mixin;
+/* required label */
+$cdr-select-required-label-color: $cdr-color-text-secondary-lightmode;
 
-  display: $cdr-select-base-label-display;
-  margin: $cdr-select-base-label-margin;
+@mixin cdr-select-required-label-mixin() {
+  color: $cdr-select-required-label-color;
 }
+
+/* info container */
+@mixin cdr-select-info-container-text-mixin() {
+  // TODO: typography token
+  @include redwood-display-20;
+}
+$cdr-select-info-container-float: right;
+
+@mixin cdr-select-info-container-mixin() {
+  @include cdr-select-info-container-text-mixin;
+
+  float: $cdr-select-info-container-float;
+}
+
+/* helper text */
+@mixin cdr-select-helper-text-text-mixin() {
+  @include redwood-display-20;
+}
+$cdr-select-helper-text-color: $cdr-color-text-secondary-lightmode;
+$cdr-select-helper-text-pl: $cdr-space-half-x;
+$cdr-select-helper-text-pt: $cdr-space-quarter-x;
+
+@mixin cdr-select-helper-text-mixin() {
+  @include cdr-select-helper-text-text-mixin;
+
+  color: $cdr-select-helper-text-color;
+  padding-left: $cdr-select-helper-text-pl;
+  padding-top: $cdr-select-helper-text-pt;
+}
+
+// $cdr-select-base-font-size: 16px;
+// $cdr-select-base-font-style: normal;
+// $cdr-select-base-font-weight: 400;
+// $cdr-select-base-font-family: Roboto;
+// $cdr-select-base-line-height: 16px;
+
+// $cdr-select-base-box-sizing: border-box;
+// $cdr-select-base-width: 100%;
+// $cdr-select-base-display: block;
+// $cdr-select-base-text-transform: none;
+// $cdr-select-base-margin: 0;
+// $cdr-select-base-text-align: start;
+// $cdr-select-base-height: calc(#{$cdr-space-one-and-a-half-x} + #{$cdr-select-base-line-height});
+// $cdr-select-base-background-color: #ffffff;
+
+// $cdr-select-base-multiple-padding: 0;
+
+// $cdr-select-base-option-line-height: 1;
+// $cdr-select-base-option-box-sizing: border-box;
+
+// font-style: $cdr-select-base-font-style;
+//   font-weight: $cdr-select-base-font-weight;
+//   font-family: $cdr-select-base-font-family;
+//   background-color: $cdr-select-base-background-color;
+//   text-transform: $cdr-select-base-text-transform;
+//   box-sizing: $cdr-select-base-box-sizing;
+//   font-size: $cdr-select-base-font-size;
+//   line-height: $cdr-select-base-line-height;
+//   text-align: $cdr-select-base-text-align;
+
+  // &[multiple] {
+  //   padding: $cdr-select-base-multiple-padding;
+  // }
+  // & option {
+  //   line-height: $cdr-select-base-option-line-height;
+  //   box-sizing: $cdr-select-base-option-box-sizing;
+  // }

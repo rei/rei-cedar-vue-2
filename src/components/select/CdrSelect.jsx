@@ -1,12 +1,20 @@
+import clsx from 'clsx';
 import toArray from 'lodash-es/toArray';
+import { IconCaretDown } from '../icon/comps/caret-down';
+import size from'../../mixins/size';
+import space from '../../mixins/space';
 import style from './styles/CdrSelect.scss';
 
 export default {
   name: 'CdrSelect',
+  mixins: [size, space],
+  components: {
+    IconCaretDown,
+  },
   inheritAttrs: false,
   props: {
     /**
-     * Label text.
+     * Label text. This is required for a11y even if hiding the label with `hideLabel`.
     */
     label: {
       type: String,
@@ -36,15 +44,12 @@ export default {
       required: false,
     },
     /** @ignore */
+    disabled: Boolean,
+    /** @ignore */
     required: Boolean,
-    /** @ignore */
-    size: String,
-    /** @ignore */
-    multiple: Boolean,
   },
   data() {
     return {
-      newValue: this.value,
       style,
     };
   },
@@ -53,10 +58,13 @@ export default {
     selectId() {
       return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
     },
+    baseClass() {
+      return 'cdr-select';
+    },
     selectClass() {
       return {
-        [this.style['cdr-select']]: true,
-        [this.style['cdr-select--size']]: parseInt(this.size, 10) > 0,
+        // [this.style['cdr-select']]: true,
+        [this.style['cdr-select__prompt']]: !this.value,
       };
     },
     labelClass() {
@@ -64,6 +72,63 @@ export default {
         [this.style['cdr-select__label']]: true,
         [this.style['cdr-select__label--disabled']]: this.disabled,
       };
+    },
+    selectWrapClass() {
+      return {
+        [this.style['cdr-select-wrap']]: true,
+      };
+    },
+    inputListeners() {
+      // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
+      // handles conflict between v-model and v-on="$listeners"
+      const vm = this;
+      return Object.assign(
+        {},
+        this.$listeners,
+        {
+          input(event) {
+            vm.$emit('input', event.target.value);
+          },
+        },
+      );
+    },
+    labelEl() {
+      const requiredEl = this.required ? (
+        <span
+          class={this.style['cdr-select__required-label']}
+        >
+          Required
+        </span>
+      ) : '';
+
+      return !this.hideLabel ? (
+        <label
+          class={this.labelClass}
+          for={this.inputId}
+          ref="label"
+        >{ this.label }
+          {" "}
+          {requiredEl}
+        </label>
+      ) : '';
+    },
+    infoEl() {
+      return this.$slots.info ? (
+        <span
+          class={this.style['cdr-select__info-container']}
+        >
+          {this.$slots.info}
+        </span>
+      ) : '';
+    },
+    helperEl() {
+      return this.$slots['helper-text'] ? (
+        <span
+          class={this.style['cdr-select__helper-text']}
+        >
+          {this.$slots['helper-text']}
+        </span>
+      ) : '';
     },
     computedOpts() {
       const optsArr = [];
@@ -88,75 +153,57 @@ export default {
       return optsArr;
     },
   },
-  watch: {
-    value() {
-      if (!this.multiple) {
-        this.newValue = this.value;
-      }
-    },
-  },
-  mounted() {
-    // initialize options as selected if multiple
-    if (this.multiple) {
-      const opts = toArray(this.$refs.select.options);
-      opts.forEach((opt) => {
-        const o = opt;
-        if (this.newValue.indexOf(o.value) !== -1) {
-          o.selected = true;
-        }
-      });
-    }
-  },
+  // watch: {
+  //   value() {
+  //     if (!this.multiple) {
+  //       this.newValue = this.value;
+  //     }
+  //   },
+  // },
   methods: {
-    onChange(e) {
-      /**
-       * Current input value. Fires when
-       * @event input
-       * @type string|array
-       */
-      if (this.multiple) {
-        const optArr = toArray(e.target.options);
-        const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-        this.newValue = selected;
-        this.$emit('change', selected, e);
-        this.$emit('input', selected, e);
-      } else {
-        this.newValue = e.target.value;
-        this.$emit('change', e.target.value, e);
-        this.$emit('input', e.target.value, e);
-      }
-    },
+    // onChange(e) {
+    //   /**
+    //    * Current input value. Fires when
+    //    * @event input
+    //    * @type string|array
+    //    */
+    //   if (this.multiple) {
+    //     const optArr = toArray(e.target.options);
+    //     const selected = optArr.filter(o => o.selected === true).map(o => o.value);
+    //     this.newValue = selected;
+    //     this.$emit('change', selected, e);
+    //     this.$emit('input', selected, e);
+    //   } else {
+    //     this.newValue = e.target.value;
+    //     this.$emit('change', e.target.value, e);
+    //     this.$emit('input', e.target.value, e);
+    //   }
+    // },
   },
   render() {
     return (
-      <div class={this.style['cdr-input-group']}>
-        {!this.hideLabel
-          && <label
-            class={this.labelClass}
-            for={this.selectId}
-            ref="label"
-          >
-            { this.label }
-            { this.required && <span>*</span>}
-          </label>
-        }
-        <select
-          class={this.selectClass}
+      <div class={clsx(this.space)}>
+        {this.labelEl}
+        {this.infoEl}
+        <div class={this.selectWrapClass}>
+          <select
+          class={clsx(this.sizeClass, this.selectClass)}
           {...{ attrs: this.$attrs }}
           id={this.selectId}
-          size={this.size}
+          disabled={this.disabled}
           onChange={this.onChange}
           ref="select"
-          vModel={this.newValue}
+          {...{ attrs: this.$attrs, on: this.inputListeners }}
+          vModel={this.value}
           required={this.required}
           multiple={this.multiple}
           aria-label={this.hideLabel ? this.label : null}
         >
           {this.prompt
             && <option
+              class="cdr-select__prompt"
               value=""
               disabled
-              hidden={!this.multiple}
               ref="prompt"
             >
               { this.prompt }
@@ -172,6 +219,12 @@ export default {
           ))}
           {this.$slots.default}
         </select>
+          <icon-caret-down
+          class={this.style['cdr-select__caret']}
+          //TODO fix this size={this.size ? 'small' : null}
+          />
+        </div>
+        {this.helperEl}
       </div>
     );
   },

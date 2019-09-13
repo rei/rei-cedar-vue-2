@@ -30,7 +30,10 @@ export default {
   },
   computed: {
     sizeClass() {
+      console.log('Size Class Called');
+      console.log('Size = ', this.size);
       const returnClass = this.buildClass('size');
+      console.log('returnClass = ', returnClass);
       return returnClass;
     },
   },
