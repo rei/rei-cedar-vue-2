@@ -1,7 +1,7 @@
 JSX & Cedar
 ------------
 
-Cedar component templates are currently written in JSX to allow us to export a tree-shakeable ES module build. There is currently a lack of support for building `.vue` single file components as ES modules (see https://github.com/rollup/rollup/issues/2497 and https://github.com/vuejs/vue-component-compiler/issues/80 and https://github.com/vuejs/vue-loader/issues/1234). 
+Cedar component templates are currently written in JSX to allow us to export a tree-shakeable ES module build. There is currently a lack of support for building `.vue` single file components as ES modules (see https://github.com/rollup/rollup/issues/2497 and https://github.com/vuejs/vue-component-compiler/issues/80 and https://github.com/vuejs/vue-loader/issues/1234).
 
 ## JSX Tips
 
@@ -38,6 +38,9 @@ render slots:
 {this.$slots.default} // default slot
 
 {this.$slots.foobar} // named slot
+
+// Named slots should not be rendered via computed properties,
+// as the child component does not know when the parent updates.
 ```
 
 conditionally render element:

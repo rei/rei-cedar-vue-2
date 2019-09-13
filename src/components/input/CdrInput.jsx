@@ -119,42 +119,6 @@ export default {
         </label>
       ) : '';
     },
-    infoEl() {
-      return this.$slots.info ? (
-        <span
-          class={this.style['cdr-input__info-container']}
-        >
-          {this.$slots.info}
-        </span>
-      ) : '';
-    },
-    preIconEl() {
-      return this.$slots['pre-icon'] ? (
-        <span
-          class={this.style['cdr-input__pre-icon']}
-        >
-          {this.$slots['pre-icon']}
-        </span>
-      ) : '';
-    },
-    postIconEl() {
-      return this.$slots['post-icon'] ? (
-        <span
-          class={this.style['cdr-input__post-icon']}
-        >
-          {this.$slots['post-icon']}
-        </span>
-      ) : '';
-    },
-    helperEl() {
-      return this.$slots['helper-text'] ? (
-        <span
-          class={this.style['cdr-input__helper-text']}
-        >
-          {this.$slots['helper-text']}
-        </span>
-      ) : '';
-    },
     inputEl() {
       if (this.rows && this.rows > 1) {
         return (
@@ -190,13 +154,37 @@ export default {
     return (
       <div class={this.style['cdr-input-container']}>
         {this.labelEl}
-        {this.infoEl}
+        {this.$slots.info && (
+          <span
+            class={this.style['cdr-input__info-container']}
+          >
+            {this.$slots.info}
+          </span>
+        )}
         <div class={this.inputWrapClass}>
           {this.inputEl}
-          {this.preIconEl}
-          {this.postIconEl}
+          {this.$slots['pre-icon'] && (
+            <span
+              class={this.style['cdr-input__pre-icon']}
+            >
+              {this.$slots['pre-icon']}
+            </span>
+          )}
+          {this.$slots['post-icon'] && (
+            <span
+              class={this.style['cdr-input__post-icon']}
+            >
+              {this.$slots['post-icon']}
+            </span>
+          )}
         </div>
-        {this.helperEl}
+        {this.$slots['helper-text'] && (
+          <span
+            class={this.style['cdr-input__helper-text']}
+          >
+            {this.$slots['helper-text']}
+          </span>
+        )}
       </div>
     );
   },
