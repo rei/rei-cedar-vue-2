@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import toArray from 'lodash-es/toArray';
-import { IconCaretDown } from '../icon/comps/caret-down';
+// import toArray from 'lodash-es/toArray';
+import IconCaretDown from '../icon/comps/caret-down';
 import size from'../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrSelect.scss';
@@ -14,16 +14,16 @@ export default {
   inheritAttrs: false,
   props: {
     /**
+     * `id` for the select that is mapped to the label `for` attribute. If one is not provided, it will be generated.
+    */
+    id: String,
+    /**
      * Label text. This is required for a11y even if hiding the label with `hideLabel`.
     */
     label: {
       type: String,
       required: true,
     },
-    /**
-     * `id` for the select that is mapped to the label `for` attribute. If one is not provided, it will be generated.
-    */
-    id: String,
     /**
      * Removes the label element but sets the select `aria-label` to `label` text for a11y.
     */

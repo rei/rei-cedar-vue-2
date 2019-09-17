@@ -41,6 +41,7 @@
     top: 50%;
     right: $cdr-space-half-x;
     transform: translateY(-50%);;
+    pointer-events: none;
   }
 
   &__info-container {
