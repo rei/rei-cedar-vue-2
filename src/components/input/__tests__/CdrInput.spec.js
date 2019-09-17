@@ -272,6 +272,54 @@ describe('CdrInput.vue', () => {
     expect(spy.called).toBeTruthy();
   });
 
+  it('renders helper-text slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'helper-text': 'very helpful',
+      },
+    });
+    expect(wrapper.find('.cdr-input__helper-text').text()).toBe('very helpful');
+  });
+
+  it('renders info slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        info: 'very informative',
+      },
+    });
+    expect(wrapper.find('.cdr-input__info-container').text()).toBe('very informative');
+  });
+
+  it('renders pre-icon slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'pre-icon': '🤠',
+      },
+    });
+    expect(wrapper.find('.cdr-input__pre-icon').text()).toBe('🤠');
+  });
+
+  it('renders post-icon slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'post-icon': '😎',
+      },
+    });
+    expect(wrapper.find('.cdr-input__post-icon').text()).toBe('😎');
+  });
+
   // NOTE - can't use v-model directly here, targeting the `data` prop instead
   it('updating v-model data updates the input', () => {
     const wrapper = shallowMount(CdrInput, {

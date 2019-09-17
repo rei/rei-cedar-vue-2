@@ -17,8 +17,7 @@
   position: relative;
 
   &__caption {
-    // TODO: typography token
-    @include spruce-display-20();
+    @include cdr-text-heading-400();
 
     color: $cdr-color-text-primary-lightmode;
   }
