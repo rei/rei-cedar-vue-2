@@ -109,8 +109,8 @@
       <option value="3">
         3
       </option>
-      <option value="4">
-        4
+      <option value="REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE">
+        REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE
       </option>
     </cdr-select>
     <cdr-text>Selected: {{ selectedD }}</cdr-text>
