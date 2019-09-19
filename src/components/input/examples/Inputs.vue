@@ -110,7 +110,6 @@
       class="demo-input "
       v-model="masterModel"
       @input="onMasterInput"
-      @change="onMasterChange"
       placeholder="What would you like to set all input values to?"
       label="Master input that overwrites all other inputs on this page"
     />
@@ -172,9 +171,6 @@ export default {
       this.requiredWithIcons = value;
       this.multiRowModel = value;
       this.sizeModel = value;
-    },
-    onMasterChange(value, e) {
-      console.log('On Master Change value = ', value, ' e = ', e);
     },
   },
 };
