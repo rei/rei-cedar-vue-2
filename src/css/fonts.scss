@@ -1,0 +1,95 @@
+// This will be compiled to static/cdr-fonts.css
+
+$cdr-warn: false;
+@import "~@rei/cdr-tokens/dist/scss/cdr-tokens.scss";
+
+// Deprecated Fonts
+// -----------------------------------------
+@font-face {
+	font-family: "Sentinel";
+  src: url('//satchel.rei.com/media/font/Sentinel/7A1B623E686C8E1BD.eot') format('embedded-opentype'),
+       url('//satchel.rei.com/media/font/Sentinel/Sentinel-Book.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: "Sentinel";
+  src: url('//satchel.rei.com/media/font/Sentinel/68C535B10E6A8EE39.eot') format('embedded-opentype'),
+       url('//satchel.rei.com/media/font/Sentinel/Sentinel-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+// These 2 are used for CdrQuote (italics)
+
+@font-face {
+  font-family: "Sentinel";
+  src: url('//satchel.rei.com/media/font/Sentinel/8B0CB88A55D03D7CE.eot') format('embedded-opentype'),
+       url('//satchel.rei.com/media/font/Sentinel/Sentinel-BookItal.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sentinel";
+  src: url('//satchel.rei.com/media/font/Sentinel/CA67B1A8367D69B81.eot') format('embedded-opentype'),
+       url('//satchel.rei.com/media/font/Sentinel/Sentinel-SemiboldItal.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+// Standard fonts (for browsers that don't support variable fonts --> loaded below)
+// -----------------------------------------
+
+// Stuart
+@font-face {
+  font-family: $cdr-font-family-serif;
+  src: url("//satchel.rei.com/media/font/REI_Stuart/REIStuart-Medium-Web.woff2") format("woff2"),
+       url("//satchel.rei.com/media/font/REI_Stuart/REIStuart-Medium-Web.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $cdr-font-family-serif;
+  src: url("//satchel.rei.com/media/font/REI_Stuart/REIStuart-Semibold-Web.woff2") format("woff2"),
+       url("//satchel.rei.com/media/font/REI_Stuart/REIStuart-Semibold-Web.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+// Graphik
+@font-face {
+	font-family: $cdr-font-family-sans;
+	src: url("//satchel.rei.com/media/font/Graphik/Graphik/Graphik-Medium-Web.woff2") format("woff2"),
+		   url("//satchel.rei.com/media/font/Graphik/Graphik/Graphik-Medium-Web.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: $cdr-font-family-sans;
+	src: url("//satchel.rei.com/media/font/Graphik/Graphik/Graphik-Semibold-Web.woff2") format("woff2"),
+		   url("//satchel.rei.com/media/font/Graphik/Graphik/Graphik-Semibold-Web.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+
+// Variable fonts
+// -----------------------------------------
+@supports(font-variation-settings: normal) {
+  @font-face {
+    font-family: $cdr-font-family-serif;
+    font-weight: 1 999;
+    src: url("//satchel.rei.com/media/font/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff2") format("woff2-variations"),
+      url("//satchel.rei.com/media/font/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff2") format("woff2")
+  }
+
+  @font-face {
+    font-family: $cdr-font-family-sans;
+    font-weight: 1 999;
+    src: url("//satchel.rei.com/media/font/Graphik/Graphik-VF/Graphik-VF-Web.woff2") format("woff2-variations"),
+    url("//satchel.rei.com/media/font/Graphik/Graphik-VF/Graphik-VF-Web.woff2") format("woff2")
+  }
+}
