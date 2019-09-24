@@ -9,15 +9,14 @@
 
   TOC:
 
-    :Base - Select
-      :States
+  :Base - Select
+  :States
+
+  /* Style variants
 ========================================================================== */
 
 .cdr-select {
   @include cdr-select-base-mixin;
-
-  /* Style variants
-    ========================================================================== */
 
   &__required-label {
     @include cdr-select-required-label-mixin;
@@ -52,9 +51,16 @@
     @include cdr-select-helper-text-mixin;
   }
 
-      /* @xs
-    0px - 767px
-    ========== */
+  // DEPRICATED STYLE
+  // ========================================================================== */
+  &--multiple {
+    height: auto;
+  }
+  // ========================================================================== */
+
+  /* @xs
+  0px - 767px
+  ========== */
   @include xs-mq-only {
     &--large\@xs {
       @include cdr-select-large-mixin;

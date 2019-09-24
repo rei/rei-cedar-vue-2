@@ -197,7 +197,36 @@
       <option value="4">
         4
       </option>
-    </select></div>
+    </select>
+    <hr class="icon-hr">
+
+    <!-- DEPRECATED MULTIPLE SELECT EXAMPLES -->
+    <cdr-text class="cdr-my-space-two-x">
+      DEPRECATED Multiple Select
+    </cdr-text>
+
+    <cdr-select
+      label="Multiple Prompt"
+      v-model="multiple"
+      multiple
+      prompt="Choose two"
+      :options="dynamicData"
+    />
+    <hr class="icon-hr">
+
+
+    <cdr-text class="cdr-my-space-two-x">
+      DEPRECATED Multiple Select No Prompt
+    </cdr-text>
+
+    <cdr-select
+      label="Multiple Prompt"
+      v-model="multiple2"
+      multiple
+      :options="multiple2Data"
+    />
+    <hr class="icon-hr">
+  </div>
 </template>
 
 <script>
@@ -218,6 +247,10 @@ export default {
       helperTextModel: '',
       infoLinkModel: '',
       infoIconModel: '',
+      // DEPRECATED
+      multiple: ['1', '2'],
+      multiple2: [],
+      multiple2Data: ['a', 'b', 'c', 'd'],
     };
   },
   methods: {

@@ -9,7 +9,7 @@ describe('cdrSelect.vue', () => {
       },
     });
     expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
-    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test');
+    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test ');
   });
 
   it('renders required label correctly', () => {
@@ -19,7 +19,7 @@ describe('cdrSelect.vue', () => {
         required: true,
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test*');
+    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test Required');
   });
 
   it('hide-label sets aria-label correctly', () => {
@@ -133,6 +133,7 @@ describe('cdrSelect.vue', () => {
   });
 
   it('emits change event with correct value for multiple', () => {
+    console.log('KRISKRISKRIS TEST START');
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
@@ -153,6 +154,7 @@ describe('cdrSelect.vue', () => {
       },
     });
     wrapper.setProps({ value: ['1', '3'] });
+    console.log('KRISKRISKRIS propValues = ', wrapper.vm.value);
     const propValues = wrapper.vm.value;
     for(let o of wrapper.vm.$refs.select.options) {
       propValues.indexOf(o.value) >= 0 ? o.selected = true : o.selected = false;

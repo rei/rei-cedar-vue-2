@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-// import toArray from 'lodash-es/toArray';
+import toArray from 'lodash-es/toArray';
 import IconCaretDown from '../icon/comps/caret-down';
 import size from'../../mixins/size';
 import space from '../../mixins/space';
@@ -38,6 +38,8 @@ export default {
     options: {
       type: Array,
     },
+    /** DEPRECATED */
+    multiple: Boolean,
     /** @ignore */
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
@@ -63,8 +65,9 @@ export default {
     },
     selectClass() {
       return {
-        // [this.style['cdr-select']]: true,
+        [this.style['cdr-select']]: true,
         [this.style['cdr-select__prompt']]: !this.value,
+        [this.style['cdr-select--multiple']]: this.multiple,
       };
     },
     labelClass() {
@@ -89,6 +92,10 @@ export default {
           input(event) {
             vm.$emit('input', event.target.value);
           },
+          // Deprecated event
+          change(event) {
+            vm.$emit('change', event.target.value, event);
+          },
         },
       );
     },
@@ -104,7 +111,7 @@ export default {
       return !this.hideLabel ? (
         <label
           class={this.labelClass}
-          for={this.inputId}
+          for={this.selectId}
           ref="label"
         >{ this.label }
           {" "}
@@ -133,7 +140,9 @@ export default {
     computedOpts() {
       const optsArr = [];
       if (this.options) {
+        console.log('KRISKRISKRIS this.options = ', this.options);
         this.options.forEach((o) => {
+          console.log('KRISKRISKRIS o = ', o);
           const optObj = {};
           let text = '';
           let val = '';
@@ -150,7 +159,9 @@ export default {
           optsArr.push(optObj);
         });
       }
+      console.log('KRISKRISKRIS optsArr return = ', optsArr);
       return optsArr;
+      console.log('KRISKRISKRIS optsArr return = ', optsArr);
     },
   },
   // watch: {
@@ -160,6 +171,22 @@ export default {
   //     }
   //   },
   // },
+  mounted() {
+    // DEPRECATED MULTIPLE PROP
+    // initialize options as selected if multiple
+    if (this.multiple) {
+      const opts = toArray(this.$refs.select.options);
+      console.log('KRISKRISKRIS opts = ', opts);
+      opts.forEach((opt) => {
+        const o = opt;
+        console.log('KRISKRISKRIS opt = ', opt);
+        console.log('KRISKRISKRIS this.value = ', this.value);
+        if (this.value.indexOf(o.value) !== -1) {
+          o.selected = true;
+        }
+      });
+    }
+  },
   methods: {
     // onChange(e) {
     //   /**
@@ -194,7 +221,7 @@ export default {
           onChange={this.onChange}
           ref="select"
           {...{ attrs: this.$attrs, on: this.inputListeners }}
-          vModel={this.value}
+          // vModel={this.value}
           required={this.required}
           multiple={this.multiple}
           aria-label={this.hideLabel ? this.label : null}
