@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrIcon.scss';
+import merge from 'lodash-es/merge';
 
 export default {
   name: 'CdrIcon',
@@ -30,11 +31,28 @@ export default {
     },
   },
   render() {
+    const defaultDataObj = {
+      attrs: {
+        xmlns: 'http://www.w3.org/2000/svg',
+        viewBox: '0 0 24 24',
+        role: 'presentation',
+      },
+    };
+    let slotDataObj = {};
+
+    if (this.$slots.default) {
+      const vNode = this.$slots.default[0];
+      if (vNode.tag === 'svg') {
+        // keep svg attrs/classes/on/etc to bind to our svg
+        slotDataObj = vNode.data;
+        // remove wrapping svg from slot but keep its contents
+        this.$slots.default = vNode.children;
+      }
+    }
+    
     return (<svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
+      {...merge({}, slotDataObj, defaultDataObj)}
       class={clsx(this.sizeClass, this.inheritColorClass, this.space)}
-      role="presentation"
     >
       {this.$slots.default}
       {this.use ? <use
