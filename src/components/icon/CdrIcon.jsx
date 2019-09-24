@@ -30,11 +30,29 @@ export default {
     },
   },
   render() {
+    const defaultDataObj = {
+      attrs: {
+        xmlns: 'http://www.w3.org/2000/svg',
+        viewBox: '0 0 24 24',
+        role: 'presentation',
+      },
+    };
+    let slotDataObj = {};
+
+    if (this.$slots.default) {
+      const vNode = this.$slots.default[0];
+      if (vNode.tag === 'svg') {
+        // keep svg attrs/classes/on/etc to bind to our svg
+        slotDataObj = vNode.data;
+        // remove wrapping svg from slot but keep its contents
+        this.$slots.default = vNode.children;
+      }
+    }
+
     return (<svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
+      {...slotDataObj}
+      {...defaultDataObj}
       class={clsx(this.sizeClass, this.inheritColorClass, this.space)}
-      role="presentation"
     >
       {this.$slots.default}
       {this.use ? <use
