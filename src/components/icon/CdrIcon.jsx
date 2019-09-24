@@ -1,8 +1,8 @@
 import clsx from 'clsx';
+import merge from 'lodash-es/merge';
 import size from '../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrIcon.scss';
-import merge from 'lodash-es/merge';
 
 export default {
   name: 'CdrIcon',
@@ -49,7 +49,7 @@ export default {
         this.$slots.default = vNode.children;
       }
     }
-    
+
     return (<svg
       {...merge({}, slotDataObj, defaultDataObj)}
       class={clsx(this.sizeClass, this.inheritColorClass, this.space)}
