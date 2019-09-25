@@ -17,7 +17,7 @@
   position: relative;
 
   &__caption {
-    @include cdr-text-heading-400();
+    @include cdr-text-heading-300();
 
     color: $cdr-color-text-primary-lightmode;
   }
