@@ -18,13 +18,13 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 28px;
-    letter-spacing: -.1rem;
+    letter-spacing: -.08rem;
     margin: 0;
     
     @include sm-mq {
       font-size: 24px;
       line-height: 34px;
-      letter-spacing: -.16rem;
+      letter-spacing: -.016rem;
     }
 
     & + .cdr-quote__citation {
