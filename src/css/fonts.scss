@@ -21,24 +21,6 @@ $cdr-warn: false;
   font-style: normal;
 }
 
-// These 2 are used for CdrQuote (italics)
-
-@font-face {
-  font-family: "Sentinel";
-  src: url('//satchel.rei.com/media/font/Sentinel/8B0CB88A55D03D7CE.eot') format('embedded-opentype'),
-       url('//satchel.rei.com/media/font/Sentinel/Sentinel-BookItal.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Sentinel";
-  src: url('//satchel.rei.com/media/font/Sentinel/CA67B1A8367D69B81.eot') format('embedded-opentype'),
-       url('//satchel.rei.com/media/font/Sentinel/Sentinel-SemiboldItal.otf') format('opentype');
-  font-weight: 600;
-  font-style: italic;
-}
-
 // Standard fonts (for browsers that don't support variable fonts --> loaded below)
 // -----------------------------------------
 
