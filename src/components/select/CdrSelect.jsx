@@ -106,7 +106,6 @@ export default {
             }
           },
           change(event) {
-
             // Deprecated event
             vm.$emit('change', event.target.value, event);
 
