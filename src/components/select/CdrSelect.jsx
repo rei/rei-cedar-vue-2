@@ -89,20 +89,37 @@ export default {
         this.$listeners,
         {
           input(event) {
-            // let value;
             if (vm.multiple) {
               const optArr = toArray(event.target.options);
               const selected = optArr.filter(o => o.selected === true).map(o => o.value);
               vm.$emit('input', selected);
+
+              // Deprecated Event
               vm.$emit('change', selected, event);
+
+              vm.value = selected;
             } else {
               vm.$emit('input', event.target.value);
+
+              // Deprecated Event
               vm.$emit('change', event.target.value);
             }
           },
-          // Deprecated event
           change(event) {
+
+            // Deprecated event
             vm.$emit('change', event.target.value, event);
+
+            // Needed for Internet Explorer
+            if (vm.value !== event.target.value) {
+              if (vm.multiple) {
+                const optArr = toArray(event.target.options);
+                const selected = optArr.filter(o => o.selected === true).map(o => o.value);
+                vm.$emit('input', selected);
+              } else {
+                vm.$emit('input', event.target.value);
+              }
+            }
           },
         },
       );
