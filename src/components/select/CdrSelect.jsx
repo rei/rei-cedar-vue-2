@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import toArray from 'lodash-es/toArray';
 import IconCaretDown from '../icon/comps/caret-down';
-import size from'../../mixins/size';
+import size from '../../mixins/size';
 import space from '../../mixins/space';
 import style from './styles/CdrSelect.scss';
 
@@ -158,7 +158,7 @@ export default {
           for={this.selectId}
           ref="label"
         >{ this.label }
-          {" "}
+          {' '}
           {requiredEl}
         </label>
       ) : '';

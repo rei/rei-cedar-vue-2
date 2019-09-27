@@ -203,7 +203,6 @@
       </option>
       <option
         value="3"
-        id="kris-test-option"
       >
         3
       </option>
@@ -234,7 +233,6 @@
       </option>
       <option
         value="3"
-        id="kris-test-option"
       >
         3
       </option>
