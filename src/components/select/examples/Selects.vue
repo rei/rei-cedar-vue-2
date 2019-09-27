@@ -186,32 +186,6 @@
     <cdr-text>Selected Value: {{ dynamic }}</cdr-text>
     <hr class="icon-hr">
 
-
-    <cdr-text class="cdr-my-space-two-x">
-      UNMODIFIED SELECT ELEMENT FOR COMPARISON
-    </cdr-text>
-    <select
-      class="cdr-mb-space-four-x standard-select"
-    >
-      <option
-        value="1"
-      >
-        1
-      </option>
-      <option value="2">
-        2
-      </option>
-      <option
-        value="3"
-      >
-        3
-      </option>
-      <option value="4">
-        4
-      </option>
-    </select>
-    <hr class="icon-hr">
-
     <!-- DEPRECATED MULTIPLE SELECT EXAMPLES -->
     <cdr-text class="cdr-my-space-two-x">
       DEPRECATED Multiple Select
