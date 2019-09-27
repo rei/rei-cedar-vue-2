@@ -38,17 +38,16 @@ export default {
     options: {
       type: Array,
     },
-    /** DEPRECATED */
-    multiple: Boolean,
     /** @ignore */
     value: {
       type: [String, Number, Boolean, Object, Array, Symbol, Function],
-      required: false,
     },
     /** @ignore */
     disabled: Boolean,
     /** @ignore */
     required: Boolean,
+    /** DEPRECATED */
+    multiple: Boolean,
   },
   data() {
     return {
@@ -90,13 +89,58 @@ export default {
         this.$listeners,
         {
           input(event) {
-            vm.$emit('input', event.target.value);
+            // let value;
+            if (vm.multiple) {
+              const optArr = toArray(event.target.options);
+              const selected = optArr.filter(o => o.selected === true).map(o => o.value);
+              vm.$emit('input', selected);
+              vm.$emit('change', selected, event);
+            } else {
+              vm.$emit('input', event.target.value);
+              vm.$emit('change', event.target.value);
+            }
           },
           // Deprecated event
           change(event) {
             vm.$emit('change', event.target.value, event);
           },
         },
+      );
+    },
+    selectEl() {
+      return (
+        <select
+          class={clsx(this.sizeClass, this.selectClass)}
+          id={this.selectId}
+          multiple={this.multiple}
+          disabled={this.disabled}
+          required={this.required}
+          aria-label={this.hideLabel ? this.label : null}
+          ref="select"
+          {...{ attrs: this.$attrs, on: this.inputListeners }}
+          vModel={this.value}
+        >
+
+          {this.prompt
+            && <option
+              class="cdr-select__prompt"
+              value=""
+              disabled
+              ref="prompt"
+            >
+              { this.prompt }
+            </option>
+          }
+          {this.computedOpts.map(option => (
+              <option
+                key={option.text}
+                value={option.value}
+              >
+                { option.text }
+              </option>
+          ))}
+          {this.$slots.default}
+        </select>
       );
     },
     labelEl() {
@@ -140,9 +184,7 @@ export default {
     computedOpts() {
       const optsArr = [];
       if (this.options) {
-        console.log('KRISKRISKRIS this.options = ', this.options);
         this.options.forEach((o) => {
-          console.log('KRISKRISKRIS o = ', o);
           const optObj = {};
           let text = '';
           let val = '';
@@ -159,53 +201,8 @@ export default {
           optsArr.push(optObj);
         });
       }
-      console.log('KRISKRISKRIS optsArr return = ', optsArr);
       return optsArr;
-      console.log('KRISKRISKRIS optsArr return = ', optsArr);
     },
-  },
-  // watch: {
-  //   value() {
-  //     if (!this.multiple) {
-  //       this.newValue = this.value;
-  //     }
-  //   },
-  // },
-  mounted() {
-    // DEPRECATED MULTIPLE PROP
-    // initialize options as selected if multiple
-    if (this.multiple) {
-      const opts = toArray(this.$refs.select.options);
-      console.log('KRISKRISKRIS opts = ', opts);
-      opts.forEach((opt) => {
-        const o = opt;
-        console.log('KRISKRISKRIS opt = ', opt);
-        console.log('KRISKRISKRIS this.value = ', this.value);
-        if (this.value.indexOf(o.value) !== -1) {
-          o.selected = true;
-        }
-      });
-    }
-  },
-  methods: {
-    // onChange(e) {
-    //   /**
-    //    * Current input value. Fires when
-    //    * @event input
-    //    * @type string|array
-    //    */
-    //   if (this.multiple) {
-    //     const optArr = toArray(e.target.options);
-    //     const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-    //     this.newValue = selected;
-    //     this.$emit('change', selected, e);
-    //     this.$emit('input', selected, e);
-    //   } else {
-    //     this.newValue = e.target.value;
-    //     this.$emit('change', e.target.value, e);
-    //     this.$emit('input', e.target.value, e);
-    //   }
-    // },
   },
   render() {
     return (
@@ -213,42 +210,9 @@ export default {
         {this.labelEl}
         {this.infoEl}
         <div class={this.selectWrapClass}>
-          <select
-          class={clsx(this.sizeClass, this.selectClass)}
-          {...{ attrs: this.$attrs }}
-          id={this.selectId}
-          disabled={this.disabled}
-          onChange={this.onChange}
-          ref="select"
-          {...{ attrs: this.$attrs, on: this.inputListeners }}
-          // vModel={this.value}
-          required={this.required}
-          multiple={this.multiple}
-          aria-label={this.hideLabel ? this.label : null}
-        >
-          {this.prompt
-            && <option
-              class="cdr-select__prompt"
-              value=""
-              disabled
-              ref="prompt"
-            >
-              { this.prompt }
-            </option>
-          }
-          {this.computedOpts.map(option => (
-              <option
-                key={option.text}
-                value={option.value}
-              >
-                { option.text }
-              </option>
-          ))}
-          {this.$slots.default}
-        </select>
+          {this.selectEl}
           <icon-caret-down
           class={this.style['cdr-select__caret']}
-          //TODO fix this size={this.size ? 'small' : null}
           />
         </div>
         {this.helperEl}

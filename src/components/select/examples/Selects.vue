@@ -9,23 +9,9 @@
     </cdr-text>
     <hr class="icon-hr">
 
-    <!-- Disabled Select -->
+    <!-- Default Example -->
     <cdr-select
-      label="Disabled select"
-      v-model="selectedDisabled"
-      disabled
-      space="cdr-my-space-two-x"
-    >
-      <option value="1">
-        1
-      </option>
-    </cdr-select>
-    <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>
-    <hr class="icon-hr">
-
-    <!-- Prompt Example -->
-    <cdr-select
-      label="Prompt"
+      label="Default"
       v-model="selectedA"
       prompt="Choose one"
       space="cdr-my-space-two-x"
@@ -43,7 +29,21 @@
         4
       </option>
     </cdr-select>
-    <cdr-text>Selected: {{ selectedA }}</cdr-text>
+    <cdr-text>Selected Value: {{ selectedA }}</cdr-text>
+    <hr class="icon-hr">
+
+    <!-- Disabled Select -->
+    <cdr-select
+      label="Disabled select"
+      v-model="selectedDisabled"
+      disabled
+      space="cdr-my-space-two-x"
+    >
+      <option value="1">
+        1
+      </option>
+    </cdr-select>
+    <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>
     <hr class="icon-hr">
 
     <!-- Required with Prompt Example -->
@@ -67,7 +67,7 @@
         4
       </option>
     </cdr-select>
-    <cdr-text>Selected: {{ selectedB }}</cdr-text>
+    <cdr-text>Selected Value: {{ selectedB }}</cdr-text>
     <hr class="icon-hr">
 
     <!-- Hidden Label Example -->
@@ -91,7 +91,7 @@
         4
       </option>
     </cdr-select>
-    <cdr-text>Selected: {{ selectedC }}</cdr-text>
+    <cdr-text>Selected Value: {{ selectedC }}</cdr-text>
     <hr class="icon-hr">
 
     <!-- No Prompt Example -->
@@ -113,7 +113,7 @@
         REALLY REALLY LONG VALUE REALLY REALLY LONG VALUE
       </option>
     </cdr-select>
-    <cdr-text>Selected: {{ selectedD }}</cdr-text>
+    <cdr-text>Selected Value: {{ selectedD }}</cdr-text>
     <hr class="icon-hr">
 
     <!-- Dynamic Data Example -->
@@ -122,6 +122,7 @@
       v-model="dynamic"
       :options="dynamicData"
       space="cdr-my-space-two-x"
+      prompt="Choose One"
     />
     <cdr-text>Selected: {{ dynamic }}</cdr-text>
     <hr class="icon-hr">
@@ -132,12 +133,13 @@
       v-model="helperTextModel"
       :options="dynamicData"
       space="cdr-my-space-two-x"
+      prompt="Choose One"
     >
       <template slot="helper-text">
         This is helper text.
       </template>
     </cdr-select>
-    <cdr-text>Selected: {{ helperTextModel }}</cdr-text>
+    <cdr-text>Selected Value: {{ helperTextModel }}</cdr-text>
     <hr class="icon-hr">
 
     <!-- Info Link Example -->
@@ -146,6 +148,7 @@
       v-model="infoLinkModel"
       :options="dynamicData"
       space="cdr-my-space-two-x"
+      prompt="Choose One"
     >
       <template slot="info">
         <cdr-link href="#/selects">
@@ -162,12 +165,13 @@
       v-model="infoIconModel"
       :options="dynamicData"
       space="cdr-my-space-two-x"
+      prompt="Choose One"
     >
       <template slot="info">
         <icon-information-fill />
       </template>
     </cdr-select>
-    <cdr-text>Selected: {{ infoIconModel }}</cdr-text>
+    <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>
     <hr class="icon-hr">
 
     <!-- Large Select Example -->
@@ -177,21 +181,30 @@
       size="large"
       :options="dynamicData"
       space="cdr-my-space-two-x"
+      prompt="Choose One"
     />
+    <cdr-text>Selected Value: {{ dynamic }}</cdr-text>
     <hr class="icon-hr">
 
 
     <cdr-text class="cdr-my-space-two-x">
       UNMODIFIED SELECT ELEMENT FOR COMPARISON
     </cdr-text>
-    <select class="cdr-mb-space-four-x standard-select">
-      <option value="1">
+    <select
+      class="cdr-mb-space-four-x standard-select"
+    >
+      <option
+        value="1"
+      >
         1
       </option>
       <option value="2">
         2
       </option>
-      <option value="3">
+      <option
+        value="3"
+        id="kris-test-option"
+      >
         3
       </option>
       <option value="4">
@@ -210,8 +223,26 @@
       v-model="multiple"
       multiple
       prompt="Choose two"
-      :options="dynamicData"
-    />
+    >
+      <option
+        value="1"
+      >
+        1
+      </option>
+      <option value="2">
+        2
+      </option>
+      <option
+        value="3"
+        id="kris-test-option"
+      >
+        3
+      </option>
+      <option value="4">
+        4
+      </option>
+    </cdr-select>
+    <cdr-text>Selected Values: {{ multiple }}</cdr-text>
     <hr class="icon-hr">
 
 
@@ -225,6 +256,7 @@
       multiple
       :options="multiple2Data"
     />
+    <cdr-text>Selected Values: {{ multiple2 }}</cdr-text>
     <hr class="icon-hr">
   </div>
 </template>
@@ -249,7 +281,7 @@ export default {
       infoIconModel: '',
       // DEPRECATED
       multiple: ['1', '2'],
-      multiple2: [],
+      multiple2: ['-1'],
       multiple2Data: ['a', 'b', 'c', 'd'],
     };
   },

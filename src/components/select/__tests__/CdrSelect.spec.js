@@ -133,7 +133,6 @@ describe('cdrSelect.vue', () => {
   });
 
   it('emits change event with correct value for multiple', () => {
-    console.log('KRISKRISKRIS TEST START');
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
@@ -154,13 +153,12 @@ describe('cdrSelect.vue', () => {
       },
     });
     wrapper.setProps({ value: ['1', '3'] });
-    console.log('KRISKRISKRIS propValues = ', wrapper.vm.value);
     const propValues = wrapper.vm.value;
     for(let o of wrapper.vm.$refs.select.options) {
       propValues.indexOf(o.value) >= 0 ? o.selected = true : o.selected = false;
     }
     const select = wrapper.find({ ref: 'select'});
-    select.trigger('change');
+    select.trigger('input');
     expect(wrapper.emitted().change[0][0]).toEqual(['1', '3']);
   });
 });
