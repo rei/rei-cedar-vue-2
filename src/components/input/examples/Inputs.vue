@@ -163,6 +163,7 @@ export default {
   },
   methods: {
     onMasterInput(value, e) {
+      console.log('On Master Input value = ', value, ' e = ', e);
       this.defaultModel = value;
       this.requiredModel = value;
       this.hiddenModel = value;
