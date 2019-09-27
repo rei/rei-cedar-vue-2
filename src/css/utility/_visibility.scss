@@ -61,7 +61,7 @@
 */
 .cdr-display-inline-flex { @include cdr-display-inline-flex-mixin; }
 /*
-/// Text for screen reader only 
+/// Text for screen reader only. 
 /// @group utility.visibility
 */
 .cdr-display-sr-only { @include cdr-display-sr-only-mixin; }
