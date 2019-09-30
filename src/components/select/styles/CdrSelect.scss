@@ -9,23 +9,105 @@
 
   TOC:
 
-    :Base - Select
-      :States
+  :Base - Select
+  :States
+
+  /* Style variants
 ========================================================================== */
 
 .cdr-select {
   @include cdr-select-base-mixin;
 
-  /* Style variants
-    ========================================================================== */
-
-  &--size {
-    &[size] {
-      height: auto;
-    }
+  &__required-label {
+    @include cdr-select-required-label-mixin;
   }
 
   &__label {
     @include cdr-select-base-label-mixin;
+
+    &--large {
+      @include cdr-select-large-mixin;
+    }
+
+    &--disabled {
+      @include cdr-select-base-label-disabled-mixin;
+    }
   }
+
+  &__caret {
+    fill: $cdr-color-icon-primary-lightmode;
+    position: absolute;
+    top: 50%;
+    right: $cdr-space-half-x;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  &__info-container {
+    @include cdr-select-info-container-mixin;
+  }
+
+  &__helper-text {
+    @include cdr-select-helper-text-mixin;
+  }
+
+  // DEPRICATED STYLE
+  // ========================================================================== */
+  &--multiple {
+    height: auto;
+  }
+  // ========================================================================== */
+
+  /* @xs
+  0px - 767px
+  ========== */
+  @include xs-mq-only {
+    &--large\@xs {
+      @include cdr-select-large-mixin;
+    }
+  }
+
+    /* Size variants
+    ========================================================================== */
+
+    &--large {
+      @include cdr-select-large-mixin;
+    }
+
+  /* @sm
+    768px - 991px
+    ========== */
+  @include sm-mq-only {
+    &--large\@sm {
+      @include cdr-select-large-mixin;
+    }
+  }
+
+  /* @md
+    992px - 1199px
+    ========== */
+  @include md-mq-only {
+    &--large\@md {
+      @include cdr-select-large-mixin;
+    }
+  }
+
+  /* @lg
+    1200px and up
+    ========== */
+
+  @include lg-mq-only {
+    &--large\@lg {
+      @include cdr-select-large-mixin;
+    }
+  }
+}
+
+/* ==========================================================================
+   # SELECT WRAPPER
+   ========================================================================== */
+
+/* Sets new origin for relative positioning of Select and Caret */
+.cdr-select-wrap {
+  position: relative;
 }
