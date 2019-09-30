@@ -92,17 +92,17 @@ export default {
             if (vm.multiple) {
               const optArr = toArray(event.target.options);
               const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-              vm.$emit('input', selected);
+              vm.$emit('input', selected, event);
 
               // Deprecated Event
               vm.$emit('change', selected, event);
 
               vm.value = selected;
             } else {
-              vm.$emit('input', event.target.value);
+              vm.$emit('input', event.target.value, event);
 
               // Deprecated Event
-              vm.$emit('change', event.target.value);
+              vm.$emit('change', event.target.value, event);
             }
           },
           change(event) {
@@ -114,9 +114,9 @@ export default {
               if (vm.multiple) {
                 const optArr = toArray(event.target.options);
                 const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-                vm.$emit('input', selected);
+                vm.$emit('input', selected, event);
               } else {
-                vm.$emit('input', event.target.value);
+                vm.$emit('input', event.target.value, event);
               }
             }
           },
