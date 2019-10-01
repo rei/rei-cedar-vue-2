@@ -1,29 +1,169 @@
-/* ==========================================================================
-  # CdrSelect
 
-  This file provides a contract between
-  design tokens and cedar non-changing variables.
 
-  TOC:
 
-    :Base - Select
-      :States
-========================================================================== */
-//these vars are not inline with current token equivalents.
-$select-font-size: 16px;
-$select-line-height: 16px;
-$select-text-align: start;
-$select-color: #000000;
-$select-font-style: normal;
-$select-font-weight: 400;
-$select-font-family: Roboto;
-$select-border: 1px solid #c5c5c5;
-$select-border-radius: $cdr-radius-soft;
-$select-height: calc(#{$cdr-space-one-and-a-half-x} + #{$select-line-height});
-$select-background-color: #ffffff;
 
-/* States
-    ---------- */
 
-/* disabled */
-$select-disabled-background: #e9e9e9;
+
+/* select label */
+@mixin cdr-select-base-label-text-mixin() {
+  // TODO: typography token
+  @include maple-utility-20;
+}
+$cdr-select-base-label-color: $cdr-color-text-form-label-lightmode;
+$cdr-select-base-label-display: inline-block;
+$cdr-select-base-label-margin: 0;
+$cdr-select-base-label-mb: $cdr-space-quarter-x;
+$cdr-select-base-label-mr: $cdr-space-inset-quarter-x;
+@mixin cdr-select-base-label-mixin() {
+  @include cdr-select-base-label-text-mixin;
+
+  color: $cdr-select-base-label-color;
+  display: $cdr-select-base-label-display;
+  margin: $cdr-select-base-label-margin;
+  margin-bottom: $cdr-select-base-label-mb;
+  margin-right: $cdr-select-base-label-mr;
+}
+
+/* input label disabled */
+$cdr-select-base-label-color-disabled: $cdr-color-text-disabled-lightmode;
+@mixin cdr-select-base-label-disabled-mixin() {
+  color: $cdr-select-base-label-color-disabled;
+}
+
+/* select base */
+@mixin cdr-select-base-text-mixin() {
+  // TODO: typography token
+  @include redwood-display-30;
+}
+$cdr-select-base-color: $cdr-color-text-form-label-lightmode;
+$cdr-select-base-box-shadow: inset 0 0 0 1px $cdr-color-border-primary-lightmode;
+$cdr-select-base-border: 0;
+$cdr-select-base-border-radius: $cdr-radius-softer;
+$cdr-select-base-padding-left: $cdr-space-half-x;
+$cdr-select-base-padding-right: $cdr-space-two-x;
+$cdr-select-base-height: 40px;
+$cdr-select-base-display: block;
+$cdr-select-base-width: 100%;
+$cdr-select-base-overflow: auto;
+$cdr-select-base-margin: 0;
+
+$cdr-select-base-background-color: $cdr-color-background-lightest;
+$cdr-select-base-background-color-disabled: $cdr-color-background-lighter;
+$cdr-select-base-color-disabled: $cdr-color-text-form-disabled-lightmode;
+$cdr-select-base-box-shadow-disabled: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
+$cdr-select-base-box-shadow-disabled-hover: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
+$cdr-select-base-prompt-color-disabled: $cdr-color-text-form-disabled-lightmode;
+
+$cdr-select-base-box-shadow-active: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
+$cdr-select-base-box-shadow-focus: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
+
+@mixin cdr-select-base-prompt-text-mixin() {
+  // TODO: typography token
+  @include redwood-display-30;
+}
+$cdr-select-base-prompt-font-style: italic;
+$cdr-select-base-prompt-color: $cdr-color-text-form-placeholder-lightmode;
+
+@mixin cdr-select-base-mixin() {
+  @include cdr-select-base-text-mixin;
+
+  color: $cdr-select-base-color;
+  box-shadow: $cdr-select-base-box-shadow;
+  border: $cdr-select-base-border;
+  border-radius: $cdr-select-base-border-radius;
+  padding-left: $cdr-select-base-padding-left;
+  padding-right: $cdr-select-base-padding-right;
+  height: $cdr-select-base-height;
+  display: $cdr-select-base-display;
+  width: $cdr-select-base-width;
+  overflow: $cdr-select-base-overflow;
+  margin: $cdr-select-base-margin;
+  background: $cdr-select-base-background-color;
+
+  /* Hide Browser Styled Drowpdown Arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  /* Prevent iOS from altering border and box-shadow */
+  @supports (-webkit-overflow-scrolling: touch) {
+    /* CSS specific to iOS devices */
+    -webkit-appearance: none;
+  }
+
+  &[disabled] {
+    background-color: $cdr-select-base-background-color-disabled;
+    color: $cdr-select-base-color-disabled;
+    box-shadow: $cdr-select-base-box-shadow-disabled;
+
+    &:hover {
+      box-shadow: $cdr-select-base-box-shadow-disabled-hover;
+    }
+
+    &__prompt {
+      color: $cdr-select-base-prompt-color-disabled;
+    }
+  }
+
+  &:active {
+    box-shadow: $cdr-select-base-box-shadow-active;
+  }
+
+  &:focus {
+    box-shadow: $cdr-select-base-box-shadow-active;
+  }
+
+  &__prompt {
+    @include cdr-select-base-prompt-text-mixin;
+
+    font-style: $cdr-select-base-prompt-font-style;
+    color: $cdr-select-base-prompt-color;
+  }
+}
+
+/* --large */
+$cdr-select-height-large: 48px;
+@mixin cdr-select-large-mixin() {
+  height: $cdr-select-height-large;
+}
+
+
+/* required label */
+$cdr-select-required-label-color: $cdr-color-text-secondary-lightmode;
+
+@mixin cdr-select-required-label-mixin() {
+  color: $cdr-select-required-label-color;
+}
+
+/* info container */
+@mixin cdr-select-info-container-text-mixin() {
+  // TODO: typography token
+  @include redwood-display-20;
+}
+$cdr-select-info-container-float: right;
+
+@mixin cdr-select-info-container-mixin() {
+  @include cdr-select-info-container-text-mixin;
+
+  float: $cdr-select-info-container-float;
+}
+
+/* helper text */
+@mixin cdr-select-helper-text-text-mixin() {
+  @include redwood-display-20;
+}
+$cdr-select-helper-text-color: $cdr-color-text-secondary-lightmode;
+$cdr-select-helper-text-pl: $cdr-space-half-x;
+$cdr-select-helper-text-pt: $cdr-space-quarter-x;
+
+@mixin cdr-select-helper-text-mixin() {
+  @include cdr-select-helper-text-text-mixin;
+
+  color: $cdr-select-helper-text-color;
+  padding-left: $cdr-select-helper-text-pl;
+  padding-top: $cdr-select-helper-text-pt;
+}

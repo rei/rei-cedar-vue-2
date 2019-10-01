@@ -2,7 +2,7 @@
   <div data-backstop="inset-space-utilities">
     <cdr-text
       tag="h2"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Inset space classes for all around padding
     </cdr-text>
@@ -38,8 +38,8 @@
 
 <script>
 
-import { CdrText } from 'componentsdir/_index';
-import tokens from '@rei/cdr-tokens';
+import { CdrText } from 'srcdir/index';
+import * as tokens from '@rei/cdr-tokens';
 import pickBy from 'lodash/pickBy';
 import kebabCase from 'lodash/kebabCase';
 

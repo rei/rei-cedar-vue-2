@@ -24,6 +24,7 @@ $cdr-link-base-text-decoration-active: underline;
 
 $cdr-link-base-color-focus: $cdr-color-text-link-lightmode;
 $cdr-link-base-outline-focus: $default-outline;
+$cdr-link-base-outline-color-focus: -webkit-focus-ring-color;
 $cdr-link-base-outline-offset-focus: 0;
 $cdr-link-base-text-decoration-focus: underline;
 
@@ -44,3 +45,104 @@ $cdr-link-base-color-hover-darkmode: $cdr-color-text-link-darkmode;
 $cdr-link-base-color-active-darkmode: $cdr-color-text-link-darkmode;
 $cdr-link-base-color-focus-darkmode: $cdr-color-text-link-darkmode;
 $cdr-link-base-fill-darkmode: $cdr-color-text-link-darkmode;
+
+@mixin cdr-link-base-mixin() {
+  font-family: $cdr-link-base-font-family;
+  font-size: $cdr-link-base-font-size;
+  line-height: $cdr-link-base-line-height;
+  align-items: $cdr-link-base-align-items;
+  background-color: $cdr-link-base-background-color;
+  border: $cdr-link-base-border;
+  margin: $cdr-link-base-margin;
+  color: $cdr-link-base-color;
+  cursor: $cdr-link-base-cursor;
+  display: $cdr-link-base-display;
+  fill: $cdr-link-base-fill;
+  outline: $cdr-link-base-outline;
+  padding: $cdr-link-base-padding;
+  text-decoration: $cdr-link-base-text-decoration;
+  vertical-align: $cdr-link-base-vertical-align;
+
+  /* States
+    ---------- */
+
+  &:hover {
+    color: $cdr-link-base-color-hover;
+    outline: $cdr-link-base-outline-hover;
+    text-decoration: $cdr-link-base-text-decoration-hover;
+  }
+
+  &:active {
+    color: $cdr-link-base-color-active;
+    outline: $cdr-link-base-outline-active;
+    text-decoration: $cdr-link-base-text-decoration-active;
+  }
+
+  &:focus {
+    color: $cdr-link-base-color-focus;
+    outline: $cdr-link-base-outline-focus;
+    outline-color: $cdr-link-base-outline-color-focus;
+    outline-offset: $cdr-link-base-outline-offset-focus;
+    text-decoration: $cdr-link-base-text-decoration-focus;
+  }
+}
+
+@mixin cdr-link-standalone-mixin() {
+  text-decoration: $cdr-link-standalone-text-decoration;
+
+  &:hover {
+    text-decoration: $cdr-link-standalone-text-decoration-hover;
+  }
+
+  &:active {
+    text-decoration: $cdr-link-standalone-text-decoration-active;
+  }
+
+  &:focus {
+    text-decoration: $cdr-link-standalone-text-decoration-focus;
+  }
+
+  &:visited {
+    text-decoration: $cdr-link-standalone-text-decoration-visited;
+  }
+}
+
+@mixin cdr-link-lightmode-mixin() {
+  color: $cdr-link-base-color-lightmode;
+  fill: $cdr-link-base-fill-lightmode;
+
+  /* States
+    ---------- */
+
+  &:hover {
+    color: $cdr-link-base-color-hover-lightmode;
+  }
+
+  &:active {
+    color: $cdr-link-base-color-active-lightmode;
+  }
+
+  &:focus {
+    color: $cdr-link-base-color-focus-lightmode;
+  }
+}
+
+@mixin cdr-link-darkmode-mixin() {
+  color: $cdr-link-base-color-darkmode;
+  fill: $cdr-link-base-fill-darkmode;
+
+  /* States
+    ---------- */
+
+  &:hover {
+    color: $cdr-link-base-color-hover-darkmode;
+  }
+
+  &:active {
+    color: $cdr-link-base-color-active-darkmode;
+  }
+
+  &:focus {
+    color: $cdr-link-base-color-focus-darkmode;
+  }
+}

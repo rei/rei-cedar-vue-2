@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrBreadcrumb } from 'distdir/cedar.esm.js';
+import { CdrBreadcrumb } from 'distdir/cedar.js';
 
 describe('CdrBreadcrumb.vue', () => {
   const BreadcrumbItems = [
@@ -40,46 +40,6 @@ describe('CdrBreadcrumb.vue', () => {
     expect(wrapper.vm.$refs.container.tagName).toBe('NAV');
   });
 
-  it('trigger resize no truncation', () => {
-    const wrapper = shallowMount(CdrBreadcrumb);
-    let props = wrapper.props();
-    props.items = BreadcrumbItems;
-    wrapper.setProps(props);
-    window.dispatchEvent(new Event('resize'));
-    expect(wrapper.vm.thresholdExceeded).toBe(false);
-  });
-
-  it('trigger resize should truncate', (done) => {
-    const wrapper = shallowMount(CdrBreadcrumb, {
-      propsData: {
-        truncationThreshold: -1,
-        items: BreadcrumbItems,
-      },
-      attachToDocument: true,
-    });
-    window.dispatchEvent(new Event('resize'));
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.thresholdExceeded).toBe(true);
-      done();
-    });
-  });
-
-  it('breadcrumb should not truncate', () => {
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const shouldTruncate = wrapper.vm.calculateTruncation();
-    expect(shouldTruncate).toBe(false);
-  });
-
-  it('breadcrumb should truncate', () => {
-    const wrapper = shallowMount(CdrBreadcrumb, {
-      propsData: {
-        truncationThreshold: -1,
-      }
-    });
-    const shouldTruncate = wrapper.vm.calculateTruncation();
-    expect(shouldTruncate).toBe(true);
-  });
-
   it('breadcrumb items validator should return true for valid items prop', () => {
     const wrapper = shallowMount(CdrBreadcrumb);
     let validItems = BreadcrumbItems;
@@ -98,87 +58,76 @@ describe('CdrBreadcrumb.vue', () => {
     expect(wrapper.vm.$options.props.items.validator(invalidItems)).toBe(false);
   });
 
-  it('breadcrumb breakpoints isXS returns true at extra small breakpoint', () => {
-    window.outerWidth = 600; // Force xs screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const isXS = wrapper.vm.isXS();
-    expect(isXS).toBe(true);
+  it('breadcrumb should not truncate with fewer than 3 items', () => {
+    const items = [
+      {
+        item: {
+          url: 'http://google.com',
+          name: 'Breadcrumb Step 1',
+        },
+      },
+      {
+        item:{
+          url: 'http://rei.com',
+          name: 'Long Breadcrumb Step 2',
+        },
+      },
+    ];
+    const wrapper = shallowMount(CdrBreadcrumb, {
+      propsData: {
+        items: items,
+      }
+    });
+    expect(wrapper.vm.truncate).toBe(false);
   });
 
-  it('breadcrumb breakpoints isXS returns false when not at extra small breakpoint', () => {
-    window.outerWidth = 900; // Force sm screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const isXS = wrapper.vm.isXS();
-    expect(isXS).toBe(false);
+  it('breadcrumb should truncate with 3 or more items', () => {
+    const items = [
+      {
+        item: {
+          url: 'http://google.com',
+          name: 'Breadcrumb Step 1',
+        },
+      },
+      {
+        item:{
+          url: 'http://rei.com',
+          name: 'Long Breadcrumb Step 2',
+        },
+      },
+      {
+        item:{
+          url: 'http://yahoo.com',
+          name: 'Breadcrumb Step 3',
+        },
+      },
+    ];
+    const wrapper = shallowMount(CdrBreadcrumb, {
+      propsData: {
+        items: items,
+      }
+    });
+    expect(wrapper.vm.truncate).toBe(true);
   });
 
-  it('breadcrumb breakpoints isSM returns true at sm breakpoint', () => {
-    window.outerWidth = 800; // Force sm screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const isSM = wrapper.vm.isSM();
-    expect(isSM).toBe(true);
+  it('breadcrumb link can be overridden with link scopedSlot', () => {
+    const items = [
+      {
+        item: {
+          url: 'http://rei.com',
+          name: 'Scoped',
+        },
+      },
+    ];
+    const wrapper = shallowMount(CdrBreadcrumb, {
+      propsData: {
+        items: items,
+      },
+      scopedSlots: {
+        link: '<p slot-scope="link">{{link.href}} TEST {{link.content}} {{link.class}}</p>'
+      }
+    });
+    expect(wrapper.text()).toBe('http://rei.com TEST Scoped cdr-breadcrumb__link');
   });
 
-  it('breadcrumb breakpoints isSM returns false when not at sm breakpoint', () => {
-    window.outerWidth = 500; // Force xs screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const isSM = wrapper.vm.isSM();
-    expect(isSM).toBe(false);
-  });
-
-  it('breadcrumb breakpoints isMD returns true at md breakpoint', () => {
-    window.outerWidth = 1000; // Force sm screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const isMD = wrapper.vm.isMD();
-    expect(isMD).toBe(true);
-  });
-
-  it('breadcrumb breakpoints isMD returns false when not at md breakpoint', () => {
-    window.outerWidth = 600; // Force xs screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const isMD = wrapper.vm.isMD();
-    expect(isMD).toBe(false);
-  });
-
-  it('breadcrumb breakpoints isLG returns true at lg breakpoint', () => {
-    window.outerWidth = 1201; // Force lg screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const isLG = wrapper.vm.isLG();
-    expect(isLG).toBe(true);
-  });
-
-  it('breadcrumb breakpoints isLG returns false when not at lg breakpoint', () => {
-    window.outerWidth = 500; // Force xs screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const isLG = wrapper.vm.isLG();
-    expect(isLG).toBe(false);
-  });
-
-  it('breadcrumb breakpoints properly detect xs breakpoint', () => {
-    window.outerWidth = 600; // Force xs screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const breakpoint = wrapper.vm.getCurrentBreakpoint();
-    expect(breakpoint).toBe('XS');
-  });
-
-  it('breadcrumb breakpoints properly detect sm breakpoint', () => {
-    window.outerWidth = 900; // Force sm screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const breakpoint = wrapper.vm.getCurrentBreakpoint();
-    expect(breakpoint).toBe('SM');
-  });
-
-  it('breadcrumb breakpoints properly detect md breakpoint', () => {
-    window.outerWidth = 1000; // Force md screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const breakpoint = wrapper.vm.getCurrentBreakpoint();
-    expect(breakpoint).toBe('MD');
-  });
-
-  it('breadcrumb breakpoints properly detect md breakpoint', () => {
-    window.outerWidth = 1400; // Force lg screen size
-    const wrapper = shallowMount(CdrBreadcrumb);
-    const breakpoint = wrapper.vm.getCurrentBreakpoint();
-    expect(breakpoint).toBe('LG');
-  });
 });

@@ -2,7 +2,7 @@
   <div>
     <cdr-text
       tag="h1"
-      modifier="heading-large"
+      modifier="display-600 display-700@md display-900@lg"
     >
       Spacing classes
     </cdr-text>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { CdrText } from 'componentsdir/_index';
+import { CdrText } from 'srcdir/index';
 import inset from 'componentsdir/Utilities/demos/inset';
 import spacing from 'componentsdir/Utilities/demos/spacing';
 

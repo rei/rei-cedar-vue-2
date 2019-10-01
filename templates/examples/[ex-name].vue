@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Components from 'componentsdir/_index';
+import Components from 'srcdir/index';
 
 export default {
   name: '{NAME-PASCAL}',

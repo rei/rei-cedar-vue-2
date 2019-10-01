@@ -6,7 +6,7 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Links
     </cdr-text>
@@ -18,7 +18,9 @@
       Default Link, No props
     </cdr-text>
     <div class="anchor-example">
-      <cdr-link :data-backstop="`cdr-link`" />
+      <cdr-link :data-backstop="`cdr-link`">
+        REI.com
+      </cdr-link>
     </div>
 
     <cdr-text
@@ -39,7 +41,9 @@
       modifier="standalone"
       space="cdr-space-inset-one-x"
       :data-backstop="`cdr-link--standalone`"
-    />
+    >
+      REI.com
+    </cdr-link>
 
     <cdr-text
       tag="h3"
@@ -125,6 +129,7 @@
         tag="button"
         space="cdr-space-inset-one-x"
         :data-backstop="`cdr-link--button`"
+        @click="clicked"
       >I'm a button!</cdr-link>
     </div>
 
@@ -160,6 +165,7 @@
     <cdr-link
       href="https://www.rei.com/"
       space="cdr-pl-space-one-x cdr-pr-space-one-x"
+      @click.prevent="clicked"
     >REI.com</cdr-link>
     <cdr-link
       href="https://www.rei.com/"
@@ -174,12 +180,18 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Links',
   components: {
     ...Components,
+  },
+  methods: {
+    clicked() {
+      // eslint-disable-next-line no-console
+      console.log('link clicked!');
+    },
   },
 };
 </script>

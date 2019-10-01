@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrButton } from 'distdir/cedar.esm.js';
+import { CdrButton } from 'distdir/cedar.js';
 import sinon from 'sinon'
 
 describe('CdrButton.vue', () => {
@@ -29,18 +29,11 @@ describe('CdrButton.vue', () => {
     expect(wrapper.attributes().type).toBe('reset');
   });
 
-  it('has default click', () => {
-    const wrapper = shallowMount(CdrButton);
-    const defaultFunc = wrapper.vm.$props.onClick();
-    const result = defaultFunc();
-    expect(result).toBe(null)
-  });
-
   it('click function triggers correctly', () => {
     const spy = sinon.spy();
     const wrapper = shallowMount(CdrButton, {
-      propsData: {
-        onClick: spy
+      listeners: {
+        click: spy
       },
     });
     wrapper.trigger('click');

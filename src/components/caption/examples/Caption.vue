@@ -3,7 +3,7 @@
   <div data-backstop="caption">
     <cdr-text
       tag="h2"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Caption
     </cdr-text>
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'CaptionExample',

@@ -3,7 +3,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Bare list
     </cdr-text>
@@ -21,7 +21,7 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Compact bare list
     </cdr-text>
@@ -42,7 +42,7 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Inline bare list
     </cdr-text>
@@ -58,7 +58,7 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Inline compact bare list
     </cdr-text>
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'BareList',

@@ -1,13 +1,13 @@
 <template>
   <div>
     <div
-      class="button-example"
+      class="button-example cdr-space-inset-one-x"
       v-for="(section, index) in data"
       :key="index"
     >
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         {{ section.title }}
       </cdr-text>
@@ -15,33 +15,20 @@
         v-for="(button, index2) in section.buttons"
         :key="index2"
         :size="button.size"
+        :space="button.space"
         :full-width="button.fullWidth"
         :type="button.type"
         :disabled="button.disabled"
         :data-backstop="button.backstop ? button.backstop : null"
+        @click="log"
       >
         {{ button.label }}
       </cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
-      >
-        Responsive
-      </cdr-text>
-      <cdr-button
-        :on-click="log"
-        full-width
-        size="large@sm"
-      >
-        Responsive with default
-      </cdr-button>
-    </div>
-    <div class="button-example">
-      <cdr-text
-        tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Primary Anchor
       </cdr-text>
@@ -75,14 +62,12 @@
 </template>
 
 <script>
-// import Components from 'componentsdir/_index';
-import { CdrText, CdrButton } from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Default',
   components: {
-    CdrText,
-    CdrButton,
+    ...Components,
   },
   data: function data() {
     return {
@@ -94,6 +79,7 @@ export default {
               label: 'Large',
               disabled: false,
               size: 'large',
+              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               backstop: 'cdr-button--size',
             },
@@ -101,12 +87,14 @@ export default {
               label: 'Medium',
               disabled: false,
               size: 'medium',
+              space: 'cdr-mr-space-one-x',
               fullWidth: false,
             },
             {
               label: 'Small',
               disabled: false,
               size: 'small',
+              space: '',
               fullWidth: false,
             },
           ],
@@ -118,6 +106,7 @@ export default {
               label: 'Large',
               disabled: true,
               size: 'large',
+              space: 'cdr-mr-space-one-x',
               fullWidth: false,
               backstop: 'cdr-button--disabled',
             },
@@ -125,36 +114,15 @@ export default {
               label: 'Medium',
               disabled: true,
               size: 'medium',
+              space: 'cdr-mr-space-one-x',
               fullWidth: false,
             },
             {
               label: 'Small',
               disabled: true,
               size: 'small',
+              space: '',
               fullWidth: false,
-            },
-          ],
-        },
-        {
-          title: 'Full Width',
-          buttons: [
-            {
-              label: 'Small + full width',
-              disabled: false,
-              size: 'small',
-              fullWidth: true,
-            },
-            {
-              label: 'Medium + full width',
-              disabled: false,
-              size: 'medium',
-              fullWidth: true,
-            },
-            {
-              label: 'Large + full width',
-              disabled: false,
-              size: 'large',
-              fullWidth: true,
             },
           ],
         },
@@ -168,18 +136,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* This should be removed: */
-
-/* having custom styles here provides false positives */
-
-.button-example {
-  padding: 10px;
-}
-
-.button-example button,
-.button-example a {
-  margin: 0 10px 5px 0;
-}
-</style>

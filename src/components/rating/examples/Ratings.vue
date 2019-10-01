@@ -5,7 +5,7 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading-medium"
+      modifier="heading-600 heading-700@md heading-700@lg"
     >
       Ratings
     </cdr-text>
@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Rating',

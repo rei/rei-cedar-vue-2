@@ -1,3 +1,137 @@
+# [3.0.0](https://github.com/rei/rei-cedar/compare/v2.0.2...v3.0.0) (2019-10-01)
+
+
+### Bug Fixes
+
+* **accordion:** check for reference before trying to set maxHeight ([dc2bed0](https://github.com/rei/rei-cedar/commit/dc2bed0))
+* **accordion:** fix label precedence in accordion ([45ba872](https://github.com/rei/rei-cedar/commit/45ba872))
+* **accordion:** refactor so accordion can be initialized as open ([97e19e1](https://github.com/rei/rei-cedar/commit/97e19e1))
+* **accordion:** remove internal state to toggle accordion ([f75edba](https://github.com/rei/rei-cedar/commit/f75edba))
+* **breadcrumb:** breadcrumb won't truncate if fewer than 3 items ([1e6b7f0](https://github.com/rei/rei-cedar/commit/1e6b7f0))
+* **breadcrumb:** lodash.debounce no longer needed ([e62a382](https://github.com/rei/rei-cedar/commit/e62a382))
+* **breadcrumb:** remove non-ssr-compatible code ([59d23f1](https://github.com/rei/rei-cedar/commit/59d23f1))
+* **breadcrumb:** update v-for key not to use index ([d90ed7d](https://github.com/rei/rei-cedar/commit/d90ed7d))
+* **build:**  working link with dev build ([dbb6208](https://github.com/rei/rei-cedar/commit/dbb6208))
+* **build:** add wrapper .js files for every component ([b0bdb39](https://github.com/rei/rei-cedar/commit/b0bdb39))
+* **build:** better babel settings, remove un-used babel pakcages ([08fda1e](https://github.com/rei/rei-cedar/commit/08fda1e))
+* **build:** checkbox and radio mostly done ([5da0a58](https://github.com/rei/rei-cedar/commit/5da0a58))
+* **build:** configure dev/test/prod ([a0808c3](https://github.com/rei/rei-cedar/commit/a0808c3))
+* **build:** convert icon/icon build to JSX. load sprite in dev ([e3ca7b9](https://github.com/rei/rei-cedar/commit/e3ca7b9))
+* **build:** export /lib build with modules preserved ([21f7ffd](https://github.com/rei/rei-cedar/commit/21f7ffd))
+* **build:** fix CJS build ([c977817](https://github.com/rei/rei-cedar/commit/c977817))
+* **build:** fix listeners pass through logic ([e465b74](https://github.com/rei/rei-cedar/commit/e465b74))
+* **build:** fix path for index export ([8696581](https://github.com/rei/rei-cedar/commit/8696581))
+* **build:** fix test suite ([a7340c2](https://github.com/rei/rei-cedar/commit/a7340c2))
+* **build:** link and text working checkin o_o ([3340c95](https://github.com/rei/rei-cedar/commit/3340c95))
+* **build:** make rename extensions handle index.js ([4cfeeca](https://github.com/rei/rei-cedar/commit/4cfeeca))
+* **build:** map accordion to jsx ([edb808e](https://github.com/rei/rei-cedar/commit/edb808e))
+* **build:** map attrs pass through properly ([6889590](https://github.com/rei/rei-cedar/commit/6889590))
+* **build:** map breadcrumb and button, map style classes ([879aa23](https://github.com/rei/rei-cedar/commit/879aa23))
+* **build:** map caption to jsx ([6e6acab](https://github.com/rei/rei-cedar/commit/6e6acab))
+* **build:** map grid components ([a0fbb23](https://github.com/rei/rei-cedar/commit/a0fbb23))
+* **build:** map input to jsx ([f865c90](https://github.com/rei/rei-cedar/commit/f865c90))
+* **build:** map pagination to jsx ([33cbf8d](https://github.com/rei/rei-cedar/commit/33cbf8d))
+* **build:** map rating to jsx ([066c960](https://github.com/rei/rei-cedar/commit/066c960))
+* **build:** map select to jsx ([d3a4ed4](https://github.com/rei/rei-cedar/commit/d3a4ed4))
+* **build:** map tabs to JSX ([cc62cc0](https://github.com/rei/rei-cedar/commit/cc62cc0))
+* **build:** migrate card, quote, and list to jsx ([38a5b64](https://github.com/rei/rei-cedar/commit/38a5b64))
+* **build:** migrate img and cta to jsx ([09756fe](https://github.com/rei/rei-cedar/commit/09756fe))
+* **build:** pull in jsx/babel magic, map checkbox, fix radio ([815acda](https://github.com/rei/rei-cedar/commit/815acda))
+* **build:** re-map filenames for lib build ([812bbb1](https://github.com/rei/rei-cedar/commit/812bbb1))
+* **build:** remove aliasing from source files ([7642aa5](https://github.com/rei/rei-cedar/commit/7642aa5))
+* **build:** rename esm build to .mjs ([49757b5](https://github.com/rei/rei-cedar/commit/49757b5))
+* **build:** replace clsx with classnames ([6fa0a9d](https://github.com/rei/rei-cedar/commit/6fa0a9d))
+* **build:** restore original check/radio event behavior ([bbd1b78](https://github.com/rei/rei-cedar/commit/bbd1b78))
+* **build:** set esm as module build ([2b73dd7](https://github.com/rei/rei-cedar/commit/2b73dd7))
+* **build:** update scss imports ([b255b10](https://github.com/rei/rei-cedar/commit/b255b10))
+* **build:** update vue import paths ([ac67e92](https://github.com/rei/rei-cedar/commit/ac67e92))
+* **build:** use mjs for lib export ([9efd304](https://github.com/rei/rei-cedar/commit/9efd304))
+* **build:** wip data-table mapping ([eafa741](https://github.com/rei/rei-cedar/commit/eafa741))
+* **button, variables:** fix scss typos ([3c7add1](https://github.com/rei/rei-cedar/commit/3c7add1))
+* **ci:** hopefully fix e2e ([adc78f0](https://github.com/rei/rei-cedar/commit/adc78f0))
+* **ci:** increase test timeout time ([e58a1e7](https://github.com/rei/rei-cedar/commit/e58a1e7))
+* **css:** build but dont scope main css ([dacbeb7](https://github.com/rei/rei-cedar/commit/dacbeb7))
+* **cta:** set base CTA fill to ensure icon inherits it ([1f2f53e](https://github.com/rei/rei-cedar/commit/1f2f53e))
+* **cta, button, link:** properly handle firefox outline color ([a26c775](https://github.com/rei/rei-cedar/commit/a26c775))
+* **cta, vars:** create light-elevated mixin ([559bf30](https://github.com/rei/rei-cedar/commit/559bf30))
+* **deps:** resolve thousands of lodash security alerts ([b306c9a](https://github.com/rei/rei-cedar/commit/b306c9a))
+* **dev:** fix example imports ([8677627](https://github.com/rei/rei-cedar/commit/8677627))
+* **dev:** inline CSS for dev build ([f3af69b](https://github.com/rei/rei-cedar/commit/f3af69b))
+* **dev:** load CSS in dev env ([7a034df](https://github.com/rei/rei-cedar/commit/7a034df))
+* **dev:** make dev env work in ie11 ([0bc38c7](https://github.com/rei/rei-cedar/commit/0bc38c7))
+* **dev:** re-enable kitchen sink and utils ([2abf189](https://github.com/rei/rei-cedar/commit/2abf189))
+* **dev:** silence dev build deprecation warnings ([92310b3](https://github.com/rei/rei-cedar/commit/92310b3))
+* **docs:** fix style example ([ef74386](https://github.com/rei/rei-cedar/commit/ef74386))
+* **file update:** removing visibility classes from space ([19a2033](https://github.com/rei/rei-cedar/commit/19a2033))
+* **fullwidth:** the fullwidth prop was used as a string rather than a bool on some examples ([3426a97](https://github.com/rei/rei-cedar/commit/3426a97))
+* **grid:** remove grid from this branch as its utility version is not yet ready ([c1e6176](https://github.com/rei/rei-cedar/commit/c1e6176))
+* **img:** make alt default to empty string ([67c4bcf](https://github.com/rei/rei-cedar/commit/67c4bcf))
+* **input:** fix issue with v-on listeners and v-model ([3679913](https://github.com/rei/rei-cedar/commit/3679913))
+* **input:** slots cannot be rendered in computed properties ([4ddf15a](https://github.com/rei/rei-cedar/commit/4ddf15a))
+* **input, variables:** fix copy paste error ([8639e0b](https://github.com/rei/rei-cedar/commit/8639e0b))
+* **link:** update click event test ([7fc8b6d](https://github.com/rei/rei-cedar/commit/7fc8b6d))
+* **lint:** fix lint error, bump beta version ([8ea3f4b](https://github.com/rei/rei-cedar/commit/8ea3f4b))
+* **lint:** make linter ignore default files ([20fd52a](https://github.com/rei/rei-cedar/commit/20fd52a))
+* **lint:** massive, MASSIVE quantities of linter fixes ([5a1c734](https://github.com/rei/rei-cedar/commit/5a1c734))
+* **linter:** fix linting error ([21e009c](https://github.com/rei/rei-cedar/commit/21e009c))
+* **min.css:** minified the standard font css rather than the minified one ([d194ef1](https://github.com/rei/rei-cedar/commit/d194ef1))
+* **paragraph example:** update typo ([4748178](https://github.com/rei/rei-cedar/commit/4748178))
+* **print:** dont need all the display types in print ([01245e7](https://github.com/rei/rei-cedar/commit/01245e7))
+* **removing color from this pr:** removing color from this pr ([436353b](https://github.com/rei/rei-cedar/commit/436353b))
+* **search examples:** the component was deleted but the examples were retained ([ee4d24e](https://github.com/rei/rei-cedar/commit/ee4d24e))
+* **select:** fixed v-model update for internet explorer ([bf3bb20](https://github.com/rei/rei-cedar/commit/bf3bb20))
+* **select:** modified internal padding constraint to prevent text overflow ([6689e34](https://github.com/rei/rei-cedar/commit/6689e34))
+* **style:** always access style module from this ([0410563](https://github.com/rei/rei-cedar/commit/0410563))
+* **style:** fix style scoping ([66e5e9a](https://github.com/rei/rei-cedar/commit/66e5e9a))
+* **tabs:** use background-color instead of background ([1672cd9](https://github.com/rei/rei-cedar/commit/1672cd9))
+* **template:** fix template style import ([3dd25f6](https://github.com/rei/rei-cedar/commit/3dd25f6))
+* **template:** update component template ([37ea19e](https://github.com/rei/rei-cedar/commit/37ea19e))
+* **tests:** fix test config ([da68cf8](https://github.com/rei/rei-cedar/commit/da68cf8))
+* **tests:** point integration tests at kitchen sink ([fc48cc9](https://github.com/rei/rei-cedar/commit/fc48cc9))
+* **tests:** temporary fix for chromedriver in CI environment ([c0cfd4a](https://github.com/rei/rei-cedar/commit/c0cfd4a))
+* **text demo:** update to remove un used componenet ([7295dc9](https://github.com/rei/rei-cedar/commit/7295dc9))
+* **tokens, breakpoints:** use breakpoint tokens in mixin ([d386a60](https://github.com/rei/rei-cedar/commit/d386a60))
+* **utils:** fix utilities.scss build, remove deprecated utils from components ([6dffb20](https://github.com/rei/rei-cedar/commit/6dffb20))
+* **utils:** include everything but main except the reset ([45ccfb8](https://github.com/rei/rei-cedar/commit/45ccfb8))
+* **variables:** export all variables ([54601da](https://github.com/rei/rei-cedar/commit/54601da))
+
+
+### Code Refactoring
+
+* **accordion:** change show prop to opened for clarity ([f27bcad](https://github.com/rei/rei-cedar/commit/f27bcad))
+* **accordion:** move accordion component functionality into accordionItem ([a8d2588](https://github.com/rei/rei-cedar/commit/a8d2588))
+* **accordion:** rename accordion-item component to accordion ([96d5d71](https://github.com/rei/rei-cedar/commit/96d5d71))
+
+
+### Features
+
+* **accordion:** added slot for accordion label ([8f07f78](https://github.com/rei/rei-cedar/commit/8f07f78))
+* **alignment:** update to utility classes, adding reponsive class options ([5ed0ff5](https://github.com/rei/rei-cedar/commit/5ed0ff5))
+* **breadcrumb:** look for id property in breadcrumb.item object for :key ([2ed36d6](https://github.com/rei/rei-cedar/commit/2ed36d6))
+* **breadcrumb, pagination:** add scopedSlots to allow customizing links ([35dd9ac](https://github.com/rei/rei-cedar/commit/35dd9ac))
+* **container:** adding default text mixin into the cdr-container classes to provided a high lvl ove ([452dc20](https://github.com/rei/rei-cedar/commit/452dc20))
+* **cta, button:** create and use fullWidth mixin ([3ea5ef8](https://github.com/rei/rei-cedar/commit/3ea5ef8))
+* **font:** adding default font to container ([1b4a2a6](https://github.com/rei/rei-cedar/commit/1b4a2a6))
+* **fonts:** font-face loading strategy for variable fonts and fallbacks for unsupported browsers ([f130ce4](https://github.com/rei/rei-cedar/commit/f130ce4))
+* **fonts:** updates to type on c2 ([d7ba422](https://github.com/rei/rei-cedar/commit/d7ba422))
+* **icon:** accept full and partial svg markup in icon slot ([3aa1044](https://github.com/rei/rei-cedar/commit/3aa1044))
+* **link:** `CdrLink` emits a click event ([12c291a](https://github.com/rei/rei-cedar/commit/12c291a))
+* **select:** updated select to be consistent with input ([16e84cc](https://github.com/rei/rei-cedar/commit/16e84cc))
+* **utilities:** first pass at sassdoc output for utility class docs ([b4cf827](https://github.com/rei/rei-cedar/commit/b4cf827))
+* **visivbility:** display utilities ([754d55f](https://github.com/rei/rei-cedar/commit/754d55f))
+
+
+### BREAKING CHANGES
+
+* **select:** removing multiple select prop as design does not want to support it
+
+cdr-1156
+* **accordion:** show prop has been replaced with opened prop
+* **accordion:** cdr-accordion-item renamed to cdr-accordion
+* **accordion:** deleted cdr-accordion component
+
+
+
 ## [2.0.2-alpha.0](https://github.com/rei/rei-cedar/compare/v2.0.0...v2.0.2-alpha.0) (2019-07-02)
 
 

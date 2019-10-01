@@ -21,11 +21,10 @@
 </template>
 
 <script>
-import CdrRow from 'componentsdir/grid/CdrRow';
-import CdrCol from 'componentsdir/grid/CdrCol';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'BasicRowExample',
-  components: { CdrRow, CdrCol },
+  components: { ...Components },
 };
 </script>

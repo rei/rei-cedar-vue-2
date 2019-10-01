@@ -2,7 +2,7 @@
   <div data-backstop="DataTable">
     <cdr-text
       tag="h2"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Tables
     </cdr-text>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 import AllHeaders from 'componentsdir/dataTable/examples/demo/AllHeaders';
 import NoColHeaders from 'componentsdir/dataTable/examples/demo/NoColHeaders';
 import NoHeaders from 'componentsdir/dataTable/examples/demo/NoHeaders';

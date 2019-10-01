@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         CdrButton + CdrIcon Comps
       </cdr-text>
@@ -11,24 +11,11 @@
         tag="a"
         href="https://rei.com"
         size="large"
+        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
         data-backstop="cdr-button--icon"
       >
-        <icon-check-lg
-          inherit-color
-          slot="icon"
-          class="cdr-button__icon"
-        />
-        Anchor and Icon
-      </cdr-button>
-
-      <cdr-button
-        tag="a"
-        href="https://rei.com"
-        size="large"
-        data-backstop="cdr-button--icon"
-        disabled
-      >
-        <icon-check-lg
+        <cdr-icon
+          use="#check-lg"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -38,8 +25,10 @@
 
       <cdr-button
         size="medium"
+        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
       >
-        <icon-check-lg
+        <cdr-icon
+          use="#check-lg"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -48,8 +37,10 @@
       </cdr-button>
       <cdr-button
         size="small"
+        space="cdr-mr-space-one-x"
       >
-        <icon-check-lg
+        <cdr-icon
+          use="#check-lg"
           inherit-color
           slot="icon"
           size="small"
@@ -60,7 +51,8 @@
       <cdr-button
         size="small"
       >
-        <icon-check-sm
+        <cdr-icon
+          use="#check-sm"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -68,15 +60,16 @@
         Small (different) icon
       </cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Using a sprite
       </cdr-text>
       <cdr-button
         size="large"
+        space="cdr-mr-space-one-x"
         modifier="secondary"
       >
         <cdr-icon
@@ -89,6 +82,7 @@
       </cdr-button>
       <cdr-button
         size="large"
+        space="cdr-mr-space-one-x"
         modifier="secondary"
         disabled
       >
@@ -102,6 +96,7 @@
       </cdr-button>
       <cdr-button
         size="medium"
+        space="cdr-mr-space-one-x"
         modifier="secondary"
       >
         <cdr-icon
@@ -125,11 +120,12 @@
         Instagram
       </cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-button
         size="large large@xs medium@sm small@lg"
       >
-        <icon-clock
+        <cdr-icon
+          use="#clock"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -137,12 +133,13 @@
         Responsive
       </cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-button
         size="large"
-        full-width
+        :full-width="true"
       >
-        <icon-clock
+        <cdr-icon
+          use="#clock"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -150,7 +147,7 @@
         Full Width
       </cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <div
         class="button-text-wrap"
         style="max-width: 300px;"
@@ -170,10 +167,10 @@
         </cdr-button>
       </div>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Icon only button
       </cdr-text>
@@ -183,7 +180,8 @@
         size="small"
         aria-label="Check our Twitter feed"
       >
-        <icon-twitter
+        <cdr-icon
+          use="#twitter"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -193,7 +191,8 @@
         icon-only
         aria-label="Close"
       >
-        <icon-x-lg
+        <cdr-icon
+          use="#x-lg"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -205,7 +204,8 @@
         :icon-only="true"
         aria-label="This link goes elsewhere"
       >
-        <icon-external-link
+        <cdr-icon
+          use="#external-link"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -215,20 +215,22 @@
         :icon-only="true"
         aria-label="Play"
       >
-        <icon-play
+        <cdr-icon
+          use="#play"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
         />
       </cdr-button>
     </div>
-    <div class="button-example dark">
+    <div class="button-example cdr-space-inset-one-x dark">
       <cdr-button
         :icon-only="true"
         :on-dark="true"
         aria-label="A Twitter button"
       >
-        <icon-twitter
+        <cdr-icon
+          use="#twitter"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -239,7 +241,8 @@
         on-dark
         aria-label="Close"
       >
-        <icon-x-lg
+        <cdr-icon
+          use="#x-lg"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -252,7 +255,8 @@
         :on-dark="true"
         aria-label="An external link"
       >
-        <icon-external-link
+        <cdr-icon
+          use="#external-link"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -263,7 +267,8 @@
         on-dark
         aria-label="Play"
       >
-        <icon-play
+        <cdr-icon
+          use="#play"
           inherit-color
           slot="icon"
           class="cdr-button__icon"
@@ -274,33 +279,17 @@
 </template>
 
 <script>
-import CdrText from 'componentsdir/text/CdrText';
-import CdrButton from 'componentsdir/button/CdrButton';
-/* eslint-disable-next-line */
-import { IconCheckLg, IconCheckSm, IconClock, IconTwitter, IconExternalLink, IconPlay, IconXLg } from 'componentsdir/icon/build/main';
-import CdrIcon from 'componentsdir/icon/CdrIcon';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'ButtonIconComps',
   components: {
-    CdrText,
-    CdrButton,
-    IconCheckLg,
-    IconCheckSm,
-    IconClock,
-    CdrIcon,
-    IconTwitter,
-    IconExternalLink,
-    IconPlay,
-    IconXLg,
+    ...Components,
   },
 };
 </script>
 
 <style>
-  .button-example {
-    padding: 10px;
-  }
 
   .dark {
     background: #434343;

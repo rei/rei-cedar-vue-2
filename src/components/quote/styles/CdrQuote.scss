@@ -1,3 +1,5 @@
+@import '../../../css/settings/index.scss';
+
 /* ==========================================================================
   # Cdrquote
   
@@ -12,17 +14,17 @@
   line-height: 1;
   
   &__summary {
-    font-size: 20px;
-    font-style: italic;
-    font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: #{$cdr-font-family-serif}, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
+    font-size: 18px;
     line-height: 28px;
-    letter-spacing: 0;
+    letter-spacing: -.08rem;
     margin: 0;
-
+    
     @include sm-mq {
       font-size: 24px;
-      line-height: 32px;
+      line-height: 34px;
+      letter-spacing: -.016rem;
     }
 
     & + .cdr-quote__citation {

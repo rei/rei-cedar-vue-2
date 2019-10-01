@@ -1,0 +1,329 @@
+/* ==========================================================================/*
+* Token option variables
+*
+* these are temporary variables, providing
+* cedar components mappings to previously available tokens.
+* These varables should be removed as tokens are available
+*
+=============================================================== */
+
+/* ---------------------
+* Text
+* ------------------- */
+
+/* Redwood */
+@mixin redwood-display-70() {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: normal;
+}
+
+@mixin redwood-display-60() {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: normal;
+}
+
+@mixin redwood-display-50() {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: normal;
+}
+
+@mixin redwood-display-40() {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: normal;
+}
+
+@mixin redwood-display-30() {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: normal;
+}
+
+@mixin redwood-display-20() {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+
+@mixin redwood-body-40() {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+@mixin redwood-display-10() {
+  font-style: normal;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: normal;
+}
+
+@mixin redwood-body-30() {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+@mixin redwood-body-20() {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+@mixin redwood-body-10() {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+/* Maple */
+@mixin maple-utility-70() {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: normal;
+}
+
+@mixin maple-utility-60() {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: normal;
+}
+
+@mixin maple-utility-50() {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: normal;
+}
+
+@mixin maple-utility-40() {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: normal;
+}
+
+@mixin maple-utility-30() {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: normal;
+}
+
+@mixin maple-utility-20() {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+
+@mixin maple-utility-10() {
+  font-style: normal;
+  font-family: Roboto Condensed, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: normal;
+}
+
+/* Spruce */
+@mixin spruce-display-90() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 76px;
+  line-height: 84px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-80() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 60px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-70() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-60() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-50() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-40() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-30() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-20() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-10() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-00() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-display-100() {
+  font-style: normal;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 96px;
+  line-height: 104px;
+  letter-spacing: 0.2px;
+}
+
+@mixin spruce-body-30() {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+@mixin spruce-body-20() {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: Sentinel, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+}
+/* ---------------------
+* Outline
+* ------------------- */
+$default-outline: 0.2rem solid Highlight;

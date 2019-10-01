@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrInput } from 'distdir/cedar.esm.js';
+import sinon from 'sinon';
+import { CdrInput } from 'distdir/cedar.js';
 
 describe('CdrInput.vue', () => {
   it('renders a label element', () => {
@@ -201,58 +202,134 @@ describe('CdrInput.vue', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
+        value: 'bar'
       },
     });
     const input = wrapper.find({ ref: 'input' });
-    input.trigger('input')
-    expect(wrapper.emitted().input).toBeTruthy();
+    input.setValue('foo');
+    expect(wrapper.emitted().input[0][0]).toBe('foo');
   });
 
   it('emits a blur event', () => {
+    const spy = sinon.spy();
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
+      listeners: {
+        'blur': spy
+      }
     });
     const input = wrapper.find({ ref: 'input' });
     input.trigger('blur')
-    expect(wrapper.emitted().blur).toBeTruthy();
+    expect(spy.calledOnce).toBeTruthy();
   });
 
   it('emits a focus event', () => {
+    const spy = sinon.spy();
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
+      listeners: {
+        'focus': spy
+      }
     });
     const input = wrapper.find({ ref: 'input' });
     input.trigger('focus')
-    expect(wrapper.emitted().focus).toBeTruthy();
+    expect(spy.calledOnce).toBeTruthy();
   });
 
   it('emits a paste event', () => {
+    const spy = sinon.spy();
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
+      listeners: {
+        'paste': spy
+      }
     });
     const input = wrapper.find({ ref: 'input' });
     input.trigger('paste')
-    expect(wrapper.emitted().paste).toBeTruthy();
+    expect(spy.calledOnce).toBeTruthy();
   });
 
   it('emits a keydown event', () => {
+    const spy = sinon.spy();
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test'
+      },
+      listeners: {
+        'keydown': spy
+      }
+    });
+    const input = wrapper.find({ ref: 'input' });
+    input.trigger('keydown', {
+      key: 'a'
+    })
+    expect(spy.called).toBeTruthy();
+  });
+
+  it('renders helper-text slot', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
       },
+      slots: {
+        'helper-text': 'very helpful',
+      },
     });
-    const input = wrapper.find({ ref: 'input' });
-    input.trigger('keydown')
-    expect(wrapper.emitted().keydown).toBeTruthy();
+    expect(wrapper.find('.cdr-input__helper-text').text()).toBe('very helpful');
   });
 
-  // TODO - If Vue Test Utils adds a way to mount with v-model,
-  // or if we can figure out a way to test that a v-model change
-  // updates the input value, then we should add that test.
+  it('renders info slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        info: 'very informative',
+      },
+    });
+    expect(wrapper.find('.cdr-input__info-container').text()).toBe('very informative');
+  });
+
+  it('renders pre-icon slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'pre-icon': '🤠',
+      },
+    });
+    expect(wrapper.find('.cdr-input__pre-icon').text()).toBe('🤠');
+  });
+
+  it('renders post-icon slot', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+      },
+      slots: {
+        'post-icon': '😎',
+      },
+    });
+    expect(wrapper.find('.cdr-input__post-icon').text()).toBe('😎');
+  });
+
+  // NOTE - can't use v-model directly here, targeting the `data` prop instead
+  it('updating v-model data updates the input', () => {
+    const wrapper = shallowMount(CdrInput, {
+      propsData: {
+        label: 'test',
+        value: 'bar'
+      },
+    });
+    const input = wrapper.find({ ref: 'input' });
+    wrapper.setProps({value: ''});
+    expect(input.element.value).toBe('');
+  });
 });

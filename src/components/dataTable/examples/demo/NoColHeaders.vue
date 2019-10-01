@@ -33,14 +33,14 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 import tableData from '../data';
 
 export default {
   name: 'NoColHeaders',
   components: Components,
   data() {
-    return tableData;
+    return { tableData };
   },
 };
 </script>

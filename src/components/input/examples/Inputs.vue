@@ -84,17 +84,19 @@
         </cdr-link>
       </template>
       <template slot="pre-icon">
-        <icon-twitter
+        <cdr-icon
+          use="#twitter"
           inherit-color
         />
       </template>
       <template slot="post-icon">
-        <icon-check-lg
+        <cdr-icon
+          use="#check-lg"
           inherit-color
         />
       </template>
       <template slot="helper-text">
-        This is helper text.
+        This is helper text. Input length: {{ requiredWithIcons.length }}
       </template>
     </cdr-input>
     <cdr-input
@@ -140,15 +142,12 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
-import { IconTwitter, IconCheckLg } from 'componentsdir/icon/build/main';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Inputs',
   components: {
     ...Components,
-    IconTwitter,
-    IconCheckLg,
   },
   data() {
     return {

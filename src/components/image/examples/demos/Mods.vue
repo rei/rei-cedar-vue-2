@@ -2,7 +2,7 @@
   <div>
     <cdr-text
       tag="h3"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Image modifiers
     </cdr-text>
@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Mods',

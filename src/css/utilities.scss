@@ -1,12 +1,18 @@
 /* Tokens */
+$cdr-warn: false;
 @import "~@rei/cdr-tokens/dist/scss/cdr-tokens.scss";
 
 /* Settings */
 @import "./settings/index";
 
+/* Generic */
+@import "./generic/container";
+@import "./generic/color";
+@import "./generic/typography";
+
 /* Utilities */
 @import './utility/visibility';
-@import './utility/a11y';
-@import './utility/align';
+@import './utility/alignment';
 @import './utility/spacing';
-@import './utility/legacy';
+
+@import './deprecated/index';

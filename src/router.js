@@ -1,6 +1,3 @@
-// TODO: are we keeping this?
-// import Searches from 'compositionsdir/search/examples/searchbox';
-
 import App from 'srcdir/App';
 import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
@@ -24,13 +21,14 @@ import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
-// import Searches from 'compositionsdir/search/examples/searchbox';
 import Space from 'componentsdir/Utilities/Space';
 import Utilities from 'componentsdir/Utilities/Utilities';
 
 
 const routes = [
   { path: '/', component: App },
+  { path: '/links', name: 'Links', component: Links },
+  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Buttons },
@@ -42,20 +40,17 @@ const routes = [
   { path: '/grids', name: 'Grids', component: Grids },
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
-  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
-  { path: '/links', name: 'Links', component: Links },
-  { path: '/lists', name: 'Lists', component: Lists },
   { path: '/inputs', name: 'Input', component: Input },
+  { path: '/lists', name: 'Lists', component: Lists },
   { path: '/pagination', name: 'Pagination', component: Pagination },
   { path: '/quotes', name: 'Quotes', component: Quotes },
   { path: '/radios', name: 'Radios', component: Radios },
   { path: '/ratings', name: 'Ratings', component: Ratings },
   { path: '/selects', name: 'Selects', component: Selects },
-  { path: '/space', name: 'Space', component: Space },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
+  { path: '/space', name: 'Space', component: Space },
   { path: '/utilities', name: 'Utilities', component: Utilities },
-  // { path: '/searches', name: 'Searches', component: Searches },
 ];
 
 export default routes;

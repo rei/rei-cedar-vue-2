@@ -1,18 +1,19 @@
 /* Tokens */
+$cdr-warn: false;
 @import "~@rei/cdr-tokens/dist/scss/cdr-tokens.scss";
 
 /* Settings */
-@import "./settings/index";
+@import "./settings/_index";
 
 /* Generic */
-@import "./generic/reset";
-@import "./generic/container";
-@import "./generic/color";
-@import "./generic/typography";
+@import "./generic/_reset";
+@import "./generic/_container";
+@import "./generic/_color";
+@import "./generic/_typography";
 
 /* Utilities */
-@import './utility/visibility';
-@import './utility/a11y';
-@import './utility/align';
-@import './utility/spacing';
-@import './utility/legacy';
+@import './utility/_visibility';
+@import './utility/_alignment';
+@import './utility/_spacing';
+
+@import './deprecated/_index';

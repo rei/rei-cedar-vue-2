@@ -39,6 +39,7 @@ $cdr-button-primary-fill-focus: #ffffff;
 $cdr-button-primary-color-focus: #ffffff;
 $cdr-button-primary-box-shadow-focus: inset 0 0 0 1px #2b6692;
 $cdr-button-base-outline-focus: $default-outline;
+$cdr-button-base-outline-color-focus: -webkit-focus-ring-color;
 $cdr-button-base-outline-offset-focus: 0;
 $cdr-button-base-text-decoration-focus: none;
 
@@ -101,34 +102,243 @@ $cdr-button-icon-only-display: inline-block;
 $cdr-button-icon-only-padding: $cdr-space-inset-half-x;
 $cdr-button-icon-only-pr: calc(#{$cdr-space-inset-half-x} - #{$cdr-space-quarter-x}); // note that this overrides the previous padding variable
 
-$cdr-button-icon-only-fill: $heart-of-darkness;
+$cdr-button-icon-only-fill: $cdr-color-icon-emphasis-lightmode;
 
 $cdr-button-icon-only-background-color-hover: none;
-$cdr-button-icon-only-fill-hover: $heart-of-darkness;
+$cdr-button-icon-only-fill-hover: $cdr-color-icon-emphasis-lightmode;
 $cdr-button-icon-only-box-shadow-hover: none;
 
 $cdr-button-icon-only-background-color-active: none;
-$cdr-button-icon-only-fill-active: $heart-of-darkness;
+$cdr-button-icon-only-fill-active: $cdr-color-icon-emphasis-lightmode;
 $cdr-button-icon-only-box-shadow-active: none;
 
 $cdr-button-icon-only-background-color-focus: none;
-$cdr-button-icon-only-fill-focus: $heart-of-darkness;
+$cdr-button-icon-only-fill-focus: $cdr-color-icon-emphasis-lightmode;
 $cdr-button-icon-only-box-shadow-focus: none;
 
-$cdr-button-icon-only-fill-darkmode: $moon-shot;
+$cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 
 @mixin cdr-button-base-text-mixin() {
+  // TODO: typography token
   @include redwood-display-30
 }
 
 @mixin cdr-button-base-text-mixin-small() {
+  // TODO: typography token
   @include redwood-display-20;
 }
 
 @mixin cdr-button-base-text-mixin-medium() {
+  // TODO: typography token
   @include redwood-display-30;
 }
 
 @mixin cdr-button-base-text-mixin-large() {
+  // TODO: typography token
   @include redwood-display-40;
+}
+
+/* start of mixin land */
+
+@mixin cdr-button-base-mixin() {
+  @include cdr-button-base-text-mixin;
+
+  border: $cdr-button-base-border;
+  border-radius: $cdr-button-base-border-radius;
+  cursor: $cdr-button-base-cursor;
+  display: $cdr-button-base-display;
+  outline: $cdr-button-base-outline;
+  overflow: $cdr-button-base-overflow;
+  padding: $cdr-button-base-padding;
+  text-align: $cdr-button-base-text-align;
+  text-decoration: $cdr-button-base-text-decoration;
+  text-transform: $cdr-button-base-text-transform;
+
+  /* States
+    ---------- */
+
+  &:hover {
+    outline: $cdr-button-base-outline-hover;
+    outline-offset: $cdr-button-base-outline-offset-hover;
+    text-decoration: $cdr-button-base-text-decoration-hover;
+  }
+
+  &:active {
+    outline: $cdr-button-base-outline-active;
+    outline-offset: $cdr-button-base-outline-offset-active;
+    text-decoration: $cdr-button-base-text-decoration-active;
+  }
+
+  &:focus {
+    outline: $cdr-button-base-outline-focus;
+    outline-color: $cdr-button-base-outline-color-focus;
+    outline-offset: $cdr-button-base-outline-offset-focus;
+    text-decoration: $cdr-button-base-text-decoration-focus;
+  }
+
+  &[disabled] {
+    cursor: $cdr-button-base-cursor-disabled;
+  }
+}
+
+@mixin cdr-button-base-icon-mixin() {
+  align-self: $cdr-button-base-icon-align-self;
+  margin-right: $cdr-button-base-icon-mr;
+  fill: $cdr-button-base-icon-fill;
+}
+
+@mixin cdr-button-primary-mixin() {
+  background-color: $cdr-button-primary-background-color;
+  box-shadow: $cdr-button-primary-box-shadow;
+  color: $cdr-button-primary-color;
+  fill: $cdr-button-primary-fill;
+
+  /* States
+    ---------- */
+
+  &:hover {
+    background-color: $cdr-button-primary-background-color-hover;
+    color: $cdr-button-primary-color-hover;
+    box-shadow: $cdr-button-primary-box-shadow-hover;
+    fill: $cdr-button-primary-fill-hover;
+  }
+
+  &:active {
+    background-color: $cdr-button-primary-background-color-active;
+    color: $cdr-button-primary-color-active;
+    box-shadow: $cdr-button-primary-box-shadow-active;
+    fill: $cdr-button-primary-fill-active;
+  }
+
+  &:focus {
+    background-color: $cdr-button-primary-background-color-focus;
+    color: $cdr-button-primary-color-focus;
+    box-shadow: $cdr-button-primary-box-shadow-focus;
+    fill: $cdr-button-primary-fill-focus;
+  }
+
+  &[disabled] {
+    background-color: $cdr-button-primary-background-color-disabled;
+    box-shadow: $cdr-button-primary-box-shadow-disabled;
+    color: $cdr-button-primary-color-disabled;
+  }
+}
+
+@mixin cdr-button-secondary-mixin() {
+  background-color: $cdr-button-secondary-background-color;
+  box-shadow: $cdr-button-secondary-box-shadow;
+  color: $cdr-button-secondary-color;
+  fill: $cdr-button-secondary-fill;
+
+  /* States
+  ---------- */
+
+  &:hover {
+    background-color: $cdr-button-secondary-background-color-hover;
+    box-shadow: $cdr-button-secondary-box-shadow-hover;
+    color: $cdr-button-secondary-color-hover;
+    fill: $cdr-button-secondary-fill-hover;
+  }
+
+  &:active {
+    background-color: $cdr-button-secondary-background-color-active;
+    box-shadow: $cdr-button-secondary-box-shadow-active;
+    color: $cdr-button-secondary-color-active;
+    fill: $cdr-button-secondary-fill-active;
+  }
+
+  &:focus {
+    background-color: $cdr-button-secondary-background-color-focus;
+    box-shadow: $cdr-button-secondary-box-shadow-focus;
+    color: $cdr-button-secondary-color-focus;
+    fill: $cdr-button-secondary-fill-focus;
+  }
+
+  &[disabled] {
+    background-color: $cdr-button-secondary-background-color-disabled;
+    box-shadow: $cdr-button-secondary-box-shadow-disabled;
+    color: $cdr-button-secondary-color-disabled;
+    fill: $cdr-button-secondary-fill-disabled;
+  }
+}
+
+@mixin cdr-button-full-width-mixin() {
+  width: $cdr-button-full-width-width !important;
+  justify-content: $cdr-button-full-width-justify-content;
+}
+
+@mixin cdr-button-icon-only-mixin() {
+  background: $cdr-button-icon-only-background-color;
+  border: $cdr-button-icon-only-border;
+  box-shadow: $cdr-button-icon-only-box-shadow;
+  display: $cdr-button-icon-only-display;
+  padding: $cdr-button-icon-only-padding;
+  padding-right: $cdr-button-icon-only-pr;
+  fill: $cdr-button-icon-only-fill;
+
+  &:hover {
+    background: $cdr-button-icon-only-background-color-hover;
+    box-shadow: $cdr-button-icon-only-box-shadow-hover;
+    fill: $cdr-button-icon-only-fill-hover;
+  }
+
+  &:active {
+    background: $cdr-button-icon-only-background-color-active;
+    box-shadow: $cdr-button-icon-only-box-shadow-active;
+    fill: $cdr-button-icon-only-fill-active;
+  }
+
+  &:focus {
+    background: $cdr-button-icon-only-background-color-focus;
+    box-shadow: $cdr-button-icon-only-box-shadow-focus;
+    fill: $cdr-button-icon-only-fill-focus;
+  }
+}
+
+@mixin cdr-button-small-mixin() {
+  @include cdr-button-base-text-mixin-small;
+  padding: $cdr-button-base-padding-small;
+  width: auto;
+}
+
+@mixin cdr-button-has-icon-small-mixin {
+  padding-left: $cdr-button-has-icon-pl-small;
+}
+
+@mixin cdr-button-icon-small-mixin {
+  /* This is to correct icon size vs line height */
+  width: $cdr-button-base-icon-width-small;
+  height: $cdr-button-base-icon-height-small;
+}
+
+@mixin cdr-button-medium-mixin() {
+  @include cdr-button-base-text-mixin-medium;
+  padding: $cdr-button-base-padding-medium;
+  width: auto;
+}
+
+@mixin cdr-button-has-icon-medium-mixin {
+  padding-left: $cdr-button-has-icon-pl-medium;
+}
+
+@mixin cdr-button-icon-medium-mixin {
+  /* This is to correct icon size vs line height */
+  width: $cdr-button-base-icon-width-medium;
+  height: $cdr-button-base-icon-height-medium;
+}
+
+@mixin cdr-button-large-mixin() {
+  @include cdr-button-base-text-mixin-large;
+  padding: $cdr-button-base-padding-large;
+  width: auto;
+}
+
+@mixin cdr-button-has-icon-large-mixin {
+  padding-left: $cdr-button-has-icon-pl-large;
+}
+
+@mixin cdr-button-icon-large-mixin {
+  /* This is to correct icon size vs line height */
+  width: $cdr-button-base-icon-width-large;
+  height: $cdr-button-base-icon-height-large;
 }

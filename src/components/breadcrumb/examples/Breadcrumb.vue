@@ -5,7 +5,7 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Breadcrumb
     </cdr-text>
@@ -16,7 +16,7 @@
       tag="h3"
       modifier="subheading"
     >
-      Short Breadcrumb
+      Two-Item Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
       :items="shortBreadcrumbItems"
@@ -25,7 +25,7 @@
       tag="h3"
       modifier="subheading"
     >
-      Super Long Breadcrumb
+      Three-Item Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
       :items="superLongBreadcrumbItems"
@@ -39,15 +39,32 @@
     <cdr-breadcrumb
       :items="reiExampleBreadcrumbItems"
     />
+
+    <cdr-text
+      tag="h3"
+      modifier="subheading"
+    >
+      Scoped Slot
+    </cdr-text>
+    <cdr-breadcrumb :items="reiExampleBreadcrumbItems">
+      <template
+        slot="link"
+        slot-scope="link"
+      >
+        <div :class="link.class">
+          {{ link.content }} {{ link.href }}
+        </div>
+      </template>
+    </cdr-breadcrumb>
   </div>
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Breadcrumb',
-  components: Components,
+  components: { ...Components },
   data() {
     return {
       averageBreadcrumbItems: [
@@ -95,12 +112,6 @@ export default {
             name: 'Item 2',
           },
         },
-        {
-          item: {
-            url: 'http://yahoo.com',
-            name: 'Item 3',
-          },
-        },
       ],
       superLongBreadcrumbItems: [
         {
@@ -119,24 +130,6 @@ export default {
           item: {
             url: 'http://yahoo.com',
             name: 'Super Really Long Breadcrumb Item 3',
-          },
-        },
-        {
-          item: {
-            url: 'http://bing.com',
-            name: 'Really Really Long Breadcrumb Item 4',
-          },
-        },
-        {
-          item: {
-            url: 'http://bing.com',
-            name: 'Following Breadcrumb is Longest on REI.com',
-          },
-        },
-        {
-          item: {
-            url: 'http://bing.com',
-            name: 'Mexico, Central and South America GPS Mapping Software',
           },
         },
       ],

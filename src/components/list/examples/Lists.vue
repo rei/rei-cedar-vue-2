@@ -6,7 +6,7 @@
 
     <cdr-text
       tag="h2"
-      modifier="heading-large"
+      modifier="display-600 display-700@md display-900@lg"
     >
       List
     </cdr-text>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import CdrText from 'componentsdir/text/CdrText';
+import { CdrText } from 'srcdir/index';
 import unorderedList from 'componentsdir/list/examples/demo/Unordered';
 import orderedList from 'componentsdir/list/examples/demo/Ordered';
 import bareList from 'componentsdir/list/examples/demo/Bare';

@@ -1,13 +1,13 @@
 <template>
   <div>
     <div
-      class="button-example"
+      class="button-example cdr-space-inset-one-x"
       v-for="(section, index) in data"
       :key="index"
     >
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         {{ section.title }}
       </cdr-text>
@@ -15,6 +15,7 @@
         v-for="(button, index2) in section.buttons"
         :key="index2"
         :size="button.size"
+        space="cdr-mr-space-one-x"
         :full-width="button.fullWidth"
         :modifier="button.modifier"
         :type="button.type"
@@ -22,10 +23,10 @@
         :data-backstop="button.backstop ? button.backstop : null"
       >{{ button.label }}</cdr-button>
     </div>
-    <div class="button-example">
+    <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Secondary Anchor
       </cdr-text>
@@ -42,16 +43,12 @@
 </template>
 
 <script>
-// import CdrButton from 'componentsdir/button/CdrButton';
-// import CdrText from 'componentsdir/text/CdrText';
-
-import { CdrButton, CdrText } from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Secondary',
   components: {
-    CdrButton,
-    CdrText,
+    ...Components,
   },
   data: function data() {
     return {
@@ -108,9 +105,3 @@ export default {
   },
 };
 </script>
-
-<style>
-  .button-example {
-    padding: 10px;
-  }
-</style>

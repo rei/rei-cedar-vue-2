@@ -1,8 +1,9 @@
 /* Tokens */
+$cdr-warn: false;
 @import "~@rei/cdr-tokens/dist/scss/cdr-tokens.scss";
 
 /* Settings */
-@import "./settings/_options";
+@import "./settings/_options.vars";
 
 /* Generic */
 @import "./generic/reset";

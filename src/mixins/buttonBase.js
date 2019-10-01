@@ -21,13 +21,6 @@ export default {
       validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
-     * Adds custom click actions.
-     */
-    onClick: {
-      type: Function,
-      default: () => () => null,
-    },
-    /**
      * Sets width to be 100%.
     */
     fullWidth: {

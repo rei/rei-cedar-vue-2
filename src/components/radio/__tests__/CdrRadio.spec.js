@@ -1,11 +1,11 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrRadio } from 'distdir/cedar.esm.js';
+import { CdrRadio } from 'distdir/cedar.js';
 
 describe('CdrRadio.vue', () => {
   it('renders an input', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
-        value: 'A',
+        customValue: 'A',
         name: 'testName',
       }
     });
@@ -15,7 +15,7 @@ describe('CdrRadio.vue', () => {
   it('is type radio', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
-        value: 'A',
+        customValue: 'A',
         name: 'testName',
       }
     });
@@ -25,7 +25,7 @@ describe('CdrRadio.vue', () => {
   it('renders a label element', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
-        value: 'A',
+        customValue: 'A',
         name: 'testName',
       }
     });
@@ -36,7 +36,7 @@ describe('CdrRadio.vue', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
         labelClass: 'custom-label-class',
-        value: 'A',
+        customValue: 'A',
         name: 'testName',
       },
       slots: {
@@ -45,12 +45,12 @@ describe('CdrRadio.vue', () => {
     });
     expect(wrapper.vm.$refs.label.classList.contains('custom-label-class')).toBe(true);
   });
-  
+
   it('adds a custom input class correctly', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
         inputClass: 'custom-input-class',
-        value: 'A',
+        customValue: 'A',
         name: 'testName',
       },
       slots: {
@@ -59,12 +59,12 @@ describe('CdrRadio.vue', () => {
     });
     expect(wrapper.vm.$refs.radio.classList.contains('custom-input-class')).toBe(true);
   });
-  
+
   it('adds a custom content class correctly', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
         contentClass: 'custom-content-class',
-        value: 'A',
+        customValue: 'A',
         name: 'testName',
       },
       slots: {
@@ -77,7 +77,7 @@ describe('CdrRadio.vue', () => {
   it('sets name attribute correctly', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
-        value: 'A',
+        customValue: 'A',
         name: 'testName',
       }
     });
@@ -87,79 +87,58 @@ describe('CdrRadio.vue', () => {
   it('evaluates simple not checked state correctly', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
-        value: 'A',
+        customValue: 'A',
         name: 'testName',
-        modelValue: 'AA',
+        value: 'AA',
       },
     });
-    expect(wrapper.vm.isChecked).toBe(false);
+    expect(wrapper.vm.$refs.radio.checked).toBe(false);
   });
 
   it('evaluates simple checked state correctly', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
+        customValue: 'A',
+        name: 'testName',
         value: 'A',
-        name: 'testName',
-        modelValue: 'A',
       },
     });
-    expect(wrapper.vm.isChecked).toBe(true);
-  });
-
-  it('evaluates group not checked state correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
-      propsData: {
-        value: 'B',
-        name: 'testName',
-        modelValue: 'A',
-      },
-    });
-    expect(wrapper.vm.isChecked).toBe(false);
-  });
-
-  it('evaluates group checked state correctly', () => {
-    const wrapper = shallowMount(CdrRadio, {
-      propsData: {
-        value: 'A',
-        name: 'testName',
-        modelValue: 'A',
-      },
-    });
-    expect(wrapper.vm.isChecked).toBe(true);
+    expect(wrapper.vm.$refs.radio.checked).toBe(true);
   });
 
   it('evaluates complex group not checked state correctly', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
-        value: {test: 'B', arr: [1,2,3]},
+        customValue: {test: 'B', arr: [1,2,3]},
         name: 'testName',
-        modelValue: {test: 'B'},
+        value: {test: 'B'},
       },
     });
-    expect(wrapper.vm.isChecked).toBe(false);
+    expect(wrapper.vm.$refs.radio.checked).toBe(false);
   });
 
   it('evaluates complex group checked state correctly', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
-        value: {test: 'B', arr: [1,2,3]},
+        customValue: {test: 'B', arr: [1,2,3]},
         name: 'testName',
-        modelValue: {test: 'B', arr: [1,2,3]},
+        value: {test: 'B', arr: [1,2,3]},
       },
     });
-    expect(wrapper.vm.isChecked).toBe(true);
+    expect(wrapper.vm.$refs.radio.checked).toBe(true);
   });
 
   it('emits a change event with correct value', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
-        value: 'A',
+        customValue: 'A',
         name: 'testName',
-        modelValue: '',
+        value: '',
       },
     });
-    wrapper.setProps({ value: 'B' });
-    wrapper.vm.onChange();
-    expect(wrapper.emitted().change[0][0]).toBe('B');
+
+    const rb = wrapper.find({ ref: 'radio'});
+    rb.trigger('click')
+    expect(wrapper.emitted().change[0][0]).toBe('A');
   });
 });

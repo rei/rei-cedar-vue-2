@@ -2,7 +2,7 @@
   <div data-backstop="cta-links">
     <cdr-text
       tag="h2"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       CTA
     </cdr-text>
@@ -34,7 +34,15 @@
         href="https://rei.com"
         :full-width="true"
         data-backstop="cdr-cta--full-width"
-      >Full width</cdr-cta>
+      >Full width boolean</cdr-cta>
+    </div>
+    <div class="button-example">
+      <cdr-cta
+        cta-style="dark"
+        href="https://rei.com"
+        full-width="@xs @lg"
+        data-backstop="cdr-cta--full-width-at-xs"
+      >Full width @xs @lg</cdr-cta>
     </div>
     <div
       class="button-example"
@@ -53,19 +61,18 @@
 </template>
 
 <script>
-// import Components from 'componentsdir/_index';
-import { CdrText, CdrCta } from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Cta',
   components: {
-    CdrCta,
-    CdrText,
+    ...Components,
   },
 };
 </script>
 
 <style>
+/* TODO: example styles not getting parsed? */
   .button-example {
     padding: 10px;
   }

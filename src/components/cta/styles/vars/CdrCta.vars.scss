@@ -1,24 +1,322 @@
-$cta-brand-box-shadow: inset 0 0 0 1px #2b6692;
-$cta-dark-box-shadow: inset 0 0 0 1px #434343;
-$cta-brand-background-color: #3278ae;
-$cta-dark-background-color: #292929;
-$cta-sale-hover-background-color: #a12024;
-$cta-light-hover-color: #292929;
-$cta-sale-hover-color: #ffffff;
-$cta-dark-color: #ffffff;
-$cta-light-hover-background-color: #f7f7f7;
-$cta-brand-color: #ffffff;
-$cta-sale-box-shadow: inset 0 0 0 1px #a12024;
-$cta-light-box-shadow: inset 0 0 0 1px #616161;
-$cta-sale-background-color: #b5292b;
-$cta-brand-hover-background-color: #2b6692;
-$cta-dark-hover-color: #ffffff;
-$cta-light-background-color: #ffffff;
-$cta-dark-hover-background-color: #434343;
-$cta-light-color: #292929;
-$cta-brand-hover-color: #ffffff;
-$cta-sale-color: #ffffff;
-$cta-background-color: #3278ae;
-$cta-box-shadow: inset 0 0 0 1px #2b6692;
-$cta-border-radius: $cdr-radius-softer;
-$cta-color: #ffffff;
+@mixin cdr-cta-base-text-mixin() {
+  @include maple-utility-40;
+}
+
+$cdr-cta-base-border-radius: $cdr-radius-softer;
+$cdr-cta-base-border: none;
+$cdr-cta-base-cursor: pointer;
+$cdr-cta-base-display: inline-flex;
+$cdr-cta-base-outline: none;
+$cdr-cta-base-padding: $cdr-space-inset-one-and-a-half-x-squish;
+$cdr-cta-base-pr: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-half-x});
+$cdr-cta-base-text-align: left;
+$cdr-cta-base-text-transform: uppercase;
+$cdr-cta-base-text-decoration: none;
+$cdr-cta-base-text-decoration-hover: none;
+$cdr-cta-base-text-decoration-active: none;
+$cdr-cta-base-text-decoration-focus: none;
+$cdr-cta-base-outline-focus: $default-outline;
+$cdr-cta-base-outline-color-focus: -webkit-focus-ring-color;
+$cdr-cta-base-outline-offset-focus: 0;
+
+@mixin cdr-cta-base-mixin() {
+  @include cdr-cta-base-text-mixin;
+
+  border: $cdr-cta-base-border;
+  border-radius: $cdr-cta-base-border-radius;
+  cursor: $cdr-cta-base-cursor;
+  display: $cdr-cta-base-display;
+  outline: $cdr-cta-base-outline;
+  padding: $cdr-cta-base-padding;
+  padding-right: $cdr-cta-base-pr;
+  text-align: $cdr-cta-base-text-align;
+  text-transform: $cdr-cta-base-text-transform;
+  text-decoration: $cdr-cta-base-text-decoration;
+
+  &:hover {
+    text-decoration: $cdr-cta-base-text-decoration-hover;
+  }
+
+  &:active {
+    text-decoration: $cdr-cta-base-text-decoration-active;
+  }
+
+  &:focus {
+    text-decoration: $cdr-cta-base-text-decoration-focus;
+    outline: $cdr-cta-base-outline-focus;
+    outline-color: $cdr-cta-base-outline-color-focus;
+    outline-offset: $cdr-cta-base-outline-offset-focus;
+  }
+}
+
+$cdr-cta-base-icon-align-self: center;
+$cdr-cta-base-icon-display: inline-block;
+$cdr-cta-base-icon-fill: inherit;
+$cdr-cta-base-icon-height: $cdr-icon-size;
+$cdr-cta-base-icon-ml: $cdr-space-quarter-x;
+$cdr-cta-base-icon-vertical-align: middle;
+$cdr-cta-base-icon-flex: 0 0 auto;
+$cdr-cta-base-icon-width: $cdr-icon-size;
+
+@mixin cdr-cta-base-icon-mixin() {
+  align-self: $cdr-cta-base-icon-align-self;
+  display: $cdr-cta-base-icon-display;
+  fill: $cdr-cta-base-icon-fill;
+  height: $cdr-cta-base-icon-height;
+  margin-left: $cdr-cta-base-icon-ml;
+  vertical-align: $cdr-cta-base-icon-vertical-align;
+  flex: $cdr-cta-base-icon-flex;
+  width: $cdr-cta-base-icon-width;
+}
+
+/* Full Width
+   ========== */
+$cdr-cta-full-width-justify-content: center;
+$cdr-cta-full-width-width: 100%;
+
+@mixin cdr-cta-full-width-mixin() {
+  justify-content: $cdr-cta-full-width-justify-content;
+  width: $cdr-cta-full-width-width;
+}
+
+/* brand */
+
+$cdr-cta-brand-background-color: #3278ae;
+$cdr-cta-brand-box-shadow: inset 0 0 0 1px #2b6692;
+$cdr-cta-brand-color: #ffffff;
+$cdr-cta-brand-fill: #ffffff;
+
+$cdr-cta-brand-background-color-hover: #2b6692;
+$cdr-cta-brand-box-shadow-hover: inset 0 0 0 1px #2b6692;
+$cdr-cta-brand-color-hover: #ffffff;
+$cdr-cta-brand-fill-hover: #ffffff;
+
+$cdr-cta-brand-background-color-active: #2b6692;
+$cdr-cta-brand-box-shadow-active: inset 0 0 0 1px #2b6692;
+$cdr-cta-brand-color-active: #ffffff;
+$cdr-cta-brand-fill-active: #ffffff;
+
+$cdr-cta-brand-background-color-focus: #2b6692;
+$cdr-cta-brand-box-shadow-focus: inset 0 0 0 1px #2b6692;
+$cdr-cta-brand-color-focus: #ffffff;
+$cdr-cta-brand-fill-focus: #ffffff;
+
+@mixin cdr-cta-brand-mixin() {
+  background-color: $cdr-cta-brand-background-color;
+  box-shadow: $cdr-cta-brand-box-shadow;
+  color: $cdr-cta-brand-color;
+  fill: $cdr-cta-brand-color;
+
+  &:hover {
+    background-color: $cdr-cta-brand-background-color-hover;
+    box-shadow: $cdr-cta-brand-box-shadow-hover;
+    color: $cdr-cta-brand-color-hover;
+    fill: $cdr-cta-brand-fill-hover;
+  }
+
+  &:active {
+    background-color: $cdr-cta-brand-background-color-active;
+    box-shadow: $cdr-cta-brand-box-shadow-active;
+    color: $cdr-cta-brand-color-active;
+    fill: $cdr-cta-brand-fill-active;
+  }
+
+  &:focus {
+    background-color: $cdr-cta-brand-background-color-focus;
+    box-shadow: $cdr-cta-brand-box-shadow-focus;
+    color: $cdr-cta-brand-color-focus;
+    fill: $cdr-cta-brand-fill-focus;
+  }
+}
+
+$cdr-cta-dark-background-color: #292929;
+$cdr-cta-dark-box-shadow: inset 0 0 0 1px #434343;
+$cdr-cta-dark-color: #ffffff;
+$cdr-cta-dark-fill: #ffffff;
+
+$cdr-cta-dark-background-color-hover: #434343;
+$cdr-cta-dark-box-shadow-hover: inset 0 0 0 1px #434343;
+$cdr-cta-dark-color-hover: #ffffff;
+$cdr-cta-dark-fill-hover: #ffffff;
+
+$cdr-cta-dark-background-color-active: #434343;
+$cdr-cta-dark-box-shadow-active: inset 0 0 0 1px #434343;
+$cdr-cta-dark-color-active: #ffffff;
+$cdr-cta-dark-fill-active: #ffffff;
+
+$cdr-cta-dark-background-color-focus: #434343;
+$cdr-cta-dark-box-shadow-focus: inset 0 0 0 1px #434343;
+$cdr-cta-dark-color-focus: #ffffff;
+$cdr-cta-dark-fill-focus: #ffffff;
+
+// &--dark {
+@mixin cdr-cta-dark-mixin() {
+  background-color: $cdr-cta-dark-background-color;
+  box-shadow: $cdr-cta-dark-box-shadow;
+  color: $cdr-cta-dark-color;
+  fill: $cdr-cta-dark-fill;
+
+  &:hover {
+    background-color: $cdr-cta-dark-background-color-hover;
+    box-shadow: $cdr-cta-dark-box-shadow-hover;
+    color: $cdr-cta-dark-color-hover;
+
+    & > .cdr-cta__icon {
+      fill: $cdr-cta-dark-fill-hover;
+    }
+  }
+
+  &:active {
+    background-color: $cdr-cta-dark-background-color-active;
+    box-shadow: $cdr-cta-dark-box-shadow-active;
+    color: $cdr-cta-dark-color-active;
+
+    & > .cdr-cta__icon {
+      fill: $cdr-cta-dark-fill-active;
+    }
+  }
+
+  &:focus {
+    background-color: $cdr-cta-dark-background-color-focus;
+    box-shadow: $cdr-cta-dark-box-shadow-focus;
+    color: $cdr-cta-dark-color-focus;
+
+    & > .cdr-cta__icon {
+      fill: $cdr-cta-dark-fill-focus;
+    }
+  }
+}
+
+$cdr-cta-light-background-color: #ffffff;
+$cdr-cta-light-box-shadow: inset 0 0 0 1px #616161;
+$cdr-cta-light-color: #292929;
+$cdr-cta-light-fill: #292929;
+
+$cdr-cta-light-background-color-hover: #f7f7f7;
+$cdr-cta-light-box-shadow-hover: inset 0 0 0 1px #616161;
+$cdr-cta-light-color-hover: #292929;
+$cdr-cta-light-fill-hover: #292929;
+
+$cdr-cta-light-background-color-active: #f7f7f7;
+$cdr-cta-light-box-shadow-active: inset 0 0 0 1px #616161;
+$cdr-cta-light-color-active: #292929;
+$cdr-cta-light-fill-active: #292929;
+
+$cdr-cta-light-background-color-focus: #f7f7f7;
+$cdr-cta-light-box-shadow-focus: inset 0 0 0 1px #616161;
+$cdr-cta-light-color-focus: #292929;
+$cdr-cta-light-fill-focus: #292929;
+
+// &--light {
+@mixin cdr-cta-light-mixin() {
+  background-color: $cdr-cta-light-background-color;
+  box-shadow: $cdr-cta-light-box-shadow;
+  color: $cdr-cta-light-color;
+  fill: $cdr-cta-light-fill;
+
+  &:hover {
+    background-color: $cdr-cta-light-background-color-hover;
+    box-shadow: $cdr-cta-light-box-shadow-hover;
+    color: $cdr-cta-light-color-hover;
+    fill: $cdr-cta-light-fill-hover;
+  }
+
+  &:active {
+    background-color: $cdr-cta-light-background-color-active;
+    box-shadow: $cdr-cta-light-box-shadow-active;
+    color: $cdr-cta-light-color-active;
+    fill: $cdr-cta-light-fill-active;
+  }
+
+  &:focus {
+    background-color: $cdr-cta-light-background-color-focus;
+    box-shadow: $cdr-cta-light-box-shadow-focus;
+    color: $cdr-cta-light-color-focus;
+    fill: $cdr-cta-light-fill-focus;
+  }
+}
+
+@mixin cdr-cta-light-elevated-mixin() {
+  box-shadow: $cdr-cta-light-box-shadow, $cdr-prominence-elevated;
+
+  &:hover {
+    box-shadow: $cdr-cta-light-box-shadow-hover, $cdr-prominence-elevated;
+  }
+
+  &:active {
+    box-shadow: $cdr-cta-light-box-shadow-active, $cdr-prominence-elevated;
+  }
+
+  &:focus {
+    box-shadow: $cdr-cta-light-box-shadow-focus, $cdr-prominence-elevated;
+  }
+}
+
+$cdr-cta-sale-background-color: #b5292b;
+$cdr-cta-sale-box-shadow: inset 0 0 0 1px #a12024;
+$cdr-cta-sale-color: #ffffff;
+$cdr-cta-sale-fill: #ffffff;
+
+$cdr-cta-sale-background-color-hover: #a12024;
+$cdr-cta-sale-box-shadow-hover: inset 0 0 0 1px #a12024;
+$cdr-cta-sale-color-hover: #ffffff;
+$cdr-cta-sale-fill-hover: #ffffff;
+
+$cdr-cta-sale-background-color-active: #a12024;
+$cdr-cta-sale-box-shadow-active: inset 0 0 0 1px #a12024;
+$cdr-cta-sale-color-active: #ffffff;
+$cdr-cta-sale-fill-active: #ffffff;
+
+$cdr-cta-sale-background-color-focus: #a12024;
+$cdr-cta-sale-box-shadow-focus: inset 0 0 0 1px #a12024;
+$cdr-cta-sale-color-focus: #ffffff;
+$cdr-cta-sale-fill-focus: #ffffff;
+
+@mixin cdr-cta-sale-mixin() {
+  background-color: $cdr-cta-sale-background-color;
+  box-shadow: $cdr-cta-sale-box-shadow;
+  color: $cdr-cta-sale-color;
+  fill: $cdr-cta-sale-fill;
+
+  &:hover {
+    background-color: $cdr-cta-sale-background-color-hover;
+    box-shadow: $cdr-cta-sale-box-shadow-hover;
+    color: $cdr-cta-sale-color-hover;
+    fill: $cdr-cta-sale-fill-hover;
+  }
+
+  &:active {
+    background-color: $cdr-cta-sale-background-color-active;
+    box-shadow: $cdr-cta-sale-box-shadow-active;
+    color: $cdr-cta-sale-color-active;
+    fill: $cdr-cta-sale-fill-active;
+  }
+
+  &:focus {
+    background-color: $cdr-cta-sale-background-color-focus;
+    box-shadow: $cdr-cta-sale-box-shadow-focus;
+    color: $cdr-cta-sale-color-focus;
+    fill: $cdr-cta-sale-fill-focus;
+  }
+}
+
+$cdr-cta-elevated-box-shadow: $cdr-prominence-elevated;
+$cdr-cta-elevated-box-shadow-hover: $cdr-prominence-elevated;
+$cdr-cta-elevated-box-shadow-active: $cdr-prominence-elevated;
+$cdr-cta-elevated-box-shadow-focus: $cdr-prominence-elevated;
+
+@mixin cdr-cta-elevated-mixin() {
+  box-shadow: $cdr-cta-elevated-box-shadow;
+
+  &:hover {
+    box-shadow: $cdr-cta-elevated-box-shadow-hover;
+  }
+
+  &:active {
+    box-shadow: $cdr-cta-elevated-box-shadow-hover;
+  }
+
+  &:focus {
+    box-shadow: $cdr-cta-elevated-box-shadow-hover;
+  }
+}

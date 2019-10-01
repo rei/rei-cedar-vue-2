@@ -28,9 +28,9 @@ module.exports = {
 
     browser
       .url(devServer)
-      .waitForElementVisible('#app', 5000)
+      .waitForElementVisible('#kitchen-sink', 10000)
       .axeInject()
-      .axeRun('#app', {
+      .axeRun('#kitchen-sink', {
         reporter: 'v2',
         runOnly: {
           type: 'tag',

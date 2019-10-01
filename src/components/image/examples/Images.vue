@@ -2,14 +2,14 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Images
     </cdr-text>
     <div data-backstop="image-aspect-ratio">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Aspect Ratios (with landscape images)
       </cdr-text>
@@ -28,7 +28,7 @@
     <div data-backstop="image-standard">
       <cdr-text
         tag="h3"
-        modifier="heading-small"
+        modifier="heading-400 heading-500@md heading-500@lg"
       >
         Standard image
       </cdr-text>
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 import ratios from 'componentsdir/image/examples/demos/Ratios';
 import cropping from 'componentsdir/image/examples/demos/Cropping';
 import mods from 'componentsdir/image/examples/demos/Mods';

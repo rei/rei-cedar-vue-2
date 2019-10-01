@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrLink } from 'distdir/cedar.esm.js';
+import sinon from 'sinon';
+import { CdrLink } from 'distdir/cedar.js';
 // import CdrThemer from 'componentsdir/themer/CdrThemer';
 
 describe('CdrLink.vue', () => {
@@ -44,20 +45,20 @@ describe('CdrLink.vue', () => {
     });
     expect(wrapper.attributes().rel).toBe('noopener noreferrer');
   });
-  
+
   it('computes the base class correctly', () => {
     const wrapper = shallowMount(CdrLink);
     // expect(wrapper.classes().length).toBe(1);
-    expect(wrapper.vm.$style).toHaveProperty('cdr-link');
+    expect(wrapper.classes()).toContain('cdr-link');
   });
-  
+
   it('computes classes correctly for standalone modifier', () => {
     const wrapper = shallowMount(CdrLink, {
       propsData: {
         modifier: 'standalone',
       },
     });
-    expect(wrapper.vm.$style).toHaveProperty('cdr-link--standalone');
+    expect(wrapper.classes()).toContain('cdr-link--standalone');
   });
 
   it('renders a link with a button element and no href attribute', () => {
@@ -68,6 +69,20 @@ describe('CdrLink.vue', () => {
     });
     expect(wrapper.is('button')).toBe(true);
     expect(wrapper.attributes().href).toBe(undefined);
+  });
+
+  it('emits a click', () => {
+    const spy = sinon.spy();
+    const wrapper = shallowMount(CdrLink, {
+      propsData: {
+        tag: 'button',
+      },
+      listeners: {
+        'click': spy
+      },
+    });
+    wrapper.trigger('click');
+    expect(spy.called).toBeTruthy();
   });
 
   xit('inherits theme correctly', () => {

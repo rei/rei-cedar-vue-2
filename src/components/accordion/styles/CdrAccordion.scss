@@ -1,0 +1,176 @@
+/* ==========================================================================
+  # CdrAccordionItem
+
+  TOC:
+
+    :Base
+      :__button
+      :__label
+      :__icon
+        :open
+      :__content-container
+        :open
+      :__content
+        :open
+      :Style Variants
+        :border-aligned
+        :compact
+        :border-aligned and compact
+========================================================================== */
+@import '../../../css/settings/index.scss';
+
+$accordion-border: #dadada;
+
+.cdr-accordion {
+  border-top: 1px solid $accordion-border;
+
+  position: relative;
+  z-index: 1;
+
+  &__button {
+    // TODO: typography token
+    @include redwood-display-30;
+
+    background-color: $cdr-color-background-lightest;
+    border: none;
+    color: $cdr-color-text-primary-lightmode;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: $cdr-space-inset-one-x;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    z-index: 1;
+
+    &:hover,
+    &:focus {
+      background-color: $cdr-color-background-light;
+    }
+  }
+
+  &__label {
+    // TODO: typography token
+    @include redwood-display-30;
+
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  &__icon {
+    margin-left: $cdr-space-one-x;
+    fill: $cdr-color-icon-emphasis-lightmode;
+    transition: transform $cdr-duration-3-x $cdr-timing-function-ease-out;
+
+    &:global(.open) {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__content-container {
+    overflow: hidden;
+    transition-duration: $cdr-duration-2-x;
+    transition-property: max-height;
+    transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1);
+
+    &:global(.open) {
+      transition-duration: $cdr-duration-3-x;
+    }
+  }
+
+  &__content {
+    // TODO: typography token
+    @include redwood-body-20;
+
+    background-color: $cdr-color-background-lightest;
+    color: $cdr-color-text-primary-lightmode;
+    padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-one-x;
+    transition: opacity $cdr-duration-1-x linear;
+    opacity: 0;
+
+    & > * {
+      // TODO: typography token
+      @include redwood-body-20;
+    }
+
+    &:global(.open) {
+      opacity: 1;
+    }
+
+    &:global(.closed) {
+      visibility: hidden;
+    }
+  }
+
+  /* Style variants
+    ========================================================================== */
+
+  /* Border-Aligned
+     ========== */
+  &--border-aligned {
+    margin: 0 $cdr-space-inset-one-x;
+
+    .cdr-accordion__button {
+      margin-left: -$cdr-space-one-x;
+      width: calc(100% + (#{$cdr-space-one-x} * 2));
+    }
+
+    .cdr-accordion__content {
+      padding: $cdr-space-half-x 0 $cdr-space-one-x;
+    }
+  }
+
+  /* Compact
+     ========== */
+  &--compact {
+    .cdr-accordion__button {
+      padding: $cdr-space-inset-three-quarter-x;
+    }
+
+    .cdr-accordion__label {
+      // TODO: typography token
+      @include redwood-display-20;
+
+      font-weight: bold;
+    }
+
+    .cdr-accordion__content {
+      // TODO: typography token
+      @include redwood-body-10;
+
+      padding: $cdr-space-quarter-x $cdr-space-three-quarter-x $cdr-space-three-quarter-x;
+
+      & > * {
+        // TODO: typography token
+        @include redwood-body-10;
+      }
+    }
+  }
+
+  /* Border-Aligned and Compact
+     ========== */
+  &--compact.cdr-accordion--border-aligned {
+    .cdr-accordion-item__button {
+      margin-left: -$cdr-space-three-quarter-x;
+      width: calc(100% + (#{$cdr-space-three-quarter-x} * 2));
+    }
+
+    .cdr-accordion__content {
+      padding: $cdr-space-quarter-x 0 $cdr-space-three-quarter-x;
+    }
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $accordion-border;
+  }
+
+  &--focused {
+    /*
+      This z-index change is to fix a Chrome-only visual issue with the light blue focus outline. Basically, the bottom
+      line of the outline is usually covered by the accordion immediately below what's currently focuesd. We increase
+      the z-index so that the outline can be correctly seen when the accordion is focused.
+    */
+    z-index: 10;
+  }
+}

@@ -1,0 +1,10 @@
+/* default */
+@mixin cdr-text-default-mixin() {
+  @include cdr-text-default;
+  margin: 0;
+}
+
+/* citation */
+@mixin cdr-text-citation-mixin() {
+  @include redwood-display-10;
+}

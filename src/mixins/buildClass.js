@@ -7,36 +7,43 @@ export default {
      *
      * @param {String} prop -- the prop to build classes from
      */
-    buildClass(prop) {
+    buildClass(prop, propNamePrefix = false) {
       let checkBase = 'cdr';
       if (this.baseClass) {
         checkBase = this.baseClass;
       }
       const base = checkBase;
-      const propArgsArr = this[prop] ? this[prop].split(' ') : [];
-      let final = [];
+      let propArgsArr = this[prop] ? this[prop].split(' ') : [];
+      let builtClasses = [];
 
-      if (!this.$style) {
-        final.push(`${base}`);
-        final = final.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
-      } else {
-        final.push(this.moduleClass(base));
-        final = final.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
+      if (propNamePrefix) {
+        /*
+          prefix class names with prop name
+        */
+        propArgsArr = propArgsArr.map(mod => `${prop}${mod}`);
       }
 
-      return final.join(' ');
+      if (!this.style) {
+        builtClasses.push(`${base}`);
+        builtClasses = builtClasses.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
+      } else {
+        builtClasses.push(this.moduleClass(base));
+        builtClasses = builtClasses.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
+      }
+
+      return builtClasses.join(' ');
     },
     /**
      * Returns a css module class
      */
     moduleClass(className) {
-      return this.$style[`${className}`];
+      return this.style[`${className}`];
     },
     /**
      * Returns a modified base class
      */
     modifyClassName(base, modifier) {
-      return this.$style
+      return this.style
         ? this.moduleClass(`${base}--${modifier}`)
         : `${base}--${modifier}`;
     },

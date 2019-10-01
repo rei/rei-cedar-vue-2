@@ -2,7 +2,7 @@
   <div>
     <cdr-text
       tag="h3"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Cropping (with landscape images)
     </cdr-text>
@@ -55,7 +55,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Cropping (with portrait images)
     </cdr-text>
@@ -108,7 +108,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-small"
+      modifier="heading-400 heading-500@md heading-500@lg"
     >
       Cropping (combinations)
     </cdr-text>
@@ -251,7 +251,7 @@
 
 <script>
 // import testImage from 'assetsdir/test-image.jpeg';
-import * as Components from 'componentsdir/_index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Cropping',
