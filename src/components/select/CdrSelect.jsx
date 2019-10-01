@@ -75,6 +75,12 @@ export default {
         [this.style['cdr-select__label--disabled']]: this.disabled,
       };
     },
+    caretClass() {
+      return {
+        [this.style['cdr-select__caret']]: true,
+        [this.style['cdr-select__caret--disabled']]: this.disabled,
+      };
+    },
     selectWrapClass() {
       return {
         [this.style['cdr-select-wrap']]: true,
@@ -228,7 +234,7 @@ export default {
         <div class={this.selectWrapClass}>
           {this.selectEl}
           <icon-caret-down
-          class={this.style['cdr-select__caret']}
+          class={this.caretClass}
           />
         </div>
         {this.helperEl}

@@ -167,3 +167,19 @@ $cdr-select-helper-text-pt: $cdr-space-quarter-x;
   padding-left: $cdr-select-helper-text-pl;
   padding-top: $cdr-select-helper-text-pt;
 }
+
+/* caret */
+@mixin cdr-select-base-caret-mixin() {
+  fill: $cdr-color-icon-primary-lightmode;
+  position: absolute;
+  top: 50%;
+  right: $cdr-space-half-x;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* caret disabled */
+$cdr-select-base-caret-color-disabled: $cdr-color-text-disabled-lightmode;
+@mixin cdr-select-base-caret-disabled-mixin() {
+  fill: $cdr-select-base-caret-color-disabled;
+}
