@@ -1,5 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import { CdrDataTable } from 'distdir/cedar.js';
+import CdrDataTable from 'componentdir/dataTable/CdrDataTable';
 import sinon from 'sinon';
 
 const data = {
@@ -54,7 +54,7 @@ const data = {
   ],
 };
 
-describe('CdrDataTable.vue', () => {
+describe('CdrDataTable', () => {
 
   describe('mounted hook', () => {
     it('sets hasColHeaders, hasRowHeaders with boolean', () => {

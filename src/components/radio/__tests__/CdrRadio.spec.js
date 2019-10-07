@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrRadio } from 'distdir/cedar.js';
+import CdrRadio from 'componentdir/radio/CdrRadio';
 
-describe('CdrRadio.vue', () => {
+describe('CdrRadio', () => {
   it('renders an input', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {

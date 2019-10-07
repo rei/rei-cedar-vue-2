@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils';
 import sinon from 'sinon';
-import { CdrLink } from 'distdir/cedar.js';
-// import CdrThemer from 'componentsdir/themer/CdrThemer';
+import CdrLink from 'componentdir/link/CdrLink';
+// import CdrThemer from 'componentdir/themer/CdrThemer';
 
-describe('CdrLink.vue', () => {
+describe('CdrLink', () => {
   it('renders an anchor by default', () => {
     const wrapper = shallowMount(CdrLink);
     expect(wrapper.is('a')).toBeTruthy();

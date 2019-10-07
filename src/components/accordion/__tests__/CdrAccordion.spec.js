@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrAccordion } from 'distdir/cedar.js';
+// import { CdrAccordion } from 'distdir/cedar.js';
+import CdrAccordion from 'componentdir/accordion/CdrAccordion';
 import sinon from 'sinon';
 
 const propsData = {

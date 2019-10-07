@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrImg } from 'distdir/cedar.js';
+import CdrImg from 'componentdir/image/CdrImg';
 
-describe('CdrImg.vue', () => {
+describe('CdrImg', () => {
   it('sets the alt attr correctly', () => {
     const wrapper = shallowMount(CdrImg, {
       propsData: {

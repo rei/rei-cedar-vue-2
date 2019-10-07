@@ -1,8 +1,8 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import { CdrTabPanel } from 'distdir/cedar.js';
+import CdrTabPanel from 'componentdir/tabs/CdrTabPanel';
 
 
-describe('CdrTabPanel.vue', () => {
+describe('CdrTabPanel', () => {
   it('renders tab', () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {

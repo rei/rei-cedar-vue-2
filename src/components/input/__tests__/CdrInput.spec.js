@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils';
 import sinon from 'sinon';
-import { CdrInput } from 'distdir/cedar.js';
+import CdrInput from 'componentdir/input/CdrInput';
 
-describe('CdrInput.vue', () => {
+describe('CdrInput', () => {
   it('renders a label element', () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {

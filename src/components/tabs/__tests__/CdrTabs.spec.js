@@ -1,11 +1,11 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import { CdrTabs } from 'distdir/cedar.js';
-import { CdrTabPanel } from 'distdir/cedar.js';
+import CdrTabs from 'componentdir/tabs/CdrTabs';
+import CdrTabPanel from 'componentdir/tabs/CdrTabPanel';
 import Vue from 'vue';
 
 // Tests use nextTick because of the nextTick in mounted hook of tabs
 
-describe('CdrTabs.vue', () => {
+describe('CdrTabs', () => {
   it('mounts tabs', () => {
     const wrapper = shallowMount(CdrTabs);
     expect(wrapper.exists()).toBe(true);

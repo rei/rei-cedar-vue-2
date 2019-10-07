@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrRow } from 'distdir/cedar.js';
+import CdrRow from 'componentdir/grid/CdrRow';
 
-describe('CdrRow.vue', () => {
+describe('CdrRow', () => {
   it('sets type prop correctly', () => {
     const wrapper = shallowMount(CdrRow, {
       propsData: {

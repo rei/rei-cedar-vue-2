@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrList } from 'distdir/cedar.js';
+import CdrList from 'componentdir/list/CdrList';
 
-describe('CdrList.vue', () => {
+describe('CdrList', () => {
   it('renders a ul by default', () => {
     const wrapper = shallowMount(CdrList);
     expect(wrapper.is('ul')).toBe(true);

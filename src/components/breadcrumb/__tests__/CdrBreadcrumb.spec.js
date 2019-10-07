@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrBreadcrumb } from 'distdir/cedar.js';
+import CdrBreadcrumb from 'componentdir/breadcrumb/CdrBreadcrumb';
 
-describe('CdrBreadcrumb.vue', () => {
+describe('CdrBreadcrumb', () => {
   const BreadcrumbItems = [
     {
       item: {

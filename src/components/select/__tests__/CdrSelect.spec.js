@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrSelect } from 'distdir/cedar.js';
+import CdrSelect from 'componentdir/select/CdrSelect';
 
-describe('cdrSelect.vue', () => {
+describe('cdrSelect', () => {
   it('renders a label element', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {

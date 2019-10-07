@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrCheckbox } from 'distdir/cedar.js';
+import CdrCheckbox from 'componentdir/checkbox/CdrCheckbox';
 
-describe('CdrCheckbox.vue', () => {
+describe('CdrCheckbox', () => {
   it('renders an input', () => {
     const wrapper = shallowMount(CdrCheckbox);
     expect(wrapper.vm.$refs.checkbox.tagName).toBe('INPUT');

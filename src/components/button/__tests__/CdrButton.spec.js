@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrButton } from 'distdir/cedar.js';
+import CdrButton from 'componentdir/button/CdrButton';
 import sinon from 'sinon'
 
-describe('CdrButton.vue', () => {
+describe('CdrButton', () => {
   it('renders a button', () => {
     const wrapper = shallowMount(CdrButton);
     expect(wrapper.is('button')).toBe(true);
@@ -101,12 +101,5 @@ describe('CdrButton.vue', () => {
     const tag = wrapper.vm.$options.props.tag;
     expect(tag.validator('button')).toBe(true);
     expect(tag.validator('link')).toBe(false);
-  });
-
-  it('validates size prop', () => {
-    const wrapper = shallowMount(CdrButton);
-    const size = wrapper.vm.$options.props.size;
-    expect(size.validator('small')).toBe(true);
-    expect(size.validator('extra-small')).toBe(false);
   });
 });

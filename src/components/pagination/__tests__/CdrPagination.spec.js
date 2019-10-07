@@ -1,5 +1,5 @@
 import { mount, shallowMount } from '@vue/test-utils';
-import { CdrPagination } from 'distdir/cedar.js';
+import CdrPagination from 'componentdir/pagination/CdrPagination';
 
 function makePages(total, startingAt = 0) {
   const arg = 'page';
@@ -28,7 +28,7 @@ function getPrevNextPages(p) {
   return 3;
 }
 
-describe('CdrPagination.vue', () => {
+describe('CdrPagination', () => {
   it('has a wrapping nav element for a11y', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {

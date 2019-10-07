@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
-import { CdrIcon } from 'distdir/cedar.js';
+import CdrIcon from 'componentdir/icon/CdrIcon';
 
-describe('CdrIcon.vue', () => {
+describe('CdrIcon', () => {
   it('renders a wrapping svg', () => {
     const wrapper = shallowMount(CdrIcon, {});
     expect(wrapper.is('svg')).toBe(true);
