@@ -15,6 +15,7 @@ export default {
     tag: {
       type: String,
       default: 'button',
+      /* istanbul ignore next */
       validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
     },
     /**
@@ -23,6 +24,7 @@ export default {
     type: {
       type: String,
       default: 'button',
+      /* istanbul ignore next */
       validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**

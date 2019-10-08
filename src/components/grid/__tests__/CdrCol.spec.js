@@ -15,6 +15,21 @@ describe('CdrCol', () => {
     expect(wrapper.vm.$slots.default[0].elm.tagName).toBe('LI');
   });
 
+  it('renders as list type correctly when isRow', () => {
+    const wrapper = shallowMount(CdrRow, {
+      propsData: {
+        type: 'list',
+      },
+      stubs: {
+        'cdr-col': CdrCol,
+      },
+      slots: {
+        default: ['<cdr-col is-row>column</cdr-col>']
+      }
+    });
+    expect(wrapper.vm.$slots.default[0].elm.tagName).toBe('LI');
+  });
+
   it('renders default correctly', () => {
     const wrapper = shallowMount(CdrCol);
     expect(wrapper.is('div')).toBe(true);

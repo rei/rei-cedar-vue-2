@@ -40,24 +40,6 @@ describe('CdrBreadcrumb', () => {
     expect(wrapper.vm.$refs.container.tagName).toBe('NAV');
   });
 
-  it('breadcrumb items validator should return true for valid items prop', () => {
-    const wrapper = shallowMount(CdrBreadcrumb);
-    let validItems = BreadcrumbItems;
-    expect(wrapper.vm.$options.props.items.validator(validItems)).toBe(true);
-  });
-
-  it('breadcrumb items validator should return false if item not an object', () => {
-    const wrapper = shallowMount(CdrBreadcrumb);
-    let invalidItems = [{badItem:''},{item:{noname:''}}];
-    expect(wrapper.vm.$options.props.items.validator(invalidItems)).toBe(false);
-  });
-
-  it('breadcrumb items validator should return false if item does not contain name', () => {
-    const wrapper = shallowMount(CdrBreadcrumb);
-    let invalidItems = [{item:{noname:''}}];
-    expect(wrapper.vm.$options.props.items.validator(invalidItems)).toBe(false);
-  });
-
   it('breadcrumb should not truncate with fewer than 3 items', () => {
     const items = [
       {
@@ -108,6 +90,9 @@ describe('CdrBreadcrumb', () => {
       }
     });
     expect(wrapper.vm.truncate).toBe(true);
+    wrapper.find({ref: 'ellipse'}).trigger('click');
+    expect(wrapper.vm.truncate).toBeFalsy();
+
   });
 
   it('breadcrumb link can be overridden with link scopedSlot', () => {

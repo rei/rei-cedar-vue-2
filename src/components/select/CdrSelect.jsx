@@ -110,6 +110,7 @@ export default {
             vm.$emit('change', event.target.value, event);
 
             // Needed for Internet Explorer
+            /* istanbul ignore next */
             if (vm.value !== event.target.value) {
               if (vm.multiple) {
                 const optArr = toArray(event.target.options);

@@ -2,13 +2,6 @@ import { shallowMount } from '@vue/test-utils';
 import CdrCta from 'componentdir/cta/CdrCta';
 
 describe('CdrCta', () => {
-  it('validates ctaStyle prop', () => {
-    const wrapper = shallowMount(CdrCta);
-    const ctaStyle = wrapper.vm.$options.props.ctaStyle;
-    expect(ctaStyle.validator('test')).toBe(false);
-    expect(ctaStyle.validator('dark')).toBe(true);
-  });
-
   it('adds classes from ctaStyle prop', () => {
     const wrapper = shallowMount(CdrCta, {
       propsData: {

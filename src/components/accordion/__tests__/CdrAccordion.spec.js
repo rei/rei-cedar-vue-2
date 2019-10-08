@@ -98,8 +98,11 @@ describe('CdrAccordion', () => {
         default: 'This is some slot text.'
       },
     });
-    wrapper.setData({ focused: true });
+    wrapper.find('button').trigger('focus');
+    expect(wrapper.vm.focused).toBeTruthy();
     expect(wrapper.classes()).toContain('cdr-accordion--focused');
+    wrapper.find('button').trigger('blur');
+    expect(wrapper.vm.focused).toBeFalsy();
   });
 
   it('style class checks prop values', () => {

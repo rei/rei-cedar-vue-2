@@ -13,13 +13,6 @@ describe('CdrButton', () => {
     expect(wrapper.attributes().type).toBe('button');
   });
 
-  it('validates type prop', () => {
-    const wrapper = shallowMount(CdrButton);
-    const type = wrapper.vm.$options.props.type;
-    expect(type.validator('test')).toBe(false);
-    expect(type.validator('reset')).toBe(true);
-  });
-
   it('sets type attr correctly', () => {
     const wrapper = shallowMount(CdrButton, {
       propsData: {
@@ -94,12 +87,5 @@ describe('CdrButton', () => {
       },
     });
     expect(wrapper.is('a')).toBe(true);
-  });
-
-  it('validates el prop', () => {
-    const wrapper = shallowMount(CdrButton);
-    const tag = wrapper.vm.$options.props.tag;
-    expect(tag.validator('button')).toBe(true);
-    expect(tag.validator('link')).toBe(false);
   });
 });

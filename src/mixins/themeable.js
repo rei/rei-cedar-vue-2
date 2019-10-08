@@ -1,3 +1,5 @@
+// Omit from test coverage since this isn't currently used
+/* istanbul ignore file */
 /**
  * @mixin
  */

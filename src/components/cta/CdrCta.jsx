@@ -14,6 +14,7 @@ export default {
     ctaStyle: {
       type: String,
       default: 'dark',
+      /* istanbul ignore next */
       validator: value => (['brand', 'dark', 'light', 'sale'].indexOf(value) >= 0) || false,
     },
     href: {

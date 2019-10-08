@@ -79,6 +79,7 @@ export default {
     }
 
     if (this.lockedCol) {
+    /* istanbul ignore next */
       window.addEventListener('resize', debounce(() => {
         this.rowHeights = null;
         this.$nextTick(() => {
