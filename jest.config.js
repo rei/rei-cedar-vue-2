@@ -19,6 +19,7 @@ const config = {
       // statements: -10,
     },
   },
+  coverageDirectory: 'test/unit/coverage',
   moduleFileExtensions: [
     'js',
     'json',

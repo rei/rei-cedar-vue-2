@@ -100,7 +100,6 @@
     "node-sass-package-importer": "^5.3.2",
     "npm-publish-prerelease": "^1.0.2",
     "npm-run-all": "^4.1.5",
-    "nyc": "^14.1.1",
     "ora": "^3.0.0",
     "pkg-ok": "^2.3.1",
     "postcss": "^7.0.14",
