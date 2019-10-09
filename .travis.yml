@@ -21,6 +21,7 @@ script:
       npx codecov;
     else
       npm run test;
+      npx codecov;
   fi
 notifications:
   slack:
