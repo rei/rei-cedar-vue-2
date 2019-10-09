@@ -11,15 +11,7 @@ const config = {
     '!**/*.backstop.js', // not backstop files
     '!**/node_modules/**', // not node_modules
   ],
-  coverageThreshold: {
-    global: {
-      // branches: 80,
-      // functions: 80,
-      lines: 100,
-      // statements: -10,
-    },
-  },
-  coverageDirectory: 'test/unit/coverage',
+  coverageDirectory: 'coverage',
   moduleFileExtensions: [
     'js',
     'json',

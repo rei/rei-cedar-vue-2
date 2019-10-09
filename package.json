@@ -65,6 +65,7 @@
     "chalk": "^2.4.2",
     "chokidar": "^2.1.6",
     "chromedriver": "77.0.0",
+    "codecov": "^3.6.1",
     "concat": "^1.0.3",
     "cross-env": "^5.2.0",
     "cross-spawn": "^6.0.4",

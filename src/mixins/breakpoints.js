@@ -1,6 +1,3 @@
-// Currently unused, omit from test coverage
-/* istanbul ignore file */
-
 /**
  * Provides methods for working with screen size breakpoints
  *   XS < 768px

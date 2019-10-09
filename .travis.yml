@@ -15,7 +15,12 @@ install:
 - npm install
 script:
 - npm run lint
-- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run unit; else npm run test;
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ];
+    then
+      npm run unit;
+      npx codecov;
+    else
+      npm run test;
   fi
 notifications:
   slack:

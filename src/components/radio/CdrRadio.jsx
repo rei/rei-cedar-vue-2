@@ -52,7 +52,6 @@ export default {
     },
   },
   watch: {
-    /* istanbul ignore next */
     value(val) {
       this.newValue = val;
     },

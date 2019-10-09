@@ -16,16 +16,13 @@ export default {
     items: {
       type: Array,
       default: () => [],
-      /* istanbul ignore next */
       validator: (value) => {
         if (value.length && value.length > 0) {
           for (let i = 0; i < value.length; i += 1) {
-            /* istanbul ignore next */
             if (!(typeof value[i].item === 'object')) {
               console.error('Breadcrumb items array missing item key at index ', i); // eslint-disable-line no-console
               return false;
             }
-            /* istanbul ignore next */
             if (!Object.hasOwnProperty.call(value[i].item, 'name')) {
               console.error('Breadcrumb items array is missing item.name value at index ', i); // eslint-disable-line no-console
               return false;

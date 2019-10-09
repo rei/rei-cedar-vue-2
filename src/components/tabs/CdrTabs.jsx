@@ -151,12 +151,10 @@ export default {
       }
     },
     handleDownArrowNav() {
-      /* istanbul ignore next */
       if (!this.animationInProgress) {
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
       }
     },
-    /* istanbul ignore next */
     setFocusToActiveTabHeader() {
       this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
     },
