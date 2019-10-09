@@ -132,6 +132,7 @@
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.6.1",
     "svg-sprite": "^1.5.0",
+    "tabbable": "^4.0.0",
     "tinycolor2": "^1.4.1",
     "vue": "^2.5.22",
     "vue-router": "^3.0.2",
