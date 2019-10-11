@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrAccordion renders correctly 1`] = `
+<div
+  class="cdr-accordion"
+  id="test-accordion"
+>
+  <button
+    aria-controls="test-collapsible"
+    aria-expanded="false"
+    class="cdr-accordion__button"
+    id="test"
+  >
+    <span
+      class="cdr-accordion__label"
+      id="test-label"
+    >
+      label
+    </span>
+    <icon-caret-down-stub
+      class="cdr-accordion__icon closed"
+      space=""
+    />
+  </button>
+  <div
+    class="cdr-accordion__content-container closed"
+    style="max-height: 0;"
+  >
+    <div
+      aria-hidden="true"
+      class="cdr-accordion__content closed"
+      id="test-collapsible"
+    >
+      This is some slot text.
+    </div>
+  </div>
+</div>
+`;

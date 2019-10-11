@@ -4,7 +4,7 @@ import CdrRow from 'componentdir/grid/CdrRow';
 
 describe('CdrCol', () => {
   it('renders as list type correctly', () => {
-    const wrapper = shallowMount(CdrRow, {
+    const wrapper = mount(CdrRow, {
       propsData: {
         type: 'list',
       },
@@ -12,11 +12,11 @@ describe('CdrCol', () => {
         default: CdrCol
       }
     });
-    expect(wrapper.vm.$slots.default[0].elm.tagName).toBe('LI');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders as list type correctly when isRow', () => {
-    const wrapper = shallowMount(CdrRow, {
+    const wrapper = mount(CdrRow, {
       propsData: {
         type: 'list',
       },
@@ -27,12 +27,12 @@ describe('CdrCol', () => {
         default: ['<cdr-col is-row>column</cdr-col>']
       }
     });
-    expect(wrapper.vm.$slots.default[0].elm.tagName).toBe('LI');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders default correctly', () => {
-    const wrapper = shallowMount(CdrCol);
-    expect(wrapper.is('div')).toBe(true);
+    const wrapper = mount(CdrCol);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('has the correct block class', () => {

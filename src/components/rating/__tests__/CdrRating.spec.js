@@ -1,7 +1,17 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import CdrRating from 'componentdir/rating/CdrRating';
 
 describe('CdrRating', () => {
+  test('renders correctly', () => {
+    const wrapper = mount(CdrRating, {
+      propsData: {
+        rating: 3.2323,
+        count: 100,
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('computes and rounds rating stars correctly', () => {
     const wrapper = shallowMount(CdrRating, {
       propsData: {

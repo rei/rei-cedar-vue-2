@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrBreadcrumb renders correctly 1`] = `
+<nav
+  aria-label="Breadcrumb"
+  class="cdr-breadcrumb"
+>
+  <ol
+    class="cdr-breadcrumb__list"
+  />
+</nav>
+`;

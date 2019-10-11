@@ -1,10 +1,17 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import CdrCheckbox from 'componentdir/checkbox/CdrCheckbox';
 
 describe('CdrCheckbox', () => {
-  it('renders an input', () => {
-    const wrapper = shallowMount(CdrCheckbox);
-    expect(wrapper.vm.$refs.checkbox.tagName).toBe('INPUT');
+  test('renders correctly', () => {
+    const wrapper = mount(CdrCheckbox, {
+      propsData: {
+        labelClass: 'custom-label-class',
+      },
+      slots: {
+        default: 'Label Test',
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('is type checkbox', () => {

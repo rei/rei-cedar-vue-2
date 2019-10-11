@@ -1,11 +1,11 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import CdrButton from 'componentdir/button/CdrButton';
 import sinon from 'sinon'
 
 describe('CdrButton', () => {
-  it('renders a button', () => {
-    const wrapper = shallowMount(CdrButton);
-    expect(wrapper.is('button')).toBe(true);
+  test('renders correctly', () => {
+    const wrapper = mount(CdrButton);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('sets default type prop correctly', () => {

@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import CdrBreadcrumb from 'componentdir/breadcrumb/CdrBreadcrumb';
 
 describe('CdrBreadcrumb', () => {
@@ -35,9 +35,9 @@ describe('CdrBreadcrumb', () => {
     },
   ];
 
-  it('renders a nav', () => {
-    const wrapper = shallowMount(CdrBreadcrumb);
-    expect(wrapper.vm.$refs.container.tagName).toBe('NAV');
+  test('renders correctly', () => {
+    const wrapper = mount(CdrBreadcrumb);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('breadcrumb should not truncate with fewer than 3 items', () => {

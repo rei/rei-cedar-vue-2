@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import CdrTabs from 'componentdir/tabs/CdrTabs';
 import CdrTabPanel from 'componentdir/tabs/CdrTabPanel';
 import Vue from 'vue';
@@ -7,8 +7,8 @@ import Vue from 'vue';
 
 describe('CdrTabs', () => {
   it('mounts tabs', () => {
-    const wrapper = shallowMount(CdrTabs);
-    expect(wrapper.exists()).toBe(true);
+    const wrapper = mount(CdrTabs);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders child tabs properly', (done) => {
@@ -24,6 +24,7 @@ describe('CdrTabs', () => {
     Vue.nextTick(() => {
       expect(wrapper.vm.tabs.length).toBe(2);
       expect(wrapper.findAll('li').length).toBe(2);
+      expect(wrapper.element).toMatchSnapshot();
       done();
     });
   });

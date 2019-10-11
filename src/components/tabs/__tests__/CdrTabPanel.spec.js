@@ -4,12 +4,12 @@ import CdrTabPanel from 'componentdir/tabs/CdrTabPanel';
 
 describe('CdrTabPanel', () => {
   it('renders tab', () => {
-    const wrapper = shallowMount(CdrTabPanel, {
+    const wrapper = mount(CdrTabPanel, {
       propsData: {
         name: 'test',
       },
     });
-    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('is not active by default', () => {

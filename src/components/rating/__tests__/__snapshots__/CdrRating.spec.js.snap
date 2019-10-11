@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrRating renders correctly 1`] = `
+<div
+  class="cdr-rating cdr-rating--primary cdr-rating "
+>
+  <div
+    class="cdr-rating__background"
+  >
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__placeholder"
+    />
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__placeholder"
+    />
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__placeholder"
+    />
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__placeholder"
+    />
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__placeholder"
+    />
+  </div>
+  <div
+    class="cdr-rating__ratings"
+  >
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__100"
+    />
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__100"
+    />
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__100"
+    />
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__25"
+    />
+  </div>
+  <span
+    aria-hidden="true"
+    class="cdr-rating__count"
+  >
+    <span>
+      100
+    </span>
+    <span>
+       Reviews
+    </span>
+  </span>
+  <span
+    class="cdr-display-sr-only"
+  >
+    rated 3.25 out of 5 with 100 reviews
+  </span>
+</div>
+`;

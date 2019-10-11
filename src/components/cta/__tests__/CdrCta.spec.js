@@ -1,7 +1,12 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import CdrCta from 'componentdir/cta/CdrCta';
 
 describe('CdrCta', () => {
+  test('renders correctly', () => {
+    const wrapper = mount(CdrCta);
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('adds classes from ctaStyle prop', () => {
     const wrapper = shallowMount(CdrCta, {
       propsData: {

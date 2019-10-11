@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import CdrRadio from 'componentdir/radio/CdrRadio';
 
 describe('CdrRadio', () => {
@@ -9,7 +9,7 @@ describe('CdrRadio', () => {
         name: 'testName',
       }
     });
-    expect(wrapper.vm.$refs.radio.tagName).toBe('INPUT');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('is type radio', () => {
@@ -20,16 +20,6 @@ describe('CdrRadio', () => {
       }
     });
     expect(wrapper.vm.$refs.radio.hasAttribute('type', 'radio')).toBe(true);
-  });
-
-  it('renders a label element', () => {
-    const wrapper = shallowMount(CdrRadio, {
-      propsData: {
-        customValue: 'A',
-        name: 'testName',
-      }
-    });
-    expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
   });
 
   it('adds a custom label class correctly', () => {

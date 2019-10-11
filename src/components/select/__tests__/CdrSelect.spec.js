@@ -1,15 +1,14 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import CdrSelect from 'componentdir/select/CdrSelect';
 
 describe('cdrSelect', () => {
-  it('renders a label element', () => {
-    const wrapper = shallowMount(CdrSelect, {
+  it('renders correctly', () => {
+    const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
-    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test ');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders required label correctly', () => {
@@ -19,7 +18,7 @@ describe('cdrSelect', () => {
         required: true,
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test Required');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('hide-label sets aria-label correctly', () => {
@@ -49,16 +48,6 @@ describe('cdrSelect', () => {
       },
     });
     expect(wrapper.vm.$refs.select.id).toBe(wrapper.vm._uid.toString());
-  });
-
-  it('renders a select element', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'Label Test',
-      },
-    });
-    const select = wrapper.find({ ref: 'select'});
-    expect(select.is('select')).toBe(true);
   });
 
   it('sets select name attribute correctly', () => {
@@ -233,7 +222,7 @@ describe('cdrSelect', () => {
         'info': '🤠',
       },
     });
-    expect(wrapper.find('.cdr-select__info-container').text()).toBe('🤠');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders helper-text slot', () => {
@@ -245,6 +234,6 @@ describe('cdrSelect', () => {
         'helper-text': 'very helpful',
       },
     });
-    expect(wrapper.find('.cdr-select__helper-text').text()).toBe('very helpful');
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

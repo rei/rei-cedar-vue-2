@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrQuote renders correctly 1`] = `
+<aside
+  class="cdr-quote"
+>
+  <p
+    class="cdr-quote__summary"
+  >
+    This is the summary
+  </p>
+  <cite
+    class="cdr-text cdr-text--citation cdr-quote__citation"
+  >
+    This is the citation
+  </cite>
+</aside>
+`;

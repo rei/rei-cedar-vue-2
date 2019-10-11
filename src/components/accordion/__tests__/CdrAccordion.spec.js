@@ -1,7 +1,5 @@
-import { shallowMount } from '@vue/test-utils';
-// import { CdrAccordion } from 'distdir/cedar.js';
+import { shallowMount, mount } from '@vue/test-utils';
 import CdrAccordion from 'componentdir/accordion/CdrAccordion';
-import sinon from 'sinon';
 
 const propsData = {
   id: 'test',
@@ -11,6 +9,19 @@ const propsData = {
 };
 
 describe('CdrAccordion', () => {
+  test('renders correctly', () => {
+    const wrapper = shallowMount(CdrAccordion, {
+      propsData: {
+        id: 'test',
+        label: 'label',
+      },
+      slots: {
+        default: 'This is some slot text.'
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot()
+  });
+
   describe('accordion data setup', () => {
     it('sets maxHeight when starting closed', () => {
       const wrapper = shallowMount(CdrAccordion, {

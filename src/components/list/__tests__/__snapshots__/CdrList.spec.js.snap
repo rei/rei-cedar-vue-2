@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrList renders an ol 1`] = `
+<ol
+  class="cdr-list cdr-list "
+/>
+`;
+
+exports[`CdrList renders correctly 1`] = `
+<ul
+  class="cdr-list cdr-list "
+/>
+`;
