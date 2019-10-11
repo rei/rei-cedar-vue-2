@@ -1,10 +1,10 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import { CdrCol } from 'distdir/cedar.js';
-import { CdrRow } from 'distdir/cedar.js';
+import CdrCol from 'componentdir/grid/CdrCol';
+import CdrRow from 'componentdir/grid/CdrRow';
 
-describe('CdrCol.vue', () => {
+describe('CdrCol', () => {
   it('renders as list type correctly', () => {
-    const wrapper = shallowMount(CdrRow, {
+    const wrapper = mount(CdrRow, {
       propsData: {
         type: 'list',
       },
@@ -12,12 +12,27 @@ describe('CdrCol.vue', () => {
         default: CdrCol
       }
     });
-    expect(wrapper.vm.$slots.default[0].elm.tagName).toBe('LI');
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it('renders as list type correctly when isRow', () => {
+    const wrapper = mount(CdrRow, {
+      propsData: {
+        type: 'list',
+      },
+      stubs: {
+        'cdr-col': CdrCol,
+      },
+      slots: {
+        default: ['<cdr-col is-row>column</cdr-col>']
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders default correctly', () => {
-    const wrapper = shallowMount(CdrCol);
-    expect(wrapper.is('div')).toBe(true);
+    const wrapper = mount(CdrCol);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('has the correct block class', () => {

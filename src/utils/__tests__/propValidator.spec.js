@@ -1,6 +1,6 @@
 import propValidator from '../propValidator';
 
-describe('CdrMediaObject.vue', () => {
+describe('propValidator', () => {
   it('validates correctly', () => {
     const valid = propValidator('a', ['b', 'a']);
     expect(valid).toBeTruthy();
