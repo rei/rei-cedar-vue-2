@@ -37,7 +37,7 @@ exports[`cdrSelect renders helper-text slot 1`] = `
 >
   <label
     class="cdr-select__label"
-    for="50"
+    for="54"
   >
     test 
   </label>
@@ -46,7 +46,7 @@ exports[`cdrSelect renders helper-text slot 1`] = `
   >
     <select
       class="cdr-select  cdr-select cdr-select__prompt"
-      id="50"
+      id="54"
     />
     <icon-caret-down-stub
       class="cdr-select__caret"
@@ -68,7 +68,7 @@ exports[`cdrSelect renders info slot 1`] = `
 >
   <label
     class="cdr-select__label"
-    for="47"
+    for="51"
   >
     test 
   </label>
@@ -82,7 +82,7 @@ exports[`cdrSelect renders info slot 1`] = `
   >
     <select
       class="cdr-select  cdr-select cdr-select__prompt"
-      id="47"
+      id="51"
     />
     <icon-caret-down-stub
       class="cdr-select__caret"
