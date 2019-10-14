@@ -1,7 +1,7 @@
-import { shallowMount } from '@vue/test-utils';
-import { CdrRadio } from 'distdir/cedar.js';
+import { shallowMount, mount } from '@vue/test-utils';
+import CdrRadio from 'componentdir/radio/CdrRadio';
 
-describe('CdrRadio.vue', () => {
+describe('CdrRadio', () => {
   it('renders an input', () => {
     const wrapper = shallowMount(CdrRadio, {
       propsData: {
@@ -9,7 +9,7 @@ describe('CdrRadio.vue', () => {
         name: 'testName',
       }
     });
-    expect(wrapper.vm.$refs.radio.tagName).toBe('INPUT');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('is type radio', () => {
@@ -20,16 +20,6 @@ describe('CdrRadio.vue', () => {
       }
     });
     expect(wrapper.vm.$refs.radio.hasAttribute('type', 'radio')).toBe(true);
-  });
-
-  it('renders a label element', () => {
-    const wrapper = shallowMount(CdrRadio, {
-      propsData: {
-        customValue: 'A',
-        name: 'testName',
-      }
-    });
-    expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
   });
 
   it('adds a custom label class correctly', () => {

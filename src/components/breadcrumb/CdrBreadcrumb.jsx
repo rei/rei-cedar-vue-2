@@ -57,6 +57,7 @@ export default {
       return this.truncate ? (<li
         onClick={this.handleEllipsisClick}
         class={this.style['cdr-breadcrumb__item']}
+        ref="ellipse"
       >
         <button
           aria-expanded="false"

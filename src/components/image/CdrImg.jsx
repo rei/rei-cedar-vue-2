@@ -55,7 +55,7 @@ export default {
      */
     ratioSm: {
       type: String,
-      validator: /* istanbul ignore next */ value => ([
+      validator: value => ([
         'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
         '16-9'].indexOf(value) >= 0) || false,
     },
@@ -64,7 +64,7 @@ export default {
      */
     ratioMd: {
       type: String,
-      validator: /* istanbul ignore next */ value => ([
+      validator: value => ([
         'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
         '16-9'].indexOf(value) >= 0) || false,
     },
@@ -73,7 +73,7 @@ export default {
      */
     ratioLg: {
       type: String,
-      validator: /* istanbul ignore next */ value => ([
+      validator: value => ([
         'auto', 'square', '1-2', '2-3', '3-4', '9-16', '2-1', '3-2', '4-3',
         '16-9'].indexOf(value) >= 0) || false,
     },
@@ -94,7 +94,7 @@ export default {
      */
     radius: {
       type: String,
-      validator: /* istanbul ignore next */ value => ([
+      validator: value => ([
         'circle',
         'rounded'].indexOf(value) >= 0) || false,
     },

@@ -1,12 +1,10 @@
-import { shallowMount } from '@vue/test-utils';
-import { CdrCta } from 'distdir/cedar.js';
+import { shallowMount, mount } from '@vue/test-utils';
+import CdrCta from 'componentdir/cta/CdrCta';
 
-describe('CdrCta.vue', () => {
-  it('validates ctaStyle prop', () => {
-    const wrapper = shallowMount(CdrCta);
-    const ctaStyle = wrapper.vm.$options.props.ctaStyle;
-    expect(ctaStyle.validator('test')).toBe(false);
-    expect(ctaStyle.validator('dark')).toBe(true);
+describe('CdrCta', () => {
+  test('renders correctly', () => {
+    const wrapper = mount(CdrCta);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('adds classes from ctaStyle prop', () => {

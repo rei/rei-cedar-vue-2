@@ -7,10 +7,10 @@ import style from './styles/CdrSelect.scss';
 
 export default {
   name: 'CdrSelect',
-  mixins: [size, space],
   components: {
     IconCaretDown,
   },
+  mixins: [size, space],
   inheritAttrs: false,
   props: {
     /**

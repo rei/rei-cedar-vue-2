@@ -1,18 +1,18 @@
-import { shallowMount } from '@vue/test-utils';
-import { CdrText } from 'distdir/cedar.js';
+import { mount } from '@vue/test-utils';
+import CdrText from 'componentdir/text/CdrText';
 
-describe('CdrText.vue', () => {
-  it('renders as p by default', () => {
-    const wrapper = shallowMount(CdrText);
-    expect(wrapper.is('p')).toBe(true);
+describe('CdrText', () => {
+  test('renders correctly', () => {
+    const wrapper = mount(CdrText);
+    expect(wrapper.element).toMatchSnapshot();
   });
-
+  
   it('renders as h1 correctly', () => {
-    const wrapper = shallowMount(CdrText, {
+    const wrapper = mount(CdrText, {
       propsData: {
         tag: 'h1',
       },
     });
-    expect(wrapper.is('h1')).toBe(true);
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

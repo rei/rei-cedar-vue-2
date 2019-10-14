@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrCheckbox renders correctly 1`] = `
+<div
+  class="cdr-checkbox__wrap"
+>
+  <label
+    class="cdr-checkbox custom-label-class"
+  >
+    <input
+      class="cdr-checkbox__input"
+      type="checkbox"
+    />
+    <span
+      class="cdr-checkbox__figure"
+    />
+    <div
+      class="cdr-checkbox__content"
+    >
+      Label Test
+    </div>
+  </label>
+</div>
+`;

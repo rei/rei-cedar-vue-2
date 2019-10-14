@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrLink renders a link with a button element and no href attribute 1`] = `
+<button
+  class="cdr-link"
+/>
+`;
+
+exports[`CdrLink renders correctly 1`] = `
+<a
+  class="cdr-link"
+  href="#"
+/>
+`;
