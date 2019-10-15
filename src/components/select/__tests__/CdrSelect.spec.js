@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import { CdrSelect } from 'distdir/cedar.js';
 
 describe('cdrSelect.vue', () => {
@@ -83,6 +83,19 @@ describe('cdrSelect.vue', () => {
       }
     });
     expect(wrapper.vm.$refs.select.hasAttribute('disabled')).toBe(true);
+  });
+
+  it('sets select disabled caret classname correctly', () => {
+    const wrapper = mount(CdrSelect, {
+      propsData: {
+        label: 'test',
+      },
+      attrs: {
+        disabled: true,
+      }
+    });
+    const caret = wrapper.find('svg');
+    expect(caret.classes()).toContain('cdr-select__caret--disabled');
   });
 
   it('sets select required attribute correctly', () => {
