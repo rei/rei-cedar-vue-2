@@ -1,9 +1,4 @@
 
-
-
-
-
-
 /* select label */
 @mixin cdr-select-base-label-text-mixin() {
   // TODO: typography token
@@ -166,4 +161,28 @@ $cdr-select-helper-text-pt: $cdr-space-quarter-x;
   color: $cdr-select-helper-text-color;
   padding-left: $cdr-select-helper-text-pl;
   padding-top: $cdr-select-helper-text-pt;
+}
+
+/* caret */
+$cdr-select-base-caret-fill: $cdr-color-icon-primary-lightmode;
+$cdr-select-base-caret-position: absolute;
+$cdr-select-base-caret-top: 50%;
+$cdr-select-base-caret-right: $cdr-space-half-x;
+$cdr-select-base-caret-transform: translateY(-50%);
+$cdr-select-base-caret-pointer-events: none;
+
+@mixin cdr-select-base-caret-mixin() {
+  fill: $cdr-select-base-caret-fill;
+  position: $cdr-select-base-caret-position;
+  top: $cdr-select-base-caret-top;
+  right: $cdr-select-base-caret-right;
+  transform: $cdr-select-base-caret-transform;
+  pointer-events: $cdr-select-base-caret-pointer-events;
+}
+
+/* caret disabled */
+$cdr-select-base-caret-color-disabled: $cdr-color-text-disabled-lightmode;
+
+@mixin cdr-select-base-caret-disabled-mixin() {
+  fill: $cdr-select-base-caret-color-disabled;
 }

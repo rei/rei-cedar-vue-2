@@ -7,10 +7,10 @@ import style from './styles/CdrSelect.scss';
 
 export default {
   name: 'CdrSelect',
-  mixins: [size, space],
   components: {
     IconCaretDown,
   },
+  mixins: [size, space],
   inheritAttrs: false,
   props: {
     /**
@@ -73,6 +73,12 @@ export default {
       return {
         [this.style['cdr-select__label']]: true,
         [this.style['cdr-select__label--disabled']]: this.disabled,
+      };
+    },
+    caretClass() {
+      return {
+        [this.style['cdr-select__caret']]: true,
+        [this.style['cdr-select__caret--disabled']]: this.disabled,
       };
     },
     selectWrapClass() {
@@ -228,7 +234,7 @@ export default {
         <div class={this.selectWrapClass}>
           {this.selectEl}
           <icon-caret-down
-          class={this.style['cdr-select__caret']}
+          class={this.caretClass}
           />
         </div>
         {this.helperEl}
