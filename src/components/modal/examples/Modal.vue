@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Components from 'srcdir/index';
+import * as Components from 'srcdir/index';
 
 export default {
   name: 'Modal',

@@ -12,6 +12,7 @@ import images from 'componentsdir/image/examples/Images';
 import inputs from 'componentsdir/input/examples/Inputs';
 import links from 'componentsdir/link/examples/Links';
 import lists from 'componentsdir/list/examples/Lists';
+import modals from 'componentsdir/modal/examples/Modal';
 import pagination from 'componentsdir/pagination/examples/Pagination';
 import quoteExample from 'componentsdir/quote/examples/Quote';
 import radios from 'componentsdir/radio/examples/Radios';
@@ -39,6 +40,7 @@ export default {
   inputs,
   links,
   lists,
+  modals,
   pagination,
   quoteExample,
   radios,

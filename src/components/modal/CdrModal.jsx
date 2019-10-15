@@ -1,9 +1,17 @@
 import tabbable from 'tabbable';
 import style from './styles/CdrModal.scss';
 import onTransitionEnd from './onTransitionEnd';
+import CdrButton from '../button/CdrButton';
+import CdrIcon from '../icon/CdrIcon';
+import CdrText from '../text/CdrText';
 
 export default {
   name: 'CdrModal',
+  components: {
+    CdrButton,
+    CdrIcon,
+    CdrText,
+  },
   props: {
     opened: {
       type: Boolean,
@@ -220,6 +228,39 @@ export default {
                 : undefined
               }
             >
+              {/* <section>
+                <div class={this.style['pdp-modal__content']}>
+                  <div class={this.style['pdp-modal__header']}>
+                    <div class={this.style['pdp-modal__title']}>
+                      <cdr-text></cdr-text>
+                    </div>
+                    <cdr-button
+                      id="close-modal-button"
+                      class="pdp-modal__close-button"
+                      :icon-only="true"
+                      :on-click="closeModal"
+                      aria-label="close"
+                    >
+                      <cdr-icon
+                        slot="icon"
+                        class="cdr-button__icon"
+                        use="#x-lg"
+                        inherit-color
+                      />
+                    </cdr-button>
+                  </div>
+                  <div
+                    role="document"
+                    tabindex="0"
+                    class="pdp-modal__text"
+                  >
+                    <div class="pdp-modal__text-content">
+                      <slot />
+                    </div>
+                    <div class="pdp-modal__text-fade" />
+                  </div>
+                </div>
+              </section> */}
               {defaultSlot}
             </div>
           </div>
