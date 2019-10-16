@@ -1,8 +1,8 @@
 const hover = require('./hover');
 const focus = require('./focus');
 
-module.exports = (chromy, scenario, vp) => {
-  hover(chromy, scenario);
-  focus(chromy, scenario);
+module.exports = async (page, scenario, vp) => {
+  await hover(page, scenario);
+  await focus(page, scenario);
   // add more ready handlers here...
 };
