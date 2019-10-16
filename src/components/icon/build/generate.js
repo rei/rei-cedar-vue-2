@@ -52,7 +52,7 @@ export default {
   },
   extends: CdrIcon,
   render() {
-    return (<cdr-icon {...this.$props}>
+    return (<cdr-icon {...{props: this.$props} }>
       {this.$slots.default}
       ${innerHTML.trim()}
     </cdr-icon>)
