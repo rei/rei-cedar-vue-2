@@ -121,26 +121,28 @@ export default {
           ))}
           {this.remainderEl }
         </div>
-        <span
-          aria-hidden="true"
-          class={this.style['cdr-rating__count']}
-        >
-          {this.href
-            && <span class={this.style['cdr-rating__number']}>
-              { this.rounded }
-            </span>
-          }
+        {this.count
+          ? <span
+            aria-hidden="true"
+            class={this.style['cdr-rating__count']}
+          >
+            {this.href
+              && <span class={this.style['cdr-rating__number']}>
+                { this.rounded }
+              </span>
+            }
 
-          <span>
-            { this.formattedCount }
-          </span>
-
-          {!this.compact
-            && <span>
-              &nbsp;Reviews
+            <span>
+              { this.formattedCount }
             </span>
-          }
-        </span>
+
+            {!this.compact
+              && <span>
+                &nbsp;Reviews
+              </span>
+            }
+          </span> : ''
+        }
 
         <span class="cdr-display-sr-only">
           rated { this.rounded } out of 5 with { this.count } reviews
