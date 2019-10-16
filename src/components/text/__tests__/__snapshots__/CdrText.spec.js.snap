@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrText renders as h1 correctly 1`] = `
+<h1
+  class="cdr-text"
+/>
+`;
+
+exports[`CdrText renders correctly 1`] = `
+<p
+  class="cdr-text"
+/>
+`;

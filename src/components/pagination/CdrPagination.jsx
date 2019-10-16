@@ -26,7 +26,7 @@ export default {
     pages: {
       type: Array,
       required: true,
-      validator: /* istanbul ignore next */ (value) => {
+      validator: (value) => {
         const result = value.every((obj) => {
           if (!Object.prototype.hasOwnProperty.call(obj, 'page')
           || typeof obj.page !== 'number') {

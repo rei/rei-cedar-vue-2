@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrCaption renders correctly 1`] = `
+<div
+  class="cdr-caption cdr-space-inset-one-x-squish"
+>
+  <p
+    class="cdr-caption__summary"
+  >
+    This is a summary
+  </p>
+  <cite
+    class="cdr-text cdr-text--citation"
+  >
+    This is a credit
+  </cite>
+</div>
+`;

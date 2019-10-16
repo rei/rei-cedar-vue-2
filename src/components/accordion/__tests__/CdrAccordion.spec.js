@@ -1,6 +1,5 @@
-import { shallowMount } from '@vue/test-utils';
-import { CdrAccordion } from 'distdir/cedar.js';
-import sinon from 'sinon';
+import { shallowMount, mount } from '@vue/test-utils';
+import CdrAccordion from 'componentdir/accordion/CdrAccordion';
 
 const propsData = {
   id: 'test',
@@ -10,6 +9,19 @@ const propsData = {
 };
 
 describe('CdrAccordion', () => {
+  test('renders correctly', () => {
+    const wrapper = shallowMount(CdrAccordion, {
+      propsData: {
+        id: 'test',
+        label: 'label',
+      },
+      slots: {
+        default: 'This is some slot text.'
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot()
+  });
+
   describe('accordion data setup', () => {
     it('sets maxHeight when starting closed', () => {
       const wrapper = shallowMount(CdrAccordion, {
@@ -97,8 +109,11 @@ describe('CdrAccordion', () => {
         default: 'This is some slot text.'
       },
     });
-    wrapper.setData({ focused: true });
+    wrapper.find('button').trigger('focus');
+    expect(wrapper.vm.focused).toBeTruthy();
     expect(wrapper.classes()).toContain('cdr-accordion--focused');
+    wrapper.find('button').trigger('blur');
+    expect(wrapper.vm.focused).toBeFalsy();
   });
 
   it('style class checks prop values', () => {

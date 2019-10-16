@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrPagination renders correctly 1`] = `
+<nav
+  aria-label="Pagination Navigation"
+>
+  <ul
+    class="cdr-pagination"
+  >
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-current="true"
+        aria-label="Current page, page 1"
+        class="cdr-pagination__link current"
+        href="?page=1"
+      >
+        1
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 2"
+        class="cdr-pagination__link"
+        href="?page=2"
+      >
+        2
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 3"
+        class="cdr-pagination__link"
+        href="?page=3"
+      >
+        3
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 4"
+        class="cdr-pagination__link"
+        href="?page=4"
+      >
+        4
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 5"
+        class="cdr-pagination__link"
+        href="?page=5"
+      >
+        5
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <span
+        class="cdr-pagination__ellipse"
+      >
+        …
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 20"
+        class="cdr-pagination__link"
+        href="?page=20"
+      >
+        20
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--select"
+    >
+      <div
+        class="cdr-pagination__select"
+      >
+        <div
+          class="cdr-select-wrap"
+        >
+          <select
+            aria-label="Navigate to page"
+            class="cdr-select  cdr-select cdr-select__prompt"
+            id="2"
+          >
+            <option
+              value="?page=1"
+            >
+              Page 1
+            </option>
+            <option
+              value="?page=2"
+            >
+              Page 2
+            </option>
+            <option
+              value="?page=3"
+            >
+              Page 3
+            </option>
+            <option
+              value="?page=4"
+            >
+              Page 4
+            </option>
+            <option
+              value="?page=5"
+            >
+              Page 5
+            </option>
+            <option
+              value="?page=20"
+            >
+              Page 20
+            </option>
+          </select>
+          <svg
+            class="cdr-icon  cdr-select__caret"
+            role="presentation"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 0 0-1.414-1.414L12 13.586 7.705 9.29a1 1 0 0 0-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
+            />
+          </svg>
+        </div>
+      </div>
+    </li>
+    <li>
+      <a
+        aria-label="Go to next page"
+        class="cdr-pagination__link cdr-pagination__next"
+        href="?page=2"
+        page="2"
+      >
+        Next
+        <svg
+          class="cdr-icon  cdr-pagination__caret--next"
+          role="presentation"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 12a.997.997 0 0 0-.288-.702l-5.005-5.005a1 1 0 0 0-1.414 1.414L13.585 12 9.29 16.295a1 1 0 0 0 1.417 1.412l4.98-4.98A.997.997 0 0 0 16 12z"
+          />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

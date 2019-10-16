@@ -1,12 +1,12 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import sinon from 'sinon';
-import { CdrLink } from 'distdir/cedar.js';
-// import CdrThemer from 'componentsdir/themer/CdrThemer';
+import CdrLink from 'componentdir/link/CdrLink';
+// import CdrThemer from 'componentdir/themer/CdrThemer';
 
-describe('CdrLink.vue', () => {
-  it('renders an anchor by default', () => {
-    const wrapper = shallowMount(CdrLink);
-    expect(wrapper.is('a')).toBeTruthy();
+describe('CdrLink', () => {
+  test('renders correctly', () => {
+    const wrapper = mount(CdrLink);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('sets target attr correctly', () => {
@@ -48,7 +48,6 @@ describe('CdrLink.vue', () => {
 
   it('computes the base class correctly', () => {
     const wrapper = shallowMount(CdrLink);
-    // expect(wrapper.classes().length).toBe(1);
     expect(wrapper.classes()).toContain('cdr-link');
   });
 
@@ -62,13 +61,12 @@ describe('CdrLink.vue', () => {
   });
 
   it('renders a link with a button element and no href attribute', () => {
-    const wrapper = shallowMount(CdrLink, {
+    const wrapper = mount(CdrLink, {
       propsData: {
         tag: 'button',
       },
     });
-    expect(wrapper.is('button')).toBe(true);
-    expect(wrapper.attributes().href).toBe(undefined);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('emits a click', () => {

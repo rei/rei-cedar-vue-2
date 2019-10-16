@@ -41,6 +41,7 @@ backstop_data/bitmaps_test
 backstop_data/html_report
 test/e2e/reports
 test/unit/coverage
+coverage/
 
 # Build assets
 **/dist/*

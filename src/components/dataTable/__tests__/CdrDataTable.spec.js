@@ -1,6 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import { CdrDataTable } from 'distdir/cedar.js';
-import sinon from 'sinon';
+import CdrDataTable from 'componentdir/dataTable/CdrDataTable';
 
 const data = {
   colHeaders: ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
@@ -54,7 +53,7 @@ const data = {
   ],
 };
 
-describe('CdrDataTable.vue', () => {
+describe('CdrDataTable', () => {
 
   describe('mounted hook', () => {
     it('sets hasColHeaders, hasRowHeaders with boolean', () => {
@@ -84,8 +83,6 @@ describe('CdrDataTable.vue', () => {
     });
 
     it('adds resize event watcher', (done) => {
-      const checkScroll = sinon.spy(CdrDataTable.methods, 'checkScroll');
-      
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: data.colHeaders,
@@ -100,10 +97,11 @@ describe('CdrDataTable.vue', () => {
         },
       });
       
+      const spy = spyOn(wrapper.vm, 'checkScroll');
       window.dispatchEvent(new Event('resize'));
       
       wrapper.vm.$nextTick(() => {
-        sinon.assert.called(checkScroll);
+        expect(spy).toHaveBeenCalled();
         done()
       });
     });

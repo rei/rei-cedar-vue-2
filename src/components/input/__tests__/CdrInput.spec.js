@@ -1,34 +1,25 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import sinon from 'sinon';
-import { CdrInput } from 'distdir/cedar.js';
+import CdrInput from 'componentdir/input/CdrInput';
 
-describe('CdrInput.vue', () => {
+describe('CdrInput', () => {
   it('renders a label element', () => {
-    const wrapper = shallowMount(CdrInput, {
+    const wrapper = mount(CdrInput, {
       propsData: {
         label: 'Label Test',
       },
     });
-    expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
-  });
-
-  it('renders label correctly', () => {
-    const wrapper = shallowMount(CdrInput, {
-      propsData: {
-        label: 'Label Test',
-      },
-    });
-    expect(wrapper.vm.$refs.label.textContent.trim()).toBe('Label Test');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders required label correctly', () => {
-    const wrapper = shallowMount(CdrInput, {
+    const wrapper = mount(CdrInput, {
       propsData: {
         label: 'Label Test',
         required: true,
       },
     });
-    expect(wrapper.vm.$refs.label.children[0].textContent.trim()).toBe('Required');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('maps input id to label for correctly', () => {

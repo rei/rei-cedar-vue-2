@@ -1,7 +1,7 @@
-import { shallowMount } from '@vue/test-utils';
-import { CdrRow } from 'distdir/cedar.js';
+import { shallowMount, mount } from '@vue/test-utils';
+import CdrRow from 'componentdir/grid/CdrRow';
 
-describe('CdrRow.vue', () => {
+describe('CdrRow', () => {
   it('sets type prop correctly', () => {
     const wrapper = shallowMount(CdrRow, {
       propsData: {
@@ -12,17 +12,17 @@ describe('CdrRow.vue', () => {
   });
 
   it('renders as list type correctly', () => {
-    const wrapper = shallowMount(CdrRow, {
+    const wrapper = mount(CdrRow, {
       propsData: {
         type: 'list',
       },
     });
-    expect(wrapper.is('ul')).toBe(true);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders default type correctly', () => {
-    const wrapper = shallowMount(CdrRow);
-    expect(wrapper.is('div')).toBe(true);
+    const wrapper = mount(CdrRow);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('computes cols classes correctly', () => {
