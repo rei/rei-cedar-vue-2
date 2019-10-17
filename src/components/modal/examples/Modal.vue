@@ -1,6 +1,23 @@
 <template>
   <div>
-    <h2>modal</h2>
+    <cdr-text
+      tag="h2"
+      modifier="heading-600 heading-700@md heading-700@lg"
+    >
+      Modal
+    </cdr-text>
+    <cdr-modal
+      label="my modal"
+      :opened="opened"
+      :close-modal="closeModal"
+    >
+      Modal text, bro.
+    </cdr-modal>
+
+    <cdr-button
+      @click="opened = !opened"
+    >Toggle
+    </cdr-button>
   </div>
 </template>
 
@@ -11,6 +28,16 @@ export default {
   name: 'Modal',
   components: {
     ...Components,
+  },
+  data() {
+    return {
+      opened: false,
+    };
+  },
+  methods: {
+    closeModal() {
+      this.opened = !this.opened;
+    },
   },
 };
 </script>
