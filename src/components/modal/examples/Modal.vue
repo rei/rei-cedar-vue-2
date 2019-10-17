@@ -10,6 +10,7 @@
       label="my modal"
       :opened="opened"
       :close-modal="closeModal"
+      wrapper-class="wrapper-test-class"
     >
       Modal text, bro.
     </cdr-modal>

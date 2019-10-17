@@ -4,6 +4,7 @@ import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
 import CdrIcon from '../icon/CdrIcon';
 import CdrText from '../text/CdrText';
+import clsx from 'clsx';
 
 export default {
   name: 'CdrModal',
@@ -228,17 +229,17 @@ export default {
                 : undefined
               }
             >
-              {/* <section>
+              <section>
                 <div class={this.style['pdp-modal__content']}>
                   <div class={this.style['pdp-modal__header']}>
                     <div class={this.style['pdp-modal__title']}>
-                      <cdr-text></cdr-text>
+                      <cdr-text>{this.label}</cdr-text>
                     </div>
                     <cdr-button
                       id="close-modal-button"
                       class="pdp-modal__close-button"
-                      :icon-only="true"
-                      :on-click="closeModal"
+                      icon-only={true}
+                      on-click={closeModal}
                       aria-label="close"
                     >
                       <cdr-icon
@@ -255,13 +256,12 @@ export default {
                     class="pdp-modal__text"
                   >
                     <div class="pdp-modal__text-content">
-                      <slot />
+                      {defaultSlot}
                     </div>
                     <div class="pdp-modal__text-fade" />
                   </div>
                 </div>
-              </section> */}
-              {defaultSlot}
+              </section>
             </div>
           </div>
           {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
