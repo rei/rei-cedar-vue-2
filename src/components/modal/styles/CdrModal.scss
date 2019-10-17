@@ -99,3 +99,74 @@ $modalBorderRadius: .5rem;
     padding: 1.6rem;
   }
 }
+
+$dialog-margins-vertical: $cdr-space-four-x * 2; // 12.8rem
+$dialog-padding-vertical: $cdr-space-one-and-a-half-x; // 2.4rem
+$header-padding-bottom: $cdr-space-one-x; // 1.6rem
+$title-line-height: $cdr-space-two-x; // 3.2rem
+
+// total up internal padding to get max height of text
+$header-height: $header-padding-bottom + $title-line-height;
+$modal-total-padding: #{$dialog-margins-vertical + $header-height + $dialog-padding-vertical * 2};
+$modal-text-max-height: calc(100vh - #{$modal-total-padding});
+
+::v-deep .pdp-modal {
+  &__dialog {
+    max-height: calc(100vh - #{$dialog-margins-vertical});
+    max-width: 60rem;
+    padding: $dialog-padding-vertical;
+
+     &.large {
+      max-width: 80rem;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__header {
+    display: flex;
+    padding: 0 0 $header-padding-bottom 0;
+  }
+
+  &__title {
+    flex: auto;
+    padding-right: $cdr-space-three-quarter-x;
+  }
+
+  &__close-button {
+    flex: none;
+    padding: 0 0 0 $cdr-space-quarter-x !important;
+    margin-right: -$cdr-space-half-x;
+  }
+
+  &__text {
+    padding: 0;
+    position: relative;
+  }
+
+  &__text-content {
+    max-height: $modal-text-max-height;
+    overflow: auto;
+
+    /* ie/edge/ff bug prevents using padding */
+    &::after {
+      content: "";
+      display: block;
+      height: $cdr-space-two-x;
+      width: 100%;
+    }
+  }
+
+  &__text-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $cdr-space-two-x;
+    width: 98%;
+    /* full transparency doesn't fly on safari */
+    background: linear-gradient(rgba(255,255,255,0.001), rgba(255,255,255,1));
+    background-attachment: scroll;
+  }
+}
