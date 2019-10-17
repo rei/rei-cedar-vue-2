@@ -25,6 +25,9 @@ new Vue({
   components: {
     CdrIconSprite,
   },
+  mounted() {
+    console.log('BACKSTOP_READY');
+  },
   data() {
     return {
       routes,

@@ -1,14 +1,12 @@
-// utilities
-// const _ = require('lodash');
 const glob = require('glob');
 
-// variables
 const scenariosArr = [];
 let defs = [];
 const scenarioDefaults = {
   url: 'http://localhost:3000',
   misMatchThreshold: 0.1,
-  readyEvent: null,
+  readyEvent: 'BACKSTOP_READY',
+  delay: 500,
   onReadyScript: 'onReady.js',
 };
 
@@ -41,13 +39,13 @@ defs.forEach((def) => {
   if (Object.prototype.hasOwnProperty.call(currDef, 'hoverSelectors')) {
     const { hoverSelectors } = currDef;
     delete currDef.hoverSelectors;
-    splitScenario(currDef, 'hover', hoverSelectors, { hoverWait: 1000 });
+    splitScenario(currDef, 'hover', hoverSelectors);
   }
 
   if (Object.prototype.hasOwnProperty.call(currDef, 'focusSelectors')) {
     const { focusSelectors } = currDef;
     delete currDef.focusSelectors;
-    splitScenario(currDef, 'focus', focusSelectors, { focusWait: 1000 });
+    splitScenario(currDef, 'focus', focusSelectors);
   }
 
   createScenario(currDef);
@@ -85,8 +83,9 @@ module.exports = {
     html_report: 'backstop_data/html_report',
     ci_report: 'backstop_data/ci_report',
   },
-  asyncCaptureLimit: 5,
-  asyncCompareLimit: 10,
+  asyncCaptureLimit: 4,
+  asyncCompareLimit: 8,
+  puppeteerOffscreenCaptureFix: true,
   engine: 'puppeteer',
   report: ['browser'],
   debug: false,
