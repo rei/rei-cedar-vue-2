@@ -6,6 +6,7 @@ describe('cdrSelect', () => {
     const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'Label Test',
+        id: 'renders'
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -16,6 +17,7 @@ describe('cdrSelect', () => {
       propsData: {
         label: 'Label Test',
         required: true,
+        id: 'required-label'
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -230,6 +232,7 @@ describe('cdrSelect', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
+        id: 'info-slot'
       },
       slots: {
         'info': '🤠',
@@ -242,6 +245,7 @@ describe('cdrSelect', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
+        id: 'helper-text'
       },
       slots: {
         'helper-text': 'very helpful',
