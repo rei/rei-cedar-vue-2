@@ -11,7 +11,7 @@ files.forEach((file) => {
   sass.render({
     file: `./src/css/${file}.scss`,
     outputStyle: 'compressed',
-    importer: tildeImporter,
+    importer: tildeImporter(),
   }, function(err, result) {
     if (err) {
       console.log(chalk.red('error!', err));
