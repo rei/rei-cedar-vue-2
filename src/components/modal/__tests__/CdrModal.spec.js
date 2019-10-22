@@ -137,17 +137,16 @@ describe('CdrModal.vue', () => {
   });
 
   fit('handleKeyDown', () => {
-    sinon.spy(document, 'addEventListener');
-    const spy = sinon.spy();
     const wrapper = mount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: spy,
+        closeModal: () => { console.log('closeModal function')},
         label: "My Modal Label",
       },
+      attachToDocument: true,
     });
 
-    window.dispatchEvent(new Event('keydown'));
-    expect(spy.called).toBeTruthy();
+    console.log('TRIGGERING');
+    wrapper.trigger('keydown.esc');
   });
 });
