@@ -67,6 +67,10 @@ describe('CdrModal.vue', () => {
     
     wrapper.vm.$nextTick(() => {
       expect(anotherSpy.called).toBeTruthy();
+      setTimeout(() => {
+        const modal = wrapper.find({ ref: wrapper });
+        console.log('scrollTop', modal.scrollTop);
+      });
     });
   });
 
@@ -83,6 +87,7 @@ describe('CdrModal.vue', () => {
     console.log(wrapper.animationDuration);
     wrapper.setProps({ opened: false });
     expect(document.removeEventListener.calledWith('keydown'));
+    
     wrapper.vm.$nextTick(() => {
       console.log('nextTick');
     });
@@ -131,7 +136,8 @@ describe('CdrModal.vue', () => {
     expect(document.addEventListener.calledWith('keydown'));
   });
 
-  xit('handleKeyDown', () => {
+  fit('handleKeyDown', () => {
+    sinon.spy(document, 'addEventListener');
     const spy = sinon.spy();
     const wrapper = mount(CdrModal, {
       propsData: {
@@ -141,16 +147,7 @@ describe('CdrModal.vue', () => {
       },
     });
 
-    // const modal = wrapper.find({ ref: 'modal' });
-    // modal.trigger('keydown', {
-    //   key: 'Escape'
-    // })
-
-    wrapper.trigger('keydown', {
-      key: 'Escape'
-    });
-
-    console.log('')
+    window.dispatchEvent(new Event('keydown'));
     expect(spy.called).toBeTruthy();
   });
 });

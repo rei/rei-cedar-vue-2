@@ -70,7 +70,7 @@ export default {
     document.removeEventListener('keydown', this.keyHandler);
   },
   methods: {
-    handleKeyDown({ key }) {
+    handleKeyDown(key) {
       console.log('handleKeyDown', key);
       switch (key) {
         case 'Escape':
@@ -120,6 +120,7 @@ export default {
       this.unsubscribe = onTransitionEnd(
         this.$refs.wrapper,
         () => {
+          console.log('ontTransitionEnd');
           this.unsubscribe();
           this.removeNoScroll();
           this.unsubscribe = null;
