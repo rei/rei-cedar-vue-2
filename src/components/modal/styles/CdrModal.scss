@@ -110,7 +110,7 @@ $header-height: $header-padding-bottom + $title-line-height;
 $modal-total-padding: #{$dialog-margins-vertical + $header-height + $dialog-padding-vertical * 2};
 $modal-text-max-height: calc(100vh - #{$modal-total-padding});
 
-::v-deep .pdp-modal {
+.pdp-modal {
   &__dialog {
     max-height: calc(100vh - #{$dialog-margins-vertical});
     max-width: 60rem;
