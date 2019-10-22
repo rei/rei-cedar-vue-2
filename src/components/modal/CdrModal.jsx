@@ -70,8 +70,7 @@ export default {
     document.removeEventListener('keydown', this.keyHandler);
   },
   methods: {
-    handleKeyDown(key) {
-      console.log('handleKeyDown', key);
+    handleKeyDown({ key }) {
       switch (key) {
         case 'Escape':
           this.closeModal();
@@ -80,6 +79,7 @@ export default {
       }
     },
     handleFocus(e) {
+      console.log('handleFocus', e);
       const { documentElement } = document;
       if (this.$refs.modal.contains(e.target) || !documentElement) return;
 
@@ -94,9 +94,9 @@ export default {
       documentElement.scrollLeft = this.scrollLeft;
     },
     handleOpened() {
-      console.log('handleOpened');
+      // console.log('handleOpened');
       const { activeElement } = document;
-      console.log('activeelement', activeElement);
+      // console.log('activeelement', activeElement);
 
       this.addNoScroll();
       this.reallyClosed = false;
@@ -114,7 +114,6 @@ export default {
       });
     },
     handleClosed() {
-      console.log('handleClosed');
       document.removeEventListener('keydown', this.keyHandler);
 
       this.unsubscribe = onTransitionEnd(
@@ -132,7 +131,7 @@ export default {
           document.removeEventListener('focusin', this.focusHandler, true);
 
           if (this.lastActive) this.lastActive.focus();
-          console.log('ontransitionEnd');
+          // console.log('ontransitionEnd');
         },
         this.animationDuration + 16,
       );

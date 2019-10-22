@@ -4,44 +4,66 @@ import sinon from 'sinon';
 
 describe('CdrModal.vue', () => {
   it('sets up noScroll, handlers when initialized open', () => {
-    const spy = sinon.spy();
-    const anotherSpy = sinon.spy();
+    const spyAddNoScroll = sinon.spy();
+    const spyAddHandlers = sinon.spy();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: spy,
+        closeModal: () => {},
         label: "My Modal Label",
       },
       methods: {
-        addNoScroll: spy,
-        addHandlers: anotherSpy,
+        addNoScroll: spyAddNoScroll,
+        addHandlers: spyAddHandlers,
       },
     });
 
-    expect(spy.called).toBeTruthy();
-    expect(anotherSpy.called).toBeTruthy();    
+    expect(spyAddNoScroll.called).toBeTruthy();
+    expect(spyAddHandlers.called).toBeTruthy();
   });
 
   it('calls correct function on opened prop update', () => {
-    const spy = sinon.spy();
-    const anotherSpy = sinon.spy();
+    const spyHandleOpened = sinon.spy();
+    const spyHandleClosed = sinon.spy();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: false,
-        closeModal: spy,
+        closeModal: () => {},
         label: "My Modal Label",
       },
       methods: {
-        handleOpened: spy,
-        handleClosed: anotherSpy,
+        handleOpened: spyHandleOpened,
+        handleClosed: spyHandleClosed,
       },
     });
 
     wrapper.setProps({ opened: true });
-    expect(spy.called).toBeTruthy();
+    expect(spyHandleOpened.called).toBeTruthy();
     
     wrapper.setProps({ opened: false });
-    expect(anotherSpy.called).toBeTruthy();
+    expect(spyHandleClosed.called).toBeTruthy();
+  });
+
+  it('handleKeyDown', () => {
+    const spyCloseModal = sinon.spy();
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        closeModal: spyCloseModal,
+        label: "My Modal Label",
+      },
+      attachToDocument: true,
+    });
+
+    wrapper.trigger('keydown', {
+      key: 'a',
+    });
+    expect(spyCloseModal.called).toBeFalsy()
+
+    wrapper.trigger('keydown', {
+      key: 'Escape',
+    });
+    expect(spyCloseModal.called).toBeTruthy();
   });
 
   it('handleOpened', () => {
@@ -50,7 +72,7 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: false,
-        closeModal: sinon.spy(),
+        closeModal: () => {},
         label: "My Modal Label",
       },
       methods: {
@@ -74,19 +96,28 @@ describe('CdrModal.vue', () => {
     });
   });
 
-  xit('handleClosed', () => {
+  it('handleClosed', () => {
+    // jest.useFakeTimers();
     sinon.spy(document, 'removeEventListener');
+    // sinon.spy(window, 'scrollTo');
     const wrapper = mount(CdrModal, {
       propsData: {
         opened: true,
         closeModal: sinon.spy(),
         label: "My Modal Label",
       },
+      methods: {
+        removeNoScroll: sinon.spy(),
+      },
     });
 
-    console.log(wrapper.animationDuration);
-    wrapper.setProps({ opened: false });
+    // wrapper.setProps({ opened: false });
     expect(document.removeEventListener.calledWith('keydown'));
+    // expect(window.scrollTo).toHaveBeenCalled();
+    // expect(removeNoScroll.called).toBeTruthy();
+    // expect(wrapper.vm.reallyClosed).toBe(true);
+    // console.log('reallyClosed', wrapper.vm.reallyClosed);
+    expect(document.removeEventListener.calledWith('focusin'));
     
     wrapper.vm.$nextTick(() => {
       console.log('nextTick');
@@ -97,7 +128,7 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: sinon.spy(),
+        closeModal: () => {},
         label: "My Modal Label",
       },
     });
@@ -111,7 +142,7 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: sinon.spy(),
+        closeModal: () => {},
         label: "My Modal Label",
       },
     });
@@ -127,26 +158,12 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: sinon.spy(),
+        closeModal: () => {},
         label: "My Modal Label",
       },
     });
 
     expect(document.addEventListener.calledWith('focusin'));
     expect(document.addEventListener.calledWith('keydown'));
-  });
-
-  fit('handleKeyDown', () => {
-    const wrapper = mount(CdrModal, {
-      propsData: {
-        opened: true,
-        closeModal: () => { console.log('closeModal function')},
-        label: "My Modal Label",
-      },
-      attachToDocument: true,
-    });
-
-    console.log('TRIGGERING');
-    wrapper.trigger('keydown.esc');
   });
 });
