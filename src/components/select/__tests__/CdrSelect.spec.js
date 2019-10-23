@@ -6,6 +6,7 @@ describe('cdrSelect', () => {
     const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'Label Test',
+        id: 'renders'
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -16,6 +17,7 @@ describe('cdrSelect', () => {
       propsData: {
         label: 'Label Test',
         required: true,
+        id: 'required-label'
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -72,6 +74,19 @@ describe('cdrSelect', () => {
       }
     });
     expect(wrapper.vm.$refs.select.hasAttribute('disabled')).toBe(true);
+  });
+
+  it('sets select disabled caret classname correctly', () => {
+    const wrapper = mount(CdrSelect, {
+      propsData: {
+        label: 'test',
+      },
+      attrs: {
+        disabled: true,
+      }
+    });
+    const caret = wrapper.find('svg');
+    expect(caret.classes()).toContain('cdr-select__caret--disabled');
   });
 
   it('sets select required attribute correctly', () => {
@@ -217,6 +232,7 @@ describe('cdrSelect', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
+        id: 'info-slot'
       },
       slots: {
         'info': '🤠',
@@ -229,6 +245,7 @@ describe('cdrSelect', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
+        id: 'helper-text'
       },
       slots: {
         'helper-text': 'very helpful',
