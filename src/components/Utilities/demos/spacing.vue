@@ -8,12 +8,10 @@
     </cdr-text>
 
     <div
-      v-for="category in categories"
-      :key="category"
-      :data-backstop="`spacing-${category.backstop}-utilities`"
+      :data-backstop="`spacing-${category}-utilities`"
     >
       <template
-        v-for="type in category.types"
+        v-for="type in types"
       >
         <template
           v-for="(v,k,i) in spaceTokens"
@@ -55,13 +53,13 @@ export default {
   components: {
     CdrText,
   },
+  props: {
+    category: String,
+    types: Array,
+  },
   data() {
     return {
       tokens,
-      categories: [
-        { backstop: 'padding', types: ['pt', 'pr', 'pb', 'pl', 'px', 'py'] },
-        { backstop: 'margin', types: ['mt', 'mr', 'mb', 'ml', 'mx', 'my'] },
-      ],
     };
   },
   computed: {

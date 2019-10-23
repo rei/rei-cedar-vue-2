@@ -1,7 +1,7 @@
 module.exports = [
   {
     url: 'http://localhost:3000/#/visibility-utilities',
-    label: 'Visibility Utility classes',
+    label: 'Visibility Utilities',
     responsive: true,
     selectors: [
       '[data-backstop="visibility-utilities"]',
@@ -9,7 +9,7 @@ module.exports = [
   },
   {
     url: 'http://localhost:3000/#/align-utilities',
-    label: 'Align Utility classes',
+    label: 'Align Utilities',
     responsive: true,
     selectors: [
       '[data-backstop="align-utilities"]',
@@ -17,24 +17,25 @@ module.exports = [
   },
   {
     url: 'http://localhost:3000/#/container-utilities',
-    label: 'Container Utility classes',
+    label: 'Container Utilities',
     responsive: true,
     selectors: [
       '[data-backstop="utility-container"]',
     ],
   },
   {
-    url: 'http://localhost:3000/#/spacing-utilities',
-    label: 'Spacing Utility classes',
+    url: 'http://localhost:3000/#/margin-spacing-utilities',
+    label: 'Margin Spacing Utilities',
     responsive: true,
-    selectors: [
-      '[data-backstop="spacing-padding-utilities"]',
-      '[data-backstop="spacing-margin-utilities"]',
-    ],
+  },
+  {
+    url: 'http://localhost:3000/#/padding-spacing-utilities',
+    label: 'Padding Spacing Utilities',
+    responsive: true,
   },
   {
     url: 'http://localhost:3000/#/inset-utilities',
-    label: 'Inset Utility classes',
+    label: 'Inset Utilities',
     responsive: true,
     selectors: [
       '[data-backstop="inset-space-utilities"]',

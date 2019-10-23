@@ -27,7 +27,8 @@ import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
 import Utilities from 'componentsdir/Utilities/Utilities';
 import InsetUtilities from 'componentsdir/Utilities/demos/inset';
-import SpacingUtilities from 'componentsdir/Utilities/demos/spacing';
+import PaddingSpacingUtilities from 'componentsdir/Utilities/demos/paddingSpacing';
+import MarginSpacingUtilities from 'componentsdir/Utilities/demos/marginSpacing';
 import ContainerUtilities from 'componentsdir/Utilities/demos/container';
 import AlignUtilities from 'componentsdir/Utilities/demos/align';
 import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
@@ -61,7 +62,8 @@ const routes = [
   { path: '/secondary-buttons', component: SecondaryButtons },
   { path: '/full-width-buttons', component: FullWidthButtons },
   { path: '/icon-buttons', component: IconButtons },
-  { path: '/spacing-utilities', component: SpacingUtilities },
+  { path: '/padding-spacing-utilities', component: PaddingSpacingUtilities },
+  { path: '/margin-spacing-utilities', component: MarginSpacingUtilities },
   { path: '/inset-utilities', component: InsetUtilities },
   { path: '/container-utilities', component: ContainerUtilities },
   { path: '/align-utilities', component: AlignUtilities },
