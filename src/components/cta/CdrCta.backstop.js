@@ -29,5 +29,5 @@ module.exports = [
     selectors: [
       '[data-backstop="cdr-cta--full-width-responsive"]',
     ],
-  }
+  },
 ];

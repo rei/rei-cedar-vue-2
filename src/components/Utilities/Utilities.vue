@@ -5,9 +5,9 @@
     <align />
 
     <visibility />
-    
+
     <inset />
-    
+
     <spacing />
 
   </div>
@@ -32,7 +32,7 @@ export default {
     align,
     container,
     inset,
-    spacing
+    spacing,
   },
 };
 </script>

@@ -7,7 +7,11 @@
       Space classes
     </cdr-text>
 
-    <div v-for="category in categories" :data-backstop="`spacing-${category.backstop}-utilities`">
+    <div
+      v-for="category in categories"
+      :key="category"
+      :data-backstop="`spacing-${category.backstop}-utilities`"
+    >
       <template
         v-for="type in category.types"
       >
@@ -55,9 +59,9 @@ export default {
     return {
       tokens,
       categories: [
-        {backstop: 'padding', types: ['pt', 'pr', 'pb', 'pl', 'px', 'py']},
-        {backstop: 'margin', types: ['mt', 'mr', 'mb', 'ml', 'mx', 'my']}
-      ]
+        { backstop: 'padding', types: ['pt', 'pr', 'pb', 'pl', 'px', 'py'] },
+        { backstop: 'margin', types: ['mt', 'mr', 'mb', 'ml', 'mx', 'my'] },
+      ],
     };
   },
   computed: {
