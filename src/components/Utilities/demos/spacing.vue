@@ -1,5 +1,5 @@
 <template>
-  <div data-backstop="spacing-utilities">
+  <div>
     <cdr-text
       tag="h2"
       modifier="heading-600 heading-700@md heading-700@lg"
@@ -7,35 +7,36 @@
       Space classes
     </cdr-text>
 
-    <template
-      v-for="type in ['pt', 'pr', 'pb', 'pl', 'px', 'py', 'mt', 'mr', 'mb', 'ml', 'mx', 'my']"
-    >
+    <div v-for="category in categories" :data-backstop="`spacing-${category.backstop}-utilities`">
       <template
-        v-for="(v,k,i) in spaceTokens"
+        v-for="type in category.types"
       >
-        <div
-          :key="`${type}-${k}-${i}`"
-          :class="[`${getClass(type, k)}`, typeClass(type)]"
-        >{{ getClass(type, k) }}</div>
-        <div
-          :key="`${type}-${k}-${i}-xs`"
-          :class="[`${getClass(type, k)}@xs`, typeClass(type)]"
-        >{{ getClass(type, k) }}@xs</div>
-        <div
-          :key="`${type}-${k}-${i}-sm`"
-          :class="[`${getClass(type, k)}@sm`, typeClass(type)]"
-        >{{ getClass(type, k) }}@sm</div>
-        <div
-          :key="`${type}-${k}-${i}-md`"
-          :class="[`${getClass(type, k)}@md`, typeClass(type)]"
-        >{{ getClass(type, k) }}@md</div>
-        <div
-          :key="`${type}-${k}-${i}-lg`"
-          :class="[`${getClass(type, k)}@lg`, typeClass(type)]"
-        >{{ getClass(type, k) }}@lg</div>
+        <template
+          v-for="(v,k,i) in spaceTokens"
+        >
+          <div
+            :key="`${type}-${k}-${i}`"
+            :class="[`${getClass(type, k)}`, typeClass(type)]"
+          >{{ getClass(type, k) }}</div>
+          <div
+            :key="`${type}-${k}-${i}-xs`"
+            :class="[`${getClass(type, k)}@xs`, typeClass(type)]"
+          >{{ getClass(type, k) }}@xs</div>
+          <div
+            :key="`${type}-${k}-${i}-sm`"
+            :class="[`${getClass(type, k)}@sm`, typeClass(type)]"
+          >{{ getClass(type, k) }}@sm</div>
+          <div
+            :key="`${type}-${k}-${i}-md`"
+            :class="[`${getClass(type, k)}@md`, typeClass(type)]"
+          >{{ getClass(type, k) }}@md</div>
+          <div
+            :key="`${type}-${k}-${i}-lg`"
+            :class="[`${getClass(type, k)}@lg`, typeClass(type)]"
+          >{{ getClass(type, k) }}@lg</div>
+        </template>
       </template>
-    </template>
-
+    </div>
   </div>
 </template>
 
@@ -53,6 +54,10 @@ export default {
   data() {
     return {
       tokens,
+      categories: [
+        {backstop: 'padding', types: ['pt', 'pr', 'pb', 'pl', 'px', 'py']},
+        {backstop: 'margin', types: ['mt', 'mr', 'mb', 'ml', 'mx', 'my']}
+      ]
     };
   },
   computed: {

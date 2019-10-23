@@ -6,10 +6,6 @@ import DefaultButtons from 'componentsdir/button/examples/demo/Default';
 import FullWidthButtons from 'componentsdir/button/examples/demo/FullWidth';
 import IconButtons from 'componentsdir/button/examples/demo/Icons';
 import SecondaryButtons from 'componentsdir/button/examples/demo/Secondary';
-
-
-
-
 import Captions from 'componentsdir/caption/examples/Caption';
 import Cards from 'componentsdir/card/examples/Cards';
 import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
@@ -29,12 +25,17 @@ import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
-import Space from 'componentsdir/Utilities/Space';
 import Utilities from 'componentsdir/Utilities/Utilities';
+import InsetUtilities from 'componentsdir/Utilities/demos/inset';
+import SpacingUtilities from 'componentsdir/Utilities/demos/spacing';
+import ContainerUtilities from 'componentsdir/Utilities/demos/container';
+import AlignUtilities from 'componentsdir/Utilities/demos/align';
+import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
 
 
 const routes = [
   { path: '/', component: App },
+  { path: '/utilities', name: 'Utilities', component: Utilities },
   { path: '/links', name: 'Links', component: Links },
   { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   { path: '/accordion', name: 'Accordion', component: Accordions },
@@ -57,12 +58,15 @@ const routes = [
   { path: '/selects', name: 'Selects', component: Selects },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
-  { path: '/space', name: 'Space', component: Space },
-  { path: '/utilities', name: 'Utilities', component: Utilities },
   { path: '/default-buttons', name: 'Default Buttons', component: DefaultButtons },
   { path: '/secondary-buttons', name: 'Secondary Buttons', component: SecondaryButtons },
   { path: '/full-width-buttons', name: 'FullWidth Buttons', component: FullWidthButtons },
   { path: '/icon-buttons', name: 'Icon Buttons', component: IconButtons },
+  { path: '/spacing-utilities', name: 'Spacing Utilities', component: SpacingUtilities },
+  { path: '/inset-utilities', name: 'Inset Utilities', component: InsetUtilities },
+  { path: '/container-utilities', name: 'Container Utilities', component: ContainerUtilities },
+  { path: '/align-utilities', name: 'Align Utilities', component: AlignUtilities },
+  { path: '/visibility-utilities', name: 'Visibility Utilities', component: VisibilityUtilities },
 ];
 
 export default routes;

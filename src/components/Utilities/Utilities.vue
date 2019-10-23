@@ -5,6 +5,10 @@
     <align />
 
     <visibility />
+    
+    <inset />
+    
+    <spacing />
 
   </div>
 </template>
@@ -13,6 +17,8 @@
 import visibility from 'componentsdir/Utilities/demos/visibility';
 import align from 'componentsdir/Utilities/demos/align';
 import container from 'componentsdir/Utilities/demos/container';
+import inset from 'componentsdir/Utilities/demos/inset';
+import spacing from 'componentsdir/Utilities/demos/spacing';
 
 /**
  * Cedar 2 component for utilities
@@ -25,6 +31,8 @@ export default {
     visibility,
     align,
     container,
+    inset,
+    spacing
   },
 };
 </script>
