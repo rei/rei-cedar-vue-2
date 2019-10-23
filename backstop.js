@@ -10,6 +10,30 @@ const scenarioDefaults = {
   onReadyScript: 'onReady.js',
 };
 
+// TODO: use breakpoint tokens for viewport widths
+const responsiveViewports =[
+  {
+    label: 'xs',
+    width: 760,
+    height: 768,
+  },
+  {
+    label: 'sm',
+    width: 800,
+    height: 768,
+  },
+  {
+    label: 'md',
+    width: 1024,
+    height: 768,
+  },
+  {
+    label: 'lg',
+    width: 1366,
+    height: 768,
+  },
+];
+
 // functions for creating scenarios
 function createScenario(def) {
   const finalScenario = Object.assign({}, scenarioDefaults, def);
@@ -47,6 +71,11 @@ defs.forEach((def) => {
     delete currDef.focusSelectors;
     splitScenario(currDef, 'focus', focusSelectors);
   }
+  
+  if (Object.prototype.hasOwnProperty.call(currDef, 'responsive')) {
+    delete currDef.responsive;
+    currDef.viewports = responsiveViewports;
+  }
 
   createScenario(currDef);
 });
@@ -54,21 +83,6 @@ defs.forEach((def) => {
 module.exports = {
   id: 'cedar',
   viewports: [
-    {
-      label: 'xs',
-      width: 360,
-      height: 640,
-    },
-    {
-      label: 'sm',
-      width: 768,
-      height: 1024,
-    },
-    {
-      label: 'md',
-      width: 1024,
-      height: 768,
-    },
     {
       label: 'lg',
       width: 1366,
