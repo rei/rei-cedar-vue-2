@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="buttons">
     <div
       class="button-example cdr-space-inset-one-x"
       v-for="(section, index) in data"
@@ -39,6 +39,20 @@
         data-backstop="cdr-button--anchor"
       >
         Link
+      </cdr-button>
+    </div>
+    <div>
+      <cdr-text
+        tag="h3"
+        modifier="heading-400 heading-500@md heading-500@lg"
+      >
+        Primary Responsive
+      </cdr-text>
+      <cdr-button
+        size="large large@xs medium@sm small@lg"
+        data-backstop="cdr-button--responsive"
+      >
+        Responsive
       </cdr-button>
     </div>
     <div>

@@ -1,18 +1,30 @@
 <template>
-  <div>
+  <div data-backstop="buttons">
     <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-400"
       >
         CdrButton + CdrIcon Comps
       </cdr-text>
       <cdr-button
+        size="large"
+        space="cdr-mr-space-one-x"
+        data-backstop="cdr-button--icon"
+      >
+        <cdr-icon
+          use="#check-lg"
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+        Large and Icon
+      </cdr-button>
+      <cdr-button
         tag="a"
         href="https://rei.com"
         size="large"
-        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
-        data-backstop="cdr-button--icon"
+        space="cdr-mr-space-one-x"
       >
         <cdr-icon
           use="#check-lg"
@@ -25,7 +37,7 @@
 
       <cdr-button
         size="medium"
-        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
+        space="cdr-mr-space-one-x"
       >
         <cdr-icon
           use="#check-lg"
@@ -63,7 +75,7 @@
     <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-400"
       >
         Using a sprite
       </cdr-text>

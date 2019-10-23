@@ -2,6 +2,14 @@ import App from 'srcdir/App';
 import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Buttons from 'componentsdir/button/examples/Buttons';
+import DefaultButtons from 'componentsdir/button/examples/demo/Default';
+import FullWidthButtons from 'componentsdir/button/examples/demo/FullWidth';
+import IconButtons from 'componentsdir/button/examples/demo/Icons';
+import SecondaryButtons from 'componentsdir/button/examples/demo/Secondary';
+
+
+
+
 import Captions from 'componentsdir/caption/examples/Caption';
 import Cards from 'componentsdir/card/examples/Cards';
 import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
@@ -51,6 +59,10 @@ const routes = [
   { path: '/texts', name: 'Texts', component: Texts },
   { path: '/space', name: 'Space', component: Space },
   { path: '/utilities', name: 'Utilities', component: Utilities },
+  { path: '/default-buttons', name: 'Default Buttons', component: DefaultButtons },
+  { path: '/secondary-buttons', name: 'Secondary Buttons', component: SecondaryButtons },
+  { path: '/full-width-buttons', name: 'FullWidth Buttons', component: FullWidthButtons },
+  { path: '/icon-buttons', name: 'Icon Buttons', component: IconButtons },
 ];
 
 export default routes;

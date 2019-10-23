@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="buttons">
     <div
       class="button-example cdr-space-inset-one-x"
       v-for="(section, index) in data"
