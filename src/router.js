@@ -34,7 +34,7 @@ import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
 
 
 const routes = [
-  { path: '/', component: App },
+  { path: '/', name: ' ', component: App },
   { path: '/utilities', name: 'Utilities', component: Utilities },
   { path: '/links', name: 'Links', component: Links },
   { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
@@ -58,15 +58,27 @@ const routes = [
   { path: '/selects', name: 'Selects', component: Selects },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
-  { path: '/default-buttons', name: 'Default Buttons', component: DefaultButtons },
-  { path: '/secondary-buttons', name: 'Secondary Buttons', component: SecondaryButtons },
-  { path: '/full-width-buttons', name: 'FullWidth Buttons', component: FullWidthButtons },
-  { path: '/icon-buttons', name: 'Icon Buttons', component: IconButtons },
-  { path: '/spacing-utilities', name: 'Spacing Utilities', component: SpacingUtilities },
-  { path: '/inset-utilities', name: 'Inset Utilities', component: InsetUtilities },
-  { path: '/container-utilities', name: 'Container Utilities', component: ContainerUtilities },
-  { path: '/align-utilities', name: 'Align Utilities', component: AlignUtilities },
-  { path: '/visibility-utilities', name: 'Visibility Utilities', component: VisibilityUtilities },
+  { path: '/default-buttons', name: 'Default Buttons backstop', component: DefaultButtons },
+  { path: '/secondary-buttons', name: 'Secondary Buttons backstop', component: SecondaryButtons },
+  { path: '/full-width-buttons', name: 'FullWidth Buttons backstop', component: FullWidthButtons },
+  { path: '/icon-buttons', name: 'Icon Buttons backstop', component: IconButtons },
+  { path: '/spacing-utilities', name: 'Spacing Utilities backstop', component: SpacingUtilities },
+  { path: '/inset-utilities', name: 'Inset Utilities backstop', component: InsetUtilities },
+  {
+    path: '/container-utilities',
+    name: 'Container Utilities backstop',
+    component: ContainerUtilities,
+  },
+  {
+    path: '/align-utilities',
+    name: 'Align Utilities backstop',
+    component: AlignUtilities,
+  },
+  {
+    path: '/visibility-utilities',
+    name: 'Visibility Utilities backstop',
+    component: VisibilityUtilities,
+  },
 ];
 
 export default routes;
