@@ -19,7 +19,7 @@
       <h1>REI Cedar</h1>
       <cdr-icon-sprite></cdr-icon-sprite>
       <ul style="padding:0">
-        <li class="cdr-space-inset-quarter-x" style="display:inline-flex" v-for="route in routes"><router-link v-if="route.name.indexOf('backstop') === -1" :key="route.path" :to="route.path">{{ route.name }} *</router-link></li>
+        <li class="cdr-space-inset-quarter-x" style="display:inline-flex" v-for="route in routes"><router-link v-if="route.name" :key="route.path" :to="route.path">{{ route.name }} *</router-link></li>
       </ul
       <hr />
       <div class=" cdr-mt-space-two-x">

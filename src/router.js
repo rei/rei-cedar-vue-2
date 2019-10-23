@@ -32,12 +32,11 @@ import ContainerUtilities from 'componentsdir/Utilities/demos/container';
 import AlignUtilities from 'componentsdir/Utilities/demos/align';
 import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
 
-
 const routes = [
   { path: '/', name: ' ', component: App },
+  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   { path: '/utilities', name: 'Utilities', component: Utilities },
   { path: '/links', name: 'Links', component: Links },
-  { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
   { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Buttons },
@@ -58,27 +57,15 @@ const routes = [
   { path: '/selects', name: 'Selects', component: Selects },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
-  { path: '/default-buttons', name: 'Default Buttons backstop', component: DefaultButtons },
-  { path: '/secondary-buttons', name: 'Secondary Buttons backstop', component: SecondaryButtons },
-  { path: '/full-width-buttons', name: 'FullWidth Buttons backstop', component: FullWidthButtons },
-  { path: '/icon-buttons', name: 'Icon Buttons backstop', component: IconButtons },
-  { path: '/spacing-utilities', name: 'Spacing Utilities backstop', component: SpacingUtilities },
-  { path: '/inset-utilities', name: 'Inset Utilities backstop', component: InsetUtilities },
-  {
-    path: '/container-utilities',
-    name: 'Container Utilities backstop',
-    component: ContainerUtilities,
-  },
-  {
-    path: '/align-utilities',
-    name: 'Align Utilities backstop',
-    component: AlignUtilities,
-  },
-  {
-    path: '/visibility-utilities',
-    name: 'Visibility Utilities backstop',
-    component: VisibilityUtilities,
-  },
+  { path: '/default-buttons', component: DefaultButtons },
+  { path: '/secondary-buttons', component: SecondaryButtons },
+  { path: '/full-width-buttons', component: FullWidthButtons },
+  { path: '/icon-buttons', component: IconButtons },
+  { path: '/spacing-utilities', component: SpacingUtilities },
+  { path: '/inset-utilities', component: InsetUtilities },
+  { path: '/container-utilities', component: ContainerUtilities },
+  { path: '/align-utilities', component: AlignUtilities },
+  { path: '/visibility-utilities', component: VisibilityUtilities },
 ];
 
 export default routes;
