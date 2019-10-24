@@ -63,21 +63,15 @@ Our visual regressions audits can be performed against all patterns documented w
 
 If you want to do backstop tests against a single scenario you can do `npm run compare -- --filter=<Label>`
 
-#### Notes about our backstop configuration
-
-We’re aliasing the backstop commands to use `npm run <command>` just to abstract away supplying the config option since we are using a javascript based backstop config file to dynamically generate most of it. By using the js format instead of the standard json, we can avoid having a monolithic config file and instead have more localized, manageable configs that can remove some repetition and allow for different stateful tests, like hover, more easily.
-
 The config (`backstop.js`) looks through `src/` for all __*.backstop.js__ and generates a proper backstop scenario object for each.
-
-If you want to test hover statyes you can create another array of selectors `hoverSelectors`. These selectors will use an onReadyScript (`hover.js`) to simulate a mouse moving and hovering. This engine script uses [chromy](https://github.com/OnetapInc/chromy). **This is a custom config option we've added to allow for adding hover tests for an array of selectors easily.**
-
-Engine scripts live in `backstop_data > engine_scripts`
 
 __*.backstop.js__ files will export an array of objects that are standard backstop scenario objects and support all the same options noted in the docs with the following exceptions:
 
-1. `url` is assumed to be `localhost:8080` (running the project locally) and you don’t need to define that for each object.
-2. `readyEvent` is set to null for each scenario.
-3. `hoverSelectors` is a custom option we've added (as noted above).
+- `responsive`: Boolean, configures whether or not the scenario runs against all 4 breakpoints. If not present or false it will only run against the largest breakpoint. Note that running responsive tests against specific selectors can often lead to incorrect screenshots, and it is better to set up a separate responsive scenario that targets the entire document, for example: `{ url: 'http://localhost:3000/#/EXAMPLE', label: 'EXAMPLE', responsive: true }`
+- `focusSelectors`: Array, list of selectors that will have `focus` applied before screenshotting
+- `hoverSelectors`: Array, list of selectors that will have `hover` applied before screenshotting
+- `wait`: Number, if using `focusSelectors` or `hoverSelectors` this will insert a delay in milliseconds between the element interaction and the screenshot
+
 
 ## Publishing Prerelease Components
 
