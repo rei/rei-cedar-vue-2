@@ -1,6 +1,11 @@
 module.exports = [
   {
     url: 'http://localhost:3000/#/default-buttons',
+    label: 'Responsive Button',
+    responsive: true,
+  },
+  {
+    url: 'http://localhost:3000/#/default-buttons',
     label: 'Default Button',
     selectors: [
       '[data-backstop="buttons"]',
@@ -16,14 +21,6 @@ module.exports = [
       '[data-backstop="cdr-button--responsive"]',
       '[data-backstop="cdr-button--disabled"]',
       '[data-backstop="cdr-button--anchor"]',
-    ],
-  },
-  {
-    url: 'http://localhost:3000/#/default-buttons',
-    label: 'Responsive Button',
-    responsive: true,
-    selectors: [
-      '[data-backstop="cdr-button--responsive"]',
     ],
   },
   {

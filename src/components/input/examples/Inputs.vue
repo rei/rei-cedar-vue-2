@@ -8,6 +8,7 @@
       class="demo-input"
       v-model="defaultModel"
       label="#1 Default"
+      data-backstop="input-default"
     />
 
     <cdr-input
@@ -30,6 +31,7 @@
       v-model="disabledModel"
       label="#4 Disabled Input"
       placeholder="I am disabled"
+      data-backstop="input-disabled"
       disabled
     />
 

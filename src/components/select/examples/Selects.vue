@@ -1,5 +1,5 @@
 <template>
-  <div data-backstop="selects">
+  <div>
     <cdr-text
       tag="h2"
       modifier="heading-400 heading-500@md heading-500@lg"
@@ -51,6 +51,7 @@
       label="Required with Prompt"
       v-model="selectedB"
       prompt="Choose one"
+      data-backstop="select-default"
       required
       space="cdr-my-space-two-x"
     >

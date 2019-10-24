@@ -9,7 +9,6 @@
     <cdr-checkbox
       v-model="ex1"
       @change="logChange"
-      data-backstop="checkbox-focus"
     >single</cdr-checkbox>
     <cdr-checkbox
       modifier="compact"
