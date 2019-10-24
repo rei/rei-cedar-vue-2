@@ -17,7 +17,7 @@
     >single compact</cdr-checkbox>
     <cdr-text>single: {{ ex1 }}</cdr-text>
 
-    <span data-backstop="checkbox-checked">
+    <div data-backstop="checkbox-checked">
       <cdr-checkbox
         v-model="ex2"
         true-value="checked"
@@ -29,7 +29,7 @@
         true-value="checked"
         false-value="unchecked"
       >checked compact</cdr-checkbox>
-    </span>
+    </div>
     <cdr-text>checked: {{ ex2 }}</cdr-text>
 
     <cdr-checkbox
