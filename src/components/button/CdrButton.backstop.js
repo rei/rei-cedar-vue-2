@@ -1,6 +1,6 @@
 module.exports = [
   {
-    url: 'http://localhost:3000/#/default-buttons',
+    url: 'http://localhost:3000/#/buttons',
     label: 'Responsive Button',
     responsive: true,
   },
@@ -11,16 +11,32 @@ module.exports = [
       '[data-backstop="buttons"]',
     ],
     focusSelectors: [
-      '[data-backstop="cdr-button--size"]',
-      '[data-backstop="cdr-button--responsive"]',
-      '[data-backstop="cdr-button--disabled"]',
-      '[data-backstop="cdr-button--anchor"]',
+      {
+        target: '[data-backstop="cdr-button--size"] button',
+        capture: '[data-backstop="cdr-button--size"]',
+      },
+      {
+        target: '[data-backstop="cdr-button--disabled"] button',
+        capture: '[data-backstop="cdr-button--disabled"]',
+      },
+      {
+        target: '[data-backstop="cdr-button--anchor"] a',
+        capture: '[data-backstop="cdr-button--anchor"]',
+      },
     ],
     hoverSelectors: [
-      '[data-backstop="cdr-button--size"]',
-      '[data-backstop="cdr-button--responsive"]',
-      '[data-backstop="cdr-button--disabled"]',
-      '[data-backstop="cdr-button--anchor"]',
+      {
+        target: '[data-backstop="cdr-button--size"] button',
+        capture: '[data-backstop="cdr-button--size"]',
+      },
+      {
+        target: '[data-backstop="cdr-button--disabled"] button',
+        capture: '[data-backstop="cdr-button--disabled"]',
+      },
+      {
+        target: '[data-backstop="cdr-button--anchor"] a',
+        capture: '[data-backstop="cdr-button--anchor"]',
+      },
     ],
   },
   {
@@ -30,10 +46,16 @@ module.exports = [
       '[data-backstop="buttons"]',
     ],
     focusSelectors: [
-      '[data-backstop="cdr-button--secondary"]',
+      {
+        target: '[data-backstop="cdr-button--secondary"] button',
+        capture: '[data-backstop="cdr-button--secondary"]',
+      },
     ],
     hoverSelectors: [
-      '[data-backstop="cdr-button--secondary"]',
+      {
+        target: '[data-backstop="cdr-button--secondary"] button',
+        capture: '[data-backstop="cdr-button--secondary"]',
+      },
     ],
   },
   {
@@ -43,10 +65,16 @@ module.exports = [
       '[data-backstop="buttons"]',
     ],
     focusSelectors: [
-      '[data-backstop="cdr-button--icon"]',
+      {
+        target: '[data-backstop="cdr-button--icon"] button',
+        capture: '[data-backstop="cdr-button--icon"]',
+      },
     ],
     hoverSelectors: [
-      '[data-backstop="cdr-button--icon"]',
+      {
+        target: '[data-backstop="cdr-button--icon"] button',
+        capture: '[data-backstop="cdr-button--icon"]',
+      },
     ],
   },
   {

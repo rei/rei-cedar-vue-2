@@ -4,6 +4,7 @@
       class="button-example cdr-space-inset-one-x"
       v-for="(section, index) in data"
       :key="index"
+      :data-backstop="section.backstop ? section.backstop : null"
     >
       <cdr-text
         tag="h3"
@@ -19,13 +20,15 @@
         :full-width="button.fullWidth"
         :type="button.type"
         :disabled="button.disabled"
-        :data-backstop="button.backstop ? button.backstop : null"
         @click="log"
       >
         {{ button.label }}
       </cdr-button>
     </div>
-    <div class="button-example cdr-space-inset-one-x">
+    <div
+      class="button-example cdr-space-inset-one-x"
+      data-backstop="cdr-button--anchor"
+    >
       <cdr-text
         tag="h3"
         modifier="heading-400 heading-500@md heading-500@lg"
@@ -36,9 +39,16 @@
         tag="a"
         href="https://rei.com"
         size="large"
-        data-backstop="cdr-button--anchor"
       >
-        Link
+        Large Link
+      </cdr-button>
+
+      <cdr-button
+        tag="a"
+        href="https://rei.com"
+        size="small"
+      >
+        Small Link
       </cdr-button>
     </div>
     <div>
@@ -50,26 +60,8 @@
       </cdr-text>
       <cdr-button
         size="large large@xs medium@sm small@lg"
-        data-backstop="cdr-button--responsive"
       >
         Responsive
-      </cdr-button>
-    </div>
-    <div>
-      <cdr-button
-        :full-width="true"
-        size="large@lg"
-        space="cdr-mb-space-one-x cdr-mr-space-one-x@md"
-      >
-        button 1
-      </cdr-button>
-
-      <cdr-button
-        :full-width="true"
-        modifier="secondary"
-        size="large@lg"
-      >
-        button 2
       </cdr-button>
     </div>
   </div>
@@ -88,6 +80,7 @@ export default {
       data: [
         {
           title: 'Default sizes',
+          backstop: 'cdr-button--size',
           buttons: [
             {
               label: 'Large',
@@ -115,6 +108,7 @@ export default {
         },
         {
           title: 'Disabled',
+          backstop: 'cdr-button--disabled',
           buttons: [
             {
               label: 'Large',

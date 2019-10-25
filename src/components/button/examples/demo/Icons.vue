@@ -1,6 +1,9 @@
 <template>
   <div data-backstop="buttons">
-    <div class="button-example cdr-space-inset-one-x">
+    <div
+      class="button-example cdr-space-inset-one-x"
+      data-backstop="cdr-button--icon"
+    >
       <cdr-text
         tag="h3"
         modifier="heading-400"
@@ -10,7 +13,6 @@
       <cdr-button
         size="large"
         space="cdr-mr-space-one-x"
-        data-backstop="cdr-button--icon"
       >
         <cdr-icon
           use="#check-lg"

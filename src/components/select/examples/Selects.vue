@@ -9,27 +9,54 @@
     </cdr-text>
     <hr class="icon-hr">
 
-    <!-- Default Example -->
-    <cdr-select
-      label="Default"
-      v-model="selectedA"
-      prompt="Choose one"
-      space="cdr-my-space-two-x"
-    >
-      <option value="1">
-        1
-      </option>
-      <option value="2">
-        2
-      </option>
-      <option value="3">
-        3
-      </option>
-      <option value="4">
-        4
-      </option>
-    </cdr-select>
-    <cdr-text>Selected Value: {{ selectedA }}</cdr-text>
+    <div data-backstop="select-target">
+      <!-- Default Example -->
+      <cdr-select
+        label="Default"
+        v-model="selectedA"
+        prompt="Choose one"
+        space="cdr-my-space-two-x"
+      >
+        <option value="1">
+          1
+        </option>
+        <option value="2">
+          2
+        </option>
+        <option value="3">
+          3
+        </option>
+        <option value="4">
+          4
+        </option>
+      </cdr-select>
+      <cdr-text>Selected Value: {{ selectedA }}</cdr-text>
+
+      <hr class="icon-hr">
+
+      <!-- Required with Prompt Example -->
+      <cdr-select
+        label="Required with Prompt"
+        v-model="selectedB"
+        prompt="Choose one"
+        required
+        space="cdr-my-space-two-x"
+      >
+        <option value="1">
+          1
+        </option>
+        <option value="2">
+          2
+        </option>
+        <option value="3">
+          3
+        </option>
+        <option value="4">
+          4
+        </option>
+      </cdr-select>
+      <cdr-text>Selected Value: {{ selectedB }}</cdr-text>
+    </div>
     <hr class="icon-hr">
 
     <!-- Disabled Select -->
@@ -44,31 +71,6 @@
       </option>
     </cdr-select>
     <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>
-    <hr class="icon-hr">
-
-    <!-- Required with Prompt Example -->
-    <cdr-select
-      label="Required with Prompt"
-      v-model="selectedB"
-      prompt="Choose one"
-      data-backstop="select-default"
-      required
-      space="cdr-my-space-two-x"
-    >
-      <option value="1">
-        1
-      </option>
-      <option value="2">
-        2
-      </option>
-      <option value="3">
-        3
-      </option>
-      <option value="4">
-        4
-      </option>
-    </cdr-select>
-    <cdr-text>Selected Value: {{ selectedB }}</cdr-text>
     <hr class="icon-hr">
 
     <!-- Hidden Label Example -->

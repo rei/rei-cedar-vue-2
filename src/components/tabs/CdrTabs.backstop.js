@@ -8,13 +8,19 @@ module.exports = [
     url: 'http://localhost:3000/#/tabs',
     label: 'Tabs',
     selectors: [
-      '[data-backstop="tab-default"] li:nth-child(2)',
+      '[data-backstop="tab-default"]',
     ],
     hoverSelectors: [
-      '[data-backstop="tab-default"] li:nth-child(2)',
+      {
+        target: '[data-backstop="tab-default"] li:nth-child(2) a',
+        capture: '[data-backstop="tab-default"]',
+      },
     ],
     focusSelectors: [
-      '[data-backstop="tab-default"] li:nth-child(2)',
+      {
+        target: '[data-backstop="tab-default"] li:nth-child(2) a',
+        capture: '[data-backstop="tab-default"]',
+      },
     ],
     wait: 1000,
   },
