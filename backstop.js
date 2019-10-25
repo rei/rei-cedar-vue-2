@@ -44,8 +44,8 @@ function splitScenario(def, type = '', selectorsArr, extraOptions = {}) {
   const scenario = Object.assign({}, extraOptions, def);
   selectorsArr.forEach((s, idx) => {
     scenario.label = `${def.label} ${type}${idx}`;
-    scenario[`${type}Selector`] = true;
-    scenario.selectors = [s];
+    scenario[`${type}Selector`] = s.target ? s.target : s;
+    scenario.selectors = [s.capture ? s.capture : s];
     createScenario(scenario);
   });
 }
@@ -71,7 +71,7 @@ defs.forEach((def) => {
     delete currDef.focusSelectors;
     splitScenario(currDef, 'focus', focusSelectors);
   }
-  
+
   if (Object.prototype.hasOwnProperty.call(currDef, 'responsive')) {
     delete currDef.responsive;
     currDef.viewports = responsiveViewports;
