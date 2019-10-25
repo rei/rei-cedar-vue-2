@@ -8,10 +8,13 @@ module.exports = [
     url: 'http://localhost:3000/#/inputs',
     label: 'Input',
     selectors: [
-      '[data-backstop="input-default"]',
+      '[data-backstop="input-target"]',
     ],
     focusSelectors: [
-      '[data-backstop="input-default"]',
+      {
+        capture: '[data-backstop="input-target"]',
+        target: '[data-backstop="input-target"] input',
+      },
     ],
   },
 ];

@@ -1,22 +1,22 @@
 <template>
-  <div data-backstop="inputs">
+  <div>
     <cdr-text
       tag="h2"
     >Text Inputs</cdr-text>
+    <div data-backstop="input-target">
+      <cdr-input
+        class="demo-input"
+        v-model="defaultModel"
+        label="#1 Default"
+      />
 
-    <cdr-input
-      class="demo-input"
-      v-model="defaultModel"
-      label="#1 Default"
-      data-backstop="input-default"
-    />
-
-    <cdr-input
-      class="demo-input"
-      v-model="requiredModel"
-      label="#2 Required"
-      required
-    />
+      <cdr-input
+        class="demo-input"
+        v-model="requiredModel"
+        label="#2 Required"
+        required
+      />
+    </div>
 
     <cdr-input
       class="demo-input"

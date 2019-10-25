@@ -9,16 +9,27 @@ module.exports = [
     label: 'Pagination',
     // first page is the "current" so it has no hover or focus effect.
     selectors: [
-      '[data-backstop="pagination-default"] li:first-child a',
-      '[data-backstop="pagination-default"] li:nth-child(2) a',
+      '[data-backstop="pagination-default"]',
     ],
     focusSelectors: [
-      '[data-backstop="pagination-default"] li:first-child a',
-      '[data-backstop="pagination-default"] li:nth-child(2) a',
+      {
+        target: '[data-backstop="pagination-default"] li:first-child a',
+        capture: '[data-backstop="pagination-default"]',
+      },
+      {
+        target: '[data-backstop="pagination-default"] li:nth-child(2) a',
+        capture: '[data-backstop="pagination-default"]',
+      },
     ],
     hoverSelectors: [
-      '[data-backstop="pagination-default"] li:first-child a',
-      '[data-backstop="pagination-default"] li:nth-child(2) a',
+      {
+        target: '[data-backstop="pagination-default"] li:first-child a',
+        capture: '[data-backstop="pagination-default"]',
+      },
+      {
+        target: '[data-backstop="pagination-default"] li:nth-child(2) a',
+        capture: '[data-backstop="pagination-default"]',
+      },
     ],
   },
 ];

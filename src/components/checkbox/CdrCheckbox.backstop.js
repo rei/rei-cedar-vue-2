@@ -5,14 +5,17 @@ module.exports = [
     responsive: true,
   },
   // TODO: need method for focus/hovering one element but snapshotting it's parent
-  // {
-  //   url: 'http://localhost:3000/#/checkboxes',
-  //   label: 'Checkbox',
-  //   selectors: [
-  //     '[data-backstop="checkbox-checked"]',
-  //   ],
-  //   focusSelectors: [
-  //     '[data-backstop="checkbox-checked"]',
-  //   ],
-  // },
+  {
+    url: 'http://localhost:3000/#/checkboxes',
+    label: 'Checkbox',
+    selectors: [
+      '[data-backstop="checkbox-checked"]',
+    ],
+    focusSelectors: [
+      {
+        target: '[data-backstop="checkbox-checked"] input',
+        capture: '[data-backstop="checkbox-checked"]',
+      },
+    ],
+  },
 ];
