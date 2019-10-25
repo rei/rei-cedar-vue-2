@@ -1,7 +1,6 @@
 <template>
   <div
     class="rating-reset"
-    data-backstop="ratings"
   >
     <cdr-text
       tag="h2"
@@ -9,15 +8,21 @@
     >
       Ratings
     </cdr-text>
-
-    <!-- Large Size -->
     <cdr-rating
-      rating="0"
-      count="0"
-      size="large"
+      rating="3.3"
+      count="16"
       content-priority="secondary"
-      space="cdr-space-inset-one-x"
+      href="https://www.rei.com"
+      data-backstop="rating-secondary-linked"
     />
+    <cdr-rating
+      rating="4.5"
+      count="21"
+      href="https://www.rei.com"
+      data-backstop="rating-primary-linked"
+    />
+    <!-- Large Size -->
+
 
     <cdr-rating
       rating="3"

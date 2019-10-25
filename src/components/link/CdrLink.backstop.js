@@ -1,13 +1,23 @@
-module.exports = [{
-  url: 'http://localhost:3000/#/links',
-  label: 'Link',
-  selectors: [
-    '[data-backstop="cdr-link"]',
-    '[data-backstop="cdr-link--standalone"]',
-    '[data-backstop="cdr-link--button"]',
-    '[data-backstop="all-links"]',
-  ],
-  hoverSelectors: [
-    '[data-backstop="cdr-link--standalone"]',
-  ],
-}];
+module.exports = [
+  {
+    url: 'http://localhost:3000/#/links',
+    label: 'Link responsive',
+    responsive: true,
+  },
+  {
+    url: 'http://localhost:3000/#/links',
+    label: 'Link',
+    selectors: [
+      '[data-backstop="cdr-link"]',
+      '[data-backstop="cdr-link--standalone"]',
+    ],
+    hoverSelectors: [
+      '[data-backstop="cdr-link"]',
+      '[data-backstop="cdr-link--standalone"]',
+    ],
+    focusSelectors: [
+      '[data-backstop="cdr-link"]',
+      '[data-backstop="cdr-link--standalone"]',
+    ],
+  },
+];

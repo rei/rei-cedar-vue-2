@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div data-backstop="tabs">
+  <div>
     <div class="tab-demo-section">
       <cdr-text
         tag="h2"
@@ -8,7 +8,10 @@
       >
         Tabs
       </cdr-text>
-      <cdr-tabs height="100px">
+      <cdr-tabs
+        height="100px"
+        data-backstop="tab-default"
+      >
         <cdr-tab-panel name="Tab1">
           <cdr-text
             tag="strong"

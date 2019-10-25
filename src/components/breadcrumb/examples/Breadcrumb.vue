@@ -11,6 +11,7 @@
     </cdr-text>
     <cdr-breadcrumb
       :items="averageBreadcrumbItems"
+      data-backstop="breadcrumbs-ellipsis"
     />
     <cdr-text
       tag="h3"
@@ -20,6 +21,7 @@
     </cdr-text>
     <cdr-breadcrumb
       :items="shortBreadcrumbItems"
+      data-backstop="breadcrumbs-default"
     />
     <cdr-text
       tag="h3"

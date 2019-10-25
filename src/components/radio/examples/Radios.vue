@@ -69,7 +69,6 @@
       name="examplespacing"
       custom-value="a1"
       v-model="ex1spacing"
-      data-backstop="radio-focus"
     >A1</cdr-radio>
     <cdr-radio
       space="cdr-ml-space-one-x cdr-mt-space-half-x"
