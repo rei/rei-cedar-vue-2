@@ -12,7 +12,6 @@
       :close-modal="closeModal"
       wrapper-class="wrapper-test-class"
       overlay-class="overlay-test-class"
-      dialog-class="dialog-test-class"
     >
       Modal text, bro.
     </cdr-modal>

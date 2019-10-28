@@ -26,14 +26,33 @@ export default {
       type: String,
       required: true,
     },
-    dialogAttrs: Object,
-    dialogClass: String,
+    labelIsTitle: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    ariaDescribedbBy: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    id: {
+      type: String,
+      required: false,
+      default: null,
+    },
     overlayClass: String,
     wrapperClass: String,
     contentClass: String,
     animationDuration: {
       type: Number,
       default: parseInt(style.animationDuration, 10),
+    },
+    width: {
+      type: String,
+      required: false,
+      default: 'medium',
+      validator: val => val === 'medium' || val === 'large',
     },
   },
   data() {
@@ -46,6 +65,18 @@ export default {
       reallyClosed: !this.opened,
       offset: null,
     };
+  },
+  computed: {
+    dialogAttrs() {
+      return {
+        'aria-describedby': this.ariaDescribedBy,
+        'aria-modal': 'true',
+        id: this.id,
+      };
+    },
+    dialogClass() {
+      return `pdp-modal__dialog ${this.width}`;
+    },
   },
   watch: {
     opened(newValue, oldValue) {
