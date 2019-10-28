@@ -116,7 +116,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     max-width: 60rem;
     padding: $dialog-padding-vertical;
 
-     &.large {
+     &:global(.large) {
       max-width: 80rem;
     }
   }

@@ -75,7 +75,8 @@ export default {
       };
     },
     dialogClass() {
-      return `pdp-modal__dialog ${this.width}`;
+      // return `pdp-modal__dialog ${this.width}`;
+      return `${this.style['pdp-modal__dialog']} ${this.width}`;
     },
   },
   watch: {
