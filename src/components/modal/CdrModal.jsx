@@ -269,7 +269,14 @@ export default {
                 <div class={this.style['pdp-modal__content']}>
                   <div class={this.style['pdp-modal__header']}>
                     <div class={this.style['pdp-modal__title']}>
-                      <cdr-text>{this.label}</cdr-text>
+                      {this.labelIsTitle && (
+                        <cdr-text
+                          tag="h1"
+                          modifier="heading-600"
+                        >
+                          {this.label}
+                        </cdr-text>
+                      )}
                     </div>
                     <cdr-button
                       id="close-modal-button"

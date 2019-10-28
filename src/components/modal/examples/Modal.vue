@@ -12,6 +12,7 @@
       :close-modal="closeModal"
       wrapper-class="wrapper-test-class"
       overlay-class="overlay-test-class"
+      :label-is-title="true"
       width="large"
     >
       <!-- eslint-disable-next-line -->
