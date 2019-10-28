@@ -273,14 +273,14 @@ export default {
                     </div>
                     <cdr-button
                       id="close-modal-button"
-                      class="pdp-modal__close-button"
+                      class={this.style['pdp-modal__close-button']}
                       icon-only={true}
                       on-click={closeModal}
                       aria-label="close"
                     >
                       <cdr-icon
                         slot="icon"
-                        class="cdr-button__icon"
+                        class={this.style['cdr-button__icon']}
                         use="#x-lg"
                         inherit-color
                       />
@@ -289,12 +289,12 @@ export default {
                   <div
                     role="document"
                     tabindex="0"
-                    class="pdp-modal__text"
+                    class={this.style['pdp-modal__text']}
                   >
-                    <div class="pdp-modal__text-content">
+                    <div class={this.style['pdp-modal__text-content']}>
                       {defaultSlot}
                     </div>
-                    <div class="pdp-modal__text-fade" />
+                    <div class={this.style['pdp-modal__text-fade']} />
                   </div>
                 </div>
               </section>
