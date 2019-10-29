@@ -14,7 +14,7 @@
       :pages="makePages(20, 'router-page')"
       :total-pages="20"
       v-model="ex1Page"
-      @input="handleInput"
+      @navigate="handleNavigate"
       @select-change="doSelect"
     />
 
@@ -26,7 +26,7 @@
       :pages="makePages(ex2Pages, 'router-page-b', ex2PageKnown - 2)"
       :total-pages="10"
       v-model="ex2PageKnown"
-      @input="handleInput"
+      @navigate="handleNavigate"
     />
 
     <hr>
@@ -35,7 +35,7 @@
     <cdr-pagination
       :pages="makePages(ex2Pages, 'router-page-b', ex2PageUnknown - 2)"
       v-model="ex2PageUnknown"
-      @input="handleInput"
+      @navigate="handleNavigate"
     />
 
     <hr>
@@ -45,7 +45,7 @@
       :pages="makePages(5, 'router-page-c')"
       :total-pages="5"
       v-model="ex3Page"
-      @input="handleInput"
+      @navigate="handleNavigate"
     />
 
     <hr>
@@ -55,7 +55,7 @@
       :pages="makePages(5, 'router-page-d')"
       :total-pages="5"
       v-model="ex4Page"
-      @input="handleInput"
+      @navigate="handleNavigate"
     >
       <template
         slot="link"
@@ -94,6 +94,12 @@
       </template>
     </cdr-pagination>
 
+    <cdr-pagination
+      v-model="page"
+      :pages="pages"
+      :total-pages="10"
+    />
+
   </div>
 </template>
 
@@ -109,6 +115,19 @@ export default {
   },
   data() {
     return {
+      page: 1,
+      pages: [
+        { page: 1, url: '/#/pagination?page=1' },
+        { page: 2, url: '/#/pagination?page=2' },
+        { page: 3, url: '/#/pagination?page=3' },
+        { page: 4, url: '/#/pagination?page=4' },
+        { page: 5, url: '/#/pagination?page=5' },
+        { page: 6, url: '/#/pagination?page=6' },
+        { page: 7, url: '/#/pagination?page=7' },
+        { page: 8, url: '/#/pagination?page=8' },
+        { page: 9, url: '/#/pagination?page=9' },
+        { page: 10, url: '/#/pagination?page=10' },
+      ],
       paginationData,
       ex1Page: 1,
       ex2PageKnown: 5,
@@ -138,13 +157,14 @@ export default {
       });
       return result;
     },
-    handleInput(num, e) {
+    handleNavigate(page, url, e) {
       e.preventDefault();
-      console.log('changed', num); // eslint-disable-line
-      this.$router.replace({ query: Object.assign({}, this.$route.query, { 'router-page': num }) });
+      console.log('handleNavigate', page, url, e); // eslint-disable-line
+      // eslint-disable-next-line max-len
+      this.$router.replace({ query: Object.assign({}, this.$route.query, { 'router-page': page }) });
     },
-    doSelect(url, e) {
-      console.log('selected', url, e); // eslint-disable-line
+    doSelect(page, url, e) {
+      console.log('doSelect', page, url, e); // eslint-disable-line
     },
   },
 };

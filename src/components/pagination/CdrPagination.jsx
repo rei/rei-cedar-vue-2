@@ -4,6 +4,18 @@ import IconCaretRight from '../icon/comps/caret-right';
 import CdrSelect from '../select/CdrSelect';
 import style from './styles/CdrPagination.scss';
 
+const hasWindowSupport = typeof window !== 'undefined';
+const w = hasWindowSupport ? window : {};
+const requestAF = w.requestAnimationFrame
+  || w.webkitRequestAnimationFrame
+  || w.mozRequestAnimationFrame
+  || w.msRequestAnimationFrame
+  || w.oRequestAnimationFrame
+  // Fallback, but not a true polyfill
+  // Only needed for Opera Mini
+  /* istanbul ignore next */
+  || (cb => setTimeout(cb, 16));
+
 export default {
   name: 'CdrPagination',
   components: {
@@ -49,11 +61,22 @@ export default {
   },
   data() {
     return {
-      currentUrl: '',
       style,
     };
   },
   computed: {
+    // track value internally (for use with select vmodel) and update external value when internal changes
+    innerValue: {
+      get() {
+        return this.value;
+      },
+      set(newValue) {
+        this.$emit('input', newValue);
+      },
+    },
+    currentUrl() {
+      return this.pages[this.currentIdx].url;
+    },
     totalPageData() {
       return this.pages.length;
     },
@@ -64,7 +87,7 @@ export default {
       return this.currentIdx + 1;
     },
     currentIdx() {
-      return this.pages.map(x => x.page).indexOf(this.value);
+      return this.pages.map(x => x.page).indexOf(this.innerValue);
     },
     /**
      * Creates an array of the pages that should be shown as links with logic for truncation.
@@ -87,7 +110,7 @@ export default {
      */
     paginationData() {
       const total = this.totalPageData;
-      const current = this.value;
+      const current = this.innerValue;
       const delta = 1;
       let range = [];
       let over5 = true;
@@ -144,7 +167,7 @@ export default {
       };
     },
     prevEl() {
-      return this.value > this.pages[0].page ? (
+      return this.innerValue > this.pages[0].page ? (
         <li>
           {this.$scopedSlots.prevLink
             ? this.$scopedSlots.prevLink(this.prevElAttrs)
@@ -179,7 +202,7 @@ export default {
       };
     },
     nextEl() {
-      return this.value < this.pages[this.totalPageData - 1].page ? (
+      return this.innerValue < this.pages[this.totalPageData - 1].page ? (
         <li>
           {this.$scopedSlots.nextLink
             ? this.$scopedSlots.nextLink(this.nextElAttrs)
@@ -221,7 +244,7 @@ export default {
       return (
         <li class={this.style['cdr-pagination__li--select']}>
           <cdr-select
-            vModel={this.currentUrl}
+            vModel_number={this.innerValue}
             label="Navigate to page"
             hide-label
             onChange={this.select}
@@ -231,7 +254,7 @@ export default {
             {this.paginationData.map(n => n !== '&hellip;'
               && (<option
                 key={`${n}-${this.guid()}`}
-                value={n.url}
+                value={n.page}
               >
                 Page { n.page }{ this.totalPages === null ? '' : ` of ${this.totalPages}` }
               </option>))}
@@ -240,24 +263,35 @@ export default {
       );
     },
   },
-  watch: {
-    value() {
-      this.currentUrl = this.pages[this.currentIdx].url;
-    },
-  },
-  mounted() {
-    this.currentUrl = this.pages[this.currentIdx].url;
-  },
   methods: {
-    navigate(num, e) {
-      this.$emit('change', num, e);
-      this.$emit('input', num, e);
+    navigate(pageNum, e) {
+      // Dont do anything if clicking the current active page
+      if (pageNum === this.innerValue) {
+        return;
+      }
+      requestAF(() => {
+        // Update the v-model
+        // Done in in requestAF() to allow browser to complete the
+        // native browser click handling of a link
+        this.innerValue = pageNum;
+        this.$emit('navigate', pageNum, this.currentUrl, e);
+      });
+      this.$nextTick(() => {
+        // Done in a nextTick() to ensure rendering complete
+        try {
+          // Emulate native link click page reloading behaviour by blurring the
+          // paginator and returning focus to the document
+          const target = e.currentTarget || e.target;
+          target.blur();
+        } catch (err) {
+          // eslint-disable-next-line no-console
+          console.error(err);
+        }
+      });
     },
-    select(url, e) {
-      const idx = this.pages.map(x => x.url).indexOf(url);
-      const n = this.pages[idx].page;
-      this.$emit('select-change', url, e);
-      this.navigate(n, e);
+    select(page, e) {
+      e.preventDefault();
+      this.$refs[`page-link-${page}`].click();
     },
     guid() {
       function s4() {
@@ -269,14 +303,15 @@ export default {
     },
     renderLinkEl(n) {
       const attrs = {
-        class: clsx(this.style['cdr-pagination__link'], { current: n.page === this.value }),
+        class: clsx(this.style['cdr-pagination__link'], { current: n.page === this.innerValue }),
         href: n.url,
-        'aria-label': n.page === this.value
+        'aria-label': n.page === this.innerValue
           ? `Current page, page ${n.page}`
           : `Go to page ${n.page}`,
-        'aria-current': n.page === this.value,
+        'aria-current': n.page === this.innerValue,
         content: n.page,
         page: n.page,
+        ref: `page-link-${n.page}`,
       };
 
       return (this.$scopedSlots.link ? this.$scopedSlots.link(attrs)
@@ -286,6 +321,7 @@ export default {
           aria-label={attrs['aria-label']}
           aria-current={attrs['aria-current']}
           onClick={e => this.navigate(attrs.page, e)}
+          ref={attrs.ref}
         >{ attrs.content }</a>
       );
     },
