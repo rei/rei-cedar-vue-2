@@ -1,10 +1,10 @@
 import tabbable from 'tabbable';
+import clsx from 'clsx';
 import style from './styles/CdrModal.scss';
 import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
 import CdrIcon from '../icon/CdrIcon';
 import CdrText from '../text/CdrText';
-import clsx from 'clsx';
 
 export default {
   name: 'CdrModal',
@@ -75,7 +75,6 @@ export default {
       };
     },
     dialogClass() {
-      // return `pdp-modal__dialog ${this.width}`;
       return `${this.style['pdp-modal__dialog']} ${this.width}`;
     },
   },
@@ -230,18 +229,21 @@ export default {
     } = this;
     return (
       <div
-        class={{
-          [style.modal]: true,
-          [style.closed]: !opened,
-        }}
+        class={clsx(
+          this.style.modal,
+          {
+            [this.style.closed]: !opened,
+          },
+        )}
         ref="wrapper"
         role="presentation"
       >
-        <div class={[style.outerWrap, wrapperClass]}>
+        {/* <div class={[style.outerWrap, wrapperClass]}> */}
+        <div class={clsx(this.style.outerWrap, wrapperClass)}>
           <div
             aria-hidden="true"
             onClick={closeModal}
-            class={[style.overlay, overlayClass]}
+            class={clsx(this.style.overlay, overlayClass)}
           />
           {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
           <div tabIndex={opened ? '0' : undefined} />
@@ -251,7 +253,7 @@ export default {
           */}
           <div
             ref="modal"
-            class={[style.contentWrap, dialogClass]}
+            class={clsx(this.style.contentWrap, dialogClass)}
             id={modalId}
             tabIndex="-1"
             role="dialog"
@@ -260,7 +262,7 @@ export default {
             {...{ attrs: this.dialogAttrs || {} }}
           >
             <div
-              class={[style.innerWrap, contentClass]}
+              class={clsx(this.style.innerWrap, contentClass)}
               style={reallyClosed
                 ? { display: 'none' }
                 : undefined
