@@ -238,7 +238,6 @@ export default {
         ref="wrapper"
         role="presentation"
       >
-        {/* <div class={[style.outerWrap, wrapperClass]}> */}
         <div class={clsx(this.style.outerWrap, wrapperClass)}>
           <div
             aria-hidden="true"
