@@ -1,5 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrIcon from 'componentdir/icon/CdrIcon';
+import IconCaretDown from 'componentdir/icon/comps/caret-down'
 
 describe('CdrIcon', () => {
   test('renders correctly', () => {
@@ -26,6 +27,24 @@ describe('CdrIcon', () => {
     expect(wrapper.classes()).toContain('cdr-icon--large@lg');
   });
 
+  it('single icon component passes size prop through to CdrIcon', () => {
+    const wrapper = mount(IconCaretDown, {
+      propsData: {
+        size: 'small',
+      },
+    });
+    expect(wrapper.find('.cdr-icon--small').exists()).toBe(true);
+  });
+
+  it('single icon component passes space prop through to CdrIcon', () => {
+    const wrapper = mount(IconCaretDown, {
+      propsData: {
+        space: 'cdr-mb-space-one-x',
+      },
+    });
+    expect(wrapper.find('.cdr-mb-space-one-x').exists()).toBe(true);
+  });
+
   it('accepts full SVG in slot', () => {
     const wrapper = mount(CdrIcon, {
       slots: {
@@ -46,5 +65,5 @@ describe('CdrIcon', () => {
     expect(wrapper.attributes('role')).toBe('presentation'); // doesn't override 'default' attributes
     expect(wrapper.attributes('viewBox')).toBe('0 0 24 24'); // doesn't override 'default' attributes
   });
-  
+
 });

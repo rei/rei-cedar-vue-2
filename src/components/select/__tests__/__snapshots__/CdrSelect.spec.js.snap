@@ -6,7 +6,7 @@ exports[`cdrSelect renders correctly 1`] = `
 >
   <label
     class="cdr-select__label"
-    for="1"
+    for="renders"
   >
     Label Test 
   </label>
@@ -15,7 +15,7 @@ exports[`cdrSelect renders correctly 1`] = `
   >
     <select
       class="cdr-select  cdr-select cdr-select__prompt"
-      id="1"
+      id="renders"
     />
     <svg
       class="cdr-icon  cdr-select__caret"
@@ -37,7 +37,7 @@ exports[`cdrSelect renders helper-text slot 1`] = `
 >
   <label
     class="cdr-select__label"
-    for="50"
+    for="helper-text"
   >
     test 
   </label>
@@ -46,7 +46,7 @@ exports[`cdrSelect renders helper-text slot 1`] = `
   >
     <select
       class="cdr-select  cdr-select cdr-select__prompt"
-      id="50"
+      id="helper-text"
     />
     <icon-caret-down-stub
       class="cdr-select__caret"
@@ -68,7 +68,7 @@ exports[`cdrSelect renders info slot 1`] = `
 >
   <label
     class="cdr-select__label"
-    for="47"
+    for="info-slot"
   >
     test 
   </label>
@@ -82,7 +82,7 @@ exports[`cdrSelect renders info slot 1`] = `
   >
     <select
       class="cdr-select  cdr-select cdr-select__prompt"
-      id="47"
+      id="info-slot"
     />
     <icon-caret-down-stub
       class="cdr-select__caret"
@@ -99,7 +99,7 @@ exports[`cdrSelect renders required label correctly 1`] = `
 >
   <label
     class="cdr-select__label"
-    for="5"
+    for="required-label"
   >
     Label Test 
     <span
@@ -113,7 +113,7 @@ exports[`cdrSelect renders required label correctly 1`] = `
   >
     <select
       class="cdr-select  cdr-select cdr-select__prompt"
-      id="5"
+      id="required-label"
       required="required"
     />
     <icon-caret-down-stub

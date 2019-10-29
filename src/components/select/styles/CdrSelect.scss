@@ -35,12 +35,11 @@
   }
 
   &__caret {
-    fill: $cdr-color-icon-primary-lightmode;
-    position: absolute;
-    top: 50%;
-    right: $cdr-space-half-x;
-    transform: translateY(-50%);
-    pointer-events: none;
+    @include cdr-select-base-caret-mixin;
+
+    &--disabled {
+      @include cdr-select-base-caret-disabled-mixin;
+    }
   }
 
   &__info-container {
