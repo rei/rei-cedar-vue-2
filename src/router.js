@@ -2,6 +2,10 @@ import App from 'srcdir/App';
 import Accordions from 'componentsdir/accordion/examples/Accordion';
 import Breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import Buttons from 'componentsdir/button/examples/Buttons';
+import DefaultButtons from 'componentsdir/button/examples/demo/Default';
+import FullWidthButtons from 'componentsdir/button/examples/demo/FullWidth';
+import IconButtons from 'componentsdir/button/examples/demo/Icons';
+import SecondaryButtons from 'componentsdir/button/examples/demo/Secondary';
 import Captions from 'componentsdir/caption/examples/Caption';
 import Cards from 'componentsdir/card/examples/Cards';
 import CheckBoxes from 'componentsdir/checkbox/examples/checkboxes';
@@ -22,14 +26,18 @@ import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
-import Space from 'componentsdir/Utilities/Space';
 import Utilities from 'componentsdir/Utilities/Utilities';
-
+import InsetUtilities from 'componentsdir/Utilities/demos/inset';
+import PaddingSpacingUtilities from 'componentsdir/Utilities/demos/paddingSpacing';
+import MarginSpacingUtilities from 'componentsdir/Utilities/demos/marginSpacing';
+import ContainerUtilities from 'componentsdir/Utilities/demos/container';
+import AlignUtilities from 'componentsdir/Utilities/demos/align';
+import VisibilityUtilities from 'componentsdir/Utilities/demos/visibility';
 
 const routes = [
-  { path: '/', component: App },
-  { path: '/links', name: 'Links', component: Links },
+  { path: '/', name: ' ', component: App },
   { path: '/kitchen-sink', name: 'KitchenSink', component: KitchenSink },
+  { path: '/utilities', name: 'Utilities', component: Utilities },
   { path: '/accordion', name: 'Accordion', component: Accordions },
   { path: '/breadcrumbs', name: 'Breadcrumb', component: Breadcrumb },
   { path: '/buttons', name: 'Buttons', component: Buttons },
@@ -42,6 +50,7 @@ const routes = [
   { path: '/icons', name: 'Icons', component: Icons },
   { path: '/images', name: 'Images', component: Images },
   { path: '/inputs', name: 'Input', component: Input },
+  { path: '/links', name: 'Links', component: Links },
   { path: '/lists', name: 'Lists', component: Lists },
   { path: '/modals', name: 'Modals', component: Modals },
   { path: '/pagination', name: 'Pagination', component: Pagination },
@@ -51,8 +60,16 @@ const routes = [
   { path: '/selects', name: 'Selects', component: Selects },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
-  { path: '/space', name: 'Space', component: Space },
-  { path: '/utilities', name: 'Utilities', component: Utilities },
+  { path: '/default-buttons', component: DefaultButtons },
+  { path: '/secondary-buttons', component: SecondaryButtons },
+  { path: '/full-width-buttons', component: FullWidthButtons },
+  { path: '/icon-buttons', component: IconButtons },
+  { path: '/padding-spacing-utilities', component: PaddingSpacingUtilities },
+  { path: '/margin-spacing-utilities', component: MarginSpacingUtilities },
+  { path: '/inset-utilities', component: InsetUtilities },
+  { path: '/container-utilities', component: ContainerUtilities },
+  { path: '/align-utilities', component: AlignUtilities },
+  { path: '/visibility-utilities', component: VisibilityUtilities },
 ];
 
 export default routes;

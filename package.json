@@ -61,7 +61,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
     "babel-plugin-istanbul": "^5.1.0",
-    "backstopjs": "^3.8.8",
+    "backstopjs": "^4.3.2",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.6",
     "chromedriver": "77.0.0",

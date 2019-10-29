@@ -1,5 +1,5 @@
 <template>
-  <div data-backstop="buttons">
+  <div>
     <cdr-text
       tag="h2"
       modifier="heading-400 heading-500@md heading-500@lg"

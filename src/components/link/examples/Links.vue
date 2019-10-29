@@ -18,7 +18,7 @@
       Default Link, No props
     </cdr-text>
     <div class="anchor-example">
-      <cdr-link :data-backstop="`cdr-link`">
+      <cdr-link data-backstop="cdr-link">
         REI.com
       </cdr-link>
     </div>
@@ -40,7 +40,7 @@
     <cdr-link
       modifier="standalone"
       space="cdr-space-inset-one-x"
-      :data-backstop="`cdr-link--standalone`"
+      data-backstop="cdr-link--standalone"
     >
       REI.com
     </cdr-link>
@@ -128,7 +128,7 @@
       <cdr-link
         tag="button"
         space="cdr-space-inset-one-x"
-        :data-backstop="`cdr-link--button`"
+        data-backstop="cdr-link--button"
         @click="clicked"
       >I'm a button!</cdr-link>
     </div>

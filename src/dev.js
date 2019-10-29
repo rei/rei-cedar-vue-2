@@ -30,4 +30,7 @@ new Vue({
       routes,
     };
   },
+  mounted() {
+    console.log('BACKSTOP_READY');
+  },
 }).$mount('#main');

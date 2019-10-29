@@ -1,5 +1,5 @@
 <template>
-  <div data-backstop="pagination">
+  <div>
     <h2>pagination</h2>
 
     <div
@@ -16,6 +16,7 @@
       v-model="ex1Page"
       @input="handleInput"
       @select-change="doSelect"
+      data-backstop="pagination-default"
     />
 
     <hr>
