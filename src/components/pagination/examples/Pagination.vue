@@ -2,6 +2,8 @@
   <div data-backstop="pagination">
     <h2>pagination</h2>
 
+    <p>Using vue-router/scoped slot</p>
+
     <div
       v-for="datam in paginationData.example1[ex1Page]"
       :key="datam.title"
@@ -11,41 +13,78 @@
     </div>
 
     <cdr-pagination
-      :pages="makePages(20, 'router-page')"
+      :pages="makePages(20, null)"
       :total-pages="20"
       v-model="ex1Page"
-      @navigate="handleNavigate"
-      @select-change="doSelect"
-    />
+    >
+      <!-- Previous -->
+      <template v-slot:prevLink="prevLink">
+        <router-link
+          v-bind="prevLink.attrs"
+          @click.native="prevLink.click"
+          :to="{ query: { 'router-page': prevLink.page } }"
+          replace
+        >
+          <component
+            :is="prevLink.iconComponent"
+            :class="prevLink.iconClass"
+          />
+          {{ prevLink.content }}
+        </router-link>
+      </template>
+      <!-- Single Page links -->
+      <template v-slot:link="link">
+        <router-link
+          v-bind="link.attrs"
+          @click.native="link.click"
+          :to="{ query: { 'router-page': link.page } }"
+          replace
+        >
+          {{ link.page }}
+        </router-link>
+      </template>
+      <!-- Next -->
+      <template v-slot:nextLink="nextLink">
+        <router-link
+          v-bind="nextLink.attrs"
+          @click.native="nextLink.click"
+          :to="{ query: { 'router-page': nextLink.page } }"
+          replace
+        >
+          {{ nextLink.content }}
+          <component
+            :is="nextLink.iconComponent"
+            :class="nextLink.iconClass"
+          />
+        </router-link>
+      </template>
+    </cdr-pagination>
 
     <hr>
 
     <p>Previous/Next only (known total)</p>
 
     <cdr-pagination
-      :pages="makePages(ex2Pages, 'router-page-b', ex2PageKnown - 2)"
+      :pages="makePages(ex2Pages, '/#/pagination?ex2-known-page', ex2PageKnown - 2)"
       :total-pages="10"
       v-model="ex2PageKnown"
-      @navigate="handleNavigate"
     />
 
     <hr>
     <p>Previous/Next only (unknown total)</p>
 
     <cdr-pagination
-      :pages="makePages(ex2Pages, 'router-page-b', ex2PageUnknown - 2)"
+      :pages="makePages(ex2Pages, '/#/pagination?ex2-unknown-page', ex2PageUnknown - 2)"
       v-model="ex2PageUnknown"
-      @navigate="handleNavigate"
     />
 
     <hr>
     <p>Only 5 pages provided</p>
 
     <cdr-pagination
-      :pages="makePages(5, 'router-page-c')"
+      :pages="makePages(5, '/#/pagination?ex3-page')"
       :total-pages="5"
       v-model="ex3Page"
-      @navigate="handleNavigate"
     />
 
     <hr>
@@ -55,7 +94,6 @@
       :pages="makePages(5, 'router-page-d')"
       :total-pages="5"
       v-model="ex4Page"
-      @navigate="handleNavigate"
     >
       <template
         slot="link"
@@ -156,15 +194,6 @@ export default {
         result.push(obj);
       });
       return result;
-    },
-    handleNavigate(page, url, e) {
-      e.preventDefault();
-      console.log('handleNavigate', page, url, e); // eslint-disable-line
-      // eslint-disable-next-line max-len
-      this.$router.replace({ query: Object.assign({}, this.$route.query, { 'router-page': page }) });
-    },
-    doSelect(page, url, e) {
-      console.log('doSelect', page, url, e); // eslint-disable-line
     },
   },
 };

@@ -155,15 +155,20 @@ export default {
     },
     prevElAttrs() {
       return {
-        class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__prev']),
+        // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
+        attrs: {
+          class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__prev']),
+          'aria-label': 'Go to previous Page',
+          ref: 'prev-link',
+        },
+        // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
         href: this.pages[this.prevPageIdx].url,
         page: this.pages[this.prevPageIdx].page,
-        'aria-label': 'Go to previous Page',
-        ref: 'prev-link',
         content: 'Prev',
         iconClass: this.style['cdr-pagination__caret--prev'],
         iconComponent: 'icon-caret-left',
         iconPath: '#caret-left',
+        click: e => this.navigate(this.pages[this.prevPageIdx].page, e),
       };
     },
     prevEl() {
@@ -172,12 +177,11 @@ export default {
           {this.$scopedSlots.prevLink
             ? this.$scopedSlots.prevLink(this.prevElAttrs)
             : (<a
-              class={this.prevElAttrs.class}
+              class={this.prevElAttrs.attrs.class}
               href={this.prevElAttrs.href}
-              page={this.prevElAttrs.page}
-              aria-label={this.prevElAttrs['aria-label']}
-              ref={this.prevElAttrs.ref}
-              onClick={e => this.navigate(this.prevElAttrs.page, e)}
+              aria-label={this.prevElAttrs.attrs['aria-label']}
+              ref={this.prevElAttrs.attrs.ref}
+              onClick={this.prevElAttrs.click}
             >
               <this.prevElAttrs.iconComponent
                 class={this.prevElAttrs.iconClass}
@@ -190,15 +194,20 @@ export default {
     },
     nextElAttrs() {
       return {
-        class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__next']),
+        // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
+        attrs: {
+          class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__next']),
+          'aria-label': 'Go to next page',
+          ref: 'next-link',
+        },
+        // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
         href: this.pages[this.nextPageIdx].url,
         page: this.pages[this.nextPageIdx].page,
-        'aria-label': 'Go to next page',
-        ref: 'next-link',
         content: 'Next',
         iconClass: this.style['cdr-pagination__caret--next'],
         iconComponent: 'icon-caret-right',
         iconPath: '#caret-right',
+        click: e => this.navigate(this.pages[this.nextPageIdx].page, e),
       };
     },
     nextEl() {
@@ -207,12 +216,11 @@ export default {
           {this.$scopedSlots.nextLink
             ? this.$scopedSlots.nextLink(this.nextElAttrs)
             : (<a
-              class={this.nextElAttrs.class}
+              class={this.nextElAttrs.attrs.class}
               href={this.nextElAttrs.href}
-              page={this.nextElAttrs.page}
-              aria-label={this.nextElAttrs['aria-label']}
-              ref={this.nextElAttrs.ref}
-              onClick={e => this.navigate(this.nextElAttrs.page, e)}
+              aria-label={this.nextElAttrs.attrs['aria-label']}
+              ref={this.nextElAttrs.attrs.ref}
+              onClick={this.nextElAttrs.click}
             >
               {this.nextElAttrs.content}
               <this.nextElAttrs.iconComponent
@@ -291,7 +299,11 @@ export default {
     },
     select(page, e) {
       e.preventDefault();
-      this.$refs[`page-link-${page}`].click();
+      if (this.$scopedSlots.link) {
+        this.$scopedSlots.link()[0].context.$refs[`page-link-${page}`].$el.click();
+      } else {
+        this.$refs[`page-link-${page}`].click();
+      }
     },
     guid() {
       function s4() {
@@ -302,27 +314,32 @@ export default {
       return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
     },
     renderLinkEl(n) {
-      const attrs = {
-        class: clsx(this.style['cdr-pagination__link'], { current: n.page === this.innerValue }),
+      const linkData = {
+        // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
+        attrs: {
+          class: clsx(this.style['cdr-pagination__link'], { current: n.page === this.innerValue }),
+          'aria-label': n.page === this.innerValue
+            ? `Current page, page ${n.page}`
+            : `Go to page ${n.page}`,
+          'aria-current': n.page === this.innerValue ? 'page' : null,
+          ref: `page-link-${n.page}`,
+        },
+        // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
         href: n.url,
-        'aria-label': n.page === this.innerValue
-          ? `Current page, page ${n.page}`
-          : `Go to page ${n.page}`,
-        'aria-current': n.page === this.innerValue,
-        content: n.page,
+        click: e => this.navigate(n.page, e),
         page: n.page,
-        ref: `page-link-${n.page}`,
+        content: n.page,
       };
 
-      return (this.$scopedSlots.link ? this.$scopedSlots.link(attrs)
+      return (this.$scopedSlots.link ? this.$scopedSlots.link(linkData)
         : <a
-          class={attrs.class}
-          href={attrs.href}
-          aria-label={attrs['aria-label']}
-          aria-current={attrs['aria-current']}
-          onClick={e => this.navigate(attrs.page, e)}
-          ref={attrs.ref}
-        >{ attrs.content }</a>
+          class={linkData.attrs.class}
+          href={linkData.href}
+          aria-label={linkData.attrs['aria-label']}
+          aria-current={linkData.attrs['aria-current']}
+          onClick={linkData.click}
+          ref={linkData.attrs.ref}
+        >{ linkData.content }</a>
       );
     },
   },
