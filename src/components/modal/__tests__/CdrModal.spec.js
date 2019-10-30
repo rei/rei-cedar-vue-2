@@ -67,8 +67,8 @@ describe('CdrModal.vue', () => {
   });
 
   it('handleOpened', () => {
-    const spy = sinon.spy();
-    const anotherSpy = sinon.spy();
+    const addNoScroll = sinon.spy();
+    const addHandlers = sinon.spy();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: false,
@@ -76,51 +76,79 @@ describe('CdrModal.vue', () => {
         label: "My Modal Label",
       },
       methods: {
-        addNoScroll: spy,
-        addHandlers: anotherSpy,
+        addNoScroll: addNoScroll,
+        addHandlers: addHandlers,
       },
     });
 
     wrapper.setProps({ opened: true });
 
-    expect(spy.called).toBeTruthy();
+    expect(addNoScroll.called).toBeTruthy();
     expect(wrapper.vm.reallyClosed).toBeFalsy();
     expect(wrapper.vm.lastActive).not.toEqual(null);
     
     wrapper.vm.$nextTick(() => {
-      expect(anotherSpy.called).toBeTruthy();
-      setTimeout(() => {
-        const modal = wrapper.find({ ref: wrapper });
-        console.log('scrollTop', modal.scrollTop);
-      });
+      expect(addHandlers.called).toBeTruthy();
     });
   });
 
-  it('handleClosed', () => {
-    // jest.useFakeTimers();
-    sinon.spy(document, 'removeEventListener');
-    // sinon.spy(window, 'scrollTo');
-    const wrapper = mount(CdrModal, {
-      propsData: {
-        opened: true,
-        closeModal: sinon.spy(),
-        label: "My Modal Label",
-      },
-      methods: {
-        removeNoScroll: sinon.spy(),
-      },
+  describe('closedFunctions', () => {
+    beforeEach(() => {
+      sinon.spy(document, 'removeEventListener');
     });
 
-    // wrapper.setProps({ opened: false });
-    expect(document.removeEventListener.calledWith('keydown'));
-    // expect(window.scrollTo).toHaveBeenCalled();
-    // expect(removeNoScroll.called).toBeTruthy();
-    // expect(wrapper.vm.reallyClosed).toBe(true);
-    // console.log('reallyClosed', wrapper.vm.reallyClosed);
-    expect(document.removeEventListener.calledWith('focusin'));
-    
-    wrapper.vm.$nextTick(() => {
-      console.log('nextTick');
+    afterEach(() => {
+      document.removeEventListener.restore();
+    });
+
+    it('handleClosed', () => {
+      const handleClosedCallback = sinon.spy();
+      
+      const wrapper = shallowMount(CdrModal, {
+        propsData: {
+          opened: true,
+          closeModal: () => {},
+          label: "My Modal Label",
+        },
+        methods: {
+          handleClosedCallback: handleClosedCallback,
+        },
+      });
+  
+      wrapper.setProps({ opened: false });
+  
+      expect(document.removeEventListener.calledWith('keydown'));
+      expect(handleClosedCallback.called).toBeTruthy();
+    });
+  
+    it('handleClosedCallback', () => {
+      const removeNoScroll = sinon.spy();
+      const unsubscribe = sinon.spy();
+  
+      // afaik jest does not support testing a global window object, so this prevents
+      // the test from blowing up.
+      Object.defineProperty(global.window, 'scrollTo', { value: () => {} });
+  
+      const wrapper = mount(CdrModal, {
+        propsData: {
+          opened: true,
+          closeModal: () => {},
+          label: "My Modal Label",
+        },
+        methods: {
+          removeNoScroll: removeNoScroll,
+        },
+      });
+  
+      wrapper.setData({ unsubscribe: unsubscribe });
+      wrapper.vm.handleClosedCallback();
+  
+      expect(unsubscribe.called).toBeTruthy();
+      expect(removeNoScroll.called).toBeTruthy();
+      expect(wrapper.vm.unsubscribe).toBe(null)
+      expect(wrapper.vm.reallyClosed).toBe(true);
+      // expect(scrollTo.calledWith(0, 0)); this assertion does not seem to work
+      expect(document.removeEventListener.calledWith('focusin'));
     });
   });
 

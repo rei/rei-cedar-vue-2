@@ -22,7 +22,7 @@ export default (element, callback, timeout) => {
   element.addEventListener(transitionEvent, callback);
   let timeoutId;
   if (timeout) {
-    console.log('onTransitionEnd timeout', timeout);
+    // console.log('onTransitionEnd timeout', timeout);
     timeoutId = setTimeout(
       () => {
         element.removeEventListener(transitionEvent, callback);

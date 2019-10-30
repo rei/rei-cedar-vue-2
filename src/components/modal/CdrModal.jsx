@@ -110,7 +110,6 @@ export default {
       }
     },
     handleFocus(e) {
-      console.log('handleFocus', e);
       const { documentElement } = document;
       if (this.$refs.modal.contains(e.target) || !documentElement) return;
 
@@ -125,9 +124,7 @@ export default {
       documentElement.scrollLeft = this.scrollLeft;
     },
     handleOpened() {
-      // console.log('handleOpened');
       const { activeElement } = document;
-      // console.log('activeelement', activeElement);
 
       this.addNoScroll();
       this.reallyClosed = false;
@@ -149,23 +146,23 @@ export default {
 
       this.unsubscribe = onTransitionEnd(
         this.$refs.wrapper,
-        () => {
-          console.log('ontTransitionEnd');
-          this.unsubscribe();
-          this.removeNoScroll();
-          this.unsubscribe = null;
-          this.reallyClosed = true;
-
-          // restore previous scroll position
-          window.scrollTo(this.offset.x, this.offset.y);
-
-          document.removeEventListener('focusin', this.focusHandler, true);
-
-          if (this.lastActive) this.lastActive.focus();
-          // console.log('ontransitionEnd');
-        },
+        this.handleClosedCallback(),
         this.animationDuration + 16,
       );
+    },
+    handleClosedCallback() {
+      // moved into its own method because it's easier to test
+      this.unsubscribe();
+      this.removeNoScroll();
+      this.unsubscribe = null;
+      this.reallyClosed = true;
+
+      // restore previous scroll position
+      window.scrollTo(this.offset.x, this.offset.y);
+
+      document.removeEventListener('focusin', this.focusHandler, true);
+
+      if (this.lastActive) this.lastActive.focus();
     },
     addNoScroll() {
       const { documentElement, body } = document;
