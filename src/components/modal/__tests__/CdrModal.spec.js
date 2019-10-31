@@ -93,15 +93,16 @@ describe('CdrModal.vue', () => {
     });
   });
 
-  fit('handleClosed', (done) => {
-    jest.spyOn(document, 'removeEventListener');
+  it('handleClosed', (done) => {
+    spyOn(document, 'removeEventListener');
+    global.scrollTo = jest.fn();
     
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true, 
         closeModal: () => {},
         label: "My Modal Label",
-      }
+      },
     });
 
     wrapper.setProps({ opened: false });
@@ -113,7 +114,7 @@ describe('CdrModal.vue', () => {
         // these are the failing assertions
         expect(wrapper.vm.reallyClosed).toBe(true);
         expect(wrapper.vm.unsubscribe).toBe(null);
-        expect(document.removeEventListener).toHaveBeenCalledWith('focusin', expect.anything());
+        expect(document.removeEventListener).nthCalledWith(2, 'focusin', expect.anything(), true);
         done();
       }, 1000);
     });
