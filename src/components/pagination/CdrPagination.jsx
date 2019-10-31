@@ -177,9 +177,8 @@ export default {
           {this.$scopedSlots.prevLink
             ? this.$scopedSlots.prevLink(this.prevElAttrs)
             : (<a
-              class={this.prevElAttrs.attrs.class}
+              {... { attrs: this.prevElAttrs.attrs }}
               href={this.prevElAttrs.href}
-              aria-label={this.prevElAttrs.attrs['aria-label']}
               ref={this.prevElAttrs.attrs.ref}
               onClick={this.prevElAttrs.click}
             >
@@ -216,9 +215,8 @@ export default {
           {this.$scopedSlots.nextLink
             ? this.$scopedSlots.nextLink(this.nextElAttrs)
             : (<a
-              class={this.nextElAttrs.attrs.class}
+              {... { attrs: this.nextElAttrs.attrs }}
               href={this.nextElAttrs.href}
-              aria-label={this.nextElAttrs.attrs['aria-label']}
               ref={this.nextElAttrs.attrs.ref}
               onClick={this.nextElAttrs.click}
             >
@@ -333,10 +331,8 @@ export default {
 
       return (this.$scopedSlots.link ? this.$scopedSlots.link(linkData)
         : <a
-          class={linkData.attrs.class}
+          {... { attrs: linkData.attrs } }
           href={linkData.href}
-          aria-label={linkData.attrs['aria-label']}
-          aria-current={linkData.attrs['aria-current']}
           onClick={linkData.click}
           ref={linkData.attrs.ref}
         >{ linkData.content }</a>
