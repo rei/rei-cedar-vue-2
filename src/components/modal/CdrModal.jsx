@@ -146,7 +146,20 @@ export default {
 
       this.unsubscribe = onTransitionEnd(
         this.$refs.wrapper,
-        this.handleClosedCallback(),
+        () => {
+          // moved into its own method because it's easier to test
+          this.unsubscribe();
+          this.removeNoScroll();
+          this.unsubscribe = null;
+          this.reallyClosed = true;
+
+          // restore previous scroll position
+          window.scrollTo(this.offset.x, this.offset.y);
+
+          document.removeEventListener('focusin', this.focusHandler, true);
+
+          if (this.lastActive) this.lastActive.focus();
+        },
         this.animationDuration + 16,
       );
     },
