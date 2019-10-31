@@ -6,7 +6,7 @@
 - Both positive and negative
 - Improper or inconsistent typing
   - All accepted prop types
-- Check for side effects, limit values and None
+- Check for side effects, limit values, and None
   - Really long values
   - Really short values
   - Floats and integers
