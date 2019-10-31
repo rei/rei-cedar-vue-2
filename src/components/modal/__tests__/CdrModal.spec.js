@@ -1,6 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrModal from 'componentdir/modal/CdrModal';
 import sinon from 'sinon';
+import Vue from 'vue';
 
 describe('CdrModal.vue', () => {
   it('sets up noScroll, handlers when initialized open', () => {
@@ -92,60 +93,29 @@ describe('CdrModal.vue', () => {
     });
   });
 
-  describe('closedFunctions', () => {
-    beforeEach(() => {
-      sinon.spy(document, 'removeEventListener');
+  fit('handleClosed', (done) => {
+    jest.spyOn(document, 'removeEventListener');
+    
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true, 
+        closeModal: () => {},
+        label: "My Modal Label",
+      }
     });
 
-    afterEach(() => {
-      document.removeEventListener.restore();
-    });
+    wrapper.setProps({ opened: false });
 
-    it('handleClosed', () => {
-      const handleClosedCallback = sinon.spy();
-      
-      const wrapper = shallowMount(CdrModal, {
-        propsData: {
-          opened: true,
-          closeModal: () => {},
-          label: "My Modal Label",
-        },
-        methods: {
-          handleClosedCallback: handleClosedCallback,
-        },
-      });
-  
-      wrapper.setProps({ opened: false });
-  
-      expect(document.removeEventListener.calledWith('keydown'));
-      expect(handleClosedCallback.called).toBeTruthy();
-    });
-  
-    it('handleClosedCallback', () => {
-      const removeNoScroll = sinon.spy();
-      const unsubscribe = sinon.spy();
-      spyOn(window, 'scrollTo')
-  
-      const wrapper = mount(CdrModal, {
-        propsData: {
-          opened: true,
-          closeModal: () => {},
-          label: "My Modal Label",
-        },
-        methods: {
-          removeNoScroll: removeNoScroll,
-        },
-      });
-  
-      wrapper.setData({ unsubscribe: unsubscribe });
-      wrapper.vm.handleClosedCallback();
-  
-      expect(unsubscribe.called).toBeTruthy();
-      expect(removeNoScroll.called).toBeTruthy();
-      expect(wrapper.vm.unsubscribe).toBe(null)
-      expect(wrapper.vm.reallyClosed).toBe(true);
-      expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
-      expect(document.removeEventListener.calledWith('focusin'));
+    expect(document.removeEventListener).toHaveBeenCalledWith('keydown', expect.anything());
+    
+    Vue.nextTick(() => {
+      setTimeout(() => {
+        // these are the failing assertions
+        expect(wrapper.vm.reallyClosed).toBe(true);
+        expect(wrapper.vm.unsubscribe).toBe(null);
+        expect(document.removeEventListener).toHaveBeenCalledWith('focusin', expect.anything());
+        done();
+      }, 1000);
     });
   });
 
