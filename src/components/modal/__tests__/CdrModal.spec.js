@@ -124,10 +124,7 @@ describe('CdrModal.vue', () => {
     it('handleClosedCallback', () => {
       const removeNoScroll = sinon.spy();
       const unsubscribe = sinon.spy();
-  
-      // afaik jest does not support testing a global window object, so this prevents
-      // the test from blowing up.
-      Object.defineProperty(global.window, 'scrollTo', { value: () => {} });
+      spyOn(window, 'scrollTo')
   
       const wrapper = mount(CdrModal, {
         propsData: {
@@ -147,7 +144,7 @@ describe('CdrModal.vue', () => {
       expect(removeNoScroll.called).toBeTruthy();
       expect(wrapper.vm.unsubscribe).toBe(null)
       expect(wrapper.vm.reallyClosed).toBe(true);
-      // expect(scrollTo.calledWith(0, 0)); this assertion does not seem to work
+      expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
       expect(document.removeEventListener.calledWith('focusin'));
     });
   });
