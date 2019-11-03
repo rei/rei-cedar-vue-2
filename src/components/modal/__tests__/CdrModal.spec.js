@@ -1,12 +1,11 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrModal from 'componentdir/modal/CdrModal';
-import sinon from 'sinon';
 import Vue from 'vue';
 
 describe('CdrModal.vue', () => {
   it('sets up noScroll, handlers when initialized open', () => {
-    const spyAddNoScroll = sinon.spy();
-    const spyAddHandlers = sinon.spy();
+    const spyAddNoScroll = jest.fn();
+    const spyAddHandlers = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
@@ -19,38 +18,34 @@ describe('CdrModal.vue', () => {
       },
     });
 
-    expect(spyAddNoScroll.called).toBeTruthy();
-    expect(spyAddHandlers.called).toBeTruthy();
+    expect(spyAddNoScroll).toHaveBeenCalled();
+    expect(spyAddHandlers).toHaveBeenCalled();
   });
 
   it('calls correct function on opened prop update', () => {
-    const spyHandleOpened = sinon.spy();
-    const spyHandleClosed = sinon.spy();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: false,
         closeModal: () => {},
         label: "My Modal Label",
       },
-      methods: {
-        handleOpened: spyHandleOpened,
-        handleClosed: spyHandleClosed,
-      },
     });
 
+    spyOn(wrapper.vm, 'handleOpened');
+    spyOn(wrapper.vm, 'handleClosed');
+
     wrapper.setProps({ opened: true });
-    expect(spyHandleOpened.called).toBeTruthy();
+    expect(wrapper.vm.handleOpened).toHaveBeenCalled();
     
     wrapper.setProps({ opened: false });
-    expect(spyHandleClosed.called).toBeTruthy();
+    expect(wrapper.vm.handleClosed).toHaveBeenCalled();
   });
 
   it('handleKeyDown', () => {
-    const spyCloseModal = sinon.spy();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: spyCloseModal,
+        closeModal: jest.fn(),
         label: "My Modal Label",
       },
       attachToDocument: true,
@@ -59,37 +54,34 @@ describe('CdrModal.vue', () => {
     wrapper.trigger('keydown', {
       key: 'a',
     });
-    expect(spyCloseModal.called).toBeFalsy()
+    expect(wrapper.vm.closeModal).not.toHaveBeenCalled()
 
     wrapper.trigger('keydown', {
       key: 'Escape',
     });
-    expect(spyCloseModal.called).toBeTruthy();
+    expect(wrapper.vm.closeModal).toHaveBeenCalled();
   });
 
   it('handleOpened', () => {
-    const addNoScroll = sinon.spy();
-    const addHandlers = sinon.spy();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: false,
         closeModal: () => {},
         label: "My Modal Label",
       },
-      methods: {
-        addNoScroll: addNoScroll,
-        addHandlers: addHandlers,
-      },
     });
+
+    spyOn(wrapper.vm, 'addNoScroll');
+    spyOn(wrapper.vm, 'addHandlers');
 
     wrapper.setProps({ opened: true });
 
-    expect(addNoScroll.called).toBeTruthy();
+    expect(wrapper.vm.addNoScroll).toHaveBeenCalled();
     expect(wrapper.vm.reallyClosed).toBeFalsy();
     expect(wrapper.vm.lastActive).not.toEqual(null);
     
     wrapper.vm.$nextTick(() => {
-      expect(addHandlers.called).toBeTruthy();
+      expect(wrapper.vm.addHandlers).toHaveBeenCalled();
     });
   });
 
@@ -111,7 +103,6 @@ describe('CdrModal.vue', () => {
     
     Vue.nextTick(() => {
       setTimeout(() => {
-        // these are the failing assertions
         expect(wrapper.vm.reallyClosed).toBe(true);
         expect(wrapper.vm.unsubscribe).toBe(null);
         expect(document.removeEventListener).nthCalledWith(2, 'focusin', expect.anything(), true);
@@ -150,7 +141,7 @@ describe('CdrModal.vue', () => {
   });
 
   it('addHandlers', () => {
-    sinon.spy(document, 'addEventListener');
+    spyOn(document, 'addEventListener');
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
@@ -159,7 +150,7 @@ describe('CdrModal.vue', () => {
       },
     });
 
-    expect(document.addEventListener.calledWith('focusin'));
-    expect(document.addEventListener.calledWith('keydown'));
+    expect(document.addEventListener).toHaveBeenCalledWith('focusin', expect.anything(), true);
+    expect(document.addEventListener).nthCalledWith(2, 'keydown', expect.anything());
   });
 });
