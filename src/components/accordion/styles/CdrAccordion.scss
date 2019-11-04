@@ -29,7 +29,7 @@ $accordion-border: #dadada;
 
   &__button {
     // TODO: typography token
-    @include redwood-display-30;
+    @include cdr-text-utility-strong-300;
 
     background-color: $cdr-color-background-lightest;
     border: none;
@@ -50,9 +50,6 @@ $accordion-border: #dadada;
   }
 
   &__label {
-    // TODO: typography token
-    @include redwood-display-30;
-
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 0;
@@ -81,7 +78,7 @@ $accordion-border: #dadada;
 
   &__content {
     // TODO: typography token
-    @include redwood-body-20;
+    @include cdr-text-body-300;
 
     background-color: $cdr-color-background-lightest;
     color: $cdr-color-text-primary-lightmode;
@@ -91,7 +88,7 @@ $accordion-border: #dadada;
 
     & > * {
       // TODO: typography token
-      @include redwood-body-20;
+      @include cdr-text-body-300;
     }
 
     &:global(.open) {
@@ -130,20 +127,20 @@ $accordion-border: #dadada;
 
     .cdr-accordion__label {
       // TODO: typography token
-      @include redwood-display-20;
+      @include cdr-text-utility-strong-200;
 
       font-weight: bold;
     }
 
     .cdr-accordion__content {
       // TODO: typography token
-      @include redwood-body-10;
+      @include cdr-text-utility-200;
 
       padding: $cdr-space-quarter-x $cdr-space-three-quarter-x $cdr-space-three-quarter-x;
 
       & > * {
         // TODO: typography token
-        @include redwood-body-10;
+        @include cdr-text-utility-200;
       }
     }
   }
