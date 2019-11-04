@@ -1,5 +1,32 @@
- <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Redirecting to https://rei.github.io/rei-cedar-docs/</title>
-<meta http-equiv="refresh" content="0; URL=https://rei.github.io/rei-cedar-docs/">
-<link rel="canonical" href="https://rei.github.io/rei-cedar-docs/">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>rei-cedar</title>
+    <meta name="description" content="Welcome to the REI Digital Design System presentation framework. A home for modular components based on our evolving design patterns.">
+    <meta name="author" content="REI">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:400" rel="stylesheet">
+    <link rel="stylesheet" href="cdr-fonts.css">
+    <link rel="stylesheet" href="cedar.css">
+  </head>
+  <body>
+    <!-- Uncomment to test vs normalize -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"> -->
+    <!-- Uncomment to test vs cedar 1 -->
+    <!-- <link href="https://satchel.rei.com/packages/rei/rei-cedar/1.7.11/rei-cedar.min.css" rel="stylesheet"> -->
+    <div id="main" class="cdr-container-fluid">
+      <h1>REI Cedar</h1>
+      <cdr-icon-sprite></cdr-icon-sprite>
+      <ul style="padding:0">
+        <li class="cdr-space-inset-quarter-x" style="display:inline-flex" v-for="route in routes"><router-link v-if="route.name" :key="route.path" :to="route.path">{{ route.name }} *</router-link></li>
+      </ul
+      <hr />
+      <div class=" cdr-mt-space-two-x">
+        <router-view></router-view>
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+    <script src="kitchen-sink.iife.js"></script>
+  </body>
+</html>
