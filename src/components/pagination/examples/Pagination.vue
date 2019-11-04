@@ -2,7 +2,6 @@
   <div data-backstop="pagination">
     <h2>pagination</h2>
 
-    <p>Using vue-router/scoped slot</p>
 
     <div
       v-for="datam in paginationData.example1[ex1Page]"
@@ -12,6 +11,7 @@
       <p>{{ datam.description }}</p>
     </div>
 
+    <p>Using vue-router/scoped slot</p>
     <cdr-pagination
       :pages="makePages(20, null)"
       :total-pages="20"
@@ -88,49 +88,7 @@
     />
 
     <hr>
-    <p>Scoped Slot Link</p>
-
-    <cdr-pagination
-      :pages="makePages(5, 'router-page-d')"
-      :total-pages="5"
-      v-model="ex4Page"
-    >
-      <template
-        slot="link"
-        slot-scope="link"
-      >
-        <div
-          :class="link.class"
-          @click="e => ex4Page = link.page"
-        >
-          {{ link.href }}
-        </div>
-      </template>
-      <template
-        slot="prevLink"
-        slot-scope="link"
-      >
-        <div @click="e => ex4Page = link.page">
-          <cdr-icon
-            :use="link.iconPath"
-            :class="link.iconClass"
-          />
-          <span>{{ link.content }}</span>
-        </div>
-      </template>
-      <template
-        slot="nextLink"
-        slot-scope="link"
-      >
-        <div @click="e => ex4Page = link.page">
-          <span>{{ link.content }}</span>
-          <cdr-icon
-            :use="link.iconPath"
-            :class="link.iconClass"
-          />
-        </div>
-      </template>
-    </cdr-pagination>
+    <p>Normal</p>
 
     <cdr-pagination
       v-model="page"
@@ -153,7 +111,7 @@ export default {
   },
   data() {
     return {
-      page: 1,
+      page: 3,
       pages: [
         { page: 1, url: '/#/pagination?page=1' },
         { page: 2, url: '/#/pagination?page=2' },
@@ -171,7 +129,6 @@ export default {
       ex2PageKnown: 5,
       ex2PageUnknown: 5,
       ex3Page: 1,
-      ex4Page: 3,
     };
   },
   computed: {
