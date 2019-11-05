@@ -33,10 +33,6 @@ if (env !== 'test') {
   copyTargets = ['static/cdr-fonts.css'];
 }
 
-if (env === 'dev') {
-  copyTargets.push('dist/cedar.css')
-}
-
 const plugins = [
   (env == 'test' || env == 'dev') && alias({
     resolve: ['.json', '.js', '.jsx', '.scss', '.vue'],
