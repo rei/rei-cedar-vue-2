@@ -22,7 +22,7 @@
   },
   "scripts": {
     "prepublishOnly": "npm-run-all lint build",
-    "dev:build": "npm-run-all build:cssfonts && cross-env NODE_ENV=dev rollup -c rollup.config.dev.js",
+    "dev:build": "npm run build:cssfonts && cross-env NODE_ENV=dev rollup -c rollup.config.dev.js",
     "dev": "npm run dev:build -- -w",
     "build": "npm-run-all clean build:cssfonts build:cjs build:esm build:extractcss build:cssdocs",
     "build:cjs": "cross-env NODE_ENV=prod BABEL_ENV=cjs rollup -c rollup.config.js",
