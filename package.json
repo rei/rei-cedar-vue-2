@@ -22,7 +22,8 @@
   },
   "scripts": {
     "prepublishOnly": "npm-run-all lint build",
-    "dev": "npm-run-all build:cssfonts && cross-env NODE_ENV=dev rollup -w -c rollup.config.dev.js",
+    "dev:build": "npm run build:cssfonts && cross-env NODE_ENV=dev rollup -c rollup.config.dev.js",
+    "dev": "npm run dev:build -- -w",
     "build": "npm-run-all clean build:cssfonts build:cjs build:esm build:extractcss build:cssdocs",
     "build:cjs": "cross-env NODE_ENV=prod BABEL_ENV=cjs rollup -c rollup.config.js",
     "build:esm": "cross-env NODE_ENV=prod BABEL_ENV=esm rollup -c rollup.config.js",
@@ -61,7 +62,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
     "babel-plugin-istanbul": "^5.1.0",
-    "backstopjs": "^3.8.8",
+    "backstopjs": "^4.3.2",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.6",
     "chromedriver": "77.0.0",

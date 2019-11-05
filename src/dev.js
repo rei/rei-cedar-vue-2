@@ -4,8 +4,7 @@ import Vue from 'vue/dist/vue.esm';
 import VueRouter from 'vue-router';
 import { CdrIconSprite } from 'componentsdir/icon/index';
 import routes from './router';
-import './css/main.scss';
-
+import cedarcss from './css/main.scss';
 
 Vue.config.devtools = true;
 
@@ -28,6 +27,10 @@ new Vue({
   data() {
     return {
       routes,
+      cedarcss,
     };
+  },
+  mounted() {
+    console.log('BACKSTOP_READY');
   },
 }).$mount('#main');

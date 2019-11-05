@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div data-backstop="buttons">
     <div
       class="button-example cdr-space-inset-one-x"
       v-for="(section, index) in data"
       :key="index"
+      :data-backstop="section.backstop ? section.backstop : null"
     >
       <cdr-text
         tag="h3"
@@ -55,13 +56,13 @@ export default {
       data: [
         {
           title: 'Secondary',
+          backstop: 'cdr-button--secondary',
           buttons: [
             {
               label: 'Large',
               disabled: false,
               size: 'large',
               modifier: 'secondary',
-              backstop: 'cdr-button--secondary',
             },
             {
               label: 'Medium',

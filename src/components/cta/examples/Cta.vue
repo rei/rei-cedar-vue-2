@@ -41,7 +41,7 @@
         cta-style="dark"
         href="https://rei.com"
         full-width="@xs @lg"
-        data-backstop="cdr-cta--full-width-at-xs"
+        data-backstop="cdr-cta--full-width-responsive"
       >Full width @xs @lg</cdr-cta>
     </div>
     <div
