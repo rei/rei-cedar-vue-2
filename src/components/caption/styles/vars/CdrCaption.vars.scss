@@ -1,0 +1,15 @@
+@mixin cdr-caption-summary-text-mixin() {
+  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.08px;
+  line-height: 2.2rem;
+}
+
+@mixin cdr-caption-citation-text-mixin() {
+  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  line-height: 1.8rem;
+}

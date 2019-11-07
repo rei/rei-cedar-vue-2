@@ -33,7 +33,14 @@
       :key="`headingBreakpoint4-${n}`"
       :tag="`h${n}`"
       modifier="display-1000 display-1100@md display-1200@lg"
-    >Display @breakpoints 1000-1200  h{{ n }}</cdr-text>
+    >Display @breakpoints 1000-1200  h{{ n }}
+      <cdr-text
+        modifier="italic"
+        tag="em"
+      >
+        some italics
+      </cdr-text>
+    </cdr-text>
 
     <cdr-text
       modifier="heading-300"
@@ -140,6 +147,11 @@
         heading-400  heading-500@md
       </cdr-text>
     </cdr-text>
+
+    <cdr-text modifier="eyebrow-100">
+      eyebrow-100
+    </cdr-text>
+
   </div>
 </template>
 

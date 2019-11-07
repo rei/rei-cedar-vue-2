@@ -22,10 +22,16 @@ h3.cdr-text,
 h4.cdr-text,
 h5.cdr-text,
 h6.cdr-text {
-  @include cdr-text-body-300;
 
   /* Paragraphs
     ========================================================================== */
+  &--italic {
+  font-variation-settings: 'ital' 1;
+  font-style: italic;
+  }
+  &--strong {
+  font-weight: 700;
+  }
 
   &--body { 
     &-300 { @include cdr-text-body-300; }
@@ -75,9 +81,11 @@ h6.cdr-text {
       }
     }
   }
+
   &--eyebrow-100 { 
     @include cdr-text-eyebrow-100;
  }
+
  &--heading {
    &-300 { @include cdr-text-heading-300; }
    &-400 { @include cdr-text-heading-400; }
@@ -106,7 +114,7 @@ h6.cdr-text {
     ========== */
 
   &--citation {
-    @include cdr-text-citation-mixin;
+    @include cdr-text-utility-strong-100;
   }
 }
 
