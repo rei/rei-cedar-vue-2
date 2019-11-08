@@ -62,6 +62,29 @@ describe('CdrModal.vue', () => {
     expect(wrapper.vm.closeModal).toHaveBeenCalled();
   });
 
+  xit('handleFocus', () => {
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        closeModal: () => {},
+        label: "My Modal Label"
+      },
+      slots: {
+        default: "Modal content in the slot",
+      },
+      attachToDocument: true,
+    });
+
+    for (let i = 0; i < 3; i++) {
+      wrapper.trigger('keydown', {
+        key: 'tab'
+      });
+    }
+
+    expect(document.scrollTop).toBe(undefined);
+    expect(document.scrollLeft).toBe(undefined);
+  });
+
   it('handleOpened', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
