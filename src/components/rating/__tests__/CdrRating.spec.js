@@ -95,4 +95,49 @@ describe('CdrRating', () => {
     expect(wrapper.contains('.cdr-rating__placeholder')).toBe(false);
     expect(wrapper.contains('.cdr-rating__placeholder--no-reviews')).toBe(true);
   });
+
+  it('renders custom placeholder stars when count is not passed', () => {
+    const wrapper = shallowMount(CdrRating, {
+      propsData: {
+        rating: 5,
+        href: 'rei.com'
+      }
+    });
+    expect(wrapper.contains('.cdr-rating__placeholder')).toBe(false);
+    expect(wrapper.contains('.cdr-rating__placeholder--no-reviews')).toBe(true);
+  });
+
+  it('renders review text when count is 0', () => {
+    const wrapper = shallowMount(CdrRating, {
+      propsData: {
+        rating: 5,
+        count: 0,
+        href: 'rei.com'
+      }
+    });
+    expect(wrapper.contains('.cdr-rating__count')).toBe(true);
+    expect(wrapper.find('.cdr-display-sr-only').text()).toBe('rated 5 out of 5 with 0 reviews');
+  });
+
+  it('renders review text when count is "0"', () => {
+    const wrapper = shallowMount(CdrRating, {
+      propsData: {
+        rating: 5,
+        count: "0",
+        href: 'rei.com'
+      }
+    });
+    expect(wrapper.contains('.cdr-rating__count')).toBe(true);
+    expect(wrapper.find('.cdr-display-sr-only').text()).toBe('rated 5 out of 5 with 0 reviews');
+  });
+
+  it('renders no review text if count is not passed', () => {
+    const wrapper = shallowMount(CdrRating, {
+      propsData: {
+        rating: 5,
+      }
+    });
+    expect(wrapper.contains('.cdr-rating__count')).toBe(false);
+    expect(wrapper.find('.cdr-display-sr-only').text()).toBe('rated 5 out of 5');
+  });
 });
