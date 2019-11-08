@@ -3,6 +3,20 @@ import CdrModal from 'componentdir/modal/CdrModal';
 import Vue from 'vue';
 
 describe('CdrModal.vue', () => {
+  it('renders correctly', () => {
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        closeModal: () => {},
+        label: "Label is the modal title"
+      },
+      slots: {
+        default: "Modal text content"
+      },
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('sets up noScroll, handlers when initialized open', () => {
     const spyAddNoScroll = jest.fn();
     const spyAddHandlers = jest.fn();
@@ -60,29 +74,6 @@ describe('CdrModal.vue', () => {
       key: 'Escape',
     });
     expect(wrapper.vm.closeModal).toHaveBeenCalled();
-  });
-
-  xit('handleFocus', () => {
-    const wrapper = shallowMount(CdrModal, {
-      propsData: {
-        opened: true,
-        closeModal: () => {},
-        label: "My Modal Label"
-      },
-      slots: {
-        default: "Modal content in the slot",
-      },
-      attachToDocument: true,
-    });
-
-    for (let i = 0; i < 3; i++) {
-      wrapper.trigger('keydown', {
-        key: 'tab'
-      });
-    }
-
-    expect(document.scrollTop).toBe(undefined);
-    expect(document.scrollLeft).toBe(undefined);
   });
 
   it('handleOpened', () => {

@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrModal.vue renders correctly 1`] = `
+<div
+  class="modal"
+  role="presentation"
+>
+  <div
+    class="outerWrap"
+  >
+    <div
+      aria-hidden="true"
+      class="overlay"
+    />
+    <div
+      tabindex="0"
+    />
+    <div
+      aria-label="Label is the modal title"
+      aria-modal="true"
+      class="contentWrap pdp-modal__dialog medium"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div
+        class="innerWrap"
+      >
+        <section>
+          <div
+            class="pdp-modal__content"
+          >
+            <div
+              class="pdp-modal__header"
+            >
+              <div
+                class="pdp-modal__title"
+              />
+              <cdr-button-stub
+                aria-label="close"
+                class="pdp-modal__close-button"
+                icononly="true"
+                id="close-modal-button"
+                size="medium"
+                space=""
+                tag="button"
+                type="button"
+              >
+                <cdr-icon-stub
+                  inheritcolor="true"
+                  size="medium"
+                  space=""
+                  use="#x-lg"
+                />
+              </cdr-button-stub>
+            </div>
+            <div
+              class="pdp-modal__text"
+              role="document"
+              tabindex="0"
+            >
+              <div
+                class="pdp-modal__text-content"
+              >
+                Modal text content
+              </div>
+              <div
+                class="pdp-modal__text-fade"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div
+      tabindex="0"
+    />
+  </div>
+</div>
+`;
