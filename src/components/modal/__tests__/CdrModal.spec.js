@@ -167,4 +167,29 @@ describe('CdrModal.vue', () => {
     expect(document.addEventListener).toHaveBeenCalledWith('focusin', expect.anything(), true);
     expect(document.addEventListener).nthCalledWith(2, 'keydown', expect.anything());
   });
+
+  it('beforeDestory', () => {
+    spyOn(document, 'removeEventListener');
+    const spyRemoveNoScroll = jest.fn();
+    const spyUnsubscribe = jest.fn();
+    
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        closeModal: () => {},
+        label: "My Modal Label",
+      },
+      methods: {
+        removeNoScroll: spyRemoveNoScroll,
+      },
+    });
+
+    wrapper.setData({ unsubscribe: spyUnsubscribe });
+    wrapper.destroy();
+
+    expect(spyUnsubscribe).toHaveBeenCalled();
+    expect(spyRemoveNoScroll).toHaveBeenCalled();
+    expect(document.removeEventListener).toHaveBeenCalledWith('focusin', expect.anything(), true);
+    expect(document.removeEventListener).toHaveBeenCalledWith('keydown', expect.anything());
+  });
 });
