@@ -2,6 +2,16 @@
   <div>
     <h2>pagination</h2>
 
+    <hr>
+    <p>Normal</p>
+
+    <cdr-pagination
+      v-model="page"
+      :pages="pages"
+      :total-pages="10"
+      data-backstop="pagination-default"
+    />
+    <hr>
 
     <div
       v-for="datam in paginationData.example1[ex1Page]"
@@ -128,16 +138,6 @@
       :pages="makePages(5, '/#/pagination?ex3-page')"
       :total-pages="5"
       v-model="ex3Page"
-    />
-
-    <hr>
-    <p>Normal</p>
-
-    <cdr-pagination
-      v-model="page"
-      :pages="pages"
-      :total-pages="10"
-      data-backstop="pagination-default"
     />
 
   </div>
