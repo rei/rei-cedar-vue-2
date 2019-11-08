@@ -6,10 +6,6 @@ $overlayColor: rgba(0, 0, 0, .4);
 $contentColor: #fff;
 $modalBorderRadius: .5rem;
 
-:export {
-  animationDuration: 300;
-}
-
 .modal {
   bottom: 0;
   height: 100%;

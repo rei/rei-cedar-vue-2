@@ -46,7 +46,7 @@ export default {
     contentClass: String,
     animationDuration: {
       type: Number,
-      default: parseInt(style.animationDuration, 10),
+      default: 300,
     },
     width: {
       type: String,
