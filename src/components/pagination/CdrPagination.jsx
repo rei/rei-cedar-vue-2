@@ -62,6 +62,7 @@ export default {
   data() {
     return {
       style,
+      componentID: Math.random().toString(36).substr(2, 9),
     };
   },
   computed: {
@@ -159,7 +160,7 @@ export default {
         attrs: {
           class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__prev']),
           'aria-label': 'Go to previous Page',
-          ref: 'prev-link',
+          ref: `prev-link-${this.componentID}`,
         },
         // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
         href: this.pages[this.prevPageIdx].url,
@@ -197,7 +198,7 @@ export default {
         attrs: {
           class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__next']),
           'aria-label': 'Go to next page',
-          ref: 'next-link',
+          ref: `next-link-${this.componentID}`,
         },
         // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
         href: this.pages[this.nextPageIdx].url,
@@ -255,7 +256,7 @@ export default {
             hide-label
             onChange={this.select}
             class={this.style['cdr-pagination__select']}
-            ref="select"
+            ref={`select-${this.componentID}`}
           >
             {this.paginationData.map(n => n !== '&hellip;'
               && (<option
@@ -298,9 +299,14 @@ export default {
     select(page, e) {
       e.preventDefault();
       if (this.$scopedSlots.link) {
-        this.$scopedSlots.link()[0].context.$refs[`page-link-${page}`].$el.click();
+        const ref = this.$scopedSlots.link()[0].context.$refs[`page-link-${page}-${this.componentID}`];
+        if (ref.$el) { // it's a component (like vue-router)
+          ref.$el.click();
+        } else { // it's standard markup
+          ref.click();
+        }
       } else {
-        this.$refs[`page-link-${page}`].click();
+        this.$refs[`page-link-${page}-${this.componentID}`].click();
       }
     },
     guid() {
@@ -320,7 +326,7 @@ export default {
             ? `Current page, page ${n.page}`
             : `Go to page ${n.page}`,
           'aria-current': n.page === this.innerValue ? 'page' : null,
-          ref: `page-link-${n.page}`,
+          ref: `page-link-${n.page}-${this.componentID}`,
         },
         // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
         href: n.url,

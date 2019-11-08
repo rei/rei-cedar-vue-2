@@ -11,7 +11,7 @@
       <p>{{ datam.description }}</p>
     </div>
 
-    <p>Using vue-router/scoped slot</p>
+    <p>Using router-link/scoped slot</p>
     <cdr-pagination
       :pages="makePages(20, null)"
       :total-pages="20"
@@ -60,6 +60,49 @@
       </template>
     </cdr-pagination>
 
+    <p>Using p and scoped slot</p>
+    <cdr-pagination
+      :pages="makePages(20, null)"
+      :total-pages="20"
+      v-model="paraPage"
+    >
+      <!-- Previous -->
+      <template v-slot:prevLink="prevLink">
+        <p
+          v-bind="prevLink.attrs"
+          @click="prevLink.click"
+        >
+          <component
+            :is="prevLink.iconComponent"
+            :class="prevLink.iconClass"
+          />
+          {{ prevLink.content }}
+        </p>
+      </template>
+      <!-- Single Page links -->
+      <template v-slot:link="link">
+        <p
+          v-bind="link.attrs"
+          @click="link.click"
+        >
+          {{ link.page }}
+        </p>
+      </template>
+      <!-- Next -->
+      <template v-slot:nextLink="nextLink">
+        <p
+          v-bind="nextLink.attrs"
+          @click="nextLink.click"
+        >
+          {{ nextLink.content }}
+          <component
+            :is="nextLink.iconComponent"
+            :class="nextLink.iconClass"
+          />
+        </p>
+      </template>
+    </cdr-pagination>
+
     <hr>
 
     <p>Previous/Next only (known total)</p>
@@ -94,6 +137,7 @@
       v-model="page"
       :pages="pages"
       :total-pages="10"
+      data-backstop="pagination-default"
     />
 
   </div>
@@ -125,13 +169,21 @@ export default {
         { page: 10, url: '/#/pagination?page=10' },
       ],
       paginationData,
-      ex1Page: 1,
+      paraPage: 1,
       ex2PageKnown: 5,
       ex2PageUnknown: 5,
       ex3Page: 1,
     };
   },
   computed: {
+    ex1Page: {
+      get() {
+        return parseInt(this.$route.query['router-page'], 10) || 1;
+      },
+      set() {
+        // updated by component, we don't need to do anything
+      },
+    },
     ex2Pages() {
       if (this.ex2Page === 1 || this.ex2Page === 10) {
         return 2;
