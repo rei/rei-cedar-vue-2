@@ -5,12 +5,12 @@
     <hr>
     <p>Normal</p>
 
-    <cdr-pagination
+    <!-- <cdr-pagination
       v-model="page"
       :pages="pages"
       :total-pages="10"
       data-backstop="pagination-default"
-    />
+    /> -->
     <hr>
 
     <div
@@ -69,14 +69,13 @@
         </router-link>
       </template>
     </cdr-pagination>
-
+    <!--
     <p>Using p and scoped slot</p>
     <cdr-pagination
       :pages="makePages(20, null)"
       :total-pages="20"
       v-model="paraPage"
     >
-      <!-- Previous -->
       <template v-slot:prevLink="prevLink">
         <p
           v-bind="prevLink.attrs"
@@ -89,7 +88,6 @@
           {{ prevLink.content }}
         </p>
       </template>
-      <!-- Single Page links -->
       <template v-slot:link="link">
         <p
           v-bind="link.attrs"
@@ -98,7 +96,6 @@
           {{ link.page }}
         </p>
       </template>
-      <!-- Next -->
       <template v-slot:nextLink="nextLink">
         <p
           v-bind="nextLink.attrs"
@@ -138,7 +135,7 @@
       :pages="makePages(5, '/#/pagination?ex3-page')"
       :total-pages="5"
       v-model="ex3Page"
-    />
+    /> -->
 
   </div>
 </template>
