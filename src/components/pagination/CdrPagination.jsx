@@ -299,7 +299,7 @@ export default {
     select(page, e) {
       e.preventDefault();
       if (this.$scopedSlots.link) {
-        const ref = this.$scopedSlots.link()[0].context.$refs[`page-link-${page}-${this.componentID}`];
+        const ref = this.$scopedSlots.link()[0].context.$refs[`page-link-${page}-${this.componentID}`]; // eslint-disable-line max-len
         if (ref.$el) { // it's a component (like vue-router)
           ref.$el.click();
         } else { // it's standard markup

@@ -40,6 +40,7 @@ describe('CdrPagination', () => {
         value: 1,
       },
     });
+    wrapper.setData({ componentID: 'test1' });
     expect(wrapper.element).toMatchSnapshot();
   });
 
@@ -86,6 +87,7 @@ describe('CdrPagination', () => {
         },
       }
     });
+    wrapper.setData({ componentID: 'test2' });
     expect(wrapper.element).toMatchSnapshot();
   });
 
