@@ -69,7 +69,6 @@
         </router-link>
       </template>
     </cdr-pagination>
-    <!--
     <p>Using p and scoped slot</p>
     <cdr-pagination
       :pages="makePages(20, null)"
@@ -135,7 +134,7 @@
       :pages="makePages(5, '/#/pagination?ex3-page')"
       :total-pages="5"
       v-model="ex3Page"
-    /> -->
+    />
 
   </div>
 </template>
