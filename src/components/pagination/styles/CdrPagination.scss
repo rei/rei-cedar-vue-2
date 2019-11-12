@@ -113,10 +113,6 @@
     }
   }
 
-  &__select {
-    max-width: 240px;
-  }
-
   /* Responsive */
   @include sm-mq {
     &__li--links {
