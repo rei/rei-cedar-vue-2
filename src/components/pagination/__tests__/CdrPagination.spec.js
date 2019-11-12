@@ -180,7 +180,7 @@ describe('CdrPagination', () => {
     expect(next.exists()).toBeTruthy();
   });
 
-  it('shows next but not prev link when at first page', () => {
+  it('shows next and disabled prev when at first page', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {
         pages: makePages(getPrevNextPages(1), -1),
@@ -191,11 +191,13 @@ describe('CdrPagination', () => {
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([1, 2]);
     const prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
     const next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    const disabledPrev = wrapper.find('li');
+    expect(disabledPrev.text()).toBe('Prev');
     expect(prev.exists()).toBeFalsy();
     expect(next.exists()).toBeTruthy();
   });
 
-  it('shows prev but not next link when at last page', () => {
+  it('shows prev and disabled next link when at last page', () => {
     const wrapper = shallowMount(CdrPagination, {
       propsData: {
         pages: makePages(getPrevNextPages(10), 8),
@@ -206,6 +208,9 @@ describe('CdrPagination', () => {
     expect(getPageNumArray(wrapper.vm.paginationData)).toEqual([9, 10]);
     const prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
     const next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
+    const allLinks = wrapper.findAll('li');
+    const disabledNext = allLinks.at(allLinks.length-1);
+    expect(disabledNext.text()).toBe('Next');
     expect(prev.exists()).toBeTruthy();
     expect(next.exists()).toBeFalsy();
   });

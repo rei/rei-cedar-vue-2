@@ -155,6 +155,7 @@ export default {
       return range;
     },
     prevElAttrs() {
+      const prevPageData = this.pages[this.prevPageIdx];
       return {
         // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
         attrs: {
@@ -163,13 +164,13 @@ export default {
           ref: `prev-link-${this.componentID}`,
         },
         // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
-        href: this.pages[this.prevPageIdx].url,
-        page: this.pages[this.prevPageIdx].page,
+        href: prevPageData === undefined ? null : prevPageData.url,
+        page: prevPageData === undefined ? null : prevPageData.page,
         content: 'Prev',
         iconClass: this.style['cdr-pagination__caret--prev'],
         iconComponent: 'icon-caret-left',
         iconPath: '#caret-left',
-        click: e => this.navigate(this.pages[this.prevPageIdx].page, e),
+        click: e => this.navigate(prevPageData.page, e),
       };
     },
     prevEl() {
@@ -190,9 +191,25 @@ export default {
             </a>)
           }
         </li>
-      ) : '';
+      ) : (
+        <li aria-hidden="true">
+          <span
+            class={[
+              this.prevElAttrs.attrs.class,
+              clsx(this.style['cdr-pagination__link--disabled']),
+            ]}
+          >
+            <this.prevElAttrs.iconComponent
+              class={this.prevElAttrs.iconClass}
+              inherit-color
+            />
+            {this.prevElAttrs.content}
+          </span>
+        </li>
+      );
     },
     nextElAttrs() {
+      const nextPageData = this.pages[this.nextPageIdx];
       return {
         // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
         attrs: {
@@ -201,13 +218,13 @@ export default {
           ref: `next-link-${this.componentID}`,
         },
         // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
-        href: this.pages[this.nextPageIdx].url,
-        page: this.pages[this.nextPageIdx].page,
+        href: nextPageData === undefined ? null : nextPageData.url,
+        page: nextPageData === undefined ? null : nextPageData.page,
         content: 'Next',
         iconClass: this.style['cdr-pagination__caret--next'],
         iconComponent: 'icon-caret-right',
         iconPath: '#caret-right',
-        click: e => this.navigate(this.pages[this.nextPageIdx].page, e),
+        click: e => this.navigate(nextPageData.page, e),
       };
     },
     nextEl() {
@@ -229,7 +246,22 @@ export default {
           }
 
         </li>
-      ) : '';
+      ) : (
+        <li aria-hidden="true">
+          <span
+            class={[
+              this.nextElAttrs.attrs.class,
+              clsx(this.style['cdr-pagination__link--disabled']),
+            ]}
+            >
+            {this.nextElAttrs.content}
+            <this.nextElAttrs.iconComponent
+              class={this.nextElAttrs.iconClass}
+              inherit-color
+            />
+          </span>
+        </li>
+      );
     },
     desktopEl() {
       return this.paginationData.map(n => (
@@ -257,6 +289,7 @@ export default {
             onChange={this.select}
             class={this.style['cdr-pagination__select']}
             ref={`select-${this.componentID}`}
+            id={`select-${this.componentID}`}
           >
             {this.paginationData.map(n => n !== '&hellip;'
               && (<option

@@ -8,6 +8,25 @@ exports[`CdrPagination renders correctly 1`] = `
     class="cdr-pagination"
   >
     <li
+      aria-hidden="true"
+    >
+      <span
+        class="cdr-pagination__link cdr-pagination__prev cdr-pagination__link--disabled"
+      >
+        <svg
+          class="cdr-icon  cdr-icon--inherit-color cdr-pagination__caret--prev"
+          role="presentation"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 12c0 .273.11.521.288.702l5.005 5.005a1 1 0 0 0 1.414-1.414L10.415 12l4.295-4.295a1 1 0 0 0-1.417-1.412l-4.98 4.98A.997.997 0 0 0 8 12z"
+          />
+        </svg>
+        Prev
+      </span>
+    </li>
+    <li
       class="cdr-pagination__li--links"
     >
       <a
@@ -101,7 +120,7 @@ exports[`CdrPagination renders correctly 1`] = `
           <select
             aria-label="Navigate to page"
             class="cdr-select  cdr-select"
-            id="2"
+            id="select-test1"
           >
             <option
               value="1"
@@ -285,7 +304,7 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
           <select
             aria-label="Navigate to page"
             class="cdr-select  cdr-select"
-            id="12"
+            id="select-test2"
           >
             <option
               value="1"

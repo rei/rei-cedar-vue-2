@@ -36,10 +36,18 @@
     @include cdr-text-utility-300;
 
     color: $cdr-color-text-primary-lightmode;
+    fill: $cdr-color-text-primary-lightmode;
     display: block;
     padding: $cdr-space-inset-three-quarter-x-squish;
     text-decoration: none;
     border-radius: $cdr-radius-softer;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $cdr-color-text-primary-lightmode;
+      background-color: $cdr-color-background-light;
+    }
 
     &:global(.current) {
       color: $cdr-color-text-link-lightmode;
@@ -64,11 +72,17 @@
       }
     }
 
-    &:hover,
-    &:focus,
-    &:active {
-      color: $cdr-color-text-primary-lightmode;
-      background-color: $cdr-color-background-light;
+    &#{&}--disabled {
+      color: $cdr-color-text-disabled-lightmode;
+      fill: $cdr-color-text-disabled-lightmode;
+      pointer-events: none;
+      
+      &:hover,
+      &:focus,
+      &:active {
+        color: $cdr-color-text-disabled-lightmode;
+        background-color: transparent;
+      }
     }
   }
 
