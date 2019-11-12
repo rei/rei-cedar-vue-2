@@ -46,6 +46,26 @@
       />
     </div>
 
+    <cdr-text>
+      0 String Count
+    </cdr-text>
+    <cdr-rating
+      rating="1.2"
+      count="0"
+    />
+    <cdr-text>
+      0 Num Count
+    </cdr-text>
+    <cdr-rating
+      rating="1.2"
+      :count="0"
+    />
+    <cdr-text>
+      no Count
+    </cdr-text>
+    <cdr-rating
+      rating="1.2"
+    />
     <!-- Default Size -->
     <cdr-rating
       rating="1.2"

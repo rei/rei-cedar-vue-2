@@ -26,7 +26,7 @@ export default {
     count: {
       required: false,
       type: [String, Number],
-      default: 0,
+      default: null,
     },
     /**
      * Hides the word 'reviews' if true
@@ -83,6 +83,12 @@ export default {
       }
       return remainder;
     },
+    ratingSrText() {
+      return `rated ${this.rounded} out of 5`;
+    },
+    countSrText() {
+      return this.count !== null ? ` with ${this.count} reviews` : '';
+    },
   },
   render() {
     const Component = this.href ? 'a' : 'div';
@@ -121,7 +127,7 @@ export default {
           ))}
           {this.remainderEl }
         </div>
-        {this.count
+        {this.count !== null
           ? <span
             aria-hidden="true"
             class={this.style['cdr-rating__count']}
@@ -145,7 +151,7 @@ export default {
         }
 
         <span class="cdr-display-sr-only">
-          rated { this.rounded } out of 5 with { this.count } reviews
+          { this.ratingSrText }{ this.countSrText }
         </span>
       </Component>
     );
