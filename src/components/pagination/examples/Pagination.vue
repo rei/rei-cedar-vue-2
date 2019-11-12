@@ -31,7 +31,6 @@
       <template v-slot:prevLink="prevLink">
         <router-link
           v-bind="prevLink.attrs"
-          @click.native="prevLink.click"
           :to="{ query: { 'router-page': prevLink.page } }"
           replace
         >
@@ -46,7 +45,6 @@
       <template v-slot:link="link">
         <router-link
           v-bind="link.attrs"
-          @click.native="link.click"
           :to="{ query: { 'router-page': link.page } }"
           replace
         >
@@ -57,7 +55,6 @@
       <template v-slot:nextLink="nextLink">
         <router-link
           v-bind="nextLink.attrs"
-          @click.native="nextLink.click"
           :to="{ query: { 'router-page': nextLink.page } }"
           replace
         >
