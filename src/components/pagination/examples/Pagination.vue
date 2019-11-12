@@ -5,12 +5,12 @@
     <hr>
     <p>Normal</p>
 
-    <!-- <cdr-pagination
+    <cdr-pagination
       v-model="page"
       :pages="pages"
       :total-pages="10"
       data-backstop="pagination-default"
-    /> -->
+    />
     <hr>
 
     <div

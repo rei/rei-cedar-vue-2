@@ -1,4 +1,4 @@
-import { mount, shallowMount } from '@vue/test-utils';
+import { mount, shallowMount, RouterLinkStub } from '@vue/test-utils';
 import CdrPagination from 'componentdir/pagination/CdrPagination';
 import IconCaretLeft from 'componentdir/icon/comps/caret-left';
 import IconCaretRight from 'componentdir/icon/comps/caret-right';
@@ -58,7 +58,7 @@ describe('CdrPagination', () => {
         prevLink(prevLink) {
           return <span
             {...{ attrs: prevLink.attrs } }
-            vOn:click_native={prevLink.click}
+            vOn:click={prevLink.click}
           >
             <prevLink.iconComponent
               { ...{ class: prevLink.iconClass } }
@@ -69,7 +69,7 @@ describe('CdrPagination', () => {
         link(link) {
           return <span
             {...{ attrs: link.attrs } }
-            vOn:click_native={link.click}
+            vOn:click={link.click}
           >
             { link.page }
           </span>
@@ -77,7 +77,7 @@ describe('CdrPagination', () => {
         nextLink(nextLink) {
           return <span
             {...{ attrs: nextLink.attrs }}
-            vOn:click_native={nextLink.click}
+            vOn:click={nextLink.click}
           >
             {nextLink.content}
             <nextLink.iconComponent
@@ -247,6 +247,11 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[2][1]).toBe('?page=1');
     expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
     
+    // Do nothing when clicking current page link
+    link.trigger('click');
+    await waitRAF();
+    expect(wrapper.emitted().navigate[3]).toBeUndefined();
+
     // use select
     let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
     options.at(1).setSelected();
@@ -292,6 +297,60 @@ describe('CdrPagination', () => {
     
     // click a page link
     let link = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-1-${wrapper.vm.componentID}`];
+    link.click();
+    await waitRAF();
+    expect(wrapper.emitted().navigate[2][0]).toBe(1);
+    expect(wrapper.emitted().navigate[2][1]).toBe('?page=1');
+    expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
+    
+    // use select
+    let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
+    options.at(1).setSelected();
+    await waitRAF();
+    expect(wrapper.emitted().navigate[3][0]).toBe(2);
+    expect(wrapper.emitted().navigate[3][1]).toBe('?page=2');
+    expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
+  });
+
+  it('works with vue-router', async () => {
+    const wrapper = mount(CdrPagination, {
+      propsData: {
+        pages: makePages(20),
+        value: 5,
+      },
+      listeners: {
+        input: (newVal) => { // simulate v-model update
+          wrapper.setProps({ value: newVal });
+        }
+      },
+      stubs: {
+        'router-link': RouterLinkStub,
+      },
+      scopedSlots: {
+        link: '<router-link v-bind="props.attrs" @click.native="props.click" to="{ query: { \'router-page\': props.page } }">{{props.content}}</router-link>',
+        nextLink: '<router-link v-bind="props.attrs" @click.native="props.click" to="{ query: { \'router-page\': props.page } }">{{props.content}}</router-link>',
+        prevLink: '<router-link v-bind="props.attrs" @click.native="props.click" to="{ query: { \'router-page\': props.page } }">{{props.content}}</router-link>',
+      }
+    });
+
+    // click next
+    let next = wrapper.vm.$scopedSlots.nextLink()[0].context.$refs[`next-link-${wrapper.vm.componentID}`].$el;
+    next.click();
+    await waitRAF();
+    expect(wrapper.emitted().navigate[0][0]).toBe(6);
+    expect(wrapper.emitted().navigate[0][1]).toBe('?page=6');
+    expect(wrapper.emitted().navigate[0][2] instanceof Event).toBeTruthy();
+    
+    // click previous
+    let prev = wrapper.vm.$scopedSlots.prevLink()[0].context.$refs[`prev-link-${wrapper.vm.componentID}`].$el;
+    prev.click();
+    await waitRAF();
+    expect(wrapper.emitted().navigate[1][0]).toBe(5);
+    expect(wrapper.emitted().navigate[1][1]).toBe('?page=5');
+    expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
+    
+    // click a page link
+    let link = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-1-${wrapper.vm.componentID}`].$el;
     link.click();
     await waitRAF();
     expect(wrapper.emitted().navigate[2][0]).toBe(1);
