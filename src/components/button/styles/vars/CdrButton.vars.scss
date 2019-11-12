@@ -119,23 +119,34 @@ $cdr-button-icon-only-box-shadow-focus: none;
 $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 
 @mixin cdr-button-base-text-mixin() {
-  // TODO: typography token
-  @include redwood-display-30
+  @include cdr-button-base-text-mixin-medium;
 }
 
 @mixin cdr-button-base-text-mixin-small() {
-  // TODO: typography token
-  @include redwood-display-20;
+  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 @mixin cdr-button-base-text-mixin-medium() {
-  // TODO: typography token
-  @include redwood-display-30;
+  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 @mixin cdr-button-base-text-mixin-large() {
-  // TODO: typography token
-  @include redwood-display-40;
+  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 /* start of mixin land */

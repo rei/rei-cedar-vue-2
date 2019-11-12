@@ -41,7 +41,7 @@
     @include xs-mq {
       border-width: 0 0 1px 0;
       padding: $cdr-quote-pull-xs-padding;
-      margin: $cdr-pull-quote-xs-margin;
+      margin: $cdr-quote-pull-xs-margin;
     }
 
     @include sm-mq {
