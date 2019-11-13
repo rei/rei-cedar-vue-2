@@ -1,5 +1,10 @@
 @mixin cdr-cta-base-text-mixin() {
-  @include maple-utility-40;
+  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 $cdr-cta-base-border-radius: $cdr-radius-softer;
@@ -10,7 +15,7 @@ $cdr-cta-base-outline: none;
 $cdr-cta-base-padding: $cdr-space-inset-one-and-a-half-x-squish;
 $cdr-cta-base-pr: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-half-x});
 $cdr-cta-base-text-align: left;
-$cdr-cta-base-text-transform: uppercase;
+$cdr-cta-base-text-transform: none;
 $cdr-cta-base-text-decoration: none;
 $cdr-cta-base-text-decoration-hover: none;
 $cdr-cta-base-text-decoration-active: none;
