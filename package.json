@@ -55,7 +55,7 @@
     "@betit/rollup-plugin-rename-extensions": "0.0.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "@rei/cdr-tokens": "^2.0.0",
+    "@rei/cdr-tokens": "^3.0.0-alpha.0",
     "@vue/babel-preset-jsx": "^1.1.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "autoprefixer": "^9.6.1",

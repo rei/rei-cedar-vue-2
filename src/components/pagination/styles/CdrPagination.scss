@@ -23,7 +23,7 @@
       display: none;
 
       & + & {
-        margin-left: $cdr-space-one-x;
+        margin-left: $cdr-space-quarter-x;
       }
     }
 
@@ -33,29 +33,56 @@
   }
 
   &__link {
-    @include redwood-display-30();
+    @include cdr-text-utility-300;
 
     color: $cdr-color-text-primary-lightmode;
+    fill: $cdr-color-text-primary-lightmode;
     display: block;
     padding: $cdr-space-inset-three-quarter-x-squish;
     text-decoration: none;
-
-    &:global(.current) {
-      box-shadow: inset 0 0 0 1px $cdr-color-border-primary-lightmode;
-      border-radius: $cdr-radius-softer;
-
-      &:hover,
-      &:focus,
-      &:active {
-        text-decoration: none;
-      }
-    }
+    border-radius: $cdr-radius-softer;
 
     &:hover,
     &:focus,
     &:active {
       color: $cdr-color-text-primary-lightmode;
-      text-decoration: underline;
+      background-color: $cdr-color-background-light;
+    }
+
+    &:global(.current) {
+      color: $cdr-color-text-link-lightmode;
+      position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 80%;
+        background-color: $cdr-color-text-link-lightmode;
+      }
+      
+      &:hover,
+      &:focus,
+      &:active {
+        color: $cdr-color-text-link-lightmode;
+        text-decoration: none;
+      }
+    }
+
+    &#{&}--disabled {
+      color: $cdr-color-text-disabled-lightmode;
+      fill: $cdr-color-text-disabled-lightmode;
+      pointer-events: none;
+      
+      &:hover,
+      &:focus,
+      &:active {
+        color: $cdr-color-text-disabled-lightmode;
+        background-color: transparent;
+      }
     }
   }
 
@@ -67,13 +94,13 @@
   &__prev {
     display: flex;
     align-items: center;
-    margin-right: $cdr-space-one-and-a-half-x;
+    margin-right: $cdr-space-one-x;
   }
 
   &__next {
     display: flex;
     align-items: center;
-    margin-left: $cdr-space-one-and-a-half-x;
+    margin-left: $cdr-space-one-x;
   }
 
   &__caret {
@@ -84,10 +111,6 @@
     &--next {
       margin-left: $cdr-space-eighth-x;
     }
-  }
-
-  &__select {
-    max-width: 240px;
   }
 
   /* Responsive */
