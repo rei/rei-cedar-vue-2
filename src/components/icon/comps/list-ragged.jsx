@@ -1,6 +1,4 @@
-
 import CdrIcon from '../CdrIcon';
-
 export default {
   name: 'IconListRagged',
   components: {
@@ -10,7 +8,7 @@ export default {
   render() {
     return (<cdr-icon {...{props: this.$props} }>
       {this.$slots.default}
-      <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h10a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h14a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+      <path d="M18 17a1 1 0 010 2H4a1 1 0 010-2h14zm-4-6a1 1 0 010 2H4a1 1 0 010-2h10zm6-6a1 1 0 010 2H4a1 1 0 110-2h16z"></path>
     </cdr-icon>)
   },
 };

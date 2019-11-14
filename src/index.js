@@ -8,8 +8,9 @@ export { default as CdrCheckbox } from './components/checkbox/CdrCheckbox';
 export { default as CdrCol } from './components/grid/CdrCol';
 export { default as CdrCta } from './components/cta/CdrCta';
 export { default as CdrDataTable } from './components/dataTable/CdrDataTable';
-// // export all icon components for now (includes sprite and CdrIcon)
+// export all single icon components
 export * from './components/icon/index';
+export { default as CdrIcon } from './components/icon/CdrIcon';
 export { default as CdrImg } from './components/image/CdrImg';
 export { default as CdrInput } from './components/input/CdrInput';
 export { default as CdrLink } from './components/link/CdrLink';

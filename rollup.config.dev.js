@@ -3,12 +3,14 @@ import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
 import jsonPlugin from 'rollup-plugin-json';
 import plugins from './build/rollup-plugins';
+import svg from 'rollup-plugin-svg';
 
 plugins.push(
   replace({
     'process.env.NODE_ENV': JSON.stringify(true),
   }),
   jsonPlugin(),
+  svg(),
 );
 
 if (process.env.ROLLUP_WATCH) {
