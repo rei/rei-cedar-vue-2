@@ -6,7 +6,7 @@ $overlayColor: rgba(0, 0, 0, .4);
 $contentColor: #fff;
 $modalBorderRadius: .5rem;
 
-.modal {
+.cdr-modal {
   bottom: 0;
   height: 100%;
   left: 0;
@@ -16,6 +16,50 @@ $modalBorderRadius: .5rem;
   top: 0;
   visibility: visible;
   z-index: 1000;
+
+  &__overlay {
+    background-color: $overlayColor;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity $duration;
+    z-index: -1;
+  }
+
+  &__outerWrap {
+    display: flex;
+    box-sizing: border-box;
+    left: 0;
+    min-height: 100%;
+    padding: 16px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &__contentWrap {
+    align-items: flex-start;
+    background-color: $contentColor;
+    border-radius: $modalBorderRadius;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 40rem;
+    opacity: 1;
+    padding: 20px;
+    position: relative;
+    transition: opacity $duration $duration;
+    width: 100%; // IE 11
+    z-index: 0;
+    &:focus {
+      outline: 0;
+    }
+  }
 }
 
 .closed {
@@ -35,54 +79,9 @@ $modalBorderRadius: .5rem;
   }
 }
 
-
-.overlay {
-  background-color: $overlayColor;
-  bottom: 0;
-  left: 0;
-  opacity: 1;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transition: opacity $duration;
-  z-index: -1;
-}
-
-.outerWrap {
-  display: flex;
-  box-sizing: border-box;
-  left: 0;
-  min-height: 100%;
-  padding: 16px 20px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-}
-
 .noscroll {
   overflow: hidden !important;
   width: 100%;
-}
-
-.contentWrap {
-  align-items: flex-start;
-  background-color: $contentColor;
-  border-radius: $modalBorderRadius;
-  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .5);
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  max-width: 40rem;
-  opacity: 1;
-  padding: 20px;
-  position: relative;
-  transition: opacity $duration $duration;
-  width: 100%; // IE 11
-  z-index: 0;
-  &:focus {
-    outline: 0;
-  }
 }
 
 .innerWrap {

@@ -225,7 +225,7 @@ export default {
     return (
       <div
         class={clsx(
-          this.style.modal,
+          this.style['cdr-modal'],
           {
             [this.style.closed]: !opened,
           },
@@ -233,11 +233,11 @@ export default {
         ref="wrapper"
         role="presentation"
       >
-        <div class={clsx(this.style.outerWrap, wrapperClass)}>
+        <div class={clsx(this.style['cdr-modal__outerWrap'], wrapperClass)}>
           <div
             aria-hidden="true"
             onClick={closeModal}
-            class={clsx(this.style.overlay, overlayClass)}
+            class={clsx(this.style['cdr-modal__overlay'], overlayClass)}
           />
           {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
           <div tabIndex={opened ? '0' : undefined} />
@@ -247,7 +247,7 @@ export default {
           */}
           <div
             ref="modal"
-            class={clsx(this.style.contentWrap, dialogClass)}
+            class={clsx(this.style['cdr-modal__contentWrap'], dialogClass)}
             id={modalId}
             tabIndex="-1"
             role="dialog"
