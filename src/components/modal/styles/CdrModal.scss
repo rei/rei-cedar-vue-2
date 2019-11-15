@@ -6,6 +6,17 @@ $overlayColor: rgba(0, 0, 0, .4);
 $contentColor: #fff;
 $modalBorderRadius: .5rem;
 
+$dialog-margins-vertical: $cdr-space-four-x * 2; // 12.8rem
+$dialog-padding-vertical: $cdr-space-one-and-a-half-x; // 2.4rem
+$header-padding-bottom: $cdr-space-one-x; // 1.6rem
+$title-line-height: $cdr-space-two-x; // 3.2rem
+
+// total up internal padding to get max height of text
+$header-height: $header-padding-bottom + $title-line-height;
+$modal-total-padding: #{$dialog-margins-vertical + $header-height + $dialog-padding-vertical * 2};
+$modal-text-max-height: calc(100vh - #{$modal-total-padding});
+
+
 .cdr-modal {
   bottom: 0;
   height: 100%;
@@ -60,51 +71,11 @@ $modalBorderRadius: .5rem;
       outline: 0;
     }
   }
-}
 
-.closed {
-  transition: z-index 0s $duration * 2,
-  visibility 0s $duration * 2;
-  visibility: hidden;
-  z-index: -1;
-
-  .overlay {
-    opacity: 0;
-    transition: opacity $duration $duration;
+  &__innerWrap {
+    width: 100%; // IE 11
   }
 
-  .contentWrap {
-    opacity: 0;
-    transition: opacity $duration;
-  }
-}
-
-.noscroll {
-  overflow: hidden !important;
-  width: 100%;
-}
-
-.innerWrap {
-  width: 100%; // IE 11
-}
-
-@media (min-width: $smMin) {
-  .content-wrap {
-    padding: 1.6rem;
-  }
-}
-
-$dialog-margins-vertical: $cdr-space-four-x * 2; // 12.8rem
-$dialog-padding-vertical: $cdr-space-one-and-a-half-x; // 2.4rem
-$header-padding-bottom: $cdr-space-one-x; // 1.6rem
-$title-line-height: $cdr-space-two-x; // 3.2rem
-
-// total up internal padding to get max height of text
-$header-height: $header-padding-bottom + $title-line-height;
-$modal-total-padding: #{$dialog-margins-vertical + $header-height + $dialog-padding-vertical * 2};
-$modal-text-max-height: calc(100vh - #{$modal-total-padding});
-
-.pdp-modal {
   &__dialog {
     max-height: calc(100vh - #{$dialog-margins-vertical});
     max-width: 60rem;
@@ -162,5 +133,33 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     /* full transparency doesn't fly on safari */
     background: linear-gradient(rgba(255,255,255,0.001), rgba(255,255,255,1));
     background-attachment: scroll;
+  }
+}
+
+.closed {
+  transition: z-index 0s $duration * 2,
+  visibility 0s $duration * 2;
+  visibility: hidden;
+  z-index: -1;
+
+  .cdr-modal__overlay {
+    opacity: 0;
+    transition: opacity $duration $duration;
+  }
+
+  .cdr-modal__contentWrap {
+    opacity: 0;
+    transition: opacity $duration;
+  }
+}
+
+.cdr-modal__noscroll {
+  overflow: hidden !important;
+  width: 100%;
+}
+
+@media (min-width: $smMin) {
+  .cdr-modal__content-wrap {
+    padding: 1.6rem;
   }
 }

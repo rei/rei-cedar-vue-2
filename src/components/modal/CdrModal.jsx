@@ -75,7 +75,7 @@ export default {
       };
     },
     dialogClass() {
-      return `${this.style['pdp-modal__dialog']} ${this.width}`;
+      return `${this.style['cdr-modal__dialog']} ${this.width}`;
     },
   },
   watch: {
@@ -256,16 +256,16 @@ export default {
             {...{ attrs: this.dialogAttrs || {} }}
           >
             <div
-              class={clsx(this.style.innerWrap, contentClass)}
+              class={clsx(this.style['cdr-modal__innerWrap'], contentClass)}
               style={reallyClosed
                 ? { display: 'none' }
                 : undefined
               }
             >
               <section>
-                <div class={this.style['pdp-modal__content']}>
-                  <div class={this.style['pdp-modal__header']}>
-                    <div class={this.style['pdp-modal__title']}>
+                <div class={this.style['cdr-modal__content']}>
+                  <div class={this.style['cdr-modal__header']}>
+                    <div class={this.style['cdr-modal__title']}>
                       {this.labelIsTitle && (
                         <cdr-text
                           tag="h1"
@@ -277,7 +277,7 @@ export default {
                     </div>
                     <cdr-button
                       id="close-modal-button"
-                      class={this.style['pdp-modal__close-button']}
+                      class={this.style['cdr-modal__close-button']}
                       icon-only={true}
                       on-click={closeModal}
                       aria-label="close"
@@ -293,12 +293,12 @@ export default {
                   <div
                     role="document"
                     tabindex="0"
-                    class={this.style['pdp-modal__text']}
+                    class={this.style['cdr-modal__text']}
                   >
-                    <div class={this.style['pdp-modal__text-content']}>
+                    <div class={this.style['cdr-modal__text-content']}>
                       {defaultSlot}
                     </div>
-                    <div class={this.style['pdp-modal__text-fade']} />
+                    <div class={this.style['cdr-modal__text-fade']} />
                   </div>
                 </div>
               </section>
