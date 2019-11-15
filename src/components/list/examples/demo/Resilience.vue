@@ -130,21 +130,6 @@
       </li>
     </cdr-list>
 
-    <cdr-list
-      modifier="unordered inline "
-      class="cdr-mt-space-one-x"
-    >
-      <li
-        v-for="utility in utilities"
-        :key="utility"
-      >
-        random text
-      </li>
-      <li>
-        text
-      </li>
-    </cdr-list>
-
     NON Cedar list
     <ul class="cdr-mt-space-one-x">
       <li
