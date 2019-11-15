@@ -177,25 +177,25 @@ export default {
       this.offset = offset;
 
       if (documentElement) {
-        documentElement.classList.add(style.noscroll);
+        documentElement.classList.add(style['cdr-modal__noscroll']);
         // keep current scroll position manually
         documentElement.style.top = `-${offset.y}px`;
         documentElement.style.left = `-${offset.x}px`;
       }
 
       if (body) {
-        body.classList.add(style.noscroll);
+        body.classList.add(style['cdr-modal__noscroll']);
       }
     },
     removeNoScroll() {
       const { documentElement, body } = document;
 
       if (body) {
-        body.classList.remove(style.noscroll);
+        body.classList.remove(style['cdr-modal__noscroll']);
       }
 
       if (documentElement) {
-        documentElement.classList.remove(style.noscroll);
+        documentElement.classList.remove(style['cdr-modal__noscroll']);
         documentElement.style.top = '';
         documentElement.style.left = '';
       }
