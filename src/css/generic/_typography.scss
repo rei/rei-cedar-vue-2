@@ -23,12 +23,34 @@ h4.cdr-text,
 h5.cdr-text,
 h6.cdr-text {
 
+  @include cdr-text-default-mixin;
+
+
+  .cdr-text {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    font-family: inherit;
+  }
+}
+
+.cdr-text > .cdr-text,
+.cdr-text h1.cdr-text,
+.cdr-text h2.cdr-text,
+.cdr-text h3.cdr-text,
+.cdr-text h4.cdr-text,
+.cdr-text h5.cdr-text,
+.cdr-text h6.cdr-text,
+.cdr-text {
   /* Paragraphs
     ========================================================================== */
   &--italic {
   font-variation-settings: 'ital' 1;
   font-style: italic;
   }
+
   &--strong {
   font-weight: 700;
   }

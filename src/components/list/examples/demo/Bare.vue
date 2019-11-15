@@ -21,6 +21,29 @@
 
     <cdr-text
       tag="h4"
+      modifier="eyebrow-100"
+    >
+      Typography validation - text wrapping list
+    </cdr-text>
+
+    <cdr-text
+      tag="h4"
+      modifier="body--400"
+    >
+      <cdr-list space="cdr-mb-space-two-x">
+        <li>List item text</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
+          <cdr-list>
+            <li>List item text</li>
+            <li>List item text</li>
+          </cdr-list>
+        </li>
+        <li>List item text</li>
+      </cdr-list>
+    </cdr-text>
+
+    <cdr-text
+      tag="h4"
       modifier="heading-600 heading-700@md heading-700@lg"
     >
       Compact bare list

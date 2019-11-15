@@ -14,6 +14,7 @@
     <unordered-list class="cdr-mb-space-four-x" />
     <ordered-list class="cdr-mb-space-four-x" />
     <bare-list class="cdr-mb-space-four-x" />
+    <resilience-test class="cdr-mb-space-four-x" />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import { CdrText } from 'srcdir/index';
 import unorderedList from 'componentsdir/list/examples/demo/Unordered';
 import orderedList from 'componentsdir/list/examples/demo/Ordered';
 import bareList from 'componentsdir/list/examples/demo/Bare';
+import resilienceTest from 'componentsdir/list/examples/demo/Resilience';
 
 
 export default {
@@ -30,6 +32,7 @@ export default {
     unorderedList,
     orderedList,
     bareList,
+    resilienceTest,
     CdrText,
   },
 };
