@@ -1,21 +1,5 @@
 @import '../../../css/settings/index.scss';
-
-$duration: 150ms;
-$smMin: 576px;
-$overlayColor: rgba(0, 0, 0, .4);
-$contentColor: #fff;
-$modalBorderRadius: .5rem;
-
-$dialog-margins-vertical: $cdr-space-four-x * 2; // 12.8rem
-$dialog-padding-vertical: $cdr-space-one-and-a-half-x; // 2.4rem
-$header-padding-bottom: $cdr-space-one-x; // 1.6rem
-$title-line-height: $cdr-space-two-x; // 3.2rem
-
-// total up internal padding to get max height of text
-$header-height: $header-padding-bottom + $title-line-height;
-$modal-total-padding: #{$dialog-margins-vertical + $header-height + $dialog-padding-vertical * 2};
-$modal-text-max-height: calc(100vh - #{$modal-total-padding});
-
+@import './vars/CdrModal.vars.scss';
 
 .cdr-modal {
   bottom: 0;
