@@ -13,7 +13,7 @@
       :close-modal="closeModalLarge"
       wrapper-class="wrapper-test-class"
       overlay-class="overlay-test-class"
-      :label-is-title="true"
+      :show-label="true"
       width="large"
       data-backstop="modal-large"
     >

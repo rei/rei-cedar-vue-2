@@ -26,7 +26,7 @@ export default {
       type: String,
       required: true,
     },
-    labelIsTitle: {
+    showLabel: {
       type: Boolean,
       required: false,
       default: false,
@@ -266,7 +266,7 @@ export default {
                 <div class={this.style['cdr-modal__content']}>
                   <div class={this.style['cdr-modal__header']}>
                     <div class={this.style['cdr-modal__title']}>
-                      {this.labelIsTitle && (
+                      {this.showLabel && (
                         <cdr-text
                           tag="h1"
                           modifier="heading-600"
