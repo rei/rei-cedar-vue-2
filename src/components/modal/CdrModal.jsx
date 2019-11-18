@@ -46,12 +46,6 @@ export default {
       type: Number,
       default: 300,
     },
-    width: {
-      type: String,
-      required: false,
-      default: 'medium',
-      validator: val => val === 'medium' || val === 'large',
-    },
   },
   data() {
     return {
