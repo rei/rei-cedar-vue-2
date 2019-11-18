@@ -5,6 +5,7 @@ import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
 import CdrIcon from '../icon/CdrIcon';
 import CdrText from '../text/CdrText';
+import size from '../../mixins/size';
 
 export default {
   name: 'CdrModal',
@@ -13,6 +14,7 @@ export default {
     CdrIcon,
     CdrText,
   },
+  mixins: [size],
   props: {
     opened: {
       type: Boolean,
@@ -71,7 +73,7 @@ export default {
       };
     },
     dialogClass() {
-      return `${this.style['cdr-modal__dialog']} ${this.width}`;
+      return `${this.style['cdr-modal__dialog']} ${this.size}`;
     },
   },
   watch: {

@@ -189,6 +189,7 @@ describe('CdrModal.vue', () => {
       propsData: {
         opened: true,
         label: "My Modal Label",
+        showLabel: true,
       },
     });
 
