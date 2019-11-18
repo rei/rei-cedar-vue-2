@@ -10,7 +10,7 @@
     <cdr-modal
       label="Added to Cart (is a common label)"
       :opened="large"
-      :close-modal="closeModalLarge"
+      @closed="closed"
       wrapper-class="wrapper-test-class"
       overlay-class="overlay-test-class"
       :show-label="true"
@@ -42,7 +42,8 @@ export default {
     };
   },
   methods: {
-    closeModalLarge() {
+    closed(e) {
+      console.log('closed', e);
       this.large = false;
     },
   },

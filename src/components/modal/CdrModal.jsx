@@ -18,10 +18,6 @@ export default {
       type: Boolean,
       required: true,
     },
-    closeModal: {
-      type: Function,
-      required: true,
-    },
     label: {
       type: String,
       required: true,
@@ -104,7 +100,7 @@ export default {
     handleKeyDown({ key }) {
       switch (key) {
         case 'Escape':
-          this.closeModal();
+          this.onClick();
           break;
         default: break;
       }
@@ -206,10 +202,13 @@ export default {
       document.addEventListener('focusin', this.focusHandler, true);
       document.addEventListener('keydown', this.keyHandler);
     },
+    onClick(e) {
+      this.$emit('closed', e);
+    },
   },
   render() {
     const {
-      closeModal,
+      onClick,
       modalId,
       opened,
       label,
@@ -236,7 +235,7 @@ export default {
         <div class={clsx(this.style['cdr-modal__outerWrap'], wrapperClass)}>
           <div
             aria-hidden="true"
-            onClick={closeModal}
+            onClick={onClick}
             class={clsx(this.style['cdr-modal__overlay'], overlayClass)}
           />
           {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
@@ -279,7 +278,7 @@ export default {
                       id="close-modal-button"
                       class={this.style['cdr-modal__close-button']}
                       icon-only={true}
-                      on-click={closeModal}
+                      on-click={onClick}
                       aria-label="close"
                     >
                       <cdr-icon

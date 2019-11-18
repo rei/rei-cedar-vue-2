@@ -59,21 +59,21 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: jest.fn(),
         label: "My Modal Label",
       },
       attachToDocument: true,
     });
+    spyOn(wrapper.vm, 'onClick');
 
     wrapper.trigger('keydown', {
       key: 'a',
     });
-    expect(wrapper.vm.closeModal).not.toHaveBeenCalled()
+    expect(wrapper.vm.onClick).not.toHaveBeenCalled()
 
     wrapper.trigger('keydown', {
       key: 'Escape',
     });
-    expect(wrapper.vm.closeModal).toHaveBeenCalled();
+    expect(wrapper.vm.onClick).toHaveBeenCalled();
   });
 
   it('handleOpened', () => {
@@ -191,5 +191,17 @@ describe('CdrModal.vue', () => {
     expect(spyRemoveNoScroll).toHaveBeenCalled();
     expect(document.removeEventListener).toHaveBeenCalledWith('focusin', expect.anything(), true);
     expect(document.removeEventListener).toHaveBeenCalledWith('keydown', expect.anything());
+  });
+
+  it('onClick', () => {
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        label: "My Modal Label",
+      },
+    });
+
+    wrapper.find('button').trigger('click');
+    expect(wrapper.emitted('closed'));
   });
 });
