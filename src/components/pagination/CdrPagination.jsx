@@ -287,7 +287,6 @@ export default {
             label="Navigate to page"
             hide-label
             onChange={this.select}
-            class={this.style['cdr-pagination__select']}
             ref={`select-${this.componentID}`}
             id={`select-${this.componentID}`}
           >
