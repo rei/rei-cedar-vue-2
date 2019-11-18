@@ -24631,7 +24631,6 @@ var cedar = (function () {
           "on": {
             "change": this.select
           },
-          "class": this.style['cdr-pagination__select'],
           "ref": "select-".concat(this.componentID),
           "model": {
             value: _this4.innerValue,
