@@ -2,15 +2,15 @@
 
 exports[`CdrModal.vue renders correctly 1`] = `
 <div
-  class="modal"
+  class="cdr-modal"
   role="presentation"
 >
   <div
-    class="outerWrap"
+    class="cdr-modal__outerWrap"
   >
     <div
       aria-hidden="true"
-      class="overlay"
+      class="cdr-modal__overlay"
     />
     <div
       tabindex="0"
@@ -18,26 +18,26 @@ exports[`CdrModal.vue renders correctly 1`] = `
     <div
       aria-label="Label is the modal title"
       aria-modal="true"
-      class="contentWrap pdp-modal__dialog medium"
+      class="cdr-modal__contentWrap cdr-modal__dialog medium"
       role="dialog"
       tabindex="-1"
     >
       <div
-        class="innerWrap"
+        class="cdr-modal__innerWrap"
       >
         <section>
           <div
-            class="pdp-modal__content"
+            class="cdr-modal__content"
           >
             <div
-              class="pdp-modal__header"
+              class="cdr-modal__header"
             >
               <div
-                class="pdp-modal__title"
+                class="cdr-modal__title"
               />
               <cdr-button-stub
                 aria-label="close"
-                class="pdp-modal__close-button"
+                class="cdr-modal__close-button"
                 icononly="true"
                 id="close-modal-button"
                 size="medium"
@@ -54,17 +54,17 @@ exports[`CdrModal.vue renders correctly 1`] = `
               </cdr-button-stub>
             </div>
             <div
-              class="pdp-modal__text"
+              class="cdr-modal__text"
               role="document"
               tabindex="0"
             >
               <div
-                class="pdp-modal__text-content"
+                class="cdr-modal__text-content"
               >
                 Modal text content
               </div>
               <div
-                class="pdp-modal__text-fade"
+                class="cdr-modal__text-fade"
               />
             </div>
           </div>

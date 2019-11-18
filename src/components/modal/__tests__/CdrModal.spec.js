@@ -7,7 +7,6 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: () => {},
         label: "Label is the modal title"
       },
       slots: {
@@ -23,7 +22,6 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: () => {},
         label: "My Modal Label",
       },
       methods: {
@@ -40,7 +38,6 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: false,
-        closeModal: () => {},
         label: "My Modal Label",
       },
     });
@@ -80,7 +77,6 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: false,
-        closeModal: () => {},
         label: "My Modal Label",
       },
     });
@@ -106,7 +102,6 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true, 
-        closeModal: () => {},
         label: "My Modal Label",
       },
     });
@@ -129,21 +124,19 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: () => {},
         label: "My Modal Label",
       },
     });
     const { documentElement, body } = document;
 
-    expect(documentElement.classList.contains('noscroll')).toBeTruthy();
-    expect(body.classList.contains('noscroll')).toBeTruthy()
+    expect(documentElement.classList.contains('cdr-modal__noscroll')).toBeTruthy();
+    expect(body.classList.contains('cdr-modal__noscroll')).toBeTruthy()
   });
 
   it('removeNoScroll', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: () => {},
         label: "My Modal Label",
       },
     });
@@ -159,7 +152,6 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: () => {},
         label: "My Modal Label",
       },
     });
@@ -176,7 +168,6 @@ describe('CdrModal.vue', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
-        closeModal: () => {},
         label: "My Modal Label",
       },
       methods: {
@@ -201,7 +192,7 @@ describe('CdrModal.vue', () => {
       },
     });
 
-    wrapper.find('button').trigger('click');
+    wrapper.find('#close-modal-button').trigger('click');
     expect(wrapper.emitted('closed'));
   });
 });
