@@ -15,7 +15,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading"
+      modifier="subheading-300"
     >
       Summary only
     </cdr-text>
@@ -25,7 +25,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading"
+      modifier="subheading-300"
     >
       Caption only
     </cdr-text>
@@ -35,7 +35,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading"
+      modifier="subheading-300"
     >
       In a figure
     </cdr-text>
