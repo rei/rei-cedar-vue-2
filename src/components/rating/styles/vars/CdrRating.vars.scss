@@ -5,3 +5,15 @@
 $content-primary: $cdr-color-text-primary-lightmode;
 $content-secondary: $cdr-color-text-secondary-lightmode;
 $rating-number-decoration: $cdr-color-border-secondary-lightmode;
+
+@mixin cdr-rating-base-text() {
+  @include cdr-text-utility-200;
+}
+
+@mixin cdr-rating-text-large() {
+  @include cdr-text-utility-300;
+}
+
+@mixin cdr-rating-text-small() {
+  @include cdr-text-utility-100;
+}
