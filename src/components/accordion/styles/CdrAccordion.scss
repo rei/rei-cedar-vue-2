@@ -18,26 +18,23 @@
         :border-aligned and compact
 ========================================================================== */
 @import '../../../css/settings/index.scss';
-
-$accordion-border: #dadada;
+@import './vars/CdrAccordion.vars.scss';
 
 .cdr-accordion {
-  border-top: 1px solid $accordion-border;
-
+  border-top: $cdr-accordion-border;
   position: relative;
   z-index: 1;
 
   &__button {
-    // TODO: typography token
-    @include redwood-display-30;
+    @include cdr-accordion-button-text-mixin;
 
-    background-color: $cdr-color-background-lightest;
+    background-color: $cdr-accordion-background-color;
     border: none;
-    color: $cdr-color-text-primary-lightmode;
+    color: $cdr-accordion-text-color;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    padding: $cdr-space-inset-one-x;
+    padding: $cdr-accordion-button-padding;
     position: relative;
     text-align: left;
     width: 100%;
@@ -45,53 +42,47 @@ $accordion-border: #dadada;
 
     &:hover,
     &:focus {
-      background-color: $cdr-color-background-light;
+      background-color: $cdr-accordion-background-color-hover;
     }
   }
 
   &__label {
-    // TODO: typography token
-    @include redwood-display-30;
-
-    font-weight: bold;
     cursor: pointer;
     margin-bottom: 0;
   }
 
   &__icon {
-    margin-left: $cdr-space-one-x;
-    fill: $cdr-color-icon-emphasis-lightmode;
-    transition: transform $cdr-duration-3-x $cdr-timing-function-ease-out;
+    margin-left: $cdr-accordion-icon-spacing;
+    fill: $cdr-accordion-icon-fill;
+    transition: $cdr-accordion-icon-transition;
 
     &:global(.open) {
-      transform: rotate(-180deg);
+      transform: $cdr-accordion-icon-transform;
     }
   }
 
   &__content-container {
     overflow: hidden;
-    transition-duration: $cdr-duration-2-x;
+    transition-duration: $cdr-accordion-open-duration;
     transition-property: max-height;
-    transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1);
+    transition-timing-function: $cdr-accordion-content-container-transition-func;
 
     &:global(.open) {
-      transition-duration: $cdr-duration-3-x;
+      transition-duration: $cdr-accordion-open-duration;
     }
   }
 
   &__content {
-    // TODO: typography token
-    @include redwood-body-20;
+    @include cdr-accordion-content-text-mixin;
 
-    background-color: $cdr-color-background-lightest;
-    color: $cdr-color-text-primary-lightmode;
+    background-color: $cdr-accordion-background-color;
+    color: $cdr-accordion-text-color;
     padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-one-x;
-    transition: opacity $cdr-duration-1-x linear;
+    transition: $cdr-accordion-content-transition;
     opacity: 0;
 
     & > * {
-      // TODO: typography token
-      @include redwood-body-20;
+      @include cdr-accordion-content-text-mixin;
     }
 
     &:global(.open) {
@@ -109,15 +100,15 @@ $accordion-border: #dadada;
   /* Border-Aligned
      ========== */
   &--border-aligned {
-    margin: 0 $cdr-space-inset-one-x;
+    margin: $cdr-accordion-border-aligned-margin;
 
     .cdr-accordion__button {
-      margin-left: -$cdr-space-one-x;
-      width: calc(100% + (#{$cdr-space-one-x} * 2));
+      margin-left: $cdr-accordion-border-aligned-button-margin;
+      width: $cdr-accordion-border-aligned-button-width;
     }
 
     .cdr-accordion__content {
-      padding: $cdr-space-half-x 0 $cdr-space-one-x;
+      padding: $cdr-accordion-border-aligned-content-padding;
     }
   }
 
@@ -125,25 +116,18 @@ $accordion-border: #dadada;
      ========== */
   &--compact {
     .cdr-accordion__button {
-      padding: $cdr-space-inset-three-quarter-x;
-    }
+      @include cdr-accordion-compact-button-text-mixin;
 
-    .cdr-accordion__label {
-      // TODO: typography token
-      @include redwood-display-20;
-
-      font-weight: bold;
+      padding: $cdr-accordion-compact-button-padding;
     }
 
     .cdr-accordion__content {
-      // TODO: typography token
-      @include redwood-body-10;
+      @include cdr-accordion-compact-content-text-mixin;
 
-      padding: $cdr-space-quarter-x $cdr-space-three-quarter-x $cdr-space-three-quarter-x;
+      padding: $cdr-accordion-compact-content-padding;
 
       & > * {
-        // TODO: typography token
-        @include redwood-body-10;
+        @include cdr-accordion-compact-content-text-mixin;
       }
     }
   }
@@ -151,18 +135,18 @@ $accordion-border: #dadada;
   /* Border-Aligned and Compact
      ========== */
   &--compact.cdr-accordion--border-aligned {
-    .cdr-accordion-item__button {
-      margin-left: -$cdr-space-three-quarter-x;
-      width: calc(100% + (#{$cdr-space-three-quarter-x} * 2));
+    .cdr-accordion__button {
+      margin-left: $cdr-accordion-border-aligned-compact-button-margin;
+      width: $cdr-accordion-border-aligned-compact-button-width;
     }
 
     .cdr-accordion__content {
-      padding: $cdr-space-quarter-x 0 $cdr-space-three-quarter-x;
+      padding: $cdr-accordion-border-aligned-compact-content-padding;
     }
   }
 
   &:last-child {
-    border-bottom: 1px solid $accordion-border;
+    border-bottom: $cdr-accordion-border;
   }
 
   &--focused {
