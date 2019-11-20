@@ -4,7 +4,7 @@
       tag="h2"
       modifier="heading-400 heading-500@md heading-500@lg"
     >
-      Buttons wtf
+      Buttons
     </cdr-text>
 
     <default-buttons />
