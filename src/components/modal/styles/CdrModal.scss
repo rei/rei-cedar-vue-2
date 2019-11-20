@@ -46,7 +46,7 @@
     margin: auto;
     max-width: 40rem;
     opacity: 1;
-    padding: 20px;
+    padding: 24px;
     position: relative;
     transition: opacity $duration $duration;
     width: 100%; // IE 11
@@ -98,6 +98,7 @@
   &__text-content {
     max-height: $modal-text-max-height;
     overflow: auto;
+    padding-right: 16px;
 
     /* ie/edge/ff bug prevents using padding */
     &::after {
