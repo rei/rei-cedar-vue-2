@@ -1,4 +1,12 @@
-$breadcrumb-text-color: #616161;
-$breadcrumb-last-child-text-color: #292929;
-$breadcrumb-hover-text-color: #292929;
-$breadcrumb-delimiter-text-color: #616161;
+$cdr-breadcrumb-text-color: #616161;
+$cdr-breadcrumb-last-child-text-color: #292929;
+$cdr-breadcrumb-hover-text-color: #292929;
+$cdr-breadcrumb-delimiter-text-color: #616161;
+
+@mixin cdr-breadcrumb-base-text-mixin() {
+  @include cdr-text-utility-200;
+}
+
+@mixin cdr-breadcrumb-xs-text-mixin() {
+  @include cdr-text-utility-100;
+}
