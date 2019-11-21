@@ -1,0 +1,20 @@
+$cdr-quote-padding: $cdr-space-inset-one-x-stretch;
+$cdr-quote-font-family: #{$cdr-font-family-serif}, Sentinal, Georgia, serif;
+$cdr-quote-citation-padding: $cdr-space-one-x;
+$cdr-quote-pull-xs-padding: $cdr-space-inset-one-x-stretch;
+$cdr-quote-pull-xs-margin: 0 0 $cdr-space-one-x;
+$cdr-quote-pull-sm-padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-half-x $cdr-space-two-x;
+$cdr-quote-pull-sm-margin: $cdr-space-one-x 0;
+
+@mixin cdr-quote-summary-text() {
+  font-family: $cdr-quote-font-family;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -.08rem;
+  margin: 0;
+}
+
+@mixin cdr-quote-citation-text() {
+  @include cdr-text-utility-100;
+}

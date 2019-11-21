@@ -30,7 +30,6 @@ export default {
         }
         {this.credit ? <cite
             class={this.style['cdr-caption__cite']}
-            class="cdr-text cdr-text--citation"
           >
             { this.credit }
           </cite> : ''
