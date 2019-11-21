@@ -1,3 +1,5 @@
+$cdr-button-font-family: $cdr-font-family-sans, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 $cdr-button-base-border: none;
 $cdr-button-base-outline: none;
 $cdr-button-base-border-radius: $cdr-radius-softer;
@@ -123,7 +125,7 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 }
 
 @mixin cdr-button-base-text-mixin-small() {
-  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $cdr-button-font-family;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -.08px;
@@ -132,7 +134,7 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 }
 
 @mixin cdr-button-base-text-mixin-medium() {
-  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $cdr-button-font-family;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -.08px;
@@ -141,7 +143,7 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 }
 
 @mixin cdr-button-base-text-mixin-large() {
-  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $cdr-button-font-family;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -.08px;

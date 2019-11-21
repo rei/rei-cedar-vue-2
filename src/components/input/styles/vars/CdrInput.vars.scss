@@ -8,6 +8,9 @@ $input-pre-icon-default-width: 25px;
 /*--------------------------------------------------------------------------------------------------
 // input Variables
 --------------------------------------------------------------------------------------------------*/
+
+$cdr-input-helper-text-font-family: $cdr-font-family-sans, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 /*----------------------------
 // Color
 //---------------------------*/
@@ -94,7 +97,7 @@ $cdr-input-required-label-ml: $cdr-space-inset-quarter-x;
 }
 
 @mixin cdr-input-helper-text-text-mixin() {
-  font-family: $cdr-font-family-sans  Roboto, Helvetica, Arial, sans-serif;
+  font-family: $cdr-input-helper-text-font-family;
   font-size: 1.4rem;
   line-height: 1.8rem;
   letter-spacing: -0.016rem;  
