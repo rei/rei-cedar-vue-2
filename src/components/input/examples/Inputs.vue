@@ -2,7 +2,10 @@
   <div>
     <cdr-text
       tag="h2"
-    >Text Inputs</cdr-text>
+      modifier="heading-400 heading-500@md heading-500@lg"
+    >
+      Text Inputs
+    </cdr-text>
     <div data-backstop="input-target">
       <cdr-input
         class="demo-input"
@@ -81,8 +84,11 @@
       type="email"
     >
       <template slot="info">
-        <cdr-link href="#/inputs">
-          Info Link/Icon
+        <cdr-link
+          modifier="standalone"
+          href="#/inputs"
+        >
+          Support link
         </cdr-link>
       </template>
       <template slot="pre-icon">

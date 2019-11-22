@@ -1,6 +1,6 @@
 <template>
   <div>
-    <headings data-backstop="headings" />
+    <headings />
     <paragraphs data-backstop="paragraphs" />
   </div>
 </template>
