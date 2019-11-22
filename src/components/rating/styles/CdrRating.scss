@@ -61,11 +61,11 @@ $rating-color: #2b6692;
     ========== */
 
   &__placeholder {
-    background-image: svg-load('src/assets/icons/rei/star-stroke.svg', fill=#{$rating-color});
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-stroke.svg', fill=#{$rating-color});
     background-repeat: no-repeat;
 
     &--no-reviews {
-      background-image: svg-load('src/assets/icons/rei/star-stroke.svg', fill=#{$cdr-color-text-form-placeholder-lightmode});
+      background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-stroke.svg', fill=#{$cdr-color-text-form-placeholder-lightmode});
     }
   }
 
@@ -73,22 +73,22 @@ $rating-color: #2b6692;
     ========== */
 
   &__100 {
-    background-image: svg-load('src/assets/icons/rei/star-100.svg', fill=#{$rating-color});
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-100.svg', fill=#{$rating-color});
     background-repeat: no-repeat;
   }
 
   &__75 {
-    background-image: svg-load('src/assets/icons/rei/star-75.svg', fill=#{$rating-color});
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-75.svg', fill=#{$rating-color});
     background-repeat: no-repeat;
   }
 
   &__50 {
-    background-image: svg-load('src/assets/icons/rei/star-50.svg', fill=#{$rating-color});
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-50.svg', fill=#{$rating-color});
     background-repeat: no-repeat;
   }
 
   &__25 {
-    background-image: svg-load('src/assets/icons/rei/star-25.svg', fill=#{$rating-color});
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-25.svg', fill=#{$rating-color});
     background-repeat: no-repeat;
   }
 

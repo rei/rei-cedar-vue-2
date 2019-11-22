@@ -1,6 +1,4 @@
-
 import CdrIcon from '../CdrIcon';
-
 export default {
   name: 'IconFacebook',
   components: {

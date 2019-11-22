@@ -1,5 +1,7 @@
+$cdr-cta-font-family: $cdr-font-family-sans, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 @mixin cdr-cta-base-text-mixin() {
-  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $cdr-cta-font-family;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -.08px;

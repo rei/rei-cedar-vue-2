@@ -64,7 +64,7 @@
   &__input:checked ~ &__figure {
     border-color: $checkbox-figure-checked-border-color;
     background-color: $checkbox-figure-checked-background-color;
-    background-image: svg-load('src/assets/icons/rei/check-lg.svg', fill=#{$checkbox-figure-icon-fill});
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill=#{$checkbox-figure-icon-fill});
     background-repeat: no-repeat;
   }
 
