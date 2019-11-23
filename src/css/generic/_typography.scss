@@ -22,9 +22,8 @@ h3.cdr-text,
 h4.cdr-text,
 h5.cdr-text,
 h6.cdr-text {
-
-  @include cdr-text-default-mixin;
-
+  @include cdr-text-default;
+  margin: 0;
 
   .cdr-text {
     font-weight: inherit;
