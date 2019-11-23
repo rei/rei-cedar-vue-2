@@ -1,8 +1,7 @@
 $cdr-tab-panel-animation-duration: $cdr-duration-5-x;
-$cdr-tab-font-family: $cdr-font-family-sans, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin cdr-tabs-base-header-item-label() {
-  font-family: $cdr-tab-font-family;
+  font-family: $cdr-font-family-sans;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -.08px;
@@ -11,7 +10,7 @@ $cdr-tab-font-family: $cdr-font-family-sans, Roboto, "Helvetica Neue", Helvetica
 }
 
 @mixin cdr-tabs-compact-header-item-label() {
-  font-family: $cdr-tab-font-family;
+  font-family: $cdr-font-family-sans;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -.08px;
