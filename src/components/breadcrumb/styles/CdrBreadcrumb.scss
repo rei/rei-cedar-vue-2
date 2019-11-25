@@ -37,11 +37,11 @@
   &__item {
     display: inline-flex;
     flex: none;
-    color: $breadcrumb-text-color;
+    color: $cdr-breadcrumb-text-color;
     padding: 0;
 
     &:last-child {
-      color: $breadcrumb-last-child-text-color;
+      color: $cdr-breadcrumb-last-child-text-color;
     }
 
     /* Hover
@@ -49,14 +49,14 @@
     &:hover,
     &:active,
     &:focus {
-      color: $breadcrumb-hover-text-color;
+      color: $cdr-breadcrumb-hover-text-color;
     }
   }
 
   /* Link
   ---------- */
   &__link {
-    @include redwood-display-10;
+    @include cdr-breadcrumb-xs-text-mixin;
 
     text-decoration: none;
     color: inherit; /* inherit color from &__item */
@@ -72,9 +72,9 @@
   /* Delimiter
   ========== */
   &__delimiter {
-    @include redwood-display-10;
+    @include cdr-breadcrumb-xs-text-mixin;
 
-    color: $breadcrumb-delimiter-text-color;
+    color: $cdr-breadcrumb-delimiter-text-color;
     padding-left: $cdr-space-quarter-x;
     padding-right: $cdr-space-half-x;
   }
@@ -99,15 +99,15 @@
       border-bottom: 1px solid transparent;
       width: 1.4rem;
       height: 1.4rem;
-      fill: $breadcrumb-text-color;
+      fill: $cdr-breadcrumb-text-color;
     }
 
     &:hover,
     &:active,
     &:focus {
       .cdr-breadcrumb__ellipses-icon {
-        border-bottom: 1px solid $breadcrumb-hover-text-color;
-        fill: $breadcrumb-hover-text-color;
+        border-bottom: 1px solid $cdr-breadcrumb-hover-text-color;
+        fill: $cdr-breadcrumb-hover-text-color;
       }
     }
   }
@@ -116,7 +116,7 @@
     &__link,
     &__delimiter,
     &__ellipses {
-      @include redwood-display-20;
+      @include cdr-breadcrumb-base-text-mixin;
     }
 
     &__ellipses .cdr-breadcrumb__ellipses-icon {

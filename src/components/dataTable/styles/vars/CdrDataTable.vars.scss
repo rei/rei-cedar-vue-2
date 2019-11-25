@@ -1,0 +1,27 @@
+@mixin cdr-data-table-base-text() {
+  font-family: $cdr-font-family-sans;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.08px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin cdr-data-table-header-text() {
+  @include cdr-data-table-base-text;
+
+  font-weight: 600;
+}
+
+@mixin cdr-data-table-caption-text() {
+  @include cdr-text-heading-300;
+}
+
+@mixin cdr-data-table-locked-column() {
+  @include cdr-data-table-header-text;
+
+  border-right: 2px solid $cdr-color-border-secondary-lightmode;
+  left: 0;
+  position: absolute;
+  width: 150px;
+}
