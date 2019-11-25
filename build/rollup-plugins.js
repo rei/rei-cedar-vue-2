@@ -74,7 +74,6 @@ const plugins = [
     config: true,
     plugins: [],
     extract: postcssExtract,
-    inject: false,
     extensions: ['.scss', '.css'],
     sourceMap: env === 'dev' ? 'inline' : false,
     modules: {
