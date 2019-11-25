@@ -1,5 +1,5 @@
 @mixin cdr-data-table-base-text() {
-  font-family: Graphik, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $cdr-font-family-sans;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -.08px;
