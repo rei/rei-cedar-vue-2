@@ -45,7 +45,7 @@
     />
 
     <hr class="icon-hr">
-
+    <cdr-text>Using Sprite</cdr-text>
     <cdr-row
       cols="3 6@md 10@lg"
     >
@@ -56,6 +56,25 @@
         <div>
           <div class="cdr-text-center">
             <cdr-icon :use="`#${getSpriteId(key)}`" />
+            <cdr-text>{{ getSpriteId(key) }}</cdr-text>
+          </div>
+        </div>
+      </cdr-col>
+    </cdr-row>
+
+    <hr class="icon-hr">
+
+    <cdr-text>Using Inline Components</cdr-text>
+    <cdr-row
+      cols="3 6@md 10@lg"
+    >
+      <cdr-col
+        v-for="(val, key) in filteredIcons"
+        :key="key"
+      >
+        <div>
+          <div class="cdr-text-center">
+            <component :is="key" />
             <cdr-text>{{ getSpriteId(key) }}</cdr-text>
           </div>
         </div>
@@ -108,7 +127,7 @@ export default {
   },
   computed: {
     filteredIcons() {
-      const notAllowed = ['CdrIcon', 'CdrIconSprite'];
+      const notAllowed = ['CdrIcon'];
       return Object.keys(this.Icons)
         .filter(key => !notAllowed.includes(key))
         .reduce((obj, key) => ({

@@ -1,6 +1,4 @@
-
 import CdrIcon from '../CdrIcon';
-
 export default {
   name: 'IconMinusSm',
   components: {
@@ -10,7 +8,7 @@ export default {
   render() {
     return (<cdr-icon {...{props: this.$props} }>
       {this.$slots.default}
-      <path d="M8 11h8c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1H8c-.55228475 0-1-.4477153-1-1s.44771525-1 1-1z"></path>
+      <path d="M8 11h8a1 1 0 010 2H8a1 1 0 010-2z"></path>
     </cdr-icon>)
   },
 };

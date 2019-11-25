@@ -18,11 +18,10 @@ script:
 - if [ "$TRAVIS_PULL_REQUEST" == "false" ];
     then
       npm run unit;
-      npx codecov;
     else
       npm run test;
-      npx codecov;
   fi
+- npx codecov;
 - if [ "$TRAVIS_BRANCH" == "next" ];
     then
       npm run dev:build;

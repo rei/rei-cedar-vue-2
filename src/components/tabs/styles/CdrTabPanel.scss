@@ -1,4 +1,5 @@
 @import '../../../css/settings/index.scss';
+@import './vars/CdrTabs.vars.scss';
 /* ==========================================================================
   # CdrTabPanel
 
@@ -39,12 +40,12 @@
   :global {
     animation-name: flyLeft;
   }
-  animation-duration: $cdr-duration-5-x;
+  animation-duration: $cdr-tab-panel-animation-duration;
 }
 
 .flyRight {
   :global {
     animation-name: flyRight;
   }
-  animation-duration: $cdr-duration-5-x;
+  animation-duration: $cdr-tab-panel-animation-duration;
 }

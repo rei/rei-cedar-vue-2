@@ -116,9 +116,11 @@ $cdr-list-unordered-item-left-before: 0;
   padding-left: $cdr-list-unordered-pl;
 
   & > li::before {
-    content: $cdr-list-unordered-item-content-before;
-    position: $cdr-list-unordered-item-position-before;
-    left: $cdr-list-unordered-item-left-before;
+    content: "\2022";
+    position: relative;
+    margin-left: -1em;
+    padding-right: $cdr-space-half-x;
+ 
   }
 }
 
@@ -137,8 +139,9 @@ $cdr-list-unordered-nested-item-left-before: 0;
   & > li {
     &::before {
       content: $cdr-list-unordered-nested-item-content-before;
-      position: $cdr-list-unordered-nested-item-position-before;
-      left: $cdr-list-unordered-nested-item-left-before;
+      position: relative;
+      margin-left: -1em;
+      padding-right: $cdr-space-half-x;
     }
   }
 }

@@ -1,0 +1,19 @@
+$cdr-tab-panel-animation-duration: $cdr-duration-5-x;
+
+@mixin cdr-tabs-base-header-item-label() {
+  font-family: $cdr-font-family-sans;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+@mixin cdr-tabs-compact-header-item-label() {
+  font-family: $cdr-font-family-sans;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}

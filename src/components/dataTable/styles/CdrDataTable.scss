@@ -9,15 +9,16 @@
       :compact
 ========================================================================= */
 @import '../../../css/settings/index.scss';
+@import './vars/CdrDataTable.vars.scss';
 
 .cdr-data-table {
   // TODO: typography token
-  @include redwood-display-20();
+  @include cdr-data-table-base-text;
 
   position: relative;
 
   &__caption {
-    @include cdr-text-heading-300();
+    @include cdr-data-table-caption-text;
 
     color: $cdr-color-text-primary-lightmode;
   }
@@ -41,19 +42,12 @@
     &:global(.locked-col) {
       margin-left: 150px;
 
-      @mixin lockedColTh() {
-        border-right: 2px solid $cdr-color-border-secondary-lightmode;
-        left: 0;
-        position: absolute;
-        width: 150px;
-      }
-
       thead tr th:first-child {
-        @include lockedColTh();
+        @include cdr-data-table-locked-column;
       }
 
       tbody tr th {
-        @include lockedColTh();
+        @include cdr-data-table-locked-column;
       }
     }
 

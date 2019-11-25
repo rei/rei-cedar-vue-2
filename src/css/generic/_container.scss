@@ -15,12 +15,13 @@ $container-x-padding-md: $cdr-space-two-x;
    ========================================================================== */
 
 .cdr-container-fluid {
-  @include cdr-text-default-mixin;
+  @include cdr-text-default;
   @include cdr-container-fluid-mixin;
 }
 
 @include md-mq {
   .cdr-container-fluid {
+    @include cdr-text-default;
     @include cdr-container-fluid-at-medium-mixin;
   }
 }
@@ -30,12 +31,13 @@ $container-x-padding-md: $cdr-space-two-x;
    ========================================================================== */
 
 .cdr-container {
-  @include cdr-text-default-mixin;
+  @include cdr-text-default;
   @include cdr-container-mixin;
 }
 
 @include md-mq {
   .cdr-container {
+    @include cdr-text-default;
     @include cdr-container-at-medium-mixin;
   }
 }

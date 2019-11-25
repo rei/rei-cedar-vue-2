@@ -1,5 +1,6 @@
 @import '../../../css/settings/index.scss';
 @import './vars/Grid.vars.scss';
+@import url('@rei/cedar/dist/style/CdrRow.css');
 
 // TODO: replace all of this with a mixin
 $colPct1: calc(1 / #{$rowColumns} * 100%);

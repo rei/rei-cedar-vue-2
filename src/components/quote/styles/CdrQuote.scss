@@ -1,4 +1,5 @@
 @import '../../../css/settings/index.scss';
+@import './vars/CdrQuote.vars.scss';
 
 /* ==========================================================================
   # Cdrquote
@@ -14,22 +15,18 @@
   line-height: 1;
   
   &__summary {
-    font-family: #{$cdr-font-family-serif}, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: -.08rem;
-    margin: 0;
+    @include cdr-quote-summary-text;
     
-    @include sm-mq {
-      font-size: 24px;
-      line-height: 34px;
-      letter-spacing: -.016rem;
+    @include xs-mq-only {
+      font-size: 18px;
+      line-height: 28px;
     }
 
     & + .cdr-quote__citation {
+      @include cdr-quote-citation-text;
+
       display: block;
-      padding-top: $cdr-space-one-x;
+      padding-top: $cdr-quote-citation-padding;
     }
   }
 
@@ -43,14 +40,14 @@
 
     @include xs-mq {
       border-width: 0 0 1px 0;
-      padding: $cdr-space-inset-one-x-stretch;
-      margin: 0 0 $cdr-space-one-x;
+      padding: $cdr-quote-pull-xs-padding;
+      margin: $cdr-quote-pull-xs-margin;
     }
 
     @include sm-mq {
       border-width: 0 0 0 1px;
-      padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-half-x $cdr-space-two-x;
-      margin: $cdr-space-one-x 0;
+      padding: $cdr-quote-pull-sm-padding;
+      margin: $cdr-quote-pull-sm-margin;
     }
   }
 }

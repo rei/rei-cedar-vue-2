@@ -1,4 +1,6 @@
 @import '../../../css/settings/index.scss';
+@import './vars/CdrTabs.vars.scss';
+@import url('@rei/cedar/dist/style/CdrTabPanel.css');
 /* ==========================================================================
   # CdrTabs
 
@@ -106,8 +108,7 @@
   }
 
   &__header-item-label {
-    // TODO: typography token
-    @include redwood-display-30;
+    @include cdr-tabs-base-header-item-label;
 
     text-decoration: none;
     margin: 0 $cdr-space-one-x 0 0;
@@ -159,7 +160,7 @@
   &--compact {
     .cdr-tabs__header-item-label {
       // TODO: typography token
-      @include redwood-display-20;
+      @include cdr-tabs-compact-header-item-label;
 
       margin: 0 $cdr-space-half-x 0 0;
       padding: $cdr-space-inset-three-quarter-x-squish;
