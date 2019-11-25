@@ -1,7 +1,6 @@
-$cdr-caption-font-family: $cdr-font-family-sans, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @mixin cdr-caption-summary-text-mixin() {
-  font-family: $cdr-caption-font-family;
+  font-family: $cdr-font-family-sans;
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 0.08px;
@@ -9,7 +8,7 @@ $cdr-caption-font-family: $cdr-font-family-sans, Roboto, "Helvetica Neue", Helve
 }
 
 @mixin cdr-caption-citation-text-mixin() {
-  font-family: $cdr-caption-font-family;
+  font-family: $cdr-font-family-sans;
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.16px;

@@ -1,7 +1,7 @@
 <template>
   <div data-backstop="buttons">
     <div
-      class="button-example cdr-space-inset-one-x"
+      class="cdr-space-inset-one-x"
       v-for="(section, index) in data"
       :key="index"
       :data-backstop="section.backstop ? section.backstop : null"
@@ -26,7 +26,7 @@
       </cdr-button>
     </div>
     <div
-      class="button-example cdr-space-inset-one-x"
+      class="cdr-space-inset-one-x"
       data-backstop="cdr-button--anchor"
     >
       <cdr-text
@@ -51,7 +51,9 @@
         Small Link
       </cdr-button>
     </div>
-    <div>
+    <div
+      class="cdr-space-inset-one-x"
+    >
       <cdr-text
         tag="h3"
         modifier="heading-400 heading-500@md heading-500@lg"
