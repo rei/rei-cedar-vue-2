@@ -180,9 +180,7 @@ export default {
             id={this.id ? this.id : null}
           >
             {this.caption
-              && <caption
-                class="cdr-display-sr-only"
-              >
+              && <caption class={this.style['cdr-data-table__caption-sr']}>
                 { this.caption }
               </caption>
             }

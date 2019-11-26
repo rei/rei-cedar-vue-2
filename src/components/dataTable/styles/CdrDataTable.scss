@@ -23,6 +23,10 @@
     color: $cdr-color-text-primary-lightmode;
   }
 
+  &__caption-sr {
+    @include cdr-display-sr-only-mixin;
+  }
+
   &__scroll-container {
     /* margin-left: 150px; */
     overflow-x: auto;
