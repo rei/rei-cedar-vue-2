@@ -150,7 +150,7 @@ export default {
           </span> : ''
         }
 
-        <span class="cdr-display-sr-only">
+        <span class={this.style['cdr-rating__caption-sr']}>
           { this.ratingSrText }{ this.countSrText }
         </span>
       </Component>
