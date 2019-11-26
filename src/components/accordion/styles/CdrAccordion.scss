@@ -19,6 +19,7 @@
 ========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrAccordion.vars.scss';
+@import url('@rei/cedar/dist/style/CdrIcon.css');
 
 .cdr-accordion {
   border-top: $cdr-accordion-border;

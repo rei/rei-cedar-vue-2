@@ -40,8 +40,7 @@ $rating-color: #2b6692;
   /* Count
     ========== */
   &__count {
-    // TODO: typography token
-    @include redwood-display-20();
+    @include cdr-rating-base-text;
 
     margin-left: $cdr-space-half-x;
   }
@@ -56,6 +55,10 @@ $rating-color: #2b6692;
 
   &__background {
     display: flex;
+  }
+
+  &__caption-sr {
+    @include cdr-display-sr-only-mixin;
   }
 
   /* Placeholder
@@ -128,7 +131,7 @@ $rating-color: #2b6692;
     }
 
     & .cdr-rating__count {
-      @include redwood-display-30();
+      @include cdr-rating-text-large;
     }
   }
 
@@ -142,7 +145,7 @@ $rating-color: #2b6692;
     }
 
     & .cdr-rating__count {
-      @include redwood-display-10();
+      @include cdr-rating-text-small;
 
       margin-left: $cdr-space-quarter-x;
     }
@@ -197,7 +200,7 @@ $rating-color: #2b6692;
       }
 
       & .cdr-rating__count {
-        @include redwood-display-10();
+        @include cdr-rating-text-small;
 
         margin-left: $cdr-space-quarter-x;
       }
@@ -210,7 +213,7 @@ $rating-color: #2b6692;
       }
 
       & .cdr-rating__count {
-        @include redwood-display-30();
+        @include cdr-rating-text-large;
       }
     }
   }
@@ -226,7 +229,7 @@ $rating-color: #2b6692;
       }
 
       & .cdr-rating__count {
-        @include redwood-display-10();
+        @include cdr-rating-text-small;
 
         margin-left: $cdr-space-quarter-x;
       }
@@ -239,7 +242,7 @@ $rating-color: #2b6692;
       }
 
       & .cdr-rating__count {
-        @include redwood-display-30();
+        @include cdr-rating-text-large;
       }
     }
   }
@@ -255,7 +258,7 @@ $rating-color: #2b6692;
       }
 
       & .cdr-rating__count {
-        @include redwood-display-10();
+        @include cdr-rating-text-small;
 
         margin-left: $cdr-space-quarter-x;
       }
@@ -268,7 +271,7 @@ $rating-color: #2b6692;
       }
 
       & .cdr-rating__count {
-        @include redwood-display-30();
+        @include cdr-rating-text-large;
       }
     }
   }
@@ -285,7 +288,7 @@ $rating-color: #2b6692;
       }
 
       & .cdr-rating__count {
-        @include redwood-display-10();
+        @include cdr-rating-text-small;
 
         margin-left: $cdr-space-quarter-x;
       }
@@ -298,7 +301,7 @@ $rating-color: #2b6692;
       }
 
       & .cdr-rating__count {
-        @include redwood-display-30();
+        @include cdr-rating-text-large;
       }
     }
   }
