@@ -60,7 +60,7 @@ exports[`CdrRating renders correctly 1`] = `
     </span>
   </span>
   <span
-    class="cdr-display-sr-only"
+    class="cdr-rating__caption-sr"
   >
     rated 3.25 out of 5 with 100 reviews
   </span>

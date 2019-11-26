@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import style from './styles/CdrCaption.scss';
 /**
  * Cedar 2 component for captions
