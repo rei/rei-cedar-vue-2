@@ -1,6 +1,6 @@
 /* ==========================================================================
   # CdrCaption
-  
+
   All values should map to variables in
   vars/CdrCaption.vars.pcss
   in order to allow for theming
@@ -14,10 +14,13 @@
 .cdr-caption {
   max-width: 530px;
   line-height: 1;
-   &__cite {
+  padding: $cdr-space-inset-one-x-squish;
+
+  &__cite {
     @include cdr-caption-citation-text-mixin;
     color: $cdr-color-text-secondary-lightmode;
   }
+
   &__summary {
     @include cdr-caption-summary-text-mixin;
     margin: 0;
