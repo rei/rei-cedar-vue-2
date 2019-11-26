@@ -57,6 +57,10 @@ $rating-color: #2b6692;
     display: flex;
   }
 
+  &__caption-sr {
+    @include cdr-display-sr-only-mixin;
+  }
+
   /* Placeholder
     ========== */
 
