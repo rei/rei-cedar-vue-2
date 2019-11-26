@@ -1,8 +1,5 @@
 @import "~@rei/cdr-tokens/dist/scss/cdr-tokens.scss";
 
-/* Settings */
-@import "./settings/_options.vars";
-
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -34,8 +31,7 @@ html {
 }
 
 body {
-  // TODO: typography token
-  @include redwood-body-20;
+  @include cdr-text-default;
 
   line-height: 1.5;
   margin: 0;

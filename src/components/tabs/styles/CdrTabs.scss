@@ -159,7 +159,6 @@
     ========== */
   &--compact {
     .cdr-tabs__header-item-label {
-      // TODO: typography token
       @include cdr-tabs-compact-header-item-label;
 
       margin: 0 $cdr-space-half-x 0 0;
