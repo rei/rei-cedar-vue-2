@@ -42,6 +42,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
   margin-left: calc(#{$rowGutter-xs} * -1);
   padding-left: 0;
   padding-right: 0;
+  pointer-events: none;
 
   &.cdr-col {
     margin: 0;
