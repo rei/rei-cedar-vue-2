@@ -38,9 +38,6 @@ $cdr-input-required-label-color: $cdr-color-text-secondary-lightmode;
 /*----------------------------
 // Display
 //---------------------------*/
-//helper-text
-$cdr-input-helper-text-pl: 0;
-$cdr-input-helper-text-pt: $cdr-space-quarter-x;
 
 // Input: Base
 $cdr-input-base-border: 0;
@@ -197,8 +194,6 @@ $cdr-input-required-label-ml: $cdr-space-inset-quarter-x;
   @include cdr-input-helper-text-text-mixin;
 
   color: $cdr-input-helper-text-color;
-  padding-left: $cdr-input-helper-text-pl;
-  padding-top: $cdr-input-helper-text-pt;
   display: block;
 }
 
