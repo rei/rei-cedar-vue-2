@@ -2,41 +2,32 @@ import { shallowMount, mount } from '@vue/test-utils';
 import CdrBreadcrumb from 'componentdir/breadcrumb/CdrBreadcrumb';
 
 describe('CdrBreadcrumb', () => {
-  const BreadcrumbItems = [
-    {
-      item: {
-        url: 'http://google.com',
-        name: 'Breadcrumb Step 1',
-      },
-    },
-    {
-      item:{
-        url: 'http://rei.com',
-        name: 'Long Breadcrumb Step 2',
-      },
-    },
-    {
-      item:{
-        url: 'http://yahoo.com',
-        name: 'Breadcrumb Step 3',
-      },
-    },
-    {
-      item:{
-        url: 'http://bing.com',
-        name: 'Really Really Long Breadcrumb Step 4',
-      },
-    },
-    {
-      item:{
-        url: 'http://amazon.com',
-        name: 'Last Step',
-      },
-    },
-  ];
-
   test('renders correctly', () => {
-    const wrapper = mount(CdrBreadcrumb);
+    const items = [
+      {
+        item: {
+          url: 'http://google.com',
+          name: 'Breadcrumb Step 1',
+        },
+      },
+      {
+        item:{
+          url: 'http://rei.com',
+          name: 'Long Breadcrumb Step 2',
+        },
+      },
+      {
+        item:{
+          url: 'http://rei.com',
+          name: 'Long Breadcrumb Step 3',
+        },
+      },
+    ];
+    const wrapper = mount(CdrBreadcrumb, {
+      propsData: {
+        items: items,
+      }
+    });
     expect(wrapper.element).toMatchSnapshot();
   });
 
@@ -163,6 +154,39 @@ describe('CdrBreadcrumb', () => {
       }
     });
     expect(wrapper.text()).toBe('http://rei.com TEST Scoped cdr-breadcrumb__link');
+  });
+
+  it('applies focus to first breadcrumb on ellipsis click', async () => {
+    const items = [
+      {
+        item: {
+          url: 'http://google.com',
+          name: 'First Breadcrumb',
+        },
+      },
+      {
+        item:{
+          url: 'http://rei.com',
+          name: 'Second Breadcrumn',
+        },
+      },
+      {
+        item:{
+          url: 'http://rei.com',
+          name: 'Third Breadcrumb',
+        },
+      },
+    ];
+    const wrapper = mount(CdrBreadcrumb, {
+      propsData: {
+        items: items,
+      },
+      attachToDocument: true, // enables focus testing
+    });
+    wrapper.vm.handleEllipsisClick()
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.$refs.firstBreadcrumb).toBe(document.activeElement);
+    });
   });
 
 });

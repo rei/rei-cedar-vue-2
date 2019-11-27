@@ -94,12 +94,15 @@ export default {
         >
           /
         </span>) : '';
+
         const attrs = {
           class: this.style['cdr-breadcrumb__link'],
         };
         if (index === this.items.length - 1) {
           attrs['aria-current'] = 'page';
         }
+
+        const ref = index === 0 ? 'firstBreadcrumb' : null;
 
         return (<li
           class={this.style['cdr-breadcrumb__item']}
@@ -111,9 +114,11 @@ export default {
               attrs,
               href: breadcrumb.item.url,
               content: breadcrumb.item.name,
+              ref,
             })
             : (<a
               {... { attrs: attrs }}
+              ref={ref}
               href={breadcrumb.item.url}
             >
               { breadcrumb.item.name }
@@ -127,6 +132,7 @@ export default {
   methods: {
     handleEllipsisClick() {
       this.truncate = false;
+      this.$nextTick(() => { this.$refs.firstBreadcrumb.focus() });
     },
   },
   render() {
