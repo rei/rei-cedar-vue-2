@@ -154,13 +154,19 @@
       prompt="Choose One"
     >
       <template slot="info">
-        <cdr-link href="#/selects">
+        <cdr-link
+          href="#/selects"
+          modifier="standalone"
+        >
           Info Link/Icon
         </cdr-link>
       </template>
     </cdr-select>
     <cdr-text>Selected: {{ infoLinkModel }}</cdr-text>
-    <hr class="icon-hr">
+    <hr
+class="
+icon-hr"
+    >
 
     <!-- Info Icon Example -->
     <cdr-select
@@ -233,7 +239,7 @@
     />
     <cdr-text>Selected Values: {{ multiple2 }}</cdr-text>
     <hr class="icon-hr">
-  </div>
+  </div></cdr-select></template></cdr-link></div>
 </template>
 
 <script>
