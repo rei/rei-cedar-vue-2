@@ -42,16 +42,18 @@ export default {
   },
   data() {
     return {
-      shouldTruncate: this.truncationEnabled && this.items.length > 2,
+      truncate: this.truncationEnabled && this.items.length > 2,
       style,
     };
+  },
+  watch: {
+    items() {
+      this.truncate = this.truncationEnabled && this.items.length > 2;
+    },
   },
   computed: {
     baseClass() {
       return 'cdr-breadcrumb';
-    },
-    truncate() {
-      return this.shouldTruncate;
     },
     ellipsis() {
       return this.truncate ? (<li
@@ -118,7 +120,7 @@ export default {
   },
   methods: {
     handleEllipsisClick() {
-      this.shouldTruncate = false;
+      this.truncate = false;
     },
   },
   render() {
