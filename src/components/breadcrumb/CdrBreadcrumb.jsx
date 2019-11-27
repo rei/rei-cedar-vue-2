@@ -94,6 +94,12 @@ export default {
         >
           /
         </span>) : '';
+        const attrs = {
+          class: this.style['cdr-breadcrumb__link'],
+        };
+        if (index === this.items.length - 1) {
+          attrs['aria-current'] = 'page';
+        }
 
         return (<li
           class={this.style['cdr-breadcrumb__item']}
@@ -102,12 +108,12 @@ export default {
         >
           {this.$scopedSlots.link
             ? this.$scopedSlots.link({
-              class: this.style['cdr-breadcrumb__link'],
+              attrs,
               href: breadcrumb.item.url,
               content: breadcrumb.item.name,
             })
             : (<a
-              class={this.style['cdr-breadcrumb__link']}
+              {... { attrs: attrs }}
               href={breadcrumb.item.url}
             >
               { breadcrumb.item.name }

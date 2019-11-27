@@ -118,7 +118,31 @@ describe('CdrBreadcrumb', () => {
     expect(wrapper.vm.truncate).toBe(false);
     wrapper.setProps({items: items.concat(items)})
     expect(wrapper.vm.truncate).toBe(true);
+  });
 
+  it('puts aria-current label on last breadcrumb', () => {
+    const items = [
+      {
+        item: {
+          url: 'http://google.com',
+          name: 'First Breadcrumb',
+        },
+      },
+      {
+        item:{
+          url: 'http://rei.com',
+          name: 'Last Breadcrumb',
+        },
+      },
+    ];
+    const wrapper = shallowMount(CdrBreadcrumb, {
+      propsData: {
+        items: items,
+      }
+    });
+    const ariaElement = wrapper.findAll('a[aria-current="page"]');
+    expect(ariaElement.length).toBe(1);
+    expect(ariaElement.at(0).text()).toBe('Last Breadcrumb');
   });
 
   it('breadcrumb link can be overridden with link scopedSlot', () => {
@@ -135,7 +159,7 @@ describe('CdrBreadcrumb', () => {
         items: items,
       },
       scopedSlots: {
-        link: '<p slot-scope="link">{{link.href}} TEST {{link.content}} {{link.class}}</p>'
+        link: '<p slot-scope="link">{{link.href}} TEST {{link.content}} {{link.attrs.class}}</p>'
       }
     });
     expect(wrapper.text()).toBe('http://rei.com TEST Scoped cdr-breadcrumb__link');
