@@ -17437,16 +17437,13 @@ var cedar = (function () {
     },
     data: function data() {
       return {
-        shouldTruncate: this.truncationEnabled && this.items.length > 2,
+        truncate: this.truncationEnabled && this.items.length > 2,
         style: style$4
       };
     },
     computed: {
       baseClass: function baseClass() {
         return 'cdr-breadcrumb';
-      },
-      truncate: function truncate() {
-        return this.shouldTruncate;
       },
       ellipsis: function ellipsis() {
         var h = this.$createElement;
@@ -17491,6 +17488,7 @@ var cedar = (function () {
               "aria-hidden": "true"
             }
           }, ["/"]) : '';
+          var ref = index === 0 ? 'firstBreadcrumb' : null;
           return h("li", {
             "class": _this.style['cdr-breadcrumb__item'],
             "key": breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase(),
@@ -17501,9 +17499,11 @@ var cedar = (function () {
           }, [_this.$scopedSlots.link ? _this.$scopedSlots.link({
             class: _this.style['cdr-breadcrumb__link'],
             href: breadcrumb.item.url,
-            content: breadcrumb.item.name
+            content: breadcrumb.item.name,
+            ref: ref
           }) : h("a", {
             "class": _this.style['cdr-breadcrumb__link'],
+            "ref": ref,
             "attrs": {
               "href": breadcrumb.item.url
             }
@@ -17511,9 +17511,19 @@ var cedar = (function () {
         });
       }
     },
+    watch: {
+      items: function items() {
+        this.truncate = this.truncationEnabled && this.items.length > 2;
+      }
+    },
     methods: {
       handleEllipsisClick: function handleEllipsisClick() {
-        this.shouldTruncate = false;
+        var _this2 = this;
+
+        this.truncate = false;
+        this.$nextTick(function () {
+          _this2.$refs.firstBreadcrumb.focus();
+        });
       }
     },
     render: function render() {
