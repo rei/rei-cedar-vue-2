@@ -163,10 +163,7 @@
       </template>
     </cdr-select>
     <cdr-text>Selected: {{ infoLinkModel }}</cdr-text>
-    <hr
-class="
-icon-hr"
-    >
+    <hr class="icon-hr">
 
     <!-- Info Icon Example -->
     <cdr-select
@@ -177,7 +174,7 @@ icon-hr"
       prompt="Choose One"
     >
       <template slot="info">
-        <icon-information-fill />
+        <icon-information-fill size="small" />
       </template>
     </cdr-select>
     <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>
