@@ -46,11 +46,6 @@ export default {
       style,
     };
   },
-  watch: {
-    items() {
-      this.truncate = this.truncationEnabled && this.items.length > 2;
-    },
-  },
   computed: {
     baseClass() {
       return 'cdr-breadcrumb';
@@ -95,13 +90,6 @@ export default {
           /
         </span>) : '';
 
-        const attrs = {
-          class: this.style['cdr-breadcrumb__link'],
-        };
-        if (index === this.items.length - 1) {
-          attrs['aria-current'] = 'page';
-        }
-
         const ref = index === 0 ? 'firstBreadcrumb' : null;
 
         return (<li
@@ -111,13 +99,13 @@ export default {
         >
           {this.$scopedSlots.link
             ? this.$scopedSlots.link({
-              attrs,
+              class: this.style['cdr-breadcrumb__link'],
               href: breadcrumb.item.url,
               content: breadcrumb.item.name,
               ref,
             })
             : (<a
-              {... { attrs: attrs }}
+              class={this.style['cdr-breadcrumb__link']}
               ref={ref}
               href={breadcrumb.item.url}
             >
@@ -129,10 +117,15 @@ export default {
       });
     },
   },
+  watch: {
+    items() {
+      this.truncate = this.truncationEnabled && this.items.length > 2;
+    },
+  },
   methods: {
     handleEllipsisClick() {
       this.truncate = false;
-      this.$nextTick(() => { this.$refs.firstBreadcrumb.focus() });
+      this.$nextTick(() => { this.$refs.firstBreadcrumb.focus(); });
     },
   },
   render() {

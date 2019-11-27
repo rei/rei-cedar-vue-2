@@ -73,7 +73,6 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
       class="cdr-breadcrumb__item"
     >
       <a
-        aria-current="page"
         class="cdr-breadcrumb__link"
         href="http://rei.com"
       >
