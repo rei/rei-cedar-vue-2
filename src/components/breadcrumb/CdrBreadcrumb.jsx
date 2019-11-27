@@ -42,16 +42,13 @@ export default {
   },
   data() {
     return {
-      shouldTruncate: this.truncationEnabled && this.items.length > 2,
+      truncate: this.truncationEnabled && this.items.length > 2,
       style,
     };
   },
   computed: {
     baseClass() {
       return 'cdr-breadcrumb';
-    },
-    truncate() {
-      return this.shouldTruncate;
     },
     ellipsis() {
       return this.truncate ? (<li
@@ -93,6 +90,8 @@ export default {
           /
         </span>) : '';
 
+        const ref = index === 0 ? 'firstBreadcrumb' : null;
+
         return (<li
           class={this.style['cdr-breadcrumb__item']}
           key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
@@ -103,9 +102,11 @@ export default {
               class: this.style['cdr-breadcrumb__link'],
               href: breadcrumb.item.url,
               content: breadcrumb.item.name,
+              ref,
             })
             : (<a
               class={this.style['cdr-breadcrumb__link']}
+              ref={ref}
               href={breadcrumb.item.url}
             >
               { breadcrumb.item.name }
@@ -116,9 +117,15 @@ export default {
       });
     },
   },
+  watch: {
+    items() {
+      this.truncate = this.truncationEnabled && this.items.length > 2;
+    },
+  },
   methods: {
     handleEllipsisClick() {
-      this.shouldTruncate = false;
+      this.truncate = false;
+      this.$nextTick(() => { this.$refs.firstBreadcrumb.focus(); });
     },
   },
   render() {
