@@ -96,6 +96,20 @@
 
     &.cdr-button--on-dark {
       fill: $cdr-button-icon-only-fill-darkmode;
+
+      &:hover,
+      &:active,
+      &:focus {
+        fill: $cdr-button-icon-only-fill;
+      }
+
+      &[disabled] {
+        fill: $cdr-button-icon-only-fill-disabled;
+      }
+    }
+
+    & > :global(.cdr-button__icon) {
+      margin: $cdr-button-icon-only-margin;
     }
   }
 

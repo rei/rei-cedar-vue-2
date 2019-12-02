@@ -148,15 +148,11 @@ $cdr-select-info-container-float: right;
   @include cdr-text-utility-200;
 }
 $cdr-select-helper-text-color: $cdr-color-text-secondary-lightmode;
-$cdr-select-helper-text-pl: $cdr-space-half-x;
-$cdr-select-helper-text-pt: $cdr-space-quarter-x;
 
 @mixin cdr-select-helper-text-mixin() {
   @include cdr-select-helper-text-text-mixin;
 
   color: $cdr-select-helper-text-color;
-  padding-left: $cdr-select-helper-text-pl;
-  padding-top: $cdr-select-helper-text-pt;
 }
 
 /* caret */

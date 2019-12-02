@@ -193,6 +193,7 @@
         :full-width="true"
         size="small"
         aria-label="Check our Twitter feed"
+        data-backstop="cdr-button--icon-only"
       >
         <cdr-icon
           use="#twitter"
@@ -236,12 +237,25 @@
           class="cdr-button__icon"
         />
       </cdr-button>
+      <cdr-button
+        :icon-only="true"
+        aria-label="Play"
+        disabled
+      >
+        <cdr-icon
+          use="#play"
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+      </cdr-button>
     </div>
     <div class="button-example cdr-space-inset-one-x dark">
       <cdr-button
         :icon-only="true"
         :on-dark="true"
         aria-label="A Twitter button"
+        data-backstop="cdr-button--icon-only-dark"
       >
         <cdr-icon
           use="#twitter"
@@ -280,6 +294,19 @@
         icon-only
         on-dark
         aria-label="Play"
+      >
+        <cdr-icon
+          use="#play"
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+      </cdr-button>
+      <cdr-button
+        icon-only
+        on-dark
+        aria-label="Play"
+        disabled
       >
         <cdr-icon
           use="#play"
