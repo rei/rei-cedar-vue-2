@@ -1,11 +1,11 @@
 /* Generic */
 @import "./utility/container";
 @import "./utility/color";
-@import "./utility/typography";
+@import "./utility/text";
 
 /* Utilities */
-@import './utility/visibility';
-@import './utility/alignment';
-@import './utility/spacing';
+@import './utility/display';
+@import './utility/align';
+@import './utility/space';
 
 @import './deprecated/index';
