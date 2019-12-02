@@ -236,7 +236,7 @@
     />
     <cdr-text>Selected Values: {{ multiple2 }}</cdr-text>
     <hr class="icon-hr">
-  </div></cdr-select></template></cdr-link></div>
+  </div>
 </template>
 
 <script>
