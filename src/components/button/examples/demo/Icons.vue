@@ -193,6 +193,7 @@
         :full-width="true"
         size="small"
         aria-label="Check our Twitter feed"
+        data-backstop="cdr-button--icon-only"
       >
         <cdr-icon
           use="#twitter"
@@ -254,6 +255,7 @@
         :icon-only="true"
         :on-dark="true"
         aria-label="A Twitter button"
+        data-backstop="cdr-button--icon-only-dark"
       >
         <cdr-icon
           use="#twitter"
