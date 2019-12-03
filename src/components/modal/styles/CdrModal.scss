@@ -61,7 +61,11 @@
   }
 
   &__dialog {
-    max-height: calc(100vh - #{$dialog-margins-vertical});
+    /*
+      max-height: calc(100vh - #{$dialog-margins-vertical});
+
+      Max-height has been removed here to increase content resilience. 
+    */
     max-width: 60rem;
     padding: $dialog-padding-vertical;
 
@@ -85,8 +89,9 @@
   }
 
   &__close-button {
+    align-self: flex-start;
     flex: none;
-    padding: 0 0 0 $cdr-space-quarter-x !important;
+    padding: 2px 0 0 $cdr-space-quarter-x !important;
     margin-right: -$cdr-space-half-x;
   }
 
@@ -140,11 +145,6 @@
 
 .cdr-modal__noscroll {
   overflow: hidden !important;
+  position: fixed !important;
   width: 100%;
-}
-
-@media (min-width: $smMin) {
-  .cdr-modal__content-wrap {
-    padding: 1.6rem;
-  }
 }

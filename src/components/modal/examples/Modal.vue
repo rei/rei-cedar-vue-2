@@ -8,7 +8,7 @@
     </cdr-text>
 
     <cdr-modal
-      label="Added to Cart (is a common label)"
+      label="Added to Cart (is a common label) and let's make this longer so it"
       :opened="large"
       @closed="closed"
       wrapper-class="wrapper-test-class"
