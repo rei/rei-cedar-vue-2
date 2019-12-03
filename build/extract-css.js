@@ -37,7 +37,7 @@ const utilities = glob.sync('./src/css/utility/*.scss')
 utilities.forEach(buildCss);
 // Create utilities index file which imports all of the individual utility outputs
 const utilsFile = utilities.map(createImport).join('\n');
-fs.outputFile('./dist/style/utilities.css', utilsFile, function(err) {
+fs.outputFile('./dist/style/utilities-full.css', utilsFile, function(err) {
   if (!err) {
     console.log(chalk.green(`success! created utilities.css`));
   }
@@ -62,9 +62,9 @@ const outFile = [{outPath: './dist/style/reset.css'}]
   .map(createImport)
   .join('\n');
 
-fs.outputFile('./dist/style/cdr-full.css', outFile, function(err) {
+fs.outputFile('./dist/style/cedar-full.css', outFile, function(err) {
   if (!err) {
-    console.log(chalk.green(`success! created cdr-full.css`));
+    console.log(chalk.green(`success! created cedar-full.css`));
   }
 });
 
