@@ -2,7 +2,7 @@
 
 exports[`CdrCaption renders correctly 1`] = `
 <div
-  class="cdr-caption cdr-space-inset-one-x-squish"
+  class="cdr-caption"
 >
   <p
     class="cdr-caption__summary"

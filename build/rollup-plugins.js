@@ -1,7 +1,7 @@
 import path from 'path';
 import process from 'process';
 import commonjs from 'rollup-plugin-commonjs';
-import alias from 'rollup-plugin-alias';
+import alias from '@rollup/plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import copyPlugin from 'rollup-plugin-copy';
@@ -41,11 +41,13 @@ if (env !== 'test') {
 const plugins = [
   (env == 'test' || env == 'dev') && alias({
     resolve: ['.json', '.js', '.jsx', '.scss', '.vue'],
-    srcdir: resolve('src'),
-    cssdir: resolve('src/css'),
-    assetsdir: resolve('src/assets'),
-    componentsdir: resolve('src/components'),
-    mixinsdir: resolve('src/mixins'),
+    entries: {
+      srcdir: resolve('src'),
+      cssdir: resolve('src/css'),
+      assetsdir: resolve('src/assets'),
+      componentsdir: resolve('src/components'),
+      mixinsdir: resolve('src/mixins'),
+    },
   }),
   nodeResolve({
     mainFields: ['module', 'jsnext:main', 'main'],
