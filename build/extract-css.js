@@ -6,6 +6,7 @@ const chalk = require('chalk');
 const postcss = require('postcss');
 const postcssrc = require('postcss-load-config');
 const postcssModules = require('postcss-modules');
+const _ = require('lodash');
 const packageJson = require('../package.json')
 
 const env = process.env.NODE_ENV;
@@ -45,10 +46,11 @@ fs.outputFile('./dist/style/utilities-full.css', utilsFile, function(err) {
 
 const components = glob.sync('./src/components/**/styles/*.scss')
   .map((path) => {
-    const name = path.split('/styles/')[1];
+    const componentName = path.split('/styles/')[1];
+    const filename = _.kebabCase(componentName).replace('-scss', '.css');
     return {
       srcPath: path,
-      outPath: `./dist/style/${name.replace('scss', 'css')}`,
+      outPath: `./dist/style/${filename}`,
       scopeClasses: true,
     }
   }
