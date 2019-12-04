@@ -215,6 +215,7 @@ export default {
       reallyClosed,
       $slots: {
         default: defaultSlot,
+        label: labelSlot,
       },
     } = this;
     return (
@@ -261,14 +262,19 @@ export default {
                 <div class={this.style['cdr-modal__content']}>
                   <div class={this.style['cdr-modal__header']}>
                     <div class={this.style['cdr-modal__title']}>
-                      {this.showLabel && (
-                        <cdr-text
-                          tag="h1"
-                          modifier="heading-600"
-                        >
-                          {this.label}
-                        </cdr-text>
-                      )}
+                      {
+                        this.showLabel && this.$slots.label
+                      }
+                      {
+                        this.showLabel && !this.$slots.label && (
+                          <cdr-text
+                            tag="h1"
+                            modifier="heading-600"
+                          >
+                            {this.label}
+                          </cdr-text>
+                        )
+                      }
                     </div>
                     <cdr-button
                       id="close-modal-button"
