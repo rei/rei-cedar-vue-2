@@ -1,16 +1,15 @@
 
-$duration: 150ms;
-$smMin: 576px;
-$overlayColor: rgba(26, 26, 26, .6); // $cdr-color-background-darker
-$contentColor: #fff;
-$modalBorderRadius: .5rem;
+$cdr-modal-animation-duration: 150ms;
+$cdr-modal-overlay-color: rgba(26, 26, 26, .6); // $cdr-color-background-darker
+$cdr-modal-content-color: #fff;
+$cdr-modal-border-radius: .5rem;
 
-$dialog-margins-vertical: $cdr-space-four-x * 2; // 12.8rem
-$dialog-padding-vertical: $cdr-space-one-and-a-half-x; // 2.4rem
-$header-padding-bottom: $cdr-space-one-x; // 1.6rem
-$title-line-height: $cdr-space-two-x; // 3.2rem
+$cdr-dialog-margins-vertical: $cdr-space-four-x * 2; // 12.8rem
+$cdr-dialog-padding-vertical: $cdr-space-one-and-a-half-x; // 2.4rem
+$cdr-header-padding-bottom: $cdr-space-one-x; // 1.6rem
+$cdr-title-line-height: $cdr-space-two-x; // 3.2rem
 
 // total up internal padding to get max height of text
-$header-height: $header-padding-bottom + $title-line-height;
-$modal-total-padding: #{$dialog-margins-vertical + $header-height + $dialog-padding-vertical * 2};
-$modal-text-max-height: calc(100vh - #{$modal-total-padding});
+$cdr-header-height: $cdr-header-padding-bottom + $cdr-title-line-height;
+$cdr-modal-total-padding: #{$cdr-dialog-margins-vertical + $cdr-header-height + $cdr-dialog-padding-vertical * 2};
+$cdr-modal-text-max-height: calc(100vh - #{$cdr-modal-total-padding});
