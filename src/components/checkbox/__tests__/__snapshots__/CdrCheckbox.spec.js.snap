@@ -5,7 +5,7 @@ exports[`CdrCheckbox renders correctly 1`] = `
   class="cdr-checkbox__wrap"
 >
   <label
-    class="cdr-checkbox custom-label-class"
+    class="cdr-checkbox custom-label-class cdr-checkbox cdr-checkbox--medium"
   >
     <input
       class="cdr-checkbox__input"
