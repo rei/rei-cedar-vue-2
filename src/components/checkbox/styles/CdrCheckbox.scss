@@ -20,8 +20,7 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrCheckbox.vars.scss';
 .cdr-checkbox {
-  @include cdr-label-base-mixin;
-
+  @include cdr-checkbox-text;
   position: relative;
   padding-left: calc(#{$checkbox-figure-size-medium} + #{$cdr-label-base-spacing});
 
@@ -49,7 +48,6 @@
   &__figure {
     position: absolute;
     top: $checkbox-figure-space-top;
-    transform: translateY(-50%); // center it automatically
     left: 0;
     width: $checkbox-figure-size-medium;
     height: $checkbox-figure-size-medium;
@@ -176,7 +174,7 @@
 
   // TODO: remove compact?
   &--compact {
-    @include cdr-label-compact-mixin;
+    @include cdr-checkbox-text-compact;
   }
 
   &--hide-figure {
