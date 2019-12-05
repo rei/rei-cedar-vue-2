@@ -79,7 +79,12 @@ export default {
     return (
       <div class={clsx(this.space, this.style['cdr-radio__wrap'])}>
         <label
-          class={clsx(this.style[this.baseClass], this.modifierClass, this.labelClass, this.sizeClass)}
+          class={clsx(
+            this.style[this.baseClass],
+            this.modifierClass,
+            this.labelClass,
+            this.sizeClass,
+          )}
           ref="label"
         >
           <input
