@@ -125,7 +125,6 @@ export default {
           <textarea
             rows={this.rows}
             class={clsx(
-              this.style[this.baseClass],
               this.inputClass,
               this.sizeClass,
               this.space,
@@ -143,10 +142,11 @@ export default {
       return (
           <input
             type={this.type}
-            class={clsx(this.style[this.baseClass],
+            class={clsx(
               this.inputClass,
               this.sizeClass,
-              this.space,)}
+              this.space,
+            )}
             id={this.inputId}
             disabled={this.disabled}
             required={this.required}
