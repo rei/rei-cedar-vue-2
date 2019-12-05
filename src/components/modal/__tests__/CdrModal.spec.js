@@ -1,6 +1,8 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrModal from 'componentdir/modal/CdrModal';
 import Vue from 'vue';
+// import packageJson from '../../../../package.json';
+import CdrButton from 'componentdir/button/CdrButton';
 
 describe('CdrModal.vue', () => {
   it('renders correctly', () => {
@@ -71,6 +73,8 @@ describe('CdrModal.vue', () => {
       key: 'Escape',
     });
     expect(wrapper.vm.onClick).toHaveBeenCalled();
+
+    wrapper.destroy();
   });
 
   it('handleOpened', () => {
@@ -126,11 +130,13 @@ describe('CdrModal.vue', () => {
         opened: true,
         label: "My Modal Label",
       },
+      attachToDocument: true,
     });
     const { documentElement, body } = document;
 
     expect(documentElement.classList.contains('cdr-modal__noscroll')).toBeTruthy();
     expect(body.classList.contains('cdr-modal__noscroll')).toBeTruthy()
+    wrapper.destroy();
   });
 
   it('removeNoScroll', () => {
@@ -195,5 +201,25 @@ describe('CdrModal.vue', () => {
 
     wrapper.find('#close-modal-button').trigger('click');
     expect(wrapper.emitted('closed'));
+  });
+
+  it('handleFocus', () => {
+    const wrapper = mount(CdrModal, {
+      propsData: {
+        opened: true,
+        label: "My Modal Label",
+        showLabel: true,
+      },
+      attachToDocument: true,
+    });
+
+    const button = wrapper.find('button').element;
+    button.focus();
+    expect(button).toBe(document.activeElement);
+
+    wrapper.vm.handleFocus({ target: document.createElement('a') });
+    expect(document.scrollTop).toBe(undefined);
+    expect(document.scrollLeft).toBe(undefined);
+    wrapper.destroy();
   });
 });
