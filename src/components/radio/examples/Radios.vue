@@ -8,7 +8,6 @@
     </cdr-text>
     <div data-backstop="radio-focus">
       <cdr-radio
-        id="test1"
         name="example"
         custom-value="a1"
         v-model="size"
