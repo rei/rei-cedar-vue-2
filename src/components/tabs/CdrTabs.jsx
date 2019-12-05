@@ -180,7 +180,7 @@ export default {
   render() {
     return (
       <div
-        class={this.modifierClass}
+        class={clsx(this.style[this.baseClass], this.modifierClass)}
         ref="cdrTabsContainer"
         style={{ height: this.height }}
       >

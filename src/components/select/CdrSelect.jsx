@@ -132,7 +132,7 @@ export default {
     selectEl() {
       return (
         <select
-          class={clsx(this.sizeClass, this.selectClass)}
+          class={clsx(this.style[this.baseClass], this.sizeClass, this.selectClass)}
           id={this.selectId}
           multiple={this.multiple}
           disabled={this.disabled}
