@@ -3,6 +3,10 @@ module.exports = [
     url: 'http://localhost:3000/#/radios',
     label: 'Radio responsive',
     responsive: true,
+    selectors: [
+      'document',
+      '[data-backstop="radio-responsive"]',
+    ],
   },
   {
     url: 'http://localhost:3000/#/radios',

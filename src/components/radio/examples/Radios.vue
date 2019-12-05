@@ -11,6 +11,36 @@
         id="test1"
         name="example"
         custom-value="a1"
+        v-model="size"
+        size="small"
+      >small</cdr-radio>
+      <cdr-radio
+        name="example"
+        custom-value="a2"
+        v-model="size"
+        size="medium"
+      >medium</cdr-radio>
+      <cdr-radio
+        name="example"
+        :custom-value="{val:'a3'}"
+        v-model="size"
+        size="large"
+      >large</cdr-radio>
+      <div data-backstop="radio-responsive">
+        <cdr-radio
+          name="example"
+          custom-value="a4"
+          v-model="size"
+          size="small@lg medium@sm large@xs"
+        >responsive</cdr-radio>
+      </div>
+      <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>
+    </div>
+    <div data-backstop="radio-focus">
+      <cdr-radio
+        id="test1"
+        name="example"
+        custom-value="a1"
         v-model="ex1"
       >A1</cdr-radio>
       <cdr-radio
@@ -163,6 +193,7 @@ export default {
   components: Components,
   data() {
     return {
+      size: '',
       ex1: '',
       ex1compact: '',
       ex1spacing: '',
