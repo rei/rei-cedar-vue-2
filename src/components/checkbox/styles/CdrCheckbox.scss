@@ -20,7 +20,7 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrCheckbox.vars.scss';
 .cdr-checkbox {
-  @include cdr-checkbox-text;
+  @include checkbox-text;
   position: relative;
   padding-left: calc(#{$checkbox-figure-size-medium} + #{$cdr-label-base-spacing});
 
@@ -174,7 +174,7 @@
 
   // TODO: remove compact?
   &--compact {
-    @include cdr-checkbox-text-compact;
+    @include checkbox-text-compact;
   }
 
   &--hide-figure {
@@ -187,11 +187,11 @@
 
   /* Sizes
     ========================================================================== */
-  @include cdr-checkbox-small-mixin(&);
+  @include checkbox-small-mixin(&);
 
-  @include cdr-checkbox-medium-mixin(&);
+  @include checkbox-medium-mixin(&);
 
-  @include cdr-checkbox-large-mixin(&);
+  @include checkbox-large-mixin(&);
 
   /* Breakpoint variants
 
@@ -199,33 +199,33 @@
     0px - 767px
     ========== */
   @include xs-mq-only {
-    @include cdr-checkbox-small-mixin(&, \@xs);
+    @include checkbox-small-mixin(&, \@xs);
 
-    @include cdr-checkbox-medium-mixin(&, \@xs);
+    @include checkbox-medium-mixin(&, \@xs);
 
-    @include cdr-checkbox-large-mixin(&, \@xs);
+    @include checkbox-large-mixin(&, \@xs);
   }
 
   /* @sm
     768px - 991px
     ========== */
   @include sm-mq-only {
-    @include cdr-checkbox-small-mixin(&, \@sm);
+    @include checkbox-small-mixin(&, \@sm);
 
-    @include cdr-checkbox-medium-mixin(&, \@sm);
+    @include checkbox-medium-mixin(&, \@sm);
 
-    @include cdr-checkbox-large-mixin(&, \@sm);
+    @include checkbox-large-mixin(&, \@sm);
   }
 
   /* @md
     992px - 1199px
     ========== */
   @include md-mq-only {
-    @include cdr-checkbox-small-mixin(&, \@md);
+    @include checkbox-small-mixin(&, \@md);
 
-    @include cdr-checkbox-medium-mixin(&, \@md);
+    @include checkbox-medium-mixin(&, \@md);
 
-    @include cdr-checkbox-large-mixin(&, \@md);
+    @include checkbox-large-mixin(&, \@md);
   }
 
   /* @lg
@@ -233,11 +233,11 @@
     ========== */
 
   @include lg-mq-only {
-    @include cdr-checkbox-small-mixin(&, \@lg);
+    @include checkbox-small-mixin(&, \@lg);
 
-    @include cdr-checkbox-medium-mixin(&, \@lg);
+    @include checkbox-medium-mixin(&, \@lg);
 
-    @include cdr-checkbox-large-mixin(&, \@lg);
+    @include checkbox-large-mixin(&, \@lg);
   }
 
 }

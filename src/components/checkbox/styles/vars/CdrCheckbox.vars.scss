@@ -1,11 +1,11 @@
-@mixin cdr-checkbox-text {
+@mixin checkbox-text {
   @include cdr-text-utility-300;
   color: $cdr-color-text-form-label-lightmode;
   display: inline-block;
   margin: 0;
 }
 
-@mixin cdr-checkbox-text-compact {
+@mixin checkbox-text-compact {
   @include cdr-text-utility-200;
 }
 
@@ -35,7 +35,7 @@ $checkbox-compact-figure-space-top: 2px;
 $checkbox-figure-checked-hover-background-color: #2b6692;
 $checkbox-focus-outline: 0 0 8px 0 rgb(50, 120, 174);
 
-@mixin cdr-checkbox-small-mixin($parent-selector, $breakpoint: '') {
+@mixin checkbox-small-mixin($parent-selector, $breakpoint: '') {
   &--small#{$breakpoint} {
     @include cdr-text-utility-200;
     padding-left: calc(#{$checkbox-figure-size-small} + #{$cdr-label-base-spacing});
@@ -48,7 +48,7 @@ $checkbox-focus-outline: 0 0 8px 0 rgb(50, 120, 174);
   }
 }
 
-@mixin cdr-checkbox-medium-mixin($parent-selector, $breakpoint: '') {
+@mixin checkbox-medium-mixin($parent-selector, $breakpoint: '') {
   &--medium#{$breakpoint} {
     @include cdr-text-utility-300;
     padding-left: calc(#{$checkbox-figure-size-medium} + #{$cdr-label-base-spacing});
@@ -61,7 +61,7 @@ $checkbox-focus-outline: 0 0 8px 0 rgb(50, 120, 174);
   }
 }
 
-@mixin cdr-checkbox-large-mixin($parent-selector, $breakpoint: '') {
+@mixin checkbox-large-mixin($parent-selector, $breakpoint: '') {
   &--large#{$breakpoint} {
     @include cdr-text-utility-300;
     padding-left: calc(#{$checkbox-figure-size-large} + #{$cdr-label-base-spacing});
