@@ -1,11 +1,12 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import space from '../../mixins/space';
+import size from '../../mixins/size';
 import style from './styles/CdrCheckbox.scss';
 
 export default {
   name: 'CdrCheckbox',
-  mixins: [modifier, space],
+  mixins: [modifier, space, size],
   inheritAttrs: false,
   props: {
     /**
@@ -84,7 +85,7 @@ export default {
     return (
       <div class={clsx(this.space, this.style['cdr-checkbox__wrap'])}>
         <label
-          class={clsx(this.modifierClass, this.labelClass)}
+          class={clsx(this.modifierClass, this.labelClass, this.sizeClass)}
           ref="label"
         >
           <input
