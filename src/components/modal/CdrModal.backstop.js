@@ -1,4 +1,4 @@
 module.exports = [{
   label: 'Modal',
-  selectors: [],
+  url: 'http://localhost:3000/#/modal',
 }];
