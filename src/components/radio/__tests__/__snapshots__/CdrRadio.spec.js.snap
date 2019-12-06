@@ -5,7 +5,7 @@ exports[`CdrRadio renders an input 1`] = `
   class="cdr-radio__wrap"
 >
   <label
-    class="cdr-radio cdr-radio cdr-radio--medium"
+    class="cdr-radio cdr-radio--medium"
   >
     <input
       class="cdr-radio__input"

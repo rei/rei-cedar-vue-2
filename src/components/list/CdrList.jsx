@@ -35,6 +35,7 @@ export default {
     const Component = this.tag;
     return (<Component
       class={clsx(
+        this.style[this.baseClass],
         this.modifierClass,
         this.space,
         this.contentPriorityClass,
