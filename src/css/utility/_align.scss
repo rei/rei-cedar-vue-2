@@ -1,6 +1,7 @@
+@import "../settings/index";
 /* ==========================================================================
   # alignment
-  
+
   Utility classes for aligning content
 
   TOC:
@@ -11,36 +12,36 @@
 ========================================================================== */
 
 /*
-* Text Align 
+* Text Align
 * --------------------------------------------
 */
 
 /*
-/// Sets text alignment to left. 
+/// Sets text alignment to left.
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility.alignment
 */
 .cdr-align-text-left { @include cdr-align-text-left-mixin; }
 /*
-/// Sets text alignment to center. 
+/// Sets text alignment to center.
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility.alignment
 */
 .cdr-align-text-center { @include cdr-align-text-center-mixin; }
 /*
-/// Sets text alignment to right. 
+/// Sets text alignment to right.
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility.alignment
 */
 .cdr-align-text-right { @include cdr-align-text-right-mixin; }
 /*
-/// Sets text alignment to justify. 
+/// Sets text alignment to justify.
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility.alignment
 */
 .cdr-align-text-justify { @include cdr-align-text-justify-mixin; }
 /*
-/// Sets element to block display and centers it. 
+/// Sets element to block display and centers it.
 /// Append [@xs, @sm, @md, or @lg] to make responsive.
 /// @group utility.alignment
 */

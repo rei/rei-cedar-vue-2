@@ -1,3 +1,4 @@
+@import "../settings/index";
 /* ==========================================================================
   # spacing
 
@@ -44,13 +45,13 @@
     // loop through sides
     @each $full, $short in $sides {
       /*
-      /// Adds padding to #{$full}. 
+      /// Adds padding to #{$full}.
       /// Append [@xs, @sm, @md, or @lg] to make responsive.
       /// @group utility.spacing.padding.#{$full}
       */
       .cdr-p#{$short}-#{$name} { padding-#{$full}: #{$value} !important; }
       /*
-      /// Adds margin to #{$full}. 
+      /// Adds margin to #{$full}.
       /// Append [@xs, @sm, @md, or @lg] to make responsive.
       /// @group utility.spacing.margin.#{$full}
       */
@@ -80,25 +81,25 @@
     // x and y
 
     /*
-    /// Adds padding to left and right. 
+    /// Adds padding to left and right.
     /// Append [@xs, @sm, @md, or @lg] to make responsive.
     /// @group utility.spacing.padding.x
     */
     .cdr-px-#{$name} { padding-left: #{$value} !important; padding-right: #{$value} !important; }
     /*
-    /// Adds margin to left and right. 
+    /// Adds margin to left and right.
     /// Append [@xs, @sm, @md, or @lg] to make responsive.
     /// @group utility.spacing.margin.x
     */
     .cdr-mx-#{$name} { margin-left: #{$value} !important; margin-right: #{$value} !important; }
     /*
-    /// Adds padding to top and bottom. 
+    /// Adds padding to top and bottom.
     /// Append [@xs, @sm, @md, or @lg] to make responsive.
     /// @group utility.spacing.padding.y
     */
     .cdr-py-#{$name} { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
     /*
-    /// Adds margin to top and bottom. 
+    /// Adds margin to top and bottom.
     /// Append [@xs, @sm, @md, or @lg] to make responsive.
     /// @group utility.spacing.margin.y
     */
@@ -140,7 +141,7 @@
 @mixin make-inset-space-utilities() {
   @each $key, $value in $spacing-inset {
     /*
-    /// Adds inset padding. 
+    /// Adds inset padding.
     /// Append [@xs, @sm, @md, or @lg] to make responsive.
     /// @group utility.spacing.inset
     */

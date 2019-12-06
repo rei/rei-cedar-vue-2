@@ -29,7 +29,7 @@ let copyOutput = 'public';
 
 // prod only options
 if (env === 'prod') {
-  postcssExtract = 'dist/cedar.css';
+  postcssExtract = 'dist/cedar-compiled.css';
   copyOutput = 'dist';
 }
 
