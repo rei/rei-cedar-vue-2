@@ -105,7 +105,10 @@ export default {
   },
   render() {
     return (<div
-      class={clsx(this.modifierClass, this.styleClass, this.focusedClass)}
+      class={clsx(this.style[this.baseClass],
+        this.modifierClass,
+        this.styleClass,
+        this.focusedClass)}
       id={`${this.id}-accordion`}
       ref="accordion-container"
     >

@@ -96,6 +96,7 @@ export default {
       <Component
         href={this.href}
         class={clsx(
+          this.style[this.baseClass],
           this.contentPriorityClass,
           this.sizeClass,
           this.space,

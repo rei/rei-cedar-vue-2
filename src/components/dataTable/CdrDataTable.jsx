@@ -151,6 +151,7 @@ export default {
     return (
       <div
         class={clsx(
+          this.style[this.baseClass],
           this.modifierClass,
           this.space,
         )}

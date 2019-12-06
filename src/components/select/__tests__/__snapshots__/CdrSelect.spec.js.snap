@@ -14,11 +14,11 @@ exports[`cdrSelect renders correctly 1`] = `
     class="cdr-select-wrap"
   >
     <select
-      class="cdr-select  cdr-select cdr-select__prompt"
+      class="cdr-select cdr-select__prompt"
       id="renders"
     />
     <svg
-      class="cdr-icon  cdr-select__caret"
+      class="cdr-icon cdr-select__caret"
       role="presentation"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ exports[`cdrSelect renders helper-text slot 1`] = `
     class="cdr-select-wrap"
   >
     <select
-      class="cdr-select  cdr-select cdr-select__prompt"
+      class="cdr-select cdr-select__prompt"
       id="helper-text"
     />
     <icon-caret-down-stub
@@ -81,7 +81,7 @@ exports[`cdrSelect renders info slot 1`] = `
     class="cdr-select-wrap"
   >
     <select
-      class="cdr-select  cdr-select cdr-select__prompt"
+      class="cdr-select cdr-select__prompt"
       id="info-slot"
     />
     <icon-caret-down-stub
@@ -112,7 +112,7 @@ exports[`cdrSelect renders required label correctly 1`] = `
     class="cdr-select-wrap"
   >
     <select
-      class="cdr-select  cdr-select cdr-select__prompt"
+      class="cdr-select cdr-select__prompt"
       id="required-label"
       required="required"
     />
