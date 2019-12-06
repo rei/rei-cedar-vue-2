@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import style from './styles/CdrBreadcrumb.scss';
 
@@ -131,7 +132,7 @@ export default {
   render() {
     return (<nav
       ref="container"
-      class={this.modifierClass}
+      class={clsx(this.style[this.baseClass], this.modifierClass)}
       aria-label="Breadcrumb"
     >
       <ol

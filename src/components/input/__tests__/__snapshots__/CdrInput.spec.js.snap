@@ -12,7 +12,7 @@ exports[`CdrInput renders a label element 1`] = `
     class="cdr-input-wrap"
   >
     <input
-      class="cdr-input cdr-input "
+      class="cdr-input"
       id="1"
       type="text"
     />
@@ -37,7 +37,7 @@ exports[`CdrInput renders required label correctly 1`] = `
     class="cdr-input-wrap"
   >
     <input
-      class="cdr-input cdr-input "
+      class="cdr-input"
       id="3"
       required="required"
       type="text"

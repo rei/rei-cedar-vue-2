@@ -2,7 +2,7 @@
 
 exports[`CdrButton renders correctly 1`] = `
 <button
-  class="cdr-button--primary cdr-button cdr-button cdr-button--medium"
+  class="cdr-button--primary cdr-button cdr-button--medium"
   type="button"
 />
 `;

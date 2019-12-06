@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import style from './styles/CdrCard.scss';
 
@@ -15,7 +16,7 @@ export default {
     },
   },
   render() {
-    return (<article class={this.modifierClass}>
+    return (<article class={clsx(this.style[this.baseClass], this.modifierClass)}>
       {this.$slots.default}
     </article>);
   },

@@ -173,6 +173,7 @@ export default {
             class={clsx(
               this.style['cdr-media-frame__image'],
               this.style['cdr-media-frame__image--hidden'],
+              this.style[this.baseClass],
               this.modifierClass,
               this.radiusClass,
             )}
@@ -183,7 +184,10 @@ export default {
       );
     }
     return (<img
-          class={clsx(this.modifierClass, this.radiusClass, this.lazyClass)}
+          class={clsx(this.style[this.baseClass],
+            this.modifierClass,
+            this.radiusClass,
+            this.lazyClass)}
           src={this.src}
           alt={this.alt}
           {...{ attrs: this.lazyAttrs }}

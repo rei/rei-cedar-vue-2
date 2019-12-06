@@ -25,7 +25,7 @@ export default {
   },
   render() {
     const Component = this.tag;
-    return (<Component class={clsx(this.modifierClass, this.space)}>
+    return (<Component class={clsx(this.baseClass, this.modifierClass, this.space)}>
       {this.$slots.default}
     </Component>);
   },
