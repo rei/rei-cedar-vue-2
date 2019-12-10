@@ -17,6 +17,11 @@ export default {
      * the tab name will be used for reference.
      */
     id: String,
+    /**
+     * Optional extra reference value to be set on the tab, otherwise
+     * the tab name will be used for reference.
+     */
+    disabled: Boolean,
   },
   data() {
     return {

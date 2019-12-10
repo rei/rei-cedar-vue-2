@@ -21,6 +21,7 @@
       :compact
       :no-border
       :full-width
+      :centered
 ========================================================================== */
 
 .cdr-tabs {
@@ -30,15 +31,18 @@
   height: 500px;
 
   &__header-container {
-    overflow-x: auto;
-    border-bottom: 1px solid $cdr-color-border-secondary-lightmode;
-    -webkit-overflow-scrolling: touch;
-    flex: 0 1 auto;
+    overflow-x: hidden;
+    // -webkit-overflow-scrolling: touch;
+    // flex: 0 1 auto;
+    display: inline-flex;
+    justify-content: flex-start;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 
   &__gradient-container {
     position: relative;
+    border-bottom: 1px solid $cdr-color-border-secondary-lightmode;
+    display: flex;
 
     &::before {
       transition: opacity 150ms ease;
@@ -82,6 +86,7 @@
 
   &__header {
     display: inline-flex;
+    flex-wrap: nowrap;
     width: 100%;
     margin: 0;
 
@@ -100,11 +105,23 @@
 
   &__header-item {
     display: inline-flex;
+    flex-wrap: nowrap;
     padding: 0;
 
     &[aria-selected] > .cdr-tabs__header-item-label {
       color: $cdr-color-text-link-lightmode;
     }
+  }
+
+  &__previous-caret,
+  &__next-caret {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-self: center;
+  }
+
+  &__pagination-button {
+    border: none;
   }
 
   &__header-item-label {
@@ -127,15 +144,15 @@
 
   &__underline {
     position: absolute;
+    bottom: -$cdr-space-quarter-x;
     width: 30px;
     margin: 0;
     height: $cdr-space-quarter-x;
     box-sizing: border-box;
     border: none;
-
-    /* border: none; */
     background-color: $cdr-color-text-link-lightmode;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
+    z-index: 1;
   }
 
   &__content-container {
@@ -181,6 +198,14 @@
   &--full-width {
     .cdr-tabs__header {
       justify-content: space-between;
+    }
+  }
+
+  /* Centered
+  ========== */
+  &--centered {
+    .cdr-tabs__gradient-container {
+      justify-content: center;
     }
   }
 }
