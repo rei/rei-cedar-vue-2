@@ -55,7 +55,7 @@ export default {
   render() {
     const Component = this.tag;
     return (<Component
-      class={clsx(this.modifierClass, this.space)}
+      class={clsx(this.style[this.baseClass], this.modifierClass, this.space)}
     >
       {this.summaryBlock}
       {this.$slots.default}

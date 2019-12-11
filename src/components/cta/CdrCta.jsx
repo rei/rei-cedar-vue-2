@@ -47,6 +47,7 @@ export default {
   render() {
     return (<a
       class={clsx(
+        this.style[this.baseClass],
         this.modifierClass,
         this.ctaClass,
         this.fullWidthClass,

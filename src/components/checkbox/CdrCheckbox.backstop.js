@@ -3,6 +3,10 @@ module.exports = [
     url: 'http://localhost:3000/#/checkboxes',
     label: 'Checkbox responsive',
     responsive: true,
+    selectors: [
+      'document',
+      '[data-backstop="checkbox-responsive"]',
+    ],
   },
   // TODO: need method for focus/hovering one element but snapshotting it's parent
   {

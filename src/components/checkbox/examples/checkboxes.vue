@@ -7,6 +7,40 @@
       Checkboxes
     </cdr-text>
     <cdr-checkbox
+      v-model="sizeEx"
+      size="small"
+    >small</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx"
+      size="medium"
+    >medium</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx"
+      size="large"
+    >large</cdr-checkbox>
+    <div data-backstop="checkbox-responsive">
+      <cdr-checkbox
+        v-model="sizeEx"
+        size="small@lg medium@sm large@xs"
+      >responsive</cdr-checkbox>
+    </div>
+    <cdr-checkbox
+      v-model="sizeEx2"
+      size="small"
+    >small</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx2"
+      size="medium"
+    >medium</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx2"
+      size="large"
+    >large</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx2"
+      size="small@lg medium@sm large@xs"
+    >responsive</cdr-checkbox>
+    <cdr-checkbox
       v-model="ex1"
       @change="logChange"
     >single</cdr-checkbox>
@@ -143,6 +177,8 @@ export default {
   data() {
     return {
       checked: true,
+      sizeEx: false,
+      sizeEx2: true,
       ex1: false,
       ex2: 'checked',
       ex3: 'checked',

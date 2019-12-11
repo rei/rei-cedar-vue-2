@@ -12,7 +12,6 @@
 @import './vars/CdrDataTable.vars.scss';
 
 .cdr-data-table {
-  // TODO: typography token
   @include cdr-data-table-base-text;
 
   position: relative;

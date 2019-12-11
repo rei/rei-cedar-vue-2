@@ -1,6 +1,6 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrTabs.vars.scss';
-@import url('@rei/cedar/dist/style/CdrTabPanel.css');
+@import url('@rei/cedar/dist/style/cdr-tab-panel.css');
 /* ==========================================================================
   # CdrTabs
 
@@ -159,7 +159,6 @@
     ========== */
   &--compact {
     .cdr-tabs__header-item-label {
-      // TODO: typography token
       @include cdr-tabs-compact-header-item-label;
 
       margin: 0 $cdr-space-half-x 0 0;

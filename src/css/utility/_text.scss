@@ -1,3 +1,4 @@
+@import "../settings/index";
 /* ==========================================================================/*
 * Typography utility classes
 *
@@ -60,11 +61,11 @@ h6.cdr-text.cdr-text,
   font-weight: 700;
   }
 
-  &--body { 
+  &--body {
     &-300 { @include cdr-text-body-300; }
     &-400 { @include cdr-text-body-400; }
     &-500 { @include cdr-text-body-500; }
-    &--strong { 
+    &--strong {
       &-300 { @include cdr-text-body-strong-300; }
       &-400 { @include cdr-text-body-strong-400; }
       &-500 { @include cdr-text-body-strong-500; }
@@ -79,7 +80,7 @@ h6.cdr-text.cdr-text,
     &-600 { @include cdr-text-utility-600; }
     &-700 { @include cdr-text-utility-700; }
     &-800 { @include cdr-text-utility-800; }
-    &--strong { 
+    &--strong {
       &-100 { @include cdr-text-utility-strong-100; }
       &-200 { @include cdr-text-utility-strong-200; }
       &-300 { @include cdr-text-utility-strong-300; }
@@ -97,7 +98,7 @@ h6.cdr-text.cdr-text,
       &-600 { @include cdr-text-utility-serif-600; }
       &-700 { @include cdr-text-utility-serif-700; }
       &-800 { @include cdr-text-utility-serif-800; }
-      &--strong { 
+      &--strong {
         &-200 { @include cdr-text-utility-serif-strong-200; }
         &-300 { @include cdr-text-utility-serif-strong-300; }
         &-400 { @include cdr-text-utility-serif-strong-400; }
@@ -109,7 +110,7 @@ h6.cdr-text.cdr-text,
     }
   }
 
-  &--eyebrow-100 { 
+  &--eyebrow-100 {
     @include cdr-text-eyebrow-100;
  }
 
@@ -208,7 +209,7 @@ h6.cdr-text.cdr-text,
     &-600\@sm { @include cdr-text-heading-600; }
     &-700\@sm { @include cdr-text-heading-700; }
     &-800\@sm { @include cdr-text-heading-800; }
-    } 
+    }
     &--display {
     &-600\@sm { @include cdr-text-display-600; }
     &-700\@sm { @include cdr-text-display-700; }
@@ -245,7 +246,7 @@ h6.cdr-text.cdr-text,
     &--heading {
     &-300\@md { @include cdr-text-heading-300; }
     &-400\@md { @include cdr-text-heading-400; }
-    &-500\@md { @include cdr-text-heading-500; } 
+    &-500\@md { @include cdr-text-heading-500; }
     &-600\@md { @include cdr-text-heading-600; }
     &-700\@md { @include cdr-text-heading-700; }
     &-800\@md { @include cdr-text-heading-800; }
@@ -261,7 +262,7 @@ h6.cdr-text.cdr-text,
     }
     &--subheading {
       &-300\@md { @include cdr-text-subheading-300; }
-      &-400\@md { @include cdr-text-subheading-400; } 
+      &-400\@md { @include cdr-text-subheading-400; }
       &-500\@md { @include cdr-text-subheading-500; }
       &-600\@md { @include cdr-text-subheading-600; }
     }

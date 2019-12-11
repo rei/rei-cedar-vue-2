@@ -24,10 +24,8 @@ export default {
       }
 
       if (!this.style) {
-        builtClasses.push(`${base}`);
         builtClasses = builtClasses.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
       } else {
-        builtClasses.push(this.moduleClass(base));
         builtClasses = builtClasses.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
       }
 

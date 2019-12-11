@@ -2,7 +2,7 @@
 
 exports[`CdrIcon accepts full SVG in slot 1`] = `
 <svg
-  class="my-custom-class cdr-icon "
+  class="my-custom-class cdr-icon"
   data-test="testing"
   role="presentation"
   viewBox="0 0 24 24"
@@ -16,7 +16,7 @@ exports[`CdrIcon accepts full SVG in slot 1`] = `
 
 exports[`CdrIcon renders correctly 1`] = `
 <svg
-  class="cdr-icon "
+  class="cdr-icon"
   role="presentation"
   viewBox="0 0 24 24"
   xmlns="http://www.w3.org/2000/svg"
