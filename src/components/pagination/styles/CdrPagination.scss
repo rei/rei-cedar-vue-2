@@ -1,6 +1,6 @@
 @import '../../../css/settings/index.scss';
-@import url('@rei/cedar/dist/style/CdrIcon.css');
-@import url('@rei/cedar/dist/style/CdrSelect.css');
+@import url('@rei/cedar/dist/style/cdr-icon.css');
+@import url('@rei/cedar/dist/style/cdr-select.css');
 /* ==========================================================================
   # CdrPagination
 
@@ -54,7 +54,7 @@
     &:global(.current) {
       color: $cdr-color-text-link-lightmode;
       position: relative;
-      
+
       &:after {
         content: '';
         position: absolute;
@@ -65,7 +65,7 @@
         width: 80%;
         background-color: $cdr-color-text-link-lightmode;
       }
-      
+
       &:hover,
       &:focus,
       &:active {
@@ -78,7 +78,7 @@
       color: $cdr-color-text-disabled-lightmode;
       fill: $cdr-color-text-disabled-lightmode;
       pointer-events: none;
-      
+
       &:hover,
       &:focus,
       &:active {
