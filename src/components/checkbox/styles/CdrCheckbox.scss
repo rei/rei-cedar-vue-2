@@ -14,16 +14,15 @@
         :figure
       :States
       :Modifiers
-        :compact
         :hide-figure
+      :Sizes
 ========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrCheckbox.vars.scss';
 .cdr-checkbox {
-  @include cdr-label-base-mixin;
-
+  @include checkbox-text;
   position: relative;
-  padding-left: calc(#{$checkbox-figure-size} + #{$cdr-label-base-spacing});
+  padding-left: calc(#{$checkbox-figure-size-medium} + #{$cdr-label-base-spacing});
 
   /* Elements
     ========================================================================== */
@@ -33,6 +32,7 @@
   &__wrap {
     /* get rid of inline-block whitespace from label element */
     font-size: 0;
+    line-height: 1;
   }
 
   /* Input
@@ -49,8 +49,8 @@
     position: absolute;
     top: $checkbox-figure-space-top;
     left: 0;
-    width: $checkbox-figure-size;
-    height: $checkbox-figure-size;
+    width: $checkbox-figure-size-medium;
+    height: $checkbox-figure-size-medium;
     border-radius: $checkbox-figure-radius;
     background-color: $checkbox-figure-background-color;
     border: 1px solid $checkbox-figure-border-color;
@@ -169,19 +169,13 @@
   /* Modifiers
     ========================================================================== */
 
-  /* Compact
-    ========== */
-
-  &--compact {
-    @include cdr-label-compact-mixin;
-
-    & > .cdr-checkbox__figure {
-      top: $checkbox-compact-figure-space-top;
-    }
-  }
-
   /* Hide Figure
     ========== */
+
+  // TODO: remove compact?
+  &--compact {
+    @include checkbox-text-compact;
+  }
 
   &--hide-figure {
     padding-left: 0;
@@ -190,4 +184,60 @@
       display: none;
     }
   }
+
+  /* Sizes
+    ========================================================================== */
+  @include checkbox-small-mixin(&);
+
+  @include checkbox-medium-mixin(&);
+
+  @include checkbox-large-mixin(&);
+
+  /* Breakpoint variants
+
+  /* @xs
+    0px - 767px
+    ========== */
+  @include xs-mq-only {
+    @include checkbox-small-mixin(&, \@xs);
+
+    @include checkbox-medium-mixin(&, \@xs);
+
+    @include checkbox-large-mixin(&, \@xs);
+  }
+
+  /* @sm
+    768px - 991px
+    ========== */
+  @include sm-mq-only {
+    @include checkbox-small-mixin(&, \@sm);
+
+    @include checkbox-medium-mixin(&, \@sm);
+
+    @include checkbox-large-mixin(&, \@sm);
+  }
+
+  /* @md
+    992px - 1199px
+    ========== */
+  @include md-mq-only {
+    @include checkbox-small-mixin(&, \@md);
+
+    @include checkbox-medium-mixin(&, \@md);
+
+    @include checkbox-large-mixin(&, \@md);
+  }
+
+  /* @lg
+    1200px and up
+    ========== */
+
+  @include lg-mq-only {
+    @include checkbox-small-mixin(&, \@lg);
+
+    @include checkbox-medium-mixin(&, \@lg);
+
+    @include checkbox-large-mixin(&, \@lg);
+  }
+
 }

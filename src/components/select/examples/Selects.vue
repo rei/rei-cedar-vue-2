@@ -154,7 +154,10 @@
       prompt="Choose One"
     >
       <template slot="info">
-        <cdr-link href="#/selects">
+        <cdr-link
+          href="#/selects"
+          modifier="standalone"
+        >
           Info Link/Icon
         </cdr-link>
       </template>
@@ -171,7 +174,7 @@
       prompt="Choose One"
     >
       <template slot="info">
-        <icon-information-fill />
+        <icon-information-fill size="small" />
       </template>
     </cdr-select>
     <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>

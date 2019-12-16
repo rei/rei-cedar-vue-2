@@ -78,6 +78,7 @@ export default {
     const Component = this.tag;
     return (<Component
       class={clsx(this.defaultClass,
+        this.style[this.baseClass],
         this.modifierClass,
         this.buttonSizeClass,
         this.fullWidthClass,

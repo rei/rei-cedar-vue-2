@@ -21,11 +21,13 @@
           modifier="subheading"
         >
           cols="#"
+          <a href="rei.com">CLICK ON ME</a>
         </cdr-text>
         <cdr-row cols="1">
           <cdr-col>
             <div class="row-demo">
               1
+              <a href="rei.com">CLICK ON ME</a>
             </div>
           </cdr-col>
         </cdr-row>

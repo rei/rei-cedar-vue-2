@@ -52,7 +52,12 @@ export default {
     return (<svg
       {...slotDataObj}
       {...defaultDataObj}
-      class={clsx(this.sizeClass, this.inheritColorClass, this.space)}
+      class={clsx(
+        this.style[this.baseClass],
+        this.sizeClass,
+        this.inheritColorClass,
+        this.space,
+      )}
     >
       {this.$slots.default}
       {this.use ? <use

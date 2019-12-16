@@ -69,12 +69,16 @@ module.exports = [
         target: '[data-backstop="cdr-button--icon"] button',
         capture: '[data-backstop="cdr-button--icon"]',
       },
+      '[data-backstop="cdr-button--icon-only"]',
+      '[data-backstop="cdr-button--icon-only-dark"]',
     ],
     hoverSelectors: [
       {
         target: '[data-backstop="cdr-button--icon"] button',
         capture: '[data-backstop="cdr-button--icon"]',
       },
+      '[data-backstop="cdr-button--icon-only"]',
+      '[data-backstop="cdr-button--icon-only-dark"]',
     ],
   },
   {

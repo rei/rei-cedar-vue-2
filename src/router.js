@@ -18,6 +18,7 @@ import Input from 'componentsdir/input/examples/Inputs';
 import KitchenSink from 'srcdir/KitchenSink';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
+import Modals from 'componentsdir/modal/examples/Modal';
 import Pagination from 'componentsdir/pagination/examples/Pagination';
 import Quotes from 'componentsdir/quote/examples/Quote';
 import Radios from 'componentsdir/radio/examples/Radios';
@@ -51,6 +52,7 @@ const routes = [
   { path: '/inputs', name: 'Input', component: Input },
   { path: '/links', name: 'Links', component: Links },
   { path: '/lists', name: 'Lists', component: Lists },
+  { path: '/modals', name: 'Modals', component: Modals },
   { path: '/pagination', name: 'Pagination', component: Pagination },
   { path: '/quotes', name: 'Quotes', component: Quotes },
   { path: '/radios', name: 'Radios', component: Radios },
