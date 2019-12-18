@@ -53,6 +53,7 @@ export default {
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
       this.headerWidth = this.getHeaderWidth();
+      this.updateUnderline();
       this.calculateOverflow();
     }, 500));
     // Check for header overflow on widow resize for gradient behavior.
@@ -107,7 +108,7 @@ export default {
     },
     updateUnderline() {
       const elements = Array.from(this.$refs.cdrTabsHeader.children);
-      if (elements) {
+      if (elements.length > 0) {
         const activeTab = elements[this.activeTabIndex];
         this.underlineOffsetX = activeTab.offsetLeft
           - this.$refs.cdrTabsHeader.parentElement.scrollLeft;

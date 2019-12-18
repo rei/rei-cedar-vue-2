@@ -33,7 +33,6 @@
     overflow-x: auto;
     border-bottom: 1px solid $cdr-color-border-secondary-lightmode;
     -webkit-overflow-scrolling: touch;
-    flex: 0 1 auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 
@@ -81,11 +80,10 @@
   }
 
   &__header {
-    display: inline-flex;
+    display: flex;
     width: 100%;
     margin: 0;
 
-    /* align-content: stretch; */
     padding: 0;
     position: relative;
 
@@ -99,7 +97,7 @@
   }
 
   &__header-item {
-    display: inline-flex;
+    display: block;
     padding: 0;
 
     &[aria-selected] > .cdr-tabs__header-item-label {
@@ -110,6 +108,7 @@
   &__header-item-label {
     @include cdr-tabs-base-header-item-label;
 
+    display: block;
     text-decoration: none;
     margin: 0 $cdr-space-one-x 0 0;
     padding: $cdr-space-inset-half-x-stretch;
@@ -178,8 +177,16 @@
   /* Full Width
     ========== */
   &--full-width {
+    .cdr-tabs__header-item {
+      flex-grow: 1;
+    }
+  }
+
+  /* Centered
+    ========== */
+  &--centered {
     .cdr-tabs__header {
-      justify-content: space-between;
+      justify-content: center;
     }
   }
 }
