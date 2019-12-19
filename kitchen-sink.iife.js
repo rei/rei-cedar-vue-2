@@ -23643,10 +23643,10 @@ var cedar = (function () {
         type: String,
         required: true
       },
-      showLabel: {
+      showTitle: {
         type: Boolean,
         required: false,
-        default: false
+        default: true
       },
       ariaDescribedbBy: {
         type: String,
@@ -23878,7 +23878,7 @@ var cedar = (function () {
         "class": this.style['cdr-modal__header']
       }, [h("div", {
         "class": this.style['cdr-modal__title']
-      }, [this.showLabel && this.$slots.labelSlot, this.showLabel && !this.$slots.labelSlot && h("cdr-text", {
+      }, [this.showTitle && this.$slots.title, this.showTitle && !this.$slots.title && h("cdr-text", {
         "attrs": {
           "tag": "h1",
           "modifier": "heading-600"
@@ -37932,7 +37932,6 @@ var cedar = (function () {
               opened: _vm.large,
               "wrapper-class": "wrapper-test-class",
               "overlay-class": "overlay-test-class",
-              "show-label": true,
               size: "large",
               "data-backstop": "modal-large"
             },
@@ -37941,7 +37940,7 @@ var cedar = (function () {
           [
             _c(
               "template",
-              { slot: "labelSlot" },
+              { slot: "title" },
               [
                 _c(
                   "cdr-text",
@@ -37998,7 +37997,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$z = function (inject) {
       if (!inject) return
-      inject("data-v-3697cdc5_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Modal.vue"}, media: undefined });
+      inject("data-v-4dc4a38e_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Modal.vue"}, media: undefined });
 
     };
     /* scoped */
