@@ -17,7 +17,7 @@
       size="large"
       data-backstop="modal-large"
     >
-      <template slot="labelSlot">
+      <template slot="title">
         <cdr-text
           tag="h1"
           modifier="heading-600"

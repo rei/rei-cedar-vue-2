@@ -262,10 +262,10 @@ export default {
                   <div class={this.style['cdr-modal__header']}>
                     <div class={this.style['cdr-modal__title']}>
                       {
-                        this.showLabel && this.$slots.labelSlot
+                        this.showLabel && this.$slots.title
                       }
                       {
-                        this.showLabel && !this.$slots.labelSlot && (
+                        this.showLabel && !this.$slots.title && (
                           <cdr-text
                             tag="h1"
                             modifier="heading-600"
