@@ -24,10 +24,10 @@ export default {
       type: String,
       required: true,
     },
-    showLabel: {
+    showTitle: {
       type: Boolean,
       required: false,
-      default: false,
+      default: true,
     },
     ariaDescribedbBy: {
       type: String,
@@ -262,10 +262,10 @@ export default {
                   <div class={this.style['cdr-modal__header']}>
                     <div class={this.style['cdr-modal__title']}>
                       {
-                        this.showLabel && this.$slots.title
+                        this.showTitle && this.$slots.title
                       }
                       {
-                        this.showLabel && !this.$slots.title && (
+                        this.showTitle && !this.$slots.title && (
                           <cdr-text
                             tag="h1"
                             modifier="heading-600"

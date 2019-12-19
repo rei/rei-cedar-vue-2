@@ -13,7 +13,6 @@
       @closed="closed"
       wrapper-class="wrapper-test-class"
       overlay-class="overlay-test-class"
-      :show-label="true"
       size="large"
       data-backstop="modal-large"
     >
