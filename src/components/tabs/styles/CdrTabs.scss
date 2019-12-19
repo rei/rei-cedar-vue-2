@@ -99,6 +99,10 @@
   &__header-item {
     display: block;
     padding: 0;
+    
+    & + & {
+      margin-left: $cdr-space-one-x;
+    }
 
     &[aria-selected] > .cdr-tabs__header-item-label {
       color: $cdr-color-text-link-lightmode;
@@ -110,7 +114,6 @@
 
     display: block;
     text-decoration: none;
-    margin: 0 $cdr-space-one-x 0 0;
     padding: $cdr-space-inset-half-x-stretch;
     color: $cdr-color-text-primary-lightmode;
     white-space: nowrap;
@@ -160,8 +163,13 @@
     .cdr-tabs__header-item-label {
       @include cdr-tabs-compact-header-item-label;
 
-      margin: 0 $cdr-space-half-x 0 0;
       padding: $cdr-space-inset-three-quarter-x-squish;
+
+    }
+    .cdr-tabs__header-item {
+      & + & {
+        margin-left: $cdr-space-half-x;
+      }
     }
   }
 
