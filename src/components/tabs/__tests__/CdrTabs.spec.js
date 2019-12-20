@@ -28,7 +28,7 @@ describe('CdrTabs', () => {
       done();
     });
   });
-  
+
   it('resize calculates overflow properly', (done) => {
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -222,21 +222,6 @@ describe('CdrTabs', () => {
     expect(wrapper.vm.headerOverflow).toBe(true);
   });
 
-  it('width is initialized only once', () => {
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
-      }
-    });
-    wrapper.setData({ widthInitialized: true });
-    wrapper.setData({ underlineWidth: -1 });
-    wrapper.vm.initializeOffsets();
-    expect(wrapper.vm.underlineWidth).toBe(-1);
-  });
-
   it('scrollbar is hidden properly', (done) => {
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -270,7 +255,7 @@ describe('CdrTabs', () => {
       }
     });
     Vue.config.errorHandler = done;
-    
+
     const spy = spyOn(wrapper.vm, 'handleDownArrowNav')
     Vue.nextTick(() => {
       // Trigger right arrow keyup event
@@ -279,7 +264,7 @@ describe('CdrTabs', () => {
       done();
     });
   });
-  
+
   it('handles up arrow', (done) => {
     const wrapper = mount(CdrTabs, {
       stubs: {

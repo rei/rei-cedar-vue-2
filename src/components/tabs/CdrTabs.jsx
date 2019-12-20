@@ -20,7 +20,6 @@ export default {
       underlineWidth: 0,
       underlineScrollX: 0,
       activeTabIndex: 0,
-      widthInitialized: false,
       headerWidth: 0,
       headerOverflow: false,
       overflowLeft: false,
@@ -46,15 +45,20 @@ export default {
       .filter(tab => tab); // get vue component children in the slot
 
     this.$nextTick(() => {
-      this.initializeOffsets();
-      this.headerWidth = this.getHeaderWidth();
       if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
+
+      // nextTick does not work in firefox here
+      setTimeout(() => {
+        this.headerWidth = this.getHeaderWidth();
+        this.calculateOverflow();
+        this.updateUnderline();
+      }, 100);
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
       this.headerWidth = this.getHeaderWidth();
-      this.updateUnderline();
       this.calculateOverflow();
+      this.updateUnderline();
     }, 500));
     // Check for header overflow on widow resize for gradient behavior.
     this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
@@ -82,14 +86,6 @@ export default {
         }
       });
       this.updateUnderline();
-    },
-    initializeOffsets() {
-      if (!this.widthInitialized && this.$refs.cdrTabsHeader.children.length > 0) {
-        const elements = Array.from(this.$refs.cdrTabsHeader.children);
-        this.underlineWidth = elements[0].children[0].offsetWidth;
-        this.widthInitialized = true;
-        this.updateUnderline();
-      }
     },
     calculateOverflow() {
       let containerWidth = 0;
