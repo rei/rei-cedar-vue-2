@@ -224,11 +224,12 @@ export default {
                   </li>
               ))}
             </ol>
-            <div
-              class={this.style['cdr-tabs__underline']}
-              style={this.underlineStyle}
-            />
           </nav>
+
+          <div
+            class={this.style['cdr-tabs__underline']}
+            style={this.underlineStyle}
+          />
         </div>
         <div
           class={this.style['cdr-tabs__content-container']}
