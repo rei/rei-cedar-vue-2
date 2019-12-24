@@ -44,7 +44,9 @@ export default {
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
 
-    if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
+    if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
+      this.tabs[this.activeTabIndex].setActive(true);
+    }
 
     this.$nextTick(() => {
       this.headerWidth = this.getHeaderWidth();
@@ -215,7 +217,7 @@ export default {
                   >
                     <a
                       vOn:click_prevent={e => this.handleClick(tab, e)}
-                      href={tab.name}
+                      href={`#${tab.id || tab.name}`}
                       class={this.style['cdr-tabs__header-item-label']}
                     >
                       { tab.name }

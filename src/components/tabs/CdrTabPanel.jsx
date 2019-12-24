@@ -88,6 +88,7 @@ export default {
           v-show={this.active}
           aria-hidden={!this.active}
           class={clsx(this.style[this.baseClass], this.modifierClass)}
+          id={this.tabId}
           ref="cdrTabPanelContainer"
           tabindex="0"
           role="tabpanel"
