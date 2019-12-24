@@ -15,11 +15,11 @@ exports[`CdrTabs mounts tabs 1`] = `
         class="cdr-tabs__header"
         role="tablist"
       />
-      <div
-        class="cdr-tabs__underline"
-        style="transform: translateX(0px); width: 0px;"
-      />
     </nav>
+    <div
+      class="cdr-tabs__underline"
+      style="transform: translateX(0px); width: 0px;"
+    />
   </div>
   <div
     class="cdr-tabs__content-container"
@@ -66,11 +66,11 @@ exports[`CdrTabs renders child tabs properly 1`] = `
           </a>
         </li>
       </ol>
-      <div
-        class="cdr-tabs__underline"
-        style="transform: translateX(0px); width: 0px;"
-      />
     </nav>
+    <div
+      class="cdr-tabs__underline"
+      style="transform: translateX(0px); width: 0px;"
+    />
   </div>
   <div
     class="cdr-tabs__content-container"
