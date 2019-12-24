@@ -34,7 +34,15 @@ exports[`CdrModal.vue renders correctly 1`] = `
             >
               <div
                 class="cdr-modal__title"
-              />
+              >
+                <cdr-text-stub
+                  modifier="heading-600"
+                  space=""
+                  tag="h1"
+                >
+                  Label is the modal title
+                </cdr-text-stub>
+              </div>
               <cdr-button-stub
                 aria-label="close"
                 class="cdr-modal__close-button"
