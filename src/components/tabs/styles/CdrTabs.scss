@@ -29,6 +29,17 @@
   flex-flow: column;
   height: 500px;
 
+  // https://davidwalsh.name/osx-overflow
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+
   &__header-container {
     overflow-x: auto;
     border-bottom: 1px solid $cdr-color-border-secondary-lightmode;
