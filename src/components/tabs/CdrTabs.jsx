@@ -44,13 +44,12 @@ export default {
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
 
-    this.$nextTick(() => {
-      if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
+    if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
 
-      // nextTick does not work in firefox here
+    this.$nextTick(() => {
+      this.headerWidth = this.getHeaderWidth();
+      this.calculateOverflow();
       setTimeout(() => {
-        this.headerWidth = this.getHeaderWidth();
-        this.calculateOverflow();
         this.updateUnderline();
       }, 100);
     });
