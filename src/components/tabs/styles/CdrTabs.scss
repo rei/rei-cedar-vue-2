@@ -45,6 +45,7 @@
     border-bottom: 1px solid $cdr-color-border-secondary-lightmode;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    &::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
   }
 
   &__gradient-container {
@@ -110,7 +111,7 @@
   &__header-item {
     display: block;
     padding: 0;
-    
+
     & + & {
       margin-left: $cdr-space-one-x;
     }
