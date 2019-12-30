@@ -29,12 +29,23 @@
   flex-flow: column;
   height: 500px;
 
+  // https://davidwalsh.name/osx-overflow
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+
   &__header-container {
     overflow-x: auto;
     border-bottom: 1px solid $cdr-color-border-secondary-lightmode;
     -webkit-overflow-scrolling: touch;
-    flex: 0 1 auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    &::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
   }
 
   &__gradient-container {
@@ -81,11 +92,10 @@
   }
 
   &__header {
-    display: inline-flex;
+    display: flex;
     width: 100%;
     margin: 0;
 
-    /* align-content: stretch; */
     padding: 0;
     position: relative;
 
@@ -99,8 +109,12 @@
   }
 
   &__header-item {
-    display: inline-flex;
+    display: block;
     padding: 0;
+
+    & + & {
+      margin-left: $cdr-space-one-x;
+    }
 
     &[aria-selected] > .cdr-tabs__header-item-label {
       color: $cdr-color-text-link-lightmode;
@@ -110,8 +124,8 @@
   &__header-item-label {
     @include cdr-tabs-base-header-item-label;
 
+    display: block;
     text-decoration: none;
-    margin: 0 $cdr-space-one-x 0 0;
     padding: $cdr-space-inset-half-x-stretch;
     color: $cdr-color-text-primary-lightmode;
     white-space: nowrap;
@@ -161,8 +175,13 @@
     .cdr-tabs__header-item-label {
       @include cdr-tabs-compact-header-item-label;
 
-      margin: 0 $cdr-space-half-x 0 0;
       padding: $cdr-space-inset-three-quarter-x-squish;
+
+    }
+    .cdr-tabs__header-item {
+      & + & {
+        margin-left: $cdr-space-half-x;
+      }
     }
   }
 
@@ -178,8 +197,16 @@
   /* Full Width
     ========== */
   &--full-width {
+    .cdr-tabs__header-item {
+      flex-grow: 1;
+    }
+  }
+
+  /* Centered
+    ========== */
+  &--centered {
     .cdr-tabs__header {
-      justify-content: space-between;
+      justify-content: center;
     }
   }
 }

@@ -15,11 +15,11 @@ exports[`CdrTabs mounts tabs 1`] = `
         class="cdr-tabs__header"
         role="tablist"
       />
-      <div
-        class="cdr-tabs__underline"
-        style="transform: translateX(0px); width: 0px;"
-      />
     </nav>
+    <div
+      class="cdr-tabs__underline"
+      style="transform: translateX(0px); width: 0px;"
+    />
   </div>
   <div
     class="cdr-tabs__content-container"
@@ -49,7 +49,7 @@ exports[`CdrTabs renders child tabs properly 1`] = `
         >
           <a
             class="cdr-tabs__header-item-label"
-            href="tab1"
+            href="#tab1"
           >
             tab1
           </a>
@@ -60,23 +60,24 @@ exports[`CdrTabs renders child tabs properly 1`] = `
         >
           <a
             class="cdr-tabs__header-item-label"
-            href="tab2"
+            href="#tab2"
           >
             tab2
           </a>
         </li>
       </ol>
-      <div
-        class="cdr-tabs__underline"
-        style="transform: translateX(0px); width: 0px;"
-      />
     </nav>
+    <div
+      class="cdr-tabs__underline"
+      style="transform: translateX(0px); width: 0px;"
+    />
   </div>
   <div
     class="cdr-tabs__content-container"
   >
     <div
       class="cdr-tab-panel"
+      id="tab1"
       name="fly"
       role="tabpanel"
       style=""
@@ -85,6 +86,7 @@ exports[`CdrTabs renders child tabs properly 1`] = `
     <div
       aria-hidden="true"
       class="cdr-tab-panel"
+      id="tab2"
       name="fly"
       role="tabpanel"
       style="display: none;"

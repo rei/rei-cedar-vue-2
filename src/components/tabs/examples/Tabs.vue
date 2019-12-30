@@ -132,7 +132,7 @@
         Full Width Tabs
       </cdr-text>
       <cdr-tabs modifier="full-width">
-        <cdr-tab-panel name="one">
+        <cdr-tab-panel name="one" id="full-width-one">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -140,7 +140,7 @@
             Tab One Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="two">
+        <cdr-tab-panel name="two" id="full-width-two">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -148,7 +148,7 @@
             Tab Two Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="three">
+        <cdr-tab-panel name="three" id="full-width-three">
           <cdr-text
             tag="h1"
             modifier="display-600 display-700@md display-900@lg"
@@ -174,7 +174,7 @@
               Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="four">
+        <cdr-tab-panel name="four" id="full-width-four">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -182,7 +182,7 @@
             Tab Four Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="five">
+        <cdr-tab-panel name="five" id="full-width-five">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -201,7 +201,7 @@
         No Border Tabs
       </cdr-text>
       <cdr-tabs modifier="no-border">
-        <cdr-tab-panel name="one">
+        <cdr-tab-panel name="one" id="no-border-one">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -209,7 +209,7 @@
             Tab One Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="two">
+        <cdr-tab-panel name="two" id="no-border-two">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -217,7 +217,7 @@
             Tab Two Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="three">
+        <cdr-tab-panel name="three" id="no-border-three">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -225,7 +225,7 @@
             Tab Three Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="four">
+        <cdr-tab-panel name="four" id="no-border-four">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -233,7 +233,59 @@
             Tab Four Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="five">
+        <cdr-tab-panel name="five" id="no-border-five">
+          <cdr-text
+            tag="strong"
+            modifier="subheading"
+          >
+            Tab Five Content
+          </cdr-text>
+        </cdr-tab-panel>
+      </cdr-tabs>
+    </div>
+
+    <!-- Center Modifier -->
+    <div class="tab-demo-section">
+      <cdr-text
+        tag="h3"
+        modifier="heading-400 heading-500@md heading-500@lg"
+      >
+        Centered Tabs
+      </cdr-text>
+      <cdr-tabs modifier="centered">
+        <cdr-tab-panel name="one" id="centered-one">
+          <cdr-text
+            tag="strong"
+            modifier="subheading"
+          >
+            Tab One Content
+          </cdr-text>
+        </cdr-tab-panel>
+        <cdr-tab-panel name="two" id="centered-two">
+          <cdr-text
+            tag="strong"
+            modifier="subheading"
+          >
+            Tab Two Content
+          </cdr-text>
+        </cdr-tab-panel>
+        <cdr-tab-panel name="three" id="centered-three">
+          <cdr-text
+            tag="strong"
+            modifier="subheading"
+          >
+            Tab Three Content
+          </cdr-text>
+        </cdr-tab-panel>
+        <cdr-tab-panel name="four" id="centered-four">
+          <cdr-text
+            tag="strong"
+            modifier="subheading"
+          >
+            Tab Four Content
+          </cdr-text>
+        </cdr-tab-panel>
+        <cdr-tab-panel name="five" id="centered-five">
           <cdr-text
             tag="strong"
             modifier="subheading"
