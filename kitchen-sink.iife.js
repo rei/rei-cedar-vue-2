@@ -37891,13 +37891,17 @@ var cedar = (function () {
     components: _objectSpread$2Z({}, Components),
     data: function data() {
       return {
-        large: this.$router.currentRoute.name === 'Modals'
+        size: 'large',
+        opened: this.$router.currentRoute.name === 'Modals',
+        showLabel: true,
+        contentLength: 'long',
+        showTitle: true
       };
     },
     methods: {
       closed: function closed(e) {
         console.log('closed', e);
-        this.large = false;
+        this.opened = false;
       }
     }
   };
@@ -37929,10 +37933,11 @@ var cedar = (function () {
           {
             attrs: {
               label: "label text is title or aria",
-              opened: _vm.large,
+              opened: _vm.opened,
               "wrapper-class": "wrapper-test-class",
               "overlay-class": "overlay-test-class",
-              size: "large",
+              "show-title": _vm.showTitle,
+              size: _vm.size,
               "data-backstop": "modal-large"
             },
             on: { closed: _vm.closed }
@@ -37961,17 +37966,21 @@ var cedar = (function () {
               )
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor."
-              )
-            ]),
+            _vm.contentLength === "long"
+              ? _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor."
+                  )
+                ])
+              : _vm._e(),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor."
-              )
-            ])
+            _vm.contentLength === "long"
+              ? _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor."
+                  )
+                ])
+              : _vm._e()
           ],
           2
         ),
@@ -37979,13 +37988,131 @@ var cedar = (function () {
         _c(
           "cdr-button",
           {
+            attrs: { "aria-haspopup": "dialog" },
             on: {
               click: function($event) {
-                _vm.large = true;
+                _vm.opened = true;
               }
             }
           },
-          [_vm._v("Toggle Modal\n  ")]
+          [_vm._v("Open modal\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          {
+            staticClass: "cdr-pt-space-one-x",
+            attrs: { modifier: "heading-400" }
+          },
+          [_vm._v("\n    Size\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-radio",
+          {
+            attrs: { name: "modal-width", "custom-value": "medium" },
+            model: {
+              value: _vm.size,
+              callback: function($$v) {
+                _vm.size = $$v;
+              },
+              expression: "size"
+            }
+          },
+          [_vm._v("Medium\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-radio",
+          {
+            attrs: { name: "modal-width", "custom-value": "large" },
+            model: {
+              value: _vm.size,
+              callback: function($$v) {
+                _vm.size = $$v;
+              },
+              expression: "size"
+            }
+          },
+          [_vm._v("Large\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          {
+            staticClass: "cdr-pt-space-one-x",
+            attrs: { modifier: "heading-400" }
+          },
+          [_vm._v("\n    Content Length\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-radio",
+          {
+            attrs: { name: "modal-content-length", "custom-value": "short" },
+            model: {
+              value: _vm.contentLength,
+              callback: function($$v) {
+                _vm.contentLength = $$v;
+              },
+              expression: "contentLength"
+            }
+          },
+          [_vm._v("Short\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-radio",
+          {
+            attrs: { name: "modal-content-length", "custom-value": "long" },
+            model: {
+              value: _vm.contentLength,
+              callback: function($$v) {
+                _vm.contentLength = $$v;
+              },
+              expression: "contentLength"
+            }
+          },
+          [_vm._v("Long\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-text",
+          {
+            staticClass: "cdr-pt-space-one-x",
+            attrs: { modifier: "heading-400" }
+          },
+          [_vm._v("\n    Show Title\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-radio",
+          {
+            attrs: { name: "modal-show-title", "custom-value": true },
+            model: {
+              value: _vm.showTitle,
+              callback: function($$v) {
+                _vm.showTitle = $$v;
+              },
+              expression: "showTitle"
+            }
+          },
+          [_vm._v("True\n  ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "cdr-radio",
+          {
+            attrs: { name: "modal-show-title", "custom-value": false },
+            model: {
+              value: _vm.showTitle,
+              callback: function($$v) {
+                _vm.showTitle = $$v;
+              },
+              expression: "showTitle"
+            }
+          },
+          [_vm._v("False\n  ")]
         )
       ],
       1
@@ -37997,7 +38124,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$z = function (inject) {
       if (!inject) return
-      inject("data-v-4dc4a38e_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Modal.vue"}, media: undefined });
+      inject("data-v-33d353c9_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Modal.vue"}, media: undefined });
 
     };
     /* scoped */
