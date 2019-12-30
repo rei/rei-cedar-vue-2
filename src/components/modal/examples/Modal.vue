@@ -117,7 +117,7 @@ export default {
   data() {
     return {
       size: 'large',
-      opened: false, // this.$router.currentRoute.name === 'Modals',
+      opened: this.$router.currentRoute.name === 'Modals',
       showLabel: true,
       contentLength: 'long',
       showTitle: true,
