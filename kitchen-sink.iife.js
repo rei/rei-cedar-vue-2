@@ -26172,6 +26172,7 @@ var cedar = (function () {
         }],
         "attrs": {
           "aria-hidden": !this.active,
+          "id": this.tabId,
           "tabindex": "0",
           "role": "tabpanel"
         },
@@ -26447,8 +26448,8 @@ var cedar = (function () {
     return baseDelay(func, toNumber$1(wait) || 0, args);
   });
 
-  var css$m = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Text\n* ------------------- */\n/* Redwood */\n/* Maple */\n/* Spruce */\n/* ---------------------\n* Outline\n* ------------------- */\n@import url(\"@rei/cedar/dist/style/cdr-tab-panel.css\");\n/* ==========================================================================\n  # CdrTabs\n\n  All values should map to variables in\n  vars/CdrTabs.vars.pcss\n  in order to allow for theming\n\n  TOC:\n\n    :Base - CdrTabs\n    :Elements\n      :header\n      :header-item\n      :header-item-button\n      :underline\n      :content-container\n    :Modifiers\n      :compact\n      :no-border\n      :full-width\n========================================================================== */\n.cdr-tabs_3\\.0\\.4 {\n  /* overflow-x: auto; */\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column;\n          flex-flow: column;\n  height: 50rem;\n  /* Compact\n    ========== */\n  /* No Border\n    ========== */\n  /* Full Width\n    ========== */ }\n  .cdr-tabs__header-container_3\\.0\\.4 {\n    overflow-x: auto;\n    border-bottom: 0.1rem solid #b8b8b8;\n    -webkit-overflow-scrolling: touch;\n    -webkit-box-flex: 0;\n        -ms-flex: 0 1 auto;\n            flex: 0 1 auto;\n    -ms-overflow-style: -ms-autohiding-scrollbar; }\n  .cdr-tabs__gradient-container_3\\.0\\.4 {\n    position: relative; }\n    .cdr-tabs__gradient-container_3\\.0\\.4::before {\n      transition: opacity 150ms ease;\n      -webkit-transition: opacity 150ms ease;\n      content: '';\n      position: absolute;\n      z-index: 100;\n      top: 0;\n      bottom: 0;\n      left: 0;\n      width: 3.6rem;\n      background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), to(#ffffff));\n      background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);\n      pointer-events: none;\n      opacity: 0; }\n    .cdr-tabs__gradient-container_3\\.0\\.4::after {\n      transition: opacity 150ms ease;\n      -webkit-transition: opacity 150ms ease;\n      content: '';\n      position: absolute;\n      top: 0;\n      bottom: 0;\n      right: 0;\n      width: 3.6rem;\n      background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(#ffffff));\n      background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);\n      pointer-events: none;\n      opacity: 0; }\n  .cdr-tabs__header_3\\.0\\.4 {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    width: 100%;\n    margin: 0;\n    /* align-content: stretch; */\n    padding: 0;\n    position: relative; }\n    .cdr-tabs__header-gradient-left_3\\.0\\.4::before {\n      opacity: 1; }\n    .cdr-tabs__header-gradient-right_3\\.0\\.4::after {\n      opacity: 1; }\n  .cdr-tabs__header-item_3\\.0\\.4 {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    padding: 0; }\n    .cdr-tabs__header-item_3\\.0\\.4[aria-selected] > .cdr-tabs__header-item-label_3\\.0\\.4 {\n      color: #3278ae; }\n  .cdr-tabs__header-item-label_3\\.0\\.4 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.008rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem;\n    text-decoration: none;\n    margin: 0 1.6rem 0 0;\n    padding: 1.2rem 0.8rem;\n    color: #292929;\n    white-space: nowrap;\n    outline-offset: -0.3rem; }\n    .cdr-tabs__header-item-label_3\\.0\\.4:active, .cdr-tabs__header-item-label_3\\.0\\.4:hover, .cdr-tabs__header-item-label_3\\.0\\.4:focus {\n      text-decoration: none;\n      color: #3278ae; }\n  .cdr-tabs__underline_3\\.0\\.4 {\n    position: absolute;\n    width: 3rem;\n    margin: 0;\n    height: 0.4rem;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    border: none;\n    /* border: none; */\n    background-color: #3278ae;\n    -webkit-transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);\n    transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1); }\n  .cdr-tabs__content-container_3\\.0\\.4 {\n    position: relative;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    overflow-x: hidden;\n    overflow-y: auto; }\n  .cdr-tabs_3\\.0\\.4 .fade-enter-active_3\\.0\\.4,\n  .cdr-tabs_3\\.0\\.4 .fade-leave-active_3\\.0\\.4 {\n    opacity: 0.5s; }\n  .cdr-tabs_3\\.0\\.4 .fade-enter_3\\.0\\.4,\n  .cdr-tabs_3\\.0\\.4 .fade-leave-to_3\\.0\\.4 {\n    opacity: 0; }\n  .cdr-tabs--compact_3\\.0\\.4 .cdr-tabs__header-item-label_3\\.0\\.4 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.008rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem;\n    margin: 0 0.8rem 0 0;\n    padding: 0.6rem 1.2rem; }\n  .cdr-tabs--no-border_3\\.0\\.4 .cdr-tabs__header_3\\.0\\.4,\n  .cdr-tabs--no-border_3\\.0\\.4 .cdr-tabs__header-container_3\\.0\\.4 {\n    border-bottom: 0.1rem solid transparent; }\n  .cdr-tabs--full-width_3\\.0\\.4 .cdr-tabs__header_3\\.0\\.4 {\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVGFicy5zY3NzIiwic3JjL2NvbXBvbmVudHMvdGFicy9zdHlsZXMvQ2RyVGFicy5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIiwic3JjL2NvbXBvbmVudHMvdGFicy9zdHlsZXMvdmFycy9DZHJUYWJzLnZhcnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7OztpRUNPaUU7QURFakU7O3VCQ0N1QjtBREd2QixZQUFBO0FBK0dBLFVBQUE7QUF1RUEsV0FBQTtBQWtJQTs7dUJDclR1QjtBQ2R2QixzREFBWTtBQUNaOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs0RURtQzRFO0FDYjVFO0VBQ0Usc0JBQUE7RUFDQSxvQkFBYTtFQUFiLG9CQUFhO0VBQWIsYUFBYTtFQUNiLDRCQUFpQjtFQUFqQiw2QkFBaUI7TUFBakIscUJBQWlCO1VBQWpCLGlCQUFpQjtFQUNqQixhQUFhO0VBZ0liO2dCRGhIYztFQzJIZDtnQkR6SGM7RUNrSWQ7Z0JEaEljLEVDaUlDO0VBbkpmO0lBQ0UsZ0JBQWdCO0lBQ2hCLG1DQ2dtQjBDO0lEL2xCMUMsaUNBQWlDO0lBQ2pDLG1CQUFjO1FBQWQsa0JBQWM7WUFBZCxjQUFjO0lBQ2QsNENBQTRDLEVBQUE7RUFHOUM7SUFDRSxrQkFBa0IsRUFBQTtJQURuQjtNQUlHLDhCQUE4QjtNQUM5QixzQ0FBc0M7TUFDdEMsV0FBVztNQUNYLGtCQUFrQjtNQUNsQixZQUFZO01BQ1osTUFBTTtNQUNOLFNBQVM7TUFDVCxPQUFPO01BQ1AsYUFBVztNQUNYLG9HQUtHO01BTEgscUVBS0c7TUFDSCxvQkFBb0I7TUFDcEIsVUFBVSxFQUFBO0lBcEJiO01Bd0JHLDhCQUE4QjtNQUM5QixzQ0FBc0M7TUFDdEMsV0FBVztNQUNYLGtCQUFrQjtNQUNsQixNQUFNO01BQ04sU0FBUztNQUNULFFBQVE7TUFDUixhQUFXO01BQ1gsb0dBS0c7TUFMSCxzRUFLRztNQUNILG9CQUFvQjtNQUNwQixVQUFVLEVBQUE7RUFJZDtJQUNFLDJCQUFvQjtJQUFwQiwyQkFBb0I7SUFBcEIsb0JBQW9CO0lBQ3BCLFdBQVc7SUFDWCxTQUFTO0lBRVQsNEJBQUE7SUFDQSxVQUFVO0lBQ1Ysa0JBQWtCLEVBQUE7SUFFbEI7TUFDRSxVQUFVLEVBQUE7SUFHWjtNQUNFLFVBQVUsRUFBQTtFQUlkO0lBQ0UsMkJBQW9CO0lBQXBCLDJCQUFvQjtJQUFwQixvQkFBb0I7SUFDcEIsVUFBVSxFQUFBO0lBRlg7TUFLRyxjQytmaUMsRUFBQTtFRDNmckM7SUUxR0EsNEVEcXpCb0Y7SUNwekJwRixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLHlCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsbUJBQW1CO0lGd0dqQixxQkFBcUI7SUFDckIsb0JBQThCO0lBQzlCLHNCQ3duQjBDO0lEdm5CMUMsY0MrZXNDO0lEOWV0QyxtQkFBbUI7SUFDbkIsdUJBQW9CLEVBQUE7SUFSckI7TUFhRyxxQkFBcUI7TUFDckIsY0M2ZWlDLEVBQUE7RUR6ZXJDO0lBQ0Usa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxTQUFTO0lBQ1QsY0NtakJ3QjtJRGxqQnhCLDhCQUFzQjtZQUF0QixzQkFBc0I7SUFDdEIsWUFBWTtJQUVaLGtCQUFBO0lBQ0EseUJDZ2VtQztJRC9kbkMseURBQWlEO0lBQWpELGlEQUFpRCxFQUFBO0VBR25EO0lBQ0Usa0JBQWtCO0lBQ2xCLG1CQUFjO1FBQWQsa0JBQWM7WUFBZCxjQUFjO0lBQ2Qsa0JBQWtCO0lBQ2xCLGdCQUFnQixFQUFBO0VBdkhwQjs7SUE0SEksYUFBYSxFQUFBO0VBNUhqQjs7SUFpSUksVUFBVSxFQUFBO0VBS1g7SUVuSkQsNEVENHlCb0Y7SUMzeUJwRixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLHlCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsbUJBQW1CO0lGa0pmLG9CQUErQjtJQUMvQixzQkN1a0JnRCxFQUFBO0VEamtCbkQ7O0lBR0csdUNBQW9DLEVBQUE7RUFNdkM7SUFFRyx5QkFBOEI7UUFBOUIsc0JBQThCO1lBQTlCLDhCQUE4QixFQUFBIiwiZmlsZSI6IkNkclRhYnMuc2NzcyJ9 */";
-  var style$p = {"cdr-tabs":"cdr-tabs_3.0.4","cdr-tabs__header-container":"cdr-tabs__header-container_3.0.4","cdr-tabs__gradient-container":"cdr-tabs__gradient-container_3.0.4","cdr-tabs__header":"cdr-tabs__header_3.0.4","cdr-tabs__header-gradient-left":"cdr-tabs__header-gradient-left_3.0.4","cdr-tabs__header-gradient-right":"cdr-tabs__header-gradient-right_3.0.4","cdr-tabs__header-item":"cdr-tabs__header-item_3.0.4","cdr-tabs__header-item-label":"cdr-tabs__header-item-label_3.0.4","cdr-tabs__underline":"cdr-tabs__underline_3.0.4","cdr-tabs__content-container":"cdr-tabs__content-container_3.0.4","fade-enter-active":"fade-enter-active_3.0.4","fade-leave-active":"fade-leave-active_3.0.4","fade-enter":"fade-enter_3.0.4","fade-leave-to":"fade-leave-to_3.0.4","cdr-tabs--compact":"cdr-tabs--compact_3.0.4","cdr-tabs--no-border":"cdr-tabs--no-border_3.0.4","cdr-tabs--full-width":"cdr-tabs--full-width_3.0.4"};
+  var css$m = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Text\n* ------------------- */\n/* Redwood */\n/* Maple */\n/* Spruce */\n/* ---------------------\n* Outline\n* ------------------- */\n@import url(\"@rei/cedar/dist/style/cdr-tab-panel.css\");\n/* ==========================================================================\n  # CdrTabs\n\n  All values should map to variables in\n  vars/CdrTabs.vars.pcss\n  in order to allow for theming\n\n  TOC:\n\n    :Base - CdrTabs\n    :Elements\n      :header\n      :header-item\n      :header-item-button\n      :underline\n      :content-container\n    :Modifiers\n      :compact\n      :no-border\n      :full-width\n========================================================================== */\n.cdr-tabs_3\\.0\\.4 {\n  /* overflow-x: auto; */\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column;\n          flex-flow: column;\n  height: 50rem;\n  /* Compact\n    ========== */\n  /* No Border\n    ========== */\n  /* Full Width\n    ========== */\n  /* Centered\n    ========== */ }\n  .cdr-tabs_3\\.0\\.4 ::-webkit-scrollbar {\n    -webkit-appearance: none;\n    width: 0.7rem; }\n  .cdr-tabs_3\\.0\\.4 ::-webkit-scrollbar-thumb {\n    border-radius: 0.4rem;\n    background-color: rgba(0, 0, 0, 0.5);\n    -webkit-box-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.5); }\n  .cdr-tabs__header-container_3\\.0\\.4 {\n    overflow-x: auto;\n    border-bottom: 0.1rem solid #b8b8b8;\n    -webkit-overflow-scrolling: touch;\n    -ms-overflow-style: -ms-autohiding-scrollbar; }\n    .cdr-tabs__header-container_3\\.0\\.4::-webkit-scrollbar {\n      width: 0 !important;\n      height: 0 !important; }\n  .cdr-tabs__gradient-container_3\\.0\\.4 {\n    position: relative; }\n    .cdr-tabs__gradient-container_3\\.0\\.4::before {\n      transition: opacity 150ms ease;\n      -webkit-transition: opacity 150ms ease;\n      content: '';\n      position: absolute;\n      z-index: 100;\n      top: 0;\n      bottom: 0;\n      left: 0;\n      width: 3.6rem;\n      background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), to(#ffffff));\n      background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);\n      pointer-events: none;\n      opacity: 0; }\n    .cdr-tabs__gradient-container_3\\.0\\.4::after {\n      transition: opacity 150ms ease;\n      -webkit-transition: opacity 150ms ease;\n      content: '';\n      position: absolute;\n      top: 0;\n      bottom: 0;\n      right: 0;\n      width: 3.6rem;\n      background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(#ffffff));\n      background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);\n      pointer-events: none;\n      opacity: 0; }\n  .cdr-tabs__header_3\\.0\\.4 {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    position: relative; }\n    .cdr-tabs__header-gradient-left_3\\.0\\.4::before {\n      opacity: 1; }\n    .cdr-tabs__header-gradient-right_3\\.0\\.4::after {\n      opacity: 1; }\n  .cdr-tabs__header-item_3\\.0\\.4 {\n    display: block;\n    padding: 0; }\n    .cdr-tabs__header-item_3\\.0\\.4 + .cdr-tabs__header-item_3\\.0\\.4 {\n      margin-left: 1.6rem; }\n    .cdr-tabs__header-item_3\\.0\\.4[aria-selected] > .cdr-tabs__header-item-label_3\\.0\\.4 {\n      color: #3278ae; }\n  .cdr-tabs__header-item-label_3\\.0\\.4 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.008rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem;\n    display: block;\n    text-decoration: none;\n    padding: 1.2rem 0.8rem;\n    color: #292929;\n    white-space: nowrap;\n    outline-offset: -0.3rem; }\n    .cdr-tabs__header-item-label_3\\.0\\.4:active, .cdr-tabs__header-item-label_3\\.0\\.4:hover, .cdr-tabs__header-item-label_3\\.0\\.4:focus {\n      text-decoration: none;\n      color: #3278ae; }\n  .cdr-tabs__underline_3\\.0\\.4 {\n    position: absolute;\n    width: 3rem;\n    margin: 0;\n    height: 0.4rem;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    border: none;\n    /* border: none; */\n    background-color: #3278ae;\n    -webkit-transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);\n    transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1); }\n  .cdr-tabs__content-container_3\\.0\\.4 {\n    position: relative;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    overflow-x: hidden;\n    overflow-y: auto; }\n  .cdr-tabs_3\\.0\\.4 .fade-enter-active_3\\.0\\.4,\n  .cdr-tabs_3\\.0\\.4 .fade-leave-active_3\\.0\\.4 {\n    opacity: 0.5s; }\n  .cdr-tabs_3\\.0\\.4 .fade-enter_3\\.0\\.4,\n  .cdr-tabs_3\\.0\\.4 .fade-leave-to_3\\.0\\.4 {\n    opacity: 0; }\n  .cdr-tabs--compact_3\\.0\\.4 .cdr-tabs__header-item-label_3\\.0\\.4 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.008rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem;\n    padding: 0.6rem 1.2rem; }\n  .cdr-tabs--compact_3\\.0\\.4 .cdr-tabs__header-item_3\\.0\\.4 + .cdr-tabs--compact_3\\.0\\.4 .cdr-tabs__header-item_3\\.0\\.4 {\n    margin-left: 0.8rem; }\n  .cdr-tabs--no-border_3\\.0\\.4 .cdr-tabs__header_3\\.0\\.4,\n  .cdr-tabs--no-border_3\\.0\\.4 .cdr-tabs__header-container_3\\.0\\.4 {\n    border-bottom: 0.1rem solid transparent; }\n  .cdr-tabs--full-width_3\\.0\\.4 .cdr-tabs__header-item_3\\.0\\.4 {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1; }\n  .cdr-tabs--centered_3\\.0\\.4 .cdr-tabs__header_3\\.0\\.4 {\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVGFicy5zY3NzIiwic3JjL2NvbXBvbmVudHMvdGFicy9zdHlsZXMvQ2RyVGFicy5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIiwic3JjL2NvbXBvbmVudHMvdGFicy9zdHlsZXMvdmFycy9DZHJUYWJzLnZhcnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7OztpRUNPaUU7QURFakU7O3VCQ0N1QjtBREd2QixZQUFBO0FBK0dBLFVBQUE7QUF1RUEsV0FBQTtBQWtJQTs7dUJDclR1QjtBQ2R2QixzREFBWTtBQUNaOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs0RURtQzRFO0FDYjVFO0VBQ0Usc0JBQUE7RUFDQSxvQkFBYTtFQUFiLG9CQUFhO0VBQWIsYUFBYTtFQUNiLDRCQUFpQjtFQUFqQiw2QkFBaUI7TUFBakIscUJBQWlCO1VBQWpCLGlCQUFpQjtFQUNqQixhQUFhO0VBOEliO2dCRDlIYztFQzhJZDtnQkQ1SWM7RUNxSmQ7Z0JEbkpjO0VDMkpkO2dCRHpKYyxFQzBKQztFQXBMakI7SUFRSSx3QkFBd0I7SUFDeEIsYUFBVSxFQUFBO0VBVGQ7SUFZSSxxQkFBa0I7SUFDbEIsb0NBQW1DO0lBQ25DLHVEQUFtRCxFQUFBO0VBR3JEO0lBQ0UsZ0JBQWdCO0lBQ2hCLG1DQ3FsQjBDO0lEcGxCMUMsaUNBQWlDO0lBQ2pDLDRDQUE0QyxFQUFBO0lBSjdDO01BS3dCLG1CQUFtQjtNQUFFLG9CQUFvQixFQUFBO0VBR2xFO0lBQ0Usa0JBQWtCLEVBQUE7SUFEbkI7TUFJRyw4QkFBOEI7TUFDOUIsc0NBQXNDO01BQ3RDLFdBQVc7TUFDWCxrQkFBa0I7TUFDbEIsWUFBWTtNQUNaLE1BQU07TUFDTixTQUFTO01BQ1QsT0FBTztNQUNQLGFBQVc7TUFDWCxvR0FLRztNQUxILHFFQUtHO01BQ0gsb0JBQW9CO01BQ3BCLFVBQVUsRUFBQTtJQXBCYjtNQXdCRyw4QkFBOEI7TUFDOUIsc0NBQXNDO01BQ3RDLFdBQVc7TUFDWCxrQkFBa0I7TUFDbEIsTUFBTTtNQUNOLFNBQVM7TUFDVCxRQUFRO01BQ1IsYUFBVztNQUNYLG9HQUtHO01BTEgsc0VBS0c7TUFDSCxvQkFBb0I7TUFDcEIsVUFBVSxFQUFBO0VBSWQ7SUFDRSxvQkFBYTtJQUFiLG9CQUFhO0lBQWIsYUFBYTtJQUNiLFdBQVc7SUFDWCxTQUFTO0lBRVQsVUFBVTtJQUNWLGtCQUFrQixFQUFBO0lBRWxCO01BQ0UsVUFBVSxFQUFBO0lBR1o7TUFDRSxVQUFVLEVBQUE7RUFJZDtJQUNFLGNBQWM7SUFDZCxVQUFVLEVBQUE7SUFGWDtNQUtHLG1CQ3NrQmtCLEVBQUE7SUQza0JyQjtNQVNHLGNDaWZpQyxFQUFBO0VEN2VyQztJRXhIQSw0RURxekJvRjtJQ3B6QnBGLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIseUJBQXNCO0lBQ3RCLGlCQUFpQjtJQUNqQixtQkFBbUI7SUZzSGpCLGNBQWM7SUFDZCxxQkFBcUI7SUFDckIsc0JDMG1CMEM7SUR6bUIxQyxjQ2llc0M7SURoZXRDLG1CQUFtQjtJQUNuQix1QkFBb0IsRUFBQTtJQVJyQjtNQWFHLHFCQUFxQjtNQUNyQixjQytkaUMsRUFBQTtFRDNkckM7SUFDRSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLFNBQVM7SUFDVCxjQ3FpQndCO0lEcGlCeEIsOEJBQXNCO1lBQXRCLHNCQUFzQjtJQUN0QixZQUFZO0lBRVosa0JBQUE7SUFDQSx5QkNrZG1DO0lEamRuQyx5REFBaUQ7SUFBakQsaURBQWlELEVBQUE7RUFHbkQ7SUFDRSxrQkFBa0I7SUFDbEIsbUJBQWM7UUFBZCxrQkFBYztZQUFkLGNBQWM7SUFDZCxrQkFBa0I7SUFDbEIsZ0JBQWdCLEVBQUE7RUFySXBCOztJQTBJSSxhQUFhLEVBQUE7RUExSWpCOztJQStJSSxVQUFVLEVBQUE7RUFLWDtJRWpLRCw0RUQ0eUJvRjtJQzN5QnBGLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIseUJBQXNCO0lBQ3RCLGlCQUFpQjtJQUNqQixtQkFBbUI7SUZnS2Ysc0JDMGpCZ0QsRUFBQTtFRDlqQm5EO0lBU0ssbUJDaWdCaUIsRUFBQTtFRDFmdEI7O0lBR0csdUNBQW9DLEVBQUE7RUFNdkM7SUFFRyxtQkFBWTtRQUFaLG9CQUFZO1lBQVosWUFBWSxFQUFBO0VBTWY7SUFFRyx3QkFBdUI7UUFBdkIscUJBQXVCO1lBQXZCLHVCQUF1QixFQUFBIiwiZmlsZSI6IkNkclRhYnMuc2NzcyJ9 */";
+  var style$p = {"cdr-tabs":"cdr-tabs_3.0.4","cdr-tabs__header-container":"cdr-tabs__header-container_3.0.4","cdr-tabs__gradient-container":"cdr-tabs__gradient-container_3.0.4","cdr-tabs__header":"cdr-tabs__header_3.0.4","cdr-tabs__header-gradient-left":"cdr-tabs__header-gradient-left_3.0.4","cdr-tabs__header-gradient-right":"cdr-tabs__header-gradient-right_3.0.4","cdr-tabs__header-item":"cdr-tabs__header-item_3.0.4","cdr-tabs__header-item-label":"cdr-tabs__header-item-label_3.0.4","cdr-tabs__underline":"cdr-tabs__underline_3.0.4","cdr-tabs__content-container":"cdr-tabs__content-container_3.0.4","fade-enter-active":"fade-enter-active_3.0.4","fade-leave-active":"fade-leave-active_3.0.4","fade-enter":"fade-enter_3.0.4","fade-leave-to":"fade-leave-to_3.0.4","cdr-tabs--compact":"cdr-tabs--compact_3.0.4","cdr-tabs--no-border":"cdr-tabs--no-border_3.0.4","cdr-tabs--full-width":"cdr-tabs--full-width_3.0.4","cdr-tabs--centered":"cdr-tabs--centered_3.0.4"};
   styleInject(css$m);
 
   var CdrTabs = {
@@ -26467,7 +26468,6 @@ var cedar = (function () {
         underlineWidth: 0,
         underlineScrollX: 0,
         activeTabIndex: 0,
-        widthInitialized: false,
         headerWidth: 0,
         headerOverflow: false,
         overflowLeft: false,
@@ -26498,17 +26498,26 @@ var cedar = (function () {
         return tab;
       }); // get vue component children in the slot
 
-      this.$nextTick(function () {
-        _this.initializeOffsets();
+      if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
+        this.tabs[this.activeTabIndex].setActive(true);
+      }
 
+      this.$nextTick(function () {
         _this.headerWidth = _this.getHeaderWidth();
-        if (_this.tabs[0] && _this.tabs[0].setActive) _this.tabs[0].setActive(true);
+
+        _this.calculateOverflow();
+
+        setTimeout$2(function () {
+          _this.updateUnderline();
+        }, 100);
       }); // Check for header overflow on window resize for gradient behavior.
 
       window.addEventListener('resize', debounce(function () {
         _this.headerWidth = _this.getHeaderWidth();
 
         _this.calculateOverflow();
+
+        _this.updateUnderline();
       }, 500)); // Check for header overflow on widow resize for gradient behavior.
 
       this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(function () {
@@ -26555,14 +26564,6 @@ var cedar = (function () {
 
         this.updateUnderline();
       },
-      initializeOffsets: function initializeOffsets() {
-        if (!this.widthInitialized && this.$refs.cdrTabsHeader.children.length > 0) {
-          var elements = from_1$4(this.$refs.cdrTabsHeader.children);
-
-          this.underlineWidth = elements[0].children[0].offsetWidth;
-          this.widthInitialized = true;
-        }
-      },
       calculateOverflow: function calculateOverflow() {
         var containerWidth = 0;
 
@@ -26585,7 +26586,7 @@ var cedar = (function () {
       updateUnderline: function updateUnderline() {
         var elements = from_1$4(this.$refs.cdrTabsHeader.children);
 
-        if (elements) {
+        if (elements.length > 0) {
           var activeTab = elements[this.activeTabIndex];
           this.underlineOffsetX = activeTab.offsetLeft - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
           this.underlineWidth = activeTab.firstChild.offsetWidth;
@@ -26713,7 +26714,7 @@ var cedar = (function () {
           "class": clsx(tab.active ? _this4.style['cdr-tabs__header-item-active'] : '', _this4.style['cdr-tabs__header-item'])
         }, [h("a", {
           "attrs": {
-            "href": tab.name
+            "href": "#".concat(tab.id || tab.name)
           },
           "class": _this4.style['cdr-tabs__header-item-label'],
           "on": {
@@ -26725,10 +26726,10 @@ var cedar = (function () {
             }
           }
         }, [tab.name])]);
-      })]), h("div", {
+      })])]), h("div", {
         "class": this.style['cdr-tabs__underline'],
         "style": this.underlineStyle
-      })])]), h("div", {
+      })]), h("div", {
         "class": this.style['cdr-tabs__content-container'],
         "ref": "slotWrapper"
       }, [this.$slots.default])]);
@@ -40689,7 +40690,7 @@ var cedar = (function () {
             [
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "one" } },
+                { attrs: { name: "one", id: "full-width-one" } },
                 [
                   _c(
                     "cdr-text",
@@ -40702,7 +40703,7 @@ var cedar = (function () {
               _vm._v(" "),
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "two" } },
+                { attrs: { name: "two", id: "full-width-two" } },
                 [
                   _c(
                     "cdr-text",
@@ -40715,7 +40716,7 @@ var cedar = (function () {
               _vm._v(" "),
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "three" } },
+                { attrs: { name: "three", id: "full-width-three" } },
                 [
                   _c(
                     "cdr-text",
@@ -40763,7 +40764,7 @@ var cedar = (function () {
               _vm._v(" "),
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "four" } },
+                { attrs: { name: "four", id: "full-width-four" } },
                 [
                   _c(
                     "cdr-text",
@@ -40776,7 +40777,7 @@ var cedar = (function () {
               _vm._v(" "),
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "five" } },
+                { attrs: { name: "five", id: "full-width-five" } },
                 [
                   _c(
                     "cdr-text",
@@ -40814,7 +40815,7 @@ var cedar = (function () {
             [
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "one" } },
+                { attrs: { name: "one", id: "no-border-one" } },
                 [
                   _c(
                     "cdr-text",
@@ -40827,7 +40828,7 @@ var cedar = (function () {
               _vm._v(" "),
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "two" } },
+                { attrs: { name: "two", id: "no-border-two" } },
                 [
                   _c(
                     "cdr-text",
@@ -40840,7 +40841,7 @@ var cedar = (function () {
               _vm._v(" "),
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "three" } },
+                { attrs: { name: "three", id: "no-border-three" } },
                 [
                   _c(
                     "cdr-text",
@@ -40853,7 +40854,7 @@ var cedar = (function () {
               _vm._v(" "),
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "four" } },
+                { attrs: { name: "four", id: "no-border-four" } },
                 [
                   _c(
                     "cdr-text",
@@ -40866,7 +40867,97 @@ var cedar = (function () {
               _vm._v(" "),
               _c(
                 "cdr-tab-panel",
-                { attrs: { name: "five" } },
+                { attrs: { name: "five", id: "no-border-five" } },
+                [
+                  _c(
+                    "cdr-text",
+                    { attrs: { tag: "strong", modifier: "subheading" } },
+                    [_vm._v("\n          Tab Five Content\n        ")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "tab-demo-section" },
+        [
+          _c(
+            "cdr-text",
+            {
+              attrs: {
+                tag: "h3",
+                modifier: "heading-400 heading-500@md heading-500@lg"
+              }
+            },
+            [_vm._v("\n      Centered Tabs\n    ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "cdr-tabs",
+            { attrs: { modifier: "centered" } },
+            [
+              _c(
+                "cdr-tab-panel",
+                { attrs: { name: "one", id: "centered-one" } },
+                [
+                  _c(
+                    "cdr-text",
+                    { attrs: { tag: "strong", modifier: "subheading" } },
+                    [_vm._v("\n          Tab One Content\n        ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "cdr-tab-panel",
+                { attrs: { name: "two", id: "centered-two" } },
+                [
+                  _c(
+                    "cdr-text",
+                    { attrs: { tag: "strong", modifier: "subheading" } },
+                    [_vm._v("\n          Tab Two Content\n        ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "cdr-tab-panel",
+                { attrs: { name: "three", id: "centered-three" } },
+                [
+                  _c(
+                    "cdr-text",
+                    { attrs: { tag: "strong", modifier: "subheading" } },
+                    [_vm._v("\n          Tab Three Content\n        ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "cdr-tab-panel",
+                { attrs: { name: "four", id: "centered-four" } },
+                [
+                  _c(
+                    "cdr-text",
+                    { attrs: { tag: "strong", modifier: "subheading" } },
+                    [_vm._v("\n          Tab Four Content\n        ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "cdr-tab-panel",
+                { attrs: { name: "five", id: "centered-five" } },
                 [
                   _c(
                     "cdr-text",
@@ -40890,7 +40981,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$H = function (inject) {
       if (!inject) return
-      inject("data-v-e6938f96_0", { source: "\n.tab-demo-section {\n  text-align: center;\n  padding-top: 25px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tabs/examples/Tabs.vue"],"names":[],"mappings":";AAkQA;EACA,kBAAA;EACA,iBAAA;AACA","file":"Tabs.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div>\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h2\"\n        modifier=\"heading-600 heading-700@md heading-700@lg\"\n      >\n        Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        data-backstop=\"tab-default\"\n      >\n        <cdr-tab-panel name=\"Tab1\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"Tab2\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n            Tab Two Content\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"REALLY REALLY LARGE TAB NAME\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Three Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"4\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"Five\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"Six\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Six Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n    <!-- Compact Modifier -->\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-400 heading-500@md heading-500@lg\"\n      >\n        Compact Tabs\n      </cdr-text>\n      <cdr-tabs modifier=\"compact\">\n        <cdr-tab-panel name=\"one\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"two\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Two Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"three\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Three Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"four\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"five\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n    <!-- Full Width Modifier -->\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-400 heading-500@md heading-500@lg\"\n      >\n        Full Width Tabs\n      </cdr-text>\n      <cdr-tabs modifier=\"full-width\">\n        <cdr-tab-panel name=\"one\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"two\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Two Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"three\">\n          <cdr-text\n            tag=\"h1\"\n            modifier=\"display-600 display-700@md display-900@lg\"\n          >tab three content</cdr-text>\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n            <cdr-text\n              tag=\"h1\"\n              modifier=\"display-600 display-700@md display-900@lg\"\n            >tab three content</cdr-text>\n            Tab Two Content\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"four\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"five\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n    <!-- No Border Modifier -->\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-400 heading-500@md heading-500@lg\"\n      >\n        No Border Tabs\n      </cdr-text>\n      <cdr-tabs modifier=\"no-border\">\n        <cdr-tab-panel name=\"one\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"two\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Two Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"three\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Three Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"four\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"five\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'TabsExample',\n  components: { ...Components },\n};\n</script>\n\n<style>\n  .tab-demo-section {\n    text-align: center;\n    padding-top: 25px;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-a0c3bede_0", { source: "\n.tab-demo-section {\n  text-align: center;\n  padding-top: 25px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tabs/examples/Tabs.vue"],"names":[],"mappings":";AAsTA;EACA,kBAAA;EACA,iBAAA;AACA","file":"Tabs.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div>\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h2\"\n        modifier=\"heading-600 heading-700@md heading-700@lg\"\n      >\n        Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        data-backstop=\"tab-default\"\n      >\n        <cdr-tab-panel name=\"Tab1\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"Tab2\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n            Tab Two Content\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"REALLY REALLY LARGE TAB NAME\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Three Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"4\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"Five\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"Six\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Six Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n    <!-- Compact Modifier -->\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-400 heading-500@md heading-500@lg\"\n      >\n        Compact Tabs\n      </cdr-text>\n      <cdr-tabs modifier=\"compact\">\n        <cdr-tab-panel name=\"one\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"two\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Two Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"three\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Three Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"four\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"five\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n    <!-- Full Width Modifier -->\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-400 heading-500@md heading-500@lg\"\n      >\n        Full Width Tabs\n      </cdr-text>\n      <cdr-tabs modifier=\"full-width\">\n        <cdr-tab-panel name=\"one\" id=\"full-width-one\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"two\" id=\"full-width-two\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Two Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"three\" id=\"full-width-three\">\n          <cdr-text\n            tag=\"h1\"\n            modifier=\"display-600 display-700@md display-900@lg\"\n          >tab three content</cdr-text>\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n            <cdr-text\n              tag=\"h1\"\n              modifier=\"display-600 display-700@md display-900@lg\"\n            >tab three content</cdr-text>\n            Tab Two Content\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"four\" id=\"full-width-four\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"five\" id=\"full-width-five\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n    <!-- No Border Modifier -->\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-400 heading-500@md heading-500@lg\"\n      >\n        No Border Tabs\n      </cdr-text>\n      <cdr-tabs modifier=\"no-border\">\n        <cdr-tab-panel name=\"one\" id=\"no-border-one\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"two\" id=\"no-border-two\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Two Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"three\" id=\"no-border-three\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Three Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"four\" id=\"no-border-four\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"five\" id=\"no-border-five\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- Center Modifier -->\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-400 heading-500@md heading-500@lg\"\n      >\n        Centered Tabs\n      </cdr-text>\n      <cdr-tabs modifier=\"centered\">\n        <cdr-tab-panel name=\"one\" id=\"centered-one\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"two\" id=\"centered-two\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Two Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"three\" id=\"centered-three\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Three Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"four\" id=\"centered-four\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel name=\"five\" id=\"centered-five\">\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'TabsExample',\n  components: { ...Components },\n};\n</script>\n\n<style>\n  .tab-demo-section {\n    text-align: center;\n    padding-top: 25px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
