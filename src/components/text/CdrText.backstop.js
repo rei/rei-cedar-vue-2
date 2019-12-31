@@ -10,4 +10,5 @@ module.exports = [{
     '[data-backstop="utility"]',
     '[data-backstop="varianttest"]',
   ],
+  responsive: true,
 }];
