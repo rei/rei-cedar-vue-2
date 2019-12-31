@@ -1,19 +1,6 @@
 @import "../settings/index";
 /* ==========================================================================/*
 * Typography utility classes
-*
-* TOC:
-*   :base text styles
-*     :paragraphs
-*       :body
-*     :headings
-*       :subheading
-*       :display
-*       :simple
-*         :large
-*         :medium
-*         :small
-# cdr-label
 ========================================================================== */
 
 .cdr-text,
@@ -50,15 +37,13 @@ h4.cdr-text.cdr-text,
 h5.cdr-text.cdr-text,
 h6.cdr-text.cdr-text,
 .cdr-text {
-  /* Paragraphs
-    ========================================================================== */
   &--italic {
-  font-variation-settings: 'ital' 1;
-  font-style: italic;
+    font-variation-settings: 'ital' 1;
+    font-style: italic;
   }
 
   &--strong {
-  font-weight: 700;
+    font-weight: 700;
   }
 
   &--body {
@@ -110,17 +95,21 @@ h6.cdr-text.cdr-text,
     }
   }
 
+  &--citation {
+    @include cdr-text-utility-strong-100;
+  }
+
   &--eyebrow-100 {
     @include cdr-text-eyebrow-100;
- }
+  }
 
- &--heading {
-   &-300 { @include cdr-text-heading-300; }
-   &-400 { @include cdr-text-heading-400; }
-   &-500 { @include cdr-text-heading-500; }
-   &-600 { @include cdr-text-heading-600; }
-   &-700 { @include cdr-text-heading-700; }
-   &-800 { @include cdr-text-heading-800; }
+  &--heading {
+    &-300 { @include cdr-text-heading-300; }
+    &-400 { @include cdr-text-heading-400; }
+    &-500 { @include cdr-text-heading-500; }
+    &-600 { @include cdr-text-heading-600; }
+    &-700 { @include cdr-text-heading-700; }
+    &-800 { @include cdr-text-heading-800; }
   }
   &--display {
     &-600 { @include cdr-text-display-600; }
@@ -138,45 +127,23 @@ h6.cdr-text.cdr-text,
     &-600 { @include cdr-text-subheading-600; }
   }
 
-  /* Caption
-    ========== */
-
-  &--citation {
-    @include cdr-text-utility-strong-100;
-  }
-}
-
-@include xs-mq-only {
-.cdr-text > .cdr-text,
-.cdr-text h1.cdr-text,
-.cdr-text h2.cdr-text,
-.cdr-text h3.cdr-text,
-.cdr-text h4.cdr-text,
-.cdr-text h5.cdr-text,
-.cdr-text h6.cdr-text,
-h1.cdr-text.cdr-text ,
-h2.cdr-text.cdr-text,
-h3.cdr-text.cdr-text,
-h4.cdr-text.cdr-text,
-h5.cdr-text.cdr-text,
-h6.cdr-text.cdr-text,
-.cdr-text {
+  @include xs-mq-only {
     &--heading {
-    &-300\@xs { @include cdr-text-heading-300; }
-    &-400\@xs { @include cdr-text-heading-400; }
-    &-500\@xs { @include cdr-text-heading-500; }
-    &-600\@xs { @include cdr-text-heading-600; }
-    &-700\@xs { @include cdr-text-heading-700; }
-    &-800\@xs { @include cdr-text-heading-800; }
+      &-300\@xs { @include cdr-text-heading-300; }
+      &-400\@xs { @include cdr-text-heading-400; }
+      &-500\@xs { @include cdr-text-heading-500; }
+      &-600\@xs { @include cdr-text-heading-600; }
+      &-700\@xs { @include cdr-text-heading-700; }
+      &-800\@xs { @include cdr-text-heading-800; }
     }
     &--display {
-    &-600\@xs { @include cdr-text-display-600; }
-    &-700\@xs { @include cdr-text-display-700; }
-    &-800\@xs { @include cdr-text-display-800; }
-    &-900\@xs { @include cdr-text-display-900; }
-    &-1000\@xs { @include cdr-text-display-1000; }
-    &-1100\@xs { @include cdr-text-display-1100; }
-    &-1200\@xs { @include cdr-text-display-1200; }
+      &-600\@xs { @include cdr-text-display-600; }
+      &-700\@xs { @include cdr-text-display-700; }
+      &-800\@xs { @include cdr-text-display-800; }
+      &-900\@xs { @include cdr-text-display-900; }
+      &-1000\@xs { @include cdr-text-display-1000; }
+      &-1100\@xs { @include cdr-text-display-1100; }
+      &-1200\@xs { @include cdr-text-display-1200; }
     }
     &--subheading {
       &-300\@xs { @include cdr-text-subheading-300; }
@@ -185,39 +152,24 @@ h6.cdr-text.cdr-text,
       &-600\@xs { @include cdr-text-subheading-600; }
     }
   }
-}
 
-@include sm-mq-only {
-.cdr-text > .cdr-text,
-.cdr-text h1.cdr-text,
-.cdr-text h2.cdr-text,
-.cdr-text h3.cdr-text,
-.cdr-text h4.cdr-text,
-.cdr-text h5.cdr-text,
-.cdr-text h6.cdr-text,
-h1.cdr-text.cdr-text ,
-h2.cdr-text.cdr-text,
-h3.cdr-text.cdr-text,
-h4.cdr-text.cdr-text,
-h5.cdr-text.cdr-text,
-h6.cdr-text.cdr-text,
-.cdr-text  {
+  @include sm-mq-only {
     &--heading {
-    &-300\@sm { @include cdr-text-heading-300; }
-    &-400\@sm { @include cdr-text-heading-400; }
-    &-500\@sm { @include cdr-text-heading-500; }
-    &-600\@sm { @include cdr-text-heading-600; }
-    &-700\@sm { @include cdr-text-heading-700; }
-    &-800\@sm { @include cdr-text-heading-800; }
+      &-300\@sm { @include cdr-text-heading-300; }
+      &-400\@sm { @include cdr-text-heading-400; }
+      &-500\@sm { @include cdr-text-heading-500; }
+      &-600\@sm { @include cdr-text-heading-600; }
+      &-700\@sm { @include cdr-text-heading-700; }
+      &-800\@sm { @include cdr-text-heading-800; }
     }
     &--display {
-    &-600\@sm { @include cdr-text-display-600; }
-    &-700\@sm { @include cdr-text-display-700; }
-    &-800\@sm { @include cdr-text-display-800; }
-    &-900\@sm { @include cdr-text-display-900; }
-    &-1000\@sm { @include cdr-text-display-1000; }
-    &-1100\@sm { @include cdr-text-display-1100; }
-    &-1200\@sm { @include cdr-text-display-1200; }
+      &-600\@sm { @include cdr-text-display-600; }
+      &-700\@sm { @include cdr-text-display-700; }
+      &-800\@sm { @include cdr-text-display-800; }
+      &-900\@sm { @include cdr-text-display-900; }
+      &-1000\@sm { @include cdr-text-display-1000; }
+      &-1100\@sm { @include cdr-text-display-1100; }
+      &-1200\@sm { @include cdr-text-display-1200; }
     }
     &--subheading {
       &-300\@sm { @include cdr-text-subheading-300; }
@@ -226,39 +178,24 @@ h6.cdr-text.cdr-text,
       &-600\@sm { @include cdr-text-subheading-600; }
     }
   }
-}
 
-@include md-mq-only {
-.cdr-text > .cdr-text,
-.cdr-text h1.cdr-text,
-.cdr-text h2.cdr-text,
-.cdr-text h3.cdr-text,
-.cdr-text h4.cdr-text,
-.cdr-text h5.cdr-text,
-.cdr-text h6.cdr-text,
-h1.cdr-text.cdr-text ,
-h2.cdr-text.cdr-text,
-h3.cdr-text.cdr-text,
-h4.cdr-text.cdr-text,
-h5.cdr-text.cdr-text,
-h6.cdr-text.cdr-text,
-.cdr-text  {
+  @include md-mq-only {
     &--heading {
-    &-300\@md { @include cdr-text-heading-300; }
-    &-400\@md { @include cdr-text-heading-400; }
-    &-500\@md { @include cdr-text-heading-500; }
-    &-600\@md { @include cdr-text-heading-600; }
-    &-700\@md { @include cdr-text-heading-700; }
-    &-800\@md { @include cdr-text-heading-800; }
+      &-300\@md { @include cdr-text-heading-300; }
+      &-400\@md { @include cdr-text-heading-400; }
+      &-500\@md { @include cdr-text-heading-500; }
+      &-600\@md { @include cdr-text-heading-600; }
+      &-700\@md { @include cdr-text-heading-700; }
+      &-800\@md { @include cdr-text-heading-800; }
     }
     &--display {
-    &-600\@md { @include cdr-text-display-600; }
-    &-700\@md { @include cdr-text-display-700; }
-    &-800\@md { @include cdr-text-display-800; }
-    &-900\@md { @include cdr-text-display-900; }
-    &-1000\@md { @include cdr-text-display-1000; }
-    &-1100\@md { @include cdr-text-display-1100; }
-    &-1200\@md { @include cdr-text-display-1200; }
+      &-600\@md { @include cdr-text-display-600; }
+      &-700\@md { @include cdr-text-display-700; }
+      &-800\@md { @include cdr-text-display-800; }
+      &-900\@md { @include cdr-text-display-900; }
+      &-1000\@md { @include cdr-text-display-1000; }
+      &-1100\@md { @include cdr-text-display-1100; }
+      &-1200\@md { @include cdr-text-display-1200; }
     }
     &--subheading {
       &-300\@md { @include cdr-text-subheading-300; }
@@ -267,39 +204,24 @@ h6.cdr-text.cdr-text,
       &-600\@md { @include cdr-text-subheading-600; }
     }
   }
-}
 
-@include lg-mq-only {
-.cdr-text > .cdr-text,
-.cdr-text h1.cdr-text,
-.cdr-text h2.cdr-text,
-.cdr-text h3.cdr-text,
-.cdr-text h4.cdr-text,
-.cdr-text h5.cdr-text,
-.cdr-text h6.cdr-text,
-h1.cdr-text.cdr-text ,
-h2.cdr-text.cdr-text,
-h3.cdr-text.cdr-text,
-h4.cdr-text.cdr-text,
-h5.cdr-text.cdr-text,
-h6.cdr-text.cdr-text,
-.cdr-text  {
+  @include lg-mq-only {
     &--heading {
-    &-300\@lg  { @include cdr-text-heading-300; }
-    &-400\@lg  { @include cdr-text-heading-400; }
-    &-500\@lg  { @include cdr-text-heading-500; }
-    &-600\@lg  { @include cdr-text-heading-600; }
-    &-700\@lg  { @include cdr-text-heading-700; }
-    &-800\@lg  { @include cdr-text-heading-800; }
+      &-300\@lg  { @include cdr-text-heading-300; }
+      &-400\@lg  { @include cdr-text-heading-400; }
+      &-500\@lg  { @include cdr-text-heading-500; }
+      &-600\@lg  { @include cdr-text-heading-600; }
+      &-700\@lg  { @include cdr-text-heading-700; }
+      &-800\@lg  { @include cdr-text-heading-800; }
     }
     &--display {
-    &-600\@lg  { @include cdr-text-display-600; }
-    &-700\@lg  { @include cdr-text-display-700; }
-    &-800\@lg  { @include cdr-text-display-800; }
-    &-900\@lg  { @include cdr-text-display-900; }
-    &-1000\@lg  { @include cdr-text-display-1000; }
-    &-1100\@lg  { @include cdr-text-display-1100; }
-    &-1200\@lg  { @include cdr-text-display-1200; }
+      &-600\@lg  { @include cdr-text-display-600; }
+      &-700\@lg  { @include cdr-text-display-700; }
+      &-800\@lg  { @include cdr-text-display-800; }
+      &-900\@lg  { @include cdr-text-display-900; }
+      &-1000\@lg  { @include cdr-text-display-1000; }
+      &-1100\@lg  { @include cdr-text-display-1100; }
+      &-1200\@lg  { @include cdr-text-display-1200; }
     }
     &--subheading {
       &-300\@lg  { @include cdr-text-subheading-300; }
