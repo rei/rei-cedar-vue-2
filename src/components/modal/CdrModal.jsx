@@ -268,7 +268,7 @@ export default {
                         this.showTitle && !this.$slots.title && (
                           <cdr-text
                             tag="h1"
-                            modifier="heading-600"
+                            modifier="heading--serif-600"
                           >
                             {this.label}
                           </cdr-text>
