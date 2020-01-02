@@ -22500,7 +22500,7 @@ var cedar = (function () {
   function ownKeys$2A(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$2z(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2A(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2A(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var xLg = {
+  var IconXLg = {
     name: 'IconXLg',
     components: {
       CdrIcon: CdrIcon
@@ -22787,7 +22787,7 @@ var cedar = (function () {
     IconWater: water,
     IconWilderness: wilderness,
     IconXFill: xFill,
-    IconXLg: xLg,
+    IconXLg: IconXLg,
     IconXSm: xSm,
     IconXStroke: xStroke,
     IconYoutube: youtube,
@@ -23630,7 +23630,7 @@ var cedar = (function () {
     name: 'CdrModal',
     components: {
       CdrButton: CdrButton,
-      CdrIcon: CdrIcon,
+      IconXLg: IconXLg,
       CdrText: CdrText
     },
     mixins: [size],
@@ -23893,11 +23893,10 @@ var cedar = (function () {
         "on": {
           "click": onClick
         }
-      }, [h("cdr-icon", {
+      }, [h(IconXLg, {
         "slot": "icon",
         "class": this.style['cdr-button__icon'],
         "attrs": {
-          "use": "#x-lg",
           "inherit-color": true
         }
       })])]), h("div", {
@@ -26924,7 +26923,7 @@ var cedar = (function () {
     IconWater: water,
     IconWilderness: wilderness,
     IconXFill: xFill,
-    IconXLg: xLg,
+    IconXLg: IconXLg,
     IconXSm: xSm,
     IconXStroke: xStroke,
     IconYoutube: youtube,
