@@ -45,7 +45,7 @@ fs.outputFileSync(`${destMixinsDir}/cedar-component-variables.scss`, singleFile)
 const cedarVersion = cedarPackageJson.version;
 const tokenVersion = cedarPackageJson.devDependencies['@rei/cdr-tokens'];
 
-console.log('updating component-variables peerDependencies', { cedarVersion, tokenVersion, currentPeerDeps: variablesPackageJson.peerDependencies }, )
-variablesPackageJson.peerDependencies['@rei/cdr-tokens'] = tokenVersion;
-variablesPackageJson.peerDependencies['@rei/cedar'] = cedarVersion;
+console.log('updating component-variables peerDependencies', { cedarVersion, tokenVersion, currentDeps: variablesPackageJson.dependencies }, )
+variablesPackageJson.dependencies['@rei/cdr-tokens'] = tokenVersion;
+variablesPackageJson.dependencies['@rei/cedar'] = cedarVersion;
 fs.outputFileSync('../../rei-cedar-component-variables/package.json', JSON.stringify(variablesPackageJson));
