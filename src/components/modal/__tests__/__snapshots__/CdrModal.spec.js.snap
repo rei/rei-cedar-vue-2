@@ -53,11 +53,10 @@ exports[`CdrModal.vue renders correctly 1`] = `
                 tag="button"
                 type="button"
               >
-                <cdr-icon-stub
+                <iconxlg-stub
                   inheritcolor="true"
                   size="medium"
                   space=""
-                  use="#x-lg"
                 />
               </cdr-button-stub>
             </div>
