@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import style from './styles/CdrModal.scss';
 import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
-import CdrIcon from '../icon/CdrIcon';
+import IconXLg from '../icon/comps/x-lg';
 import CdrText from '../text/CdrText';
 import size from '../../mixins/size';
 
@@ -11,7 +11,7 @@ export default {
   name: 'CdrModal',
   components: {
     CdrButton,
-    CdrIcon,
+    IconXLg,
     CdrText,
   },
   mixins: [size],
@@ -282,10 +282,9 @@ export default {
                       on-click={onClick}
                       aria-label="close"
                     >
-                      <cdr-icon
+                      <IconXLg
                         slot="icon"
                         class={this.style['cdr-button__icon']}
-                        use="#x-lg"
                         inherit-color
                       />
                     </cdr-button>
