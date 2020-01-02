@@ -7,6 +7,7 @@ import postcss from 'rollup-plugin-postcss';
 import copyPlugin from 'rollup-plugin-copy';
 import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
+import postcssImport from 'postcss-import';
 import packageJson from '../package.json';
 
 const env = process.env.NODE_ENV;
@@ -74,7 +75,13 @@ const plugins = [
   }),
   postcss({
     config: true,
-    plugins: [],
+    plugins: [postcssImport({
+      // For cedar-compiled build, strip out `@import url()`
+      //           as dependencies will already be compiled.
+      resolve: function(id, basedir, importOptions)  {
+        return resolve('build/noop.css');
+      },
+    })],
     extract: postcssExtract,
     extensions: ['.scss', '.css'],
     sourceMap: env === 'dev' ? 'inline' : false,
