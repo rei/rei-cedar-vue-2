@@ -21,6 +21,27 @@
       </cdr-text>
     </div>
 
+    <div data-backstop="heading-serif-strong">
+      <h3>Heading Serif Strong</h3>
+      <cdr-text
+        v-for="level in heading.serif"
+        :modifier="`heading--serif--strong-${level}`"
+        :key="`heading--serif--strong-${level}`"
+      >
+        Heading Serif Strong {{ level }}
+      </cdr-text>
+    </div>
+    <div data-backstop="heading-sans-strong">
+      <h3>Heading Sans Strong</h3>
+      <cdr-text
+        v-for="level in heading.sans"
+        :modifier="`heading--sans--strong-${level}`"
+        :key="`heading--sans--strong-${level}`"
+      >
+        Heading Sans Strong {{ level }}
+      </cdr-text>
+    </div>
+
     <div data-backstop="subheading-serif">
       <h3>Subheading Serif</h3>
       <cdr-text
