@@ -2,7 +2,7 @@
   <div data-backstop="align-utilities">
     <cdr-text
       tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
     >
       Text alignment classes
     </cdr-text>
@@ -13,7 +13,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
     >
       left
     </cdr-text>
@@ -33,7 +33,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
     >
       center
     </cdr-text>
@@ -57,7 +57,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
     >
       right
     </cdr-text>
@@ -80,7 +80,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
     >
       justify
     </cdr-text>
@@ -103,7 +103,7 @@
 
     <cdr-text
       tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
     >
       center-block
     </cdr-text>

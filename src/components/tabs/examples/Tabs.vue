@@ -4,7 +4,7 @@
     <div class="tab-demo-section">
       <cdr-text
         tag="h2"
-        modifier="heading-600 heading-700@md heading-700@lg"
+        modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
       >
         Tabs
       </cdr-text>
@@ -76,7 +76,7 @@
     <div class="tab-demo-section">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
       >
         Compact Tabs
       </cdr-text>
@@ -127,7 +127,7 @@
     <div class="tab-demo-section">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
       >
         Full Width Tabs
       </cdr-text>
@@ -211,7 +211,7 @@
     <div class="tab-demo-section">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
       >
         No Border Tabs
       </cdr-text>
@@ -278,7 +278,7 @@
     <div class="tab-demo-section">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
       >
         Centered Tabs
       </cdr-text>

@@ -6,14 +6,14 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading-400 heading-500@md heading-500@lg"
+      modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
     >
       Links
     </cdr-text>
 
     <cdr-text
       tag="h3"
-      modifier="subheading-300"
+      modifier="subheading--sans-300"
     >
       Default Link, No props
     </cdr-text>
@@ -25,7 +25,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading-300"
+      modifier="subheading--sans-300"
     >Link, href set, spacing class applied</cdr-text>
     <cdr-link
       href="https://www.rei.com/"
@@ -47,7 +47,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading-300"
+      modifier="subheading--sans-300"
     >Links, with icon</cdr-text>
 
     <cdr-list

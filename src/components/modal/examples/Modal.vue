@@ -2,7 +2,7 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
     >
       Modal
     </cdr-text>
@@ -20,7 +20,7 @@
       <template slot="title">
         <cdr-text
           tag="h1"
-          modifier="heading-600"
+          modifier="heading--serif-600"
         >
           Added to Cart (is a common label) and let's make this longer so it
         </cdr-text>
@@ -42,7 +42,7 @@
     </cdr-button>
 
     <cdr-text
-      modifier="heading-400"
+      modifier="heading--sans-400"
       class="cdr-pt-space-one-x"
     >
       Size
@@ -63,7 +63,7 @@
     </cdr-radio>
 
     <cdr-text
-      modifier="heading-400"
+      modifier="heading--sans-400"
       class="cdr-pt-space-one-x"
     >
       Content Length
@@ -84,7 +84,7 @@
     </cdr-radio>
 
     <cdr-text
-      modifier="heading-400"
+      modifier="heading--sans-400"
       class="cdr-pt-space-one-x"
     >
       Show Title

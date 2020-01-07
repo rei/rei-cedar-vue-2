@@ -5,7 +5,7 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading-400 heading-500@md heading-500@lg"
+      modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
     >
       Icons
     </cdr-text>
@@ -30,7 +30,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-400 heading-500@md heading-500@lg"
+      modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
     >
       Default icon size
     </cdr-text>
@@ -54,7 +54,7 @@
         :key="key"
       >
         <div>
-          <div class="cdr-text-center">
+          <div class="cdr-align-text-center">
             <cdr-icon :use="`#${getSpriteId(key)}`" />
             <cdr-text>{{ getSpriteId(key) }}</cdr-text>
           </div>
@@ -73,7 +73,7 @@
         :key="key"
       >
         <div>
-          <div class="cdr-text-center">
+          <div class="cdr-align-text-center">
             <component :is="key" />
             <cdr-text>{{ getSpriteId(key) }}</cdr-text>
           </div>
