@@ -54,7 +54,7 @@
         :key="key"
       >
         <div>
-          <div class="cdr-text-center">
+          <div class="cdr-align-text-center">
             <cdr-icon :use="`#${getSpriteId(key)}`" />
             <cdr-text>{{ getSpriteId(key) }}</cdr-text>
           </div>
@@ -73,7 +73,7 @@
         :key="key"
       >
         <div>
-          <div class="cdr-text-center">
+          <div class="cdr-align-text-center">
             <component :is="key" />
             <cdr-text>{{ getSpriteId(key) }}</cdr-text>
           </div>
