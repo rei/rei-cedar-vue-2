@@ -2,7 +2,7 @@
   <div data-backstop="inset-space-utilities">
     <cdr-text
       tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
     >
       Inset space classes for all around padding
     </cdr-text>

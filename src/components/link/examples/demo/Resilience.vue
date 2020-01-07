@@ -3,7 +3,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
     >
       Resilience Tests
     </cdr-text>
@@ -109,7 +109,7 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-500 heading-600@md heading-600@lg"
+      modifier="heading--serif-500 heading--serif-600@md heading--serif-600@lg"
     >
       Typography validation -
     </cdr-text>
