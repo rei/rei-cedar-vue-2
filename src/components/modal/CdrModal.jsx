@@ -96,8 +96,6 @@ export default {
     handleKeyDown({ key }) {
       switch (key) {
         case 'Escape':
-          this.onClick();
-          break;
         case 'Esc':
           this.onClick();
           break;
