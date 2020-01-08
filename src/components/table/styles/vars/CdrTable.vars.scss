@@ -1,0 +1,87 @@
+@mixin cdr-table-base-text() {
+  font-family: $cdr-font-family-sans;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.08px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin cdr-table-base() {
+  @include cdr-table-base-text();
+  
+  border: none;
+  border-collapse: collapse;
+  
+  th,
+  td {
+    min-height: 48px;
+    color: $cdr-color-text-primary-lightmode;
+    padding: $cdr-space-inset-one-x;
+    text-align: left;
+  }
+  
+  thead {
+    th {
+      font-weight: 600;
+    }
+  }
+  
+  caption {
+    @include cdr-text-heading-300;
+  }
+}
+
+@mixin cdr-table-border() {
+  th,
+  td {
+    border: 1px solid $cdr-color-border-secondary-lightmode;
+  }
+  
+  thead th {
+    border-bottom: 2px solid $cdr-color-border-secondary-lightmode;
+  }
+}
+
+@mixin cdr-table-striped() {
+  thead {
+    th {
+      background-color: $cdr-color-background-light;
+    }
+
+    // override body styling when head is present
+    & + tbody tr {
+      // striping rows
+      &:nth-child(even) {
+        background-color: $cdr-color-background-light;
+        
+        & td {
+          background-color: $cdr-color-background-light;
+        }
+      }
+
+      // disabled default
+      &:nth-child(odd) {
+        background-color: transparent;
+        
+        & td {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  tbody,
+  tfoot {
+    tr {
+      // striping rows
+      &:nth-child(odd) {
+        background-color: $cdr-color-background-light;
+        
+        & td {
+          background-color: $cdr-color-background-light;
+        }
+      }
+    }
+  }
+}

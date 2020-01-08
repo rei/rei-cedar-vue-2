@@ -1,0 +1,270 @@
+<template>
+  <div>
+    <h2>table</h2>
+
+    <p>Small table</p>
+    <cdr-table>
+      <thead>
+        <tr>
+          <th>Test head</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>Normal table</p>
+    <cdr-table>
+      <thead>
+        <tr>
+          <th>Test head</th>
+          <th>Test head</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>Table without head</p>
+    <cdr-table>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>No stripe</p>
+    <cdr-table :striped="false">
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>No border</p>
+    <cdr-table :border="false">
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>Table with caption</p>
+    <cdr-table>
+      <caption>I'm the caption</caption>
+      <thead>
+        <tr>
+          <th>Test head</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>Bigger table</p>
+    <cdr-table>
+      <thead>
+        <tr>
+          <th>Test head</th>
+          <th>Test head</th>
+          <th>Test head</th>
+          <th>Test head</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>Complex table</p>
+    <cdr-table>
+      <thead>
+        <tr>
+          <th>Test head</th>
+          <th>Test head</th>
+          <th>Test head</th>
+          <th>Test head</th>
+        </tr>
+        <tr>
+          <th>Test head</th>
+          <th>Test head</th>
+          <th>Test head</th>
+          <th>Test head</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Test Foot</td>
+          <td>Test Foot</td>
+          <td>Test Foot</td>
+          <td>Test Foot</td>
+        </tr>
+        <tr>
+          <td>Test Foot</td>
+          <td>Test Foot</td>
+          <td>Test Foot</td>
+          <td>Test Foot</td>
+        </tr>
+        <tr>
+          <td>Test Foot</td>
+          <td>Test Foot</td>
+          <td>Test Foot</td>
+          <td>Test Foot</td>
+        </tr>
+      </tfoot>
+    </cdr-table>
+  </div>
+</template>
+
+<script>
+import * as Components from 'srcdir/index';
+
+export default {
+  name: 'Table',
+  components: {
+    ...Components,
+  },
+};
+</script>
+
+<style>
+</style>

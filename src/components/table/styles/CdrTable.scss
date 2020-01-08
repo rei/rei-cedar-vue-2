@@ -1,0 +1,14 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrTable.vars.scss';
+
+.cdr-table {
+  @include cdr-table-base;
+
+  &--striped {
+    @include cdr-table-striped;
+  }
+
+  &--border {
+    @include cdr-table-border;
+  }
+}
