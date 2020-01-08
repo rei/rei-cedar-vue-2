@@ -54,7 +54,7 @@ describe('CdrModal.vue', () => {
     expect(wrapper.vm.handleClosed).toHaveBeenCalled();
   });
 
-  it('handleKeyDown', () => {
+  it('handleKeyDown Escape', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
@@ -71,6 +71,24 @@ describe('CdrModal.vue', () => {
 
     wrapper.trigger('keydown', {
       key: 'Escape',
+    });
+    expect(wrapper.vm.onClick).toHaveBeenCalled();
+
+    wrapper.destroy();
+  });
+
+  it('handleKeyDown Esc', () => {
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        label: "My Modal Label",
+      },
+      attachToDocument: true,
+    });
+    spyOn(wrapper.vm, 'onClick');
+
+    wrapper.trigger('keydown', {
+      key: 'Esc',
     });
     expect(wrapper.vm.onClick).toHaveBeenCalled();
 
