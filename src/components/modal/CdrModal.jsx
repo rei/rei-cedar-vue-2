@@ -98,6 +98,9 @@ export default {
         case 'Escape':
           this.onClick();
           break;
+        case 'Esc':
+          this.onClick();
+          break;
         default: break;
       }
     },
