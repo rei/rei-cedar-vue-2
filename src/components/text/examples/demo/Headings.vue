@@ -31,17 +31,6 @@
         Heading Serif Strong {{ level }}
       </cdr-text>
     </div>
-
-    <div data-backstop="subheading-serif">
-      <h3>Subheading Serif</h3>
-      <cdr-text
-        v-for="level in subheading.serif"
-        :modifier="`subheading--serif-${level}`"
-        :key="`subheading--serif-${level}`"
-      >
-        Subheading Serif {{ level }}
-      </cdr-text>
-    </div>
     <div data-backstop="subheading-sans">
       <h3>Subheading Sans</h3>
       <cdr-text
@@ -72,7 +61,6 @@ export default {
         sans: [200, 300, 400, 500, 600],
       },
       subheading: {
-        serif: [300, 400, 500, 600],
         sans: [300, 400, 500, 600],
       },
     };
