@@ -142,12 +142,6 @@ h6.cdr-text.cdr-text,
       &-500 { @include cdr-text-subheading-sans-500; }
       &-600 { @include cdr-text-subheading-sans-600; }
     }
-    &--serif {
-      &-300 { @include cdr-text-subheading-serif-300; }
-      &-400 { @include cdr-text-subheading-serif-400; }
-      &-500 { @include cdr-text-subheading-serif-500; }
-      &-600 { @include cdr-text-subheading-serif-600; }
-    }
   }
 
   @include xs-mq-only {
@@ -189,12 +183,6 @@ h6.cdr-text.cdr-text,
         &-400\@xs { @include cdr-text-subheading-sans-400; }
         &-500\@xs { @include cdr-text-subheading-sans-500; }
         &-600\@xs { @include cdr-text-subheading-sans-600; }
-      }
-      &--serif {
-        &-300\@xs { @include cdr-text-subheading-serif-300; }
-        &-400\@xs { @include cdr-text-subheading-serif-400; }
-        &-500\@xs { @include cdr-text-subheading-serif-500; }
-        &-600\@xs { @include cdr-text-subheading-serif-600; }
       }
     }
   }
@@ -239,12 +227,6 @@ h6.cdr-text.cdr-text,
         &-500\@sm { @include cdr-text-subheading-sans-500; }
         &-600\@sm { @include cdr-text-subheading-sans-600; }
       }
-      &--serif {
-        &-300\@sm { @include cdr-text-subheading-serif-300; }
-        &-400\@sm { @include cdr-text-subheading-serif-400; }
-        &-500\@sm { @include cdr-text-subheading-serif-500; }
-        &-600\@sm { @include cdr-text-subheading-serif-600; }
-      }
     }
   }
 
@@ -288,12 +270,6 @@ h6.cdr-text.cdr-text,
         &-500\@md { @include cdr-text-subheading-sans-500; }
         &-600\@md { @include cdr-text-subheading-sans-600; }
       }
-      &--serif {
-        &-300\@md { @include cdr-text-subheading-serif-300; }
-        &-400\@md { @include cdr-text-subheading-serif-400; }
-        &-500\@md { @include cdr-text-subheading-serif-500; }
-        &-600\@md { @include cdr-text-subheading-serif-600; }
-      }
     }
   }
 
@@ -336,12 +312,6 @@ h6.cdr-text.cdr-text,
         &-400\@lg { @include cdr-text-subheading-sans-400; }
         &-500\@lg { @include cdr-text-subheading-sans-500; }
         &-600\@lg { @include cdr-text-subheading-sans-600; }
-      }
-      &--serif {
-        &-300\@lg { @include cdr-text-subheading-serif-300; }
-        &-400\@lg { @include cdr-text-subheading-serif-400; }
-        &-500\@lg { @include cdr-text-subheading-serif-500; }
-        &-600\@lg { @include cdr-text-subheading-serif-600; }
       }
     }
   }
