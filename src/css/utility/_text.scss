@@ -110,25 +110,6 @@ h6.cdr-text.cdr-text,
       &-400 { @include cdr-text-heading-sans-400; }
       &-500 { @include cdr-text-heading-sans-500; }
       &-600 { @include cdr-text-heading-sans-600; }
-      &-700 { @include cdr-text-heading-sans-700; }
-      &-800 { @include cdr-text-heading-sans-800; }
-      &-900 { @include cdr-text-heading-sans-900; }
-      &-1000 { @include cdr-text-heading-sans-1000; }
-      &-1100 { @include cdr-text-heading-sans-1100; }
-      &-1200 { @include cdr-text-heading-sans-1200; }
-      &--strong {
-        &-200 { @include cdr-text-heading-sans-strong-200; }
-        &-300 { @include cdr-text-heading-sans-strong-300; }
-        &-400 { @include cdr-text-heading-sans-strong-400; }
-        &-500 { @include cdr-text-heading-sans-strong-500; }
-        &-600 { @include cdr-text-heading-sans-strong-600; }
-        &-700 { @include cdr-text-heading-sans-strong-700; }
-        &-800 { @include cdr-text-heading-sans-strong-800; }
-        &-900 { @include cdr-text-heading-sans-strong-900; }
-        &-1000 { @include cdr-text-heading-sans-strong-1000; }
-        &-1100 { @include cdr-text-heading-sans-strong-1100; }
-        &-1200 { @include cdr-text-heading-sans-strong-1200; }
-      }
     }
     &--serif {
       &-200 { @include cdr-text-heading-serif-200; }
@@ -143,10 +124,6 @@ h6.cdr-text.cdr-text,
       &-1100 { @include cdr-text-heading-serif-1100; }
       &-1200 { @include cdr-text-heading-serif-1200; }
       &--strong {
-        &-200 { @include cdr-text-heading-serif-strong-200; }
-        &-300 { @include cdr-text-heading-serif-strong-300; }
-        &-400 { @include cdr-text-heading-serif-strong-400; }
-        &-500 { @include cdr-text-heading-serif-strong-500; }
         &-600 { @include cdr-text-heading-serif-strong-600; }
         &-700 { @include cdr-text-heading-serif-strong-700; }
         &-800 { @include cdr-text-heading-serif-strong-800; }
@@ -181,25 +158,6 @@ h6.cdr-text.cdr-text,
         &-400\@xs { @include cdr-text-heading-sans-400; }
         &-500\@xs { @include cdr-text-heading-sans-500; }
         &-600\@xs { @include cdr-text-heading-sans-600; }
-        &-700\@xs { @include cdr-text-heading-sans-700; }
-        &-800\@xs { @include cdr-text-heading-sans-800; }
-        &-900\@xs { @include cdr-text-heading-sans-900; }
-        &-1000\@xs { @include cdr-text-heading-sans-1000; }
-        &-1100\@xs { @include cdr-text-heading-sans-1100; }
-        &-1200\@xs { @include cdr-text-heading-sans-1200; }
-        &--strong {
-          &-200 { @include cdr-text-heading-sans-strong-200; }
-          &-300 { @include cdr-text-heading-sans-strong-300; }
-          &-400 { @include cdr-text-heading-sans-strong-400; }
-          &-500 { @include cdr-text-heading-sans-strong-500; }
-          &-600 { @include cdr-text-heading-sans-strong-600; }
-          &-700 { @include cdr-text-heading-sans-strong-700; }
-          &-800 { @include cdr-text-heading-sans-strong-800; }
-          &-900 { @include cdr-text-heading-sans-strong-900; }
-          &-1000 { @include cdr-text-heading-sans-strong-1000; }
-          &-1100 { @include cdr-text-heading-sans-strong-1100; }
-          &-1200 { @include cdr-text-heading-sans-strong-1200; }
-        }
       }
       &--serif {
         &-200\@xs { @include cdr-text-heading-serif-200; }
@@ -214,10 +172,6 @@ h6.cdr-text.cdr-text,
         &-1100\@xs { @include cdr-text-heading-serif-1100; }
         &-1200\@xs { @include cdr-text-heading-serif-1200; }
         &--strong {
-          &-200 { @include cdr-text-heading-serif-strong-200; }
-          &-300 { @include cdr-text-heading-serif-strong-300; }
-          &-400 { @include cdr-text-heading-serif-strong-400; }
-          &-500 { @include cdr-text-heading-serif-strong-500; }
           &-600 { @include cdr-text-heading-serif-strong-600; }
           &-700 { @include cdr-text-heading-serif-strong-700; }
           &-800 { @include cdr-text-heading-serif-strong-800; }
@@ -253,25 +207,6 @@ h6.cdr-text.cdr-text,
         &-400\@sm { @include cdr-text-heading-sans-400; }
         &-500\@sm { @include cdr-text-heading-sans-500; }
         &-600\@sm { @include cdr-text-heading-sans-600; }
-        &-700\@sm { @include cdr-text-heading-sans-700; }
-        &-800\@sm { @include cdr-text-heading-sans-800; }
-        &-900\@sm { @include cdr-text-heading-sans-900; }
-        &-1000\@sm { @include cdr-text-heading-sans-1000; }
-        &-1100\@sm { @include cdr-text-heading-sans-1100; }
-        &-1200\@sm { @include cdr-text-heading-sans-1200; }
-        &--strong {
-          &-200 { @include cdr-text-heading-sans-strong-200; }
-          &-300 { @include cdr-text-heading-sans-strong-300; }
-          &-400 { @include cdr-text-heading-sans-strong-400; }
-          &-500 { @include cdr-text-heading-sans-strong-500; }
-          &-600 { @include cdr-text-heading-sans-strong-600; }
-          &-700 { @include cdr-text-heading-sans-strong-700; }
-          &-800 { @include cdr-text-heading-sans-strong-800; }
-          &-900 { @include cdr-text-heading-sans-strong-900; }
-          &-1000 { @include cdr-text-heading-sans-strong-1000; }
-          &-1100 { @include cdr-text-heading-sans-strong-1100; }
-          &-1200 { @include cdr-text-heading-sans-strong-1200; }
-        }
       }
       &--serif {
         &-200\@sm { @include cdr-text-heading-serif-200; }
@@ -286,10 +221,6 @@ h6.cdr-text.cdr-text,
         &-1100\@sm { @include cdr-text-heading-serif-1100; }
         &-1200\@sm { @include cdr-text-heading-serif-1200; }
         &--strong {
-          &-200 { @include cdr-text-heading-serif-strong-200; }
-          &-300 { @include cdr-text-heading-serif-strong-300; }
-          &-400 { @include cdr-text-heading-serif-strong-400; }
-          &-500 { @include cdr-text-heading-serif-strong-500; }
           &-600 { @include cdr-text-heading-serif-strong-600; }
           &-700 { @include cdr-text-heading-serif-strong-700; }
           &-800 { @include cdr-text-heading-serif-strong-800; }
@@ -325,25 +256,6 @@ h6.cdr-text.cdr-text,
         &-400\@md { @include cdr-text-heading-sans-400; }
         &-500\@md { @include cdr-text-heading-sans-500; }
         &-600\@md { @include cdr-text-heading-sans-600; }
-        &-700\@md { @include cdr-text-heading-sans-700; }
-        &-800\@md { @include cdr-text-heading-sans-800; }
-        &-900\@md { @include cdr-text-heading-sans-900; }
-        &-1000\@md { @include cdr-text-heading-sans-1000; }
-        &-1100\@md { @include cdr-text-heading-sans-1100; }
-        &-1200\@md { @include cdr-text-heading-sans-1200; }
-        &--strong {
-          &-200 { @include cdr-text-heading-sans-strong-200; }
-          &-300 { @include cdr-text-heading-sans-strong-300; }
-          &-400 { @include cdr-text-heading-sans-strong-400; }
-          &-500 { @include cdr-text-heading-sans-strong-500; }
-          &-600 { @include cdr-text-heading-sans-strong-600; }
-          &-700 { @include cdr-text-heading-sans-strong-700; }
-          &-800 { @include cdr-text-heading-sans-strong-800; }
-          &-900 { @include cdr-text-heading-sans-strong-900; }
-          &-1000 { @include cdr-text-heading-sans-strong-1000; }
-          &-1100 { @include cdr-text-heading-sans-strong-1100; }
-          &-1200 { @include cdr-text-heading-sans-strong-1200; }
-        }
       }
       &--serif {
         &-200\@md { @include cdr-text-heading-serif-200; }
@@ -358,10 +270,6 @@ h6.cdr-text.cdr-text,
         &-1100\@md { @include cdr-text-heading-serif-1100; }
         &-1200\@md { @include cdr-text-heading-serif-1200; }
         &--strong {
-          &-200 { @include cdr-text-heading-serif-strong-200; }
-          &-300 { @include cdr-text-heading-serif-strong-300; }
-          &-400 { @include cdr-text-heading-serif-strong-400; }
-          &-500 { @include cdr-text-heading-serif-strong-500; }
           &-600 { @include cdr-text-heading-serif-strong-600; }
           &-700 { @include cdr-text-heading-serif-strong-700; }
           &-800 { @include cdr-text-heading-serif-strong-800; }
@@ -397,25 +305,6 @@ h6.cdr-text.cdr-text,
         &-400\@lg { @include cdr-text-heading-sans-400; }
         &-500\@lg { @include cdr-text-heading-sans-500; }
         &-600\@lg { @include cdr-text-heading-sans-600; }
-        &-700\@lg { @include cdr-text-heading-sans-700; }
-        &-800\@lg { @include cdr-text-heading-sans-800; }
-        &-900\@lg { @include cdr-text-heading-sans-900; }
-        &-1000\@lg { @include cdr-text-heading-sans-1000; }
-        &-1100\@lg { @include cdr-text-heading-sans-1100; }
-        &-1200\@lg { @include cdr-text-heading-sans-1200; }
-        &--strong {
-          &-200 { @include cdr-text-heading-sans-strong-200; }
-          &-300 { @include cdr-text-heading-sans-strong-300; }
-          &-400 { @include cdr-text-heading-sans-strong-400; }
-          &-500 { @include cdr-text-heading-sans-strong-500; }
-          &-600 { @include cdr-text-heading-sans-strong-600; }
-          &-700 { @include cdr-text-heading-sans-strong-700; }
-          &-800 { @include cdr-text-heading-sans-strong-800; }
-          &-900 { @include cdr-text-heading-sans-strong-900; }
-          &-1000 { @include cdr-text-heading-sans-strong-1000; }
-          &-1100 { @include cdr-text-heading-sans-strong-1100; }
-          &-1200 { @include cdr-text-heading-sans-strong-1200; }
-        }
       }
       &--serif {
         &-200\@lg { @include cdr-text-heading-serif-200; }
@@ -430,10 +319,6 @@ h6.cdr-text.cdr-text,
         &-1100\@lg { @include cdr-text-heading-serif-1100; }
         &-1200\@lg { @include cdr-text-heading-serif-1200; }
         &--strong {
-          &-200 { @include cdr-text-heading-serif-strong-200; }
-          &-300 { @include cdr-text-heading-serif-strong-300; }
-          &-400 { @include cdr-text-heading-serif-strong-400; }
-          &-500 { @include cdr-text-heading-serif-strong-500; }
           &-600 { @include cdr-text-heading-serif-strong-600; }
           &-700 { @include cdr-text-heading-serif-strong-700; }
           &-800 { @include cdr-text-heading-serif-strong-800; }
