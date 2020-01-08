@@ -14,6 +14,11 @@ export default {
       type: Boolean,
       default: true,
     },
+    // can't use fullWidth mixin because its default is false :(
+    fullWidth: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
@@ -27,6 +32,7 @@ export default {
         [this.style[this.baseClass]]: true,
         [this.modifyClassName(this.baseClass, 'striped')]: this.striped,
         [this.modifyClassName(this.baseClass, 'border')]: this.border,
+        [this.modifyClassName(this.baseClass, 'full-width')]: this.fullWidth,
       };
     },
   },

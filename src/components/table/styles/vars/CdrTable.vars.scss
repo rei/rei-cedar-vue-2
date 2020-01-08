@@ -85,3 +85,7 @@
     }
   }
 }
+
+@mixin cdr-table-full-width() {
+  width: 100%;
+}
