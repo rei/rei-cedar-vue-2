@@ -23720,6 +23720,7 @@ var cedar = (function () {
 
         switch (key) {
           case 'Escape':
+          case 'Esc':
             this.onClick();
             break;
         }
