@@ -24,21 +24,11 @@
     <div data-backstop="heading-serif-strong">
       <h3>Heading Serif Strong</h3>
       <cdr-text
-        v-for="level in heading.serif"
+        v-for="level in heading.serifStrong"
         :modifier="`heading--serif--strong-${level}`"
         :key="`heading--serif--strong-${level}`"
       >
         Heading Serif Strong {{ level }}
-      </cdr-text>
-    </div>
-    <div data-backstop="heading-sans-strong">
-      <h3>Heading Sans Strong</h3>
-      <cdr-text
-        v-for="level in heading.sans"
-        :modifier="`heading--sans--strong-${level}`"
-        :key="`heading--sans--strong-${level}`"
-      >
-        Heading Sans Strong {{ level }}
       </cdr-text>
     </div>
 
@@ -78,7 +68,8 @@ export default {
     return {
       heading: {
         serif: [200, 300, 400, 500, 600, 700, 800, 900, 1100, 1200],
-        sans: [200, 300, 400, 500, 600, 700, 800, 900, 1100, 1200],
+        serifStrong: [600, 700, 800, 900, 1100, 1200],
+        sans: [200, 300, 400, 500, 600],
       },
       subheading: {
         serif: [300, 400, 500, 600],
