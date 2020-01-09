@@ -2,7 +2,7 @@
   <div class="accordion-container">
     <cdr-text
       tag="h2"
-      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Accordion
     </cdr-text>
@@ -10,7 +10,7 @@
     <div class="accordion-group">
       <cdr-text
         tag="h3"
-        modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Default
       </cdr-text>
@@ -29,7 +29,7 @@
             This is some text. It's in a
             <cdr-text
               tag="strong"
-              modifier="body--strong-300"
+              modifier="body-strong-300"
             >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
             thats how you assign the correct font and line-height for text dislpay on REI.
             does not include margin or add space to the container. Lorem ipsum dolor
@@ -66,7 +66,7 @@
     <div class="accordion-group">
       <cdr-text
         tag="h3"
-        modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Border-Aligned and data driven
       </cdr-text>
@@ -90,7 +90,7 @@
     <div class="accordion-group">
       <cdr-text
         tag="h3"
-        modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Compact
       </cdr-text>

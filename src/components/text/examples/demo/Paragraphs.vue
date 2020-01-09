@@ -30,9 +30,9 @@
       <cdr-text
         v-for="strongaragraph in paragraphs"
         :key="strongaragraph"
-        :modifier="`body--strong-${strongaragraph}`"
+        :modifier="`body-strong-${strongaragraph}`"
       >
-        body--strong-{{ paragraph }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
+        body-strong-{{ paragraph }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
         donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
         mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
@@ -61,9 +61,9 @@
       <cdr-text
         v-for="utilitystrong in utilities"
         :key="utilitystrong"
-        :modifier="`utility--strong-${utilitystrong}`"
+        :modifier="`utility-strong-${utilitystrong}`"
       >
-        utility--strong-{{ utilitystrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
+        utility-strong-{{ utilitystrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
         donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
         mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
@@ -91,9 +91,9 @@
       <cdr-text
         v-for="utilityserifstrong in utilities"
         :key="utilityserifstrong"
-        :modifier="`utility--serif--strong-${utilityserifstrong}`"
+        :modifier="`utility--serif-strong-${utilityserifstrong}`"
       >
-        utility--serif--strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
+        utility--serif-strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
         donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
         mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
@@ -107,13 +107,13 @@
       <cdr-text
         v-for="utilityserifstrong in utilities"
         :key="utilityserifstrong"
-        :modifier="`utility--serif--strong-${utilityserifstrong}`"
+        :modifier="`utility--serif-strong-${utilityserifstrong}`"
       >
         <cdr-text
           modifier="italic"
           tag="em"
         >
-          cdr-text--italic wrapping utility--serif--strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
+          cdr-text--italic wrapping utility--serif-strong-{{ utilityserifstrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
           congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
           donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
           mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
@@ -132,9 +132,9 @@
         example of
         <cdr-text
           tag="strong"
-          :modifier="`body--strong-${paragraph}`"
+          :modifier="`body-strong-${paragraph}`"
         >
-          body--strong-{{ paragraph }},
+          body-strong-{{ paragraph }},
         </cdr-text>
         <cdr-text
           tag="strong"
@@ -167,9 +167,9 @@
         example of
         <cdr-text
           tag="strong"
-          :modifier="`utility--strong-${utility}`"
+          :modifier="`utility-strong-${utility}`"
         >
-          utility--strong-{{ utility }},
+          utility-strong-{{ utility }},
         </cdr-text>
         <cdr-text
           tag="strong"

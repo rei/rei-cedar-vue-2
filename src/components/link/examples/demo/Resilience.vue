@@ -3,7 +3,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading--serif-600 heading--serif-700@md heading--serif-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Resilience Tests
     </cdr-text>
@@ -109,7 +109,7 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading--serif-500 heading--serif-600@md heading--serif-600@lg"
+      modifier="heading-serif-500 heading-serif-600@md heading-serif-600@lg"
     >
       Typography validation -
     </cdr-text>
@@ -123,7 +123,7 @@
         item text
         <cdr-text
           tag="span"
-          :modifier="`body--strong-${p1}`"
+          :modifier="`body-strong-${p1}`"
         >
           sit amet,
         </cdr-text>
@@ -139,7 +139,7 @@
         item text
         <cdr-text
           tag="span"
-          :modifier="`utility--strong-${u1}`"
+          :modifier="`utility-strong-${u1}`"
         >
           sit amet,
         </cdr-text>
@@ -149,7 +149,7 @@
     <cdr-text
       v-for="u2 in utilities"
       :key="u2"
-      :modifier="`utility--strong-${u2}`"
+      :modifier="`utility-strong-${u2}`"
     >
       <cdr-link>
         <cdr-icon
@@ -177,7 +177,7 @@
           />
           <cdr-text
             tag="span"
-            :modifier="`utility--strong-${u1}`"
+            :modifier="`utility-strong-${u1}`"
           >
             Icon on the left
           </cdr-text>
@@ -191,7 +191,7 @@
         <cdr-link>
           <cdr-text
             tag="span"
-            :modifier="`utility--strong-${u1}`"
+            :modifier="`utility-strong-${u1}`"
           >
             Icon on the right
           </cdr-text>
@@ -217,7 +217,7 @@
           />
           <cdr-text
             tag="span"
-            :modifier="`utility--strong-${u1}`"
+            :modifier="`utility-strong-${u1}`"
           >
             Icons on both sides
           </cdr-text>
