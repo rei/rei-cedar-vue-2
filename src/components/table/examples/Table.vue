@@ -211,10 +211,12 @@
     <cdr-table>
       <thead>
         <tr>
-          <th>Test head</th>
-          <th>Test head</th>
-          <th>Test head</th>
-          <th>Test head</th>
+          <th colspan="2">
+            Test head
+          </th>
+          <th colspan="2">
+            Test head
+          </th>
         </tr>
         <tr>
           <th>Test head</th>
