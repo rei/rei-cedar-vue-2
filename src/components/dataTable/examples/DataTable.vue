@@ -2,7 +2,7 @@
   <div data-backstop="DataTable">
     <cdr-text
       tag="h2"
-      modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
     >
       Tables
     </cdr-text>

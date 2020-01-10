@@ -3,7 +3,7 @@
   <div data-backstop="caption">
     <cdr-text
       tag="h2"
-      modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
     >
       Caption
     </cdr-text>
@@ -15,7 +15,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading--sans-300"
+      modifier="subheading-sans-300"
     >
       Summary only
     </cdr-text>
@@ -25,7 +25,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading--sans-300"
+      modifier="subheading-sans-300"
     >
       Caption only
     </cdr-text>
@@ -35,7 +35,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="subheading--sans-300"
+      modifier="subheading-sans-300"
     >
       In a figure
     </cdr-text>
