@@ -53,7 +53,7 @@ $cdr-select-base-box-shadow-focus: inset 0 0 0 1px $cdr-color-border-selected-li
 @mixin cdr-select-base-prompt-text-mixin() {
   @include cdr-text-utility-300;
 }
-$cdr-select-base-prompt-font-style: italic;
+$cdr-select-base-prompt-font-style: normal;
 $cdr-select-base-prompt-color: $cdr-color-text-form-placeholder-lightmode;
 
 @mixin cdr-select-base-mixin() {
