@@ -63,6 +63,27 @@
       <li>List item text</li>
     </cdr-list>
 
+    <cdr-list
+      modifier="inline unordered"
+      space="cdr-mb-space-two-x"
+    >
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+    </cdr-list>
+
     <cdr-text
       tag="h4"
       modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
