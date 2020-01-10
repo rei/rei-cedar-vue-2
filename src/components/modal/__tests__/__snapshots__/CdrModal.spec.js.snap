@@ -36,7 +36,7 @@ exports[`CdrModal.vue renders correctly 1`] = `
                 class="cdr-modal__title"
               >
                 <cdr-text-stub
-                  modifier="heading--serif-600"
+                  modifier="heading-serif-600"
                   space=""
                   tag="h1"
                 >

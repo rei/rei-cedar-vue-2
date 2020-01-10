@@ -8,7 +8,7 @@
     >
       <cdr-text
         tag="h3"
-        modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         {{ section.title }}
       </cdr-text>
@@ -27,7 +27,7 @@
     <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Secondary Anchor
       </cdr-text>

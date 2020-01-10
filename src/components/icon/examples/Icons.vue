@@ -5,7 +5,7 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
     >
       Icons
     </cdr-text>
@@ -30,7 +30,7 @@
 
     <cdr-text
       tag="h3"
-      modifier="heading--sans-400 heading--sans-500@md heading--sans-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
     >
       Default icon size
     </cdr-text>
