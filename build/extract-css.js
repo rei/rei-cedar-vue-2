@@ -23,6 +23,12 @@ buildCss({
   scopeClasses: false,
 });
 
+buildCss({
+  srcPath: './src/css/deprecated/_index.scss',
+  outPath: './dist/style/deprecated-utilities.css',
+  scopeClasses: false,
+});
+
 // Create individual utility outputs
 const utilities = glob.sync('./src/css/utility/*.scss')
   .map((path) => {
