@@ -1,18 +1,32 @@
 <template>
-  <div>
-    <div class="button-example cdr-space-inset-one-x">
+  <div data-backstop="buttons">
+    <div
+      class="button-example cdr-space-inset-one-x"
+      data-backstop="cdr-button--icon"
+    >
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400"
       >
         CdrButton + CdrIcon Comps
       </cdr-text>
       <cdr-button
+        size="large"
+        space="cdr-mr-space-one-x"
+      >
+        <cdr-icon
+          use="#check-lg"
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+        Large and Icon
+      </cdr-button>
+      <cdr-button
         tag="a"
         href="https://rei.com"
         size="large"
-        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
-        data-backstop="cdr-button--icon"
+        space="cdr-mr-space-one-x"
       >
         <cdr-icon
           use="#check-lg"
@@ -25,7 +39,7 @@
 
       <cdr-button
         size="medium"
-        space="cdr-mb-space-one-x@xs cdr-mb-space-one-x@sm cdr-mr-space-one-x"
+        space="cdr-mr-space-one-x"
       >
         <cdr-icon
           use="#check-lg"
@@ -63,7 +77,7 @@
     <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400"
       >
         Using a sprite
       </cdr-text>
@@ -170,7 +184,7 @@
     <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Icon only button
       </cdr-text>
@@ -179,6 +193,7 @@
         :full-width="true"
         size="small"
         aria-label="Check our Twitter feed"
+        data-backstop="cdr-button--icon-only"
       >
         <cdr-icon
           use="#twitter"
@@ -222,12 +237,25 @@
           class="cdr-button__icon"
         />
       </cdr-button>
+      <cdr-button
+        :icon-only="true"
+        aria-label="Play"
+        disabled
+      >
+        <cdr-icon
+          use="#play"
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+      </cdr-button>
     </div>
     <div class="button-example cdr-space-inset-one-x dark">
       <cdr-button
         :icon-only="true"
         :on-dark="true"
         aria-label="A Twitter button"
+        data-backstop="cdr-button--icon-only-dark"
       >
         <cdr-icon
           use="#twitter"
@@ -266,6 +294,19 @@
         icon-only
         on-dark
         aria-label="Play"
+      >
+        <cdr-icon
+          use="#play"
+          inherit-color
+          slot="icon"
+          class="cdr-button__icon"
+        />
+      </cdr-button>
+      <cdr-button
+        icon-only
+        on-dark
+        aria-label="Play"
+        disabled
       >
         <cdr-icon
           use="#play"

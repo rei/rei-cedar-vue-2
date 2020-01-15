@@ -4,6 +4,18 @@ import IconCaretRight from '../icon/comps/caret-right';
 import CdrSelect from '../select/CdrSelect';
 import style from './styles/CdrPagination.scss';
 
+const hasWindowSupport = typeof window !== 'undefined';
+const w = hasWindowSupport ? window : {};
+const requestAF = w.requestAnimationFrame
+  || w.webkitRequestAnimationFrame
+  || w.mozRequestAnimationFrame
+  || w.msRequestAnimationFrame
+  || w.oRequestAnimationFrame
+  // Fallback, but not a true polyfill
+  // Only needed for Opera Mini
+  /* istanbul ignore next */
+  || (cb => setTimeout(cb, 16));
+
 export default {
   name: 'CdrPagination',
   components: {
@@ -26,7 +38,7 @@ export default {
     pages: {
       type: Array,
       required: true,
-      validator: /* istanbul ignore next */ (value) => {
+      validator: (value) => {
         const result = value.every((obj) => {
           if (!Object.prototype.hasOwnProperty.call(obj, 'page')
           || typeof obj.page !== 'number') {
@@ -49,11 +61,23 @@ export default {
   },
   data() {
     return {
-      currentUrl: '',
       style,
+      componentID: Math.random().toString(36).substr(2, 9),
     };
   },
   computed: {
+    // track value internally (for use with select vmodel) and update external value when internal changes
+    innerValue: {
+      get() {
+        return this.value;
+      },
+      set(newValue) {
+        this.$emit('input', newValue);
+      },
+    },
+    currentUrl() {
+      return this.pages[this.currentIdx].url;
+    },
     totalPageData() {
       return this.pages.length;
     },
@@ -64,7 +88,7 @@ export default {
       return this.currentIdx + 1;
     },
     currentIdx() {
-      return this.pages.map(x => x.page).indexOf(this.value);
+      return this.pages.map(x => x.page).indexOf(this.innerValue);
     },
     /**
      * Creates an array of the pages that should be shown as links with logic for truncation.
@@ -87,7 +111,7 @@ export default {
      */
     paginationData() {
       const total = this.totalPageData;
-      const current = this.value;
+      const current = this.innerValue;
       const delta = 1;
       let range = [];
       let over5 = true;
@@ -131,30 +155,34 @@ export default {
       return range;
     },
     prevElAttrs() {
+      const prevPageData = this.pages[this.prevPageIdx];
       return {
-        class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__prev']),
-        href: this.pages[this.prevPageIdx].url,
-        page: this.pages[this.prevPageIdx].page,
-        'aria-label': 'Go to previous Page',
-        ref: 'prev-link',
+        // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
+        attrs: {
+          class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__prev']),
+          'aria-label': 'Go to previous Page',
+          ref: `prev-link-${this.componentID}`,
+        },
+        // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
+        href: prevPageData === undefined ? null : prevPageData.url,
+        page: prevPageData === undefined ? null : prevPageData.page,
         content: 'Prev',
         iconClass: this.style['cdr-pagination__caret--prev'],
         iconComponent: 'icon-caret-left',
         iconPath: '#caret-left',
+        click: e => this.navigate(prevPageData.page, e),
       };
     },
     prevEl() {
-      return this.value > this.pages[0].page ? (
+      return this.innerValue > this.pages[0].page ? (
         <li>
           {this.$scopedSlots.prevLink
             ? this.$scopedSlots.prevLink(this.prevElAttrs)
             : (<a
-              class={this.prevElAttrs.class}
+              {... { attrs: this.prevElAttrs.attrs }}
               href={this.prevElAttrs.href}
-              page={this.prevElAttrs.page}
-              aria-label={this.prevElAttrs['aria-label']}
-              ref={this.prevElAttrs.ref}
-              onClick={e => this.navigate(this.prevElAttrs.page, e)}
+              ref={this.prevElAttrs.attrs.ref}
+              onClick={this.prevElAttrs.click}
             >
               <this.prevElAttrs.iconComponent
                 class={this.prevElAttrs.iconClass}
@@ -163,33 +191,52 @@ export default {
             </a>)
           }
         </li>
-      ) : '';
+      ) : (
+        <li aria-hidden="true">
+          <span
+            class={[
+              this.prevElAttrs.attrs.class,
+              clsx(this.style['cdr-pagination__link--disabled']),
+            ]}
+          >
+            <this.prevElAttrs.iconComponent
+              class={this.prevElAttrs.iconClass}
+              inherit-color
+            />
+            {this.prevElAttrs.content}
+          </span>
+        </li>
+      );
     },
     nextElAttrs() {
+      const nextPageData = this.pages[this.nextPageIdx];
       return {
-        class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__next']),
-        href: this.pages[this.nextPageIdx].url,
-        page: this.pages[this.nextPageIdx].page,
-        'aria-label': 'Go to next page',
-        ref: 'next-link',
+        // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
+        attrs: {
+          class: clsx(this.style['cdr-pagination__link'], this.style['cdr-pagination__next']),
+          'aria-label': 'Go to next page',
+          ref: `next-link-${this.componentID}`,
+        },
+        // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
+        href: nextPageData === undefined ? null : nextPageData.url,
+        page: nextPageData === undefined ? null : nextPageData.page,
         content: 'Next',
         iconClass: this.style['cdr-pagination__caret--next'],
         iconComponent: 'icon-caret-right',
         iconPath: '#caret-right',
+        click: e => this.navigate(nextPageData.page, e),
       };
     },
     nextEl() {
-      return this.value < this.pages[this.totalPageData - 1].page ? (
+      return this.innerValue < this.pages[this.totalPageData - 1].page ? (
         <li>
           {this.$scopedSlots.nextLink
             ? this.$scopedSlots.nextLink(this.nextElAttrs)
             : (<a
-              class={this.nextElAttrs.class}
+              {... { attrs: this.nextElAttrs.attrs }}
               href={this.nextElAttrs.href}
-              page={this.nextElAttrs.page}
-              aria-label={this.nextElAttrs['aria-label']}
-              ref={this.nextElAttrs.ref}
-              onClick={e => this.navigate(this.nextElAttrs.page, e)}
+              ref={this.nextElAttrs.attrs.ref}
+              onClick={this.nextElAttrs.click}
             >
               {this.nextElAttrs.content}
               <this.nextElAttrs.iconComponent
@@ -199,7 +246,22 @@ export default {
           }
 
         </li>
-      ) : '';
+      ) : (
+        <li aria-hidden="true">
+          <span
+            class={[
+              this.nextElAttrs.attrs.class,
+              clsx(this.style['cdr-pagination__link--disabled']),
+            ]}
+            >
+            {this.nextElAttrs.content}
+            <this.nextElAttrs.iconComponent
+              class={this.nextElAttrs.iconClass}
+              inherit-color
+            />
+          </span>
+        </li>
+      );
     },
     desktopEl() {
       return this.paginationData.map(n => (
@@ -221,17 +283,17 @@ export default {
       return (
         <li class={this.style['cdr-pagination__li--select']}>
           <cdr-select
-            vModel={this.currentUrl}
+            vModel_number={this.innerValue}
             label="Navigate to page"
             hide-label
             onChange={this.select}
-            class={this.style['cdr-pagination__select']}
-            ref="select"
+            ref={`select-${this.componentID}`}
+            id={`select-${this.componentID}`}
           >
             {this.paginationData.map(n => n !== '&hellip;'
               && (<option
                 key={`${n}-${this.guid()}`}
-                value={n.url}
+                value={n.page}
               >
                 Page { n.page }{ this.totalPages === null ? '' : ` of ${this.totalPages}` }
               </option>))}
@@ -240,24 +302,44 @@ export default {
       );
     },
   },
-  watch: {
-    value() {
-      this.currentUrl = this.pages[this.currentIdx].url;
-    },
-  },
-  mounted() {
-    this.currentUrl = this.pages[this.currentIdx].url;
-  },
   methods: {
-    navigate(num, e) {
-      this.$emit('change', num, e);
-      this.$emit('input', num, e);
+    navigate(pageNum, e) {
+      // Dont do anything if clicking the current active page
+      if (pageNum === this.innerValue) {
+        return;
+      }
+      requestAF(() => {
+        // Update the v-model
+        // Done in in requestAF() to allow browser to complete the
+        // native browser click handling of a link
+        this.innerValue = pageNum;
+        this.$emit('navigate', pageNum, this.currentUrl, e);
+      });
+      this.$nextTick(() => {
+        // Done in a nextTick() to ensure rendering complete
+        try {
+          // Emulate native link click page reloading behaviour by blurring the
+          // paginator and returning focus to the document
+          const target = e.currentTarget || e.target;
+          target.blur();
+        } catch (err) {
+          // eslint-disable-next-line no-console
+          console.error(err);
+        }
+      });
     },
-    select(url, e) {
-      const idx = this.pages.map(x => x.url).indexOf(url);
-      const n = this.pages[idx].page;
-      this.$emit('select-change', url, e);
-      this.navigate(n, e);
+    select(page, e) {
+      e.preventDefault();
+      if (this.$scopedSlots.link) {
+        const ref = this.$scopedSlots.link()[0].context.$refs[`page-link-${page}-${this.componentID}`]; // eslint-disable-line max-len
+        if (ref.$el) { // it's a component (like vue-router)
+          ref.$el.click();
+        } else { // it's standard markup
+          ref.click();
+        }
+      } else {
+        this.$refs[`page-link-${page}-${this.componentID}`].click();
+      }
     },
     guid() {
       function s4() {
@@ -268,25 +350,30 @@ export default {
       return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
     },
     renderLinkEl(n) {
-      const attrs = {
-        class: clsx(this.style['cdr-pagination__link'], { current: n.page === this.value }),
+      const linkData = {
+        // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
+        attrs: {
+          class: clsx(this.style['cdr-pagination__link'], { current: n.page === this.innerValue }),
+          'aria-label': n.page === this.innerValue
+            ? `Current page, page ${n.page}`
+            : `Go to page ${n.page}`,
+          'aria-current': n.page === this.innerValue ? 'page' : null,
+          ref: `page-link-${n.page}-${this.componentID}`,
+        },
+        // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
         href: n.url,
-        'aria-label': n.page === this.value
-          ? `Current page, page ${n.page}`
-          : `Go to page ${n.page}`,
-        'aria-current': n.page === this.value,
-        content: n.page,
+        click: e => this.navigate(n.page, e),
         page: n.page,
+        content: n.page,
       };
 
-      return (this.$scopedSlots.link ? this.$scopedSlots.link(attrs)
+      return (this.$scopedSlots.link ? this.$scopedSlots.link(linkData)
         : <a
-          class={attrs.class}
-          href={attrs.href}
-          aria-label={attrs['aria-label']}
-          aria-current={attrs['aria-current']}
-          onClick={e => this.navigate(attrs.page, e)}
-        >{ attrs.content }</a>
+          {... { attrs: linkData.attrs } }
+          href={linkData.href}
+          onClick={linkData.click}
+          ref={linkData.attrs.ref}
+        >{ linkData.content }</a>
       );
     },
   },

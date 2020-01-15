@@ -1,10 +1,11 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import { CdrIcon, IconCaretDown } from 'distdir/cedar.js';
+import CdrIcon from 'componentdir/icon/CdrIcon';
+import IconCaretDown from 'componentdir/icon/comps/caret-down'
 
-describe('CdrIcon.vue', () => {
-  it('renders a wrapping svg', () => {
-    const wrapper = shallowMount(CdrIcon, {});
-    expect(wrapper.is('svg')).toBe(true);
+describe('CdrIcon', () => {
+  test('renders correctly', () => {
+    const wrapper = mount(CdrIcon);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('adds inherit color class correctly', () => {
@@ -45,7 +46,7 @@ describe('CdrIcon.vue', () => {
   });
 
   it('accepts full SVG in slot', () => {
-    const wrapper = shallowMount(CdrIcon, {
+    const wrapper = mount(CdrIcon, {
       slots: {
         default: `<svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +59,7 @@ describe('CdrIcon.vue', () => {
       </svg>`,
       },
     });
-    expect(wrapper.is('svg')).toBe(true);
-    expect(wrapper.vm.$slots.default[0].tag).toBe('path');
+    expect(wrapper.element).toMatchSnapshot();
     expect(wrapper.classes()).toContain('my-custom-class'); // applies custom classes
     expect(wrapper.attributes('data-test')).toBe('testing'); // merges attributes
     expect(wrapper.attributes('role')).toBe('presentation'); // doesn't override 'default' attributes

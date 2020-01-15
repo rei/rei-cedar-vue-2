@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrCta renders correctly 1`] = `
+<a
+  class="cdr-cta cdr-cta--dark"
+  href="#"
+>
+  <svg
+    class="cdr-cta__icon"
+    role="presentation"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16 12a.997.997 0 0 0-.288-.702l-5.005-5.005a1 1 0 0 0-1.414 1.414L13.585 12 9.29 16.295a1 1 0 0 0 1.417 1.412l4.98-4.98A.997.997 0 0 0 16 12z"
+    />
+  </svg>
+</a>
+`;

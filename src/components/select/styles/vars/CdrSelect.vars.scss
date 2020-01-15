@@ -1,8 +1,7 @@
 
 /* select label */
 @mixin cdr-select-base-label-text-mixin() {
-  // TODO: typography token
-  @include maple-utility-20;
+  @include cdr-text-utility-200;
 }
 $cdr-select-base-label-color: $cdr-color-text-form-label-lightmode;
 $cdr-select-base-label-display: inline-block;
@@ -27,8 +26,7 @@ $cdr-select-base-label-color-disabled: $cdr-color-text-disabled-lightmode;
 
 /* select base */
 @mixin cdr-select-base-text-mixin() {
-  // TODO: typography token
-  @include redwood-display-30;
+  @include cdr-text-utility-300;
 }
 $cdr-select-base-color: $cdr-color-text-form-label-lightmode;
 $cdr-select-base-box-shadow: inset 0 0 0 1px $cdr-color-border-primary-lightmode;
@@ -53,10 +51,9 @@ $cdr-select-base-box-shadow-active: inset 0 0 0 1px $cdr-color-border-selected-l
 $cdr-select-base-box-shadow-focus: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
 
 @mixin cdr-select-base-prompt-text-mixin() {
-  // TODO: typography token
-  @include redwood-display-30;
+  @include cdr-text-utility-300;
 }
-$cdr-select-base-prompt-font-style: italic;
+$cdr-select-base-prompt-font-style: normal;
 $cdr-select-base-prompt-color: $cdr-color-text-form-placeholder-lightmode;
 
 @mixin cdr-select-base-mixin() {
@@ -136,8 +133,7 @@ $cdr-select-required-label-color: $cdr-color-text-secondary-lightmode;
 
 /* info container */
 @mixin cdr-select-info-container-text-mixin() {
-  // TODO: typography token
-  @include redwood-display-20;
+  @include cdr-text-utility-200;
 }
 $cdr-select-info-container-float: right;
 
@@ -149,18 +145,14 @@ $cdr-select-info-container-float: right;
 
 /* helper text */
 @mixin cdr-select-helper-text-text-mixin() {
-  @include redwood-display-20;
+  @include cdr-text-utility-200;
 }
 $cdr-select-helper-text-color: $cdr-color-text-secondary-lightmode;
-$cdr-select-helper-text-pl: $cdr-space-half-x;
-$cdr-select-helper-text-pt: $cdr-space-quarter-x;
 
 @mixin cdr-select-helper-text-mixin() {
   @include cdr-select-helper-text-text-mixin;
 
   color: $cdr-select-helper-text-color;
-  padding-left: $cdr-select-helper-text-pl;
-  padding-top: $cdr-select-helper-text-pt;
 }
 
 /* caret */

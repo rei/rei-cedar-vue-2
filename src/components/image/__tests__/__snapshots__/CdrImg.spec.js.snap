@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrImg renders correctly 1`] = `
+<img
+  alt="test alt"
+  class="cdr-image"
+  src="http://via.placeholder.com/350x150"
+/>
+`;
+
+exports[`CdrImg renders crop/ratio correctly 1`] = `
+<div
+  class="cdr-media-frame cdr-media-frame--square cdr-media-frame--left"
+>
+  <div
+    aria-hidden="true"
+    class="cdr-media-frame__cover cdr-media-frame__cover--crop cdr-media-frame__cover--cover"
+    style="background-image: url(http://placehold.it/1920x1080);"
+  />
+  <img
+    alt="crop left"
+    class="cdr-media-frame__image cdr-media-frame__image--hidden cdr-image"
+    src="http://placehold.it/1920x1080"
+  />
+</div>
+`;

@@ -1,23 +1,28 @@
 <template>
   <div
     class="rating-reset"
-    data-backstop="ratings"
   >
     <cdr-text
       tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Ratings
     </cdr-text>
-
-    <!-- Large Size -->
     <cdr-rating
-      rating="0"
-      count="0"
-      size="large"
+      rating="3.3"
+      count="16"
       content-priority="secondary"
-      space="cdr-space-inset-one-x"
+      href="https://www.rei.com"
+      data-backstop="rating-secondary-linked"
     />
+    <cdr-rating
+      rating="4.5"
+      count="21"
+      href="https://www.rei.com"
+      data-backstop="rating-primary-linked"
+    />
+    <!-- Large Size -->
+
 
     <cdr-rating
       rating="3"
@@ -41,6 +46,26 @@
       />
     </div>
 
+    <cdr-text>
+      0 String Count
+    </cdr-text>
+    <cdr-rating
+      rating="1.2"
+      count="0"
+    />
+    <cdr-text>
+      0 Num Count
+    </cdr-text>
+    <cdr-rating
+      rating="1.2"
+      :count="0"
+    />
+    <cdr-text>
+      no Count
+    </cdr-text>
+    <cdr-rating
+      rating="1.2"
+    />
     <!-- Default Size -->
     <cdr-rating
       rating="1.2"

@@ -5,12 +5,13 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading-400 heading-500@md heading-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
     >
       Breadcrumb
     </cdr-text>
     <cdr-breadcrumb
       :items="averageBreadcrumbItems"
+      data-backstop="breadcrumbs-ellipsis"
     />
     <cdr-text
       tag="h3"
@@ -20,6 +21,7 @@
     </cdr-text>
     <cdr-breadcrumb
       :items="shortBreadcrumbItems"
+      data-backstop="breadcrumbs-default"
     />
     <cdr-text
       tag="h3"

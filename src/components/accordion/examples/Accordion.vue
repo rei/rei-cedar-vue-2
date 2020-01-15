@@ -2,7 +2,7 @@
   <div class="accordion-container">
     <cdr-text
       tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Accordion
     </cdr-text>
@@ -10,127 +10,137 @@
     <div class="accordion-group">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Default
       </cdr-text>
-      <cdr-accordion
-        id="default"
-        :opened="accordionDefault"
-        @accordion-toggle="accordionDefault = !accordionDefault"
-      >
-        <template slot="label">
-          A short label
-        </template>
-        <cdr-text>
-          This is some text. It's in a
-          <strong>cdr-text paragraph</strong> element as
-          thats how you assign the correct font and line-height for text dislpay on REI.
-          does not include margin or add space to the container. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Sed dictum fermentum tortor posuere
-          fermentum. Sed interdum vel urna at tempor. Nullam vel sapien odio. Class
-          aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-          himenaeos. Fusce venenatis ex ut ultricies tincidunt. Suspendisse potenti.
-          Sed ut euismod mi, sit amet porta augue. Proin dictum laoreet blandit. Nulla
-          tempus tellus id ligula sodales ultrices. Proin lacus diam, ornare at libero
-          nec, eleifend vulputate mi. Praesent vestibulum accumsan erat id dapibus.
-          Suspendisse ut laoreet nunc, et tempor eros. Etiam vel commodo velit. Proin
-          egestas fringilla elit et lacinia. Praesent et vehicula massa. Fusce ac purus neque.
-        </cdr-text>
-      </cdr-accordion>
-      <cdr-accordion
-        id="default-long-label"
-        :opened="accordionDefault2"
-        @accordion-toggle="accordionDefault2 = !accordionDefault2"
-        label="Label with multiple words, so many words in fact that
-        this content may wrap to several lines"
-      >
-        <cdr-list modifier="unordered">
-          <li>This is a cdr-list item inside an accordion.</li>
-          <li>It includes no extra styling</li>
-          <li>I'm adding a bunch of items</li>
-          <li>to this list because</li>
-          <li>I want to see what it's like</li>
-          <li>when animated!</li>
-        </cdr-list>
-      </cdr-accordion>
+      <div data-backstop="accordion-default">
+        <cdr-accordion
+          id="default"
+          :opened="accordionDefault"
+          @accordion-toggle="accordionDefault = !accordionDefault"
+        >
+          <template slot="label">
+            A short label
+          </template>
+          <cdr-text
+            modifier="body-300"
+          >
+            This is some text. It's in a
+            <cdr-text
+              tag="strong"
+              modifier="body-strong-300"
+            >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
+            thats how you assign the correct font and line-height for text dislpay on REI.
+            does not include margin or add space to the container. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Sed dictum fermentum tortor posuere
+            fermentum. Sed interdum vel urna at tempor. Nullam vel sapien odio. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+            himenaeos. Fusce venenatis ex ut ultricies tincidunt. Suspendisse potenti.
+            Sed ut euismod mi, sit amet porta augue. Proin dictum laoreet blandit. Nulla
+            tempus tellus id ligula sodales ultrices. Proin lacus diam, ornare at libero
+            nec, eleifend vulputate mi. Praesent vestibulum accumsan erat id dapibus.
+            Suspendisse ut laoreet nunc, et tempor eros. Etiam vel commodo velit. Proin
+            egestas fringilla elit et lacinia. Praesent et vehicula massa. Fusce ac purus neque.
+          </cdr-text>
+        </cdr-accordion>
+        <cdr-accordion
+          id="default-long-label"
+          :opened="accordionDefault2"
+          @accordion-toggle="accordionDefault2 = !accordionDefault2"
+          label="Label with multiple words, so many words in fact that
+          this content may wrap to several lines"
+        >
+          <cdr-list modifier="unordered">
+            <li>This is a cdr-list item inside an accordion.</li>
+            <li>It includes no extra styling</li>
+            <li>I'm adding a bunch of items</li>
+            <li>to this list because</li>
+            <li>I want to see what it's like</li>
+            <li>when animated!</li>
+          </cdr-list>
+        </cdr-accordion>
+      </div>
     </div>
 
     <div class="accordion-group">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Border-Aligned and data driven
       </cdr-text>
-      <cdr-accordion
-        v-for="(item, index) in grouped"
-        :id="item.id"
-        :border-aligned="true"
-        :opened="item.opened"
-        :key="item.id"
-        @accordion-toggle="updateGroup(index)"
-      >
-        <template slot="label">
-          {{ item.label }}
-        </template>
-        {{ item.content }}
-      </cdr-accordion>
+      <div data-backstop="accordion-border-aligned">
+        <cdr-accordion
+          v-for="(item, index) in grouped"
+          :id="item.id"
+          :border-aligned="true"
+          :opened="item.opened"
+          :key="item.id"
+          @accordion-toggle="updateGroup(index)"
+        >
+          <template slot="label">
+            {{ item.label }}
+          </template>
+          {{ item.content }}
+        </cdr-accordion>
+      </div>
     </div>
 
     <div class="accordion-group">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Compact
       </cdr-text>
-      <cdr-accordion
-        id="compact"
-        label="Compact"
-        data-backstop="accordion-compact"
-        :compact="true"
-        :opened="accordionCompact"
-        @accordion-toggle="accordionCompact = !accordionCompact"
-      >
-        <cdr-list modifier="unordered">
-          <li>
-            <cdr-link
-              href="https://www.rei.com/"
-            >
-              REI.com
-            </cdr-link>
-          </li>
-          <li>
-            <cdr-link
-              href="https://www.rei.com/h/adventure-projects"
-            >
-              adventure projects
-            </cdr-link>
-          </li>
-          <li>
-            <cdr-link
-              href="https://www.rei.com/stewardship"
-            >
-              stewardship
-            </cdr-link>
-          </li>
-        </cdr-list>
-      </cdr-accordion>
-      <cdr-accordion
-        id="compact-2"
-        label="Label with multiple words, so many words in fact that
-        this content may wrap to several lines"
-        :compact="true"
-        :opened="accordionCompact2"
-        @accordion-toggle="accordionCompact2 = !accordionCompact2"
-      >
-        <cdr-list tag="ol">
-          <li>Item one</li>
-          <li>Item two</li>
-          <li>Hopefully right font size</li>
-        </cdr-list>
-      </cdr-accordion>
+      <div data-backstop="accordion-compact">
+        <cdr-accordion
+          id="compact"
+          label="Compact"
+          :compact="true"
+          :opened="accordionCompact"
+          @accordion-toggle="accordionCompact = !accordionCompact"
+        >
+          <cdr-list modifier="unordered">
+            <li>
+              <cdr-link
+                href="https://www.rei.com/"
+              >
+                REI.com
+              </cdr-link>
+            </li>
+            <li>
+              <cdr-link
+                href="https://www.rei.com/h/adventure-projects"
+              >
+                adventure projects
+              </cdr-link>
+            </li>
+            <li>
+              <cdr-link
+                href="https://www.rei.com/stewardship"
+              >
+                stewardship
+              </cdr-link>
+            </li>
+          </cdr-list>
+        </cdr-accordion>
+        <cdr-accordion
+          id="compact-2"
+          label="Label with multiple words, so many words in fact that
+          this content may wrap to several lines"
+          :compact="true"
+          :opened="accordionCompact2"
+          @accordion-toggle="accordionCompact2 = !accordionCompact2"
+        >
+          <cdr-list tag="ol">
+            <li>Item one</li>
+            <li>Item two</li>
+            <li>Hopefully right font size</li>
+          </cdr-list>
+        </cdr-accordion>
+      </div>
     </div>
   </div>
 </template>

@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import style from './styles/CdrTabPanel.scss';
 
@@ -86,7 +87,8 @@ export default {
         <div
           v-show={this.active}
           aria-hidden={!this.active}
-          class={this.modifierClass}
+          class={clsx(this.style[this.baseClass], this.modifierClass)}
+          id={this.tabId}
           ref="cdrTabPanelContainer"
           tabindex="0"
           role="tabpanel"

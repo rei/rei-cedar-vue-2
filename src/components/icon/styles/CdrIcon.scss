@@ -11,13 +11,6 @@
     :Base Styles
 ========================================================================== */
 
-/* non-modularized so it works with <cdr-icon-sprite/> */
-:global {
-  .cdr-icon-sprite {
-    display: none;
-  }
-}
-
 .cdr-icon {
   display: inline-block;
   vertical-align: middle;

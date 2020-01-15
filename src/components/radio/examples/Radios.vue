@@ -1,35 +1,65 @@
 <template>
-  <div data-backstop="radios">
+  <div>
     <cdr-text
       tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Radios
     </cdr-text>
-    <cdr-radio
-      id="test1"
-      name="example"
-      custom-value="a1"
-      v-model="ex1"
-      data-backstop="radio-focus"
-    >A1</cdr-radio>
-    <cdr-radio
-      name="example"
-      custom-value="a2"
-      v-model="ex1"
-    >A2</cdr-radio>
-    <cdr-radio
-      name="example"
-      :custom-value="{val:'a3'}"
-      v-model="ex1"
-    >A3</cdr-radio>
-    <cdr-radio
-      name="example"
-      custom-value="a4"
-      v-model="ex1"
-      disabled
-    >A4 (disabled)</cdr-radio>
-    <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>
+    <div data-backstop="radio-focus">
+      <cdr-radio
+        name="example"
+        custom-value="a1"
+        v-model="size"
+        size="small"
+      >small</cdr-radio>
+      <cdr-radio
+        name="example"
+        custom-value="a2"
+        v-model="size"
+        size="medium"
+      >medium</cdr-radio>
+      <cdr-radio
+        name="example"
+        :custom-value="{val:'a3'}"
+        v-model="size"
+        size="large"
+      >large</cdr-radio>
+      <div data-backstop="radio-responsive">
+        <cdr-radio
+          name="example"
+          custom-value="a4"
+          v-model="size"
+          size="small@lg medium@sm large@xs"
+        >responsive</cdr-radio>
+      </div>
+      <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>
+    </div>
+    <div data-backstop="radio-focus">
+      <cdr-radio
+        id="test1"
+        name="example"
+        custom-value="a1"
+        v-model="ex1"
+      >A1</cdr-radio>
+      <cdr-radio
+        name="example"
+        custom-value="a2"
+        v-model="ex1"
+      >A2</cdr-radio>
+      <cdr-radio
+        name="example"
+        :custom-value="{val:'a3'}"
+        v-model="ex1"
+      >A3</cdr-radio>
+      <cdr-radio
+        name="example"
+        custom-value="a4"
+        v-model="ex1"
+        disabled
+      >A4 (disabled)</cdr-radio>
+      <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>
+    </div>
     <hr>
     <cdr-radio
       modifier="compact"
@@ -69,7 +99,6 @@
       name="examplespacing"
       custom-value="a1"
       v-model="ex1spacing"
-      data-backstop="radio-focus"
     >A1</cdr-radio>
     <cdr-radio
       space="cdr-ml-space-one-x cdr-mt-space-half-x"
@@ -163,6 +192,7 @@ export default {
   components: Components,
   data() {
     return {
+      size: '',
       ex1: '',
       ex1compact: '',
       ex1spacing: '',

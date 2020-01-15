@@ -1,0 +1,150 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrModal.vars.scss';
+
+.cdr-modal {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: visible;
+  z-index: 1000;
+
+  &__overlay {
+    background-color: $cdr-modal-overlay-color;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity $cdr-modal-animation-duration;
+    z-index: -1;
+  }
+
+  &__outerWrap {
+    display: flex;
+    box-sizing: border-box;
+    left: 0;
+    min-height: 100%;
+    padding: 16px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &__contentWrap {
+    align-items: flex-start;
+    background-color: $cdr-modal-content-color;
+    border-radius: $cdr-modal-border-radius;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 40rem;
+    opacity: 1;
+    padding: 24px;
+    position: relative;
+    transition: opacity $cdr-modal-animation-duration $cdr-modal-animation-duration;
+    width: 100%; // IE 11
+    z-index: 0;
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__innerWrap {
+    width: 100%; // IE 11
+  }
+
+  &__dialog {
+    /*
+      max-height: calc(100vh - #{$cdr-dialog-margins-vertical});
+
+      Max-height has been removed here to increase content resilience. 
+    */
+    max-width: 60rem;
+    padding: $cdr-dialog-padding-vertical;
+
+     &:global(.large) {
+      max-width: 80rem;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__header {
+    display: flex;
+    padding: 0 0 $cdr-header-padding-bottom 0;
+  }
+
+  &__title {
+    flex: auto;
+    padding-right: $cdr-space-three-quarter-x;
+  }
+
+  &__close-button {
+    align-self: flex-start;
+    flex: none;
+    padding: 2px 0 0 $cdr-space-quarter-x !important;
+    margin-right: -$cdr-space-half-x;
+  }
+
+  &__text {
+    padding: 0;
+    position: relative;
+  }
+
+  &__text-content {
+    max-height: $cdr-modal-text-max-height;
+    overflow: auto;
+    padding-right: 16px;
+
+    /* ie/edge/ff bug prevents using padding */
+    &::after {
+      content: "";
+      display: block;
+      height: $cdr-space-two-x;
+      width: 100%;
+    }
+  }
+
+  &__text-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $cdr-space-two-x;
+    width: 98%;
+    /* full transparency doesn't fly on safari */
+    background: linear-gradient(rgba(255,255,255,0.001), rgba(255,255,255,1));
+    background-attachment: scroll;
+  }
+}
+
+.closed {
+  transition: z-index 0s $cdr-modal-animation-duration * 2,
+  visibility 0s $cdr-modal-animation-duration * 2;
+  visibility: hidden;
+  z-index: -1;
+
+  .cdr-modal__overlay {
+    opacity: 0;
+    transition: opacity $cdr-modal-animation-duration $cdr-modal-animation-duration;
+  }
+
+  .cdr-modal__contentWrap {
+    opacity: 0;
+    transition: opacity $cdr-modal-animation-duration;
+  }
+}
+
+.cdr-modal__noscroll {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100%;
+}

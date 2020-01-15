@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrRadio renders an input 1`] = `
+<div
+  class="cdr-radio__wrap"
+>
+  <label
+    class="cdr-radio cdr-radio--medium"
+  >
+    <input
+      class="cdr-radio__input"
+      name="testName"
+      type="radio"
+    />
+    <span
+      class="cdr-radio__figure"
+    />
+    <div
+      class="cdr-radio__content"
+    />
+  </label>
+</div>
+`;

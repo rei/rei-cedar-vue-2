@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrInput renders a label element 1`] = `
+<div>
+  <label
+    class="cdr-input__label"
+    for="1"
+  >
+    Label Test
+  </label>
+  <div
+    class="cdr-input-wrap"
+  >
+    <input
+      class="cdr-input"
+      id="1"
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`CdrInput renders required label correctly 1`] = `
+<div>
+  <label
+    class="cdr-input__label"
+    for="3"
+  >
+    Label Test
+    <span
+      class="cdr-input__required-label"
+    >
+      Required
+    </span>
+  </label>
+  <div
+    class="cdr-input-wrap"
+  >
+    <input
+      class="cdr-input"
+      id="3"
+      required="required"
+      type="text"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrModal.vue renders correctly 1`] = `
+<div
+  class="cdr-modal"
+  role="presentation"
+>
+  <div
+    class="cdr-modal__outerWrap"
+  >
+    <div
+      aria-hidden="true"
+      class="cdr-modal__overlay"
+    />
+    <div
+      tabindex="0"
+    />
+    <div
+      aria-label="Label is the modal title"
+      aria-modal="true"
+      class="cdr-modal__contentWrap cdr-modal__dialog medium"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div
+        class="cdr-modal__innerWrap"
+      >
+        <section>
+          <div
+            class="cdr-modal__content"
+          >
+            <div
+              class="cdr-modal__header"
+            >
+              <div
+                class="cdr-modal__title"
+              >
+                <cdr-text-stub
+                  modifier="heading-serif-600"
+                  space=""
+                  tag="h1"
+                >
+                  Label is the modal title
+                </cdr-text-stub>
+              </div>
+              <cdr-button-stub
+                aria-label="close"
+                class="cdr-modal__close-button"
+                icononly="true"
+                id="close-modal-button"
+                size="medium"
+                space=""
+                tag="button"
+                type="button"
+              >
+                <iconxlg-stub
+                  inheritcolor="true"
+                  size="medium"
+                  space=""
+                />
+              </cdr-button-stub>
+            </div>
+            <div
+              class="cdr-modal__text"
+              role="document"
+              tabindex="0"
+            >
+              <div
+                class="cdr-modal__text-content"
+              >
+                Modal text content
+              </div>
+              <div
+                class="cdr-modal__text-fade"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div
+      tabindex="0"
+    />
+  </div>
+</div>
+`;

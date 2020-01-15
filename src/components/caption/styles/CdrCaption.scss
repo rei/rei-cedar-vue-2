@@ -1,6 +1,6 @@
 /* ==========================================================================
   # CdrCaption
-  
+
   All values should map to variables in
   vars/CdrCaption.vars.pcss
   in order to allow for theming
@@ -10,20 +10,23 @@
     :Base - CdrCaption
 ========================================================================== */
 @import '../../../css/settings/index.scss';
-
+@import './vars/CdrCaption.vars.scss';
 .cdr-caption {
   max-width: 530px;
   line-height: 1;
+  padding: $cdr-space-inset-one-x-squish;
+
+  &__cite {
+    @include cdr-caption-citation-text-mixin;
+    color: $cdr-color-text-secondary-lightmode;
+  }
 
   &__summary {
-    @include redwood-display-20;
-
+    @include cdr-caption-summary-text-mixin;
     margin: 0;
 
     & + .cdr-caption__cite {
       display: inline-block;
-
-      /* TODO: replace with spacing token */
       margin-top: $cdr-space-half-x;
     }
   }

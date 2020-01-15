@@ -1,0 +1,168 @@
+@import "../settings/index";
+/* ==========================================================================
+  # spacing
+
+  Utility classes spacing
+  TOC:
+    :inset
+    :inset-squish
+    :inset-stretch
+    :space-m
+    :space-p
+    :responsive
+
+========================================================================== */
+
+// include token maps
+
+@import "~@rei/cdr-tokens/dist/scss/utility-map.scss";
+
+// needed functions
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+//----------------------------------------------------
+// generate space utilties
+
+// regular space
+@mixin make-standard-space-utilities() {
+  @each $key, $value in $spacing {
+    $name: str-replace($key, 'cdr-');
+    $sides: (
+      left: 'l',
+      top: 't',
+      right: 'r',
+      bottom: 'b',
+    );
+
+    // loop through sides
+    @each $full, $short in $sides {
+      /*
+      /// Adds padding to #{$full}.
+      /// Append [@xs, @sm, @md, or @lg] to make responsive.
+      /// @group utility.spacing.padding.#{$full}
+      */
+      .cdr-p#{$short}-#{$name} { padding-#{$full}: #{$value} !important; }
+      /*
+      /// Adds margin to #{$full}.
+      /// Append [@xs, @sm, @md, or @lg] to make responsive.
+      /// @group utility.spacing.margin.#{$full}
+      */
+      .cdr-m#{$short}-#{$name} { margin-#{$full}: #{$value} !important; }
+
+      @include xs-mq-only {
+        .cdr-p#{$short}-#{$name}\@xs { padding-#{$full}: #{$value} !important; }
+        .cdr-m#{$short}-#{$name}\@xs { margin-#{$full}: #{$value} !important; }
+      }
+
+      @include sm-mq-only {
+        .cdr-p#{$short}-#{$name}\@sm { padding-#{$full}: #{$value} !important; }
+        .cdr-m#{$short}-#{$name}\@sm { margin-#{$full}: #{$value} !important; }
+      }
+
+      @include md-mq-only {
+        .cdr-p#{$short}-#{$name}\@md { padding-#{$full}: #{$value} !important; }
+        .cdr-m#{$short}-#{$name}\@md { margin-#{$full}: #{$value} !important; }
+      }
+
+      @include lg-mq-only {
+        .cdr-p#{$short}-#{$name}\@lg { padding-#{$full}: #{$value} !important; }
+        .cdr-m#{$short}-#{$name}\@lg { margin-#{$full}: #{$value} !important; }
+      }
+    }
+
+    // x and y
+
+    /*
+    /// Adds padding to left and right.
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility.spacing.padding.x
+    */
+    .cdr-px-#{$name} { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+    /*
+    /// Adds margin to left and right.
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility.spacing.margin.x
+    */
+    .cdr-mx-#{$name} { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+    /*
+    /// Adds padding to top and bottom.
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility.spacing.padding.y
+    */
+    .cdr-py-#{$name} { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+    /*
+    /// Adds margin to top and bottom.
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility.spacing.margin.y
+    */
+    .cdr-my-#{$name} { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+
+    @include xs-mq-only {
+      .cdr-px-#{$name}\@xs { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+      .cdr-mx-#{$name}\@xs { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+      .cdr-py-#{$name}\@xs { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+      .cdr-my-#{$name}\@xs { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+    }
+
+    @include sm-mq-only {
+      .cdr-px-#{$name}\@sm { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+      .cdr-mx-#{$name}\@sm { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+      .cdr-py-#{$name}\@sm { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+      .cdr-my-#{$name}\@sm { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+    }
+
+    @include md-mq-only {
+      .cdr-px-#{$name}\@md { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+      .cdr-mx-#{$name}\@md { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+      .cdr-py-#{$name}\@md { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+      .cdr-my-#{$name}\@md { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+    }
+
+    @include lg-mq-only {
+      .cdr-px-#{$name}\@lg { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+      .cdr-mx-#{$name}\@lg { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+      .cdr-py-#{$name}\@lg { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+      .cdr-my-#{$name}\@lg { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+    }
+  }
+}
+
+@include make-standard-space-utilities();
+
+// inset
+@mixin make-inset-space-utilities() {
+  @each $key, $value in $spacing-inset {
+    /*
+    /// Adds inset padding.
+    /// Append [@xs, @sm, @md, or @lg] to make responsive.
+    /// @group utility.spacing.inset
+    */
+    .#{$key} { padding: #{$value} !important; }
+
+    @include xs-mq-only {
+        .#{$key}\@xs { padding: #{$value} !important; }
+      }
+
+      @include sm-mq-only {
+        .#{$key}\@sm { padding: #{$value} !important; }
+      }
+
+      @include md-mq-only {
+        .#{$key}\@md { padding: #{$value} !important; }
+      }
+
+      @include lg-mq-only {
+        .#{$key}\@lg { padding: #{$value} !important; }
+      }
+  }
+}
+
+@include make-inset-space-utilities();

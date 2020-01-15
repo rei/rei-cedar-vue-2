@@ -1,13 +1,14 @@
 <template>
-  <div>
+  <div data-backstop="buttons">
     <div
       class="button-example cdr-space-inset-one-x"
       v-for="(section, index) in data"
       :key="index"
+      :data-backstop="section.backstop ? section.backstop : null"
     >
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         {{ section.title }}
       </cdr-text>
@@ -26,7 +27,7 @@
     <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Secondary Anchor
       </cdr-text>
@@ -55,13 +56,13 @@ export default {
       data: [
         {
           title: 'Secondary',
+          backstop: 'cdr-button--secondary',
           buttons: [
             {
               label: 'Large',
               disabled: false,
               size: 'large',
               modifier: 'secondary',
-              backstop: 'cdr-button--secondary',
             },
             {
               label: 'Medium',

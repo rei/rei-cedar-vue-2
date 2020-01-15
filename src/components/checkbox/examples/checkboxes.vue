@@ -1,15 +1,48 @@
 <template>
-  <div data-backstop="checkboxes">
+  <div>
     <cdr-text
       tag="h2"
-      modifier="heading-400 heading-500@md heading-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
     >
       Checkboxes
     </cdr-text>
     <cdr-checkbox
+      v-model="sizeEx"
+      size="small"
+    >small</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx"
+      size="medium"
+    >medium</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx"
+      size="large"
+    >large</cdr-checkbox>
+    <div data-backstop="checkbox-responsive">
+      <cdr-checkbox
+        v-model="sizeEx"
+        size="small@lg medium@sm large@xs"
+      >responsive</cdr-checkbox>
+    </div>
+    <cdr-checkbox
+      v-model="sizeEx2"
+      size="small"
+    >small</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx2"
+      size="medium"
+    >medium</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx2"
+      size="large"
+    >large</cdr-checkbox>
+    <cdr-checkbox
+      v-model="sizeEx2"
+      size="small@lg medium@sm large@xs"
+    >responsive</cdr-checkbox>
+    <cdr-checkbox
       v-model="ex1"
       @change="logChange"
-      data-backstop="checkbox-focus"
     >single</cdr-checkbox>
     <cdr-checkbox
       modifier="compact"
@@ -17,7 +50,7 @@
     >single compact</cdr-checkbox>
     <cdr-text>single: {{ ex1 }}</cdr-text>
 
-    <span data-backstop="checkbox-checked">
+    <div data-backstop="checkbox-checked">
       <cdr-checkbox
         v-model="ex2"
         true-value="checked"
@@ -29,7 +62,7 @@
         true-value="checked"
         false-value="unchecked"
       >checked compact</cdr-checkbox>
-    </span>
+    </div>
     <cdr-text>checked: {{ ex2 }}</cdr-text>
 
     <cdr-checkbox
@@ -144,6 +177,8 @@ export default {
   data() {
     return {
       checked: true,
+      sizeEx: false,
+      sizeEx2: true,
       ex1: false,
       ex2: 'checked',
       ex3: 'checked',

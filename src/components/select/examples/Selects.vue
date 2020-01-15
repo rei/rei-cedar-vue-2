@@ -1,35 +1,62 @@
 <template>
-  <div data-backstop="selects">
+  <div>
     <cdr-text
       tag="h2"
-      modifier="heading-400 heading-500@md heading-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       space="cdr-my-space-two-x"
     >
       Selects
     </cdr-text>
     <hr class="icon-hr">
 
-    <!-- Default Example -->
-    <cdr-select
-      label="Default"
-      v-model="selectedA"
-      prompt="Choose one"
-      space="cdr-my-space-two-x"
-    >
-      <option value="1">
-        1
-      </option>
-      <option value="2">
-        2
-      </option>
-      <option value="3">
-        3
-      </option>
-      <option value="4">
-        4
-      </option>
-    </cdr-select>
-    <cdr-text>Selected Value: {{ selectedA }}</cdr-text>
+    <div data-backstop="select-target">
+      <!-- Default Example -->
+      <cdr-select
+        label="Default"
+        v-model="selectedA"
+        prompt="Choose one"
+        space="cdr-my-space-two-x"
+      >
+        <option value="1">
+          1
+        </option>
+        <option value="2">
+          2
+        </option>
+        <option value="3">
+          3
+        </option>
+        <option value="4">
+          4
+        </option>
+      </cdr-select>
+      <cdr-text>Selected Value: {{ selectedA }}</cdr-text>
+
+      <hr class="icon-hr">
+
+      <!-- Required with Prompt Example -->
+      <cdr-select
+        label="Required with Prompt"
+        v-model="selectedB"
+        prompt="Choose one"
+        required
+        space="cdr-my-space-two-x"
+      >
+        <option value="1">
+          1
+        </option>
+        <option value="2">
+          2
+        </option>
+        <option value="3">
+          3
+        </option>
+        <option value="4">
+          4
+        </option>
+      </cdr-select>
+      <cdr-text>Selected Value: {{ selectedB }}</cdr-text>
+    </div>
     <hr class="icon-hr">
 
     <!-- Disabled Select -->
@@ -44,30 +71,6 @@
       </option>
     </cdr-select>
     <cdr-text>Selected: {{ selectedDisabled }}</cdr-text>
-    <hr class="icon-hr">
-
-    <!-- Required with Prompt Example -->
-    <cdr-select
-      label="Required with Prompt"
-      v-model="selectedB"
-      prompt="Choose one"
-      required
-      space="cdr-my-space-two-x"
-    >
-      <option value="1">
-        1
-      </option>
-      <option value="2">
-        2
-      </option>
-      <option value="3">
-        3
-      </option>
-      <option value="4">
-        4
-      </option>
-    </cdr-select>
-    <cdr-text>Selected Value: {{ selectedB }}</cdr-text>
     <hr class="icon-hr">
 
     <!-- Hidden Label Example -->
@@ -151,7 +154,10 @@
       prompt="Choose One"
     >
       <template slot="info">
-        <cdr-link href="#/selects">
+        <cdr-link
+          href="#/selects"
+          modifier="standalone"
+        >
           Info Link/Icon
         </cdr-link>
       </template>
@@ -168,7 +174,7 @@
       prompt="Choose One"
     >
       <template slot="info">
-        <icon-information-fill />
+        <icon-information-fill size="small" />
       </template>
     </cdr-select>
     <cdr-text>Selected Value: {{ infoIconModel }}</cdr-text>

@@ -1,5 +1,6 @@
 @import '../../../css/settings/index.scss';
 @import './vars/Grid.vars.scss';
+@import url('@rei/cedar/dist/style/cdr-row.css');
 
 // TODO: replace all of this with a mixin
 $colPct1: calc(1 / #{$rowColumns} * 100%);
@@ -50,6 +51,7 @@ $colPct12: calc(12 / #{$rowColumns} * 100%);
   }
 
   &__content {
+    pointer-events: auto;
     display: flex;
     flex: 1 1 auto;
     width: 100%;
@@ -701,7 +703,7 @@ $colPct12: calc(12 / #{$rowColumns} * 100%);
       padding-right: 0;
       padding-bottom: 0;
     }
-    
+
     /* increase specificity to undo above when is-row=true */
     &.cdr-row {
       padding: 0;

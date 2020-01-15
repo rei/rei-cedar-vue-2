@@ -2,7 +2,7 @@
   <div data-backstop="cta-links">
     <cdr-text
       tag="h2"
-      modifier="heading-400 heading-500@md heading-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
     >
       CTA
     </cdr-text>
@@ -41,7 +41,7 @@
         cta-style="dark"
         href="https://rei.com"
         full-width="@xs @lg"
-        data-backstop="cdr-cta--full-width-at-xs"
+        data-backstop="cdr-cta--full-width-responsive"
       >Full width @xs @lg</cdr-cta>
     </div>
     <div

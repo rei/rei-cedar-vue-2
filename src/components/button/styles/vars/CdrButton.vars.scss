@@ -1,3 +1,5 @@
+$cdr-button-font-family: $cdr-font-family-sans;
+
 $cdr-button-base-border: none;
 $cdr-button-base-outline: none;
 $cdr-button-base-border-radius: $cdr-radius-softer;
@@ -95,47 +97,62 @@ $cdr-button-full-width-justify-content: center;
 
 $cdr-button-icon-only-background-color: none;
 $cdr-button-icon-only-border: none;
+$cdr-button-icon-only-radius: 50%;
 $cdr-button-icon-only-box-shadow: none;
 $cdr-button-icon-only-display: inline-block;
 
-
 $cdr-button-icon-only-padding: $cdr-space-inset-half-x;
-$cdr-button-icon-only-pr: calc(#{$cdr-space-inset-half-x} - #{$cdr-space-quarter-x}); // note that this overrides the previous padding variable
+$cdr-button-icon-only-margin: 0;
 
 $cdr-button-icon-only-fill: $cdr-color-icon-emphasis-lightmode;
 
-$cdr-button-icon-only-background-color-hover: none;
+$cdr-button-icon-only-background-color-hover: $cdr-color-background-light;
 $cdr-button-icon-only-fill-hover: $cdr-color-icon-emphasis-lightmode;
 $cdr-button-icon-only-box-shadow-hover: none;
 
-$cdr-button-icon-only-background-color-active: none;
+$cdr-button-icon-only-background-color-active: $cdr-color-background-light;
 $cdr-button-icon-only-fill-active: $cdr-color-icon-emphasis-lightmode;
 $cdr-button-icon-only-box-shadow-active: none;
 
-$cdr-button-icon-only-background-color-focus: none;
+$cdr-button-icon-only-background-color-focus: $cdr-color-background-light;
 $cdr-button-icon-only-fill-focus: $cdr-color-icon-emphasis-lightmode;
 $cdr-button-icon-only-box-shadow-focus: none;
+
+$cdr-button-icon-only-background-color-disabled: transparent;
+$cdr-button-icon-only-box-shadow-disabled: none;
+$cdr-button-icon-only-fill-disabled: $cdr-color-text-disabled-lightmode;
 
 $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 
 @mixin cdr-button-base-text-mixin() {
-  // TODO: typography token
-  @include redwood-display-30
+  @include cdr-button-base-text-mixin-medium;
 }
 
 @mixin cdr-button-base-text-mixin-small() {
-  // TODO: typography token
-  @include redwood-display-20;
+  font-family: $cdr-button-font-family;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 @mixin cdr-button-base-text-mixin-medium() {
-  // TODO: typography token
-  @include redwood-display-30;
+  font-family: $cdr-button-font-family;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 @mixin cdr-button-base-text-mixin-large() {
-  // TODO: typography token
-  @include redwood-display-40;
+  font-family: $cdr-button-font-family;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 /* start of mixin land */
@@ -221,6 +238,7 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
     background-color: $cdr-button-primary-background-color-disabled;
     box-shadow: $cdr-button-primary-box-shadow-disabled;
     color: $cdr-button-primary-color-disabled;
+    fill: $cdr-button-primary-color-disabled;
   }
 }
 
@@ -270,10 +288,10 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 @mixin cdr-button-icon-only-mixin() {
   background: $cdr-button-icon-only-background-color;
   border: $cdr-button-icon-only-border;
+  border-radius: $cdr-button-icon-only-radius;
   box-shadow: $cdr-button-icon-only-box-shadow;
   display: $cdr-button-icon-only-display;
   padding: $cdr-button-icon-only-padding;
-  padding-right: $cdr-button-icon-only-pr;
   fill: $cdr-button-icon-only-fill;
 
   &:hover {
@@ -292,6 +310,12 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
     background: $cdr-button-icon-only-background-color-focus;
     box-shadow: $cdr-button-icon-only-box-shadow-focus;
     fill: $cdr-button-icon-only-fill-focus;
+  }
+  
+  &[disabled] {
+    background: $cdr-button-icon-only-background-color-disabled;
+    box-shadow: $cdr-button-icon-only-box-shadow-disabled;
+    fill: $cdr-button-icon-only-fill-disabled;
   }
 }
 

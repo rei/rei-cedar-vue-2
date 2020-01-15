@@ -1,13 +1,14 @@
 <template>
-  <div>
+  <div data-backstop="buttons">
     <div
-      class="button-example cdr-space-inset-one-x"
+      class="cdr-space-inset-one-x"
       v-for="(section, index) in data"
       :key="index"
+      :data-backstop="section.backstop ? section.backstop : null"
     >
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         {{ section.title }}
       </cdr-text>
@@ -19,16 +20,18 @@
         :full-width="button.fullWidth"
         :type="button.type"
         :disabled="button.disabled"
-        :data-backstop="button.backstop ? button.backstop : null"
         @click="log"
       >
         {{ button.label }}
       </cdr-button>
     </div>
-    <div class="button-example cdr-space-inset-one-x">
+    <div
+      class="cdr-space-inset-one-x"
+      data-backstop="cdr-button--anchor"
+    >
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Primary Anchor
       </cdr-text>
@@ -36,26 +39,31 @@
         tag="a"
         href="https://rei.com"
         size="large"
-        data-backstop="cdr-button--anchor"
       >
-        Link
-      </cdr-button>
-    </div>
-    <div>
-      <cdr-button
-        :full-width="true"
-        size="large@lg"
-        space="cdr-mb-space-one-x cdr-mr-space-one-x@md"
-      >
-        button 1
+        Large Link
       </cdr-button>
 
       <cdr-button
-        :full-width="true"
-        modifier="secondary"
-        size="large@lg"
+        tag="a"
+        href="https://rei.com"
+        size="small"
       >
-        button 2
+        Small Link
+      </cdr-button>
+    </div>
+    <div
+      class="cdr-space-inset-one-x"
+    >
+      <cdr-text
+        tag="h3"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+      >
+        Primary Responsive
+      </cdr-text>
+      <cdr-button
+        size="large large@xs medium@sm small@lg"
+      >
+        Responsive
       </cdr-button>
     </div>
   </div>
@@ -74,6 +82,7 @@ export default {
       data: [
         {
           title: 'Default sizes',
+          backstop: 'cdr-button--size',
           buttons: [
             {
               label: 'Large',
@@ -101,6 +110,7 @@ export default {
         },
         {
           title: 'Disabled',
+          backstop: 'cdr-button--disabled',
           buttons: [
             {
               label: 'Large',

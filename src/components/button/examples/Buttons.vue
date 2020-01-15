@@ -1,11 +1,12 @@
 <template>
-  <div data-backstop="buttons">
+  <div>
     <cdr-text
       tag="h2"
-      modifier="heading-400 heading-500@md heading-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
     >
       Buttons
     </cdr-text>
+
     <default-buttons />
     <secondary-buttons />
     <full-width />

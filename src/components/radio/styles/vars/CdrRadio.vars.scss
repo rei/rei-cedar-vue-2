@@ -1,3 +1,14 @@
+@mixin radio-text {
+  @include cdr-text-utility-300;
+  color: $cdr-color-text-form-label-lightmode;
+  display: inline-block;
+  margin: 0;
+}
+
+@mixin radio-text-compact {
+  @include cdr-text-utility-200;
+}
+
 $radio-figure-checked-background-color: #3278ae;
 $radio-compact-figure-space-top: 2px;
 $radio-figure-radius: $cdr-radius-round;
@@ -8,12 +19,59 @@ $radio-figure-checked-hover-border-color: #2b6692;
 $radio-figure-active-border-color: #3278ae;
 $radio-figure-checked-hover-background-color: #2b6692;
 $radio-figure-space-top: 4px;
-$radio-figure-size: 16px;
+$radio-figure-size-small: 16px;
+$radio-figure-size-medium: 16px;
+$radio-figure-size-large: 20px;
 $radio-figure-checked-disabled-background-color: #dadada;
 $radio-figure-border-color: #616161;
 $radio-figure-background-color: #ffffff;
 $radio-focus-outline: 0 0 8px 0 rgb(50, 120, 174);
 $radio-figure-disabled-border-color: #dadada;
 $radio-figure-selected-size: 8px;
+$radio-figure-selected-size-large: 10px;
 $radio-figure-disabled-background-color: #fafafa;
 $radio-figure-checked-border-color: #3278ae;
+
+@mixin radio-small-mixin($parent-selector, $breakpoint: '') {
+  &--small#{$breakpoint} {
+    @include cdr-text-utility-200;
+    padding-left: calc(#{$radio-figure-size-small} + #{$cdr-label-base-spacing});
+    
+    & > #{$parent-selector}__figure {
+      top: calc((#{$cdr-text-utility-200-height} - #{$radio-figure-size-small}) / 2);
+      width: $radio-figure-size-small;
+      height: $radio-figure-size-small;
+    }
+  }
+}
+
+@mixin radio-medium-mixin($parent-selector, $breakpoint: '') {
+  &--medium#{$breakpoint} {
+    @include cdr-text-utility-300;
+    padding-left: calc(#{$radio-figure-size-medium} + #{$cdr-label-base-spacing});
+    
+    & > #{$parent-selector}__figure {
+      top: calc((#{$cdr-text-utility-300-height} - #{$radio-figure-size-medium}) / 2);
+      width: $radio-figure-size-medium;
+      height: $radio-figure-size-medium;
+    }
+  }
+}
+
+@mixin radio-large-mixin($parent-selector, $breakpoint: '') {
+  &--large#{$breakpoint} {
+    @include cdr-text-utility-300;
+    padding-left: calc(#{$radio-figure-size-large} + #{$cdr-label-base-spacing});
+    
+    & > #{$parent-selector}__figure {
+      top: calc((#{$cdr-text-utility-300-height} - #{$radio-figure-size-large}) / 2);
+      width: $radio-figure-size-large;
+      height: $radio-figure-size-large;
+
+      &::after {
+        width: $radio-figure-selected-size-large;
+        height: $radio-figure-selected-size-large;
+      }
+    }
+  }
+}

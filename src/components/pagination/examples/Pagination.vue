@@ -1,6 +1,17 @@
 <template>
-  <div data-backstop="pagination">
+  <div>
     <h2>pagination</h2>
+
+    <hr>
+    <p>Normal</p>
+
+    <cdr-pagination
+      v-model="page"
+      :pages="pages"
+      :total-pages="10"
+      data-backstop="pagination-default"
+    />
+    <hr>
 
     <div
       v-for="datam in paginationData.example1[ex1Page]"
@@ -10,89 +21,117 @@
       <p>{{ datam.description }}</p>
     </div>
 
+    <p>Using router-link/scoped slot</p>
     <cdr-pagination
-      :pages="makePages(20, 'router-page')"
+      :pages="makePages(20, null)"
       :total-pages="20"
       v-model="ex1Page"
-      @input="handleInput"
-      @select-change="doSelect"
-    />
+    >
+      <!-- Previous -->
+      <template v-slot:prevLink="prevLink">
+        <router-link
+          v-bind="prevLink.attrs"
+          :to="{ query: { 'router-page': prevLink.page } }"
+          replace
+        >
+          <component
+            :is="prevLink.iconComponent"
+            :class="prevLink.iconClass"
+          />
+          {{ prevLink.content }}
+        </router-link>
+      </template>
+      <!-- Single Page links -->
+      <template v-slot:link="link">
+        <router-link
+          v-bind="link.attrs"
+          :to="{ query: { 'router-page': link.page } }"
+          replace
+        >
+          {{ link.page }}
+        </router-link>
+      </template>
+      <!-- Next -->
+      <template v-slot:nextLink="nextLink">
+        <router-link
+          v-bind="nextLink.attrs"
+          :to="{ query: { 'router-page': nextLink.page } }"
+          replace
+        >
+          {{ nextLink.content }}
+          <component
+            :is="nextLink.iconComponent"
+            :class="nextLink.iconClass"
+          />
+        </router-link>
+      </template>
+    </cdr-pagination>
+    <p>Using p and scoped slot</p>
+    <cdr-pagination
+      :pages="makePages(20, null)"
+      :total-pages="20"
+      v-model="paraPage"
+    >
+      <template v-slot:prevLink="prevLink">
+        <p
+          v-bind="prevLink.attrs"
+          @click="prevLink.click"
+        >
+          <component
+            :is="prevLink.iconComponent"
+            :class="prevLink.iconClass"
+          />
+          {{ prevLink.content }}
+        </p>
+      </template>
+      <template v-slot:link="link">
+        <p
+          v-bind="link.attrs"
+          @click="link.click"
+        >
+          {{ link.page }}
+        </p>
+      </template>
+      <template v-slot:nextLink="nextLink">
+        <p
+          v-bind="nextLink.attrs"
+          @click="nextLink.click"
+        >
+          {{ nextLink.content }}
+          <component
+            :is="nextLink.iconComponent"
+            :class="nextLink.iconClass"
+          />
+        </p>
+      </template>
+    </cdr-pagination>
 
     <hr>
 
     <p>Previous/Next only (known total)</p>
 
     <cdr-pagination
-      :pages="makePages(ex2Pages, 'router-page-b', ex2PageKnown - 2)"
+      :pages="makePages(ex2Pages, '/#/pagination?ex2-known-page', ex2PageKnown - 2)"
       :total-pages="10"
       v-model="ex2PageKnown"
-      @input="handleInput"
     />
 
     <hr>
     <p>Previous/Next only (unknown total)</p>
 
     <cdr-pagination
-      :pages="makePages(ex2Pages, 'router-page-b', ex2PageUnknown - 2)"
+      :pages="makePages(ex2Pages, '/#/pagination?ex2-unknown-page', ex2PageUnknown - 2)"
       v-model="ex2PageUnknown"
-      @input="handleInput"
     />
 
     <hr>
     <p>Only 5 pages provided</p>
 
     <cdr-pagination
-      :pages="makePages(5, 'router-page-c')"
+      :pages="makePages(5, '/#/pagination?ex3-page')"
       :total-pages="5"
       v-model="ex3Page"
-      @input="handleInput"
     />
-
-    <hr>
-    <p>Scoped Slot Link</p>
-
-    <cdr-pagination
-      :pages="makePages(5, 'router-page-d')"
-      :total-pages="5"
-      v-model="ex4Page"
-      @input="handleInput"
-    >
-      <template
-        slot="link"
-        slot-scope="link"
-      >
-        <div
-          :class="link.class"
-          @click="e => ex4Page = link.page"
-        >
-          {{ link.href }}
-        </div>
-      </template>
-      <template
-        slot="prevLink"
-        slot-scope="link"
-      >
-        <div @click="e => ex4Page = link.page">
-          <cdr-icon
-            :use="link.iconPath"
-            :class="link.iconClass"
-          />
-          <span>{{ link.content }}</span>
-        </div>
-      </template>
-      <template
-        slot="nextLink"
-        slot-scope="link"
-      >
-        <div @click="e => ex4Page = link.page">
-          <span>{{ link.content }}</span>
-          <cdr-icon
-            :use="link.iconPath"
-            :class="link.iconClass"
-          />
-        </div>
-      </template>
-    </cdr-pagination>
 
   </div>
 </template>
@@ -109,15 +148,35 @@ export default {
   },
   data() {
     return {
+      page: 3,
+      pages: [
+        { page: 1, url: '/#/pagination?page=1' },
+        { page: 2, url: '/#/pagination?page=2' },
+        { page: 3, url: '/#/pagination?page=3' },
+        { page: 4, url: '/#/pagination?page=4' },
+        { page: 5, url: '/#/pagination?page=5' },
+        { page: 6, url: '/#/pagination?page=6' },
+        { page: 7, url: '/#/pagination?page=7' },
+        { page: 8, url: '/#/pagination?page=8' },
+        { page: 9, url: '/#/pagination?page=9' },
+        { page: 10, url: '/#/pagination?page=10' },
+      ],
       paginationData,
-      ex1Page: 1,
+      paraPage: 1,
       ex2PageKnown: 5,
       ex2PageUnknown: 5,
       ex3Page: 1,
-      ex4Page: 3,
     };
   },
   computed: {
+    ex1Page: {
+      get() {
+        return parseInt(this.$route.query['router-page'], 10) || 1;
+      },
+      set() {
+        // updated by component, we don't need to do anything
+      },
+    },
     ex2Pages() {
       if (this.ex2Page === 1 || this.ex2Page === 10) {
         return 2;
@@ -137,14 +196,6 @@ export default {
         result.push(obj);
       });
       return result;
-    },
-    handleInput(num, e) {
-      e.preventDefault();
-      console.log('changed', num); // eslint-disable-line
-      this.$router.replace({ query: Object.assign({}, this.$route.query, { 'router-page': num }) });
-    },
-    doSelect(url, e) {
-      console.log('selected', url, e); // eslint-disable-line
     },
   },
 };

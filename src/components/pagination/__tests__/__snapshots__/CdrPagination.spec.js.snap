@@ -1,0 +1,374 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrPagination renders correctly 1`] = `
+<nav
+  aria-label="Pagination Navigation"
+>
+  <ul
+    class="cdr-pagination"
+  >
+    <li
+      aria-hidden="true"
+    >
+      <span
+        class="cdr-pagination__link cdr-pagination__prev cdr-pagination__link--disabled"
+      >
+        <svg
+          class="cdr-icon cdr-icon--inherit-color cdr-pagination__caret--prev"
+          role="presentation"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 12c0 .273.11.521.288.702l5.005 5.005a1 1 0 001.414-1.414L10.415 12l4.295-4.295a1 1 0 00-1.417-1.412l-4.98 4.98A.997.997 0 008 12z"
+          />
+        </svg>
+        Prev
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-current="page"
+        aria-label="Current page, page 1"
+        class="cdr-pagination__link current"
+        href="?page=1"
+        ref="page-link-1-test1"
+      >
+        1
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 2"
+        class="cdr-pagination__link"
+        href="?page=2"
+        ref="page-link-2-test1"
+      >
+        2
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 3"
+        class="cdr-pagination__link"
+        href="?page=3"
+        ref="page-link-3-test1"
+      >
+        3
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 4"
+        class="cdr-pagination__link"
+        href="?page=4"
+        ref="page-link-4-test1"
+      >
+        4
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 5"
+        class="cdr-pagination__link"
+        href="?page=5"
+        ref="page-link-5-test1"
+      >
+        5
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <span
+        class="cdr-pagination__ellipse"
+      >
+        …
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <a
+        aria-label="Go to page 20"
+        class="cdr-pagination__link"
+        href="?page=20"
+        ref="page-link-20-test1"
+      >
+        20
+      </a>
+    </li>
+    <li
+      class="cdr-pagination__li--select"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="cdr-select-wrap"
+        >
+          <select
+            aria-label="Navigate to page"
+            class="cdr-select"
+            id="select-test1"
+          >
+            <option
+              value="1"
+            >
+              Page 1
+            </option>
+            <option
+              value="2"
+            >
+              Page 2
+            </option>
+            <option
+              value="3"
+            >
+              Page 3
+            </option>
+            <option
+              value="4"
+            >
+              Page 4
+            </option>
+            <option
+              value="5"
+            >
+              Page 5
+            </option>
+            <option
+              value="20"
+            >
+              Page 20
+            </option>
+          </select>
+          <svg
+            class="cdr-icon cdr-select__caret"
+            role="presentation"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 00-1.414-1.414L12 13.586 7.705 9.29a1 1 0 00-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
+            />
+          </svg>
+        </div>
+      </div>
+    </li>
+    <li>
+      <a
+        aria-label="Go to next page"
+        class="cdr-pagination__link cdr-pagination__next"
+        href="?page=2"
+        ref="next-link-test1"
+      >
+        Next
+        <svg
+          class="cdr-icon cdr-pagination__caret--next"
+          role="presentation"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 12a.997.997 0 00-.288-.702l-5.005-5.005a1 1 0 00-1.414 1.414L13.585 12 9.29 16.295a1 1 0 001.417 1.412l4.98-4.98A.997.997 0 0016 12z"
+          />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`CdrPagination renders scoped slot correctly 1`] = `
+<nav
+  aria-label="Pagination Navigation"
+>
+  <ul
+    class="cdr-pagination"
+  >
+    <li>
+      <span
+        aria-label="Go to previous Page"
+        class="cdr-pagination__link cdr-pagination__prev"
+        ref="prev-link-test2"
+      >
+        <svg
+          class="cdr-icon cdr-pagination__caret--prev"
+          role="presentation"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 12c0 .273.11.521.288.702l5.005 5.005a1 1 0 001.414-1.414L10.415 12l4.295-4.295a1 1 0 00-1.417-1.412l-4.98 4.98A.997.997 0 008 12z"
+          />
+        </svg>
+        Prev
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <span
+        aria-label="Go to page 1"
+        class="cdr-pagination__link"
+        ref="page-link-1-test2"
+      >
+        1
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <span
+        aria-label="Go to page 2"
+        class="cdr-pagination__link"
+        ref="page-link-2-test2"
+      >
+        2
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <span
+        aria-label="Go to page 3"
+        class="cdr-pagination__link"
+        ref="page-link-3-test2"
+      >
+        3
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <span
+        aria-current="page"
+        aria-label="Current page, page 4"
+        class="cdr-pagination__link current"
+        ref="page-link-4-test2"
+      >
+        4
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <span
+        aria-label="Go to page 5"
+        class="cdr-pagination__link"
+        ref="page-link-5-test2"
+      >
+        5
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <span
+        class="cdr-pagination__ellipse"
+      >
+        …
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--links"
+    >
+      <span
+        aria-label="Go to page 20"
+        class="cdr-pagination__link"
+        ref="page-link-20-test2"
+      >
+        20
+      </span>
+    </li>
+    <li
+      class="cdr-pagination__li--select"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="cdr-select-wrap"
+        >
+          <select
+            aria-label="Navigate to page"
+            class="cdr-select"
+            id="select-test2"
+          >
+            <option
+              value="1"
+            >
+              Page 1
+            </option>
+            <option
+              value="2"
+            >
+              Page 2
+            </option>
+            <option
+              value="3"
+            >
+              Page 3
+            </option>
+            <option
+              value="4"
+            >
+              Page 4
+            </option>
+            <option
+              value="5"
+            >
+              Page 5
+            </option>
+            <option
+              value="20"
+            >
+              Page 20
+            </option>
+          </select>
+          <svg
+            class="cdr-icon cdr-select__caret"
+            role="presentation"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 16c.273 0 .521-.11.702-.288l5.005-5.005a1 1 0 00-1.414-1.414L12 13.586 7.705 9.29a1 1 0 00-1.412 1.417l4.98 4.98c.182.193.44.313.727.313z"
+            />
+          </svg>
+        </div>
+      </div>
+    </li>
+    <li>
+      <span
+        aria-label="Go to next page"
+        class="cdr-pagination__link cdr-pagination__next"
+        ref="next-link-test2"
+      >
+        Next
+        <svg
+          class="cdr-icon cdr-pagination__caret--next"
+          role="presentation"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 12a.997.997 0 00-.288-.702l-5.005-5.005a1 1 0 00-1.414 1.414L13.585 12 9.29 16.295a1 1 0 001.417 1.412l4.98-4.98A.997.997 0 0016 12z"
+          />
+        </svg>
+      </span>
+    </li>
+  </ul>
+</nav>
+`;

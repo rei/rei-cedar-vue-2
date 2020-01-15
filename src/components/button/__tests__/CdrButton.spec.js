@@ -1,23 +1,16 @@
-import { shallowMount } from '@vue/test-utils';
-import { CdrButton } from 'distdir/cedar.js';
+import { shallowMount, mount } from '@vue/test-utils';
+import CdrButton from 'componentdir/button/CdrButton';
 import sinon from 'sinon'
 
-describe('CdrButton.vue', () => {
-  it('renders a button', () => {
-    const wrapper = shallowMount(CdrButton);
-    expect(wrapper.is('button')).toBe(true);
+describe('CdrButton', () => {
+  test('renders correctly', () => {
+    const wrapper = mount(CdrButton);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('sets default type prop correctly', () => {
     const wrapper = shallowMount(CdrButton);
     expect(wrapper.attributes().type).toBe('button');
-  });
-
-  it('validates type prop', () => {
-    const wrapper = shallowMount(CdrButton);
-    const type = wrapper.vm.$options.props.type;
-    expect(type.validator('test')).toBe(false);
-    expect(type.validator('reset')).toBe(true);
   });
 
   it('sets type attr correctly', () => {
@@ -94,19 +87,5 @@ describe('CdrButton.vue', () => {
       },
     });
     expect(wrapper.is('a')).toBe(true);
-  });
-
-  it('validates el prop', () => {
-    const wrapper = shallowMount(CdrButton);
-    const tag = wrapper.vm.$options.props.tag;
-    expect(tag.validator('button')).toBe(true);
-    expect(tag.validator('link')).toBe(false);
-  });
-
-  it('validates size prop', () => {
-    const wrapper = shallowMount(CdrButton);
-    const size = wrapper.vm.$options.props.size;
-    expect(size.validator('small')).toBe(true);
-    expect(size.validator('extra-small')).toBe(false);
   });
 });

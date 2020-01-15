@@ -1,41 +1,44 @@
 <template>
-  <div data-backstop="spacing-utilities">
+  <div>
     <cdr-text
       tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Space classes
     </cdr-text>
 
-    <template
-      v-for="type in ['pt', 'pr', 'pb', 'pl', 'px', 'py', 'mt', 'mr', 'mb', 'ml', 'mx', 'my']"
+    <div
+      :data-backstop="`spacing-${category}-utilities`"
     >
       <template
-        v-for="(v,k,i) in spaceTokens"
+        v-for="type in types"
       >
-        <div
-          :key="`${type}-${k}-${i}`"
-          :class="[`${getClass(type, k)}`, typeClass(type)]"
-        >{{ getClass(type, k) }}</div>
-        <div
-          :key="`${type}-${k}-${i}-xs`"
-          :class="[`${getClass(type, k)}@xs`, typeClass(type)]"
-        >{{ getClass(type, k) }}@xs</div>
-        <div
-          :key="`${type}-${k}-${i}-sm`"
-          :class="[`${getClass(type, k)}@sm`, typeClass(type)]"
-        >{{ getClass(type, k) }}@sm</div>
-        <div
-          :key="`${type}-${k}-${i}-md`"
-          :class="[`${getClass(type, k)}@md`, typeClass(type)]"
-        >{{ getClass(type, k) }}@md</div>
-        <div
-          :key="`${type}-${k}-${i}-lg`"
-          :class="[`${getClass(type, k)}@lg`, typeClass(type)]"
-        >{{ getClass(type, k) }}@lg</div>
+        <template
+          v-for="(v,k,i) in spaceTokens"
+        >
+          <div
+            :key="`${type}-${k}-${i}`"
+            :class="[`${getClass(type, k)}`, typeClass(type)]"
+          >{{ getClass(type, k) }}</div>
+          <div
+            :key="`${type}-${k}-${i}-xs`"
+            :class="[`${getClass(type, k)}@xs`, typeClass(type)]"
+          >{{ getClass(type, k) }}@xs</div>
+          <div
+            :key="`${type}-${k}-${i}-sm`"
+            :class="[`${getClass(type, k)}@sm`, typeClass(type)]"
+          >{{ getClass(type, k) }}@sm</div>
+          <div
+            :key="`${type}-${k}-${i}-md`"
+            :class="[`${getClass(type, k)}@md`, typeClass(type)]"
+          >{{ getClass(type, k) }}@md</div>
+          <div
+            :key="`${type}-${k}-${i}-lg`"
+            :class="[`${getClass(type, k)}@lg`, typeClass(type)]"
+          >{{ getClass(type, k) }}@lg</div>
+        </template>
       </template>
-    </template>
-
+    </div>
   </div>
 </template>
 
@@ -49,6 +52,10 @@ export default {
   name: 'UtilitiesSpace',
   components: {
     CdrText,
+  },
+  props: {
+    category: String,
+    types: Array,
   },
   data() {
     return {

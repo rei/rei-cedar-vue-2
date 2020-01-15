@@ -1,21 +1,27 @@
 import path from 'path';
 import process from 'process';
 import commonjs from 'rollup-plugin-commonjs';
-import alias from 'rollup-plugin-alias';
+import alias from '@rollup/plugin-alias';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
-import postcssImport from 'postcss-import';
 import copyPlugin from 'rollup-plugin-copy';
 import vue from 'rollup-plugin-vue';
 import babel from 'rollup-plugin-babel';
+import postcssImport from 'postcss-import';
 import packageJson from '../package.json';
 
+const env = process.env.NODE_ENV;
 
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
-const env = process.env.NODE_ENV;
+function generateScopedName(name, filename, css) {
+  // don't scope anything in the `css/main.scss` (reset, utils, type, etc.)
+  if (filename.match(/main\.scss/) || env === 'test') return name;
+  // scope classes for components
+  return `${name}_${packageJson.version}`;
+}
 
 // plugin configs
 let postcssExtract = false;
@@ -24,7 +30,7 @@ let copyOutput = 'public';
 
 // prod only options
 if (env === 'prod') {
-  postcssExtract = 'dist/cedar.css';
+  postcssExtract = 'dist/cedar-compiled.css';
   copyOutput = 'dist';
 }
 
@@ -33,18 +39,16 @@ if (env !== 'test') {
   copyTargets = ['static/cdr-fonts.css'];
 }
 
-if (env === 'dev') {
-  copyTargets.push('dist/cedar.css')
-}
-
 const plugins = [
   (env == 'test' || env == 'dev') && alias({
     resolve: ['.json', '.js', '.jsx', '.scss', '.vue'],
-    srcdir: resolve('src'),
-    cssdir: resolve('src/css'),
-    assetsdir: resolve('src/assets'),
-    componentsdir: resolve('src/components'),
-    mixinsdir: resolve('src/mixins'),
+    entries: {
+      srcdir: resolve('src'),
+      cssdir: resolve('src/css'),
+      assetsdir: resolve('src/assets'),
+      componentsdir: resolve('src/components'),
+      mixinsdir: resolve('src/mixins'),
+    },
   }),
   nodeResolve({
     mainFields: ['module', 'jsnext:main', 'main'],
@@ -53,13 +57,7 @@ const plugins = [
   env !== 'prod' &&  vue({
     style: {
       postcssModulesOptions: {
-        generateScopedName(name, filename, css) {
-          // to preseve '@' in responsive class names
-          if (env === 'test') {
-            return name;
-          }
-          return `${name}_${packageJson.version}`;
-        },
+        generateScopedName,
       },
     },
     data: {
@@ -75,23 +73,21 @@ const plugins = [
     },
     styleInjector: `~${resolve('build/style-injector.mjs')}`,
   }),
-
   postcss({
     config: true,
-    plugins: [
-      postcssImport()
-    ],
+    plugins: [postcssImport({
+      // For cedar-compiled build, strip out `@import url()`
+      //           as dependencies will already be compiled.
+      resolve: function(id, basedir, importOptions)  {
+        return resolve('build/noop.css');
+      },
+    })],
     extract: postcssExtract,
     extensions: ['.scss', '.css'],
     sourceMap: env === 'dev' ? 'inline' : false,
     modules: {
-      generateScopedName(name, filename, css) {
-        // don't scope anything in the `css/main.scss` (reset, utils, type, etc.)
-        if (filename.match(/main\.scss/) || env === 'test') return name;
-        // scope classes for components
-        return `${name}_${packageJson.version}`;
-      },
-    }
+      generateScopedName,
+    },
   }),
   babel({
     exclude: 'node_modules/**',

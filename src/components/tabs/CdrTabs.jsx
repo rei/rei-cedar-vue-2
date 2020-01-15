@@ -20,7 +20,6 @@ export default {
       underlineWidth: 0,
       underlineScrollX: 0,
       activeTabIndex: 0,
-      widthInitialized: false,
       headerWidth: 0,
       headerOverflow: false,
       overflowLeft: false,
@@ -45,15 +44,22 @@ export default {
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
 
+    if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
+      this.tabs[this.activeTabIndex].setActive(true);
+    }
+
     this.$nextTick(() => {
-      this.initializeOffsets();
       this.headerWidth = this.getHeaderWidth();
-      if (this.tabs[0] && this.tabs[0].setActive) this.tabs[0].setActive(true);
+      this.calculateOverflow();
+      setTimeout(() => {
+        this.updateUnderline();
+      }, 100);
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
       this.headerWidth = this.getHeaderWidth();
       this.calculateOverflow();
+      this.updateUnderline();
     }, 500));
     // Check for header overflow on widow resize for gradient behavior.
     this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
@@ -82,13 +88,6 @@ export default {
       });
       this.updateUnderline();
     },
-    initializeOffsets() {
-      if (!this.widthInitialized && this.$refs.cdrTabsHeader.children.length > 0) {
-        const elements = Array.from(this.$refs.cdrTabsHeader.children);
-        this.underlineWidth = elements[0].children[0].offsetWidth;
-        this.widthInitialized = true;
-      }
-    },
     calculateOverflow() {
       let containerWidth = 0;
       if (this.$refs.cdrTabsContainer) {
@@ -107,7 +106,7 @@ export default {
     },
     updateUnderline() {
       const elements = Array.from(this.$refs.cdrTabsHeader.children);
-      if (elements) {
+      if (elements.length > 0) {
         const activeTab = elements[this.activeTabIndex];
         this.underlineOffsetX = activeTab.offsetLeft
           - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
@@ -180,7 +179,7 @@ export default {
   render() {
     return (
       <div
-        class={this.modifierClass}
+        class={clsx(this.style[this.baseClass], this.modifierClass)}
         ref="cdrTabsContainer"
         style={{ height: this.height }}
       >
@@ -218,7 +217,7 @@ export default {
                   >
                     <a
                       vOn:click_prevent={e => this.handleClick(tab, e)}
-                      href={tab.name}
+                      href={`#${tab.id || tab.name}`}
                       class={this.style['cdr-tabs__header-item-label']}
                     >
                       { tab.name }
@@ -226,11 +225,12 @@ export default {
                   </li>
               ))}
             </ol>
-            <div
-              class={this.style['cdr-tabs__underline']}
-              style={this.underlineStyle}
-            />
           </nav>
+
+          <div
+            class={this.style['cdr-tabs__underline']}
+            style={this.underlineStyle}
+          />
         </div>
         <div
           class={this.style['cdr-tabs__content-container']}

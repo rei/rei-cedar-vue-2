@@ -1,0 +1,318 @@
+@import "../settings/index";
+/* ==========================================================================/*
+* Typography utility classes
+========================================================================== */
+
+.cdr-text,
+h1.cdr-text,
+h2.cdr-text,
+h3.cdr-text,
+h4.cdr-text,
+h5.cdr-text,
+h6.cdr-text {
+  @include cdr-text-default;
+  margin: 0;
+
+  .cdr-text {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    font-family: inherit;
+  }
+}
+
+.cdr-text > .cdr-text,
+.cdr-text h1.cdr-text,
+.cdr-text h2.cdr-text,
+.cdr-text h3.cdr-text,
+.cdr-text h4.cdr-text,
+.cdr-text h5.cdr-text,
+.cdr-text h6.cdr-text,
+h1.cdr-text.cdr-text ,
+h2.cdr-text.cdr-text,
+h3.cdr-text.cdr-text,
+h4.cdr-text.cdr-text,
+h5.cdr-text.cdr-text,
+h6.cdr-text.cdr-text,
+.cdr-text {
+  &--italic {
+    font-variation-settings: 'ital' 1;
+    font-style: italic;
+  }
+
+  &--strong {
+    font-weight: 700;
+  }
+
+  &--body {
+    &-300 { @include cdr-text-body-300; }
+    &-400 { @include cdr-text-body-400; }
+    &-500 { @include cdr-text-body-500; }
+    &-strong {
+      &-300 { @include cdr-text-body-strong-300; }
+      &-400 { @include cdr-text-body-strong-400; }
+      &-500 { @include cdr-text-body-strong-500; }
+    }
+  }
+  &--utility {
+    &-100 { @include cdr-text-utility-100; }
+    &-200 { @include cdr-text-utility-200; }
+    &-300 { @include cdr-text-utility-300; }
+    &-400 { @include cdr-text-utility-400; }
+    &-500 { @include cdr-text-utility-500; }
+    &-600 { @include cdr-text-utility-600; }
+    &-700 { @include cdr-text-utility-700; }
+    &-800 { @include cdr-text-utility-800; }
+    &-strong {
+      &-100 { @include cdr-text-utility-strong-100; }
+      &-200 { @include cdr-text-utility-strong-200; }
+      &-300 { @include cdr-text-utility-strong-300; }
+      &-400 { @include cdr-text-utility-strong-400; }
+      &-500 { @include cdr-text-utility-strong-500; }
+      &-600 { @include cdr-text-utility-strong-600; }
+      &-700 { @include cdr-text-utility-strong-700; }
+      &-800 { @include cdr-text-utility-strong-800; }
+    }
+    &-serif {
+      &-200 { @include cdr-text-utility-serif-200; }
+      &-300 { @include cdr-text-utility-serif-300; }
+      &-400 { @include cdr-text-utility-serif-400; }
+      &-500 { @include cdr-text-utility-serif-500; }
+      &-600 { @include cdr-text-utility-serif-600; }
+      &-700 { @include cdr-text-utility-serif-700; }
+      &-800 { @include cdr-text-utility-serif-800; }
+      &-strong {
+        &-200 { @include cdr-text-utility-serif-strong-200; }
+        &-300 { @include cdr-text-utility-serif-strong-300; }
+        &-400 { @include cdr-text-utility-serif-strong-400; }
+        &-500 { @include cdr-text-utility-serif-strong-500; }
+        &-600 { @include cdr-text-utility-serif-strong-600; }
+        &-700 { @include cdr-text-utility-serif-strong-700; }
+        &-800 { @include cdr-text-utility-serif-strong-800; }
+      }
+    }
+  }
+
+  &--citation {
+    @include cdr-text-utility-strong-100;
+  }
+
+  &--eyebrow-100 {
+    @include cdr-text-eyebrow-100;
+  }
+
+  &--heading {
+    &-sans {
+      &-200 { @include cdr-text-heading-sans-200; }
+      &-300 { @include cdr-text-heading-sans-300; }
+      &-400 { @include cdr-text-heading-sans-400; }
+      &-500 { @include cdr-text-heading-sans-500; }
+      &-600 { @include cdr-text-heading-sans-600; }
+    }
+    &-serif {
+      &-200 { @include cdr-text-heading-serif-200; }
+      &-300 { @include cdr-text-heading-serif-300; }
+      &-400 { @include cdr-text-heading-serif-400; }
+      &-500 { @include cdr-text-heading-serif-500; }
+      &-600 { @include cdr-text-heading-serif-600; }
+      &-700 { @include cdr-text-heading-serif-700; }
+      &-800 { @include cdr-text-heading-serif-800; }
+      &-900 { @include cdr-text-heading-serif-900; }
+      &-1000 { @include cdr-text-heading-serif-1000; }
+      &-1100 { @include cdr-text-heading-serif-1100; }
+      &-1200 { @include cdr-text-heading-serif-1200; }
+      &-strong {
+        &-600 { @include cdr-text-heading-serif-strong-600; }
+        &-700 { @include cdr-text-heading-serif-strong-700; }
+        &-800 { @include cdr-text-heading-serif-strong-800; }
+        &-900 { @include cdr-text-heading-serif-strong-900; }
+        &-1000 { @include cdr-text-heading-serif-strong-1000; }
+        &-1100 { @include cdr-text-heading-serif-strong-1100; }
+        &-1200 { @include cdr-text-heading-serif-strong-1200; }
+      }
+    }
+  }
+
+  &--subheading {
+    &-sans {
+      &-300 { @include cdr-text-subheading-sans-300; }
+      &-400 { @include cdr-text-subheading-sans-400; }
+      &-500 { @include cdr-text-subheading-sans-500; }
+      &-600 { @include cdr-text-subheading-sans-600; }
+    }
+  }
+
+  @include xs-mq-only {
+    &--heading {
+      &-sans {
+        &-200\@xs { @include cdr-text-heading-sans-200; }
+        &-300\@xs { @include cdr-text-heading-sans-300; }
+        &-400\@xs { @include cdr-text-heading-sans-400; }
+        &-500\@xs { @include cdr-text-heading-sans-500; }
+        &-600\@xs { @include cdr-text-heading-sans-600; }
+      }
+      &-serif {
+        &-200\@xs { @include cdr-text-heading-serif-200; }
+        &-300\@xs { @include cdr-text-heading-serif-300; }
+        &-400\@xs { @include cdr-text-heading-serif-400; }
+        &-500\@xs { @include cdr-text-heading-serif-500; }
+        &-600\@xs { @include cdr-text-heading-serif-600; }
+        &-700\@xs { @include cdr-text-heading-serif-700; }
+        &-800\@xs { @include cdr-text-heading-serif-800; }
+        &-900\@xs { @include cdr-text-heading-serif-900; }
+        &-1000\@xs { @include cdr-text-heading-serif-1000; }
+        &-1100\@xs { @include cdr-text-heading-serif-1100; }
+        &-1200\@xs { @include cdr-text-heading-serif-1200; }
+        &-strong {
+          &-600 { @include cdr-text-heading-serif-strong-600; }
+          &-700 { @include cdr-text-heading-serif-strong-700; }
+          &-800 { @include cdr-text-heading-serif-strong-800; }
+          &-900 { @include cdr-text-heading-serif-strong-900; }
+          &-1000 { @include cdr-text-heading-serif-strong-1000; }
+          &-1100 { @include cdr-text-heading-serif-strong-1100; }
+          &-1200 { @include cdr-text-heading-serif-strong-1200; }
+        }
+      }
+    }
+
+    &--subheading {
+      &-sans {
+        &-300\@xs { @include cdr-text-subheading-sans-300; }
+        &-400\@xs { @include cdr-text-subheading-sans-400; }
+        &-500\@xs { @include cdr-text-subheading-sans-500; }
+        &-600\@xs { @include cdr-text-subheading-sans-600; }
+      }
+    }
+  }
+
+  @include sm-mq-only {
+    &--heading {
+      &-sans {
+        &-200\@sm { @include cdr-text-heading-sans-200; }
+        &-300\@sm { @include cdr-text-heading-sans-300; }
+        &-400\@sm { @include cdr-text-heading-sans-400; }
+        &-500\@sm { @include cdr-text-heading-sans-500; }
+        &-600\@sm { @include cdr-text-heading-sans-600; }
+      }
+      &-serif {
+        &-200\@sm { @include cdr-text-heading-serif-200; }
+        &-300\@sm { @include cdr-text-heading-serif-300; }
+        &-400\@sm { @include cdr-text-heading-serif-400; }
+        &-500\@sm { @include cdr-text-heading-serif-500; }
+        &-600\@sm { @include cdr-text-heading-serif-600; }
+        &-700\@sm { @include cdr-text-heading-serif-700; }
+        &-800\@sm { @include cdr-text-heading-serif-800; }
+        &-900\@sm { @include cdr-text-heading-serif-900; }
+        &-1000\@sm { @include cdr-text-heading-serif-1000; }
+        &-1100\@sm { @include cdr-text-heading-serif-1100; }
+        &-1200\@sm { @include cdr-text-heading-serif-1200; }
+        &-strong {
+          &-600 { @include cdr-text-heading-serif-strong-600; }
+          &-700 { @include cdr-text-heading-serif-strong-700; }
+          &-800 { @include cdr-text-heading-serif-strong-800; }
+          &-900 { @include cdr-text-heading-serif-strong-900; }
+          &-1000 { @include cdr-text-heading-serif-strong-1000; }
+          &-1100 { @include cdr-text-heading-serif-strong-1100; }
+          &-1200 { @include cdr-text-heading-serif-strong-1200; }
+        }
+      }
+    }
+
+    &--subheading {
+      &-sans {
+        &-300\@sm { @include cdr-text-subheading-sans-300; }
+        &-400\@sm { @include cdr-text-subheading-sans-400; }
+        &-500\@sm { @include cdr-text-subheading-sans-500; }
+        &-600\@sm { @include cdr-text-subheading-sans-600; }
+      }
+    }
+  }
+
+  @include md-mq-only {
+    &--heading {
+      &-sans {
+        &-200\@md { @include cdr-text-heading-sans-200; }
+        &-300\@md { @include cdr-text-heading-sans-300; }
+        &-400\@md { @include cdr-text-heading-sans-400; }
+        &-500\@md { @include cdr-text-heading-sans-500; }
+        &-600\@md { @include cdr-text-heading-sans-600; }
+      }
+      &-serif {
+        &-200\@md { @include cdr-text-heading-serif-200; }
+        &-300\@md { @include cdr-text-heading-serif-300; }
+        &-400\@md { @include cdr-text-heading-serif-400; }
+        &-500\@md { @include cdr-text-heading-serif-500; }
+        &-600\@md { @include cdr-text-heading-serif-600; }
+        &-700\@md { @include cdr-text-heading-serif-700; }
+        &-800\@md { @include cdr-text-heading-serif-800; }
+        &-900\@md { @include cdr-text-heading-serif-900; }
+        &-1000\@md { @include cdr-text-heading-serif-1000; }
+        &-1100\@md { @include cdr-text-heading-serif-1100; }
+        &-1200\@md { @include cdr-text-heading-serif-1200; }
+        &-strong {
+          &-600 { @include cdr-text-heading-serif-strong-600; }
+          &-700 { @include cdr-text-heading-serif-strong-700; }
+          &-800 { @include cdr-text-heading-serif-strong-800; }
+          &-900 { @include cdr-text-heading-serif-strong-900; }
+          &-1000 { @include cdr-text-heading-serif-strong-1000; }
+          &-1100 { @include cdr-text-heading-serif-strong-1100; }
+          &-1200 { @include cdr-text-heading-serif-strong-1200; }
+        }
+      }
+    }
+
+    &--subheading {
+      &-sans {
+        &-300\@md { @include cdr-text-subheading-sans-300; }
+        &-400\@md { @include cdr-text-subheading-sans-400; }
+        &-500\@md { @include cdr-text-subheading-sans-500; }
+        &-600\@md { @include cdr-text-subheading-sans-600; }
+      }
+    }
+  }
+
+  @include lg-mq-only {
+    &--heading {
+      &-sans {
+        &-200\@lg { @include cdr-text-heading-sans-200; }
+        &-300\@lg { @include cdr-text-heading-sans-300; }
+        &-400\@lg { @include cdr-text-heading-sans-400; }
+        &-500\@lg { @include cdr-text-heading-sans-500; }
+        &-600\@lg { @include cdr-text-heading-sans-600; }
+      }
+      &-serif {
+        &-200\@lg { @include cdr-text-heading-serif-200; }
+        &-300\@lg { @include cdr-text-heading-serif-300; }
+        &-400\@lg { @include cdr-text-heading-serif-400; }
+        &-500\@lg { @include cdr-text-heading-serif-500; }
+        &-600\@lg { @include cdr-text-heading-serif-600; }
+        &-700\@lg { @include cdr-text-heading-serif-700; }
+        &-800\@lg { @include cdr-text-heading-serif-800; }
+        &-900\@lg { @include cdr-text-heading-serif-900; }
+        &-1000\@lg { @include cdr-text-heading-serif-1000; }
+        &-1100\@lg { @include cdr-text-heading-serif-1100; }
+        &-1200\@lg { @include cdr-text-heading-serif-1200; }
+        &-strong {
+          &-600 { @include cdr-text-heading-serif-strong-600; }
+          &-700 { @include cdr-text-heading-serif-strong-700; }
+          &-800 { @include cdr-text-heading-serif-strong-800; }
+          &-900 { @include cdr-text-heading-serif-strong-900; }
+          &-1000 { @include cdr-text-heading-serif-strong-1000; }
+          &-1100 { @include cdr-text-heading-serif-strong-1100; }
+          &-1200 { @include cdr-text-heading-serif-strong-1200; }
+        }
+      }
+    }
+
+    &--subheading {
+      &-sans {
+        &-300\@lg { @include cdr-text-subheading-sans-300; }
+        &-400\@lg { @include cdr-text-subheading-sans-400; }
+        &-500\@lg { @include cdr-text-subheading-sans-500; }
+        &-600\@lg { @include cdr-text-subheading-sans-600; }
+      }
+    }
+  }
+}

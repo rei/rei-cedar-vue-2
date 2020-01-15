@@ -1,21 +1,25 @@
 <template>
-  <div data-backstop="inputs">
+  <div>
     <cdr-text
       tag="h2"
-    >Text Inputs</cdr-text>
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+    >
+      Text Inputs
+    </cdr-text>
+    <div data-backstop="input-target">
+      <cdr-input
+        class="demo-input"
+        v-model="defaultModel"
+        label="#1 Default"
+      />
 
-    <cdr-input
-      class="demo-input"
-      v-model="defaultModel"
-      label="#1 Default"
-    />
-
-    <cdr-input
-      class="demo-input"
-      v-model="requiredModel"
-      label="#2 Required"
-      required
-    />
+      <cdr-input
+        class="demo-input"
+        v-model="requiredModel"
+        label="#2 Required"
+        required
+      />
+    </div>
 
     <cdr-input
       class="demo-input"
@@ -30,6 +34,7 @@
       v-model="disabledModel"
       label="#4 Disabled Input"
       placeholder="I am disabled"
+      data-backstop="input-disabled"
       disabled
     />
 
@@ -79,8 +84,11 @@
       type="email"
     >
       <template slot="info">
-        <cdr-link href="#/inputs">
-          Info Link/Icon
+        <cdr-link
+          modifier="standalone"
+          href="#/inputs"
+        >
+          Support link
         </cdr-link>
       </template>
       <template slot="pre-icon">

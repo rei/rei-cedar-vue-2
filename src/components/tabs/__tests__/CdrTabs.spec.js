@@ -1,14 +1,14 @@
-import { shallowMount, mount } from '@vue/test-utils';
-import { CdrTabs } from 'distdir/cedar.js';
-import { CdrTabPanel } from 'distdir/cedar.js';
+import { mount } from '@vue/test-utils';
+import CdrTabs from 'componentdir/tabs/CdrTabs';
+import CdrTabPanel from 'componentdir/tabs/CdrTabPanel';
 import Vue from 'vue';
 
 // Tests use nextTick because of the nextTick in mounted hook of tabs
 
-describe('CdrTabs.vue', () => {
+describe('CdrTabs', () => {
   it('mounts tabs', () => {
-    const wrapper = shallowMount(CdrTabs);
-    expect(wrapper.exists()).toBe(true);
+    const wrapper = mount(CdrTabs);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders child tabs properly', (done) => {
@@ -24,10 +24,11 @@ describe('CdrTabs.vue', () => {
     Vue.nextTick(() => {
       expect(wrapper.vm.tabs.length).toBe(2);
       expect(wrapper.findAll('li').length).toBe(2);
+      expect(wrapper.element).toMatchSnapshot();
       done();
     });
   });
-  
+
   it('resize calculates overflow properly', (done) => {
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -221,21 +222,6 @@ describe('CdrTabs.vue', () => {
     expect(wrapper.vm.headerOverflow).toBe(true);
   });
 
-  it('width is initialized only once', () => {
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
-      }
-    });
-    wrapper.setData({ widthInitialized: true });
-    wrapper.setData({ underlineWidth: -1 });
-    wrapper.vm.initializeOffsets();
-    expect(wrapper.vm.underlineWidth).toBe(-1);
-  });
-
   it('scrollbar is hidden properly', (done) => {
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -269,7 +255,7 @@ describe('CdrTabs.vue', () => {
       }
     });
     Vue.config.errorHandler = done;
-    
+
     const spy = spyOn(wrapper.vm, 'handleDownArrowNav')
     Vue.nextTick(() => {
       // Trigger right arrow keyup event
@@ -278,7 +264,7 @@ describe('CdrTabs.vue', () => {
       done();
     });
   });
-  
+
   it('handles up arrow', (done) => {
     const wrapper = mount(CdrTabs, {
       stubs: {

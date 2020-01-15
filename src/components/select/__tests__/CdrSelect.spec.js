@@ -1,15 +1,15 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import { CdrSelect } from 'distdir/cedar.js';
+import CdrSelect from 'componentdir/select/CdrSelect';
 
-describe('cdrSelect.vue', () => {
-  it('renders a label element', () => {
-    const wrapper = shallowMount(CdrSelect, {
+describe('cdrSelect', () => {
+  it('renders correctly', () => {
+    const wrapper = mount(CdrSelect, {
       propsData: {
         label: 'Label Test',
+        id: 'renders'
       },
     });
-    expect(wrapper.vm.$refs.label.tagName).toBe('LABEL');
-    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test ');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders required label correctly', () => {
@@ -17,9 +17,10 @@ describe('cdrSelect.vue', () => {
       propsData: {
         label: 'Label Test',
         required: true,
+        id: 'required-label'
       },
     });
-    expect(wrapper.vm.$refs.label.textContent).toBe('Label Test Required');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('hide-label sets aria-label correctly', () => {
@@ -49,16 +50,6 @@ describe('cdrSelect.vue', () => {
       },
     });
     expect(wrapper.vm.$refs.select.id).toBe(wrapper.vm._uid.toString());
-  });
-
-  it('renders a select element', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'Label Test',
-      },
-    });
-    const select = wrapper.find({ ref: 'select'});
-    expect(select.is('select')).toBe(true);
   });
 
   it('sets select name attribute correctly', () => {
@@ -241,23 +232,25 @@ describe('cdrSelect.vue', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
+        id: 'info-slot'
       },
       slots: {
         'info': '🤠',
       },
     });
-    expect(wrapper.find('.cdr-select__info-container').text()).toBe('🤠');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('renders helper-text slot', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
+        id: 'helper-text'
       },
       slots: {
         'helper-text': 'very helpful',
       },
     });
-    expect(wrapper.find('.cdr-select__helper-text').text()).toBe('very helpful');
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

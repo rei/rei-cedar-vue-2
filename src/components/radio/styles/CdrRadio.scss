@@ -21,10 +21,10 @@
 ========================================================================== */
 
 .cdr-radio {
-  @include cdr-label-base-mixin;
+  @include radio-text;
 
   position: relative;
-  padding-left: calc(#{$radio-figure-size} + #{$cdr-label-base-spacing});
+  padding-left: calc(#{$radio-figure-size-medium} + #{$cdr-label-base-spacing});
 
   /* Elements
     ========================================================================== */
@@ -34,6 +34,7 @@
   &__wrap {
     /* get rid of inline-block whitespace from label element */
     font-size: 0;
+    line-height: 1;
   }
 
   /* Input
@@ -51,8 +52,8 @@
     position: absolute;
     top: $radio-figure-space-top;
     left: 0;
-    width: $radio-figure-size;
-    height: $radio-figure-size;
+    width: $radio-figure-size-medium;
+    height: $radio-figure-size-medium;
     border-radius: $radio-figure-radius;
     background-color: $radio-figure-background-color;
     border: 1px solid $radio-figure-border-color;
@@ -145,6 +146,62 @@
     box-shadow: $radio-focus-outline;
   }
 
+
+  /* Sizes
+  ========================================================================== */
+  @include radio-small-mixin(&);
+
+  @include radio-medium-mixin(&);
+
+  @include radio-large-mixin(&);
+
+  /* Breakpoint variants
+
+  /* @xs
+    0px - 767px
+    ========== */
+  @include xs-mq-only {
+    @include radio-small-mixin(&, \@xs);
+
+    @include radio-medium-mixin(&, \@xs);
+
+    @include radio-large-mixin(&, \@xs);
+  }
+
+  /* @sm
+    768px - 991px
+    ========== */
+  @include sm-mq-only {
+    @include radio-small-mixin(&, \@sm);
+
+    @include radio-medium-mixin(&, \@sm);
+
+    @include radio-large-mixin(&, \@sm);
+  }
+
+  /* @md
+    992px - 1199px
+    ========== */
+  @include md-mq-only {
+    @include radio-small-mixin(&, \@md);
+
+    @include radio-medium-mixin(&, \@md);
+
+    @include radio-large-mixin(&, \@md);
+  }
+
+  /* @lg
+    1200px and up
+    ========== */
+
+  @include lg-mq-only {
+    @include radio-small-mixin(&, \@lg);
+
+    @include radio-medium-mixin(&, \@lg);
+
+    @include radio-large-mixin(&, \@lg);
+  }
+
   /* Modifiers
     ========================================================================== */
 
@@ -152,7 +209,7 @@
     ========== */
 
   &--compact {
-    @include cdr-label-compact-mixin;
+    @include radio-text-compact;
 
     & > .cdr-radio__figure {
       top: $radio-compact-figure-space-top;
@@ -163,10 +220,11 @@
     ========== */
 
   &--hide-figure {
-    padding-left: 0;
+    padding-left: 0 !important;
 
     & > .cdr-radio__figure {
       display: none;
     }
   }
+
 }
