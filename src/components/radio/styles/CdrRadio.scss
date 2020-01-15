@@ -146,6 +146,62 @@
     box-shadow: $radio-focus-outline;
   }
 
+
+  /* Sizes
+  ========================================================================== */
+  @include radio-small-mixin(&);
+
+  @include radio-medium-mixin(&);
+
+  @include radio-large-mixin(&);
+
+  /* Breakpoint variants
+
+  /* @xs
+    0px - 767px
+    ========== */
+  @include xs-mq-only {
+    @include radio-small-mixin(&, \@xs);
+
+    @include radio-medium-mixin(&, \@xs);
+
+    @include radio-large-mixin(&, \@xs);
+  }
+
+  /* @sm
+    768px - 991px
+    ========== */
+  @include sm-mq-only {
+    @include radio-small-mixin(&, \@sm);
+
+    @include radio-medium-mixin(&, \@sm);
+
+    @include radio-large-mixin(&, \@sm);
+  }
+
+  /* @md
+    992px - 1199px
+    ========== */
+  @include md-mq-only {
+    @include radio-small-mixin(&, \@md);
+
+    @include radio-medium-mixin(&, \@md);
+
+    @include radio-large-mixin(&, \@md);
+  }
+
+  /* @lg
+    1200px and up
+    ========== */
+
+  @include lg-mq-only {
+    @include radio-small-mixin(&, \@lg);
+
+    @include radio-medium-mixin(&, \@lg);
+
+    @include radio-large-mixin(&, \@lg);
+  }
+
   /* Modifiers
     ========================================================================== */
 
@@ -164,65 +220,11 @@
     ========== */
 
   &--hide-figure {
-    padding-left: 0;
+    padding-left: 0 !important;
 
     & > .cdr-radio__figure {
       display: none;
     }
   }
 
-  /* Sizes
-    ========================================================================== */
-    @include radio-small-mixin(&);
-
-    @include radio-medium-mixin(&);
-  
-    @include radio-large-mixin(&);
-  
-    /* Breakpoint variants
-  
-    /* @xs
-      0px - 767px
-      ========== */
-    @include xs-mq-only {
-      @include radio-small-mixin(&, \@xs);
-  
-      @include radio-medium-mixin(&, \@xs);
-  
-      @include radio-large-mixin(&, \@xs);
-    }
-  
-    /* @sm
-      768px - 991px
-      ========== */
-    @include sm-mq-only {
-      @include radio-small-mixin(&, \@sm);
-  
-      @include radio-medium-mixin(&, \@sm);
-  
-      @include radio-large-mixin(&, \@sm);
-    }
-  
-    /* @md
-      992px - 1199px
-      ========== */
-    @include md-mq-only {
-      @include radio-small-mixin(&, \@md);
-  
-      @include radio-medium-mixin(&, \@md);
-  
-      @include radio-large-mixin(&, \@md);
-    }
-  
-    /* @lg
-      1200px and up
-      ========== */
-  
-    @include lg-mq-only {
-      @include radio-small-mixin(&, \@lg);
-  
-      @include radio-medium-mixin(&, \@lg);
-  
-      @include radio-large-mixin(&, \@lg);
-    }
 }
