@@ -60,6 +60,9 @@ export default {
     remainder() {
       return this.rounded.toFixed(2).split('.')[1];
     },
+    empties() {
+      return 5 - this.whole - (this.remainder > 0 ? 1 : 0);
+    },
     formattedCount() {
       return this.compact ? `(${this.count})` : `${this.count}`;
     },
@@ -103,30 +106,28 @@ export default {
           this.href ? this.style['cdr-rating--linked'] : '',
         )}
       >
-        <div class={this.style['cdr-rating__background']}>
-          {[...Array(5)].map(n => (
-              <span
-                class={clsx(
-                  this.style['cdr-rating__icon'],
-                  this.count > 0
-                    ? this.style['cdr-rating__placeholder']
-                    : this.style['cdr-rating__placeholder--no-reviews'],
-                )}
-                key={n}
-                aria-hidden="true"
-              />
-          ))}
-        </div>
         <div class={this.style['cdr-rating__ratings']}>
 
-          {[...Array(this.whole)].map(n => (
+          {[...Array(this.whole).keys()].map(n => (
               <span
                 class={clsx(this.style['cdr-rating__icon'], this.style['cdr-rating__100'])}
-                key={n}
+                key={`rating-whole-${n}-${this._uid}`} // eslint-disable-line no-underscore-dangle
                 aria-hidden="true"
               />
           ))}
           {this.remainderEl }
+          {[...Array(this.empties).keys()].map(n => (
+            <span
+              class={clsx(
+                this.style['cdr-rating__icon'],
+                (this.rounded > 0 || this.count > 0)
+                  ? this.style['cdr-rating__placeholder']
+                  : this.style['cdr-rating__placeholder--no-reviews'],
+              )}
+              key={`rating-empty-${n}-${this._uid}`} // eslint-disable-line no-underscore-dangle
+              aria-hidden="true"
+            />
+          ))}
         </div>
         {this.count !== null
           ? <span
