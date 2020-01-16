@@ -21,6 +21,28 @@
       href="https://www.rei.com"
       data-backstop="rating-primary-linked"
     />
+
+    <cdr-rating
+      rating="0"
+      count="0"
+    />
+    <cdr-rating
+      :rating="0"
+      :count="0"
+    />
+    <cdr-rating
+      :rating="0"
+      :count="10"
+    />
+
+    <cdr-rating
+      rating="3.3"
+      count="48"
+    />
+    <cdr-rating
+      :rating="3.3"
+      :count="48"
+    />
     <!-- Large Size -->
 
 
