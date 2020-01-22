@@ -4,18 +4,6 @@ import IconCaretRight from '../icon/comps/caret-right';
 import CdrSelect from '../select/CdrSelect';
 import style from './styles/CdrPagination.scss';
 
-const hasWindowSupport = typeof window !== 'undefined';
-const w = hasWindowSupport ? window : {};
-const requestAF = w.requestAnimationFrame
-  || w.webkitRequestAnimationFrame
-  || w.mozRequestAnimationFrame
-  || w.msRequestAnimationFrame
-  || w.oRequestAnimationFrame
-  // Fallback, but not a true polyfill
-  // Only needed for Opera Mini
-  /* istanbul ignore next */
-  || (cb => setTimeout(cb, 16));
-
 export default {
   name: 'CdrPagination',
   components: {
@@ -63,6 +51,7 @@ export default {
     return {
       style,
       componentID: Math.random().toString(36).substr(2, 9),
+      currentIdx: 0,
     };
   },
   computed: {
@@ -72,6 +61,7 @@ export default {
         return this.value;
       },
       set(newValue) {
+        this.setCurrentIdx(newValue);
         this.$emit('input', newValue);
       },
     },
@@ -82,13 +72,12 @@ export default {
       return this.pages.length;
     },
     prevPageIdx() {
+      console.log('PREV', this.currentIdx - 1);
       return this.currentIdx - 1;
     },
     nextPageIdx() {
+      console.log('NEXT', this.currentIdx + 1);
       return this.currentIdx + 1;
-    },
-    currentIdx() {
-      return this.pages.map(x => x.page).indexOf(this.innerValue);
     },
     /**
      * Creates an array of the pages that should be shown as links with logic for truncation.
@@ -209,6 +198,7 @@ export default {
       );
     },
     nextElAttrs() {
+      console.log('nextElAttrs');
       const nextPageData = this.pages[this.nextPageIdx];
       return {
         // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
@@ -302,19 +292,21 @@ export default {
       );
     },
   },
+  beforeMount() {
+    this.setCurrentIdx(this.value);
+  },
   methods: {
+    setCurrentIdx(pageNum) {
+      this.currentIdx = this.pages.map(x => x.page).indexOf(pageNum);
+    },
     navigate(pageNum, e) {
+      console.log('Navigate');
       // Dont do anything if clicking the current active page
       if (pageNum === this.innerValue) {
         return;
       }
-      requestAF(() => {
-        // Update the v-model
-        // Done in in requestAF() to allow browser to complete the
-        // native browser click handling of a link
-        this.innerValue = pageNum;
-        this.$emit('navigate', pageNum, this.currentUrl, e);
-      });
+      this.innerValue = pageNum;
+      this.$emit('navigate', pageNum, this.currentUrl, e);
       this.$nextTick(() => {
         // Done in a nextTick() to ensure rendering complete
         try {
@@ -330,6 +322,9 @@ export default {
     },
     select(page, e) {
       e.preventDefault();
+      if (e.type === 'input') { // avoid CdrSelect bug
+        return;
+      }
       if (this.$scopedSlots.link) {
         const ref = this.$scopedSlots.link()[0].context.$refs[`page-link-${page}-${this.componentID}`]; // eslint-disable-line max-len
         if (ref.$el) { // it's a component (like vue-router)
