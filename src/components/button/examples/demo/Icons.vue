@@ -6,7 +6,7 @@
     >
       <cdr-text
         tag="h3"
-        modifier="heading-400"
+        modifier="heading-sans-400"
       >
         CdrButton + CdrIcon Comps
       </cdr-text>
@@ -77,7 +77,7 @@
     <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-400"
+        modifier="heading-sans-400"
       >
         Using a sprite
       </cdr-text>
@@ -184,7 +184,7 @@
     <div class="button-example cdr-space-inset-one-x">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Icon only button
       </cdr-text>

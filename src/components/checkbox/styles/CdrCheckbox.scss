@@ -166,24 +166,6 @@
     box-shadow: $checkbox-focus-outline;
   }
 
-  /* Modifiers
-    ========================================================================== */
-
-  /* Hide Figure
-    ========== */
-
-  // TODO: remove compact?
-  &--compact {
-    @include checkbox-text-compact;
-  }
-
-  &--hide-figure {
-    padding-left: 0;
-
-    & > .cdr-checkbox__figure {
-      display: none;
-    }
-  }
 
   /* Sizes
     ========================================================================== */
@@ -239,5 +221,25 @@
 
     @include checkbox-large-mixin(&, \@lg);
   }
+
+  /* Modifiers
+    ========================================================================== */
+
+  /* Hide Figure
+    ========== */
+
+  // TODO: remove compact?
+  &--compact {
+    @include checkbox-text-compact;
+  }
+
+  &--hide-figure {
+    padding-left: 0;
+
+    & > .cdr-checkbox__figure {
+      display: none;
+    }
+  }
+
 
 }

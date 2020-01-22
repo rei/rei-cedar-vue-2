@@ -2,7 +2,7 @@
   <div>
     <cdr-text
       tag="h3"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Unordered list
     </cdr-text>
@@ -28,7 +28,7 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Compact Unordered list
     </cdr-text>
@@ -49,7 +49,7 @@
 
     <cdr-text
       tag="h4"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Inline unordered list
     </cdr-text>
@@ -63,9 +63,30 @@
       <li>List item text</li>
     </cdr-list>
 
+    <cdr-list
+      modifier="inline unordered"
+      space="cdr-mb-space-two-x"
+    >
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+      <li>List item text</li>
+    </cdr-list>
+
     <cdr-text
       tag="h4"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Inline compact unordered list
     </cdr-text>

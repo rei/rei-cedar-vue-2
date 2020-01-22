@@ -2,14 +2,14 @@
   <div>
     <cdr-text
       tag="h2"
-      modifier="heading-400 heading-500@md heading-500@lg"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
     >
       Images
     </cdr-text>
     <div data-backstop="image-aspect-ratio">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Aspect Ratios (with landscape images)
       </cdr-text>
@@ -28,7 +28,7 @@
     <div data-backstop="image-standard">
       <cdr-text
         tag="h3"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Standard image
       </cdr-text>

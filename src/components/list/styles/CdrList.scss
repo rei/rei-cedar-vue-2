@@ -79,6 +79,7 @@
   ========== */
   &--inline {
     display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
     padding-left: $inline-list-space;
 
@@ -110,7 +111,7 @@
         }
 
         &:first-of-type::before {
-          content: '';
+          display: none;
         }
 
         &::before {

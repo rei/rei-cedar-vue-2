@@ -5,30 +5,6 @@ exports[`CdrRating renders correctly 1`] = `
   class="cdr-rating cdr-rating--primary"
 >
   <div
-    class="cdr-rating__background"
-  >
-    <span
-      aria-hidden="true"
-      class="cdr-rating__icon cdr-rating__placeholder"
-    />
-    <span
-      aria-hidden="true"
-      class="cdr-rating__icon cdr-rating__placeholder"
-    />
-    <span
-      aria-hidden="true"
-      class="cdr-rating__icon cdr-rating__placeholder"
-    />
-    <span
-      aria-hidden="true"
-      class="cdr-rating__icon cdr-rating__placeholder"
-    />
-    <span
-      aria-hidden="true"
-      class="cdr-rating__icon cdr-rating__placeholder"
-    />
-  </div>
-  <div
     class="cdr-rating__ratings"
   >
     <span
@@ -46,6 +22,10 @@ exports[`CdrRating renders correctly 1`] = `
     <span
       aria-hidden="true"
       class="cdr-rating__icon cdr-rating__25"
+    />
+    <span
+      aria-hidden="true"
+      class="cdr-rating__icon cdr-rating__placeholder"
     />
   </div>
   <span

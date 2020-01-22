@@ -4,7 +4,7 @@
   >
     <cdr-text
       tag="h2"
-      modifier="heading-600 heading-700@md heading-700@lg"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
     >
       Ratings
     </cdr-text>
@@ -20,6 +20,28 @@
       count="21"
       href="https://www.rei.com"
       data-backstop="rating-primary-linked"
+    />
+
+    <cdr-rating
+      rating="0"
+      count="0"
+    />
+    <cdr-rating
+      :rating="0"
+      :count="0"
+    />
+    <cdr-rating
+      :rating="0"
+      :count="10"
+    />
+
+    <cdr-rating
+      rating="3.3"
+      count="48"
+    />
+    <cdr-rating
+      :rating="3.3"
+      :count="48"
     />
     <!-- Large Size -->
 

@@ -4,7 +4,7 @@
     <div class="row-demo-wrapper">
       <cdr-text
         tag="h2"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         The Grid
       </cdr-text>
@@ -12,7 +12,7 @@
       <div data-backstop="row-basic">
         <cdr-text
           tag="h3"
-          modifier="heading-400 heading-500@md heading-500@lg"
+          modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
         >
           cdr-row usage
         </cdr-text>
@@ -873,7 +873,7 @@
 
         <cdr-text
           tag="h3"
-          modifier="heading-400 heading-500@md heading-500@lg"
+          modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
         >
           cdr-col usage
         </cdr-text>
@@ -2271,7 +2271,7 @@
       <div data-backstop="row-responsive">
         <cdr-text
           tag="h4"
-          modifier="heading-400 heading-500@md heading-500@lg"
+          modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
         >
           Mix and match responsive row classes
         </cdr-text>
@@ -2335,7 +2335,7 @@
 
       <cdr-text
         tag="h4"
-        modifier="heading-400 heading-500@md heading-500@lg"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         cdr-col responsive options
       </cdr-text>
