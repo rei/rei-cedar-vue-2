@@ -213,14 +213,14 @@ describe('CdrPagination', () => {
     expect(next.exists()).toBeFalsy();
   });
 
-  it('emits events with correct values', async () => {
+  it('pagination emits events with correct values', () => {
     const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 5,
       },
       listeners: {
-        input: (newVal) => { // simulate v-model update
+        'update-pagination': (newVal) => { // simulate v-model update
           wrapper.setProps({ value: newVal });
         }
       }
@@ -254,8 +254,7 @@ describe('CdrPagination', () => {
     // use select
     let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
     options.at(1).setSelected();
-    console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-');
-    console.log(wrapper.emitted());
+
     expect(wrapper.emitted().navigate[3][0]).toBe(2);
     expect(wrapper.emitted().navigate[3][1]).toBe('?page=2');
     expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
@@ -268,7 +267,7 @@ describe('CdrPagination', () => {
         value: 5,
       },
       listeners: {
-        input: (newVal) => { // simulate v-model update
+        'update-pagination': (newVal) => { // simulate v-model update
           wrapper.setProps({ value: newVal });
         }
       },
@@ -301,21 +300,23 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
     
     // use select
-    let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
+    let select = wrapper.find({ ref: `select-${wrapper.vm.componentID}` })
+    let options = select.findAll('option')
     options.at(1).setSelected();
+
     expect(wrapper.emitted().navigate[3][0]).toBe(2);
     expect(wrapper.emitted().navigate[3][1]).toBe('?page=2');
     expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
   });
 
-  it('works with vue-router', () => {
+  it('pagination works with vue-router', () => {
     const wrapper = mount(CdrPagination, {
       propsData: {
         pages: makePages(20),
         value: 5,
       },
       listeners: {
-        input: (newVal) => { // simulate v-model update
+        'update-pagination': (newVal) => { // simulate v-model update
           wrapper.setProps({ value: newVal });
         }
       },

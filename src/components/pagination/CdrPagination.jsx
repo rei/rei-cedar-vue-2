@@ -11,6 +11,10 @@ export default {
     IconCaretRight,
     CdrSelect,
   },
+  model: {
+    prop: 'value',
+    event: 'update-pagination',
+  },
   props: {
     /**
      * Total number of pages. Sometimes the total number of pages is different than total page data
@@ -62,7 +66,7 @@ export default {
       },
       set(newValue) {
         this.setCurrentIdx(newValue);
-        this.$emit('input', newValue);
+        this.$emit('update-pagination', newValue);
       },
     },
     currentUrl() {
@@ -72,17 +76,15 @@ export default {
       return this.pages.length;
     },
     prevPageIdx() {
-      console.log('PREV', this.currentIdx - 1);
       return this.currentIdx - 1;
     },
     nextPageIdx() {
-      console.log('NEXT', this.currentIdx + 1);
       return this.currentIdx + 1;
     },
     /**
      * Creates an array of the pages that should be shown as links with logic for truncation.
      *
-     * If total = 20 ([num] indicates current page)
+     * If total = 20 ([#] indicates current page)
      * [1] 2 3 4 5 ... 20
      * 1 2 3 [4] 5 ... 20
      * 1 ... 4 [5] 6 ... 20
@@ -218,6 +220,7 @@ export default {
       };
     },
     nextEl() {
+      console.log('nextEl');
       return this.innerValue < this.pages[this.totalPageData - 1].page ? (
         <li>
           {this.$scopedSlots.nextLink
@@ -273,10 +276,10 @@ export default {
       return (
         <li class={this.style['cdr-pagination__li--select']}>
           <cdr-select
-            vModel_number={this.innerValue}
+            vModel={this.innerValue}
             label="Navigate to page"
             hide-label
-            onChange={this.select}
+            onSelect-change={this.select}
             ref={`select-${this.componentID}`}
             id={`select-${this.componentID}`}
           >
@@ -292,21 +295,27 @@ export default {
       );
     },
   },
+  watch: {
+    pages() {
+      console.log('watch');
+      this.setCurrentIdx(this.innerValue);
+    },
+  },
   beforeMount() {
-    this.setCurrentIdx(this.value);
+    this.setCurrentIdx(this.innerValue);
   },
   methods: {
-    setCurrentIdx(pageNum) {
-      this.currentIdx = this.pages.map(x => x.page).indexOf(pageNum);
+    setCurrentIdx(page) {
+      this.currentIdx = this.pages.map(x => x.page).indexOf(page);
     },
     navigate(pageNum, e) {
-      console.log('Navigate');
       // Dont do anything if clicking the current active page
       if (pageNum === this.innerValue) {
         return;
       }
       this.innerValue = pageNum;
       this.$emit('navigate', pageNum, this.currentUrl, e);
+
       this.$nextTick(() => {
         // Done in a nextTick() to ensure rendering complete
         try {
@@ -322,9 +331,6 @@ export default {
     },
     select(page, e) {
       e.preventDefault();
-      if (e.type === 'input') { // avoid CdrSelect bug
-        return;
-      }
       if (this.$scopedSlots.link) {
         const ref = this.$scopedSlots.link()[0].context.$refs[`page-link-${page}-${this.componentID}`]; // eslint-disable-line max-len
         if (ref.$el) { // it's a component (like vue-router)
