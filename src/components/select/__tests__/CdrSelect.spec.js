@@ -122,22 +122,6 @@ describe('cdrSelect', () => {
     expect(wrapper.vm.$refs.select.hasAttribute('multiple')).toBe(true);
   });
 
-  it('emits input event with correct value', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'test',
-        value: '2',
-        options: ['1', '2'],
-      },
-    });
-    const select = wrapper.find({ ref: 'select'});
-    wrapper.setProps({ value: '1' });
-    select.trigger('input');
-    expect(wrapper.emitted().input[0][0]).toBe('1');
-  });
-
-  // Deprecated event and should be removed
-  // when the change event is removed.
   it('emits change event with correct value', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
@@ -147,43 +131,13 @@ describe('cdrSelect', () => {
       },
     });
     const select = wrapper.find({ ref: 'select'});
-    wrapper.setProps({ value: '3' });
-    select.trigger('change');
+    const options = select.findAll('option');
+    options.at(0).setSelected();
+    expect(wrapper.emitted().input[0][0]).toBe('3');
     expect(wrapper.emitted().change[0][0]).toBe('3');
+    expect(wrapper.emitted()['select-change'][0][0]).toBe('3');
   });
 
-  it('emits input event with correct value for multiple', () => {
-    const wrapper = shallowMount(CdrSelect, {
-      propsData: {
-        label: 'test',
-        multiple: true,
-        value: ['1', '2'],
-        options: [{
-          value: '1',
-          text: 'one',
-        },
-        {
-          value: '2',
-          text: 'two',
-        },
-        {
-          value: '3',
-          text: 'three',
-        }],
-      },
-    });
-    wrapper.setProps({ value: ['1', '3'] });
-    const propValues = wrapper.vm.value;
-    for(let o of wrapper.vm.$refs.select.options) {
-      propValues.indexOf(o.value) >= 0 ? o.selected = true : o.selected = false;
-    }
-    const select = wrapper.find({ ref: 'select'});
-    select.trigger('input');
-    expect(wrapper.emitted().input[0][0]).toEqual(['1', '3']);
-  });
-
-  // Deprecated event and should be removed
-  // when the change event is removed.
   it('emits change event with correct value for multiple', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
@@ -204,17 +158,17 @@ describe('cdrSelect', () => {
         }],
       },
     });
-    wrapper.setProps({ value: ['1', '3'] });
-    const propValues = wrapper.vm.value;
-    for(let o of wrapper.vm.$refs.select.options) {
-      propValues.indexOf(o.value) >= 0 ? o.selected = true : o.selected = false;
-    }
-    const select = wrapper.find({ ref: 'select'});
-    select.trigger('input');
+    const select = wrapper.find({ ref: 'select' });
+    const options = select.findAll('option');
+    options.at(0).element.selected = true;
+    options.at(1).element.selected = false;
+    options.at(2).element.selected = true;
+    select.trigger('change');
+    expect(wrapper.emitted().input[0][0]).toEqual(['1', '3']);
     expect(wrapper.emitted().change[0][0]).toEqual(['1', '3']);
+    expect(wrapper.emitted()['select-change'][0][0]).toEqual(['1', '3']);
   });
-
-  // NOTE - can't use v-model directly here, targeting the `data` prop instead
+  
   it('updating v-model data updates the select', () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
@@ -224,8 +178,10 @@ describe('cdrSelect', () => {
       },
     });
     const select = wrapper.find({ ref: 'select' });
+    const options = select.findAll('option');
     wrapper.setProps({value: '3'});
     expect(select.element.value).toBe('3');
+    expect(options.at(0).element.selected).toBeTruthy();
   });
 
   it('renders info slot', () => {

@@ -12,6 +12,10 @@ export default {
   },
   mixins: [size, space],
   inheritAttrs: false,
+  model: {
+    prop: 'value',
+    event: 'update-select',
+  },
   props: {
     /**
      * `id` for the select that is mapped to the label `for` attribute. If one is not provided, it will be generated.
@@ -55,6 +59,14 @@ export default {
     };
   },
   computed: {
+    innerValue: {
+      get() {
+        return this.value;
+      },
+      set(newValue) {
+        this.$emit('update-select', newValue);
+      },
+    },
     // Use given id or generate one
     selectId() {
       return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
@@ -94,36 +106,24 @@ export default {
         {},
         this.$listeners,
         {
-          input(event) {
+          change(event) {
             if (vm.multiple) {
               const optArr = toArray(event.target.options);
               const selected = optArr.filter(o => o.selected === true).map(o => o.value);
+
+              vm.innerValue = selected;
+              vm.$emit('select-change', selected, event);
+
+              // Deprecated Event
               vm.$emit('input', selected, event);
-
-              // Deprecated Event
               vm.$emit('change', selected, event);
-
-              vm.value = selected;
             } else {
-              vm.$emit('input', event.target.value, event);
+              vm.innerValue = event.target.value;
+              vm.$emit('select-change', event.target.value, event);
 
               // Deprecated Event
+              vm.$emit('input', event.target.value, event);
               vm.$emit('change', event.target.value, event);
-            }
-          },
-          change(event) {
-            // Deprecated event
-            vm.$emit('change', event.target.value, event);
-
-            // Needed for Internet Explorer
-            if (vm.value !== event.target.value) {
-              if (vm.multiple) {
-                const optArr = toArray(event.target.options);
-                const selected = optArr.filter(o => o.selected === true).map(o => o.value);
-                vm.$emit('input', selected, event);
-              } else {
-                vm.$emit('input', event.target.value, event);
-              }
             }
           },
         },
@@ -140,7 +140,7 @@ export default {
           aria-label={this.hideLabel ? this.label : null}
           ref="select"
           {...{ attrs: this.$attrs, on: this.inputListeners }}
-          vModel={this.value}
+          vModel={this.innerValue}
         >
 
           {this.prompt
