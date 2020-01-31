@@ -228,36 +228,47 @@ describe('CdrPagination', () => {
     let next = wrapper.find({ ref: `next-link-${wrapper.vm.componentID}` });
     let prev = wrapper.find({ ref: `prev-link-${wrapper.vm.componentID}` });
 
-    // click next
-    next.trigger('click');
+    // next clicks
+    next.trigger('click'); // 5 -> 6
     expect(wrapper.emitted().navigate[0][0]).toBe(6);
     expect(wrapper.emitted().navigate[0][1]).toBe('?page=6');
     expect(wrapper.emitted().navigate[0][2] instanceof Event).toBeTruthy();
-    
-    // click previous
-    prev.trigger('click');
-    expect(wrapper.emitted().navigate[1][0]).toBe(5);
-    expect(wrapper.emitted().navigate[1][1]).toBe('?page=5');
+    next.trigger('click'); // 6 -> 7
+    expect(wrapper.emitted().navigate[1][0]).toBe(7);
+    expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
     expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
     
-    // click a page link
-    let link = wrapper.findAll('ul > li > a').at(1);
-    link.trigger('click');
-    expect(wrapper.emitted().navigate[2][0]).toBe(1);
-    expect(wrapper.emitted().navigate[2][1]).toBe('?page=1');
+    // previous clicks
+    prev.trigger('click'); // 7 -> 6
+    expect(wrapper.emitted().navigate[2][0]).toBe(6);
+    expect(wrapper.emitted().navigate[2][1]).toBe('?page=6');
     expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
+    prev.trigger('click'); // 6 -> 5
+    expect(wrapper.emitted().navigate[3][0]).toBe(5);
+    expect(wrapper.emitted().navigate[3][1]).toBe('?page=5');
+    expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
     
+    // individual links
+    let link = wrapper.findAll('ul > li > a').at(1);
+    link.trigger('click'); // 5 -> 1
+    expect(wrapper.emitted().navigate[4][0]).toBe(1);
+    expect(wrapper.emitted().navigate[4][1]).toBe('?page=1');
+    expect(wrapper.emitted().navigate[4][2] instanceof Event).toBeTruthy();
+    let link2 = wrapper.findAll('ul > li > a').at(1);
+    link2.trigger('click'); // 1 -> 2
+    expect(wrapper.emitted().navigate[5][0]).toBe(2);
+    expect(wrapper.emitted().navigate[5][1]).toBe('?page=2');
+    expect(wrapper.emitted().navigate[5][2] instanceof Event).toBeTruthy();
     // Do nothing when clicking current page link
-    link.trigger('click');
-    expect(wrapper.emitted().navigate[3]).toBeUndefined();
-
+    link2.trigger('click'); // 2 -> 2
+    expect(wrapper.emitted().navigate[6]).toBeUndefined();
+    
     // use select
     let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
-    options.at(1).setSelected();
-
-    expect(wrapper.emitted().navigate[3][0]).toBe(2);
-    expect(wrapper.emitted().navigate[3][1]).toBe('?page=2');
-    expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
+    options.at(2).setSelected(); // 2 -> 3
+    expect(wrapper.emitted().navigate[6][0]).toBe(3);
+    expect(wrapper.emitted().navigate[6][1]).toBe('?page=3');
+    expect(wrapper.emitted().navigate[6][2] instanceof Event).toBeTruthy();
   });
 
   it('binds refs and emits events with scoped slots', () => {
@@ -278,35 +289,50 @@ describe('CdrPagination', () => {
       }
     });
 
-    // click next
     let next = wrapper.vm.$scopedSlots.nextLink()[0].context.$refs[`next-link-${wrapper.vm.componentID}`];
-    next.click();
+    let prev = wrapper.vm.$scopedSlots.prevLink()[0].context.$refs[`prev-link-${wrapper.vm.componentID}`];
+    // next clicks
+    next.click(); // 5 -> 6
     expect(wrapper.emitted().navigate[0][0]).toBe(6);
     expect(wrapper.emitted().navigate[0][1]).toBe('?page=6');
     expect(wrapper.emitted().navigate[0][2] instanceof Event).toBeTruthy();
-    
-    // click previous
-    let prev = wrapper.vm.$scopedSlots.prevLink()[0].context.$refs[`prev-link-${wrapper.vm.componentID}`];
-    prev.click();
-    expect(wrapper.emitted().navigate[1][0]).toBe(5);
-    expect(wrapper.emitted().navigate[1][1]).toBe('?page=5');
+    next.click(); // 6 -> 7
+    expect(wrapper.emitted().navigate[1][0]).toBe(7);
+    expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
     expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
     
+    // previous clicks
+    prev.click(); // 7 -> 6
+    expect(wrapper.emitted().navigate[2][0]).toBe(6);
+    expect(wrapper.emitted().navigate[2][1]).toBe('?page=6');
+    expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
+    prev.click(); // 6 -> 5
+    expect(wrapper.emitted().navigate[3][0]).toBe(5);
+    expect(wrapper.emitted().navigate[3][1]).toBe('?page=5');
+    expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
+
     // click a page link
     let link = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-1-${wrapper.vm.componentID}`];
-    link.click();
-    expect(wrapper.emitted().navigate[2][0]).toBe(1);
-    expect(wrapper.emitted().navigate[2][1]).toBe('?page=1');
-    expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
-    
+    link.click(); // 5 -> 1
+    expect(wrapper.emitted().navigate[4][0]).toBe(1);
+    expect(wrapper.emitted().navigate[4][1]).toBe('?page=1');
+    expect(wrapper.emitted().navigate[4][2] instanceof Event).toBeTruthy();
+    let link2 = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-2-${wrapper.vm.componentID}`];
+    link2.click(); // 1 -> 2
+    expect(wrapper.emitted().navigate[5][0]).toBe(2);
+    expect(wrapper.emitted().navigate[5][1]).toBe('?page=2');
+    expect(wrapper.emitted().navigate[5][2] instanceof Event).toBeTruthy();
+    // Do nothing when clicking current page link
+    link2.click(); // 2 -> 2
+    expect(wrapper.emitted().navigate[6]).toBeUndefined();
+
     // use select
     let select = wrapper.find({ ref: `select-${wrapper.vm.componentID}` })
     let options = select.findAll('option')
     options.at(1).setSelected();
-
-    expect(wrapper.emitted().navigate[3][0]).toBe(2);
-    expect(wrapper.emitted().navigate[3][1]).toBe('?page=2');
-    expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
+    expect(wrapper.emitted().navigate[6][0]).toBe(2);
+    expect(wrapper.emitted().navigate[6][1]).toBe('?page=2');
+    expect(wrapper.emitted().navigate[6][2] instanceof Event).toBeTruthy();
   });
 
   it('pagination works with vue-router', () => {
@@ -330,33 +356,50 @@ describe('CdrPagination', () => {
       }
     });
 
-    // click next
     let next = wrapper.vm.$scopedSlots.nextLink()[0].context.$refs[`next-link-${wrapper.vm.componentID}`].$el;
-    next.click();
+    let prev = wrapper.vm.$scopedSlots.prevLink()[0].context.$refs[`prev-link-${wrapper.vm.componentID}`].$el;
+
+    // next clicks
+    next.click(); // 5 -> 6
     expect(wrapper.emitted().navigate[0][0]).toBe(6);
     expect(wrapper.emitted().navigate[0][1]).toBe('?page=6');
     expect(wrapper.emitted().navigate[0][2] instanceof Event).toBeTruthy();
-    
-    // click previous
-    let prev = wrapper.vm.$scopedSlots.prevLink()[0].context.$refs[`prev-link-${wrapper.vm.componentID}`].$el;
-    prev.click();
-    expect(wrapper.emitted().navigate[1][0]).toBe(5);
-    expect(wrapper.emitted().navigate[1][1]).toBe('?page=5');
+    next.click(); // 6 -> 7
+    expect(wrapper.emitted().navigate[1][0]).toBe(7);
+    expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
     expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
     
+    // previous clicks
+    prev.click(); // 7 -> 6
+    expect(wrapper.emitted().navigate[2][0]).toBe(6);
+    expect(wrapper.emitted().navigate[2][1]).toBe('?page=6');
+    expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
+    prev.click(); // 6 -> 5
+    expect(wrapper.emitted().navigate[3][0]).toBe(5);
+    expect(wrapper.emitted().navigate[3][1]).toBe('?page=5');
+    expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
+
     // click a page link
     let link = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-1-${wrapper.vm.componentID}`].$el;
     link.click();
-    expect(wrapper.emitted().navigate[2][0]).toBe(1);
-    expect(wrapper.emitted().navigate[2][1]).toBe('?page=1');
-    expect(wrapper.emitted().navigate[2][2] instanceof Event).toBeTruthy();
-    
+    expect(wrapper.emitted().navigate[4][0]).toBe(1);
+    expect(wrapper.emitted().navigate[4][1]).toBe('?page=1');
+    expect(wrapper.emitted().navigate[4][2] instanceof Event).toBeTruthy();
+    let link2 = wrapper.vm.$scopedSlots.link()[0].context.$refs[`page-link-2-${wrapper.vm.componentID}`].$el;
+    link2.click(); // 1 -> 2
+    expect(wrapper.emitted().navigate[5][0]).toBe(2);
+    expect(wrapper.emitted().navigate[5][1]).toBe('?page=2');
+    expect(wrapper.emitted().navigate[5][2] instanceof Event).toBeTruthy();
+    // Do nothing when clicking current page link
+    link2.click(); // 2 -> 2
+    expect(wrapper.emitted().navigate[6]).toBeUndefined();
+
     // use select
     let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
     options.at(1).setSelected();
-    expect(wrapper.emitted().navigate[3][0]).toBe(2);
-    expect(wrapper.emitted().navigate[3][1]).toBe('?page=2');
-    expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
+    expect(wrapper.emitted().navigate[6][0]).toBe(2);
+    expect(wrapper.emitted().navigate[6][1]).toBe('?page=2');
+    expect(wrapper.emitted().navigate[6][2] instanceof Event).toBeTruthy();
   });
 
   it('adds "of x" when a total is provided', () => {

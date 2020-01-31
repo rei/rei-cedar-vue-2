@@ -200,7 +200,6 @@ export default {
       );
     },
     nextElAttrs() {
-      console.log('nextElAttrs');
       const nextPageData = this.pages[this.nextPageIdx];
       return {
         // things that we want to be able to easily bulk bind to scoped slot (for a11y, styling, etc.)
@@ -220,7 +219,6 @@ export default {
       };
     },
     nextEl() {
-      console.log('nextEl');
       return this.innerValue < this.pages[this.totalPageData - 1].page ? (
         <li>
           {this.$scopedSlots.nextLink
@@ -297,7 +295,6 @@ export default {
   },
   watch: {
     pages() {
-      console.log('watch');
       this.setCurrentIdx(this.innerValue);
     },
   },
@@ -311,6 +308,7 @@ export default {
     navigate(pageNum, e) {
       // Dont do anything if clicking the current active page
       if (pageNum === this.innerValue) {
+        e.preventDefault();
         return;
       }
       this.innerValue = pageNum;
