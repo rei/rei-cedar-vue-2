@@ -147,7 +147,7 @@ export default {
       return 3;
     },
   },
-  beforeRouteUpdate(to, from, next) {
+  beforeRouteUpdate(to) {
     if (Object.prototype.hasOwnProperty.call(to.query, 'router-page')) {
       this.ex1Page = parseInt(to.query['router-page'], 10);
     }
