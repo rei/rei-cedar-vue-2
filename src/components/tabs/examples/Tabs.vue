@@ -80,7 +80,7 @@
       >
         Compact Tabs
       </cdr-text>
-      <cdr-tabs modifier="compact">
+      <cdr-tabs size="small">
         <cdr-tab-panel name="one">
           <cdr-text
             tag="strong"

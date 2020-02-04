@@ -2,11 +2,12 @@ import debounce from 'lodash-es/debounce';
 import delay from 'lodash-es/delay';
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
+import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
 
 export default {
   name: 'CdrTabs',
-  mixins: [modifier],
+  mixins: [modifier, size],
   props: {
     height: {
       type: String,
@@ -179,7 +180,7 @@ export default {
   render() {
     return (
       <div
-        class={clsx(this.style[this.baseClass], this.modifierClass)}
+        class={clsx(this.style[this.baseClass], this.modifierClass, this.sizeClass)}
         ref="cdrTabsContainer"
         style={{ height: this.height }}
       >
