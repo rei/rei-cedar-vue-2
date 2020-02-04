@@ -1,5 +1,16 @@
 @import '../../../css/settings/index.scss';
-@import './vars/CdrModal.vars.scss';
+
+$modal-animation-duration: 150ms;
+
+$dialog-margins-vertical: $cdr-space-four-x * 2; // 12.8rem
+$dialog-padding-vertical: $cdr-space-one-and-a-half-x; // 2.4rem
+$header-padding-bottom: $cdr-space-one-x; // 1.6rem
+$title-line-height: $cdr-space-two-x; // 3.2rem
+
+// total up internal padding to get max height of text
+$header-height: $header-padding-bottom + $title-line-height;
+$modal-total-padding: #{$dialog-margins-vertical + $header-height + $dialog-padding-vertical * 2};
+$modal-text-max-height: calc(100vh - #{$modal-total-padding});
 
 .cdr-modal {
   bottom: 0;
@@ -13,14 +24,14 @@
   z-index: 1000;
 
   &__overlay {
-    background-color: $cdr-modal-overlay-color;
+    background-color: rgba(26, 26, 26, .6); // $cdr-color-background-darker
     bottom: 0;
     left: 0;
     opacity: 1;
     position: fixed;
     right: 0;
     top: 0;
-    transition: opacity $cdr-modal-animation-duration;
+    transition: opacity $modal-animation-duration;
     z-index: -1;
   }
 
@@ -38,8 +49,8 @@
 
   &__contentWrap {
     align-items: flex-start;
-    background-color: $cdr-modal-content-color;
-    border-radius: $cdr-modal-border-radius;
+    background-color: $cdr-color-background-lightest;
+    border-radius: 0.5rem; // TODO: 	cdr-radius-softer is 0.4rem?
     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .5);
     display: flex;
     flex-direction: column;
@@ -48,7 +59,7 @@
     opacity: 1;
     padding: 24px;
     position: relative;
-    transition: opacity $cdr-modal-animation-duration $cdr-modal-animation-duration;
+    transition: opacity $modal-animation-duration $modal-animation-duration;
     width: 100%; // IE 11
     z-index: 0;
     &:focus {
@@ -61,13 +72,8 @@
   }
 
   &__dialog {
-    /*
-      max-height: calc(100vh - #{$cdr-dialog-margins-vertical});
-
-      Max-height has been removed here to increase content resilience. 
-    */
     max-width: 60rem;
-    padding: $cdr-dialog-padding-vertical;
+    padding: $dialog-padding-vertical;
 
      &:global(.large) {
       max-width: 80rem;
@@ -80,7 +86,7 @@
 
   &__header {
     display: flex;
-    padding: 0 0 $cdr-header-padding-bottom 0;
+    padding: 0 0 $header-padding-bottom 0;
   }
 
   &__title {
@@ -101,7 +107,7 @@
   }
 
   &__text-content {
-    max-height: $cdr-modal-text-max-height;
+    max-height: $modal-text-max-height;
     overflow: auto;
     padding-right: 16px;
 
@@ -127,19 +133,19 @@
 }
 
 .closed {
-  transition: z-index 0s $cdr-modal-animation-duration * 2,
-  visibility 0s $cdr-modal-animation-duration * 2;
+  transition: z-index 0s $modal-animation-duration * 2,
+  visibility 0s $modal-animation-duration * 2;
   visibility: hidden;
   z-index: -1;
 
   .cdr-modal__overlay {
     opacity: 0;
-    transition: opacity $cdr-modal-animation-duration $cdr-modal-animation-duration;
+    transition: opacity $modal-animation-duration $modal-animation-duration;
   }
 
   .cdr-modal__contentWrap {
     opacity: 0;
-    transition: opacity $cdr-modal-animation-duration;
+    transition: opacity $modal-animation-duration;
   }
 }
 
