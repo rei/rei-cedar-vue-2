@@ -173,7 +173,7 @@
     ========== */
   &--compact, &--small {
     .cdr-tabs__header-item-label {
-      @include cdr-tabs-compact-header-item-label;
+      @include cdr-tabs-small-header-item-label;
 
       padding: $cdr-space-inset-three-quarter-x-squish;
 
