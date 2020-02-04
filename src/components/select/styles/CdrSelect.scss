@@ -19,6 +19,10 @@
 .cdr-select {
   @include cdr-select-base-mixin;
 
+  &__prompt {
+    @include cdr-select-prompt-mixin;
+  }
+
   &__required-label {
     @include cdr-select-required-label-mixin;
   }
