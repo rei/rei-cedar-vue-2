@@ -22,9 +22,9 @@
   },
   "scripts": {
     "prepublishOnly": "npm-run-all lint build",
-    "dev:build": "npm run build:cssfonts && cross-env NODE_ENV=dev rollup -c rollup.config.dev.js",
+    "dev:build": "npm run build:cssfonts && npm run build:icons && cross-env NODE_ENV=dev rollup -c rollup.config.dev.js",
     "dev": "npm run dev:build -- -w",
-    "build": "npm-run-all clean build:cssfonts build:cjs build:esm build:extractcss build:cssdocs",
+    "build": "npm-run-all clean build:cssfonts build:icons build:cjs build:esm build:extractcss build:cssdocs",
     "build:cjs": "cross-env NODE_ENV=prod BABEL_ENV=cjs rollup -c rollup.config.js",
     "build:esm": "cross-env NODE_ENV=prod BABEL_ENV=esm rollup -c rollup.config.js",
     "unit": "jest",
@@ -43,7 +43,8 @@
     "build:variables": "node build/component-variables-transfer.js",
     "build:extractcss": "node build/extract-css.js",
     "build:cssdocs": "node build/cssdoc.js",
-    "build:cssfonts": "node build/cdr-fonts.js"
+    "build:cssfonts": "node build/cdr-fonts.js",
+    "build:icons": "node src/components/icon/build/generate.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
@@ -56,7 +57,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@rei/cdr-tokens": "^3.0.0",
-    "@rei/cedar-icons": "^1.1.0",
+    "@rei/cedar-icons": "^1.2.0",
     "@rollup/plugin-alias": "^2.2.0",
     "@vue/babel-preset-jsx": "^1.1.2",
     "@vue/test-utils": "^1.0.0-beta.29",
