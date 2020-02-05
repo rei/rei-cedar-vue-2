@@ -1,4 +1,5 @@
 import debounce from 'lodash-es/debounce';
+import throttle from 'lodash-es/throttle';
 import delay from 'lodash-es/delay';
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
@@ -69,7 +70,7 @@ export default {
     }, 250));
   },
   methods: {
-    handleClick(tabClicked) {
+    handleClick: debounce(function handleClickCallback(tabClicked) {
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {
         if (newSelectedTab.name === tab.name) {
@@ -88,7 +89,7 @@ export default {
         }
       });
       this.updateUnderline();
-    },
+    }, 500, { leading: true, trailing: false }),
     calculateOverflow() {
       let containerWidth = 0;
       if (this.$refs.cdrTabsContainer) {
