@@ -68,7 +68,7 @@
     "backstopjs": "^4.3.4",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.8",
-    "chromedriver": "78.0.1",
+    "chromedriver": "^80.0.0",
     "codecov": "^3.6.1",
     "concat": "^1.0.3",
     "cross-env": "^5.2.1",
