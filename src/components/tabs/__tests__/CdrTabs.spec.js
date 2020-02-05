@@ -198,11 +198,13 @@ describe('CdrTabs', () => {
     wrapper.setData({ activeTabIndex: 1 });
 
     Vue.nextTick(() => {
-      wrapper.findAll('a').at(0).trigger('click');
-      expect(wrapper.vm.activeTabIndex).toBe(0);
+      setTimeout(() => {
+        wrapper.findAll('a').at(0).trigger('click');
+        expect(wrapper.vm.activeTabIndex).toBe(0);
 
-      wrapper.findAll('a').at(1).trigger('click');
-      expect(wrapper.vm.activeTabIndex).toBe(1);
+        wrapper.findAll('a').at(1).trigger('click');
+        expect(wrapper.vm.activeTabIndex).toBe(1);
+      }, 500);
 
       done()
     })
