@@ -1,16 +1,33 @@
+@mixin cdr-caption-container-mixin() {
+  max-width: 530px;
+  line-height: 1;
+  padding: $cdr-space-inset-one-x-squish;
+}
 
-@mixin cdr-caption-summary-text-mixin() {
+@mixin cdr-caption-summary-mixin() {
+  // TODO: possible type token
   font-family: $cdr-font-family-sans;
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 0.08px;
   line-height: 2.2rem;
+
+  margin: 0;
+
+  & + cite {
+    display: inline-block;
+    margin-top: $cdr-space-half-x;
+  }
 }
 
-@mixin cdr-caption-citation-text-mixin() {
+@mixin cdr-caption-cite-mixin() {
+  // TODO: possible type token
   font-family: $cdr-font-family-sans;
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.16px;
   line-height: 1.8rem;
+
+  color: $cdr-color-text-secondary-lightmode;
+  font-style: normal;
 }
