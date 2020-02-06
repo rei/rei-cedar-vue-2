@@ -1,41 +1,23 @@
-/* ==========================================================================
-  # CdrAccordionItem
-
-  TOC:
-
-    :Base
-      :__button
-      :__label
-      :__icon
-        :open
-      :__content-container
-        :open
-      :__content
-        :open
-      :Style Variants
-        :border-aligned
-        :compact
-        :border-aligned and compact
-========================================================================== */
 @import '../../../css/settings/index.scss';
-@import './vars/CdrAccordion.vars.scss';
 @import url('@rei/cedar/dist/style/cdr-icon.css');
 
+$accordion-border: 1px solid #dadada;
+
 .cdr-accordion {
-  border-top: $cdr-accordion-border;
+  border-top: $accordion-border;
   position: relative;
   z-index: 1;
 
   &__button {
-    @include cdr-accordion-button-text-mixin;
+    @include cdr-text-utility-strong-300;
 
-    background-color: $cdr-accordion-background-color;
+    background-color: $cdr-color-background-lightest;
     border: none;
-    color: $cdr-accordion-text-color;
+    color: $cdr-color-text-primary-lightmode;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    padding: $cdr-accordion-button-padding;
+    padding: $cdr-space-inset-one-x;
     position: relative;
     text-align: left;
     width: 100%;
@@ -43,7 +25,7 @@
 
     &:hover,
     &:focus {
-      background-color: $cdr-accordion-background-color-hover;
+      background-color: $cdr-color-background-light;
     }
   }
 
@@ -53,37 +35,37 @@
   }
 
   &__icon {
-    margin-left: $cdr-accordion-icon-spacing;
-    fill: $cdr-accordion-icon-fill;
-    transition: $cdr-accordion-icon-transition;
+    margin-left: $cdr-space-one-x;
+    fill: $cdr-color-icon-emphasis-lightmode;
+    transition: transform $cdr-duration-3-x $cdr-timing-function-ease-out;
 
     &:global(.open) {
-      transform: $cdr-accordion-icon-transform;
+      transform: rotate(-180deg);
     }
   }
 
   &__content-container {
     overflow: hidden;
-    transition-duration: $cdr-accordion-open-duration;
+    transition-duration: $cdr-duration-3-x;
     transition-property: max-height;
-    transition-timing-function: $cdr-accordion-content-container-transition-func;
+    transition-timing-function: cubic-bezier(0.15, 0, 0.15, 1); // TODO: possible token?
 
     &:global(.open) {
-      transition-duration: $cdr-accordion-open-duration;
+      transition-duration: $cdr-duration-3-x;
     }
   }
 
   &__content {
-    @include cdr-accordion-content-text-mixin;
+    @include cdr-text-body-300;
 
-    background-color: $cdr-accordion-background-color;
-    color: $cdr-accordion-text-color;
+    background-color: $cdr-color-background-lightest;
+    color: $cdr-color-text-primary-lightmode;
     padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-one-x;
-    transition: $cdr-accordion-content-transition;
+    transition: opacity $cdr-duration-1-x linear;
     opacity: 0;
 
     & > * {
-      @include cdr-accordion-content-text-mixin;
+      @include cdr-text-body-300;
     }
 
     &:global(.open) {
@@ -101,15 +83,15 @@
   /* Border-Aligned
      ========== */
   &--border-aligned {
-    margin: $cdr-accordion-border-aligned-margin;
+    margin: 0 $cdr-space-inset-one-x;
 
     .cdr-accordion__button {
-      margin-left: $cdr-accordion-border-aligned-button-margin;
-      width: $cdr-accordion-border-aligned-button-width;
+      margin-left: -$cdr-space-one-x;
+      width: calc(100% + (#{$cdr-space-one-x} * 2));
     }
 
     .cdr-accordion__content {
-      padding: $cdr-accordion-border-aligned-content-padding;
+      padding: $cdr-space-half-x 0 $cdr-space-one-x;
     }
   }
 
@@ -117,18 +99,18 @@
      ========== */
   &--compact {
     .cdr-accordion__button {
-      @include cdr-accordion-compact-button-text-mixin;
+      @include cdr-text-utility-strong-200;
 
-      padding: $cdr-accordion-compact-button-padding;
+      padding: $cdr-space-inset-three-quarter-x;
     }
 
     .cdr-accordion__content {
-      @include cdr-accordion-compact-content-text-mixin;
+      @include cdr-text-utility-200;
 
-      padding: $cdr-accordion-compact-content-padding;
+      padding: $cdr-space-quarter-x $cdr-space-three-quarter-x $cdr-space-three-quarter-x;
 
       & > * {
-        @include cdr-accordion-compact-content-text-mixin;
+        @include cdr-text-utility-200;
       }
     }
   }
@@ -137,17 +119,17 @@
      ========== */
   &--compact.cdr-accordion--border-aligned {
     .cdr-accordion__button {
-      margin-left: $cdr-accordion-border-aligned-compact-button-margin;
-      width: $cdr-accordion-border-aligned-compact-button-width;
+      margin-left: -$cdr-space-three-quarter-x;
+      width: calc(100% + (#{$cdr-space-three-quarter-x} * 2));
     }
 
     .cdr-accordion__content {
-      padding: $cdr-accordion-border-aligned-compact-content-padding;
+      padding: $cdr-space-quarter-x 0 $cdr-space-three-quarter-x;
     }
   }
 
   &:last-child {
-    border-bottom: $cdr-accordion-border;
+    border-bottom: $accordion-border;
   }
 
   &--focused {
