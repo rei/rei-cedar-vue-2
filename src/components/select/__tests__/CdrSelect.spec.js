@@ -133,9 +133,8 @@ describe('cdrSelect', () => {
     const select = wrapper.find({ ref: 'select'});
     const options = select.findAll('option');
     options.at(0).setSelected();
-    expect(wrapper.emitted().input[0][0]).toBe('3');
     expect(wrapper.emitted().change[0][0]).toBe('3');
-    expect(wrapper.emitted()['select-change'][0][0]).toBe('3');
+    expect(wrapper.emitted().change[0][1] instanceof Event).toBeTruthy();
   });
 
   it('emits change event with correct value for multiple', () => {
@@ -164,9 +163,8 @@ describe('cdrSelect', () => {
     options.at(1).element.selected = false;
     options.at(2).element.selected = true;
     select.trigger('change');
-    expect(wrapper.emitted().input[0][0]).toEqual(['1', '3']);
     expect(wrapper.emitted().change[0][0]).toEqual(['1', '3']);
-    expect(wrapper.emitted()['select-change'][0][0]).toEqual(['1', '3']);
+    expect(wrapper.emitted().change[0][1] instanceof Event).toBeTruthy();
   });
   
   it('updating v-model data updates the select', () => {

@@ -14,7 +14,7 @@ export default {
   inheritAttrs: false,
   model: {
     prop: 'value',
-    event: 'update-select',
+    event: 'change',
   },
   props: {
     /**
@@ -59,14 +59,6 @@ export default {
     };
   },
   computed: {
-    innerValue: {
-      get() {
-        return this.value;
-      },
-      set(newValue) {
-        this.$emit('update-select', newValue);
-      },
-    },
     // Use given id or generate one
     selectId() {
       return this.id ? this.id : this._uid; // eslint-disable-line no-underscore-dangle
@@ -111,18 +103,8 @@ export default {
               const optArr = toArray(event.target.options);
               const selected = optArr.filter(o => o.selected === true).map(o => o.value);
 
-              vm.innerValue = selected;
-              vm.$emit('select-change', selected, event);
-
-              // Deprecated Event
-              vm.$emit('input', selected, event);
               vm.$emit('change', selected, event);
             } else {
-              vm.innerValue = event.target.value;
-              vm.$emit('select-change', event.target.value, event);
-
-              // Deprecated Event
-              vm.$emit('input', event.target.value, event);
               vm.$emit('change', event.target.value, event);
             }
           },
@@ -140,7 +122,7 @@ export default {
           aria-label={this.hideLabel ? this.label : null}
           ref="select"
           {...{ attrs: this.$attrs, on: this.inputListeners }}
-          vModel={this.innerValue}
+          vModel={this.value}
         >
 
           {this.prompt
