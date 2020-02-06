@@ -329,9 +329,9 @@ describe('CdrPagination', () => {
     // use select
     let select = wrapper.find({ ref: `select-${wrapper.vm.componentID}` })
     let options = select.findAll('option')
-    options.at(1).setSelected();
-    expect(wrapper.emitted().navigate[6][0]).toBe(2);
-    expect(wrapper.emitted().navigate[6][1]).toBe('?page=2');
+    options.at(2).setSelected();
+    expect(wrapper.emitted().navigate[6][0]).toBe(3);
+    expect(wrapper.emitted().navigate[6][1]).toBe('?page=3');
     expect(wrapper.emitted().navigate[6][2] instanceof Event).toBeTruthy();
   });
 
@@ -396,9 +396,9 @@ describe('CdrPagination', () => {
 
     // use select
     let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
-    options.at(1).setSelected();
-    expect(wrapper.emitted().navigate[6][0]).toBe(2);
-    expect(wrapper.emitted().navigate[6][1]).toBe('?page=2');
+    options.at(2).setSelected();
+    expect(wrapper.emitted().navigate[6][0]).toBe(3);
+    expect(wrapper.emitted().navigate[6][1]).toBe('?page=3');
     expect(wrapper.emitted().navigate[6][2] instanceof Event).toBeTruthy();
   });
 

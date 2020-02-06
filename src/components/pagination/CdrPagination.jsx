@@ -277,7 +277,7 @@ export default {
             vModel={this.innerValue}
             label="Navigate to page"
             hide-label
-            onSelect-change={this.select}
+            onChange={this.select}
             ref={`select-${this.componentID}`}
             id={`select-${this.componentID}`}
           >
