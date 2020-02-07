@@ -10,7 +10,9 @@
       :pages="pages"
       :total-pages="10"
       data-backstop="pagination-default"
+      @navigate="preventNavigate"
     />
+
     <hr>
 
     <div
@@ -21,52 +23,14 @@
       <p>{{ datam.description }}</p>
     </div>
 
-    <p>Using router-link/scoped slot</p>
+    <p>Using vue router programatically</p>
     <cdr-pagination
       :pages="makePages(20, null)"
       :total-pages="20"
       v-model="ex1Page"
-    >
-      <!-- Previous -->
-      <template v-slot:prevLink="prevLink">
-        <router-link
-          v-bind="prevLink.attrs"
-          :to="{ query: { 'router-page': prevLink.page } }"
-          replace
-        >
-          <component
-            :is="prevLink.iconComponent"
-            :class="prevLink.iconClass"
-          />
-          {{ prevLink.content }}
-        </router-link>
-      </template>
-      <!-- Single Page links -->
-      <template v-slot:link="link">
-        <router-link
-          v-bind="link.attrs"
-          :to="{ query: { 'router-page': link.page } }"
-          replace
-        >
-          {{ link.page }}
-        </router-link>
-      </template>
-      <!-- Next -->
-      <template v-slot:nextLink="nextLink">
-        <router-link
-          v-bind="nextLink.attrs"
-          :to="{ query: { 'router-page': nextLink.page } }"
-          replace
-        >
-          {{ nextLink.content }}
-          <component
-            :is="nextLink.iconComponent"
-            :class="nextLink.iconClass"
-          />
-        </router-link>
-      </template>
-    </cdr-pagination>
-    <p>Using p and scoped slot</p>
+      @navigate="updateRoute"
+    />
+
     <cdr-pagination
       :pages="makePages(20, null)"
       :total-pages="20"
@@ -111,7 +75,7 @@
     <p>Previous/Next only (known total)</p>
 
     <cdr-pagination
-      :pages="makePages(ex2Pages, '/#/pagination?ex2-known-page', ex2PageKnown - 2)"
+      :pages="makePages(ex2KnownPages, '/#/pagination?ex2-known-page', ex2PageKnown - 2)"
       :total-pages="10"
       v-model="ex2PageKnown"
     />
@@ -120,7 +84,7 @@
     <p>Previous/Next only (unknown total)</p>
 
     <cdr-pagination
-      :pages="makePages(ex2Pages, '/#/pagination?ex2-unknown-page', ex2PageUnknown - 2)"
+      :pages="makePages(ex2UnknownPages, '/#/pagination?ex2-unknown-page', ex2PageUnknown - 2)"
       v-model="ex2PageUnknown"
     />
 
@@ -162,6 +126,7 @@ export default {
         { page: 10, url: '/#/pagination?page=10' },
       ],
       paginationData,
+      ex1Page: parseInt(this.$route.query['router-page'], 10) || 1,
       paraPage: 1,
       ex2PageKnown: 5,
       ex2PageUnknown: 5,
@@ -169,22 +134,34 @@ export default {
     };
   },
   computed: {
-    ex1Page: {
-      get() {
-        return parseInt(this.$route.query['router-page'], 10) || 1;
-      },
-      set() {
-        // updated by component, we don't need to do anything
-      },
+    ex2KnownPages() {
+      if (this.ex2PageKnown === 1 || this.ex2PageKnown === 10) {
+        return 2;
+      }
+      return 3;
     },
-    ex2Pages() {
-      if (this.ex2Page === 1 || this.ex2Page === 10) {
+    ex2UnknownPages() {
+      if (this.ex2PageUnknown === 1 || this.ex2PageUnknown === 20) {
         return 2;
       }
       return 3;
     },
   },
+  beforeRouteUpdate(to) {
+    if (Object.prototype.hasOwnProperty.call(to.query, 'router-page')) {
+      this.ex1Page = parseInt(to.query['router-page'], 10);
+    }
+  },
   methods: {
+    updateRoute(num, url, e) {
+      e.preventDefault();
+      this.$router.replace({ query: { 'router-page': num } });
+    },
+    preventNavigate(num, url, e) {
+      e.preventDefault();
+      console.log('preventNavigate');
+      console.warn(num, url);
+    },
     makePages(total, arg = 'page', startingAt = 0) {
       const adjuster = startingAt > 0 ? startingAt : 0;
       const result = [];

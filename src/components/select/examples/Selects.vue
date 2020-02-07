@@ -16,6 +16,7 @@
         v-model="selectedA"
         prompt="Choose one"
         space="cdr-my-space-two-x"
+        @select-change="doExternal"
       >
         <option value="1">
           1
@@ -269,6 +270,9 @@ export default {
     },
     inputChange(selectedValue, event) {
       console.log('change Event event = ', event, ' selectedValue = ', selectedValue);
+    },
+    doExternal(v, e) {
+      console.log('EXTERNAL', v, e);
     },
   },
 };
