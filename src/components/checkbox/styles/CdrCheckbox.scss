@@ -151,8 +151,9 @@
     ========================================================================== */
   @include checkbox-small-mixin(&);
 
-  @include checkbox-medium-mixin('& > ');
-
+  &--medium {
+    @include checkbox-medium-mixin('& > ');
+  }
   @include checkbox-large-mixin(&);
 
   /* Breakpoint variants
