@@ -1,75 +1,38 @@
-@mixin checkbox-text {
-  @include cdr-text-utility-300;
-  color: $cdr-color-text-form-label-lightmode;
-  display: inline-block;
-  margin: 0;
-}
-
-@mixin checkbox-text-compact {
-  @include cdr-text-utility-200;
-}
-
-$checkbox-figure-size-small: 16px;
-$checkbox-figure-size-medium: 16px;
-$checkbox-figure-size-large: 20px;
-$checkbox-figure-border-color: #616161;
-$checkbox-figure-indeterminate-border-radius: $cdr-radius-soft;
-$checkbox-figure-background-color: #ffffff;
-$checkbox-figure-checked-border-color: #3278ae;
-$checkbox-figure-checked-background-color: #3278ae;
-$checkbox-figure-active-border-color: #3278ae;
-$checkbox-figure-space-top: calc((#{$cdr-text-utility-300-height} - #{$checkbox-figure-size-medium}) / 2);
-$checkbox-figure-checked-disabled-background-color: #dadada;
-$checkbox-figure-radius: $cdr-radius-softer;
-$checkbox-figure-indeterminate-size: 8px;
-$checkbox-figure-hover-border-color: #616161;
-$checkbox-figure-indeterminate-border-color: #3278ae;
-$checkbox-figure-disabled-border-color: #dadada;
-$checkbox-figure-hover-background-color: #fafafa;
-$checkbox-figure-indeterminate-background-color: #3278ae;
-$checkbox-figure-disabled-background-color: #fafafa;
-$checkbox-figure-focus-border-color: #3278ae;
-$checkbox-figure-checked-hover-border-color: #2b6692;
-$checkbox-figure-icon-fill: #ffffff;
-$checkbox-compact-figure-space-top: 2px;
-$checkbox-figure-checked-hover-background-color: #2b6692;
-$checkbox-focus-outline: 0 0 8px 0 rgb(50, 120, 174);
-
+// TODO: can this be shared with radio?
 @mixin checkbox-small-mixin($parent-selector, $breakpoint: '') {
   &--small#{$breakpoint} {
-    @include cdr-text-utility-200;
-    padding-left: calc(#{$checkbox-figure-size-small} + #{$cdr-label-base-spacing});
-    
+    @include cdr-label-small-mixin;
+    padding-left: calc(#{$cdr-label-figure-size-small} + #{$cdr-label-base-spacing});
+
     & > #{$parent-selector}__figure {
-      top: calc((#{$cdr-text-utility-200-height} - #{$checkbox-figure-size-small}) / 2);
-      width: $checkbox-figure-size-small;
-      height: $checkbox-figure-size-small;
+      top: calc((#{$cdr-label-height-small} - #{$cdr-label-figure-size-small}) / 2);
+      width: $cdr-label-figure-size-small;
+      height: $cdr-label-figure-size-small;
     }
   }
 }
 
-@mixin checkbox-medium-mixin($parent-selector, $breakpoint: '') {
-  &--medium#{$breakpoint} {
-    @include cdr-text-utility-300;
-    padding-left: calc(#{$checkbox-figure-size-medium} + #{$cdr-label-base-spacing});
-    
-    & > #{$parent-selector}__figure {
-      top: calc((#{$cdr-text-utility-300-height} - #{$checkbox-figure-size-medium}) / 2);
-      width: $checkbox-figure-size-medium;
-      height: $checkbox-figure-size-medium;
-    }
+// TODO: make these mixins consistent
+@mixin checkbox-medium-mixin($parent-selector: '') {
+  @include cdr-label-base-mixin;
+  padding-left: calc(#{$cdr-label-figure-size-medium} + #{$cdr-label-base-spacing});
+
+  #{$parent-selector} &__figure {
+    top: calc((#{$cdr-label-height-medium} - #{$cdr-label-figure-size-medium}) / 2);
+    width: $cdr-label-figure-size-medium;
+    height: $cdr-label-figure-size-medium;
   }
 }
 
 @mixin checkbox-large-mixin($parent-selector, $breakpoint: '') {
   &--large#{$breakpoint} {
-    @include cdr-text-utility-300;
-    padding-left: calc(#{$checkbox-figure-size-large} + #{$cdr-label-base-spacing});
-    
+    @include cdr-label-large-mixin;
+    padding-left: calc(#{$cdr-label-figure-size-large} + #{$cdr-label-base-spacing});
+
     & > #{$parent-selector}__figure {
-      top: calc((#{$cdr-text-utility-300-height} - #{$checkbox-figure-size-large}) / 2);
-      width: $checkbox-figure-size-large;
-      height: $checkbox-figure-size-large;
+      top: calc((#{$cdr-label-height-large} - #{$cdr-label-figure-size-large}) / 2);
+      width: $cdr-label-figure-size-large;
+      height: $cdr-label-figure-size-large;
     }
   }
 }

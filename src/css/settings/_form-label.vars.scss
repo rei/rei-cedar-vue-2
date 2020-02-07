@@ -1,39 +1,32 @@
+// variables shared between checkbox and radio 
 $cdr-label-base-spacing: $cdr-space-half-x;
 
-@mixin cdr-label-base-text-mixin() {
-  @include cdr-text-utility-300;
-}
+$cdr-label-figure-size-small: 16px;
+$cdr-label-figure-size-medium: 16px;
+$cdr-label-figure-size-large: 20px;
+$cdr-label-figure-box-shadow: 0 0 8px 0 rgb(50, 120, 174);
 
-$cdr-label-base-color: $cdr-color-text-form-label-lightmode;
-$cdr-label-base-display: inline-block;
-$cdr-label-base-margin: 0;
-
+$cdr-label-height-medium: $cdr-text-utility-300-height;
 @mixin cdr-label-base-mixin() {
-  @include cdr-label-base-text-mixin;
-
-  color: $cdr-label-base-color;
-  display: $cdr-label-base-display;
-  margin: $cdr-label-base-margin;
+  @include cdr-text-utility-300;
+  color: $cdr-color-text-form-label-lightmode;
 }
-
-$cdr-label-base-cursor-hover: pointer;
 
 @mixin cdr-label-hover-mixin() {
-  cursor: $cdr-label-base-cursor-hover;
+  cursor: pointer;
 }
-
-$cdr-label-base-cursor-disabled: default;
-$cdr-label-color-disabled: #b8b8b8;
 
 @mixin cdr-label-disabled-mixin() {
-  color: $cdr-label-color-disabled !important;
-  cursor: $cdr-label-base-cursor-disabled;
+  color: $cdr-color-text-disabled-lightmode !important;
+  cursor: default;
 }
 
-@mixin cdr-label-compact-text-mixin() {
+$cdr-label-height-small: $cdr-text-utility-200-height;
+@mixin cdr-label-small-mixin() {
   @include cdr-text-utility-200;
 }
 
-@mixin cdr-label-compact-mixin() {
-  @include cdr-label-compact-text-mixin;
+$cdr-label-height-large: $cdr-text-utility-300-height;
+@mixin cdr-label-large-mixin() {
+  @include cdr-text-utility-300;
 }
