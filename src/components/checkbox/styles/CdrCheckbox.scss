@@ -1,11 +1,10 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrCheckbox.vars.scss';
 .cdr-checkbox {
-  @include checkbox-medium-mixin('');
+  @include cdr-label-base-mixin;
   display: inline-block;
   margin: 0;
   position: relative;
-  padding-left: calc(#{$cdr-label-figure-size-medium} + #{$cdr-label-base-spacing});
 
   /* Elements
     ========================================================================== */
@@ -29,6 +28,7 @@
   /* Figure
   ========== */
   &__figure {
+    @include cdr-label-figure-medium-mixin;
     position: absolute;
     left: 0;
     border-radius: $cdr-radius-softer;
@@ -150,10 +150,7 @@
   /* Sizes
     ========================================================================== */
   @include checkbox-small-mixin(&);
-
-  &--medium {
-    @include checkbox-medium-mixin('& > ');
-  }
+  @include checkbox-medium-mixin(&);
   @include checkbox-large-mixin(&);
 
   /* Breakpoint variants
@@ -163,9 +160,7 @@
     ========== */
   @include xs-mq-only {
     @include checkbox-small-mixin(&, \@xs);
-    &--medium\@xs {
-      @include checkbox-medium-mixin('& > ');
-    }
+    @include checkbox-medium-mixin(&, \@xs);
     @include checkbox-large-mixin(&, \@xs);
   }
 
@@ -174,9 +169,7 @@
     ========== */
   @include sm-mq-only {
     @include checkbox-small-mixin(&, \@sm);
-    &--medium\@sm {
-      @include checkbox-medium-mixin('& > ');
-    }
+      @include checkbox-medium-mixin(&, \@sm);
     @include checkbox-large-mixin(&, \@sm);
   }
 
@@ -185,9 +178,7 @@
     ========== */
   @include md-mq-only {
     @include checkbox-small-mixin(&, \@md);
-    &--medium\@md {
-      @include checkbox-medium-mixin('& > ');
-    }
+    @include checkbox-medium-mixin(&, \@md);
     @include checkbox-large-mixin(&, \@md);
   }
 
@@ -197,9 +188,7 @@
 
   @include lg-mq-only {
     @include checkbox-small-mixin(&, \@lg);
-    &--medium\@lg {
-      @include checkbox-medium-mixin('& > ');
-    }
+    @include checkbox-medium-mixin(&, \@lg);
     @include checkbox-large-mixin(&, \@lg);
   }
 

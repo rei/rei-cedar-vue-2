@@ -1,38 +1,29 @@
-// TODO: can this be shared with radio?
 @mixin checkbox-small-mixin($parent-selector, $breakpoint: '') {
   &--small#{$breakpoint} {
     @include cdr-label-small-mixin;
-    padding-left: calc(#{$cdr-label-figure-size-small} + #{$cdr-label-base-spacing});
 
     & > #{$parent-selector}__figure {
-      top: calc((#{$cdr-label-height-small} - #{$cdr-label-figure-size-small}) / 2);
-      width: $cdr-label-figure-size-small;
-      height: $cdr-label-figure-size-small;
+      @include cdr-label-figure-small-mixin;
     }
   }
 }
 
-// TODO: make these mixins consistent
-@mixin checkbox-medium-mixin($parent-selector: '') {
-  @include cdr-label-base-mixin;
-  padding-left: calc(#{$cdr-label-figure-size-medium} + #{$cdr-label-base-spacing});
+@mixin checkbox-medium-mixin($parent-selector: '', $breakpoint: '') {
+  &--medium#{$breakpoint} {
+    @include cdr-label-base-mixin;
 
-  #{$parent-selector} &__figure {
-    top: calc((#{$cdr-label-height-medium} - #{$cdr-label-figure-size-medium}) / 2);
-    width: $cdr-label-figure-size-medium;
-    height: $cdr-label-figure-size-medium;
+    & > #{$parent-selector}__figure {
+      @include cdr-label-figure-medium-mixin;
+    }
   }
 }
 
 @mixin checkbox-large-mixin($parent-selector, $breakpoint: '') {
   &--large#{$breakpoint} {
     @include cdr-label-large-mixin;
-    padding-left: calc(#{$cdr-label-figure-size-large} + #{$cdr-label-base-spacing});
 
     & > #{$parent-selector}__figure {
-      top: calc((#{$cdr-label-height-large} - #{$cdr-label-figure-size-large}) / 2);
-      width: $cdr-label-figure-size-large;
-      height: $cdr-label-figure-size-large;
+      @include cdr-label-figure-large-mixin;
     }
   }
 }

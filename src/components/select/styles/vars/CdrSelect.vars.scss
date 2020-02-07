@@ -59,12 +59,12 @@
   // TODO: should this also have &:hover ?
   &:active,
   &:focus {
-    box-shadow: inset 0 0 0 1px $cdr-color-border-selected-lightmode;;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
   }
 }
 
 @mixin cdr-select-prompt-mixin() {
-  @include cdr-text-utility-300;;
+  @include cdr-text-utility-300;
 
   font-style: normal;
   color: $cdr-color-text-form-placeholder-lightmode;
