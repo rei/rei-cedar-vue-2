@@ -8,12 +8,15 @@ $rating-number-decoration: $cdr-color-border-secondary-lightmode;
 
 @mixin cdr-rating-base-text() {
   @include cdr-text-utility-200;
+  line-height: 1.8;
 }
 
 @mixin cdr-rating-text-large() {
   @include cdr-text-utility-300;
+  line-height: 2;
 }
 
 @mixin cdr-rating-text-small() {
   @include cdr-text-utility-100;
+  line-height: 1.6;
 }
