@@ -13,6 +13,10 @@ export default {
       type: String,
       default: '240px',
     },
+    activeTab: {
+      type: Number,
+      required: false,
+    },
   },
   data() {
     return {
@@ -20,7 +24,7 @@ export default {
       underlineOffsetX: 0,
       underlineWidth: 0,
       underlineScrollX: 0,
-      activeTabIndex: 0,
+      activeTabIndex: this.activeTab || 0,
       headerWidth: 0,
       headerOverflow: false,
       overflowLeft: false,
