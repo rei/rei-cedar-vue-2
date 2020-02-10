@@ -4,24 +4,16 @@ import IconCaretRight from '../icon/comps/caret-right';
 import CdrSelect from '../select/CdrSelect';
 import style from './styles/CdrPagination.scss';
 
-const hasWindowSupport = typeof window !== 'undefined';
-const w = hasWindowSupport ? window : {};
-const requestAF = w.requestAnimationFrame
-  || w.webkitRequestAnimationFrame
-  || w.mozRequestAnimationFrame
-  || w.msRequestAnimationFrame
-  || w.oRequestAnimationFrame
-  // Fallback, but not a true polyfill
-  // Only needed for Opera Mini
-  /* istanbul ignore next */
-  || (cb => setTimeout(cb, 16));
-
 export default {
   name: 'CdrPagination',
   components: {
     IconCaretLeft,
     IconCaretRight,
     CdrSelect,
+  },
+  model: {
+    prop: 'value',
+    event: 'update-pagination',
   },
   props: {
     /**
@@ -63,6 +55,7 @@ export default {
     return {
       style,
       componentID: Math.random().toString(36).substr(2, 9),
+      currentIdx: 0,
     };
   },
   computed: {
@@ -72,7 +65,8 @@ export default {
         return this.value;
       },
       set(newValue) {
-        this.$emit('input', newValue);
+        this.setCurrentIdx(newValue);
+        this.$emit('update-pagination', newValue);
       },
     },
     currentUrl() {
@@ -87,13 +81,10 @@ export default {
     nextPageIdx() {
       return this.currentIdx + 1;
     },
-    currentIdx() {
-      return this.pages.map(x => x.page).indexOf(this.innerValue);
-    },
     /**
      * Creates an array of the pages that should be shown as links with logic for truncation.
      *
-     * If total = 20 ([num] indicates current page)
+     * If total = 20 ([#] indicates current page)
      * [1] 2 3 4 5 ... 20
      * 1 2 3 [4] 5 ... 20
      * 1 ... 4 [5] 6 ... 20
@@ -283,7 +274,7 @@ export default {
       return (
         <li class={this.style['cdr-pagination__li--select']}>
           <cdr-select
-            vModel_number={this.innerValue}
+            vModel={this.innerValue}
             label="Navigate to page"
             hide-label
             onChange={this.select}
@@ -302,19 +293,27 @@ export default {
       );
     },
   },
+  watch: {
+    pages() {
+      this.setCurrentIdx(this.innerValue);
+    },
+  },
+  beforeMount() {
+    this.setCurrentIdx(this.innerValue);
+  },
   methods: {
+    setCurrentIdx(page) {
+      this.currentIdx = this.pages.map(x => x.page).indexOf(page);
+    },
     navigate(pageNum, e) {
       // Dont do anything if clicking the current active page
       if (pageNum === this.innerValue) {
+        e.preventDefault();
         return;
       }
-      requestAF(() => {
-        // Update the v-model
-        // Done in in requestAF() to allow browser to complete the
-        // native browser click handling of a link
-        this.innerValue = pageNum;
-        this.$emit('navigate', pageNum, this.currentUrl, e);
-      });
+      this.innerValue = pageNum;
+      this.$emit('navigate', pageNum, this.currentUrl, e);
+
       this.$nextTick(() => {
         // Done in a nextTick() to ensure rendering complete
         try {
