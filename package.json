@@ -5,7 +5,9 @@
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
   "private": false,
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "publishConfig": {
     "access": "public"
   },
