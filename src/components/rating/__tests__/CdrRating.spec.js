@@ -74,7 +74,7 @@ describe('CdrRating', () => {
       }
     });
     expect(wrapper.contains('.cdr-rating__count')).toBe(true);
-    expect(wrapper.find('.cdr-rating__caption-sr').text()).toBe('rated 5 out of 5 with 0 reviews');
+    expect(wrapper.find('.cdr-rating__caption-sr').text()).toBe('view the 0 reviews with an average rating of 5 out of 5 stars');
   });
 
   it('renders review text when count is "0"', () => {
@@ -86,7 +86,7 @@ describe('CdrRating', () => {
       }
     });
     expect(wrapper.contains('.cdr-rating__count')).toBe(true);
-    expect(wrapper.find('.cdr-rating__caption-sr').text()).toBe('rated 5 out of 5 with 0 reviews');
+    expect(wrapper.find('.cdr-rating__caption-sr').text()).toBe('view the 0 reviews with an average rating of 5 out of 5 stars');
   });
 
   it('renders no review text if count is not passed', () => {
@@ -96,6 +96,6 @@ describe('CdrRating', () => {
       }
     });
     expect(wrapper.contains('.cdr-rating__count')).toBe(false);
-    expect(wrapper.find('.cdr-rating__caption-sr').text()).toBe('rated 5 out of 5');
+    expect(wrapper.find('.cdr-rating__caption-sr').text()).toBe('average rating of 5 out of 5 stars');
   });
 });
