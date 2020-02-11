@@ -20,7 +20,10 @@
             Tab One Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="Tab2">
+        <cdr-tab-panel
+          name="Tab2"
+          :disabled="true"
+        >
           <cdr-text
             tag="strong"
             modifier="subheading"

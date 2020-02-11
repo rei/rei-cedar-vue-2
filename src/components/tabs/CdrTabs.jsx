@@ -45,10 +45,12 @@ export default {
     },
   },
   mounted() {
+    console.log('mounted');
     this.tabs = (this.$slots.default || [])
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
 
+    // do something if tab activeTabIndex is a disabled tab
     if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
       this.tabs[this.activeTabIndex].setActive(true);
     }
@@ -180,6 +182,23 @@ export default {
       }, { once: true });
       styleRef.setProperty('overflow-x', 'hidden');
     },
+    getTabEl(tab) {
+      return tab.disabled ? (
+        <span
+          class={this.style['cdr-tabs__header-item-label']}
+        >
+          {tab.name}
+        </span>
+      ) : (
+        <a
+          vOn:click_prevent={e => this.handleClick(tab, e)}
+          href={`#${tab.id || tab.name}`}
+          class={this.style['cdr-tabs__header-item-label']}
+        >
+          { tab.name }
+        </a>
+      );
+    },
   },
   render() {
     return (
@@ -220,13 +239,14 @@ export default {
                       this.style['cdr-tabs__header-item'],
                     )}
                   >
-                    <a
+                    {this.getTabEl(tab)}
+                    {/* <a
                       vOn:click_prevent={e => this.handleClick(tab, e)}
                       href={`#${tab.id || tab.name}`}
                       class={this.style['cdr-tabs__header-item-label']}
                     >
                       { tab.name }
-                    </a>
+                    </a> */}
                   </li>
               ))}
             </ol>
