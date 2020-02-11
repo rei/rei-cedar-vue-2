@@ -14,7 +14,7 @@
   "author": "REI Software Engineering",
   "main": "dist/cedar.js",
   "module": "dist/lib/index.mjs",
-  "style": "dist/style/cdr-full.css",
+  "style": "dist/style/cedar-full.css",
   "files": [
     "dist"
   ],
