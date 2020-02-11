@@ -11,6 +11,7 @@
       <cdr-tabs
         height="100px"
         data-backstop="tab-default"
+        :active-tab="1"
       >
         <cdr-tab-panel name="Tab1">
           <cdr-text
@@ -83,8 +84,8 @@
       >
         Compact Tabs
       </cdr-text>
-      <cdr-tabs size="small">
-        <cdr-tab-panel name="one">
+      <cdr-tabs size="small" :active-tab="1">
+        <cdr-tab-panel name="one" :disabled="true">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -92,7 +93,7 @@
             Tab One Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="two">
+        <cdr-tab-panel name="two" :disabled="true">
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -138,6 +139,7 @@
         <cdr-tab-panel
           name="one"
           id="full-width-one"
+          :disabled="true"
         >
           <cdr-text
             tag="strong"

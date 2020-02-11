@@ -19,12 +19,13 @@ export default {
     },
   },
   data() {
+    console.log('data');
     return {
       tabs: [],
       underlineOffsetX: 0,
       underlineWidth: 0,
       underlineScrollX: 0,
-      activeTabIndex: this.activeTab || 0,
+      activeTabIndex: 0,
       headerWidth: 0,
       headerOverflow: false,
       overflowLeft: false,
@@ -45,16 +46,16 @@ export default {
     },
   },
   mounted() {
+    console.log('mounted');
     this.tabs = (this.$slots.default || [])
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
 
-    // do something if tab activeTabIndex is a disabled tab
+    this.initActiveTabIndex();
+
     if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
       this.tabs[this.activeTabIndex].setActive(true);
     }
-
-    if (this.tabs[this.activeTabIndex])
 
     this.$nextTick(() => {
       this.headerWidth = this.getHeaderWidth();
@@ -76,6 +77,21 @@ export default {
     }, 250));
   },
   methods: {
+    initActiveTabIndex() {
+      if (this.activeTab) {
+        if (!this.tabs[this.activeTab].disabled) {
+          this.activeTabIndex = this.activeTab;
+          return;
+        }
+      }
+
+      for (let i = 0; i < this.tabs.length; i += 1) {
+        if (!this.tabs[i].disabled) {
+          this.activeTabIndex = i;
+          break;
+        }
+      }
+    },
     handleClick: debounce(function handleClickCallback(tabClicked) {
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {
