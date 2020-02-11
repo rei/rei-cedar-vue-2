@@ -87,10 +87,10 @@ export default {
       return remainder;
     },
     ratingSrText() {
-      return ` with an average rating of ${this.rounded} out of 5 stars`;
+      return `rated ${this.rounded} out of 5`;
     },
     countSrText() {
-      return this.count !== null ? ` view the ${this.count} reviews` : '';
+      return this.count !== null ? ` with ${this.count} reviews` : '';
     },
   },
   render() {
@@ -153,7 +153,7 @@ export default {
         }
 
         <span class={this.style['cdr-rating__caption-sr']}>
-          {this.countSrText} {this.ratingSrText}
+          { this.ratingSrText }{ this.countSrText }
         </span>
       </Component>
     );
