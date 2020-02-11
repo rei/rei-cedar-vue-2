@@ -8,19 +8,57 @@
     >
       Ratings
     </cdr-text>
-    <cdr-rating
-      rating="3.3"
-      count="16"
-      content-priority="secondary"
-      href="https://www.rei.com"
-      data-backstop="rating-secondary-linked"
-    />
-    <cdr-rating
-      rating="4.5"
-      count="21"
-      href="https://www.rei.com"
-      data-backstop="rating-primary-linked"
-    />
+    <div class="cdr-text">
+      I'm some default text before the rating
+      <cdr-rating
+        rating="3.3"
+        count="16"
+        content-priority="secondary"
+        href="https://www.rei.com"
+        data-backstop="rating-secondary-linked"
+      />
+      <cdr-rating
+        rating="4.5"
+        count="21"
+        href="https://www.rei.com"
+        data-backstop="rating-primary-linked"
+      />
+      I'm some default text after the rating
+    </div>
+    <div class="cdr-text cdr-text--utility-200">
+      I'm some utility text before the rating
+      <cdr-rating
+        rating="3.3"
+        count="16"
+        content-priority="secondary"
+        href="https://www.rei.com"
+        data-backstop="rating-secondary-linked"
+      />
+      <cdr-rating
+        rating="4.5"
+        count="21"
+        href="https://www.rei.com"
+        data-backstop="rating-primary-linked"
+      />
+      I'm some utility text after the rating
+    </div>
+    <div class="cdr-text cdr-text--body-strong-500">
+      I'm some utility text before the rating
+      <cdr-rating
+        rating="3.3"
+        count="16"
+        content-priority="secondary"
+        href="https://www.rei.com"
+        data-backstop="rating-secondary-linked"
+      />
+      <cdr-rating
+        rating="4.5"
+        count="21"
+        href="https://www.rei.com"
+        data-backstop="rating-primary-linked"
+      />
+      I'm some utility text after the rating
+    </div>
 
     <cdr-rating
       rating="0"
