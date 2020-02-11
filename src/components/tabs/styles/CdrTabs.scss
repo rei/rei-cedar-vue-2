@@ -137,6 +137,17 @@
       text-decoration: none;
       color: $cdr-color-text-link-lightmode;
     }
+
+    &--disabled {
+      color: #D1CBBD;
+
+      &:active,
+      &:hover,
+      &:focus {
+        color: #D1CBBD;
+        cursor: not-allowed;
+      }
+    }
   }
 
   &__underline {

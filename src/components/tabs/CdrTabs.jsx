@@ -45,7 +45,6 @@ export default {
     },
   },
   mounted() {
-    console.log('mounted');
     this.tabs = (this.$slots.default || [])
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
@@ -54,6 +53,8 @@ export default {
     if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
       this.tabs[this.activeTabIndex].setActive(true);
     }
+
+    if (this.tabs[this.activeTabIndex])
 
     this.$nextTick(() => {
       this.headerWidth = this.getHeaderWidth();
@@ -185,7 +186,10 @@ export default {
     getTabEl(tab) {
       return tab.disabled ? (
         <span
-          class={this.style['cdr-tabs__header-item-label']}
+          class={clsx(
+            this.style['cdr-tabs__header-item-label'],
+            this.style['cdr-tabs__header-item-label--disabled'],
+          )}
         >
           {tab.name}
         </span>
@@ -240,13 +244,6 @@ export default {
                     )}
                   >
                     {this.getTabEl(tab)}
-                    {/* <a
-                      vOn:click_prevent={e => this.handleClick(tab, e)}
-                      href={`#${tab.id || tab.name}`}
-                      class={this.style['cdr-tabs__header-item-label']}
-                    >
-                      { tab.name }
-                    </a> */}
                   </li>
               ))}
             </ol>
