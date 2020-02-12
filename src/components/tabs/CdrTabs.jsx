@@ -175,6 +175,7 @@ export default {
     },
     handleDownArrowNav() {
       if (!this.animationInProgress) {
+        console.log('thing', this.$el.lastElementChild.children[this.activeTabIndex].focus());
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
       }
     },
@@ -212,6 +213,7 @@ export default {
       ) : (
         <a
           role="tab"
+          aria-selected={tab.active}
           vOn:click_prevent={e => this.handleClick(tab, e)}
           href={`#${tab.id || tab.name}`}
           class={this.style['cdr-tabs__header-item-label']}
@@ -252,7 +254,6 @@ export default {
             >
               {this.tabs.map((tab, index) => (
                   <li
-                    aria-selected={tab.active}
                     key={tab.id ? tab.id : `${tab.name}-${index}`}
                     class={clsx(
                       tab.active ? this.style['cdr-tabs__header-item-active'] : '',
