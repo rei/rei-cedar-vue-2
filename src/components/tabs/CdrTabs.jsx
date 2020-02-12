@@ -211,6 +211,7 @@ export default {
         </span>
       ) : (
         <a
+          role="tab"
           vOn:click_prevent={e => this.handleClick(tab, e)}
           href={`#${tab.id || tab.name}`}
           class={this.style['cdr-tabs__header-item-label']}
@@ -251,7 +252,6 @@ export default {
             >
               {this.tabs.map((tab, index) => (
                   <li
-                    role="tab"
                     aria-selected={tab.active}
                     key={tab.id ? tab.id : `${tab.name}-${index}`}
                     class={clsx(
