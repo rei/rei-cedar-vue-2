@@ -155,6 +155,7 @@ export { default as IconStarStroke } from './comps/star-stroke';
 export { default as IconSwim } from './comps/swim';
 export { default as IconTelephone } from './comps/telephone';
 export { default as IconTent } from './comps/tent';
+export { default as IconTrash } from './comps/trash';
 export { default as IconTwitter } from './comps/twitter';
 export { default as IconUpload } from './comps/upload';
 export { default as IconVerifiedPurchaser } from './comps/verified-purchaser';
