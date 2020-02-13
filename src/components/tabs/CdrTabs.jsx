@@ -94,7 +94,7 @@ export default {
       return -1;
     },
     getPreviousTab(startIndex) {
-      for (let i = startIndex; i >= 0; i -= 1) {
+      for (let i = startIndex; i > -1; i -= 1) {
         if (!this.tabs[i].disabled) {
           return i;
         }

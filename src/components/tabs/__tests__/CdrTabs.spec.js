@@ -70,6 +70,44 @@ describe('CdrTabs', () => {
     });
   });
 
+  it('getNextTab returns index or -1', () => {
+    const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
+      slots: {
+        default: [
+          '<cdr-tab-panel name="tab1"/>',
+          '<cdr-tab-panel name="tab2" :disabled="true" />',
+          '<cdr-tab-panel name="tab3" />',
+        ]
+      }
+    });
+
+    expect(wrapper.vm.getNextTab(1)).toBe(2);
+    expect(wrapper.vm.getNextTab(3)).toBe(-1);
+  });
+
+  it('getPreviousTab returns index or -1', () => {
+    const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
+      slots: {
+        default: [
+          '<cdr-tab-panel name="tab1"/>',
+          '<cdr-tab-panel name="tab2" :disabled="true" />',
+          '<cdr-tab-panel name="tab3" />',
+        ]
+      }
+    });
+
+    expect(wrapper.vm.getPreviousTab(1)).toBe(0);
+    expect(wrapper.vm.getPreviousTab(0)).toBe(0);
+    expect(wrapper.vm.getPreviousTab(2)).toBe(2);
+    expect(wrapper.vm.getPreviousTab(-1)).toBe(-1);
+  });
+
   it('handles right arrow key when far right tab is active', (done) => {
     const wrapper = mount(CdrTabs, {
       stubs: {
