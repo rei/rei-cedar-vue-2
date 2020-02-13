@@ -37,19 +37,12 @@
   &__item {
     display: inline-flex;
     flex: none;
-    color: $cdr-breadcrumb-text-color;
     padding: 0;
 
-    &:last-child {
-      color: $cdr-breadcrumb-last-child-text-color;
-    }
+    @include cdr-breadcrumb-item-mixin;
 
-    /* Hover
-    ---------- */
-    &:hover,
-    &:active,
-    &:focus {
-      color: $cdr-breadcrumb-hover-text-color;
+    &:last-child {
+      @include cdr-breadcrumb-last-item-mixin;
     }
   }
 
@@ -57,9 +50,8 @@
   ---------- */
   &__link {
     @include cdr-breadcrumb-xs-text-mixin;
-
     text-decoration: none;
-    color: inherit; /* inherit color from &__item */
+    color: inherit;
 
     &:hover,
     &:active,
@@ -73,8 +65,7 @@
   ========== */
   &__delimiter {
     @include cdr-breadcrumb-xs-text-mixin;
-
-    color: $cdr-breadcrumb-delimiter-text-color;
+    color: inherit;
     padding-left: $cdr-space-quarter-x;
     padding-right: $cdr-space-half-x;
   }
@@ -90,6 +81,7 @@
     background-color: transparent;
     cursor: pointer;
     display: inline-block;
+    fill: inherit;
     padding: 6px 11px; /* extend clickable area */
     margin: -6px -11px; /* preserve layout */
 
@@ -99,19 +91,19 @@
       border-bottom: 1px solid transparent;
       width: 1.4rem;
       height: 1.4rem;
-      fill: $cdr-breadcrumb-text-color;
+      fill: inherit;
     }
 
     &:hover,
     &:active,
     &:focus {
       .cdr-breadcrumb__ellipses-icon {
-        border-bottom: 1px solid $cdr-breadcrumb-hover-text-color;
-        fill: $cdr-breadcrumb-hover-text-color;
+        border-bottom: 1px solid $cdr-color-text-primary-lightmode;
+        fill: inherit;
       }
     }
   }
-
+// TODO: make this a size prop? or a responsive compact?
   @include md-mq {
     &__link,
     &__delimiter,

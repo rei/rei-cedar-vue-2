@@ -21,10 +21,10 @@
 ========================================================================== */
 
 .cdr-radio {
-  @include radio-text;
-
+  @include cdr-label-base-mixin;
+  display: inline-block;
+  margin: 0;
   position: relative;
-  padding-left: calc(#{$radio-figure-size-medium} + #{$cdr-label-base-spacing});
 
   /* Elements
     ========================================================================== */
@@ -49,24 +49,23 @@
   ========== */
 
   &__figure {
+    @include cdr-label-figure-medium-mixin
     position: absolute;
-    top: $radio-figure-space-top;
     left: 0;
-    width: $radio-figure-size-medium;
-    height: $radio-figure-size-medium;
-    border-radius: $radio-figure-radius;
-    background-color: $radio-figure-background-color;
-    border: 1px solid $radio-figure-border-color;
+    border-radius: $cdr-radius-round;
+    background-color: $cdr-color-background-form-input-lightmode;
+    border: 1px solid $cdr-color-border-primary-lightmode;
 
     &::after {
       content: '';
       position: absolute;
-      width: $radio-figure-selected-size;
-      height: $radio-figure-selected-size;
+      // @include cdr-label-figure-medium-mixin
+      width: $cdr-label-figure-size-medium / 2;
+      height: $cdr-label-figure-size-medium / 2;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      border-radius: $radio-figure-radius;
+      border-radius: $cdr-radius-round;
     }
   }
 
@@ -76,10 +75,10 @@
   /* Checked
   ========== */
   &__input:checked ~ &__figure {
-    border-color: $radio-figure-checked-border-color;
+    border-color: #3278ae;
 
     &::after {
-      background-color: $radio-figure-checked-background-color;
+      background-color: #3278ae;
     }
   }
 
@@ -87,8 +86,8 @@
   &:hover {
     & > .cdr-radio__figure {
       cursor: pointer;
-      border-color: $radio-figure-hover-border-color;
-      background-color: $radio-figure-hover-background-color;
+      border-color: $cdr-color-border-primary-lightmode;
+      background-color: $cdr-color-background-lighter;
     }
 
     & > .cdr-radio__content {
@@ -99,10 +98,10 @@
       /* Hover + Checked
       ========== */
       &:checked ~ .cdr-radio__figure {
-        border-color: $radio-figure-checked-hover-border-color;
+        border-color: #2b6692;
 
         &::after {
-          background-color: $radio-figure-checked-hover-background-color;
+          background-color: #2b6692;
         }
       }
     }
@@ -116,8 +115,8 @@
     }
 
     & ~ .cdr-radio__figure {
-      border-color: $radio-figure-disabled-border-color !important;
-      background-color: $radio-figure-disabled-background-color !important;
+      border-color: $cdr-color-border-disabled-lightmode !important;
+      background-color: $cdr-color-background-lighter !important;
       cursor: default;
     }
 
@@ -126,7 +125,7 @@
     &:checked {
       & ~ .cdr-radio__figure {
         &::after {
-          background-color: $radio-figure-checked-disabled-background-color !important;
+          background-color: #dadada !important;
         }
       }
     }
@@ -135,15 +134,15 @@
   /* Active
   ========== */
   &:active > .cdr-radio__figure {
-    border-color: $radio-figure-active-border-color;
-    background-color: $radio-figure-background-color;
+    border-color: #3278ae;
+    background-color: $cdr-color-background-form-input-lightmode;
   }
 
   /* Focus
   ========== */
   &__input:focus ~ .cdr-radio__figure {
-    border-color: $radio-figure-focus-border-color;
-    box-shadow: $radio-focus-outline;
+    border-color: #3278ae;
+    box-shadow: $cdr-label-figure-box-shadow;
   }
 
 
@@ -209,10 +208,10 @@
     ========== */
 
   &--compact {
-    @include radio-text-compact;
+    @include cdr-label-small-mixin;
 
     & > .cdr-radio__figure {
-      top: $radio-compact-figure-space-top;
+      @include cdr-label-figure-small-mixin; // TODO: ????
     }
   }
 

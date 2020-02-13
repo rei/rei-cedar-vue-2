@@ -1,135 +1,75 @@
-$cdr-button-font-family: $cdr-font-family-sans;
-
-$cdr-button-base-border: none;
-$cdr-button-base-outline: none;
-$cdr-button-base-border-radius: $cdr-radius-softer;
-$cdr-button-base-display: inline-flex;
-$cdr-button-base-overflow: visible;
-$cdr-button-base-padding: $cdr-space-inset-one-x-squish;
-$cdr-button-base-text-align: left;
-$cdr-button-base-text-decoration: none;
-$cdr-button-base-text-transform: none;
-$cdr-button-base-cursor: pointer;
-
+/*~~~~~~~~COLORS~~~~~~~~~~~~~~~~~~~~~*/
 $cdr-button-primary-background-color: #3278ae;
-$cdr-button-primary-box-shadow: inset 0 0 0 1px #2b6692;
+
+
+// button-in-interacted-state
+$cdr-button-primary-background-color-hover: #2b6692;
+$cdr-button-primary-background-color-active: #2b6692;
+$cdr-button-primary-background-color-focus: #2b6692;
+
+
+// primary-button-disabled
+$cdr-button-primary-background-color-disabled: #dadada;
+
+
+// should this just be $cdr-color-text-primary-darkmode / #fafafa instead?
 $cdr-button-primary-fill: #ffffff;
 $cdr-button-primary-color: #ffffff;
-
-$cdr-button-base-icon-align-self: center;
-$cdr-button-base-icon-fill: inherit;
-$cdr-button-base-icon-mr: $cdr-space-quarter-x;
-
-$cdr-button-primary-background-color-hover: #2b6692;
 $cdr-button-primary-fill-hover: #ffffff;
 $cdr-button-primary-color-hover: #ffffff;
-$cdr-button-primary-box-shadow-hover: inset 0 0 0 1px #2b6692;
-$cdr-button-base-outline-hover: none;
-$cdr-button-base-outline-offset-hover: 0;
-$cdr-button-base-text-decoration-hover: none;
-
-$cdr-button-primary-background-color-active: #2b6692;
 $cdr-button-primary-fill-active: #ffffff;
 $cdr-button-primary-color-active: #ffffff;
-$cdr-button-primary-box-shadow-active: inset 0 0 0 1px #2b6692;
-$cdr-button-base-outline-active: none;
-$cdr-button-base-outline-offset-active: 0;
-$cdr-button-base-text-decoration-active: none;
-
-$cdr-button-primary-background-color-focus: #2b6692;
 $cdr-button-primary-fill-focus: #ffffff;
 $cdr-button-primary-color-focus: #ffffff;
-$cdr-button-primary-box-shadow-focus: inset 0 0 0 1px #2b6692;
-$cdr-button-base-outline-focus: $default-outline;
-$cdr-button-base-outline-color-focus: -webkit-focus-ring-color;
-$cdr-button-base-outline-offset-focus: 0;
-$cdr-button-base-text-decoration-focus: none;
-
-$cdr-button-primary-background-color-disabled: #dadada;
 $cdr-button-primary-color-disabled: #ffffff;
+
+
+// NOTE: all of the secondary colors corresponded to existing tokens.
+
+
+
+/*~~~~~~~~BOX SHADOWS~~~~~~~~~~~~~~~~~~~~~*/
+
+// We Probably shouldn't have specific
+// `cdr-button-box-shadow` tokens for each of these cases,
+// rather we should have one token that is `inset 0 0 0 1px`
+//  which gets combined with other color tokens (which might be specific or generic)
+// For example,
+// box-shadow: $cdr-box-shadow-whatever $cdr-button-background-color
+// box-shadow: $cdr-box-shadow-whatever $cdr-color-whatever-generic-token
+// instead of
+// box-shadow: $cdr-button-box-shadow-primary;
+
+
+
+// primary static/hover/active/focus box shadow
+// NOTE: same color value as button-in-interacted-state background color above
+$cdr-button-primary-box-shadow: inset 0 0 0 1px #2b6692;
+$cdr-button-primary-box-shadow-hover: inset 0 0 0 1px #2b6692;
+$cdr-button-primary-box-shadow-active: inset 0 0 0 1px #2b6692;
+$cdr-button-primary-box-shadow-focus: inset 0 0 0 1px #2b6692;
+
+// primary disabled box shadow
 $cdr-button-primary-box-shadow-disabled: inset 0 0 0 1px #b8b8b8;
 
-$cdr-button-base-cursor-disabled: not-allowed;
-
-$cdr-button-secondary-background-color: #ffffff;
-$cdr-button-secondary-color: #292929;
-$cdr-button-secondary-fill: #292929;
-$cdr-button-secondary-box-shadow: inset 0 0 0 1px #616161;
-
-$cdr-button-secondary-background-color-hover: #f7f7f7;
-$cdr-button-secondary-color-hover: #292929;
-$cdr-button-secondary-fill-hover: #292929;
+// secondary static/hover/active/focus box shadow
 $cdr-button-secondary-box-shadow-hover: inset 0 0 0 1px #616161;
-
-$cdr-button-secondary-background-color-active: #f7f7f7;
-$cdr-button-secondary-color-active: #292929;
-$cdr-button-secondary-fill-active: #292929;
+$cdr-button-secondary-box-shadow: inset 0 0 0 1px #616161;
 $cdr-button-secondary-box-shadow-active: inset 0 0 0 1px #616161;
-
-$cdr-button-secondary-background-color-focus: #f7f7f7;
-$cdr-button-secondary-color-focus: #292929;
-$cdr-button-secondary-fill-focus: #292929;
 $cdr-button-secondary-box-shadow-focus: inset 0 0 0 1px #616161;
 
-$cdr-button-secondary-background-color-disabled: #ffffff;
-$cdr-button-secondary-color-disabled: #b8b8b8;
-$cdr-button-secondary-fill-disabled: #b8b8b8;
+// secondary disabled box shadow
+// NOTE: same color as primary-button-disabled background color above
 $cdr-button-secondary-box-shadow-disabled: inset 0 0 0 1px #dadada;
 
-$cdr-button-base-padding-large: $cdr-space-inset-one-and-a-half-x-squish;
-$cdr-button-has-icon-pl-large: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-quarter-x});
 
-$cdr-button-base-padding-medium: $cdr-space-inset-one-x-squish;
-$cdr-button-has-icon-pl-medium: calc(#{$cdr-space-one-x} - #{$cdr-space-quarter-x});
+/*~~~~~~~~TYPE~~~~~~~~~~~~~~~~~~~~~*/
 
-$cdr-button-base-padding-small: $cdr-space-inset-three-quarter-x-squish;
-$cdr-button-has-icon-pl-small: calc(#{$cdr-space-three-quarter-x} - #{$cdr-space-quarter-x});
-
-$cdr-button-base-icon-width-small: 20px;
-$cdr-button-base-icon-height-small: 20px;
-$cdr-button-base-icon-width-medium: $cdr-icon-size;
-$cdr-button-base-icon-height-medium: $cdr-icon-size;
-$cdr-button-base-icon-width-large: $cdr-icon-size;
-$cdr-button-base-icon-height-large: $cdr-icon-size;
-
-$cdr-button-full-width-width: 100%;
-$cdr-button-full-width-justify-content: center;
-
-$cdr-button-icon-only-background-color: none;
-$cdr-button-icon-only-border: none;
-$cdr-button-icon-only-radius: 50%;
-$cdr-button-icon-only-box-shadow: none;
-$cdr-button-icon-only-display: inline-block;
-
-$cdr-button-icon-only-padding: $cdr-space-inset-half-x;
-$cdr-button-icon-only-margin: 0;
-
-$cdr-button-icon-only-fill: $cdr-color-icon-emphasis-lightmode;
-
-$cdr-button-icon-only-background-color-hover: $cdr-color-background-light;
-$cdr-button-icon-only-fill-hover: $cdr-color-icon-emphasis-lightmode;
-$cdr-button-icon-only-box-shadow-hover: none;
-
-$cdr-button-icon-only-background-color-active: $cdr-color-background-light;
-$cdr-button-icon-only-fill-active: $cdr-color-icon-emphasis-lightmode;
-$cdr-button-icon-only-box-shadow-active: none;
-
-$cdr-button-icon-only-background-color-focus: $cdr-color-background-light;
-$cdr-button-icon-only-fill-focus: $cdr-color-icon-emphasis-lightmode;
-$cdr-button-icon-only-box-shadow-focus: none;
-
-$cdr-button-icon-only-background-color-disabled: transparent;
-$cdr-button-icon-only-box-shadow-disabled: none;
-$cdr-button-icon-only-fill-disabled: $cdr-color-text-disabled-lightmode;
-
-$cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
-
-@mixin cdr-button-base-text-mixin() {
-  @include cdr-button-base-text-mixin-medium;
-}
+// since these type mixins are fully custom they could
+// be turned into tokens, or they can just stay in this file.
 
 @mixin cdr-button-base-text-mixin-small() {
-  font-family: $cdr-button-font-family;
+  font-family: $cdr-font-family-sans;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -.08px;
@@ -138,7 +78,7 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 }
 
 @mixin cdr-button-base-text-mixin-medium() {
-  font-family: $cdr-button-font-family;
+  font-family: $cdr-font-family-sans;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -.08px;
@@ -147,7 +87,7 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 }
 
 @mixin cdr-button-base-text-mixin-large() {
-  font-family: $cdr-button-font-family;
+  font-family: $cdr-font-family-sans;
   font-style: normal;
   font-weight: 500;
   letter-spacing: -.08px;
@@ -155,53 +95,44 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
   line-height: 24px;
 }
 
-/* start of mixin land */
+/* start of mixin/component variables land */
 
 @mixin cdr-button-base-mixin() {
-  @include cdr-button-base-text-mixin;
+  @include cdr-button-base-text-mixin-medium;
 
-  border: $cdr-button-base-border;
-  border-radius: $cdr-button-base-border-radius;
-  cursor: $cdr-button-base-cursor;
-  display: $cdr-button-base-display;
-  outline: $cdr-button-base-outline;
-  overflow: $cdr-button-base-overflow;
-  padding: $cdr-button-base-padding;
-  text-align: $cdr-button-base-text-align;
-  text-decoration: $cdr-button-base-text-decoration;
-  text-transform: $cdr-button-base-text-transform;
+  border: none;
+  border-radius: $cdr-radius-softer;
+  cursor: pointer;
+  display: inline-flex;
+  outline: none;
+  overflow: visible;
+  padding: $cdr-space-inset-one-x-squish;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
 
   /* States
     ---------- */
-
-  &:hover {
-    outline: $cdr-button-base-outline-hover;
-    outline-offset: $cdr-button-base-outline-offset-hover;
-    text-decoration: $cdr-button-base-text-decoration-hover;
-  }
-
-  &:active {
-    outline: $cdr-button-base-outline-active;
-    outline-offset: $cdr-button-base-outline-offset-active;
-    text-decoration: $cdr-button-base-text-decoration-active;
+  &:hover, &:active, &:focus {
+    outline: none;
+    outline-offset: 0;
+    text-decoration: none;
   }
 
   &:focus {
-    outline: $cdr-button-base-outline-focus;
-    outline-color: $cdr-button-base-outline-color-focus;
-    outline-offset: $cdr-button-base-outline-offset-focus;
-    text-decoration: $cdr-button-base-text-decoration-focus;
+    outline: $default-outline;
+    outline-color: -webkit-focus-ring-color;
   }
 
   &[disabled] {
-    cursor: $cdr-button-base-cursor-disabled;
+    cursor: not-allowed;
   }
 }
 
 @mixin cdr-button-base-icon-mixin() {
-  align-self: $cdr-button-base-icon-align-self;
-  margin-right: $cdr-button-base-icon-mr;
-  fill: $cdr-button-base-icon-fill;
+  align-self: center;
+  margin-right: $cdr-space-quarter-x;
+  fill: inherit;
 }
 
 @mixin cdr-button-primary-mixin() {
@@ -213,6 +144,7 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
   /* States
     ---------- */
 
+// TODO: combine hover/active/focus declarations as possible
   &:hover {
     background-color: $cdr-button-primary-background-color-hover;
     color: $cdr-button-primary-color-hover;
@@ -243,126 +175,116 @@ $cdr-button-icon-only-fill-darkmode: $cdr-color-icon-emphasis-darkmode;
 }
 
 @mixin cdr-button-secondary-mixin() {
-  background-color: $cdr-button-secondary-background-color;
+  background-color: $cdr-color-background-lightest;
   box-shadow: $cdr-button-secondary-box-shadow;
-  color: $cdr-button-secondary-color;
-  fill: $cdr-button-secondary-fill;
+  color: $cdr-color-text-primary-lightmode;
+  fill: $cdr-color-text-primary-lightmode;
 
   /* States
   ---------- */
 
+// TODO: combine hover/active/focus declarations as possible
   &:hover {
-    background-color: $cdr-button-secondary-background-color-hover;
+    background-color: $cdr-color-background-light;
     box-shadow: $cdr-button-secondary-box-shadow-hover;
-    color: $cdr-button-secondary-color-hover;
-    fill: $cdr-button-secondary-fill-hover;
+    color: $cdr-color-text-primary-lightmode;
+    fill: $cdr-color-text-primary-lightmode;
   }
 
   &:active {
-    background-color: $cdr-button-secondary-background-color-active;
+    background-color: $cdr-color-background-light;
     box-shadow: $cdr-button-secondary-box-shadow-active;
-    color: $cdr-button-secondary-color-active;
-    fill: $cdr-button-secondary-fill-active;
+    color: $cdr-color-text-primary-lightmode;
+    fill: $cdr-color-text-primary-lightmode;
   }
 
   &:focus {
-    background-color: $cdr-button-secondary-background-color-focus;
+    background-color: $cdr-color-background-light;
     box-shadow: $cdr-button-secondary-box-shadow-focus;
-    color: $cdr-button-secondary-color-focus;
-    fill: $cdr-button-secondary-fill-focus;
+    color: $cdr-color-text-primary-lightmode;
+    fill: $cdr-color-text-primary-lightmode;
   }
 
   &[disabled] {
-    background-color: $cdr-button-secondary-background-color-disabled;
+    background-color: $cdr-color-background-lightest;
     box-shadow: $cdr-button-secondary-box-shadow-disabled;
-    color: $cdr-button-secondary-color-disabled;
-    fill: $cdr-button-secondary-fill-disabled;
+    color: $cdr-color-text-disabled-lightmode;
+    fill: $cdr-color-text-disabled-lightmode;
   }
 }
 
 @mixin cdr-button-full-width-mixin() {
-  width: $cdr-button-full-width-width !important;
-  justify-content: $cdr-button-full-width-justify-content;
+  width: 100% !important;
+  justify-content: center;
 }
 
 @mixin cdr-button-icon-only-mixin() {
-  background: $cdr-button-icon-only-background-color;
-  border: $cdr-button-icon-only-border;
-  border-radius: $cdr-button-icon-only-radius;
-  box-shadow: $cdr-button-icon-only-box-shadow;
-  display: $cdr-button-icon-only-display;
-  padding: $cdr-button-icon-only-padding;
-  fill: $cdr-button-icon-only-fill;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+  display: inline-block;
+  padding: $cdr-space-inset-half-x;
+  fill: $cdr-color-icon-emphasis-lightmode;
 
-  &:hover {
-    background: $cdr-button-icon-only-background-color-hover;
-    box-shadow: $cdr-button-icon-only-box-shadow-hover;
-    fill: $cdr-button-icon-only-fill-hover;
+  &:hover, &:active, &:focus {
+    background: $cdr-color-background-light;
+    box-shadow: none;
+    fill: $cdr-color-icon-emphasis-lightmode;
   }
 
-  &:active {
-    background: $cdr-button-icon-only-background-color-active;
-    box-shadow: $cdr-button-icon-only-box-shadow-active;
-    fill: $cdr-button-icon-only-fill-active;
-  }
 
-  &:focus {
-    background: $cdr-button-icon-only-background-color-focus;
-    box-shadow: $cdr-button-icon-only-box-shadow-focus;
-    fill: $cdr-button-icon-only-fill-focus;
-  }
-  
   &[disabled] {
-    background: $cdr-button-icon-only-background-color-disabled;
-    box-shadow: $cdr-button-icon-only-box-shadow-disabled;
-    fill: $cdr-button-icon-only-fill-disabled;
+    background: transparent;
+    box-shadow: none;
+    fill: $cdr-color-text-disabled-lightmode;
   }
 }
 
 @mixin cdr-button-small-mixin() {
   @include cdr-button-base-text-mixin-small;
-  padding: $cdr-button-base-padding-small;
+  padding: $cdr-space-inset-three-quarter-x-squish;
   width: auto;
 }
 
 @mixin cdr-button-has-icon-small-mixin {
-  padding-left: $cdr-button-has-icon-pl-small;
+  padding-left: calc(#{$cdr-space-three-quarter-x} - #{$cdr-space-quarter-x});
 }
 
 @mixin cdr-button-icon-small-mixin {
   /* This is to correct icon size vs line height */
-  width: $cdr-button-base-icon-width-small;
-  height: $cdr-button-base-icon-height-small;
+  width: 20px;
+  height: 20px;
 }
 
 @mixin cdr-button-medium-mixin() {
   @include cdr-button-base-text-mixin-medium;
-  padding: $cdr-button-base-padding-medium;
+  padding: $cdr-space-inset-one-x-squish;
   width: auto;
 }
 
 @mixin cdr-button-has-icon-medium-mixin {
-  padding-left: $cdr-button-has-icon-pl-medium;
+  padding-left: calc(#{$cdr-space-one-x} - #{$cdr-space-quarter-x});
 }
 
 @mixin cdr-button-icon-medium-mixin {
   /* This is to correct icon size vs line height */
-  width: $cdr-button-base-icon-width-medium;
-  height: $cdr-button-base-icon-height-medium;
+  width: $cdr-icon-size;
+  height: $cdr-icon-size;
 }
 
 @mixin cdr-button-large-mixin() {
   @include cdr-button-base-text-mixin-large;
-  padding: $cdr-button-base-padding-large;
+  padding: $cdr-space-inset-one-and-a-half-x-squish;
   width: auto;
 }
 
 @mixin cdr-button-has-icon-large-mixin {
-  padding-left: $cdr-button-has-icon-pl-large;
+  padding-left: calc(#{$cdr-space-one-and-a-half-x} - #{$cdr-space-quarter-x});
 }
 
 @mixin cdr-button-icon-large-mixin {
   /* This is to correct icon size vs line height */
-  width: $cdr-button-base-icon-width-large;
-  height: $cdr-button-base-icon-height-large;
+  width: $cdr-icon-size;
+  height: $cdr-icon-size;
 }

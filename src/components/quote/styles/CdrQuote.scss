@@ -3,51 +3,23 @@
 
 /* ==========================================================================
   # Cdrquote
-  
+
   TOC:
 
     :Base - Cdrquote
 ========================================================================== */
 
 .cdr-quote {
-  margin: 0;
-  padding: $cdr-space-inset-one-x-stretch;
-  line-height: 1;
-  
+  @include cdr-quote-base-container;
+
   &__summary {
-    @include cdr-quote-summary-text;
-    
-    @include xs-mq-only {
-      font-size: 18px;
-      line-height: 28px;
-    }
-
-    & + .cdr-quote__citation {
-      @include cdr-quote-citation-text;
-
-      display: block;
-      padding-top: $cdr-quote-citation-padding;
-    }
+    @include cdr-quote-base-content;
   }
 
   &--pull {
-    border-style: solid;
-    border-color: #222;
-
+    @include cdr-quote-pull-container;
     .cdr-quote__summary {
-      font-weight: 600;
-    }
-
-    @include xs-mq {
-      border-width: 0 0 1px 0;
-      padding: $cdr-quote-pull-xs-padding;
-      margin: $cdr-quote-pull-xs-margin;
-    }
-
-    @include sm-mq {
-      border-width: 0 0 0 1px;
-      padding: $cdr-quote-pull-sm-padding;
-      margin: $cdr-quote-pull-sm-margin;
+      @include cdr-quote-pull-content;
     }
   }
 }
