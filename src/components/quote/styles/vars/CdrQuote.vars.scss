@@ -1,19 +1,48 @@
-$cdr-quote-padding: $cdr-space-inset-one-x-stretch;
-$cdr-quote-citation-padding: $cdr-space-one-x;
-$cdr-quote-pull-xs-padding: $cdr-space-inset-one-x-stretch;
-$cdr-quote-pull-xs-margin: 0 0 $cdr-space-one-x;
-$cdr-quote-pull-sm-padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-half-x $cdr-space-two-x;
-$cdr-quote-pull-sm-margin: $cdr-space-one-x 0;
+@mixin cdr-quote-base-container() {
+  margin: 0;
+  padding: $cdr-space-inset-one-x-stretch;
+  line-height: 1;
+}
 
-@mixin cdr-quote-summary-text() {
+@mixin cdr-quote-base-content() {
   font-family: $cdr-font-family-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
   letter-spacing: -.08rem;
+
+  @include xs-mq-only {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
   margin: 0;
+
+  & + cite {
+    @include cdr-text-utility-100;
+
+    display: block;
+    padding-top: $cdr-space-one-x;
+  }
 }
 
-@mixin cdr-quote-citation-text() {
-  @include cdr-text-utility-100;
+@mixin cdr-quote-pull-container() {
+  border-style: solid;
+  border-color: #222; // TODO: possible color token?
+
+  @include xs-mq {
+    border-width: 0 0 1px 0;
+    padding: $cdr-space-inset-one-x-stretch;
+    margin: 0 0 $cdr-space-one-x;
+  }
+
+  @include sm-mq {
+    border-width: 0 0 0 1px;
+    padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-half-x $cdr-space-two-x;
+    margin: $cdr-space-one-x 0;
+  }
+}
+
+@mixin cdr-quote-pull-content() {
+  font-weight: 600;
 }

@@ -95,21 +95,21 @@
     @include cdr-button-icon-only-mixin;
 
     &.cdr-button--on-dark {
-      fill: $cdr-button-icon-only-fill-darkmode;
+      fill: $cdr-color-icon-emphasis-darkmode;
 
       &:hover,
       &:active,
       &:focus {
-        fill: $cdr-button-icon-only-fill;
+        fill: $cdr-color-icon-emphasis-lightmode;
       }
 
       &[disabled] {
-        fill: $cdr-button-icon-only-fill-disabled;
+        fill: $cdr-color-text-disabled-lightmode;
       }
     }
 
     & > :global(.cdr-button__icon) {
-      margin: $cdr-button-icon-only-margin;
+      margin: 0;
     }
   }
 

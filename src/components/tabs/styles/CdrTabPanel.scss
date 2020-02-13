@@ -1,13 +1,6 @@
 @import '../../../css/settings/index.scss';
-@import './vars/CdrTabs.vars.scss';
-/* ==========================================================================
-  # CdrTabPanel
 
-  TOC:
-
-    :Base - CdrTabPanel
-
-========================================================================== */
+$tab-panel-animation-duration: $cdr-duration-5-x;
 
 .cdr-tab-panel {
   position: absolute;
@@ -40,12 +33,12 @@
   :global {
     animation-name: flyLeft;
   }
-  animation-duration: $cdr-tab-panel-animation-duration;
+  animation-duration: $tab-panel-animation-duration;
 }
 
 .flyRight {
   :global {
     animation-name: flyRight;
   }
-  animation-duration: $cdr-tab-panel-animation-duration;
+  animation-duration: $tab-panel-animation-duration;
 }

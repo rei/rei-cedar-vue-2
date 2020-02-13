@@ -12,26 +12,13 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrCaption.vars.scss';
 .cdr-caption {
-  max-width: 530px;
-  line-height: 1;
-  padding: $cdr-space-inset-one-x-squish;
-  
-  cite {
-    font-style: normal;
-  }
+  @include cdr-caption-container-mixin;
 
-  &__cite {
-    @include cdr-caption-citation-text-mixin;
-    color: $cdr-color-text-secondary-lightmode;
+  cite {
+    @include cdr-caption-cite-mixin;
   }
 
   &__summary {
-    @include cdr-caption-summary-text-mixin;
-    margin: 0;
-
-    & + .cdr-caption__cite {
-      display: inline-block;
-      margin-top: $cdr-space-half-x;
-    }
+    @include cdr-caption-summary-mixin;
   }
 }

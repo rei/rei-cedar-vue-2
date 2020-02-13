@@ -1,32 +1,8 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrList.vars.scss';
-/* ==========================================================================
-  # CdrList
-  TOC:
-    :Base Styles
-      :cdr-list (Bare)
-        :Spacing
-        :Nesting
-    :Style variants
-      :Compact
-        :Nesting
-      :Ordered
-        :Nesting
-      :Unordered
-        :Nesting
-      :Inline
-        :compact
-        :unordered
-          :compact
-========================================================================== */
-
-
-// nesting is easy, they'll just have to handle the selector
-// INLINE is a whole mess.
 
 .cdr-list {
   @include cdr-list-base-mixin;
-
 
   /* nesting
     ---------- */
@@ -81,33 +57,33 @@
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    padding-left: $inline-list-space;
+    padding-left: 0;
 
     & > li {
       display: block;
 
       & + li {
-        margin-top: $inline-list-space;
-        padding-left: $inline-list-item-indentation-space;
+        margin-top: 0;
+        padding-left: 1em;
       }
     }
 
     /* inline - compact
     ---------- */
     &.cdr-list--compact > li + li {
-      padding-left: $inline-compact-list-item-indentation-space;
+      padding-left: 0.5em;
     }
 
     /* inline - unordered
     ---------- */
     &.cdr-list--unordered {
-      left: $inline-list-space;
+      left: 0;
 
       & > li {
         position: relative;
 
         & + li {
-          padding-left: $inline-unordered-list-item-indentation-space;
+          padding-left: 1.5em;
         }
 
         &:first-of-type::before {
@@ -115,7 +91,7 @@
         }
 
         &::before {
-          content: '#{$unordered-list-item-decorator}';
+          content: '\2022';
           display: block;
           position: absolute;
           top: 50%;
@@ -133,7 +109,7 @@
       ---------- */
       &.cdr-list--compact {
         & > li + li {
-          padding-left: $inline-list-item-indentation-space;
+          padding-left: 1em;
 
           &::before {
             transform: translate(100%, -50%);

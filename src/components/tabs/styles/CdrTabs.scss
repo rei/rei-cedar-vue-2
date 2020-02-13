@@ -1,27 +1,23 @@
 @import '../../../css/settings/index.scss';
-@import './vars/CdrTabs.vars.scss';
 @import url('@rei/cedar/dist/style/cdr-tab-panel.css');
-/* ==========================================================================
-  # CdrTabs
 
-  All values should map to variables in
-  vars/CdrTabs.vars.pcss
-  in order to allow for theming
+@mixin cdr-tabs-base-header-item-label() {
+  font-family: $cdr-font-family-sans;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
 
-  TOC:
-
-    :Base - CdrTabs
-    :Elements
-      :header
-      :header-item
-      :header-item-button
-      :underline
-      :content-container
-    :Modifiers
-      :compact
-      :no-border
-      :full-width
-========================================================================== */
+@mixin cdr-tabs-compact-header-item-label() {
+  font-family: $cdr-font-family-sans;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
 
 .cdr-tabs {
   /* overflow-x: auto; */
