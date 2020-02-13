@@ -13,13 +13,12 @@ export default {
       type: String,
       default: '240px',
     },
-    activeTab: {
+    activateTab: {
       type: Number,
       required: false,
     },
   },
   data() {
-    console.log('data');
     return {
       tabs: [],
       underlineOffsetX: 0,
@@ -46,7 +45,6 @@ export default {
     },
   },
   mounted() {
-    console.log('mounted');
     this.tabs = (this.$slots.default || [])
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
@@ -78,19 +76,30 @@ export default {
   },
   methods: {
     initActiveTabIndex() {
-      if (this.activeTab) {
+      if (this.activateTab) {
         if (!this.tabs[this.activeTab].disabled) {
-          this.activeTabIndex = this.activeTab;
+          this.activeTabIndex = this.activateTab;
           return;
         }
       }
 
-      for (let i = 0; i < this.tabs.length; i += 1) {
+      this.activeTabIndex = this.getNextTab();
+    },
+    getNextTab(startIndex = 0) {
+      for (let i = startIndex; i < this.tabs.length; i += 1) {
         if (!this.tabs[i].disabled) {
-          this.activeTabIndex = i;
-          break;
+          return i;
         }
       }
+      return -1;
+    },
+    getPreviousTab(startIndex) {
+      for (let i = startIndex; i >= 0; i -= 1) {
+        if (!this.tabs[i].disabled) {
+          return i;
+        }
+      }
+      return -1;
     },
     handleClick: debounce(function handleClickCallback(tabClicked) {
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
@@ -139,12 +148,13 @@ export default {
     },
     rightArrowNav() {
       if (!this.animationInProgress) {
-        if (this.activeTabIndex < (this.tabs.length - 1)) {
+        const nextTab = this.getNextTab(this.activeTabIndex + 1);
+        if (nextTab !== -1) {
           this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
+          this.tabs[nextTab].setAnimationDirection('flyRight');
           this.hideScrollBar();
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex += 1;
+          this.activeTabIndex = nextTab;
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
         }
         this.navAnimationProgress();
@@ -152,12 +162,13 @@ export default {
     },
     leftArrowNav() {
       if (!this.animationInProgress) {
-        if (this.activeTabIndex > 0) {
+        const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
+        if (previousTab !== -1) {
           this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
+          this.tabs[previousTab].setAnimationDirection('flyLeft');
           this.hideScrollBar();
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex -= 1;
+          this.activeTabIndex = previousTab;
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
         }
         this.navAnimationProgress();
@@ -175,7 +186,6 @@ export default {
     },
     handleDownArrowNav() {
       if (!this.animationInProgress) {
-        console.log('thing', this.$el.lastElementChild.children[this.activeTabIndex].focus());
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
       }
     },
