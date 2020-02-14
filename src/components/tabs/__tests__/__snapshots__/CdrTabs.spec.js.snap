@@ -43,24 +43,24 @@ exports[`CdrTabs renders child tabs properly 1`] = `
         role="tablist"
       >
         <li
-          aria-selected="true"
           class="cdr-tabs__header-item"
-          role="tab"
         >
           <a
+            aria-selected="true"
             class="cdr-tabs__header-item-label"
             href="#tab1"
+            role="tab"
           >
             tab1
           </a>
         </li>
         <li
           class="cdr-tabs__header-item"
-          role="tab"
         >
           <a
             class="cdr-tabs__header-item-label"
             href="#tab2"
+            role="tab"
           >
             tab2
           </a>
