@@ -9,7 +9,7 @@ $rating-color: #2b6692;
   }
 
   & .cdr-rating__count {
-    @include cdr-text-utility-100;
+    @include cdr-text-utility-sans-100;
 
     margin-left: $cdr-space-quarter-x;
   }
@@ -22,7 +22,7 @@ $rating-color: #2b6692;
   }
 
   #{$parent-selector}.cdr-rating__count {
-    @include cdr-text-utility-200;
+    @include cdr-text-utility-sans-200;
 
     margin-left: $cdr-space-half-x;
   }
@@ -35,7 +35,7 @@ $rating-color: #2b6692;
   }
 
   & .cdr-rating__count {
-    @include cdr-text-utility-300;
+    @include cdr-text-utility-sans-300;
   }
 }
 
