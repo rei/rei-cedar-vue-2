@@ -323,4 +323,24 @@ describe('CdrTabs', () => {
       done();
     });
   });
+
+  it('initActiveTabIndex sets activeTabIndex to 1', (done) => {
+    const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
+      slots: {
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2" />']
+      },
+      propsData: {
+        activateTab: 1
+      }
+    });
+    Vue.config.errorHandler = done;
+    
+    Vue.nextTick(() => {
+      expect(wrapper.vm.activeTabIndex).toBe(1);
+      done();
+    });
+  });
 });

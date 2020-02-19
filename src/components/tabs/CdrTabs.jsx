@@ -77,7 +77,7 @@ export default {
   methods: {
     initActiveTabIndex() {
       if (this.activateTab) {
-        if (!this.tabs[this.activeTab].disabled) {
+        if (!this.tabs[this.activateTab].disabled) {
           this.activeTabIndex = this.activateTab;
           return;
         }
