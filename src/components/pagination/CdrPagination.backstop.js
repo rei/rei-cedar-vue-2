@@ -3,6 +3,9 @@ module.exports = [
     url: 'http://localhost:3000/#/pagination',
     label: 'Pagination responsive',
     responsive: true,
+    selectors: [
+      '[data-backstop="pagination-page"]',
+    ],
   },
   {
     url: 'http://localhost:3000/#/pagination',
