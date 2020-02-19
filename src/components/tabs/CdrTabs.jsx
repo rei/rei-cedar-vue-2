@@ -217,6 +217,7 @@ export default {
             this.style['cdr-tabs__header-item-label'],
             this.style['cdr-tabs__header-item-label--disabled'],
           )}
+          aria-disabled="true"
         >
           {tab.name}
         </span>
