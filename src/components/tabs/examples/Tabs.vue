@@ -12,6 +12,7 @@
         height="100px"
         data-backstop="tab-default"
         :active-tab="1"
+        aria-disabled="true"
       >
         <cdr-tab-panel name="Tab1">
           <cdr-text
@@ -84,7 +85,7 @@
       >
         Compact Tabs
       </cdr-text>
-      <cdr-tabs size="small" :active-tab="1">
+      <cdr-tabs size="small" :active-tab="1" aria-disabled="true">
         <cdr-tab-panel name="one" :disabled="true">
           <cdr-text
             tag="strong"
@@ -135,7 +136,7 @@
       >
         Full Width Tabs
       </cdr-text>
-      <cdr-tabs modifier="full-width">
+      <cdr-tabs modifier="full-width" aria-disabled="true">
         <cdr-tab-panel
           name="one"
           id="full-width-one"
