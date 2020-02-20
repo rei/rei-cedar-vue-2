@@ -1,9 +1,13 @@
 import clsx from 'clsx';
+import CdrIcon from '../icon/CdrIcon';
 import modifier from '../../mixins/modifier';
 import style from './styles/CdrBreadcrumb.scss';
 
 export default {
   name: 'CdrBreadcrumb',
+  components: {
+    CdrIcon,
+  },
   mixins: [modifier],
   props: {
     /**
@@ -60,19 +64,14 @@ export default {
         <button
           aria-expanded="false"
           class={this.style['cdr-breadcrumb__ellipses']}
-          aria-label="ellipsis"
+          aria-label="click to expand breadcrumb navigation"
         >
-          <svg
+          <cdr-icon
             class={this.style['cdr-breadcrumb__ellipses-icon']}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
           >
-            <title>
-              ellipsis
-            </title>
             {/* eslint-disable-next-line max-len */}
             <path d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-          </svg>
+          </cdr-icon>
         </button>
         <span
           class={this.style['cdr-breadcrumb__delimiter']}
@@ -109,6 +108,7 @@ export default {
               class={this.style['cdr-breadcrumb__link']}
               ref={ref}
               href={breadcrumb.item.url}
+              aria-current={index === this.items.length - 1 ? 'page' : undefined}
             >
               { breadcrumb.item.name }
             </a>)
@@ -133,7 +133,7 @@ export default {
     return (<nav
       ref="container"
       class={clsx(this.style[this.baseClass], this.modifierClass)}
-      aria-label="Breadcrumb"
+      aria-label="breadcrumbs"
     >
       <ol
         ref="cdrBreadcrumbList"
