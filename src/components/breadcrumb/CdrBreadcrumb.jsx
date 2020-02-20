@@ -57,11 +57,11 @@ export default {
     },
     ellipsis() {
       return this.truncate ? (<li
-        onClick={this.handleEllipsisClick}
         class={this.style['cdr-breadcrumb__item']}
-        ref="ellipse"
       >
         <button
+          onClick={this.handleEllipsisClick}
+          ref="ellipse"
           aria-expanded="false"
           class={this.style['cdr-breadcrumb__ellipses']}
           aria-label="click to expand breadcrumb navigation"

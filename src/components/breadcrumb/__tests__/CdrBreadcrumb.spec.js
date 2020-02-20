@@ -80,8 +80,15 @@ describe('CdrBreadcrumb', () => {
         items: items,
       }
     });
+
+    const ellipse = wrapper.find({ref: 'ellipse'});
+
     expect(wrapper.vm.truncate).toBe(true);
-    wrapper.find({ref: 'ellipse'}).trigger('click');
+    // basic a11y tests
+    expect(ellipse.attributes()['aria-label']).toBe('click to expand breadcrumb navigation');
+    expect(wrapper.find('li:last-of-type > a').attributes()['aria-current']).toBe('page');
+
+    ellipse.trigger('click');
     expect(wrapper.vm.truncate).toBeFalsy();
 
   });
