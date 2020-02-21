@@ -133,13 +133,13 @@
     <cdr-text
       v-for="u1 in utilities"
       :key="u1"
-      :modifier="`utility-${u1}`"
+      :modifier="`utility-sans-${u1}`"
     >
       <cdr-link space="cdr-mb-space-half-x">
         item text
         <cdr-text
           tag="span"
-          :modifier="`utility-strong-${u1}`"
+          :modifier="`utility-sans-strong-${u1}`"
         >
           sit amet,
         </cdr-text>
@@ -149,7 +149,7 @@
     <cdr-text
       v-for="u2 in utilities"
       :key="u2"
-      :modifier="`utility-strong-${u2}`"
+      :modifier="`utility-sans-strong-${u2}`"
     >
       <cdr-link>
         <cdr-icon
@@ -177,7 +177,7 @@
           />
           <cdr-text
             tag="span"
-            :modifier="`utility-strong-${u1}`"
+            :modifier="`utility-sans-strong-${u1}`"
           >
             Icon on the left
           </cdr-text>
@@ -191,7 +191,7 @@
         <cdr-link>
           <cdr-text
             tag="span"
-            :modifier="`utility-strong-${u1}`"
+            :modifier="`utility-sans-strong-${u1}`"
           >
             Icon on the right
           </cdr-text>
@@ -217,7 +217,7 @@
           />
           <cdr-text
             tag="span"
-            :modifier="`utility-strong-${u1}`"
+            :modifier="`utility-sans-strong-${u1}`"
           >
             Icons on both sides
           </cdr-text>

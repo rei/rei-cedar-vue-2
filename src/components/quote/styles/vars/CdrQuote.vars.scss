@@ -19,7 +19,7 @@
   margin: 0;
 
   & + cite {
-    @include cdr-text-utility-100;
+    @include cdr-text-utility-sans-100;
 
     display: block;
     padding-top: $cdr-space-one-x;
