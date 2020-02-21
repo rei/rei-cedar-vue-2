@@ -283,66 +283,47 @@ describe('CdrTabs', () => {
     });
   });
 
-  
+  describe('overflow classes', () => {
+    it('adds gradient-left class', (done) => {
+      const spyUpdateUnderline = jest.fn();
+      const wrapper = mount(CdrTabs, {
+        stubs: {
+          'cdr-tab-panel': CdrTabPanel,
+        },
+        slots: {
+          default: ['<cdr-tab-panel name="tab1"/> id="tab-1"', '<cdr-tab-panel name="tab2" id="tab-2"/>']
+        },
+        methods: {
+          updateUnderline: spyUpdateUnderline,
+        },
+        attachToDocument: true,
+      });
 
+      Vue.nextTick(() => {
+        wrapper.setData({ overflowLeft: true });
+        expect(wrapper.find('.cdr-tabs__header-gradient-left').exists()).toBe(true);
+        done();
+      });
+    });
 
-  // xit('handles right arrow key when far right tab is active', (done) => {
-  //   const wrapper = mount(CdrTabs, {
-  //     stubs: {
-  //       'cdr-tab-panel': CdrTabPanel,
-  //     },
-  //     slots: {
-  //       default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
-  //     }
-  //   });
-  //   Vue.config.errorHandler = done
-  //   Vue.nextTick(() => {
-  //     wrapper.setData({ activeTabIndex: 1 });
-  //     // Trigger right arrow keyup event
-  //     wrapper.findAll('div').at(1).trigger('keyup.right');
-  //     expect(wrapper.vm.activeTabIndex).toBe(1);
-  //     done();
-  //   });
-  // });
+    it('adds gradient-right class', (done) => {
+      const wrapper = mount(CdrTabs, {
+        stubs: {
+          'cdr-tab-panel': CdrTabPanel,
+        },
+        slots: {
+          default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
+        },
+        attachToDocument: true,
+      });
 
-
-
-  // xit('handles left arrow key when far left is active', (done) => {
-  //   const wrapper = mount(CdrTabs, {
-  //     stubs: {
-  //       'cdr-tab-panel': CdrTabPanel,
-  //     },
-  //     slots: {
-  //       default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
-  //     }
-  //   });
-  //   Vue.config.errorHandler = done
-  //   Vue.nextTick(() => {
-  //     // Trigger left arrow keyup event
-  //     wrapper.findAll('div').at(1).trigger('keyup.left');
-  //     expect(wrapper.vm.activeTabIndex).toBe(0);
-  //     done();
-  //   });
-  // });
-
-  // xit('ignores non left and right arrow key', (done) => {
-  //   const wrapper = mount(CdrTabs, {
-  //     stubs: {
-  //       'cdr-tab-panel': CdrTabPanel,
-  //     },
-  //     slots: {
-  //       default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
-  //     }
-  //   });
-  //   Vue.config.errorHandler = done
-  //   Vue.nextTick(() => {
-  //     // Trigger down arrow keyup event
-  //     wrapper.findAll('div').at(1).trigger('keyup.down');
-  //     expect(wrapper.vm.activeTabIndex).toBe(0);
-  //     done();
-  //   });
-  // });
-
+      Vue.nextTick(() => {
+        wrapper.setData({ overflowRight: true });
+        expect(wrapper.find('.cdr-tabs__header-gradient-right').exists()).toBe(true);
+        done();
+      });
+    });
+  });
 
 
 
