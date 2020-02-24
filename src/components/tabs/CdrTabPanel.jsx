@@ -61,7 +61,7 @@ export default {
     setEnterStart(element) {
       const el = element;
       el.style.animationDirection = 'reverse';
-      el.style.animationTimingFunction = 'cubic-bezier(0.4, 0, 0.68, .06)';
+      el.style.transitionTimingFunction = 'cubic-bezier(0.4, 0, 0.68, .06)';
       el.classList.add(this.style[this.animationDirection]);
     },
     setEnterEnd(element) {
@@ -72,7 +72,7 @@ export default {
     setLeaveStart(element) {
       const el = element;
       el.classList.add(this.style[this.animationDirection]);
-      el.style.animationTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
+      el.style.transitionTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
     },
     setLeaveEnd(element) {
       const el = element;
@@ -85,7 +85,7 @@ export default {
   render() {
     return (
       <transition
-        name="fly"
+        name="fade"
         {...{ on: this.animationHooks }}
       >
         <div

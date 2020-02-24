@@ -9,7 +9,10 @@ $tab-panel-animation-duration: $cdr-duration-5-x;
   padding-top: $cdr-space-eighth-x;
 }
 
-@keyframes :global(flyLeft) {
+// flyLeft= fadeout
+// flyRight= fadein
+
+@keyframes :global(fadeout) {
   from {
     transform: translateX(0);
   }
@@ -19,7 +22,7 @@ $tab-panel-animation-duration: $cdr-duration-5-x;
   }
 }
 
-@keyframes :global(flyRight) {
+@keyframes :global(fadein) {
   from {
     transform: translateX(0);
   }
@@ -29,16 +32,20 @@ $tab-panel-animation-duration: $cdr-duration-5-x;
   }
 }
 
-.flyLeft {
-  :global {
-    animation-name: flyLeft;
-  }
+.fadeout {
+  // :global {
+  //   animation-name: fadeout;
+  // }
+  transition: opacity $cdr-duration-1-x linear;
+  opacity: 0;
   animation-duration: $tab-panel-animation-duration;
 }
 
-.flyRight {
-  :global {
-    animation-name: flyRight;
-  }
+.fadein {
+  // :global {
+  //   animation-name: fadein;
+  // }
+  transition: opacity $cdr-duration-1-x linear;
+  opacity: 1;
   animation-duration: $tab-panel-animation-duration;
 }
