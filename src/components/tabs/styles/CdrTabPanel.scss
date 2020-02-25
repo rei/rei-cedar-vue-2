@@ -9,15 +9,12 @@ $tab-panel-animation-duration: 5000ms;
   padding-top: $cdr-space-eighth-x;
 }
 
-// flyLeft= fadeout
-// flyRight= fadein
-
 :global(.slide-fade-enter-active) {
-  transition: all $cdr-duration-3-x $cdr-timing-function-ease;
+  transition: opacity $cdr-duration-2-x $cdr-timing-function-ease $cdr-duration-2-x;
 }
 
 :global(.slide-fade-leave-active) {
-  transition: all $cdr-duration-3-x $cdr-timing-function-ease;
+  transition: transform $cdr-duration-3-x $cdr-timing-function-ease, opacity $cdr-duration-2-x $cdr-timing-function-ease $cdr-duration-1-x;
 }
 
 :global(.slide-fade-enter) {
