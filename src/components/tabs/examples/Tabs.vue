@@ -9,7 +9,7 @@
         Tabs
       </cdr-text>
       <cdr-tabs
-        height="100px"
+        height="400px"
         data-backstop="tab-default"
         :active-tab="1"
       >
@@ -23,7 +23,6 @@
         </cdr-tab-panel>
         <cdr-tab-panel
           name="Tab2"
-          :disabled="true"
         >
           <cdr-text
             tag="strong"
@@ -47,7 +46,11 @@
             tag="strong"
             modifier="subheading"
           >
-            Tab Three Content
+            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.
+
+              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.
+
+              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>
           </cdr-text>
         </cdr-tab-panel>
         <cdr-tab-panel name="4">

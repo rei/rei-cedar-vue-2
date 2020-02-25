@@ -1,6 +1,6 @@
 @import '../../../css/settings/index.scss';
 
-$tab-panel-animation-duration: $cdr-duration-5-x;
+$tab-panel-animation-duration: 5000ms;
 
 .cdr-tab-panel {
   position: absolute;
@@ -12,40 +12,19 @@ $tab-panel-animation-duration: $cdr-duration-5-x;
 // flyLeft= fadeout
 // flyRight= fadein
 
-@keyframes :global(fadeout) {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-100vw);
-  }
+:global(.slide-fade-enter-active) {
+  transition: all $cdr-duration-3-x $cdr-timing-function-ease;
 }
 
-@keyframes :global(fadein) {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(100vw);
-  }
+:global(.slide-fade-leave-active) {
+  transition: all $cdr-duration-3-x $cdr-timing-function-ease;
 }
 
-.fadeout {
-  // :global {
-  //   animation-name: fadeout;
-  // }
-  transition: opacity $cdr-duration-1-x linear;
+:global(.slide-fade-enter) {
   opacity: 0;
-  animation-duration: $tab-panel-animation-duration;
 }
 
-.fadein {
-  // :global {
-  //   animation-name: fadein;
-  // }
-  transition: opacity $cdr-duration-1-x linear;
-  opacity: 1;
-  animation-duration: $tab-panel-animation-duration;
+:global(.slide-fade-leave-to) {
+  transform: translateX(50vw);
+  opacity: 0;
 }
