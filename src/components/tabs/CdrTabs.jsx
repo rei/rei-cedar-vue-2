@@ -225,6 +225,7 @@ export default {
         <a
           role="tab"
           aria-selected={tab.active}
+          tabIndex={tab.active ? 0 : -1}
           vOn:click_prevent={e => this.handleClick(tab, e)}
           href={`#${tab.id || tab.name}`}
           class={this.style['cdr-tabs__header-item-label']}
