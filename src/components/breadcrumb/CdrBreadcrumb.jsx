@@ -49,6 +49,7 @@ export default {
     return {
       truncate: this.truncationEnabled && this.items.length > 2,
       style,
+      componentID: Math.random().toString(36).substr(2, 9),
     };
   },
   computed: {
@@ -64,10 +65,12 @@ export default {
           ref="ellipse"
           aria-expanded="false"
           class={this.style['cdr-breadcrumb__ellipses']}
-          aria-label="click to expand breadcrumb navigation"
+          aria-controls={`${this.componentID}List`}
+          aria-label={`show ${this.items.length - 2} more navigation levels`}
         >
           <cdr-icon
             class={this.style['cdr-breadcrumb__ellipses-icon']}
+            aria-hidden="true"
           >
             {/* eslint-disable-next-line max-len */}
             <path d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
@@ -91,6 +94,7 @@ export default {
         </span>) : '';
 
         const ref = index === 0 ? 'firstBreadcrumb' : null;
+        const LinkTag = index < this.items.length - 2 ? 'a' : 'strong';
 
         return (<li
           class={this.style['cdr-breadcrumb__item']}
@@ -104,14 +108,14 @@ export default {
               content: breadcrumb.item.name,
               ref,
             })
-            : (<a
+            : (<LinkTag
               class={this.style['cdr-breadcrumb__link']}
               ref={ref}
               href={breadcrumb.item.url}
               aria-current={index === this.items.length - 1 ? 'page' : undefined}
             >
               { breadcrumb.item.name }
-            </a>)
+            </LinkTag>)
           }
           {delimiter}
         </li>);
@@ -134,8 +138,9 @@ export default {
       ref="container"
       class={clsx(this.style[this.baseClass], this.modifierClass)}
       aria-label="breadcrumbs"
-    >
+      >
       <ol
+        id={`${this.componentID}List`}
         ref="cdrBreadcrumbList"
         class={this.style['cdr-breadcrumb__list']}
       >
