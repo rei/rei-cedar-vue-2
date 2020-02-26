@@ -325,7 +325,42 @@ describe('CdrTabs', () => {
     });
   });
 
+  it('accesibility', (done) => {
+    const spyUpdateUnderline = jest.fn();
+    const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
+      slots: {
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
+      },
+      methods: {
+        updateUnderline: spyUpdateUnderline,
+      },
+    });
 
+    Vue.nextTick(() => {
+      const tab1 = wrapper.vm.getTabEl(wrapper.vm.tabs[0]);
+      const tab2 = wrapper.vm.getTabEl(wrapper.vm.tabs[1]);
+      
+      // aria-selected
+      expect(tab1.data.attrs['aria-selected']).toBe(true);
+      expect(tab2.data.attrs['aria-selected']).toBe(false);
+
+      // tabIndex
+      expect(tab1.data.attrs.tabIndex).toBe(0);
+      expect(tab2.data.attrs.tabIndex).toBe(-1);
+
+      // tab role
+      expect(tab1.data.attrs.role).toBe('tab');
+      expect(tab2.data.attrs.role).toBe('tab');
+
+      // tablist role
+      expect(wrapper.vm.$refs.cdrTabsHeader.hasAttribute('role', 'tablist')).toBe(true);
+      
+      done();
+    });
+  });
 
   // it('click tab changes active tab lower index variation', (done) => {
   //   const wrapper = mount(CdrTabs, {
