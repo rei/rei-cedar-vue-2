@@ -7,13 +7,13 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
 >
   <ol
     class="cdr-breadcrumb__list"
-    id="168msidx6List"
+    id="exampleList"
   >
     <li
       class="cdr-breadcrumb__item"
     >
       <button
-        aria-controls="168msidx6List"
+        aria-controls="exampleList"
         aria-expanded="false"
         aria-label="show 1 more navigation level"
         class="cdr-breadcrumb__ellipses"

@@ -28,6 +28,7 @@ describe('CdrBreadcrumb', () => {
         items: items,
       }
     });
+    wrapper.setData({ componentID: 'example' });
     expect(wrapper.element).toMatchSnapshot();
 
     // basic a11y
