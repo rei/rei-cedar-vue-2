@@ -63,6 +63,7 @@ export default {
       }, 100);
     });
     // Check for header overflow on window resize for gradient behavior.
+    console.log('adding event listener');
     window.addEventListener('resize', debounce(() => {
       this.headerWidth = this.getHeaderWidth();
       this.calculateOverflow();
@@ -105,13 +106,6 @@ export default {
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {
         if (newSelectedTab.name === tab.name) {
-          // if (this.activeTabIndex < index) {
-          //   tab.setAnimationDirection('fadein');
-          //   this.tabs[this.activeTabIndex].setAnimationDirection('fadeout');
-          // } else {
-          //   tab.setAnimationDirection('fadeout');
-          //   this.tabs[this.activeTabIndex].setAnimationDirection('fadein');
-          // }
           this.activeTabIndex = index;
           this.hideScrollBar();
           this.$nextTick(() => tab.setActive(true));
@@ -150,8 +144,6 @@ export default {
       if (!this.animationInProgress) {
         const nextTab = this.getNextTab(this.activeTabIndex + 1);
         if (nextTab !== -1) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          this.tabs[nextTab].setAnimationDirection('flyRight');
           this.hideScrollBar();
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
           this.activeTabIndex = nextTab;
@@ -164,8 +156,6 @@ export default {
       if (!this.animationInProgress) {
         const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
         if (previousTab !== -1) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          this.tabs[previousTab].setAnimationDirection('flyLeft');
           this.hideScrollBar();
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
           this.activeTabIndex = previousTab;

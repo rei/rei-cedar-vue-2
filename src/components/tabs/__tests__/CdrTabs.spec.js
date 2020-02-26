@@ -179,44 +179,21 @@ describe('CdrTabs', () => {
     expect(wrapper.vm.getPreviousTab(-1)).toBe(-1);
   });
 
-  describe('handleClick', () => {
-    it('left to right', (done) => {
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
-        },
-      });
-      
-      Vue.nextTick(() => {
-        wrapper.findAll('a').at(1).trigger('click');
-        expect(wrapper.vm.activeTabIndex).toBe(1);
-        done();
-      });
-    });
 
-    xit('right to left', (done) => {
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
-        },
-        propsData: {
-          activateTab: 1,
-        },
-      });
-      
-      Vue.nextTick(() => {
-        const test = wrapper.findAll('a').at(0);
-        console.log('test', test);
-        // wrapper.findAll('a').at(0).trigger('click');
-        // expect(wrapper.vm.activeTabIndex).toBe(1);
-        done();
-      });
+  it('handleClick', (done) => {
+    const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
+      slots: {
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
+      },
+    });
+    
+    Vue.nextTick(() => {
+      wrapper.findAll('a').at(1).trigger('click');
+      expect(wrapper.vm.activeTabIndex).toBe(1);
+      done();
     });
   });
 
@@ -257,8 +234,9 @@ describe('CdrTabs', () => {
     });
   });
 
-  xit('resize calculates overflow properly', (done) => {
+  it('resize calculates overflow properly', (done) => {
     const spyCalculateOverflow = jest.fn();
+    const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
@@ -268,15 +246,17 @@ describe('CdrTabs', () => {
       },
       methods: {
         calculateOverflow: spyCalculateOverflow,
+        updateUnderline: spyUpdateUnderline,
       },
       attachToDocument: true,
     });
     
     Vue.nextTick(() => {
+      console.log('about to dispatch event');
       window.dispatchEvent(new Event('resize'));
       setTimeout(() => { // for debounce
         expect(wrapper.vm.overflowLeft).toBe(false);
-        expect(spy).toHaveBeenCalled();
+        expect(spyCalculateOverflow).toHaveBeenCalled();
         wrapper.destroy();
         done();
       }, 600);
@@ -360,6 +340,29 @@ describe('CdrTabs', () => {
       
       done();
     });
+
+    xit('scrollbar is hidden properly', (done) => {
+      const wrapper = mount(CdrTabs, {
+        stubs: {
+          'cdr-tab-panel': CdrTabPanel,
+        },
+        slots: {
+          default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
+        },
+        attachToDocument: true,
+      });
+      
+      wrapper.setData({ widthInitialized: true});
+      wrapper.setData({ underlineWidth: -1});
+      wrapper.vm.hideScrollBar();
+      expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('hidden');
+      window.dispatchEvent(new Event('transitionend'));
+      Vue.nextTick(() => {
+        expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('unset');
+        wrapper.destroy();
+        done();
+      });
+    });
   });
 
   // it('click tab changes active tab lower index variation', (done) => {
@@ -400,29 +403,6 @@ describe('CdrTabs', () => {
   //   wrapper.setData({ headerWidth: 2000 });
   //   wrapper.vm.calculateOverflow();
   //   expect(wrapper.vm.headerOverflow).toBe(true);
-  // });
-
-  // xit('scrollbar is hidden properly', (done) => {
-  //   const wrapper = mount(CdrTabs, {
-  //     stubs: {
-  //       'cdr-tab-panel': CdrTabPanel,
-  //     },
-  //     slots: {
-  //       default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
-  //     },
-  //     attachToDocument: true,
-  //   });
-  //   Vue.config.errorHandler = done;
-  //   wrapper.setData({ widthInitialized: true});
-  //   wrapper.setData({ underlineWidth: -1});
-  //   wrapper.vm.hideScrollBar();
-  //   expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('hidden');
-  //   window.dispatchEvent(new Event('transitionend'));
-  //   Vue.nextTick(() => {
-  //     expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('unset');
-  //     wrapper.destroy();
-  //     done();
-  //   });
   // });
 
   // xit('handles down arrow', (done) => {
