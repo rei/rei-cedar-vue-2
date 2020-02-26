@@ -1,6 +1,6 @@
 @import '../../../css/settings/index.scss';
 
-$tab-panel-animation-duration: $cdr-duration-5-x;
+$tab-panel-animation-duration: 5000ms;
 
 .cdr-tab-panel {
   position: absolute;
@@ -9,36 +9,19 @@ $tab-panel-animation-duration: $cdr-duration-5-x;
   padding-top: $cdr-space-eighth-x;
 }
 
-@keyframes :global(flyLeft) {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-100vw);
-  }
+:global(.slide-fade-enter-active) {
+  transition: opacity $cdr-duration-2-x $cdr-timing-function-ease $cdr-duration-2-x;
 }
 
-@keyframes :global(flyRight) {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(100vw);
-  }
+:global(.slide-fade-leave-active) {
+  transition: transform $cdr-duration-3-x $cdr-timing-function-ease, opacity $cdr-duration-2-x $cdr-timing-function-ease $cdr-duration-1-x;
 }
 
-.flyLeft {
-  :global {
-    animation-name: flyLeft;
-  }
-  animation-duration: $tab-panel-animation-duration;
+:global(.slide-fade-enter) {
+  opacity: 0;
 }
 
-.flyRight {
-  :global {
-    animation-name: flyRight;
-  }
-  animation-duration: $tab-panel-animation-duration;
+:global(.slide-fade-leave-to) {
+  transform: translateX(50vw);
+  opacity: 0;
 }

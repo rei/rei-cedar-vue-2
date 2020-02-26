@@ -105,13 +105,13 @@ export default {
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {
         if (newSelectedTab.name === tab.name) {
-          if (this.activeTabIndex < index) {
-            tab.setAnimationDirection('flyRight');
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          } else {
-            tab.setAnimationDirection('flyLeft');
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          }
+          // if (this.activeTabIndex < index) {
+          //   tab.setAnimationDirection('fadein');
+          //   this.tabs[this.activeTabIndex].setAnimationDirection('fadeout');
+          // } else {
+          //   tab.setAnimationDirection('fadeout');
+          //   this.tabs[this.activeTabIndex].setAnimationDirection('fadein');
+          // }
           this.activeTabIndex = index;
           this.hideScrollBar();
           this.$nextTick(() => tab.setActive(true));

@@ -14,7 +14,7 @@ const router = new VueRouter({ routes });
 export default routes; //eslint-disable-line
 
 Vue.config.productionTip = false;
-Vue.config.devtools = false;
+Vue.config.devtools = true;
 
 /* eslint-disable no-new */
 new Vue({
