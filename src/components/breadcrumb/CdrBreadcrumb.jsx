@@ -66,7 +66,7 @@ export default {
           aria-expanded="false"
           class={this.style['cdr-breadcrumb__ellipses']}
           aria-controls={`${this.componentID}List`}
-          aria-label={`show ${this.items.length - 2} more navigation level${(this.items.length - 2) > 1 ? 's' : ''}`}
+          aria-label={`show ${this.items.length - 2} more navigation level${(this.items.length - 2) > 1 ? 's' : ''}`} // eslint-disable-line max-len
         >
           <cdr-icon
             class={this.style['cdr-breadcrumb__ellipses-icon']}
