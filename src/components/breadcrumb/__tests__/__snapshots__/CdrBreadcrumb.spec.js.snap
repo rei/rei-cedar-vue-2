@@ -7,16 +7,19 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
 >
   <ol
     class="cdr-breadcrumb__list"
+    id="168msidx6List"
   >
     <li
       class="cdr-breadcrumb__item"
     >
       <button
+        aria-controls="168msidx6List"
         aria-expanded="false"
-        aria-label="click to expand breadcrumb navigation"
+        aria-label="show 1 more navigation level"
         class="cdr-breadcrumb__ellipses"
       >
         <svg
+          aria-hidden="true"
           class="cdr-icon cdr-breadcrumb__ellipses-icon"
           role="presentation"
           viewBox="0 0 24 24"
@@ -54,12 +57,12 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
     <li
       class="cdr-breadcrumb__item"
     >
-      <a
+      <strong
         class="cdr-breadcrumb__link"
         href="http://rei.com"
       >
         Long Breadcrumb Step 2
-      </a>
+      </strong>
       <span
         aria-hidden="true"
         class="cdr-breadcrumb__delimiter"
@@ -70,13 +73,13 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
     <li
       class="cdr-breadcrumb__item"
     >
-      <a
+      <strong
         aria-current="page"
         class="cdr-breadcrumb__link"
         href="http://rei.com"
       >
         Long Breadcrumb Step 3
-      </a>
+      </strong>
     </li>
   </ol>
 </nav>

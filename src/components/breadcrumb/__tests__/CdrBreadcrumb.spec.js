@@ -33,7 +33,7 @@ describe('CdrBreadcrumb', () => {
     // basic a11y
     expect(wrapper.is('nav')).toBe(true);
     expect(wrapper.attributes()['aria-label']).toBe('breadcrumbs');
-    expect(wrapper.find('li:last-of-type > a').attributes()['aria-current']).toBe('page');
+    expect(wrapper.find('li:last-of-type > strong').attributes()['aria-current']).toBe('page');
   });
 
   it('breadcrumb should not truncate with fewer than 3 items', () => {
@@ -90,7 +90,7 @@ describe('CdrBreadcrumb', () => {
     expect(wrapper.vm.truncate).toBe(true);
     // a11y test
     const ellipse = wrapper.find({ref: 'ellipse'});
-    expect(ellipse.attributes()['aria-label']).toBe('click to expand breadcrumb navigation');
+    expect(ellipse.attributes()['aria-label']).toBe('show 1 more navigation level');
 
     ellipse.trigger('click');
     expect(wrapper.vm.truncate).toBeFalsy();
