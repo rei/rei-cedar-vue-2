@@ -63,7 +63,6 @@ export default {
       }, 100);
     });
     // Check for header overflow on window resize for gradient behavior.
-    console.log('adding event listener');
     window.addEventListener('resize', debounce(() => {
       this.headerWidth = this.getHeaderWidth();
       this.calculateOverflow();
