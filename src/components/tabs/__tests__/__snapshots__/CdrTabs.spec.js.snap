@@ -46,6 +46,7 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
           class="cdr-tabs__header-item"
         >
           <a
+            aria-disabled="false"
             aria-selected="true"
             class="cdr-tabs__header-item-label"
             href="#tab1"
@@ -59,6 +60,7 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
           class="cdr-tabs__header-item"
         >
           <a
+            aria-disabled="false"
             class="cdr-tabs__header-item-label"
             href="#tab2"
             role="tab"
