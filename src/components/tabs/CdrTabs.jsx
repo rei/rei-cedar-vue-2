@@ -207,6 +207,7 @@ export default {
             this.style['cdr-tabs__header-item-label--disabled'],
           )}
           aria-disabled="true"
+          aria-selected="false"
         >
           {tab.name}
         </span>
@@ -214,6 +215,7 @@ export default {
         <a
           role="tab"
           aria-selected={tab.active}
+          aria-disabled="false"
           tabIndex={tab.active ? 0 : -1}
           vOn:click_prevent={e => this.handleClick(tab, e)}
           href={`#${tab.id || tab.name}`}
