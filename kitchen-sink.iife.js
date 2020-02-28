@@ -17383,12 +17383,15 @@ var cedar = (function () {
   module.exports = _typeof;
   });
 
-  var css$2 = "/* ==========================================================================\n  # CdrBreadcrumb\n\n  All values should map to variables in\n  vars/CdrBreadcrumb.vars.pcss\n  in order to allow for theming\n\n  TOC:\n\n    :Base - CdrBreadcrumb\n      :Elements\n        :container\n        :list\n        :item\n        :link\n        :delimiter\n        :ellipses\n        :ellipses-icon\n========================================================================== */\n/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-breadcrumb_4\\.0\\.2 {\n  line-height: 1;\n  /* List\n  ========== */\n  /* Item\n  ========== */\n  /* Link\n  ---------- */\n  /* Delimiter\n  ========== */\n  /* Ellipses\n    ========== */ }\n.cdr-breadcrumb__list_4\\.0\\.2 {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    padding: 0;\n    margin: 0; }\n.cdr-breadcrumb__item_4\\.0\\.2 {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-flex: 0;\n        -ms-flex: none;\n            flex: none;\n    padding: 0;\n    color: #616161;\n    fill: #616161; }\n.cdr-breadcrumb__item_4\\.0\\.2:hover, .cdr-breadcrumb__item_4\\.0\\.2:active, .cdr-breadcrumb__item_4\\.0\\.2:focus {\n      color: #292929;\n      fill: #292929; }\n.cdr-breadcrumb__item_4\\.0\\.2:last-child {\n      color: #292929;\n      fill: #292929; }\n.cdr-breadcrumb__link_4\\.0\\.2 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 400;\n    letter-spacing: -0.008rem;\n    font-size: 1.2rem;\n    line-height: 1.6rem;\n    text-decoration: none;\n    color: inherit; }\n.cdr-breadcrumb__link_4\\.0\\.2:hover, .cdr-breadcrumb__link_4\\.0\\.2:active, .cdr-breadcrumb__link_4\\.0\\.2:focus {\n      color: inherit;\n      text-decoration: underline; }\n.cdr-breadcrumb__delimiter_4\\.0\\.2 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 400;\n    letter-spacing: -0.008rem;\n    font-size: 1.2rem;\n    line-height: 1.6rem;\n    color: inherit;\n    padding-left: 0.4rem;\n    padding-right: 0.8rem; }\n.cdr-breadcrumb__ellipses_4\\.0\\.2 {\n    font-family: inherit;\n    font-size: inherit;\n    line-height: inherit;\n    border: none;\n    background: none;\n    background-color: transparent;\n    cursor: pointer;\n    display: inline-block;\n    fill: inherit;\n    padding: 0.6rem 1.1rem;\n    /* extend clickable area */\n    margin: -0.6rem -1.1rem;\n    /* preserve layout */\n    /* Ellipses Icon\n    ========== */ }\n.cdr-breadcrumb__ellipses_4\\.0\\.2 .cdr-breadcrumb__ellipses-icon_4\\.0\\.2 {\n      border-bottom: 0.1rem solid transparent;\n      width: 1.4rem;\n      height: 1.4rem;\n      fill: inherit; }\n.cdr-breadcrumb__ellipses_4\\.0\\.2:hover .cdr-breadcrumb__ellipses-icon_4\\.0\\.2, .cdr-breadcrumb__ellipses_4\\.0\\.2:active .cdr-breadcrumb__ellipses-icon_4\\.0\\.2, .cdr-breadcrumb__ellipses_4\\.0\\.2:focus .cdr-breadcrumb__ellipses-icon_4\\.0\\.2 {\n      border-bottom: 0.1rem solid #292929;\n      fill: inherit; }\n@media (min-width: 992px) {\n    .cdr-breadcrumb__link_4\\.0\\.2, .cdr-breadcrumb__delimiter_4\\.0\\.2, .cdr-breadcrumb__ellipses_4\\.0\\.2 {\n      font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-style: normal;\n      font-weight: 400;\n      letter-spacing: -0.016rem;\n      font-size: 1.4rem;\n      line-height: 1.8rem; }\n    .cdr-breadcrumb__ellipses_4\\.0\\.2 .cdr-breadcrumb__ellipses-icon_4\\.0\\.2 {\n      width: 1.6rem;\n      height: 1.6rem; } }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL2JyZWFkY3J1bWIvc3R5bGVzL0NkckJyZWFkY3J1bWIuc2NzcyIsIkNkckJyZWFkY3J1bWIuc2NzcyIsInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwic3JjL2NvbXBvbmVudHMvYnJlYWRjcnVtYi9zdHlsZXMvdmFycy9DZHJCcmVhZGNydW1iLnZhcnMuc2NzcyIsIm5vZGVfbW9kdWxlcy9AcmVpL2Nkci10b2tlbnMvZGlzdC9zY3NzL2Nkci10b2tlbnMuc2NzcyIsInNyYy9jc3Mvc2V0dGluZ3MvX3Jlc3BvbnNpdmUudmFycy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7NEVDa0I0RTtBQ2xCNUU7Ozs7Ozs7aUVEMEJpRTtBQ2pCakU7O3VCRG9CdUI7QURQdkI7RUFDRSxjQUFjO0VBRWQ7Y0NRWTtFRENaO2NDQ1k7RURhWjtjQ1hZO0VEMEJaO2NDeEJZO0VEaUNaO2dCQy9CYyxFRGdDQztBQTlDZjtJQUNFLDJCQUFvQjtJQUFwQiwyQkFBb0I7SUFBcEIsb0JBQW9CO0lBQ3BCLG1CQUFlO1FBQWYsZUFBZTtJQUNmLFVBQVU7SUFDVixTQUFTLEVBQUE7QUFLWDtJQUNFLDJCQUFvQjtJQUFwQiwyQkFBb0I7SUFBcEIsb0JBQW9CO0lBQ3BCLG1CQUFVO1FBQVYsY0FBVTtZQUFWLFVBQVU7SUFDVixVQUFVO0lHdENaLGNDd2lDMEM7SUR2aUMxQyxhQ3VpQzBDLEVBQUE7QUpyZ0N6QztNRzlCQyxjQ2lpQ3NDO01EaGlDdEMsYUNnaUNzQyxFQUFBO0FKbmdDdkM7TUd4QkQsY0MyaEN3QztNRDFoQ3hDLGFDMGhDd0MsRUFBQTtBSnIvQnhDO0lJd3VCQSw0RUFBNEU7SUFDNUUsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQix5QkFBdUI7SUFDdkIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtJSjN1QmpCLHFCQUFxQjtJQUNyQixjQUFjLEVBQUE7QUFIZjtNQVFHLGNBQWM7TUFDZCwwQkFBMEIsRUFBQTtBQU05QjtJSXl0QkEsNEVBQTRFO0lBQzVFLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIseUJBQXVCO0lBQ3ZCLGlCQUFpQjtJQUNqQixtQkFBbUI7SUo1dEJqQixjQUFjO0lBQ2Qsb0JJdWpDd0I7SUp0akN4QixxQkl1akNxQixFQUFBO0FKbGpDdkI7SUFDRSxvQkFBb0I7SUFDcEIsa0JBQWtCO0lBQ2xCLG9CQUFvQjtJQUNwQixZQUFZO0lBQ1osZ0JBQWdCO0lBQ2hCLDZCQUE2QjtJQUM3QixlQUFlO0lBQ2YscUJBQXFCO0lBQ3JCLGFBQWE7SUFDYixzQkFBaUI7SUFBRSwwQkFBQTtJQUNuQix1QkFBa0I7SUFBRSxvQkFBQTtJQUVwQjtnQkNTWSxFRFJDO0FBZGQ7TUFnQkcsdUNBQW9DO01BQ3BDLGFBQWE7TUFDYixjQUFjO01BQ2QsYUFBYSxFQUFBO0FBbkJoQjtNQTBCSyxtQ0ltOEJrQztNSmw4QmxDLGFBQWEsRUFBQTtBS3ZFbkI7SUw2RUU7TUl3ckJGLDRFQUE0RTtNQUM1RSxrQkFBa0I7TUFDbEIsZ0JBQWdCO01BQ2hCLHlCQUF1QjtNQUN2QixpQkFBaUI7TUFDakIsbUJBQW1CLEVBQUE7SUp2ckJqQjtNQUNFLGFBQWE7TUFDYixjQUFjLEVBQUEsRUFDZiIsImZpbGUiOiJDZHJCcmVhZGNydW1iLnNjc3MifQ== */";
+  var css$2 = "/* ==========================================================================\n  # CdrBreadcrumb\n\n  All values should map to variables in\n  vars/CdrBreadcrumb.vars.pcss\n  in order to allow for theming\n\n  TOC:\n\n    :Base - CdrBreadcrumb\n      :Elements\n        :container\n        :list\n        :item\n        :link\n        :delimiter\n        :ellipses\n        :ellipses-icon\n========================================================================== */\n/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n/* intentionally empty */\n.cdr-breadcrumb_4\\.0\\.2 {\n  line-height: 1;\n  /* List\n  ========== */\n  /* Item\n  ========== */\n  /* Link\n  ---------- */\n  /* Delimiter\n  ========== */\n  /* Ellipses\n    ========== */ }\n.cdr-breadcrumb__list_4\\.0\\.2 {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    padding: 0;\n    margin: 0; }\n.cdr-breadcrumb__item_4\\.0\\.2 {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-flex: 0;\n        -ms-flex: none;\n            flex: none;\n    padding: 0;\n    color: #616161;\n    fill: #616161; }\n.cdr-breadcrumb__item_4\\.0\\.2:hover, .cdr-breadcrumb__item_4\\.0\\.2:active, .cdr-breadcrumb__item_4\\.0\\.2:focus {\n      color: #292929;\n      fill: #292929; }\n.cdr-breadcrumb__item_4\\.0\\.2:last-child {\n      color: #292929;\n      fill: #292929; }\n.cdr-breadcrumb__link_4\\.0\\.2 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 400;\n    letter-spacing: -0.008rem;\n    font-size: 1.2rem;\n    line-height: 1.6rem;\n    text-decoration: none;\n    color: inherit; }\n.cdr-breadcrumb__link_4\\.0\\.2:hover, .cdr-breadcrumb__link_4\\.0\\.2:active, .cdr-breadcrumb__link_4\\.0\\.2:focus {\n      color: inherit;\n      text-decoration: underline; }\n.cdr-breadcrumb__delimiter_4\\.0\\.2 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 400;\n    letter-spacing: -0.008rem;\n    font-size: 1.2rem;\n    line-height: 1.6rem;\n    color: inherit;\n    padding-left: 0.4rem;\n    padding-right: 0.8rem; }\n.cdr-breadcrumb__ellipses_4\\.0\\.2 {\n    font-family: inherit;\n    font-size: inherit;\n    line-height: inherit;\n    border: none;\n    background: none;\n    background-color: transparent;\n    cursor: pointer;\n    display: inline-block;\n    fill: inherit;\n    padding: 0.6rem 1.1rem;\n    /* extend clickable area */\n    margin: -0.6rem -1.1rem;\n    /* preserve layout */\n    /* Ellipses Icon\n    ========== */ }\n.cdr-breadcrumb__ellipses_4\\.0\\.2 .cdr-breadcrumb__ellipses-icon_4\\.0\\.2 {\n      border-bottom: 0.1rem solid transparent;\n      width: 1.4rem;\n      height: 1.4rem;\n      fill: inherit; }\n.cdr-breadcrumb__ellipses_4\\.0\\.2:hover .cdr-breadcrumb__ellipses-icon_4\\.0\\.2, .cdr-breadcrumb__ellipses_4\\.0\\.2:active .cdr-breadcrumb__ellipses-icon_4\\.0\\.2, .cdr-breadcrumb__ellipses_4\\.0\\.2:focus .cdr-breadcrumb__ellipses-icon_4\\.0\\.2 {\n      border-bottom: 0.1rem solid #292929;\n      fill: inherit; }\n@media (min-width: 992px) {\n    .cdr-breadcrumb__link_4\\.0\\.2, .cdr-breadcrumb__delimiter_4\\.0\\.2, .cdr-breadcrumb__ellipses_4\\.0\\.2 {\n      font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-style: normal;\n      font-weight: 400;\n      letter-spacing: -0.016rem;\n      font-size: 1.4rem;\n      line-height: 1.8rem; }\n    .cdr-breadcrumb__ellipses_4\\.0\\.2 .cdr-breadcrumb__ellipses-icon_4\\.0\\.2 {\n      width: 1.6rem;\n      height: 1.6rem; } }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb21wb25lbnRzL2JyZWFkY3J1bWIvc3R5bGVzL0NkckJyZWFkY3J1bWIuc2NzcyIsIkNkckJyZWFkY3J1bWIuc2NzcyIsInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiLi4vLi4vLi4vLi4vYnVpbGQvbm9vcC5jc3MiLCJzcmMvY29tcG9uZW50cy9icmVhZGNydW1iL3N0eWxlcy92YXJzL0NkckJyZWFkY3J1bWIudmFycy5zY3NzIiwibm9kZV9tb2R1bGVzL0ByZWkvY2RyLXRva2Vucy9kaXN0L3Njc3MvY2RyLXRva2Vucy5zY3NzIiwic3JjL2Nzcy9zZXR0aW5ncy9fcmVzcG9uc2l2ZS52YXJzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs0RUNrQjRFO0FDbEI1RTs7Ozs7OztpRUQwQmlFO0FDakJqRTs7dUJEb0J1QjtBRTdCdkIsd0JBQXdCO0FIdUJ4QjtFQUNFLGNBQWM7RUFFZDtjQ1FZO0VEQ1o7Y0NDWTtFRGFaO2NDWFk7RUQwQlo7Y0N4Qlk7RURpQ1o7Z0JDL0JjLEVEZ0NDO0FBOUNmO0lBQ0UsMkJBQW9CO0lBQXBCLDJCQUFvQjtJQUFwQixvQkFBb0I7SUFDcEIsbUJBQWU7UUFBZixlQUFlO0lBQ2YsVUFBVTtJQUNWLFNBQVMsRUFBQTtBQUtYO0lBQ0UsMkJBQW9CO0lBQXBCLDJCQUFvQjtJQUFwQixvQkFBb0I7SUFDcEIsbUJBQVU7UUFBVixjQUFVO1lBQVYsVUFBVTtJQUNWLFVBQVU7SUl2Q1osY0N3aUMwQztJRHZpQzFDLGFDdWlDMEMsRUFBQTtBTHBnQ3pDO01JL0JDLGNDaWlDc0M7TURoaUN0QyxhQ2dpQ3NDLEVBQUE7QUxsZ0N2QztNSXpCRCxjQzJoQ3dDO01EMWhDeEMsYUMwaEN3QyxFQUFBO0FMcC9CeEM7SUt1dUJBLDRFQUE0RTtJQUM1RSxrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLHlCQUF1QjtJQUN2QixpQkFBaUI7SUFDakIsbUJBQW1CO0lMMXVCakIscUJBQXFCO0lBQ3JCLGNBQWMsRUFBQTtBQUhmO01BUUcsY0FBYztNQUNkLDBCQUEwQixFQUFBO0FBTTlCO0lLd3RCQSw0RUFBNEU7SUFDNUUsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQix5QkFBdUI7SUFDdkIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtJTDN0QmpCLGNBQWM7SUFDZCxvQktzakN3QjtJTHJqQ3hCLHFCS3NqQ3FCLEVBQUE7QUxqakN2QjtJQUNFLG9CQUFvQjtJQUNwQixrQkFBa0I7SUFDbEIsb0JBQW9CO0lBQ3BCLFlBQVk7SUFDWixnQkFBZ0I7SUFDaEIsNkJBQTZCO0lBQzdCLGVBQWU7SUFDZixxQkFBcUI7SUFDckIsYUFBYTtJQUNiLHNCQUFpQjtJQUFFLDBCQUFBO0lBQ25CLHVCQUFrQjtJQUFFLG9CQUFBO0lBRXBCO2dCQ1NZLEVEUkM7QUFkZDtNQWdCRyx1Q0FBb0M7TUFDcEMsYUFBYTtNQUNiLGNBQWM7TUFDZCxhQUFhLEVBQUE7QUFuQmhCO01BMEJLLG1DS2s4QmtDO01MajhCbEMsYUFBYSxFQUFBO0FNeEVuQjtJTjhFRTtNS3VyQkYsNEVBQTRFO01BQzVFLGtCQUFrQjtNQUNsQixnQkFBZ0I7TUFDaEIseUJBQXVCO01BQ3ZCLGlCQUFpQjtNQUNqQixtQkFBbUIsRUFBQTtJTHRyQmpCO01BQ0UsYUFBYTtNQUNiLGNBQWMsRUFBQSxFQUNmIiwiZmlsZSI6IkNkckJyZWFkY3J1bWIuc2NzcyJ9 */";
   var style$4 = {"cdr-breadcrumb":"cdr-breadcrumb_4.0.2","cdr-breadcrumb__list":"cdr-breadcrumb__list_4.0.2","cdr-breadcrumb__item":"cdr-breadcrumb__item_4.0.2","cdr-breadcrumb__link":"cdr-breadcrumb__link_4.0.2","cdr-breadcrumb__delimiter":"cdr-breadcrumb__delimiter_4.0.2","cdr-breadcrumb__ellipses":"cdr-breadcrumb__ellipses_4.0.2","cdr-breadcrumb__ellipses-icon":"cdr-breadcrumb__ellipses-icon_4.0.2"};
   styleInject(css$2);
 
   var CdrBreadcrumb = {
     name: 'CdrBreadcrumb',
+    components: {
+      CdrIcon: CdrIcon
+    },
     mixins: [modifier],
     props: {
       /**
@@ -17436,7 +17439,8 @@ var cedar = (function () {
     data: function data() {
       return {
         truncate: this.truncationEnabled && this.items.length > 2,
-        style: style$4
+        style: style$4,
+        componentID: Math.random().toString(36).substr(2, 9)
       };
     },
     computed: {
@@ -17444,26 +17448,28 @@ var cedar = (function () {
         return 'cdr-breadcrumb';
       },
       ellipsis: function ellipsis() {
+        var _context;
+
         var h = this.$createElement;
         return this.truncate ? h("li", {
+          "class": this.style['cdr-breadcrumb__item']
+        }, [h("button", {
           "on": {
             "click": this.handleEllipsisClick
           },
-          "class": this.style['cdr-breadcrumb__item'],
-          "ref": "ellipse"
-        }, [h("button", {
+          "ref": "ellipse",
           "attrs": {
             "aria-expanded": "false",
-            "aria-label": "ellipsis"
+            "aria-controls": "".concat(this.componentID, "List"),
+            "aria-label": concat$3(_context = "show ".concat(this.items.length - 2, " more navigation level")).call(_context, this.items.length - 2 > 1 ? 's' : '')
           },
           "class": this.style['cdr-breadcrumb__ellipses']
-        }, [h("svg", {
+        }, [h("cdr-icon", {
           "class": this.style['cdr-breadcrumb__ellipses-icon'],
           "attrs": {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "viewBox": "0 0 24 24"
+            "aria-hidden": "true"
           }
-        }, [h("title", ["ellipsis"]), h("path", {
+        }, [h("path", {
           "attrs": {
             "d": "M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
           }
@@ -17475,11 +17481,11 @@ var cedar = (function () {
         }, ["/"])]) : '';
       },
       listItems: function listItems() {
-        var _context,
+        var _context2,
             _this = this;
 
         var h = this.$createElement;
-        return map$2(_context = this.items).call(_context, function (breadcrumb, index) {
+        return map$2(_context2 = this.items).call(_context2, function (breadcrumb, index) {
           var delimiter = index < _this.items.length - 1 ? h("span", {
             "class": _this.style['cdr-breadcrumb__delimiter'],
             "attrs": {
@@ -17487,6 +17493,7 @@ var cedar = (function () {
             }
           }, ["/"]) : '';
           var ref = index === 0 ? 'firstBreadcrumb' : null;
+          var LinkTag = index < _this.items.length - 2 ? 'a' : 'strong';
           return h("li", {
             "class": _this.style['cdr-breadcrumb__item'],
             "key": breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase(),
@@ -17499,11 +17506,12 @@ var cedar = (function () {
             href: breadcrumb.item.url,
             content: breadcrumb.item.name,
             ref: ref
-          }) : h("a", {
+          }) : h(LinkTag, {
             "class": _this.style['cdr-breadcrumb__link'],
             "ref": ref,
             "attrs": {
-              "href": breadcrumb.item.url
+              "href": breadcrumb.item.url,
+              "aria-current": index === _this.items.length - 1 ? 'page' : undefined
             }
           }, [breadcrumb.item.name]), delimiter]);
         });
@@ -17530,9 +17538,12 @@ var cedar = (function () {
         "ref": "container",
         "class": clsx(this.style[this.baseClass], this.modifierClass),
         "attrs": {
-          "aria-label": "Breadcrumb"
+          "aria-label": "breadcrumbs"
         }
       }, [h("ol", {
+        "attrs": {
+          "id": "".concat(this.componentID, "List")
+        },
         "ref": "cdrBreadcrumbList",
         "class": this.style['cdr-breadcrumb__list']
       }, [this.ellipsis, this.listItems])]);
