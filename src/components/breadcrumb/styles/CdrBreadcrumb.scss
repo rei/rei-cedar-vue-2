@@ -19,6 +19,7 @@
 ========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrBreadcrumb.vars.scss';
+@import url('@rei/cedar/dist/style/cdr-icon.css');
 
 .cdr-breadcrumb {
   line-height: 1;
