@@ -49,7 +49,7 @@ export default {
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
 
-    this.activeTabIndex = this.getNextTab();
+    this.activeTabIndex = this.getNextTab(this.activeTab);
 
     if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
       this.tabs[this.activeTabIndex].setActive(true);
