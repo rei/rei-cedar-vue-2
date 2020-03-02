@@ -47,11 +47,10 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
         >
           <a
             aria-disabled="false"
-            aria-selected="true"
             class="cdr-tabs__header-item-label"
             href="#tab1"
             role="tab"
-            tabindex="0"
+            tabindex="-1"
           >
             tab1
           </a>
@@ -80,11 +79,12 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
     class="cdr-tabs__content-container"
   >
     <div
+      aria-hidden="true"
       class="cdr-tab-panel"
       id="tab1"
       name="fly"
       role="tabpanel"
-      style=""
+      style="display: none;"
       tabindex="0"
     />
     <div

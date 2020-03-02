@@ -13,9 +13,9 @@ export default {
       type: String,
       default: '240px',
     },
-    activateTab: {
+    activeTab: {
       type: Number,
-      required: false,
+      default: 0,
     },
   },
   data() {
@@ -49,7 +49,7 @@ export default {
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
 
-    this.initActiveTabIndex();
+    this.activeTabIndex = this.getNextTab();
 
     if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
       this.tabs[this.activeTabIndex].setActive(true);
@@ -75,16 +75,6 @@ export default {
     }, 250));
   },
   methods: {
-    initActiveTabIndex() {
-      if (this.activateTab) {
-        if (!this.tabs[this.activateTab].disabled) {
-          this.activeTabIndex = this.activateTab;
-          return;
-        }
-      }
-
-      this.activeTabIndex = this.getNextTab();
-    },
     getNextTab(startIndex = 0) {
       for (let i = startIndex; i < this.tabs.length; i += 1) {
         if (!this.tabs[i].disabled) {

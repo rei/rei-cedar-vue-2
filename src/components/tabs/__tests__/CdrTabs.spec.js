@@ -13,7 +13,7 @@ describe('CdrTabs', () => {
     });
 
     it('mounts with cdr-tab-panel children', (done) => {
-      const spyInitActiveTabIndex = jest.fn();
+      const spyGetNextTab = jest.fn();
       const spyGetHeaderWidth = jest.fn();
       const spyCalculateOverflow = jest.fn();
       const spyUpdateUnderline = jest.fn();
@@ -26,7 +26,7 @@ describe('CdrTabs', () => {
           default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
         },
         methods: {
-          initActiveTabIndex: spyInitActiveTabIndex,
+          getNextTab: spyGetNextTab,
           getHeaderWidth: spyGetHeaderWidth,
           calculateOverflow: spyCalculateOverflow,
           updateUnderline: spyUpdateUnderline,
@@ -37,7 +37,7 @@ describe('CdrTabs', () => {
         expect(wrapper.vm.tabs.length).toBe(2);
         expect(wrapper.findAll('li').length).toBe(2);
         expect(wrapper.element).toMatchSnapshot();
-        expect(spyInitActiveTabIndex).toHaveBeenCalled();
+        expect(spyGetNextTab).toHaveBeenCalled();
         expect(spyGetHeaderWidth).toHaveBeenCalled();
         expect(spyCalculateOverflow).toHaveBeenCalled();
         
@@ -118,45 +118,6 @@ describe('CdrTabs', () => {
     });
   });
 
-  describe('initActiveTabIndex', () => {
-    it('sets activeTabIndex to activateTab', (done) => {
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2" />'],
-        },
-        propsData: {
-          activateTab: 1,
-        },
-      });
-
-      Vue.nextTick(() => {
-        expect(wrapper.vm.activeTabIndex).toBe(1);
-        done();
-      });
-    }); 
-
-    it('calls getNextTab', () => {
-      const spyGetNextTab = jest.fn();
-
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2" />'],
-        },
-        methods: {
-          getNextTab: spyGetNextTab,
-        }
-      });
-
-      expect(spyGetNextTab).toHaveBeenCalled();
-    });
-  });
-
   it('getNextTab and getPreviousTab', () => {
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -207,7 +168,7 @@ describe('CdrTabs', () => {
           default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
         },
         propsData: {
-          activateTab: 1,
+          activeTab: 1,
         },
       });
       
