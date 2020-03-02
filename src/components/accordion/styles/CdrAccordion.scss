@@ -9,7 +9,7 @@ $accordion-border: 1px solid #dadada;
   z-index: 1;
 
   &__button {
-    @include cdr-text-utility-strong-300;
+    @include cdr-text-utility-sans-strong-300;
 
     background-color: $cdr-color-background-lightest;
     border: none;
@@ -99,18 +99,18 @@ $accordion-border: 1px solid #dadada;
      ========== */
   &--compact {
     .cdr-accordion__button {
-      @include cdr-text-utility-strong-200;
+      @include cdr-text-utility-sans-strong-200;
 
       padding: $cdr-space-inset-three-quarter-x;
     }
 
     .cdr-accordion__content {
-      @include cdr-text-utility-200;
+      @include cdr-text-utility-sans-200;
 
       padding: $cdr-space-quarter-x $cdr-space-three-quarter-x $cdr-space-three-quarter-x;
 
       & > * {
-        @include cdr-text-utility-200;
+        @include cdr-text-utility-sans-200;
       }
     }
   }

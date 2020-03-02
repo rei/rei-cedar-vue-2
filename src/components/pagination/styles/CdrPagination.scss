@@ -35,7 +35,7 @@
   }
 
   &__link {
-    @include cdr-text-utility-300;
+    @include cdr-text-utility-sans-300;
 
     color: $cdr-color-text-primary-lightmode;
     fill: $cdr-color-text-primary-lightmode;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="pagination-page">
     <h2>pagination</h2>
 
     <hr>
