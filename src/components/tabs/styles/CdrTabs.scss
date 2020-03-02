@@ -135,12 +135,12 @@
     }
 
     &--disabled {
-      color: #D1CBBD;
+      color: $cdr-color-text-disabled;
 
       &:active,
       &:hover,
       &:focus {
-        color: #D1CBBD;
+        color: $cdr-color-text-disabled;
         cursor: not-allowed;
       }
     }
