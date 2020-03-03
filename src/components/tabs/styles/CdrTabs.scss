@@ -212,8 +212,11 @@
   /* Centered
     ========== */
   &--centered {
-    .cdr-tabs__header {
-      justify-content: center;
+    .cdr-tabs__header-item:first-of-type {
+      margin-left: auto;
+    }
+    .cdr-tabs__header-item:last-of-type {
+      margin-right: auto;
     }
   }
 }

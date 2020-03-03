@@ -342,6 +342,42 @@
             Tab Five Content
           </cdr-text>
         </cdr-tab-panel>
+
+        <cdr-tab-panel
+          name="six"
+          id="centered-six"
+        >
+          <cdr-text
+            tag="strong"
+            modifier="subheading"
+          >
+            Tab six Content
+          </cdr-text>
+        </cdr-tab-panel>
+
+        <cdr-tab-panel
+          name="seven"
+          id="centered-seven"
+        >
+          <cdr-text
+            tag="strong"
+            modifier="subheading"
+          >
+            Tab seven Content
+          </cdr-text>
+        </cdr-tab-panel>
+
+        <cdr-tab-panel
+          name="eight"
+          id="centered-eight"
+        >
+          <cdr-text
+            tag="strong"
+            modifier="subheading"
+          >
+            Tab eight Content
+          </cdr-text>
+        </cdr-tab-panel>
       </cdr-tabs>
     </div>
   </div>
