@@ -201,8 +201,8 @@
   /* Centered
     ========== */
   &--centered {
-    .cdr-tabs__header {
-      justify-content: center;
+    .cdr-tabs__header-item {
+      margin: auto;
     }
   }
 }
