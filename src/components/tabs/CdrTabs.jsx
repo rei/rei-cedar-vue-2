@@ -2,15 +2,20 @@ import debounce from 'lodash-es/debounce';
 import delay from 'lodash-es/delay';
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
+import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
 
 export default {
   name: 'CdrTabs',
-  mixins: [modifier],
+  mixins: [modifier, size],
   props: {
     height: {
       type: String,
       default: '240px',
+    },
+    activeTab: {
+      type: Number,
+      default: 0,
     },
   },
   data() {
@@ -44,6 +49,8 @@ export default {
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
 
+    this.activeTabIndex = this.getNextTab(this.activeTab);
+
     if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
       this.tabs[this.activeTabIndex].setActive(true);
     }
@@ -68,7 +75,23 @@ export default {
     }, 250));
   },
   methods: {
-    handleClick(tabClicked) {
+    getNextTab(startIndex = 0) {
+      for (let i = startIndex; i < this.tabs.length; i += 1) {
+        if (!this.tabs[i].disabled) {
+          return i;
+        }
+      }
+      return -1;
+    },
+    getPreviousTab(startIndex) {
+      for (let i = startIndex; i > -1; i -= 1) {
+        if (!this.tabs[i].disabled) {
+          return i;
+        }
+      }
+      return -1;
+    },
+    handleClick: debounce(function handleClickCallback(tabClicked) {
       const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
       this.tabs.forEach((tab, index) => {
         if (newSelectedTab.name === tab.name) {
@@ -87,7 +110,7 @@ export default {
         }
       });
       this.updateUnderline();
-    },
+    }, 500, { leading: true, trailing: false }),
     calculateOverflow() {
       let containerWidth = 0;
       if (this.$refs.cdrTabsContainer) {
@@ -115,12 +138,13 @@ export default {
     },
     rightArrowNav() {
       if (!this.animationInProgress) {
-        if (this.activeTabIndex < (this.tabs.length - 1)) {
+        const nextTab = this.getNextTab(this.activeTabIndex + 1);
+        if (nextTab !== -1) {
           this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
+          this.tabs[nextTab].setAnimationDirection('flyRight');
           this.hideScrollBar();
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex += 1;
+          this.activeTabIndex = nextTab;
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
         }
         this.navAnimationProgress();
@@ -128,12 +152,13 @@ export default {
     },
     leftArrowNav() {
       if (!this.animationInProgress) {
-        if (this.activeTabIndex > 0) {
+        const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
+        if (previousTab !== -1) {
           this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
+          this.tabs[previousTab].setAnimationDirection('flyLeft');
           this.hideScrollBar();
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex -= 1;
+          this.activeTabIndex = previousTab;
           this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
         }
         this.navAnimationProgress();
@@ -175,11 +200,37 @@ export default {
       }, { once: true });
       styleRef.setProperty('overflow-x', 'hidden');
     },
+    getTabEl(tab) {
+      return tab.disabled ? (
+        <span
+          class={clsx(
+            this.style['cdr-tabs__header-item-label'],
+            this.style['cdr-tabs__header-item-label--disabled'],
+          )}
+          aria-disabled="true"
+          aria-selected="false"
+        >
+          {tab.name}
+        </span>
+      ) : (
+        <a
+          role="tab"
+          aria-selected={tab.active}
+          aria-disabled="false"
+          tabIndex={tab.active ? 0 : -1}
+          vOn:click_prevent={e => this.handleClick(tab, e)}
+          href={`#${tab.id || tab.name}`}
+          class={this.style['cdr-tabs__header-item-label']}
+        >
+          { tab.name }
+        </a>
+      );
+    },
   },
   render() {
     return (
       <div
-        class={clsx(this.style[this.baseClass], this.modifierClass)}
+        class={clsx(this.style[this.baseClass], this.modifierClass, this.sizeClass)}
         ref="cdrTabsContainer"
         style={{ height: this.height }}
       >
@@ -207,21 +258,13 @@ export default {
             >
               {this.tabs.map((tab, index) => (
                   <li
-                    role="tab"
-                    aria-selected={tab.active}
                     key={tab.id ? tab.id : `${tab.name}-${index}`}
                     class={clsx(
                       tab.active ? this.style['cdr-tabs__header-item-active'] : '',
                       this.style['cdr-tabs__header-item'],
                     )}
                   >
-                    <a
-                      vOn:click_prevent={e => this.handleClick(tab, e)}
-                      href={`#${tab.id || tab.name}`}
-                      class={this.style['cdr-tabs__header-item-label']}
-                    >
-                      { tab.name }
-                    </a>
+                    {this.getTabEl(tab)}
                   </li>
               ))}
             </ol>

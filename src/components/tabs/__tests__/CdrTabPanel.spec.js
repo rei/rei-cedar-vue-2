@@ -1,5 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrTabPanel from 'componentdir/tabs/CdrTabPanel';
+import CdrTabs from 'componentdir/tabs/CdrTabs';
+import Vue from 'vue';
 
 
 describe('CdrTabPanel', () => {
@@ -123,4 +125,27 @@ describe('CdrTabPanel', () => {
       done();
     });
   });
+
+  it('handleUpArrowNav', () => {
+    const spyUpdateUnderline = jest.fn();
+    const spySetFocusToActiveTabHeader = jest.fn();
+    const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
+      slots: {
+        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
+      },
+      methods: {
+        updateUnderline: spyUpdateUnderline,
+        setFocusToActiveTabHeader: spySetFocusToActiveTabHeader,
+      },
+      attachToDocument: true,
+    });
+
+    Vue.nextTick(() => {
+      wrapper.find(CdrTabPanel).trigger('keydown.up');
+      expect(spySetFocusToActiveTabHeader).toHaveBeenCalled();
+    });
+  })
 });

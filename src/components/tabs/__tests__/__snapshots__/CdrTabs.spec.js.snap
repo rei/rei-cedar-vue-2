@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CdrTabs mounts tabs 1`] = `
+exports[`CdrTabs mounted mounts tabs 1`] = `
 <div
   class="cdr-tabs"
   style="height: 240px;"
@@ -27,7 +27,7 @@ exports[`CdrTabs mounts tabs 1`] = `
 </div>
 `;
 
-exports[`CdrTabs renders child tabs properly 1`] = `
+exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
 <div
   class="cdr-tabs"
   style="height: 240px;"
@@ -43,24 +43,27 @@ exports[`CdrTabs renders child tabs properly 1`] = `
         role="tablist"
       >
         <li
-          aria-selected="true"
           class="cdr-tabs__header-item"
-          role="tab"
         >
           <a
+            aria-disabled="false"
             class="cdr-tabs__header-item-label"
             href="#tab1"
+            role="tab"
+            tabindex="-1"
           >
             tab1
           </a>
         </li>
         <li
           class="cdr-tabs__header-item"
-          role="tab"
         >
           <a
+            aria-disabled="false"
             class="cdr-tabs__header-item-label"
             href="#tab2"
+            role="tab"
+            tabindex="-1"
           >
             tab2
           </a>
@@ -76,11 +79,12 @@ exports[`CdrTabs renders child tabs properly 1`] = `
     class="cdr-tabs__content-container"
   >
     <div
+      aria-hidden="true"
       class="cdr-tab-panel"
       id="tab1"
       name="fly"
       role="tabpanel"
-      style=""
+      style="display: none;"
       tabindex="0"
     />
     <div

@@ -10,7 +10,7 @@
   line-height: 2.2rem;
 }
 
-@mixin cdr-tabs-compact-header-item-label() {
+@mixin cdr-tabs-small-header-item-label() {
   font-family: $cdr-font-family-sans;
   font-style: normal;
   font-weight: 500;
@@ -133,6 +133,17 @@
       text-decoration: none;
       color: $cdr-color-text-link-lightmode;
     }
+
+    &--disabled {
+      color: $cdr-color-text-disabled;
+
+      &:active,
+      &:hover,
+      &:focus {
+        color: $cdr-color-text-disabled;
+        cursor: not-allowed;
+      }
+    }
   }
 
   &__underline {
@@ -167,9 +178,9 @@
 
   /* Compact
     ========== */
-  &--compact {
+  &--compact, &--small {
     .cdr-tabs__header-item-label {
-      @include cdr-tabs-compact-header-item-label;
+      @include cdr-tabs-small-header-item-label;
 
       padding: $cdr-space-inset-three-quarter-x-squish;
 

@@ -6,8 +6,6 @@ import fullSprite from '@rei/cedar-icons/dist/all-icons.svg';
 import routes from './router';
 import cedarcss from './css/main.scss';
 
-Vue.config.devtools = true;
-
 // routing
 Vue.use(VueRouter);
 
