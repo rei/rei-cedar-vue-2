@@ -13,6 +13,10 @@ export default {
       type: String,
       required: true,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     /**
      * Optional extra reference value to be set on the tab, otherwise
      * the tab name will be used for reference.
