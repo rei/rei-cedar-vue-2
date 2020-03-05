@@ -41,10 +41,6 @@
     padding: 0;
 
     @include cdr-breadcrumb-item-mixin;
-
-    &:last-child {
-      @include cdr-breadcrumb-last-item-mixin;
-    }
   }
 
   /* Link
