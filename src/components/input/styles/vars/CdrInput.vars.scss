@@ -1,8 +1,8 @@
 @mixin cdr-input-base-mixin() {
   @include cdr-text-utility-sans-300;
 
-  color: $cdr-color-text-form-label-lightmode;
-  box-shadow: inset 0 0 0 1px $cdr-color-border-primary-lightmode;
+  color: $cdr-color-text-input-default;
+  // box-shadow: inset 0 0 0 1px $cdr-color-border-input-default; // TODO: re-enable once token is added
   border: 0;
   border-radius: $cdr-radius-softer;
   padding: $cdr-space-inset-half-x;
@@ -28,35 +28,34 @@
 
   &:active,
   &:focus {
-    box-shadow: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-selected;
   }
 
   &::placeholder {
     @include cdr-text-utility-sans-300;
 
-    color: $cdr-color-text-form-placeholder-lightmode;
+    color: $cdr-color-text-input-placeholder;
   }
 
   &[disabled] {
-    background-color: $cdr-color-background-lighter;
-    color: $cdr-color-text-form-disabled-lightmode;
-    box-shadow: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
+    background-color: $cdr-color-background-input-default-disabled;
+    color: $cdr-color-text-input-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled;
 
     &:hover {
-      box-shadow: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
+      box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled;
     }
 
     &::placeholder {
-      color: $cdr-color-text-form-disabled-lightmode;
+      color: $cdr-color-text-input-disabled;
     }
   }
-
 }
 
 @mixin cdr-input-base-label-mixin() {
   @include cdr-text-utility-sans-200;
 
-  color: $cdr-color-text-form-label-lightmode;
+  color: $cdr-color-text-input-label;
   display: inline-block;
   margin: 0;
   margin-bottom: $cdr-space-quarter-x;
@@ -78,7 +77,7 @@
   line-height: 1.8rem;
   letter-spacing: -0.016rem;
 
-  color: $cdr-color-text-secondary-lightmode;
+  color: $cdr-color-text-input-help;
   display: block;
 }
 
@@ -89,6 +88,6 @@
 }
 
 @mixin cdr-input-required-label-mixin() {
-  color: $cdr-color-text-secondary-lightmode;
+  color: $cdr-color-text-input-required;
   margin-left: $cdr-space-inset-quarter-x;
 }
