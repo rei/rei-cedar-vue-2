@@ -10,6 +10,7 @@
   font-size: 24px;
   line-height: 36px;
   letter-spacing: -.08rem;
+  color: $cdr-color-text-primary; // TODO: necessary?
 
   @include xs-mq-only {
     font-size: 18px;
@@ -20,7 +21,7 @@
 
   & + cite {
     @include cdr-text-utility-sans-100;
-
+    color: $cdr-color-text-secondary;
     display: block;
     padding-top: $cdr-space-one-x;
   }
@@ -28,7 +29,7 @@
 
 @mixin cdr-quote-pull-container() {
   border-style: solid;
-  border-color: #222; // TODO: possible color token?
+  border-color: $cdr-color-border-primary;
 
   @include xs-mq {
     border-width: 0 0 1px 0;
