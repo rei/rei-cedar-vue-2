@@ -6,8 +6,8 @@
   background-color: transparent;
   border: 0;
   margin: 0;
-  color: $cdr-color-text-link-lightmode;
-  fill: $cdr-color-text-link-lightmode;
+  color: $cdr-color-text-link-rest;
+  fill: $cdr-color-text-link-rest;
   cursor: pointer;
   display: inline-flex;
   outline: none;
@@ -21,16 +21,31 @@
   &:hover,
   &:active,
   &:focus {
-    color: $cdr-color-text-link-lightmode;
     outline: none;
     text-decoration: underline;
   }
 
+  &:visited {
+    color: $cdr-color-text-link-visited;
+  }
+
+  &:hover {
+    color: $cdr-color-text-link-hover;
+  }
+
+  &:active,
   &:focus {
+    color: $cdr-color-text-link-active;
+  }
+
+  &:focus {
+    color: $cdr-color-text-link-active;
     outline: $default-outline;
     outline-color: -webkit-focus-ring-color;
     outline-offset: 0;
   }
+
+  // TODO: there's a token for link-disabled, but is that a thing?
 }
 
 @mixin cdr-link-standalone-mixin() {
@@ -44,13 +59,5 @@
   }
 }
 
-@mixin cdr-link-lightmode-mixin() {
-  color: $cdr-color-text-link-lightmode;
-  fill: $cdr-color-text-link-lightmode;
-}
-
-@mixin cdr-link-darkmode-mixin() {
-  color: $cdr-color-text-link-darkmode;
-  fill: $cdr-color-text-link-darkmode;
-
-}
+// TODO: not sure there is a way to gracefully deprecate any of the on-light/on-dark stuff
+// though we also never documented it, and nobody seems to be using it...so...maybe NBD?
