@@ -8,7 +8,8 @@
       >
         Tabs
       </cdr-text>
-      <cdr-tabs
+      <tabs-with-content />
+      <!-- <cdr-tabs
         height="100px"
         data-backstop="tab-default"
         :active-tab="1"
@@ -73,18 +74,24 @@
             Tab Six Content
           </cdr-text>
         </cdr-tab-panel>
-      </cdr-tabs>
+      </cdr-tabs> -->
     </div>
     <!-- Compact Modifier -->
-    <div class="tab-demo-section">
+    <!-- <div class="tab-demo-section">
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
       >
         Compact Tabs
       </cdr-text>
-      <cdr-tabs size="small" :active-tab="1">
-        <cdr-tab-panel name="one" :disabled="true">
+      <cdr-tabs
+        size="small"
+        :active-tab="1"
+      >
+        <cdr-tab-panel
+          name="one"
+          :disabled="true"
+        >
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -92,7 +99,10 @@
             Tab One Content
           </cdr-text>
         </cdr-tab-panel>
-        <cdr-tab-panel name="two" :disabled="true">
+        <cdr-tab-panel
+          name="two"
+          :disabled="true"
+        >
           <cdr-text
             tag="strong"
             modifier="subheading"
@@ -125,9 +135,9 @@
           </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
-    </div>
+    </div> -->
     <!-- Full Width Modifier -->
-    <div class="tab-demo-section">
+    <!-- <div class="tab-demo-section">
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
@@ -210,9 +220,9 @@
           </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
-    </div>
+    </div> -->
     <!-- No Border Modifier -->
-    <div class="tab-demo-section">
+    <!-- <div class="tab-demo-section">
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
@@ -276,10 +286,10 @@
           </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
-    </div>
+    </div> -->
 
     <!-- Center Modifier -->
-    <div class="tab-demo-section">
+    <!-- <div class="tab-demo-section">
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
@@ -394,22 +404,22 @@
           </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import * as Components from 'srcdir/index';
+import tabsWithContent from 'componentsdir/tabs/examples/demo/BetterContent';
 
 export default {
   name: 'TabsExample',
-  components: { ...Components },
+  components: { ...Components, tabsWithContent },
 };
 </script>
 
 <style>
   .tab-demo-section {
-    text-align: center;
     padding-top: 25px;
   }
 </style>
