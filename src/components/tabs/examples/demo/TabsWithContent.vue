@@ -137,7 +137,7 @@
 import * as Components from 'srcdir/index';
 
 export default {
-  name: 'TabsBetterContent',
+  name: 'TabsWithContent',
   components: { ...Components },
 };
 </script>
