@@ -76,7 +76,7 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
       <strong
         aria-current="page"
         class="cdr-breadcrumb__link"
-        href="http://rei.com"
+        href="http://yahoo.com"
       >
         Long Breadcrumb Step 3
       </strong>
