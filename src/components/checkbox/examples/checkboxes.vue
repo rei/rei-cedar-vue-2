@@ -165,6 +165,36 @@
       content-class="no-box__content"
     >Hidden box + custom checked state
     </cdr-checkbox>
+
+    <cdr-text class="cdr-my-space-one-x">
+      Checkbox group with indeterminate state:
+    </cdr-text>
+
+    <fieldset>
+      <legend>Choose your toppings</legend>
+      <cdr-checkbox
+        v-model="allSelected"
+        :indeterminate="isIndeterminate"
+        @change="selectAll"
+        aria-controls="toppings"
+      >
+        Select All
+      </cdr-checkbox>
+      <div
+        role="group"
+        id="toppings"
+        aria-label="Individual toppings"
+      >
+        <cdr-checkbox
+          v-for="c in toppings"
+          :key="`checkbox-${c}`"
+          v-model="selected"
+          :custom-value="c"
+          class="cdr-ml-space-one-x"
+          name="toppings"
+        >{{ c }}</cdr-checkbox>
+      </div>
+    </fieldset>
   </div>
 </template>
 
@@ -192,9 +222,27 @@ export default {
       testVal2: [9, 8],
       complex1: false,
       complex2: true,
+      toppings: ['Cheese', 'Pepperoni', 'Mushroom', 'Peppers'],
+      selected: ['Cheese'],
+      allSelected: false,
     };
   },
+  computed: {
+    isIndeterminate() {
+      this.allSelected = false; // eslint-disable-line vue/no-side-effects-in-computed-properties
+      if (this.selected.length === 0) {
+        return false;
+      } if (this.selected.length === this.toppings.length) {
+        this.allSelected = true; // eslint-disable-line vue/no-side-effects-in-computed-properties
+        return false;
+      }
+      return true;
+    },
+  },
   methods: {
+    selectAll(isChecked) {
+      this.selected = isChecked ? this.toppings.slice() : [];
+    },
     logChange(val, e) {
       console.log('log', val, e); // eslint-disable-line
     },

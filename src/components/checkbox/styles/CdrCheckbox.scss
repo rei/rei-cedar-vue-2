@@ -5,6 +5,7 @@
   display: inline-block;
   margin: 0;
   position: relative;
+  user-select: none;
 
   /* Elements
     ========================================================================== */
@@ -23,6 +24,12 @@
     position: absolute;
     opacity: 0;
     z-index: -1;
+  }
+
+  /* Content
+  ========== */
+  &__content {
+    user-select: text;
   }
 
   /* Figure
@@ -44,7 +51,7 @@
   &__input:checked ~ &__figure {
     border-color: #3278ae;
     background-color: #3278ae;
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#3278ae");
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#fff");
     background-repeat: no-repeat;
   }
 
