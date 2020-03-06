@@ -41,7 +41,12 @@
     padding: 0;
 
     @include cdr-breadcrumb-item-mixin;
+    
+    &-linked {
+      @include cdr-breadcrumb-item-linked-mixin;
+    }
   }
+
 
   /* Link
   ---------- */
@@ -95,7 +100,7 @@
     &:active,
     &:focus {
       .cdr-breadcrumb__ellipses-icon {
-        border-bottom: 1px solid $cdr-color-text-primary-lightmode;
+        border-bottom: 1px solid $cdr-color-text-link-hover;
         fill: inherit;
       }
     }
