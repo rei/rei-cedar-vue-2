@@ -33,8 +33,7 @@
     color: $cdr-color-text-link-hover;
   }
 
-  &:active,
-  &:focus {
+  &:active {
     color: $cdr-color-text-link-active;
   }
 
@@ -57,6 +56,3 @@
     text-decoration: underline;
   }
 }
-
-// TODO: not sure there is a way to gracefully deprecate any of the on-light/on-dark stuff
-// though we also never documented it, and nobody seems to be using it...so...maybe NBD?
