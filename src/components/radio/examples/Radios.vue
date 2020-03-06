@@ -33,59 +33,94 @@
           size="small@lg medium@sm large@xs"
         >responsive</cdr-radio>
       </div>
-      <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>
     </div>
     <div data-backstop="radio-focus">
-      <cdr-radio
-        id="test1"
-        name="example"
-        custom-value="a1"
-        v-model="ex1"
-      >A1</cdr-radio>
-      <cdr-radio
-        name="example"
-        custom-value="a2"
-        v-model="ex1"
-      >A2</cdr-radio>
-      <cdr-radio
-        name="example"
-        :custom-value="{val:'a3'}"
-        v-model="ex1"
-      >A3</cdr-radio>
-      <cdr-radio
-        name="example"
-        custom-value="a4"
-        v-model="ex1"
-        disabled
-      >A4 (disabled)</cdr-radio>
+      <fieldset>
+        <legend id="legend-a">
+          Group A
+        </legend>
+        <cdr-list
+          aria-labelledby="legend-a"
+          role="radiogroup"
+        >
+          <li>
+            <cdr-radio
+              id="test1"
+              name="example"
+              custom-value="a1"
+              v-model="ex1"
+            >A1</cdr-radio>
+          </li>
+          <li>
+            <cdr-radio
+              name="example"
+              custom-value="a2"
+              v-model="ex1"
+            >A2</cdr-radio>
+          </li>
+          <li>
+            <cdr-radio
+              name="example"
+              :custom-value="{val:'a3'}"
+              v-model="ex1"
+            >A3</cdr-radio>
+          </li>
+          <li>
+            <cdr-radio
+              name="example"
+              custom-value="a4"
+              v-model="ex1"
+              disabled
+            >A4 (disabled)</cdr-radio>
+          </li>
+        </cdr-list>
+      </fieldset>
       <cdr-text>Group A Picked: {{ ex1 }}</cdr-text>
     </div>
     <hr>
-    <cdr-radio
-      modifier="compact"
-      name="examplecompact"
-      custom-value="a1"
-      v-model="ex1compact"
-    >A1 compact</cdr-radio>
-    <cdr-radio
-      modifier="compact"
-      name="examplecompact"
-      custom-value="a2"
-      v-model="ex1compact"
-    >A2 compact</cdr-radio>
-    <cdr-radio
-      modifier="compact"
-      name="examplecompact"
-      :custom-value="{val:'a3'}"
-      v-model="ex1compact"
-    >A3 compact</cdr-radio>
-    <cdr-radio
-      modifier="compact"
-      name="examplecompact"
-      custom-value="a4"
-      v-model="ex1compact"
-      disabled
-    >A4 compact (disabled)</cdr-radio>
+    <fieldset>
+      <legend id="group-a-compact">
+        Group A compact
+      </legend>
+      <cdr-list
+        aria-labelledby="group-a-compact"
+        role="radiogroup"
+      >
+        <li>
+          <cdr-radio
+            modifier="compact"
+            name="examplecompact"
+            custom-value="a1"
+            v-model="ex1compact"
+          >A1 compact</cdr-radio>
+        </li>
+        <li>
+          <cdr-radio
+            modifier="compact"
+            name="examplecompact"
+            custom-value="a2"
+            v-model="ex1compact"
+          >A2 compact</cdr-radio>
+        </li>
+        <li>
+          <cdr-radio
+            modifier="compact"
+            name="examplecompact"
+            :custom-value="{val:'a3'}"
+            v-model="ex1compact"
+          >A3 compact</cdr-radio>
+        </li>
+        <li>
+          <cdr-radio
+            modifier="compact"
+            name="examplecompact"
+            custom-value="a4"
+            v-model="ex1compact"
+            disabled
+          >A4 compact (disabled)</cdr-radio>
+        </li>
+      </cdr-list>
+    </fieldset>
 
     <cdr-text>Group A compact Picked: {{ ex1compact }}</cdr-text>
     <hr>
