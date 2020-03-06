@@ -10,7 +10,7 @@
   font-size: 24px;
   line-height: 36px;
   letter-spacing: -.08rem;
-  color: $cdr-color-text-primary; // TODO: necessary?
+  // color: $cdr-color-text-primary;  // TODO: inherit or override?
 
   @include xs-mq-only {
     font-size: 18px;

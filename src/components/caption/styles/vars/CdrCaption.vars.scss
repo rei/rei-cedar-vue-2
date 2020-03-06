@@ -13,8 +13,7 @@
   line-height: 2.2rem;
 
   margin: 0;
-  color: $cdr-color-text-primary;
-   // TODO: necessary to state primary everywhere?
+  // color: $cdr-color-text-primary; // TODO: inherit or override?
 
   & + cite {
     display: inline-block;
