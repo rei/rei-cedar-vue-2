@@ -166,7 +166,10 @@
     >Hidden box + custom checked state
     </cdr-checkbox>
 
-    <cdr-text class="cdr-my-space-one-x">
+    <cdr-text
+      class="cdr-my-space-one-x"
+      tag="h3"
+    >
       Checkbox group with indeterminate state:
     </cdr-text>
 
@@ -180,20 +183,23 @@
       >
         Select All
       </cdr-checkbox>
-      <div
+      <cdr-list
         role="group"
         id="toppings"
         aria-label="Individual toppings"
       >
-        <cdr-checkbox
+        <li
           v-for="c in toppings"
           :key="`checkbox-${c}`"
-          v-model="selected"
-          :custom-value="c"
-          class="cdr-ml-space-one-x"
-          name="toppings"
-        >{{ c }}</cdr-checkbox>
-      </div>
+        >
+          <cdr-checkbox
+            v-model="selected"
+            :custom-value="c"
+            class="cdr-ml-space-one-x"
+            name="toppings"
+          >{{ c }}</cdr-checkbox>
+        </li>
+      </cdr-list>
     </fieldset>
   </div>
 </template>
