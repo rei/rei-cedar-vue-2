@@ -101,9 +101,6 @@ h6.cdr-text.cdr-text,
 
   &--citation {
     @include cdr-text-utility-sans-strong-100;
-    // color: $cdr-color-text-secondary;
-    // TODO: should all citations be color secondary?
-    // or just the one in CdrQuote?
   }
 
   &--eyebrow-100 {
