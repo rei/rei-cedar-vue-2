@@ -17,11 +17,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    ariaLabelledBy: {
+      type: String,
+      required: true,
+    },
     /**
      * Optional extra reference value to be set on the tab, otherwise
      * the tab name will be used for reference.
      */
-    id: String,
+    id: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -91,6 +98,7 @@ export default {
         <div
           v-show={this.active}
           aria-hidden={!this.active}
+          aria-labelledby={this.ariaLabelledBy}
           class={clsx(this.style[this.baseClass], this.modifierClass)}
           id={this.tabId}
           ref="cdrTabPanelContainer"
