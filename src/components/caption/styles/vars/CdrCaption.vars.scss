@@ -13,6 +13,7 @@
   line-height: 2.2rem;
 
   margin: 0;
+  color: $cdr-color-text-primary;
 
   & + cite {
     display: inline-block;
@@ -28,6 +29,6 @@
   letter-spacing: 0.16px;
   line-height: 1.8rem;
 
-  color: $cdr-color-text-secondary-lightmode;
+  color: $cdr-color-text-secondary;
   font-style: normal;
 }
