@@ -34,7 +34,6 @@ export default {
     return {
       active: false,
       offsetX: 0,
-      tabId: this.id || this.name,
       animationDirection: 'default',
       style,
     };
@@ -56,8 +55,8 @@ export default {
   methods: {
     setActive(state) {
       this.active = state;
-      this.$emit('tab-change', state, this.tabId);
-      this.$emit('tabChange', state, this.tabId);
+      this.$emit('tab-change', state, this.id);
+      this.$emit('tabChange', state, this.id);
     },
     setAnimationDirection(direction) {
       this.animationDirection = direction;
@@ -100,7 +99,7 @@ export default {
           aria-hidden={!this.active}
           aria-labelledby={this.ariaLabelledBy}
           class={clsx(this.style[this.baseClass], this.modifierClass)}
-          id={this.tabId}
+          id={this.id}
           ref="cdrTabPanelContainer"
           tabindex="0"
           role="tabpanel"
