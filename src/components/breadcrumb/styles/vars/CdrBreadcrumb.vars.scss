@@ -1,17 +1,15 @@
 @mixin cdr-breadcrumb-item-mixin() {
-  color: $cdr-color-text-secondary-lightmode;
-  fill: $cdr-color-text-secondary-lightmode;
+  color: $cdr-color-text-secondary;
+  fill: $cdr-color-text-secondary;
+}
+
+@mixin cdr-breadcrumb-item-linked-mixin() {
   &:hover,
   &:active,
   &:focus {
-    color: $cdr-color-text-primary-lightmode;
-    fill: $cdr-color-text-primary-lightmode;
+    color: $cdr-color-text-link-active;
+    fill: $cdr-color-text-link-active;
   }
-}
-
-@mixin cdr-breadcrumb-last-item-mixin() {
-  color: $cdr-color-text-primary-lightmode;
-  fill: $cdr-color-text-primary-lightmode;
 }
 
 @mixin cdr-breadcrumb-base-text-mixin() {
