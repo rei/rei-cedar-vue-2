@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     backgroundClass() {
-      return `cdr-space-inset-one-x cdr-color-bg-${this.background}`;
+      return `cdr-space-inset-one-x cdr-color-background-${this.background}`;
     },
   },
   watch: {
