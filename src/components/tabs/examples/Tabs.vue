@@ -193,7 +193,7 @@
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
         class="cdr-align-text-center"
       >
-        Centered
+        Centered Tabs
       </cdr-text>
       <cdr-tabs
         height="100px"
