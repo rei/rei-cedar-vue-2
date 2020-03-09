@@ -17,7 +17,7 @@
         <cdr-tab-panel
           name="Tab1"
           id="tab-panel-default-1"
-          aria-labelled-by="tab-default-1"
+          aria-labelledby="tab-default-1"
         >
           <cdr-text
             tag="strong"
@@ -29,7 +29,7 @@
         <cdr-tab-panel
           name="Tab2"
           id="tab-panel-default-2"
-          aria-labelled-by="tab-default-2"
+          aria-labelledby="tab-default-2"
         >
           <cdr-text
             tag="strong"
@@ -51,7 +51,7 @@
         <cdr-tab-panel
           name="REALLY REALLY LARGE TAB NAME"
           id="tab-panel-default-3"
-          aria-labelled-by="tab-default-3"
+          aria-labelledby="tab-default-3"
         >
           <cdr-text
             tag="strong"
@@ -63,7 +63,7 @@
         <cdr-tab-panel
           name="4"
           id="tab-panel-default-4"
-          aria-labelled-by="tab-default-4"
+          aria-labelledby="tab-default-4"
         >
           <cdr-text
             tag="strong"
@@ -75,7 +75,7 @@
         <cdr-tab-panel
           name="Five"
           id="tab-panel-default-5"
-          aria-labelled-by="tab-default-5"
+          aria-labelledby="tab-default-5"
         >
           <cdr-text
             tag="strong"
@@ -87,7 +87,7 @@
         <cdr-tab-panel
           name="Six"
           id="tab-panel-default-6"
-          aria-labelled-by="tab-default-6"
+          aria-labelledby="tab-default-6"
         >
           <cdr-text
             tag="strong"
@@ -117,7 +117,7 @@
           :key="tab"
           :name="tab"
           :id="'tab-panel-small-' + tab"
-          :aria-labelled-by="'tab-small-' + tab"
+          :aria-labelledby="'tab-small-' + tab"
         >
           <cdr-text
             modifier="body-300"
@@ -146,7 +146,7 @@
           :key="tab"
           :name="tab"
           :id="'tab-panel-full-width-' + tab"
-          :aria-labelled-by="'tab-full-width-' + tab"
+          :aria-labelledby="'tab-full-width-' + tab"
         >
           <cdr-text
             modifier="body-300"
@@ -175,7 +175,7 @@
           :key="tab"
           :name="tab"
           :id="'tab-panel-no-border-' + tab"
-          :aria-labelled-by="'tab-no-border-' + tab"
+          :aria-labelledby="'tab-no-border-' + tab"
         >
           <cdr-text
             modifier="body-300"
@@ -204,7 +204,7 @@
           :key="tab"
           :name="tab"
           :id="'tab-panel-centered-' + tab"
-          :aria-labelled-by="'tab-centered-' + tab"
+          :aria-labelledby="'tab-centered-' + tab"
         >
           <cdr-text
             modifier="body-300"

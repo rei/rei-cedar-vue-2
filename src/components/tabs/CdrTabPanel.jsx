@@ -17,7 +17,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    ariaLabelledBy: {
+    ariaLabelledby: {
       type: String,
       required: true,
     },
@@ -97,7 +97,7 @@ export default {
         <div
           v-show={this.active}
           aria-hidden={!this.active}
-          aria-labelledby={this.ariaLabelledBy}
+          aria-labelledby={this.ariaLabelledby}
           class={clsx(this.style[this.baseClass], this.modifierClass)}
           id={this.id}
           ref="cdrTabPanelContainer"
