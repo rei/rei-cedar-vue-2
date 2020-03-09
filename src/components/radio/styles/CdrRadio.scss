@@ -107,7 +107,7 @@
     & ~ .cdr-radio__figure {
       border-color: $cdr-color-border-input-default-disabled !important;
       background-color: $cdr-color-background-input-default-disabled !important;
-      cursor: default;
+      cursor: not-allowed;
     }
 
     /* Disabled + Checked
