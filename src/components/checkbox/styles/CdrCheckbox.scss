@@ -39,8 +39,8 @@
     position: absolute;
     left: 0;
     border-radius: $cdr-radius-softer;
-    background-color: $cdr-color-background-form-lightmode;
-    border: 1px solid $cdr-color-border-primary-lightmode;
+    background-color: $cdr-color-background-input-default;
+    border: 1px solid $cdr-color-border-input-default;
   }
 
   /* States
@@ -49,16 +49,16 @@
   /* Checked
   ========== */
   &__input:checked ~ &__figure {
-    border-color: #3278ae;
-    background-color: #3278ae;
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#fff");
+    border-color: $cdr-color-border-input-default-selected;
+    background-color: $cdr-color-background-input-default-selected;
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#fff"); // TODO: color checkme
     background-repeat: no-repeat;
   }
 
   /* Indeterminate
   ========== */
   &__input[indeterminate] ~ .cdr-checkbox__figure {
-    border-color: #3278ae;
+    border-color: $cdr-color-border-input-default-selected;
 
     &::after {
       content: '';
@@ -67,8 +67,8 @@
       top: 50%;
       transform: translate(-50%, -50%);
       width: 8px;
-      height: 8px;
-      background-color: #3278ae;
+      height: 8px; // TODO: edit width/height to create "minus" sign
+      background-color: $cdr-color-background-input-default-selected;
       border-radius: $cdr-radius-soft;
     }
   }
@@ -78,8 +78,8 @@
   &:hover {
     & > .cdr-checkbox__figure {
       cursor: pointer;
-      border-color: $cdr-color-border-primary-lightmode;
-      background-color: $cdr-color-background-lighter;
+      border-color: $cdr-color-border-input-default-hover;
+      background-color: $cdr-color-background-input-default-hover;
     }
 
     & > .cdr-checkbox__content {
@@ -90,17 +90,17 @@
       /* Hover + Checked
       ========== */
       &:checked ~ .cdr-checkbox__figure {
-        border-color: #3278ae;
-        background-color: #3278ae;
+        border-color: $cdr-color-border-input-default-selected-hover;
+        background-color: $cdr-color-background-input-default-selected-hover;
       }
 
       /* Hover + Indeterminate
       ========== */
       &[indeterminate] ~ .cdr-checkbox__figure {
-        border-color: #2b6692;
+        border-color: $cdr-color-border-input-default-selected;
 
         &::after {
-          background-color: #2b6692;
+          background-color: $cdr-color-background-input-default-selected;
         }
       }
     }
@@ -114,16 +114,16 @@
     }
 
     & ~ .cdr-checkbox__figure {
-      border-color: $cdr-color-border-disabled-lightmode !important;
-      background-color: $cdr-color-background-lighter !important;
-      cursor: default;
+      border-color: $cdr-color-border-input-default-disabled !important;
+      background-color: $cdr-color-background-input-default-disabled !important;
+      cursor: not-allowed;
     }
 
     /* Disabled + Checked
     ========== */
     &:checked {
       & ~ .cdr-checkbox__figure {
-        background-color: $cdr-color-border-disabled-lightmode !important;
+        background-color: $cdr-color-background-input-default-disabled !important;
       }
     }
 
@@ -131,10 +131,10 @@
     ========== */
     &[indeterminate] {
       & ~ .cdr-checkbox__figure {
-        border-color: $cdr-color-border-disabled-lightmode !important;
+        border-color: $cdr-color-border-input-default-disabled !important;
 
         &::after {
-          background-color: $cdr-color-background-lighter !important;
+          background-color: $cdr-color-background-input-default-disabled !important;
         }
       }
     }
@@ -143,13 +143,13 @@
   /* Active
   ========== */
   &:active > .cdr-checkbox__figure {
-    border-color: #3278ae;
+    border-color: $cdr-color-border-input-default-active;
   }
 
   /* Focus
   ========== */
   &__input:focus ~ .cdr-checkbox__figure {
-    border-color: #3278ae;
+    border-color: $cdr-color-border-input-default-active;
     box-shadow: $cdr-label-figure-box-shadow;
   }
 
@@ -217,6 +217,4 @@
       display: none;
     }
   }
-
-
 }
