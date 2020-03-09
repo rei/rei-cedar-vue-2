@@ -5,6 +5,7 @@
       <cdr-text
         tag="h2"
         modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
+        class="cdr-align-text-center"
       >
         Tabs
       </cdr-text>
@@ -103,21 +104,26 @@
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+        class="cdr-align-text-center"
       >
-        Compact Tabs
+        Small Tabs
       </cdr-text>
       <cdr-tabs
         height="100px"
         size="small"
       >
         <cdr-tab-panel
-          v-for="tab in tabs"
+          v-for="tab in tabs.slice(0, 5)"
           :key="tab"
           :name="tab"
           :id="'tab-panel-small-' + tab"
           :aria-labelled-by="'tab-small-' + tab"
         >
-          content
+          <cdr-text
+            modifier="body-300"
+          >
+            Tab {{ tab }} content
+          </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
@@ -127,6 +133,7 @@
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+        class="cdr-align-text-center"
       >
         Full-Width Tabs
       </cdr-text>
@@ -135,13 +142,17 @@
         modifier="full-width"
       >
         <cdr-tab-panel
-          v-for="tab in tabs"
+          v-for="tab in tabs.slice(0, 5)"
           :key="tab"
           :name="tab"
           :id="'tab-panel-full-width-' + tab"
           :aria-labelled-by="'tab-full-width-' + tab"
         >
-          content
+          <cdr-text
+            modifier="body-300"
+          >
+            Tab {{ tab }} content
+          </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
@@ -151,6 +162,7 @@
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+        class="cdr-align-text-center"
       >
         No Border Tabs
       </cdr-text>
@@ -159,13 +171,17 @@
         modifier="no-border"
       >
         <cdr-tab-panel
-          v-for="tab in tabs"
+          v-for="tab in tabs.slice(0, 5)"
           :key="tab"
           :name="tab"
           :id="'tab-panel-no-border-' + tab"
           :aria-labelled-by="'tab-no-border-' + tab"
         >
-          content
+          <cdr-text
+            modifier="body-300"
+          >
+            Tab {{ tab }} content
+          </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
@@ -175,6 +191,7 @@
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+        class="cdr-align-text-center"
       >
         Centered
       </cdr-text>
@@ -189,28 +206,11 @@
           :id="'tab-panel-centered-' + tab"
           :aria-labelled-by="'tab-centered-' + tab"
         >
-          content
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="six"
-          id="tab-panel-centered-six"
-          aria-labelled-by="tab-centered-six"
-        >
-          content
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="seven"
-          id="tab-panel-centered-seven"
-          aria-labelled-by="tab-centered-seven"
-        >
-          content
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="eight"
-          id="tab-panel-centered-eight"
-          aria-labelled-by="tab-centered-eight"
-        >
-          content
+          <cdr-text
+            modifier="body-300"
+          >
+            Tab {{ tab }} content
+          </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
@@ -225,7 +225,7 @@ export default {
   components: { ...Components },
   data() {
     return {
-      tabs: ['one', 'two', 'three', 'four', 'five'],
+      tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
     };
   },
 };
@@ -233,7 +233,6 @@ export default {
 
 <style>
   .tab-demo-section {
-    text-align: center;
     margin-bottom: 30px;
   }
 </style>
