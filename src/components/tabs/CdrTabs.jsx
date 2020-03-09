@@ -217,6 +217,8 @@ export default {
           role="tab"
           aria-selected={tab.active}
           aria-disabled="false"
+          aria-controls={tab.id}
+          id={tab.ariaLabelledby}
           tabIndex={tab.active ? 0 : -1}
           vOn:click_prevent={e => this.handleClick(tab, e)}
           href={`#${tab.id || tab.name}`}

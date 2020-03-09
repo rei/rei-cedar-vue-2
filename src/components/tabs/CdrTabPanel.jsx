@@ -17,17 +17,23 @@ export default {
       type: Boolean,
       default: false,
     },
+    ariaLabelledby: {
+      type: String,
+      required: true,
+    },
     /**
      * Optional extra reference value to be set on the tab, otherwise
      * the tab name will be used for reference.
      */
-    id: String,
+    id: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
       active: false,
       offsetX: 0,
-      tabId: this.id || this.name,
       animationDirection: 'default',
       style,
     };
@@ -49,8 +55,8 @@ export default {
   methods: {
     setActive(state) {
       this.active = state;
-      this.$emit('tab-change', state, this.tabId);
-      this.$emit('tabChange', state, this.tabId);
+      this.$emit('tab-change', state, this.id);
+      this.$emit('tabChange', state, this.id);
     },
     setAnimationDirection(direction) {
       this.animationDirection = direction;
@@ -91,8 +97,9 @@ export default {
         <div
           v-show={this.active}
           aria-hidden={!this.active}
+          aria-labelledby={this.ariaLabelledby}
           class={clsx(this.style[this.baseClass], this.modifierClass)}
-          id={this.tabId}
+          id={this.id}
           ref="cdrTabPanelContainer"
           tabindex="0"
           role="tabpanel"
