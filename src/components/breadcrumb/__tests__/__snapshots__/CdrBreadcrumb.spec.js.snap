@@ -38,7 +38,7 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
       </span>
     </li>
     <li
-      class="cdr-breadcrumb__item"
+      class="cdr-breadcrumb__item cdr-breadcrumb__item-linked"
       style="display: none;"
     >
       <a
@@ -55,14 +55,14 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
       </span>
     </li>
     <li
-      class="cdr-breadcrumb__item"
+      class="cdr-breadcrumb__item cdr-breadcrumb__item-linked"
     >
-      <strong
+      <a
         class="cdr-breadcrumb__link"
         href="http://rei.com"
       >
         Long Breadcrumb Step 2
-      </strong>
+      </a>
       <span
         aria-hidden="true"
         class="cdr-breadcrumb__delimiter"
@@ -76,7 +76,7 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
       <strong
         aria-current="page"
         class="cdr-breadcrumb__link"
-        href="http://rei.com"
+        href="http://yahoo.com"
       >
         Long Breadcrumb Step 3
       </strong>

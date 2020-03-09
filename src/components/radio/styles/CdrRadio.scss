@@ -25,6 +25,7 @@
   display: inline-block;
   margin: 0;
   position: relative;
+  user-select: none;
 
   /* Elements
     ========================================================================== */
@@ -43,6 +44,12 @@
     position: absolute;
     opacity: 0;
     z-index: -1;
+  }
+
+  /* Content
+  ========== */
+  &__content {
+    user-select: text;
   }
 
   /* Figure

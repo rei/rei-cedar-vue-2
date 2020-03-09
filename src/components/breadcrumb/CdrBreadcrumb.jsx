@@ -94,10 +94,14 @@ export default {
         </span>) : '';
 
         const ref = index === 0 ? 'firstBreadcrumb' : null;
-        const LinkTag = index < this.items.length - 2 ? 'a' : 'strong';
+        const isLink = index < this.items.length - 1;
+        const LinkTag = isLink ? 'a' : 'strong';
 
         return (<li
-          class={this.style['cdr-breadcrumb__item']}
+          class={clsx(
+            this.style['cdr-breadcrumb__item'],
+            isLink ? this.style['cdr-breadcrumb__item-linked'] : null,
+          )}
           key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
           v-show={!this.truncate || (index >= this.items.length - 2)}
         >

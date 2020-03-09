@@ -92,6 +92,7 @@
 
         &::before {
           content: '\2022';
+          color: $cdr-color-text-secondary;
           display: block;
           position: absolute;
           top: 50%;
