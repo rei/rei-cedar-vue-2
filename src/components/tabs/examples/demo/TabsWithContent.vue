@@ -1,11 +1,14 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div class=".tab-demo-section">
+  <div class="tab-demo-section tabs-demo-default">
     <cdr-tabs
       height="500px"
+      data-backstop="tab-default"
     >
       <cdr-tab-panel
         name="Details"
+        aria-labelledby="tab-default-defails"
+        id="tab-panel-default-details"
       >
         <cdr-text
           tag="h3"
@@ -28,6 +31,8 @@
       </cdr-tab-panel>
       <cdr-tab-panel
         name="Specs"
+        aria-labelledby="tab-default-specs"
+        id="tab-panel-default-specs"
       >
         <cdr-text
           tag="h3"
@@ -80,10 +85,14 @@
       </cdr-tab-panel>
       <cdr-tab-panel
         name="Reviews"
+        aria-labelledby="tab-default-reviews"
+        id="tab-panel-default-reviews"
         :disabled="true"
       />
       <cdr-tab-panel
         name="Q&A"
+        aria-labelledby="tab-default-Q&A"
+        id="tab-panel-default-Q&A"
       >
         <cdr-text
           tag="h3"
@@ -143,12 +152,11 @@ export default {
 </script>
 
 <style>
-  .tab-demo-section {
-    padding-top: 25px;
+  .tabs-demo-default {
     max-width: 800px;
   }
 
-  .tab-demo-section h3 {
+  .tabs-demo-deault h3 {
     margin: 20px 0;
   }
 </style>

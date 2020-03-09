@@ -1,16 +1,14 @@
 <template>
   <!-- eslint-disable max-len -->
   <div>
-    <div class="tab-demo-section">
-      <cdr-text
-        tag="h2"
-        modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-        class="cdr-align-text-center"
-      >
-        Tabs
-      </cdr-text>
-      <tabs-with-content />
-    </div>
+    <cdr-text
+      tag="h2"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
+      class="cdr-align-text-center"
+    >
+      Tabs
+    </cdr-text>
+    <tabs-with-content />
 
     <!-- small -->
     <div class="tab-demo-secton">
