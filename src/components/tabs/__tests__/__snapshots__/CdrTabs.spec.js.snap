@@ -81,7 +81,6 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
     <div
       aria-hidden="true"
       class="cdr-tab-panel"
-      id="tab1"
       name="fly"
       role="tabpanel"
       style="display: none;"
@@ -90,7 +89,6 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
     <div
       aria-hidden="true"
       class="cdr-tab-panel"
-      id="tab2"
       name="fly"
       role="tabpanel"
       style="display: none;"
