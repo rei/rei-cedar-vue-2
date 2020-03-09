@@ -1,30 +1,25 @@
 @import "../settings/index";
-/* ==========================================================================/*
-* Color utility classes
-*
-*
-** TOC:
-**
-** background theme classes
-** forground text color
-*/
 
-.cdr-bg--light {
-  background-color: $cdr-color-background-light;
+.cdr-color-bg-primary {
+  background-color: $cdr-color-background-primary;
 }
 
-.cdr-bg--lighter {
-  background-color: $cdr-color-background-lighter;
+.cdr-color-bg-secondary {
+  background-color: $cdr-color-background-secondary;
 }
 
-.cdr-bg--lightest {
-  background-color: $cdr-color-background-lightest;
+.cdr-color-bg-success {
+  background-color: $cdr-color-background-success;
 }
 
-.cdr-bg--dark {
-  background-color: $cdr-color-background-dark;
+.cdr-color-bg-warning {
+  background-color: $cdr-color-background-warning;
 }
 
-.cdr-bg--darker {
-  background-color: $cdr-color-background-darker;
+.cdr-color-bg-error {
+  background-color: $cdr-color-background-error;
+}
+
+.cdr-color-bg-info {
+  background-color: $cdr-color-background-info;
 }
