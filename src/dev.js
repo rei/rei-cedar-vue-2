@@ -4,7 +4,7 @@ import Vue from 'vue/dist/vue.esm';
 import VueRouter from 'vue-router';
 import fullSprite from '@rei/cedar-icons/dist/all-icons.svg';
 import routes from './router';
-import SinkWrapper from './SinkWrapper.vue';
+import SinkWrapper from './SinkWrapper';
 import cedarcss from './css/main.scss';
 
 // routing
@@ -21,7 +21,7 @@ Vue.config.devtools = false;
 new Vue({
   router,
   components: {
-    SinkWrapper
+    SinkWrapper,
   },
   data() {
     return {

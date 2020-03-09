@@ -13,7 +13,7 @@
     >
       {{ capitalize(bg) }}
     </cdr-radio>
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -21,39 +21,40 @@
 
 import { CdrRadio } from 'srcdir/index';
 import upperFirst from 'lodash/upperFirst';
+
 export default {
   name: 'SinkWrapper',
   components: {
-    CdrRadio
+    CdrRadio,
   },
   data() {
     return {
       background: this.$route.query.background || 'primary',
       backgrounds: [
-        'primary', 'secondary', 'success', 'info', 'warning', 'error'
-      ]
+        'primary', 'secondary', 'success', 'info', 'warning', 'error',
+      ],
     };
   },
-  methods: {
-    capitalize(str) {
-      return upperFirst(str);
-    }
+  computed: {
+    backgroundClass() {
+      return `cdr-space-inset-one-x cdr-color-bg-${this.background}`;
+    },
   },
   watch: {
     background() {
       this.$router.push({
         path: this.$router.currentRoute.path,
         query: {
-         background: this.background
-        }
+          background: this.background,
+        },
       });
     },
   },
-  computed: {
-    backgroundClass() {
-      return `cdr-space-inset-one-x cdr-color-bg-${this.background}`;
-    }
-  }
+  methods: {
+    capitalize(str) {
+      return upperFirst(str);
+    },
+  },
 };
 </script>
 
