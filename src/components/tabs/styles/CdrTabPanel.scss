@@ -1,6 +1,6 @@
 @import '../../../css/settings/index.scss';
 
-$tab-panel-animation-duration: $cdr-duration-3-x;
+$tab-panel-animation-duration: $cdr-duration-2-x;
 
 .cdr-tab-panel {
   position: absolute;
@@ -15,7 +15,7 @@ $tab-panel-animation-duration: $cdr-duration-3-x;
   }
 
   to {
-    transform: translateX(-50vw);
+    transform: translateX(-10px);
   }
 }
 
@@ -25,7 +25,7 @@ $tab-panel-animation-duration: $cdr-duration-3-x;
   }
 
   to {
-    transform: translateX(50vw);
+    transform: translateX(10px);
   }
 }
 
@@ -43,7 +43,18 @@ $tab-panel-animation-duration: $cdr-duration-3-x;
   animation-duration: $tab-panel-animation-duration;
 }
 
-/*
-  both slide
-  $cdr-duration-3-x, 50/-50 vw
-*/
+:global(.fly-enter) {
+  opacity: 0;
+}
+
+:global(.fly-leave-to) {
+  opacity: 0;
+}
+
+:global(.fly-enter-active) {
+  transition: opacity $tab-panel-animation-duration cubic-bezier(0.32, 0.94, 0.6, 1);
+}
+
+:global(.fly-leave-active) {
+  transition: opacity $tab-panel-animation-duration cubic-bezier(0.32, 0.94, 0.6, 1);
+}

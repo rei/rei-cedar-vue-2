@@ -13,6 +13,7 @@
         <cdr-text
           tag="h3"
           modifier="heading-serif-400"
+          class="tab-title"
         >
           Details
         </cdr-text>
@@ -37,6 +38,7 @@
         <cdr-text
           tag="h3"
           modifier="heading-serif-400"
+          class="tab-title"
         >
           Specs
         </cdr-text>
@@ -97,14 +99,15 @@
         <cdr-text
           tag="h3"
           modifier="heading-serif-400"
+          class="tab-title"
         >
           Q&A
         </cdr-text>
 
         <cdr-accordion
           id="default"
-          :opened="accordionDefault"
-          @accordion-toggle="accordionDefault = !accordionDefault"
+          :opened="accordion1"
+          @accordion-toggle="accordion1 = !accordion1"
         >
           <template slot="label">
             A short label
@@ -123,8 +126,8 @@
         </cdr-accordion>
         <cdr-accordion
           id="default-long-label"
-          :opened="accordionDefault2"
-          @accordion-toggle="accordionDefault2 = !accordionDefault2"
+          :opened="accordion2"
+          @accordion-toggle="accordion2 = !accordion2"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
         >
@@ -146,8 +149,14 @@
 import * as Components from 'srcdir/index';
 
 export default {
-  name: 'TabsWithContent',
+  name: 'TabsDefault',
   components: { ...Components },
+  data() {
+    return {
+      accordion1: false,
+      accordion2: false,
+    };
+  },
 };
 </script>
 
@@ -156,7 +165,7 @@ export default {
     max-width: 800px;
   }
 
-  .tabs-demo-deault h3 {
+  h3.tab-title {
     margin: 20px 0;
   }
 </style>

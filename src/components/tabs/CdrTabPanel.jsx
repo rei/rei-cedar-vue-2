@@ -65,22 +65,26 @@ export default {
       this.offsetX = x;
     },
     setEnterStart(element) {
+      console.log('setEnterStart');
       const el = element;
       el.style.animationDirection = 'reverse';
       el.style.animationTimingFunction = 'cubic-bezier(0.4, 0, 0.68, .06)';
       el.classList.add(this.style[this.animationDirection]);
     },
     setEnterEnd(element) {
+      console.log('setEnterEnd');
       const el = element;
       el.style.animationDirection = '';
       el.classList.remove(this.style[this.animationDirection]);
     },
     setLeaveStart(element) {
+      console.log('setLeaveStart');
       const el = element;
       el.classList.add(this.style[this.animationDirection]);
       el.style.animationTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
     },
     setLeaveEnd(element) {
+      console.log('setLeaveEnd'); 
       const el = element;
       el.classList.remove(this.style[this.animationDirection]);
     },
@@ -92,6 +96,7 @@ export default {
     return (
       <transition
         name="fly"
+        mode="out-in"
         {...{ on: this.animationHooks }}
       >
         <div

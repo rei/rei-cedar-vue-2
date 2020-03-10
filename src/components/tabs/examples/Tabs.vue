@@ -8,7 +8,8 @@
     >
       Tabs
     </cdr-text>
-    <tabs-with-content />
+
+    <tabs-default />
 
     <!-- small -->
     <div class="tab-demo-secton">
@@ -131,11 +132,11 @@
 
 <script>
 import * as Components from 'srcdir/index';
-import tabsWithContent from 'componentsdir/tabs/examples/demo/TabsWithContent';
+import tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';
 
 export default {
   name: 'TabsExample',
-  components: { ...Components, tabsWithContent },
+  components: { ...Components, tabsDefault },
   data() {
     return {
       tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
