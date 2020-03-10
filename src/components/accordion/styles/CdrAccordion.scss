@@ -11,7 +11,7 @@ $accordion-border: 1px solid $cdr-color-border-primary;
   &__button {
     @include cdr-text-utility-sans-strong-300;
 
-    background-color: inherit;
+    background-color: transparent;
     border: none;
     color: $cdr-color-text-primary;
     cursor: pointer;
@@ -58,7 +58,7 @@ $accordion-border: 1px solid $cdr-color-border-primary;
   &__content {
     @include cdr-text-body-300;
 
-    background-color: inherit;
+    background-color: transparent;
     color: $cdr-color-text-primary;
     padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-one-x;
     transition: opacity $cdr-duration-1-x linear;
