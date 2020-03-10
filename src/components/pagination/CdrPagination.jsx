@@ -185,6 +185,7 @@ export default {
       ) : (
         <li aria-hidden="true">
           <span
+            aria-disabled="true"
             class={[
               this.prevElAttrs.attrs.class,
               this.style['cdr-pagination__link--disabled'],
@@ -240,6 +241,7 @@ export default {
       ) : (
         <li aria-hidden="true">
           <span
+            aria-disabled="true"
             class={[
               this.nextElAttrs.attrs.class,
               this.style['cdr-pagination__link--disabled'],
