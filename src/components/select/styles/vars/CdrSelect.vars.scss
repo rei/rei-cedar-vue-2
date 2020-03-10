@@ -29,7 +29,7 @@
   width: 100%;
   overflow: auto;
   margin: 0;
-  background: $cdr-color-background-lightest;
+  background: $cdr-color-background-input-default;
 
   /* Hide Browser Styled Drowpdown Arrow */
   -webkit-appearance: none;
@@ -56,7 +56,7 @@
       cursor: not-allowed;
     }
   }
-  
+
   &:active,
   &:focus {
     box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-active;
@@ -67,7 +67,7 @@
   @include cdr-text-utility-sans-300;
 
   font-style: normal;
-  color: $cdr-color-text-input-placeholder;
+  color: $cdr-color-text-primary;
 
   &[disabled] {
     color: $cdr-color-text-input-disabled;
