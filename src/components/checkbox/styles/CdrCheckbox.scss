@@ -51,7 +51,7 @@
   &__input:checked ~ &__figure {
     border-color: $cdr-color-border-input-default-selected;
     background-color: $cdr-color-background-input-default-selected;
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#fff"); // TODO: color checkme
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#fff");
     background-repeat: no-repeat;
   }
 
@@ -67,7 +67,7 @@
       top: 50%;
       transform: translate(-50%, -50%);
       width: 8px;
-      height: 8px; // TODO: edit width/height to create "minus" sign
+      height: 2px;
       background-color: $cdr-color-background-input-default-selected;
       border-radius: $cdr-radius-soft;
     }
@@ -97,10 +97,10 @@
       /* Hover + Indeterminate
       ========== */
       &[indeterminate] ~ .cdr-checkbox__figure {
-        border-color: $cdr-color-border-input-default-selected;
+        border-color: $cdr-color-border-input-default-selected-hover;
 
         &::after {
-          background-color: $cdr-color-background-input-default-selected;
+          background-color: $cdr-color-background-input-default-selected-hover;
         }
       }
     }
