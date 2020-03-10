@@ -126,7 +126,6 @@
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
-    <variants />
   </div>
 </template>
 
