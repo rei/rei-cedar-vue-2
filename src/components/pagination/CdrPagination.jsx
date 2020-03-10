@@ -187,7 +187,7 @@ export default {
           <span
             class={[
               this.prevElAttrs.attrs.class,
-              clsx(this.style['cdr-pagination__link--disabled']),
+              this.style['cdr-pagination__link--disabled'],
             ]}
           >
             <this.prevElAttrs.iconComponent
@@ -242,7 +242,7 @@ export default {
           <span
             class={[
               this.nextElAttrs.attrs.class,
-              clsx(this.style['cdr-pagination__link--disabled']),
+              this.style['cdr-pagination__link--disabled'],
             ]}
             >
             {this.nextElAttrs.content}
