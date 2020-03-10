@@ -20,11 +20,14 @@
       <h1>REI Cedar</h1>
       <ul style="padding:0">
         <li class="cdr-space-inset-quarter-x" style="display:inline-flex" v-for="route in routes"><router-link v-if="route.name" :key="route.path" :to="route.path">{{ route.name }} *</router-link></li>
-      </ul
+      </ul>
       <hr />
-      <div class=" cdr-mt-space-two-x">
-        <router-view></router-view>
-      </div>
+
+      <sink-wrapper>
+        <div class="cdr-mt-space-two-x">
+          <router-view></router-view>
+        </div>
+      </sink-wrapper>
     </div>
     <!-- built files will be auto injected -->
     <script src="kitchen-sink.iife.js"></script>
