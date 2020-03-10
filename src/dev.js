@@ -32,5 +32,10 @@ new Vue({
   },
   mounted() {
     console.log('BACKSTOP_READY');
+    if (window.location.hostname === 'localhost') {
+      const title = document.querySelector('h1.title');
+      title.classList.add('cdr-color-background-secondary');
+      title.classList.add('cdr-space-inset-one-x');
+    }
   },
 }).$mount('#main');

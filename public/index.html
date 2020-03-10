@@ -17,7 +17,7 @@
     <div id="main" class="cdr-container-fluid">
       <!-- NOTE: For dev environment only, do not load icon sprites in JS in production -->
       <div style="display:none" v-html="fullSprite"></div>
-      <h1>REI Cedar</h1>
+      <h1 class="title">REI Cedar</h1>
       <ul style="padding:0">
         <li class="cdr-space-inset-quarter-x" style="display:inline-flex" v-for="route in routes"><router-link v-if="route.name" :key="route.path" :to="route.path">{{ route.name }} *</router-link></li>
       </ul>
