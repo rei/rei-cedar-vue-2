@@ -34,7 +34,7 @@ export default {
     return {
       active: false,
       offsetX: 0,
-      animationDirection: 'default',
+      animationDirection: null,
       style,
     };
   },
@@ -50,6 +50,12 @@ export default {
         afterLeave: this.setLeaveEnd,
         ...this.$listeners,
       };
+    },
+    activeClass() {
+      return this.active ? this.style['cdr-tab-panel-active-fly-right'] : this.style['cdr-tab-panel-inactive-fly-left']; // eslint-disable-line
+    },
+    animationDirectionClass() {
+      return this.animationDirection ? `cdr-tab-panel-${this.animationDirection}` : null;
     },
   },
   methods: {
@@ -91,29 +97,26 @@ export default {
     handleUpArrowNav() {
       this.$parent.setFocusToActiveTabHeader();
     },
+    animationEnd(event) {
+      console.log('animation end!', this.id, event);
+    },
   },
   render() {
     return (
-      <transition
-        name="fly"
-        mode="out-in"
-        {...{ on: this.animationHooks }}
+      <div
+        aria-hidden={!this.active}
+        aria-labelledby={this.ariaLabelledby}
+        class={clsx(this.style[this.baseClass], this.modifierClass, this.activeClass)}
+        id={this.id}
+        ref="cdrTabPanelContainer"
+        tabindex="0"
+        role="tabpanel"
+        vOn:keydown_up_prevent={this.handleUpArrowNav}
+        vOn:animationend={this.animationEnd}
+        key={this.name}
       >
-        <div
-          v-show={this.active}
-          aria-hidden={!this.active}
-          aria-labelledby={this.ariaLabelledby}
-          class={clsx(this.style[this.baseClass], this.modifierClass)}
-          id={this.id}
-          ref="cdrTabPanelContainer"
-          tabindex="0"
-          role="tabpanel"
-          vOn:keydown_up_prevent={this.handleUpArrowNav}
-          key={this.name}
-        >
-          {this.$slots.default}
-        </div>
-      </transition>
+        {this.$slots.default}
+      </div>
     );
   },
 };

@@ -9,52 +9,84 @@ $tab-panel-animation-duration: $cdr-duration-2-x;
   padding-top: $cdr-space-eighth-x;
 }
 
-@keyframes :global(flyLeft) {
+@keyframes :global(leaveLeft) {
   from {
     transform: translateX(0);
+    opacity: 1;
   }
-
+  
   to {
     transform: translateX(-10px);
+    opacity: 0;
   }
 }
 
-@keyframes :global(flyRight) {
+@keyframes :global(leaveRight) {
   from {
     transform: translateX(0);
+    opacity: 1;
   }
 
   to {
     transform: translateX(10px);
+    opacity: 0;
   }
 }
 
-.flyLeft {
-  :global {
-    animation-name: flyLeft;
+@keyframes :global(enterLeft) {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
   }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes :global(enterRight) {
+  from {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@mixin cdr-tab-panel-animation {
   animation-duration: $tab-panel-animation-duration;
+  animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1);
 }
 
-.flyRight {
+.cdr-tab-panel-active-fly-left {
   :global {
-    animation-name: flyRight;
+    animation-name: enterLeft;
   }
-  animation-duration: $tab-panel-animation-duration;
+  @include cdr-tab-panel-animation;
 }
 
-:global(.fly-enter) {
-  opacity: 0;
+.cdr-tab-panel-active-fly-right {
+  :global {
+    animation-name: enterRight;
+  }
+  @include cdr-tab-panel-animation;
 }
 
-:global(.fly-leave-to) {
-  opacity: 0;
+.cdr-tab-panel-inactive-fly-left {
+  :global {
+    animation-name: leaveLeft;
+  }
+  @include cdr-tab-panel-animation;
 }
 
-:global(.fly-enter-active) {
-  transition: opacity $tab-panel-animation-duration cubic-bezier(0.32, 0.94, 0.6, 1);
+.cdr-tab-panel-inactive-fly-right {
+  :global {
+    animation-name: leaveRight;
+  }
+  @include cdr-tab-panel-animation;
 }
 
-:global(.fly-leave-active) {
-  transition: opacity $tab-panel-animation-duration cubic-bezier(0.32, 0.94, 0.6, 1);
-}
