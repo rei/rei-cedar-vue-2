@@ -40,10 +40,12 @@ export default {
           this.accordionButtons[this.accordionButtons.length - 1].focus();
           break;
         case 'ArrowDown':
+        case 'Down':
           e.preventDefault();
           this.accordionButtons[this.nextIdx].focus();
           break;
         case 'ArrowUp':
+        case 'Up':
           e.preventDefault();
           this.accordionButtons[this.prevIdx].focus();
           break;
