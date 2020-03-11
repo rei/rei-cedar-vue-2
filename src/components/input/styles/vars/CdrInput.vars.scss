@@ -55,7 +55,7 @@
 
 @mixin cdr-input-base-label-mixin() {
   @include cdr-text-utility-sans-200;
-  font-weight: 500; // TODO: test 600
+  font-weight: 600;
   color: $cdr-color-text-input-label;
   display: inline-block;
   margin: 0;
@@ -91,4 +91,5 @@
 @mixin cdr-input-required-label-mixin() {
   color: $cdr-color-text-input-required;
   margin-left: $cdr-space-inset-quarter-x;
+  font-weight: 400;
 }

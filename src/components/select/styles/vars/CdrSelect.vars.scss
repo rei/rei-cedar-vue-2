@@ -1,6 +1,6 @@
 @mixin cdr-select-base-label-mixin() {
   @include cdr-text-utility-sans-200;
-  font-weight: 600; // TODO: test 500
+  font-weight: 600;
   color: $cdr-color-text-input-label;
   display: inline-block;
   margin: 0;
@@ -82,6 +82,7 @@
 /* required label */
 @mixin cdr-select-required-label-mixin() {
   color: $cdr-color-text-input-required;
+  font-weight: 400;
 }
 
 /* info container */
