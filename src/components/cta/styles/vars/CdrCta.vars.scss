@@ -50,7 +50,7 @@
 
 
 @mixin cdr-cta-brand-mixin() {
-  background-color: purple; // $cdr-color-background-cta-brand-rest; // TODO: update when token is available
+  background-color: $cdr-color-background-cta-brand-rest;
   box-shadow: inset 0 0 0 1px $cdr-color-border-cta-brand-rest;
   color: $cdr-color-text-cta-brand;
   fill: $cdr-color-text-cta-brand;
