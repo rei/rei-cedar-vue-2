@@ -9,7 +9,7 @@ $tab-panel-animation-duration: $cdr-duration-2-x;
   padding-top: $cdr-space-eighth-x;
 }
 
-@keyframes :global(leaveLeft) {
+@keyframes :global(exit-left) {
   from {
     transform: translateX(0);
     opacity: 1;
@@ -21,7 +21,7 @@ $tab-panel-animation-duration: $cdr-duration-2-x;
   }
 }
 
-@keyframes :global(leaveRight) {
+@keyframes :global(exit-right) {
   from {
     transform: translateX(0);
     opacity: 1;
@@ -33,7 +33,7 @@ $tab-panel-animation-duration: $cdr-duration-2-x;
   }
 }
 
-@keyframes :global(enterLeft) {
+@keyframes :global(enter-left) {
   from {
     transform: translateX(-10px);
     opacity: 0;
@@ -45,7 +45,7 @@ $tab-panel-animation-duration: $cdr-duration-2-x;
   }
 }
 
-@keyframes :global(enterRight) {
+@keyframes :global(enter-right) {
   from {
     transform: translateX(10px);
     opacity: 0;
@@ -64,28 +64,28 @@ $tab-panel-animation-duration: $cdr-duration-2-x;
 
 .cdr-tab-panel-active-fly-left {
   :global {
-    animation-name: enterLeft;
+    animation-name: enter-left;
   }
   @include cdr-tab-panel-animation;
 }
 
 .cdr-tab-panel-active-fly-right {
   :global {
-    animation-name: enterRight;
+    animation-name: enter-right;
   }
   @include cdr-tab-panel-animation;
 }
 
 .cdr-tab-panel-inactive-fly-left {
   :global {
-    animation-name: leaveLeft;
+    animation-name: exit-left;
   }
   @include cdr-tab-panel-animation;
 }
 
 .cdr-tab-panel-inactive-fly-right {
   :global {
-    animation-name: leaveRight;
+    animation-name: exit-right;
   }
   @include cdr-tab-panel-animation;
 }

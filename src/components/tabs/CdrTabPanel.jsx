@@ -33,6 +33,7 @@ export default {
   data() {
     return {
       active: false,
+      hidden: true,
       offsetX: 0,
       animationDirection: null,
       style,
@@ -60,6 +61,7 @@ export default {
   },
   methods: {
     setActive(state) {
+      if (state) this.hidden = false;
       this.active = state;
       this.$emit('tab-change', state, this.id);
       this.$emit('tabChange', state, this.id);
@@ -98,7 +100,10 @@ export default {
       this.$parent.setFocusToActiveTabHeader();
     },
     animationEnd(event) {
-      console.log('animation end!', this.id, event);
+      if (event.animationName.split('-')[0] === 'exit') {
+        // console.log('setting hidden true', this.name);
+        this.hidden = true;
+      }
     },
   },
   render() {
@@ -107,6 +112,7 @@ export default {
         aria-hidden={!this.active}
         aria-labelledby={this.ariaLabelledby}
         class={clsx(this.style[this.baseClass], this.modifierClass, this.activeClass)}
+        hidden={this.hidden}
         id={this.id}
         ref="cdrTabPanelContainer"
         tabindex="0"

@@ -92,23 +92,35 @@ export default {
       return -1;
     },
     handleClick: debounce(function handleClickCallback(tabClicked) {
-      const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
-      this.tabs.forEach((tab, index) => {
-        if (newSelectedTab.name === tab.name) {
-          if (this.activeTabIndex < index) {
-            tab.setAnimationDirection('flyRight');
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          } else {
-            tab.setAnimationDirection('flyLeft');
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          }
-          this.activeTabIndex = index;
-          this.hideScrollBar();
-          this.$nextTick(() => tab.setActive(true));
-        } else {
-          this.$nextTick(() => tab.setActive(false));
-        }
+      // console.log('tabClicked', tabClicked);
+      const oldIndex = this.activeTabIndex;
+      const newIndex = this.tabs.findIndex(tab => tabClicked.name === tab.name);
+
+      this.activeTabIndex = newIndex;
+      this.hideScrollBar();
+      this.$nextTick(() => {
+        this.tabs[oldIndex].setActive(false);
+        this.tabs[newIndex].setActive(true);
       });
+
+      // const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
+      // this.tabs.forEach((tab, index) => {
+      //   if (newSelectedTab.name === tab.name) {
+      //     if (this.activeTabIndex < index) {
+      //       tab.setAnimationDirection('flyRight');
+      //       this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
+      //     } else {
+      //       tab.setAnimationDirection('flyLeft');
+      //       this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
+      //     }
+      //     this.activeTabIndex = index;
+      //     this.hideScrollBar();
+      //     this.$nextTick(() => tab.setActive(true));
+      //   } else {
+      //     this.$nextTick(() => tab.setActive(false));
+      //   }
+      // });
+
       this.updateUnderline();
     }, 500, { leading: true, trailing: false }),
     calculateOverflow() {
