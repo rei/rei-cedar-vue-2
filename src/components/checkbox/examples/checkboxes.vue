@@ -140,20 +140,20 @@
 
     <cdr-checkbox
       indeterminate
-    >indeterminate</cdr-checkbox>
+    >indeterminate (not functional)</cdr-checkbox>
     <cdr-checkbox
       indeterminate
       disabled
-    >indeterminate</cdr-checkbox>
+    >indeterminate (not functional)</cdr-checkbox>
     <cdr-checkbox
       indeterminate
       modifier="compact"
-    >indeterminate compact</cdr-checkbox>
+    >indeterminate compact (not functional)</cdr-checkbox>
     <cdr-checkbox
       indeterminate
       disabled
       modifier="compact"
-    >indeterminate compact</cdr-checkbox>
+    >indeterminate compact (not functional)</cdr-checkbox>
 
     <cdr-checkbox modifier="hide-figure">
       Hidden box

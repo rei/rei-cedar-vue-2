@@ -1,7 +1,7 @@
 @mixin cdr-select-base-label-mixin() {
   @include cdr-text-utility-sans-200;
-
-  color: $cdr-color-text-form-label-lightmode;
+  font-weight: 600; // TODO: test 500
+  color: $cdr-color-text-input-label;
   display: inline-block;
   margin: 0;
   margin-bottom: $cdr-space-quarter-x;
@@ -10,7 +10,7 @@
 
 /* input label disabled */
 @mixin cdr-select-base-label-disabled-mixin() {
-  color: $cdr-color-text-disabled-lightmode;
+  color: $cdr-color-text-input-disabled;
 }
 
 /* select base */
@@ -18,8 +18,8 @@
 @mixin cdr-select-base-mixin() {
   @include cdr-text-utility-sans-300;
 
-  color: $cdr-color-text-form-label-lightmode;
-  box-shadow: inset 0 0 0 1px $cdr-color-border-primary-lightmode;
+  color: $cdr-color-text-input-default;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-input-default;
   border: 0;
   border-radius: $cdr-radius-softer;
   padding-left: $cdr-space-half-x;
@@ -29,7 +29,7 @@
   width: 100%;
   overflow: auto;
   margin: 0;
-  background: $cdr-color-background-lightest;
+  background: $cdr-color-background-input-default;
 
   /* Hide Browser Styled Drowpdown Arrow */
   -webkit-appearance: none;
@@ -47,19 +47,19 @@
   }
 
   &[disabled] {
-    background-color: $cdr-color-background-lighter;
-    color: $cdr-color-text-form-disabled-lightmode;
-    box-shadow: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
+    background-color: $cdr-color-background-input-default-disabled;
+    color: $cdr-color-text-input-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled;
 
     &:hover {
-      box-shadow: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
+      box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled;
+      cursor: not-allowed;
     }
   }
 
-  // TODO: should this also have &:hover ?
   &:active,
   &:focus {
-    box-shadow: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-active;
   }
 }
 
@@ -67,10 +67,10 @@
   @include cdr-text-utility-sans-300;
 
   font-style: normal;
-  color: $cdr-color-text-form-placeholder-lightmode;
+  color: $cdr-color-text-primary;
 
   &[disabled] {
-    color: $cdr-color-text-form-disabled-lightmode;
+    color: $cdr-color-text-input-disabled;
   }
 }
 
@@ -81,7 +81,7 @@
 
 /* required label */
 @mixin cdr-select-required-label-mixin() {
-  color: $cdr-color-text-secondary-lightmode;
+  color: $cdr-color-text-input-required;
 }
 
 /* info container */
@@ -95,12 +95,12 @@
 @mixin cdr-select-helper-text-mixin() {
   @include cdr-text-utility-sans-200;
 
-  color: $cdr-color-text-secondary-lightmode;
+  color: $cdr-color-text-input-help;
 }
 
 /* caret */
 @mixin cdr-select-base-caret-mixin() {
-  fill: $cdr-color-icon-primary-lightmode;
+  fill: $cdr-color-icon-default;
   position: absolute;
   top: 50%;
   right: $cdr-space-half-x;
@@ -109,5 +109,5 @@
 }
 
 @mixin cdr-select-base-caret-disabled-mixin() {
-  fill: $cdr-color-text-disabled-lightmode;
+  fill: $cdr-color-icon-disabled;
 }
