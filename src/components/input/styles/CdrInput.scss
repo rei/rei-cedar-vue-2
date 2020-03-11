@@ -23,7 +23,7 @@
   @include cdr-input-base-label-mixin;
 
   &--disabled {
-  color:  $cdr-color-text-disabled-lightmode;
+    color:  $cdr-color-text-input-disabled;
   }
 }
 

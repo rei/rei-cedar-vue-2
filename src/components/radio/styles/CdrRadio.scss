@@ -1,24 +1,5 @@
 @import '../../../css/settings/index.scss';
 @import './vars/CdrRadio.vars.scss';
-/* ==========================================================================
-  # CdrRadio
-
-  All values should map to variables in
-  vars/CdrRadio.vars.pcss
-  in order to allow for theming
-
-  TOC:
-
-    :Base - Radio
-      :Elements
-        :wrap
-        :input
-        :figure
-      :States
-      :Modifiers
-        :compact
-        :hide-figure
-========================================================================== */
 
 .cdr-radio {
   @include cdr-label-base-mixin;
@@ -60,8 +41,8 @@
     position: absolute;
     left: 0;
     border-radius: $cdr-radius-round;
-    background-color: $cdr-color-background-form-input-lightmode;
-    border: 1px solid $cdr-color-border-primary-lightmode;
+    background-color: $cdr-color-background-input-default;
+    border: 1px solid $cdr-color-border-input-default;
 
     &::after {
       content: '';
@@ -82,10 +63,12 @@
   /* Checked
   ========== */
   &__input:checked ~ &__figure {
-    border-color: #3278ae;
+    // outer circle
+    border-color: $cdr-color-border-input-default-selected;
 
     &::after {
-      background-color: #3278ae;
+      // inner circle
+      background-color: $cdr-color-background-input-default-selected;
     }
   }
 
@@ -93,8 +76,8 @@
   &:hover {
     & > .cdr-radio__figure {
       cursor: pointer;
-      border-color: $cdr-color-border-primary-lightmode;
-      background-color: $cdr-color-background-lighter;
+      border-color: $cdr-color-border-input-default-hover;
+      background-color: $cdr-color-background-input-default-hover;
     }
 
     & > .cdr-radio__content {
@@ -105,10 +88,10 @@
       /* Hover + Checked
       ========== */
       &:checked ~ .cdr-radio__figure {
-        border-color: #2b6692;
+        border-color: $cdr-color-border-input-default-selected-hover;
 
         &::after {
-          background-color: #2b6692;
+          background-color: $cdr-color-background-input-default-selected-hover;
         }
       }
     }
@@ -122,9 +105,9 @@
     }
 
     & ~ .cdr-radio__figure {
-      border-color: $cdr-color-border-disabled-lightmode !important;
-      background-color: $cdr-color-background-lighter !important;
-      cursor: default;
+      border-color: $cdr-color-border-input-default-disabled !important;
+      background-color: $cdr-color-background-input-default-disabled !important;
+      cursor: not-allowed;
     }
 
     /* Disabled + Checked
@@ -132,7 +115,7 @@
     &:checked {
       & ~ .cdr-radio__figure {
         &::after {
-          background-color: #dadada !important;
+          background-color: $cdr-color-background-input-default-disabled !important;
         }
       }
     }
@@ -141,14 +124,14 @@
   /* Active
   ========== */
   &:active > .cdr-radio__figure {
-    border-color: #3278ae;
-    background-color: $cdr-color-background-form-input-lightmode;
+    border-color: $cdr-color-border-input-default-active;
+    background-color: $cdr-color-background-input-default;
   }
 
   /* Focus
   ========== */
   &__input:focus ~ .cdr-radio__figure {
-    border-color: #3278ae;
+    border-color: $cdr-color-border-input-default-active;
     box-shadow: $cdr-label-figure-box-shadow;
   }
 
