@@ -14,9 +14,10 @@
       >
         Default
       </cdr-text>
-      <div data-backstop="accordion-default">
+      <cdr-accordion-group data-backstop="accordion-default">
         <cdr-accordion
           id="default"
+          level="3"
           :opened="accordionDefault"
           @accordion-toggle="accordionDefault = !accordionDefault"
         >
@@ -46,6 +47,7 @@
         </cdr-accordion>
         <cdr-accordion
           id="default-long-label"
+          level="3"
           :opened="accordionDefault2"
           @accordion-toggle="accordionDefault2 = !accordionDefault2"
           label="Label with multiple words, so many words in fact that
@@ -60,7 +62,7 @@
             <li>when animated!</li>
           </cdr-list>
         </cdr-accordion>
-      </div>
+      </cdr-accordion-group>
     </div>
 
     <div class="accordion-group">
@@ -70,10 +72,11 @@
       >
         Border-Aligned and data driven
       </cdr-text>
-      <div data-backstop="accordion-border-aligned">
+      <cdr-accordion-group data-backstop="accordion-border-aligned">
         <cdr-accordion
           v-for="(item, index) in grouped"
           :id="item.id"
+          level="3"
           :border-aligned="true"
           :opened="item.opened"
           :key="item.id"
@@ -84,7 +87,7 @@
           </template>
           {{ item.content }}
         </cdr-accordion>
-      </div>
+      </cdr-accordion-group>
     </div>
 
     <div class="accordion-group">
@@ -94,9 +97,10 @@
       >
         Compact
       </cdr-text>
-      <div data-backstop="accordion-compact">
+      <cdr-accordion-group data-backstop="accordion-compact">
         <cdr-accordion
           id="compact"
+          level="3"
           label="Compact"
           :compact="true"
           :opened="accordionCompact"
@@ -128,6 +132,7 @@
         </cdr-accordion>
         <cdr-accordion
           id="compact-2"
+          level="3"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
           :compact="true"
@@ -140,7 +145,7 @@
             <li>Hopefully right font size</li>
           </cdr-list>
         </cdr-accordion>
-      </div>
+      </cdr-accordion-group>
     </div>
   </div>
 </template>
