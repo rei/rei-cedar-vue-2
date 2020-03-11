@@ -67,7 +67,7 @@
 
 @mixin cdr-button-primary-mixin() {
   background-color: $cdr-color-background-button-primary-rest;
-  border: 1px solid $cdr-color-border-button-primary-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-primary-rest;
   color: $cdr-color-text-button-primary;
   fill: $cdr-color-text-button-primary;
 
@@ -76,25 +76,25 @@
 
   &:hover {
     background-color: $cdr-color-background-button-primary-hover;
-    border: 1px solid $cdr-color-border-button-primary-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-primary-hover;
   }
 
   &:active,
   &:focus {
     background-color: $cdr-color-background-button-primary-active;
-    border: 1px solid $cdr-color-border-button-primary-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-primary-active;
   }
 
   &[disabled] {
     background-color: $cdr-color-background-button-default-disabled;
-    border: 1px solid $cdr-color-border-button-default-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
     color: $cdr-color-text-button-primary-disabled;
   }
 }
 
 @mixin cdr-button-secondary-mixin() {
   background-color: $cdr-color-background-button-secondary-rest;
-  border: 1px solid $cdr-color-border-button-secondary-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-rest;
   color: $cdr-color-text-button-secondary;
   fill: $cdr-color-icon-default;
 
@@ -103,18 +103,18 @@
 
   &:hover {
     background-color: $cdr-color-background-button-secondary-hover;
-    border: 1px solid $cdr-color-border-button-secondary-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-hover;
   }
 
   &:active,
   &:focus {
     background-color: $cdr-color-background-button-secondary-active;
-    border: 1px solid $cdr-color-border-button-secondary-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-active;
   }
 
   &[disabled] {
     background-color: $cdr-color-background-button-secondary-disabled;
-    border: 1px solid $cdr-color-border-button-default-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
     color: $cdr-color-text-button-secondary-disabled;
   }
 }
