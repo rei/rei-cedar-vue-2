@@ -34,6 +34,14 @@ $accordion-border: 1px solid #dadada;
     margin-bottom: 0;
   }
 
+  &__header {
+    margin: 0;
+    padding: 0;
+    font-weight: unset;
+    font-style: unset;
+    font-size: unset;
+  }
+
   &__icon {
     margin-left: $cdr-space-one-x;
     fill: $cdr-color-icon-emphasis-lightmode;
