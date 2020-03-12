@@ -98,21 +98,23 @@ export default {
     changeTab(newIndex) {
       const oldIndex = this.activeTabIndex;
 
-      // set animation direction
+      this.hideScrollBar();
       if (newIndex > oldIndex) {
         this.tabs[oldIndex].setAnimationDirection('exit-left');
-        this.tabs[newIndex].setAnimationDirection('enter-right');
+        this.tabs[oldIndex].setActive(false);
+        setTimeout(() => {
+          this.tabs[newIndex].setActive(true);
+          this.tabs[newIndex].setAnimationDirection('enter-right');
+        }, 200);
       } else {
         this.tabs[oldIndex].setAnimationDirection('exit-right');
-        this.tabs[newIndex].setAnimationDirection('enter-left');
-      }
-
-      this.activeTabIndex = newIndex;
-      this.hideScrollBar();
-      this.$nextTick(() => {
         this.tabs[oldIndex].setActive(false);
-        this.tabs[newIndex].setActive(true);
-      });
+        setTimeout(() => {
+          this.tabs[newIndex].setActive(true);
+          this.tabs[newIndex].setAnimationDirection('enter-left');
+        }, 200);
+      }
+      this.activeTabIndex = newIndex;
       this.updateUnderline();
     },
     calculateOverflow() {

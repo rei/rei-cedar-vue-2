@@ -1,7 +1,6 @@
 @import '../../../css/settings/index.scss';
 
 $tab-panel-animation-duration: $cdr-duration-2-x;
-// $tab-panel-animation-duration: 2000ms;
 
 .cdr-tab-panel {
   position: absolute;
@@ -68,7 +67,6 @@ $tab-panel-animation-duration: $cdr-duration-2-x;
     animation-name: enter-left;
   }
   @include cdr-tab-panel-animation;
-  // animation-delay: $tab-panel-animation-duration;
 }
 
 .cdr-tab-panel-enter-right {
@@ -76,7 +74,6 @@ $tab-panel-animation-duration: $cdr-duration-2-x;
     animation-name: enter-right;
   }
   @include cdr-tab-panel-animation;
-  // animation-delay: $tab-panel-animation-duration;
 }
 
 .cdr-tab-panel-exit-left {
