@@ -1,0 +1,25 @@
+/*
+  Note: These classes are deprecated, and will be removed from cedar in the Fall 2020 release.
+*/
+
+@import "../../settings/index";
+
+.cdr-bg--light {
+  background-color: $cdr-color-background-light;
+}
+
+.cdr-bg--lighter {
+  background-color: $cdr-color-background-lighter;
+}
+
+.cdr-bg--lightest {
+  background-color: $cdr-color-background-lightest;
+}
+
+.cdr-bg--dark {
+  background-color: $cdr-color-background-dark;
+}
+
+.cdr-bg--darker {
+  background-color: $cdr-color-background-darker;
+}

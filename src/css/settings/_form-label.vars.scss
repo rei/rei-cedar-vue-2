@@ -4,7 +4,7 @@ $cdr-label-base-spacing: $cdr-space-half-x;
 $cdr-label-figure-size-small: 16px;
 $cdr-label-figure-size-medium: 16px;
 $cdr-label-figure-size-large: 20px;
-$cdr-label-figure-box-shadow: 0 0 8px 0 rgb(50, 120, 174);
+$cdr-label-figure-box-shadow: 0 0 8px 0 $cdr-color-border-input-default-active;
 
 $cdr-label-height-medium: $cdr-text-utility-sans-300-height;
 @mixin cdr-label-base-mixin() {
