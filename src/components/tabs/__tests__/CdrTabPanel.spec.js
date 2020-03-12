@@ -9,6 +9,7 @@ describe('CdrTabPanel', () => {
     const wrapper = mount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -18,6 +19,7 @@ describe('CdrTabPanel', () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
       },
     });
     expect(wrapper.vm.active).toBe(false);
@@ -27,6 +29,7 @@ describe('CdrTabPanel', () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
       },
     });
     wrapper.vm.setActive(true);
@@ -36,70 +39,11 @@ describe('CdrTabPanel', () => {
     });
   });
 
-  it('enter start function properly sets transition', (done) => {
-    const wrapper = shallowMount(CdrTabPanel, {
-      propsData: {
-        name: 'test',
-      },
-    });
-    wrapper.vm.setActive(true);
-
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setEnterStart(wrapper.vm.$el);
-      expect(wrapper.vm.$el.style.animationTimingFunction).toBe('cubic-bezier(0.4, 0, 0.68, .06)');
-      done();
-    });
-  });
-
-  it('enter end function properly clears transition', (done) => {
-    const wrapper = shallowMount(CdrTabPanel, {
-      propsData: {
-        name: 'test',
-      },
-    });
-    wrapper.vm.setActive(true);
-
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setEnterEnd(wrapper.vm.$el);
-      expect(wrapper.vm.$el.style.animationDirection).toBe('');
-      done();
-    });
-  });
-
-  it('leave start function properly sets transition', (done) => {
-    const wrapper = shallowMount(CdrTabPanel, {
-      propsData: {
-        name: 'test',
-      },
-    });
-    wrapper.vm.setActive(true);
-
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setLeaveStart(wrapper.vm.$el);
-      expect(wrapper.vm.$el.style.animationTimingFunction).toBe('cubic-bezier(0.32, 0.94, 0.6, 1)');
-      done();
-    });
-  });
-
-  it('leave end function properly clears transition', (done) => {
-    const wrapper = shallowMount(CdrTabPanel, {
-      propsData: {
-        name: 'test',
-      },
-    });
-    wrapper.vm.setActive(true);
-
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setLeaveEnd(wrapper.vm.$el);
-      expect(wrapper.vm.$el.classList.contains('flyRight')).toBe(false);
-      done();
-    });
-  });
-
   it('set animation direction functions correctly', (done) => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
       },
     });
     wrapper.vm.setActive(true);
@@ -115,6 +59,7 @@ describe('CdrTabPanel', () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
       },
     });
     wrapper.vm.setActive(true);
@@ -134,7 +79,7 @@ describe('CdrTabPanel', () => {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
-        default: ['<cdr-tab-panel name="tab1"/>', '<cdr-tab-panel name="tab2"/>']
+        default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
       },
       methods: {
         updateUnderline: spyUpdateUnderline,
