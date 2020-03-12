@@ -43,8 +43,8 @@ export default {
     baseClass() {
       return 'cdr-tab-panel';
     },
-    activeClass() {
-      return this.active ? this.style['cdr-tab-panel-active-fly-right'] : this.style['cdr-tab-panel-inactive-fly-left']; // eslint-disable-line
+    animationClass() {
+      return this.animationDirection ? style[`cdr-tab-panel-${this.animationDirection}`] : null;
     },
   },
   methods: {
@@ -65,8 +65,8 @@ export default {
     },
     animationEnd(event) {
       if (event.animationName.split('-')[0] === 'exit') {
-        // console.log('setting hidden true', this.name);
         this.hidden = true;
+        this.animationDirection = null;
       }
     },
   },
@@ -75,7 +75,7 @@ export default {
       <div
         aria-hidden={!this.active}
         aria-labelledby={this.ariaLabelledby}
-        class={clsx(this.style[this.baseClass], this.modifierClass, this.activeClass)}
+        class={clsx(this.style[this.baseClass], this.modifierClass, this.animationClass)}
         hidden={this.hidden}
         id={this.id}
         ref="cdrTabPanelContainer"

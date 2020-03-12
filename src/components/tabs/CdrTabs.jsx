@@ -92,9 +92,20 @@ export default {
       return -1;
     },
     handleClick: debounce(function handleClickCallback(tabClicked) {
-      // console.log('tabClicked', tabClicked);
-      const oldIndex = this.activeTabIndex;
       const newIndex = this.tabs.findIndex(tab => tabClicked.name === tab.name);
+      this.changeTab(newIndex);
+    }, 500, { leading: true, trailing: false }),
+    changeTab(newIndex) {
+      const oldIndex = this.activeTabIndex;
+
+      // set animation direction
+      if (newIndex > oldIndex) {
+        this.tabs[oldIndex].setAnimationDirection('exit-left');
+        this.tabs[newIndex].setAnimationDirection('enter-right');
+      } else {
+        this.tabs[oldIndex].setAnimationDirection('exit-right');
+        this.tabs[newIndex].setAnimationDirection('enter-left');
+      }
 
       this.activeTabIndex = newIndex;
       this.hideScrollBar();
@@ -102,27 +113,8 @@ export default {
         this.tabs[oldIndex].setActive(false);
         this.tabs[newIndex].setActive(true);
       });
-
-      // const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
-      // this.tabs.forEach((tab, index) => {
-      //   if (newSelectedTab.name === tab.name) {
-      //     if (this.activeTabIndex < index) {
-      //       tab.setAnimationDirection('flyRight');
-      //       this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-      //     } else {
-      //       tab.setAnimationDirection('flyLeft');
-      //       this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-      //     }
-      //     this.activeTabIndex = index;
-      //     this.hideScrollBar();
-      //     this.$nextTick(() => tab.setActive(true));
-      //   } else {
-      //     this.$nextTick(() => tab.setActive(false));
-      //   }
-      // });
-
       this.updateUnderline();
-    }, 500, { leading: true, trailing: false }),
+    },
     calculateOverflow() {
       let containerWidth = 0;
       if (this.$refs.cdrTabsContainer) {
@@ -152,12 +144,7 @@ export default {
       if (!this.animationInProgress) {
         const nextTab = this.getNextTab(this.activeTabIndex + 1);
         if (nextTab !== -1) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          this.tabs[nextTab].setAnimationDirection('flyRight');
-          this.hideScrollBar();
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex = nextTab;
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
+          this.changeTab(nextTab);
         }
         this.navAnimationProgress();
       }
@@ -166,12 +153,7 @@ export default {
       if (!this.animationInProgress) {
         const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
         if (previousTab !== -1) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          this.tabs[previousTab].setAnimationDirection('flyLeft');
-          this.hideScrollBar();
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex = previousTab;
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
+          this.changeTab(previousTab);
         }
         this.navAnimationProgress();
       }
