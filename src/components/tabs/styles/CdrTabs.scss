@@ -157,7 +157,7 @@
 
     /* border: none; */
     background-color: $cdr-color-text-link-lightmode;
-    transition: 400ms cubic-bezier(0.32, 0.94, 0.6, 1);
+    transition: $cdr-duration-4-x $cdr-timing-function-ease-out;
   }
 
   &__content-container {

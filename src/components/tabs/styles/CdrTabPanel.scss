@@ -1,7 +1,5 @@
 @import '../../../css/settings/index.scss';
 
-$tab-panel-animation-duration: $cdr-duration-2-x;
-
 .cdr-tab-panel {
   position: absolute;
   width: 100%;
@@ -58,8 +56,8 @@ $tab-panel-animation-duration: $cdr-duration-2-x;
 }
 
 @mixin cdr-tab-panel-animation {
-  animation-duration: $tab-panel-animation-duration;
-  animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1);
+  animation-duration: $cdr-duration-2-x;
+  animation-timing-function: $cdr-timing-function-ease-out;
 }
 
 .cdr-tab-panel-enter-left {
