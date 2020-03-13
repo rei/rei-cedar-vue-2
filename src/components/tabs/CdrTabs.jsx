@@ -217,7 +217,7 @@ export default {
           id={tab.ariaLabelledby}
           tabIndex={tab.active ? 0 : -1}
           vOn:click_prevent={e => this.handleClick(tab, e)}
-          href={`#${tab.id || tab.name}`}
+          href={`#${tab.id}`}
           class={this.style['cdr-tabs__header-item-label']}
         >
           { tab.name }
@@ -254,9 +254,9 @@ export default {
               role="tablist"
               ref="cdrTabsHeader"
             >
-              {this.tabs.map((tab, index) => (
+              {this.tabs.map(tab => (
                   <li
-                    key={tab.id ? tab.id : `${tab.name}-${index}`}
+                    key={tab.id}
                     class={clsx(
                       tab.active ? this.style['cdr-tabs__header-item-active'] : '',
                       this.style['cdr-tabs__header-item'],
