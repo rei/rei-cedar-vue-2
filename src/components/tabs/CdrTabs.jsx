@@ -116,7 +116,20 @@ export default {
       }
       this.activeTabIndex = newIndex;
       this.updateUnderline();
+      this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
     },
+    rightArrowNav: debounce(function handleRightArrow() {
+      const nextTab = this.getNextTab(this.activeTabIndex + 1);
+      if (nextTab !== -1) {
+        this.changeTab(nextTab);
+      }
+    }, 300, { leading: true, trailing: false }),
+    leftArrowNav: debounce(function handleLeftArrow() {
+      const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
+      if (previousTab !== -1) {
+        this.changeTab(previousTab);
+      }
+    }, 300, { leading: true, trailing: false }),
     calculateOverflow() {
       let containerWidth = 0;
       if (this.$refs.cdrTabsContainer) {
@@ -140,34 +153,6 @@ export default {
         this.underlineOffsetX = activeTab.offsetLeft
           - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
         this.underlineWidth = activeTab.firstChild.offsetWidth;
-      }
-    },
-    rightArrowNav() {
-      if (!this.animationInProgress) {
-        const nextTab = this.getNextTab(this.activeTabIndex + 1);
-        if (nextTab !== -1) {
-          this.changeTab(nextTab);
-        }
-        this.navAnimationProgress();
-      }
-    },
-    leftArrowNav() {
-      if (!this.animationInProgress) {
-        const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
-        if (previousTab !== -1) {
-          this.changeTab(previousTab);
-        }
-        this.navAnimationProgress();
-      }
-    },
-    navAnimationProgress() {
-      if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]) {
-        this.animationInProgress = true;
-        delay(() => {
-          this.animationInProgress = false;
-        }, 600);
-        this.updateUnderline();
-        this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
       }
     },
     handleDownArrowNav() {
