@@ -5,8 +5,13 @@ $accordion-border: 1px solid $cdr-color-border-primary;
 
 .cdr-accordion {
   border-top: $accordion-border;
+  border-bottom: $accordion-border;
   position: relative;
   z-index: 1;
+
+  &+& {
+    border-top: none;
+  }
 
   &__button {
     @include cdr-text-utility-sans-strong-300;
@@ -32,6 +37,14 @@ $accordion-border: 1px solid $cdr-color-border-primary;
   &__label {
     cursor: pointer;
     margin-bottom: 0;
+  }
+
+  &__header {
+    margin: 0;
+    padding: 0;
+    font-weight: unset;
+    font-style: unset;
+    font-size: unset;
   }
 
   &__icon {
@@ -126,10 +139,6 @@ $accordion-border: 1px solid $cdr-color-border-primary;
     .cdr-accordion__content {
       padding: $cdr-space-quarter-x 0 $cdr-space-three-quarter-x;
     }
-  }
-
-  &:last-child {
-    border-bottom: $accordion-border;
   }
 
   &--focused {
