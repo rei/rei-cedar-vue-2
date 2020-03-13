@@ -132,6 +132,13 @@ $rating-color: #2b6692;
     @include cdr-rating-large;
   }
 
+  /* Medium
+    ========== */
+
+  &--medium {
+    @include cdr-rating-medium();
+  }
+
   /* Small
     ========== */
 
@@ -139,11 +146,13 @@ $rating-color: #2b6692;
     @include cdr-rating-small;
   }
 
-// TODO: does medium need to be here too? probably?
-
   @include xs-mq-only {
     &--small\@xs {
       @include cdr-rating-small;
+    }
+
+    &--medium\@xs {
+      @include cdr-rating-medium;
     }
 
     &--large\@xs {
@@ -156,6 +165,10 @@ $rating-color: #2b6692;
       @include cdr-rating-small;
     }
 
+    &--medium\@sm {
+      @include cdr-rating-medium;
+    }
+
     &--large\@sm {
       @include cdr-rating-large;
     }
@@ -166,6 +179,10 @@ $rating-color: #2b6692;
       @include cdr-rating-small;
     }
 
+    &--medium\@md {
+      @include cdr-rating-medium;
+    }
+
     &--large\@md {
       @include cdr-rating-large;
     }
@@ -174,6 +191,10 @@ $rating-color: #2b6692;
   @include lg-mq-only {
     &--small\@lg {
       @include cdr-rating-small;
+    }
+
+    &--medium\@lg {
+      @include cdr-rating-medium;
     }
 
     &--large\@lg {
