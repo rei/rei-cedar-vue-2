@@ -47,8 +47,14 @@ $rating-color: #2b6692;
   position: relative;
   line-height: 1;
 
+  color: $cdr-color-text-rating-default;
+
   /* Elements
     ========================================================================== */
+
+  &__number {
+    font-weight: 600;
+  }
 
   &__ratings {
     display: flex;
@@ -107,11 +113,12 @@ $rating-color: #2b6692;
       &:hover,
       &:active,
       &:focus {
+        color: $cdr-color-text-rating-hover;
         text-decoration: underline;
       }
 
       & > .cdr-rating__number {
-        border-right: 1px solid $cdr-color-border-secondary-lightmode;
+        border-right: 1px solid $cdr-color-text-rating-separator;
         padding: 0 $cdr-space-quarter-x;
         margin-right: $cdr-space-quarter-x;
       }
@@ -131,45 +138,6 @@ $rating-color: #2b6692;
   &--small {
     @include cdr-rating-small;
   }
-
-  /* Content Color Variants
-    ========================================================================== */
-  &--primary {
-    & .cdr-rating__count {
-      color: $cdr-color-text-primary-lightmode;
-    }
-
-    & .cdr-rating--linked {
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration-color: $cdr-color-text-primary-lightmode;
-      }
-    }
-
-    & .cdr-rating__number {
-      border-right-color: $cdr-color-border-secondary-lightmode;
-    }
-  }
-
-  &--secondary {
-    & .cdr-rating__count {
-      color: $cdr-color-text-secondary-lightmode;
-    }
-
-    & .cdr-rating--linked {
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration-color: $cdr-color-text-secondary-lightmode;
-      }
-    }
-
-    & .cdr-rating__number {
-      border-right-color: $cdr-color-border-secondary-lightmode;
-    }
-  }
-
 
 // TODO: does medium need to be here too? probably?
 
