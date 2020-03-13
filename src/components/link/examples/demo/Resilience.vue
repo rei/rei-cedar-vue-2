@@ -61,51 +61,6 @@
       >I'm a button!</cdr-link>
     </div>
 
-    <!-- Nested theme Testing -->
-
-    <!-- <cdr-themer
-      theme="light"
-      background="lightest"
-    > -->
-    <!-- Smaller examples with nested theme (for override) -->
-    <!-- <p>Works nested</p>
-      <p>
-        <cdr-link
-          href="https://www.rei.com/"
-          space="cdr-pl-space-one-x cdr-pr-space-one-x"
-        >
-          REI.com
-        </cdr-link>
-        <cdr-link
-          href="https://www.rei.com/"
-          modifier="standalone"
-        >REI.com</cdr-link>
-      </p> -->
-    <!-- Override individual theme -->
-    <!-- <p>Individual override (dark on light)</p>
-      <p>
-        <cdr-link
-          href="https://www.rei.com/"
-          theme="dark">REI.com</cdr-link>
-      </p> -->
-    <!-- </cdr-themer> -->
-
-    <cdr-link
-      href="https://www.rei.com/"
-      space="cdr-pl-space-one-x cdr-pr-space-one-x"
-      @click.prevent="clicked"
-    >REI.com</cdr-link>
-    <cdr-link
-      href="https://www.rei.com/"
-    >REI.com</cdr-link>
-    <p>Override (light on dark)</p>
-    <cdr-link
-      href="https://www.rei.com/"
-      space="cdr-space-inset-one-x"
-      theme="light"
-    >
-      REI.com
-    </cdr-link>
 
     <cdr-text
       tag="h4"
