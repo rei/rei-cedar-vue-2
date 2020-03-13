@@ -1,73 +1,3 @@
-/*~~~~~~~~COLORS~~~~~~~~~~~~~~~~~~~~~*/
-$cdr-button-primary-background-color: #3278ae;
-
-
-// button-in-interacted-state
-$cdr-button-primary-background-color-hover: #2b6692;
-$cdr-button-primary-background-color-active: #2b6692;
-$cdr-button-primary-background-color-focus: #2b6692;
-
-
-// primary-button-disabled
-$cdr-button-primary-background-color-disabled: #dadada;
-
-
-// should this just be $cdr-color-text-primary-darkmode / #fafafa instead?
-$cdr-button-primary-fill: #ffffff;
-$cdr-button-primary-color: #ffffff;
-$cdr-button-primary-fill-hover: #ffffff;
-$cdr-button-primary-color-hover: #ffffff;
-$cdr-button-primary-fill-active: #ffffff;
-$cdr-button-primary-color-active: #ffffff;
-$cdr-button-primary-fill-focus: #ffffff;
-$cdr-button-primary-color-focus: #ffffff;
-$cdr-button-primary-color-disabled: #ffffff;
-
-
-// NOTE: all of the secondary colors corresponded to existing tokens.
-
-
-
-/*~~~~~~~~BOX SHADOWS~~~~~~~~~~~~~~~~~~~~~*/
-
-// We Probably shouldn't have specific
-// `cdr-button-box-shadow` tokens for each of these cases,
-// rather we should have one token that is `inset 0 0 0 1px`
-//  which gets combined with other color tokens (which might be specific or generic)
-// For example,
-// box-shadow: $cdr-box-shadow-whatever $cdr-button-background-color
-// box-shadow: $cdr-box-shadow-whatever $cdr-color-whatever-generic-token
-// instead of
-// box-shadow: $cdr-button-box-shadow-primary;
-
-
-
-// primary static/hover/active/focus box shadow
-// NOTE: same color value as button-in-interacted-state background color above
-$cdr-button-primary-box-shadow: inset 0 0 0 1px #2b6692;
-$cdr-button-primary-box-shadow-hover: inset 0 0 0 1px #2b6692;
-$cdr-button-primary-box-shadow-active: inset 0 0 0 1px #2b6692;
-$cdr-button-primary-box-shadow-focus: inset 0 0 0 1px #2b6692;
-
-// primary disabled box shadow
-$cdr-button-primary-box-shadow-disabled: inset 0 0 0 1px #b8b8b8;
-
-// secondary static/hover/active/focus box shadow
-$cdr-button-secondary-box-shadow-hover: inset 0 0 0 1px #616161;
-$cdr-button-secondary-box-shadow: inset 0 0 0 1px #616161;
-$cdr-button-secondary-box-shadow-active: inset 0 0 0 1px #616161;
-$cdr-button-secondary-box-shadow-focus: inset 0 0 0 1px #616161;
-
-// secondary disabled box shadow
-// NOTE: same color as primary-button-disabled background color above
-$cdr-button-secondary-box-shadow-disabled: inset 0 0 0 1px #dadada;
-
-
-/*~~~~~~~~TYPE~~~~~~~~~~~~~~~~~~~~~*/
-
-// since these type mixins are fully custom they could
-// be turned into tokens, or they can just stay in this file.
-
 @mixin cdr-button-base-text-mixin-small() {
   font-family: $cdr-font-family-sans;
   font-style: normal;
@@ -95,7 +25,7 @@ $cdr-button-secondary-box-shadow-disabled: inset 0 0 0 1px #dadada;
   line-height: 24px;
 }
 
-/* start of mixin/component variables land */
+/* start of mixins/component variables*/
 
 @mixin cdr-button-base-mixin() {
   @include cdr-button-base-text-mixin-medium;
@@ -136,80 +66,56 @@ $cdr-button-secondary-box-shadow-disabled: inset 0 0 0 1px #dadada;
 }
 
 @mixin cdr-button-primary-mixin() {
-  background-color: $cdr-button-primary-background-color;
-  box-shadow: $cdr-button-primary-box-shadow;
-  color: $cdr-button-primary-color;
-  fill: $cdr-button-primary-fill;
+  background-color: $cdr-color-background-button-primary-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-primary-rest;
+  color: $cdr-color-text-button-primary;
+  fill: $cdr-color-text-button-primary;
 
   /* States
     ---------- */
 
-// TODO: combine hover/active/focus declarations as possible
   &:hover {
-    background-color: $cdr-button-primary-background-color-hover;
-    color: $cdr-button-primary-color-hover;
-    box-shadow: $cdr-button-primary-box-shadow-hover;
-    fill: $cdr-button-primary-fill-hover;
+    background-color: $cdr-color-background-button-primary-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-primary-hover;
   }
 
-  &:active {
-    background-color: $cdr-button-primary-background-color-active;
-    color: $cdr-button-primary-color-active;
-    box-shadow: $cdr-button-primary-box-shadow-active;
-    fill: $cdr-button-primary-fill-active;
-  }
-
+  &:active,
   &:focus {
-    background-color: $cdr-button-primary-background-color-focus;
-    color: $cdr-button-primary-color-focus;
-    box-shadow: $cdr-button-primary-box-shadow-focus;
-    fill: $cdr-button-primary-fill-focus;
+    background-color: $cdr-color-background-button-primary-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-primary-active;
   }
 
   &[disabled] {
-    background-color: $cdr-button-primary-background-color-disabled;
-    box-shadow: $cdr-button-primary-box-shadow-disabled;
-    color: $cdr-button-primary-color-disabled;
-    fill: $cdr-button-primary-color-disabled;
+    background-color: $cdr-color-background-button-default-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
+    color: $cdr-color-text-button-primary-disabled;
   }
 }
 
 @mixin cdr-button-secondary-mixin() {
-  background-color: $cdr-color-background-lightest;
-  box-shadow: $cdr-button-secondary-box-shadow;
-  color: $cdr-color-text-primary-lightmode;
-  fill: $cdr-color-text-primary-lightmode;
+  background-color: $cdr-color-background-button-secondary-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-rest;
+  color: $cdr-color-text-button-secondary;
+  fill: $cdr-color-icon-default;
 
   /* States
   ---------- */
 
-// TODO: combine hover/active/focus declarations as possible
   &:hover {
-    background-color: $cdr-color-background-light;
-    box-shadow: $cdr-button-secondary-box-shadow-hover;
-    color: $cdr-color-text-primary-lightmode;
-    fill: $cdr-color-text-primary-lightmode;
+    background-color: $cdr-color-background-button-secondary-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-hover;
   }
 
-  &:active {
-    background-color: $cdr-color-background-light;
-    box-shadow: $cdr-button-secondary-box-shadow-active;
-    color: $cdr-color-text-primary-lightmode;
-    fill: $cdr-color-text-primary-lightmode;
-  }
-
+  &:active,
   &:focus {
-    background-color: $cdr-color-background-light;
-    box-shadow: $cdr-button-secondary-box-shadow-focus;
-    color: $cdr-color-text-primary-lightmode;
-    fill: $cdr-color-text-primary-lightmode;
+    background-color: $cdr-color-background-button-secondary-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-active;
   }
 
   &[disabled] {
-    background-color: $cdr-color-background-lightest;
-    box-shadow: $cdr-button-secondary-box-shadow-disabled;
-    color: $cdr-color-text-disabled-lightmode;
-    fill: $cdr-color-text-disabled-lightmode;
+    background-color: $cdr-color-background-button-secondary-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
+    color: $cdr-color-text-button-secondary-disabled;
   }
 }
 
@@ -225,19 +131,20 @@ $cdr-button-secondary-box-shadow-disabled: inset 0 0 0 1px #dadada;
   box-shadow: none;
   display: inline-block;
   padding: $cdr-space-inset-half-x;
-  fill: $cdr-color-icon-emphasis-lightmode;
+  fill: $cdr-color-icon-default;
 
   &:hover, &:active, &:focus {
-    background: $cdr-color-background-light;
+    background: $cdr-color-background-button-icon-alt-hover;
     box-shadow: none;
-    fill: $cdr-color-icon-emphasis-lightmode;
+    border: none;
   }
 
 
   &[disabled] {
     background: transparent;
     box-shadow: none;
-    fill: $cdr-color-text-disabled-lightmode;
+    border: none;
+    fill: $cdr-color-icon-disabled;
   }
 }
 

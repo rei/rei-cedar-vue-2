@@ -50,89 +50,98 @@
 
 
 @mixin cdr-cta-brand-mixin() {
-  background-color: #3278ae;
-  box-shadow: inset 0 0 0 1px #2b6692;
-  color: #ffffff;
-  fill: #ffffff;
+  background-color: $cdr-color-background-cta-brand-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-brand-rest;
+  color: $cdr-color-text-cta-brand;
+  fill: $cdr-color-text-cta-brand;
 
-  &:hover,
   &:active,
   &:focus {
-    background-color: #2b6692;
-    box-shadow: inset 0 0 0 1px #2b6692;
-    color: #ffffff;
-    fill: #ffffff;
+    background-color: $cdr-color-background-cta-brand-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-brand-active;
+  }
+
+  &:hover {
+    background-color: $cdr-color-background-cta-brand-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-brand-hover;
   }
 }
 
 @mixin cdr-cta-dark-mixin() {
-  background-color: #292929;
-  box-shadow: inset 0 0 0 1px #434343;
-  color: #ffffff;
-  fill: #ffffff;
+  background-color: $cdr-color-background-cta-dark-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-dark-rest;
+  color: $cdr-color-text-cta-dark;
+  fill: $cdr-color-text-cta-dark;
 
-  &:hover,
   &:active,
   &:focus {
-    background-color: #434343;
-    box-shadow: inset 0 0 0 1px #434343;
-    color: #ffffff;
+    background-color: $cdr-color-background-cta-dark-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-dark-active;
+  }
 
-    & > .cdr-cta__icon {
-      fill: #ffffff;
-    }
+  &:hover {
+    background-color: $cdr-color-background-cta-dark-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-dark-hover;
   }
 }
 
 @mixin cdr-cta-light-mixin() {
-  background-color: #ffffff;
-  box-shadow: inset 0 0 0 1px #616161;
-  color: #292929;
-  fill: #292929;
+  background-color: $cdr-color-background-cta-light-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-rest;
+  color: $cdr-color-text-cta-light;
+  fill: $cdr-color-text-cta-light;
 
-  &:hover,
   &:active,
   &:focus {
-    background-color: #f7f7f7;
-    box-shadow: inset 0 0 0 1px #616161;
-    color: #292929;
-    fill: #292929;
+    background-color: $cdr-color-background-cta-light-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-active;
+  }
+
+  &:hover {
+    background-color: $cdr-color-background-cta-light-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-hover;
   }
 }
 
 @mixin cdr-cta-light-elevated-mixin() {
-  box-shadow: inset 0 0 0 1px #616161, $cdr-prominence-elevated;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-rest, $cdr-prominence-elevated;
 
-  &:hover,
   &:active,
   &:focus {
-    box-shadow: inset 0 0 0 1px #616161, $cdr-prominence-elevated;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-active, $cdr-prominence-raised;
+  }
+  &:hover {
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-hover, $cdr-prominence-floating;
   }
 }
 
 @mixin cdr-cta-sale-mixin() {
-  background-color: #b5292b;
-  box-shadow: inset 0 0 0 1px #a12024;
-  color: #ffffff;
-  fill: #ffffff;
+  background-color: $cdr-color-background-cta-sale-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-sale-rest;
+  color: $cdr-color-text-cta-sale;
+  fill: $cdr-color-text-cta-sale;
 
-  &:hover,
   &:active,
   &:focus {
-    background-color: #a12024;
-    box-shadow: inset 0 0 0 1px #a12024;
-    color: #ffffff;
-    fill: #ffffff;
+    background-color: $cdr-color-background-cta-sale-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-sale-active;
+  }
+
+  &:hover {
+    background-color: $cdr-color-background-cta-sale-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-cta-sale-hover;
   }
 }
 
 @mixin cdr-cta-elevated-mixin() {
   box-shadow: $cdr-prominence-elevated;
 
-  // TODO: are these necessary since no style change?
-  &:hover,
   &:active,
   &:focus {
-    box-shadow: $cdr-prominence-elevated;
+    box-shadow: $cdr-prominence-raised;
+  }
+
+  &:hover {
+    box-shadow: $cdr-prominence-floating;
   }
 }

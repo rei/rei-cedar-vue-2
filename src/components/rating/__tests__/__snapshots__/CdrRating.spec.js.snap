@@ -2,7 +2,7 @@
 
 exports[`CdrRating renders correctly 1`] = `
 <div
-  class="cdr-rating cdr-rating--primary"
+  class="cdr-rating"
 >
   <div
     class="cdr-rating__ratings"
