@@ -75,12 +75,21 @@ export default {
     }, 250));
   },
   methods: {
-    getNextTab(startIndex = 0) {
+    getNextTab(startIndex) {
       for (let i = startIndex; i < this.tabs.length; i += 1) {
         if (!this.tabs[i].disabled) {
           return i;
         }
       }
+
+      if (startIndex !== 0) {
+        for (let k = 0; k < startIndex; k += 1) {
+          if (!this.tabs[k].disabled) {
+            return k;
+          }
+        }
+      }
+
       return -1;
     },
     getPreviousTab(startIndex) {
@@ -89,6 +98,15 @@ export default {
           return i;
         }
       }
+
+      if (startIndex !== this.tabs.length - 1) {
+        for (let k = this.tabs.length - 1; k > startIndex; k -= 1) {
+          if (!this.tabs[k].disabled) {
+            return k;
+          }
+        }
+      }
+
       return -1;
     },
     handleClick: debounce(function handleClickCallback(tabClicked) {
