@@ -171,7 +171,7 @@ describe('CdrTabs', () => {
       });
     });
 
-    xit('right to left', (done) => {
+    it('right to left', (done) => {
       const wrapper = mount(CdrTabs, {
         stubs: {
           'cdr-tab-panel': CdrTabPanel,
@@ -179,7 +179,8 @@ describe('CdrTabs', () => {
         slots: {
           default: [
             '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />',
+            '<cdr-tab-panel name="tab2" id="tab-panel-3" aria-labelledby="tab-3" />'
           ],
         },
         propsData: {
@@ -188,11 +189,14 @@ describe('CdrTabs', () => {
       });
       
       Vue.nextTick(() => {
-        const test = wrapper.findAll('a').at(0);
-        console.log('test', test);
-        // wrapper.findAll('a').at(0).trigger('click');
-        // expect(wrapper.vm.activeTabIndex).toBe(1);
-        done();
+        expect(wrapper.vm.activeTabIndex).toBe(1);
+        wrapper.vm.changeTab(0);
+        Vue.nextTick(() => {
+          setTimeout(() => {
+            expect(wrapper.vm.activeTabIndex).toBe(0)
+            done();
+          }, 300);
+        });
       });
     });
   });
