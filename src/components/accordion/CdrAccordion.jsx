@@ -45,6 +45,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    // Sets the heading level
+    level: {
+      type: [String, Number],
+      required: true,
+    },
   },
   data() {
     return {
@@ -104,6 +109,8 @@ export default {
     },
   },
   render() {
+    const Heading = `h${this.level}`;
+
     return (<div
       class={clsx(this.style[this.baseClass],
         this.modifierClass,
@@ -112,26 +119,28 @@ export default {
       id={`${this.id}-accordion`}
       ref="accordion-container"
     >
-      <button
-        class={this.style['cdr-accordion__button']}
-        id={this.id}
-        onClick={this.onClick}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        aria-expanded={`${this.opened}`}
-        aria-controls={`${this.id}-collapsible`}
-      >
-        <span
-          class={this.style['cdr-accordion__label']}
-          id={`${this.id}-label`}
-        >
-          { this.$slots.label || this.label}
-        </span>
-        <icon-caret-down
-          class={clsx(this.style['cdr-accordion__icon'], this.isOpenClass)}
-          size={this.compact ? 'small' : null}
-        />
-      </button>
+      <Heading class={this.style['cdr-accordion__header']}>
+        <button
+          class={[this.style['cdr-accordion__button'], 'js-cdr-accordion-button']} // .js-accordion-button is for group focus management
+          id={this.id}
+          onClick={this.onClick}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          aria-expanded={`${this.opened}`}
+          aria-controls={`${this.id}-collapsible`}
+          >
+          <span
+            class={this.style['cdr-accordion__label']}
+            id={`${this.id}-label`}
+            >
+            { this.$slots.label || this.label}
+          </span>
+          <icon-caret-down
+            class={clsx(this.style['cdr-accordion__icon'], this.isOpenClass)}
+            size={this.compact ? 'small' : null}
+            />
+        </button>
+      </Heading>
       <div
         class={clsx(this.style['cdr-accordion__content-container'], this.isOpenClass)}
         style={ { maxHeight: this.maxHeight } }

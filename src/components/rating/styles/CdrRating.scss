@@ -47,8 +47,14 @@ $rating-color: #2b6692;
   position: relative;
   line-height: 1;
 
+  color: $cdr-color-text-rating-default;
+
   /* Elements
     ========================================================================== */
+
+  &__number {
+    font-weight: 600;
+  }
 
   &__ratings {
     display: flex;
@@ -107,11 +113,12 @@ $rating-color: #2b6692;
       &:hover,
       &:active,
       &:focus {
+        color: $cdr-color-text-rating-hover;
         text-decoration: underline;
       }
 
       & > .cdr-rating__number {
-        border-right: 1px solid $cdr-color-border-secondary-lightmode;
+        border-right: 1px solid $cdr-color-text-rating-separator;
         padding: 0 $cdr-space-quarter-x;
         margin-right: $cdr-space-quarter-x;
       }
@@ -125,6 +132,13 @@ $rating-color: #2b6692;
     @include cdr-rating-large;
   }
 
+  /* Medium
+    ========== */
+
+  &--medium {
+    @include cdr-rating-medium();
+  }
+
   /* Small
     ========== */
 
@@ -132,50 +146,13 @@ $rating-color: #2b6692;
     @include cdr-rating-small;
   }
 
-  /* Content Color Variants
-    ========================================================================== */
-  &--primary {
-    & .cdr-rating__count {
-      color: $cdr-color-text-primary-lightmode;
-    }
-
-    & .cdr-rating--linked {
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration-color: $cdr-color-text-primary-lightmode;
-      }
-    }
-
-    & .cdr-rating__number {
-      border-right-color: $cdr-color-border-secondary-lightmode;
-    }
-  }
-
-  &--secondary {
-    & .cdr-rating__count {
-      color: $cdr-color-text-secondary-lightmode;
-    }
-
-    & .cdr-rating--linked {
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration-color: $cdr-color-text-secondary-lightmode;
-      }
-    }
-
-    & .cdr-rating__number {
-      border-right-color: $cdr-color-border-secondary-lightmode;
-    }
-  }
-
-
-// TODO: does medium need to be here too? probably?
-
   @include xs-mq-only {
     &--small\@xs {
       @include cdr-rating-small;
+    }
+
+    &--medium\@xs {
+      @include cdr-rating-medium;
     }
 
     &--large\@xs {
@@ -188,6 +165,10 @@ $rating-color: #2b6692;
       @include cdr-rating-small;
     }
 
+    &--medium\@sm {
+      @include cdr-rating-medium;
+    }
+
     &--large\@sm {
       @include cdr-rating-large;
     }
@@ -198,6 +179,10 @@ $rating-color: #2b6692;
       @include cdr-rating-small;
     }
 
+    &--medium\@md {
+      @include cdr-rating-medium;
+    }
+
     &--large\@md {
       @include cdr-rating-large;
     }
@@ -206,6 +191,10 @@ $rating-color: #2b6692;
   @include lg-mq-only {
     &--small\@lg {
       @include cdr-rating-small;
+    }
+
+    &--medium\@lg {
+      @include cdr-rating-medium;
     }
 
     &--large\@lg {

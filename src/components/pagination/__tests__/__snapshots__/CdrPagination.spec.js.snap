@@ -11,6 +11,7 @@ exports[`CdrPagination renders correctly 1`] = `
       aria-hidden="true"
     >
       <span
+        aria-disabled="true"
         class="cdr-pagination__link cdr-pagination__prev cdr-pagination__link--disabled"
       >
         <svg

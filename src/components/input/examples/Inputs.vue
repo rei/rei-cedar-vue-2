@@ -186,7 +186,6 @@ export default {
 <style>
   .demo-input {
     margin: 10px;
-    background: white;
-    line-height: 1;
+    /*line-height: 1;*/
   }
 </style>

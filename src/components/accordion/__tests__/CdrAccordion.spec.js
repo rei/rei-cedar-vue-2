@@ -4,16 +4,18 @@ import CdrAccordion from 'componentdir/accordion/CdrAccordion';
 const propsData = {
   id: 'test',
   label: 'A label',
+  level: '2',
   compact: false,
   borderAligned: false,
 };
 
 describe('CdrAccordion', () => {
-  test('renders correctly', () => {
+  it('renders correctly', () => {
     const wrapper = shallowMount(CdrAccordion, {
       propsData: {
         id: 'test',
         label: 'label',
+        level: '2',
       },
       slots: {
         default: 'This is some slot text.'
@@ -22,12 +24,39 @@ describe('CdrAccordion', () => {
     expect(wrapper.element).toMatchSnapshot()
   });
 
+  // TODO add more checks here
+  it('meets a11y requirements', () => {
+    const wrapper = shallowMount(CdrAccordion, {
+      propsData: {
+        id: 'test',
+        label: 'label',
+        level: '2',
+      },
+      slots: {
+        default: 'This is some slot text.'
+      },
+    });
+    const button = wrapper.find('#test');
+    const contentArea = wrapper.find({ ref: 'accordion-content' });
+    expect(button.classes()).toContain('js-cdr-accordion-button');
+    // closed state
+    expect(button.attributes('aria-expanded')).toBe('false');
+    expect(button.attributes('aria-controls')).toBe(`${wrapper.vm.id}-collapsible`);
+    
+    // opened state
+    button.trigger('click');
+    wrapper.setData({ opened: true }); // fake the opening logic
+    expect(button.attributes('aria-expanded')).toBe('true');
+    expect(contentArea.attributes('aria-hidden')).toBe('false');
+  })
+
   describe('accordion data setup', () => {
     it('sets maxHeight when starting closed', () => {
       const wrapper = shallowMount(CdrAccordion, {
         propsData: {
           id: 'test',
           label: 'label',
+          level: '2',
           opened: false,
         },
         slots: {
@@ -43,6 +72,7 @@ describe('CdrAccordion', () => {
         propsData: {
           id: 'test',
           label: 'label',
+          level: '2',
           opened: true,
         },
         slots: {
@@ -60,6 +90,7 @@ describe('CdrAccordion', () => {
         propsData: {
           id: 'test',
           label: 'label',
+          level: '2',
         },
         slots: {
           default: 'This is some slot text.'
@@ -75,6 +106,7 @@ describe('CdrAccordion', () => {
         propsData: {
           id: 'test',
           label: 'label',
+          level: '2',
           opened: true,
         },
         slots: {
@@ -92,6 +124,7 @@ describe('CdrAccordion', () => {
       propsData: {
         id: 'test',
         label: 'label',
+        level: '2',
         opened: false,
       },
       slots: {
@@ -121,6 +154,7 @@ describe('CdrAccordion', () => {
       propsData: {
         id: 'test',
         label: 'A label',
+        level: '2',
         compact: true,
         borderAligned: true,
       },
