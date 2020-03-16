@@ -216,6 +216,7 @@ export default {
       reallyClosed,
       $slots: {
         default: defaultSlot,
+        footer: footerSlot,
       },
     } = this;
     return (
@@ -297,6 +298,7 @@ export default {
                   >
                     <div class={this.style['cdr-modal__text-content']}>
                       {defaultSlot}
+                      {footerSlot}
                     </div>
                     <div class={this.style['cdr-modal__text-fade']} />
                   </div>
