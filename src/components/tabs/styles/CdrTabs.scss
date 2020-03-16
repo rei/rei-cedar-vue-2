@@ -38,7 +38,7 @@
 
   &__header-container {
     overflow-x: auto;
-    border-bottom: 1px solid $cdr-color-border-secondary-lightmode;
+    border-bottom: 1px solid $cdr-color-border-tab-keyline-rest;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     &::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
@@ -112,8 +112,9 @@
       margin-left: $cdr-space-one-x;
     }
 
-    &[aria-selected] > .cdr-tabs__header-item-label {
-      color: $cdr-color-text-link-lightmode;
+    & [aria-selected].cdr-tabs__header-item-label {
+      color: $cdr-color-text-tab-active;
+      font-weight: 500;
     }
   }
 
@@ -123,7 +124,7 @@
     display: block;
     text-decoration: none;
     padding: $cdr-space-inset-half-x-stretch;
-    color: $cdr-color-text-primary-lightmode;
+    color: $cdr-color-text-tab-rest;
     white-space: nowrap;
     outline-offset: -3px;
 
@@ -131,16 +132,16 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      color: $cdr-color-text-link-lightmode;
+      color: $cdr-color-text-tab-hover;
     }
 
     &--disabled {
-      color: $cdr-color-text-disabled;
+      color: $cdr-color-text-tab-disabled;
 
       &:active,
       &:hover,
       &:focus {
-        color: $cdr-color-text-disabled;
+        color: $cdr-color-text-tab-disabled;
         cursor: not-allowed;
       }
     }
@@ -152,11 +153,12 @@
     width: 30px;
     margin: 0;
     height: $cdr-space-quarter-x;
+    margin-top: -$cdr-space-quarter-x;
     box-sizing: border-box;
     border: none;
 
     /* border: none; */
-    background-color: $cdr-color-text-link-lightmode;
+    background-color: $cdr-color-border-tab-keyline-active;
     transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
   }
 

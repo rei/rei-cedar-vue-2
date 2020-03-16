@@ -1,19 +1,24 @@
 @import '../../../css/settings/index.scss';
 @import url('@rei/cedar/dist/style/cdr-icon.css');
 
-$accordion-border: 1px solid #dadada;
+$accordion-border: 1px solid $cdr-color-border-primary;
 
 .cdr-accordion {
   border-top: $accordion-border;
+  border-bottom: $accordion-border;
   position: relative;
   z-index: 1;
+
+  &+& {
+    border-top: none;
+  }
 
   &__button {
     @include cdr-text-utility-sans-strong-300;
 
-    background-color: $cdr-color-background-lightest;
+    background-color: transparent;
     border: none;
-    color: $cdr-color-text-primary-lightmode;
+    color: $cdr-color-text-primary;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -25,7 +30,7 @@ $accordion-border: 1px solid #dadada;
 
     &:hover,
     &:focus {
-      background-color: $cdr-color-background-light;
+      background-color: $cdr-color-background-accordion-hover;
     }
   }
 
@@ -34,9 +39,17 @@ $accordion-border: 1px solid #dadada;
     margin-bottom: 0;
   }
 
+  &__header {
+    margin: 0;
+    padding: 0;
+    font-weight: unset;
+    font-style: unset;
+    font-size: unset;
+  }
+
   &__icon {
     margin-left: $cdr-space-one-x;
-    fill: $cdr-color-icon-emphasis-lightmode;
+    fill: $cdr-color-icon-default;
     transition: transform $cdr-duration-3-x $cdr-timing-function-ease-out;
 
     &:global(.open) {
@@ -58,8 +71,8 @@ $accordion-border: 1px solid #dadada;
   &__content {
     @include cdr-text-body-300;
 
-    background-color: $cdr-color-background-lightest;
-    color: $cdr-color-text-primary-lightmode;
+    background-color: transparent;
+    color: $cdr-color-text-primary;
     padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-one-x;
     transition: opacity $cdr-duration-1-x linear;
     opacity: 0;
@@ -126,10 +139,6 @@ $accordion-border: 1px solid #dadada;
     .cdr-accordion__content {
       padding: $cdr-space-quarter-x 0 $cdr-space-three-quarter-x;
     }
-  }
-
-  &:last-child {
-    border-bottom: $accordion-border;
   }
 
   &--focused {

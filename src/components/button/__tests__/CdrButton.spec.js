@@ -58,14 +58,12 @@ describe('CdrButton', () => {
     expect(wrapper.vm.iconClass).toBe('');
   });
 
-  it('adds classes for icon only and on-dark', () => {
+  it('adds class for icon only', () => {
     const wrapper = shallowMount(CdrButton, {
       propsData: {
         iconOnly: true,
-        onDark: true,
       }
     });
-    expect(wrapper.classes()).toContain('cdr-button--on-dark');
     expect(wrapper.classes()).toContain('cdr-button--icon-only');
   });
 

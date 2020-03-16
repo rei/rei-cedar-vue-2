@@ -32,14 +32,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    /**
-     * Renders an icon-only button with a light fill color for use on dark backgrounds.
-     * iconOnly must be true.
-     */
-    onDark: {
-      type: Boolean,
-      default: false,
-    },
   },
   data() {
     return {
@@ -66,10 +58,6 @@ export default {
 
       if (this.iconOnly) {
         classes.push(this.modifyClassName(this.baseClass, 'icon-only'));
-
-        if (this.onDark) {
-          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));
-        }
       }
       return classes.join(' ');
     },
