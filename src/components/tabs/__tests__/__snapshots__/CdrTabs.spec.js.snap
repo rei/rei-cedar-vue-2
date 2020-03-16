@@ -43,28 +43,28 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
         role="tablist"
       >
         <li
+          aria-controls="tab1"
+          aria-disabled="false"
           class="cdr-tabs__header-item"
+          role="tab"
         >
           <a
-            aria-controls="tab1"
-            aria-disabled="false"
             class="cdr-tabs__header-item-label"
             href="#tab1"
-            role="tab"
             tabindex="-1"
           >
             tab1
           </a>
         </li>
         <li
+          aria-controls="tab2"
+          aria-disabled="false"
           class="cdr-tabs__header-item"
+          role="tab"
         >
           <a
-            aria-controls="tab2"
-            aria-disabled="false"
             class="cdr-tabs__header-item-label"
             href="#tab2"
-            role="tab"
             tabindex="-1"
           >
             tab2

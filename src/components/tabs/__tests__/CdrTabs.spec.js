@@ -261,14 +261,17 @@ describe('CdrTabs', () => {
     });
   });
 
-  it('accesibility', (done) => {
+  fit('accessibility', (done) => {
     const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
-        default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />', '<cdr-tab-panel name="tab3" :disabled="true" id="tab3" />']
+        default: [
+          '<cdr-tab-panel name="tab1" id="tab-panel-1"  aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />',
+          '<cdr-tab-panel name="tab3" :disabled="true" id="tab-panel-3" aria-labelledby="tab-3" />']
       },
       methods: {
         updateUnderline: spyUpdateUnderline,
@@ -276,30 +279,14 @@ describe('CdrTabs', () => {
     });
 
     Vue.nextTick(() => {
-      const tab1 = wrapper.vm.getTabEl(wrapper.vm.tabs[0]);
-      const tab2 = wrapper.vm.getTabEl(wrapper.vm.tabs[1]);
-      const tab3 = wrapper.vm.getTabEl(wrapper.vm.tabs[2]);
-      
-      // aria-selected
-      expect(tab1.data.attrs['aria-selected']).toBe(true);
-      expect(tab2.data.attrs['aria-selected']).toBe(false);
-      expect(tab3.data.attrs['aria-selected']).toBe('false');
+      const tab1 = wrapper.find('#tab-1');
 
-      // tabIndex
-      expect(tab1.data.attrs.tabIndex).toBe(0);
-      expect(tab2.data.attrs.tabIndex).toBe(-1);
-
-      // tab role
-      expect(tab1.data.attrs.role).toBe('tab');
-      expect(tab2.data.attrs.role).toBe('tab');
-
-      // aria-disabled
-      expect(tab1.data.attrs['aria-disabled']).toBe('false');
-      expect(tab2.data.attrs['aria-disabled']).toBe('false');
-      expect(tab3.data.attrs['aria-disabled']).toBe('true');
+      expect(tab1.attributes()['aria-selected']).toBe('true');
+      expect(tab1.attributes()['role']).toBe('tab');
+      expect(tab1.attributes()['aria-disabled']).toBe('false');
 
       // tablist role
-      expect(wrapper.vm.$refs.cdrTabsHeader.hasAttribute('role', 'tablist')).toBe(true);
+      expect(wrapper.find({ref: 'cdrTabsHeader'}).attributes()['role']).toBe('tablist');
       
       done();
     });
