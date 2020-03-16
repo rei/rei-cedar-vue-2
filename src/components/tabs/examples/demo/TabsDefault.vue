@@ -105,7 +105,7 @@
         </cdr-text>
 
         <cdr-accordion
-          id="default"
+          id="tabs-accordion-default"
           :opened="accordion1"
           @accordion-toggle="accordion1 = !accordion1"
           level="4"
@@ -126,7 +126,7 @@
           </cdr-text>
         </cdr-accordion>
         <cdr-accordion
-          id="default-long-label"
+          id="tabs-accordion-default-long-label"
           :opened="accordion2"
           @accordion-toggle="accordion2 = !accordion2"
           label="Label with multiple words, so many words in fact that
