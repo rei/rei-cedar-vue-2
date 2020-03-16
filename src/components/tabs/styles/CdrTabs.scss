@@ -112,7 +112,7 @@
       margin-left: $cdr-space-one-x;
     }
 
-    & [aria-selected].cdr-tabs__header-item-label {
+    & [aria-selected="true"].cdr-tabs__header-item-label {
       color: $cdr-color-text-tab-active;
       font-weight: 500;
     }
