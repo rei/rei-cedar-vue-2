@@ -32,6 +32,13 @@ export default {
       type: Boolean,
       default: false,
     },
+    /**
+     * Used in conjunction with `icon-only`, renders a border and background around the icon button
+     */
+    withBorder: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -59,6 +66,11 @@ export default {
       if (this.iconOnly) {
         classes.push(this.modifyClassName(this.baseClass, 'icon-only'));
       }
+
+      if (this.iconOnly && this.withBorder) {
+        classes.push(this.modifyClassName(this.baseClass, 'with-border'));
+      }
+
       return classes.join(' ');
     },
   },

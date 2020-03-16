@@ -70,7 +70,7 @@ module.exports = [
         capture: '[data-backstop="cdr-button--icon"]',
       },
       '[data-backstop="cdr-button--icon-only"]',
-      '[data-backstop="cdr-button--icon-only-dark"]',
+      '[data-backstop="cdr-button--icon-only-with-border"]',
     ],
     hoverSelectors: [
       {
@@ -78,7 +78,7 @@ module.exports = [
         capture: '[data-backstop="cdr-button--icon"]',
       },
       '[data-backstop="cdr-button--icon-only"]',
-      '[data-backstop="cdr-button--icon-only-dark"]',
+      '[data-backstop="cdr-button--icon-only-with-border"]',
     ],
   },
   {

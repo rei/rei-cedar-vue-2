@@ -76,6 +76,10 @@
     }
   }
 
+  &--with-border {
+    @include cdr-button-with-border-mixin;
+  }
+
   /* Full Width
     ========== */
 
