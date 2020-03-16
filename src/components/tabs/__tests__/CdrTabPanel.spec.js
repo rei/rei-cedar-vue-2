@@ -71,6 +71,25 @@ describe('CdrTabPanel', () => {
     });
   });
 
+  it('updates state after animationend', () => {
+    const wrapper = shallowMount(CdrTabPanel, {
+      propsData: {
+        name: 'test',
+        id: 'tab1',
+      },
+    });
+
+    wrapper.setData({ active: true, hidden: false, animationDirection: 'exit-left' });
+    wrapper.vm.$nextTick(() => {
+      wrapper.trigger('animationend', {
+        animationName: 'exit-left'
+      });
+      expect(wrapper.vm.hidden).toBe(true);
+      expect(wrapper.vm.animationDirection).toBe(null);
+    });
+
+  });
+
   it('handleUpArrowNav', () => {
     const spyUpdateUnderline = jest.fn();
     const spySetFocusToActiveTabHeader = jest.fn();
