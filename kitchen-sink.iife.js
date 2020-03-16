@@ -26254,13 +26254,10 @@ var cedar = (function () {
     }
   };
 
-  var css$m = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-tab-panel_4\\.0\\.2 {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  padding-top: 0.2rem; }\n@-webkit-keyframes flyLeft {\n  from {\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\n  to {\n    -webkit-transform: translateX(-100vw);\n            transform: translateX(-100vw); } }\n@keyframes flyLeft {\n  from {\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\n  to {\n    -webkit-transform: translateX(-100vw);\n            transform: translateX(-100vw); } }\n@-webkit-keyframes flyRight {\n  from {\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\n  to {\n    -webkit-transform: translateX(100vw);\n            transform: translateX(100vw); } }\n@keyframes flyRight {\n  from {\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\n  to {\n    -webkit-transform: translateX(100vw);\n            transform: translateX(100vw); } }\n.flyLeft_4\\.0\\.2 {\n  -webkit-animation-duration: 0.5s;\n          animation-duration: 0.5s; }\n.flyLeft_4\\.0\\.2 {\n    -webkit-animation-name: flyLeft;\n            animation-name: flyLeft; }\n.flyRight_4\\.0\\.2 {\n  -webkit-animation-duration: 0.5s;\n          animation-duration: 0.5s; }\n.flyRight_4\\.0\\.2 {\n    -webkit-animation-name: flyRight;\n            animation-name: flyRight; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVGFiUGFuZWwuc2NzcyIsInNyYy9jb21wb25lbnRzL3RhYnMvc3R5bGVzL0NkclRhYlBhbmVsLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7aUVDT2lFO0FERWpFOzt1QkNDdUI7QUNOdkI7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFlBQVk7RUFDWixtQkNzMUN5QixFQUFBO0FEbjFDM0I7RUFDRTtJQUNFLGdDQUF3QjtZQUF4Qix3QkFBd0IsRUFBQTtFQUcxQjtJQUNFLHFDQUE2QjtZQUE3Qiw2QkFBNkIsRUFBQSxFQUFBO0FBTmpDO0VBQ0U7SUFDRSxnQ0FBd0I7WUFBeEIsd0JBQXdCLEVBQUE7RUFHMUI7SUFDRSxxQ0FBNkI7WUFBN0IsNkJBQTZCLEVBQUEsRUFBQTtBQUlqQztFQUNFO0lBQ0UsZ0NBQXdCO1lBQXhCLHdCQUF3QixFQUFBO0VBRzFCO0lBQ0Usb0NBQTRCO1lBQTVCLDRCQUE0QixFQUFBLEVBQUE7QUFOaEM7RUFDRTtJQUNFLGdDQUF3QjtZQUF4Qix3QkFBd0IsRUFBQTtFQUcxQjtJQUNFLG9DQUE0QjtZQUE1Qiw0QkFBNEIsRUFBQSxFQUFBO0FBSWhDO0VBSUUsZ0NDb3hDc0I7VURweEN0Qix3QkNveENzQixFQUFBO0FEeHhDeEI7SUFFSSwrQkFBdUI7WUFBdkIsdUJBQXVCLEVBQUE7QUFLM0I7RUFJRSxnQ0M2d0NzQjtVRDd3Q3RCLHdCQzZ3Q3NCLEVBQUE7QURqeEN4QjtJQUVJLGdDQUF3QjtZQUF4Qix3QkFBd0IsRUFBQSIsImZpbGUiOiJDZHJUYWJQYW5lbC5zY3NzIn0= */";
-  var style$p = {"cdr-tab-panel":"cdr-tab-panel_4.0.2","flyLeft":"flyLeft_4.0.2","flyRight":"flyRight_4.0.2"};
+  var css$m = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-tab-panel_4\\.0\\.2 {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  padding-top: 0.2rem; }\n@-webkit-keyframes exit-left {\n  from {\n    -webkit-transform: translateX(0);\n            transform: translateX(0);\n    opacity: 1; }\n  to {\n    -webkit-transform: translateX(-1rem);\n            transform: translateX(-1rem);\n    opacity: 0; } }\n@keyframes exit-left {\n  from {\n    -webkit-transform: translateX(0);\n            transform: translateX(0);\n    opacity: 1; }\n  to {\n    -webkit-transform: translateX(-1rem);\n            transform: translateX(-1rem);\n    opacity: 0; } }\n@-webkit-keyframes exit-right {\n  from {\n    -webkit-transform: translateX(0);\n            transform: translateX(0);\n    opacity: 1; }\n  to {\n    -webkit-transform: translateX(1rem);\n            transform: translateX(1rem);\n    opacity: 0; } }\n@keyframes exit-right {\n  from {\n    -webkit-transform: translateX(0);\n            transform: translateX(0);\n    opacity: 1; }\n  to {\n    -webkit-transform: translateX(1rem);\n            transform: translateX(1rem);\n    opacity: 0; } }\n@-webkit-keyframes enter-left {\n  from {\n    -webkit-transform: translateX(-1rem);\n            transform: translateX(-1rem);\n    opacity: 0; }\n  to {\n    -webkit-transform: translateX(0);\n            transform: translateX(0);\n    opacity: 1; } }\n@keyframes enter-left {\n  from {\n    -webkit-transform: translateX(-1rem);\n            transform: translateX(-1rem);\n    opacity: 0; }\n  to {\n    -webkit-transform: translateX(0);\n            transform: translateX(0);\n    opacity: 1; } }\n@-webkit-keyframes enter-right {\n  from {\n    -webkit-transform: translateX(1rem);\n            transform: translateX(1rem);\n    opacity: 0; }\n  to {\n    -webkit-transform: translateX(0);\n            transform: translateX(0);\n    opacity: 1; } }\n@keyframes enter-right {\n  from {\n    -webkit-transform: translateX(1rem);\n            transform: translateX(1rem);\n    opacity: 0; }\n  to {\n    -webkit-transform: translateX(0);\n            transform: translateX(0);\n    opacity: 1; } }\n.cdr-tab-panel-enter-left_4\\.0\\.2 {\n  -webkit-animation-duration: 0.2s;\n          animation-duration: 0.2s;\n  -webkit-animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1);\n          animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-tab-panel-enter-left_4\\.0\\.2 {\n    -webkit-animation-name: enter-left;\n            animation-name: enter-left; }\n.cdr-tab-panel-enter-right_4\\.0\\.2 {\n  -webkit-animation-duration: 0.2s;\n          animation-duration: 0.2s;\n  -webkit-animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1);\n          animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-tab-panel-enter-right_4\\.0\\.2 {\n    -webkit-animation-name: enter-right;\n            animation-name: enter-right; }\n.cdr-tab-panel-exit-left_4\\.0\\.2 {\n  -webkit-animation-duration: 0.2s;\n          animation-duration: 0.2s;\n  -webkit-animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1);\n          animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-tab-panel-exit-left_4\\.0\\.2 {\n    -webkit-animation-name: exit-left;\n            animation-name: exit-left; }\n.cdr-tab-panel-exit-right_4\\.0\\.2 {\n  -webkit-animation-duration: 0.2s;\n          animation-duration: 0.2s;\n  -webkit-animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1);\n          animation-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-tab-panel-exit-right_4\\.0\\.2 {\n    -webkit-animation-name: exit-right;\n            animation-name: exit-right; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVGFiUGFuZWwuc2NzcyIsInNyYy9jb21wb25lbnRzL3RhYnMvc3R5bGVzL0NkclRhYlBhbmVsLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7aUVDT2lFO0FERWpFOzt1QkNDdUI7QUNSdkI7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFlBQVk7RUFDWixtQkN3MUN5QixFQUFBO0FEcjFDM0I7RUFDRTtJQUNFLGdDQUF3QjtZQUF4Qix3QkFBd0I7SUFDeEIsVUFBVSxFQUFBO0VBR1o7SUFDRSxvQ0FBNEI7WUFBNUIsNEJBQTRCO0lBQzVCLFVBQVUsRUFBQSxFQUFBO0FBUmQ7RUFDRTtJQUNFLGdDQUF3QjtZQUF4Qix3QkFBd0I7SUFDeEIsVUFBVSxFQUFBO0VBR1o7SUFDRSxvQ0FBNEI7WUFBNUIsNEJBQTRCO0lBQzVCLFVBQVUsRUFBQSxFQUFBO0FBSWQ7RUFDRTtJQUNFLGdDQUF3QjtZQUF4Qix3QkFBd0I7SUFDeEIsVUFBVSxFQUFBO0VBR1o7SUFDRSxtQ0FBMkI7WUFBM0IsMkJBQTJCO0lBQzNCLFVBQVUsRUFBQSxFQUFBO0FBUmQ7RUFDRTtJQUNFLGdDQUF3QjtZQUF4Qix3QkFBd0I7SUFDeEIsVUFBVSxFQUFBO0VBR1o7SUFDRSxtQ0FBMkI7WUFBM0IsMkJBQTJCO0lBQzNCLFVBQVUsRUFBQSxFQUFBO0FBSWQ7RUFDRTtJQUNFLG9DQUE0QjtZQUE1Qiw0QkFBNEI7SUFDNUIsVUFBVSxFQUFBO0VBR1o7SUFDRSxnQ0FBd0I7WUFBeEIsd0JBQXdCO0lBQ3hCLFVBQVUsRUFBQSxFQUFBO0FBUmQ7RUFDRTtJQUNFLG9DQUE0QjtZQUE1Qiw0QkFBNEI7SUFDNUIsVUFBVSxFQUFBO0VBR1o7SUFDRSxnQ0FBd0I7WUFBeEIsd0JBQXdCO0lBQ3hCLFVBQVUsRUFBQSxFQUFBO0FBSWQ7RUFDRTtJQUNFLG1DQUEyQjtZQUEzQiwyQkFBMkI7SUFDM0IsVUFBVSxFQUFBO0VBR1o7SUFDRSxnQ0FBd0I7WUFBeEIsd0JBQXdCO0lBQ3hCLFVBQVUsRUFBQSxFQUFBO0FBUmQ7RUFDRTtJQUNFLG1DQUEyQjtZQUEzQiwyQkFBMkI7SUFDM0IsVUFBVSxFQUFBO0VBR1o7SUFDRSxnQ0FBd0I7WUFBeEIsd0JBQXdCO0lBQ3hCLFVBQVUsRUFBQSxFQUFBO0FBU2Q7RUFKRSxnQ0MwdkNzQjtVRDF2Q3RCLHdCQzB2Q3NCO0VEenZDdEIsbUVDOHZDOEQ7VUQ5dkM5RCwyREM4dkM4RCxFQUFBO0FEM3ZDaEU7SUFFSSxrQ0FBMEI7WUFBMUIsMEJBQTBCLEVBQUE7QUFLOUI7RUFYRSxnQ0MwdkNzQjtVRDF2Q3RCLHdCQzB2Q3NCO0VEenZDdEIsbUVDOHZDOEQ7VUQ5dkM5RCwyREM4dkM4RCxFQUFBO0FEcHZDaEU7SUFFSSxtQ0FBMkI7WUFBM0IsMkJBQTJCLEVBQUE7QUFLL0I7RUFsQkUsZ0NDMHZDc0I7VUQxdkN0Qix3QkMwdkNzQjtFRHp2Q3RCLG1FQzh2QzhEO1VEOXZDOUQsMkRDOHZDOEQsRUFBQTtBRDd1Q2hFO0lBRUksaUNBQXlCO1lBQXpCLHlCQUF5QixFQUFBO0FBSzdCO0VBekJFLGdDQzB2Q3NCO1VEMXZDdEIsd0JDMHZDc0I7RUR6dkN0QixtRUM4dkM4RDtVRDl2QzlELDJEQzh2QzhELEVBQUE7QUR0dUNoRTtJQUVJLGtDQUEwQjtZQUExQiwwQkFBMEIsRUFBQSIsImZpbGUiOiJDZHJUYWJQYW5lbC5zY3NzIn0= */";
+  var style$p = {"cdr-tab-panel":"cdr-tab-panel_4.0.2","cdr-tab-panel-enter-left":"cdr-tab-panel-enter-left_4.0.2","cdr-tab-panel-enter-right":"cdr-tab-panel-enter-right_4.0.2","cdr-tab-panel-exit-left":"cdr-tab-panel-exit-left_4.0.2","cdr-tab-panel-exit-right":"cdr-tab-panel-exit-right_4.0.2"};
   styleInject(css$m);
 
-  function ownKeys$2S(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-  function _objectSpread$2R(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2S(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2S(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var CdrTabPanel = {
     name: 'CdrTabPanel',
     mixins: [modifier],
@@ -26280,11 +26277,6 @@ var cedar = (function () {
         type: String,
         required: true
       },
-
-      /**
-       * Optional extra reference value to be set on the tab, otherwise
-       * the tab name will be used for reference.
-       */
       id: {
         type: String,
         required: true
@@ -26293,8 +26285,9 @@ var cedar = (function () {
     data: function data() {
       return {
         active: false,
+        hidden: true,
         offsetX: 0,
-        animationDirection: 'default',
+        animationDirection: null,
         style: style$p
       };
     },
@@ -26302,17 +26295,13 @@ var cedar = (function () {
       baseClass: function baseClass() {
         return 'cdr-tab-panel';
       },
-      animationHooks: function animationHooks() {
-        return _objectSpread$2R({
-          beforeEnter: this.setEnterStart,
-          afterEnter: this.setEnterEnd,
-          beforeLeave: this.setLeaveStart,
-          afterLeave: this.setLeaveEnd
-        }, this.$listeners);
+      animationClass: function animationClass() {
+        return this.animationDirection ? style$p["cdr-tab-panel-".concat(this.animationDirection)] : null;
       }
     },
     methods: {
       setActive: function setActive(state) {
+        if (state) this.hidden = false;
         this.active = state;
         this.$emit('tab-change', state, this.id);
         this.$emit('tabChange', state, this.id);
@@ -26323,52 +26312,30 @@ var cedar = (function () {
       setOffsetX: function setOffsetX(x) {
         this.offsetX = x;
       },
-      setEnterStart: function setEnterStart(element) {
-        var el = element;
-        el.style.animationDirection = 'reverse';
-        el.style.animationTimingFunction = 'cubic-bezier(0.4, 0, 0.68, .06)';
-        el.classList.add(this.style[this.animationDirection]);
-      },
-      setEnterEnd: function setEnterEnd(element) {
-        var el = element;
-        el.style.animationDirection = '';
-        el.classList.remove(this.style[this.animationDirection]);
-      },
-      setLeaveStart: function setLeaveStart(element) {
-        var el = element;
-        el.classList.add(this.style[this.animationDirection]);
-        el.style.animationTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
-      },
-      setLeaveEnd: function setLeaveEnd(element) {
-        var el = element;
-        el.classList.remove(this.style[this.animationDirection]);
-      },
       handleUpArrowNav: function handleUpArrowNav() {
         this.$parent.setFocusToActiveTabHeader();
+      },
+      animationEnd: function animationEnd(event) {
+        if (event.animationName.split('-')[0] === 'exit') {
+          this.hidden = true;
+          this.animationDirection = null;
+        }
       }
     },
     render: function render() {
       var _this = this;
 
       var h = arguments[0];
-      return h("transition", {
-        "attrs": {
-          "name": "fly"
-        },
-        "on": _objectSpread$2R({}, this.animationHooks)
-      }, [h("div", {
-        "directives": [{
-          name: "show",
-          value: this.active
-        }],
+      return h("div", {
         "attrs": {
           "aria-hidden": !this.active,
           "aria-labelledby": this.ariaLabelledby,
+          "hidden": this.hidden,
           "id": this.id,
           "tabindex": "0",
           "role": "tabpanel"
         },
-        "class": clsx(this.style[this.baseClass], this.modifierClass),
+        "class": clsx(this.style[this.baseClass], this.modifierClass, this.animationClass),
         "ref": "cdrTabPanelContainer",
         "key": this.name,
         "on": {
@@ -26376,9 +26343,10 @@ var cedar = (function () {
             if (!("button" in $event) && _this._k($event.keyCode, "up", 38, $event.key, ["Up", "ArrowUp"])) return null;
             $event.preventDefault();
             return _this.handleUpArrowNav($event);
-          }
+          },
+          "animationend": this.animationEnd
         }
-      }, [this.$slots.default])]);
+      }, [this.$slots.default]);
     }
   };
 
@@ -26386,261 +26354,37 @@ var cedar = (function () {
 
   var from_1$4 = from_1$3;
 
-  var $find = arrayIteration.find;
+  var $findIndex = arrayIteration.findIndex;
 
 
-  var FIND = 'find';
+  var FIND_INDEX = 'findIndex';
   var SKIPS_HOLES = true;
 
   // Shouldn't skip holes
-  if (FIND in []) Array(1)[FIND](function () { SKIPS_HOLES = false; });
+  if (FIND_INDEX in []) Array(1)[FIND_INDEX](function () { SKIPS_HOLES = false; });
 
-  // `Array.prototype.find` method
-  // https://tc39.github.io/ecma262/#sec-array.prototype.find
+  // `Array.prototype.findIndex` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.findindex
   _export({ target: 'Array', proto: true, forced: SKIPS_HOLES }, {
-    find: function find(callbackfn /* , that = undefined */) {
-      return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+    findIndex: function findIndex(callbackfn /* , that = undefined */) {
+      return $findIndex(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
     }
   });
 
-  var find = entryVirtual('Array').find;
+  var findIndex = entryVirtual('Array').findIndex;
 
   var ArrayPrototype$a = Array.prototype;
 
-  var find_1 = function (it) {
-    var own = it.find;
-    return it === ArrayPrototype$a || (it instanceof Array && own === ArrayPrototype$a.find) ? find : own;
+  var findIndex_1 = function (it) {
+    var own = it.findIndex;
+    return it === ArrayPrototype$a || (it instanceof Array && own === ArrayPrototype$a.findIndex) ? findIndex : own;
   };
 
-  var find$1 = find_1;
+  var findIndex$1 = findIndex_1;
 
-  var find$2 = find$1;
+  var findIndex$2 = findIndex$1;
 
-  /** Error message constants. */
-  var FUNC_ERROR_TEXT$1 = 'Expected a function';
-
-  /**
-   * The base implementation of `_.delay` and `_.defer` which accepts `args`
-   * to provide to `func`.
-   *
-   * @private
-   * @param {Function} func The function to delay.
-   * @param {number} wait The number of milliseconds to delay invocation.
-   * @param {Array} args The arguments to provide to `func`.
-   * @returns {number|Object} Returns the timer id or timeout object.
-   */
-  function baseDelay(func, wait, args) {
-    if (typeof func != 'function') {
-      throw new TypeError(FUNC_ERROR_TEXT$1);
-    }
-    return setTimeout(function() { func.apply(undefined, args); }, wait);
-  }
-
-  /**
-   * This method returns the first argument it receives.
-   *
-   * @static
-   * @since 0.1.0
-   * @memberOf _
-   * @category Util
-   * @param {*} value Any value.
-   * @returns {*} Returns `value`.
-   * @example
-   *
-   * var object = { 'a': 1 };
-   *
-   * console.log(_.identity(object) === object);
-   * // => true
-   */
-  function identity$1(value) {
-    return value;
-  }
-
-  /**
-   * A faster alternative to `Function#apply`, this function invokes `func`
-   * with the `this` binding of `thisArg` and the arguments of `args`.
-   *
-   * @private
-   * @param {Function} func The function to invoke.
-   * @param {*} thisArg The `this` binding of `func`.
-   * @param {Array} args The arguments to invoke `func` with.
-   * @returns {*} Returns the result of `func`.
-   */
-  function apply(func, thisArg, args) {
-    switch (args.length) {
-      case 0: return func.call(thisArg);
-      case 1: return func.call(thisArg, args[0]);
-      case 2: return func.call(thisArg, args[0], args[1]);
-      case 3: return func.call(thisArg, args[0], args[1], args[2]);
-    }
-    return func.apply(thisArg, args);
-  }
-
-  /* Built-in method references for those with the same name as other `lodash` methods. */
-  var nativeMax$1 = Math.max;
-
-  /**
-   * A specialized version of `baseRest` which transforms the rest array.
-   *
-   * @private
-   * @param {Function} func The function to apply a rest parameter to.
-   * @param {number} [start=func.length-1] The start position of the rest parameter.
-   * @param {Function} transform The rest array transform.
-   * @returns {Function} Returns the new function.
-   */
-  function overRest(func, start, transform) {
-    start = nativeMax$1(start === undefined ? (func.length - 1) : start, 0);
-    return function() {
-      var args = arguments,
-          index = -1,
-          length = nativeMax$1(args.length - start, 0),
-          array = Array(length);
-
-      while (++index < length) {
-        array[index] = args[start + index];
-      }
-      index = -1;
-      var otherArgs = Array(start + 1);
-      while (++index < start) {
-        otherArgs[index] = args[index];
-      }
-      otherArgs[start] = transform(array);
-      return apply(func, this, otherArgs);
-    };
-  }
-
-  /**
-   * Creates a function that returns `value`.
-   *
-   * @static
-   * @memberOf _
-   * @since 2.4.0
-   * @category Util
-   * @param {*} value The value to return from the new function.
-   * @returns {Function} Returns the new constant function.
-   * @example
-   *
-   * var objects = _.times(2, _.constant({ 'a': 1 }));
-   *
-   * console.log(objects);
-   * // => [{ 'a': 1 }, { 'a': 1 }]
-   *
-   * console.log(objects[0] === objects[1]);
-   * // => true
-   */
-  function constant(value) {
-    return function() {
-      return value;
-    };
-  }
-
-  var defineProperty$7 = (function() {
-    try {
-      var func = getNative(Object, 'defineProperty');
-      func({}, '', {});
-      return func;
-    } catch (e) {}
-  }());
-
-  /**
-   * The base implementation of `setToString` without support for hot loop shorting.
-   *
-   * @private
-   * @param {Function} func The function to modify.
-   * @param {Function} string The `toString` result.
-   * @returns {Function} Returns `func`.
-   */
-  var baseSetToString = !defineProperty$7 ? identity$1 : function(func, string) {
-    return defineProperty$7(func, 'toString', {
-      'configurable': true,
-      'enumerable': false,
-      'value': constant(string),
-      'writable': true
-    });
-  };
-
-  /** Used to detect hot functions by number of calls within a span of milliseconds. */
-  var HOT_COUNT = 800,
-      HOT_SPAN = 16;
-
-  /* Built-in method references for those with the same name as other `lodash` methods. */
-  var nativeNow = Date.now;
-
-  /**
-   * Creates a function that'll short out and invoke `identity` instead
-   * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
-   * milliseconds.
-   *
-   * @private
-   * @param {Function} func The function to restrict.
-   * @returns {Function} Returns the new shortable function.
-   */
-  function shortOut(func) {
-    var count = 0,
-        lastCalled = 0;
-
-    return function() {
-      var stamp = nativeNow(),
-          remaining = HOT_SPAN - (stamp - lastCalled);
-
-      lastCalled = stamp;
-      if (remaining > 0) {
-        if (++count >= HOT_COUNT) {
-          return arguments[0];
-        }
-      } else {
-        count = 0;
-      }
-      return func.apply(undefined, arguments);
-    };
-  }
-
-  /**
-   * Sets the `toString` method of `func` to return `string`.
-   *
-   * @private
-   * @param {Function} func The function to modify.
-   * @param {Function} string The `toString` result.
-   * @returns {Function} Returns `func`.
-   */
-  var setToString = shortOut(baseSetToString);
-
-  /**
-   * The base implementation of `_.rest` which doesn't validate or coerce arguments.
-   *
-   * @private
-   * @param {Function} func The function to apply a rest parameter to.
-   * @param {number} [start=func.length-1] The start position of the rest parameter.
-   * @returns {Function} Returns the new function.
-   */
-  function baseRest(func, start) {
-    return setToString(overRest(func, start, identity$1), func + '');
-  }
-
-  /**
-   * Invokes `func` after `wait` milliseconds. Any additional arguments are
-   * provided to `func` when it's invoked.
-   *
-   * @static
-   * @memberOf _
-   * @since 0.1.0
-   * @category Function
-   * @param {Function} func The function to delay.
-   * @param {number} wait The number of milliseconds to delay invocation.
-   * @param {...*} [args] The arguments to invoke `func` with.
-   * @returns {number} Returns the timer id.
-   * @example
-   *
-   * _.delay(function(text) {
-   *   console.log(text);
-   * }, 1000, 'later');
-   * // => Logs 'later' after one second.
-   */
-  var delay = baseRest(function(func, wait, args) {
-    return baseDelay(func, toNumber$1(wait) || 0, args);
-  });
-
-  var css$n = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n/* intentionally empty */\n.cdr-tabs_4\\.0\\.2 {\n  /* overflow-x: auto; */\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column;\n          flex-flow: column;\n  height: 50rem;\n  /* Compact\n    ========== */\n  /* No Border\n    ========== */\n  /* Full Width\n    ========== */\n  /* Centered\n    ========== */ }\n.cdr-tabs_4\\.0\\.2 ::-webkit-scrollbar {\n    -webkit-appearance: none;\n    width: 0.7rem; }\n.cdr-tabs_4\\.0\\.2 ::-webkit-scrollbar-thumb {\n    border-radius: 0.4rem;\n    background-color: rgba(0, 0, 0, 0.5);\n    -webkit-box-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.5); }\n.cdr-tabs__header-container_4\\.0\\.2 {\n    overflow-x: auto;\n    border-bottom: 0.1rem solid #928b80;\n    -webkit-overflow-scrolling: touch;\n    -ms-overflow-style: -ms-autohiding-scrollbar; }\n.cdr-tabs__header-container_4\\.0\\.2::-webkit-scrollbar {\n      width: 0 !important;\n      height: 0 !important; }\n.cdr-tabs__gradient-container_4\\.0\\.2 {\n    position: relative; }\n.cdr-tabs__gradient-container_4\\.0\\.2::before {\n      transition: opacity 150ms ease;\n      -webkit-transition: opacity 150ms ease;\n      content: '';\n      position: absolute;\n      z-index: 100;\n      top: 0;\n      bottom: 0;\n      left: 0;\n      width: 3.6rem;\n      background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), to(#ffffff));\n      background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);\n      pointer-events: none;\n      opacity: 0; }\n.cdr-tabs__gradient-container_4\\.0\\.2::after {\n      transition: opacity 150ms ease;\n      -webkit-transition: opacity 150ms ease;\n      content: '';\n      position: absolute;\n      top: 0;\n      bottom: 0;\n      right: 0;\n      width: 3.6rem;\n      background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(#ffffff));\n      background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);\n      pointer-events: none;\n      opacity: 0; }\n.cdr-tabs__header_4\\.0\\.2 {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    position: relative; }\n.cdr-tabs__header-gradient-left_4\\.0\\.2::before {\n      opacity: 1; }\n.cdr-tabs__header-gradient-right_4\\.0\\.2::after {\n      opacity: 1; }\n.cdr-tabs__header-item_4\\.0\\.2 {\n    display: block;\n    padding: 0; }\n.cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs__header-item_4\\.0\\.2 {\n      margin-left: 1.6rem; }\n.cdr-tabs__header-item_4\\.0\\.2 [aria-selected].cdr-tabs__header-item-label_4\\.0\\.2 {\n      color: rgba(12, 11, 8, 0.75);\n      font-weight: 500; }\n.cdr-tabs__header-item-label_4\\.0\\.2 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.008rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem;\n    display: block;\n    text-decoration: none;\n    padding: 1.2rem 0.8rem;\n    color: rgba(66, 59, 47, 0.75);\n    white-space: nowrap;\n    outline-offset: -0.3rem; }\n.cdr-tabs__header-item-label_4\\.0\\.2:active, .cdr-tabs__header-item-label_4\\.0\\.2:hover, .cdr-tabs__header-item-label_4\\.0\\.2:focus {\n      text-decoration: none;\n      color: #406eb5; }\n.cdr-tabs__header-item-label--disabled_4\\.0\\.2 {\n      color: #d1cbbd; }\n.cdr-tabs__header-item-label--disabled_4\\.0\\.2:active, .cdr-tabs__header-item-label--disabled_4\\.0\\.2:hover, .cdr-tabs__header-item-label--disabled_4\\.0\\.2:focus {\n        color: #d1cbbd;\n        cursor: not-allowed; }\n.cdr-tabs__underline_4\\.0\\.2 {\n    z-index: 1;\n    position: absolute;\n    width: 3rem;\n    margin: 0;\n    height: 0.4rem;\n    margin-top: -0.4rem;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    border: none;\n    /* border: none; */\n    background-color: #406eb5;\n    -webkit-transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);\n    transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-tabs__content-container_4\\.0\\.2 {\n    position: relative;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    overflow-x: hidden;\n    overflow-y: auto; }\n.cdr-tabs_4\\.0\\.2 .fade-enter-active_4\\.0\\.2,\n  .cdr-tabs_4\\.0\\.2 .fade-leave-active_4\\.0\\.2 {\n    opacity: 0.5s; }\n.cdr-tabs_4\\.0\\.2 .fade-enter_4\\.0\\.2,\n  .cdr-tabs_4\\.0\\.2 .fade-leave-to_4\\.0\\.2 {\n    opacity: 0; }\n.cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item-label_4\\.0\\.2, .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item-label_4\\.0\\.2 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.008rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem;\n    padding: 0.6rem 1.2rem; }\n.cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2, .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2, .cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2, .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 {\n    margin-left: 0.8rem; }\n.cdr-tabs--no-border_4\\.0\\.2 .cdr-tabs__header_4\\.0\\.2,\n  .cdr-tabs--no-border_4\\.0\\.2 .cdr-tabs__header-container_4\\.0\\.2 {\n    border-bottom: 0.1rem solid transparent; }\n.cdr-tabs--full-width_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1; }\n.cdr-tabs--centered_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2:first-of-type {\n    margin-left: auto; }\n.cdr-tabs--centered_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2:last-of-type {\n    margin-right: auto; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVGFicy5zY3NzIiwiLi4vLi4vLi4vLi4vYnVpbGQvbm9vcC5jc3MiLCJzcmMvY29tcG9uZW50cy90YWJzL3N0eWxlcy9DZHJUYWJzLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7aUVDT2lFO0FERWpFOzt1QkNDdUI7QUNWdkIsd0JBQXdCO0FDcUJ4QjtFQUNFLHNCQUFBO0VBQ0Esb0JBQWE7RUFBYixvQkFBYTtFQUFiLGFBQWE7RUFDYiw0QkFBaUI7RUFBakIsNkJBQWlCO01BQWpCLHFCQUFpQjtVQUFqQixpQkFBaUI7RUFDakIsYUFBYTtFQTRKYjtnQkZuS2M7RUVtTGQ7Z0JGakxjO0VFMExkO2dCRnhMYztFRWdNZDtnQkY5TGMsRUUrTEM7QUFsTWpCO0lBUUksd0JBQXdCO0lBQ3hCLGFBQVUsRUFBQTtBQVRkO0lBWUkscUJBQWtCO0lBQ2xCLG9DQUFtQztJQUNuQyx1REFBbUQsRUFBQTtBQUdyRDtJQUNFLGdCQUFnQjtJQUNoQixtQ0M2bkN1QztJRDVuQ3ZDLGlDQUFpQztJQUNqQyw0Q0FBNEMsRUFBQTtBQUo3QztNQUt3QixtQkFBbUI7TUFBRSxvQkFBb0IsRUFBQTtBQUdsRTtJQUNFLGtCQUFrQixFQUFBO0FBRG5CO01BSUcsOEJBQThCO01BQzlCLHNDQUFzQztNQUN0QyxXQUFXO01BQ1gsa0JBQWtCO01BQ2xCLFlBQVk7TUFDWixNQUFNO01BQ04sU0FBUztNQUNULE9BQU87TUFDUCxhQUFXO01BQ1gsb0dBS0c7TUFMSCxxRUFLRztNQUNILG9CQUFvQjtNQUNwQixVQUFVLEVBQUE7QUFwQmI7TUF3QkcsOEJBQThCO01BQzlCLHNDQUFzQztNQUN0QyxXQUFXO01BQ1gsa0JBQWtCO01BQ2xCLE1BQU07TUFDTixTQUFTO01BQ1QsUUFBUTtNQUNSLGFBQVc7TUFDWCxvR0FLRztNQUxILHNFQUtHO01BQ0gsb0JBQW9CO01BQ3BCLFVBQVUsRUFBQTtBQUlkO0lBQ0Usb0JBQWE7SUFBYixvQkFBYTtJQUFiLGFBQWE7SUFDYixXQUFXO0lBQ1gsU0FBUztJQUVULFVBQVU7SUFDVixrQkFBa0IsRUFBQTtBQUVsQjtNQUNFLFVBQVUsRUFBQTtBQUdaO01BQ0UsVUFBVSxFQUFBO0FBSWQ7SUFDRSxjQUFjO0lBQ2QsVUFBVSxFQUFBO0FBRlg7TUFLRyxtQkNtdkNrQixFQUFBO0FEeHZDckI7TUFTRyw0QkN1OUIyQztNRHQ5QjNDLGdCQUFnQixFQUFBO0FBSXBCO0lBcEhBLDRFQ21rRG9GO0lEbGtEcEYsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQix5QkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtJQWtIakIsY0FBYztJQUNkLHFCQUFxQjtJQUNyQixzQkNzeEMwQztJRHJ4QzFDLDZCQzI4QjRDO0lEMThCNUMsbUJBQW1CO0lBQ25CLHVCQUFvQixFQUFBO0FBUnJCO01BYUcscUJBQXFCO01BQ3JCLGNDcThCNEIsRUFBQTtBRGw4QjlCO01BQ0UsY0NrOEIrQixFQUFBO0FEbjhCaEM7UUFNRyxjQzY3QjZCO1FENTdCN0IsbUJBQW1CLEVBQUE7QUFLekI7SUFDRSxVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxTQUFTO0lBQ1QsY0Nxc0N3QjtJRHBzQ3hCLG1CQ29zQ3dCO0lEbnNDeEIsOEJBQXNCO1lBQXRCLHNCQUFzQjtJQUN0QixZQUFZO0lBRVosa0JBQUE7SUFDQSx5QkNzZ0N5QztJRHJnQ3pDLHlEQUFpRDtJQUFqRCxpREFBaUQsRUFBQTtBQUduRDtJQUNFLGtCQUFrQjtJQUNsQixtQkFBYztRQUFkLGtCQUFjO1lBQWQsY0FBYztJQUNkLGtCQUFrQjtJQUNsQixnQkFBZ0IsRUFBQTtBQW5KcEI7O0lBd0pJLGFBQWEsRUFBQTtBQXhKakI7O0lBNkpJLFVBQVUsRUFBQTtBQUtYO0lBMUtELDRFQzBqRG9GO0lEempEcEYsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQix5QkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtJQXlLZixzQkN5dENnRCxFQUFBO0FEN3RDbkQ7SUFTSyxtQkNncUNpQixFQUFBO0FEenBDdEI7O0lBR0csdUNBQW9DLEVBQUE7QUFNdkM7SUFFRyxtQkFBWTtRQUFaLG9CQUFZO1lBQVosWUFBWSxFQUFBO0FBTWY7SUFFRyxpQkFBaUIsRUFBQTtBQUZwQjtJQUtHLGtCQUFrQixFQUFBIiwiZmlsZSI6IkNkclRhYnMuc2NzcyJ9 */";
+  var css$n = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n/* intentionally empty */\n.cdr-tabs_4\\.0\\.2 {\n  /* overflow-x: auto; */\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: column;\n          flex-flow: column;\n  height: 50rem;\n  /* Compact\n    ========== */\n  /* No Border\n    ========== */\n  /* Full Width\n    ========== */\n  /* Centered\n    ========== */ }\n.cdr-tabs_4\\.0\\.2 ::-webkit-scrollbar {\n    -webkit-appearance: none;\n    width: 0.7rem; }\n.cdr-tabs_4\\.0\\.2 ::-webkit-scrollbar-thumb {\n    border-radius: 0.4rem;\n    background-color: rgba(0, 0, 0, 0.5);\n    -webkit-box-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.5); }\n.cdr-tabs__header-container_4\\.0\\.2 {\n    overflow-x: auto;\n    border-bottom: 0.1rem solid #928b80;\n    -webkit-overflow-scrolling: touch;\n    -ms-overflow-style: -ms-autohiding-scrollbar; }\n.cdr-tabs__header-container_4\\.0\\.2::-webkit-scrollbar {\n      width: 0 !important;\n      height: 0 !important; }\n.cdr-tabs__gradient-container_4\\.0\\.2 {\n    position: relative; }\n.cdr-tabs__gradient-container_4\\.0\\.2::before {\n      transition: opacity 150ms ease;\n      -webkit-transition: opacity 150ms ease;\n      content: '';\n      position: absolute;\n      z-index: 100;\n      top: 0;\n      bottom: 0;\n      left: 0;\n      width: 3.6rem;\n      background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), to(#ffffff));\n      background: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);\n      pointer-events: none;\n      opacity: 0; }\n.cdr-tabs__gradient-container_4\\.0\\.2::after {\n      transition: opacity 150ms ease;\n      -webkit-transition: opacity 150ms ease;\n      content: '';\n      position: absolute;\n      top: 0;\n      bottom: 0;\n      right: 0;\n      width: 3.6rem;\n      background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(#ffffff));\n      background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);\n      pointer-events: none;\n      opacity: 0; }\n.cdr-tabs__header_4\\.0\\.2 {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    position: relative; }\n.cdr-tabs__header-gradient-left_4\\.0\\.2::before {\n      opacity: 1; }\n.cdr-tabs__header-gradient-right_4\\.0\\.2::after {\n      opacity: 1; }\n.cdr-tabs__header-item_4\\.0\\.2 {\n    display: block;\n    padding: 0; }\n.cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs__header-item_4\\.0\\.2 {\n      margin-left: 1.6rem; }\n.cdr-tabs__header-item_4\\.0\\.2 [aria-selected].cdr-tabs__header-item-label_4\\.0\\.2 {\n      color: rgba(12, 11, 8, 0.75);\n      font-weight: 500; }\n.cdr-tabs__header-item-label_4\\.0\\.2 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.008rem;\n    font-size: 1.6rem;\n    line-height: 2.2rem;\n    display: block;\n    text-decoration: none;\n    padding: 1.2rem 0.8rem;\n    color: rgba(66, 59, 47, 0.75);\n    white-space: nowrap;\n    outline-offset: -0.3rem; }\n.cdr-tabs__header-item-label_4\\.0\\.2:active, .cdr-tabs__header-item-label_4\\.0\\.2:hover, .cdr-tabs__header-item-label_4\\.0\\.2:focus {\n      text-decoration: none;\n      color: #406eb5; }\n.cdr-tabs__header-item-label--disabled_4\\.0\\.2 {\n      color: #d1cbbd; }\n.cdr-tabs__header-item-label--disabled_4\\.0\\.2:active, .cdr-tabs__header-item-label--disabled_4\\.0\\.2:hover, .cdr-tabs__header-item-label--disabled_4\\.0\\.2:focus {\n        color: #d1cbbd;\n        cursor: not-allowed; }\n.cdr-tabs__underline_4\\.0\\.2 {\n    z-index: 1;\n    position: absolute;\n    width: 3rem;\n    margin: 0;\n    height: 0.4rem;\n    margin-top: -0.4rem;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    border: none;\n    /* border: none; */\n    background-color: #3278ae;\n    -webkit-transition: 0.4s cubic-bezier(0.32, 0.94, 0.6, 1);\n    transition: 0.4s cubic-bezier(0.32, 0.94, 0.6, 1); }\n.cdr-tabs__content-container_4\\.0\\.2 {\n    position: relative;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    overflow-x: hidden;\n    overflow-y: auto; }\n.cdr-tabs_4\\.0\\.2 .fade-enter-active_4\\.0\\.2,\n  .cdr-tabs_4\\.0\\.2 .fade-leave-active_4\\.0\\.2 {\n    opacity: 0.5s; }\n.cdr-tabs_4\\.0\\.2 .fade-enter_4\\.0\\.2,\n  .cdr-tabs_4\\.0\\.2 .fade-leave-to_4\\.0\\.2 {\n    opacity: 0; }\n.cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item-label_4\\.0\\.2, .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item-label_4\\.0\\.2 {\n    font-family: Graphik, Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-style: normal;\n    font-weight: 500;\n    letter-spacing: -0.008rem;\n    font-size: 1.4rem;\n    line-height: 1.8rem;\n    padding: 0.6rem 1.2rem; }\n.cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2, .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2, .cdr-tabs--compact_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2, .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 + .cdr-tabs--small_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 {\n    margin-left: 0.8rem; }\n.cdr-tabs--no-border_4\\.0\\.2 .cdr-tabs__header_4\\.0\\.2,\n  .cdr-tabs--no-border_4\\.0\\.2 .cdr-tabs__header-container_4\\.0\\.2 {\n    border-bottom: 0.1rem solid transparent; }\n.cdr-tabs--full-width_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2 {\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1; }\n.cdr-tabs--centered_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2:first-of-type {\n    margin-left: auto; }\n.cdr-tabs--centered_4\\.0\\.2 .cdr-tabs__header-item_4\\.0\\.2:last-of-type {\n    margin-right: auto; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyVGFicy5zY3NzIiwiLi4vLi4vLi4vLi4vYnVpbGQvbm9vcC5jc3MiLCJzcmMvY29tcG9uZW50cy90YWJzL3N0eWxlcy9DZHJUYWJzLnNjc3MiLCJub2RlX21vZHVsZXMvQHJlaS9jZHItdG9rZW5zL2Rpc3Qvc2Nzcy9jZHItdG9rZW5zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7aUVDT2lFO0FERWpFOzt1QkNDdUI7QUNWdkIsd0JBQXdCO0FDcUJ4QjtFQUNFLHNCQUFBO0VBQ0Esb0JBQWE7RUFBYixvQkFBYTtFQUFiLGFBQWE7RUFDYiw0QkFBaUI7RUFBakIsNkJBQWlCO01BQWpCLHFCQUFpQjtVQUFqQixpQkFBaUI7RUFDakIsYUFBYTtFQTRKYjtnQkZuS2M7RUVtTGQ7Z0JGakxjO0VFMExkO2dCRnhMYztFRWdNZDtnQkY5TGMsRUUrTEM7QUFsTWpCO0lBUUksd0JBQXdCO0lBQ3hCLGFBQVUsRUFBQTtBQVRkO0lBWUkscUJBQWtCO0lBQ2xCLG9DQUFtQztJQUNuQyx1REFBbUQsRUFBQTtBQUdyRDtJQUNFLGdCQUFnQjtJQUNoQixtQ0M2bkN1QztJRDVuQ3ZDLGlDQUFpQztJQUNqQyw0Q0FBNEMsRUFBQTtBQUo3QztNQUt3QixtQkFBbUI7TUFBRSxvQkFBb0IsRUFBQTtBQUdsRTtJQUNFLGtCQUFrQixFQUFBO0FBRG5CO01BSUcsOEJBQThCO01BQzlCLHNDQUFzQztNQUN0QyxXQUFXO01BQ1gsa0JBQWtCO01BQ2xCLFlBQVk7TUFDWixNQUFNO01BQ04sU0FBUztNQUNULE9BQU87TUFDUCxhQUFXO01BQ1gsb0dBS0c7TUFMSCxxRUFLRztNQUNILG9CQUFvQjtNQUNwQixVQUFVLEVBQUE7QUFwQmI7TUF3QkcsOEJBQThCO01BQzlCLHNDQUFzQztNQUN0QyxXQUFXO01BQ1gsa0JBQWtCO01BQ2xCLE1BQU07TUFDTixTQUFTO01BQ1QsUUFBUTtNQUNSLGFBQVc7TUFDWCxvR0FLRztNQUxILHNFQUtHO01BQ0gsb0JBQW9CO01BQ3BCLFVBQVUsRUFBQTtBQUlkO0lBQ0Usb0JBQWE7SUFBYixvQkFBYTtJQUFiLGFBQWE7SUFDYixXQUFXO0lBQ1gsU0FBUztJQUVULFVBQVU7SUFDVixrQkFBa0IsRUFBQTtBQUVsQjtNQUNFLFVBQVUsRUFBQTtBQUdaO01BQ0UsVUFBVSxFQUFBO0FBSWQ7SUFDRSxjQUFjO0lBQ2QsVUFBVSxFQUFBO0FBRlg7TUFLRyxtQkNtdkNrQixFQUFBO0FEeHZDckI7TUFTRyw0QkN1OUIyQztNRHQ5QjNDLGdCQUFnQixFQUFBO0FBSXBCO0lBcEhBLDRFQ21rRG9GO0lEbGtEcEYsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQix5QkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtJQWtIakIsY0FBYztJQUNkLHFCQUFxQjtJQUNyQixzQkNzeEMwQztJRHJ4QzFDLDZCQzI4QjRDO0lEMThCNUMsbUJBQW1CO0lBQ25CLHVCQUFvQixFQUFBO0FBUnJCO01BYUcscUJBQXFCO01BQ3JCLGNDcThCNEIsRUFBQTtBRGw4QjlCO01BQ0UsY0NrOEIrQixFQUFBO0FEbjhCaEM7UUFNRyxjQzY3QjZCO1FENTdCN0IsbUJBQW1CLEVBQUE7QUFLekI7SUFDRSxVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxTQUFTO0lBQ1QsY0Nxc0N3QjtJRHBzQ3hCLG1CQ29zQ3dCO0lEbnNDeEIsOEJBQXNCO1lBQXRCLHNCQUFzQjtJQUN0QixZQUFZO0lBRVosa0JBQUE7SUFDQSx5QkNpaENtQztJRGhoQ25DLHlEQ3dwQzREO0lEeHBDNUQsaURDd3BDNEQsRUFBQTtBRHJwQzlEO0lBQ0Usa0JBQWtCO0lBQ2xCLG1CQUFjO1FBQWQsa0JBQWM7WUFBZCxjQUFjO0lBQ2Qsa0JBQWtCO0lBQ2xCLGdCQUFnQixFQUFBO0FBbkpwQjs7SUF3SkksYUFBYSxFQUFBO0FBeEpqQjs7SUE2SkksVUFBVSxFQUFBO0FBS1g7SUExS0QsNEVDMGpEb0Y7SUR6akRwRixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLHlCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsbUJBQW1CO0lBeUtmLHNCQ3l0Q2dELEVBQUE7QUQ3dENuRDtJQVNLLG1CQ2dxQ2lCLEVBQUE7QUR6cEN0Qjs7SUFHRyx1Q0FBb0MsRUFBQTtBQU12QztJQUVHLG1CQUFZO1FBQVosb0JBQVk7WUFBWixZQUFZLEVBQUE7QUFNZjtJQUVHLGlCQUFpQixFQUFBO0FBRnBCO0lBS0csa0JBQWtCLEVBQUEiLCJmaWxlIjoiQ2RyVGFicy5zY3NzIn0= */";
   var style$q = {"cdr-tabs":"cdr-tabs_4.0.2","cdr-tabs__header-container":"cdr-tabs__header-container_4.0.2","cdr-tabs__gradient-container":"cdr-tabs__gradient-container_4.0.2","cdr-tabs__header":"cdr-tabs__header_4.0.2","cdr-tabs__header-gradient-left":"cdr-tabs__header-gradient-left_4.0.2","cdr-tabs__header-gradient-right":"cdr-tabs__header-gradient-right_4.0.2","cdr-tabs__header-item":"cdr-tabs__header-item_4.0.2","cdr-tabs__header-item-label":"cdr-tabs__header-item-label_4.0.2","cdr-tabs__header-item-label--disabled":"cdr-tabs__header-item-label--disabled_4.0.2","cdr-tabs__underline":"cdr-tabs__underline_4.0.2","cdr-tabs__content-container":"cdr-tabs__content-container_4.0.2","fade-enter-active":"fade-enter-active_4.0.2","fade-leave-active":"fade-leave-active_4.0.2","fade-enter":"fade-enter_4.0.2","fade-leave-to":"fade-leave-to_4.0.2","cdr-tabs--compact":"cdr-tabs--compact_4.0.2","cdr-tabs--small":"cdr-tabs--small_4.0.2","cdr-tabs--no-border":"cdr-tabs--no-border_4.0.2","cdr-tabs--full-width":"cdr-tabs--full-width_4.0.2","cdr-tabs--centered":"cdr-tabs--centered_4.0.2"};
   styleInject(css$n);
 
@@ -26725,12 +26469,18 @@ var cedar = (function () {
       }, 250));
     },
     methods: {
-      getNextTab: function getNextTab() {
-        var startIndex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-
+      getNextTab: function getNextTab(startIndex) {
         for (var i = startIndex; i < this.tabs.length; i += 1) {
           if (!this.tabs[i].disabled) {
             return i;
+          }
+        }
+
+        if (startIndex !== 0) {
+          for (var k = 0; k < startIndex; k += 1) {
+            if (!this.tabs[k].disabled) {
+              return k;
+            }
           }
         }
 
@@ -26743,45 +26493,75 @@ var cedar = (function () {
           }
         }
 
+        if (startIndex !== this.tabs.length - 1) {
+          for (var k = this.tabs.length - 1; k > startIndex; k -= 1) {
+            if (!this.tabs[k].disabled) {
+              return k;
+            }
+          }
+        }
+
         return -1;
       },
       handleClick: debounce(function handleClickCallback(tabClicked) {
-        var _context3,
-            _context4,
-            _this2 = this;
+        var _context3;
 
-        var newSelectedTab = find$2(_context3 = this.tabs).call(_context3, function (tab) {
+        var newIndex = findIndex$2(_context3 = this.tabs).call(_context3, function (tab) {
           return tabClicked.name === tab.name;
         });
 
-        forEach$2(_context4 = this.tabs).call(_context4, function (tab, index) {
-          if (newSelectedTab.name === tab.name) {
-            if (_this2.activeTabIndex < index) {
-              tab.setAnimationDirection('flyRight');
-
-              _this2.tabs[_this2.activeTabIndex].setAnimationDirection('flyLeft');
-            } else {
-              tab.setAnimationDirection('flyLeft');
-
-              _this2.tabs[_this2.activeTabIndex].setAnimationDirection('flyRight');
-            }
-
-            _this2.activeTabIndex = index;
-
-            _this2.hideScrollBar();
-
-            _this2.$nextTick(function () {
-              return tab.setActive(true);
-            });
-          } else {
-            _this2.$nextTick(function () {
-              return tab.setActive(false);
-            });
-          }
-        });
-
-        this.updateUnderline();
+        this.changeTab(newIndex);
       }, 500, {
+        leading: true,
+        trailing: false
+      }),
+      changeTab: function changeTab(newIndex) {
+        var _this2 = this;
+
+        var oldIndex = this.activeTabIndex;
+        this.hideScrollBar();
+
+        if (newIndex > oldIndex) {
+          this.tabs[oldIndex].setAnimationDirection('exit-left');
+          this.tabs[oldIndex].setActive(false);
+
+          setTimeout$2(function () {
+            _this2.tabs[newIndex].setActive(true);
+
+            _this2.tabs[newIndex].setAnimationDirection('enter-right');
+          }, 200);
+        } else {
+          this.tabs[oldIndex].setAnimationDirection('exit-right');
+          this.tabs[oldIndex].setActive(false);
+
+          setTimeout$2(function () {
+            _this2.tabs[newIndex].setActive(true);
+
+            _this2.tabs[newIndex].setAnimationDirection('enter-left');
+          }, 200);
+        }
+
+        this.activeTabIndex = newIndex;
+        this.updateUnderline();
+        this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+      },
+      rightArrowNav: debounce(function handleRightArrow() {
+        var nextTab = this.getNextTab(this.activeTabIndex + 1);
+
+        if (nextTab !== -1) {
+          this.changeTab(nextTab);
+        }
+      }, 300, {
+        leading: true,
+        trailing: false
+      }),
+      leftArrowNav: debounce(function handleLeftArrow() {
+        var previousTab = this.getPreviousTab(this.activeTabIndex - 1);
+
+        if (previousTab !== -1) {
+          this.changeTab(previousTab);
+        }
+      }, 300, {
         leading: true,
         trailing: false
       }),
@@ -26811,50 +26591,6 @@ var cedar = (function () {
           var activeTab = elements[this.activeTabIndex];
           this.underlineOffsetX = activeTab.offsetLeft - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
           this.underlineWidth = activeTab.firstChild.offsetWidth;
-        }
-      },
-      rightArrowNav: function rightArrowNav() {
-        if (!this.animationInProgress) {
-          var nextTab = this.getNextTab(this.activeTabIndex + 1);
-
-          if (nextTab !== -1) {
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-            this.tabs[nextTab].setAnimationDirection('flyRight');
-            this.hideScrollBar();
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-            this.activeTabIndex = nextTab;
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-          }
-
-          this.navAnimationProgress();
-        }
-      },
-      leftArrowNav: function leftArrowNav() {
-        if (!this.animationInProgress) {
-          var previousTab = this.getPreviousTab(this.activeTabIndex - 1);
-
-          if (previousTab !== -1) {
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-            this.tabs[previousTab].setAnimationDirection('flyLeft');
-            this.hideScrollBar();
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-            this.activeTabIndex = previousTab;
-            this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-          }
-
-          this.navAnimationProgress();
-        }
-      },
-      navAnimationProgress: function navAnimationProgress() {
-        var _this3 = this;
-
-        if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]) {
-          this.animationInProgress = true;
-          delay(function () {
-            _this3.animationInProgress = false;
-          }, 600);
-          this.updateUnderline();
-          this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
         }
       },
       handleDownArrowNav: function handleDownArrowNav() {
@@ -26890,7 +26626,7 @@ var cedar = (function () {
         styleRef.setProperty('overflow-x', 'hidden');
       },
       getTabEl: function getTabEl(tab) {
-        var _this4 = this;
+        var _this3 = this;
 
         var h = this.$createElement;
         return tab.disabled ? h("span", {
@@ -26901,20 +26637,15 @@ var cedar = (function () {
           }
         }, [tab.name]) : h("a", {
           "attrs": {
-            "role": "tab",
-            "aria-selected": tab.active,
-            "aria-disabled": "false",
-            "aria-controls": tab.id,
-            "id": tab.ariaLabelledby,
             "tabIndex": tab.active ? 0 : -1,
-            "href": "#".concat(tab.id || tab.name)
+            "href": "#".concat(tab.id)
           },
           "class": this.style['cdr-tabs__header-item-label'],
           "on": {
             "click": function click($event) {
               $event.preventDefault();
               return function (e) {
-                return _this4.handleClick(tab, e);
+                return _this3.handleClick(tab, e);
               }($event);
             }
           }
@@ -26922,8 +26653,8 @@ var cedar = (function () {
       }
     },
     render: function render() {
-      var _this5 = this,
-          _context5;
+      var _this4 = this,
+          _context4;
 
       var h = arguments[0];
       return h("div", {
@@ -26936,18 +26667,18 @@ var cedar = (function () {
         "class": clsx(this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '', this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '', this.style['cdr-tabs__gradient-container']),
         "on": {
           "keyup": [function ($event) {
-            if (!("button" in $event) && _this5._k($event.keyCode, "right", 39, $event.key, ["Right", "ArrowRight"])) return null;
+            if (!("button" in $event) && _this4._k($event.keyCode, "right", 39, $event.key, ["Right", "ArrowRight"])) return null;
             if ("button" in $event && $event.button !== 2) return null;
-            return _this5.rightArrowNav($event);
+            return _this4.rightArrowNav($event);
           }, function ($event) {
-            if (!("button" in $event) && _this5._k($event.keyCode, "left", 37, $event.key, ["Left", "ArrowLeft"])) return null;
+            if (!("button" in $event) && _this4._k($event.keyCode, "left", 37, $event.key, ["Left", "ArrowLeft"])) return null;
             if ("button" in $event && $event.button !== 0) return null;
-            return _this5.leftArrowNav($event);
+            return _this4.leftArrowNav($event);
           }],
           "keydown": function keydown($event) {
-            if (!("button" in $event) && _this5._k($event.keyCode, "down", 40, $event.key, ["Down", "ArrowDown"])) return null;
+            if (!("button" in $event) && _this4._k($event.keyCode, "down", 40, $event.key, ["Down", "ArrowDown"])) return null;
             $event.preventDefault();
-            return _this5.handleDownArrowNav($event);
+            return _this4.handleDownArrowNav($event);
           }
         }
       }, [h("nav", {
@@ -26958,13 +26689,18 @@ var cedar = (function () {
           "role": "tablist"
         },
         "ref": "cdrTabsHeader"
-      }, [map$2(_context5 = this.tabs).call(_context5, function (tab, index) {
-        var _context6;
-
+      }, [map$2(_context4 = this.tabs).call(_context4, function (tab) {
         return h("li", {
-          "key": tab.id ? tab.id : concat$3(_context6 = "".concat(tab.name, "-")).call(_context6, index),
-          "class": clsx(tab.active ? _this5.style['cdr-tabs__header-item-active'] : '', _this5.style['cdr-tabs__header-item'])
-        }, [_this5.getTabEl(tab)]);
+          "attrs": {
+            "role": "tab",
+            "aria-selected": tab.active,
+            "aria-disabled": "false",
+            "aria-controls": tab.id,
+            "id": tab.ariaLabelledby
+          },
+          "key": tab.id,
+          "class": clsx(tab.active ? _this4.style['cdr-tabs__header-item-active'] : '', _this4.style['cdr-tabs__header-item'])
+        }, [_this4.getTabEl(tab)]);
       })])]), h("div", {
         "class": this.style['cdr-tabs__underline'],
         "style": this.underlineStyle
@@ -27380,7 +27116,7 @@ var cedar = (function () {
     } return it;
   };
 
-  var defineProperty$8 = objectDefineProperty.f;
+  var defineProperty$7 = objectDefineProperty.f;
   var forEach$3 = arrayIteration.forEach;
 
 
@@ -27426,7 +27162,7 @@ var cedar = (function () {
         }
       });
 
-      IS_WEAK || defineProperty$8(Constructor.prototype, 'size', {
+      IS_WEAK || defineProperty$7(Constructor.prototype, 'size', {
         configurable: true,
         get: function () {
           return getInternalState(this).collection.size;
@@ -27465,7 +27201,7 @@ var cedar = (function () {
     }
   };
 
-  var defineProperty$9 = objectDefineProperty.f;
+  var defineProperty$8 = objectDefineProperty.f;
 
 
 
@@ -27607,7 +27343,7 @@ var cedar = (function () {
           return define(this, value = value === 0 ? 0 : value, value);
         }
       });
-      if (descriptors) defineProperty$9(C.prototype, 'size', {
+      if (descriptors) defineProperty$8(C.prototype, 'size', {
         get: function () {
           return getInternalState(this).size;
         }
@@ -28116,12 +27852,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$2T(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2S(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2S(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2T(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2T(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2R(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2S(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2S(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$2 = {
     name: 'Breadcrumb',
-    components: _objectSpread$2S({}, Components),
+    components: _objectSpread$2R({}, Components),
     data: function data() {
       return {
         averageBreadcrumbItems: [{
@@ -28336,12 +28072,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$2U(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2T(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2T(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2U(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2U(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2S(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2T(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2T(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$3 = {
     name: 'Default',
-    components: _objectSpread$2T({}, Components),
+    components: _objectSpread$2S({}, Components),
     data: function data() {
       return {
         data: [{
@@ -28551,12 +28287,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$2V(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2U(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2U(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2V(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2V(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2T(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2U(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2U(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$4 = {
     name: 'Secondary',
-    components: _objectSpread$2U({}, Components),
+    components: _objectSpread$2T({}, Components),
     data: function data() {
       return {
         data: [{
@@ -28727,12 +28463,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$2W(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2V(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2V(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2W(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2W(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2U(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2V(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2V(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$5 = {
     name: 'ButtonIconComps',
-    components: _objectSpread$2V({}, Components)
+    components: _objectSpread$2U({}, Components)
   };
 
   /* script */
@@ -29390,12 +29126,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$2X(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2W(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2W(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2X(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2X(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2V(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2W(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2W(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$8 = {
     name: 'CaptionExample',
-    components: _objectSpread$2W({}, Components)
+    components: _objectSpread$2V({}, Components)
   };
 
   /* script */
@@ -30264,12 +30000,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$2Y(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2X(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2X(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2Y(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2Y(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2W(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2X(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2X(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$c = {
     name: 'Cta',
-    components: _objectSpread$2X({}, Components)
+    components: _objectSpread$2W({}, Components)
   };
 
   /* script */
@@ -31181,12 +30917,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$2Z(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2Y(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2Y(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2Z(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2Z(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2X(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2Y(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2Y(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$i = {
     name: 'Tables',
-    components: _objectSpread$2Y({}, Components, {
+    components: _objectSpread$2X({}, Components, {
       AllHeaders: __vue_component__$d,
       NoColHeaders: __vue_component__$e,
       NoHeaders: __vue_component__$f,
@@ -31500,12 +31236,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$2_(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2Z(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2Z(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2_(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2_(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2Y(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2Z(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2Z(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$k = {
     name: 'Grid',
-    components: _objectSpread$2Z({}, Components, {
+    components: _objectSpread$2Y({}, Components, {
       complex: __vue_component__$j
     })
   };
@@ -35077,12 +34813,12 @@ var cedar = (function () {
 
   var reduce$2 = reduce$1;
 
-  function ownKeys$2$(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2_(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2_(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context3; forEach$2(_context3 = ownKeys$2$(Object(source), true)).call(_context3, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context4; forEach$2(_context4 = ownKeys$2$(Object(source))).call(_context4, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2Z(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context3; forEach$2(_context3 = ownKeys$2_(Object(source), true)).call(_context3, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context4; forEach$2(_context4 = ownKeys$2_(Object(source))).call(_context4, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$l = {
     name: 'Icons',
-    components: _objectSpread$2_({}, Components),
+    components: _objectSpread$2Z({}, Components),
     data: function data() {
       return {
         Icons: Icons
@@ -35098,7 +34834,7 @@ var cedar = (function () {
         return reduce$2(_context = filter$2(_context2 = keys$3(this.Icons)).call(_context2, function (key) {
           return !includes$4(notAllowed).call(notAllowed, key);
         })).call(_context, function (obj, key) {
-          return _objectSpread$2_({}, obj, defineProperty$6({}, key, _this.Icons[key]));
+          return _objectSpread$2Z({}, obj, defineProperty$6({}, key, _this.Icons[key]));
         }, {});
       }
     },
@@ -36206,12 +35942,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$30(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$2$(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$2$(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$30(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$30(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2_(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$2$(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$2$(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$p = {
     name: 'Images',
-    components: _objectSpread$2$({}, Components, {
+    components: _objectSpread$2_({}, Components, {
       ratios: __vue_component__$m,
       cropping: __vue_component__$n,
       mods: __vue_component__$o
@@ -36342,12 +36078,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$31(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$30(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$30(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$31(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$31(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$2$(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$30(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$30(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$q = {
     name: 'Inputs',
-    components: _objectSpread$30({}, Components),
+    components: _objectSpread$2$({}, Components),
     data: function data() {
       return {
         defaultModel: '',
@@ -36711,12 +36447,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$32(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$31(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$31(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$32(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$32(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$30(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$31(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$31(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$r = {
     name: 'StandardLinks',
-    components: _objectSpread$31({}, Components),
+    components: _objectSpread$30({}, Components),
     methods: {
       clicked: function clicked() {
         // eslint-disable-next-line no-console
@@ -38423,12 +38159,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$33(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$32(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$32(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$33(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$33(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$31(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$32(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$32(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$z = {
     name: 'Modal',
-    components: _objectSpread$32({}, Components),
+    components: _objectSpread$31({}, Components),
     data: function data() {
       return {
         size: 'large',
@@ -39067,12 +38803,12 @@ var cedar = (function () {
   	example1: example1
   };
 
-  function ownKeys$34(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$33(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$33(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context4; forEach$2(_context4 = ownKeys$34(Object(source), true)).call(_context4, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context5; forEach$2(_context5 = ownKeys$34(Object(source))).call(_context5, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$32(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context4; forEach$2(_context4 = ownKeys$33(Object(source), true)).call(_context4, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context5; forEach$2(_context5 = ownKeys$33(Object(source))).call(_context5, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$A = {
     name: 'Pagination',
-    components: _objectSpread$33({}, Components),
+    components: _objectSpread$32({}, Components),
     data: function data() {
       return {
         page: 3,
@@ -40366,12 +40102,12 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$35(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$34(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$34(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$35(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$35(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$33(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$34(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$34(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$F = {
     name: 'Rating',
-    components: _objectSpread$34({}, Components)
+    components: _objectSpread$33({}, Components)
   };
 
   /* script */
@@ -41041,15 +40777,16 @@ var cedar = (function () {
       undefined
     );
 
-  function ownKeys$36(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+  function ownKeys$35(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$35(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$36(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$36(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
+  function _objectSpread$34(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$35(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$35(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$H = {
-    name: 'TabsExample',
-    components: _objectSpread$35({}, Components),
+    name: 'TabsDefault',
+    components: _objectSpread$34({}, Components),
     data: function data() {
       return {
-        tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
+        accordion1: false,
+        accordion2: false
       };
     }
   };
@@ -41062,355 +40799,283 @@ var cedar = (function () {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("div", [
-      _c(
-        "div",
-        { staticClass: "tab-demo-section" },
-        [
-          _c(
-            "cdr-text",
-            {
-              staticClass: "cdr-align-text-center",
-              attrs: {
-                tag: "h2",
-                modifier:
-                  "heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-              }
-            },
-            [_vm._v("\n      Tabs\n    ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "cdr-tabs",
-            {
-              attrs: {
-                height: "300px",
-                "data-backstop": "tab-default",
-                "active-tab": 1
-              }
-            },
-            [
-              _c(
-                "cdr-tab-panel",
-                {
-                  attrs: {
-                    name: "Tab1",
-                    id: "tab-panel-default-1",
-                    "aria-labelledby": "tab-default-1"
-                  }
-                },
-                [
-                  _c(
-                    "cdr-text",
-                    { attrs: { tag: "strong", modifier: "subheading" } },
-                    [_vm._v("\n          Tab One Content\n        ")]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "cdr-tab-panel",
-                {
-                  attrs: {
-                    name: "Tab2",
-                    id: "tab-panel-default-2",
-                    "aria-labelledby": "tab-default-2"
-                  }
-                },
-                [
-                  _c(
-                    "cdr-text",
-                    { attrs: { tag: "strong", modifier: "subheading" } },
-                    [
-                      _c("cdr-text", [
-                        _vm._v(
-                          "What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n            I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n            Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it."
-                        )
+    return _c(
+      "div",
+      { staticClass: "tab-demo-section tabs-demo-default" },
+      [
+        _c(
+          "cdr-tabs",
+          { attrs: { height: "500px", "data-backstop": "tab-default" } },
+          [
+            _c(
+              "cdr-tab-panel",
+              {
+                attrs: {
+                  name: "Details",
+                  "aria-labelledby": "tab-default-defails",
+                  id: "tab-panel-default-details"
+                }
+              },
+              [
+                _c(
+                  "cdr-text",
+                  {
+                    staticClass: "tab-title",
+                    attrs: { tag: "h3", modifier: "heading-serif-400" }
+                  },
+                  [_vm._v("\n        Details\n      ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "cdr-list",
+                  {
+                    attrs: { modifier: "unordered", space: "cdr-mb-space-two-x" }
+                  },
+                  [
+                    _c("li", [
+                      _vm._v(
+                        "Tuckaway, spacer-mesh shoulder straps and integrated handle make carrying a breeze"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "Back pocket holds a hydration reservoir (sold separately)"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "Large main compartment has padded interior sleeve to hold a tablet or other device"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "Zippered mesh organizer pocket with key fob; 2 side mesh pockets; open-topped stash pocket for jacket or other quick-use items; small front zip pocket"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "Mesh-covered back panel has slotted foam for ventilation and breathability"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "Attaches to a variety of compatible Osprey packs (sold separately)"
+                      )
+                    ])
+                  ]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-tab-panel",
+              {
+                attrs: {
+                  name: "Specs",
+                  "aria-labelledby": "tab-default-specs",
+                  id: "tab-panel-default-specs"
+                }
+              },
+              [
+                _c(
+                  "cdr-text",
+                  {
+                    staticClass: "tab-title",
+                    attrs: { tag: "h3", modifier: "heading-serif-400" }
+                  },
+                  [_vm._v("\n        Specs\n      ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "cdr-data-table",
+                  { attrs: { modifier: "compact borderless" } },
+                  [
+                    _c("template", { slot: "tbody" }, [
+                      _c("tr", [
+                        _c("th", [_vm._v("Best Use")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Hiking, Travel")])
                       ]),
-                      _vm._v("\n          Tab Two Content\n          "),
-                      _c("cdr-text", [
-                        _vm._v(
-                          "What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n            I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n            Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it."
-                        )
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("th", [_vm._v("Bag Style")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Backpack")])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("th", [_vm._v("Frame Type")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Frameless")])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("th", [_vm._v("Gear Capacity (cu. in.)")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("1,220 cubic inches")])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("th", [_vm._v("Weight")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("1 lb. 3.8 oz")])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("th", [_vm._v("Pack ACcess")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("2 + main compartments")])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("th", [_vm._v("Hipbelt")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Yes")])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("th", [_vm._v("Dimensions")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("18 x 10 x 9 inches")])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("th", [_vm._v("Gender")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Unisex")])
                       ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "cdr-tab-panel",
-                {
-                  attrs: {
-                    name: "REALLY REALLY LARGE TAB NAME",
-                    id: "tab-panel-default-3",
-                    "aria-labelledby": "tab-default-3"
-                  }
-                },
-                [
-                  _c(
-                    "cdr-text",
-                    { attrs: { tag: "strong", modifier: "subheading" } },
-                    [_vm._v("\n          Tab Three Content\n        ")]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "cdr-tab-panel",
-                {
-                  attrs: {
-                    name: "4",
-                    id: "tab-panel-default-4",
-                    "aria-labelledby": "tab-default-4"
-                  }
-                },
-                [
-                  _c(
-                    "cdr-text",
-                    { attrs: { tag: "strong", modifier: "subheading" } },
-                    [_vm._v("\n          Tab Four Content\n        ")]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "cdr-tab-panel",
-                {
-                  attrs: {
-                    name: "Five",
-                    id: "tab-panel-default-5",
-                    "aria-labelledby": "tab-default-5"
-                  }
-                },
-                [
-                  _c(
-                    "cdr-text",
-                    { attrs: { tag: "strong", modifier: "subheading" } },
-                    [_vm._v("\n          Tab Five Content\n        ")]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "cdr-tab-panel",
-                {
-                  attrs: {
-                    name: "Six",
-                    id: "tab-panel-default-6",
-                    "aria-labelledby": "tab-default-6"
-                  }
-                },
-                [
-                  _c(
-                    "cdr-text",
-                    { attrs: { tag: "strong", modifier: "subheading" } },
-                    [_vm._v("\n          Tab Six Content\n        ")]
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "tab-demo-secton" },
-        [
-          _c(
-            "cdr-text",
-            {
-              staticClass: "cdr-align-text-center",
+                    ])
+                  ],
+                  2
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("cdr-tab-panel", {
               attrs: {
-                tag: "h3",
-                modifier:
-                  "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+                name: "Reviews",
+                "aria-labelledby": "tab-default-reviews",
+                id: "tab-panel-default-reviews",
+                disabled: true
               }
-            },
-            [_vm._v("\n      Small Tabs\n    ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "cdr-tabs",
-            { attrs: { height: "100px", size: "small" } },
-            _vm._l(_vm.tabs.slice(0, 5), function(tab) {
-              return _c(
-                "cdr-tab-panel",
-                {
-                  key: tab,
-                  attrs: {
-                    name: tab,
-                    id: "tab-panel-small-" + tab,
-                    "aria-labelledby": "tab-small-" + tab
-                  }
-                },
-                [
-                  _c("cdr-text", { attrs: { modifier: "body-300" } }, [
-                    _vm._v(
-                      "\n          Tab " + _vm._s(tab) + " content\n        "
-                    )
-                  ])
-                ],
-                1
-              )
             }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "tab-demo-secton" },
-        [
-          _c(
-            "cdr-text",
-            {
-              staticClass: "cdr-align-text-center",
-              attrs: {
-                tag: "h3",
-                modifier:
-                  "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-              }
-            },
-            [_vm._v("\n      Full-Width Tabs\n    ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "cdr-tabs",
-            { attrs: { height: "100px", modifier: "full-width" } },
-            _vm._l(_vm.tabs.slice(0, 5), function(tab) {
-              return _c(
-                "cdr-tab-panel",
-                {
-                  key: tab,
-                  attrs: {
-                    name: tab,
-                    id: "tab-panel-full-width-" + tab,
-                    "aria-labelledby": "tab-full-width-" + tab
-                  }
-                },
-                [
-                  _c("cdr-text", { attrs: { modifier: "body-300" } }, [
-                    _vm._v(
-                      "\n          Tab " + _vm._s(tab) + " content\n        "
+            _vm._v(" "),
+            _c(
+              "cdr-tab-panel",
+              {
+                attrs: {
+                  name: "Q&A",
+                  "aria-labelledby": "tab-default-Q&A",
+                  id: "tab-panel-default-Q&A"
+                }
+              },
+              [
+                _c(
+                  "cdr-text",
+                  {
+                    staticClass: "tab-title",
+                    attrs: { tag: "h3", modifier: "heading-serif-400" }
+                  },
+                  [_vm._v("\n        Q&A\n      ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "cdr-accordion",
+                  {
+                    attrs: {
+                      id: "tabs-accordion-default",
+                      opened: _vm.accordion1,
+                      level: "4"
+                    },
+                    on: {
+                      "accordion-toggle": function($event) {
+                        _vm.accordion1 = !_vm.accordion1;
+                      }
+                    }
+                  },
+                  [
+                    _c("template", { slot: "label" }, [
+                      _vm._v("\n          A short label\n        ")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "cdr-text",
+                      { attrs: { modifier: "body-300" } },
+                      [
+                        _vm._v(
+                          "\n          This is some text. It's in a\n          "
+                        ),
+                        _c(
+                          "cdr-text",
+                          {
+                            attrs: { tag: "strong", modifier: "body-strong-300" }
+                          },
+                          [
+                            _vm._v("cdr-text paragraph with a modifier of "),
+                            _c("code", [_vm._v("body-300")])
+                          ]
+                        ),
+                        _vm._v(
+                          " element as\n          thats how you assign the correct font and line-height for text dislpay on REI.\n          does not include margin or add space to the container. Lorem ipsum dolor\n        "
+                        )
+                      ],
+                      1
                     )
-                  ])
-                ],
-                1
-              )
-            }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "tab-demo-secton" },
-        [
-          _c(
-            "cdr-text",
-            {
-              staticClass: "cdr-align-text-center",
-              attrs: {
-                tag: "h3",
-                modifier:
-                  "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-              }
-            },
-            [_vm._v("\n      No Border Tabs\n    ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "cdr-tabs",
-            { attrs: { height: "100px", modifier: "no-border" } },
-            _vm._l(_vm.tabs.slice(0, 5), function(tab) {
-              return _c(
-                "cdr-tab-panel",
-                {
-                  key: tab,
-                  attrs: {
-                    name: tab,
-                    id: "tab-panel-no-border-" + tab,
-                    "aria-labelledby": "tab-no-border-" + tab
-                  }
-                },
-                [
-                  _c("cdr-text", { attrs: { modifier: "body-300" } }, [
-                    _vm._v(
-                      "\n          Tab " + _vm._s(tab) + " content\n        "
-                    )
-                  ])
-                ],
-                1
-              )
-            }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "tab-demo-secton" },
-        [
-          _c(
-            "cdr-text",
-            {
-              staticClass: "cdr-align-text-center",
-              attrs: {
-                tag: "h3",
-                modifier:
-                  "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
-              }
-            },
-            [_vm._v("\n      Centered Tabs\n    ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "cdr-tabs",
-            { attrs: { height: "100px", modifier: "centered" } },
-            _vm._l(_vm.tabs, function(tab) {
-              return _c(
-                "cdr-tab-panel",
-                {
-                  key: tab,
-                  attrs: {
-                    name: tab,
-                    id: "tab-panel-centered-" + tab,
-                    "aria-labelledby": "tab-centered-" + tab
-                  }
-                },
-                [
-                  _c("cdr-text", { attrs: { modifier: "body-300" } }, [
-                    _vm._v(
-                      "\n          Tab " + _vm._s(tab) + " content\n        "
-                    )
-                  ])
-                ],
-                1
-              )
-            }),
-            1
-          )
-        ],
-        1
-      )
-    ])
+                  ],
+                  2
+                ),
+                _vm._v(" "),
+                _c(
+                  "cdr-accordion",
+                  {
+                    attrs: {
+                      id: "tabs-accordion-default-long-label",
+                      opened: _vm.accordion2,
+                      label:
+                        "Label with multiple words, so many words in fact that\n        this content may wrap to several lines",
+                      level: "4"
+                    },
+                    on: {
+                      "accordion-toggle": function($event) {
+                        _vm.accordion2 = !_vm.accordion2;
+                      }
+                    }
+                  },
+                  [
+                    _c("cdr-list", { attrs: { modifier: "unordered" } }, [
+                      _c("li", [
+                        _vm._v("This is a cdr-list item inside an accordion.")
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("It includes no extra styling")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("I'm adding a bunch of items")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("to this list because")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("I want to see what it's like")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("when animated!")])
+                    ])
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
   };
   var __vue_staticRenderFns__$H = [];
   __vue_render__$H._withStripped = true;
@@ -41418,7 +41083,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$H = function (inject) {
       if (!inject) return
-      inject("data-v-11093e28_0", { source: "\n.tab-demo-section {\n  margin-bottom: 30px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tabs/examples/Tabs.vue"],"names":[],"mappings":";AA0OA;EACA,mBAAA;AACA","file":"Tabs.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div>\n    <div class=\"tab-demo-section\">\n      <cdr-text\n        tag=\"h2\"\n        modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"300px\"\n        data-backstop=\"tab-default\"\n        :active-tab=\"1\"\n      >\n        <cdr-tab-panel\n          name=\"Tab1\"\n          id=\"tab-panel-default-1\"\n          aria-labelledby=\"tab-default-1\"\n        >\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab One Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel\n          name=\"Tab2\"\n          id=\"tab-panel-default-2\"\n          aria-labelledby=\"tab-default-2\"\n        >\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n            Tab Two Content\n            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.\n\n              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.\n\n              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel\n          name=\"REALLY REALLY LARGE TAB NAME\"\n          id=\"tab-panel-default-3\"\n          aria-labelledby=\"tab-default-3\"\n        >\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Three Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel\n          name=\"4\"\n          id=\"tab-panel-default-4\"\n          aria-labelledby=\"tab-default-4\"\n        >\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Four Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel\n          name=\"Five\"\n          id=\"tab-panel-default-5\"\n          aria-labelledby=\"tab-default-5\"\n        >\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Five Content\n          </cdr-text>\n        </cdr-tab-panel>\n        <cdr-tab-panel\n          name=\"Six\"\n          id=\"tab-panel-default-6\"\n          aria-labelledby=\"tab-default-6\"\n        >\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab Six Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- small -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Small Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        size=\"small\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-small-' + tab\"\n          :aria-labelledby=\"'tab-small-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- full-width -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Full-Width Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"full-width\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-full-width-' + tab\"\n          :aria-labelledby=\"'tab-full-width-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- No-border -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        No Border Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"no-border\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-no-border-' + tab\"\n          :aria-labelledby=\"'tab-no-border-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- Centered -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Centered Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"centered\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-centered-' + tab\"\n          :aria-labelledby=\"'tab-centered-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'TabsExample',\n  components: { ...Components },\n  data() {\n    return {\n      tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],\n    };\n  },\n};\n</script>\n\n<style>\n  .tab-demo-section {\n    margin-bottom: 30px;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-77185ef8_0", { source: "\n.tabs-demo-default {\n  max-width: 800px;\n}\nh3.tab-title {\n  margin: 20px 0;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tabs/examples/demo/TabsDefault.vue"],"names":[],"mappings":";AAqKA;EACA,gBAAA;AACA;AAEA;EACA,cAAA;AACA","file":"TabsDefault.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div class=\"tab-demo-section tabs-demo-default\">\n    <cdr-tabs\n      height=\"500px\"\n      data-backstop=\"tab-default\"\n    >\n      <cdr-tab-panel\n        name=\"Details\"\n        aria-labelledby=\"tab-default-defails\"\n        id=\"tab-panel-default-details\"\n      >\n        <cdr-text\n          tag=\"h3\"\n          modifier=\"heading-serif-400\"\n          class=\"tab-title\"\n        >\n          Details\n        </cdr-text>\n\n        <cdr-list\n          modifier=\"unordered\"\n          space=\"cdr-mb-space-two-x\"\n        >\n          <li>Tuckaway, spacer-mesh shoulder straps and integrated handle make carrying a breeze</li>\n          <li>Back pocket holds a hydration reservoir (sold separately)</li>\n          <li>Large main compartment has padded interior sleeve to hold a tablet or other device</li>\n          <li>Zippered mesh organizer pocket with key fob; 2 side mesh pockets; open-topped stash pocket for jacket or other quick-use items; small front zip pocket</li>\n          <li>Mesh-covered back panel has slotted foam for ventilation and breathability</li>\n          <li>Attaches to a variety of compatible Osprey packs (sold separately)</li>\n        </cdr-list>\n      </cdr-tab-panel>\n      <cdr-tab-panel\n        name=\"Specs\"\n        aria-labelledby=\"tab-default-specs\"\n        id=\"tab-panel-default-specs\"\n      >\n        <cdr-text\n          tag=\"h3\"\n          modifier=\"heading-serif-400\"\n          class=\"tab-title\"\n        >\n          Specs\n        </cdr-text>\n        <cdr-data-table\n          modifier=\"compact borderless\"\n        >\n          <template slot=\"tbody\">\n            <tr>\n              <th>Best Use</th>\n              <td>Hiking, Travel</td>\n            </tr>\n            <tr>\n              <th>Bag Style</th>\n              <td>Backpack</td>\n            </tr>\n            <tr>\n              <th>Frame Type</th>\n              <td>Frameless</td>\n            </tr>\n            <tr>\n              <th>Gear Capacity (cu. in.)</th>\n              <td>1,220 cubic inches</td>\n            </tr>\n            <tr>\n              <th>Weight</th>\n              <td>1 lb. 3.8 oz</td>\n            </tr>\n            <tr>\n              <th>Pack ACcess</th>\n              <td>2 + main compartments</td>\n            </tr>\n            <tr>\n              <th>Hipbelt</th>\n              <td>Yes</td>\n            </tr>\n            <tr>\n              <th>Dimensions</th>\n              <td>18 x 10 x 9 inches</td>\n            </tr>\n            <tr>\n              <th>Gender</th>\n              <td>Unisex</td>\n            </tr>\n          </template>\n        </cdr-data-table>\n      </cdr-tab-panel>\n      <cdr-tab-panel\n        name=\"Reviews\"\n        aria-labelledby=\"tab-default-reviews\"\n        id=\"tab-panel-default-reviews\"\n        :disabled=\"true\"\n      />\n      <cdr-tab-panel\n        name=\"Q&A\"\n        aria-labelledby=\"tab-default-Q&A\"\n        id=\"tab-panel-default-Q&A\"\n      >\n        <cdr-text\n          tag=\"h3\"\n          modifier=\"heading-serif-400\"\n          class=\"tab-title\"\n        >\n          Q&A\n        </cdr-text>\n\n        <cdr-accordion\n          id=\"tabs-accordion-default\"\n          :opened=\"accordion1\"\n          @accordion-toggle=\"accordion1 = !accordion1\"\n          level=\"4\"\n        >\n          <template slot=\"label\">\n            A short label\n          </template>\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            This is some text. It's in a\n            <cdr-text\n              tag=\"strong\"\n              modifier=\"body-strong-300\"\n            >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as\n            thats how you assign the correct font and line-height for text dislpay on REI.\n            does not include margin or add space to the container. Lorem ipsum dolor\n          </cdr-text>\n        </cdr-accordion>\n        <cdr-accordion\n          id=\"tabs-accordion-default-long-label\"\n          :opened=\"accordion2\"\n          @accordion-toggle=\"accordion2 = !accordion2\"\n          label=\"Label with multiple words, so many words in fact that\n          this content may wrap to several lines\"\n          level=\"4\"\n        >\n          <cdr-list modifier=\"unordered\">\n            <li>This is a cdr-list item inside an accordion.</li>\n            <li>It includes no extra styling</li>\n            <li>I'm adding a bunch of items</li>\n            <li>to this list because</li>\n            <li>I want to see what it's like</li>\n            <li>when animated!</li>\n          </cdr-list>\n        </cdr-accordion>\n      </cdr-tab-panel>\n    </cdr-tabs>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'TabsDefault',\n  components: { ...Components },\n  data() {\n    return {\n      accordion1: false,\n      accordion2: false,\n    };\n  },\n};\n</script>\n\n<style>\n  .tabs-demo-default {\n    max-width: 800px;\n  }\n\n  h3.tab-title {\n    margin: 20px 0;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -41446,8 +41111,274 @@ var cedar = (function () {
       undefined
     );
 
-  //
+  function ownKeys$36(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+  function _objectSpread$35(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$36(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$36(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$I = {
+    name: 'TabsExample',
+    components: _objectSpread$35({}, Components, {
+      tabsDefault: __vue_component__$H
+    }),
+    data: function data() {
+      return {
+        tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
+      };
+    }
+  };
+
+  /* script */
+  const __vue_script__$I = script$I;
+
+  /* template */
+  var __vue_render__$I = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      [
+        _c(
+          "cdr-text",
+          {
+            staticClass: "cdr-align-text-center",
+            attrs: {
+              tag: "h2",
+              modifier:
+                "heading-serif-600 heading-serif-700@md heading-serif-700@lg"
+            }
+          },
+          [_vm._v("\n    Tabs\n  ")]
+        ),
+        _vm._v(" "),
+        _c("tabs-default"),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-demo-secton" },
+          [
+            _c(
+              "cdr-text",
+              {
+                staticClass: "cdr-align-text-center",
+                attrs: {
+                  tag: "h3",
+                  modifier:
+                    "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+                }
+              },
+              [_vm._v("\n      Small Tabs\n    ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-tabs",
+              { attrs: { height: "100px", size: "small" } },
+              _vm._l(_vm.tabs.slice(0, 5), function(tab) {
+                return _c(
+                  "cdr-tab-panel",
+                  {
+                    key: tab,
+                    attrs: {
+                      name: tab,
+                      id: "tab-panel-small-" + tab,
+                      "aria-labelledby": "tab-small-" + tab
+                    }
+                  },
+                  [
+                    _c("cdr-text", { attrs: { modifier: "body-300" } }, [
+                      _vm._v(
+                        "\n          Tab " + _vm._s(tab) + " content\n        "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              }),
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-demo-secton" },
+          [
+            _c(
+              "cdr-text",
+              {
+                staticClass: "cdr-align-text-center",
+                attrs: {
+                  tag: "h3",
+                  modifier:
+                    "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+                }
+              },
+              [_vm._v("\n      Full-Width Tabs\n    ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-tabs",
+              { attrs: { height: "100px", modifier: "full-width" } },
+              _vm._l(_vm.tabs.slice(0, 5), function(tab) {
+                return _c(
+                  "cdr-tab-panel",
+                  {
+                    key: tab,
+                    attrs: {
+                      name: tab,
+                      id: "tab-panel-full-width-" + tab,
+                      "aria-labelledby": "tab-full-width-" + tab
+                    }
+                  },
+                  [
+                    _c("cdr-text", { attrs: { modifier: "body-300" } }, [
+                      _vm._v(
+                        "\n          Tab " + _vm._s(tab) + " content\n        "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              }),
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-demo-secton" },
+          [
+            _c(
+              "cdr-text",
+              {
+                staticClass: "cdr-align-text-center",
+                attrs: {
+                  tag: "h3",
+                  modifier:
+                    "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+                }
+              },
+              [_vm._v("\n      No Border Tabs\n    ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-tabs",
+              { attrs: { height: "100px", modifier: "no-border" } },
+              _vm._l(_vm.tabs.slice(0, 5), function(tab) {
+                return _c(
+                  "cdr-tab-panel",
+                  {
+                    key: tab,
+                    attrs: {
+                      name: tab,
+                      id: "tab-panel-no-border-" + tab,
+                      "aria-labelledby": "tab-no-border-" + tab
+                    }
+                  },
+                  [
+                    _c("cdr-text", { attrs: { modifier: "body-300" } }, [
+                      _vm._v(
+                        "\n          Tab " + _vm._s(tab) + " content\n        "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              }),
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "tab-demo-secton" },
+          [
+            _c(
+              "cdr-text",
+              {
+                staticClass: "cdr-align-text-center",
+                attrs: {
+                  tag: "h3",
+                  modifier:
+                    "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+                }
+              },
+              [_vm._v("\n      Centered Tabs\n    ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "cdr-tabs",
+              { attrs: { height: "100px", modifier: "centered" } },
+              _vm._l(_vm.tabs, function(tab) {
+                return _c(
+                  "cdr-tab-panel",
+                  {
+                    key: tab,
+                    attrs: {
+                      name: tab,
+                      id: "tab-panel-centered-" + tab,
+                      "aria-labelledby": "tab-centered-" + tab
+                    }
+                  },
+                  [
+                    _c("cdr-text", { attrs: { modifier: "body-300" } }, [
+                      _vm._v(
+                        "\n          Tab " + _vm._s(tab) + " content\n        "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              }),
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
+  };
+  var __vue_staticRenderFns__$I = [];
+  __vue_render__$I._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__$I = function (inject) {
+      if (!inject) return
+      inject("data-v-4c0a652c_0", { source: "\n.tab-demo-section {\n  margin-bottom: 30px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tabs/examples/Tabs.vue"],"names":[],"mappings":";AAmJA;EACA,mBAAA;AACA","file":"Tabs.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n      class=\"cdr-align-text-center\"\n    >\n      Tabs\n    </cdr-text>\n\n    <tabs-default />\n\n    <!-- small -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Small Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        size=\"small\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-small-' + tab\"\n          :aria-labelledby=\"'tab-small-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- full-width -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Full-Width Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"full-width\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-full-width-' + tab\"\n          :aria-labelledby=\"'tab-full-width-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- No-border -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        No Border Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"no-border\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-no-border-' + tab\"\n          :aria-labelledby=\"'tab-no-border-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- Centered -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Centered Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"centered\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-centered-' + tab\"\n          :aria-labelledby=\"'tab-centered-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\nimport tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';\n\nexport default {\n  name: 'TabsExample',\n  components: { ...Components, tabsDefault },\n  data() {\n    return {\n      tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],\n    };\n  },\n};\n</script>\n\n<style>\n  .tab-demo-section {\n    margin-bottom: 30px;\n  }\n</style>\n"]}, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__$I = undefined;
+    /* module identifier */
+    const __vue_module_identifier__$I = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$I = false;
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
+
+    
+    const __vue_component__$I = normalizeComponent(
+      { render: __vue_render__$I, staticRenderFns: __vue_staticRenderFns__$I },
+      __vue_inject_styles__$I,
+      __vue_script__$I,
+      __vue_scope_id__$I,
+      __vue_is_functional_template__$I,
+      __vue_module_identifier__$I,
+      false,
+      createInjector,
+      undefined,
+      undefined
+    );
+
+  //
+  var script$J = {
     name: 'HeadingsDemo',
     components: {
       CdrText: CdrText
@@ -41467,10 +41398,10 @@ var cedar = (function () {
   };
 
   /* script */
-  const __vue_script__$I = script$I;
+  const __vue_script__$J = script$J;
 
   /* template */
-  var __vue_render__$I = function() {
+  var __vue_render__$J = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
@@ -41556,34 +41487,34 @@ var cedar = (function () {
       )
     ])
   };
-  var __vue_staticRenderFns__$I = [];
-  __vue_render__$I._withStripped = true;
+  var __vue_staticRenderFns__$J = [];
+  __vue_render__$J._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$I = function (inject) {
+    const __vue_inject_styles__$J = function (inject) {
       if (!inject) return
       inject("data-v-bd25c85c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Headings.vue"}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$I = undefined;
+    const __vue_scope_id__$J = undefined;
     /* module identifier */
-    const __vue_module_identifier__$I = undefined;
+    const __vue_module_identifier__$J = undefined;
     /* functional template */
-    const __vue_is_functional_template__$I = false;
+    const __vue_is_functional_template__$J = false;
     /* style inject SSR */
     
     /* style inject shadow dom */
     
 
     
-    const __vue_component__$I = normalizeComponent(
-      { render: __vue_render__$I, staticRenderFns: __vue_staticRenderFns__$I },
-      __vue_inject_styles__$I,
-      __vue_script__$I,
-      __vue_scope_id__$I,
-      __vue_is_functional_template__$I,
-      __vue_module_identifier__$I,
+    const __vue_component__$J = normalizeComponent(
+      { render: __vue_render__$J, staticRenderFns: __vue_staticRenderFns__$J },
+      __vue_inject_styles__$J,
+      __vue_script__$J,
+      __vue_scope_id__$J,
+      __vue_is_functional_template__$J,
+      __vue_module_identifier__$J,
       false,
       createInjector,
       undefined,
@@ -41591,7 +41522,7 @@ var cedar = (function () {
     );
 
   //
-  var script$J = {
+  var script$K = {
     name: 'ParagraphsDemo',
     components: {
       CdrText: CdrText
@@ -41605,10 +41536,10 @@ var cedar = (function () {
   };
 
   /* script */
-  const __vue_script__$J = script$J;
+  const __vue_script__$K = script$K;
 
   /* template */
-  var __vue_render__$J = function() {
+  var __vue_render__$K = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
@@ -41898,34 +41829,34 @@ var cedar = (function () {
       1
     )
   };
-  var __vue_staticRenderFns__$J = [];
-  __vue_render__$J._withStripped = true;
+  var __vue_staticRenderFns__$K = [];
+  __vue_render__$K._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$J = function (inject) {
+    const __vue_inject_styles__$K = function (inject) {
       if (!inject) return
       inject("data-v-637fa29a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Paragraphs.vue"}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$J = undefined;
+    const __vue_scope_id__$K = undefined;
     /* module identifier */
-    const __vue_module_identifier__$J = undefined;
+    const __vue_module_identifier__$K = undefined;
     /* functional template */
-    const __vue_is_functional_template__$J = false;
+    const __vue_is_functional_template__$K = false;
     /* style inject SSR */
     
     /* style inject shadow dom */
     
 
     
-    const __vue_component__$J = normalizeComponent(
-      { render: __vue_render__$J, staticRenderFns: __vue_staticRenderFns__$J },
-      __vue_inject_styles__$J,
-      __vue_script__$J,
-      __vue_scope_id__$J,
-      __vue_is_functional_template__$J,
-      __vue_module_identifier__$J,
+    const __vue_component__$K = normalizeComponent(
+      { render: __vue_render__$K, staticRenderFns: __vue_staticRenderFns__$K },
+      __vue_inject_styles__$K,
+      __vue_script__$K,
+      __vue_scope_id__$K,
+      __vue_is_functional_template__$K,
+      __vue_module_identifier__$K,
       false,
       createInjector,
       undefined,
@@ -41933,7 +41864,7 @@ var cedar = (function () {
     );
 
   //
-  var script$K = {
+  var script$L = {
     name: 'HeadingsDemo',
     components: {
       CdrText: CdrText
@@ -41941,10 +41872,10 @@ var cedar = (function () {
   };
 
   /* script */
-  const __vue_script__$K = script$K;
+  const __vue_script__$L = script$L;
 
   /* template */
-  var __vue_render__$K = function() {
+  var __vue_render__$L = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
@@ -42216,77 +42147,13 @@ var cedar = (function () {
       1
     )
   };
-  var __vue_staticRenderFns__$K = [];
-  __vue_render__$K._withStripped = true;
-
-    /* style */
-    const __vue_inject_styles__$K = function (inject) {
-      if (!inject) return
-      inject("data-v-12e63380_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Deprecated.vue"}, media: undefined });
-
-    };
-    /* scoped */
-    const __vue_scope_id__$K = undefined;
-    /* module identifier */
-    const __vue_module_identifier__$K = undefined;
-    /* functional template */
-    const __vue_is_functional_template__$K = false;
-    /* style inject SSR */
-    
-    /* style inject shadow dom */
-    
-
-    
-    const __vue_component__$K = normalizeComponent(
-      { render: __vue_render__$K, staticRenderFns: __vue_staticRenderFns__$K },
-      __vue_inject_styles__$K,
-      __vue_script__$K,
-      __vue_scope_id__$K,
-      __vue_is_functional_template__$K,
-      __vue_module_identifier__$K,
-      false,
-      createInjector,
-      undefined,
-      undefined
-    );
-
-  //
-  var script$L = {
-    name: 'TextExamples',
-    components: {
-      headings: __vue_component__$I,
-      paragraphs: __vue_component__$J,
-      deprecated: __vue_component__$K
-    }
-  };
-
-  /* script */
-  const __vue_script__$L = script$L;
-
-  /* template */
-  var __vue_render__$L = function() {
-    var _vm = this;
-    var _h = _vm.$createElement;
-    var _c = _vm._self._c || _h;
-    return _c(
-      "div",
-      [
-        _c("headings"),
-        _vm._v(" "),
-        _c("paragraphs", { attrs: { "data-backstop": "paragraphs" } }),
-        _vm._v(" "),
-        _c("deprecated")
-      ],
-      1
-    )
-  };
   var __vue_staticRenderFns__$L = [];
   __vue_render__$L._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$L = function (inject) {
       if (!inject) return
-      inject("data-v-04e72722_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Text.vue"}, media: undefined });
+      inject("data-v-12e63380_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Deprecated.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -42316,9 +42183,11 @@ var cedar = (function () {
 
   //
   var script$M = {
-    name: 'VisibleUtilities',
+    name: 'TextExamples',
     components: {
-      CdrText: CdrText
+      headings: __vue_component__$J,
+      paragraphs: __vue_component__$K,
+      deprecated: __vue_component__$L
     }
   };
 
@@ -42327,6 +42196,68 @@ var cedar = (function () {
 
   /* template */
   var __vue_render__$M = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      [
+        _c("headings"),
+        _vm._v(" "),
+        _c("paragraphs", { attrs: { "data-backstop": "paragraphs" } }),
+        _vm._v(" "),
+        _c("deprecated")
+      ],
+      1
+    )
+  };
+  var __vue_staticRenderFns__$M = [];
+  __vue_render__$M._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__$M = function (inject) {
+      if (!inject) return
+      inject("data-v-04e72722_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Text.vue"}, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__$M = undefined;
+    /* module identifier */
+    const __vue_module_identifier__$M = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$M = false;
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
+
+    
+    const __vue_component__$M = normalizeComponent(
+      { render: __vue_render__$M, staticRenderFns: __vue_staticRenderFns__$M },
+      __vue_inject_styles__$M,
+      __vue_script__$M,
+      __vue_scope_id__$M,
+      __vue_is_functional_template__$M,
+      __vue_module_identifier__$M,
+      false,
+      createInjector,
+      undefined,
+      undefined
+    );
+
+  //
+  var script$N = {
+    name: 'VisibleUtilities',
+    components: {
+      CdrText: CdrText
+    }
+  };
+
+  /* script */
+  const __vue_script__$N = script$N;
+
+  /* template */
+  var __vue_render__$N = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
@@ -42354,7 +42285,7 @@ var cedar = (function () {
       1
     )
   };
-  var __vue_staticRenderFns__$M = [
+  var __vue_staticRenderFns__$N = [
     function() {
       var _vm = this;
       var _h = _vm.$createElement;
@@ -42788,33 +42719,33 @@ var cedar = (function () {
       ])
     }
   ];
-  __vue_render__$M._withStripped = true;
+  __vue_render__$N._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$M = function (inject) {
+    const __vue_inject_styles__$N = function (inject) {
       if (!inject) return
       inject("data-v-cf699ab0_0", { source: "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.visibility-utilities table,\n.visibility-utilities td {\n  border: 1px solid lightgray;\n}\n.visibility-utilities table {\n  border-spacing: 0;\n  border-collapse: collapse;\n  line-height: 1;\n}\n.visibility-utilities th {\n  text-align: left;\n  padding: 10px;\n}\n.visibility-utilities td {\n  padding: 5px;\n}\n.visibility-utilities td:not(:first-of-type) {\n  text-align: center;\n}\n\n/*# sourceMappingURL=visibility.vue.map */", map: {"version":3,"sources":["visibility.vue","/home/travis/build/rei/rei-cedar/src/components/Utilities/demos/visibility.vue"],"names":[],"mappings":"AAAA;;;;;;;iEAOiE;AACjE;;uBAEuB;AC2XvB;;EDxXE,2BAA2B;AAC7B;AC4XA;EACA,iBAAA;EACA,yBAAA;ED1XE,cAAc;AAChB;AC6XA;EACA,gBAAA;ED3XE,aAAa;AACf;AC8XA;ED5XE,YAAY;AACd;AC+XA;EACA,kBAAA;AD7XA;;AAEA,yCAAyC","file":"visibility.vue","sourcesContent":["/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.visibility-utilities table,\n.visibility-utilities td {\n  border: 1px solid lightgray;\n}\n.visibility-utilities table {\n  border-spacing: 0;\n  border-collapse: collapse;\n  line-height: 1;\n}\n.visibility-utilities th {\n  text-align: left;\n  padding: 10px;\n}\n.visibility-utilities td {\n  padding: 5px;\n}\n.visibility-utilities td:not(:first-of-type) {\n  text-align: center;\n}\n\n/*# sourceMappingURL=visibility.vue.map */","<template>\n  <div\n    data-backstop=\"visibility-utilities\"\n    class=\"visibility-utilities\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Visibility classes\n    </cdr-text>\n\n    <table>\n      <thead>\n        <tr>\n          <th>class</th>\n          <th class=\"cdr-display-none cdr-display-block@xs\">\n            visible @ xs\n          </th>\n          <th class=\"cdr-display-none cdr-display-block@sm\">\n            visible @ sm\n          </th>\n          <th class=\"cdr-display-none cdr-display-block@md\">\n            visible @ md\n          </th>\n          <th class=\"cdr-display-none cdr-display-block@lg\">\n            visible @ lg\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n\n        <tr>\n          <td>.cdr-display-none</td>\n          <td>\n            <div class=\"cdr-display-none\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-none@xs</td>\n          <td>\n            <div class=\"cdr-display-none@xs\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-dipslay-none@sm</td>\n          <td>\n            <div class=\"cdr-display-none@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-none@md</td>\n          <td>\n            <div class=\"cdr-display-none@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-none@lg</td>\n          <td>\n            <div class=\"cdr-display-none@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n\n        <tr>\n          <td>.cdr-display-hidden</td>\n          <td>\n            <div class=\"cdr-display-hidden\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-hidden@xs</td>\n          <td>\n            <div class=\"cdr-display-hidden@xs\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-dipslay-hidden@sm</td>\n          <td>\n            <div class=\"cdr-display-hidden@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-hidden@md</td>\n          <td>\n            <div class=\"cdr-display-hidden@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-hidden@lg</td>\n          <td>\n            <div class=\"cdr-display-hidden@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n\n        <tr>\n          <td>.cdr-display-block</td>\n          <td>\n            <div class=\"cdr-display-block\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-block@xs</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-block@xs\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-dipslay-block@sm</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-block@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-block@md</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-block@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-block@lg</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-block@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline</td>\n          <td>\n            <div class=\"cdr-display-inline\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline@xs</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline@xs\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-dipslay-inline@sm</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline@md</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline@lg</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline-block</td>\n          <td>\n            <div class=\"cdr-display-inline-block\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline-block@xs</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline-block@xs\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-dipslay-inline-block@sm</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline-block@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline-block@md</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline-block@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline-block@lg</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline-block@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-flex</td>\n          <td>\n            <div class=\"cdr-display-flex\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-flex@xs</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-flex@xs\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-dipslay-flex@sm</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-flex@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-flex@md</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-flex@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-flex@lg</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-flex@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n\n        <tr>\n          <td>.cdr-display-inline-flex</td>\n          <td>\n            <div class=\"cdr-display-inline-flex\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline-flex@xs</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline-flex@xs\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-dipslay-inline-flex@sm</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline-flex@sm\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline-flex@md</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline-flex@md\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-inline-flex@lg</td>\n          <td>\n            <div class=\"cdr-display-none cdr-display-inline-flex@lg\">\n              X\n            </div>\n          </td>\n        </tr>\n\n\n        <tr>\n          <td>.cdr-display-sr-only</td>\n          <td>\n            <div class=\"cdr-display-sr-only\">\n              X\n            </div>\n          </td>\n        </tr>\n\n        <tr>\n          <td>.cdr-display-sr-focusable</td>\n          <td>\n            <div class=\"cdr-display-sr-focusable\">\n              X\n            </div>\n          </td>\n        </tr>\n\n      </tbody>\n    </table>\n  </div>\n</template>\n\n<script>\nimport { CdrText } from 'srcdir/index';\n\nexport default {\n  name: 'VisibleUtilities',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style lang=\"scss\">\n.visibility-utilities {\n  table,\n  td {\n    border: 1px solid lightgray;\n  }\n\n  table {\n    border-spacing: 0;\n    border-collapse: collapse;\n    line-height: 1;\n  }\n\n  th {\n    text-align: left;\n    padding: 10px;\n  }\n\n  td {\n    padding: 5px;\n  }\n\n  td:not(:first-of-type) {\n    text-align: center;\n  }\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$M = undefined;
+    const __vue_scope_id__$N = undefined;
     /* module identifier */
-    const __vue_module_identifier__$M = undefined;
+    const __vue_module_identifier__$N = undefined;
     /* functional template */
-    const __vue_is_functional_template__$M = false;
+    const __vue_is_functional_template__$N = false;
     /* style inject SSR */
     
     /* style inject shadow dom */
     
 
     
-    const __vue_component__$M = normalizeComponent(
-      { render: __vue_render__$M, staticRenderFns: __vue_staticRenderFns__$M },
-      __vue_inject_styles__$M,
-      __vue_script__$M,
-      __vue_scope_id__$M,
-      __vue_is_functional_template__$M,
-      __vue_module_identifier__$M,
+    const __vue_component__$N = normalizeComponent(
+      { render: __vue_render__$N, staticRenderFns: __vue_staticRenderFns__$N },
+      __vue_inject_styles__$N,
+      __vue_script__$N,
+      __vue_scope_id__$N,
+      __vue_is_functional_template__$N,
+      __vue_module_identifier__$N,
       false,
       createInjector,
       undefined,
@@ -42822,7 +42753,7 @@ var cedar = (function () {
     );
 
   //
-  var script$N = {
+  var script$O = {
     name: 'UtilitiesAlign',
     components: {
       CdrText: CdrText
@@ -42830,10 +42761,10 @@ var cedar = (function () {
   };
 
   /* script */
-  const __vue_script__$N = script$N;
+  const __vue_script__$O = script$O;
 
   /* template */
-  var __vue_render__$N = function() {
+  var __vue_render__$O = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
@@ -43046,34 +42977,34 @@ var cedar = (function () {
       1
     )
   };
-  var __vue_staticRenderFns__$N = [];
-  __vue_render__$N._withStripped = true;
+  var __vue_staticRenderFns__$O = [];
+  __vue_render__$O._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$N = function (inject) {
+    const __vue_inject_styles__$O = function (inject) {
       if (!inject) return
       inject("data-v-59451cbc_0", { source: "\n.demo-container {\n  width: 300px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/Utilities/demos/align.vue"],"names":[],"mappings":";AAuJA;EACA,YAAA;AACA","file":"align.vue","sourcesContent":["<template>\n  <div data-backstop=\"align-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Text alignment classes\n    </cdr-text>\n\n    <cdr-text class=\"cdr-align-text-left\">\n      .cdr-text-left\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      left\n    </cdr-text>\n\n    <cdr-text class=\"cdr-align-text-left@xs\">\n      .cdr-align-text-left@xs\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-left@sm\">\n      .cdr-align-text-left@sm\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-left@md\">\n      .cdr-align-text-left@md\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-left@lg\">\n      .cdr-align-text-left@lg\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      center\n    </cdr-text>\n\n    <cdr-text class=\"cdr-align-text-center\">\n      .cdr-align-text-center\n    </cdr-text>\n\n    <cdr-text class=\"cdr-align-text-center@xs\">\n      .cdr-align-text-center@xs\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-center@sm\">\n      .cdr-align-text-center@sm\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-center@md\">\n      .cdr-align-text-center@md\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-center@lg\">\n      .cdr-align-text-center@lg\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      right\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-right\">\n      .cdr-align-text-right\n    </cdr-text>\n\n    <cdr-text class=\"cdr-align-text-right@xs\">\n      .cdr-align-text-right@xs\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-right@sm\">\n      .cdr-align-text-right@sm\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-right@md\">\n      .cdr-align-text-right@md\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-right@lg\">\n      .cdr-align-text-right@lg\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      justify\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-justify\">\n      .cdr-align-text-justify\n    </cdr-text>\n\n    <cdr-text class=\"cdr-align-text-justify@xs\">\n      .cdr-align-text-justify@xs\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-justify@sm\">\n      .cdr-align-text-justify@sm\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-justify@md\">\n      .cdr-align-text-justify@md\n    </cdr-text>\n    <cdr-text class=\"cdr-align-text-justify@lg\">\n      .cdr-align-text-justify@lg\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      center-block\n    </cdr-text>\n\n    <div class=\"cdr-align-center-block demo-container cdr-space-inset-one-x\">\n      <cdr-text>\n        .cdr-align-center-block\n      </cdr-text>\n    </div>\n\n    <div class=\"cdr-align-center-block@xs demo-container cdr-space-inset-one-x\">\n      <cdr-text>\n        .cdr-align-center-block@xs\n      </cdr-text>\n    </div>\n    <div class=\"cdr-align-center-block@sm demo-container cdr-space-inset-one-x\">\n      <cdr-text>\n        .cdr-align-center-block@sm\n      </cdr-text>\n    </div>\n    <div class=\"cdr-align-center-block@md demo-container cdr-space-inset-one-x\">\n      <cdr-text>\n        .cdr-align-center-block@md\n      </cdr-text>\n    </div>\n    <div class=\"cdr-align-center-block@lg demo-container cdr-space-inset-one-x\">\n      <cdr-text>\n        .cdr-align-center-block@lg\n      </cdr-text>\n    </div>\n  </div>\n</template>\n\n<script>\nimport { CdrText } from 'srcdir/index';\n\nexport default {\n  name: 'UtilitiesAlign',\n  components: {\n    CdrText,\n  },\n};\n</script>\n\n<style>\n.demo-container {\n  width: 300px;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$N = undefined;
+    const __vue_scope_id__$O = undefined;
     /* module identifier */
-    const __vue_module_identifier__$N = undefined;
+    const __vue_module_identifier__$O = undefined;
     /* functional template */
-    const __vue_is_functional_template__$N = false;
+    const __vue_is_functional_template__$O = false;
     /* style inject SSR */
     
     /* style inject shadow dom */
     
 
     
-    const __vue_component__$N = normalizeComponent(
-      { render: __vue_render__$N, staticRenderFns: __vue_staticRenderFns__$N },
-      __vue_inject_styles__$N,
-      __vue_script__$N,
-      __vue_scope_id__$N,
-      __vue_is_functional_template__$N,
-      __vue_module_identifier__$N,
+    const __vue_component__$O = normalizeComponent(
+      { render: __vue_render__$O, staticRenderFns: __vue_staticRenderFns__$O },
+      __vue_inject_styles__$O,
+      __vue_script__$O,
+      __vue_scope_id__$O,
+      __vue_is_functional_template__$O,
+      __vue_module_identifier__$O,
       false,
       createInjector,
       undefined,
@@ -43098,21 +43029,21 @@ var cedar = (function () {
   //
   //
   //
-  var script$O = {
+  var script$P = {
     name: 'ContainerTest'
   };
 
   /* script */
-  const __vue_script__$O = script$O;
+  const __vue_script__$P = script$P;
 
   /* template */
-  var __vue_render__$O = function() {
+  var __vue_render__$P = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
     return _vm._m(0)
   };
-  var __vue_staticRenderFns__$O = [
+  var __vue_staticRenderFns__$P = [
     function() {
       var _vm = this;
       var _h = _vm.$createElement;
@@ -43139,33 +43070,33 @@ var cedar = (function () {
       ])
     }
   ];
-  __vue_render__$O._withStripped = true;
+  __vue_render__$P._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$O = function (inject) {
+    const __vue_inject_styles__$P = function (inject) {
       if (!inject) return
       inject("data-v-44908246_0", { source: "\n.container-test {\n  background-color: lightblue;\n  padding: 20px;\n  margin-bottom: 20px;\n  line-height: 1;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/Utilities/demos/container.vue"],"names":[],"mappings":";AAyBA;EACA,2BAAA;EACA,aAAA;EACA,mBAAA;EACA,cAAA;AACA","file":"container.vue","sourcesContent":["<template>\n  <section>\n    <div\n      class=\"cdr-container container-test cdr-display-text-center\"\n      data-backstop=\"utility-container\"\n    >\n      cdr-container\n    </div>\n\n    <div\n      class=\"cdr-container-fluid container-test cdr-display-text-center\"\n      data-backstop=\"utility-container\"\n    >\n      cdr-container-fluid\n    </div>\n  </section>\n</template>\n\n<script>\nexport default {\n  name: 'ContainerTest',\n};\n</script>\n\n<style>\n.container-test {\n  background-color: lightblue;\n  padding: 20px;\n  margin-bottom: 20px;\n  line-height: 1;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$O = undefined;
+    const __vue_scope_id__$P = undefined;
     /* module identifier */
-    const __vue_module_identifier__$O = undefined;
+    const __vue_module_identifier__$P = undefined;
     /* functional template */
-    const __vue_is_functional_template__$O = false;
+    const __vue_is_functional_template__$P = false;
     /* style inject SSR */
     
     /* style inject shadow dom */
     
 
     
-    const __vue_component__$O = normalizeComponent(
-      { render: __vue_render__$O, staticRenderFns: __vue_staticRenderFns__$O },
-      __vue_inject_styles__$O,
-      __vue_script__$O,
-      __vue_scope_id__$O,
-      __vue_is_functional_template__$O,
-      __vue_module_identifier__$O,
+    const __vue_component__$P = normalizeComponent(
+      { render: __vue_render__$P, staticRenderFns: __vue_staticRenderFns__$P },
+      __vue_inject_styles__$P,
+      __vue_script__$P,
+      __vue_scope_id__$P,
+      __vue_is_functional_template__$P,
+      __vue_module_identifier__$P,
       false,
       createInjector,
       undefined,
@@ -47484,7 +47415,7 @@ var cedar = (function () {
   var _isKey = isKey;
 
   /** Error message constants. */
-  var FUNC_ERROR_TEXT$2 = 'Expected a function';
+  var FUNC_ERROR_TEXT$1 = 'Expected a function';
 
   /**
    * Creates a function that memoizes the result of `func`. If `resolver` is
@@ -47532,7 +47463,7 @@ var cedar = (function () {
    */
   function memoize(func, resolver) {
     if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {
-      throw new TypeError(FUNC_ERROR_TEXT$2);
+      throw new TypeError(FUNC_ERROR_TEXT$1);
     }
     var memoized = function() {
       var args = arguments,
@@ -47878,11 +47809,11 @@ var cedar = (function () {
    * console.log(_.identity(object) === object);
    * // => true
    */
-  function identity$2(value) {
+  function identity$1(value) {
     return value;
   }
 
-  var identity_1 = identity$2;
+  var identity_1 = identity$1;
 
   /**
    * The base implementation of `_.property` without support for deep paths.
@@ -47968,7 +47899,7 @@ var cedar = (function () {
 
   var _baseIteratee = baseIteratee;
 
-  var defineProperty$a = (function() {
+  var defineProperty$9 = (function() {
     try {
       var func = _getNative(Object, 'defineProperty');
       func({}, '', {});
@@ -47976,7 +47907,7 @@ var cedar = (function () {
     } catch (e) {}
   }());
 
-  var _defineProperty$1 = defineProperty$a;
+  var _defineProperty$1 = defineProperty$9;
 
   /**
    * The base implementation of `assignValue` and `assignMergeValue` without
@@ -48586,7 +48517,7 @@ var cedar = (function () {
 
   var kebabCase_1 = kebabCase;
 
-  var script$P = {
+  var script$Q = {
     name: 'UtilitiesSpaceInset',
     components: {
       CdrText: CdrText
@@ -48649,10 +48580,10 @@ var cedar = (function () {
   };
 
   /* script */
-  const __vue_script__$P = script$P;
+  const __vue_script__$Q = script$Q;
 
   /* template */
-  var __vue_render__$P = function() {
+  var __vue_render__$Q = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
@@ -48725,41 +48656,41 @@ var cedar = (function () {
       2
     )
   };
-  var __vue_staticRenderFns__$P = [];
-  __vue_render__$P._withStripped = true;
+  var __vue_staticRenderFns__$Q = [];
+  __vue_render__$Q._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$P = function (inject) {
+    const __vue_inject_styles__$Q = function (inject) {
       if (!inject) return
       inject("data-v-2c756abd_0", { source: "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.inset-example + .inset-example {\n  margin-top: 10px;\n}\n\n/*# sourceMappingURL=inset.vue.map */", map: {"version":3,"sources":["inset.vue","/home/travis/build/rei/rei-cedar/src/components/Utilities/demos/inset.vue"],"names":[],"mappings":"AAAA;;;;;;;iEAOiE;AACjE;;uBAEuB;ACoFvB;EDlFE,gBAAgB;AAClB;;AAEA,oCAAoC","file":"inset.vue","sourcesContent":["/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.inset-example + .inset-example {\n  margin-top: 10px;\n}\n\n/*# sourceMappingURL=inset.vue.map */","<template>\n  <div data-backstop=\"inset-space-utilities\">\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Inset space classes for all around padding\n    </cdr-text>\n\n    <template\n      v-for=\"(v,k,i) in insetTokens\"\n    >\n      <div\n        :key=\"`normal-${k}-${i}`\"\n        :class=\"[kebab(k), 'inset-example']\"\n        :style=\"{boxShadow: inset(v)}\"\n      >{{ k }}</div>\n      <div\n        :key=\"`normal-${k}-${i}-xs`\"\n        :class=\"[`${kebab(k)}@xs`, 'inset-example']\"\n      >{{ k }}@xs</div>\n      <div\n        :key=\"`normal-${k}-${i}-sm`\"\n        :class=\"[`${kebab(k)}@sm`, 'inset-example']\"\n      >{{ k }}@sm</div>\n      <div\n        :key=\"`normal-${k}-${i}-md`\"\n        :class=\"[`${kebab(k)}@md`, 'inset-example']\"\n      >{{ k }}@md</div>\n      <div\n        :key=\"`normal-${k}-${i}-lg`\"\n        :class=\"[`${kebab(k)}@lg`, 'inset-example']\"\n      >{{ k }}@lg</div>\n    </template>\n\n  </div>\n</template>\n\n<script>\n\nimport { CdrText } from 'srcdir/index';\nimport * as tokens from '@rei/cdr-tokens';\nimport pickBy from 'lodash/pickBy';\nimport kebabCase from 'lodash/kebabCase';\n\nexport default {\n  name: 'UtilitiesSpaceInset',\n  components: {\n    CdrText,\n  },\n  data() {\n    return {\n      tokens,\n    };\n  },\n  computed: {\n    insetTokens() {\n      return pickBy(this.tokens, (v, k) => {\n        if (k.includes('SpaceInset')) {\n          if (!k.includes('Top') && !k.includes('Left')) {\n            return true;\n          }\n        }\n        return false;\n      });\n    },\n  },\n  methods: {\n    kebab(name) {\n      return kebabCase(name);\n    },\n    inset(val) {\n      if (val.indexOf(' ') <= 0) {\n        return this.getInset(val, val, `-${val}`, `-${val}`);\n      } if (val.indexOf('*') > 0) {\n        let [x, y] = val.split(') '); // eslint-disable-line\n        const negx = `${x.slice(0, 5)}-${x.slice(5)})`;\n        return this.getInset(`${x})`, y, negx, `-${y}`);\n      }\n      const [x, y] = val.split(' ');\n      return this.getInset(x, y, `-${x}`, `-${y}`);\n    },\n    getInset(posy, posx, negy, negx) {\n      // console.log(posx, posy, negx, negy);\n      return `inset ${negx} ${negy} 0 rgb(199, 220, 191), inset ${posx} ${posy} 0 rgb(199, 220, 191)`;// eslint-disable-line\n    },\n  },\n};\n\n</script>\n\n<style lang=\"scss\">\n  .inset-example + .inset-example {\n    margin-top: 10px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$P = undefined;
+    const __vue_scope_id__$Q = undefined;
     /* module identifier */
-    const __vue_module_identifier__$P = undefined;
+    const __vue_module_identifier__$Q = undefined;
     /* functional template */
-    const __vue_is_functional_template__$P = false;
+    const __vue_is_functional_template__$Q = false;
     /* style inject SSR */
     
     /* style inject shadow dom */
     
 
     
-    const __vue_component__$P = normalizeComponent(
-      { render: __vue_render__$P, staticRenderFns: __vue_staticRenderFns__$P },
-      __vue_inject_styles__$P,
-      __vue_script__$P,
-      __vue_scope_id__$P,
-      __vue_is_functional_template__$P,
-      __vue_module_identifier__$P,
+    const __vue_component__$Q = normalizeComponent(
+      { render: __vue_render__$Q, staticRenderFns: __vue_staticRenderFns__$Q },
+      __vue_inject_styles__$Q,
+      __vue_script__$Q,
+      __vue_scope_id__$Q,
+      __vue_is_functional_template__$Q,
+      __vue_module_identifier__$Q,
       false,
       createInjector,
       undefined,
       undefined
     );
 
-  var script$Q = {
+  var script$R = {
     name: 'UtilitiesSpace',
     components: {
       CdrText: CdrText
@@ -48797,10 +48728,10 @@ var cedar = (function () {
   };
 
   /* script */
-  const __vue_script__$Q = script$Q;
+  const __vue_script__$R = script$R;
 
   /* template */
-  var __vue_render__$Q = function() {
+  var __vue_render__$R = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
@@ -48896,75 +48827,13 @@ var cedar = (function () {
       1
     )
   };
-  var __vue_staticRenderFns__$Q = [];
-  __vue_render__$Q._withStripped = true;
-
-    /* style */
-    const __vue_inject_styles__$Q = function (inject) {
-      if (!inject) return
-      inject("data-v-7da5a547_0", { source: "\n.spacing-example-p {\n  /* For showing things like right padding */\n  border: 1px black solid;\n  box-sizing: content-box;\n  width: 300px;\n  background-color:rgb(199, 220, 191);\n}\n.spacing-example-m {\n  border: 1px black solid;\n  background-color: mistyrose;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/Utilities/demos/spacing.vue"],"names":[],"mappings":";AAsFA;EACA,0CAAA;EACA,uBAAA;EACA,uBAAA;EACA,YAAA;EACA,mCAAA;AACA;AAEA;EACA,uBAAA;EACA,2BAAA;AACA","file":"spacing.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Space classes\n    </cdr-text>\n\n    <div\n      :data-backstop=\"`spacing-${category}-utilities`\"\n    >\n      <template\n        v-for=\"type in types\"\n      >\n        <template\n          v-for=\"(v,k,i) in spaceTokens\"\n        >\n          <div\n            :key=\"`${type}-${k}-${i}`\"\n            :class=\"[`${getClass(type, k)}`, typeClass(type)]\"\n          >{{ getClass(type, k) }}</div>\n          <div\n            :key=\"`${type}-${k}-${i}-xs`\"\n            :class=\"[`${getClass(type, k)}@xs`, typeClass(type)]\"\n          >{{ getClass(type, k) }}@xs</div>\n          <div\n            :key=\"`${type}-${k}-${i}-sm`\"\n            :class=\"[`${getClass(type, k)}@sm`, typeClass(type)]\"\n          >{{ getClass(type, k) }}@sm</div>\n          <div\n            :key=\"`${type}-${k}-${i}-md`\"\n            :class=\"[`${getClass(type, k)}@md`, typeClass(type)]\"\n          >{{ getClass(type, k) }}@md</div>\n          <div\n            :key=\"`${type}-${k}-${i}-lg`\"\n            :class=\"[`${getClass(type, k)}@lg`, typeClass(type)]\"\n          >{{ getClass(type, k) }}@lg</div>\n        </template>\n      </template>\n    </div>\n  </div>\n</template>\n\n<script>\nimport { CdrText } from 'srcdir/index';\nimport * as tokens from '@rei/cdr-tokens';\nimport pickBy from 'lodash/pickBy';\nimport kebabCase from 'lodash/kebabCase';\n\nexport default {\n  name: 'UtilitiesSpace',\n  components: {\n    CdrText,\n  },\n  props: {\n    category: String,\n    types: Array,\n  },\n  data() {\n    return {\n      tokens,\n    };\n  },\n  computed: {\n    spaceTokens() {\n      return pickBy(this.tokens, (v, k) => {\n        if (k.includes('Space') && !k.includes('Inset')) {\n          return true;\n        }\n        return false;\n      });\n    },\n  },\n  methods: {\n    getClass(type, token) {\n      return `cdr-${type}-${kebabCase(token.substring(3))}`;\n    },\n    typeClass(type) {\n      return type.includes('p') ? 'spacing-example-p' : 'spacing-example-m';\n    },\n  },\n};\n</script>\n\n<style>\n.spacing-example-p {\n  /* For showing things like right padding */\n  border: 1px black solid;\n  box-sizing: content-box;\n  width: 300px;\n  background-color:rgb(199, 220, 191);\n}\n\n.spacing-example-m {\n  border: 1px black solid;\n  background-color: mistyrose;\n}\n</style>\n"]}, media: undefined });
-
-    };
-    /* scoped */
-    const __vue_scope_id__$Q = undefined;
-    /* module identifier */
-    const __vue_module_identifier__$Q = undefined;
-    /* functional template */
-    const __vue_is_functional_template__$Q = false;
-    /* style inject SSR */
-    
-    /* style inject shadow dom */
-    
-
-    
-    const __vue_component__$Q = normalizeComponent(
-      { render: __vue_render__$Q, staticRenderFns: __vue_staticRenderFns__$Q },
-      __vue_inject_styles__$Q,
-      __vue_script__$Q,
-      __vue_scope_id__$Q,
-      __vue_is_functional_template__$Q,
-      __vue_module_identifier__$Q,
-      false,
-      createInjector,
-      undefined,
-      undefined
-    );
-
-  //
-  var script$R = {
-    name: 'MarginSpacingUtilities',
-    components: {
-      spacing: __vue_component__$Q
-    },
-    data: function data() {
-      return {
-        category: 'margin',
-        types: ['mt', 'mr', 'mb', 'ml', 'mx', 'my']
-      };
-    }
-  };
-
-  /* script */
-  const __vue_script__$R = script$R;
-
-  /* template */
-  var __vue_render__$R = function() {
-    var _vm = this;
-    var _h = _vm.$createElement;
-    var _c = _vm._self._c || _h;
-    return _c(
-      "div",
-      [_c("spacing", { attrs: { category: _vm.category, types: _vm.types } })],
-      1
-    )
-  };
   var __vue_staticRenderFns__$R = [];
   __vue_render__$R._withStripped = true;
 
     /* style */
     const __vue_inject_styles__$R = function (inject) {
       if (!inject) return
-      inject("data-v-4a94d78a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"marginSpacing.vue"}, media: undefined });
+      inject("data-v-7da5a547_0", { source: "\n.spacing-example-p {\n  /* For showing things like right padding */\n  border: 1px black solid;\n  box-sizing: content-box;\n  width: 300px;\n  background-color:rgb(199, 220, 191);\n}\n.spacing-example-m {\n  border: 1px black solid;\n  background-color: mistyrose;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/Utilities/demos/spacing.vue"],"names":[],"mappings":";AAsFA;EACA,0CAAA;EACA,uBAAA;EACA,uBAAA;EACA,YAAA;EACA,mCAAA;AACA;AAEA;EACA,uBAAA;EACA,2BAAA;AACA","file":"spacing.vue","sourcesContent":["<template>\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n    >\n      Space classes\n    </cdr-text>\n\n    <div\n      :data-backstop=\"`spacing-${category}-utilities`\"\n    >\n      <template\n        v-for=\"type in types\"\n      >\n        <template\n          v-for=\"(v,k,i) in spaceTokens\"\n        >\n          <div\n            :key=\"`${type}-${k}-${i}`\"\n            :class=\"[`${getClass(type, k)}`, typeClass(type)]\"\n          >{{ getClass(type, k) }}</div>\n          <div\n            :key=\"`${type}-${k}-${i}-xs`\"\n            :class=\"[`${getClass(type, k)}@xs`, typeClass(type)]\"\n          >{{ getClass(type, k) }}@xs</div>\n          <div\n            :key=\"`${type}-${k}-${i}-sm`\"\n            :class=\"[`${getClass(type, k)}@sm`, typeClass(type)]\"\n          >{{ getClass(type, k) }}@sm</div>\n          <div\n            :key=\"`${type}-${k}-${i}-md`\"\n            :class=\"[`${getClass(type, k)}@md`, typeClass(type)]\"\n          >{{ getClass(type, k) }}@md</div>\n          <div\n            :key=\"`${type}-${k}-${i}-lg`\"\n            :class=\"[`${getClass(type, k)}@lg`, typeClass(type)]\"\n          >{{ getClass(type, k) }}@lg</div>\n        </template>\n      </template>\n    </div>\n  </div>\n</template>\n\n<script>\nimport { CdrText } from 'srcdir/index';\nimport * as tokens from '@rei/cdr-tokens';\nimport pickBy from 'lodash/pickBy';\nimport kebabCase from 'lodash/kebabCase';\n\nexport default {\n  name: 'UtilitiesSpace',\n  components: {\n    CdrText,\n  },\n  props: {\n    category: String,\n    types: Array,\n  },\n  data() {\n    return {\n      tokens,\n    };\n  },\n  computed: {\n    spaceTokens() {\n      return pickBy(this.tokens, (v, k) => {\n        if (k.includes('Space') && !k.includes('Inset')) {\n          return true;\n        }\n        return false;\n      });\n    },\n  },\n  methods: {\n    getClass(type, token) {\n      return `cdr-${type}-${kebabCase(token.substring(3))}`;\n    },\n    typeClass(type) {\n      return type.includes('p') ? 'spacing-example-p' : 'spacing-example-m';\n    },\n  },\n};\n</script>\n\n<style>\n.spacing-example-p {\n  /* For showing things like right padding */\n  border: 1px black solid;\n  box-sizing: content-box;\n  width: 300px;\n  background-color:rgb(199, 220, 191);\n}\n\n.spacing-example-m {\n  border: 1px black solid;\n  background-color: mistyrose;\n}\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -48994,14 +48863,14 @@ var cedar = (function () {
 
   //
   var script$S = {
-    name: 'PaddingSpacingUtilities',
+    name: 'MarginSpacingUtilities',
     components: {
-      spacing: __vue_component__$Q
+      spacing: __vue_component__$R
     },
     data: function data() {
       return {
-        category: 'padding',
-        types: ['pt', 'pr', 'pb', 'pl', 'px', 'py']
+        category: 'margin',
+        types: ['mt', 'mr', 'mb', 'ml', 'mx', 'my']
       };
     }
   };
@@ -49026,7 +48895,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$S = function (inject) {
       if (!inject) return
-      inject("data-v-7549d0d3_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"paddingSpacing.vue"}, media: undefined });
+      inject("data-v-4a94d78a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"marginSpacing.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -49055,21 +48924,16 @@ var cedar = (function () {
     );
 
   //
-  /**
-   * Cedar 2 component for utilities
-   * @version 0.0.1
-   * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
-   */
-
   var script$T = {
-    name: 'Utilities',
+    name: 'PaddingSpacingUtilities',
     components: {
-      visibility: __vue_component__$M,
-      align: __vue_component__$N,
-      container: __vue_component__$O,
-      inset: __vue_component__$P,
-      marginSpacing: __vue_component__$R,
-      paddingSpacing: __vue_component__$S
+      spacing: __vue_component__$R
+    },
+    data: function data() {
+      return {
+        category: 'padding',
+        types: ['pt', 'pr', 'pb', 'pl', 'px', 'py']
+      };
     }
   };
 
@@ -49083,19 +48947,7 @@ var cedar = (function () {
     var _c = _vm._self._c || _h;
     return _c(
       "div",
-      [
-        _c("container"),
-        _vm._v(" "),
-        _c("align"),
-        _vm._v(" "),
-        _c("visibility"),
-        _vm._v(" "),
-        _c("inset"),
-        _vm._v(" "),
-        _c("paddingSpacing"),
-        _vm._v(" "),
-        _c("marginSpacing")
-      ],
+      [_c("spacing", { attrs: { category: _vm.category, types: _vm.types } })],
       1
     )
   };
@@ -49105,7 +48957,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$T = function (inject) {
       if (!inject) return
-      inject("data-v-f86d8bd8_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Utilities.vue"}, media: undefined });
+      inject("data-v-7549d0d3_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"paddingSpacing.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -49127,6 +48979,85 @@ var cedar = (function () {
       __vue_scope_id__$T,
       __vue_is_functional_template__$T,
       __vue_module_identifier__$T,
+      false,
+      createInjector,
+      undefined,
+      undefined
+    );
+
+  //
+  /**
+   * Cedar 2 component for utilities
+   * @version 0.0.1
+   * @author [REI Software Engineering](https://rei.github.io/rei-cedar/)
+   */
+
+  var script$U = {
+    name: 'Utilities',
+    components: {
+      visibility: __vue_component__$N,
+      align: __vue_component__$O,
+      container: __vue_component__$P,
+      inset: __vue_component__$Q,
+      marginSpacing: __vue_component__$S,
+      paddingSpacing: __vue_component__$T
+    }
+  };
+
+  /* script */
+  const __vue_script__$U = script$U;
+
+  /* template */
+  var __vue_render__$U = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      [
+        _c("container"),
+        _vm._v(" "),
+        _c("align"),
+        _vm._v(" "),
+        _c("visibility"),
+        _vm._v(" "),
+        _c("inset"),
+        _vm._v(" "),
+        _c("paddingSpacing"),
+        _vm._v(" "),
+        _c("marginSpacing")
+      ],
+      1
+    )
+  };
+  var __vue_staticRenderFns__$U = [];
+  __vue_render__$U._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__$U = function (inject) {
+      if (!inject) return
+      inject("data-v-f86d8bd8_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Utilities.vue"}, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__$U = undefined;
+    /* module identifier */
+    const __vue_module_identifier__$U = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$U = false;
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
+
+    
+    const __vue_component__$U = normalizeComponent(
+      { render: __vue_render__$U, staticRenderFns: __vue_staticRenderFns__$U },
+      __vue_inject_styles__$U,
+      __vue_script__$U,
+      __vue_scope_id__$U,
+      __vue_is_functional_template__$U,
+      __vue_module_identifier__$U,
       false,
       createInjector,
       undefined,
@@ -49156,15 +49087,15 @@ var cedar = (function () {
     radios: __vue_component__$E,
     ratings: __vue_component__$F,
     selects: __vue_component__$G,
-    tabs: __vue_component__$H,
-    texts: __vue_component__$L,
-    utilities: __vue_component__$T
+    tabs: __vue_component__$I,
+    texts: __vue_component__$M,
+    utilities: __vue_component__$U
   };
 
   function ownKeys$37(object, enumerableOnly) { var keys = keys$3(object); if (getOwnPropertySymbols$2) { var symbols = getOwnPropertySymbols$2(object); if (enumerableOnly) symbols = filter$2(symbols).call(symbols, function (sym) { return getOwnPropertyDescriptor$3(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
   function _objectSpread$36(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$37(Object(source), true)).call(_context, function (key) { defineProperty$6(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$37(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
-  var script$U = {
+  var script$V = {
     name: 'KitchenSink',
     components: _objectSpread$36({}, examples),
     data: function data() {
@@ -49175,10 +49106,10 @@ var cedar = (function () {
   };
 
   /* script */
-  const __vue_script__$U = script$U;
+  const __vue_script__$V = script$V;
 
   /* template */
-  var __vue_render__$U = function() {
+  var __vue_render__$V = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
@@ -49196,34 +49127,34 @@ var cedar = (function () {
       0
     )
   };
-  var __vue_staticRenderFns__$U = [];
-  __vue_render__$U._withStripped = true;
+  var __vue_staticRenderFns__$V = [];
+  __vue_render__$V._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$U = function (inject) {
+    const __vue_inject_styles__$V = function (inject) {
       if (!inject) return
       inject("data-v-b3563920_0", { source: "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.kitchen-sink-section {\n  margin: 16px 0;\n}\n\n/*# sourceMappingURL=KitchenSink.vue.map */", map: {"version":3,"sources":["KitchenSink.vue","/home/travis/build/rei/rei-cedar/src/KitchenSink.vue"],"names":[],"mappings":"AAAA;;;;;;;iEAOiE;AACjE;;uBAEuB;AC0BvB;EDxBE,cAAc;AAChB;;AAEA,0CAA0C","file":"KitchenSink.vue","sourcesContent":["/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.kitchen-sink-section {\n  margin: 16px 0;\n}\n\n/*# sourceMappingURL=KitchenSink.vue.map */","<template>\n  <section\n    data-backstop=\"kitchen-sink\"\n    id=\"kitchen-sink\"\n  >\n    <div\n      v-for=\"e in examples\"\n      :key=\"e.name\"\n      class=\"kitchen-sink-section\"\n    >\n      <component\n        :is=\"e\"\n      />\n    </div>\n  </section>\n</template>\n\n<script>\nimport examples from 'componentsdir/examples';\n\nexport default {\n  name: 'KitchenSink',\n  components: {\n    ...examples,\n  },\n  data() {\n    return {\n      examples,\n    };\n  },\n};\n</script>\n\n<style lang=\"scss\">\n  .kitchen-sink-section {\n    margin: 16px 0;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$U = undefined;
+    const __vue_scope_id__$V = undefined;
     /* module identifier */
-    const __vue_module_identifier__$U = undefined;
+    const __vue_module_identifier__$V = undefined;
     /* functional template */
-    const __vue_is_functional_template__$U = false;
+    const __vue_is_functional_template__$V = false;
     /* style inject SSR */
     
     /* style inject shadow dom */
     
 
     
-    const __vue_component__$U = normalizeComponent(
-      { render: __vue_render__$U, staticRenderFns: __vue_staticRenderFns__$U },
-      __vue_inject_styles__$U,
-      __vue_script__$U,
-      __vue_scope_id__$U,
-      __vue_is_functional_template__$U,
-      __vue_module_identifier__$U,
+    const __vue_component__$V = normalizeComponent(
+      { render: __vue_render__$V, staticRenderFns: __vue_staticRenderFns__$V },
+      __vue_inject_styles__$V,
+      __vue_script__$V,
+      __vue_scope_id__$V,
+      __vue_is_functional_template__$V,
+      __vue_module_identifier__$V,
       false,
       createInjector,
       undefined,
@@ -49237,11 +49168,11 @@ var cedar = (function () {
   }, {
     path: '/kitchen-sink',
     name: 'KitchenSink',
-    component: __vue_component__$U
+    component: __vue_component__$V
   }, {
     path: '/utilities',
     name: 'Utilities',
-    component: __vue_component__$T
+    component: __vue_component__$U
   }, {
     path: '/accordion',
     name: 'Accordion',
@@ -49325,11 +49256,11 @@ var cedar = (function () {
   }, {
     path: '/tabs',
     name: 'Tabs',
-    component: __vue_component__$H
+    component: __vue_component__$I
   }, {
     path: '/texts',
     name: 'Texts',
-    component: __vue_component__$L
+    component: __vue_component__$M
   }, {
     path: '/default-buttons',
     component: __vue_component__$3
@@ -49344,22 +49275,22 @@ var cedar = (function () {
     component: __vue_component__$5
   }, {
     path: '/padding-spacing-utilities',
-    component: __vue_component__$S
+    component: __vue_component__$T
   }, {
     path: '/margin-spacing-utilities',
-    component: __vue_component__$R
+    component: __vue_component__$S
   }, {
     path: '/inset-utilities',
-    component: __vue_component__$P
+    component: __vue_component__$Q
   }, {
     path: '/container-utilities',
-    component: __vue_component__$O
+    component: __vue_component__$P
   }, {
     path: '/align-utilities',
-    component: __vue_component__$N
+    component: __vue_component__$O
   }, {
     path: '/visibility-utilities',
-    component: __vue_component__$M
+    component: __vue_component__$N
   }];
 
   /**
@@ -49558,7 +49489,7 @@ var cedar = (function () {
   var upperFirst_1 = upperFirst;
 
   //
-  var script$V = {
+  var script$W = {
     name: 'SinkWrapper',
     components: {
       CdrRadio: CdrRadio
@@ -49592,10 +49523,10 @@ var cedar = (function () {
   };
 
   /* script */
-  const __vue_script__$V = script$V;
+  const __vue_script__$W = script$W;
 
   /* template */
-  var __vue_render__$V = function() {
+  var __vue_render__$W = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
@@ -49628,34 +49559,34 @@ var cedar = (function () {
       2
     )
   };
-  var __vue_staticRenderFns__$V = [];
-  __vue_render__$V._withStripped = true;
+  var __vue_staticRenderFns__$W = [];
+  __vue_render__$W._withStripped = true;
 
     /* style */
-    const __vue_inject_styles__$V = function (inject) {
+    const __vue_inject_styles__$W = function (inject) {
       if (!inject) return
       inject("data-v-3d82a432_0", { source: "\n.background-toggle {\n  display: inline-block;\n  margin: 0 8px;\n}\n\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/SinkWrapper.vue"],"names":[],"mappings":";AA6DA;EACA,qBAAA;EACA,aAAA;AACA","file":"SinkWrapper.vue","sourcesContent":["<template>\n  <div\n    :class=\"backgroundClass\"\n  >\n    Toggle background color:\n    <cdr-radio\n      v-for=\"bg in backgrounds\"\n      :custom-value=\"bg\"\n      :key=\"bg\"\n      name=\"background\"\n      v-model=\"background\"\n      class=\"background-toggle\"\n    >\n      {{ capitalize(bg) }}\n    </cdr-radio>\n    <slot />\n  </div>\n</template>\n\n<script>\n\nimport { CdrRadio } from 'srcdir/index';\nimport upperFirst from 'lodash/upperFirst';\n\nexport default {\n  name: 'SinkWrapper',\n  components: {\n    CdrRadio,\n  },\n  data() {\n    return {\n      background: this.$route.query.background || 'primary',\n      backgrounds: [\n        'primary', 'secondary', 'success', 'info', 'warning', 'error',\n      ],\n    };\n  },\n  computed: {\n    backgroundClass() {\n      return `cdr-space-inset-one-x cdr-color-background-${this.background}`;\n    },\n  },\n  watch: {\n    background() {\n      this.$router.push({\n        path: this.$router.currentRoute.path,\n        query: {\n          background: this.background,\n        },\n      });\n    },\n  },\n  methods: {\n    capitalize(str) {\n      return upperFirst(str);\n    },\n  },\n};\n</script>\n\n<style>\n.background-toggle {\n  display: inline-block;\n  margin: 0 8px;\n}\n\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$V = undefined;
+    const __vue_scope_id__$W = undefined;
     /* module identifier */
-    const __vue_module_identifier__$V = undefined;
+    const __vue_module_identifier__$W = undefined;
     /* functional template */
-    const __vue_is_functional_template__$V = false;
+    const __vue_is_functional_template__$W = false;
     /* style inject SSR */
     
     /* style inject shadow dom */
     
 
     
-    const __vue_component__$V = normalizeComponent(
-      { render: __vue_render__$V, staticRenderFns: __vue_staticRenderFns__$V },
-      __vue_inject_styles__$V,
-      __vue_script__$V,
-      __vue_scope_id__$V,
-      __vue_is_functional_template__$V,
-      __vue_module_identifier__$V,
+    const __vue_component__$W = normalizeComponent(
+      { render: __vue_render__$W, staticRenderFns: __vue_staticRenderFns__$W },
+      __vue_inject_styles__$W,
+      __vue_script__$W,
+      __vue_scope_id__$W,
+      __vue_is_functional_template__$W,
+      __vue_module_identifier__$W,
       false,
       createInjector,
       undefined,
@@ -49680,7 +49611,7 @@ var cedar = (function () {
   new Vue({
     router: router,
     components: {
-      SinkWrapper: __vue_component__$V
+      SinkWrapper: __vue_component__$W
     },
     data: function data() {
       return {
