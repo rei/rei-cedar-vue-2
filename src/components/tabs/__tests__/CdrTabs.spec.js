@@ -23,7 +23,10 @@ describe('CdrTabs', () => {
           'cdr-tab-panel': CdrTabPanel,
         },
         slots: {
-          default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+          default: [
+            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+          ],
         },
         methods: {
           getNextTab: spyGetNextTab,
@@ -59,7 +62,10 @@ describe('CdrTabs', () => {
           'cdr-tab-panel': CdrTabPanel,
         },
         slots: {
-          default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />'],
+          default: [
+            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+          ],
         },
         methods: {
           calculateOverflow: spyCalculateOverflow,
@@ -91,7 +97,10 @@ describe('CdrTabs', () => {
           'cdr-tab-panel': CdrTabPanel,
         },
         slots: {
-          default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />'],
+          default: [
+            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+          ],
         },
         methods: {
           calculateOverflow: spyCalculateOverflow,
@@ -125,20 +134,20 @@ describe('CdrTabs', () => {
       },
       slots: {
         default: [
-          '<cdr-tab-panel name="tab1" id="tab1" />',
-          '<cdr-tab-panel name="tab2" :disabled="true" id="tab2" />',
-          '<cdr-tab-panel name="tab3" id="tab3"  />',
+          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />',
+          '<cdr-tab-panel name="tab3" id="tab-panel-3" :disabled="true" aria-labelledby="tab-3"  />',
         ]
       }
     });
 
     expect(wrapper.vm.getNextTab(0)).toBe(0);
-    expect(wrapper.vm.getNextTab(1)).toBe(2);
-    expect(wrapper.vm.getNextTab(3)).toBe(-1);
+    expect(wrapper.vm.getNextTab(1)).toBe(1);
+    expect(wrapper.vm.getNextTab(3)).toBe(0);
 
     expect(wrapper.vm.getPreviousTab(0)).toBe(0);
-    expect(wrapper.vm.getPreviousTab(1)).toBe(0);
-    expect(wrapper.vm.getPreviousTab(-1)).toBe(-1);
+    expect(wrapper.vm.getPreviousTab(1)).toBe(1);
+    expect(wrapper.vm.getPreviousTab(-1)).toBe(1);
   });
 
   describe('handleClick', () => {
@@ -148,7 +157,10 @@ describe('CdrTabs', () => {
           'cdr-tab-panel': CdrTabPanel,
         },
         slots: {
-          default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+          default: [
+            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+          ],
         },
       });
       
@@ -165,7 +177,10 @@ describe('CdrTabs', () => {
           'cdr-tab-panel': CdrTabPanel,
         },
         slots: {
-          default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+          default: [
+            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+          ],
         },
         propsData: {
           activeTab: 1,
@@ -188,7 +203,10 @@ describe('CdrTabs', () => {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
-        default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+        default: [
+          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+        ],
       }
     });
     
@@ -206,7 +224,10 @@ describe('CdrTabs', () => {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
-        default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+        default: [
+          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+        ],
       }
     });
     
@@ -227,7 +248,10 @@ describe('CdrTabs', () => {
           'cdr-tab-panel': CdrTabPanel,
         },
         slots: {
-          default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2"/>']
+          default: [
+            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+          ],
         },
         methods: {
           updateUnderline: spyUpdateUnderline,
@@ -248,7 +272,10 @@ describe('CdrTabs', () => {
           'cdr-tab-panel': CdrTabPanel,
         },
         slots: {
-          default: ['<cdr-tab-panel name="tab1" id="tab-1" />', '<cdr-tab-panel name="tab2" id="tab-2" />']
+          default: [
+            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+          ]
         },
         attachToDocument: true,
       });
@@ -261,7 +288,7 @@ describe('CdrTabs', () => {
     });
   });
 
-  fit('accessibility', (done) => {
+  it('accessibility', (done) => {
     const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -300,7 +327,10 @@ describe('CdrTabs', () => {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
-        default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+        default: [
+          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+        ],
       },
       methods: {
         updateUnderline: spyUpdateUnderline,
@@ -321,7 +351,10 @@ describe('CdrTabs', () => {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
-        default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+        default: [
+          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+        ],
       },
       methods: {
         updateUnderline: spyUpdateUnderline,
@@ -341,7 +374,10 @@ describe('CdrTabs', () => {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
-        default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+        default: [
+          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+        ],
       },
       attachToDocument: true,
     });
@@ -364,7 +400,10 @@ describe('CdrTabs', () => {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
-        default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+        default: [
+          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+        ],
       }
     });
     wrapper.setData({ headerWidth: 2000 });
