@@ -108,6 +108,7 @@
           id="default"
           :opened="accordion1"
           @accordion-toggle="accordion1 = !accordion1"
+          level="4"
         >
           <template slot="label">
             A short label
@@ -130,6 +131,7 @@
           @accordion-toggle="accordion2 = !accordion2"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
+          level="4"
         >
           <cdr-list modifier="unordered">
             <li>This is a cdr-list item inside an accordion.</li>
