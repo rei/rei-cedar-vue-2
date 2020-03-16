@@ -1,5 +1,4 @@
 import debounce from 'lodash-es/debounce';
-import delay from 'lodash-es/delay';
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import size from '../../mixins/size';
