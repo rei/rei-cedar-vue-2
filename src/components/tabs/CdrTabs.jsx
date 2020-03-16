@@ -1,5 +1,4 @@
 import debounce from 'lodash-es/debounce';
-import delay from 'lodash-es/delay';
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
 import size from '../../mixins/size';
@@ -75,12 +74,21 @@ export default {
     }, 250));
   },
   methods: {
-    getNextTab(startIndex = 0) {
+    getNextTab(startIndex) {
       for (let i = startIndex; i < this.tabs.length; i += 1) {
         if (!this.tabs[i].disabled) {
           return i;
         }
       }
+
+      if (startIndex !== 0) {
+        for (let k = 0; k < startIndex; k += 1) {
+          if (!this.tabs[k].disabled) {
+            return k;
+          }
+        }
+      }
+
       return -1;
     },
     getPreviousTab(startIndex) {
@@ -89,28 +97,56 @@ export default {
           return i;
         }
       }
+
+      if (startIndex !== this.tabs.length - 1) {
+        for (let k = this.tabs.length - 1; k > startIndex; k -= 1) {
+          if (!this.tabs[k].disabled) {
+            return k;
+          }
+        }
+      }
+
       return -1;
     },
     handleClick: debounce(function handleClickCallback(tabClicked) {
-      const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
-      this.tabs.forEach((tab, index) => {
-        if (newSelectedTab.name === tab.name) {
-          if (this.activeTabIndex < index) {
-            tab.setAnimationDirection('flyRight');
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          } else {
-            tab.setAnimationDirection('flyLeft');
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          }
-          this.activeTabIndex = index;
-          this.hideScrollBar();
-          this.$nextTick(() => tab.setActive(true));
-        } else {
-          this.$nextTick(() => tab.setActive(false));
-        }
-      });
-      this.updateUnderline();
+      const newIndex = this.tabs.findIndex(tab => tabClicked.name === tab.name);
+      this.changeTab(newIndex);
     }, 500, { leading: true, trailing: false }),
+    changeTab(newIndex) {
+      const oldIndex = this.activeTabIndex;
+
+      this.hideScrollBar();
+      if (newIndex > oldIndex) {
+        this.tabs[oldIndex].setAnimationDirection('exit-left');
+        this.tabs[oldIndex].setActive(false);
+        setTimeout(() => {
+          this.tabs[newIndex].setActive(true);
+          this.tabs[newIndex].setAnimationDirection('enter-right');
+        }, 200);
+      } else {
+        this.tabs[oldIndex].setAnimationDirection('exit-right');
+        this.tabs[oldIndex].setActive(false);
+        setTimeout(() => {
+          this.tabs[newIndex].setActive(true);
+          this.tabs[newIndex].setAnimationDirection('enter-left');
+        }, 200);
+      }
+      this.activeTabIndex = newIndex;
+      this.updateUnderline();
+      this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+    },
+    rightArrowNav: debounce(function handleRightArrow() {
+      const nextTab = this.getNextTab(this.activeTabIndex + 1);
+      if (nextTab !== -1) {
+        this.changeTab(nextTab);
+      }
+    }, 300, { leading: true, trailing: false }),
+    leftArrowNav: debounce(function handleLeftArrow() {
+      const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
+      if (previousTab !== -1) {
+        this.changeTab(previousTab);
+      }
+    }, 300, { leading: true, trailing: false }),
     calculateOverflow() {
       let containerWidth = 0;
       if (this.$refs.cdrTabsContainer) {
@@ -134,44 +170,6 @@ export default {
         this.underlineOffsetX = activeTab.offsetLeft
           - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
         this.underlineWidth = activeTab.firstChild.offsetWidth;
-      }
-    },
-    rightArrowNav() {
-      if (!this.animationInProgress) {
-        const nextTab = this.getNextTab(this.activeTabIndex + 1);
-        if (nextTab !== -1) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          this.tabs[nextTab].setAnimationDirection('flyRight');
-          this.hideScrollBar();
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex = nextTab;
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-        }
-        this.navAnimationProgress();
-      }
-    },
-    leftArrowNav() {
-      if (!this.animationInProgress) {
-        const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
-        if (previousTab !== -1) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          this.tabs[previousTab].setAnimationDirection('flyLeft');
-          this.hideScrollBar();
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex = previousTab;
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-        }
-        this.navAnimationProgress();
-      }
-    },
-    navAnimationProgress() {
-      if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]) {
-        this.animationInProgress = true;
-        delay(() => {
-          this.animationInProgress = false;
-        }, 600);
-        this.updateUnderline();
-        this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
       }
     },
     handleDownArrowNav() {
@@ -214,14 +212,9 @@ export default {
         </span>
       ) : (
         <a
-          role="tab"
-          aria-selected={tab.active}
-          aria-disabled="false"
-          aria-controls={tab.id}
-          id={tab.ariaLabelledby}
           tabIndex={tab.active ? 0 : -1}
           vOn:click_prevent={e => this.handleClick(tab, e)}
-          href={`#${tab.id || tab.name}`}
+          href={`#${tab.id}`}
           class={this.style['cdr-tabs__header-item-label']}
         >
           { tab.name }
@@ -258,9 +251,14 @@ export default {
               role="tablist"
               ref="cdrTabsHeader"
             >
-              {this.tabs.map((tab, index) => (
+              {this.tabs.map(tab => (
                   <li
-                    key={tab.id ? tab.id : `${tab.name}-${index}`}
+                    role="tab"
+                    aria-selected={tab.active}
+                    aria-disabled="false"
+                    aria-controls={tab.id}
+                    id={tab.ariaLabelledby}
+                    key={tab.id}
                     class={clsx(
                       tab.active ? this.style['cdr-tabs__header-item-active'] : '',
                       this.style['cdr-tabs__header-item'],

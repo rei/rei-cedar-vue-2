@@ -158,8 +158,8 @@
     border: none;
 
     /* border: none; */
-    background-color: $cdr-color-border-tab-keyline-active;
-    transition: 0.6s cubic-bezier(0.32, 0.94, 0.6, 1);
+    background-color: $cdr-color-text-link-lightmode;
+    transition: $cdr-duration-4-x $cdr-timing-function-ease-out;
   }
 
   &__content-container {

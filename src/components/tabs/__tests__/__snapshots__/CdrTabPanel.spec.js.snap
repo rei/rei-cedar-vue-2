@@ -4,9 +4,9 @@ exports[`CdrTabPanel renders tab 1`] = `
 <div
   aria-hidden="true"
   class="cdr-tab-panel"
-  name="fly"
+  hidden="hidden"
+  id="tab1"
   role="tabpanel"
-  style="display: none;"
   tabindex="0"
 />
 `;

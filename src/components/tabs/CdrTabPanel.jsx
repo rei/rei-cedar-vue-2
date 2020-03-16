@@ -21,10 +21,6 @@ export default {
       type: String,
       required: true,
     },
-    /**
-     * Optional extra reference value to be set on the tab, otherwise
-     * the tab name will be used for reference.
-     */
     id: {
       type: String,
       required: true,
@@ -33,8 +29,9 @@ export default {
   data() {
     return {
       active: false,
+      hidden: true,
       offsetX: 0,
-      animationDirection: 'default',
+      animationDirection: null,
       style,
     };
   },
@@ -42,18 +39,13 @@ export default {
     baseClass() {
       return 'cdr-tab-panel';
     },
-    animationHooks() {
-      return {
-        beforeEnter: this.setEnterStart,
-        afterEnter: this.setEnterEnd,
-        beforeLeave: this.setLeaveStart,
-        afterLeave: this.setLeaveEnd,
-        ...this.$listeners,
-      };
+    animationClass() {
+      return this.animationDirection ? style[`cdr-tab-panel-${this.animationDirection}`] : null;
     },
   },
   methods: {
     setActive(state) {
+      if (state) this.hidden = false;
       this.active = state;
       this.$emit('tab-change', state, this.id);
       this.$emit('tabChange', state, this.id);
@@ -64,51 +56,33 @@ export default {
     setOffsetX(x) {
       this.offsetX = x;
     },
-    setEnterStart(element) {
-      const el = element;
-      el.style.animationDirection = 'reverse';
-      el.style.animationTimingFunction = 'cubic-bezier(0.4, 0, 0.68, .06)';
-      el.classList.add(this.style[this.animationDirection]);
-    },
-    setEnterEnd(element) {
-      const el = element;
-      el.style.animationDirection = '';
-      el.classList.remove(this.style[this.animationDirection]);
-    },
-    setLeaveStart(element) {
-      const el = element;
-      el.classList.add(this.style[this.animationDirection]);
-      el.style.animationTimingFunction = 'cubic-bezier(0.32, 0.94, 0.6, 1)';
-    },
-    setLeaveEnd(element) {
-      const el = element;
-      el.classList.remove(this.style[this.animationDirection]);
-    },
     handleUpArrowNav() {
       this.$parent.setFocusToActiveTabHeader();
+    },
+    animationEnd(event) {
+      if (event.animationName.split('-')[0] === 'exit') {
+        this.hidden = true;
+        this.animationDirection = null;
+      }
     },
   },
   render() {
     return (
-      <transition
-        name="fly"
-        {...{ on: this.animationHooks }}
+      <div
+        aria-hidden={!this.active}
+        aria-labelledby={this.ariaLabelledby}
+        class={clsx(this.style[this.baseClass], this.modifierClass, this.animationClass)}
+        hidden={this.hidden}
+        id={this.id}
+        ref="cdrTabPanelContainer"
+        tabindex="0"
+        role="tabpanel"
+        vOn:keydown_up_prevent={this.handleUpArrowNav}
+        vOn:animationend={this.animationEnd}
+        key={this.name}
       >
-        <div
-          v-show={this.active}
-          aria-hidden={!this.active}
-          aria-labelledby={this.ariaLabelledby}
-          class={clsx(this.style[this.baseClass], this.modifierClass)}
-          id={this.id}
-          ref="cdrTabPanelContainer"
-          tabindex="0"
-          role="tabpanel"
-          vOn:keydown_up_prevent={this.handleUpArrowNav}
-          key={this.name}
-        >
-          {this.$slots.default}
-        </div>
-      </transition>
+        {this.$slots.default}
+      </div>
     );
   },
 };

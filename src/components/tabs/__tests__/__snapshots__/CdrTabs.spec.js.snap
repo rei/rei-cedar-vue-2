@@ -43,26 +43,30 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
         role="tablist"
       >
         <li
+          aria-controls="tab-panel-1"
+          aria-disabled="false"
           class="cdr-tabs__header-item"
+          id="tab-1"
+          role="tab"
         >
           <a
-            aria-disabled="false"
             class="cdr-tabs__header-item-label"
-            href="#tab1"
-            role="tab"
+            href="#tab-panel-1"
             tabindex="-1"
           >
             tab1
           </a>
         </li>
         <li
+          aria-controls="tab-panel-2"
+          aria-disabled="false"
           class="cdr-tabs__header-item"
+          id="tab-2"
+          role="tab"
         >
           <a
-            aria-disabled="false"
             class="cdr-tabs__header-item-label"
-            href="#tab2"
-            role="tab"
+            href="#tab-panel-2"
             tabindex="-1"
           >
             tab2
@@ -80,18 +84,20 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
   >
     <div
       aria-hidden="true"
+      aria-labelledby="tab-1"
       class="cdr-tab-panel"
-      name="fly"
+      hidden="hidden"
+      id="tab-panel-1"
       role="tabpanel"
-      style="display: none;"
       tabindex="0"
     />
     <div
       aria-hidden="true"
+      aria-labelledby="tab-2"
       class="cdr-tab-panel"
-      name="fly"
+      hidden="hidden"
+      id="tab-panel-2"
       role="tabpanel"
-      style="display: none;"
       tabindex="0"
     />
   </div>
