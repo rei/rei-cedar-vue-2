@@ -213,11 +213,6 @@ export default {
         </span>
       ) : (
         <a
-          role="tab"
-          aria-selected={tab.active}
-          aria-disabled="false"
-          aria-controls={tab.id}
-          id={tab.ariaLabelledby}
           tabIndex={tab.active ? 0 : -1}
           vOn:click_prevent={e => this.handleClick(tab, e)}
           href={`#${tab.id}`}
@@ -259,6 +254,11 @@ export default {
             >
               {this.tabs.map(tab => (
                   <li
+                    role="tab"
+                    aria-selected={tab.active}
+                    aria-disabled="false"
+                    aria-controls={tab.id}
+                    id={tab.ariaLabelledby}
                     key={tab.id}
                     class={clsx(
                       tab.active ? this.style['cdr-tabs__header-item-active'] : '',
