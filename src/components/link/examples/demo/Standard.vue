@@ -33,6 +33,16 @@
     >
       REI.com
     </cdr-link>
+
+    <cdr-text
+      tag="h3"
+      modifier="subheading-sans-300"
+    >Link, href set</cdr-text>
+    <cdr-link
+      href="https://www.example.com/"
+    >
+      example.com
+    </cdr-link>
     <cdr-text
       tag="h3"
       modifier="subheading"

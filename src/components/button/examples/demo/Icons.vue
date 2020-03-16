@@ -253,7 +253,6 @@
     <div class="button-example cdr-space-inset-one-x dark">
       <cdr-button
         :icon-only="true"
-        :on-dark="true"
         aria-label="A Twitter button"
         data-backstop="cdr-button--icon-only-dark"
       >
@@ -266,7 +265,6 @@
       </cdr-button>
       <cdr-button
         icon-only
-        on-dark
         aria-label="Close"
       >
         <cdr-icon
@@ -280,7 +278,6 @@
         tag="a"
         href="https://rei.com"
         :icon-only="true"
-        :on-dark="true"
         aria-label="An external link"
       >
         <cdr-icon
@@ -292,7 +289,6 @@
       </cdr-button>
       <cdr-button
         icon-only
-        on-dark
         aria-label="Play"
       >
         <cdr-icon
@@ -304,7 +300,6 @@
       </cdr-button>
       <cdr-button
         icon-only
-        on-dark
         aria-label="Play"
         disabled
       >

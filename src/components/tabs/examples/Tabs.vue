@@ -1,103 +1,15 @@
 <template>
   <!-- eslint-disable max-len -->
   <div>
-    <div class="tab-demo-section">
-      <cdr-text
-        tag="h2"
-        modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
-        class="cdr-align-text-center"
-      >
-        Tabs
-      </cdr-text>
-      <cdr-tabs
-        height="300px"
-        data-backstop="tab-default"
-        :active-tab="1"
-      >
-        <cdr-tab-panel
-          name="Tab1"
-          id="tab-panel-default-1"
-          aria-labelledby="tab-default-1"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab One Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="Tab2"
-          id="tab-panel-default-2"
-          aria-labelledby="tab-default-2"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.
+    <cdr-text
+      tag="h2"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
+      class="cdr-align-text-center"
+    >
+      Tabs
+    </cdr-text>
 
-              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.
-
-              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>
-            Tab Two Content
-            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.
-
-              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.
-
-              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="REALLY REALLY LARGE TAB NAME"
-          id="tab-panel-default-3"
-          aria-labelledby="tab-default-3"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Three Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="4"
-          id="tab-panel-default-4"
-          aria-labelledby="tab-default-4"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Four Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="Five"
-          id="tab-panel-default-5"
-          aria-labelledby="tab-default-5"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Five Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="Six"
-          id="tab-panel-default-6"
-          aria-labelledby="tab-default-6"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Six Content
-          </cdr-text>
-        </cdr-tab-panel>
-      </cdr-tabs>
-    </div>
+    <tabs-default />
 
     <!-- small -->
     <div class="tab-demo-secton">
@@ -219,10 +131,11 @@
 
 <script>
 import * as Components from 'srcdir/index';
+import tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';
 
 export default {
   name: 'TabsExample',
-  components: { ...Components },
+  components: { ...Components, tabsDefault },
   data() {
     return {
       tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
