@@ -5,6 +5,7 @@ import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
 import IconXLg from '../icon/comps/x-lg';
 import CdrText from '../text/CdrText';
+import size from '../../mixins/size';
 
 export default {
   name: 'CdrModal',
@@ -13,6 +14,7 @@ export default {
     IconXLg,
     CdrText,
   },
+  mixins: [size],
   props: {
     opened: {
       type: Boolean,
@@ -65,7 +67,7 @@ export default {
       };
     },
     dialogClass() {
-      return `${this.style['cdr-modal__dialog']}`;
+      return `${this.style['cdr-modal__dialog']} ${this.size}`;
     },
   },
   watch: {
@@ -212,10 +214,9 @@ export default {
       dialogClass,
       contentClass,
       reallyClosed,
-      $slots: {
-        default: defaultSlot,
-        footer: footerSlot,
-      },
+      /*
+        slots: title, pinnedContentSlot, scrollingContentSlot, footer
+      */
     } = this;
     return (
       <div
@@ -289,16 +290,29 @@ export default {
                       />
                     </cdr-button>
                   </div>
+                  {
+                    this.$slots.stickyContentSlot && (
+                      <div class={this.style['cdr-modal__']}>
+                        {this.$slots.stickyContentSlot}
+                      </div>
+                    )
+                  }
                   <div
                     role="document"
                     tabindex="0"
                     class={this.style['cdr-modal__text']}
                   >
                     <div class={this.style['cdr-modal__text-content']}>
-                      {defaultSlot}
-                      {footerSlot}
+                      {this.$slots.scrollingContentSlot}
                     </div>
                     <div class={this.style['cdr-modal__text-fade']} />
+                    {
+                      this.$slots.footer && (
+                        <div class={this.style['cdr-modal__footer']}>
+                          {this.$slots.footer}
+                        </div>
+                      )
+                    }
                   </div>
                 </div>
               </section>
