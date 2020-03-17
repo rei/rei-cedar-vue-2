@@ -1,10 +1,5 @@
 @mixin cdr-table-base-text() {
-  font-family: $cdr-font-family-sans;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: -.08px;
-  font-size: 14px;
-  line-height: 18px;
+  @include cdr-text-utility-200;
 }
 
 @mixin cdr-table-base() {
@@ -17,7 +12,7 @@
   td {
     min-height: 48px;
     color: $cdr-color-text-primary-lightmode;
-    padding: $cdr-space-inset-one-x;
+    padding: $cdr-space-inset-one-x-squish;
     text-align: left;
   }
   
@@ -29,6 +24,24 @@
   
   caption {
     @include cdr-text-heading-300;
+  }
+}
+
+@mixin cdr-table-small {
+  th, td {
+    padding: 0.4rem 1.6rem;
+  }
+}
+
+@mixin cdr-table-medium {
+  th, td {
+    padding: $cdr-space-inset-one-x-squish;
+  }
+}
+
+@mixin cdr-table-large {
+  th, td {
+    padding: $cdr-space-inset-one-x;
   }
 }
 

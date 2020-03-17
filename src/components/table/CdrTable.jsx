@@ -1,10 +1,11 @@
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
+import size from '../../mixins/size';
 import style from './styles/CdrTable.scss';
 
 export default {
   name: 'CdrTable',
-  mixins: [modifier],
+  mixins: [modifier, size],
   props: {
     striped: {
       type: Boolean,
@@ -30,6 +31,7 @@ export default {
     tableClasses() {
       return {
         [this.style[this.baseClass]]: true,
+        [this.sizeClass]: true,
         [this.modifyClassName(this.baseClass, 'striped')]: this.striped,
         [this.modifyClassName(this.baseClass, 'border')]: this.border,
         [this.modifyClassName(this.baseClass, 'full-width')]: this.fullWidth,

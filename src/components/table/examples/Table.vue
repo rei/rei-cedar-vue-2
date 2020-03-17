@@ -2,7 +2,7 @@
   <div>
     <h2>table</h2>
 
-    <p>Small table</p>
+    <p>1 column table</p>
     <cdr-table>
       <thead>
         <tr>
@@ -22,8 +22,80 @@
       </tbody>
     </cdr-table>
 
-    <p>Normal table</p>
+    <p>2 column table</p>
     <cdr-table>
+      <thead>
+        <tr>
+          <th>Test head</th>
+          <th>Test head</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>Small table</p>
+    <cdr-table size="small">
+      <thead>
+        <tr>
+          <th>Test head</th>
+          <th>Test head</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>Medium table</p>
+    <cdr-table size="medium">
+      <thead>
+        <tr>
+          <th>Test head</th>
+          <th>Test head</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
+    <p>Large table</p>
+    <cdr-table size="large">
       <thead>
         <tr>
           <th>Test head</th>

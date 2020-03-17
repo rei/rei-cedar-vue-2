@@ -4,6 +4,18 @@
 .cdr-table {
   @include cdr-table-base;
 
+  &--small {
+    @include cdr-table-small;
+  }
+
+  &--medium {
+    @include cdr-table-medium;
+  }
+
+  &--large {
+    @include cdr-table-large;
+  }
+
   &--striped {
     @include cdr-table-striped;
   }
