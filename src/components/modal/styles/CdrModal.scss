@@ -35,12 +35,18 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     z-index: -1;
   }
 
+  @media (min-width: 672px) {
+    &__outerWrap {
+      padding: 16px;
+    }
+  }
+
   &__outerWrap {
     display: flex;
     box-sizing: border-box;
     left: 0;
     min-height: 100%;
-    padding: 16px 20px;
+    // padding: 16px 20px;
     position: absolute;
     right: 0;
     top: 0;
@@ -55,7 +61,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     display: flex;
     flex-direction: column;
     margin: auto;
-    max-width: 40rem;
+    // max-width: 40rem;
     opacity: 1;
     padding: 24px;
     position: relative;
@@ -71,13 +77,15 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     width: 100%; // IE 11
   }
 
-  &__dialog {
-    max-width: 60rem;
-    padding: $dialog-padding-vertical;
-
-     &:global(.large) {
-      max-width: 80rem;
+  @media (min-width: 672px) {
+    &__dialog {
+      max-width: 640px;
     }
+  }
+
+  &__dialog {
+    width: 100%;
+    padding: $cdr-space-inset-one-and-a-half-x;
   }
 
   &__content {
@@ -107,7 +115,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
   }
 
   &__text-content {
-    max-height: $modal-text-max-height;
+    // max-height: $modal-text-max-height;
     overflow: auto;
     padding-right: 16px;
 
