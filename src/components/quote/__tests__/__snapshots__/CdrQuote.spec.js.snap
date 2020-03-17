@@ -10,7 +10,7 @@ exports[`CdrQuote renders correctly 1`] = `
     This is the summary
   </p>
   <cite
-    class="cdr-text cdr-text--citation cdr-quote__citation"
+    class="cdr-text cdr-text--citation"
   >
     This is the citation
   </cite>

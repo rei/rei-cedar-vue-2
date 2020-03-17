@@ -1,12 +1,21 @@
-$cdr-breadcrumb-text-color: #616161;
-$cdr-breadcrumb-last-child-text-color: #292929;
-$cdr-breadcrumb-hover-text-color: #292929;
-$cdr-breadcrumb-delimiter-text-color: #616161;
+@mixin cdr-breadcrumb-item-mixin() {
+  color: $cdr-color-text-secondary;
+  fill: $cdr-color-text-secondary;
+}
+
+@mixin cdr-breadcrumb-item-linked-mixin() {
+  &:hover,
+  &:active,
+  &:focus {
+    color: $cdr-color-text-link-active;
+    fill: $cdr-color-text-link-active;
+  }
+}
 
 @mixin cdr-breadcrumb-base-text-mixin() {
-  @include cdr-text-utility-200;
+  @include cdr-text-utility-sans-200;
 }
 
 @mixin cdr-breadcrumb-xs-text-mixin() {
-  @include cdr-text-utility-100;
+  @include cdr-text-utility-sans-100;
 }

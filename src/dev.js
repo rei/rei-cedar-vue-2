@@ -4,9 +4,8 @@ import Vue from 'vue/dist/vue.esm';
 import VueRouter from 'vue-router';
 import fullSprite from '@rei/cedar-icons/dist/all-icons.svg';
 import routes from './router';
+import SinkWrapper from './SinkWrapper.vue'; // eslint-disable-line
 import cedarcss from './css/main.scss';
-
-Vue.config.devtools = true;
 
 // routing
 Vue.use(VueRouter);
@@ -21,6 +20,9 @@ Vue.config.devtools = false;
 /* eslint-disable no-new */
 new Vue({
   router,
+  components: {
+    SinkWrapper,
+  },
   data() {
     return {
       routes,

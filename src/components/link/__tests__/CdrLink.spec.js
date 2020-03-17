@@ -83,33 +83,6 @@ describe('CdrLink', () => {
     expect(spy.called).toBeTruthy();
   });
 
-  xit('inherits theme correctly', () => {
-    const wrapper = shallowMount(CdrThemer, {
-      stubs: {
-        'cdr-link': CdrLink,
-      },
-      slots: {
-        default: ['<cdr-link/>']
-      },
-      propsData: {
-        theme: 'dark',
-      },
-    });
-
-    const link = wrapper.find(CdrLink)
-
-    expect(link.classes()).toContain('on-dark');
-  });
-
-  xit('sets theme correctly', () => {
-    const wrapper = shallowMount(CdrLink, {
-      propsData: {
-        theme: 'dark',
-      },
-    });
-    expect(wrapper.classes()).toContain('on-dark');
-  });
-
   it('does nothing if no theme provided', () => {
     const wrapper = shallowMount(CdrLink);
     expect(wrapper.vm.computedTheme).toBeFalsy();

@@ -1,13 +1,4 @@
 @import '../../../css/settings/index.scss';
-@import './vars/CdrTabs.vars.scss';
-/* ==========================================================================
-  # CdrTabPanel
-
-  TOC:
-
-    :Base - CdrTabPanel
-
-========================================================================== */
 
 .cdr-tab-panel {
   position: absolute;
@@ -16,36 +7,84 @@
   padding-top: $cdr-space-eighth-x;
 }
 
-@keyframes :global(flyLeft) {
+@keyframes :global(exit-left) {
   from {
     transform: translateX(0);
+    opacity: 1;
+  }
+  
+  to {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+}
+
+@keyframes :global(exit-right) {
+  from {
+    transform: translateX(0);
+    opacity: 1;
   }
 
   to {
-    transform: translateX(-100vw);
+    transform: translateX(10px);
+    opacity: 0;
   }
 }
 
-@keyframes :global(flyRight) {
+@keyframes :global(enter-left) {
   from {
-    transform: translateX(0);
+    transform: translateX(-10px);
+    opacity: 0;
   }
 
   to {
-    transform: translateX(100vw);
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-.flyLeft {
-  :global {
-    animation-name: flyLeft;
+@keyframes :global(enter-right) {
+  from {
+    transform: translateX(10px);
+    opacity: 0;
   }
-  animation-duration: $cdr-tab-panel-animation-duration;
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.flyRight {
-  :global {
-    animation-name: flyRight;
-  }
-  animation-duration: $cdr-tab-panel-animation-duration;
+@mixin cdr-tab-panel-animation {
+  animation-duration: $cdr-duration-2-x;
+  animation-timing-function: $cdr-timing-function-ease-out;
 }
+
+.cdr-tab-panel-enter-left {
+  :global {
+    animation-name: enter-left;
+  }
+  @include cdr-tab-panel-animation;
+}
+
+.cdr-tab-panel-enter-right {
+  :global {
+    animation-name: enter-right;
+  }
+  @include cdr-tab-panel-animation;
+}
+
+.cdr-tab-panel-exit-left {
+  :global {
+    animation-name: exit-left;
+  }
+  @include cdr-tab-panel-animation;
+}
+
+.cdr-tab-panel-exit-right {
+  :global {
+    animation-name: exit-right;
+  }
+  @include cdr-tab-panel-animation;
+}
+

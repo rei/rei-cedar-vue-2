@@ -1,26 +1,3 @@
-/* ==========================================================================
-  # CdrButton
-
-  TOC:
-
-    :Base Styles
-      :States
-    :Modifiers
-      :Style variants
-        :Secondary
-    :Size variants
-      :large
-      :medium
-      :small
-    :full-width
-    :icon-only
-    :on-dark
-    :Breakpoint variants
-      :xs
-      :sm
-      :md
-      :lg
-========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrButton.vars.scss';
 .cdr-button {
@@ -94,22 +71,8 @@
   &--icon-only {
     @include cdr-button-icon-only-mixin;
 
-    &.cdr-button--on-dark {
-      fill: $cdr-button-icon-only-fill-darkmode;
-
-      &:hover,
-      &:active,
-      &:focus {
-        fill: $cdr-button-icon-only-fill;
-      }
-
-      &[disabled] {
-        fill: $cdr-button-icon-only-fill-disabled;
-      }
-    }
-
     & > :global(.cdr-button__icon) {
-      margin: $cdr-button-icon-only-margin;
+      margin: 0;
     }
   }
 

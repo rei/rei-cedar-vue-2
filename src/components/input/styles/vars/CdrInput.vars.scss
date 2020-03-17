@@ -1,129 +1,16 @@
-/* PRIVATE */
-/* Assumed icon width of slot provided icon.  We may want to add a user provided
-  width option in the future.  */
-$input-pre-icon-default-width: 25px;
-/* PRIVATE */
-
-
-/*--------------------------------------------------------------------------------------------------
-// input Variables
---------------------------------------------------------------------------------------------------*/
-
-/*----------------------------
-// Color
-//---------------------------*/
-
-
-$cdr-input-base-box-shadow: inset 0 0 0 1px $cdr-color-border-primary-lightmode;
-$cdr-input-base-box-shadow-disabled: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
-$cdr-input-base-box-shadow-disabled-hover: inset 0 0 0 1px $cdr-color-border-disabled-lightmode;
-$cdr-input-base-box-shadow-active: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
-$cdr-input-base-box-shadow-focus: inset 0 0 0 1px $cdr-color-border-selected-lightmode;
-
-$cdr-input-base-color: $cdr-color-text-form-label-lightmode;
-$cdr-input-base-color-disabled: $cdr-color-text-form-disabled-lightmode;
-
-$cdr-input-base-label-color: $cdr-color-text-form-label-lightmode;
-$cdr-input-base-label-color-disabled: $cdr-color-text-disabled-lightmode;
-
-$cdr-input-base-placeholder-color: $cdr-color-text-form-placeholder-lightmode;
-$cdr-input-base-placeholder-color-disabled: $cdr-color-text-form-disabled-lightmode;
-
-// Helper text color
-$cdr-input-helper-text-color: $cdr-color-text-secondary-lightmode;
-
-// Required text color
-$cdr-input-required-label-color: $cdr-color-text-secondary-lightmode;
-
-/*----------------------------
-// Display
-//---------------------------*/
-
-// Input: Base
-$cdr-input-base-border: 0;
-$cdr-input-base-border-radius: $cdr-radius-softer;
-$cdr-input-base-display: block;
-$cdr-input-base-height: 40px;
-$cdr-input-base-overflow: visible;
-$cdr-input-base-padding: $cdr-space-inset-half-x;
-$cdr-input-base-margin: 0;
-$cdr-input-base-width: 100%;
-
-// Input: Large
-$cdr-input-pt-large: $cdr-space-one-x;
-$cdr-input-pb-large: $cdr-space-one-x;
-$cdr-input-height-large: 48px;
-
-//Input:  Multiline
-$cdr-input-base-multiline-height: auto;
-
-//Info
-$cdr-input-info-container-float: right;
-
-// Label: Base
-$cdr-input-base-label-display: inline-block;
-$cdr-input-base-label-margin: 0;
-$cdr-input-base-label-mb: $cdr-space-quarter-x;
-$cdr-input-base-label-mr: $cdr-space-inset-quarter-x;
-
-// Label: Required
-$cdr-input-required-label-ml: $cdr-space-inset-quarter-x;
-
-/***************************************************************************************************
-// Simple mixins
-//*************************************************************************************************/
-
-// Clolor
-@mixin cdr-input-base-label-disabled-mixin() {
-  color: $cdr-input-base-label-color-disabled;
-}
-
-// Typography
-@mixin cdr-input-base-text-mixin() {
-  @include cdr-text-utility-300;
-}
-
-@mixin cdr-input-base-placeholder-text-mixin() {
-  @include cdr-text-utility-300;
-}
-
-@mixin cdr-input-base-label-text-mixin() {
-  @include cdr-text-utility-200;
-}
-
-@mixin cdr-input-helper-text-text-mixin() {
-  font-family: $cdr-font-family-sans;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  letter-spacing: -0.016rem;  
-}
-
-@mixin cdr-input-info-container-text-mixin() {
-  @include cdr-text-utility-200;
-}
-
-@mixin cdr-input-large-text-mixin() {
-  @include cdr-text-utility-400;
-}
-
-/***************************************************************************************************
-// Component mixins
-//*************************************************************************************************/
-
-
 @mixin cdr-input-base-mixin() {
-  @include cdr-input-base-text-mixin;
+  @include cdr-text-utility-sans-300;
 
-  color: $cdr-input-base-color;
-  box-shadow: $cdr-input-base-box-shadow;
-  border: $cdr-input-base-border;
-  border-radius: $cdr-input-base-border-radius;
-  padding: $cdr-input-base-padding;
-  height: $cdr-input-base-height;
-  display: $cdr-input-base-display;
-  width: $cdr-input-base-width;
-  overflow: $cdr-input-base-overflow;
-  margin: $cdr-input-base-margin;
+  color: $cdr-color-text-input-default;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-input-default;
+  border: 0;
+  border-radius: $cdr-radius-softer;
+  padding: $cdr-space-inset-half-x;
+  height: 40px;
+  display: block;
+  width: 100%;
+  overflow: visible;
+  margin: 0;
 
   /* Prevent iOS from altering border and box-shadow */
   @supports (-webkit-overflow-scrolling: touch) {
@@ -139,72 +26,70 @@ $cdr-input-required-label-ml: $cdr-space-inset-quarter-x;
     margin: 0;
   }
 
-  &[disabled] {
-    background-color: $cdr-color-background-lighter;
-    color: $cdr-input-base-color-disabled;
-    box-shadow: $cdr-input-base-box-shadow-disabled;
-
-    &:hover {
-      box-shadow: $cdr-input-base-box-shadow-disabled-hover;
-    }
-
-    &::placeholder {
-      color: $cdr-input-base-placeholder-color-disabled;
-    }
-  }
-
-  &:active {
-    box-shadow: $cdr-input-base-box-shadow-active;
-  }
-
+  &:active,
   &:focus {
-    box-shadow: $cdr-input-base-box-shadow-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-active;
   }
 
   &::placeholder {
-    @include cdr-input-base-placeholder-text-mixin;
+    @include cdr-text-utility-sans-300;
 
-    color: $cdr-input-base-placeholder-color;
+    color: $cdr-color-text-input-placeholder;
+  }
+
+  &[disabled] {
+    background-color: $cdr-color-background-input-default-disabled;
+    color: $cdr-color-text-input-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled;
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled;
+      cursor: not-allowed;
+    }
+
+    &::placeholder {
+      color: $cdr-color-text-input-disabled;
+    }
   }
 }
 
 @mixin cdr-input-base-label-mixin() {
-  @include cdr-input-base-label-text-mixin;
-
-  color: $cdr-input-base-label-color;
-  display: $cdr-input-base-label-display;
-  margin: $cdr-input-base-label-margin;
-  margin-bottom: $cdr-input-base-label-mb;
-  margin-right: $cdr-input-base-label-mr;
+  @include cdr-text-utility-sans-200;
+  font-weight: 600;
+  color: $cdr-color-text-input-label;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: $cdr-space-quarter-x;
+  margin-right: $cdr-space-inset-quarter-x;
 }
 
 @mixin cdr-input-large-mixin() {
-  @include cdr-input-large-text-mixin;
+  @include cdr-text-utility-sans-400;
 
-  padding-top: $cdr-input-pt-large;
-  padding-bottom: $cdr-input-pb-large;
-  height: $cdr-input-height-large;
-}
-
-@mixin cdr-input-multiline-mixin() {
-  height: $cdr-input-base-multiline-height;
+  padding-top: $cdr-space-half-x;
+  padding-left: $cdr-space-half-x;
+  height: 48px;
 }
 
 @mixin cdr-input-helper-text-mixin() {
-  @include cdr-input-helper-text-text-mixin;
+  // TODO: possible custom font token
+  font-family: $cdr-font-family-sans;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.016rem;
 
-  color: $cdr-input-helper-text-color;
+  color: $cdr-color-text-input-help;
   display: block;
 }
 
 @mixin cdr-input-info-container-mixin() {
-  @include cdr-input-info-container-text-mixin;
+  @include cdr-text-utility-sans-200;
 
-  float: $cdr-input-info-container-float;
+  float: right;
 }
 
 @mixin cdr-input-required-label-mixin() {
-  color: $cdr-input-required-label-color;
-  margin-left: $cdr-input-required-label-ml
+  color: $cdr-color-text-input-required;
+  margin-left: $cdr-space-inset-quarter-x;
+  font-weight: 400;
 }
-

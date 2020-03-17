@@ -61,51 +61,6 @@
       >I'm a button!</cdr-link>
     </div>
 
-    <!-- Nested theme Testing -->
-
-    <!-- <cdr-themer
-      theme="light"
-      background="lightest"
-    > -->
-    <!-- Smaller examples with nested theme (for override) -->
-    <!-- <p>Works nested</p>
-      <p>
-        <cdr-link
-          href="https://www.rei.com/"
-          space="cdr-pl-space-one-x cdr-pr-space-one-x"
-        >
-          REI.com
-        </cdr-link>
-        <cdr-link
-          href="https://www.rei.com/"
-          modifier="standalone"
-        >REI.com</cdr-link>
-      </p> -->
-    <!-- Override individual theme -->
-    <!-- <p>Individual override (dark on light)</p>
-      <p>
-        <cdr-link
-          href="https://www.rei.com/"
-          theme="dark">REI.com</cdr-link>
-      </p> -->
-    <!-- </cdr-themer> -->
-
-    <cdr-link
-      href="https://www.rei.com/"
-      space="cdr-pl-space-one-x cdr-pr-space-one-x"
-      @click.prevent="clicked"
-    >REI.com</cdr-link>
-    <cdr-link
-      href="https://www.rei.com/"
-    >REI.com</cdr-link>
-    <p>Override (light on dark)</p>
-    <cdr-link
-      href="https://www.rei.com/"
-      space="cdr-space-inset-one-x"
-      theme="light"
-    >
-      REI.com
-    </cdr-link>
 
     <cdr-text
       tag="h4"
@@ -133,13 +88,13 @@
     <cdr-text
       v-for="u1 in utilities"
       :key="u1"
-      :modifier="`utility-${u1}`"
+      :modifier="`utility-sans-${u1}`"
     >
       <cdr-link space="cdr-mb-space-half-x">
         item text
         <cdr-text
           tag="span"
-          :modifier="`utility-strong-${u1}`"
+          :modifier="`utility-sans-strong-${u1}`"
         >
           sit amet,
         </cdr-text>
@@ -149,7 +104,7 @@
     <cdr-text
       v-for="u2 in utilities"
       :key="u2"
-      :modifier="`utility-strong-${u2}`"
+      :modifier="`utility-sans-strong-${u2}`"
     >
       <cdr-link>
         <cdr-icon
@@ -177,7 +132,7 @@
           />
           <cdr-text
             tag="span"
-            :modifier="`utility-strong-${u1}`"
+            :modifier="`utility-sans-strong-${u1}`"
           >
             Icon on the left
           </cdr-text>
@@ -191,7 +146,7 @@
         <cdr-link>
           <cdr-text
             tag="span"
-            :modifier="`utility-strong-${u1}`"
+            :modifier="`utility-sans-strong-${u1}`"
           >
             Icon on the right
           </cdr-text>
@@ -217,7 +172,7 @@
           />
           <cdr-text
             tag="span"
-            :modifier="`utility-strong-${u1}`"
+            :modifier="`utility-sans-strong-${u1}`"
           >
             Icons on both sides
           </cdr-text>

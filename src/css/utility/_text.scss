@@ -57,23 +57,26 @@ h6.cdr-text.cdr-text,
     }
   }
   &--utility {
-    &-100 { @include cdr-text-utility-100; }
-    &-200 { @include cdr-text-utility-200; }
-    &-300 { @include cdr-text-utility-300; }
-    &-400 { @include cdr-text-utility-400; }
-    &-500 { @include cdr-text-utility-500; }
-    &-600 { @include cdr-text-utility-600; }
-    &-700 { @include cdr-text-utility-700; }
-    &-800 { @include cdr-text-utility-800; }
-    &-strong {
-      &-100 { @include cdr-text-utility-strong-100; }
-      &-200 { @include cdr-text-utility-strong-200; }
-      &-300 { @include cdr-text-utility-strong-300; }
-      &-400 { @include cdr-text-utility-strong-400; }
-      &-500 { @include cdr-text-utility-strong-500; }
-      &-600 { @include cdr-text-utility-strong-600; }
-      &-700 { @include cdr-text-utility-strong-700; }
-      &-800 { @include cdr-text-utility-strong-800; }
+    &-sans {
+      &-100 { @include cdr-text-utility-sans-100; }
+      &-200 { @include cdr-text-utility-sans-200; }
+      &-300 { @include cdr-text-utility-sans-300; }
+      &-400 { @include cdr-text-utility-sans-400; }
+      &-500 { @include cdr-text-utility-sans-500; }
+      &-600 { @include cdr-text-utility-sans-600; }
+      &-700 { @include cdr-text-utility-sans-700; }
+      &-800 { @include cdr-text-utility-sans-800; }
+
+      &-strong {
+        &-100 { @include cdr-text-utility-sans-strong-100; }
+        &-200 { @include cdr-text-utility-sans-strong-200; }
+        &-300 { @include cdr-text-utility-sans-strong-300; }
+        &-400 { @include cdr-text-utility-sans-strong-400; }
+        &-500 { @include cdr-text-utility-sans-strong-500; }
+        &-600 { @include cdr-text-utility-sans-strong-600; }
+        &-700 { @include cdr-text-utility-sans-strong-700; }
+        &-800 { @include cdr-text-utility-sans-strong-800; }
+      }
     }
     &-serif {
       &-200 { @include cdr-text-utility-serif-200; }
@@ -83,6 +86,7 @@ h6.cdr-text.cdr-text,
       &-600 { @include cdr-text-utility-serif-600; }
       &-700 { @include cdr-text-utility-serif-700; }
       &-800 { @include cdr-text-utility-serif-800; }
+
       &-strong {
         &-200 { @include cdr-text-utility-serif-strong-200; }
         &-300 { @include cdr-text-utility-serif-strong-300; }
@@ -96,7 +100,7 @@ h6.cdr-text.cdr-text,
   }
 
   &--citation {
-    @include cdr-text-utility-strong-100;
+    @include cdr-text-utility-sans-strong-100;
   }
 
   &--eyebrow-100 {
@@ -166,13 +170,13 @@ h6.cdr-text.cdr-text,
         &-1100\@xs { @include cdr-text-heading-serif-1100; }
         &-1200\@xs { @include cdr-text-heading-serif-1200; }
         &-strong {
-          &-600 { @include cdr-text-heading-serif-strong-600; }
-          &-700 { @include cdr-text-heading-serif-strong-700; }
-          &-800 { @include cdr-text-heading-serif-strong-800; }
-          &-900 { @include cdr-text-heading-serif-strong-900; }
-          &-1000 { @include cdr-text-heading-serif-strong-1000; }
-          &-1100 { @include cdr-text-heading-serif-strong-1100; }
-          &-1200 { @include cdr-text-heading-serif-strong-1200; }
+          &-600\@xs { @include cdr-text-heading-serif-strong-600; }
+          &-700\@xs { @include cdr-text-heading-serif-strong-700; }
+          &-800\@xs { @include cdr-text-heading-serif-strong-800; }
+          &-900\@xs { @include cdr-text-heading-serif-strong-900; }
+          &-1000\@xs { @include cdr-text-heading-serif-strong-1000; }
+          &-1100\@xs { @include cdr-text-heading-serif-strong-1100; }
+          &-1200\@xs { @include cdr-text-heading-serif-strong-1200; }
         }
       }
     }
@@ -209,13 +213,13 @@ h6.cdr-text.cdr-text,
         &-1100\@sm { @include cdr-text-heading-serif-1100; }
         &-1200\@sm { @include cdr-text-heading-serif-1200; }
         &-strong {
-          &-600 { @include cdr-text-heading-serif-strong-600; }
-          &-700 { @include cdr-text-heading-serif-strong-700; }
-          &-800 { @include cdr-text-heading-serif-strong-800; }
-          &-900 { @include cdr-text-heading-serif-strong-900; }
-          &-1000 { @include cdr-text-heading-serif-strong-1000; }
-          &-1100 { @include cdr-text-heading-serif-strong-1100; }
-          &-1200 { @include cdr-text-heading-serif-strong-1200; }
+          &-600\@sm { @include cdr-text-heading-serif-strong-600; }
+          &-700\@sm { @include cdr-text-heading-serif-strong-700; }
+          &-800\@sm { @include cdr-text-heading-serif-strong-800; }
+          &-900\@sm { @include cdr-text-heading-serif-strong-900; }
+          &-1000\@sm { @include cdr-text-heading-serif-strong-1000; }
+          &-1100\@sm { @include cdr-text-heading-serif-strong-1100; }
+          &-1200\@sm { @include cdr-text-heading-serif-strong-1200; }
         }
       }
     }
@@ -252,13 +256,13 @@ h6.cdr-text.cdr-text,
         &-1100\@md { @include cdr-text-heading-serif-1100; }
         &-1200\@md { @include cdr-text-heading-serif-1200; }
         &-strong {
-          &-600 { @include cdr-text-heading-serif-strong-600; }
-          &-700 { @include cdr-text-heading-serif-strong-700; }
-          &-800 { @include cdr-text-heading-serif-strong-800; }
-          &-900 { @include cdr-text-heading-serif-strong-900; }
-          &-1000 { @include cdr-text-heading-serif-strong-1000; }
-          &-1100 { @include cdr-text-heading-serif-strong-1100; }
-          &-1200 { @include cdr-text-heading-serif-strong-1200; }
+          &-600\@md { @include cdr-text-heading-serif-strong-600; }
+          &-700\@md { @include cdr-text-heading-serif-strong-700; }
+          &-800\@md { @include cdr-text-heading-serif-strong-800; }
+          &-900\@md { @include cdr-text-heading-serif-strong-900; }
+          &-1000\@md { @include cdr-text-heading-serif-strong-1000; }
+          &-1100\@md { @include cdr-text-heading-serif-strong-1100; }
+          &-1200\@md { @include cdr-text-heading-serif-strong-1200; }
         }
       }
     }
@@ -295,13 +299,13 @@ h6.cdr-text.cdr-text,
         &-1100\@lg { @include cdr-text-heading-serif-1100; }
         &-1200\@lg { @include cdr-text-heading-serif-1200; }
         &-strong {
-          &-600 { @include cdr-text-heading-serif-strong-600; }
-          &-700 { @include cdr-text-heading-serif-strong-700; }
-          &-800 { @include cdr-text-heading-serif-strong-800; }
-          &-900 { @include cdr-text-heading-serif-strong-900; }
-          &-1000 { @include cdr-text-heading-serif-strong-1000; }
-          &-1100 { @include cdr-text-heading-serif-strong-1100; }
-          &-1200 { @include cdr-text-heading-serif-strong-1200; }
+          &-600\@lg { @include cdr-text-heading-serif-strong-600; }
+          &-700\@lg { @include cdr-text-heading-serif-strong-700; }
+          &-800\@lg { @include cdr-text-heading-serif-strong-800; }
+          &-900\@lg { @include cdr-text-heading-serif-strong-900; }
+          &-1000\@lg { @include cdr-text-heading-serif-strong-1000; }
+          &-1100\@lg { @include cdr-text-heading-serif-strong-1100; }
+          &-1200\@lg { @include cdr-text-heading-serif-strong-1200; }
         }
       }
     }

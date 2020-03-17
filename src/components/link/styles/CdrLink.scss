@@ -23,34 +23,3 @@
 .cdr-link--standalone {
   @include cdr-link-standalone-mixin;
 }
-
-/* Light Theme */
-
-/* Theme via cascade
-
-:global(.cdr-bg--light) .cdr-link {
-  @include cdr-link-lightmode-mixin;
-}
-*/
-
-/* Theme via prop */
-
-:global(.on-light).cdr-link {
-  @include cdr-link-lightmode-mixin;
-}
-
-/* Dark Theme */
-
-/* Theme via cascade
-
-:global(.cdr-bg--dark) .cdr-link {
-
-  @include cdr-link-darkmode-mixin;
-}
-*/
-
-/* Theme via prop */
-
-:global(.on-dark).cdr-link {
-  @include cdr-link-darkmode-mixin;
-}

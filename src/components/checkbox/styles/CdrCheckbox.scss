@@ -1,28 +1,11 @@
-/* ==========================================================================
-  # CdrCheckbox
-
-  All values should map to variables in
-  vars/CdrCheckbox.vars.pcss
-  in order to allow for theming
-
-  TOC:
-
-    :Base - Checkbox
-      :Elements
-        :wrap
-        :input
-        :figure
-      :States
-      :Modifiers
-        :hide-figure
-      :Sizes
-========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrCheckbox.vars.scss';
 .cdr-checkbox {
-  @include checkbox-text;
+  @include cdr-label-base-mixin;
+  display: inline-block;
+  margin: 0;
   position: relative;
-  padding-left: calc(#{$checkbox-figure-size-medium} + #{$cdr-label-base-spacing});
+  user-select: none;
 
   /* Elements
     ========================================================================== */
@@ -43,17 +26,21 @@
     z-index: -1;
   }
 
+  /* Content
+  ========== */
+  &__content {
+    user-select: text;
+  }
+
   /* Figure
   ========== */
   &__figure {
+    @include cdr-label-figure-medium-mixin;
     position: absolute;
-    top: $checkbox-figure-space-top;
     left: 0;
-    width: $checkbox-figure-size-medium;
-    height: $checkbox-figure-size-medium;
-    border-radius: $checkbox-figure-radius;
-    background-color: $checkbox-figure-background-color;
-    border: 1px solid $checkbox-figure-border-color;
+    border-radius: $cdr-radius-softer;
+    background-color: $cdr-color-background-input-default;
+    border: 1px solid $cdr-color-border-input-default;
   }
 
   /* States
@@ -62,16 +49,16 @@
   /* Checked
   ========== */
   &__input:checked ~ &__figure {
-    border-color: $checkbox-figure-checked-border-color;
-    background-color: $checkbox-figure-checked-background-color;
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill=#{$checkbox-figure-icon-fill});
+    border-color: $cdr-color-border-input-default-selected;
+    background-color: $cdr-color-background-input-default-selected;
+    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#fff");
     background-repeat: no-repeat;
   }
 
   /* Indeterminate
   ========== */
   &__input[indeterminate] ~ .cdr-checkbox__figure {
-    border-color: $checkbox-figure-indeterminate-border-color;
+    border-color: $cdr-color-border-input-default-selected;
 
     &::after {
       content: '';
@@ -79,10 +66,10 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: $checkbox-figure-indeterminate-size;
-      height: $checkbox-figure-indeterminate-size;
-      background-color: $checkbox-figure-indeterminate-background-color;
-      border-radius: $checkbox-figure-indeterminate-border-radius;
+      width: 8px;
+      height: 2px;
+      background-color: $cdr-color-background-input-default-selected;
+      border-radius: $cdr-radius-soft;
     }
   }
 
@@ -91,8 +78,8 @@
   &:hover {
     & > .cdr-checkbox__figure {
       cursor: pointer;
-      border-color: $checkbox-figure-hover-border-color;
-      background-color: $checkbox-figure-hover-background-color;
+      border-color: $cdr-color-border-input-default-hover;
+      background-color: $cdr-color-background-input-default-hover;
     }
 
     & > .cdr-checkbox__content {
@@ -103,17 +90,17 @@
       /* Hover + Checked
       ========== */
       &:checked ~ .cdr-checkbox__figure {
-        border-color: $checkbox-figure-checked-hover-border-color;
-        background-color: $checkbox-figure-checked-hover-background-color;
+        border-color: $cdr-color-border-input-default-selected-hover;
+        background-color: $cdr-color-background-input-default-selected-hover;
       }
 
       /* Hover + Indeterminate
       ========== */
       &[indeterminate] ~ .cdr-checkbox__figure {
-        border-color: $checkbox-figure-checked-hover-border-color;
+        border-color: $cdr-color-border-input-default-selected-hover;
 
         &::after {
-          background-color: $checkbox-figure-checked-hover-background-color;
+          background-color: $cdr-color-background-input-default-selected-hover;
         }
       }
     }
@@ -127,16 +114,16 @@
     }
 
     & ~ .cdr-checkbox__figure {
-      border-color: $checkbox-figure-disabled-border-color !important;
-      background-color: $checkbox-figure-disabled-background-color !important;
-      cursor: default;
+      border-color: $cdr-color-border-input-default-disabled !important;
+      background-color: $cdr-color-background-input-default-disabled !important;
+      cursor: not-allowed;
     }
 
     /* Disabled + Checked
     ========== */
     &:checked {
       & ~ .cdr-checkbox__figure {
-        background-color: $checkbox-figure-checked-disabled-background-color !important;
+        background-color: $cdr-color-background-input-default-disabled !important;
       }
     }
 
@@ -144,10 +131,10 @@
     ========== */
     &[indeterminate] {
       & ~ .cdr-checkbox__figure {
-        border-color: $checkbox-figure-disabled-border-color !important;
+        border-color: $cdr-color-border-input-default-disabled !important;
 
         &::after {
-          background-color: $checkbox-figure-checked-disabled-background-color !important;
+          background-color: $cdr-color-background-input-default-disabled !important;
         }
       }
     }
@@ -156,23 +143,21 @@
   /* Active
   ========== */
   &:active > .cdr-checkbox__figure {
-    border-color: $checkbox-figure-active-border-color;
+    border-color: $cdr-color-border-input-default-active;
   }
 
   /* Focus
   ========== */
   &__input:focus ~ .cdr-checkbox__figure {
-    border-color: $checkbox-figure-focus-border-color;
-    box-shadow: $checkbox-focus-outline;
+    border-color: $cdr-color-border-input-default-active;
+    box-shadow: $cdr-label-figure-box-shadow;
   }
 
 
   /* Sizes
     ========================================================================== */
   @include checkbox-small-mixin(&);
-
   @include checkbox-medium-mixin(&);
-
   @include checkbox-large-mixin(&);
 
   /* Breakpoint variants
@@ -182,9 +167,7 @@
     ========== */
   @include xs-mq-only {
     @include checkbox-small-mixin(&, \@xs);
-
     @include checkbox-medium-mixin(&, \@xs);
-
     @include checkbox-large-mixin(&, \@xs);
   }
 
@@ -193,9 +176,7 @@
     ========== */
   @include sm-mq-only {
     @include checkbox-small-mixin(&, \@sm);
-
-    @include checkbox-medium-mixin(&, \@sm);
-
+      @include checkbox-medium-mixin(&, \@sm);
     @include checkbox-large-mixin(&, \@sm);
   }
 
@@ -204,9 +185,7 @@
     ========== */
   @include md-mq-only {
     @include checkbox-small-mixin(&, \@md);
-
     @include checkbox-medium-mixin(&, \@md);
-
     @include checkbox-large-mixin(&, \@md);
   }
 
@@ -216,9 +195,7 @@
 
   @include lg-mq-only {
     @include checkbox-small-mixin(&, \@lg);
-
     @include checkbox-medium-mixin(&, \@lg);
-
     @include checkbox-large-mixin(&, \@lg);
   }
 
@@ -230,7 +207,7 @@
 
   // TODO: remove compact?
   &--compact {
-    @include checkbox-text-compact;
+    @include cdr-label-small-mixin;
   }
 
   &--hide-figure {
@@ -240,6 +217,4 @@
       display: none;
     }
   }
-
-
 }

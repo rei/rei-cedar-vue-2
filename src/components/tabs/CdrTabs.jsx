@@ -1,16 +1,20 @@
 import debounce from 'lodash-es/debounce';
-import delay from 'lodash-es/delay';
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
+import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
 
 export default {
   name: 'CdrTabs',
-  mixins: [modifier],
+  mixins: [modifier, size],
   props: {
     height: {
       type: String,
       default: '240px',
+    },
+    activeTab: {
+      type: Number,
+      default: 0,
     },
   },
   data() {
@@ -44,6 +48,8 @@ export default {
       .map(vnode => vnode.componentInstance)
       .filter(tab => tab); // get vue component children in the slot
 
+    this.activeTabIndex = this.getNextTab(this.activeTab);
+
     if (this.tabs[this.activeTabIndex] && this.tabs[this.activeTabIndex].setActive) {
       this.tabs[this.activeTabIndex].setActive(true);
     }
@@ -68,26 +74,79 @@ export default {
     }, 250));
   },
   methods: {
-    handleClick(tabClicked) {
-      const newSelectedTab = this.tabs.find(tab => tabClicked.name === tab.name);
-      this.tabs.forEach((tab, index) => {
-        if (newSelectedTab.name === tab.name) {
-          if (this.activeTabIndex < index) {
-            tab.setAnimationDirection('flyRight');
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          } else {
-            tab.setAnimationDirection('flyLeft');
-            this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          }
-          this.activeTabIndex = index;
-          this.hideScrollBar();
-          this.$nextTick(() => tab.setActive(true));
-        } else {
-          this.$nextTick(() => tab.setActive(false));
+    getNextTab(startIndex) {
+      for (let i = startIndex; i < this.tabs.length; i += 1) {
+        if (!this.tabs[i].disabled) {
+          return i;
         }
-      });
-      this.updateUnderline();
+      }
+
+      if (startIndex !== 0) {
+        for (let k = 0; k < startIndex; k += 1) {
+          if (!this.tabs[k].disabled) {
+            return k;
+          }
+        }
+      }
+
+      return -1;
     },
+    getPreviousTab(startIndex) {
+      for (let i = startIndex; i > -1; i -= 1) {
+        if (!this.tabs[i].disabled) {
+          return i;
+        }
+      }
+
+      if (startIndex !== this.tabs.length - 1) {
+        for (let k = this.tabs.length - 1; k > startIndex; k -= 1) {
+          if (!this.tabs[k].disabled) {
+            return k;
+          }
+        }
+      }
+
+      return -1;
+    },
+    handleClick: debounce(function handleClickCallback(tabClicked) {
+      const newIndex = this.tabs.findIndex(tab => tabClicked.name === tab.name);
+      this.changeTab(newIndex);
+    }, 500, { leading: true, trailing: false }),
+    changeTab(newIndex) {
+      const oldIndex = this.activeTabIndex;
+
+      this.hideScrollBar();
+      if (newIndex > oldIndex) {
+        this.tabs[oldIndex].setAnimationDirection('exit-left');
+        this.tabs[oldIndex].setActive(false);
+        setTimeout(() => {
+          this.tabs[newIndex].setActive(true);
+          this.tabs[newIndex].setAnimationDirection('enter-right');
+        }, 200);
+      } else {
+        this.tabs[oldIndex].setAnimationDirection('exit-right');
+        this.tabs[oldIndex].setActive(false);
+        setTimeout(() => {
+          this.tabs[newIndex].setActive(true);
+          this.tabs[newIndex].setAnimationDirection('enter-left');
+        }, 200);
+      }
+      this.activeTabIndex = newIndex;
+      this.updateUnderline();
+      this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
+    },
+    rightArrowNav: debounce(function handleRightArrow() {
+      const nextTab = this.getNextTab(this.activeTabIndex + 1);
+      if (nextTab !== -1) {
+        this.changeTab(nextTab);
+      }
+    }, 300, { leading: true, trailing: false }),
+    leftArrowNav: debounce(function handleLeftArrow() {
+      const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
+      if (previousTab !== -1) {
+        this.changeTab(previousTab);
+      }
+    }, 300, { leading: true, trailing: false }),
     calculateOverflow() {
       let containerWidth = 0;
       if (this.$refs.cdrTabsContainer) {
@@ -111,42 +170,6 @@ export default {
         this.underlineOffsetX = activeTab.offsetLeft
           - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
         this.underlineWidth = activeTab.firstChild.offsetWidth;
-      }
-    },
-    rightArrowNav() {
-      if (!this.animationInProgress) {
-        if (this.activeTabIndex < (this.tabs.length - 1)) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyLeft');
-          this.tabs[this.activeTabIndex + 1].setAnimationDirection('flyRight');
-          this.hideScrollBar();
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex += 1;
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-        }
-        this.navAnimationProgress();
-      }
-    },
-    leftArrowNav() {
-      if (!this.animationInProgress) {
-        if (this.activeTabIndex > 0) {
-          this.tabs[this.activeTabIndex].setAnimationDirection('flyRight');
-          this.tabs[this.activeTabIndex - 1].setAnimationDirection('flyLeft');
-          this.hideScrollBar();
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(false));
-          this.activeTabIndex -= 1;
-          this.$nextTick(this.tabs[this.activeTabIndex].setActive(true));
-        }
-        this.navAnimationProgress();
-      }
-    },
-    navAnimationProgress() {
-      if (this.$refs.cdrTabsHeader.children[this.activeTabIndex]) {
-        this.animationInProgress = true;
-        delay(() => {
-          this.animationInProgress = false;
-        }, 600);
-        this.updateUnderline();
-        this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
       }
     },
     handleDownArrowNav() {
@@ -175,11 +198,34 @@ export default {
       }, { once: true });
       styleRef.setProperty('overflow-x', 'hidden');
     },
+    getTabEl(tab) {
+      return tab.disabled ? (
+        <span
+          class={clsx(
+            this.style['cdr-tabs__header-item-label'],
+            this.style['cdr-tabs__header-item-label--disabled'],
+          )}
+          aria-disabled="true"
+          aria-selected="false"
+        >
+          {tab.name}
+        </span>
+      ) : (
+        <a
+          tabIndex={tab.active ? 0 : -1}
+          vOn:click_prevent={e => this.handleClick(tab, e)}
+          href={`#${tab.id}`}
+          class={this.style['cdr-tabs__header-item-label']}
+        >
+          { tab.name }
+        </a>
+      );
+    },
   },
   render() {
     return (
       <div
-        class={clsx(this.style[this.baseClass], this.modifierClass)}
+        class={clsx(this.style[this.baseClass], this.modifierClass, this.sizeClass)}
         ref="cdrTabsContainer"
         style={{ height: this.height }}
       >
@@ -205,23 +251,20 @@ export default {
               role="tablist"
               ref="cdrTabsHeader"
             >
-              {this.tabs.map((tab, index) => (
+              {this.tabs.map(tab => (
                   <li
                     role="tab"
                     aria-selected={tab.active}
-                    key={tab.id ? tab.id : `${tab.name}-${index}`}
+                    aria-disabled="false"
+                    aria-controls={tab.id}
+                    id={tab.ariaLabelledby}
+                    key={tab.id}
                     class={clsx(
                       tab.active ? this.style['cdr-tabs__header-item-active'] : '',
                       this.style['cdr-tabs__header-item'],
                     )}
                   >
-                    <a
-                      vOn:click_prevent={e => this.handleClick(tab, e)}
-                      href={`#${tab.id || tab.name}`}
-                      class={this.style['cdr-tabs__header-item-label']}
-                    >
-                      { tab.name }
-                    </a>
+                    {this.getTabEl(tab)}
                   </li>
               ))}
             </ol>

@@ -1,341 +1,127 @@
 <template>
   <!-- eslint-disable max-len -->
   <div>
-    <div class="tab-demo-section">
+    <cdr-text
+      tag="h2"
+      modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
+      class="cdr-align-text-center"
+    >
+      Tabs
+    </cdr-text>
+
+    <tabs-default />
+
+    <!-- small -->
+    <div class="tab-demo-secton">
       <cdr-text
-        tag="h2"
-        modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
+        tag="h3"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+        class="cdr-align-text-center"
       >
-        Tabs
+        Small Tabs
       </cdr-text>
       <cdr-tabs
         height="100px"
-        data-backstop="tab-default"
+        size="small"
       >
-        <cdr-tab-panel name="Tab1">
+        <cdr-tab-panel
+          v-for="tab in tabs.slice(0, 5)"
+          :key="tab"
+          :name="tab"
+          :id="'tab-panel-small-' + tab"
+          :aria-labelledby="'tab-small-' + tab"
+        >
           <cdr-text
-            tag="strong"
-            modifier="subheading"
+            modifier="body-300"
           >
-            Tab One Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel name="Tab2">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.
-
-              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.
-
-              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>
-            Tab Two Content
-            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.
-
-              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.
-
-              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel name="REALLY REALLY LARGE TAB NAME">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Three Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel name="4">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Four Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel name="Five">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Five Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel name="Six">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Six Content
+            Tab {{ tab }} content
           </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
-    <!-- Compact Modifier -->
-    <div class="tab-demo-section">
+
+    <!-- full-width -->
+    <div class="tab-demo-secton">
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+        class="cdr-align-text-center"
       >
-        Compact Tabs
+        Full-Width Tabs
       </cdr-text>
-      <cdr-tabs modifier="compact">
-        <cdr-tab-panel name="one">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab One Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel name="two">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Two Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel name="three">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Three Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel name="four">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Four Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel name="five">
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Five Content
-          </cdr-text>
-        </cdr-tab-panel>
-      </cdr-tabs>
-    </div>
-    <!-- Full Width Modifier -->
-    <div class="tab-demo-section">
-      <cdr-text
-        tag="h3"
-        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+      <cdr-tabs
+        height="100px"
+        modifier="full-width"
       >
-        Full Width Tabs
-      </cdr-text>
-      <cdr-tabs modifier="full-width">
         <cdr-tab-panel
-          name="one"
-          id="full-width-one"
+          v-for="tab in tabs.slice(0, 5)"
+          :key="tab"
+          :name="tab"
+          :id="'tab-panel-full-width-' + tab"
+          :aria-labelledby="'tab-full-width-' + tab"
         >
           <cdr-text
-            tag="strong"
-            modifier="subheading"
+            modifier="body-300"
           >
-            Tab One Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="two"
-          id="full-width-two"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Two Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="three"
-          id="full-width-three"
-        >
-          <cdr-text
-            tag="h1"
-            modifier="display-600 display-700@md display-900@lg"
-          >tab three content</cdr-text>
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.
-
-              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.
-
-              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>
-            <cdr-text
-              tag="h1"
-              modifier="display-600 display-700@md display-900@lg"
-            >tab three content</cdr-text>
-            Tab Two Content
-            <cdr-text>What's a rerun? Hey, hey listen guys. Look, I don't wanna mess with no reefer addicts, okay? Whoa, whoa, kid, kid, stop, stop, stop, stop. Leave me alone. Oh, thank you, thank you. Okay now, we run some industrial strength electrical cable from the top of the clocktower down to spreading it over the street between two lamp posts. Meanwhile, we out-fitted the vehicle with this big pole and hook which runs directly into the flux-capacitor. At the calculated moment, you start off from down the street driving toward the cable execrating to eighty-eight miles per hour. According to the flyer, at !0:04 pm lightning will strike the clocktower sending one point twenty-one gigawatts into the flux-capacitor, sending you back to 1985. Alright now, watch this. You wind up the car and release it, I'll simulate the lightening. Ready, set, release. Huhh.
-
-              I have a feeling too. What? Well, I figured, what the hell. Alright, we're the pinheads. C'mon.
-
-              Yeah, well, I still don't understand what Dad was doing in the middle of the street. Right. Lou, gimme a milk, chocolate. Lorraine, my density has popped me to you. Great good, good, Lorraine, I had a feeling about you two. Right. Well, Marty, I want to thank you for all your good advise, I'll never forget it.</cdr-text>
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="four"
-          id="full-width-four"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Four Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="five"
-          id="full-width-five"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Five Content
+            Tab {{ tab }} content
           </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
-    <!-- No Border Modifier -->
-    <div class="tab-demo-section">
+
+    <!-- No-border -->
+    <div class="tab-demo-secton">
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+        class="cdr-align-text-center"
       >
         No Border Tabs
       </cdr-text>
-      <cdr-tabs modifier="no-border">
+      <cdr-tabs
+        height="100px"
+        modifier="no-border"
+      >
         <cdr-tab-panel
-          name="one"
-          id="no-border-one"
+          v-for="tab in tabs.slice(0, 5)"
+          :key="tab"
+          :name="tab"
+          :id="'tab-panel-no-border-' + tab"
+          :aria-labelledby="'tab-no-border-' + tab"
         >
           <cdr-text
-            tag="strong"
-            modifier="subheading"
+            modifier="body-300"
           >
-            Tab One Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="two"
-          id="no-border-two"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Two Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="three"
-          id="no-border-three"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Three Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="four"
-          id="no-border-four"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Four Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="five"
-          id="no-border-five"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Five Content
+            Tab {{ tab }} content
           </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
     </div>
 
-    <!-- Center Modifier -->
-    <div class="tab-demo-section">
+    <!-- Centered -->
+    <div class="tab-demo-secton">
       <cdr-text
         tag="h3"
         modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+        class="cdr-align-text-center"
       >
         Centered Tabs
       </cdr-text>
-      <cdr-tabs modifier="centered">
+      <cdr-tabs
+        height="100px"
+        modifier="centered"
+      >
         <cdr-tab-panel
-          name="one"
-          id="centered-one"
+          v-for="tab in tabs"
+          :key="tab"
+          :name="tab"
+          :id="'tab-panel-centered-' + tab"
+          :aria-labelledby="'tab-centered-' + tab"
         >
           <cdr-text
-            tag="strong"
-            modifier="subheading"
+            modifier="body-300"
           >
-            Tab One Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="two"
-          id="centered-two"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Two Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="three"
-          id="centered-three"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Three Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="four"
-          id="centered-four"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Four Content
-          </cdr-text>
-        </cdr-tab-panel>
-        <cdr-tab-panel
-          name="five"
-          id="centered-five"
-        >
-          <cdr-text
-            tag="strong"
-            modifier="subheading"
-          >
-            Tab Five Content
+            Tab {{ tab }} content
           </cdr-text>
         </cdr-tab-panel>
       </cdr-tabs>
@@ -345,16 +131,21 @@
 
 <script>
 import * as Components from 'srcdir/index';
+import tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';
 
 export default {
   name: 'TabsExample',
-  components: { ...Components },
+  components: { ...Components, tabsDefault },
+  data() {
+    return {
+      tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
+    };
+  },
 };
 </script>
 
 <style>
   .tab-demo-section {
-    text-align: center;
-    padding-top: 25px;
+    margin-bottom: 30px;
   }
 </style>

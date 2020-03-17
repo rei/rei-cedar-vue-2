@@ -1,25 +1,45 @@
 @import '../../../css/settings/index.scss';
-@import './vars/CdrRating.vars.scss';
-/* ==========================================================================
-  # CdrRating
-
-  All values should map to variables in
-  vars/CdrRating.vars.pcss
-  in order to allow for theming
-
-  TOC:
-
-    :Base - Rating
-      :Elements
-        :Icon
-        :Count
-      :Modifiers
-        :Linked
-        :Large
-        :Small
-========================================================================== */
 
 $rating-color: #2b6692;
+
+@mixin cdr-rating-small() {
+  & .cdr-rating__icon {
+    width: $cdr-icon-size-sm;
+    height: $cdr-icon-size-sm;
+  }
+
+  & .cdr-rating__count {
+    @include cdr-text-utility-sans-100;
+
+    margin-left: $cdr-space-quarter-x;
+  }
+}
+
+@mixin cdr-rating-medium($parent-selector: '& ') {
+  #{$parent-selector}.cdr-rating__icon {
+    width: $cdr-icon-size;
+    height: $cdr-icon-size;
+  }
+
+  #{$parent-selector}.cdr-rating__count {
+    @include cdr-text-utility-sans-200;
+
+    margin-left: $cdr-space-half-x;
+  }
+}
+
+@mixin cdr-rating-large() {
+  & .cdr-rating__icon {
+    width: $cdr-icon-size-lg;
+    height: $cdr-icon-size-lg;
+  }
+
+  & .cdr-rating__count {
+    @include cdr-text-utility-sans-300;
+  }
+}
+
+@include cdr-rating-medium('');
 
 .cdr-rating {
   display: flex;
@@ -27,22 +47,13 @@ $rating-color: #2b6692;
   position: relative;
   line-height: 1;
 
+  color: $cdr-color-text-rating-default;
+
   /* Elements
     ========================================================================== */
 
-  /* Icon
-    ========== */
-  &__icon {
-    width: $cdr-icon-size;
-    height: $cdr-icon-size;
-  }
-
-  /* Count
-    ========== */
-  &__count {
-    @include cdr-rating-base-text;
-
-    margin-left: $cdr-space-half-x;
+  &__number {
+    font-weight: 600;
   }
 
   &__ratings {
@@ -102,11 +113,12 @@ $rating-color: #2b6692;
       &:hover,
       &:active,
       &:focus {
+        color: $cdr-color-text-rating-hover;
         text-decoration: underline;
       }
 
       & > .cdr-rating__number {
-        border-right: 1px solid $rating-number-decoration;
+        border-right: 1px solid $cdr-color-text-rating-separator;
         padding: 0 $cdr-space-quarter-x;
         margin-right: $cdr-space-quarter-x;
       }
@@ -117,184 +129,76 @@ $rating-color: #2b6692;
     ========== */
 
   &--large {
-    & .cdr-rating__icon {
-      width: $cdr-icon-size-lg;
-      height: $cdr-icon-size-lg;
-    }
+    @include cdr-rating-large;
+  }
 
-    & .cdr-rating__count {
-      @include cdr-rating-text-large;
-    }
+  /* Medium
+    ========== */
+
+  &--medium {
+    @include cdr-rating-medium();
   }
 
   /* Small
     ========== */
 
   &--small {
-    & .cdr-rating__icon {
-      width: $cdr-icon-size-sm;
-      height: $cdr-icon-size-sm;
-    }
-
-    & .cdr-rating__count {
-      @include cdr-rating-text-small;
-
-      margin-left: $cdr-space-quarter-x;
-    }
+    @include cdr-rating-small;
   }
 
-  /* Content Color Variants
-    ========================================================================== */
-  &--primary {
-    & .cdr-rating__count {
-      color: $content-primary;
-    }
-
-    & .cdr-rating--linked {
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration-color: $content-primary;
-      }
-    }
-
-    & .cdr-rating__number {
-      border-right-color: $rating-number-decoration;
-    }
-  }
-
-  &--secondary {
-    & .cdr-rating__count {
-      color: $content-secondary;
-    }
-
-    & .cdr-rating--linked {
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration-color: $content-secondary;
-      }
-    }
-
-    & .cdr-rating__number {
-      border-right-color: $rating-number-decoration;
-    }
-  }
-
-  /* @xs
-    0px - 767px
-    ========== */
   @include xs-mq-only {
     &--small\@xs {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-sm;
-        height: $cdr-icon-size-sm;
-      }
+      @include cdr-rating-small;
+    }
 
-      & .cdr-rating__count {
-        @include cdr-rating-text-small;
-
-        margin-left: $cdr-space-quarter-x;
-      }
+    &--medium\@xs {
+      @include cdr-rating-medium;
     }
 
     &--large\@xs {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-lg;
-        height: $cdr-icon-size-lg;
-      }
-
-      & .cdr-rating__count {
-        @include cdr-rating-text-large;
-      }
+      @include cdr-rating-large;
     }
   }
 
-  /* @sm
-    768px - 991px
-    ========== */
   @include sm-mq-only {
     &--small\@sm {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-sm;
-        height: $cdr-icon-size-sm;
-      }
+      @include cdr-rating-small;
+    }
 
-      & .cdr-rating__count {
-        @include cdr-rating-text-small;
-
-        margin-left: $cdr-space-quarter-x;
-      }
+    &--medium\@sm {
+      @include cdr-rating-medium;
     }
 
     &--large\@sm {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-lg;
-        height: $cdr-icon-size-lg;
-      }
-
-      & .cdr-rating__count {
-        @include cdr-rating-text-large;
-      }
+      @include cdr-rating-large;
     }
   }
 
-  /* @md
-    992px - 1199px
-    ========== */
   @include md-mq-only {
     &--small\@md {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-sm;
-        height: $cdr-icon-size-sm;
-      }
+      @include cdr-rating-small;
+    }
 
-      & .cdr-rating__count {
-        @include cdr-rating-text-small;
-
-        margin-left: $cdr-space-quarter-x;
-      }
+    &--medium\@md {
+      @include cdr-rating-medium;
     }
 
     &--large\@md {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-lg;
-        height: $cdr-icon-size-lg;
-      }
-
-      & .cdr-rating__count {
-        @include cdr-rating-text-large;
-      }
+      @include cdr-rating-large;
     }
   }
 
-  /* @lg
-    1200px and up
-    ========== */
-
   @include lg-mq-only {
     &--small\@lg {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-sm;
-        height: $cdr-icon-size-sm;
-      }
+      @include cdr-rating-small;
+    }
 
-      & .cdr-rating__count {
-        @include cdr-rating-text-small;
-
-        margin-left: $cdr-space-quarter-x;
-      }
+    &--medium\@lg {
+      @include cdr-rating-medium;
     }
 
     &--large\@lg {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-lg;
-        height: $cdr-icon-size-lg;
-      }
-
-      & .cdr-rating__count {
-        @include cdr-rating-text-large;
-      }
+      @include cdr-rating-large;
     }
   }
 }
