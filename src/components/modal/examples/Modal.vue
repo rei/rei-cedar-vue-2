@@ -22,7 +22,7 @@
           tag="h2"
           modifier="heading-serif-600"
         >
-          Terms & Conditions
+          Terms & Conditionsppp
         </cdr-text>
       </template>
 
