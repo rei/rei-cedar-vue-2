@@ -105,8 +105,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
   &__close-button {
     align-self: flex-start;
     flex: none;
-    padding: $cdr-space-quarter-x;
-    margin-right: -$cdr-space-half-x;
+    line-height: normal;
   }
 
   &__text {
@@ -118,6 +117,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     // max-height: $modal-text-max-height;
     overflow: auto;
     padding-right: 16px;
+    position: relative;
 
     /* ie/edge/ff bug prevents using padding */
     &::after {
