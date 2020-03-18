@@ -62,9 +62,11 @@ describe('CdrButton', () => {
     const wrapper = shallowMount(CdrButton, {
       propsData: {
         iconOnly: true,
+        withBorder: true,
       }
     });
     expect(wrapper.classes()).toContain('cdr-button--icon-only');
+    expect(wrapper.classes()).toContain('cdr-button--with-border');
   });
 
   it('adds icon class when slot is used', () => {
