@@ -28,6 +28,15 @@ let postcssExtract = false;
 let copyTargets = [''];
 let copyOutput = 'public';
 
+const svgTargets = [
+  'static/star-null.svg',
+  'static/star-0.svg',
+  'static/star-25.svg',
+  'static/star-50.svg',
+  'static/star-75.svg',
+  'static/star-100.svg'
+];
+
 // prod only options
 if (env === 'prod') {
   postcssExtract = 'dist/cedar-compiled.css';
@@ -99,6 +108,10 @@ const plugins = [
   copyPlugin({
     targets: copyTargets,
     outputFolder: copyOutput
+  }),
+  copyPlugin({
+    targets: svgTargets,
+    outputFolder: 'dist/svg'
   }),
 ];
 
