@@ -16,10 +16,9 @@
     text-align: left;
   }
   
-  thead {
-    th {
-      font-weight: 600;
-    }
+  th {
+    @include cdr-text-utility-strong-200;
+    background-color: $cdr-color-background-table-header;
   }
   
   caption {
@@ -46,39 +45,47 @@
 }
 
 @mixin cdr-table-border() {
-  th,
-  td {
-    border: 1px solid $cdr-color-border-secondary-lightmode;
+  $table-border-styles:1px solid $cdr-color-border-table-default;
+  // border for every tr except the last
+  tr {
+    border-bottom: $table-border-styles;
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
-  
-  thead th {
-    border-bottom: 2px solid $cdr-color-border-secondary-lightmode;
+
+  // turn back on for some situations
+  thead + tbody > tr:first-of-type,
+  thead + tr:first-of-type,
+  tbody + tfoot > tr:first-of-type,
+  tbody + tr:first-of-type {
+    border-top: $table-border-styles;
   }
 }
 
 @mixin cdr-table-striped() {
   thead {
     th {
-      background-color: $cdr-color-background-light;
+      background-color: $cdr-color-background-table-header;
     }
 
     // override body styling when head is present
     & + tbody tr {
       // striping rows
       &:nth-child(even) {
-        background-color: $cdr-color-background-light;
+        background-color: $cdr-color-background-table-row-alt;
         
         & td {
-          background-color: $cdr-color-background-light;
+          background-color: $cdr-color-background-table-row-alt;
         }
       }
 
       // disabled default
       &:nth-child(odd) {
-        background-color: transparent;
+        background-color: $cdr-color-background-table-row;
         
         & td {
-          background-color: transparent;
+          background-color: $cdr-color-background-table-row;
         }
       }
     }
@@ -89,10 +96,10 @@
     tr {
       // striping rows
       &:nth-child(odd) {
-        background-color: $cdr-color-background-light;
+        background-color: $cdr-color-background-table-row-alt;
         
         & td {
-          background-color: $cdr-color-background-light;
+          background-color: $cdr-color-background-table-row-alt;
         }
       }
     }
@@ -101,4 +108,10 @@
 
 @mixin cdr-table-full-width() {
   width: 100%;
+}
+
+@mixin cdr-table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
 }

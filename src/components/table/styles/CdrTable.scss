@@ -27,4 +27,8 @@
   &--full-width {
     @include cdr-table-full-width;
   }
+
+  &--responsive {
+    @include cdr-table-responsive;
+  }
 }

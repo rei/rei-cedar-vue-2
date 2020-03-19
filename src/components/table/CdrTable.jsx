@@ -20,6 +20,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    responsive: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
@@ -37,12 +41,19 @@ export default {
         [this.modifyClassName(this.baseClass, 'full-width')]: this.fullWidth,
       };
     },
+    wrapperClasses() {
+      return {
+        [this.modifyClassName(this.baseClass, 'responsive')]: this.responsive,
+      };
+    },
   },
   render() {
     return (
-      <table class={clsx(this.tableClasses)}>
-        {this.$slots.default}
-      </table>
+      <div class={clsx(this.wrapperClasses)}>
+        <table class={clsx(this.tableClasses)}>
+          {this.$slots.default}
+        </table>
+      </div>
     );
   },
 };
