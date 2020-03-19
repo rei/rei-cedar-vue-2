@@ -3,12 +3,16 @@
 exports[`CdrLink renders a link with a button element and no href attribute 1`] = `
 <button
   class="cdr-link"
-/>
+>
+  Link Text
+</button>
 `;
 
 exports[`CdrLink renders correctly 1`] = `
 <a
   class="cdr-link"
   href="#"
-/>
+>
+  Link Text
+</a>
 `;

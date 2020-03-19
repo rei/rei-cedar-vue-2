@@ -1,7 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import sinon from 'sinon';
 import CdrLink from 'componentdir/link/CdrLink';
-// import CdrThemer from 'componentdir/themer/CdrThemer';
 
 describe('CdrLink', () => {
   test('renders correctly', () => {
@@ -25,7 +24,7 @@ describe('CdrLink', () => {
 
   it('sets a default link text', () => {
     const wrapper = shallowMount(CdrLink);
-    expect(wrapper.contains('Link Text'));
+    expect(wrapper.text()).toBe('Link Text');
   });
 
   it('sets rel attr correctly', () => {
@@ -81,10 +80,5 @@ describe('CdrLink', () => {
     });
     wrapper.trigger('click');
     expect(spy.called).toBeTruthy();
-  });
-
-  it('does nothing if no theme provided', () => {
-    const wrapper = shallowMount(CdrLink);
-    expect(wrapper.vm.computedTheme).toBeFalsy();
   });
 });
