@@ -9,8 +9,11 @@
     :Base
 ========================================================================== */
 
-$card-background-color: $cdr-color-background-lightest;
-$card-border-radius: $cdr-radius-soft;
-$card-box-shadow: $cdr-prominence-raised;
-$card-color: $cdr-color-text-primary-lightmode;
-$card-width: 100%;
+@mixin cdr-card-base-mixin() {
+  position: relative;
+  background-color: $cdr-color-background-primary;
+  border-radius: $cdr-radius-soft;
+  box-shadow: $cdr-prominence-raised;
+  color: $cdr-color-text-primary;
+  width: 100%;
+}
