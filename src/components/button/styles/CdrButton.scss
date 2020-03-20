@@ -76,8 +76,8 @@
     }
   }
 
-  &--with-border {
-    @include cdr-button-with-border-mixin;
+  &--with-background {
+    @include cdr-button-with-background-mixin;
   }
 
   /* Full Width

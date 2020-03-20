@@ -35,7 +35,7 @@ export default {
     /**
      * Used in conjunction with `icon-only`, renders a border and background around the icon button
      */
-    withBorder: {
+    withBackground: {
       type: Boolean,
       default: false,
     },
@@ -67,8 +67,8 @@ export default {
         classes.push(this.modifyClassName(this.baseClass, 'icon-only'));
       }
 
-      if (this.iconOnly && this.withBorder) {
-        classes.push(this.modifyClassName(this.baseClass, 'with-border'));
+      if (this.iconOnly && this.withBackground) {
+        classes.push(this.modifyClassName(this.baseClass, 'with-background'));
       }
 
       return classes.join(' ');

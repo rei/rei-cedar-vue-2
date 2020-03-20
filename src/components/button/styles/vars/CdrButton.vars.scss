@@ -150,7 +150,7 @@
   }
 }
 
-@mixin cdr-button-with-border-mixin() {
+@mixin cdr-button-with-background-mixin() {
   fill: $cdr-color-icon-default;
   background-color: $cdr-color-background-button-secondary-rest;
   box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-rest;
