@@ -76,6 +76,10 @@
     }
   }
 
+  &--with-background {
+    @include cdr-button-with-background-mixin;
+  }
+
   /* Full Width
     ========== */
 
