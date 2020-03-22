@@ -61,7 +61,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     margin: auto;
     min-height: 100%;
     opacity: 1;
-    padding: 24px;
+    padding: 16px;
     position: absolute;
     top: 0;
     left: 0;
@@ -79,6 +79,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
       border-radius: 0.5rem; // TODO: 	cdr-radius-softer is 0.4rem?
       box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .5);
       min-height: auto;
+      padding: 24px;
       position: relative;
       top: auto;
       left: auto;
@@ -98,7 +99,6 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
 
   &__dialog {
     width: 100%;
-    padding: $cdr-space-inset-one-and-a-half-x;
   }
 
   &__content {
@@ -107,18 +107,28 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
 
   &__header {
     display: flex;
-    padding: 0 0 $header-padding-bottom 0;
+    margin-bottom: $cdr-space-one-x;
   }
 
   &__title {
     flex: auto;
-    padding-right: $cdr-space-three-quarter-x;
   }
 
   &__close-button {
     align-self: flex-start;
     flex: none;
     line-height: normal; // TODO: remove this after button fix merges
+    margin-left: 12px;
+    padding: 7px; // NOTE: button should be 40x40, so drop padding by 1px
+    border: 1px solid #928B80;
+
+    &:hover, &:focus {
+      border: 1px solid #928B80;
+    }
+  }
+
+  &__sticky-content {
+    margin-bottom: $cdr-space-one-x;
   }
 
   &__text {
@@ -129,7 +139,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
   &__text-content {
     // max-height: $modal-text-max-height;
     overflow: auto;
-    padding-right: 16px;
+    padding-right: 32px;
     position: relative;
 
     /* ie/edge/ff bug prevents using padding */

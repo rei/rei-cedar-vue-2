@@ -292,7 +292,7 @@ export default {
                   </div>
                   {
                     this.$slots.stickyContentSlot && (
-                      <div class={this.style['cdr-modal__']}>
+                      <div class={this.style['cdr-modal__sticky-content']}>
                         {this.$slots.stickyContentSlot}
                       </div>
                     )
