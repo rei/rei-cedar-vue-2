@@ -1,3 +1,4 @@
+import debounce from 'lodash-es/debounce';
 import tabbable from 'tabbable';
 import clsx from 'clsx';
 import style from './styles/CdrModal.scss';
@@ -6,7 +7,6 @@ import CdrButton from '../button/CdrButton';
 import IconXLg from '../icon/comps/x-lg';
 import CdrText from '../text/CdrText';
 import size from '../../mixins/size';
-import debounce from 'lodash-es/debounce';
 
 export default {
   name: 'CdrModal',
@@ -61,6 +61,8 @@ export default {
       stickyHeight: 0,
       footerHeight: 0,
       totalHeight: 0,
+      scrollHeight: 0,
+      offsetHeight: 0,
     };
   },
   computed: {
@@ -77,6 +79,9 @@ export default {
     scrollMaxHeight() {
       return this.totalHeight - this.headerHeight - this.stickyHeight - this.footerHeight - 80;
     },
+    scrolling() {
+      return this.scrollHeight > this.offsetHeight;
+    },
   },
   watch: {
     opened(newValue, oldValue) {
@@ -89,9 +94,9 @@ export default {
     },
   },
   mounted() {
-    this.getSizes();
     if (this.opened) {
       this.addNoScroll();
+      this.getSizes();
       this.addHandlers();
     }
 
@@ -107,11 +112,14 @@ export default {
   },
   methods: {
     getSizes() {
-      console.log('getSizes');
       this.totalHeight = window.innerHeight;
       this.headerHeight = this.$refs.header.offsetHeight;
       this.stickyHeight = this.$refs.sticky.offsetHeight;
       this.footerHeight = this.$refs.footer.offsetHeight;
+      this.$nextTick(() => {
+        this.offsetHeight = this.$refs.scrolly.offsetHeight;
+        this.scrollHeight = this.$refs.scrolly.scrollHeight;
+      });
     },
     handleKeyDown({ key }) {
       switch (key) {
@@ -145,6 +153,7 @@ export default {
 
       this.$nextTick(() => {
         this.$refs.modal.focus();
+        this.getSizes();
         this.addHandlers();
 
         setTimeout(() => {
@@ -331,10 +340,19 @@ export default {
                     <div
                       class={this.style['cdr-modal__text-content']}
                       style={ { maxHeight: `${this.scrollMaxHeight}px` } }
+                      ref="scrolly"
                     >
                       {this.$slots.scrollingContentSlot}
                     </div>
-                    {/* <div class={this.style['cdr-modal__text-fade']} /> */}
+                    {
+                      this.scrolling && (
+                        <div
+                        class={this.style['cdr-modal__text-fade']}
+                        style={ { bottom: `${this.footerHeight}px` } }
+                      />
+                      )
+                    }
+
                     {
                       this.$slots.footer && (
                         <div
