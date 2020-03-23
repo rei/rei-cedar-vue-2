@@ -334,13 +334,13 @@ export default {
                   }
                   <div
                     role="document"
-                    tabindex="0"
                     class={this.style['cdr-modal__text']}
                   >
                     <div
                       class={this.style['cdr-modal__text-content']}
                       style={ { maxHeight: `${this.scrollMaxHeight}px` } }
                       ref="scrolly"
+                      tabindex="0"
                     >
                       {this.$slots.scrollingContentSlot}
                     </div>
