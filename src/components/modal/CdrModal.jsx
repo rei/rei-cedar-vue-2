@@ -6,6 +6,7 @@ import CdrButton from '../button/CdrButton';
 import IconXLg from '../icon/comps/x-lg';
 import CdrText from '../text/CdrText';
 import size from '../../mixins/size';
+import debounce from 'lodash-es/debounce';
 
 export default {
   name: 'CdrModal',
@@ -56,6 +57,10 @@ export default {
       focusHandler: null,
       reallyClosed: !this.opened,
       offset: null,
+      headerHeight: 0,
+      stickyHeight: 0,
+      footerHeight: 0,
+      totalHeight: 0,
     };
   },
   computed: {
@@ -69,6 +74,9 @@ export default {
     dialogClass() {
       return `${this.style['cdr-modal__dialog']} ${this.size}`;
     },
+    scrollMaxHeight() {
+      return this.totalHeight - this.headerHeight - this.stickyHeight - this.footerHeight - 80;
+    },
   },
   watch: {
     opened(newValue, oldValue) {
@@ -81,10 +89,15 @@ export default {
     },
   },
   mounted() {
+    this.getSizes();
     if (this.opened) {
       this.addNoScroll();
       this.addHandlers();
     }
+
+    window.addEventListener('resize', debounce(() => {
+      this.getSizes();
+    }, 300));
   },
   beforeDestroy() {
     if (this.unsubscribe) this.unsubscribe();
@@ -93,6 +106,13 @@ export default {
     document.removeEventListener('keydown', this.keyHandler);
   },
   methods: {
+    getSizes() {
+      console.log('getSizes');
+      this.totalHeight = window.innerHeight;
+      this.headerHeight = this.$refs.header.offsetHeight;
+      this.stickyHeight = this.$refs.sticky.offsetHeight;
+      this.footerHeight = this.$refs.footer.offsetHeight;
+    },
     handleKeyDown({ key }) {
       switch (key) {
         case 'Escape':
@@ -260,7 +280,10 @@ export default {
             >
               <section>
                 <div class={this.style['cdr-modal__content']}>
-                  <div class={this.style['cdr-modal__header']}>
+                  <div
+                    class={this.style['cdr-modal__header']}
+                    ref="header"
+                  >
                     <div class={this.style['cdr-modal__title']}>
                       {
                         this.showTitle && this.$slots.title
@@ -292,7 +315,10 @@ export default {
                   </div>
                   {
                     this.$slots.stickyContentSlot && (
-                      <div class={this.style['cdr-modal__sticky-content']}>
+                      <div
+                        class={this.style['cdr-modal__sticky-content']}
+                        ref="sticky"
+                      >
                         {this.$slots.stickyContentSlot}
                       </div>
                     )
@@ -302,13 +328,19 @@ export default {
                     tabindex="0"
                     class={this.style['cdr-modal__text']}
                   >
-                    <div class={this.style['cdr-modal__text-content']}>
+                    <div
+                      class={this.style['cdr-modal__text-content']}
+                      style={ { maxHeight: `${this.scrollMaxHeight}px` } }
+                    >
                       {this.$slots.scrollingContentSlot}
                     </div>
-                    <div class={this.style['cdr-modal__text-fade']} />
+                    {/* <div class={this.style['cdr-modal__text-fade']} /> */}
                     {
                       this.$slots.footer && (
-                        <div class={this.style['cdr-modal__footer']}>
+                        <div
+                          class={this.style['cdr-modal__footer']}
+                          ref="footer"
+                        >
                           {this.$slots.footer}
                         </div>
                       )
