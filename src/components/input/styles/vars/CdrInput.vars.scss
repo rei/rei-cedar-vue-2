@@ -69,6 +69,10 @@
   padding-top: $cdr-space-half-x;
   padding-left: $cdr-space-half-x;
   height: 48px;
+  
+  &::placeholder {
+    line-height: $cdr-space-half-x + $cdr-text-utility-sans-400-height;
+  }
 }
 
 @mixin cdr-input-helper-text-mixin() {
