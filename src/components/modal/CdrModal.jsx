@@ -96,12 +96,12 @@ export default {
   mounted() {
     if (this.opened) {
       this.addNoScroll();
-      this.getSizes();
+      this.measureContent();
       this.addHandlers();
     }
 
     window.addEventListener('resize', debounce(() => {
-      this.getSizes();
+      this.measureContent();
     }, 300));
   },
   beforeDestroy() {
@@ -111,7 +111,7 @@ export default {
     document.removeEventListener('keydown', this.keyHandler);
   },
   methods: {
-    getSizes() {
+    measureContent() {
       this.totalHeight = window.innerHeight;
       this.headerHeight = this.$refs.header.offsetHeight;
       this.stickyHeight = this.$refs.sticky.offsetHeight;
@@ -153,7 +153,7 @@ export default {
 
       this.$nextTick(() => {
         this.$refs.modal.focus();
-        this.getSizes();
+        this.measureContent();
         this.addHandlers();
 
         setTimeout(() => {
