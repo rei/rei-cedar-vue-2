@@ -76,8 +76,8 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
 
   @media (min-width: 672px) {
     &__contentWrap {
-      border-radius: 0.5rem; // TODO: 	cdr-radius-softer is 0.4rem?
-      box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .5);
+      border-radius: $cdr-radius-softer;
+      box-shadow: $cdr-prominence-lifted;
       min-height: auto;
       padding: 24px;
       position: relative;
@@ -156,10 +156,10 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     bottom: 0;
     left: 0;
     height: $cdr-space-two-x;
-    width: 98%;
     /* full transparency doesn't fly on safari */
     background: linear-gradient(rgba(255,255,255,0.001), rgba(255,255,255,1));
     background-attachment: scroll;
+    width: 100%;
   }
 
   &__footer {
