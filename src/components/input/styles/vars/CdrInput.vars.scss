@@ -65,11 +65,9 @@
 
 @mixin cdr-input-large-mixin() {
   @include cdr-text-utility-sans-400;
-
-  padding-top: $cdr-space-half-x;
+  line-height: $cdr-space-half-x + $cdr-text-utility-sans-400-height;
   padding-left: $cdr-space-half-x;
   height: 48px;
-  
   &::placeholder {
     line-height: $cdr-space-half-x + $cdr-text-utility-sans-400-height;
   }
