@@ -107,7 +107,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
 
   &__header {
     display: flex;
-    margin-bottom: $cdr-space-one-x;
+    padding-bottom: $cdr-space-one-x;
   }
 
   &__title {
@@ -128,7 +128,7 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
   }
 
   &__sticky-content {
-    margin-bottom: $cdr-space-one-x;
+    padding-bottom: $cdr-space-one-x;
   }
 
   &__text {
@@ -143,12 +143,12 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     position: relative;
 
     /* ie/edge/ff bug prevents using padding */
-    &::after {
-      content: "";
-      display: block;
-      height: $cdr-space-two-x;
-      width: 100%;
-    }
+    // &::after {
+    //   content: "";
+    //   display: block;
+    //   height: $cdr-space-two-x;
+    //   width: 100%;
+    // }
   }
 
   &__text-fade {
@@ -160,6 +160,10 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     /* full transparency doesn't fly on safari */
     background: linear-gradient(rgba(255,255,255,0.001), rgba(255,255,255,1));
     background-attachment: scroll;
+  }
+
+  &__footer {
+    padding-top: $cdr-space-one-x;
   }
 }
 
