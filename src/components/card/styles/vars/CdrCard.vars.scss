@@ -1,14 +1,3 @@
-/* ==========================================================================
-  # CdrCard
-
-  This file provides a contract between
-  design tokens and cedar non-changing variables.
-
-  TOC:
-
-    :Base
-========================================================================== */
-
 @mixin cdr-card-base-mixin() {
   position: relative;
   background-color: $cdr-color-background-primary;

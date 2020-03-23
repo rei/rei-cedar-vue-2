@@ -1,14 +1,3 @@
-/* ==========================================================================
-  # CdrCard
-
-  All values should map to variables in
-  vars/CdrCard.vars.pcss
-  in order to allow for theming
-
-  TOC:
-
-    :Base Styles
-========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrCard.vars.scss';
 .cdr-card {
