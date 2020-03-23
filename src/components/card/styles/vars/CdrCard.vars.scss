@@ -5,4 +5,10 @@
   box-shadow: $cdr-prominence-raised;
   color: $cdr-color-text-primary;
   width: 100%;
+
+  transition: box-shadow $cdr-duration-1-x $cdr-timing-function-ease;
+
+  &:active, &:hover {
+    box-shadow: $cdr-prominence-floating;
+  }
 }
