@@ -121,8 +121,8 @@ export default {
       this.totalHeight = window.innerHeight;
       this.fullscreen = window.innerWidth < 672;
       this.headerHeight = this.$refs.header.offsetHeight;
-      this.stickyHeight = this.$refs.sticky.offsetHeight;
-      this.footerHeight = this.$refs.footer.offsetHeight;
+      this.stickyHeight = this.$refs.sticky ? this.$refs.sticky.offsetHeight : 0;
+      this.footerHeight = this.$refs.footer ? this.$refs.footer.offsetHeight : 0;
       this.$nextTick(() => {
         this.offsetHeight = this.$refs.scrolly.offsetHeight;
         this.scrollHeight = this.$refs.scrolly.scrollHeight;
