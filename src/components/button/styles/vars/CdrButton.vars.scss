@@ -114,7 +114,7 @@
   }
 
   &[disabled] {
-    background-color: $cdr-color-background-button-secondary-disabled;
+    background-color: $cdr-color-background-button-default-disabled;
     box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
     color: $cdr-color-text-button-secondary-disabled;
     fill: $cdr-color-text-button-secondary-disabled;
@@ -142,12 +142,33 @@
     border: none;
   }
 
-
   &[disabled] {
     background: transparent;
     box-shadow: none;
     border: none;
     fill: $cdr-color-icon-disabled;
+  }
+}
+
+@mixin cdr-button-with-background-mixin() {
+  fill: $cdr-color-icon-default;
+  background-color: $cdr-color-background-button-secondary-rest;
+  box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-rest;
+
+  &:hover {
+    background-color: $cdr-color-background-button-secondary-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-hover;
+  }
+  &:active,
+  &:focus {
+    background-color: $cdr-color-background-button-secondary-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-active;
+  }
+
+  &[disabled] {
+    background-color: $cdr-color-background-button-secondary-disabled;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
+    fill: $cdr-color-text-button-secondary-disabled;
   }
 }
 
