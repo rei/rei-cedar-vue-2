@@ -164,8 +164,8 @@
       </tbody>
     </cdr-table>
 
-    <p>No stripe</p>
-    <cdr-table :striped="false">
+    <p>Striped</p>
+    <cdr-table :striped="true">
       <tbody>
         <tr>
           <td>Test content</td>

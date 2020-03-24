@@ -1,5 +1,6 @@
 @mixin cdr-table-base-text() {
   @include cdr-text-utility-200;
+  color: $cdr-color-text-primary;
 }
 
 @mixin cdr-table-base() {

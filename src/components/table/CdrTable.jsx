@@ -9,7 +9,7 @@ export default {
   props: {
     striped: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     border: {
       type: Boolean,
@@ -37,7 +37,7 @@ export default {
         [this.style[this.baseClass]]: true,
         [this.sizeClass]: true,
         [this.modifyClassName(this.baseClass, 'striped')]: this.striped,
-        [this.modifyClassName(this.baseClass, 'border')]: this.border,
+        [this.modifyClassName(this.baseClass, 'border')]: this.border && !this.striped,
         [this.modifyClassName(this.baseClass, 'full-width')]: this.fullWidth,
       };
     },
