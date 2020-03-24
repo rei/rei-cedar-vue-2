@@ -2,16 +2,6 @@
 
 $modal-animation-duration: 150ms;
 
-$dialog-margins-vertical: $cdr-space-four-x * 2; // 12.8rem
-$dialog-padding-vertical: $cdr-space-one-and-a-half-x; // 2.4rem
-$header-padding-bottom: $cdr-space-one-x; // 1.6rem
-$title-line-height: $cdr-space-two-x; // 3.2rem
-
-// total up internal padding to get max height of text
-$header-height: $header-padding-bottom + $title-line-height;
-$modal-total-padding: #{$dialog-margins-vertical + $header-height + $dialog-padding-vertical * 2};
-$modal-text-max-height: calc(100vh - #{$modal-total-padding});
-
 .cdr-modal {
   bottom: 0;
   height: 100%;
@@ -24,7 +14,8 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
   z-index: 1000;
 
   &__overlay {
-    background-color: rgba(26, 26, 26, .6); // $cdr-color-background-darker
+    background-color: $cdr-color-background-modal-overlay;
+    backdrop-filter: blur($cdr-space-one-x);
     bottom: 0;
     left: 0;
     opacity: 1;
@@ -35,18 +26,11 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     z-index: -1;
   }
 
-  @media (min-width: 672px) {
-    &__outerWrap {
-      padding: 16px;
-    }
-  }
-
   &__outerWrap {
     display: flex;
     box-sizing: border-box;
     left: 0;
     min-height: 100%;
-    // padding: 16px 20px;
     position: absolute;
     right: 0;
     top: 0;
@@ -74,27 +58,8 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
     }
   }
 
-  @media (min-width: 672px) {
-    &__contentWrap {
-      border-radius: $cdr-radius-softer;
-      box-shadow: $cdr-prominence-lifted;
-      min-height: auto;
-      padding: 24px;
-      position: relative;
-      top: auto;
-      left: auto;
-      right: auto;
-    }
-  }
-
   &__innerWrap {
     width: 100%; // IE 11
-  }
-
-  @media (min-width: 672px) {
-    &__dialog {
-      max-width: 640px;
-    }
   }
 
   &__dialog {
@@ -117,13 +82,12 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
   &__close-button {
     align-self: flex-start;
     flex: none;
-    line-height: normal; // TODO: remove this after button fix merges
-    margin-left: 12px;
+    margin-left: $cdr-space-three-quarter-x;
     padding: 7px; // NOTE: button should be 40x40, so drop padding by 1px
-    border: 1px solid #928B80;
+    border: 1px solid $cdr-color-icon-default;
 
     &:hover, &:focus {
-      border: 1px solid #928B80;
+      border: 1px solid $cdr-color-icon-default;
     }
   }
 
@@ -137,18 +101,9 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
   }
 
   &__text-content {
-    // max-height: $modal-text-max-height;
     overflow: auto;
-    padding-right: 32px;
+    padding-right: $cdr-space-two-x;
     position: relative;
-
-    /* ie/edge/ff bug prevents using padding */
-    // &::after {
-    //   content: "";
-    //   display: block;
-    //   height: $cdr-space-two-x;
-    //   width: 100%;
-    // }
   }
 
   &__text-fade {
@@ -163,7 +118,35 @@ $modal-text-max-height: calc(100vh - #{$modal-total-padding});
   }
 
   &__footer {
+    bottom: $cdr-space-one-x;
     padding-top: $cdr-space-one-x;
+    position: fixed;
+  }
+
+  @media (min-width: 672px) {
+    &__outerWrap {
+      padding: $cdr-space-one-x;
+    }
+
+    &__contentWrap {
+      border-radius: $cdr-radius-softer;
+      box-shadow: $cdr-prominence-lifted;
+      min-height: auto;
+      padding: $cdr-space-one-and-a-half-x;
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+    }
+
+    &__dialog {
+      max-width: 640px;
+    }
+
+    &__footer {
+      position: relative;
+      bottom: auto;
+    }
   }
 }
 

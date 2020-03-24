@@ -77,7 +77,12 @@ export default {
       return `${this.style['cdr-modal__dialog']} ${this.size}`;
     },
     scrollMaxHeight() {
-      return this.totalHeight - this.headerHeight - this.stickyHeight - this.footerHeight - 80;
+      const vertSpace = window.innerWidth > 672 ? 80 : 32;
+      return this.totalHeight
+        - this.headerHeight
+        - this.stickyHeight
+        - this.footerHeight
+        - vertSpace;
     },
     scrolling() {
       return this.scrollHeight > this.offsetHeight;
@@ -327,6 +332,7 @@ export default {
                       <div
                         class={this.style['cdr-modal__sticky-content']}
                         ref="sticky"
+                        tabindex="0"
                       >
                         {this.$slots.stickyContentSlot}
                       </div>
