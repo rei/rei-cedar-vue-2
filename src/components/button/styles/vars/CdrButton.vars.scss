@@ -114,7 +114,7 @@
   }
 
   &[disabled] {
-    background-color: $cdr-color-background-button-default-disabled;
+    background-color: $cdr-color-background-button-secondary-disabled;
     box-shadow: inset 0 0 0 1px $cdr-color-border-button-default-disabled;
     color: $cdr-color-text-button-secondary-disabled;
     fill: $cdr-color-text-button-secondary-disabled;
@@ -136,9 +136,15 @@
   padding: $cdr-space-inset-half-x;
   fill: $cdr-color-icon-default;
 
-  &:hover, &:active, &:focus {
+  &:hover{
     background: $cdr-color-background-button-icon-alt-hover;
-    box-shadow: none;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-hover;
+    border: none;
+  }
+
+  &:active, &:focus {
+    background: $cdr-color-background-button-icon-alt-hover;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-active;
     border: none;
   }
 
