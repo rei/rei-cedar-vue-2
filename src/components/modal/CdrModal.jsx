@@ -63,6 +63,7 @@ export default {
       totalHeight: 0,
       scrollHeight: 0,
       offsetHeight: 0,
+      fullscreen: false,
     };
   },
   computed: {
@@ -77,7 +78,7 @@ export default {
       return `${this.style['cdr-modal__dialog']} ${this.size}`;
     },
     scrollMaxHeight() {
-      const vertSpace = window.innerWidth > 672 ? 80 : 32;
+      const vertSpace = this.fullscreen ? 32 : 80;
       return this.totalHeight
         - this.headerHeight
         - this.stickyHeight
@@ -118,6 +119,7 @@ export default {
   methods: {
     measureContent() {
       this.totalHeight = window.innerHeight;
+      this.fullscreen = window.innerWidth < 672;
       this.headerHeight = this.$refs.header.offsetHeight;
       this.stickyHeight = this.$refs.sticky.offsetHeight;
       this.footerHeight = this.$refs.footer.offsetHeight;
@@ -362,7 +364,10 @@ export default {
                     {
                       this.$slots.footer && (
                         <div
-                          class={this.style['cdr-modal__footer']}
+                          class={clsx(
+                            this.style['cdr-modal__footer'],
+                            !this.scrolling && this.fullscreen ? this.style['cdr-modal--fixed-footer'] : '', // eslint-disable-line
+                          )}
                           ref="footer"
                         >
                           {this.$slots.footer}

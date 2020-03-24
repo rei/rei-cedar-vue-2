@@ -81,10 +81,13 @@ $modal-animation-duration: 150ms;
 
   &__close-button {
     align-self: flex-start;
-    flex: none;
-    margin-left: $cdr-space-three-quarter-x;
-    padding: 7px; // NOTE: button should be 40x40, so drop padding by 1px
     border: 1px solid $cdr-color-icon-default;
+    flex: none;
+    margin-left: $cdr-space-half-x;
+    padding: 7px; // NOTE: button should be 40x40, so drop padding by 1px
+    position: relative;    
+    top: -2px;
+    right: -4px;
 
     &:hover, &:focus {
       border: 1px solid $cdr-color-icon-default;
@@ -102,7 +105,7 @@ $modal-animation-duration: 150ms;
 
   &__text-content {
     overflow: auto;
-    padding-right: $cdr-space-two-x;
+    padding-right: $cdr-space-one-and-a-half-x;
     position: relative;
   }
 
@@ -118,9 +121,12 @@ $modal-animation-duration: 150ms;
   }
 
   &__footer {
-    bottom: $cdr-space-one-x;
     padding-top: $cdr-space-one-x;
+  }
+
+  &--fixed-footer {
     position: fixed;
+    bottom: $cdr-space-one-x;
   }
 
   @media (min-width: 672px) {
@@ -143,9 +149,19 @@ $modal-animation-duration: 150ms;
       max-width: 640px;
     }
 
+    &__close-button {
+      margin-left: $cdr-space-three-quarter-x; 
+      right: -8px;
+      top: -5px;
+    }
+
+    &__text-content {
+      padding-right: $cdr-space-two-x;
+    }
+
     &__footer {
-      position: relative;
       bottom: auto;
+      position: relative;
     }
   }
 }
