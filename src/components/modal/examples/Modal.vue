@@ -26,7 +26,10 @@
         </cdr-text>
       </template>
 
-      <template slot="stickyContentSlot">
+      <template
+        slot="stickyContentSlot"
+        v-if="stickyContent"
+      >
         <cdr-list>
           <li>La Sportiva</li>
           <li>Tarantulace Climbing Shoes - 2018</li>
@@ -39,13 +42,16 @@
         <cdr-text modifier="body-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>
 
         <!-- eslint-disable-next-line -->
-        <cdr-text modifier="body-300" v-if="longContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>
+        <cdr-text modifier="body-300" v-if="overflowContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>
 
         <!-- eslint-disable-next-line -->
-        <cdr-text modifier="body-300" v-if="longContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>
+        <cdr-text modifier="body-300" v-if="overflowContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>
       </template>
 
-      <template slot="footer">
+      <template
+        slot="footer"
+        v-if="footerContent"
+      >
         <cdr-button>A button</cdr-button>
         <cdr-button>Another button</cdr-button>
       </template>
@@ -54,50 +60,31 @@
     <cdr-button
       @click="opened = true"
       aria-haspopup="dialog"
-    >Open modal
+    >Launch modal
     </cdr-button>
 
     <cdr-text
       modifier="heading-sans-400"
       class="cdr-pt-space-one-x"
     >
-      Content Length
+      Content Options
     </cdr-text>
 
-    <cdr-radio
-      name="modal-content-length"
-      :custom-value="false"
-      v-model="longContent"
-    >Short
-    </cdr-radio>
-
-    <cdr-radio
-      name="modal-content-length"
-      :custom-value="true"
-      v-model="longContent"
-    >Long
-    </cdr-radio>
-
-    <cdr-text
-      modifier="heading-sans-400"
-      class="cdr-pt-space-one-x"
-    >
+    <cdr-checkbox v-model="showTitle">
       Show Title
-    </cdr-text>
+    </cdr-checkbox>
 
-    <cdr-radio
-      name="modal-show-title"
-      :custom-value="true"
-      v-model="showTitle"
-    >True
-    </cdr-radio>
+    <cdr-checkbox v-model="stickyContent">
+      Sticky Content
+    </cdr-checkbox>
 
-    <cdr-radio
-      name="modal-show-title"
-      :custom-value="false"
-      v-model="showTitle"
-    >False
-    </cdr-radio>
+    <cdr-checkbox v-model="overflowContent">
+      Overflow Content
+    </cdr-checkbox>
+
+    <cdr-checkbox v-model="footerContent">
+      Footer Content
+    </cdr-checkbox>
   </div>
 </template>
 
@@ -112,7 +99,9 @@ export default {
   data() {
     return {
       opened: this.$router.currentRoute.name === 'Modals',
-      longContent: false,
+      stickyContent: true,
+      footerContent: true,
+      overflowContent: true,
       showTitle: true,
     };
   },
