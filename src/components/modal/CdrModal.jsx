@@ -248,9 +248,6 @@ export default {
       dialogClass,
       contentClass,
       reallyClosed,
-      /*
-        slots: title, pinnedContentSlot, scrollingContentSlot, footer
-      */
     } = this;
     return (
       <div
