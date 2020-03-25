@@ -42,7 +42,7 @@ export default {
   },
   watch: {
     background() {
-      this.$router.push({
+      this.$router.replace({
         path: this.$router.currentRoute.path,
         query: {
           background: this.background,
