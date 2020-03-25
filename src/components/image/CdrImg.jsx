@@ -179,6 +179,7 @@ export default {
             )}
             src={this.src}
             alt={this.alt}
+            {...{ on: this.$listeners }}
           />
         </div>
       );
@@ -190,7 +191,7 @@ export default {
             this.lazyClass)}
           src={this.src}
           alt={this.alt}
-          {...{ attrs: this.lazyAttrs }}
+          {...{ attrs: this.lazyAttrs, on: this.$listeners }}
         />);
   },
 };

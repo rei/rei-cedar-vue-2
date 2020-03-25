@@ -1,8 +1,9 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrImg from 'componentdir/image/CdrImg';
+import sinon from 'sinon';
 
 describe('CdrImg', () => {
-  test('renders correctly', () => {
+  it('renders correctly', () => {
     const wrapper = mount(CdrImg, {
       propsData: {
         src: 'http://via.placeholder.com/350x150',
@@ -12,7 +13,7 @@ describe('CdrImg', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  test('renders crop/ratio correctly', () => {
+  it('renders crop/ratio correctly', () => {
     const wrapper = mount(CdrImg, {
       propsData: {
         ratio: "square",
@@ -59,5 +60,37 @@ describe('CdrImg', () => {
     expect(wrapper.classes()).toContain('lazy-image');
     expect(wrapper.attributes()['data-src-lazy']).toBe('http://via.placeholder.com/350');
   });
+
+
+  it('emits error event for default image', () => {
+    const spy = sinon.spy();
+
+    const wrapper = shallowMount(CdrImg, {
+      propsData: {
+        src: 'localhost:8000/nothing-to-see-here.png',
+      },
+      listeners: {
+        error: spy
+      }
+    });
+    wrapper.find('img').trigger('error');
+    expect(spy.calledOnce).toBeTruthy();
+  })
+
+  it('emits error event for ratio image', () => {
+    const spy = sinon.spy();
+
+    const wrapper = shallowMount(CdrImg, {
+      propsData: {
+        src: 'localhost:8000/nothing-to-see-here.png',
+        ratio: 'square',
+      },
+      listeners: {
+        error: spy
+      }
+    });
+    wrapper.find('img').trigger('error');
+    expect(spy.calledOnce).toBeTruthy();
+  })
 
 });
