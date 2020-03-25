@@ -34,7 +34,10 @@ new Vue({
   },
   watch: {
     // Adapted from https://marcus.io/blog/accessible-routing-vuejs
-    $route(to) {
+    $route(to, from) {
+      // updating query (for background radios) so don't alter focus
+      if (to.hash === '' && to.path === from.path) return;
+
       // Get focus target after nav
       // If not existent, use container so skip link is first again
       const focusTarget = (to.hash)
