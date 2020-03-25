@@ -5,7 +5,7 @@ import Vue from 'vue';
 import CdrButton from 'componentdir/button/CdrButton';
 
 describe('CdrModal.vue', () => {
-  it('renders all slots', () => {
+  it('renders all slots, handleClosed', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
@@ -30,11 +30,9 @@ describe('CdrModal.vue', () => {
     setTimeout(() => {
       expect(wrapper.vm.reallyClosed).toBe(true);
     }, 300);
-    // console.log('things', wrapper.vm.totalHeight, wrapper.vm.fullScreen);
-
   });
 
-  it('leaves optional slots empty', () => {
+  it('leaves optional slots empty, handleOpened', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: false,
@@ -49,9 +47,57 @@ describe('CdrModal.vue', () => {
     wrapper.setProps({ opened: true });
     Vue.nextTick(() => {
       expect(wrapper.element).toMatchSnapshot();
-      // setTimeout(() => {
-      //   expect(wrapper.find({ ref: wrapper }).scrollTop).toBe(0);
-      // }, 500);
     });
+  });
+
+  it('handleKeyDown', () => {
+    const spyOnClick = jest.fn();
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        label: "Label is the modal title"
+      },
+      slots: {
+        scrollingContentSlot: 'Main content',
+      },
+      methods: {
+        onClick: spyOnClick
+      },
+      attachToDocument: true,
+    });
+
+    wrapper.trigger('keydown', {
+      key: 'a'
+    });
+    expect(spyOnClick).not.toHaveBeenCalled();
+
+    wrapper.trigger('keydown', {
+      key: 'Esc',
+    });
+
+    wrapper.trigger('keydown', {
+      key: 'Escape',
+    });
+
+    expect(spyOnClick).toHaveBeenCalledTimes(2);
+  });
+
+  xit('scrolling and fullscreen snapshot', () => {
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        label: "Label is the modal title"
+      },
+      slots: {
+        scrollingContentSlot: 'Main content',
+      },
+      attachToDocument: true,
+    });
+
+    Vue.nextTick(() => {
+      wrapper.setProps({ fullscreen: true, scrollHeight: 500, offsetHeight: 400 });
+      expect(wrapper.vm.scrolling).toBe(true);
+      expect(wrapper.element).toMatchSnapshot();
+    })
   });
 });
