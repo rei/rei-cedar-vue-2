@@ -49554,7 +49554,7 @@ var cedar = (function () {
     },
     watch: {
       background: function background() {
-        this.$router.push({
+        this.$router.replace({
           path: this.$router.currentRoute.path,
           query: {
             background: this.background
@@ -49612,7 +49612,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$W = function (inject) {
       if (!inject) return
-      inject("data-v-3d82a432_0", { source: "\n.background-toggle {\n  display: inline-block;\n  margin: 0 8px;\n}\n\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/SinkWrapper.vue"],"names":[],"mappings":";AA6DA;EACA,qBAAA;EACA,aAAA;AACA","file":"SinkWrapper.vue","sourcesContent":["<template>\n  <div\n    :class=\"backgroundClass\"\n  >\n    Toggle background color:\n    <cdr-radio\n      v-for=\"bg in backgrounds\"\n      :custom-value=\"bg\"\n      :key=\"bg\"\n      name=\"background\"\n      v-model=\"background\"\n      class=\"background-toggle\"\n    >\n      {{ capitalize(bg) }}\n    </cdr-radio>\n    <slot />\n  </div>\n</template>\n\n<script>\n\nimport { CdrRadio } from 'srcdir/index';\nimport upperFirst from 'lodash/upperFirst';\n\nexport default {\n  name: 'SinkWrapper',\n  components: {\n    CdrRadio,\n  },\n  data() {\n    return {\n      background: this.$route.query.background || 'primary',\n      backgrounds: [\n        'primary', 'secondary', 'success', 'info', 'warning', 'error',\n      ],\n    };\n  },\n  computed: {\n    backgroundClass() {\n      return `cdr-space-inset-one-x cdr-color-background-${this.background}`;\n    },\n  },\n  watch: {\n    background() {\n      this.$router.push({\n        path: this.$router.currentRoute.path,\n        query: {\n          background: this.background,\n        },\n      });\n    },\n  },\n  methods: {\n    capitalize(str) {\n      return upperFirst(str);\n    },\n  },\n};\n</script>\n\n<style>\n.background-toggle {\n  display: inline-block;\n  margin: 0 8px;\n}\n\n</style>\n"]}, media: undefined });
+      inject("data-v-4c9d29ed_0", { source: "\n.background-toggle {\n  display: inline-block;\n  margin: 0 8px;\n}\n\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/SinkWrapper.vue"],"names":[],"mappings":";AA6DA;EACA,qBAAA;EACA,aAAA;AACA","file":"SinkWrapper.vue","sourcesContent":["<template>\n  <div\n    :class=\"backgroundClass\"\n  >\n    Toggle background color:\n    <cdr-radio\n      v-for=\"bg in backgrounds\"\n      :custom-value=\"bg\"\n      :key=\"bg\"\n      name=\"background\"\n      v-model=\"background\"\n      class=\"background-toggle\"\n    >\n      {{ capitalize(bg) }}\n    </cdr-radio>\n    <slot />\n  </div>\n</template>\n\n<script>\n\nimport { CdrRadio } from 'srcdir/index';\nimport upperFirst from 'lodash/upperFirst';\n\nexport default {\n  name: 'SinkWrapper',\n  components: {\n    CdrRadio,\n  },\n  data() {\n    return {\n      background: this.$route.query.background || 'primary',\n      backgrounds: [\n        'primary', 'secondary', 'success', 'info', 'warning', 'error',\n      ],\n    };\n  },\n  computed: {\n    backgroundClass() {\n      return `cdr-space-inset-one-x cdr-color-background-${this.background}`;\n    },\n  },\n  watch: {\n    background() {\n      this.$router.replace({\n        path: this.$router.currentRoute.path,\n        query: {\n          background: this.background,\n        },\n      });\n    },\n  },\n  methods: {\n    capitalize(str) {\n      return upperFirst(str);\n    },\n  },\n};\n</script>\n\n<style>\n.background-toggle {\n  display: inline-block;\n  margin: 0 8px;\n}\n\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -49670,9 +49670,11 @@ var cedar = (function () {
     },
     watch: {
       // Adapted from https://marcus.io/blog/accessible-routing-vuejs
-      $route: function $route(to) {
-        // Get focus target after nav
+      $route: function $route(to, from) {
+        // updating query (for background radios) so don't alter focus
+        if (to.hash === '' && to.path === from.path) return; // Get focus target after nav
         // If not existent, use container so skip link is first again
+
         var focusTarget = to.hash ? this.$refs.focusTarget : this.$refs.focusWrapper; // Make focustarget programmatically focussable
 
         focusTarget.setAttribute('tabindex', '-1'); // Focus element
