@@ -25,11 +25,15 @@ describe('CdrModal.vue', () => {
       - close modal
     */
 
-    expect(wrapper.element).toMatchSnapshot();
-    wrapper.setProps({ opened: false });
-    setTimeout(() => {
-      expect(wrapper.vm.reallyClosed).toBe(true);
-    }, 300);
+   expect(wrapper.element).toMatchSnapshot();
+    Vue.nextTick(() => {
+      wrapper.setProps({ opened: false });
+
+      setTimeout(() => {
+        expect(wrapper.vm.reallyClosed).toBe(true);
+        wrapper.destroy();
+      }, 300);
+    });
   });
 
   it('leaves optional slots empty, handleOpened', () => {
@@ -47,6 +51,7 @@ describe('CdrModal.vue', () => {
     wrapper.setProps({ opened: true });
     Vue.nextTick(() => {
       expect(wrapper.element).toMatchSnapshot();
+      wrapper.destroy();
     });
   });
 
@@ -80,9 +85,10 @@ describe('CdrModal.vue', () => {
     });
 
     expect(spyOnClick).toHaveBeenCalledTimes(2);
+    wrapper.destroy();
   });
 
-  xit('scrolling and fullscreen snapshot', () => {
+  it('scrolling and fullscreen snapshot', () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
@@ -96,8 +102,31 @@ describe('CdrModal.vue', () => {
 
     Vue.nextTick(() => {
       wrapper.setProps({ fullscreen: true, scrollHeight: 500, offsetHeight: 400 });
-      expect(wrapper.vm.scrolling).toBe(true);
-      expect(wrapper.element).toMatchSnapshot();
+      setTimeout(() => {
+        expect(wrapper.vm.scrolling).toBe(true);
+        expect(wrapper.element).toMatchSnapshot();
+        wrapper.destroy();
+      }, 300);
     })
+  });
+
+  it('removeNoScroll', () => {
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        label: "My Modal Label",
+      },
+      slots: {
+        scrollingContentSlot: 'Main content',
+      },
+      attachToDocument: true,
+    });
+    const { documentElement, body } = document;
+    wrapper.vm.removeNoScroll();
+
+    expect(documentElement.classList.contains('noscroll')).toBeFalsy();
+    expect(body.classList.contains('noscroll')).toBeFalsy();
+
+    wrapper.destroy();
   });
 });

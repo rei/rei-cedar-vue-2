@@ -122,8 +122,10 @@ export default {
       this.stickyHeight = this.$refs.sticky ? this.$refs.sticky.offsetHeight : 0;
       this.footerHeight = this.$refs.footer ? this.$refs.footer.offsetHeight : 0;
       this.$nextTick(() => {
-        this.offsetHeight = this.$refs.scrolly.offsetHeight;
-        this.scrollHeight = this.$refs.scrolly.scrollHeight;
+        if (this.$refs.scrolly) {
+          this.offsetHeight = this.$refs.scrolly.offsetHeight;
+          this.scrollHeight = this.$refs.scrolly.scrollHeight;
+        }
       });
     },
     handleKeyDown({ key }) {
