@@ -23,7 +23,9 @@
   }
   
   caption {
-    @include cdr-text-heading-300;
+    @include cdr-text-utility-strong-400;
+    text-align: left;
+    margin-bottom: $cdr-space-half-x;
   }
 }
 
