@@ -23444,7 +23444,7 @@ var cedar = (function () {
           "href": this.tag === 'a' ? this.href : null
         },
         "on": _objectSpread$2M({}, this.$listeners)
-      }, [this.$slots.default]);
+      }, [this.$slots.default || this.href]);
     }
   };
 
@@ -36532,6 +36532,8 @@ var cedar = (function () {
           1
         ),
         _vm._v(" "),
+        _c("div", { staticClass: "anchor-example" }, [_c("cdr-link")], 1),
+        _vm._v(" "),
         _c(
           "cdr-text",
           { attrs: { tag: "h3", modifier: "subheading-sans-300" } },
@@ -36666,7 +36668,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$r = function (inject) {
       if (!inject) return
-      inject("data-v-18d69a1e_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAgIA,2EAAA;AAEA;EACA,cAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      space=\"cdr-space-inset-one-x\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n      space=\"cdr-space-inset-one-x\"\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list\n      space=\"cdr-space-inset-one-x\"\n    >\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n</style>\n"]}, media: undefined });
+      inject("data-v-017e81be_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmIA,2EAAA;AAEA;EACA,cAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n    <div class=\"anchor-example\">\n      <cdr-link />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      space=\"cdr-space-inset-one-x\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n      space=\"cdr-space-inset-one-x\"\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list\n      space=\"cdr-space-inset-one-x\"\n    >\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -36806,7 +36808,7 @@ var cedar = (function () {
         _vm._l(_vm.paragraphs, function(p1) {
           return _c(
             "cdr-text",
-            { key: p1, attrs: { modifier: "body-" + p1 } },
+            { key: "link-p1-" + p1, attrs: { modifier: "body-" + p1 } },
             [
               _c(
                 "cdr-link",
@@ -36829,7 +36831,7 @@ var cedar = (function () {
         _vm._l(_vm.utilities, function(u1) {
           return _c(
             "cdr-text",
-            { key: u1, attrs: { modifier: "utility-sans-" + u1 } },
+            { key: "link-u1-" + u1, attrs: { modifier: "utility-sans-" + u1 } },
             [
               _c(
                 "cdr-link",
@@ -36857,7 +36859,10 @@ var cedar = (function () {
         _vm._l(_vm.utilities, function(u2) {
           return _c(
             "cdr-text",
-            { key: u2, attrs: { modifier: "utility-sans-strong-" + u2 } },
+            {
+              key: "link-u2-" + u2,
+              attrs: { modifier: "utility-sans-strong-" + u2 }
+            },
             [
               _c(
                 "cdr-link",
@@ -36887,7 +36892,10 @@ var cedar = (function () {
             _vm._l(_vm.utilities, function(u1) {
               return _c(
                 "li",
-                { key: u1, attrs: { space: "cdr-space-inset-one-x" } },
+                {
+                  key: "list-link-left-icon-" + u1,
+                  attrs: { space: "cdr-space-inset-one-x" }
+                },
                 [
                   _c(
                     "cdr-link",
@@ -36922,7 +36930,10 @@ var cedar = (function () {
             _vm._l(_vm.utilities, function(u1) {
               return _c(
                 "li",
-                { key: u1, attrs: { space: "cdr-space-inset-one-x" } },
+                {
+                  key: "list-link-right-icon-" + u1,
+                  attrs: { space: "cdr-space-inset-one-x" }
+                },
                 [
                   _c(
                     "cdr-link",
@@ -36957,7 +36968,10 @@ var cedar = (function () {
             _vm._l(_vm.utilities, function(u1) {
               return _c(
                 "li",
-                { key: u1, attrs: { space: "cdr-space-inset-one-x" } },
+                {
+                  key: "list-link-both-icon-" + u1,
+                  attrs: { space: "cdr-space-inset-one-x" }
+                },
                 [
                   _c(
                     "cdr-link",
@@ -37010,7 +37024,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$s = function (inject) {
       if (!inject) return
-      inject("data-v-3de031d8_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
+      inject("data-v-5eaece32_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Resilience.vue"}, media: undefined });
 
     };
     /* scoped */
@@ -49644,7 +49658,8 @@ var cedar = (function () {
   new Vue({
     router: router,
     components: {
-      SinkWrapper: __vue_component__$W
+      SinkWrapper: __vue_component__$W,
+      CdrLink: CdrLink
     },
     data: function data() {
       return {
@@ -49652,6 +49667,21 @@ var cedar = (function () {
         cedarcss: cedarcss,
         fullSprite: fullSprite
       };
+    },
+    watch: {
+      // Adapted from https://marcus.io/blog/accessible-routing-vuejs
+      $route: function $route(to) {
+        // Get focus target after nav
+        // If not existent, use container so skip link is first again
+        var focusTarget = to.hash ? this.$refs.focusTarget : this.$refs.focusWrapper; // Make focustarget programmatically focussable
+
+        focusTarget.setAttribute('tabindex', '-1'); // Focus element
+
+        focusTarget.focus(); // Remove tabindex from focustarget.
+        // Reason: https://axesslab.com/skip-links/#update-3-a-comment-from-gov-uk
+
+        focusTarget.removeAttribute('tabindex');
+      }
     },
     mounted: function mounted() {
       console.log('BACKSTOP_READY');
