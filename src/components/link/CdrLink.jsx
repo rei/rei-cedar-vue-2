@@ -52,7 +52,7 @@ export default {
       href={this.tag === 'a' ? this.href : null}
       {...{ on: this.$listeners }}
     >
-      {this.$slots.default || 'Link Text'}
+      {this.$slots.default || this.href}
     </Component>);
   },
 };
