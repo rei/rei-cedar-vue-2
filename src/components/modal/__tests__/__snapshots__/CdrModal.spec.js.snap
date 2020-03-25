@@ -18,7 +18,7 @@ exports[`CdrModal.vue renders correctly 1`] = `
     <div
       aria-label="Label is the modal title"
       aria-modal="true"
-      class="cdr-modal__contentWrap cdr-modal__dialog medium"
+      class="cdr-modal__contentWrap cdr-modal__dialog"
       role="dialog"
       tabindex="-1"
     >
@@ -35,13 +35,7 @@ exports[`CdrModal.vue renders correctly 1`] = `
               <div
                 class="cdr-modal__title"
               >
-                <cdr-text-stub
-                  modifier="heading-serif-600"
-                  space=""
-                  tag="h1"
-                >
-                  Label is the modal title
-                </cdr-text-stub>
+                Terms and Conditions
               </div>
               <cdr-button-stub
                 aria-label="close"
@@ -61,18 +55,27 @@ exports[`CdrModal.vue renders correctly 1`] = `
               </cdr-button-stub>
             </div>
             <div
+              class="cdr-modal__sticky-content"
+              tabindex="0"
+            >
+              Sticky content
+            </div>
+            <div
               class="cdr-modal__text"
               role="document"
-              tabindex="0"
             >
               <div
                 class="cdr-modal__text-content"
+                style="max-height: -80px;"
+                tabindex="0"
               >
-                Modal text content
+                Main content
               </div>
               <div
-                class="cdr-modal__text-fade"
-              />
+                class="cdr-modal__footer"
+              >
+                Footer content
+              </div>
             </div>
           </div>
         </section>
