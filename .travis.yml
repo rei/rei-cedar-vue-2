@@ -3,7 +3,6 @@ os:
 language: node_js
 node_js:
 - '10'
-sudo: required
 addons:
   chrome: stable
 dist: xenial
@@ -28,10 +27,10 @@ script:
   fi
 deploy:
   provider: pages
-  skip-cleanup: true
-  github-token: "$GH_TOKEN"
-  keep-history: true
-  local-dir: './public'
+  skip_cleanup: true
+  github_token: "$GH_TOKEN"
+  keep_history: true
+  local_dir: './public'
   on:
     branch: next
 notifications:
