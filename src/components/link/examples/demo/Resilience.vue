@@ -71,7 +71,7 @@
 
     <cdr-text
       v-for="p1 in paragraphs"
-      :key="p1"
+      :key="`link-p1-${p1}`"
       :modifier="`body-${p1}`"
     >
       <cdr-link space="cdr-mb-space-half-x">
@@ -87,7 +87,7 @@
 
     <cdr-text
       v-for="u1 in utilities"
-      :key="u1"
+      :key="`link-u1-${u1}`"
       :modifier="`utility-sans-${u1}`"
     >
       <cdr-link space="cdr-mb-space-half-x">
@@ -103,7 +103,7 @@
 
     <cdr-text
       v-for="u2 in utilities"
-      :key="u2"
+      :key="`link-u2-${u2}`"
       :modifier="`utility-sans-strong-${u2}`"
     >
       <cdr-link>
@@ -121,7 +121,7 @@
       <li
         space="cdr-space-inset-one-x"
         v-for="u1 in utilities"
-        :key="u1"
+        :key="`list-link-left-icon-${u1}`"
       >
         <cdr-link>
           <cdr-icon
@@ -141,7 +141,7 @@
       <li
         space="cdr-space-inset-one-x"
         v-for="u1 in utilities"
-        :key="u1"
+        :key="`list-link-right-icon-${u1}`"
       >
         <cdr-link>
           <cdr-text
@@ -161,7 +161,7 @@
       <li
         space="cdr-space-inset-one-x"
         v-for="u1 in utilities"
-        :key="u1"
+        :key="`list-link-both-icon-${u1}`"
       >
         <cdr-link>
           <cdr-icon

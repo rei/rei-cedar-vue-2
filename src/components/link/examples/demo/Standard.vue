@@ -22,6 +22,9 @@
         REI.com
       </cdr-link>
     </div>
+    <div class="anchor-example">
+      <cdr-link />
+    </div>
 
     <cdr-text
       tag="h3"
