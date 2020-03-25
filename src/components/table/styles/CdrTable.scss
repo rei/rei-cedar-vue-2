@@ -31,4 +31,32 @@
   &--responsive {
     @include cdr-table-responsive;
   }
+
+  // @xs
+  @include xs-mq-only {
+    &--full-width\@xs {
+      @include cdr-table-full-width;
+    }
+  }
+
+  // @sm
+  @include sm-mq-only {
+    &--full-width\@sm {
+      @include cdr-table-full-width;
+    }
+  }
+
+  // @md
+  @include md-mq-only {
+    &--full-width\@md {
+      @include cdr-table-full-width;
+    }
+  }
+
+  // @lg
+  @include lg-mq-only {
+    &--full-width\@lg {
+      @include cdr-table-full-width;
+    }
+  }
 }

@@ -142,6 +142,30 @@
       </tbody>
     </cdr-table>
 
+    <p>Responsive full width</p>
+    <cdr-table full-width="@sm @lg">
+      <thead>
+        <tr>
+          <th>Test head</th>
+          <th>Test head</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+        <tr>
+          <td>Test content</td>
+          <td>Test content</td>
+        </tr>
+      </tbody>
+    </cdr-table>
+
     <p>Table without head</p>
     <cdr-table>
       <tbody>
