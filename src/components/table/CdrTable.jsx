@@ -38,7 +38,7 @@ export default {
         [this.sizeClass]: true,
         [this.modifyClassName(this.baseClass, 'striped')]: this.striped,
         [this.modifyClassName(this.baseClass, 'border')]: this.border && !this.striped,
-        [this.responsiveModifyClass('full-width', this.fullWidth)]: this.fullWidth,
+        [this.responsiveModifyClass(this.baseClass, 'full-width', this.fullWidth)]: this.fullWidth,
       };
     },
     wrapperClasses() {
