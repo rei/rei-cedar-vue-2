@@ -28092,6 +28092,7 @@ var cedar = (function () {
     components: _objectSpread$2S({}, Components),
     data: function data() {
       return {
+        clickCount: 0,
         data: [{
           title: 'Default sizes',
           backstop: 'cdr-button--size',
@@ -28140,11 +28141,6 @@ var cedar = (function () {
           }]
         }]
       };
-    },
-    methods: {
-      log: function log() {
-        console.log('clicked'); // eslint-disable-line
-      }
     }
   };
 
@@ -28183,6 +28179,12 @@ var cedar = (function () {
                 [_vm._v("\n      " + _vm._s(section.title) + "\n    ")]
               ),
               _vm._v(" "),
+              index === 0
+                ? _c("cdr-text", [
+                    _vm._v("\n      Clicks: " + _vm._s(_vm.clickCount) + "\n    ")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
               _vm._l(section.buttons, function(button, index2) {
                 return _c(
                   "cdr-button",
@@ -28195,7 +28197,11 @@ var cedar = (function () {
                       type: button.type,
                       disabled: button.disabled
                     },
-                    on: { click: _vm.log }
+                    on: {
+                      click: function($event) {
+                        _vm.clickCount++;
+                      }
+                    }
                   },
                   [_vm._v("\n      " + _vm._s(button.label) + "\n    ")]
                 )
