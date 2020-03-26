@@ -3,7 +3,7 @@
 import Vue from 'vue/dist/vue.esm';
 import VueRouter from 'vue-router';
 import routes from './router';
-import Dev from './Dev.vue';
+import Dev from './Dev.vue'; //eslint-disable-line
 // routing
 Vue.use(VueRouter);
 
@@ -18,5 +18,5 @@ Vue.config.devtools = false;
 new Vue({
   router,
   el: '#main',
-  render: app => app(Dev)
+  render: app => app(Dev),
 });

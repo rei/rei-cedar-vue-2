@@ -38,47 +38,63 @@ export default {
   mounted() {
     console.log('BACKSTOP_READY');
   },
-}
+};
 </script>
 
 <template>
-  <div class="cdr-container-fluid" ref="focusWrapper">
+  <div
+    class="cdr-container-fluid"
+    ref="focusWrapper"
+  >
     <router-link
       to="#content"
       append
       v-slot="{ href, route, navigate, isActive, isExactActive }"
     ><cdr-link
-        :href="href"
-        @click="navigate"
-        class="cdr-display-sr-focusable"
-      >Skip to content</cdr-link></router-link></li>
-    <!-- <cdr-link :href="`/#${currentPath}#content`" class="cdr-display-sr-focusable">Skip to content</cdr-link> -->
+      :href="href"
+      @click="navigate"
+      class="cdr-display-sr-focusable"
+    >Skip to content</cdr-link></router-link>
     <!-- NOTE: For dev environment only, do not load icon sprites in JS in production -->
-    <div style="display:none" v-html="fullSprite"></div>
+    <div
+      style="display:none"
+      v-html="fullSprite"
+    />
     <ul style="padding:0">
       <li
         class="cdr-space-inset-quarter-x"
         style="display:inline-flex"
         v-for="route in routes"
+        :key="route.name"
       >
         <router-link
           v-if="route.name"
           :key="route.path"
           :to="route.path"
           v-slot="{ href, route, navigate, isActive, isExactActive }"
-        ><cdr-link
-          :href="href"
-          @click="navigate"
-          :aria-current="isActive ? 'page' : false"
-        >{{ (isActive && route.name !== ' ') ? `>${route.name}<` : route.name }}</cdr-link></router-link></li>
-    </ul>
-    <hr />
-    <h1 id="content" ref="focusTarget">REI Cedar</h1>
+        >
+          <cdr-link
+            :href="href"
+            @click="navigate"
+            :aria-current="isActive ? 'page' : false"
+          >
+            {{ (isActive && route.name !== ' ') ? `${route.name}` : route.name }}
+          </cdr-link>
+        </router-link>
+      </li>
+      <ul />
+      <hr>
+      <h1
+        id="content"
+        ref="focusTarget"
+      >
+        REI Cedar
+      </h1>
 
-    <sink-wrapper>
-      <div class="cdr-mt-space-two-x">
-        <router-view></router-view>
-      </div>
-    </sink-wrapper>
-  </div>
+      <sink-wrapper>
+        <div class="cdr-mt-space-two-x">
+          <router-view />
+        </div>
+      </sink-wrapper>
+    </ul></div>
 </template>
