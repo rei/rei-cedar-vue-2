@@ -25,7 +25,7 @@ if (process.env.ROLLUP_WATCH) {
 }
 
 export default {
-  input: 'src/dev.js',
+  input: 'src/dev/index.js',
   output: {
     file: 'public/kitchen-sink.iife.js',
     format: 'iife',

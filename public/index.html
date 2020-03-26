@@ -9,50 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:400" rel="stylesheet">
     <link rel="stylesheet" href="cdr-fonts.css">
   </head>
-  <body>
-    <!-- Uncomment to test vs normalize -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"> -->
-    <!-- Uncomment to test vs cedar 1 -->
-    <!-- <link href="https://satchel.rei.com/packages/rei/rei-cedar/1.7.11/rei-cedar.min.css" rel="stylesheet"> -->
-    <div id="main" class="cdr-container-fluid" ref="focusWrapper">
-      <router-link
-        to="#content"
-        append
-        v-slot="{ href, route, navigate, isActive, isExactActive }"
-      ><cdr-link
-          :href="href"
-          @click="navigate"
-          class="cdr-display-sr-focusable"
-        >Skip to content</cdr-link></router-link></li>
-      <!-- <cdr-link :href="`/#${currentPath}#content`" class="cdr-display-sr-focusable">Skip to content</cdr-link> -->
-      <!-- NOTE: For dev environment only, do not load icon sprites in JS in production -->
-      <div style="display:none" v-html="fullSprite"></div>
-      <ul style="padding:0">
-        <li
-          class="cdr-space-inset-quarter-x"
-          style="display:inline-flex"
-          v-for="route in routes"
-        >
-          <router-link
-            v-if="route.name"
-            :key="route.path"
-            :to="route.path"
-            v-slot="{ href, route, navigate, isActive, isExactActive }"
-          ><cdr-link
-            :href="href"
-            @click="navigate"
-            :aria-current="isActive ? 'page' : false"
-          >{{ (isActive && route.name !== ' ') ? `>${route.name}<` : route.name }}</cdr-link></router-link></li>
-      </ul>
-      <hr />
-      <h1 id="content" ref="focusTarget">REI Cedar</h1>
-
-      <sink-wrapper>
-        <div class="cdr-mt-space-two-x">
-          <router-view></router-view>
-        </div>
-      </sink-wrapper>
-    </div>
+  <body><div id="main"></div>
     <!-- built files will be auto injected -->
     <script src="kitchen-sink.iife.js"></script>
   </body>

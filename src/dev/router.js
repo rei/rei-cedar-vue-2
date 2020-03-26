@@ -15,7 +15,7 @@ import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
 import Input from 'componentsdir/input/examples/Inputs';
-import KitchenSink from 'srcdir/KitchenSink';
+import KitchenSink from 'srcdir/dev/KitchenSink';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
 import Modals from 'componentsdir/modal/examples/Modal';
