@@ -129,4 +129,60 @@ describe('CdrModal.vue', () => {
 
     wrapper.destroy();
   });
+
+  it('handleFocus', () => {
+    const spyMeasureContent = jest.fn();
+    const wrapper = mount(CdrModal, {
+      propsData: {
+        opened: true,
+        label: "My Modal Label",
+      },
+      attachToDocument: true,
+      methods: {
+        measureContent: spyMeasureContent,
+      },
+    });
+
+    const button = wrapper.find('button').element;
+    button.focus();
+    expect(button).toBe(document.activeElement);
+
+    wrapper.vm.handleFocus({ target: document.createElement('a') });
+    expect(document.scrollTop).toBe(undefined);
+    expect(document.scrollLeft).toBe(undefined);
+    wrapper.destroy();
+  });
+
+  // it('handleClosed', (done) => {
+  //   spyOn(document, 'removeEventListener');
+  //   global.scrollTo = jest.fn();
+  //   const spyMeasureContent = jest.fn();
+  //   const spyHandleOpened = jest.fn();
+    
+  //   const wrapper = shallowMount(CdrModal, {
+  //     propsData: {
+  //       opened: true, 
+  //       label: "My Modal Label",
+  //     },
+  //     methods: {
+  //       measureContent: spyMeasureContent,
+  //       handleOpened: spyHandleOpened,
+  //     },
+  //     attachToDocument: true,
+  //   });
+
+    
+
+  //   expect(document.removeEventListener).toHaveBeenCalledWith('keydown', expect.anything());
+    
+  //   Vue.nextTick(() => {
+  //     setTimeout(() => {
+  //       expect(wrapper.vm.reallyClosed).toBe(true);
+  //       expect(wrapper.vm.unsubscribe).toBe(null);
+  //       expect(document.removeEventListener).nthCalledWith(2, 'focusin', expect.anything(), true);
+  //       done();
+  //     }, 1000);
+  //   });
+  // });
+
 });
