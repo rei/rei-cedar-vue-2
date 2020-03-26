@@ -23134,7 +23134,8 @@ var cedar = (function () {
           "attrs": {
             "src": this.src,
             "alt": this.alt
-          }
+          },
+          "on": _objectSpread$2K({}, this.$listeners)
         })]);
       }
 
@@ -23143,7 +23144,8 @@ var cedar = (function () {
         "attrs": _objectSpread$2K({
           "src": this.src,
           "alt": this.alt
-        }, this.lazyAttrs)
+        }, this.lazyAttrs),
+        "on": _objectSpread$2K({}, this.$listeners)
       });
     }
   };
@@ -35980,7 +35982,17 @@ var cedar = (function () {
       ratios: __vue_component__$m,
       cropping: __vue_component__$n,
       mods: __vue_component__$o
-    })
+    }),
+    data: function data() {
+      return {
+        hasError: false
+      };
+    },
+    methods: {
+      handleError: function handleError() {
+        this.hasError = true;
+      }
+    }
   };
 
   /* script */
@@ -36034,6 +36046,31 @@ var cedar = (function () {
         ),
         _vm._v(" "),
         _c("div", { attrs: { "data-backstop": "image-mods" } }, [_c("mods")], 1),
+        _vm._v(" "),
+        _c(
+          "div",
+          { attrs: { "data-backstop": "image-error" } },
+          [
+            _c(
+              "cdr-text",
+              {
+                attrs: {
+                  tag: "h3",
+                  modifier:
+                    "heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+                }
+              },
+              [_vm._v("\n      Image With Error\n    ")]
+            ),
+            _vm._v(" "),
+            _c("cdr-img", {
+              attrs: { src: "localhost:8000/not-here.png", alt: "im an error!" },
+              on: { error: _vm.handleError }
+            }),
+            _vm._v("\n    Error Handled: " + _vm._s(_vm.hasError) + "\n  ")
+          ],
+          1
+        ),
         _vm._v(" "),
         _c(
           "div",
