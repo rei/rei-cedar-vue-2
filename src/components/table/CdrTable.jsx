@@ -50,7 +50,10 @@ export default {
   render() {
     return (
       <div class={clsx(this.wrapperClasses)}>
-        <table class={clsx(this.tableClasses)}>
+        <table
+          class={clsx(this.tableClasses)}
+          {... { attrs: this.$attrs } }
+        >
           {this.$slots.default}
         </table>
       </div>

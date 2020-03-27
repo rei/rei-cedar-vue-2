@@ -16,14 +16,17 @@
     padding: $cdr-space-inset-one-x-squish;
     text-align: left;
   }
-  
+
   th {
     @include cdr-text-utility-strong-200;
+  }
+
+  thead th {
     background-color: $cdr-color-background-table-header;
   }
   
   caption {
-    @include cdr-text-utility-strong-400;
+    @include cdr-text-utility-strong-300;
     text-align: left;
     margin-bottom: $cdr-space-half-x;
   }
@@ -48,30 +51,37 @@
 }
 
 @mixin cdr-table-border() {
-  $table-border-styles:1px solid $cdr-color-border-table-default;
-  // border for every tr except the last
-  tr {
-    border-bottom: $table-border-styles;
-    &:last-of-type {
-      border-bottom: none;
+  $table-border-default: 1px solid $cdr-color-border-table-default;
+  $table-border-head: 1px solid $cdr-color-border-table-head;
+
+  tr + tr > *:not(:empty) {
+    border-top: $table-border-default;
+  }
+
+  thead {
+    tr + tr > *:not(:empty) {
+      border-top: $table-border-head;
     }
   }
 
-  // turn back on for some situations
-  thead + tbody > tr:first-of-type,
-  thead + tr:first-of-type,
-  tbody + tfoot > tr:first-of-type,
-  tbody + tr:first-of-type {
-    border-top: $table-border-styles;
+  tbody, tfoot {
+    tr + tr > *:not(:empty) {
+      border-top: $table-border-default;
+    }
+  }
+  
+  thead + tbody,
+  tbody + tfoot {
+    border-top: $table-border-default;
   }
 }
 
 @mixin cdr-table-striped() {
-  thead {
-    th {
-      background-color: $cdr-color-background-table-header;
-    }
+  tr:nth-child(odd) > * {
+    background-color: $cdr-color-background-table-row-alt;
+  }
 
+  thead {
     // override body styling when head is present
     & + tbody tr {
       // striping rows
