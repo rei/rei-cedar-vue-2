@@ -32,6 +32,10 @@
     @include cdr-table-responsive;
   }
 
+  &--hover {
+    @include cdr-table-hover;
+  }
+
   // @xs
   @include xs-mq-only {
     &--full-width\@xs {

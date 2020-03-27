@@ -23,8 +23,8 @@
         </tbody>
       </cdr-table>
 
-      <p>2 column table</p>
-      <cdr-table>
+      <p>2 column table (with hover)</p>
+      <cdr-table hover>
         <thead>
           <tr>
             <th>Test head</th>

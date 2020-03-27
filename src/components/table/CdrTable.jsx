@@ -24,6 +24,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    hover: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -37,6 +41,7 @@ export default {
         [this.style[this.baseClass]]: true,
         [this.sizeClass]: true,
         [this.modifyClassName(this.baseClass, 'striped')]: this.striped,
+        [this.modifyClassName(this.baseClass, 'hover')]: this.hover,
         [this.modifyClassName(this.baseClass, 'border')]: this.border && !this.striped,
         [this.responsiveModifyClass(this.baseClass, 'full-width', this.fullWidth)]: this.fullWidth,
       };

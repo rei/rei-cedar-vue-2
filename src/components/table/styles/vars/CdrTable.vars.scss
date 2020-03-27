@@ -12,7 +12,7 @@
   th,
   td {
     min-height: 48px;
-    color: $cdr-color-text-primary-lightmode;
+    color: $cdr-color-text-primary;
     padding: $cdr-space-inset-one-x-squish;
     text-align: left;
   }
@@ -127,4 +127,10 @@
   display: block;
   width: 100%;
   overflow-x: auto;
+}
+
+@mixin cdr-table-hover {
+  tr:hover > * {
+    background-color: $cdr-color-background-table-header;
+  }
 }
