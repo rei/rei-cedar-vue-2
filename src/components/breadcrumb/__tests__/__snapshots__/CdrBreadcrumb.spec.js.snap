@@ -38,7 +38,7 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
       </span>
     </li>
     <li
-      class="cdr-breadcrumb__item cdr-breadcrumb__item-linked"
+      class="cdr-breadcrumb__item"
       style="display: none;"
     >
       <a
@@ -55,7 +55,7 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
       </span>
     </li>
     <li
-      class="cdr-breadcrumb__item cdr-breadcrumb__item-linked"
+      class="cdr-breadcrumb__item"
     >
       <a
         class="cdr-breadcrumb__link"

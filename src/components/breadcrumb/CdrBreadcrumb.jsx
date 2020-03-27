@@ -100,7 +100,6 @@ export default {
         return (<li
           class={clsx(
             this.style['cdr-breadcrumb__item'],
-            isLink ? this.style['cdr-breadcrumb__item-linked'] : null,
           )}
           key={breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase()}
           v-show={!this.truncate || (index >= this.items.length - 2)}

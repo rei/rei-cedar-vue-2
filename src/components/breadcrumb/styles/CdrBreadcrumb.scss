@@ -1,22 +1,3 @@
-/* ==========================================================================
-  # CdrBreadcrumb
-
-  All values should map to variables in
-  vars/CdrBreadcrumb.vars.pcss
-  in order to allow for theming
-
-  TOC:
-
-    :Base - CdrBreadcrumb
-      :Elements
-        :container
-        :list
-        :item
-        :link
-        :delimiter
-        :ellipses
-        :ellipses-icon
-========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrBreadcrumb.vars.scss';
 @import url('@rei/cedar/dist/style/cdr-icon.css');
@@ -41,19 +22,13 @@
     padding: 0;
 
     @include cdr-breadcrumb-item-mixin;
-    
-    &-linked {
-      @include cdr-breadcrumb-item-linked-mixin;
-    }
   }
 
 
   /* Link
   ---------- */
   &__link {
-    @include cdr-breadcrumb-xs-text-mixin;
-    text-decoration: none;
-    color: inherit;
+    @include cdr-breadcrumb-item-linked-mixin;
 
     &:hover,
     &:active,

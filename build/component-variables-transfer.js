@@ -11,6 +11,8 @@ const SUPPORTED_COMPONENTS = [
   'options.vars.scss',
   /* component vars */
   'CdrButton.vars.scss',
+  'CdrCard.vars.scss',
+  'CdrBreadcrumb.vars.scss',
   'CdrLink.vars.scss',
   'form-label.vars.scss',
   'CdrInput.vars.scss',

@@ -4,6 +4,8 @@
 }
 
 @mixin cdr-breadcrumb-item-linked-mixin() {
+  text-decoration: none;
+  color: inherit;
   &:hover,
   &:active,
   &:focus {
@@ -12,10 +14,10 @@
   }
 }
 
-@mixin cdr-breadcrumb-base-text-mixin() {
-  @include cdr-text-utility-sans-200;
-}
-
 @mixin cdr-breadcrumb-xs-text-mixin() {
   @include cdr-text-utility-sans-100;
+}
+
+@mixin cdr-breadcrumb-base-text-mixin() {
+  @include cdr-text-utility-sans-200;
 }
