@@ -12,7 +12,7 @@
 
 @mixin cdr-list-base-nested-mixin() {
   margin-top: $cdr-space-half-x;
-  padding-left: 1em; // TODO: is em correct?
+  padding-left: 1em;
   list-style-type: none;
 }
 
@@ -29,15 +29,23 @@
   margin-top: $cdr-space-quarter-x;
 }
 
-
 /* ordered */
 @mixin cdr-list-ordered-mixin() {
-  list-style-type: decimal;
+  list-style: none;
+  counter-reset: cdr-list-counter;
   padding-left: 1.5em;
-  list-style-position: outside;
 
   & li {
+    counter-increment: cdr-list-counter;
     padding: 0 0 0 $cdr-space-quarter-x;
+    position: relative;
+  }
+  
+  & li::before {
+    content: counter(cdr-list-counter) ". ";
+    color: $cdr-color-text-secondary;
+    position: absolute;
+    left: -1em;
   }
 }
 
@@ -47,6 +55,7 @@
 
   & > li {
     padding-left: 0;
+    position: static;
 
     &::before {
       content: '\2013';
