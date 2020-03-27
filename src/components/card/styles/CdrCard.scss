@@ -1,20 +1,5 @@
-/* ==========================================================================
-  # CdrCard
-  
-  All values should map to variables in
-  vars/CdrCard.vars.pcss
-  in order to allow for theming
-
-  TOC:
-
-    :Base Styles
-========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrCard.vars.scss';
 .cdr-card {
-  background-color: $card-background-color;
-  border-radius: $card-border-radius;
-  box-shadow: 0 3px 8px rgba(26, 26, 26, 0.2);
-  color: $card-color;
-  width: $card-width;
+  @include cdr-card-base-mixin;
 }

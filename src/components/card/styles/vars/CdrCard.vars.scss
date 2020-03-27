@@ -1,16 +1,14 @@
-/* ==========================================================================
-  # CdrCard
+@mixin cdr-card-base-mixin() {
+  position: relative;
+  background-color: $cdr-color-background-primary;
+  border-radius: $cdr-radius-soft;
+  box-shadow: $cdr-prominence-raised;
+  color: $cdr-color-text-primary;
+  width: 100%;
 
-  This file provides a contract between
-  design tokens and cedar non-changing variables.
+  transition: box-shadow $cdr-duration-1-x $cdr-timing-function-ease;
 
-  TOC:
-
-    :Base
-========================================================================== */
-
-$card-background-color: $cdr-color-background-lightest;
-$card-border-radius: $cdr-radius-soft;
-$card-box-shadow: $cdr-prominence-raised;
-$card-color: $cdr-color-text-primary-lightmode;
-$card-width: 100%;
+  &:active, &:hover {
+    box-shadow: $cdr-prominence-floating;
+  }
+}

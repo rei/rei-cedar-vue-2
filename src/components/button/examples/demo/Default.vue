@@ -12,6 +12,9 @@
       >
         {{ section.title }}
       </cdr-text>
+      <cdr-text v-if="index === 0">
+        Clicks: {{ clickCount }}
+      </cdr-text>
       <cdr-button
         v-for="(button, index2) in section.buttons"
         :key="index2"
@@ -20,7 +23,7 @@
         :full-width="button.fullWidth"
         :type="button.type"
         :disabled="button.disabled"
-        @click="log"
+        @click="clickCount++"
       >
         {{ button.label }}
       </cdr-button>
@@ -79,6 +82,7 @@ export default {
   },
   data: function data() {
     return {
+      clickCount: 0,
       data: [
         {
           title: 'Default sizes',
@@ -138,11 +142,6 @@ export default {
         },
       ],
     };
-  },
-  methods: {
-    log() {
-      console.log('clicked'); // eslint-disable-line
-    },
   },
 };
 </script>

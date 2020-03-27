@@ -1,6 +1,6 @@
 <template>
   <div>
-    <cdr-card>
+    <cdr-card class="card-example">
       <cdr-text>A simple card</cdr-text>
     </cdr-card>
   </div>
@@ -15,3 +15,10 @@ export default {
   components: Components,
 };
 </script>
+
+<style>
+  .card-example {
+    max-width: 250px;
+    width: 250px;
+  }
+</style>
