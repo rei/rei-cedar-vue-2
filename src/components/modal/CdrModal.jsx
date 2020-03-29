@@ -79,8 +79,6 @@ export default {
       const vertSpace = this.fullscreen ? 32 : 80;
       return this.totalHeight
         - this.headerHeight
-        - this.stickyHeight
-        - this.footerHeight
         - vertSpace;
     },
     scrolling() {
@@ -119,8 +117,6 @@ export default {
       this.totalHeight = window.innerHeight;
       this.fullscreen = window.innerWidth < 672;
       this.headerHeight = this.$refs.header.offsetHeight;
-      this.stickyHeight = this.$refs.sticky ? this.$refs.sticky.offsetHeight : 0;
-      this.footerHeight = this.$refs.footer ? this.$refs.footer.offsetHeight : 0;
       this.$nextTick(() => {
         if (this.$refs.scrolly) {
           this.offsetHeight = this.$refs.scrolly.offsetHeight;
@@ -326,17 +322,6 @@ export default {
                       />
                     </cdr-button>
                   </div>
-                  {
-                    this.$slots.stickyContentSlot && (
-                      <div
-                        class={this.style['cdr-modal__sticky-content']}
-                        ref="sticky"
-                        tabindex="0"
-                      >
-                        {this.$slots.stickyContentSlot}
-                      </div>
-                    )
-                  }
                   <div
                     role="document"
                     class={this.style['cdr-modal__text']}
@@ -353,22 +338,7 @@ export default {
                       this.scrolling && (
                         <div
                         class={this.style['cdr-modal__text-fade']}
-                        style={ { bottom: `${this.footerHeight}px` } }
                       />
-                      )
-                    }
-
-                    {
-                      this.$slots.footer && (
-                        <div
-                          class={clsx(
-                            this.style['cdr-modal__footer'],
-                            !this.scrolling && this.fullscreen ? this.style['cdr-modal--fixed-footer'] : '', // eslint-disable-line
-                          )}
-                          ref="footer"
-                        >
-                          {this.$slots.footer}
-                        </div>
                       )
                     }
                   </div>
