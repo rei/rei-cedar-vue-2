@@ -118,7 +118,7 @@ export default {
       this.fullscreen = window.innerWidth < 672;
       this.headerHeight = this.$refs.header.offsetHeight;
       this.$nextTick(() => {
-        if (this.$refs.scrolly) {
+        if (this.$refs.content) {
           this.offsetHeight = this.$refs.scrolly.offsetHeight;
           this.scrollHeight = this.$refs.scrolly.scrollHeight;
         }
@@ -329,10 +329,10 @@ export default {
                     <div
                       class={this.style['cdr-modal__text-content']}
                       style={ { maxHeight: `${this.scrollMaxHeight}px` } }
-                      ref="scrolly"
+                      ref="content"
                       tabindex="0"
                     >
-                      {this.$slots.scrollingContentSlot}
+                      {this.$slots.default}
                     </div>
                     {
                       this.scrolling && (
