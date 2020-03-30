@@ -35,13 +35,13 @@
   counter-reset: cdr-list-counter;
   padding-left: 1.5em;
 
-  & li {
+  & > li {
     counter-increment: cdr-list-counter;
     padding: 0 0 0 $cdr-space-quarter-x;
     position: relative;
   }
-  
-  & li::before {
+
+  & > li::before {
     content: counter(cdr-list-counter) ". ";
     color: $cdr-color-text-secondary;
     position: absolute;
