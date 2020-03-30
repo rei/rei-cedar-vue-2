@@ -309,9 +309,9 @@ export default {
                     <cdr-button
                       id="close-modal-button"
                       class={this.style['cdr-modal__close-button']}
-                      icon-only={true}
-                      on-click={onClick}
-                      aria-label="close"
+                      icon-only
+                      with-background={true}
+                      aria-label="Close"
                     >
                       <IconXLg
                         slot="icon"
