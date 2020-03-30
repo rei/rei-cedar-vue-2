@@ -3,7 +3,7 @@ import CdrButton from 'componentdir/button/CdrButton';
 import sinon from 'sinon'
 
 describe('CdrButton', () => {
-  test('renders correctly', () => {
+  it('renders correctly', () => {
     const wrapper = mount(CdrButton);
     expect(wrapper.element).toMatchSnapshot();
   });
