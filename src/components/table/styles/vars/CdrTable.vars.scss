@@ -1,0 +1,136 @@
+@mixin cdr-table-base-text() {
+  @include cdr-text-utility-200;
+  color: $cdr-color-text-primary;
+}
+
+@mixin cdr-table-base() {
+  @include cdr-table-base-text();
+  
+  border: none;
+  border-collapse: collapse;
+  
+  th,
+  td {
+    min-height: 48px;
+    color: $cdr-color-text-primary;
+    padding: $cdr-space-inset-one-x-squish;
+    text-align: left;
+  }
+
+  th {
+    @include cdr-text-utility-strong-200;
+  }
+
+  thead th {
+    background-color: $cdr-color-background-table-header;
+  }
+  
+  caption {
+    @include cdr-text-utility-strong-300;
+    text-align: left;
+    margin-bottom: $cdr-space-half-x;
+  }
+}
+
+@mixin cdr-table-small {
+  th, td {
+    padding: 0.4rem 1.6rem;
+  }
+}
+
+@mixin cdr-table-medium {
+  th, td {
+    padding: $cdr-space-inset-one-x-squish;
+  }
+}
+
+@mixin cdr-table-large {
+  th, td {
+    padding: $cdr-space-inset-one-x;
+  }
+}
+
+@mixin cdr-table-border() {
+  $table-border-default: 1px solid $cdr-color-border-table-default;
+  $table-border-head: 1px solid $cdr-color-border-table-head;
+
+  tr + tr > *:not(:empty) {
+    border-top: $table-border-default;
+  }
+
+  thead {
+    tr + tr > *:not(:empty) {
+      border-top: $table-border-head;
+    }
+  }
+
+  tbody, tfoot {
+    tr + tr > *:not(:empty) {
+      border-top: $table-border-default;
+    }
+  }
+  
+  thead + tbody,
+  tbody + tfoot {
+    border-top: $table-border-default;
+  }
+}
+
+@mixin cdr-table-striped() {
+  tr:nth-child(odd) > * {
+    background-color: $cdr-color-background-table-row-alt;
+  }
+
+  thead {
+    // override body styling when head is present
+    & + tbody tr {
+      // striping rows
+      &:nth-child(even) {
+        background-color: $cdr-color-background-table-row-alt;
+        
+        & td {
+          background-color: $cdr-color-background-table-row-alt;
+        }
+      }
+
+      // disabled default
+      &:nth-child(odd) {
+        background-color: $cdr-color-background-table-row;
+        
+        & td {
+          background-color: $cdr-color-background-table-row;
+        }
+      }
+    }
+  }
+
+  tbody,
+  tfoot {
+    tr {
+      // striping rows
+      &:nth-child(odd) {
+        background-color: $cdr-color-background-table-row-alt;
+        
+        & td {
+          background-color: $cdr-color-background-table-row-alt;
+        }
+      }
+    }
+  }
+}
+
+@mixin cdr-table-full-width() {
+  width: 100%;
+}
+
+@mixin cdr-table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+@mixin cdr-table-hover {
+  tr:hover > * {
+    background-color: $cdr-color-background-table-header;
+  }
+}

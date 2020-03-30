@@ -45,5 +45,27 @@ export default {
         ? this.moduleClass(`${base}--${modifier}`)
         : `${base}--${modifier}`;
     },
+    /**
+     * supports pattern to have props that are boolean or breakpoint strings
+     *
+     * @param {String} base
+     * @param {String} modifier
+     * @param {String|Boolean} propVal
+     *
+     * given these conditions:
+     * base is 'cdr-table'
+     * modifier is 'full-width'
+     * prop would be full-width="@sm @lg"
+     *
+     * This takes that and returns classes of "cdr-table--full-width@sm cdr-table--full-width@lg"
+     */
+    responsiveModifyClass(base, modifier, propVal) {
+      if (typeof propVal === 'string') {
+        return propVal.split(' ')
+          .map(bp => this.modifyClassName(base, `${modifier}${bp}`))
+          .join(' ');
+      }
+      return this.modifyClassName(base, modifier);
+    },
   },
 };

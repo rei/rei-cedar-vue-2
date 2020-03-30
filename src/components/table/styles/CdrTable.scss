@@ -1,0 +1,66 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrTable.vars.scss';
+
+.cdr-table {
+  @include cdr-table-base;
+
+  &--small {
+    @include cdr-table-small;
+  }
+
+  &--medium {
+    @include cdr-table-medium;
+  }
+
+  &--large {
+    @include cdr-table-large;
+  }
+
+  &--striped {
+    @include cdr-table-striped;
+  }
+
+  &--border {
+    @include cdr-table-border;
+  }
+
+  &--full-width {
+    @include cdr-table-full-width;
+  }
+
+  &--responsive {
+    @include cdr-table-responsive;
+  }
+
+  &--hover {
+    @include cdr-table-hover;
+  }
+
+  // @xs
+  @include xs-mq-only {
+    &--full-width\@xs {
+      @include cdr-table-full-width;
+    }
+  }
+
+  // @sm
+  @include sm-mq-only {
+    &--full-width\@sm {
+      @include cdr-table-full-width;
+    }
+  }
+
+  // @md
+  @include md-mq-only {
+    &--full-width\@md {
+      @include cdr-table-full-width;
+    }
+  }
+
+  // @lg
+  @include lg-mq-only {
+    &--full-width\@lg {
+      @include cdr-table-full-width;
+    }
+  }
+}
