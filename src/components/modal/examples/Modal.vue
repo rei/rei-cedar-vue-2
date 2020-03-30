@@ -84,14 +84,8 @@ export default {
 
 <style>
 @media (min-width: 672px) {
-  .modal-example .modal-title {
-    /* cdr-text-heading-serif-800 */
-    font-family: Stuart, Sentinel, Georgia, serif;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: -0.16px;
-    font-size: 3.2rem;
-    line-height: 3.6rem;
+  .modal-example {
+    min-height: 80vh; /* fixes a safari display bug */
   }
 }
 </style>
