@@ -56,8 +56,6 @@ export default {
       reallyClosed: !this.opened,
       offset: null,
       headerHeight: 0,
-      stickyHeight: 0,
-      footerHeight: 0,
       totalHeight: 0,
       scrollHeight: 0,
       offsetHeight: 0,
@@ -97,9 +95,7 @@ export default {
   },
   mounted() {
     if (this.opened) {
-      this.addNoScroll();
-      this.measureContent();
-      this.addHandlers();
+      this.handleOpened();
     }
 
     window.addEventListener('resize', debounce(() => {
@@ -114,14 +110,12 @@ export default {
   },
   methods: {
     measureContent() {
-      this.totalHeight = window.innerHeight;
-      this.fullscreen = window.innerWidth < 672;
-      this.headerHeight = this.$refs.header.offsetHeight;
       this.$nextTick(() => {
-        if (this.$refs.content) {
-          this.offsetHeight = this.$refs.scrolly.offsetHeight;
-          this.scrollHeight = this.$refs.scrolly.scrollHeight;
-        }
+        this.totalHeight = window.innerHeight;
+        this.fullscreen = window.innerWidth < 672;
+        this.headerHeight = this.$refs.header.offsetHeight;
+        this.scrollHeight = this.$refs.content.scrollHeight;
+        this.offsetHeight = this.$refs.content.offsetHeight;
       });
     },
     handleKeyDown({ key }) {
@@ -148,7 +142,7 @@ export default {
       documentElement.scrollLeft = this.scrollLeft;
     },
     handleOpened() {
-      const { activeElement } = document;
+      const { activeElement } = document; 
 
       this.addNoScroll();
       this.reallyClosed = false;
@@ -163,6 +157,10 @@ export default {
           // for some reason Safari scrolls the wrapper down a bit?
           // doesn't work without setTimeout for some unknown reason
           this.$refs.wrapper.scrollTop = 0;
+
+          // there is a race condition for measuring overflow when modal defaults to open,
+          // this seems to cover that
+          this.measureContent();
         });
       });
     },
