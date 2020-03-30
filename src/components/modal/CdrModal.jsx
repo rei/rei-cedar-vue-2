@@ -1,6 +1,7 @@
 import debounce from 'lodash-es/debounce';
 import tabbable from 'tabbable';
 import clsx from 'clsx';
+import { CdrSpaceOneX, CdrSpaceOneAndAHalfX } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
 import style from './styles/CdrModal.scss';
 import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
@@ -73,11 +74,19 @@ export default {
     dialogClass() {
       return `${this.style['cdr-modal__dialog']}`;
     },
+    verticalSpace() {
+      // contentWrap vertical padding
+      const fullscreen = (Number(CdrSpaceOneX.split('rem')[0]) * 10) * 2; // 32
+      const windowed = (Number(CdrSpaceOneAndAHalfX.split('rem')[0]) * 10) * 2; // 48
+
+      return this.fullscreen
+        ? fullscreen
+        : windowed + fullscreen; // fullscreen, here, would account for outerWrap padding, which is the same 32px
+    },
     scrollMaxHeight() {
-      const vertSpace = this.fullscreen ? 32 : 80;
       return this.totalHeight
         - this.headerHeight
-        - vertSpace;
+        - this.verticalSpace;
     },
     scrolling() {
       return this.scrollHeight > this.offsetHeight;
@@ -311,6 +320,7 @@ export default {
                       class={this.style['cdr-modal__close-button']}
                       icon-only
                       with-background={true}
+                      on-click={onClick}
                       aria-label="Close"
                     >
                       <IconXLg
