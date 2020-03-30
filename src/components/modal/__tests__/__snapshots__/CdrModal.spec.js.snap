@@ -67,11 +67,9 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
             >
               <div
                 class="cdr-modal__text-content"
-                style="max-height: 688px;"
+                style="max-height: -80px;"
                 tabindex="0"
-              >
-                Main content
-              </div>
+              />
             </div>
           </div>
         </section>
@@ -139,12 +137,6 @@ exports[`CdrModal.vue renders all slots, handleClosed 1`] = `
               </cdr-button-stub>
             </div>
             <div
-              class="cdr-modal__sticky-content"
-              tabindex="0"
-            >
-              Sticky content
-            </div>
-            <div
               class="cdr-modal__text"
               role="document"
             >
@@ -152,14 +144,7 @@ exports[`CdrModal.vue renders all slots, handleClosed 1`] = `
                 class="cdr-modal__text-content"
                 style="max-height: -80px;"
                 tabindex="0"
-              >
-                Main content
-              </div>
-              <div
-                class="cdr-modal__footer"
-              >
-                Footer content
-              </div>
+              />
             </div>
           </div>
         </section>
