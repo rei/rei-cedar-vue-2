@@ -142,21 +142,21 @@ export default {
       documentElement.scrollLeft = this.scrollLeft;
     },
     handleOpened() {
-      const { activeElement } = document; 
+      const { activeElement } = document;
 
       this.addNoScroll();
       this.reallyClosed = false;
       this.lastActive = activeElement;
 
       this.$nextTick(() => {
-        this.$refs.modal.focus();
+        if (this.$refs.modal) this.$refs.modal.focus(); // wrapped in if so testing error isn't thrown
         this.measureContent();
         this.addHandlers();
 
         setTimeout(() => {
           // for some reason Safari scrolls the wrapper down a bit?
           // doesn't work without setTimeout for some unknown reason
-          this.$refs.wrapper.scrollTop = 0;
+          if (this.$refs.wrapper) this.$refs.wrapper.scrollTop = 0;
 
           // there is a race condition for measuring overflow when modal defaults to open,
           // this seems to cover that
@@ -276,7 +276,7 @@ export default {
             role="dialog"
             aria-modal={!!opened}
             aria-label={label}
-            {...{ attrs: this.dialogAttrs || {} }}
+            {...{ attrs: this.dialogAttrs }}
           >
             <div
               class={clsx(this.style['cdr-modal__innerWrap'], contentClass)}

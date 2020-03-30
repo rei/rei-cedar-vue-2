@@ -5,45 +5,51 @@ import Vue from 'vue';
 import CdrButton from 'componentdir/button/CdrButton';
 
 describe('CdrModal.vue', () => {
-  it('renders all slots, handleClosed', () => {
+  it('default open, scrolling', (done) => {
+    const mockMeasureContent = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
         label: "Label is the modal title"
       },
       slots: {
-        title: 'Terms and Conditions',
-        stickyContentSlot: 'Sticky content',
-        scrollingContentSlot: 'Main content',
-        footer: 'Footer content'
+        default: 'Sticky content',
+      },
+      computed: {
+        scrolling: () => true,
+      },
+      methods: {
+        measureContent: mockMeasureContent
       },
       attachToDocument: true,
     });
-    /*
-      - begins opened
-      - renders all slots for screenshots
-      - close modal
-    */
 
    expect(wrapper.element).toMatchSnapshot();
+   expect(wrapper.find('.cdr-modal__text-fade').exists()).toBe(true);
+
     Vue.nextTick(() => {
       wrapper.setProps({ opened: false });
 
       setTimeout(() => {
         expect(wrapper.vm.reallyClosed).toBe(true);
         wrapper.destroy();
-      }, 300);
+        done();
+      }, 500);
     });
   });
 
-  it('leaves optional slots empty, handleOpened', () => {
+  it('leaves optional slots empty, handleOpened', (done) => {
+    const mockMeasureContent = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: false,
         label: "Label is the modal title"
       },
       slots: {
-        scrollingContentSlot: 'Main content',
+        default: 'Main content',
+      },
+      methods: {
+        measureContent: mockMeasureContent
       },
       attachToDocument: true,
     });
@@ -51,11 +57,17 @@ describe('CdrModal.vue', () => {
     wrapper.setProps({ opened: true });
     Vue.nextTick(() => {
       expect(wrapper.element).toMatchSnapshot();
-      wrapper.destroy();
+      
+      setTimeout(() => {
+        expect(mockMeasureContent).toHaveBeenCalled();
+        wrapper.destroy();
+        done();
+      }, 300);
     });
   });
 
   it('handleKeyDown', () => {
+    const mockMeasureContent = jest.fn();
     const spyOnClick = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
@@ -63,36 +75,50 @@ describe('CdrModal.vue', () => {
         label: "Label is the modal title"
       },
       slots: {
-        scrollingContentSlot: 'Main content',
+        default: 'Main content',
       },
       methods: {
-        onClick: spyOnClick
+        onClick: spyOnClick,
+        measureContent: mockMeasureContent,
       },
       attachToDocument: true,
     });
 
-    wrapper.trigger('keydown', {
-      key: 'a'
+    Vue.nextTick(() => {
+      wrapper.trigger('keydown', {
+        key: 'a'
+      });
+      expect(spyOnClick).not.toHaveBeenCalled();
+  
+      wrapper.trigger('keydown', {
+        key: 'Esc',
+      });
+  
+      wrapper.trigger('keydown', {
+        key: 'Escape',
+      });
+  
+      expect(spyOnClick).toHaveBeenCalledTimes(2);
+      wrapper.destroy();
     });
-    expect(spyOnClick).not.toHaveBeenCalled();
-
-    wrapper.trigger('keydown', {
-      key: 'Esc',
-    });
-
-    wrapper.trigger('keydown', {
-      key: 'Escape',
-    });
-
-    expect(spyOnClick).toHaveBeenCalledTimes(2);
-    wrapper.destroy();
   });
 
   it('scrolling and fullscreen snapshot', () => {
+    const mockMeasureContent = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
         label: "Label is the modal title"
+      },
+      data() {
+        return {
+          offsetHeight: 400,
+          scrollHeight: 500,
+          fullscreen: true,
+        };
+      },
+      methods: {
+        measureContent: mockMeasureContent,
       },
       slots: {
         scrollingContentSlot: 'Main content',
@@ -100,21 +126,20 @@ describe('CdrModal.vue', () => {
       attachToDocument: true,
     });
 
-    Vue.nextTick(() => {
-      wrapper.setProps({ fullscreen: true, scrollHeight: 500, offsetHeight: 400 });
-      setTimeout(() => {
-        expect(wrapper.vm.scrolling).toBe(true);
-        expect(wrapper.element).toMatchSnapshot();
-        wrapper.destroy();
-      }, 300);
-    })
+    expect(wrapper.vm.scrolling).toBe(true);
+    expect(wrapper.element).toMatchSnapshot();
+    wrapper.destroy();
   });
 
   it('removeNoScroll', () => {
+    const mockMeasureContent = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
         label: "My Modal Label",
+      },
+      methods: {
+        measureContent: mockMeasureContent,
       },
       slots: {
         scrollingContentSlot: 'Main content',
@@ -131,16 +156,16 @@ describe('CdrModal.vue', () => {
   });
 
   it('handleFocus', () => {
-    const spyMeasureContent = jest.fn();
+    const mockMeasureContent = jest.fn();
     const wrapper = mount(CdrModal, {
       propsData: {
         opened: true,
         label: "My Modal Label",
       },
-      attachToDocument: true,
       methods: {
-        measureContent: spyMeasureContent,
+        measureContent: mockMeasureContent,
       },
+      attachToDocument: true,
     });
 
     const button = wrapper.find('button').element;
@@ -153,36 +178,37 @@ describe('CdrModal.vue', () => {
     wrapper.destroy();
   });
 
-  // it('handleClosed', (done) => {
-  //   spyOn(document, 'removeEventListener');
-  //   global.scrollTo = jest.fn();
-  //   const spyMeasureContent = jest.fn();
-  //   const spyHandleOpened = jest.fn();
+  it('handleClosed', (done) => {
+    global.scrollTo = jest.fn();
+    const spyMeasureContent = jest.fn();
+    const spyHandleOpened = jest.fn();
     
-  //   const wrapper = shallowMount(CdrModal, {
-  //     propsData: {
-  //       opened: true, 
-  //       label: "My Modal Label",
-  //     },
-  //     methods: {
-  //       measureContent: spyMeasureContent,
-  //       handleOpened: spyHandleOpened,
-  //     },
-  //     attachToDocument: true,
-  //   });
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true, 
+        label: "My Modal Label",
+      },
+      data() {
+        return {
+          offset: { x: 0, y: 0 }
+        };
+      },
+      methods: {
+        measureContent: spyMeasureContent,
+        handleOpened: spyHandleOpened,
+      },
+      attachToDocument: true,
+    });    
 
+    wrapper.vm.handleClosed();
     
-
-  //   expect(document.removeEventListener).toHaveBeenCalledWith('keydown', expect.anything());
-    
-  //   Vue.nextTick(() => {
-  //     setTimeout(() => {
-  //       expect(wrapper.vm.reallyClosed).toBe(true);
-  //       expect(wrapper.vm.unsubscribe).toBe(null);
-  //       expect(document.removeEventListener).nthCalledWith(2, 'focusin', expect.anything(), true);
-  //       done();
-  //     }, 1000);
-  //   });
-  // });
+    Vue.nextTick(() => { 
+      setTimeout(() => {
+        expect(wrapper.vm.reallyClosed).toBe(true);
+        expect(wrapper.vm.unsubscribe).toBe(null);
+        done();
+      }, 500);
+    });
+  });
 
 });
