@@ -94,10 +94,6 @@ $modal-animation-duration: 150ms;
     }
   }
 
-  &__sticky-content {
-    padding-bottom: $cdr-space-one-x;
-  }
-
   &__text {
     padding: 0;
     position: relative;
@@ -118,15 +114,6 @@ $modal-animation-duration: 150ms;
     background: linear-gradient(rgba(255,255,255,0.001), rgba(255,255,255,1));
     background-attachment: scroll;
     width: 100%;
-  }
-
-  &__footer {
-    padding-top: $cdr-space-one-x;
-  }
-
-  &--fixed-footer {
-    position: fixed;
-    bottom: $cdr-space-one-x;
   }
 
   @media (min-width: 672px) {
@@ -157,11 +144,6 @@ $modal-animation-duration: 150ms;
 
     &__text-content {
       padding-right: $cdr-space-two-x;
-    }
-
-    &__footer {
-      bottom: auto;
-      position: relative;
     }
   }
 }
