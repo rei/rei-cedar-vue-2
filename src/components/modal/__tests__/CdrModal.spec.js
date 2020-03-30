@@ -6,7 +6,6 @@ import CdrButton from 'componentdir/button/CdrButton';
 
 describe('CdrModal.vue', () => {
   it('default open, scrolling', (done) => {
-    const mockMeasureContent = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
@@ -18,14 +17,11 @@ describe('CdrModal.vue', () => {
       computed: {
         scrolling: () => true,
       },
-      methods: {
-        measureContent: mockMeasureContent
-      },
       attachToDocument: true,
     });
 
-   expect(wrapper.element).toMatchSnapshot();
-   expect(wrapper.find('.cdr-modal__text-fade').exists()).toBe(true);
+    expect(wrapper.element).toMatchSnapshot();
+    expect(wrapper.find('.cdr-modal__text-fade').exists()).toBe(true);
 
     Vue.nextTick(() => {
       wrapper.setProps({ opened: false });
@@ -68,7 +64,6 @@ describe('CdrModal.vue', () => {
 
   it('handleKeyDown', () => {
     const mockMeasureContent = jest.fn();
-    const spyOnClick = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
@@ -78,7 +73,6 @@ describe('CdrModal.vue', () => {
         default: 'Main content',
       },
       methods: {
-        onClick: spyOnClick,
         measureContent: mockMeasureContent,
       },
       attachToDocument: true,
@@ -88,7 +82,6 @@ describe('CdrModal.vue', () => {
       wrapper.trigger('keydown', {
         key: 'a'
       });
-      expect(spyOnClick).not.toHaveBeenCalled();
   
       wrapper.trigger('keydown', {
         key: 'Esc',
@@ -98,7 +91,7 @@ describe('CdrModal.vue', () => {
         key: 'Escape',
       });
   
-      expect(spyOnClick).toHaveBeenCalledTimes(2);
+      expect(wrapper.emitted().closed.length).toBe(2);
       wrapper.destroy();
     });
   });
@@ -211,4 +204,28 @@ describe('CdrModal.vue', () => {
     });
   });
 
+  it('resize event', (done) => {
+    const spyMeasureContent = jest.fn();
+    const wrapper = shallowMount(CdrModal, {
+      propsData: {
+        opened: true,
+        label: "Label is the modal title"
+      },
+      slots: {
+        default: 'Sticky content',
+      },
+      methods: {
+        measureContent: spyMeasureContent,
+      },
+      attachToDocument: true,
+    });
+
+    window.dispatchEvent(new Event('resize'));
+
+    setTimeout(() => {
+      expect(spyMeasureContent).toHaveBeenCalled();
+      wrapper.destroy();
+      done();
+    }, 500);
+  });
 });
