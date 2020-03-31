@@ -1,11 +1,17 @@
 import debounce from 'lodash-es/debounce';
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
+import CdrButton from '../button/CdrButton';
+import CdrIcon from '../icon/CdrIcon';
 import size from '../../mixins/size';
 import style from './styles/CdrTabs.scss';
 
 export default {
   name: 'CdrTabs',
+  components: {
+    CdrButton,
+    CdrIcon,
+  },
   mixins: [modifier, size],
   props: {
     height: {
@@ -239,6 +245,48 @@ export default {
           vOn:keyup_left={this.leftArrowNav}
           vOn:keydown_down_prevent={this.handleDownArrowNav}
         >
+          {
+            this.overflowLeft && (
+              <cdr-button
+                icon-only
+                with-background={true}
+                aria-label=""
+                class={clsx(
+                  this.style['cdr-tabs__button'],
+                  this.style['cdr-tabs__nav-scroll-left'],
+                )}
+              >
+                <cdr-icon
+                  use="#caret-left"
+                  inherit-color
+                  slot="icon"
+                  class="cdr-button__icon"
+                />
+              </cdr-button>
+            )
+          }
+
+          {
+            this.overflowRight && (
+              <cdr-button
+                icon-only
+                with-background={true}
+                aria-label=""
+                class={clsx(
+                  this.style['cdr-tabs__button'],
+                  this.style['cdr-tabs__nav-scroll-right'],
+                )}
+              >
+                <cdr-icon
+                  use="#caret-right"
+                  inherit-color
+                  slot="icon"
+                  class="cdr-button__icon"
+                />
+              </cdr-button>
+            )
+          }
+
           <nav
             class={clsx(
               this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',

@@ -83,8 +83,22 @@
           $cdr-color-background-lightest
         );
       pointer-events: none;
-      opacity: 0;
+      opacity: 0; 
     }
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    z-index: 20;
+  }
+
+  &__nav-scroll-left {
+    left: 0;
+  }
+
+  &__nav-scroll-right {
+    right: 0;
   }
 
   &__header {
