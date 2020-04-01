@@ -76,8 +76,8 @@ export default {
     },
     verticalSpace() {
       // contentWrap vertical padding
-      const fullscreen = 32;//(Number(CdrSpaceOneX.split('rem')[0]) * 10) * 2; // 32
-      const windowed = 48;//(Number(CdrSpaceOneAndAHalfX.split('rem')[0]) * 10) * 2; // 48
+      const fullscreen = 32;
+      const windowed = 48;
 
       return this.fullscreen
         ? fullscreen
