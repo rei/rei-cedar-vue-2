@@ -1,7 +1,7 @@
 import debounce from 'lodash-es/debounce';
 import tabbable from 'tabbable';
 import clsx from 'clsx';
-import { CdrSpaceOneX, CdrSpaceOneAndAHalfX } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
+// import { CdrSpaceOneX, CdrSpaceOneAndAHalfX } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
 import style from './styles/CdrModal.scss';
 import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
@@ -76,8 +76,8 @@ export default {
     },
     verticalSpace() {
       // contentWrap vertical padding
-      const fullscreen = (Number(CdrSpaceOneX.split('rem')[0]) * 10) * 2; // 32
-      const windowed = (Number(CdrSpaceOneAndAHalfX.split('rem')[0]) * 10) * 2; // 48
+      const fullscreen = 32;//(Number(CdrSpaceOneX.split('rem')[0]) * 10) * 2; // 32
+      const windowed = 48;//(Number(CdrSpaceOneAndAHalfX.split('rem')[0]) * 10) * 2; // 48
 
       return this.fullscreen
         ? fullscreen
@@ -121,7 +121,7 @@ export default {
     measureContent() {
       this.$nextTick(() => {
         this.totalHeight = window.innerHeight;
-        this.fullscreen = window.innerWidth < 672;
+        this.fullscreen = window.innerWidth < 768; // breakpoint sm
         this.headerHeight = this.$refs.header.offsetHeight;
         this.scrollHeight = this.$refs.content.scrollHeight;
         this.offsetHeight = this.$refs.content.offsetHeight;

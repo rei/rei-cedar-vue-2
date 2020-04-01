@@ -85,7 +85,7 @@ $modal-animation-duration: 150ms;
     flex: none;
     margin-left: $cdr-space-half-x;
     padding: 7px; // NOTE: button should be 40x40, so drop padding by 1px
-    position: relative;    
+    position: relative;
     top: -2px;
     right: -4px;
 
@@ -116,7 +116,7 @@ $modal-animation-duration: 150ms;
     width: 100%;
   }
 
-  @media (min-width: 672px) {
+  @media (min-width: $cdr-breakpoint-sm) {
     &__outerWrap {
       padding: $cdr-space-one-x;
     }
@@ -137,7 +137,7 @@ $modal-animation-duration: 150ms;
     }
 
     &__close-button {
-      margin-left: $cdr-space-three-quarter-x; 
+      margin-left: $cdr-space-three-quarter-x;
       right: -8px;
       top: -5px;
     }
