@@ -1,7 +1,7 @@
 import debounce from 'lodash-es/debounce';
 import tabbable from 'tabbable';
 import clsx from 'clsx';
-// import { CdrSpaceOneX, CdrSpaceOneAndAHalfX } from '@rei/cdr-tokens/dist/js/cdr-tokens.esm';
+import { CdrBreakpointSm, CdrSpaceOneX, CdrSpaceTwoX } from '@rei/cdr-tokens';
 import style from './styles/CdrModal.scss';
 import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
@@ -76,12 +76,12 @@ export default {
     },
     verticalSpace() {
       // contentWrap vertical padding
-      const fullscreen = 32;
-      const windowed = 48;
+      const fullscreen = CdrSpaceTwoX;
+      const windowed = Number(CdrSpaceTwoX) + Number(CdrSpaceOneX);
 
       return this.fullscreen
         ? fullscreen
-        : windowed + fullscreen; // fullscreen, here, would account for outerWrap padding, which is the same 32px
+        : windowed + fullscreen; // fullscreen, here, would account for outerWrap padding, which is the same CdrSpaceTwoX
     },
     scrollMaxHeight() {
       return this.totalHeight
@@ -121,7 +121,7 @@ export default {
     measureContent() {
       this.$nextTick(() => {
         this.totalHeight = window.innerHeight;
-        this.fullscreen = window.innerWidth < 768; // breakpoint sm
+        this.fullscreen = window.innerWidth < CdrBreakpointSm;
         this.headerHeight = this.$refs.header.offsetHeight;
         this.scrollHeight = this.$refs.content.scrollHeight;
         this.offsetHeight = this.$refs.content.offsetHeight;
@@ -325,7 +325,7 @@ export default {
                     >
                       <IconXLg
                         slot="icon"
-                        class={this.style['cdr-button__icon']}
+                        class="cdr-button__icon"
                         inherit-color
                       />
                     </cdr-button>

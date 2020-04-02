@@ -13,8 +13,7 @@
       @closed="closed"
       wrapper-class="wrapper-test-class"
       overlay-class="overlay-test-class"
-      :show-title="showTitle"
-      data-backstop="modal-large"
+      data-backstop="modal"
     >
       <template slot="title">
         <cdr-text
@@ -49,10 +48,6 @@
       Content Options
     </cdr-text>
 
-    <cdr-checkbox v-model="showTitle">
-      Show Title
-    </cdr-checkbox>
-
     <cdr-checkbox v-model="overflowContent">
       Overflow Content
     </cdr-checkbox>
@@ -70,8 +65,7 @@ export default {
   data() {
     return {
       opened: this.$router.currentRoute.name === 'Modals',
-      overflowContent: true,
-      showTitle: true,
+      overflowContent: false,
     };
   },
   methods: {
