@@ -37,7 +37,8 @@
   }
 
   &__header-container {
-    overflow-x: auto;
+    // overflow-x: auto;
+    overflow-x: hidden;
     border-bottom: 1px solid $cdr-color-border-tab-keyline-rest;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -46,48 +47,10 @@
 
   &__gradient-container {
     position: relative;
-
-    &::before {
-      transition: opacity 150ms ease;
-      -webkit-transition: opacity 150ms ease;
-      content: '';
-      position: absolute;
-      z-index: 100;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 36px;
-      background:
-        linear-gradient(
-          to left,
-          rgba($cdr-color-background-lightest, 0),
-          $cdr-color-background-lightest
-        );
-      pointer-events: none;
-      opacity: 0;
-    }
-
-    &::after {
-      transition: opacity 150ms ease;
-      -webkit-transition: opacity 150ms ease;
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      width: 36px;
-      background:
-        linear-gradient(
-          to right,
-          rgba($cdr-color-background-lightest, 0),
-          $cdr-color-background-lightest
-        );
-      pointer-events: none;
-      opacity: 0; 
-    }
   }
 
   &__button {
+    // display: none;
     position: absolute;
     top: 0;
     z-index: 20;
@@ -108,6 +71,7 @@
 
     padding: 0;
     position: relative;
+    transition: left 300ms $cdr-timing-function-ease-out;
 
     &-gradient-left::before {
       opacity: 1;

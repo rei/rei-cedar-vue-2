@@ -29,9 +29,12 @@ export default {
       underlineOffsetX: 0,
       underlineWidth: 0,
       underlineScrollX: 0,
+      overflowScrollX: 0,
       activeTabIndex: 0,
+      containerWidth: 0,
+      leftPosition: 0,
       headerWidth: 0,
-      headerOverflow: false,
+      headerScrollWidth: 0,
       overflowLeft: false,
       overflowRight: false,
       animationInProgress: false,
@@ -48,6 +51,25 @@ export default {
         width: `${this.underlineWidth}px`,
       };
     },
+    headerOverflow() {
+      return this.headerScrollWidth > this.headerWidth;
+    },
+    // overflowLeft() {
+    //   return this.leftPosition !== 0;
+    // },
+    // overflowRight() {
+    //   // return ((this.leftPosition + this.headerWidth) < this.scrollWidth);
+    //   return (
+    //     this.leftPosition
+    //     && this.headerWidth
+    //     && this.
+    //   )
+    // },
+    // scrollDistance() {
+    //   return this.headerOverflow
+    //     && this.containerWidth
+    //     ? this.headerWidth - this.containerWidth : null;
+    // },
   },
   mounted() {
     this.tabs = (this.$slots.default || [])
@@ -61,7 +83,6 @@ export default {
     }
 
     this.$nextTick(() => {
-      this.headerWidth = this.getHeaderWidth();
       this.calculateOverflow();
       setTimeout(() => {
         this.updateUnderline();
@@ -69,7 +90,7 @@ export default {
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
-      this.headerWidth = this.getHeaderWidth();
+      // this.headerWidth = this.getHeaderWidth();
       this.calculateOverflow();
       this.updateUnderline();
     }, 500));
@@ -153,21 +174,30 @@ export default {
         this.changeTab(previousTab);
       }
     }, 300, { leading: true, trailing: false }),
+    slideRight() {
+      if ((this.headerScrollWidth - this.headerWidth) < this.headerWidth) {
+        this.leftPosition = -(this.headerScrollWidth - this.headerWidth);
+      }
+      this.calculateOverflow();
+    },
+    slideLeft() {
+      if (Math.abs(this.leftPosition) < this.headerWidth) {
+        this.leftPosition = 0;
+      }
+      this.calculateOverflow();
+    },
     calculateOverflow() {
-      let containerWidth = 0;
+      if (this.$refs.cdrTabsHeader) {
+        this.headerWidth = this.$refs.cdrTabsHeader.offsetWidth;
+        this.headerScrollWidth = this.$refs.cdrTabsHeader.scrollWidth;
+      }
+
       if (this.$refs.cdrTabsContainer) {
-        containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
+        this.containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
       }
-      this.headerOverflow = this.headerWidth > containerWidth;
-      if (this.headerOverflow) {
-        // Get Scroll Position
-        const scrollX = this.$refs.cdrTabsHeader.parentElement.scrollLeft;
-        this.overflowLeft = scrollX > 1;
-        this.overflowRight = (scrollX + 1) < (this.headerWidth - containerWidth);
-      } else {
-        this.overflowLeft = false;
-        this.overflowRight = false;
-      }
+
+      this.overflowRight = ((Math.abs(this.leftPosition) + this.headerWidth) < this.headerScrollWidth);
+      this.overflowLeft = !!this.leftPosition;
     },
     updateUnderline() {
       const elements = Array.from(this.$refs.cdrTabsHeader.children);
@@ -185,17 +215,6 @@ export default {
     },
     setFocusToActiveTabHeader() {
       this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
-    },
-    getHeaderWidth() {
-      let headerElements = [];
-      if (this.$refs.cdrTabsHeader) {
-        headerElements = Array.from(this.$refs.cdrTabsHeader.children);
-      }
-      let totalWidth = 0;
-      headerElements.forEach((element) => {
-        totalWidth += element.offsetWidth || 0;
-      });
-      return totalWidth;
     },
     hideScrollBar() {
       const styleRef = this.$refs.cdrTabsContainer.style;
@@ -251,6 +270,7 @@ export default {
                 icon-only
                 with-background={true}
                 aria-label=""
+                vOn:click={this.slideLeft}
                 class={clsx(
                   this.style['cdr-tabs__button'],
                   this.style['cdr-tabs__nav-scroll-left'],
@@ -272,6 +292,7 @@ export default {
                 icon-only
                 with-background={true}
                 aria-label=""
+                vOn:click={this.slideRight}
                 class={clsx(
                   this.style['cdr-tabs__button'],
                   this.style['cdr-tabs__nav-scroll-right'],
@@ -293,11 +314,13 @@ export default {
               this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
               this.style['cdr-tabs__header-container'],
             )}
+            ref="cdrTabsHeaderContainer"
           >
             <ol
               class={this.style['cdr-tabs__header']}
               role="tablist"
               ref="cdrTabsHeader"
+              style={ { left: `${this.leftPosition}px` } }
             >
               {this.tabs.map(tab => (
                   <li
