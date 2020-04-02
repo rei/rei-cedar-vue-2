@@ -175,15 +175,24 @@ export default {
       }
     }, 300, { leading: true, trailing: false }),
     slideRight() {
-      if ((this.headerScrollWidth - this.headerWidth) < this.headerWidth) {
-        this.leftPosition = -(this.headerScrollWidth - this.headerWidth);
+      const test = Math.abs(this.leftPosition) + this.headerWidth;
+      const remaining = this.headerScrollWidth - test;
+
+      if (remaining < this.headerWidth) {
+        this.leftPosition -= remaining;
+      } else {
+        this.leftPosition -= this.headerWidth;
       }
+
       this.calculateOverflow();
     },
     slideLeft() {
       if (Math.abs(this.leftPosition) < this.headerWidth) {
         this.leftPosition = 0;
+      } else {
+        this.leftPosition += this.headerWidth;
       }
+
       this.calculateOverflow();
     },
     calculateOverflow() {
@@ -256,8 +265,6 @@ export default {
       >
         <div
           class={clsx(
-            this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
-            this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
             this.style['cdr-tabs__gradient-container'],
           )}
           vOn:keyup_right={this.rightArrowNav}
@@ -310,8 +317,6 @@ export default {
 
           <nav
             class={clsx(
-              this.overflowLeft ? this.style['cdr-tabs__header-gradient-left'] : '',
-              this.overflowRight ? this.style['cdr-tabs__header-gradient-right'] : '',
               this.style['cdr-tabs__header-container'],
             )}
             ref="cdrTabsHeaderContainer"

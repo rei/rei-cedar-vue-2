@@ -138,7 +138,7 @@ export default {
   components: { ...Components, tabsDefault },
   data() {
     return {
-      tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
+      tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen'],
     };
   },
 };
