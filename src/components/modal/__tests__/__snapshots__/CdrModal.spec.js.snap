@@ -44,7 +44,7 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
                 </cdr-text-stub>
               </div>
               <cdr-button-stub
-                aria-label="close"
+                aria-label="Close"
                 class="cdr-modal__close-button"
                 icononly="true"
                 id="close-modal-button"
@@ -52,8 +52,10 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
                 space=""
                 tag="button"
                 type="button"
+                withbackground="true"
               >
                 <iconxlg-stub
+                  class="cdr-button__icon"
                   inheritcolor="true"
                   size="medium"
                   space=""
@@ -66,7 +68,7 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
             >
               <div
                 class="cdr-modal__text-content"
-                style="max-height: -80px;"
+                style="max-height: NaNpx;"
                 tabindex="0"
               >
                 Sticky content
@@ -131,7 +133,7 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
                 </cdr-text-stub>
               </div>
               <cdr-button-stub
-                aria-label="close"
+                aria-label="Close"
                 class="cdr-modal__close-button"
                 icononly="true"
                 id="close-modal-button"
@@ -139,8 +141,10 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
                 space=""
                 tag="button"
                 type="button"
+                withbackground="true"
               >
                 <iconxlg-stub
+                  class="cdr-button__icon"
                   inheritcolor="true"
                   size="medium"
                   space=""
@@ -153,7 +157,7 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
             >
               <div
                 class="cdr-modal__text-content"
-                style="max-height: -80px;"
+                style="max-height: NaNpx;"
                 tabindex="0"
               >
                 Main content
@@ -214,7 +218,7 @@ exports[`CdrModal.vue scrolling and fullscreen snapshot 1`] = `
                 </cdr-text-stub>
               </div>
               <cdr-button-stub
-                aria-label="close"
+                aria-label="Close"
                 class="cdr-modal__close-button"
                 icononly="true"
                 id="close-modal-button"
@@ -222,8 +226,10 @@ exports[`CdrModal.vue scrolling and fullscreen snapshot 1`] = `
                 space=""
                 tag="button"
                 type="button"
+                withbackground="true"
               >
                 <iconxlg-stub
+                  class="cdr-button__icon"
                   inheritcolor="true"
                   size="medium"
                   space=""
@@ -236,7 +242,7 @@ exports[`CdrModal.vue scrolling and fullscreen snapshot 1`] = `
             >
               <div
                 class="cdr-modal__text-content"
-                style="max-height: -32px;"
+                style="max-height: NaNpx;"
                 tabindex="0"
               />
               <div
