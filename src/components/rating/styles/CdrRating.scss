@@ -1,6 +1,44 @@
 @import '../../../css/settings/index.scss';
 
 $rating-color: #2b6692;
+$empty-star: '\2606';
+$filled-star: '\2605';
+
+@mixin star-icon($url) {
+  &::after {
+    content: '';
+    background-image: svg-load('#{$url}');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin star-fallback($star, $trim: false) {
+  $size: calc(#{$cdr-icon-size-sm} - 3px);
+  $width: auto;
+  $translatex: -50%;
+  @if $trim {
+    $width: calc(#{$size} * #{$trim});
+    $translatex: calc(#{$trim} * -100%);
+  }
+
+  &::before {
+    content: $star;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate($translatex, -50%);
+    font-size: $size;
+    color: #BD7B2D;
+    width: $width;
+    overflow: hidden;
+  }
+}
 
 @mixin cdr-rating-small() {
   & .cdr-rating__icon {
@@ -60,6 +98,11 @@ $rating-color: #2b6692;
     display: flex;
   }
 
+  &__icon {
+    position: relative;
+    z-index: 1;
+  }
+
   &__caption-sr {
     @include cdr-display-sr-only-mixin;
   }
@@ -68,11 +111,11 @@ $rating-color: #2b6692;
     ========== */
 
   &__placeholder {
-    background-image: svg-load('static/star-null.svg');
-    background-repeat: no-repeat;
+    @include star-icon('static/star-null.svg');
 
     &--no-reviews {
-      background-image: svg-load('static/star-null.svg');
+      @include star-icon('static/star-null.svg');
+      @include star-fallback($empty-star);
     }
   }
 
@@ -80,23 +123,23 @@ $rating-color: #2b6692;
     ========== */
 
   &__100 {
-    background-image: svg-load('static/star-100.svg');
-    background-repeat: no-repeat;
+    @include star-icon('static/star-100.svg');
+    @include star-fallback($filled-star);
   }
 
   &__75 {
-    background-image: svg-load('static/star-75.svg');
-    background-repeat: no-repeat;
+    @include star-icon('static/star-75.svg');
+    @include star-fallback($filled-star, .75);
   }
 
   &__50 {
-    background-image: svg-load('static/star-50.svg');
-    background-repeat: no-repeat;
+    @include star-icon('static/star-50.svg');
+    @include star-fallback($filled-star, .5);
   }
 
   &__25 {
-    background-image: svg-load('static/star-25.svg');
-    background-repeat: no-repeat;
+    @include star-icon('static/star-25.svg');
+    @include star-fallback($filled-star, .33);
   }
 
   /* Modifiers
