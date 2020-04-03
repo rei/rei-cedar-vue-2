@@ -380,7 +380,7 @@ export default {
   },
   render() {
     return (
-      <nav aria-label="Pagination Navigation">
+      <nav aria-label="Pagination">
         <ul class={this.style['cdr-pagination']}>
           {this.prevEl}
           {this.desktopEl}
