@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="lists-resilience">
 
     <cdr-text
       tag="h3"

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-backstop="lists-bare">
 
     <cdr-text
       tag="h3"
