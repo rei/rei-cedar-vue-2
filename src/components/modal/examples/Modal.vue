@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="modal-example">
     <cdr-text
       tag="h2"
       modifier="heading-serif-600 heading-serif-700@md heading-serif-700@lg"
@@ -13,96 +13,44 @@
       @closed="closed"
       wrapper-class="wrapper-test-class"
       overlay-class="overlay-test-class"
-      :show-title="showTitle"
-      :size="size"
-      data-backstop="modal-large"
+      data-backstop="modal"
     >
       <template slot="title">
         <cdr-text
-          tag="h1"
+          tag="h2"
           modifier="heading-serif-600"
+          class="modal-title"
         >
-          Added to Cart (is a common label) and let's make this longer so it
+          Terms & Conditions
         </cdr-text>
       </template>
-      <!-- eslint-disable-next-line -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</p>
 
       <!-- eslint-disable-next-line -->
-      <p v-if="contentLength === 'long'">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</p>
+      <cdr-text modifier="body-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>
 
       <!-- eslint-disable-next-line -->
-      <p v-if="contentLength === 'long'">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</p>
+      <cdr-text modifier="body-300" v-if="overflowContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>
+
+      <!-- eslint-disable-next-line -->
+      <cdr-text modifier="body-300" v-if="overflowContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dictum ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam non urna sit amet dolor euismod consequat vitae non nunc. Nullam vulputate enim ac pharetra sagittis. Curabitur volutpat, metus eu euismod finibus, neque turpis viverra dolor, at ornare justo libero a arcu. Suspendisse nec lectus id leo aliquam posuere id eu mauris. Aenean fermentum justo ex, vel sagittis nulla efficitur nec. Mauris aliquet urna id felis maximus, et molestie erat bibendum. Donec dolor purus, iaculis vitae tellus at, iaculis facilisis nibh. Pellentesque at ex sit amet eros elementum iaculis quis ut justo. Pellentesque consequat in sapien ac blandit. Donec ullamcorper lacus sed interdum auctor.</cdr-text>
     </cdr-modal>
 
     <cdr-button
       @click="opened = true"
       aria-haspopup="dialog"
-    >Open modal
+    >Launch modal
     </cdr-button>
 
     <cdr-text
       modifier="heading-sans-400"
       class="cdr-pt-space-one-x"
     >
-      Size
+      Content Options
     </cdr-text>
 
-    <cdr-radio
-      name="modal-width"
-      custom-value="medium"
-      v-model="size"
-    >Medium
-    </cdr-radio>
-
-    <cdr-radio
-      name="modal-width"
-      custom-value="large"
-      v-model="size"
-    >Large
-    </cdr-radio>
-
-    <cdr-text
-      modifier="heading-sans-400"
-      class="cdr-pt-space-one-x"
-    >
-      Content Length
-    </cdr-text>
-
-    <cdr-radio
-      name="modal-content-length"
-      custom-value="short"
-      v-model="contentLength"
-    >Short
-    </cdr-radio>
-
-    <cdr-radio
-      name="modal-content-length"
-      custom-value="long"
-      v-model="contentLength"
-    >Long
-    </cdr-radio>
-
-    <cdr-text
-      modifier="heading-sans-400"
-      class="cdr-pt-space-one-x"
-    >
-      Show Title
-    </cdr-text>
-
-    <cdr-radio
-      name="modal-show-title"
-      :custom-value="true"
-      v-model="showTitle"
-    >True
-    </cdr-radio>
-
-    <cdr-radio
-      name="modal-show-title"
-      :custom-value="false"
-      v-model="showTitle"
-    >False
-    </cdr-radio>
+    <cdr-checkbox v-model="overflowContent">
+      Overflow Content
+    </cdr-checkbox>
   </div>
 </template>
 
@@ -116,16 +64,12 @@ export default {
   },
   data() {
     return {
-      size: 'large',
       opened: this.$router.currentRoute.name === 'Modals',
-      showLabel: true,
-      contentLength: 'long',
-      showTitle: true,
+      overflowContent: false,
     };
   },
   methods: {
-    closed(e) {
-      console.log('closed', e);
+    closed() {
       this.opened = false;
     },
   },
@@ -133,4 +77,9 @@ export default {
 </script>
 
 <style>
+@media (min-width: 672px) {
+  .modal-example {
+    min-height: 80vh; /* fixes a safari display bug */
+  }
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div data-backstop="simple-card">
     <simple-card />
-    <hr/>
+    <hr>
     <complex-card />
   </div>
 </template>
