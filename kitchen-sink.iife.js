@@ -27586,7 +27586,7 @@ var cedar = (function () {
       var h = arguments[0];
       return h("nav", {
         "attrs": {
-          "aria-label": "Pagination Navigation"
+          "aria-label": "Pagination"
         }
       }, [h("ul", {
         "class": this.style['cdr-pagination']
