@@ -1,11 +1,12 @@
+import debounce from 'lodash-es/debounce';
 import tabbable from 'tabbable';
 import clsx from 'clsx';
+import { CdrBreakpointSm, CdrSpaceOneX, CdrSpaceTwoX } from '@rei/cdr-tokens';
 import style from './styles/CdrModal.scss';
 import onTransitionEnd from './onTransitionEnd';
 import CdrButton from '../button/CdrButton';
 import IconXLg from '../icon/comps/x-lg';
 import CdrText from '../text/CdrText';
-import size from '../../mixins/size';
 
 export default {
   name: 'CdrModal',
@@ -14,7 +15,6 @@ export default {
     IconXLg,
     CdrText,
   },
-  mixins: [size],
   props: {
     opened: {
       type: Boolean,
@@ -56,6 +56,11 @@ export default {
       focusHandler: null,
       reallyClosed: !this.opened,
       offset: null,
+      headerHeight: 0,
+      totalHeight: 0,
+      scrollHeight: 0,
+      offsetHeight: 0,
+      fullscreen: false,
     };
   },
   computed: {
@@ -67,7 +72,24 @@ export default {
       };
     },
     dialogClass() {
-      return `${this.style['cdr-modal__dialog']} ${this.size}`;
+      return `${this.style['cdr-modal__dialog']}`;
+    },
+    verticalSpace() {
+      // contentWrap vertical padding
+      const fullscreen = CdrSpaceTwoX;
+      const windowed = Number(CdrSpaceTwoX) + Number(CdrSpaceOneX);
+
+      return this.fullscreen
+        ? fullscreen
+        : windowed + fullscreen; // fullscreen, here, would account for outerWrap padding, which is the same CdrSpaceTwoX
+    },
+    scrollMaxHeight() {
+      return this.totalHeight
+        - this.headerHeight
+        - this.verticalSpace;
+    },
+    scrolling() {
+      return this.scrollHeight > this.offsetHeight;
     },
   },
   watch: {
@@ -82,9 +104,12 @@ export default {
   },
   mounted() {
     if (this.opened) {
-      this.addNoScroll();
-      this.addHandlers();
+      this.handleOpened();
     }
+
+    window.addEventListener('resize', debounce(() => {
+      this.measureContent();
+    }, 300));
   },
   beforeDestroy() {
     if (this.unsubscribe) this.unsubscribe();
@@ -93,6 +118,15 @@ export default {
     document.removeEventListener('keydown', this.keyHandler);
   },
   methods: {
+    measureContent() {
+      this.$nextTick(() => {
+        this.totalHeight = window.innerHeight;
+        this.fullscreen = window.innerWidth < CdrBreakpointSm;
+        this.headerHeight = this.$refs.header.offsetHeight;
+        this.scrollHeight = this.$refs.content.scrollHeight;
+        this.offsetHeight = this.$refs.content.offsetHeight;
+      });
+    },
     handleKeyDown({ key }) {
       switch (key) {
         case 'Escape':
@@ -124,13 +158,18 @@ export default {
       this.lastActive = activeElement;
 
       this.$nextTick(() => {
-        this.$refs.modal.focus();
+        if (this.$refs.modal) this.$refs.modal.focus(); // wrapped in if so testing error isn't thrown
+        this.measureContent();
         this.addHandlers();
 
         setTimeout(() => {
           // for some reason Safari scrolls the wrapper down a bit?
           // doesn't work without setTimeout for some unknown reason
-          this.$refs.wrapper.scrollTop = 0;
+          if (this.$refs.wrapper) this.$refs.wrapper.scrollTop = 0;
+
+          // there is a race condition for measuring overflow when modal defaults to open,
+          // this seems to cover that
+          this.measureContent();
         });
       });
     },
@@ -214,9 +253,6 @@ export default {
       dialogClass,
       contentClass,
       reallyClosed,
-      $slots: {
-        default: defaultSlot,
-      },
     } = this;
     return (
       <div
@@ -249,7 +285,7 @@ export default {
             role="dialog"
             aria-modal={!!opened}
             aria-label={label}
-            {...{ attrs: this.dialogAttrs || {} }}
+            {...{ attrs: this.dialogAttrs }}
           >
             <div
               class={clsx(this.style['cdr-modal__innerWrap'], contentClass)}
@@ -260,7 +296,10 @@ export default {
             >
               <section>
                 <div class={this.style['cdr-modal__content']}>
-                  <div class={this.style['cdr-modal__header']}>
+                  <div
+                    class={this.style['cdr-modal__header']}
+                    ref="header"
+                  >
                     <div class={this.style['cdr-modal__title']}>
                       {
                         this.showTitle && this.$slots.title
@@ -279,26 +318,37 @@ export default {
                     <cdr-button
                       id="close-modal-button"
                       class={this.style['cdr-modal__close-button']}
-                      icon-only={true}
+                      icon-only
+                      with-background={true}
                       on-click={onClick}
-                      aria-label="close"
+                      aria-label="Close"
                     >
                       <IconXLg
                         slot="icon"
-                        class={this.style['cdr-button__icon']}
+                        class="cdr-button__icon"
                         inherit-color
                       />
                     </cdr-button>
                   </div>
                   <div
                     role="document"
-                    tabindex="0"
                     class={this.style['cdr-modal__text']}
                   >
-                    <div class={this.style['cdr-modal__text-content']}>
-                      {defaultSlot}
+                    <div
+                      class={this.style['cdr-modal__text-content']}
+                      style={ { maxHeight: `${this.scrollMaxHeight}px` } }
+                      ref="content"
+                      tabindex="0"
+                    >
+                      {this.$slots.default}
                     </div>
-                    <div class={this.style['cdr-modal__text-fade']} />
+                    {
+                      this.scrolling && (
+                        <div
+                        class={this.style['cdr-modal__text-fade']}
+                      />
+                      )
+                    }
                   </div>
                 </div>
               </section>
