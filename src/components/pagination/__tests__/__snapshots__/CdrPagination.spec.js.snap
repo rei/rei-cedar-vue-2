@@ -2,7 +2,7 @@
 
 exports[`CdrPagination renders correctly 1`] = `
 <nav
-  aria-label="Pagination Navigation"
+  aria-label="Pagination"
 >
   <ul
     class="cdr-pagination"
@@ -193,7 +193,7 @@ exports[`CdrPagination renders correctly 1`] = `
 
 exports[`CdrPagination renders scoped slot correctly 1`] = `
 <nav
-  aria-label="Pagination Navigation"
+  aria-label="Pagination"
 >
   <ul
     class="cdr-pagination"
