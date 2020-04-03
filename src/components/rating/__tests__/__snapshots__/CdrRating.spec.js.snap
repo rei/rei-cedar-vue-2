@@ -42,7 +42,7 @@ exports[`CdrRating renders correctly 1`] = `
   <span
     class="cdr-rating__caption-sr"
   >
-    rated 3.25 out of 5 with 100 reviews
+    100 reviews with an average rating of 3.25 out of 5 stars
   </span>
 </div>
 `;
