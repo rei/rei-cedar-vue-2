@@ -86,11 +86,32 @@ export default {
       }
       return remainder;
     },
-    ratingSrText() {
-      return `rated ${this.rounded} out of 5`;
-    },
-    countSrText() {
-      return this.count !== null ? ` with ${this.count} reviews` : '';
+    srText() {
+      // linked
+      if (this.href) {
+        // no reviews
+        if (this.count === 0 || this.count === '0') {
+          return 'No reviews yet; be the first!';
+        }
+        // no count
+        if (this.count === null) {
+          return `View the reviews with an average rating of ${this.rounded} out of 5 stars`;
+        }
+        // default
+        return `View the ${this.count} reviews with an average rating of ${this.rounded} out of 5 stars`; // eslint-disable-line max-len
+      }
+
+      // non-linked
+      // no reviews
+      if (this.count === 0 || this.count === '0') {
+        return '0 reviews';
+      }
+      // no count
+      if (this.count === null) {
+        return `Rated ${this.rounded} out of 5 stars`;
+      }
+      // default
+      return `${this.count} reviews with an average rating of ${this.rounded} out of 5 stars`;
     },
   },
   render() {
@@ -153,7 +174,7 @@ export default {
         }
 
         <span class={this.style['cdr-rating__caption-sr']}>
-          { this.ratingSrText }{ this.countSrText }
+          { this.srText }
         </span>
       </Component>
     );
