@@ -50,10 +50,21 @@
   }
 
   &__button {
+    opacity: 0;
     position: absolute;
     top: 0;
-    z-index: 20;
+    z-index: -1;
+
+    & > :global(.cdr-tabs__button--active) {
+      opacity: 1;
+      z-index: 20; 
+    }
   }
+
+  // & > :global(cdr-tabs__button--active) {
+  //   opacity: 1;
+  //   z-index: 20;
+  // }
 
   &__nav-scroll-left {
     left: 0;
@@ -199,4 +210,9 @@
       margin-right: auto;
     }
   }
+}
+
+:global(.cdr-tabs__button--active) {
+  opacity: 1;
+  z-index: 20;
 }

@@ -1,6 +1,7 @@
 import debounce from 'lodash-es/debounce';
 import clsx from 'clsx';
 import modifier from '../../mixins/modifier';
+import { CdrSpaceOneX } from '@rei/cdr-tokens';
 import CdrButton from '../button/CdrButton';
 import CdrIcon from '../icon/CdrIcon';
 import size from '../../mixins/size';
@@ -87,11 +88,6 @@ export default {
       this.calculateOverflow();
       this.updateUnderline();
     }, 500));
-    // Check for header overflow on widow resize for gradient behavior.
-    this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
-      this.calculateOverflow();
-      this.updateUnderline();
-    }, 250));
   },
   methods: {
     getNextTab(startIndex) {
@@ -190,11 +186,16 @@ export default {
       let totalWidth = 0; // total width of elements calculated
       const headerElements = Array.from(this.$refs.cdrTabsHeader.children); // tabs
       const endPage = this.headerScrollWidth - this.headerWidth; // end scroll position is known
-      const tabSpace = 16; // space between each tab
+      const tabSpace = Number(CdrSpaceOneX); // space between each tab
+      const buttonSize = this.$refs.slideRight
+        ? this.$refs.slideRight.$el.offsetWidth : this.$refs.slideLeft.offsetWidth;
       const pages = [{ tabIndex: 0, offsetLeft: 0 }]; // beginning scroll position is known
 
       for (let i = 0; i < headerElements.length; i += 1) {
-        const buttonSpace = pages.length < 2 ? 40 : 80; // increase button space after first page added (not including far left scroll)
+        /*
+          buttonSpace will double if there are going to be both left and right pagination buttons
+        */
+        const buttonSpace = pages.length < 2 ? buttonSize : (buttonSize * 2);
         const elem = headerElements[i];
         totalWidth += (elem.offsetWidth + tabSpace);
 
@@ -208,7 +209,7 @@ export default {
 
         if (width > this.headerWidth - buttonSpace) {
           // a new page
-          pages.push({ tabIndex: i, offsetLeft: elem.offsetLeft - 40 }); // align where left scroll button ends
+          pages.push({ tabIndex: i, offsetLeft: elem.offsetLeft - buttonSize }); // align where left scroll button ends
           width = elem.offsetWidth; // reset for new page
         }
 
@@ -280,51 +281,47 @@ export default {
           vOn:keyup_left={this.leftArrowNav}
           vOn:keydown_down_prevent={this.handleDownArrowNav}
         >
-          {
-            this.overflowLeft && (
-              <cdr-button
-                icon-only
-                with-background={true}
-                aria-label=""
-                tabIndex="-1"
-                vOn:click={this.slideLeft}
-                class={clsx(
-                  this.style['cdr-tabs__button'],
-                  this.style['cdr-tabs__nav-scroll-left'],
-                )}
-              >
-                <cdr-icon
-                  use="#caret-left"
-                  inherit-color
-                  slot="icon"
-                  class="cdr-button__icon"
-                />
-              </cdr-button>
-            )
-          }
+          <cdr-button
+            icon-only
+            with-background={true}
+            aria-label=""
+            tabIndex="-1"
+            vOn:click={this.slideLeft}
+            ref="slideLeft"
+            class={clsx(
+              this.style['cdr-tabs__button'],
+              this.style['cdr-tabs__nav-scroll-left'],
+              { 'cdr-tabs__button--active': this.overflowLeft },
+            )}
+          >
+            <cdr-icon
+              use="#caret-left"
+              inherit-color
+              slot="icon"
+              class="cdr-button__icon"
+            />
+          </cdr-button>
 
-          {
-            this.overflowRight && (
-              <cdr-button
-                icon-only
-                with-background={true}
-                aria-label=""
-                tabIndex="-1"
-                vOn:click={this.slideRight}
-                class={clsx(
-                  this.style['cdr-tabs__button'],
-                  this.style['cdr-tabs__nav-scroll-right'],
-                )}
-              >
-                <cdr-icon
-                  use="#caret-right"
-                  inherit-color
-                  slot="icon"
-                  class="cdr-button__icon"
-                />
-              </cdr-button>
-            )
-          }
+          <cdr-button
+            icon-only
+            with-background={true}
+            aria-label=""
+            tabIndex="-1"
+            vOn:click={this.slideRight}
+            ref="slideRight"
+            class={clsx(
+              this.style['cdr-tabs__button'],
+              this.style['cdr-tabs__nav-scroll-right'],
+              { 'cdr-tabs__button--active': this.overflowRight },
+            )}
+          >
+            <cdr-icon
+              use="#caret-right"
+              inherit-color
+              slot="icon"
+              class="cdr-button__icon"
+            />
+          </cdr-button>
 
           <nav
             class={clsx(
