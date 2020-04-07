@@ -36,8 +36,6 @@ export default {
       pageIndex: 0,
       headerWidth: 0,
       headerScrollWidth: 0,
-      // overflowLeft: false,
-      // overflowRight: false,
       animationInProgress: false,
       style,
     };
@@ -173,13 +171,6 @@ export default {
       this.pageIndex += 1;
     },
     slideLeft() {
-      // if (Math.abs(this.leftPosition) < this.headerWidth) {
-      //   this.leftPosition = 0;
-      // } else {
-      //   this.leftPosition += this.headerWidth;
-      // }
-
-      // this.calculateOverflow();
       this.pageIndex -= 1;
     },
     calculateOverflow() {
@@ -192,44 +183,39 @@ export default {
         this.containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
       }
 
-      // this.overflowRight = ((Math.abs(this.leftPosition) + this.headerWidth) < this.headerScrollWidth);
-      // this.overflowLeft = !!this.leftPosition;
+      if (this.headerOverflow) this.calculatePagination();
+    },
+    calculatePagination() {
+      let width = 0; // determines when new page occurs
+      let totalWidth = 0; // total width of elements calculated
+      const headerElements = Array.from(this.$refs.cdrTabsHeader.children); // tabs
+      const endPage = this.headerScrollWidth - this.headerWidth; // end scroll position is known
+      const tabSpace = 16; // space between each tab
+      const pages = [{ tabIndex: 0, offsetLeft: 0 }]; // beginning scroll position is known
 
-      if (this.headerScrollWidth > this.headerWidth) { // only do this if scrolling
-        let width = 0;
-        let totalWidth = 0;
-        let headerElements = [];
-        let buttonSpace = 40;
-        const end = this.headerScrollWidth - this.headerWidth;
-        const tabSpace = 16;
-        const pages = [{ tabIndex: 0, offsetLeft: 0 }]; // far left
+      for (let i = 0; i < headerElements.length; i += 1) {
+        const buttonSpace = pages.length < 2 ? 40 : 80; // increase button space after first page added (not including far left scroll)
+        const elem = headerElements[i];
+        totalWidth += (elem.offsetWidth + tabSpace);
 
-        headerElements = Array.from(this.$refs.cdrTabsHeader.children);
-
-        for (let i = 0; i < headerElements.length; i += 1) {
-          console.log('totalWidth', totalWidth);
-          const elem = headerElements[i];
-          const elemWidth = elem.offsetWidth + tabSpace;
-          width += elemWidth;
-          totalWidth += elemWidth;
-
-          // if (totalWidth > (this.headerScrollWidth - this.headerWidth)) break;
-          if (totalWidth > end) {
-            console.log('totalWidth greater than end');
-            pages.push({ tabIndex: i, offsetLeft: end });
-            break;
-          }
-
-          if (width > this.headerWidth - buttonSpace) { // subtract 40 for button space
-            console.log('pushing to array');
-            pages.push({ tabIndex: i, offsetLeft: elem.offsetLeft - 40 });
-            width = elem.offsetWidth + 16; // new page, add this elem to width calc
-            buttonSpace = 80; // two buttons
-          }
+        if (totalWidth > endPage) {
+          // the end page breaks the loop
+          pages.push({ tabIndex: i, offsetLeft: endPage });
+          break;
         }
 
-        this.pages = pages;
+        width += elem.offsetWidth; // add elem width but not margin for checks
+
+        if (width > this.headerWidth - buttonSpace) {
+          // a new page
+          pages.push({ tabIndex: i, offsetLeft: elem.offsetLeft - 40 }); // align where left scroll button ends
+          width = elem.offsetWidth; // reset for new page
+        }
+
+        width += tabSpace; // add margin for [i] element
       }
+
+      this.pages = pages;
     },
     updateUnderline() {
       const elements = Array.from(this.$refs.cdrTabsHeader.children);
