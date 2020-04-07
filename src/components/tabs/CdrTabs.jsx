@@ -56,7 +56,6 @@ export default {
     },
     leftPosition() {
       return this.pageIndex ? `-${this.pages[this.pageIndex].offsetLeft}` : 0;
-      // return '-673';
     },
     overflowLeft() {
       return this.pages.length > 0 && this.pageIndex !== 0;
@@ -173,6 +172,8 @@ export default {
       if (this.$refs.cdrTabsHeader) {
         this.headerWidth = this.$refs.cdrTabsHeader.offsetWidth;
         this.headerScrollWidth = this.$refs.cdrTabsHeader.scrollWidth;
+        this.pageIndex = 0;
+        this.pages = [];
       }
 
       if (this.$refs.cdrTabsContainer) {
