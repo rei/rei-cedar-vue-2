@@ -1,7 +1,7 @@
 import debounce from 'lodash-es/debounce';
 import clsx from 'clsx';
-import modifier from '../../mixins/modifier';
 import { CdrSpaceOneX } from '@rei/cdr-tokens';
+import modifier from '../../mixins/modifier';
 import CdrButton from '../button/CdrButton';
 import CdrIcon from '../icon/CdrIcon';
 import size from '../../mixins/size';
@@ -83,7 +83,6 @@ export default {
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
-      // this.headerWidth = this.getHeaderWidth();
       this.calculateOverflow();
       this.updateUnderline();
     }, 500));
@@ -130,7 +129,6 @@ export default {
     changeTab(newIndex) {
       const oldIndex = this.activeTabIndex;
 
-      this.hideScrollBar();
       if (newIndex > oldIndex) {
         this.tabs[oldIndex].setAnimationDirection('exit-left');
         this.tabs[oldIndex].setActive(false);
@@ -235,13 +233,6 @@ export default {
     },
     setFocusToActiveTabHeader() {
       this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
-    },
-    hideScrollBar() {
-      const styleRef = this.$refs.cdrTabsContainer.style;
-      window.addEventListener('transitionend', () => {
-        styleRef.setProperty('overflow-x', 'unset');
-      }, { once: true });
-      styleRef.setProperty('overflow-x', 'hidden');
     },
     getTabEl(tab) {
       return tab.disabled ? (
