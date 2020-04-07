@@ -27588,7 +27588,7 @@ var cedar = (function () {
         "attrs": {
           "aria-label": "Pagination"
         }
-      }, [h("ul", {
+      }, [h("ol", {
         "class": this.style['cdr-pagination']
       }, [this.prevEl, this.desktopEl, this.mobileEl, this.nextEl])]);
     }
