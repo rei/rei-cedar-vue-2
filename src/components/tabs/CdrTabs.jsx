@@ -56,13 +56,14 @@ export default {
       return this.headerScrollWidth > this.headerWidth;
     },
     leftPosition() {
-      return this.pageIndex ? `-${this.pages[this.pageIndex].offsetLeft - 40}` : 0;
+      return this.pageIndex ? `-${this.pages[this.pageIndex].offsetLeft}` : 0;
+      // return '-673';
     },
     overflowLeft() {
       return this.pages.length > 0 && this.pageIndex !== 0;
     },
     overflowRight() {
-      return this.pages.length > 0;
+      return this.pages.length > 0 && this.pageIndex !== this.pages.length - 1;
     },
   },
   mounted() {
@@ -194,28 +195,39 @@ export default {
       // this.overflowRight = ((Math.abs(this.leftPosition) + this.headerWidth) < this.headerScrollWidth);
       // this.overflowLeft = !!this.leftPosition;
 
-      if (this.headerScrollWidth > this.headerWidth) {
+      if (this.headerScrollWidth > this.headerWidth) { // only do this if scrolling
         let width = 0;
+        let totalWidth = 0;
         let headerElements = [];
         let buttonSpace = 40;
-        const pages = [{ offsetLeft: 0 }];
+        const end = this.headerScrollWidth - this.headerWidth;
+        const tabSpace = 16;
+        const pages = [{ tabIndex: 0, offsetLeft: 0 }]; // far left
 
-        if (this.$refs.cdrTabsHeader) {
-          headerElements = Array.from(this.$refs.cdrTabsHeader.children);
-        }
+        headerElements = Array.from(this.$refs.cdrTabsHeader.children);
 
         for (let i = 0; i < headerElements.length; i += 1) {
-          // console.log('loop');
+          console.log('totalWidth', totalWidth);
           const elem = headerElements[i];
-          width += elem.offsetWidth + 16; // accounts for margin 16px
-          // console.log('width', width);
+          const elemWidth = elem.offsetWidth + tabSpace;
+          width += elemWidth;
+          totalWidth += elemWidth;
+
+          // if (totalWidth > (this.headerScrollWidth - this.headerWidth)) break;
+          if (totalWidth > end) {
+            console.log('totalWidth greater than end');
+            pages.push({ tabIndex: i, offsetLeft: end });
+            break;
+          }
+
           if (width > this.headerWidth - buttonSpace) { // subtract 40 for button space
-            pages.push({ tabIndex: i, offsetLeft: elem.offsetLeft });
-            width = 0;
+            console.log('pushing to array');
+            pages.push({ tabIndex: i, offsetLeft: elem.offsetLeft - 40 });
+            width = elem.offsetWidth + 16; // new page, add this elem to width calc
             buttonSpace = 80; // two buttons
           }
         }
-        console.log('pages', pages);
+
         this.pages = pages;
       }
     },
