@@ -16,8 +16,8 @@
       data-backstop="rating-secondary-linked"
     />
     <cdr-rating
-      rating="4.5"
-      count="21"
+      rating="0"
+      count="0"
       href="https://www.rei.com"
       data-backstop="rating-primary-linked"
     />

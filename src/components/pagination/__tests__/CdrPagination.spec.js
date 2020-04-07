@@ -249,12 +249,12 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
     
     // individual links
-    let link = wrapper.findAll('ul > li > a').at(1);
+    let link = wrapper.findAll('ol > li > a').at(1);
     link.trigger('click'); // 5 -> 1
     expect(wrapper.emitted().navigate[4][0]).toBe(1);
     expect(wrapper.emitted().navigate[4][1]).toBe('?page=1');
     expect(wrapper.emitted().navigate[4][2] instanceof Event).toBeTruthy();
-    let link2 = wrapper.findAll('ul > li > a').at(1);
+    let link2 = wrapper.findAll('ol > li > a').at(1);
     link2.trigger('click'); // 1 -> 2
     expect(wrapper.emitted().navigate[5][0]).toBe(2);
     expect(wrapper.emitted().navigate[5][1]).toBe('?page=2');

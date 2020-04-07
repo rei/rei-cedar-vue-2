@@ -380,13 +380,13 @@ export default {
   },
   render() {
     return (
-      <nav aria-label="Pagination Navigation">
-        <ul class={this.style['cdr-pagination']}>
+      <nav aria-label="Pagination">
+        <ol class={this.style['cdr-pagination']}>
           {this.prevEl}
           {this.desktopEl}
           {this.mobileEl}
           {this.nextEl}
-        </ul>
+        </ol>
       </nav>
     );
   },

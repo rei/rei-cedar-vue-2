@@ -65,37 +65,44 @@ describe('CdrRating', () => {
     expect(wrapper.is('a')).toBeTruthy();
   });
 
-  it('renders review text when count is 0', () => {
+  it('has correct screen reader text when linked', () => {
     const wrapper = shallowMount(CdrRating, {
       propsData: {
-        rating: 5,
-        count: 0,
+        rating: 3,
         href: 'rei.com'
       }
     });
-    expect(wrapper.contains('.cdr-rating__count')).toBe(true);
-    expect(wrapper.find('.cdr-rating__caption-sr').text()).toBe('rated 5 out of 5 with 0 reviews');
+    // no count
+    expect(wrapper.vm.srText).toBe('View the reviews with an average rating of 3 out of 5 stars');
+    // 0 count
+    wrapper.setProps({count: 0});
+    expect(wrapper.vm.srText).toBe('No reviews yet; be the first!');
+    wrapper.setProps({count: '0'});
+    expect(wrapper.vm.srText).toBe('No reviews yet; be the first!');
+    // normal count
+    wrapper.setProps({count: '100'});
+    expect(wrapper.vm.srText).toBe('View the 100 reviews with an average rating of 3 out of 5 stars');
+    wrapper.setProps({count: 100});
+    expect(wrapper.vm.srText).toBe('View the 100 reviews with an average rating of 3 out of 5 stars');
   });
-
-  it('renders review text when count is "0"', () => {
+  
+  it('has correct screen reader text', () => {
     const wrapper = shallowMount(CdrRating, {
       propsData: {
-        rating: 5,
-        count: "0",
-        href: 'rei.com'
+        rating: 3,
       }
     });
-    expect(wrapper.contains('.cdr-rating__count')).toBe(true);
-    expect(wrapper.find('.cdr-rating__caption-sr').text()).toBe('rated 5 out of 5 with 0 reviews');
-  });
-
-  it('renders no review text if count is not passed', () => {
-    const wrapper = shallowMount(CdrRating, {
-      propsData: {
-        rating: 5,
-      }
-    });
-    expect(wrapper.contains('.cdr-rating__count')).toBe(false);
-    expect(wrapper.find('.cdr-rating__caption-sr').text()).toBe('rated 5 out of 5');
+    // no count
+    expect(wrapper.vm.srText).toBe('Rated 3 out of 5 stars');
+    // 0 count
+    wrapper.setProps({count: 0});
+    expect(wrapper.vm.srText).toBe('0 reviews');
+    wrapper.setProps({count: '0'});
+    expect(wrapper.vm.srText).toBe('0 reviews');
+    // normal count
+    wrapper.setProps({count: '100'});
+    expect(wrapper.vm.srText).toBe('100 reviews with an average rating of 3 out of 5 stars');
+    wrapper.setProps({count: 100});
+    expect(wrapper.vm.srText).toBe('100 reviews with an average rating of 3 out of 5 stars');
   });
 });
