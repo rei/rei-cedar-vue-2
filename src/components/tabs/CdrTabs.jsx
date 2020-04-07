@@ -160,6 +160,9 @@ export default {
         this.changeTab(previousTab);
       }
     }, 300, { leading: true, trailing: false }),
+    slideTo(pageIndex, nextTab) {
+      // if (nextTab)
+    },
     slideRight() {
       this.pageIndex += 1;
     },
@@ -194,25 +197,27 @@ export default {
         /*
           buttonSpace will double if there are going to be both left and right pagination buttons
         */
-        const buttonSpace = pages.length < 2 ? buttonSize : (buttonSize * 2);
+        const buttonSpace = pages.length < 2 ? buttonSize : buttonSize * 2;
         const elem = headerElements[i];
-        totalWidth += (elem.offsetWidth + tabSpace);
-
-        if (totalWidth > endPage) {
-          // the end page breaks the loop
-          pages.push({ tabIndex: i, offsetLeft: endPage });
-          break;
-        }
 
         width += elem.offsetWidth; // add elem width but not margin for checks
 
         if (width > this.headerWidth - buttonSpace) {
-          // a new page
+          // we have a new page!
+
+          if ((this.headerScrollWidth - totalWidth) < (this.headerWidth - buttonSize)) {
+            // there is less that one page remaining!
+            pages.push({ tabIndex: i, offsetLeft: endPage });
+            break;
+          }
+
+          // more than one page remaining
           pages.push({ tabIndex: i, offsetLeft: elem.offsetLeft - buttonSize }); // align where left scroll button ends
           width = elem.offsetWidth; // reset for new page
         }
 
         width += tabSpace; // add margin for [i] element
+        totalWidth += (elem.offsetWidth + tabSpace);
       }
 
       this.pages = pages;
