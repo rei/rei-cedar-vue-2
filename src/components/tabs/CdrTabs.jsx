@@ -32,11 +32,12 @@ export default {
       overflowScrollX: 0,
       activeTabIndex: 0,
       containerWidth: 0,
-      leftPosition: 0,
+      pages: [],
+      pageIndex: 0,
       headerWidth: 0,
       headerScrollWidth: 0,
-      overflowLeft: false,
-      overflowRight: false,
+      // overflowLeft: false,
+      // overflowRight: false,
       animationInProgress: false,
       style,
     };
@@ -54,22 +55,15 @@ export default {
     headerOverflow() {
       return this.headerScrollWidth > this.headerWidth;
     },
-    // overflowLeft() {
-    //   return this.leftPosition !== 0;
-    // },
-    // overflowRight() {
-    //   // return ((this.leftPosition + this.headerWidth) < this.scrollWidth);
-    //   return (
-    //     this.leftPosition
-    //     && this.headerWidth
-    //     && this.
-    //   )
-    // },
-    // scrollDistance() {
-    //   return this.headerOverflow
-    //     && this.containerWidth
-    //     ? this.headerWidth - this.containerWidth : null;
-    // },
+    leftPosition() {
+      return this.pageIndex ? `-${this.pages[this.pageIndex].offsetLeft - 40}` : 0;
+    },
+    overflowLeft() {
+      return this.pages.length > 0 && this.pageIndex !== 0;
+    },
+    overflowRight() {
+      return this.pages.length > 0;
+    },
   },
   mounted() {
     this.tabs = (this.$slots.default || [])
@@ -175,25 +169,17 @@ export default {
       }
     }, 300, { leading: true, trailing: false }),
     slideRight() {
-      const test = Math.abs(this.leftPosition) + this.headerWidth;
-      const remaining = this.headerScrollWidth - test;
-
-      if (remaining < this.headerWidth) {
-        this.leftPosition -= remaining;
-      } else {
-        this.leftPosition -= this.headerWidth;
-      }
-
-      this.calculateOverflow();
+      this.pageIndex += 1;
     },
     slideLeft() {
-      if (Math.abs(this.leftPosition) < this.headerWidth) {
-        this.leftPosition = 0;
-      } else {
-        this.leftPosition += this.headerWidth;
-      }
+      // if (Math.abs(this.leftPosition) < this.headerWidth) {
+      //   this.leftPosition = 0;
+      // } else {
+      //   this.leftPosition += this.headerWidth;
+      // }
 
-      this.calculateOverflow();
+      // this.calculateOverflow();
+      this.pageIndex -= 1;
     },
     calculateOverflow() {
       if (this.$refs.cdrTabsHeader) {
@@ -205,8 +191,33 @@ export default {
         this.containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
       }
 
-      this.overflowRight = ((Math.abs(this.leftPosition) + this.headerWidth) < this.headerScrollWidth);
-      this.overflowLeft = !!this.leftPosition;
+      // this.overflowRight = ((Math.abs(this.leftPosition) + this.headerWidth) < this.headerScrollWidth);
+      // this.overflowLeft = !!this.leftPosition;
+
+      if (this.headerScrollWidth > this.headerWidth) {
+        let width = 0;
+        let headerElements = [];
+        let buttonSpace = 40;
+        const pages = [{ offsetLeft: 0 }];
+
+        if (this.$refs.cdrTabsHeader) {
+          headerElements = Array.from(this.$refs.cdrTabsHeader.children);
+        }
+
+        for (let i = 0; i < headerElements.length; i += 1) {
+          // console.log('loop');
+          const elem = headerElements[i];
+          width += elem.offsetWidth + 16; // accounts for margin 16px
+          // console.log('width', width);
+          if (width > this.headerWidth - buttonSpace) { // subtract 40 for button space
+            pages.push({ tabIndex: i, offsetLeft: elem.offsetLeft });
+            width = 0;
+            buttonSpace = 80; // two buttons
+          }
+        }
+        console.log('pages', pages);
+        this.pages = pages;
+      }
     },
     updateUnderline() {
       const elements = Array.from(this.$refs.cdrTabsHeader.children);
@@ -277,6 +288,7 @@ export default {
                 icon-only
                 with-background={true}
                 aria-label=""
+                tabIndex="-1"
                 vOn:click={this.slideLeft}
                 class={clsx(
                   this.style['cdr-tabs__button'],
@@ -299,6 +311,7 @@ export default {
                 icon-only
                 with-background={true}
                 aria-label=""
+                tabIndex="-1"
                 vOn:click={this.slideRight}
                 class={clsx(
                   this.style['cdr-tabs__button'],
