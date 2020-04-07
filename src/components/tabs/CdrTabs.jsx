@@ -32,7 +32,6 @@ export default {
       underlineScrollX: 0,
       overflowScrollX: 0,
       activeTabIndex: 0,
-      containerWidth: 0,
       pages: [],
       pageIndex: 0,
       headerWidth: 0,
@@ -175,10 +174,6 @@ export default {
         this.headerScrollWidth = this.$refs.cdrTabsHeader.scrollWidth;
         this.pageIndex = 0;
         this.pages = [];
-      }
-
-      if (this.$refs.cdrTabsContainer) {
-        this.containerWidth = this.$refs.cdrTabsContainer.offsetWidth;
       }
 
       if (this.headerOverflow) this.calculatePagination();
