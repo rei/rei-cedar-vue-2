@@ -62,6 +62,9 @@ export default {
     overflowRight() {
       return this.pages.length > 0 && this.pageIndex !== this.pages.length - 1;
     },
+    tabBreakpoints() {
+      return this.pages.map(page => page.tabIndex);
+    },
   },
   mounted() {
     this.tabs = (this.$slots.default || [])
@@ -77,13 +80,13 @@ export default {
     this.$nextTick(() => {
       this.calculateOverflow();
       setTimeout(() => {
-        this.updateUnderline();
+        // this.updateUnderline();
       }, 100);
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
       this.calculateOverflow();
-      this.updateUnderline();
+      // this.updateUnderline();
     }, 500));
   },
   methods: {
@@ -144,24 +147,25 @@ export default {
         }, 200);
       }
       this.activeTabIndex = newIndex;
-      this.updateUnderline();
+      // this.updateUnderline();
       this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
     },
     rightArrowNav: debounce(function handleRightArrow() {
       const nextTab = this.getNextTab(this.activeTabIndex + 1);
       if (nextTab !== -1) {
+        const shouldPaginate = this.tabBreakpoints.indexOf(nextTab);
+        if (shouldPaginate !== -1) this.pageIndex = shouldPaginate;
         this.changeTab(nextTab);
       }
     }, 300, { leading: true, trailing: false }),
     leftArrowNav: debounce(function handleLeftArrow() {
       const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
       if (previousTab !== -1) {
+        const shouldPaginate = this.tabBreakpoints.indexOf(previousTab);
+        if (shouldPaginate !== -1) this.pageIndex = shouldPaginate;
         this.changeTab(previousTab);
       }
     }, 300, { leading: true, trailing: false }),
-    slideTo(pageIndex, nextTab) {
-      // if (nextTab)
-    },
     slideRight() {
       this.pageIndex += 1;
     },
@@ -217,15 +221,15 @@ export default {
 
       this.pages = pages;
     },
-    updateUnderline() {
-      const elements = Array.from(this.$refs.cdrTabsHeader.children);
-      if (elements.length > 0) {
-        const activeTab = elements[this.activeTabIndex];
-        this.underlineOffsetX = activeTab.offsetLeft
-          - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
-        this.underlineWidth = activeTab.firstChild.offsetWidth;
-      }
-    },
+    // updateUnderline() {
+    //   const elements = Array.from(this.$refs.cdrTabsHeader.children);
+    //   if (elements.length > 0) {
+    //     const activeTab = elements[this.activeTabIndex];
+    //     this.underlineOffsetX = activeTab.offsetLeft
+    //       - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
+    //     this.underlineWidth = activeTab.firstChild.offsetWidth;
+    //   }
+    // },
     handleDownArrowNav() {
       if (!this.animationInProgress) {
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
