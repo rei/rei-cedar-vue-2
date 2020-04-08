@@ -80,13 +80,13 @@ export default {
     this.$nextTick(() => {
       this.calculateOverflow();
       setTimeout(() => {
-        // this.updateUnderline();
+        this.updateUnderline();
       }, 100);
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
       this.calculateOverflow();
-      // this.updateUnderline();
+      this.updateUnderline();
     }, 500));
   },
   methods: {
@@ -147,14 +147,17 @@ export default {
         }, 200);
       }
       this.activeTabIndex = newIndex;
-      // this.updateUnderline();
+      this.updateUnderline();
       this.$refs.cdrTabsHeader.children[this.activeTabIndex].children[0].focus();
     },
     rightArrowNav: debounce(function handleRightArrow() {
       const nextTab = this.getNextTab(this.activeTabIndex + 1);
       if (nextTab !== -1) {
         const shouldPaginate = this.tabBreakpoints.indexOf(nextTab);
-        if (shouldPaginate !== -1) this.pageIndex = shouldPaginate;
+        if (shouldPaginate !== -1) {
+          this.underlineWidth = 0;
+          this.pageIndex = shouldPaginate;
+        }
         this.changeTab(nextTab);
       }
     }, 300, { leading: true, trailing: false }),
@@ -168,6 +171,7 @@ export default {
     }, 300, { leading: true, trailing: false }),
     slideRight() {
       this.pageIndex += 1;
+      this.updateUnderline();
     },
     slideLeft() {
       this.pageIndex -= 1;
@@ -249,15 +253,14 @@ export default {
 
       return index === -1 ? 0 : index - 1;
     },
-    // updateUnderline() {
-    //   const elements = Array.from(this.$refs.cdrTabsHeader.children);
-    //   if (elements.length > 0) {
-    //     const activeTab = elements[this.activeTabIndex];
-    //     this.underlineOffsetX = activeTab.offsetLeft
-    //       - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
-    //     this.underlineWidth = activeTab.firstChild.offsetWidth;
-    //   }
-    // },
+    updateUnderline() {
+      const elements = Array.from(this.$refs.cdrTabsHeader.children);
+      if (elements.length > 0) {
+        const activeTab = elements[this.activeTabIndex];
+        this.underlineOffsetX = activeTab.offsetLeft + Number(this.leftPosition);
+        this.underlineWidth = activeTab.firstChild.offsetWidth;
+      }
+    },
     handleDownArrowNav() {
       if (!this.animationInProgress) {
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
