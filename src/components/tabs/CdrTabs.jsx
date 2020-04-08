@@ -226,13 +226,26 @@ export default {
       }
     },
     paginateOnLoad() {
-      const sortArray = [this.activeTab];
-      this.tabBreakpoints.forEach((tab) => {
-        sortArray.push(tab);
-      });
+      let index = '';
+      const sortArray = [];
+
+      for (let i = 0; i < this.tabBreakpoints.length; i += 1) {
+        if (this.activeTab === this.tabBreakpoints[i]) {
+          index = i;
+          break;
+        } else {
+          sortArray.push(this.tabBreakpoints[i]);
+        }
+      }
+
+      if (index !== '') {
+        return index;
+      }
+
+      sortArray.push(this.activeTab);
 
       sortArray.sort((a, b) => a - b);
-      const index = sortArray.indexOf(this.activeTab);
+      index = sortArray.indexOf(this.activeTab);
 
       return index === -1 ? 0 : index - 1;
     },
