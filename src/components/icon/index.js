@@ -49,6 +49,7 @@ export { default as IconCopy } from './comps/copy';
 export { default as IconCouponFill } from './comps/coupon-fill';
 export { default as IconCouponStroke } from './comps/coupon-stroke';
 export { default as IconCreditCard } from './comps/credit-card';
+export { default as IconCurbsidePickup } from './comps/curbside-pickup';
 export { default as IconDay } from './comps/day';
 export { default as IconDiving } from './comps/diving';
 export { default as IconDog } from './comps/dog';
