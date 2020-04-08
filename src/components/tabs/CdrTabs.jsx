@@ -220,6 +220,21 @@ export default {
       }
 
       this.pages = pages;
+
+      if (this.activeTab !== 0) {
+        this.pageIndex = this.paginateOnLoad();
+      }
+    },
+    paginateOnLoad() {
+      const sortArray = [this.activeTab];
+      this.tabBreakpoints.forEach((tab) => {
+        sortArray.push(tab);
+      });
+
+      sortArray.sort((a, b) => a - b);
+      const index = sortArray.indexOf(this.activeTab);
+
+      return index === -1 ? 0 : index - 1;
     },
     // updateUnderline() {
     //   const elements = Array.from(this.$refs.cdrTabsHeader.children);
