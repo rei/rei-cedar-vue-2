@@ -161,8 +161,8 @@ export default {
     leftArrowNav: debounce(function handleLeftArrow() {
       const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
       if (previousTab !== -1) {
-        const shouldPaginate = this.tabBreakpoints.indexOf(previousTab);
-        if (shouldPaginate !== -1) this.pageIndex = shouldPaginate;
+        const shouldPaginate = this.tabBreakpoints.indexOf(previousTab + 1);
+        if (shouldPaginate !== -1) this.pageIndex = shouldPaginate - 1;
         this.changeTab(previousTab);
       }
     }, 300, { leading: true, trailing: false }),
