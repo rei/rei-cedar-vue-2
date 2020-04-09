@@ -79,9 +79,7 @@ export default {
 
     this.$nextTick(() => {
       this.calculateOverflow();
-      setTimeout(() => {
-        this.updateUnderline();
-      }, 100);
+      this.updateUnderline();
     });
     // Check for header overflow on window resize for gradient behavior.
     window.addEventListener('resize', debounce(() => {
@@ -189,11 +187,10 @@ export default {
       if (this.$refs.cdrTabsHeader) {
         this.headerWidth = this.$refs.cdrTabsHeader.offsetWidth;
         this.headerScrollWidth = this.$refs.cdrTabsHeader.scrollWidth;
-        this.pageIndex = 0;
-        this.pages = [];
       }
 
       if (this.headerOverflow) this.calculatePagination();
+      this.updateUnderline();
     },
     calculatePagination() {
       let width = 0; // determines when new page occurs
@@ -233,10 +230,7 @@ export default {
       }
 
       this.pages = pages;
-
-      if (this.activeTab !== 0) {
-        this.pageIndex = this.paginateOnLoad();
-      }
+      this.pageIndex = this.paginateOnLoad();
     },
     paginateOnLoad() {
       let index = '';
@@ -263,11 +257,22 @@ export default {
       return index === -1 ? 0 : index - 1;
     },
     updateUnderline() {
+      console.log('updateUnderline');
       const elements = Array.from(this.$refs.cdrTabsHeader.children);
       if (elements.length > 0) {
         const activeTab = elements[this.activeTabIndex];
         this.underlineOffsetX = activeTab.offsetLeft + Number(this.leftPosition);
-        this.underlineWidth = activeTab.firstChild.offsetWidth;
+        this.underlineWidth = this.shouldHideUnderline() ? 0 : activeTab.firstChild.offsetWidth;
+      }
+    },
+    shouldHideUnderline() {
+      return this.pages[this.pageIndex + 1] === undefined
+        ? false
+        : this.activeTabIndex >= this.pages[this.pageIndex + 1].tabIndex;
+    },
+    animationEnd(event) {
+      if (event.propertyName === 'left') {
+        this.updateUnderline();
       }
     },
     handleDownArrowNav() {
@@ -308,6 +313,7 @@ export default {
         class={clsx(this.style[this.baseClass], this.modifierClass, this.sizeClass)}
         ref="cdrTabsContainer"
         style={{ height: this.height }}
+        vOn:transitionend={this.animationEnd}
       >
         <div
           class={clsx(
