@@ -18,6 +18,10 @@ export default {
       type: String,
       default: '#',
     },
+    inheritColor: {
+      type: Boolean,
+      default: false,
+    },
     /** @ignore */
     target: String,
     /** @ignore */
@@ -38,6 +42,9 @@ export default {
       }
       return this.rel;
     },
+    inheritColorClass() {
+      return this.inheritColor ? this.style['cdr-link--inherit-color'] : '';
+    },
   },
   render() {
     const Component = this.tag;
@@ -46,6 +53,7 @@ export default {
         this.style[this.baseClass],
         this.modifierClass,
         this.space,
+        this.inheritColorClass,
       )}
       target={this.target}
       rel={this.computedRel}
