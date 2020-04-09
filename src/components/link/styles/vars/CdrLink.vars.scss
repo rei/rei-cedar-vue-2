@@ -18,27 +18,17 @@
   /* States
     ---------- */
 
-  &:hover,
   &:active,
   &:focus {
-    outline: none;
-    text-decoration: underline;
-  }
-
-  &:visited {
-    color: $cdr-color-text-link-visited;
+    color: $cdr-color-text-link-active;
   }
 
   &:hover {
     color: $cdr-color-text-link-hover;
-  }
-
-  &:active {
-    color: $cdr-color-text-link-active;
+    text-decoration: none;
   }
 
   &:focus {
-    color: $cdr-color-text-link-active;
     outline: $default-outline;
     outline-color: -webkit-focus-ring-color;
     outline-offset: 0;
