@@ -51,3 +51,5 @@ public/*.js
 public/*.map
 public/*.css
 src/**/package-lock\.json
+
+attest-nightwatchjs-*.tgz
