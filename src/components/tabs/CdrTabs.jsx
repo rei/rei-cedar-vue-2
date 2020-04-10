@@ -62,9 +62,6 @@ export default {
     overflowRight() {
       return this.pages.length > 0 && this.pageIndex !== this.pages.length - 1;
     },
-    tabBreakpoints() {
-      return this.pages.map(page => page.tabIndex);
-    },
   },
   mounted() {
     this.tabs = (this.$slots.default || [])
@@ -150,42 +147,29 @@ export default {
     },
     rightArrowNav: debounce(function handleRightArrow() {
       const nextTab = this.getNextTab(this.activeTabIndex + 1);
-      if (nextTab !== -1) {
-        const shouldPaginate = this.tabBreakpoints.indexOf(nextTab);
-        if (shouldPaginate !== -1) {
-          this.underlineWidth = 0;
-          this.pageIndex = shouldPaginate;
-        }
-        this.changeTab(nextTab);
+      const nextTabPage = this.tabPages[nextTab];
+
+      if (nextTabPage !== this.pageIndex) {
+        this.underlineWidth = 0;
+        this.pageIndex = nextTabPage;
       }
+      this.changeTab(nextTab);
     }, 300, { leading: true, trailing: false }),
     leftArrowNav: debounce(function handleLeftArrow() {
       const previousTab = this.getPreviousTab(this.activeTabIndex - 1);
-      if (previousTab !== -1) {
-        if (previousTab === this.tabs.length - 1) {
-          this.underlineWidth = 0;
-          this.pageIndex = this.tabBreakpoints.length - 1;
-        } else {
-          // check alignment
+      const previousTabPage = this.tabPages[previousTab];
 
-
-          const shouldPaginate = this.tabBreakpoints.indexOf(previousTab + 1);
-          if (shouldPaginate !== -1) {
-            this.underlineWidth = 0;
-            // this.paginateOnLoad();
-            this.pageIndex = shouldPaginate - 1;
-          }
-        }
-        this.changeTab(previousTab);
+      if (previousTabPage !== this.pageIndex) {
+        this.underlineWidth = 0;
+        this.pageIndex = previousTabPage;
       }
+      this.changeTab(previousTab);
     }, 300, { leading: true, trailing: false }),
     slideRight() {
       this.pageIndex += 1;
-      this.updateUnderline();
     },
     slideLeft() {
       this.pageIndex -= 1;
-      this.updateUnderline();
     },
     calculateOverflow() {
       if (this.$refs.cdrTabsHeader) {
@@ -222,6 +206,8 @@ export default {
           if ((this.headerScrollWidth - totalWidth) < (this.headerWidth - buttonSize)) {
             // there is less that one page remaining!
             pages.push({ tabIndex: i, offsetLeft: endPage });
+
+            // add remaining items to tabPages
             for (let k = i; k < headerElements.length; k += 1) {
               tabPages[k] = pages.length - 1;
             }
@@ -249,13 +235,9 @@ export default {
       if (elements.length > 0) {
         const activeTab = elements[this.activeTabIndex];
         this.underlineOffsetX = activeTab.offsetLeft + Number(this.leftPosition);
-        this.underlineWidth = this.shouldHideUnderline() ? 0 : activeTab.firstChild.offsetWidth;
+        this.underlineWidth = this.tabPages[this.activeTabIndex] > this.pageIndex
+          ? 0 : activeTab.firstChild.offsetWidth;
       }
-    },
-    shouldHideUnderline() {
-      return this.pages[this.pageIndex + 1] === undefined
-        ? false
-        : this.activeTabIndex >= this.pages[this.pageIndex + 1].tabIndex;
     },
     animationEnd(event) {
       if (event.propertyName === 'left') {
