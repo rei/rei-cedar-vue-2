@@ -23,3 +23,15 @@
 .cdr-link--standalone {
   @include cdr-link-standalone-mixin;
 }
+
+.cdr-link--inherit-color {
+  fill: inherit;
+  color: inherit;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: inherit;
+    fill: inherit;
+  }
+}

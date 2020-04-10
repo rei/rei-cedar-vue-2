@@ -10,14 +10,23 @@
 
   &--brand {
     @include cdr-cta-brand-mixin;
+    
+    &.cdr-cta--elevated {
+      @include cdr-cta-brand-elevated-mixin;
+    }
   }
 
   &--dark {
     @include cdr-cta-dark-mixin;
+
+    &.cdr-cta--elevated {
+      @include cdr-cta-dark-elevated-mixin;
+    }
   }
 
   &--light {
     @include cdr-cta-light-mixin;
+
     &.cdr-cta--elevated {
       @include cdr-cta-light-elevated-mixin;
     }
@@ -25,10 +34,10 @@
 
   &--sale {
     @include cdr-cta-sale-mixin;
-  }
 
-  &--elevated {
-    @include cdr-cta-elevated-mixin;
+    &.cdr-cta--elevated {
+      @include cdr-cta-sale-elevated-mixin;
+    }
   }
 
   /* Full Width
