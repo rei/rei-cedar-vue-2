@@ -25,7 +25,7 @@
         size="small"
       >
         <cdr-tab-panel
-          v-for="tab in tabs.slice(0, 5)"
+          v-for="tab in tabs"
           :key="tab"
           :name="tab"
           :id="'tab-panel-small-' + tab"

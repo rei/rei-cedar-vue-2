@@ -25,24 +25,9 @@
   flex-flow: column;
   height: 500px;
 
-  // https://davidwalsh.name/osx-overflow
-  ::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
-  }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-  }
-
   &__header-container {
-    // overflow-x: auto;
     overflow-x: hidden;
     border-bottom: 1px solid $cdr-color-border-tab-keyline-rest;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    &::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
   }
 
   &__gradient-container {
@@ -52,7 +37,7 @@
   &__button {
     opacity: 0;
     position: absolute;
-    top: 0;
+    top: 2px;
     z-index: -1;
 
     & > :global(.cdr-tabs__button--active) {
@@ -60,11 +45,6 @@
       z-index: 20; 
     }
   }
-
-  // & > :global(cdr-tabs__button--active) {
-  //   opacity: 1;
-  //   z-index: 20;
-  // }
 
   &__nav-scroll-left {
     left: 0;
@@ -81,7 +61,7 @@
 
     padding: 0;
     position: relative;
-    transition: left 300ms $cdr-timing-function-ease-out;
+    transition: left $cdr-duration-3-x $cdr-timing-function-ease-out;
 
     &-gradient-left::before {
       opacity: 1;
@@ -180,6 +160,9 @@
       & + & {
         margin-left: $cdr-space-half-x;
       }
+    }
+    .cdr-tabs__button {
+      top: -5px;
     }
   }
 

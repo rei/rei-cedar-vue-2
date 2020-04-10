@@ -244,6 +244,9 @@ export default {
         this.updateUnderline();
       }
     },
+    scrolling(event) {
+      console.log('scrolling', event);
+    },
     handleDownArrowNav() {
       if (!this.animationInProgress) {
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
@@ -283,6 +286,7 @@ export default {
         ref="cdrTabsContainer"
         style={{ height: this.height }}
         vOn:transitionend={this.animationEnd}
+        vOn:scroll={this.scrolling}
       >
         <div
           class={clsx(
@@ -295,7 +299,7 @@ export default {
           <cdr-button
             icon-only
             with-background={true}
-            aria-label=""
+            aria-hidden="true"
             tabIndex="-1"
             vOn:click={this.slideLeft}
             ref="slideLeft"
@@ -316,7 +320,7 @@ export default {
           <cdr-button
             icon-only
             with-background={true}
-            aria-label=""
+            aria-hidden="true"
             tabIndex="-1"
             vOn:click={this.slideRight}
             ref="slideRight"
