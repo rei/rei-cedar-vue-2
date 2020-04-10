@@ -235,7 +235,7 @@ export default {
       if (elements.length > 0) {
         const activeTab = elements[this.activeTabIndex];
         this.underlineOffsetX = activeTab.offsetLeft + Number(this.leftPosition);
-        this.underlineWidth = this.tabPages[this.activeTabIndex] > this.pageIndex
+        this.underlineWidth = this.tabPages[this.activeTabIndex] !== this.pageIndex
           ? 0 : activeTab.firstChild.offsetWidth;
       }
     },
