@@ -80,13 +80,14 @@
   &:hover,
   &:focus {
     color: $cdr-color-text-button-primary-hover;
+    fill: $cdr-color-text-button-primary-hover;
     background-color: $cdr-color-background-button-primary-hover;
     box-shadow: 0 0 0 3px $cdr-color-border-button-primary-hover, $cdr-prominence-raised;
   }
 
-  &:active
-  {
+  &:active {
     color: $cdr-color-text-button-primary-active;
+    fill: $cdr-color-text-button-primary-active;
     background-color: $cdr-color-background-button-primary-active;
     box-shadow: 0 0 0 3px $cdr-color-border-button-primary-active, inset 0 0 1px 3px $cdr-color-border-button-primary-active-inset;
   }
@@ -111,12 +112,14 @@
   &:hover,
   &:focus {
     color: $cdr-color-text-button-secondary-hover;
+    fill: $cdr-color-text-button-secondary-hover;
     background-color: $cdr-color-background-button-secondary-hover;
     box-shadow: 0 0 0 3px $cdr-color-border-button-secondary-hover, $cdr-prominence-raised;
   }
 
   &:active {
     color: $cdr-color-text-button-secondary-active;
+    fill: $cdr-color-text-button-secondary-active;
     background-color: $cdr-color-background-button-secondary-active;
     box-shadow: 0 0 0 3px $cdr-color-border-button-secondary-active, inset 0 0 1px 3px $cdr-color-border-button-primary-active-inset;
   }
