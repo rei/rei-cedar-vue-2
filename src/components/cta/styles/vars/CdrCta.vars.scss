@@ -18,6 +18,8 @@
   text-transform: none;
   text-decoration: none;
 
+  transition: box-shadow $cdr-duration-1-x $cdr-timing-function-ease, background-color $cdr-duration-1-x $cdr-timing-function-ease;
+
   &:hover,
   &:active,
   &:focus {
@@ -51,7 +53,7 @@
 
 @mixin cdr-cta-brand-mixin() {
   background-color: $cdr-color-background-cta-brand-rest;
-  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-brand-rest;
+  box-shadow: 0 0 0 1px $cdr-color-border-cta-brand-rest;
   color: $cdr-color-text-cta-brand;
   fill: $cdr-color-text-cta-brand;
 
@@ -95,7 +97,7 @@
 
 @mixin cdr-cta-sale-mixin() {
   background-color: $cdr-color-background-cta-sale-rest;
-  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-sale-rest;
+  box-shadow: 0 0 0 1px $cdr-color-border-cta-sale-rest;
   color: $cdr-color-text-cta-sale;
   fill: $cdr-color-text-cta-sale;
 
@@ -119,7 +121,7 @@
 
 @mixin cdr-cta-light-mixin() {
   background-color: $cdr-color-background-cta-light-rest;
-  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-rest;
+  box-shadow: 0 0 0 1px $cdr-color-border-cta-light-rest;
   color: $cdr-color-text-cta-light;
   fill: $cdr-color-text-cta-light;
 
@@ -140,20 +142,7 @@
 }
 
 @mixin cdr-cta-light-elevated-mixin() {
-  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-rest, $cdr-prominence-elevated;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 0 3px $cdr-color-border-cta-light-active, $cdr-prominence-elevated;
-  }
-
-  &:active {
-    box-shadow: 0 0 0 3px $cdr-color-border-cta-light-hover, inset 0 0 1px 3px $cdr-color-border-cta-light-active-inset, $cdr-prominence-elevated;
-  }
-}
-
-@mixin cdr-cta-light-elevated-mixin() {
-  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-light-rest, $cdr-prominence-elevated;
+  box-shadow: 0 0 0 1px $cdr-color-border-cta-light-rest, $cdr-prominence-elevated;
 
   &:hover,
   &:focus {
@@ -166,7 +155,7 @@
 }
 
 @mixin cdr-cta-brand-elevated-mixin() {
-  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-brand-rest, $cdr-prominence-elevated;
+  box-shadow: 0 0 0 1px $cdr-color-border-cta-brand-rest, $cdr-prominence-elevated;
 
   &:hover,
   &:focus {
@@ -179,7 +168,7 @@
 }
 
 @mixin cdr-cta-dark-elevated-mixin() {
-  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-dark-rest, $cdr-prominence-elevated;
+  box-shadow: 0 0 0 1px $cdr-color-border-cta-dark-rest, $cdr-prominence-elevated;
 
   &:hover,
   &:focus {
@@ -192,7 +181,7 @@
 }
 
 @mixin cdr-cta-sale-elevated-mixin() {
-  box-shadow: inset 0 0 0 1px $cdr-color-border-cta-sale-rest, $cdr-prominence-elevated;
+  box-shadow: 0 0 0 1px $cdr-color-border-cta-sale-rest, $cdr-prominence-elevated;
 
   &:hover,
   &:focus {
