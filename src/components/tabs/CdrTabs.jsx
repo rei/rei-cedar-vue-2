@@ -36,7 +36,7 @@ export default {
       pageIndex: 0,
       headerWidth: 0,
       headerScrollWidth: 0,
-      animationInProgress: false,
+      tabPages: {},
       style,
     };
   },
@@ -166,9 +166,13 @@ export default {
           this.underlineWidth = 0;
           this.pageIndex = this.tabBreakpoints.length - 1;
         } else {
+          // check alignment
+
+
           const shouldPaginate = this.tabBreakpoints.indexOf(previousTab + 1);
           if (shouldPaginate !== -1) {
             this.underlineWidth = 0;
+            // this.paginateOnLoad();
             this.pageIndex = shouldPaginate - 1;
           }
         }
@@ -201,6 +205,7 @@ export default {
       const buttonSize = this.$refs.slideRight
         ? this.$refs.slideRight.$el.offsetWidth : this.$refs.slideLeft.offsetWidth;
       const pages = [{ tabIndex: 0, offsetLeft: 0 }]; // beginning scroll position is known
+      const tabPages = {};
 
       for (let i = 0; i < headerElements.length; i += 1) {
         /*
@@ -217,6 +222,9 @@ export default {
           if ((this.headerScrollWidth - totalWidth) < (this.headerWidth - buttonSize)) {
             // there is less that one page remaining!
             pages.push({ tabIndex: i, offsetLeft: endPage });
+            for (let k = i; k < headerElements.length; k += 1) {
+              tabPages[k] = pages.length - 1;
+            }
             break;
           }
 
@@ -227,34 +235,13 @@ export default {
 
         width += tabSpace; // add margin for [i] element
         totalWidth += (elem.offsetWidth + tabSpace);
+
+        tabPages[i] = pages.length - 1;
       }
 
       this.pages = pages;
-      this.pageIndex = this.paginateOnLoad();
-    },
-    paginateOnLoad() {
-      let index = '';
-      const sortArray = [];
-
-      for (let i = 0; i < this.tabBreakpoints.length; i += 1) {
-        if (this.activeTab === this.tabBreakpoints[i]) {
-          index = i;
-          break;
-        } else {
-          sortArray.push(this.tabBreakpoints[i]);
-        }
-      }
-
-      if (index !== '') {
-        return index;
-      }
-
-      sortArray.push(this.activeTab);
-
-      sortArray.sort((a, b) => a - b);
-      index = sortArray.indexOf(this.activeTab);
-
-      return index === -1 ? 0 : index - 1;
+      this.tabPages = tabPages;
+      this.pageIndex = this.tabPages[this.activeTabIndex];
     },
     updateUnderline() {
       console.log('updateUnderline');

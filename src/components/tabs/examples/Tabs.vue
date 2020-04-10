@@ -110,6 +110,7 @@
       <cdr-tabs
         height="100px"
         modifier="centered"
+        :active-tab="8"
       >
         <cdr-tab-panel
           v-for="tab in tabs"
