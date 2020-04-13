@@ -16,10 +16,12 @@
 
   position: relative;
 
+  th {
+    @include cdr-data-table-header-text();
+  }
+
   &__caption {
     @include cdr-data-table-caption-text;
-
-    color: $cdr-color-text-primary-lightmode;
   }
 
   &__caption-sr {
@@ -57,11 +59,16 @@
     &:global(.is-scrolling) {
       /* add extra border width */
       thead tr th:first-child {
-        border-right: 4px solid $cdr-color-border-secondary-lightmode;
+        border-right: 4px solid $cdr-color-border-table-head;
       }
 
       tbody tr th {
-        border-right: 4px solid $cdr-color-border-secondary-lightmode;
+        border-right: 4px solid $cdr-color-border-table-head;
+      }
+
+      th:nth-of-type(2),
+      td:nth-of-type(1) {
+        border-left-color: transparent;
       }
     }
   }
@@ -72,7 +79,7 @@
 
     th,
     td {
-      border: 1px solid $cdr-color-border-secondary-lightmode;
+      border: 1px solid;
       min-height: 48px;
       color: $cdr-color-text-primary-lightmode;
       padding: $cdr-space-inset-one-x;
@@ -80,11 +87,13 @@
       min-width: 127px;
     }
 
-    /* td {
-      &:not(:first-of-type) {
-        text-align: left;
-      }
-    } */
+    th {
+      border-color: $cdr-color-border-table-head;
+    }
+
+    td {
+      border-color: $cdr-color-border-table-default;
+    }
 
     &:global(.constrain-width) {
       th,
@@ -95,18 +104,18 @@
 
     thead {
       th {
-        border-bottom: 2px solid $cdr-color-border-secondary-lightmode;
+        border-bottom: 2px solid $cdr-color-border-table-head;
         
         /* empty column header, row header column */
         &[class^=empty] {
-          border-right: 2px solid $cdr-color-border-secondary-lightmode;
+          border-right: 2px solid $cdr-color-border-table-head;
         }
       }
 
       // thead row is always darker bg
       & > tr {
         & > th {
-          background-color: $cdr-color-background-light;
+          background-color: $cdr-color-background-table-header;
         }
       }
 
@@ -114,19 +123,19 @@
       & + tbody > tr {
         // striping rows
         &:nth-child(even) {
-          background-color: $cdr-color-background-light;
+          background-color: $cdr-color-background-table-row-alt;
           
           & > th {
-            background-color: $cdr-color-background-light;
+            background-color: $cdr-color-background-table-row-alt;
           }
         }
 
         // disabled default
         &:nth-child(odd) {
-          background-color: transparent;
+          background-color: $cdr-color-background-table-row;
           
           & > th {
-            background-color: transparent;
+            background-color: $cdr-color-background-table-row;
           }
         }
       }
@@ -136,15 +145,15 @@
       tr {
         th {
           min-width: 150px;
-          border-right: 2px solid $cdr-color-border-secondary-lightmode;
+          border-right: 2px solid $cdr-color-border-table-head;
         }
         
         // striping rows
         &:nth-child(odd) {
-          background-color: $cdr-color-background-light;
+          background-color: $cdr-color-background-table-row-alt;
           
           & > th {
-            background-color: $cdr-color-background-light;
+            background-color: $cdr-color-background-table-row-alt;
           }
         }
       }
