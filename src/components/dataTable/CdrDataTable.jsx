@@ -87,10 +87,20 @@ export default {
         });
       }, 250));
 
-      this.$nextTick(() => {
-        this.checkScroll();
-        this.setRowsContentHeight();
-      });
+      // fixes race condition that sometimes occurs when data driven
+      if (this.hasRowHeaders || this.hasColHeaders) {
+        window.addEventListener('load', () => {
+          this.$nextTick(() => {
+            this.checkScroll();
+            this.setRowsContentHeight();
+          });
+        });
+      } else {
+        this.$nextTick(() => {
+          this.checkScroll();
+          this.setRowsContentHeight();
+        });
+      }
     }
   },
   methods: {
