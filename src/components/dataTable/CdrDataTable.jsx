@@ -95,12 +95,11 @@ export default {
             this.setRowsContentHeight();
           });
         });
-      } else {
-        this.$nextTick(() => {
-          this.checkScroll();
-          this.setRowsContentHeight();
-        });
       }
+      this.$nextTick(() => {
+        this.checkScroll();
+        this.setRowsContentHeight();
+      });
     }
   },
   methods: {

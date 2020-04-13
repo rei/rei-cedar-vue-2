@@ -95,6 +95,7 @@ describe('CdrDataTable', () => {
         methods: {
           setRowsContentHeight: () => true,
         },
+        attachToDocument: true,
       });
       
       const spy = spyOn(wrapper.vm, 'checkScroll');
