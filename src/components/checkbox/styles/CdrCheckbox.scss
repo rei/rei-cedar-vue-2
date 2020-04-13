@@ -40,7 +40,8 @@
     left: 0;
     border-radius: $cdr-radius-softer;
     background-color: $cdr-color-background-input-default;
-    border: 1px solid $cdr-color-border-input-default;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default;
+    transition: box-shadow $cdr-duration-2-x $cdr-timing-function-ease;
   }
 
   /* States
@@ -49,7 +50,8 @@
   /* Checked
   ========== */
   &__input:checked ~ &__figure {
-    border-color: $cdr-color-border-input-default-selected;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-selected;
+    // border-color: ;
     background-color: $cdr-color-background-input-default-selected;
     background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/check-lg.svg', fill="#fff");
     background-repeat: no-repeat;
@@ -58,7 +60,7 @@
   /* Indeterminate
   ========== */
   &__input[indeterminate] ~ .cdr-checkbox__figure {
-    border-color: $cdr-color-border-input-default-selected;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-selected;
 
     &::after {
       content: '';
@@ -78,7 +80,7 @@
   &:hover {
     & > .cdr-checkbox__figure {
       cursor: pointer;
-      border-color: $cdr-color-border-input-default-hover;
+      box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-hover;
       background-color: $cdr-color-background-input-default-hover;
     }
 
@@ -90,15 +92,14 @@
       /* Hover + Checked
       ========== */
       &:checked ~ .cdr-checkbox__figure {
-        border-color: $cdr-color-border-input-default-selected-hover;
+        box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-selected-hover;
         background-color: $cdr-color-background-input-default-selected-hover;
       }
 
       /* Hover + Indeterminate
       ========== */
       &[indeterminate] ~ .cdr-checkbox__figure {
-        border-color: $cdr-color-border-input-default-selected-hover;
-
+        box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-selected-hover;
         &::after {
           background-color: $cdr-color-background-input-default-selected-hover;
         }
@@ -114,7 +115,7 @@
     }
 
     & ~ .cdr-checkbox__figure {
-      border-color: $cdr-color-border-input-default-disabled !important;
+      box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled ;
       background-color: $cdr-color-background-input-default-disabled !important;
       cursor: not-allowed;
     }
@@ -131,7 +132,7 @@
     ========== */
     &[indeterminate] {
       & ~ .cdr-checkbox__figure {
-        border-color: $cdr-color-border-input-default-disabled !important;
+        box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-disabled !important;
 
         &::after {
           background-color: $cdr-color-background-input-default-disabled !important;
@@ -143,14 +144,13 @@
   /* Active
   ========== */
   &:active > .cdr-checkbox__figure {
-    border-color: $cdr-color-border-input-default-active;
+    box-shadow: inset 0 0 0 1px $cdr-color-border-input-default-active;
   }
 
   /* Focus
   ========== */
   &__input:focus ~ .cdr-checkbox__figure {
-    border-color: $cdr-color-border-input-default-active;
-    box-shadow: $cdr-label-figure-box-shadow;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-input-default-active;
   }
 
 

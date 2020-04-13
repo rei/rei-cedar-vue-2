@@ -41,7 +41,7 @@
   text-decoration: none;
   text-transform: none;
 
-  transition: box-shadow $cdr-duration-2-x $cdr-timing-function-ease, background-color $cdr-duration-2-x $cdr-timing-function-ease;
+  transition: box-shadow $cdr-duration-2-x $cdr-timing-function-ease, background-color $cdr-duration-2-x $cdr-timing-function-ease, color $cdr-duration-2-x $cdr-timing-function-ease;
 
 
   /* States
@@ -82,14 +82,14 @@
     color: $cdr-color-text-button-primary-hover;
     fill: $cdr-color-text-button-primary-hover;
     background-color: $cdr-color-background-button-primary-hover;
-    box-shadow: 0 0 0 3px $cdr-color-border-button-primary-hover, $cdr-prominence-raised;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-primary-hover, $cdr-prominence-raised;
   }
 
   &:active {
     color: $cdr-color-text-button-primary-active;
     fill: $cdr-color-text-button-primary-active;
     background-color: $cdr-color-background-button-primary-active;
-    box-shadow: 0 0 0 3px $cdr-color-border-button-primary-active, inset 0 0 1px 3px $cdr-color-border-button-primary-active-inset;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-primary-active, inset 0 0 0 5px $cdr-color-border-button-primary-active-inset;
   }
 
   &[disabled] {
@@ -114,14 +114,14 @@
     color: $cdr-color-text-button-secondary-hover;
     fill: $cdr-color-text-button-secondary-hover;
     background-color: $cdr-color-background-button-secondary-hover;
-    box-shadow: 0 0 0 3px $cdr-color-border-button-secondary-hover, $cdr-prominence-raised;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-secondary-hover, $cdr-prominence-raised;
   }
 
   &:active {
     color: $cdr-color-text-button-secondary-active;
     fill: $cdr-color-text-button-secondary-active;
     background-color: $cdr-color-background-button-secondary-active;
-    box-shadow: 0 0 0 3px $cdr-color-border-button-secondary-active, inset 0 0 1px 3px $cdr-color-border-button-primary-active-inset;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-secondary-active, inset 0 0 0 5px $cdr-color-border-button-secondary-active-inset;
   }
 
   &[disabled] {
@@ -151,12 +151,18 @@
     background: none;
     box-shadow: none;
     border: none;
+    fill: $cdr-color-icon-default;
   }
 
   &:active, &:focus {
-    background: $cdr-color-background-button-icon-only-active;
-    box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-active;
+    background: none;
+    outline: none;
     border: none;
+    box-shadow: none;
+    fill: $cdr-color-icon-default;
+    svg {
+      box-shadow: inset 0 0 0 1px $cdr-color-border-button-secondary-active;
+    }
   }
 
   &[disabled] {
@@ -175,14 +181,21 @@
 
   &:hover,
   &:focus {
+    fill: $cdr-color-icon-default;
     background-color: $cdr-color-background-button-secondary-hover;
-    box-shadow: 0 0 0 3px $cdr-color-border-button-secondary-hover, $cdr-prominence-raised;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-secondary-hover, $cdr-prominence-raised;
+    svg {
+      box-shadow: none;
+    }
   }
   &:active {
     color: $cdr-color-text-button-secondary-active;
     fill: $cdr-color-text-button-secondary-active;
     background-color: $cdr-color-background-button-secondary-active;
-    box-shadow: 0 0 0 3px $cdr-color-border-button-secondary-active, inset 0 0 1px 3px $cdr-color-border-button-secondary-active-inset;
+    box-shadow: inset 0 0 0 3px $cdr-color-border-button-secondary-active, inset 0 0 0 5px $cdr-color-border-button-secondary-active-inset;
+    svg {
+      box-shadow: none;
+    }
   }
 
   &[disabled] {
