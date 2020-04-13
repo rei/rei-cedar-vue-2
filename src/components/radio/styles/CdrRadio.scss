@@ -42,8 +42,8 @@
     left: 0;
     border-radius: $cdr-radius-round;
     background-color: $cdr-color-background-input-default;
-    border: 1px solid $cdr-color-border-input-default;
-
+    box-shadow: 0 0 0 1px $cdr-color-border-input-default;
+    transition: box-shadow $cdr-duration-2-x $cdr-timing-function-ease;
     &::after {
       content: '';
       position: absolute;
@@ -64,7 +64,7 @@
   ========== */
   &__input:checked ~ &__figure {
     // outer circle
-    border-color: $cdr-color-border-input-default-selected;
+    box-shadow: 0 0 0 1px $cdr-color-border-input-default-selected;
 
     &::after {
       // inner circle
@@ -76,7 +76,7 @@
   &:hover {
     & > .cdr-radio__figure {
       cursor: pointer;
-      border-color: $cdr-color-border-input-default-hover;
+      box-shadow: 0 0 0 3px $cdr-color-border-input-default-hover;
       background-color: $cdr-color-background-input-default-hover;
     }
 
@@ -88,11 +88,9 @@
       /* Hover + Checked
       ========== */
       &:checked ~ .cdr-radio__figure {
-        border-color: $cdr-color-border-input-default-selected-hover;
+        box-shadow: 0 0 0 3px $cdr-color-border-input-default-selected-hover;
 
-        &::after {
-          background-color: $cdr-color-background-input-default-selected-hover;
-        }
+        background-color: $cdr-color-background-input-default-selected-hover;
       }
     }
   }
@@ -105,7 +103,7 @@
     }
 
     & ~ .cdr-radio__figure {
-      border-color: $cdr-color-border-input-default-disabled !important;
+      box-shadow: 0 0 0 1px $cdr-color-border-input-default-disabled !important;
       background-color: $cdr-color-background-input-default-disabled !important;
       cursor: not-allowed;
     }
@@ -124,14 +122,14 @@
   /* Active
   ========== */
   &:active > .cdr-radio__figure {
-    border-color: $cdr-color-border-input-default-active;
+    box-shadow: 0 0 0 1px $cdr-color-border-input-default-active;
     background-color: $cdr-color-background-input-default;
   }
 
   /* Focus
   ========== */
   &__input:focus ~ .cdr-radio__figure {
-    border-color: $cdr-color-border-input-default-active;
+    box-shadow: 0 0 0 3px $cdr-color-border-input-default-active;
     box-shadow: $cdr-label-figure-box-shadow;
   }
 
