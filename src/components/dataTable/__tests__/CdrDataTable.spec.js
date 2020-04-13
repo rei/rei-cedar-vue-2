@@ -95,10 +95,36 @@ describe('CdrDataTable', () => {
         methods: {
           setRowsContentHeight: () => true,
         },
+        attachToDocument: true,
       });
       
       const spy = spyOn(wrapper.vm, 'checkScroll');
       window.dispatchEvent(new Event('resize'));
+      
+      wrapper.vm.$nextTick(() => {
+        expect(spy).toHaveBeenCalled();
+        done()
+      });
+    });
+
+    it('adds load event watcher', (done) => {
+      const wrapper = shallowMount(CdrDataTable, {
+        propsData: {
+          colHeaders: data.colHeaders,
+          rowHeaders: data.rowHeaders,
+          rowData: data.rowData,
+        },
+        computed: {
+          lockedCol: () => true,
+        },
+        methods: {
+          setRowsContentHeight: () => true,
+        },
+        attachToDocument: true,
+      });
+      
+      const spy = spyOn(wrapper.vm, 'setRowsContentHeight');
+      window.dispatchEvent(new Event('load'));
       
       wrapper.vm.$nextTick(() => {
         expect(spy).toHaveBeenCalled();

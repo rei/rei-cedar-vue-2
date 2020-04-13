@@ -87,6 +87,15 @@ export default {
         });
       }, 250));
 
+      // fixes race condition that sometimes occurs when data driven
+      if (this.hasRowHeaders || this.hasColHeaders) {
+        window.addEventListener('load', () => {
+          this.$nextTick(() => {
+            this.checkScroll();
+            this.setRowsContentHeight();
+          });
+        });
+      }
       this.$nextTick(() => {
         this.checkScroll();
         this.setRowsContentHeight();
