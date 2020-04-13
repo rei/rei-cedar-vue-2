@@ -58,6 +58,7 @@
       REI.com
     </cdr-link>
 
+
     <cdr-text
       tag="h3"
       modifier="subheading-sans-300"
@@ -106,6 +107,25 @@
         </cdr-link>
       </li>
     </cdr-list>
+
+
+    <cdr-text
+      tag="h3"
+      modifier="subheading-sans-300"
+    >Links, with inherited color</cdr-text>
+    <div style="color: darkgreen; fill: darkgreen;">
+      <cdr-link inherit-color href="rei.com">inherit-color plain example</cdr-link>
+      <br/>
+      <cdr-link inherit-color>
+        <cdr-icon
+          inherit-color
+          use="#mail"
+          modifier="inherit-color"
+          space="cdr-mr-space-half-x"
+        />
+        cdr-link icon inherit
+      </cdr-link>
+    </div>
 
 
   </div>

@@ -159,7 +159,7 @@
   "dependencies": {
     "@babel/runtime": "^7.7.4",
     "@babel/runtime-corejs3": "^7.7.4",
-    "@rei/cdr-tokens": "^4.0.0-beta.1",
+    "@rei/cdr-tokens": "^4.0.0-beta.2",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "clsx": "^1.0.4",
     "lodash-es": "^4.17.15",
