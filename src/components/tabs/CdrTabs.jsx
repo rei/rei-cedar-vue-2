@@ -244,9 +244,6 @@ export default {
         this.updateUnderline();
       }
     },
-    scrolling(event) {
-      console.log('scrolling', event);
-    },
     handleDownArrowNav() {
       if (!this.animationInProgress) {
         this.$el.lastElementChild.children[this.activeTabIndex].focus();
@@ -286,7 +283,6 @@ export default {
         ref="cdrTabsContainer"
         style={{ height: this.height }}
         vOn:transitionend={this.animationEnd}
-        vOn:scroll={this.scrolling}
       >
         <div
           class={clsx(

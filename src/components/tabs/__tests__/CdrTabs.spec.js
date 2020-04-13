@@ -6,6 +6,17 @@ import Vue from 'vue';
 // Tests use nextTick because of the nextTick in mounted hook of tabs
 
 describe('CdrTabs', () => {
+
+  function getSlotContent(value) {
+    const content = [];
+    for (let i = 0; i < value; i += 1) {
+      content.push(
+        `<cdr-tab-panel name="Tab ${i} Name" id="tab-panel-${i}" aria-labelledby="tab-${i}" />`
+      );
+    }
+    return content;
+  }
+
   describe('mounted', () => {
     it('mounts tabs', () => {
       const wrapper = mount(CdrTabs);
@@ -245,51 +256,8 @@ describe('CdrTabs', () => {
   });
 
   describe('overflow classes', () => {
-    it('adds gradient-left class', (done) => {
-      const spyUpdateUnderline = jest.fn();
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: [
-            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-          ],
-        },
-        methods: {
-          updateUnderline: spyUpdateUnderline,
-        },
-        attachToDocument: true,
-      });
 
-      Vue.nextTick(() => {
-        wrapper.setData({ overflowLeft: true });
-        expect(wrapper.find('.cdr-tabs__header-gradient-left').exists()).toBe(true);
-        done();
-      });
-    });
 
-    it('adds gradient-right class', (done) => {
-      const wrapper = mount(CdrTabs, {
-        stubs: {
-          'cdr-tab-panel': CdrTabPanel,
-        },
-        slots: {
-          default: [
-            '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-            '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-          ]
-        },
-        attachToDocument: true,
-      });
-
-      Vue.nextTick(() => {
-        wrapper.setData({ overflowRight: true });
-        expect(wrapper.find('.cdr-tabs__header-gradient-right').exists()).toBe(true);
-        done();
-      });
-    });
   });
 
   it('accessibility', (done) => {
@@ -372,46 +340,58 @@ describe('CdrTabs', () => {
     });
   });
 
-  it('scrollbar is hidden properly', (done) => {
+  it('calculateOverflow', () => {
+    const mockCalculatePagination = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
         default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+          '<cdr-tab-panel name="tab one name" id="tab-panel-1" aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab two name" id="tab-panel-2" aria-labelledby="tab-2" />'
         ],
       },
-      attachToDocument: true,
+      methods: {
+        calculatePagination: mockCalculatePagination,
+      },
     });
-    
-    wrapper.setData({ widthInitialized: true});
-    wrapper.setData({ underlineWidth: -1});
-    wrapper.vm.hideScrollBar();
-    expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('hidden');
-    window.dispatchEvent(new Event('transitionend'));
-    Vue.nextTick(() => {
-      expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('unset');
-      wrapper.destroy();
-      done();
-    });
+    wrapper.vm.calculateOverflow();
+    expect(mockCalculatePagination).not.toHaveBeenCalled();
   });
 
-  it('calculateOverflow', () => {
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-        ],
-      }
+  describe('pagination', () => {
+    it('slideRight and slideLeft', () => {
+      const mockCalculatePagination = jest.fn();
+
+      const wrapper = mount(CdrTabs, {
+        stubs: {
+          'cdr-tab-panel': CdrTabPanel,
+        },
+        data() {
+          return {
+            pageIndex: 0,
+            pages: [ {offsetLeft: 0}, { offsetLeft: 20} ]
+          };
+        },
+        slots: {
+          default: [
+            '<cdr-tab-panel name="tab one name" id="tab-panel-1" aria-labelledby="tab-1" />',
+            '<cdr-tab-panel name="tab two name" id="tab-panel-2" aria-labelledby="tab-2" />'
+          ],
+        },
+        methods: {
+          calculatePagination: mockCalculatePagination,
+        },
+      });
+      
+      wrapper.vm.slideRight();
+      expect(wrapper.vm.pageIndex).toBe(1);
+      expect(wrapper.vm.leftPosition).toBe('-20');
+      
+      wrapper.vm.slideLeft();
+      expect(wrapper.vm.pageIndex).toBe(0);
+      expect(wrapper.vm.leftPosition).toBe(0);
     });
-    wrapper.setData({ headerWidth: 2000 });
-    wrapper.vm.calculateOverflow();
-    expect(wrapper.vm.headerOverflow).toBe(true);
   });
 });

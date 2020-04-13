@@ -8,12 +8,49 @@ exports[`CdrTabs mounted mounts tabs 1`] = `
   <div
     class="cdr-tabs__gradient-container"
   >
+    <button
+      aria-hidden="true"
+      class="cdr-button--primary cdr-button cdr-button--icon-only cdr-button--with-background cdr-tabs__button cdr-tabs__nav-scroll-left"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        class="cdr-icon cdr-icon--inherit-color cdr-button__icon"
+        role="presentation"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          href="#caret-left"
+          xlink:href="#caret-left"
+        />
+      </svg>
+    </button>
+    <button
+      aria-hidden="true"
+      class="cdr-button--primary cdr-button cdr-button--icon-only cdr-button--with-background cdr-tabs__button cdr-tabs__nav-scroll-right"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        class="cdr-icon cdr-icon--inherit-color cdr-button__icon"
+        role="presentation"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          href="#caret-right"
+          xlink:href="#caret-right"
+        />
+      </svg>
+    </button>
     <nav
       class="cdr-tabs__header-container"
     >
       <ol
         class="cdr-tabs__header"
         role="tablist"
+        style="left: 0px;"
       />
     </nav>
     <div
@@ -35,12 +72,49 @@ exports[`CdrTabs mounted mounts with cdr-tab-panel children 1`] = `
   <div
     class="cdr-tabs__gradient-container"
   >
+    <button
+      aria-hidden="true"
+      class="cdr-button--primary cdr-button cdr-button--icon-only cdr-button--with-background cdr-tabs__button cdr-tabs__nav-scroll-left"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        class="cdr-icon cdr-icon--inherit-color cdr-button__icon"
+        role="presentation"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          href="#caret-left"
+          xlink:href="#caret-left"
+        />
+      </svg>
+    </button>
+    <button
+      aria-hidden="true"
+      class="cdr-button--primary cdr-button cdr-button--icon-only cdr-button--with-background cdr-tabs__button cdr-tabs__nav-scroll-right"
+      tabindex="-1"
+      type="button"
+    >
+      <svg
+        class="cdr-icon cdr-icon--inherit-color cdr-button__icon"
+        role="presentation"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          href="#caret-right"
+          xlink:href="#caret-right"
+        />
+      </svg>
+    </button>
     <nav
       class="cdr-tabs__header-container"
     >
       <ol
         class="cdr-tabs__header"
         role="tablist"
+        style="left: 0px;"
       >
         <li
           aria-controls="tab-panel-1"
