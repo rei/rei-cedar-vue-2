@@ -25,7 +25,6 @@ describe('CdrTabs', () => {
 
     it('mounts with cdr-tab-panel children', (done) => {
       const spyGetNextTab = jest.fn();
-      const spyGetHeaderWidth = jest.fn();
       const spyCalculateOverflow = jest.fn();
       const spyUpdateUnderline = jest.fn();
 
@@ -41,7 +40,6 @@ describe('CdrTabs', () => {
         },
         methods: {
           getNextTab: spyGetNextTab,
-          getHeaderWidth: spyGetHeaderWidth,
           calculateOverflow: spyCalculateOverflow,
           updateUnderline: spyUpdateUnderline,
         },
@@ -52,13 +50,9 @@ describe('CdrTabs', () => {
         expect(wrapper.findAll('li').length).toBe(2);
         expect(wrapper.element).toMatchSnapshot();
         expect(spyGetNextTab).toHaveBeenCalled();
-        expect(spyGetHeaderWidth).toHaveBeenCalled();
         expect(spyCalculateOverflow).toHaveBeenCalled();
-        
-        setTimeout(() => {
-          expect(spyUpdateUnderline).toHaveBeenCalled();
-          done();
-        }, 200)
+        expect(spyUpdateUnderline).toHaveBeenCalled();
+        done();
       });
     });
   });

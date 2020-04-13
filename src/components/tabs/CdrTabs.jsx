@@ -230,7 +230,6 @@ export default {
       this.pageIndex = this.tabPages[this.activeTabIndex];
     },
     updateUnderline() {
-      console.log('updateUnderline');
       const elements = Array.from(this.$refs.cdrTabsHeader.children);
       if (elements.length > 0) {
         const activeTab = elements[this.activeTabIndex];
