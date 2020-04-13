@@ -12,7 +12,7 @@
   letter-spacing: -.08rem;
   color: $cdr-color-text-primary;
 
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     font-size: 18px;
     line-height: 28px;
   }
@@ -31,13 +31,13 @@
   border-style: solid;
   border-color: $cdr-color-border-primary;
 
-  @include xs-mq {
+  @include cdr-xs-mq {
     border-width: 0 0 1px 0;
     padding: $cdr-space-inset-one-x-stretch;
     margin: 0 0 $cdr-space-one-x;
   }
 
-  @include sm-mq {
+  @include cdr-sm-mq {
     border-width: 0 0 0 1px;
     padding: $cdr-space-half-x $cdr-space-one-x $cdr-space-half-x $cdr-space-two-x;
     margin: $cdr-space-one-x 0;

@@ -192,7 +192,7 @@ $filled-star: '\2605';
     @include cdr-rating-small;
   }
 
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     &--small\@xs {
       @include cdr-rating-small;
     }
@@ -206,7 +206,7 @@ $filled-star: '\2605';
     }
   }
 
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     &--small\@sm {
       @include cdr-rating-small;
     }
@@ -220,7 +220,7 @@ $filled-star: '\2605';
     }
   }
 
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     &--small\@md {
       @include cdr-rating-small;
     }
@@ -234,7 +234,7 @@ $filled-star: '\2605';
     }
   }
 
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     &--small\@lg {
       @include cdr-rating-small;
     }

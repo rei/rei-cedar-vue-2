@@ -44,7 +44,7 @@
   /* @xs
     0px - 767px
     ========== */
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     &--large\@xs {
       @include cdr-input-large-mixin;
     }
@@ -53,7 +53,7 @@
   /* @sm
     768px - 991px
     ========== */
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     &--large\@sm {
       @include cdr-input-large-mixin;
     }
@@ -62,7 +62,7 @@
   /* @md
     992px - 1199px
     ========== */
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     &--large\@md {
       @include cdr-input-large-mixin;
     }
@@ -72,7 +72,7 @@
     1200px and up
     ========== */
 
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     &--large\@lg {
       @include cdr-input-large-mixin;
     }

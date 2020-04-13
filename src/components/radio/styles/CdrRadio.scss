@@ -146,7 +146,7 @@
   /* @xs
     0px - 767px
     ========== */
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     @include radio-small-mixin(&, \@xs);
 
     @include radio-medium-mixin(&, \@xs);
@@ -157,7 +157,7 @@
   /* @sm
     768px - 991px
     ========== */
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     @include radio-small-mixin(&, \@sm);
 
     @include radio-medium-mixin(&, \@sm);
@@ -168,7 +168,7 @@
   /* @md
     992px - 1199px
     ========== */
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     @include radio-small-mixin(&, \@md);
 
     @include radio-medium-mixin(&, \@md);
@@ -180,7 +180,7 @@
     1200px and up
     ========== */
 
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     @include radio-small-mixin(&, \@lg);
 
     @include radio-medium-mixin(&, \@lg);

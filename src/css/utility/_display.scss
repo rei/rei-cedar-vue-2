@@ -76,7 +76,7 @@
 Screen Breakpoints
 ..............................................*/
 
-@include xs-mq-only {
+@include cdr-xs-mq-only {
   .cdr-display-none\@xs { @include cdr-display-none-mixin; }
   .cdr-display-hidden\@xs { @include cdr-display-hidden-mixin; }
   .cdr-display-block\@xs { @include cdr-display-block-mixin; }
@@ -86,7 +86,7 @@ Screen Breakpoints
   .cdr-display-inline-flex\@xs { @include cdr-display-inline-flex-mixin; }
 }
 
-@include sm-mq-only {
+@include cdr-sm-mq-only {
   .cdr-display-none\@sm { @include cdr-display-none-mixin; }
   .cdr-display-hidden\@sm { @include cdr-display-hidden-mixin; }
   .cdr-display-block\@sm { @include cdr-display-block-mixin; }
@@ -96,7 +96,7 @@ Screen Breakpoints
   .cdr-display-inline-flex\@sm { @include cdr-display-inline-flex-mixin; }
 }
 
-@include md-mq-only {
+@include cdr-md-mq-only {
   .cdr-display-none\@md { @include cdr-display-none-mixin; }
   .cdr-display-hidden\@md { @include cdr-display-hidden-mixin; }
   .cdr-display-block\@md { @include cdr-display-block-mixin; }
@@ -106,7 +106,7 @@ Screen Breakpoints
   .cdr-display-inline-flex\@md { @include cdr-display-inline-flex-mixin; }
 }
 
-@include lg-mq-only {
+@include cdr-lg-mq-only {
   .cdr-display-none\@lg { @include cdr-display-none-mixin; }
   .cdr-display-hidden\@lg { @include cdr-display-hidden-mixin; }
   .cdr-display-block\@lg { @include cdr-display-block-mixin; }

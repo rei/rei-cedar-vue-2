@@ -250,7 +250,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
   /* ROW SMALL
   ========================================================================== */
 
-  @include sm-mq {
+  @include cdr-sm-mq {
     margin-top: calc(#{$rowGutter-sm} * -1);
     margin-left: calc(#{$rowGutter-sm} * -1);
 
@@ -450,7 +450,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
   /* ROW MEDIUM
   ========================================================================== */
 
-  @include md-mq {
+  @include cdr-md-mq {
     margin-top: calc(#{$rowGutter-md} * -1);
     margin-left: calc(#{$rowGutter-md} * -1);
 
@@ -652,7 +652,7 @@ $rowPct12: calc(#{$rowColumns} / 12 / #{$rowColumns} * 100%);
   /* ROW LARGE
   ========================================================================== */
 
-  @include lg-mq {
+  @include cdr-lg-mq {
     margin-top: calc(#{$rowGutter-lg} * -1);
     margin-left: calc(#{$rowGutter-lg} * -1);
 

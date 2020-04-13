@@ -32,7 +32,7 @@
   /* @xs
     0px - 767px
     ========== */
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     &--small\@xs {
       width: $cdr-icon-size-sm;
       height: $cdr-icon-size-sm;
@@ -47,7 +47,7 @@
   /* @sm
     768px - 991px
     ========== */
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     &--small\@sm {
       width: $cdr-icon-size-sm;
       height: $cdr-icon-size-sm;
@@ -62,7 +62,7 @@
   /* @md
     992px - 1199px
     ========== */
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     &--small\@md {
       width: $cdr-icon-size-sm;
       height: $cdr-icon-size-sm;
@@ -78,7 +78,7 @@
     1200px and up
     ========== */
 
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     &--small\@lg {
       width: $cdr-icon-size-sm;
       height: $cdr-icon-size-sm;
