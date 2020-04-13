@@ -48,7 +48,7 @@ h6.cdr-text.cdr-text,
     &-600 { @include cdr-text-subheading-600; }
   }
 
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     &--heading {
       &-300\@xs { @include cdr-text-heading-300; }
       &-400\@xs { @include cdr-text-heading-400; }
@@ -74,7 +74,7 @@ h6.cdr-text.cdr-text,
     }
   }
 
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     &--heading {
       &-300\@sm { @include cdr-text-heading-300; }
       &-400\@sm { @include cdr-text-heading-400; }
@@ -100,7 +100,7 @@ h6.cdr-text.cdr-text,
     }
   }
 
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     &--heading {
       &-300\@md { @include cdr-text-heading-300; }
       &-400\@md { @include cdr-text-heading-400; }
@@ -126,7 +126,7 @@ h6.cdr-text.cdr-text,
     }
   }
 
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     &--heading {
       &-300\@lg  { @include cdr-text-heading-300; }
       &-400\@lg  { @include cdr-text-heading-400; }

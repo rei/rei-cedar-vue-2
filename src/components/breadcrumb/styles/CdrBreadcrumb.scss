@@ -81,7 +81,7 @@
     }
   }
 // TODO: make this a size prop? or a responsive compact?
-  @include md-mq {
+  @include cdr-md-mq {
     &__link,
     &__delimiter,
     &__ellipses {

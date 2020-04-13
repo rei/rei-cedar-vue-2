@@ -102,7 +102,7 @@
   }
 
   /* Responsive */
-  @include sm-mq {
+  @include cdr-sm-mq {
     &__li--links {
       display: block;
     }

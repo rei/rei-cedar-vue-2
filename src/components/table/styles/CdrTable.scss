@@ -37,28 +37,28 @@
   }
 
   // @xs
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     &--full-width\@xs {
       @include cdr-table-full-width;
     }
   }
 
   // @sm
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     &--full-width\@sm {
       @include cdr-table-full-width;
     }
   }
 
   // @md
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     &--full-width\@md {
       @include cdr-table-full-width;
     }
   }
 
   // @lg
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     &--full-width\@lg {
       @include cdr-table-full-width;
     }

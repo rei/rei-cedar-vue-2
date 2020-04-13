@@ -148,7 +148,7 @@ h6.cdr-text.cdr-text,
     }
   }
 
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     &--heading {
       &-sans {
         &-200\@xs { @include cdr-text-heading-sans-200; }
@@ -191,7 +191,7 @@ h6.cdr-text.cdr-text,
     }
   }
 
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     &--heading {
       &-sans {
         &-200\@sm { @include cdr-text-heading-sans-200; }
@@ -234,7 +234,7 @@ h6.cdr-text.cdr-text,
     }
   }
 
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     &--heading {
       &-sans {
         &-200\@md { @include cdr-text-heading-sans-200; }
@@ -277,7 +277,7 @@ h6.cdr-text.cdr-text,
     }
   }
 
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     &--heading {
       &-sans {
         &-200\@lg { @include cdr-text-heading-sans-200; }
