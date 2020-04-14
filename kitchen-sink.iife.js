@@ -17810,13 +17810,18 @@ var cedar = (function () {
     }
   };
 
-  var css$6 = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-card_5\\.0\\.0-alpha\\.3 {\n  position: relative;\n  background-color: #ffffff;\n  border-radius: 0.2rem;\n  -webkit-box-shadow: 0 0.2rem 0.2rem 0 rgba(12, 11, 8, 0.2);\n          box-shadow: 0 0.2rem 0.2rem 0 rgba(12, 11, 8, 0.2);\n  color: rgba(12, 11, 8, 0.75);\n  width: 100%;\n  -webkit-transition: -webkit-box-shadow 0.1s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: -webkit-box-shadow 0.1s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: box-shadow 0.1s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: box-shadow 0.1s cubic-bezier(0.15, 0, 0.15, 0), -webkit-box-shadow 0.1s cubic-bezier(0.15, 0, 0.15, 0); }\n.cdr-card_5\\.0\\.0-alpha\\.3:active, .cdr-card_5\\.0\\.0-alpha\\.3:hover {\n    -webkit-box-shadow: 0 0.8rem 0.8rem 0 rgba(12, 11, 8, 0.2);\n            box-shadow: 0 0.8rem 0.8rem 0 rgba(12, 11, 8, 0.2); }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyQ2FyZC5zY3NzIiwic3JjL2NvbXBvbmVudHMvY2FyZC9zdHlsZXMvQ2RyQ2FyZC5zY3NzIiwic3JjL2NvbXBvbmVudHMvY2FyZC9zdHlsZXMvdmFycy9DZHJDYXJkLnZhcnMuc2NzcyIsIm5vZGVfbW9kdWxlcy9AcmVpL2Nkci10b2tlbnMvZGlzdC9zY3NzL2Nkci10b2tlbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7OztpRUNPaUU7QURFakU7O3VCQ0N1QjtBQ1J2QjtFQ0RFLGtCQUFrQjtFQUNsQix5QkMyL0JvQztFRDEvQnBDLHFCQzR3Q3NCO0VEM3dDdEIsMERDc3dDNEQ7VUR0d0M1RCxrRENzd0M0RDtFRHJ3QzVELDRCQys3QjRDO0VEOTdCNUMsV0FBVztFQUVYLDBFQ3N1Q3VEO0VEdHVDdkQsa0VDc3VDdUQ7RUR0dUN2RCwwRENzdUN1RDtFRHR1Q3ZELGtIQ3N1Q3VELEVBQUE7QUY1dUN6RDtJQ1NJLDBEQ2l3QzREO1lEandDNUQsa0RDaXdDNEQsRUFBQSIsImZpbGUiOiJDZHJDYXJkLnNjc3MifQ== */";
-  var style$8 = {"cdr-card":"cdr-card_5.0.0-alpha.3"};
+  var css$6 = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-card_5\\.0\\.0-alpha\\.3 {\n  position: relative;\n  background-color: #ffffff;\n  border-radius: 0.2rem;\n  -webkit-box-shadow: 0 0.2rem 0.2rem 0 rgba(12, 11, 8, 0.2);\n          box-shadow: 0 0.2rem 0.2rem 0 rgba(12, 11, 8, 0.2);\n  color: rgba(12, 11, 8, 0.75);\n  width: 100%; }\n.cdr-card--linked_5\\.0\\.0-alpha\\.3 {\n  -webkit-transition: -webkit-box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: -webkit-box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0), -webkit-box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  cursor: pointer; }\n.cdr-card--linked_5\\.0\\.0-alpha\\.3:active, .cdr-card--linked_5\\.0\\.0-alpha\\.3:hover {\n    -webkit-box-shadow: 0 0.8rem 0.8rem 0 rgba(12, 11, 8, 0.2);\n            box-shadow: 0 0.8rem 0.8rem 0 rgba(12, 11, 8, 0.2); }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyQ2FyZC5zY3NzIiwic3JjL2NvbXBvbmVudHMvY2FyZC9zdHlsZXMvQ2RyQ2FyZC5zY3NzIiwic3JjL2NvbXBvbmVudHMvY2FyZC9zdHlsZXMvdmFycy9DZHJDYXJkLnZhcnMuc2NzcyIsIm5vZGVfbW9kdWxlcy9AcmVpL2Nkci10b2tlbnMvZGlzdC9zY3NzL2Nkci10b2tlbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7OztpRUNPaUU7QURFakU7O3VCQ0N1QjtBQ1J2QjtFQ0RFLGtCQUFrQjtFQUNsQix5QkMyL0JvQztFRDEvQnBDLHFCQzR3Q3NCO0VEM3dDdEIsMERDc3dDNEQ7VUR0d0M1RCxrRENzd0M0RDtFRHJ3QzVELDRCQys3QjRDO0VEOTdCNUMsV0FBVyxFQUFBO0FEQWI7RUNJRSwwRUNvdUN1RDtFRHB1Q3ZELGtFQ291Q3VEO0VEcHVDdkQsMERDb3VDdUQ7RURwdUN2RCxrSENvdUN1RDtFRG51Q3ZELGVBQWUsRUFBQTtBRExqQjtJQ1FJLDBEQzh2QzREO1lEOXZDNUQsa0RDOHZDNEQsRUFBQSIsImZpbGUiOiJDZHJDYXJkLnNjc3MifQ== */";
+  var style$8 = {"cdr-card":"cdr-card_5.0.0-alpha.3","cdr-card--linked":"cdr-card--linked_5.0.0-alpha.3"};
   styleInject(css$6);
 
   var CdrCard = {
     name: 'CdrCard',
-    mixins: [modifier],
+    props: {
+      linked: {
+        type: Boolean,
+        default: false
+      }
+    },
     data: function data() {
       return {
         style: style$8
@@ -17825,12 +17830,15 @@ var cedar = (function () {
     computed: {
       baseClass: function baseClass() {
         return 'cdr-card';
+      },
+      linkedClass: function linkedClass() {
+        return this.linked ? "".concat(this.baseClass, "--linked") : null;
       }
     },
     render: function render() {
       var h = arguments[0];
       return h("article", {
-        "class": clsx(this.style[this.baseClass], this.modifierClass)
+        "class": clsx(this.style[this.baseClass], this.style[this.linkedClass])
       }, [this.$slots.default]);
     }
   };
@@ -31322,6 +31330,22 @@ var cedar = (function () {
           { staticClass: "card-example" },
           [_c("cdr-text", [_vm._v("A simple card")])],
           1
+        ),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c(
+          "a",
+          { attrs: { href: "rei.com" } },
+          [
+            _c(
+              "cdr-card",
+              { staticClass: "card-example", attrs: { linked: true } },
+              [_c("cdr-text", [_vm._v("A linked card")])],
+              1
+            )
+          ],
+          1
         )
       ],
       1
@@ -31333,7 +31357,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$9 = function (inject) {
       if (!inject) return
-      inject("data-v-e840ebae_0", { source: "\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/card/examples/demo/simpleCard.vue"],"names":[],"mappings":";AAmBA;EACA,gBAAA;EACA,YAAA;AACA","file":"simpleCard.vue","sourcesContent":["<template>\n  <div>\n    <cdr-card class=\"card-example\">\n      <cdr-text>A simple card</cdr-text>\n    </cdr-card>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\n\nexport default {\n  name: 'SimpleCard',\n  components: Components,\n};\n</script>\n\n<style>\n  .card-example {\n    max-width: 250px;\n    width: 250px;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-fb6d02ce_0", { source: "\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/card/examples/demo/simpleCard.vue"],"names":[],"mappings":";AA4BA;EACA,gBAAA;EACA,YAAA;AACA","file":"simpleCard.vue","sourcesContent":["<template>\n  <div>\n    <cdr-card class=\"card-example\">\n      <cdr-text>A simple card</cdr-text>\n    </cdr-card>\n    <hr>\n    <a href=\"rei.com\">\n      <cdr-card\n        class=\"card-example\"\n        :linked=\"true\"\n      >\n        <cdr-text>A linked card</cdr-text>\n      </cdr-card>\n    </a>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\n\nexport default {\n  name: 'SimpleCard',\n  components: Components,\n};\n</script>\n\n<style>\n  .card-example {\n    max-width: 250px;\n    width: 250px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
@@ -38832,7 +38856,7 @@ var cedar = (function () {
           { staticStyle: { color: "darkgreen", fill: "darkgreen" } },
           [
             _c("cdr-link", { attrs: { "inherit-color": "", href: "rei.com" } }, [
-              _vm._v("inherit-color plain example")
+              _vm._v("\n      inherit-color plain example\n    ")
             ]),
             _vm._v(" "),
             _c("br"),
@@ -38866,7 +38890,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$s = function (inject) {
       if (!inject) return
-      inject("data-v-73be7f6a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAuJA,2EAAA;AAEA;EACA,cAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n    <div class=\"anchor-example\">\n      <cdr-link />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      space=\"cdr-space-inset-one-x\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n      space=\"cdr-space-inset-one-x\"\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list\n      space=\"cdr-space-inset-one-x\"\n    >\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with inherited color</cdr-text>\n    <div style=\"color: darkgreen; fill: darkgreen;\">\n      <cdr-link inherit-color href=\"rei.com\">inherit-color plain example</cdr-link>\n      <br/>\n      <cdr-link inherit-color>\n        <cdr-icon\n          inherit-color\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n          space=\"cdr-mr-space-half-x\"\n        />\n        cdr-link icon inherit\n      </cdr-link>\n    </div>\n\n\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n</style>\n"]}, media: undefined });
+      inject("data-v-dfbf9a8e_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/** normalize line-height for consistent testing because links inherit it */\n.link-examples {\n  line-height: 1;\n}\n\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/link/examples/demo/Standard.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA4JA,2EAAA;AAEA;EACA,cAAA;AACA","file":"Standard.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div\n    class=\"link-examples\"\n    data-backstop=\"all-links\"\n  >\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n    >\n      Links\n    </cdr-text>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >\n      Default Link, No props\n    </cdr-text>\n    <div class=\"anchor-example\">\n      <cdr-link data-backstop=\"cdr-link\">\n        REI.com\n      </cdr-link>\n    </div>\n    <div class=\"anchor-example\">\n      <cdr-link />\n    </div>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set, spacing class applied</cdr-text>\n    <cdr-link\n      href=\"https://www.rei.com/\"\n      space=\"cdr-space-inset-one-x\"\n    >\n      REI.com\n    </cdr-link>\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Link, href set</cdr-text>\n    <cdr-link\n      href=\"https://www.example.com/\"\n    >\n      example.com\n    </cdr-link>\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading\"\n    >Standalone Link (No underline)</cdr-text>\n    <cdr-link\n      modifier=\"standalone\"\n      space=\"cdr-space-inset-one-x\"\n      data-backstop=\"cdr-link--standalone\"\n    >\n      REI.com\n    </cdr-link>\n\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with icon</cdr-text>\n\n    <cdr-list\n      space=\"cdr-space-inset-one-x\"\n    >\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#mail\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icon on the left\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          Icon on the right\n          <cdr-icon\n            inherit-color\n            use=\"#download\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n      <li>\n        <cdr-link>\n          <cdr-icon\n            inherit-color\n            use=\"#twitter\"\n            modifier=\"inherit-color\"\n            space=\"cdr-mr-space-half-x\"\n          />\n          Icons on both sides\n          <cdr-icon\n            inherit-color\n            use=\"#external-link\"\n            modifier=\"inherit-color\"\n            space=\"cdr-ml-space-half-x\"\n          />\n        </cdr-link>\n      </li>\n    </cdr-list>\n\n\n    <cdr-text\n      tag=\"h3\"\n      modifier=\"subheading-sans-300\"\n    >Links, with inherited color</cdr-text>\n    <div style=\"color: darkgreen; fill: darkgreen;\">\n      <cdr-link\n        inherit-color\n        href=\"rei.com\"\n      >\n        inherit-color plain example\n      </cdr-link>\n      <br>\n      <cdr-link inherit-color>\n        <cdr-icon\n          inherit-color\n          use=\"#mail\"\n          modifier=\"inherit-color\"\n          space=\"cdr-mr-space-half-x\"\n        />\n        cdr-link icon inherit\n      </cdr-link>\n    </div>\n\n\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\nexport default {\n  name: 'StandardLinks',\n  components: {\n    ...Components,\n  },\n  methods: {\n    clicked() {\n      // eslint-disable-next-line no-console\n      console.log('link clicked!');\n    },\n  },\n};\n</script>\n\n<style>\n/** normalize line-height for consistent testing because links inherit it */\n\n.link-examples {\n  line-height: 1;\n}\n\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
