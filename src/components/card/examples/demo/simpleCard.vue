@@ -3,6 +3,15 @@
     <cdr-card class="card-example">
       <cdr-text>A simple card</cdr-text>
     </cdr-card>
+    <hr>
+    <a href="rei.com">
+      <cdr-card
+        class="card-example"
+        :linked="true"
+      >
+        <cdr-text>A linked card</cdr-text>
+      </cdr-card>
+    </a>
   </div>
 </template>
 
