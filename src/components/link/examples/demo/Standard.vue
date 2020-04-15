@@ -114,8 +114,13 @@
       modifier="subheading-sans-300"
     >Links, with inherited color</cdr-text>
     <div style="color: darkgreen; fill: darkgreen;">
-      <cdr-link inherit-color href="rei.com">inherit-color plain example</cdr-link>
-      <br/>
+      <cdr-link
+        inherit-color
+        href="rei.com"
+      >
+        inherit-color plain example
+      </cdr-link>
+      <br>
       <cdr-link inherit-color>
         <cdr-icon
           inherit-color
