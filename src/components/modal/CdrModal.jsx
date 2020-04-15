@@ -76,7 +76,7 @@ export default {
     },
     verticalSpace() {
       // contentWrap vertical padding
-      const fullscreen = CdrSpaceTwoX;
+      const fullscreen = Number(CdrSpaceTwoX);
       const windowed = Number(CdrSpaceTwoX) + Number(CdrSpaceOneX);
 
       return this.fullscreen
