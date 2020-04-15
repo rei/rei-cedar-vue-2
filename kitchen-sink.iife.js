@@ -25774,7 +25774,7 @@ var cedar = (function () {
       },
       verticalSpace: function verticalSpace() {
         // contentWrap vertical padding
-        var fullscreen = CdrSpaceTwoX;
+        var fullscreen = Number(CdrSpaceTwoX);
         var windowed = Number(CdrSpaceTwoX) + Number(CdrSpaceOneX);
         return this.fullscreen ? fullscreen : windowed + fullscreen; // fullscreen, here, would account for outerWrap padding, which is the same CdrSpaceTwoX
       },
