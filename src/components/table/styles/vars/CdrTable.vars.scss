@@ -1,14 +1,14 @@
-@mixin cdr-table-base-text() {
+@mixin cdr-table-base-text-mixin() {
   @include cdr-text-utility-200;
   color: $cdr-color-text-primary;
 }
 
-@mixin cdr-table-base() {
-  @include cdr-table-base-text();
-  
+@mixin cdr-table-base-mixin() {
+  @include cdr-table-base-text-mixin();
+
   border: none;
   border-collapse: collapse;
-  
+
   tr {
     background-color: $cdr-color-background-table-row;
   }
@@ -29,7 +29,7 @@
     @include cdr-text-utility-strong-200;
   }
 
-  
+
   caption {
     @include cdr-text-utility-strong-300;
     text-align: left;
@@ -37,25 +37,25 @@
   }
 }
 
-@mixin cdr-table-small {
+@mixin cdr-table-small-mixin {
   th, td {
     padding: 0.4rem 1.6rem;
   }
 }
 
-@mixin cdr-table-medium {
+@mixin cdr-table-medium-mixin {
   th, td {
     padding: $cdr-space-inset-one-x-squish;
   }
 }
 
-@mixin cdr-table-large {
+@mixin cdr-table-large-mixin {
   th, td {
     padding: $cdr-space-inset-one-x;
   }
 }
 
-@mixin cdr-table-border() {
+@mixin cdr-table-border-mixin() {
   $table-border-default: 1px solid $cdr-color-border-table-default;
   $table-border-head: 1px solid $cdr-color-border-table-head;
 
@@ -74,14 +74,14 @@
       border-top: $table-border-default;
     }
   }
-  
+
   thead + tbody,
   tbody + tfoot {
     border-top: $table-border-default;
   }
 }
 
-@mixin cdr-table-striped() {
+@mixin cdr-table-striped-mixin() {
   tr:nth-child(odd) {
     background-color: $cdr-color-background-table-row-alt;
   }
@@ -112,17 +112,17 @@
   }
 }
 
-@mixin cdr-table-full-width() {
+@mixin cdr-table-full-width-mixin() {
   width: 100%;
 }
 
-@mixin cdr-table-responsive {
+@mixin cdr-table-responsive-mixin {
   display: block;
   width: 100%;
   overflow-x: auto;
 }
 
-@mixin cdr-table-hover {
+@mixin cdr-table-hover-mixin {
   tr:hover > * {
     background-color: $cdr-color-background-table-header;
   }
