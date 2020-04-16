@@ -84,7 +84,7 @@ export default {
   },
   watch: {
     opened() {
-      this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
+      this.updateHeight();
     },
   },
   mounted() {
@@ -94,7 +94,7 @@ export default {
       nice and smooth the first time they click it.
     */
     if (this.opened && this.$refs['accordion-content']) {
-      this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
+      this.updateHeight();
     }
   },
   methods: {
@@ -107,6 +107,9 @@ export default {
     onBlur() {
       this.focused = false;
     },
+    updateHeight() {
+      this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
+    }
   },
   render() {
     const Heading = `h${this.level}`;
