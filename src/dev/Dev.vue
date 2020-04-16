@@ -38,7 +38,7 @@ export default {
     },
   },
   mounted() {
-    console.log('BACKSTOP_READY');
+    console.log('BACKSTOP_READY'); // eslint-disable-line
   },
 };
 </script>
@@ -51,13 +51,14 @@ export default {
     <router-link
       to="#content"
       append
-      v-slot="{ href, route, navigate, isActive, isExactActive }"
+      v-slot="{ href, route, navigate }"
     ><cdr-link
       :href="href"
       @click="navigate"
       class="cdr-display-sr-focusable"
     >Skip to content</cdr-link></router-link>
     <!-- NOTE: For dev environment only, do not load icon sprites in JS in production -->
+    <!-- eslint-disable vue/no-v-html -->
     <div
       style="display:none"
       v-html="fullSprite"
@@ -66,14 +67,14 @@ export default {
       <li
         class="cdr-space-inset-quarter-x"
         style="display:inline-flex"
-        v-for="route in routes"
-        :key="route.name"
+        v-for="r in routes"
+        :key="r.name"
       >
         <router-link
-          v-if="route.name"
-          :key="route.path"
-          :to="route.path"
-          v-slot="{ href, route, navigate, isActive, isExactActive }"
+          v-if="r.name"
+          :key="r.path"
+          :to="r.path"
+          v-slot="{ href, route, navigate, isActive }"
         >
           <cdr-link
             :href="href"

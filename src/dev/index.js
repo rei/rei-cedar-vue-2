@@ -18,5 +18,5 @@ Vue.config.devtools = false;
 new Vue({
   router,
   el: '#main',
-  render: app => app(Dev),
+  render: (app) => app(Dev),
 });

@@ -159,8 +159,8 @@ export default {
     },
     preventNavigate(num, url, e) {
       e.preventDefault();
-      console.log('preventNavigate');
-      console.warn(num, url);
+      console.log('preventNavigate'); // eslint-disable-line
+      console.warn(num, url); // eslint-disable-line
     },
     makePages(total, arg = 'page', startingAt = 0) {
       const adjuster = startingAt > 0 ? startingAt : 0;

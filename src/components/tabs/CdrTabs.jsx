@@ -45,8 +45,8 @@ export default {
   },
   mounted() {
     this.tabs = (this.$slots.default || [])
-      .map(vnode => vnode.componentInstance)
-      .filter(tab => tab); // get vue component children in the slot
+      .map((vnode) => vnode.componentInstance)
+      .filter((tab) => tab); // get vue component children in the slot
 
     this.activeTabIndex = this.getNextTab(this.activeTab);
 
@@ -109,7 +109,7 @@ export default {
       return -1;
     },
     handleClick: debounce(function handleClickCallback(tabClicked) {
-      const newIndex = this.tabs.findIndex(tab => tabClicked.name === tab.name);
+      const newIndex = this.tabs.findIndex((tab) => tabClicked.name === tab.name);
       this.changeTab(newIndex);
     }, 500, { leading: true, trailing: false }),
     changeTab(newIndex) {
@@ -219,7 +219,7 @@ export default {
       ) : (
         <a
           tabIndex={tab.active ? 0 : -1}
-          vOn:click_prevent={e => this.handleClick(tab, e)}
+          vOn:click_prevent={(e) => this.handleClick(tab, e)}
           href={`#${tab.id}`}
           class={this.style['cdr-tabs__header-item-label']}
         >
@@ -257,7 +257,7 @@ export default {
               role="tablist"
               ref="cdrTabsHeader"
             >
-              {this.tabs.map(tab => (
+              {this.tabs.map((tab) => (
                   <li
                     role="tab"
                     aria-selected={tab.active}

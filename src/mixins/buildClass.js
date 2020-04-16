@@ -20,13 +20,15 @@ export default {
         /*
           prefix class names with prop name
         */
-        propArgsArr = propArgsArr.map(mod => `${prop}${mod}`);
+        propArgsArr = propArgsArr.map((mod) => `${prop}${mod}`);
       }
 
       if (!this.style) {
-        builtClasses = builtClasses.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
+        builtClasses = builtClasses
+          .concat(propArgsArr.map((mod) => this.modifyClassName(base, mod)));
       } else {
-        builtClasses = builtClasses.concat(propArgsArr.map(mod => this.modifyClassName(base, mod)));
+        builtClasses = builtClasses
+          .concat(propArgsArr.map((mod) => this.modifyClassName(base, mod)));
       }
 
       return builtClasses.join(' ');
@@ -62,7 +64,7 @@ export default {
     responsiveModifyClass(base, modifier, propVal) {
       if (typeof propVal === 'string') {
         return propVal.split(' ')
-          .map(bp => this.modifyClassName(base, `${modifier}${bp}`))
+          .map((bp) => this.modifyClassName(base, `${modifier}${bp}`))
           .join(' ');
       }
       return this.modifyClassName(base, modifier);

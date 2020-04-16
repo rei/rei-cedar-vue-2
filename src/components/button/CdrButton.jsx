@@ -15,7 +15,7 @@ export default {
     tag: {
       type: String,
       default: 'button',
-      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
+      validator: (value) => (['button', 'a'].indexOf(value) >= 0) || false,
     },
     /**
      * Sets the button type. {button, submit, reset}
@@ -23,7 +23,7 @@ export default {
     type: {
       type: String,
       default: 'button',
-      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
+      validator: (value) => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
      * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.

@@ -64,7 +64,8 @@ export default {
       onKeydown={this.handleKeyDown}
     >
         {
-          this.$slots.default.map(vNode => (vNode.tag !== undefined ? h('li', vNode, [vNode]) : ''))
+          this.$slots.default.map((vNode) => (vNode.tag !== undefined
+            ? h('li', vNode, [vNode]) : ''))
         }
     </ul>);
   },

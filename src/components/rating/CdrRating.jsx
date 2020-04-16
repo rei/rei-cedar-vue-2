@@ -129,7 +129,7 @@ export default {
       >
         <div class={this.style['cdr-rating__ratings']}>
 
-          {[...Array(this.whole).keys()].map(n => (
+          {[...Array(this.whole).keys()].map((n) => (
               <span
                 class={clsx(this.style['cdr-rating__icon'], this.style['cdr-rating__100'])}
                 key={`rating-whole-${n}-${this._uid}`} // eslint-disable-line no-underscore-dangle
@@ -137,7 +137,7 @@ export default {
               />
           ))}
           {this.remainderEl }
-          {[...Array(this.empties).keys()].map(n => (
+          {[...Array(this.empties).keys()].map((n) => (
             <span
               class={clsx(
                 this.style['cdr-rating__icon'],
