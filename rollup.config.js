@@ -11,7 +11,7 @@ let externals = Object.keys(Object.assign(
   {},
   dependencies,
   peerDependencies,
-))
+));
 
 if (babelEnv === 'cjs') {
   // don't externalize ES modules in CJS build
@@ -44,25 +44,25 @@ if (env === 'prod' && babelEnv === 'esm') {
       input: 'src/index.js',
       output: [
         {
-          dir: `dist/lib`,
+          dir: 'dist/lib',
           format: 'esm',
-          entryFileNames: '[name].js'
+          entryFileNames: '[name].js',
         },
       ],
       plugins: [
         ...plugins,
         renameExtensions({
-            include: ['**/*.js', '**/*.jsx', '**/*.scss'],
-            mappings: {
-                '.js': '.mjs',
-                '.jsx': '.mjs',
-                '.scss': '.mjs',
-            },
-        })
+          include: ['**/*.js', '**/*.jsx', '**/*.scss'],
+          mappings: {
+            '.js': '.mjs',
+            '.jsx': '.mjs',
+            '.scss': '.mjs',
+          },
+        }),
       ],
       external: env === 'prod' ? externalFn : undefined,
-      preserveModules: true
-    }
-  )
+      preserveModules: true,
+    },
+  );
 }
 export default config;
