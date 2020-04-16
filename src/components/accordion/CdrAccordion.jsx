@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import debounce from 'lodash-es/debounce';
 import IconCaretDown from '../icon/comps/caret-down';
 import modifier from '../../mixins/modifier';
 import style from './styles/CdrAccordion.scss';
@@ -96,6 +97,10 @@ export default {
     if (this.opened && this.$refs['accordion-content']) {
       this.updateHeight();
     }
+
+    window.addEventListener('resize', debounce(() => {
+      this.updateHeight();
+    }, 50));
   },
   methods: {
     onClick(event) {
@@ -109,7 +114,7 @@ export default {
     },
     updateHeight() {
       this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
-    }
+    },
   },
   render() {
     const Heading = `h${this.level}`;
