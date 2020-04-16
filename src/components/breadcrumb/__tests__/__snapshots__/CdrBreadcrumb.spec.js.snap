@@ -45,7 +45,7 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
         class="cdr-breadcrumb__link"
         href="http://google.com"
       >
-        Breadcrumb Step 1
+        Long Breadcrumb Step 1
       </a>
       <span
         aria-hidden="true"

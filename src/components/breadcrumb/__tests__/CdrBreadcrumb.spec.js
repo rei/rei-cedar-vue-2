@@ -5,7 +5,7 @@ const itemsA = [
   {
     item: {
       url: 'http://google.com',
-      name: 'Breadcrumb Step 1',
+      name: 'Long Breadcrumb Step 1',
     },
   },
   {
@@ -32,19 +32,35 @@ const itemsB = [
   {
     item:{
       url: 'http://rei.com',
-      name: 'Long Breadcrumb Step 2',
+      name: 'Breadcrumb Step 2',
+    },
+  },
+];
+
+const itemsB2 = [
+  {
+    item: {
+      url: 'http://google.com',
+      name: 'Breadcrumb Step 3',
+    },
+  },
+  {
+    item:{
+      url: 'http://rei.com',
+      name: 'Breadcrumb Step 4',
     },
   },
 ];
 
 describe('CdrBreadcrumb', () => {
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     const wrapper = mount(CdrBreadcrumb, {
       propsData: {
         items: itemsA,
       }
     });
     wrapper.setData({ componentID: 'example' });
+    await wrapper.vm.$nextTick();
     expect(wrapper.element).toMatchSnapshot();
   });
 
@@ -73,7 +89,7 @@ describe('CdrBreadcrumb', () => {
     expect(wrapper.vm.truncate).toBe(false);
   });
 
-  it('breadcrumb should truncate with 3 or more items', () => {
+  it('breadcrumb should truncate with 3 or more items', async () => {
     const wrapper = shallowMount(CdrBreadcrumb, {
       propsData: {
         items: itemsA,
@@ -83,18 +99,19 @@ describe('CdrBreadcrumb', () => {
     
     expect(wrapper.vm.truncate).toBe(true);
     wrapper.find({ref: 'ellipse'}).trigger('click');
+    await wrapper.vm.$nextTick();
     expect(wrapper.vm.truncate).toBeFalsy();
-
   });
 
-  it('breadcrumb should evaluate truncation when items are updated', () => {
+  it('breadcrumb should evaluate truncation when items are updated', async () => {
     const wrapper = shallowMount(CdrBreadcrumb, {
       propsData: {
         items: itemsB,
       }
     });
     expect(wrapper.vm.truncate).toBe(false);
-    wrapper.setProps({items: itemsB.concat(itemsB)})
+    wrapper.setProps({items: itemsB.concat(itemsB2)});
+    await wrapper.vm.$nextTick();
     expect(wrapper.vm.truncate).toBe(true);
   });
 
@@ -124,10 +141,9 @@ describe('CdrBreadcrumb', () => {
       },
       attachToDocument: true, // enables focus testing
     });
-    wrapper.vm.handleEllipsisClick()
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.$refs.firstBreadcrumb).toBe(document.activeElement);
-    });
+    wrapper.vm.handleEllipsisClick();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.$refs.firstBreadcrumb).toBe(document.activeElement);
   });
 
 });

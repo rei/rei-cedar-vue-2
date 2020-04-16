@@ -25,7 +25,7 @@ describe('CdrAccordionGroup', () => {
     expect(wrapper.element).toMatchSnapshot()
   });
   
-  it('has correct a11y', () => {
+  it('has correct a11y', async () => {
     const wrapper = mount(CdrAccordionGroup, {
       stubs: {
         'cdr-accordion': CdrAccordion,
@@ -49,26 +49,32 @@ describe('CdrAccordionGroup', () => {
     // Up (first to last)
     wrapper.trigger('keydown', { key: 'ArrowUp' });
     wrapper.setData({ currentIdx: 2 });
+    await wrapper.vm.$nextTick();
     expect(buttons[2]).toBe(document.activeElement);
     // Down (last to first)
     wrapper.trigger('keydown', { key: 'ArrowDown' });
     wrapper.setData({ currentIdx: 0 });
+    await wrapper.vm.$nextTick();
     expect(buttons[0]).toBe(document.activeElement);
     // Down
     wrapper.trigger('keydown', { key: 'ArrowDown' });
     wrapper.setData({ currentIdx: 1 });
+    await wrapper.vm.$nextTick();
     expect(buttons[1]).toBe(document.activeElement);
     // Up
     wrapper.trigger('keydown', { key: 'ArrowUp' });
     wrapper.setData({ currentIdx: 0 });
+    await wrapper.vm.$nextTick();
     expect(buttons[0]).toBe(document.activeElement);
     // End
     wrapper.trigger('keydown', { key: 'End' });
     wrapper.setData({ currentIdx: 2 });
+    await wrapper.vm.$nextTick();
     expect(buttons[2]).toBe(document.activeElement);
     // Home
     wrapper.trigger('keydown', { key: 'Home' });
     wrapper.setData({ currentIdx: 0 });
+    await wrapper.vm.$nextTick();
     expect(buttons[0]).toBe(document.activeElement);
   });
 });

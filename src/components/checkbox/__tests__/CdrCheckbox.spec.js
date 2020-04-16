@@ -60,13 +60,14 @@ describe('CdrCheckbox', () => {
     expect(wrapper.find('.custom-content-class').exists()).toBe(true);
   });
 
-  it('watches values correctly', () => {
+  it('watches values correctly', async () => {
     const wrapper = shallowMount(CdrCheckbox, {
       propsData: {
         value: false,
       },
     });
     wrapper.setProps({ value: true });
+    await wrapper.vm.$nextTick();
     expect(wrapper.vm.value).toBe(true);
     expect(wrapper.vm.newValue).toBe(true);
   });

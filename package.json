@@ -61,7 +61,7 @@
     "@rei/cedar-icons": "^1.4.0",
     "@rollup/plugin-alias": "^2.2.0",
     "@vue/babel-preset-jsx": "^1.1.2",
-    "@vue/test-utils": "^1.0.0-beta.29",
+    "@vue/test-utils": "^1.0.0-beta.33",
     "autoprefixer": "^9.7.6",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.9.0",
