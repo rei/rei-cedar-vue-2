@@ -42,7 +42,7 @@ describe('CdrAccordion', () => {
     // closed state
     expect(button.attributes('aria-expanded')).toBe('false');
     expect(button.attributes('aria-controls')).toBe(`${wrapper.vm.id}-collapsible`);
-    
+
     // opened state
     button.trigger('click');
     wrapper.setData({ opened: true }); // fake the opening logic
@@ -63,7 +63,7 @@ describe('CdrAccordion', () => {
           default: 'This is some slot text.'
         },
       });
-      
+
       expect(wrapper.vm.maxHeight).toBe(0);
     });
 
@@ -79,8 +79,8 @@ describe('CdrAccordion', () => {
           default: 'This is some slot text.'
         },
       });
-      
-      expect(wrapper.vm.maxHeight).toBe('0px');
+
+      expect(wrapper.vm.maxHeight).toBe('none');
     });
   });
 
@@ -96,7 +96,7 @@ describe('CdrAccordion', () => {
           default: 'This is some slot text.'
         },
       });
-      
+
       wrapper.find('button').trigger('click');
       expect(wrapper.emitted('accordion-toggle'));
     });
@@ -113,10 +113,10 @@ describe('CdrAccordion', () => {
           default: 'This is some slot text.'
         },
       });
-      
+
       wrapper.setProps({ opened: false });
-      expect(wrapper.vm.maxHeight).toBe(0);
-    });    
+      expect(wrapper.vm.maxHeight).toBe('0px');
+    });
   });
 
   it('isOpenClass computed prop', () => {
