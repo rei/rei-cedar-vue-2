@@ -71,7 +71,7 @@ export default {
     this.$refs.cdrTabsHeader.parentElement.addEventListener('scroll', debounce(() => {
       this.calculateOverflow();
       this.updateUnderline();
-    }, 250));
+    }, 50));
   },
   methods: {
     getNextTab(startIndex) {
@@ -170,6 +170,12 @@ export default {
         this.underlineOffsetX = activeTab.offsetLeft
           - this.$refs.cdrTabsHeader.parentElement.scrollLeft;
         this.underlineWidth = activeTab.firstChild.offsetWidth;
+
+        // mobile fix, hide the underline if it scrolls outside the container
+        if (this.underlineOffsetX > this.$refs.cdrTabsContainer.offsetWidth) {
+          this.underlineOffsetX = this.$refs.cdrTabsContainer.offsetWidth;
+          this.underlineWidth = 0;
+        }
       }
     },
     handleDownArrowNav() {

@@ -24,6 +24,7 @@
   display: flex;
   flex-flow: column;
   height: 500px;
+  overflow-x: hidden;
 
   // https://davidwalsh.name/osx-overflow
   ::-webkit-scrollbar {
