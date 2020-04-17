@@ -2,8 +2,8 @@ import replace from 'rollup-plugin-replace';
 import livereload from 'rollup-plugin-livereload';
 import serve from 'rollup-plugin-serve';
 import jsonPlugin from 'rollup-plugin-json';
-import plugins from './build/rollup-plugins';
 import svg from 'rollup-plugin-svg';
+import plugins from './build/rollup-plugins';
 
 plugins.push(
   replace({

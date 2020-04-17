@@ -7,19 +7,18 @@ const env = process.env.NODE_ENV;
 const babelEnv = process.env.BABEL_ENV;
 const { dependencies = {}, peerDependencies = {} } = packageJson;
 
-let externals = Object.keys(Object.assign(
-  {},
-  dependencies,
-  peerDependencies,
-));
+let externals = Object.keys({
+  ...dependencies,
+  ...peerDependencies,
+});
 
 if (babelEnv === 'cjs') {
   // don't externalize ES modules in CJS build
   // TODO: figure out config change needed in @rei/vunit
-  externals = externals.filter(x => x !== 'lodash-es' && x !== 'clsx');
+  externals = externals.filter((x) => x !== 'lodash-es' && x !== 'clsx');
 }
 
-const externalFn = id => externals.some(dep => dep === id || id.startsWith(`${dep}/`));
+const externalFn = (id) => externals.some((dep) => dep === id || id.startsWith(`${dep}/`));
 
 const ext = babelEnv === 'cjs' ? 'js' : 'mjs';
 
