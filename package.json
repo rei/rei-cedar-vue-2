@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "5.0.0-alpha.3",
+  "version": "5.0.0-beta.0",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -156,7 +156,7 @@
   "dependencies": {
     "@babel/runtime": "^7.9.2",
     "@babel/runtime-corejs3": "^7.9.2",
-    "@rei/cdr-tokens": "^4.0.0-beta.4",
+    "@rei/cdr-tokens": "^4.0.0-beta.5",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "clsx": "^1.1.0",
     "lodash-es": "^4.17.15",
