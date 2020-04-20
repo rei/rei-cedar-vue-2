@@ -25,7 +25,7 @@ describe('CdrAccordion', () => {
   });
 
   // TODO add more checks here
-  it('meets a11y requirements', () => {
+  it('meets a11y requirements', async () => {
     const wrapper = shallowMount(CdrAccordion, {
       propsData: {
         id: 'test',
@@ -45,7 +45,8 @@ describe('CdrAccordion', () => {
 
     // opened state
     button.trigger('click');
-    wrapper.setData({ opened: true }); // fake the opening logic
+    wrapper.setProps({ opened: true }); // fake the opening logic
+    await wrapper.vm.$nextTick();
     expect(button.attributes('aria-expanded')).toBe('true');
     expect(contentArea.attributes('aria-hidden')).toBe('false');
   })
@@ -85,7 +86,7 @@ describe('CdrAccordion', () => {
   });
 
   describe('toggling accordion', () => {
-    it('updates emits an event onClick', () => {
+    it('updates emits an event onClick', async () => {
       const wrapper = shallowMount(CdrAccordion, {
         propsData: {
           id: 'test',
@@ -98,10 +99,11 @@ describe('CdrAccordion', () => {
       });
 
       wrapper.find('button').trigger('click');
+      await wrapper.vm.$nextTick();
       expect(wrapper.emitted('accordion-toggle'));
     });
 
-    it('updates maxHeight on prop update', () => {
+    it('updates maxHeight on prop update', async () => {
       const wrapper = shallowMount(CdrAccordion, {
         propsData: {
           id: 'test',
@@ -115,6 +117,7 @@ describe('CdrAccordion', () => {
       });
 
       wrapper.setProps({ opened: false });
+      await wrapper.vm.$nextTick();
       expect(wrapper.vm.maxHeight).toBe('0px');
     });
   });
@@ -135,7 +138,7 @@ describe('CdrAccordion', () => {
     expect(wrapper.vm.isOpenClass).toEqual('closed');
   });
 
-  it('focused style', () => {
+  it('focused style', async () => {
     const wrapper = shallowMount(CdrAccordion, {
       propsData: propsData,
       slots: {
@@ -143,9 +146,11 @@ describe('CdrAccordion', () => {
       },
     });
     wrapper.find('button').trigger('focus');
+    await wrapper.vm.$nextTick();
     expect(wrapper.vm.focused).toBeTruthy();
     expect(wrapper.classes()).toContain('cdr-accordion--focused');
     wrapper.find('button').trigger('blur');
+    await wrapper.vm.$nextTick();
     expect(wrapper.vm.focused).toBeFalsy();
   });
 

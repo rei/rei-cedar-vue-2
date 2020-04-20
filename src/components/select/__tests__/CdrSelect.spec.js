@@ -122,7 +122,7 @@ describe('cdrSelect', () => {
     expect(wrapper.vm.$refs.select.hasAttribute('multiple')).toBe(true);
   });
 
-  it('emits change event with correct value', () => {
+  it('emits change event with correct value', async () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
@@ -133,6 +133,7 @@ describe('cdrSelect', () => {
     const select = wrapper.find({ ref: 'select'});
     const options = select.findAll('option');
     options.at(0).setSelected();
+    await wrapper.vm.$nextTick();
     expect(wrapper.emitted().change[0][0]).toBe('3');
     expect(wrapper.emitted().change[0][1] instanceof Event).toBeTruthy();
   });
@@ -167,7 +168,7 @@ describe('cdrSelect', () => {
     expect(wrapper.emitted().change[0][1] instanceof Event).toBeTruthy();
   });
   
-  it('updating v-model data updates the select', () => {
+  it('updating v-model data updates the select', async () => {
     const wrapper = shallowMount(CdrSelect, {
       propsData: {
         label: 'test',
@@ -178,6 +179,7 @@ describe('cdrSelect', () => {
     const select = wrapper.find({ ref: 'select' });
     const options = select.findAll('option');
     wrapper.setProps({value: '3'});
+    await wrapper.vm.$nextTick();
     expect(select.element.value).toBe('3');
     expect(options.at(0).element.selected).toBeTruthy();
   });

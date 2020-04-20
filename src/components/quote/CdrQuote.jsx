@@ -14,7 +14,7 @@ export default {
     tag: {
       type: String,
       default: 'blockquote',
-      validator: value => (['blockquote', 'aside', 'q', 'div'].indexOf(value) >= 0) || false,
+      validator: (value) => (['blockquote', 'aside', 'q', 'div'].indexOf(value) >= 0) || false,
 
     },
     /** Caption summary text */

@@ -5,7 +5,7 @@ import Vue from 'vue';
 import CdrButton from 'componentdir/button/CdrButton';
 
 describe('CdrModal.vue', () => {
-  it('default open, scrolling', (done) => {
+  it('default open, scrolling', async () => {
     const wrapper = shallowMount(CdrModal, {
       propsData: {
         opened: true,
@@ -23,18 +23,16 @@ describe('CdrModal.vue', () => {
     expect(wrapper.element).toMatchSnapshot();
     expect(wrapper.find('.cdr-modal__text-fade').exists()).toBe(true);
 
-    Vue.nextTick(() => {
-      wrapper.setProps({ opened: false });
+    wrapper.setProps({ opened: false });
+    await wrapper.vm.$nextTick();
 
-      setTimeout(() => {
-        expect(wrapper.vm.reallyClosed).toBe(true);
-        wrapper.destroy();
-        done();
-      }, 500);
-    });
+    setTimeout(() => {
+      expect(wrapper.vm.reallyClosed).toBe(true);
+      wrapper.destroy();
+    }, 500);
   });
 
-  it('leaves optional slots empty, handleOpened', (done) => {
+  it('leaves optional slots empty, handleOpened', async () => {
     const mockMeasureContent = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
@@ -51,18 +49,16 @@ describe('CdrModal.vue', () => {
     });
 
     wrapper.setProps({ opened: true });
-    Vue.nextTick(() => {
-      expect(wrapper.element).toMatchSnapshot();
-      
-      setTimeout(() => {
-        expect(mockMeasureContent).toHaveBeenCalled();
-        wrapper.destroy();
-        done();
-      }, 300);
-    });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.element).toMatchSnapshot();
+    
+    setTimeout(() => {
+      expect(mockMeasureContent).toHaveBeenCalled();
+      wrapper.destroy();
+    }, 300);
   });
 
-  it('handleKeyDown', () => {
+  it('handleKeyDown', async () => {
     const mockMeasureContent = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
@@ -78,22 +74,23 @@ describe('CdrModal.vue', () => {
       attachToDocument: true,
     });
 
-    Vue.nextTick(() => {
-      wrapper.trigger('keydown', {
-        key: 'a'
-      });
-  
-      wrapper.trigger('keydown', {
-        key: 'Esc',
-      });
-  
-      wrapper.trigger('keydown', {
-        key: 'Escape',
-      });
-  
-      expect(wrapper.emitted().closed.length).toBe(2);
-      wrapper.destroy();
+    wrapper.trigger('keydown', {
+      key: 'a'
     });
+    await wrapper.vm.$nextTick();
+
+    wrapper.trigger('keydown', {
+      key: 'Esc',
+    });
+    await wrapper.vm.$nextTick();
+
+    wrapper.trigger('keydown', {
+      key: 'Escape',
+    });
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.emitted().closed.length).toBe(2);
+    wrapper.destroy();
   });
 
   it('scrolling and fullscreen snapshot', () => {
@@ -171,7 +168,7 @@ describe('CdrModal.vue', () => {
     wrapper.destroy();
   });
 
-  it('handleClosed', (done) => {
+  it('handleClosed', async () => {
     global.scrollTo = jest.fn();
     const spyMeasureContent = jest.fn();
     const spyHandleOpened = jest.fn();
@@ -191,20 +188,18 @@ describe('CdrModal.vue', () => {
         handleOpened: spyHandleOpened,
       },
       attachToDocument: true,
-    });    
+    });
 
     wrapper.vm.handleClosed();
-    
-    Vue.nextTick(() => { 
-      setTimeout(() => {
-        expect(wrapper.vm.reallyClosed).toBe(true);
-        expect(wrapper.vm.unsubscribe).toBe(null);
-        done();
-      }, 500);
-    });
+    await wrapper.vm.$nextTick();
+
+    setTimeout(() => {
+      expect(wrapper.vm.reallyClosed).toBe(true);
+      expect(wrapper.vm.unsubscribe).toBe(null);
+    }, 500);
   });
 
-  it('resize event', (done) => {
+  it('resize event', async () => {
     const spyMeasureContent = jest.fn();
     const wrapper = shallowMount(CdrModal, {
       propsData: {
@@ -221,11 +216,11 @@ describe('CdrModal.vue', () => {
     });
 
     window.dispatchEvent(new Event('resize'));
+    await wrapper.vm.$nextTick();
 
     setTimeout(() => {
       expect(spyMeasureContent).toHaveBeenCalled();
       wrapper.destroy();
-      done();
     }, 500);
   });
 });

@@ -12,7 +12,7 @@ describe('CdrTabs', () => {
       expect(wrapper.element).toMatchSnapshot();
     });
 
-    it('mounts with cdr-tab-panel children', (done) => {
+    it('mounts with cdr-tab-panel children', async () => {
       const spyGetNextTab = jest.fn();
       const spyGetHeaderWidth = jest.fn();
       const spyCalculateOverflow = jest.fn();
@@ -36,24 +36,23 @@ describe('CdrTabs', () => {
         },
       });
 
-      Vue.nextTick(() => {
-        expect(wrapper.vm.tabs.length).toBe(2);
-        expect(wrapper.findAll('li').length).toBe(2);
-        expect(wrapper.element).toMatchSnapshot();
-        expect(spyGetNextTab).toHaveBeenCalled();
-        expect(spyGetHeaderWidth).toHaveBeenCalled();
-        expect(spyCalculateOverflow).toHaveBeenCalled();
-        
-        setTimeout(() => {
-          expect(spyUpdateUnderline).toHaveBeenCalled();
-          done();
-        }, 200)
-      });
+      await wrapper.vm.$nextTick();
+
+      expect(wrapper.vm.tabs.length).toBe(2);
+      expect(wrapper.findAll('li').length).toBe(2);
+      expect(wrapper.element).toMatchSnapshot();
+      expect(spyGetNextTab).toHaveBeenCalled();
+      expect(spyGetHeaderWidth).toHaveBeenCalled();
+      expect(spyCalculateOverflow).toHaveBeenCalled();
+      setTimeout(() => { // for debounce
+        expect(spyUpdateUnderline).toHaveBeenCalled();
+        wrapper.destroy();
+      }, 600);
     });
   });
 
-  describe('event listeners', () => {    
-    it('handles scroll event', (done) => {
+  describe('event listeners', () => {
+    it('handles scroll event', async () => {
       const spyCalculateOverflow = jest.fn();
       const spyUpdateUnderline = jest.fn();
 
@@ -74,20 +73,18 @@ describe('CdrTabs', () => {
         attachToDocument: true,
       });
 
-      Vue.nextTick(() => {
         wrapper.vm.$refs.cdrTabsHeader.parentElement.dispatchEvent(new Event('scroll'));
+        await wrapper.vm.$nextTick();
 
         setTimeout(() => { // for debounce
           expect(wrapper.vm.overflowLeft).toBe(false);
           expect(spyCalculateOverflow).toHaveBeenCalled();
           expect(spyUpdateUnderline).toHaveBeenCalled();
           wrapper.destroy();
-          done();
         }, 600);
-      });
     });
 
-    it('handles resize event', () => {
+    it('handles resize event', async () => {
       const spyCalculateOverflow = jest.fn();
       const spyUpdateUnderline = jest.fn();
       const spyGetHeaderWidth = jest.fn();
@@ -110,20 +107,15 @@ describe('CdrTabs', () => {
         attachToDocument: true,
       });
 
-      Vue.nextTick(() => {
-        setTimeout(() => {
-          console.log('resize dispatchEvent');
-          window.dispatchEvent(new Event('resize'));
+      window.dispatchEvent(new Event('resize'));
+      await wrapper.vm.$nextTick();
 
-          setTimeout(() => { // for debounce
-            expect(spyGetHeaderWidth).toHaveBeenCalledTimes(2);
-            expect(spyCalculateOverflow).toHaveBeenCalledTimes(2);
-            expect(spyUpdateUnderline).toHaveBeenCalledTimes(2);
-            wrapper.destroy();
-            done();
-          }, 600);
-        }, 800);
-      });
+      setTimeout(() => { // for debounce
+        expect(spyGetHeaderWidth).toHaveBeenCalledTimes(2);
+        expect(spyCalculateOverflow).toHaveBeenCalledTimes(2);
+        expect(spyUpdateUnderline).toHaveBeenCalledTimes(2);
+        wrapper.destroy();
+      }, 600);
     });
   });
 
@@ -151,7 +143,7 @@ describe('CdrTabs', () => {
   });
 
   describe('handleClick', () => {
-    it('left to right', (done) => {
+    it('left to right', async () => {
       const wrapper = mount(CdrTabs, {
         stubs: {
           'cdr-tab-panel': CdrTabPanel,
@@ -163,15 +155,14 @@ describe('CdrTabs', () => {
           ],
         },
       });
-      
-      Vue.nextTick(() => {
-        wrapper.findAll('a').at(1).trigger('click');
-        expect(wrapper.vm.activeTabIndex).toBe(1);
-        done();
-      });
+
+      await wrapper.vm.$nextTick();
+      wrapper.findAll('a').at(1).trigger('click');
+      await wrapper.vm.$nextTick();
+      expect(wrapper.vm.activeTabIndex).toBe(1);
     });
 
-    it('right to left', (done) => {
+    it('right to left', async () => {
       const wrapper = mount(CdrTabs, {
         stubs: {
           'cdr-tab-panel': CdrTabPanel,
@@ -187,42 +178,18 @@ describe('CdrTabs', () => {
           activeTab: 1,
         },
       });
-      
-      Vue.nextTick(() => {
-        expect(wrapper.vm.activeTabIndex).toBe(1);
-        wrapper.vm.changeTab(0);
-        Vue.nextTick(() => {
-          setTimeout(() => {
-            expect(wrapper.vm.activeTabIndex).toBe(0)
-            done();
-          }, 300);
-        });
-      });
-    });
-  });
 
-  it('handles right arrow key', (done) => {
-    const wrapper = mount(CdrTabs, {
-      stubs: {
-        'cdr-tab-panel': CdrTabPanel,
-      },
-      slots: {
-        default: [
-          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
-          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
-        ],
-      }
-    });
-    
-    Vue.nextTick(() => {
-      // Trigger right arrow keyup event
-      wrapper.findAll('div').at(1).trigger('keyup.right');
+      await wrapper.vm.$nextTick();
       expect(wrapper.vm.activeTabIndex).toBe(1);
-      done();
+      wrapper.vm.changeTab(0);
+      await wrapper.vm.$nextTick();
+      setTimeout(() => {
+        expect(wrapper.vm.activeTabIndex).toBe(0)
+      }, 300);
     });
   });
 
-  it('handles left arrow key', (done) => {
+  it('handles right arrow key', async () => {
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
@@ -235,17 +202,36 @@ describe('CdrTabs', () => {
       }
     });
     
-    Vue.nextTick(() => {
-      wrapper.setData({ activeTabIndex: 1 });
-      // Trigger left arrow keyup event
-      wrapper.findAll('div').at(1).trigger('keyup.left');
-      expect(wrapper.vm.activeTabIndex).toBe(0);
-      done();
+    await wrapper.vm.$nextTick();
+    // Trigger right arrow keyup event
+    wrapper.findAll('div').at(1).trigger('keyup.right');
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.activeTabIndex).toBe(1);
+  });
+
+  it('handles left arrow key', async () => {
+    const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
+      },
+      slots: {
+        default: [
+          '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
+          '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
+        ],
+      }
     });
+    
+    wrapper.setData({ activeTabIndex: 1 });
+    await wrapper.vm.$nextTick();
+    // Trigger left arrow keyup event
+    wrapper.findAll('div').at(1).trigger('keyup.left');
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.activeTabIndex).toBe(0);
   });
 
   describe('overflow classes', () => {
-    it('adds gradient-left class', (done) => {
+    it('adds gradient-left class', async () => {
       const spyUpdateUnderline = jest.fn();
       const wrapper = mount(CdrTabs, {
         stubs: {
@@ -263,14 +249,13 @@ describe('CdrTabs', () => {
         attachToDocument: true,
       });
 
-      Vue.nextTick(() => {
-        wrapper.setData({ overflowLeft: true });
-        expect(wrapper.find('.cdr-tabs__header-gradient-left').exists()).toBe(true);
-        done();
-      });
+      await wrapper.vm.$nextTick();
+      wrapper.setData({ overflowLeft: true });
+      await wrapper.vm.$nextTick();
+      expect(wrapper.find('.cdr-tabs__header-gradient-left').exists()).toBe(true);
     });
 
-    it('adds gradient-right class', (done) => {
+    it('adds gradient-right class', async () => {
       const wrapper = mount(CdrTabs, {
         stubs: {
           'cdr-tab-panel': CdrTabPanel,
@@ -284,15 +269,14 @@ describe('CdrTabs', () => {
         attachToDocument: true,
       });
 
-      Vue.nextTick(() => {
-        wrapper.setData({ overflowRight: true });
-        expect(wrapper.find('.cdr-tabs__header-gradient-right').exists()).toBe(true);
-        done();
-      });
+      await wrapper.vm.$nextTick();
+      wrapper.setData({ overflowRight: true });
+      await wrapper.vm.$nextTick();
+      expect(wrapper.find('.cdr-tabs__header-gradient-right').exists()).toBe(true);
     });
   });
 
-  it('accessibility', (done) => {
+  it('accessibility', async () => {
     const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -309,22 +293,19 @@ describe('CdrTabs', () => {
       },
     });
 
-    Vue.nextTick(() => {
-      const tab1 = wrapper.find('#tab-1');
+    await wrapper.vm.$nextTick();
 
-      expect(tab1.attributes()['aria-selected']).toBe('true');
-      expect(tab1.attributes()['role']).toBe('tab');
-      expect(tab1.attributes()['aria-disabled']).toBe('false');
+    const tab1 = wrapper.find('#tab-1');
 
-      // tablist role
-      expect(wrapper.find({ref: 'cdrTabsHeader'}).attributes()['role']).toBe('tablist');
-      
-      done();
-    });
+    expect(tab1.attributes()['aria-selected']).toBe('true');
+    expect(tab1.attributes()['role']).toBe('tab');
+    expect(tab1.attributes()['aria-disabled']).toBe('false');
 
+    // tablist role
+    expect(wrapper.find({ref: 'cdrTabsHeader'}).attributes()['role']).toBe('tablist');
   });
 
-  it('handleDownArrowNav', () => {
+  it('handleDownArrowNav', async () => {
     const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -342,13 +323,13 @@ describe('CdrTabs', () => {
       attachToDocument: true,
     });
 
-    Vue.nextTick(() => {
-      wrapper.vm.handleDownArrowNav();
-      expect(wrapper.vm.$el.lastElementChild.children[wrapper.vm.activeTabIndex]).toBe(document.activeElement);
-    });
+    await wrapper.vm.$nextTick();
+    wrapper.vm.handleDownArrowNav();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.$el.lastElementChild.children[wrapper.vm.activeTabIndex]).toBe(document.activeElement);
   });
 
-  it('setFocusToActiveTabHeader', () => {
+  it('setFocusToActiveTabHeader', async () => {
     const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -366,13 +347,13 @@ describe('CdrTabs', () => {
       attachToDocument: true,
     });
 
-    Vue.nextTick(() => {
-      wrapper.vm.setFocusToActiveTabHeader();
-      expect(wrapper.vm.$refs.cdrTabsHeader.children[wrapper.vm.activeTabIndex].children[0]).toBe(document.activeElement);
-    });
+    await wrapper.vm.$nextTick();
+    wrapper.vm.setFocusToActiveTabHeader();
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.$refs.cdrTabsHeader.children[wrapper.vm.activeTabIndex].children[0]).toBe(document.activeElement);
   });
 
-  it('scrollbar is hidden properly', (done) => {
+  it('scrollbar is hidden properly', async () => {
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
@@ -387,18 +368,19 @@ describe('CdrTabs', () => {
     });
     
     wrapper.setData({ widthInitialized: true});
+    await wrapper.vm.$nextTick();
     wrapper.setData({ underlineWidth: -1});
+    await wrapper.vm.$nextTick();
     wrapper.vm.hideScrollBar();
+    await wrapper.vm.$nextTick();
     expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('hidden');
     window.dispatchEvent(new Event('transitionend'));
-    Vue.nextTick(() => {
-      expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('unset');
-      wrapper.destroy();
-      done();
-    });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.$refs.cdrTabsContainer.style.getPropertyValue('overflow-x')).toBe('unset');
+    wrapper.destroy();
   });
 
-  it('calculateOverflow', () => {
+  it('calculateOverflow', async () => {
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
@@ -410,8 +392,11 @@ describe('CdrTabs', () => {
         ],
       }
     });
+    await wrapper.vm.$nextTick();
     wrapper.setData({ headerWidth: 2000 });
+    await wrapper.vm.$nextTick();
     wrapper.vm.calculateOverflow();
+    await wrapper.vm.$nextTick();
     expect(wrapper.vm.headerOverflow).toBe(true);
   });
 });

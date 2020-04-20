@@ -312,7 +312,7 @@ describe('CdrInput', () => {
   });
 
   // NOTE - can't use v-model directly here, targeting the `data` prop instead
-  it('updating v-model data updates the input', () => {
+  it('updating v-model data updates the input', async () => {
     const wrapper = shallowMount(CdrInput, {
       propsData: {
         label: 'test',
@@ -321,6 +321,7 @@ describe('CdrInput', () => {
     });
     const input = wrapper.find({ ref: 'input' });
     wrapper.setProps({value: ''});
+    await wrapper.vm.$nextTick();
     expect(input.element.value).toBe('');
   });
 });

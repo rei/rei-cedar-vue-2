@@ -26,7 +26,7 @@ export default {
     type: {
       type: [String],
       default: 'text',
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['text', 'email', 'number', 'password', 'search', 'url'],
       ),
@@ -90,15 +90,12 @@ export default {
       // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
       // handles conflict between v-model and v-on="$listeners"
       const vm = this;
-      return Object.assign(
-        {},
-        this.$listeners,
-        {
-          input(event) {
-            vm.$emit('input', event.target.value);
-          },
+      return {
+        ...this.$listeners,
+        input(event) {
+          vm.$emit('input', event.target.value);
         },
-      );
+      };
     },
     labelEl() {
       const requiredEl = this.required ? (

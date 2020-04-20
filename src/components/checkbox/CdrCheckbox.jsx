@@ -96,7 +96,7 @@ export default {
             type="checkbox"
             {... { attrs: this.$attrs } }
             vModel={this.newValue}
-            onChange={e => this.updateValue(this.newValue, e)}
+            onChange={(e) => this.updateValue(this.newValue, e)}
             true-value={this.customValue ? null : this.trueValue}
             false-value={this.customValue ? null : this.falseValue}
             value={this.customValue}

@@ -266,13 +266,13 @@ export default {
   },
   methods: {
     inputEventHandler(selectedValue, event) {
-      console.log('input Event event = ', event, ' selectedValue = ', selectedValue);
+      console.log('input Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line
     },
     inputChange(selectedValue, event) {
-      console.log('change Event event = ', event, ' selectedValue = ', selectedValue);
+      console.log('change Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line
     },
     doExternal(v, e) {
-      console.log('EXTERNAL', v, e);
+      console.log('EXTERNAL', v, e); // eslint-disable-line
     },
   },
 };

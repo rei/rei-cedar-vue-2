@@ -92,7 +92,7 @@ export default {
             type="radio"
             { ...{ attrs: this.$attrs } }
             vModel={this.newValue}
-            onChange={e => this.updateValue(this.newValue, e)}
+            onChange={(e) => this.updateValue(this.newValue, e)}
             name={this.name}
             value={this.customValue}
             ref="radio"

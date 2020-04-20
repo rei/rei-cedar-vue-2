@@ -10,6 +10,7 @@ describe('CdrTabPanel', () => {
       propsData: {
         name: 'test',
         id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -20,77 +21,78 @@ describe('CdrTabPanel', () => {
       propsData: {
         name: 'test',
         id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     expect(wrapper.vm.active).toBe(false);
   });
 
-  it('is active when set', (done) => {
+  it('is active when set', async () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
         id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     wrapper.vm.setActive(true);
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.active).toBe(true);
-      done();
-    });
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.vm.active).toBe(true);
   });
 
-  it('set animation direction functions correctly', (done) => {
+  it('set animation direction functions correctly', async () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
         id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     wrapper.vm.setActive(true);
+    await wrapper.vm.$nextTick();
 
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setAnimationDirection('flyLeft');
-      expect(wrapper.vm.animationDirection).toBe('flyLeft');
-      done();
-    });
+    wrapper.vm.setAnimationDirection('flyLeft');
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.animationDirection).toBe('flyLeft');
   });
 
-  it('set animation direction functions correctly', (done) => {
+  it('set animation direction functions correctly', async () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
         id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     wrapper.vm.setActive(true);
+    await wrapper.vm.$nextTick();
 
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setOffsetX(1234);
-      expect(wrapper.vm.offsetX).toBe(1234);
-      done();
-    });
+    wrapper.vm.setOffsetX(1234);
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.offsetX).toBe(1234);
   });
 
-  it('updates state after animationend', () => {
+  it('updates state after animationend', async () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
         id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
 
     wrapper.setData({ active: true, hidden: false, animationDirection: 'exit-left' });
-    wrapper.vm.$nextTick(() => {
-      wrapper.trigger('animationend', {
-        animationName: 'exit-left'
-      });
-      expect(wrapper.vm.hidden).toBe(true);
-      expect(wrapper.vm.animationDirection).toBe(null);
+    await wrapper.vm.$nextTick();
+    wrapper.trigger('animationend', {
+      animationName: 'exit-left'
     });
-
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.hidden).toBe(true);
+    expect(wrapper.vm.animationDirection).toBe(null);
   });
 
-  it('handleUpArrowNav', () => {
+  it('handleUpArrowNav', async () => {
     const spyUpdateUnderline = jest.fn();
     const spySetFocusToActiveTabHeader = jest.fn();
     const wrapper = mount(CdrTabs, {
@@ -98,7 +100,7 @@ describe('CdrTabPanel', () => {
         'cdr-tab-panel': CdrTabPanel,
       },
       slots: {
-        default: ['<cdr-tab-panel name="tab1" id="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" />']
+        default: ['<cdr-tab-panel name="tab1" id="tab1" aria-labelledby="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" aria-labelledby="tab2" />']
       },
       methods: {
         updateUnderline: spyUpdateUnderline,
@@ -106,10 +108,9 @@ describe('CdrTabPanel', () => {
       },
       attachToDocument: true,
     });
+    await wrapper.vm.$nextTick();
 
-    Vue.nextTick(() => {
-      wrapper.find(CdrTabPanel).trigger('keydown.up');
-      expect(spySetFocusToActiveTabHeader).toHaveBeenCalled();
-    });
+    wrapper.find(CdrTabPanel).trigger('keydown.up');
+    expect(spySetFocusToActiveTabHeader).toHaveBeenCalled();
   })
 });

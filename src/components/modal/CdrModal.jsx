@@ -271,7 +271,6 @@ export default {
             onClick={onClick}
             class={clsx(this.style['cdr-modal__overlay'], overlayClass)}
           />
-          {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
           <div tabIndex={opened ? '0' : undefined} />
           {/*
             this is the "uncommon case of an element that captures incoming tab traversal
@@ -354,7 +353,6 @@ export default {
               </section>
             </div>
           </div>
-          {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
           <div tabIndex={opened ? '0' : undefined} />
         </div>
       </div>
