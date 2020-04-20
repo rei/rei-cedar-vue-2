@@ -84,7 +84,17 @@ export default {
   },
   watch: {
     opened() {
-      this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
+      // reset maxHeight before animating
+      this.maxHeight = !this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
+      // nextTick is not sufficient here, must wait for CSS to re-paint
+      setTimeout(() => {
+        // on next frame, set maxHeight to new value
+        this.maxHeight = this.opened ? `${this.$refs['accordion-content'].clientHeight}px` : 0;
+        setTimeout(() => {
+          // after animation is complete, remove max-height so content can reflow
+          this.maxHeight = this.opened ? 'none' : 0;
+        }, 350); // cdr-duration-3x + 50ms
+      }, 50);
     },
   },
   mounted() {
@@ -94,7 +104,7 @@ export default {
       nice and smooth the first time they click it.
     */
     if (this.opened && this.$refs['accordion-content']) {
-      this.maxHeight = `${this.$refs['accordion-content'].clientHeight}px`;
+      this.maxHeight = 'none';
     }
   },
   methods: {
