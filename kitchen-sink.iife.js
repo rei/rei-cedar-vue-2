@@ -14963,44 +14963,6 @@ var cedar = (function () {
       undefined
     );
 
-  function toVal(mix) {
-  	var k, y, str='';
-  	if (mix) {
-  		if (typeof mix === 'object') {
-  			if (!!mix.push) {
-  				for (k=0; k < mix.length; k++) {
-  					if (mix[k] && (y = toVal(mix[k]))) {
-  						str && (str += ' ');
-  						str += y;
-  					}
-  				}
-  			} else {
-  				for (k in mix) {
-  					if (mix[k] && (y = toVal(k))) {
-  						str && (str += ' ');
-  						str += y;
-  					}
-  				}
-  			}
-  		} else if (typeof mix !== 'boolean' && !mix.call) {
-  			str && (str += ' ');
-  			str += mix;
-  		}
-  	}
-  	return str;
-  }
-
-  function clsx () {
-  	var i=0, x, str='';
-  	while (i < arguments.length) {
-  		if (x = toVal(arguments[i++])) {
-  			str && (str += ' ');
-  			str += x;
-  		}
-  	}
-  	return str;
-  }
-
   var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
   function createCommonjsModule(fn, module) {
@@ -15328,6 +15290,84 @@ var cedar = (function () {
     }
   };
 
+  var aFunction$1 = function (variable) {
+    return typeof variable == 'function' ? variable : undefined;
+  };
+
+  var getBuiltIn = function (namespace, method) {
+    return arguments.length < 2 ? aFunction$1(path[namespace]) || aFunction$1(global_1[namespace])
+      : path[namespace] && path[namespace][method] || global_1[namespace] && global_1[namespace][method];
+  };
+
+  var userAgent = getBuiltIn('navigator', 'userAgent') || '';
+
+  var slice = [].slice;
+  var MSIE = /MSIE .\./.test(userAgent); // <- dirty ie9- check
+
+  var wrap = function (scheduler) {
+    return function (handler, timeout /* , ...arguments */) {
+      var boundArgs = arguments.length > 2;
+      var args = boundArgs ? slice.call(arguments, 2) : undefined;
+      return scheduler(boundArgs ? function () {
+        // eslint-disable-next-line no-new-func
+        (typeof handler == 'function' ? handler : Function(handler)).apply(this, args);
+      } : handler, timeout);
+    };
+  };
+
+  // ie9- setTimeout & setInterval additional parameters fix
+  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers
+  _export({ global: true, bind: true, forced: MSIE }, {
+    // `setTimeout` method
+    // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout
+    setTimeout: wrap(global_1.setTimeout),
+    // `setInterval` method
+    // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval
+    setInterval: wrap(global_1.setInterval)
+  });
+
+  var setTimeout$1 = path.setTimeout;
+
+  var setTimeout$2 = setTimeout$1;
+
+  function toVal(mix) {
+  	var k, y, str='';
+  	if (mix) {
+  		if (typeof mix === 'object') {
+  			if (!!mix.push) {
+  				for (k=0; k < mix.length; k++) {
+  					if (mix[k] && (y = toVal(mix[k]))) {
+  						str && (str += ' ');
+  						str += y;
+  					}
+  				}
+  			} else {
+  				for (k in mix) {
+  					if (mix[k] && (y = toVal(k))) {
+  						str && (str += ' ');
+  						str += y;
+  					}
+  				}
+  			}
+  		} else if (typeof mix !== 'boolean' && !mix.call) {
+  			str && (str += ' ');
+  			str += mix;
+  		}
+  	}
+  	return str;
+  }
+
+  function clsx () {
+  	var i=0, x, str='';
+  	while (i < arguments.length) {
+  		if (x = toVal(arguments[i++])) {
+  			str && (str += ' ');
+  			str += x;
+  		}
+  	}
+  	return str;
+  }
+
   // `Object.defineProperty` method
   // https://tc39.github.io/ecma262/#sec-object.defineproperty
   _export({ target: 'Object', stat: true, forced: !descriptors, sham: !descriptors }, {
@@ -15471,15 +15511,6 @@ var cedar = (function () {
   var defineProperties = defineProperties_1;
 
   var defineProperties$1 = defineProperties;
-
-  var aFunction$1 = function (variable) {
-    return typeof variable == 'function' ? variable : undefined;
-  };
-
-  var getBuiltIn = function (namespace, method) {
-    return arguments.length < 2 ? aFunction$1(path[namespace]) || aFunction$1(global_1[namespace])
-      : path[namespace] && path[namespace][method] || global_1[namespace] && global_1[namespace][method];
-  };
 
   var hiddenKeys$1 = enumBugKeys.concat('length', 'prototype');
 
@@ -16174,8 +16205,6 @@ var cedar = (function () {
 
   var getOwnPropertyDescriptor$3 = getOwnPropertyDescriptor$2;
 
-  var userAgent = getBuiltIn('navigator', 'userAgent') || '';
-
   var process = global_1.process;
   var versions = process && process.versions;
   var v8 = versions && versions.v8;
@@ -16314,7 +16343,7 @@ var cedar = (function () {
     }
   } : nativeDefineProperty$1;
 
-  var wrap = function (tag, description) {
+  var wrap$1 = function (tag, description) {
     var symbol = AllSymbols[tag] = objectCreate($Symbol[PROTOTYPE$1]);
     setInternalState$1(symbol, {
       type: SYMBOL,
@@ -16413,7 +16442,7 @@ var cedar = (function () {
         setSymbolDescriptor(this, tag, createPropertyDescriptor(1, value));
       };
       if (descriptors && USE_SETTER) setSymbolDescriptor(ObjectPrototype$1, tag, { configurable: true, set: setter });
-      return wrap(tag, description);
+      return wrap$1(tag, description);
     };
 
     redefine($Symbol[PROTOTYPE$1], 'toString', function toString() {
@@ -16439,7 +16468,7 @@ var cedar = (function () {
 
   if (!useSymbolAsUid) {
     wrappedWellKnownSymbol.f = function (name) {
-      return wrap(wellKnownSymbol(name), name);
+      return wrap$1(wellKnownSymbol(name), name);
     };
   }
 
@@ -17113,7 +17142,21 @@ var cedar = (function () {
     },
     watch: {
       opened: function opened() {
-        this.maxHeight = this.opened ? "".concat(this.$refs['accordion-content'].clientHeight, "px") : 0;
+        var _this = this;
+
+        // reset maxHeight before animating
+        this.maxHeight = !this.opened ? "".concat(this.$refs['accordion-content'].clientHeight, "px") : 0; // nextTick is not sufficient here, must wait for CSS to re-paint
+
+        setTimeout$2(function () {
+          // on next frame, set maxHeight to new value
+          _this.maxHeight = _this.opened ? "".concat(_this.$refs['accordion-content'].clientHeight, "px") : 0;
+
+          setTimeout$2(function () {
+            // after animation is complete, remove max-height so content can reflow
+            _this.maxHeight = _this.opened ? 'none' : 0;
+          }, 350); // cdr-duration-3x + 50ms
+
+        }, 50);
       }
     },
     mounted: function mounted() {
@@ -17123,7 +17166,7 @@ var cedar = (function () {
         nice and smooth the first time they click it.
       */
       if (this.opened && this.$refs['accordion-content']) {
-        this.maxHeight = "".concat(this.$refs['accordion-content'].clientHeight, "px");
+        this.maxHeight = 'none';
       }
     },
     methods: {
@@ -17878,18 +17921,18 @@ var cedar = (function () {
     }
   });
 
-  var slice = entryVirtual('Array').slice;
+  var slice$1 = entryVirtual('Array').slice;
 
   var ArrayPrototype$7 = Array.prototype;
 
   var slice_1 = function (it) {
     var own = it.slice;
-    return it === ArrayPrototype$7 || (it instanceof Array && own === ArrayPrototype$7.slice) ? slice : own;
+    return it === ArrayPrototype$7 || (it instanceof Array && own === ArrayPrototype$7.slice) ? slice$1 : own;
   };
 
-  var slice$1 = slice_1;
+  var slice$2 = slice_1;
 
-  var slice$2 = slice$1;
+  var slice$3 = slice$2;
 
   // `Array.isArray` method
   // https://tc39.github.io/ecma262/#sec-array.isarray
@@ -18023,7 +18066,7 @@ var cedar = (function () {
               } else {
                 var _context;
 
-                $$i > -1 && (_this.newValue = concat$3(_context = slice$2($$a).call($$a, 0, $$i)).call(_context, slice$2($$a).call($$a, $$i + 1)));
+                $$i > -1 && (_this.newValue = concat$3(_context = slice$3($$a).call($$a, 0, $$i)).call(_context, slice$3($$a).call($$a, $$i + 1)));
               }
             } else {
               _this.newValue = $$c;
@@ -23586,7 +23629,7 @@ var cedar = (function () {
     }
   };
 
-  var slice$3 = [].slice;
+  var slice$4 = [].slice;
   var factories = {};
 
   var construct = function (C, argsLength, args) {
@@ -23601,9 +23644,9 @@ var cedar = (function () {
   // https://tc39.github.io/ecma262/#sec-function.prototype.bind
   var functionBind = Function.bind || function bind(that /* , ...args */) {
     var fn = aFunction(this);
-    var partArgs = slice$3.call(arguments, 1);
+    var partArgs = slice$4.call(arguments, 1);
     var boundFunction = function bound(/* args... */) {
-      var args = partArgs.concat(slice$3.call(arguments));
+      var args = partArgs.concat(slice$4.call(arguments));
       return this instanceof boundFunction ? construct(fn, args.length, args) : fn.apply(that, args);
     };
     if (isObject$1(fn.prototype)) boundFunction.prototype = fn.prototype;
@@ -23628,35 +23671,6 @@ var cedar = (function () {
   var bind$3 = bind_1;
 
   var bind$4 = bind$3;
-
-  var slice$4 = [].slice;
-  var MSIE = /MSIE .\./.test(userAgent); // <- dirty ie9- check
-
-  var wrap$1 = function (scheduler) {
-    return function (handler, timeout /* , ...arguments */) {
-      var boundArgs = arguments.length > 2;
-      var args = boundArgs ? slice$4.call(arguments, 2) : undefined;
-      return scheduler(boundArgs ? function () {
-        // eslint-disable-next-line no-new-func
-        (typeof handler == 'function' ? handler : Function(handler)).apply(this, args);
-      } : handler, timeout);
-    };
-  };
-
-  // ie9- setTimeout & setInterval additional parameters fix
-  // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers
-  _export({ global: true, bind: true, forced: MSIE }, {
-    // `setTimeout` method
-    // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout
-    setTimeout: wrap$1(global_1.setTimeout),
-    // `setInterval` method
-    // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval
-    setInterval: wrap$1(global_1.setInterval)
-  });
-
-  var setTimeout$1 = path.setTimeout;
-
-  var setTimeout$2 = setTimeout$1;
 
   var candidateSelectors = [
     'input',
@@ -27387,13 +27401,13 @@ var cedar = (function () {
           // if first 5 pages
           over5 = false; // [2-5]
 
-          range = slice$2(_context = this.pages).call(_context, 1, 5);
+          range = slice$3(_context = this.pages).call(_context, 1, 5);
         } else if (total - current < 4) {
           var _context2;
 
           // if last 5 pages
           over5remain = false;
-          range = slice$2(_context2 = this.pages).call(_context2, -5, -1);
+          range = slice$3(_context2 = this.pages).call(_context2, -5, -1);
         } else {
           // else in between
           for (var i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i += 1) {
@@ -31583,7 +31597,7 @@ var cedar = (function () {
       selectAll: function selectAll(isChecked) {
         var _context;
 
-        this.selected = isChecked ? slice$2(_context = this.toppings).call(_context) : [];
+        this.selected = isChecked ? slice$3(_context = this.toppings).call(_context) : [];
       },
       logChange: function logChange(val, e) {
         console.log('log', val, e); // eslint-disable-line
@@ -49632,7 +49646,7 @@ var cedar = (function () {
               _y = _val$split2[1]; // eslint-disable-line
 
 
-          var negx = concat$3(_context = "".concat(slice$2(_x).call(_x, 0, 5), "-")).call(_context, slice$2(_x).call(_x, 5), ")");
+          var negx = concat$3(_context = "".concat(slice$3(_x).call(_x, 0, 5), "-")).call(_context, slice$3(_x).call(_x, 5), ")");
 
           return this.getInset("".concat(_x, ")"), _y, negx, "-".concat(_y));
         }
