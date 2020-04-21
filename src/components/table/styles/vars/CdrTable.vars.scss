@@ -1,5 +1,5 @@
 @mixin cdr-table-base-text-mixin() {
-  @include cdr-text-utility-200;
+  @include cdr-text-utility-sans-200;
   color: $cdr-color-text-primary;
 }
 
@@ -26,12 +26,12 @@
   }
 
   th {
-    @include cdr-text-utility-strong-200;
+    @include cdr-text-utility-sans-strong-200;
   }
 
 
   caption {
-    @include cdr-text-utility-strong-300;
+    @include cdr-text-utility-sans-strong-300;
     text-align: left;
     margin-bottom: $cdr-space-half-x;
   }
