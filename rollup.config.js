@@ -15,7 +15,7 @@ let externals = Object.keys({
 if (babelEnv === 'cjs') {
   // don't externalize ES modules in CJS build
   // TODO: figure out config change needed in @rei/vunit
-  externals = externals.filter((x) => x !== 'lodash-es' && x !== 'clsx');
+  externals = externals.filter((x) => x !== 'lodash-es' && x !== 'clsx' && x !== '@rei/cdr-tokens');
 }
 
 const externalFn = (id) => externals.some((dep) => dep === id || id.startsWith(`${dep}/`));
