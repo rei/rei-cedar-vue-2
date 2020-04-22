@@ -68,7 +68,7 @@ exports[`CdrModal.vue default open, scrolling 1`] = `
             >
               <div
                 class="cdr-modal__text-content"
-                style="max-height: NaNpx;"
+                style="max-height: -80px;"
                 tabindex="0"
               >
                 Sticky content
@@ -157,7 +157,7 @@ exports[`CdrModal.vue leaves optional slots empty, handleOpened 1`] = `
             >
               <div
                 class="cdr-modal__text-content"
-                style="max-height: NaNpx;"
+                style="max-height: -80px;"
                 tabindex="0"
               >
                 Main content
@@ -242,7 +242,7 @@ exports[`CdrModal.vue scrolling and fullscreen snapshot 1`] = `
             >
               <div
                 class="cdr-modal__text-content"
-                style="max-height: NaNpx;"
+                style="max-height: -32px;"
                 tabindex="0"
               />
               <div
