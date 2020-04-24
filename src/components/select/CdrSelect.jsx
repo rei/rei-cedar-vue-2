@@ -50,8 +50,8 @@ export default {
     disabled: Boolean,
     /** @ignore */
     required: Boolean,
-    /** DEPRECATED */
     multiple: Boolean,
+    multipleSize: Number,
   },
   data() {
     return {
@@ -114,6 +114,7 @@ export default {
           class={clsx(this.sizeClass, this.selectClass)}
           id={this.selectId}
           multiple={this.multiple}
+          size={this.multipleSize}
           disabled={this.disabled}
           required={this.required}
           aria-label={this.hideLabel ? this.label : null}
