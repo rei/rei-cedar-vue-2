@@ -55,10 +55,13 @@
     @include cdr-select-helper-text-mixin;
   }
 
-  // DEPRICATED STYLE
-  // ========================================================================== */
   &--multiple {
     height: auto;
+    padding: $cdr-space-half-x;
+
+    & + .cdr-select__caret {
+      display: none;
+    }
   }
   // ========================================================================== */
 
