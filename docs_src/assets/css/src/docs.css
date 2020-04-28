@@ -45,7 +45,7 @@
 .doc_head-navigation > li > a,
 .doc_head-navigation ul > li > a {
   display: block;
-  font-family: Roboto Condensed, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Roboto Condensed, Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   line-height: 18px;
@@ -362,7 +362,7 @@ h4 code {
   .doc_head-navigation-item a {
     font-family: 16px;
     font-size: 3.2rem;
-    font-style: "Sentinel", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: "Stuart", Georgia, serif;
     line-height: 1.6rem;
     padding: 1.3rem;
     color: #fff !important;
@@ -633,7 +633,7 @@ h4 code {
   background-size: cover;
 }
 .bs-docs-header h1 {
-  font: 2.843rem "Sentinel", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 2.843rem "Stuart", Georgia, serif;
   font-weight: 600;
   line-height: 1.333;
   color: inherit;

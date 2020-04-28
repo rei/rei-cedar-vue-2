@@ -22,15 +22,15 @@
 // Family
 //----------------------------------------------------------------------------------------------------------------------
 //Brand map
-@fallback-sans-serif:                              "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-sans-serif:                           "Roboto", @fallback-sans-serif;
+@fallback-sans-serif:                              Helvetica, Arial, sans-serif;
+@font-family-sans-serif:                           "Graphic", Helvetica, Arial, sans-serif;
 
-@font-family-serif:                                Georgia, "Times New Roman", Times, serif;
+@font-family-serif:                                Georgia, serif;
 
-@brand-font-primary-name:                          "Sentinel";
-@brand-font:                                       @brand-font-primary-name, @font-family-sans-serif;
+@brand-font-primary-name:                          "Stuart";
+@brand-font:                                       @brand-font-primary-name, @font-family-serif;
 
-@brand-font-secondary-name:                        "Roboto Condensed";
+@brand-font-secondary-name:                        "Graphic";
 @brand-font-secondary:                             @brand-font-secondary-name , @font-family-sans-serif;
 
 @brand-font-tertiary-name:                         "Plak Black Condensed";

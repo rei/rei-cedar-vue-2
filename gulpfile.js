@@ -22,7 +22,6 @@ var download = require('gulp-downloader');
 var brandAiURL = 'https://assets.brand.ai/rei-digital-experience-team/digital-rei-brand/style-params.less?key=rJf4Z1nS7Z';
 var rename = require( 'gulp-rename' );
 var minifyCss = require( 'gulp-cssnano' );
-var a11y = require( 'gulp-a11y' );
 var pa11y = require( 'gulp-pa11y' );
 var gtenon = require('gulp-tenon-client');
 var csscomb = require( 'gulp-csscomb' );
@@ -113,10 +112,6 @@ var SHOULD_STOP_FOR_LINT_FAILURE = false;
 
 var USE_DOCKER = false;
 
-/**
- * Options for [a11y](https://github.com/addyosmani/a11y)
- */
-var A11Y_OPTIONS = pkg.a11y;
 /**
  * Options for [tenon.io](https://tenon.io/)
  */
@@ -465,22 +460,6 @@ gulp.task( 'docs:jekyll', [ 'docs:less:compile' ], gulpCallBack => {
 //                                                                                                    |  $$$$$$/
 //                                                                                                     \______/
 
-// Audit templates before they are compiled. This task has the fastest feedback
-// loop
-gulp.task( 'accessibility:audit-templates', () =>
-    gulp.src( path.join( PATHS.DOCS_TEMPLATES, '**', '*.html' ) )
-    .pipe( a11y( A11Y_OPTIONS ) )
-    .pipe( a11y.reporter() )
-    .pipe( gtenon( TENON_OPTIONS ) )
-);
-
-// Audit compiled docs. This task is slower, but will cover more. It can give
-// color recommendations.
-gulp.task( 'accessibility:audit-docs', [ 'docs' ], () =>
-    gulp.src( path.join( PATHS.DOCS_DIST, 'components', 'index.html' ) )
-    .pipe( a11y( A11Y_OPTIONS ) )
-    .pipe( a11y.reporter() )
-);
 
 // --[ Accessibility Audits - EXPERIMENTAL ]------------------------------------
 // Audit using pa11y.
