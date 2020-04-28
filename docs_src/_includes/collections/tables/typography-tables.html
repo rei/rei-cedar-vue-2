@@ -360,7 +360,7 @@
   <div class="bs-callout bs-callout-warning" id="callout-tables-responsive-ff-fieldset">
     <h5>Firefox and fieldsets</h5>
     <p>Firefox has some awkward fieldset styling involving <code>width</code> that interferes with the responsive table. This cannot be overriden without a Firefox-specific hack that we <strong>don't</strong> provide in Bootstrap:</p>
-{% highlight css %}
+{% highlight scss %}
 @-moz-document url-prefix() {
   fieldset { display: table-cell; }
 }
