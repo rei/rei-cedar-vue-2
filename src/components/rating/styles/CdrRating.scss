@@ -114,7 +114,8 @@ $filled-star: '\2605';
     ========== */
 
   &__placeholder {
-    @include star-icon('static/star-null.svg');
+    @include star-icon('static/star-0.svg');
+    @include star-fallback($empty-star);
 
     &--no-reviews {
       @include star-icon('static/star-null.svg');
@@ -144,6 +145,7 @@ $filled-star: '\2605';
     @include star-icon('static/star-25.svg');
     @include star-fallback($filled-star, .33);
   }
+
 
   /* Modifiers
     ========================================================================== */
