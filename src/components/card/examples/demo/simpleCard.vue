@@ -1,14 +1,10 @@
 <template>
   <div>
-    <cdr-card class="card-example">
-      <cdr-text>A simple card</cdr-text>
-    </cdr-card>
-    <hr>
     <a href="rei.com">
       <cdr-card
         class="card-example"
       >
-        <cdr-text>A linked card</cdr-text>
+        <cdr-link href="#" class="cdr-card-link">A simple card</cdr-link>
       </cdr-card>
     </a>
   </div>

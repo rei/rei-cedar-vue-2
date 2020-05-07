@@ -3,3 +3,7 @@
 .cdr-card {
   @include cdr-card-base-mixin;
 }
+
+:global(.cdr-card-link) {
+  @include cdr-card-link-mixin;
+}
