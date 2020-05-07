@@ -7,7 +7,6 @@
     <a href="rei.com">
       <cdr-card
         class="card-example"
-        :linked="true"
       >
         <cdr-text>A linked card</cdr-text>
       </cdr-card>

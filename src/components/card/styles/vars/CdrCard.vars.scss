@@ -5,12 +5,9 @@
   box-shadow: $cdr-prominence-raised;
   color: $cdr-color-text-primary;
   width: 100%;
-}
-
-@mixin cdr-card-linked-mixin() {
   transition: box-shadow $cdr-duration-2-x $cdr-timing-function-ease;
   cursor: pointer;
-  
+
   &:active, &:hover {
     box-shadow: $cdr-prominence-floating;
   }
