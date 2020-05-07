@@ -4,7 +4,7 @@
       <cdr-card
         class="card-example"
       >
-        <cdr-link href="#" class="cdr-card-link">A simple card</cdr-link>
+        <cdr-link href="#" class="cdr-card__link">A simple card</cdr-link>
       </cdr-card>
     </a>
   </div>

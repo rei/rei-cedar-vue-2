@@ -10,7 +10,7 @@
           />
         </div>
         <div class="cdr-space-inset-one-x">
-          <cdr-link class="cdr-align-card-link" href="#">
+          <cdr-link class="cdr-card__link" href="#">
             <cdr-text
               tag="h2"
               modifier="heading-serif-500"
