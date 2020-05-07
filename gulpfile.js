@@ -133,7 +133,7 @@ var PA11Y_OPTIONS = pkg.pa11y;
 //
 //
 // --[ Default ]----------------------------------------------------------------
-gulp.task( 'default', [ 'master' ] );
+gulp.task( 'default', [ 'patterns.rei.com' ] );
 
 // --[ CSS ]--------------------------------------------------------------------
 gulp.task( 'css', [ 'css:minify' ] );
@@ -200,7 +200,7 @@ gulp.task( 'accessibility:audit-exp', [
 // * js and css in parallel
 // * docs
 // * Finally call the callback function
-gulp.task( 'master', callback =>
+gulp.task( 'patterns.rei.com', callback =>
     runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
 );
 

@@ -57,7 +57,7 @@ To generate the documentation site locally, follow these steps:
 1. Open http://localhost:9002 in your browser, and voilà!
 
 ## Contribution
-1. Pull master.
+1. Pull patterns.rei.com.
 1. Create a branch and when you are finished open a PR.
 1. Once it builds and is successful, all you need is one approver from the REI dev team.
 1. Someone from the REI cedar team will merge the PR.

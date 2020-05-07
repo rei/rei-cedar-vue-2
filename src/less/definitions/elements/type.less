@@ -40,7 +40,7 @@
 // -----------------------------------------
 // Stuart
 @font-face {
-	font-family: @brand-font-primary-name;
+	font-family: @cdr-font-family-serif-brand-font;
 	src: url("@{font-path}/REI_Stuart/REIStuart-Regular-Web.woff2") format("woff2"),
          url("@{font-path}/REI_Stuart/REIStuart-Regular-Web.woff") format("woff");
   font-weight: 400;
@@ -49,7 +49,7 @@
 
 // Stuart
 @font-face {
-  font-family: @brand-font-primary-name;
+  font-family: @cdr-font-family-serif-brand-font;
   src: url("@{font-path}/REI_Stuart/REIStuart-Medium-Web.woff2") format("woff2"),
        url("@{font-path}/REI_Stuart/REIStuart-Medium-Web.woff") format("woff");
   font-weight: 500;
@@ -57,7 +57,7 @@
 }
 
 @font-face {
-  font-family: @brand-font-primary-name;
+  font-family: @cdr-font-family-serif-brand-font;
   src: url("@{font-path}/REI_Stuart/REIStuart-Semibold-Web.woff2") format("woff2"),
        url("@{font-path}/REI_Stuart/REIStuart-Semibold-Web.woff") format("woff");
   font-weight: 600;
@@ -68,7 +68,7 @@
 
 // Graphik
 @font-face {
-	font-family: 'Graphik';
+	font-family: @cdr-font-family-sans-brand-font;
 	src: url("@{font-path}/Graphik/Graphik/Graphik-Medium-Web.woff2") format("woff2"),
 		   url("@{font-path}/Graphik/Graphik/Graphik-Medium-Web.woff") format("woff");
 	font-weight: 500;
@@ -76,7 +76,7 @@
 }
 
 @font-face {
-	font-family: 'Graphik';
+	font-family: @cdr-font-family-sans-brand-font;
 	src: url("@{font-path}/Graphik/Graphik/Graphik-Semibold-Web.woff2") format("woff2"),
 		   url("@{font-path}/Graphik/Graphik/Graphik-Semibold-Web.woff") format("woff");
 	font-weight: 600;
@@ -87,14 +87,14 @@
 // -----------------------------------------
 @supports(font-variation-settings: normal) {
   @font-face {
-    font-family: @brand-font-primary-name;
+    font-family: @cdr-font-family-serif-brand-font;
     font-weight: 1 999;
     src: url("@{font-path}/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff2") format("woff2-variations"),
       url("@{font-path}/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff2") format("woff2")
   }
 
   @font-face {
-    font-family: @brand-font-primary-name;
+    font-family: @cdr-font-family-serif-brand-font;
     font-weight: 1 999;
     font-style: italic;
     src: url("@{font-path}/REI_Stuart/REI_Stuart-VF/REIStuartWebItalics-VF-Web.woff2") format("woff2-variations"),
@@ -102,14 +102,14 @@
   }
 
   @font-face {
-    font-family: @brand-font-primary-name;
+    font-family: @cdr-font-family-serif-brand-font;
     font-weight: 1 999;
     src: url("@{font-path}/Graphik/Graphik-VF/Graphik-VF-Web.woff2") format("woff2-variations"),
     url("@{font-path}/Graphik/Graphik-VF/Graphik-VF-Web.woff2") format("woff2")
   }
 
   @font-face {
-    font-family: 'Graphik';
+    font-family: @cdr-font-family-sans-brand-font;;
     font-weight: 1 999;
     font-style: italic;
     src: url("@{font-path}/Graphik/Graphik-VF/GraphikWebItalic-VF-Web.woff2") format("woff2-variations"),
@@ -129,7 +129,7 @@
 // Headings
 //----------------------------------------------------------------------------------------------------------------------
 h1, .h1 {
-    font: @font-size-h1 @headings-font-family;
+    font: @font-size-h1 @cdr-font-family-serif-brand-font;
     font-weight: @semibold;
     line-height: @line-height-h1;
     color: inherit;
@@ -181,7 +181,7 @@ h1, .h1 {
      }
 }
 h2, .h2 {
-    font-family: @headings-font-family;
+    font-family: @cdr-font-family-serif-brand-font;
     font-size: @font-size-h2;
     font-weight: @semibold;
     line-height: @line-height-h2;
@@ -233,7 +233,7 @@ h2, .h2 {
     }
 }
 h3, .h3 {
-    font: @font-size-h3 @headings-font-family;
+    font: @font-size-h3 @cdr-font-family-serif-brand-font;
     font-weight: @semibold;
     line-height: @line-height-h3;
     &.heading-impact,

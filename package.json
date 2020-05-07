@@ -25,6 +25,7 @@
   "license": "MIT",
   "main": "dist/rei-cedar-components.js",
   "dependencies": {
+    "@rei/cdr-tokens": "^3.0.0",
     "bootstrap": "^3.3.6",
     "jquery": "2.2.4",
     "normalize.css": "^3.0.3"

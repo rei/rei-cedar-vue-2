@@ -28,10 +28,10 @@
 @font-family-serif:                                Georgia, serif;
 
 @brand-font-primary-name:                          "Stuart";
-@brand-font:                                       @brand-font-primary-name, @font-family-serif;
+@brand-font:                                       @cdr-font-family-serif;
 
 @brand-font-secondary-name:                        "Graphic";
-@brand-font-secondary:                             @brand-font-secondary-name , @font-family-sans-serif;
+@brand-font-secondary:                             @cdr-font-family-sans;
 
 @brand-font-tertiary-name:                         "Plak Black Condensed";
 @brand-font-tertiary:                              @brand-font-tertiary-name , @font-family-sans-serif;
