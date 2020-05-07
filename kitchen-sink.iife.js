@@ -17994,18 +17994,12 @@ var cedar = (function () {
     }
   };
 
-  var css_248z$6 = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-card_5\\.0\\.0-beta\\.2 {\n  position: relative;\n  background-color: #ffffff;\n  border-radius: 0.2rem;\n  -webkit-box-shadow: 0 0.2rem 0.2rem 0 rgba(12, 11, 8, 0.2);\n          box-shadow: 0 0.2rem 0.2rem 0 rgba(12, 11, 8, 0.2);\n  color: rgba(12, 11, 8, 0.75);\n  width: 100%; }\n.cdr-card--linked_5\\.0\\.0-beta\\.2 {\n  -webkit-transition: -webkit-box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: -webkit-box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0), -webkit-box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  cursor: pointer; }\n.cdr-card--linked_5\\.0\\.0-beta\\.2:active, .cdr-card--linked_5\\.0\\.0-beta\\.2:hover {\n    -webkit-box-shadow: 0 0.8rem 0.8rem 0 rgba(12, 11, 8, 0.2);\n            box-shadow: 0 0.8rem 0.8rem 0 rgba(12, 11, 8, 0.2); }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyQ2FyZC5zY3NzIiwic3JjL2NvbXBvbmVudHMvY2FyZC9zdHlsZXMvQ2RyQ2FyZC5zY3NzIiwic3JjL2NvbXBvbmVudHMvY2FyZC9zdHlsZXMvdmFycy9DZHJDYXJkLnZhcnMuc2NzcyIsIm5vZGVfbW9kdWxlcy9AcmVpL2Nkci10b2tlbnMvZGlzdC9zY3NzL2Nkci10b2tlbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7OztpRUNPaUU7QURFakU7O3VCQ0N1QjtBQ1J2QjtFQ0RFLGtCQUFrQjtFQUNsQix5QkMyL0JvQztFRDEvQnBDLHFCQzR3Q3NCO0VEM3dDdEIsMERDc3dDNEQ7VUR0d0M1RCxrRENzd0M0RDtFRHJ3QzVELDRCQys3QjRDO0VEOTdCNUMsV0FBVyxFQUFBO0FEQWI7RUNJRSwwRUNvdUN1RDtFRHB1Q3ZELGtFQ291Q3VEO0VEcHVDdkQsMERDb3VDdUQ7RURwdUN2RCxrSENvdUN1RDtFRG51Q3ZELGVBQWUsRUFBQTtBRExqQjtJQ1FJLDBEQzh2QzREO1lEOXZDNUQsa0RDOHZDNEQsRUFBQSIsImZpbGUiOiJDZHJDYXJkLnNjc3MifQ== */";
-  var style$8 = {"cdr-card":"cdr-card_5.0.0-beta.2","cdr-card--linked":"cdr-card--linked_5.0.0-beta.2"};
+  var css_248z$6 = "/* ==========================================================================/*\n* Token option variables\n*\n* these are temporary variables, providing\n* cedar components mappings to previously available tokens.\n* These varables should be removed as tokens are available\n*\n=============================================================== */\n/* ---------------------\n* Outline\n* ------------------- */\n.cdr-card_5\\.0\\.0-beta\\.2 {\n  position: relative;\n  background-color: #ffffff;\n  border-radius: 0.2rem;\n  -webkit-box-shadow: 0 0.2rem 0.2rem 0 rgba(12, 11, 8, 0.2);\n          box-shadow: 0 0.2rem 0.2rem 0 rgba(12, 11, 8, 0.2);\n  color: rgba(12, 11, 8, 0.75);\n  width: 100%;\n  -webkit-transition: -webkit-box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: -webkit-box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  transition: box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0), -webkit-box-shadow 0.2s cubic-bezier(0.15, 0, 0.15, 0);\n  cursor: pointer; }\n.cdr-card_5\\.0\\.0-beta\\.2:active, .cdr-card_5\\.0\\.0-beta\\.2:hover {\n    -webkit-box-shadow: 0 0.8rem 0.8rem 0 rgba(12, 11, 8, 0.2);\n            box-shadow: 0 0.8rem 0.8rem 0 rgba(12, 11, 8, 0.2); }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3Mvc2V0dGluZ3MvX29wdGlvbnMudmFycy5zY3NzIiwiQ2RyQ2FyZC5zY3NzIiwic3JjL2NvbXBvbmVudHMvY2FyZC9zdHlsZXMvQ2RyQ2FyZC5zY3NzIiwic3JjL2NvbXBvbmVudHMvY2FyZC9zdHlsZXMvdmFycy9DZHJDYXJkLnZhcnMuc2NzcyIsIm5vZGVfbW9kdWxlcy9AcmVpL2Nkci10b2tlbnMvZGlzdC9zY3NzL2Nkci10b2tlbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7OztpRUNPaUU7QURFakU7O3VCQ0N1QjtBQ1J2QjtFQ0RFLGtCQUFrQjtFQUNsQix5QkMyL0JvQztFRDEvQnBDLHFCQzR3Q3NCO0VEM3dDdEIsMERDc3dDNEQ7VUR0d0M1RCxrRENzd0M0RDtFRHJ3QzVELDRCQys3QjRDO0VEOTdCNUMsV0FBVztFQUNYLDBFQ3V1Q3VEO0VEdnVDdkQsa0VDdXVDdUQ7RUR2dUN2RCwwREN1dUN1RDtFRHZ1Q3ZELGtIQ3V1Q3VEO0VEdHVDdkQsZUFBZSxFQUFBO0FETmpCO0lDU0ksMERDaXdDNEQ7WURqd0M1RCxrRENpd0M0RCxFQUFBIiwiZmlsZSI6IkNkckNhcmQuc2NzcyJ9 */";
+  var style$8 = {"cdr-card":"cdr-card_5.0.0-beta.2"};
   styleInject(css_248z$6);
 
   var CdrCard = {
     name: 'CdrCard',
-    props: {
-      linked: {
-        type: Boolean,
-        default: false
-      }
-    },
     data: function data() {
       return {
         style: style$8
@@ -18014,15 +18008,12 @@ var cedar = (function () {
     computed: {
       baseClass: function baseClass() {
         return 'cdr-card';
-      },
-      linkedClass: function linkedClass() {
-        return this.linked ? "".concat(this.baseClass, "--linked") : null;
       }
     },
     render: function render() {
       var h = arguments[0];
       return h("article", {
-        "class": clsx(this.style[this.baseClass], this.style[this.linkedClass])
+        "class": this.style[this.baseClass]
       }, [this.$slots.default]);
     }
   };
@@ -31485,7 +31476,7 @@ var cedar = (function () {
           [
             _c(
               "cdr-card",
-              { staticClass: "card-example", attrs: { linked: true } },
+              { staticClass: "card-example" },
               [_c("cdr-text", [_vm._v("A linked card")])],
               1
             )
@@ -31502,7 +31493,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$9 = function (inject) {
       if (!inject) return
-      inject("data-v-fb6d02ce_0", { source: "\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/card/examples/demo/simpleCard.vue"],"names":[],"mappings":";AA4BA;EACA,gBAAA;EACA,YAAA;AACA","file":"simpleCard.vue","sourcesContent":["<template>\n  <div>\n    <cdr-card class=\"card-example\">\n      <cdr-text>A simple card</cdr-text>\n    </cdr-card>\n    <hr>\n    <a href=\"rei.com\">\n      <cdr-card\n        class=\"card-example\"\n        :linked=\"true\"\n      >\n        <cdr-text>A linked card</cdr-text>\n      </cdr-card>\n    </a>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\n\nexport default {\n  name: 'SimpleCard',\n  components: Components,\n};\n</script>\n\n<style>\n  .card-example {\n    max-width: 250px;\n    width: 250px;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-6d7a1bee_0", { source: "\n.card-example {\n  max-width: 250px;\n  width: 250px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/card/examples/demo/simpleCard.vue"],"names":[],"mappings":";AA2BA;EACA,gBAAA;EACA,YAAA;AACA","file":"simpleCard.vue","sourcesContent":["<template>\n  <div>\n    <cdr-card class=\"card-example\">\n      <cdr-text>A simple card</cdr-text>\n    </cdr-card>\n    <hr>\n    <a href=\"rei.com\">\n      <cdr-card\n        class=\"card-example\"\n      >\n        <cdr-text>A linked card</cdr-text>\n      </cdr-card>\n    </a>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\n\n\nexport default {\n  name: 'SimpleCard',\n  components: Components,\n};\n</script>\n\n<style>\n  .card-example {\n    max-width: 250px;\n    width: 250px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
