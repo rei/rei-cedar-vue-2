@@ -12,3 +12,19 @@
     box-shadow: $cdr-prominence-floating;
   }
 }
+
+@mixin cdr-card-link-mixin() {
+  position: static;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+  }
+}

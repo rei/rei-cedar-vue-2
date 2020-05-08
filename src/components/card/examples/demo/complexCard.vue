@@ -10,12 +10,14 @@
           />
         </div>
         <div class="cdr-space-inset-one-x">
-          <cdr-text
-            tag="h2"
-            modifier="heading-serif-500"
-          >
-            Complex Card Title
-          </cdr-text>
+          <cdr-link class="cdr-card__link" href="#">
+            <cdr-text
+              tag="h2"
+              modifier="heading-serif-500"
+            >
+              Complex Card Title
+            </cdr-text>
+          </cdr-link>
           <cdr-rating
             rating="4.2"
             count="12"
