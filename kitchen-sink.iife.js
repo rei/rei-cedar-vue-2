@@ -18005,6 +18005,12 @@ var cedar = (function () {
         style: style$8
       };
     },
+    props: {
+      tag: {
+        type: String,
+        default: 'article'
+      }
+    },
     computed: {
       baseClass: function baseClass() {
         return 'cdr-card';
@@ -18012,7 +18018,8 @@ var cedar = (function () {
     },
     render: function render() {
       var h = arguments[0];
-      return h("article", {
+      var Component = this.tag;
+      return h(Component, {
         "class": this.style[this.baseClass]
       }, [this.$slots.default]);
     }
