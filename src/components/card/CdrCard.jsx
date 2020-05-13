@@ -7,14 +7,21 @@ export default {
       style,
     };
   },
+  props: {
+    tag: {
+      type: String,
+      default: 'article',
+    },
+  },
   computed: {
     baseClass() {
       return 'cdr-card';
     },
   },
   render() {
-    return (<article class={this.style[this.baseClass]}>
+    const Component = this.tag;
+    return (<Component class={this.style[this.baseClass]}>
       {this.$slots.default}
-    </article>);
+    </Component>);
   },
 };
