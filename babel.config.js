@@ -19,10 +19,9 @@ module.exports = function (api) {
       'Firefox > 64',
       'iOS > 11',
       'Safari >= 9',
-      'Explorer >= 11',
       'Edge >= 15',
     ],
-  }; // TODO: pull @rei browserslist instead
+  };
 
   const presetEnvConfig = (env === 'prod') ?
   {
