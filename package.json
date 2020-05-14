@@ -145,10 +145,12 @@
     "npm": ">= 6.0.0"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "ie >= 11"
-  ],
+    "Chrome >= 77",
+    "Firefox >= 70",
+    "iOS > 11",
+    "Safari >= 9",
+    "Edge >= 17"
+ ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

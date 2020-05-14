@@ -15,14 +15,13 @@ module.exports = function (api) {
   } :
   {
     browsers: [
-      'Chrome >= 70',
-      'Firefox > 64',
+      'Chrome >= 77',
+      'Firefox >= 70',
       'iOS > 11',
       'Safari >= 9',
-      'Explorer >= 11',
-      'Edge >= 15',
+      'Edge >= 17'
     ],
-  }; // TODO: pull @rei browserslist instead
+  };
 
   const presetEnvConfig = (env === 'prod') ?
   {
