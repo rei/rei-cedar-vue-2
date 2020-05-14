@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "5.0.0-beta.5",
+  "version": "5.0.0-beta.6",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -150,7 +150,7 @@
     "iOS > 11",
     "Safari >= 9",
     "Edge >= 17"
- ],
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
