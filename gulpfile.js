@@ -204,10 +204,11 @@ gulp.task( 'patterns.rei.com', callback =>
     runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
 );
 
-gulp.task( 'build-docker', callback => {
-    USE_DOCKER = true;
-    runSequence( [ 'js', 'css' ], 'docs', 'compile-riot', callback )
-});
+gulp.task( 'build-docker', [
+    'css',
+    'js',
+    'docs'
+] );
 
 //       /$$$$$$   /$$$$$$   /$$$$$$
 //      /$$__  $$ /$$__  $$ /$$__  $$
