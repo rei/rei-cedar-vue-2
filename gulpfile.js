@@ -210,8 +210,8 @@ gulp.task('use-docker', function () {
 
 gulp.task( 'build-docker', [
     'use-docker',
-    'css',
-    'js',
+    'js:build',
+    'css:build',
     'docs'
 ] );
 
