@@ -143,10 +143,6 @@ gulp.task( 'js', [ 'js:build' ] );
 
 // --[ Docs ]-------------------------------------------------------------------
 gulp.task( 'docs:clean', [
-    'docs:clean-dist',
-    'docs:clean-copied-from-src',
-    'docs:clean-copied-package',
-    'docs:clean-copied-less'
 ] );
 
 gulp.task( 'docs:copy-all', [
@@ -330,31 +326,31 @@ gulp.task( 'docs:clean-copied-package', () => del( [ path.join( PATHS.DOCS_SRC, 
 gulp.task( 'docs:clean-copied-less', () => del( [ path.join( PATHS.DOCS_SRC, '/_includes/less/*' ) ] ) );
 
 // Build REI-Cedar CSS and copy into docs_src directory
-gulp.task( 'docs:copy-css', [ 'docs:clean-copied-from-src' ], () =>
+gulp.task( 'docs:copy-css', [  ], () =>
     gulp.src( path.join( PATHS.DIST, '*.css' ) )
     .pipe( gulp.dest( path.join( PATHS.DOCS_SRC ) ) )
 );
 
 // Build old Bootstrap JS and copy into the docs_src directory
-gulp.task( 'docs:copy-js', [ 'docs:clean-copied-from-src' ], () =>
+gulp.task( 'docs:copy-js', [  ], () =>
     gulp.src( path.join( PATHS.DIST, '*.js' ) )
     .pipe( gulp.dest( path.join( PATHS.DOCS_SRC ) ) )
 );
 
 // Copy packages to docs_src directory
-gulp.task( 'docs:copy-package', [ 'docs:clean-copied-package' ], () =>
+gulp.task( 'docs:copy-package', [  ], () =>
     gulp.src( './package.json' )
     .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '_data' ) ) )
 );
 
 // Copy variables to docs_src directory
-gulp.task( 'docs:copy-less', [ 'docs:clean-copied-less' ], () =>
+gulp.task( 'docs:copy-less', [  ], () =>
     gulp.src( path.join( path.join( PATHS.SRC, '/less/**/*' ) ) )
     .pipe( gulp.dest( path.join( PATHS.DOCS_SRC, '_includes/less' ) ) )
 );
 
 // --[ docs:autoprefixer ]----------------------------------------------------------
-gulp.task( 'docs:autoprefixer-css', [ 'docs:clean', 'docs:copy-all' ], () =>
+gulp.task( 'docs:autoprefixer-css', [ 'docs:copy-all' ], () =>
     gulp.src( [ 'docs/assets/css/anchor.css', 'docs/assets/css/src/docs.css' ] )
     .pipe( sourcemaps.init() )
     .pipe( postcss( [ autoprefixer( {
@@ -364,7 +360,7 @@ gulp.task( 'docs:autoprefixer-css', [ 'docs:clean', 'docs:copy-all' ], () =>
     .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) )
 );
 
-gulp.task( 'docs:autoprefixer-examples', [ 'docs:clean', 'docs:copy-all' ], () =>
+gulp.task( 'docs:autoprefixer-examples', [ 'docs:copy-all' ], () =>
     gulp.src( path.join( PATHS.DOCS_SRC, 'docs/examples/**/*.css' ) )
     .pipe( sourcemaps.init() )
     .pipe( postcss( [ autoprefixer( {
@@ -375,7 +371,7 @@ gulp.task( 'docs:autoprefixer-examples', [ 'docs:clean', 'docs:copy-all' ], () =
 );
 
 // --[ docs:csscomb ]----------------------------------------------------------
-gulp.task( 'docs:csscomb-css', [ 'docs:clean', 'docs:copy-all' ], () =>
+gulp.task( 'docs:csscomb-css', [ 'docs:copy-all' ], () =>
     gulp.src( [ 'docs/assets/css/anchor.css', 'docs/assets/css/src/docs.css' ] )
     .pipe( csscomb( {
         expand: true,
@@ -386,7 +382,7 @@ gulp.task( 'docs:csscomb-css', [ 'docs:clean', 'docs:copy-all' ], () =>
     .pipe( gulp.dest( path.join( PATHS.DOCS_DIST, 'css' ) ) )
 );
 
-gulp.task( 'docs:csscomb-examples', [ 'docs:clean', 'docs:copy-all' ], () =>
+gulp.task( 'docs:csscomb-examples', [ 'docs:copy-all' ], () =>
     gulp.src( path.join( PATHS.DOCS_SRC, 'docs/examples/**/*.css' ) )
     .pipe( csscomb( {
         expand: true,
@@ -398,7 +394,7 @@ gulp.task( 'docs:csscomb-examples', [ 'docs:clean', 'docs:copy-all' ], () =>
 );
 
 // --[ docs:cssmin ]----------------------------------------------------------
-gulp.task( 'docs:cssmin-css', [ 'docs:clean', 'docs:copy-all' ], () =>
+gulp.task( 'docs:cssmin-css', [ 'docs:copy-all' ], () =>
     gulp.src( PATHS.DOCS_DIST + '/assets/css/src/*.css' )
     .pipe( cssmin() )
     .pipe( rename( {
@@ -409,7 +405,7 @@ gulp.task( 'docs:cssmin-css', [ 'docs:clean', 'docs:copy-all' ], () =>
 );
 
 // Build docs CSS and copy into docs src directory
-gulp.task( 'docs:less:compile', [ 'docs:clean', 'docs:copy-all' ], () => {
+gulp.task( 'docs:less:compile', [ 'docs:copy-all' ], () => {
     const lessc = less( {
         paths: [ PATHS.LESS ]
     } ).on( 'error', err => {
