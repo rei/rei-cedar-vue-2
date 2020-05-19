@@ -221,7 +221,7 @@ gulp.task('build-docker', function (callback) {
 gulp.task( 'css:clean', () => del( [ path.join( PATHS.DIST, '**/*.css' ) ] ) );
 
 // Compile the UI framework's Less --> ./dist.
-gulp.task( 'css:build', [ 'css:clean' ], () => {
+gulp.task( 'css:build', [  ], () => {
 
     const lessc = less( {
         paths: [ PATHS.LESS ]
