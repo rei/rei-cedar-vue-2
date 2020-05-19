@@ -1,0 +1,49 @@
+/*
+* Homepage
+*/
+
+/* Share masthead with page headers */
+.bs-docs-masthead {
+    background-color: #111;
+    background-size: 100%;
+}
+
+
+/* Masthead (headings and download button) */
+.bs-docs-masthead .bs-docs-booticon {
+    margin: 0 auto 3rem;
+}
+
+.bs-docs-masthead .lead {
+    position: relative;
+}
+.bs-docs-masthead .version {
+    margin-top: -1.5rem;
+    margin-bottom: 3rem;
+    color: @docs-primary-lighter;
+}
+.bs-docs-masthead .btn {
+    width: 100%;
+}
+
+@media (min-width: @screen-xs-min) {
+    .bs-docs-masthead .btn {
+        width: auto;
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    .bs-docs-masthead {
+        padding: 8rem 0;
+    }
+    .bs-docs-masthead .lead {
+        font-size: 2.4rem;
+    }
+}
+
+@media (min-width: @screen-md-min) {
+    .bs-docs-masthead .lead {
+        width: 80%;
+        font-size: 3rem;
+    }
+}
