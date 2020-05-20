@@ -169,7 +169,7 @@
 @font-size-impact-h6:                               @font-size-h6;
 
 // Weight
-//----------------------------------------------------------------------------------------------------------------------
+//----ar------------------------------------------------------------------------------------------------------------------
 @headings-font-weight:                              normal; // Matches font family definition
 @semibold:                                          600; // for sentinel headings
 @brand-font-secondary-bold:                         700;

@@ -30,7 +30,7 @@
     "normalize.css": "^3.0.3"
   },
   "devDependencies": {
-    "@rei/cdr-tokens": "github:rei/rei-cedar-tokens",
+    "@rei/cdr-tokens": "^3.1.0",
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.13.2",
     "babel-preset-es2015-riot": "^1.1.0",
