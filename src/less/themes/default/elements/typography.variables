@@ -30,7 +30,7 @@
 @brand-font-primary-name:                          @cdr-font-family-serif-brand-font;
 @brand-font:                                       @cdr-font-family-serif;
 
-@brand-font-secondary-name:                        @cdr-font-family-sans-brand-font;
+@brand-font-secondary-name:                        @cdr-font-family-sans-brand-font; 
 @brand-font-secondary:                             @cdr-font-family-sans;
 
 @brand-font-tertiary-name:                         @cdr-font-family-serif-brand-font;
@@ -40,9 +40,9 @@
 
 
 //Implementation
-@font-family-base:                                 @font-family-sans-serif;
-@headings-font-family:                             @brand-font;
-@headings-font-family-secondary:                   @brand-font-secondary;
+@font-family-base:                                 @cdr-font-family-serif;
+@headings-font-family:                             @cdr-font-family-serif;
+@headings-font-family-secondary:                   @cdr-font-family-sans;
 
 // Line-height
 //----------------------------------------------------------------------------------------------------------------------
