@@ -68,7 +68,7 @@
 
 // Graphik
 @font-face {
-	font-family: 'Graphik';
+	font-family: @cdr-font-family-sans-brand-font;
 	src: url("@{font-path}/Graphik/Graphik/Graphik-Medium-Web.woff2") format("woff2"),
 		   url("@{font-path}/Graphik/Graphik/Graphik-Medium-Web.woff") format("woff");
 	font-weight: 500;
@@ -76,7 +76,7 @@
 }
 
 @font-face {
-	font-family: 'Graphik';
+	font-family: @cdr-font-family-sans-brand-font;
 	src: url("@{font-path}/Graphik/Graphik/Graphik-Semibold-Web.woff2") format("woff2"),
 		   url("@{font-path}/Graphik/Graphik/Graphik-Semibold-Web.woff") format("woff");
 	font-weight: 600;
@@ -109,21 +109,13 @@
   }
 
   @font-face {
-    font-family: 'Graphik';
+    font-family: @cdr-font-family-sans-brand-font;
     font-weight: 1 999;
     font-style: italic;
     src: url("@{font-path}/Graphik/Graphik-VF/GraphikWebItalic-VF-Web.woff2") format("woff2-variations"),
     url("@{font-path}/Graphik/Graphik-VF/GraphikWebItalic-VF-Web.woff2") format("woff2")
   }
 }
-
-@font-face{
-		font-family: @brand-font-tertiary-name;
-		src:url("@{font-path}Plak/Plak-Black-Condensed/8c16f587-8b27-4027-95c9-370d762ce60e.eot?#iefix");
-		src:url("@{font-path}Plak/Plak-Black-Condensed/8c16f587-8b27-4027-95c9-370d762ce60e.eot?#iefix") format("eot"),url("@{font-path}Plak/Plak-Black-Condensed/38acf610-7c61-46ba-9ab9-affaffc8cfd1.woff2") format("woff2"),url("@{font-path}Plak/Plak-Black-Condensed/f36a1df4-214c-40d1-8807-bf06fe25b515.woff") format("woff"),url("@{font-path}Plak/Plak-Black-Condensed/7531ce02-d0e7-48f6-ada8-94c68a7a4a1b.ttf") format("truetype"),url("@{font-path}Plak/Plak-Black-Condensed/766de397-1752-4e8d-b946-0c51548da328.svg#766de397-1752-4e8d-b946-0c51548da328") format("svg");
-}
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Headings
@@ -636,7 +628,7 @@ address {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Forms
 label {
-    font-family: @cdr-type-maple-utl-20-font-family;
+    font-family: @font-family-sans-serif;
     font-size:  @cdr-type-maple-utl-20-font-size ;
     line-height: @cdr-type-maple-utl-20-line-height;
 }

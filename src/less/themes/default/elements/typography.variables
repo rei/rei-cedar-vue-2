@@ -22,27 +22,27 @@
 // Family
 //----------------------------------------------------------------------------------------------------------------------
 //Brand map
-@fallback-sans-serif:                              Helvetica, Arial, sans-serif;
-@font-family-sans-serif:                           "Graphic", Helvetica, Arial, sans-serif;
+@fallback-sans-serif:                              @cdr-font-family-sans;
+@font-family-sans-serif:                           @cdr-font-family-sans;
 
-@font-family-serif:                                Georgia, serif;
+@font-family-serif:                                @cdr-font-family-serif;
 
-@brand-font-primary-name:                          "Stuart";
-@brand-font:                                       @brand-font-primary-name, @font-family-serif;
+@brand-font-primary-name:                          @cdr-font-family-serif-brand-font;
+@brand-font:                                       @cdr-font-family-serif;
 
-@brand-font-secondary-name:                        "Graphic";
-@brand-font-secondary:                             @brand-font-secondary-name , @font-family-sans-serif;
+@brand-font-secondary-name:                        @cdr-font-family-sans-brand-font; 
+@brand-font-secondary:                             @cdr-font-family-sans;
 
-@brand-font-tertiary-name:                         "Plak Black Condensed";
-@brand-font-tertiary:                              @brand-font-tertiary-name , @font-family-sans-serif;
+@brand-font-tertiary-name:                         @cdr-font-family-serif-brand-font;
+@brand-font-tertiary:                              @cdr-font-family-serif;
 
 @font-family-monospace:                            Menlo, Monaco, Consolas, "Courier New", monospace;
 
 
 //Implementation
-@font-family-base:                                 @font-family-sans-serif;
-@headings-font-family:                             @brand-font;
-@headings-font-family-secondary:                   @brand-font-secondary;
+@font-family-base:                                 @cdr-font-family-serif;
+@headings-font-family:                             @cdr-font-family-serif;
+@headings-font-family-secondary:                   @cdr-font-family-sans;
 
 // Line-height
 //----------------------------------------------------------------------------------------------------------------------
@@ -169,7 +169,7 @@
 @font-size-impact-h6:                               @font-size-h6;
 
 // Weight
-//----------------------------------------------------------------------------------------------------------------------
+//----ar------------------------------------------------------------------------------------------------------------------
 @headings-font-weight:                              normal; // Matches font family definition
 @semibold:                                          600; // for sentinel headings
 @brand-font-secondary-bold:                         700;

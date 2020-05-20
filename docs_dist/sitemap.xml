@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://getbootstrap.com/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/modules/accordion/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/collections/alerts/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/collections/breadcrumbs/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/collections/button-groups/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/elements/buttons/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/layouts/cards/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/modules/carousel/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/collections/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/layouts/color/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/layouts/containers/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/elements/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/collections/forms/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/getting-started/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/layouts/grid/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/layouts/groups/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/elements/images/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/collections/input-groups/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/elements/inputs/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/style-and-behavior/javascript/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/layouts/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/style-and-behavior/less-mixins/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/style-and-behavior/less-variables/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/elements/links/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/collections/list-groups/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/elements/lists/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/modules/modals/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/modules/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/modules/pagination/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/elements/rei-icons/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/style-and-behavior/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/collections/tables/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/modules/tabs/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/layouts/tiles/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/modules/tool-tips/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/elements/typography/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/style-and-behavior/utility-helpers/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://getbootstrap.com/style-and-behavior/utility-responsive/</loc>
+    <lastmod>2020-05-19T17:00:39-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+</urlset>
