@@ -9,8 +9,8 @@
 // COLOR PALETTES
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@text-color:                                          @core-architectural-2;
-@text-muted:                                          @core-architectural-3;
+@text-color:                                          @cdr-color-text-primary;
+@text-muted:                                          @cdr-color-text-secondary;
 @text-overlay:                                        @core-architectural-5;
 @headings-color:                                      inherit;
 
