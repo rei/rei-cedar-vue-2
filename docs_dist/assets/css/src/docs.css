@@ -45,11 +45,13 @@
 .doc_head-navigation > li > a,
 .doc_head-navigation ul > li > a {
   display: block;
-  font-family: Roboto Condensed, Graphik, "Helvetica Neue", sans-serif;
+  font-family: Graphik, "Helvetica Neue", sans-serif;
   font-size: 18px;
   font-style: normal;
-  line-height: 18px;
-  padding: calc(1.6rem) 3.2rem;
+  font-weight: 500;
+  letter-spacing: -0.08px;
+  line-height: 24px;
+  padding: 1.2rem 2.4rem;
 }
 .doc_head-navigation > li > a > .icon,
 .doc_head-navigation ul > li > a > .icon {
@@ -77,9 +79,11 @@
 }
 .doc_head-navigation > li > ul > li > a,
 .doc_head-navigation ul > li > ul > li > a {
-  font-family: 16px;
+  font-family: 22px;
   font-size: 1.6rem;
   font-style: 4px;
+  font-weight: 500;
+  letter-spacing: -0.08px;
   line-height: 1.6rem;
   padding: 1.1rem;
 }
@@ -360,9 +364,11 @@ h4 code {
     position: relative;
   }
   .doc_head-navigation-item a {
-    font-family: 16px;
+    font-family: 22px;
     font-size: 3.2rem;
     font-style: Stuart, Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.08px;
     line-height: 1.6rem;
     padding: 1.3rem;
     color: #fff !important;

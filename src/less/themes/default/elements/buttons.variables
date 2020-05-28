@@ -105,28 +105,28 @@
 // BTN VARIANT SIZE
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@btn-lg-type:                                      @cdr-type-maple-ui-40-font-family,@fallback-sans-serif;
-@btn-lg-line-height:                               @cdr-type-maple-ui-40-line-height;
-@btn-lg-font-size:                                 @cdr-type-maple-ui-40-font-size;
-@btn-lg-font-style:                                @cdr-type-maple-ui-40-font-style;
-@btn-lg-inset:                                     @inset-lg--squish;
+@btn-lg-type:                                      @cdr-font-family-sans;
+@btn-lg-line-height:                               24px;
+@btn-lg-font-size:                                 18px;
+@btn-lg-font-style:                                normal;
+@btn-lg-inset:                                     @cdr-space-inset-one-and-a-half-x-squish;
 
-@btn-type:                                         @btn-font-size;
-@btn-line-height:                                  @cdr-type-redwood-ui-30-line-height;
-@btn-font-size:                                    @cdr-type-redwood-ui-30-font-size;
-@btn-font-style:                                   @cdr-type-redwood-ui-30-font-style;
-@btn-inset:                                        @inset-lg--squish;
+@btn-type:                                         @cdr-font-family-sans;
+@btn-line-height:                                  22px;
+@btn-font-size:                                    16px;
+@btn-font-style:                                   normal;
+@btn-inset:                                        @cdr-space-inset-one-x-squish;
 
-@btn-sm-type:                                      @cdr-type-redwood-ui-30-font-family,@fallback-sans-serif;
-@btn-sm-line-height:                               @cdr-type-redwood-ui-30-line-height;
-@btn-sm-font-size:                                 @cdr-type-redwood-ui-30-font-size;
-@btn-sm-font-style:                                @cdr-type-redwood-ui-30-font-style;
-@btn-sm-inset:                                     1.2rem 1.6rem;
+@btn-sm-type:                                      @cdr-font-family-sans;
+@btn-sm-line-height:                               18px;
+@btn-sm-font-size:                                 14px;
+@btn-sm-font-style:                                normal;
+@btn-sm-inset:                                     @cdr-space-inset-three-quarter-x-squish;
 
-@btn-xs-type:                                      @cdr-type-redwood-ui-20-font-family,@fallback-sans-serif;
+@btn-xs-type:                                      @cdr-font-family-sans;
 @btn-xs-line-height:                               @cdr-type-redwood-ui-20-line-height;
 @btn-xs-font-size:                                 @cdr-type-redwood-ui-20-font-size;
-@btn-xs-font-style:                                @cdr-type-redwood-ui-20-font-style;
-@btn-xs-inset:                                     @inset-md--squish;
+@btn-xs-font-style:                                normal;
+@btn-xs-inset:                                     @cdr-space-inset-three-quarter-x-squish;
 
 @btn-icon-type:                                   "rei-icons";
