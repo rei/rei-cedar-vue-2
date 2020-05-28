@@ -45,7 +45,12 @@
     &:extend( .list-nav all );
     > li {
         > a {
-            .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @btn-line-height; @border-radius-base);
+            .button-size(
+                @tab-padding; 
+                @tab-font-size; 
+                @tab-line-height;
+                @tab-font-family
+                @border-radius-base);
             &:extend( .link_navigation );
         }
     }

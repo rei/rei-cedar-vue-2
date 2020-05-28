@@ -10,7 +10,7 @@
 
 @tab-padding:                                    @sizing-size-sm-squish;
 @tab-font-size:                                  16px;
-@tab-line-height:                                @22px;
+@tab-line-height:                                22px;
 @tab-font-family:                                @cdr-font-family-sans;
 @tab-font-style:                                 normal;
 
