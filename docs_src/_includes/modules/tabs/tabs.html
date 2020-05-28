@@ -1,18 +1,30 @@
 <section class="vertical-push-3" data-ui="nav-list">
-    <h2 id="nav-tabs" class="status status-good">Tabs</h2>
 
-    <div class="well" data-example-id="simple-nav-tabs" role="navigation">
-        {% include markup-templates/lists/nav-list.html param="tabs" %}
-    </div>
-    {% highlight html %}
-    {% include markup-templates/lists/nav-list.html param="tabs" %}
-    {% endhighlight %}
 
-    <div class="bs-callout bs-callout-info" id="callout-navs-tabs-plugin">
-        <h5>Using navs for tab panels requires JavaScript tabs plugin</h5>
+<cdr-well-docs example-title="Tabs" element-id="button-primary">
+    <yield to="example-description">
 
-        <p>For tabs with tabbable areas, you must use the <a href="#tabs">tabs JavaScript plugin</a>. The markup will
-            also require additional <code>role</code> and ARIA attributes – see the plugin's <a href="#tabs-usage">example
-                markup</a> for further details.</p>
-    </div>
+        <p> Use for a single transactional CTA; when only one action is needed.</p>
+        <p> When grouped, it is used for the primary action of the grouping.</p>
+
+        
+    </yield>
+    <yield to="example">
+        <ul class="nav-tabs">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+        </ul>
+    </yield>
+    <yield to="codeblock">
+        {% highlight html %}
+        <ul class="nav-tabs">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+        </ul>
+        {% endhighlight %}
+    </yield>
+</cdr-well-docs>
+
 </section>

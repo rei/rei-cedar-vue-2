@@ -200,7 +200,7 @@
     Font Styles:
 */
 
-//button,tab
+//tab
 // redwood-ui-30 font style
 @cdr-type-redwood-ui-30-font-size: 16px;
 @cdr-type-redwood-ui-30-line-height: 16px;
@@ -219,47 +219,6 @@
   font-weight: @cdr-type-redwood-ui-30-font-weight;
   font-family: @cdr-type-redwood-ui-30-font-family;
 }
-//buttons
-// redwood-ui-20 font style
-@cdr-type-redwood-ui-20-font-size: 14px;
-@cdr-type-redwood-ui-20-line-height: 14px;
-@cdr-type-redwood-ui-20-text-align: start;
-@cdr-type-redwood-ui-20-color: #000000;
-@cdr-type-redwood-ui-20-font-style: normal;
-@cdr-type-redwood-ui-20-font-weight: 400;
-@cdr-type-redwood-ui-20-font-family: Roboto;
-
-.cdr-type-redwood-ui-20() {
-  font-size: @cdr-type-redwood-ui-20-font-size;
-  line-height: @cdr-type-redwood-ui-20-line-height;
-  text-align: @cdr-type-redwood-ui-20-text-align;
-  color: @cdr-type-redwood-ui-20-color;
-  font-style: @cdr-type-redwood-ui-20-font-style;
-  font-weight: @cdr-type-redwood-ui-20-font-weight;
-  font-family: @cdr-type-redwood-ui-20-font-family;
-}
-
-
-//buttons
-// maple-ui-40 font style
-@cdr-type-maple-ui-40-font-size: 18px;
-@cdr-type-maple-ui-40-line-height: 18px;
-@cdr-type-maple-ui-40-text-align: left;
-@cdr-type-maple-ui-40-color: #2e2e2e;
-@cdr-type-maple-ui-40-font-style: normal;
-@cdr-type-maple-ui-40-font-weight: 400;
-@cdr-type-maple-ui-40-font-family: Roboto Condensed;
-
-.cdr-type-maple-ui-40() {
-  font-size: @cdr-type-maple-ui-40-font-size;
-  line-height: @cdr-type-maple-ui-40-line-height;
-  text-align: @cdr-type-maple-ui-40-text-align;
-  color: @cdr-type-maple-ui-40-color;
-  font-style: @cdr-type-maple-ui-40-font-style;
-  font-weight: @cdr-type-maple-ui-40-font-weight;
-  font-family: @cdr-type-maple-ui-40-font-family;
-}
-
 
 //forms
 @spacing-space-sm: 0.8rem;

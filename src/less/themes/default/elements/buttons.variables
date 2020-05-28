@@ -124,8 +124,8 @@
 @btn-sm-inset:                                     @cdr-space-inset-three-quarter-x-squish;
 
 @btn-xs-type:                                      @cdr-font-family-sans;
-@btn-xs-line-height:                               @cdr-type-redwood-ui-20-line-height;
-@btn-xs-font-size:                                 @cdr-type-redwood-ui-20-font-size;
+@btn-xs-line-height:                               14px;
+@btn-xs-font-size:                                 14px;
 @btn-xs-font-style:                                normal;
 @btn-xs-inset:                                     @cdr-space-inset-three-quarter-x-squish;
 
