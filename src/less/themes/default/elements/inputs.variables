@@ -20,7 +20,7 @@
 @input-color:                                    @cdr-color-input-text;
 @input-color-placeholder:                        @cdr-color-input-placeholder-text;
 @input-color-disabled:                           @cdr-color-input-disabled-text;
-@input-radius:                                   @radius-input;
+@input-radius:                                   @cdr-radius-softer;
 @input-background:                               @cdr-color-input;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //

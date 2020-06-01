@@ -196,38 +196,6 @@
 @cdr-color-tab-active-stroke: #426c90;
 @cdr-color-tab-stroke: #c5c5c5;
 
-/*
-    Font Styles:
-*/
-
-//tab
-// redwood-ui-30 font style
-@cdr-type-redwood-ui-30-font-size: 16px;
-@cdr-type-redwood-ui-30-line-height: 16px;
-@cdr-type-redwood-ui-30-text-align: start;
-@cdr-type-redwood-ui-30-color: #000000;
-@cdr-type-redwood-ui-30-font-style: normal;
-@cdr-type-redwood-ui-30-font-weight: 400;
-@cdr-type-redwood-ui-30-font-family: Roboto;
-
-.cdr-type-redwood-ui-30() {
-  font-size: @cdr-type-redwood-ui-30-font-size;
-  line-height: @cdr-type-redwood-ui-30-line-height;
-  text-align: @cdr-type-redwood-ui-30-text-align;
-  color: @cdr-type-redwood-ui-30-color;
-  font-style: @cdr-type-redwood-ui-30-font-style;
-  font-weight: @cdr-type-redwood-ui-30-font-weight;
-  font-family: @cdr-type-redwood-ui-30-font-family;
-}
-
-//forms
-@spacing-space-sm: 0.8rem;
-
-// Radius
-//button
-@radius-button: 0.2rem;
-//forms,input,input variables
-@radius-input: 0.2rem;
 
 // Sizing
 
