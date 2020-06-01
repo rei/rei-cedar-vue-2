@@ -3,4 +3,4 @@
 # Allow crawling of all content
 User-agent: *
 Disallow:
-Sitemap: http://0.0.0.0:9002/sitemap.xml
+Sitemap: http://getbootstrap.com/sitemap.xml
