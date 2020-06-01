@@ -474,115 +474,45 @@
             
           <div class="col-md-9 " role="main">
             <section class="vertical-push-3" data-ui="nav-list">
-    <h2 id="nav-tabs" class="status status-good">Tabs</h2>
 
-    <div class="well" data-example-id="simple-nav-tabs" role="navigation">
+
+<cdr-well-docs example-title="Tabs" element-id="button-primary">
+    <yield to="example-description">
+
+        <p> Use for a single transactional CTA; when only one action is needed.</p>
+        <p> When grouped, it is used for the primary action of the grouping.</p>
+
         
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-       <ul class="nav-tabs">
+    </yield>
+    <yield to="example">
+        <ul class="nav-tabs">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Messages</a></li>
         </ul>
-    
-
-    
-
-    
-
-
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-       <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav-tabs"</span><span class="nt">&gt;</span>
+    </yield>
+    <yield to="codeblock">
+        <figure class="highlight"><pre><code class="language-html" data-lang="html">        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav-tabs"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
             <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
             <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;/ul&gt;</span>
-    
+        </code></pre></figure>
+    </yield>
+</cdr-well-docs>
 
-    
-
-    
-
-
-    </code></pre></figure>
-
-    <div class="bs-callout bs-callout-info" id="callout-navs-tabs-plugin">
-        <h5>Using navs for tab panels requires JavaScript tabs plugin</h5>
-
-        <p>For tabs with tabbable areas, you must use the <a href="#tabs">tabs JavaScript plugin</a>. The markup will
-            also require additional <code>role</code> and ARIA attributes – see the plugin's <a href="#tabs-usage">example
-                markup</a> for further details.</p>
-    </div>
 </section>
 
   <h3 id="tabs" class="status status-chat">Togglable tabs <small>tab.js</small></h3>
-
+    <div class="bs-callout bs-callout-info" id="callout-navs-tabs-plugin">
+      <strong>Using navs for tab panels requires JavaScript tabs plugin</strong>
+    
+      <p>For tabs with tabbable areas, you must use the
+        <a href="#tabs">tabs JavaScript plugin</a>. The markup will also require additional
+        <code>role</code> and ARIA attributes – see the plugin's
+        <a href="#tabs-usage">example markup</a> for further details.
+      </p>
+    </div>
   <h4 id="tabs-example">Example tabs</h4>
   <p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus.</p>
   <div class="well well-tabs" role="tabpanel" data-example-id="togglable-tabs">

@@ -45,11 +45,13 @@
 .doc_head-navigation > li > a,
 .doc_head-navigation ul > li > a {
   display: block;
-  font-family: Roboto Condensed, Graphik, "Helvetica Neue", sans-serif;
+  font-family: Graphik, "Helvetica Neue", sans-serif;
   font-size: 18px;
   font-style: normal;
-  line-height: 18px;
-  padding: calc(1.6rem) 3.2rem;
+  font-weight: 500;
+  letter-spacing: -0.08px;
+  line-height: 24px;
+  padding: 1.2rem 2.4rem;
 }
 .doc_head-navigation > li > a > .icon,
 .doc_head-navigation ul > li > a > .icon {
@@ -77,15 +79,17 @@
 }
 .doc_head-navigation > li > ul > li > a,
 .doc_head-navigation ul > li > ul > li > a {
-  font-family: 16px;
-  font-size: 1.6rem;
-  font-style: 4px;
-  line-height: 1.6rem;
-  padding: 1.1rem;
+  font-family: Graphik, "Helvetica Neue", sans-serif 4px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.08px;
+  line-height: 22px;
+  padding: calc(0.4rem);
 }
 .doc_head-navigation > li > ul > li > a > .icon,
 .doc_head-navigation ul > li > ul > li > a > .icon {
-  font-size: 1.6rem !important;
+  font-size: 16px !important;
 }
 .dl-horizontal dd:before,
 .dl-horizontal dd:after {
@@ -360,18 +364,20 @@ h4 code {
     position: relative;
   }
   .doc_head-navigation-item a {
-    font-family: 16px;
-    font-size: 3.2rem;
-    font-style: Stuart, Georgia, serif;
-    line-height: 1.6rem;
-    padding: 1.3rem;
+    font-family: Stuart, Georgia, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.08px;
+    line-height: 22px;
+    padding: 1.3rem, 3.2rem;
     color: #fff !important;
     text-decoration: none;
     transition: all linear 0.1s;
     width: auto;
   }
   .doc_head-navigation-item a > .icon {
-    font-size: 3.2rem !important;
+    font-size: 16px !important;
   }
   .doc_head-navigation-item > a:hover,
   .doc_head-navigation-item > a:focus,
@@ -633,79 +639,43 @@ h4 code {
   background-size: cover;
 }
 .bs-docs-header h1 {
-  font: 2.843rem Stuart, Georgia, serif;
-  font-weight: 600;
-  line-height: 1.333;
-  color: inherit;
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
   margin-top: 0;
   margin-bottom: 1.2rem;
   color: #fff;
   margin: 0;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 767px) {
   .bs-docs-header h1 {
-    font-size: 3.79rem;
-    line-height: 1.333;
+    font-family: Stuart, Georgia, serif;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.16px;
+    font-size: 2.8rem;
+    line-height: 3.2rem;
   }
 }
-@media only screen and (min-width: 992px) {
-  .bs-docs-header h1 {
-    font-size: 3.79rem;
-    line-height: 1.333;
-  }
+.bs-docs-header h1.heading-impact {
+  font-family: Stuart, Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  font-size: 3.6rem;
+  line-height: 4.4rem;
 }
-@media only screen and (min-width: 1200px) {
-  .bs-docs-header h1 {
-    font-size: 5.025rem;
-    line-height: 1.333;
-  }
-}
-.bs-docs-header h1.heading-announce {
-  font-size: 6.734rem;
-  line-height: 1.125;
-}
-@media only screen and (min-width: 768px) {
-  .bs-docs-header h1.heading-announce {
-    font-size: 8.976rem;
-    line-height: 1.125;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .bs-docs-header h1.heading-announce {
-    font-size: 11.965rem;
-    line-height: 1.125;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .bs-docs-header h1.heading-announce {
-    font-size: 15.949rem;
-    line-height: 1.125;
-  }
-}
-.bs-docs-header h1.heading-impact,
-.bs-docs-header h1.heading-editorial {
-  font-size: 2.843rem;
-  line-height: 1.333;
-}
-@media only screen and (min-width: 768px) {
-  .bs-docs-header h1.heading-impact,
-  .bs-docs-header h1.heading-editorial {
-    font-size: 3.79rem;
-    line-height: 1.333;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .bs-docs-header h1.heading-impact,
-  .bs-docs-header h1.heading-editorial {
-    font-size: 3.79rem;
-    line-height: 1.333;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .bs-docs-header h1.heading-impact,
-  .bs-docs-header h1.heading-editorial {
-    font-size: 5.025rem;
-    line-height: 1.333;
+@media only screen and (max-width: 767px) {
+  .bs-docs-header h1.heading-impact {
+    font-family: Stuart, Georgia, serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -0.16px;
+    font-size: 3.2rem;
+    line-height: 3.6rem;
   }
 }
 .bs-docs-header h1 + h1,
@@ -1119,7 +1089,7 @@ h4.status-base-class:after {
   content: "\e63b";
 }
 .status-info:after {
-  color: #222;
+  color: rgba(12, 11, 8, 0.75);
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;

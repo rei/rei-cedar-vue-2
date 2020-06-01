@@ -9,10 +9,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @tab-padding:                                    @sizing-size-sm-squish;
-@tab-font-size:                                  @cdr-type-redwood-ui-30-font-size;
-@tab-line-height:                                @cdr-type-redwood-ui-30-line-height;
-@tab-font-family:                                @cdr-type-redwood-ui-30-font-family;
-@tab-font-style:                                 @cdr-type-redwood-ui-30-font-style;
+@tab-font-size:                                  16px;
+@tab-line-height:                                22px;
+@tab-font-family:                                @cdr-font-family-sans;
+@tab-font-style:                                 normal;
 
 @tab-active-link-hover-bg:                   @body-bg;
 @tab-active-text:                            @cdr-color-tab-active-text;

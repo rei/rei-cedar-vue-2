@@ -20,7 +20,7 @@
 @input-color:                                    @cdr-color-input-text;
 @input-color-placeholder:                        @cdr-color-input-placeholder-text;
 @input-color-disabled:                           @cdr-color-input-disabled-text;
-@input-radius:                                   @radius-input;
+@input-radius:                                   @cdr-radius-softer;
 @input-background:                               @cdr-color-input;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -28,16 +28,23 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@input-font-size:                                @cdr-type-redwood-ui-30-font-size;
-@input-line-height:                              @cdr-type-redwood-ui-30-line-height;
-@input-font-family:                              @cdr-type-redwood-ui-30-font-family, @fallback-sans-serif;
-@input-font-style:                               @cdr-type-redwood-ui-30-font-style;
-@input-sm-font-size:                             @cdr-type-redwood-ui-20-font-size;
-@input-sm-line-height:                           @cdr-type-redwood-ui-20-line-height;
-@input-sm-font-family:                           @cdr-type-redwood-ui-20-font-family, @fallback-sans-serif;
-@input-lg-font-size:                             @cdr-type-redwood-ui-40-font-size;
-@input-lg-line-height:                           @cdr-type-redwood-ui-40-line-height;
-@input-lg-font-family:                           @cdr-type-redwood-ui-40-font-family, @fallback-sans-serif;
+@input-font-size:                                @cdr-text-utility-300-size;
+@input-line-height:                              @cdr-text-utility-300-height;
+@input-font-family:                              @cdr-text-utility-300-family;
+@input-font-style:                               @cdr-text-utility-300-style;
+@input-font-spacing:                             @cdr-text-utility-300-spacing;
+
+@input-sm-font-size:                             @cdr-text-utility-200-size;
+@input-sm-line-height:                           @cdr-text-utility-200-height;
+@input-sm-font-family:                           @cdr-text-utility-200-family;
+@input-sm-font-style:                            @cdr-text-utility-200-style;
+@input-sm-font-spacing:                          @cdr-text-utility-200-spacing;
+
+@input-lg-font-size:                             @cdr-text-utility-400-size;
+@input-lg-line-height:                           @cdr-text-utility-400-height;
+@input-lg-font-spacing:                          @cdr-text-utility-400-spacing;
+@input-lg-font-style:                            @cdr-text-utility-400-style;
+@input-lg-font-family:                           @cdr-text-utility-400-family;
 
 @input-sm-padding:                               @sizing-size-md-squish @inset-sm;
 @input-lg-padding:                               @inset-md @inset-sm;

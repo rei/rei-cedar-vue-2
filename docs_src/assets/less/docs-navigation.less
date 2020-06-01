@@ -138,7 +138,13 @@
         padding: 0;
         position: relative;
         a {
-            .button-size(@padding-large-vertical; @padding-large-horizontal; 1.6rem; @btn-line-height; @headings-font-family;);
+            .button-size(
+                @padding-large-vertical, @padding-large-horizontal; 
+                @btn-font-size;
+                @btn-line-height;
+                @headings-font-family;
+                @btn-font-style;
+                );
             color: #fff !important;
             text-decoration: none;
             transition: all linear 0.1s;

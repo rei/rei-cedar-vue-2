@@ -39,62 +39,16 @@
 // Standard fonts (for browsers that don't support variable fonts --> loaded below)
 // -----------------------------------------
 // Stuart
-@font-face {
-	font-family: @brand-font-primary-name;
-	src: url("@{font-path}/REI_Stuart/REIStuart-Regular-Web.woff2") format("woff2"),
-         url("@{font-path}/REI_Stuart/REIStuart-Regular-Web.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
 
-// Stuart
-@font-face {
-  font-family: @brand-font-primary-name;
-  src: url("@{font-path}/REI_Stuart/REIStuart-Medium-Web.woff2") format("woff2"),
-       url("@{font-path}/REI_Stuart/REIStuart-Medium-Web.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: @brand-font-primary-name;
-  src: url("@{font-path}/REI_Stuart/REIStuart-Semibold-Web.woff2") format("woff2"),
-       url("@{font-path}/REI_Stuart/REIStuart-Semibold-Web.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-// Standard fonts (for browsers that don't support variable fonts --> loaded below)
-// -----------------------------------------
-
-// Graphik
-@font-face {
-	font-family: @cdr-font-family-sans-brand-font;
-	src: url("@{font-path}/Graphik/Graphik/Graphik-Medium-Web.woff2") format("woff2"),
-		   url("@{font-path}/Graphik/Graphik/Graphik-Medium-Web.woff") format("woff");
-	font-weight: 500;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: @cdr-font-family-sans-brand-font;
-	src: url("@{font-path}/Graphik/Graphik/Graphik-Semibold-Web.woff2") format("woff2"),
-		   url("@{font-path}/Graphik/Graphik/Graphik-Semibold-Web.woff") format("woff");
-	font-weight: 600;
-	font-style: normal;
-}
-
-// Variable fonts
-// -----------------------------------------
-@supports(font-variation-settings: normal) {
   @font-face {
-    font-family: @brand-font-primary-name;
+    font-family: @cdr-font-family-serif-brand-font;
     font-weight: 1 999;
     src: url("@{font-path}/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff2") format("woff2-variations"),
       url("@{font-path}/REI_Stuart/REI_Stuart-VF/REIStuart-VF-Web.woff2") format("woff2")
   }
 
   @font-face {
-    font-family: @brand-font-primary-name;
+    font-family: @cdr-font-family-serif-brand-font;
     font-weight: 1 999;
     font-style: italic;
     src: url("@{font-path}/REI_Stuart/REI_Stuart-VF/REIStuartWebItalics-VF-Web.woff2") format("woff2-variations"),
@@ -102,7 +56,7 @@
   }
 
   @font-face {
-    font-family: @brand-font-primary-name;
+    font-family: @cdr-font-family-sans-brand-font;
     font-weight: 1 999;
     src: url("@{font-path}/Graphik/Graphik-VF/Graphik-VF-Web.woff2") format("woff2-variations"),
     url("@{font-path}/Graphik/Graphik-VF/Graphik-VF-Web.woff2") format("woff2")
@@ -115,99 +69,29 @@
     src: url("@{font-path}/Graphik/Graphik-VF/GraphikWebItalic-VF-Web.woff2") format("woff2-variations"),
     url("@{font-path}/Graphik/Graphik-VF/GraphikWebItalic-VF-Web.woff2") format("woff2")
   }
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Headings
 //----------------------------------------------------------------------------------------------------------------------
 h1, .h1 {
-    font: @font-size-h1 @headings-font-family;
-    font-weight: @semibold;
-    line-height: @line-height-h1;
-    color: inherit;
-    @media @breakpoint-sm {
-        font-size: @font-size-h1-sm;
-        line-height: @line-height-h1-sm;
+    @media @breakpoint-xs {
+        .cdr-text-heading-700();
     }
-    @media @breakpoint-md {
-        font-size: @font-size-h1-md;
-        line-height: @line-height-h1-md;
+    .cdr-text-heading-800();
+    &.heading-impact {
+         @media @breakpoint-xs {
+        .cdr-text-display-800();
     }
-    @media @breakpoint-lg {
-        font-size: @font-size-h1-lg;
-        line-height: @line-height-h1-lg;
-    }
-    &.heading-announce {
-        font-size: @font-size-announce-primary;
-        line-height: @line-height-announce-primary;
-        @media @breakpoint-sm {
-            font-size: @font-size-announce-primary-sm;
-            line-height: @line-height-announce-primary-sm;
-        }
-        @media @breakpoint-md {
-            font-size: @font-size-announce-primary-md;
-            line-height: @line-height-announce-primary-md;
-        }
-        @media @breakpoint-lg {
-            font-size: @font-size-announce-primary-lg;
-            line-height: @line-height-announce-primary-lg;
-        }
-    }
-    &.heading-impact,
-    //deprecated
-    &.heading-editorial {
-         font-size: @font-size-impact-h1;
-         line-height: @line-height-impact-h1;
-         @media @breakpoint-sm {
-             font-size: @font-size-impact-h1-sm;
-             line-height: @line-height-impact-h1-sm;
-         }
-         @media @breakpoint-md {
-             font-size: @font-size-impact-h1-md;
-             line-height: @line-height-impact-h1-md;
-         }
-         @media @breakpoint-lg {
-             font-size: @font-size-impact-h1-lg;
-             line-height: @line-height-impact-h1-lg;
-         }
+    .cdr-text-display-900()
+       
      }
 }
 h2, .h2 {
-    font-family: @headings-font-family;
-    font-size: @font-size-h2;
-    font-weight: @semibold;
-    line-height: @line-height-h2;
-    @media @breakpoint-sm {
-        font-size: @font-size-h2-sm;
-        line-height: @line-height-h2-sm;
+        @media @breakpoint-xs {
+        .cdr-text-heading-600();
     }
-    @media @breakpoint-md {
-        font-size: @font-size-h2-md;
-        line-height: @line-height-h2-md;
-    }
-    @media @breakpoint-lg {
-        font-size: @font-size-h2-lg;
-        line-height: @line-height-h2-lg;
-    }
-    &.heading-announce {
-        font-size: @font-size-announce-secondary;
-        line-height: @line-height-announce-secondary;
-        @media @breakpoint-sm {
-            font-size: @font-size-announce-secondary-sm;
-            line-height: @line-height-announce-secondary-sm;
-        }
-        @media @breakpoint-md {
-            font-size: @font-size-announce-secondary-md;
-            line-height: @line-height-announce-secondary-md;
-        }
-        @media @breakpoint-lg {
-            font-size: @font-size-announce-secondary-lg;
-            line-height: @line-height-announce-secondary-lg;
-        }
-    }
-    &.heading-impact,
-        //deprecated
-    &.heading-editorial {
+    .cdr-text-heading-700();
+    &.heading-impact {
         font-size: @font-size-impact-h2;
         line-height: @line-height-impact-h2;
         @media @breakpoint-sm {
@@ -225,45 +109,41 @@ h2, .h2 {
     }
 }
 h3, .h3 {
-    font: @font-size-h3 @headings-font-family;
-    font-weight: @semibold;
-    line-height: @line-height-h3;
-    &.heading-impact,
-        //deprecated
-    &.heading-editorial {
+    @media @breakpoint-xs {
+        .cdr-text-heading-400();
+    }
+    .cdr-text-heading-500();
+    &.heading-impact {
         font-size: @font-size-impact-h3;
         line-height: @line-height-impact-h3;
     }
 }
 h4, .h4 {
-    font: @font-size-h4 @headings-font-family;
-    font-weight: @semibold;
-    line-height: @line-height-h4;
-    &.heading-impact,
-        //deprecated
-    &.heading-editorial {
+    @media @breakpoint-xs {
+        .cdr-text-heading-300();
+    }
+    .cdr-text-heading-400();
+    &.heading-impact {
         font-size: @font-size-impact-h4;
         line-height: @line-height-impact-h4;
     }
 }
 h5, .h5 {
-    font: @font-size-h5 @headings-font-family;
-    font-weight: @semibold;
-    line-height: @line-height-h5;
-    &.heading-impact,
-        //deprecated
-    &.heading-editorial {
+    @media @breakpoint-xs {
+        .cdr-text-heading-300();
+    }
+    .cdr-text-heading-400();
+    &.heading-impact {
         font-size: @font-size-impact-h5;
         line-height: @line-height-impact-h5;
     }
 }
 h6, .h6 {
-    font: @font-size-h6 @headings-font-family;
-    font-weight: @semibold;
-    line-height: @line-height-h6;
-    &.heading-impact,
-        //deprecated
-    &.heading-editorial {
+   @media @breakpoint-xs {
+        .cdr-text-heading-300();
+    }
+    .cdr-text-heading-400();
+    &.heading-impact {
         font-size: @font-size-impact-h6;
         line-height: @line-height-impact-h6;
     }
@@ -287,52 +167,24 @@ h6 .h6 { margin-top: 0; .vertical-push(); }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Announce Headings
 .heading-announce {
-    font: @font-size-hero-primary @brand-font-tertiary;
-    font-weight: @headings-font-weight;
-    line-height: @line-height-hero-primary;
-    @media @breakpoint-sm {
-        font-size: @font-size-hero-primary-sm;
-        line-height: @line-height-hero-primary-sm;
+    @media @breakpoint-xs {
+    .cdr-text-display-1100();
     }
-    @media @breakpoint-md {
-        font-size: @font-size-hero-primary-md;
-        line-height: @line-height-hero-primary-md;
-    }
-    @media @breakpoint-lg {
-        font-size: @font-size-hero-primary-lg;
-        line-height: @line-height-hero-primary-lg;
-    }
+    .cdr-text-display-1200();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Hero Headings
 .heading-hero {
-    font: @font-size-hero-primary @brand-font-tertiary;
-    font-weight: @headings-font-weight;
-    line-height: @line-height-hero-primary;
-    @media @breakpoint-sm {
-        font-size: @font-size-hero-primary-sm;
-        line-height: @line-height-hero-primary-sm;
+    @media @breakpoint-xs {
+    .cdr-text-display-1000();
     }
-    @media @breakpoint-md {
-        font-size: @font-size-hero-primary-md;
-        line-height: @line-height-hero-primary-md;
-    }
-    @media @breakpoint-lg {
-        font-size: @font-size-hero-primary-lg;
-        line-height: @line-height-hero-primary-lg;
-    }
+    .cdr-text-display-1100();
 }
 
 // Classification Label
 .label-classification {
-    &:extend( .h4 );
-    &:extend( .heading-editorial );
-    line-height: .9;
-    border-bottom: 0.3rem solid;
-    display: inline-block;
-    margin-bottom: 2rem;
-    padding-bottom: 0.6rem;
+    .cdr-text-eyebrow-100();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -359,14 +211,17 @@ p {
 }
 
 .text-title {
-    font: normal normal @font-size-h3 @brand-font;
-    line-height: @line-height-closed;
+    @media @breakpoint-xs {
+        .cdr-text-heading-700();
+    }
+    .cdr-text-heading-800();
 }
 
 .text-sub-heading {
-    font-family: @brand-font-secondary;
-		font-weight: @brand-font-secondary-bold;
-    font-size: @font-size-large;
+  @media @breakpoint-xs {
+      .cdr-text-subheading-300();
+  }
+  .cdr-text-subheading-400();
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Typography Helpers
@@ -627,17 +482,10 @@ address {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Forms
+.label-narrow label,
 label {
-    font-family: @font-family-sans-serif;
-    font-size:  @cdr-type-maple-utl-20-font-size ;
-    line-height: @cdr-type-maple-utl-20-line-height;
-}
-
-.label-narrow {
-    label {
-        font-family: @font-family-sans-serif;
-        font-size:  @font-size-base ;
-    }
+    .cdr-text-utility-sans-200();
+    font-weight: 600;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
