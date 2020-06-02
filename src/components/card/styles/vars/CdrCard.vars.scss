@@ -16,6 +16,12 @@
 @mixin cdr-card-link-mixin() {
   position: static;
 
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+
   &::before {
     content: "";
     display: block;
