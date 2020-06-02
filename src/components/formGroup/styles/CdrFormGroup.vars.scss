@@ -1,0 +1,4 @@
+@mixin cdr-form-group-base-mixin() {
+  border: 1px solid $cdr-color-border-primary;
+  // TODO: styling for label text?
+}
