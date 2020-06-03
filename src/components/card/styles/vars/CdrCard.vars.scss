@@ -15,11 +15,12 @@
 
 @mixin cdr-card-link-mixin() {
   position: static;
-
+  color: $cdr-color-text-primary !important;
   text-decoration: none !important;
 
   &:hover {
     text-decoration: underline !important;
+    color: $cdr-color-text-primary !important;
   }
 
   &::before {
