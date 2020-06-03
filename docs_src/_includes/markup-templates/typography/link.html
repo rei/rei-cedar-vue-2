@@ -1,11 +1,17 @@
 {% for item in site.data.link-class-names %}
     {% if item.type == include.param %}
-        <ul class="list-unstyled">
+        <table>
             {% if item.type contains 'singleton' %}
-            <li><a class="{{ item.class }}" href="#"> Normal standalone link</a></li>
+            <tr>
+                <td>{{item.class}}</td>
+                <td><a class="{{ item.class }}" href="#"> Normal standalone link</a></td>
+            </tr>
             {% else %}
-            <li><a class="{{ item.class }}" href="#"> Normal {{ item.type }} link</a></li>
+            <tr>
+                <td>{{ item.class }} {{ item.type }}</a></td>
+                <td><a class="{{ item.class }}" href="#"> Normal {{ item.type }} link</a></td>
+            </tr>
             {% endif %}
-        </ul>
+        </table>
     {% endif %}
 {% endfor %}

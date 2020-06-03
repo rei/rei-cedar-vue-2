@@ -518,63 +518,24 @@
             
           <div class="col-md-9 " role="main">
             <section class="vertical-push-3">
-    <h2 id="type-title" class="page-header">Headings</h2>
-    <h3 id="type-headings" class="status status-good">Core Headings</h3>
-
-    <p>All HTML heading tags, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available.
-        <code>.h1</code> through <code>.h6</code> classes are also available for core headings, when you want to match
-        the font
-        styling
-        of a heading but still want your text to be displayed inline.</p>
-
-    <div class="well " data-example-id="core-headings">
-        
+    <cdr-well-docs example-title="Headings" element-id="headings">
+        <yield to="example-description">
+            <p>
+                A heading helps users to identify and create a hierarchical structure within a 
+                page. Headings are typically the largest text on the screen and should be short
+                and include important information.
+            </p>
+        </yield>
+        <yield to="example">
+            
     
         
-            <h1 class="header"> H1 core </h1>
-            <h2 class="header"> H2 core </h2>
-            <h3 class="header"> H3 core </h3>
-            <h4 class="header"> H4 core </h4>
-            <h5 class="header"> H5 core </h5>
-            <h6 class="header"> H6 core </h6>
-        
-    
-
-    
-
-    
-
-    
-
-
-
-
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;h1&gt;</span> H1 core <span class="nt">&lt;/h1&gt;</span>
-
-    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span> H1 core styled as h4<span class="nt">&lt;/h1&gt;</span>
-    </code></pre></figure>
-
-    <h3 id="type-headings-explore" class="status status-good">Explore/Impact Headings</h3>
-
-    <p>Complementing the architectural type styles, these uppercase headline styles provide visual
-        differentiation
-        for storytelling elements. Apply the <code>.heading-editorial</code> class to any <code>
-            &lt;h1&gt;</code>
-        through <code>&lt;h6&gt;</code> to achieve the explore heading styles</p>
-
-    <div class="well" data-example-id="explore-headings">
-        
-    
-
-    
-        
-            <h1 class="heading-editorial"> H1 explore </h1>
-            <h2 class="heading-editorial"> H2 explore </h2>
-            <h3 class="heading-editorial"> H3 explore </h3>
-            <h4 class="heading-editorial"> H4 explore </h4>
-            <h5 class="heading-editorial"> H5 explore </h5>
-            <h6 class="heading-editorial"> H6 explore </h6>
+            <h1 class="header"> When you gear up, we give back </h1>
+            <h2 class="header"> When you gear up, we give back </h2>
+            <h3 class="header"> When you gear up, we give back </h3>
+            <h4 class="header"> When you gear up, we give back </h4>
+            <h5 class="header"> When you gear up, we give back </h5>
+            <h6 class="header"> When you gear up, we give back </h6>
         
     
 
@@ -582,29 +543,35 @@
 
     
 
+    
 
 
 
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"heading-editorial"</span><span class="nt">&gt;</span> H1 explore <span class="nt">&lt;/h1&gt;</span>
-    </code></pre></figure>
 
-    <h3 id="type-headings-hero" class="status status-good">Hero Headings</h3>
+        </yield>
+        <yield to="codeblock">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1&gt;</span> H1 core <span class="nt">&lt;/h1&gt;</span>
 
-    <p>This family anchors large-scale mastheads with graphic or photographic backgrounds. Apply the
-        <code>.heading-hero</code> class to any <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> to
-        achieve the
-        explore heading styles</p>
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span> H1 core styled as h4<span class="nt">&lt;/h1&gt;</span></code></pre></figure>
+        </yield>
+    </cdr-well-docs>
 
-    <div class="well overlay-medium-1" data-example-id="hero-headings">
-        
+    <cdr-well-docs example-title="Hero Headings" element-id="hero">
+        <yield to="example-description">
+            <p>
+                Uses the <strong>Serif</strong> <code>cdr-text-heading-serif-1100 & 
+                cdr-text-heading-serif-1200</code> tokens
+            </p>
+        </yield>
+        <yield to="example">
+            
     
 
     
 
     
         
-            <h1 class="heading-hero"> H1 hero </h1>
+            <h1 class="heading-hero"> When you gear up, we give back </h1>
             
     
 
@@ -613,16 +580,22 @@
 
 
 
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"heading-hero"</span><span class="nt">&gt;</span> H2 hero <span class="nt">&lt;/h2&gt;</span>
-    </code></pre></figure>
+        </yield>
+        <yield to="codeblock">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"heading-hero"</span><span class="nt">&gt;</span> When you gear up, we give back <span class="nt">&lt;/h2&gt;</span></code></pre></figure>
+        </yield>
+    </cdr-well-docs>
 
-    <h3 id="type-headings-announce" class="status status-good">Announce Headings</h3>
-
-    <p>These large-scale sizes are only used in limited situations for special campaigns and initiatives.</p>
-
-    <div class="well" data-example-id="announcement-headings">
-        
+    <cdr-well-docs example-title="Announce Headings" element-id="announce">
+        <yield to="example-description">
+            <p>
+                Uses the cedar <strong>Serif-strong</strong>
+                <code>cdr-text-heading-serif-strong-1100 & cdr-text-heading-serif-strong-1200
+                </code> tokens
+            </p>
+        </yield>
+        <yield to="example">
+            
     
 
     
@@ -631,894 +604,274 @@
 
     
         
-            <h1 class="heading-announce"> H1 announce </h1>
-            <h2 class="heading-announce"> H2 announce </h2>
+            <h1 class="heading-announce"> When you gear up, we give back </h1>
         
     
 
 
 
 
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"heading-announce"</span><span class="nt">&gt;</span> H1 Announce <span class="nt">&lt;/h1&gt;</span>
-    </code></pre></figure>
+        </yield>
+        <yield to="codeblock">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"heading-announce"</span><span class="nt">&gt;</span> When you gear up, we give back <span class="nt">&lt;/h1&gt;</span></code></pre></figure>
+        </yield>
+    </cdr-well-docs>
+
+    <cdr-well-docs example-title="Eyebrow" element-id="eyebrow">
+        <yield to="example-description">
+            <p>Eyebrows introduce a topic or show how an item is categorized. Content tags or certain label styles are two
+                examples.
+                Eyebrow text styles should not be used as headings or used for brand names.
+            </p>
+        </yield>
+        <yield to="example">
+            <p class="label-classification">Hiking, backpacking</p>
+        </yield>
+        <yield to="codeblock">
+            <figure class="highlight"><pre><code class="language-html" data-lang="html">            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"label-classification"</span><span class="nt">&gt;</span>Hiking, backpacking<span class="nt">&lt;/p&gt;</span>
+            </code></pre></figure>
+        </yield>
+    </cdr-well-docs>
 </section>
 
 <section class="vertical-push-3">
-  <h2 id="labels" class="page-header">Labels</h2>
-    <div class="well">
-      <h2 class="label-classification" data-example-id="Content-label">Content label</h2>
+    <h2 class="page-header">Text Utilities</h2>
+    <div>
+        <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  
+      <tr>
+        <td><code>.text-body</code></td>
+        <td><p class="text-body"> text-body</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-xs-center</code></td>
+        <td><p class="text-xs-center"> text-xs-center</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-sm-center</code></td>
+        <td><p class="text-sm-center"> text-sm-center</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-md-center</code></td>
+        <td><p class="text-md-center"> text-md-center</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-lg-center</code></td>
+        <td><p class="text-lg-center"> text-lg-center</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-center</code></td>
+        <td><p class="text-center"> text-center</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-xs-justify</code></td>
+        <td><p class="text-xs-justify"> text-xs-justify</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-sm-justify</code></td>
+        <td><p class="text-sm-justify"> text-sm-justify</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-md-justify</code></td>
+        <td><p class="text-md-justify"> text-md-justify</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-lg-justify</code></td>
+        <td><p class="text-lg-justify"> text-lg-justify</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-justify</code></td>
+        <td><p class="text-justify"> text-justify</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-xs-left</code></td>
+        <td><p class="text-xs-left"> text-xs-left</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-sm-left</code></td>
+        <td><p class="text-sm-left"> text-sm-left</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-md-left</code></td>
+        <td><p class="text-md-left"> text-md-left</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-lg-left</code></td>
+        <td><p class="text-lg-left"> text-lg-left</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-left</code></td>
+        <td><p class="text-left"> text-left</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-xs-right</code></td>
+        <td><p class="text-xs-right"> text-xs-right</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-sm-right</code></td>
+        <td><p class="text-sm-right"> text-sm-right</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-md-right</code></td>
+        <td><p class="text-md-right"> text-md-right</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-lg-right</code></td>
+        <td><p class="text-lg-right"> text-lg-right</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-right</code></td>
+        <td><p class="text-right"> text-right</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-nowrap</code></td>
+        <td><p class="text-nowrap"> text-nowrap</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-capitalize</code></td>
+        <td><p class="text-capitalize"> text-capitalize</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-lowercase</code></td>
+        <td><p class="text-lowercase"> text-lowercase</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-sentence</code></td>
+        <td><p class="text-sentence"> text-sentence</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-uppercase</code></td>
+        <td><p class="text-uppercase"> text-uppercase</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-strikethrough</code></td>
+        <td><p class="text-strikethrough"> text-strikethrough</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-success</code></td>
+        <td><p class="text-success"> text-success</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-info</code></td>
+        <td><p class="text-info"> text-info</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-warning</code></td>
+        <td><p class="text-warning"> text-warning</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-danger</code></td>
+        <td><p class="text-danger"> text-danger</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-mark</code></td>
+        <td><p class="text-mark"> text-mark</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-architectural-1</code></td>
+        <td><p class="text-architectural-1"> text-architectural-1</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-explore-architectural-1</code></td>
+        <td><p class="text-explore-architectural-1"> text-explore-architectural-1</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-architectural-2</code></td>
+        <td><p class="text-architectural-2"> text-architectural-2</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-explore-architectural-2</code></td>
+        <td><p class="text-explore-architectural-2"> text-explore-architectural-2</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-architectural-3</code></td>
+        <td><p class="text-architectural-3"> text-architectural-3</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-architectural-5</code></td>
+        <td><p class="text-architectural-5"> text-architectural-5</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-off-price</code></td>
+        <td><p class="text-off-price"> text-off-price</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-muted</code></td>
+        <td><p class="text-muted"> text-muted</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-hide</code></td>
+        <td><p class="text-hide"> text-hide</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-small</code></td>
+        <td><p class="text-small"> text-small</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-descriptive</code></td>
+        <td><p class="text-descriptive"> text-descriptive</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-lead</code></td>
+        <td><p class="text-lead"> text-lead</p></td>
+      </tr>
+  
+      <tr>
+        <td><code>.text-space-lg</code></td>
+        <td><p class="text-space-lg"> text-space-lg</p></td>
+      </tr>
+  
+</table>
     </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"label-classification"</span><span class="nt">&gt;</span>Content label<span class="nt">&lt;/h2&gt;</span>
-    </code></pre></figure>
-</section>
-
-<section class="vertical-push-3">
-    <h2 id="body-copy" class="page-header">Body copy</h2>
-    
-    <h3 id="copy" class="status status-good"> Copy</h3>
-    <div class="well" data-example-id="copy">
-        
-
-
-<p class="text-body"> text-body.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-    <h3 id="alignment" class="status status-good"> Alignment</h3>
-    <div class="well" data-example-id="alignment">
-        
-
-
-
-
-<p class="text-xs-center"> text-xs-center.</p>
-
-
-
-<p class="text-sm-center"> text-sm-center.</p>
-
-
-
-<p class="text-md-center"> text-md-center.</p>
-
-
-
-<p class="text-lg-center"> text-lg-center.</p>
-
-
-
-<p class="text-center"> text-center.</p>
-
-
-
-<p class="text-xs-justify"> text-xs-justify.</p>
-
-
-
-<p class="text-sm-justify"> text-sm-justify.</p>
-
-
-
-<p class="text-md-justify"> text-md-justify.</p>
-
-
-
-<p class="text-lg-justify"> text-lg-justify.</p>
-
-
-
-<p class="text-justify"> text-justify.</p>
-
-
-
-<p class="text-xs-left"> text-xs-left.</p>
-
-
-
-<p class="text-sm-left"> text-sm-left.</p>
-
-
-
-<p class="text-md-left"> text-md-left.</p>
-
-
-
-<p class="text-lg-left"> text-lg-left.</p>
-
-
-
-<p class="text-left"> text-left.</p>
-
-
-
-<p class="text-xs-right"> text-xs-right.</p>
-
-
-
-<p class="text-sm-right"> text-sm-right.</p>
-
-
-
-<p class="text-md-right"> text-md-right.</p>
-
-
-
-<p class="text-lg-right"> text-lg-right.</p>
-
-
-
-<p class="text-right"> text-right.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-xs-center"</span><span class="nt">&gt;</span> text-xs-center.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-sm-center"</span><span class="nt">&gt;</span> text-sm-center.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-md-center"</span><span class="nt">&gt;</span> text-md-center.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-lg-center"</span><span class="nt">&gt;</span> text-lg-center.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span> text-center.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-xs-justify"</span><span class="nt">&gt;</span> text-xs-justify.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-sm-justify"</span><span class="nt">&gt;</span> text-sm-justify.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-md-justify"</span><span class="nt">&gt;</span> text-md-justify.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-lg-justify"</span><span class="nt">&gt;</span> text-lg-justify.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-justify"</span><span class="nt">&gt;</span> text-justify.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-xs-left"</span><span class="nt">&gt;</span> text-xs-left.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-sm-left"</span><span class="nt">&gt;</span> text-sm-left.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-md-left"</span><span class="nt">&gt;</span> text-md-left.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-lg-left"</span><span class="nt">&gt;</span> text-lg-left.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-left"</span><span class="nt">&gt;</span> text-left.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-xs-right"</span><span class="nt">&gt;</span> text-xs-right.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-sm-right"</span><span class="nt">&gt;</span> text-sm-right.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-md-right"</span><span class="nt">&gt;</span> text-md-right.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-lg-right"</span><span class="nt">&gt;</span> text-lg-right.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span> text-right.<span class="nt">&lt;/p&gt;</span></code></pre></figure>
-
-    <h3 id="transformation" class="status status-good"> Transformation </h3>
-    <div class="well" data-example-id="transformation">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p class="text-nowrap"> text-nowrap.</p>
-
-
-
-<p class="text-capitalize"> text-capitalize.</p>
-
-
-
-<p class="text-lowercase"> text-lowercase.</p>
-
-
-
-<p class="text-sentence"> text-sentence.</p>
-
-
-
-<p class="text-uppercase"> text-uppercase.</p>
-
-
-
-<p class="text-strikethrough"> text-strikethrough.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-    <h3 id="color" class="status status-good"> Color </h3>
-    <div class="well" data-example-id="color">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p class="text-success"> text-success.</p>
-
-
-
-<p class="text-info"> text-info.</p>
-
-
-
-<p class="text-warning"> text-warning.</p>
-
-
-
-<p class="text-danger"> text-danger.</p>
-
-
-
-<p class="text-mark"> text-mark.</p>
-
-
-
-<p class="text-architectural-1"> text-architectural-1.</p>
-
-
-
-<p class="text-explore-architectural-1"> text-explore-architectural-1.</p>
-
-
-
-<p class="text-architectural-2"> text-architectural-2.</p>
-
-
-
-<p class="text-explore-architectural-2"> text-explore-architectural-2.</p>
-
-
-
-<p class="text-architectural-3"> text-architectural-3.</p>
-
-
-
-<p class="text-architectural-5"> text-architectural-5.</p>
-
-
-
-<p class="text-off-price"> text-off-price.</p>
-
-
-
-<p class="text-muted"> text-muted.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-success"</span><span class="nt">&gt;</span> text-success.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-info"</span><span class="nt">&gt;</span> text-info.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-warning"</span><span class="nt">&gt;</span> text-warning.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-danger"</span><span class="nt">&gt;</span> text-danger.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-mark"</span><span class="nt">&gt;</span> text-mark.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-architectural-1"</span><span class="nt">&gt;</span> text-architectural-1.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-explore-architectural-1"</span><span class="nt">&gt;</span> text-explore-architectural-1.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-architectural-2"</span><span class="nt">&gt;</span> text-architectural-2.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-explore-architectural-2"</span><span class="nt">&gt;</span> text-explore-architectural-2.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-architectural-3"</span><span class="nt">&gt;</span> text-architectural-3.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-architectural-5"</span><span class="nt">&gt;</span> text-architectural-5.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-off-price"</span><span class="nt">&gt;</span> text-off-price.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-muted"</span><span class="nt">&gt;</span> text-muted.<span class="nt">&lt;/p&gt;</span></code></pre></figure>
-
-    <h3 id="visibility" class="status status-good"> Visibility</h3>
-    <div class="well" data-example-id="visibility">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p class="text-hide"> text-hide.</p>
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-hide"</span><span class="nt">&gt;</span> text-hide.<span class="nt">&lt;/p&gt;</span></code></pre></figure>
-
-    <h3 id="weight-and-size"class="status status-good"> Weight and Size</h3>
-    <div class="well" data-example-id="weight-size">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p class="text-small"> text-small.</p>
-
-
-
-<p class="text-descriptive"> text-descriptive.</p>
-
-
-
-<p class="text-lead"> text-lead.</p>
-
-
-
-<p class="text-space-lg"> text-space-lg.</p>
-
-
-
-    </div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-small"</span><span class="nt">&gt;</span> text-small.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-descriptive"</span><span class="nt">&gt;</span> text-descriptive.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-lead"</span><span class="nt">&gt;</span> text-lead.<span class="nt">&lt;/p&gt;</span>
-
-
-
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-space-lg"</span><span class="nt">&gt;</span> text-space-lg.<span class="nt">&lt;/p&gt;</span></code></pre></figure>
-
-
-    <h3 id="groupings" class="status status-good">Groupings</h3>
-    <div class="well" data-example-id="heading-copy-spacing">
-        <section class="text-body">
-    <h1> Lorem Ipsum </h1>
-    <p><em>Duis malesuada volutpat scelerisque</em>. <strong>Vestibulum dapibus est ac neque feugiat</strong> gravida. Ut sed ullamcorper ipsum. Donec molestie sagittis odio. Sed vel condimentum dolor. Duis blandit, elit ornare congue dapibus, dui nunc semper quam, vel mattis erat dui ac ex. Nunc id congue metus, in feugiat quam. Donec orci ipsum, laoreet vel diam ullamcorper, <a href="">aliquam euismod tellus</a>. Praesent in lectus velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce rutrum ipsum semper turpis venenatis accumsan. Morbi imperdiet in mauris et molestie. Morbi neque tellus, placerat eget viverra vitae, vulputate at nibh. Aliquam eget lorem a enim consectetur aliquam. Vestibulum malesuada ullamcorper varius. </p>
-</section>
-
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;div&gt;</span>
-        <span class="nt">&lt;h2&gt;</span> Lorem Ipsum <span class="nt">&lt;/h2&gt;</span>
-
-        <span class="nt">&lt;p&gt;</span>Duis malesuada volutpat scelerisque...<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    </code></pre></figure>
-</section>
-
-<section class="vertical-push-3">
-    <h3 id="line-heights" class="status status-good">Line Height Utilities</h3>
-    <p>Used for overriding default line heights of elements.</p>
-
-    <div class="well" data-example-id="line-height-utility">
-        <p class="u-line-height-open">Open</p>
-        <p class="u-line-height-neutral">Neutral</p>
-        <p class="u-line-height-closed">Closed</p>
-    </div>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-line-height-open"</span><span class="nt">&gt;</span>Open<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-line-height-neutral"</span><span class="nt">&gt;</span>Neutral<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"u-line-height-closed"</span><span class="nt">&gt;</span>Closed<span class="nt">&lt;/p&gt;</span>
-    </code></pre></figure>
-
-
-    <h3 id="text-supplements-rule-line" class="status status-good">Basic rule line</h3>
-    <h4>IMPORTANT NOTES:</h4>
-    <ul>
-        <li>The purpose of this typographic element is to provide clarity of message.</li>
-        <li>Rule lines are to be used sparingly to visually separate elements of <strong> contrasting </strong>editorial
-            intent.
-        </li>
-        <li>This line's width should match the width of the content block.</li>
-    </ul>
-    <div class="well" data-example-id="rule">
-        <p>May the Force be with you...</p>
-        <hr/>
-        <p>Live long and prosper.</p>
-    </div>
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;p&gt;</span>May the Force be with you...<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;hr/&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Live long and prosper.<span class="nt">&lt;/p&gt;</span>
-    </code></pre></figure>
 </section>
 
 

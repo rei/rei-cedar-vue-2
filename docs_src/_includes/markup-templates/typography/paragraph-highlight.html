@@ -1,6 +1,14 @@
-
-{% for item in site.data.text-utilities %}
-{% if item.type == include.param %}
-<p class="{{ item.class }}"> {{ item.class }}.</p>
-{% endif %}
-{% endfor %}
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  {% for item in site.data.text-utilities %}
+      <tr>
+        <td><code>.{{item.class}}</code></td>
+        <td><p class="{{ item.class }}"> {{ item.class }}</p></td>
+      </tr>
+  {% endfor %}
+</table>

@@ -660,24 +660,6 @@ h4 code {
     line-height: 3.2rem;
   }
 }
-.bs-docs-header h1.heading-impact {
-  font-family: Stuart, Georgia, serif;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: -0.32px;
-  font-size: 3.6rem;
-  line-height: 4.4rem;
-}
-@media only screen and (max-width: 767px) {
-  .bs-docs-header h1.heading-impact {
-    font-family: Stuart, Georgia, serif;
-    font-style: normal;
-    font-weight: 600;
-    letter-spacing: -0.16px;
-    font-size: 3.2rem;
-    line-height: 3.6rem;
-  }
-}
 .bs-docs-header h1 + h1,
 .bs-docs-header h1 + h2,
 .bs-docs-header h1 + h3,
