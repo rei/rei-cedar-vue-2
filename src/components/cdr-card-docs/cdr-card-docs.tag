@@ -1,7 +1,7 @@
 <cdr-card-docs>
     <article class="card vertical-push-lg">
         <section class="card-block-xs-open-default card-block-top" data-theme="light-20">
-            <h3 class="h4 card-doc-heading">{ opts.exampleTitle }</h3>
+            <h3 class="card-doc-heading">{ opts.exampleTitle }</h3>
         </section>
         <section class="card-block-xs-open-default">
            <yield from="example-description" />
