@@ -93,7 +93,6 @@ export default {
           /
         </span>) : '';
 
-        const ref = index === 0 ? 'firstBreadcrumb' : null;
         const isLink = index < this.items.length - 1;
         const LinkTag = isLink ? 'a' : 'strong';
 
@@ -109,11 +108,9 @@ export default {
               class: this.style['cdr-breadcrumb__link'],
               href: breadcrumb.item.url,
               content: breadcrumb.item.name,
-              ref,
             })
             : (<LinkTag
               class={this.style['cdr-breadcrumb__link']}
-              ref={ref}
               href={breadcrumb.item.url}
               aria-current={index === this.items.length - 1 ? 'page' : undefined}
             >
@@ -133,7 +130,9 @@ export default {
   methods: {
     handleEllipsisClick() {
       this.truncate = false;
-      this.$nextTick(() => { this.$refs.firstBreadcrumb.focus(); });
+      this.$nextTick(() => {
+        this.$el.querySelector('li *').focus();
+      });
     },
   },
   render() {

@@ -96,7 +96,7 @@ describe('CdrBreadcrumb', () => {
       }
     });
 
-    
+
     expect(wrapper.vm.truncate).toBe(true);
     wrapper.find({ref: 'ellipse'}).trigger('click');
     await wrapper.vm.$nextTick();
@@ -143,7 +143,7 @@ describe('CdrBreadcrumb', () => {
     });
     wrapper.vm.handleEllipsisClick();
     await wrapper.vm.$nextTick();
-    expect(wrapper.vm.$refs.firstBreadcrumb).toBe(document.activeElement);
+    expect(document.activeElement.textContent).toBe(itemsA[0].item.name);
   });
 
 });
