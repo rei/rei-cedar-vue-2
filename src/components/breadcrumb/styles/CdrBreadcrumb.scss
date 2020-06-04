@@ -28,6 +28,7 @@
   /* Link
   ---------- */
   &__link {
+    @include cdr-breadcrumb-xs-text-mixin;
     @include cdr-breadcrumb-item-linked-mixin;
 
     &:hover,
