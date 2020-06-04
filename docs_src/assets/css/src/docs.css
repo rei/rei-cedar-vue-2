@@ -715,7 +715,7 @@ h1[id] {
   margin: 0;
   border: 0.1rem solid #eee;
   border-left-width: 0.5rem;
-  border-radius: 0.3rem;
+  border-radius: -0.3rem;
 }
 .bs-callout h4 {
   margin-bottom: 0.5rem;
@@ -724,7 +724,7 @@ h1[id] {
   margin-bottom: 0;
 }
 .bs-callout code {
-  border-radius: 0.3rem;
+  border-radius: -0.3rem;
 }
 /* Tighten up space between multiple callouts */
 .bs-callout + .bs-callout {
@@ -960,7 +960,7 @@ h1[id] {
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;
-  top: 0.3rem;
+  top: -0.3rem;
 }
 h1.status-danger:after,
 h2.status-danger:after {
@@ -986,7 +986,7 @@ h4.status-danger:after {
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;
-  top: 0.3rem;
+  top: -0.3rem;
 }
 h1.status-warning:after,
 h2.status-warning:after {
@@ -1012,7 +1012,7 @@ h4.status-warning:after {
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;
-  top: 0.3rem;
+  top: -0.3rem;
 }
 h1.status-chat:after,
 h2.status-chat:after {
@@ -1038,7 +1038,7 @@ h4.status-chat:after {
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;
-  top: 0.3rem;
+  top: -0.3rem;
 }
 h1.status-base-class:after,
 h2.status-base-class:after {
@@ -1075,7 +1075,7 @@ h4.status-base-class:after {
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;
-  top: 0.3rem;
+  top: -0.3rem;
 }
 h1.status-info:after,
 h2.status-info:after {
@@ -1101,7 +1101,7 @@ h4.status-info:after {
   display: inline-block;
   margin-left: 1.2rem;
   position: relative;
-  top: 0.3rem;
+  top: -0.3rem;
 }
 h1.status-good:after,
 h2.status-good:after {

@@ -23,25 +23,9 @@
   <p>For use in site content areas. Provided pixle dimensions should be followed whenever possible unless otherwise documented.</p>
   {% include /markup-templates/icons/icons.html param="content"%}
 
-  <h3 id="icons-reviews" class="status status-warning">Reviews</h3>
-  <p>A grouping if up to 5 filled star icons represent a product's rating in quarter increments.</p>
-  {% include /markup-templates/icons/icons.html param="reviews"%}
-  <h3 id="icons-social" class="status status-warning">Social</h3>
-  <p>Typically shown in the following cadence</p>
-  {% include /markup-templates/icons/icons.html param="social"%}
 </section>
 <section class="vertical-push-3">
   <h2 id="icons-how-to-use" class="page-header">How to use</h2>
-  <p class="bs-callout bs-callout-danger">The REI-icon font family icons have been created at 32 x 32 however you will see variation within the display size of each icon.
-  when using the inline font via a class name the size adjustments are accounted for.
-    Be sure to reference the above documentation for size requirements and work with design when implementing a font using the variable or ecma codes </p>
-  <h3 id="icons-usage-inline" class="status status-warning">Inline</h3>
-  <p>Using icons inline is as simple as placing a span tag with a few classes in the markup. </p>
-  {% highlight html %}
-  <span class="icon icon-search" aria-hidden="true"></span>
-  {% endhighlight %}
-
-  <p>For performance reasons, all icons require a base class and individual icon class. To use, place the following code just about anywhere. Be sure to leave a space between the icon and text for proper padding.</p>
   <div class="bs-callout bs-callout-danger" id="callout-glyphicons-dont-mix">
     <h4>Don't mix with other components</h4>
     <p>Icon classes cannot be directly combined with other components. They should not be used along with other classes on the same element. Instead, add a nested <code>&lt;span&gt;</code> and apply the icon classes to the <code>&lt;span&gt;</code>.</p>
@@ -51,10 +35,7 @@
     <p>Icon classes should only be used on elements that contain no text content and have no child elements.</p>
   </div>
 </section>
-<section class="vertical-push-3">
-  <h2 id="icons-working-with-code" class="page-header">Working with the code</h2>
 
-</section>
 <section class="vertical-push-3">
   <h2 id="icons-examples" class="page-header">Examples</h2>
   {% include elements/rei-icons/examples.html %}
