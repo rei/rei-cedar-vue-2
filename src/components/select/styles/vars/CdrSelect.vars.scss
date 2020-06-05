@@ -97,7 +97,8 @@
 /* helper text */
 @mixin cdr-select-helper-text-mixin() {
   @include cdr-text-utility-sans-200;
-
+  display: inline-block;
+  margin-top: $cdr-space-quarter-x;
   color: $cdr-color-text-input-help;
 }
 
