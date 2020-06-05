@@ -43,8 +43,7 @@
   &__delimiter {
     @include cdr-breadcrumb-xs-text-mixin;
     color: inherit;
-    padding-left: $cdr-space-quarter-x;
-    padding-right: $cdr-space-half-x;
+    padding: 0 $cdr-space-half-x;
   }
 
   /* Ellipses
