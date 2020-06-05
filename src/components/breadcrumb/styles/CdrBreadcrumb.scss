@@ -33,7 +33,7 @@
     &:hover,
     &:active,
     &:focus {
-      color: inherit;
+      color: $cdr-color-text-link-hover;
       text-decoration: underline;
     }
   }
@@ -43,8 +43,7 @@
   &__delimiter {
     @include cdr-breadcrumb-xs-text-mixin;
     color: inherit;
-    padding-left: $cdr-space-quarter-x;
-    padding-right: $cdr-space-half-x;
+    padding: 0 $cdr-space-half-x;
   }
 
   /* Ellipses
@@ -59,15 +58,13 @@
     cursor: pointer;
     display: inline-block;
     fill: inherit;
-    padding: 6px 11px; /* extend clickable area */
-    margin: -6px -11px; /* preserve layout */
+    padding: 0;
 
     /* Ellipses Icon
     ========== */
     .cdr-breadcrumb__ellipses-icon {
+      color: $cdr-color-text-secondary;
       border-bottom: 1px solid transparent;
-      width: 1.4rem;
-      height: 1.4rem;
       fill: inherit;
     }
 
@@ -75,8 +72,8 @@
     &:active,
     &:focus {
       .cdr-breadcrumb__ellipses-icon {
-        border-bottom: 1px solid $cdr-color-text-link-hover;
-        fill: inherit;
+        color: $cdr-color-text-link-hover;
+        text-decoration: underline;
       }
     }
   }
@@ -86,11 +83,6 @@
     &__delimiter,
     &__ellipses {
       @include cdr-breadcrumb-base-text-mixin;
-    }
-
-    &__ellipses .cdr-breadcrumb__ellipses-icon {
-      width: 1.6rem;
-      height: 1.6rem;
     }
   }
 }
