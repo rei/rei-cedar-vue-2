@@ -10,7 +10,7 @@ $cdr-label-height-medium: $cdr-text-utility-sans-300-height;
 @mixin cdr-label-base-mixin() {
   @include cdr-text-utility-sans-300;
   padding-left: calc(#{$cdr-label-figure-size-medium} + #{$cdr-label-base-spacing});
-  color: $cdr-color-text-form-label-lightmode;
+  color: $cdr-color-text-input-label;
 }
 
 @mixin cdr-label-hover-mixin() {
@@ -18,7 +18,7 @@ $cdr-label-height-medium: $cdr-text-utility-sans-300-height;
 }
 
 @mixin cdr-label-disabled-mixin() {
-  color: $cdr-color-text-disabled-lightmode !important;
+  color: $cdr-color-text-disabled !important;
   cursor: default;
 }
 

@@ -86,11 +86,11 @@
     top: 50%;
     left: $cdr-space-half-x;
     transform: translateY(-50%);
-    fill: $cdr-color-icon-primary-lightmode;
+    fill: $cdr-color-icon-default;
   }
 
   &__post-icon {
-    fill: $cdr-color-icon-primary-lightmode;
+    fill: $cdr-color-icon-default;
     position: absolute;
     top: 50%;
     right: $cdr-space-half-x;
