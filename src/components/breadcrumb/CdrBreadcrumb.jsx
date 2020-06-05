@@ -68,13 +68,12 @@ export default {
           aria-controls={`${this.componentID}List`}
           aria-label={`show ${this.items.length - 2} more navigation level${(this.items.length - 2) > 1 ? 's' : ''}`} // eslint-disable-line max-len
         >
-          <cdr-icon
+          <span
             class={this.style['cdr-breadcrumb__ellipses-icon']}
             aria-hidden="true"
           >
-            {/* eslint-disable-next-line max-len */}
-            <path d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-          </cdr-icon>
+            . . . 
+          </span>
         </button>
         <span
           class={this.style['cdr-breadcrumb__delimiter']}
