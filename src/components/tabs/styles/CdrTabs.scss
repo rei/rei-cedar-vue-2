@@ -108,15 +108,17 @@
   &__header-item {
     display: block;
     padding: 0;
+    color: $cdr-color-text-tab-rest;
 
     & + & {
       margin-left: $cdr-space-one-x;
     }
 
-    & [aria-selected="true"].cdr-tabs__header-item-label {
-      color: $cdr-color-text-tab-active;
-      font-weight: 500;
-    }
+  }
+
+  &__header-item-active {
+    color: $cdr-color-text-tab-active;
+    font-weight: 500;
   }
 
   &__header-item-label {
@@ -125,9 +127,10 @@
     display: block;
     text-decoration: none;
     padding: $cdr-space-inset-half-x-stretch;
-    color: $cdr-color-text-tab-rest;
     white-space: nowrap;
     outline-offset: -3px;
+    color: inherit;
+    font-weight: inherit;
 
     &:active,
     &:hover,
