@@ -2,6 +2,11 @@
   margin: 0;
   padding: $cdr-space-inset-one-x-stretch;
   line-height: 1;
+  & cite {
+    @include cdr-text-utility-sans-100;
+    color: $cdr-color-text-secondary;
+    display: block;
+  }
 }
 
 @mixin cdr-quote-base-content() {
@@ -11,18 +16,14 @@
   line-height: 36px;
   letter-spacing: -.08rem;
   color: $cdr-color-text-primary;
+  margin: 0;
 
   @include cdr-xs-mq-only {
     font-size: 18px;
     line-height: 28px;
   }
 
-  margin: 0;
-
   & + cite {
-    @include cdr-text-utility-sans-100;
-    color: $cdr-color-text-secondary;
-    display: block;
     padding-top: $cdr-space-one-x;
   }
 }
