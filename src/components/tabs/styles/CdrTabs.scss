@@ -4,7 +4,7 @@
 @mixin cdr-tabs-base-header-item-label() {
   font-family: $cdr-font-family-sans;
   font-style: normal;
-  font-weight: 500;
+  font-weight: inherit;
   letter-spacing: -.08px;
   font-size: 1.6rem;
   line-height: 2.2rem;
@@ -13,7 +13,7 @@
 @mixin cdr-tabs-small-header-item-label() {
   font-family: $cdr-font-family-sans;
   font-style: normal;
-  font-weight: 500;
+  font-weight: inherit;
   letter-spacing: -.08px;
   font-size: 1.4rem;
   line-height: 1.8rem;
@@ -108,15 +108,18 @@
   &__header-item {
     display: block;
     padding: 0;
+    color: $cdr-color-text-tab-rest;
+    font-weight: 300;
 
     & + & {
       margin-left: $cdr-space-one-x;
     }
 
-    & [aria-selected="true"].cdr-tabs__header-item-label {
-      color: $cdr-color-text-tab-active;
-      font-weight: 500;
-    }
+  }
+
+  &__header-item-active {
+    color: $cdr-color-text-tab-active;
+    font-weight: 500;
   }
 
   &__header-item-label {
@@ -125,9 +128,10 @@
     display: block;
     text-decoration: none;
     padding: $cdr-space-inset-half-x-stretch;
-    color: $cdr-color-text-tab-rest;
     white-space: nowrap;
     outline-offset: -3px;
+    color: inherit;
+    font-weight: inherit;
 
     &:active,
     &:hover,
@@ -159,7 +163,7 @@
     border: none;
 
     /* border: none; */
-    background-color: $cdr-color-text-link-lightmode;
+    background-color: $cdr-color-border-tab-keyline-active;
     transition: $cdr-duration-4-x $cdr-timing-function-ease-out;
   }
 

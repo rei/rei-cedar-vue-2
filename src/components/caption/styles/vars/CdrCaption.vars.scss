@@ -1,7 +1,7 @@
 @mixin cdr-caption-container-mixin() {
   max-width: 530px;
   line-height: 1;
-  padding: $cdr-space-inset-one-x-squish;
+  padding: $cdr-space-half-x 0;
 }
 
 @mixin cdr-caption-summary-mixin() {

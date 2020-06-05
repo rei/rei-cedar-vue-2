@@ -167,8 +167,8 @@ $filled-star: '\2605';
 
       & > .cdr-rating__number {
         border-right: 1px solid $cdr-color-text-rating-separator;
-        padding: 0 $cdr-space-quarter-x;
-        margin-right: $cdr-space-quarter-x;
+        padding: 0 0.6rem;
+        margin-right: 0.6rem;
       }
     }
   }
