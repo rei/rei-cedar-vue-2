@@ -1,6 +1,5 @@
 @mixin cdr-breadcrumb-item-mixin() {
   color: $cdr-color-text-secondary;
-  fill: $cdr-color-text-secondary;
 }
 
 @mixin cdr-breadcrumb-item-linked-mixin() {
@@ -9,8 +8,7 @@
   &:hover,
   &:active,
   &:focus {
-    color: $cdr-color-text-link-active;
-    fill: $cdr-color-text-link-active;
+    color: $cdr-color-text-link-hover;
   }
 }
 

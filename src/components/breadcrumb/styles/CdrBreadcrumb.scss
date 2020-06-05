@@ -33,7 +33,7 @@
     &:hover,
     &:active,
     &:focus {
-      color: inherit;
+      color: $cdr-color-text-link-hover;
       text-decoration: underline;
     }
   }
