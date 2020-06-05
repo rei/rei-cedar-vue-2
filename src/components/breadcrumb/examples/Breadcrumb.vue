@@ -53,9 +53,12 @@
         slot="link"
         slot-scope="link"
       >
-        <div :class="link.class">
-          {{ link.content }} {{ link.href }}
-        </div>
+        <a
+          :class="link.class"
+          :href="link.href"
+        >
+          {{ link.content }}
+        </a>
       </template>
     </cdr-breadcrumb>
   </div>
