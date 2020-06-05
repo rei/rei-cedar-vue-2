@@ -4,7 +4,7 @@
 @mixin cdr-tabs-base-header-item-label() {
   font-family: $cdr-font-family-sans;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: -.08px;
   font-size: 1.6rem;
   line-height: 2.2rem;
@@ -13,7 +13,7 @@
 @mixin cdr-tabs-small-header-item-label() {
   font-family: $cdr-font-family-sans;
   font-style: normal;
-  font-weight: 500;
+  font-weight: inherit;
   letter-spacing: -.08px;
   font-size: 1.4rem;
   line-height: 1.8rem;
