@@ -17627,8 +17627,6 @@ var cedar = (function () {
               "aria-hidden": "true"
             }
           }, ["/"]) : '';
-          var isLink = index < _this.items.length - 1;
-          var LinkTag = isLink ? 'a' : 'strong';
           return h("li", {
             "class": clsx(_this.style['cdr-breadcrumb__item']),
             "key": breadcrumb.item.id || breadcrumb.item.name.replace(/ /g, '-').toLowerCase(),
@@ -17640,11 +17638,10 @@ var cedar = (function () {
             class: _this.style['cdr-breadcrumb__link'],
             href: breadcrumb.item.url,
             content: breadcrumb.item.name
-          }) : h(LinkTag, {
+          }) : h("a", {
             "class": _this.style['cdr-breadcrumb__link'],
             "attrs": {
-              "href": breadcrumb.item.url,
-              "aria-current": index === _this.items.length - 1 ? 'page' : undefined
+              "href": breadcrumb.item.url
             }
           }, [breadcrumb.item.name]), delimiter]);
         });
