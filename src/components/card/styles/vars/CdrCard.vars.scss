@@ -1,7 +1,7 @@
 @mixin cdr-card-base-mixin() {
   position: relative;
   background-color: $cdr-color-background-primary;
-  border-radius: $cdr-radius-soft;
+  border-radius: $cdr-radius-softer;
   box-shadow: $cdr-prominence-raised;
   color: $cdr-color-text-primary;
   width: 100%;
@@ -10,6 +10,8 @@
 
   &:active, &:hover {
     box-shadow: $cdr-prominence-floating;
+    transform: translateY(-$cdr-space-eighth-x);
+    transition: $cdr-duration-2-x;
   }
 }
 
@@ -20,7 +22,7 @@
 
   &:hover {
     text-decoration: underline !important;
-    color: $cdr-color-text-primary !important;
+    color: $cdr-color-text-link-hover !important;
   }
 
   &::before {
