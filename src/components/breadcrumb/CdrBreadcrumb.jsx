@@ -93,9 +93,6 @@ export default {
           /
         </span>) : '';
 
-        const isLink = index < this.items.length - 1;
-        const LinkTag = isLink ? 'a' : 'strong';
-
         return (<li
           class={clsx(
             this.style['cdr-breadcrumb__item'],
@@ -109,13 +106,12 @@ export default {
               href: breadcrumb.item.url,
               content: breadcrumb.item.name,
             })
-            : (<LinkTag
+            : (<a
               class={this.style['cdr-breadcrumb__link']}
               href={breadcrumb.item.url}
-              aria-current={index === this.items.length - 1 ? 'page' : undefined}
             >
               { breadcrumb.item.name }
-            </LinkTag>)
+            </a>)
           }
           {delimiter}
         </li>);

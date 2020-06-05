@@ -77,7 +77,6 @@ describe('CdrBreadcrumb', () => {
     expect(ellipse.attributes()['aria-expanded']).toBe('false');
     expect(wrapper.is('nav')).toBe(true);
     expect(wrapper.attributes()['aria-label']).toBe('breadcrumbs');
-    expect(wrapper.find('li:last-of-type > strong').attributes()['aria-current']).toBe('page');
   });
 
   it('breadcrumb should not truncate with fewer than 3 items', () => {
