@@ -17627,7 +17627,6 @@ var cedar = (function () {
               "aria-hidden": "true"
             }
           }, ["/"]) : '';
-          var ref = index === 0 ? 'firstBreadcrumb' : null;
           var isLink = index < _this.items.length - 1;
           var LinkTag = isLink ? 'a' : 'strong';
           return h("li", {
@@ -17640,11 +17639,9 @@ var cedar = (function () {
           }, [_this.$scopedSlots.link ? _this.$scopedSlots.link({
             class: _this.style['cdr-breadcrumb__link'],
             href: breadcrumb.item.url,
-            content: breadcrumb.item.name,
-            ref
+            content: breadcrumb.item.name
           }) : h(LinkTag, {
             "class": _this.style['cdr-breadcrumb__link'],
-            "ref": ref,
             "attrs": {
               "href": breadcrumb.item.url,
               "aria-current": index === _this.items.length - 1 ? 'page' : undefined
@@ -17666,7 +17663,7 @@ var cedar = (function () {
 
         this.truncate = false;
         this.$nextTick(function () {
-          _this2.$refs.firstBreadcrumb.focus();
+          _this2.$el.querySelector('li *').focus();
         });
       }
 
@@ -30826,14 +30823,8 @@ var cedar = (function () {
               key: "link",
               fn: function(link) {
                 return [
-                  _c("div", { class: link.class }, [
-                    _vm._v(
-                      "\n        " +
-                        _vm._s(link.content) +
-                        " " +
-                        _vm._s(link.href) +
-                        "\n      "
-                    )
+                  _c("a", { class: link.class, attrs: { href: link.href } }, [
+                    _vm._v("\n        " + _vm._s(link.content) + "\n      ")
                   ])
                 ]
               }
@@ -30850,7 +30841,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$2 = function (inject) {
       if (!inject) return
-      inject("data-v-1f820f40_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Breadcrumb.vue"}, media: undefined });
+      inject("data-v-8bad0974_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Breadcrumb.vue"}, media: undefined });
 
     };
     /* scoped */
