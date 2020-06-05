@@ -72,7 +72,7 @@ export default {
             class={this.style['cdr-breadcrumb__ellipses-icon']}
             aria-hidden="true"
           >
-            . . . 
+            . . .
           </span>
         </button>
         <span

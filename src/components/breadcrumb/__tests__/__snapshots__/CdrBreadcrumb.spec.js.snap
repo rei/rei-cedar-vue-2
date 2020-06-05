@@ -18,17 +18,12 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
         aria-label="show 1 more navigation level"
         class="cdr-breadcrumb__ellipses"
       >
-        <svg
+        <span
           aria-hidden="true"
-          class="cdr-icon cdr-breadcrumb__ellipses-icon"
-          role="presentation"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
+          class="cdr-breadcrumb__ellipses-icon"
         >
-          <path
-            d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
-          />
-        </svg>
+          . . .
+        </span>
       </button>
       <span
         aria-hidden="true"
