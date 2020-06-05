@@ -37,6 +37,7 @@
     &:focus,
     &:active {
       background-color: $cdr-color-background-pagination-hover;
+      cursor: pointer;
     }
 
     &:global(.current) {
