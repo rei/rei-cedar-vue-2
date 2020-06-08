@@ -1,0 +1,53 @@
+<section>
+
+
+<cdr-well-docs example-title="Default" element-id="links-default">
+    <yield to="example-description">
+        <p>
+        Display within body copy for articles, hub cards, footer, or recommendations.
+        </p>
+    </yield>
+    <yield to="example">
+        <p>
+            If you spend much time in the great outdoors,
+            you’re likely to hear the phrase “Leave No Trace”
+            as often as you hear
+            "<a href="https://www.rei.com/learn/expert-advice/ten-essentials.html">
+                the Ten Essentials
+            </a>".
+            What does it mean? Simply put, it’s the best practices
+            we should follow to enjoy and protect our natural spaces.
+        </p>
+    </yield>
+    <yield to="codeblock">
+        {% highlight html %}     
+<a href="https://www.rei.com/learn/expert-advice/ten-essentials.html">
+    the Ten Essentials
+</a>
+        {% endhighlight %}
+    </yield>
+</cdr-well-docs>
+
+<cdr-well-docs example-title="Standalone" element-id="links-standalone">
+    <yield to="example-description">
+        <p>
+            Display independently with a Call to Action. Some examples are for finding 
+            a store, or viewing related products.
+        </p>
+    </yield>
+    <yield to="example">
+        <p>
+        <a href="https://www.rei.com" class="link_stag">
+            View all REI Co-op Backpacking Tents
+        </a>
+        </p>
+    </yield>
+    <yield to="codeblock">
+        {% highlight html %}
+<a href="https://www.rei.com" class="link_stag">
+    View all REI Co-op Backpacking Tents
+</a>
+        {% endhighlight %}
+    </yield>
+</cdr-well-docs>
+</section>

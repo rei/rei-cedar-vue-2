@@ -60,5 +60,5 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Link hover decoration.
-@link-hover-decoration: none;
-@link-hover-decoration-alt: underline;
+@link-hover-decoration: underline;
+@link-hover-decoration-alt: none;

@@ -2,7 +2,7 @@
 # Values below are the "name" property for each theme class
 
 - type:  inline
-  class: link-body
+  class:
 
 # element
 - type:  singleton-body
