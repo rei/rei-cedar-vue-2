@@ -8,9 +8,16 @@
     </thead>
     <tbody>
     {% for item in site.data.link-class-names %}
+    {% case item.family %}
+    {% when 'overlay' %}
+        <tr>
+            <td data-theme='dark-10'><a class="{{ item.class }}" href="#"> Normal {{ item.type }} link</a></td>
+        </tr>
+        {% else %}
         <tr>
             <td><a class="{{ item.class }}" href="#"> Normal {{ item.type }} link</a></td>
         </tr>
+        {% endcase %}
         {% endfor %}
     </tbody>
 </table>

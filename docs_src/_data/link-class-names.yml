@@ -2,67 +2,93 @@
 # Values below are the "name" property for each theme class
 
 - type:  inline
-  class:
+  class: link-body
 
 # element
 - type:  singleton-body
   class:
+  family: core
 - type:  singleton
   class: link_stag
+  family: core
 - type:  navigation
   class: link_navigation
+  family: core
 
 # modifier
 - type:  explore-inline
   class: link-explore
+  family: core
 - type:  explore-inline-overlay
   class: link-explore-overlay
+  family: overlay
 - type:  overlay
   class: link-overlay
+  family: overlay
 - type:  overlay-contrast
   class: link-contrast-overlay
+  family: overlay
 - type:  utility
   class: link-utility
+  family: core
 
   #BEM
 - type:  explore-singleton
   class: link_stag-explore
+  family: core
 - type:  explore-singleton-overlay
   class: link_stag-explore-overlay
+  family: overlay
 - type:  overlay-singleton
   class: link_stag-overlay
+  family: overlay
 - type:  overlay-singleton-body
   class: link_stag-overlay-body
+  family: overlay
 - type:  navigation-overlay
   class: link_navigation-overlay
+  family: overlay
 - type:  utility-overlay
   class: link-utility-overlay
+  family: overlay
 - type:  singleton-title
   class: link_stag-title
+  family: core
 - type:  overlay-singleton-title
   class: link_stag-title-overlay
+  family: overlay
 - type:  navigation-title
   class: link_navigation-title
+  family: core
 - type:  navigation-title-overlay
   class: link_navigation-title-overlay
+  family: overlay
 
 - type:  off-price
   class: link-off-price
+  family: core
 - type:  off-price-overlay
   class: link-off-price-overlay
+  family: overlay
 - type:  off-price-standalone
   class: link-off-price-standalone
+  family: core
 - type:  off-price-standalone-overlay
   class: link-off-price-standalone-overlay
+  family: overlay
 
 - type:  outlet
   class: link-outlet
+  family: core
 - type:  outlet-overlay
   class: link-outlet-overlay
+  family: overlay
 - type:  outlet-standalone
   class: link-outlet-standalone
+  family: core
 - type:  outlet-standalone-overlay
   class: link-outlet-standalone-overlay
+  family: overlay
 
 - type:   core-header
   class:  link_header

@@ -578,17 +578,29 @@
     <cdr-well-docs example-title="Icon on Right" element-id="linksIconRight">
         <yield to="example-description">
             <p>
-                Display standalone link with icon on right.
+                Display standalone link with the external or right arrow icon on right.
             </p>
         </yield>
         <yield to="example">
-            <a href="#links-icon-external" class="link_stag text-icon-external" data-example-id="links-icon-offsite-stag">
-                Visit site<span class="icon icon-rei-external-link" aria-hidden="true"></span>
-            </a>
+            <ul>
+                <li>
+                    <a href="#links-icon-external" class="link_stag text-icon-external">
+                        Visit site<span class="icon icon-rei-external-link" aria-hidden="true"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#linksIconRight" class="link_stag text-icon-right-arrow">
+                        Visit site<span class="icon icon-rei-right-arrow" aria-hidden="true"></span>
+                    </a>
+                </li>
+            </ul>
         </yield>
         <yield to="codeblock">
         <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#links-icon-external"</span> <span class="na">class=</span><span class="s">"link_stag text-icon-external"</span> <span class="na">data-example-id=</span><span class="s">"links-icon-offsite-stag"</span><span class="nt">&gt;</span>
     Visit site<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-rei-external-link"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#linksIconRight"</span> <span class="na">class=</span><span class="s">"lilnk_stag text-icon-right-arrow"</span><span class="nt">&gt;</span>
+    Visit site<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-rei-right-arrow"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
 <span class="nt">&lt;/a&gt;</span>
 
         </code></pre></figure>
@@ -609,137 +621,203 @@
     </thead>
     <tbody>
     
+    
         <tr>
-            <td><a class="" href="#"> Normal inline link</a></td>
+            <td><a class="link-body" href="#"> Normal inline link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="" href="#"> Normal singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag" href="#"> Normal singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation" href="#"> Normal navigation link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-explore" href="#"> Normal explore-inline link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-overlay" href="#"> Normal overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-overlay" href="#"> Normal overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
+            <td data-theme='dark-10'><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-utility" href="#"> Normal utility link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-explore" href="#"> Normal explore-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-title" href="#"> Normal singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation-title" href="#"> Normal navigation-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price" href="#"> Normal off-price link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price-standalone" href="#"> Normal off-price-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet" href="#"> Normal outlet link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet-standalone" href="#"> Normal outlet-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header" href="#"> Normal core-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
+            <td data-theme='dark-10'><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-explore" href="#"> Normal explore-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-outlet" href="#"> Normal outlet-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-off-price" href="#"> Normal off-price-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
+            <td data-theme='dark-10'><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
         </tr>
+        
         
     </tbody>
 </table>
@@ -767,137 +845,203 @@
     </thead>
     <tbody>
     
+    
         <tr>
-            <td><a class="" href="#"> Normal inline link</a></td>
+            <td><a class="link-body" href="#"> Normal inline link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="" href="#"> Normal singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag" href="#"> Normal singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation" href="#"> Normal navigation link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-explore" href="#"> Normal explore-inline link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-overlay" href="#"> Normal overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-overlay" href="#"> Normal overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
+            <td data-theme='dark-10'><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-utility" href="#"> Normal utility link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-explore" href="#"> Normal explore-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-title" href="#"> Normal singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation-title" href="#"> Normal navigation-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price" href="#"> Normal off-price link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price-standalone" href="#"> Normal off-price-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet" href="#"> Normal outlet link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet-standalone" href="#"> Normal outlet-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header" href="#"> Normal core-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
+            <td data-theme='dark-10'><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-explore" href="#"> Normal explore-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-outlet" href="#"> Normal outlet-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-off-price" href="#"> Normal off-price-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
+            <td data-theme='dark-10'><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
         </tr>
+        
         
     </tbody>
 </table></td>
@@ -914,137 +1058,203 @@
     </thead>
     <tbody>
     
+    
         <tr>
-            <td><a class="" href="#"> Normal inline link</a></td>
+            <td><a class="link-body" href="#"> Normal inline link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="" href="#"> Normal singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag" href="#"> Normal singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation" href="#"> Normal navigation link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-explore" href="#"> Normal explore-inline link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-overlay" href="#"> Normal overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-overlay" href="#"> Normal overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
+            <td data-theme='dark-10'><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-utility" href="#"> Normal utility link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-explore" href="#"> Normal explore-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-title" href="#"> Normal singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation-title" href="#"> Normal navigation-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price" href="#"> Normal off-price link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price-standalone" href="#"> Normal off-price-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet" href="#"> Normal outlet link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet-standalone" href="#"> Normal outlet-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header" href="#"> Normal core-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
+            <td data-theme='dark-10'><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-explore" href="#"> Normal explore-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-outlet" href="#"> Normal outlet-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-off-price" href="#"> Normal off-price-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
+            <td data-theme='dark-10'><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
         </tr>
+        
         
     </tbody>
 </table></td>
@@ -1061,137 +1271,203 @@
     </thead>
     <tbody>
     
+    
         <tr>
-            <td><a class="" href="#"> Normal inline link</a></td>
+            <td><a class="link-body" href="#"> Normal inline link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="" href="#"> Normal singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag" href="#"> Normal singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation" href="#"> Normal navigation link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-explore" href="#"> Normal explore-inline link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-overlay" href="#"> Normal overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-overlay" href="#"> Normal overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
+            <td data-theme='dark-10'><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-utility" href="#"> Normal utility link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-explore" href="#"> Normal explore-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-title" href="#"> Normal singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation-title" href="#"> Normal navigation-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price" href="#"> Normal off-price link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price-standalone" href="#"> Normal off-price-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet" href="#"> Normal outlet link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet-standalone" href="#"> Normal outlet-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header" href="#"> Normal core-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
+            <td data-theme='dark-10'><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-explore" href="#"> Normal explore-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-outlet" href="#"> Normal outlet-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-off-price" href="#"> Normal off-price-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
+            <td data-theme='dark-10'><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
         </tr>
+        
         
     </tbody>
 </table></td>
@@ -1211,137 +1487,203 @@
     </thead>
     <tbody>
     
+    
         <tr>
-            <td><a class="" href="#"> Normal inline link</a></td>
+            <td><a class="link-body" href="#"> Normal inline link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="" href="#"> Normal singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag" href="#"> Normal singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation" href="#"> Normal navigation link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-explore" href="#"> Normal explore-inline link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-overlay" href="#"> Normal overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-overlay" href="#"> Normal overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
+            <td data-theme='dark-10'><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-utility" href="#"> Normal utility link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-explore" href="#"> Normal explore-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-title" href="#"> Normal singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation-title" href="#"> Normal navigation-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price" href="#"> Normal off-price link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price-standalone" href="#"> Normal off-price-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet" href="#"> Normal outlet link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet-standalone" href="#"> Normal outlet-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header" href="#"> Normal core-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
+            <td data-theme='dark-10'><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-explore" href="#"> Normal explore-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-outlet" href="#"> Normal outlet-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-off-price" href="#"> Normal off-price-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
+            <td data-theme='dark-10'><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
         </tr>
+        
         
     </tbody>
 </table>
@@ -1358,137 +1700,203 @@
     </thead>
     <tbody>
     
+    
         <tr>
-            <td><a class="" href="#"> Normal inline link</a></td>
+            <td><a class="link-body" href="#"> Normal inline link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="" href="#"> Normal singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag" href="#"> Normal singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation" href="#"> Normal navigation link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-explore" href="#"> Normal explore-inline link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-overlay" href="#"> Normal overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-overlay" href="#"> Normal overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
+            <td data-theme='dark-10'><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-utility" href="#"> Normal utility link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-explore" href="#"> Normal explore-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-title" href="#"> Normal singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation-title" href="#"> Normal navigation-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price" href="#"> Normal off-price link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price-standalone" href="#"> Normal off-price-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet" href="#"> Normal outlet link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet-standalone" href="#"> Normal outlet-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header" href="#"> Normal core-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
+            <td data-theme='dark-10'><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-explore" href="#"> Normal explore-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-outlet" href="#"> Normal outlet-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-off-price" href="#"> Normal off-price-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
+            <td data-theme='dark-10'><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
         </tr>
+        
         
     </tbody>
 </table></td>
@@ -1505,137 +1913,203 @@
     </thead>
     <tbody>
     
+    
         <tr>
-            <td><a class="" href="#"> Normal inline link</a></td>
+            <td><a class="link-body" href="#"> Normal inline link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="" href="#"> Normal singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag" href="#"> Normal singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation" href="#"> Normal navigation link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-explore" href="#"> Normal explore-inline link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-overlay" href="#"> Normal overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-overlay" href="#"> Normal overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
+            <td data-theme='dark-10'><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-utility" href="#"> Normal utility link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-explore" href="#"> Normal explore-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-title" href="#"> Normal singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation-title" href="#"> Normal navigation-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price" href="#"> Normal off-price link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price-standalone" href="#"> Normal off-price-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet" href="#"> Normal outlet link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet-standalone" href="#"> Normal outlet-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header" href="#"> Normal core-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
+            <td data-theme='dark-10'><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-explore" href="#"> Normal explore-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-outlet" href="#"> Normal outlet-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-off-price" href="#"> Normal off-price-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
+            <td data-theme='dark-10'><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
         </tr>
+        
         
     </tbody>
 </table></td>
@@ -1652,137 +2126,203 @@
     </thead>
     <tbody>
     
+    
         <tr>
-            <td><a class="" href="#"> Normal inline link</a></td>
+            <td><a class="link-body" href="#"> Normal inline link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="" href="#"> Normal singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag" href="#"> Normal singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation" href="#"> Normal navigation link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-explore" href="#"> Normal explore-inline link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-explore-overlay" href="#"> Normal explore-inline-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-overlay" href="#"> Normal overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-overlay" href="#"> Normal overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
+            <td data-theme='dark-10'><a class="link-contrast-overlay" href="#"> Normal overlay-contrast link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-utility" href="#"> Normal utility link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-explore" href="#"> Normal explore-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-explore-overlay" href="#"> Normal explore-singleton-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay" href="#"> Normal overlay-singleton link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-overlay-body" href="#"> Normal overlay-singleton-body link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-overlay" href="#"> Normal navigation-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-utility-overlay" href="#"> Normal utility-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_stag-title" href="#"> Normal singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
+            <td data-theme='dark-10'><a class="link_stag-title-overlay" href="#"> Normal overlay-singleton-title link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_navigation-title" href="#"> Normal navigation-title link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link_navigation-title-overlay" href="#"> Normal navigation-title-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price" href="#"> Normal off-price link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-overlay" href="#"> Normal off-price-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-off-price-standalone" href="#"> Normal off-price-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-off-price-standalone-overlay" href="#"> Normal off-price-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet" href="#"> Normal outlet link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-overlay" href="#"> Normal outlet-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link-outlet-standalone" href="#"> Normal outlet-standalone link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
+            <td data-theme='dark-10'><a class="link-outlet-standalone-overlay" href="#"> Normal outlet-standalone-overlay link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header" href="#"> Normal core-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
+            <td data-theme='dark-10'><a class="link_header-overlay" href="#"> Normal overlay-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-explore" href="#"> Normal explore-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-outlet" href="#"> Normal outlet-header link</a></td>
         </tr>
         
+        
+    
         <tr>
             <td><a class="link_header-off-price" href="#"> Normal off-price-header link</a></td>
         </tr>
         
+        
+    
         <tr>
-            <td><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
+            <td data-theme='dark-10'><a class="link-sub-navigation" href="#"> Normal navigation-sub link</a></td>
         </tr>
+        
         
     </tbody>
 </table></td>

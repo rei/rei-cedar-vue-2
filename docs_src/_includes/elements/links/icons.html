@@ -24,19 +24,31 @@
     <cdr-well-docs example-title="Icon on Right" element-id="linksIconRight">
         <yield to="example-description">
             <p>
-                Display standalone link with icon on right.
+                Display standalone link with the external or right arrow icon on right.
             </p>
         </yield>
         <yield to="example">
-            <a href="#links-icon-external" class="link_stag text-icon-external" data-example-id="links-icon-offsite-stag">
-                Visit site<span class="icon icon-rei-external-link" aria-hidden="true"></span>
-            </a>
+            <ul>
+                <li>
+                    <a href="#links-icon-external" class="link_stag text-icon-external">
+                        Visit site<span class="icon icon-rei-external-link" aria-hidden="true"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#linksIconRight" class="link_stag text-icon-right-arrow">
+                        Visit site<span class="icon icon-rei-right-arrow" aria-hidden="true"></span>
+                    </a>
+                </li>
+            </ul>
         </yield>
         <yield to="codeblock">
         {% highlight html %}
 
 <a href="#links-icon-external" class="link_stag text-icon-external" data-example-id="links-icon-offsite-stag">
     Visit site<span class="icon icon-rei-external-link" aria-hidden="true"></span>
+</a>
+<a href="#linksIconRight" class="lilnk_stag text-icon-right-arrow">
+    Visit site<span class="icon icon-rei-right-arrow" aria-hidden="true"></span>
 </a>
 
         {% endhighlight %}
