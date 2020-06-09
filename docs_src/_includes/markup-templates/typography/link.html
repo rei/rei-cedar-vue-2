@@ -1,9 +1,9 @@
+<h2>Legacy link classes</h2>
 <table class="table">
-    <caption>Legacy link classes</caption>
     <thead>
         <tr>
-            <th> Description </th>
             <th> Class </th>
+            <th> Description </th>
         </tr>
     </thead>
     <tbody>
@@ -11,10 +11,12 @@
     {% case item.family %}
     {% when 'overlay' %}
         <tr>
-            <td data-theme='dark-10'><a class="{{ item.class }}" href="#"> Normal {{ item.type }} link</a></td>
+            <td><code>.{{item.class }}</code></td>
+            <td data-theme='dark-10'><a class="{{ item.class }}" href="#"> {{ item.type }} link</a></td>
         </tr>
         {% else %}
         <tr>
+            <td><code>.{{item.class }}</code></td>
             <td><a class="{{ item.class }}" href="#"> Normal {{ item.type }} link</a></td>
         </tr>
         {% endcase %}

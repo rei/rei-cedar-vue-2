@@ -5,9 +5,6 @@
   class: link-body
 
 # element
-- type:  singleton-body
-  class:
-  family: core
 - type:  singleton
   class: link_stag
   family: core
