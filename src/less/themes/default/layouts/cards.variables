@@ -22,7 +22,7 @@
 @card-spacer-outer-x:                                            @container-spacer-outer-x;
 @card-spacer-inner-y:                                            @container-spacer-inner-y;
 @card-border-width:                                              0.01rem;
-@card-border-radius:                                             @border-radius;
+@card-border-radius:                                             @cdr-radius-softer;
 @card-border-color:                                              @core-background-2;
 @card-border-radius-inner:                                       @card-border-radius;
 @card-box-shadow:                                                0 0.2rem 0.3rem 0 rgba( 0, 0, 0, 0.3 );
