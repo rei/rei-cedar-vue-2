@@ -5,14 +5,9 @@
 
 // Base class
 .tooltip {
+  .cdr-text-utility-200();
   position: absolute;
   z-index: @zindex-tooltip;
-  display: block;
-  // Reset font and text properties given new insertion method
-  font-family: @font-family-base;
-  font-size: @font-size-small;
-  font-weight: normal;
-  line-height: 1.4;
   opacity: 0;
 
   &.in     { opacity: @tooltip-opacity; }

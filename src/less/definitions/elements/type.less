@@ -81,7 +81,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
- .cdr-text-heading-sans-600()
+ .cdr-text-heading-serif-600()
 }
 
 h3, .h3 {
@@ -103,20 +103,12 @@ h6 .h6 { margin-top: 0; .vertical-push(); }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Announce Headings
-.heading-announce {
+.heading-announce,
+.heading-hero {
     @media @breakpoint-xs {
     .cdr-text-heading-serif-strong-1100();
     }
     .cdr-text-heading-serif-strong-1200();
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Hero Headings
-.heading-hero {
-    @media @breakpoint-xs {
-    .cdr-text-heading-serif-1100();
-    }
-    .cdr-text-heading-serif-1200();
 }
 
 // Classification Label
@@ -135,7 +127,7 @@ p {
     margin: 0;
 }
 .text-body {
-    .cdr-text-body-500();
+    .cdr-text-body-400();
     a {
         &:extend( .link-body all );
     }
