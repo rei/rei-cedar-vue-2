@@ -45115,28 +45115,69 @@ var cedar = (function () {
             _c(
               "cdr-tabs",
               { attrs: { height: "100px", modifier: "centered" } },
-              _vm._l(_vm.tabs, function(tab) {
-                return _c(
+              [
+                _vm._l(_vm.tabs, function(tab) {
+                  return _c(
+                    "cdr-tab-panel",
+                    {
+                      key: tab,
+                      attrs: {
+                        name: tab,
+                        id: "tab-panel-centered-" + tab,
+                        "aria-labelledby": "tab-centered-" + tab
+                      }
+                    },
+                    [
+                      _c("cdr-text", { attrs: { modifier: "body-300" } }, [
+                        _vm._v(
+                          "\n          Tab " + _vm._s(tab) + " content\n        "
+                        )
+                      ])
+                    ],
+                    1
+                  )
+                }),
+                _vm._v(" "),
+                _c(
                   "cdr-tab-panel",
-                  {
-                    key: tab,
-                    attrs: {
-                      name: tab,
-                      id: "tab-panel-centered-" + tab,
-                      "aria-labelledby": "tab-centered-" + tab
-                    }
-                  },
+                  { attrs: { name: "six", id: "centered-six" } },
                   [
-                    _c("cdr-text", { attrs: { modifier: "body-300" } }, [
-                      _vm._v(
-                        "\n          Tab " + _vm._s(tab) + " content\n        "
-                      )
-                    ])
+                    _c(
+                      "cdr-text",
+                      { attrs: { tag: "strong", modifier: "subheading" } },
+                      [_vm._v("\n          Tab six Content\n        ")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "cdr-tab-panel",
+                  { attrs: { name: "seven", id: "centered-seven" } },
+                  [
+                    _c(
+                      "cdr-text",
+                      { attrs: { tag: "strong", modifier: "subheading" } },
+                      [_vm._v("\n          Tab seven Content\n        ")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "cdr-tab-panel",
+                  { attrs: { name: "eight", id: "centered-eight" } },
+                  [
+                    _c(
+                      "cdr-text",
+                      { attrs: { tag: "strong", modifier: "subheading" } },
+                      [_vm._v("\n          Tab eight Content\n        ")]
+                    )
                   ],
                   1
                 )
-              }),
-              1
+              ],
+              2
             )
           ],
           1
@@ -45151,7 +45192,7 @@ var cedar = (function () {
     /* style */
     const __vue_inject_styles__$K = function (inject) {
       if (!inject) return
-      inject("data-v-4c0a652c_0", { source: "\n.tab-demo-section {\n  margin-bottom: 30px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tabs/examples/Tabs.vue"],"names":[],"mappings":";AAmJA;EACA,mBAAA;AACA","file":"Tabs.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n      class=\"cdr-align-text-center\"\n    >\n      Tabs\n    </cdr-text>\n\n    <tabs-default />\n\n    <!-- small -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Small Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        size=\"small\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-small-' + tab\"\n          :aria-labelledby=\"'tab-small-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- full-width -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Full-Width Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"full-width\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-full-width-' + tab\"\n          :aria-labelledby=\"'tab-full-width-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- No-border -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        No Border Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"no-border\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-no-border-' + tab\"\n          :aria-labelledby=\"'tab-no-border-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- Centered -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Centered Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"centered\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-centered-' + tab\"\n          :aria-labelledby=\"'tab-centered-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\nimport tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';\n\nexport default {\n  name: 'TabsExample',\n  components: { ...Components, tabsDefault },\n  data() {\n    return {\n      tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],\n    };\n  },\n};\n</script>\n\n<style>\n  .tab-demo-section {\n    margin-bottom: 30px;\n  }\n</style>\n"]}, media: undefined });
+      inject("data-v-48280787_0", { source: "\n.tab-demo-section {\n  margin-bottom: 30px;\n}\n", map: {"version":3,"sources":["/home/travis/build/rei/rei-cedar/src/components/tabs/examples/Tabs.vue"],"names":[],"mappings":";AAuLA;EACA,mBAAA;AACA","file":"Tabs.vue","sourcesContent":["<template>\n  <!-- eslint-disable max-len -->\n  <div>\n    <cdr-text\n      tag=\"h2\"\n      modifier=\"heading-serif-600 heading-serif-700@md heading-serif-700@lg\"\n      class=\"cdr-align-text-center\"\n    >\n      Tabs\n    </cdr-text>\n\n    <tabs-default />\n\n    <!-- small -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Small Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        size=\"small\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-small-' + tab\"\n          :aria-labelledby=\"'tab-small-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- full-width -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Full-Width Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"full-width\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-full-width-' + tab\"\n          :aria-labelledby=\"'tab-full-width-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- No-border -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        No Border Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"no-border\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs.slice(0, 5)\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-no-border-' + tab\"\n          :aria-labelledby=\"'tab-no-border-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n\n    <!-- Centered -->\n    <div class=\"tab-demo-secton\">\n      <cdr-text\n        tag=\"h3\"\n        modifier=\"heading-sans-400 heading-sans-500@md heading-sans-500@lg\"\n        class=\"cdr-align-text-center\"\n      >\n        Centered Tabs\n      </cdr-text>\n      <cdr-tabs\n        height=\"100px\"\n        modifier=\"centered\"\n      >\n        <cdr-tab-panel\n          v-for=\"tab in tabs\"\n          :key=\"tab\"\n          :name=\"tab\"\n          :id=\"'tab-panel-centered-' + tab\"\n          :aria-labelledby=\"'tab-centered-' + tab\"\n        >\n          <cdr-text\n            modifier=\"body-300\"\n          >\n            Tab {{ tab }} content\n          </cdr-text>\n        </cdr-tab-panel>\n\n        <cdr-tab-panel\n          name=\"six\"\n          id=\"centered-six\"\n        >\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab six Content\n          </cdr-text>\n        </cdr-tab-panel>\n\n        <cdr-tab-panel\n          name=\"seven\"\n          id=\"centered-seven\"\n        >\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab seven Content\n          </cdr-text>\n        </cdr-tab-panel>\n\n        <cdr-tab-panel\n          name=\"eight\"\n          id=\"centered-eight\"\n        >\n          <cdr-text\n            tag=\"strong\"\n            modifier=\"subheading\"\n          >\n            Tab eight Content\n          </cdr-text>\n        </cdr-tab-panel>\n      </cdr-tabs>\n    </div>\n  </div>\n</template>\n\n<script>\nimport * as Components from 'srcdir/index';\nimport tabsDefault from 'componentsdir/tabs/examples/demo/TabsDefault';\n\nexport default {\n  name: 'TabsExample',\n  components: { ...Components, tabsDefault },\n  data() {\n    return {\n      tabs: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],\n    };\n  },\n};\n</script>\n\n<style>\n  .tab-demo-section {\n    margin-bottom: 30px;\n  }\n</style>\n"]}, media: undefined });
 
     };
     /* scoped */
