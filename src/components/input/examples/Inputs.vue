@@ -171,7 +171,7 @@ export default {
   },
   methods: {
     onMasterInput(value, e) {
-      console.log('On Master Input value = ', value, ' e = ', e);
+      console.log('On Master Input value = ', value, ' e = ', e); // eslint-disable-line
       this.defaultModel = value;
       this.requiredModel = value;
       this.hiddenModel = value;
@@ -186,7 +186,6 @@ export default {
 <style>
   .demo-input {
     margin: 10px;
-    background: white;
-    line-height: 1;
+    /*line-height: 1;*/
   }
 </style>

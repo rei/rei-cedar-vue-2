@@ -29,6 +29,39 @@
       >Sale</cdr-cta>
     </div>
     <div class="button-example">
+
+      <cdr-text
+        tag="h3"
+        modifier="heading-sans-300 heading-sans-400@md heading-sans-400@lg"
+      >
+        Elevated
+      </cdr-text>
+      <cdr-cta
+        data-backstop="cdr-cta--dark-elevated"
+        modifier="elevated"
+      >
+        Dark
+      </cdr-cta>
+      <cdr-cta
+        href="https://rei.com"
+        cta-style="brand"
+        data-backstop="cdr-cta--brand-elevated"
+        modifier="elevated"
+      >Brand</cdr-cta>
+      <cdr-cta
+        href="https://rei.com"
+        cta-style="light"
+        data-backstop="cdr-cta--light-elevated"
+        modifier="elevated"
+      >Light</cdr-cta>
+      <cdr-cta
+        href="https://rei.com"
+        cta-style="sale"
+        data-backstop="cdr-cta--sale-elevated"
+        modifier="elevated"
+      >Sale</cdr-cta>
+    </div>
+    <div class="button-example">
       <cdr-cta
         cta-style="dark"
         href="https://rei.com"

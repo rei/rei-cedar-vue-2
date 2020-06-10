@@ -47,7 +47,7 @@
 */
 .cdr-align-center-block { @include cdr-align-center-block-mixin; }
 
-@include xs-mq-only {
+@include cdr-xs-mq-only {
   .cdr-align-text-left\@xs { @include cdr-align-text-left-mixin; }
   .cdr-align-text-center\@xs { @include cdr-align-text-center-mixin; }
   .cdr-align-text-right\@xs { @include cdr-align-text-right-mixin; }
@@ -55,7 +55,7 @@
   .cdr-align-center-block\@xs { @include cdr-align-center-block-mixin; }
 }
 
-@include sm-mq-only {
+@include cdr-sm-mq-only {
   .cdr-align-text-left\@sm { @include cdr-align-text-left-mixin; }
   .cdr-align-text-center\@sm { @include cdr-align-text-center-mixin; }
   .cdr-align-text-right\@sm { @include cdr-align-text-right-mixin; }
@@ -63,7 +63,7 @@
   .cdr-align-center-block\@sm { @include cdr-align-center-block-mixin; }
 }
 
-@include md-mq-only {
+@include cdr-md-mq-only {
   .cdr-align-text-left\@md { @include cdr-align-text-left-mixin; }
   .cdr-align-text-center\@md { @include cdr-align-text-center-mixin; }
   .cdr-align-text-right\@md { @include cdr-align-text-right-mixin; }
@@ -71,7 +71,7 @@
   .cdr-align-center-block\@md { @include cdr-align-center-block-mixin; }
 }
 
-@include lg-mq-only {
+@include cdr-lg-mq-only {
   .cdr-align-text-left\@lg { @include cdr-align-text-left-mixin; }
   .cdr-align-text-center\@lg { @include cdr-align-text-center-mixin; }
   .cdr-align-text-right\@lg { @include cdr-align-text-right-mixin; }

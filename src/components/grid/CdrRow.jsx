@@ -14,7 +14,7 @@ export default {
      */
     cols: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto'],
       ),
@@ -26,7 +26,7 @@ export default {
      */
     justify: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['left', 'center', 'right', 'around', 'between'],
       ),
@@ -38,7 +38,7 @@ export default {
      */
     align: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['top', 'middle', 'bottom', 'stretch'],
       ),
@@ -50,7 +50,7 @@ export default {
      */
     gutter: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['none', 'xxs'],
       ),
@@ -62,7 +62,7 @@ export default {
      */
     vertical: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['vertical'],
       ),
@@ -74,7 +74,7 @@ export default {
      */
     wrap: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['wrap'],
       ),
@@ -86,7 +86,7 @@ export default {
      */
     nowrap: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['nowrap'],
       ),
@@ -98,7 +98,7 @@ export default {
     type: {
       type: String,
       default: 'normal',
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['normal', 'list'],
         false,

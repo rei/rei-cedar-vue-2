@@ -1,30 +1,132 @@
 @import "../settings/index";
-/* ==========================================================================/*
-* Color utility classes
-*
-*
-** TOC:
-**
-** background theme classes
-** forground text color
+
+
+/*
+/// Sets background color to $cdr-color-background-primary
+/// @group utility.color.background
 */
-
-.cdr-bg--light {
-  background-color: $cdr-color-background-light;
+.cdr-color-background-primary {
+  background-color: $cdr-color-background-primary;
 }
 
-.cdr-bg--lighter {
-  background-color: $cdr-color-background-lighter;
+/*
+/// Sets background color to $cdr-color-background-secondary
+/// @group utility.color.background
+*/
+.cdr-color-background-secondary {
+  background-color: $cdr-color-background-secondary;
 }
 
-.cdr-bg--lightest {
-  background-color: $cdr-color-background-lightest;
+/*
+/// Sets background color to $cdr-color-background-success
+/// @group utility.color.background
+*/
+.cdr-color-background-success {
+  background-color: $cdr-color-background-success;
 }
 
-.cdr-bg--dark {
-  background-color: $cdr-color-background-dark;
+/*
+/// Sets background color to $cdr-color-background-warning
+/// @group utility.color.background
+*/
+.cdr-color-background-warning {
+  background-color: $cdr-color-background-warning;
 }
 
-.cdr-bg--darker {
-  background-color: $cdr-color-background-darker;
+/*
+/// Sets background color to $cdr-color-background-error
+/// @group utility.color.background
+*/
+.cdr-color-background-error {
+  background-color: $cdr-color-background-error;
+}
+
+/*
+/// Sets background color to $cdr-color-background-info
+/// @group utility.color.background
+*/
+.cdr-color-background-info {
+  background-color: $cdr-color-background-info;
+}
+
+
+
+/*
+/// Sets text color to $cdr-color-text-primary
+/// @group utility.color.text
+*/
+.cdr-color-text-primary {
+  color: $cdr-color-text-primary;
+}
+
+/*
+/// Sets text color to $cdr-color-text-secondary
+/// @group utility.color.text
+*/
+.cdr-color-text-secondary {
+  color: $cdr-color-text-secondary;
+}
+
+/*
+/// Sets text color to $cdr-color-text-brand
+/// @group utility.color.text
+*/
+.cdr-color-text-brand {
+  color: $cdr-color-text-brand;
+}
+
+/*
+/// Sets text color to $cdr-color-text-sale
+/// @group utility.color.text
+*/
+.cdr-color-text-sale {
+  color: $cdr-color-text-sale;
+}
+
+/*
+/// Sets text color to $cdr-color-text-inverse
+/// @group utility.color.text
+*/
+.cdr-color-text-inverse {
+  color: $cdr-color-text-inverse;
+}
+
+/*
+/// Sets text color to $cdr-color-text-disabled
+/// @group utility.color.text
+*/
+.cdr-color-text-disabled {
+  color: $cdr-color-text-disabled;
+}
+
+/*
+/// Sets text color to $cdr-color-text-success
+/// @group utility.color.text
+*/
+.cdr-color-text-success {
+  color: $cdr-color-text-success;
+}
+
+/*
+/// Sets text color to $cdr-color-text-warning
+/// @group utility.color.text
+*/
+.cdr-color-text-warning {
+  color: $cdr-color-text-warning;
+}
+
+/*
+/// Sets text color to $cdr-color-text-error
+/// @group utility.color.text
+*/
+.cdr-color-text-error {
+  color: $cdr-color-text-error;
+}
+
+/*
+/// Sets text color to $cdr-color-text-info
+/// @group utility.color.text
+*/
+.cdr-color-text-info {
+  color: $cdr-color-text-info;
 }

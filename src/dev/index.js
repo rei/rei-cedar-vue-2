@@ -2,12 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue/dist/vue.esm';
 import VueRouter from 'vue-router';
-import fullSprite from '@rei/cedar-icons/dist/all-icons.svg';
 import routes from './router';
-import cedarcss from './css/main.scss';
-
-Vue.config.devtools = true;
-
+import Dev from './Dev.vue'; //eslint-disable-line
 // routing
 Vue.use(VueRouter);
 
@@ -21,14 +17,6 @@ Vue.config.devtools = false;
 /* eslint-disable no-new */
 new Vue({
   router,
-  data() {
-    return {
-      routes,
-      cedarcss,
-      fullSprite,
-    };
-  },
-  mounted() {
-    console.log('BACKSTOP_READY');
-  },
-}).$mount('#main');
+  el: '#main',
+  render: (app) => app(Dev),
+});

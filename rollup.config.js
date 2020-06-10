@@ -7,19 +7,18 @@ const env = process.env.NODE_ENV;
 const babelEnv = process.env.BABEL_ENV;
 const { dependencies = {}, peerDependencies = {} } = packageJson;
 
-let externals = Object.keys(Object.assign(
-  {},
-  dependencies,
-  peerDependencies,
-))
+let externals = Object.keys({
+  ...dependencies,
+  ...peerDependencies,
+});
 
 if (babelEnv === 'cjs') {
   // don't externalize ES modules in CJS build
   // TODO: figure out config change needed in @rei/vunit
-  externals = externals.filter(x => x !== 'lodash-es' && x !== 'clsx');
+  externals = externals.filter((x) => x !== 'lodash-es' && x !== 'clsx' && x !== '@rei/cdr-tokens');
 }
 
-const externalFn = id => externals.some(dep => dep === id || id.startsWith(`${dep}/`));
+const externalFn = (id) => externals.some((dep) => dep === id || id.startsWith(`${dep}/`));
 
 const ext = babelEnv === 'cjs' ? 'js' : 'mjs';
 
@@ -44,25 +43,25 @@ if (env === 'prod' && babelEnv === 'esm') {
       input: 'src/index.js',
       output: [
         {
-          dir: `dist/lib`,
+          dir: 'dist/lib',
           format: 'esm',
-          entryFileNames: '[name].js'
+          entryFileNames: '[name].js',
         },
       ],
       plugins: [
         ...plugins,
         renameExtensions({
-            include: ['**/*.js', '**/*.jsx', '**/*.scss'],
-            mappings: {
-                '.js': '.mjs',
-                '.jsx': '.mjs',
-                '.scss': '.mjs',
-            },
-        })
+          include: ['**/*.js', '**/*.jsx', '**/*.scss'],
+          mappings: {
+            '.js': '.mjs',
+            '.jsx': '.mjs',
+            '.scss': '.mjs',
+          },
+        }),
       ],
       external: env === 'prod' ? externalFn : undefined,
-      preserveModules: true
-    }
-  )
+      preserveModules: true,
+    },
+  );
 }
 export default config;

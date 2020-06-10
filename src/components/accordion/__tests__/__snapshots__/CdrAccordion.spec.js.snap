@@ -5,23 +5,27 @@ exports[`CdrAccordion renders correctly 1`] = `
   class="cdr-accordion"
   id="test-accordion"
 >
-  <button
-    aria-controls="test-collapsible"
-    aria-expanded="false"
-    class="cdr-accordion__button"
-    id="test"
+  <h2
+    class="cdr-accordion__header"
   >
-    <span
-      class="cdr-accordion__label"
-      id="test-label"
+    <button
+      aria-controls="test-collapsible"
+      aria-expanded="false"
+      class="cdr-accordion__button js-cdr-accordion-button"
+      id="test"
     >
-      label
-    </span>
-    <icon-caret-down-stub
-      class="cdr-accordion__icon closed"
-      space=""
-    />
-  </button>
+      <span
+        class="cdr-accordion__label"
+        id="test-label"
+      >
+        label
+      </span>
+      <icon-caret-down-stub
+        class="cdr-accordion__icon closed"
+        space=""
+      />
+    </button>
+  </h2>
   <div
     class="cdr-accordion__content-container closed"
     style="max-height: 0;"

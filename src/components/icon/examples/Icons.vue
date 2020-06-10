@@ -129,7 +129,7 @@ export default {
     filteredIcons() {
       const notAllowed = ['CdrIcon'];
       return Object.keys(this.Icons)
-        .filter(key => !notAllowed.includes(key))
+        .filter((key) => !notAllowed.includes(key))
         .reduce((obj, key) => ({
           ...obj,
           [key]: this.Icons[key],

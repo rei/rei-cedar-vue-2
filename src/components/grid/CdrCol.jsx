@@ -21,7 +21,7 @@ export default {
      */
     span: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
       ),
@@ -33,7 +33,7 @@ export default {
      */
     offsetLeft: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
       ),
@@ -45,7 +45,7 @@ export default {
      */
     offsetRight: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
       ),
@@ -57,7 +57,7 @@ export default {
      */
     alignSelf: {
       type: String,
-      validator: value => propValidator(
+      validator: (value) => propValidator(
         value,
         ['top', 'middle', 'bottom', 'stretch'],
       ),

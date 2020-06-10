@@ -18,6 +18,7 @@ import quoteExample from 'componentsdir/quote/examples/Quote';
 import radios from 'componentsdir/radio/examples/Radios';
 import ratings from 'componentsdir/rating/examples/Ratings';
 import selects from 'componentsdir/select/examples/Selects';
+import tables from 'componentsdir/table/examples/Table';
 import tabs from 'componentsdir/tabs/examples/Tabs';
 import texts from 'componentsdir/text/examples/Text';
 import utilities from 'componentsdir/Utilities/Utilities';
@@ -46,6 +47,7 @@ export default {
   radios,
   ratings,
   selects,
+  tables,
   tabs,
   texts,
   utilities,

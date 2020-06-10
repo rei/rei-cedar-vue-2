@@ -18,7 +18,7 @@ export default {
     tag: {
       type: String,
       default: 'ul',
-      validator: value => ['ul', 'ol'].indexOf(value) >= 0 || false,
+      validator: (value) => ['ul', 'ol'].indexOf(value) >= 0 || false,
     },
   },
   data() {

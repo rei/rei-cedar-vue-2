@@ -19,6 +19,10 @@
 .cdr-select {
   @include cdr-select-base-mixin;
 
+  &__prompt {
+    @include cdr-select-prompt-mixin;
+  }
+
   &__required-label {
     @include cdr-select-required-label-mixin;
   }
@@ -51,17 +55,20 @@
     @include cdr-select-helper-text-mixin;
   }
 
-  // DEPRICATED STYLE
-  // ========================================================================== */
   &--multiple {
     height: auto;
+    padding: $cdr-space-half-x;
+
+    & + .cdr-select__caret {
+      display: none;
+    }
   }
   // ========================================================================== */
 
   /* @xs
   0px - 767px
   ========== */
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     &--large\@xs {
       @include cdr-select-large-mixin;
     }
@@ -77,7 +84,7 @@
   /* @sm
     768px - 991px
     ========== */
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     &--large\@sm {
       @include cdr-select-large-mixin;
     }
@@ -86,7 +93,7 @@
   /* @md
     992px - 1199px
     ========== */
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     &--large\@md {
       @include cdr-select-large-mixin;
     }
@@ -96,7 +103,7 @@
     1200px and up
     ========== */
 
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     &--large\@lg {
       @include cdr-select-large-mixin;
     }

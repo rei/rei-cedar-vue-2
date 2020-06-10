@@ -11,27 +11,5 @@
 
 export default {
   name: 'App',
-  components: {
-    // ...examples,
-  },
-  data() {
-    return {
-      globalTheme: 'lightest',
-    };
-  },
-  mounted() {
-    if (this.$route.query['global-theme']) this.globalTheme = this.$route.query['global-theme'];
-  },
-  methods: {
-    radioNavigate() {
-      this.$router.replace({
-        query: Object.assign(
-          {},
-          this.$route.query,
-          { 'global-theme': this.globalTheme },
-        ),
-      });
-    },
-  },
 };
 </script>

@@ -25,8 +25,15 @@ function generateScopedName(name, filename, css) {
 
 // plugin configs
 let postcssExtract = false;
-let copyTargets = [''];
 let copyOutput = 'public';
+const copyTargets = [
+  { src: 'static/star-null.svg', dest: 'dist/svg' },
+  { src: 'static/star-0.svg', dest: 'dist/svg' },
+  { src: 'static/star-25.svg', dest: 'dist/svg' },
+  { src: 'static/star-50.svg', dest: 'dist/svg' },
+  { src: 'static/star-75.svg', dest: 'dist/svg' },
+  { src: 'static/star-100.svg', dest: 'dist/svg' },
+];
 
 // prod only options
 if (env === 'prod') {
@@ -36,12 +43,16 @@ if (env === 'prod') {
 
 // dev and prod options
 if (env !== 'test') {
-  copyTargets = ['static/cdr-fonts.css'];
+  copyTargets.push(
+    {
+      src: 'static/cdr-fonts.css',
+      dest: `${copyOutput}`,
+    }
+  );
 }
 
 const plugins = [
   (env == 'test' || env == 'dev') && alias({
-    resolve: ['.json', '.js', '.jsx', '.scss', '.vue'],
     entries: {
       srcdir: resolve('src'),
       cssdir: resolve('src/css'),
@@ -49,12 +60,15 @@ const plugins = [
       componentsdir: resolve('src/components'),
       mixinsdir: resolve('src/mixins'),
     },
+    customResolver: nodeResolve({
+      extensions: ['.json', '.js', '.jsx', '.scss', '.vue'],
+    }),
   }),
   nodeResolve({
     mainFields: ['module', 'jsnext:main', 'main'],
     extensions: ['.mjs', '.js', '.jsx', '.json'],
   }),
-  env !== 'prod' &&  vue({
+  env !== 'prod' && vue({
     style: {
       postcssModulesOptions: {
         generateScopedName,
@@ -98,7 +112,6 @@ const plugins = [
   }),
   copyPlugin({
     targets: copyTargets,
-    outputFolder: copyOutput
   }),
 ];
 

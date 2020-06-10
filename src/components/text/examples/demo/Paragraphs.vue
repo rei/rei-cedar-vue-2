@@ -45,10 +45,10 @@
     <div data-backstop="utility">
       <cdr-text
         v-for="utility in utilities"
-        :key="utility"
-        :modifier="`utility-${utility}`"
+        :key="`utility-${utility}`"
+        :modifier="`utility-sans-${utility}`"
       >
-        utility-{{ utility }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
+        utility-sans-{{ utility }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
         donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
         mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
@@ -60,10 +60,10 @@
       </cdr-text>
       <cdr-text
         v-for="utilitystrong in utilities"
-        :key="utilitystrong"
-        :modifier="`utility-strong-${utilitystrong}`"
+        :key="`utility-strong-${utilitystrong}`"
+        :modifier="`utility-sans-strong-${utilitystrong}`"
       >
-        utility-strong-{{ utilitystrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
+        utility-sans-strong-{{ utilitystrong }}: <br> Lorem ipsum dolor sit amet, orci tristique enim condimentum pellentesque amet
         congue. Suspendisse pulvinar. Consectetuer curabitur id, laoreet dolor sapien libero,
         donec risus magna erat pede massa montes, lacinia pede venenatis luctus, fringilla nulla
         mollis praesent viverra. Ligula ipsum. Integer sed, sem nullam nibh sed suscipit quisque
@@ -162,14 +162,14 @@
       <cdr-text
         v-for="utility in utilities"
         :key="utility"
-        :modifier="`utility-${utility}`"
+        :modifier="`utility-sans-${utility}`"
       >
         example of
         <cdr-text
           tag="strong"
-          :modifier="`utility-strong-${utility}`"
+          :modifier="`utility-sans-strong-${utility}`"
         >
-          utility-strong-{{ utility }},
+          utility-sans-strong-{{ utility }},
         </cdr-text>
         <cdr-text
           tag="strong"

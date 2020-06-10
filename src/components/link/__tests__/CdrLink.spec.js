@@ -1,7 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import sinon from 'sinon';
 import CdrLink from 'componentdir/link/CdrLink';
-// import CdrThemer from 'componentdir/themer/CdrThemer';
 
 describe('CdrLink', () => {
   test('renders correctly', () => {
@@ -19,13 +18,17 @@ describe('CdrLink', () => {
   });
 
   it('sets a default href', () => {
-    const wrapper = shallowMount(CdrLink);
-    expect(wrapper.attributes().href).toBe('#');
+    const wrapper = shallowMount(CdrLink, {
+      propsData: {
+        href: 'www.rei.com'
+      }
+    });
+    expect(wrapper.attributes().href).toBe('www.rei.com');
   });
 
   it('sets a default link text', () => {
     const wrapper = shallowMount(CdrLink);
-    expect(wrapper.contains('Link Text'));
+    expect(wrapper.text()).toBe('#');
   });
 
   it('sets rel attr correctly', () => {
@@ -81,37 +84,5 @@ describe('CdrLink', () => {
     });
     wrapper.trigger('click');
     expect(spy.called).toBeTruthy();
-  });
-
-  xit('inherits theme correctly', () => {
-    const wrapper = shallowMount(CdrThemer, {
-      stubs: {
-        'cdr-link': CdrLink,
-      },
-      slots: {
-        default: ['<cdr-link/>']
-      },
-      propsData: {
-        theme: 'dark',
-      },
-    });
-
-    const link = wrapper.find(CdrLink)
-
-    expect(link.classes()).toContain('on-dark');
-  });
-
-  xit('sets theme correctly', () => {
-    const wrapper = shallowMount(CdrLink, {
-      propsData: {
-        theme: 'dark',
-      },
-    });
-    expect(wrapper.classes()).toContain('on-dark');
-  });
-
-  it('does nothing if no theme provided', () => {
-    const wrapper = shallowMount(CdrLink);
-    expect(wrapper.vm.computedTheme).toBeFalsy();
   });
 });

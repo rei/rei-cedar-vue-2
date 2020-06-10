@@ -15,7 +15,7 @@ module.exports = {
     },
     'postcss-inline-svg': {
       // paths are relative to root
-      path: process.cwd(),
+      paths: [process.cwd()],
     },
     autoprefixer: {},
     // cssnano: {

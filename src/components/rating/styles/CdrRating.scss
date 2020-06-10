@@ -1,25 +1,86 @@
 @import '../../../css/settings/index.scss';
-@import './vars/CdrRating.vars.scss';
-/* ==========================================================================
-  # CdrRating
-
-  All values should map to variables in
-  vars/CdrRating.vars.pcss
-  in order to allow for theming
-
-  TOC:
-
-    :Base - Rating
-      :Elements
-        :Icon
-        :Count
-      :Modifiers
-        :Linked
-        :Large
-        :Small
-========================================================================== */
 
 $rating-color: #2b6692;
+$empty-star: '\2606';
+$filled-star: '\2605';
+
+@mixin star-icon($url) {
+  &::after {
+    content: '';
+    background-image: svg-load('#{$url}');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin star-fallback($star, $trim: false) {
+  $width: auto;
+  $translatex: -50%;
+  $left: 50%;
+  @if $trim {
+    $width: calc(1em * #{$trim});
+    $translatex: calc(-50% - (0.5em * (1 - #{$trim})));
+  }
+
+  &::before {
+    content: $star;
+    display: block;
+    position: absolute;
+    left: $left;
+    top: 50%;
+    transform: translate($translatex, -50%);
+    font-size: 0.5em;
+    color: #BD7B2D;
+    width: $width;
+    overflow: hidden;
+  }
+}
+
+@mixin cdr-rating-small() {
+  & .cdr-rating__icon {
+    width: $cdr-icon-size-sm;
+    height: $cdr-icon-size-sm;
+    font-size: $cdr-icon-size-sm;
+  }
+
+  & .cdr-rating__count {
+    @include cdr-text-utility-sans-100;
+
+    margin-left: $cdr-space-quarter-x;
+  }
+}
+
+@mixin cdr-rating-medium($parent-selector: '& ') {
+  #{$parent-selector}.cdr-rating__icon {
+    width: $cdr-icon-size;
+    height: $cdr-icon-size;
+    font-size: $cdr-icon-size;
+  }
+
+  #{$parent-selector}.cdr-rating__count {
+    @include cdr-text-utility-sans-200;
+
+    margin-left: $cdr-space-half-x;
+  }
+}
+
+@mixin cdr-rating-large() {
+  & .cdr-rating__icon {
+    width: $cdr-icon-size-lg;
+    height: $cdr-icon-size-lg;
+    font-size: $cdr-icon-size-lg;
+  }
+
+  & .cdr-rating__count {
+    @include cdr-text-utility-sans-300;
+  }
+}
+
+@include cdr-rating-medium('');
 
 .cdr-rating {
   display: flex;
@@ -27,26 +88,22 @@ $rating-color: #2b6692;
   position: relative;
   line-height: 1;
 
+  color: $cdr-color-text-rating-default;
+
   /* Elements
     ========================================================================== */
 
-  /* Icon
-    ========== */
-  &__icon {
-    width: $cdr-icon-size;
-    height: $cdr-icon-size;
-  }
-
-  /* Count
-    ========== */
-  &__count {
-    @include cdr-rating-base-text;
-
-    margin-left: $cdr-space-half-x;
+  &__number {
+    font-weight: 600;
   }
 
   &__ratings {
     display: flex;
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 1;
   }
 
   &__caption-sr {
@@ -57,11 +114,12 @@ $rating-color: #2b6692;
     ========== */
 
   &__placeholder {
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-stroke.svg', fill=#{$rating-color});
-    background-repeat: no-repeat;
+    @include star-icon('static/star-0.svg');
+    @include star-fallback($empty-star);
 
     &--no-reviews {
-      background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-stroke.svg', fill=#{$cdr-color-text-form-placeholder-lightmode});
+      @include star-icon('static/star-null.svg');
+      @include star-fallback($empty-star);
     }
   }
 
@@ -69,24 +127,25 @@ $rating-color: #2b6692;
     ========== */
 
   &__100 {
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-100.svg', fill=#{$rating-color});
-    background-repeat: no-repeat;
+    @include star-icon('static/star-100.svg');
+    @include star-fallback($filled-star);
   }
 
   &__75 {
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-75.svg', fill=#{$rating-color});
-    background-repeat: no-repeat;
+    @include star-icon('static/star-75.svg');
+    @include star-fallback($filled-star, .75);
   }
 
   &__50 {
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-50.svg', fill=#{$rating-color});
-    background-repeat: no-repeat;
+    @include star-icon('static/star-50.svg');
+    @include star-fallback($filled-star, .5);
   }
 
   &__25 {
-    background-image: svg-load('node_modules/@rei/cedar-icons/dist/icons/star-25.svg', fill=#{$rating-color});
-    background-repeat: no-repeat;
+    @include star-icon('static/star-25.svg');
+    @include star-fallback($filled-star, .33);
   }
+
 
   /* Modifiers
     ========================================================================== */
@@ -102,13 +161,14 @@ $rating-color: #2b6692;
       &:hover,
       &:active,
       &:focus {
+        color: $cdr-color-text-rating-hover;
         text-decoration: underline;
       }
 
       & > .cdr-rating__number {
-        border-right: 1px solid $rating-number-decoration;
-        padding: 0 $cdr-space-quarter-x;
-        margin-right: $cdr-space-quarter-x;
+        border-right: 1px solid $cdr-color-text-rating-separator;
+        padding: 0 0.6rem;
+        margin-right: 0.6rem;
       }
     }
   }
@@ -117,184 +177,76 @@ $rating-color: #2b6692;
     ========== */
 
   &--large {
-    & .cdr-rating__icon {
-      width: $cdr-icon-size-lg;
-      height: $cdr-icon-size-lg;
-    }
+    @include cdr-rating-large;
+  }
 
-    & .cdr-rating__count {
-      @include cdr-rating-text-large;
-    }
+  /* Medium
+    ========== */
+
+  &--medium {
+    @include cdr-rating-medium();
   }
 
   /* Small
     ========== */
 
   &--small {
-    & .cdr-rating__icon {
-      width: $cdr-icon-size-sm;
-      height: $cdr-icon-size-sm;
-    }
-
-    & .cdr-rating__count {
-      @include cdr-rating-text-small;
-
-      margin-left: $cdr-space-quarter-x;
-    }
+    @include cdr-rating-small;
   }
 
-  /* Content Color Variants
-    ========================================================================== */
-  &--primary {
-    & .cdr-rating__count {
-      color: $content-primary;
-    }
-
-    & .cdr-rating--linked {
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration-color: $content-primary;
-      }
-    }
-
-    & .cdr-rating__number {
-      border-right-color: $rating-number-decoration;
-    }
-  }
-
-  &--secondary {
-    & .cdr-rating__count {
-      color: $content-secondary;
-    }
-
-    & .cdr-rating--linked {
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration-color: $content-secondary;
-      }
-    }
-
-    & .cdr-rating__number {
-      border-right-color: $rating-number-decoration;
-    }
-  }
-
-  /* @xs
-    0px - 767px
-    ========== */
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     &--small\@xs {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-sm;
-        height: $cdr-icon-size-sm;
-      }
+      @include cdr-rating-small;
+    }
 
-      & .cdr-rating__count {
-        @include cdr-rating-text-small;
-
-        margin-left: $cdr-space-quarter-x;
-      }
+    &--medium\@xs {
+      @include cdr-rating-medium;
     }
 
     &--large\@xs {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-lg;
-        height: $cdr-icon-size-lg;
-      }
-
-      & .cdr-rating__count {
-        @include cdr-rating-text-large;
-      }
+      @include cdr-rating-large;
     }
   }
 
-  /* @sm
-    768px - 991px
-    ========== */
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     &--small\@sm {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-sm;
-        height: $cdr-icon-size-sm;
-      }
+      @include cdr-rating-small;
+    }
 
-      & .cdr-rating__count {
-        @include cdr-rating-text-small;
-
-        margin-left: $cdr-space-quarter-x;
-      }
+    &--medium\@sm {
+      @include cdr-rating-medium;
     }
 
     &--large\@sm {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-lg;
-        height: $cdr-icon-size-lg;
-      }
-
-      & .cdr-rating__count {
-        @include cdr-rating-text-large;
-      }
+      @include cdr-rating-large;
     }
   }
 
-  /* @md
-    992px - 1199px
-    ========== */
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     &--small\@md {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-sm;
-        height: $cdr-icon-size-sm;
-      }
+      @include cdr-rating-small;
+    }
 
-      & .cdr-rating__count {
-        @include cdr-rating-text-small;
-
-        margin-left: $cdr-space-quarter-x;
-      }
+    &--medium\@md {
+      @include cdr-rating-medium;
     }
 
     &--large\@md {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-lg;
-        height: $cdr-icon-size-lg;
-      }
-
-      & .cdr-rating__count {
-        @include cdr-rating-text-large;
-      }
+      @include cdr-rating-large;
     }
   }
 
-  /* @lg
-    1200px and up
-    ========== */
-
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     &--small\@lg {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-sm;
-        height: $cdr-icon-size-sm;
-      }
+      @include cdr-rating-small;
+    }
 
-      & .cdr-rating__count {
-        @include cdr-rating-text-small;
-
-        margin-left: $cdr-space-quarter-x;
-      }
+    &--medium\@lg {
+      @include cdr-rating-medium;
     }
 
     &--large\@lg {
-      & .cdr-rating__icon {
-        width: $cdr-icon-size-lg;
-        height: $cdr-icon-size-lg;
-      }
-
-      & .cdr-rating__count {
-        @include cdr-rating-text-large;
-      }
+      @include cdr-rating-large;
     }
   }
 }

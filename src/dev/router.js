@@ -15,7 +15,7 @@ import Grids from 'componentsdir/grid/examples/Grid';
 import Icons from 'componentsdir/icon/examples/Icons';
 import Images from 'componentsdir/image/examples/Images';
 import Input from 'componentsdir/input/examples/Inputs';
-import KitchenSink from 'srcdir/KitchenSink';
+import KitchenSink from 'srcdir/dev/KitchenSink';
 import Links from 'componentsdir/link/examples/Links';
 import Lists from 'componentsdir/list/examples/Lists';
 import Modals from 'componentsdir/modal/examples/Modal';
@@ -24,6 +24,7 @@ import Quotes from 'componentsdir/quote/examples/Quote';
 import Radios from 'componentsdir/radio/examples/Radios';
 import Ratings from 'componentsdir/rating/examples/Ratings';
 import Selects from 'componentsdir/select/examples/Selects';
+import Tables from 'componentsdir/table/examples/Table';
 import Tabs from 'componentsdir/tabs/examples/Tabs';
 import Texts from 'componentsdir/text/examples/Text';
 import Utilities from 'componentsdir/Utilities/Utilities';
@@ -58,6 +59,7 @@ const routes = [
   { path: '/radios', name: 'Radios', component: Radios },
   { path: '/ratings', name: 'Ratings', component: Ratings },
   { path: '/selects', name: 'Selects', component: Selects },
+  { path: '/tables', name: 'Tables', component: Tables },
   { path: '/tabs', name: 'Tabs', component: Tabs },
   { path: '/texts', name: 'Texts', component: Texts },
   { path: '/default-buttons', component: DefaultButtons },

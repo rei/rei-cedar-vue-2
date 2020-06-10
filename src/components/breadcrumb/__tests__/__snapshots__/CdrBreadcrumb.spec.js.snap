@@ -2,32 +2,28 @@
 
 exports[`CdrBreadcrumb renders correctly 1`] = `
 <nav
-  aria-label="Breadcrumb"
+  aria-label="breadcrumbs"
   class="cdr-breadcrumb"
 >
   <ol
     class="cdr-breadcrumb__list"
+    id="exampleList"
   >
     <li
       class="cdr-breadcrumb__item"
     >
       <button
+        aria-controls="exampleList"
         aria-expanded="false"
-        aria-label="ellipsis"
+        aria-label="show 1 more navigation level"
         class="cdr-breadcrumb__ellipses"
       >
-        <svg
+        <span
+          aria-hidden="true"
           class="cdr-breadcrumb__ellipses-icon"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            ellipsis
-          </title>
-          <path
-            d="M17.5 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 22a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
-          />
-        </svg>
+          . . .
+        </span>
       </button>
       <span
         aria-hidden="true"
@@ -44,7 +40,7 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
         class="cdr-breadcrumb__link"
         href="http://google.com"
       >
-        Breadcrumb Step 1
+        Long Breadcrumb Step 1
       </a>
       <span
         aria-hidden="true"
@@ -74,7 +70,7 @@ exports[`CdrBreadcrumb renders correctly 1`] = `
     >
       <a
         class="cdr-breadcrumb__link"
-        href="http://rei.com"
+        href="http://yahoo.com"
       >
         Long Breadcrumb Step 3
       </a>

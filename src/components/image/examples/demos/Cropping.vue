@@ -250,7 +250,6 @@
 </template>
 
 <script>
-// import testImage from 'assetsdir/test-image.jpeg';
 import * as Components from 'srcdir/index';
 
 export default {
@@ -258,7 +257,7 @@ export default {
   components: Components,
   data() {
     return {
-      testImage: 'test-image.jpeg',
+      testImage: 'test-image.png',
     };
   },
 };

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdrAccordionGroup renders correctly 1`] = `
+<ul
+  class="cdr-accordion-group"
+>
+  <li>
+    <div
+      class="cdr-accordion"
+      id="tab1-accordion"
+    >
+      <h2
+        class="cdr-accordion__header"
+      >
+        <button
+          aria-controls="tab1-collapsible"
+          aria-expanded="false"
+          class="cdr-accordion__button js-cdr-accordion-button"
+          id="tab1"
+        >
+          <span
+            class="cdr-accordion__label"
+            id="tab1-label"
+          >
+            label1
+          </span>
+          <icon-caret-down-stub
+            class="cdr-accordion__icon closed"
+            space=""
+          />
+        </button>
+      </h2>
+      <div
+        class="cdr-accordion__content-container closed"
+        style="max-height: 0;"
+      >
+        <div
+          aria-hidden="true"
+          class="cdr-accordion__content closed"
+          id="tab1-collapsible"
+        />
+      </div>
+    </div>
+  </li>
+  <li>
+    <div
+      class="cdr-accordion"
+      id="tab2-accordion"
+    >
+      <h2
+        class="cdr-accordion__header"
+      >
+        <button
+          aria-controls="tab2-collapsible"
+          aria-expanded="false"
+          class="cdr-accordion__button js-cdr-accordion-button"
+          id="tab2"
+        >
+          <span
+            class="cdr-accordion__label"
+            id="tab2-label"
+          >
+            label2
+          </span>
+          <icon-caret-down-stub
+            class="cdr-accordion__icon closed"
+            space=""
+          />
+        </button>
+      </h2>
+      <div
+        class="cdr-accordion__content-container closed"
+        style="max-height: 0;"
+      >
+        <div
+          aria-hidden="true"
+          class="cdr-accordion__content closed"
+          id="tab2-collapsible"
+        />
+      </div>
+    </div>
+  </li>
+</ul>
+`;

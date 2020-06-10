@@ -1,8 +1,12 @@
 <template>
   <div>
-    <cdr-card>
-      <cdr-text>A simple card</cdr-text>
-    </cdr-card>
+    <a href="rei.com">
+      <cdr-card
+        class="card-example"
+      >
+        <cdr-link href="#" class="cdr-card__link">A simple card</cdr-link>
+      </cdr-card>
+    </a>
   </div>
 </template>
 
@@ -15,3 +19,10 @@ export default {
   components: Components,
 };
 </script>
+
+<style>
+  .card-example {
+    max-width: 250px;
+    width: 250px;
+  }
+</style>

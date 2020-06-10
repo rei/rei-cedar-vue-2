@@ -1,26 +1,3 @@
-/* ==========================================================================
-  # CdrButton
-
-  TOC:
-
-    :Base Styles
-      :States
-    :Modifiers
-      :Style variants
-        :Secondary
-    :Size variants
-      :large
-      :medium
-      :small
-    :full-width
-    :icon-only
-    :on-dark
-    :Breakpoint variants
-      :xs
-      :sm
-      :md
-      :lg
-========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrButton.vars.scss';
 .cdr-button {
@@ -94,23 +71,13 @@
   &--icon-only {
     @include cdr-button-icon-only-mixin;
 
-    &.cdr-button--on-dark {
-      fill: $cdr-button-icon-only-fill-darkmode;
-
-      &:hover,
-      &:active,
-      &:focus {
-        fill: $cdr-button-icon-only-fill;
-      }
-
-      &[disabled] {
-        fill: $cdr-button-icon-only-fill-disabled;
-      }
-    }
-
     & > :global(.cdr-button__icon) {
-      margin: $cdr-button-icon-only-margin;
+      margin: 0;
     }
+  }
+
+  &--with-background {
+    @include cdr-button-with-background-mixin;
   }
 
   /* Full Width
@@ -125,7 +92,7 @@
   /* @xs
     0px - 767px
     ========== */
-  @include xs-mq-only {
+  @include cdr-xs-mq-only {
     &--small\@xs {
       @include cdr-button-small-mixin;
 
@@ -170,7 +137,7 @@
   /* @sm
     768px - 991px
     ========== */
-  @include sm-mq-only {
+  @include cdr-sm-mq-only {
     &--small\@sm {
       @include cdr-button-small-mixin;
 
@@ -215,7 +182,7 @@
   /* @md
     992px - 1199px
     ========== */
-  @include md-mq-only {
+  @include cdr-md-mq-only {
     &--small\@md {
       @include cdr-button-small-mixin;
 
@@ -261,7 +228,7 @@
     1200px and up
     ========== */
 
-  @include lg-mq-only {
+  @include cdr-lg-mq-only {
     &--small\@lg {
       @include cdr-button-small-mixin;
 

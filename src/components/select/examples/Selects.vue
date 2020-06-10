@@ -193,16 +193,15 @@
     <cdr-text>Selected Value: {{ dynamic }}</cdr-text>
     <hr class="icon-hr">
 
-    <!-- DEPRECATED MULTIPLE SELECT EXAMPLES -->
     <cdr-text class="cdr-my-space-two-x">
-      DEPRECATED Multiple Select
+       Multiple Select with size
     </cdr-text>
 
     <cdr-select
       label="Multiple Prompt"
       v-model="multiple"
+      multiple-size="6"
       multiple
-      prompt="Choose two"
     >
       <option
         value="1"
@@ -220,13 +219,19 @@
       <option value="4">
         4
       </option>
+      <option value="5">
+        5
+      </option>
+      <option value="6">
+        6
+      </option>
     </cdr-select>
     <cdr-text>Selected Values: {{ multiple }}</cdr-text>
     <hr class="icon-hr">
 
 
     <cdr-text class="cdr-my-space-two-x">
-      DEPRECATED Multiple Select No Prompt
+      Multiple Select
     </cdr-text>
 
     <cdr-select
@@ -266,13 +271,13 @@ export default {
   },
   methods: {
     inputEventHandler(selectedValue, event) {
-      console.log('input Event event = ', event, ' selectedValue = ', selectedValue);
+      console.log('input Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line
     },
     inputChange(selectedValue, event) {
-      console.log('change Event event = ', event, ' selectedValue = ', selectedValue);
+      console.log('change Event event = ', event, ' selectedValue = ', selectedValue); // eslint-disable-line
     },
     doExternal(v, e) {
-      console.log('EXTERNAL', v, e);
+      console.log('EXTERNAL', v, e); // eslint-disable-line
     },
   },
 };

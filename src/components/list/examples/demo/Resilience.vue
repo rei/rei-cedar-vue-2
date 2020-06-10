@@ -43,7 +43,7 @@
     <cdr-text
       v-for="utility in utilities"
       :key="utility"
-      :modifier="`utility-${utility}`"
+      :modifier="`utility-sans-${utility}`"
     >
       <cdr-list
         v-for="l1 in lists"
@@ -51,7 +51,7 @@
         :modifier="`${l1}`"
         space="cdr-mb-space-two-x"
       >
-        <li>utility {{ utility }} in list {{ l1 }} </li>
+        <li>utility-sans {{ utility }} in list {{ l1 }} </li>
         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodList ordered
           <cdr-list>
             <li>List item text</li>
@@ -107,9 +107,9 @@
         random text
         <cdr-text
           tag="span"
-          :modifier="`utility-${utility}`"
+          :modifier="`utility-sans-${utility}`"
         >
-          utility-{{ utility }}
+          utility-sans-{{ utility }}
         </cdr-text>
       </li>
       <li>
@@ -121,9 +121,9 @@
           >
             <cdr-text
               tag="span"
-              :modifier="`utility-${utility}`"
+              :modifier="`utility-sans-${utility}`"
             >
-              utility-{{ utility }}
+              utility-sans-{{ utility }}
             </cdr-text>
           </li>
         </cdr-list>
@@ -139,9 +139,9 @@
         random text
         <cdr-text
           tag="span"
-          :modifier="`utility-${utility}`"
+          :modifier="`utility-sans-${utility}`"
         >
-          utility-{{ utility }}
+          utility-sans-{{ utility }}
         </cdr-text>
       </li>
       <li>
@@ -154,9 +154,9 @@
             random text
             <cdr-text
               tag="span"
-              :modifier="`utility-${utility}`"
+              :modifier="`utility-sans-${utility}`"
             >
-              utility-{{ utility }}
+              utility-sans-{{ utility }}
             </cdr-text>
           </li>
         </ul>

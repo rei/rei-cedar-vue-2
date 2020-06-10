@@ -82,7 +82,7 @@ describe('CdrDataTable', () => {
       expect(wrapper.vm.hasRowHeaders).toBe(true);
     });
 
-    it('adds resize event watcher', (done) => {
+    it('adds resize event watcher', async () => {
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: data.colHeaders,
@@ -95,15 +95,37 @@ describe('CdrDataTable', () => {
         methods: {
           setRowsContentHeight: () => true,
         },
+        attachToDocument: true,
       });
       
       const spy = spyOn(wrapper.vm, 'checkScroll');
       window.dispatchEvent(new Event('resize'));
-      
-      wrapper.vm.$nextTick(() => {
-        expect(spy).toHaveBeenCalled();
-        done()
+      await wrapper.vm.$nextTick();
+    
+      expect(spy).toHaveBeenCalled();
+    });
+
+    it('adds load event watcher', async () => {
+      const wrapper = shallowMount(CdrDataTable, {
+        propsData: {
+          colHeaders: data.colHeaders,
+          rowHeaders: data.rowHeaders,
+          rowData: data.rowData,
+        },
+        computed: {
+          lockedCol: () => true,
+        },
+        methods: {
+          setRowsContentHeight: () => true,
+        },
+        attachToDocument: true,
       });
+      
+      const spy = spyOn(wrapper.vm, 'setRowsContentHeight');
+      window.dispatchEvent(new Event('load'));
+      await wrapper.vm.$nextTick();
+
+      expect(spy).toHaveBeenCalled();
     });
   });
 
@@ -121,16 +143,16 @@ describe('CdrDataTable', () => {
       });
     });
 
-    it('lockedCol checks number of columns and hasRowHeaders', () => {
+    it('lockedCol checks number of columns and hasRowHeaders', async () => {
       wrapper.setData({
         cols: 5,
         hasRowHeaders: true,
       });
-      
+      await wrapper.vm.$nextTick();
       expect(wrapper.vm.lockedCol).toBe(true);
     });
 
-    it('lockedCol checks that rowData prop is used', () => {
+    it('lockedCol checks that rowData prop is used', async () => {
       wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: ['col1', 'col2'],
@@ -146,11 +168,11 @@ describe('CdrDataTable', () => {
         cols: 5,
         hasRowHeaders: true,
       });
-      
+      await wrapper.vm.$nextTick();
       expect(wrapper.vm.lockedCol).toBe(false);
     });
 
-    it('isScrolling requires lockedCol to be true', () => {
+    it('isScrolling requires lockedCol to be true', async () => {
       wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: ['col1', 'col2', 'col3'],
@@ -164,23 +186,23 @@ describe('CdrDataTable', () => {
         clientWidth: 500,
         scrollWidth: 700,
       });
-
+      await wrapper.vm.$nextTick();
       expect(wrapper.vm.isScrolling).toBe(false);
     });
 
-    it('headerRowAlignHeight returns px height for empty cell align', () => {
+    it('headerRowAlignHeight returns px height for empty cell align', async () => {
       wrapper.setData({
         cols: 5,
         hasRowHeaders: true,
         headerRowHeight: 45,
       });
-
+      await wrapper.vm.$nextTick();
       expect(wrapper.vm.headerRowAlignHeight).toBe('46px');
     });
   });
 
   describe('methods', () => {
-    it('checkScroll sets clientWidth and scrollWidth', () => {
+    it('checkScroll sets clientWidth and scrollWidth', async () => {
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: ['col1', 'col2', 'col3'],
@@ -194,6 +216,7 @@ describe('CdrDataTable', () => {
         clientWidth: 500,
         scrollWidth: 500,
       });
+      await wrapper.vm.$nextTick();
 
       wrapper.vm.checkScroll();
       expect(wrapper.vm.clientWidth).not.toBe(500);
@@ -227,38 +250,33 @@ describe('CdrDataTable', () => {
         });
       });
 
-      it('already aligned', () => {
-        wrapper.vm.$nextTick(() => {
-          // wait for next tick to finish setting up test
-          wrapper.setData({
-            rowHeights: [{ th: 25, td: 24 }],
-          });
-  
-          expect(wrapper.vm.getRowAlignHeight('th', 0)).toBe(null);
+      it('already aligned', async () => {
+        await wrapper.vm.$nextTick();
+        // wait for next tick to finish setting up test
+        wrapper.setData({
+          rowHeights: [{ th: 25, td: 24 }],
         });
-      });
+        await wrapper.vm.$nextTick();
 
-      it('returns null when not the changing elem', () => {
-        wrapper.vm.$nextTick(() => {
-          wrapper.setData({
-            rowHeights: [{ th: 30, td: 12 }],
-          });
+        expect(wrapper.vm.getRowAlignHeight('th', 0)).toBe(null);
         });
 
+      it('returns null when not the changing elem', async () => {
+        wrapper.setData({
+          rowHeights: [{ th: 30, td: 12 }],
+        });
+        await wrapper.vm.$nextTick();
         expect(wrapper.vm.getRowAlignHeight('th', 0)).toBe(null);
       });
 
-      xit('returns a pixel value', () => {
-        wrapper.vm.$nextTick(() => {
-          wrapper.setData({
-            rowHeights: [{ th: 30, td: 12 }],
-          });
-
-          expect(wrapper.vm.getRowAlignHeight('td', 0)).toBe('29px');
+      xit('returns a pixel value', async () => {
+        wrapper.setData({
+          rowHeights: [{ th: 30, td: 12 }],
         });
+        await wrapper.vm.$nextTick();
 
-        console.log(wrapper.vm.rowHeights);
-        console.log(wrapper.vm.getRowAlignHeight('td', 0));
+        expect(wrapper.vm.getRowAlignHeight('td', 0)).toBe('29px');
+
         expect(wrapper.vm.getRowAlignHeight('td', 0)).toBe('29px');
       });
     });

@@ -15,7 +15,7 @@ export default {
     tag: {
       type: String,
       default: 'button',
-      validator: value => (['button', 'a'].indexOf(value) >= 0) || false,
+      validator: (value) => (['button', 'a'].indexOf(value) >= 0) || false,
     },
     /**
      * Sets the button type. {button, submit, reset}
@@ -23,7 +23,7 @@ export default {
     type: {
       type: String,
       default: 'button',
-      validator: value => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
+      validator: (value) => (['button', 'submit', 'reset'].indexOf(value) >= 0) || false,
     },
     /**
      * Renders an icon-only button. Default slot is disabled. Overrides size and responsiveSize props.
@@ -33,10 +33,9 @@ export default {
       default: false,
     },
     /**
-     * Renders an icon-only button with a light fill color for use on dark backgrounds.
-     * iconOnly must be true.
+     * Used in conjunction with `icon-only`, renders a border and background around the icon button
      */
-    onDark: {
+    withBackground: {
       type: Boolean,
       default: false,
     },
@@ -66,11 +65,12 @@ export default {
 
       if (this.iconOnly) {
         classes.push(this.modifyClassName(this.baseClass, 'icon-only'));
-
-        if (this.onDark) {
-          classes.push(this.modifyClassName(this.baseClass, 'on-dark'));
-        }
       }
+
+      if (this.iconOnly && this.withBackground) {
+        classes.push(this.modifyClassName(this.baseClass, 'with-background'));
+      }
+
       return classes.join(' ');
     },
   },

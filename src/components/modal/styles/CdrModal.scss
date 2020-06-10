@@ -1,5 +1,6 @@
 @import '../../../css/settings/index.scss';
-@import './vars/CdrModal.vars.scss';
+
+$modal-animation-duration: 150ms;
 
 .cdr-modal {
   bottom: 0;
@@ -13,14 +14,15 @@
   z-index: 1000;
 
   &__overlay {
-    background-color: $cdr-modal-overlay-color;
+    background-color: $cdr-color-background-modal-overlay;
+    backdrop-filter: blur($cdr-space-one-x);
     bottom: 0;
     left: 0;
     opacity: 1;
     position: fixed;
     right: 0;
     top: 0;
-    transition: opacity $cdr-modal-animation-duration;
+    transition: opacity $modal-animation-duration;
     z-index: -1;
   }
 
@@ -29,7 +31,6 @@
     box-sizing: border-box;
     left: 0;
     min-height: 100%;
-    padding: 16px 20px;
     position: absolute;
     right: 0;
     top: 0;
@@ -38,17 +39,18 @@
 
   &__contentWrap {
     align-items: flex-start;
-    background-color: $cdr-modal-content-color;
-    border-radius: $cdr-modal-border-radius;
-    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .5);
+    background-color: $cdr-color-background-lightest;
     display: flex;
     flex-direction: column;
     margin: auto;
-    max-width: 40rem;
+    min-height: 100%;
     opacity: 1;
-    padding: 24px;
-    position: relative;
-    transition: opacity $cdr-modal-animation-duration $cdr-modal-animation-duration;
+    padding: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: opacity $modal-animation-duration $modal-animation-duration;
     width: 100%; // IE 11
     z-index: 0;
     &:focus {
@@ -61,17 +63,7 @@
   }
 
   &__dialog {
-    /*
-      max-height: calc(100vh - #{$cdr-dialog-margins-vertical});
-
-      Max-height has been removed here to increase content resilience. 
-    */
-    max-width: 60rem;
-    padding: $cdr-dialog-padding-vertical;
-
-     &:global(.large) {
-      max-width: 80rem;
-    }
+    width: 100%;
   }
 
   &__content {
@@ -80,19 +72,26 @@
 
   &__header {
     display: flex;
-    padding: 0 0 $cdr-header-padding-bottom 0;
+    padding-bottom: $cdr-space-one-x;
   }
 
   &__title {
     flex: auto;
-    padding-right: $cdr-space-three-quarter-x;
   }
 
   &__close-button {
     align-self: flex-start;
+    border: 1px solid $cdr-color-icon-default;
     flex: none;
-    padding: $cdr-space-quarter-x;
-    margin-right: -$cdr-space-half-x;
+    margin-left: $cdr-space-half-x;
+    padding: 7px; // NOTE: button should be 40x40, so drop padding by 1px
+    position: relative;
+    top: -2px;
+    right: -4px;
+
+    &:hover, &:focus {
+      border: 1px solid $cdr-color-icon-default;
+    }
   }
 
   &__text {
@@ -101,17 +100,9 @@
   }
 
   &__text-content {
-    max-height: $cdr-modal-text-max-height;
     overflow: auto;
-    padding-right: 16px;
-
-    /* ie/edge/ff bug prevents using padding */
-    &::after {
-      content: "";
-      display: block;
-      height: $cdr-space-two-x;
-      width: 100%;
-    }
+    padding-right: $cdr-space-one-and-a-half-x;
+    position: relative;
   }
 
   &__text-fade {
@@ -119,27 +110,58 @@
     bottom: 0;
     left: 0;
     height: $cdr-space-two-x;
-    width: 98%;
     /* full transparency doesn't fly on safari */
     background: linear-gradient(rgba(255,255,255,0.001), rgba(255,255,255,1));
     background-attachment: scroll;
+    width: 100%;
+  }
+
+  @media (min-width: $cdr-breakpoint-sm) {
+    &__outerWrap {
+      padding: $cdr-space-one-x;
+    }
+
+    &__contentWrap {
+      border-radius: $cdr-radius-softer;
+      box-shadow: $cdr-prominence-lifted;
+      min-height: auto;
+      padding: $cdr-space-one-and-a-half-x;
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+    }
+
+    &__dialog {
+      max-width: 640px;
+    }
+
+    &__close-button {
+      margin-left: $cdr-space-three-quarter-x;
+      right: -8px;
+      top: -5px;
+    }
+
+    &__text-content {
+      padding-right: $cdr-space-two-x;
+    }
   }
 }
 
 .closed {
-  transition: z-index 0s $cdr-modal-animation-duration * 2,
-  visibility 0s $cdr-modal-animation-duration * 2;
+  transition: z-index 0s $modal-animation-duration * 2,
+  visibility 0s $modal-animation-duration * 2;
   visibility: hidden;
   z-index: -1;
 
   .cdr-modal__overlay {
     opacity: 0;
-    transition: opacity $cdr-modal-animation-duration $cdr-modal-animation-duration;
+    transition: opacity $modal-animation-duration $modal-animation-duration;
   }
 
   .cdr-modal__contentWrap {
     opacity: 0;
-    transition: opacity $cdr-modal-animation-duration;
+    transition: opacity $modal-animation-duration;
   }
 }
 

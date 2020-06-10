@@ -25,6 +25,22 @@
       <mods />
     </div>
 
+
+    <div data-backstop="image-error">
+      <cdr-text
+        tag="h3"
+        modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+      >
+        Image With Error
+      </cdr-text>
+      <cdr-img
+        src="localhost:8000/not-here.png"
+        @error="handleError"
+        alt="im an error!"
+      />
+      Error Handled: {{ hasError }}
+    </div>
+
     <div data-backstop="image-standard">
       <cdr-text
         tag="h3"
@@ -61,6 +77,16 @@ export default {
     ratios,
     cropping,
     mods,
+  },
+  data() {
+    return {
+      hasError: false,
+    };
+  },
+  methods: {
+    handleError() {
+      this.hasError = true;
+    },
   },
 };
 </script>

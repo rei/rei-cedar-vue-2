@@ -108,6 +108,7 @@ export { default as IconMinusLg } from './comps/minus-lg';
 export { default as IconMinusSm } from './comps/minus-sm';
 export { default as IconMinusStroke } from './comps/minus-stroke';
 export { default as IconMoreFunctions } from './comps/more-functions';
+export { default as IconMyLocation } from './comps/my-location';
 export { default as IconNavigationMenu } from './comps/navigation-menu';
 export { default as IconNight } from './comps/night';
 export { default as IconPaddle } from './comps/paddle';

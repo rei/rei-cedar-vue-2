@@ -161,7 +161,7 @@ export default {
         iconClass: this.style['cdr-pagination__caret--prev'],
         iconComponent: 'icon-caret-left',
         iconPath: '#caret-left',
-        click: e => this.navigate(prevPageData.page, e),
+        click: (e) => this.navigate(prevPageData.page, e),
       };
     },
     prevEl() {
@@ -185,9 +185,10 @@ export default {
       ) : (
         <li aria-hidden="true">
           <span
+            aria-disabled="true"
             class={[
               this.prevElAttrs.attrs.class,
-              clsx(this.style['cdr-pagination__link--disabled']),
+              this.style['cdr-pagination__link--disabled'],
             ]}
           >
             <this.prevElAttrs.iconComponent
@@ -215,7 +216,7 @@ export default {
         iconClass: this.style['cdr-pagination__caret--next'],
         iconComponent: 'icon-caret-right',
         iconPath: '#caret-right',
-        click: e => this.navigate(nextPageData.page, e),
+        click: (e) => this.navigate(nextPageData.page, e),
       };
     },
     nextEl() {
@@ -240,9 +241,10 @@ export default {
       ) : (
         <li aria-hidden="true">
           <span
+            aria-disabled="true"
             class={[
               this.nextElAttrs.attrs.class,
-              clsx(this.style['cdr-pagination__link--disabled']),
+              this.style['cdr-pagination__link--disabled'],
             ]}
             >
             {this.nextElAttrs.content}
@@ -255,7 +257,7 @@ export default {
       );
     },
     desktopEl() {
-      return this.paginationData.map(n => (
+      return this.paginationData.map((n) => (
           <li
             key={`${n}-${this.guid()}`}
             class={this.style['cdr-pagination__li--links']}
@@ -281,7 +283,7 @@ export default {
             ref={`select-${this.componentID}`}
             id={`select-${this.componentID}`}
           >
-            {this.paginationData.map(n => n !== '&hellip;'
+            {this.paginationData.map((n) => n !== '&hellip;'
               && (<option
                 key={`${n}-${this.guid()}`}
                 value={n.page}
@@ -303,7 +305,7 @@ export default {
   },
   methods: {
     setCurrentIdx(page) {
-      this.currentIdx = this.pages.map(x => x.page).indexOf(page);
+      this.currentIdx = this.pages.map((x) => x.page).indexOf(page);
     },
     navigate(pageNum, e) {
       // Dont do anything if clicking the current active page
@@ -361,7 +363,7 @@ export default {
         },
         // The rest of this is available for binding if needed by user (i.e. optional with vue-router)
         href: n.url,
-        click: e => this.navigate(n.page, e),
+        click: (e) => this.navigate(n.page, e),
         page: n.page,
         content: n.page,
       };
@@ -378,13 +380,13 @@ export default {
   },
   render() {
     return (
-      <nav aria-label="Pagination Navigation">
-        <ul class={this.style['cdr-pagination']}>
+      <nav aria-label="Pagination">
+        <ol class={this.style['cdr-pagination']}>
           {this.prevEl}
           {this.desktopEl}
           {this.mobileEl}
           {this.nextEl}
-        </ul>
+        </ol>
       </nav>
     );
   },

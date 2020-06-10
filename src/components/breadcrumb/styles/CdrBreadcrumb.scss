@@ -1,24 +1,6 @@
-/* ==========================================================================
-  # CdrBreadcrumb
-
-  All values should map to variables in
-  vars/CdrBreadcrumb.vars.pcss
-  in order to allow for theming
-
-  TOC:
-
-    :Base - CdrBreadcrumb
-      :Elements
-        :container
-        :list
-        :item
-        :link
-        :delimiter
-        :ellipses
-        :ellipses-icon
-========================================================================== */
 @import '../../../css/settings/index.scss';
 @import './vars/CdrBreadcrumb.vars.scss';
+@import url('@rei/cedar/dist/style/cdr-icon.css');
 
 .cdr-breadcrumb {
   line-height: 1;
@@ -37,34 +19,21 @@
   &__item {
     display: inline-flex;
     flex: none;
-    color: $cdr-breadcrumb-text-color;
     padding: 0;
 
-    &:last-child {
-      color: $cdr-breadcrumb-last-child-text-color;
-    }
-
-    /* Hover
-    ---------- */
-    &:hover,
-    &:active,
-    &:focus {
-      color: $cdr-breadcrumb-hover-text-color;
-    }
+    @include cdr-breadcrumb-item-mixin;
   }
+
 
   /* Link
   ---------- */
   &__link {
-    @include cdr-breadcrumb-xs-text-mixin;
-
-    text-decoration: none;
-    color: inherit; /* inherit color from &__item */
+    @include cdr-breadcrumb-item-linked-mixin;
 
     &:hover,
     &:active,
     &:focus {
-      color: inherit;
+      color: $cdr-color-text-link-hover;
       text-decoration: underline;
     }
   }
@@ -73,10 +42,8 @@
   ========== */
   &__delimiter {
     @include cdr-breadcrumb-xs-text-mixin;
-
-    color: $cdr-breadcrumb-delimiter-text-color;
-    padding-left: $cdr-space-quarter-x;
-    padding-right: $cdr-space-half-x;
+    color: inherit;
+    padding: 0 $cdr-space-half-x;
   }
 
   /* Ellipses
@@ -90,38 +57,32 @@
     background-color: transparent;
     cursor: pointer;
     display: inline-block;
-    padding: 6px 11px; /* extend clickable area */
-    margin: -6px -11px; /* preserve layout */
+    fill: inherit;
+    padding: 0;
 
     /* Ellipses Icon
     ========== */
     .cdr-breadcrumb__ellipses-icon {
+      color: $cdr-color-text-secondary;
       border-bottom: 1px solid transparent;
-      width: 1.4rem;
-      height: 1.4rem;
-      fill: $cdr-breadcrumb-text-color;
+      fill: inherit;
     }
 
     &:hover,
     &:active,
     &:focus {
       .cdr-breadcrumb__ellipses-icon {
-        border-bottom: 1px solid $cdr-breadcrumb-hover-text-color;
-        fill: $cdr-breadcrumb-hover-text-color;
+        color: $cdr-color-text-link-hover;
+        text-decoration: underline;
       }
     }
   }
-
-  @include md-mq {
+// TODO: make this a size prop? or a responsive compact?
+  @include cdr-md-mq {
     &__link,
     &__delimiter,
     &__ellipses {
       @include cdr-breadcrumb-base-text-mixin;
-    }
-
-    &__ellipses .cdr-breadcrumb__ellipses-icon {
-      width: 1.6rem;
-      height: 1.6rem;
     }
   }
 }

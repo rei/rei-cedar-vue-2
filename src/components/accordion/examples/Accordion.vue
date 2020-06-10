@@ -7,6 +7,43 @@
       Accordion
     </cdr-text>
 
+    <cdr-text
+      tag="h3"
+      modifier="heading-sans-400 heading-sans-500@md heading-sans-500@lg"
+    >
+      Default Standalone
+    </cdr-text>
+    <cdr-accordion
+      id="default-standalone"
+      level="3"
+      :opened="accordionDefaultStandalone"
+      @accordion-toggle="accordionDefaultStandalone = !accordionDefaultStandalone"
+    >
+      <template slot="label">
+        A short label
+      </template>
+      <cdr-text
+        modifier="body-300"
+      >
+        This is some text. It's in a
+        <cdr-text
+          tag="strong"
+          modifier="body-strong-300"
+        >cdr-text paragraph with a modifier of <code>body-300</code></cdr-text> element as
+        thats how you assign the correct font and line-height for text dislpay on REI.
+        does not include margin or add space to the container. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Sed dictum fermentum tortor posuere
+        fermentum. Sed interdum vel urna at tempor. Nullam vel sapien odio. Class
+        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+        himenaeos. Fusce venenatis ex ut ultricies tincidunt. Suspendisse potenti.
+        Sed ut euismod mi, sit amet porta augue. Proin dictum laoreet blandit. Nulla
+        tempus tellus id ligula sodales ultrices. Proin lacus diam, ornare at libero
+        nec, eleifend vulputate mi. Praesent vestibulum accumsan erat id dapibus.
+        Suspendisse ut laoreet nunc, et tempor eros. Etiam vel commodo velit. Proin
+        egestas fringilla elit et lacinia. Praesent et vehicula massa. Fusce ac purus neque.
+      </cdr-text>
+    </cdr-accordion>
+
     <div class="accordion-group">
       <cdr-text
         tag="h3"
@@ -14,9 +51,10 @@
       >
         Default
       </cdr-text>
-      <div data-backstop="accordion-default">
+      <cdr-accordion-group data-backstop="accordion-default">
         <cdr-accordion
           id="default"
+          level="3"
           :opened="accordionDefault"
           @accordion-toggle="accordionDefault = !accordionDefault"
         >
@@ -46,6 +84,7 @@
         </cdr-accordion>
         <cdr-accordion
           id="default-long-label"
+          level="3"
           :opened="accordionDefault2"
           @accordion-toggle="accordionDefault2 = !accordionDefault2"
           label="Label with multiple words, so many words in fact that
@@ -60,7 +99,7 @@
             <li>when animated!</li>
           </cdr-list>
         </cdr-accordion>
-      </div>
+      </cdr-accordion-group>
     </div>
 
     <div class="accordion-group">
@@ -70,10 +109,11 @@
       >
         Border-Aligned and data driven
       </cdr-text>
-      <div data-backstop="accordion-border-aligned">
+      <cdr-accordion-group data-backstop="accordion-border-aligned">
         <cdr-accordion
           v-for="(item, index) in grouped"
           :id="item.id"
+          level="3"
           :border-aligned="true"
           :opened="item.opened"
           :key="item.id"
@@ -84,7 +124,7 @@
           </template>
           {{ item.content }}
         </cdr-accordion>
-      </div>
+      </cdr-accordion-group>
     </div>
 
     <div class="accordion-group">
@@ -94,9 +134,10 @@
       >
         Compact
       </cdr-text>
-      <div data-backstop="accordion-compact">
+      <cdr-accordion-group data-backstop="accordion-compact">
         <cdr-accordion
           id="compact"
+          level="3"
           label="Compact"
           :compact="true"
           :opened="accordionCompact"
@@ -128,6 +169,7 @@
         </cdr-accordion>
         <cdr-accordion
           id="compact-2"
+          level="3"
           label="Label with multiple words, so many words in fact that
           this content may wrap to several lines"
           :compact="true"
@@ -140,7 +182,7 @@
             <li>Hopefully right font size</li>
           </cdr-list>
         </cdr-accordion>
-      </div>
+      </cdr-accordion-group>
     </div>
   </div>
 </template>
@@ -154,6 +196,7 @@ export default {
   data() {
     return {
       tabindex: -1,
+      accordionDefaultStandalone: false,
       accordionDefault: true,
       accordionDefault2: false,
       accordionCompact: false,

@@ -1,5 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import CdrTabPanel from 'componentdir/tabs/CdrTabPanel';
+import CdrTabs from 'componentdir/tabs/CdrTabs';
+import Vue from 'vue';
 
 
 describe('CdrTabPanel', () => {
@@ -7,6 +9,8 @@ describe('CdrTabPanel', () => {
     const wrapper = mount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -16,111 +20,97 @@ describe('CdrTabPanel', () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     expect(wrapper.vm.active).toBe(false);
   });
 
-  it('is active when set', (done) => {
+  it('is active when set', async () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     wrapper.vm.setActive(true);
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.active).toBe(true);
-      done();
-    });
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.vm.active).toBe(true);
   });
 
-  it('enter start function properly sets transition', (done) => {
+  it('set animation direction functions correctly', async () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     wrapper.vm.setActive(true);
+    await wrapper.vm.$nextTick();
 
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setEnterStart(wrapper.vm.$el);
-      expect(wrapper.vm.$el.style.animationTimingFunction).toBe('cubic-bezier(0.4, 0, 0.68, .06)');
-      done();
-    });
+    wrapper.vm.setAnimationDirection('flyLeft');
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.animationDirection).toBe('flyLeft');
   });
 
-  it('enter end function properly clears transition', (done) => {
+  it('set animation direction functions correctly', async () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
     wrapper.vm.setActive(true);
+    await wrapper.vm.$nextTick();
 
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setEnterEnd(wrapper.vm.$el);
-      expect(wrapper.vm.$el.style.animationDirection).toBe('');
-      done();
-    });
+    wrapper.vm.setOffsetX(1234);
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.offsetX).toBe(1234);
   });
 
-  it('leave start function properly sets transition', (done) => {
+  it('updates state after animationend', async () => {
     const wrapper = shallowMount(CdrTabPanel, {
       propsData: {
         name: 'test',
+        id: 'tab1',
+        ariaLabelledby: 'tab1',
       },
     });
-    wrapper.vm.setActive(true);
 
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setLeaveStart(wrapper.vm.$el);
-      expect(wrapper.vm.$el.style.animationTimingFunction).toBe('cubic-bezier(0.32, 0.94, 0.6, 1)');
-      done();
+    wrapper.setData({ active: true, hidden: false, animationDirection: 'exit-left' });
+    await wrapper.vm.$nextTick();
+    wrapper.trigger('animationend', {
+      animationName: 'exit-left'
     });
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.hidden).toBe(true);
+    expect(wrapper.vm.animationDirection).toBe(null);
   });
 
-  it('leave end function properly clears transition', (done) => {
-    const wrapper = shallowMount(CdrTabPanel, {
-      propsData: {
-        name: 'test',
+  it('handleUpArrowNav', async () => {
+    const spyUpdateUnderline = jest.fn();
+    const spySetFocusToActiveTabHeader = jest.fn();
+    const wrapper = mount(CdrTabs, {
+      stubs: {
+        'cdr-tab-panel': CdrTabPanel,
       },
-    });
-    wrapper.vm.setActive(true);
-
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setLeaveEnd(wrapper.vm.$el);
-      expect(wrapper.vm.$el.classList.contains('flyRight')).toBe(false);
-      done();
-    });
-  });
-
-  it('set animation direction functions correctly', (done) => {
-    const wrapper = shallowMount(CdrTabPanel, {
-      propsData: {
-        name: 'test',
+      slots: {
+        default: ['<cdr-tab-panel name="tab1" id="tab1" aria-labelledby="tab1" />', '<cdr-tab-panel name="tab2" id="tab2" aria-labelledby="tab2" />']
       },
-    });
-    wrapper.vm.setActive(true);
-
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setAnimationDirection('flyLeft');
-      expect(wrapper.vm.animationDirection).toBe('flyLeft');
-      done();
-    });
-  });
-
-  it('set animation direction functions correctly', (done) => {
-    const wrapper = shallowMount(CdrTabPanel, {
-      propsData: {
-        name: 'test',
+      methods: {
+        updateUnderline: spyUpdateUnderline,
+        setFocusToActiveTabHeader: spySetFocusToActiveTabHeader,
       },
+      attachToDocument: true,
     });
-    wrapper.vm.setActive(true);
+    await wrapper.vm.$nextTick();
 
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.setOffsetX(1234);
-      expect(wrapper.vm.offsetX).toBe(1234);
-      done();
-    });
-  });
+    wrapper.find(CdrTabPanel).trigger('keydown.up');
+    expect(spySetFocusToActiveTabHeader).toHaveBeenCalled();
+  })
 });

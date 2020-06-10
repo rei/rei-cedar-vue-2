@@ -2,15 +2,16 @@
 
 exports[`CdrPagination renders correctly 1`] = `
 <nav
-  aria-label="Pagination Navigation"
+  aria-label="Pagination"
 >
-  <ul
+  <ol
     class="cdr-pagination"
   >
     <li
       aria-hidden="true"
     >
       <span
+        aria-disabled="true"
         class="cdr-pagination__link cdr-pagination__prev cdr-pagination__link--disabled"
       >
         <svg
@@ -186,15 +187,15 @@ exports[`CdrPagination renders correctly 1`] = `
         </svg>
       </a>
     </li>
-  </ul>
+  </ol>
 </nav>
 `;
 
 exports[`CdrPagination renders scoped slot correctly 1`] = `
 <nav
-  aria-label="Pagination Navigation"
+  aria-label="Pagination"
 >
-  <ul
+  <ol
     class="cdr-pagination"
   >
     <li>
@@ -369,6 +370,6 @@ exports[`CdrPagination renders scoped slot correctly 1`] = `
         </svg>
       </span>
     </li>
-  </ul>
+  </ol>
 </nav>
 `;

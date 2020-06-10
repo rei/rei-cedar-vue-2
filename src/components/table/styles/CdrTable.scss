@@ -1,0 +1,66 @@
+@import '../../../css/settings/index.scss';
+@import './vars/CdrTable.vars.scss';
+
+.cdr-table {
+  @include cdr-table-base-mixin;
+
+  &--small {
+    @include cdr-table-small-mixin;
+  }
+
+  &--medium {
+    @include cdr-table-medium-mixin;
+  }
+
+  &--large {
+    @include cdr-table-large-mixin;
+  }
+
+  &--striped {
+    @include cdr-table-striped-mixin;
+  }
+
+  &--border {
+    @include cdr-table-border-mixin;
+  }
+
+  &--full-width {
+    @include cdr-table-full-width-mixin;
+  }
+
+  &--responsive {
+    @include cdr-table-responsive-mixin;
+  }
+
+  &--hover {
+    @include cdr-table-hover-mixin;
+  }
+
+  // @xs
+  @include cdr-xs-mq-only {
+    &--full-width\@xs {
+      @include cdr-table-full-width-mixin;
+    }
+  }
+
+  // @sm
+  @include cdr-sm-mq-only {
+    &--full-width\@sm {
+      @include cdr-table-full-width-mixin;
+    }
+  }
+
+  // @md
+  @include cdr-md-mq-only {
+    &--full-width\@md {
+      @include cdr-table-full-width-mixin;
+    }
+  }
+
+  // @lg
+  @include cdr-lg-mq-only {
+    &--full-width\@lg {
+      @include cdr-table-full-width-mixin;
+    }
+  }
+}

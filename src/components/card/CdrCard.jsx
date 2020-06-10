@@ -1,14 +1,17 @@
-import clsx from 'clsx';
-import modifier from '../../mixins/modifier';
 import style from './styles/CdrCard.scss';
 
 export default {
   name: 'CdrCard',
-  mixins: [modifier],
   data() {
     return {
       style,
     };
+  },
+  props: {
+    tag: {
+      type: String,
+      default: 'article',
+    },
   },
   computed: {
     baseClass() {
@@ -16,8 +19,9 @@ export default {
     },
   },
   render() {
-    return (<article class={clsx(this.style[this.baseClass], this.modifierClass)}>
+    const Component = this.tag;
+    return (<Component class={this.style[this.baseClass]}>
       {this.$slots.default}
-    </article>);
+    </Component>);
   },
 };

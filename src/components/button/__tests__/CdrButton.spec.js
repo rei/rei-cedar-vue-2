@@ -3,7 +3,7 @@ import CdrButton from 'componentdir/button/CdrButton';
 import sinon from 'sinon'
 
 describe('CdrButton', () => {
-  test('renders correctly', () => {
+  it('renders correctly', () => {
     const wrapper = mount(CdrButton);
     expect(wrapper.element).toMatchSnapshot();
   });
@@ -58,15 +58,15 @@ describe('CdrButton', () => {
     expect(wrapper.vm.iconClass).toBe('');
   });
 
-  it('adds classes for icon only and on-dark', () => {
+  it('adds class for icon only', () => {
     const wrapper = shallowMount(CdrButton, {
       propsData: {
         iconOnly: true,
-        onDark: true,
+        withBackground: true,
       }
     });
-    expect(wrapper.classes()).toContain('cdr-button--on-dark');
     expect(wrapper.classes()).toContain('cdr-button--icon-only');
+    expect(wrapper.classes()).toContain('cdr-button--with-background');
   });
 
   it('adds icon class when slot is used', () => {

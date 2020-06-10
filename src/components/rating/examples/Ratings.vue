@@ -16,8 +16,8 @@
       data-backstop="rating-secondary-linked"
     />
     <cdr-rating
-      rating="4.5"
-      count="21"
+      rating="0"
+      count="0"
       href="https://www.rei.com"
       data-backstop="rating-primary-linked"
     />
@@ -130,7 +130,7 @@
     <cdr-rating
       rating="2"
       count="9"
-      size="small@xs large@md large@lg"
+      size="small@xs medium@md large@lg"
     />
     <cdr-text tag="h3">
       Responsive Inverse
@@ -138,7 +138,7 @@
     <cdr-rating
       rating="3"
       count="100"
-      size="large@xs small@md small@lg"
+      size="large@xs medium@md small@lg"
     />
   </div>
 </template>

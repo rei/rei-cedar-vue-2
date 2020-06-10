@@ -50,8 +50,8 @@ export default {
     disabled: Boolean,
     /** @ignore */
     required: Boolean,
-    /** DEPRECATED */
     multiple: Boolean,
+    multipleSize: Number,
   },
   data() {
     return {
@@ -94,22 +94,19 @@ export default {
       // https://vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components
       // handles conflict between v-model and v-on="$listeners"
       const vm = this;
-      return Object.assign(
-        {},
-        this.$listeners,
-        {
-          change(event) {
-            if (vm.multiple) {
-              const optArr = toArray(event.target.options);
-              const selected = optArr.filter(o => o.selected === true).map(o => o.value);
+      return {
+        ...this.$listeners,
+        change(event) {
+          if (vm.multiple) {
+            const optArr = toArray(event.target.options);
+            const selected = optArr.filter((o) => o.selected === true).map((o) => o.value);
 
-              vm.$emit('change', selected, event);
-            } else {
-              vm.$emit('change', event.target.value, event);
-            }
-          },
+            vm.$emit('change', selected, event);
+          } else {
+            vm.$emit('change', event.target.value, event);
+          }
         },
-      );
+      };
     },
     selectEl() {
       return (
@@ -117,6 +114,7 @@ export default {
           class={clsx(this.sizeClass, this.selectClass)}
           id={this.selectId}
           multiple={this.multiple}
+          size={this.multipleSize}
           disabled={this.disabled}
           required={this.required}
           aria-label={this.hideLabel ? this.label : null}
@@ -135,7 +133,7 @@ export default {
               { this.prompt }
             </option>
           }
-          {this.computedOpts.map(option => (
+          {this.computedOpts.map((option) => (
               <option
                 key={option.text}
                 value={option.value}
