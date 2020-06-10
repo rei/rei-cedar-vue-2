@@ -43,7 +43,6 @@
 @font-family-base:                                 @cdr-font-family-serif;
 @headings-font-family:                             @cdr-font-family-serif;
 @headings-font-family-secondary:                   @cdr-font-family-sans;
-
 // Line-height
 //----------------------------------------------------------------------------------------------------------------------
 // Unit-less `line-height` for use in components like buttons.
