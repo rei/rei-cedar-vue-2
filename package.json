@@ -1,6 +1,6 @@
 {
   "name": "@rei/cedar",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "REI Cedar Component Library",
   "homepage": "https://rei.github.io/rei-cedar/",
   "license": "MIT",
@@ -13,7 +13,7 @@
   },
   "author": "REI Software Engineering",
   "main": "dist/cedar.js",
-  "module": "dist/lib/index.mjs",
+  "module": "dist/lib/src/index.mjs",
   "style": "dist/style/cedar-full.css",
   "files": [
     "dist"
