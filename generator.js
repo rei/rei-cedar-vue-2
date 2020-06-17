@@ -27,12 +27,6 @@ const CHOICES = [
 // User prompts
 const QUESTIONS = [
   {
-    name: 'type',
-    type: 'list',
-    message: 'What are you making?',
-    choices: CHOICES,
-  },
-  {
     name: 'name',
     type: 'input',
     message: 'What is the component name? (kebab-case without Cdr/Cedar prefix)',
@@ -47,16 +41,13 @@ const QUESTIONS = [
 
 // use answers
 inquirer.prompt(QUESTIONS).then((answers) => {
-  const { type } = answers;
-  const typeCap = _.upperFirst(type);
-  const typeSingle = type.slice(0, -1);
   const { name } = answers; // test-comp
   const camelName = _.camelCase(name); // testComp
   const pascalName = _.upperFirst(camelName); // TestComp
   const compName = `Cdr${pascalName}`; // CdrTestComp
   const tagName = _.kebabCase(compName); // cdr-test-comp
   const fullName = `cedar-${name}`; // cedar-test-comp
-  const outDir = resolve(`src/${type}/${camelName}`);
+  const outDir = resolve(`src/components/${camelName}`);
 
   // exit if the component already exists
   if (fs.existsSync(outDir)) {
@@ -90,8 +81,6 @@ inquirer.prompt(QUESTIONS).then((answers) => {
       if (err) throw err;
 
       const rewrite = contents
-        .replace(/\{TYPE-SINGULAR\}/g, typeSingle)
-        .replace(/\{TYPE-CAPITAL\}/g, typeCap)
         .replace(/\{NAME-PASCAL\}/g, pascalName)
         .replace(/\{NAME-TAGNAME\}/g, tagName)
         .replace(/\{NAME-KEBAB\}/g, name)
