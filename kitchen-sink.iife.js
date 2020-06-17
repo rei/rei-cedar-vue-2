@@ -14886,7 +14886,6 @@ var cedar = (function () {
   //
   //
   //
-  // import examples from 'componentsdir/examples';
   var script = {
     name: 'App'
   };
@@ -51046,32 +51045,30 @@ var cedar = (function () {
       undefined
     );
 
-  // import searchbox from 'compositionsdir/search/examples/searchbox';
-
-  var examples = {
+  var Examples = {
     accordion: __vue_component__$1,
     breadcrumb: __vue_component__$2,
-    buttons: __vue_component__$7,
-    captionExample: __vue_component__$8,
-    cards: __vue_component__$b,
-    checkboxes: __vue_component__$c,
+    button: __vue_component__$7,
+    caption: __vue_component__$8,
+    card: __vue_component__$b,
+    checkbox: __vue_component__$c,
     cta: __vue_component__$d,
     dataTable: __vue_component__$j,
     grid: __vue_component__$l,
-    icons: __vue_component__$m,
-    images: __vue_component__$q,
-    inputs: __vue_component__$r,
-    links: __vue_component__$u,
-    lists: __vue_component__$z,
-    modals: __vue_component__$A,
+    icon: __vue_component__$m,
+    image: __vue_component__$q,
+    input: __vue_component__$r,
+    link: __vue_component__$u,
+    list: __vue_component__$z,
+    modal: __vue_component__$A,
     pagination: __vue_component__$B,
-    quoteExample: __vue_component__$E,
-    radios: __vue_component__$F,
-    ratings: __vue_component__$G,
-    selects: __vue_component__$H,
-    tables: __vue_component__$I,
+    quote: __vue_component__$E,
+    radio: __vue_component__$F,
+    rating: __vue_component__$G,
+    select: __vue_component__$H,
+    table: __vue_component__$I,
     tabs: __vue_component__$K,
-    texts: __vue_component__$O,
+    text: __vue_component__$O,
     utilities: __vue_component__$W
   };
 
@@ -51080,11 +51077,11 @@ var cedar = (function () {
   function _objectSpread$3a(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { var _context; forEach$2(_context = ownKeys$3b(Object(source), true)).call(_context, function (key) { defineProperty$7(target, key, source[key]); }); } else if (getOwnPropertyDescriptors$2) { defineProperties$1(target, getOwnPropertyDescriptors$2(source)); } else { var _context2; forEach$2(_context2 = ownKeys$3b(Object(source))).call(_context2, function (key) { defineProperty$1(target, key, getOwnPropertyDescriptor$3(source, key)); }); } } return target; }
   var script$X = {
     name: 'KitchenSink',
-    components: _objectSpread$3a({}, examples),
+    components: _objectSpread$3a({}, Examples),
 
     data() {
       return {
-        examples
+        examples: Examples
       };
     }
 
@@ -51157,99 +51154,99 @@ var cedar = (function () {
   }, {
     path: '/utilities',
     name: 'Utilities',
-    component: __vue_component__$W
+    component: Examples.utilities
   }, {
     path: '/accordion',
     name: 'Accordion',
-    component: __vue_component__$1
+    component: Examples.accordion
   }, {
     path: '/breadcrumbs',
     name: 'Breadcrumb',
-    component: __vue_component__$2
+    component: Examples.breadcrumb
   }, {
     path: '/buttons',
     name: 'Buttons',
-    component: __vue_component__$7
+    component: Examples.button
   }, {
     path: '/captions',
     name: 'Captions',
-    component: __vue_component__$8
+    component: Examples.caption
   }, {
     path: '/cards',
     name: 'Cards',
-    component: __vue_component__$b
+    component: Examples.card
   }, {
     path: '/checkboxes',
     name: 'CheckBoxes',
-    component: __vue_component__$c
+    component: Examples.checkbox
   }, {
     path: '/cta',
     name: 'CTA',
-    component: __vue_component__$d
+    component: Examples.cta
   }, {
     path: '/dataTables',
     name: 'Data Tables',
-    component: __vue_component__$j
+    component: Examples.dataTable
   }, {
     path: '/grids',
     name: 'Grids',
-    component: __vue_component__$l
+    component: Examples.grid
   }, {
     path: '/icons',
     name: 'Icons',
-    component: __vue_component__$m
+    component: Examples.icon
   }, {
     path: '/images',
     name: 'Images',
-    component: __vue_component__$q
+    component: Examples.image
   }, {
     path: '/inputs',
     name: 'Input',
-    component: __vue_component__$r
+    component: Examples.input
   }, {
     path: '/links',
     name: 'Links',
-    component: __vue_component__$u
+    component: Examples.link
   }, {
     path: '/lists',
     name: 'Lists',
-    component: __vue_component__$z
+    component: Examples.list
   }, {
     path: '/modals',
     name: 'Modals',
-    component: __vue_component__$A
+    component: Examples.modal
   }, {
     path: '/pagination',
     name: 'Pagination',
-    component: __vue_component__$B
+    component: Examples.pagination
   }, {
     path: '/quotes',
     name: 'Quotes',
-    component: __vue_component__$E
+    component: Examples.quote
   }, {
     path: '/radios',
     name: 'Radios',
-    component: __vue_component__$F
+    component: Examples.radio
   }, {
     path: '/ratings',
     name: 'Ratings',
-    component: __vue_component__$G
+    component: Examples.rating
   }, {
     path: '/selects',
     name: 'Selects',
-    component: __vue_component__$H
+    component: Examples.select
   }, {
     path: '/tables',
     name: 'Tables',
-    component: __vue_component__$I
+    component: Examples.table
   }, {
     path: '/tabs',
     name: 'Tabs',
-    component: __vue_component__$K
+    component: Examples.tabs
   }, {
     path: '/texts',
     name: 'Texts',
-    component: __vue_component__$O
+    component: Examples.text
   }, {
     path: '/default-buttons',
     component: __vue_component__$3
