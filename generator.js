@@ -95,7 +95,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   // Done!
   console.log(chalk.green(`Successfuly generated files for '${name}' in ${outDir}`));
   console.log(chalk.white('To complete setup do the following:'));
-  console.log(chalk.white('- Add component to src/index.js'));
-  console.log(chalk.white('- Add component example to src/components/examples.js'));
-  console.log(chalk.white('- Add router path in src/router.js'));
+  console.log(chalk.white('- Export component in src/index.js'));
+  console.log(chalk.white('- Export component example in src/components/examples.js'));
+  console.log(chalk.white('- Add dev router path in src/dev/router.js'));
 });
