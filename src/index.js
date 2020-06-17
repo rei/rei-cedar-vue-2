@@ -1,6 +1,7 @@
 /* eslint-disable */
 export { default as CdrAccordion } from './components/accordion/CdrAccordion';
 export { default as CdrAccordionGroup } from './components/accordion/CdrAccordionGroup';
+export { default as CdrAlert } from './components/alert/CdrAlert';
 export { default as CdrBreadcrumb } from './components/breadcrumb/CdrBreadcrumb';
 export { default as CdrButton } from './components/button/CdrButton';
 export { default as CdrCaption } from './components/caption/CdrCaption';
