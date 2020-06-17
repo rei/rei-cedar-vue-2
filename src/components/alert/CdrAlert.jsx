@@ -6,11 +6,6 @@ import style from './styles/CdrAlert.scss';
 export default {
   name: 'CdrAlert',
   mixins: [BuildClass],
-  data() {
-    return {
-      style,
-    };
-  },
   props: {
     type: {
       type: String,
@@ -18,14 +13,19 @@ export default {
         value,
         ['info', 'warning', 'success', 'error'],
       ),
-    }
+    },
+  },
+  data() {
+    return {
+      style,
+    };
   },
   computed: {
     baseClass() {
       return 'cdr-alert';
     },
     iconClass() {
-      console.log(this.modifyClassName(this.baseClass, this.type))
+      console.log(this.modifyClassName(this.baseClass, this.type));
       return this.modifyClassName(this.baseClass, this.type);
     },
   },
