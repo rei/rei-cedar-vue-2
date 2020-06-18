@@ -12,11 +12,7 @@ describe('CdrTabs', () => {
       expect(wrapper.element).toMatchSnapshot();
     });
 
-    it('mounts with cdr-tab-panel children', async () => {
-      const spyGetNextTab = jest.fn();
-      const spyGetHeaderWidth = jest.fn();
-      const spyCalculateOverflow = jest.fn();
-      const spyUpdateUnderline = jest.fn();
+    it('mounts with cdr-tab-panel children', async (done) => {
 
       const wrapper = mount(CdrTabs, {
         stubs: {
@@ -28,25 +24,28 @@ describe('CdrTabs', () => {
             '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
           ],
         },
-        methods: {
-          getNextTab: spyGetNextTab,
-          getHeaderWidth: spyGetHeaderWidth,
-          calculateOverflow: spyCalculateOverflow,
-          updateUnderline: spyUpdateUnderline,
+        propsData: {
+          activeTab: 1,
         },
       });
 
+      const spyGetHeaderWidth = spyOn(wrapper.vm, 'getHeaderWidth');
+      const spyCalculateOverflow = spyOn(wrapper.vm, 'calculateOverflow');
+      const spyUpdateUnderline = spyOn(wrapper.vm, 'updateUnderline');
+
       await wrapper.vm.$nextTick();
+
+      expect(wrapper.element).toMatchSnapshot();
 
       expect(wrapper.vm.tabs.length).toBe(2);
       expect(wrapper.findAll('li').length).toBe(2);
-      expect(wrapper.element).toMatchSnapshot();
-      expect(spyGetNextTab).toHaveBeenCalled();
-      expect(spyGetHeaderWidth).toHaveBeenCalled();
-      expect(spyCalculateOverflow).toHaveBeenCalled();
+      expect(wrapper.vm.activeTabIndex).toBe(1);
       setTimeout(() => { // for debounce
+        expect(spyGetHeaderWidth).toHaveBeenCalled();
+        expect(spyCalculateOverflow).toHaveBeenCalled();
         expect(spyUpdateUnderline).toHaveBeenCalled();
         wrapper.destroy();
+        done();
       }, 600);
     });
   });
@@ -57,8 +56,6 @@ describe('CdrTabs', () => {
       if (document.body) {
         document.body.appendChild(elem)
       }
-      const spyCalculateOverflow = jest.fn();
-      const spyUpdateUnderline = jest.fn();
 
       const wrapper = mount(CdrTabs, {
         stubs: {
@@ -70,22 +67,21 @@ describe('CdrTabs', () => {
             '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
           ],
         },
-        methods: {
-          calculateOverflow: spyCalculateOverflow,
-          updateUnderline: spyUpdateUnderline,
-        },
         attachTo: elem,
       });
 
-        wrapper.vm.$refs.cdrTabsHeader.parentElement.dispatchEvent(new Event('scroll'));
-        await wrapper.vm.$nextTick();
+      const spyCalculateOverflow = spyOn(wrapper.vm, 'calculateOverflow');
+      const spyUpdateUnderline = spyOn(wrapper.vm, 'updateUnderline');
 
-        setTimeout(() => { // for debounce
-          expect(wrapper.vm.overflowLeft).toBe(false);
-          expect(spyCalculateOverflow).toHaveBeenCalled();
-          expect(spyUpdateUnderline).toHaveBeenCalled();
-          wrapper.destroy();
-        }, 600);
+      wrapper.vm.$refs.cdrTabsHeader.parentElement.dispatchEvent(new Event('scroll'));
+      await wrapper.vm.$nextTick();
+
+      setTimeout(() => { // for debounce
+        expect(wrapper.vm.overflowLeft).toBe(false);
+        expect(spyCalculateOverflow).toHaveBeenCalled();
+        expect(spyUpdateUnderline).toHaveBeenCalled();
+        wrapper.destroy();
+      }, 600);
     });
 
     it('handles resize event', async () => {
@@ -93,9 +89,6 @@ describe('CdrTabs', () => {
       if (document.body) {
         document.body.appendChild(elem)
       }
-      const spyCalculateOverflow = jest.fn();
-      const spyUpdateUnderline = jest.fn();
-      const spyGetHeaderWidth = jest.fn();
 
       const wrapper = mount(CdrTabs, {
         stubs: {
@@ -107,14 +100,12 @@ describe('CdrTabs', () => {
             '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
           ],
         },
-        methods: {
-          calculateOverflow: spyCalculateOverflow,
-          updateUnderline: spyUpdateUnderline,
-          getHeaderWidth: spyGetHeaderWidth,
-        },
         attachTo: elem,
       });
 
+      const spyCalculateOverflow = spyOn(wrapper.vm, 'calculateOverflow');
+      const spyUpdateUnderline = spyOn(wrapper.vm, 'updateUnderline');
+      const spyGetHeaderWidth = spyOn(wrapper.vm, 'getHeaderWidth');
       window.dispatchEvent(new Event('resize'));
       await wrapper.vm.$nextTick();
 
@@ -244,7 +235,6 @@ describe('CdrTabs', () => {
       if (document.body) {
         document.body.appendChild(elem)
       }
-      const spyUpdateUnderline = jest.fn();
       const wrapper = mount(CdrTabs, {
         stubs: {
           'cdr-tab-panel': CdrTabPanel,
@@ -254,9 +244,6 @@ describe('CdrTabs', () => {
             '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
             '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
           ],
-        },
-        methods: {
-          updateUnderline: spyUpdateUnderline,
         },
         attachTo: elem,
       });
@@ -295,7 +282,6 @@ describe('CdrTabs', () => {
   });
 
   it('accessibility', async () => {
-    const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
@@ -305,9 +291,6 @@ describe('CdrTabs', () => {
           '<cdr-tab-panel name="tab1" id="tab-panel-1"  aria-labelledby="tab-1" />',
           '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />',
           '<cdr-tab-panel name="tab3" :disabled="true" id="tab-panel-3" aria-labelledby="tab-3" />']
-      },
-      methods: {
-        updateUnderline: spyUpdateUnderline,
       },
     });
 
@@ -328,7 +311,6 @@ describe('CdrTabs', () => {
     if (document.body) {
       document.body.appendChild(elem)
     }
-    const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
@@ -338,9 +320,6 @@ describe('CdrTabs', () => {
           '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
           '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
         ],
-      },
-      methods: {
-        updateUnderline: spyUpdateUnderline,
       },
       attachTo: elem,
     });
@@ -357,7 +336,6 @@ describe('CdrTabs', () => {
     if (document.body) {
       document.body.appendChild(elem)
     }
-    const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
@@ -367,9 +345,6 @@ describe('CdrTabs', () => {
           '<cdr-tab-panel name="tab1" id="tab-panel-1" aria-labelledby="tab-1" />',
           '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
         ],
-      },
-      methods: {
-        updateUnderline: spyUpdateUnderline,
       },
       attachTo: elem,
     });
