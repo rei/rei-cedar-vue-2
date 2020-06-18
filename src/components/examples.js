@@ -1,4 +1,5 @@
 import accordion from 'componentsdir/accordion/examples/Accordion';
+import alert from 'componentsdir/alert/examples/Alert';
 import breadcrumb from 'componentsdir/breadcrumb/examples/Breadcrumb';
 import button from 'componentsdir/button/examples/Buttons';
 import caption from 'componentsdir/caption/examples/Caption';
@@ -24,6 +25,7 @@ import text from 'componentsdir/text/examples/Text';
 import utilities from 'componentsdir/Utilities/Utilities';
 
 export default {
+  alert,
   accordion,
   breadcrumb,
   button,
