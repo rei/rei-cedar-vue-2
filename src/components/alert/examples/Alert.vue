@@ -2,24 +2,24 @@
   <div>
     <h2>alert</h2>
     <cdr-alert type="info">
-      info alert
+      <icon-information-fill/> info alert
     </cdr-alert>
     <br>
     <cdr-alert type="success">
-      success alert
+      <icon-check-fill/> success alert
     </cdr-alert>
     <br>
     <cdr-alert type="warning">
-      warning alert
+      <icon-warning-fill/> warning alert
     </cdr-alert>
     <br>
     <cdr-alert type="error">
-      error alert
+      <icon-x-fill/> error alert
     </cdr-alert>
     <br>
     <cdr-alert type="error">
       <cdr-text modifier="heading-serif-strong-1200">
-        error alert
+        <icon-x-fill/> error alert
       </cdr-text>
     </cdr-alert>
   </div>

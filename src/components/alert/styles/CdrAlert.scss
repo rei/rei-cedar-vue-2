@@ -6,47 +6,40 @@
 // Padding/spacing/icon placement?
 // Responsize/size prop? (would need spacing/text for sm/large as well)
 
-@mixin alert-icon($url, $color) {
-  &::before {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: $cdr-space-quarter-x;
-    content: " ";
-    width: $cdr-icon-size;
-    height: $cdr-icon-size;
-    background-image: svg-load($url, fill="#{$color}");
-    background-repeat: no-repeat;
-  }
-}
-
 .cdr-alert {
   position: relative;
   padding: $cdr-space-half-x;
-  padding-left: $cdr-space-two-x;
-  @include cdr-text-default
+  @include cdr-text-default;
 }
 
 .cdr-alert--info {
   background-color: $cdr-color-background-info;
   border: 1px solid $cdr-color-border-info;
-  @include alert-icon('node_modules/@rei/cedar-icons/dist/icons/information-fill.svg', $cdr-color-text-info);
+  svg {
+    fill: $cdr-color-text-info;
+  }
 }
 
 .cdr-alert--warning {
   background-color: $cdr-color-background-warning;
   border: 1px solid $cdr-color-border-warning;
-  @include alert-icon('node_modules/@rei/cedar-icons/dist/icons/warning-fill.svg', $cdr-color-text-warning);
+  svg {
+    fill: $cdr-color-text-warning;
+  }
 }
 
 .cdr-alert--success {
   background-color: $cdr-color-background-success;
   border: 1px solid $cdr-color-border-success;
-  @include alert-icon('node_modules/@rei/cedar-icons/dist/icons/check-fill.svg', $cdr-color-text-success);
+  svg {
+    fill: $cdr-color-text-success;
+  }
 }
 
 .cdr-alert--error {
   background-color: $cdr-color-background-error;
   border: 1px solid $cdr-color-border-error;
-  @include alert-icon('node_modules/@rei/cedar-icons/dist/icons/x-fill.svg', $cdr-color-text-error);
+  svg {
+    fill: $cdr-color-text-error;
+  }
 }

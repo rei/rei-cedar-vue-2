@@ -31,7 +31,7 @@ export default {
   },
   render() {
     return (
-      <div class={clsx(this.style[this.baseClass], this.iconClass)}>
+      <div class={clsx(this.style[this.baseClass], this.iconClass)} role="alert">
         {this.$slots.default}
       </div>
     );
