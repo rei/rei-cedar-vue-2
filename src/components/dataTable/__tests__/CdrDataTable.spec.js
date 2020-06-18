@@ -83,6 +83,10 @@ describe('CdrDataTable', () => {
     });
 
     it('adds resize event watcher', async () => {
+      const elem = document.createElement('div')
+      if (document.body) {
+        document.body.appendChild(elem)
+      }
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: data.colHeaders,
@@ -95,17 +99,22 @@ describe('CdrDataTable', () => {
         methods: {
           setRowsContentHeight: () => true,
         },
-        attachToDocument: true,
+        attachTo: elem,
       });
-      
+
       const spy = spyOn(wrapper.vm, 'checkScroll');
       window.dispatchEvent(new Event('resize'));
       await wrapper.vm.$nextTick();
-    
+
       expect(spy).toHaveBeenCalled();
+      wrapper.destroy();
     });
 
     it('adds load event watcher', async () => {
+      const elem = document.createElement('div')
+      if (document.body) {
+        document.body.appendChild(elem)
+      }
       const wrapper = shallowMount(CdrDataTable, {
         propsData: {
           colHeaders: data.colHeaders,
@@ -118,14 +127,15 @@ describe('CdrDataTable', () => {
         methods: {
           setRowsContentHeight: () => true,
         },
-        attachToDocument: true,
+        attachTo: elem,
       });
-      
+
       const spy = spyOn(wrapper.vm, 'setRowsContentHeight');
       window.dispatchEvent(new Event('load'));
       await wrapper.vm.$nextTick();
 
       expect(spy).toHaveBeenCalled();
+      wrapper.destroy();
     });
   });
 
@@ -237,7 +247,7 @@ describe('CdrDataTable', () => {
     });
 
     describe('getRowAlignHeight', () => {
-      let wrapper; 
+      let wrapper;
 
       beforeEach(() => {
         wrapper = shallowMount(CdrDataTable, {

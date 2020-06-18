@@ -37,7 +37,7 @@ describe('CdrAccordion', () => {
       },
     });
     const button = wrapper.find('#test');
-    const contentArea = wrapper.find({ ref: 'accordion-content' });
+    const contentArea = wrapper.findComponent({ ref: 'accordion-content' });
     expect(button.classes()).toContain('js-cdr-accordion-button');
     // closed state
     expect(button.attributes('aria-expanded')).toBe('false');

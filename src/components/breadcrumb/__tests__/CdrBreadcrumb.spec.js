@@ -71,11 +71,11 @@ describe('CdrBreadcrumb', () => {
       }
     });
 
-    const ellipse = wrapper.find({ref: 'ellipse'});
+    const ellipse = wrapper.findComponent({ref: 'ellipse'});
     expect(ellipse.attributes()['aria-label']).toBe('show 1 more navigation level');
     expect(ellipse.attributes()['aria-controls']).toBe(`${wrapper.vm.$data.componentID}List`);
     expect(ellipse.attributes()['aria-expanded']).toBe('false');
-    expect(wrapper.is('nav')).toBe(true);
+    expect(wrapper.element.tagName).toBe('NAV');
     expect(wrapper.attributes()['aria-label']).toBe('breadcrumbs');
   });
 
@@ -97,7 +97,7 @@ describe('CdrBreadcrumb', () => {
 
 
     expect(wrapper.vm.truncate).toBe(true);
-    wrapper.find({ref: 'ellipse'}).trigger('click');
+    wrapper.findComponent({ref: 'ellipse'}).trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.truncate).toBeFalsy();
   });
@@ -134,15 +134,20 @@ describe('CdrBreadcrumb', () => {
   });
 
   it('applies focus to first breadcrumb on ellipsis click', async () => {
+    const elem = document.createElement('div')
+    if (document.body) {
+      document.body.appendChild(elem)
+    }
     const wrapper = mount(CdrBreadcrumb, {
       propsData: {
         items: itemsA,
       },
-      attachToDocument: true, // enables focus testing
+      attachTo: elem, // enables focus testing
     });
     wrapper.vm.handleEllipsisClick();
     await wrapper.vm.$nextTick();
     expect(document.activeElement.textContent).toBe(itemsA[0].item.name);
+    wrapper.destroy();
   });
 
 });

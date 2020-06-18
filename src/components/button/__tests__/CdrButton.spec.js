@@ -86,6 +86,6 @@ describe('CdrButton', () => {
         tag: 'a',
       },
     });
-    expect(wrapper.is('a')).toBe(true);
+    expect(wrapper.element.tagName).toBe('A');
   });
 });

@@ -130,7 +130,7 @@ describe('cdrSelect', () => {
         options: ['3', '4'],
       },
     });
-    const select = wrapper.find({ ref: 'select'});
+    const select = wrapper.findComponent({ ref: 'select'});
     const options = select.findAll('option');
     options.at(0).setSelected();
     await wrapper.vm.$nextTick();
@@ -158,7 +158,7 @@ describe('cdrSelect', () => {
         }],
       },
     });
-    const select = wrapper.find({ ref: 'select' });
+    const select = wrapper.findComponent({ ref: 'select' });
     const options = select.findAll('option');
     options.at(0).element.selected = true;
     options.at(1).element.selected = false;
@@ -176,7 +176,7 @@ describe('cdrSelect', () => {
         options: ['3', '4'],
       },
     });
-    const select = wrapper.find({ ref: 'select' });
+    const select = wrapper.findComponent({ ref: 'select' });
     const options = select.findAll('option');
     wrapper.setProps({value: '3'});
     await wrapper.vm.$nextTick();
