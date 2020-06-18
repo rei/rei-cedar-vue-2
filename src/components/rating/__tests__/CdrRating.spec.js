@@ -23,21 +23,21 @@ describe('CdrRating', () => {
     expect(wrapper.vm.remainder).toBe('50');
     expect(wrapper.vm.rounded).toBe(3.5);
     expect(wrapper.vm.empties).toBe(1);
-    
+
     wrapper.setProps({rating: 3.122227});
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.whole).toBe(3);
     expect(wrapper.vm.remainder).toBe('00');
     expect(wrapper.vm.rounded).toBe(3);
     expect(wrapper.vm.empties).toBe(2);
-    
+
     wrapper.setProps({rating: 3.222227});
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.whole).toBe(3);
     expect(wrapper.vm.remainder).toBe('25');
     expect(wrapper.vm.rounded).toBe(3.25);
     expect(wrapper.vm.empties).toBe(1);
-    
+
     wrapper.setProps({rating: 3.673323});
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.whole).toBe(3);
@@ -65,7 +65,7 @@ describe('CdrRating', () => {
         href: 'rei.com'
       }
     });
-    expect(wrapper.is('a')).toBeTruthy();
+    expect(wrapper.element.tagName).toBe('A');
   });
 
   it('has correct screen reader text when linked', async () => {
@@ -92,7 +92,7 @@ describe('CdrRating', () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.srText).toBe('View the 100 reviews with an average rating of 3 out of 5 stars');
   });
-  
+
   it('has correct screen reader text', async () => {
     const wrapper = shallowMount(CdrRating, {
       propsData: {

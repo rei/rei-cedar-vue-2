@@ -75,7 +75,7 @@ describe('CdrBreadcrumb', () => {
     expect(ellipse.attributes()['aria-label']).toBe('show 1 more navigation level');
     expect(ellipse.attributes()['aria-controls']).toBe(`${wrapper.vm.$data.componentID}List`);
     expect(ellipse.attributes()['aria-expanded']).toBe('false');
-    expect(wrapper.is('nav')).toBe(true);
+    expect(wrapper.element.tagName).toBe('NAV');
     expect(wrapper.attributes()['aria-label']).toBe('breadcrumbs');
   });
 

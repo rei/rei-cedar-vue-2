@@ -98,7 +98,7 @@ describe('CdrPagination', () => {
         value: 1,
       },
     });
-    expect(wrapper.is('nav')).toBe(true);
+    expect(wrapper.element.tagName).toBe('NAV');
   });
 
   it('sorts 20 pages correctly', async () => {
@@ -247,7 +247,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[1][0]).toBe(7);
     expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
     expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
-    
+
     // previous clicks
     prev.trigger('click'); // 7 -> 6
     await wrapper.vm.$nextTick();
@@ -259,7 +259,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[3][0]).toBe(5);
     expect(wrapper.emitted().navigate[3][1]).toBe('?page=5');
     expect(wrapper.emitted().navigate[3][2] instanceof Event).toBeTruthy();
-    
+
     // individual links
     let link = wrapper.findAll('ol > li > a').at(1);
     link.trigger('click'); // 5 -> 1
@@ -277,7 +277,7 @@ describe('CdrPagination', () => {
     link2.trigger('click'); // 2 -> 2
     await wrapper.vm.$nextTick();
     expect(wrapper.emitted().navigate[6]).toBeUndefined();
-    
+
     // use select
     let options = wrapper.find({ ref: `select-${wrapper.vm.componentID}` }).findAll('option')
     options.at(2).setSelected(); // 2 -> 3
@@ -319,7 +319,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[1][0]).toBe(7);
     expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
     expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
-    
+
     // previous clicks
     prev.click(); // 7 -> 6
     await wrapper.vm.$nextTick();
@@ -396,7 +396,7 @@ describe('CdrPagination', () => {
     expect(wrapper.emitted().navigate[1][0]).toBe(7);
     expect(wrapper.emitted().navigate[1][1]).toBe('?page=7');
     expect(wrapper.emitted().navigate[1][2] instanceof Event).toBeTruthy();
-    
+
     // previous clicks
     prev.click(); // 7 -> 6
     await wrapper.vm.$nextTick();

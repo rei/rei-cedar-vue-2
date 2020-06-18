@@ -24,7 +24,7 @@ describe('CdrAccordionGroup', () => {
     });
     expect(wrapper.element).toMatchSnapshot()
   });
-  
+
   it('has correct a11y', async () => {
     const wrapper = mount(CdrAccordionGroup, {
       stubs: {
@@ -40,7 +40,7 @@ describe('CdrAccordionGroup', () => {
       attachToDocument: true,
     });
 
-    expect(wrapper.is('ul')).toBe(true);
+    expect(wrapper.element.tagName).toBe('UL');
     /* keyboard nav tests
       `focusin` doesn't fire outside of the browser environment so it's faked by just doing the logic
       manually instead with setData. The proper focus logic is still checked via document.activeElement
