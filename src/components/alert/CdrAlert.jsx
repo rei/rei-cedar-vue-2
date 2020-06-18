@@ -25,7 +25,6 @@ export default {
       return 'cdr-alert';
     },
     iconClass() {
-      console.log(this.modifyClassName(this.baseClass, this.type));
       return this.modifyClassName(this.baseClass, this.type);
     },
   },

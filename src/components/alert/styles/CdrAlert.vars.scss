@@ -1,0 +1,37 @@
+@mixin cdr-alert-base-mixin() {
+  position: relative;
+  padding: $cdr-space-half-x;
+  @include cdr-text-default;
+}
+
+@mixin cdr-alert-info-mixin() {
+  background-color: $cdr-color-background-info;
+  border: 1px solid $cdr-color-border-info;
+  svg {
+    fill: $cdr-color-text-info;
+  }
+}
+
+@mixin cdr-alert-success-mixin() {
+  background-color: $cdr-color-background-success;
+  border: 1px solid $cdr-color-border-success;
+  svg {
+    fill: $cdr-color-text-success;
+  }
+}
+
+@mixin cdr-alert-warning-mixin() {
+  background-color: $cdr-color-background-warning;
+  border: 1px solid $cdr-color-border-warning;
+  svg {
+    fill: $cdr-color-text-warning;
+  }
+}
+
+@mixin cdr-alert-error-mixin() {
+  background-color: $cdr-color-background-error;
+  border: 1px solid $cdr-color-border-error;
+  svg {
+    fill: $cdr-color-text-error;
+  }
+}
