@@ -53,6 +53,10 @@ describe('CdrTabs', () => {
 
   describe('event listeners', () => {
     it('handles scroll event', async () => {
+      const elem = document.createElement('div')
+      if (document.body) {
+        document.body.appendChild(elem)
+      }
       const spyCalculateOverflow = jest.fn();
       const spyUpdateUnderline = jest.fn();
 
@@ -70,7 +74,7 @@ describe('CdrTabs', () => {
           calculateOverflow: spyCalculateOverflow,
           updateUnderline: spyUpdateUnderline,
         },
-        attachToDocument: true,
+        attachTo: elem,
       });
 
         wrapper.vm.$refs.cdrTabsHeader.parentElement.dispatchEvent(new Event('scroll'));
@@ -85,6 +89,10 @@ describe('CdrTabs', () => {
     });
 
     it('handles resize event', async () => {
+      const elem = document.createElement('div')
+      if (document.body) {
+        document.body.appendChild(elem)
+      }
       const spyCalculateOverflow = jest.fn();
       const spyUpdateUnderline = jest.fn();
       const spyGetHeaderWidth = jest.fn();
@@ -104,7 +112,7 @@ describe('CdrTabs', () => {
           updateUnderline: spyUpdateUnderline,
           getHeaderWidth: spyGetHeaderWidth,
         },
-        attachToDocument: true,
+        attachTo: elem,
       });
 
       window.dispatchEvent(new Event('resize'));
@@ -201,7 +209,7 @@ describe('CdrTabs', () => {
         ],
       }
     });
-    
+
     await wrapper.vm.$nextTick();
     // Trigger right arrow keyup event
     wrapper.findAll('div').at(1).trigger('keyup.right');
@@ -221,7 +229,7 @@ describe('CdrTabs', () => {
         ],
       }
     });
-    
+
     wrapper.setData({ activeTabIndex: 1 });
     await wrapper.vm.$nextTick();
     // Trigger left arrow keyup event
@@ -232,6 +240,10 @@ describe('CdrTabs', () => {
 
   describe('overflow classes', () => {
     it('adds gradient-left class', async () => {
+      const elem = document.createElement('div')
+      if (document.body) {
+        document.body.appendChild(elem)
+      }
       const spyUpdateUnderline = jest.fn();
       const wrapper = mount(CdrTabs, {
         stubs: {
@@ -246,16 +258,21 @@ describe('CdrTabs', () => {
         methods: {
           updateUnderline: spyUpdateUnderline,
         },
-        attachToDocument: true,
+        attachTo: elem,
       });
 
       await wrapper.vm.$nextTick();
       wrapper.setData({ overflowLeft: true });
       await wrapper.vm.$nextTick();
       expect(wrapper.find('.cdr-tabs__header-gradient-left').exists()).toBe(true);
+      wrapper.destroy();
     });
 
     it('adds gradient-right class', async () => {
+      const elem = document.createElement('div')
+      if (document.body) {
+        document.body.appendChild(elem)
+      }
       const wrapper = mount(CdrTabs, {
         stubs: {
           'cdr-tab-panel': CdrTabPanel,
@@ -266,13 +283,14 @@ describe('CdrTabs', () => {
             '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
           ]
         },
-        attachToDocument: true,
+        attachTo: elem,
       });
 
       await wrapper.vm.$nextTick();
       wrapper.setData({ overflowRight: true });
       await wrapper.vm.$nextTick();
       expect(wrapper.find('.cdr-tabs__header-gradient-right').exists()).toBe(true);
+      wrapper.destroy();
     });
   });
 
@@ -306,6 +324,10 @@ describe('CdrTabs', () => {
   });
 
   it('handleDownArrowNav', async () => {
+    const elem = document.createElement('div')
+    if (document.body) {
+      document.body.appendChild(elem)
+    }
     const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -320,16 +342,21 @@ describe('CdrTabs', () => {
       methods: {
         updateUnderline: spyUpdateUnderline,
       },
-      attachToDocument: true,
+      attachTo: elem,
     });
 
     await wrapper.vm.$nextTick();
     wrapper.vm.handleDownArrowNav();
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.$el.lastElementChild.children[wrapper.vm.activeTabIndex]).toBe(document.activeElement);
+    wrapper.destroy();
   });
 
   it('setFocusToActiveTabHeader', async () => {
+    const elem = document.createElement('div')
+    if (document.body) {
+      document.body.appendChild(elem)
+    }
     const spyUpdateUnderline = jest.fn();
     const wrapper = mount(CdrTabs, {
       stubs: {
@@ -344,16 +371,21 @@ describe('CdrTabs', () => {
       methods: {
         updateUnderline: spyUpdateUnderline,
       },
-      attachToDocument: true,
+      attachTo: elem,
     });
 
     await wrapper.vm.$nextTick();
     wrapper.vm.setFocusToActiveTabHeader();
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.$refs.cdrTabsHeader.children[wrapper.vm.activeTabIndex].children[0]).toBe(document.activeElement);
+    wrapper.destroy();
   });
 
   it('scrollbar is hidden properly', async () => {
+    const elem = document.createElement('div')
+    if (document.body) {
+      document.body.appendChild(elem)
+    }
     const wrapper = mount(CdrTabs, {
       stubs: {
         'cdr-tab-panel': CdrTabPanel,
@@ -364,9 +396,9 @@ describe('CdrTabs', () => {
           '<cdr-tab-panel name="tab2" id="tab-panel-2" aria-labelledby="tab-2" />'
         ],
       },
-      attachToDocument: true,
+      attachTo: elem,
     });
-    
+
     wrapper.setData({ widthInitialized: true});
     await wrapper.vm.$nextTick();
     wrapper.setData({ underlineWidth: -1});

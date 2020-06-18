@@ -26,6 +26,10 @@ describe('CdrAccordionGroup', () => {
   });
 
   it('has correct a11y', async () => {
+    const elem = document.createElement('div')
+    if (document.body) {
+      document.body.appendChild(elem)
+    }
     const wrapper = mount(CdrAccordionGroup, {
       stubs: {
         'cdr-accordion': CdrAccordion,
@@ -37,7 +41,7 @@ describe('CdrAccordionGroup', () => {
           '<cdr-accordion id="tab3" label="label3" level="2"/>',
         ]
       },
-      attachToDocument: true,
+      attachTo: elem,
     });
 
     expect(wrapper.element.tagName).toBe('UL');
@@ -76,5 +80,6 @@ describe('CdrAccordionGroup', () => {
     wrapper.setData({ currentIdx: 0 });
     await wrapper.vm.$nextTick();
     expect(buttons[0]).toBe(document.activeElement);
+    wrapper.destroy();
   });
 });

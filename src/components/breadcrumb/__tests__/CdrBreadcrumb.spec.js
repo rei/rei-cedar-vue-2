@@ -134,15 +134,20 @@ describe('CdrBreadcrumb', () => {
   });
 
   it('applies focus to first breadcrumb on ellipsis click', async () => {
+    const elem = document.createElement('div')
+    if (document.body) {
+      document.body.appendChild(elem)
+    }
     const wrapper = mount(CdrBreadcrumb, {
       propsData: {
         items: itemsA,
       },
-      attachToDocument: true, // enables focus testing
+      attachTo: elem, // enables focus testing
     });
     wrapper.vm.handleEllipsisClick();
     await wrapper.vm.$nextTick();
     expect(document.activeElement.textContent).toBe(itemsA[0].item.name);
+    wrapper.destroy();
   });
 
 });

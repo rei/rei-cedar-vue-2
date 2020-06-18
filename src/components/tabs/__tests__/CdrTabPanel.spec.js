@@ -93,6 +93,10 @@ describe('CdrTabPanel', () => {
   });
 
   it('handleUpArrowNav', async () => {
+    const elem = document.createElement('div')
+    if (document.body) {
+      document.body.appendChild(elem)
+    }
     const spyUpdateUnderline = jest.fn();
     const spySetFocusToActiveTabHeader = jest.fn();
     const wrapper = mount(CdrTabs, {
@@ -106,11 +110,12 @@ describe('CdrTabPanel', () => {
         updateUnderline: spyUpdateUnderline,
         setFocusToActiveTabHeader: spySetFocusToActiveTabHeader,
       },
-      attachToDocument: true,
+      attachTo: elem,
     });
     await wrapper.vm.$nextTick();
 
     wrapper.findComponent(CdrTabPanel).trigger('keydown.up');
     expect(spySetFocusToActiveTabHeader).toHaveBeenCalled();
+    wrapper.destroy();
   })
 });
