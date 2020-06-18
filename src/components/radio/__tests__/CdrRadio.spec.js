@@ -127,7 +127,7 @@ describe('CdrRadio', () => {
       },
     });
 
-    const rb = wrapper.find({ ref: 'radio'});
+    const rb = wrapper.findComponent({ ref: 'radio'});
     rb.trigger('click')
     expect(wrapper.emitted().change[0][0]).toBe('A');
   });

@@ -302,7 +302,7 @@ describe('CdrTabs', () => {
     expect(tab1.attributes()['aria-disabled']).toBe('false');
 
     // tablist role
-    expect(wrapper.find({ref: 'cdrTabsHeader'}).attributes()['role']).toBe('tablist');
+    expect(wrapper.findComponent({ref: 'cdrTabsHeader'}).attributes()['role']).toBe('tablist');
   });
 
   it('handleDownArrowNav', async () => {

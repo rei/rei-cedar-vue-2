@@ -78,7 +78,7 @@ describe('CdrCheckbox', () => {
         value: false,
       },
     });
-    const cb = wrapper.find({ ref: 'checkbox'});
+    const cb = wrapper.findComponent({ ref: 'checkbox'});
     cb.trigger('click');
     expect(wrapper.emitted().change[0][0]).toBe(true);
     cb.trigger('click');
@@ -93,7 +93,7 @@ describe('CdrCheckbox', () => {
         value: '',
       },
     });
-    const cb = wrapper.find({ ref: 'checkbox'});
+    const cb = wrapper.findComponent({ ref: 'checkbox'});
     cb.trigger('click');
     expect(wrapper.emitted().change[0][0]).toBe('checked');
     cb.trigger('click');
@@ -107,7 +107,7 @@ describe('CdrCheckbox', () => {
         value: ['a'],
       },
     });
-    const cb = wrapper.find({ ref: 'checkbox'});
+    const cb = wrapper.findComponent({ ref: 'checkbox'});
     cb.trigger('click');
     expect(wrapper.emitted().change[0][0]).toEqual(['a', 'b']);
     cb.trigger('click');

@@ -196,7 +196,7 @@ describe('CdrInput', () => {
         value: 'bar'
       },
     });
-    const input = wrapper.find({ ref: 'input' });
+    const input = wrapper.findComponent({ ref: 'input' });
     input.setValue('foo');
     expect(wrapper.emitted().input[0][0]).toBe('foo');
   });
@@ -211,7 +211,7 @@ describe('CdrInput', () => {
         'blur': spy
       }
     });
-    const input = wrapper.find({ ref: 'input' });
+    const input = wrapper.findComponent({ ref: 'input' });
     input.trigger('blur')
     expect(spy.calledOnce).toBeTruthy();
   });
@@ -226,7 +226,7 @@ describe('CdrInput', () => {
         'focus': spy
       }
     });
-    const input = wrapper.find({ ref: 'input' });
+    const input = wrapper.findComponent({ ref: 'input' });
     input.trigger('focus')
     expect(spy.calledOnce).toBeTruthy();
   });
@@ -241,7 +241,7 @@ describe('CdrInput', () => {
         'paste': spy
       }
     });
-    const input = wrapper.find({ ref: 'input' });
+    const input = wrapper.findComponent({ ref: 'input' });
     input.trigger('paste')
     expect(spy.calledOnce).toBeTruthy();
   });
@@ -256,7 +256,7 @@ describe('CdrInput', () => {
         'keydown': spy
       }
     });
-    const input = wrapper.find({ ref: 'input' });
+    const input = wrapper.findComponent({ ref: 'input' });
     input.trigger('keydown', {
       key: 'a'
     })
@@ -319,7 +319,7 @@ describe('CdrInput', () => {
         value: 'bar'
       },
     });
-    const input = wrapper.find({ ref: 'input' });
+    const input = wrapper.findComponent({ ref: 'input' });
     wrapper.setProps({value: ''});
     await wrapper.vm.$nextTick();
     expect(input.element.value).toBe('');

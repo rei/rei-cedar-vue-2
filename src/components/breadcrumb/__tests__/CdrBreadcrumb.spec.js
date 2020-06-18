@@ -71,7 +71,7 @@ describe('CdrBreadcrumb', () => {
       }
     });
 
-    const ellipse = wrapper.find({ref: 'ellipse'});
+    const ellipse = wrapper.findComponent({ref: 'ellipse'});
     expect(ellipse.attributes()['aria-label']).toBe('show 1 more navigation level');
     expect(ellipse.attributes()['aria-controls']).toBe(`${wrapper.vm.$data.componentID}List`);
     expect(ellipse.attributes()['aria-expanded']).toBe('false');
@@ -97,7 +97,7 @@ describe('CdrBreadcrumb', () => {
 
 
     expect(wrapper.vm.truncate).toBe(true);
-    wrapper.find({ref: 'ellipse'}).trigger('click');
+    wrapper.findComponent({ref: 'ellipse'}).trigger('click');
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.truncate).toBeFalsy();
   });

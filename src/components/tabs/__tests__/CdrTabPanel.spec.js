@@ -110,7 +110,7 @@ describe('CdrTabPanel', () => {
     });
     await wrapper.vm.$nextTick();
 
-    wrapper.find(CdrTabPanel).trigger('keydown.up');
+    wrapper.findComponent(CdrTabPanel).trigger('keydown.up');
     expect(spySetFocusToActiveTabHeader).toHaveBeenCalled();
   })
 });
