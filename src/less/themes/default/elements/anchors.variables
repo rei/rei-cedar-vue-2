@@ -20,14 +20,18 @@
 //----------------------------------------------------------------------------------------------------------------------
 // Global textual link color.
 //----------------------------------------------------------------------------------------------------------------------
-@link-color:                                          @cdr-color-link;
+@link-color:                                          @cdr-color-text-link-rest;
+@link-color-active:                                   @cdr-color-text-link-active;
+@link-color-hover:                                    @cdr-color-text-link-hover;
+@link-color-disabled:                                 @cdr-color-text-link-disabled;
+@link-color-visited:                                  @cdr-color-text-link-visited;
 @link-color-overlay:                                  @core-architectural-4;
 @link-color-overlay-2:                                @core-architectural-4;
 
 //----------------------------------------------------------------------------------------------------------------------
 // Explore.
 //----------------------------------------------------------------------------------------------------------------------
-@explore-link-color:                                  @explore-action-5;
+@explore-link-color:                                  @cdr-color-text-link-rest;
 @explore-link-color-overlay:                          @explore-action-1;
 
 //----------------------------------------------------------------------------------------------------------------------

@@ -4,7 +4,7 @@
 <h2>Examples</h2>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20">
+    <section class="card-block card-block--top" data-theme="medium-10">
         <h3 class="h4">Tile orginization example</h3>
     </section>
     <section class="card-block cedar-example">
@@ -18,7 +18,7 @@
                 </div>
         </section>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -28,7 +28,7 @@
         >
         <label for="checkbox-tile-orginization">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="tile-orginization" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="tile-orginization" data-theme="medium-10">
     {% highlight html %}
     <section class="tile">
         <div class="media-frame ratio-3-4 portrait center">
@@ -44,7 +44,7 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20">
+    <section class="card-block card-block--top" data-theme="medium-10">
         <h3 class="h4">Groups within tiles</h3>
     </section>
     <section class="card-block">Placeing a group of wells within a tile.</section>
@@ -78,7 +78,7 @@
             </div>
         </section>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -88,7 +88,7 @@
         >
         <label for="checkbox-groups-within-tiles">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="groups-within-tiles" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="groups-within-tiles" data-theme="medium-10">
     {% highlight html %}
     <section class="tile">
             <section class="media-frame"></section>
@@ -109,7 +109,7 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20">
+    <section class="card-block card-block--top" data-theme="medium-10">
         <h3 class="h4">Linked Tile</h3>
     </section>
     <section class="card-block"><p>When linking an entire tile, be sure no other actionable items are nested within the parent structure.</p></section>
@@ -124,7 +124,7 @@
             </div>
         </a>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -134,7 +134,7 @@
         >
         <label for="checkbox-linked-tile">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="linked-tile" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="linked-tile" data-theme="medium-10">
     {% highlight html %}
     <a href="#tile-as-an-anchor" class="tile" id="tile-as-an-anchor">
         <div class="media-frame ratio-3-4 portrait center">
@@ -150,7 +150,7 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20">
+    <section class="card-block card-block--top" data-theme="medium-10">
         <h3 class="h4">Image overlays</h3>
     </section>
     <section class="card-block">
@@ -168,7 +168,7 @@
             </div>
         </section>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -178,7 +178,7 @@
         >
         <label for="checkbox-image-overlays">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="image-overlays" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="image-overlays" data-theme="medium-10">
     {% highlight html %}
     <section class="tile" data-theme="dark-10">
         <div class="media-frame ratio-3-4 portrait center">
@@ -192,7 +192,7 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Theming a tile</h3></section>
+    <section class="card-block card-block--top" data-theme="medium-10"><h3 class="h4">Theming a tile</h3></section>
     <section class="card-block"><p>Tiles can include a theme data attribute for quickly changing the <strong>background-color</strong> and <strong>color</strong>.</p></section>
     <section class="card-block cedar-example">
         <div class="group group-display-fixed" data-example-id="card-background-variants" data-example-id="theming-a-tile">
@@ -204,9 +204,9 @@
                 </section>
             </div>
             <div class="col-sm-3">
-                <section class="tile" data-theme='light-20'>
+                <section class="tile" data-theme='medium-10'>
                     <div class="tile-block">
-                        <p>light-20</p>
+                        <p>medium-10</p>
                     </div>
                 </section>
             </div>
@@ -247,7 +247,7 @@
             </div>
         </div>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -257,9 +257,9 @@
         >
         <label for="checkbox-theming-a-tile">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="theming-a-tile" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="theming-a-tile" data-theme="medium-10">
     {% highlight html %}
-    <section class="tile" data-theme='light-20'>
+    <section class="tile" data-theme='medium-10'>
         <div class="tile-block"></div>
     </section>
     {% endhighlight %}

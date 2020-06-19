@@ -10,10 +10,21 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .link-variant( @color: @link-color; @decoration: @link-hover-decoration; @hover-decoration: @link-hover-decoration-alt; @hover-color: @color ) {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
     color: @color;
-    text-decoration: @decoration;
-    text-decoration-skip: ink;
+    cursor: pointer;
+    display: inline-flex;
+    fill: @color;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
     outline: none;
+    padding: 0;
+    text-decoration: @decoration;
+    vertical-align: top;
     &:hover,
     &:active,
     &:focus {
@@ -26,8 +37,6 @@
     .icon {
         display: inline-block;
         text-decoration: none;
-    }
-    ~ .icon {
         color: @color;
     }
 }

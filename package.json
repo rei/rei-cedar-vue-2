@@ -25,11 +25,13 @@
   "license": "MIT",
   "main": "dist/rei-cedar-components.js",
   "dependencies": {
+    "@rei/cedar-icons": "^1.5.0",
     "bootstrap": "^3.3.6",
     "jquery": "2.2.4",
     "normalize.css": "^3.0.3"
   },
   "devDependencies": {
+    "@rei/cdr-component-variables": "^3.0.0",
     "@rei/cdr-tokens": "^4.0.0-beta.5",
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.13.2",

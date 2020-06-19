@@ -681,9 +681,9 @@
     <figure class="highlight"><pre><code class="language-scss" data-lang="scss">    <span class="c1">// Center-align a block level element</span>
 
 <span class="nc">.center-block</span><span class="o">()</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-  <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
-  <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span> <span class="o">!</span><span class="n">important</span><span class="p">;</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span> <span class="o">!</span><span class="n">important</span><span class="p">;</span>
+  <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span> <span class="o">!</span><span class="n">important</span><span class="p">;</span>
 <span class="p">}</span>
 
     </code></pre></figure>
@@ -1464,10 +1464,21 @@
 <span class="c1">//</span>
 <span class="c1">//----------------------------------------------------------------------------------------------------------------------</span>
 <span class="err">.</span><span class="na">link-variant</span><span class="err">( @</span><span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">link-color</span><span class="p">;</span> <span class="k">@decoration</span><span class="nd">:</span> <span class="o">@</span><span class="nt">link-hover-decoration</span><span class="p">;</span> <span class="k">@hover-decoration</span><span class="nd">:</span> <span class="o">@</span><span class="nt">link-hover-decoration-alt</span><span class="p">;</span> <span class="k">@hover-color</span><span class="nd">:</span> <span class="o">@</span><span class="nt">color</span> <span class="o">)</span> <span class="p">{</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nb">transparent</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
     <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span>
-    <span class="nl">text-decoration</span><span class="p">:</span> <span class="o">@</span><span class="n">decoration</span><span class="p">;</span>
-    <span class="nl">text-decoration-skip</span><span class="p">:</span> <span class="n">ink</span><span class="p">;</span>
+    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-flex</span><span class="p">;</span>
+    <span class="na">fill</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
     <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="o">@</span><span class="n">decoration</span><span class="p">;</span>
+    <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">top</span><span class="p">;</span>
     <span class="k">&amp;</span><span class="nd">:hover</span><span class="o">,</span>
     <span class="k">&amp;</span><span class="nd">:active</span><span class="o">,</span>
     <span class="k">&amp;</span><span class="nd">:focus</span> <span class="p">{</span>
@@ -1480,8 +1491,6 @@
     <span class="nc">.icon</span> <span class="p">{</span>
         <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
         <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="o">~</span> <span class="nc">.icon</span> <span class="p">{</span>
         <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -1659,8 +1668,59 @@
     <span class="nl">border-color</span><span class="p">:</span> <span class="o">@</span><span class="n">border-color</span><span class="p">;</span>
     <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span>
 <span class="p">}</span>
+<span class="c1">// Core background fill and color helpers</span>
 
-    </code></pre></figure>
+<span class="c1">//Light</span>
+<span class="c1">//----------------------------------------------------------------------------------------------------------------------</span>
+<span class="k">@background-white-ruleset</span><span class="nd">:</span> <span class="p">{</span>
+  <span class="nc">.bg-variant</span><span class="o">(</span> <span class="o">@</span><span class="nt">cdr-color-background-primary</span> <span class="o">)</span><span class="p">;</span>
+<span class="p">};</span><span class="c1">//#fff</span>
+
+<span class="k">@background-dusty-white-ruleset</span><span class="nd">:</span> <span class="p">{</span>
+  <span class="nc">.bg-variant</span><span class="o">(</span> <span class="o">@</span><span class="nt">cdr-color-background-secondary</span><span class="o">)</span><span class="p">;</span>
+<span class="p">};</span><span class="c1">// @dusty-white;</span>
+
+
+<span class="c1">//Dark</span>
+<span class="c1">//----------------------------------------------------------------------------------------------------------------------</span>
+<span class="k">@background-grey-4-ruleset</span><span class="nd">:</span> <span class="p">{</span>
+  <span class="nc">.bg-variant</span><span class="o">(</span> <span class="o">@</span><span class="nt">core-architectural-2</span><span class="p">;</span> <span class="nn">#f9f8f6</span><span class="p">;</span> <span class="err">);
+};//#</span><span class="na">222</span><span class="err">
+@</span><span class="na">background-black-ruleset</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nc">.bg-variant</span><span class="o">(</span> <span class="o">@</span><span class="nt">core-architectural-1</span><span class="p">;</span> <span class="k">@core-architectural-5</span><span class="p">;</span> <span class="err">);
+};
+
+
+// </span><span class="na">Explore</span><span class="err"> </span><span class="nl">background</span><span class="err"> </span><span class="na">fill</span><span class="err"> </span><span class="na">and</span><span class="err"> </span><span class="nl">color</span><span class="err"> </span><span class="na">helpers</span><span class="err">
+@</span><span class="na">bg-explore-1-ruleset</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nc">.bg-variant</span><span class="o">(</span> <span class="o">@</span><span class="nt">explore-architectural-1</span><span class="p">;</span> <span class="err">);
+};
+@</span><span class="na">bg-explore-2-ruleset</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nc">.bg-variant</span><span class="o">(</span> <span class="o">@</span><span class="nt">explore-architectural-2</span><span class="p">;</span> <span class="k">@core-architectural-5</span> <span class="o">)</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// outlet background fill and color helpers</span>
+<span class="c1">// Off Price background fill and color helpers</span>
+<span class="k">@bg-brand-danger-background-dark-ruleset</span><span class="nd">:</span> <span class="p">{</span>
+  <span class="nc">.bg-variant</span><span class="o">(</span> <span class="o">@</span><span class="nt">brand-danger</span><span class="p">;</span> <span class="k">@core-architectural-5</span><span class="p">;</span> <span class="err">);
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  </span><span class="na">Color</span><span class="err"> </span><span class="na">variations</span><span class="err">
+//</span><span class="na">----------------------------------------------------------------------------------------------------------------------</span><span class="err">
+[</span><span class="na">data-theme</span><span class="err">="</span><span class="na">light-10</span><span class="err">"]{
+   @</span><span class="na">background-white-ruleset</span><span class="err">();
+}
+[</span><span class="na">data-theme</span><span class="err">="</span><span class="na">medium-10</span><span class="err">"]{
+    @</span><span class="na">background-dusty-white-ruleset</span><span class="err">();
+}
+[</span><span class="na">data-theme</span><span class="err">="</span><span class="na">dark-10</span><span class="err">"]{
+    @</span><span class="na">background-grey-4-ruleset</span><span class="err">();
+}
+[</span><span class="na">data-theme</span><span class="err">="</span><span class="na">dark-20</span><span class="err">"]{
+    @</span><span class="na">background-black-ruleset</span><span class="err">();
+}
+    </span></code></pre></figure>
 
 
     <h3 id="less-mixins-placeholder">Placeholder text</h3>

@@ -10,10 +10,21 @@
 }
 .doc_head-navigation > li > a,
 .doc_head-navigation ul > li > a {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
   color: #222;
-  text-decoration: none;
-  text-decoration-skip: ink;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #222;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
   outline: none;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: top;
 }
 .doc_head-navigation > li > a:hover,
 .doc_head-navigation > li > a:active,
@@ -35,9 +46,6 @@
 .doc_head-navigation ul > li > a .icon {
   display: inline-block;
   text-decoration: none;
-}
-.doc_head-navigation > li > a ~ .icon,
-.doc_head-navigation ul > li > a ~ .icon {
   color: #222;
 }
 @media (min-width: 768px) {
@@ -781,9 +789,9 @@ h1[id] {
   width: 100%;
   max-width: 32rem;
   min-width: 32rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .card-doc-heading {
   margin-bottom: 0;

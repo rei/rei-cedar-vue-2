@@ -68,41 +68,9 @@
 @core-architectural-4:                   #ccc;
 @core-architectural-5:                   #fff;
 @core-architectural-6:                   @dusty-white;
-@core-background-1:                      #f2f2f2;
-@core-background-2:                      #e5e5e5;
+@core-background-1:                      @cdr-color-background-primary;
+@core-background-2:                      @cdr-color-background-secondary;
 
-// Core background fill and color helpers
-
-//Light
-//----------------------------------------------------------------------------------------------------------------------
-@background-white-ruleset: {
-  .bg-variant( @core-architectural-5 );
-};//#fff
-
-@background-dusty-white-ruleset: {
-  .bg-variant( @core-architectural-6 );
-};// @dusty-white;
-
-//Medium
-//----------------------------------------------------------------------------------------------------------------------
-@background-grey-1-ruleset: {
-  .bg-variant( @core-background-1; );
-};//#f2f2f2
-@background-grey-2-ruleset: {
-  .bg-variant( @core-background-2; );
-};//#e5e5e5;
-@background-grey-3-ruleset: {
-  .bg-variant( @core-architectural-3; @core-architectural-5; );
-};//#666
-
-//Dark
-//----------------------------------------------------------------------------------------------------------------------
-@background-grey-4-ruleset: {
-  .bg-variant( @core-architectural-2; @core-architectural-5; );
-};//#222
-@background-black-ruleset: {
-    .bg-variant( @core-architectural-1; @core-architectural-5; );
-};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -121,14 +89,6 @@
 // Explore architectural, used to create scaffolding
 @explore-architectural-1:                    @new-growth;
 @explore-architectural-2:                    @old-growth;
-
-// Explore background fill and color helpers
-@bg-explore-1-ruleset: {
-  .bg-variant( @explore-architectural-1; );
-};
-@bg-explore-2-ruleset: {
-  .bg-variant( @explore-architectural-2; @core-architectural-5 );
-};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -182,7 +142,7 @@
 // Applying theme variables to element specific variables, providing the ability to change one without impacting the other.
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@body-bg:                                         @core-architectural-5;
+@body-bg:                                         @cdr-color-background-primary;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //

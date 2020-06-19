@@ -4,7 +4,7 @@
 <h2>Examples</h2>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20">
+    <section class="card-block card-block--top" data-theme="medium-10">
         <h3 class="h4">Card orginization</h3>
     </section>
     <section class="card-block"><p>A Card containing content witin the card components: cedar-card-image-cap-top, cedar-card and cedar-card-block.</p></section>
@@ -19,7 +19,7 @@
             </section>
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -29,7 +29,7 @@
         >
         <label for="checkbox-card-orginization">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="card-orginization" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="card-orginization" data-theme="medium-10">
     {% highlight html %}
         <article class="card">
             <section class="card-media-top media-frame ratio-3-4 portrait center">
@@ -45,7 +45,7 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20">
+    <section class="card-block card-block--top" data-theme="medium-10">
         <h3 class="h4">Groups within cards</h3>
     </section>
     <section class="card-block">Placeing a group of tiles within a card.</section>
@@ -79,7 +79,7 @@
             </div>
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -89,7 +89,7 @@
         >
         <label for="checkbox-groups-within-cardse">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="groups-within-cards" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="groups-within-cards" data-theme="medium-10">
     {% highlight html %}
     <article class="card">
         <section class="card-media-top"></section>
@@ -110,7 +110,7 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20">
+    <section class="card-block card-block--top" data-theme="medium-10">
         <h3 class="h4">Linked Card</h3>
     </section>
     <section class="card-block">
@@ -127,7 +127,7 @@
             </section>
         </a>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -137,7 +137,7 @@
         >
         <label for="checkbox-linked-card">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="linked-card" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="linked-card" data-theme="medium-10">
     {% highlight html %}
     <a href="#anchored-card-example" class="card">
         <section class="card-media-top media-frame ratio-3-4 portrait center">
@@ -153,7 +153,7 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20">
+    <section class="card-block card-block--top" data-theme="medium-10">
         <h3 class="h4">Card content variants</h3>
     </section>
     <section class="card-block">
@@ -180,7 +180,7 @@
             </section>
         </a>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -190,7 +190,7 @@
         >
         <label for="checkbox-card-options">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="card-options" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="card-options" data-theme="medium-10">
     {% highlight html %}
     <a href="#anchored-card-example" class="card">
         <section class="card-media-top media-frame ratio-3-4 portrait center">
@@ -216,7 +216,7 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20">
+    <section class="card-block card-block--top" data-theme="medium-10">
         <h3 class="h4">Card image caps</h3>
     </section>
     <section class="card-block">
@@ -231,7 +231,7 @@
             <img class="card-media-bottom img-responsive" src="http://placehold.it/320x150" alt="Example image">
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -241,7 +241,7 @@
         >
         <label for="checkbox-card-img-cap">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="card-img-cap" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="card-img-cap" data-theme="medium-10">
     {% highlight html %}
     <article class="card">
         <img class="card-media-top img-responsive" />
@@ -253,7 +253,7 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Image overlays</h3></section>
+    <section class="card-block card-block--top" data-theme="medium-10"><h3 class="h4">Image overlays</h3></section>
     <section class="card-block"><p>Turn an image into a card background and overlay your card’s text. when an image will encompass the entirety of this container use the <code>.card-media</code> class to ensure the image will receive a border radius to all corners To achieve an accessible result, be sure to pass a <strong>theme</strong> value that is in line with the image color.</p>
    </section>
     <section class="card-block cedar-example">
@@ -268,7 +268,7 @@
             </section>
         </article>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -278,7 +278,7 @@
         >
         <label for="checkbox-image-overlay">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="image-overlay" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="image-overlay" data-theme="medium-10">
     {% highlight html %}
     <article class="card" data-theme="dark-10">
         <section class="card-media media-frame ratio-3-4 portrait center">
@@ -291,12 +291,12 @@
 </article>
 
 <article class="card vertical-push-lg">
-    <section class="card-block card-block--top" data-theme="light-20"><h3 class="h4">Theming a card</h3></section>
+    <section class="card-block card-block--top" data-theme="medium-10"><h3 class="h4">Theming a card</h3></section>
     <section class="card-block">
         <p>Cards can include a theme data attribute for quickly changing the <strong>background-color</strong> and <strong>color</strong> of a card or a card-block.</p>
     </section>
     <section class="cedar-example">
-        <div class="group group-display-fixed group-gutter-open-10" data-example-id="card-background-variants" data-theme="light-20" data-example-id="theming-a-card">
+        <div class="group group-display-fixed group-gutter-open-10" data-example-id="card-background-variants" data-theme="medium-10" data-example-id="theming-a-card">
             <div class="col-xs-6 col-sm-4">
                 <article class="card" data-theme='light-10'>
                     <div class="card-block">
@@ -305,30 +305,9 @@
                 </article>
             </div>
             <div class="col-xs-6 col-sm-4">
-                <article class="card" data-theme='light-20'>
-                    <div class="card-block">
-                        <p>light-20</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-xs-6 col-sm-4">
-                <article class="card" data-theme='light-30'>
-                    <div class="card-block">
-                        <p>light-30</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-xs-6 col-sm-4">
                 <article class="card" data-theme='medium-10'>
                     <div class="card-block">
                         <p>medium-10</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-xs-6 col-sm-4">
-                <article class="card" data-theme='medium-20'>
-                    <div class="card-block">
-                        <p>medium-20</p>
                     </div>
                 </article>
             </div>
@@ -351,7 +330,7 @@
     <section class="card-block bs-callout bs-callout-info">
         <p>For additional accessibility and contrast, our darker themes add text shadow to <code> h1-h6 and p </code> tags </p>
     </section>
-    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="light-20">
+    <div class="code-toggle--control checkbox toggle-show-hide text-xs-right" data-theme="medium-10">
         <input
             type="checkbox"
             value=""
@@ -361,9 +340,9 @@
         >
         <label for="checkbox-theming-a-card">View code</label>
     </div>
-    <div class="collapse code-toggle--document" id="theming-a-card" data-theme="light-20">
+    <div class="collapse code-toggle--document" id="theming-a-card" data-theme="medium-10">
     {% highlight html %}
-    <article class="card" data-theme='light-20'>
+    <article class="card" data-theme='medium-10'>
         <section class="card-block"></section>
     </article>
     {% endhighlight %}
