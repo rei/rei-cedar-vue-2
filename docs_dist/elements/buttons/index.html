@@ -544,12 +544,6 @@
                         <button type="button" class="btn btn-primary">
                             Primary button
                         </button>
-                        <button type="button" class="btn btn-primary active">
-                            "Active"
-                        </button>
-                        <button type="button" class="btn btn-primary focus">
-                            "Focused"
-                        </button>
                         <button type="button" class="btn btn-primary" disabled>
                             disabled
                         </button>
@@ -558,30 +552,26 @@
                 <div class="well">
                   <h3 class="h4">Button sizes and shapes</h3>
                     <div class="group group-display-fixed group-gutter-xs-open-10">
-
-                        <div class="col-xs-12 col-sm-6">
-                            <section>
-                               <div class="well well-lg" data-theme="medium-10">
-                                    <button type="button" class="center-block btn btn-primary btn-sm">
-                                        Small
-                                    </button>
-                                </div>
-                                <p class="vertical-pull">
-                                   These smaller transaction buttons are used in conjunction with inline form fields or when repeated in a list such as "Register" on a classes and Events page. Hover / Active / Focus states match "Large" styling definition.
-                                </p>
-                            </section>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-                            <section>
-                                <div class="well well-lg" data-theme="medium-10">
-                                    <button type="button" class="center-block btn btn-primary btn-xs">
-                                        extra-Small
-                                    </button>
-                                </div>
-                                <p class="vertical-pull">
-                                    For use in very limited situations where space is at an extreme premium. Example: "Compare" buttons on search results. Hover / Active / Focus states match "Large" styling definition.
-                                </p>
-                            </section>
+                        <p>
+                            Change the button size based on where the button is used. The default size is medium. Small is used for supplemental
+                            user actions such as product comparison or filter. Large is used for "Add to cart" on product pages or for Call to
+                            Action.
+                        </p>
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="btn-group inline-group">
+                                <button type="button" class="btn btn-primary  btn-xs">
+                                    extra small
+                                </button>
+                                <button type="button" class="btn btn-primary btn-sm">
+                                    small
+                                </button>
+                                <button type="button" class="btn btn-primary">
+                                    medium
+                                </button>
+                                <button type="button" class="btn btn-primary btn-lg">
+                                    large
+                                </button>
+                            </div>
                         </div>
                         <div class="col-xs-12 col-sm-4">
                             <section>
@@ -700,15 +690,17 @@ Secondary Core button
             </yield>
         </cdr-well-docs>
 
-        <cdr-well-docs example-title="Close buttons" element-id="close-buttons">
+        <cdr-well-docs example-title="Icon Only With Background" element-id="close-buttons">
         <yield to="example-description">
         <p>
-            Use the generic close icon for dismissing content like modals and alerts.
+            
+            Use the <code>.btn-icon</code> class to make icon buttons more identifiable. Include
+            alternative text to describe what the button does.
         </p>
         </yield>
         <yield to="example">
             <div class="group group-display-fixed group-gutter-xs-open-10">
-                <div class="col-xs-12 col-sm-2">
+                <div class="col-xs-12 col-sm-4">
                     <div>
                        <h4>Icon button</h4>
                         <div class="well well-lg" data-theme="medium-10">
@@ -719,55 +711,22 @@ Secondary Core button
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-2">
-                    <div>
-                       <h4>"Active"</h4>
-                        <div class="well well-lg" data-theme="medium-10">
-                           <button type="button" class="btn-icon active" aria-label="Close">
-                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
-                                <span class="sr-only">"Active"</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-2">
+                <div class="col-xs-12 col-sm-4">
                     <div>
                        <h4>Bare - dark</h4>
                         <div class="well well-lg" data-theme="medium-10">
-                           <button type="button" class="btn-icon btn-bare" aria-label="Close">
+                           <button type="button" class="btn-bare" aria-label="Close">
                                 <span class="icon icon-rei-close-small" aria-hidden="true"></span>
                                 <span class="sr-only">"focused"</span>
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-2">
-                    <div>
-                       <h4>"Active"</h4>
-                        <div class="well well-lg" data-theme="medium-10">
-                           <button type="button" class="btn-icon btn-bare active" aria-label="Close">
-                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
-                                <span class="sr-only">"focused"</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-2">
+                <div class="col-xs-12 col-sm-4">
                     <div>
                        <h4>Bare - light</h4>
                         <div class="well well-lg" data-theme="dark-20">
-                           <button type="button" class="btn-contrast btn-icon btn-bare" aria-label="Close">
-                                <span class="icon icon-rei-close-small" aria-hidden="true"></span>
-                                <span class="sr-only">"focused"</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-2">
-                    <div>
-                       <h4>"Active"</h4>
-                        <div class="well well-lg" data-theme="dark-20">
-                           <button type="button" class="btn-contrast btn-icon btn-bare active" aria-label="Close">
+                           <button type="button" class="btn-bare" aria-label="Close">
                                 <span class="icon icon-rei-close-small" aria-hidden="true"></span>
                                 <span class="sr-only">"focused"</span>
                             </button>

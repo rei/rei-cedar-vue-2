@@ -35,9 +35,8 @@
 //
 
 .btn {
-    &:extend( .cdr-button-base-mixin all );
+    .cdr-button-base-mixin();
     display: inline-block !important;
-    text-align: center !important;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,12 +49,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Core
 // ---------------------------------------------------------------------------------------------------------------------
-.btn-primary {
-    &:extend( .cdr-button-primary-mixin all );
+.btn-primary,
+.btn-explore {
+    .cdr-button-primary-mixin();
+
 }
 
 .btn-default {
-    &:extend( .cdr-button-secondary-mixin all );
+    .cdr-button-secondary-mixin();
     
 }
 
@@ -193,34 +194,26 @@
 //
 //----------------------------------------------------------------------------------------------------------------------
 .btn-lg {
-    .button-size(
-        @btn-lg-inset;
-        @btn-lg-font-size;
-        @btn-lg-line-height;
-        @btn-lg-type;
-        @btn-lg-font-style; );
+   .cdr-button-base-text-mixin-large();
 }
 .btn-md {
-    .button-size();
+    .cdr-button-base-text-mixin-medium();
 }
 .btn-sm {
-    // line-height: ensure proper height of button next to small input
-    .button-size(
-        @btn-sm-inset;
-        @btn-sm-font-size;
-        @btn-sm-line-height;
-        @btn-sm-type;
-        @btn-sm-font-style; );
-    @text-with-icon-rei-tree-arrow-button-sm-ruleset();
+    .cdr-button-base-text-mixin-small();
 }
 
 .btn-xs {
-    .button-size(
-        @btn-xs-inset;
-        @btn-xs-font-size;
-        @btn-xs-line-height;
-        @btn-xs-type;
-        @btn-xs-font-style; );
+      font-family: @btn-type;
+      font-size:  @btn-xs-font-size;
+      font-style: @btn-xs-font-style;
+      font-weight: 500;
+      letter-spacing: -.08px;
+      line-height: @btn-xs-line-height;
+      padding: @btn-xs-inset;
+     > .icon {
+      font-size:  @btn-xs-font-size !important;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -229,6 +222,7 @@
 .btn-block {
     display: block;
     width: 100%;
+    text-align: center;
     margin-bottom: 2rem;
     & + & {
         margin-left: 0;
@@ -238,67 +232,19 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Close button
 // ---------------------------------------------------------------------------------------------------------------------
-.btn-icon {
-    .button-variant( @btn-default-color;
-            @btn-default-bg;
-            @btn-default-border;
-            @btn-default-active-bg;
-            @btn-default-border;
-            @btn-default-active-color;
-            @btn-default-disabled-text;
-            @btn-default-disabled-background;
-            @btn-default-disabled-border; );
-    &.btn-bare {
-    .button-variant(
-        @btn-bare-color;
-        @btn-bare-bg;
-        @btn-bare-border;
-        @btn-bare-active-bg;
-        @btn-bare-active-border;
-        @btn-bare-active-color; );
-        border-radius: 50%;
-    }
-    .button-size(
-        @btn-icon-inset;
-        @btn-icon-font-size;
-        @btn-icon-line-height;
-        @btn-icon-type;
-        @btn-font-style; );
-    @media ( max-width: @screen-xs-max ) {
-        &:not( .btn-fixed ) {
-           width: auto;
-           margin: 0;
-        }
-    }
-    &:hover,
-    &:focus,
-    &.focus {
-        color: @btn-default-color;
-        text-decoration: none;
-    }
-    &:focus {
-      outline: thin dotted;
-      // WebKit
-      outline: 0.2rem auto;
-      outline-color: @btn-focus-stroke-color;
-      outline-offset: -0.1rem;
-      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-      border: 1px solid rgba(81, 203, 238, 1);
-    }
-    &:active,
-    &.active {
-        outline: 0;
-        background-image: none;
-    }
-    .img-circle();
-    &:focus,
-    &.focus {
-        outline: none;
-    }
+
+
+.btn-bare,
+.btn-icon,
+.close {
+    .cdr-button-icon-only-mixin();
 }
 
-.close {
-    &:extend( .btn-icon all );
+.btn-icon,
+.close  {
+    .cdr-button-with-background-mixin();
+    color: @cdr-color-icon-default;
+    display: inline-flex;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -352,21 +298,6 @@ input[type="button"] {
     }
 }
 
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// // Deprecated:
-// ---------------------------------------------------------------------------------------------------------------------
-//Explore
-.btn-explore {
-    &.btn-primary {
-        .button-variant( @btn-explore-color; @btn-explore-bg; @btn-explore-border; @btn-explore-active-bg; @btn-explore-active-border; );
-    }
-}
-
-.btn-outline-alternate {
-  &:extend(.btn-primary all);
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //            OVERRIDES
