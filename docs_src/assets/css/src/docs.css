@@ -265,6 +265,9 @@ h4 code {
   width: 10rem;
   height: auto;
 }
+.ui-navigation {
+  background: #f9f8f6;
+}
 .ui-navigation .btn {
   margin-bottom: 0;
 }
@@ -290,27 +293,17 @@ h4 code {
 .doc_head-navigation ul.right {
   text-align: right;
 }
-.doc_head-navigation-item {
-  background: #fff;
-}
 .doc_head-navigation-item a:hover,
 .doc_head-navigation-item a:focus,
 .doc_head-navigation-item.active a {
-  background: #a1c900 !important;
-  color: #004e00 !important;
-}
-.doc_head-navigation-item.home a {
-  color: #a1c900;
-  background: #000;
-}
-.doc_head-navigation-item.home a:hover {
-  background: #000;
+  background-color: #f4f2ed;
+  color: #4e4d49;
 }
 .doc_head-navigation-item.active .nested-item a,
 .doc_head-navigation-item .nested-item a {
   font-size: 1.4rem;
-  background: #f0f0f0 !important;
-  color: #000 !important;
+  color: #4e4d49;
+  background-color: #f4f2ed;
 }
 .doc_head-navigation-item.active .nested-item a:hover,
 .doc_head-navigation-item .nested-item a:hover {
@@ -319,7 +312,6 @@ h4 code {
 }
 @media (min-width: 992px) {
   #pattern_navigation {
-    background-color: #000;
     display: block;
     position: relative;
     width: 100%;
@@ -351,15 +343,7 @@ h4 code {
   .doc_head-navigation-item > a {
     border: none;
   }
-  .doc_head-navigation-item.home a {
-    background-color: #000;
-    color: #a1c900;
-  }
-  .doc_head-navigation-item.home a:hover {
-    background: #000;
-  }
   .doc_head-navigation-item {
-    background: inherit;
     float: left;
     margin: 0;
     padding: 0;
@@ -369,23 +353,22 @@ h4 code {
     font-family: Stuart, Georgia, serif;
     font-size: 16px;
     font-style: normal;
+    background: #f9f8f6;
+    color: #4e4d49;
     font-weight: 500;
     letter-spacing: -0.08px;
     line-height: 22px;
-    padding: 1.3rem, 3.2rem;
-    color: #fff !important;
+    padding: 0.8rem 1.6rem !important;
     text-decoration: none;
     transition: all linear 0.1s;
     width: auto;
-  }
-  .doc_head-navigation-item a > .icon {
-    font-size: 16px !important;
   }
   .doc_head-navigation-item > a:hover,
   .doc_head-navigation-item > a:focus,
   .doc_head-navigation-item:focus > a,
   .doc_head-navigation-item:hover > a {
-    background: #8db000;
+    background: #f4f2ed;
+    color: #4e4d49;
     outline: 0;
   }
   .nested-item a {
@@ -594,7 +577,7 @@ h4 code {
 */
 /* Share masthead with page headers */
 .bs-docs-masthead {
-  background-color: #111;
+  background-color: #222;
   background-size: 100%;
 }
 /* Masthead (headings and download button) */

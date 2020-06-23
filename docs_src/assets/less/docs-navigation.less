@@ -40,6 +40,7 @@
 }
 
 .ui-navigation {
+    background: @cdr-color-background-button-secondary-rest;
     .btn {
         margin-bottom: 0;
     }
@@ -55,30 +56,19 @@
 }
 
 .doc_head-navigation-item {
-    background: #fff;
-}
-
-.doc_head-navigation-item {
     a:hover,
     a:focus,
     &.active a {
-        background: @new-growth !important;
-        color: @old-growth !important;
-    }
-    &.home a {
-        color: @new-growth;
-        background: #000;
-        &:hover {
-            background: #000;
-        }
+        background-color: @cdr-color-background-button-secondary-hover;
+        color: @cdr-color-text-button-secondary-hover;
     }
     &.active .nested-item,
     .nested-item {
 
         a {
             font-size: 1.4rem;
-            background: @list-group-bg !important;
-            color: #000 !important;
+            color: @cdr-color-text-button-secondary-hover;
+            background-color: @cdr-color-background-button-secondary-hover;
             &:hover {
                 background: #000 !important;
                 color: #fff !important;
@@ -89,7 +79,6 @@
 
 @media ( min-width: @screen-md-min ) {
     #pattern_navigation {
-        background-color: @core-architectural-1;
         display: block;
         position: relative;
         width: 100%;
@@ -122,30 +111,22 @@
     .doc_head-navigation-item > a {
         border: none;
     }
-    .doc_head-navigation-item.home a {
-        background-color: #000;
-        color: @new-growth;
-
-        &:hover {
-            background: #000;
-        }
-    }
 
     .doc_head-navigation-item {
-        background: inherit;
         float: left;
         margin: 0;
         padding: 0;
         position: relative;
         a {
-            .button-size(
-                @padding-large-vertical, @padding-large-horizontal; 
-                @btn-font-size;
-                @btn-line-height;
-                @headings-font-family;
-                @btn-font-style;
-                );
-            color: #fff !important;
+            font-family: @headings-font-family;
+            font-size: @btn-font-size;
+            font-style: @btn-font-style;
+            background: @cdr-color-background-button-secondary-rest;
+            color: @cdr-color-text-button-secondary;
+            font-weight: 500;
+            letter-spacing: -.08px;
+            line-height: @btn-line-height;
+            padding: @cdr-space-inset-one-x-squish !important;
             text-decoration: none;
             transition: all linear 0.1s;
             width: auto;
@@ -155,7 +136,8 @@
     .doc_head-navigation-item > a:focus,
     .doc_head-navigation-item:focus > a,
     .doc_head-navigation-item:hover > a {
-        background: darken(@new-growth, 5%);
+        background: @cdr-color-background-button-secondary-hover;
+        color: @cdr-color-text-button-secondary-hover;
         outline: 0;
     }
     .nested-item a {
