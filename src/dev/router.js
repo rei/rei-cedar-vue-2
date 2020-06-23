@@ -30,6 +30,7 @@ const routes = [
   { path: '/checkboxes', name: 'CheckBoxes', component: Examples.checkbox },
   { path: '/cta', name: 'CTA', component: Examples.cta },
   { path: '/dataTables', name: 'Data Tables', component: Examples.dataTable },
+  { path: '/formGroups', name: 'Form Groups', component: Examples.formGroup },
   { path: '/grids', name: 'Grids', component: Examples.grid },
   { path: '/icons', name: 'Icons', component: Examples.icon },
   { path: '/images', name: 'Images', component: Examples.image },

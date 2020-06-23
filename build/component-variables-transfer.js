@@ -14,6 +14,7 @@ const SUPPORTED_COMPONENTS = [
   'CdrButton.vars.scss',
   'CdrCard.vars.scss',
   'CdrBreadcrumb.vars.scss',
+  'CdrFormGroup.vars.scss',
   'CdrLink.vars.scss',
   'form-label.vars.scss',
   'CdrInput.vars.scss',

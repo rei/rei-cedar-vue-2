@@ -10,6 +10,7 @@ export { default as CdrCheckbox } from './components/checkbox/CdrCheckbox';
 export { default as CdrCol } from './components/grid/CdrCol';
 export { default as CdrCta } from './components/cta/CdrCta';
 export { default as CdrDataTable } from './components/dataTable/CdrDataTable';
+export { default as CdrFormGroup } from './components/formGroup/CdrFormGroup';
 // export all single icon components
 export * from './components/icon/index';
 export { default as CdrIcon } from './components/icon/CdrIcon';
