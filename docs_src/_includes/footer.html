@@ -1,16 +1,16 @@
 <!-- Footer
 ================================================== -->
-<footer class="bs-docs-footer overlay-dark-1" role="contentinfo">
+<footer class="bs-docs-footer" role="contentinfo">
   <div class="container">
       <div class="row">
           <div class="row col-sm-10 col-sm-offset-1 ">
               {% for item in site.data.navigation.items %}
               <div class="col-md-2 col-sm-6">
                   <ul class="list-text">
-                      <li><a class="h3 link_header-overlay" href="{{ item.href }}">{{ item.label }}</a></li>
+                      <li><a class="link_navigation-title" href="{{ item.href }}">{{ item.label }}</a></li>
                       {% for nested in item.subCats %}
                       <li>
-                          <a class="link-overlay" href="{{ nested.href }}">{{ nested.label }}</a>
+                          <a class="link_header" href="{{ nested.href }}">{{ nested.label }}</a>
                       </li>
                       {% endfor %}
                   </ul>

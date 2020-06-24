@@ -4,10 +4,6 @@
 */
 @media screen and (max-width: 767px) {
 }
-.bs-docs-header h1,
-.bs-docs-header p {
-  text-align: center;
-}
 .doc_head-navigation > li > a,
 .doc_head-navigation ul > li > a {
   align-items: center;
@@ -256,7 +252,8 @@ h4 code {
   width: 100%;
 }
 .rei-logo {
-  fill: #fff;
+  background: #f4f2ed;
+  fill: rgba(12, 11, 8, 0.75);
   stroke: none;
   width: 20rem;
   height: auto;
@@ -577,8 +574,8 @@ h4 code {
 */
 /* Share masthead with page headers */
 .bs-docs-masthead {
-  background-color: #222;
-  background-size: 100%;
+  background: #f4f2ed;
+  color: rgba(12, 11, 8, 0.75);
 }
 /* Masthead (headings and download button) */
 .bs-docs-masthead .bs-docs-booticon {
@@ -586,11 +583,6 @@ h4 code {
 }
 .bs-docs-masthead .lead {
   position: relative;
-}
-.bs-docs-masthead .version {
-  margin-top: -1.5rem;
-  margin-bottom: 3rem;
-  color: #cafc00;
 }
 .bs-docs-masthead .btn {
   width: 100%;
@@ -620,46 +612,9 @@ h4 code {
 .bs-docs-header {
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
-  background: #333;
+  background: #f4f2ed;
+  color: rgba(12, 11, 8, 0.75);
   background-size: cover;
-}
-.bs-docs-header h1 {
-  font-family: Stuart, Georgia, serif;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: -0.16px;
-  font-size: 3.2rem;
-  line-height: 3.6rem;
-  margin-top: 0;
-  margin-bottom: 1.2rem;
-  color: #fff;
-  margin: 0;
-}
-@media only screen and (max-width: 767px) {
-  .bs-docs-header h1 {
-    font-family: Stuart, Georgia, serif;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: -0.16px;
-    font-size: 2.8rem;
-    line-height: 3.2rem;
-  }
-}
-.bs-docs-header h1 + h1,
-.bs-docs-header h1 + h2,
-.bs-docs-header h1 + h3,
-.bs-docs-header h1 + h4,
-.bs-docs-header h1 + h5,
-.bs-docs-header h1 + h6 {
-  margin-top: 1.6rem;
-}
-.bs-docs-header p {
-  margin-bottom: 0;
-  color: #fff;
-  line-height: 1.4;
-}
-.bs-docs-header .container {
-  position: relative;
 }
 .page-header {
   padding-bottom: 1.1rem;
@@ -1885,41 +1840,6 @@ dd {
 .bs-icons.rating .icon:hover ~ .bs-icons.rating .icon:before {
   content: "\e731";
   color: #a1c900;
-}
-.mountain-example {
-  border-color: inherit;
-  display: inline-block;
-  height: 2rem;
-  /* Primary Mountain Peak */
-  /* Secondary Mountain Peak */
-}
-.mountain-example:before,
-.mountain-example:after {
-  content: "";
-  position: absolute;
-  border-top-width: 0 !important;
-  border-style: solid;
-  border-color: transparent;
-  border-bottom-color: #000;
-}
-.mountain-example:before {
-  border-width: 2rem;
-}
-.mountain-example:after {
-  border-width: 1.5rem;
-  transform: translate(2.2rem, 0.5rem);
-}
-@media (min-width: 768px) {
-  .mountain-example {
-    height: 3rem;
-  }
-  .mountain-example:before {
-    border-width: 3rem;
-  }
-  .mountain-example:after {
-    border-width: 2rem;
-    transform: translate(3.6rem, 1rem);
-  }
 }
 /*
    /$$$$$$$             /$$     /$$                                         /$$       /$$ /$$                                                     /$$$$$$                        /$$                             /$$                       /$$     /$$
