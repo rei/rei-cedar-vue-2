@@ -173,8 +173,7 @@
       Checkbox group with indeterminate state:
     </cdr-text>
 
-    <fieldset>
-      <legend>Choose your toppings</legend>
+    <cdr-form-group label="Choose your toppings">
       <cdr-checkbox
         v-model="allSelected"
         :indeterminate="isIndeterminate"
@@ -200,7 +199,7 @@
           >{{ c }}</cdr-checkbox>
         </li>
       </cdr-list>
-    </fieldset>
+    </cdr-form-group>
   </div>
 </template>
 
