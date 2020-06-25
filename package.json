@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@rei/cdr-component-variables": "^3.0.0",
-    "@rei/cdr-tokens": "^4.0.0-beta.5",
+    "@rei/cdr-tokens": "^4.0.0",
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.13.2",
     "babel-preset-es2015-riot": "^1.1.0",
