@@ -13,6 +13,7 @@ export default {
         value,
         ['info', 'warning', 'success', 'error'],
       ),
+      default: 'info',
     },
   },
   data() {
