@@ -11,7 +11,6 @@
   border: 0;
   color: #222;
   cursor: pointer;
-  display: inline-flex;
   fill: #222;
   font-family: inherit;
   font-size: inherit;
@@ -48,7 +47,6 @@
   border: 0;
   color: #ccc;
   cursor: pointer;
-  display: inline-flex;
   fill: #ccc;
   font-family: inherit;
   font-size: inherit;
@@ -58,6 +56,37 @@
   padding: 0;
   text-decoration: underline;
   vertical-align: top;
+}
+.doc_head-navigation > li > a,
+.doc_head-navigation ul > li > a {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #222;
+  cursor: pointer;
+  fill: #222;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: top;
+}
+.doc_head-navigation > li > a:hover,
+.doc_head-navigation > li > a:active,
+.doc_head-navigation > li > a:focus,
+.doc_head-navigation ul > li > a:hover,
+.doc_head-navigation ul > li > a:active,
+.doc_head-navigation ul > li > a:focus {
+  color: #222;
+  text-decoration: underline;
+}
+.doc_head-navigation > li > a .icon,
+.doc_head-navigation ul > li > a .icon {
+  display: inline-block;
+  text-decoration: none;
 }
 @media (min-width: 768px) {
 }

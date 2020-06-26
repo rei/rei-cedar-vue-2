@@ -139,6 +139,11 @@
 }
 
 .inline-group.btn-group {
+    &.center-block {	
+        & .btn {	
+            &:extend( .center-block );	
+        }	
+    }
     @media( min-width: @screen-sm-min ) {
         &:not(.inline-group-fixed) {}
         margin: 0 -( @group-push / 2 );
